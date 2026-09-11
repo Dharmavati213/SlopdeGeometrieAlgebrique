@@ -3,6 +3,14 @@
 Two tracks: **translation** (English TeX) and **formalization** (Lean 4).
 They share numbering and terminology, not files.
 
+Claim work by [opening an
+issue](https://github.com/Dharmavati213/SGAenglishpluslean/issues/new/choose)
+and saying what you will do (SGA, exposé, and for Lean a section or
+lemma). Use the Translation or Formalization template. Check
+[`docs/status.md`](../docs/status.md) and open issues first so two
+people do not take the same stretch. English of an exposé comes before
+Lean for that exposé.
+
 ## Translation
 
 1. Read [`translation/CONVENTIONS.md`](../translation/CONVENTIONS.md).
@@ -11,9 +19,6 @@ They share numbering and terminology, not files.
 4. Do not add the French source PDF/TeX to the repo.
 5. Rebuild the PDF (`make tex`, or `make` in that directory) and tick the
    exposé in [`docs/status.md`](../docs/status.md).
-
-Open an issue with the `translation` label before starting a long exposé,
-so two people do not take the same one.
 
 ## Lean
 

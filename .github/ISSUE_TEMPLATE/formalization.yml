@@ -1,5 +1,5 @@
 name: Formalization
-description: A Lean lemma or definition from an exposé
+description: Claim or discuss a Lean formalization of an exposé (or a section of one)
 title: "[lean] "
 labels: [formalization, lean]
 body:

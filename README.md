@@ -22,8 +22,21 @@ docs/            status and formalization notes
 | Other exposés of SGA 1–7 | not started |
 
 Tick-list: [`docs/status.md`](docs/status.md).
-How to add an exposé or a lemma: [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 Sources and licenses: [`COPYRIGHT.md`](COPYRIGHT.md).
+
+## Claiming work
+
+To translate an exposé or formalize a stretch of one, [open an
+issue](https://github.com/Dharmavati213/SGAenglishpluslean/issues/new/choose)
+and say what you intend to do (which SGA, which exposé or section).
+That is how a claim is made; it keeps two people off the same text.
+
+Use the **Translation** or **Formalization** template. Look at
+[`docs/status.md`](docs/status.md) and at open issues first. English of
+an exposé comes before Lean for that exposé.
+
+How to write the TeX or the Lean once you have claimed it:
+[`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 ## Build
 
