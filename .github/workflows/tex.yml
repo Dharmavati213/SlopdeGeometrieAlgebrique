@@ -1,0 +1,36 @@
+name: TeX
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "translation/**"
+      - .github/workflows/tex.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - "translation/**"
+      - .github/workflows/tex.yml
+  workflow_dispatch:
+
+concurrency:
+  group: tex-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  sga1-vi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: SGA1-Expose-VI-fibered-categories-EN.tex
+          working_directory: translation/SGA1/ExposeVI
+          latexmk_use_lualatex: false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SGA1-Expose-VI-EN
+          path: translation/SGA1/ExposeVI/SGA1-Expose-VI-fibered-categories-EN.pdf

@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: "SGA, English + Lean"
+message: "If you use this translation or the Lean development, please cite it."
+type: software
+authors:
+  - name: "SGAenglishpluslean contributors"
+    website: "https://github.com/Dharmavati213/SGAenglishpluslean"
+repository-code: "https://github.com/Dharmavati213/SGAenglishpluslean"
+url: "https://github.com/Dharmavati213/SGAenglishpluslean"
+abstract: >
+  Unofficial English translations of Grothendieck's Séminaire de
+  Géométrie Algébrique du Bois Marie (SGA), together with a Lean 4
+  formalization on mathlib. The first text is SGA 1, Exposé VI
+  (fibered categories and descent).
+keywords:
+  - SGA
+  - Grothendieck
+  - algebraic geometry
+  - fibered categories
+  - descent
+  - Lean 4
+  - mathlib
+license: Apache-2.0
+license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+references:
+  - type: article
+    title: "Revêtements étales et groupe fondamental (SGA 1)"
+    authors:
+      - family-names: Grothendieck
+        given-names: Alexander
+      - family-names: Raynaud
+        given-names: Michel
+    year: 2004
+    identifiers:
+      - type: other
+        value: "arXiv:math/0206203"
+        description: SMF recomposition

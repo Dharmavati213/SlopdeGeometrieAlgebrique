@@ -1,0 +1,24 @@
+name: Translation
+description: Claim or discuss an English translation of an exposé
+title: "[translation] SGA "
+labels: [translation]
+body:
+  - type: dropdown
+    id: series
+    attributes:
+      label: Series
+      options: [SGA 1, SGA 2, SGA 3, SGA 4, SGA 4½, SGA 5, SGA 6, SGA 7]
+    validations:
+      required: true
+  - type: input
+    id: expose
+    attributes:
+      label: Exposé
+      placeholder: "VI"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      placeholder: Source edition, pages, overlap with an existing file…

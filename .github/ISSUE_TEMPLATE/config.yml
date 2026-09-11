@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Mathlib Zulip
+    url: https://leanprover.zulipchat.com/
+    about: Lean / mathlib questions that are not specific to this repo

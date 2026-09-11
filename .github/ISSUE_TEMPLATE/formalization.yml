@@ -1,0 +1,23 @@
+name: Formalization
+description: A Lean lemma or definition from an exposé
+title: "[lean] "
+labels: [formalization, lean]
+body:
+  - type: input
+    id: ref
+    attributes:
+      label: SGA reference
+      placeholder: "SGA 1 VI.6.1"
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Statement (informal)
+    validations:
+      required: true
+  - type: textarea
+    id: mathlib
+    attributes:
+      label: Nearby mathlib names
+      placeholder: Functor.IsFibered, …

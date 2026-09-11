@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+*.lean linguist-language=Lean
+*.tex linguist-language=TeX
+*.sty linguist-language=TeX
+*.md linguist-documentation
+
+*.pdf binary
+*.png binary
+*.jpg binary

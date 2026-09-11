@@ -1,0 +1,23 @@
+name: Bug
+description: Build, TeX, or mathematical typo
+title: "[bug] "
+labels: [bug]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [Lean build, TeX build, translation typo, docs / CI]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      placeholder: lake build / make / file:line

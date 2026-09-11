@@ -1,0 +1,45 @@
+# Lake / Lean
+/.lake
+*.olean
+*.ilean
+*.trace
+*.c
+*.o
+*.hash
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.xdv
+*.dvi
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+_minted*/
+
+# Editors / OS
+*~
+*.swp
+*.swo
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.history/
+*.code-workspace
+
+# Local secrets
+.env
+.env.*

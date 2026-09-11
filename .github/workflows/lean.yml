@@ -1,0 +1,39 @@
+name: Lean
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.lean"
+      - lean-toolchain
+      - lakefile.toml
+      - lake-manifest.json
+      - .github/workflows/lean.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - "**/*.lean"
+      - lean-toolchain
+      - lakefile.toml
+      - lake-manifest.json
+      - .github/workflows/lean.yml
+  workflow_dispatch:
+
+concurrency:
+  group: lean-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: leanprover/lean-action@v1
+        with:
+          auto-config: false
+          build: true
+          use-mathlib-cache: true
+          build-args: SGA
