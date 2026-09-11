@@ -1,31 +1,28 @@
 # Status
 
-Track what is in the tree. Update this file when an exposé is added.
+Boxes to tick: [`CHECKLIST.md`](CHECKLIST.md). This page is the short table.
 
 ## SGA 1 — *Revêtements étales et groupe fondamental*
 
 | Exposé | Title | Translation | Lean |
 | --- | --- | --- | --- |
 | I | Étale morphisms | — | — |
-| II | Smooth morphisms: generalities | — | — |
-| III | Smooth morphisms: lifting | — | — |
-| IV | Unramified morphisms, étale morphisms | — | — |
-| V | The fundamental group | — | — |
-| **VI** | **Fibered categories and descent** | **done** | **scaffold** |
-| VII | *(does not exist in SGA 1)* | | |
-| VIII | Vanishing cycles | — | — |
-| IX | Descent of étale morphisms | — | — |
+| II | Smooth morphisms: generalities, differential properties | — | — |
+| III | Smooth morphisms: extension properties | — | — |
+| IV | Flat morphisms | — | — |
+| V | The fundamental group: generalities | — | — |
+| **VI** | **Fibered categories and descent** | **draft in tree** | **scaffold** |
+| VII | *(does not exist)* | | |
+| VIII | Faithfully flat descent | — | — |
+| IX | Descent of étale morphisms; application to the fundamental group | — | — |
 | X | Specialization of the fundamental group | — | — |
 | XI | Examples and complements | — | — |
-| XII | Geometric fundamental group | — | — |
-| XIII | Projective space, fundamental group of the line | — | — |
+| XII | Algebraic geometry and analytic geometry | — | — |
+| XIII | Cohomological properness (sets and non-commutative groups) | — | — |
 
-SGA 1 VI translation lives in `translation/SGA1/ExposeVI/`.
-
-Lean for VI is `SGA/SGA1/ExposeVI.lean`: it imports mathlib’s fibered-category
-and descent APIs so a later formalization can start from Grothendieck’s
-numbering. It does **not** claim a complete formalization of the exposé.
+SGA 1 VI translation: `translation/SGA1/ExposeVI/`.
+Lean scaffold: `SGA/SGA1/ExposeVI.lean`.
 
 ## Later SGA
 
-SGA 2–7 are out of scope until SGA 1 has more than one exposé.
+SGA 2–7 wait until more of SGA 1 is translated. See the checklist.

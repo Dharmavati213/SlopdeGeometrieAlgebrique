@@ -15,7 +15,8 @@ is translated; the Lean side is a compiling scaffold you can fill in.
 | SGA 1, Exposé VI — Lean | scaffold only (mathlib already has the language) |
 | Other exposés of SGA 1–7 | not started |
 
-Details: [`STATUS.md`](STATUS.md). How to add an exposé or a lemma:
+Checklist (tick as you go): [`CHECKLIST.md`](CHECKLIST.md).
+Short table: [`STATUS.md`](STATUS.md). How to add an exposé or a lemma:
 [`CONTRIBUTING.md`](CONTRIBUTING.md). License and sources:
 [`COPYRIGHT.md`](COPYRIGHT.md).
 

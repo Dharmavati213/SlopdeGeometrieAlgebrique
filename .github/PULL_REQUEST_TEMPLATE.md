@@ -10,6 +10,6 @@
 
 ## Checks
 
-- [ ] `STATUS.md` updated if an exposé changed state
+- [ ] `CHECKLIST.md` (and `STATUS.md`) updated if an exposé or lemma changed state
 - [ ] `lake build` if Lean files changed
 - [ ] `make` in the exposé directory if TeX changed

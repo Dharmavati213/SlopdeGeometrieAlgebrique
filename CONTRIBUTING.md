@@ -9,7 +9,8 @@ They share numbering and terminology, not files.
 2. Put a new exposé at `translation/SGA<n>/Expose<Roman>/`.
 3. Keep Grothendieck’s numbering (`VI.6.1`, not a modern rewrite).
 4. Do not add the French source PDF/TeX to the repo.
-5. Rebuild the PDF (`make` in that directory) and update [`STATUS.md`](STATUS.md).
+5. Rebuild the PDF (`make` in that directory) and tick the exposé in
+   [`CHECKLIST.md`](CHECKLIST.md) (and the row in [`STATUS.md`](STATUS.md)).
 
 Open an issue with the `translation` label before starting a long exposé,
 so two people do not take the same one.
@@ -24,6 +25,7 @@ so two people do not take the same one.
    the SGA number in the module docstring.
 5. No `sorry` in `lake build` on the default branch unless the lemma is
    explicitly marked as a statement-only stub in the docstring.
+6. Tick the matching box in [`CHECKLIST.md`](CHECKLIST.md).
 
 Mathlib already covers much of SGA 1 VI. Do not copy those files; import
 them and add only what the exposé still needs.
