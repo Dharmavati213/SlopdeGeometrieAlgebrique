@@ -24,7 +24,7 @@ jobs:
   sga1-vi:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: xu-cheng/latex-action@v3
         with:
           root_file: SGA1-Expose-VI-fibered-categories-EN.tex
