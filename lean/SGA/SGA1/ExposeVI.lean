@@ -8,13 +8,29 @@ import Mathlib.CategoryTheory.FiberedCategory.Cocartesian
 import Mathlib.CategoryTheory.FiberedCategory.Fibered
 import Mathlib.CategoryTheory.FiberedCategory.Grothendieck
 import Mathlib.CategoryTheory.Sites.Descent.IsStack
+import SGA.SGA1.ExposeVI.Equivalences
+import SGA.SGA1.ExposeVI.OverCategories
+import SGA.SGA1.ExposeVI.BaseChange
+import SGA.SGA1.ExposeVI.Fibers
+import SGA.SGA1.ExposeVI.BasedEquivalences
+import SGA.SGA1.ExposeVI.Cartesian
+import SGA.SGA1.ExposeVI.CartesianFunctors
+import SGA.SGA1.ExposeVI.Fibered
+import SGA.SGA1.ExposeVI.FiberedProducts
+import SGA.SGA1.ExposeVI.Cleavage
+import SGA.SGA1.ExposeVI.Split
+import SGA.SGA1.ExposeVI.Cofibered
+import SGA.SGA1.ExposeVI.ClovenFunctors
+import SGA.SGA1.ExposeVI.Groupoids
+import SGA.SGA1.ExposeVI.BaseExamples
+import SGA.SGA1.ExposeVI.Examples
 
 /-!
-# SGA 1, Exposé VI — Lean scaffold
+# SGA 1, Exposé VI — Fibered categories and descent
 
 English translation: `translation/SGA1/ExposeVI/` (repo root).
-Formalization of this exposé is **not** done here; this file is a
-starting point. Mathlib already has the language of the exposé:
+This module is the barrel for the Lean formalization of the exposé.
+Mathlib already supplies the language:
 
 * cartesian / strongly cartesian morphisms (`IsCartesian`, `IsStronglyCartesian`)
 * prefibered / fibered categories (`IsPreFibered`, `IsFibered`)
@@ -23,6 +39,6 @@ starting point. Mathlib already has the language of the exposé:
 * cocartesian morphisms (`IsCocartesian`)
 * descent data, prestacks, stacks (`DescentData`, `IsPrestack`, `IsStack`)
 
-Add lemmas in this folder following Grothendieck's numbering
-(`VI.5.1`, `VI.6.1`, …). See `docs/formalization.md`.
+Numbering follows Grothendieck (`VI.5.1`, `VI.6.1`, …). See
+`docs/formalization.md`.
 -/

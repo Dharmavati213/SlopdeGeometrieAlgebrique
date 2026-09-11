@@ -35,7 +35,7 @@ Exposé VII does not exist.
 | III | Smooth morphisms: extension properties | — | — |
 | IV | Flat morphisms | — | — |
 | V | The fundamental group: generalities | — | — |
-| **VI** | **Fibered categories and descent** | **draft in tree** | **scaffold** |
+| **VI** | **Fibered categories and descent** | **draft in tree** | **compiling** |
 | VII | *(does not exist)* | | |
 | VIII | Faithfully flat descent | — | — |
 | IX | Descent of étale morphisms; application to the fundamental group | — | — |
@@ -71,25 +71,29 @@ Scaffold:
 
 - [x] Lake project + mathlib pin (`lean/lean-toolchain`, `lean/lakefile.toml`)
 - [x] Root module `SGA.SGA1.ExposeVI` imports mathlib fibered categories / descent
-- [ ] `lake build` on `main` stays green as files are added
+- [x] `lake build` stays green as files are added
 
 By section (English: `translation/SGA1/ExposeVI/`, Lean: `lean/SGA/SGA1/`):
 
-- [ ] **VI.0** Introduction (no mathematics to formalize)
-- [ ] **VI.1** Universes, categories, equivalence of categories
-- [ ] **VI.2** Categories over another
-- [ ] **VI.3** Change of base in categories over *E*
-- [ ] **VI.4** Fiber-categories; equivalence of categories over *E*
-- [ ] **VI.5** Cartesian morphisms, inverse images, cartesian functors
-- [ ] **VI.6** Fibered and prefibered categories
-  - [ ] VI.6.1 Fib I / Fib II (`IsPreFibered`, `IsFibered` — already in mathlib; record the numbering)
-  - [ ] Fibered in groupoids (remark after VI.6.1)
-- [ ] **VI.7** Cloven categories over *E*
-- [ ] **VI.8** Cloven category defined by a pseudofunctor
-- [ ] **VI.9** Example: cloven category defined by a functor
-- [ ] **VI.10** Cofibered categories, bifibered categories
-- [ ] **VI.11** Various examples
-- [ ] **VI.12** Functors on a cloven category
+- [x] **VI.0** Introduction (no mathematics to formalize)
+- [x] **VI.1** Universes, categories, equivalence of categories (`Equivalences.lean`)
+- [x] **VI.2** Categories over another (`OverCategories.lean`)
+- [x] **VI.3** Change of base in categories over *E* (`BaseChange.lean`)
+- [x] **VI.4** Fiber-categories; equivalence of categories over *E* (`Fibers.lean`, `BasedEquivalences.lean`)
+- [x] **VI.5** Cartesian morphisms, inverse images, cartesian functors (`Cartesian.lean`, `CartesianFunctors.lean`)
+- [x] **VI.6** Fibered and prefibered categories
+  - [x] VI.6.1 Fib I / Fib II (`IsPreFibered`, `IsFibered` — mathlib; numbering in `Fibered.lean`)
+  - [x] Fibered in groupoids (remark after VI.6.1, with prefiberedness; `Groupoids.lean`)
+  - [x] VI.6.2 based equivalence preserves (pre)fiberedness (`FiberedProducts.lean`)
+  - [x] VI.6.11–13 (`Fibered.lean`)
+- [x] **VI.7** Cloven categories over *E* (`Cleavage.lean`: cleavage, comparison `c_{f,g}`)
+- [x] **VI.8** Cloven category defined by a pseudofunctor (`Split.lean`, mathlib `∫ᶜ`)
+- [x] **VI.9** Example: cloven category defined by a functor (`SplitFibered`)
+- [x] **VI.10** Cofibered categories, bifibered categories (`Cofibered.lean`)
+- [x] **VI.11** Various examples (discrete base in `BaseExamples.lean`; finite checks in `Examples.lean`)
+- [x] **VI.12** Functors on a cloven category (`ClovenFunctors.lean`: fiber functors and constraints)
+
+Gaps still open inside those files are listed in [`formalization.md`](formalization.md).
 
 Other exposés of SGA 1: start only after the corresponding English text
 is ticked above.
