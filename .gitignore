@@ -1,5 +1,5 @@
 # Lake / Lean
-/.lake
+**/.lake
 *.olean
 *.ilean
 *.trace

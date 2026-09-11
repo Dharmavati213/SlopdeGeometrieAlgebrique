@@ -1,7 +1,7 @@
 # Formalization notes
 
-The Lean library is a **scaffold**. Fill it exposé by exposé; do not
-expect a complete formalization of SGA 1 VI in the first commit.
+The Lean library in `lean/` is a **scaffold**. Fill it exposé by exposé;
+do not expect a complete formalization of SGA 1 VI in the first commit.
 
 ## What mathlib already has
 
@@ -18,9 +18,9 @@ These are the names to import, not to redo.
 | VI.10 cocartesian | `Functor.IsCocartesian` |
 | descent data, (pre)stack | `Pseudofunctor.DescentData`, `IsPrestack`, `IsStack` |
 
-Entry point: `SGA/SGA1/ExposeVI.lean`.
+Entry point: `lean/SGA/SGA1/ExposeVI.lean`.
 
-## Suggested next lemmas (when someone sits down to formalize)
+## Suggested next lemmas
 
 Not done. Natural first targets, matching the exposé:
 
@@ -28,5 +28,5 @@ Not done. Natural first targets, matching the exposé:
 2. Cofibered / bifibered packages around `IsCocartesian` (VI.10).
 3. Cartesian functors and the dictionary with cleavages (VI.12).
 
-Put new files next to `ExposeVI.lean` (`SGA/SGA1/ExposeVI/…`) and import
-them from the barrel module.
+Put new files next to `ExposeVI.lean` (`lean/SGA/SGA1/ExposeVI/…`) and
+import them from the barrel module.

@@ -12,7 +12,7 @@ import Mathlib.CategoryTheory.Sites.Descent.IsStack
 /-!
 # SGA 1, Exposé VI — Lean scaffold
 
-English translation: `translation/SGA1/ExposeVI/`.
+English translation: `translation/SGA1/ExposeVI/` (repo root).
 Formalization of this exposé is **not** done here; this file is a
 starting point. Mathlib already has the language of the exposé:
 
@@ -24,5 +24,5 @@ starting point. Mathlib already has the language of the exposé:
 * descent data, prestacks, stacks (`DescentData`, `IsPrestack`, `IsStack`)
 
 Add lemmas in this folder following Grothendieck's numbering
-(`VI.5.1`, `VI.6.1`, …). See `docs/FORMALIZATION.md`.
+(`VI.5.1`, `VI.6.1`, …). See `docs/formalization.md`.
 -/

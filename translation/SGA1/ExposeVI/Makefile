@@ -1,4 +1,4 @@
-TEX := SGA1-Expose-VI-fibered-categories-EN.tex
+TEX := SGA1-VI.tex
 
 .PHONY: all pdf clean
 

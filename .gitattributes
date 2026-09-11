@@ -5,6 +5,6 @@
 *.sty linguist-language=TeX
 *.md linguist-documentation
 
-*.pdf binary
+*.pdf binary linguist-vendored
 *.png binary
 *.jpg binary

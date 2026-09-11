@@ -4,18 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - "**/*.lean"
-      - lean-toolchain
-      - lakefile.toml
-      - lake-manifest.json
+      - "lean/**"
       - .github/workflows/lean.yml
   pull_request:
     branches: [main]
     paths:
-      - "**/*.lean"
-      - lean-toolchain
-      - lakefile.toml
-      - lake-manifest.json
+      - "lean/**"
       - .github/workflows/lean.yml
   workflow_dispatch:
 
@@ -36,4 +30,5 @@ jobs:
           auto-config: false
           build: true
           use-mathlib-cache: true
+          lake-package-directory: lean
           build-args: SGA

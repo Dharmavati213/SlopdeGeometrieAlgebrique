@@ -2,61 +2,48 @@
 
 Unofficial English translations of Grothendieck’s *Séminaire de Géométrie
 Algébrique du Bois Marie* (SGA), together with a Lean 4 formalization
-built on [mathlib](https://github.com/leanprover-community/mathlib4).
+on [mathlib](https://github.com/leanprover-community/mathlib4).
 
-This repository is a **working tree**, not a finished edition. One exposé
-is translated; the Lean side is a compiling scaffold you can fill in.
-
-## Status
-
-| Work | State |
-| --- | --- |
-| SGA 1, Exposé VI — *Fibered categories and descent* (English) | translated |
-| SGA 1, Exposé VI — Lean | scaffold only (mathlib already has the language) |
-| Other exposés of SGA 1–7 | not started |
-
-Checklist (tick as you go): [`CHECKLIST.md`](CHECKLIST.md).
-Short table: [`STATUS.md`](STATUS.md). How to add an exposé or a lemma:
-[`CONTRIBUTING.md`](CONTRIBUTING.md). License and sources:
-[`COPYRIGHT.md`](COPYRIGHT.md).
+This is a working tree, not a finished edition. One exposé is translated;
+the Lean side is a compiling scaffold.
 
 ## Layout
 
 ```
-translation/SGA1/ExposeVI/   English TeX + PDF of SGA 1 VI
-translation/CONVENTIONS.md   terminology and numbering rules
-SGA/                         Lean 4 library (Lake + mathlib)
-docs/                        roadmap and formalization notes
+translation/     English TeX + PDF
+lean/            Lean 4 library (Lake + mathlib)
+docs/            status and formalization notes
 ```
 
-## Translation
+| Work | State |
+| --- | --- |
+| SGA 1, Exposé VI — English | translated |
+| SGA 1, Exposé VI — Lean | scaffold (mathlib already has the language) |
+| Other exposés of SGA 1–7 | not started |
 
-The current text is SGA 1, Exposé VI, from the SMF recomposition
-[arXiv:math/0206203](https://arxiv.org/abs/math/0206203). Statement
-numbering is Grothendieck’s.
+Tick-list: [`docs/status.md`](docs/status.md).
+How to add an exposé or a lemma: [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md).
+Sources and licenses: [`COPYRIGHT.md`](COPYRIGHT.md).
 
-- TeX: [`translation/SGA1/ExposeVI/SGA1-Expose-VI-fibered-categories-EN.tex`](translation/SGA1/ExposeVI/SGA1-Expose-VI-fibered-categories-EN.tex)
-- PDF: [`translation/SGA1/ExposeVI/SGA1-Expose-VI-fibered-categories-EN.pdf`](translation/SGA1/ExposeVI/SGA1-Expose-VI-fibered-categories-EN.pdf)
+## Build
+
+Needs [elan](https://github.com/leanprover/elan) and a TeX Live with `latexmk`.
 
 ```bash
-cd translation/SGA1/ExposeVI
-make
+make            # Lean + PDF
+make lean       # lake build in lean/
+make tex        # PDF of SGA 1 VI
 ```
 
-The French original is **not** in this repo. See [`COPYRIGHT.md`](COPYRIGHT.md).
-
-## Lean
-
-Requires [elan](https://github.com/leanprover/elan). The toolchain is
-pinned in `lean-toolchain` (same Lean as mathlib `v4.34.0-rc2`).
+First Lean build, from `lean/`:
 
 ```bash
-lake update
+cd lean
 lake exe cache get    # download mathlib oleans; do this first
 lake build
 ```
 
-Open the folder in VS Code (Lean 4 extension) or Neovim (`lean.nvim`).
+Open `lean/` in VS Code (Lean 4 extension) or Neovim (`lean.nvim`).
 The root module is `SGA.SGA1.ExposeVI`.
 
 ## License
@@ -64,4 +51,5 @@ The root module is `SGA.SGA1.ExposeVI`.
 - Lean code, docs, and repo tooling: [Apache-2.0](LICENSE)
 - English translation: [CC BY-SA 4.0](translation/LICENSE)
 
-This is not an official edition of SGA.
+This is not an official edition of SGA. The French original is not in
+this repository.
