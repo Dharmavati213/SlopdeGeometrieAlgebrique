@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: xu-cheng/latex-action@v3
+      - uses: xu-cheng/latex-action@v4
         with:
           root_file: SGA1-Expose-VI-fibered-categories-EN.tex
           working_directory: translation/SGA1/ExposeVI
