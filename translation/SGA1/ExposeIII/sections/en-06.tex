@@ -1,0 +1,145 @@
+\section{Global infinitesimal extension of smooth $S$-schemes}
+\label{III.6}
+
+Under the conditions of Theorem~\ref{III.4.1}, we propose to seek whether there exists a prescheme~$X$ smooth over~$Y$ such that
+$X\times_YY_0$ is $Y_0$-isomorphic to~$X_0$, knowing that such a scheme ``exists locally on~$X_0$.'' Taking up again the method
+of construction step by step, one is led to replace~$Y$ by the letter~$S$, to suppose that one is given a closed
+sub-prescheme~$S_0$ of~$S$ defined by a sheaf of ideals~$\cal{I}$ (which it is no longer necessary to suppose locally
+nilpotent), to introduce the closed sub-preschemes~$S_n$ of~$S$ defined by~$\cal{I}^{n+1}$, and to suppose that one is given
+a sub-prescheme~$X_n$ smooth over~$S_n$. One proposes to find an $S_{n+1}$-prescheme~$X_{n+1}$ ``reducing to~$X_n$,'' i.e. equipped with an isomorphism
+\begin{equation*}
+X_{n+1}\times_{S_{n+1}}S_n\isomfrom X_n
+\end{equation*}
+which is \emph{smooth} over~$S_{n+1}$ (or, what amounts to the same thing by II~\SourceRef{II.2.1}{2.1}, \emph{flat} over~$S_{n+1}$). As we noted in~\ref{III.4}, such data amounts to giving a sheaf of algebras~$\cal{B}$ on $f^{-1}(\cal{O}_{S_{n+1}})$ (where $f$ is the underlying continuous map of the structural morphism $X_n\to S_n$), equipped with an augmentation $\cal{B}\to\cal{O}_{X_n}$ compatible with the augmentation $f^{-1}(\cal{O}_{S_{n+1}})\to f^{-1}(\cal{O}_{S_n})$, and satisfying two conditions (a) and (b) that we shall not rewrite, merely noting that they are of a \emph{local nature} on the topological space underlying~$X_n$. By~\ref{III.4.1} one knows that a solution exists locally. It is moreover unique up to (nonunique) isomorphism, at least locally. Let us begin by making this point precise:
+
+\begin{proposition}
+\label{III.6.1}
+Let
+$X_{n+1}$ over~$S_{n+1}$ reduce to~$X_n$ over~$S_n$. Then the sheaf (on the topological space underlying~$X_n$, or equivalently~$X_0$) of the $S_{n+1}$-automorphisms of~$X_{n+1}$ which induce the identity on~$X_n$ is canonically isomorphic to
+\begin{equation*}
+\cal{G}=\goth{g}_{X_0/S_0}\otimes_{\cal{O}_{S_0}}
+gr_{\cal{I}}^{n+1}(\cal{O}_S)
+\end{equation*}
+(as a sheaf of groups).
+\end{proposition}
+
+Indeed, by~\ref{III.5.4} and~\ref{III.4.2} this sheaf is a principal homogeneous sheaf under~$\cal{G}$. Since it is equipped with a distinguished section (the identity automorphism of~$X_{n+1}$), it is therefore identified, as a sheaf of sets, with~$\cal{G}$. One must verify that this identification is compatible with the group structures. This is easy, and is moreover a special case of a more general result on the compatibility of the principal-bundle structures in~\ref{III.5.1} and~\ref{III.5.3} with composition of morphisms (a result that we do not state here, but which ought to appear in the hyperplodocus).
+
+In particular, the sheaf on~$X_0$ of germs of automorphisms of~$X_{n+1}$ (with the structures just made explicit) is \emph{commutative}. It follows that if~$X_{n+1}'$ is another solution of the problem, isomorphic to~$X_{n+1}$ over the open~$U$ of~$X_0$, then the isomorphism from~$\SheafAut(X_{n+1})|U$ to~$\SheafAut(X_{n+1}')|U$ deduced by transport of structure from an isomorphism $X_{n+1}|U\isomto X_{n+1}'|U$ \emph{does not depend} on the choice of the latter. (It is in fact nothing other than the identity isomorphism of~$\cal{G}$, when the two automorphism sheaves are identified with~$\cal{G}$ by~\ref{III.6.1}.)
+
+From~\ref{III.6.1} one deduces:
+
+\begin{corollary}
+\label{III.6.2}
+Let~$X_{n+1}$ and~$X_{n+1}'$ be smooth over~$S_{n+1}$ and ``reducing to~$X_n$.'' Then the sheaf (on the space underlying~$X_0$) of $S_{n+1}$-isomorphisms from~$X_{n+1}$ to~$X_{n+1}'$ inducing the identity on~$X_n$ is naturally a principal homogeneous sheaf under~$\cal{G}$.
+\end{corollary}
+
+This indeed expresses that~$X_{n+1}$ and~$X_{n+1}'$ are locally isomorphic, and that the sheaf of germs of automorphisms of the first is~$\cal{G}$.
+
+Now note that by~\ref{III.4.1} one can always find a covering~$(U_i)$ of~$X_n$ by open sets (which may be supposed affine), and for every~$i$ a smooth scheme~$X^i$ over~$S_{n+1}$ reducing to~$U_i$. Suppose for simplicity that~$X_n$ is \emph{separated}, so that the~$U_{ij}=U_i\cap U_j$ are still \emph{affine} open subsets of~$X_n$. Since the~$\H^1$ of such an open set, with values in the quasi-coherent sheaf~$\cal{G}$, is zero, it follows by \emph{the} corollary~\ref{III.6.2} that~$X^i|U_{ij}$ is isomorphic to~$X^j|U_{ij}$; let
+$$
+f_{ji}:X^i|U_{ij}\isomto X^j|U_{ij}
+$$
+be such an isomorphism. It is determined up to a section of~$\cal{G}$ on~$U_{ij}$. Put, for every triplet of indices,
+$$
+f_{ji}^{(k)}=f_{ji}|U_{ijk}\quad\text{where }U_{ijk}=U_i\cap U_j\cap U_k.
+$$
+If one had
+\begin{equation*}
+\label{eq:III.6.1}
+\tag{1} {f_{kj}^{(i)}f_{ji}^{(k)}=f_{ki}^{(j)},}
+\end{equation*}
+it would follow that the~$X^i$ glue by the~$f_{ji}$, and hence define a solution~$X=X_{n+1}$ of the problem sought. Such a solution exists more generally if one can modify the~$f_{ji}$ into~$f_{ji}'$:
+\begin{equation*}
+\label{eq:III.6.2}
+\tag{2} {f_{ji}'=f_{ji}g_{ji}\quad (g_{ji}\in\Gamma(U_{ij},\cal{G}))}
+\end{equation*}
+so that the~$f_{ji}'$ satisfy the transitivity condition above. This sufficient condition for the existence of a solution is also necessary, as one sees by recalling that such a solution~$X$ must, on each~$U_i$, be isomorphic to~$X^i$, which therefore allows one to choose isomorphisms
+$$
+f_i:X|U_i\isomto X^i
+$$
+and to define
+$$
+f_{ji}'=(f_j|U_{ij})(f_i|U_{ij})^{-1}:X^i|U_{ij}\isomto X^j|U_{ij}
+$$
+satisfying the gluing condition.
+
+Now put
+\begin{equation*}
+\label{eq:III.6.3}
+\tag{3}
+{f_{ijk}=(f_{ki}^{(j)})^{-1}f_{kj}^{(i)}f_{ji}^{(k)},}
+\end{equation*}
+it is an automorphism of~$X^i|U_{ijk}$, which we identify with a section of~$\cal{G}$ by~\ref{III.6.1}. One observes that it is a $2$-\emph{cocycle} $f$ of the open covering~$\cal{U}=(U_i)$, with coefficients in~$\cal{G}$, by a small formal calculation left to the reader. The same calculation shows that, subject to~\eqref{eq:III.6.2}, the gluing condition~\eqref{eq:III.6.1} \emph{for the} $f_{ij}'$ is equivalent to the formula
+\begin{equation*}
+\label{eq:III.6.4}
+\tag{4} {f=dg,}
+\end{equation*}
+where~$g=(g_{ij})$ is regarded as a $1$-cochain of~$\cal{U}$ with coefficients in~$\cal{G}$. Thus \emph{the necessary and sufficient condition for the existence of a solution of the problem is that the cohomology class in $\H^2(\cal{U},\cal{G})$ defined by the cocycle~\eqref{eq:III.6.3}} be zero. Note moreover that since~$\cal{U}=(U_i)$ is an affine covering of~$X_0$, which is a \emph{scheme}, $\H^2(\cal{U},\cal{G})$ identifies with $\H^2(X_0,\cal{G})$. It is immediate that the cohomology class thus obtained in~$\H^2(X_0,\cal{G})$ does not depend on the affine covering considered. We shall call it the \emph{obstruction class to extending~$X_n$ to a scheme~$X_{n+1}$ smooth over~$S_{n+1}$}.
+
+Suppose this obstruction is zero. Then the argument sketched above shows that every solution~$X=X_{n+1}$ is isomorphic to a solution obtained by gluing from isomorphisms~$f_{ji}'$, which may be supposed to have the form~\eqref{eq:III.6.2}, the gluing condition being none other than~\eqref{eq:III.6.3}. The set of admissible~$g$ is therefore a principal homogeneous space under the group $\mathrm{Z}^1(\cal{U},\cal{G})$ of $1$-cocycles of~$\cal{U}$ with coefficients in~$\cal{G}$. Moreover, one sees at once that \emph{two cochains~$g$ and~$g'$} (such that $dg=dg'=f$) \emph{define isomorphic solutions if and only if the cocycle~$g-g'$ is of the form~$dh$}, where~$h=(h_i)\in\mathrm{C}^0(\cal{U},\cal{G})$. Thus one obtains:
+
+\begin{theorem}
+\label{III.6.3}
+Let $(S,\cal{I},X_n)$ be as above, with~$X_n$ assumed separated\footnote{This condition is in fact unnecessary, and one can avoid the cocycle calculations above. \Cf the book by J. \textsc{Giraud}, \emph{Cohomologie Non Abélienne} (forthcoming from Springer Verlag, 1971). Compare Remarks~\ref{III.6.4}.}. Then one can define canonically an obstruction class in
+$\H^2(X_0,\cal{G})$ (where~$\cal{G}$ is defined in~\ref{III.6.1}), whose vanishing is necessary and sufficient for the existence of a scheme~$X_{n+1}$ smooth over~$S_{n+1}$ reducing to~$X_n$. If this obstruction is zero, then the set of isomorphism classes, up to isomorphism (inducing the identity on~$X_n$), of $S_{n+1}$-preschemes~$X_{n+1}$ reducing to~$X_n$ is naturally a principal homogeneous space under~$\H^1(X_0,\cal{G})$.
+\end{theorem}
+
+\begin{remarks}
+\label{III.6.4}
+Starting from~\ref{III.6.1}, the arguments made here are purely formal, and are advantageously transcribed in the setting of local categories, or even of general fibered categories. The obstruction class to the existence of a ``global'' object of a category (in which one can find an object ``locally,'' and in which two objects are always ``locally isomorphic,'' the automorphism group of every object being commutative) obtained in this general context contains as a special case the ``second boundary homomorphism'' in an exact sequence of sheaves of not necessarily commutative groups, studied for example by Grothendieck in Kansas or T\^ohoku. The silly cocycle calculation made here should therefore be regarded as a makeshift, due to the absence of a satisfactory reference text.
+\end{remarks}
+
+\subsection{}
+\label{III.6.5}
+It should be noted that in~\ref{III.6.3} there is in general no distinguished element in the principal homogeneous space under~$\H^1(X_0,\cal{G})$ under consideration. This is reflected in particular by the fact that, after localizing on~$S$, one obtains a principal homogeneous sheaf on~$S_0$, with structural group~$\R^1f_*(\cal{G})$, which is not necessarily trivial, i.e. which defines a cohomology class in~$\H^1(S_0,\R^1f_*(\cal{G}))$ which is not necessarily zero. (This is when one supposes that the class~$d\in\H^2(X_0,\cal{G})$ is not zero, but is zero ``locally over~$S$,'' i.e. defines a zero section of~$\R^2f_*(\cal{G})$, i.e. a zero element in~$\H^0(S_0,\R^2f_*(\cal{G}))$.)
+
+\subsection{}
+\label{III.6.6}
+For the moment one knows almost nothing about the general algebraic mechanism of the cohomology classes introduced in this number and their relations with the preceding number, and one knows nothing precise to say about them in the simplest particular cases, such as the case of abelian schemes over artinian rings\footnote{\label{III.6.6.p24}%
+It is now known that this obstruction is always zero in this case [added in 2003 (MR): \cf F\ptbl Oort, \emph{Finite group schemes, local moduli for abelian varieties and lifting problems}, \emph{Algebraic Geometry Oslo 1970}, Wolters-Noordhoff, 1972, pp.\ptbl 223--254].}. One hopes that there will be people to work the question out thoroughly; it seems particularly interesting. It is intimately linked, in particular, to the ``module theory'' of algebraic structures.
+
+\begin{corollary}
+\label{III.6.7}
+Suppose that $\H^2(X_0,\cal{G})=0$. Then an~$X_{n+1}$ exists, and it is unique up to isomorphism if moreover $\H^1(X_0,\cal{G})=0$.
+\end{corollary}
+
+In particular, one concludes, proceeding step by step (and observing that an affine scheme is acyclic for a quasi-coherent sheaf):
+
+\begin{corollary}
+\label{III.6.8}
+Under the conditions of Theorem~\ref{III.4.1}, if~$X_0$ is affine, then there exists an~$X$ smooth over~$Y$ reducing to~$X_0$, and this~$X$ is unique up to (nonunique) isomorphism.
+\end{corollary}
+
+It should be noted that the direct proof of Theorem~\ref{III.4.1} could not have given this result.
+
+\begin{corollary}
+\label{III.6.9}
+Under the conditions of~\ref{III.6.3}, suppose~$S$ affine with ring~$A$, $\cal{I}$ defined by an ideal~$I$ of~$A$, and finally that the $\gr^n_{\cal{I}}(\cal{O}_S)=\cal{I}^n/\cal{I}^{n+1}$ are locally free. Then $\H^i(X_0,\cal{G})$ identifies with
+$$
+\H^i(X_0,\cal{G}_0)\otimes_A\gr^{n+1}_I(A),
+$$
+where
+$$
+\cal{G}_0=\goth{g}_{X_0/S_0},
+$$
+so the obstruction class to extending~$X_n$ lies in $\H^2(X_0,\cal{G}_0)\otimes_A\gr^{n+1}_I(A)$, and, if it is zero, the set of isomorphism classes (up to isomorphism) of solutions is a principal homogeneous space under
+$\H^1(X_0,\cal{G}_0)\otimes_A\gr^{n+1}_I(A)$.
+\end{corollary}
+
+In particular:
+
+\begin{corollary}
+\label{III.6.10}
+Under the conditions of~\ref{III.6.9}, suppose
+$$
+\H^2(X_0,\goth{g}_{X_0/S_0})=0,
+$$
+then there exists an $\hat{I}$-adic formal scheme~$\goth{X}$ over the $\cal{I}$-adic formal completion~$\hat{S}$ of~$S$, which is ``smooth over~$S$'' (i.e. the~$\goth{X}_p$ are smooth over the~$S_p$) and which reduces to~$X_n$, i.e. is equipped with an isomorphism
+$$
+\goth{X}\times_S S_n\isomfrom X_n.
+$$
+If moreover $\H^1(X_0,\goth{g}_{X_0/S_0})=0$, then such a~$\goth{X}$ is unique up to isomorphism.
+\end{corollary}
+
+Indeed, one constructs $X_{n+1}$, $X_{n+2}$, and so on, step by step, whence~$\goth{X}$ by passing to the inductive limit of the~$X_i$. The assertion of uniqueness already appears in the preceding number.

@@ -1,0 +1,335 @@
+\section{Global infinitesimal extension of morphisms}
+\label{III.5}
+
+Let $T$ be a topological space, let $\cal{G}$ be a sheaf of groups
+on~$X$, and let $\cal{P}$ be a sheaf of sets on~$T$ on which
+$\cal{G}$ acts (on the right, to fix ideas). One says that $\cal{P}$ is
+\emph{formally principal homogeneous} under~$\cal{G}$ if the familiar
+homomorphism
+$$
+\cal{G}\times \cal{P}\to \cal{P}\times \cal{P}
+$$
+of sheaves of sets, deduced from the operations of~$\cal{G}$ on~$\cal{P}$,
+is an {\emph{isomorphism}}. This amounts to saying that for every
+$x\in T$, $\cal{P}_x$ is {\emph{empty or a principal homogeneous space}}
+under the ordinary group~$\cal{G}_x$, or also that for every open set
+$U$ of~$T$, $\cal{P}(U)$ is empty or a principal homogeneous space under
+the ordinary group~$\cal{G}(U)$. One says that $\cal{P}$ is a
+{\emph{principal homogeneous sheaf}} under~$\cal{G}$ if it is formally
+so and if, in addition, the $\cal{P}_x$ are nonempty (in other words, if
+{\emph{all}} the $\cal{P}_x$ are principal homogeneous spaces, hence
+nonempty, under the~$\cal{G}_x$)\footnote{It seems preferable to adopt the shorter and more expressive term
+``{\emph{torsor under}}~$\cal{G}$'', introduced in the thesis of
+J.\ptbl\textsc{Giraud}.}. Recall that the set of classes (up to
+isomorphism) of principal homogeneous sheaves under~$\cal{G}$ identifies
+with the cohomology set $\H^1(T,\cal{G})$, which is also the usual
+cohomology group of~$T$ with coefficients in~$\cal{G}$ when $\cal{G}$ is
+commutative. Thus, for every principal homogeneous~$\cal{P}$, there is
+a characteristic class $c(\cal{P})\in\H^1(T,\cal{G})$, whose triviality
+is necessary and sufficient for $\cal{P}$ to be trivial (\ie isomorphic
+to~$\cal{G}$, on which $\cal{G}$ acts by right translations), or
+ equivalently for $\cal{P}$ to have a section.
+
+\begin{proposition}
+\label{III.5.1}
+Let $S$ be a prescheme, let $X$ and $Y$ be preschemes over~$S$, and let
+$Y_0$ be a closed sub-prescheme of~$Y$ defined by an ideal $\cal{J}$ on~$Y$
+{\emph{of square zero}}. Let $g_0$ be an $S$-morphism from~$Y_0$ to~$X$,
+and let $\cal{P}(g_0)$ be the sheaf on~$Y$ whose sections on an open set
+$U$ are the extensions $g\colon U\to X$ of $g_0|U\cap Y_0$ to an
+$S$-morphism~$g$. Then $\cal{P}(g_0)$ is a sheaf which is naturally
+{\emph{formally principal homogeneous}} under the commutative sheaf of
+groups
+$$
+\cal{G}=\SheafHom_{\cal{O}_{Y_0}}(g_0^*(\Omega^1_{X/S}),\cal{J}).
+$$
+\end{proposition}
+
+Put $\cal{P}=\cal{P}(g_0)$. For every open set $U$ of~$Y$ we must
+define a map
+$$
+\cal{P}(U)\times \cal{G}(U)\to \cal{P}(U)
+$$
+so that (a), for fixed $g\in\cal{P}(U)$, the map $s\mto gs$ from~$\cal{G}(U)$
+to~$\cal{P}(U)$ is bijective, (b) $\cal{P}(U)$ becomes a set with group
+of operators~$\cal{G}(U)$, and (c) the preceding maps are compatible
+with the restriction operators for an open set $V\subset U$. The
+verification of (c) is trivial, so for simplicity one may suppose
+$U=Y$. The verification of (b) (which is, if one wishes, local in
+nature) will be left to the reader; we shall limit ourselves, for a
+fixed $g\in\cal{P}(Y)$, to defining a natural bijection from~$\cal{G}(Y)$
+onto~$\cal{P}(Y)$. Thus suppose that an $S$-morphism
+$g\colon Y\to X$ is already given, and seek a canonical bijection
+\begin{equation*}
+\label{eq:III.5.1.*}
+\tag{$*$}
+\Hom_{\cal{O}_{Y_0}}(g_0^*(\Omega^1_{X/S}),\cal{J})\isomto\cal{P}(Y)
+\end{equation*}
+where $\cal{P}(Y)$ is the set of $S$-morphisms $g'$ from~$Y$ to~$X$
+inducing the same morphism $g_0\colon Y_0\to X$ as~$g$.
+
+The datum of such a $g'$ is equivalent to the datum of an $S$-morphism
+$h\colon Y\to X\times_S X$ such that ${\pr}_1\circ h=g$, and
+$h\circ i=(g_0,g_0)$, where ${\pr}_1\colon X\times_S X\to X$ is the
+first projection, $i\colon Y_0\to Y$ is the canonical immersion, and
+$(g_0,g_0)\colon Y_0\to X\times_S X$ is the morphism
+$\Delta_{X/S}g_0$ with components $g_0,g_0$:
+$$
+\xymatrix@C=2.2cm{ X\times_S X \ar[d]_{{\pr}_1} & Y_0
+\ar[l]_-{h_0=(g_0,g_0)} \ar[d]^i \\ X & Y \ar[l]_-g
+\ar@{-->}[lu]_-h }
+$$
+Since $h_0$ factors through the diagonal immersion $\Delta_{X/S}$ and
+since $Y$ is in the first-order infinitesimal neighborhood of~$Y_0$
+(\ie $\cal{J}^2=0$), the $h$ sought necessarily factor (uniquely)
+through the first-order infinitesimal neighborhood of the diagonal. This
+neighborhood is identified (as an $X$-prescheme by means of ${\pr}_1$)
+with the spectrum $X'$ of the sheaf of algebras
+$\cal{O}_X+\Omega^1_{X/S}$ (where the second term is regarded as a
+square-zero ideal), the diagonal morphism $X\to X'$ corresponding to the
+canonical augmentation of this sheaf of algebras. Put
+$Y'=X'\times_X Y$, $Y'_0=Y'\times_Y Y_0=X'\times_X Y_0$, so that the
+$h$ sought are in one-to-one correspondence with sections $u$ of~$Y'$
+over~$Y$ extending a given section $u_0$ of~$Y'_0$ over~$Y_0$. One may
+moreover identify $Y'$ with the spectrum of the sheaf of algebras on~$Y$
+$\cal{A}=g^*(\cal{O}_X+\Omega^1_{X/S})=\cal{O}_Y+
+g^*(\Omega^1_{X/S})$, and $Y'_0$ with the sheaf of algebras
+$\cal{A}_0=\cal{A}\otimes_{\cal{O}_Y}\cal{O}_{Y_0}
+=\cal{O}_{Y_0}+g_0^*(\Omega^1_{X/S})$. Then the section $u_0$ is
+the one defined by the canonical augmentation of~$\cal{A}_0$ into~$\cal{O}_{Y_0}$.
+Thus $\cal{P}(Y)$ identifies with the set of algebra homomorphisms
+$\cal{A}\to\cal{O}_Y$ inducing the canonical augmentation
+$\cal{A}_0\to\cal{O}_{Y_0}$. Now the algebra homomorphisms
+$\cal{A}\to\cal{O}_Y$ correspond bijectively to homomorphisms of
+modules $\cal{M}\to\cal{A}$ (putting, for simplicity,
+$\cal{M}=g^*(\Omega^1_{X/S})$), and we are interested in those which
+induce the {\emph{zero}} homomorphism $\cal{M}_0\to\cal{O}_{Y_0}$ (where
+$\cal{M}_0=\cal{M}\otimes_{\cal{O}_Y}\cal{O}_{Y_0}$), \ie those which
+map $\cal{M}$ into the ideal~$\cal{J}$ of the augmentation. We therefore
+obtain the set
+$\Hom_{\cal{O}_Y}(\cal{M},\cal{J})=\Hom_{\cal{O}_{Y_0}}(\cal{M}_0,\cal{J})$
+(since $\cal{J}$ is annihilated by~$\cal{J}$). This is the desired
+canonical bijection \eqref{eq:III.5.1.*}.
+
+Taking into account the implication (i)$\To$(iii) in~\ref{III.3.1}, one
+obtains:
+
+\begin{corollary}
+\label{III.5.2}
+If $X$ is smooth over~$S$ (at least at the points of~$g_0(Y_0)$), then
+$\cal{P}$ is even a \emph{principal homogeneous sheaf} under the
+commutative sheaf of groups~$\cal{G}$, which in this case may also be
+written
+\begin{equation*}
+\cal{G}=g_0^*(\goth{g}_{X/S})\otimes_{\cal{O}_{Y_0}}\cal{J}
+\end{equation*}
+where $\goth{g}_{X/S}$ is the sheaf on~$X$ dual to~$\Omega^1_{X/S}$,
+\ie the \emph{tangent sheaf} (or \emph{sheaf of derivations}) of~$X$
+relative to~$S$. (This last formula follows from the fact that
+$\Omega^1_{X/S}$ is then locally free of finite type.)
+\end{corollary}
+
+In particular, this principal homogeneous sheaf determines a cohomology
+class in~$\H^1(Y_0,\cal{G})$, whose vanishing is necessary and sufficient
+for the existence of an $S$-morphism~$g$ extending~$g_0$. And if such an
+extension exists, the set of all possible extensions is a homogeneous
+space under the group~$\H^0(Y_0,\cal{G})$.
+
+In applying the methods of formal geometry, the situation is most often
+the following: two $S$-preschemes $X$ and~$Y$ are given, together with
+a coherent ideal~$\cal{I}$ on~$S$; let $S_n$ be the closed sub-prescheme
+of~$S$ defined by~$\cal{I}^{n+1}$, and put
+\begin{equation*}
+X_n=X\times_S S_n \quoi,\quad Y_n=Y\times_S S_n.
+\end{equation*}
+Suppose that one has an $S_n$-morphism
+\begin{equation*}
+g_n\colon Y_n\to X_n
+\end{equation*}
+(or, what amounts to the same thing, an $S$-morphism $Y_n\to X$, or
+again an $S_{n+1}$-morphism $Y_n\to X_{n+1}$, since such a morphism
+necessarily induces $Y_n\to X_n$), and one seeks to extend it to an
+$S_{n+1}$-morphism
+\begin{equation*}
+g_{n+1}\colon Y_{n+1}\to X_{n+1}.
+\end{equation*}
+(If one can continue indefinitely, one thus obtains a morphism
+$\widehat{Y}\to\widehat{X}$ for the formal preschemes completed from~$Y$
+and~$X$ for the ideals $\cal{I}\cal{O}_Y$ and~$\cal{I}\cal{O}_X$.) One may
+apply~\ref{III.5.1} after replacing $(S,X,Y,Y_0,g_0)$ by
+$(S_{n+1},X_{n+1},Y_{n+1},Y_n,g_n)$. The sheaf~$\cal{G}$ becomes here
+the sheaf of homomorphisms of modules from
+$g_n^*(\Omega^1_{X_{n+1}/S_{n+1}})$ to
+$\cal{J}=\cal{I}^{n+1}\cal{O}_Y/\cal{I}^{n+2}\cal{O}_Y$. Since~$\cal{J}$ is
+annihilated by~$\cal{I}\cal{O}_Y$, one can replace
+$g_n^*(\Omega^1_{X_{n+1}/S_{n+1}})$ by the sheaf it induces on~$Y_0$,
+namely $h_0^*(\Omega^1_{X/S})$, where $h_0$ is the composite
+$Y_0\to Y_n\to X_{n+1}$, or again the composite
+$Y_0\to X_0\to X_{n+1}$, where $g_0\colon Y_0\to X_0$ is induced by~$g_n$.
+Since the inverse image of~$\Omega^1_{X_{n+1}/S_{n+1}}$ on
+$X_0=X_{n+1}\times_{S_{n+1}}S_0$ is~$\Omega^1_{X_0/S_0}$, one sees
+that one also has
+\begin{equation*}
+\cal{G}=\SheafHom_{\cal{O}_{Y_0}} (g_0^*(\Omega^1_{X_0/S_0}),
+\cal{I}^{n+1}\cal{O}_Y/\cal{I}^{n+2}\cal{O}_Y).
+\end{equation*}
+Thus one obtains the
+
+\begin{corollary}
+\label{III.5.3}
+Let $S,X,Y,\cal{I},g_n$ be as above, and let $\cal{P}(g_n)$ be the sheaf
+on~$Y$ whose sections on an open set~$U$ are the extensions $g_{n+1}$ of
+$g_n$ to an $S_{n+1}$-morphism $Y_{n+1}\to X_{n+1}$. Then
+$\cal{P}(g_n)$ is a formally principal homogeneous sheaf under the
+sheaf of groups
+\begin{equation*}
+\cal{G}=\SheafHom_{\cal{O}_{Y_0}} (g_0^*(\Omega^1_{X_0/S_0}),
+\gr_{\cal{I}\cal{O}_Y}^{n+1}(\cal{O}_Y)).
+\end{equation*}
+\end{corollary}
+
+In particular:
+
+\begin{corollary}
+\label{III.5.4}
+If in addition $X$ is smooth over~$S$ (at least at the points of~$g_0(Y_0)$),
+then $\cal{P}(g_n)$ is even a principal homogeneous sheaf. In particular,
+it defines an obstruction class in~$\H^1(Y_0,\cal{G})$, whose vanishing is
+necessary and sufficient for the existence of a global extension~$g_{n+1}$
+of~$g_n$. And if such an extension exists, the set of all global extensions
+is a principal homogeneous space under~$\H^0(Y_0,\cal{G})$. Finally, in the
+case under consideration, the sheaf~$\cal{G}$ may also be written
+\begin{equation*}
+\cal{G}=g_0^*(\goth{g}_{X_0/S_0})\otimes_{\cal{O}_{Y_0}}
+\gr_{\cal{I}\cal{O}_Y}^{n+1}(\cal{O}_Y)
+\end{equation*}
+\end{corollary}
+
+Proceeding step by step, one sees therefore that if all the
+$\H^1(Y_0,\cal{G}_n)$ vanish (where
+$\cal{G}_n=g_0^*(\goth{g}_{X_0/S_0})\otimes
+\gr_{\cal{I}\cal{O}_Y}^{n}(\cal{O}_Y)$), then, starting with an arbitrary
+$g_k$, one can extend it successively to $g_{k+1},\dots$. In particular,
+if~$\cal{I}$ is nilpotent, one will be able to find an extension~$g$ of
+$g_k$ to~$Y$. The condition that the $\H^1$ vanish is satisfied in
+particular if~$Y_0$ is affine. Thus one obtains:
+
+\begin{corollary}
+\label{III.5.5}
+In the statement of the theorem~\ref{III.3.1}, one obtains a necessary and
+sufficient condition equivalent to the others by supposing that the~$Y'$
+which occurs in \textup{(ii)} (or \textup{(ii~bis)}) is affine, and by
+requiring the existence of a \emph{global extension}~$g$ of~$g_0$ to all
+of~$Y'$.
+\end{corollary}
+
+It should be noted that the proof of~\ref{III.3.1} could not give us this
+result directly.
+
+An important case is that in which~$Y$ is \emph{flat} over~$S$; then one
+has
+\begin{equation*}
+\gr^n(\cal{O}_Y)=\gr^n(\cal{O}_S)\otimes_{\cal{O}_{S_0}}\cal{O}_{Y_0}
+\end{equation*}
+and when, in addition, the $\gr^n(\cal{O}_S)$ are \emph{locally free on}~$S$,
+one obtains
+\begin{equation*}
+\cal{G}_n=
+\SheafHom_{\cal{O}_{Y_0}}(g_0^*(\Omega^1_{X_0/S_0}),\cal{O}_{Y_0})
+\otimes_{\cal{O}_{S_0}}\gr^n(\cal{O}_S),
+\end{equation*}
+or again, if $\Omega^1_{X_0/S_0}$ is itself locally free (for example,
+if $X$ is smooth over~$S$),
+\begin{equation*}
+\cal{G}_n=g_0^*(\goth{g}_{X_0/S_0})
+\otimes_{\cal{O}_{S_0}}\gr^{n}(\cal{O}_S)
+\end{equation*}
+If, for example, $S$ is affine with affine ring~$A$, and $\cal{I}$ is
+defined by an ideal~$I$ of~$A$, one obtains
+\begin{equation*}
+\H^i(Y_0,\cal{G}_n)=\H^i(Y_0,\cal{G}_0)\otimes_A\gr_I^n(A)
+\end{equation*}
+for every~$i$ (indeed, the question is local on~$S_0$, and one is reduced
+to the case where one tensors by a free module). \emph{In this case, the
+vanishing of~$\H^1(Y_0,\cal{G}_0)$ implies that all the obstructions to
+the successive extensions of~$g_n$ vanish}. Thus one obtains:
+
+\begin{corollary}
+\label{III.5.6}
+Let $(S,X,Y,\cal{I},g_n)$ be as above, suppose in addition that $X$ is
+smooth over~$S$ and $Y$ is flat over~$S$, and finally that~$S$ is affine,
+and that the $\gr^n(\cal{O}_S)=\cal{I}^n/\cal{I}^{n+1}$ are locally free.
+Then the obstruction to constructing~$g_{n+1}$ lies in
+$\H^1(Y_0,\cal{G}_0)\otimes_A\gr_I^{n+1}(A)$ (where~$A$ is the ring of~$S$,
+$ I$ the ideal of~$A$ defining~$\cal{I}$), on putting
+\begin{equation*}
+\cal{G}_0=g_0^*(\goth{g}_{X_0/S_0}).
+\end{equation*}
+If $\H^1(Y_0,\cal{G}_0)=0$, then $g_n$ can be extended to an
+$\widehat{S}$-morphism $\widehat{g}\colon\widehat{Y}\to\widehat{X}$.
+\end{corollary}
+
+Of course, this result would remain valid exactly as stated if, instead of
+starting with ordinary $S$-preschemes $X$ and~$Y$, one started with formal
+$\widehat{\cal{I}}$-adic $\widehat{S}$-preschemes $\goth{X}$ and~$\goth{Y}$.
+It allows one to prove, for example, that certain formal schemes proper
+over a complete local ring are in fact algebraic. Indeed, proceeding as
+in the lemma~\ref{III.4.2}, one obtains:
+
+\begin{corollary}
+\label{III.5.7}
+Under the conditions of~\ref{III.5.6}, if $g_0$ is an isomorphism, then so
+is~$\widehat{g}$.
+\end{corollary}
+
+\noindent
+(N.B. the same result holds for closed immersions.)
+
+Thus one obtains:
+
+\begin{proposition}
+\label{III.5.8}
+Let $A$ be a complete local ring with maximal ideal~$\goth{m}$ and residue
+field~$k$, and let $\goth{X}$ and~$\goth{Y}$ be two $\goth{m}$-adic formal
+preschemes over~$A$, flat over~$A$ (\ie for every~$n$, $X_n$ and $Y_n$ are
+flat over~$A_n=A/\goth{m}^{n+1}$). Suppose that
+$X_0=\goth{X}\otimes_A k$ is smooth over~$k$ and that
+$\H^1(X_0,\goth{g}_{X_0/k})=0$. Then every $k$-isomorphism from~$Y_0$ onto~$X_0$
+extends to an $A$-isomorphism from~$\goth{Y}$ onto~$\goth{X}$; this extension
+is unique if, in addition, $\H^0(X_0,\goth{g}_{X_0/k})=0$.
+\end{proposition}
+
+This gives in particular a result on the \emph{uniqueness} of a formal
+prescheme smooth over~$A$ reducing to a given prescheme~$X_0$ (provided
+$\H^1(X_0,\goth{g}_{X_0/k})=0$). Moreover, if~$\goth{X}$ and~$\goth{Y}$
+come from ordinary proper schemes over~$A$, say $X$ and~$Y$, then one knows,
+by the existence theorem for sheaves in formal geometry (\cf the exposé
+of the Bourbaki Seminar, no.~182\footnote{\Cf EGA III 5.4.1 for the proof.}),
+that there is a one-to-one correspondence between the $A$-isomorphisms
+$Y\isomto X$ and the $A$-isomorphisms of the formal completions, hence
+
+\begin{corollary}
+\label{III.5.9}
+The preceding statement~\ref{III.5.8} remains valid on replacing
+$\goth{X}$ and~$\goth{Y}$ by ordinary $A$-schemes $X$ and~$Y$, \emph{proper}
+over~$A$.
+\end{corollary}
+
+Finally, when~$\goth{X}$ is a formal scheme proper over~$A$, and~$\goth{Y}$
+is of the form~$\widehat{Y}$ where~$Y$ is an ordinary proper scheme over~$A$,
+Proposition~\ref{III.5.8} gives sufficient conditions for finding an
+isomorphism of~$\goth{X}$ with~$\widehat{Y}$, hence for the formal scheme
+$\goth{X}$ to be in fact ``algebraic'' (\ie isomorphic to a~$\widehat{X}$,
+$X$ an ordinary proper scheme over~$A$, which will then be canonically
+determined). This is notably what happens if $X_0=\PP_k^r$ (or more
+generally, if $X_0$ is a Severi--Brauer scheme, \ie becomes isomorphic to
+the standard projective space over the algebraic closure of~$k$): every
+formal scheme proper and flat over~$A$, with fiber~$\PP_k^r$, is
+algebraizable, and more precisely is isomorphic to the $\goth{m}$-adic
+formal completion of~$\PP_A^r$. In particular (thanks to the ``existence
+theorem'') every ordinary proper scheme over~$A$, with fiber~$\PP_k^r$,
+is isomorphic to~$\PP_A^r$ ($A$ being a complete local ring). Using
+descent theory, one can prove that if~$A$ is not complete, $X$ becomes
+isomorphic to~$\PP^r$ after making a finite étale extension
+$A\to A'$ of the base (and in this form, the result remains valid for a
+fiber which is a Severi--Brauer scheme).

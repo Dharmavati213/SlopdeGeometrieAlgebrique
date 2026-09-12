@@ -1,0 +1,213 @@
+\section[The lifting property]{The lifting property characteristic of formally smooth homomorphisms}
+\label{III.2}
+
+\begin{theorem}
+\label{III.2.1}
+Let $A \to B$ be a local homomorphism of local rings defining a finite residual extension. The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)]
+$B$ is formally smooth over~$A$
+\item[(ii)] For every local homomorphism $A \to C$, where $C$ is a
+local ring \emph{complete}, every ideal $J$ of~$C$ contained in
+$\goth{r}(C)$, and every local $A$-homomorphism $B \to C/J$, there
+exists an $A$-homomorphism (necessarily local) $B \to C$ which
+lifts it.
+\item[(iii)] For every $A$-algebra $C$ (not necessarily a
+noetherian ring), every nilpotent ideal $J$ of~$C$, and every
+continuous $A$-homomorphism $B \to C$ (\ie vanishing on a power of
+$\goth{r}(B)$), there exists an $A$-homomorphism $B \to C$
+(necessarily continuous as well) which lifts it.
+\item[(iv)] The same statement as \textup{(ii)} and \textup{(iii)}, but with $C$
+a local artinian ring, finite over~$A$.
+\item[(iv~bis)] As in \textup{(iv)}, but with $J$ moreover square-zero.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+For the rest of this exposé, we shall use only the implication
+(iv)$\To$(i), or (iv~bis)$\To$(i); the direct implication
+(i)$\To$(ii) will be proved by another method in the next no. when
+$B$ is a localization of an algebra of finite type over~$A$. Let us
+recall that in the ``good'' theory of Cohen theorems\footnote{\Cf EGA
+$0_{\textup{IV}}$ 19.3, 19.8}, property (ii) or (iii) becomes the
+definition of formally smooth homomorphisms, whereas \ref{III.1.1}
+becomes a characteristic property valid only in the case of a finite
+residual extension. Care should be taken that of properties (ii) and
+(iii), neither is more general than the other. One could give an
+equivalent property covering both, by introducing a linearly
+topologized ring $C$, \emph{separated} and \emph{complete}, a
+\emph{closed topologically nilpotent} ideal of~$C$, and a continuous
+homomorphism $A \to C$ (thus making $C$ a topological $A$-algebra);
+we shall leave this modification to the reader.
+\end{remark}
+
+\subsubsection*{Proof of~\ref{III.2.1}}
+We shall prove (i)$\To$(iii)$\To$(ii), then (iv)$\To$(i). Since
+(ii)$\To$(iv) is trivial, and the equivalence of (iv) and (iv~bis)
+is seen by an immediate induction on the integer $n$ such that
+$J^n = 0$, this will finish the proof.
+
+(i)$\To$(iii). An immediate induction reduces us to the case where
+$J^2 = 0$. Since $C$ is finite over~$A$, there exists a power
+$\goth{m}^q$ of the maximal ideal of~$A$ which annihilates $C$.
+Dividing by $\goth{m}^q$, and noting that $B/\goth{m}^qB$ is still
+formally smooth over~$A/\goth{m}^q$ by \ref{III.1.4}~(i), we may
+suppose that $A$ is artinian. Since $B$ is flat over~$A$ by
+\ref{III.1.3}, $B$ \emph{is free over} $A$, since $A$ is artinian.
+Thus there exists an \emph{$A$-module homomorphism}
+$$
+w \colon B \to C
+$$
+which lifts the given homomorphism $u \colon B \to C/J$. Put
+$$
+f(x,y) = w(xy) - w(x)w(y) \qquad (x,y \in B)
+$$
+then $f(x,y) \in J$, and $f$ is therefore an $A$-bilinear map from
+$B \times B$ into $J$. For there to exist a lift $v \colon B \to C$
+of $u$ which is an algebra homomorphism, it is necessary and
+sufficient that there exist an $A$-linear map $g \colon B \to J$ such
+that $v = w + g$ is an algebra homomorphism, which is written
+\begin{align*}
+g(1) &= 1 - w(1) \\
+g(x,y) - u(x)g(y) -u(y)g(x) &= -f(x,y) \qquad (\text{for } x,y \in
+B)
+\end{align*}
+This is a system of \emph{linear} equations in
+$\Hom_A(B,J)$, with right-hand sides in $J$; hence it has a solution
+if and only if the corresponding system in $\Hom_A(B,J)\otimes_A A'$, with
+right-hand sides in $J' = J \otimes_A A'$, has a solution, $A'$
+denoting a faithfully flat algebra over~$A$. Now let $A'$ be an
+algebra finite and free over~$A$, local, such that $B' = B \otimes_A A'$ is
+a formal power-series algebra over~$A'$ (N.B. in our proof one may
+suppose $A$ and $B$ complete, as is immediately seen). Since $A'$ is
+free of finite type over~$A$, we have
+$$
+\Hom_A(B,J) \otimes_A A' = \Hom_{A'}(B',J')
+$$
+and one verifies that the system of equations obtained in
+$\Hom_{A'}(B',J')$ is the one which determines the homomorphisms of
+$A'$-algebras $B' \to C' = C \otimes_A A'$ which lift the
+homomorphism $u' \colon B' \to C'/J'$ deduced from~$u$ by extension
+of scalars, by ``correcting'' by an $A'$-module homomorphism
+$g' \colon B' \to J'$ the $A'$-module homomorphism $w' \colon B' \to C'$
+deduced from~$w$ by extension of scalars. (Note that $B$ generates
+$B'$ as an $A'$-module.) We are thus reduced to proving (iii) when
+$B$ is a \emph{formal power-series algebra} over~$A$,
+$B = A[[t_1,\dots,t_n]]$. Let us lift arbitrarily the images in
+$C/J$ of the $t_i$ to elements $z_i$ of~$C$. Since the $z_i$ modulo
+$J$ are nilpotent ($u \colon B \to C/J$ being continuous), the $z_i$
+themselves are nilpotent (since $J$ is nilpotent), and hence the
+$z_i$ define a continuous homomorphism of topological $A$-algebras
+from $B$ into the discrete ring $C$, evidently lifting $u$, qed.
+
+(iii)$\To$(ii).
+Let $\goth{n}$ be the maximal ideal of~$C$, and for every integer
+$q > 0$, put
+$$
+C_q = C/\goth{n}^q \text{\quoi, \quad} J_q = (J +
+\goth{n}^q)/\goth{n}^q
+$$
+Thus $C_q/J_q$ identifies with a quotient algebra of~$C/J$. On the
+other hand, the composite homomorphism $u_q \colon B \to C/J \to
+C_q/J_q$ is continuous from~$B$ into the discrete ring $C_q/J_q$,
+and $J_q$ is a nilpotent ideal in~$C_q$. We then construct, step by
+step, $A$-homomorphisms
+$$
+v_q \colon B \to C_q
+$$
+such that (a) $v_q$ lifts $u_q$ and (b) $v_q$ lifts $v_{q-1}$. The
+possibility of the induction is easily verified, since
+$$
+u_q \colon B \to C/(J + \goth{n}^q) \text{\quad and \quad} v_{q-1}
+\colon B \to C/\goth{n}^{q-1}
+$$
+define the same homomorphism
+$$
+B \to C/((J + \goth{n}^q) + \goth{n}^{q-1}) = C/(J + \goth{n}^{q-1}) =
+C_{q-1}/J_{q-1}
+$$
+namely $u_{q-1}$, they define a homomorphism
+$$
+B \to C/J_q' \text{\quad where \quad} J_q' = (J + \goth{n}^q)\cap
+\goth{n}^{q-1} \supset \goth{n}^q
+$$
+(from which both arise by reduction). We are therefore reduced to
+lifting a homomorphism $B \to C/J_q'$ from $B$ into a quotient of
+$C_q$ by an ideal $J_q'/\goth{n}^q$ contained in $J_q$, hence
+nilpotent, and this is possible by hypothesis (iii).
+
+This done, the $v_q$ define a homomorphism from $B$ into the projective
+limit $C$ of the $C_q$. Since $J$ is closed, $J$ is the projective
+limit of the $J_q$; hence $v$ lifts $u$, qed.
+
+(iv)$\To$(i). One observes first at once that if (iv) is verified,
+(iv) remains verified for the local components of $B \otimes_A A'$ over
+$A'$, if $A'$ is a finite local algebra over~$A$. Taking $A'$ free
+over~$A$ and such that the residual extensions of $B'$ over~$A'$ are
+trivial, we are reduced, by \ref{III.1.4}~(ii), to the case where
+the residual extension of $B$ over~$A$ is trivial. We shall then prove
+the following slightly more precise result:
+
+\begin{corollary}
+\label{III.2.2}
+Under the conditions of~\ref{III.2.1}, suppose moreover that the residual
+extension of $B$ over~$A$ is trivial. Then the equivalent conditions
+of~\ref{III.2.1} are also equivalent to the following two conditions
+(supposing in \textup{(v)} that $A$ and $B$ are complete):
+\begin{enumerate}
+\item[(iv~ter)] As in \textup{(iv)}, but with the local artinian ring $C$ finite over~$A$ restricted to have a trivial residual extension (and moreover, if one wishes, with the ideal $J$ square-zero).
+\item[(v)] There exists a local $A$-homomorphism (where $n = \dim{\goth{n}/(\goth{n}^2+\goth{m}B})$)
+$$
+u \colon B \to B_1 = A[[t_1, \dots, t_n]]
+$$
+inducing an \emph{isomorphism}
+$$
+\goth{n}/(\goth{n}^2+\goth{m}B) \isomto
+\goth{n}_1/(\goth{n}_1^2+\goth{m}B_1)
+$$
+where $\goth{n}$ ($\goth{n}_1$) is the maximal ideal of $B$
+($B_1$), and $\goth{m}$ is that of~$A$.
+\end{enumerate}
+\end{corollary}
+
+\subsubsection*{Proof}
+Since (iv~bis) evidently implies (iv~ter)—setting aside the joke about
+the square-zero ideal—it will suffice to prove (iv~ter)$\To$(v)$\To$(i).
+
+(iv~ter)$\To$(v). Choose a basis $a_1,\dots,a_n$ of
+$\goth{n}/(\goth{n}^2+\goth{m}B)$, which therefore defines a
+local homomorphism of $A$-algebras
+$$
+B \to B_1/(\goth{n}_1^2+\goth{m}B_1) = k[t_1, \dots, t_n]/(t_1, \dots,
+t_n)^2
+$$
+which can be lifted step by step, by virtue of (iv~ter), to
+homomorphisms of $A$-algebras from $B$ into $B_1/\goth{n}_1^2$,
+$B_1/\goth{n}_1^3$, and so on; passing to the projective limit gives
+the homomorphism $B \to B_1$ with the desired property.
+
+(v)$\To$(i). As in the commutative diagram
+$$
+\xymatrix{ \goth{m}/\goth{m}^2 \ar[r] \ar[d] & \goth{n}/\goth{n}^2
+\ar[r] \ar[d] & \goth{n}/(\goth{n}^2+\goth{m}B) \ar[r] \ar[d] & 0 \\
+\goth{m}/\goth{m}^2 \ar[r] & \goth{n}_1/\goth{n}_1^2 \ar[r] &
+\goth{n}_1/(\goth{n}_1^2+\goth{m}B_1) \ar[r] & 0}
+$$
+the two rows are exact, and the extreme vertical arrows are
+surjective; the middle arrow is surjective and it follows (since $B$
+is complete) that $B \to B_1$ is \emph{surjective}. Let $x_i$
+($1 \leq i \leq n$) be elements of~$B$ lifting the $t_i$. They
+therefore define a homomorphism of $A$-algebras $B_1 \to B$, which
+will be surjective for the same reason as $u$, and whose composite
+with $u$ is the identity by construction. Thus $B_1 \to B$ is also
+injective, and is consequently an isomorphism. We obtain
+
+\begin{corollary}
+\label{III.2.3}
+Under the conditions of~\ref{III.2.2}~\textup{(v)}, $u$ is necessarily
+an isomorphism.
+\end{corollary}
+
+This finishes the proof that $B$ is formally smooth over~$A$. At the
+same time we have recovered~\ref{III.1.5} (though there is little
+merit in that).

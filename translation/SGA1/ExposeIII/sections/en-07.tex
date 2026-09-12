@@ -1,0 +1,182 @@
+\section[Application to the construction of formal schemes...]{Application to the construction of formal schemes
+and smooth ordinary schemes over a complete local ring~$A$}
+\label{III.7}
+%
+%
+The results of the preceding~\No sometimes make it possible to
+prove the existence
+%
+% original p. 83
+%
+of an $\goth{m}$-adic formal scheme~$\goth{X}$ over such a ring,
+reducing to a given smooth scheme~$X_0$ over~$k$.
+Let us distinguish two cases:
+
+a) \emph{$A$ is ``of equal characteristic''} (this is the case
+in particular if~$k$ has characteristic~$0$). Then one knows
+that there exists a \emph{subfield of representatives of}~$A$,
+\ie a subfield~$k'$ such that $A\to k$ induces an isomorphism~$k'\isomto
+k$. \emph{There even exists a smooth ordinary scheme
+over~$A$ reducing to~$X_0$}, namely~$X=X_0\otimes_kA$, with~$A$
+regarded as an algebra over~$k$ by means of the homomorphism
+$k\to k'\to A$ defined by~$k'$. It should nevertheless be noted
+that this construction is not ``natural''; it is easy to convince
+oneself (already in the case where~$A=k[t]/(t^2)$, the algebra of
+dual numbers) that another lifting homomorphism~$k\to A$ (defined
+in this instance by an absolute derivation of~$k$ into itself)
+defines an~$X'$ over~$A$ which in general \emph{is not isomorphic
+to~$X$} (if~$\H^1(X_0,\goth{g}_{X_0/k})\neq0$). It would moreover
+be interesting to study (for~$k$ of characteristic~$0$, or
+non-perfect and of characteristic~$p>0$) which smooth~$X$ over~$A$
+are obtained in this way, and under what condition two homomorphisms
+$k\to A$ define isomorphic $A$-schemes. Nevertheless, the existence
+of~$k'$ suffices to entail that the first obstruction to lifting
+$X_0$, which is
+in~$\H^2(X_0,\goth{g}_{X_0/k})\otimes_k\goth{m}/\goth{m}^2$, is
+necessarily zero. Of course, when one has then lifted~$X_0$ to~$X_1$
+smooth over~$A/\goth{m}^2$, the new obstruction to constructing~$X_2$
+will in general not be zero: it will be a function of a variable
+element in a certain principal homogeneous space
+under~$\H^1(X_0,\cal{G}_0)\otimes\goth{m}/\goth{m}^2$ and lies
+in~$\H^2(X_0,\cal{G}_0)\otimes\goth{m}^2/\goth{m}^3$: it would
+be appropriate to study the situation in detail\footnote{It is
+no doubt described by the Kodaira--Spencer bracket operation (\cf
+Cartan Seminar, 1960/61, Exp.\ptbl 4).}.
+
+b) \emph{$A$ is of unequal characteristics.} In this case, we
+know nothing (except if by chance~$\H^2(X_0,\goth{g}_{X_0/k})=0$,
+in which case one can construct a simple $\goth{m}$-adic formal
+scheme over~$A$ reducing to~$k$). Even if~$A=\ZZ/p^2\ZZ$ and~$X_0$
+is an ``abelian'' scheme of dimension~$2$, one does not know whether
+it can be lifted to an~$X=X_1$ smooth over~$A$\footnote{This has
+now been proved, \cf note~\ref{III.6.6.p24} page~\pageref{III.6.6.p24}.},
+on the other hand, one has no example of an~$X_0$ which one has
+proved does not come from an ordinary scheme~$X$ smooth over~$A$.
+(I have the impression that such an example must exist, with~$X_0$
+a projective surface)\footnote{\label{nIII.3}Such an example has since been
+constructed by
+J-P\ptbl Serre (Proc.\ Nat.\ Acad.\ Sc.\ USA \textbf{47} (1961),
+\No 1, p.\ptbl108--109), at least for certain
+dimensions. D.\ptbl Mumford gave an example (unpublished) with
+an \emph{algebraic} surface.}. Let us simply point out that,
+according to Cohen's theorem, there exists a Cohen $p$-ring~$B$
+with residue field~$k$ and a homomorphism~$B\to A$ inducing the
+identity isomorphism on the residue fields; consequently, the
+``strongest'' lifting result would be obtained by taking~$A$
+%
+% original p. 84
+%
+a Cohen $p$-ring: if there exists a solution (ordinary or formal)
+over such a ring, there exists one over every complete local ring
+with residue field~$k$. In particular, since for a Cohen $p$-ring
+$\goth{m}/\goth{m}^2$ is canonically identified with~$k$, one sees
+that \emph{for every smooth scheme~$X_0$ over a field~$k$ of
+characteristic~$p>0$, there exists a cohomology class in~
+$\H^2(X_0,\goth{g}_{X_0/k})$} which is the first obstruction to
+lifting~$X_0$ to a smooth scheme over a Cohen $p$-ring; one does
+not know whether it can be nonzero\footnote{It can be nonzero,
+as indicated in note~\ref{nIII.3} on page~\pageref{nIII.3}.}.
+
+Even if one succeeds step by step in constructing the~$X_n$
+reducing to~$X_0$, this generally gives only a \emph{formal}
+scheme~$\goth{X}$ smooth over~$A$, reducing to~$X_0$. When~$X_0$
+is proper over~$A$, the question remains whether~$\goth{X}$ is in
+fact algebraizable, in order to obtain an \emph{ordinary} scheme
+proper over~$A$ and simple over~$A$, reducing to~$X_0$. The only
+known criterion (mentioned in the Bourbaki Seminar, and appearing
+in the Elements, Chapter~III, 4.7.1) is the following: if~$\goth{X}$
+is proper over~$A$, and if~$\cal{L}$ is an invertible sheaf on~$\goth{X}$
+such that the sheaf induced~$\cal{L}_0$ on~$X_0$ is ample (\ie a suitable
+tensor power~$\cal{L}_0^{\otimes n}$, $n>0$, comes from a projective
+embedding of~$X_0$), then there exists a scheme~$X$ projective over~$A$,
+and an ample invertible sheaf on~$X$, such that~$(\goth{X},\cal{L})$
+is obtained from it by $\goth{m}$-adic completion. This therefore
+leads us, given a locally free sheaf~$\cal{E}_0$ on~$X_0$ (which we
+shall choose ample and invertible for our purpose), to extend it to
+a locally free sheaf~$\cal{E}$ on~$\goth{X}$. For this, we are
+reduced to constructing step by step locally free sheaves~$\cal{E}_n$
+on the~$X_n$. The discussion is entirely analogous to that in
+\No~\ref{III.6}, (\cf remark~\ref{III.6.4}), the essential role being
+played by the \emph{sheaf of automorphisms} of an~$\cal{E}_{n+1}$
+which induce the identity on~$\cal{E}_n$: one immediately shows that
+this sheaf is identified with
+\begin{equation*}
+\label{eq:III.7.*}\tag{$*$}{}
+\cal{G}= \SheafHom_{\cal{O}_{X_0}}(\cal{E}_0,
+\cal{E}_0\otimes\gr_{\cal{I}}^{n+1}(\cal{O}_X))=
+\SheafHom_{\cal{O}_{X_0}}(\cal{E}_0,
+\cal{E}_0)\otimes\gr_{\cal{I}}^{n+1}(\cal{O}_X)
+\end{equation*}
+which is again a sheaf of commutative groups. We find:
+
+\begin{proposition}\label{III.7.1}
+Let~$S$ be a prescheme endowed with a quasi-coherent sheaf of
+ideals~$\cal{I}$, $X$ a prescheme over~$S$, $S_n$ the subprescheme
+of~$S$ defined by~$\cal{I}^{n+1}$, and~$X_n=X\times_SS_n$ (for every
+integer~$n$). Let~$\cal{E}_n$ be a locally free sheaf
+%
+% original p. 85
+%
+on~$X_n$; we propose to extend it to a locally free sheaf~$\cal{E}_{n+1}$
+on~$X_{n+1}$. Then~$\cal{E}_n$ defines a canonical obstruction class
+in~$\H^2(X_0,\cal{G})$, where~$\cal{G}$ is the quasi-coherent sheaf
+given by the formula above, whose vanishing is necessary and
+sufficient for the existence of an~$\cal{E}_{n+1}$ extending~$\cal{E}_n$.
+If this class is zero, then the set of classes, up to isomorphism
+(inducing the identity on~$\cal{E}_n$), of solutions~$\cal{E}_{n+1}$,
+is a principal homogeneous space under~$\H^1(X_0,\cal{G})$.
+\end{proposition}
+
+This proposition gives rise to the usual corollaries. Let us point
+out only that if~$X$ is \emph{flat} over~$S$, then one can write
+$$
+\cal{G}= \SheafHom_{\cal{O}_{X_0}}(\cal{E}_0, \cal{E}_0)
+\otimes_{\cal{O}_{S_0}} \gr_{\cal{I}}^{n+1}(\cal{O}_S)
+$$
+whence, if~$S$ is affine of ring~$A$ and if the~$\cal{I}^n/\cal{I}^{n+1}$
+are locally free, the sufficient condition
+$$
+\H^2(X_0,\cal{G}_0)=0 \qquad\text{with}\qquad
+\cal{G}_0=\SheafHom_{\cal{O}_{X_0}}(\cal{E}_0, \cal{E}_0)
+$$
+for the existence of an~$\cal{E}_{n+1}$, and hence step by step for
+the existence of successive extensions~$\cal{E}_m$ ($m=n,n+1,$
+etc.).
+
+Returning to the initial situation, we therefore find:
+
+\begin{proposition}\label{III.7.2}
+Let~$A$ be a complete local ring,~$\goth{X}$ a proper and flat formal
+scheme over~$A$, such that~$X_0$ is projective and
+$\H^2(X_0,\cal{O}_{X_0})=0$. Then there exists a scheme~$X$
+projective over~$A$ whose $\goth{m}$-adic formal completion is
+isomorphic to~$\goth{X}$.
+\end{proposition}
+
+Combining this with~\ref{III.6.10}, we find:
+
+\begin{theorem}\label{III.7.3}
+Let~$A$ be a complete local ring with residue field~$k$, $X_0$ a
+projective and smooth scheme over~$k$, such that
+$$
+\H^2(X_0,\goth{g}_{X_0/k})=\H^2(X_0,\cal{O}_{X_0})=0
+$$
+Then there exists a smooth and projective scheme~$X$ over~$A$,
+reducing to~$X_0$.
+\end{theorem}
+
+More generally, if one is given an~$X_n$ smooth over~$A_n=A/\goth{m}^{n+1}$
+reducing to~$X_0$, then there exists an~$X$ smooth and proper over~$A$
+and an isomorphism~$X\otimes_AA_n=X_n$.
+
+\begin{corollary}\label{III.7.4}
+Every smooth and proper curve over~$k$ is obtained by reduction from
+a smooth and proper curve over~$A$.
+\end{corollary}
+
+It is this result which will be the essential tool (together with the
+existence theorem for sheaves in Formal Geometry) for studying the
+fundamental group of~$X_0$ by transcendental means.
+%
+% original p. 86
+%
