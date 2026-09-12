@@ -1,10 +1,36 @@
 # Formalization notes
 
-The Lean library in `lean/` follows Grothendieck's numbering of SGA 1,
-Exposé VI. Mathlib already has the language of the exposé; we import it
-and add the statements that are still missing.
+The Lean library in `lean/` follows Grothendieck's numbering of SGA 1.
+Mathlib already has the language of the exposés; we import it and add
+the statements that are still missing.
 
-## What mathlib already has
+## Exposé I — Étale morphisms
+
+Entry point: `lean/SGA/SGA1/ExposeI.lean`.
+
+SGA works with locally noetherian schemes after no. I.2 and defines
+étale as flat + unramified of finite type. Mathlib's `Etale` is
+formally étale of finite presentation. On a locally noetherian base
+these agree (`etale_of_flat_unramified_locallyNoetherian`).
+Universally injective is SGA's radicial.
+
+| SGA 1 I | Mathlib |
+| --- | --- |
+| I.1 `Ω¹_{X/Y}` | `Ω[S⁄R]`, `FormallyUnramified` |
+| I.2 quasi-finite | `Algebra.QuasiFinite`, `LocallyQuasiFinite`, `QuasiFiniteAt` |
+| I.3 net / unramified | `FormallyUnramified`, `Algebra.Unramified` |
+| I.3.1 residue / `mS = n` | `FormallyUnramified.iff_map_maximalIdeal_eq` |
+| I.3.4 graph | `pullback_lift_diagonal_isPullback` |
+| I.4 étale | `Etale`, `Algebra.Etale` |
+| I.4.9 covering | `IsFinite` + `Etale`, `CommAlgCat.FiniteEtale` |
+| I.5.1 étale + radicial | `IsOpenImmersion.of_flat_of_mono` |
+| I.5.5 uniqueness | `FormallyUnramified.hom_ext` |
+| I.7 standard étale | `StandardEtalePair`, `IsStandardEtale` |
+| I.7.6–I.7.8 | `IsUnramifiedAt.exists_hasStandardEtaleSurjectionOn`, `IsEtaleAt.exists_isStandardEtale` |
+| I.9.5 integral closure | `TensorProduct.toIntegralClosure_bijective_of_smooth` |
+| I.10 normalisation | `Scheme.Hom.toNormalization` |
+
+## Exposé VI — Fibered categories and descent
 
 These are the names to import, not to redo.
 
@@ -33,7 +59,32 @@ Entry point: `lean/SGA/SGA1/ExposeVI.lean`.
 - Ordinary equivalence is weaker than equivalence over the base
   (VI.4.2); see `Examples.oneToTwo_not_basedEquivalence`.
 
-## Remaining gaps in this exposé
+## Remaining gaps in Exposé I
+
+- I.2.1(iii): quasi-finite local homomorphisms via finiteness of completions.
+- I.3.7 / I.4.4: unramified (resp. étale) iff the map of completions is a
+  quotient (resp. an isomorphism), when the residue extension is trivial.
+- I.4.10: discriminant / trace pairing criterion for étale coverings.
+- I.5.3–I.5.4 in full: a section of a connected unramified scheme is an
+  isomorphism onto a connected component; two morphisms that agree
+  geometrically at a point are equal. Open-and-closed immersions of the
+  section are in `Fundamental.lean`; identification with a component uses
+  locally noetherian connectedness.
+- I.5.5 existence / I.8.3 essential surjectivity: étale schemes lift
+  uniquely along nilpotent closed immersions; existence of the lift of
+  the scheme (not just of morphisms) remains.
+- I.6.1 over a complete local ring (the artinian case of I.6.2 is proved).
+- I.8.4: étale coverings of a locally noetherian formal scheme.
+- I.9.1 in general (regularity of local étale algebras); the identification
+  `m_A S = m_S` is recorded.
+- I.9.5(ii) and I.9.11: unramified + injective over a normal local ring
+  is étale; dominant unramified over a normal base is étale.
+- I.10.3, I.10.7–I.10.12: the equivalence with unramified extensions of
+  the function field, and the counting of geometric fibre points.
+- I.11: the examples, and étale descent along a universal homeomorphism
+  (IX.4.10).
+
+## Remaining gaps in Exposé VI
 
 - VI.6.3–6.8, VI.6.10 (fiber products of cartesian arrows, fiberwise
   criterion for cartesian functors).
