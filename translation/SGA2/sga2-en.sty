@@ -105,10 +105,17 @@
 % --- references ---
 \makeatletter
 \newcommand{\SourceRef}[2]{\@ifundefined{r@#1}{#2}{\ref{#1}}}
-% hyperref also defines \Ref; re-assert after \begin{document}.
-\renewcommand{\Ref}[1]{\textup{\@ifundefined{r@#1}{\detokenize{#1}}{\ref{#1}}}}
-\AtBeginDocument{%
-  \renewcommand{\Ref}[1]{\textup{\@ifundefined{r@#1}{\detokenize{#1}}{\ref{#1}}}}%
+% Wrappers load hyperref after this package. hyperref defines \Ref
+% (and hijacks \ref/\pageref) at load time and in \AtBeginDocument,
+% which runs after this package's \AtBeginDocument. Re-assert at
+% begindocument/end so an undefined key prints as the key instead of ??.
+% \eqref is implemented in terms of \ref, so it picks this up too.
+\AddToHook{begindocument/end}{%
+  \let\sga@oldref\ref
+  \let\sga@oldpageref\pageref
+  \renewcommand{\ref}[1]{\textup{\@ifundefined{r@#1}{\detokenize{#1}}{\sga@oldref{#1}}}}%
+  \renewcommand{\pageref}[1]{\textup{\@ifundefined{r@#1}{\detokenize{#1}}{\sga@oldpageref{#1}}}}%
+  \renewcommand{\Ref}{\ref}%
   \let\H\rH
 }
 \makeatother

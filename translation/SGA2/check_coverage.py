@@ -3,13 +3,16 @@
 
 Reads translation/SGA2/expected-labels.json (extracted from the corrected
 SMF body) and the shipped English fragments. Exit 0 iff every expected
-label appears as \\label{...} in the corresponding exposé directory.
+label appears as \\label{...} in the corresponding exposé directory,
+each landed PDF is a non-empty %PDF, and pdftotext of that PDF contains
+no '??' (undefined \\ref/\\Ref/\\pageref must print the source key).
 This drives the shipped translation files, not a re-implementation.
 """
 from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -88,6 +91,19 @@ def body_text(dirpath: Path) -> str:
     return "\n".join(parts)
 
 
+def pdftotext(pdf: Path) -> str:
+    """Extract text from a shipped PDF via poppler pdftotext (the real binary)."""
+    proc = subprocess.run(
+        ["pdftotext", "-layout", str(pdf), "-"],
+        check=False,
+        capture_output=True,
+    )
+    if proc.returncode != 0:
+        err = proc.stderr.decode("utf-8", errors="replace")
+        raise RuntimeError(f"pdftotext failed on {pdf}: {err or proc.returncode}")
+    return proc.stdout.decode("utf-8", errors="replace")
+
+
 def main() -> int:
     expected = json.loads((ROOT / "expected-labels.json").read_text(encoding="utf-8"))
     missing_all: dict[str, list[str]] = {}
@@ -133,6 +149,22 @@ def main() -> int:
                 ok = False
             else:
                 lines[-1] += f"  pdf={size}"
+            try:
+                text = pdftotext(pdf)
+            except RuntimeError as exc:
+                print(f"FAIL {name}: {exc}", file=sys.stderr)
+                ok = False
+            else:
+                n_qq = text.count("??")
+                if n_qq:
+                    print(
+                        f"FAIL {name}: pdftotext of {pdf.name} contains {n_qq} '??' "
+                        "(undefined \\Ref/\\ref; cross-exposé keys should print)",
+                        file=sys.stderr,
+                    )
+                    ok = False
+                else:
+                    lines[-1] += "  no-??"
     report = "\n".join(lines) + "\n"
     print(report, end="")
     if empty_body:
