@@ -105,9 +105,8 @@ scholarly proofreading remains outstanding.
 
 ## Continuation
 
-The next untranslated exposé is **II — Smooth morphisms: generalities,
-differential properties**. Begin with its opening convention and
-**II.1 — Generalities**. Keep source review of Exposé I distinct from
+The next untranslated exposé is **III — Smooth morphisms: extension
+properties**. Keep source review of Exposé I distinct from
 translation coverage. Lean for this exposé lives at `lean/SGA/SGA1/ExposeI.lean`.
 
 License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the

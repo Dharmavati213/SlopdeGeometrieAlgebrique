@@ -17,7 +17,7 @@ This repository contains two kinds of work, under two licenses.
 
 The *Séminaire de Géométrie Algébrique du Bois Marie* (SGA) was written
 by Alexander Grothendieck and collaborators. The text used for the
-English translations of SGA 1, Exposés I and VI, is the
+English translations of SGA 1, Exposés I, II, and VI, is the
 slightly corrected SMF recomposition:
 
 - A. Grothendieck, M. Raynaud, *Revêtements étales et groupe fondamental*

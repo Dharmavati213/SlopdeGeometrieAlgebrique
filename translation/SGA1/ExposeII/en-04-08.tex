@@ -1,0 +1,266 @@
+\section{Differential properties of smooth morphisms}
+\label{II.4}
+% original p. 36
+
+To simplify, we shall restrict ourselves for the most part to
+differential calculus of order~$1$, confining ourselves to brief
+indications for higher order (where the results are just as simple).
+
+For the definition of the sheaf of $1$-differentials
+$\it{\Omega}^1_{X/Y}$ of a $Y$-prescheme~$X$,
+\cf (I~\No\SourceRef{I.1}{1}). Suppose that $X$ and $Y$ are
+$S$-preschemes, the structure morphism $f\colon X\to Y$
+being an $S$-morphism. Then $f$ defines a homomorphism of
+Modules (compatible with~$f$)
+\begin{equation}
+\label{eq:II.4.1}
+f^*\colon \it{\Omega}^1_{Y/S}\to\it{\Omega}^1_{X/S}
+\end{equation}
+in other words, $\it{\Omega}^1_{X/S}$ is \emph{contravariant} in
+the $S$-prescheme~$X$. Moreover~\eqref{eq:II.4.1}
+is equivalent to a homomorphism of Modules on~$X$
+\begin{equation*}
+\label{eq:II.4.1bis}
+\tag{4.1\textrm{bis}}
+f^*\big(\it{\Omega}^1_{Y/S}\big)\to\it{\Omega}^1_{X/S}
+\end{equation*}
+also denoted by~$f^*$ for want of a better notation, and
+which fits into a canonical exact sequence of homomorphisms of
+Modules
+\begin{equation}
+\label{eq:II.4.2}
+f^*\big(\it{\Omega}^1_{Y/S}\big)\to
+\it{\Omega}^1_{X/S}\to\it{\Omega}^1_{X/Y}\to 0
+\end{equation}
+All these homomorphisms are defined by the condition of being of
+local nature (which reduces one to the affine case) and of commuting
+with the operators~$\rd$. The exactness of~\eqref{eq:II.4.2} is
+classical and trivial, and transcribes in the affine case as the
+exact sequence (corresponding to a homomorphism $B\to C$ of
+$A$-algebras):
+\begin{equation*}
+\label{eq:II.4.2bis}
+\tag{4.2\textrm{bis}}
+\Omega^1_{B/A}\otimes_{B}C\to\Omega^1_{C/A}\to\Omega^1_{C/B}\to 0
+\end{equation*}
+
+\begin{lemma}
+\label{II.4.1}
+Let $f\colon X\to Y$ be a morphism of $S$-preschemes. If $f$
+is unramified (\resp \'etale) then
+$f^*\big(\it{\Omega}^1_{Y/S}\big)\to\it{\Omega}^1_{X/S}$
+is surjective (\resp an isomorphism). The converse is true
+in the ``unramified'' case, if $f$ is assumed locally of
+finite type.
+\end{lemma}
+
+The unramified case follows from the exact
+sequence~\eqref{eq:II.4.2} and from (I~\SourceRef{I.3.1}{3.1}), but can also be
+seen directly as the \'etale case. Consider the diagram
+\begin{equation*}
+\xymatrix@C=1.5cm{
+X \ar[r]^-{\Delta_{X/Y}} & X\times_{Y}X \ar[d] \ar[r] &
+X\times_{S}X \ar[d] \\ & Y \ar[r]^-{\Delta_{Y/S}} & Y\times_{S}Y
+}
+\end{equation*}
+in which $X\times_{Y}X$ is identified with the fibered product of~$Y$ and
+$X\times_{S}X$ over~$Y\times_{S}Y$. Since $f$ is unramified,
+$X\to X\times_{Y}X$ is an open immersion, hence the
+``conormal'' sheaf of the composite immersion $\Delta_{X/S}$ of the
+latter with $X\times_{Y}X\to X\times_{S}X$ is isomorphic to
+the inverse image on~$X$ of the conormal sheaf for the immersion
+$X\times_{Y}X\to X\times_{S}X$. On the other hand, $X\to Y$ being
+\'etale hence flat, $X\times_{S}X\to Y\times_{S}Y$ is flat, hence the
+conormal sheaf for the immersion $X\times_{Y}X\to X\times_{S}X$ is
+isomorphic to the inverse image of the conormal sheaf for the immersion
+$Y\to Y\times_{S}Y$, \ie the inverse image of~$\it{\Omega}^1_{Y/S}$. The
+conclusion follows from this.
+
+\begin{lemma}
+\label{II.4.2}
+Let $X=Y[t_{1},\dots,t_{n}]$, $Y$ being an
+$S$-prescheme. Then the sequence of canonical homomorphisms
+\[
+0\to f^*\big(\it{\Omega}^1_{Y/S}\big)\to
+\it{\Omega}^1_{X/S}\to\it{\Omega}^1_{X/Y}\to 0
+\]
+is exact and $\it{\Omega}^1_{X/Y}$ is free with basis the
+$\rd_{X/Y}t_{i}$.
+\end{lemma}
+
+The verification (purely affine) is immediate. (N.B.\ one
+already knows the exactness of~\eqref{eq:II.4.2}).
+
+Combining these two statements and definition~\ref{II.1.1}, one
+finds
+
+\begin{theorem}
+\label{II.4.3}
+Let $f\colon X\to Y$ be a smooth morphism of $S$-preschemes,
+then:
+\begin{enumerate}
+\item[(i)] The sequence of canonical homomorphisms
+\[
+0\to f^*\big(\it{\Omega}^1_{Y/S}\big)\to
+\it{\Omega}^1_{X/S}\to\it{\Omega}^1_{X/Y}\to 0
+\]
+is exact.
+\item[(ii)] $\it{\Omega}^1_{X/Y}$ is locally free, its rank $n$
+at~$x$ is equal to the relative dimension of~$f$ at~$x$.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+\label{II.4.4}
+The homomorphism
+% original p. 37
+$f^*\big(\it{\Omega}^1_{Y/S}\big)\to\it{\Omega}^1_{X/S}$ is
+injective, its image in $\it{\Omega}^1_{X/S}$ is locally a
+direct factor.
+\end{corollary}
+
+Let $u\colon F\to G$ be a homomorphism of Modules on the
+prescheme~$X$; one says that it is \emph{universally
+injective}
+at $x\in X$ if the homomorphism $F_{x}\to G_{x}$ of
+$\cal{O}_{x}$-modules is injective, and remains so upon tensoring
+with any $\cal{O}_{x}$-algebra (or, which comes to the same thing
+moreover, with any $\cal{O}_{x}$-module). It suffices for example
+that there exist an open neighborhood $U$ of~$x$ such that $u$ induces an
+isomorphism of~$F|U$ onto a direct factor of~$G|U$; this condition
+is also necessary when $F$ and $G$ are free (and of finite
+type) in a neighborhood of~$x$; more precisely in this case
+the following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] $u$ is injective at~$x$ and $\Coker u$ free at~$x$;
+\item[(ii)] There exists an open neighborhood $U$ of~$x$ such that $u$
+induces an isomorphism of~$F|U$ onto a direct factor of~$G|U$;
+\item[(iii)] $u$ is universally injective at~$x$;
+\item[(iv)] the homomorphism
+$F_{x}\otimes \kres(x)\to G_{x}\otimes \kres(x)$
+on the restricted ``fibers'' induced by~$u$ is injective;
+\item[(v)] The transposed homomorphism $\check{G}\to\check{F}$ is
+surjective at the point~$x$ (or again, which comes to the
+same thing, in a neighborhood of~$x$).
+\end{enumerate}
+(Circular proof, (iv)$\To$(v) follows from
+Nakayama, on the other hand (v)$\To$(i)
+since a locally free quotient sheaf is necessarily a
+direct factor). Geometrically, the situation envisaged
+means that $u$ corresponds to an isomorphism of the vector bundle whose
+sheaf of sections is~$F$, onto a subbundle of the
+analogous vector bundle defined by~$G$. Of course, it does
+not suffice for this that $F\to G$ be injective.
+
+\begin{corollary}
+\label{II.4.5}
+Let $f\colon X\to Y$ be a morphism of $S$-preschemes,
+locally of finite type, $x\in X$, $y=f(x)$, $s$ the projection of~$x$
+and~$y$ on~$S$. One assumes $Y$ is smooth at~$y$ over~$S$. Equivalent
+conditions:
+\begin{enumerate}
+\item[(i)] $f$ is smooth at~$x$.
+\item[(ii)] $X$ is smooth over $S$
+at~$x$, and
+$f^*\big(\it{\Omega}^1_{Y/S}\big)\to\it{\Omega}^1_{X/S}$ is
+universally injective at~$x$, \ie it is an injective homomorphism at~$x$ and its cokernel $\it{\Omega}^1_{X/Y}$ is free
+at~$x$.
+\end{enumerate}
+\end{corollary}
+
+Necessity follows from~\ref{II.1.3}~(iii) and
+from~\ref{II.4.3}~(i)\,(ii); let us prove sufficiency. Since the
+$\rd g$ ($g\in\cal{O}_{x}$) generate the module
+$\it{\Omega}^1_{X/Y}$ at~$x$, one can find
+% original p. 38
+$g_{i}$ ($1\le i\le n$) such that the images of the $\rd g_{i}$ in
+$\big(\it{\Omega}^1_{X/Y}\big)_{x}$ form a basis of this
+module. Taking $X$ small enough, one may assume that the $g_{i}$
+come from sections of~$\cal{O}_{X}$, and thus define a
+$Y$-morphism $g\colon X\to Y'=Y[t_{1},\dots,t_{n}]$. Using
+the hypothesis and lemma~\ref{II.4.2}, one sees easily that
+the corresponding homomorphism
+$g^*\big(\it{\Omega}^1_{Y'/S}\big)\to\it{\Omega}^1_{X/S}$ is
+bijective at~$x$, which reduces us to proving the
+
+\begin{corollary}
+\label{II.4.6}
+Let $f\colon X\to Y$ be a morphism of smooth $S$-preschemes.
+For $f$ to be \'etale at $x\in X$, it is necessary and sufficient
+that $f^*\big(\it{\Omega}^1_{Y/S}\big)\to\it{\Omega}^1_{X/S}$ be
+an isomorphism at~$x$.
+\end{corollary}
+
+One knows that this is necessary by~\ref{II.4.1}, and this condition
+implies that $f$ is unramified at~$x$ by the same lemma. By virtue
+of~\ref{II.2.2}, one is reduced to the case where
+$S=\Spec(k)$. Since $Y$ is smooth over~$k$, it is regular, hence a
+fortiori normal, and by virtue of (I~\SourceRef{I.9.5}{9.5}~(ii)) one is reduced
+to proving that $\cal{O}_{y}\to\cal{O}_{x}$ is injective, or equivalently
+that $\cal{O}_{y}$ and $\cal{O}_{x}$ have the same dimension. Now these
+dimensions are respectively the ranks of~$\it{\Omega}^1_{Y/k}$ and
+$\it{\Omega}^1_{X/k}$ at~$y$ \resp $x$, hence equal by virtue of
+the hypothesis.
+\begin{remarks}
+\label{II.4.7}
+$X$ and $Y$ being assumed smooth over~$S$, the
+criterion~\ref{II.4.5}~(ii) of smoothness of $f\colon X\to Y$ can
+also be stated by saying that for every $x\in X$, the
+\emph{tangent} map (relative to the base~$S$) of~$f$ at~$x$,
+\ie the transpose of the homomorphism of the $\kres(x)$ finite-dimensional vector spaces,
+restricted fibers of
+$f^*\big(\it{\Omega}^1_{Y/S}\big)$ and $\it{\Omega}^1_{X/S}$ at
+$x$, is \emph{surjective}. This is a quite
+familiar hypothesis in particular among people working with
+analytic spaces. The non-singularity hypothesis which they
+ordinarily make (which means that $X$ and $Y$ are ``smooth over~$\CC$'', \cf \No\ref{II.5}) seems due only to the fear which
+singular points of algebraic varieties or analytic spaces still inspire
+in many geometers.
+\end{remarks}
+
+Let us point out the following particular case of~\ref{II.4.6}:
+\begin{corollary}
+\label{II.4.8}
+Let $X$ be an $S$-prescheme, $g\colon X\to
+S[t_{1},\dots,t_{n}]$ an $S$-morphism, defined by the sections
+$g_{i}$ ($1\le i\le n$) of~$\cal{O}_{X}$, $x$ a point of~$X$ such that
+$X$ is smooth over~$S$ at~$x$. For $g$ to be \'etale at~$x$, it
+is necessary and sufficient that the $\rd g_{i}$
+% original p. 39
+($1\le i\le n$) form a basis of~$\it{\Omega}^1_{X/S}$ at~$x$ (or,
+which comes to the same thing, that their images in
+$\it{\Omega}^1_{X/S}(x) =
+\big(\it{\Omega}^1_{X/S}\big)_{x}\otimes_{\cal{O}_{x}}\kres(x)$ form
+a basis of this vector space over~$\kres(x)$).
+\end{corollary}
+
+Let $X$ be a prescheme, $Y$ a closed subprescheme
+of~$X$ defined by a coherent sheaf $\cal{J}$
+of ideals. Thus $\cal{J}/\cal{J}^2$ may be regarded
+as a coherent sheaf on~$Y$ (the \emph{conormal sheaf}
+of~$Y$ in~$X$). If now $X$ is an $S$-prescheme, one has
+a canonical exact sequence of quasi-coherent sheaves on~$Y$
+\begin{equation}
+\label{eq:II.4.3}
+\cal{J}/\cal{J}^2\lto{\rd}
+\it{\Omega}^1_{X/S}\otimes_{\cal{O}_{X}}\cal{O}_{Y}\to
+\it{\Omega}^1_{Y/S}\to 0
+\end{equation}
+whose right-hand part is none other than~\eqref{eq:II.4.2} (with the
+role of~$X$ and~$Y$ interchanged, taking into account that
+$\it{\Omega}^1_{Y/X}=0$), while the homomorphism
+$\cal{J}/\cal{J}^2\to\it{\Omega}^1_{X/S}\otimes_{\cal{O}_{X}}\cal{O}_{Y}$
+is deduced from the homomorphism (in general not
+linear) $g\to\rd g$ by passing to
+quotients. The exactness of~\eqref{eq:II.4.3} is classical and
+moreover trivial, and is interpreted in the affine case by the
+following exact sequence (corresponding to a surjective homomorphism
+$B\to C$ of $A$-algebras, with kernel~$J$):
+\begin{equation*}
+\label{eq:II.4.3bis}
+\tag{4.3\textrm{bis}}
+J/J^2\to\Omega^1_{B/A}\otimes_{B}C\to\Omega^1_{C/A}\to 0\qquad
+(C=B/J)
+\end{equation*}
+(an exact sequence which had already been used
+implicitly in the proof of (I~\SourceRef{I.7.2}{7.2})!).
