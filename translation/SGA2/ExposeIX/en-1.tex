@@ -1,0 +1,265 @@
+\chapter{Algebraic geometry and formal~geometry} \label{IX}
+
+The aim of this expos\'e is to generalize to the case of a morphism which is not proper the theorems 3.4.2 and 4.1.5 of \EGA III.
+
+\section{The comparison theorem} \label{IX.1}
+
+Let $f\colon X\to X'$ be a morphism of preschemes, \emph{separated} and of \emph{finite type}. Suppose that $X'$ is locally noetherian. Let $Y'$ be a closed subset of $X'$ and let $Y= f^{-1}(Y')$. Let $\hat{X}$ and $\hat{X'}$ be the formal completions of $X$ and of $X'$ along $Y$ and along $Y'$. Let $\hat{f}$ be the morphism deduced from $f$ by passage to the completions.
+\begin{equation} \label{eq:IX.1.1}
+\begin{array}{c}
+\xymatrix{ X \ar[d]_f & \ar[l] Y \ar[d]& &\hat{X}\ar[d]_{\hat f} \ar[r]^j & X\ar[d]^f &\\
+X' & \ar[l] Y' &, &\hat{X'} \ar[r]^i & X'.
+}
+\end{array}
+\end{equation}
+
+One denotes by $j$ (\resp $i$) the homomorphism from $\hat{X}$ to $X$ (\resp from $\hat{X'}$ to $X'$). One knows that $i$ and $j$ are \emph{flat}.
+
+Let $\Ii '$ be an ideal of definition of $Y'$ and let ${\Jb}=f^{*}(\Ii '). \OX$, it is an ideal of definition of $Y$. One thus has:
+\begin{equation} \label{eq:IX.1.2} {\hat{X'}=(Y', \varprojlim_{k \in \NN}\Oo_{X'}/{{\Ib}^{k+1}})}, \quad {\hat{X}=(Y, \varprojlim_{k \in \NN}\OX/{{\Jb}^{k+1}})}.
+\end{equation}
+
+For every $k \in \NN$, set:
+\begin{equation} \label{eq:IX.1.3} Y'_k=(Y', \Oo_{X'}/{{\Ib}^{k+1}}), \quad {Y_k}=(Y, \OX/{{\Jb}^{k+1}}).
+\end{equation}
+
+Let $F$ be a \emph{coherent} $\OX$-Module. For every $k \in \NN$, one sets:
+\begin{equation} \label{eq:IX.1.4} F_k=F/{\Jb}^{k+1}F, \qquad \hat{F}=j^*(F)\simeq \varprojlim F_k.
+\end{equation}
+
+If one sets:
+\begin{equation} \label{eq:IX.1.5} R^i f_*(F)^{\wedge}=\varprojlim_{k \in \NN} (R^i f_*(F) \otimes_{{\Oo}_{X'}}{\Oo}_{Y'_k}), \quad i \in \ZZ,
+\end{equation}
+one has a natural homomorphism:
+\begin{equation} \label{eq:IX.1.6} r_i: i^*(R^if_*(F)) \to R^i f_*(F)^{\wedge},
+\end{equation}
+which is an \emph{isomorphism} when $ R^i f_*(F)$ is \emph{coherent}.
+
+As is explained in \EGA III 4.1.1, one has a commutative diagram:
+\begin{equation} \label{eq:IX.1.7}
+\begin{array}{c}
+\xymatrix{ i^*(R^i f_*(F)) \ar[rr]^-{\rho_i} \ar[d]^{r_i} & &R^i\hat{f}_*(\hat{F}) \ar[d]^{\psi_i} \\
+R^i f_*(F)^{\wedge}\ar[rr]^-{\varphi_i} & &\varprojlim_{k \in \NN} R^i f_*(F_k).
+}
+\end{array}
+\end{equation}
+
+In \loccit one finds a commutative diagram, since one knows that $ R^if_*(F)$ is coherent, and one identifies the source and the target of (\Ref{eq:IX.1.6}). In our case, $ R^if_*(F)$ will be coherent only for certain values of $i$, for which one will study (\Ref{eq:IX.1.7}).
+
+Consider the graded ring
+\begin{equation} \label{eq:IX.1.8}
+\Ss = \tbigoplus_{k \in \NN} \Ii'^k,
+\end{equation}
+and the graded $\Ss$-Module:
+\begin{equation} \label{eq:IX.1.9}
+\Hh^i= \tbigoplus_{k \in \NN} R^if_*({\Jb}^k F), \quad i \in \ZZ,
+\end{equation}
+whose structure of $\Ss$-Module is defined as follows.
+
+The sheaf $R^if_*({\Jb}^k F)$ is associated to the presheaf which, to every \emph{affine} open $U'$ of~$X'$, associates:
+\begin{equation} \label{eq:IX.1.10} H^i(f^{-1}(U'), {\Jb}^k F_{|f^{-1}(U')}).
+\end{equation}
+ Let therefore $U'$ be an affine open of $X'$, set
+\begin{equation*} U=f^{-1}(U'),
+\end{equation*}
+and let $x'\in {\Ii'}^m(U')$. Let $x$ be the image of $x'$ in ${\Jb}^{{m}} (U)$. The homothety of ratio $x$ in $F_{|U}$ maps ${\Jb}^kF{_{|U}}$ into ${\Jb}^{k+m}F{_{|U}}$, whence, by functoriality, a morphism:
+\begin{equation} \label{eq:IX.1.11} \mu^i_{x', k}(U'):H^i(U, {\Jb}^kF{_{|U}})\to H^i(U, {\Jb}^{k+m}F{_{|U}}),
+\end{equation}
+defined for every $i \in \ZZ$ and every $k \in \NN$, which gives, by passage to the associated sheaf, the structure of graded $\Ss$-Module of $\Hh^i$.
+
+\begin{theorem} \label{IX.1.1} \setcounter{equation}{11}
+Let $n$ be an integer. Suppose that the graded $\Ss$-Module $\Hh^i$ is of finite type for $i=n-1$ and $i=n$, then:
+\begin{enumerate}\setcounter{enumi}{-1}
+\item
+$r_n$ and $r_{n-1}$ are isomorphisms and $R^i\hat{f}_*(\hat{F})$ is coherent for $i=n-1$;
+\item
+for $i=n-1$, $\rho_i$, $\varphi_i$ and $\psi_i$ are topological isomorphisms (in particular the filtration defined on $R^{n-1}f_*(F)$ by the kernels of the homomorphisms
+\begin{equation} \label{eq:IX.1.12}
+R^{n-1}f_*(F) \to R^{n-1}f_*(F_k)
+\end{equation}
+is $\Ii'$-good);
+
+\item
+for $i=n$, $\rho_i$, $\varphi_i$ and $\psi_i$ are monomorphisms, moreover the filtration on $R^n f_*(F)$ is $\Ii'$-good and $\psi_n$ is an isomorphism;
+
+\item
+The projective system of the $R^i f_*(F_k)$ satisfies, for $i=n-2, n-1$, the uniform Mittag-Leffler condition, \ie there exists a \emph{fixed} integer $k\geq 0$ such that, for every $p\geq 0$ and every $p'\geq p+k$, one has:
+\begin{equation*}
+\Im[R^i f_*(F_{p'})\to R^i f_*(F_p)]=\Im[R^i f_*(F_{p+k})\to R^i f_*(F_p)].
+\end{equation*}
+\end{enumerate}
+\end{theorem}
+
+Proceeding as in \EGA III 4.1.8, it is easy to \emph{reduce to the case where} $X'$ \emph{is the spectrum of a noetherian ring} $A$. In this case, one knows that
+\begin{equation} \label{eq:IX.1.13} R^if_*(F)=\widetilde{H^i(X, F)} \quad \text{(\cf \Ref{eq:IX.1.10}).}
+\end{equation}
+
+Let $I$ be the ideal of $A$ such that $\tilde{I}=\mathcal I'$ and let
+\begin{equation} \label{eq:IX.1.14}
+S=\tbigoplus_{k \in \NN}I^k,
+\end{equation}
+\begin{equation} \label{eq:IX.1.15}
+H^i=\tbigoplus_{k \in \NN}H^i(X, {\Jb}^k F), \quad i \in \ZZ,
+\end{equation}
+where $H^i$ is equipped with the structure of graded $S$-module defined by \Ref{eq:IX.1.11}, where one has taken $U=X'$.
+
+The proof is modelled on that of \EGA III 4.1.5; let us give a summary.
+
+One works with $\varphi_i$ and $\psi_i$, to which correspond homomorphisms of modules:
+\begin{equation} \label{eq:IX.1.16}
+\begin{array}{c}
+\xymatrix{ & H^i(\hat X, \hat F) \ar[d]^-{\psi_i} \\
+H^i(X, F)^{\wedge}\ar[r]^-{\varphi_i}& \varprojlim_k H^i(X, F_k).
+}
+\end{array}
+\end{equation}
+
+\indent\textup{(a)} One assumes only that $H^i$ is a graded $S$-module of finite type. One deduces from this that \emph{the filtration defined on} $H^i(X, F)$ \emph{by the modules}:
+\begin{equation} \label{eq:IX.1.17} R^i_k=\ker(H^i(X, F)\to H^i(X, F_k))
+\end{equation}
+\emph{is} $I$-\emph{good}. For this one uses the cohomology exact sequence:
+\begin{equation} \label{eq:IX.1.18} H^i(X, {\Jb}^{k+1}F)\to H^i(X, F)\to H^i(X, F_k),
+\end{equation}
+which proves that \emph{the} graded $S$-\emph{module} $\bigoplus_{k \in \NN} R_k^i$ is a \emph{quotient} of the graded sub-$S$-module
+\begin{equation*}
+\tbigoplus_{k \in \NN}H^i(X, {\Jb}^{k+1}F)
+\end{equation*}
+of $H^i$, hence \emph{is of finite type}, since $S$ is noetherian. Whence this first point.
+
+Set:
+\begin{equation} \label{eq:IX.1.19}
+M^i=H^i(X, F), \quad H^i_k=H^i(X, F_k).
+\end{equation}
+%
+One has a commutative diagram:
+\begin{equation} \label{eq:IX.1.20}
+\begin{array}{c}
+\xymatrix@R=6mm{ H^i(X, F)^{\wedge} \ar[r]^-{s_i}\ar[dr]_{\varphi_i} &\varprojlim_{k}(M^i/R^i_k)\ar[d]^{t_i} \\
+&\varprojlim_{k}H^i_k\,,
+}
+\end{array}
+\end{equation}
+in which $s_i$ is an \emph{isomorphism}; indeed the filtration of $H^i(X, F)$ is $I$-good. Moreover $t_i$ is a \emph{monomorphism}; indeed the functor $\varprojlim$ is left exact, and, for every $k\geq 0$, the natural morphism $M^i/R^i_k \to H^i_k$ is a monomorphism, by definition of $R^i_k$.
+
+To study the surjectivity of $t_i$ one introduces:
+\begin{equation} \label{eq:IX.1.21} Q_k^i = \coker (H^i(X, F) \to H^i(X, F_k)),
+\end{equation}
+whence a projective system of exact sequences:
+\begin{equation} \label{eq:IX.1.22} 0\to R_k^i \to M^i \to H^i_k \to Q_k^i \to 0.
+\end{equation}
+Using the cohomology exact sequence:
+\begin{equation} \label{eq:IX.1.23}
+H^i(X, F)\to H^i(X, F_k)\to H^{i+1}(X, {\Jb}^{k+1}F),
+\end{equation}
+one sees that \emph{the graded $S$-module}
+\begin{equation} \label{eq:IX.1.24}
+Q^i=\tbigoplus_{k \in \NN}Q^i_k
+\end{equation}
+\emph{is a graded sub-}$S$\emph{-module of} $H^{i+1}$. Moreover, for every $k\geq 0$, one has:
+\begin{equation} \label{eq:IX.1.25}
+I^{k+1}Q^i_k=0
+\end{equation}
+since $Q_k^i$ is the image of $H^i_k$.
+
+\textup{(b)} \label{stepb} One assumes only that $H^{i+1}$ is of finite type and one is concerned with $t_i$ (forgetting $s_i$). Since $S$ is noetherian, $Q^i$ is of finite type; as $I^{k+1}Q^i_k$ is zero, one finds that there exist an integer $r\geq 0$ and an integer $k_0\geq 0$ such that
+\begin{equation} \label{eq:IX.1.26}
+I^rQ_k^i=0 \quad \text{for } k\geq k_0.
+\end{equation}
+It follows that the \emph{projective system} $(Q_k^i)_{k\in \NN}$ \emph{is essentially zero}, hence that the \emph{projective system $(H_k^i)_{k\in \NN}$ satisfies the uniform Mittag-Leffler condition}. From the exact sequence (\Ref{eq:IX.1.22}) one deduces the exact sequence
+\begin{equation} \label{eq:IX.1.27}
+0 \to M^i/R_k^i \to H^i_k \to Q_k^i \to 0,
+\end{equation}
+whence the exact sequence:
+\begin{equation} \label{eq:IX.1.28}
+0\to\varprojlim_{k}M^i/R_k^i \lto{t_i} \varprojlim_{k}H^i_k \to \varprojlim_{k} Q_k^i.
+\end{equation}
+Now the projective system $(Q_k^i)_{k\in \NN}$ is essentially zero, hence $t_i$ is an \emph{isomorphism}.
+
+\indent\textup{(c)} Let us prove that, if $H^i$ is of finite type, $\psi_i$ is an isomorphism. It suffices to apply $\EGA 0_{\textup{III}}$ 13.3.1 taking as a basis of open sets of $X$ the affine open sets. This is legitimate; indeed, by (b), the projective system $(H_k^{i-1})_{k\in \NN}$ satisfies the Mittag-Leffler condition.
+
+The theorem follows formally from (a), (b) and (c). One will remark that in fact the proof uses, at each step, the finiteness of $H^i$ only for a single value of~$i$.
+
+Let us give some examples where the hypothesis of theorem \Ref{IX.1.1} is satisfied.
+
+\begin{corollary}\setcounter {equation}{28} \label{IX.1.2}
+Suppose that $\Ii'$ is generated by a section $t'$ of $\Oo_{X'}$, and denote by~$t$ the corresponding section of $\OX$. Let $F$ be a coherent $\OX$-module and let $n$ be an integer.
+
+Suppose that:
+\begin{enumeratei}
+\item
+$t$ is $F$-regular (\ie the homothety of ratio $t$ in $F$ is a monomorphism).
+\item
+$R^if_*(F)$ is coherent for $i=n-1$ and $i=n$.
+\end{enumeratei}
+Then the hypothesis of theorem \Ref{IX.1.1} is satisfied.
+\end{corollary}
+
+Indeed, one remarks that multiplication by $t^k$ defines an isomorphism $ F\isomto\Jb^kF$ and one deduces from this that
+\begin{equation} \label{eq:IX.1.29}
+\Hh^i \simeq R^if_*(F)\otimes_{\Oo_{X'}}\Oo_{X'}[T],
+\end{equation}
+where $T$ is an indeterminate. Whence the conclusion.
+
+\setcounter{equation}{29}
+\refstepcounter{subsection}\label{IX.1.3}
+\begin{enonce*}{Corollary 1.3\ndemark}
+Suppose that $X'=\Spec(A)$, where $A$ is a noetherian ring, separated and complete for the $I$-adic topology. Suppose that the $S$-module $H^i$ is of finite type for $i=n-1$ and $i=n$. (\cf \Ref{eq:IX.1.14} and \Ref{eq:IX.1.15}). Then the hypotheses of theorem \Ref{IX.1.1} are satisfied and one finds a commutative diagram of isomorphisms:
+\begin{equation} \label{eq:IX.1.30}
+\begin{array}{c}
+\xymatrix{ H^i(X, F)\ar[rr]^{\rho'_i}\ar[dr]_{\varphi'_i} && H^i(\hat{X}, \hat{F}) \ar[dl]^{\psi_i}& \\
+&\varprojlim_{k}H^i(X, F_k)&& \text{for } i=n-1.}
+\end{array}
+\end{equation}
+\ndetext{in the same vein, see the article of Chow, (Chow~W.-L., ``Formal functions on homogeneous spaces'', \emph{Invent. Math.} \textbf{86} (1986), \numero 1, p\ptbl 115--130). The author proves the following result. Let $X$ be an algebraic variety over a field, homogeneous under an algebraic group $G$, and let $Z$ be a complete subvariety of $X$ of dimension $>0$. One assumes that $Z$ generates $X$ in the following sense: given $p\in Z$, let $\Gamma_p$ be the set of elements of $G$ sending $p$ into $Z$. One then says that $Z$ generates if the group generated by the connected component of $1$ of $\Gamma_p$ is all of $G$. In this case, every formal rational function of $X$ along $Z$ is algebraic; to be compared with the results of Hironaka and Matsumura cited in the editor's note~\eqref{noteHM}~page~\pageref{noteHM}. In the line of the techniques introduced by these authors, let us mention the very pretty algebraization result due to Gieseker (Gieseker~D., ``On two theorems of Griffiths about embeddings with ample normal bundle'', \emph{Amer. J.~Math.} \textbf{99} (1977), \numero 6, p\ptbl 1137--1150, theorems 4.1 and 4.2). Let $X$ be a connected projective variety of dimension $>0$ locally a complete intersection (over an algebraically closed field). One assumes that one has two embeddings of $X$ into smooth projective varieties $Y,W$. Then, if the formal completions of $X$ in $Y$ and $W$ are equivalent, there exists a scheme $U$ containing $X$ (as a closed subscheme) which embeds into $Y$ and $W$ as an \'etale neighbourhood of $X$ in $Y$ and $W$ In other words, formally equivalent implies \'etale-equivalent.
+See also the article of Faltings (Faltings~G., ``Formale Geometrie and homogene Raüme'', \emph{Invent. Math.} \textbf{64} (1981), p\ptbl 123-165).}
+\end{enonce*}
+
+One simply notes that $H^i(X, F)$ is of finite type hence isomorphic
+to its completion. One obtains (\Ref{eq:IX.1.30}) by transcribing into
+the category of $A$-modules the diagram of Modules
+(\Ref{eq:IX.1.7}), and replacing the left-hand vertical arrow by
+$H^i(X, F)$.
+
+\begin{proposition}\setcounter {equation}{30} \label{IX.1.4}
+Let $A$ be a noetherian ring. Let $t\in A$ and suppose that $A$ is separated and complete for the $(tA)$-adic topology. Set:
+\begin{equation} \label{eq:IX.1.31}
+X'=\Spec (A), \quad Y'=V(t), \quad I=(tA).
+\end{equation}
+Let $T$ be a closed subset of $X'$, set
+\begin{equation} \label{eq:IX.1.32}
+X=X'-T, \quad Y=Y'\cap X=Y'-(Y'\cap T).
+\end{equation}
+Let $F$ be a coherent $\OX$-Module. Finally let
+\begin{equation} \label{eq:IX.1.33}
+T'= \{ x\in X' \mid \codim(\{ \overline{x}\} \cap T, \{\overline{x}\})=1\}.
+\end{equation}
+Suppose that:
+\begin{enumeratea}
+\item
+$t$ is $F$-regular,
+\item
+$\prof_{T'}(F) \geq n+1$,
+\item
+$A$ is a quotient of a regular noetherian ring.
+\end{enumeratea}
+\noindent
+Then, in the diagram (\Ref{eq:IX.1.30}), the morphisms $\rho'_i$, $\varphi'_i$ and $\psi_i$ are isomorphisms for $i<n$ and monomorphisms for $i=n$. Moreover $\psi_n$ is an isomorphism.
+\end{proposition}
+
+By virtue of \Ref{eq:IX.1.3} and \Ref{eq:IX.1.2}, it suffices to prove that $R^if_*(F)$ is coherent for $i\leq n$, which follows from the finiteness theorem \Ref{VIII.2.1}.
+
+In particular:
+
+\begin{example} \label{IX.1.5} One will apply \Ref{eq:IX.1.4} when $A$ is a \emph{local} ring and $t$ belongs to the radical $\rr(A)$ of $A$. One will then take $T=\{ \rr(A)\}$. \emph{In this case}, for $n=1$ one finds the following statement:
+
+\emph{If $A$ noetherian is separated and complete for the $t$-adic topology and a quotient of a regular ring (for example if $A$ is complete), if moreover $t$ is $F$-regular and if $\prof F_x\geq 2$ for every $x\in \Spec (A)$ such that $\dim A/x=1$, then the natural homomorphism
+\[
+\Gamma(X, F)\to\Gamma(\hat{X}, \hat{F})
+\]
+is an isomorphism.}
+
+Indeed, retaining the notations of \Ref{eq:IX.1.4}, one has $T=\{ \rr(A)\}$ and formula (\Ref{eq:IX.1.33}) says that
+\[
+T'=\{x\in\Spec(A)\mid\dim A/x=1\}.
+\]
+\end{example}

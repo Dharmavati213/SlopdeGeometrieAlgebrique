@@ -1,0 +1,307 @@
+% English body fragment for SGA 2 XIV (en-1b.tex)
+
+We shall deduce from \Ref{XIV.1.8} some important cases in which one can determine the \'etale depth.
+
+\refstepcounter{subsection}\label{XIV.1.10}
+\begin{enonce*}{Theorem 1.10}[Cohomological semi-purity theorem\ndemark]\ndetext{\label{gabpur} Gabber has since proved --- in 1994 --- Grothendieck's absolute cohomological purity conjecture: if $Y$ is a closed subscheme of absolutely noetherian schemes of pure codimension $c$ and $n$ an integer invertible on $X$, then $\SheafH_Y^q(\Lambda)$ vanishes if $q\neq 2c$ and equals $\Lambda_Y(-c)$ (Tate twist) otherwise, where one has set $\Lambda=\ZZ/n\ZZ$. See (Fujiwara~K., ``A Proof of the Absolute Purity Conjecture (after Gabber)'', in \emph{Algebraic geometry 2000, Azumino (Hotaka)}, Adv. Stud. in Pure Math., vol.~36, 2002, p\ptbl 153-183). For applications to the existence of the dualizing complex, see (\SGA 5, Lect. Notes in Math., vol.~589, Springer-Verlag, 1977, p\ptbl 1672), expos\'e 1 and \loccit, \S8. This conjecture had been proved in the case $n=\ell^\nu$ with $\ell$ a prime invertible on $X$ sufficiently large, using $K$-theory in a crucial way (Thomason~R.W., ``Absolute cohomological purity'', \emph{Bull. Soc. Math. France} \textbf{112} (1984), \numero 3, p\ptbl 397--406). One finds $K$-theory again in Gabber's proof via the Atiyah--Hirzebruch--Thomason spectral sequence relating \'etale cohomology and $K$-theory, a method already used in Thomason's approach. Besides this result, the other fundamental argument is the generalization of the Lefschetz theorem cited in note~\eqref{gabaf}, page~\pageref{gabaf}.}
+Let $X$ denote either a scheme smooth over a field $k$, or a regular excellent scheme \textup{(\EGA IV 7.8.2)} of characteristic zero (N.B. if one admits resolution of singularities in the sense of \textup{(\SGA 4 XIX)}, it suffices to assume, more generally, that $X$ is a regular excellent scheme of equal characteristic). Let $Y$ be a closed subset of $X$ and $\LL$ the set of prime numbers distinct from the characteristic of $X$. Then one has
+$$
+\prof_Y^{\LL}(X)=2\codim(Y, X).
+$$
+\end{enonce*}
+
+\begin{proof}
+It follows from \Ref{XIV.1.8} that one has
+$$
+\prof_Y^{\LL}(X)=\inf_{y\in Y} \prof_y(X).
+$$
+
+As on the other hand $\codim(Y, X)=\inf_{y\in Y} \dim \Oo_{X, y}$, one is reduced to showing that
+$$
+\prof_y^{\LL}(X)=2 \dim \Oo_{X, y},
+$$
+which follows from (\SGA 4 XVI 3.7 and XIX 3.2).
+\skipqed
+\end{proof}
+
+\begin{theorem}[Homotopical purity theorem\ndemark] \label{XIV.1.11}
+If $X$ is a locally noetherian scheme which is regular (\resp whose local rings are complete intersections), $Y$ a closed subset of $X$ such that $\codim(Y, X)\geq 2$ (resp.\ \hbox{$\codim(Y, X)\geq3$}), then one has\ndetext{\label{jongoort} recently, de Jong and Oort have obtained the following purity statement: let $\tilde S\to S$ be a resolution of singularities of the spectrum $S$ of a normal noetherian local ring of dimension $2$ and let~$U$ be the complement of the closed point $s$ in $S$. Suppose moreover that $k(s)$ is algebraically closed. Then, for every prime number $p$, in particular if $S$ is of characteristic $p$, the restriction morphism $H^1_\et(\tilde S,\QQ_p)\to H^1_\et(U,\QQ_p)$ is bijective (de Jong A.J. \& Oort~F, ``Purity of the stratification by Newton polygons'', \emph{J.~Amer. Math. Soc.} \textbf{13} (2000), \numero 1, p\ptbl 209--241, theorem 3.2). If $k=\CC$ and $A$ is the completion of a surface singularity, this result is due to Mumford (see page~\pageref{XIII.7}, \cite{XIII.5}).}
+$$
+\prof \hop_Y(X)\geq 3.
+$$
+\end{theorem}
+
+Indeed it follows from \Ref{XIV.1.8} that one has $\prof \hop_Y(X)=\inf_{y\in Y} \prof \hop_y(X)$. Now the strictly local rings of $X$ at the different points of $Y$ are regular rings of dimension $\geq 2$ (\resp complete intersections and of dimension $\geq 3$). It then follows from the purity theorem \Ref{X}~\Ref{X.3.4} that $\prof \hop_y(X)\geq 3$, which proves the theorem.
+
+\begin{example} \label{XIV.1.12}
+Let $X$ be a locally noetherian scheme, $Y$ a closed subset of~$X$ and $n=1$ or $2$. Then, if one has $\prof_Y(\OX)\geq n$ ($\prof_Y(\OX)$ denoting the $Y$-depth in the sense of coherent sheaves (\cf 1.6 a)), one also has $\prof_Y(X)\geq n$; this is obvious for $n=1$ and, for $n=2$, it is nothing other than Hartshorne's theorem (\Ref{III}~\Ref{III.1}). On the other hand the analogous assertion is false for $n\geq 3$. Take for example an affine space of dimension $\geq 3$ over a field of characteristic $\neq 2$ and let the group $\ZZ/2\ZZ$ act by symmetry with respect to the origin. Let $X$ be the quotient and $Y=\{x\}$ the image of the origin in $X$. Then $\Oo_{X, x}$ is a Cohen-Macaulay ring, hence one has $\prof_x(\OX)\geq 3$; but the affine space with the origin removed is an \'etale covering of $X-\{x\}$ which does not extend to an \'etale covering of $X$; hence one has by \Ref{XIV.1.4} $\prof_Y(X)=2$.
+\end{example}
+
+The following theorem is the analogue of (\EGA IV 6.3.1):
+
+\begin{theorem} \label{XIV.1.13}
+Let $f:X\to S$ be a morphism of schemes, $Y$ a closed subset of $X$, $Z$ a closed subset of $S$, such that $f(Y)\subset Z$. One assumes that the local rings of $X$ at the different points of $Y$ are noetherian and that the open sets $X-Y$ and $S-Z$ are retrocompact in $X$ and $S$ respectively. Let $p$, $q$, $r$ be integers such that $p\geq -r$, $q\geq 0$, $\LL$ a set of prime numbers and $F$ a complex of abelian sheaves of $\LL$-torsion on $S$, such that the cohomology sheaves $\H^i(F)$ vanish for $i<-r$. One assumes that
+\begin{enumeratea}
+\item
+The morphism $f$ is locally ($p+q+r-2$)-acyclic for $\LL$ \textup{(\SGA 4 XV 1.11)}.
+\item
+One has
+$$
+\prof_Z(F)\geq p.
+$$
+\item
+For every point $s$ of $Z$, one has
+$$
+\prof_{Y_s}^{\LL}(X_s)\geq q.
+$$
+\end{enumeratea}
+\noindent
+Then one has
+$$
+\prof_Y(f^*F)\geq p+q.
+$$
+\end{theorem}
+
+We shall need the following lemma:
+
+\begin{sublemma} \label{XIV.1.13.1}
+Let $\LL$ be a set of prime numbers, $n$ and $r$ integers, $f:X\to S$ a morphism locally $n$-acyclic for $\LL$. Let $F$ be a complex of abelian sheaves, with cohomology sheaves of $\LL$-torsion, such that $\H^i(F)=0$ for $i<-r$, $Z$ a closed subset of $S$ such that $S-Z$ is retrocompact in $S$ and $T=f^{-1}(Z)$. Then the canonical morphism
+$$f^*({\h}_Z^i(F))\to {\h}_T^i(f^*F)$$
+is bijective for $i<n-r+2$ and injective for $i=n-r+2$.
+\end{sublemma}
+
+Put $U=S-Z$ and $V=X-T$, so that one has the cartesian square
+$$
+\xymatrix{
+V \ar[r]^-g\ar[d]_k& U\ar[d]^j\\
+X \ar[r]^-f&S
+}$$
+Consider the following commutative diagram whose rows are exact
+$$
+\xymatrix{ \ar[r]&f^*({\h}_Z^i(F))\ar[r]\ar[d]& f^*({\h}^i(F))\ar[r]\ar[d]^{\wr} &f^*({\h}^i(\R j_*(j^*F)))\ar[r]\ar[d]& \\
+\ar[r] &{\h}_T^i(f^*F)\ar[r]& {\h}^i(f^*F) \ar[r]&{\h}^i(\R k_*(k^*f^*F)) \ar[r]&\text{;}}$$
+it follows that one is reduced to showing that the morphism
+$$f^*({\h}^i(\R j_*(j^*F)))\to {\h}^i(\R k_*(k^*f^*F))$$
+is bijective for $i<n-r+1$ and injective for $i=n-r+1$. Now such a morphism comes from the following morphism between hypercohomology spectral sequences
+$$
+\xymatrix{f^*E_2^{p, q}=f^*(\R^pj_*({\h}^q(j^*F)))\ar@{=>} [r]\ar[d]&f^*({\h}^*(\R j_*(j^*F)))\ar[d]\\
+E'^{p, q}_2=\R^pk_*({\h}^q(k^*f^*F))\ar@{=>}[r]&{\h}^*(\R k_*(k^*f^*F)).}
+$$
+As $j$ is quasi-compact, it follows from (\SGA 4 XV 1.10) that the morphism $f^*(E^{p, q}_2)\to E'^{p, q}_2$ is bijective for $p\leq n$ and injective for $p=n+1$; in particular it is bijective for $p+q\leq n-r$ and injective for $p+q=n-r+1$. The conclusion follows at once.
+
+Let us return to the proof of \Ref{XIV.1.13}. Let $T=f^{-1}(Z)$. By \Ref{XIV.1.13.1} and condition a), the canonical morphism $f^*(\h_Z^i(F))\to\h_T^i(f^*F)$ is an isomorphism for $i\leq p+q$. It therefore follows from b) that $\h^i_T(f^*F)=0$ for $i<p$ and, for $i<p+q, \ \h^i_T(f^*F)$ restricted to $T$ is the inverse image of a sheaf $G^i$ on $Z$. Let
+$$f_T:T\to Z$$
+be the restriction of $f$ to $T$. It then follows from c) and from the corollary which follows that $\h^j_Y(f^*_T(G^i))=0$ for $j<q$. One concludes from this that
+$$
+\h^j_Y(\h^i_T(f^*F))=0\text{ for } i+j<p+q,
+$$
+for the inequality $i+j<p+q$ implies either $i<p$ and then $\h^i_T(f^*F)=0$, or $j<q$ and then $\h_Y^j(\h_T^i(f^*F))=0$. Given that one has, with the notations of \Ref{XIV.1.0}, $\underline{\Gamma}_Y=\underline{\Gamma}_Y.\underline{\Gamma}_T$, one has the spectral sequence
+\begin{equation*} \label{eq:XIV.1.13.2} \tag{1.13.2}
+E_2^{i, j}=\h_Y^j(\h_T^i(f^*F))\To\h^*_Y(f^*F);
+\end{equation*}
+as $E_2^{i, j}=0$ for $i+j<p+q$, one sees that $\h_Y^k(f^*F)=0$ for $k<p+q$. The theorem will thus be proved if one proves the following corollary (which is the special case of 1.13 obtained by making $Z=S, \ r=p=0$ therein and $F$ reduced to degree $0$).
+
+\begin{corollary}\label{XIV.1.14}
+Let $f:X\to S$ be a morphism, $Y$ a closed subset such that the complementary open set $X- Y$ is retrocompact in $X$ and that the local rings of~$X$ at the different points of~$Y$ are noetherian. Let $\LL$ be a set of prime \hbox{numbers}, $q$ an integer and $F$ an abelian sheaf of $\LL$-torsion on $S$. Suppose that~$f$ is locally $(q-2)$-acyclic for $\LL$ and that, for every point $s$ of $S$, one has \hbox{$\prof_{Y_s}^\LL(X_s)\!\geq\! q$}. Then one has $\prof_Y(f^*F)\geq q$.
+\end{corollary}
+
+$1^\circ)$ Reduction to the case where $X$ and $S$ are strictly local schemes, $f$ a local morphism and $Y$ reduced to a closed point of $X$.
+
+By \Ref{XIV.1.8}, to establish \Ref{XIV.1.14}, one must show that one has for every point $y$ of $Y$:$$
+\prof_y(f^*F)\geq q.
+$$
+
+Let $s=f(y)$, $\bar s$ a geometric point over $s$, $\bar y$ a geometric point over~$y$ and over $\bar s$, $\bar X$ and $\bar S$ the strict localizations of $X$ and $S$ at $\bar y$ and $\bar s$ respectively, $\bar f:\bar X\to\bar S$ the canonical morphism and $\bar F$ the inverse image of $F$ on $\bar S$. As one has the relation $\prof_y(f^*F)=\prof_{\bar y}(\bar f^*\bar F)$, it suffices to show that the hypotheses of \Ref{XIV.1.14} are preserved when one replaces $f$ (\resp $Y$, \resp $F$) by $\bar f$ (\resp $\{\bar y\}$, \resp $\bar F$). The retrocompactness condition follows from the noetherian hypothesis on $\Oo_{X, x}$, implying that $\bar X$ is noetherian. By (\SGA 4 XV~1.10 \textup{(i)}), $\bar f$ is still locally $(q-2)$-acyclic for $\LL$. On the other hand the fibre $(\bar X)_{\bar s}$ of $\bar X$ over $\bar s$ is identified with the strict localization of $X_s$ at $\bar y$, hence satisfies the relation $\prof_{\bar y}((\bar X)_{\bar s})\geq q$. As an analogous relation is trivially satisfied for the fibres of the $\bar S$-scheme $\bar X$, other than the closed fibre, this completes the reduction.
+
+$2^\circ)$ Case where $X$ and $S$ are strictly local, $f$ a local homomorphism and $Y$ reduced to the closed point of $X$. Let
+$$g:Y=X-\{y\}\to S$$
+be the structure morphism of $U$. One must show that the canonical morphism
+$$u_i:H^i(X, f^*F)\to H^i(U, f^*F)$$
+is bijective for $i\leq q-2$ and injective for $i=q-1$. Consider the commutative diagram
+$$
+\xymatrix{H^i(X, f^*F)\ar[rr]^{u_i}&& H^i(U, f^*F)\\&H^i(S, F)\ar[lu]^{v_i}\ar[ru]_{w_i}}$$
+The morphism $v_i$ is obviously bijective for every $i$. On the other hand $g$ is locally $(q-2)$-acyclic for $\LL$; moreover its fibres are $(q-2)$-acyclic for $\LL$, as follows from the fact that $\prof_y(X_s)\geq q$ and that the fibres of $f$ are $(q-2)$-acyclic for~$\LL$; as $g$ is quasi-compact since $X$ is noetherian, it follows from (\SGA 4 XV 1.16) that $g$ is $(q-2)$-acyclic for $\LL$. Consequently $w_i$, hence also $u_i$, is bijective for $i\leq q-2$ and injective for $i=q-1$, which completes the proof of \Ref{XIV.1.14}.
+
+\begin{corollary} \label{XIV.1.15}
+Let $f:X\to S$ be a morphism of schemes, $\LL$ a set of prime numbers, $m$ and $r$ integers and $F$ a complex of abelian sheaves of $\LL$-torsion on $S$ such that $\h^i(F)=0$ for $i<-r$. Let $x$ be a point of $X,\ s=f(x)$ and suppose that the local ring $\Oo_{X, x}$ is noetherian. Then, if $f$ is locally $m$-acyclic for $\LL$, one has the relation
+\begin{equation*} \label{eq:XIV.115..*} \tag{$*$} {\prof_x(f^*F)\geq\inf(\prof_s(F)+\prof^\LL_xX_s), n)\text{ where }n=m-r+2.}
+\end{equation*}
+In particular, if $n\geq\prof_s(F)+\prof_x^\LL(X_s)$, for example if $f$ is locally acyclic for $\LL$, one has
+\begin{equation*} \label{eq:XIV.15.**} \tag{$**$} {\prof_x(f^*F)\geq\prof_s(F)+\prof_x^\LL(X_s).}
+\end{equation*}
+If $\LL$ is reduced to a single element $\ell$ and if one has $n\geq \prof_s(F)+\prof_x^\LL(X_s)$, the preceding inequality is an equality.
+\end{corollary}
+
+One reduces to the case where $s$ and $x$ are closed points, by taking the strict localizations of $S$ and $x$ at geometric points $\bar s$ over $s$ and $\bar x$ over $x$ and over $\bar s$. If one has the inequality $n\geq\prof_s(F)+\prof_x^\LL(X_s)$, then ($*$) is obtained from \Ref{XIV.1.13} by making $p=\prof_s(F)$ and $q=\prof_x^\LL(X_s)$ therein (the hypothesis that $S-\{s\}$ is retrocompact in $S$ follows from the fact that $X-X_s$ is retrocompact in $X$ and that $f$ is surjective since it is $(-1)$-acyclic (except perhaps if the conclusion of 1.15 is empty)). If one has $n<\prof_s(F)+\prof_x^\LL(X_s)$, the inequality \eqref{eq:XIV.115..*} is still obtained from \Ref{XIV.1.13} by making for example $p=\prof_s(F)$ and $q=n-p$ therein. It remains to prove the last assertion. Let $p=\prof_s(F)$ and $q=\prof_x(X_s)$; it follows from \eqref{eq:XIV.1.13.2} that one has
+$$
+\h_x^{p+q}(f^*(F))\simeq \h_x^q(f^*(\h^p_s(F))).
+$$
+As $\prof_s(F)=p$, the sheaf $\h^p_s(F)$ is a sheaf of $\ell$-torsion, constant on~$s$, different from zero. Consequently the sheaf $G=f^*(\h_s^p(F))$ is a sheaf of $\ell$-torsion, constant on $X_s$, nonzero, hence contains a subsheaf isomorphic to $\ZZ/\ell\ZZ$; as $\h_x^q(\ZZ/\ell\ZZ)$ is different from zero, one indeed has $\h_x^q(G)\neq 0$.
+
+\begin{corollary} \label{XIV.1.16}
+Let $f:X\to S$ be a regular morphism of excellent schemes (\textup{\EGA IV 7.8.2}) of characteristic zero, $\ell$ a prime number and $F$ a complex of sheaves of $\ell$-torsion on $S$. Let $x\in X$, $s=f(x)$; then one has
+$$
+\prof_x(f^*F)=\prof_s(F)+2\dim(\Oo_{X, x}).
+$$
+\end{corollary}
+
+Indeed $f$ is locally acyclic (\SGA 4 XIX 4.1). It then follows from \Ref{XIV.1.15} that one has
+$$
+\prof_x(f^*F)=\prof_s(F)+\prof_x(X_s).
+$$
+Now one has by \Ref{XIV.1.10}
+$$
+\prof_x(X_s)=2\dim\Oo_{X_s, x},
+$$
+whence the result.
+
+\begin{remark} \label{XIV.1.17}
+It follows from \Ref{XIV.1.15} that \Ref{XIV.1.13} remains true when one replaces b) and c) by the conditions:
+
+b$'$) For every point $s\in f(Y)$, one has $\prof_s(F)\geq p$.
+
+c$'$) For every point $x\in Y$, if $s=f(x)$, one has $\prof^\LL_x(X_s)\geq q$.
+\end{remark}
+
+In the case of a sheaf of sets or of groups, one has the following theorem analogous to \Ref{XIV.1.13}.
+
+\begin{theorem} \label{XIV.1.18}
+Let $f:X\to S$ be a morphism of schemes, $Y$ a closed subset of $X$ such that $X-Y$ is retrocompact in $X$ and that, for every point $x$ of $Y$, the local ring $\Oo_{X, x}$ is noetherian.
+
+$1^\circ)$ Let $F$ be a sheaf of sets on $S$ and $n$ an integer equal to $1$ or $2$. Suppose that $f$ is locally $(n-2)$-acyclic and that, for every point $s$ of $f(Y)$, one has:
+$$
+\prof_{Y_s}(X_s)+\prof_s(F)\geq n.
+$$
+Then one has:$$
+\prof_Y(f^*F)\geq n.
+$$
+
+$2^\circ)$ Let $\LL$ be a set of prime numbers and $F$ a sheaf of ind-$\LL$-groups. Suppose that $f$ is locally $1$-aspherical for $\LL$ (\textup{\SGA 4 XV 1.11}) and that, for every point $s$ of $f(Y)$, one has:
+$$
+\prof\hop^\LL_{Y_s}(X_s)+\prof_s(F)\geq 3.
+$$
+Then, one has:$$
+\prof_Y(f^*F)\geq 3.
+$$
+\end{theorem}
+
+\begin{proof}
+One reduces, as in \Ref{XIV.1.14} and \Ref{XIV.1.15}, to the case where $X$ and $S$ are strictly local schemes, $f$ a local homomorphism and $Y$ the closed point $x$ of $X$. Let $s=f(x)$ be the closed point of $S$; one has the commutative diagram:
+$$
+\xymatrix{ X-X_s\ar[r]^i\ar[d]_h&X-\{x\}\ar[rd]_g\ar[rr]^j&&X\ar[ld]^f\\
+S-\{s\}\ar[rr]_k&&S. }$$
+
+$1^\circ)$ a) \textit{Case} $n=1$.
+
+If one has $\prof_s(F)\geq 1$, then the morphism $F\to k_*k^*F$ is injective, hence the morphism $f^*F\to f^*(k_*k^*F)$ is also injective. On the other hand it follows from the fact that $f$ is locally $(-1)$-acyclic, that the morphism $f^*(k_*k^*F)\to (j.i)*(f^*F_{|X-X_s}))$ is injective. Finally, the composite morphism $f^*F\to (j.i)*(f^*F_{|X-X_s}))$ is injective, which shows that one has $\prof_{X_s}(f^*F)\geq 1$, hence also $\prof_x(f^*F)\geq 1$.
+
+If one has $\prof_x(X_s)\geq 1$, one considers the commutative diagram
+\begin{equation*} \label{eq:XIV.18.*} \tag{$*$}
+\begin{array}{c}
+\xymatrix{
+H^0(X, f^*F)\ar[r]^-{v}\ar[d]_\wr&H^0(X-\{x\}, f^*F)\ar[d]\\
+H^0(X_s, f^*F)\ar[r]^-{v'}&H^0(X-\{x\}, f^*F);
+}
+\end{array}
+\end{equation*}
+By hypothesis, $v'$ is injective hence so is $v$.
+
+b) \textit{Case} $n=2$. One considers the commutative diagram
+\begin{equation*} \label{eq:XIV.1.18.**} \tag{$**$}
+\begin{array}{c}
+\xymatrix{ H^0(S, F)\ar[d]_{m}^{\wr}\ar[rr]^u&&H^0(S-\{s\}, F)\ar[d]^{\wr}_{ n}\\
+H^0(X, f^*F)\ar[r]^-v&H^0(X-\{x\}, f^*F)\ar[r]^w&H^0(X-X_s, f^*F);
+}
+\end{array}
+\end{equation*}
+one must show that $v$ is bijective. The morphism $m$ is evidently bijective, and, as $f$ is $0$-acyclic, $n$ is also bijective.
+
+If one has $\prof_s(F)\geq 2$, $u$ is bijective. As one has seen in a), the sole hypothesis $\prof_s(F)\geq 1$ implies the relation $\prof_{X_s}(f^*F)\geq 1$; consequently $v$ and $w$ are injective; it then follows from \eqref{eq:XIV.1.18.**} that $v$ is bijective.
+
+If one has $\prof_x(X_s)\geq 2$, then $g$ is $0$-acyclic (for it is locally $0$-acyclic and its fibres are $0$-acyclic). It follows that $v\cdot m$ is bijective, hence $v$ is bijective.
+
+If one has $\prof_s(F)\geq 1$ and $\prof_x(X_s)\geq 1$, then one already knows that $v$ and $w$ are injective. Let $z$ be a maximal point of $X_s-\{x\}$ (such a point exists by the hypothesis $\prof_x(X_s)\geq 1)$, $\bar Z$ the strict localization of $X$ at a geometric point over $z$ and $\overline{f^*F}$ the inverse image of $f^*F$ on $\bar Z$. Consider the commutative diagram
+\begin{equation*}
+\xymatrix@C=0mm{
+&H^0(S, F)\ar[rr]\ar[ld]_{m}^{\sim}&&H^0(S-\{s\}, F)\ar[rd]_{\sim}^{n}\\
+H^0(X, f^*F)\ar[rr]^-{v}\ar[rd]_{m'}^{\sim}&&H^0(X-\{x\}, f^*F)\ar[rr]^-{w}\ar[ld]^r&& H^0(X-X_s, f^*F)\ar[ld]^{n'}_{\sim}\\
+&H^0(\bar Z, f^*F)\ar[rr]&&H^0(\bar Z-\{\bar z\}, \overline{f^*F})}
+\end{equation*}
+the morphism $m'\cdot m$ is obviously bijective and it follows from the fact that $f$ is locally $0$-acyclic that $n'\cdot n$ is bijective; consequently $m'$ and $n'$ are also bijective. As $w$ is injective, $r$ is also injective and consequently $v$ is bijective.
+
+$2^\circ)$ Taking b) into account, one already knows that $\prof_x(f^*F)\geq 2$.
+
+If one has $\prof_s(F)\geq 3$, then $\R^1k_*(k^*F)=1$\nde{the trivial torsor is successively denoted $0$ or $1$ in what follows; one has left this double notation, which, on reflection, introduces no ambiguity.}. As $f$ is locally $1$-aspherical, one has $\R^1(j\cdot i)_*(f^*F_{|X-X_s})\!=\!f^*(\R^1k_*(k^*F))\!=\!1$. One therefore has \hbox{$\prof_{X_s}(f^*F)\!\geq\! 3$} and consequently one has $\prof_x(f^*F)\geq 3$.
+
+If one has $\prof_x(X_s)\geq 3$, then $g$ is $1$-aspherical (for $g$ is locally $1$-aspherical and its fibres are $1$-aspherical). One therefore has $H^1(X-\{x\}, f^*F)=H^1(S, F)=1$ and consequently $\prof_x(f^*F)\geq 3$.
+
+If one has $\prof_s(F)\geq 2$ and $\prof_x(X_s)\geq 1$, one uses the exact sequence (\SGA 4 XII 3.2):
+$$1\to\R^1j_*(i_*(f^*F_{|X-X_s}))\to\R^1(j.i)_*(f^*F_{|X-X_s}) \to j_*(\R^1i_*(f*F_{|X-X_s})).
+$$
+As $f$ and $g$ are locally $1$-aspherical, one has
+\begin{align*}
+\R^1(j\cdot i)_*(f^*F_{|X-X_s})&\simeq f^*(\R^1k_*(k^*F)) \\
+\R^1i_*(f^*F_{|X-X_s})&\simeq g^*(\R^1k_*(k^*F));
+\end{align*}
+the preceding exact sequence is then written in the form
+%
+\begin{equation} \label{eq:XIV.18.***}\tag{${*}{*}{*}$}
+1\to\R^1j_*(i_*(f^*F_{|X-X_s}))\to f^*(\R^1k_*(k^*F))\lto{a} j_*(j^*(f^*(\R^1k_*(k^*F))).
+\end{equation}
+The hypothesis $\prof_s(F)\geq 2$ shows that the morphism $F\to k_*k^*F$ is bijective; applying $g^*$, one finds, taking into account the fact that $g$ is locally $0$-acyclic, $f^*F_{|X-\{x\}}=i_*(f^*F_{|X-X_s})$. The hypothesis $\prof_x(X_s)\geq 1$ shows that the morphism~$a$ is injective (note that $f^*(\R^1k_*(k^*F))$ is a sheaf equal to $1$ outside $X_s$ and constant on $X_s$). It then follows from \eqref{eq:XIV.18.***} that one has $\R^1j_*(f^*F_{|X-\{x\}})=1$, hence $\prof_x(f^*F)\geq 3$.
+
+%
+If one has $\prof_s(F)\geq 1$ and $\prof_x(f^*F)\geq 2$, one considers the sheaf of homogeneous spaces $G$ defined by the exact sequence
+$$
+1\to F\to k_*k*F\to G\to 1.
+$$
+Applying to this exact sequence the exact functor $g^*$ and using (\SGA 4 XII 3.1), one obtains the following commutative diagram whose rows are exact:
+$$
+\xymatrix@R=5mm{f^*(k_*k^*F)\ar[r]\ar[d]&f^*G\ar[r]\ar[d]^b&1\\
+j_*(g^*(k_*k^*F))\ar[r]^-{u}&j_*(g^*G)\ar[r]&\R^1j_*(g^*F) \ar[r]&\R^1j_*(g^*(k_*k^*F)).}
+$$
+As $\prof_x(X_s)\geq 2$, the morphism $b$ is bijective hence $u$ is surjective and one thus has a map with kernel reduced to the identity element:
+$$
+1\to\R^1j_*(g^*F)\to\R^1j_*(g^*(k_*k^*F))=R.
+$$
+As $g^*(k_*k^*F)\simeq i_*(f^*F_{|X-X_s})$ (for $g$ is locally $0$-acyclic), $R$ is identified with the first term of the exact sequence \eqref{eq:XIV.18.***}; now one has seen in the preceding case that $R=1$ as soon as one has $\prof_x(X_s)\geq 1$, which proves that $\prof_x(f^*F)\geq 3$ and completes the proof of \Ref{XIV.1.18}.
+\skipqed
+\end{proof}
+
+The corollaries which follow are generalizations of (\SGA 4 XVI 3.2 and 3.3).
+
+\begin{corollary} \label{XIV.1.19}
+Let $f:X\to S$ be a flat morphism, with separable fibres, of locally noetherian schemes and $Y$ a closed subset of $X$. Suppose that for every point $s\in f(Y)$, the fibre $Y_s$ is rare\nde{``rare'' = ``of empty interior'', \cf Bourbaki TG~IX.52.} in $X_s$ and that one of the following two conditions is satisfied:
+\begin{enumeratea}
+\item
+the closure of $f(Y)$ is rare in $S$.
+\item
+$X_s$ is geometrically unibranch at the points of $Y_s$.
+\par\noindent
+Then one has
+$$
+\prof_Y(X)\geq 2.
+$$
+\end{enumeratea}
+\end{corollary}
+
+Indeed it follows from the hypothesis made on $f$ that $f$ is locally $0$-acyclic (\SGA 4 XV 4.1). One then applies \Ref{XIV.1.13}. The hypothesis that $Y_s$ is rare in $X_s$ (\resp $\overline{f(Y)}$ rare in~$S$) is equivalent by \Ref{XIV.1.6} b) to the relation $\prof_{Y_s}(X_s)\geq 1$ (\resp $\prof_{\overline{f(Y)}}(S)\geq 1$). The hypothesis that $X_s$ is geometrically unibranch at each point of $Y_s$ is equivalent to saying that the strict localization of $X_s$ at a geometric point of $Y_s$ is irreducible; knowing that $Y_s$ is rare in $X_s$, this obviously implies $\prof_{Y_s}(X_s)\geq 2$, thanks to \Ref{XIV.1.8}. In either case \Ref{XIV.1.13} indeed gives $\prof_Y(X)\geq 2$.
+
+\begin{corollary} \label{XIV.1.20}
+Let $f:X\to S$ be a regular morphism (\textup{\EGA IV 6.8.1}) of locally noetherian schemes, $Y$ a closed subset of $X$. Suppose that, for every point $s\in f(Y)$, one of the following conditions is realized:
+\begin{enumeratea}
+\item
+One has $\codim(Y_s, X_s)\geq 2$.
+\item
+One has $\codim(Y_s, X_s)\geq 1$ and $\prof_s(S)\geq 1$.
+\item
+One has $\prof\hop_s(S)\geq 3$.
+\end{enumeratea}
+\noindent
+Then one has
+$$
+\prof\hop_Y(X)\geq 3.
+$$
+\end{corollary}
+
+Indeed this follows from \Ref{XIV.1.18}, given that hypothesis a) implies $\prof\hop_{Y_s}(X_s)\geq 3$ (\cf \Ref{XIV.1.11}), and that the condition $\codim(Y_s, X_s)\geq 1$ obviously implies $\prof_Y(X)\geq 2$.

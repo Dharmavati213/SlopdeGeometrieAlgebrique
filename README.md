@@ -50,7 +50,8 @@ docs/            status and formalization notes
 | SGA 1, Exposé II — English | full draft ([TeX + PDF](translation/SGA1/ExposeII/)) |
 | SGA 1, Exposé VI — English | translated |
 | SGA 1, Exposé VI — Lean | compiling (mathlib language + numbered lemmas) |
-| Remaining exposés of SGA 1–7 | not started |
+| SGA 2, Introduction–XIV — English | drafts in `translation/SGA2/` |
+| Remaining exposés of SGA 1, and SGA 3–7 | not started |
 
 Tick-list: [`docs/status.md`](docs/status.md).
 Sources and licenses: [`COPYRIGHT.md`](COPYRIGHT.md).
@@ -76,7 +77,7 @@ Needs [elan](https://github.com/leanprover/elan) and a TeX Live with `latexmk`.
 ```bash
 make            # Lean + PDF
 make lean       # lake build in lean/
-make tex        # PDFs of SGA 1 I, II, and VI
+make tex        # PDFs of SGA 1 I/II/VI and SGA 2 Intro–XIV
 ```
 
 First Lean build, from `lean/`:

@@ -1,0 +1,295 @@
+\chapter[Global and local cohomological invariants]
+{Global and local cohomological invariants relative to a closed subspace}
+\label{I}
+
+\section{The functors $\Gamma_Z$, $\sheaf{\Gamma}_Z$} \label{I.1}
+Let $X$ be a topological space, $\ccat_X$ the category of abelian
+sheaves on $X$. Let $\Phi$ be a family of supports in the sense of
+Cartan; one defines the functor $\Gamma_\Phi$ on $\ccat_X$ by:
+\begin{equation} \label{eq:I.1} { \Gamma_\Phi(F) = \text{ subgroup of } \Gamma(F) \text{ consisting of the sections } f \text{ such that support } f \in \Phi}.
+\end{equation}
+If $Z$ is a closed subset of $X$, we denote by abuse of language by
+$\sheaf{\Gamma}_Z$ the functor $\Gamma_\Phi$, where $\Phi$ is the set
+of closed subsets of $X$ contained in $Z$. Thus one has:
+\begin{equation} \label{eq:I.2}
+{\Gamma_Z(F) = \text{ subgroup of } \Gamma(F) \text{ consisting of the sections } f \text{ such that support } f \subset Z}.
+\end{equation}
+
+We wish to generalize this definition to the case where $Z$ is a
+\textit{locally closed} subset of $X$, hence closed in a suitable open
+subset $V$ of $X$. In this case one sets:
+\begin{equation} \label{eq:I.3} {\Gamma_Z(F)=\Gamma_Z(F\rest{V})}.
+\end{equation}
+One must check that $\Gamma_Z(F)$ ``does not depend'' on the chosen
+open set. It suffices to show that if $V'$, $V\supset V' \supset Z$ is
+an open set, then the map $\rho_{V'}^V\colon F(V) \to F(V')$ maps
+$\Gamma_Z(F\rest{V})$ isomorphically onto $\Gamma_Z(F\rest{V'})$. Now
+\begin{equation} \label{eq:I.4} { \Gamma_Z(F\rest{V}) = \ker \rho_{V-Z}^V}
+\end{equation}
+hence if $f\in \Gamma_Z(F\rest{V})$ and if
+$\rho_{V'}^V(f)=\rho_{V-Z}^V(f)=0$ then $f=0$ since $(V', V-Z)$ is a
+covering of $V$. Likewise, if $f'\in \Gamma_Z(F\rest{V'})$, then
+$f'\in F(V')$ and $0\in F(V-Z)$ define an $f\in F(V)$ such that
+$\rho_{V'}^V(f)=f'$, $f\in \Gamma_Z(F\rest{V})$, hence $\rho_{V'}^V$
+induces an isomorphism $\Gamma_Z(F\rest{V}) \to \Gamma_Z(F\rest{V'})$.
+
+Note that every open set $W$ of $Z$ is induced by an open set $U$ of
+$X$ in which $W$ is closed. It follows that $W \mto \Gamma_W(F)$
+defines a presheaf on $Z$, and one checks that it is a sheaf, which
+will be denoted $i^!(F)$, where $i\colon Z \to X$ is the canonical
+immersion. One finds:
+\begin{equation} \label{eq:I.5}
+\Gamma_Z(F)=\Gamma(i^!(F)).
+\end{equation}
+The sheaf $i^!(F)$ is a subsheaf of $i^*(F)$; indeed the canonical
+homomorphism:
+\[
+\Gamma(F\rest{U})=\Gamma(U, F) \to \Gamma(U\cap Z, i^*(F))
+\]
+is injective on $\Gamma_{U\cap Z}(F\rest{U}) \subset \Gamma(F\rest{U})$.
+Summarizing, one has the following result:
+
+\begin{proposition} \label{I.1.1}
+There exists a unique subsheaf $i^!(F)$ of $i^*(F)$ such that for every
+open set $U$ of $X$ such that $U\cap Z$ is closed in $U$,
+\[
+\Gamma(F\rest{U})=\Gamma(U, F) \to \Gamma(U\cap Z, i^*(F))
+\]
+induces an isomorphism $\Gamma_{U \cap Z}(F\rest{U}) \to \Gamma(U\cap Z, i^!(F))$.
+\end{proposition}
+
+Note that if $Z$ is an open set one will simply have
+\begin{equation} \label{eq:I.6} {i^!(F)=i^*(F)=F\rest{Z}, \ \Gamma_Z(F)=\Gamma(Z, F)}.
+\end{equation}
+
+Suppose again that $Z$ is arbitrary. Then for a variable open set $U$
+of $X$, one sees that
+\[
+U \mto \Gamma_{U\cap Z}(F\rest{U})=\Gamma(U\cap Z, i^!(F))
+\]
+is a sheaf on $X$, which we shall denote $\sheaf{\Gamma}_Z(F)$; more
+precisely, according to the preceding formula (expressing that $i^!$
+commutes with restriction to open sets) one has an isomorphism
+\begin{equation} \label{eq:I.7} {\sheaf{\Gamma}_Z(F)= i_*(i^!(F))}
+\end{equation}
+by definition, one has, for every open set $U$ of $X$,
+\begin{equation} \label{eq:I.8} {\Gamma(U, \sheaf{\Gamma}_Z(F)) = \Gamma_{U\cap Z}(F\rest{U})}.
+\end{equation}
+Let us note here a characteristic difference between the case where
+$Z$ is closed, and that where $Z$ is open. In the first case, formula
+(\Ref{eq:I.8}) shows us that $\sheaf{\Gamma}_Z(F)$ may be regarded as a
+subsheaf of $F$, and one therefore has a \textit{canonical immersion}
+\begin{equation*} \label{eq:I.8'} \tag{$8'$} {\sheaf{\Gamma}_Z(F) \hto F}.
+\end{equation*}
+
+In the case where $Z$ is open, on the contrary, one sees from
+(\Ref{eq:I.6}) that the second member of (\Ref{eq:I.8}) is
+$\Gamma(U\cap Z, F)$, hence receives $\Gamma(U, F)$, hence one has a
+\textit{canonical homomorphism} in the opposite direction from the
+preceding one:
+\begin{equation*} \label{eq:I.8''} \tag{$8"$} {F\to \sheaf{\Gamma}_Z(F)},\nde{the original reference was (8).}
+\end{equation*}
+which is moreover nothing other than the canonical homomorphism
+\[
+F\to i_*i^*(F),
+\]
+taking into account the isomorphism
+\begin{equation*} \label{eq:I.6bis} \tag{6 bis} {\sheaf{\Gamma}_Z(F)\simeq i_*i^*(F)}
+\end{equation*}
+deduced from (\Ref{eq:I.6}) and (\Ref{eq:I.7}).
+
+Of course, for variable $F$, $\Gamma_Z(F)$, $\sheaf{\Gamma}_Z(F)$,
+$i^!(F)$ may be regarded as functors in $F$, taking values respectively
+in the category of abelian groups, of abelian sheaves on $X$, of
+abelian sheaves on $Z$. It is sometimes convenient to interpret the
+functor
+\[
+i^!\colon \ccat_X \to \ccat_Z
+\]
+as the adjoint functor of a well-known functor
+\[
+i_!\colon \ccat_Z \to \ccat_X
+\]
+defined by the following proposition:
+
+\begin{proposition} \label{I.1.2}
+Let $G$ be an abelian sheaf on $Z$. Then there exists a unique
+subsheaf of $i_*(G)$, namely $i_!(G)$, such that for every open set
+$U$ of $X$ the isomorphism (identical)
+\[
+\Gamma(U\cap Z, G)= \Gamma(U, i_*(G))
+\]
+defines an isomorphism
+\[
+\Gamma_{\Phi_{U\cap Z, U}}(U\cap Z, G)=\Gamma(U, i_! (G)),
+\]
+where $\Phi_{U\cap Z, U}$ denotes the set of subsets of $U\cap Z$
+which are closed in $U$.
+\end{proposition}
+
+The verification reduces to noting that the first member is a sheaf
+for variable $U$, \ie that the property for a section of $i_*(G)$
+over $U$, regarded as a section of $G$ over $U\cap Z$, of having
+closed support \textit{in $U$} is of \textit{local nature on $U$}.
+The sheaf $i_!(G)$ just defined is also known under the name:
+\textit{sheaf deduced from~$G$ by extending by $0$} outside of $Z$,
+\cf \cite{Godement}. In particular, if $Z$ is closed, one has
+\begin{equation} \label{eq:I.9} {i_!(G)=i_*(G)};
+\end{equation}
+but in the general case, the canonical injection $i_!(G) \to i_*(G)$
+is not an isomorphism, as is already well known for $Z$ open.
+Obviously, $i_!(G)$ depends functorially on $G$ (and it is even an
+exact functor in $G$). This being said, one has:
+
+\begin{proposition} \label{I.1.3}
+There exists an isomorphism of bifunctors in $G$, $F$ ($G$ an abelian
+sheaf on $Z$, $F$ an abelian sheaf on $X$):
+\begin{equation} \label{eq:I.10} {\Hom(i_!(G), F) = \Hom (G, i^!(F))}.
+\end{equation}
+\end{proposition}
+
+To define such an isomorphism, it amounts to the same to define
+functorial homomorphisms
+\[
+i_!i^!(F) \to F, \ G \to i^!i_!(G),
+\]
+satisfying the well-known compatibility conditions (\cf for example
+Shih's expos\'e in the Cartan seminar on cohomological operations).
+
+Recalling that $i_!$ is exact, hence transforms monomorphisms into
+monomorphisms, one concludes:
+
+\begin{corollary} \label{I.1.4}
+If $F$ is injective, $i^!(F)$ is injective, hence
+$\sheaf{\Gamma}_Z(F) = i_*i^!(F)$ is likewise injective.
+\end{corollary}
+
+Replacing $X$ by a variable open set $U$ of $X$, one also concludes
+from \Ref{I.1.3}
+
+\begin{corollary} \label{I.1.5}
+One has a functorial isomorphism in $F$, $G$:
+\begin{equation} \label{eq:I.11}
+\SheafHom{(i_!(G), F)} =i_*(\SheafHom{(G, i^!(F))}.
+\end{equation}
+\end{corollary}
+
+Taking for $G$ the constant sheaf on $Z$ defined by $\ZZ$, namely
+$\ZZ_Z$, \Ref{I.1.3} and \Ref{I.1.5} specialize to
+
+\begin{corollary} \label{I.1.6}
+One has functorial isomorphisms in $F$:
+\begin{equation} \label{eq:I.12}
+\begin{array}[c]{l} {\Gamma_Z(F)=\Hom(\ZZ_{Z, X}, F)}, \\
+{\sheaf{\Gamma}_Z(F)=\SheafHom(\ZZ_{Z, X}, F)},
+\end{array}
+\end{equation}
+where $\ZZ_{Z, X}= i_!(\ZZ_Z)$ is the abelian sheaf on $X$ deduced
+from the constant sheaf on $Z$ defined by $\ZZ$, by extending by $0$
+outside of $Z$.
+\end{corollary}
+
+\begin{remark} \label{I.1.7}
+Suppose that $X$ is a ringed space, and endow $Z$ with the sheaf of
+rings $\Oo_Z=i^{-1}(\OX)$, and finally denote by $\ccat_X$ and
+$\ccat_Z$ the category of Modules on $X$ \resp $Z$. Then the preceding
+considerations extend word for word, taking for~$F$ a Module on $X$
+and for $G$ a modules on $Z$, and interpreting accordingly the
+statements \Ref{I.1.3} to \Ref{I.1.6}.
+\end{remark}
+
+To finish these generalities, let us examine what happens when one
+changes the locally closed subset $Z$. Let $Z'\subset Z$ be another
+locally closed subset, and let
+\[
+j\colon Z' \to Z, i'\colon Z' \to X, i'=ij
+\]
+be the canonical inclusions. Then one has functorial isomorphisms:
+\begin{equation} \label{eq:I.13} {(ij)^!=j^!i^!, \quad (ij)_!=i_!j_!}.
+\end{equation}
+The first isomorphism (\Ref{eq:I.13}) defines a functorial isomorphism
+\begin{equation} \label{eq:I.14} {\Gamma_{Z'}(F)=\Gamma(Z', (ij)^!(F))\simeq \Gamma(Z', j^!(i^!(F)))=\Gamma_{Z'}(i^!(F))}.
+\end{equation}
+
+Suppose now that $Z'$ is \textit{closed} in $Z$, and
+\[
+Z''=Z-Z'
+\]
+its complement in $Z$, which is open in $Z$ hence locally closed in
+$X$. The canonical inclusion (\Ref{eq:I.8'}) applied to $i^!(F)$ on
+$Z$ equipped with $Z'$ defines for us, thanks to (\Ref{eq:I.14}), a
+canonical injective functorial homomorphism
+\begin{equation} \label{eq:I.15} {\Gamma_{Z'}(F) \to \Gamma_Z(F)}.
+\end{equation}
+If one replaces in (\Ref{eq:I.14}) $Z'$ by $Z''$ and uses
+(\Ref{eq:I.8''}), one finds a canonical functorial homomorphism:
+\begin{equation*} \label{eq:I.15'} \tag{$15'$} {\Gamma_Z(F) \to \Gamma_{Z''}(F)}.
+\end{equation*}
+
+\begin{proposition} \label{I.1.8}
+Under the preceding conditions, the sequence of functorial
+homomorphisms:
+\begin{equation} \label{eq:I.16} {0 \to \Gamma_{Z'}(F) \to \Gamma_Z(F) \to \Gamma_{Z''}(F)}
+\end{equation}
+is exact. If $F$ is flasque, the sequence remains exact upon putting a
+zero on the right.
+\end{proposition}
+
+\begin{proof}
+Replacing $X$ by an open set $V$ in which $Z$ is closed, one is
+reduced to the case where $Z$ is closed, hence $Z'$ closed. Then
+$Z''$ is closed in the open set $X-Z'$, and one has a canonical
+inclusion
+\[
+\Gamma_{Z''}(F) \to \Gamma(X-Z', F),
+\]
+and the exactness of (\Ref{eq:I.16}) simply means that the sections of
+$F$ with support in $Z'$ are those whose restriction to $X-Z'$ is
+zero.
+
+When $F$ is flasque, every element of $\Gamma_{Z''}(F)$, regarded as a
+section of $F$ over $X-Z'$, can be extended to a section of $F$ over
+$X$, and the latter will evidently have its support in $Z$, which
+proves that then the last homomorphism in (\Ref{eq:I.16}) is
+surjective.
+\skipqed
+\end{proof}
+
+\begin{corollary} \label{I.1.9}
+One has a functorial exact sequence
+\begin{equation*} \label{eq:I.16bis} \tag{16 bis} {0 \to \sheaf{\Gamma}_{Z'}(F) \to \sheaf{\Gamma}_Z(F) \to \sheaf{\Gamma}_{Z''}(F)},
+\end{equation*}
+and if $F$ is flasque, this sequence remains exact upon putting a $0$
+on the right.
+\end{corollary}
+
+One can interpret (\Ref{I.1.8}) in terms of results on the functors
+$\Hom$ and $\SheafHom$ via \Ref{I.1.6}, in the following way. Let us
+first note that if $G$ is an abelian sheaf on $Z$, inducing the sheaves
+$j^*(G)$ and $k^*(G)$ on $Z'$ \resp $Z''$ (where $j\colon Z' \to Z$
+and $k\colon Z'' \to Z$ are the canonical injections), one has a
+canonical exact sequence of sheaves on $X$:
+\begin{equation} \label{eq:I.17} {0 \to k^*(G)_X \to G_X \to j^*(G)_X \to 0}
+\end{equation}
+where to simplify the notations, the index $X$ denotes the sheaf on
+$X$ obtained by extending by $0$ in the complement of the space of
+definition of the sheaf under consideration. The exact sequence
+(\Ref{eq:I.17}) generalizes a well-known exact sequence when $Z=X$
+(\cf \cite{Godement}), and is moreover deduced from it by writing the
+exact sequence in question on~$Z$, and applying the functor $i_!$.
+Taking $G=\ZZ_{Z}$, one concludes in particular:
+
+\begin{proposition} \label{I.1.10}
+Under the preceding conditions, one has an exact sequence of abelian
+sheaves on $X$:
+\begin{equation} \label{eq:I.18} {0 \to \ZZ_{Z{''}, X} \to \ZZ_{Z, X} \to \ZZ_{Z', X} \to 0}.
+\end{equation}
+This being granted, the two exact sequences \Ref{I.1.8} and \Ref{I.1.9}
+are nothing other than the exact sequences deduced from
+(\Ref{eq:I.18}) by applying the functor $\Hom(-, F)$ \resp
+$\SheafHom(-, F)$.
+\end{proposition}
+
+This gives again an evident proof of the fact that the sequences
+(\Ref{eq:I.16}) and (\Ref{eq:I.16bis}) remain exact upon putting a
+zero on the right, provided that $F$ is \textit{injective}.

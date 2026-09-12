@@ -1,0 +1,240 @@
+\chapter{Problems and conjectures} \label{XIII}
+
+\section[Relations between global and local results]
+{Relations between global and local results. Affine problems related to duality} \label{XIII.1}
+
+It is well known that many statements concerning a projective scheme
+$X$ can be formulated in terms of statements concerning
+a certain graded ring, or better a complete local ring,
+namely the homogeneous coordinate ring
+of $X$ (\ie the affine ring of the projecting cone $\tilde{X}$ of
+$X$), or its completion (\ie the completion of the local ring of the vertex
+of $\tilde{X}$). The interest of this reformulation is that it
+often allows one, starting from known global results, to
+conjecture, or even to prove, analogous results for
+complete noetherian local rings more general than those which
+actually intervene in the global statement, for example for
+local rings which are not necessarily of equal
+characteristic. Thus, Serre's duality theorem for
+projective space \Ref{XII}~\Ref{XII.1.1} suggested the useful
+local duality theorem \Ref{V}~\Ref{V.2.1}.
+Serre's fundamental theorem on the cohomology of
+coherent Modules on projective space (finiteness,
+asymptotic behaviour for large $n$ of $\H^i(X,
+F(n))$, {\cf \EGA III~2.2.1}) generalizes to a
+structure theorem for the local invariants $\H^i_{\mm}(M)$, see
+\Ref{V}~\Ref{V.3}. Likewise, the Lefschetz theorems
+for the fundamental group, and the Picard group (``
+equivalence criteria''), quite familiar in the
+classical case and subsequently extended to an arbitrary base field,
+suggested the ``local'' Lefschetz theorems of expos\'es
+\Ref{X} and \Ref{XI}. Of course, the local theorems in their
+turn are valuable tools for obtaining global statements.
+For example local duality allows one to formulate a global
+asymptotic property \Ref{XII}~\Ref{XII.1.3}~(i) by the vanishing
+of certain local invariants $\H^i(F_x)$. In a more
+substantial way, the local Lefschetz theorems, implying for
+example the ``purity'' or the parafactoriality of certain
+complete intersection local rings (\Ref{X}~\Ref{X.3.4} and
+\Ref{XI}~\Ref{XI.3.13}) allow one in the global Lefschetz
+theorems to do away with certain
+non-singularity hypotheses, as in \Ref{X}~\Ref{X.3.5}, \Ref{X.3.6},
+\Ref{X.3.7}.
+
+Another useful generalization of the theorems concerning projective schemes over a field $k$ consists in replacing $k$ by a general base scheme. Thus, the sequel to {\EGA III} will give\nde{in fact, this generalization is not to be found there; see the note below, and the editor's note~\eqref{noteconrad} on page~\pageref{noteconrad}} a generalization in this sense of Serre duality\sfootnote{\cf Hartshorne's seminar, cited at the end of {\Exp \Ref{IV}}.}; the finiteness theorems and the asymptotic behaviour of the $\H^i(X, F(n))$ have been stated in \EGA III~2.2.1 over a general base scheme, finally the Lefschetz theorems can likewise be developed for a projective morphism, as one has seen in \Ref{XII}~\Ref{XII.4.9}, thanks to the local theorem \Ref{XII}~\Ref{XII.4.7}. Of course, the fact of working over a general base scheme also leads to essentially new statements, such as the ``comparison theorem'' \EGA III~4.15 and the existence theorem for sheaves \EGA III~5.1.4 (which, as one has seen elsewhere in \Ref{IX}, arise from the same key theorems of cohomological nature as the Lefschetz theorems for $\pi_1$ and $\Pic$).
+
+It is then necessary to extract theorems which encompass simultaneously the two generalizations we have just indicated of the statements concerning projective schemes over a field. The natural objects for such a common generalization are the \emph{noetherian rings separated and complete for an $I$-adic topology}. Their study, from this point of view, has not yet been seriously undertaken, and seems to me at the present time the most interesting subject in the local theory of coherent sheaves. Here is a typical problem in this direction:
+
+\refstepcounter{subsection}\label{XIII.1.1}
+\sfootnotetext{This conjecture, and conjecture 1.2 below, are false, as shown by R\ptbl Hartshorne, ``Affine duality and cofinite modules'', \emph{Invent. Math.} \textbf{9} (1969/70), p.~145-164, section 3.}
+\begin{enonce*}{Conjecture 1.1}
+[``Second affine finiteness theorem''$^{(**)}$\ndemark]
+\ndetext{however, if $A$ is complete local (\resp regular of positive characteristic) and $J$ is the maximal ideal, the statement is true for $M$ of finite type (\resp $M=A$), \cf (Hartshorne~R., ``Affine duality and cofinite modules'', \emph{Invent. Math.} \textbf{9} (1969/70), p\ptbl 145-164, corollary 1.4) (\resp (Huneke~C.\ \& Sharp~R., ``Bass numbers of local cohomology modules'', \emph{Trans. Amer. Math. Soc.} \textbf{339} (1993), \numero 2, p\ptbl 765--779), which moreover contains much stronger results). For completely different methods ($D$-modules) allowing one to approach characteristic zero, see (Lyubeznik~G., ``Finiteness properties of local cohomology modules (an application of $D$-modules to commutative algebra)'', \emph{Invent. Math.} \textbf{113} (1993), \numero 1, p\ptbl 41--55); see also by the same author ``Finiteness properties of local cohomology modules for regular local rings of mixed characteristic: the unramified case'', \emph{Comm. Algebra} \textbf{28} (2000), \numero 12, p\ptbl 5867--5882, Special issue in honor of Robin Hartshorne, and ``Finiteness properties of local cohomology modules: a characteristic-free approach'', \emph{J.~Pure Appl. Algebra} \textbf{151} (2000), \numero 1, p\ptbl 43--50. The notion of cofinite module has since evolved under Hartshorne's guidance. One says that $M$ is $J$-cofinite if its support is contained in $V(J)$ and if all the $\Ext^i_A(A/J, \H^i_J(M))$ are of finite type. On this subject, see for example (Delfino~D.\ \& Marley~Th., ``Cofinite modules and local cohomology'', \emph{J. Pure Appl. Algebra} \textbf{121} (1997), \numero 1, p\ptbl 45--52).}
+Let $M$ be a module of finite type over a noetherian ring $A$ (which if need be one will assume to be a quotient of a regular ring), $J$ an ideal of $A$, prove that the modules $\H^i_J(M)$ are ``$J$-cofinite'', \ie that the modules
+$$
+\Hom_A(A/J, \H^i_J(M))$$
+are of finite type.
+\end{enonce*}
+
+Recall that one denotes by $\H^i_J (M)$ the module $\H^i_Y (X, \tilde{M})$ (where $X=\Spec (A)$, $Y=V(J)$) of \Exp \Ref{I}, interpreted in \Ref{II} in terms of an inductive limit of cohomologies of Koszul complexes, or again for $i\ge 2$ the module $\H^{i-1} (X-Y, \tilde{M})$. Actually, \Ref{XIII.1.1} should be a consequence of a more precise statement, implying that the $\H^i_J ({M})$ lie in a suitable abelian subcategory ${\DDJ}$ of the category ${\CJ}$ of $A$-modules of support $\subset Y=V(J)$, such that $H\in \Ob {\DDJ}$ implies that $H$ is $J$-cofinite. (N.B. The category of modules $H$ with support contained in $V(J)$ and which are $J$-cofinite is unfortunately not stable under passage to quotients!). The essential problem would then consist in defining ${\DDJ}$. More precisely, the solution of the problem \Ref{XIII.1.1} should emerge (at least if $A$ is a quotient of a regular ring) from a duality theory, generalizing at once local duality, and the duality theory of projective morphisms alluded to above, and which would be of the following kind:
+
+\refstepcounter{subsection} \label{XIII.1.2}
+\begin{enonce*}{Conjecture 1.2}[``Affine duality''\sfootnotemark]
+\sfootnotetext{This conjecture, false as it stands, has however been established in a fairly similar form by R.~Hartshorne, ``Affine duality and cofinite modules'', \emph{Invent. Math.} \textbf{9} (1969/70), p\ptbl 145-164.} Suppose $A$ regular, separated and complete for the $J$-adic topology. Let $C^{\boule}(A)$ be an injective resolution of $A$.
+\begin{enumeratei}
+\item
+Prove that the functor
+$$D_J: L_{\boule}\mto \Hom_J(L_{\boule}, C^{\boule}(A))$$
+from the category of complexes of $A$-modules, free of finite type in every dimension and with degrees bounded above, (where the morphisms are the homomorphisms of complexes up to homotopy) to the category of complexes of $A$-modules $K^{\boule}$, injective in every dimension and with degrees bounded above (where the homomorphisms are defined in the same way), is fully faithful.
+
+\item
+Prove that for every $K^{\boule}$ of the form $D_J(L_{\boule})$, the $\H^i(K^{\boule})(= \Ext_Y^i (X; L_{\boule}, \OX))$ are $J$-cofinite.
+
+\item
+More precisely, prove that the $K^{\boule}$ which are homotopic to a complex of the form $D_J(L_{\boule})$ can be characterized by finiteness properties of the $\H^i(K^{\boule})$, stronger than that envisaged in (ii), for example by the property $\H^i(K^{\boule})\in \Ob {\DDJ}$, where ${\DDJ}$ is a suitable abelian category, as envisaged above.
+\end{enumeratei}
+\end{enonce*}
+
+Let us note that the problem is solved in the affirmative when $A$ is local and $J$ is an ideal of definition of $A$ (\cf \Exp \Ref{IV}), and also when $J$ is the zero ideal. In these two cases, exceptionally, one may restrict oneself to taking for ${\DDJ}$ the category of Modules with support $V(J)$ which are $J$-cofinite, (which in the second case simply means that one takes the category of Modules of finite type over $A$). An affirmative solution of conjecture \Ref{XIII.1.2} in general would give one for \Ref{XIII.1.1}, by taking for $L_{\boule}$ the dual of a free resolution of finite type of $M$. On the other hand, an affirmative solution of \Ref{XIII.1.1} would give an affirmative answer to the first part of the following conjecture which we formulate in ``global'' form:
+
+\begin{conjecture} \label{XIII.1.3}
+Let $X\subset \PP^r_k$ be a closed subscheme of the standard projective scheme which is locally a complete intersection and every irreducible component of which is of codimension $\ge s$. Let $U=\PP^r_k -X$.
+\begin{enumeratei}
+\item
+Prove that for every coherent Module $F$ on $U$, one has
+$$
+\dim \H^i(U, F)<+\infty{\rm \ for\ } i\ge s.{}\sfootnote{Part (i) of this conjecture is proved by R.~Hartshorne when $X$ is smooth \cf \emph{Ample subvarieties of algebraic varieties}, Notes written in collaboration with C\ptbl Musili, Lect. Notes in Math, vol.~156, Springer-Verlag, Berlin-New York, 1970, theorem III.5.2. This author has also found an example for (ii), \cf R.~Hartshorne, ``Cohomological dimension of algebraic varieties'', \emph{Ann. of Math. (2)} \textbf{88} (1968), p\ptbl 403--450, example page 449.}
+$$
+
+\item
+Give an example, with $X$ connected and regular, where one has
+$$
+\H^s(U, F)\neq 0.
+$$
+\end{enumeratei}
+\end{conjecture}
+
+To see that (i) is a special case of \Ref{XIII.1.1} one considers
+$$
+\H^i(U, F(\cdot))=\tbigoplus_n \H^i (U, F(n))= \H^i(E^{r+1} -\tilde X, \tilde{F})$$
+as a module over the affine ring $k[t_0, \ldots, t_r]$ of the projecting cone $E^{r+1}$ of $\PP^r$. This module is none other than $\H_J^{i+1}(M)$, where $J$ is the ideal of the projecting cone $\tilde X$ of $X$ in $E^{r+1}$. On the other hand from the hypothesis made on $X$, which implies that $\tilde X$ is also a complete intersection of codimension $\ge s$ at every point of $E^{r+1}$ distinct from the origin, it follows that $\H^{i+1}_J(M)$ vanishes outside the origin for $i\ge s$. If therefore it is $J$-cofinite as \Ref{XIII.1.1} would have it, it is \afortiori $\mm$-cofinite, which easily implies that it is finite-dimensional in every degree\nde{\label{noteHM}Hartshorne has proved (Hartshorne~R., ``Cohomological dimension of algebraic varieties'', \emph{Ann. of Math. (2)} \textbf{88} (1968), p\ptbl403--450) that the cohomology $H^{n-1}(\PP^n_k-X,F)$ vanishes for $F$ coherent and $X$ of positive dimension ($k$ algebraically closed). In fact, thanks essentially to Serre duality and Lichtenbaum's theorem --- vanishing of the cohomology of coherent sheaves in maximal dimension for irreducible non-complete quasi-projective varieties ---, one is reduced to proving that the formal completion $\hat \PP^n_k$ and $X$ have the same field of rational functions. This is the difficult point (theorem 7.2 of {\loccit}), in other words $\PP^n_k$ is $G3$ in the terminology of (Hironaka~H.\ \& Matsumura~H., ``Formal functions and formal embeddings'', \emph{J.~Math. Soc. Japan} \textbf{20} (1968), p\ptbl 52--82). These authors have independently proved the preceding results, and in fact much better. They have proved that $X$ is universally $G3$ and have computed the field of rational functions of the formal completion of an abelian variety along a subvariety of positive dimension. It is in this article that there appear for the first time the conditions $G1,G2,G3$ now classical.} Note moreover that conjecture \Ref{XIII.1.3} already arises for a non-singular irreducible curve $X$ in $\PP^3$, one does not know whether in this case the $\H^2(\PP^3-X, \OX(n))$ are finite-dimensional, or whether they are necessarily zero\sfootnote{The question has just been solved in the affirmative by R\ptbl Hartshorne (Hartshorne~R., ``Ample vector bundles'', \emph{Publ. Math. Inst. Hautes \'Etudes Sci.} \textbf{29} (1966), p\ptbl63--94, theorem 8.1) and H. Hironaka.}. One does not even know whether there exists an irreducible curve of $\PP^3$ which is not set-theoretically the intersection of two hypersurfaces\label{courbesurface}\nde{see conjecture~\Ref{XII.3.5} and the corresponding note.}.
+
+\begin{problem} \label{XIII.1.4}
+Give an affine variant of the ``comparison theorem'' \textup{\EGA III~4.1.5} as a theorem of commutation of the functors $\H^i_J$ with certain projective limits.
+\end{problem}
+
+Finally, in the present order of ideas, I had posed the following problem: let $A$ be a regular \emph{complete} noetherian local ring, $K$ its field of fractions, prove that $\Ext^i_A(K, A)=0$ for every $i$. An affirmative answer was given on the spot by M.~Auslander, the regularity hypothesis may be replaced by the hypothesis that $A$ is integral and in fact it is true that $\Ext^i_A(K, M)=0$ for every $i$, as soon as $M$ is of finite type over $A$. This follows at once from the following statement, due to Auslander: if $A$ is a complete noetherian local ring, then for every module $M$ of finite type over $A$, the functors $\Ext_A^i(., M)$ transform inductive limits into projective limits\nde{write $K=\varinjlim_{a\neq 0}A[1/a]$ and observe that $a\neq 0$ is $A$-regular.}.
+
+\section{Problems related to $\pi_0$: local Bertini theorems} \label{XIII.2}
+
+Let $A$ be a complete noetherian local ring, $f$ an element of its
+maximal ideal, $X=\Spec (A)$, $Y=\Spec(A/fA)$. The use of the
+local ``Lefschetz'' technique allows one to give criteria
+for $Y'=X'\cap Y$ (where $X'=X-\{\mm\}$) to be connected, in terms
+of hypotheses on $X'$. Thus, it suffices that one have: a) $X'$
+connected, b) $\prof \Oo_{X', x} \ge 2$ for every closed point $x$
+of $X'$, c) $f$ is $A$-regular. One will note however that
+hypotheses b) and c) are not of a purely
+topological nature, for example are not invariant upon
+replacing $X$ by $X_{\text{red}}$. In the analogous situation
+for a projective scheme $X'$ over a field and a hyperplane
+section $Y'$ of $X'$, the use of the ``Bertini
+theorem'' and of Zariski's ``connectedness theorem'' allows
+one in fact to obtain results of a distinctly more
+satisfactory appearance, which had led me in the oral seminar to
+state a conjecture, which I have since resolved in the affirmative.
+Let us therefore state here:
+
+\begin{theorem} \label{XIII.2.1}
+Let $A$ be a complete noetherian local ring, $X$ its spectrum, $\aaa$ the closed point of $X$, $X'=X-\{ \aaa\}$. Suppose that $X$ satisfies the conditions (where $k$ denotes an integer $\ge 1$):
+\begin{itemize}
+\item[a$_k$)] The irreducible components of $X'$ are of dimension $\ge k+1$.
+
+\item[b$_k$)] $X'$ is connected in dimension $\ge k$, \ie one cannot disconnect $X'$ by a closed subset of dimension $<k$ (\cf \Ref{III}~\Ref{III.3.8}).
+\end{itemize}
+
+Let $m$ be an integer, $0\le m\le k$, and let $f_1, \dotsc, f_m\in \rr(A)$, set $B=A/\sum_i f_iA$, $Y=\Spec(B)=V(f_1)\cap\dotsb\cap V(f_m)$, $Y'=X'\cap Y=Y-\{\aaa\}$. Then $Y$ satisfies the conditions a$_{k-m}$), b$_{k-m}$). In particular, for every sequence of $m\le k$ elements $f_1, \dotsc, f_m$ of $\rr(A)$, $Y'=X'\cap V(f_1)\cap\dotsb\cap V(f_m)$ is connected.
+\end{theorem}
+
+It is moreover easy to see that if the last conclusion is valid (it evidently suffices to take $m=k$ therein), and excluding the case where $X$ would be irreducible of dimension~$0$ or $1$, it follows that the irreducible components of $X'$ are of dimension $\ge k+1$, and $X'$ is connected in dimension $\geq k$, so that in a sense, \Ref{XIII.2.1} is a ``best possible'' result.
+
+\bigskip
+
+Let us give the principle of the proof of~\Ref{XIII.2.1}. Only the condition b$_{k-m}$) for $Y$ presents a problem. For given $k$ one is easily reduced to the case where $X$ is integral, and even (passing to the normalization, which is finite over $X$) to the case where $X$ is \emph{normal}. If $k=1$, hence $\dim X' \ge 2$, then $X'$ has depth $\ge 2$ at its closed points and one may apply the result recalled at the beginning of the no., which shows that \hbox{$Y'=X'\cap V(f)$} is connected. In the case $k\ge 1$, one assumes the theorem proved for the \hbox{$k'\!<\!k$}. By induction on $m$, one is reduced to the case where $m=1$, \ie to verifying that for $f_1\in\nobreak \rr(A)$, $X'\cap V(f_1)$ is connected in dimension $\ge k-1$. If it were not, \ie if it were disconnected by a $Z'$ of dimension $< k-1$, there would exist a sequence $f_2, \dotsc, f_k$ such that \hbox{$X'\cap V(f_1)\cap\dotsb\cap V(f_k)$} is disconnected, and in this sequence one may choose $f_2\in \rr(A)$ arbitrarily subject only to the condition of not vanishing at any point of a certain finite subset $F$ of $X'$ (namely the set of maximal points of $Z'$). Moreover, one verifies easily, using the fact that $X'$ is normal, hence satisfies Serre's condition ({$S_2$})\sfootnote{\Cf \EGA IV 5.7.2.} that there exists a finite subset $F'$ of $X'$ such that $f\in \rr(A)$, $V(f)\cap F'=\emptyset$ implies that $V(f)\cap X'$ also satisfies the condition ({$S_2$}). One can then choose $f_2$ so that $f_2$ vanishes neither on $F$ nor on $F'$, hence so that $X'\cap V(f_2)$ satisfies ({$S_2$}). But then, by virtue of Hartshorne's theorem \Ref{III}~\Ref{III.3.6}, $X'\cap V(f_2)$ is connected in codimension~$1$ hence (as every component of $X'\cap V(f_2)$ is of dimension $\ge k$) it is connected in dimension $\ge k-1$. Applying the induction hypothesis to $V(f_2)=\Spec(A/f_2A)$, it follows that $X'\cap V(f_2)\cap V(f_1)\cap V(f_3)\cap \dotsb\cap V(f_k)$ is connected, whereas one had constructed it disconnected, absurd.
+
+Let us mention some interesting corollaries:
+
+\begin{corollary} \label{XIII.2.2}
+Let $f\colon X\to Y$ be a proper morphism of locally noetherian preschemes, with $Y$ integral, $y_0\in Y$, $y_1$ the generic point of $Y$. One assumes
+\begin{enumeratea}
+\item
+$Y$ is unibranch at $y_0$, every irreducible component of $X$ dominates $Y$.
+\item
+The irreducible components of $X_1$ are of dimension $\ge k+1$, and $X_1$ is connected in dimension $\ge k$.
+\end{enumeratea}
+
+Then the irreducible components of $X_0$ are of dimension $\ge k+1$, and $X_0$ is connected in dimension $\ge k$.
+\end{corollary}
+
+Indeed, Zariski's connectedness theorem (\cf\ \EGA III 4.3.1) implies that $X_0$ is connected; to show that it is not disconnected by a closed subset of dimension $<k$, one is reduced to showing that these local rings at points $x\in X_0$ such that $\dim \overline{x}<k$ have a spectrum not disconnected by $x$. Now this is true without assuming either that $f$ is proper, or that $Y$ is unibranch at $y_0$. To see this one is reduced to the case where $X$ is integral dominating $Y$, and if one wishes, $Y$ affine of finite type over $\ZZ$, so that one is under the conditions of the dimension formula for $\Oo_{X, x}$ over $\Oo_{Y, y_0}$. Using in this case the finiteness of the normal closure, one may even assume $X$ \emph{normal}, hence by virtue of a theorem of Nagata\sfootnote{\Cf \EGA IV 7.8.3 (i) (ii) (v).}, the completion of a local ring $\Oo_{X, x}$ of $X'$ is still normal, hence (if $\Oo_{X, x}$ is of dimension $N$) $\Spec (\hat{\Oo}_{X, x})$ is connected in dimension $\ge N-1$. Let $n=\dim\Oo_{Y, y_0}$, then $\degtr~k(x)/k(y)<k$ implies $\dim \Oo_{X, x}>n+(k+1)-k=n+1$, taking into account $\dim X_1\ge k+1$, and taking a system $f_1, \dotsc, f_n$ of parameters of $\Oo_{Y, y_0}$ which one lifts to elements of $\Oo_{X, x}$, one sees by \Ref{XIII.2.1} that $\Spec (\hat{\Oo}_{X, x}/\sum f_i\hat{\Oo}_{X, x})$ is connected in dimension $\ge 1$, \ie is not disconnected by its closed point, or what amounts to the same, $\Spec(\hat{\Oo}_{X_0, x})$ is not disconnected by its closed point; \afortiori the same holds for $\Spec (\Oo_{X_0, x})$.
+
+As in the case of the ordinary connectedness theorem, one can vary \Ref{XIII.2.2} by taking the geometric fibres (over the algebraic closures of the residue fields), provided one assumes $Y$ \emph{geometrically} unibranch at $y_0$, or (with no hypothesis other than that $Y$ is noetherian) that $f$ is universally open. Applying this to the case where $Y$ is the dual scheme of a projective scheme $\PP_k^r$ over a field, one recovers a strengthened form of the global result which had inspired \Ref{XIII.2.1}, namely:
+
+\refstepcounter{subsection}\label{XIII.2.3}
+\begin{enonce*}{Corollary 2.3\ndemark}\ndetext{for a very beautiful direct proof, see
+(Fulton~W.\ \& Lazarsfeld.~R., ``Connectivity and its applications in algebraic geometry'',
+in \emph{Algebraic geometry (Chicago, Ill., 1980)}, Lect. Notes in Math., vol.~862,
+Springer, Berlin-New York, 1981, p\ptbl 26--92, theorem 2.1). \Cf also \cite{HL}, cited in the editor's note~\eqref{HL}~page~\pageref{HL}.}
+Let $X$ be a closed subscheme of $\PP^r_k$ ($k$ a field), one assumes the irreducible components of $X$ are of dimension $\ge l+1$, and $X$ geometrically connected in dimension $\ge l$. Then for every sequence $H_1, \dotsc, H_m$ of $m$ hyperplanes of $\PP^r_k$ ($0\le m\le l-1$), $X\cap H_1\cap \dotsb \cap H_m$ satisfies the same condition with $l-m$, in particular is geometrically connected in dimension $\ge l-1$.
+\end{enonce*}
+
+One can moreover modify this statement in an
+evident way, for the case where one is given a proper
+morphism $X \to \PP^r_k$, which is not necessarily an
+immersion, and an analogous extension is possible for
+\Ref{XIII.2.1} (by considering a scheme proper over~$X'$). These
+statements are moreover formally deduced from the statements given
+here, taking into account the ordinary connectedness theorem which
+reduces us to the case of a finite morphism.
+
+\begin{corollary} \label{XIII.2.4}
+Let $A$ be a complete normal noetherian local ring of dimension $\ge k+2$. Let $X=\Spec (A)$, $X'=X-\{ \aaa\}$, $f_1, \dotsc, f_k$ be elements of $\rr(A)$, then $Y'=X'\cap V(f_1) \cap \dotsb \cap V(f_k)$ is connected, and $\pi_1(Y')\to \pi_1(X')$ is surjective.
+\end{corollary}
+
+One proceeds as in \SGA 1~X~2.11.
+
+In all of this, it was only a matter of questions of \emph{connectedness}. Now in the global case, well-known theorems assert that for an irreducible projective variety $X\subset \PP^r_k$, $k$ algebraically closed, its intersection with a sufficiently ``general'' hyperplane $H$ is irreducible, (and not merely connected): this is the \emph{Bertini theorem}, proved by Zariski, which implies in turn by Zariski's connectedness theorem, that for \emph{every} $H$, $H\cap X$ is connected (although not necessarily irreducible). One can moreover proceed in the opposite direction, by proving this last result by a Lefschetz-type technique, and by deducing the Bertini theorem, reducing to the case where $X$ is normal, and using the following result: for $H$ ``sufficiently general'', $X\cap H$ is likewise normal. This suggests the
+
+\refstepcounter{subsection}\label{XIII.2.5}
+\begin{enonce*}{Conjecture 2.5\ndemark}\ndetext{see the following editor's note.}
+Let $A$ be a complete normal noetherian local ring. Show that there exists a non-zero $f\in\rr(A)$ such that $Y'=X'\cap V(f)=Y-\{ \aaa\}$ (where $Y=\Spec (A/fA)$) is normal (hence irreducible by \Ref{XIII.2.1} if $\dim A\ge 3$).
+\end{enonce*}
+
+To do things properly, one should show that in a suitable sense, there even exist ``many'' elements $f$ having the property in question, for example that one can choose $f$ in an arbitrary power of the maximal ideal. Using Serre's criterion for normality, and the remark made above for Serre's property $(S_2)$, one sees that one would have an affirmative answer to \Ref{XIII.2.5} if one had one to the
+
+\refstepcounter{subsection}\label{XIII.2.6}
+\begin{enonce*}{Conjecture 2.6\ndemark}
+\ndetext{one now finds a proof of this conjecture in the literature, and hence the preceding one should likewise be regarded as proved as indicated above. One can also find two attempts at proofs, published earlier but alas unsuccessful, by Flenner and Trivedi. See Trivedi V., ``Erratum: ``A local Bertini theorem in mixed characteristic'' '', \emph{Comm. Algebra} \textbf{25} (1997), \numero 5, p\ptbl1685-1686. However, the editor has not verified that the proof is now complete.}
+Let $A$ be a complete noetherian local ring, $U$ an open subset of its spectrum $X$, $F$ a finite subset of $X'=X-\{ \aaa\}$. One assumes that $U$ is regular. Prove that there exists an $f \in\rr(A)$ such that $V(f)\cap U$ is regular, and $V(f)\cap F=\emptyset$.
+\end{enonce*}
+
+See, for a result of ``local Bertini'' type, Chow~\cite{XIII.2}
+
+\section{Problems related to $\pi_1$} \label{XIII.3}
+
+Here again, one has numerous questions, suggested by the global results or the transcendental results.
+
+\refstepcounter{subsection}\label{XIII.3.1}
+\begin{enonce*}{Conjecture 3.1\ndemark}\ndetext{the analogous statement is true for (connected) schemes $X$ of finite type over a separably closed field $k$ under the hypothesis of strong desingularization for all $\bar k$-schemes (of finite type), in particular if $k$ is of characteristic zero or $X$ of dimension $\leq 2$. To this end one is reduced to the case of quasi-projective surfaces by Lefschetz-type techniques developed by Mme Raynaud, \cf notes \textit{supra}; see \SGA 7.1, theorem II.2.3.1.} Let $A$ be a complete noetherian local ring with algebraically closed residue field, $X=\Spec (A)$, $ X'= X- \{\aaa\}$, $\aaa$ the closed point. Suppose the irreducible components of $X$ are of dimension $\ge 2$, $X'$ connected.
+\begin{enumeratei}
+\item
+Prove that $\pi_1(X')$ is topologically finitely generated.
+\item
+If $p$ is the characteristic exponent of the residue field $k$ of $A$, prove that the largest topological quotient group of $\pi_1(X')$ which is ``of order prime to $p$'' is of finite presentation.
+\end{enumeratei}
+\end{enonce*}
+
+For part (i), using descent theory \SGA 1~IX~5.2 and theorem 2.4, one is reduced to the case where $A$ is normal of dimension $2$. In this case, a systematic method for studying the fundamental group of $X'$, inaugurated by Mumford~\cite{XIII.5} in the transcendental setting, consists in \emph{desingularizing} $X$ \ie in considering a projective birational morphism $Z\to X$, with $Z$ integral regular, inducing an isomorphism $Z'=Z|X'\to X'$; it is plausible that such a $Z$ always exists, this is in any case what is shown by Abhyankar's method~\cite{XIII.1} in the case of ``equal characteristics''\sfootnote{The possibility of ``resolving'' $A$ is now proved in complete generality by Abhyankar~\cite{XIII.8}.}. Let~$C$ be the fibre of the closed point of $X$ under $Z\to X$, it is an algebraic curve over the residue field $k$, connected by virtue of the connectedness theorem. The solution of \Ref{XIII.3.1} then seems tied to the
+
+\begin{problem} \label{XIII.3.2}
+With the preceding notations, relate $\pi_1(X')$ with the topological invariants of $C$, in particular its fundamental group, (so as to bring out the topological finite generation of $\pi_1(X')$, using for example \SGA \textup{I}, theorem~\textup{X~2.6}).
+\end{problem}
+
+Another method would be to consider $A$ as a finite algebra over a complete \emph{regular} local ring $B$ of dimension $2$, ramified along a curve $C$ contained in $\Spec(B)=Y$. One is thus led to the
+
+\begin{problem} \label{XIII.3.3}
+Let $A$ be a complete regular local ring of dimension $2$, with algebraically closed residue field $k$, $X$ its spectrum, $C$ a closed subset of $X$ of dimension~$1$. Define local invariants of the immersed curve $C$, having a meaning independent of the residual characteristic, knowledge of which allows one to compute the fundamental group of $X-C$ by generators and relations when $k$ is of characteristic zero. Prove that when $k$ is of characteristic $p> 0$, the ``tame'' fundamental group of $X-C$ is a quotient of the former, and the two fundamental groups (in characteristic~$0$, and in characteristic $p> 0$) have the same maximal quotient of order prime to $p$.
+\end{problem}
+
+Of course, \Ref{XIII.3.3} shows us that in \Ref{XIII.3.1}, one should likewise replace~$X'$ by a scheme of the form $X-Y$, where $Y$ is a closed subset of $X$ which is of codimension $\ge 2$ in every component of $X$ containing it. When one drops this restriction on $Y$, there should still exist an analogous finiteness result, provided one puts restrictions of ``tame'' type on the ramification at the maximal points of those irreducible components of $Y$ which are of codimension $1$.
+
+\begin{problem} \label{XIII.3.4}
+Let $A$ be a complete noetherian local ring of dimension $2$, with algebraically closed residue field. Let again $X=\Spec(A)$, $X'=X-\{\aaa\}$. Find particular structural properties of $\pi_1(X')$ for the case where $A$ is a complete intersection.
+\end{problem}
+
+A satisfactory solution of this problem might perhaps allow one to solve the following old problem:
+
+\refstepcounter{subsection}\label{XIII.3.5}
+\begin{enonce*}{Conjecture 3.5\ndemark}\ndetext{this problem is, as of autumn 2004, still open.} Find an irreducible curve in $\PP^3_k$ ($k$ an algebraically closed field), preferably non-singular, which is not set-theoretically the intersection of two hypersurfaces.
+\end{enonce*}
+\noindent(Kneser~\cite{XIII.4} shows that one can always obtain it as the intersection of three hypersurfaces).

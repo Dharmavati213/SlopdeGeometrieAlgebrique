@@ -1,0 +1,261 @@
+\section{Formal completion and normal flatness} \label{XII.4}
+
+\setcounter{equation}{18}
+
+\begin{theorem} \label{XII.4.1} Let $X$ be a locally noetherian prescheme, locally immersible in a regular scheme, $Y$ a closed subset of $X$, $U=X- Y$, $X_0$ a closed subprescheme of $X$ defined by an ideal $\Jj$, $\widehat{X}$ the formal completion of $X$ along $X_0$, $U_0$ the trace of $X_0$ on $U$, $\widehat{U}$ the formal completion of $U$ along $U_0$, $i\colon U\to X$ and $\widehat{i}\colon \widehat{U}\to \widehat{X}$ the canonical immersions, $n$ an integer. Assume
+\begin{enumeratea}
+\item
+$X$ is normally flat along $X_0$ at the points of $Y\cap X_0$, \ie at these points the Modules $\Jj^n/\Jj^{n+1}$ on $X_0$ are flat \ie locally free.
+\item
+For every $x\in Y\cap X_0$, one has $\prof \Oo_{X_0, x}\geq n+2$.
+\end{enumeratea}
+Under these conditions, one has the following:
+\begin{enumerate}
+\item Let $F$ be a coherent Module on $U$, suppose that one has:
+\begin{enumerate}
+\item[\textup{c)}] For every $x\in Y- Y\cap X_0$, one has $\prof \Oo_{X, x}\geq n+2$.
+
+\item[\textup{d)}] $F$ is free at the points of $U_0$, and of depth $\geq n+1$ at all the points of $U$ where it is not free.
+\end{enumerate}
+Then the graded Module
+\[
+\tbigoplus_{m\geq 0}\R^pi_\ast(\Jj^mF)
+\]
+on $\bigoplus_{m\geq 0}\Jj^m$ is of finite type for $p\leq n$. \item Let $\formelF$ be a coherent Module on $\widehat{U}$, then the graded Module
+\[
+\tbigoplus_{m\geq 0}\R^pi_\ast(\Jj^m\formelF/\Jj^{m+1}\formelF)
+\]
+on $\bigoplus_{m\geq 0}\Jj^m/\Jj^{m+1}=\gr_{\Jj}(\OX)$ is of finite type for $p\leq n$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+1) Let $X'\!=\!\Spec(\bigoplus_{m\geq 0}\Jj^m)$; the change of base \hbox{$f:X'\!\to\! X$} then defines $U'=X'- Y'$, $X_0'$, $U_0'=X_0' U'$, and immersions $i'\colon U'\to X'$, \hbox{$i_0':U_0'\to X_0'$}. One thus has a cartesian square
+\[
+\xymatrix{
+X'\ar[d]_f&\ar[l]_-{i'} U'\ar[d]^g \\
+X&\ar[l]_-{i} U
+}
+\]
+and one has
+\steco
+\begin{equation} \label{eq:XII.19}
+\tbigoplus_{m\geq 0}\R^pi_\ast(\Jj^mF) = \R^pi_\ast \Big(\tbigoplus_{m\geq 0} \Jj^mF \Big) =\R^pi_\ast (g_\ast(F')),
+\end{equation}
+where $F'=g^\ast F$, so that one does indeed have a canonical isomorphism
+\[
+g_\ast(F') \isomto \tbigoplus_{m\geq 0}\Jj^mF,
+\]
+for this is true at the points of $U_0$, from the fact that $F$ is free there by virtue of d), and equally at the points of $U_0$, from the fact that one has $\Jj^m=\Oo_U$ there, (so that in both cases, $\Jj^m\otimes_{\Oo_U}F\to \Jj^mF$ is an isomorphism).
+
+On the other hand, as $f$ and consequently $g$ are affine, one has
+\steco
+\begin{equation} \label{eq:XII.20} {}\R^pi_\ast(g_\ast(F')) = \R^p(ig)_\ast(F') = \R^p(fi')_\ast(F') = f_\ast(R^pi'_\ast(F'))
+\end{equation}
+hence comparing (\Ref{eq:XII.19}) and (\Ref{eq:XII.20}), one sees that assertion 1) is equivalent to the following: $R^pi'_\ast(F')$ is a Module of finite type \ie coherent on $X'$, for every $p\leq n$. Now as $X$ is locally immersible in a regular scheme, the same is true of $X'$ which is of finite type over $X$, and one may apply the coherence criterion \Ref{VIII}~\Ref{VIII.2.3} to a coherent extension $F^{''}$ of $F'$: one wishes to express that $\SheafH^p_Y(F^{''})$ is coherent for $p\leq n+1$, and this is also equivalent to saying that for every $x'\in U'$ such that
+\begin{equation*} \label{eq:XII.20bis} \tag{20 bis} {}\codim (\overline{x'}\cap Y', \overline{x'})=1,
+\end{equation*}
+one has
+\steco
+\begin{equation} \label{eq:XII.21} {} \prof F'_{x'}\geq n+1.
+\end{equation}
+Now this condition is satisfied at the points $x'$ where $F'$ is not free, since for such an $x'$ one has $x'\notin U_0'$ by virtue of d), hence $g$ is an isomorphism there, and by virtue of d) again, $F$ is of depth $\geq n+1$ at $g(x')$, hence $F'$ is of depth $\geq n+1$ at $x'$. It thus suffices to verify condition (\Ref{eq:XII.21}) at those $x'\in U'$ satisfying (\Ref{eq:XII.21}), and at which $F'$ is free. Now it suffices for this to prove that one has
+\begin{equation*} \label{eq:XII.21bis} \tag{21 bis}
+\prof \Oo_{X', x'}\geq n+1
+\end{equation*}
+%
+at these points, \afortiori it suffices to establish that one has this relation at all the points~$x$ of $U'$ satisfying (\Ref{eq:XII.20} bis). Now, again by virtue of the criterion~\Ref{VIII.2.3} of Expos\'e \Ref{VIII}, this is equivalent to the assertion that the Modules
+\[
+\SheafH^p_{Y'}(\Oo_{X'}) \hspace{5mm} \text{for} \; p\leq n+1
+\]
+are coherent. In fact, we are going to prove that they are even zero, or what amounts to the same by virtue of Expos\'e~\Ref{III}, that one has
+\steco
+\begin{equation} \label{eq:XII.22} {} \prof \Oo_{X', x'}\geq n+2 \hspace{5mm} \text{for every }\; x'\in Y'.
+\end{equation}
+For this, we distinguish two cases. If $x'\notin X'_0$, then $f$ is an immersion at $x'$, and one must verify that $F$ is of depth $\geq n+2$ at the image $x=f(x')$, which is nothing other than condition c). If on the other hand $x'\in X'_0$, \ie $x=f(x')\in X_0$ hence $x\in Y\cap X_0$, one applies conditions a) and b) thanks to the
+
+\begin{lemma} \label{XII.4.2}
+Let $X$ be a locally noetherian prescheme, $X_0$ a closed subprescheme of $X$ defined by an ideal $\Jj$, $X'=\Spec(\bigoplus_{m\geq 0} \Jj^m)$, $X_0'=\Spec(\bigoplus_{m\geq 0} \Jj^m/\Jj^{m+1}) = X'\times_XX_0$, $x$ a point of $X_0$ at which $X$ is normally flat along $X_0$ \ie such that $\gr_{\Jj}(\OX)= \bigoplus_{m\geq 0}\Jj^m/\Jj^{m+1}$ is flat there as a Module on $X_0$. Then for every sequence of elements $f_i$ ($1\leq i\leq m$) of $\Oo_{X, x}$ whose images in $\Oo_{X_0, x}$ form an $\Oo_{X_0, x}$-regular sequence, and every $x'\in X'$ above $x$, the images of the $f_i$ in $\Oo_{X', x'}$ (\resp in $\Oo_{X'_0, x'}$) likewise form an $\Oo_{X', x'}$-regular sequence (\resp an $\Oo_{X'_0, x'}$-regular sequence), in particular one has
+\steco
+\begin{equation} \label{eq:XII.23}
+\prof \Oo_{X', x'} \geq \prof \Oo_{X_0, x}, \quad \prof \Oo_{X'_0, x'} \geq \prof \Oo_{X_0, x}.
+\end{equation}
+\end{lemma}
+
+To prove it, one may suppose that $X$ is local with closed point $x$, hence affine with ring $A=\Oo_{X, x}$, $\Jj$ being defined by the Ideal $J$, and it suffices to prove that for every sequence $f_i$ ($1\leq i\leq m$) of elements of $A$ whose images in $A/J$ form an $A/J$-regular sequence, the $f_i$ likewise form a $(\bigoplus_{m\geq 0} J^m)$-regular sequence and a $(\bigoplus_{m\geq 0} J^m/J^{m+1})$-regular sequence, \ie for every $m$, it forms a $J^m$-regular sequence and a $J^m/J^{m+1}$-regular sequence. The second assertion is trivial, since $J^m/J^{m+1}$ is a free module over $A/J$. The first follows, by looking at the $J$-adic filtration of $J^m$, and noting that for the graded module associated to $J^m$ for the said filtration, the sequence of the~$f_i$ is regular.
+
+This proves \Ref{XII.4.2} and consequently \Ref{XII.4.1}~1).
+
+Let us prove \Ref{XII.4.1} 2). For this, let us use the cartesian square
+\[
+\xymatrix{
+X'_0\ar[d]_{f_0}&\ar[l]_-{i'_0} U'_0\ar[d]^{g_0} \\
+X_0&\ar[l]_-{i_0} U_0
+}
+\]
+and proceeding as in the beginning of the proof of 1), one finds that one has
+\steco
+\begin{equation} \label{eq:XII.24}
+\tbigoplus_{m\geq 0} \R^pi_\ast(\Jj^m\formelF/\Jj^{m+1}\formelF) \simeq {f_0}_\ast (\R^p{i'_0}_\ast(\formelF_0')),
+\end{equation}
+where $\formelF_0=\formelF/\Jj\formelF$ and where $\formelF_0'=g_0^\ast(\formelF_0)$, (using the fact that $\formelF$ is locally free). Hence the conclusion of 2) is equivalent to saying that for $p\leq n$, $\R^p{i'_0}_\ast(\formelF_0')$ is a coherent Module.
+
+%
+Here again, taking into account that $\formelF_0'$ is locally free, the criterion \Ref{VIII}~\Ref{VIII.2.3} allows us to reduce to proving that this is so if one replaces $\formelF_0'$ by $\Oo_{U'_0}$, \ie to proving that the Modules
+\[
+\SheafH^p_{Y_0'}(\Oo_{X_0'}) \hspace{5mm} \text{for} \; p\leq n+1 \hspace{5mm} \text{(where} \; Y'_0=Y'\cap X_0'=X_0'- U'_0 \text{)}
+\]
+are coherent. One proves again that they are in fact zero, i.e.\ that one has
+\steco
+\begin{equation} \label{eq:XII.25} {}\prof \Oo_{X'_0, x'} \geq n+2 \hspace{5mm} \text{for every} \; x'\in Y'_0.
+\end{equation}
+Now this indeed follows from conditions a) and b), taking \Ref{XII.4.2} into account. This completes the proof of \Ref{XII.4.1}.
+\skipqed
+\end{proof}
+
+\begin{remark} \label{XII.4.3}
+One sees at once, by descent, that the hypothesis: $X$ locally immersible in a regular scheme, may be replaced by the following weaker one: there exists a morphism $\overline{X}\to X$, faithfully flat and quasi-compact, such that $\overline{X}$ is locally immersible in a regular scheme.
+\end{remark}
+
+Theorem \Ref{XII.4.1} puts us in a position to apply the results of Expos\'e \Ref{IX} (comparison and existence theorems). We shall be interested in particular in
+
+\begin{corollary} \label{XII.4.4}
+Suppose conditions a), b), c) of Theorem \Ref{XII.4.1} are satisfied, with $n=1$, and $X=\Spec(A)$, $A$ being separated and complete for the $J$-adic topology. Then
+\begin{enumerate}
+\item The functor $F\mto \widehat{F}$ from the category of coherent locally free Modules on~$U$ to the category of coherent locally free Modules on $\widehat{U}$ is fully faithful. \item For every coherent locally free Module $\formelF$ on $\widehat{U}$, there exists a coherent Module $F$ on $U$ and an isomorphism $\widehat{F}\isomto \formelF$.
+\end{enumerate}
+In particular, if for every $x\in U$ whose closure in $U$ does not meet $U_0$ \ie such that $\overline{x}\cap X_0\subset Y$, one has $\prof \Oo_{U, x}\geq 2$, then the pair $(U, U_0)$ satisfies the effective Lefschetz condition ($\Leff$) of Expos\'e \Ref{X}.
+\end{corollary}
+\noindent
+(For the last assertion, one proceeds as in \Ref{X}~\Ref{X.2.1})
+
+Special case of \Ref{XII.4.4}:
+
+\begin{corollary} \label{XII.4.5}
+Let $A$ be a noetherian ring, $J$ an ideal of $A$ contained in the radical, $A_0=A/J$. Assume
+\begin{enumeratei}
+\item
+$\prof A_0\geq 3$.
+\item
+$\gr_J(A)$ is a free $A_0$-module.
+\item
+$A$ is complete for the $J$-adic topology.
+\end{enumeratei}
+
+Let $X=\Spec(A)$, $X_0=\Spec(A_0)=V(J)$, $a$ the closed point of $X$, $U=X-\{a\}$, $U_0=X_0-\{a\}$, $\widehat{U}$ the formal completion of $U$ along $U_0$. Then the functor $F\mto \widehat{F}$ from the category of coherent locally free Modules on $U$ to the category of coherent locally free Modules on $\widehat{U}$ is fully faithful. Moreover, for every coherent locally free Module $\formelF$ on $\widehat{U}$, there exists a coherent Module (not necessarily locally free!) $F$ on $U$, and an isomorphism $\widehat{F}\simeq\formelF$.
+\end{corollary}
+
+One will note that thanks to \Ref{XII.4.3}, we have not had to assume that $A$ is a quotient of a regular ring, for the completion of $A$ for the $\rr(A)$-adic topology satisfies this condition in any case.
+
+Proceeding as in Expos\'es \Ref{X} and \Ref{XI}, one concludes from \Ref{XII.4.5}
+
+\begin{corollary} \label{XII.4.6}
+Under the conditions of \Ref{XII.4.5}, one has the following:
+\begin{enumeratea}
+\item
+$U$ and $U_0$ are connected (\Ref{III}~\Ref{III.3.1}).
+
+Choosing a geometric base-point in $U_0$, the homomorphism
+\[
+\pi_1(U_0)\to \pi_1(U)
+\]
+is surjective.
+\item
+The homomorphism
+\[
+\Pic(U)\to \Pic(U_0)
+\]
+is injective.
+\end{enumeratea}
+\end{corollary}
+
+To prove b), taking \Ref{XII.4.5} into account, this amounts to verifying that every isomorphism $L_0'\isomto L_0$ lifts to an isomorphism $\widehat{L'}\isomto \widehat{L}$. Now for this one lifts step by step to isomorphisms $L_n'\isomto L_n$, the obstructions lying in $\H^1(U_0, \Jj^n/\Jj^{n+1})$, and these modules are zero from the fact that $J^n/J^{n+1}$ is free and $\prof A_0\geq 3$.
+
+We are now in a position to prove the
+%
+\begin{theorem} \label{XII.4.7}
+Let $A$ be a noetherian local ring, $J$ an ideal of $A$ contained in its radical, $A_0=A/J$. Assume
+\begin{enumeratei}
+\item
+$\prof A_0\geq 3$.
+\item
+$\gr_J(A)$ is a free module over $A_0$.
+\end{enumeratei}
+\noindent
+Then, if $A_0$ is ``pure'' (\Ref{X}~\Ref{X.3.1}) (\resp parafactorial (\Ref{XI}~\Ref{XI.3.1})), the same is true of~$A$.
+\end{theorem}
+
+\begin{proof}
+By descent, one may suppose that one also has
+\begin{enumeratei}\setcounter{enumi}{2}
+\item
+$A$ is complete for the $J$-adic topology.
+\end{enumeratei}
+
+Indeed, by virtue of (i) and (ii), one has $\prof(A)\geq 3$ hence $\prof(\widehat{A})\geq 3$, where $\widehat{A}$ is the completion of $A$ for the $J$-adic topology, and one applies \Ref{X}~\Ref{X.3.6} and \Ref{XI}~\Ref{XI.3.6}. One is thus under the conditions of \Ref{XII.4.5}. As $\prof(A)\geq 3\geq 2$, to say that $A$ is parafactorial simply means that $\Pic(U)=0$, and by virtue of \Ref{XII.4.6} b) it suffices for this that $\Pic(U_0)=0$, \ie that $A_0$ be parafactorial. To prove that $A$ is ``pure'' if $A_0$ is, one must prove that if $V$ is an \'etale covering of $U$, defined by an algebra $\Bb$ on~$U$, then $\H^0(U, \Bb)$ is a finite \'etale algebra over $A$. Now $A_0$ being pure, the same is true of the $A_n$ (which differ from it only by nilpotent elements), hence for every $n$, $B_n=\H^0(U, \Bb_n)$ is an \'etale algebra over $A/J^{n+1}$, and of course these algebras glue, so that $\varprojlim B_n$ is an \'etale algebra over $A$. Now by virtue of \Ref{XII.4.5}, this algebra is none other than $\H^0(U, \Bb)$, which establishes our assertion.
+\skipqed
+\end{proof}
+
+\begin{corollary} \label{XII.4.8}
+Let $f\colon X\to Y$ be a flat morphism of locally noetherian preschemes, $x\in X$, $y=f(x)$, suppose that $\Oo_{X_y, x}$ is a ``pure'' (\resp parafactorial) local ring of depth $\geq 3$, then the same is true of $\Oo_{X, x}$.
+\end{corollary}
+
+This is the result of the type promised at the end of the preceding \numero, in order to generalize Corollaries \Ref{XII.3.5} and those following. One thus finds, using \Ref{XII.3.4}, the
+
+\begin{corollary} \label{XII.4.9}
+Let $f\colon X\to S$ be a projective and flat morphism, with $S$ locally noetherian, $\OX(1)$ an invertible Module on $X$ ample with respect to $S$, $t$ a section of $\OX(1)$ such that for every $s\in S$, the section $t_s$ induced on $X_s$ is $\Oo_{X_s}$-regular, $X_0$ the subscheme of zeros of $t$, $X_m$ the subscheme of zeros of $t^{m+1}$. Assume that for every $s\in S$, $X_s$ is of depth $\geq 3$ at all its closed points. Then:
+\begin{enumeratea}
+\item
+If the local rings of the closed points of $X_s- X_{0, s}$ ($s\in S$) are ``pure'', for example are complete intersections, then the functor $X'\mto X_0'=X'\times_X X_0$ from the category of \'etale coverings of $X$ to the category of \'etale coverings of $X_0$ is an equivalence of categories; in particular, choosing a geometric base-point in $X_0$, the homomorphism
+\[
+\pi_1(X_0)\to \pi_1(X)
+\]
+is an isomorphism\nde{\label{FH}let us point out
+the spectacular connectedness result obtained since by Fulton and
+Hansen, in the case where $S=\Spec(k)$ ($k$ an algebraically
+closed field). Let $g\colon X\to {\PP^m_k}\times{\PP^m_k}$ be such that $\dim
+g(X)>m$; then the inverse image of the diagonal is connected. This
+allows one among other things to generalize
+Corollary~\Ref{XII.4.9} when $f$ is the structural morphism
+of the projective space $\PP^m_k$ over $S=\Spec(k)$: precisely, an
+irreducible subvariety $X$ of ${\PP^m_k}$ of dimension $>m/2$ has
+trivial fundamental group! (\cf Fulton~W.\ \& Hansen~J., ``
+A connectedness theorem for projective varieties, with
+applications to intersections and singularities of mappings'',
+\emph{Ann. of Math. (2)} \textbf{110} (1979), \numero 1, p\ptbl
+159--166). For generalizations to the case of Grassmannians or
+abelian varieties, see {Debarre~O.}, ``Th\'eor\`emes de
+connexit\'e pour les produits d'espaces projectifs et les
+grassmanniennes'', \emph{Amer. J.~Math.} \textbf{118} (1996),
+\numero 6, p\ptbl 1347--1367 and ``Th\'eor\`emes de connexit\'e et
+vari\'et\'es ab\'eliennes'', \emph{Amer. J.~Math.} \textbf{117}
+(1995), \numero 3, p\ptbl 787--805. The result on the triviality of the
+fundamental group of $X$ as above was obtained
+independently by Faltings, who proves moreover that
+$\text{Pic}(X)$ has no torsion prime to the characteristic
+of $k$, this by methods of algebraization of formal bundles,
+more in the line of Grothendieck's techniques, \cf
+(Faltings~G., ``Algebraization of some formal vector bundles''
+\emph{Ann. of Math. (2)} \textbf{110} (1979), \numero 3, p\ptbl
+501--514).}
+
+\item
+If the local rings of the closed points of the $X_s- X_{0, s}$ ($s\in S$) are ``parafactorial'', for example regular, or complete intersections of dimension $\geq 4$, then for every integer $m$ such that $\R^if_{0\ast}(\Oo_{X_0}(-n))=0$ for $n>m$ and $i=1, 2$, the map $\Pic(X)\to \Pic(X_m)$ is bijective.
+
+Moreover if $S$ is noetherian, and the $X_{0, s}$ are of depth $\geq 3$ at their closed points, there exist such $m$ (\cf \Ref{XII.1.5}).
+\end{enumeratea}
+\end{corollary}
+
+\begin{remark} \label{XII.4.10}
+Under the conditions of the last assertion of \Ref{XII.4.9} b), one has seen in \Ref{XII.1.5} that there exists an $m$ such that $n>m$ even implies $\H^i(X_0, \Oo_{X_0}(-n))=0$ for $i=1, 2$, and even for $i\leq 2$). This condition is stronger than $\R^if_{\ast}(\Oo_{X_0}(-n))=0$ for $i=1, 2$, and it has moreover the advantage of being stable under change of base. The same is true of the depth hypotheses made in \Ref{XII.4.9}, and likewise of a hypothesis of the type ``the $X_s$ are locally complete intersections''. It then follows, under these conditions that \Ref{XII.4.9} b) also implies that the morphism of functors
+\[
+\SheafPic_{X/S}\to \SheafPic_{X_n/S}
+\]
+in $\catSch_{/S}$ is an isomorphism, hence also the morphism for the relative Picard schemes, when these exist:
+\[
+\Pic_{X/S}\to \Pic_{X_n/S}.
+\]
+Even in the case where $S$ is the spectrum of an algebraically closed field, this statement is distinctly more precise than the statement consisting in saying only that $\Pic(X)\to \Pic(X_n)$ is bijective.
+
+One may ask whether one can always take $n=0$ in the preceding conclusions (thus assuming the $X_{0, s}$ are of depth $\geq 3$ at their closed points). When $X_0$ is smooth over $S$ and the residual characteristics of $S$ are zero, this is indeed the case, by virtue of Kodaira's ``vanishing theorem'', (proved by transcendental means, using a K\"ahler metric) which implies that for every connected smooth projective scheme of dimension $n$ over a field $k$ of characteristic zero, and every ample invertible Module $L$ on $X$, one has $\H^i(X, L^{-1})=0$ for $i\neq n$. It is not known\nde{as Raynaud has remarked, the decomposition result for the de Rham complex of Deligne and Illusie easily implies the vanishing of the group $H^i(X, L^{-1})$ (with $L$ ample on $X$ projective smooth over $k$ of characteristic $p>0$) for $i<\inf(p, \dim(X))$ as soon as one assumes that $X$ is liftable to a flat scheme over $W_2(k)$ (\cf Deligne~P.\ \& Illusie~L., ``Rel\`evements modulo~$p^2$ et d\'ecomposition du complexe de de Rham'', \emph{Invent. Math.} \textbf{89} (1987), \numero 2, p\ptbl 247--270); this gives a purely algebraic proof of Kodaira's result for projective varieties in characteristic zero. If $X$ is not liftable, it is well known that the ``vanishing theorem'' is false; \cf the example in (Raynaud~M., ``Contre-exemple au "vanishing theorem" en caract\'eristique $p>0$'', in \emph{C.P.~Ramanujam---a tribute}, Tata Inst. Fund. Res. Studies in Math., vol.~8, Springer, Berlin-New York, 1978, p\ptbl 273--278); see also the very pretty examples in (Haboush~W.\ \& Lauritzen~N., ``Varieties of unseparated flags'', in \emph{Linear algebraic groups and their representations (Los Angeles, CA, 1992)}, Contemp. Math., vol.~153, American Mathematical Society, Providence, RI, 1993, p\ptbl 35--57), simplified in (Lauritzen~N.\ \& Rao~A.P., ``Elementary counterexamples to Kodaira vanishing in prime characteristic'', \emph{Proc. Indian Acad. Sci. Math. Sci.} \textbf{107} (1997), \numero 1, p\ptbl 21--25). On the other hand, I do not know an example where the arrow $\Pic(X_{n+1})\to\Pic(X_n)$ is not surjective for $n>1$ in positive characteristic, where $X_n$ denotes a thickened hyperplane section of $X$ projective smooth as above.} at the present time whether this theorem can be replaced by a generalization in characteristic $p>0$, and whether the smoothness hypothesis can be replaced by a hypothesis of a more general nature (bearing on the depth, or of ``complete intersection'' type...).
+\end{remark}

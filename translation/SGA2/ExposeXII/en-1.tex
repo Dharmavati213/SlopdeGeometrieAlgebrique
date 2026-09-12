@@ -1,0 +1,168 @@
+\chapter[Applications to projective algebraic schemes]
+{Applications\\ to projective algebraic schemes} \label{XII}
+
+\renewcommand{\theequation}{\arabic{equation}}
+
+\section[Projective duality theorem and finiteness theorem]
+{Projective duality theorem and finiteness theorem\protect\sfootnotemark}\label{XII.1}
+
+The following theorem,\sfootnotetext{The present expos\'e, written in January~1963, is distinctly more detailed than was the oral expos\'e, in June~1962.} essentially contained in FAC\sfootnote{J.-P.~Serre, {\og Faisceaux alg\'ebriques coh\'erents\fg}, \emph{Ann. of Math.} \textbf{61} (1955), p\ptbl197-278.} (except that at the time, Serre did not have at his disposal the language of Ext of sheaves of modules\nde{the reader fond of the History of Mathematics will consult with interest the letter that Grothendieck wrote to Serre on 15 December 1955 and the latter's reply of 22 December of the same year; see \emph{Correspondance Grothendieck-Serre}, edited by Pierre Colmez and Jean-Pierre Serre, Documents Math\'ematiques, vol.~2, Soci\'et\'e Math\'ematique de France, Paris, 2001.}), is the global analogue of the local duality theorem (Expos\'e \Ref{IV}), which was modelled on it.
+
+\begin{theorem} \label{XII.1.1}
+Let $k$ be a field, $X=\PP_k^r$ the projective space of dimension $r$ over $k$, $F$~a variable coherent module on $X$; then one has an isomorphism of $\partial$-functors in~$F$:
+\steco
+\begin{equation} \label{eq:XII.1} {}\H^i(X, F)' \isomfrom \Ext^{r-i}(X;F, \omx^r),
+\end{equation}
+where one sets
+\steco
+\begin{equation} \label{eq:XII.2} {}\Omega_{X/k}^r= \Oo_{\PP_k^r}(-r-1).
+\end{equation}
+\end{theorem}
+
+\begin{remarkstar}
+Of course, this Module is also the Module of relative differentials of degree $r$ of $X$ over $k$. In this form, the theorem remains true if $X$ is a proper and smooth scheme over $k$ (for the projective case, see A. Grothendieck, \og \emph{Th\'eor\`emes de dualit\'e pour les faisceaux alg\'ebriques coh\'erents}\fg, S\'eminaire Bourbaki May 1957)\sfootnote{For a more general duality theorem, \cf the Hartshorne Seminar cited at the end of \Exp \Ref{IV}.}. When $F$ is locally free, one recovers Serre's duality theorem $\H^i(X, F)' \isomto \H^{r-i}(\SheafHom_{\OX}(F, \omx^r))$. Theorem \Ref{XII.1.1} (which moreover recovers the case of an $X$ projective over $k$, as in {\loccit}) will suffice for our purposes.
+\end{remarkstar} The homomorphism (\Ref{eq:XII.1}) is deduced from the Yoneda pairing
+\steco
+\begin{equation} \label{eq:XII.3} {}\H^i(X, F) \times \Ext^{r-i}(X;F, \omx^r) \to \H^r(X, \omx^r),
+\end{equation}
+and from a well-known isomorphism (\cf FAC, or \EGA III 2.1.12):
+\steco
+\begin{equation} \label{eq:XII.4} {}\H^r(X, \omx^r) = \H^r(\PP_k^r, \Oo_{\PP_k^r}(-r-1)) \isomto k.
+\end{equation}
+To show that (\Ref{eq:XII.1}) is an isomorphism, one proceeds as in the case of the local duality theorem, noting that $\H^r(X, F)$ as a functor in $F$ is right exact (since $\H^n(X, F)=0$ for $n>r$), and that every coherent Module is isomorphic to a quotient of a direct sum of Modules of the form $\Oo(-m)$, with $m$ large. This reduces us by descending induction on $i$ to carrying out the verification for a sheaf of the form $\Oo(-m)$, where this is contained in the well-known explicit computations (FAC, or \EGA III 2.1.12). One may moreover assume $-m \leq -r-1$, in which case $\H^i(X, \Oo(-m))=0$ for $i\neq r$.
+
+\begin{corollary} \label{XII.1.2} For $F$ coherent given, and $m$ large enough, one has a canonical isomorphism
+\steco
+\begin{equation} \label{eq:XII.5} {}\H^i(X, F(-m))'\isomto\H^0(X, \SheafExt_{\OX}^{r-i}(F, \omx^r)(m))
+\end{equation}
+(where the $'$ denotes the dual vector space).
+\end{corollary}
+Indeed, on projective space $X$, one has for every pair of coherent sheaves $F, G$ and for $n$ large enough a canonical isomorphism:
+\steco
+\begin{equation} \label{eq:XII.6} {}\Ext^n(X;F(-m), G)\simeq \Ext^n(X;F, G(m)) \isomto \H^0(X, \SheafExt_{\OX}^{n}(F, G)(m)),
+\end{equation}
+(the isomorphism of the first two members being trivially true for every $m$), as follows from the spectral sequence of global $\Ext$
+\[
+\H^p(X, \SheafExt^q_{\OX}(F, G(m))) \To \Ext^{\boule}(X;F, G(m)),
+\]
+which degenerates for $m$ large enough thanks to the fact that
+\[
+\SheafExt^q_{\OX}(F, G(m)) \simeq \SheafExt^q_{\OX}(F, G)(m),
+\]
+and that the $\SheafExt^q_{\OX}(F, G)$ are coherent sheaves. Thus (\Ref{eq:XII.5}) follows from (\Ref{eq:XII.6}) and (\Ref{eq:XII.1}).
+
+\begin{corollary} \label{XII.1.3}
+For $i, F$ given, the following conditions are equivalent:
+\begin{enumeratei}
+\item
+$\H^i(X, F(-m))=0$ for $m$ large.
+\item[\textup{(i bis)}] $\H^i(X, F(\cdot))= \bigoplus_{m\in\ZZ}\H^i(X, F(-m))$ is an $S$-module of finite type, where $S=k[t_o, \ldots, t_r]$.
+\item
+$\SheafExt^{r-i}_{\OX}(F, \omx^r)=0$.
+\item[\textup{(ii bis)}] $\SheafExt^{r-i}_{\OX}(F, \OX)=0$.
+\item
+$\H^i_x(F_x)=0$ for every closed point $x$ of $X$.
+\item
+$\H^{i+1}_x(\widetilde{F}_x)=0$ for every closed point $x$ of the punctured projecting cone $\widetilde{X}=\Spec(S)-\Spec(k)$ of $X$, where $\widetilde{F}$ denotes the inverse image of $F$ by the canonical morphism $\widetilde{X}\to X$.
+\end{enumeratei}
+\end{corollary}
+
+\begin{proof}
+(i) \SSI (i bis) since the submodule of $\H^i(X, F(\cdot))$ sum of the homogeneous components of degree $\geq \nu$ is of finite type over $S$ (in fact, for $i\neq 0$, it is even of finite type over $k$), (\cf FAC or \EGA III 2.2.1 and 2.3.2).
+
+(i) \SSI (ii) by virtue of corollary \Ref{XII.1.2}.
+
+(ii) \SSI (ii bis) since $\Omega_{X/k}^r$ is locally isomorphic to $\OX$.
+
+(ii bis) \SSI (iii) by virtue of the local duality theorem for $\OXx$ (which is a regular local ring of dimension $r$), according to which the \og dual\fg of $\SheafExt^{r-i}_{\OX}(F, \OX)_x$ is identified with $\H^i_x(F_x)$ (V 2.1).
+
+(ii bis) is equivalent to the analogous relation
+\[
+\SheafExt^{r-i}_{\Oo_{\widetilde{X}}}(\widetilde{F}, \Oo_{\widetilde{X}})=0
+\]
+(thanks to the fact that $\widetilde{X}\to X$ is faithfully flat, hence the inverse image of $\SheafExt^{r-i}_{\OX}(F, \OX)$ is isomorphic to $\SheafExt^{r-i}_{\Oo_{\widetilde{X}}}(\widetilde{F}, \Oo_{\widetilde{X}})$) and this last relation is equivalent to (iv) by the local duality theorem for the local ring $\OXx$, which is regular of dimension $r+1$.
+\skipqed
+\end{proof}
+
+In particular, applying this to all $i\leq n$, one finds:
+
+\begin{corollary} \label{XII.1.4}
+Equivalent conditions for $n, F$ given:
+\begin{enumeratei}
+\item
+$\H^i(X, F(-m))=0$ for $i\leq n$ and $m$ large.
+\item[\textup{(i bis)}] $\H^i(X, F(\cdot))$ is an $S$-module of finite type for $i\leq n$.
+\item
+$\prof(F_x)>n$ for every closed point $x$ of $X$.
+\item
+$\prof(\widetilde{F}_x)>n+1$ for every closed point $x$ of $\widetilde{X}$.
+\end{enumeratei}
+\end{corollary}
+
+The interest of corollaries \Ref{XII.1.3} and \Ref{XII.1.4} is to express a global condition (i) or~(i~bis) in terms of local conditions, namely the vanishing of local invariants such as $\H_x^i(X, F_x)$ or $\H_x^i(X, \widetilde{F}_x)$, or an inequality on the depth. In this form, these results remain trivially valid for an arbitrary projective scheme $X$, and a very ample invertible sheaf $\OX(1)$ on $X$, as one sees by inducing the latter with the help of a suitable projective immersion $X\to\PP_k^r$. (Of course, the conditions \Ref{XII.1.3}~(ii) and \Ref{XII.1.3}~(ii bis) are no longer equivalent to the others in this general case, except if one assumes that $X$ is regular for example). One may moreover generalize to the case of a projective morphism $X\to S$ in the following way:
+
+\begin{proposition} \label{XII.1.5}
+Let $f:X\to S$ be a projective morphism, with $S$ noetherian, $\OX(1)$ an invertible Module on $X$ very ample relative to $S$, $F$ a coherent Module on $X$, flat with respect to $S$, $s$ an element of $S$, $X_s$ the fibre of $X$ at $s$ (regarded as a projective scheme over $k(s)$), $F_s$ the sheaf induced on $X_s$ by $F$, finally $i$ an integer. Suppose that for every closed point $x$ of $X_s$, one has $\H^i_x(F_{s, x})=0$ (for example $\prof(F_{s, x})>i$). Then there exists an open neighbourhood $U$ of $s$, such that the same condition is satisfied for the $s'\in U$. Moreover, for such a $U$, one has
+\[
+\R^if_\ast(F(-m))= 0 \; \text{for}\; m \; \text{large, }
+\]
+and if $\Ss$ is a quasi-coherent graded algebra over $S$, generated by $\Ss^1$, and which defines~$X$ with $\OX(1)$ as $X=\Proj(\Ss)$, $\OX(1)=\Proj(\Ss(1))$, then the $S$-module
+\[
+\R^if_\ast(F(\cdot)) = \tbigoplus_{m\in\ZZ}\R^if_\ast(F(m))
+\]
+is of finite type over $U$.
+\end{proposition}
+
+Let us embed $X$ in an $X'=\PP_S^r$ in such a way that $\OX(1)$ is induced by $\Oo_{{X'}}(1)$ (this is possible provided one replaces $S$ by an affine neighbourhood of $s$). Let us set\refstepcounter{toto}\label{P5}\sfootnote{The first part of \Ref{XII.1.5} can be obtained at once by applying the purely local statement \EGA IV 12.3.4 to the preceding $\underline{E}^j$, which short-circuits the greater part of the proof that follows.} for every integer $j$, and every $t\in S$:
+\steco
+\begin{equation} \label{eq:XII.7} {}\underline{E}^j(t)= \SheafExt^j_{\Oo_{X'_t}} (F_{t'}, \Oo_{X'_t}(-r-1))
+\end{equation}
+Thus $\underline{E}^j(t)$ is a coherent Module on $X_t$, I say that for variable $t$, the family of these Modules is \og constructible\fg in the following sense: there exists for every $t\in S$ a non-empty open $V$ of the closure $\overline{t}$, which one endows with the induced reduced structure, and a coherent Module $\underline{E}^j(V)$ on $X_V=X\times_SV$, \emph{flat} relative to $V$, such that for every $t'\in V$, $\underline{E}^j(t)$ is isomorphic to the Module induced by $\underline{E}^j(V)$ on $X_t$. To verify this assertion, setting $Z=\overline{t}$ endowed with the induced structure, one considers the coherent Modules
+\[
+\underline{E}^j(Z)= \SheafExt^j_{\Oo_{X'_Z}} (F_Z, \Oo_{X'_Z}(-r-1))
+\]
+(where the index $Z$ still means that one induces over $Z$), and one takes for $V$ a non-empty open of $Z$ such that the Modules $\underline{E}^j(Z)$ are flat over $V$: this is possible, since one verifies at once that $\underline{E}^j(Z)=0$ for $j$ not belonging to the interval $[0, r]$, and one may apply \SGA 1 IV 6.11. One then takes for $\underline{E}^j(V)=\underline{E}^j(Z)|_{X_V}$, and one verifies easily that it answers the question.
+
+From the preceding remark it follows that there exists a finite partition of $S$ formed by sets $V_\alpha$ of the form $V=V(t)$ as above, (noetherian induction), and applying Serre's theorem \EGA III 2.2.1 to the $\underline{E}^j(V_i)$, one sees that there exists an integer $m_0$ such that
+\[
+\R^if_{V_\alpha\ast}(\underline{E}^j(V_\alpha))=0\textup{ for } i\neq 0, m\geq m_0, \textup{ for }j,
+\]
+from which it follows, using the flatness of $\underline{E}^j(V_\alpha)$ with respect to $V_\alpha$ and easy relations \`a la Künneth (\cf \EGA III par\ptbl7), that
+\[
+\H^i(X_t, \underline{E}^j(t)(m))=0\textup{ for } i\neq 0, m\geq m_0, \textup{ for }j,
+\]
+for every $t\in V_\alpha$, hence for every $t$ since the $V_\alpha$ cover $S$. From this and from the spectral sequence of global Ext there follows, thanks to \Ref{XII.1.1}, as in the proof of \Ref{XII.1.2}, an isomorphism
+\steco
+\begin{equation} \label{eq:XII.8} {}\H^i(X_t, F_t(-m))' \isomfrom \H^0(X_t, \underline{E}^{r-i}(t)(m))\textup{ for } m\geq m_0,
+\end{equation}
+every integer $i$, and every $t\in S$.
+
+Let us now use the hypothesis made on $F_s$, which is written
+\steco
+\begin{equation} \label{eq:XII.9} {}\underline{E}^{r-i}(s)=0,
+\end{equation}
+and thanks to (\Ref{eq:XII.8}) is equivalent to
+\steco
+\begin{equation} \label{eq:XII.10} {}\H^i(X_s, F_s(-m))=0 \; \text{for}\; m\geq m_0.
+\end{equation}
+As $F$ hence $F(-m)$ is flat with respect to $S$, it follows by
+the relations \`a la Künneth already invoked, that (for given $m$) the
+same relation (\Ref{eq:XII.10}) holds upon replacing $s$ by a
+$t$ neighbouring $s$, in particular for every generalization $t$ of
+$s$. By virtue of (\Ref{eq:XII.8}), one will therefore have, for such a
+generalization \steco
+\begin{equation} \label{eq:XII.11} {}\underline{E}^{r-i}(t)=0,
+\end{equation}
+now the set of $t\in s$ for which this relation is true is evidently a constructible set (for it induces on each $V_\alpha$ an open set); as it contains the generalizations of $s$, it contains an open neighbourhood $U$ of $s$. This proves the first assertion of \Ref{XII.1.5}. Moreover, for $t\in U$, one concludes from (\Ref{eq:XII.11}) and (\Ref{eq:XII.8}) that
+\steco
+\begin{equation} \label{eq:XII.12} {}\H^i(X_t, F_t(-m)=0 \; \text{for}\; m\geq m_0, \; t\in U,
+\end{equation}
+which by virtue of the relations \`a la Künneth, implies (in fact, is much stronger than)
+\steco
+\begin{equation} \label{eq:XII.13} {}\R^if_\ast(F(-m))=0 \; \text{on}\; U, \; \text{for} \; m\geq m_0.
+\end{equation}
+This proves the second assertion of \Ref{XII.1.5}. Finally the last follows from it at once, by proceeding as at the beginning of the proof of \Ref{XII.1.3}.
+
+\refstepcounter{subsection}\label{XII.1.6}
+\begin{enonce*}[remark]{Remark 1.6\sfootnotemark} \sfootnotetext{This remark is made more precise by the footnote on page~\pageref{P5}.} The proof simplifies considerably (eliminating any consideration of constructibility) when one already assumes that the hypothesis made for $s\in S$ is satisfied at all the $s'\in S$. In fact, when one makes the hypothesis that $F_s$ is of depth $>i$ at the closed points of $X$, one has a general statement, \emph{of a local nature on} $X$, which says that the same condition is satisfied for all the $X_t$, provided one replaces $X$ by a suitable open neighbourhood of the fibre $X_s$ (in other words, a certain subset of $X$, defined by conditions on the Modules induced by $F$ on the fibres, is open, \cf \EGA IV). As $f$ is here proper, one will therefore be able to take this neighbourhood of the form $f^{-1}(U)$, which recovers the first assertion of \Ref{XII.1.5} without painful d\'evissage. In this general case, one can still prove by the method of \loccit that the first assertion of \Ref{XII.1.5} (proved here by a global method, using that $X$ is projective over $S$) still follows from a purely local statement on $X$ (which the reader will make explicit if he finds it useful).
+\end{enonce*}

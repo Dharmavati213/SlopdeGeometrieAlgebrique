@@ -1,0 +1,309 @@
+\section[Problems related to the higher $\pi_i$]{Problems related to the higher $\pi_i$: local and global Lefschetz theorems for complex analytic spaces\protect\ndemark} \label{XIII.4}
+
+Let $X$ be a scheme\ndetext{the statements are made more precise in the Comments (section~\Ref{XIII.6}). The conjectures which appear there have become theorems, \cf the footnotes of section~\Ref{XIII.6}.} locally of finite type over the field of complex numbers $\CC$, one can associate to it an analytic space $X^h$ over $\CC$, whence homotopy and homology invariants $\pi_i(X^h)$, $\H_i(X^h)$, $\H^i(X^h)$ etc.  Moreover one knows that $X$ is connected if and only if $X^h$ is, hence that one has a bijection
+$$
+\pi_0(X^h)\to \pi_0(X)$$
+Likewise, since every \'etale covering $X'$ of $X$ defines an \'etale covering $X^{\prime h}$ of~$X^h$, one~has a canonical homomorphism
+$$
+\pi_1(X^h)\to \pi_1(X),
+$$
+of which one knows, using a theorem of Grauert--Remmert, that it identifies the second group with the compactification of the first for the topology of subgroups of finite index (which simply expresses the fact that $X'\mto X^{\prime h}$ is an equivalence of the category of \'etale coverings of $X$ with the category of \emph{finite} \'etale coverings of $X^h$). It follows that the results of this seminar (by a purely algebraic route) on $\pi_0(X)$ and $\pi_1(X)$ imply results for $\pi_0(X^h)$ and $\pi_1(X^h)$ (which are of a transcendental nature). If moreover $X$ is proper, the well-known exact sequence $0\to \ZZ \to \CC\to \CC^*\to 0$ allows one to show that the N\'eron--Severi group of $X$ (the quotient of its Picard group by the connected component of the identity) is isomorphic to a subgroup of $\H^2(X^h, \ZZ)$; in the nonsingular K\"ahler case, this is the subgroup denoted $\H^{(1, 1)}(X^h, \ZZ)$ (classes of type $(1, 1)$):
+$$
+\Pic(X)/\Pic^0(X)\subset \H^2(X, \ZZ).
+$$
+
+Consequently, the information we have obtained on Picard groups implies information, very partial it is true, on the groups $\H^2(X^h, \ZZ)$. It is tempting to complete all these fragmentary results by conjectures.
+
+Very precise indications, going in the same direction as those just mentioned, are furnished by a classical Lefschetz theorem~\cite{XIII.7}. It asserts that if~$X$ is a nonsingular irreducible projective analytic space of dimension $n$, and if~$Y$ is a nonsingular hyperplane section, then the injection
+$$Y^{n-1}\to X^n$$
+induces a homomorphism
+$$
+\pi_i(Y^{n-1})\to \pi_i(X^n)$$
+which is an \emph{isomorphism for} $i\le n-2$, an \emph{epimorphism for} $i=n-1$. There follows the analogous statement for the homomorphisms
+$$
+\H_i(Y^{n-1})\to \H_i(X^n)$$
+on homology (integral, to fix ideas), while in cohomology,
+$$
+\H^i(X^n)\to\H^i(Y^{n-1})
+$$
+is an isomorphism in dimension $i\le n-2$, a monomorphism in dimension $i=n-1$. We have obtained variants of these results in the setting of schemes, for $\pi_0$, $\pi_1$, $\Pic$, valid moreover without non-singularity hypotheses to a large extent, \cf \Exp \Ref{XII}. \ Moreover, in the elimination of the non-singularity hypotheses, we have used in an essential way ``local'' variants of these global Lefschetz theorems. All this suggests the following problems, which will doubtless have to be attacked simultaneously\sfootnote{The formulations \Ref{XIII.4.1} to \Ref{XIII.4.3} which follow are provisional. See conjectures \ref{XIII.6.A} to \ref{XIII.6.D} below, in ``comments on \Exp \Ref{XIII}'' for more satisfactory formulations, as well as \Exp \Ref{XIV}.}.
+
+\begin{problem} \label{XIII.4.1}
+Let $X$ be an analytic space, $Y$ a closed analytic subset of~$X$ (or simply a closed subset?)\nde{the meaning of this question is not clear; indeed, the very statement of the problem does not seem to make sense in this case since the codimension of $Y$ in $X$ is not defined when~$Y$ is no longer assumed analytic.} such that for every $x\in Y$, the local ring $\OXx$ is a complete intersection. Let $n$ be the complex codimension of $Y$ in $X$. Is the canonical homomorphism
+$$
+\pi_i(X-Y)\to \pi_i(X)$$
+an isomorphism for $i\le n-2$, and an epimorphism for $i=n-1$?
+\end{problem}
+
+%
+In this problem and the following ones, one of course implicitly assumes a base-point chosen in order to define the homotopy groups. To state the following problem, one must define, for an analytic space $X$ (more generally, for a locally path-connected space) and an $x\in X$, local invariants $\pi_i^x(X)$\sfootnote{If $i\ge 2$. For the case $i\le 1$, \cf \emph{Comments} in \numero 6 below, page~\pageref{p25y}.}.\refstepcounter{toto}\label{pagexpo} For this, one chooses a non-constant map $f$ from the interval $[0, 1]$ into $X$, such that $f(0)=x$ and $f(t)\neq x$ for $t\neq 0$ (such exist if $x$ is not an isolated point). Then for every neighbourhood $U$ of $x$, there exists an $\varepsilon>0$ such that $0<t<\varepsilon$ implies $f(t)\in U$, and the homotopy groups $\pi_i(U-x, f(t))$ are essentially independent of $t$ (they are, as $t$ varies, related by a transitive system of isomorphisms), one may denote them $\pi_i(U-x, f)$. One then sets\refstepcounter{toto}\label{pip15}\label{pXIII.15}
+$$
+\pi_i^x(X)= \varprojlim_{U}\pi_{i-1}(U-x, f)
+$$
+the projective limit being taken over the system of open neighbourhoods $U$ of $x$. Strictly speaking, this limit depends on $f$, and should be denoted $\pi_i^x(X, f)$, but one verifies that as $f$ varies, these groups are isomorphic to one another\sfootnote{At least if $x$ does not disconnect $X$ in a neighbourhood of $x$, \cf \emph{Comments} below, page~\pageref{p25y}.}, more precisely they form a local system on the space of paths of the type envisaged issuing from $x$. These invariants are the homotopical version of the local cohomology invariants $\H^i_x(F)$ for a sheaf $F$ on $X$, introduced in \Ref{I}, and should play the role of \emph{relative local homotopy groups} of $X$ modulo $X-x$. Their vanishing for $i\le n$ and for every $x\in Y$, where~$Y$ is a closed subset of $X$ of topological dimension $\le d$, should imply that the homomorphisms
+$$
+\pi_i(X-Y) \to \pi_i(X)
+$$
+are bijective for $i<n-d$, and surjective for $i=n-d$\sfootnote{For a corrected formulation, \cf \emph{Comments} below, page~\pageref{p25y}.}. From this point of view, \Ref{XIII.4.1} would imply (for $Y$ reduced to a point) a conjecture of a purely local nature, expressed by \refstepcounter{toto}
+$$
+\pi_i^x(X)=0 \rm{\ for\ } i\le n-1\label{p15l}
+$$
+when $X$ is a complete intersection of dimension $n$ at $x$.
+
+As an example of local invariants $\pi_i^x(X)$, let us note that if $x$ is a nonsingular point of $X$ of complex dimension $n$, then
+$$
+\pi_i^x(X)=\pi_{i-1}(S^{2n-1}),
+$$
+where $S^{2n-1}$ denotes the sphere of dimension $2n-1$. In particular in this case $\pi_{i}^x(X)=0$ for $i\le 2n-1$, which corresponds to the fact that if from a topological \emph{manifold} $X$ one removes a closed subset $Y$ of codimension $\ge m$, then $\pi_i(X-Y)\to \pi_i(X)$ is an isomorphism for $i\le m-2$ and an epimorphism for $i=m-1$.
+
+This being said:
+
+\begin{problem} \label{XIII.4.2}
+Let $X$ be an analytic space, $x\in X$, $t$ a section of $\OX$ \ vanishing at $x$, $Y$ the set of zeros of $t$. Suppose the following conditions are satisfied:
+\begin{enumeratea}
+\item
+$t$ is regular at $x$ (\ie not a zero-divisor at $x$, a hypothesis perhaps superfluous, moreover).
+\item
+At the points $x'$ of $X-Y$ neighbouring $x$, $\Oo_{X, x'}$ is a complete intersection (a hypothesis which should be replaceable by the following more general one if \Ref{XIII.4.1} is true: for $x'$ as above, $\pi_i^{x'}(X)=0$ for $i\le n-1$).
+\item
+At the points $y$ of $Y-\{ x\}$ neighbouring $x$, one has
+$$
+\prof \Oo_{X, y}\ge n$$
+(it suffices for example that one have $\prof\Oo_{X, x}\ge n$).
+\end{enumeratea}
+
+Under these conditions, is the canonical homomorphism
+$$
+\pi_i^x(Y)\to \pi_i^x(X)$$
+an isomorphism for $i\le n-2$, an epimorphism for $i=n-1$?
+\end{problem}
+
+Here finally is a global variant of \Ref{XIII.4.2}, which should be deduced from it by consideration of the projecting cone at its vertex, and which would generalize the classical Lefschetz theorems:
+
+\begin{problem} \label{XIII.4.3}
+Let $X$ be a projective analytic space, equipped with an ample invertible Module~$L$, $t$ a section of $L$, $Y$ the set of zeros of $t$. Suppose:
+\begin{enumeratea}
+\item
+$t$ is a regular section (a hypothesis perhaps superfluous).
+\item
+For every $x\in X-Y$, $\Oo_{X, x}$ is a complete intersection (should be replaceable by $\pi_i^{x}(X)=0$ for $i\le n-1$).
+\item
+For every $x\in Y$, $\prof \Oo_{X, x}\ge n$.
+\end{enumeratea}
+
+Under these conditions, is the homomorphism
+$$
+\pi_i(Y)\to \pi_i(X)$$
+an isomorphism for $i\le n-2$, an epimorphism for $i=n-1$?
+\end{problem}
+
+We leave to the reader the task of stating analogous conjectures of a \emph{cohomological} nature\sfootnote{\Cf \Exp \Ref{XIV} the corresponding results in the theory of schemes.}, the hypotheses and conclusions then bearing on the local cohomological invariants (with coefficients in a given group). In any case, the key result seems as though it should be \Ref{XIII.4.2}, when hypothesis $b)$ is taken there in the respected form, \ --- whether one places oneself at the point of view of homology, or of homotopy.
+
+We have stated these conjectures in the transcendental setting, in
+the hope of interesting topologists in them and of convincing them that
+questions of ``Lefschetz'' type are far from being closed.
+Of course, now that we are on the point of having at our disposal
+a good theory of the cohomology of schemes (with finite
+coefficients), thanks to the recent work of M. Artin, the
+same questions arise in the setting of schemes, and it is
+hard to doubt that they will receive a positive answer,
+in the near future\sfootnote{see the previous footnote.}.
+
+\section{Problems related to local Picard groups} \label{XIII.5}
+
+A first fundamental problem, pointed out for the first time by Mumford~\cite{XIII.5} in a particular case, is the following. Let $A$ be a complete local ring with residue field $k$, $X=\Spec(A)$, $U=\Spec(A)-\{a\}$, where $a$ is the maximal ideal of $A$ \ie the closed point of $\Spec(A)$. One proposes to construct a strict projective system $G$ of locally algebraic groups $G_i$ over $k$, and a natural isomorphism \begin{equation*} \label{eq:XIII.5.+} \tag{$+$} {\Pic(U)\simeq G(k)} \end{equation*} where one of course sets $G(k)=\varprojlim G_i(k)$. Heuristically, one proposes to ``put an algebraic group structure'' (or, at least, a pro-algebraic one, in a suitable sense) on the group $\Pic(U)$.
+
+It is clear that as it stands, the problem is not precise enough, since the datum of an isomorphism~(\Ref{eq:XIII.5.+}) is far from characterizing the pro-object $G$. If $A$ contains a subfield still denoted $k$, which is a field of representatives, one can make the problem more precise, by requiring that for a variable extension $k'$ of $k$, one have an isomorphism, functorial in $k'$: \begin{equation*} \label{eq:XIII.5.+'} \tag{$+'$} {\Pic(U')\simeq G(k')} \end{equation*} where $U'$ is the open set analogous to $U$ in $\Spec(A')$, $A'=A\hat{\otimes}_k k'$. One can proceed in an analogous way even if $A$ has no field of representatives, provided $k$ is perfect, which then allows one to construct functorially an $A'$ ``by residual extension $k'/k$''. Moreover, when $A$ admits a field of representatives, the algebraic structure that one will find on $\Pic(U)$ will depend essentially on the choice of this field of representatives (as one already sees on the projecting cone of an elliptic curve), it therefore seems that one must start from an ``algebraic pro-ring over $k$'' in the manner of Greenberg~\cite{XIII.3}, in order to arrive at a definition of the pro-object $G$. It is moreover conceivable that in the case where there is no given field of representatives, one finds only a projective system of \emph{quasi}-algebraic groups in the sense of Serre, or rather quasi-locally algebraic groups (the groups $G_i$ obtained will not in general be of finite type over $k$, but only locally of finite type over $k$). It is even possible that in general one will find only a still weaker structure on $\Pic(U)$, of the kind encountered by N\'eron~\cite{XIII.6} in his theory of degeneration of abelian varieties defined over local fields.
+
+A method for attacking the problem, also introduced by Mumford, consists in desingularizing $X$, \ie in considering a projective birational morphism $Y\to X$ with $Y$ regular. When $U$ is regular (\ie $a$ is an isolated singular point), one can often find $Y$ in such a way that $Y_|U=V\to U$ is an isomorphism. In this case, one will therefore have $$ \Pic(U)\simeq\Pic(V)\simeq\Pic(Y)/\Im \ZZ^I, $$ where $I$ is the set of irreducible components of the fibre $Y_{a}$ (each of these defining an element of $\Pic(Y)$, being a locally principal divisor, thanks to $Y$ being regular). On the other hand, using the technique of Formal Geometry \EGA III~4~and~5, notably the existence theorem, one finds $$ \Pic(Y)\simeq\varprojlim\Pic(Y_n), $$ where $Y_n=Y\otimes_A A_n$, $A_n=A/\mm^{n+1}$. When $A$ admits a field of representatives $k$, one has at one's disposal the theory of Picard schemes of the projective schemes $Y_n$ over $k$, hence one~has $$ \Pic(Y_n)\simeq \mathbf{Pic}_{Y_n/k}(k). $$
+
+This therefore furnishes a construction of a projective system of locally algebraic groups $\mathbf{Pic}_{Y_n/k}/\Im \ZZ^I$, which is the desired system.\refstepcounter{toto}\nde{\label{Boutot}the question has been greatly clarified by the results of {Boutot} (Boutot~J.-F., \emph{Sch\'ema de {P}icard local}, Lect. Notes in Math., vol.~632, Springer, Berlin, 1978). In particular, if $A$ is a complete (noetherian) local $k$-algebra of depth $\geq 2$ such that $H^2_\m(A)$ is finite-dimensional over $k$, the local Picard group is a group scheme locally of finite type over $k$, with tangent space at the origin $H^2_\m(A)$. If $A$ is moreover normal of dimension $\geq 3$, Serre's criterion for normality~\Ref{XI}~\Ref{XI.3.11} together with corollary~\Ref{V}~\Ref{V.3.6} ensure the required finiteness and, hence, the existence of the local Picard scheme. See also (Lipman~J., ``The Picard group of a scheme over an Artin ring'', \emph{Publ. Math. Inst. Hautes \'Etudes Sci.} \textbf{46} (1976), p\ptbl 15--86) for an approach closer to that of Grothendieck sketched above.} In the case envisaged here, one can moreover see (using that $a$ is an isolated singular point) that the connected components of the universal image subgroups in this projective system form an \emph{essentially constant} projective system, so in this instance one finds a locally algebraic group $G$ as solution of the problem. If one even assumes $A$ normal of dimension $2$, then a remark of Mumford (saying that the intersection matrix of the components of $Y_{a}$ in $X$ is negative definite\nde{Mumford~D., ``The topology of normal singularities of an algebraic surface and a criterion for simplicity'', \emph{Publ. Math. Inst. Hautes \'Etudes Sci.} \textbf{9} (1961), p\ptbl 5--22.}) implies that $G$ is even an algebraic group, \ie of finite type over $k$ (the number of its connected components being moreover equal to the determinant of the intersection matrix considered a moment ago).
+
+If on the other hand $a$ is not an isolated singularity, one convinces oneself on examples (with $A$ of dimension $2$) that one finds a projective system of algebraic groups, not reducing to a single algebraic group.
+
+\refstepcounter{toto}\label{pXIII20}%
+Once one had at one's disposal a good notion of ``\emph{local Picard scheme}'', there would be occasion to strengthen the notion of parafactoriality, by saying that $A$ is ``\emph{geometrically parafactorial}'', when not only $A$ and even $\widehat{A}$ are parafactorial, but the local Picard scheme $G(\widehat{A})$ is the trivial group (which is stronger, when the residue field is not algebraically closed, than saying that $G$ has no rational point over $k$ other than the identity). One realizes the necessity of a strengthened notion of parafactoriality, by recalling that there exist complete normal local rings of dimension $2$ which are factorial, but which admit finite \'etale algebras which are not\nde{factorial rings with non-factorial henselization arise naturally when one studies moduli spaces of vector bundles. See for example (Dr\'ezet~J.-M., ``Groupe de Picard des vari\'et\'es de modules de faisceaux semi-stables sur $\mathbf{P}\sb 2$'', in \emph{Singularities, representation of algebras, and vector bundles (Lambrecht, 1985)},
+Lect. Notes in Math., vol.~1273, Springer, Berlin, 1987, p\ptbl 337--362). \textit{Stricto sensu}, Dr\'ezet shows that the completion is not factorial, but in fact the proof gives the result for the henselization: the point is that Luna's \'etale slice theorem (Luna~D., ``Slices \'etales'', in \emph{Sur les groupes alg\'ebriques}, M\'em. Soc. math. France, vol.~33, Soci\'et\'e math\'ematique de France, Paris, 1973, p\ptbl 81--105) describes the local ring of a quotient in the sense of invariant geometry near a semi-stable point locally for the \'etale topology.}. A local ring ``\emph{geometrically factorial}'' would then be a normal ring~$A$ such that all the localizations of dimension $\geq 2$ are geometrically parafactorial, or better, such that the localizations of $\widehat{A}$ are parafactorial\sfootnote{For a more flexible notion of ``geometrically factorial'' local ring, \cf \emph{Comments}, page~\pageref{commpara}.}. Of course, it would be interesting to find a ``good'' definition of these notions, independent of the theory, still to be developed, of local Picard schemes.\nde{see page~\pageref{commpara}: a local ring is geometrically factorial (\resp parafactorial) if its strict henselization is factorial (\resp parafactorial).}
+
+It is in any case plausible that one will need these notions if one wishes to obtain statements of the following type: Let $A$ be a ``good ring'' (for example an algebra of finite type over $\ZZ$, or over a complete local ring, for example over a field). Let~$U$ be the set of $x\in X=\Spec(A)$ such that $\OXx$ is ``geometrically factorial'', then $U$ is open? Or again: Let $f\colon X\to Y$ be a flat morphism of finite type with $Y$ locally noetherian, let $U$ be the set of $x\in X$ such that $\Oo_{X_{f(x)}, x}$ is ``geometrically factorial'', then $U$ is open, at least under pleasant additional conditions on $f$? I doubt that with the usual notion of factorial ring, there exist true statements of this type.
+
+We have raised here, in a particular case, the question of the study of the geometric properties of ``variable'' local rings, for example the $\OXx$ as $x$ runs through a prescheme $X$. When $X$ is a scheme of finite type over a field, for example, one knows\nde{see \EGA IV.16.} that there exists on $X$ a projective system of finite algebras $P^n_{X/k}$ (obtained by completing $X\times_k X$ along the diagonal), whose fibre at every point $x\in X$ rational over $k$ is isomorphic to the projective system of the $\OXx/\mm_X^{n+1}$. It is then natural to relate the study of the completions of the local rings $\OXx$, as $x$ varies, to that of the ``algebraic family of complete local rings'' given by the $P^n$, noting that for every $x\in X$ (rational over $k$ or not), one obtains a complete local ring
+$$
+P^{\infty}(x)=\varprojlim P^n(x)
+$$
+(where $P^n(x)=$~reduced~fibre~$P^n\otimes_{\OXx}k(x)$). Particular interest will attach for example to the complete ring thus associated to the generic point, and one will expect that its algebro-geometric properties (expressed for example by its local Picard, or homotopy, or homology, groups), will be essentially those of the completions $\widehat{\Oo}_{X, x}$ for $x$ in a suitable dense open set $U$.
+
+One can, in a general way, propose to undertake the simultaneous study of the complete local rings thus obtained from an adic projective system $(P_n)$ of finite algebras over a given scheme $X$. It is plausible that one will find, subject to certain regularity conditions (such as the flatness of the $P_n$), that the local homotopy groups come from a projective system of finite group schemes over $X$, and that one will have analogous results for the local Picard groups. As regards the latter, a first interesting case which deserves to be investigated is that where one starts from an algebraic surface $X$ having singular curves, and one proposes to study the local Picard schemes at the variable points on these, in terms of a suitable group pro-scheme defined on the singular locus.
+
+\section[Comments]{Comments\protect\sfootnotemark} \label{XIII.6}
+
+The point of view of\sfootnotetext{Written in March~1963.} ``\'etale cohomology'' of schemes and the recent progress in this theory lead us to make more precise and at the same time to broaden certain of the problems posed. For the notion of ``topology'' and of ``\'etale topology of a scheme'', I refer to M\ptbl Artin, \emph{Grothendieck Topologies}, Harvard University 1962 (mimeographed notes)\sfootnote{Or preferably, to \SGA 4.}.
+
+This theory, by a finer notion of localization than that furnished by the traditional ``Zariski topology'', leads one to attach particular interest to \emph{strictly local} rings\refstepcounter{toto}\label{pXIII.6}, \ie henselian local rings with separably closed residue field. For every local ring $A$ with residue field $k$, and every separable closure $k'$ of~$k$, one can find a local homomorphism of $A$ into a strictly local ring~$A'$, the \emph{strictly local closure} of $A$, with residue field $k'$, having an obvious universal property. $A'$ is henselian, flat over $A$, and $A'\otimes_A k\simeq k'$; it is noetherian if and only if $A$ is. (\Cf \loccit Chap\ptbl III, section 4)\sfootnote{Or \EGA IV~18.8.}. If $X$ is a prescheme, and $x$ a point of~$X$, $x'$ a point over $x$, spectrum of a separable closure $k'$ of $k=k(x)$, one is led to define the \emph{strictly local ring} of $X$ at $x'$, $\Oo'_{X, x'}$, as the strictly local closure of the usual local ring $\OXx$, relative to the residual extension $k'/k$. It is the \emph{strictly} local rings of the ``geometric'' points of $X$ which, from the point of view of the \'etale topology, are supposed to reflect the local properties of the prescheme $X$. They also play, in many respects, the role that one used to have the \emph{completions} of the local rings of $X$ play (say, at the points with algebraically closed residue field), while remaining ``closer'' to $X$ and allowing an easier passage to ``neighbouring points''.
+
+There is then occasion to take up again a good number of questions, which one generally poses for complete local rings (possibly restricted to having an algebraically closed residue field), for noetherian henselian local rings (\resp noetherian strictly local rings). Thus the topological problems raised in nos.~\Ref{XIII.2} and \Ref{XIII.3} arise more generally for strictly local rings. One can moreover state conjecturally, for ``good'' strictly local rings, certain properties of simple connectedness and of acyclicity for the geometric fibres of the canonical morphism $\Spec(\widehat{A})\to\Spec(A)$, which would show that for many properties of a ``topological'' nature, it comes to the same to prove them for the ring $A$, or for its completion $\widehat{A}$. Certain results already obtained in this direction\sfootnote{\Cf M\ptbl Artin in \SGA 4~XIX} allow one to hope that one will soon have at one's disposal complete results in this direction.
+
+\refstepcounter{toto}\label{commpara}%
+The notion of \'etale localization furnishes a definition which seems reasonable of the notion of ``\emph{geometrically parafactorial}'' or ``\emph{geometrically factorial}'' local ring (whose need was pointed out in \numero\Ref{XIII.5}, p\ptbl\pageref{pXIII20}): one will call thus a local ring whose strictly local closure is parafactorial, \resp factorial. Hypotheses of this nature do in fact enter in a natural way in the study of the \'etale cohomology of preschemes\nde{see for example (Strano~R., ``The Brauer group of a scheme'', \emph{Ann. Mat. Pura Appl. (4)} \textbf{121} (1979), p\ptbl 157--169) where the hypothesis of geometric parafactoriality of the local rings of a scheme $X$ sometimes allows one to show the coincidence of the Brauer groups of $X$ (computed in terms of Azumaya algebras) and the cohomological Brauer group of $X$.}. Thus, if $X$ is a locally noetherian prescheme whose strictly local rings are factorial (\ie whose ordinary local rings are ``geometrically factorial''), one shows that the $\H^i(X_{\et}, \GG_m)$ are torsion groups for $i\geq 2$ (which sometimes allows one to express these groups in terms of the cohomology groups with coefficients in the groups $\bbmu_n$ of $n$-th roots of unity), and if $X$ is integral with fraction field $K$, the natural homomorphism $\H^2(X_{\et}, \GG_m)\to\H^2(K, \GG_m)=\Br(K)$ is injective\nde{the link between Brauer group and Picard group is intimate. Let us cite in this connection the following results of Saito (Saito~S., ``Arithmetic on two-dimensional local rings'', \emph{Invent. Math.} \textbf{85} (1986), \numero 2, p\ptbl 379--414) in the case of surfaces, the first being local the other global. Let $A$ be an excellent local ring of dimension $2$, normal and henselian with \textit{finite} residue field and $X$ the complement of the closed point in $\Spec(A)$. Then one~has a perfect duality of \emph{torsion} groups $\Pic(X)\times \Br(X)\to \QQ/\ZZ$ --- by Brauer group of $X$, one means the \emph{cohomological} Brauer group $\textrm{Br}(X)=H^2_\et(X,G_m)$. In the global case, one~has the following generalization of a result of Lichtenbaum (Lichtenbaum~S., ``Duality theorems for curves over $p$-adic fields'', \emph{Invent. Math.} \textbf{7} (1969), p\ptbl 120--136): let $k$ be the fraction field of a complete discrete valuation ring $\Oo$ with finite residue field and $X$ a projective, smooth and geometrically complete curve over $k$. The group $\Pic^0(X)$ is equipped with the topology induced from the adic topology of $k$ and $\Pic(X)$ is the topological group which makes $\Pic^0(X)$ an open subgroup. Then one~has a perfect duality of topological groups $\Pic(X)\times \Br(X)\to \QQ/\ZZ$. Note that this statement, which concerns curves, is of course proved by considering a regular (proper and flat) model of $X$ over $\Oo$: it is a result on surfaces.} examples show that these conclusions may fail, even for $X$ local, if one assumes only that $X$ is factorial instead of geometrically factorial\sfootnote{\Cf A\ptbl Grothendieck, the Brauer group~II (S\'eminaire Bourbaki \numero 297, Nov.~1965), notably 1.8 and 1.11~b.}.
+
+Concerning the problems of local and global Lefschetz type raised in \Ref{XIII.3.4}, and their analogues in the theory of schemes, the homological version of these questions has been considerably clarified, everything resulting formally from three general theorems, one concerning the cohomological dimension of certain affine schemes (\resp of Stein spaces), such as affine schemes $X$ of finite type over an algebraically closed field: their cohomological dimension is $\leq\dim X$ (``affine Lefschetz theorem'')\sfootnote{\Cf \SGA 4~XIV.}: the other being a duality theorem for the cohomology (with discrete coefficients) of a projective morphism\sfootnote{\Cf \SGA 4~XVIII.}, finally the last a theorem of \emph{local duality} of an analogous nature\sfootnote{\Cf \SGA 5~I.}. In Algebraic Geometry, only this last is not proved at the moment of writing these lines (it is however in characteristic $0$, using the resolution of singularities by Hironaka). Moreover, in the transcendental setting, one has at present at one's disposal the global and local duality, proved recently by Verdier\nde{see Verdier~J.-L., ``Dualit\'e dans la cohomologie des espaces localement compacts'', in \emph{S\'eminaire Bourbaki}, vol.~9, Soci\'et\'e math\'ematique de France, Paris, 1995, \Exp 300, p\ptbl 337--349.}. Let us confine ourselves to indicating that in the statement of the homological versions of problems \Ref{XIII.4.2} and \Ref{XIII.4.3} (which now deserve the name of conjectures), the conditions ``at infinity'' a) and c) are certainly superfluous, only the \emph{local cohomological structure} of $X-Y$ being important, which one will assume for example locally a complete intersection of dimension $\geq n$. Moreover, in \Ref{XIII.4.3} say, the fact that $Y$ is a hyperplane section should not play a role, and should be replaceable by the sole hypothesis that $X$ is compact and $X-Y$ is Stein (\ie in the case of Algebraic Geometry, $X$ is proper over $k$ and $X-Y$ affine; as we were saying, the homological version of this conjecture is proved for algebraic spaces over the field $\CC$)\sfootnote{\Cf \Exp \Ref{XIV}}.
+
+\refstepcounter{toto}\label{p25y}%
+In the definition (p\ptbl\pageref{pip15}) of the $\pi_i^x(X)$, one must assume $i\geq 2$. For $i=0, 1$, there is no reasonable definition of the $\pi_i^x(X)$; there is occasion to replace them by $\H_0^x(X)$ and $\H_1^x(X)$, defined respectively as the cokernel and the kernel in the natural homomorphism
+$$
+\varprojlim \H_0(U-(x), \ZZ)\to\varprojlim\H_0(U, \ZZ).
+$$
+
+At a pinch and for the convenience of the formulations, one may set $\pi_i^x(X)=\H_i^x(X)$ for $i\leq 1$, otherwise one must complete the later assertions concerning the $\pi_i^x$ by the corresponding assertions for $\H_0^x, \H_1^x$. If $x$ is an isolated point of $X$, it is appropriate to set $\pi_i^x(X)=0$ for $i\neq 0$, $\pi_0^x(X)=\H_0^x(X)=\ZZ$.
+
+The assertion that the $\pi_i^x(U, f)$ are isomorphic to one another is true only when $X$ is not disconnected by $x$ in a neighbourhood of $x$, \ie if $\pi_i^x(X)=0$ for $i=0, 1$. In the general case $\pi_i^x(X)$ can denote only a \emph{family} of groups, not necessarily isomorphic to one another; however the writing $\pi_i^x(X)=0$ retains an obvious meaning.
+
+\refstepcounter{toto}\label{p26y}Page~\pageref{p15l}, where I foresee that the vanishing of the local homotopical invariants $\pi_i^x(X)$ for $x\in Y$, $i\leq n$ should imply the bijectivity of $\pi_i(X-Y)\to\pi_i(X)$ for $i<n-d$, the surjectivity for $i=n-d$, it is appropriate to be cautious, for want of being able to have at one's disposal in the present context (as in Algebraic Geometry) ``generic'' points at which the local conditions will also have to apply. It will doubtless be necessary, for this reason, to appeal to relative local homotopical invariants
+$$
+\pi_i^Y(X, f)=\pi_i^Y(X, x)=\varprojlim_U \pi_{i-1}(U-U\cap Y, f(t))\qquad\text{for }i\geq 2\quoi,
+$$
+(and an {\textit{ad hoc}} definition as above for $i=0, 1$), where $Y$ is a closed subset of~$X$; or to make up for the absence of generic points by expressing the hypotheses on $X$ in terms of properties of a topological nature (for the \'etale topology) of the spectra of the local rings of $X$, which allows one to recover generic points. The same reservation applies to the generalization of conjectures \Ref{XIII.4.2} and \Ref{XIII.4.3} to the case where $X-Y$ is not assumed locally a complete intersection, a generalization suggested in the statement of conditions~b) of these conjectures.
+
+To formulate the expurgated versions of conjectures \Ref{XIII.4.2} and \Ref{XIII.4.3} suggested by the results alluded to above, it is appropriate to set down the
+
+\begin{supdefinition} \label{XIII.6.1} Let $X$ be a topological space, $Y$ a locally closed subset of $X$, and $n$ an integer. One says that $X$ is of \emph{homotopical depth} $\geq n$ along $Y$, and one writes $\mathrm{prof\:hpt}_Y(X)\geq n$, if for every $x\in Y$, one~has $\pi_i^Y(X, x)=0$ for $i<n$.
+\end{supdefinition}
+
+It should be equivalent to say that for every open set $X'$ of $X$, and every $x\in X'\cap U=U'$ (where $U=X-Y$), the canonical homomorphism
+$$
+\pi_i(U', x)\to\pi_i(X', x)$$
+is an isomorphism for $i<n-1$, a monomorphism for $i=n-1$\nde{when the pair $(X, Y)$ is moreover polyhedral, this equivalence is true; \cf (Eyral~C., ``Profondeur homotopique et conjecture de Grothendieck'', \emph{Ann. Sci. \'Ec. Norm. Sup. (4)} \textbf{33} (2000), \numero 6, p\ptbl 823--836).}.
+
+\begin{supdefinition} \label{XIII.6.2}
+Let $X$ be a complex analytic space, $n$ an integer, one says that the \emph{rectified homotopical depth} of $X$ is $n$\sfootnote{In the first edition of these notes, we had used the term: ``true homotopical depth''. In the present version, we follow \EGA IV~10.8.1.}, if for every locally closed analytic subset $Y$ of $X$, one has
+\begin{equation*} \label{eq:XIII.6.x} \tag{$x$} {\mathrm{prof\:htp}_Y(X)\geq n-\dim Y}
+\end{equation*}
+(where, of course, $\dim Y$ denotes the \emph{complex} dimension of $Y$).
+\end{supdefinition}
+
+It should be equivalent to say that for every irreducible analytic subset $Y$ locally closed in $X$, there exists a closed analytic subset $Z$ of $Y$, of dimension $<\dim Y$, such that the relation (\Ref{eq:XIII.6.x}) is valid for $Y-Z$ in place of $Y$. This would allow one for example in definition \Ref{XIII.6.2} to confine oneself to the case where $Y$ is nonsingular.\refstepcounter{toto}\nde{\label{HL}all the conjectures which follow, suitably rectified if I may say so, have become theorems thanks to the work of Hamm and L\^e D\~ung Tr\'ang (Hamm~H.A. \& L\^e D\~ung Tr\'ang, ``Rectified homotopical depth and Grothendieck conjectures'', in \emph{The Grothendieck Festschrift, Vol. II}, Progr. Math., vol.~87, Birkh\"auser, Boston, 1990, p\ptbl 311--351) cited \cite{HL} in what follows. As regards the two conjecturally equivalent definitions of the rectified depth, they are even equivalent to a third, which is expressed in terms of a Withney stratification (\cf \loccit, theorem 1.4).}
+
+%
+The following conjecture, of a purely topological nature, is in the nature of a ``\emph{local Hurewicz theorem}''.
+
+\refstepcounter{aconjecture} \label{XIII.6.A}
+\begin{enonce*}{Conjecture A}[``local Hurewicz theorem''\ndemark]\ndetext{as observed in \cite{HL}, example 3.1.3, this conjecture is already false for $X=\{\boldsymbol{z}\in\nobreak\CC^n\mid\nobreak z_1^2+z_2^3+\cdots+z_n^3=0\}, n\geq 4$ and $Y$ reduced to the origin. But, suitably modified, it is true (theorem 3.1.4 of {\loccit}).}
+Let $X$ be a topological space, $Y$~a locally closed subset, subjected if need be to ``smoothness'' conditions of the kind of local triangulability of the pair $(X, Y)$, $n$ an integer $\geq 3$. In order that one have $\mathrm{prof\:htp}_Y(X)\geq n$, it is necessary and sufficient that one have
+$$
+\H^i_Y(\ZZ_X)=0\quad\text{for } i<n$$
+(one then says that $X$ is of \emph{cohomological depth} $\geq n$ along $Y$), and that the local fundamental groups
+$$
+\pi_2^Y(X, x)=\varprojlim_{U\ni x} \pi_1(U-U\cap Y)$$
+be trivial (one then says that $X$ is ``pure'' along $Y$).
+\end{enonce*}
+
+One will note that if $X$ is an analytic space, $Y$ an analytic subspace, and if~$X$ is pure along $Y$, then for every $x\in Y$, the local ring $\OXx$, as well as its localizations with respect to prime ideals containing the ideal defining the germ~$Y$ at~$x$ (\ie in the inverse image $Y_x$ of $Y$ under $\Spec(\OXx)=X_x\to X$) are pure in the sense of \Exp \Ref{X}; it seems plausible that the converse is equally true. Analogous remarks hold for cohomological depth, it being understood that one works with the \'etale topology on the $\Spec(\OXx)$.
+
+Conjecture \Ref{XIII.4.1} then generalizes to
+
+\refstepcounter{aconjecture} \label{XIII.6.B}
+\begin{enonce*}{Conjecture B}[``Purity''\ndemark]\ndetext{this conjecture is proved, even in the case where $E$ is singular, in \cite{HL}: it is theorem 3.2.1.}
+Let $E$ be an analytic space, $X$ an analytic subset of $E$. One assumes that $E$ is nonsingular of dimension $N$ at $x\in X$, and that $X$ can be described by $p$ analytic equations in a neighbourhood of every point. Then the rectified homotopical depth of $X$ is $\geq N-p$.
+\end{enonce*}
+
+In particular, a local complete intersection of dimension $n$ at every point would be of rectified homotopical depth $\geq n$, which is nothing other than conjecture \Ref{XIII.4.1}.
+
+Conjectures \Ref{XIII.4.2} and \Ref{XIII.4.3} generalize respectively to:
+
+\refstepcounter{aconjecture} \label{XIII.6.C}
+\begin{enonce*}{Conjecture C}[``local Lefschetz''\ndemark]\ndetext{this conjecture is proved in \cite{HL}, this even in its strong form of the remark which follows, \cf theorem 3.3.1 of~\loccit}
+Let $X$ be an analytic space, $Y$ a closed analytic subset, $x$ a point of $Y$, one assumes that $X-Y$ is Stein in a neighbourhood of $x$ (for example $Y$ defined by an equation at $x$), and that $X-Y$ is of rectified homotopical depth $\geq n$ in a neighbourhood of $x$ (for example, is at every point of $X-Y$ neighbouring $x$ a complete intersection of dimension $\geq n$, \cf conjecture \Ref{XIII.6.B}). Then the canonical homomorphism
+$$
+\pi_i^x(Y)\to\pi_i^x(X)$$
+is an isomorphism for $i<n-1$, an epimorphism for $i=n-1$.
+\end{enonce*}
+
+\refstepcounter{aconjecture} \label{XIII.6.D}
+\begin{enonce*}{Conjecture D}[``global Lefschetz''\ndemark]
+\ndetext{this conjecture is here again proved in \cite{HL}, this even in its strong form of the remark which follows, \cf theorem 3.4.1 of~\loccit}
+Let $X$ be a \emph{compact} analytic space, $Y$ an analytic subspace of $X$ such that $U=X-Y$ is Stein, and is of rectified homotopical depth $\geq n$ (for example a complete intersection of dimension $\geq n$ at every point). Then the canonical homomorphism
+$$
+\pi_i(Y)\to\pi_i(X)$$
+is an isomorphism for $i<n-1$, an epimorphism for $i=n-1$.
+\end{enonce*}
+
+\begin{remarkstar}
+When, in the statements \Ref{XIII.6.C} and \Ref{XIII.6.D}, one
+replaces the hypothesis that $X-Y$ is Stein by the hypothesis that
+$X-Y$ is a union of $c+1$ Stein open sets (which will play the
+role of a hypothesis of topological ``concavity''), the
+conclusions should be modified simply by replacing
+$n$ there by $n-c$.\nde{let us finally mention the following result of Fulton,
+to be compared with the Fulton--Hansen result cited in the
+editor's note~\eqref{FH}~page~\pageref{FH}: let $X$ and $H$ are
+closed subschemes of $\PP^m_\CC$, $n$ the dimension of $X$ and $d$
+the codimension of $H$. Then the map
+$$
+\pi_i(X, X\cap H)\to\pi_i(\PP^n_\CC, H)$$
+is an isomorphism if $i\leq n-d$ and is surjective if $i=n-d-1$; see (Fulton~W., ``Connectivity and its applications in algebraic geometry'', in \emph{Algebraic geometry (Chicago, Ill., 1980)}, Lect. Notes in Math., vol.~862, Springer, Berlin-New York, 1981, p\ptbl 26--92).}
+\end{remarkstar}
+
+Let us finally spell out, in the ``global case'' \Ref{XIII.6.D}, the conjecture concerning the fundamental group (obtained by setting $n=3$):
+
+
+\refstepcounter{aconjecture}\label{XIII.6.D'}
+\begin{enonce*}{Conjecture D$\boldsymbol'$}[global Lefschetz for the fundamental group\ndemark]
+\ndetext{this conjecture is proved in \cite{HL}, \cf theorem 3.5.1 of~\loccit}
+Let $X$ be a compact analytic space over the field of complex numbers, $Y$ a closed analytic subset such that $U=X-Y$ is Stein. Suppose moreover the following conditions are satisfied:
+\begin{enumeratei}
+\item
+For every $x\in U$, the local fundamental group $\pi_2^x(X, x)$ is trivial (\ie $X$ \emph{is ``pure at} $x$''), or merely the local ring $\OXx$ is pure.
+\item
+The local rings of the points of $U$ are ``connected in dimension $\geq 2$''.
+\item
+The local rings of the points of $U$ are of dimension $\geq 3$.
+\end{enumeratei}
+
+Under these conditions, for every $x\in Y$, the homomorphism
+$$
+\pi_1(Y, x)\to\pi_1(X, x)
+$$
+is an isomorphism (and $\pi_2(Y, x)\to\pi_2(X, x)$ an epimorphism).
+\end{enonce*}
+
+One will note that the local conditions (i)~(ii)~(iii) on $U$ are satisfied if $U$ is locally a complete intersection of dimension $\geq 3$. From the point of view of Algebraic Geometry, (when $U$ comes from a scheme, still denoted $U$), conditions (i) to (iii) correspond to hypotheses on the local invariants $\pi_i^x(U)$, namely \hbox{$\pi_i^x(U)=0$} for $i<3-\degtr k(x)/k$, for the points $x$ such that one has respectively $\degtr k(x)/k=0, 1, 2$. The global condition on $U$ ($U$ Stein) will be satisfied if $X$ is projective and $Y$ a hyperplane section.
+
+\begin{thebibliography}{HL}\refstepcounter{toto}\label{XIII.7}
+
+\bibitem[1]{XIII.1} %
+\textsc{S. Abhyankar} -- ``Local uniformisation on algebraic surfaces over ground fields of characteristics $p\neq0$'', \emph{Annals of Math.} \textbf{63} (1956), p\ptbl 491--526.
+
+
+\bibitem[2]{XIII.2} %
+\textsc{W.L. Chow} -- ``On the theorem of Bertini for local domains'', \emph{Proc. Nat. Acad. Sci. U.S.A.} \textbf{44} (1958), p\ptbl 580--584.
+
+
+\bibitem[3]{XIII.3} %
+\textsc{M. Greenberg} -- ``Schemata over local rings'', \emph{Annals of Math.} \textbf{73} (1961), p\ptbl 624--648.
+
+
+\bibitem[4]{XIII.4} %
+\textsc{M. Kneser} -- ``\"Uber die Darstellung algebraischer Raumkurven als Durchschnitte von Fl\"achen'', \emph{Archiv der Math.} \textbf{XI} (1960), p\ptbl 157--158.
+
+
+\bibitem[5]{XIII.5} %
+\textsc{D. Mumford} -- ``The topology of normal singularities of an algebraic surface, and a criterion for simplicity'', \emph{Publ. Math. Inst. Hautes \'Etudes Sci.} \textbf{9} (1961), p\ptbl 5--22.
+
+
+\bibitem[6]{XIII.6} %
+\textsc{A. N\'eron} -- ``Mod\`eles minimaux des vari\'et\'es ab\'eliennes sur les corps locaux et globaux'', \emph{Publ. Math. Inst. Hautes \'Etudes Sci.} \textbf{21} (1964), p\ptbl 5-128.
+
+
+\bibitem[7]{XIII.7} %
+\textsc{A.H. Wallace} -- \emph{Homology Theory of algebraic Varieties}, Pergamon Press, 1958.
+
+
+\bibitem[8]{XIII.8} %
+\textsc{S. Abhyankar} -- ``Resolution of singularities of arithmetical surfaces'', in \emph{Arithmetical Algebraic Geometry}, Harper and Row, New-York, 1965, p\ptbl 111--152.
+
+
+%
+\bibitem[HL]{HL}
+\textsc{H.A. Hamm \& L\^e D\~ung Tr\'ang} -- ``Rectified homotopical depth and Grothendieck conjectures'', in \emph{The Grothendieck Festschrift, Vol.~II}, Progr. Math., vol.~87, Birkhaüser Boston, 1990, p\ptbl 311--351.
+
+\end{thebibliography}

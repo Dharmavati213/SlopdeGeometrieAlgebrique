@@ -1,0 +1,226 @@
+\section{Converse of the affine Lefschetz theorem} \label{XIV.3}
+
+The present no.\ will be used in \numero \Ref{XIV.4} to prove a converse to the ``Lefschetz theorem''; a reader who is interested only in the direct part of that theorem may therefore omit the reading of the present no.
+
+\subsection{} \label{XIV.3.1}
+
+Let us recall the statement of the affine Lefschetz theorem\nde{\label{gabaf}Gabber has proved the following generalization. Let $Y$ be a strictly local scheme of arithmetic type over a regular noetherian scheme $S$ of dimension $\leq 1$. Let $f:X\to Y$ be an affine morphism of finite type, $\Lambda=\ZZ/n\ZZ$ with $n$ invertible on $X$ and $F$ a $\Lambda$-sheaf. Then $H^q(X,F)=0$ if $q>\delta(F)$. One deduces from this the following local Lefschetz theorem. Let $\Oo$ is strictly local of arithmetic type over $S$. For every $f\in \Oo$ not a zero-divisor and every $\Lambda$-sheaf $F$ on $\Spec(\Oo[f^{-1}])$, one has $H^q(\Spec(\Oo[f^{-1}]),F)=0$ for $q>\dim(\Oo)$. \Cf (Fujiwara~K., ``A Proof of the Absolute Purity Conjecture (after Gabber)'', in \emph{Algebraic geometry 2000, Azumino (Hotaka)}, Adv. Stud. in Pure Math., vol.~36, 2002, p\ptbl 153-183, $\S$5) and especially Illusie's article (Illusie~L., ``Perversit\'e et variation'', \emph{Manuscripta Math.} \textbf{112} (2003), p\ptbl 271-295). This result is one of the crucial points used by Gabber in his proof of Grothendieck's purity theorem (\cf the note~\eqref{gabpur}, page~\pageref{gabpur}).} (\SGA 4~XIX~6.1~bis):
+
+Let $S$ be a strictly local excellent scheme of characteristic zero, $f:X\to S$ an affine morphism of finite type and $F$ a torsion sheaf on $X$. Then, if one sets
+$$
+\delta(F)=\sup\{\delta(x)|x\in X \text{ and } F_{\bar{x}} \neq 0\},
+$$
+one has
+$$
+H^q(X, F)=0 \text{ for } q>\delta(F).
+$$
+
+Before stating the converse, let us prove some lemmas.
+
+\begin{lemma} \label{XIV.3.2} Let $K$ be a field, $\ell$ a prime number distinct from the characteristic of $K$ and $F$ a sheaf of $\ell$-torsion on $K$, constructible, non-zero. Suppose that the $\ell$-cohomological dimension of $K$ (\textup{\SGA 4 X~1}) is equal to $n$ (this is realized for example if $K$ is the fraction field of a strictly local excellent integral ring, of characteristic zero, of dimension $n$ (\textup{\SGA 4~XIX~6.3}), or if $K$ is a finitely generated extension of transcendence degree $n$ of a separably closed field (\textup{\SGA 4~X~2.1})). Then one can find a finite separable extension $L$ of $K$ such that one has:
+$$H^n(L, F_{|L}) \neq 0.
+$$
+\end{lemma}
+
+One can find a finite extension $K'$ of $K$ such that the restrictions of $F$ and of $\mu_\ell$ to $\Spec K'$ are constant sheaves. One then has $\cd_{\ell}(K') = \cd_{\ell}(K) = n$ (\SGA 4~X~2.1), and it follows from (\cite{XIV.2}~II~\S 3~Prop\ptbl4~\textup{(iii)}) that one can find a finite extension $L$ of $K'$ such that one has
+$$
+H^n(L, \mu_{\ell})\neq 0, \quad\text {\ie } H^n(L, \ZZ/\ell\ZZ) \neq 0.
+$$
+Now the functor $H^n(L,\cdot)$ is right exact on the category of sheaves of $\ell$-torsion, since $\cd_{\ell}(L)=n$; as $F$ admits a quotient isomorphic to $\ZZ/\ell\ZZ$, one also has $H^n(L, F_{|L}) \neq 0$.
+
+\begin{corollary} \label{XIV.3.3}
+Let $k$ be a field, $K$ a finitely generated extension of transcendence degree $n$ of $k$, $F$ a sheaf of $\ell$-torsion on $K$, constructible, non-zero, with $\ell$ prime to the characteristic of $k$. Then one can find a finite separable extension~$L$ of~$K$ such that, if $u: \Spec L \to \Spec k$ denotes the canonical morphism, one has
+$$R^n u_*(F_{|\Spec L}) \neq 0.
+$$
+\end{corollary}
+
+When the field $k$ is separably closed, the corollary is a special case of \Ref{XIV.3.2}. In the general case, one can find a finite separable extension $k_1$ of $k$ such that the irreducible components of $K \otimes_k k_1$ are geometrically irreducible (\EGA IV~4.5.11); let $K_1$ be one of them. If $k'$ is a separable closure of $k_1$, then $K' = K_1 \otimes_{k_1} k'$ is a field, and one has by (\EGA IV~4.2)
+$$
+\deg \tr K'/k' = \deg \tr K/k = n.
+$$
+It then follows from \Ref{XIV.3.2} that one can find a finite separable extension $L'$ of $K'$ such that one has $H^n(L', F_{|L'}) \neq 0$. But one has $k' = \varinjlim_i k_i$, where $k_i$ runs through the finite extensions of $k_1$ contained in $k'$, and consequently $K' = \varinjlim_i (k_i \otimes_{k_1} K_1)$. It follows that one can find an index $i$ and a finite separable extension $L$ of $k_i \otimes_{k_1} K_1 =K_i$, such that one has $L' \simeq L \otimes_{K_i} K'$. The extension $L$ of $K$ answers the question; indeed it follows from the commutative diagram
+$$
+\xymatrix{
+&{\Spec L}\ar[dl]_v\ar[dr]^u&\\
+{\Spec k_i} \ar[rr]^w &{}&{\Spec k}\,,
+}
+$$
+with $w$ finite hence $R^q w_* = 0$ if $q>0$, that one has
+$$R^n u_*(F_{|\Spec L}) \simeq w_*(R^n v_*(F_{|\Spec L})).
+$$
+Now $R^nv_*(F_{|\Spec L}) \neq 0$, since $H^n(L', F_{|L'}) \neq 0$; one therefore also has $R^nu_*(F_{|\Spec L}) \neq 0$.
+
+Let us recall the following well-known lemma (\cf $\EGA 0_{\textup{III}}$~10.3.1.2 and \EGA IV~18.2.3):
+
+\begin{lemma} \label{XIV.3.4}
+Let $X$ be a scheme, $x$ a point of $X$, $K$ a finite separable extension of $k(x)$. Then there exists a scheme $X_1$ \'etale over $X$, affine, and a point $x_1 \in X_1$ above $x$, such that $k(x_1)$ is $k(x)$-isomorphic to $K$.
+\end{lemma}
+
+We shall use in \numero \Ref{XIV.4} the following technical form of the converse of \Ref{XIV.3.1}.
+
+\begin{proposition} \label{XIV.3.5}
+Let a cartesian square
+$$
+\xymatrix{
+{X'}\ar[r]^h\ar[d]_{f'} &{X}\ar[d]^f\\
+{S'}\ar[r]^g &{S}\,,
+}
+$$
+where the schemes $S$ and $S'$ are strictly local excellent of characteristic zero, the morphism $f$ locally of finite type, $g$ regular (\textup{\EGA IV~6.8.1}) surjective, the closed fibre of $g$ reduced to the closed point of $S'$. Given an $S$-scheme $X_1$ (\resp an $S$-morphism $f_1$, etc.), we shall denote by $X_1'$ (\resp $f_1'$, etc.) the scheme $X_1 \times_S S'$ (\resp the morphism $(f_1)_{(S')}$, etc.). Let $F$ be a sheaf of $\ZZ/m\ZZ$-modules on $X'$ ($m$ a power of a prime number $\ell$), constructible, satisfying the following conditions:
+\begin{enumeratei}
+\item
+For every point $x \in X$, one can find a finite separable extension~$K$ of $k(x)$ such that the restriction of $F$ to the fibre $(X')_{(\Spec K)}$ comes by inverse image from a constructible sheaf on $\Spec K$.
+\item
+For every morphism $f_1: X_1 \to S$, with $X_1$ \'etale over $X$, affine, for every point $s \in S$ and for every integer $q>0$, one can find a finite separable extension~$K$ of $k(s)$ such that the restriction of $R^q f'_{1*}(F|X'_1)$ to the fibre $S'_{(\Spec K)}$ comes by inverse image from a constructible sheaf on $\Spec K$.
+\end{enumeratei}
+
+Let $n$ be an integer, and suppose that for every scheme $X_1$ \'etale over $X$, affine, one has
+$$
+H^i(X_1', F)=0 \text{ for } i>n.
+$$
+Then, if $\bar{x}'$ is a geometric point above the point $x' \in X'$ such that $F_{\bar{x}'} \neq 0$, one has
+$$
+\delta(x') \leq n.
+$$
+\end{proposition}
+
+Let $Z'$ be the set of points $x'$ of $X'$ such that one has $F_{\bar{x}'} = 0$. Then, if $Z=h(Z')$, one has by \textup{(i)} $Z' = h^{-1}(Z)$; let $x' \in X'$, $x=h(x')$, $s'=f'(x')$, $s=f(x)$. It follows from \Ref{XIV.2.1.1} and from the fact that the function $\delta$ decreases under specialization, that it suffices to prove the inequality $\delta(x') \leq n$ when $x$ is a maximal point of $Z$ and $x'$ is such that one has
+$$r=\deg \tr k(x)/k(s) = \deg \tr k(x')/k(s') \text{ and }d=\dim \overline{\{s\}} = \dim\overline{\{s'\}}$$
+Let $x'$ be such a point; it suffices to show that one can find a scheme $X_1$ \'etale over~$X$, affine, such that one has
+$$
+H^{d+r}(X_1', F) \neq 0.
+$$
+
+The set $Z'$ is constructible (\SGA 4~IX~2.4), hence the same is true of $Z$ (\EGA IV~1.9.12); one may then suppose, after possibly restricting $X$ to a neighbourhood of~$x$, that $Z$ is an irreducible closed subset with generic point $x$. Let $T=f(Z)$; $T$ is a constructible set contained in $\overline{\{s\}}$; one can therefore find an affine open $U$ of~$S$ such that $s \in U$ and that $T \cap U = T_U$ is an irreducible closed subset of $U$ with generic point~$s$.
+
+Then let $V$ be a scheme \'etale over $X$, affine, whose image in $X$ contains $x$ and whose image in $S$ is contained in $U$; let $Z_V$ be the inverse image of $Z$ in $V$ and $u: Z_V \to T_U$ the canonical morphism. Let $W$ be a scheme \'etale over $U$, affine, one then denotes by $T_W$ the inverse image of $T_U$ in $W$ and let $X_1 = W\times_U V$. As $F$ is zero outside $Z'$, one has the spectral sequence
+$$
+E^{pq}_2 = H^p((T_W)', R^qu_*'(F_{|(Z_V)'})) \To H^*(X'_1, F).
+$$
+We shall show that one can choose $V$ and $W$ in such a way that one has
+\begin{enumeratea}
+\item
+$E^{pq}_2=0$ for $p>d$ and for $q>r$.
+\item
+$E^{dr}_2 \neq 0$.
+\end{enumeratea}
+\noindent
+The relation $H^{d+r}(X_1', F) \neq 0$ will then follow from the spectral sequence.
+\begin{enumerate}
+\item[$1^\circ)$]
+Set $G_q = R^q u'_*(F_{|(Z_V)'})$; then one has:
+$$(G_q)_{\bar{s}'}=H^q((Z_V)'_{\bar{s}'}, F{_{|(Z_V)'}}_{\bar{s}'}),
+$$
+since $s'$ is a maximal point of $(T_U)'$. As the fibre $(Z_V)'_{\bar{s}'}$ is an affine scheme of finite type of dimension $r$ over a separably closed field, it follows from \Ref{XIV.3.1} that one has
+$$(G_q)_{\bar{s}'}=0 \text{ for } q>r.
+$$
+
+For $q>r$, let $Y'_q$ be the set of points of $(T_U)'$ where the geometric fibre of $G_q$ is $\neq 0$ and $Y_q=g(Y'_q)$; then one has $Y'_q = g^{-1}(Y_q)$ by \textup{(ii)}, hence $Y_q$ is a constructible subset of $T_U$ (\SGA 4~XIX~5.1 and \EGA 1.9.12) which does not contain $s$; after possibly restricting $U$ to an open neighbourhood of $s$, one may suppose that one has $G_q=0$ for $q>r$, hence $E_2^{pq}=0$ for $q>r$.
+
+Moreover, as $(T_W)'$ is an affine scheme of finite type over $g^{-1}(\overline{\{s\}})$, one has for any $q$ (\cf \Ref{XIV.3.1}):
+$$H^p((T_W)', G_q)=0 \text{ for } p>\dim g^{-1}(\overline{\{s\}})=d,
+$$
+whence condition a).
+
+\item[$2^\circ)$]
+Let us show that one can choose $V$ so that one has $(G_r)_{\bar{s}'} \neq 0$. By~\textup{(i)}, there exists a constructible sheaf $I$, defined over a finite separable extension $K$ of $k(x)$, whose inverse image on $(X')_{(\Spec K)}$ is isomorphic to $F_{|(X')_{(\Spec K)}}$. By \Ref{XIV.3.3}, one finds a finite separable extension $L$ of $K$ such that, if $v:\Spec L \to \Spec k(s)$ denotes the canonical morphism, one has $R^r v_*(I) \neq 0$. As the morphism $S'_s \to \Spec k(s)$ is regular, one has by (\SGA 4~XIX~4.2):
+$$R^rv_*'(F_{|(\Spec L)'}) \simeq (R^rv_*(I))' \neq 0.
+$$
+By lemma \Ref{XIV.3.4}, one can find a scheme $X_2$ \'etale over $X$, affine, and a point~$x_2$ of $X_2$ above $x$, such that $L$ is $k(x)$-isomorphic to $k(x_2)$ and one may suppose $X_2$ over $U$. As $x$ is a maximal point of $Z$, one has
+$$
+\Spec L \simeq \varprojlim_V Z_V,
+$$
+where $V$ runs through the affine open neighbourhoods of $x_2$. One deduces from this by passage to the limit (\SGA 4~VII~5.8), after restriction to the geometric fibre at $\bar{s}'$:
+$$
+(R^rv_*'(F_{|\Spec I})')_{\bar{s}'} = \varinjlim_V (R^ru_*'(F_{|(Z_V)'})_{\bar{s}'},
+$$
+which indeed shows that one can find $V$ such that one has $(G_r)_{\bar{s}'} \neq 0$.
+
+\item[$3^\circ)$]
+The scheme $V$ having been chosen in $2^\circ)$, let us show that one can choose the scheme~$W$ so that one has
+$$
+E^{dr}_2 = H^d((T_W)', G_r) \neq 0.
+$$
+By \textup{(ii)}, there exists a constructible sheaf $J$, defined over a finite separable extension $K$ of $k(s)$, whose inverse image on $(S')_{(\Spec K)}$ is isomorphic to ${G_r}_{|(S')_{(\Spec K)}}$. By lemma \Ref{XIV.3.2}, one can find a finite separable extension $L$ of $K$ such that one has $H^d(\Spec L, J) \neq 0$. As the morphism $(S')_{(\Spec L)} \to \Spec L$ is acyclic (\SGA 4~XIX~4.1 and XV~1.10 and 1.16), one has
+$$
+H^d((\Spec L)', {G_r}_{|(S')_{(\Spec L)'}}) = H^d(\Spec L, J) \neq 0.
+$$
+By \Ref{XIV.3.4}, one can find a scheme $U_1$ \'etale over $U$, affine, and a point~$s_1$ above $s$, such that $k(s_1)$ is $k(s)$-isomorphic to $L$. Now, $s$ being a maximal point of~$T_U$, one has
+$$
+\Spec L \simeq \varprojlim_W T_W,
+$$
+where $W$ runs through the affine open neighbourhoods of $s_1$. One deduces from this that $(\Spec L)' \simeq \varprojlim_W(T_W)'$, and by passage to the limit (\SGA 4~VII~5.8):
+$$
+H^d((\Spec L)', {G_r}_{|(\Spec L)'}) \simeq \varinjlim_W H^d((T_W)', {G_r}_{|(T_W)'});
+$$
+hence one can find $W$ such that one has
+$$
+H^d((T_W)', {G_r}_{|(T_W)'})\neq 0,
+$$
+which completes the proof of the theorem.
+\end{enumerate}
+
+\begin{corollary} \label{XIV.3.6}
+The hypotheses concerning $S, S', f, f', m$ are those of \Ref{XIV.3.5}. Let us now denote by $F$ a complex of sheaves of $\ZZ/m\ZZ$-modules on $X'$, with degrees bounded below and with constructible cohomology, and whose cohomology sheaves satisfy conditions \textup{(i)} and \textup{(ii)} of \Ref{XIV.3.5}. Let $n$ be an integer, and suppose that, for every scheme $X_1$ \'etale over $X$, affine, one has
+$$
+H^i(X'_1, F)=0\text{ for } i>n.
+$$
+Then, if $\bar{x}'$ is a geometric point above a point $x'$ of $X'$ such that one has, for an integer $j$, $(\underline{H}^j(F))_{\bar{x}'} \neq 0$, one has
+$$
+\delta(x')\leq n-j.
+$$
+\end{corollary}
+
+Let $T'$ be the set of points of $X'$ where the conclusion of \Ref{XIV.3.7} fails and suppose $T' \neq \emptyset$; let $T=f(T')$, $x$ a maximal point of $T$ and $x'$ a point of $X'$ above~$x$. Let $j$ be the largest integer such that one has $(\underline{H}^j(F))_{\bar{x}'} \neq 0$; one thus has $r=\delta(x)>n-j$. Let $Z'_q$ be the set of points where the geometric fibre of $\underline{H}^q(F)$ is $=0$ and $Z_q =h(Z'_q)$; one sees as in the proof of \Ref{XIV.3.5} that $Z_q$ is constructible. One has obviously $Z'_q=\emptyset$ for $q>n$ and for $q$ sufficiently small. The other values of $q$ fall into three subsets. Let
+$$
+Q_1=\{q\mid x\in Z_q\text{ and a generalization of }x, \text{ distinct from }x, \not\in Z_q\}.
+$$
+One has $j \in Q_1$ and one can find an affine open neighbourhood $U_1$ of $x$ such that, for every $q \in Q_1, U_1 \cap Z_q$ is an irreducible closed subset with generic point $x$. If $q \in Q_1$, one has
+\begin{equation*} \label{eq:XIV.3.6.*} \tag{$*$} \delta(\underline{H}^q(F)_{|U_1'})=\delta(x)\quad\text{(for the definition of $\delta(\underline{H}^q(F))$ \cf \Ref{XIV.3.1})}.
+\end{equation*}
+Let
+$$
+Q_2=\{q\mid\text{no generalization of $x$ belongs to }Z_q\}.
+$$
+Then, if $j<q\leq n$, one has $q\in Q_2$, and one can find an affine open neighbourhood $U_2$ of $x$ such that, for every $q \in Q_2$, one has $Z_q \cap U_2 = \emptyset$; one thus has
+\begin{equation*} \label{eq:XIV.3.6.**} \tag{$**$} \underline{H}^q(F)_{|U'_2}=0\text{ for }q\in Q_2.
+\end{equation*}
+Finally, let
+$$
+Q_3= \{q\mid Z_q \text{ contains strict generalizations of }x\}.
+$$
+Then one can find an affine open neighbourhood of $x$, $U_3$, such that, for every $q \in Q_3$, all the maximal points of $Z_q \cap U_3$ are generalizations of $x$. If $q \in Q_3$, one has
+\begin{equation*} \label{eq:XIV.3.6.***} \tag{${*}{*}{*}$} \delta(\underline{H}^q(F)_{|U'_3})\leq n-q.
+\end{equation*}
+
+For every scheme $X_1$ \'etale over $U_1 \cap U_2 \cap U_3$, affine, consider the hypercohomology spectral sequence
+$$
+E^{pq}_2= H^p(X_1', \underline{H}^q(F)) \To H^*(X'_1, F).
+$$
+One has $E^{pq}_2=0$ for $q\in Q_2$ by \eqref{eq:XIV.3.6.**}. One has $E^{pq}_2=0$ for $p+q \geq r+j$ except perhaps for $p=r, q=j$. Indeed this is clear if $q\in Q_2$; if $q\in Q_1$, one then has $p>r$ except if $p=r, q=j$ and this follows from \Ref{XIV.3.1} taking into account (\Ref{eq:XIV.3.6.*}); finally if $q\in Q_3$, as $r>n-j$, one has $p>n-q$ and the assertion follows from \Ref{XIV.3.1} taking into account (\Ref{eq:XIV.3.6.***}). Since $H^{r+j}(X_1', F)=0$, it follows from the spectral sequence that one has
+$$H^r(X_1', \underline{H}^j(F))=0;$$
+now this implies, by \Ref{XIV.3.5}, $\delta(x)<r$, which is absurd.
+
+\begin{corollary} \label{XIV.3.7}
+Let $S$ be a strictly local excellent scheme of characteristic zero, $f:X \to S$ a morphism locally of finite type, $m$ a power of a prime number, $F$ a complex of sheaves of $\ZZ/m\ZZ$-modules on $X$, bounded below, with constructible cohomology, and $n$ an integer. Then the following conditions are equivalent:
+\begin{enumeratei}
+\item
+For every scheme $X_1$ \'etale over $X$, affine, one has
+$$
+H^i(X_1, F)=0\text{ for }i>n.
+$$
+
+\item
+For every geometric point $\bar{x}$ above the point $x$ of $X$, and for every integer~$j$ such that one has $(\underline{H}^j(F))_{\bar{x}} \neq 0$, one has
+$$
+\delta(x) \leq n-j.
+$$
+\end{enumeratei}
+\end{corollary}
+
+\textup{(i)} \ALORS \textup{(ii)} is the special case of \Ref{XIV.3.6} obtained by setting $S=S'$.
+
+\textup{(ii)} \ALORS \textup{(i)} follows immediately from \Ref{XIV.3.1}, using the hypercohomology spectral sequence
+$$
+H^p(X_1, \underline{H}^q(F)) \To H^*(X_1, F).
+$$

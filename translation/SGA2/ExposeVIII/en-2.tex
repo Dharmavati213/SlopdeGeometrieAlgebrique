@@ -1,0 +1,289 @@
+% English body fragment for SGA 2 VIII (en-2.tex)
+\section{The finiteness theorem} \label{VIII.2}
+
+\refstepcounter{subsection}\label{VIII.2.1}
+\begin{enonce*}{Theorem 2.1\ndemark}
+Let $X$ be a locally noetherian prescheme, $Y$ a closed subset of $X$ and ${\Fa}$ a coherent $\OX$-Module.\ndetext{for an analogous statement, but in a slightly more general situation, see Mme Raynaud (Raynaud~M., {\og Th\'eor\`emes de Lefschetz en cohomologie des faisceaux coh\'erents et en cohomologie \'etale. Application au groupe fondamental\fg}, \emph{Ann. Sci. \'Ec. Norm. Sup. (4)} \textbf{7} (1974), p\ptbl 29--52, proposition II.2.1).}
+Suppose that $X$ is locally immersible in a regular prescheme\sfootnote{This condition may be generalized to the hypothesis of the existence, locally on $X$, of a ``dualizing complex'', in the sense defined in R\ptbl Hartshorne, \emph{Residues and duality} (cited in the note~\eqref{cithar} of \Exp \Ref{IV} p\ptbl\pageref{pagecithar}).}. Let $i\in\ZZ$. Suppose that:
+\begin{enumeratea}
+\item
+for every $x\in U=X-Y$, one has
+\[
+\H^{i-c(x)}({{\Fa}}_x)=0,
+\]
+where one has set\,\nde{as in Expos\'e~\Ref{V}, $H^\ast({\Fa}_x)$ denotes the local cohomology $H_{\m_x}({\Fa}_x)$.}:
+\begin{equation} \label{eq:VIII.2.1} c(x)=\codim (\overline{\{x\}}\cap Y, \overline{\{x\}}).
+\end{equation}
+Then:
+\item
+$\SheafH^i_Y({\Fa})$ is coherent.
+\end{enumeratea}
+\end{enonce*}
+
+\refstepcounter{subsection}\label{VIII.2.2}
+\begin{enonce*}{Corollary 2.2\ndemark}
+Under the hypotheses of the preceding theorem, condition \textup{a)} is equivalent to:
+\ndetext{\textit{stricto sensu}, this is a corollary of the proof which follows and not of the statement. The implication c)\ALORS a) is tautological. The other direction is not, but results from the proof. Let us be precise. As below, one covers $X$ by opens immersible in regular schemes, which allows one as explained below to reduce to $X=\Spec(A)$ affine regular and $F=\tilde M$ where $M$ is an $A$-module of finite projective dimension. It is shown in this case that the conditions a) and c) are equivalent to the dual conditions a$'$) and c$'$). One then shows that c$'$) implies question d) (see \textit{infra}) which itself implies a$'$). See the considerations following~\Ref{VIII.2.4}.}
+\begin{enumerate}
+\item[\textup{c)}] for every $x\in U$ such that $c(x)=1$, one has $\H^{i-1}({\Fa}_x)=0$.
+\end{enumerate}
+\end{enonce*}
+
+\begin{corollary} \label{VIII.2.3} Let $X$ be a locally noetherian prescheme locally immersible in a regular prescheme, $Y$ a closed subset of $X$, ${\Fa}$ a coherent $\OX$-Module, $n$ an integer. The following conditions are equivalent:
+\begin{enumeratei}
+\item
+for every $x\in U$, one has $\prof {\Fa}_x>n-c(x)$;
+\item
+for every $x\in U$ such that $c(x)=1$, one has $\prof {\Fa}_x\geq n$;
+\item
+for every $i\in \ZZ$, $\SheafH^i_Y({\Fa})$ is coherent if $i\leq n$.
+\item
+$\R^ii_\ast({\Fa}_{|U})$ is coherent for $i<n$\ \nde{this condition was only in the body of the proof and not in the statement of the corollary; as it is used in~\Ref{VIII.3}, it has been added.}.
+\end{enumeratei}
+\end{corollary}
+
+Suppose these results acquired when $X$ is the spectrum of a regular noetherian ring $A$ and when ${\Fa}$ is the sheaf associated to an $A$-module of finite projective dimension.
+
+Let us first remark that, if $(X_j)_{j\in
+J}$ is an open covering of $X$ by opens
+immersible in a regular scheme, each of the conditions
+above is equivalent to the conjunction of the analogous
+conditions obtained by replacing $X$ by~$X_j$, $Y$ by
+$Y_j=Y\cap X_j$ and ${\Fa}$ by
+${\Fa}_|X_j$. Indeed, only the conditions
+involving $c(x)$ can present a difficulty. Let $x\in
+U$. If $x\in X_j$, set
+\[
+c_j(x)=\codim(X_j\cap \overline{\{x\}}\cap Y, X_j\cap\overline{\{x\}}),
+\]
+one has necessarily $c_j(x)\geq c(x)$. Let $y\in
+\overline{\{x\}}\cap Y$, which ``gives the codimension'', \ie such
+that $c(x)=\dim \Oo_{\overline{\{x\}}, y}$, let $X_j$ be an open of the
+covering such that $y\in X_j$, then $x\in X_j$, hence
+$c_j(x)=c(x)$, which allows one to conclude that a) for the
+$X_j$ implies a) for $X$. At this stage, one has only a
+partial converse, namely that a) for $X$ implies a) for
+those $X_j$ such that $c(x)=c_j(x)$, which suffices for our
+purpose.\nde{in fact, a) for $X$ implies a) for all the
+$X_j$ as asserted in the original text, but for this one must
+read the proof which follows in detail. This implication does not seem
+formal at this stage. Let us indeed denote by an index $J$ the
+conjunctions of a property a), b) or c) for the $X_j$. It is
+proved in the proof \textit{infra} that c$_J$)\ALORS a$_J$) (this is
+the chain of implications c$'$)\ALORS d)\ALORS a$'$)\,). Now, one has
+tautologically a) \ALORS c), and c)\SSI c$_J$), whence a) \ALORS
+a$_J$).}
+
+One chooses a covering of $X$ by opens immersible in a regular prescheme. Applying the preceding, one sees that one may suppose $X$ closed in a regular $X'$. The reduction to $X'$ is then immediate.
+
+One may therefore suppose $X$ regular, and even affine by covering $X$ by affine opens. That one may suppose that ${\Fa}=\widetilde{M}$, where $M$ is of finite projective dimension, will result from the following lemma:
+
+\begin{lemma} \label{VIII.2.4}
+Let $X$ be a regular noetherian prescheme. Let ${\Fa}$ be a coherent $\OX$-Module. The function which to every $x\in X$ associates the projective dimension of ${\Fa}_x$ is bounded above.
+\end{lemma}
+
+\setcounter{equation}{1}
+
+Indeed, let $x\in X$ and let $U$ be an affine open neighbourhood of $x$. Let $L^\boule$ be a projective resolution of the module ${\Fa}(U)$, where the $L^i$ are of finite type. By hypothesis, the ring $\Oo_{X, x}$ is regular, hence the projective dimension of ${\Fa}_x$ is finite; let $d$ be this integer. Let
+\[
+K=\ker(L^{-d}\to L^{-d+1}).
+\]
+The module $K_x$ is free, for $d$ is the projective dimension of ${\Fa}_x$ (\cite{M}, Ch\ptbl VI. Prop\ptbl 2.1). By ($\EGA 0_{\textup{I}}$~5.4.1 Errata), one deduces that the $\Oo_U$-Module $\widetilde{K}$ is free on a neighbourhood $U'$ of $x$, $U'\subset U$. Choosing $f\in \OX(U)$ such that $x\in D(f)\subset U'$, one thus has a projective resolution of $M_{f'}$ ($M={\Fa}(U)$):
+\[0\to K_f \to (L^{d-1})_f\to \cdots \to M_f\to 0, \]
+which proves that the function under study is upper semicontinuous. Now $X$ is quasi-compact, whence the conclusion.
+
+We henceforth suppose $X$ affine noetherian regular and we suppose that \hbox{${\Fa}=\widetilde{M}$}, where $M$ is an $A$-module of finite type, necessarily of finite projective dimension. We shall proceed in several steps. First, we find a condition d), equivalent to a), and prove that it is likewise equivalent to c). Then, with the help of the spectral sequence of the preceding number, we prove \text{d)}\ALORS\text{b)}. It remains then to prove that \text{(iii)}\ALORS\text{(ii)}; indeed, \text{(i)}\SSI\text{(ii)}\ALORS\text{(iii)} results immediately from \text{a)}\SSI\text{c)}\ALORS\text{b)}.
+
+Let $x\in U$; by hypothesis $\Oo_{X, x}$ is a regular local ring; denoting by $D$ the dualizing functor relative to the local ring $\Oo_{X, x}$, it follows from (\Ref{V}~\Ref{V.2.1}) that:
+\[D\H^{i-c(x)}({\Fa}_x)\approx \Ext^{d(x)-i}_{\Oo_{X, x}}({\Fa}_x, \Oo_{X, x}), \]
+where one has set
+\begin{equation} \label{eq:VIII.2.2} d(x)=\dim \Oo_{X, x} + c(x) = \dim \Oo_{X, x}+\codim(\overline{\{x\}}\cap Y, \overline{\{x\}}).
+\end{equation}
+Now $X$ is noetherian and ${\Fa}$ coherent, hence:
+\begin{equation} \label{eq:VIII.2.3} D\H^{i-c(x)}({\Fa}_x)\approx (\SheafExt^{d(x)-i}_{\OX}({\Fa}, \OX))_x.
+\end{equation}
+Moreover, for a module to be zero, it is necessary and sufficient that its dual be so (\cf the editor's note~\eqref{dualnul} of page~\pageref{dualnul}). For every $q\in\ZZ$, set:
+\begin{equation} \label{eq:VIII.2.4}
+\begin{cases}
+S_q=\Supp \SheafExt^q_{\OX}({\Fa}, \OX), \\
+S'_q=S_q\cap U\text{, (}U=X-Y\text{)}, \\
+Z_q=\overline{S'_q}\cap Y.
+\end{cases}
+\end{equation}
+From formula (\Ref{eq:VIII.2.3}), it follows that a) and c) are respectively equivalent to
+\begin{enumerate}
+\item[a$'$)]
+for every $q\in\ZZ$ and every $x\in S'_q$, one has $q+i\neq d(x)$.
+
+\item[c$'$)]
+for every $q\in\ZZ$ and every $x\in S'_q$, if $c(x)=1$, one has $q+i\neq d(x)$.
+\end{enumerate}
+\noindent Here is the condition d) promised above:
+\begin{enumerate}
+\item[d)]
+for every $q\in \ZZ$ and every $y\in Z_q$, one has $q+i\neq \dim \Oo_{X, y}$.
+\end{enumerate}
+\noindent These conditions are equivalent:
+
+a$'$) \ALORS c$'$) for the record.
+
+d) \ALORS a$'$). Indeed, let $q\in \ZZ$ and let $x\in S'_q$; let $y\in\overline{\{x\}}\cap Y$ which\nde{in all that follows, the closures of points are endowed with the reduced structure.} ``gives the codimension'', \ie such that:
+\begin{equation} \label{eq:VIII.2.5} \dim \Oo_{\overline{\{x\}}, y}=\codim(\overline{\{x\}}\cap Y, \overline{\{x\}})=c(x).
+\end{equation}
+From the fact that $X$ is regular at $y$, one deduces:
+\begin{equation} \label{eq:VIII.2.6} \dim \Oo_{X, y}=d(x)\quad \text{(\cf (\Ref{eq:VIII.2.2})).}
+\end{equation}
+But $y\in\overline{\{x\}}$, hence $y\in Z_q$, whence the conclusion.
+
+c$'$) \ALORS d). Let $q\in\ZZ$ and let $y\in Z_q$. Let us admit provisionally that there exists $x\in S'_q$ such that:
+\[
+y\in\overline{\{x\}}\textup{ and }\dim \Oo_{\overline{\{x\}}, y}=1\, \text{;}\]
+(one also says that $x$ \emph{follows} $y$). It follows that $c(x)=1$, for $y$ ``gives the codimension of $\overline{\{x\}}\cap Y$ in $\overline{\{x\}}$'', since $x\not\in Y$. By c$'$) one draws from this
+\[q+i\neq d(x).
+\]
+Whence the conclusion, if one remarks that $d(x)=\dim \Oo_{X, y}$ (\Ref{eq:VIII.2.6}). The result admitted is expressed in the following lemma:
+
+\begin{lemma} \label{VIII.2.5} Let $X$ be a locally noetherian prescheme and let $Y$ be a closed subset of $X$. Set $U=X-Y$ and suppose that $U$ is dense in $X$. For every $y\in Y$, there exists $x\in U$ ``which follows it'', \ie such that:
+\[y\in\overline{\{x\}}\text{ and } \dim\Oo_{\overline{\{x\}}, y}=1.
+\]
+\end{lemma}
+
+We have applied the lemma by taking for $X$ the prescheme $\overline{S'_q}$ and for $Y$ the subset $Y\cap \overline{S'_q}$.
+
+\begin{proof}[Proof of~\Ref{VIII.2.5}]
+There exists $x\in U$ such that $y\in\overline{\{x\}}$; let us therefore choose an $x\in U$ such that $y\in\overline{\{x\}}$ and such that $\dim \Oo_{\overline{\{x\}}, y}=r$ is minimal. One must prove that $r=1$. Since one has chosen $x$ in such a way that every $z\in\Spec(\Oo_{\overline{\{x\}}, y})$, $z\neq x$, lies in $Y$, $\{x\}$ is open in $\Spec(\Oo_{\overline{\{x\}}, y})$. Whence the conclusion.
+\skipqed
+\end{proof}
+
+\emph{The second step consists in deducing \textup{b)} from \textup{d)}.}
+
+\noindent Set $D(Z_q)=\{\dim \Oo_{X, y} \mid y\in Z_q\}$. By d), one knows that, for every $q\in\ZZ$, one has $q+i\not\in D(Z_q)$. One then applies \Ref{VII}.\Ref{VII.2.3}, and one sees that
+\[
+\SheafExt^{q+i}_Y(\SheafExt^q({\Fa}, \OX), \OX) \text{ is coherent.}\]
+The initial term of the spectral sequence of the preceding number is given by:
+\[
+\E^{p, q}_2=\SheafExt^p_Y(\SheafExt^{-q}({\Fa}, \OX), \OX).
+\]
+One deduces that $\E^{p, q}_2$ is coherent for every $p\in\ZZ$ and every $q\in\ZZ$ such that $p+q=i$. Now there are only finitely many pairs $(p, q)$ such that $p+q=i$, and this spectral sequence converges to $\SheafH^\ast_Y({\Fa})$, whence the conclusion.
+
+\emph{It remains for us to prove that \textup{(iii)}\ALORS\textup{(ii)}.} Denote:
+\[i\colon U\to X\]
+the canonical immersion of $U$ in $X$. Taking into account the homology exact sequence of the closed set $Y$ (\Ref{I}~\Ref{I.2.11}) one sees that (iii) \emph{is equivalent to}:
+
+(iv) $\R^ii_\ast({\Fa}_{|U})$ is coherent for $i<n$. \refstepcounter{toto}\label{condition}
+
+\noindent Indeed, one has an exact sequence:
+\[0\to \SheafH^0_Y({\Fa})\to {\Fa} \to i_\ast({\Fa}_{|U})\to \SheafH^1_Y({\Fa}) \to 0.
+\]
+Now $\SheafH^0_Y({\Fa})$ is a quasi-coherent subsheaf of ${\Fa}$ which is coherent, hence is coherent. Hence $\SheafH^1_Y({\Fa})$ is coherent if and only if $i_\ast({\Fa}_{|U})$ is. Moreover, if $p>0$, the cohomology exact sequence of the closed set $Y$ reduces to isomorphisms:
+\[
+\R^pi_\ast({\Fa}_{|U})\overset{\approx}{\to}\SheafH^{p+1}_Y({\Fa}).
+\]
+We are going to prove that (iv) \ALORS (ii). For this, let us recall (ii):
+
+(ii) for every $x\in U$ such that $c(x)=1$, one has $\prof {\Fa}_x\geq n$.
+
+We argue by induction on $n$.
+
+If $n=0$, both conditions are empty.
+
+If $n=1$, one supposes that $i_\ast({\Fa}_{|U})$ is coherent. Let us argue by contradiction and suppose that there exists $x\in U$ such that $c(x)=1$ and $\prof {\Fa}_x=0$, \ie $x\in \Ass {\Fa}_x$. Let $y\in\overline{\{x\}}\cap Y$ such that $\dim \Oo_{\overline{\{x\}}, y}=1$. Set:
+\[A=\Oo_{X, y}\text{ and } X'=\Spec(A).
+\]
+
+\setcounter{equation}{6}
+
+Let us perform the change of base $v\colon X'\to X$, which is flat.
+\begin{equation} \label{eq:VIII.2.7}
+\begin{array}{c}
+\xymatrix@C=5em{ U'=X'\times_X U\ar[r]^-{v'}\ar[d]_{i'} & U\ar[d]^i \\
+X'\ar[r]^-v & \,X\,.
+}
+\end{array}
+\end{equation}
+The morphism $i$ is separated (for it is an immersion), and of finite type (for it is an open immersion and $X$ is locally noetherian), the change of base is flat hence (\EGA III~1.4.15) one has an isomorphism:
+\begin{equation} \label{eq:VIII.2.8}
+v^\ast(i_\ast({\Fa}_{|U})) \approx i'_\ast({v'}^\ast({\Fa}_{|U})).
+\end{equation}
+
+Denote by $\underline x$ (\resp $\underline y$) the ideal of $A$ corresponding to $x$ (\resp $y$).
+
+Set ${\Ga}={v'}^\ast({\Fa}{}_{|U})$; ${\Ga}$ is coherent and $\underline{x}\in\Ass {\Ga}$, hence there exists a monomorphism $\Oo_{\overline{\{x\}}}\to {\Ga}$, and consequently $i'_\ast(\Oo_{\overline{\{x\}}}{}_{|U'})$ is coherent. By the choice of~$y$, $\dim A/\underline x=1$, and consequently the support of $\Oo_{\overline{\{x\}}}$ is reduced to $\overline{\{\underline x\}}= \{\underline x\}\cup \{\underline y\}$, for $\overline{\{\underline x\}}= \Spec(A/\underline x)$ as a scheme. It follows that
+\[(\Oo_{\overline{\{x\}}}{}_{|U'})(U')=\Frac (A/\underline x), \]
+ring of fractions of $A/\underline x$, and
+\[i'_\ast(\Oo_{\overline{\{x\}}}{}_{|U'})(X')=\Frac(A/\underline x).
+\]
+But $\Frac(A/\underline x)$ is not an $A$-module of finite type for $\underline x$ is different from the maximal ideal of $A$. Whence a contradiction.
+
+Suppose $n>1$ and the result acquired for the $n'<n$. By the induction hypothesis, for every $x\in U$ such that $c(x)=1$, one has $x\not\in\Ass{\Fa}_x$. Let such an $x$, and let $y\in\overline{\{x\}}\cap Y$ such that $x$ follows $y$, \ie $\dim\Oo_{\overline{\{x\}}, y}=1$. One performs the change of base $v\colon\Spec (\Oo_{X, y})\to X$, retaining the notations of diagram (\Ref{eq:VIII.2.7}). One finds, applying (\EGA III~1.4.15), isomorphisms:
+\[v^\ast(\R^pi_\ast({\Fa}{}_{|U})) \simeq \R^pi'_\ast({v'}^\ast({\Fa}{}_{|U}))\text{, }p\in\ZZ.
+\]
+\indent\emph{One thus reduces to the case where $X$ is the spectrum of a local ring $A$ in which $\underline{x}$ is a prime ideal of dimension $1$}, \ie $\dim A/x=1$. Let us then set ${\Fa}'=\SheafGamma_Y({\Fa})$ and ${\Fa}''={\Fa}/{\Fa}'$.
+
+\noindent One sees that ${\Fa}_x\simeq {\Fa}''_x$ and that $y\not\in \Ass{\Fa}''$. Moreover ${\Fa}'{}_{|U}=0$ whence, by the exact sequence of the $\R^pi_\ast$, isomorphisms:
+\[
+\R^pi_\ast({\Fa}{}_{|U})\simeq \R^pi_\ast({\Fa}''{}_{|U})\text{, }p\in\ZZ.
+\]
+Since $n>1$, one deduces that neither $x$ nor $y$ belongs to $\Ass {\Fa}''$. Now, $\underline{x}, \underline{y}$ are the only prime ideals of $A$ which contain $\underline{x}$; it follows (\Ref{III}~\Ref{III.2.1}) that there exists an element $g\in \underline{x}$ which is $M$-regular, where one has set ${\Fa}=\widetilde{M}$, $M={\Fa}(X)$. Whence an exact sequence:
+\[0\to M\lto{g'} M\to N \to 0,
+\]
+in which $g'$ denotes the homothety of ratio $g$ in $M$. By the homology exact sequence, one sees that:
+
+$\R^pi_\ast(\widetilde{N}{}_{|U})$ is coherent for $p<n-1$,
+
+\noindent hence, by the induction hypothesis, $\prof(\widetilde{N})_x\geq n-1$, hence $\prof {\Fa}_x\geq n$, \qed
+
+\section{Applications} \label{VIII.3}
+
+One deduces from these results a coherence condition for the higher direct images of a coherent sheaf by a \emph{morphism which is not proper}.
+
+\begin{theorem} \label{VIII.3.1}
+Let $f\colon X\to Y$ be a morphism of preschemes. Suppose that~$Y$ is \emph{locally noetherian} and that $f$ is \emph{proper}. Suppose that $X$ is \emph{locally immersible in a regular prescheme}. Let $n\in\ZZ$. Let $U$ be an open of $X$ and let ${\Fa}$ be a \emph{coherent} $\Oo_U$-Module. Suppose that, for every $x\in U$ such that \hbox{$\codim(\overline{\{x\}}\cap (X-U), \overline{\{x\}})\!=\!1$}, one has $\prof{\Fa}_x\geq n$. \emph{Then} the $\Oo_Y$-Modules \hbox{$\R^p(f\circ g)_\ast(F)$} are coherent for $p<n$, where $g$ is the canonical immersion of $U$ in~$X$.
+\end{theorem}
+
+Indeed, there exists a Leray spectral sequence whose abutment is $\R^\ast(f\circ g)_\ast({\Fa})$ and whose initial term is given by:
+\[
+\E^{p, q}_2=R^pf_\ast(\R^qg_\ast({\Fa})).
+\]
+Moreover, there exists a \emph{coherent} $\OX$-Module ${\Ga}$ such that ${\Ga}{}_{|U}\simeq {\Fa}$, (\EGA I~9.4.3). It then follows from the preceding paragraph that condition (iv) of page~\pageref{condition} is satisfied, \ie that $\R^qg_\ast({\Ga}{}_{|U})$ is coherent for $q<n$. One then applies the finiteness theorem of \EGA III~3.2.1 to $f$ and to the sheaves $\R^qg_\ast({\Fa})$, and one finds that $\E^{p, q}_2$ is coherent for $q<n$, whence the conclusion.
+
+\begin{proposition} \label{VIII.3.2} Let $X$ be a locally noetherian prescheme locally immersible in a regular prescheme. Let $U$ be an open of $X$ and let $i\colon U\to X$ be the canonical immersion. Let $n\in\ZZ$. Let finally ${\Fa}$ be a coherent $\Oo_U$-Module which is \emph{Cohen-Macaulay} (on $U$!). The following conditions are equivalent:
+\begin{enumerate}
+\item[(a)]
+$\R^pi_\ast({\Fa})$ is coherent for $p<n$;
+
+\item[(b)]
+for every irreducible component $S'$ of the closure $\overline S$ of the support $S$ of ${\Fa}$, one has:
+\[
+\codim (S'\cap (X-U), S')>n.
+\]
+\end{enumerate}
+\end{proposition}
+
+Let ${\Ga}$ be a coherent $\OX$-Module such that ${\Ga}{}_{|U}\simeq {\Fa}$ (\EGA I~9.4.3). Applying corollary \Ref{VIII.2.3} to ${\Ga}$, one finds that condition (a) is equivalent to (c):
+\begin{enumerate}
+\item[(c)]
+for every $x\in S$, one has $\prof {\Fa}_x>n-c(x)$, with
+\[c(x)=\codim(\overline{\{x\}}\cap Y, \overline{\{x\}}).
+\]
+\end{enumerate}
+
+(a) \ALORS (b). Indeed, let $S'$ be an irreducible component of $\overline S$ and let $s$ be its generic point. Since ${\Fa}$ is Cohen-Macaulay, one has $\prof {\Fa}_s=\dim \Oo_{S, s}=0$. Moreover, $\overline{\{s\}}=S'$, whence the conclusion.
+
+(b) \ALORS (a). Let $x\in S$ and let $S'$ be an irreducible component of $\overline{S}$ such that $x\in S'$. Let $s$ be the generic point of $S'$. Since ${\Fa}$ is Cohen-Macaulay, one knows that:
+\[
+\prof {\Fa}_x=\dim \Oo_{\overline{\{s\}}, x}.
+\]
+If $c(x)=+\infty$, there is nothing to prove. Otherwise, there exists $y\in Y\cap \overline{\{x\}}$, such that:
+\[c(x)=\dim \Oo_{\overline{\{x\}}, y}.
+\]
+Now $\Oo_{X, y}$ is a quotient of a regular local ring by hypothesis, hence:
+\[
+\dim \Oo_{\overline{\{s\}}, y}=\dim \Oo_{\overline{\{s\}}, x} +\dim \Oo_{\overline{\{x\}}, y}>n.
+\]
+\begin{flushright}Q.E.D.\end{flushright}
+
+\begin{thebibliography}{M}
+\bibitem[M]{M}
+\textsc{H.~Cartan \& S.~Eilenberg} -- \emph{Homological Algebra}, Princeton Math. Series vol.~19, Princeton University Press, 1956.
+\end{thebibliography}

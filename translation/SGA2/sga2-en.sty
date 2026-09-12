@@ -1,0 +1,338 @@
+%% Shared macros for the unofficial English drafts of SGA 2.
+%% Numbering follows the SMF recomposition (theorems share the subsection
+%% counter, as in sga2-smf.sty). Do not load the SMF class.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sga2-en}[2026/09/12 English SGA 2 macros]
+
+\RequirePackage{amsmath,amssymb,amsthm,mathtools}
+\RequirePackage[all,cmtip]{xy}
+\RequirePackage{xspace}
+\RequirePackage{enumitem}
+\RequirePackage{url}
+\RequirePackage{graphicx}
+
+% --- theorem numbering as in the SMF SGA 2 (decimal / subsection) ---
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\theequation}{\arabic{equation}}
+\setcounter{secnumdepth}{4}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{corollaries}[subsection]{Corollaries}
+\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem{problem}[subsection]{Problem}
+\newtheorem{theoremdefinition}[subsection]{Theorem and definition}
+\newtheorem{subproposition}[subsubsection]{Proposition}
+\newtheorem{propositionblah}[subsubsection]{Proposition}
+\newtheorem{serrenormality}[subsection]{Serre's criterion for normality}
+\newtheorem{sublemma}[subsubsection]{Lemma}
+\newtheorem{subsublemma}[paragraph]{Lemma}
+\newtheorem{supproposition}[section]{Proposition}
+\newtheorem{suplemma}[section]{Lemma}
+\newtheorem{suptheorem}[section]{Theorem}
+\newtheorem{supcorollary}[section]{Corollary}
+
+\newtheorem{aconjecture}{Conjecture}[section]
+\renewcommand{\theaconjecture}{\Alph{aconjecture}}
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{remarks}[subsection]{Remarks}
+\newtheorem{example}[subsection]{Example}
+\newtheorem{subremark}[subsubsection]{Remark}
+\newtheorem{supdefinition}{Definition}[chapter]
+\renewcommand{\thesupdefinition}{\arabic{supdefinition}}
+\newtheorem*{remarkstar}{Remark}
+\newtheorem*{remarksstar}{Remarks}
+
+% Unnumbered named statements (SMF \enonce*)
+\newenvironment{enonce*}[2][plain]
+  {\par\addvspace{.5\baselineskip}\noindent\textsc{#2.}\ \itshape\ignorespaces}
+  {\par\addvspace{.5\baselineskip}}
+
+\newenvironment{namedstatement}[1]
+  {\par\addvspace{.5\baselineskip}\noindent\textsc{#1.}\ \itshape\ignorespaces}
+  {\par\addvspace{.5\baselineskip}}
+
+% Aliases for French environment names left in a body by mistake
+\let\theoreme\theorem
+\let\lemme\lemma
+\let\corollaire\corollary
+\let\corollaires\corollaries
+\let\probleme\problem
+\let\theoremedefinition\theoremdefinition
+\let\criteredenormalitedeserre\serrenormality
+\let\sublemme\sublemma
+\let\subsublemme\subsublemma
+\let\suptheoreme\suptheorem
+\let\supcorollaire\supcorollary
+\let\remarque\remark
+\let\remarques\remarks
+\let\exemple\example
+\let\subremarque\subremark
+\let\remarquestar\remarkstar
+\let\endtheoreme\endtheorem
+\let\endlemme\endlemma
+\let\endcorollaire\endcorollary
+\let\endcorollaires\endcorollaries
+\let\endprobleme\endproblem
+\let\endtheoremedefinition\endtheoremdefinition
+\let\endcriteredenormalitedeserre\endserrenormality
+\let\endsublemme\endsublemma
+\let\endsubsublemme\endsubsublemma
+\let\endsuptheoreme\endsuptheorem
+\let\endsupcorollaire\endsupcorollary
+\let\endremarque\endremark
+\let\endremarques\endremarks
+\let\endexemple\endexample
+\let\endsubremarque\endsubremark
+\let\endremarquestar\endremarkstar
+
+\let\skipqed\relax
+\newcommand{\steco}{\setcounter{equation}{\value{yequation}}\refstepcounter{yequation}}
+\newcounter{yequation}[chapter]
+\newcounter{toto}
+\ifcsname c@toto\endcsname\else\newcounter{toto}\fi
+
+% --- references ---
+\makeatletter
+\newcommand{\SourceRef}[2]{\@ifundefined{r@#1}{#2}{\ref{#1}}}
+% hyperref also defines \Ref; re-assert after \begin{document}.
+\renewcommand{\Ref}[1]{\textup{\@ifundefined{r@#1}{\detokenize{#1}}{\ref{#1}}}}
+\AtBeginDocument{%
+  \renewcommand{\Ref}[1]{\textup{\@ifundefined{r@#1}{\detokenize{#1}}{\ref{#1}}}}%
+  \let\H\rH
+}
+\makeatother
+
+% Editor notes (N.D.E.) and original footnotes (stars in the SMF file)
+\newcommand{\nde}[1]{\footnote{\textbf{N.D.E.} #1}}
+\newcommand{\ndetext}[1]{\footnotetext{\textbf{N.D.E.} #1}}
+\newcommand{\ndemark}{\footnotemark}
+\newcommand{\sfootnote}{\footnote}
+\newcommand{\sfootnotemark}{\footnotemark}
+\newcommand{\sfootnotetext}{\footnotetext}
+
+% --- fonts / sheaf letters ---
+\let\cal\mathcal
+\let\goth\mathfrak
+\let\it\mathit
+\let\bf\mathbf
+\let\rm\mathrm
+
+\def\Aa{{\mathcal A}}
+\def\Bb{{\mathcal B}}
+\def\Cc{{\mathcal C}}
+\def\Dd{{\mathcal D}}
+\def\Ee{{\mathcal E}}
+\def\Ff{{\mathcal F}}
+\def\Gg{{\mathcal G}}
+\def\Hh{{\mathcal H}}
+\def\Ii{{\mathcal I}}\newcommand{\SheafI}{\mathcal{I}}
+\newcommand{\Ib}{\Ii'}
+\newcommand{\Jb}{\mathcal{J}}
+\def\Jj{{\mathcal J}}
+\def\Kk{{\mathcal K}}
+\def\Ll{{\mathcal L}}
+\def\Mm{{\mathcal M}}
+\def\Nn{{\mathcal N}}
+\def\Oo{{\mathcal O}}
+\def\Pp{{\mathcal P}}
+\def\Qq{{\mathcal Q}}
+\def\Rr{{\mathcal R}}
+\def\Ss{{\mathcal S}}
+\def\Tt{{\mathcal T}}
+\def\Uu{{\mathcal U}}
+\def\Vv{{\mathcal V}}
+\def\Ww{{\mathcal W}}
+\def\Xx{{\mathcal X}}
+\def\Yy{{\mathcal Y}}
+\def\Zz{{\mathcal Z}}
+
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\PP}{{\mathbf P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\bS}{{\mathbf S}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\aaa}{\ideal a}
+\newcommand{\pp}{\ideal p}
+\newcommand{\qq}{\ideal q}
+\newcommand{\rr}{\ideal r}
+\newcommand{\mm}{\ideal m}
+\newcommand{\m}{\ideal m}
+
+\newcommand{\formelF}{\mathfrak{F}}
+\newcommand{\formelG}{\mathfrak{G}}
+\newcommand{\formelX}{\mathfrak{X}}
+
+\def\rest#1{_{|#1}}
+\def\sheaf#1{\underline{#1}}
+\newcommand{\Ab}{\underline{\mathrm{Ab}}}
+\newcommand{\CJ}{\underline{C}_J}
+\newcommand{\ccat}{\underline{\mathrm{C}}}
+\newcommand{\DDJ}{\underline{D}_J}
+\newcommand{\cF}{\underline{\mathrm{F}}}
+\newcommand{\HH}{\underline{H}}
+\newcommand{\SheafGamma}{\underline{\Gamma}}
+\newcommand{\Sheafphi}{\underline{\varphi}}
+\newcommand{\uH}{\underset{\raisebox{1pt}{$\sim$}}{\mathrm{H}}}
+
+\def\Annp{\mathrm{Ann}.\,}
+\def\dimpt{\mathrm{dim}.\,}
+\def\codimpt{\mathrm{codim}.\,}
+\def\profp{\mathrm{prof}.\,}
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\codimh}{codh}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\colong}{colong}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\degtr}{deg\,tr}
+\DeclareMathOperator{\dimp}{dp}
+\DeclareMathOperator{\E}{E}
+\newcommand{\Et}{\mathbf{Et}}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\SheafExt}{\underline{Ext}}
+\DeclareMathOperator{\Fa}{F}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ga}{G}
+\DeclareMathOperator{\geom}{geom}
+\DeclareMathOperator{\gl}{gl}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\rH}{H}\let\H\rH
+\DeclareMathOperator{\SheafH}{\underline{H}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\SheafHom}{\underline{Hom}}
+\DeclareMathOperator{\hop}{hop}
+\DeclareMathOperator{\h}{\underline{H}}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Imm}{Im}\let\Im\Imm
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Lef}{Lef}
+\DeclareMathOperator{\Leff}{Leff}
+\DeclareMathOperator{\leff}{\ell eff}
+\DeclareMathOperator{\longueur}{long}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\prof}{prof}
+\DeclareMathOperator{\profet}{et.\ prof}
+\DeclareMathOperator{\profgeom}{geom.\ prof}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\SheafProj}{\mathbf{Proj}}
+\DeclareMathOperator{\SheafPic}{\mathbf{Pic}}
+\DeclareMathOperator{\R}{R}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\catSch}{\mathbf{Sch}}
+\DeclareMathOperator{\Supp}{Supp} \let\supp\Supp
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\variete}{V}
+\DeclareMathOperator{\Coker}{Coker}
+
+\newcommand{\boule}{{\raisebox{0.2ex}{$\scriptscriptstyle\bullet$}}}
+\newcommand{\OX}{\mathcal{O}_X}
+\newcommand{\OXx}{\mathcal{O}_{X, x}}
+\newcommand{\omx}{\Omega_{X/k}}
+\newcommand{\afortiori}{\textit{a fortiori}\xspace}
+\newcommand{\Lcal}{L}
+\newcommand{\et}{{\textup{\'et}}}
+\newcommand{\Isom}{\textup{Isom}}
+\def\noo{\hbox{${}^\circ$}}
+\newcommand{\numero}{no.~}
+\newcommand{\No}{no.~}
+\newcommand{\no}{no.~}
+
+\def\to{\mathchoice{\longrightarrow}{\rightarrow}{\rightarrow}{\rightarrow}}
+\def\from{\mathchoice{\longleftarrow}{\leftarrow}{\leftarrow}{\leftarrow}}
+\def\mto{\mathchoice{\longmapsto}{\mapsto}{\mapsto}{\mapsto}}
+\def\mfrom{\mathrel{\from\joinrel\mapstochar\,}}
+\def\hto{\mathrel{\lhook\joinrel\to}}
+\def\To{\mathchoice{\Longrightarrow}{\Rightarrow}{\Rightarrow}{\Rightarrow}}
+\def\From{\mathchoice{\Longleftarrow}{\Leftarrow}{\Leftarrow}{\Leftarrow}}
+\def\lto#1{\mathchoice{\xrightarrow{\scriptstyle~~#1~}}{\stackrel{#1}{\longrightarrow}}{}{}}
+\def\Ssi{\mathchoice{\Longleftrightarrow}{\Leftrightarrow}{\Leftrightarrow}{\Leftrightarrow}}
+\def\mlto#1{\mathrel{\mapstochar\lto{#1}}}
+\def\lfrom#1{\mathchoice{\xleftarrow{\scriptstyle~~#1~}}{\stackrel{#1}{\longleftarrow}}{}{}}
+\newcommand{\isomto}{\overset{\sim}{\longrightarrow}}
+\newcommand{\isomfrom}{\overset{\sim}{\longleftarrow}}
+\newcommand{\SSI}{\ensuremath{\Ssi}\xspace}
+\newcommand{\ALORS}{\ensuremath{\To}\xspace}
+
+\let\leq\leqslant
+\let\geq\geqslant
+\let\le\leqslant
+\let\ge\geqslant
+
+\def\cf{{cf.}\kern.3em}
+\def\Cf{{Cf.}\kern.3em}
+\def\ie{{i.e.}\kern.3em}
+\def\iev{{i.e.},\xspace}
+\def\loccit{\textit{loc.\kern2pt cit.}\xspace}
+\def\EGA{\textup{EGA}\kern.2em}
+\def\SGA{\textup{SGA}\kern.3em}
+\let\oldS\S
+\def\S{\oldS\kern .15em}
+\def\ptbl{.\kern .2em }
+\def\resp{resp.\xspace}
+\def\Exp{Exp.\kern.3em}
+\def\quoi{}
+\let\bar\overline
+\let\hat\widehat
+\let\tilde\widetilde
+\let\dpl\displaystyle
+\newcommand{\bbmu}{\boldsymbol{\mu}}
+\newcommand{\bbf}{\boldsymbol{f}}
+\newcommand{\bbg}{\boldsymbol{g}}
+\newcommand{\bbh}{\boldsymbol{h}}
+\def\llbracket{[\![}
+\def\rrbracket{]\!]}
+\def\tbigoplus{\mathop{\textstyle\bigoplus}\limits}
+\def\tbigotimes{\mathop{\textstyle\bigotimes}\limits}
+\def\tbigcap{\mathop{\textstyle\bigcap}\limits}
+\def\tbigwedge{\mathop{\textstyle\bigwedge}\limits}
+
+\newenvironment{enumeratei}
+  {\begin{enumerate}[label=\textup{(\roman*)}]}
+  {\end{enumerate}}
+\newenvironment{enumeratea}
+  {\begin{enumerate}[label=\textup{\alph*)}]}
+  {\end{enumerate}}
+
+\newcommand{\og}{``}
+\newcommand{\fg}{''}
+\newcommand{\danger}{}
+\newcommand{\red}{\mathrm{red}}
+\def\pr{\mathrm{pr}}
+\let\cqfd\qed
+\let\CQFD\qed
+\newcommand{\skpt}{}
+\let\varinjLim\varinjlim
+\let\varprojLim\varprojlim
+\providecommand{\dimA}{\dim A}
+\newcommand{\simeqk}{\simeq}
+\newcommand{\ptblArtin}{.\kern.2em }
+\newcommand{\ptblHakim}{.\kern.2em }
+\providecommand{\UseTips}{}
+\providecommand{\complement}{\mathsf{c}}
+
+\endinput

@@ -1,0 +1,283 @@
+\section{Dualizing module. Dualizing functor} \label{IV.4}
+
+\begin{definition} \label{IV.4.1}
+Let $A$ be a noetherian local ring and $\m$ its maximal ideal. One calls dualizing functor for $A$ any functor
+$$
+T:\ccat^{\circ}_\mm\to \Ab,
+$$
+where one writes $\ccat_{\mm}$ instead of $\ccat_{Y}$ for $Y=V(\mm)$, which satisfies the equivalent conditions of proposition \Ref{IV.3.1}. One says that an $A$-module $I$ is dualizing for $A$ if the functor $M\to \Hom_{A}(M, I)$ is dualizing.
+\end{definition}
+
+One can generalize definition \Ref{IV.4.1} to the case where one no longer assumes that $A$ is a local ring.
+
+\begin{definition} \label{IV.4.2}
+Let $A$ be a noetherian ring and let $\bar{\ccat}$ be the full subcategory of~$\ccat$ formed of the $A$-modules of finite length; one calls dualizing functor any functor~$T$, $A$-linear, from $\bar{\ccat}^{\circ}$ to $\bar{\ccat}$, which is exact and such that the morphism of functors
+$$
+\id \to T\circ T
+$$
+is an isomorphism.
+\end{definition}
+
+One will prove an existence theorem and also that the module $I$ which represents such a functor is locally artinian. One will also show that, for every maximal ideal $\mm$ of $A$, the $\mm$-primary component of the socle of $I$ is of length~$1$.
+
+\begin{proposition} \label{IV.4.3}
+Let $A$ and $B$ be two noetherian local rings with maximal ideals $\mm_{A}$ and $\mm_{B}$, such that $B$ is a finite $A$-algebra. Then, if $I$ is a dualizing module for~$A$, $\Hom_{A}(B, I)$ is a dualizing module for $B$.
+\end{proposition}
+
+\begin{proof}
+Let
+$$
+R: \ccat_{\mm_{B}}\to \ccat_{\mm_{A}}
+$$
+be the restriction of scalars functor; it is exact. Let $T$ be a dualizing functor for $A$,
+$$
+T: \ccat_{\mm_{A}}\to \Ab;
+$$
+it is exact and, for every $M\in \Ob \ccat_{\mm_{A}}$, the natural morphism $M\to T\circ T(M)$ is an isomorphism; hence $T\circ R$ is a dualizing functor for $B$. If $I$ represents $T$, from the classical formula $\Hom_{A}(M, I)=\Hom_{B}(M, \Hom_{A}(B, I))$, valid for every $B$-module $M$, one deduces that $\Hom_{A}(B, I)$ is a dualizing module for $B$.
+\skipqed
+\end{proof}
+
+\begin{corollary} \label{IV.4.4} Let $A$ be a noetherian local ring and $\aaa$ an ideal of $A$; let $B=A/\aaa$. If $I$ is a dualizing module for $A$, the annihilator of $\aaa$ in $I$ is a dualizing module for $B$.
+\end{corollary}
+
+\begin{lemma} \label{IV.4.5} Let $A$ be a noetherian local ring and $I$ a locally artinian $A$-module. There exists a canonical isomorphism
+$$
+I\to \hat{I}=I\otimes_{A}\hat{A}.
+$$
+\end{lemma}
+
+\begin{proof}
+Let $I_{n}$ be the annihilator of $\mm^n$ in $I$, where $\mm$ is the maximal ideal of $A$. To say that $I$ is locally artinian is to say that $I$ is the inductive limit of the $I_{n}$ and that the latter are of finite length. Now the tensor product commutes with inductive limits, so one is reduced to the case where $I$ is artinian. In this case $I$ is annihilated by a power of the maximal ideal, say $\mm^{k}$; hence for $p\geq k$, $I\isomto I\otimes_{A}A/\mm^{p}$, hence $I\isomto I\otimes_{A}\hat{A}$ because $A$ is noetherian and $I$ is of finite type.
+
+One concludes that the restriction of scalars functor from $\hat{A}$ to $A$ and the extension of scalars functor induce \emph{equivalences} quasi-inverse to one another of the category of $\hat{A}$-\emph{locally artinian modules} and of the category of $A$-\emph{locally artinian modules}.
+\skipqed
+\end{proof}
+
+\begin{proposition} \label{IV.4.6}
+Let $A$ be a noetherian local ring, $\hat{A}$ its completion, $I$ a dualizing module for $A$ (\resp for $\hat{A}$) and $J$ the completion\,\nde{one must understand here the tensor product $\hat{I}=I\otimes_A\hat{A}$ (\cf lemma \Ref{IV.4.5}), namely $I$ equipped with its canonical $\hat{A}$-module structure, and not the $\m$-adic completion. For example, if $p$ is a prime number and $A\!=\!\hat{A}\!=\!\ZZ_p$ is the ring of $p$-adic integers. Then, the injective envelope of the residue field $k\!=\!\ZZ/p\ZZ$ is the discrete $\ZZ_p$-module $\QQ_p/\ZZ_p$, whose completion for the $p$-adic topology is~zero.} of $I$ (\resp the $A$-module obtained by restriction of scalars). Then $J$ is a dualizing module for $\hat{A}$ (\resp for $A$). Moreover the abelian groups underlying $I$ and $J$ are isomorphic.
+\end{proposition}
+
+\begin{proof}
+One simply remarks that the equivalence between the category of locally artinian $A$-modules and the category of locally artinian $\hat{A}$-modules induces an isomorphism between the bifunctors $\Hom_{A}(\;, \;)$ and $\Hom_{\hat{A}}(\;, \;)$, and that the characterization of a dualizing functor or module involves only these bifunctors.
+\skipqed
+\end{proof}
+
+\begin{theorem} \label{IV.4.7}
+Let $A$ be a noetherian local ring.
+\begin{enumeratea}
+\item
+There always exists a dualizing module $I$.
+
+\item
+Two dualizing modules are isomorphic (by a non-canonical isomorphism).
+
+\item
+For a module $I$ to be dualizing, it is necessary and sufficient that it be an injective envelope of the residue field $k$ of $A$.
+\end{enumeratea}
+\end{theorem}
+
+\begin{remark} \label{IV.4.8}
+Proposition \Ref{IV.4.6} allows one to reduce to the case of a complete noetherian local ring. By a structure theorem of Cohen\nde{see Cohen~I.S., ``On the structure and ideal theory of complete local rings'', \emph{Trans. Amer. Math. Soc.} \textbf{59} (1946), p\ptbl 54--106.}, such a ring is a quotient of a regular ring. Proposition \Ref{IV.4.3} then allows one to assume $A$ regular. As we shall see further on, this remark allows an explicit computation of the dualizing module\sfootnote{This was the method followed by Grothendieck (in 1957). The method via injective envelopes which follows is due, it seems, to K\ptbl Morita, ``Duality for modules and its applications to the theory of rings with minimum conditions'', \emph{Sc. Rep. Tokyo Kyoiku Daigaku} \textbf{6} (1958/59), p\ptbl 83-142. Morita's work is moreover independent of that of Grothendieck and well prior to the present seminar, and is not limited to the case of commutative base rings.}; we shall nevertheless prove theorem \Ref{IV.4.7} by other means.
+\end{remark}
+
+\subsection*{Recollections}
+Before proving the theorem, we make a few recollections on the notion of \emph{injective envelope}. \Cf Gabriel, Thesis, Paris 1961, \emph{Des Cat\'egories Ab\'eliennes}, ch\ptbl II \S 5.
+
+Let $\Cc$ be an abelian category in which the $\varinjlim$ exist and are exact\nde{of course, it is the small filtered inductive limits that are assumed to be exact; one should also assume the existence of a generator. \Cf \cite{Tohoku}. As for the category of modules, which is sufficient for our purposes, one may also refer to Chapter~10 of Bourbaki's \textit{Algebra}.} (e.g.\ $\Cc=$category of modules). Every object $M$ embeds in an injective object and one calls injective envelope of $M$ any injective object containing $M$, minimal. One has the following properties:
+\begin{enumeratei}
+\item
+Every object $M$ has an injective envelope $I$.
+\item
+If $I$ and $J$ are two injective envelopes of $M$, there exists between $I$ and $J$ an isomorphism (in general not unique) which induces the identity on $M$.
+\item
+$I$ is an essential extension\refstepcounter{toto}\label{pIV.13} of $M$, that is to say that $P\subset I$ and $P\cap M=\{ 0\}$ implies ($P=\{ 0\}$). Moreover if $I$ is injective and an essential extension of $M$, $I$ is an injective envelope of $M$.
+\end{enumeratei}
+
+These results being granted, to prove theorem \Ref{IV.4.7}, it evidently suffices to prove c).
+
+\begin{proof}
+Let $I$ be a dualizing module for $A$. Then $I$ is injective and $\Hom_{A}(k, I)$ is isomorphic to $k$. Composing the isomorphism $k\simeq \Hom_{A}(k, I)$ with the inclusion
+$$
+\Hom_{A}(k, I)\hto \Hom_{A}(A, I)\simeq I,
+$$
+one obtains the inclusion
+$$
+k\hto I.
+$$
+Let us show that $I$ is an injective envelope of $k$. Let $J$ be an injective module such that
+$$
+k\subset J\subset I.
+$$
+As $J$ is injective, there exists an injective $A$-submodule $J'$ of $I$ such that $I=J\oplus J'$. Let us show that $\Hom_{A}(k, J')=0$. One has
+$$
+\Hom_{A}(k, I)\simeq \Hom_{A}(k, J)\oplus \Hom_{A}(k, J');
+$$
+$\Hom_{A}(k, J)$ is a vector subspace of $\Hom_{A}(k, I)\simeq k$ not reduced to zero (since it contains the inclusion $k\subset J$), hence $\Hom_{A}(k, J)\simeq k$ and consequently $\Hom_{A}(k, J')=0$.
+
+Arguing by induction on the length one deduces that $\Hom_{A}(M, J')=0$ for every $A$-module $M$ of finite length; as $I$ is the inductive limit of the modules $\Hom(A/\m^n, I)$ (\cf proposition~\Ref{IV.1.3}) which are of finite length by hypothesis, the projection $I\to J'$ is zero, and consequently $J'=0$.
+
+Conversely, let $I$ be an injective envelope of $k$. To see that $I$ is a dualizing module, it suffices to show by~\Ref{IV.2.1} and \Ref{IV.3.1} (ii) that $V=\Hom_{A}(k, I)$ is isomorphic to $k$. Now one has the double inclusion
+$$
+k\subset V\subset I;
+$$
+$V$ is a vector space over $k$ which decomposes as the direct sum of $k$ and of a vector subspace $V'$ of $I$ such that $V'\cap k=0$. Now $I$ is an essential extension of~$k$, whence $V'=0$ and $V=k$.
+\skipqed
+\end{proof}
+
+\begin{corollary} \label{IV.4.9}
+Let $A$ be a noetherian local ring; every dualizing module for $A$ is locally artinian.
+\end{corollary}
+
+\begin{proof}
+Let $I$ be a dualizing module; it is an injective envelope of $k$. Let us use the notations and the result of corollary 2.2. One has
+$$
+k\subset H^{0}_{\mm}(I)\subset I,
+$$
+and $H^{0}_{\mm}(I)$ is injective. One deduces that $I=H^{0}_{\mm}(I)$ and hence that $I$ is locally artinian.\nde{as one has already seen, one can also simply observe that $I$ is the inductive limit of the modules $\Hom_A(A/\m^n, I)$.}
+\skipqed
+\end{proof}
+
+\section{Consequences of the theory of dualizing modules} \label{IV.5}
+
+The functor
+$$
+T=\Hom_{A}(\;, I)\colon \ccat_{\mm}\to \ccat_{\mm}
+$$
+is an anti-equivalence. Indeed $T\circ T$ is isomorphic to the identity functor and the argument is formal from there.
+
+\emph{One deduces from this the usual properties of the notion of orthogonality:}
+
+Let $M^{*}=\Hom_{A}(M, I)=T(M)$ and let $N\subset M$ be a submodule. One calls \emph{orthogonal of} $N$ the submodule $N'$ of $M^{*}$ formed of the elements of $M^*$ vanishing on $N$. One thus obtains a bijection between the set of submodules of $M$ and the set of submodules of $M^{*}$, which reverses the notion of order.
+
+One has in particular:
+\begin{itemize}
+\item
+$\longueur_{M}N=\colong_{M^{*}}N'$.
+\item
+To monogenic modules, \ie such that $M/\mm M$ is of dimension 0 or 1, there correspond in the duality modules whose socle is of length 0 or 1.
+\item
+If $A$ is artinian, the ideals of $A$ correspond to the submodules of $I$.
+\par\hfill etc.
+\end{itemize}
+
+\smallskip
+Let $A$ be a noetherian local ring, $DA$ the category of $A$-modules $M$ such that, for every $n\in {\bf N}$, $M^{(n)}=M/\mm^{n+1}M$ is of finite length and such that $M=\varprojlim_{n}M^{(n)}$, and let $\hat{A}$ be the completion of $A$. The restriction of scalars functor and the completion functor are \emph{equivalences} quasi-inverse to one another between $DA$ and $D\hat{A}$, which commute up to isomorphism with the formation of the abelian groups underlying the modules under consideration. Let us denote by $CA$ the category of locally artinian $A$-modules with socle of finite dimension.
+
+\begin{proposition} \label{IV.5.1}
+Let $A$ be a noetherian local ring and let $I$ be a dualizing module for $A$. The functors
+$$
+\Hom_{A}(\;, I)\colon (CA)^{\circ}\to DA
+$$
+and
+$$
+\Hom_{\hat{A}}(\;, I)\colon DA\to (CA)^{\circ}
+$$
+are equivalences of categories, quasi-inverse to one another.
+
+Moreover, if one transports these functors by the equivalences of categories between $DA$ and $D\hat{A}$ on the one hand, and $CA$ and $C\hat{A}$ on the other hand, one finds the functor $\Hom_{\hat{A}}(\;, I)$.
+\end{proposition}
+
+\begin{proof}
+Let $X\in \Ob CA$. By definition, one has:
+$$
+X=\varinjlim_{k\in {\bf N}}X_{k}, \quad X_{k}=\Hom_{A}(A/\mm^{k+1}, X),
+$$
+hence
+$$
+\Hom_{A}(X, I)=\varprojlim \Hom_{A}(X_{k}, I).
+$$
+Hence $Y=\varprojlim X_{k}$ is an $\hat{A}$-module of finite type as follows from $\EGA 0_{\textup{I}}$ 7.2.9. One remarks in this connection that $D\hat{A}$ is also the category of $\hat{A}$-modules of finite type or, if one prefers, that $DA$ is the category of complete $A$-modules of finite type over~$\hat{A}$. Let then $Y$ be such a module, let $f:Y\to I$ be an $\hat{A}$-homomorphism. The image of $f$ is a submodule of finite type, hence is annihilated by $\mm^{k}$ for some $k$; indeed every $x\in I$ is annihilated by a power of $\mm$. Hence $f$ factors through $Y/\mm^{k}Y$, whence it follows that
+\begin{align*}
+\Hom_{\hat{A}}(Y, I)&=\varinjlim_k\Hom_{\hat{A}}(Y^{(k)}, I)\quad\text{with } Y^{(k)}=Y/\m^{k+1}Y\\
+&=\varinjlim_k(Y^{(k)})^*
+\end{align*}
+belongs to $\Ob CA$. Whence it follows immediately that the two functors of the statement are quasi-inverse to one another.
+\skipqed
+\end{proof}
+
+It follows from the preceding considerations that one changes nothing
+in the categories or the functors under consideration, nor in the
+abelian groups underlying the modules under consideration, by replacing
+$A$ by $\hat{A}$; proposition \Ref{IV.5.1} may then be stated as follows:
+
+The restriction of the functor $\Hom_{\hat{A}}(\;, I)$ to the category of $\hat{A}$-modules of finite type takes its values in the category of locally artinian $\hat{A}$-modules with socle of finite dimension, and admits a quasi-inverse functor, which is the restriction of the functor $\Hom_{\hat{A}}(\;, I)$. On the intersection of these two categories, these two functors coincide (obviously!) and establish an auto-duality of the category of $\hat{A}$-modules of finite length.
+
+\begin{example}[Macaulay]
+\label{IV.5.2} Let $A$ be a local ring with residue field $k$. Let $k_{0}$ be a subfield of $A$ such that $k$ is finite over $k_{0}$, $[k:k_{0}]=d$. Every $A$-module of finite length can be regarded as a $k_{0}$-vector space of finite dimension equal to $d\cdot\longueur(M)$. The functor $T$:
+$$
+M\to \Hom_{k_{0}}(M, k_{0})
+$$
+is then exact and preserves length, hence is dualizing for $A$. The associated dualizing module is therefore:
+$$
+A'=\varinjlim_{n}\Hom_{k_{0}}(A/\mm^{n}, k_{0}),
+$$
+it is the topological dual of $A$ equipped with the $\mm$-adic topology.
+\end{example}
+
+\begin{example} \label{IV.5.3}
+Let $A$ be a noetherian local ring \emph{regular of dimension} $n$. Let $\mm$ be its maximal ideal, let $k$ be its residue field. There exists a regular system of parameters, $(x_{1}, x_{2}, \ldots, x_{n})$, which generates $\mm$, and which is an \emph{$A$-regular sequence}. One can therefore compute the $\Ext^{i}_{A}(k, A)$ by the Koszul complex; one finds:
+\begin{align*}
+\Ext^{i}_{A}(k, A)&=0\quad \text{if } i\neq n,\\
+\Ext^{n}_{A}(k, A)&\simeq k.
+\end{align*}
+
+The depth of $A$ being $n$, for every $M$ annihilated by a power of $\mm$, $\Ext^{i}_{A}(M, A)=0$ if $i<n$; moreover $\Ext^{i}_{A}(M, A)=0$ if $i>n$ because the global cohomological dimension of $A$ is equal to $n$. Hence $\Ext^{n}_{A}(\;, A)$ is exact and moreover $\Ext^{n}_{A}(k, A)\simeq k$; it follows that:
+\end{example}
+
+\begin{proposition} \label{IV.5.4}
+If $A$ is a regular noetherian local ring of dimension $n$, the functor
+$$
+M\to \Ext_{A}^{n}(M, A)
+$$
+is dualizing. The associated dualizing module is
+$$
+I=\varinjlim_{r}\Ext_{A}^{n}(A/\mm^{r}, A),
+$$
+it is isomorphic to $H^{n}_{\mm}(A)$ (Expos\'e \Ref{II}, Th\ptbl \Ref{II.6})\sfootnote{Let $A$ be a ring, $J$ an ideal of $A$, $M$ an $A$-module, $i\in \ZZ$; one then sets $H^{i}_{J}(M)=H^{i}_{Y}(X, F)$, where $X={\Spec}(A)$, $Y=V(J)$ and $F=\tilde{M}$.}.
+\end{proposition}
+
+\begin{remark} \label{IV.5.5}
+If $A$ satisfies both the hypotheses of the two preceding examples, the two dualizing modules found are isomorphic. Suppose for example that $A$ is regular of dimension $n$, complete and of equal characteristics. There then exists a field of representatives, say $K$. If one chooses a system of parameters $(x_{1}, \ldots, x_{n})$ of $A$, one can construct an isomorphism between $A$ and the ring of formal power series: $K[[T_{1}, \ldots, T_{n}]]$; whence, as we shall see, an \emph{explicit} isomorphism between the two dualizing modules
+$$
+v\colon {H^n_\m}(A)\to A'.
+$$
+One can find an \emph{intrinsic} interpretation of this isomorphism with the help of the module $\Omega^n=\Omega^{n}(A/K)$ of completed relative differentials of maximal degree. Indeed, one knows that $\Omega^n$ admits a basis formed of the element $dx_{1}\wedge dx_{2}\cdots \wedge dx_{n}$.
+
+Whence an isomorphism
+$$
+u\colon {H^n_\m}(\Omega^n)\to {H^n_\m}(A).
+$$
+A remarkable fact is then that the composite
+$$
+vu=w\colon {H^n_\m}(\Omega^{n})\to A'
+$$
+\emph{no longer depends on the choice of the system of parameters} and commutes with change of the base field.
+
+To construct $v$ one computes ${H^n_\m}(A)$ by means of the Koszul complex associated to the $x_{i}$, one finds:
+$$
+{H^n_\m}(A)=\varinjlim_{r}A/(x_{1}^{r}, \ldots, x_{n}^{r});
+$$
+where the transition morphisms are defined as follows: set $I_{r}=A/(x_{1}^{r}, \ldots, x_{n}^{r})$; let $e_{a_{1}, \ldots, a_{n}}^{r}$ be the image of $x_{1}^{a_{1}}x_{2}^{a_{2}}\cdots x_{n}^{a_{n}}$ in $I_{r}$. The $e_{a_{1}, \ldots, a_{n}}^{r}$, for $0\leq a_{i}<r$ form a basis of $I_{r}$.
+
+This being said, if $s$ is an integer, the transition morphism
+$$
+t_{r, r+s}\colon I_{r}\to I_{r+s}
+$$
+is multiplication by $x_{1}^{s}x_{2}^{s}\cdots x_{n}^{s}$, hence:
+$$
+u_{r, r+s}(e_{a_{1}, \ldots, a_{n}}^{r})=e_{a_{1}+s, \ldots, a_{n}+s}^{r+s}.
+$$
+
+Note that the datum of an $A$-homomorphism $w$ of an $A$-module $M$ into $A'$ is equivalent to the datum of a $K$-linear form $w':M\to K$ which is \emph{continuous} on the submodules of finite type. In the case $M={H^n_\m}(\Omega^{n})$, the definition of $w$ is therefore equivalent to that of a linear form
+$$
+\rho \colon {H^n_\m}(\Omega^{n})\to K,
+$$
+called \emph{residue form}\refstepcounter{toto}\label{pagecithar}\sfootnote{\label{cithar}For a more detailed study of the notion of residue, \Cf R\ptbl Hartshorne, \emph{Residues and Duality}, Lect. Notes in Math., vol.~20, Springer, 1966.}. To construct $\rho$, it suffices to define forms $\rho_{r}:I_{r}\to K$ which glue together, and one will take
+$$
+\rho_{r}(e_{a_{1}, \ldots, a_{n}}^{r})=
+\begin{cases}
+1&\text{if}\ a_{i}=r-1\ \text{for}\ 1\leq i\leq n\\
+0& \text{otherwise.}
+\end{cases}
+$$
+\end{remark}

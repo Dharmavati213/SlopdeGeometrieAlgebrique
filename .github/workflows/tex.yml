@@ -37,3 +37,51 @@ jobs:
         with:
           name: SGA1-Expose-${{ matrix.expose }}-EN
           path: translation/SGA1/Expose${{ matrix.expose }}/SGA1-${{ matrix.expose }}.pdf
+
+  sga2:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - dir: Introduction
+            file: SGA2-Intro
+          - dir: ExposeI
+            file: SGA2-I
+          - dir: ExposeII
+            file: SGA2-II
+          - dir: ExposeIII
+            file: SGA2-III
+          - dir: ExposeIV
+            file: SGA2-IV
+          - dir: ExposeV
+            file: SGA2-V
+          - dir: ExposeVI
+            file: SGA2-VI
+          - dir: ExposeVII
+            file: SGA2-VII
+          - dir: ExposeVIII
+            file: SGA2-VIII
+          - dir: ExposeIX
+            file: SGA2-IX
+          - dir: ExposeX
+            file: SGA2-X
+          - dir: ExposeXI
+            file: SGA2-XI
+          - dir: ExposeXII
+            file: SGA2-XII
+          - dir: ExposeXIII
+            file: SGA2-XIII
+          - dir: ExposeXIV
+            file: SGA2-XIV
+    steps:
+      - uses: actions/checkout@v5
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ${{ matrix.file }}.tex
+          working_directory: translation/SGA2/${{ matrix.dir }}
+          latexmk_use_lualatex: false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.file }}-EN
+          path: translation/SGA2/${{ matrix.dir }}/${{ matrix.file }}.pdf

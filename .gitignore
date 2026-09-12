@@ -43,3 +43,6 @@ _minted*/
 # Local secrets
 .env
 .env.*
+
+# Local French SGA originals (not redistributed; see COPYRIGHT.md)
+/source/
