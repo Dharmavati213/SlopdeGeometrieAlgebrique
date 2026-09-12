@@ -8,7 +8,8 @@ lake exe cache get    # first time: download mathlib oleans
 lake build
 ```
 
-Root module: `SGA.SGA1.ExposeVI`. Lemmas live next to that file
-(`SGA/SGA1/ExposeVI/…`) and are imported from the barrel module.
+Root modules: `SGA.SGA1.ExposeI` and `SGA.SGA1.ExposeVI`. Lemmas live next
+to those files (`SGA/SGA1/ExposeI/…`, `SGA/SGA1/ExposeVI/…`) and are
+imported from the barrel modules.
 
 See [`../docs/formalization.md`](../docs/formalization.md).

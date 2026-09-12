@@ -30,7 +30,7 @@ Exposé VII does not exist.
 
 | Exposé | Title | Translation | Lean |
 | --- | --- | --- | --- |
-| I | Étale morphisms | full draft in tree | — |
+| I | Étale morphisms | full draft in tree | compiling |
 | II | Smooth morphisms: generalities, differential properties | — | — |
 | III | Smooth morphisms: extension properties | — | — |
 | IV | Flat morphisms | — | — |
@@ -74,6 +74,7 @@ copy it. Details: [`formalization.md`](formalization.md).
 Scaffold:
 
 - [x] Lake project + mathlib pin (`lean/lean-toolchain`, `lean/lakefile.toml`)
+- [x] Root module `SGA.SGA1.ExposeI` imports mathlib étale / unramified / quasi-finite
 - [x] Root module `SGA.SGA1.ExposeVI` imports mathlib fibered categories / descent
 - [x] `lake build` stays green as files are added
 
@@ -96,6 +97,24 @@ By section (English: `translation/SGA1/ExposeVI/`, Lean: `lean/SGA/SGA1/`):
 - [x] **VI.10** Cofibered categories, bifibered categories (`Cofibered.lean`)
 - [x] **VI.11** Various examples (discrete base in `BaseExamples.lean`; finite checks in `Examples.lean`)
 - [x] **VI.12** Functors on a cloven category (`ClovenFunctors.lean`: fiber functors and constraints)
+
+Gaps still open inside those files are listed in [`formalization.md`](formalization.md).
+
+### SGA 1 I — Étale morphisms
+
+English: `translation/SGA1/ExposeI/`. Lean: `lean/SGA/SGA1/ExposeI.lean`.
+
+- [x] **I.1** Differential calculus (`Differentials.lean`: `Ω[S⁄R]`, principal parts)
+- [x] **I.2** Quasi-finite morphisms (`QuasiFinite.lean`: isolated in the fibre; artinian case)
+- [x] **I.3** Unramified / net morphisms (`Unramified.lean`: TFAE, graph, stability)
+- [x] **I.4** Étale morphisms and coverings (`Etale.lean`: flat + unramified; stability)
+- [x] **I.5** Fundamental property (`Fundamental.lean`: étale + radicial = open immersion)
+- [x] **I.6** Complete local rings (`CompleteLocal.lean`: artinian case of I.6.2)
+- [x] **I.7** Standard étale presentations (`StandardEtale.lean`)
+- [x] **I.8** Infinitesimal lifting (`Infinitesimal.lean`: uniqueness half of I.8.3)
+- [x] **I.9** Permanence (`Permanence.lean`: reducedness over a field; integral closure)
+- [x] **I.10** Coverings of a normal scheme (`NormalCoverings.lean`: ZMT input, finite fibres)
+- [x] **I.11** Geometrically unibranch (`Unibranch.lean`: definition)
 
 Gaps still open inside those files are listed in [`formalization.md`](formalization.md).
 
