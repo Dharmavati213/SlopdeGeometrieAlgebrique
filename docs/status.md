@@ -103,20 +103,34 @@ Gaps still open inside those files are listed in [`formalization.md`](formalizat
 ### SGA 1 I — Étale morphisms
 
 English: `translation/SGA1/ExposeI/`. Lean: `lean/SGA/SGA1/ExposeI.lean`.
+Section files compile and have no `sorry`. That is **not** a complete
+formalization of every numbered statement; remaining items are unchecked
+below and in [`formalization.md`](formalization.md).
 
 - [x] **I.1** Differential calculus (`Differentials.lean`: `Ω[S⁄R]`, principal parts)
-- [x] **I.2** Quasi-finite morphisms (`QuasiFinite.lean`: isolated in the fibre; artinian case)
+- [x] **I.2** Quasi-finite morphisms (`QuasiFinite.lean`: isolated in the fibre; artinian I.2.2)
+  - [ ] I.2.1(iii): quasi-finite via finiteness of completions
 - [x] **I.3** Unramified / net morphisms (`Unramified.lean`: TFAE, graph, stability)
+  - [ ] I.3.7: unramified iff the map of completions is a quotient
 - [x] **I.4** Étale morphisms and coverings (`Etale.lean`: flat + unramified; stability)
-- [x] **I.5** Fundamental property (`Fundamental.lean`: étale + radicial = open immersion)
-- [x] **I.6** Complete local rings (`CompleteLocal.lean`: artinian case of I.6.2)
-- [x] **I.7** Standard étale presentations (`StandardEtale.lean`)
+  - [ ] I.4.2–I.4.4: étale detected on completions
+  - [ ] I.4.10: discriminant / trace pairing
+- [x] **I.5** Fundamental property (`Fundamental.lean`: I.5.1 étale + radicial = open immersion)
+  - [ ] I.5.3–I.5.4 in full (iso onto a connected component; morphisms agreeing at a point)
+  - [ ] I.5.5 existence of the lifted morphism (uniqueness is proved)
+  - [ ] I.5.7–I.5.9 fibrewise criteria
+- [x] **I.6** Complete local rings (`CompleteLocal.lean`: artinian I.6.2)
+  - [ ] I.6.1 over a complete local ring
+- [x] **I.7** Standard étale presentations (`StandardEtale.lean`: I.7.4, I.7.6–I.7.8)
+  - [ ] I.7.1–I.7.3, I.7.5, I.7.9–I.7.10
 - [x] **I.8** Infinitesimal lifting (`Infinitesimal.lean`: uniqueness half of I.8.3)
+  - [ ] I.8.1–I.8.2 local existence; I.8.3 essential surjectivity; I.8.4 formal schemes
 - [x] **I.9** Permanence (`Permanence.lean`: reducedness over a field; integral closure)
+  - [ ] I.9.1 regularity; I.9.2–I.9.4 reduced in general; I.9.5 normality; I.9.10–I.9.12
 - [x] **I.10** Coverings of a normal scheme (`NormalCoverings.lean`: ZMT input, finite fibres)
+  - [ ] I.10.1–I.10.3, I.10.7–I.10.12 counting geometric fibre points
 - [x] **I.11** Geometrically unibranch (`Unibranch.lean`: definition)
-
-Gaps still open inside those files are listed in [`formalization.md`](formalization.md).
+  - [ ] I.11 examples; étale descent along a universal homeomorphism (IX.4.10)
 
 Other exposés of SGA 1: start only after the corresponding English text
 is ticked above.
