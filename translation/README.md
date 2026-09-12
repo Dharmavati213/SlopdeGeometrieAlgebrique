@@ -27,8 +27,7 @@ make -C SGA1/ExposeIII clean
 
 Source: SMF recomposition, [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
 Checklist: [`docs/status.md`](../docs/status.md) and GitHub issue #9.
-Shared macros: [`SGA2/sga2-en.sty`](SGA2/sga2-en.sty). Label coverage:
-`python3 translation/SGA2/check_coverage.py`.
+Shared macros: [`SGA2/sga2-en.sty`](SGA2/sga2-en.sty).
 
 | Exposé | Directory | Coverage | Build |
 | --- | --- | --- | --- |

@@ -19,6 +19,3 @@ in the translation, in accordance with the convention against silently
 repairing the source. Typical retained slips include mismatched
 indices, truncated formulae, and grammar in the SMF file.
 Scholarly proofreading remains outstanding.
-
-Validation: `make tex` builds this exposé; non-index source labels are
-checked by `python3 translation/SGA2/check_coverage.py`.
