@@ -1,0 +1,231 @@
+\section{Application to the structure of the $\H^i(M)$} \label{V.3}
+
+\setcounter{equation}{14}
+
+\begin{theorem} \label{V.3.1} Let~$A$ be a noetherian local ring, $D$ a dualizing functor for~$A$, $M$ an $A$-module of finite type $\neq 0$, and of dimension~$n$, then one has:
+\begin{enumeratei}
+\item
+$\H^{i}(M)=0$ if~$i<0$ or if~$i>n$.
+\item
+$\widehat{D(\H^{i}(M))}$ is a module of finite type over~$\widehat{A}$, of dimension~$\leq i$.
+\item
+$\H^{n}(M)\neq 0$, and if~$A$ is complete, $D(\H^{n}(M))$ is of dimension~$n$ and $\Ass(D(\H^{n}(M)))=\{ \pp\in\Ass(M) \mid \dim A/\pp=n\}$.
+\end{enumeratei}
+\end{theorem}
+
+\begin{proof}
+Let~$I$ be the dualizing module associated to~$D$. One knows that~$\widehat{I}$ is a dualizing module for~$\widehat{A}$. On the other hand, one has:
+\begin{enumerate}
+\item[] $\widehat{H^i(M)}=\H^{i}(\widehat{M})$,
+\item[] $\widehat{D(\H^{i}(M))}=\Hom(\H^{i}(\widehat{M}), \widehat{I})$ and
+\item[] $\dim\widehat{M}=\dim M$,
+\end{enumerate}
+\noindent
+hence one may assume~$A$ complete. Now, by a theorem of Cohen, every complete local ring is a quotient of a regular local ring. To reduce to this case, one needs the following lemma:
+
+\begin{lemma} \label{V.3.2}
+Let~$X$ (\resp $Y$) be a ringed space, $X^{\prime}$ (\resp $Y^{\prime}$) a closed subspace of~$X$ (\resp $Y$), and $f\colon X\to Y$ a morphism of ringed spaces such that $f^{-1}(Y^{\prime})=X^{\prime}$. Let~$F$ be an~$\OX$-Module and denote by~$A$ (\resp $B$) the ring~$\Gamma(\OX)$ (\resp $\Gamma(\Oo_{Y})$) and by~$\overline{f}\colon B\to A$ the ring homomorphism corresponding to~$f$. There exists a spectral sequence of~$B$-modules, with initial term
+\begin{equation} \label{eq:V.15} E_{2}^{p, q}=\H_{Y^{\prime}}^{p}(Y, \R^{q}f_{\ast}(F)),
+\end{equation}
+abutting to the~$B$-module $\H_{X^{\prime}}^{\boule}(X, F)_{[\overline{f}]}$.
+\end{lemma}
+
+\begin{proof}
+Let~$\Oo_{Y, Y^{\prime}}$ be the sheaf ${\Oo_{Y}}_{|Y^{\prime}}$ extended by~$0$ outside of~$Y^{\prime}$ (see \Exp \Ref{I}). One has an isomorphism of~$B$-modules:
+\begin{equation} \label{eq:V.16} \Hom(\Oo_{Y, Y^{\prime}}, f_{\ast}(F))\simeq\Hom(f^{\ast}(\Oo_{Y, Y^{\prime}}), F)_{[\overline{f}]}.
+\end{equation}
+Now, one has:
+\begin{equation} \label{eq:V.17} f^{\ast}(\Oo_{Y, Y^{\prime}})=\Oo_{X, X^{\prime}},
+\end{equation}
+and moreover if~$G$ is an injective~$\OX$-Module, then
+$f_{\ast}(G)$ is an injective~$\Oo_{Y}$-Module, at least if $f$
+is flat, a case to which one can easily reduce by replacing
+$\OX$ etc.\ by the constant sheaves of rings~$\ZZ$. Hence the
+spectral sequence of the composed functor
+\[
+F\to\Hom(\Oo_{Y, Y^{\prime}}, f_{\ast}(F)),
+\]
+with initial term
+\[
+E_{2}^{p, q}=\Ext^{p}(Y;\Oo_{Y, Y^{\prime}}, \R^{q}f_{\ast}(F)),
+\]
+abuts, taking~(\Ref{eq:V.16}) and~(\Ref{eq:V.17}) into account, to:
+\[
+\Ext^{\boule}(X;\Oo_{X, X^{\prime}}, F)_{[\overline{f}]}.
+\]
+
+The lemma then follows from~(\Ref{I}~\Ref{I.2.3bis}~\textup{bis}).
+\end{proof}
+
+Now let $f\colon B\to A$ be a surjective homomorphism of local rings. Let
+\[
+f\colon\Spec(A)\to\Spec(B)
+\]
+be the corresponding morphism of affine schemes. Set~$X=\Spec(A)$ (resp.\ $X^{\prime}=\{\mm_{A}\}$), $Y=\Spec(B)$ (\resp $Y^{\prime}=\{\mm_{B}\}$), and let~$M$ be an~$A$-module and $\widetilde{M}$ the corresponding~$\OX$-Module. Since $\R^{q}f_{\ast}(\widetilde{M})=0$ for~$q>0$, the spectral sequence~(\Ref{eq:V.15}) degenerates, and one obtains by~(\Ref{V.3.2}) an isomorphism of $B$-modules:
+\begin{equation} \label{eq:V.18} \H_{\{\mm_{B}\} }^{n}(Y, f_{\ast}(\widetilde{M}))\simeq\H_{\{\mm_{A}\} }^{n}(X, \widetilde{M})_{[f]},
+\end{equation}
+hence an isomorphism of~$B$-modules:
+\begin{equation} \label{eq:V.19} \H_{\mm_{B}}^{n}(M_{[f]})\simeq\H_{\mm_{A}}^{n}(M)_{[f]}.
+\end{equation}
+On the other hand if~$D_{A}$ (\resp $D_{B}$) is the dualizing functor for~$A$ (\resp $B$), one has:
+\begin{equation} \label{eq:V.20} D_{A}(M)_{[f]}\simeq D_{B}(M_{[f]}).
+\end{equation}
+Finally, since one has a ring isomorphism
+\begin{equation} \label{eq:V.21} B/\Ann M_{[f]}\simeq A/\Ann M,
+\end{equation}
+one sees that the change of base rings under consideration changes nothing. Suppose therefore that~$A$ is regular of dimension~$r$.
+
+By (\Ref{V.2.1}) one has:
+\begin{equation} \label{eq:V.22}
+D(\H^{i}(M))=\Ext^{r-i}(M, A).
+\end{equation}
+One will prove the equivalence of the following properties:
+\begin{enumerate}
+\item[(a)] $\dim \Ext^{j}(M, A)\leq r-j$;
+\item[(b)] for every~$\pp\in X=\Spec(A)$ such that $\dim A_{\pp}<j$, one has~$\Ext^{j}(M, A)_{\pp}=0$;
+\item[(c)] $\codim(\Supp(\Ext^{j}(M, A)), X)\geq j$.
+\end{enumerate}
+
+To prove (a)\ALORS (b), let~$\pp\in X$, $\dim A_\pp<j$, then $\dim A/\pp>r-j$, hence by (a) $\Ann(\Ext^{j}(M, A))\not\subset\pp$, which implies $\Ext^{j}(M, A)_{\pp}=0$. Let~$\pp\in\Supp(\Ext^{j}(M, A))$ then $\Ext^{j}(M, A)_{\pp}\neq 0$ hence by (b) $\dim A_\pp\geq j$. Hence $\codim(\Supp(\Ext^{j}(M, A)), X)=\inf\{ \dim A_\pp\mid \pp\in\Supp(\Ext^{j}(M, A))\} \geq j$, that is (b)\ALORS (c). Finally (c) implies~(a) trivially.
+
+Let us now prove the theorem.
+\begin{enumeratei}
+\item
+Let~$x=(x_{1},\dots, x_{r})$ be a system of parameters for~$A$ such that~$x_{i}\in\Ann M$ for~$i=1,\dots, r-n$. Let~ $K^{\boule}((x^{k}), M)$ be the Koszul complex. One sees easily that the map $K^{i}((x^{k}), M)\to K^{i}((x^{k^{\prime}}), M)$ for~$k<k^{\prime}$ is zero, if~$i>n$. It follows that $\H^{i}(M)=\varinjlim\H^{i}((x^{k}), M)=0$ if~$i>n$. On the other hand, it is trivial that~$\H^{i}(M)=0$ if $i<0$, hence (i) is proved.
+
+\item
+Since~$A$ is regular, $\dim A_{\pp}<j$ implies that the global homological dimension of $A_\pp$ is strictly smaller than $j$ and hence $\Ext^{j}(M, A)_{\pp}=\Ext_{A_{\pp}}^{j}(M_{\pp}, A_{\pp})=\nobreak0$, hence one has proved~(b) and consequently~(a). (ii) then follows from~(\Ref{eq:V.22}) and from~(a).
+
+\item
+There exists a~$\pp\in\Supp(M)$ such that $\dim A_{\pp}=r-n$ and such that $\Supp(M_{\pp})=\{ \mm A_{\pp}\}$. Since $A_{\pp}$ is regular if~$A$ is, one finds $\prof A_{\pp}=r-n$ hence
+\begin{equation} \label{eq:V.23} \Ext_{A}^{r-n}(M, A)_{\pp}=\Ext_{A_{\pp}}^{r-n}(M_{\pp}, A_{\pp})\neq 0.
+\end{equation}
+This implies, taking~(\Ref{eq:V.22}) into account, that on the one hand:
+\[
+\H^{n}(M)\neq 0,
+\]
+on the other hand
+\[
+\dim D(\H^{n}(M))\geq n,
+\]
+hence by (ii)
+\[
+\dim D(\H^{n}(M))=n.
+\]
+
+Now let $Y=\Supp(M)$. By~(i) one knows that $D(\H^{n}(M^{\prime}))=\Ext^{r-n}(M^{\prime}, A)$ is a functor in $M^{\prime}$, left exact, on the category $(\CC_{Y})^{\circ}$. Hence there exists an $A$-module~$H$ and an isomorphism of functors in~$M^{\prime}$:
+\[
+\Ext^{r-n}(M^{\prime}, A)=\Hom(M^{\prime}, H).
+\]
+
+Let~$Y_{i}$, $i=1,\dots, k$ be the irreducible components of~$Y$ of maximum dimension. One will see that the assertion $\Ext^{r-n}(M^{\prime}, A)\neq 0$ is equivalent to the assertion: there exists an~$i$ such that $\Supp M^{\prime}\supset Y_{i}$. Indeed if $\Supp M^{\prime}\supset Y_{i}$ then $\dim(M^{\prime})=n$ hence $\Ext^{r-n}(M^{\prime}, A)\neq 0$.
+
+If~$\Supp M^{\prime}\not\supset Y_{i}$ for every~$i=1,\dots, k$, then $\dim M^{\prime}<n$
+\[
+D(\H^{n}(M^{\prime}))=\Ext^{r-n}(M^{\prime}, A)=0.
+\]
+
+Since $\Ass(\Ext^{r-n}(M, A))=\Supp M\cap\Ass (H)$ one sees that the last assertion of~(iii) follows from the following lemma:
+\end{enumeratei}
+
+\begin{lemma} \label{V.3.3} Let~$X=\Spec(A)$, and let $Y$ be a closed subset of~$X$, $T\colon (\CC_{Y})^{\circ}\to\Ab$ a left exact functor, and~$Y_{i}$, $i=1,\dots, k$ a family of irreducible components of~$Y$ such that the assertion: $T(M)=0$ is equivalent to the assertion: $\forall i\;\Supp M\not\supset Y_{i}$. Then $T$ is representable by a module~$H$ such that $\Ass(H)=\bigcup_{i=1}^{k}\{y_{i}\}$, where~$y_{i}$ is the generic point of~$Y_{i}$,~$i=1,\dots, k$.
+\end{lemma}
+
+\begin{proof}
+Let $y\in Y$, one constructs an~$A$-module~$M(y)$ such that $\Supp(M(y))=\overline{\{ y\} }$. Suppose that $y\neq y_{i}$ for every~$i=1,\dots, k$, then $Y_{i}\not\subset\Supp(M(y))$ for every~$i=1,\dots, k$, hence $T(M(y))=0$. It follows:
+\[
+\Ass(T(M(y)))=\Supp(M(y))\cap\Ass (H)=\emptyset,
+\]
+hence $y\not\in\Ass (H)$. If~$y=y_{i}$, then $Y_{i}\subset\Supp(M(y))$, hence $T(M(y))\neq 0$, hence:
+\[
+\Ass(T(M(y)))=\Supp(M(y))\cap\Ass (H)\neq\emptyset.
+\]
+
+By the first part of the proof, this implies~$y\in\Ass (H)$, whence the lemma, \hfill Q.E.D.
+\skipqed
+\end{proof}
+\skipqed
+\end{proof}
+
+\begin{example} \label{V.3.4}
+Let~$A$ be a noetherian ring, let $X=\Spec(A)$, and~$Y$ a closed subset of~$X$, such that $X-Y$ is affine, then for every irreducible component $Y_{\alpha}$ of~$Y$ one has $\codim(Y_{\alpha}, X)\leq 1$.
+
+Indeed, consider $X$ as a prescheme over~$X$. Let $y_{\alpha}\in Y_{\alpha}$ be a generic point, and consider the morphism $\Spec(\Oo_{X, y_{\alpha}})\to X$. The affine scheme obtained by extension of the base scheme of~$X$ to~$\Spec(\Oo_{X, y_{\alpha}})$ is canonically isomorphic to~$\Spec(\Oo_{X, y_{\alpha}})$.
+
+By~(\EGA I 3.2.7) one sees that if $y_{0}$ is the unique closed point of~$Y_{0}=\Spec(\Oo_{X, y_{\alpha}})$ then $Y_{0}- y_{0}$ is affine. By~(\EGA III 1.3.1) one finds:
+\[
+\H^{i}(Y_{0}- y_{0}, \Oo_{Y_{0}})=0\quad\textrm{ if }i>0,
+\]
+hence by~(\Ref{I}~\Ref{I.2.9})
+\[
+\H^{i-1}(\Oo_{X, y_{\alpha}})=\H_{\{ y_{0}\} }^{i}(Y_{0}, \Oo_{Y_{0}})=0\quad\textrm{ if }i\geq 2.
+\]
+
+Taking~\Ref{V.3.1} (iii) into account, it follows:
+\[
+\dim\Oo_{X, y_{\alpha}}\leq 1,
+\]
+hence $\codim (Y_{\alpha}, X)=\underset{y\in Y_{\alpha}}{\inf}\dim \Oo_{X, y}\leq 1$,\hfill Q.E.D.
+\end{example}
+
+Let $A$ be a noetherian local ring, $\mm$ the maximal ideal and~$M$ an~$A$-module of finite type. Suppose that $A$ is a quotient of a regular local ring. Set $X=\Spec(A)$, and for every $x\in X$, $\mm_{x}=\mm A_{x}$.
+
+\begin{proposition} \label{V.3.5}
+The following two conditions are equivalent:
+\begin{enumeratea}
+\item
+$\H^{i}(M)$ is of finite length,
+\item
+$\forall x\in X-\{ \mm\}, \, \H_{\mm_{x}}^{i-\dim\overline{\{ x\} }}(M_{x})=0$.
+\end{enumeratea}
+\end{proposition}
+
+\begin{proof}
+Taking~(\Ref{V.3.2}) into account we may assume $A$ regular. By (\Ref{V.2.1}) we have:
+\[
+\H^{i}(M)=D(\Ext^{r-i}(M, A)),
+\]
+where $r=\dim A$. By (\Ref{IV}~\Ref{IV.4.7}), a) is
+equivalent\nde{\label{dualnul}indeed, it
+is a matter of showing that, $E$ being an $A$-module of finite type,
+if $D(E)$ is of finite length then $E$ is of finite length.
+Let $K$ (\resp $Q$) be the kernel (\resp cokernel) of the
+canonical morphism $\epsilon: E\to DD(E)$. The composite of $D(\epsilon)$ and
+of the canonical morphism $\gamma:~D(E)\lto{\gamma} DDD(E)$ is
+the identity of $D(E)$. As $D(E)$ is of finite length, $\gamma$
+is an isomorphism and hence $D(\epsilon)$ likewise. As $D$ is
+exact, one deduces that $D(K)$ and $D(Q)$ vanish. It suffices to
+prove that if $M$ is an $A$-module of vanishing dual, then $M$ is
+zero, for one will then have $E=DD(E)$ of finite length like $D(E)$.
+Indeed, let $M_0$ be a submodule of finite type of $M$. As $D$
+is exact, $D(M_0)$ is a quotient of $D(M)$, which is therefore zero.
+Still by exactness of $D$, one has $D(M_0/\m_AM_0)=0$, and hence,
+by biduality, the module of finite length $M_0/\m_AM_0$ is zero.
+Nakayama's lemma then ensures the vanishing of $M_0$ and
+finally one obtains that of $M$.} to:
+\begin{equation} \label{eq:V.24} \Ext^{r-i}(M, A)\textrm{ is of finite length.}
+\end{equation}
+Now (\Ref{eq:V.24}) is equivalent to:
+\begin{equation} \label{eq:V.25} \forall x\in X-\{ \mm\}, \textrm{ one has }\Ext^{r-i}(M, A)_{x}=0.
+\end{equation}
+On the other hand $A_{x}$ is regular of dimension~$r-\dim\overline{\{ x\} }$, hence by~(\Ref{V.2.1})
+\begin{equation} \label{eq:V.26}
+\H_{\mm_{x}}^{i-\dim\overline{\{ x\} }}(M_{x})\!=\!D(\Ext_{A_{x}}^{(r-\dim\overline{\{ x\} })-(i-\dim\overline{\{ x\} })}(M_{x}, A_{x}))\!=\!D(\Ext_{A_{x}}^{r-i}(M_{x}, A_{x})).
+\end{equation}
+Since $M$ is of finite type one has:
+\[
+\Ext_{A}^{r-i}(M, A)_{x}=\Ext_{A_{x}}^{r-i}(M_{x}, A_{x})\]
+whence the proposition.
+\skipqed
+\end{proof}
+
+\begin{corollary} \label{V.3.6} In order that $\H^{i}(M)$ be of finite length for~$i\leq n$, it is necessary and sufficient that
+\[
+\prof(M_x)>n-\dim\overline{\{ x\} }\]
+for every $x\in X-\{ \mm\}$.
+\end{corollary}
+
+\begin{proof}
+Follows from~(\Ref{V.3.5}) and from~(\Ref{III}~\Ref{III.3.1}).
+\skipqed
+\end{proof}

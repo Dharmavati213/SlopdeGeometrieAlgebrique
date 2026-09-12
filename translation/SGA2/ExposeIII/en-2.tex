@@ -1,0 +1,198 @@
+\section{Depth and topological properties} \label{III.3}
+
+\begin{lemma} \label{III.3.1}
+Let $X$ be a topological space, $Y$ a closed subspace, let $F$ be a sheaf of abelian groups on $X$. Put $U=X- Y$. If $n$ is an integer, the following conditions are equivalent:
+\begin{enumeratei}
+\item
+$\SheafH_Y^i (X, F)=0$ if $i<n$.
+\item
+For every open set $V$ of $X$, the group homomorphism
+\[
+\H^i(V, F) \to \H^i(V\cap U, F)
+\]
+is bijective if $i<n-1$ and injective if $i=n-1$.
+
+\item
+For every open set $V$ of $X$,
+\[
+\H_{Y\cap V}^i(V, F_{\mid V})=0 \text{ if } i<n.
+\]
+\end{enumeratei}
+\end{lemma}
+
+\begin{proof}
+(ii) \SSI (iii); indeed, let $V$ be an open set of $X$, put $X'=V$, $Y'=Y\cap V$, $F'=F_{\mid V}$, $U'=X'- Y'$; $Y'$ is closed in $X'$, one therefore has an exact sequence:
+\[
+\H_{Y'}^i(X', F') \to \H^i(X', F') \lto{\rho_i} \H^i(U', F') \to \H_{Y'}^{i+1}(X', F').
+\]
+If the extreme terms are zero, the homomorphism $\rho_i$ is bijective, and if the left-hand term is zero, $\rho_i$ is injective. Hence (iii) \ALORS (ii). Conversely, if $i<n$, $\H_{Y'}^i(X', F')$ is zero because $\rho_i$ is injective and $\rho_{i-1}$ surjective.
+
+(i) \ALORS (iii); indeed the spectral sequence ``of passage from local to global'' gives:
+\[
+\H^p\bigl(X, \SheafH_Y^q(X, F)\bigr) \To \H_Y^*(X, F).
+\]
+Now, by hypothesis $\SheafH_Y^q(X, F) =0$ if $q<n$, hence $\H_Y^{p+q} (X, F) = 0$ if $p+q<n$.
+
+(iii) \ALORS (i); indeed (iii) expresses that the presheaf
+\[
+V \mto \H_{Y\cap V}^i(V, F_{\mid V})
+\]
+is zero, hence also the associated sheaf which is $\SheafH_Y^i (X, F)$, because $Y$ is closed.
+\skipqed
+\end{proof}
+
+\begin{remark} \label{III.3.2}
+The equivalence of (i) is (ii) has been proved in proposition~\Ref{I}~\Ref{I.2.13}. As one remarked then, if $n\geq 2$, one may omit the condition that $\rho_{n-1}$ be injective.\nde{the original edition reproduced a proof, not entirely correct.}
+\end{remark}
+
+\begin{proposition} \label{III.3.3}
+Let $X$ be a locally noetherian prescheme, $Y$ a closed subprescheme of $X$, $F$ a coherent $\OX$-module. The conditions of lemma \Ref{III.3.1} are equivalent to each of the following conditions:
+\begin{enumeratei}
+\setcounter{enumi}{3}
+\item
+For every $x\in Y$, one has $\prof F_x \geq n$;
+
+\item
+For every coherent $\OX$-module $G$ on $X$, with support contained in $Y$ one has
+\[
+\SheafExt_{\OX}^i(G, F)=0 \text{ if } i<n;
+\]
+
+\item
+There exists a coherent $\OX$-module $G$ whose support is equal to $Y$ and such that
+\[
+\SheafExt_{\OX}^i(G, F)=0 \text{ if } i<n.
+\]
+\end{enumeratei}
+\end{proposition}
+
+If $X$ is affine, one has done everything needed (\cf proposition~\Ref{III.2.4}) to prove the equivalence of the three conditions of proposition \Ref{III.3.3}; now they are local, apart from the implication (v)\ALORS (vi), but one may then take $G=\Oo_Y$ and invoke again proposition~\Ref{III.2.4}. It therefore suffices to prove (i) \ALORS (vi) and (v) \ALORS (i).
+
+Let $J$ be the ideal of $Y$, it is a coherent sheaf of ideals; let $\Oo_{Y_m} = \OX/J^{m+1}$, it is a coherent $\OX$-module whose support is equal to $Y$, and one knows (theorem \Ref{II}~\Ref{II.6}.b) that
+\[
+\SheafH_Y^i(X, F) = \varinjlim_m \SheafExt_{\OX}^i(\Oo_{Y_m}, F),
+\]
+hence (v) \ALORS (i). Moreover, the transition morphisms are epimorphisms in the projective system of the $\Oo_{Y_m}$.
+
+If the functor $\SheafExt^i$ is left exact in its first argument, at least when the latter is in the category of coherent $\OX$-modules with support contained in $Y$, the transition morphisms of the inductive system obtained by applying $\SheafExt^i$ to the $\Oo_{Y_m}$ will be injective, now (i) implies that the limit is zero, hence (i) will imply that the modules $\SheafExt_{\OX}^i(\Oo_{Y_m}, F)$ are zero for every~$m$. Let us argue by induction. The statement is trivial for $n<0$. Suppose that (i) \ALORS (vi) for $n<q$, then (i) \ALORS (v), hence, by the exact sequence of the $\SheafExt$, $\SheafExt^q$ is left exact in its first argument, hence the modules $\SheafExt_{\OX}^q(\Oo_{Y_m}, F)$ are zero for every $m$. Hence (i) \ALORS (vi) for $n\leq q$.
+\qed
+
+\bgroup
+\setlist[enumerate,1]{label=\textup{\arabic*)}}
+\begin{example} \label{III.3.4}
+Let $A$ be a noetherian local ring, $\mm$ its maximal ideal, $M$ an $A$-module of finite type, and finally let $n$ be an integer. Put $X=\Spec (A)$, $Y=\{\mm\}$, $U=X-Y$. Let $F$ be the sheaf associated to $M$. The following conditions are equivalent:
+\begin{enumerate}
+
+\item
+$\prof M \geq n$;
+
+\item
+the natural homomorphism
+\[
+\H^i(X, F) \to \H^i(U, F)
+\]
+is injective if $i=n-1$, bijective if $i<n-1$;
+
+\item
+$\Ext_A^i(k, M) =0$ if $i<n$, where $k=A/\mm$;
+
+\item
+$\H_Y^i(X, F)=0$ if $i<n$.
+\end{enumerate}
+\end{example}
+
+Taking remark~\Ref{III.3.2} into account, one obtains:
+
+\begin{corollary} \label{III.3.5}
+Let $X$ be a locally noetherian prescheme, $Y$ a closed subprescheme of $X$, $F$ a coherent $\OX$-module; the following conditions are equivalent:
+\begin{enumerate}
+\item
+for every $x\in Y$, $\prof F_x \geq 2$;
+\item
+for every open set $V$ of $X$, the natural homomorphism
+\[
+\H^0(V, F) \to \H^0(V\cap(X-Y), F)
+\]
+is bijective.
+\end{enumerate}
+\end{corollary}
+\egroup
+
+\begin{theorem}[Hartshorne] \label{III.3.6}
+Let $X$ be a locally noetherian prescheme, $Y$ a closed subprescheme of $X$. Suppose that, for every $x\in Y$, $\prof \Oo_{X, x} \geq 2$; then the natural map
+\[
+\pi_0(X) \to \pi_0(X-Y)
+\]
+is bijective.
+\end{theorem}
+
+\begin{proof}
+Since $X$ is locally noetherian, $X$ is locally connected; it therefore suffices to prove that for $X$ to be connected it is necessary and sufficient that $X-Y$ be so. Now, for a locally ringed space $(X, \OX)$ to be connected, it is necessary and sufficient that $\H^0(X, \OX)$ not be a direct product of two non-zero rings. But the hypothesis implies, by corollary \Ref{III.3.5} applied to $F=\OX$, that the homomorphism
+\[
+\H^0(X, \OX) \to \H^0(X-Y, \OX)
+\]
+is an isomorphism, whence the conclusion.
+\skipqed
+\end{proof}
+
+\begin{corollary} \label{III.3.7}
+Let $X$ be a locally noetherian prescheme. Let $d$ be an integer such that $\dim \Oo_{X, x} \geq d$ implies $\prof \Oo_{X, x} \geq 2$. Then, if $X$ is connected, $X$ is connected in codimension $d-1$, \ie if $X'$ and $X''$ are two irreducible components of $X$, there exists a sequence of irreducible components of $X$:
+\[
+X'=X_0, X_1, \ldots, X_n=X''
+\]
+such that for every $i$, $0\leq i < n$, the codimension of $X_{i}\cap X_{i+1}$ in $X$ is less than or equal to $d-1$.
+\end{corollary}
+
+Let us first remark that if $X$ is Cohen--Macaulay, $d=2$ will enjoy the property evoked above. In this connection, let us recall that one defines the codimension of $Y$ in~$X$ as the infimum of the dimensions of the local rings in~$X$ of the points of~$Y$.
+
+\begin{proof}
+Let $\Ff$ be the set of closed subsets of $X$ whose codimension in $X$ is greater than or equal to $d$. One will note that $\Ff$ is an antifilter of closed subsets of $X$. Moreover, for a closed subset $Y$ of $X$ to be an element of $\Ff$, it is necessary and sufficient that, for every $y\in Y$ there exist an open neighbourhood $V$ of $X$ such that $Y\cap V$ be of codimension $\geq d$ in $V$. Finally, if $X$ is connected and if $Y\in \Ff$, $X-Y$ is connected by Hartshorne's theorem. The corollary therefore follows from the following lemma, which is of a purely topological nature.
+
+\begin{lemma} \label{III.3.8}
+Let $X$ be a connected and locally noetherian topological space, and let $\Ff$ be an antifilter of closed subsets of $X$. One supposes that every closed subset $Y\subset X$ which belongs locally to $\Ff$, (\ie for every point $x\in X$ there exists an open neighbourhood $V$ of $x$ in $X$ and a $Y'\in \Ff$ such that $V\cap Y=V\cap Y'$), belongs to $\Ff$. The following conditions are equivalent:
+\begin{enumeratei}
+
+\item
+for every $Y\in \Ff$, $X-Y$ is connected;
+
+\item
+if $X'$ and $X''$ are two distinct irreducible components of $X$, there exists a sequence of irreducible components of $X$, $X_0, X_1, \ldots, X_n$, such that $X'=X_0$, $X''=X_n$ and, for every $i$, $1\leq i< n$, $X_i \cap X_{i+1} \notin \Ff$.
+\end{enumeratei}
+\end{lemma}
+
+(ii) \ALORS (i). Let $Y\in \Ff$, one must prove that the open set $U=X-Y$ is connected. Now, if $U'$ and $U''$ are two irreducible components of $U$, there exist two irreducible components $X'$ and $X''$ of $X$ such that $X''\cap U=U''$ and $X'\cap U=U'$; let $X_0, \ldots X_n$ be a sequence of irreducible components of $X$ possessing the property evoked above; if one puts $U_i=X_i\cap U$, $0\leq i\leq n$, the $U_i$ will be irreducible components of $U$, moreover $U_{i}\cap U_{i+1}$ is non-empty if $0\leq i< n$, for otherwise, {$X_{i}\cap X_{i+1} \subset Y$} would be an element of $\Ff$, which is contrary to the choice of the sequence of the $X_i$. This implies that $U$ is connected.
+
+(i) \ALORS (ii). Let $Y=\bigcup_{X', X''} X'\cap X''$ where one requires that $X'$ and $X''$ be two \emph{distinct} irreducible components of $X$ such that $X'\cap X'' \in \Ff$. The family of the $X'\cap X''$ is locally finite because $X$ is locally noetherian, moreover the $X'\cap X''$ are closed, hence $Y$ is closed. Moreover, $Y$ belongs locally to $\Ff$, hence $Y\in \Ff$. Hence $U=X-Y$ is connected. Let $X'$ and $X''$ be two distinct irreducible components of~$X$, let $U'$ and $U''$ be their traces on $U$, which are non-empty by construction of $Y$. They are irreducible components of $U$, now $U$ is connected, hence $U$ being locally noetherian, there exists a sequence of irreducible components $U_0, \ldots, U_n$ of $U$, such that $U_0=U'$, $U_n=U''$ and $U_{i}\cap U_{i+1}\neq \emptyset$ and $\neq U_{i}, 0\leq i < n$. Let $X_0, \ldots, X_n$ be the sequence of irreducible components of $X$ which is such that $X_{i}\cap U=U_{i}$; if $X_{i}\cap X_{i+1}\in \Ff$, by construction of $\Ff$, $U_{i}\cap U_{i+1}=\emptyset$ or $U_{i}=U_{i+1}$ which is not possible according to the choice of the $U_{i}$.
+\end{proof}
+
+\begin{corollary} \label{III.3.9}
+Let $A$ be a noetherian local ring. One supposes that for every prime ideal $\pp$ of $A$, one has:
+\[
+(\dim A_\pp \geq 2) \To (\prof A_\pp \geq 2)
+\]
+One supposes moreover that $A$ satisfies the chain condition\sfootnote{\Cf $\EGA 0_{\textup{IV}}$ 14.3.2}. Then, for every $\pp$, minimal prime ideal of $A$, $\dim A/\pp =\dim A$, or again, all the irreducible components of $\Spec A$ have the same dimension: that of $A$.
+\end{corollary}
+
+If $X'$ and $X''$ are two irreducible components of $X$, one joins them by a chain having the properties enumerated in corollary \Ref{III.3.7}; it then suffices to prove that two successive components have the same dimension, which follows from the second hypothesis.
+
+\begin{example} \label{III.3.10}
+Let $X$ be the union of two complementary vector subspaces of respective dimensions $2$ and $3$ in a vector space of dimension $5$; more precisely, let $X=\Spec A$, with $A=B/{\pp \cap \qq}$, where $B=k[X_1, \ldots, X_5]$, $\pp$ is the ideal generated by $X_1, X_2, X_3$ and $\qq$ the ideal generated by $X_4$ and $X_5$; $X$ can be disconnected by the intersection point $x$ of the two vector subspaces, hence the depth of $\Oo_{X, x}$ is equal to $1$, for it cannot be $\geq 2$ by virtue of theorem \Ref{III.3.6}. Another reason: the equidimensionality conclusion of the preceding corollary fails.
+
+More generally, taking a union $X$ of two vector subspaces of dimension $p, q\geq 2$ in a vector space of dimension $p+q$, for no embedding of $X$ in a regular scheme is $X$ even set-theoretically a complete intersection at the origin, for (up to modifying it without changing the underlying topological space in a neighbourhood of the origin), $X$ would be Cohen--Macaulay hence of depth $\geq 2$ at the origin, which is not the case.
+\end{example}
+
+\begin{remark} \label{III.3.11}
+Let $X$ be a locally noetherian prescheme, $Y$ a closed subprescheme of $X$, $F$ an $\OX$-module. Depth is a purely topological notion which is expressed in terms of vanishing of the $\SheafH_Y^i(X, F)$ for $i<n$. One also wishes to study these sheaves for a given $i$, or for $i>n$. One proves in this connection the following result:
+\end{remark}
+
+\begin{lemma} \label{III.3.12}
+Let $m$ be an integer, for $\SheafH_Y^i(X, F)=0$, $i>m$ for every coherent $F$, it is necessary and sufficient that this be true for $F=\OX$.
+\end{lemma}
+
+By inductive limit it is then true for every quasi-coherent sheaf. For example, if $Y$ can be described locally by $m$ equations, or, as one says, if $Y$ is locally set-theoretically a complete intersection (which occurs for example if $X$ and $Y$ are \emph{non-singular}) it follows from the computation of the $\SheafH_Y^i(X, F)$ by the Koszul complex that these sheaves are zero for $i>m$. Besides, one has used this fact implicitly in example \Ref{III.3.10}. This cohomological condition is however not sufficient, as the following example proves:
+
+\begin{example} \label{III.3.13}
+Let $X=\Spec (A)$, where $A$ is a noetherian local ring, normal of dimension $2$. Let $Y$ be a curve in $X$. One can prove that the complement of the curve is an affine open set hence\nde{There was a misprint in the original edition.} $\SheafH_Y^i(\OX) \approx \SheafH_{X-Y}^{i-1}(\OX)=0$ for $i>1$ because $\H^{i-1}(X-Y, \OX)=0$. However one can construct a curve which is not described by an equation.
+\end{example}
+
+We shall seek\sfootnote{\Cf Exp~\Ref{VIII}.} conditions for the $\SheafH_Y^i(X, F)$ to be coherent for a given~$i$, which is not the case in general, as is shown by obvious examples, for example $\H_\mm^n(A)$ for $A$ a noetherian local ring of dimension $n>0$; when for example $A$ is a discrete valuation ring with field of fractions $K$, one finds $\H_\mm^1(A) \simeq K/A$, which is not a module of finite type over $A$. To enlighten the reader, let us say that the problem posed is equivalent to the following: let $f\colon U\to X$ be an open immersion, let $G$ be a coherent sheaf on $U$, find criteria for the higher direct images $\R^i f_* G$ to be coherent sheaves on $X$ for a given $i$. These conditions are necessary for the use of formal geometry that we have seen in expos\'e \Ref{IX} and the following ones.

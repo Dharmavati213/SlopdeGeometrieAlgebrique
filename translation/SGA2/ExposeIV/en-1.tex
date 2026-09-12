@@ -1,0 +1,302 @@
+\chapter{Dualizing modules and functors} \label{IV}
+
+\section{Generalities on functors of modules} \label{IV.1}
+\begin{tabular}{ll}
+Let &$A$ be a commutative noetherian ring,\\
+&$\ccat$ the category of $A$-modules of finite type,\\
+&$\ccat'$ the category of arbitrary $A$-modules,\\
+&$\Ab$ the category of abelian groups.\label{pIV.1}
+\end{tabular}
+
+\smallskip
+The aim of this paragraph is the study of certain properties of functors \hbox{$T: \ccat^{\circ}\to \Ab$} (assumed additive).
+
+Let us remark that if $M\in \Ob \ccat$, $T(M)$ can be equipped in a canonical way with an $A$-module structure which is the following:
+if $f_{M}$ is the homothety of $M$ associated to $f\in A$, $A$
+operates on $T(M)$ by $f_{T(M)}$. In other words, $T$
+factors as:
+$$
+\xymatrix{ \ccat^{\circ}\ar^{T}[rr]\ar_{T_{\circ}}[dr]&&\Ab\\
+&\ccat'\ar[ur]&}
+$$
+where $\ccat'\to \Ab$ is the canonical functor.
+
+In what follows, $T(M)$ will be considered as equipped with its $A$-module structure.
+
+Composing with the isomorphism \hbox{$M\isomto \Hom_{A}(A, M)$} the morphism $\Hom_{A}(A, M)\to \Hom_{A}(T(M), T(A))$, one obtains the following morphisms which are deduced from one another in an evident manner:
+\begin{align*}
+M&\to \Hom_{A}(T(M), T(A)),\\
+M\times T(M)&\to T(A),\\
+T(M)&\to \Hom_{A}(M, T(A)),
+\end{align*}
+which defines a morphism $\varphi_{T}$ of contravariant functors:
+\begin{eqnarray*}
+\varphi_{T}: T\to \Hom_{A}(M, T(A)).
+\end{eqnarray*}
+
+\begin{proposition} \label{IV.1.1}
+The following two properties are equivalent:
+\begin{enumeratei}
+\item
+$\varphi_{T}$ is an isomorphism of functors.
+
+\item
+$T$ is left exact.
+\end{enumeratei}
+\end{proposition}
+
+The implication (i)\ALORS (ii) is trivial.
+
+The implication (ii)\ALORS (i) follows from the fact that for a morphism $u:F\to F'$ of two additive left exact functors $F$ and $F'$ from $\ccat^{\circ}$ to $\Ab$, if $u(A)$ is an isomorphism, $u$ is an isomorphism (one uses the fact that $A$ is noetherian and hence that every $A$-module of finite type is of finite presentation).
+
+\begin{remark} \label{IV.1.2}
+This shows in particular that the functors $T:{\ccat'}^{\circ}\to \Ab$ which are representable are the functors which commute with arbitrary projective limits (over a preordered set, not necessarily filtered).
+\end{remark}
+
+If $\SheafHom (\ccat^{\circ}, \Ab)_{g}$ denotes the full subcategory of $\SheafHom (\ccat^{\circ}, \Ab)$ whose objects are the left exact functors, one has proved the equivalence of categories
+\[
+\ccat' \isomto \SheafHom (\ccat^{\circ}, \Ab)_{g}
+\]
+via the functors quasi-inverse to one another
+\[
+H \mto\Hom_{A}(\;, H)
+\]
+and
+\[
+T(A) \mfrom T.
+\]
+
+Let now $J$ be an ideal of $A$, $Y=V(J)\subset \Spec\, A$, and let us denote by $\ccat_{Y}$ the full subcategory of $\ccat$ whose objects are the $A$-modules of finite type $M$ such that $\supp M\subset Y$. One has:
+\[
+\ccat_{Y}=\bigcup_{n}\ccat^{(n)},
+\]
+where $\ccat^{(n)}$ is the full subcategory of $\ccat_{Y}$ of those modules $M$ such that $J^{n}M=0$.
+
+\begin{proposition} \label{IV.1.3}
+With the same notations as above, let $T:\ccat_{Y}\to \Ab$ be a functor. To $H=\varinjlim T(A/J^n)$\nde{the definition of $H$ is implicit in the original text.} is associated a natural morphism
+\[
+\varphi_{T}: T\to \Hom_{A}(\;, H),
+\]
+and the following conditions are equivalent:
+\begin{enumeratei}
+\item
+$\varphi_{T}$ is an isomorphism.
+
+\item
+The functor $T$ is left exact.
+\end{enumeratei}
+\end{proposition}
+
+\begin{proof}
+a) Definition of $\varphi_{T}$.
+
+Let $M\in \Ob \ccat_{Y}$. There exists an integer $n$ such that $J^{n}M=0$. Then $M$ is an $A/J^{n}$-module, and if $T_{n}$ denotes the restriction of $T$ to $\ccat^{(n)}$, one knows how to define the morphism
+\begin{eqnarray*}
+T_{n}\to \Hom_{A}(\;, H_{n}), \ \hbox{where}\ H_{n}=T(A/J^{n})\;;
+\end{eqnarray*}
+\begin{equation*}
+\text{whence}\quad T(M)=T_{n}(M)\to \Hom_{A}(M, \varinjlim H_{n})= \Hom_{A}(M, H)
+\end{equation*}
+\begin{equation*}
+\text{and}\quad \varphi_{T}: T\to \Hom_{A}(\;, H).
+\end{equation*}
+
+b) Equivalence of (i) and (ii).
+
+It is clear that (i) implies (ii). Suppose (ii) holds and let $M\in \Ob \ccat^{(n)}$. One has seen that $T_{n}(M)\isomto \Hom_{A}(M, H_{n})$, hence for every integer $n'>n$ one has
+\begin{equation*} T(M)=T_{n}(M)=T_{n'}(M)=\varinjlim T_{n}(M)
+\end{equation*}
+\begin{equation*}
+\text{and}\quad T(M)=\varinjlim \Hom_{A}(M, H_{n}).
+\end{equation*}
+As one is dealing here with filtered inductive limits, one also has the isomorphism
+\begin{equation*} \varinjlim \Hom_{A}(M, H_{n})\isomto \Hom_{A}(M, \varinjlim H_{n}) = \Hom_{A}(M, H).
+\end{equation*}
+
+If $\ccat'_{Y}$ denotes the category of $A$-modules, with support contained in $Y$, but not necessarily of finite type, one still has the natural equivalence of categories: \hbox{$\ccat'_{Y}\isomto \Hom (\ccat_{Y}^{\circ}, \Ab)_{g}$}.
+\skipqed
+\end{proof}
+
+\subsection*{Application}
+The notations being the same as above, let
+\begin{equation*} T^{*}:\ccat_{Y}^{\circ}\to{\Ab}
+\end{equation*}
+be an exact $\partial$-functor. For every $i\in \ZZ$, one sets $H^{i}_{n}=T^{i}(A/J^{n})$ and $H^{i}=\varinjlim H^{i}_{n}$.
+
+\begin{theorem}
+\label{IV.1.4} Let $n\in \ZZ$. If there exists $i_{0}\in \ZZ$ such that $T^{i}=0$ for every $i<i_{0}$, then the following three conditions are equivalent:
+\begin{enumeratei}
+\item
+$T^{i}=0$ for every $i<n$.
+\item
+$H^{i}=0$ for every $i<n$.
+\item
+There exists a module $M_{0}$ of $\ccat_{Y}$ such that $\supp M_{0}=Y$ and $T^{i}(M_{0})=0$ for every $i<n$.
+\end{enumeratei}
+\end{theorem}
+
+\begin{proof}
+It is evident that (i) implies (ii) and (iii) (one takes $M_{0}=A/J$). Let us show by induction on $n$ that (ii) implies (i); this is true for $n=i_{0}$, and one assumes it proved up to $n$. Suppose then that $H^{i}=0$ for every $i<n+1$; by the induction hypothesis one has $T^{i}=0$ for $i<n$, but $T^{n-1}=0$ implies that $T^{n}$ is a left exact functor and
+\begin{equation*} T^{n}\isomto\Hom_{A}(\;, H^{n})=0.
+\end{equation*}
+Let us then show that (iii) implies (ii). This is still true for $n=i_{0}$; suppose it proved up to $n$: let $M_{0}$ be an $A$-module of $\ccat_{Y}$ such that $\supp M_{0}=Y$ and $T^{i}(M_{0})=0$ for every $i<n+1$; by the induction hypothesis one then has $H^{i}=0$ for every $i<n$; it remains to show that $H^{n}=0$. But \og $H^{i}=0$ for every $i<n$\fg implies that $T^{n-1}=0$ and hence that $T^{n}\isomto\Hom_{A}(\;, H^{n})$. One then has
+\begin{equation*}
+\Ass H^{n}=\Ass \Hom(M_{0}, H^{n})=\supp M_{0}\cap \Ass H^{n}= \Ass H^{n}
+\end{equation*}
+since
+\begin{equation*}
+\Ass H^{n}\subset \supp H^{n}\subset Y= \supp M_{0}.
+\end{equation*}
+
+Whence $T^{n}(M_{0})=0\Ssi \Ass H^{n}=\emptyset \Ssi H^{n}=0$; which completes the proof.
+\skipqed
+\end{proof}
+
+\section{Characterization of exact functors} \label{IV.2}
+
+The ring $A$ is always assumed noetherian and commutative. The notations are those of proposition~\Ref{IV.1.3}:
+\begin{equation*} Y=V(J), \quad T:\ccat_{Y}^{\circ}\to \Ab, \quad H=\varinjlim T(A/J^{n}),
+\end{equation*}
+where one assumes that $T$ is a left exact functor, whence:
+\begin{equation*} T(M)\isomto \Hom_{A}(M, H).
+\end{equation*}
+
+\begin{proposition} \label{IV.2.1}
+The following properties are equivalent:
+\begin{enumeratei}
+\item
+The functor $T$ is exact,
+
+\item
+$H$ is injective in $\ccat'$.
+\end{enumeratei}
+\end{proposition}
+
+\begin{proof}
+It obviously suffices to show that (i) implies (ii), that is to say to prove that if the restriction to $\ccat_{Y}$ of the functor $\Hom_{A}(\;, H)$ is an exact functor, $H$ is injective. But as $A$ is noetherian, to show that $H$ is injective, one may restrict oneself to proving that every homomorphism $f:N\to H$ with source an $A$-module $N$ \emph{of finite type}, a submodule of an $A$-module $M$ \emph{of finite type}, extends to a homomorphism $\overline{f}:M\to H$.
+
+The definition of $H$ and the fact that $N$ is of finite type imply that there exists an integer~$n$ such that $J^{n}.f(N)=0$. Let us then equip $M$ and $N$ with the $J$-adic topology. The $J$-adic topology of $N$ is equivalent to the topology induced by the $J$-adic topology of $M$ (Krull's theorem). There thus exists $V=J^{k}\cdot M$ such that
+\begin{equation*} U=V\cap N\subset J^{n}N.
+\end{equation*}
+One then has the factorization
+$$
+\xymatrix{ N\ar_{f}[d]\ar[r]&N/U\ar^{u}[dl]\\
+H&},
+$$
+$N/U$ and $M/V$ are in $\ccat_{Y}$. The hypothesis thus allows one to extend $u$ to $\overline{u}$
+$$
+\xymatrix{ N/U\ar_{u}[d]\ar@{^{(}->}[r]&M/V\ar^{\overline{u}}[dl]\\
+H&},
+$$
+and $M\to M/V\lto{\overline{u}} H$ gives the desired extension $\overline{f}$.
+\skipqed
+\end{proof}
+
+\begin{corollary} \label{IV.2.2}
+Let $K$ be an injective $A$-module; then the submodule $H^{0}_{J}(K)$ of $K$ consisting of the elements annihilated by a suitable power of $J$ is injective.
+\end{corollary}
+
+\begin{proof}
+It suffices to check that the restriction to $\ccat_{Y}$ of the functor $ \Hom_{A}(\;, H^{0}_{J}(K))$ is an exact functor. Now let $M\in \Ob \ccat_{Y}$; there exists $k$ such that $J^{k}\cdot M=0$, and the inclusion
+$$
+\Hom_{A}(\;, H^{0}_{J}(K))\to \Hom_{A}(M, K)
+$$
+is then an isomorphism. Hence the result, since $\Hom_{A}(\;, K)$ is exact.
+\skipqed
+\end{proof}
+
+\section[Study of the case where $T$ is left exact]
+{Study of the case where $T$ is left exact and $T(M)$ is of finite type for every $M$} \label{IV.3}
+
+Let as above
+\begin{equation*} T:\ccat_{Y}^{\circ}\to \Ab,
+\end{equation*}
+one assumes henceforth that $T$ is left exact and that one has the factorization
+$$
+\xymatrix@C=6mm@R=6mm{
+\ccat^{\circ}_{Y}\ar[dr]\ar^{T}[rr]&&\Ab\,.\\
+&\ccat_{Y}\ar[ur]&}
+$$
+where as above, $\ccat_Y\to\Ab$ is the forgetful functor. One thus knows how to define $T(T(M))=T\circ T(M)$, and the canonical morphism
+$$
+M\to \Hom_{A}(\Hom_{A}(M, H), H)
+$$
+defines a morphism
+$$
+M\to T\circ T(M).
+$$
+
+\begin{proposition} \label{IV.3.1}
+The ring $A$ still being assumed noetherian, if one makes the additional hypothesis that $A/J$ is artinian, the following conditions are equivalent:
+\begin{enumeratei}
+\item
+$T$ is left exact and, for every $M\in \Ob \ccat_{Y}$, $T(M)$ is of finite type and \hbox{$M\to T\circ T(M)$} is an isomorphism.
+
+\item
+$T$ is exact and, for every residue field $k$ associated to a maximal ideal containing~$J$, one has $T(k)\isomto k$.
+
+\item
+One has $T\isomto \Hom_{A}(\;, H)$ with $H$ injective and, for every $k$ as in \emph{(ii)}, one has $\Hom_{A}(k, H)\isomto k$.
+
+\item
+$T$ is exact and, for every $M\in \Ob \ccat_{Y}$, one has $\longueur T(M)=\longueur M$.
+\end{enumeratei}
+\end{proposition}
+
+\begin{proof}
+One has already shown the equivalence of (ii) and (iii) (prop\ptbl \Ref{IV.2.1}). Let us show that (ii) implies (iv): first if $M\in \Ob \ccat_{Y}$, as $M$ is an $A/J^{n}$-module with $A/J^{n}$ artinian, $\longueur M$ is finite. Let us argue by induction on the length of $M$. Condition (iv) is true if $\longueur M=1$, because then $M$ is a residue field to which (ii) applies. If $\longueur M>1$, there exists a submodule $M'$ of $M$ such that $M'\neq 0$ and $\longueur M'<\longueur M$. Let us then form the exact sequence
+$$
+0\to M'\to M\to M''\to 0.
+$$
+As $T$ is exact, one has the sequence
+$$
+0\to T(M')\to T(M)\to T(M'')\to 0,
+$$
+and $\longueur T(M)=\longueur T(M')+\longueur T(M'')=\longueur M'+\longueur M''=\longueur M$.
+
+(ii) implies (i): As (ii) implies (iv), let $M$ be an $A$-module of $\ccat_{Y}$; one has $\longueur T(M)=\longueur M$; hence $T(M)$ is of finite length and therefore of finite type.
+
+It remains to show that $M\to T\circ T(M)$ is an isomorphism; one argues again by induction on $\longueur M$. For $M=k$ this is true. In the general case one writes the commutative diagram whose two rows are exact:
+$$
+\xymatrix{ 0\ar[r]&M'\ar[r]\ar[d]&M\ar[r]\ar[d]&M''\ar[r]\ar[d]&0\\
+0\ar[r]& T\circ T(M')\ar[r]& T\circ T(M)\ar[r]& T\circ T(M'')\ar[r]&0, }
+$$
+where $M'$ is a submodule of $M$ such that $M'\neq 0$ and $\longueur M'<\longueur M$. By the induction hypothesis, the extreme arrows are isomorphisms, hence
+$$
+M\to T\circ T(M)
+$$
+is an isomorphism.
+
+(i) implies (ii): let
+$$
+0\to M'\to M\to M''\to 0
+$$
+be an exact sequence of $A$-modules of $\ccat_{Y}$, and let $Q$ be the cokernel of $T(M)\to T(M')$. Let us apply $T$ to the exact sequence
+$$
+0\to T(M')\to T(M)\to T(M'')\to Q \to 0,
+$$
+one obtains:
+$$
+\xymatrix{
+0\ar[r]&T(Q)\ar[r]&T\circ T(M')\ar[r]&T\circ T(M)&\\
+& &M'\ar_{s}[u]\ar[r]&M\ar_{s}[u],
+}
+$$
+hence $T(Q)=0$ and $Q\isomto T(T(Q))=0$.
+
+On the other hand let $k$ be a residue field, $k=A/\m$, $J\subset \m$. One must show that $T(k)\isomto k$. For this it suffices to remark that $T(k)$ is a $k$-vector space. One deduces from this:
+\begin{gather*}
+T(k)\simeq k\oplus V,\\
+T(T(k))\simeq T(k)\oplus T(V)\simeq k\oplus V\oplus T(V)\simeq k,
+\end{gather*}
+whence $V=0$.
+
+Let us finally show that (iv) implies (iii): it suffices to show that $T(k)\isomto k$; but $\longueur T(k)= \longueur k=1$, hence $T(k)=k'$ is a residue field and $\supp k'= \supp \Hom_{A}(k, H)\subset \supp k$. Hence $k\simeqk'$.
+\skipqed
+\end{proof}
+
+\begin{remark} \label{IV.3.2}
+One can show that condition (iv) is equivalent to the condition
+
+(iv)$'$ For every $M\in \Ob \ccat_{Y}$, one has $\longueur T(M)=\longueur M$.
+\end{remark}

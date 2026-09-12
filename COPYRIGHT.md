@@ -8,23 +8,28 @@ This repository contains two kinds of work, under two licenses.
    https://github.com/leanprover-community/mathlib4
 2. The English translation in `translation/` is an unofficial scholarly
    translation of Grothendieck–Raynaud, *SGA 1*, SMF recomposition
-   arXiv:math/0206203. The translator’s original contribution is licensed
-   under CC BY-SA 4.0; the French original remains copyright of the
-   original authors and publishers and is not redistributed here.
-   See `translation/LICENSE`.
+   arXiv:math/0206203, and of Grothendieck–Raynaud, *SGA 2*, SMF
+   recomposition arXiv:math/0511279. The translator’s original
+   contribution is licensed under CC BY-SA 4.0; the French original
+   remains copyright of the original authors and publishers and is not
+   redistributed here. See `translation/LICENSE`.
 
 ## Original SGA
 
 The *Séminaire de Géométrie Algébrique du Bois Marie* (SGA) was written
-by Alexander Grothendieck and collaborators. The text used for the
-English translations of SGA 1, Exposés I, II, and VI, is the
-slightly corrected SMF recomposition:
+by Alexander Grothendieck and collaborators. The texts used for the
+English translations are the slightly corrected SMF recompositions:
 
 - A. Grothendieck, M. Raynaud, *Revêtements étales et groupe fondamental*
   (SGA 1), Séminaire de géométrie algébrique du Bois Marie 1960–61,
   recomposed edition, [arXiv:math/0206203](https://arxiv.org/abs/math/0206203).
+- A. Grothendieck (notes by a group of auditors), with an exposé by
+  M. Raynaud, *Cohomologie locale des faisceaux cohérents et théorèmes
+  de Lefschetz locaux et globaux* (SGA 2), Séminaire de géométrie
+  algébrique du Bois Marie 1962, recomposed edition,
+  [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
 
-That French text is **not** redistributed in this repository. The original
+Those French texts are **not** redistributed in this repository. The original
 remains copyright of the authors and of the original publishers
 (IHÉS / Springer / Société Mathématique de France, as applicable).
 

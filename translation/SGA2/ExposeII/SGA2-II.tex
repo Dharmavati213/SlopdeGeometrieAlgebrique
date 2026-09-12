@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper,oneside]{amsbook}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[american]{babel}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=1.1in}
+\makeatletter
+\def\input@path{../}
+\makeatother
+\usepackage{sga2-en}
+\usepackage[hidelinks]{hyperref}
+
+\addto\captionsamerican{\renewcommand{\chaptername}{Expos\'e}}
+
+\title[SGA~2, Exposé II (English draft)]{Application to quasi-coherent sheaves on preschemes\\
+{\normalsize SGA~2, Exposé II\\English draft}}
+\author{A.\ Grothendieck}
+\date{}
+\hypersetup{
+  pdftitle={SGA 2, Exposé II (English draft)},
+  pdfauthor={Alexander Grothendieck},
+  pdfsubject={Unofficial English translation of SGA 2, Exposé II}
+}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\chapter*{About this draft}
+This is an unofficial English translation of Expos\'e~II, ``Application to quasi-coherent sheaves on preschemes'',
+from SGA~2. The source volume is A.\ Grothendieck
+(notes by a group of auditors), with an expos\'e by M.\ Raynaud,
+\textit{Cohomologie locale des faisceaux coh\'erents et th\'eor\`emes
+de Lefschetz locaux et globaux} (SGA~2), S\'eminaire de g\'eom\'etrie
+alg\'ebrique du Bois Marie, 1962. It follows the slightly corrected
+SMF recomposition,
+\href{https://arxiv.org/abs/math/0511279}{arXiv:math/0511279}.
+
+This draft contains the assigned body of the source, including proofs,
+original footnotes, and editor notes (N.D.E.). Statement numbering and
+mathematical notation follow the source. References to material outside
+this draft retain their original numbers. Apparent mathematical
+misprints in the source have been retained; they are recorded in the
+accompanying README, separately from the translated text. Scholarly
+proofreading remains outstanding.
+
+The translator's contribution is licensed under
+\href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}.
+The French original remains copyright of its authors and publishers.
+
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{1}
+\input{en-body.tex}
+\end{document}

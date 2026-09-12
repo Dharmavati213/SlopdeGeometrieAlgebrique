@@ -1,0 +1,586 @@
+\chapter{Application to the fundamental group} \label{X}
+
+\renewcommand{\theequation}{\arabic{equation}}
+
+Throughout this expos\'e, one will denote by $X$ a locally noetherian
+prescheme, by~$Y$ a closed subset of $X$, by $U$ a variable open
+neighbourhood of $Y$ in $X$ and by~$\hat{X}$ the formal completion of
+$X$ along $Y$ (\EGA I 10.8). For every prescheme $Z$, one will denote
+by $\Et(Z)$ the category of \'etale coverings of $Z$, and by
+$\LL(Z)$\label{pX.1} the category of locally free coherent Modules on
+$Z$.
+
+%
+\section{Comparison of $\Et(\hat{X})$ and of $\Et(Y)$} \label{X.1}
+
+Let $\Ii$ be an ideal of definition of $Y$ in $X$. Set, for every
+$n\in\NN$, $Y_n=(Y, (\OX/\Ii^{n+1})_{|Y})$. The $Y_n$ form an inductive
+system of ordinary preschemes, or also of formal preschemes, by
+endowing the structure sheaves with the discrete topology. One knows
+(\EGA I 10.6.2) that $\hat{X}$ is the inductive limit, in the category
+of formal preschemes, of the inductive system of the $Y_n$. One also
+knows (\EGA I 10.13) that to give a formal $\hat{X}$-prescheme of
+\emph{finite type} $R$ is to give an inductive system of ordinary
+$Y_n$-preschemes $R_n$ of \emph{finite type}, such that
+$R_n\simeq(R_{n+1})\times_{(Y_{n+1})}(Y_n)$. Moreover, for $R$ to be an
+\'etale covering of $\hat{X}$, it is necessary and sufficient that for
+every~$n$, $R_n$ be an \'etale covering of $Y_n$. This being said, it
+is easy to see that nilpotent elements do not matter for \'etale
+coverings (\SGA 1~8.3), i.e.\ that the change of base functor:
+\[
+\Et(Y_{n+1}) \to \Et(Y_n)
+\]
+is an equivalence of categories for every $n\in\NN$. Hence:
+
+\begin{proposition} \label{X.1.1}
+With the notations introduced above, the natural functor
+$\Et(\hat{X})\to\Et(Y)$ is an equivalence of categories
+(\cf \textup{\SGA 1~8.4}).
+\end{proposition}
+
+\section{Comparison of $\Et(Y)$ and $\Et(U)$, for $U$ variable} \label{X.2}
+
+We shall introduce two conditions from which the announced comparison
+theorem will follow easily. Let $X$ be a locally noetherian prescheme
+and let $Y$ be a closed subset of $X$. One says that the pair $(X, Y)$
+satisfies the \emph{Lefschetz condition}, which one writes
+$\Lef(X, Y)$,\label{pX.2} if, for every open $U$ of $X$ containing $Y$
+and every locally free coherent sheaf $E$ on $U$, the natural
+homomorphism
+\[
+\Gamma(U, E) \to \Gamma(\hat{X}, \hat{E})
+\]
+is an isomorphism.
+
+One says that the pair $(X, Y)$ satisfies the \emph{effective Lefschetz
+condition}, which one writes $\Leff(X, Y)$, if one has $\Lef(X, Y)$ and
+if moreover, for every locally free coherent sheaf~$\Ee$ on $\hat{X}$,
+there exist an open neighbourhood $U$ of $Y$ and a locally free
+coherent sheaf~$E$ on $U$ and an isomorphism $\hat{E}\simeq\Ee$.
+
+These conditions are satisfied in two important examples:
+
+\refstepcounter{subsection}\label{X.2.1}
+\begin{enonce*}[remark]{Example 2.1\ndemark}
+\ndetext{\label{noteX.2.1}one can slightly improve (i): see Mme Raynaud
+(Raynaud~M., {\og Th\'eor\`emes de Lefschetz en cohomologie des
+faisceaux coh\'erents et en cohomologie \'etale. Application au groupe
+fondamental\fg}, \emph{Ann. Sci. \'Ec. Norm. Sup. (4)} \textbf{7}
+(1974), p\ptbl 29--52, corollaries I.1.4 and I.5); condition (ii) can
+be improved so as to get rid of the depth conditions along $Y$ (see
+theorem 3.3 of \loccit for a precise statement). The proof of this last
+point is very technical, the article above moreover giving only
+indications of the proof, referring to a detailed earlier version,
+which appeared in the Bulletin de la Soci\'et\'e math\'ematique de
+France.} Let $A$ be a noetherian ring and let $t\in \rr(A)$ be an
+$A$-regular element belonging to the radical $\rr(A)$ of $A$. Suppose
+that $A$ is a quotient of a regular local ring and that $A$ is complete
+for the $t$-adic topology (for example $A$ complete for the
+$\rr(A)$-adic topology). Set $X'=\Spec(A)$ and $Y'=V(t)$, and moreover
+set $x=\rr(A)$ and $X=X'-\{x\}$, $Y=Y'-\{x\}$. Thus $X$ is open in $X'$
+and $Y=X\cap Y'$. Then:
+\begin{enumeratei}
+\item
+If, for every prime ideal $\pp$ of $A$ such that $\dim A/\pp=1$
+(\ie for every closed point of $X$) one has $\prof A_{\pp}\geq 2$,
+then one has $\Lef(X, Y)$;
+
+\item
+if moreover, for every prime ideal $\pp$ of $A$ such that $t\in\pp$
+and $\dim A/\pp=1$ (\ie for every closed point of $Y$), one has
+$\prof A_{\pp}\geq 3$, then one has $\Leff(X, Y)$.
+\end{enumeratei}
+\end{enonce*}
+
+Let us first show that for every open neighbourhood $U$ of $Y$ in $X$,
+the complement of $U$ in $X$ is a union of finitely many closed points
+(in $X$). Let us remark that $U$ is open in $X$, hence in $X'$, hence
+$Z'=X'-U$ is closed. Let $I$ be an ideal of definition of $Z'$; it
+suffices to prove that $A/I$ is of dimension $1$. Now $Z'\cap Y'=\{x\}$
+hence $A/(I+(t))$ is artinian, whence the conclusion thanks to the
+``Hauptidealsatz''.
+
+The \emph{first hypothesis is equivalent to}: ``for every prime ideal
+$\pp$ of $A$, $\pp\neq \rr(A)$, one has
+$\prof A_\pp\geq3-\dim A/\pp$''. Indeed $A$ is a quotient of a regular
+ring, one can therefore apply \Ref{VIII}~\Ref{VIII.2.3} to the
+prescheme $X'$, to the closed subset $\{x\}$ and to the coherent sheaf
+$\Oo_{X'}$, observing that, $c(\pp)=\dim(A/\pp)$ for
+$\pp\in U=X'-\{x\}$ (because $x$ is the closed point of $X'$).
+
+Let $U$ be an open neighbourhood of $Y$ in $X$ and $E$ a locally free
+$\Oo_U$-module. Set $Z=X-U$ and let $u\colon U\to X$ be the canonical
+immersion. One will first prove that $u_\ast(E)$ is a \emph{coherent}
+$\OX$-Module, or, what amounts to the same, that $\SheafH^i_Z(E')$ is
+coherent for $i=0, 1$, where $E'$ is a coherent extension of $E$ to
+$X$. For this one applies theorem \Ref{VIII}~\Ref{VIII.2.1} to the
+prescheme $X$, to the closed subset $Z$ and to the coherent sheaf
+$E'$. It suffices to verify that for every point $p\in U$ such that
+$c(p)=1$, one has $\prof E'_p\geq 1$, where one has set
+\[
+c(p)=\codim (\overline{\{p\}}\cap Z, \overline{\{p\}}).
+\]
+Now if $p\in U$ and if $c(p)=1$, denoting by $\pp$ the ideal of $A$
+corresponding to $p$, one sees that $\dim A/\pp=2$, because the
+complement of $U$ is a union of finitely many closed points and $A$ is
+a quotient of a regular ring. Moreover, $E$ is locally free, hence, for
+every $p\in\Supp E$, one has $\prof E_p=\prof\Oo_{U, p}$. Finally, if
+$p\in U$ and if $c(p)=1$, one has
+\[
+\prof E'_p = \prof E_p = \prof\Oo_{U, p} = \prof A_\pp \geq 3-2=1.
+\]
+
+We must now prove that the natural homomorphism
+\begin{equation} \label{eq:X.1} {\Gamma(U, E) \to \Gamma(\hat{X}, \hat{E})}
+\end{equation}
+is an isomorphism. Setting then $\overline{\!E}=u_\ast(E)$, one notes
+that $\overline{\!E}$ is coherent and of depth $\geq 2$ at all the
+closed points of $X$. It follows that $\R^i f_\ast(\overline{\!E})$ is
+coherent for $i=0, 1$, where $f\colon X\to X'$ denotes the canonical
+immersion of $X$ in $X'=\Spec(A)$ (\Exp \Ref{VIII}). One then applies
+(\Ref{IX}~\Ref{IX.1.5}), and one concludes that
+\begin{equation} \label{eq:X.2}
+\Gamma(U, \overline{\!E}) \to \Gamma(\hat{X}, \widehat{\overline{\!E}})
+\end{equation}
+is an isomorphism, because $A$ is complete for the $t$-adic topology.
+
+One has a commutative diagram:
+\[
+\UseTips \newdir{ >}{!/-5pt/\dir{>}} \xymatrix@=5mm{ \Gamma(X, \overline{\!E})\ar[rr]^{\simeq}\ar[dr]_{\simeq} && \Gamma(U, E)\ar[dl]\\
+&\Gamma(\hat{X}, \hat{E})}
+\]
+whence the conclusion.
+
+Let now $\Ee$ be a locally free coherent sheaf on $\hat{X}$. If one has
+proved that~$\Ee$ is algebraizable, \ie is isomorphic to the formal
+completion of a coherent $\OX$-Module~$E$, it is easy to see that $E$
+is locally free in a neighbourhood of $Y$, hence to prove
+$\Leff (X, Y)$. Let $\widehat{X'}$ be the formal spectrum of $A$ for
+the $t$-adic topology, which is identified with the formal completion
+of $X'$ along $Y'$. Let us denote by $f$ the canonical immersion of~$X$
+in $X'$, by $f'$ the canonical immersion of $Y$ in $Y'$, and by
+$\hat{f}$ the morphism deduced by passage to the completions. For
+$\Ee$ to be algebraizable it suffices that $\hat{f}_\ast(\Ee)$ be a
+coherent $\Oo_{\hat{X}}$-Module, because $A$ is complete for the
+$t$-adic topology. Let $\Ii = t\Oo_{\hat{X}}$, it is an ideal of
+definition of $\hat{X}$.
+
+For every $n\geq 0$, set $\E_n=\Ee/\Ii^{n+1}\Ee$. At every closed point
+$y\in Y$, the depth of $\E_0$ is $\geq 2$; indeed $t$ is an $A$-regular
+element hence $\prof\Oo_{Y_0, y}=\prof\Oo_{X, y}-1\geq 2$. One concludes
+that $\hat{f}_\ast(\Ee)$ is coherent (\Ref{IX}~\Ref{IX.2.3}). qed
+
+\refstepcounter{subsection}\label{X.2.2}
+\begin{enonce*}[remark]{Example 2.2}
+{\normalfont (Will allow one to compare the fundamental group of a projective variety and of a hyperplane section)}
+Let $K$ be a field and let $X$ be a proper $K$-prescheme. Let $\Ll$ be
+an ample invertible $\OX$-Module. Let $t \in \Gamma(X, \Ll)$ be an
+$\OX$-regular element, which means that, for every open $U$ and every
+isomorphism $u\colon \Ll_{|U}\to\Oo_U$, \/$u(t)$ is not a zero-divisor
+in $\Oo_U$ (a condition which does not depend on $u$). Let $Y = V(t)$
+be the subscheme of $X$ with equation $t = 0$.\nde{condition (ii) is
+superfluous, see the note on page~\pageref{X.2.1}.} Then:
+\begin{enumeratei}
+\item
+If, for every closed point $x$ in $X$, one has
+$\prof\Oo_{X, x}\geq 2$, one has $\Lef (X, Y)$;
+
+\item
+if moreover, for every closed point $y\in Y$, one has
+$\prof\Oo_{X, y}\geq 3$, one has $\Leff (X, Y)$.
+\end{enumeratei}
+\end{enonce*}
+
+This example will be treated in detail in \Exp \Ref{XII}.
+
+Let $S$ be a prescheme, one knows (\EGA II 6.1.2) that the functor
+which, to every finite flat covering $r\colon R\to S$, associates the
+$\OX$-Algebra $r_\ast(\Oo_R)$, induces an equivalence between the
+category of finite flat coverings of $S$ and the category of coherent
+and locally free $\OX$-Algebras. Let $U$ be an open neighbourhood of
+$Y$, and let $r\colon R\to U$ be a finite flat covering of $U$. Let
+$\hat{R}$ be the finite flat covering of $\hat{X}$ deduced from it by
+change of base. One has $\hat{r}_\ast(\Oo_{\hat{R}})\simeq\widehat{r_\ast(\Oo_R)}$.
+
+\emph{Suppose then} $\Lef(X, Y)$. This implies that, for every $U$, the
+inverse image functor:
+\[
+\LL(U) \to \LL(\hat{X})
+\]
+is \emph{fully faithful}. Indeed, let $E$ and $F$ be two locally free
+coherent $\Oo_U$-Modules; $\SheafHom(E, F)$ is also coherent and
+locally free; $\SheafHom(E, F)$ is also coherent and locally free. By
+hypothesis, the natural map
+\[
+\Gamma_U (\SheafHom(E, F)) \to \Gamma_{\hat{X}}(\widehat{\SheafHom(E, F)})
+\]
+is an isomorphism, whence the conclusion, because $\SheafHom$ commutes
+with $\, \, \hat{}\, \,$ since everything is locally free. Now
+$\, \, \hat{}\, \,$ commutes with the tensor product, one deduces that
+the functor which to every coherent and locally free $\Oo_U$-Algebra
+$\Aa$ associates the $\Oo_{\hat{X}}$-Algebra $\hat{\Aa}$, is fully
+faithful. Better still, if $E$ is a locally free coherent
+$\Oo_U$-Module, there is a one-to-one correspondence between the
+structures of commutative $\Oo_{\hat{X}}$-Algebra on $\hat{E}$.
+
+\begin{proposition} \label{X.2.3}
+Let $X$ be a locally noetherian prescheme and let $Y$ be a closed
+subset of $X$. Let $\hat{X}$ be the formal completion of $X$ along
+$Y$. For every open $U$ of $X$, $U\supset Y$, denote by $L_U$
+(\resp $P_U$, \resp $E_U$) the functor which to every locally free
+coherent $\Oo_U$-Module (\resp to every finite flat covering of $U$,
+\resp to every \'etale covering of $U$) associates its inverse image
+under $\hat{X} \to X$.
+\begin{enumeratei}
+\item
+If one has $\Lef(X, Y)$, then for every open neighbourhood $U$ of $Y$,
+the functors $L_U$, $P_U$ and $E_U$ are fully faithful.
+
+\item
+If one has $\Leff(X, Y)$, then for every locally free coherent
+$\Oo_{\hat{X}}$-Module~$\Ee$ (\resp ...), there exist an open $U$ and a
+locally free coherent $\Oo_U$-Module~$E$ (\resp ...), such that
+$L_U(E) \simeq \Ee$ (\resp ...).
+\end{enumeratei}
+\end{proposition}
+
+(i) Has been seen.
+
+(ii) Follows from (i) and the hypothesis, at least for $L_U$ and
+$P_U$. Moreover if $R$ is an \emph{\'etale} covering of $\hat{X}$,
+there exist an open neighbourhood $U$ of $Y$ in $X$ and a finite flat
+covering $R'$ of $U$ such that $\widehat{R'} \simeq R$. One deduces
+from this a covering $R''$ of $Y$ which is \'etale by \Ref{X.1.1},
+hence $R'$ is \'etale in a neighbourhood $U'$ of $Y$. qed
+
+\begin{corollary} \label{X.2.4}
+If one has $\Lef (X, Y)$, for a finite flat covering $R$ of an open
+neighbourhood $U$ of $Y$ to be connected, it is necessary and
+sufficient that $R \times_U \hat{X}$ be so. In particular, for $Y$ to
+be connected, it is necessary and sufficient that the open
+neighbourhood $U$ of $Y$ be so, or again that $X$ be so.
+\end{corollary}
+
+Indeed, for a locally ringed space $(X, \OX)$ to be connected, it is
+necessary and sufficient that $\Gamma(X, \OX)$ not be a direct product
+of two nonzero rings. Now one has
+\[
+\Gamma(U, r_\ast(\Oo_R)) \simeq \Gamma(\hat{X}, \hat{r}_\ast(\Oo_{\hat{R}}))
+\]
+by $\Lef(X, Y)$.
+
+\begin{corollary} \label{X.2.5} If one has $\Lef (X, Y)$, then for every $U$, the functor
+\[
+\Et(U) \to \Et(Y)
+\]
+is fully faithful. If one has $\Leff(X, Y)$, then for every \'etale
+covering $R$ of $Y$, there exist an open neighbourhood $U$ of $Y$ and a
+covering $R'$ of $U$ such that $R' \times_U Y \simeq R$.
+\end{corollary}
+
+\refstepcounter{subsection}\label{X.2.6}
+\begin{enonce*}{Corollary 2.6\ndemark}
+If one has $\Lef(X, Y)$ and if $Y$ is connected, every open
+neighbourhood $U$ of $Y$ is connected and the natural homomorphism
+$\pi_1(Y)\to\pi_1(U)$ is surjective. If moreover one has
+$\Leff(X, Y)$, the natural homomorphism
+\[
+\pi_1(Y) \to \varprojlim_{U}\, \pi_1(U)
+\]
+is an isomorphism. (N.B. One assumes chosen a ``base-point'' in $Y$,
+which one also takes as base-point in $X$, for the definition of the
+fundamental groups.)
+\end{enonce*}
+
+All this follows trivially from prop\ptbl \Ref{X.1.1} and from
+prop\ptbl \Ref{X.2.3}.
+\ndetext{together with~\Ref{X.3.3} and the criteria~\Ref{XII.2.4}
+and~\Ref{XII.3.4}, one obtains the following relative Lefschetz
+theorem. Let $f:X\to S$ be a projective and flat morphism of connected
+noetherian schemes and let $D$ be an effective relative Cartier divisor
+in $X$ which is relatively ample. If, for every $s\in S$, the depth of
+$X_s$ at each closed point is $\geq 2$, then $D$ is connected and, for
+every open $U$ of $X$ containing $D$, the arrow
+$i_U:\pi_1(D)\to\pi_1(U)$ is surjective. If moreover, the depth of
+$X_s$ along each closed point of $D_s$ is $\geq 3$ and if the local
+rings of $X$ at its closed points are pure, for example complete
+intersections (\cf \Ref{X}~\Ref{X.3.4}), then $i_X$ is an isomorphism.
+\Cf Bost~J.-B., {\og Lefschetz theorem for Arithmetic Surfaces\fg},
+\emph{Ann. Sci. \'Ec. Norm. Sup. (4)} \textbf{32} (1999),
+p\ptbl 241--312, theorems 1.1 and 2.1. In the case where $X$ is simply
+a smooth projective geometrically connected surface over a field, one
+always has connectedness of $D$ and surjectivity of
+$\pi_1(D)\to\pi_1(U)$ (where $U$ is an open containing~$D$) for $D$
+merely nef of square $>0$ (\cf \loccit, theorem 2.3 and also theorem
+2.4 for surfaces that are merely normal and complete). In the case of
+an arithmetic surface (normal and quasi-projective) $X$ over a ring of
+integers $\Oo_K$, Bost, improving results of Ihara (Ihara~Y.,
+{\og Horizontal divisors on arithmetic surfaces associated with
+Bely\u\i\ uniformizations\fg}, in \emph{The Grothendieck theory of
+dessins d'enfants (Luminy, 1993)}, London Math. Soc. Lect. Note Series,
+vol.~200, Cambridge Univ. Press, Cambridge, 1994, 245--254 or \loccit,
+corollary 7.2), has shown that if a point $P\in X(\Oo_K)$, which plays
+the role of the divisor $D$ in the geometric situation, satisfies
+certain positivity conditions, then the arrow
+$\pi_1(X)\to\pi_1(\Spec \Oo_K)$ deduced from the projection was
+invertible, with inverse the arrow
+$\pi_1(\Spec \Oo_K)\to\pi_1(X)$ deduced from $P$ (\loccit,
+theorem 1.2).}
+
+\section{Comparison of $\pi_1(X)$ and of $\pi_1(U)$} \label{X.3}
+
+\begin{definition} \label{X.3.1}
+Let $X$ be a prescheme and $Z$ a closed subset of $X$. Set $U=X-Z$.
+One says that the pair $(X, Z)$ is pure if, for every open $V$ of $X$,
+the functor
+\[
+\begin{aligned} \Et(V) &\to \Et(V\cap U) \\
+V' &\mto V'\times_V(V\cap U)
+\end{aligned}
+\]
+is an equivalence of categories\sfootnote{For a notion more
+satisfactory in certain respects, \cf the comment \Ref{XIV}~\Ref{XIV.1.6}
+d).}.
+\end{definition}
+
+\begin{definition} \label{X.3.2}
+Let $A$ be a noetherian local ring. Set $X=\Spec A$. Let $\rr(A)$ be
+the radical of $A$ and let $x=\rr(A)$ be the closed point of $X$. One
+says that $A$ is pure if the pair $(X, \{x\})$ is so.
+\end{definition}
+
+We leave to the reader the task of not proving the following
+proposition:
+
+\begin{proposition} \label{X.3.3}
+Let $X$ be a locally noetherian prescheme and let $Z$ be a closed
+subset of $X$. For the pair $(X, Z)$ to be pure it is necessary and
+sufficient that, for every $z\in Z$, the ring $\Oo_{X, z}$ be
+pure\sfootnote{Compare the non-commutative case of
+\Ref{XIV}~\Ref{XIV.1.8}, whose proof is essentially the same as that of
+\Ref{X.3.3}.}.
+\end{proposition}
+
+This being said the following theorem is the essential result of this
+number:
+
+\refstepcounter{subsection}\label{X.3.4}
+\begin{enonce*}{Theorem 3.4 (Purity theorem\ndemark)}
+\ndetext{for the history of the methods employed, see the letter of
+1~October 1961 from Grothendieck to Serre, \emph{Correspondance
+Grothendieck-Serre}, edited by Pierre Colmez and Jean-Pierre Serre,
+Documents Math\'ematiques, vol.~2, Soci\'et\'e Math\'ematique de
+France, Paris, 2001.}
+\textup{(i)}\enspace
+A regular noetherian local ring of dimension $\geq 2$ is pure (purity
+theorem of Zariski--Nagata).
+
+\textup{(ii)}\enspace
+A noetherian local ring of dimension $\geq 3$ which is a complete
+intersection is pure.
+\end{enonce*}
+
+Let us recall that one says that a local ring is a \emph{complete
+intersection} if there exists a \emph{regular} noetherian local ring
+$B$ and a $B$-regular sequence $(t_1, \ldots, t_k)$ of elements of the
+radical $\rr(B)$ of $B$ such that
+\[
+A \simeq B/(t_1, \ldots, t_k).
+\]
+
+In this connection let us remark that it would be less ambiguous to say
+that $A$ is an \emph{absolute} complete intersection, as opposed to the
+situation, which we have already encountered, where $X$ is a locally
+noetherian prescheme (which need not be regular) and where $Y$ is a
+closed subset of $X$, of which one says that it is ``set-theoretically
+locally a complete intersection \emph{in $X$}''.
+
+Let us first prove some lemmas.
+
+\begin{lemma} \label{X.3.5}
+Let $X$ be a locally noetherian prescheme and let $U$ be an open subset
+of $X$. Set $Z=X-U$. Let $i\colon U\to X$ be the canonical immersion of
+$U$ in $X$. The following conditions are equivalent:
+\begin{enumeratei}
+\item
+For every open $V$ of $X$, if one sets $V'=V\cap U$, the functor
+$F\mto F_{|V'}$ from the category of locally free coherent
+$\Oo_V$-Modules to the category of locally free coherent
+$\Oo_{{V'}}$-Modules is fully faithful;
+
+\item
+the natural homomorphism $\OX \to i_\ast(\Oo_{U})$ is an isomorphism;
+
+\item
+for every $z\in Z$, one has $\prof\Oo_{X, z}\geq 2$.
+\end{enumeratei}
+\end{lemma}
+
+One has already seen (\Ref{III}~\Ref{III.3.3}) the equivalence of (ii)
+and (iii). Let us show that (ii) implies (i). Let $F$ and $G$ be two
+locally free coherent $\Oo_V$-Modules, $\SheafHom(F, G)$ is so as well,
+hence $\SheafHom(F, G)\to i_\ast(\SheafHom(F_{|V'}, G_{|V'}))$ is an
+isomorphism hence $\Hom(F, G)\simeq\Hom(F_{|V'}, G_{|V'})$. Conversely
+one takes $F=G=\OX$ and one applies (i) to every open~$V$ of~$X$.
+
+Here is a useful ``descent lemma'':
+
+\begin{lemma} \label{X.3.6} Let $X$ be a locally noetherian prescheme and let $Z$ be a closed subset of $X$. Set $U=X-Z$. Suppose that the homomorphism $\OX \to i_\ast(\Oo_U)$ is an isomorphism. Let $f\colon X_1\to X$ be a faithfully flat and quasi-compact morphism. Set $Z_1=f^{-1}(Z)$. If the pair $(X_1, Z_1)$ is pure, so is $(X, Z)$.
+\end{lemma}
+
+Let us remark that the hypothesis $\OX\simeq i_\ast(\Oo_U)$ is
+preserved by flat extension of the base, because $i$ is a quasi-compact
+morphism and, in this case, direct image commutes with inverse image.
+Now this hypothesis implies that the functor
+\[
+\Et(V) \to \Et(U\cap V)
+\]
+defined by
+\[
+V'\mto V'\times_V(V\cap U)
+\]
+is fully faithful, as is shown by the interpretation of an \'etale
+covering in terms of a locally free coherent Algebra. It remains to
+prove effectivity. One may for example introduce the square $X_2$ and
+the cube $X_3$ of $X_1$ over $X$ and one remarks that a faithfully flat
+and quasi-compact morphism is a morphism of \emph{universal effective
+descent} for the fibered category of \'etale coverings, over the
+category of preschemes. The conclusion is formal from
+there\sfootnote{\Cf J.~Giraud, \emph{M\'ethode de la descente},
+M\'emoire \numero 2 of the Bulletin de la Soci\'et\'e Math\'ematique de
+France (1964).}.
+
+\begin{remark} \label{X.3.7}
+One has proved along the way that if $\OX\to i_\ast(\Oo_U)$ is an
+isomorphism, $X$ is connected if and only if $U$ is so, and then
+$\pi_1(U)\to\pi_1(X)$ is surjective.
+\end{remark}
+
+\begin{corollary} \label{X.3.8}
+Let $A$ be a noetherian local ring. Suppose that $\prof A\geq 2$. Then
+if $\hat{A}$ is pure, $A$ is pure.
+\end{corollary}
+
+Follows from lemma \Ref{X.3.5} and lemma \Ref{X.3.6}.
+
+The following lemma is the essential point of the proof of the purity
+theorem:
+
+\begin{lemma} \label{X.3.9}
+Let $A$ be a noetherian local ring and let $t\in\rr(A)$ be an
+$A$-regular element. Suppose that $A$ is complete for the $t$-adic
+topology and moreover a quotient of a regular local ring (for example
+$A$ complete). Set $B=A/tA$.
+\begin{enumeratei}
+\item
+If for every prime ideal $\pp$ of $A$ such that $\dim A/\pp=1$, one has
+$\prof A_{\pp}\geq 2$, then $B$ pure implies $A$ pure.
+
+\item
+If for every prime ideal $\pp$ of $A$ such that $\dim A/\pp=1$, one has
+$\prof A_{\pp}\geq 2$, if $A_\pp$ is pure when $t\notin\pp$, and
+if\nde{this last condition can be improved, \cf the editor's
+note~\eqref{noteX.2.1} on page~\pageref{noteX.2.1}.} $\prof A_\pp\geq3$
+when $t\in\pp$, then $A$ pure implies $B$ pure.
+\end{enumeratei}
+\end{lemma}
+
+Let $X'=\Spec(A)$ and let $Y'=V(t)$, which one identifies with the
+spectrum of $B$. Let $x=\rr(A)$, and set $X=X'-\{x\}$ and
+$Y=Y'-\{x\}=X\cap Y'$. Let us denote by $\widehat{X'}$ the formal
+spectrum of $A$ for the $t$-adic topology, which is identified with the
+formal completion of $X'$ along $Y'$.
+
+Since $A$ is complete for the $t$-adic topology, one remarks that
+$\Et(X')\to\Et(\widehat{X'})$ is an equivalence of categories. Likewise
+$\Et(\widehat{X'})\to\Et(Y')$ by prop\ptbl \Ref{X.1.1}, hence
+$\Et(X')\to\Et(Y')$ is an equivalence of categories.
+
+Let us show (i). Consider the diagrams
+\[
+\UseTips \newdir{ >}{!/-5pt/\dir{>}} \xymatrix{ X' & X\ar[l] && \Et(X')\ar[r]^a \ar[d]_c & \Et(X)\ar[d]^b\\
+Y'\ar[u] & Y\ar[l] \ar[u] && \Et(Y')\ar[r]^d & \Et(Y)}
+\]
+One has just seen that $c$ is an equivalence, $d$ is so as well by the
+hypothesis that $B$ is pure and finally $b$ is fully faithful as one
+has seen in example \Ref{X.2.1}, \cf \Ref{X.2.3} (i).
+
+Let us show (ii). This time one assumes that $A$ is pure hence $a$ is
+an equivalence; likewise $c$. Let us see that $b$ is an equivalence. By
+example \Ref{X.2.1} one knows that one has $\Leff(X, Y)$, hence $b$ is
+already fully faithful, let us prove that it is essentially
+surjective. One uses \Ref{X.2.3} (ii) noting that, if $U$ is an open
+neighbourhood of $Y$ in $X$, the complement of $U$ in $X$ is a union of
+finitely many closed points; the pair $(X,X-U)$ is therefore pure by
+prop\ptbl \Ref{X.3.3}, because at such a point $\pp$,
+$\Oo_{X,\pp}=A_\pp$ is pure by hypothesis. Whence the conclusion.
+
+\begin{proof}[Proof of the purity theorem]
+Let us first show (i) by induction on the dimension. Let $A$ be a
+noetherian local ring of \emph{dimension} $2$. Set $X'=\Spec(A)$,
+$x=\rr(A)$, $X=X'-\{x\}$. One has $\prof A=2$. One can therefore apply
+lemma \Ref{X.3.5} to the pair $(X', \{x\})$ and hence
+$\Et(X')\to\Et(X)$ is fully faithful. Let now $r\colon R\to X$ be an
+\'etale covering defined by a locally free coherent and \'etale
+$\OX$-Algebra $\Aa=r_\ast(\Oo_R)$. Let us denote by $i\colon X\to X'$
+the canonical immersion of $X$ in $X'$. I say that $i_\ast(\Aa)=\Bb$ is
+a \emph{coherent} $\Oo_{X'}$-Algebra. Indeed, it suffices to apply the
+``finiteness theorem'' \Ref{VIII}~\Ref{VIII.2.3}. I say that this
+algebra is of depth $\geq 2$ at $x$. Indeed, it is the direct image of
+an $\OX$-Module, with $X=X'-\{x\}$. Since $A$ is a \emph{regular} ring
+of dimension $2$ one has: $\dimp \Bb + \prof\Bb=\dim A=2$, where
+$\dimp\Bb$ denotes the projective dimension of $\Bb$. Hence
+$\dimp\Bb=0$, hence $\Bb$ is projective, hence free. It follows that
+$\Bb$ defines a finite flat covering of $X'=\Spec(A)$. The set of
+points of $X'$ where this covering is not \'etale is a closed subset of
+$X'$ whose equation is a principal ideal: the discriminant ideal of
+$\Bb/A$. Now, by construction, this closed set is contained in
+$x=\rr(A)$ hence is empty because $\dim A=2$.
+
+Let $A$ be a regular noetherian local ring, $\dim A=n\geq3$. Suppose
+(i) proved for rings of dimension $<n$. To prove that $A$ is pure, one
+may assume $A$ complete by \Ref{X.3.8}. Let $t\in\rr(A)$ whose image in
+$\rr(A)/\rr(A)^2$ is nonzero. Then $B=A/tA$ is a \emph{regular}
+noetherian local ring of dimension $n-1$ hence is pure, because
+$n-1\geq2$. One concludes by lemma \Ref{X.3.9}~(i), which is applicable
+because $A$ is complete.
+
+\emph{Let us show} (ii). Let $A$ be a noetherian local ring of
+dimension $\geq 3$. Suppose there exists a \emph{regular} noetherian
+local ring $B$ and a $B$-sequence $(t_1, \ldots, t_k)$ such that
+$A\simeq B/(t_1, \ldots, t_k)$. Let us prove that $A$ is pure, by
+induction on $k$. If $k=0$, one knows it by (i). \emph{Suppose
+$k\geq1$ and the result acquired for $k'<k$.} By corollary
+\Ref{X.3.9} one may assume that $A$ (hence also $B$) is complete. Set
+$C=B/(t_1, \ldots, t_{k-1})$, hence $A\simeq C/t_kC$ and $t_k$ is
+$C$-regular. By the induction hypothesis one knows that $C$ is pure, it
+suffices to prove that lemma \Ref{X.3.9}~(ii) is applicable. Notation:
+$A$ and $B$ of the lemma become $C$ and $A$. One has $\dim C\geq4$,
+hence for every prime ideal $\pp$ of $C$ such that $\dim C/\pp=1$, one
+has $\prof C_\pp\geq3$. Moreover, $C_\pp$ is a complete intersection
+with $k'\leq k-1$, hence is pure by the induction hypothesis.
+\end{proof}
+
+\begin{theorem} \label{X.3.10}
+Let $X$ be a locally noetherian prescheme and let $Y$ be a closed
+subset of $X$. Suppose that one has $\Leff(X, Y)$ (\cf Examples
+\Ref{X.2.1} and \Ref{X.2.2}). Suppose moreover that, for every open
+neighbourhood $U$ of $Y$ and every $x\in X-U$, the local ring
+$\Oo_{X, x}$ is regular of dimension $\geq2$ or else a complete
+intersection of dimension $\geq3$. Then
+\[
+\pi_0(Y) \to \pi_0(X)
+\]
+is a bijection, and if $X$ is connected
+\[
+\pi_1(Y) \to \pi_1(X)
+\]
+is an isomorphism.
+\end{theorem}
+
+There is nothing left to prove. One remarks that, in the two examples
+cited \Ref{X.2.1} and \Ref{X.2.2}, the complement of $U$ is a union of
+finitely many closed points, whence it follows that the hypothesis on
+the dimension of $\Oo_{X, x}$ is not a joke.
+
+\numberwithin{equation}{section}

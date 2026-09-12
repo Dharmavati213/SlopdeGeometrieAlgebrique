@@ -1,0 +1,297 @@
+\section{Cohomological and homotopical depth}\label{XIV.1}
+
+\setcounter{subsection}{-1}
+
+\subsection{}\label{XIV.1.0}
+Let us fix the following notation. Let $X$ be a scheme\sfootnote{In accordance with the new terminology (\cf the re-edition of \EGA I), we shall here call ``scheme'' what was previously called ``prescheme'' and ``separated scheme'' what was previously called ``scheme''.}, $Y$ a closed subset of~$X$, $U$ the complementary open set and $i:Y=X-U\to X$ the canonical immersion. Let~$\underline{\Gamma}_Y$ be the functor which, to an abelian sheaf on $X$, associates the ``sheaf of sections with support in $Y$'', that is to say $\underline{\Gamma}_Y=i_*i^!$ (\cf \SGA 4 IV 3.8 and VIII 6.6) and $\Gamma_Y$ the functor $\Gamma\cdot \underline{\Gamma}_Y$ (where $\Gamma$ is the functor ``global sections''). Consider the derived category $D^+(X)$ and the derived functor $\R\underline{\Gamma}_Y$ (\resp $\R\Gamma_Y$) of $\underline{\Gamma}_Y$ (\resp of $\Gamma_Y$) (\cf \cite{XIV.3}). Given a complex of abelian sheaves $F$ on $X$, with degrees bounded below, one may regard it as an element of $D^+(X)$; we shall then denote by ${\h}_Y^p(F)$ the $p$-th cohomology sheaf of $\R\underline{\Gamma}_Y(F)$ and by $\H_Y^p(X, F)$ the $p$-th cohomology group of $\R\Gamma_Y(F)$. The results of (\SGA 4 V 4.3 and 4.4) extend trivially to ${\h}_Y^p(F)$ and $\H_Y^p(X, F)$.
+
+%
+\begin{proposition} \label{XIV.1.1}
+Let $X$ be a scheme, $Y$ a closed subset of $X$, $U$ the complementary open set and $i:U\to X$ the canonical immersion. Let $F$ denote either a sheaf of sets on $X$, or a sheaf of groups on $X$, or a complex of abelian sheaves on $X$, with degrees bounded below. Let us fix the following notation: if $X'\to X$ is a morphism, $U'$ and $F'$ denote the inverse images of $U$ and $F$ on $X'$; moreover, if $\bar{y}$ is a geometric point of $X$, $\bar{X}$ denotes the strict localization of $X$ at $\bar{y}$ and $\bar{U}$ and $\bar{F}$ the inverse images of $U$ and $F$ in $\bar{X}$.
+
+$1^\circ)$ Let $F$ be a sheaf of sets on $X$ and $n$ an integer $\leq 2$; then the following conditions are equivalent:
+
+\textup{(i)} The canonical morphism
+$$F\to i_*i^*F$$
+is injective if $n\geq 1$, bijective if $n\geq 2$.
+
+\textup{(ii)} For every scheme $X'$ \'etale over $X$, the canonical morphism
+$$
+\H^0(X', F')\to \H^0(U', F')
+$$
+is injective if $n\geq 1$, bijective if $n\geq 2$.
+
+Suppose moreover that the open set $U$ is retrocompact in $X$; then the preceding conditions are equivalent to the following:
+
+\textup{(iii)} For every geometric point $\bar{y}$ of $Y$, the canonical morphism
+$$
+\H^0(\bar{X}, \bar{F})\to \H^0(\bar{U}, \bar{F})$$
+is injective if $n\geq 1$, and bijective if $n\geq 2$.
+
+$2^\circ)$ Let $F$ be a sheaf of groups on $X$ and $n$ an integer $\leq 3$; then the following conditions are equivalent:
+
+\textup{(i)} The canonical morphism
+$$F\to i_*i^*F$$
+is injective if $n\geq 1$, bijective if $n\geq 2$, and if $n\geq 3$, in addition to the preceding conditions, the sheaf of pointed sets $\R^1i_*(i^*F)$ is zero.
+
+\textup{(ii)} For every scheme $X'$ \'etale over $X$, the canonical morphism
+$$
+\H^0(X', F')\to \H^0(U', F')
+$$
+is injective if $n\geq 1$, bijective if $n\geq 2$, and moreover the canonical morphism
+$$
+\H^1(X', F')\to \H^1(U', F')
+$$
+is injective if $n\geq 2$, bijective if $n\geq 3$.
+
+\textup{(ii bis)} Identical to \textup{(ii)}, except in the case $n=2$ where one assumes only $\H^0(X', F')\to \H^0(U', F')$ bijective.
+
+Suppose moreover that $U$ is retrocompact in $X$; then the preceding conditions are also equivalent to the following:
+
+\textup{(iii)} For every geometric point $\bar{y}$ of $Y$, the canonical morphism
+$$
+\H^0(\bar{X}, \bar{F})\to \H^0(\bar{U}, \bar{F})
+$$
+is injective if $n\geq 1$, bijective if $n\geq 2$; finally if $n\geq 3$, in addition to the preceding conditions, $\H^1(\bar{U}, \bar{F})$ is zero.
+
+$3^\circ)$ Let $F$ be a complex of abelian sheaves, with degrees bounded below and $n$~an integer; then the following conditions are equivalent:
+
+\textup{(i)} One has ${\h}_Y^p(F)=0$ for $p<n$ (\cf 1.0).
+
+\textup{(ii)} For every scheme $X'$ \'etale over $X$, the canonical morphism
+$$
+\H^p(X', F')\to \H^p(U', F')
+$$
+is bijective for $p<n-1$, injective for $p=n-1$.
+
+Suppose $U$ retrocompact in $X$, then the preceding conditions are also equivalent to the following:
+
+\textup{(iii)} For every geometric point $\bar{y}$ of $Y$, the canonical morphism
+$$
+\H^p(\bar{X}, \bar{F})\to \H^p(\bar{U}, \bar{F})$$
+is bijective for $p<n-1$, injective for $p=n-1$.
+
+In the case where $F$ is an abelian sheaf and $n\geq 2$, the conditions \textup{(i)} and \textup{(ii)} are also equivalent to the following:
+
+\textup{(ii bis)} For every scheme $X'$ \'etale over $X$, the canonical morphism
+$$
+\H^p(X', F')\to \H^p(U', F')$$
+is bijective for $p<n-1$.
+\end{proposition}
+
+\begin{proof}
+$1^\circ)$ It is clear that \textup{(i)}\SSI \textup{(ii)}.
+Let us show that, if $U$ is retrocompact in $X$, \textup{(i)}\SSI
+\textup{(iii)}. Indeed, \textup{(i)} amounts to saying that, for
+every geometric point $\bar{y}$ of $X$, the morphism
+$F_{\bar{y}}\to (i_*i^*F)_{\bar{y}}$ is injective if $n\leq 1$ and
+bijective if $n\leq 2$ (\SGA 4 VIII 3.6). As this morphism is in
+any case bijective when $\bar{y}$ is a geometric
+point of $U$, one may restrict to the geometric points
+$\bar{y}$ of $Y$. Now it follows from the fact that $i$ is quasi-compact
+and from (\SGA 4 VIII 5.3) that the morphism
+$$F_{\bar{y}}\to (i_*i^*F)_{\bar{y}}$$
+is canonically identified with the morphism
+$$
+\H^0(\bar{X}, \bar{F})\to \H^0(\bar{U}, \bar{F}),
+$$
+whence the equivalence of \textup{(i)} and \textup{(iii)}.
+
+$2^\circ)$ \textup{(i)}\ALORS \textup{(ii)}. The assertions on $\H^0$ follow from $1^\circ)$. Let then $i'$ be the canonical immersion of $U'$ into $X'$; the assertions on $\H^1$ follow from the exact sequence (\SGA 4 XII 3.2)
+$$0\to \H^1(X', i'_*i'^*F')\to \H^1(U', F')\to \H^0(X', \R^1i'_*(i'^*F')).
+$$
+
+(ii bis)\ALORS \textup{(i)}. By $1^\circ)$, it suffices to show that, for $n\geq 3$, one has $\R^1i_*(i^*F)=0$. Now $\R^1i_*(i^*F)$ is the sheaf associated to the presheaf $X'\mto \H^1(U', F')$, that is to say, by hypothesis, the sheaf associated to the presheaf $X'\mto \H^1(X', F')$, which is zero.
+
+\textup{(i)}\SSI \textup{(iii)}. Taking account of $1^\circ)$, the only thing that remains to be seen is that the relation $\R^1i_*(i^*F)=0$ is equivalent to the fact that $\H^1(\bar U, \bar F)=0$ for every geometric point $\bar y$ of $Y$. As $\R^1i_*(i^*F))$ is zero outside $Y$, it amounts to the same to say that $\R^1i_*(i^*F)=0$ or that $(\R^1i_*(i^*F))_{\bar y}=0$ for every geometric point $\bar y$ of $Y$. It then suffices to note that, $i$ being quasi-compact, one has $(\R^1i_*(i^*F))_{\bar y}=\H^1(\bar U, \bar F)$ (\SGA 4 VIII 5.3).
+
+$3^\circ)$ \textup{(i)}\ALORS \textup{(ii)}. Let $X'$ be a scheme \'etale over $X$; one has the exact sequence (\SGA 4 V 4.5)
+\begin{equation*} \label{eq:XIV.1.1.*} \tag{$*$} {\to \H^p_{Y'}(X', F')\to H^p(X', F')\to H^p(U', F')\to};
+\end{equation*}
+hence \textup{(ii)} is equivalent to $H^p_{Y'}(X', F')=0$ for $p<n$ and for every scheme $X'$ \'etale over $X$. Consider then the spectral sequence
+$$
+\E_2^{pq}=\H^p(X', {\h}_Y^q(F))\To \H_{Y'}^*(X', F');$$
+by hypothesis, ${\h}_Y^q(F)=0$ for $q<n$, whence $\E_2^{pq}=0$ for $p+q<n$ and consequently $\H_{Y'}^p(X', F')=0$ for $p<n$.
+
+\textup{(ii)}\ALORS \textup{(i)}. The sheaf ${\h}_Y^p(F)$ is associated to the presheaf $X'\mto \H_{Y'}^p(X', F')$; as one has already remarked that \textup{(ii)} is equivalent to the relation $\H_{Y'}^p(X', F')=0$ for $p<n$ and for every scheme $X'$ \'etale over $X$, one indeed has ${\h}_Y^p(F)=0$ for $p<n$.
+
+\textup{(i)}\SSI \textup{(iii)}. The sheaves ${\h}_Y^p(F)$ are concentrated on $Y$; consequently it amounts to the same to say that ${\h}_Y^p(F)=0$ or to say that, for every geometric point $\bar y$ of $Y$, the stalk $({\h}_Y^p(F))_{\bar y}$ is zero. Now, $i$ being quasi-compact, one deduces from (\SGA 4 VIII 5.2) that one has $({\h}_Y^p(F))_{\bar y}={\h}_{\bar Y}^p(\bar X, \bar F)$. The equivalence of \textup{(i)} and \textup{(iii)} follows from this, taking account of the analogue on $\bar X$ of the exact sequence (\Ref{eq:XIV.1.1.*}).
+
+(ii bis)\ALORS \textup{(ii)} in the case where $F$ is an abelian sheaf. The only thing that remains to be shown is that ${\h}_Y^{n-1}(F)=0$. Now, for $n>2$, the sheaf ${\h}_Y^{n-1}(F)$ is associated to the presheaf $X'\mto \H^{n-2}(U', F')=\H^{n-2}(X', F')$ hence is indeed zero. The case $n=2$ follows from the fact that ${\h}_Y^1(F)$ is the cokernel of the morphism $F\to i_*i^*F$.
+\skipqed
+\end{proof}
+
+\begin{definition} \label{XIV.1.2}
+The notation is that of \Ref{XIV.1.1}. One says that $F$ is of \'etale $Y$-depth $\geq n$ and one writes
+$$
+\prof_Y(F)\geq n$$
+if $F$ satisfies the equivalent conditions \textup{(i)} and \textup{(ii)} of \Ref{XIV.1.1}. If $F$ is a complex of abelian sheaves, one calls the \'etale $Y$-depth of $F$ the least upper bound of the~$n$ for which $\prof_Y(F)\geq n$; one will use the same notation if $F$ is a sheaf of sets \resp of not necessarily commutative groups (so that one then has $0\leq \prof_Y(F)\leq 2$, \resp $0\leq \prof_Y(F)\leq 3$, when the context does not allow confusion as to which of the three variants envisaged here one is using).
+
+If $\LL$ is a set of prime numbers, one says that the \'etale $Y$-depth for~$\LL$ of $X$ is $\geq n$ and one writes
+$$
+\prof_Y^{\LL}(X)\geq n
+$$
+if, for every constant sheaf of the form $\ZZ/\ell\ZZ$ with $\ell\in \LL$, one has $\prof_Y(\ZZ/\ell\ZZ)\geq n$. One defines in the evident way the \'etale $Y$-depth for $\LL$ of $X$. If $\LL=\PP$, the set of all prime numbers, and if there is no risk of confusion with the notation of \textup{(\EGA IV 5.7.1)} (relative to the case where $F=\OX$), one omits $\LL$ from the notation; otherwise one writes $\prof \et(X)$.
+
+Finally one says that $X$ is of homotopical $Y$-depth $\geq 3$ for $\LL $ and one writes
+$$
+\prof \hop_Y^{\LL}(X)\geq 3$$
+if, for every finite constant sheaf of $\LL$-groups $F$ on $X$, one has $\prof_Y(F)\geq 3$. If $\LL=\PP$, one omits $\LL$ from the notation.
+\end{definition}
+
+\begin{corollary} \label{XIV.1.3}
+Under the conditions of \Ref{XIV.1.1}, if $\prof_Y(F)\geq n$, then, for every closed subset~$Z$ of $Y$, one has
+$$
+\prof_Z(F)\geq n.
+$$
+\end{corollary}
+
+Let us for example make the argument in the case where $F$ is a complex of abelian sheaves with degrees bounded below. One uses \Ref{XIV.1.1} $3^\circ)$ \textup{(ii)}. Let $V=X-Z$ and consider, for every integer $p$, the sequence of morphisms
+$$
+\H^p(X, F)\lto{f} \H^p(V, F)\lto{g} \H^p(U, F).
+$$
+
+By hypothesis $g$ and $f\circ g$ are bijective for $p<n-1$ and injective for $p=n-1$; the same is therefore true of $f$. As the argument is valid when one replaces $X$ by a scheme $X'$ \'etale over $X$, this proves \Ref{XIV.1.3}.
+
+\begin{corollary} \label{XIV.1.4} The notation is that of \Ref{XIV.1.1} $2^\circ)$. If $X'$ is a scheme over $X$, denote by $\Phi'$ the functor which associates to an \'etale covering of $X'$ its restriction to~$U'$, and $\Phi'_{F'}$, the functor which associates to a torsor\sfootnote{\ie a ``principal homogeneous bundle'' in an older terminology.} under $F'$ its restriction to~$U'$. Then the following conditions are equivalent:
+
+\textup{(i)} One has $\prof_Y(F)\geq 1$ (\resp $\prof_Y(F)\geq 2$, \resp $\prof_Y(F)\geq 3$).
+
+\textup{(ii)} For every scheme $X'$ \'etale over $X$, the functor $\Phi'_{F'}$ is faithful (\resp fully faithful, \resp an equivalence of categories).
+
+In particular, in order that one have $\prof_Y({X})\geq 1$ (resp.\ $\prof_Y({X})\geq 2$, resp.\ $\prof \hop_Y(X)\geq 3$), it is necessary and sufficient that the functor $\Phi'$ be faithful (resp.\ fully faithful, \resp an equivalence of categories).
+\end{corollary}
+
+This indeed follows from \Ref{XIV.1.1} $2^\circ)$ \textup{(ii)}, taking account of the interpretation of $\H^1(X', F')$ as the set of classes (mod.\ isomorphisms) of torsors under $F'$ (\SGA 4 VII~2), and of the \'etale coverings $Z$ of degree $n$ of a scheme as associated to principal Galois coverings with group the symmetric group $\mathfrak{S}_n$, to $Z$ being associated the covering $\underline{\Isom}_X(Z_0, Z)$, where $Z_0$ is the trivial covering of $X$ of degree $n$.
+
+\begin{corollary} \label{XIV.1.5} Under the conditions of \Ref{XIV.1.1} $3^\circ)$, suppose that one has $\prof_Y(F)\geq n$; then one has
+$$
+\H_Y^n(X, F)\simeq \H^0(X, {\h}_Y^n(F)).
+$$
+\end{corollary}
+
+The corollary follows from the spectral sequence
+$$
+\E_2^{pq}=H^p(X, {\h}_Y^q(F))\To H_Y^*(X, F).
+$$
+
+Indeed one has by hypothesis $\E_2^{pq}=0$ for $q<n$, whence it follows that
+$$
+\H_Y^n(X, F)=\E_2^{0n}=\H^0(X, {\h}_Y^n(F)).
+$$
+
+\begin{remarks} \label{XIV.1.6}
+a) The notion of $Y$-depth, in the form of the equivalent conditions \textup{(i)} and \textup{(ii)} of \Ref{XIV.1.1}, makes sense for any site. In the particular case where $X$ is a locally noetherian scheme, endowed with the Zariski topology, and $F$ a sheaf of coherent $\OX$-modules, one finds the usual notion of $Y$-depth as the infimum of the depths at the points of $Y$ (\Ref{III}).
+
+b) For $n\leq 2$, the notion of \'etale $Y$-depth of $X$ is independent of $\LL$. For $n=1$, it simply means that $U$ is dense in $X$. Indeed this condition is necessary in order that one have $\prof_Y(F)\geq 1$, and it is also sufficient because one may suppose $X$ reduced, a case in which the condition $U$ dense in $X$ is preserved under \'etale change of base \textup{(\EGA IV 11.10.5) \textup{(ii)} b))}. If $U$ is retrocompact in $X$, the relation $\prof_Y(X)\geq 1$ is also equivalent to saying $Y$ contains no maximal point of~$X$ (\EGA I 6.6.5). For $n=2$ and $U$ retrocompact in $X$, the condition $\prof_Y(X)\geq 2$ is equivalent to the fact that, for every geometric point $\bar y$ of $Y$, $\bar U$ is connected and nonempty, that is to say that ``$Y$ does not disconnect $X$, locally for the \'etale topology''.
+
+c) If $X$ is of $Y$-depth $\geq n$ for $\LL$ and $U$ retrocompact in $X$, then for every locally constant abelian sheaf of $\LL$-torsion $F$ on $X$, one has $\prof_Y(X)\geq n$. Indeed, the property $\prof_Y(F)\geq n$ being local for the \'etale topology, one may suppose $F$ constant; then $F$ is a filtered inductive limit of sheaves that are finite sums of sheaves of the form $\ZZ/p^m\ZZ$, where $m$ is an integer $>0$ and $p\in \LL$. Using \Ref{XIV.1.1} \textup{(iii)} and \textup{(\SGA 4 VII 3.3)}, one sees that one may reduce to the case where $F=\ZZ/p^m\ZZ$, then, by induction on $m$, to the case where $F=\ZZ/p\ZZ$ for which the assertion follows from the definition.
+
+d) By \Ref{XIV.1.4}, if one has $\prof_Y(X)\geq 3$, the pair $(X, Y)$ is \textit{pure} in the sense of \Ref{X}~\Ref{X.3.1}. In fact the pure pairs that one encounters in practice (\cf \Ref{X}~\Ref{X.3.4}) satisfy the stronger condition of homotopical depth $\geq 3$, and this notion can therefore advantageously replace that of pure pair.
+
+e) Let $F$ be a complex of abelian sheaves and $T(F)$ the complex obtained by applying to $F$ the translation functor (\cite{XIV.3}); then one has evidently:
+$$
+\prof_Y(T(F))=\prof_Y(F)-1.
+$$
+
+f) Let us note that the recent work of Artin--Mazur (\cite{XIV.1}) allows one to define the notion of homotopical depth $\geq n$, for any integer $n$ (not only if $n\geq 3$).
+
+g) Under the conditions of \Ref{XIV.1.1} 3), in order that one have $\prof_Y(F)=\infty$, it is necessary and sufficient that one have $F\isomto Ri_*(i^*F)$ in $D^+(X)$. Indeed, the ${\h}_Y^p(F)$ are the cohomology sheaves of the cone (= mapping cylinder) of the canonical morphism $F\to Ri_*i^*(F)$.
+\end{remarks}
+
+\begin{definition} \label{XIV.1.7}
+Let $X$ be a scheme, $x$ a point of $X$, $\bar x$ a geometric point over $x$ and $\bar X$ the strict localization of $X$ at $\bar x$. As previously $F$ denotes either a sheaf of sets on $X$, or a sheaf of groups on $X$, or a complex of abelian sheaves on $X$ with degrees bounded below, $\bar F$ its inverse image on~$\bar X$ and $\LL$ a set of prime numbers. One says that $F$ is of \emph{\'etale depth $\geq n$ at the point $x$} (\resp that the \emph{\'etale depth for $\LL$ of $X$ at $x$ is $\geq n$}, \resp that the \emph{homotopical depth for $\LL$ of $X$ at $x$ is $\geq 3$}) and one writes $\prof_x(F)\geq n$ (\resp $\prof_x^{\LL}(X)\geq n$, \resp $\prof \hop_x^{\LL}(X)\geq 3$) if one has $\prof_{\bar x}(\bar F)>n$ (\resp $\prof_{\bar x}^{\LL}(\bar X)>\nobreak n$, \resp $\prof \hop_{\bar x}^{\LL}(\bar X)\geq 3$). One defines in the evident way the integer $\prof_x^{\LL}(X)$ and, if $F$ is a complex of abelian sheaves, the integer $\prof_x(F)$. If $\LL$ is the set of all prime numbers, one omits $\LL$ from the notation $\prof_x^{\LL}(X)$, unless there is a risk of confusion with the notation of \textup{(\EGA IV 5.7.1)}, in which case one writes $\prof \et_x(X)$.
+\end{definition}
+
+One then has the following \textit{pointwise characterization} of depth:
+
+\begin{theorem} \label{XIV.1.8} Let $X$ be a scheme, $Y$ a closed subset of $X$ such that the open set $U=X-Y$ is retrocompact in $X$. If $F$ is either a sheaf of sets on $X$, or a sheaf of groups on $X$, or a complex of abelian sheaves on $X$ with degrees bounded below, then one has
+$$
+\prof_Y(F)=\inf_{y\in Y} \prof_y(F).
+$$
+\end{theorem}
+
+\subsubsection{} \label{XIV.1.8.1} Let us first show that, for every point $y$ of $Y$, one has the inequality $\prof_y(F)\geq \prof_Y(F)$. Let indeed $\bar y$ be a geometric point over $y$, $\bar X$ the strict localization of $X$ at $\bar y$, $\bar F$ and $\bar Y$ the inverse images of $F$ and $Y$ on $\bar X$. One has by \Ref{XIV.1.7} and \Ref{XIV.1.3}
+$$
+\prof_y(F)=\prof_{\bar y}(\bar F)\geq \prof_{\bar Y}(\bar F)\geq \prof_Y(F),
+$$
+the last inequality using the hypothesis ``$U$ retrocompact'', via the conditions \textup{(iii)} in \Ref{XIV.1.1} and the transitivity in the formation of strict localizations.
+
+\subsubsection{} \label{XIV.1.8.2}
+Conversely suppose that, for every point $y$ of $Y$, one has $\prof_y(F)\geq n$ ($n$~an integer) and let us show that one then has $\prof_Y(F)\geq n$.
+
+Let us first recall the following well-known results \textup{(\SGA 4 VIII)}:
+
+\begin{subsublemma} \label{XIV.1.8.2.1}
+Let $X$ be a scheme, $F$ a sheaf of sets on $X$ (\resp $G\to F$ a monomorphism of sheaves of sets on $X$). Then, in order that two sections $s$ and $s'$ of $F$ coincide (\resp in order that a section $s$ of~$F$ come from a section of~$G$), it is necessary and sufficient that this be so locally. In particular, if~$s$ and~$s'$ are two sections of $F$, there exists a largest open set $V$ of $X$ on which they coincide (\resp if $s$ is a section of $F$ on $X$, there exists a largest open set $V$ of $X$ such that $s|V$ comes from a section of $G$ on $V$). This open set is also the set of points~$x$ of $X$ such that, denoting by $\bar x$ a geometric point over~$x$, the sections~$s$ and~$s'$ have the same image in the stalk $F_{\bar x}$ (\resp that the image of $s$ in $F_{\bar x}$ comes from an element of $G_{\bar x}$).
+\end{subsublemma}
+
+Let us return to the proof of \Ref{XIV.1.8}.
+
+$1^\circ)$ Case where $F$ is a sheaf of sets. If $n=1$, it suffices to show that the canonical morphism
+$$
+\H^0(X, F)\to \H^0(U, F)$$
+is injective, the result still applying when one replaces $X$ by a scheme \'etale over $X$. Let $s$ and $s'$ be two sections of $F$ over $X$ which have the same image in $\H^0(U, F)$ and let $V$ be the largest open set over which they are equal; one has evidently $V\supset U$. Suppose $V\neq X$ and let $y$ be a maximal point of $X-V$, $\bar y$ a geometric point over~$y$, $\bar X$ the strict localization of $X$ at $\bar y$ and $\bar V$ and $\bar F$ the inverse images of $V$ and $F$ on $\bar X$. By the choice of $y$, one has $\bar X-\bar y=\bar V$ and by hypothesis, the morphism
+$$
+\H^0(\bar X, \bar F)\to \H^0(\bar X-\bar y, \bar F)=\H^0(\bar V, \bar F)$$
+is injective. It follows that $s$ and $s'$ coincide at the point $y$, which is absurd. If $n=2$, it suffices to show, taking account of the preceding, that the morphism
+$$
+\H^0(X, F)\to \H^0(U, F)=\H^0(X, i_*i^*F)$$
+is surjective (where $i$ is the canonical immersion of $U$ into $X$). Let $s$ be a section of $i_*i^*F$ over $X$ and $V$ the largest open set over which it comes from a section of $F$. Suppose $V\neq X$ and let $y$ be a maximal point of $X-V$; with the preceding notation, it follows from the hypothesis that the canonical morphism
+$$
+\H^0(\bar X, \bar F)\to \H^0(\bar X-\bar y, \bar F)=\H^0(\bar V, \bar F)
+$$
+is bijective; consequently $s|\bar V$ extends to the point $\bar y$, which is absurd and completes the proof in the case $1^\circ)$.
+
+$2^\circ)$ Case where $F$ is a sheaf of groups. Taking account of $1^\circ)$, the only thing that remains to be shown is that, in the case $n=3$, the morphism
+$$
+\H^1(X, F)=\H^1(X, i_*i^*F)\to \H^1(U, F)$$
+is bijective. One already knows that it is injective thanks to $1^\circ)$ and to \Ref{XIV.1.1} $2^\circ)$ (ii bis). For the surjectivity, one uses the exact sequence (\SGA 4 XII 3.2)
+$$
+0\to \H^1(X, i_*i^*F)\to \H^1(U, F)\lto{d}\H^0(X, \R^1i_*(i^*F)).
+$$
+Let $s\in \H^1(U, F)$ and $V\supset U$ the largest open set over which $d(s)=0$; it is also the largest open set such that $s$ comes from an element of $\H^1(V, F)$. Suppose $V\neq X$ and let $y$ be a maximal point $X-V$; if $\bar X$ is the strict localization of $X$ at a geometric point $\bar y$ over~$y$, one has, with the obvious notation, the exact sequence
+$$
+0\to \H^1(\bar X, \bar i_*(\bar i^*\bar F))\to \H^1(\bar U, \bar F)\lto{\bar d}\H^0(\bar X, \R^1\bar i_*(\bar i^*\bar F)).
+$$
+As $i:U\to X$ is a quasi-compact, $\R^1\bar i_*(\bar i^*\bar F)$ is the inverse image of $\R^1i_*(i^*F)$ by the morphism $\bar X\to X$, whence $\H^0(\bar X, \R^1\bar i_*(\bar i^*\bar F))=(\R^1i_*(i^*F))_{\bar y}$. By hypothesis and since $y\in Y$, the morphism
+$$
+\H^1(\bar X, \bar F)\to \H^1(\bar V, \bar F)
+$$
+is bijective. The image $\bar s$ of $s$ in $\H^1(\bar U, \bar F)$, which extends to $\bar V$ by definition of $V$, therefore also extends to $\bar X$; it follows that $\bar d(\bar s)=0$ hence the image of $d(s)$ in the geometric stalk $(\R^1i_*(i^*F))_{\bar y}$ is zero; but this contradicts the definition of $V$, whence the case~$2^\circ)$.
+
+$3^\circ)$ Case where $F$ is a complex of abelian sheaves, with degrees bounded below. One proceeds by induction on $n$. The conclusion holds for $n$ sufficiently small, since $F$ has degrees bounded below. Suppose therefore that $\prof_Y(F)\geq n-1$ and let us show that $\prof_Y(F)\geq n$, knowing that, for every point $y$ of $Y$, one has $\prof_y(F)\geq n$. It suffices to see that the canonical morphism
+\begin{equation*} \label{eq:XIV.1.8.*} \tag{$*$} {\H^{n-2}(X, F)\to \H^{n-2}(U, F)}
+\end{equation*}
+is surjective and that
+\begin{equation*} \label{eq:XIV.1.8.**} \tag{$**$} {\H^{n-1}(X, F)\to \H^{n-1}(U, F)}
+\end{equation*}
+is injective (the result applying when one replaces $X$ by a scheme \'etale over $X$).
+
+a) Surjectivity of (\Ref{eq:XIV.1.8.*}). The proof is analogous to that of $2^\circ)$. Taking account of \Ref{XIV.1.5} and of (\SGA 4 V 4.5), one has the exact sequence
+$$
+\H^{n-2}(X, F)\to \H^{n-2}(U, F)\lto{d}\H^{n-1}_Y(X, F)=\H^0(X, {\h}_Y^{n-1}(F)).
+$$
+Let $s\in \H^{n-2}(U, F)$ and $V\supset U$ the largest open set over which $d(s)=0$, which is also the largest open set such that $s$ extends to $\H^{n-2}(V, F)$. Suppose $V\neq X$ and let $y$ be a maximal point of $X-V$ and $\bar X$ the strict localization of $X$ at a geometric point $\bar y$ over~$y$. As $i:U\to X$ is quasi-compact, the formation of ${\h}_Y^{n-1}(F)$ commutes with the change of base $\bar X\to X$ and one therefore has (with the obvious notation) the exact sequence
+$$
+\H^{n-2}(\bar X, \bar F)\to \H^{n-2}(\bar U, \bar F)\lto{\bar d}\H^{n-1}_{\bar Y}(\bar X, \bar F)=({\h}_Y^{n-1}(F))_{\bar y},
+$$
+the last equality resulting from the retrocompactness hypothesis on $U$.
+
+Now one has by hypothesis the isomorphism
+$$
+\H^{n-2}(\bar X, \bar F)\isomto \H^{n-2}(\bar X-\bar y, \bar F)=\H^{n-2}(\bar V, \bar F);
+$$
+consequently the image $\bar s$ of $s$ in $\H^{n-2}(\bar U, \bar F)$, which extends (by definition of $V$) to $\H^{n-2}(\bar V, \bar F)$, also extends to $\H^{n-2}(\bar X, \bar F)$; but this shows that $\bar d(\bar s)=0$, that is to say that $d(s)$ is zero at $\bar y$, which is absurd.
+
+b) Injectivity of (\Ref{eq:XIV.1.8.**}). Using the surjectivity of (\Ref{eq:XIV.1.8.*}), one obtains the exact sequence
+$$0\to \H^0(X, {\h}_Y^{n-1}(F))\to \H^{n-1}(X, F)\to \H^{n-1}(U, F)$$
+and one must show that every element $s\in \H^0(X, {\h}_Y^{n-1}(F))$ is zero. Let $V$ be the largest open set over which $s=0$. Suppose that one has $V\neq X$ and let $y$ be a maximal point of $X-V$, $\bar X$ a strict localization of $X$ at a geometric point $\bar y$ over~$y$. One has, by the induction hypothesis and by \Ref{XIV.1.8.1}, the relation $\prof_{\bar Y}(\bar F)\geq \prof_Y(F)\geq n-1$, whence the fact that the map $e$ of the following diagram is injective:
+$$
+\H^0(\bar X, {\h}_Y^{n-1}(\bar F))= ({\h}_Y^{n-1}(F))_{\bar y}\lto{e} \H^{n-1}(\bar X, \bar F) \lto{f} \H^{n-1}(\bar V, \bar F).
+$$
+The same holds for $f$ by virtue of the hypothesis; the equality on the left results from the retrocompactness hypothesis on $U$. Let $\bar s$ be the image of $s$ in $({\h}_Y^{n-1}(F))_{\bar y}$; as $s$ vanishes over $V$, one has $f\cdot e(\bar s)=0$, whence $\bar s=0$, which contradicts the choice of $y$ and completes the proof.
+
+\begin{remark} \label{XIV.1.9}
+A result analogous to \Ref{XIV.1.8} is doubtless valid in the case where one replaces the \'etale topos of a scheme $X$ by a ``topos locally of finite type'', that is to say one definable by a site locally of finite type (\SGA 4 VI 1.1). To see this, one must use a result of P.~Deligne (\SGA 4 VI.9), asserting that there are ``sufficiently many fiber functors'' in such a topos.
+\end{remark}

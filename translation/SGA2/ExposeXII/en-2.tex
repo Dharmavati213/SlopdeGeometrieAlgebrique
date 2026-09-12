@@ -1,0 +1,249 @@
+% English body fragment for SGA 2 XII (en-2.tex)
+\section[Lefschetz theory for a projective morphism: comparison]
+{Lefschetz theory for a projective morphism: Grauert's comparison theorem} \label{XII.2}
+
+\setcounter{equation}{13}
+It is the following theorem:
+
+\begin{theorem} \label{XII.2.1}
+Let $f:X\to S$ be a projective morphism, with $S$ noetherian, $\OX(1)$ an invertible Module on $X$, ample relative to $S$, $Y$ the prescheme of zeros of a section $t$ of $\OX(1)$, $J$ the ideal defining $Y$, $X_n$ the subprescheme of $X$ defined by $J^{n+1}$, $\widehat{X}$ the formal completion of $X$ along $Y$, $\widehat{f}:\widehat{X}\to S$ the composite morphism $\widehat{X}\to X\to S$, $F$ a coherent Module on $X$, flat relative to $S$. One assumes moreover that for every $s\in S$, the Module $F_s$ induced on the fibre $X_s$ is of depth $>n$ at the points of the said fibre, and that $t$ is $F$-regular. Under these conditions:
+\begin{enumeratei}
+\item
+The canonical homomorphism
+\[
+\R^if_\ast(F) \to \R^i\widehat{f}_\ast(\widehat{F})
+\]
+is an isomorphism for $i<n$, a monomorphism for $i=n$.
+\item
+The canonical homomorphism
+\[
+\R^i\widehat{f}_\ast(\widehat{F}) \to \varprojlim_m \R^if_\ast(F_m)
+\]
+is an isomorphism for $i\leq n$.
+\end{enumeratei}
+\end{theorem}
+
+\begin{proof}
+One immediately reduces to the case where $S$ is affine, and then to proving the
+
+\begin{corollary} \label{XII.2.2}
+Under the conditions of \Ref{XII.2.1} suppose moreover that $S$ is affine. then:
+\begin{enumeratei}
+\item
+The canonical homomorphism
+\[
+\H^i(X, F) \to \H^i(\widehat{X}, \widehat{F})
+\]
+is an isomorphism for $i<n$, a monomorphism for $i=n$.
+\item
+The canonical homomorphism
+\[
+\H^i(\widehat{X}, \widehat{F}) \to \varprojlim_m \H^i(X_m, F_m)
+\]
+is an isomorphism for $i\leq n$.
+\end{enumeratei}
+\end{corollary}
+
+Replacing if need be $\OX(1)$ by a tensor power, and $t$ by a power of~$t$, one may assume $\OX(1)$ very ample relative to $S$. On the other hand $t$ and hence $t^m$ being $F$-regular, multiplication by $t^m$, regarded as a homomorphism from $F(-m)$ into $F$, is injective, hence one has for every $m\geq 0$ an exact sequence:
+\steco
+\begin{equation} \label{eq:XII.14}
+0\to F(-m) \lto{t^m} F \to F_m \to0,
+\end{equation}
+whence an exact sequence of cohomology
+\[
+\H^i(X, F(-m)) \to \H^i(X, F) \to \H^i(X, F_m) \to \H^{i+1}(X, F(-m)).
+\]
+Now by virtue of \Ref{XII.1.5} one has $\H^i(X, F(-m))=0$ for $i\leq n$, and $m$ sufficiently large, which proves the
+
+\begin{lemma} \label{XII.2.3}
+For $m$ large, the canonical homomorphism
+\[
+\H^i(X, F) \to \H^i(X, F_m)
+\]
+is bijective if $i<n$, injective if $i=n$.
+\end{lemma}
+
+%
+This shows that for $i<n$, the projective system $(\H^i(X_m, F_m))_{m\geq 0}$ is essentially constant, \afortiori satisfies the Mittag-Leffler condition, hence (taking account of $\widehat{F}= \varprojlim F_m$) one concludes (ii) by $\EGA 0_{\textup{III}}$ 13.3. On the other hand (i) follows trivially from this, taking account of \Ref{XII.2.3}.
+
+\refstepcounter{subsection}\label{XII.2.4}
+\begin{enonce*}{Corollary 2.4\ndemark}\ndetext{see Corollary I.1.4 of the article of Mme Raynaud (Raynaud~M., {\og Th\'eor\`emes de Lefschetz en cohomologie des faisceaux coh\'erents et en cohomologie \'etale. Application au groupe fondamental\fg}, \emph{Ann. Sci. \'Ec. Norm. Sup. (4)} \textbf{7} (1974), p\ptbl 29--52).}
+Let $f:X\to S$ be a projective and flat morphism, with $S$ locally noetherian, $\OX(1)$ an invertible Module on $X$, ample relative to $S$, $t$ a section of this Module which is $\OX$-regular, $Y$ the subprescheme of zeros of $t$, $\widehat{X}$ the formal completion of $X$ along $Y$. One assumes that for every $s\in S$, $X_s$ is of depth $\geq 1$ (\resp of depth $\geq 2$) at its closed points. Then for every open neighbourhood $U$ of $Y$, the functor
+\[
+F \mto \widehat{F}
+\]
+from the category of coherent locally free Modules on $U$, to the category of coherent locally free Modules on $\widehat{X}$, is faithful (\resp fully faithful, \ie the Lefschetz condition ($\Lef$) of \Ref{X}~\Ref{X.2} is satisfied).
+\end{enonce*}
+Introducing for two locally free Modules $F$ and $G$ on $U$ the Module
+\[
+H=\SheafHom_{\Oo_U}(F, G)
+\]
+one is reduced to proving that the canonical homomorphism
+\steco
+\begin{equation} \label{eq:XII.15} {}\H^0(U, H) \to \H^0(\widehat{U}, \widehat{H})
+\end{equation}
+is injective (\resp bijective). Now the Modules $H_t$ are of depth $\geq 1$ (\resp $\geq 2$) at the closed points of $X_t$, one can therefore apply \Ref{XII.2.1}, which implies the conclusion \Ref{XII.2.4} in the case where $U=X$. In the case of an arbitrary $U$, one notes that the question is local on $S$, hence one may assume $S$ affine. Then every coherent Module on $X$ is a quotient of a coherent locally free Module, (since $\OX(1)$ is a relatively ample invertible Module on $X$). As the dual Module $H'=\SheafHom(H, \Oo_U)$ extends to a coherent Module on $X$, which is therefore isomorphic to a cokernel of a homomorphism of locally free Modules on $X$, it follows by transposition that one can find a homomorphism
+\[
+u':{L'}^0 \to {L'}^1
+\]
+of locally free Modules on $X$, inducing a homomorphism
+\[
+u:L^0 \to L^1
+\]
+of locally free Modules on $U$, such that one has an exact sequence
+\[
+0\to H \to L^0 \lto{u} L^1.
+\]
+Using the five lemma (which becomes the three lemma), and the left exactness of the functor $H^0$, one is reduced to proving that (\Ref{eq:XII.15}) is injective (\resp bijective) when one replaces $H$ therein by $L^0$, $L^1$, which reduces us to the case where $H$ is induced by a locally free Module $H'$ on $X$. Moreover in the non-resp.\ case this reduction is even unnecessary, for the kernel of (\Ref{eq:XII.15}) is in any case formed of the sections of $H$ on~$U$ which vanish in a suitable open neighbourhood $V$ of $Y$, now the restriction homomorphism $\H^0(U, H)\to\H^0(V, H)$ is injective, for $H$ is of depth $\geq 1$ at the points of every closed subset $Z$ of $X$ not meeting $Y$ (\cf lemma below). In the resp.\ case, one is reduced to proving that
+\[
+H^0(X, H')\to\H^0(U, H')
+\]
+is bijective, which follows from the fact that $H'$ is of depth $\geq 2$ at all the points of a closed set $Z=X- U$ of $X$ not meeting $Y$. One must therefore simply prove the
+
+\begin{lemma} \label{XII.2.5} Let $F$ be a coherent Module on $X$, flat with respect to $S$, such that for every $s\in S$, $F_s$ is of depth $\geq n$ at every closed point of $X_s$. Then for every closed subset $Z$ of $X$ not meeting $Y$, $F$ is of depth $\geq n$ at all the points of $Z$.
+\end{lemma}
+
+Indeed, for every $x\in X$, setting $s=f(x)$, one has
+\steco
+\begin{equation} \label{eq:XII.16} {}\prof(F_x)\geq \prof(F_{s, x}),
+\end{equation}
+as one sees by lifting in any manner a maximal $F_{s, x}$-regular sequence of elements of $\rr(\Oo_{X_s, x})$, which gives an $F_x$-regular sequence by virtue of \SGA 1 IV 5.7. Now if $x$ belongs to a $Z$ as in lemma \Ref{XII.2.5}, then $x$ is necessarily closed in $X_s$, in other words, $Z$ is \emph{finite} over $S$. Indeed $Z$ (equipped with a structure induced by $X$) is projective over $S$ as a closed subprescheme of $X$ which is so, and $Z$ is affine over $S$ as a closed subprescheme of $X- Y$, which is so.
+\skipqed
+\end{proof}
+
+\begin{remark} \label{XII.2.6}
+Suppose that for every $s\in S$, the section $t_s$ of $\Oo_{X_s}(1)$ induced by $t$ is $\Oo_{X_s}$-regular (which implies by \SGA 1 IV 5.7 that $t$ is $\OX$-regular). Then the hypotheses made are stable under extension of the base $S'\to S$ ($S'$ locally noetherian). Hence the conclusion remains valid after any change of base.
+\end{remark}
+
+\section[Lefschetz theory for a projective morphism: existence]{Lefschetz theory for a projective morphism: existence theorem}\label{XII.3}%
+
+\setcounter{equation}{16}%
+\refstepcounter{subsection}\label{XII.3.1}%
+\begin{enonce*}{Theorem 3.1\ndemark}
+\ndetext{for a version without a flatness hypothesis, see (Raynaud~M., {\og Th\'eor\`emes de Lefschetz en cohomologie des faisceaux coh\'erents et en cohomologie \'etale. Application au groupe fondamental\fg}, \emph{Ann. Sci. \'Ec. Norm. Sup. (4)} \textbf{7} (1974), p\ptbl 29--52, theorem II.3.3).}
+Let $f:X\to S$ be a projective morphism, with $S$ noetherian, $\OX(1)$ an invertible Module on $X$ ample relative to $S$, $X_0$ the subprescheme of zeros of a section $t$ of $\OX(1)$, $\widehat{X}$ the formal completion of $X$ along $X_0$, $\formelF$ a coherent Module on $\widehat{X}$, $F_0$ the Module it induces on $X_0$. One assumes moreover:
+\begin{enumeratea}
+\item\label{XII.3.1a}
+$\formelF$ is flat with respect to $S$.
+\item\label{XII.3.1b}
+For every $s\in S$, the section $t_s$ induced by $t$ on $X_s$ is $\formelF_s$-regular (which implies that $F_0$ is likewise flat with respect to $S$, \cf \textup{\SGA 1 IV 5.7}).
+\item\label{XII.3.1c}
+For every $s\in S$, $F_{0s}$ is of depth $\geq 2$ at the closed points of $X_{0s}$.
+\end{enumeratea}
+One assumes moreover that $S$ admits an ample invertible sheaf. Under these conditions, there exists a coherent Module $F$ on $X$, and an isomorphism of its formal completion $\widehat{F}$ with $\formelF$.
+\end{enonce*}
+
+This statement will follow from the following:
+
+\begin{corollary} \label{XII.3.2}
+Under the conditions \Ref{XII.3.1a}), \Ref{XII.3.1b}), \Ref{XII.3.1c}) above one has the following:
+\begin{enumeratei}
+\item
+The Module $\widehat{f}_\ast(\formelF)$ on $S$ is coherent, hence for every $n$, the Module $\widehat{f}_\ast(\formelF(n))$ on~$S$ is coherent.
+\item
+For $n$ large, the canonical homomorphism $\widehat{f}^\ast\widehat{f}_\ast(\formelF(n))\to \formelF(n)$ is surjective.
+\end{enumeratei}
+\end{corollary}
+
+Let us admit the corollary for the moment, and prove \Ref{XII.3.1}. Thanks to the last hypothesis made in \Ref{XII.3.1}, one can reduce to the case where $X=\PP^r_S$, replacing if need be $\OX(1)$, $t$ by a suitable power. I say that one may assume moreover that for every~$s$, one has $t_s\neq 0$. Otherwise, one has indeed $\formelF_s=0$ by b), or what comes to the same by Nakayama, $F_{0s}=0$ \ie $s$ does not belong to the image of $\Supp F_0$ under the morphism $f_0:X_0\to S$ induced by $f$. Now this image $S'$ is open by virtue of a), b) since $F_0$ is flat with respect to $S$, and it is evident that it suffices to prove the conclusion of \Ref{XII.3.1} in the situation obtained by restricting above $S'$, for the coherent Module $F'$ on $X|_{S'}$ obtained by will be the restriction of a coherent Module $F$ on $X$, which will answer the question. One may therefore assume that in addition to the hypotheses a), b), c), the following hypotheses are likewise satisfied:
+\begin{enumerate}
+\item[\textup{a$'$)}] $\OX$ is flat with respect to $S$.
+\item[\textup{b$'$)}] For every $s\in S$, the section $t_s$ is $\Oo_{X_s}$-regular.
+\item[\textup{c$'$)}] For every $s\in S$, $\Oo_{X_{0s}}$ is of depth $\geq 2$ at the closed points of $X_{0s}$. (It~suffices to choose $X=\PP_S^r$ with $r\geq 3$, which is permissible).
+\end{enumerate}
+Now \Ref{XII.3.2} implies that one can find an epimorphism
+\steco
+\begin{equation} \label{eq:XII.17}
+\widehat{L} \to \formelF \to 0,
+\end{equation}
+where $L$ is a Module on $X$ of the form $f_\ast(G)(-n)$, $G$ being a coherent locally free Module on $S$: indeed it suffices; for $n$ large, to represent the coherent Module $\widehat{f}_\ast(\formelF)$ on $S$ as a quotient of such a $G$. On the other hand, the hypotheses a), b), c) on $f$, $t$ imply that $\widehat{L}$ satisfies the same conditions a), b), c) as $\formelF$. One easily concludes that the same holds for the kernel of (\Ref{eq:XII.17}), to which one can therefore apply the same argument, so that $\formelF$ is represented as the cokernel of a homomorphism
+\steco
+\begin{equation} \label{eq:XII.18}
+\widehat{L'} \to \widehat{L},
+\end{equation}
+where $L$, $L'$ are locally free Modules on $X$. Now by virtue of a$'$) and the second part of c$'$), and of \Ref{XII.2.1} or \Ref{XII.2.4} at choice, the homomorphism (\Ref{eq:XII.18}) comes from a homomorphism $L'\to L$ of Modules on $X$. It now suffices to take for $F$ the cokernel of $L'\to L$, and one is done.
+
+It remains to prove \Ref{XII.3.2}. This had been done in the
+seminar by a somewhat painful expedient, consisting in
+interpreting everything in terms of cohomology on the punctured
+projecting cone of $X$ relative to $S$, in order to be able to
+reduce to the theorem \Ref{IX.2.1}. A more direct and more
+satisfactory way (although substantially identical), seems to
+me now the following. It consists in noting that in \Ref{IX},
+\numero \Ref{IX.2}\refstepcounter{toto}\label{XII.14} (and with the
+notations of that expos\'e) the hypothesis that the morphism
+$f:\Xx\to\Xx'$ be adic does not intervene anywhere in the
+proof of \Ref{IX.2.1}, via $\EGA 0_{\textup{III}}$ 13.7.7;
+it suffices to assume instead that $\Xx$ is likewise adic,
+and to choose two ideals of definition $\Jj$ for $\Xx'$, $\Ii$
+for $\Xx$, such that $\Jj\Oo_\Xx\subset\Ii$, and to define
+$\Ss=\gr_\Jj(\Oo_{\Xx'})$, and to consider $\gr_\Ii(\formelF)$. In
+any case, \Ref{IX.2.1} can be applied directly to the
+morphism $\widehat{f}:\widehat{X}\to S$ considered in the present
+no., where one simply takes $\Jj=0$. Thus to verify that
+$\widehat{f}_\ast(\formelF)$ is coherent, it suffices by virtue of
+\loccit to verify that $\R^if_{0\ast}(\gr_\Ii(\formelF))$ is
+coherent on $S$ for $i=0, 1$; for this one notes that by virtue of
+a) and b), the Module under consideration is none other than
+$\bigoplus_{m\geq 0}\R^if_{0\ast}(F_0(-m))$, which
+is indeed coherent by virtue of hypothesis c) and of
+\Ref{XII.1.5}.
+
+This proves \Ref{XII.3.2} (i). For \Ref{XII.3.2} (ii), we will need the
+
+\begin{lemma} \label{XII.3.3}
+Under the conditions of \Ref{XII.3.1a}), \Ref{XII.3.1b}), \Ref{XII.3.1c}) of \Ref{XII.3.1}, set
+\[
+G_m= \widehat{f}_\ast(\formelF(\cdot)_m) = \tbigoplus_n\widehat{f}_\ast(\formelF_m(n))
+\]
+Then the projective system $(G_m)$ satisfies the Mittag-Leffler condition.
+\end{lemma}
+
+One may assume $S$ affine, with ring $A$. Let then $\Ss$ be a graded $A$-algebra of finite type with positive degrees, and $t'\in\Ss_1$, such that $X$ immerses in $\Proj(\Ss)$, $\OX(1)$ being induced by $\Oo(1)$ and the section $t$ being the image of $t'$. Let us equip $\Ss$ with the $\Jj$-adic filtration, where $\Jj=t'\Ss$, and consider the projective system of the $\formelF(\cdot)_m$ in the category of abelian sheaves on $X_0$. One is still under the preliminary conditions of $\EGA 0_{\textup{III}}$ 13.7.7\sfootnote{Rectified as indicated in \Ref{IX} p\ptbl\pageref{pagerectif}.} and moreover $\H^i(X_0, \gr(\formelF(\cdot))$ is a Module of finite type over $\gr_\Jj(\Ss)$ for $i=0, 1$. Indeed, as $t'$ is $\formelF$-regular, one sees immediately that as a Module over $(\Ss /t'\Ss)[T]$ (of which $\gr_\Jj(\Ss)$ is a quotient), the Module under consideration identifies with $\H^i(X_0, F_0(\cdot))\otimes_{\Ss /t'\Ss}(\Ss /t'\Ss)[T]$, now by virtue of \Ref{XII.1.5}, $\H^i(X_0, F_0(\cdot))$ is of finite type over $\Ss$, hence over $\Ss /t'\Ss$, for $i=0, 1$, which proves our assertion. Consequently one is under the conditions of application of $0_{\text{III}}$ 13.7.7 with $n=1$, which proves \Ref{XII.3.3}.
+
+This point being granted (and still assuming $S$ affine, which is permissible in order to prove \Ref{XII.3.2} (ii)) let $m_0$ be such that $m\geq m_0$ implies $\Im(G_m\to G_0)= \Im(G_{m_0}\to G_0)$, so that both sides are also equal to $\Im(\varprojlim G_m\to G_0) = \Im(\widehat{f}_\ast(\formelF(\cdot))\to f_\ast\formelF_0(\cdot))$. Let us now remark that for $n$ large, $\formelF_{m_0}(n)$ is generated by its sections, hence $\formelF_0(n)$ is generated by sections which lift to $\formelF_{m_0}$, hence (thanks to the choice of~$m_0$) which lift to $\formelF$. Hence the sections of $\formelF$ generate $\formelF_0$, hence also~$\formelF$ thanks to Nakayama. This proves \Ref{XII.3.2} (ii), hence \Ref{XII.3.1}.
+
+\begin{corollary} \label{XII.3.4}
+Let $f:X\to S$ be a projective and flat morphism, with $S$ locally noetherian, $\OX(1)$ an invertible Module on $X$, ample relative to $S$, $t$ a section of this Module such that for every $s\in S$, the section $t_s$ induced on the fibre $X_s$ is $\Oo_{X_s}$-regular, $X_0$ the subprescheme of zeros of $t$, $\widehat{X}$ the formal completion of $X$ along~$X_0$. One assumes that for every $s\in S$, $X_{0s}$ is of depth $\geq 2$ at its closed points, (\ie $X_s$ is of depth $\geq 3$ at the closed points of $X_{0s}$) and $X_s$ is of depth $\geq 2$ at its closed points. Under these conditions, the pair $(X, X_0)$ satisfies the effective Lefschetz condition ($\Leff$) of paragraph~\Ref{X.2} of expos\'e~\emph{\Ref{X}}, \ie:
+\begin{enumeratea}
+\item
+For every open neighbourhood $U$ of $X_0$ in $X$, the functor
+\[
+F \mto \widehat{F}
+\]
+from the category of coherent locally free Modules on $U$ to the category of coherent locally free Modules on $\widehat{X}$ is fully faithful.
+\item
+For every coherent locally free Module $\formelF$ on $\widehat{X}$, there exists an open neighbourhood~$U$ of $X_0$, and a coherent locally free Module $F$ on $U$ such that $\formelF$ is isomorphic to~$\widehat{F}$.
+\end{enumeratea}
+\end{corollary}
+
+Indeed, a) has already been noted in \Ref{XII.2.4} under weaker conditions. For b), one applies \Ref{XII.3.1} which gives the conclusion, at least if $S$ is noetherian and admits an absolutely ample invertible Module, in particular if $S$ is affine. Indeed, if $F$ is a coherent module on $X$ such that $\widehat{F}$ is isomorphic to $\formelF$ hence locally free, it follows that $F$ is locally free on a neighbourhood $U$ of $X_0$, and $F|_U$ will satisfy the desired condition. But let us now note that by virtue of \Ref{XII.2.5}, for such an $F$, its image under the immersion $U\to X$ is coherent, and moreover independent of the chosen solution $(U, F)$ (taking account of the fact that two solutions coincide in a neighbourhood of $X_0$, by virtue of a)). More precisely, one can find a coherent Module $F$ on $X$ and an isomorphism $\widehat{F}\isomto \formelF$, such that $F$ is of depth $\geq 2$ at all the points of $X$ which are closed in their fibre, and this determines $F$ up to a unique isomorphism. Thanks to this uniqueness property, the solutions of the problem that one finds by inducing above the affine open sets of $S$ glue together, whence a coherent $F$ on the whole of $X$ and an isomorphism $\widehat{F}\simeq \formelF$. Restricting $F$ to the open set $U$ of the points at which it is free, one finds what one sought.
+
+Thanks to \Ref{XII.2.4} and \Ref{XII.3.4}, one can exploit, in the situation of a projective algebraic scheme and a ``hyperplane section'' of the same, the general facts established in expos\'es \Ref{X} and \Ref{XI} concerning the conditions (Lef) and (Leff). Thus:
+
+\begin{corollary} \label{XII.3.5} Let $X$ be a projective algebraic scheme equipped with an ample invertible Module $\OX(1)$, let $t$ be a section of this Module which is $\OX$-regular, and let $X_0$ be the subscheme of zeros of $t$. Suppose that $X$ is of depth $\geq 2$ at its closed points (\resp and of depth $\geq 3$ at the closed points of $X_0$). Then $\pi_0(X_0)\to \pi_0(X)$ is bijective, in particular $X$ is connected if and only if $X_0$ is, and choosing a geometric base-point in $X_0$, $\pi_1(X_0)\to \pi_1(X)$ is surjective, and more generally for every open set $U\supset X_0$, the homomorphism $\pi_1(X_0)\to \pi_1(U)$ is surjective (\resp the homomorphism $\pi_1(X_0)\to \varprojlim_U\pi_1(U)$ is bijective). In the resp.\ case, if one assumes moreover that the local ring of every closed point of $X$ not in $X_0$ is pure (\Ref{X.3.2}) (for example is regular, or merely a complete intersection) then $\pi_1(X_0)\to \pi_1(X)$ is an isomorphism.
+\end{corollary}
+
+One applies \Ref{X.2.4} and \Ref{XII.3.4}. One will note that in the resp.\ case, the hypothesis that $X$ be of depth $\geq 3$ at the closed points of $X_0$, implies that all the irreducible components of dimension $\neq 0$ of $X$ are of dimension $\geq 3$ (as one sees by noting that such a component necessarily meets $X_0$, and looking at a closed point of the intersection).
+
+\begin{remarkstar}
+When $X$ is normal, of dimension $\geq 2$ at all its points, it is of depth $\geq 2$ at its closed points and one is under the non-resp.\ conditions of \Ref{XII.3.5}. In this case, one has a more elementary proof of the surjectivity of $\pi_1(X_0)\to \pi_1(X)$ with the aid of Bertini's theorem (\cf \SGA 1 X.2.10). When one assumes moreover $X_0$ normal, and $X$ of dimension $\geq 3$ at all its points, then one is under the resp.\ conditions of \Ref{XII.3.5}. In this case, \Ref{XII.3.5} was established by Grauert (it turns out indeed that thanks to the normality hypothesis, one then manages to do without the existence theorem \Ref{XII.3.1} by expedients). It is this proof of Grauert which was the starting point of the ``Lefschetz theory'' which is the object of the present seminar.
+\end{remarkstar}
+
+\begin{corollary} \label{XII.3.6} Let $X$, $\OX(1)$, $t$, $X_0$ be as in \Ref{XII.3.5}. Suppose that $X$ is of depth $\geq 2$ at its closed points, and that
+\[
+\H^i(X_0, \Oo_{X_0}(-n))=0
+\]
+for $n>0$ and for $i=1$ (\resp for $i=1$ and for $i=2$), which implies by virtue of \Ref{XII.1.4} that $X_0$ is of depth $\geq 2$ (\resp $\geq 3$) at its closed points, \ie that $X$ is of depth $\geq 3$ (\resp $\geq 4$) at the closed points of $X_0$. Under these conditions, for every open neighbourhood $U$ of $X_0$, $\Pic(U)\to\Pic(X_0)$ is injective, in particular $\Pic(X)\to\Pic(X_0)$ is injective, (\resp $\varprojlim_U \Pic(U)\to\Pic(X_0)$ is bijective). In the resp.\ case, if one assumes moreover that the local ring of $X$ at every closed point not in $X_0$ is parafactorial (\Ref{XI.3.1}) (for example is regular, or more generally a complete intersection), then $\Pic(X)\to\Pic(X_0)$ is bijective.
+\end{corollary}
+One applies \Ref{XI}~\Ref{XI.3.12} and \Ref{XI.3.13}, noting that the resp.\ hypothesis implies that the irreducible components of dimension $\neq 0$ of $X$ are of dimension $\geq 4$. One finds in particular, applying this to the case where $X$ is a global complete intersection of dimension $\geq 4$ in projective space:
+
+\begin{corollary} \label{XII.3.7} Let $X$ be an algebraic scheme of dimension $\geq 3$, which is a complete intersection in a scheme $\PP_k^r$. Then $\Pic(X)$ is the free group generated by the class of the sheaf $\OX(1)$.
+\end{corollary}
+One reasons by induction on the number of hypersurfaces of which $X$ is the intersection, applying \Ref{XII.3.6} and noting that for a complete intersection $X$ of dimension $\geq 3$, one $\H^i(X, \OX(n))=0$ for $i=1, 2$, and every $n$.
+
+\begin{remark} \label{XII.3.8}
+In the case where $X$ is a nonsingular hypersurface, \Ref{XII.3.7} is due to Andreotti. The result \Ref{XII.3.7} is also expressed (when $X$ is nonsingular) by saying that the homogeneous coordinate ring of $X$ is factorial, and in this form is contained in \Ref{XI}~\Ref{XI.3.13} (ii). Let us also point out that Serre had given a proof of \Ref{XII.3.7} in the nonsingular case, by transcendental means, using a specialization argument to reduce to the case of characteristic~$0$, where one has the Lefschetz theorem in its classical form. Of course, the fact that the purely algebraic proof given here allows one to rid oneself of nonsingularity hypotheses in the statement of the Lefschetz theorem, invites one to reconsider the latter equally in the classical case. \Cf the following expos\'e which proposes conjectures in this sense.
+
+In the corollaries \Ref{XII.3.5} and \Ref{XII.3.7} we have placed ourselves over a base field, whereas the key theorems \Ref{XII.2.4} and \Ref{XII.3.4} are valid over an arbitrary base. To generalize to a general $S$ these corollaries \Ref{XII.3.5} and \Ref{XII.3.6}, we must give serviceable criteria in order that a point of $X$ (flat over $S$) have a ``pure'' local ring \resp a parafactorial one. This will be the object of the following no.
+\end{remark}

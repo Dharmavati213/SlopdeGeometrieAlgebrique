@@ -1,0 +1,212 @@
+\section{Main theorem and variants} \label{XIV.4}
+
+\setcounter{subsection}{-1}
+
+\subsection{} \label{XIV.4.0}
+Let $g\colon X\to S$ be a separated morphism of finite type, $T$ a closed subset of $S$, \hbox{$Z=g^{-1}(T)$} and $F$ a complex of abelian sheaves on $X$, bounded below in degrees. We call the \emph{$i$-th cohomology group of $F$, with proper support, with support in~$Z$} the group
+$$
+\H_{Z!}^{i}(X/S, F)=\H_{T}^{i}(S, \R_{!}g(F)),
+$$
+where $\R_{!}g$ denotes ``direct image with proper support'' (\SGA 4~XVII). In the particular case where $g$ is proper, one simply has
+$$
+\H_{Z!}^{i}(X/S, F)=\H_{Z}^{i}(X, F).
+$$
+
+\begin{proposition} \label{XIV.4.1} Let $f\colon U\to S$ be a morphism of finite type, $F$ a complex of abelian sheaves on $U$, bounded below in degrees. Suppose that one has a factorization of $f$:
+$$
+\xymatrix@C=15pt{ U\ar[rr]^-{i}\ar[rd]_-{f} & & X\ar[ld]^-{g}\\
+& S & }$$
+where $i$ is an open immersion and $g$ a separated morphism of finite type, and let $G$ denote a complex of abelian sheaves on $X$, bounded below in degrees, which extends $F$. Let $Y$ be a closed subscheme of $X$ with underlying space $X-U$, so that one has a commutative diagram:
+$$
+\xymatrix@C=15pt{ Y\ar[rr]^-{j}\ar[rd]_-{h} & & X\ar[ld]^-{g}\\
+& S & }$$
+Finally let $n$ be an integer and $T$ a closed subset of $S$. Then the following conditions are equivalent:
+\begin{enumeratei}
+\item
+One has $\prof_{T}(\R_{!}f(F))\geq n$.
+\item
+The canonical morphism
+$$
+\underline{H}_{T}^{i}(\R_{!}g(G))\to\underline{H}_{T}^{i}(\R_{!}h(j^{\ast}G))$$
+is bijective for $i<n-1$, injective for $i=n-1$.
+\item
+For every scheme $S^{\prime}$ \'etale over $S$, if one denotes by $X^{\prime}$ (\resp $f^{\prime}$, \resp etc.) the scheme $X\times_{S}S^{\prime}$ (\resp the morphism $f_{(S^{\prime})}$, \resp etc.), the canonical morphism
+$$
+\H_{g^{\prime -1}(T^{\prime})!}^{i}(X^{\prime}/S^{\prime}, G^{\prime})\to\H_{h^{\prime -1}(T^{\prime})!}^{i}(Y^{\prime}/S^{\prime}, j^{\prime\ast}G^{\prime})$$
+is bijective for $i<n-1$, injective for $i=n-1$.
+\end{enumeratei}
+\end{proposition}
+
+Consider in the derived category $\D^{+}(X)$ (\cf \cite{XIV.3}) the distinguished triangle
+$$
+\xymatrix@C=15pt{ & j_{\ast}j^{\ast}G\ar[ld] & \\
+i_{!}F\ar[rr] & & G.\ar[lu]}$$
+Applying to this triangle the functor $\R_{!}g$, one obtains the triangle
+\begin{equation*} \label{eq:XIV.4.1.*} \tag{$*$}
+\begin{array}{c}
+\xymatrix@C=0pt{
+& \R_{!}h(j^{\ast}G)\ar[ld] & \\
+\R_{!}f(F)\ar[rr] & & \R_{!}g(G).\ar[lu]
+}
+\end{array}
+\end{equation*}
+
+Let us show that \textup{(i)}\SSI\textup{(ii)}. Indeed, by definition \Ref{XIV.1.2}, \textup{(i)} is equivalent to the relation
+$$
+\underline{H}_{T}^{i}(\R_{!}f(F))=0\quad\textrm{ for }i<n\textrm{;}$$
+now from \eqref{eq:XIV.4.1.*} one deduces the exact sequence of sheaves
+$$
+\to\underline{H}_{T}^{i}(\R_{!}f(F))\to\underline{H}_{T}^{i}(\R_{!}g(G))\to\underline{H}_{T}^{i}(\R_{!}h(j^{\ast}G))\to,
+$$
+whence the equivalence of \textup{(i)} and \textup{(ii)}.
+
+\textup{(i)}\SSI\textup{(iii)}. Indeed \textup{(i)} is equivalent to saying that, for every scheme $S^{\prime}$ \'etale over $S$, one has the relation
+\begin{equation*} \label{eq:XIV.4.1.**} \tag{$**$} {\H_{T^{\prime}}^{i}(S^{\prime}, \R_{!}f^{\prime}(F^{\prime}))=0\quad\textrm{ for }i<n.}
+\end{equation*}
+Now from \eqref{eq:XIV.4.1.*} one deduces the exact sequence of abelian groups
+$$
+\to\H_{T^{\prime}}^{i}(S^{\prime}, \R_{!}f^{\prime}(F^{\prime}))\to\H_{T^{\prime}}^{i}(S^{\prime}, \R_{!}g^{\prime}(G^{\prime}))\to \H_{T^{\prime}}^{i}(S^{\prime}, \R_{!}h^{\prime}(j^{\prime\ast}G^{\prime}))\to\;;$$
+taking \Ref{XIV.4.0} into account, this exact sequence may be written in the form
+$$
+\to\H_{T^{\prime}}^{i}(S^{\prime}, \R_{!}f^{\prime}(F^{\prime}))\to\H_{g^{\prime -1}(T^{\prime})!}^{i}(X^{\prime}/S^{\prime}, G^{\prime})\to\H_{h^{\prime -1}(T^{\prime})!}^{i}(Y^{\prime}/S^{\prime}, j^{\prime\ast}G^{\prime})\to.$$
+The equivalence of \textup{(i)} and \textup{(iii)} follows from this, taking into account the form \eqref{eq:XIV.4.1.**} of \textup{(i)}.
+
+\setcounter{subsubsection}{-1} \setcounter{subsection}{2}
+
+\subsubsection{} \label{XIV.4.2.0}
+When $f\colon U\to S$ is affine, we shall give \emph{local} conditions on $F$ in order that conditions \textup{(i)} to \textup{(iii)} of \Ref{XIV.4.1} be satisfied. In the sequel, the schemes considered are excellent schemes of characteristic zero, the sheaves are sheaves of $\ZZ/m\ZZ$-modules, where $m$ is a power of a prime number. If one had resolution of singularities in the sense of (\SGA 4~XIX), the results stated, as well as their proofs, would still be valid for excellent schemes of equal characteristic, with $m$ prime to the characteristic.
+
+\setcounter{subsection}{1}
+
+\begin{theorem} \label{XIV.4.2}
+Let $S$ be an excellent scheme of characteristic zero and \hbox{$f\colon U\!\to\! S$} a separated morphism of finite type. Let $F$ be a complex of sheaves of $\ZZ/m\ZZ$-modules on $U$, bounded below in degrees and with constructible cohomology, $n$ an integer and~$T$ a closed subset of $S$. Then the following conditions are equivalent:
+\begin{enumeratei}
+\item
+For every scheme $U_{1}$ \'etale over $U$, affine over $S$, one has, denoting by~$f_{1}$ the structural morphism of $U_{1}$ and by $F_{1}$ the restriction of $F$ to $U_{1}$:
+$$
+\prof_{T}(\R_{!}f_{1}(F_{1}))\geq n$$
+(\cf prop\ptbl \Ref{XIV.4.1} on the meaning of this relation).
+\item
+For every point $u$ of $U$, one has:
+$$
+\prof_{u}(F)\geq n-\delta_{T}(u),
+$$
+where one sets (\cf \Ref{XIV.2.2}): $\delta_{T}(u)=\degtr(k(x)/k(s))+\codim\big(\overline{\{ s\} }\cap T, \overline{\{ s\} } \big)$.
+\end{enumeratei}
+\end{theorem}
+
+\begin{proof}
+$1^\circ)$ Let $t$ be a point of $T$, $\overline{S}$ the strict localization of $S$ at a geometric point over $t$ and $S^{\prime}$ the completion of $\overline{S}$, with closed point $t^{\prime}$; then $\overline{S}$ is excellent by (\EGA IV~7.9.5), hence $S^{\prime}$ is a complete strictly local excellent scheme. Given a scheme $U$ over $X$ (\resp an $S$-morphism $f$, \resp etc.), we shall denote by $U^{\prime}$ (\resp $f^{\prime}$, \resp etc.) the scheme $U\times_{S}S^{\prime}$ (\resp the morphism $f_{(S^{\prime})}$, \resp etc.). One has the cartesian square
+$$
+\xymatrix{ U^{\prime}\ar[r]^-{h}\ar[d]_-{f^{\prime}} & U\ar[d]^-{f}\\
+S^{\prime}\ar[r]^-{g} & S, }
+$$
+in which the morphism $g$ is regular (\EGA IV~7.8.2). Let us show that it suffices to prove that (for every point $t\in T$) the following two properties are equivalent:
+\begin{itemize}
+\item[$\textup{(i)}_{t}$] For every scheme $U_{1}$ \'etale over $U$, affine over $S$, setting $f_{1}\colon U_{1}\to S$, one has
+$$
+\prof_{t^{\prime}}(\R_{!}f_{1}^{\prime}(F_{1}^{\prime}))\geq n.
+$$
+
+\item[$\textup{(ii)}_{t}$] For every point $u^{\prime}$ of $U^{\prime}$, one has
+$$
+\prof_{u^{\prime}}(F^{\prime})\geq n-\delta_{t^{\prime}}(u^{\prime}).
+$$
+\end{itemize}
+It suffices to prove the following lemma:
+
+\begin{sublemma} \label{XIV.4.2.1}
+One has \textup{(i)}\SSI$\textup{(i)}_{t}$ for every $t\in T$ and \textup{(ii)}\SSI$\textup{(ii)}_{t}$ for every $t\in T$.
+\end{sublemma}
+
+\textup{(i)}\SSI$\textup{(i)}_{t}$ for every $t\in T$. Indeed \textup{(i)} is equivalent to saying that, for every scheme $U_{1}$ \'etale over $U$, affine over $S$, one has
+$$
+\prof_{T}(\R_{!}f_{1}(F_{1}))\geq n\;;$$
+now by \Ref{XIV.1.8}
+$$
+\prof_{T}(\R_{!}f_{1}(F_{1}))=\inf_{t\in T}\prof_{t}(\R_{!}f_{1}(F_{1})).
+$$
+Since $g^{\ast}(\R_{!}f_{1}(F_{1}))\simeq\R_{!}f_{1}^{\prime}(F_{1}^{\prime})$ (\SGA 4~XVII), one has by \Ref{XIV.1.16}
+$$
+\prof_{t}(\R_{!}f_{1}(F_{1}))=\prof_{t^{\prime}}(\R_{!}f_{1}^{\prime}(F_{1}^{\prime})),
+$$
+hence \textup{(i)} is equivalent to saying that one has, for every $t\in T$, $\prof_{t^{\prime}}(\R_{!}f_{1}^{\prime}(F_{1}^{\prime}))\geq n$, which is nothing other than $\textup{(i)}_{t}$.
+
+\textup{(ii)}$_{t}$ for every $t\in T$\ALORS\textup{(ii)}. Indeed let $u\in U$; one must show the relation
+$$
+\prof_{u}(F)\geq n-\delta_{T}(u),
+$$
+where $\delta_{T}(u)=\inf_{t\in T\cap\overline{\{ s\} }}\delta_{t}(u)$ (\cf \Ref{XIV.2.2}); one is thus reduced to showing that one has, for every $t\in T\cap\overline{\{ s\} }$
+$$
+\prof_{u}(F)\geq n-\delta_{t}(u).
+$$
+Let $u^{\prime}$ be a point of $U^{\prime}$ such that one has $h(u^{\prime})=u$ and $\delta_{t^{\prime}}(u^{\prime})=\delta_{t}(u)$ (\cf \Ref{XIV.2.1.1}). Since $h$ is locally acyclic (\SGA 4~XIX~4.1), it follows from \Ref{XIV.1.16} and from the fact that~$u^{\prime}$ is a generic point of $U_{u}^{\prime}$ that one has
+$$
+\prof_{u^{\prime}}(F^{\prime})=\prof_{u}(F).
+$$
+But by $\textup{(ii)}_{t}$ one has $\prof_{u}(F)=\prof_{u^{\prime}}(F^{\prime})\geq n-\delta_{t}(u)$, which proves \textup{(ii)}.
+
+\textup{(ii)}\ALORS$\textup{(ii)}_{t}$ for every $t$. With the notation of \Ref{XIV.2.2.1}, for every point $u^{\prime}$ of $U^{\prime}$, one has thanks to \Ref{XIV.1.16}
+$$
+\prof_{u^{\prime}}(F^{\prime})\geq\prof_{u}(F)+2\dim h_{u^{\prime}}^{-1}(u)\geq\prof_{u}(F)+\dim h_{u^{\prime}}^{-1}(u).
+$$
+Taking \Ref{XIV.2.2.1} and \textup{(ii)} into account, one obtains
+$$
+\prof_{u^{\prime}}(F^{\prime})\geq n-\delta_{T}(u)+\dim h_{u^{\prime}}^{-1}(u)\geq n-\delta_{t^{\prime}}(u^{\prime}),
+$$
+which is nothing other than $\textup{(ii)}_{t}$.
+
+$2^\circ)$ $\textup{(ii)}_{t}$\SSI$\textup{(i)}_{t}$. One immediately reduces to the case where $F$ has bounded degrees, by truncating $F$ at a sufficiently high degree. One can realize $S^{\prime}$ as a closed subscheme of a complete regular local scheme, hence excellent; it then follows from (\SGA 5~I~3.4.3) that there exists a dualizing complex $K$ on $S^{\prime}$ and that $\R^{!}f^{\prime}(K)=K^{\prime}$ is a dualizing complex on $U^{\prime}$. We shall choose $K$ in such a way that one has $\delta^{K}(t^{\prime})=0$ (for the definition of $\delta^{K}(t^{\prime})$, \cf \Ref{XIV.2.3}), and we shall denote by $\D F^{\prime}$ the dual of $F^{\prime}$ with respect to $K^{\prime}$. One can reformulate the hypothesis $\textup{(ii)}_{t}$ as follows:
+
+\begin{sublemma} \label{XIV.4.2.2}
+Let $u^{\prime}$ be a point of $U^{\prime}$; then the following conditions are equivalent:
+\begin{enumeratei}
+\item
+One has $\prof_{u^{\prime}}(F^{\prime})\geq n-\delta_{t^{\prime}}(u^{\prime})$.
+\item
+One has $\big(\underline{H}^{q}(\D F^{\prime}) \big)_{\overline{u}^{\prime}}=0$ for $q>-n-\delta_{t^{\prime}}(u^{\prime})$ ($\overline{u}^{\prime}$ a geometric point over $u^{\prime}$).
+\end{enumeratei}
+\end{sublemma}
+
+Let $\overline{U}^{\prime}$ be the strict localization of $U^{\prime}$ at $\overline{u}^{\prime}$ and $\overline{F}^{\prime}$ the inverse image of $F$ by the morphism $\overline{U}^{\prime}\to U^{\prime}$. The relation $\prof_{u^{\prime}}(F^{\prime})\geq n-\delta_{t^{\prime}}(u^{\prime})$ is equivalent by definition to the following:
+\begin{equation*} \label{eq:XIV.4.2.*} \tag{$*$} {\H_{\overline{u}^{\prime}}^{i}(\overline{F}^{\prime})=0\quad\textrm{ for }i>n-\delta_{t^{\prime}}(u^{\prime}).}
+\end{equation*}
+Let $\D\big(\H_{\overline{u}^{\prime}}^{i}(\overline{F}^{\prime})\big)$ be the dual of the abelian group $\H_{\overline{u}^{\prime}}^{i}(\overline{F}^{\prime})$ with respect to $\ZZ/m\ZZ$. By \Ref{XIV.2.3.2}, $K^{\prime}[-2\delta_{t^{\prime}}(u^{\prime})]=K^{\prime\prime}$ satisfies $\delta^{K^{\prime\prime}}(u^{\prime})=0$; since $F^{\prime}$ has constructible cohomology, one has $\overline{\D F^{\prime}}=\D(\overline{F}^{\prime})$ and the local duality theorem (\SGA 5~I~4.5.3) then shows that one has
+$$
+\D\big(\H_{\overline{u}^{\prime}}^{i}(\overline{F}^{\prime})\big) \simeq\big(\H^{-i-2\delta_{t^{\prime}}(u^{\prime})}(\D F^{\prime})\big)_{\overline{u}^{\prime}}.
+$$
+Thus \eqref{eq:XIV.4.2.*} is equivalent to the relation
+\begin{equation*} \label{eq:XIV.4.2.**} \tag{$**$}
+\big(\underline{H}^{q}(\D F^{\prime})\big)_{\overline{u}^{\prime}}=0\quad\text{for }q>-n-\delta_{t^{\prime}}(u^{\prime}).
+\end{equation*}
+
+We are now in a position to prove the theorem. The relation \textup{(ii)}$_{t}$ is equivalent to the relation \eqref{eq:XIV.4.2.**}. Let $G^{q}=\underline{H}^{q}(\D F^{\prime})$; the affine Lefschetz theorem (\Ref{XIV.3.1}) implies in particular that, for every scheme $U_{1}$ \'etale over $U$, affine over $S$, one has
+$$
+\H^{p}(U_{1}^{\prime}, G^{q})=0\quad\textrm{ for }p>\delta(G^{q}),
+$$
+where $\delta(G^{q})$ is the upper bound of the $\delta_{t^{\prime}}(u^{\prime})$ for those $u^{\prime}$ such that one has $G_{\overline{u}^{\prime}}^{q}\neq 0$; by \eqref{eq:XIV.4.2.**} one has $\delta(G^{q})\leq -n-q$, hence $\textup{(ii)}_{t}$ implies the relation
+$$
+\H^{p}(U_{1}^{\prime}, \underline{H}^{q}(\D F^{\prime}))=0\quad\textrm{ for }p>-q-n.
+$$
+Taking into account the hypercohomology spectral sequence of the functor ``sections over $U_{1}^{\prime}$'' with respect to the complex $\D F^{\prime}$:
+$$
+\E_{2}^{pq}=\H^{p}(U_{1}^{\prime}, \underline{H}^{q}(\D F^{\prime}))\To\H^{\ast}(U_{1}^{\prime}, \D F^{\prime}),
+$$
+one obtains the relation
+\begin{equation*} \label{eq:XIV.4.2.***} \tag{${*}{*}{*}$}
+\H^{i}(U_{1}^{\prime}, \D F^{\prime})=0\quad\textrm{ for }i>-n.
+\end{equation*}
+
+Conversely, suppose the preceding relation is satisfied, for every $U_{1}$ \'etale over $U$, affine over $S$. Let us apply proposition \Ref{XIV.3.6}, replacing $S$ therein by $\overline{S}^{\prime}$; the hypotheses of \Ref{XIV.3.6} concerning $\overline{S}$ are satisfied, since, for every scheme $\overline{U}_{1}$ \'etale over $\overline{U}$, affine, one can find a scheme over $\overline{U}_{1}$ which comes by inverse image from a scheme \'etale over $U$, affine over $S$; as for the hypotheses concerning $F$, they are satisfied thanks to \Ref{XIV.2.3.3}. One thus has, for every point $u^{\prime}$ of $U^{\prime}$ such that $\big(\underline{H}^{q}(\D F^{\prime})\big)_{\overline{u}^{\prime}}\neq 0$:
+$$
+\delta_{t^{\prime}}(u^{\prime})\leq -n-q,
+$$
+which is nothing other than the relation \eqref{eq:XIV.4.2.**}; one has thus proved the equivalence
+$$
+\text{\textup{(ii)}$_{t}$\SSI\eqref{eq:XIV.4.2.***}}.
+$$
+We shall transform the relation \eqref{eq:XIV.4.2.***}; one has first
+$$
+\H^{i}(U_{1}^{\prime}, \D F^{\prime})=\big(\underline{H}^{i}(\R f_{1\ast}^{\prime}(\D F_{1}^{\prime}))\big)_{t^{\prime}}\;;$$
+but by (\SGA 5~I~1.12), there exists a canonical isomorphism
+$$

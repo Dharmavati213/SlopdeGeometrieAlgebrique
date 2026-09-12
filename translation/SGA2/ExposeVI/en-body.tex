@@ -1,0 +1,137 @@
+\chapter{The functors $\protect\Ext^{\protect\boule}_Z(X;F, G)$ and $\protect\SheafExt^{\protect\boule}_Z(F, G)$} \label{VI}
+
+\numberwithin{equation}{subsection}
+
+\section{Generalities} \label{VI.1}
+%
+\subsection{} \label{VI.1.1}
+Let $(X, \OX)$ be a ringed space and $Z$ a locally closed subset of $X$. Let $F$ and $G$ be $\OX$-Modules; one denotes by ${\Ext_Z^i}(X;F, G)$ (\resp ${\SheafExt_Z^i}(F, G)$) the $i$-th derived functor of the functor $G \mto \Gamma_Z(\SheafHom_{\OX}(F, G))$ (\resp $\SheafGamma_Z(\SheafHom_{\OX}(F, G))$).
+
+\begin{lemma} \label{VI.1.2}
+The sheaf ${\SheafExt_Z^i}(F, G)$ is canonically isomorphic to the sheaf associated to the presheaf $U\mto {\Ext_{Z\cap U}^i}(U;F_{|U}, G_{|U})$.
+\end{lemma}
+
+This follows from (\cite{Tohoku}, 3.7.2) and from the fact that $\Gamma(U;\SheafGamma_Z(\SheafHom_{\OX}(F, G)))$ is canonically isomorphic to $\Gamma_{Z\cap U}(\SheafHom_{{\OX}_{|U}}(F_{|U}, G_{|U}))$.
+
+\begin{theorem}[Excision theorem] \label{VI.1.3}
+Let $V$ be an open subset of $X$ containing $Z$; one then has an isomorphism of cohomological functors
+\begin{equation} \label{VI.1.3.1}
+\Ext_{X}^{\boule}(X;F, G) \simeq \Ext_{V}^{\boule}(V;F_{|V}, G_{|V})
+\end{equation}
+\end{theorem}
+
+Indeed, if $G^\boule$ is an injective resolution of $G$, then $G^\boule_{|V}$ is an injective resolution of $G_{|V}$. The theorem follows immediately.
+
+\subsection{} \label{VI.1.4}
+Let $\Oo_{X, Z}$ be the $\OX$-Module defined by the following conditions (\cite{Godement},~2.9.2): ${\Oo_{X, Z}}_{|X{-} Z}=0$ and ${\Oo_{X, Z}}_{|Z}={\OX}_{|Z}$. One has seen that for every $\OX$-Module $H$, there exists a functorial isomorphism: $\Gamma_Z(H)\simeq \Hom_{\OX}(\Oo_{X, Z}, H)$. One therefore deduces functorial isomorphisms in $F$ and $G$: \setcounter{equation}{0}
+\begin{align}
+\label{VI.1.4.1}
+\Gamma_Z(\SheafHom_{\OX}(F, G)) &\simeq \Hom_{\OX}(\Oo_{X, Z}, \SheafHom_{\OX}(F, G)),\\
+\label{VI.1.4.2} \Gamma_Z(\SheafHom_{\OX}(F, G)) &\simeq \Hom_{\OX}(\Oo_{X, Z}\otimes_{\OX} F, G),\\
+\label{VI.1.4.3} \Gamma_Z(\SheafHom_{\OX}(F, G)) &\simeq \Hom_{\OX}(F, \SheafHom_{\OX}(\Oo_{X, Z}, G))=\Hom_{\OX}(F, \SheafGamma_Z(G)).
+\end{align}
+It follows in particular from~(\Ref{VI.1.4.2}) that there exists an isomorphism $\partial$-functorial in $F$ and~$G$
+\[
+\theta\colon \Ext_{{\OX}}^i(\Oo_{X, Z}\otimes_{\OX} F, G)\isomto\Ext_{Z}^i(X;F, G).
+\]
+
+\subsection{} \label{VI.1.5}
+By definition the functor $G \mto \Gamma_Z(\SheafHom_{\OX}(F, G))$ is the composite of the functor $G \mto\SheafHom_{\OX}(F, G)$ and of the functor $\Gamma_Z$. As $\Gamma_Z$ is left exact (\Ref{I}~\Ref{I.1.9}) and as $\SheafHom_{\OX}(F, G)$ is flasque if $G$ is injective, and as $\Gamma_Z$ is exact on flasques (\Ref{I}~\Ref{I.2.12}), it follows from (\cite{Tohoku}, 2.4.1) that there exists a spectral functor abutting to $\Ext_{Z}^\boule(X;F, G)$ whose initial term is $H_Z^p(X, \SheafExt_{\OX}^q(F, G))$.
+
+On the other hand, it follows from (\Ref{VI.1.4.3}) that $\Gamma_Z(\SheafHom_{\OX}(F, G))$ is the composite of $\SheafGamma_Z$ and of the functor $H \mto \Hom_{\OX}(F, H)$.
+
+Since the functor $\SheafGamma_Z$ transforms injectives into injectives (\Ref{I}~\Ref{I.1.4}), it follows from (\cite{Tohoku},~2.4.1) that there exists a spectral functor abutting to $\Ext_{Z}^\boule(X;F, G)$ whose initial term is $\Ext_{\OX}^p(X;F, \SheafH_Z^q(G))$.
+
+Finally, it follows from (\Ref{VI.1.4.2}) and from the spectral sequence of the $\Ext$, that there exists a spectral functor abutting to $\Ext^{\boule}_Z(X;F, G)$ whose initial term is $H^p(X;\SheafExt_Z^\boule(F, G))$. Hence the
+
+\setcounter{equation}{0}
+
+\begin{theorem} \label{VI.1.6}
+There exist three spectral functors abutting to $\Ext_{Z}^\boule(X;F, G)$ whose initial terms are respectively
+\begin{align}
+\label{VI.1.6.1} &H_Z^p(X, \SheafExt_{\OX}^q(F, G))\\
+\label{VI.1.6.2} &H^p(X, \SheafExt_Z^q(F, G))\\
+\label{VI.1.6.3} &\Ext_{\OX}^p(X;F, \SheafH_Z^q(G)).
+\end{align}
+\end{theorem}
+
+\subsection{} \label{VI.1.7}
+Now let $Z'$ be a closed subset of $Z$ and let $Z''=Z {-} Z'$. One has an exact sequence
+\setcounter{equation}{0}
+\begin{equation} \label{VI.1.7.1}
+0 \to \Oo_{X, Z''} \to \Oo_{X, Z} \to \Oo_{X, Z'} \to 0
+\end{equation}
+which generalizes the exact sequence of (\cite{Godement}, 2.9.3). This exact sequence splits locally; one therefore has, for every $\OX$-Module $F$, another exact sequence:
+\begin{equation} \label{VI.1.7.2} {0 \to F \otimes_{\OX} \Oo_{X, Z''} \to F \otimes_{\OX} \Oo_{X, Z} \to F \otimes_{\OX} \Oo_{X, Z'} \to 0}
+\end{equation}
+Now let $G$ be an $\OX$-Module; if one applies the functor $\Hom_{\OX}(\boule, G)$ to the exact sequence (\Ref{VI.1.7.2}), one deduces from (\Ref{VI.1.4.2}) and from the exact sequence of the $\Ext$ the following theorem:
+
+\begin{theorem} \label{VI.1.8}
+Let $Z$ be a locally closed subset of $X$, $Z'$ a closed subset of $Z$ and $Z''=Z{-} Z'$. One then has an exact sequence functorial in $F$ and $G$:
+\begin{gather*}
+0 \to \Hom_{Z'}(F, G) \to \Hom_Z(F, G) \to \Hom_{Z''}(F, G)\to \Ext_{{Z'}}^1(F, G) \to \cdots{}\\
+{}\cdots \Ext_{Z}^i(F, G) \to \Ext_{{Z''}}^i(F, G) \to \Ext_{{Z'}}^{i+1}(F, G) \to \cdots{}
+\end{gather*}
+\end{theorem}
+
+\begin{corollary} \label{VI.1.9} Let $Y$ be a closed subset of $X$ and let $U=X{-} Y$. One then has an exact sequence functorial in $F$ and $G$:
+\begin{gather*}
+0 \to \Hom_Y(F, G) \to \Hom_{\OX}(F, G) \to \Hom_{{\OX}_{|U}}(F_{|U}, G_{|U}) \to \Ext_{Y}^1(F, G) \to \cdots{}\\
+{}\cdots \Ext_{{\OX}}^i(F, G) \to \Ext_{{{\OX}_{|U}}}^i(F_{|U}, G_{|U}) \to \Ext_{Y}^{i+1}(F, G) \to \cdots
+\end{gather*}
+\end{corollary}
+
+This corollary is an immediate consequence of theorem (\Ref{VI.1.3}) and of theorem (\Ref{VI.1.8}).
+
+\section{Applications to quasi-coherent sheaves on preschemes} \label{VI.2}
+
+\begin{proposition} \label{VI.2.1}
+Let $X$ be a locally noetherian prescheme; for every locally closed subset $Z$ of $X$, for every coherent Module $F$ and every quasi-coherent Module~$G$ on $X$, the $\SheafExt_Z^i(F, G)$ are quasi-coherent.
+\end{proposition}
+
+One shows, as for (\Ref{VI.1.6.3}), that the Modules $\SheafExt_Z^i(F, G)$ are the abutment of a spectral sequence with initial term $\SheafExt_{\OX}^p(F, \SheafH_Z^q (G))$. By (\Ref{II}, cor\ptbl \Ref{II.3}), the $\SheafH_Z^q(G)$ are quasi-coherent, and hence so are the $\SheafExt_{\OX}^p (F, \SheafH_Z^q (G))$, since $F$ is coherent. The proposition then follows immediately.
+
+\begin{empty} \label{VI.2.2}
+\end{empty}
+
+\subsection{} Now let $Y$ be a closed subprescheme of $X$ and $\SheafI$ an ideal of definition of $Y$. Let $m$ and $n$ be integers such that $m\geq n \geq 0$; one denotes by $i_{n, m}$ the canonical map $\Oo_{Y_m} = \OX/\SheafI^{m+1} \to \OX/\SheafI^{n+1} = \Oo_{Y_n}$ and by $j_n$ the map \hbox{$\Oo_{X, Y}\to \Oo_{Y_n}$}. The $(\Oo_{Y_n}, i_{n, m})$ form a projective system and the $j_n$ are compatible with the~$i_{n, m}$.
+
+Applying the functor $\Ext_{\OX}^i(F\otimes\boule, G)$, one deduces from this a morphism
+\[
+\varphi'\colon \varinjlim_{n} \Ext_{\OX}^i(X;F\otimes \Oo_{Y_n}, G) \to \Ext_{\OX}^i(X;F \otimes \Oo_{X, Y}, G);
+\]
+it is a morphism of cohomological functors in $G$. The morphism
+\[
+\varphi\colon \varinjlim_{n} \Ext_{\OX}^i(X;F\otimes \Oo_{Y_n}, G) \to \Ext_Y^i(X;F, G)
+\]
+composite of $\varphi'$ and of $\theta$ (\cf \Ref{VI.1.4}) is therefore itself also a functor of cohomological morphisms in $G$.
+
+One defines similarly
+\[
+\Sheafphi\colon \varinjlim_n \SheafExt_{\OX}^i(F \otimes \Oo_{Y_n}, G) \to \SheafExt_Y^i(X;F, G)
+\]
+
+\begin{theorem} \label{VI.2.3}
+Let $X$ be a locally noetherian prescheme, $Y$ a closed subset of $X$ defined by a coherent ideal $\SheafI$, $F$ a coherent Module, $G$ a quasi-coherent Module. Then,
+\begin{enumeratea}
+\item
+$\Sheafphi$ is an isomorphism.
+\item
+If $X$ is noetherian, $\varphi$ is an isomorphism.
+\end{enumeratea}
+\end{theorem}
+
+The proof of b) being almost word for word that of (\Ref{II}~\Ref{II.6}b)), thanks to the spectral sequence~\Ref{VI.1.6.2}, we shall not reproduce it.
+
+For the proof of a), one may, by (\Ref{VI.2.1}), assume $X$ affine with ring~$A$, $F$ (\resp $G$) defined by an $A$-module $M$ (\resp $N$) and $\SheafI$ by an ideal $I$. It suffices to prove that the homomorphism
+\begin{equation} \label{VI.2.3.1} \varinjlim_{{n}} \Ext_A^i(M/I^nM, N) \to \Ext_Y^i(X, F, G)
+\end{equation}
+deduced from $\Sheafphi$ is an isomorphism.
+
+Indeed, one may, for $i=0$, canonically identify the two sides of (\Ref{VI.2.3.1}) with the submodule of $\Hom_A(M, N)$ defined by the elements of $\Hom_A(M, N)$ annihilated by a power of $I$. One then sees that the homomorphism (\Ref{VI.2.3.1}) is none other than the identity map.
+
+The functor $N\mto \varinjlim_{n} \Ext_A^\boule(M/I^nM, N)$ is a universal $\partial$-functor. We shall show that the same is true of the functor $N \mto \Ext_Y^\boule(M, N)$. Indeed if $N$ is an injective module, by (\Ref{II.9} and \Ref{II.11}), $\SheafH_Y^q(N)=0$ if $q \neq 0$; and by (\Ref{IV}.\Ref{IV.2.2}), $H_Y^{0}(N)$ is injective.
+
+It then follows that $\Ext_{\OX}^p(X;M, \SheafH_Y^q(N))=0$ if $p+q \neq 0$; one therefore has, by (\Ref{VI.1.6.3}), $\Ext_Y^i(M, N)=0$ for $i\neq 0$ and $N$ injective. This completes the proof.
+
+\section*{Bibliography} Same references as those listed at the end of \Exp \Ref{I}, cited respectively \cite{Tohoku} and \cite{Godement}.

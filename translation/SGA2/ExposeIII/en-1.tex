@@ -1,0 +1,396 @@
+\chapter{Cohomological invariants and depth} \label{III}
+
+\section{Recollections} \label{III.1}
+
+We shall state some definitions and results which the reader will find
+for example in Chapter~I of the course given by J.-P\ptbl Serre at the
+Coll\`ege de France in 1957--58.\nde{\label{noteserre} the re-edition of
+Serre's text (Serre~J.-P., \emph{Alg\`ebre locale. {M}ultiplicit\'es},
+{Cours au Coll\`ege de France, 1957--1958, written by Pierre Gabriel,
+second edition, Lect. Notes in Math.}, vol.~11, Springer-Verlag, 1965)
+no longer contains the proofs of these statements. One may refer to
+(Bourbaki~N., \textit{Alg\`ebre commutative}, Masson), as Serre himself
+suggests.}
+
+\begin{definition} \label{def:III.1.1}
+Let \(A\) be a ring, (commutative with unit element as in all that
+follows) and let \(M\) be an \(A\)-module (unitary as in all that
+follows), one calls:
+\begin{itemize}
+\item
+annihilator of \(M\) and one denotes by \(\Ann M\) the set of
+\(a\in A\) such that for every \(m\in M\) one has \(am=0\).
+
+\item
+support of \(M\) and one denotes by \(\Supp M\) the set of prime
+ideals \(\pp \) of \(A\) such that the localized module \(M_\pp\) is
+nonzero.
+
+\item
+``assassin of \(M\)'' or ``set of prime ideals associated with \(M\)''
+and one denotes by \(\Ass M\) the set of prime ideals \(\pp \) of \(A\)
+such that there exists a nonzero element of~\(M\) whose annihilator is
+\(\pp \).
+\end{itemize}
+
+If \(\ideal a\) is an ideal of \(A\), we shall denote by
+\(\rr(\ideal a)\) the radical of \(\ideal a\) in \(A\), \ie the set of
+elements of \(A\) a power of which lies in \(\ideal a\).
+\end{definition}
+
+The following results are valid if one assumes that
+\emph{\(A\) is noetherian and \(M\) of finite type}.
+
+\setcounter{subsection}{0}
+
+\begin{proposition} \label{III.1.1}
+\begin{enumeratei}
+\item
+\(\Ass M\) is a finite set.
+
+\item
+For an element of \(A\) to annihilate a nonzero element of \(M\), it is
+necessary and sufficient that it belong to one of the ideals associated
+with \(M\).
+
+\item
+The radical of the annihilator of \(M\), \(\rr(\Ann M)\), is the
+intersection of the associated ideals of \(M\) which are minimal (for
+the inclusion relation in \(\Ass M\)).
+\end{enumeratei}
+\end{proposition}
+
+\begin{proposition} \label{III.1.2}
+Let \(\pp \) be a prime ideal of \(A\); the following assertions are
+equivalent:
+\begin{enumeratei}
+\item
+\(\pp \in \Supp M\).
+
+\item
+There exists \(\qq \in \Ass M\) such that \(\qq \subset\pp \).
+
+\item
+\(\pp \supset \Ann M\).
+
+\item[\textup{(iii bis)}]
+\(\pp \supset \rr(\Ann M)\).
+\end{enumeratei}
+\end{proposition}
+
+\begin{proposition} \label{III.1.3}
+Let \(N\) be an \(A\)-module of finite type; one has the formula:
+\[
+\Ass \Hom_A(N, M) = \Supp N \cap \Ass M.
+\]
+\end{proposition}
+
+\section{Depth} \label{III.2}
+
+Throughout this section, \(A\) denotes a commutative ring, \(I\) an
+ideal of \(A\), \(M\)~and~\(N\) two \(A\)-modules. One will denote by
+\(X\) the prime spectrum of \(A\) (one will not use its structure sheaf
+in this section) and by \(Y\) the variety of \(I\),
+\(Y = \Supp(A/I) = \{\pp \in\nobreak X, \ \pp \supset I\}\).
+
+\begin{lemma} \label{III.2.1}
+Suppose that \(A\) is noetherian and that the modules \(M\) and \(N\)
+are of finite type. Suppose moreover that \(\Supp N=Y\). Then the
+following assertions are equivalent:
+\begin{enumeratei}
+\item
+\(\Hom_A(N, M)=0\).
+\item
+\(\Supp N \cap \Ass M = \emptyset\).
+\item
+The ideal \(I\) is not a zero-divisor in \(M\), which means that for
+every \(m\in M\), \(Im=0\) implies \(m=0\).
+\item
+There exists in \(I\) an \(M\)-regular element. (An element \(a\) of
+\(A\) is said to be \(M\)-regular if the homothety of ratio \(a\) in
+\(M\) is injective.)
+
+\item
+For every \(\pp \in Y\), the maximal ideal \(\pp A_\pp\) of the local
+ring \(A_\pp\) is not associated with \(M_\pp\). In a formula:
+\(\pp A_\pp \notin \Ass M_\pp\).
+\end{enumeratei}
+\end{lemma}
+
+\begin{proof}
+(i) \SSI (ii) since \(\Ass \Hom_A(N, M)=\emptyset\) is equivalent to
+(ii) by proposition \Ref{III.1.3} and to (i) by an easy consequence of
+proposition \Ref{III.1.2}.
+
+(iii) \ALORS (ii) by contradiction: ``there exists
+\(\pp \in \Supp N \cap \Ass M\)'' implies that \(\pp \supset I\) and
+that there exists \(m\in M\) whose annihilator is \(\pp \), hence
+\(Im \subset \pp m=0\), which contradicts (iii).
+
+(iv) \ALORS (iii) trivially.
+
+(ii) \SSI (iv) since \(\Supp N = Y\), hence (ii) means that \(I\) is
+not contained in any ideal associated with \(M\), or equivalently
+(since the ideals associated with \(M\) are prime and finite in
+number), that \(I\) is not contained in the union of the ideals
+associated with \(M\). Now, by proposition \Ref{III.1.1}~(ii), this set
+is the set of elements of \(A\) which are not \(M\)-regular.
+
+(i) \ALORS (v); indeed, if \(\Hom_A(N, M)=0\) and if \(\pp \in Y\), one
+deduces, by virtue of the formula
+\[
+\bigl(\Hom_A(N, M) \bigr)_\pp = \Hom_{A_\pp} \bigl(N_\pp, M_\pp \bigr),
+\]
+that \(\Hom_{A_\pp} \bigl(N_\pp, M_\pp \bigr)=0\), hence, thanks to
+proposition \Ref{III.1.3},
+\[
+\Supp N_\pp \cap \Ass M_\pp = \emptyset,
+\]
+now \(\pp A_\pp \in \Supp N_\pp, \) hence \( \pp A_\pp \notin \Ass M_\pp\).
+
+(v) \ALORS (i); indeed, if \(\pp \in \Ass M\), there exists \(m\in M\)
+whose annihilator is \(\pp\), hence the canonical image of \(m\) in
+\(M_\pp\) is nonzero, hence its annihilator is an ideal which contains
+\(\pp\), hence \(\pp A_\pp\), hence is equal to it. The ideal
+\(\pp A_\pp\) is therefore associated with \(M_\pp\), hence
+\(\pp \notin Y\) by (v), whence (i).
+\end{proof}
+
+We shall work with these conditions, replacing the
+functor \(\Hom\) by its derived functors.
+
+\begin{theorem} \label{III.2.2}
+Let \(A\) be a commutative ring, \(I\) an ideal of \(A\), \(M\) an
+\(A\)-module. Let \(n\) be an integer.
+
+\begin{enumeratea}
+\item
+If there exists a sequence \(f_1, \ldots, f_{n+1}\) of elements of
+\(I\) which forms an \(M\)-regular sequence (\ie if \(f_1\) is
+\(M\)-regular and if \(f_{i+1}\) is regular in
+\(M/(f_1, \ldots, f_i)M\) for \(i\leq n\)), then for every
+\(A\)-module \(N\) annihilated by a power of \(I\), one has:
+\[
+\Ext_A^i(N, M)=0 \text{ for } i\leq n.
+\]
+
+\item
+If moreover \(A\) is noetherian, if \(M\) is of finite type, and if
+there exists an \(A\)-module \(N\) of finite type such that
+\(\Supp N = \variete(I)\) and such that \(\Ext_A^i(N, M)=0\) for
+\(i\leq n\), then there exists a sequence \(f_1, \ldots, f_{n+1}\) of
+elements of \(I\) which is \(M\)-regular.
+\end{enumeratea}
+\end{theorem}
+
+Let us first prove a), by induction. If \(n<0\) the statement is empty.
+
+If \(n\geq 0\), suppose that a) has been proved for \(n'<n\); by
+hypothesis there exists \(f_1\in I\) which is \(M\)-regular. Let us
+denote by \(f_1^i\) multiplication by \(f_1\) in \(\Ext_A^i(N, M)\) and
+by \(f_1^M\) multiplication by \(f_1\) in \(M\). The sequence
+\begin{equation} \label{eq:III.2.1}
+0 \to M \lto{f_1^M} M \to M/f_1M \to 0
+\end{equation}
+is exact, hence so is the sequence:
+\[
+\Ext_A^{i-1} (N, M/f_1M) \lto{\delta}\Ext_A^i (N, M) \lto{f_1^i} \Ext_A^i (N, M).
+\]
+By hypothesis \(I^rN=0\), hence \(f_1^0\) and nilpotent; \(\Ext^i\) is
+a universal functor, and the same is true of \(f_1^i\) for every \(i\).
+Moreover, there exists a regular sequence in \(M/f_1 M\) which has \(n\)
+elements, hence, by the induction hypothesis,
+\[
+Ext_A^{i-1}(N, M)=0 \text{ if } i\leq n-1.
+\]
+One deduces that if \(i\leq n\), \(f_1^i\) is both nilpotent and
+injective, hence \(\Ext_A^i(N, M)=0\).
+
+Let us prove b), likewise by induction. If \(n<0\), the statement is
+empty.
+
+If \(n=0\), b) follows from the assertion (i) \ALORS (iv) of lemma
+\Ref{III.2.1}.
+
+If \(n>0\), by b) for \(n=0\), there exists an element \(f_1\in I\)
+which is \(M\)-regular; from the exact sequence (\Ref{eq:III.2.1}), one
+deduces the exact sequence:
+\begin{equation} \label{eq:III.2.2} \Ext_A^{i-1} (N, M) \to \Ext_A^{i-1} (N, M/f_1M) \to \Ext_A^i (N, M).
+\end{equation}
+One concludes that the hypotheses of b) are satisfied for the
+module \(M/f_1M\) and for the integer \(n-1\). By the induction
+hypothesis, there exists a sequence of \(n\) elements of \(I\) which is
+regular for \(M/f_1M\), which implies that there exists a
+sequence of \(n+1\) elements of~\(I\), beginning with \(f_1\), and which
+is \(M\)-regular.
+
+This theorem invites us to generalize in the following way the classical
+definition of the depth of a module of finite type over a noetherian
+ring:
+
+\begin{definition} \label{III.2.3}
+Let \(A\) be a commutative ring with unit element, let \(M\) be an
+\(A\)-module, let \(I\) be an ideal of \(A\). One calls \(I\)-depth of
+\(M\), and one denotes by \(\prof_I M\), the supremum in
+\(\NN\cup\{+\infty\}\) of the set of natural numbers \(n\) which are
+such that for every \(A\)-module of finite type \(N\) annihilated by a
+power of \(I\), one has
+\[
+\Ext_A^i(N, M)=0 \text{ for every } i< n.
+\]
+\end{definition}
+
+One deduces from the preceding theorem that if \(n\) is the supremum of
+the lengths of the \(M\)-regular sequences of elements of \(I\), one
+has \(n\leq\prof_I M\).
+
+\noindent More precisely:
+
+\begin{proposition} \label{III.2.4}
+Let \(A\) be a commutative ring, \(I\) an ideal of \(A\) and let \(M\)
+be an \(A\)-module, and finally let \(n\in \NN\). Consider the
+assertions:
+\begin{enumerate}
+\item
+\(n\leq \prof_I M\).
+\item
+For every \(A\)-module of finite type \(N\) which is annihilated by a
+power of \(I\), one has:
+\[
+\Ext_A^i(N, M)=0 \text{ for } i<n.
+\]
+\item
+There exists an \(A\)-module of finite type \(N\) such that
+\(\Supp N = \variete(I)\) and such that \(\Ext_A^i(N, M)=0\) if
+\(i<n\).
+\item
+There exists an \(M\)-regular sequence of length \(n\) formed of
+elements of \(I\).
+\end{enumerate}
+
+One has the following logical implications:
+\[
+\begin{array}{c}\dpl \textup{(1)} \Ssi \textup{(2)} \From (4) \\
+\big\Downarrow \\
+\textup{(3)} \\
+\end{array}
+\]
+Moreover if \(A\) is noetherian and \(M\) of finite type, these
+conditions are equivalent.
+\end{proposition}
+
+\begin{proof}
+(1) \SSI (2) by definition and (2) \ALORS (3) upon taking \(N=A/I\);
+Moreover (4) \ALORS (2) by theorem \Ref{III.2.2} a). Finally, if \(A\)
+is noetherian and \(M\) of finite type, (3) \ALORS (4) by theorem
+\Ref{III.2.2} b).
+\skipqed
+\end{proof}
+
+We assume \(A\) noetherian and \(M\) of finite type until the end of
+this section.
+
+\begin{corollary} \label{III.2.5}
+Let \(f\in I\) be an \(M\)-regular element; one has:
+\[
+\prof_I M = \prof_I (M/fM) + 1.
+\]
+\end{corollary}
+
+Indeed, if \(n\leq \prof_I (M/fM)\), there exists a sequence of
+elements of \(I\), \(f_1, \ldots, f_n\), which is
+\((M/fM)\)-regular; hence the sequence \(f, f_1, \ldots, f_n\) is
+\(M\)-regular, hence \(n+1 \leq \prof_I M\), hence
+\(\prof_I M\geq \prof_I (M/fM) + 1\). On the other hand, by the exact
+sequence (\Ref{eq:III.2.2}), if \(i \leq \prof_I M\), one has
+\(\Ext_A^{i-1} (N, M/fM)=0\), hence
+\(\prof_I M - 1 \leq \prof_I (M/fM)\).
+
+\begin{corollary} \label{III.2.6}
+Every finite \(M\)-regular sequence, formed of elements of \(I\), can
+be extended to a maximal \(M\)-regular sequence, whose length is
+necessarily equal to the \(I\)-depth of~\(M\).
+\end{corollary}
+
+\begin{remark} \label{III.2.7}
+One can scarcely restrain oneself from saying that an \(A\)-module is
+all the more beautiful the greater its depth. A module whose support
+does not meet \(\variete (I)\) is among the most beautiful; indeed, one
+can prove that for \(\prof_I M\) to be finite, it is necessary and
+sufficient that \(\Supp M \cap \variete(I) \neq \emptyset\).
+\end{remark}
+
+\begin{remark} \label{III.2.8}
+If \(A\) is a semi-local ring, let \(\rr(A)\) be its radical and
+\(k=A/\rr(A)\) its residue ring. The interesting notion of depth is
+obtained by taking for \(I\) the radical of~\(A\). We shall therefore
+agree to denote simply by \(\prof M\) the \(\rr(A)\)-depth of an
+\(A\)-module~\(M\). In this case one recovers the notion of
+``homological codimension'', (\cf Serre, \textit{op\ptbl cit.}
+note~\eqref{noteserre}, page~\pageref{noteserre}), which was denoted
+\(\codimh_A M\), and which is defined as the infimum of the integers
+\(i\) such that \(\Ext_A^i(k, M)\neq 0\); indeed
+\(\Supp k = \variete(\rr(A))\).
+\end{remark}
+
+\begin{proposition} \label{III.2.9}
+If \(A\) is noetherian and \(M\) of finite type, one has:
+\[
+\prof_I M = \inf_{\pp \in \variete (I)} \prof M_\pp.
+\]
+\end{proposition}
+
+\begin{corollary} \label{III.2.10}
+If \(A\) is a noetherian semi-local ring, and if \(M\) is an
+\(A\)-module of finite type, one has:
+\[
+\prof M = \inf_\mm \prof M_\mm,
+\]
+where \(\mm \) runs through the set of maximal ideals of \(A\).
+\end{corollary}
+
+The corollary follows immediately from the proposition \Ref{III.2.9};
+indeed the prime ideals which contain the radical are the maximal
+ideals.
+
+On the other hand, let \(f\in I\); if \(f\) is \(M\)-regular, if
+\(\pp\in X\) and if \(\pp\supset I\), the image \(g\) of \(f\) in
+\(A_\pp\) belongs to \(\pp A_\pp\), the maximal ideal of \(A_\pp\);
+moreover \(g\) is \(M_\pp\)-regular, as follows from the exact sequence
+\begin{equation} \label{eq:III.2.3} 0 \to M_\pp \lto{g'} M_\pp \to (M/fM)_\pp \to 0,
+\end{equation}
+where \(g'\) denotes the homothety of ratio \(g\) in \(M_\pp\). This
+exact sequence also gives that \((M/fM)_\pp\) is isomorphic to
+\(M_\pp/gM_\pp\); applying corollary \Ref{III.2.5} to \(M\) and to
+\(M_\pp\), one deduces, by induction, that \(\prof_I M\leq \nu(M)\),
+where one has set for every \(M\):
+\[
+\nu(M)=\inf_{\pp\in\variete(I)} \prof M_\pp.
+\]
+More precisely, still by induction, one knows, if \(f\) is
+\(M\)-regular, that \(\nu(M)= \nu(M/fM)+1\); it remains therefore to
+prove that if \(\nu(M)\geq 1\), there exists an \(M\)-regular element
+in \(I\). Now applying lemma \Ref{III.2.1} to \(M_\pp\), \(A_\pp\) and
+\(\pp A_\pp\) for every \(\pp\in \variete(I)\), one sees that
+\(\pp A_\pp \notin \Ass M_\pp\), hence, applying lemma \Ref{III.2.1} to
+\(A\), \(M\) and \(I\), one has the conclusion.
+
+\begin{proposition} \label{III.2.11}
+Let \(u\colon A\to B\) be a homomorphism of noetherian rings. Let~\(I\)
+be an ideal of \(A\), \(M\) an \(A\)-module of finite type. Set
+\(I_B=I\otimes_A B\) and \(M_B=M\otimes_A B\). If \(B\) is \(A\)-flat,
+one has:
+\[
+\prof_{I_B} M_B \geq \prof_I M;
+\]
+moreover if \(B\) is faithfully flat over \(A\), one has equality.
+\end{proposition}
+
+Indeed, let \(N=A/I\); by flatness one has: \(N\otimes_A B=B/I_B\); set
+\(N_B=N\otimes_A B\). Still by flatness and noetherian hypotheses, one
+has:
+\[
+\Ext_B^i (N_B, M_B) = \Ext_A^i(N, M)\otimes_A B,
+\]
+hence \(\Ext_A^i(N, M) = 0 \) implies \(\Ext_B^i(N_B, M_B)=0\), and the
+converse is true if \(B\) is faithfully flat over \(A\).

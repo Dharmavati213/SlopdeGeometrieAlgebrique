@@ -10,12 +10,14 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 
 ## Order of work
 
-1. Keep the SGA 1 VI translation compiling (`make tex`).
+1. Keep the landed SGA 1 and SGA 2 translations compiling (`make tex`).
 2. Formalize SGA 1 VI against mathlib, section by section, starting
    from `lean/SGA/SGA1/ExposeVI.lean`.
 3. Translate further exposés of SGA 1 (IV–V, VIII–XIII), then formalize
    each after its English text is in the tree.
-4. Only then: later SGA volumes, if the same tree still fits.
+4. SGA 2 English drafts proceed in parallel with remaining SGA 1
+   exposés; Lean for SGA 2 waits until the corresponding English is
+   ticked.
 
 Related public translations (not this project):
 [thosgood/sga](https://github.com/thosgood/sga),
@@ -142,11 +144,84 @@ has not been started.
 
 ---
 
+## SGA 2 — *Cohomologie locale des faisceaux cohérents et théorèmes de Lefschetz locaux et globaux*
+
+Source: SMF recomposition, [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
+GitHub checklist: [issue #9](https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique/issues/9).
+Exposé XIV is by Michèle Raynaud.
+
+| Exposé | Title | Translation | Lean |
+| --- | --- | --- | --- |
+| Intro | Grothendieck’s introduction | full draft in tree | — |
+| I | Global and local cohomological invariants relative to a closed subspace | full draft in tree | — |
+| II | Application to quasi-coherent sheaves on preschemes | full draft in tree | — |
+| III | Cohomological invariants and depth | full draft in tree | — |
+| IV | Dualizing modules and functors | full draft in tree | — |
+| V | Local duality and structure of the $H^i(M)$ | full draft in tree | — |
+| VI | The functors $\mathrm{Ext}_Z^\bullet(X;F,G)$ and $\underline{\mathrm{Ext}}_Z^\bullet(F,G)$ | full draft in tree | — |
+| VII | Vanishing criteria; coherence of $\underline{\mathrm{Ext}}^i_Y(F,G)$ | full draft in tree | — |
+| VIII | The finiteness theorem | full draft in tree | — |
+| IX | Algebraic geometry and formal geometry | full draft in tree | — |
+| X | Application to the fundamental group | full draft in tree | — |
+| XI | Application to the Picard group | full draft in tree | — |
+| XII | Applications to projective algebraic schemes | full draft in tree | — |
+| XIII | Problems and conjectures | full draft in tree | — |
+| XIV | Depth and Lefschetz theorems in étale cohomology | full draft in tree | — |
+
+### Translation
+
+- [x] **Introduction** — Grothendieck’s introduction
+  - [x] English TeX and PDF in `translation/SGA2/Introduction/`
+  - [ ] Scholarly proofreading; source issues recorded in [`Introduction/README.md`](../translation/SGA2/Introduction/README.md)
+- [x] **I** — Global and local cohomological invariants relative to a closed subspace
+  - [x] English TeX and PDF in `translation/SGA2/ExposeI/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeI/README.md`](../translation/SGA2/ExposeI/README.md)
+- [x] **II** — Application to quasi-coherent sheaves on preschemes
+  - [x] English TeX and PDF in `translation/SGA2/ExposeII/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeII/README.md`](../translation/SGA2/ExposeII/README.md)
+- [x] **III** — Cohomological invariants and depth
+  - [x] English TeX and PDF in `translation/SGA2/ExposeIII/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeIII/README.md`](../translation/SGA2/ExposeIII/README.md)
+- [x] **IV** — Dualizing modules and functors
+  - [x] English TeX and PDF in `translation/SGA2/ExposeIV/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeIV/README.md`](../translation/SGA2/ExposeIV/README.md)
+- [x] **V** — Local duality and structure of the $H^i(M)$
+  - [x] English TeX and PDF in `translation/SGA2/ExposeV/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeV/README.md`](../translation/SGA2/ExposeV/README.md)
+- [x] **VI** — The functors $\mathrm{Ext}_Z^\bullet(X;F,G)$ and $\underline{\mathrm{Ext}}_Z^\bullet(F,G)$
+  - [x] English TeX and PDF in `translation/SGA2/ExposeVI/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeVI/README.md`](../translation/SGA2/ExposeVI/README.md)
+- [x] **VII** — Vanishing criteria; coherence of $\underline{\mathrm{Ext}}^i_Y(F,G)$
+  - [x] English TeX and PDF in `translation/SGA2/ExposeVII/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeVII/README.md`](../translation/SGA2/ExposeVII/README.md)
+- [x] **VIII** — The finiteness theorem
+  - [x] English TeX and PDF in `translation/SGA2/ExposeVIII/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeVIII/README.md`](../translation/SGA2/ExposeVIII/README.md)
+- [x] **IX** — Algebraic geometry and formal geometry
+  - [x] English TeX and PDF in `translation/SGA2/ExposeIX/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeIX/README.md`](../translation/SGA2/ExposeIX/README.md)
+- [x] **X** — Application to the fundamental group
+  - [x] English TeX and PDF in `translation/SGA2/ExposeX/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeX/README.md`](../translation/SGA2/ExposeX/README.md)
+- [x] **XI** — Application to the Picard group
+  - [x] English TeX and PDF in `translation/SGA2/ExposeXI/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeXI/README.md`](../translation/SGA2/ExposeXI/README.md)
+- [x] **XII** — Applications to projective algebraic schemes
+  - [x] English TeX and PDF in `translation/SGA2/ExposeXII/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeXII/README.md`](../translation/SGA2/ExposeXII/README.md)
+- [x] **XIII** — Problems and conjectures
+  - [x] English TeX and PDF in `translation/SGA2/ExposeXIII/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeXIII/README.md`](../translation/SGA2/ExposeXIII/README.md)
+- [x] **XIV** — Depth and Lefschetz theorems in étale cohomology (M. Raynaud)
+  - [x] English TeX and PDF in `translation/SGA2/ExposeXIV/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeXIV/README.md`](../translation/SGA2/ExposeXIV/README.md)
+
+Lean for SGA 2 is not started.
+
+---
+
 ## Later volumes
 
-Leave these until SGA 1 has more than one exposé translated.
-
-- [ ] SGA 2 — Local cohomology of coherent sheaves; local and global Lefschetz theorems
 - [ ] SGA 3 — Group schemes (three tomes)
 - [ ] SGA 4 — Topos theory and étale cohomology of schemes
 - [ ] SGA 4½ — Étale cohomology (Deligne)

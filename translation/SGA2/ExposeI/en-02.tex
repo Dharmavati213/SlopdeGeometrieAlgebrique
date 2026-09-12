@@ -1,0 +1,217 @@
+\section{The functors $\H_Z^*(X, F)$ and $\SheafH_Z^*(F)$} \label{I.2}
+
+\setcounter{equation}{18}
+
+\begin{definition} \label{I.2.1}
+One denotes by $\H_Z^*(X, F)$ and ${\SheafH}_Z^*(F)$ the derived functors in $F$ of the functors $\Gamma_Z(F)$ \resp $\sheaf{\Gamma}_Z(F)$.
+\end{definition}
+
+These are cohomological functors, with values in the category of abelian groups \resp in the category of abelian sheaves on $X$. When $Z$ is closed, $H_Z^*(X, F)$ is by definition none other than $H^*_{\Phi}(X, F)$ where $\Phi$ denotes the family of closed subsets of $X$ contained in $Z$. When $Z$ is open, one will see that $H_Z^*(X, F)$ is none other than $H^*(Z, F)=H^*(Z, F\rest{Z})$, thanks to the following proposition.
+
+\begin{proposition}[Excision theorem] \label{I.2.2}
+Let $V$ be an open subset of $X$ containing~$Z$. Then one has an isomorphism of cohomological functors in $F$:
+\begin{equation} \label{eq:I.19}
+\H^*_Z(X, F) \to \H^*_Z(V, F\rest{V}).
+\end{equation}
+\end{proposition}
+
+Indeed, one has a functorial isomorphism $\Gamma_Z^X \simeq \Gamma_Z^V j^!$, where $j: V \to X$ is the inclusion and where $j^!$ is therefore the restriction functor (\cf (\Ref{eq:I.14})). The latter is exact, and transforms injectives into injectives by \Ref{I.1.4}, whence immediately the isomorphism (\Ref{eq:I.19}).
+
+When $Z$ is open, one may take $V=Z$ and one finds:
+
+\begin{corollary} \label{I.2.3bof}
+Suppose $Z$ is open, then one has an isomorphism of cohomological functors:
+\begin{equation} \label{eq:I.20}
+\H_Z^*(X, F) = \H^*(Z, F).
+\end{equation}
+\end{corollary}
+
+One concludes from the isomorphisms \Ref{I.1.6} and from the definitions (\cf \cite{Tohoku}):
+
+\label{I.2.3bis}
+\begin{enonce*}{Proposition 2.3~bis\ndemark}\ndetext{the proposition bears the number 2.3 in the original edition.}
+One has isomorphisms of cohomological functors:
+\begin{align} \label{eq:I.21}
+\H_Z^*(X, F)&\simeq \Ext^*(X; \ZZ_{Z, X}, F),\\
+\label{eq:I.21bis}\tag{21 bis}
+\SheafH_Z^*(F)&\simeq \SheafExt^*(\ZZ_{Z, X}, F).
+\end{align}
+\end{enonce*}
+
+One can therefore apply the results of \cite{Tohoku} on the $\Ext$ of Modules. Let us first point out the following interpretation of the sheaves $\SheafH_Z^*(F)$ in terms of the global groups $\H_Z^*(X, F)$:
+
+\begin{corollary} \label{I.2.4}
+$\SheafH_Z^*(F)$ is canonically isomorphic to the sheaf associated to the presheaf
+$$
+U \mto \H^*_{Z\cap U}(U, F\rest{U}).
+$$
+\end{corollary}
+
+In particular, using corollary \Ref{I.2.3bof}, one finds:
+
+\begin{corollary} \label{I.2.5}
+Suppose $Z$ is open, then one has an isomorphism of cohomological functors:
+\begin{equation} \label{eq:I.22} {\SheafH_Z^*(F)=\R^*i_*i^*(F)}
+\end{equation}
+(where $i: Z \to X$ is the inclusion).
+\end{corollary}
+
+The spectral sequence of the $\Ext$ gives the important spectral sequence:
+
+\begin{theorem} \label{I.2.6} One has a spectral sequence functorial in $F$, abutting to $\H_Z^*(X, F)$ and with initial term
+\begin{equation} \label{eq:I.23} { \E_2^{p, q}(F)=\H^p(X, \SheafH_Z^q(F))}.
+\end{equation}
+\end{theorem}
+
+\setcounter{equation}{22}
+
+\begin{remarks} \label{I.2.7} It follows at once from \Ref{I.2.4} that the sheaves $\SheafH_Z^q(F)$ are zero on $X-\bar{Z}$, and likewise zero in the interior of $Z$ for $q\neq 0$ (hence for such a $q$, $\SheafH_Z^q(F)$ is even supported on the boundary of $Z$).
+
+Consequently, the second member of (\Ref{eq:I.23}) may be interpreted as a cohomology group on $\bar{Z}$. We shall use \Ref{I.2.6} in the case where $Z$ is closed in $X$, and where the second member of (\Ref{eq:I.23}) may be interpreted as a cohomology group computed on $Z$:
+\begin{equation} \label{eq:I.23bis}\tag{23 bis} {\E_2^{p, q}(F) = \H^p(Z, \SheafH_Z^q(F))}.\nde{the equation was numbered (23) in the original edition.}
+\end{equation}
+\end{remarks}
+\setcounter{equation}{23}
+
+Let us also note that when $Z$ is open, the spectral sequence \Ref{I.2.6} is none other than the Leray spectral sequence for the continuous map $i: Z \to X$, taking into account the interpretation \Ref{I.2.5} in the computation of the initial term of the Leray spectral sequence.
+
+\bigskip Let us return to the exact sequence (\Ref{eq:I.18})\nde{the original reference was~(\Ref{I.1.10}).}, it gives rise to an exact sequence of $\Ext$ (\cf \cite{Tohoku}):
+
+\begin{theorem} \label{I.2.8}
+Let $Z$ be a locally closed subset of $X$, $Z'$ a closed subset of $Z$ and $Z''=Z-Z'$. Then one has an exact sequence functorial in $F$:
+\begin{equation} \label{eq:I.24}
+\begin{gathered}
+0 \to \H_{Z'}^0(X, F) \to \H_Z^0(X, F) \to \H_{Z''}^0(X, F)\lto{\partial} \H^1_{Z'}(X, F) \to \H^1_Z(X, F) \dots \\
+\phantom{0}\dots \H_{Z'}^i(X, F) \to \H_Z^i(X, F) \to \H_{Z''}^i(X, F)\lto{\partial} \H^{i+1}_{Z'}(X, F)\dots.
+\end{gathered}
+\end{equation}
+\end{theorem}
+
+
+Let us recall how one may obtain this exact sequence. Let $C(F)$ be an injective resolution of $F$, then the exact sequence (\Ref{eq:I.18})\nde{see the previous note.} gives rise to the exact sequence
+\begin{equation} \label{eq:I.25} {0 \to \Gamma_{Z'}(C(F)) \to \Gamma(C(F)) \to \Gamma_{Z''}(C(F)) \to 0},
+\end{equation}
+(which is none other than the one defined in \Ref{I.1.8}). One concludes from this an exact sequence of cohomology, which is none other than (\Ref{eq:I.24}).
+
+The most important case for us is that where $Z$ is closed (and
+moreover one can always reduce to this by replacing $X$ by
+an open set $V$ in which $Z$ is closed). Then $Z'$ is closed,
+$Z''$ is closed in the open set $X-Z'$, and one may write
+\begin{equation} \label{eq:I.26} {\H^i_{Z''}(X, F)=\H^i_{Z''}(X-Z', F\rest{X-Z'})},
+\end{equation}
+which allows us to write the exact sequence (\Ref{eq:I.24}) in terms of cohomologies with support in a given closed set. The most frequent case is that where $Z=X$. Setting then for simplicity $Z'=A$, one finds:
+
+\begin{corollary} \label{I.2.9}
+Let $A$ be a closed subset of $X$. Then one has an exact sequence functorial in $F$:
+\begin{equation} \label{eq:I.27}
+\begin{gathered}
+0 \to \H^0_A(X, F) \to \H^0(X, F) \to \H^0(X-A, F) \lto{\partial} \H^1_A(X, F) \dots\\
+\phantom{0}\dots \H^i_A(X, F) \to \H^i(X, F) \to \H^i(X-A, F) \lto{\partial} \H^{i+1}_A(X, F)\dots.
+\end{gathered}
+\end{equation}
+\end{corollary}
+
+This exact sequence shows that the cohomology group $\H^i_A(X,
+F)$ plays the role of a relative cohomology group of $X\mod
+X-A$, with coefficients in $F$. It is in this capacity that it
+was introduced naturally in the applications. By
+``sheafifying'' (\Ref{eq:I.24}) and (\Ref{eq:I.27}), or by
+proceeding directly, one finds taking into account that
+the sheaf associated to $U\mto H^i(U, F)$ is zero if $i>0$:
+
+\begin{corollary} \label{I.2.10}
+Under the conditions of \Ref{I.2.8}, one has an exact sequence functorial in~$F$:
+\begin{equation*} \label{eq:I.24bis} \tag{24 bis}
+\dots \SheafH^i_{Z'}(F) \to \SheafH^i_{Z}(F) \to \SheafH_{Z''}^i(F) \lto{\partial} \SheafH_{Z'}^{i+1}(F) \dots
+\end{equation*}
+\end{corollary}
+
+\begin{corollary} \label{I.2.11}
+Let $A$ be a closed subset of $X$, then one has an exact sequence functorial in $F$:
+\begin{equation} \label{eq:I.28}
+0 \to \SheafH_A^0(F) \to F \to f_*(F\rest{X-A}) \lto{\partial} \SheafH_A^1 \to 0,
+\end{equation}
+and canonical isomorphisms, for $i\geq 2$:
+\begin{equation} \label{eq:I.29}
+\SheafH_A^i(F)= \SheafH_{X-A}^{i-1}(F)=\R^{i-1}f_*(F\rest{X-A}),
+\end{equation}
+where $f: (X-A) \to X$ is the inclusion.
+\end{corollary}
+
+This therefore defines $\SheafH^0_A(F)$ and $\SheafH_A^1(F)$ respectively as $\ker$ and $\coker$ of the canonical homomorphism
+$$F \to f_*f^*(F)= f_*(F\rest{X-A}),
+$$
+and the $\SheafH_A^i(F)$ ($i\geq 2$) in terms of the derived functors of $f_*$.
+
+\begin{corollary} \label{I.2.12}
+Let $F$ be an abelian sheaf on $X$. If $F$ is flasque, then for every locally closed subset $Z$ of $X$ and every integer $i\neq 0$, one has $\H^i_Z(X, F)=0$, $\SheafH^i_Z(F)=0$. Conversely, if for every closed subset $Z$ of $X$ one has $\H_Z^1(X, F)=0$, then $F$ is flasque.
+\end{corollary}
+
+Suppose that $F$ is flasque, then $F$ induces a flasque sheaf on every open set, hence to prove $\H^i_Z(X, F)=0$ for $i>0$, one may assume $Z$ closed, and then the assertion follows from the exact sequence (\Ref{eq:I.27})\nde{the original reference was~(\Ref{I.2.9}).}. One concludes from this for every locally closed $Z$, by ``sheafifying'' \ie applying \Ref{I.2.4}, that $\SheafH^i_Z(F)=0$ for $i>0$. Conversely, suppose $\H^1_Z(X, F)=0$ for every closed set $Z$, then the exact sequence (\Ref{eq:I.27})\nde{the original reference was~(\Ref{I.2.9}).} proves that for every such $Z$, $\H^0(X, F) \to \H^0(X-Z, F)$ is surjective, which means that $F$ is flasque.
+
+Combining \Ref{I.2.6} and \Ref{I.2.8}, one will deduce from this:
+
+\begin{proposition} \label{I.2.13}
+Let $F$ be an abelian sheaf on $X$, $Z$ a closed subset of $X$, $U=X-Z$, $N$ an integer. The following conditions are equivalent:
+\begin{enumeratei}
+\item
+$\SheafH^i_Z(F)=0$ for $i\leq N$.
+\item
+For every open set $V$ of $X$, considering the canonical homomorphism
+$$
+\H^i(V, F) \to \H^i(V\cap U, F),$$
+this homomorphism is:
+\begin{enumerate}
+\item[\textup{a)}] bijective for $i<N$,
+\item[\textup{b)}] injective for $i=N$.
+\end{enumerate}
+\end{enumeratei}
+\noindent
+(When $N>0$, one may in \textup{(ii)} confine oneself to requiring \textup{a)}).
+\end{proposition}
+
+To prove (i) \ALORS (ii), one is reduced, thanks to the local nature of the $\SheafH_Z^i(F)$, to proving the
+
+\begin{corollary} \label{I.2.14}
+If condition \Ref{I.2.13} (i) is satisfied, then
+$$
+\H^i(X, F) \to \H^i(U, F)$$
+is bijective for $i<N$, injective for $i=N$.
+\end{corollary}
+
+Indeed, by virtue of the exact sequence (\Ref{eq:I.27}), this also means $\H^i_Z(X, F)=0$ for $i\leq N$, and this relation is an immediate consequence of the spectral sequence (\Ref{eq:I.23bis})\nde{see the previous note.}.
+
+Conversely, the hypothesis \Ref{I.2.13} (ii) means that for every open set $V$ of $X$, one has
+$$
+\H^i_{Z\cap V}(V, F\rest{V}) =0 \text{ for } i\leq N,
+$$
+which implies \Ref{I.2.13} (i) thanks to \Ref{I.2.4}. If moreover $N>0$, hypothesis b) is superfluous. Indeed, if $N=1$, hypothesis a) and (\Ref{eq:I.28}) ensure the vanishing of $\SheafH^i_Z(F)=0$ for $i\leq N$. If $N>1$, hypothesis a) for $i=N-1>0$ and (\Ref{eq:I.29}) ensure the vanishing of $\SheafH^i_Z(F)$ for $i\leq N$.
+
+Taking \Ref{I.2.11} into account this proves again \Ref{I.2.13} (i)...
+
+\begin{remarkstar}
+Let $Y \to X$ be a closed immersion, and suppose that locally it is of the form $\{0\}\times Y \subset R^n \times Y$. Suppose that $F$ is a locally constant sheaf on $x$, then one finds
+\begin{equation} \label{eq:I.30}
+\SheafH_Y^i (F)\simeq
+\begin{cases}
+0 &\text{if } i \neq n\\
+F\otimes \sheaf{T}_{Y, X}& \text{if } i=n, \text{ where } \sheaf{T}_{Y, X} \simeq \SheafH_Y^n(\ZZ_X)
+\end{cases}
+\end{equation}
+is an extension to $X$ of a sheaf on $Y$ locally isomorphic to $\ZZ_Y$, called ``normal orientation sheaf of $Y$ in $X$''.
+\end{remarkstar}
+
+Using the spectral sequence (\Ref{eq:I.23bis})\nde{the original reference was~\Ref{I.2.6}.}, one finds in this case:
+\begin{equation} \label{eq:I.31}
+\H^i_Y(X, F)\simeq \H^{i-n}(Y, F\otimes \sheaf{T}_{Y, X}),
+\end{equation}
+and one recovers the ``Gysin homomorphism\refstepcounter{toto}\label{hgysin}'':
+\begin{equation} \label{eq:I.32} {\H^j(Y, F\otimes \sheaf{T}_{Y, X}) \to \H^{j+n}(X, F)}.
+\end{equation}
+
+\begin{thebibliography}{Godement}
+\bibitem[Godement]{Godement}
+\textsc{R\ptbl Godement} -- \emph{Topologie alg\'ebrique et th\'eorie des faisceaux}, Act. Scient. et Ind., vol.~1252, Hermann, Paris.
+\bibitem[T\^{o}hoku]{Tohoku}
+\textsc{A\ptbl Grothendieck} -- ``Sur quelques points d'alg\`ebre homologique'', \emph{\hbox{T\^{o}hoku} Math.~J.} \textbf{9} (1957), p\ptbl 119--221.
+\end{thebibliography}

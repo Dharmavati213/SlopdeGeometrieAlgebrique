@@ -1,0 +1,142 @@
+\section{Technical lemmas} \label{XIV.2}
+
+\subsection{} \label{XIV.2.1}
+Let $S$ be a locally noetherian scheme, $f:X\to S$ a morphism locally of finite type, $t$ a point of $S$. If $x\in X$ is such that $s=f(x)\in\Spec\Oo_{S, t}$, one sets
+$$
+\delta_t(x)=\degtr k(x)/k(s)+\dim(\overline{\{s\}}),
+$$
+where $\overline{\{s\}}$ denotes the closure of $s$ in $\Spec\Oo_{S, t}$, $k(x)$ and $k(s)$ the residue fields of $x$ and $s$ respectively. If $S$ is a local ring with closed point $t$, one also writes $\delta(x)$ instead of $\delta_t(x)$ (\cf \SGA 4 XIV 2.2).
+\begin{sublemma} \label{XIV.2.1.1} Let there be given a cartesian square
+$$
+\xymatrix{X'\ar[r]^{h}\ar[d]_{f'}&X\ar[d]^f\\S'\ar[r]^g&S},
+$$
+where $S$ and $S'$ are noetherian local rings, with closed points $t$ and $t'$ respectively, $g$ a faithfully flat morphism such that $g^{-1}(t)=t'$, $f$ a morphism locally of finite type. Let $x'\in X',\ x=h(x'),\ s=f(x),\ s'=f'(x')$; then one has
+$$
+\delta(x')\leq\delta(x).
+$$
+Moreover the preceding inequality is an inequality if and only if one has:
+$$
+\degtr k(x)/k(s)=\degtr k(x')/k(s')\text{ and }\dim(\overline{\{s\}})=\dim(\overline{\{s'\}}).
+$$
+In particular, given $x\in X$, one can find $x'$ such that one has $\delta(x)=\delta(x')$.
+\end{sublemma}
+
+Indeed, one has (\EGA IV 6.11)
+$$
+\dim(\overline{\{s\}})=\dim g^{-1}(\overline{\{s\}}).
+$$
+It follows that, for every point $s'$ of $g^{-1}(s)$, one has the relation $\dim(\overline{\{s'\}})\leq \dim(\overline{\{s\}})$, and that, given $s$, one can find $s'\in g^{-1}(s)$ such that one has equality. Let then $Z$ denote the schematic closure of $x$ in the fibre $X_s$ of $X$ at~$s$, and let $Z'=Z\times_{\Spec k(s)}\Spec k(s')$. Then $Z'$ is equidimensional of dimension $\degtr k(x)/k(s)$; one thus has, for every point $x'\in Z'_{x}$,
+$$
+\degtr k(x')/k(s')\leq\degtr k(x)/k(s)\text{, and one has equality}$$
+when $x'$ is a maximal point of $Z'_x$. Whence immediately the announced conclusion.
+
+\subsection{} \label{XIV.2.2} Let $f:X\to S$ be a morphism locally of finite type and $T$ a closed subset of $S$. Let $x\in X, s=f(x)$; we shall set
+$$
+\delta_T(x)=\degtr k(x)/k(s)+\codim(\overline{\{s\}}\cap T, \overline{\{s\}})=\inf_{t\in T\cap\overline{\{s\}}}\delta_t(x).
+$$
+
+\begin{sublemma} \label{XIV.2.2.1}
+Let there be given a cartesian square
+$$
+\xymatrix{X'\ar[r]^{h}\ar[d]_{f'}&X\ar[d]^f\\S'\ar[r]^g&S},
+$$
+where the schemes $S$ and $S'$ are locally noetherian, catenary, the morphism $f$ locally of finite type and $g$ faithfully flat. Let $T$ be a closed subset of $S$, $T'$ a closed subset of $S'$, such that $g(T')\subset T$, $x'$ an element of $X'$, $x=h(x')$ and
+$$h_{x'}:\Spec\Oo_{X', x'}\to\Spec\Oo_{X, x}$$
+the morphism induced by $h$. Then one has:
+$$
+\delta_T(x)-\delta_{T'}(x')\leq\dim h_{x'}^{-1}(x).
+$$
+\end{sublemma}
+
+Let $s'=f'(x'), s=f(x)$. One has, by definition:
+\begin{multline*}
+\delta_T(x)-\delta_{T'}(x')=\degtr k(x)/k(s)-\degtr k(x')/k(s')\\
++\codim(\overline{\{s\}}\cap T, \overline{\{s\}})-\codim(\overline{\{s'\}}\cap T', \overline{\{s'\}}).
+\end{multline*}
+Since $g$ is faithfully flat, it follows from (\EGA IV 6.1.4) that one has
+\begin{align*} \label{eq:XIV.2.2.*} \tag{$*$}
+\codim(\overline{\{s\}}\cap T, \overline{\{s\}})&=\codim(g^{-1}(\overline{\{s\}})\cap g^{-1}(T), g^{-1}(\overline{\{s\}}))\\&\leq\codim(g^{-1}(\overline{\{s\}})\cap T', g^{-1}(\overline{\{s\}}));
+\end{align*}
+since $S'$ is catenary, one has, by ($\EGA 0_{\textup{IV}}$ 14.3.2 b)):
+\begin{multline*}
+\codim(\overline{\{s'\}}\cap T', g^{-1}(\overline{\{s\}}))= \codim(\overline{\{s'\}}\cap T', \overline{\{s'\}})+ \codim(\overline{\{s'\}}, g^{-1}(\overline{\{s\}}))\\
+= \codim(\overline{\{s'\}}\cap T', g^{-1}(\overline{\{s\}})\cap T')+ \codim(g^{-1}(\overline{\{s\}})\cap T', g^{-1}(\overline{\{s\}})).
+\end{multline*}
+One deduces from this relation and from \eqref{eq:XIV.2.2.*}
+$$
+\delta_T(x)-\delta_{T'}(x')\leq\degtr k(x)/k(s)-\degtr k(x')/k(s')+\codim(\overline{\{s'\}}, g^{-1}(\overline{\{s\}})).
+$$
+Let us compute $\codim(\overline{\{s'\}}, g^{-1}(\overline{\{s\}}))=\dim\Oo_{S'_s, s'}$ (where $S'_s$ is the fibre of $S'$ at $s$). Let $Z$ be the closed image of $x$ in $X_s$ and $Z'\subset X'_s$ the scheme defined by the cartesian square
+$$
+\xymatrix{Z'\ar[r]\ar[d]&Z\ar[d]\\S'_s\ar[r]&\Spec k(s)}.
+$$
+The morphism $Z\to \Spec k(s)$ is flat, locally of finite type and one has $\dim Z=\degtr k(x)/k(s)$. It then follows from (\EGA IV 6.1.2) that
+$$
+\dim(\Oo_{Z', x'})=\dim(\Oo_{S'_s, s'})+\degtr k(x)/k(s)-\degtr k(x')/k(s');$$
+taking into account the fact that $Z'_{s'}\simeq Z\otimes_{k(s)}k(s')$, one then obtains:
+$$
+\delta_T(x)-\delta_{T'}(x')\leq\dim(\Oo_{Z', x'}).
+$$
+Now $\Spec(\Oo_{Z', x'})$ identifies with the fibre at $x$ of the morphism
+$$(\Spec(\Oo_{X', x'}))_s\to(\Spec(\Oo_{X, x}))_s,
+$$
+hence also with the fibre at $x$ of $h_{x'}$, which proves the theorem.
+
+\subsection{} \label{XIV.2.3}
+The proofs of the theorems of \numero \Ref{XIV.4} are based on duality theory; they use the lemmas which follow. Let $m$ be an integer which is a power of a prime number $\ell$; if $X$ is a scheme, all sheaves considered on $X$ are sheaves of $\ZZ/m\ZZ$-modules; one then has the notion of dualizing complex on $X$ (\SGA 5 I 1.7). Suppose that such a complex $K$ exists on $X$; then, for each geometric point~$\bar x$ above a point $x$ of $X$, one deduces from $K$ (\cf \SGA 5 I 4.5) a dualizing complex~$K_{\bar x}$ on $\Spec k(\bar x)$, so that one has $K_{\bar x}\simeq\ZZ/m\ZZ[n]$ (the brackets denoting the translation functor) for a certain integer $n$ depending only on $x$. We shall set
+$$
+\delta_K(x)=n.
+$$
+If $K$ is normalized at the point $x$ (\SGA 5 I 4.5), one thus has $n=0$.
+
+\begin{sublemma} \label{XIV.2.3.1} Let $X$ be a locally noetherian scheme, equipped with a dualizing complex $K$. If $x$ and $x'$ are two points of $X$, such that $x$ is a specialization of $x'$ and that one has $\codim(\overline{\{x\}}, \overline{\{x'\}})=1$, then one has
+$$
+\delta^K(x)=\delta^{K}(x')-2.
+$$
+\end{sublemma}
+
+One can first reduce to the case where $X$ is a strictly local scheme. Indeed, let $\bar X$ be the strict localization of $X$ at a geometric point $\bar x$ above $x$, $i:\bar X\to X$ the canonical morphism, $\bar x'$ a geometric point of $\bar X$ above $x'$. Then $i^*K$ is a dualizing complex on $\bar X$ and one has (\SGA 5 I 4.5)
+$$
+(i^*K)_{\bar x}\simeq K_{\bar x}\text{ and } (i^*K)_{\bar x'}\simeq K_{\bar x'},
+$$
+which completes the reduction to the strictly local case.
+
+If $j:\overline{\{x'\}}\to X$ denotes the immersion of the reduced closed subscheme of $X$, with underlying space $\overline{\{x'\}}$, then $\R^!j(K)$ is a dualizing complex on $\overline{\{x'\}}$ and one sees at once, using (\SGA 5 I 4.5), that it suffices to prove the lemma for $\overline{\{x'\}}$. One is thus reduced to the case where $X$ is a strictly local integral scheme of dimension $1$.
+
+Let then $X'$ be the normalization of $X$ and $f:X'\to X$ the canonical morphism; $f$ is an integral, surjective, radicial morphism, and it follows that $f^*K$ is a dualizing complex on $X'$ and that it suffices to prove the lemma for $X'$ and for the points above~$x$ and~$x'$. One is thus reduced to the case where $X$ is a local, integral, regular scheme of dimension $1$, but one knows (\cf \SGA 5 I 4.6.2 and 5.1) that then $\mu_m[2]$ and $\ZZ/m\ZZ$ are dualizing complexes, normalized respectively at the points $x$ and $x'$; the lemma follows at once.
+
+\begin{sublemma} \label{XIV.2.3.2} Let $S$ be a noetherian local scheme, $f:X\to S$ a morphism of finite type. If $K$ is a dualizing complex on $S$, normalized at the closed point $t$ of $S$ and if $\R^!f(K)=K'$ is a dualizing complex on $X$ (\cf \SGA 5 I 3.4.3), one has, for every point $x$ of $X$:$$
+\delta^{{K'}}(x)=2\delta(x).
+$$
+\end{sublemma}
+
+Indeed, let $s=f(x)$ and $x'$ a closed point of the fibre $X_s$; then one has $\delta^{K'}(x')=\delta^K(s)$ and by \Ref{XIV.2.3.1}
+$$
+\delta^K(s)=2\codim(\overline{\{t\}}, \overline{\{s\}})=2\dim(\overline{\{s\}}).
+$$
+As one can choose for $x'$ a specialization of $x$, one has by \Ref{XIV.2.3.1}
+$$
+\delta^{K'}(x)=\delta^{K'}(x')+2\codim(\overline{\{x\}}, \overline{\{x'\}})=\delta^{K'}(x')+2\degtr k(x)/k(s);$$
+the lemma follows at once.
+
+The following lemma will serve only for the converse of the Lefschetz theorem, in \numero\Ref{XIV.4}:
+
+\begin{sublemma} \label{XIV.2.3.3}
+Let there be given a cartesian square
+$$
+\xymatrix{X'\ar[r]^{h}\ar[d]_{f'}&X\ar[d]^f\\S'\ar[r]^g&S},
+$$
+where $S$ is a strictly local excellent scheme of characteristic zero, $S'$ the completion of $S$ and $f$ a morphism of finite type. Let $\ell$ be a prime number, $x\in X$, $Z$ the schematic closure of $X'_x$ in $X'$, and $i:X'_x\to Z$, $j:Z\to X$ the canonical morphisms. Then, if $k:X'\to R$ is a closed immersion of $X'$ into a regular excellent scheme $R$, of characteristic zero, the complex
+$$K'=i^*(R^!(k.j)(\ZZ/\ell\ZZ))$$
+is a constant dualizing complex on $X'_x$ (\ie having a unique non-zero cohomology sheaf, isomorphic to $\ZZ/\ell\ZZ$).
+\end{sublemma}
+
+Taking (\SGA 5 I 3.4.3) into account, the only thing to prove is that $K'$ is constant. Now, since $Z$ is excellent, the set of points of $Z$ whose local rings are regular is an open set $U$ (\EGA IV 7.8.3 \textup{(iv)}), and $U$ obviously contains $X'_x$ which is regular. Let then
+$$u:U\to R$$
+be the canonical immersion of $U$ into $R$; it follows from the purity theorem (\SGA 4 XIX 3.2 and 3.4) and from the isomorphism
+$$(\mu_l)_S\simeq(\ZZ/\ell\ZZ)_S$$
+($S$ strictly local) that one has
+$$
+\R^!u(\ZZ/\ell\ZZ)\simeq\ZZ/\ell\ZZ[2c],
+$$
+where $c$ is a locally constant function on $U$, necessarily constant in a neighbourhood of $X'_x$, since the fibres of $g$ are geometrically integral by (\EGA IV 18.9.1), hence $X'_x$ is integral. The lemma follows at once.

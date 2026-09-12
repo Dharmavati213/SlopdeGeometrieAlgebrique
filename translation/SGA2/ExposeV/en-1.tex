@@ -1,0 +1,123 @@
+\chapter{Local duality and structure of the $\H^i(M)$}\label{V}
+
+\renewcommand{\theequation}{\arabic{equation}}
+
+\section{Complexes of homomorphisms} \label{V.1}
+
+\subsection{} \label{V.1.1}
+Let $F^{\boule}$ and~$G^{\boule}$ be two graded modules; one then denotes by:
+\begin{equation} \label{eq:V.1} \Hom^{\boule}(F^{\boule}, G^{\boule})
+\end{equation}
+the graded module of homomorphisms of graded modules from~$F^{\boule}$ to~$G^{\boule}$. Thus one has:
+\begin{equation} \label{eq:V.2} \Hom^{s}(F^{\boule}, G^{\boule})=\prod_{k}\Hom(F^{k}, G^{k+s}).
+\end{equation}
+Let~$F^{\boule}$ (\resp $G^{\boule}$) be a complex, and let~$d_{1}$ (\resp $d_{2}$) be its differential; then for $h\in\Hom^{s}(F^{\boule}, G^{\boule})$ one sets\nde{the original sign convention was different; but it is not compatible with the convention of Expos\'e~\Ref{VIII}, which seems more reasonable, since in that case the cohomology in degree~$0$ is then the set of homotopy classes of morphisms from $F^{\boule}$ to $G^{\boule}$. The calculations have been modified accordingly in what follows.}
+\begin{equation} \label{eq:V.3} d(h)=h\circ d_{1}+(-1)^{{s+1}}d_{2}\circ h.
+\end{equation}
+One verifies trivially that $d\circ d=0$, hence that $\Hom^{\boule}(F^{\boule}, G^{\boule})$ equipped with~$d$ is a complex. The cohomology group of this complex is denoted
+\begin{equation} \label{eq:V.4} \uH^{\boule}(F^{\boule}, G^{\boule}).
+\end{equation}
+If~$G^{\boule}$ is injective in each degree, then
+$$F^{\boule}\mto\uH^{\boule}(F^{\boule}, G^{\boule})$$
+is an exact~$\partial$-functor. Likewise, for arbitrary $F^{\boule}$,
+$$G^{\boule}\mto\uH^{\boule}(F^{\boule}, G^{\boule})$$
+is an exact~$\delta$-functor on the category of complexes~$G^{\boule}$ injective in each degree.
+
+\begin{remark} \label{V.1.2}
+The cycles of~$\Hom^{\boule}(F^{\boule}, G^{\boule})$ are the homomorphisms from~$F^{\boule}$ to~$G^{\boule}$ which commute or anticommute, according to the degree, with the differentials. The boundaries of~$\Hom^{\boule}(F^{\boule}, G^{\boule})$ are the homomorphisms from~$F^{\boule}$ to~$G^{\boule}$ homotopic to zero.
+\end{remark}
+
+Let $A$ be a ring and let~$M$ (\resp $N$) be an $A$-module, $R(M)$ (\resp $R(N)$) an injective resolution of $M$ (\resp $N$); then there exists a canonical isomorphism\nde{one has retained the original's strange numbering.}
+\begin{equation*} \label{eq:V.1.3} \tag{1.3} \uH^{s}(R(M), R(N))\simeq\Ext^{s}(M, N).
+\end{equation*}
+Indeed, let~$i\colon M\to R(M)$ be the canonical augmentation, and let $h\in\Hom^{s}(R(M), R(N))$; one then denotes by~$t_{s}$ the map
+$$h\mto h_{0}\circ i$$
+from~$\Hom^{s}(R(M), R(N))$ to~$\Hom(M, R(N)^s)$. The family $(t_{s})_{s\geq 0}$ defines a homomorphism of (ordinary) complexes\nde{one still denotes by $M$ the complex $M[0]$ consisting of $M$ placed in degree $0$.}
+$$t\colon\Hom^{\boule}(R(M), R(N))\to\Hom^\boule(M, R(N)),
+$$
+\ie one has $(dh)_{0}\circ i= d_{2}\circ h_{0}\circ i.$
+
+One verifies easily that, passing to cohomology, $t$ gives an isomorphism. In particular it follows that
+$$
+\uH^{\boule}(R(M), R(N))$$
+does \og not depend\fg on the chosen injective resolution~$R(M)$ (\resp $R(N)$) of~$M$ (\resp $N$).
+
+To every exact sequence of $A$-modules
+\begin{equation} \label{eq:V.5} 0\to M^{\prime}\to M\to M^{\prime\prime}\to 0
+\end{equation}
+one associates an exact sequence of injective resolutions
+\begin{equation} \label{eq:V.6} 0\to R(M^{\prime})\to R(M)\to R(M^{\prime\prime})\to 0.
+\end{equation}
+One verifies that the isomorphism~(\Ref{eq:V.1.3}) commutes with the homomorphisms: \setcounter{equation}{7}
+\begin{align} \label{eq:V.8}
+\uH^{s}(R(M^{\prime}), R(N))&\to \uH^{s+1}(R(M^{\prime\prime}), R(N)),\\
+\label{eq:V.9} \Ext^{s}(R(M^{\prime}), R(N))&\to\Ext^{s+1}(R(M^{\prime\prime}), R(N)),
+\end{align}
+deduced from~(\Ref{eq:V.6}) and~(\Ref{eq:V.5}).
+
+Let $P$ be a third $A$-module, $R(P)$ an injective resolution of~$P$; then composition of graded morphisms yields a pairing
+\begin{equation} \label{eq:V.10} \Hom^{i}(R(N), R(M))\times\Hom^{j}(R(M), R(P))\to\Hom^{i+j}(R(N), R(P)),
+\end{equation}
+which defines a pairing:
+\begin{equation} \label{eq:V.11} \uH^{i}(R(N), R(M))\times\uH^{j}(R(M), R(P))\to\uH^{i+j}(R(N), R(P)),
+\end{equation}
+hence a homomorphism of functors in~$M$:
+\begin{equation*} \label{eq:V.1.4} \tag{1.4} \uH^{i}(R(N), R(M))\to\Hom(\uH^{j}(R(M), R(P)), \uH^{i+j}(R(N), R(P))).
+\end{equation*}
+One will see that~(\Ref{eq:V.1.4}) is a homomorphism of~$\delta$-functors in~$M$. The exact sequences~(\Ref{eq:V.5}) and~(\Ref{eq:V.6}) yield a commutative diagram:
+$$
+\xymatrix{ \Hom^{i}(R(N), R(M^{\prime}))\ar[r]\ar[d] & \Hom(\Hom^{j}(R(M^{\prime}), R(P)), \Hom^{i+j}(R(N), R(P)))\ar[d]^{\Hom(q, \id)}\\
+\Hom^{i}(R(N), R(M))\ar[r]\ar[d]^{p} & \Hom(\Hom^{j}(R(M), R(P)), \Hom^{i+j}(R(N), R(P)))\ar[d]\\
+\Hom^{i}(R(N), R(M^{\prime\prime}))\ar[r] & \Hom(\Hom^{j}(R(M^{\prime\prime}), R(P)), \Hom^{i+j}(R(N), R(P))).}$$
+Let~$h\in\Hom^{i}(R(N), R(M^{\prime\prime}))$ (resp.\ $g\in\Hom^{j}(R(M^{\prime}), R(P))$) be a cycle, and let $h^{\prime}\in\Hom^{i}(R(N), R(M))$ (resp.\ $g^{\prime}\in\Hom^{j}(R(M), R(P))$) be such that~$p(h^{\prime})=h$ (resp.\ $q(g^{\prime})=g$); then to say that~(\Ref{eq:V.1.4}) is a homomorphism of $\delta$-functors in~$M$ is to say that
+\begin{equation} \label{eq:V.12}
+g\circ dh^{\prime}-dg^{\prime}\circ h
+\end{equation}
+is a coboundary in~$\Hom^{\boule}(R(N), R(P))$.
+
+Now one has:
+\begin{align*}
+dh^{\prime} &= h^{\prime}\circ d_{1}+(-1)^{i+1}d_{2}\circ h^{\prime}\\
+dg^{\prime} &= g^{\prime}\circ d_{2}+(-1)^{j+1}d_{3}\circ g^{\prime}
+\end{align*}
+with the obvious notation. Thus~(\Ref{eq:V.12}) may be written: \[
+g\circ h^{\prime}\circ d_{1} + (-1)^{i+1}g\circ d_{2}\circ h^{\prime} -g^{\prime}\circ d_{2}\circ h - (-1)^{j+1}d_{3}\circ g^{\prime}\circ h.
+\]
+
+On the other hand, since $h$ and~$g$ are cycles one has:
+\begin{align*}
+g\circ d_{2} &= (-1)^{j}d_{3}\circ g, \\
+d_{2}\circ h &= (-1)^{i}h\circ d_{1},
+\end{align*}
+hence, finally,~(\Ref{eq:V.12}) may be written:
+$$d(g\circ h^{\prime}+(-1)^{i+1}g^{\prime}\circ h),
+$$
+which concludes the proof.
+
+(\Ref{eq:V.1.3}) and~(\Ref{eq:V.1.4}) thus yield a homomorphism of~$\delta$-functors in~$M$:
+\begin{equation*} \label{eq:V.1.5} \tag{1.5} \Ext^{i}(N, M)\to\Hom(\Ext^{j}(M, P), \Ext^{i+j}(N, P)).
+\end{equation*}
+
+\section{The local duality theorem for a regular local ring} \label{V.2}
+
+\setcounter{equation}{12}
+
+Let~$A$ be a regular local ring of dimension~$r$, $\mm$ the maximal ideal of~$A$ and~$M$ an $A$-module of finite type. \label{pV2.4}One sets $\H^{i}(M)=\H^{i}_{\mm}(M)$ (hence $\H^{i}(M)=\varinjlim\Ext^{i}(A/\mm^{k}, M)$). One has seen (\Ref{IV}~\Ref{IV.5.4}) that~$I=\H^{r}(A)$ is a dualizing module for~$A$; let~$D$ denote the associated dualizing functor. In (\Ref{eq:V.1.5}) set $N=A/\mm^{k}$, $P=A$; one then obtains a homomorphism of~$\delta$-functors in~$M$
+\begin{equation} \label{eq:V.13} \varphi_{k}\colon\Ext^{i}(A/\mm^{k}, M)\to\Hom(\Ext^{r-i}(M, A), \Ext^{r}(A/\mm^{k}, A)).
+\end{equation}
+Passing to the inductive limit with respect to~$k$, one finds a homomorphism of~$\delta$-functors
+\begin{equation} \label{eq:V.14} \varphi\colon\H^{i}(M)\to D(\Ext^{r-i}(M, A)).
+\end{equation}
+
+\begin{theorem}[Local duality theorem] \label{V.2.1}
+The preceding functorial homomorphism~$\varphi$ is an isomorphism.
+\end{theorem}
+
+\begin{proof}
+If $i>r$, the second member of~(\Ref{eq:V.14}) is trivially zero, and the first member is zero since $\H^{i}(M)=\varinjlim_{k}\Ext^{i}(A/\mm^{k}, M)$, and this is true for each $\Ext^{i}(A/\mm^{k}, M)$ (syzygy theorem).
+
+If~$i=r$, by the preceding, the two functors in~$M$, $\H^{r}(M)$ and~$D(\Hom(M, A))$ are right exact; since $A$ is noetherian, and~$M$ of finite type, it suffices to check the isomorphism for~$M=A$, which is immediate.
+
+To show that~$\varphi$ is a functorial isomorphism, it now suffices, proceeding by descending induction with respect to~$i$, to note that every module of finite type admits a finite presentation, and that for~$i<r$ both members of~(\Ref{eq:V.14}) are zero if~$M$ is free of finite type. This is obvious for the second member, and since $\H^{i}$ commutes with finite sums it suffices, as for the first, to show that~$\H^{i}(A)=0$ for~$i<r$. Now this follows, since $\prof(A)=r$, from~(\Ref{III}~\Ref{III.3.4}).
+\skipqed
+\end{proof}

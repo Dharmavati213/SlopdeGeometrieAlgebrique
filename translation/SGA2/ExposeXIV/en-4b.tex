@@ -1,0 +1,223 @@
+% English body fragment for SGA 2 XIV (en-4b.tex)
+\R f_{1\ast}^{\prime}(\D F_{1}^{\prime})\simeq\D\big(\R_{!}f_{1}^{\prime}(F_{1}^{\prime})\big),
+$$
+where $\D\big(\R_{!}f_{1}^{\prime}(F_{1}^{\prime})\big)$ denotes the dual of $\R_{!}f_{1}^{\prime}(F_{1}^{\prime})$ with respect to $K$. One thus sees that $\textup{(ii)}_{t}$ is equivalent to
+$$
+\big(\underline{H}^{i}(\D(\R_{!}f_{1}^{\prime}(F_{1}^{\prime})))\big)_{t^{\prime}}=0\quad\textrm{ for }i>-n.
+$$
+Applying once more the local duality theorem (\SGA 5~I~4.5.3), but this time at the point $t^{\prime}$, one finds that
+$$
+\big(\underline{H}^{i}(\D(\R_{!}f_{1}^{\prime}(F_{1}^{\prime})))\big)_{t^{\prime}}\simeq\D\big(\H_{t^{\prime}}^{-i}(\R_{!}f_{1}^{\prime}(F_{1}^{\prime}))\big),
+$$
+and finally $\textup{(ii)}_{t}$ is equivalent to the relation
+$$
+\H_{t^{\prime}}^{i}(\R_{!}f_{1}^{\prime}(F_{1}^{\prime}))=0\quad\textrm{ for }i<n,
+$$
+i.e.\ $\prof_{t^{\prime}}(\R_{!}f_{1}^{\prime}(F_{1}^{\prime}))\geq n$, which completes the proof of the theorem.
+\skipqed
+\end{proof}
+
+\begin{subremark} \label{XIV.4.2.3}
+The argument simplifies fairly considerably when one assumes that $S$ admits (at least locally) a dualizing complex (for example is locally immersible in a regular scheme). This avoids recourse to a completion (the passage to the case where $S$ is strictly local being immediate), to \Ref{XIV.2.3.3} and to the rather unappealing technical statement \Ref{XIV.3.6}, which one may then replace by the more congenial reference \Ref{XIV.3.7}.
+\end{subremark}
+
+\begin{corollary} \label{XIV.4.3}
+Let $S$ be an excellent scheme of characteristic zero and $f\colon U\to S$ a separated morphism of finite type, such that $U$ is a \emph{union of $c+1$ opens, affine over~$S$}. Let $F$ be a complex of sheaves of $\ZZ/m\ZZ$-modules, with degrees bounded below and with constructible cohomology, $n$ an integer and $T$ a closed subset of $S$. Suppose that, for every point $u\in U$, one has
+$$
+\prof_{u}(F)\geq n-\delta_{T}(u).
+$$
+Then one has
+$$
+\prof_{T}(\R_{!}f(F))\geq n-c.
+$$
+\end{corollary}
+
+Indeed, let $U_{j}$, $0\leq j\leq c$, be a covering of $U$ by opens $U_{j}$, affine over~$S$. Taking up the notation of the proof of \Ref{XIV.4.2}, one has, for every $j$,
+$$
+\H^{i}(U_{j}^{\prime}, \underline{H}^{q}(\D F^{\prime}))=0\quad\textrm{ for }i>-n.
+$$
+Using the spectral sequence which relates the cohomology of $U$ to that of the covering formed by the $U_{j}$ (\SGA 4~V~2.4), the preceding relation shows that one has
+$$
+\H^{i}(U^{\prime}, \underline{H}^{q}(\D F^{\prime}))=0\quad\textrm{ for }i>-n+c.
+$$
+The corollary then follows from the end of the proof of \Ref{XIV.4.2}.
+
+\begin{corollary} \label{XIV.4.4}
+Let $S$ be an excellent scheme of characteristic zero, $g\colon X\to S$ a morphism, $U$ an open of $X$, union of $c+1$ opens affine over $S$, $Y$ a closed subscheme with underlying space $X-U$ and $j\colon Y\to X$ the natural morphism. Let~$F$ be a complex of sheaves of $\ZZ/m\ZZ$-modules on $X$, with degrees bounded below and with constructible cohomology, $T$ a closed subset of $S$ and $n$ an integer. Suppose that, for every point $u$ of $U$, one has
+$$
+\prof_{u}(F)\geq n-\delta_{T}(u).
+$$
+Then the canonical morphism
+$$
+\H_{g^{-1}(T)!}^{i}(X/S, F)\to\H_{(g^{-1}(T)\cap Y)!}^{i}(Y/S, j^{\ast}F)$$
+is bijective for $i<n-c-1$, injective for $i=n-c-1$.
+\end{corollary}
+
+This follows immediately from \Ref{XIV.4.1} and \Ref{XIV.4.3}.
+
+\begin{corollary}[Local Lefschetz theorem] \label{XIV.4.5}
+Let $S$ be an excellent henselian local scheme of characteristic zero, $t$ the closed point of $S$, $X$ a scheme proper over $S^{\prime}=S-\{ t\}$ and $U$ an open of $X$, union of $c+1$ affine opens. Let $Y$ be a closed subscheme of $X$, with underlying space $X-U$, $j\colon Y\to X$ the canonical morphism, $F$ a complex of sheaves of $\ZZ/m\ZZ$-modules on $X$, with degrees bounded below and with constructible cohomology, and $n$ an integer. Suppose that, for every point $u$ of~$U$, one has
+$$
+\prof_{u}(F)\geq n-\delta_{t}^{\prime}(u), \quad\text{where } \delta_{t}^{\prime}(u)=\delta_{t}(u)-1.
+$$
+Then the canonical morphism
+$$
+\H^{i}(X, F)\to\H^{i}(Y, j^{\ast}F)$$
+is bijective for $i<n-c-1$, injective for $i=n-c-1$.
+\end{corollary}
+
+Let $f\colon U\to S$ be the canonical morphism; it follows from
+\Ref{XIV.4.2}, applied upon replacing $n$ by $n+1$, that one has
+$$
+\prof_{t}(\R_{!}f(F_{|U}))\geq n+1-c.
+$$
+The preceding relation shows that the canonical morphism
+$$
+\H^{i}(S, \R_{!}f(F_{|U}))\to\H^{i}(S^{\prime}, \R_{!}f(F_{|U}))$$
+is bijective for $i<n-c$, injective for $i=n-c$. Since $\R_{!}f(F_{|U})$ is zero outside $S^{\prime}$, one has $\H^{i}(S, \R_{!}f(F_{|U}))\simeq\big(\underline{H}^{i}(\R_{!}f(F_{|U}))\big)_{t}=0$, and consequently
+\begin{equation*} \label{eq:XIV.4.5.*} \tag{$*$}
+\H^{i}(S^{\prime}, \R_{!}f(F_{|U}))=0\quad\text{for }i<n-c.
+\end{equation*}
+Let $g\colon X\to S^{\prime}$, $h\colon Y\to S^{\prime}$, $f^{\prime}\colon U\to S^{\prime}$ be the canonical morphisms. It follows from the distinguished triangle
+$$
+\xymatrix@C=0pt{ & \R h_{\ast}(j^{\ast}F)\ar[ld] & \\
+\R_{!}f^{\prime}(F_{|U})\ar[rr] & & \R g_{\ast}(F)\ar[lu] }$$
+that the condition \eqref{eq:XIV.4.5.*} is equivalent to the fact that the morphism
+$$
+\H^{i}(S^{\prime}, \R g_{\ast}(F))\to\H^{i}(S^{\prime}, \R h_{\ast}(j^{\ast}F))$$
+is bijective for $i<n-c-1$, injective for $i=n-c-1$. Since this morphism identifies canonically with the morphism
+$$
+\H^{i}(X, F)\to\H^{i}(Y, j^{\ast}F),
+$$
+the conclusion follows at once.
+
+\begin{corollary}[Global Lefschetz theorem] \label{XIV.4.6}
+Let $S$ be the spectrum of a field, $X$ a scheme proper over $S$ and $U$ an open of $X$ union of $c+1$ affine opens. Let~$Y$ be a closed subscheme of $X$, with underlying space $X-U$, $j\colon Y\to X$ the canonical morphism, $F$ a complex of sheaves of $\ZZ/m\ZZ$-modules on $X$, with degrees bounded below and with constructible cohomology and $n$ an integer. Suppose that, for every point $u$ of $U$, one has
+$$
+\prof_{u}(F)\geq n-\dim\big(\overline{\{ u\} }\big).
+$$
+Then the canonical morphism
+$$
+\H^{i}(X, F)\to\H^{i}(Y, j^{\ast}F)$$
+is bijective for $i<n-c-1$, injective for $i=n-c-1$.
+
+More generally, if $g\colon X\to S$ is a separated morphism of finite type, the hypotheses on $S$, $U$, $Y$, $F$ being the same as above, then the canonical morphism
+$$
+\H_{!}^{i}(X/S, F)\to\H_{!}^{i}(Y/S, j^{\ast}F)$$
+(where $\H_{!}^{i}$ denotes cohomology with proper support, i.e.\ $\H_{!}^{i}(X/S, F)=\H^{i}(S, \R_{!}g(F))$) is bijective for $i<n-c-1$, injective for $i=n-c-1$.
+\end{corollary}
+
+The corollary is a special case of \Ref{XIV.4.4}, with $T=S$.
+
+Here is a partial converse to \Ref{XIV.4.3}:
+
+\begin{proposition} \label{XIV.4.7}
+Let $S$ be a noetherian scheme, $f\colon U\to S$ a morphism of finite type. Suppose that there exists a dualizing complex $K$ on $S$ and that $\R^{!}f(K)$ is a dualizing complex on $U$. Let $T$ be a closed subset of $S$ and $c$ an integer. Then the following conditions are equivalent:
+\begin{enumeratei}
+\item
+For every complex of sheaves of $\ZZ/m\ZZ$-modules $F$ on $U$, with degrees bounded below and with constructible cohomology, and for every integer $n$ such that one has, for every point $u$ of $U$,
+$$
+\prof_{u}(F)\geq n-\delta_{T}(u),
+$$
+one has
+$$
+\prof_{T}(\R_{!}f(F))\geq n-c.
+$$
+
+\item
+For every sheaf of $\ZZ/m\ZZ$-modules $G$ on $U$, constructible, and for every point $t\in T$, one has
+$$
+\big(\R^{p}f_{\ast}(G)\big)_{\overline{t}}=0\quad\textrm{ for }p>\delta(G, f, t)+c$$
+(let us recall from (\textup{\SGA 4~XIX~6.0}) that $\delta(G, f, t)=\sup\{ \delta_{t}(u)|t\in\overline{\{ u\} }\textrm{ and }G_{\overline{u}}\neq 0\}$).
+\end{enumeratei}
+\end{proposition}
+
+N.B. Condition $\textup{(ii)}$ is satisfied by virtue of \Ref{XIV.3.1} if $f$ is separated and if $U$ is, locally on $S$ for the \'etale topology, a union of $c+1$ opens affine over $S$, hence \Ref{XIV.4.7} contains \Ref{XIV.4.3}\sfootnote{At least in the case where $S$ locally admits a dualizing complex, for example $S$ locally immersible in a regular scheme.}.
+
+One may evidently assume that $S$ is local and that $T$ is the closed point $t$ of~$S$. The proof of $\textup{(ii)}\ALORS\textup{(i)}$ is essentially identical to part $2^\circ)$ of the proof of \Ref{XIV.4.2}. Let us show quickly that $\textup{(i)}\ALORS \textup{(ii)}$. The local duality theorem (\SGA 5~I~4.3.2) applied to $\D G$ shows that
+$$
+\D\big(\H_{\overline{u}}^{i}(\D G)\big) \simeq\big(\underline{H}^{-i-2\delta_{t}(u)}(G)\big)_{\overline{u}}.
+$$
+Since $G$ is reduced to degree $0$, one thus has $\H_{\overline{u}}^{i}(\D G)=0$ except possibly for $i=-2\delta_{t}(u)$; more precisely
+\[
+\prof_{u}(\D G)=
+\begin{cases}
+-2\delta_{t}(u) &\text{if } G_{\overline{u}}\neq 0, \\
+\infty &\text{if } G_{\overline{u}}=0.
+\end{cases}
+\]
+It follows that one has, for any $u\in U$:
+$$
+\prof_{u}(\D G)\geq -n-\delta_{t}(u).
+$$
+It then follows from hypothesis $\textup{(i)}$ that one has $\prof_{t}(\R_{!}f(\D G))\geq -n-c$. One transforms this relation using the isomorphism $\R_{!}f(\D G)\simeq\D(\R f_{\ast}(G))$ (\SGA 5 I~1.12) and applying the local duality theorem at the point $t$; one thus obtains
+$$
+\big(\underline{H}^{i}(\R f_{\ast}(G)\big)_{\overline{t}}=0\quad\textrm{ for }i>n+c,
+$$
+which is nothing other than $\textup{(ii)}$.
+
+\subsection{} \label{XIV.4.8} The hypotheses being those of \Ref{XIV.4.4} with $g$ proper (\resp \Ref{XIV.4.5}, \resp \Ref{XIV.4.6} with $g$ proper), if $V$ is an open neighbourhood of $Y$ in $X$, the morphism
+$$
+\H^{i}(V, F)\to\H^{i}(Y, j^{\ast}F)$$
+is bijective for $i<n-c-1$, injective for $i=n-c-1$. If $\iota\colon V\to X$ is the canonical morphism, it suffices indeed, in order to see this, to apply \Ref{XIV.4.4} (\resp \Ref{XIV.4.5}, \resp \Ref{XIV.4.6}) to the complex $\R \iota_{\ast}(F_{|V})$. One may ask whether the preceding morphism is bijective if $i=n-c-1$, injective for $i=n-c$. It is evidently sufficient that the hypotheses be satisfied when one replaces $n$ by $n+1$; the following proposition shows that a little less suffices.
+
+\begin{proposition} \label{XIV.4.9}
+Let $S$ be an excellent local scheme of characteristic zero, with closed point $t$ (\resp in addition to the preceding conditions one assumes $S$ henselian), $f\colon X\to S$ a scheme proper over $S$ (\resp proper over $S-\{ t\}$) and $U$ an open of $X$ union of $c+1$ affine opens. Let $Y$ be a closed subscheme of $X$, with underlying space $X-U$, $j\colon Y\to X$ the canonical morphism, $F$ a complex of sheaves of $\ZZ/m\ZZ$-modules on $X$, with degrees bounded below and with constructible cohomology, and $n$ an integer. One assumes that one has, for every point $u$ of $U$,
+$$
+\prof_{u}(F)\geq\inf(n-1, n-\delta_{t}(u))\quad(\textrm{\resp }\;\prof_{u}(F)\geq\inf(n-1, n+1-\delta_{t}(u))).
+$$
+Then for every open neighbourhood $V$ of $Y$ in $X$, the canonical morphism
+$$
+\H_{f^{-1}(t)}^{i}(V, F)\to\H_{f^{-1}(t)\cap Y}^{i}(Y, j^{\ast}F)\quad(\textrm{\resp }\;\H^{i}(V, F)\to\H^{i}(Y, j^{\ast}F))$$
+is bijective for $i<n-c-2$ and injective for $i=n-c-2$. Moreover, there exists an open neighbourhood $V_{0}$ of $Y$ in $X$ such that, for every other such $V$ with $V\subset V_{0}$, the canonical morphism
+$$
+\H_{f^{-1}(t)\cap V}^{i}(V, F)\to\H_{f^{-1}(t)\cap Y}^{i}(Y, j^{\ast}F)\quad(\textrm{\resp }\;\H^{i}(V, F)\to\H^{i}(Y, j^{\ast}F))$$
+is bijective for $i<n-c-1$, injective for $i=n-c-1$.
+\end{proposition}
+
+\begin{proof}
+To simplify, set $\delta_{t}^{\prime}(u)=\delta_{t}(u)$ (\resp $\delta_{t}^{\prime}(u)=\delta_{t}(u)-1$). One deduces from \Ref{XIV.4.8} the first assertion of \Ref{XIV.4.9}, since the hypotheses of \Ref{XIV.4.4} (\resp \Ref{XIV.4.5}) are satisfied when one replaces $n$ therein by $n-1$. They are also satisfied for $n$ itself, except at the points $u$ such that $\delta_{t}^{\prime}(u)=0$. Now, for a $u\in U$, to say that one has $\delta_{t}^{\prime}(u)=0$ is equivalent to saying that $u$ is a \emph{closed point of $U_{t}$} (\resp a \emph{closed point of $X$}). Let $E$ be the set of points of $U$ such that $\delta_{t}^{\prime}(u)=0$; let us show that, \emph{for all points $u\in E$, except a finite number}, one has $\prof_{u}(F)\geq n$. Let $\overline{S}$ be the strict localization of $S$ at $t$, $S^{\prime}$ the completion of~$\overline{S}$, with closed point $t^{\prime}$, and consider the cartesian square
+$$
+\xymatrix{ U^{\prime}\ar[r]^-{h}\ar[d]_-{f^{\prime}} & U\ar[d]^-{f}\\
+S^{\prime}\ar[r]^-{g} & S.}$$
+The depth hypotheses at the points of $U$ are preserved when one replaces $U$ by $U^{\prime}$ and $F$ by the inverse image $F^{\prime}$ of $F$ on $U^{\prime}$. Indeed, let $u^{\prime}\in U^{\prime}$ and $u=h(u^{\prime})$. If $u\not\in E$, one has the relation $\prof_{u}(F)\geq n-\delta_{t}^{\prime}(u)$, and it follows from \Ref{XIV.4.2.1} that this implies the relation $\prof_{u^{\prime}}(F^{\prime})\geq n-\delta_{t}^{\prime}(u^{\prime})$. If $u\in E$, $u^{\prime}$ is a closed point of $U_{t}^{\prime}$ (\resp a closed point of $X^{\prime}=X\times_{S}S^{\prime}$), and, since the fibre $U_{u}^{\prime}$ of $h$ at $u$ is of dimension zero and $h$ is regular, it follows from \Ref{XIV.1.16} that one has $\prof_{u^{\prime}}(F^{\prime})=\prof_{u}(F)\geq n-1$.
+
+Let then $K$ be a dualizing complex on $S^{\prime}$, normalized at the closed point $t^{\prime}$, and $\D F^{\prime}$ the dual of $F^{\prime}$ with respect to $\R^{!}f(K)$. According to \Ref{XIV.4.2.2}, the \'etale depth hypotheses at the points of $U^{\prime}$ translate into the relations:
+$$
+\big(\underline{H}^{q}(\D F^{\prime})\big)_{\overline{u}^{\prime}}=0\quad\textrm{ for }q>-n-\delta_{t}^{\prime}(u^{\prime})\quad(\textrm{\resp }q>-n-2-\delta_{t^{\prime}}^{\prime}(u^{\prime})),
+$$
+if $u^{\prime}$ is not a point of $E^{\prime}=h^{-1}(E)$,
+$$
+\big(\underline{H}^{q}(\D F^{\prime})\big)_{\overline{u}^{\prime}}=0\quad\textrm{ for }q>-(n-1)\quad(\textrm{\resp }q>-n-1), \textrm{ if }u^{\prime}\in E^{\prime}.
+$$
+
+Let $G=\underline{H}^{-(n-1)}(\D F^{\prime})$ (\resp $G=\underline{H}^{-n-1}(\D F^{\prime})$); since $G$ is a constructible sheaf, the set of points at which the geometric fibre is nonzero is a constructible set (\SGA 4~IX~2.4~\textup{(iv)}); now by hypothesis this set is contained in the set $E^{\prime}$ of closed points of $U_{t^{\prime}}^{\prime}$ (\resp of points of $U^{\prime}$ closed in $X^{\prime}$); it therefore follows from \Ref{XIV.4.9.1} below that this set is reduced to a finite number of points. Applying \Ref{XIV.4.2.2}, one sees that, for all points of $E^{\prime}$, except a finite number, one has $\prof_{u^{\prime}}(F^{\prime})\geq n$. It follows indeed by \Ref{XIV.1.16} that, for all points of $E^{}$ except a finite number, one has
+$$
+\prof_{u}(F)\geq n.
+$$
+
+Let $V$ be an open neighbourhood of $Y$ in $X$, contained in the complement in $X$ of the finite set of points $u$ of $E$ for which one has $\prof_{u}(F)=n-1$. If $\iota\colon V\to X$ is the canonical immersion, let
+$$F_{1}=\R \iota_{\ast}(F_{|V})\;;$$
+then $F_{1}$ is a complex of sheaves on $X$, with constructible cohomology (\SGA 4~XIX~5.1) and with degrees bounded below. We are going to see that, for every point $u$ of $U$, the complex $F_{1}$ satisfies the relation
+\begin{equation*} \label{eq:XIV.4.9.*} \tag{$*$}
+\prof_{u}(F_{1})\geq n-\delta_{t}^{\prime}(u).
+\end{equation*}
+If $u\in U\cap V$, one has $\prof_{u}(F_{1})=\prof_{u}(F)$, and the
+relation \eqref{eq:XIV.4.9.*} is satisfied by hypothesis on the
+points of $U$ which do not belong to $E$; for the latter,
+it is also satisfied according to the choice of $V$. Finally, if $u\in
+U$ and $u\not\in V$, one has according to \Ref{XIV.1.6} g)
+$\prof_{u}(F_{1})=\infty$. One then applies \Ref{XIV.4.4} (\resp
+\Ref{XIV.4.5}) upon replacing $F$ by $F_{1}$; one obtains the
+stated result, taking into account the fact that one has, for any
+$i$:
+$$
+\H_{f^{-1}(t)}^{i}(X, \R \iota_{\ast}(F_{|V}))\simeq\H_{f^{-1}(t)\cap V}^{i}(V, F)\quad(\textrm{\resp }\H^{i}(X, \R \iota_{\ast}(F_{|V}))\simeq\H^{i}(V, F).
+$$
+\skipqed
+\end{proof}
+
+\begin{sublemma} \label{XIV.4.9.1} A constructible set $E$ contained in the set of closed points of a noetherian scheme $X$ is reduced to a finite number of points.
+\end{sublemma}
+
+Indeed, $E$ is a finite union of sets of the form $U\cap\complement V$, where $U$ and $V$ are opens of $X$; by hypothesis all the points of $U\cap\complement V$ are maximal points of this set, hence they are finite in number.
