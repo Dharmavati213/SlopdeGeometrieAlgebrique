@@ -13,7 +13,7 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 1. Keep the landed SGA 1 and SGA 2 translations compiling (`make tex`).
 2. Formalize SGA 1 VI against mathlib, section by section, starting
    from `lean/SGA/SGA1/ExposeVI.lean`.
-3. Translate further exposés of SGA 1 (III–V, VIII–XIII), then formalize
+3. Translate further exposés of SGA 1 (IV–V, VIII–XIII), then formalize
    each after its English text is in the tree.
 4. SGA 2 English drafts proceed in parallel with remaining SGA 1
    exposés; Lean for SGA 2 waits until the corresponding English is
@@ -34,7 +34,7 @@ Exposé VII does not exist.
 | --- | --- | --- | --- |
 | I | Étale morphisms | full draft in tree | compiling |
 | II | Smooth morphisms: generalities, differential properties | full draft in tree | — |
-| III | Smooth morphisms: extension properties | — | — |
+| III | Smooth morphisms: extension properties | full draft in tree | — |
 | IV | Flat morphisms | — | — |
 | V | The fundamental group: generalities | — | — |
 | **VI** | **Fibered categories and descent** | **draft in tree** | **compiling** |
@@ -55,7 +55,10 @@ Exposé VII does not exist.
 - [x] **II** — Smooth morphisms: generalities, differential properties
   - [x] Opening convention and §§1–5, including errata: English TeX and PDF in `translation/SGA1/ExposeII/`
   - [ ] Scholarly proofreading; source issues recorded in [`ExposeII/README.md`](../translation/SGA1/ExposeII/README.md)
-- [ ] **III** — Smooth morphisms: extension properties
+- [x] **III** — Smooth morphisms: extension properties
+  - [x] English TeX in `translation/SGA1/ExposeIII/`
+  - [x] PDF in tree (`make tex`)
+  - [ ] Scholarly proofreading against the SMF source
 - [ ] **IV** — Flat morphisms
 - [ ] **V** — The fundamental group: generalities
 - [x] **VI** — Fibered categories and descent

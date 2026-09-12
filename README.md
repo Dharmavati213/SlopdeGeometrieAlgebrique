@@ -31,8 +31,8 @@ Unofficial English translations of Grothendieck’s *Séminaire de Géométrie
 Algébrique du Bois Marie* (SGA), together with a Lean 4 formalization
 on [mathlib](https://github.com/leanprover-community/mathlib4).
 
-This is a working tree, not a finished edition. Exposés I, II, and VI have
-full English drafts;
+This is a working tree, not a finished edition. SGA 1 Exposés I, II, III, and VI
+have full English drafts, as does SGA 2 (Introduction and Exposés I–XIV);
 the Lean side of SGA 1 I and VI is a compiling formalization against mathlib.
 
 ## Layout
@@ -48,6 +48,9 @@ docs/            status and formalization notes
 | SGA 1, Exposé I — English | full draft ([TeX + PDF](translation/SGA1/ExposeI/)) |
 | SGA 1, Exposé I — Lean | compiling (mathlib language + numbered lemmas) |
 | SGA 1, Exposé II — English | full draft ([TeX + PDF](translation/SGA1/ExposeII/)) |
+| SGA 1, Exposé II — Lean | not started (translation only) |
+| SGA 1, Exposé III — English | full draft ([TeX + PDF](translation/SGA1/ExposeIII/)) |
+| SGA 1, Exposé III — Lean | not started (translation only) |
 | SGA 1, Exposé VI — English | translated |
 | SGA 1, Exposé VI — Lean | compiling (mathlib language + numbered lemmas) |
 | SGA 2, Introduction–XIV — English | drafts in `translation/SGA2/` |
@@ -77,7 +80,7 @@ Needs [elan](https://github.com/leanprover/elan) and a TeX Live with `latexmk`.
 ```bash
 make            # Lean + PDF
 make lean       # lake build in lean/
-make tex        # PDFs of SGA 1 I/II/VI and SGA 2 Intro–XIV
+make tex        # PDFs of SGA 1 I, II, III, VI, and SGA 2 Intro–XIV
 ```
 
 First Lean build, from `lean/`:

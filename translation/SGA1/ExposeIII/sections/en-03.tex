@@ -1,0 +1,100 @@
+\section{Local infinitesimal extension of morphisms into a smooth $S$-scheme}
+\label{III.3}
+
+\begin{theorem}
+\label{III.3.1}
+Let $f \colon X \to Y$ be a morphism locally of finite type.
+The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] $f$ is smooth.
+\item[(ii)] For every prescheme $Y'$ over~$Y$, every closed
+sub-prescheme $Y'_0$ of~$Y'$ having the same underlying space as
+$Y'$, every $Y$-morphism $g_0 \colon Y'_0 \to X$, and every
+$z \in Y'_0$, there exists an open neighborhood $U$ of~$z$ in~$Y'$
+and an extension $g$ of~$g_0|Y'_0 \cap U$ to a $Y$-morphism $U \to
+X$.
+\item[(ii~bis)] For $Y'$, $Y'_0$, and $z$ as in \textup{(ii)}, putting
+$X' = X \times_Y Y'$, $X'_0 = X \times_Y Y'_0$, every section of
+$X'_0$ over~$Y'_0$ extends to a section of~$X'$ over an open
+neighborhood $U$ of~$z$.
+\item[(iii)] For every $Y$-scheme $Y'$, spectrum of a local artinian
+ring finite over some $\mathcal{O}_y$ ($y \in Y$), every nonempty
+closed sub-prescheme $Y'_0$ of~$Y'$, and every $Y$-morphism
+$g_0 \colon Y'_0 \to X$, there exists a $Y$-morphism $g
+\colon Y' \to X$ extending $g_0$.
+\item[(iii~bis)] For every $Y'$, $Y'_0$ as in \textup{(iii)}, putting
+$X' = X \times_Y Y'$, $X'_0 = X \times_Y Y'_0$, every section of
+$X'_0$ over~$Y'_0$ extends to a section of~$X'$ over~$Y'$.
+\end{enumerate}
+\end{theorem}
+
+\subsubsection*{Proof} The equivalence of (ii) and (ii~bis), on the one hand, and of
+(iii) and (iii~bis), on the other, is trivial, as is the implication
+(ii)$\To$(iii). It remains to prove (i)$\To$(ii) and (iii)$\To$(i).
+
+(i)$\To$(ii). Let $x = g_0(z)$. Replacing $X$ by a suitable open
+neighborhood of~$x$, and $Y'$ by the prescheme induced on the open
+inverse image of the latter under~$g_0$, we may suppose that $X$ is
+\'etale over~$Y[t_1, \dots, t_n]$. Consider the composite $Y$-morphism
+$Y'_0 \to X \to Y[t_1, \dots, t_n]$; it is defined by $n$ sections of
+the sheaf $\mathcal{O}_{Y'_0}$, which can therefore be extended in a
+neighborhood of~$z$ to sections of~$\mathcal{O}_{Y'}$, so we may suppose
+that the morphism in question has been extended to a
+$Y$-morphism $Y' \to Y[t_1, \dots, t_n]$. By~$\SourceRef{I.5.6}{I.5.6}$ there
+is then a unique $Y$-morphism $g \colon Y' \to X$ lifting the preceding
+one, and at the same time extending $g_0$, qed.
+
+(iii)$\To$(i). Since the set of points where $f$ is smooth is open, it
+suffices to prove that it contains every $x \in X$ that is
+\emph{closed} in its fiber. Let $y = f(x)$. Then $\mathcal{O}_x$ is an
+algebra over~$\mathcal{O}_y$, a localization of an algebra of finite
+type, with finite residual extension. On the other hand, hypothesis
+(iii) implies that every homomorphism from $\mathcal{O}_x$ into an
+algebra $A/J$, where $A$ is a local artinian algebra finite over~
+$\mathcal{O}_y$, and $J$ is an ideal contained in its radical, lifts
+to a homomorphism from $\mathcal{O}_x$ into the algebra $A$ (taking
+into account that a morphism from $\Spec(B)$, with $B$ local, into
+$X$ is determined bijectively by a local homomorphism from an
+$\mathcal{O}_x$ ($x \in X$) into $B$). By~\ref{III.2.1} it follows that
+$\mathcal{O}_x$ is formally smooth over~$\mathcal{O}_y$, hence smooth
+over~$\mathcal{O}_y$ by~\ref{III.1.9}.
+
+\begin{corollary}
+\label{III.3.2}
+Let $f\colon X\to Y$ be as in~\ref{III.3.1}. The following conditions
+are equivalent:
+\begin{enumerate}
+\item[(i)] $f$ is \'etale.
+\item[(ii)] Condition~\textup{(ii)} of~\ref{III.3.1} holds with
+{\emph{uniqueness}} of the extension $g$ of~$g_0$ to~$U$.
+\item[(iii)] Condition~\textup{(iii)} of~\ref{III.3.1} holds with
+{\emph{uniqueness}} of~$g$.
+\end{enumerate}
+\end{corollary}
+
+It suffices to note, in the proof of (i)$\To$(ii) above, that one can
+have uniqueness (when $Y'_0$ is not identical to~$Y'$ in a neighborhood
+of~$z$) only if $n=0$, a condition that is known to be sufficient.
+
+\begin{corollary}
+\label{III.3.3}
+Let $X$ be a prescheme locally of finite type over a {\emph{complete}}
+local ring $A$, $y$ the closed point of~$Y=\Spec(A)$, and $x$ a
+point of~$f^{-1}(y)$ {\emph{rational}} over~$\kres(y)$. If $X$ is
+{\emph{smooth over~$A$ at~$x$}}, then there exists a section $s$ of
+$X$ over~$Y$ ``passing through~$x$'' \ie such that $s(y)=x$.
+\end{corollary}
+
+In particular, if $X$ is smooth over~$A$, then the natural map
+$$
+\Gamma(X/Y)\to\Gamma(X\otimes_A k/k)
+$$
+from the sections of~$X$ over~$Y$ to the set of points of the fiber
+$f^{-1}(y)=X\otimes_A k$ rational over~$k$, is surjective. This fact
+was especially well known and used when $A$ is a discrete valuation
+ring and $X$ is proper over~$A$ (in fact, projective over~$A$), in
+which case the sections of~$X$ over~$Y$ (\ie the ``points of~$X$ with
+values in~$A$'') also identify with the rational sections, \ie with the
+points of~$X\otimes_A K=X_K$ (which is a proper smooth scheme over~$K$)
+with values in~$K$, the field of fractions of~$A$, \ie with the points
+of~$X$ rational over~$K$.
