@@ -1,0 +1,332 @@
+\section{Permanence properties}
+\label{I.9}
+
+Let $A\to B$ be a local \'etale homomorphism. We examine here
+some cases in which a certain property of $A$ implies the
+same property for~$B$, or conversely.
+% original p. 16
+A number of such propositions already follow merely from
+the fact that $B$ is \emph{quasi-finite} and \emph{flat}
+over~$A$, and we shall confine ourselves to ``recalling''
+a few of them: $A$ \emph{and} $B$ \emph{have the same Krull
+dimension and the same depth} (Serre's ``cohomological codimension'',
+in the terminology still current). It follows, for example,
+that \emph{$A$ is Cohen--Macaulay if and only if $B$ is so}.
+Moreover, for every prime ideal $\goth{q}$ of~$B$, inducing
+$\goth{p}$ on~$A$, $B_{\goth{q}}$ will again be quasi-finite
+and flat over~$A_{\goth{p}}$, provided that $B$ is assumed
+to be a localization of an algebra of finite type over~$A$
+(this follows from the fact that the set of points where
+a morphism of finite type is quasi-finite \resp flat is
+open); furthermore, \emph{every} prime ideal $\goth{p}$ of~$A$
+is induced by a prime ideal $\goth{q}$ of~$B$ (since $B$ is
+\emph{faithfully} flat over~$A$). It follows, for example,
+that \emph{$\goth{p}$ and~$\goth{q}$ have the same height};
+and also that \emph{$A$ has no embedded prime ideals if
+and only if~$B$ has none}.
+
+We shall therefore restrict ourselves to propositions more
+specific to the case of \'etale morphisms.
+
+\begin{proposition}
+\label{I.9.1}
+Let $A\to B$ be a local \'etale homomorphism. For $A$ to be
+regular, it is necessary and sufficient that $B$ be so.
+\end{proposition}
+
+Indeed, let $k$ be the residue field of~$A$, and $L$ that
+of~$B$. Since $B$ is flat over~$A$ and $L=B\otimes_A k$,
+\ie $\goth{n}=\goth{m}B$ (where $\goth{m}$,~$\goth{n}$
+are the maximal ideals of~$A$,~$B$), the $\goth{m}$-adic
+filtration on~$B$ is identical to its $\goth{n}$-adic
+filtration, and one has
+\[
+\gr^*(B)=\gr^*(A)\otimes_k L.
+\]
+It follows that $\gr^*(B)$ is a polynomial algebra over~$L$
+if and only if $\gr^*(A)$ is a polynomial algebra over~$k$,
+qed. (N.B.\ The fact that $L/k$ is separable has not been used.)
+
+\begin{corollary}
+\label{I.9.2}
+Let $f\colon X\to Y$ be an \'etale morphism. If $Y$ is
+regular, so is $X$; the converse holds if $f$ is surjective.
+\end{corollary}
+
+% The corrected source repeats 9.2. Preserve it with a distinct PDF anchor.
+\setcounter{theorem}{1}
+\begingroup
+\renewcommand{\theHtheorem}{\theHsection.\arabic{theorem}.bis}
+\begin{proposition}
+\label{prop:I.9.2}
+Let $f\colon X\to Y$ be an \'etale morphism. If $Y$ is
+reduced, so is~$X$; the converse holds if $f$ is surjective.
+\end{proposition}
+\endgroup
+
+This is equivalent to the following
+
+\begin{corollary}
+\label{I.9.3}
+Let $f\colon A\to B$ be a local \'etale homomorphism, with
+$B$ isomorphic to an
+% original p. 17
+$A$-algebra which is a localization of an $A$-algebra of
+finite type. For $A$ to be reduced, it is necessary and
+sufficient that $B$ be so.
+\end{corollary}
+
+Necessity is trivial, since $A\to B$ is injective ($B$ being
+faithfully flat over~$A$). Sufficiency: let $\goth{p}_i$ be
+the minimal prime ideals of~$A$; by hypothesis the natural
+map $A\to\prod_i A/\goth{p}_i$ is injective, so tensoring
+with the flat $A$-module $B$, one finds that
+$B\to\prod_i B/\goth{p}_iB$ is injective, and one is reduced
+to proving that the $B/\goth{p}_iB$ are reduced. Since
+$B/\goth{p}_iB$ is \'etale over~$A/\goth{p}_i$, one is
+reduced to the case where $A$ is an integral domain. Let~$K$
+be its field of fractions; since $A\to K$ is injective,
+so is $B\to B\otimes_A K$ ($B$ being $A$-flat), and one is
+reduced to proving that the latter ring is reduced. Now,
+$B$, being a localization of an $A$-algebra of finite type
+over~$A$, is the local ring of a point~$x$ of a scheme
+$X=\Spec(C)$ of finite type and \emph{\'etale} over
+$Y=\Spec(A)$; hence $B\otimes_A K$ is a localization (with
+respect to a suitable multiplicatively closed set) of the
+ring $C\otimes_A K$ of~$X\otimes_A K$. Since $X\otimes_A K$
+is \'etale over~$K$, its ring is a finite product of fields
+(separable extensions of~$K$); hence the same holds
+for~$B\otimes_A K$, qed.
+
+\begin{corollary}
+\label{I.9.4}
+Let $f\colon A\to B$ be a local \'etale homomorphism, and
+suppose that $A$ is analytically reduced (\ie the completion
+$\hat{A}$ of~$A$ has no nilpotent elements). Then $B$ is
+analytically reduced, and a fortiori reduced.
+\end{corollary}
+
+Indeed, $\hat{B}$ is \emph{finite} and \'etale over~$\hat{A}$,
+and one applies~\ref{I.9.3}.
+
+\begin{theorem}
+\label{I.9.5}
+Let $f\colon A\to B$ be a local homomorphism, with $B$
+isomorphic to a localization of an $A$-algebra of finite
+type. Then:
+\begin{enumerate}
+\item[(i)] If $f$ is \'etale, $A$ is normal if and only if
+$B$ is so.
+\item[(ii)] If $A$ is normal, $f$ is \'etale if and only if
+$f$ is injective and net (and then $B$ is normal by \textup{(i)}).
+\end{enumerate}
+\end{theorem}
+
+We shall give two different proofs of (i). The first uses
+some of the properties of flat quasi-finite morphisms
+(recalled at the beginning of this no.) without using
+\ref{I.7.6} (and thereby the Main Theorem); the reverse
+is true of the second proof. Finally, for~(ii) it seems
+that one needs the Main Theorem in any case.
+
+\subsubsection*{First proof}
+One uses the following necessary and sufficient condition
+% original p. 18
+for normality of a noetherian local ring $A$ of dimension
+$\neq0$.
+
+\begin{namedstatement}{Serre's criterion}
+\textup{(i)}~For every prime ideal $\goth{p}$ of~$A$ of
+height~$1$, $A_{\goth{p}}$ is normal (or, equivalently,
+regular); \textup{(ii)}~For every prime ideal $\goth{p}$
+of~$A$ of height~$\geq2$, the depth of $A_{\goth{p}}$ is
+$\geq2$.\footnote{\Cf EGA~IV~5.8.6.}
+\end{namedstatement}
+
+We shall admit this criterion here; it is supposed to appear
+in the paragraph on flat morphisms. Its main advantage
+is that it does not assume a priori that $A$ is reduced,
+let alone an integral domain. Here one may already suppose
+that $\dim{A}=\dim{B}\neq0$.
+
+By the facts recalled at the beginning of this no., the
+prime ideals $\goth{p}$ of~$A$ of height~$1$ (\resp of
+height~$\ge2$) are precisely the contractions to~$A$ of
+the prime ideals~$\goth{q}$ of~$B$ of height~$1$ (\resp
+of height~$\ge2$). Finally, if $\goth{p}$ and $\goth{q}$
+correspond, $B_{\goth{q}}$ is \'etale over~$A_{\goth{p}}$,
+hence has the same depth as $A_{\goth{p}}$, and is regular
+if and only if $A_{\goth{p}}$ is so (\ref{I.9.1}). Applying
+Serre's criterion, one finds that $A$ is normal if and only
+if $B$ is so.
+
+\subsubsection*{Second proof}
+Suppose that $B$ is normal; let $L$ be its field of fractions,
+and $K$ that of $A$ ($A$ is an integral domain since $B$ is
+so). We saw in the proof of~\ref{I.9.3} that $B\otimes_A K$
+is a finite product of fields; since it is contained in $L$
+it is a field, and since it contains $B$ it is $L$. An
+element of~$K$ integral over~$A$ is integral over~$B$, hence
+belongs to $B$ since $B$ is normal, and therefore to $A$
+since $B\cap K=A$ (as follows from the fact that $B$ is
+faithfully flat over~$A$).
+
+Suppose now that $A$ is normal; let us prove that $B$ is
+so. By~\ref{I.7.6}, one has $B=B^\prime_{\goth{n}}$, where
+$B^\prime=A[t]/FA[t]$, with $F$ and $\goth{n}$ as
+in~\ref{I.7.6}. Thus $L=B\otimes_A K$ will be a localization
+of~$B^\prime\otimes_A K=K[t]/FK[t]$, and a product of fields,
+finite separable extensions of~$K$; this product (as whenever
+one localizes an artinian ring, here $B^\prime_K$, with
+respect to a multiplicatively closed set) is a direct
+factor of~$B^\prime_K$, thus corresponding to a decomposition
+$F=F_1F_2$ in $K[t]$, with the generator of~$L$ corresponding
+to $t$ already annihilated by~$F_1$. Now, \emph{since $A$
+is normal, the $F_i$ belong to $A[t]$} (assuming them monic).
+Observing that $B\to L=B\otimes_A K$ is injective (since
+$A\to K$ is so and $B$ is flat over~$A$), it follows that
+one already has $F_1(u)=0$, with $u$ the class of~$t$ in~$L$.
+Assuming that $F$ was chosen of minimal degree, it follows
+that $F_2=1$ (N.B.\ One has
+$F^\prime(u)=F^\prime_1(u)F_2(u)+F_1(u)F^\prime_2(u)
+=F^\prime_1(u)F_2(u)$ since $F_1(u)=0$, whence
+$F^\prime_1(u)\neq0$ since $F^\prime(u)\neq0$.)
+
+Thus
+% original p. 19
+one has
+\begin{equation*}
+\label{eq:I.9.5.*}
+\tag{$*$} L=B\otimes_A K=K[t]/FK[t]
+\end{equation*}
+and $F$ is consequently a separable polynomial in $K[t]$
+(but of course not necessarily in $A[t]$). (N.B.\ For the
+moment, we have essentially shown only that in~\ref{I.7.6}
+one can choose $F$ and $\goth{n}$ in such a way that---with
+the notation used here---$B^\prime\to B^\prime_{\goth{n}}=B$
+is \emph{injective}; we used the normality of $A$ for this;
+I do not know whether it remains true without the normality
+assumption.)
+
+Let us now recall the well-known lemma taken from Serre's
+course of last year:
+
+\begin{lemma}
+\label{I.9.6}
+Let $K$ be a ring, $F\in K[t]$ a monic separable polynomial,
+$L=K[t]/FK[t]$, and $u$ the class of~$t$ in~$L$ (so that
+$F^\prime(u)$ is an invertible element of~$L$). Then one
+has the formulas (where $n=\deg{F}$):
+\begin{enumerate}
+\item[] $\trace_{L/K}u^i/F^\prime(u)=0$\quad if\quad $0\le i<n-1$,
+\item[] $\trace_{L/K}u^{n-1}/F^\prime(u)=1$.
+\end{enumerate}
+\end{lemma}
+
+\begin{corollary}
+\label{I.9.7}
+The determinant of the matrix
+$(u^j\cdot u^i/F^\prime(u))_{0\le i,j\le n-1}$ is equal
+to $(-1)^{n(n-1)/2}$, hence is invertible in every subring
+$A$ of~$K$.
+\end{corollary}
+
+\begin{corollary}
+\label{I.9.8}
+Let $A$ be a subring of~$K$, $V$ the $A$-module generated
+by the $u^i$ ($0\le i\le n-1$) in $L$, and $V^\prime$
+the $A$-submodule of~$L$ consisting of the $x\in L$ such
+that $\trace_{L/K}(xy)\in A$ for every $y\in V$ (\ie for
+$y$ of the form $u^i$, $0\le i\le n-1$). Then $V^\prime$
+is the $A$-module with basis the $u^i/F^\prime(u)$
+($0\le i\le n-1$).
+\end{corollary}
+
+\begin{corollary}
+\label{I.9.9}
+Suppose that $K$ is the field of fractions of a normal
+integral domain $A$, with $F$ having its coefficients
+in $A$. Then, with the notation of~\ref{I.9.8}, $V^\prime$
+contains the integral closure $A^\prime$ of~$A$ in $L$,
+which is therefore contained in $A[u]/F^\prime(u)$ and
+a fortiori in $A[u][F^\prime(u)^{-1}]$.
+\end{corollary}
+
+Let us apply this last corollary to the situation obtained
+in the proof: since $F^\prime(u)$ is invertible in $B$,
+which contains $A[u]$, $B$ contains $A^\prime$. By the
+Main Theorem (or from the fact that $B=A[u]_{\goth{n}}$),
+$B$ is a localization of $A^\prime$. Since $A^\prime$ is
+normal, so is~$B$.
+
+\subsubsection*{Proof of \textup{(ii)}}
+One
+% original p. 20
+proceeds as in the preceding proof to show that, in
+\ref{I.7.6}, one can choose $F$ so that ($*$) still holds.
+The only obstacle a priori is that, since $B$ is no longer
+assumed flat over~$A$, one can no longer assert that
+$B\to L$ is injective, so that the argument applies a
+priori only to the image $B_1$ of~$B$ under the said
+homomorphism. It follows at once that $B_1$ is flat
+over~$A$ (being a localization of a free algebra over~$A$).
+By~\ref{I.4.8}, the morphism $B\to B_1$ is \'etale,
+hence an isomorphism, which completes the proof.
+
+(From the point of view of exposition, one should
+interchange the last two proofs and put the formal
+calculations of the lemma and its corollaries in a
+separate no.)
+
+\begin{corollary}
+\label{I.9.10}
+Let $f\colon X\to Y$ be an \'etale morphism. If $Y$ is
+normal, so is $X$; the converse holds if $f$ is surjective.
+\end{corollary}
+
+\begin{corollary}
+\label{I.9.11}
+Let $f\colon X\to Y$ be a dominant morphism, with $Y$
+normal and $X$ connected. If $f$ is net, $f$ is \'etale,
+hence $X$ is normal and consequently (being connected)
+irreducible.
+\end{corollary}
+
+Let $U$ be the set of points where $f$ is \'etale; it is
+open, and it suffices to show that it is also closed and
+nonempty. $U$ contains the inverse image of the generic
+point of~$Y$ (since, for an algebra over a field,
+unramified $=$ \'etale), hence ($X$ dominating $Y$) is
+nonempty. If $x$ belongs to the closure of~$U$, then it
+belongs to the closure of an irreducible component $U_i$
+of~$U$, hence to an irreducible component
+$X_i\overset{v}{=}\bar{U}_i$ of~$X$ which meets $U$ and
+consequently dominates $Y$ (since every component of~$U$,
+flat over~$Y$, dominates $Y$). Thus, if $y$ is the
+projection of~$x$ on~$Y$, $\cal{O}_y\to\cal{O}_x$ is
+\emph{injective} (taking into account that $\cal{O}_y$
+is an integral domain). Since $\cal{O}_y$ is normal
+and $\cal{O}_y\to\cal{O}_x$ is net, one concludes
+using~\ref{I.9.5}(ii).
+
+\begin{corollary}
+\label{I.9.12}
+Let $f\colon X\to Y$ be a dominant morphism of finite
+type, with $Y$ normal and $X$ irreducible. Then the set
+of points where $f$ is \'etale is identical to the
+complement of the support of $\Omega^1_{X/Y}$, \ie to
+the complement of the subprescheme of~$X$ defined by
+the different ideal $\goth{d}_{X/Y}$.
+\end{corollary}
+
+(This
+% original p. 21
+is the ``less trivial'' statement alluded to in the
+remark in~\No\ref{I.4}.)
+
+\begin{remark}
+One should beware of believing that a connected \'etale
+covering of an irreducible scheme is itself irreducible
+when the base is not assumed normal. This question
+will be studied in~\No\ref{I.11}.
+\end{remark}

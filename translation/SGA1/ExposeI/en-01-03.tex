@@ -1,0 +1,194 @@
+\chapter{\'Etale morphisms}
+\label{I}
+
+% original p. 1
+To simplify the exposition, all the preschemes considered are assumed
+to be locally noetherian, at least after no.~\ref{I.2}.
+
+\section{Notions of differential calculus}
+\label{I.1}
+
+Let $X$ be a prescheme over~$Y$, and let $\Delta_{X/Y}$ or $\Delta$
+be the diagonal morphism $X\to X\times_Y X$. It is an immersion,
+hence a closed immersion of~$X$ into an open subset $V$ of~$X\times_Y X$.
+Let $\cal{I}_X$ be the ideal of the closed subprescheme corresponding
+to the diagonal in~$V$ (N.B. if one wants to proceed intrinsically,
+without assuming $X$ separated over~$Y$---an assumption that would be
+quite a joke---one should consider the set-theoretic inverse image
+of~$\cal{O}_{X\times X}$ on~$X$, and denote by $\cal{I}_X$ the
+augmentation ideal in the latter\ldots). The sheaf
+$\cal{I}_X/\cal{I}_X^2$ can be regarded as a quasi-coherent sheaf
+on~$X$; it is denoted by~$\mathit{\Omega}^1_{X/Y}$.
+It is of finite type if $X\to Y$ is of finite type. It behaves well
+with respect to extension of the base $Y'\to Y$. One also introduces
+the sheaves $\cal{O}_{X\times_Y X}/\cal{I}_X^{n+1}=\cal{P}^n_{X/Y}$;
+these are sheaves of \emph{rings} on~$X$, making $X$ into a prescheme
+which one can denote by $\Delta_{X/Y}^n$ and call the
+\emph{$n$th infinitesimal neighborhood of}~$X/Y$.
+The corresponding sorites is utterly trivial, although rather
+long\footnote{\cf EGA IV~16.3.}; it would be prudent to discuss it
+only when one has something useful to say about it, in connection
+with smooth morphisms.
+
+\section{Quasi-finite morphisms}
+\label{I.2}
+
+\begin{proposition}
+\label{I.2.1}
+Let $A\to B$ be a local homomorphism (N.B. the rings are now
+noetherian), and let $\goth{m}$ be the maximal ideal of~$A$.
+The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] $B/\goth{m}B$ is finite-dimensional over~$k=A/\goth{m}$.
+\item[(ii)] $\goth{m}B$ is an ideal of definition, and
+$B/\goth{r}(B)=\kres(B)$ is an extension of~$k=\kres(A)$.
+\item[(iii)] The completion $\widehat{B}$ is finite over the
+completion $\widehat{A}$ of~$A$.
+\end{enumerate}
+\end{proposition}
+
+One then says
+% original p. 2
+that $B$ \emph{is quasi-finite} over~$A$. A morphism $f\colon X\to Y$
+is said to be quasi-finite at~$x$ (or the $Y$-prescheme $f$ is said
+to be quasi-finite at~$x$) if $\cal{O}_x$ is quasi-finite
+over~$\cal{O}_{f(x)}$. This also amounts to saying that $x$ is
+\emph{isolated in its fiber}~$f^{-1}(x)$. A morphism is said to be
+quasi-finite if it is so at every point\footnote{In EGA~II~6.2.3,
+$f$ is also assumed to be of finite type.}.
+
+\begin{corollary}
+\label{I.2.2}
+If $A$ is complete, quasi-finite is equivalent to finite.
+\end{corollary}
+
+One could give the usual sorites \textup{(i), (ii), (iii), (iv), (v),}
+for quasi-finite morphisms, but this does not seem indispensable here.
+
+\section{Unramified or net morphisms}
+\label{I.3}
+
+\begin{proposition}
+\label{I.3.1}
+Let $f\colon X\to Y$ be a morphism of finite type, $x\in X$,
+$y=f(x)$. The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] $\cal{O}_x/\goth{m}_y\cal{O}_x$ is a finite separable
+extension of~$\kres(y)$.
+\item[(ii)] $\mathit{\Omega}^1_{X/Y}$ vanishes at~$x$.
+\item[(iii)] The diagonal morphism $\Delta_{X/Y}$ is an open
+immersion in a neighborhood of~$x$.
+\end{enumerate}
+\end{proposition}
+
+For the implication (i)$\To$(ii), Nakayama immediately reduces
+one to the case where $Y=\Spec(k)$, $X=\Spec(k')$, where this is
+well known and, moreover, trivial from the definition of separability;
+(ii)$\To$(iii) follows from a pleasant and easy characterization
+of open immersions, using Krull; (iii)$\To$(i) because one is again
+reduced to the case where $Y=\Spec(k)$ and the diagonal morphism
+is an open immersion everywhere. One must then prove that $X$ is
+finite with ring separable over~$k$; for this one is reduced to
+the case where $k$ is algebraically closed. But then every closed
+point of~$X$ is isolated (being identical to the inverse image of
+the diagonal under the morphism $X\to X\times_k X$ defined by~$x$),
+whence $X$ is finite. One may then suppose that $X$ consists of
+a single point, with ring~$A$, so $A\otimes_k A\to A$ is an
+isomorphism, whence $A=k$, qed.
+
+\begin{definition}
+\label{I.3.2}
+\begin{enumerate}
+\item[a)] One then says that $f$ is \emph{net}, or
+\emph{unramified}, at~$x$, or that $X$ is net, or unramified,
+at~$x$ over~$Y$.
+\item[b)] Let $A\to B$ be a local homomorphism. One says that it
+is \emph{net}, or \emph{unramified}, or that $B$ is a \emph{net},
+or \emph{unramified}, local algebra over~$A$, if $B/\goth{r}(A)B$
+is a finite separable extension of~$A/\goth{r}(A)$, \ie if
+$\goth{r}(A)B=\goth{r}(B)$ and $\kres(B)$ is a separable extension
+of~$\kres(A)$\footnote{\Cf the second thoughts in
+III~\SourceRef{III.1.2}{1.2}.}.
+\end{enumerate}
+\end{definition}
+
+\begin{remarks}
+The fact
+% original p. 3
+that $B$ is net over~$A$ can already be recognized from the
+completions of~$A$ and~$B$. Net implies quasi-finite.
+\end{remarks}
+
+\begin{corollary}
+\label{I.3.3}
+The set of points where $f$ is net is open.
+\end{corollary}
+
+\begin{corollary}
+\label{I.3.4}
+Let $X'$, $X$ be two preschemes of finite type over~$Y$, and
+$g\colon X'\to X$ a $Y$-morphism. If $X$ is net over~$Y$, the
+graph morphism $\Gamma_g\colon X'\to X\times_Y X$ is an open
+immersion.
+\end{corollary}
+
+Indeed, it is the inverse image of the diagonal morphism
+$X\to X\times_Y X$ under
+\[
+g\times_Y\id_{X'}\colon X'\times_Y X\to X\times_Y X.
+\]
+
+One can also introduce the annihilator ideal $\goth{d}_{X/Y}$
+of~$\mathit{\Omega}^1_{X/Y}$, called the different ideal
+of~$X/Y$; it defines a closed subprescheme of~$X$ whose underlying
+set is the set of points where $X/Y$ is ramified, \ie not net.
+
+\begin{proposition}
+\label{I.3.5}
+\begin{enumerate}
+\item[(i)] An immersion is net.
+\item[(ii)] The composite of two net morphisms is net.
+\item[(iii)] Extension of the base in a net morphism gives another
+net morphism.
+\end{enumerate}
+\end{proposition}
+
+This can be seen equally well from (ii) or (iii) (the latter seems
+more amusing to me). One can of course also be more precise by
+giving pointwise statements; this is more general only in appearance
+(except in the setting of definition~b)), and tedious. As usual,
+one obtains corollaries:
+
+\begin{corollaries}
+\label{I.3.6}
+\begin{enumerate}
+\item[(iv)] A cartesian product of two net morphisms is another
+net morphism.
+\item[(v)] If $gf$ is net, $f$ is net.
+\item[(vi)] If $f$ is net, $f_{\text{\textup{red}}}$ is net.
+\end{enumerate}
+\end{corollaries}
+
+\begin{proposition}
+\label{I.3.7}
+Let $A\to B$ be a local homomorphism; suppose that the residue
+field extension $\kres(B)/\kres(A)$ is trivial or that $\kres(A)$
+is algebraically closed. For $B/A$ to be net, it is necessary and
+sufficient that $\widehat{B}$ be (as an $\widehat{A}$-algebra)
+a quotient of~$\widehat{A}$.
+\end{proposition}
+
+\begin{remarks}
+\begin{enumerate}
+\item[--] When the residue field extension is not assumed trivial,
+one can reduce to this case by making a suitable finite flat
+extension of~$A$ which kills the said extension.
+\item[--] Give the example where $A$ is the local ring of an
+ordinary double point of a curve, and $B$ that of a point of its
+normalization: then $A\subset B$, $B$ is net over
+% original p. 4
+$A$ with trivial residue field extension, and
+$\widehat{A}\to\widehat{B}$ is surjective but \emph{not injective}.
+We shall therefore strengthen the notion of being net.
+\end{enumerate}
+\end{remarks}

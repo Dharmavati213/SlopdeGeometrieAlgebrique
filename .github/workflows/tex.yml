@@ -21,16 +21,19 @@ permissions:
   contents: read
 
 jobs:
-  sga1-vi:
+  sga1:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        expose: [I, VI]
     steps:
       - uses: actions/checkout@v5
       - uses: xu-cheng/latex-action@v3
         with:
-          root_file: SGA1-VI.tex
-          working_directory: translation/SGA1/ExposeVI
+          root_file: SGA1-${{ matrix.expose }}.tex
+          working_directory: translation/SGA1/Expose${{ matrix.expose }}
           latexmk_use_lualatex: false
       - uses: actions/upload-artifact@v4
         with:
-          name: SGA1-Expose-VI-EN
-          path: translation/SGA1/ExposeVI/SGA1-VI.pdf
+          name: SGA1-Expose-${{ matrix.expose }}-EN
+          path: translation/SGA1/Expose${{ matrix.expose }}/SGA1-${{ matrix.expose }}.pdf

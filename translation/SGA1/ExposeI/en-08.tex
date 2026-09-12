@@ -1,0 +1,131 @@
+\section[Infinitesimal lifting of \'etale schemes]{Infinitesimal lifting of \'etale schemes.
+Application to formal schemes}
+\label{I.8}
+
+\begin{proposition}
+\label{I.8.1}
+Let $Y$ be a prescheme, $Y_0$ a subprescheme, $X_0$ an \'etale
+$Y_0$-scheme, and $x$ a point of~$X_0$. Then there exist an
+\'etale $Y$-scheme~$X$, a neighborhood $U_0$ of~$x$ in~$X_0$,
+and a $Y_0$-isomorphism $U_0\isomto X\times_Y Y_0$.
+\end{proposition}
+
+Indeed, let $y$ be the projection of~$x$ on~$Y_0$; applying
+\ref{I.7.6} to the \'etale local homomorphism $A_0\to B_0$
+of the local rings of~$y$ and~$x$ in $Y_0$ and~$X_0$, one
+finds an isomorphism
+% original p. 14
+\[
+B_0 = {C_0}_{\goth{n}_0}\qquad C_0 = A_0[t]/F_0A_0[t]
+\]
+where $F_0$ is a monic polynomial and $\goth{n}_0$ is a
+maximal ideal of~$C_0$ not containing the class of $F^\prime_0(t)$
+in~$C_0$. Let $A$ be the local ring of~$y$ in~$Y$, let $F$
+be a monic polynomial in $A[t]$ giving~$F_0$ under the
+surjective homomorphism $A\to A_0$ (one lifts the coefficients
+of~$F_0$), and finally let $C=A[t]/FA[t]$ and $\goth{n}$ be
+the maximal ideal of~$C$ which is the inverse image of
+$\goth{n}_0$ under the natural epimorphism
+$C\to C\otimes_A A_0=C_0$. Set
+\[
+B = C_\goth{n}.
+\]
+It is immediate from the construction and~\ref{I.7.1} that
+$B$ is \'etale over~$A$, and that there is an isomorphism
+$B\otimes_A A_0=A_0$. One knows (Chap\ptbl I) that there
+exist a $Y$-scheme~$X$ of finite type and a point~$z$ of~$X$
+above~$y$ such that $\cal{O}_z$ is $A$-isomorphic to~$C$;
+since the latter is \'etale over~$A=\cal{O}_y$, one may
+(taking $X$ small enough) suppose that $X$ is \'etale over~$Y$.
+Let $X_0^\prime=X\times_Y Y_0$; then the local ring of~$z$
+in~$X_0^\prime$ is identified with
+$\cal{O}_z\otimes_A A_0=B\otimes_A A_0$, hence is isomorphic
+to~$B_0$. This isomorphism is defined by an isomorphism of a
+neighborhood~$U_0$ of~$x$ in~$X_0$ onto a neighborhood of~$z$
+in~$X_0^\prime$ (loc.\ cit.), which one may suppose identical
+to~$X_0^\prime$ by taking $X$ small enough. We are done.
+
+\begin{corollary}
+\label{I.8.2}
+An analogous statement holds for \'etale \emph{coverings},
+assuming that the residue field $\kres(y)$ is infinite.
+\end{corollary}
+
+The proof is the same, with~\ref{I.7.5} replacing~\ref{I.7.6}.
+
+\begin{theorem}
+\label{I.8.3}
+The functor considered in~\ref{I.5.5} is an \emph{equivalence}
+of \emph{categories}.
+\end{theorem}
+
+By Theorem~\ref{I.5.5}, it remains to show that every \'etale
+$S_0$-scheme~$X_0$ is isomorphic to an $S_0$-scheme
+$X\times_S S_0$, where $X$ is an \'etale $S$-scheme.
+The topological space underlying~$X$ must necessarily be
+identical to that of~$X_0$, with $X_0$ moreover identified
+with a closed subprescheme of~$X$. The problem is therefore
+equivalent to the following: to find, on the topological
+space $|X_0|$ underlying~$X_0$, a sheaf of algebras~$\cal{O}_X$
+over~$f_0^*(\cal{O}_S)$ (where $f_0$ is the projection
+$X_0\to S_0$, regarded here as a continuous map of the
+underlying spaces), making $|X_0|$ into an \'etale
+$S$-prescheme~$X$, and a homomorphism of algebras
+$\cal{O}_X\to\cal{O}_{X_0}$, compatible with the homomorphism
+$f_0^*(\cal{O}_S)\to f_0^*(\cal{O}_{S_0})$ of sheaves of
+scalars, inducing an isomorphism
+$\cal{O}_X\otimes_{f_0^*(\cal{O}_S)}f_0^*(\cal{O}_{S_0})
+\isomto\cal{O}_{X_0}$. (Then $X$ will be an \'etale
+$S$-prescheme reducing to~$X_0$,
+% original p. 15
+hence will be separated over~$S$ since $X_0$ is separated
+over~$S_0$, and $X$ answers the question.) Moreover, if
+$(U_i)$ is a covering of~$X_0$ by open subsets, and if one
+has found a solution of the problem in each~$U_i$, it follows
+from the uniqueness theorem~\ref{I.5.5} that these solutions
+glue (\ie the sheaves of algebras defining them, equipped
+with their augmentation homomorphisms, glue), and one sees
+at once that the ringed space thus constructed over~$S$ is
+an \'etale $S$-prescheme~$X$ equipped with an isomorphism
+$X\times_S S_0\isomfrom X_0$. It therefore suffices to find
+a solution locally, which is ensured by~\ref{I.8.1}.
+
+\begin{corollary}
+\label{I.8.4}
+Let $S$ be a locally noetherian formal prescheme, equipped
+with an ideal of definition~$J$, and let
+$S_0=\big(|S|,\cal{O}_S/\cal{J}\big)$ be the corresponding
+ordinary prescheme. Then the functor
+$\goth{X}\mto\goth{X}\times_S S_0$ from the category of
+\'etale coverings of~$S$ to the category of \'etale coverings
+of~$S_0$ is an equivalence of categories.
+\end{corollary}
+
+Of course, by an \'etale covering of a \emph{formal}
+prescheme~$S$ one means a covering of~$S$, \ie a formal
+prescheme over~$S$ defined by means of a coherent sheaf
+of algebras~$\cal{B}$, such that $\cal{B}$ is \emph{locally
+free} and the residue fibers
+$\cal{B}_s\otimes_{\cal{O}_s}\kres(s)$ of~$\cal{B}$ are
+\emph{separable} algebras over~$\kres(s)$. If one denotes
+by~$S_n$ the ordinary prescheme
+$\big(|S|,\cal{O}_S/J^{n+1}\big)$, the datum of a coherent
+sheaf of algebras $\cal{B}$ on~$S$ is equivalent to the datum
+of a sequence of coherent sheaves of algebras $\cal{B}_n$
+on the~$S_n$, equipped with a transitive system of
+homomorphisms $\cal{B}_m\to\cal{B}_n$ ($m\geq n$) defining
+isomorphisms
+$\cal{B}_m\otimes_{\cal{O}_{S_m}}\cal{O}_{S_n}\isomto\cal{B}_n$.
+It is immediate that $\cal{B}$ is locally free if and only
+if the $\cal{B}_n$ on the~$S_n$ are so, and that the
+separability condition holds if and only if it holds
+for~$\cal{B}_0$, or equivalently for all the~$\cal{B}_n$.
+Thus $\cal{B}$ is \'etale over~$S$ if and only if the
+$\cal{B}_n$ on the~$S_n$ are so. In view of this,
+\ref{I.8.4} follows at once from~\ref{I.8.3}.
+
+\begin{remark}
+It was not necessary in~\ref{I.8.4} to restrict oneself
+to \emph{coverings}. This is, however, the only case used
+for the moment.
+\end{remark}

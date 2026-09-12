@@ -1,0 +1,315 @@
+\section{\'Etale coverings of a normal scheme}
+\label{I.10}
+
+\begin{proposition}
+\label{I.10.1}
+Let $X$ be an \'etale separated prescheme over a normal
+connected $Y$ with field~$K$. Then the
+connected components $X_i$ of~$X$ are integral, their
+fields $K_i$ are finite separable extensions of~$K$,
+and $X_i$ is identified with a nonempty open subset of
+the normalization of~$X$ in $K_i$ (hence $X$ with a
+dense open subset of the normalization of~$Y$ in
+$R(X)=L=\prod K_i$).
+\end{proposition}
+
+By~\ref{I.9.10}, $X$ is normal; a fortiori its local
+rings are integral domains, so the connected components
+of~$X$ are irreducible. Since $X_i$ is normal, and finite
+and dominant over~$Y$, it follows from a special case
+(moreover, almost trivial) of the Main Theorem that
+$X_i$ is an open subset of the normalization of~$X$
+in the field $K_i$ of~$X$.
+
+\begin{corollary}
+\label{I.10.2}
+Under the conditions of~\ref{I.10.1}, $X$ is finite
+over~$Y$ (\ie an \'etale covering of~$Y$) if and only
+if $X$ is isomorphic to the normalization $Y'$ of~$Y$
+in $L=R(X)$ (the ring of rational functions on~$X$).
+\end{corollary}
+
+Indeed, one knows that this normalization is finite
+over~$Y$ ($Y$ being normal and $R/K$ separable);
+conversely, if $X$ is finite over~$Y$, it is finite
+over~$Y'$, so its image in $Y'$ is closed, and on
+the other hand it is dense.
+
+An algebra $L$ of finite rank over~$K$ will be called
+\emph{unramified over~$X$} (or simply unramified
+over~$K$, if $X$ is understood) if $L$ is a separable
+algebra over~$K$, \ie a direct product of separable
+extensions $K_i$, and if the normalization $Y'$ of~$Y$
+in $L$ (the disjoint sum of the normalizations of~$Y$
+in the $K_i$) is unramified ($=$ \'etale by~\ref{I.9.11})
+over~$Y$. Thus:
+
+\begin{corollary}
+\label{I.10.3}
+For every $X$ finite over~$Y$ whose every irreducible
+component dominates $Y$, let $R(X)$ be the ring of
+rational functions on~$X$ (the product of the local
+% original p. 22
+rings of the generic points of the irreducible
+components of~$X$), so that $X\mto R(X)$ is a functor
+with values in the algebras of finite rank over
+$K=R(Y)$. This functor establishes an equivalence of
+the category of connected \'etale coverings of~$Y$
+with the category of extensions $L$ of $K$ unramified
+over~$Y$.
+\end{corollary}
+
+The inverse functor is the normalization functor.
+
+Suppose that $Y$ is affine, hence defined by a normal
+ring $A$ with field of fractions~$K$. Let $L$ be a
+finite extension of~$K$ which is a direct product of
+fields; then, by definition, the normalization $Y'$
+of $Y$ in $L$ is isomorphic to $\Spec(A')$, where $A'$
+is the normalization of~$A$ in~$L$. To say that $L$
+is unramified over~$Y$ means that $A'$ is unramified
+(or equivalently, \'etale) over~$A$. If $A$ is local,
+this amounts to saying that the local rings
+$A^\prime_{\goth{n}}$ (where $\goth{n}$ runs through
+the finite set of maximal ideals of~$A'$, \ie its
+prime ideals inducing the maximal ideal $\goth{m}$
+of~$A$) are unramified ($=$ \'etale) over the local
+ring~$A$. Finally, note also that the discriminant
+criterion (\ref{I.4.10}) can also be applied in this
+situation (more generally, a variant of the said
+criterion should be stated as follows, without a
+preliminary flatness condition when $X$ dominates
+$Y$, with $Y$ nevertheless assumed locally integral:
+$A\to B$ and $B\to B\otimes_A K=L$ are injective---then
+$\trace_{L/K}$ is defined---and $\trace_{L/K}(xy)$
+induces a \emph{fundamental bilinear form}
+$B\times B\to A$, \ie there exist $x_i\in B$
+($1\le i\le n$, $n=$ rank of~$L$ over~$K$) such that
+$\trace(x_ix_j)\in A$ for every $i$,~$j$ and
+$\det(\trace(x_ix_j))$ is invertible in~$A$).
+
+The sorites (4.6) immediately implies the sorites
+of unramifiedness in the classical setting:
+
+\begin{proposition}
+\label{I.10.4}
+Let $Y$ be a normal integral prescheme, with field~$K$.
+\textup{(i)} $K$ is unramified over~$Y$.
+\textup{(ii)} If $L$ is an extension of~$K$ unramified
+over~$Y$, if $Y'$ is a normal prescheme with field $L$
+dominating $Y$ (for example, the normalization of~$Y$
+in~$L$), and $M$ an extension of~$L$ unramified
+over~$Y'$, then $M/K$ is unramified over~$X$
+(\emph{transitivity} of unramifiedness).
+\textup{(iii)} Let $Y'$ be a normal integral prescheme
+dominating $Y$, with field $K'/K$; if $L$ is an
+extension of~$K$ unramified over~$Y$, then
+$L\otimes_K K'$ is an extension of~$K'$ unramified
+over~$Y'$ (the \emph{translation} property).
+\end{proposition}
+
+Moreover:
+% original p. 23
+
+\begin{corollary}
+\label{I.10.5}
+Under the conditions of \textup{(iii)}, if
+$Y=\Spec(A)$, $Y'=\Spec(A')$, then the normalization
+$\bar{A'}$ of~$Y'$ in $L'=L\otimes_K K'$ is identified
+with $\bar{A}\otimes_A A'$, where $\bar{A}$ is the
+normalization of $A$ in $L$.
+\end{corollary}
+
+Usually, people (who are reluctant to consider rings
+which are not integral domains, even if they are
+direct products of fields) state the translation
+property in the following (weaker) form:
+
+\begin{corollary}
+\label{I.10.6}
+Under the conditions of \textup{(iii)}, let $L_1$ be
+a \emph{compositum} of~$L/K$ (unramified over~$Y$)
+and~$K'/K$. Then $L_1/K'$ is unramified over~$Y'$.
+When $Y=\Spec(A)$, $Y'=\Spec(A')$, one moreover has
+\[
+\overline{A'}=A[\overline{A},A']
+\]
+\ie the ring $\overline{A'}$, the normalization
+of~$A'$ in $L_1$, is the $A$-algebra generated by
+$A'$ and the normalization $\overline{A}$ of~$A$
+in $L$.
+\end{corollary}
+
+This last fact is false without the unramifiedness
+assumption, even in the case of composita of number
+fields\ldots
+
+To conclude this no., we shall give the interpretation
+of the notion of \'etale covering corresponding to
+its intuitive picture: there should be the ``maximum
+number'' of points above the point $y\in Y$ under
+consideration, and in particular there should not be
+``several coincident points'' above~$y$. To prove
+results in this direction with all the desired
+generality, we shall admit Proposition~\ref{I.10.7}
+below (whose proof will appear in the multiplodoque,
+Chap\ptbl IV, par\ptbl 15, and uses Chevalley's
+technique of constructible sets, and a little descent
+theory\ldots).
+
+A morphism of finite type $f\colon X\to Y$ is said
+to be \emph{universally open} if for every extension
+of the base $Y'\to Y$ (with $Y'$ locally noetherian)
+the morphism $f'\colon X'=X\times_Y Y'\to Y'$ is
+open, \ie sends open sets to open sets. One can,
+moreover, restrict oneself to the case where $Y'$
+is of finite type over~$Y$ (and even where $Y'$ is
+of the form $Y[t_1,\dots,t_r]$, with the $t_i$
+indeterminates). A universally open morphism is
+a fortiori open (the converse being false);
+on the other hand, if $f$ is open, with $X$ and $Y$
+irreducible, then all the components of all the
+fibers of~$f$ have the same dimension (namely, the
+dimension of the generic fiber
+% original p. 24
+$f^{-1}(z)$, with $z$ the generic point of~$Y$).
+Finally, if $Y$ is normal, this last condition
+already implies that $f$ is \emph{universally} open
+(Chevalley's theorem). It follows, for example,
+that if $f\colon X\to Y$ is a \emph{quasi-finite}
+morphism, with $Y$ normal and irreducible, then $f$
+is universally open (or equivalently, open) if and
+only if every irreducible component of~$X$ dominates~$Y$.
+Recall also that a flat morphism (of finite type),
+being open, is also universally open. With these
+preliminaries in place, let us ``recall'' the following
+
+\begin{proposition}
+\label{I.10.7}
+Let $f\colon X\to Y$ be a quasi-finite separated
+universally open morphism. For every $y\in Y$, let
+$n(y)$ be the ``geometric number of points of the
+fiber $f^{-1}(y)$'', equal to the sum of the separable
+degrees of the residue field extensions
+$\kres(x)/\kres(y)$, for the points $x\in f^{-1}(y)$.
+Then the function $y\mto n(y)$ on~$Y$ is upper
+semicontinuous. For it to be constant in a neighborhood
+of the point $y$ (\ie for one to have $n(y)=n(z_i)$,
+where the $z_i$ are the generic points of the
+irreducible components of~$Y$ containing $y$), it is
+necessary that there exist a neighborhood $U$ of~$y$
+such that $X|U$ is \emph{finite} over~$U$.\footnote{\Cf
+EGA IV 15.5.1.}
+\end{proposition}
+
+\begin{corollary}
+\label{I.10.8}
+If $y\mto n(y)$ is constant and $Y$ is geometrically
+unibranch\footnote{For the definition, \cf below,
+\No\ref{I.11}, p\ptbl\pageref{I.11}.}, the irreducible
+components of~$X$ are disjoint.
+\end{corollary}
+
+\begin{proposition}
+\label{I.10.9}
+Let $f\colon X\to Y$ be an \emph{\'etale} separated
+morphism. With the notation of~\ref{I.10.7}, the
+function $y\mto n(y)$ is upper semicontinuous. For
+it to be constant in a neighborhood of the point $y$
+(\ie for one to have $n(y)=n(z_i)$, where the $z_i$
+are the generic points of the irreducible components
+of~$Y$ containing $y$), it is necessary and sufficient
+that there exist an open neighborhood $U$ of~$y$
+such that $X|U$ is finite over U, \ie is an
+\emph{\'etale covering} of~$U$.
+\end{proposition}
+
+\begin{corollary}
+\label{I.10.10}
+For a separated \'etale morphism $f\colon X\to Y$,
+with $Y$ connected, to be finite (\ie to make $X$
+an \emph{\'etale covering} of~$Y$), it is necessary
+and sufficient that all the fibers of~$f$ have the
+same geometric number of points.
+\end{corollary}
+
+In~\ref{I.10.7} and its corollary, there was no
+normality assumption on~$Y$. If one makes such an
+assumption, one obtains the stronger statement
+(most often taken as the definition of a covering
+being unramified):
+
+\begin{theorem}
+\label{I.10.11}
+Let
+% original p. 25
+$f\colon X\to Y$ be a \emph{quasi-finite} separated
+morphism. Suppose that~$Y$ is \emph{irreducible},
+that every component of~$X$ dominates $Y$, and that
+$X$ is reduced (\ie $\cal{O}_X$ has no nilpotent
+elements). Let $n$ be the degree of~$X$ over~$Y$
+(the sum of the degrees, over the field $K$ of~$Y$,
+of the fields $K_i$ of the irreducible components
+$X_i$ of~$X$). Let $y$ be a normal point of~$Y$.
+Then the geometric number $n(y)$ of points of~$X$
+above~$y$ is $\le n$, with equality if and only if
+there exists an open neighborhood $U$ of~$y$ such
+that $X|U$ is an \emph{\'etale covering} of~$U$.
+\end{theorem}
+
+The ``only if'' being trivial, let us prove the ``if''.
+Let $z$ be the generic point of~$Y$; one has $n(z)=$
+(sum of the separable degrees of the $K_i/K$) $\le n$,
+and by~\ref{I.10.7}, $n(y)\le n(z)\le n$, with equality
+implying that $X|U$ is \emph{finite} over~$U$ for a
+suitable neighborhood~$U$ of~$y$. One may therefore
+suppose that $X$ is finite over~$Y$ and that the
+function $n(y')$ on~$Y$ is constant. Finally,
+by~\ref{I.10.8}, $X$ is then the disjoint union of
+its irreducible components, and to prove that it
+is unramified at $y$, one is reduced to the case
+where $X$ is irreducible, hence integral. Finally,
+one may suppose that $Y=\Spec(\cal{O}_y)$. The theorem
+then reduces to the following classical statement:
+
+\begin{corollary}
+\label{I.10.12}
+Let $A$ be a normal local ring (noetherian, as always)
+with field $K$, $L$ a finite extension of~$K$ of
+degree $n$ and separable degree $n_s$, $B$ a subring
+of~$L$ finite over~$A$, with field of fractions $L$,
+$\goth{m}$ the maximal ideal of~$A$, and $n'$ the
+separable degree of~$B/\goth{m}B$ over~$A/\goth{m}A=k$
+($=$ the sum of the separable degrees of the residue
+field extensions of this ring). One has $n'\le n_s$
+and a fortiori $n'\le n$. This last inequality is
+an equality if and only if $B$ is unramified
+($=$ \'etale) over~$A$.
+\end{corollary}
+
+It remains only to show that $n'=n$ implies that $B$
+is \'etale over~$A$. Let us recall the proof when $k$
+is infinite: one need only show that $R=B/\goth{m}B$
+is separable over~$k$; if this were not so, it would
+follow (by a known lemma) that there exists an
+element $a$ of~$R$ whose minimal polynomial over~$k$
+has degree $>n'$. This element comes from an element
+$x$ of~$B$, whose minimal polynomial over~$K$
+(as an element of $L$) has degree $\le n$; on the
+other hand, the latter has its coefficients in~$A$
+since $A$ is normal, and hence gives, by reduction
+mod $\goth{m}$, a monic polynomial $F\in k[t]$ of
+degree $\le n=n'$ such that $F(a)=0$, a contradiction.
+
+In
+% original p. 26
+the general case ($k$ possibly finite), returning
+to geometric language, one considers $Y'=\Spec(A[t])$,
+which is faithfully flat over~$Y$, and the generic
+point $y'$ of the fiber $\Spec(k[t])$ of~$Y'$ over~$y$.
+Then $X$ is net over~$Y$ at $y$ if and only if
+$X'=X\times_Y Y'=\Spec(B[t])$ is net at $y'$ over~$Y'$,
+as one sees at once. Moreover, by the choice of~$y'$,
+its residue field is $k(t)$, hence infinite. Since
+$y'$ is a normal point of~$Y'$, one is reduced to
+the preceding case.

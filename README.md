@@ -31,7 +31,8 @@ Unofficial English translations of Grothendieck’s *Séminaire de Géométrie
 Algébrique du Bois Marie* (SGA), together with a Lean 4 formalization
 on [mathlib](https://github.com/leanprover-community/mathlib4).
 
-This is a working tree, not a finished edition. One exposé is translated;
+This is a working tree, not a finished edition. Exposés I and VI have
+full English drafts;
 the Lean side of SGA 1 VI is a compiling formalization against mathlib.
 
 ## Layout
@@ -44,9 +45,10 @@ docs/            status and formalization notes
 
 | Work | State |
 | --- | --- |
+| SGA 1, Exposé I — English | full draft ([TeX + PDF](translation/SGA1/ExposeI/)) |
 | SGA 1, Exposé VI — English | translated |
 | SGA 1, Exposé VI — Lean | compiling (mathlib language + numbered lemmas) |
-| Other exposés of SGA 1–7 | not started |
+| Remaining exposés of SGA 1–7 | not started |
 
 Tick-list: [`docs/status.md`](docs/status.md).
 Sources and licenses: [`COPYRIGHT.md`](COPYRIGHT.md).
@@ -72,7 +74,7 @@ Needs [elan](https://github.com/leanprover/elan) and a TeX Live with `latexmk`.
 ```bash
 make            # Lean + PDF
 make lean       # lake build in lean/
-make tex        # PDF of SGA 1 VI
+make tex        # PDFs of SGA 1 I and VI
 ```
 
 First Lean build, from `lean/`:

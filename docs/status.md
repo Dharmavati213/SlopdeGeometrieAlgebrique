@@ -30,7 +30,7 @@ Exposé VII does not exist.
 
 | Exposé | Title | Translation | Lean |
 | --- | --- | --- | --- |
-| I | Étale morphisms | — | — |
+| I | Étale morphisms | full draft in tree | — |
 | II | Smooth morphisms: generalities, differential properties | — | — |
 | III | Smooth morphisms: extension properties | — | — |
 | IV | Flat morphisms | — | — |
@@ -46,8 +46,12 @@ Exposé VII does not exist.
 
 ### Translation
 
-- [ ] **I** — Étale morphisms
+- [x] **I** — Étale morphisms
+  - [x] Opening convention and §§1–6: English TeX and PDF in `translation/SGA1/ExposeI/`
+  - [x] §§7–11: English TeX and PDF, including all proofs and footnotes
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeI/README.md`](../translation/SGA1/ExposeI/README.md)
 - [ ] **II** — Smooth morphisms: generalities, differential properties
+  - Next translation: opening convention and II.1 (Generalities)
 - [ ] **III** — Smooth morphisms: extension properties
 - [ ] **IV** — Flat morphisms
 - [ ] **V** — The fundamental group: generalities

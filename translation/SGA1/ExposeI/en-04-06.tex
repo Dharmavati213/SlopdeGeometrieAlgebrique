@@ -1,0 +1,379 @@
+\section{\'Etale morphisms. \'Etale coverings}
+\label{I.4}
+
+We shall admit everything we shall need concerning flat morphisms;
+these facts will be proved later, if necessary\footnote{\Cf
+Exp\ptbl\SourceRef{IV}{IV}.}.
+
+\begin{definition}
+\label{I.4.1}
+\begin{enumerate}
+\item[a)] Let $f\colon X\to Y$ be a morphism of finite type.
+One says that $f$ is \emph{\'etale} at~$x$ if $f$ is flat at~$x$
+and net at~$x$. One says that $f$ is \'etale if it is so at every
+point. One says that $X$ is \'etale at~$x$ over~$Y$, or that it
+is a $Y$-prescheme \'etale at~$x$, etc.
+\item[b)] Let $f\colon A\to B$ be a local homomorphism. One says
+that $f$ is \'etale, or that $B$ is \'etale over~$A$, if $B$ is
+flat and unramified over~$A$.\footnote{\Cf the second thoughts in
+III~\SourceRef{III.1.2}{1.2}.}
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+\label{I.4.2}
+For $B/A$ to be \'etale, it is necessary and sufficient that
+$\widehat{B}/\widehat{A}$ be so.
+\end{proposition}
+
+In
+% original p. 5
+fact, this is true separately for ``net'' and for ``flat''.
+
+\begin{corollary}
+\label{I.4.3}
+Let $f\colon X\to Y$ be of finite type, and $x\in X$. Whether
+$f$ is \'etale at~$x$ depends only on the local homomorphism
+$\cal{O}_{f(x)}\to\cal{O}_x$, and indeed only on the corresponding
+homomorphism of completions.
+\end{corollary}
+
+\begin{corollary}
+\label{I.4.4}
+Suppose that the residue field extension $\kres(A)\to\kres(B)$
+is trivial, or that $\kres(A)$ is algebraically closed. Then
+$B/A$ is \'etale if and only if $\widehat{A}\to\widehat{B}$
+is an isomorphism.
+\end{corollary}
+
+Combine flatness and~\ref{I.3.7}.
+
+\begin{proposition}
+\label{I.4.5}
+Let $f\colon X\to Y$ be a morphism of finite type. Then the set
+of points where it is \'etale is open.
+\end{proposition}
+
+Indeed, this is true separately for ``net'' and ``flat''.
+
+This proposition shows that one can dispense with ``pointwise''
+statements in studying morphisms of finite type which are \'etale
+somewhere.
+
+\begin{proposition}
+\label{I.4.6}
+\begin{enumerate}
+\item[(i)] An open immersion is \'etale.
+\item[(ii)] The composite of two \'etale morphisms is \'etale.
+\item[(iii)] Extension of the base.
+\end{enumerate}
+\end{proposition}
+
+Indeed, (i) is trivial, and for (ii) and (iii) it suffices to note
+that this is true for ``net'' and for ``flat''. To tell the truth,
+there are also corresponding statements for local homomorphisms
+(without a finiteness condition), which in any case will have to
+appear in the multiplodoque (beginning with the case: net).
+
+\begin{corollary}
+\label{I.4.7}
+A cartesian product of two \'etale morphisms is likewise \'etale.
+\end{corollary}
+
+\begin{corollary}
+\label{I.4.8}
+Let $X$ and $X'$ be of finite type over~$Y$, and $g\colon X\to X'$
+a $Y$-morphism. If $X'$ is unramified over~$Y$ and $X$ is \'etale
+over~$Y$, then $g$ is \'etale.
+\end{corollary}
+
+Indeed, $g$ is the composite of the graph morphism
+$\Gamma_g\colon X\to X\times_Y X'$, which is an open immersion
+by~\ref{I.3.4}, and the projection morphism, which is \'etale
+because it is obtained from the \'etale morphism $X\to Y$ by the
+``change of base'' $X'\to Y$.
+
+\begin{definition}
+\label{I.4.9}
+An \'etale (\resp net) covering of~$Y$ is a $Y$-scheme $X$ which
+is finite over~$Y$ and \'etale (\resp net) over~$Y$.
+\end{definition}
+
+The first condition means that $X$ is defined by a coherent sheaf
+of algebras $\cal{B}$ on~$Y$. The second then means that $\cal{B}$
+is locally free on~$Y$ (\resp nothing at all), \emph{and} that,
+in addition, for every $y\in Y$, the fiber
+$\cal{B}(y)=\cal{B}_y\otimes_{\cal{O}_y}\kres(y)$ is a separable
+algebra (= finite product of finite separable extensions)
+over~$\kres(y)$.
+
+\begin{proposition}
+\label{I.4.10}
+Let $X$ be a flat covering of~$Y$ of degree~$n$ (the definition
+of this term deserved to appear in~\ref{I.4.9}), defined by a
+coherent locally free sheaf $\cal{B}$ of algebras. One defines
+in the well-known way the trace homomorphism $\cal{B}\to\cal{A}$
+(which is a homomorphism of $\cal{A}$-modules, where
+$\cal{A}=\cal{O}_Y$). For $X$ to be \'etale, it is necessary
+and sufficient that the corresponding bilinear form
+$\trace_{\cal{B}/\cal{A}}xy$ define an isomorphism of~$\cal{B}$
+onto~$\cal{B}$, or, what amounts to the same, that the
+\emph{discriminant section}
+\[
+d_{X/Y} = d_{\cal{B}/\cal{A}} \in
+\Gamma(Y,\tbigwedge^n\check{\cal{B}}\otimes_{\cal{A}}
+\tbigwedge^n\check{\cal{B}})
+\]
+be invertible, or finally that the discriminant ideal defined by
+this section be the unit ideal.
+\end{proposition}
+
+Indeed, one is reduced to the case where $Y=\Spec(k)$, and then
+this is a well-known separability criterion, trivial on passing
+to the algebraic closure of~$k$.
+
+\begin{remark}
+We
+% original p. 6
+shall have a less trivial statement below, when one does not
+assume a priori that $X$ is flat over~$Y$ but makes a normality
+assumption.
+\end{remark}
+
+\section{The fundamental property of \'etale morphisms}
+\label{I.5}
+
+\begin{theorem}
+\label{I.5.1}
+Let $f\colon X\to Y$ be a morphism of finite type. For $f$ to be
+an open immersion, it is necessary and sufficient that it be
+an \emph{\'etale and radicial} morphism.
+\end{theorem}
+
+Recall that radicial means: injective, with purely inseparable
+residue field extensions (and one may also recall that this means
+that the morphism remains injective under every extension of the
+base). Necessity is trivial; sufficiency remains. We shall give
+two different proofs, the first shorter, the second more elementary.
+
+1) A flat morphism is open, so one may suppose (replacing $Y$
+by~$f(X)$) that $f$ is a \emph{homeomorphism} onto~$Y$.
+Under any extension of the base, $f$ will remain flat, radicial,
+and surjective, hence a homeomorphism, a fortiori closed.
+Thus $f$ is \emph{proper}. Thus $f$ is \emph{finite}
+(reference: Chevalley's theorem), defined by a coherent sheaf
+$\mathcal{B}$ of algebras. $\mathcal{B}$ is locally free;
+moreover, by the hypothesis it has rank~$1$ everywhere, so
+$X=Y$, qed.
+
+2) One may suppose that $Y$ and $X$ are \emph{affine}. One is
+further easily reduced to proving the following: if $Y=\Spec(A)$,
+with $A$ local, and if $f^{-1}(y)$ is nonempty ($y$ being the
+closed point of~$Y$), then $X=Y$ (indeed, this will imply that
+every $y\in f(X)$ has an open neighborhood $U$ such that $X|U=U$).
+We shall have $X=\Spec(B)$; we want to prove that $A=B$. But for
+this one is reduced to proving the analogous assertion on
+replacing $A$ by~$\hat A$, and $B$ by $B\otimes_A\hat A$
+(taking into account that $\hat A$ is faithfully flat over~$A$).
+One may therefore suppose that $A$ is \emph{complete}. Let $x$
+be the point above~$y$; by Corollary~\ref{I.2.2}, $\mathcal{O}_x$
+is finite over~$A$ and hence (being flat and radicial over~$A$)
+is identical to~$A$. Thus $X=Y\amalg X^\prime$ (disjoint sum).
+Since $X$ is radicial over~$Y$, $X^\prime$ is empty. We are done.
+
+\begin{corollary}
+\label{I.5.2}
+Let $f\colon X\to Y$ be a morphism which is a \emph{closed
+immersion} and is \emph{\'etale}. If $X$ is connected, $f$ is
+an isomorphism of~$X$ onto a connected component of~$Y$.
+\end{corollary}
+
+Indeed, $f$ is also an open immersion. One deduces:
+
+\begin{corollary}
+\label{I.5.3}
+Let
+% original p. 7
+$X$ be a net $Y$-scheme, with $Y$ connected. Then every section
+of~$X$ over~$Y$ is an isomorphism of~$Y$ onto a connected
+component of~$X$. There is therefore a one-to-one correspondence
+between the set of these sections and the set of connected
+components $X_i$ of~$X$ such that the projection $X_i\to Y$
+is an isomorphism (or, equivalently by~\ref{I.5.1}, is surjective
+and radicial). In particular, a section is known when its value
+at one point is known.
+\end{corollary}
+
+Only the first assertion requires a proof; by~\ref{I.5.2}, it
+suffices to observe that a section is a closed immersion
+(since $X$ is separated over~$Y$) and is \'etale by~\ref{I.4.8}.
+
+\begin{corollary}
+\label{I.5.4}
+Let $X$ and $Y$ be two preschemes over~$S$, with $X$ net and
+separated over~$S$ and $Y$ connected. Let $f$, $g$ be two
+$S$-morphisms from~$Y$ to~$X$, and $y$ a point of~$Y$; suppose
+that $f(y)=g(y)=x$ and that the residue field homomorphisms
+$\kres(x)\to\kres(y)$ defined by $f$ and~$g$ are identical
+(``$f$ and~$g$ agree geometrically at~$y$''). Then $f$ and~$g$
+are identical.
+\end{corollary}
+
+This follows from~\ref{I.5.3} by reducing to the case where
+$Y=S$, replacing $X$ by $X\times_S Y$.
+
+Here is a particularly important variant of~\ref{I.5.3}.
+
+\begin{theorem}
+\label{I.5.5}
+Let $S$ be a prescheme, $X$ and $Y$ two $S$-preschemes, $S_0$
+a closed subprescheme of~$S$ with the same underlying space
+as~$S$, and $X_0=X\times_S S_0$ and $Y_0=Y\times_S S_0$ the
+``restrictions'' of~$X$ and~$Y$ to~$S_0$. Suppose that $X$ is
+\'etale over~$S$. Then the natural map
+\[
+\Hom_S(Y,X)\to\Hom_{S_0}(Y_0,X_0)
+\]
+is \emph{bijective}.
+\end{theorem}
+
+One is again reduced to the case where $Y=S$, and then this
+follows from the ``topological'' description of the sections
+of~$X/Y$ given in~\ref{I.5.3}.
+
+\begin{scholium}
+This result contains an assertion of \emph{uniqueness} and
+\emph{existence} of \emph{morphisms}. It can also be expressed
+(when $X$ and~$Y$ are both taken \'etale over~$S$) by saying that
+the functor $X\mto X_0$ from the category of \'etale $S$-schemes
+to the category of \'etale $S_0$-schemes is \emph{fully faithful},
+\ie establishes an \emph{equivalence} of the first with a
+\emph{full subcategory} of the second. We shall see below that
+it is even an equivalence of the first and the second
+(which will be a theorem on the \emph{existence of \'etale
+$S$-schemes}).
+\end{scholium}
+
+The
+% original p. 8
+following form of~\ref{I.5.5}, more general in appearance, is
+often convenient:
+
+\begin{corollary}[``Theorem on extending liftings'']
+\label{I.5.6}
+Consider a commutative diagram
+\[
+\xymatrix{
+X\ar[d]&\ar[l]Y_0\ar[d]\\
+S&\ar[l]Y
+}
+\]
+of morphisms, where $X\to S$ is \'etale and $Y_0\to Y$ is
+a bijective closed immersion. Then one can find a unique
+morphism $Y\to X$ which makes the two corresponding triangles
+commutative.
+\end{corollary}
+
+Indeed, replacing $S$ by~$Y$ and $X$ by $X\times_S Y$, one is
+reduced to the case where $Y=S$, and then this is the special
+case of~\ref{I.5.5} for $Y=S$.
+
+Let us also point out the following immediate consequence
+of~\ref{I.5.1} (which we did not give as Corollary~1 so as not
+to interrupt the line of ideas developed after~\ref{I.5.1}):
+
+\begin{proposition}
+\label{I.5.7}
+Let $X$, $X^\prime$ be two preschemes of finite type and flat
+over~$Y$, and let $g\colon X\to X^\prime$ be a $Y$-morphism.
+For $g$ to be an open immersion (\resp an isomorphism), it is
+necessary and sufficient that, for every $y\in Y$, the induced
+morphism on the fibers
+\[
+g\otimes_Y\kres(y)\colon X\otimes_Y\kres(y)\to X^\prime
+\otimes_Y\kres(y)
+\]
+be so.
+\end{proposition}
+
+It suffices to prove sufficiency; since the assertion holds for
+surjectivity, one is reduced to the case of an open immersion.
+By~\ref{I.5.1}, one must check that $g$ is \emph{radicial},
+which is trivial, and that it is \emph{\'etale}, which follows
+from Corollary~\ref{I.5.9} below.
+
+\begin{corollary}
+\label{I.5.8}
+(Should be moved to \No\ref{I.3}.) Let $X$ and $X^\prime$ be
+two $Y$-preschemes, $g\colon X\to X^\prime$ a $Y$-morphism,
+$x$ a point of~$X$, and $y$ its projection on~$Y$. For $g$ to
+be quasi-finite (\resp net) at~$x$, it is necessary and sufficient
+that $g\otimes_Y\kres(y)$ be so.
+\end{corollary}
+
+Indeed, the two algebras over~$k\big(g(x)\big)$ which one must
+examine to check that one indeed has a morphism quasi-finite
+\resp net at~$x$ are the same for~$g$ and $g\otimes_Y\kres(y)$.
+
+\begin{corollary}
+\label{I.5.9}
+With
+% original p. 9
+the notation of~\ref{I.5.8}, suppose that $X$ and~$X^\prime$
+are flat and of finite type over~$Y$. For $g$ to be flat
+(\resp \'etale) at~$x$, it is necessary and sufficient that
+$g\otimes_Y\kres(y)$ be so.
+\end{corollary}
+
+For ``flat'', the statement is included only as a reminder;
+it is one of the fundamental flatness criteria\footnote{\Cf
+IV~\SourceRef{IV.5.9}{5.9}.}. For \'etale, it follows from this,
+taking~\ref{I.5.8} into account.
+
+\section{Application to \'etale extensions of complete local rings}
+\label{I.6}
+
+This no.\ is a special case of results on formal preschemes
+which will have to appear in the multiplodoque. Nevertheless,
+one gets by here with less effort, \ie without the explicit
+local determination of \'etale morphisms in
+\No\ref{I.7} (using the Main Theorem). This is perhaps
+sufficient reason to keep the present no.\ (even in the
+multiplodoque) in this place.
+
+\begin{theorem}
+\label{I.6.1}
+Let $A$ be a complete local ring (noetherian, of course), with
+residue field~$k$. For every $A$-algebra~$B$, let
+$R(B)=B\otimes_A k$, regarded as a $k$-algebra; it therefore
+depends functorially on~$B$. Then $R$ defines an
+\emph{equivalence} of the category of $A$-algebras
+\emph{finite and \'etale over~$A$} with the category of
+\emph{separable algebras of finite rank} over~$k$.
+\end{theorem}
+
+First of all, the functor in question is fully faithful, as
+follows from the more general fact:
+
+\begin{corollary}
+\label{I.6.2}
+Let $B$, $B^\prime$ be two $A$-algebras finite over~$A$. If $B$
+is \'etale over~$A$, then the canonical map
+\[
+\Hom_{\textup{$A$-alg}}(B,B^\prime)\to
+\Hom_{\textup{$k$-alg}}\big(R(B),R(B^\prime)\big)
+\]
+is bijective.
+\end{corollary}
+
+One is reduced to the case where $A$ is artinian (by replacing
+$A$ by~$A/\goth{m}^n$), and then this is a special case
+of~\ref{I.5.5}.
+
+It remains to prove that for every finite separable $k$-algebra
+(why not say: \'etale, it is shorter) $L$, there exists a $B$
+\'etale over~$A$ such that $R(B)$ is isomorphic to~$L$. One may
+suppose that $L$ is a separable extension of~$k$; as such, it
+has a generator~$x$, \ie is isomorphic to an algebra $k[t]/Fk[t]$
+where $F\in k[t]$ is a monic polynomial. One lifts~$F$ to a
+monic polynomial $F_1$ in $A[t]$, and takes $B=A[t]/F_1A[t]$.
