@@ -1,0 +1,244 @@
+\begin{proposition}
+\label{II.4.9}
+Let $X$ be an $S$-prescheme, $Y$ a closed subprescheme
+of~$X$ defined by a coherent sheaf $\cal{J}$
+of ideals on~$X$, $x$ a point of~$X$, $g_i$ ($1 \leq i \leq n$)
+sections of~$\cal{O}_X$, defining an $S$-morphism
+\[
+g \colon X \to S[t_1,\dots,t_n] = X'
+\]
+finally let $p$ be an integer, $0 \leq p \leq n$. Suppose $X$ is
+\emph{smooth over~$S$ at $x$}. The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] There exists an open neighborhood $X_1$ of~$x$ in $X$ such that
+$g|X_1$ is \emph{\'etale} and $Y_1=Y \cap X_1$ (trace of~$Y$
+on~$X_1$) is the \emph{inverse image} of the closed subprescheme
+$Y'=S[t_{p+1},\dots,t_n]$
+of
+$X'=S[t_1,\dots,t_n]$ (\ie the $g_i$ ($1 \leq i \leq p$) generate
+$\cal{J}|X_1$):
+\[
+\xymatrix{ Y_1 \ar[d] \ar[r] & X_1 \ar[d]^{\hbox{\'etale}} \\
+Y'=S[t_{p+1},\dots, t_n] \ar[r] & X'=S[t_1,\dots,t_n]}
+\]
+\item[(ii)]
+% original p. 40
+$Y$ is \emph{smooth over~$S$ at $x$}, the $g_i$ ($1 \leq i \leq p$)
+define \emph{elements of} $\cal{J}_x$, the $d
+g_i(x)$ ($1 \leq i \leq n$) form a \emph{basis of}
+$\it{\Omega}^1_{X/S}(x)$ over~$\kres(x)$, the $dg'_i(x)$ ($p+1 \leq i \leq
+n$) form a \emph{basis of} $\it{\Omega}^1_{Y/S}(x)$ over~$\kres(x)$
+(where the $g'_i$ denote the restrictions of the $g_i$ to~$Y$;
+the differentials are taken with respect to~$S$).
+\item[(iii)] The $g_i$ ($1 \leq i \leq p$) define a
+\emph{system of generators} of~$\cal{J}_x$, and the
+$dg_i(x)$ ($1 \leq i \leq n$) form a \emph{basis of}
+$\it{\Omega}^1_{X/S}(x)$ over~$\kres(x)$.
+\item[(iv)] $Y$ is \emph{smooth over~$S$} at $x$, the $g_i$
+($1 \leq i \leq p$)
+form a \emph{minimal system of generators of}
+$\cal{J}_x$, the $dg'_i(x)$ ($p+1 \leq i \leq n$) form a
+\emph{basis of} $\it{\Omega}^1_{Y/S}(x)$ over~$\kres(x)$.
+\end{enumerate}
+
+Moreover, under these conditions, $\cal{J}/\cal{J}^2$ is a free Module
+on~$Y$ at $x$, admitting as \emph{basis at $x$} the classes of the
+$g_i$ ($1 \leq i \leq p$), \emph{and the canonical homomorphism}
+$\cal{J}/\cal{J}^2 \to \it{\Omega}^1_{X/S} \otimes \cal{O}_Y$ is
+\emph{universally injective at $x$}.
+\end{proposition}
+
+\begin{remarkstar}
+This implies that $p$ is well determined by the other
+conditions, either as the \emph{rank} of the free Module
+$\cal{J}/\cal{J}^2$ on~$Y$ at $x$, or again as the \emph{minimum
+number of generators} of~$\cal{J}_x$ on~$X$, or finally by the fact
+that the relative dimension of~$Y$ rel.\ $S$ at $x$ is $n-p$.
+\end{remarkstar}
+
+\subsubsection*{Proof}
+Suppose first that (i) is satisfied. Then by (I~\SourceRef{I.4.6}{4.6}
+(iii)) $Y_1$ is \'etale over~$Y'$, hence by definition it is
+smooth over~$S$ at $x$ (of relative dimension $n-p$), hence the same
+is true of~$Y$. It then follows from \eqref{II.4.8} that the $dg_i$
+($1 \leq i \leq n$) form a basis of~$\it{\Omega}^1_{X/S}$ at $x$,
+and that the $dg'_i$ ($p+1 \leq i \leq n$) a basis of
+$\it{\Omega}^1_{Y/S}$ at $x$, whence it follows by the exact
+sequence \eqref{eq:II.4.3} that the $g_i$ ($1 \leq i \leq p$) are
+linearly independent in $\cal{J}/\cal{J}^2$
+(regarded as a Module on~$Y$) at $x$; since the $g_i$ ($1
+\leq i \leq p$) generate $\cal{J}_x$, it follows that the $g_i \mod
+\cal{J}_x^2$ form a \emph{basis of} $\cal{J}/\cal{J}^2$ at
+$x$. This implies on the one hand that the $g_i$ ($1 \leq i \leq p$)
+form a \emph{minimal} system of generators of
+$\cal{J}_x$, on the other hand that the homomorphism $\cal{J}/\cal{J}^2 \to
+\it{\Omega}^1_{X/S} \otimes \cal{O}_Y$ of \eqref{eq:II.4.3} is
+universally injective at $x$ (for it maps a basis of a free Module at $x$
+onto a part of a basis of a free Module at $x$ --- N.B.\ these are~$Y$-Modules). This proves that (i) implies (ii),
+(iii), (iv), as well as the last assertions of
+proposition~\ref{II.4.9}.
+
+(iii) implies (i) by virtue of corollary~\ref{II.4.8}.
+
+(ii)
+% original p. 41
+implies (i). Indeed, the first hypothesis in (ii)
+means that (replacing if necessary $X$ by an open neighborhood of
+$x$ in $X$) $g$ induces a morphism $h\colon Y \to
+Y'$. By~\ref{II.4.8}, the other two hypotheses of (ii)
+mean that $g$ is \'etale at $x$, and $h$ \'etale at $x$. Let
+then $Y''$ be the inverse image of~$Y'$ by $g$. Thus $Y$ is a
+closed subprescheme of~$Y''$, which is \'etale over~$Y'$
+at $x$ by (I~\SourceRef{I.4.6}{4.6}~(iii)) since $g$ is \'etale at
+$x$. Hence the immersion morphism $Y \to Y''$ is itself
+\'etale (I~\SourceRef{I.4.8}{4.8}) hence an open immersion (I~\SourceRef{I.5.8}{5.8} or
+I~\SourceRef{I.5.2}{5.2}), hence replacing still $X$ by a suitable open
+neighborhood $X_1$ of~$x$, one obtains (i).
+
+What precedes establishes the equivalence of conditions
+(i), (ii), (iii), and the fact that they imply (iv), it remains to
+prove that (iv)$\To$(ii), which is immediate (taking into
+account that $\it{\Omega}^1_{X/S}$ is free on~$X$ at $x$) once
+one knows that the fact that $Y$ is smooth over~$S$ at $x$ implies that
+$\cal{J}/\cal{J}^2$ is free on~$Y$ at $x$, and the homomorphism
+$\cal{J}/\cal{J}^2 \to \it{\Omega}^1_{X/S}\otimes \cal{O}_Y$
+universally injective at $x$. This last point is included in the
+\begin{theorem}
+\label{II.4.10}
+Let $X$ be a smooth $S$-prescheme, $Y$ a
+closed subprescheme of~$X$ defined by a coherent sheaf
+$\cal{J}$ of ideals on~$X$, $x$ a point of~$X$. The
+following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] $Y$ is \emph{smooth over~$S$ at $x$}.
+\item[(ii)] There exists an open neighborhood $X_1$ of~$x$ in $X$ and an
+\emph{\'etale} $S$-morphism
+\[
+g\colon X_1 \to X'=S[t_1,\dots,t_n]
+\]
+such that $Y_1=Y \cap X_1$ (trace of~$Y$ on~$X_1$) is the
+subprescheme of~$X_1$ \emph{inverse image} by $g$ of the
+closed subprescheme $Y'=S[t_{p+1},\dots,t_n]$ of
+$X'=S[t_1,\dots,t_n]$, for a suitable $p$.
+\item[(iii)] There exist \emph{generators $g_i$ ($1 \leq i
+\leq p$) of~$\cal{J}_x$}, such that the $dg_i$ form part of a
+basis of~$\it{\Omega}^1_{X/S}$ at $x$ (or, what amounts to the same,
+such that the $dg_i(x)$ in $\it{\Omega}^1_{X/S}$ are
+linearly independent over~$\kres(x)$).
+\item[(iv)] The sheaf $\cal{J}/\cal{J}^2$ is free on~$Y$ at $x$,
+and the canonical homomorphism
+\[
+d\colon \cal{J}/\cal{J}^2 \to \it{\Omega}^1_{X/S}\otimes \cal{O}_Y
+\]
+is universally injective at~$x$; or again: the sequence
+of canonical homomorphisms
+\[
+0 \to \cal{J}/\cal{J}^2 \to \it{\Omega}^1_{X/S}\otimes \cal{O}_Y \to
+\it{\Omega}^1_{Y/S} \to 0
+\]
+is exact at $x$, and $\it{\Omega}^1_{Y/S}$ is locally free
+at~$x$.
+\end{enumerate}
+\end{theorem}
+
+\subsubsection*{Proof}
+% original p. 42
+One already knows that (ii) implies (i), (iii), (iv) by what
+precedes. Let us prove that (i)$\To$(ii) (which
+will at the same time complete the proof
+of~\ref{II.4.9}).
+By theorem~\ref{II.4.3}~(ii), the last two
+terms in the exact sequence \eqref{eq:II.4.3} are free Modules
+on~$Y$. Thus, since the images in
+$\it{\Omega}^1_{X/S}\otimes_{\cal{O}_X} \cal{O}_Y$ of the $dg$ ($g \in
+\cal{O}_X$) generate this module at $x$, hence their images in
+$\it{\Omega}^1_{Y/S}$ generate the latter at~$x$, one can find
+$g_i$ ($p+1 \leq i \leq n$) in $\cal{O}_X$ such that the $dg'_i$
+form a basis of~$\it{\Omega}^1_{Y/S}$, then (by virtue of
+the exactness of \eqref{eq:II.4.3}) complete the system of
+$dg_i$ ($p+1 \leq i \leq n$) to a basis of the middle term by
+elements of the form $dg_i$ ($1 \leq i \leq n$) where the
+$g_i$ ($1 \leq i \leq p$) \emph{are in $\cal{J}_x$.} The $g_i$
+come from sections of~$\cal{O}_X$ on a neighborhood of~$x$ in
+$X$, which one may suppose equal to $X$. One is then under the
+conditions of~\ref{II.4.8}~(ii), and one has established that this implies
+condition~\ref{II.4.8}~(i), whence~\ref{II.4.10}~(ii).
+
+The implication (iii)$\To$(ii) in~\ref{II.4.10} follows
+at once from the implication (iii)$\To$(i)
+in~\ref{II.4.8}. Hence
+(i), (ii), (iii)
+are equivalent, and
+imply (iv). Finally, it is trivial that (iv) implies (iii), taking
+into account that $g_i \in \cal{J}_x$ which form a basis of~$\cal{J}_x
+\mod \cal{J}_x^2$ generate $\cal{J}_x$ (Nakayama).
+
+Moreover, the preceding proof shows the following:
+\begin{corollary}
+\label{II.4.11}
+Let $X$ be an $S$-prescheme, $Y$ a closed subprescheme
+defined by a coherent sheaf $\cal{J}$
+of ideals on~$X$, $x$ a point of~$Y$. Suppose \emph{$X$ and $Y$
+are smooth over~$S$ at $x$}. Let $g_i$ be sections of~$\cal{J}$ ($1
+\leq i \leq p$). The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] The $g_i$ \emph{generate} $\cal{J}_x$ and the $dg_i(x)$
+are \emph{linearly independent} in
+$\it{\Omega}^1_{X/S}(x)$
+over~$\kres(x)$.
+\item[(ii)] The $g_i \mod \cal{J}^2$ form a basis of
+$\cal{J}/\cal{J}^2$ at $x$.
+\item[(iii)] The $g_i$ form a minimal system of
+generators of~$\cal{J}_x$.
+\item[(iv)] One can find other sections $g_i$ ($p+1 \leq i \leq
+n$) of~$\cal{O}_X$ on a neighborhood $X_1$ \emph{of} $X$,
+defining with the preceding ones an
+\emph{\'etale} morphism $X_1 \to X'=S[t_1,\dots,t_n]$ such that $Y_1=Y \cap
+X_1$ is the \emph{inverse image} by $g$ of the closed subprescheme
+$Y'=S[t_{p+1},\dots,t_n]$ of~$X'=S[t_{1},\dots,t_n]$.
+\end{enumerate}
+\end{corollary}
+
+% original p. 43
+In particular:
+
+\begin{corollary}
+\label{II.4.12}
+Let $X$ be an $S$-prescheme, $F$ a section of~$\cal{O}_X$,
+$Y$ the subprescheme of zeros of~$F$ (defined by
+the coherent Ideal $F\cdot\cal{O}_X$), $x$ a point of~$Y$.
+Suppose $X$ is simple over~$S$ at $x$. For $Y$ to be smooth over~$S$ at
+$x$, it is necessary and sufficient that either $F$ be zero in a neighborhood of
+$x$, or that $dF(x) \neq 0$ (where $dF(x)$ denotes the image of
+$dF$ in the vector space $\it{\Omega}^1_{X/S}(x)$ over~$\kres(x)$).
+\end{corollary}
+
+This is sufficient by virtue of~\ref{II.4.10} criterion~(iii). This is
+necessary, for since $\cal{J}$ is generated by one
+element, one must first have that $\cal{J}/\cal{J}^2$ at the point $x$
+be free of rank $\leq 1$. If this rank is $0$,
+\ie $\cal{J}/\cal{J}^2=0$ at $x$, it follows that $\cal{J}=0$ at $x$
+by Nakayama, \ie $F$ is zero in a neighborhood of~$x$. If this rank is
+$1$, then $F$ forms a minimal system of generators of
+$\cal{J}$ at $x$, and one concludes by \eqref{II.4.11}, equivalence of
+(i) and~(iii)).
+
+\begin{corollary}
+\label{II.4.13}
+Let $Y$ be an $S$-prescheme locally of finite type, $S'$ a
+\emph{flat} $S$-prescheme, $Y'=Y \times_S S'$, $x'$ a point
+of~$Y'$ and $x$ its canonical image in~$Y$. For $Y$ to be smooth
+over~$S$ at~$X$, it is necessary and sufficient that $Y'$ be smooth over~$S'$ at~$x'$. In particular, if $S'\to S$ is flat and surjective, $Y$ is
+smooth over~$S$
+if and only if $Y'$ is smooth over~$S'$.
+\end{corollary}
+
+Only sufficiency needs to be proved (necessity was
+seen in~\ref{II.1.3}~(ii)). One may suppose (replacing $Y$ by a suitable neighborhood of~$x$, $Y'$ by the inverse image
+of the latter) that $Y$ is affine of finite type over~$S$ affine, hence
+$Y$ is isomorphic to a closed subprescheme of a
+scheme $S[t_1,\dots,t_n]$. Consequently, $Y'$ is identified with a
+closed subprescheme of~$X'=X \times_S S'$. Since $X$ is
+smooth over~$S$, hence $X'$ smooth over~$S'$, one can apply the
+smoothness criteria~\ref{II.4.10}. Here, criterion (iv)
+gives the result at once.

@@ -1,0 +1,277 @@
+After these long terminological preliminaries, a little
+theorem:
+
+\begin{theorem}
+\label{II.4.15}
+Let $X$ be an $S$-prescheme locally of finite type, $Y$ a
+closed subprescheme of~$X$ defined by a coherent sheaf
+$\cal{J}$ of ideals on~$X$, $x$ a point of~$X$. One
+now assumes \emph{$Y$ is smooth over~$S$ at $x$} (and nothing on~$X$). Then the following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] $X$ is smooth over~$S$ at $x$
+\item[(ii)] The immersion $i\colon Y \to X$ is regular at
+$x$, \ie $\cal{J}_x$ is a regular ideal of~$\cal{O}_x$.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+\label{II.4.16}
+Suppose $Y$ is \emph{smooth} over~$S$. For $X$ to be smooth over~$S$
+in a neighborhood of~$Y$ (\ie at the points of~$Y$) it is necessary and sufficient
+that $Y$ be regularly immersed in $X$, \ie that
+the immersion $i \colon Y \to X$ be regular.
+\end{corollary}
+
+\subsubsection*{Proof}
+(i) implies (ii). One applies \ref{II.4.10} criterion~(ii), since
+$g\colon X_1 \to X$ is \emph{flat}, to show that the inverse image
+under $g$ of the subprescheme $Y'$ of~$X'$ is
+regularly immersed, one is reduced to proving that
+$Y'=S[t_{p+1},\dots, t_n]$ is regularly immersed in
+$S[t_1,\dots,t_n]$, which is trivial (the $t_i$ ($1 \leq i \leq
+p$) form a regular system of generators of
+the Ideal defining $Y'$ in $X'$).
+
+(ii) implies (i). Let $g_i$ ($1 \leq i \leq p$) be a regular
+system of generators of~$\cal{J}_x$ and let $g_i$
+($p+1 \leq i \leq n$) be elements of~$\cal{O}_{X,x}$ such that
+their images $g'_i$ in $\cal{O}_{Y,x}$ define an
+\emph{\'etale} morphism
+\[
+Y_1 \to Y'=S[t_{p+1},\dots, t_n]
+\]
+of a neighborhoods $Y_1$ of~$Y$ in $Y'$. The $g_i$ ($1 \leq i \leq n$)
+come from sections (of the same name) of~$\cal{O}_X$ on a
+neighborhood $X_1$ of~$x$, and one may suppose $X_1=X$, $Y_1=Y$. One
+thus obtains a morphism
+\[
+g\colon X \to X'=S[t_1,\dots,t_n]
+\]
+and everything reduces to showing that this morphism is \emph{\'etale}
+at~$x$. Taking $X_1$ small enough,
+% original p. 48
+one may suppose that the $g_i$ ($1 \leq i \leq p$) form a
+regular system of generators of~$\cal{J}$ on all of
+$X$. In particular, they generate $\cal{J}$, hence the
+subprescheme $Y$ of~$X$ is identified with the inverse image
+under $g$ of the subprescheme $Y'$ of~$X'$. Let $x'=g(x)$, then
+the fiber of~$X' \to X$ at $x'$ is
+identical to the fiber of~$Y \to Y'$ at $x$, hence is \'etale over~$\kres(x')$, hence $g$ is \emph{unramified} at $x$, it remains to
+prove that $g$ is \emph{flat} at $x$. Now the associated graded
+of $\cal{O}_{X',x'}$ filtered by the powers of
+$\cal{J}'_{x}$ is \emph{free} over~$\cal{O}_{Y',x'}$ in all
+degrees, on the other hand the associated graded of
+$\cal{O}_{X,x}$ filtered by the powers of
+$\cal{J}_x=\cal{J}'_x\cal{O}_{X,x}$ is isomorphic (under
+the canonical homomorphism) to the tensor product of the former
+with $\cal{O}_{Y,x}$ (since both rings are polynomial
+rings in $n-p$ indeterminates, with ring of
+constants $\cal{O}_{Y',x'}$, \resp $\cal{O}_{Y,x}$), finally over~$\cal{O}_{X',x'}/\cal{J}'_{x'}= \cal{O}_{Y',x'}$
+$\cal{O}_{X,x}/\cal{J}_x =\cal{O}_{Y,x}$ is flat.
+
+By a general flatness criterion (valid for
+a local homomorphism of noetherian local rings $A' \to A$,
+$A'$ being equipped with an ideal $J' \neq A'$ such that the associated
+graded is free over~$A'/J'$ in every dimension) it follows that
+$X$ is flat over~$X'$ at $x$, qed.
+
+\begin{corollary}
+\label{II.4.17}
+Let $X$ be a prescheme locally of finite type over~$Y$, $i$
+a section of~$X$ over~$Y$, $y$ a point of~$Y$, $x=i(y)$, $\cal{J}$
+the sheaf of ideals on~$X$ defined by the
+subprescheme $i(Y)$ (which we assume closed to
+simplify the statement, a condition satisfied if $X$ is a
+scheme).
+
+The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] $X$ is smooth over~$Y$ at $x$
+\item[(ii)] $i$ is a regular immersion at $y$
+\item[(iii)] The completed $\cal{O}_y$-algebra of
+$\cal{O}_x$ for the topology defined by the powers of
+$\cal{J}_x$ is isomorphic to a formal power
+series algebra $\cal{O}_y[[ t_1,\dots,t_n]]$.
+\item[(iii~bis)] There exists an open neighborhood $U$ of~$y$ such that
+the sheaf of algebras\linebreak
+$\varprojlim i^*(\cal{O}_X/\cal{J}^{n+1})$
+over~$\cal{O}_Y$ is isomorphic to a sheaf of the form
+$\cal{O}_Y[[ t_1,\dots, t_n]]$ over~$U$.
+\item[(iv)] There exists an open neighborhood $U$ of~$y$, and an
+open neighborhood $V$ of~$x$, and finally a $Y$-morphism $g \colon V \to
+U[t_1,\dots, t_n]$, such that $g$ is \'etale, that
+$i$ induces a section of~$V$ over~$U$, transformed by $g$ into the
+zero section of~$U[t_1,\dots, t_n]$ over~$U$.
+\end{enumerate}
+\end{corollary}
+
+The equivalence
+% original p. 49
+of (i) and (ii) is a special case of
+theorem~\ref{II.4.15}, setting $Y=S$, the equivalence of
+(ii) and (iii) (and morally of (ii) and (iii~bis)) has been
+pointed out with the ``recalls''. as for the equivalence of (i)
+and (iv), it is easily deduced from
+theorem~\ref{II.4.10} (equivalence of conditions (i) and
+(ii) of the latter).
+
+\begin{corollary}
+\label{II.4.18}
+Let $X$ be a prescheme smooth over~$S$. Then the
+diagonal morphism
+\[
+\Delta_{X/S}\colon X\to X\times_S X
+\]
+is a
+\emph{regular immersion},
+or as one also says, $X$ is ``\emph{differentially
+smooth}'' over~$S$.
+\end{corollary}
+
+Indeed, this is a special case of corollary~\ref{II.4.16}, since
+$X$ and $X\times_S X$ are both smooth over~$S$.
+
+% The corrected source repeats 4.18. Preserve it with a distinct PDF anchor.
+\setcounter{theorem}{17}
+\begingroup
+\renewcommand{\theHtheorem}{\theHsection.\arabic{theorem}.bis}
+\begin{remarks}
+\label{rem:II.4.18}
+Let us recall (I~\SourceRef{I.1}{1}) that if $X$ is a prescheme over
+$S$, one introduces the quasi-coherent sheaves
+of algebras
+$\cal{P}_{X/S}^n=\cal{O}_{X\times_S X}/\cal{I}_X^{n+1}$ on~$X$,
+(where $\cal{I}_X$ denotes the sheaf
+of ideals
+which defines the diagonal in $X\times_S X$), considered as
+a sheaf of~$\cal{O}_X$-algebras thanks to the first
+projection $\pr_1\colon X\times_S X\to X$. The
+$\cal{P}_{X/S}^n$ form a projective system of Algebras over~$X$, whose projective limit is denoted $\cal{P}_{X/S}^{\infty}$
+and is none other than the structure sheaf of the formal completion
+of~$X\times_S X$ along the diagonal (now assuming $X$ is
+locally of finite type over~$S$, hence the $\cal{P}_{X/S}^n$
+are coherent). To say that $X$ is differentially smooth over~$S$
+(\ie that the diagonal morphism $\Delta_{X/S}$ is a regular
+immersion) also means that $\cal{P}_{X/S}^{\infty}$ is
+regular, as a sheaf of algebras augmented to
+$\cal{O}_X$, \ie that $\it{\Omega}_{X/S}^1$ is locally free and
+the canonical surjective homomorphism
+\[
+S_{\cal{O}_X}(\it{\Omega}_{X/S}^1)\to
+\mathrm{gr}_*(\cal{P}_{X/S}^{\infty})
+\]
+is an isomorphism, or finally that every point of~$X$
+has an open neighborhood on which the sheaf of
+augmented algebras $\cal{P}_{X/S}^{\infty}$ is isomorphic to a
+sheaf $\cal{O}_X[[t_1,\dots,t_n]]$.
+
+Let $s$ be a section of~$X$ over~$S$, $\cal{J}$ the sheaf
+of ideals on~$X$ which it defines (assuming
+% original p. 50
+for simplicity that $s(S)$ is closed), one then has
+canonical isomorphisms of augmented~$\cal{O}_X$-algebras:
+\begin{equation}
+\label{eq:II.4.4}
+s^*(\cal{P}_{X/S}^n)=\cal{O}_X/\cal{J}^{n+1}\quoi,\quad
+s^*(\cal{P}_{X/S}^{\infty})= \varprojlim_{n}
+\cal{O}_X/\cal{J}^{n+1}
+\end{equation}
+These isomorphisms are functorial in an evident sense under
+change of base, and (taking this fact into account) give back a
+characterization of the sheaves of algebras $\cal{P}_{X/S}^n$ over~$S$. If for example $S=\Spec(k)$, $k$ a field, then the datum
+of a section~$s$ of~$X$ over~$S$ is equivalent to the datum of a
+point $x$ of~$X$ rational over~$k$, and the
+preceding formulas mean that one has an isomorphism of
+$k$-algebras
+\begin{equation}
+\label{eq:II.4.5}
+\cal{P}_{X/S}^n(x)=\cal{O}_x/\goth{m}_x^{n+1}
+\end{equation}
+which justifies the name: ``\emph{sheaf of principal parts
+of order~$n$ on~$X$ rel.\ to~$S$}''
+given to~$\cal{P}_{X/S}^n$. One sees moreover from
+\eqref{eq:II.4.4} that \emph{if $X$ is differentially smooth
+over~$S$ at every point of~$s(S)$, then $X$ is smooth over~$S$ at every
+point of~$s(S)$}, (corollary~\ref{II.4.17}) \emph{the converse
+being equally true} (corollary~\ref{II.4.18}). Taking
+\ref{II.4.13} into account, one easily concludes that if $X$ is an
+$S$-prescheme locally of finite type, \emph{$X$ is smooth over~$S$ if and only if it is flat over~$S$ and differentially
+smooth over~$S$.} (N.B. the flatness hypothesis is essential,
+as one sees by taking for $X$ a closed subprescheme
+of~$S$).
+
+Let us note further, by way of recall, that one obtains a
+\emph{second algebra structure} on~$\cal{P}_{X/S}^n$
+thanks to the projection $\pr_2\colon X\times_S X\to X$,
+which is moreover deduced from the former by means of
+the \emph{canonical involution} of the sheaf of rings $\cal{P}_{X/S}^n$,
+induced by the symmetry automorphism of~$X\times_S X$. One denotes
+by $d_{X/S}^n$
+or simply $d^n$, the homomorphism of sheaves of rings
+\begin{equation}
+\label{eq:II.4.6}
+d_{X/S}^n\colon \cal{O}_X\to\cal{P}_{X/S}^n
+\end{equation}
+which corresponds to this second
+Algebra structure. Taking the isomorphism~\eqref{eq:II.4.4} into account, this
+homomorphism transforms a section $f$ of~$\cal{O}_X$ into a section
+$d^n(f)$ of~$\cal{P}_{X/S}^n$ whose inverse image under a section $s$
+of~$X$ over~$S$ is identified with the canonical image of~$f$ in
+$\Gamma(X,\cal{O}_X/\cal{J}^{n+1})$. This justifies the name
+``\emph{system of principal parts of order $n$ of~$f$}''
+given to $d^nf$, notably in the case where $S=\Spec(k)$,
+% original p. 51
+envisaged in formula~\eqref{eq:II.4.5}.
+
+To finish, let us note that the homomorphism \eqref{eq:II.4.6} may be
+considered as the \emph{differential operator
+of order}~$\leq n$\footnote{For everything concerning the present
+paragraph, one may consult EGA~IV~16.8 to 16.12.}
+(relative to the prescheme of constants $S$)
+\emph{universal}
+on~$\cal{O}_X$, by agreeing to call differential operator
+of order~$\leq n$
+from~$\cal{O}_X$ into a Module $F$, a homomorphism of sheaves $D$
+which factors as
+\[
+D\colon \cal{O}_X\lto{d^n} \cal{P}_{X/S}^n\lto{u} F
+\]
+where $u$ is a homomorphism \emph{of~$\cal{O}_X$-Modules},
+moreover uniquely determined by~$D$. This definition
+agrees with the intuitive recursive definition ($D$ is a
+differential operator of order $\leq n$ if for every section
+$g$ of~$\cal{O}_X$ on an open set $U$ of~$X$, $f\mto D(fg)-D(f)$ is
+a differential operator of order $\leq n-1$ on~$U$). It
+follows that \emph{if $X$ is differentially smooth over~$S$, the
+sheaf of rings of differential operators of all orders
+has the simple well-known structure} in differential calculus on
+differentiable manifolds, and in particular admits
+locally a basis of~$\cal{O}_X$-Module
+formed of the \emph{divided powers} in commuting operators
+$\delta/\delta x_i$ $(1\leq i\leq n)$. If~$S$ is a sheaf of
+$\QQ$-algebras ($\QQ=$ field of rationals) it suffices to take
+the ordinary polynomials in the $\delta/\delta x_i$. In this case
+moreover, and quite exceptionally, for $X$ to be
+differentially smooth over~$S$, it already suffices that
+$\it{\Omega}_{X/S}^1$ be locally free.
+\end{remarks}
+\endgroup
+
+\begin{remark}
+\label{II.4.19}
+The terminology ``regular immersion'', ``regular
+ideal'', etc.\ introduced in this no.\ has met with
+a rather lively and general opposition (Chevalley, Serre). One has
+proposed ``Cohen--Macaulay ideal'' or ``Macaulay
+ideal'' or ``Macaulayan ideal'', which would morally also oblige
+one to adopt ``Cohen--Macaulay immersion'' or ``Macaulay
+immersion''. This terminology however conflicts with another
+already used in future drafts of the
+multiplodoque, where a morphism (of finite type) is said to be
+``Cohen--Macaulay'' at a point if it is flat at that point, and if the
+fiber passing through that point has there a local ring which is a
+Cohen--Macaulay ring. Until a satisfactory solution is found,
+we shall keep under all reservations the terminology introduced
+in this no.\footnote{It is the one adopted in
+EGA~$\mathrm{0}_\mathrm{IV}$~15.1.7.}
+\end{remark}

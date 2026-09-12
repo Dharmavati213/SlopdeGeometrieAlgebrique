@@ -1,0 +1,130 @@
+\documentclass[11pt,a4paper,oneside]{amsbook}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[american]{babel}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[all,cmtip]{xy}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xspace}
+\usepackage{geometry}
+\geometry{margin=1.1in}
+\usepackage[hidelinks]{hyperref}
+
+% SGA notation used in the translated body fragments.
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\trace}{tr}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\prof}{prof}
+\DeclareMathOperator{\coprof}{coprof}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\kres}{\mathit{k}}
+\newcommand{\isomto}{\overset{\sim}{\longrightarrow}}
+\newcommand{\isomfrom}{\overset{\sim}{\longleftarrow}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\PP}{\mathbf{P}}
+\let\cal\mathcal
+\let\goth\mathfrak
+\let\it\mathit
+\def\to{\mathchoice{\longrightarrow}{\rightarrow}{\rightarrow}{\rightarrow}}
+\def\from{\mathchoice{\longleftarrow}{\leftarrow}{\leftarrow}{\leftarrow}}
+\def\mto{\mathchoice{\longmapsto}{\mapsto}{\mapsto}{\mapsto}}
+\def\To{\mathchoice{\Longrightarrow}{\Rightarrow}{\Rightarrow}{\Rightarrow}}
+\def\lto#1{\mathchoice{\xrightarrow{\scriptstyle~#1~}}{\stackrel{#1}{\longrightarrow}}{}{}}
+\def\tbigwedge{\mathop{\textstyle\bigwedge}\limits}
+\def\cf{{cf.}\kern.3em}
+\def\Cf{{Cf.}\kern.3em}
+\def\ie{{i.e.}\kern.3em}
+\def\resp{resp.\xspace}
+\def\ptbl{.\kern.2em }
+\newcommand{\No}{no.~}
+\newcommand{\no}{no.~}
+\def\quoi{}
+\let\rd=d
+\newcommand{\red}{\mathrm{red}}
+\def\pr{\mathrm{pr}}
+
+% References outside this exposé retain their source keys and
+% printed numbers. They become ordinary references when a label is added.
+\makeatletter
+\newcommand{\SourceRef}[2]{\@ifundefined{r@#1}{#2}{\ref{#1}}}
+\makeatother
+
+\addto\captionsamerican{\renewcommand{\chaptername}{Expos\'e}}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{corollaries}[theorem]{Corollaries}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem*{remarkstar}{Remark}
+\newtheorem*{remarksstar}{Remarks}
+\newtheorem*{scholium}{Scholium}
+\newenvironment{namedstatement}[1]
+  {\par\addvspace{.5\baselineskip}\noindent\textsc{#1.}\ \itshape\ignorespaces}
+  {\par\addvspace{.5\baselineskip}}
+\numberwithin{equation}{section}
+
+\title[SGA~1, Expos\'e II (English draft)]{Smooth morphisms: generalities, differential properties\\
+{\normalsize SGA~1, Expos\'e II\\English draft}}
+\author{A.\ Grothendieck}
+\date{}
+\hypersetup{
+  pdftitle={SGA 1, Expose II: Smooth morphisms (English draft)},
+  pdfauthor={A. Grothendieck},
+  pdfsubject={Unofficial English translation of SGA 1, Expose II}
+}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\chapter*{About this draft}
+This is an unofficial English translation of Expos\'e~II,
+``Morphismes lisses: g\'en\'eralit\'es, propri\'et\'es diff\'erentielles'',
+from SGA~1. The source volume is
+A.\ Grothendieck and M.\ Raynaud,
+\textit{Rev\^etements \'etales et groupe fondamental} (SGA~1),
+S\'eminaire de g\'eom\'etrie alg\'ebrique du Bois Marie, 1960--61.
+It follows the slightly corrected SMF recomposition,
+\href{https://arxiv.org/abs/math/0206203v2}{arXiv:math/0206203v2}.
+
+This draft contains the opening convention, all five sections,
+and the closing errata, including proofs and footnotes.
+Statement numbering and mathematical notation follow the source,
+including its two statements numbered~1.1 (a definition and a
+proposition) and its two statements numbered~4.18 (a corollary
+and a block of remarks).
+References to material outside this draft retain their original
+numbers. Apparent mathematical misprints in the source have been
+retained; they are recorded in the accompanying README, separately
+from the translated text. Scholarly proofreading remains outstanding.
+
+The translator's contribution is licensed under
+\href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}.
+The French original remains copyright of its authors and publishers.
+
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{1}
+\input{en-01-03.tex}
+\input{en-04-08.tex}
+\input{en-04-09-13.tex}
+\input{en-04-14.tex}
+\input{en-04-15-19.tex}
+\input{en-05.tex}
+\end{document}

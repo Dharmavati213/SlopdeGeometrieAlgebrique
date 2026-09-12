@@ -1,0 +1,361 @@
+\chapter{Smooth morphisms: generalities, differential properties}
+\label{II}
+
+% original p. 29
+Cross-references to Expos\'e~\SourceRef{I}{I} are indicated by~I. One
+recalls that rings are noetherian, and preschemes locally noetherian.
+
+\section{Generalities}
+\label{II.1}
+
+Let $Y$ be a prescheme, let $t_1,\dots,t_n$ be
+indeterminates, one sets
+\begin{equation}
+\label{eq:II.1.1}
+Y[t_1,\dots,t_n]=Y\otimes_\ZZ \ZZ[t_1,\dots,t_n]\quoi.
+\end{equation}
+Thus $Y[t_1,\dots,t_n]$ is a $Y$-scheme, affine over~$Y$,
+defined by the quasi-coherent sheaf of algebras
+$\cal{O}_Y[t_1,\dots,t_n]$. The datum of a section of this
+prescheme over~$Y$ is therefore equivalent to the
+datum of~$n$ sections of~$\cal{O}_Y$ (corresponding to the images
+of the~$t_i$ under the corresponding homomorphism). If $Y'$ is
+over~$Y$, one has
+\begin{equation}
+\label{eq:II.1.2}
+Y[t_1,\dots,t_n]\times_Y Y'=Y'[t_1,\dots,t_n]\quoi,
+\end{equation}
+(which implies that the datum of a $Y$-morphism from~$Y'$
+to $Y[t_1,\dots,t_n]$ is equivalent to the datum of~$n$
+sections of~$\cal{O}_{Y'}$), on the other hand one has
+\begin{equation}
+\label{eq:II.1.3}
+\big(Y[t_1,\dots,t_n]\big)[t_{n+1},\dots,t_m]=Y[t_1,\dots,t_m]\quoi,
+\end{equation}
+by virtue of the analogous formula for polynomial rings
+over~$\ZZ$. The formula~\eqref{eq:II.1.2} implies that
+$Y[t_1,\dots,t_n]$ varies functorially with~$Y$.
+
+$Y[t_1,\dots,t_n]$ is of finite type and flat over~$Y$.
+
+\begin{definition}
+\label{II.1.1}
+Let $f\colon X \to Y$ be a morphism, making~$X$ into a
+$Y$-prescheme. One says that $f$ is
+\emph{smooth}\footnote{Old terminology: $f$ is \emph{simple}
+at~$x$, or $x$ is a \emph{simple} point for~$f$. This
+terminology led to confusion in various contexts
+(simple algebras, simple groups) and had to be
+abandoned.}
+at $x \in X$, or that $X$ is \emph{smooth over~$Y$ at~$x$}, if there exists
+an integer $n \geq 0$, an open neighborhood $U$ of~$x$, and an
+\'etale $Y$-morphism from~$U$ to $Y[t_1,\dots,t_n]$. One says
+that~$f$
+(\resp $X$)
+is \emph{smooth} if it is smooth at every point of~$X$. An
+algebra~$B$ over a ring~$A$ is said to be smooth at a prime
+ideal $\goth{p}$ of~$B$, if $\Spec(B)$ is smooth over~$\Spec(A)$
+at
+the point~$\goth{p}$;
+% original p. 30
+$B$ is said to be smooth over~$A$ if it is smooth over~$A$ at every prime
+ideal~$\goth{p}$ of~$B$. Finally, a local homomorphism $A \to B$
+of local rings is said to be smooth (or $B$ is said to be smooth over~$A$)\footnote{It is then better to say, as in EGA IV 18.6.1, that $B$
+is ``\emph{essentially smooth}'' over~$A$.}
+if $B$ is a localization of an algebra of finite type $B_1$ smooth
+over~$A$.
+\end{definition}
+
+One notes that the notion of smoothness of~$X$ over~$Y$ is local on~$X$
+and on~$Y$; if $X$ is smooth over~$Y$, it is locally of finite type
+over~$Y$.
+
+% The corrected source repeats 1.1. Preserve it with a distinct PDF anchor.
+\setcounter{theorem}{0}
+\begingroup
+\renewcommand{\theHtheorem}{\theHsection.\arabic{theorem}.bis}
+\begin{proposition}
+\label{prop:II.1.1}
+The set of points $x$ of~$X$ at which $f$ is smooth is open.
+\end{proposition}
+\endgroup
+
+This is trivial from the definition.
+
+\begin{corollary}
+\label{II.1.2}
+If $B$ is smooth over~$A$ at~$\goth{p}$, then it is smooth over~$A$
+at~$\goth{q}$ for every prime ideal~$\goth{q}$ of~$B$ contained
+in~$\goth{p}$.
+\end{corollary}
+
+\ref{prop:II.1.1} also implies that the last two
+definitions~\ref{II.1.1} coincide in their common
+domain of existence.
+
+\begin{proposition}
+\label{II.1.3}
+\textup{(i)}~An \'etale morphism, in particular an open
+immersion, an identity morphism, is smooth. \textup{(ii)}~An extension
+of the base in a smooth morphism gives a smooth
+morphism. \textup{(iii)}~The composite of two smooth morphisms is
+smooth.
+\end{proposition}
+
+(i)~is trivial from the definition, more precisely one has:
+
+\begin{corollary}
+\label{II.1.4}
+\'etale $=$ quasi-finite $+$ smooth.
+\end{corollary}
+
+(ii)~follows at once from the analogous fact for
+\'etale morphisms (I~\SourceRef{I.4.6}{4.6}) and for the projections $Y[t_1,\dots,t_n]
+\to Y$ (\cf \eqref{eq:II.1.2}). For (iii), this follows
+formally from the fact that it is true separately for
+``\'etale'' (I~\SourceRef{I.4.6}{4.6}) and for projections of the type
+$Y[t_1,\dots,t_n]\to Y$
+(\cf \eqref{eq:II.1.3}), and from the two facts cited for~(ii):
+Suppose $Y$ is smooth over~$Z$ and $X$ is smooth over~$Y$, let us prove that $X$ is
+smooth over~$Z$; one may suppose $Y$ \'etale over~$Z[t_1,\dots,t_n]$
+and $X$ \'etale over~$Y[s_1,\dots,s_m]$, the first
+hypothesis therefore implies that $Y[s_1,\dots,s_m]$ is \'etale over~$Z[t_1,\dots,t_n][s_1,\dots,s_m] = Z[t_1,\dots,s_m]$, hence $X$ is
+\'etale over~$Z[t_1,\dots,s_m]$, qed.
+
+\begin{remark}
+\label{II.1.5}
+The integer $n$ appearing in def\ptbl \ref{II.1.1} is well
+determined, for one sees
+% original p. 31
+at once that it is the dimension of the local ring of~$x$ in its
+fiber $f^{-1}\big(f(x)\big)$. One calls it the ``relative dimension''
+of~$X$ over~$Y$. It behaves additively for the composition of
+morphisms.
+\end{remark}
+
+\section{Some criteria of smoothness of a morphism}
+\label{II.2}
+
+\begin{theorem}
+\label{II.2.1}
+Let $f\colon X\to Y$ be a morphism locally of finite type, let $x\in
+X$ and $y=f(x)$. For $f$ to be smooth at $x$, it is necessary and sufficient
+that \textup{(a)} $f$ be flat at $x$, and \textup{(b)} $f^{-1}(y)$ be smooth over~$\kres(y)$
+at $x$.
+\end{theorem}
+
+The composite of two flat morphisms being flat, and
+$Y[t_{1},\dots,t_{n}]\to Y$ being a flat morphism, one sees that
+smooth implies flat; taking~\ref{II.1.3}~(ii) into account this proves
+necessity. Suppose (a) and (b) are satisfied, let $V$ be
+an affine neighborhood of~$y$ with ring~$A$, $U$ an affine neighborhood of
+$x$ over~$V$, with ring $B$. Taking $U$ small enough, one may
+suppose by (b) that there exists a $\kres(y)$-morphism \emph{\'etale}
+\[
+g\colon U|f^{-1}(y)\to\Spec k[t_{1},\dots,t_{n}]\quad (k=\kres(y))
+\]
+defined by $n$ sections $g_{i}$ of the structure sheaf of
+$U|f^{-1}(y)$. One easily sees that one may suppose that the
+$g_{i}$ (which a priori are elements of
+$B\otimes_{A}k=BS^{-1}$, where $S=A-\goth{p}$, $\goth{p}$ the prime
+ideal of~$A$ corresponding to $y$) come from sections of
+the structure sheaf of
+$U$,
+hence that $g$ is induced by a morphism,
+still denoted~$g$
+\[
+g\colon U\to Y[t_{1},\dots,t_{n}]
+\]
+(up to multiplying the $g_{i}$ by one and the same
+nonzero element of~$k$). Now
+$U$
+is flat over~$Y$ by (a), the same is true of
+$Y[t_{1},\dots,t_{n}]$, on the other hand $g$ induces an
+\'etale morphism between the fibers over~$y$, hence $g$ is \'etale at
+$x$ by~(I~\SourceRef{I.5.8}{5.8}), qed.
+
+\begin{corollary}
+\label{II.2.2}
+Let $S$ be a prescheme, $f\colon X\to Y$ an $S$-morphism of
+finite type, $Y$ being of finite type and flat over~$S$, $x\in X$, $s$
+the projection of~$x$ on~$S$. For $f$ to be smooth at $x$, it is necessary
+and sufficient that $X$ be flat (or again: smooth) over~$S$ at $x$, and
+that the morphism $f_{s}\colon X_{s}\to Y_{s}$ induced on the fibers of
+$s$ be smooth at $x$.
+\end{corollary}
+
+Only sufficiency requires a proof, and follows from
+the criterion~\ref{II.2.1}, together with the
+flatness criterion~(I~\SourceRef{I.5.9}{5.9}).
+
+To
+% original p. 32
+state the following result, ``recall'' that a morphism
+$f\colon X\to Y$ locally of finite type is said to be
+\emph{equidimensional}
+at the point $x\in X$ if (setting $y=f(x)$) one can find an open
+neighborhood $U$ of~$x$, every component of which dominates a component of~$Y$
+such that, for every $y'\in Y$, the irreducible components of
+$f^{-1}(y')\cap U$ all have one and the same dimension
+independent of~$y'$. It is enough, moreover, in this condition to
+take for $y'$ the generic points of the irreducible
+components of~$Y$ passing through $y$, \emph{and} the point $y$. If
+for example $X$ and $Y$ are integral and $f$ is dominant, the condition
+means that the components of the $f^{-1}(y)$ passing through $x$ have ``the
+right'' dimension, \ie the dimension of the generic fiber
+(recall that they are always $\ge$ the dimension of the
+generic fiber). If $f$ is equidimensional at $x$, the
+dimension of its fiber at $x$ being $n$, and if $g\colon U\to
+Y'=Y[t_{1},\dots,t_{n}]$ is a $Y$-morphism of a neighborhood~$U$ of
+$x$, inducing a morphism on the fibers of~$y$ which is quasi-finite
+at $x$ (or again, which amounts to the same, if $g$ is quasi-finite
+at~$x$), then one shows that every irreducible component of~$U$
+passing through $x$ dominates an irreducible component of~$Y'$. Moreover by virtue of the ``normalization lemma'', such a $g$
+always exists (and conversely, if there exists a quasi-finite $Y$-morphism
+$g$ of an open neighborhood $U$ of~$x$ into a $Y$-scheme
+of the form $Y'=Y[t_{1},\dots,t_{n}]$, such that every component of~$U$ passing through $x$ dominates a component of~$Y'$, then $f$ is
+equidimensional at~$x$). This being so:
+
+\begin{proposition}
+\label{II.2.3}
+Let $f\colon X\to Y$ be a morphism locally of finite type, $x$ a
+point of~$X$, $y=f(x)$, one assumes $\cal{O}_{y}$ normal. For $f$
+to be smooth at $x$, it is necessary and sufficient that $f$ be
+equidimensional at $x$, and that $f^{-1}(y)$ be smooth over~$\kres(y)$
+at $x$.
+\end{proposition}
+
+One sees at once from the definition that a smooth morphism is
+equidimensional (N.B. a flat morphism of finite type is not
+necessarily equidimensional at $x$, even if its fiber
+at $x$ is irreducible). Let us prove the converse. Since
+$f^{-1}(y)$ is smooth over~$\kres(y)$ at $x$, one may suppose (replacing $X$ if need be by a suitable neighborhood of~$x$) that there exists
+a $Y$-morphism
+\[
+g\colon X\to Y[t_{1},\dots,t_{n}]=Y'
+\]
+inducing an \'etale morphism on the fibers of~$y$, and a fortiori
+quasi-finite at $x$. Hence
+% original p. 33
+$g$ is unramified, and ($f$ being equidimensional at
+$x$) the irreducible components of~$X$ passing through $x$ each dominate
+a component of~$Y'$, a fortiori the homomorphism
+$\cal{O}_{y'}\to\cal{O}_{x}$ deduced from~$g$ (where $y'=g(x)$) is
+\emph{injective}. This homomorphism is moreover unramified, and
+$\cal{O}_{y'}$ is normal since it is a localization of the ring
+$\cal{O}_{y}[t_{1},\dots,t_{n}]$, which is normal since
+$\cal{O}_{y}$ is so. Hence the homomorphism $\cal{O}_{y'}\to\cal{O}_{x}$
+is \'etale (I~\SourceRef{I.9.5}{9.5}~(ii)).
+
+\begin{remarks}
+\label{II.2.4}
+The preceding statement still holds upon replacing
+the hypothesis that $\cal{O}_{y}$ is normal by the weaker
+hypothesis that $Y$ is \emph{geometrically unibranch} at $y$,
+(\cf I~\SourceRef{I.11}{11}) --- since (I~\SourceRef{I.9.5}{9.5}) holds under this
+hypothesis. Let us take this opportunity to note at the same time
+that if the residue field of a local integral domain $A$ is
+algebraically closed, then analytically integral
+(\ie $\widehat{A}$ is an integral domain) implies geometrically
+unibranch, the converse being moreover true in any
+category of ``good rings'', more precisely in a
+category of rings stable under the usual operations, and
+in which the completion of a normal local ring is normal
+(a condition fulfilled, by virtue of the ``analytic normality
+theorem'' of Zariski, in the category of affine
+algebras and their localizations)\footnote{\Cf EGA IV~7.8.}.
+
+``Recall'' finally in the present context the following result,
+due to Hironaka\footnote{\Cf EGA IV 5.12.10.} which sometimes allows
+one to ensure that $f^{-1}(y)$ is a reduced scheme, \ie that
+it is also what many algebraic geometers
+would abusively regard as the fiber (without multiplicity)
+of~$f$ above~$x$ (namely $f^{-1}(y)_{\red}$):
+\end{remarks}
+
+\begin{proposition}
+\label{II.2.5}
+Let $f\colon X\to Y$ be a dominant morphism of finite type of
+reduced preschemes, $y$ a point of~$Y$ such that
+$\cal{O}_{y}$ is regular. One assumes that all the components
+of~$f^{-1}(y)$ are of multiplicity~$1$
+(\cf the definition below), and that $f^{-1}(y)_{\red}$ is
+normal. Then $f^{-1}(y)$ is reduced hence normal, $X$ is normal
+at all the points of~$f^{-1}(y)$, finally $X$ is flat over~$Y$ at all
+the points of~$f^{-1}(y)$.
+\end{proposition}
+One
+% original p. 34
+says that a component $Z$ of~$f^{-1}(y)$ is of
+\emph{multiplicity}~$1$
+if, $x$ denoting the generic point of~$Z$, one has (i)
+$\dim\cal{O}_{x}=\dim\cal{O}_{y}$ (\ie $Z$ is not an ``excess
+component'', that is, is not ``of too large
+dimension''; (ii) the maximal ideal of~$\cal{O}_{x}$ is generated
+by the maximal ideal of~$\cal{O}_{y}$ (which a priori, by virtue of
+the choice of~$x$, generates an ideal of definition
+of~$\cal{O}_{x}$).
+
+Taking~\ref{II.2.3} or~\ref{II.2.1} into account one thus finds:
+
+\begin{corollary}
+\label{II.2.6}
+Let $f\colon X\to Y$ be a dominant morphism of finite type of
+reduced preschemes, $y$ a point of~$Y$ such that
+$\cal{O}_{y}$ is regular. For $f$ to be smooth at the points of
+$X$ above~$y$, it is necessary and sufficient that the components of
+$f^{-1}(y)$ be of multiplicities $1$, and that $f^{-1}(y)_{\red}$
+be smooth over~$\kres(y)$.
+\end{corollary}
+
+This situation was considered especially in the past
+when $Y$ was the spectrum of a discrete valuation ring
+$A$, and was commonly designated by phrases
+such as: ``if the reduction of~$X$ with respect to the given
+valuation is nice''... Moreover, $X$ then designated a
+closed subscheme (if one may say so) of a $\PP_{K}^{n}$ ($K$
+being the field of fractions of~$A$) and for want of an
+adequate language, the more intrinsic role of an object ``defined
+over~$A$'' (and not merely over~$K$) hardly appeared.
+
+\section{Permanence properties}
+\label{II.3}
+
+\begin{proposition}
+\label{II.3.1}
+Let $f\colon X\to Y$ be a morphism, let $x\in X$ and
+$y=f(x)$. Suppose $f$ is smooth at~$x$. For $\cal{O}_{x}$ to be
+reduced (\resp regular, \resp normal) it is necessary and sufficient that
+$\cal{O}_{y}$ be so.
+\end{proposition}
+
+This statement is indeed known when $X$ is of the form
+$Y[t_{1},\dots,t_{n}]$, and it is proved in (I, \no \SourceRef{I.9}{9})
+for an \'etale morphism; the general case is deduced from this
+at once thanks to definition~\ref{II.1.1}.
+
+We do not spell out here the other permanence
+properties, already resulting from flatness alone, or from
+the fact that $X$ is locally quasi-finite and flat over a
+$Y$-prescheme of the form $Y[t_{1},\dots,t_{n}]$ (or, as
+% original p. 35
+we shall say, that $X$ is
+Cohen--Macaulay
+over~$Y$). Let us only note that from this last fact
+it follows that
+\begin{equation}
+\label{eq:II.3.1}
+{\dim\cal{O}_{x}=\dim\cal{O}_{y}+n-d,\quad
+\prof\cal{O}_{x}=\prof\cal{O}_{y}+n-d},
+\end{equation}
+where $n$ is the dimension of the fiber of~$f$ at $x$, and $d$ the
+transcendence degree of~$\kres(x)$ over~$\kres(y)$, whence (setting
+$\coprof=\dim-\prof$)\footnote{For these formulas, \cf EGA~IV 6.1
+and~6.3.}
+\begin{equation}
+\label{eq:II.3.2}
+{\coprof\cal{O}_{x}=\coprof\cal{O}_{y}}.
+\end{equation}
+It follows for example that $\cal{O}_{x}$ is Cohen--Macaulay
+(\resp without embedded components) if and only if the same is
+true of~$\cal{O}_{y}$.

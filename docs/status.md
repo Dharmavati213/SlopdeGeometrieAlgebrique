@@ -13,7 +13,7 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 1. Keep the SGA 1 VI translation compiling (`make tex`).
 2. Formalize SGA 1 VI against mathlib, section by section, starting
    from `lean/SGA/SGA1/ExposeVI.lean`.
-3. Translate further exposés of SGA 1 (I–V, VIII–XIII), then formalize
+3. Translate further exposés of SGA 1 (III–V, VIII–XIII), then formalize
    each after its English text is in the tree.
 4. Only then: later SGA volumes, if the same tree still fits.
 
@@ -31,7 +31,7 @@ Exposé VII does not exist.
 | Exposé | Title | Translation | Lean |
 | --- | --- | --- | --- |
 | I | Étale morphisms | full draft in tree | compiling |
-| II | Smooth morphisms: generalities, differential properties | — | — |
+| II | Smooth morphisms: generalities, differential properties | full draft in tree | — |
 | III | Smooth morphisms: extension properties | — | — |
 | IV | Flat morphisms | — | — |
 | V | The fundamental group: generalities | — | — |
@@ -50,8 +50,9 @@ Exposé VII does not exist.
   - [x] Opening convention and §§1–6: English TeX and PDF in `translation/SGA1/ExposeI/`
   - [x] §§7–11: English TeX and PDF, including all proofs and footnotes
   - [ ] Scholarly proofreading; source issues recorded in [`ExposeI/README.md`](../translation/SGA1/ExposeI/README.md)
-- [ ] **II** — Smooth morphisms: generalities, differential properties
-  - Next translation: opening convention and II.1 (Generalities)
+- [x] **II** — Smooth morphisms: generalities, differential properties
+  - [x] Opening convention and §§1–5, including errata: English TeX and PDF in `translation/SGA1/ExposeII/`
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeII/README.md`](../translation/SGA1/ExposeII/README.md)
 - [ ] **III** — Smooth morphisms: extension properties
 - [ ] **IV** — Flat morphisms
 - [ ] **V** — The fundamental group: generalities
@@ -133,7 +134,8 @@ below and in [`formalization.md`](formalization.md).
   - [ ] I.11 examples; étale descent along a universal homeomorphism (IX.4.10)
 
 Other exposés of SGA 1: start only after the corresponding English text
-is ticked above.
+is ticked above. Exposé II now has English in the tree; Lean for II
+has not been started.
 
 ---
 
