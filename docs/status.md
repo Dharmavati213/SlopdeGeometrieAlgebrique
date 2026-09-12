@@ -16,8 +16,8 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 3. Translate further exposés of SGA 1 (IV–V, VIII–XIII), then formalize
    each after its English text is in the tree.
 4. SGA 2 English drafts proceed in parallel with remaining SGA 1
-   exposés; Lean for SGA 2 waits until the corresponding English is
-   ticked.
+   exposés; Lean for SGA 2 Exposé I compiles for I.1–I.2 (see below);
+   further SGA 2 exposés wait until their English is ticked.
 
 Related public translations (not this project):
 [thosgood/sga](https://github.com/thosgood/sga),
@@ -153,7 +153,7 @@ Exposé XIV is by Michèle Raynaud.
 | Exposé | Title | Translation | Lean |
 | --- | --- | --- | --- |
 | Intro | Grothendieck’s introduction | full draft in tree | — |
-| I | Global and local cohomological invariants relative to a closed subspace | full draft in tree | — |
+| I | Global and local cohomological invariants relative to a closed subspace | full draft in tree | compiling |
 | II | Application to quasi-coherent sheaves on preschemes | full draft in tree | — |
 | III | Cohomological invariants and depth | full draft in tree | — |
 | IV | Dualizing modules and functors | full draft in tree | — |
@@ -216,7 +216,34 @@ Exposé XIV is by Michèle Raynaud.
   - [x] English TeX and PDF in `translation/SGA2/ExposeXIV/`
   - [ ] Scholarly proofreading; source issues recorded in [`ExposeXIV/README.md`](../translation/SGA2/ExposeXIV/README.md)
 
-Lean for SGA 2 is not started.
+### Formalization (Lean 4)
+
+Scaffold:
+
+- [x] Root module `SGA.SGA2.ExposeI` imported from `lean/SGA.lean`
+- [x] `lake build` stays green
+
+By section (English: `translation/SGA2/ExposeI/`, Lean: `lean/SGA/SGA2/`):
+
+- [x] **I.1** `Γ_Z` / sections with support for **closed** `Z` (`GammaZ.lean`)
+- [x] **I.1** sheaf `Γ̲_Z` (`UnderlineGammaZ.lean`: kernel of `F → j_* j^* F`)
+- [x] **I.1** locally closed + independence of open (`LocallyClosed.lean`:
+  `LocallyClosedIn`, `gammaZSections_restrict_addEquiv`)
+- [x] **I.1.1–I.1.7** `i_!` / `i^!` / `ℤ_{Z,X}` closed/open/locally closed
+  factorization (`ExtensionByZero.lean`)
+- [x] **I.1.8–I.1.9** degree-0 exactness + flasque (`ExactSequences.lean`,
+  `Flasque.lean`)
+- [x] **I.2.1 / I.2.3 bis** `H_Z^n := Ext(ℤ_{Z,X}, F)` (`DerivedFunctors.lean`)
+- [x] **I.2.1 (algebraic)** (`LocalCohomology.lean`)
+- [x] **I.2.2** excision (`I_2_2_degree_zero`, `I_2_2_excision`)
+- [x] **I.2.4–I.2.5 / I.2.11** `ℋ_Z^n` for all `n` via I.2.11 (`sheafH_Z_n`)
+- [x] **I.2.6** local-to-global spectral sequence packaged (`I_2_6_*`)
+- [x] **I.2.8–I.2.14** Ext LES, sheafified LES, vanishing criteria
+  (`ExactSequences.lean`)
+
+Exposé I §§1–2 gaps are closed. Topological↔algebraic comparison is Exposé II
+(see [`formalization.md`](formalization.md)).
+
 
 ---
 

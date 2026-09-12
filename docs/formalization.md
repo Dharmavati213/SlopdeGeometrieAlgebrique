@@ -94,3 +94,43 @@ Entry point: `lean/SGA/SGA1/ExposeVI.lean`.
 - VI.11(a)–(d), (f)–(g) beyond the discrete-base case.
 - VI.12.1 as an isomorphism of functor categories (only the constraint
   data of a total functor is recorded).
+
+## SGA 2, Exposé I — Local cohomological invariants
+
+Entry point: `lean/SGA/SGA2/ExposeI.lean`.
+
+Exposé I is topological (abelian sheaves on a space `X`, functors `Γ_Z`
+and their derived functors `H_Z^*`). Mathlib supplies flasque sheaves,
+pushforward/pullback, `Ext` on Grothendieck abelian sheaf categories, and
+the *algebraic* local cohomology of modules. This repo defines topological
+`H_Z^*` for closed supports as `Ext(ℤ_{Z,X}, −)` following I.2.3 bis.
+
+| SGA 2 I | Mathlib / this repo |
+| --- | --- |
+| I.1 `Γ_Z` (closed `Z`) | `gammaZ`, `gammaZSections` (`GammaZ.lean`) |
+| I.1 (8) `Γ̲_Z` sheaf | `underlineGammaZ` = `ker(F → j_* j^* F)` (`UnderlineGammaZ.lean`) |
+| I.1 (3) locally closed | `LocallyClosedIn`, `LocallyClosedIn.gamma` |
+| I.1 independence of open | `gammaZSections_restrict_addEquiv` |
+| I.1.1–I.1.7 `i_!`/`i^!`/`ℤ_{Z,X}` | closed/open/`underlineGamma_locallyClosed`; `zZX_closed` |
+| I.1.8–I.1.9 degree 0 | `exact_gammaZ_of_le`, `I_1_8_package`, `I_1_9_degree_zero_exact` |
+| I.2.1 / I.2.3 bis `H_Z^n` | `H_Z Z F n` := `Ext (zZX_closed Z) F n` |
+| I.2.2 excision | `I_2_2_degree_zero`, `I_2_2_excision` |
+| I.2.4–I.2.5 / I.2.11 `ℋ_Z^n` | `sheafH_Z_n` (ker / coker / `rightDerived`) |
+| I.2.6 local-to-global SS | `I_2_6_follows_from_Ext_local_to_global` (Tohoku / Ext) |
+| I.2.8–I.2.10 Ext / sheaf LES | `ext_contravariant_exact`, `I_2_8_LES_from_Ext`, `I_2_10_*` |
+| I.2.12 flasque | `TopCat.Sheaf.IsFlasque`; `H_Z_vanishing_of_injective` |
+| I.2.13–I.2.14 vanishing | `I_2_13_*`, `I_2_14_from_sheaf_vanishing` |
+| I.2.1 algebraic `H_J^i(M)` | `localCohomology` (`LocalCohomology.lean`) |
+| III depth / Rees | `ModuleCat.exists_isRegular_tfae` |
+
+### SGA 2 Exposé I — I.1–I.2 status
+
+All numbered items of §§1–2 used in the English draft are formalised or
+recorded as mathlib-alias theorems matching the SGA statement. See the table
+above and theorem names in `lean/SGA/SGA2/ExposeI/`.
+
+Deferred to **Exposé II** (not a gap in I.1–I.2):
+
+- Comparison of topological `H_{V(J)}^*(Spec R, M̃)` with algebraic
+  `localCohomology J i`.
+
