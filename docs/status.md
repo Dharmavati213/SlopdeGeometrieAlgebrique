@@ -16,8 +16,8 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 3. Translate further exposés of SGA 1 (IV–V, VIII–XIII), then formalize
    each after its English text is in the tree.
 4. SGA 2 English drafts proceed in parallel with remaining SGA 1
-   exposés; Lean for SGA 2 Exposé I compiles for I.1–I.2 (see below);
-   further SGA 2 exposés wait until their English is ticked.
+   exposés; Lean for SGA 2 has partial Exposé I foundations and Exposé II
+   module arguments (see below). Formalization follows the English text.
 
 Related public translations (not this project):
 [thosgood/sga](https://github.com/thosgood/sga),
@@ -220,7 +220,7 @@ Exposé XIV is by Michèle Raynaud.
 
 Scaffold:
 
-- [x] Root module `SGA.SGA2.ExposeI` imported from `lean/SGA.lean`
+- [x] Root modules `SGA.SGA2.ExposeI` and `SGA.SGA2.ExposeII` imported from `lean/SGA.lean`
 - [x] `lake build` stays green
 
 By section (English: `translation/SGA2/ExposeI/`, Lean: `lean/SGA/SGA2/`):
@@ -229,20 +229,46 @@ By section (English: `translation/SGA2/ExposeI/`, Lean: `lean/SGA/SGA2/`):
 - [x] **I.1** sheaf `Γ̲_Z` (`UnderlineGammaZ.lean`: kernel of `F → j_* j^* F`)
 - [x] **I.1** locally closed + independence of open (`LocallyClosed.lean`:
   `LocallyClosedIn`, `gammaZSections_restrict_addEquiv`)
-- [x] **I.1.1–I.1.7** `i_!` / `i^!` / `ℤ_{Z,X}` closed/open/locally closed
-  factorization (`ExtensionByZero.lean`)
-- [x] **I.1.8–I.1.9** degree-0 exactness + flasque (`ExactSequences.lean`,
-  `Flasque.lean`)
-- [x] **I.2.1 / I.2.3 bis** `H_Z^n := Ext(ℤ_{Z,X}, F)` (`DerivedFunctors.lean`)
+- [x] **I.1 special cases** closed pushforward, open restriction, and closed
+  `ℤ_{Z,X}` (`ExtensionByZero.lean`)
+- [ ] **I.1.1–I.1.7** full extension-by-zero adjunction, injectivity preservation,
+  internal Hom, and ringed-space statements
+- [x] **I.1.8** global nested-support equality and flasque extension
+  (`ExactSequences.lean`, `Flasque.lean`)
+- [ ] **I.1.9–I.1.10** support-decomposition short exact sequence of sheaves
+- [x] **I.2.3 bis model** `H_Z^n := Ext(ℤ_{Z,X}, F)` (`DerivedFunctors.lean`)
+- [ ] **I.2.1 / I.2.3 bis** comparison with right-derived supported sections
 - [x] **I.2.1 (algebraic)** (`LocalCohomology.lean`)
-- [x] **I.2.2** excision (`I_2_2_degree_zero`, `I_2_2_excision`)
-- [x] **I.2.4–I.2.5 / I.2.11** `ℋ_Z^n` for all `n` via I.2.11 (`sheafH_Z_n`)
-- [x] **I.2.6** local-to-global spectral sequence packaged (`I_2_6_*`)
-- [x] **I.2.8–I.2.14** Ext LES, sheafified LES, vanishing criteria
-  (`ExactSequences.lean`)
+- [x] **I.2.2 degree 0** excision (`I_2_2_degree_zero`)
+- [ ] **I.2.2–I.2.5** higher excision and sheafification comparisons
+- [x] **I.2.11 model** `ℋ_Z^n` defined by kernel, cokernel, and derived pushforward
+- [ ] **I.2.6** local-to-global spectral sequence and convergence
+- [x] **I.2.8 input** generic contravariant Ext exactness for a supplied short exact sequence
+- [ ] **I.2.8–I.2.10** actual support-decomposition and sheafified long exact sequences
+- [x] **I.2.12 input** higher Ext vanishing on injectives
+- [ ] **I.2.12** flasque acyclicity and converse
+- [x] **I.2.13 degrees 0 and 0–1** actual mono/isomorphism criteria and degree-zero restriction injectivity
+- [ ] **I.2.13–I.2.14** full higher-degree vanishing criteria
 
-Exposé I §§1–2 gaps are closed. Topological↔algebraic comparison is Exposé II
-(see [`formalization.md`](formalization.md)).
+Exposé II (English: `translation/SGA2/ExposeII/`):
+
+- [x] **II.(7.5) module algebra** ideal-power torsion, annihilator union,
+  functorial maps, and quotient Hom equivalence (`Torsion.lean`)
+- [x] Radical invariance for finitely generated ideals (`Torsion.lean`)
+- [x] **II.9(c) ⇒ (b), diagram step** zero Hom colimit of an essentially zero
+  inverse sequence (`EssentiallyZero.lean`)
+- [x] **II.11 system arguments** closure under subobjects, quotients, and extensions
+- [x] **II.11 principal annihilator argument** stabilization, transition maps,
+  naturality, and uniform vanishing (`Principal.lean`)
+- [x] Principal inverse system and its vanishing Hom colimits (`PrincipalSystem.lean`)
+- [ ] **II.1–II.4** quasi-coherence and affine sheaf-cohomology sequences
+- [ ] **II.5–II.8** Koszul and topological/algebraic local-cohomology comparisons
+- [ ] **II.(7.5)** categorical Hom-colimit comparison with torsion and Koszul cohomology
+- [ ] **II.9–II.10** full equivalence and flasque criterion
+- [ ] **II.11** Koszul homology interpretation and induction on multiple generators
+
+Both exposés remain partial. Precise scope and missing comparisons are listed
+in [`formalization.md`](formalization.md).
 
 
 ---

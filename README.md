@@ -33,7 +33,9 @@ on [mathlib](https://github.com/leanprover-community/mathlib4).
 
 This is a working tree, not a finished edition. SGA 1 Exposés I, II, III, and VI
 have full English drafts, as does SGA 2 (Introduction and Exposés I–XIV);
-the Lean side of SGA 1 I and VI is a compiling formalization against mathlib.
+the Lean side of SGA 1 I and VI compiles against mathlib. SGA 2 has partial
+Lean formalizations of Exposés I and II, with exact coverage and remaining
+gaps recorded in [`docs/formalization.md`](docs/formalization.md).
 
 ## Layout
 
@@ -54,6 +56,7 @@ docs/            status and formalization notes
 | SGA 1, Exposé VI — English | translated |
 | SGA 1, Exposé VI — Lean | compiling (mathlib language + numbered lemmas) |
 | SGA 2, Introduction–XIV — English | drafts in `translation/SGA2/` |
+| SGA 2, Exposés I–II — Lean | partial; supported sections, degree-zero criteria, torsion and inverse systems |
 | Remaining exposés of SGA 1, and SGA 3–7 | not started |
 
 Tick-list: [`docs/status.md`](docs/status.md).
@@ -92,7 +95,8 @@ lake build
 ```
 
 Open `lean/` in VS Code (Lean 4 extension) or Neovim (`lean.nvim`).
-The root modules are `SGA.SGA1.ExposeI` and `SGA.SGA1.ExposeVI`.
+The root modules are `SGA.SGA1.ExposeI`, `SGA.SGA1.ExposeVI`,
+`SGA.SGA2.ExposeI`, and `SGA.SGA2.ExposeII`.
 
 ## License
 

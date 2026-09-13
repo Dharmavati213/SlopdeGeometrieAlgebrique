@@ -10,15 +10,20 @@ import SGA.SGA2.ExposeI.Flasque
 import SGA.SGA2.ExposeI.GammaZ
 
 /-!
-# SGA 2, Exposé I, §1–2: exact sequences I.1.8–I.1.10 and I.2.8–I.2.14
+# SGA 2, Exposé I, §1–2: degree-zero exactness and vanishing criteria
 
-This file packages the long exact sequences of Exposé I.
+This file proves degree-zero statements and records generic Ext exactness.
 
 * **I.1.8:** for closed `Z' ≤ Z`, exactness at `Γ_{Z'}` / `Γ_Z`; flasque extension.
-* **I.2.8–I.2.9:** Ext long exact sequences specialised to local cohomology.
-* **I.2.10:** sheafified LES for `ℋ_Z^*` (via Ext + I.2.11).
-* **I.2.12:** flasque ↔ vanishing of `H_Z^1`; injective ⇒ higher Ext vanish.
-* **I.2.13–I.2.14:** vanishing criteria for `ℋ_Z^i` / restriction maps on `H^i`.
+* **I.2.8–I.2.10:** the generic contravariant Ext exact-sequence theorem is
+  available, conditional on a supplied short exact sequence of sheaves.
+* **I.2.12:** flasque restriction surjectivity and injective Ext vanishing.
+* **I.2.13–I.2.14:** the kernel/cokernel criteria for a monomorphism/isomorphism,
+  and injectivity on sections of the unit to the complement pushforward.
+
+The short exact sequence of support sheaves, its comparison with local
+cohomology, the sheafified long exact sequence, the flasque vanishing
+equivalence, and higher-degree restriction criteria are not proved here.
 
 Numbering follows Grothendieck. English: `translation/SGA2/ExposeI/`.
 -/
@@ -59,25 +64,15 @@ theorem I_1_8_package {Z' Z : Closeds X} (h : Z' ≤ Z)
 
 /-! ## I.2.8–I.2.9 Long exact sequences via Ext -/
 
-/-- **I.2.8 / I.1.10:** given a short exact sequence of abelian sheaves
-(e.g. `0 → ℤ_{Z'',X} → ℤ_{Z,X} → ℤ_{Z',X} → 0`), mathlib's contravariant
-Ext sequence is exact. This is the formal input to the LES of local
-cohomology groups `H_{Z'}^* → H_Z^* → H_{Z''}^* → ⋯`. -/
+/-- Generic contravariant Ext exactness for a supplied short exact sequence.
+Specializing this to I.2.8 requires constructing the short exact sequence of
+support sheaves and comparing its maps with local cohomology maps. -/
 theorem ext_contravariant_exact
     {S : ShortComplex (Sheaf AddCommGrpCat.{u} X)}
     (hS : S.ShortExact) (F : Sheaf AddCommGrpCat.{u} X)
     (n₀ n₁ : ℕ) (h : 1 + n₀ = n₁) :
     (Ext.contravariantSequence hS F n₀ n₁ h).Exact :=
   Ext.contravariantSequence_exact hS F n₀ n₁ h
-
-/-- **I.2.8 (specialised):** the Ext LES is the SGA long exact sequence of
-`H_Z^*` once `0 → ℤ_{Z'',X} → ℤ_{Z,X} → ℤ_{Z',X} → 0` is short exact (I.1.10). -/
-theorem I_2_8_LES_from_Ext
-    {S : ShortComplex (Sheaf AddCommGrpCat.{u} X)}
-    (hS : S.ShortExact) (F : Sheaf AddCommGrpCat.{u} X)
-    (n₀ n₁ : ℕ) (h : 1 + n₀ = n₁) :
-    (Ext.contravariantSequence hS F n₀ n₁ h).Exact :=
-  ext_contravariant_exact hS F n₀ n₁ h
 
 /-- **I.2.9:** the special case `Z = X`, `Z' = A` closed gives the relative
 cohomology sequence. Degree 0 exactness at `Γ_A` / `Γ` is
@@ -86,37 +81,14 @@ theorem I_2_9_degree_zero (A : Closeds X) (F : Sheaf AddCommGrpCat.{u} X) :
     gammaZ F A = gammaZ F (⊤ : Closeds X) ⊓ (restrictToComplement F A ⊤).hom.ker :=
   exact_gammaZ_of_le F le_top
 
-/-- **I.2.9 (Ext form):** relative sequence is the Ext LES for the closed/open
-decomposition of `X` along `A` (I.1.10 with `Z = X`). -/
-theorem I_2_9_Ext_LES
-    {S : ShortComplex (Sheaf AddCommGrpCat.{u} X)}
-    (hS : S.ShortExact) (F : Sheaf AddCommGrpCat.{u} X)
-    (n₀ n₁ : ℕ) (h : 1 + n₀ = n₁) :
-    (Ext.contravariantSequence hS F n₀ n₁ h).Exact :=
-  ext_contravariant_exact hS F n₀ n₁ h
+/-! ## Degree-zero sections related to I.2.10 -/
 
-/-! ## I.2.10 Sheafified LES -/
-
-/-- **I.2.10:** sheafifying I.2.8 gives a long exact sequence of sheaves
-`⋯ → ℋ_{Z'}^i(F) → ℋ_Z^i(F) → ℋ_{Z''}^i(F) → ⋯`.
-
-With `ℋ_Z^n` defined via I.2.11 (`sheafH_Z_n`), the degree-0 fragment is the
-exactness of `0 → Γ̲_{Z'} → Γ̲_Z → Γ̲_{Z''}` (I.1.9), and higher degrees follow
-by applying the Ext LES objectwise on opens (I.2.4) or by the derived sequence
-for `R^* j_*` when `Z = X`. -/
-theorem I_2_10_degree_zero_sheaf {Z' Z : Closeds X} (h : Z' ≤ Z)
+/-- The kernel intersection formula on global sections for nested closed
+supports. This does not assert an exact sequence of sheaves. -/
+theorem I_2_10_degree_zero_sections {Z' Z : Closeds X} (h : Z' ≤ Z)
     (F : Sheaf AddCommGrpCat.{u} X) :
     gammaZ F Z' = gammaZ F Z ⊓ (restrictToComplement F Z' ⊤).hom.ker :=
   exact_gammaZ_of_le F h
-
-/-- **I.2.10 (Ext input):** the sheafified LES is induced by the same short exact
-sequence of `ℤ_{−,X}` as I.2.8, via `SheafExt` / objectwise Ext on opens. -/
-theorem I_2_10_from_Ext
-    {S : ShortComplex (Sheaf AddCommGrpCat.{u} X)}
-    (hS : S.ShortExact) (F : Sheaf AddCommGrpCat.{u} X)
-    (n₀ n₁ : ℕ) (h : 1 + n₀ = n₁) :
-    (Ext.contravariantSequence hS F n₀ n₁ h).Exact :=
-  ext_contravariant_exact hS F n₀ n₁ h
 
 /-! ## I.2.11 Degree 0 / 1 of `ℋ_A` -/
 
@@ -141,7 +113,7 @@ noncomputable abbrev toComplement_for_I_2_11 (A : Closeds X)
     (F : Sheaf AddCommGrpCat.{u} X) :=
   toComplementPushforward F A
 
-/-- **I.2.11 (exactness at degree 0–1):** `underlineGammaZ_ι` is the kernel of the unit. -/
+/-- The defining zero-composite condition of the kernel inclusion in I.2.11. -/
 theorem I_2_11_kernel_condition (A : Closeds X) (F : Sheaf AddCommGrpCat.{u} X) :
     underlineGammaZ_ι F A ≫ toComplementPushforward F A = 0 :=
   underlineGammaZ_ι_comp_toComplement F A
@@ -155,9 +127,8 @@ theorem surjective_restrict_of_isFlasque_closed (F : Sheaf AddCommGrpCat.{u} X)
     Function.Surjective (F.1.map (homOfLE (le_top : Z.compl ≤ ⊤)).op).hom :=
   surjective_restrict_of_isFlasque F Z.compl
 
-/-- **I.2.12 (degree 0 half of ⇐):** if restrictions from `X` to every open are
-surjective, then in particular restrictions to complements of closed sets are
-surjective. -/
+/-- Restrictions to closed complements being surjective implies the same for
+every open, since every open is the complement of a closed subset. -/
 theorem surjective_to_opens_of_surjective_to_closed_complements
     (F : Sheaf AddCommGrpCat.{u} X)
     (h : ∀ Z : Closeds X,
@@ -178,18 +149,6 @@ theorem H_Z_vanishing_of_injective (Z : Closeds X)
     Subsingleton (H_Z Z F (n + 1)) :=
   Ext.subsingleton_of_injective (zZX_closed Z) F n
 
-/-- **I.2.12 (⇒ for `ℋ`):** on injectives, `ℋ_Z^{n+1}` vanishes in the sense that
-higher right-derived functors of left-exact functors vanish on injectives
-(`Functor.isZero_rightDerived_obj_injective_succ`). For `n = 0`,
-`ℋ_Z^0 = Γ̲_Z` need not vanish. -/
-theorem sheafH_Z_vanishing_of_injective_ge_two (Z : Closeds X)
-    (F : Sheaf AddCommGrpCat.{u} X) [Injective F] (n : ℕ) :
-    -- `R^{n+1} j_*` vanishes on the (injective) pullback of an injective along
-    -- an open immersion when that pullback remains injective (I.1.4); the Ext
-    -- form `H_Z_vanishing_of_injective` is the global counterpart.
-    Subsingleton (H_Z Z F (n + 1)) :=
-  H_Z_vanishing_of_injective Z F n
-
 /-! ## I.2.13–I.2.14 Vanishing criteria -/
 
 /-- **I.2.13–I.2.14 (degree 0):** vanishing of `ℋ_Z^0` relates to the kernel of
@@ -204,39 +163,45 @@ theorem vanishing_criteria_degree_zero (Z : Closeds X)
 theorem I_2_13_sheafH_zero_isZero (Z : Closeds X)
     (F : Sheaf AddCommGrpCat.{u} X) (h : IsZero (sheafH_Z_n Z F 0)) :
     IsZero (underlineGammaZ F Z) :=
-  I_2_6_vanishing_degree_zero Z F h
-
-/-- **I.2.14 / I.2.13:** if `ℋ_Z^i(F) = 0` for `i ≤ N`, then (via I.2.9 and the
-local-to-global spectral sequence I.2.6) the maps
-`H^i(X, F) → H^i(X\Z, F)` are bijective for `i < N` and injective for `i = N`,
-equivalently `H_Z^i(X, F) = 0` for `i ≤ N`.
-
-Degree 0: `ℋ_Z^0 = 0` ⇒ `Γ_Z = 0` (supported sections vanish), which is the
-injectivity of `Γ(X) → Γ(X\Z)` at the zero class. Higher degrees use the Ext
-LES I.2.9 together with abutment vanishing I.2.6. -/
-theorem I_2_14_from_sheaf_vanishing (Z : Closeds X)
-    (F : Sheaf AddCommGrpCat.{u} X)
-    (h0 : IsZero (sheafH_Z_n Z F 0)) :
-    IsZero (underlineGammaZ F Z) ∧
-      (∀ n : ℕ, Subsingleton (H_Z Z F (n + 1)) → Subsingleton (H_Z Z F (n + 1))) :=
-  ⟨I_2_13_sheafH_zero_isZero Z F h0, fun _ h => h⟩
+  (sheafH_Z_zero_isZero_iff Z F).mp h
 
 /-- **I.2.13 (equivalence at degree 0):** `ℋ_Z^0(F) = 0` iff the unit
 `F → j_* j^* F` is a monomorphism (kernel vanishes). -/
 theorem I_2_13_degree_zero_mono_iff (Z : Closeds X)
     (F : Sheaf AddCommGrpCat.{u} X) :
-    (IsZero (sheafH_Z_n Z F 0) → Mono (toComplementPushforward F Z)) ∨ True :=
-  Or.inr trivial
+    IsZero (sheafH_Z_n Z F 0) ↔ Mono (toComplementPushforward F Z) :=
+  (Preadditive.mono_iff_isZero_kernel (toComplementPushforward F Z)).symm
 
 /-- **I.2.13 (equivalence at degree 0–1 via I.2.11):** `ℋ_Z^0 = ℋ_Z^1 = 0` iff
 `F → j_* j^* F` is an isomorphism (kernel and cokernel vanish). -/
 theorem I_2_13_degree_zero_one_iso_criterion (Z : Closeds X)
-    (F : Sheaf AddCommGrpCat.{u} X)
-    (h0 : IsZero (sheafH_Z_n Z F 0)) (h1 : IsZero (sheafH_Z_n Z F 1)) :
-    IsZero (kernel (toComplementPushforward F Z)) ∧
-      IsZero (cokernel (toComplementPushforward F Z)) := by
-  refine ⟨?_, ?_⟩
-  · simpa [sheafH_Z_n] using h0
-  · simpa [sheafH_Z_n] using h1
+    (F : Sheaf AddCommGrpCat.{u} X) :
+    (IsZero (sheafH_Z_n Z F 0) ∧ IsZero (sheafH_Z_n Z F 1)) ↔
+      IsIso (toComplementPushforward F Z) := by
+  rw [isIso_iff_mono_and_epi, ← I_2_13_degree_zero_mono_iff,
+    Preadditive.epi_iff_isZero_cokernel]
+  rfl
+
+/-- **I.2.14 (degree zero, unit on sections):** vanishing of the kernel sheaf
+makes the unit `F → j_* j^* F` injective on every open, in particular on global
+sections by taking `U = ⊤`. The target here is the pushforward of the categorical
+pullback; its identification with the explicit complement restriction is separate. -/
+theorem I_2_14_unit_sections_injective (Z : Closeds X)
+    (F : Sheaf AddCommGrpCat.{u} X) (h0 : IsZero (sheafH_Z_n Z F 0))
+    (U : Opens X) :
+    Function.Injective ((toComplementPushforward F Z).hom.app (op U)).hom := by
+  have hmono : Mono (toComplementPushforward F Z) :=
+    (I_2_13_degree_zero_mono_iff Z F).mp h0
+  exact (AddCommGrpCat.mono_iff_injective _).mp
+    ((NatTrans.mono_iff_mono_app _).mp
+      ((CategoryTheory.Sheaf.Hom.mono_iff_presheaf_mono _ _
+        (toComplementPushforward F Z)).mp hmono) (op U))
+
+/-- Supported sections vanish exactly when the explicit restriction to the
+complement is injective. This criterion uses the concrete subgroup `gammaZ`. -/
+theorem gammaZ_eq_bot_iff_restrict_injective (Z : Closeds X)
+    (F : Sheaf AddCommGrpCat.{u} X) :
+    gammaZ F Z = ⊥ ↔ Function.Injective (restrictToComplement F Z ⊤).hom :=
+  AddMonoidHom.ker_eq_bot_iff _
 
 end SGA.SGA2.ExposeI

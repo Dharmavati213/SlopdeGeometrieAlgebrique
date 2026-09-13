@@ -1,6 +1,6 @@
 # Formalization notes
 
-The Lean library in `lean/` follows Grothendieck's numbering of SGA 1.
+The Lean library in `lean/` follows Grothendieck's numbering of SGA 1 and SGA 2.
 Mathlib already has the language of the exposés; we import it and add
 the statements that are still missing.
 
@@ -111,26 +111,70 @@ the *algebraic* local cohomology of modules. This repo defines topological
 | I.1 (8) `Γ̲_Z` sheaf | `underlineGammaZ` = `ker(F → j_* j^* F)` (`UnderlineGammaZ.lean`) |
 | I.1 (3) locally closed | `LocallyClosedIn`, `LocallyClosedIn.gamma` |
 | I.1 independence of open | `gammaZSections_restrict_addEquiv` |
-| I.1.1–I.1.7 `i_!`/`i^!`/`ℤ_{Z,X}` | closed/open/`underlineGamma_locallyClosed`; `zZX_closed` |
-| I.1.8–I.1.9 degree 0 | `exact_gammaZ_of_le`, `I_1_8_package`, `I_1_9_degree_zero_exact` |
+| I.1 special cases | closed pushforward, open restriction, `underlineGamma_locallyClosed`; `zZX_closed` |
+| I.1.8 degree 0 | `exact_gammaZ_of_le`, `I_1_8_package`; global flasque extension |
 | I.2.1 / I.2.3 bis `H_Z^n` | `H_Z Z F n` := `Ext (zZX_closed Z) F n` |
-| I.2.2 excision | `I_2_2_degree_zero`, `I_2_2_excision` |
-| I.2.4–I.2.5 / I.2.11 `ℋ_Z^n` | `sheafH_Z_n` (ker / coker / `rightDerived`) |
-| I.2.6 local-to-global SS | `I_2_6_follows_from_Ext_local_to_global` (Tohoku / Ext) |
-| I.2.8–I.2.10 Ext / sheaf LES | `ext_contravariant_exact`, `I_2_8_LES_from_Ext`, `I_2_10_*` |
-| I.2.12 flasque | `TopCat.Sheaf.IsFlasque`; `H_Z_vanishing_of_injective` |
-| I.2.13–I.2.14 vanishing | `I_2_13_*`, `I_2_14_from_sheaf_vanishing` |
+| I.2.2 degree-zero excision | `I_2_2_degree_zero`, `I_2_2_excision_degree_zero` |
+| I.2.11 model for `ℋ_Z^n` | `sheafH_Z_n` defined by ker / coker / `rightDerived` |
+| I.2.6 candidate E₂ terms only | `localToGlobalE2Term`; no spectral sequence or convergence theorem |
+| Homological input for I.2.8 | `ext_contravariant_exact`, assuming a supplied short exact sequence |
+| Input for I.2.12 | `TopCat.Sheaf.IsFlasque`; higher Ext vanishing on injectives |
+| I.2.13 degree 0 and 0–1 | kernel vanishing iff the unit is mono; kernel and cokernel vanishing iff it is an isomorphism |
 | I.2.1 algebraic `H_J^i(M)` | `localCohomology` (`LocalCohomology.lean`) |
 | III depth / Rees | `ModuleCat.exists_isRegular_tfae` |
 
-### SGA 2 Exposé I — I.1–I.2 status
+### Remaining gaps in SGA 2 Exposé I
 
-All numbered items of §§1–2 used in the English draft are formalised or
-recorded as mathlib-alias theorems matching the SGA statement. See the table
-above and theorem names in `lean/SGA/SGA2/ExposeI/`.
+The modules compile without placeholders, but Exposé I remains partial.
+Definitions chosen from later characterizations do not prove the comparison
+with the original derived functors. In particular:
 
-Deferred to **Exposé II** (not a gap in I.1–I.2):
+- I.1.1–I.1.7: general extension by zero and its adjunction with `i^!`,
+  preservation of injectives, internal Hom identities, and the ringed-space
+  versions. The existing open adjunction is `i^* ⊣ i_*`.
+- I.1.9–I.1.10: construct the actual short exact sequence of sheaves for a
+  closed/open decomposition; the existing nested-support equality is global.
+- I.2.1–I.2.5: compare the Ext and ker/coker models with derived supported
+  sections, higher-degree excision, and the sheafification comparison.
+- I.2.6: construct the local-to-global spectral sequence and prove convergence.
+- I.2.8–I.2.10: specialize the Ext sequence to the support decomposition and
+  construct the corresponding sheaf sequence.
+- I.2.12–I.2.14: flasque acyclicity and its converse, and higher-degree
+  vanishing/restriction criteria.
 
-- Comparison of topological `H_{V(J)}^*(Spec R, M̃)` with algebraic
-  `localCohomology J i`.
+## SGA 2, Exposé II — Algebraic foundations
 
+Entry point: `lean/SGA/SGA2/ExposeII.lean`. This continues the Exposé I work
+from [PR #11](https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique/pull/11).
+The source is `translation/SGA2/ExposeII/en-body.tex`.
+
+| SGA 2 II | Proved algebraic content |
+| --- | --- |
+| (7.5), annihilator union | `powerTorsion I M`, with membership equivalent to annihilation by some `I^n` |
+| (7.5), quotient Hom | `quotientHomEquivTorsionBySet`: evaluation at 1 identifies `Hom(R/I, M)` with the submodule annihilated by `I` |
+| Support invariance | `powerTorsion_eq_of_radical_eq` for finitely generated ideals, and a noetherian-ring specialization |
+| II.9(c) ⇒ (b), diagram step | `IsEssentiallyZero.isZero_hom_colimit`: the Hom colimit of an essentially zero inverse sequence is zero |
+| II.11, system arguments | `IsEssentiallyZero.of_mono`, `.of_epi`, `.of_exact`: closure under subobjects, quotients, and extensions |
+| II.11, one-generator annihilators | `exists_uniform_torsionTransition_eq_zero`, `principal_annihilator_system_essentially_zero` |
+| II.9 / II.11 connection | `principalAnnihilatorSystem_isZero_hom_colimit` |
+
+`Torsion.lean` supplies the degree-zero module algebra. `Principal.lean`
+proves stabilization of the annihilators of `f^n` in a noetherian module,
+including transition maps and naturality. `EssentiallyZero.lean` proves the
+general diagram arguments, and `PrincipalSystem.lean` connects the two APIs.
+
+### Remaining gaps in SGA 2 Exposé II
+
+- II.1–II.4: quasi-coherence and the affine sheaf-cohomology sequences.
+- II.5: comparison with Koszul cohomology.
+- II.6–II.8: comparison of topological `H_{V(I)}^*(Spec R, M̃)` with the
+  Ext colimit `localCohomology I i`, including the canonical comparison map.
+- (7.5): identify the categorical Hom colimit with `powerTorsion` and then
+  with degree-zero Koszul cohomology; the finite-stage Hom equivalence and
+  annihilator union are proved.
+- II.9: the full equivalence, including injective coefficients and the
+  Koszul-Hom comparison; the generic colimit-vanishing step is proved.
+- II.10: the flasque-sheaf criterion.
+- II.11: identify the principal annihilator system with Koszul homology,
+  prove higher-degree vanishing for one generator, and complete the induction
+  on the number of generators.
