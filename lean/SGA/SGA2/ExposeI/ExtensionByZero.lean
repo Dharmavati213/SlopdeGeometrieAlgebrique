@@ -34,9 +34,11 @@ are not constructed. The locally closed construction likewise produces a
 support sheaf on a chosen open neighbourhood, without a sheaf-level comparison
 between different neighbourhoods.
 
-Open or general locally closed extension by zero, its adjunction of I.1.3,
-injective preservation in I.1.4, internal-Hom comparison in I.1.5, and the
-Hom representations in I.1.6 remain unproved in this file. The general
+`OpenExtensionByZero.lean` constructs genuine open extension by zero and
+proves its adjunction and injective preservation by restriction.
+`ClosedSupportHom.lean` proves the closed Hom representation; the open
+Hom representation is in `OpenSupportCohomology.lean`. The general locally
+closed adjunction and internal-Hom comparison in I.1.5 remain separate. The general
 composition law (13) for extension by zero is also not established here;
 `pushforward_comp` is the composition law for ordinary pushforward.
 

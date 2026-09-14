@@ -25,7 +25,11 @@ We take I.2.3 bis as the **definition** of `H_Z^*` for closed supports, and
 define `ℋ_Z^n` for all `n` using the formulas in I.2.11
 (`ker` / `coker` / `R^{n-1} j_*`). Their comparison with the right derived
 functors of `Γ_Z` and `Γ̲_Z`, and with the sheafification of local Ext groups,
-is not proved here. The excision result below concerns sections in degree zero.
+is not proved in this file. `SupportedCohomologyComparison.lean` now proves
+the group-valued derived comparison, `SupportedSheafModel.lean` proves the
+natural all-degree original-derived and sheafification comparisons for the
+unchanged sheaf model, and `SupportedExcision.lean` proves all-degree
+closed-support excision. The excision result below concerns degree zero.
 
 For I.2.6 we define the proposed local-to-global `E₂` terms only. No spectral
 sequence, differentials, convergence, or higher abutment vanishing is constructed.
@@ -72,7 +76,7 @@ noncomputable abbrev H (F : Sheaf AddCommGrpCat.{u} X) (n : ℕ) : Type u :=
 * `n ≥ 2`: `R^{n-1} j_*(F|_{X\Z})`.
 
 The comparison with the sheaf associated to `U ↦ H_{Z∩U}^n(U, F|_U)`
-in I.2.4 remains to be formalized. -/
+in I.2.4 is proved separately in `SupportedSheafModel.lean`. -/
 noncomputable def sheafH_Z_n (Z : Closeds X) (F : Sheaf AddCommGrpCat.{u} X) :
     ℕ → Sheaf AddCommGrpCat.{u} X
   | 0 => underlineGammaZ F Z

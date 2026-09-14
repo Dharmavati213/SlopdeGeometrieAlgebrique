@@ -17,9 +17,10 @@ a single power of `f` then kills every annihilator, so these transition maps
 vanish uniformly once `m - n` is sufficiently large. In particular, the inverse
 system is essentially zero in the sense of II.9(c).
 
-The identification of these annihilators with degree-one Koszul homology,
-vanishing of the higher homology for one generator, and the induction on the
-number of generators in II.11 remain to be formalized.
+`PrincipalKoszul.lean` identifies these annihilators with degree-one Koszul
+homology and proves the one-generator case of II.11. `VariableAnnihilators.lean`
+handles varying coefficients. `KoszulCofiber.lean` constructs the exact
+sequence, and `KoszulProZero.lean` completes the multiple-generator induction.
 -/
 
 universe u v

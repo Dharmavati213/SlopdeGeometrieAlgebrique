@@ -11,7 +11,7 @@ import SGA.SGA2.ExposeII.Principal
 
 We connect the principal annihilator calculation to the essentially zero
 system API, and deduce that its Hom colimits vanish on a noetherian module.
-The Koszul interpretation of this system remains a separate comparison.
+The Koszul interpretation of this system is proved in `PrincipalKoszul.lean`.
 -/
 
 universe u
