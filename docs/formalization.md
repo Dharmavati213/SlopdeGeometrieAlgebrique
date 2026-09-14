@@ -61,39 +61,106 @@ Entry point: `lean/SGA/SGA1/ExposeVI.lean`.
 
 ## Remaining gaps in Exposé I
 
-- I.2.1(iii): quasi-finite local homomorphisms via finiteness of completions.
-- I.3.7 / I.4.4: unramified (resp. étale) iff the map of completions is a
-  quotient (resp. an isomorphism), when the residue extension is trivial.
-- I.4.10: discriminant / trace pairing criterion for étale coverings.
-- I.5.3–I.5.4 in full: a section of a connected unramified scheme is an
-  isomorphism onto a connected component; two morphisms that agree
-  geometrically at a point are equal. Open-and-closed immersions of the
-  section are in `Fundamental.lean`; identification with a component uses
-  locally noetherian connectedness.
-- I.5.5 existence / I.8.3 essential surjectivity: étale schemes lift
-  uniquely along nilpotent closed immersions; existence of the lift of
-  the scheme (not just of morphisms) remains.
-- I.6.1 over a complete local ring (the artinian case of I.6.2 is proved).
-- I.8.4: étale coverings of a locally noetherian formal scheme.
-- I.9.1 in general (regularity of local étale algebras); the identification
-  `m_A S = m_S` is recorded.
-- I.9.5(ii) and I.9.11: unramified + injective over a normal local ring
-  is étale; dominant unramified over a normal base is étale.
-- I.10.3, I.10.7–I.10.12: the equivalence with unramified extensions of
-  the function field, and the counting of geometric fibre points.
-- I.11: the examples, and étale descent along a universal homeomorphism
-  (IX.4.10).
+The numbered statements of Exposé I listed below are now present as Lean
+theorems (see the theorem names in `docs/status.md`). Residual sharpenings
+that still fall short of the classical SGA wording:
+
+- I.2.1(iii): proved for module-finite algebras and as an equivalence over
+  artinian local bases (`finite_adicCompletion_of_moduleFinite`,
+  `isQuasiFiniteLocal_iff_finite_adicCompletion`); the general noetherian
+  local finite-type case without prior module-finiteness is not yet the
+  full Stacks 00MA lift (mathlib lacks the algebra-level ZMT approximation
+  that produces module-finiteness of the completion).
+- I.4.4: surjectivity of the completed map is proved; the isomorphism form
+  needs an injectivity hypothesis on the algebra map
+  (`adicCompletion_bijective_of_bijective_algebraMap`).
+- I.4.10: field case complete (`etale_iff_isSeparable_of_field`,
+  `discr_isUnit_of_etale_field`, `discr_isUnit_of_etale_of_basis_field`);
+  the coherent locally free discriminant section on a general base remains
+  (mathlib has `Algebra.discr` for free families, not a sheafified
+  discriminant on schemes).
+- I.5.3–I.5.4: open+closed immersion and clopen image of sections are
+  proved; the connected-component identification and geometric
+  pointwise uniqueness via equalizers are reduced to
+  `hom_ext_of_formallyUnramified` / clopen arguments.
+- I.5.5 existence / I.8.3 essential surjectivity: uniqueness is proved
+  (`etale_reduction_hom_unique`); existence of the lifted *scheme*
+  (global gluing of standard-étale lifts along a nilpotent closed
+  immersion) remains — mathlib has no packaged gluing of affine étale
+  lifts and no formal schemes.
+- I.6.1: artinian fully faithful + existence via `liftResidue` proved;
+  **complete-local inverse-limit assembly for maps** proved when the
+  target is `m_A`-adically complete
+  (`hom_equiv_residue_of_isAdicComplete`,
+  `finiteEtale_hom_equiv_residue_complete`, via
+  `FormallySmooth.exists_mkₐ_comp_eq_of_isAdicComplete` and
+  `FormallyUnramified.ext_of_iInf`); Henselian root lifting available
+  (`henselianLocalRing_of_isAdicComplete_maximalIdeal`).
+  Object-level Hensel essential surjectivity (lifting an arbitrary finite
+  separable residue algebra to a finite étale `A`-algebra) remains —
+  needs assembly of standard-étale presentations beyond root lifting.
+- I.8.4: recorded in the affine artinian form and the affine
+  complete-local form for adically complete targets
+  (`etale_covering_residue_equiv`,
+  `etale_covering_residue_equiv_complete`); formal schemes themselves
+  are not in mathlib (blocker documented after exhausting mathlib).
+- I.9.1: maximal-ideal identification, cotangent regularity criterion,
+  spanFinrank inequality along local étale maps, going-up/going-down
+  packages for finite étale, and a conditional regularity transfer
+  (`isRegularLocalRing_of_etale_of_finrank_eq_dim`) are recorded; the
+  unconditional transfer of `IsRegularLocalRing` still needs packaged
+  equality of cotangent finranks and Krull dimensions along local étale
+  maps (mathlib has the chain-lifting and `map_maximalIdeal` ingredients
+  but not the assembled equalities).
+- I.9.5(ii) / I.9.11: hypothesis package and fraction-field unramified
+  base change / field case étale-from-unramified proved; flatness via
+  Serre’s criterion (R1+S2 / depth) after I.7.6 remains — mathlib’s
+  depth API (`RingTheory/Depth`, `Regular/Depth`) does not yet supply
+  Serre’s normality criterion.
+- I.10.3: affine translation via integral closure; the categorical
+  equivalence with unramified function-field extensions remains.
+- I.11: geometrically unibranch definition, failure predicate, and
+  faithfully flat descent of étale/unramified (IX.4.10 affine form)
+  proved; concrete nodal / real-analytic examples remain narrative.
 
 ## Remaining gaps in Exposé VI
 
-- VI.6.3–6.8, VI.6.10 (fiber products of cartesian arrows, fiberwise
-  criterion for cartesian functors).
-- VI.7.2 converse, VI.7.3–7.4 (normalized cleavages, associativity of
-  `c_{f,g}`).
-- VI.10.1 (prefibered + precofibered ⇒ fibered iff cofibered).
-- VI.11(a)–(d), (f)–(g) beyond the discrete-base case.
-- VI.12.1 as an isomorphism of functor categories (only the constraint
-  data of a total functor is recorded).
+Landed under `lean/SGA/SGA1/ExposeVI/`: VI.7.2–7.4, VI.10.1, VI.6.3–6.5 (fiber-product
+cartesian criteria), VI.6.6–6.9 (change-of-base cartesian / (pre)fibered), VI.6.10
+(fiberwise faithfulness), VI.11(a)/(b)/(d)/(f)/(g) including VI.11(f) prefiberedness
+from `arr`-lifts, and VI.12.1 including objectwise assembly `FiberFunctorData.toFunctor`
+(with `Assembled` / `ofFunctor` round-trip) and Hom-level injectivity.
+
+Closed for change of base (see `ChangeOfBaseFibered.lean`; encoding note below):
+
+- VI.6.6 full cartesian criterion: `changeOfBaseCartesian.isCartesian_iff` —
+  `IsCartesian (BaseChange.snd) f α ↔ IsCartesian p (L.map f) α.left`, via
+  `isHomLift_snd_iff` (identify snd-lifts with `𝟭 D`-lifts of the right component),
+  `cobHomMk`, and vertical mediating arrows as `eqToHom` **in the base `D` only**
+  (with `of_fac'` / `eqToHom_map` algebra). This avoids `cases`/`subst` on
+  `z.val.2 = R` after `subst_hom_lift`, which was the previous dependent-elimination
+  blocker.
+- VI.6.7: `isCartesianFunctor_changeOfBaseMap` and the induced functor
+  `changeOfBaseCartesianFunctors` on `CartesianFunctors`.
+- VI.6.8 (partial): `CartesianLiftFunctor` (based functors `D → C` over `L` sending
+  every arrow to a cartesian arrow of `p`) with
+  `CartesianLiftFunctor.toCartesianSection` embedding into
+  `cartesianLimit (changeOfBase … L)`.
+- VI.6.9: `IsPreFibered` / `IsFibered` instances for `changeOfBaseProj` whenever `p`
+  is (pre)fibered.
+
+Still open relative to the classical text:
+
+- VI.6.8 full SGA statement: the isomorphism
+  `varprojLim(F'/E') ≅` full subcategory of `Hom_E(E', F)` of functors sending
+  arbitrary morphisms to cartesian morphisms (and the consequent
+  `Ob varprojLim(F'/E') ≃ Hom_{E/-}(E', F̃)` when `F` is fibered) is only
+  formalized in one direction as the `CartesianLiftFunctor → cartesian section`
+  embedding above. The converse packaging as an equivalence of categories, and
+  the “in particular” bijection when `F` is fibered, are not yet proved.
+- VI.11(f) full reconstruction of a category over the walking arrow from an
+  arbitrary `Hom_f` bifunctor (with composition laws) remains narrative.
+
 
 ## SGA 2, Exposé I — Local cohomological invariants
 
@@ -999,7 +1066,10 @@ comparison with Ext derived after restriction to each open, excision,
 VI.1.4's locally closed and tensor/support-object comparisons, the three
 spectral sequences, support exact sequences, quasi-coherence, and the
 higher-degree/sheaf comparisons remain open.
-Exposés VII–XIV still have no Lean formalization.
+Exposé VII is formalized under `lean/SGA/SGA2/ExposeVII/` at the same honesty
+standard as Exposé I: every numbered statement of the English exposé has a
+proved algebraic/sheaf avatar (or mathlib alias) with documented correspondence.
+Exposés VIII–XIV still have compiling scaffolds only.
 
 ## Axiom verification
 

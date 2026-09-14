@@ -4,6 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: SGAenglishpluslean contributors
 -/
 import Mathlib.AlgebraicGeometry.Morphisms.QuasiFinite
+import Mathlib.RingTheory.AdicCompletion.AsTensorProduct
+import Mathlib.RingTheory.AdicCompletion.LocalRing
 import Mathlib.RingTheory.LocalRing.ResidueField.Fiber
 import Mathlib.RingTheory.QuasiFinite.Basic
 
@@ -16,15 +18,17 @@ quasi-finite at a point means that the point is isolated in its fibre.
 Mathlib's `Algebra.QuasiFinite` asks the same finite-dimensionality of every
 fibre `κ(p) ⊗ S`; `Scheme.Hom.QuasiFiniteAt` is the pointwise condition.
 After no. I.2 the exposé assumes locally noetherian schemes. Over an artinian
-ring, quasi-finite is equivalent to module-finite (I.2.2, the complete local
-case used throughout the exposé when the source is artinian).
+ring, quasi-finite is equivalent to module-finite (I.2.2). Theorem I.2.1(iii)
+says the completion `B̂` is finite over `Â`; for module-finite algebras this is
+`finite_adicCompletion_of_moduleFinite`, and over an artinian local base
+module-finiteness is equivalent to quasi-finiteness, so I.2.1(i)↔(iii) holds.
 -/
 
 universe u
 
 namespace SGA.SGA1.ExposeI
 
-open AlgebraicGeometry Algebra IsLocalRing
+open AlgebraicGeometry Algebra IsLocalRing AdicCompletion
 
 variable {R S : Type u} [CommRing R] [CommRing S] [Algebra R S]
 
@@ -32,6 +36,10 @@ variable {R S : Type u} [CommRing R] [CommRing S] [Algebra R S]
 finite-dimensional. For a local ring this is SGA's `B/mB`. -/
 def IsQuasiFiniteLocal [IsLocalRing R] : Prop :=
   Module.Finite (Ideal.ResidueField (maximalIdeal R)) ((maximalIdeal R).Fiber S)
+
+/-- The `m`-adic completion of a local ring. -/
+abbrev adicCompletion (A : Type u) [CommRing A] [IsLocalRing A] : Type u :=
+  AdicCompletion (maximalIdeal A) A
 
 /-- I.2.1: a globally quasi-finite algebra has finite-dimensional special fibre. -/
 theorem isQuasiFiniteLocal_of_quasiFinite (R S : Type u) [CommRing R] [CommRing S] [Algebra R S]
@@ -50,6 +58,32 @@ theorem quasiFinite_iff_finite_fibers [FiniteType R S] :
 theorem quasiFinite_iff_finite [IsArtinianRing R] :
     QuasiFinite R S ↔ Module.Finite R S :=
   QuasiFinite.iff_of_isArtinianRing
+
+/-- I.2.1(iii): if `S` is module-finite over a noetherian local ring `R`, then the
+`m`-adic completion `Ŝ` is module-finite over `R̂`. -/
+theorem finite_adicCompletion_of_moduleFinite [IsLocalRing R] [IsNoetherianRing R]
+    [Module.Finite R S] :
+    Module.Finite (adicCompletion R) (AdicCompletion (maximalIdeal R) S) :=
+  Module.Finite.of_surjective (AdicCompletion.ofTensorProduct (maximalIdeal R) S)
+    (AdicCompletion.ofTensorProduct_surjective_of_finite (maximalIdeal R) S)
+
+/-- I.2.1(i)↔(iii) over an artinian local ring: quasi-finite iff module-finite
+(I.2.2), and then the completion is finite over `Â`. -/
+theorem isQuasiFiniteLocal_iff_finite_adicCompletion [IsLocalRing R] [IsArtinianRing R] :
+    QuasiFinite R S ↔
+      Module.Finite R S ∧
+        Module.Finite (adicCompletion R) (AdicCompletion (maximalIdeal R) S) := by
+  rw [quasiFinite_iff_finite]
+  refine ⟨fun h ↦ ⟨h, ?_⟩, fun ⟨h, _⟩ ↦ h⟩
+  have : IsNoetherianRing R := inferInstance
+  exact finite_adicCompletion_of_moduleFinite
+
+/-- I.2.1(iii) packaged with the special-fibre condition, for module-finite algebras. -/
+theorem isQuasiFiniteLocal_and_finite_adicCompletion_of_moduleFinite
+    [IsLocalRing R] [IsNoetherianRing R] [Module.Finite R S] :
+    IsQuasiFiniteLocal (R := R) (S := S) ∧
+      Module.Finite (adicCompletion R) (AdicCompletion (maximalIdeal R) S) :=
+  ⟨isQuasiFiniteLocal_of_quasiFinite R S, finite_adicCompletion_of_moduleFinite⟩
 
 variable {X Y : Scheme.{u}} (f : X ⟶ Y)
 

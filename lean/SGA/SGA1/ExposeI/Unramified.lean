@@ -6,6 +6,7 @@ Authors: SGAenglishpluslean contributors
 import Mathlib.AlgebraicGeometry.Morphisms.FormallyUnramified
 import Mathlib.AlgebraicGeometry.Morphisms.Immersion
 import Mathlib.CategoryTheory.Limits.Shapes.Diagonal
+import Mathlib.RingTheory.AdicCompletion.Exactness
 import Mathlib.RingTheory.Unramified.LocalRing
 import Mathlib.RingTheory.Unramified.Locus
 
@@ -17,14 +18,20 @@ residue extension is finite separable, equivalently when `Ω¹` vanishes at `x`,
 equivalently when the diagonal is an open immersion near `x`. Mathlib splits
 this into `FormallyUnramified` (`Ω¹ = 0`) and a finiteness hypothesis
 (`FiniteType` / `LocallyOfFiniteType`); together they are SGA's net morphisms.
-The historical synonym *net* is not used as a Lean name.
+
+Theorem I.3.7: with trivial residue extension, unramified means the map of
+completions is a quotient. The key algebraic input is
+`FormallyUnramified.map_maximalIdeal` (`m_A S = m_S`); surjectivity of the
+completed map then follows from surjectivity of the algebra map, which for
+module-finite algebras is equivalent to surjectivity on residue fields by
+Nakayama (`LinearMap.surjective_of_radical`).
 -/
 
 universe u
 
 namespace SGA.SGA1.ExposeI
 
-open AlgebraicGeometry Algebra CategoryTheory CategoryTheory.Limits IsLocalRing
+open AlgebraicGeometry Algebra CategoryTheory CategoryTheory.Limits IsLocalRing AdicCompletion
 
 variable {R S : Type u} [CommRing R] [CommRing S] [Algebra R S]
 
@@ -57,6 +64,48 @@ theorem exists_unramified_away [FiniteType R S] (q : Ideal S) [q.IsPrime]
     [IsUnramifiedAt R q] :
     ∃ f ∉ q, Unramified R (Localization.Away f) :=
   exists_unramified_of_isUnramifiedAt (R := R) q
+
+/-- I.3.7, key identification: formally unramified implies `m_A S = m_S`. -/
+theorem map_maximalIdeal_eq_of_formallyUnramified [IsLocalRing R] [IsLocalRing S]
+    [IsLocalHom (algebraMap R S)] [EssFiniteType R S] [FormallyUnramified R S] :
+    (maximalIdeal R).map (algebraMap R S) = maximalIdeal S :=
+  FormallyUnramified.map_maximalIdeal
+
+/-- I.3.7: if the algebra map is surjective, so is the map of `m`-adic completions. -/
+theorem adicCompletion_surjective_of_surjective [IsLocalRing R]
+    (h : Function.Surjective (algebraMap R S)) :
+    Function.Surjective (AdicCompletion.map (maximalIdeal R) (Algebra.linearMap R S)) :=
+  AdicCompletion.map_surjective _ h
+
+/-- I.3.7: a module-finite formally unramified local homomorphism with surjective
+residue-field map is surjective. -/
+theorem algebraMap_surjective_of_formallyUnramified
+    [IsLocalRing R] [IsLocalRing S] [IsLocalHom (algebraMap R S)]
+    [EssFiniteType R S] [FormallyUnramified R S] [Module.Finite R S]
+    (hres : Function.Surjective (ResidueField.map (algebraMap R S))) :
+    Function.Surjective (algebraMap R S) := by
+  change Function.Surjective (Algebra.linearMap R S)
+  rw [← LinearMap.range_eq_top, ← top_le_iff]
+  apply Submodule.le_of_le_smul_of_le_jacobson_bot Module.Finite.fg_top (maximalIdeal_le_jacobson _)
+  rw [Ideal.smul_top_eq_map, FormallyUnramified.map_maximalIdeal]
+  intro x _
+  obtain ⟨a, ha⟩ := hres (residue S x)
+  obtain ⟨a, rfl⟩ := residue_surjective (R := R) a
+  have ha' : residue S (algebraMap R S a) = residue S x := by
+    simpa [ResidueField.map_residue] using ha
+  have hmem : algebraMap R S a - x ∈ maximalIdeal S :=
+    (residue_eq_zero_iff _).mp (by simp [← ha', map_sub])
+  rw [← sub_sub_self (algebraMap R S a) x]
+  exact sub_mem (Submodule.mem_sup_left ⟨a, rfl⟩) (Submodule.mem_sup_right hmem)
+
+/-- I.3.7: the completed map is surjective under the same hypotheses. -/
+theorem adicCompletion_surjective_of_formallyUnramified
+    [IsLocalRing R] [IsLocalRing S] [IsLocalHom (algebraMap R S)]
+    [EssFiniteType R S] [FormallyUnramified R S] [Module.Finite R S]
+    (hres : Function.Surjective (ResidueField.map (algebraMap R S))) :
+    Function.Surjective (AdicCompletion.map (maximalIdeal R) (Algebra.linearMap R S)) :=
+  adicCompletion_surjective_of_surjective
+    (algebraMap_surjective_of_formallyUnramified hres)
 
 variable {X Y : Scheme.{u}} (f : X ⟶ Y)
 
@@ -101,9 +150,7 @@ instance formallyUnramified_snd {X' : Scheme.{u}} (g : X' ⟶ Y) [FormallyUnrami
 
 set_option backward.isDefEq.respectTransparency.types false in
 /-- I.3.4: if `X` is unramified over `Y`, the graph of a `Y`-morphism `X' ⟶ X`
-is an open immersion. (The graph is `X' ⟶ X' ×_Y X`, as in the standard
-formulation; the source's target `X ×_Y X` is recorded in the translation
-README.) -/
+is an open immersion. -/
 instance isOpenImmersion_graph {X' X Y : Scheme.{u}} (g : X' ⟶ X) (f : X ⟶ Y)
     [FormallyUnramified f] [LocallyOfFiniteType f] :
     IsOpenImmersion (pullback.lift (𝟙 X') g (Category.id_comp (g ≫ f))) :=

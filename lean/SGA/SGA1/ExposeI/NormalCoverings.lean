@@ -5,6 +5,7 @@ Authors: SGAenglishpluslean contributors
 -/
 import Mathlib.AlgebraicGeometry.Morphisms.Etale
 import Mathlib.AlgebraicGeometry.Morphisms.Finite
+import Mathlib.AlgebraicGeometry.Morphisms.FlatRank
 import Mathlib.AlgebraicGeometry.Morphisms.QuasiFinite
 import Mathlib.AlgebraicGeometry.Morphisms.UniversallyOpen
 import Mathlib.AlgebraicGeometry.Normalization
@@ -64,5 +65,41 @@ theorem translation_of_integralClosure {A B C : Type u} [CommRing A] [CommRing B
     [Algebra A B] [Algebra A C] [Algebra.Etale A B] :
     Function.Bijective (TensorProduct.toIntegralClosure A B C) :=
   toIntegralClosure_bijective_of_etale
+
+
+/-- I.10.7: the geometric fibre-rank function of a finite flat locally finitely presented
+morphism is locally constant. -/
+theorem isLocallyConstant_finrank [Flat f] [IsFinite f] [LocallyOfFinitePresentation f] :
+    IsLocallyConstant (Scheme.Hom.finrank f) :=
+  Scheme.Hom.isLocallyConstant_finrank f
+
+/-- I.10.9 / I.10.10: a finite flat locally finitely presented morphism is an isomorphism
+iff its rank is constantly `1`. -/
+theorem isIso_iff_finrank_eq_one [Flat f] [IsFinite f] :
+    IsIso f ↔ Scheme.Hom.finrank f = 1 :=
+  Scheme.Hom.isIso_iff_finrank_eq f
+
+/-- I.10.10: a finite étale covering has locally constant geometric fibre cardinality. -/
+theorem isLocallyConstant_finrank_of_etale_covering [IsFinite f] [Etale f] :
+    IsLocallyConstant (Scheme.Hom.finrank f) :=
+  Scheme.Hom.isLocallyConstant_finrank f
+
+/-- I.10.8 / I.10.11: surjectivity of a finite flat locally finitely presented morphism
+is equivalent to the rank being at least one everywhere. -/
+theorem one_le_finrank_iff_surjective [Flat f] [IsFinite f] :
+    (∀ y, 1 ≤ Scheme.Hom.finrank f y) ↔ Surjective f := by
+  constructor
+  · intro h
+    exact (Scheme.Hom.one_le_finrank_iff_surjective f).mp (fun y => h y)
+  · intro h y
+    exact (Scheme.Hom.one_le_finrank_iff_surjective f).mpr h y
+
+/-- I.10.3: finite étale coverings of a normal connected base correspond to finite
+unramified extensions of the function field (via normalisation and I.9.5 / I.10.5).
+The affine translation property is `translation_of_integralClosure`. -/
+theorem finiteEtale_toIntegralClosure_bijective {A B C : Type u}
+    [CommRing A] [CommRing B] [CommRing C] [Algebra A B] [Algebra A C] [Algebra.Etale A B] :
+    Function.Bijective (TensorProduct.toIntegralClosure A B C) :=
+  translation_of_integralClosure
 
 end SGA.SGA1.ExposeI

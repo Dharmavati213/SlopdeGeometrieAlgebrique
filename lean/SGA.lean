@@ -6,3 +6,11 @@ import SGA.SGA2.ExposeIII
 import SGA.SGA2.ExposeIV
 import SGA.SGA2.ExposeV
 import SGA.SGA2.ExposeVI
+import SGA.SGA2.ExposeVII
+import SGA.SGA2.ExposeVIII
+import SGA.SGA2.ExposeIX
+import SGA.SGA2.ExposeX
+import SGA.SGA2.ExposeXI
+import SGA.SGA2.ExposeXII
+import SGA.SGA2.ExposeXIII
+import SGA.SGA2.ExposeXIV

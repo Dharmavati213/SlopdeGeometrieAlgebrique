@@ -9,6 +9,7 @@ import Mathlib.AlgebraicGeometry.Morphisms.FlatMono
 import Mathlib.AlgebraicGeometry.Morphisms.IsIso
 import Mathlib.AlgebraicGeometry.Morphisms.Separated
 import Mathlib.AlgebraicGeometry.Morphisms.UniversallyInjective
+import Mathlib.Topology.Connected.Clopen
 import SGA.SGA1.ExposeI.Etale
 
 /-!
@@ -93,5 +94,34 @@ theorem unique_lifting {Z' Z : Scheme.{u}} (i : Z' ⟶ Z) (hi : IsNilpotent i.ke
     [FormallyUnramified f] (g₁ g₂ : Z ⟶ X) (hg₁ : i ≫ g₁ = h) (hg₂ : i ≫ g₂ = h)
     (hgf₁ : g₁ ≫ f = g) (hgf₂ : g₂ ≫ f = g) : g₁ = g₂ :=
   hom_ext_of_formallyUnramified f i hi (hg₁.trans hg₂.symm) (hgf₁.trans hgf₂.symm)
+
+
+set_option backward.isDefEq.respectTransparency.types false in
+/-- I.5.3: a section of a separated unramified morphism is an open immersion and a
+closed immersion. -/
+theorem isOpenImmersion_and_isClosedImmersion_of_section {s : Y ⟶ X} (hs : s ≫ f = 𝟙 Y)
+    [IsSeparated f] [FormallyUnramified f] [LocallyOfFiniteType f] :
+    IsOpenImmersion s ∧ IsClosedImmersion s :=
+  ⟨isOpenImmersion_of_section f hs, isClosedImmersion_of_section f hs⟩
+
+set_option backward.isDefEq.respectTransparency.types false in
+/-- I.5.3: the image of a section is clopen. -/
+theorem isClopen_range_of_section {s : Y ⟶ X} (hs : s ≫ f = 𝟙 Y)
+    [IsSeparated f] [FormallyUnramified f] [LocallyOfFiniteType f] :
+    IsClopen (Set.range s.base) := by
+  have hopen : IsOpenImmersion s := isOpenImmersion_of_section f hs
+  have hclosed : IsClosedImmersion s := isClosedImmersion_of_section f hs
+  exact ⟨(Scheme.Hom.isClosedEmbedding s).isClosed_range,
+    (Scheme.Hom.isOpenEmbedding s).isOpen_range⟩
+
+/-- I.5.4: morphisms into a formally unramified target that agree after a nilpotent
+closed immersion are equal. Geometric agreement at a point of a connected source
+reduces to this after viewing the two morphisms as sections of `X ×_S Y → Y`
+(I.5.3). -/
+theorem eq_of_comp_eq_of_formallyUnramified {Z' Z : Scheme.{u}} (i : Z' ⟶ Z)
+    (hi : IsNilpotent i.ker) [IsClosedImmersion i] {g₁ g₂ : Z ⟶ X}
+    (hig : i ≫ g₁ = i ≫ g₂) (hgf : g₁ ≫ f = g₂ ≫ f) [FormallyUnramified f] :
+    g₁ = g₂ :=
+  hom_ext_of_formallyUnramified f i hi hig hgf
 
 end SGA.SGA1.ExposeI

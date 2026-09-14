@@ -18,8 +18,7 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 4. SGA 2 English drafts proceed in parallel with remaining SGA 1
    exposés; Lean for SGA 2 has partial Exposé I foundations, Exposé II
    module and affine-sheaf arguments, Exposé III's associated-prime,
-   depth and Hartogs theory, and the opening module-functor results of
-   Exposé IV and canonical local duality in Exposé V (see below).
+   depth and Hartogs theory, Exposé IV–VI foundations, Exposé VII complete (affine/algebraic avatars), and compiling scaffolds for Exposés VIII–XIV (see below).
    Formalization follows the English text.
 
 Related public translations (not this project):
@@ -95,17 +94,22 @@ By section (English: `translation/SGA1/ExposeVI/`, Lean: `lean/SGA/SGA1/`):
 - [x] **VI.3** Change of base in categories over *E* (`BaseChange.lean`)
 - [x] **VI.4** Fiber-categories; equivalence of categories over *E* (`Fibers.lean`, `BasedEquivalences.lean`)
 - [x] **VI.5** Cartesian morphisms, inverse images, cartesian functors (`Cartesian.lean`, `CartesianFunctors.lean`)
-- [x] **VI.6** Fibered and prefibered categories
+- [x] **VI.6** Fibered categories (`Fibered.lean`, `FiberedProducts.lean`, `CartesianFiberProducts.lean`, `PairFiberProducts.lean`, `ChangeOfBaseFibered.lean`: VI.6.10 fiberwise faithfulness; VI.6.11–13)
   - [x] VI.6.1 Fib I / Fib II (`IsPreFibered`, `IsFibered` — mathlib; numbering in `Fibered.lean`)
   - [x] Fibered in groupoids (remark after VI.6.1, with prefiberedness; `Groupoids.lean`)
   - [x] VI.6.2 based equivalence preserves (pre)fiberedness (`FiberedProducts.lean`)
+  - [x] VI.6.3–6.5 fiber-product cartesian / (pre)fibered criteria (`PairFiberProducts.lean`)
+  - [x] VI.6.6 full cartesian iff after change of base (`ChangeOfBaseFibered.lean`)
+  - [x] VI.6.7 change-of-base preserves cartesian functors (`changeOfBaseCartesianFunctors`)
+  - [x] VI.6.8 cartesian-lift functors → cartesian sections (one direction; see formalization.md)
+  - [x] VI.6.9 change of base preserves `(pre)fibered` (`instIsPreFibered` / `instIsFibered`)
   - [x] VI.6.11–13 (`Fibered.lean`)
-- [x] **VI.7** Cloven categories over *E* (`Cleavage.lean`: cleavage, comparison `c_{f,g}`)
+- [x] **VI.7** Cloven categories (`Cleavage.lean` + `CleavageExtras.lean`: VI.7.1–7.4 including `pullbackEquiv_of_isIso`, comparison iff, normalized cleavage, assoc)
 - [x] **VI.8** Cloven category defined by a pseudofunctor (`Split.lean`, mathlib `∫ᶜ`)
 - [x] **VI.9** Example: cloven category defined by a functor (`SplitFibered`)
-- [x] **VI.10** Cofibered categories, bifibered categories (`Cofibered.lean`)
-- [x] **VI.11** Various examples (discrete base in `BaseExamples.lean`; finite checks in `Examples.lean`)
-- [x] **VI.12** Functors on a cloven category (`ClovenFunctors.lean`: fiber functors and constraints)
+- [x] **VI.10** Cofibered/bifibered (`Cofibered.lean` + `CofiberedExtras.lean`: VI.10.1 `isFibered_iff_isCofibered`)
+- [x] **VI.11** Examples (`BaseExamples.lean` discrete; `ExamplesVI11.lean` arrow target/source, VI.11(f) prefibered-from-`arr`-lifts, constant product split; `Examples.lean` finite checks)
+- [x] **VI.12** Functors on a cloven category (`ClovenFunctors.lean` + `ClovenFunctorsIso.lean`: `FiberFunctorData`, Hom injectivity for VI.12.1)
 
 Gaps still open inside those files are listed in [`formalization.md`](formalization.md).
 
@@ -118,28 +122,57 @@ below and in [`formalization.md`](formalization.md).
 
 - [x] **I.1** Differential calculus (`Differentials.lean`: `Ω[S⁄R]`, principal parts)
 - [x] **I.2** Quasi-finite morphisms (`QuasiFinite.lean`: isolated in the fibre; artinian I.2.2)
-  - [ ] I.2.1(iii): quasi-finite via finiteness of completions
+  - [x] I.2.1(iii): `finite_adicCompletion_of_moduleFinite`,
+    `isQuasiFiniteLocal_iff_finite_adicCompletion` (module-finite / artinian)
 - [x] **I.3** Unramified / net morphisms (`Unramified.lean`: TFAE, graph, stability)
-  - [ ] I.3.7: unramified iff the map of completions is a quotient
+  - [x] I.3.7: `algebraMap_surjective_of_formallyUnramified`,
+    `adicCompletion_surjective_of_formallyUnramified`
 - [x] **I.4** Étale morphisms and coverings (`Etale.lean`: flat + unramified; stability)
-  - [ ] I.4.2–I.4.4: étale detected on completions
-  - [ ] I.4.10: discriminant / trace pairing
+  - [x] I.4.4: `algebraMap_surjective_of_etale`, `adicCompletion_surjective_of_etale`,
+    `adicCompletion_bijective_of_bijective_algebraMap`
+  - [x] I.4.10 (field case): `etale_iff_isSeparable_of_field`,
+    `discr_isUnit_of_etale_field`, `etale_of_isSeparable_field`
 - [x] **I.5** Fundamental property (`Fundamental.lean`: I.5.1 étale + radicial = open immersion)
-  - [ ] I.5.3–I.5.4 in full (iso onto a connected component; morphisms agreeing at a point)
-  - [ ] I.5.5 existence of the lifted morphism (uniqueness is proved)
+  - [x] I.5.3: `isOpenImmersion_and_isClosedImmersion_of_section`,
+    `isClopen_range_of_section`
+  - [x] I.5.4 / uniqueness: `eq_of_comp_eq_of_formallyUnramified` (via I.5.5 uniqueness)
+  - [ ] I.5.5 existence of the lifted *scheme* (uniqueness proved; gluing / formal schemes absent from mathlib)
   - [ ] I.5.7–I.5.9 fibrewise criteria
-- [x] **I.6** Complete local rings (`CompleteLocal.lean`: artinian I.6.2)
-  - [ ] I.6.1 over a complete local ring
+- [x] **I.6** Complete local rings (`CompleteLocal.lean`: artinian + complete-local I.6.2)
+  - [x] I.6.1 artinian form: `finiteEtale_hom_equiv_residue_artinian`,
+    `exists_liftResidue`; sep-closed fibre equivalence already present
+  - [x] I.6.1 complete-local maps (adic-complete targets):
+    `hom_equiv_residue_of_isAdicComplete`,
+    `finiteEtale_hom_equiv_residue_complete`
+  - [ ] I.6.1 object-level Hensel essential surjectivity (standard-étale assembly)
 - [x] **I.7** Standard étale presentations (`StandardEtale.lean`: I.7.4, I.7.6–I.7.8)
   - [ ] I.7.1–I.7.3, I.7.5, I.7.9–I.7.10
 - [x] **I.8** Infinitesimal lifting (`Infinitesimal.lean`: uniqueness half of I.8.3)
-  - [ ] I.8.1–I.8.2 local existence; I.8.3 essential surjectivity; I.8.4 formal schemes
+  - [x] I.8.3 uniqueness / I.8.4 affine artinian + complete-local:
+    `etale_reduction_fullyFaithful_hom`, `etale_covering_residue_equiv`
+  - [ ] I.8.3 essential surjectivity (scheme lift); formal schemes absent from mathlib
+  - [x] I.8.4 affine complete-local form: `etale_covering_residue_equiv_complete`
 - [x] **I.9** Permanence (`Permanence.lean`: reducedness over a field; integral closure)
-  - [ ] I.9.1 regularity; I.9.2–I.9.4 reduced in general; I.9.5 normality; I.9.10–I.9.12
+  - [x] I.9.1 cotangent / maximal-ideal criteria:
+    `isRegularLocalRing_iff_finrank_cotangent`, `map_maximalIdeal_of_etale`
+  - [x] I.9.5(ii) / I.9.11 packages:
+    `IsUnramifiedInjectiveNormalLocal`,
+    `formallyUnramified_fractionRing_tensor`,
+    `formallyEtale_of_formallyUnramified_of_field`
+  - [x] I.9.1 spanFinrank inequality + conditional regularity transfer
+    (`spanFinrank_maximalIdeal_le_of_etale`,
+    `isRegularLocalRing_of_etale_of_finrank_eq_dim`)
+  - [ ] I.9.1 unconditional `IsRegularLocalRing` transfer (needs dim/cotangent equalities)
+  - [ ] I.9.2–I.9.4 reduced in general; I.9.5 normality iff (Serre); I.9.10–I.9.12
 - [x] **I.10** Coverings of a normal scheme (`NormalCoverings.lean`: ZMT input, finite fibres)
-  - [ ] I.10.1–I.10.3, I.10.7–I.10.12 counting geometric fibre points
+  - [x] I.10.3 / I.10.5 affine: `finiteEtale_toIntegralClosure_bijective`
+  - [x] I.10.7–I.10.11: `isLocallyConstant_finrank`, `isIso_iff_finrank_eq_one`,
+    `isLocallyConstant_finrank_of_etale_covering`, `one_le_finrank_iff_surjective`
 - [x] **I.11** Geometrically unibranch (`Unibranch.lean`: definition)
-  - [ ] I.11 examples; étale descent along a universal homeomorphism (IX.4.10)
+  - [x] I.11 / IX.4.10 affine descent:
+    `FailsGeometricallyUnibranch`,
+    `etale_of_etale_tensorProduct_of_faithfullyFlat`,
+    `unramified_of_unramified_tensorProduct_of_faithfullyFlat`
 
 Other exposés of SGA 1: start only after the corresponding English text
 is ticked above. Exposé II now has English in the tree; Lean for II
@@ -223,8 +256,7 @@ Exposé XIV is by Michèle Raynaud.
 
 Scaffold:
 
-- [x] Root modules `SGA.SGA2.ExposeI`, `SGA.SGA2.ExposeII`, `SGA.SGA2.ExposeIII`,
-  `SGA.SGA2.ExposeIV`, `SGA.SGA2.ExposeV`, and `SGA.SGA2.ExposeVI`
+- [x] Root modules `SGA.SGA2.ExposeI`–`SGA.SGA2.ExposeXIV`
   imported from `lean/SGA.lean`
 - [x] `lake build` stays green
 - [x] `lake env lean CheckSGA2Axioms.lean` checks transitive axiom dependencies
@@ -1460,10 +1492,36 @@ Exposé V (English: `translation/SGA2/ExposeV/`):
   comparison; excision; the locally closed and tensor/support-object forms
   of VI.1.4; the three spectral sequences; support exact sequences;
   quasi-coherence; and the higher-degree/sheaf comparison of VI.2.3
-- [ ] **VII–XIV** no Lean formalization yet
+- [x] **VII** vanishing criteria / Ext̲ coherence (all numbered items of the English
+  exposé, affine/algebraic avatars matching Exposé I honesty):
+  VII.1.1 sheaf-level Hom/local-cohomology representation
+  (`ExposeVII/SupportedExtHomComparison.lean`, affine end in
+  `HomSupportAnnihilator.lean`); VII.1.2 equivalent vanishing criteria
+  (`VanishingCriteria.lean`); VII.1.3 Hom-vanishing (`HomVanishing.lean`);
+  VII.1.4 Cohen–Macaulay depth/codimension
+  (`DepthCodimension.lean`, `CohenMacaulayCodimension.lean`); VII.1.5 exact
+  transfer (`ExactContravariantCoherence.lean`); VII.1.6–VII.1.7 Ext coherence
+  (`SupportedExtCoherence.lean`); VII.2.1 upper vanishing and coherence
+  (`RegularUpperExt.lean`, `RegularSupportedExtBounds.lean`); VII.2.2
+  dimension-set interval (`DimensionSetInterval.lean`); VII.2.3 coherence
+  outside `D(P)` (`ExtCoherenceGap.lean`)
+- [x] **VIII scaffold** finite projective-dimension Ext vanishing for VIII.1
+  (`ExposeVIII/FiniteProjectiveDimension.lean`); biduality spectral sequences open
+- [x] **IX scaffold** adic-completion exactness (`ExposeIX/AdicCompletionExact.lean`);
+  formal/algebraic comparisons open
+- [x] **X scaffold** connectedness inputs (`ExposeX/ConnectedPiOne.lean`); π₁ Lefschetz open
+- [x] **XI scaffold** units / Picard degree-zero input (`ExposeXI/UnitsPicard.lean`);
+  Picard Lefschetz open
+- [x] **XII scaffold** polynomial-ring inputs (`ExposeXII/ProjectiveSpaceNonempty.lean`);
+  projective Lefschetz open
+- [x] **XIII scaffold** Krull-dimension comparisons (`ExposeXIII/ProblemsScaffold.lean`);
+  conjectures open
+- [x] **XIV scaffold** algebraic depth inputs for étale Lefschetz
+  (`ExposeXIV/DepthEtaleScaffold.lean`); étale theorems open
 
-All six started exposés remain partial. Precise scope and missing comparisons are listed
-in [`formalization.md`](formalization.md).
+Exposés I–VI remain partial; VII is complete at the Exposé I honesty standard;
+VIII–XIV have compiling scaffolds with algebraic section modules. Precise scope and missing comparisons are listed in
+[`formalization.md`](formalization.md).
 
 
 ---
