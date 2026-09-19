@@ -30,5 +30,9 @@ jobs:
           auto-config: false
           build: true
           use-mathlib-cache: true
+          # Mathlib oleans already come from `lake exe cache get`. Saving the
+          # whole `lean/.lake` tree as a GitHub Actions cache fills the runner
+          # disk after a full SGA build.
+          use-github-cache: false
           lake-package-directory: lean
           build-args: SGA
