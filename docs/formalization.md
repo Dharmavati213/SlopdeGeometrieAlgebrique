@@ -184,23 +184,25 @@ locally closed supported sheaves now have original derived functors,
 sheafification, witness independence, and flasque acyclicity. In particular:
 
 The internal-Hom/sheaf-Ext modules prove coefficient naturality in every
-degree. They do not yet package first-variable bifunctoriality, connecting-map
-compatibility, or compatibility of the local Ext evaluation equivalences with
-the usual Ext restriction maps for nested opens. The underlying internal-Hom
-presheaf and the closed-support sheaf comparison do have actual open-restriction
-compatibility.
+degree, first-variable bifunctoriality (`internalSheafExtPrecomp`), connecting
+maps of local Ext (`localExtδ`), and nested-open restriction of the evaluation
+equivalences (`localExtRestriction`). Ringed-space I.1.6/I.1.7 is
+`ringedSpaceSupportHomEquiv`.
 
-- I.1.1–I.1.7: the remaining internal Hom identities and the ringed-space versions.
-  Genuine abelian internal Hom, its restriction-Hom comparison, and sheaf Ext
-  as sheafification of local Ext are constructed. The closed-support internal-Hom
-  identity and all-degree sheaf Ext comparison are also proved in the general
-  locally closed setting, for the original ambient functors. Ringed-space
-  analogues and the remaining internal-Hom identities remain.
+- I.1.1–I.1.7: first-variable Hom/Ext, nested-open local Ext restriction,
+  connecting maps, and the ringed-space Hom identity are proved
+  (`InternalHomBifunctor.lean`, `SheafExtRestriction.lean`,
+  `SheafExtConnecting.lean`, `RingedSpaceSupportHom.lean`).
   The general closed and locally closed `i_! ⊣ i^!` adjunctions and
-  preservation of injectives by extraordinary inverse image are now proved,
-  alongside exact open/closed extension and the closed Hom representation.
-- I.2.6: a separate identification with a named general Leray construction
-  and spectral-level change of locally closed witness remain.
+  preservation of injectives by extraordinary inverse image remain as previously
+  proved, alongside exact open/closed extension and the closed Hom representation.
+- I.2.6: the constructed sequence is identified with the Grothendieck
+  spectral sequence of the supported-sheaf functor
+  (`grothendieckSpectralSequenceOfSupportedSheaf`); for open support its
+  E₂ page is the Leray page of the inclusion (`openInclusionLerayE2Equiv`).
+  Spectral-level witness change is
+  `locallyClosedTruncationSpectralSequenceE2WitnessEquiv`. Closed supports
+  are the locally closed witness `LocallyClosedIn.ofClosed`.
   For closed supports, the actual sequence, E₂ identification and naturality, first-quadrant
   vanishing, total comparison to original `H_Z`, and finite convergence
   filtration are proved. Spectral-object coefficient maps preserve connecting
@@ -326,23 +328,21 @@ Radical invariance of torsion is proved for finitely generated ideals.
 
 ### Remaining gaps in SGA 2 Exposé II
 
-- II.1–II.4: quasi-coherence of higher supported cohomology sheaves, affine
-  sheaf-cohomology vanishing over arbitrary rings, and the spectral-sequence
-  comparison. Ordinary affine vanishing, the actual low-degree relative
-  sequence and higher open-complement formulas are proved over noetherian rings;
-  the actual degree-zero restriction-kernel comparison with torsion is also proved.
-- II.5: compare stable Koszul cohomology with the independently defined
-  higher topological supported cohomology for arbitrary finite families.
-  Degree-zero supported sections and the principal restriction-cokernel
-  calculation are proved.
-- II.6–II.7: construct the global and sheaf Ext comparisons, their spectral
-  sequences and compatibility, and the local-to-global argument. II.8's
-  algebraic comparison and the actual noetherian affine group-valued comparison
-  are proved, but do not supply these general-scheme geometric steps.
-- II.10: prove the equivalence between Koszul vanishing and injective
-  associated-sheaf flasqueness assuming only a topologically noetherian
-  spectrum. Flasqueness over a noetherian ring is proved, with actual global
-  extension from every open, in `InjectiveFlasque.lean`.
+- II.1–II.3: quasi-coherence of `SheafH_Z^i(F)` for quasi-coherent `F` on
+  general schemes remains. `II_1_open` identifies open-support derived
+  sheaves with higher direct images; `II_3_restriction` is I.2.7 on charts.
+- II.4 / II.7 on noetherian affines: the local-to-global sequence degenerates
+  by ordinary affine vanishing (`II_7_affine_ordinary_vanishing`). Affine
+  vanishing over arbitrary rings remains.
+- II.5: `II_5` / `II_5_addEquiv` identify stable Koszul cohomology of an
+  arbitrary finite family with topological supported cohomology over a
+  noetherian ring; `II_5_zero` is the degree-zero comparison without
+  noetherianity.
+- II.6–II.7 on noetherian affines: `II_6_a_affine` / `II_6_b_affine`.
+  General-scheme sheaf Ext colimits remain.
+- II.10: over a noetherian ring, `II_10_koszul_vanishing_of_injective` and
+  `II_10_flasque_implies_koszul`. The criterion under mere topological
+  noetherianity of `Spec A` remains.
 
 Exposé II remains partial.
 
@@ -399,24 +399,42 @@ SGA's convention. `Examples.lean` also proves depth zero at the zero ideal
 on a nonzero finite module, and depth one for `ℤ` along `(2)`. The English
 translation has not been silently altered.
 
-Remaining gaps in III.3.1–III.3.13 include the module-valued internal
-sheaf Ext criteria (v)/(vi) and further connectedness results. The all-degree
-coherent depth criterion now uses original supported sheaves on general locally
-noetherian schemes, with literal actual module-stalk depth. The affine
-group-valued depth/supported-cohomology bridge, actual Hartogs restriction, and
-full affine connected-components bijection are proved. Literal affine stalk
-compatibility, structure-sheaf Hartogs, and the full III.3.6 connected-components
-bijection on every locally noetherian scheme are also proved. The full III.3.5
-Hartogs equivalence now covers actual coherent module sheaves. Mathlib has no
-named `IsCoherent` class here: the theorem uses its local finite-presentation
-condition, which is the coherent condition on a locally noetherian scheme.
-Higher-threshold redundancy is proved using the actual embedding into the
-direct image of an injective on the complement, followed by coefficient
-dimension shifting. It does not require a separate sheafification comparison
-for positive ordinary cohomology; that comparison itself is not claimed here.
-Sections 1–2 are
-covered with the explicit finite-depth qualification for maximal finite
-sequences in III.2.6.
+III.3.3(v)/(vi) are proved on noetherian affines (`III_3_3_v`, `III_3_3_vi`,
+`III_3_3_vi_quotient`). III.3.7 is connectedness of complements under the
+depth/dimension hypothesis (`III_3_7_complement`). III.3.8's antifilter and
+finite-component chain data are in `AntifilterConnectedness.lean`. III.3.10's
+depth-less-than-two obstruction is `III_3_10_depth_lt_two`. III.3.12's Koszul
+vanishing above the number of equations, detected on the structure sheaf, is
+`III_3_12`. III.3.3(v)/(vi) are affine module Ext (`III_3_3_v`,
+`III_3_3_vi`); sheaf Ext on a general locally noetherian scheme remains.
+III.3.7's complement π₀ bijection is `III_3_7_complement`; the component
+chain with consecutive codimension `≤ d-1` remains. III.3.8's antifilter
+is defined; the dual graph of irreducible components on a connected
+noetherian space is connected
+(`exists_irreducibleComponents_connected_chain`). III.3.8 (ii)⇒(i) is
+`III_3_8_ii_implies_i`. The converse (i)⇒(ii) remains.
+III.3.9 equidimensionality from depth/dimension plus the EGA chain
+condition remains. III.3.13's principal-curve vanishing, non-UFD obstruction, and relative
+comparison `H_Y^{n+2} ≅ H^{n+1}(X-Y)` on a noetherian affine are
+`III_3_13_principal`, `III_3_13_exists_non_principal`, and
+`III_3_13_relative`; existence of a non-CI curve on a normal surface
+remains.
+
+The all-degree coherent depth criterion now uses original supported sheaves on
+general locally noetherian schemes, with literal actual module-stalk depth.
+The affine group-valued depth/supported-cohomology bridge, actual Hartogs
+restriction, and full affine connected-components bijection are proved. Literal
+affine stalk compatibility, structure-sheaf Hartogs, and the full III.3.6
+connected-components bijection on every locally noetherian scheme are also
+proved. The full III.3.5 Hartogs equivalence now covers actual coherent module
+sheaves. Mathlib has no named `IsCoherent` class here: the theorem uses its
+local finite-presentation condition, which is the coherent condition on a
+locally noetherian scheme. Higher-threshold redundancy is proved using the
+actual embedding into the direct image of an injective on the complement,
+followed by coefficient dimension shifting. It does not require a separate
+sheafification comparison for positive ordinary cohomology; that comparison
+itself is not claimed here. Sections 1–2 are covered with the explicit
+finite-depth qualification for maximal finite sequences in III.2.6.
 
 ## SGA 2 IV — Dualizing modules and functors
 
@@ -993,12 +1011,16 @@ of an injective module sheaf, this proves that the genuine local-linear Hom
 sheaf is flasque and has zero positive closed or locally closed supported
 cohomology. No injectivity of its underlying additive sheaf is assumed.
 
-This is not the full supported sheaf-Ext comparison of VI.2.3. The internal Hom
-and derived sheaves still need their structure-ring module actions. VI.1.2's
-comparison with Ext derived after restriction to each open, excision,
-VI.1.4's locally closed and tensor/support-object comparisons, the three
-spectral sequences, support exact sequences, quasi-coherence, and the
-higher-degree/sheaf comparisons remain open.
+VI.1.2 is proved: `moduleSheafExtSheafificationIso` identifies sheaf Ext with
+sheafification of local module Ext. The ringed-space Hom identity I.1.7 is
+`ringedSpaceSupportHomEquiv`. VI.1.3 is excision of supported cohomology of
+the Hom sheaf (`VI_1_3`). VI.1.4.1 and VI.1.4.3 are `VI_1_4_1` and
+`VI_1_4_3`; the tensor form VI.1.4.2 remains. VI.1.6's three spectral
+functors are not constructed; named E₂ groups are `VI_1_6_1_E2` /
+`VI_1_6_2_E2`. VI.1.8–VI.1.9 are the nested-support and closed/open
+sequences of the Hom sheaf. VI.2.3's affine degree-zero and structure-sheaf
+comparisons are `VI_2_3_zero` / `VI_2_3_structure`; the general
+`colim Ext(M/IⁿM, N) → Ext_Y(X;F,G)` remains.
 Exposés VII–XIV still have no Lean formalization.
 
 ## Axiom verification

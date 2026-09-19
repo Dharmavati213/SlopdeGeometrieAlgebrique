@@ -16,10 +16,7 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 3. Translate further exposés of SGA 1 (IV–V, VIII–XIII), then formalize
    each after its English text is in the tree.
 4. SGA 2 English drafts proceed in parallel with remaining SGA 1
-   exposés; Lean for SGA 2 has partial Exposé I foundations, Exposé II
-   module and affine-sheaf arguments, Exposé III's associated-prime,
-   depth and Hartogs theory, and the opening module-functor results of
-   Exposé IV and canonical local duality in Exposé V (see below).
+   exposés; Lean for SGA 2 has partial Exposés I–VI (see below).
    Formalization follows the English text.
 
 Related public translations (not this project):
@@ -160,8 +157,8 @@ Exposé XIV is by Michèle Raynaud.
 | II | Application to quasi-coherent sheaves on preschemes | full draft in tree | partial, compiling |
 | III | Cohomological invariants and depth | full draft in tree | partial, compiling |
 | IV | Dualizing modules and functors | full draft in tree | partial, compiling |
-| V | Local duality and structure of the $H^i(M)$ | full draft in tree | — |
-| VI | The functors $\mathrm{Ext}_Z^\bullet(X;F,G)$ and $\underline{\mathrm{Ext}}_Z^\bullet(F,G)$ | full draft in tree | — |
+| V | Local duality and structure of the $H^i(M)$ | full draft in tree | partial, compiling |
+| VI | The functors $\mathrm{Ext}_Z^\bullet(X;F,G)$ and $\underline{\mathrm{Ext}}_Z^\bullet(F,G)$ | full draft in tree | partial, compiling |
 | VII | Vanishing criteria; coherence of $\underline{\mathrm{Ext}}^i_Y(F,G)$ | full draft in tree | — |
 | VIII | The finiteness theorem | full draft in tree | — |
 | IX | Algebraic geometry and formal geometry | full draft in tree | — |
@@ -230,9 +227,9 @@ Scaffold:
 - [x] `lake env lean CheckSGA2Axioms.lean` checks transitive axiom dependencies
   of all imported SGA 2 declarations
 
-Verified imported checkpoint (2026-09-14): the full build passes (4,128 jobs).
-All 519 SGA 2 Lean files are reachable from `SGA.lean`. The audit checks
-9,596 SGA 2 declarations, including private declarations and transitive
+Verified imported checkpoint (2026-09-19): the full build passes (4,165 jobs).
+All 554 SGA 2 Lean files are reachable from `SGA.lean`. The audit checks
+9,949 SGA 2 declarations, including private declarations and transitive
 dependencies, with only `propext`, `Classical.choice`, and `Quot.sound`.
 No proof admissions or additional mathematical axioms were found.
 There are no unimported SGA 2 Lean modules at this checkpoint.
@@ -255,7 +252,17 @@ By section (English: `translation/SGA2/ExposeI/`, Lean: `lean/SGA/SGA2/`):
   (`InternalHom.lean`, `TopologicalInternalHom.lean`, `SheafExtLocalComparison.lean`)
 - [x] Closed integer support commutes with restriction to every open,
   compatibly with its canonical integer presentation (`ClosedSupportRestriction.lean`)
-- [ ] **I.1.1–I.1.7** remaining internal Hom identities and ringed-space statements
+- [x] **I.1.1–I.1.7** remaining internal Hom identities and ringed-space statements:
+  first-variable precomposition of Hom and sheaf Ext
+  (`InternalHomPrecomposition.lean`, `InternalHomBifunctor.lean`:
+  `abelianSheafHomPrecomp`, `internalSheafExtPrecomp`);
+  nested-open local Ext restriction
+  (`SheafExtRestriction.lean`: `localExtRestriction`,
+  `internalExtPresheafSectionsEquiv_restrict`);
+  connecting maps of local Ext
+  (`SheafExtConnecting.lean`: `localExtδ`, `restrictToOpen_map_shortExact`);
+  ringed-space I.1.6/I.1.7
+  (`RingedSpaceSupportHom.lean`: `ringedSpaceSupportHomEquiv`)
 - [x] **I.1, (17), arbitrary coefficients** the original open extension counit
   is monic and the original closed unit is its cokernel. Exact locally closed
   extension gives the functorial short exact sequence for every coefficient
@@ -375,8 +382,14 @@ By section (English: `translation/SGA2/ExposeI/`, Lean: `lean/SGA/SGA2/`):
   coefficient functoriality, original E₂/total/filtered naturality, lift
   independence, and resolution-independent filtration
   (`LocallyClosedLocalToGlobal*.lean`)
-- [ ] **I.2.6, comparison refinements** separate identification with a named
-  general Leray construction and spectral-level locally closed witness change
+- [x] **I.2.6, comparison refinements** the constructed sequence is the
+  Grothendieck spectral sequence of the supported-sheaf functor
+  (`OpenInclusionLeray.lean`: `grothendieckSpectralSequenceOfSupportedSheaf`,
+  `openInclusionLerayE2Equiv`); spectral-level locally closed witness change
+  (`LocallyClosedWitnessChangeSpectral.lean`:
+  `locallyClosedTruncationSpectralSequenceE2WitnessEquiv`);
+  closed supports as locally closed witnesses
+  (`ClosedAsLocallyClosed.lean`: `LocallyClosedIn.ofClosed`)
 - [x] **I.2.7, closed support** actual open base change in all original
   derived degrees; vanishing off the support and positive-degree vanishing
   on its interior, also for sheaf Ext and the unchanged model
@@ -517,9 +530,25 @@ Exposé II (English: `translation/SGA2/ExposeII/`):
 - [x] **II.(4.2)–(4.3), noetherian rings** actual low-degree relative sequence
   and higher supported/open-complement cohomology comparison
   (`AffineRelativeSequence.lean`)
-- [ ] **II.1–II.4** quasi-coherence and arbitrary-ring affine sheaf-cohomology statements
-- [ ] **II.5–II.7** general higher sheaf comparisons, spectral sequences,
-  and the local-to-global argument
+- [ ] **II.1–II.3** quasi-coherence of higher supported cohomology sheaves
+  on general schemes (mathlib higher direct images of quasi-coherent modules
+  under quasi-compact open immersions). Open-support identification
+  `II_1_open` and affine-chart restriction `II_3_restriction` are proved.
+- [x] **II.4 / II.7, noetherian affine** the local-to-global spectral sequence
+  degenerates by ordinary affine vanishing
+  (`AffineExtColimitComparison.lean`: `II_7_affine_ordinary_vanishing`)
+- [x] **II.5** stable Koszul cohomology of an arbitrary finite family agrees
+  with topological supported cohomology on a noetherian affine, in every
+  degree; degree zero holds without noetherianity
+  (`KoszulSupportedComparison.lean`: `II_5`, `II_5_addEquiv`, `II_5_zero`)
+- [x] **II.6–II.7, noetherian affine** Ext-colimit / algebraic local cohomology
+  agrees with supported sheaf cohomology; the sheaf comparison of II.6.a is
+  this identification (`AffineExtColimitComparison.lean`: `II_6_a_affine`,
+  `II_6_b_affine`)
+- [ ] **II.6–II.7, general schemes** sheaf Ext colimits
+  `colim SheafExt(𝒪/Iⁿ, F) ≅ SheafH_Y(F)` and the local-to-global argument
+  off affines. The noetherian affine case remains `II_6_a_affine` /
+  `II_6_b_affine`.
 - [x] **II.(7.3), noetherian affine case** actual algebraic local cohomology
   agrees with actual supported sheaf cohomology in every degree, naturally in
   arbitrary coefficient modules and compatibly with every coefficient boundary
@@ -527,7 +556,12 @@ Exposé II (English: `translation/SGA2/ExposeII/`):
 - [x] **II.(7.3)–(7.6)** cofinal ideal-power reindexing and the resulting
   canonical Ext-to-Koszul comparison commute with actual coefficient boundaries
   (`LocalCohomologyReindexing.lean`, `KoszulLocalCohomologySequence.lean`)
-- [ ] **II.10** equivalence under only topological noetherianity of the spectrum
+- [x] **II.10, noetherian ring** injective associated sheaves are flasque,
+  hence positive Koszul groups vanish on injectives via II.5
+  (`TopologicalNoetherianFlasque.lean`: `II_10_koszul_vanishing_of_injective`,
+  `II_10_flasque_implies_koszul`)
+- [ ] **II.10, topological noetherianity only** the same flasque criterion
+  when `Spec A` is a noetherian space but `A` need not be a noetherian ring
 
 Exposé III (English: `translation/SGA2/ExposeIII/`):
 
@@ -608,8 +642,45 @@ Exposé III (English: `translation/SGA2/ExposeIII/`):
   restriction bijectivity suffices for original supported-sheaf vanishing;
   highest-degree injectivity follows. The corresponding coherent stalk-depth
   criterion is proved (`HigherRestrictionRedundancy.lean`)
-- [ ] **III.3.3(v)/(vi)** module-valued internal sheaf Ext criteria
-- [ ] **III.3.7–III.3.13** remaining geometric depth and connectedness results
+- [x] **III.3.3(v)/(vi), affine** module Ext criteria for depth
+  (`SheafExtDepth.lean`: `III_3_3_v`, `III_3_3_vi`, `III_3_3_vi_quotient`)
+- [ ] **III.3.3(v)/(vi), sheaf Ext** vanishing of `SheafExt^i_𝒪(G,F)` for
+  coherent `G` supported on `Y`, on a general locally noetherian scheme
+- [x] **III.3.7, complements** under the depth/dimension hypothesis,
+  removing a closed set of local dimension `≥ d` induces a bijection on
+  connected components (`ConnectednessInCodimension.lean`:
+  `III_3_7_complement`, `III_3_7_of_minDim`)
+- [ ] **III.3.7, component chain** a chain of irreducible components with
+  `codim(X_i ∩ X_{i+1}) ≤ d-1`
+- [x] **III.3.8, antifilter** of closed sets and finiteness of irreducible
+  components (`AntifilterConnectedness.lean`: `ClosedAntifilter`)
+- [x] **III.3.8, dual graph** on a connected noetherian space any two
+  irreducible components are joinable by a chain of adjacent components
+  (`AntifilterEquivalence.lean`: `exists_irreducibleComponents_connected_chain`)
+- [x] **III.3.8, (ii) ⇒ (i)** a component chain with consecutive
+  intersections outside the antifilter implies complements of members are
+  preconnected (`AntifilterEquivalence.lean`: `III_3_8_ii_implies_i`)
+- [ ] **III.3.8, (i) ⇒ (ii)** local-membership closure and connectedness of
+  complements imply the component chain with `X_i ∩ X_{i+1} ∉ Ff`
+- [ ] **III.3.9** equidimensionality of `Spec A` from the depth/dimension
+  hypothesis and the EGA chain condition (not assumed as a dimension
+  comparison on consecutive components)
+- [x] **III.3.10** if removing a closed set fails to induce a bijection on
+  connected components, some point of the closed set has depth `< 2`
+  (`ConnectednessInCodimension.lean`: `III_3_10_depth_lt_two`)
+- [x] **III.3.12** higher supported vanishing above the number of equations,
+  detected on the structure sheaf
+  (`HigherVanishingOnStructure.lean`: `III_3_12`, `III_3_12_koszul`,
+  `III_3_12_structure`)
+- [x] **III.3.13, principal curve / non-UFD / relative vanishing**
+  vanishing above one equation, a non-principal height-one prime in a
+  non-UFD noetherian domain, and the relative comparison
+  `H_Y^{n+2}(𝒪) ≅ H^{n+1}(X-Y, 𝒪)` on a noetherian affine
+  (`ExamplesIII313.lean`: `III_3_13_principal`,
+  `III_3_13_exists_non_principal`, `III_3_13_relative`)
+- [ ] **III.3.13, normal surface** existence of a curve on a normal
+  2-dimensional local ring that is not cut by one equation and whose
+  complement is affine
 
 Exposé IV (English: `translation/SGA2/ExposeIV/`):
 
@@ -1455,11 +1526,30 @@ Exposé V (English: `translation/SGA2/ExposeV/`):
   of the original `Hom_R(M,N)`. The comparison retains precomposition by the
   original quotient maps, without noetherianity or finite generation
   (`ExposeVI/AffineHomColimit.lean`)
-- [ ] **VI.1 and VI.2, remaining statements** structure-ring module actions
-  on internal Hom and derived sheaves; VI.1.2's restriction-derived local Ext
-  comparison; excision; the locally closed and tensor/support-object forms
-  of VI.1.4; the three spectral sequences; support exact sequences;
-  quasi-coherence; and the higher-degree/sheaf comparison of VI.2.3
+- [x] **VI.1.2** sheaf Ext is sheafification of local module Ext
+  (`ExposeVI/ModuleSheafExtLocal.lean`: `moduleSheafExtSheafificationIso`,
+  `moduleExtPresheafFunctor`)
+- [x] **I.1.7 / VI ringed Hom** maps from the structure sheaf into a
+  supported module sheaf recover supported sections
+  (`ExposeI/RingedSpaceSupportHom.lean`: `ringedSpaceSupportHomEquiv`)
+- [x] **VI.1.3** excision of supported cohomology of the Hom sheaf
+  (`ExposeVI/Excision.lean`: `VI_1_3`, `VI_1_3_zero`)
+- [x] **VI.1.4.1 / VI.1.4.3** closed Hom representation and supported
+  factorization (`SupportObjectHom.lean`: `VI_1_4_1`, `VI_1_4_3`,
+  `VI_1_4_locallyClosed`)
+- [ ] **VI.1.4.2** `Γ_Z(Hom(F,G)) ≅ Hom(𝒪_{X,Z} ⊗ F, G)`
+- [ ] **VI.1.6** three spectral functors abutting to `Ext_Z^•` with E₂
+  `H_Z^p(SheafExt^q)`, `H^p(SheafExt_Z^q)`, `Ext^p(F, SheafH_Z^q(G))`.
+  Named E₂ groups are `VI_1_6_1_E2` / `VI_1_6_2_E2`; the spectral objects
+  themselves are not constructed.
+- [x] **VI.1.8–VI.1.9** nested-support and closed/open sequences of the
+  Hom sheaf (`SupportExactSequences.lean`: `VI_1_8_exact_middle`,
+  `VI_1_8_exact_difference`, `VI_1_8_exact_left`, `VI_1_9_exact`)
+- [x] **VI.2.3, affine degree zero / structure sheaf** quotient-Hom colimit
+  and Ext-colimit of `R/I^n` (`VI_2_3_zero`, `VI_2_3_structure`,
+  `VI_2_3_sheaf`)
+- [ ] **VI.2.3** `colim Ext(M/I^n M, N) → Ext_Y(X; F, G)` for general
+  coherent `F` on a locally noetherian scheme
 - [ ] **VII–XIV** no Lean formalization yet
 
 All six started exposés remain partial. Precise scope and missing comparisons are listed

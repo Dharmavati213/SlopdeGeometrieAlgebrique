@@ -43,8 +43,9 @@ with coherent natural resolution-change isomorphisms. The original convergence
 filtration and stable-page/graded-piece comparison are natural, and the transported
 filtration on `H_Z` is resolution-independent. The general locally closed spectral
 sequence now has the same construction, naturality, and convergence on the
-original ambient space, with the original support Ext abutment. A separate
-named Leray identification and spectral-level witness-change comparison remain open.
+original ambient space, with the original support Ext abutment. The constructed sequence is identified with the Grothendieck/Leray
+sequence of the supported-sheaf functor; spectral-level witness change is
+proved.
 Derived supported sheaves commute with
 actual open restriction and vanish off a closed support and, in positive degrees,
 on its interior; their literal stalk support lies in the boundary in positive degrees,
@@ -70,8 +71,11 @@ supported-sheaf vanishing and local supported-cohomology vanishing. The higher
 ordinary restriction criterion is proved with the actual ambient-intersection
 map. At every threshold at least two, final injectivity is redundant for
 arbitrary abelian sheaves, by actual complement-adapted injective effacement
-and coefficient dimension shifting. Module-valued sheaf Ext criteria and
-later geometric III.§3 remain open.
+and coefficient dimension shifting. Affine module Ext criteria III.3.3(v)/(vi), connectedness of complements
+III.3.7, the antifilter of closed sets, the depth obstruction III.3.10, and
+Koszul vanishing III.3.12 are proved. Equidimensionality III.3.9 and the
+full III.3.8 component-chain equivalence remain open; III.3.13 has the
+principal-curve vanishing and the non-UFD obstruction.
 Exposé IV now proves IV.1.1 for the original additive abelian-group-valued
 functor, including its canonical scalar action and evaluation map, and the
 equivalence between arbitrary modules and left-exact functors on finite modules.
@@ -303,20 +307,12 @@ The original E₂, source-cohomology abutment and stable-page comparisons commut
 with the actual coefficient maps. The original source finite filtration is
 preserved by these maps and is independent of resolution. The source's Cohen
 presentation remains open and is not assumed in the proved algebraic results.
-Exposé VI is started with VI.2.3's affine degree-zero algebra: the actual
-quotient-Hom colimit is ideal-power torsion in the original Hom module,
-with the original quotient-precomposition maps. The supported sheaf-Ext and
-higher-degree comparisons remain open. The genuine sheaf of local module-linear
-maps is now constructed with proved gluing and left exactness. VI.1.4.3 for
-closed support is proved naturally in both variables, including a sheaf form.
-Supported Ext groups and underlying additive sheaves are right-derived in
-the module-sheaf category for closed and locally closed supports, with degree
-zero and injective vanishing proved. VI.1.5's genuine Hom sheaf into an
-injective module sheaf is proved flasque and supported-section acyclic by
-extending local linear maps through the source's open subpresheaf.
-The internal Hom and derived sheaves
-still need their module actions; local Ext comparison, excision, spectral
-sequences, and the remaining sheaf comparisons are open.
+Exposé VI proves VI.1.2 sheafification of local module Ext, VI.1.3 excision
+of the Hom sheaf, VI.1.4.1/VI.1.4.3 Hom representations, VI.1.5 flasque
+acyclicity, VI.1.8–VI.1.9 nested-support sequences of Hom, and VI.2.3's
+affine degree-zero and structure-sheaf Ext-colimit comparisons. The three
+spectral functors of VI.1.6, the tensor form VI.1.4.2, and general
+VI.2.3 remain open.
 Exposés VII–XIV have no Lean formalization.
 See the formalization notes for precise coverage and gaps.
 

@@ -6,6 +6,13 @@ Authors: SGAenglishpluslean contributors
 import SGA.SGA2.ExposeVI.AffineHomColimit
 import SGA.SGA2.ExposeVI.ModuleSupportedExt
 import SGA.SGA2.ExposeVI.ModuleHomInjectiveFlasque
+import SGA.SGA2.ExposeVI.ModuleSheafExtLocal
+import SGA.SGA2.ExposeVI.Excision
+import SGA.SGA2.ExposeVI.SupportObjectHom
+import SGA.SGA2.ExposeVI.SpectralFunctors
+import SGA.SGA2.ExposeVI.SupportExactSequences
+import SGA.SGA2.ExposeVI.AffineExtComparison
+import SGA.SGA2.ExposeVI.Examples
 
 /-!
 # SGA 2, Exposé VI: Ext with support
@@ -34,9 +41,12 @@ module sheaf extend globally through the open subpresheaf of the source.
 The genuine Hom sheaf is therefore acyclic for closed and locally closed
 supported sections, without assuming additive-sheaf injectivity.
 
-The internal Hom and derived sheaves still need their structure-ring module
-actions. VI.1.2's local Ext comparison, excision, the locally closed extension
-of VI.1.4.3, tensor/support-object comparisons, the three spectral sequences,
-support exact sequences, quasi-coherence, and VI.2.3's higher-degree/sheaf
-comparison remain open.
+VI.1.2 is proved: sheaf Ext is sheafification of local module Ext.
+VI.1.3 is excision of supported cohomology of the Hom sheaf. VI.1.4.1 and
+VI.1.4.3 are the closed Hom representation and supported factorization.
+VI.1.8–VI.1.9 are nested-support sequences of the Hom sheaf. VI.2.3 compares
+Ext-colimits with supported cohomology for the structure sheaf on a
+noetherian affine, and in degree zero for arbitrary modules. The tensor
+form VI.1.4.2, the three spectral functors of VI.1.6, and general VI.2.3
+remain open.
 -/

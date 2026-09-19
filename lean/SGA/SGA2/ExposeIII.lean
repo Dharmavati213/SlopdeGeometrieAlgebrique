@@ -34,6 +34,14 @@ import SGA.SGA2.ExposeIII.MaximalRegular
 import SGA.SGA2.ExposeIII.InfiniteRegular
 import SGA.SGA2.ExposeIII.Examples
 import SGA.SGA2.ExposeIII.RegularLocalRegularSequence
+import SGA.SGA2.ExposeIII.AntifilterConnectedness
+import SGA.SGA2.ExposeIII.ConnectednessInCodimension
+import SGA.SGA2.ExposeIII.HigherVanishingOnStructure
+import SGA.SGA2.ExposeIII.SheafExtDepth
+import SGA.SGA2.ExposeIII.ExamplesIII
+import SGA.SGA2.ExposeIII.Equidimensionality
+import SGA.SGA2.ExposeIII.AntifilterEquivalence
+import SGA.SGA2.ExposeIII.ExamplesIII313
 
 /-!
 # SGA 2, Exposé III — Cohomological invariants and depth
@@ -112,6 +120,7 @@ English translation: `translation/SGA2/ExposeIII/` (repo root).
 
 SGA's regular sequences allow a zero final quotient, so they are expressed
 using mathlib's `IsWeaklyRegular`. All depth formulae include infinite depth.
-The remaining assertions, including the geometric statements of §3, are
-recorded in `docs/formalization.md`.
+III.3.13 includes principal-curve vanishing and the non-UFD obstruction.
+III.3.8's component-chain equivalence and III.3.9 equidimensionality remain
+open. Remaining notes are recorded in `docs/formalization.md`.
 -/
