@@ -10,7 +10,7 @@ lake build
 
 Root modules: `SGA.SGA1.ExposeI`, `SGA.SGA1.ExposeVI`, `SGA.SGA2.ExposeI`,
 `SGA.SGA2.ExposeII`, `SGA.SGA2.ExposeIII`, `SGA.SGA2.ExposeIV`, `SGA.SGA2.ExposeV`,
-and `SGA.SGA2.ExposeVI`. Lemmas live in the matching
+`SGA.SGA2.ExposeVI`, and `SGA.SGA2.ExposeVII`. Lemmas live in the matching
 exposé directories and are imported from the barrel modules. SGA 2 has partial Exposé I
 foundations, actual open extension by zero, the natural derived-supported-section
 comparison with Ext, and ordinary and closed-supported flasque acyclicity,
@@ -73,8 +73,10 @@ map. At every threshold at least two, final injectivity is redundant for
 arbitrary abelian sheaves, by actual complement-adapted injective effacement
 and coefficient dimension shifting. Affine module Ext criteria III.3.3(v)/(vi), connectedness of complements
 III.3.7, the antifilter of closed sets, the depth obstruction III.3.10, and
-Koszul vanishing III.3.12 are proved. Equidimensionality III.3.9 and the
-full III.3.8 component-chain equivalence remain open; III.3.13 has the
+Koszul vanishing III.3.12 are proved. III.3.7's finite component chains,
+III.3.8's full locally noetherian antifilter equivalence, and III.3.9's
+equidimensionality from depth and the prime-chain condition are proved.
+III.3.13 has the
 principal-curve vanishing and the non-UFD obstruction.
 Exposé IV now proves IV.1.1 for the original additive abelian-group-valued
 functor, including its canonical scalar action and evaluation map, and the
@@ -152,13 +154,20 @@ quotients of regular local rings are proved. Cohen's presentation theorem
 remains unformalized; the general local-ring results use direct proofs.
 See [`SGA/SGA2/ExposeV.lean`](SGA/SGA2/ExposeV.lean) for the module map and
 sign conventions, and the formalization notes for theorem names and scope.
-Exposé VI proves VI.1.2 sheafification of local module Ext, VI.1.3 excision
-of the Hom sheaf, VI.1.4.1/VI.1.4.3 Hom representations, VI.1.5 flasque
-acyclicity, VI.1.8–VI.1.9 nested-support sequences of Hom, and VI.2.3's
-affine degree-zero and structure-sheaf Ext-colimit comparisons. The three
-spectral functors of VI.1.6, the tensor form VI.1.4.2, and general
-VI.2.3 remain open.
-Exposés VII–XIV have no Lean formalization.
+Exposé VI has actual local Ext evaluation and sheafification, all-degree
+locally closed excision, the structure-module and tensor Hom representations,
+and genuine supported Ext long exact sequences natural in both arguments.
+VI.1.6.1–2 have actual spectral functors, original E₂ and Ext abutment
+comparisons and finite convergence for locally closed support; VI.1.6.3 has
+these for closed support. The ordinary Ext endpoints of VI.1.9 are identified.
+The source module support-object sequence, several higher-map compatibility
+statements, general VI.1.6.3, supported sheaf Ext quasi-coherence and general
+VI.2.3 remain open. VI.2.3 includes the affine degree-zero quotient-Hom
+colimit and structure-sheaf local-cohomology comparison.
+Exposé VII proves internal-Hom zero detection on locally noetherian schemes,
+with literal stalk supports, a coherent source and an arbitrary quasi-coherent
+target. Its remaining vanishing and coherence theorems are open.
+Exposés VIII–XIV have no Lean formalization.
 See the formalization notes for precise coverage and gaps.
 
 `lake env lean CheckSGA2Axioms.lean` checks every imported `SGA.SGA2`

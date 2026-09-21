@@ -27,10 +27,11 @@ set_option backward.isDefEq.respectTransparency false
 
 variable {X : TopCat.{u}} (R : Sheaf RingCat.{u} X)
 
-/-- **VI.1.3:** excision for the Hom sheaf. If `Z ⊆ V`, supported cohomology
+/-- Excision for the Hom sheaf. If `Z ⊆ V`, supported cohomology
 of local linear maps on `X` agrees with the same groups after restriction
-to `V`. -/
-def VI_1_3 {Z : Closeds X} {V : Opens X} (hZ : (Z : Set X) ⊆ (V : Set X))
+to `V`. In positive degrees these groups differ from supported module Ext. -/
+def homSheafCohomologyExcision {Z : Closeds X} {V : Opens X}
+    (hZ : (Z : Set X) ⊆ (V : Set X))
     (F G : SheafOfModules.{u} R) (n : ℕ) :
     ExposeI.H_Z Z (moduleSheafHomAb (Opens.grothendieckTopology X) F G) n ≃+
       ExposeI.H_Z (ExposeI.closedSupportOnOpen Z V)
@@ -49,7 +50,7 @@ def VI_1_3_zero {Z : Closeds X} {V : Opens X} (hZ : (Z : Set X) ⊆ (V : Set X))
         (ExposeI.closedSupportOnOpen Z V) :=
   (ExposeI.H_Z_zero_gammaZ_addEquiv Z
       (moduleSheafHomAb (Opens.grothendieckTopology X) F G)).symm.trans
-    ((VI_1_3 R hZ F G 0).trans
+    ((homSheafCohomologyExcision R hZ F G 0).trans
       (ExposeI.H_Z_zero_gammaZ_addEquiv (ExposeI.closedSupportOnOpen Z V)
         (ExposeI.restrictToOpen
           (moduleSheafHomAb (Opens.grothendieckTopology X) F G) V)))

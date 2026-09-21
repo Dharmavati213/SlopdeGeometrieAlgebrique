@@ -70,9 +70,10 @@ instance connectedSpace_primeSpectrum {R : Type u} [CommRing R] [IsLocalRing R] 
   isPreconnected_univ := isPreconnected_univ_primeSpectrum
   toNonempty := inferInstance
 
-/-- The chain condition of III.3.9: consecutive irreducible components that
-meet in a prime of height at most one have equal dimension. This is EGA
-0_IV 14.3.2 applied to a two-term chain of components. -/
+/-- The adjacent-component consequence of the chain condition: minimal
+primes meeting in height at most one have quotients of equal dimension.
+`consecutiveComponentsEquidimensional_of_chainCondition` derives this
+property from the actual saturated-chain condition in `Catenary.lean`. -/
 def ConsecutiveComponentsEquidimensional (R : Type u) [CommRing R] : Prop :=
   ∀ (p q r : Ideal R) [p.IsPrime] [q.IsPrime] [r.IsPrime],
     p ∈ minimalPrimes R → q ∈ minimalPrimes R → p ≤ r → q ≤ r → r.height ≤ 1 →
@@ -194,11 +195,12 @@ theorem III_3_9_of_height_one_meet {R : Type u} [CommRing R]
     ringKrullDim (R ⧸ p) = ringKrullDim R :=
   (hcat p q r hp hq hpr hqr hr).trans hqdim
 
-/-- **III.3.9:** under the chain condition, every irreducible component of
-`Spec A` that can be joined to a dimension-realising component by a
-height-at-most-one meeting has dimension `dim A`. The depth/dimension
-hypothesis of the source produces such a meeting via III.3.7–III.3.8. -/
-theorem III_3_9 {R : Type u} [CommRing R] [IsNoetherianRing R] [IsLocalRing R]
+/-- A two-component specialization of the equidimensionality argument.
+The full `III_3_9` in `EquidimensionalityCriterion.lean` constructs a finite
+chain from the depth hypothesis and derives the adjacent-component
+comparison from catenarity. -/
+theorem III_3_9_of_dimension_realizing_meet {R : Type u} [CommRing R]
+    [IsNoetherianRing R] [IsLocalRing R]
     (hcat : ConsecutiveComponentsEquidimensional R)
     {p r : Ideal R} [p.IsPrime] [r.IsPrime]
     (hp : p ∈ minimalPrimes R) (hpr : p ≤ r) (hr : r.height ≤ 1)

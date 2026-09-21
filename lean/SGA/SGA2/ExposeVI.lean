@@ -11,6 +11,21 @@ import SGA.SGA2.ExposeVI.Excision
 import SGA.SGA2.ExposeVI.SupportObjectHom
 import SGA.SGA2.ExposeVI.SpectralFunctors
 import SGA.SGA2.ExposeVI.SupportExactSequences
+import SGA.SGA2.ExposeVI.ModuleSupportIndependence
+import SGA.SGA2.ExposeVI.LocallyClosedTensorSupportHom
+import SGA.SGA2.ExposeVI.ModuleSupportedSheafInjective
+import SGA.SGA2.ExposeVI.TensorSupportExtNaturality
+import SGA.SGA2.ExposeVI.ModuleOpenRestrictionLocallyClosed
+import SGA.SGA2.ExposeVI.ModuleOpenRestrictionComplement
+import SGA.SGA2.ExposeVI.ModuleRelativeExtSequence
+import SGA.SGA2.ExposeVI.ModuleRelativeExtCompatibility
+import SGA.SGA2.ExposeVI.AffineInternalHom
+import SGA.SGA2.ExposeVI.AffineInternalHomNaturality
+import SGA.SGA2.ExposeVI.CoherentInternalHom
+import SGA.SGA2.ExposeVI.ModuleSheafExtLinear
+import SGA.SGA2.ExposeVI.ModuleLocallyClosedSheafExtLinear
+import SGA.SGA2.ExposeVI.ModuleLocallyClosedSupportedSheafInjective
+import SGA.SGA2.ExposeVI.ModuleLocallyClosedSupportedHom
 import SGA.SGA2.ExposeVI.AffineExtComparison
 import SGA.SGA2.ExposeVI.Examples
 
@@ -35,18 +50,47 @@ VI.1.1's supported Ext groups and underlying additive sheaves are right-derived
 in the module-sheaf category, for closed and arbitrary locally closed support.
 Degree zero and positive-degree vanishing on injective module sheaves are
 proved. The closed supported-Hom comparison is natural after derivation.
+Ordinary and arbitrarily locally supported sheaf Ext have genuine module-valued
+derived functors, and global supported Ext has its global-ring module structure.
+Exact forgetting of scalars recovers the unchanged additive versions.
 
 VI.1.5's flasqueness assertion is proved: local linear maps into an injective
 module sheaf extend globally through the open subpresheaf of the source.
 The genuine Hom sheaf is therefore acyclic for closed and locally closed
 supported sections, without assuming additive-sheaf injectivity.
 
-VI.1.2 is proved: sheaf Ext is sheafification of local module Ext.
-VI.1.3 is excision of supported cohomology of the Hom sheaf. VI.1.4.1 and
-VI.1.4.3 are the closed Hom representation and supported factorization.
-VI.1.8–VI.1.9 are nested-support sequences of the Hom sheaf. VI.2.3 compares
-Ext-colimits with supported cohomology for the structure sheaf on a
-noetherian affine, and in degree zero for arbitrary modules. The tensor
-form VI.1.4.2, the three spectral functors of VI.1.6, and general VI.2.3
-remain open.
+Actual open and nested-open module restriction are exact and preserve
+injectives. VI.1.2 identifies the local Ext values with derived supported
+Hom in the actual restricted module categories, with the original sheaf Ext
+as their sheafification. VI.1.3 gives coefficient-natural excision for
+arbitrary locally closed supports in every degree. Higher nested-restriction
+and connecting-map compatibility of these comparisons remain open.
+
+Over a commutative structure sheaf, the actual support module and sheafified
+tensor product prove VI.1.4.1–2 for every locally closed support. The
+comparison with ordinary Ext from that tensor source is natural in both
+variables in every degree. The actual closed module-support functor preserves
+injectives through a proved mono-preserving quotient left adjoint. The
+locally closed module-support functor preserves injectives through its actual
+restriction/direct-image factorization, and VI.1.4.3 holds for that functor.
+
+VI.1.6.1–2 have actual spectral functors, E₂ identifications, original Ext
+abutments and finite convergence for arbitrary locally closed support.
+VI.1.6.3 has the same construction for closed support; its general locally
+closed form remains open. VI.1.8 gives actual long exact sequences of supported
+Ext groups and supported sheaf Ext, natural in both variables, with the original
+degree-zero maps. VI.1.9 has a genuine exact sequence with ordinary Ext
+endpoints and the standard Ext-zero comparison with actual module restriction.
+Equality with the independently defined standard higher Ext restriction
+map is still open.
+
+The actual affine internal Hom is the associated sheaf of module Hom for
+finitely presented sources over arbitrary commutative rings. It commutes with
+open restriction and is quasi-coherent for coherent source and quasi-coherent
+target on locally noetherian schemes.
+
+VI.1.7's module support-object sequence, the remaining higher-map comparisons,
+VI.2.1's supported sheaf Ext quasi-coherence and general VI.2.3 remain open.
+VI.2.3 currently includes the affine degree-zero quotient-Hom colimit and
+the structure-sheaf local-cohomology comparison.
 -/

@@ -16,7 +16,7 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 3. Translate further exposés of SGA 1 (IV–V, VIII–XIII), then formalize
    each after its English text is in the tree.
 4. SGA 2 English drafts proceed in parallel with remaining SGA 1
-   exposés; Lean for SGA 2 has partial Exposés I–VI (see below).
+   exposés; Lean for SGA 2 has partial Exposés I–VII (see below).
    Formalization follows the English text.
 
 Related public translations (not this project):
@@ -221,18 +221,18 @@ Exposé XIV is by Michèle Raynaud.
 Scaffold:
 
 - [x] Root modules `SGA.SGA2.ExposeI`, `SGA.SGA2.ExposeII`, `SGA.SGA2.ExposeIII`,
-  `SGA.SGA2.ExposeIV`, `SGA.SGA2.ExposeV`, and `SGA.SGA2.ExposeVI`
+  `SGA.SGA2.ExposeIV`, `SGA.SGA2.ExposeV`, `SGA.SGA2.ExposeVI`, and `SGA.SGA2.ExposeVII`
   imported from `lean/SGA.lean`
 - [x] `lake build` stays green
 - [x] `lake env lean CheckSGA2Axioms.lean` checks transitive axiom dependencies
   of all imported SGA 2 declarations
 
-Verified imported checkpoint (2026-09-19): the full build passes (4,165 jobs).
-All 554 SGA 2 Lean files are reachable from `SGA.lean`. The audit checks
-9,949 SGA 2 declarations, including private declarations and transitive
-dependencies, with only `propext`, `Classical.choice`, and `Quot.sound`.
-No proof admissions or additional mathematical axioms were found.
-There are no unimported SGA 2 Lean modules at this checkpoint.
+The imported library is checked by `lake build +SGA`, followed by
+`lake env lean CheckSGA2Axioms.lean`. The audit includes private declarations
+and transitive dependencies and permits only `propext`, `Classical.choice`,
+and `Quot.sound`. Successful compilation and this axiom audit establish proof
+validity for the imported statements; coverage still follows the section
+checklist below.
 
 By section (English: `translation/SGA2/ExposeI/`, Lean: `lean/SGA/SGA2/`):
 
@@ -650,8 +650,10 @@ Exposé III (English: `translation/SGA2/ExposeIII/`):
   removing a closed set of local dimension `≥ d` induces a bijection on
   connected components (`ConnectednessInCodimension.lean`:
   `III_3_7_complement`, `III_3_7_of_minDim`)
-- [ ] **III.3.7, component chain** a chain of irreducible components with
-  `codim(X_i ∩ X_{i+1}) ≤ d-1`
+- [x] **III.3.7, component chain** an actual finite chain of irreducible
+  components with `codim(X_i ∩ X_{i+1}) ≤ d-1`, using the infimum of actual
+  structure-stalk dimensions (`ComponentChains.lean`: `III_3_7`,
+  `III_3_7_list`, `III_3_7_codimension_list`)
 - [x] **III.3.8, antifilter** of closed sets and finiteness of irreducible
   components (`AntifilterConnectedness.lean`: `ClosedAntifilter`)
 - [x] **III.3.8, dual graph** on a connected noetherian space any two
@@ -660,11 +662,13 @@ Exposé III (English: `translation/SGA2/ExposeIII/`):
 - [x] **III.3.8, (ii) ⇒ (i)** a component chain with consecutive
   intersections outside the antifilter implies complements of members are
   preconnected (`AntifilterEquivalence.lean`: `III_3_8_ii_implies_i`)
-- [ ] **III.3.8, (i) ⇒ (ii)** local-membership closure and connectedness of
-  complements imply the component chain with `X_i ∩ X_{i+1} ∉ Ff`
-- [ ] **III.3.9** equidimensionality of `Spec A` from the depth/dimension
-  hypothesis and the EGA chain condition (not assumed as a dimension
-  comparison on consecutive components)
+- [x] **III.3.8, full equivalence** on a locally noetherian space,
+  local membership in the antifilter and connectedness of complements give
+  chains with `X_i ∩ X_{i+1} ∉ Ff` (`III_3_8_i_implies_ii`, `III_3_8`)
+- [x] **III.3.9** equidimensionality of `Spec A` from the actual localized
+  depth/dimension hypothesis and the prime-chain condition. Equality of lengths
+  of saturated chains proves the needed adjacent-component dimension comparison
+  (`Catenary.lean`, `EquidimensionalityCriterion.lean`: `III_3_9`)
 - [x] **III.3.10** if removing a closed set fails to induce a bijection on
   connected components, some point of the closed set has depth `< 2`
   (`ConnectednessInCodimension.lean`: `III_3_10_depth_lt_two`)
@@ -1066,6 +1070,11 @@ Exposé VI:
   positive-degree vanishing on injective module sheaves are proved. The
   closed supported-Hom identity gives an all-degree natural comparison of
   the actual derived composites (`ExposeVI/ModuleSupportedExt.lean`)
+- [x] **VI.1.1, module-valued Ext** ordinary and arbitrarily locally supported
+  sheaf Ext have actual local module structures; global supported Ext has its
+  global-ring module structure. Exact-forgetting comparisons recover the
+  unchanged additive constructions (`ModuleSheafExtLinear.lean`,
+  `ModuleLocallyClosedSheafExtLinear.lean`)
 - [x] **VI.1.5, flasqueness and supported-section acyclicity** every local
   linear map into an injective module presheaf extends globally through the
   open subpresheaf of its source. The genuine Hom sheaf into an injective
@@ -1078,33 +1087,76 @@ Exposé VI:
   of the original `Hom_R(M,N)`. The comparison retains precomposition by the
   original quotient maps, without noetherianity or finite generation
   (`ExposeVI/AffineHomColimit.lean`)
-- [x] **VI.1.2** sheaf Ext is sheafification of local module Ext
-  (`ExposeVI/ModuleSheafExtLocal.lean`: `moduleSheafExtSheafificationIso`,
-  `moduleExtPresheafFunctor`)
+- [x] **VI.1.2, actual local values and sheafification** ordinary and locally
+  supported Ext are computed in the actual module categories of the opens;
+  their presheaves sheafify to the original supported sheaf Ext
+  (`moduleExtPresheafEvalIso`, `moduleLocallySupportedExtPresheafEvalIso`,
+  `moduleLocallySupportedExtSheafificationIso`)
+- [ ] **VI.1.2–1.3, higher-map compatibility** explicit agreement with
+  higher Ext maps between nested opens and with coefficient connecting maps
 - [x] **I.1.7 / VI ringed Hom** maps from the structure sheaf into a
   supported module sheaf recover supported sections
   (`ExposeI/RingedSpaceSupportHom.lean`: `ringedSpaceSupportHomEquiv`)
-- [x] **VI.1.3** excision of supported cohomology of the Hom sheaf
-  (`ExposeVI/Excision.lean`: `VI_1_3`, `VI_1_3_zero`)
-- [x] **VI.1.4.1 / VI.1.4.3** closed Hom representation and supported
-  factorization (`SupportObjectHom.lean`: `VI_1_4_1`, `VI_1_4_3`,
-  `VI_1_4_locallyClosed`)
-- [ ] **VI.1.4.2** `Γ_Z(Hom(F,G)) ≅ Hom(𝒪_{X,Z} ⊗ F, G)`
-- [ ] **VI.1.6** three spectral functors abutting to `Ext_Z^•` with E₂
-  `H_Z^p(SheafExt^q)`, `H^p(SheafExt_Z^q)`, `Ext^p(F, SheafH_Z^q(G))`.
-  Named E₂ groups are `VI_1_6_1_E2` / `VI_1_6_2_E2`; the spectral objects
-  themselves are not constructed.
-- [x] **VI.1.8–VI.1.9** nested-support and closed/open sequences of the
-  Hom sheaf (`SupportExactSequences.lean`: `VI_1_8_exact_middle`,
-  `VI_1_8_exact_difference`, `VI_1_8_exact_left`, `VI_1_9_exact`)
+- [x] **VI.1.3, all degrees** coefficient-natural excision of actual supported
+  module Ext for every locally closed support and every open neighborhood
+  (`ModuleOpenRestrictionLocallyClosed.lean`: `VI_1_3`)
+- [x] **VI.1.4.1 / VI.1.4.3, closed support** actual structure-module Hom
+  representation and supported factorization (`VI_1_4_1`, `VI_1_4_3`)
+- [x] **VI.1.4.1–2, arbitrary locally closed support** the actual sheafified tensor
+  `𝒪_{X,Z} ⊗ F` represents supported Hom, naturally in both variables;
+  `moduleLocallyClosedSupportedExtTensorIso` gives the all-degree Ext comparison,
+  whose actual coefficient and source naturality are proved
+- [ ] **VI.1.4, connecting maps** compatibility of the tensor comparison with
+  the source and coefficient connecting morphisms
+- [x] **VI.1.5, supported-module injectives** the actual closed module-support
+  functor preserves injectives through a proved mono-preserving quotient left adjoint
+- [x] **VI.1.4.3 / VI.1.5, locally closed support** the actual module-valued
+  support functor has its natural Hom factorization and preserves injectives
+  through its proved closed-support, restriction and direct-image decomposition
+- [x] **VI.1.6.1–2** genuine coefficient spectral functors for arbitrary locally
+  closed support, with original E₂ identifications and Ext abutments, finite
+  filtrations and stable-page quotient comparisons
+- [x] **VI.1.6.3, closed support** the corresponding genuine spectral functor
+  with E₂ `Ext^p(F, SheafH_Z^q(G))` and actual supported Ext abutment
+- [ ] **VI.1.6.3, locally closed support** generalize the module-valued supported
+  coefficient functor and its spectral construction to arbitrary witnesses
+- [ ] **VI.1.7** the actual module support-object short exact sequence and its
+  tensor version, with the original source maps
+- [x] **VI.1.8** genuine long exact sequences of the original supported
+  Ext groups and supported sheaf Ext, for every locally closed support and
+  every closed subset of its literal support space. The actual inclusion,
+  restriction and connecting maps are natural in both module arguments;
+  degree-zero maps are the original Hom maps (`VI_1_8_exact`,
+  `VI_1_8_sheaf_exact`, `ExtSequenceFirstVariable.lean`)
+- [x] **VI.1.9, sequence and endpoints** the transported original sequence
+  is exact with actual closed-supported Ext, ordinary ambient Ext, and ordinary
+  Ext of the restricted modules. Its degree-zero restriction agrees with
+  actual Hom.over under the standard Ext₀ = Hom comparison
+  (`ModuleRelativeExtSequence.lean`, `ModuleRelativeExtCompatibility.lean`)
+- [ ] **VI.1.9, standard higher restriction** identify the transported
+  positive-degree restriction with the independent map induced by the exact
+  restriction functor; equality in degree zero is proved
 - [x] **VI.2.3, affine degree zero / structure sheaf** quotient-Hom colimit
   and Ext-colimit of `R/I^n` (`VI_2_3_zero`, `VI_2_3_structure`,
   `VI_2_3_sheaf`)
 - [ ] **VI.2.3** `colim Ext(M/I^n M, N) → Ext_Y(X; F, G)` for general
   coherent `F` on a locally noetherian scheme
-- [ ] **VII–XIV** no Lean formalization yet
+- [ ] **VI.2.1** quasi-coherence of supported sheaf Ext for coherent source
+  and quasi-coherent coefficients
+- [x] **VI.2.1, affine ordinary Hom prerequisite** actual internal Hom
+  is canonically the associated sheaf of module Hom when the source module
+  is finitely presented, over any commutative ring (`AffineInternalHom.lean`)
+- [x] **VI.2.1, ordinary Hom on schemes** actual internal Hom commutes with
+  open restriction and is quasi-coherent for coherent source and quasi-coherent
+  target on locally noetherian schemes (`CoherentInternalHom.lean`)
+- [x] **VII.1.3, locally noetherian schemes** actual internal Hom detects an
+  arbitrary quasi-coherent target whose literal stalk support is contained in
+  that of a coherent source (`VII_1_3_locallyNoetherian`)
+- [ ] **VII, remaining statements** general VII.1.3 without local
+  noetherianity; vanishing criteria and coherence results
+- [ ] **VIII–XIV** no Lean formalization yet
 
-All six started exposés remain partial. Precise scope and missing comparisons are listed
+All seven started exposés remain partial. Precise scope and missing comparisons are listed
 in [`formalization.md`](formalization.md).
 
 

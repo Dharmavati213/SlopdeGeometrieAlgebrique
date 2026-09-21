@@ -407,14 +407,17 @@ depth-less-than-two obstruction is `III_3_10_depth_lt_two`. III.3.12's Koszul
 vanishing above the number of equations, detected on the structure sheaf, is
 `III_3_12`. III.3.3(v)/(vi) are affine module Ext (`III_3_3_v`,
 `III_3_3_vi`); sheaf Ext on a general locally noetherian scheme remains.
-III.3.7's complement π₀ bijection is `III_3_7_complement`; the component
-chain with consecutive codimension `≤ d-1` remains. III.3.8's antifilter
-is defined; the dual graph of irreducible components on a connected
-noetherian space is connected
-(`exists_irreducibleComponents_connected_chain`). III.3.8 (ii)⇒(i) is
-`III_3_8_ii_implies_i`. The converse (i)⇒(ii) remains.
-III.3.9 equidimensionality from depth/dimension plus the EGA chain
-condition remains. III.3.13's principal-curve vanishing, non-UFD obstruction, and relative
+III.3.7's complement π₀ bijection is `III_3_7_complement`; its actual finite
+component chains are `III_3_7_list` and `III_3_7_codimension_list`, with the
+numerical codimension defined by the infimum of actual structure-stalk dimensions.
+III.3.8's full antifilter equivalence is `III_3_8`, on locally noetherian spaces
+with the source's local-membership condition. Local finiteness of components
+and closedness of arbitrary component unions are proved.
+III.3.9 is `III_3_9` in `EquidimensionalityCriterion.lean`:
+the actual localized depth/dimension hypothesis and equality of lengths of
+saturated prime chains with fixed endpoints imply equidimensionality. The
+adjacent-component dimension comparison is proved from that chain condition.
+III.3.13's principal-curve vanishing, non-UFD obstruction, and relative
 comparison `H_Y^{n+2} ≅ H^{n+1}(X-Y)` on a noetherian affine are
 `III_3_13_principal`, `III_3_13_exists_non_principal`, and
 `III_3_13_relative`; existence of a non-CI curve on a normal surface
@@ -845,6 +848,12 @@ injective module sheaves. `moduleSupportedExtViaSupportedSheafIso` derives
 the closed supported-Hom identity; it is a comparison of derived composites,
 not the spectral sequence of VI.1.6.3.
 
+`ModuleSheafExtLinear.lean` and `ModuleLocallyClosedSheafExtLinear.lean`
+construct genuine scalar-valued sheaf Ext for ordinary and arbitrary locally
+closed support, and global supported Ext modules over the global structure
+ring. Their natural exact-forgetting isomorphisms recover the unchanged
+additive derived functors.
+
 VI.1.5's flasqueness and acyclicity inputs are proved in
 `ModuleOpenSubpresheaf.lean` and `ModuleHomInjectiveFlasque.lean`.
 The source module's open subpresheaf embeds into it, so injectivity extends
@@ -853,17 +862,69 @@ of an injective module sheaf, this proves that the genuine local-linear Hom
 sheaf is flasque and has zero positive closed or locally closed supported
 cohomology. No injectivity of its underlying additive sheaf is assumed.
 
-VI.1.2 is proved: `moduleSheafExtSheafificationIso` identifies sheaf Ext with
-sheafification of local module Ext. The ringed-space Hom identity I.1.7 is
-`ringedSpaceSupportHomEquiv`. VI.1.3 is excision of supported cohomology of
-the Hom sheaf (`VI_1_3`). VI.1.4.1 and VI.1.4.3 are `VI_1_4_1` and
-`VI_1_4_3`; the tensor form VI.1.4.2 remains. VI.1.6's three spectral
-functors are not constructed; named E₂ groups are `VI_1_6_1_E2` /
-`VI_1_6_2_E2`. VI.1.8–VI.1.9 are the nested-support and closed/open
-sequences of the Hom sheaf. VI.2.3's affine degree-zero and structure-sheaf
-comparisons are `VI_2_3_zero` / `VI_2_3_structure`; the general
-`colim Ext(M/IⁿM, N) → Ext_Y(X;F,G)` remains.
-Exposés VII–XIV still have no Lean formalization.
+VI.1.2's actual local values are `moduleExtPresheafEvalIso` for ordinary Ext
+and `moduleLocallySupportedExtPresheafEvalIso` for locally supported Ext.
+The latter are derived in the actual category of module sheaves on the open
+slice site. `moduleLocallySupportedExtSheafificationIso` identifies their
+sheafification with the original ambient supported sheaf Ext. Open and
+nested-open module restriction are proved exact and injective-preserving.
+`VI_1_3` gives all-degree excision for arbitrary locally closed supports,
+natural in coefficients. Explicit compatibility with higher Ext restrictions
+between nested opens and with coefficient connecting maps remains open.
+
+`VI_1_4_1` now uses the actual structure-module support object, and `VI_1_4_2`
+uses the genuine sheafification of the sectionwise tensor product.
+`LocallyClosedTensorSupportHom.lean` extends both representations to arbitrary
+locally closed support. `moduleLocallyClosedSupportedExtTensorIso` is the
+all-degree original Ext comparison; its source naturality is
+`moduleLocallyClosedSupportedExtTensorIso_precomp`. The actual closed supported
+module-sheaf functor preserves injectives by a proved mono-preserving quotient
+left adjoint (`ModuleSupportedSheafInjective.lean`). The original locally
+closed module-support functor is also proved to preserve injectives by its
+closed-support, open-restriction and direct-image decomposition.
+`moduleLocallyClosedSupportedHomFunctorIso` proves its actual VI.1.4.3
+factorization, and that factorization is derived in every degree.
+
+VI.1.6.1 and VI.1.6.2 have genuine coefficient spectral functors for arbitrary
+locally closed supports. VI.1.6.3 has one for closed supports. Each construction
+has actual pages and differentials, an explicit original E₂ identification,
+an original supported Ext abutment, and a finite filtration with stable pages
+identified with successive quotients. The general locally closed form of
+VI.1.6.3 remains open.
+
+VI.1.8 is the actual module-derived Ext long exact sequence, for any locally
+closed support and a closed subset of its literal support space. Both the
+group-valued and sheaf-valued versions have the original inclusion and
+restriction in degree zero, and all arrows and genuine boundaries are natural
+in both module arguments (`LocallyClosedExtSequences.lean`,
+`LocallyClosedSheafExtSequences.lean`, `ExtSequenceFirstVariable.lean`).
+`ModuleRelativeExtSequence.lean` gives VI.1.9's actual exact sequence with
+ordinary Ext endpoints on the ambient space and open complement.
+`moduleRelativeExtRestriction_zero_standard` identifies its degree-zero map
+with literal Hom restriction under the standard Ext₀ = Hom isomorphisms.
+Equality with standard positive-degree Ext restriction remains open.
+VI.1.7's module support-object sequence is not yet claimed.
+
+VI.2.3's affine degree-zero and structure-sheaf comparisons are `VI_2_3_zero`
+and `VI_2_3_structure`. Supported sheaf Ext quasi-coherence (VI.2.1) and the
+general comparison `colim Ext(M/IⁿM, N) → Ext_Y(X;F,G)` remain open.
+The actual ordinary internal Hom is now canonically the associated sheaf
+of module Hom on affines for finitely presented sources over arbitrary rings,
+with both source and coefficient naturality. It commutes with actual open
+restriction and is quasi-coherent for coherent source and quasi-coherent
+target on locally noetherian schemes (`CoherentInternalHom.lean`).
+
+## SGA 2, Exposé VII — Vanishing and coherence
+
+Entry point: `lean/SGA/SGA2/ExposeVII.lean`.
+`VII_1_3_locallyNoetherian` proves actual internal-Hom zero detection from
+literal stalk-support containment, with a coherent source and an arbitrary
+quasi-coherent target. The proof obtains finite affine coefficient charts
+from the source's actual local presentations and uses genuine module
+restriction and affine Hom comparisons. VII.1.3 without local noetherianity
+and the remaining vanishing and coherence statements are open.
+
+Exposés VIII–XIV still have no Lean formalization.
 
 ## Axiom verification
 

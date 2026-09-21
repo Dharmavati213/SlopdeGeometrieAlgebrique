@@ -42,6 +42,7 @@ import SGA.SGA2.ExposeIII.ExamplesIII
 import SGA.SGA2.ExposeIII.Equidimensionality
 import SGA.SGA2.ExposeIII.AntifilterEquivalence
 import SGA.SGA2.ExposeIII.ExamplesIII313
+import SGA.SGA2.ExposeIII.EquidimensionalityCriterion
 
 /-!
 # SGA 2, Exposé III — Cohomological invariants and depth
@@ -121,6 +122,8 @@ English translation: `translation/SGA2/ExposeIII/` (repo root).
 SGA's regular sequences allow a zero final quotient, so they are expressed
 using mathlib's `IsWeaklyRegular`. All depth formulae include infinite depth.
 III.3.13 includes principal-curve vanishing and the non-UFD obstruction.
-III.3.8's component-chain equivalence and III.3.9 equidimensionality remain
-open. Remaining notes are recorded in `docs/formalization.md`.
+III.3.8's full component-chain equivalence holds on locally noetherian spaces.
+III.3.7 gives actual finite component chains with the asserted codimension
+bound, and III.3.9 derives equidimensionality from depth and the genuine
+prime-chain condition. Remaining notes are recorded in `docs/formalization.md`.
 -/
