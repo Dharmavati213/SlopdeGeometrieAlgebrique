@@ -27,14 +27,6 @@ set_option backward.isDefEq.respectTransparency false
 
 variable {X : TopCat.{u}} (R : Sheaf RingCat.{u} X)
 
-local instance cohomologyScalarsToSheafAdditive :
-    (SheafOfModules.toSheaf.{u} R).Additive := inferInstance
-
-local instance cohomologyScalarsCompositeAdditive (Z : Closeds X) (U : Opens X) :
-    (SheafOfModules.toSheaf.{u} R ⋙ ExposeI.gammaZSectionsFunctor Z U).Additive := by
-  have : (ExposeI.gammaZSectionsFunctor Z U).Additive := inferInstance
-  infer_instance
-
 local instance cohomologyScalarsHasDerivedCategory :
     HasDerivedCategory.{u + 1} (Sheaf AddCommGrpCat.{u} X) :=
   HasDerivedCategory.standard _

@@ -55,9 +55,7 @@ theorem spectralObjectModuleMap_id :
     spectralObjectModuleMap ρ ρ (𝟙 S) (fun _ ↦ by simp) = 𝟙 _ := by
   apply Abelian.SpectralObject.Hom.ext
   funext n
-  apply NatTrans.ext
-  funext D
-  ext x
+  ext D x
   rfl
 
 @[reassoc]
@@ -68,9 +66,19 @@ theorem spectralObjectModuleMap_comp (a : S ⟶ T) (b : T ⟶ U)
       spectralObjectModuleMap ρ σ a ha ≫ spectralObjectModuleMap σ τ b hb := by
   apply Abelian.SpectralObject.Hom.ext
   funext n
-  apply NatTrans.ext
-  funext D
-  ext x
+  ext D x
+  rfl
+
+/-- Lifting equivariant maps preserves their pointwise sum. -/
+@[simp]
+theorem spectralObjectModuleMap_add (a b : S ⟶ T)
+    (ha : ∀ r, a ≫ σ r = ρ r ≫ a) (hb : ∀ r, b ≫ σ r = ρ r ≫ b) :
+    spectralObjectModuleMap ρ σ (a + b)
+        (fun r ↦ by simp only [Preadditive.add_comp, Preadditive.comp_add, ha, hb]) =
+      spectralObjectModuleMap ρ σ a ha + spectralObjectModuleMap ρ σ b hb := by
+  apply Abelian.SpectralObject.Hom.ext
+  funext n
+  ext D x
   rfl
 
 /-- Canonical short-complex homology comparisons retain original equivariant coefficient maps. -/
@@ -114,5 +122,22 @@ theorem spectralObjectModulePageXForgetIso_naturality
     (coreE₂Cohomological.deg pq + 1) (by lia) rfl
 
 end Pages
+
+unseal Abelian.SpectralObject.spectralSequence in
+/-- Spectral-object coefficient maps induce additive maps of every page complex. -/
+theorem spectralSequenceMap_hom_add {C : Type*} [Category C] [Abelian C]
+    {S T : Abelian.SpectralObject C EInt} (a b : S ⟶ T)
+    (r : ℤ) (hr : 2 ≤ r) :
+    (ExposeI.SpectralObjectCoefficientMaps.spectralSequenceMap (a + b)
+        coreE₂Cohomological).hom r hr =
+      (ExposeI.SpectralObjectCoefficientMaps.spectralSequenceMap a
+        coreE₂Cohomological).hom r hr +
+      (ExposeI.SpectralObjectCoefficientMaps.spectralSequenceMap b
+        coreE₂Cohomological).hom r hr := by
+  ext pq
+  change ShortComplex.homologyMap
+      (ExposeI.SpectralObjectCoefficientMaps.shortComplexMap a _ _ _ _ _ _ _ _ +
+        ExposeI.SpectralObjectCoefficientMaps.shortComplexMap b _ _ _ _ _ _ _ _) = _
+  exact ShortComplex.homologyMap_add _ _
 
 end SGA.SGA2.ExposeV

@@ -117,6 +117,14 @@ theorem sourceHomologyUnscaledAddEquiv_precomp {F' F : CochainComplex C ℤ} (f 
       homComplexClassPrecomp f P n (sourceHomologyUnscaledAddEquiv F P n x) :=
   ConcreteCategory.congr_hom (sourceHomPrecompHomologyMapData f P n).homologyMap_comm x
 
+/-- Sign normalization preserves naturality in the source complex. -/
+theorem sourceHomologyAddEquiv_precomp {F' F : CochainComplex C ℤ} (f : F' ⟶ F)
+    (P : CochainComplex C ℤ) (n : ℤ) (x : (sourceHomComplex F P).homology n) :
+    sourceHomologyAddEquiv F' P n (homologyMap (sourceHomPrecomp f P) n x) =
+      homComplexClassPrecomp f P n (sourceHomologyAddEquiv F P n x) := by
+  simp only [sourceHomologyAddEquiv_eq_sign, sourceHomologyUnscaledAddEquiv_precomp,
+    Units.smul_def, map_zsmul]
+
 /-- Actual source precomposition carries an original representative to its
 unchanged precomposed representative. -/
 theorem sourceHomologyMk_precomp {F' F : CochainComplex C ℤ} (f : F' ⟶ F)

@@ -503,88 +503,6 @@ This exposé is partial and imported by the root library.
 | IV.5.5, finite-stage residue | `powerSeriesPowerQuotientResidue_mul_complement`, `powerSeriesPowerQuotientResidueEquiv`: actual product-residue pairing on positive coordinate-power quotients is perfect; complementary monomials recover every coefficient |
 | IV.5.5, explicit power-series comparison | `powerSeriesLocalCohomologyIsoMacaulay`, `powerSeriesLocalCohomologyIsoContinuousDual_stage_apply`: original product transitions preserve the residue functionals; the actual quotient colimit gives an explicit ring-linear local-cohomology/Macaulay isomorphism, with literal product-coefficient formula at every original stage |
 | IV.5.5, glued residue form | `powerSeriesLocalCohomologyResidue_basis`, `powerSeriesLocalCohomologyResidue_nondegenerate`, `powerSeriesTopLocalCohomology_supportedDualizing`: the original local-cohomology residue form is coefficient-field linear, has the stated monomial formula and nondegenerate product pairing, and its coefficient is supported dualizing; no Cohen presentation or completed differential module is assumed to have been constructed |
-| V.1, literal Hom-complex signs | `sourceHomδ_v`, `sourceHomδ_comp`, `sourceHomComplexIso`, `sourceHomSign_smul_comp`: the original displayed differential is square-zero; actual Leibniz, cocycle/coboundary and homotopy formulas are proved. The explicit chain isomorphism multiplies degree `n` by `(-1)^(n(n+1)/2)`, with composition correction `(-1)^(ij)` |
-| V.1.3, actual double-resolution comparison | `homComplexPrecomp_quasiIso`, `sourceInjectiveHomAugmentation_f`, `sourceInjectiveHomologyExtAddEquiv`: precomposition preserves cohomology into K-injective targets; the sign-normalized augmentation from the actual source Hom complex of two specified injective resolutions is a quasi-isomorphism, and its actual homology map computes Ext |
-| V.1, original cohomology composition | `homClassComp_mk`, `homClassComp_assoc`, `homologyComp`: original graded composition gives a biadditive cohomology pairing with its actual representative formula and associativity, not just a separately transported operation |
-| V.1, original source quotient and pairing | `sourceHomLeftHomologyData`, `sourceHomologyComp_mk`, `sourceHomologyAddEquiv_comp`: the source's actual kernel and quotient use unscaled cocycles and classes; their original composition acquires exactly `(-1)^(ij)` under the explicit normalization |
-| V.1, Hom-complex/Yoneda product comparison | `injectiveHomologyExtAddEquiv_comp`, `sourceInjectiveHomologyExtAddEquiv_comp`: the previously specified double-resolution Ext equivalences carry the actual standard product to Yoneda composition and the literal source product to the precisely signed Yoneda composition; the proof retains the original augmentations |
-| V.1, actual connecting cocycle | `connectingConeCocycle_postcomp`, `homCocycle_connecting_eq_derived`, `sourceHomCocycle_connecting_eq_derived`: original lift-and-differentiate is the derived connecting morphism through an actual mapping-cone cocycle; the literal source convention has its precise target-degree sign |
-| V.1, projective-resolution Ext boundary | `projectiveExtCocycle_comp_extClass`, `projectiveExtMk_comp_extClass`, `exists_projectiveExtBoundaryFormula`: Yoneda composition with the actual extension class equals `(-1)^(n+1)` times the unchanged unsigned lift-and-differentiate representative; actual lifts and factorizations exist for every Ext class, and the original boundary is proved to be a cocycle |
-| V.1, original coefficient boundaries in all degrees | `moduleCohomologyMk_δ`, `moduleExtLinearEquivAbelianExt_isoExt_inv_mk`, `moduleExtYonedaCovariantBoundary_eq_signed_extCoefficientδ`: original module-cohomology representatives map to their unchanged `extMk` classes, including degree zero through the existing Ext-to-Hom isomorphism; the actual Yoneda coefficient boundary is `(-1)^(n+1)` times the independently constructed Hom boundary |
-| V.1, original local-cohomology boundary comparison | `extColimitYonedaBoundary_eq_signed_extColimitδ`, `localCohomologyYonedaBoundary_eq_signed_localCohomologyδ`: the same signed equality holds for the existing maps on the unchanged Ext diagrams, filtered colimits, and ideal-power local-cohomology objects in every degree |
-| V.1, actual contravariant Hom exactness and naturality | `homComplexContravariantSequence_shortExact`, `sourceHomContravariantSequence_shortExact`, `homComplexContravariant_exact₁`–`exact₃`, `sourceHomContravariant_exact₁`–`exact₃`, `sourceHomContravariantδ_naturality`: the original reversed Hom sequences into any degreewise-injective complex give natural long exact sequences in every integer degree, for both differentials |
-| V.1, actual contravariant derived-boundary comparison | `homComplexContravariantδ_mk`, `homComplexContravariantδ_compare`, `sourceHomContravariantδ_compare`: original lift-and-differentiate representatives identify the actual boundary with precomposition by the original derived connecting arrow into a degreewise-injective K-injective target; the standard convention contributes exactly `(-1)^(n+1)`, and the literal source differential has no extra sign under its fixed unscaled, precomposition-natural quotient equivalence |
-| V.1, actual pairing and boundaries | `extPairing_sequence_connecting`, `moduleExtPairing_naturality_middle`: actual derived Yoneda composition agrees with both original Ext connecting maps; canonical transport to original module-valued Ext is natural in all three variables |
-| V.1, covariant Hom exactness and naturality | `homComplexCovariantSequence_shortExact`, `sourceHomCovariantSequence_shortExact`, `homComplexCovariant_exact₁`–`exact₃`, `sourceHomCovariantδ_naturality`: for arbitrary source complex, a coefficient short exact sequence with degreewise-injective first term induces actual natural long exact Hom sequences, for both differentials and all integer degrees; injectivity supplies the degreewise splittings |
-| V.1, actual covariant derived-boundary comparison | `homComplexCovariantδ_compare`, `sourceHomCovariantδ_compare`: with K-injective endpoint coefficients, the original standard boundary is postcomposition with the original derived connecting arrow; the literal-source boundary contributes exactly `(-1)^(n+1)` under the fixed unscaled quotient equivalence, also natural for original coefficient maps |
-| V.1, original Hom pairing and both connecting maps | `homologyComp_connecting`, `sourceHomologyComp_connecting`, `sourceHomologyComp_naturality_middle`: the actual Hom pairing is natural in the middle complex and intertwines the two original Hom boundaries with factors `(-1)^(j+1)` (standard) and `(-1)^(i+1)` (displayed source); the original composite of lifts is an explicit coboundary, with no boundedness or K-injectivity requirement |
-| V.1, augmented chosen-resolution boundary comparison | `InjectiveResolutionSequence.extClass_augmentation`, `injectiveHomologyExtAddEquiv_contravariantδ`, `injectiveHomologyExtAddEquiv_covariantδ`: for a supplied augmented short exact sequence of chosen injective resolutions, the original augmentation squares identify its connecting arrow with the original extension class; the existing standard and normalized-source Ext equivalences respect the actual Hom boundaries with factor `(-1)^(n+1)` contravariantly and no factor covariantly, including degree zero |
-| V.1, injective horseshoe existence | `InjectiveResolutionSequence.ofShortExact`, `nonempty_injectiveResolutionSequence`: enough injectives suffices to construct an actual augmented short exact sequence of injective resolutions; the snake lemma proves the successive categorical cokernel rows short exact, the projected augmentations are quasi-isomorphisms, and the original horizontal maps form a degreewise split integer-indexed sequence |
-| V.1, simultaneous horseshoe comparison | `injective_splitRow`, `InjectiveHorseshoe.rowResolution`, `compareHomotopy`, `sequenceCompare_augmentation`: the unchanged horseshoe is an injective resolution of the whole short complex; simultaneous lifts and homotopies preserve the horizontal arrows, and the actual integer-indexed comparison strictly preserves all original augmentations |
-| V.1, coherent row-resolution functor | `InjectiveHorseshoe.homotopyFunctor`, `homotopyFunctor_map_eq`, `InjectiveRowResolution.change_trans`, `change_naturality`: identity, composition, and independence of simultaneous lifts hold in the homotopy category; changes between arbitrary injective resolutions of the whole row satisfy naturality and the cocycle law |
-| V.1, constructed-map Hom boundary naturality | `InjectiveHorseshoe.covariantδ_compare_naturality`, `contravariantδ_compare_naturality` and their literal-source counterparts: both original boundaries commute with the actual constructed augmented sequence maps in all integer degrees, without assuming a compatible resolution map |
-| V.1, arbitrary supplied resolution models | `injectiveResolutionNatHom`, `InjectiveResolutionSequence.rowResolution`: full faithfulness recovers the actual original nonnegative maps with their augmentation squares; short exactness is retained and the transposed supplied sequence is an injective resolution of the entire short complex |
-| V.1, arbitrary-model coherent maps | `InjectiveResolutionSequence.compare`, `compare_augmentation`, `rowCompareHomotopy`, `change_trans`, `change_naturality`: arbitrary supplied resolution models admit actual augmented sequence comparisons, simultaneous coherent homotopies, and natural model-change isomorphisms satisfying the cocycle law |
-| V.1, fixed Hom/Ext model independence | `injectiveHomologyExtAddEquiv_precomp`, `injectiveHomologyExtAddEquiv_postcomp` and their normalized-source variants: the unchanged double-resolution equivalences respect the actual maps in both variables; model change over identities preserves the fixed Ext value, also under the original module-valued equivalences |
-| V.1, arbitrary-model boundary naturality | `InjectiveResolutionSequence.covariantδ_compare_naturality`, `contravariantδ_compare_naturality` and their literal-source counterparts: both original Hom boundaries commute with the actual arbitrary-model comparison maps in every integer degree |
-| V.1, original module-valued boundary specialization | `injectiveHomologyModuleExtAddEquiv_contravariantδ`, `sourceInjectiveHomologyModuleExtAddEquiv_covariantδ` and their opposite-convention counterparts: the unchanged canonical linear Ext comparison gives additive-group identifications carrying the actual Hom boundaries to the previously defined module-valued Yoneda boundaries with the same signs; an augmented exact resolution sequence is supplied, not constructed |
-| V.2, canonical natural map | `localDualityNatTrans`, `localDualityMap_stage`: original quotient-Ext stages define the actual natural map into `Hom_R(Ext^j(M,P), H^n_J(P))` for `i+j=n`, over any commutative ring; invertibility is not asserted |
-| V.2, regular-local inputs | `regularLocal_localCohomology_isZero_of_gt`, `regularLocal_localCohomology_ring_isZero_of_ne`, `regularLocal_topLocalCohomology_not_isZero`: actual local cohomology vanishes above the dimension for any module; ring coefficients are concentrated and nonzero in that dimension |
-| V.2, identity and rank-one normalization | `localDualityMap_identity_evaluation`, `localDualityMap_ring_top_isIso`: evaluation at the original identity Ext class retracts the canonical top-degree map with equal coefficients; for the rank-one ring module the canonical map is an isomorphism over every commutative ring |
-| V.2.1, top degree for every finite module | `regularLocal_localDualityMap_top_isIso`, `regularLocal_localDualityTopNatIso`: the original canonical map is a natural isomorphism in the actual Krull dimension over a regular local ring; proved by additivity, actual finite free covers and their noetherian kernels, and right exactness of both unchanged functors |
-| V.2.1, all complementary degrees | `regularLocal_localDualityMap_isIso`, `regularLocal_localDualityNatIso`: the unchanged canonical map is a natural isomorphism for every finite module and every `i+j=n`; descending induction uses exact transported Yoneda sequences on the original Ext/local-cohomology objects, their proved stagewise pairing compatibility, and actual finite-free vanishing. Above-dimension local-cohomology vanishing is already proved |
-| V.3, formula (22), original dual comparison | `regularLocal_localCohomologyDualCompletionIso`, `regularLocal_localCohomologyDualCompletionIso_transpose`: over any regular local base, actual dual local cohomology is completed complementary Ext, with canonical transpose equal to the original completion map under this comparison |
-| V.3, formula (22), complete regular base | `regularLocal_localDualityTransposeMap_isIso`, `regularLocal_localCohomologyDualIsoExt`, `regularLocal_localDualityTransposeNatIso`: the original transpose is invertible, naturally on finite modules, identifying the actual dual with original complementary Ext |
-| V.3, regular-local finiteness | `regularLocal_localCohomology_isArtinian`, `regularLocal_localCohomology_socle_finite`, `regularLocal_localCohomology_annihilator_isFiniteLength`: all actual local-cohomology values of finite modules are Artinian with finite socle and finite-length power annihilators, even over a noncomplete regular base |
-| V.3.1(ii), regular-base finite generation | `regularLocal_localCohomology_dual_completeProperty_of_dualizing`, `regularLocal_completedLocalCohomologyDual_finite_of_dualizing`: for every supported dualizing coefficient, actual duals satisfy the original complete-category conditions; their original completions are finite over the actual completed ring without completeness of the regular base; generalized to arbitrary noetherian local bases below |
-| V.3.1(i), actual module parameters | `exists_localParameters`, `exists_localParameters_modulo`, `exists_moduleParameters`: converse Krull height produces genuine dimension-length parameters over every noetherian local ring; lifting parameters of the actual annihilator quotient gives a list of length equal to the module's support dimension |
-| V.3.1(i), original transition calculation | `koszulTransition_comp_eq_zero_of_annihilating_prefix`, `stableKoszulCohomology_isZero_of_annihilating_prefix`: for annihilator generators followed by `d` parameters, the unchanged consecutive-power Hom--Koszul transition is zero in every degree above `d`, so its original cohomology colimit vanishes |
-| V.3.1(i), sharp upper vanishing | `localRing_localCohomology_isZero_of_gt_moduleDim`: over every noetherian local base, original algebraic local cohomology of a finite module vanishes above its actual support dimension; the proof uses actual annihilator parameters, zero transitions, and original radical/Koszul comparisons, with no regularity or completeness hypotheses |
-| General local-ring upper vanishing | `localRing_localCohomology_isZero_of_gt`: original local cohomology vanishes above the ring dimension for arbitrary coefficient modules over every noetherian local ring, using actual parameters and radical invariance |
-| Actual residue Ext through injective envelopes | `FiniteResidueExt.injectiveEnvelope`, `FiniteResidueExt.cokernel_injectiveEnvelope`: finite original residue Ext is preserved through actual constructed injective envelopes and their categorical cokernels, using the unchanged degree-zero socle and genuine coefficient exact sequence |
-| General-local Artinianity | `FiniteResidueExt.localCohomology_isArtinian`, `localRing_localCohomology_isArtinian`: all original local-cohomology values of modules with finite residue Ext are Artinian over every noetherian local ring, in particular for all finite modules; dimension shifting uses actual envelopes and original coefficient sequences |
-| V.3.1(ii), general-local finite generation | `localRing_completedLocalCohomologyDual_finite`, `localRing_localCohomology_dual_finite`: for any actual supported dualizing coefficient, the completed original Hom dual is finite over the actual completed ring, and the original dual is finite over a complete base; no regularity or Cohen presentation is assumed |
-| Original torsion quotient and scalar maps | `powerTorsion_quotient_eq_bot`, `exists_regular_on_powerTorsion_quotient`, `localCohomology_powerTorsion_mkQ_isIso`: the actual finite torsion quotient admits a regular element and its original projection preserves positive local cohomology; `localCohomology_linear` identifies original coefficient scalar maps with scalar maps on local cohomology |
-| V.3.1(ii), general-local dimension bound | `localRing_completedLocalCohomologyDual_supportDim_le`: the original completed Hom dual in degree `i` has actual support dimension at most `i` over the completed ring, without completeness or regularity of the base; `completeLocal_localCohomology_dual_supportDim_le` gives the bound on the original dual over a complete base. The genuine dual regular-element sequence and original completion maps give induction on degree, without Cohen reduction |
-| V.3.1(iii), complete-base top-dual dimension and nonvanishing | `completeLocal_topLocalCohomology_dual_supportDim_eq`, `completeLocal_topLocalCohomology_nontrivial`: over every complete noetherian local ring, the original top dual has exactly the finite coefficient module's support dimension, and original top local cohomology is nonzero. Simultaneous regular elements, actual support control modulo the closed point, and the genuine dual regular-element sequence give induction without regularity of the ring. The zero-dimensional base holds without completeness |
-| V.3.1(iii), general-local top nonvanishing | `localRing_topLocalCohomology_nontrivial`, `localRing_completedTopLocalCohomologyDual_supportDim_eq`: original top local cohomology is nonzero over every noetherian local ring, and its original completed Hom dual has exactly the original coefficient support dimension over the actual completed ring. Original-ring parameters avoid contracted associated primes of the preceding completed dual, and the genuine completed scalar sequences give induction without a Cohen presentation or an assumed base-change comparison |
-| V.3.2, module-valued ringed-space foundations | `moduleGammaZSectionsFunctor`, `moduleGammaZSectionsForgetIso`, `moduleToSheaf_map_shortExact`: supported sections are actual modules over the structure ring on each open; their additive groups recover Exposé I's section functor, and forgetting the sheaf's module structure is exact |
-| V.3.2, general acyclicity input | `moduleIsFlasque_of_injective`, `derivedModuleGammaZSections_isZero_of_isFlasque`, `derivedModuleGammaZSections_isZero_pushforward_injective`: injective module sheaves are flasque, and the actual higher module-valued supported cohomology vanishes on flasque sheaves and on direct images of injectives under arbitrary ringed-space morphisms, without flatness |
-| V.3.2, scalar-compatible composite comparison | `ringedModulePushforwardSupportedGlobalIso`, `ringedModuleSupportedGlobalRightDerivedIso`: actual supported sections and the right-derived direct-image/section composite agree naturally with source supported cohomology restricted along the actual map on global structure rings |
-| V.3.2, original additive cohomology, naturally | `gammaZSections_quasiIso_of_boundedBelow_flasque`, `derivedModuleGammaZSectionsForgetIso`, `derivedModuleGammaZSectionsIsoH_Z`: mapping cones compare the actual module and additive resolutions in all degrees; augmentation-compatible chain homotopies prove that the unchanged objectwise comparisons commute with the original coefficient maps, without preservation of injectivity by forgetting scalars |
-| V.3.2, retained scalar action | `moduleUnderlyingComplexGlobalScalarRingHom`, `moduleUnderlyingDerivedGlobalScalarRingHom`: actual global structure-ring actions on underlying additive complexes and derived objects satisfy all ring laws and commute with coefficient cochain maps |
-| V.3.2, additive spectral sequence and E₂ | `ringedModulePushforwardAdditiveSpectralSequence`, `ringedModulePushforwardAdditiveSpectralSequenceE2Equiv`, `ringedModulePushforwardE2ModuleAddEquiv`: actual truncations of the original module direct-image resolution give genuine pages and differentials with E₂ the original supported cohomology of original higher module direct images |
-| V.3.2, genuine module-valued spectral sequence | `spectralObjectModuleLift`, `ringedModulePushforwardModuleSpectralSequence`, `ringedModulePushforwardModuleSpectralSequenceForgetIso`: the original scalar action lifts the actual spectral object and its exactness to modules; canonical forgetful comparisons preserve all differentials and the original next-page homology isomorphisms |
-| V.3.2, original module-linear E₂ identification | `ringedModulePushforwardModuleE2LinearEquiv`, `ringedModulePushforwardModuleE2LinearEquiv_toAddEquiv`: the actual E₂ page identifies module-linearly with original module-supported cohomology of the original higher module direct image; every original comparison factor intertwines the retained scalar endomorphisms, and the underlying additive equivalence is exactly the preexisting one, without commutativity or flatness assumptions |
-| V.3.2, first quadrant and canonical finite module filtration | `ringedModulePushforwardModuleSpectralObject_isFirstQuadrant`, `ringedModulePushforwardSpectralFiniteFiltration`, `ringedModulePushforwardModuleStablePageIsoGraded`: the actual module pages vanish outside the first quadrant and, for `r ≥ n + 2`, are the associated graded of the canonical total object's finite exhaustive submodule filtration |
-| V.3.2, actual module-linear abutment | `flasqueGammaComplexDerivedHomEquiv`, `ringedModulePushforwardSpectralAbutmentLinearEquiv`, `ringedModulePushforwardSourceFiniteFiltration`: the unchanged localization map computes supported derived Hom on bounded-below flasque complexes and respects all additive cochain maps; the actual filtered total module is original source supported cohomology with the prescribed scalar restriction, and the finite exhaustive filtration is transported to that source module |
-| V.3.2, coefficient functoriality and original comparisons | `ringedModulePushforwardModuleSpectralSequenceFunctor`, `ringedModulePushforwardModuleSpectralSequenceCoefficientMap_E2`, `ringedModulePushforwardSpectralTotalCoefficientMap_abutment`: actual resolution maps induce module-linear maps of the entire spectral sequence; resolution homotopies prove lift-independence and the functor laws; the unchanged E₂ and abutment identifications retain the original higher-direct-image and source supported-cohomology coefficient maps |
-| V.3.2, natural and resolution-independent filtration | `ringedModulePushforwardModuleSpectralSequenceResolutionIso_naturality`, `ringedModulePushforwardModuleStablePageIsoGraded_naturality`, `ringedModulePushforwardSourceFiniteFiltration_map_le`, `ringedModulePushforwardSourceFiniteFiltration_eq`: canonical resolution changes are natural and satisfy the cocycle law; stable-page comparisons retain the genuine associated-graded maps; original source coefficient maps preserve the actual finite filtration, which is independent of resolution |
-| V.3.3, component-generic-point criterion | `supportedFunctorColimit_associatedPrimeSpectrum_eq`, `supportedFunctorColimit_associatedPrimeSpectrum_eq_of_components`: IV's actual representing colimit has exactly the selected component generic points as associated primes when the original left-exact functor vanishes precisely on modules containing none of those components; original `R/p` tests prove the criterion, with components indexed by minimal primes of the support ideal |
-| V.3.3, actual topological components | `supportedFunctorColimit_associatedPrimes_of_irreducibleComponents`: the original irreducible components of `V(J)` are accepted directly; their genuine generic points are constructed and the actual representing colimit has exactly their range as associated primes. No list of minimal primes or generic points is supplied as an assumption |
-| V.3.1(iii), supported top-dual functor | `supportedLocalCohomologyFunctor_preservesFiniteColimits`, `supportedTopLocalCohomologyDual_isZero_iff`: original top local cohomology is right exact on the actual bounded supported category, and its actual Hom dual vanishes exactly when the coefficient support misses the top component generic points; actual chains of primes supply the dimension criterion |
-| V.3.1(iii), associated-prime formula | `localRing_topLocalCohomologyDual_associatedPrimeSpectrum`: the original top Hom dual has precisely the dimension-`n` associated primes of the original finite coefficient module. V.3.3 and III.1.3 apply to the genuine supported representation; `additiveFunctorModuleLiftIsoOfLinear` retains the original scalar action. The formula holds even without completeness; finiteness over the original ring still uses completeness |
-| Actual affine-open vanishing | `homeomorphismCohomologyFunctorIso`, `affineChartCohomologyEquiv`, `affineOpen_H_pos_subsingleton`: genuine direct image under homeomorphisms and canonical affine charts transport original ordinary cohomology; every actual quasi-coherent module is acyclic in positive degrees on an affine open of a locally noetherian scheme |
-| V.3.4, local argument | `localCohomology_isZero_of_affineComplement`, `localRing_ringKrullDim_le_one_of_affinePuncturedSpectrum`: actual affine-complement vanishing and the original relative sequence give local-cohomology vanishing above one; original top nonvanishing then bounds the dimension of a noetherian local ring with affine punctured spectrum by one |
-| V.3.4, component codimension | `irreducibleComponent_codimension_le_one_of_affineComplement`: every actual irreducible component of an arbitrary closed subset with affine complement in a noetherian affine spectrum has codimension at most one. Localization identifies the actual complement with the punctured local spectrum; codimension is the literal infimum of original structure-stalk dimensions. There is no principal-support hypothesis |
-| V.3.5, finite-length duality | `SupportedDualizingModule.moduleHomDual_finiteLength_iff`, `.moduleHomDual_length`: actual Hom duality detects finite length and preserves extended length on arbitrary modules over a noetherian local ring, without completeness; the original bidual evaluation is invertible when the dual has finite length |
-| Actual Ext localization | `finiteProjectiveResolution`, `localizedLinearYonedaObjIso`, `moduleExtLocalizationIso`, `moduleExtLocalizationRingIso`: degreewise finite genuine projective resolutions and termwise Hom localization give localized-ring-linear comparisons for original Ext, with finite first argument and arbitrary second argument, including actual ring coefficients |
-| V.3.5, through localized Ext | `regularLocal_localCohomology_length_eq_ext`, `regularLocal_localCohomology_finiteLength_iff_ext_atPrime`: over a regular local ring, original local cohomology has the same extended length as complementary Ext; finite length is equivalent to vanishing of actual complementary Ext over every nonclosed prime localization |
-| Koszul systems under arbitrary ring maps | `koszulSystemBaseChangeIso`, `koszulHomComplexSystemScalarChangeIso`: actual tensor extension identifies the original inverse Koszul systems, including every power transition; the source-ring-linear Hom adjunction identifies their actual Hom cochain systems, without flatness |
-| Original local-cohomology scalar change | `localCohomologyScalarChangeIso`: for any map of noetherian commutative rings, scalar restriction of local cohomology at the image ideal is source-ring local cohomology of the restricted coefficient, for all ideals, degrees, and arbitrary coefficients |
-| V, formula (19) and finite length | `localRing_localCohomologyScalarChangeIso`, `localRing_localCohomology_length_eq_of_surjective`, `localRing_localCohomology_finiteLength_iff_of_surjective`: surjective local-ring change preserves actual maximal-ideal local cohomology, extended length, and finite length; no flatness is assumed |
-| V, formula (20), actual Hom duals | `surjectiveHomDualScalarChangeIso`, `surjectiveLocalCohomologyDualIso`: actual coinduction is dualizing over the target; one choice of coefficient isomorphism gives a natural source-ring-linear comparison of the specified Hom duals on all modules, and a comparison of duals of actual local cohomology |
-| V, formula (21) and module dimension | `restrictScalarsAnnihilatorQuotientEquiv`, `restrictScalars_finite_iff_of_surjective`, `restrictScalars_supportDim_of_surjective`: the induced map identifies the original annihilator quotients; finite generation and actual finite-module support dimension are unchanged |
-| V.3.5, original prime-localization transport | `localRingHom_surjective`, `localizedRestrictScalarsIso`, `localizedRestrictScalarsIso_hom_mk`, `ringKrullDim_quotient_comap_of_surjective`: the actual local ring map is surjective, the original localized coefficients agree with their original element maps, and the dimensions of corresponding prime quotients agree |
-| V.3.5, quotient reduction of both conditions | `localCohomologyAtPrimeScalarChangeIso`, `puncturedLocalCohomologyVanishing_iff_of_surjective`, `localCohomologyFiniteLengthCriterion_iff_of_surjective`: actual local cohomology at corresponding points agrees after scalar restriction; both finite length and shifted punctured vanishing are quotient-invariant. Points outside the image vanish and negative degrees impose no condition |
-| V.3.6, depth deduction | `puncturedLocalCohomologyVanishing_le_iff_depth`, `localCohomology_finiteLength_le_iff_depth_of_criterion`, `puncturedDepthBound_iff_of_surjective`: shifted vanishing through a threshold is equivalent to the actual localized depth bound, including infinite depth; the deduction from V.3.5 and quotient invariance hold over every noetherian local ring |
-| V.3.5, homological prime-localization input | `localizedPrimeQuotientResidueFieldIso`, `localizedPrimeQuotientResidueFieldIso_hom_mk`, `regularLocal_atPrime_moduleGlobalDimension_le`: the original localization of `R/p` is the actual residue field of `R_p`, with the original element map; every prime localization has global dimension bounded by the original regular ring's Krull dimension, without assuming regularity of the localized ring |
-| Homological regularity criterion | `isRegularLocalRing_of_residueField_bound`, `isRegularLocalRing_iff_residueField_projectiveDimension_ne_top`: a noetherian local ring is regular exactly when its actual residue field has finite projective dimension. Regular-element reduction preserves bounds over the quotient ring, a cotangent functional gives the actual residue-field retract of `m/xm`, and lifting minimal generators completes induction |
-| V.3.5, regularity of prime localizations | `regularLocal_atPrime_isRegularLocalRing`, `regularLocal_isRegularRing`, `regularLocal_atPrime_moduleGlobalDimension_eq_ringKrullDim`: every actual prime localization of a regular local ring is regular, and its global dimension equals its own Krull dimension; no converse criterion or localization-regularity hypothesis is supplied |
-| V.3.5, regular-local dimension formula | `regularLocal_top_associated_mem_ext_support`, `regularLocal_atPrime_dimension_add_quotient`: the top-dual associated-prime formula forces complementary Ext to be supported at the original top primes; localization and residue Ext concentration give `dim R_p + dim(R/p) = dim R`, without assuming catenarity |
-| V.3.5, full criterion | `regularLocal_localCohomology_finiteLength_iff_punctured`, `localCohomology_finiteLength_iff_punctured_of_surjective`: for finite modules over quotients of regular local rings, original local cohomology has finite length exactly when the original shifted local cohomology vanishes at all nonclosed points. Both localization regularity and the dimension formula are proved; negative shifted degrees and upper vanishing are handled explicitly |
-| V.3.6, full criterion | `regularLocal_localCohomology_finiteLength_le_iff_depth`, `localCohomology_finiteLength_le_iff_depth_of_surjective`: finite length through degree `n` is equivalent to the actual punctured depth bound for finite modules over quotients of regular local rings; no additional finite-length criterion is assumed, and zero modules retain infinite depth |
-| General-local socle and annihilators | `localRing_localCohomology_socle_finite`, `localRing_localCohomology_annihilator_isFiniteLength`, `localRing_localCohomology_dual_completeProperty`: actual socles are finite, actual power annihilators have finite length, and actual Hom duals satisfy the original complete-category conditions over every noetherian local ring |
 | IV.4.5 | `localArtinianTensorCompletionEquiv`, `supportedCompletionEquivalence`, `localArtinianCompletionEquivalence`: the actual tensor map is invertible on arbitrary locally Artinian modules, and original tensor/restriction give inverse equivalences on the actual supported and locally Artinian categories; no extra noetherianity hypothesis on the completed ring |
 | IV.4.5, submodules and finiteness | `completion_submodule_smul_mem`, `completion_restrictScalars_finite`: every original-ring submodule of a supported completed-ring module is stable under its existing completed action; restriction preserves finite generation |
 | IV.4.5, finite category | `finiteSupportedCompletionEquivalence`: original tensor/restriction give an equivalence on finite supported modules, retaining the actual unit/counit and commuting with the full supported equivalence |
@@ -741,227 +659,151 @@ presentation for arbitrary complete regular local rings, completed
 differentials, parameter independence, and field compatibility remain open.
 IV.2.1 is proved for the original functor, using an actual
 lift of finite supported short exact sequences and the canonical representation.
-Exposé V has a partial formalization: the actual linear Yoneda pairing is
-natural in all variables and compatible with both original derived Ext
-long-exact-sequence boundaries. Its canonical transport to the original
-module-valued Ext gives `localDualityNatTrans`, with original quotient-stage
-compatibility, over every commutative ring. For regular local rings, actual
-local cohomology vanishes above the dimension for arbitrary modules, and
-ring-coefficient local cohomology is concentrated and nonzero in the actual
-dimension. The original identity Ext class gives a retraction of the
-top-degree canonical map with equal coefficients. Additivity and the genuine
-finite-presentation argument extend the rank-one isomorphism to every finite
-module in top degree, naturally on the original finite-module category.
-Right exactness is proved from the original Ext-colimit coefficient sequence
-and upper vanishing on the source, and from canonical degree-zero Ext--Hom
-comparison and the actual injective dualizing module on the target.
-The canonical linear Ext comparison transports the exact Yoneda sequences
-onto the unchanged module-valued Ext objects, with their original
-degree-preserving arrows. Filtered colimits give exact sequences on actual
-local cohomology. Their boundary compatibility with the unchanged canonical
-map is proved at each original quotient stage by Yoneda associativity.
-Descending induction through finite free covers and their finite kernels
-now proves V.2.1 in every complementary degree, naturally on finite modules;
-above-dimension vanishing is already proved. The source's literal Hom complex
-is now constructed, and an explicit degreewise sign gives its chain
-isomorphism to Mathlib's convention. The actual sign-normalized augmentation
-from two specified injective resolutions is a quasi-isomorphism and computes
-Ext through its homology map; the incompatible unsigned formula in the source
-is not asserted. The original cohomology product is now identified with Yoneda
-composition under the same previously specified Ext comparison. Actual unscaled
-source kernel and quotient data prove that the source product acquires exactly
-`(-1)^(ij)` under normalization. Actual mapping-cone lifts now identify the
-original lifted-cocycle boundary with the derived connecting morphism. For
-unchanged unsigned projective-resolution representatives, the Yoneda boundary
-is precisely `(-1)^(n+1)` times the lifted boundary's `extMk` class; projectivity
-and exactness supply the lifts for every Ext class. The existing linear comparison
-now sends actual module-cohomology representatives to these same `extMk` classes
-in all degrees, including zero through the original Ext-to-Hom isomorphism.
-Consequently the independently constructed module-valued coefficient boundary
-and the transported Yoneda boundary differ by exactly `(-1)^(n+1)`, as do their
-original filtered Ext-colimit and ideal-power local-cohomology boundaries.
-The original contravariant Hom sequences into degreewise-injective complexes
-now have exactness and naturality in every integer degree. For K-injective
-targets, actual cocycle representatives identify their connecting maps with
-the original derived connecting arrow: the standard convention contributes
-`(-1)^(n+1)`, while the literal source differential needs no extra sign under
-its fixed unscaled quotient equivalence. The covariant Hom sequence now also
-has exactness and naturality for arbitrary source complex and degreewise-injective
-first coefficient complex. With K-injective endpoints, its standard boundary
-is the original derived connecting arrow, while the literal-source boundary
-has exactly `(-1)^(n+1)`. The original pairing is natural in the middle complex;
-an explicit composite of lifts proves its boundary identity with factors
-`(-1)^(j+1)` (standard) and `(-1)^(i+1)` (source), without boundedness or
-K-injectivity. The source's unsigned connecting-pairing formula is not asserted
-for these unchanged conventions. For a supplied augmented short exact sequence
-of chosen injective resolutions, its original augmentation squares now prove
-compatibility with the original extension class. The existing standard and
-normalized source Ext equivalences compare the actual Hom boundaries with
-Yoneda boundaries in every natural degree: factor `(-1)^(n+1)` contravariantly,
-no factor covariantly. The unchanged canonical linear comparison gives the
-same result for original module-valued Ext, as additive-group identifications.
-The injective horseshoe now constructs augmented exact resolution sequences
-in every abelian category with enough injectives, by iterating actual
-categorical cokernels of embeddings into split injective rows. The original
-horizontal maps and augmentation squares are retained, and the resulting
-integer-indexed sequence is split in each degree. These split rows are also
-injective objects of the short-complex category. The same horseshoe therefore
-has simultaneous comparison maps and homotopies preserving both horizontal
-arrows; its actual integer-indexed comparisons strictly preserve the original
-augmentations. They form a functor after passing to homotopy, independent of
-the chosen simultaneous lift. Arbitrary injective row-resolution changes
-satisfy naturality and the cocycle identity. Both original Hom boundaries
-are natural under the constructed maps, in both differential conventions.
-Arbitrary separately specified resolution-sequence data now gives an injective
-resolution of the entire row, with full faithfulness recovering the unchanged
-nonnegative maps and augmentation squares. These models admit actual augmented
-comparisons, simultaneous coherent homotopies, and natural model changes
-satisfying the cocycle identity. The fixed standard and normalized-source Ext
-equivalences respect actual precomposition and postcomposition in all natural
-degrees. Changes over identities preserve the Ext value, including the original
-module-valued Ext comparison. Both original Hom boundaries are natural for
-the arbitrary-model comparisons. These results are not assumed in
-local-duality invertibility.
-The canonical transpose now identifies
-actual dual local cohomology with completed complementary Ext and becomes
-the original completion map. Over a complete regular base this proves V, formula (22),
-naturally on finite modules. Local cohomology of finite modules over every
-noetherian local base is Artinian, with finite actual socle and finite-length
-power annihilators; its actual Hom duals satisfy the literal complete-category
-conditions and are finite over a complete base. Their original completions
-are finite over the actual completed ring even without completeness of the
-base. This general-local finite-generation assertion is proved through finite
-original residue Ext: actual essential injective envelopes preserve finite
-socles, the original coefficient sequence preserves residue-Ext finiteness in
-their cokernels, and the genuine local-cohomology sequence gives Artinianity
-by induction. The dimension bound in V.3.1(ii) now also holds over arbitrary
-noetherian local bases. The original torsion-quotient map preserves positive
-local cohomology, and original coefficient scalar maps induce the same scalars
-on local cohomology. Dualizing the genuine regular-element sequence bounds
-the principal quotient of the higher dual by the lower dual. Those duals are
-already complete; their actual completion maps preserve the exact sequence
-over the completed ring, giving the dimension bound by induction on degree.
-No Cohen presentation is assumed. V.3.1(i)'s sharp upper bound
-by the module support dimension is
-proved for arbitrary noetherian local rings: genuine parameters modulo the
-annihilator, lifted and preceded by annihilator generators, make the original
-consecutive-power Hom--Koszul transitions zero above that dimension. The
-actual radical and Koszul-colimit comparisons give original local-cohomology
-vanishing. The ring-dimension bound also holds for arbitrary coefficient
-modules. These are upper-vanishing statements for the natural-number-indexed
-algebraic functors, not a separate negative-degree convention. Over every
-complete noetherian local ring, V.3.1(iii)'s top-dual dimension equality and
-top nonvanishing are now proved. A simultaneous regular element on the
-coefficient and preceding dual torsion quotients confines the genuine dual
-sequence's error to the closed point; upper vanishing makes the parameter
-regular on the top dual, giving dimension equality by induction. The
-zero-dimensional base holds without completeness. Top nonvanishing now also
-holds over noncomplete noetherian local rings. Prime avoidance of contracted
-associated primes chooses original-ring parameters regular on the coefficient
-and preceding completed-dual torsion quotients. The actual completed dual
-sequences preserve scalar injectivity and control the closed-point support
-error. Induction proves that the completed top dual has exactly the original
-coefficient support dimension, forcing original top nonvanishing without an
-assumed local-cohomology base-change comparison. The associated-prime formula
-is now proved for the unchanged top dual, even without completeness of the
-base. The top functor is right exact on actual finite supported modules.
-Chains in the original spectrum identify the maximal-dimensional components;
-the original top dual vanishes exactly when its coefficient support misses
-all those generic points. The minimal-prime-indexed form of V.3.3 identifies
-the associated primes of IV's actual representing colimit via the original
-cyclic tests. The criterion also accepts the actual irreducible components
-of the closed subspace and constructs their genuine generic points.
-The canonical module lift agrees with the dual's original
-scalar action, and III.1.3 gives the formula on the original functor values.
-V.3.4 is proved for arbitrary closed subsets with affine complement: every
-original irreducible component has codimension at most one, with codimension
-defined as the infimum of its original structure-stalk dimensions. Genuine
-affine-chart comparisons prove quasi-coherent vanishing on actual affine opens.
-The original relative sequence gives local-cohomology vanishing above one.
-Localizing the actual complement at a component generic point gives the
-punctured local spectrum, and original top nonvanishing bounds its dimension.
-V.3.5 is proved for finite modules over quotients of regular local rings. The
-original Hom dual detects finite length without completeness of the base.
-Degreewise finite projective resolutions exist in the category of all modules;
-the actual Hom localization maps commute with their differentials. Original
-Ext therefore localizes to original Ext over the localized ring, linearly over
-that ring. In the regular-local case, finite length of original local cohomology
-is equivalent to vanishing of actual complementary Ext at each nonclosed point.
-The quotient reduction of both conditions is proved: original local ring maps
-are surjective, actual localized coefficient modules agree, and corresponding
-prime quotients have equal dimensions. Closed points correspond; outside the
-quotient's image all localized coefficients vanish. The shifted condition
-tests precisely nonnegative degrees, without truncating negative degrees to
-zero. V.3.6 is proved using original localized depth, including infinite depth,
-under the same source hypotheses. Its depth bound is quotient-invariant.
-No additional V.3.5 hypothesis is supplied in the full V.3.6 theorem.
-The homological input for localization regularity is also proved. The actual
-localized cyclic module `R/p` is the actual residue field of `R_p`, with its
-original element map. Every module over `R_p` has projective dimension at most
-the original regular ring's dimension, giving finite global dimension at
-every prime. The converse homological regularity criterion is now proved:
-finite residue-field projective dimension forces regularity. Actual regular
-parameters outside the square of the maximal ideal, quotient-ring linear
-splittings, and lifting minimal generators give induction on the bound.
-Consequently every prime localization is regular, and its global dimension
-equals its own Krull dimension. The separate formula
-`dim R_p + dim(R/p) = dim R` is also proved: the top-dual associated-prime
-formula forces complementary Ext of `R/p` to be nonzero at `p`, and actual
-Ext localization and residue Ext concentration identify its degree with the
-local ring dimension. This completes the regular-local argument of V.3.5;
-the already proved quotient reduction gives its stated generality.
-The algebraic change-of-rings steps in V, formulas (19)--(21), are now proved.
-Tensor extension preserves the actual inverse Koszul systems and every power
-transition, without flatness. Original Hom adjunction, exact scalar restriction,
-and original colimits prove the local-cohomology comparison for every ideal
-and arbitrary coefficients over noetherian rings. For surjective local maps
-the maximal-ideal cohomology modules and their extended lengths agree. The
-Hom-dual comparison is natural in all modules after one coefficient-isomorphism
-choice. The actual annihilator quotients, finite generation, and finite-module
-support dimension are unchanged. For V.3.2, module-valued supported sections
-and higher direct images on arbitrary ringed spaces are now constructed.
-Injective module sheaves are flasque, and their direct images are acyclic for
-the actual module-valued supported-section functor, without flatness. The
-right-derived composite agrees naturally in every degree with supported
-cohomology on the source restricted along the actual global ring map.
-Bounded-below flasque mapping cones now prove that actual supported sections
-preserve the resolution quasi-isomorphisms. Actual cochain representatives
-into an additive-injective resolution give, in every degree, a comparison
-of the underlying module cohomology with original additive-sheaf cohomology,
-including the preexisting global `H_Z`. Augmentation-compatible chain homotopies
-now prove naturality of these unchanged maps, for arbitrary choices of the
-resolutions. Forgetting scalars is not assumed to preserve injectivity.
-The actual global scalar action is retained on the underlying additive
-complexes and their derived objects. Canonical truncations of the original
-module direct-image resolution, followed by derived Hom from `zZX_closed`,
-now give a genuine additive spectral sequence. Its actual E₂ terms identify
-with original `H_Z` of the original higher module direct images, and additively
-with their module-valued supported cohomology. The retained action now lifts
-the actual spectral object to modules over the target global structure ring,
-including its original exactness. The resulting module spectral sequence
-forgets canonically to the entire original additive sequence, with all
-differentials and the original next-page homology isomorphisms. First-quadrant
-bounds give a finite exhaustive submodule filtration on its actual total
-object; in total degree `n`, every page with `r ≥ n + 2` is its associated
-graded, module-linearly. The unchanged localization map now computes supported
-derived Hom on every bounded-below flasque complex and is natural in every
-additive cochain map. Its scalar compatibility identifies the actual total
-module with the original supported-section complex homology, hence with
-source supported cohomology restricted along the prescribed global ring map.
-The finite exhaustive filtration is transported to that original source
-module, retaining its smaller universe. The original E₂ comparison is now
-module-linear as well: its canonical page, first-page, truncation/shift and
-supported-cohomology factors all intertwine the original global scalar maps.
-The linear equivalence has exactly the preexisting additive comparison.
-Actual coefficient maps now give a genuine functor to module spectral sequences.
-Resolution homotopies prove lift-independence and the identity/composition laws;
-canonical changes of resolution are natural and satisfy the cocycle identity.
-The unchanged module-linear E₂ and abutment comparisons retain the original
-higher-direct-image and source supported-cohomology coefficient maps. These
-source maps preserve the actual finite filtration, which is independent of
-resolution, and the stable-page isomorphisms retain the genuine associated-graded
-maps. Cohen's presentation theorem remains open; it is not assumed in the
-proved algebraic results.
+## SGA 2, Exposé V — Local duality and local cohomology
+
+Entry point: `lean/SGA/SGA2/ExposeV.lean`. The main results and conventions
+are summarized below, followed by the individual declarations.
+
+- **§1:** The displayed Hom complex, both long exact sequences, composition,
+  and comparisons with Ext are proved. Injective horseshoes and simultaneous
+  row comparisons give coherent changes between chosen resolutions.
+- **V.2.1:** The canonical map from quotient Ext stages is a natural
+  isomorphism on finite modules over a regular local ring in every
+  complementary degree. Its transpose identifies dual local cohomology with
+  completed complementary Ext, and with Ext itself over a complete base.
+- **V.3.1:** Upper vanishing, Artinianity, finite generation and dimension
+  bounds for completed duals, top nonvanishing, and the top-dual associated
+  primes are proved over noetherian local rings. The support criteria after
+  formula (22) and the Ext support-codimension bound are also formalized.
+- **V.3.2:** For closed supports and arbitrary morphisms of ringed spaces,
+  the module-valued spectral sequence has genuine pages and differentials,
+  module-linear E₂ and source-cohomology abutment comparisons, and a finite
+  convergence filtration. Coefficient maps preserve these comparisons and
+  the filtration; changes of resolution are coherent. Flatness is not
+  assumed. Closed supports are the scope of the source lemma.
+- **V.3.3–V.3.4:** The representing-module associated-prime criterion accepts
+  actual irreducible component families. Every component of a closed subset
+  with affine complement has codimension at most one, measured with the
+  structure-stalk dimensions.
+- **V.3.5–V.3.6:** Finite length is equivalent to shifted punctured
+  local-cohomology vanishing, and finite length through a threshold is
+  equivalent to the punctured depth bound, over quotients of regular local
+  rings. Quotient transport, localization of Ext, regularity of prime
+  localizations, and the dimension formula are proved.
+
+### Declaration index
+
+| Source | Formalization |
+| --- | --- |
+| V.1, literal Hom-complex signs | `sourceHomδ_v`, `sourceHomδ_comp`, `sourceHomComplexIso`, `sourceHomSign_smul_comp`: the original displayed differential is square-zero; actual Leibniz, cocycle/coboundary and homotopy formulas are proved. The explicit chain isomorphism multiplies degree `n` by `(-1)^(n(n+1)/2)`, with composition correction `(-1)^(ij)` |
+| V.1.3, actual double-resolution comparison | `homComplexPrecomp_quasiIso`, `sourceInjectiveHomAugmentation_f`, `sourceInjectiveHomologyExtAddEquiv`: precomposition preserves cohomology into K-injective targets; the sign-normalized augmentation from the actual source Hom complex of two specified injective resolutions is a quasi-isomorphism, and its actual homology map computes Ext |
+| V.1, original cohomology composition | `homClassComp_mk`, `homClassComp_assoc`, `homologyComp`: original graded composition gives a biadditive cohomology pairing with its actual representative formula and associativity, not just a separately transported operation |
+| V.1, original source quotient and pairing | `sourceHomLeftHomologyData`, `sourceHomologyComp_mk`, `sourceHomologyAddEquiv_comp`: the source's actual kernel and quotient use unscaled cocycles and classes; their original composition acquires exactly `(-1)^(ij)` under the explicit normalization |
+| V.1, Hom-complex/Yoneda product comparison | `injectiveHomologyExtAddEquiv_comp`, `sourceInjectiveHomologyExtAddEquiv_comp`: the previously specified double-resolution Ext equivalences carry the actual standard product to Yoneda composition and the literal source product to the precisely signed Yoneda composition; the proof retains the original augmentations |
+| V.1, pairing naturality in all variables | `homologyComp_naturality_first`, `homologyComp_naturality_middle`, `homologyComp_naturality_last`, and their `sourceHomologyComp` counterparts: both homology products commute with the original chain maps in every integer degree |
+| V.1, actual connecting cocycle | `connectingConeCocycle_postcomp`, `homCocycle_connecting_eq_derived`, `sourceHomCocycle_connecting_eq_derived`: original lift-and-differentiate is the derived connecting morphism through an actual mapping-cone cocycle; the literal source convention has its precise target-degree sign |
+| V.1, projective-resolution Ext boundary | `projectiveExtCocycle_comp_extClass`, `projectiveExtMk_comp_extClass`, `exists_projectiveExtBoundaryFormula`: Yoneda composition with the actual extension class equals `(-1)^(n+1)` times the unchanged unsigned lift-and-differentiate representative; actual lifts and factorizations exist for every Ext class, and the original boundary is proved to be a cocycle |
+| V.1, original coefficient boundaries in all degrees | `moduleCohomologyMk_δ`, `moduleExtLinearEquivAbelianExt_isoExt_inv_mk`, `moduleExtYonedaCovariantBoundary_eq_signed_extCoefficientδ`: original module-cohomology representatives map to their unchanged `extMk` classes, including degree zero through the existing Ext-to-Hom isomorphism; the actual Yoneda coefficient boundary is `(-1)^(n+1)` times the independently constructed Hom boundary |
+| V.1, original local-cohomology boundary comparison | `extColimitYonedaBoundary_eq_signed_extColimitδ`, `localCohomologyYonedaBoundary_eq_signed_localCohomologyδ`: the same signed equality holds for the existing maps on the unchanged Ext diagrams, filtered colimits, and ideal-power local-cohomology objects in every degree |
+| V.1, actual contravariant Hom exactness and naturality | `homComplexContravariantSequence_shortExact`, `sourceHomContravariantSequence_shortExact`, `homComplexContravariant_exact₁`–`exact₃`, `sourceHomContravariant_exact₁`–`exact₃`, `sourceHomContravariantδ_naturality`: the original reversed Hom sequences into any degreewise-injective complex give natural long exact sequences in every integer degree, for both differentials |
+| V.1, actual contravariant derived-boundary comparison | `homComplexContravariantδ_mk`, `homComplexContravariantδ_compare`, `sourceHomContravariantδ_compare`: original lift-and-differentiate representatives identify the actual boundary with precomposition by the original derived connecting arrow into a degreewise-injective K-injective target; the standard convention contributes exactly `(-1)^(n+1)`, and the literal source differential has no extra sign under its fixed unscaled, precomposition-natural quotient equivalence |
+| V.1, actual pairing and boundaries | `extPairing_sequence_connecting`, `moduleExtPairing_naturality_middle`: actual derived Yoneda composition agrees with both original Ext connecting maps; canonical transport to original module-valued Ext is natural in all three variables |
+| V.1, covariant Hom exactness and naturality | `homComplexCovariantSequence_shortExact`, `sourceHomCovariantSequence_shortExact`, `homComplexCovariant_exact₁`–`exact₃`, `sourceHomCovariantδ_naturality`: for arbitrary source complex, a coefficient short exact sequence with degreewise-injective first term induces actual natural long exact Hom sequences, for both differentials and all integer degrees; injectivity supplies the degreewise splittings |
+| V.1, actual covariant derived-boundary comparison | `homComplexCovariantδ_compare`, `sourceHomCovariantδ_compare`: with K-injective endpoint coefficients, the original standard boundary is postcomposition with the original derived connecting arrow; the literal-source boundary contributes exactly `(-1)^(n+1)` under the fixed unscaled quotient equivalence, also natural for original coefficient maps |
+| V.1, original Hom pairing and both connecting maps | `homologyComp_connecting`, `sourceHomologyComp_connecting`, `sourceHomologyComp_naturality_middle`: the actual Hom pairing is natural in the middle complex and intertwines the two original Hom boundaries with factors `(-1)^(j+1)` (standard) and `(-1)^(i+1)` (displayed source); the original composite of lifts is an explicit coboundary, with no boundedness or K-injectivity requirement |
+| V.1, augmented chosen-resolution boundary comparison | `InjectiveResolutionSequence.extClass_augmentation`, `injectiveHomologyExtAddEquiv_contravariantδ`, `injectiveHomologyExtAddEquiv_covariantδ`: for a supplied augmented short exact sequence of chosen injective resolutions, the original augmentation squares identify its connecting arrow with the original extension class; the existing standard and normalized-source Ext equivalences respect the actual Hom boundaries with factor `(-1)^(n+1)` contravariantly and no factor covariantly, including degree zero |
+| V.1, injective horseshoe existence | `InjectiveResolutionSequence.ofShortExact`, `nonempty_injectiveResolutionSequence`: enough injectives suffices to construct an actual augmented short exact sequence of injective resolutions; the snake lemma proves the successive categorical cokernel rows short exact, the projected augmentations are quasi-isomorphisms, and the original horizontal maps form a degreewise split integer-indexed sequence |
+| V.1, simultaneous horseshoe comparison | `injective_splitRow`, `InjectiveHorseshoe.rowResolution`, `compareHomotopy`, `sequenceCompare_augmentation`: the unchanged horseshoe is an injective resolution of the whole short complex; simultaneous lifts and homotopies preserve the horizontal arrows, and the actual integer-indexed comparison strictly preserves all original augmentations |
+| V.1, coherent row-resolution functor | `InjectiveHorseshoe.homotopyFunctor`, `homotopyFunctor_map_eq`, `InjectiveRowResolution.change_trans`, `change_naturality`: identity, composition, and independence of simultaneous lifts hold in the homotopy category; changes between arbitrary injective resolutions of the whole row satisfy naturality and the cocycle law |
+| V.1, constructed-map Hom boundary naturality | `InjectiveHorseshoe.covariantδ_compare_naturality`, `contravariantδ_compare_naturality` and their literal-source counterparts: both original boundaries commute with the actual constructed augmented sequence maps in all integer degrees, without assuming a compatible resolution map |
+| V.1, arbitrary supplied resolution models | `injectiveResolutionNatHom`, `InjectiveResolutionSequence.rowResolution`: full faithfulness recovers the actual original nonnegative maps with their augmentation squares; short exactness is retained and the transposed supplied sequence is an injective resolution of the entire short complex |
+| V.1, arbitrary-model coherent maps | `InjectiveResolutionSequence.compare`, `compare_augmentation`, `rowCompareHomotopy`, `change_trans`, `change_naturality`: arbitrary supplied resolution models admit actual augmented sequence comparisons, simultaneous coherent homotopies, and natural model-change isomorphisms satisfying the cocycle law |
+| V.1, fixed Hom/Ext model independence | `injectiveHomologyExtAddEquiv_precomp`, `injectiveHomologyExtAddEquiv_postcomp` and their normalized-source variants: the unchanged double-resolution equivalences respect the actual maps in both variables; model change over identities preserves the fixed Ext value, also under the original module-valued equivalences |
+| V.1, arbitrary-model boundary naturality | `InjectiveResolutionSequence.covariantδ_compare_naturality`, `contravariantδ_compare_naturality` and their literal-source counterparts: both original Hom boundaries commute with the actual arbitrary-model comparison maps in every integer degree |
+| V.1, original module-valued boundary specialization | `injectiveHomologyModuleExtAddEquiv_contravariantδ`, `sourceInjectiveHomologyModuleExtAddEquiv_covariantδ` and their opposite-convention counterparts: the unchanged canonical linear Ext comparison gives additive-group identifications carrying the actual Hom boundaries to the previously defined module-valued Yoneda boundaries with the same signs; uses an augmented exact resolution sequence, constructed by the horseshoe theorem |
+| V.2, canonical natural map | `localDualityNatTrans`, `localDualityMap_stage`: original quotient-Ext stages define the actual natural map into `Hom_R(Ext^j(M,P), H^n_J(P))` for `i+j=n`, over any commutative ring |
+| V.2, regular-local inputs | `regularLocal_localCohomology_isZero_of_gt`, `regularLocal_localCohomology_ring_isZero_of_ne`, `regularLocal_topLocalCohomology_not_isZero`: actual local cohomology vanishes above the dimension for any module; ring coefficients are concentrated and nonzero in that dimension |
+| V.2, identity and rank-one normalization | `localDualityMap_identity_evaluation`, `localDualityMap_ring_top_isIso`: evaluation at the original identity Ext class retracts the canonical top-degree map with equal coefficients; for the rank-one ring module the canonical map is an isomorphism over every commutative ring |
+| V.2.1, top degree for every finite module | `regularLocal_localDualityMap_top_isIso`, `regularLocal_localDualityTopNatIso`: the original canonical map is a natural isomorphism in the actual Krull dimension over a regular local ring; proved by additivity, actual finite free covers and their noetherian kernels, and right exactness of both unchanged functors |
+| V.2.1, all complementary degrees | `regularLocal_localDualityMap_isIso`, `regularLocal_localDualityNatIso`: the unchanged canonical map is a natural isomorphism for every finite module and every `i+j=n`; descending induction uses exact transported Yoneda sequences on the original Ext/local-cohomology objects, their proved stagewise pairing compatibility, and actual finite-free vanishing. Above-dimension local-cohomology vanishing is already proved |
+| V.3, formula (22), original dual comparison | `regularLocal_localCohomologyDualCompletionIso`, `regularLocal_localCohomologyDualCompletionIso_transpose`: over any regular local base, actual dual local cohomology is completed complementary Ext, with canonical transpose equal to the original completion map under this comparison |
+| V.3, formula (22), complete regular base | `regularLocal_localDualityTransposeMap_isIso`, `regularLocal_localCohomologyDualIsoExt`, `regularLocal_localDualityTransposeNatIso`: the original transpose is invertible, naturally on finite modules, identifying the actual dual with original complementary Ext |
+| V.3, regular-local finiteness | `regularLocal_localCohomology_isArtinian`, `regularLocal_localCohomology_socle_finite`, `regularLocal_localCohomology_annihilator_isFiniteLength`: all actual local-cohomology values of finite modules are Artinian with finite socle and finite-length power annihilators, even over a noncomplete regular base |
+| V.3.1(ii), regular-base finite generation | `regularLocal_localCohomology_dual_completeProperty_of_dualizing`, `regularLocal_completedLocalCohomologyDual_finite_of_dualizing`: for every supported dualizing coefficient, actual duals satisfy the original complete-category conditions; their original completions are finite over the actual completed ring without completeness of the regular base; generalized to arbitrary noetherian local bases below |
+| V.3.1(i), actual module parameters | `exists_localParameters`, `exists_localParameters_modulo`, `exists_moduleParameters`: converse Krull height produces genuine dimension-length parameters over every noetherian local ring; lifting parameters of the actual annihilator quotient gives a list of length equal to the module's support dimension |
+| V.3.1(i), original transition calculation | `koszulTransition_comp_eq_zero_of_annihilating_prefix`, `stableKoszulCohomology_isZero_of_annihilating_prefix`: for annihilator generators followed by `d` parameters, the unchanged consecutive-power Hom--Koszul transition is zero in every degree above `d`, so its original cohomology colimit vanishes |
+| V.3.1(i), sharp upper vanishing | `localRing_localCohomology_isZero_of_gt_moduleDim`: over every noetherian local base, original algebraic local cohomology of a finite module vanishes above its actual support dimension; the proof uses actual annihilator parameters, zero transitions, and original radical/Koszul comparisons, with no regularity or completeness hypotheses |
+| General local-ring upper vanishing | `localRing_localCohomology_isZero_of_gt`: original local cohomology vanishes above the ring dimension for arbitrary coefficient modules over every noetherian local ring, using actual parameters and radical invariance |
+| Actual residue Ext through injective envelopes | `FiniteResidueExt.injectiveEnvelope`, `FiniteResidueExt.cokernel_injectiveEnvelope`: finite original residue Ext is preserved through actual constructed injective envelopes and their categorical cokernels, using the unchanged degree-zero socle and genuine coefficient exact sequence |
+| General-local Artinianity | `FiniteResidueExt.localCohomology_isArtinian`, `localRing_localCohomology_isArtinian`: all original local-cohomology values of modules with finite residue Ext are Artinian over every noetherian local ring, in particular for all finite modules; dimension shifting uses actual envelopes and original coefficient sequences |
+| V.3.1(ii), general-local finite generation | `localRing_completedLocalCohomologyDual_finite`, `localRing_localCohomology_dual_finite`: for any actual supported dualizing coefficient, the completed original Hom dual is finite over the actual completed ring, and the original dual is finite over a complete base; no regularity or Cohen presentation is assumed |
+| Original torsion quotient and scalar maps | `powerTorsion_quotient_eq_bot`, `exists_regular_on_powerTorsion_quotient`, `localCohomology_powerTorsion_mkQ_isIso`: the actual finite torsion quotient admits a regular element and its original projection preserves positive local cohomology; `localCohomology_linear` identifies original coefficient scalar maps with scalar maps on local cohomology |
+| V.3.1(ii), general-local dimension bound | `localRing_completedLocalCohomologyDual_supportDim_le`: the original completed Hom dual in degree `i` has actual support dimension at most `i` over the completed ring, without completeness or regularity of the base; `completeLocal_localCohomology_dual_supportDim_le` gives the bound on the original dual over a complete base. The genuine dual regular-element sequence and original completion maps give induction on degree, without Cohen reduction |
+| V.3.1(iii), complete-base top-dual dimension and nonvanishing | `completeLocal_topLocalCohomology_dual_supportDim_eq`, `completeLocal_topLocalCohomology_nontrivial`: over every complete noetherian local ring, the original top dual has exactly the finite coefficient module's support dimension, and original top local cohomology is nonzero. Simultaneous regular elements, actual support control modulo the closed point, and the genuine dual regular-element sequence give induction without regularity of the ring. The zero-dimensional base holds without completeness |
+| V.3.1(iii), general-local top nonvanishing | `localRing_topLocalCohomology_nontrivial`, `localRing_completedTopLocalCohomologyDual_supportDim_eq`: original top local cohomology is nonzero over every noetherian local ring, and its original completed Hom dual has exactly the original coefficient support dimension over the actual completed ring. Original-ring parameters avoid contracted associated primes of the preceding completed dual, and the genuine completed scalar sequences give induction without a Cohen presentation or an assumed base-change comparison |
+| V.3.2, module-valued ringed-space foundations | `moduleGammaZSectionsFunctor`, `moduleGammaZSectionsForgetIso`, `moduleToSheaf_map_shortExact`: supported sections are actual modules over the structure ring on each open; their additive groups recover Exposé I's section functor, and forgetting the sheaf's module structure is exact |
+| V.3.2, general acyclicity input | `moduleIsFlasque_of_injective`, `derivedModuleGammaZSections_isZero_of_isFlasque`, `derivedModuleGammaZSections_isZero_pushforward_injective`: injective module sheaves are flasque, and the actual higher module-valued supported cohomology vanishes on flasque sheaves and on direct images of injectives under arbitrary ringed-space morphisms, without flatness |
+| V.3.2, scalar-compatible composite comparison | `ringedModulePushforwardSupportedGlobalIso`, `ringedModuleSupportedGlobalRightDerivedIso`: actual supported sections and the right-derived direct-image/section composite agree naturally with source supported cohomology restricted along the actual map on global structure rings |
+| V.3.2, original additive cohomology, naturally | `gammaZSections_quasiIso_of_boundedBelow_flasque`, `derivedModuleGammaZSectionsForgetIso`, `derivedModuleGammaZSectionsIsoH_Z`: mapping cones compare the actual module and additive resolutions in all degrees; augmentation-compatible chain homotopies prove that the unchanged objectwise comparisons commute with the original coefficient maps, without preservation of injectivity by forgetting scalars |
+| V.3.2, retained scalar action | `moduleUnderlyingComplexGlobalScalarRingHom`, `moduleUnderlyingDerivedGlobalScalarRingHom`: actual global structure-ring actions on underlying additive complexes and derived objects satisfy all ring laws and commute with coefficient cochain maps |
+| V.3.2, additive spectral sequence and E₂ | `ringedModulePushforwardAdditiveSpectralSequence`, `ringedModulePushforwardAdditiveSpectralSequenceE2Equiv`, `ringedModulePushforwardE2ModuleAddEquiv`: actual truncations of the original module direct-image resolution give genuine pages and differentials with E₂ the original supported cohomology of original higher module direct images |
+| V.3.2, genuine module-valued spectral sequence | `spectralObjectModuleLift`, `ringedModulePushforwardModuleSpectralSequence`, `ringedModulePushforwardModuleSpectralSequenceForgetIso`: the original scalar action lifts the actual spectral object and its exactness to modules; canonical forgetful comparisons preserve all differentials and the original next-page homology isomorphisms |
+| V.3.2, original module-linear E₂ identification | `ringedModulePushforwardModuleE2LinearEquiv`, `ringedModulePushforwardModuleE2LinearEquiv_toAddEquiv`: the actual E₂ page identifies module-linearly with original module-supported cohomology of the original higher module direct image; every original comparison factor intertwines the retained scalar endomorphisms, and the underlying additive equivalence is exactly the preexisting one, without commutativity or flatness assumptions |
+| V.3.2, first quadrant and canonical finite module filtration | `ringedModulePushforwardModuleSpectralObject_isFirstQuadrant`, `ringedModulePushforwardSpectralFiniteFiltration`, `ringedModulePushforwardModuleStablePageIsoGraded`: the actual module pages vanish outside the first quadrant and, for `r ≥ n + 2`, are the associated graded of the canonical total object's finite exhaustive submodule filtration |
+| V.3.2, actual module-linear abutment | `flasqueGammaComplexDerivedHomEquiv`, `ringedModulePushforwardSpectralAbutmentLinearEquiv`, `ringedModulePushforwardSourceFiniteFiltration`: the unchanged localization map computes supported derived Hom on bounded-below flasque complexes and respects all additive cochain maps; the actual filtered total module is original source supported cohomology with the prescribed scalar restriction, and the finite exhaustive filtration is transported to that source module |
+| V.3.2, coefficient functoriality and original comparisons | `ringedModulePushforwardModuleSpectralSequenceFunctor`, `ringedModulePushforwardModuleSpectralSequenceCoefficientMap_E2`, `ringedModulePushforwardSpectralTotalCoefficientMap_abutment`: actual resolution maps induce module-linear maps of the entire spectral sequence; resolution homotopies prove lift-independence and the functor laws; the unchanged E₂ and abutment identifications retain the original higher-direct-image and source supported-cohomology coefficient maps |
+| V.3.2, coefficient additivity | `ringedModulePushforwardModuleSpectralSequenceCoefficientMap_add`, `ringedModulePushforwardModuleSpectralSequencePageFunctor_additive`: every page complex is additive in the coefficient module sheaf, independently of the chosen resolution lift |
+| V.3.2, natural and resolution-independent filtration | `ringedModulePushforwardModuleSpectralSequenceResolutionIso_naturality`, `ringedModulePushforwardModuleStablePageIsoGraded_naturality`, `ringedModulePushforwardSourceFiniteFiltration_map_le`, `ringedModulePushforwardSourceFiniteFiltration_eq`: canonical resolution changes are natural and satisfy the cocycle law; stable-page comparisons retain the genuine associated-graded maps; original source coefficient maps preserve the actual finite filtration, which is independent of resolution |
+| V.3.3, component-generic-point criterion | `supportedFunctorColimit_associatedPrimeSpectrum_eq`, `supportedFunctorColimit_associatedPrimeSpectrum_eq_of_components`: IV's actual representing colimit has exactly the selected component generic points as associated primes when the original left-exact functor vanishes precisely on modules containing none of those components; original `R/p` tests prove the criterion, with components indexed by minimal primes of the support ideal |
+| V.3.3, actual topological components | `supportedFunctorColimit_associatedPrimes_of_irreducibleComponents`: the original irreducible components of `V(J)` are accepted directly; their genuine generic points are constructed and the actual representing colimit has exactly their range as associated primes. No list of minimal primes or generic points is supplied as an assumption |
+| V.3.1(iii), supported top-dual functor | `supportedLocalCohomologyFunctor_preservesFiniteColimits`, `supportedTopLocalCohomologyDual_isZero_iff`: original top local cohomology is right exact on the actual bounded supported category, and its actual Hom dual vanishes exactly when the coefficient support misses the top component generic points; actual chains of primes supply the dimension criterion |
+| V.3.1(iii), associated-prime formula | `localRing_topLocalCohomologyDual_associatedPrimeSpectrum`: the original top Hom dual has precisely the dimension-`n` associated primes of the original finite coefficient module. V.3.3 and III.1.3 apply to the genuine supported representation; `additiveFunctorModuleLiftIsoOfLinear` retains the original scalar action. The formula holds even without completeness; finiteness over the original ring still uses completeness |
+| Actual affine-open vanishing | `homeomorphismCohomologyFunctorIso`, `affineChartCohomologyEquiv`, `affineOpen_H_pos_subsingleton`: genuine direct image under homeomorphisms and canonical affine charts transport original ordinary cohomology; every actual quasi-coherent module is acyclic in positive degrees on an affine open of a locally noetherian scheme |
+| V.3.4, local argument | `localCohomology_isZero_of_affineComplement`, `localRing_ringKrullDim_le_one_of_affinePuncturedSpectrum`: actual affine-complement vanishing and the original relative sequence give local-cohomology vanishing above one; original top nonvanishing then bounds the dimension of a noetherian local ring with affine punctured spectrum by one |
+| V.3.4, component codimension | `irreducibleComponent_codimension_le_one_of_affineComplement`: every actual irreducible component of an arbitrary closed subset with affine complement in a noetherian affine spectrum has codimension at most one. Localization identifies the actual complement with the punctured local spectrum; codimension is the literal infimum of original structure-stalk dimensions. There is no principal-support hypothesis |
+| V.3.5, finite-length duality | `SupportedDualizingModule.moduleHomDual_finiteLength_iff`, `.moduleHomDual_length`: actual Hom duality detects finite length and preserves extended length on arbitrary modules over a noetherian local ring, without completeness; the original bidual evaluation is invertible when the dual has finite length |
+| Actual Ext localization | `finiteProjectiveResolution`, `localizedLinearYonedaObjIso`, `moduleExtLocalizationIso`, `moduleExtLocalizationRingIso`: degreewise finite genuine projective resolutions and termwise Hom localization give localized-ring-linear comparisons for original Ext, with finite first argument and arbitrary second argument, including actual ring coefficients |
+| V.3.5, through localized Ext | `regularLocal_localCohomology_length_eq_ext`, `regularLocal_localCohomology_finiteLength_iff_ext_atPrime`: over a regular local ring, original local cohomology has the same extended length as complementary Ext; finite length is equivalent to vanishing of actual complementary Ext over every nonclosed prime localization |
+| Koszul systems under arbitrary ring maps | `koszulSystemBaseChangeIso`, `koszulHomComplexSystemScalarChangeIso`: actual tensor extension identifies the original inverse Koszul systems, including every power transition; the source-ring-linear Hom adjunction identifies their actual Hom cochain systems, without flatness |
+| Original local-cohomology scalar change | `localCohomologyScalarChangeIso`: for any map of noetherian commutative rings, scalar restriction of local cohomology at the image ideal is source-ring local cohomology of the restricted coefficient, for all ideals, degrees, and arbitrary coefficients |
+| V, formula (19) and finite length | `localRing_localCohomologyScalarChangeIso`, `localRing_localCohomology_length_eq_of_surjective`, `localRing_localCohomology_finiteLength_iff_of_surjective`: surjective local-ring change preserves actual maximal-ideal local cohomology, extended length, and finite length; no flatness is assumed |
+| V, formula (20), actual Hom duals | `surjectiveHomDualScalarChangeIso`, `surjectiveLocalCohomologyDualIso`: actual coinduction is dualizing over the target; one choice of coefficient isomorphism gives a natural source-ring-linear comparison of the specified Hom duals on all modules, and a comparison of duals of actual local cohomology |
+| V, formula (21) and module dimension | `restrictScalarsAnnihilatorQuotientEquiv`, `restrictScalars_finite_iff_of_surjective`, `restrictScalars_supportDim_of_surjective`: the induced map identifies the original annihilator quotients; finite generation and actual finite-module support dimension are unchanged |
+| V.3.5, original prime-localization transport | `localRingHom_surjective`, `localizedRestrictScalarsIso`, `localizedRestrictScalarsIso_hom_mk`, `ringKrullDim_quotient_comap_of_surjective`: the actual local ring map is surjective, the original localized coefficients agree with their original element maps, and the dimensions of corresponding prime quotients agree |
+| V.3.5, quotient reduction of both conditions | `localCohomologyAtPrimeScalarChangeIso`, `puncturedLocalCohomologyVanishing_iff_of_surjective`, `localCohomologyFiniteLengthCriterion_iff_of_surjective`: actual local cohomology at corresponding points agrees after scalar restriction; both finite length and shifted punctured vanishing are quotient-invariant. Points outside the image vanish and negative degrees impose no condition |
+| V.3.6, depth deduction | `puncturedLocalCohomologyVanishing_le_iff_depth`, `localCohomology_finiteLength_le_iff_depth_of_criterion`, `puncturedDepthBound_iff_of_surjective`: shifted vanishing through a threshold is equivalent to the actual localized depth bound, including infinite depth; the deduction from V.3.5 and quotient invariance hold over every noetherian local ring |
+| V.3.5, homological prime-localization input | `localizedPrimeQuotientResidueFieldIso`, `localizedPrimeQuotientResidueFieldIso_hom_mk`, `regularLocal_atPrime_moduleGlobalDimension_le`: the original localization of `R/p` is the actual residue field of `R_p`, with the original element map; every prime localization has global dimension bounded by the original regular ring's Krull dimension, without assuming regularity of the localized ring |
+| Homological regularity criterion | `isRegularLocalRing_of_residueField_bound`, `isRegularLocalRing_iff_residueField_projectiveDimension_ne_top`: a noetherian local ring is regular exactly when its actual residue field has finite projective dimension. Regular-element reduction preserves bounds over the quotient ring, a cotangent functional gives the actual residue-field retract of `m/xm`, and lifting minimal generators completes induction |
+| V.3.5, regularity of prime localizations | `regularLocal_atPrime_isRegularLocalRing`, `regularLocal_isRegularRing`, `regularLocal_atPrime_moduleGlobalDimension_eq_ringKrullDim`: every actual prime localization of a regular local ring is regular, and its global dimension equals its own Krull dimension; no converse criterion or localization-regularity hypothesis is supplied |
+| V.3.5, regular-local dimension formula | `regularLocal_top_associated_mem_ext_support`, `regularLocal_atPrime_dimension_add_quotient`: the top-dual associated-prime formula forces complementary Ext to be supported at the original top primes; localization and residue Ext concentration give `dim R_p + dim(R/p) = dim R`, without assuming catenarity |
+| V.3.5, full criterion | `regularLocal_localCohomology_finiteLength_iff_punctured`, `localCohomology_finiteLength_iff_punctured_of_surjective`: for finite modules over quotients of regular local rings, original local cohomology has finite length exactly when the original shifted local cohomology vanishes at all nonclosed points. Both localization regularity and the dimension formula are proved; negative shifted degrees and upper vanishing are handled explicitly |
+| V.3.6, full criterion | `regularLocal_localCohomology_finiteLength_le_iff_depth`, `localCohomology_finiteLength_le_iff_depth_of_surjective`: finite length through degree `n` is equivalent to the actual punctured depth bound for finite modules over quotients of regular local rings; no additional finite-length criterion is assumed, and zero modules retain infinite depth |
+| General-local socle and annihilators | `localRing_localCohomology_socle_finite`, `localRing_localCohomology_annihilator_isFiniteLength`, `localRing_localCohomology_dual_completeProperty`: actual socles are finite, actual power annihilators have finite length, and actual Hom duals satisfy the original complete-category conditions over every noetherian local ring |
+| V.3.1, support criteria after (22) | `regularLocal_supportDim_le_iff_localized_vanishing`, `regularLocal_supportDim_le_iff_codimension_ge`: support dimension at most `i`, vanishing at primes of height less than `j`, and support codimension at least `j` are equivalent when `i + j = dim R`, including zero modules |
+| V.3.1(ii), Ext support bound | `regularLocal_ext_localized_subsingleton_of_lt`, `regularLocal_ext_supportCodimension_ge`, `regularLocal_ext_supportDim_le`: localized Ext vanishes below its degree in local dimension; hence Ext has the stated codimension and complementary support-dimension bounds, with a finite first argument and arbitrary second argument |
+
+### Sign conventions
+
+The source differential is identified with Mathlib's convention by the
+factor `(-1)^(n(n+1)/2)` in degree `n`. Under this normalization, its
+cohomology product contributes `(-1)^(ij)`. On the unchanged unsigned
+projective representatives, the Yoneda coefficient boundary is
+`(-1)^(n+1)` times lift-and-differentiate; this includes degree zero and
+passes to the original Ext colimits and local cohomology.
+
+The standard Hom boundary-pairing identity has factor `(-1)^(j+1)`; the
+literal source convention has factor `(-1)^(i+1)`. The incompatible unsigned
+augmentation and pairing formulas are not asserted. These are explicit
+signed comparisons, not missing proofs of the unsigned claims.
+
+### Remaining scope
+
+Cohen's presentation theorem used in the source proof is not formalized.
+The general local-ring conclusions of V.3.1 are proved directly, without
+that reduction. Algebraic local cohomology is indexed by natural numbers;
+the source's negative-degree vanishing is a convention rather than a
+separate integer-indexed construction. In V.3.5–V.3.6, negative shifted
+degrees impose no condition, and zero modules retain infinite depth.
 
 ## SGA 2, Exposé VI — Ext with support
 

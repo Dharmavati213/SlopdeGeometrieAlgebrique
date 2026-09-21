@@ -128,13 +128,8 @@ theorem sourceInjectiveHomologyExtAddEquiv_precomp (f : X ⟶ X')
     sourceInjectiveHomologyExtAddEquiv I J n
         (homologyMap (sourceHomPrecomp φ J.cochainComplex) n z) =
       (Abelian.Ext.mk₀ f).comp (sourceInjectiveHomologyExtAddEquiv I' J n z) (zero_add n) := by
-  simp only [sourceInjectiveHomologyExtAddEquiv_eq_normalized]
-  have hn := ConcreteCategory.congr_hom
-    (congrArg (fun α => homologyMap α (n : ℤ))
-      (sourceHomComplexIso_precomp φ J.cochainComplex)) z
-  simp only [homologyMap_comp, ConcreteCategory.comp_apply] at hn
-  erw [hn]
-  exact injectiveHomologyExtAddEquiv_precomp I I' J f φ hφ n _
+  simp only [sourceInjectiveHomologyExtAddEquiv_eq_class, sourceHomologyAddEquiv_precomp]
+  exact injectiveHomClassExt_precomp I I' J f φ hφ n _
 
 /-- The previously specified normalized source equivalence respects postcomposition. -/
 theorem sourceInjectiveHomologyExtAddEquiv_postcomp (g : Y ⟶ Y')
@@ -144,13 +139,8 @@ theorem sourceInjectiveHomologyExtAddEquiv_postcomp (g : Y ⟶ Y')
     sourceInjectiveHomologyExtAddEquiv I J' n
         (homologyMap (sourceHomPostcomp I.cochainComplex ψ) n z) =
       (sourceInjectiveHomologyExtAddEquiv I J n z).comp (Abelian.Ext.mk₀ g) (add_zero n) := by
-  simp only [sourceInjectiveHomologyExtAddEquiv_eq_normalized]
-  have hn := ConcreteCategory.congr_hom
-    (congrArg (fun α => homologyMap α (n : ℤ))
-      (sourceHomComplexIso_postcomp I.cochainComplex ψ)) z
-  simp only [homologyMap_comp, ConcreteCategory.comp_apply] at hn
-  erw [hn]
-  exact injectiveHomologyExtAddEquiv_postcomp I J J' g ψ hψ n _
+  simp only [sourceInjectiveHomologyExtAddEquiv_eq_class, sourceHomologyAddEquiv_postcomp]
+  exact injectiveHomClassExt_postcomp I J J' g ψ hψ n _
 
 /-- Changing the first resolution leaves the value under the fixed Ext comparison unchanged. -/
 theorem injectiveHomologyExtAddEquiv_precomp_modelChange (K : InjectiveResolution X)

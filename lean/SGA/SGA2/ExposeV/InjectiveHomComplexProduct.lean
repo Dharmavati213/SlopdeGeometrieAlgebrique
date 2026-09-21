@@ -137,18 +137,9 @@ theorem sourceInjectiveHomologyExtAddEquiv_eq_class (n : ℕ)
     sourceInjectiveHomologyExtAddEquiv I J n z =
       injectiveHomClassExt I J n
         (sourceHomologyAddEquiv I.cochainComplex J.cochainComplex (n : ℤ) z) := by
-  let e := (homologyFunctor AddCommGrpCat (ComplexShape.up ℤ) (n : ℤ)).mapIso
-    (sourceHomComplexIso I.cochainComplex J.cochainComplex)
-  have he : (homologyMap (sourceHomComplexIso I.cochainComplex J.cochainComplex).inv
-      (n : ℤ)) ((homologyMap (sourceHomComplexIso I.cochainComplex J.cochainComplex).hom
-        (n : ℤ)) z) = z := ConcreteCategory.congr_hom e.hom_inv_id z
-  have hc := injectiveHomologyExtAddEquiv_eq_class I J n
-    ((homologyMap (sourceHomComplexIso I.cochainComplex J.cochainComplex).hom (n : ℤ)) z)
-  change sourceInjectiveHomologyExtAddEquiv I J n
-      ((homologyMap (sourceHomComplexIso I.cochainComplex J.cochainComplex).inv
-        (n : ℤ)) ((homologyMap (sourceHomComplexIso I.cochainComplex J.cochainComplex).hom
-          (n : ℤ)) z)) = _ at hc
-  exact (congrArg (sourceInjectiveHomologyExtAddEquiv I J n) he).symm.trans hc
+  rw [sourceInjectiveHomologyExtAddEquiv_eq_normalized,
+    injectiveHomologyExtAddEquiv_eq_class]
+  rfl
 
 /-- The literal source Hom-complex product is carried to Yoneda composition
 with exactly `(-1)^(ij)` under the sign-normalized augmentation. No unsigned

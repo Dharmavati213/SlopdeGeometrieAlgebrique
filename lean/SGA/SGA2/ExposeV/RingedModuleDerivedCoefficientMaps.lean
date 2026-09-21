@@ -30,14 +30,6 @@ variable {X Y : TopCat.{u}} (f : X ⟶ Y)
   {R : Sheaf RingCat.{u} X} {S : Sheaf RingCat.{u} Y}
   (φ : S ⟶ (Sheaf.pushforward RingCat f).obj R)
 
-local instance derivedCoefficientsToSheafAdditive :
-    (SheafOfModules.toSheaf.{u} S).Additive := inferInstance
-
-local instance derivedCoefficientsToSheafPreservesHomology :
-    (SheafOfModules.toSheaf.{u} S).PreservesHomology :=
-  ((Functor.exact_tfae (SheafOfModules.toSheaf.{u} S)).out 1 3).mp
-    (fun _ hT ↦ moduleToSheaf_map_shortExact S hT)
-
 local instance derivedCoefficientsHasDerivedCategory :
     HasDerivedCategory.{u + 1} (Sheaf AddCommGrpCat.{u} Y) :=
   HasDerivedCategory.standard _
@@ -77,6 +69,16 @@ theorem ringedModulePushforwardDerivedObjectMap_comp
     (a : I.cocomplex ⟶ J.cocomplex) (b : J.cocomplex ⟶ K.cocomplex) :
     ringedModulePushforwardDerivedObjectMap f φ (a ≫ b) =
       ringedModulePushforwardDerivedObjectMap f φ a ≫
+        ringedModulePushforwardDerivedObjectMap f φ b := by
+  simp [ringedModulePushforwardDerivedObjectMap, ringedModulePushforwardAdditiveResolutionIntMap,
+    ringedModulePushforwardResolutionIntMap]
+
+/-- The derived direct-image map is additive in the resolution map. -/
+@[simp]
+theorem ringedModulePushforwardDerivedObjectMap_add
+    (a b : I.cocomplex ⟶ J.cocomplex) :
+    ringedModulePushforwardDerivedObjectMap f φ (a + b) =
+      ringedModulePushforwardDerivedObjectMap f φ a +
         ringedModulePushforwardDerivedObjectMap f φ b := by
   simp [ringedModulePushforwardDerivedObjectMap, ringedModulePushforwardAdditiveResolutionIntMap,
     ringedModulePushforwardResolutionIntMap]
@@ -134,6 +136,18 @@ theorem ringedModulePushforwardDerivedCoefficientMap_comp (a : M ⟶ N) (b : N �
     (InjectiveResolution.descCompHomotopy a b I J K)).trans
       (ringedModulePushforwardDerivedObjectMap_comp f φ _ _)
 
+/-- Additivity is independent of the choices of injective-resolution lifts. -/
+@[simp]
+theorem ringedModulePushforwardDerivedCoefficientMap_add (a b : M ⟶ N)
+    (I : InjectiveResolution M) (J : InjectiveResolution N) :
+    ringedModulePushforwardDerivedCoefficientMap f φ (a + b) I J =
+      ringedModulePushforwardDerivedCoefficientMap f φ a I J +
+        ringedModulePushforwardDerivedCoefficientMap f φ b I J := by
+  rw [← ringedModulePushforwardDerivedObjectMap_eq_coefficientMap f φ (a + b)
+    (InjectiveResolution.desc a J I + InjectiveResolution.desc b J I)
+    (by simp [Functor.map_add, Preadditive.comp_add, Preadditive.add_comp])]
+  exact ringedModulePushforwardDerivedObjectMap_add f φ _ _
+
 /-- The original derived additive direct-image objects form a coefficient functor. -/
 def ringedModulePushforwardDerivedObjectFunctor :
     SheafOfModules.{u} R ⥤ DerivedCategory (Sheaf AddCommGrpCat.{u} Y) where
@@ -141,6 +155,9 @@ def ringedModulePushforwardDerivedObjectFunctor :
   map a := ringedModulePushforwardDerivedCoefficientMap f φ a _ _
   map_id _ := ringedModulePushforwardDerivedCoefficientMap_id f φ _
   map_comp a b := ringedModulePushforwardDerivedCoefficientMap_comp f φ a b _ _ _
+
+instance : (ringedModulePushforwardDerivedObjectFunctor f φ).Additive where
+  map_add := ringedModulePushforwardDerivedCoefficientMap_add f φ _ _ _ _
 
 /-- The unchanged derived homology comparison respects every compatible coefficient lift. -/
 @[reassoc]

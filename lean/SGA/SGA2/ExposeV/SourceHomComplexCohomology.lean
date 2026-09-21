@@ -122,15 +122,19 @@ def sourceHomologyMk {n : ℤ} (z : Cocycle F G n) : (sourceHomComplex F G).homo
 /-- The literal source's original graded composition, on actual homology. -/
 def sourceHomologyComp {i j k : ℤ} (h : i + j = k) :
     (sourceHomComplex F G).homology i →+
-      ((sourceHomComplex G K).homology j →+ (sourceHomComplex F K).homology k) where
-  toFun z :=
-    { toFun w := (sourceHomologyUnscaledAddEquiv F K k).symm
-        (homClassComp h (sourceHomologyUnscaledAddEquiv F G i z)
-          (sourceHomologyUnscaledAddEquiv G K j w))
-      map_zero' := by simp
-      map_add' w w' := by simp }
-  map_zero' := by ext w; simp
-  map_add' z z' := by ext w; simp
+      ((sourceHomComplex G K).homology j →+ (sourceHomComplex F K).homology k) :=
+  ((homClassComp h).compl₂ (sourceHomologyUnscaledAddEquiv G K j).toAddMonoidHom).compr₂
+    (sourceHomologyUnscaledAddEquiv F K k).symm.toAddMonoidHom |>.comp
+      (sourceHomologyUnscaledAddEquiv F G i).toAddMonoidHom
+
+/-- The unscaled comparison preserves the original graded product. -/
+@[simp]
+theorem sourceHomologyUnscaledAddEquiv_comp {i j k : ℤ} (h : i + j = k)
+    (z : (sourceHomComplex F G).homology i) (w : (sourceHomComplex G K).homology j) :
+    sourceHomologyUnscaledAddEquiv F K k (sourceHomologyComp h z w) =
+      homClassComp h (sourceHomologyUnscaledAddEquiv F G i z)
+        (sourceHomologyUnscaledAddEquiv G K j w) :=
+  (sourceHomologyUnscaledAddEquiv F K k).apply_symm_apply _
 
 /-- The source pairing is induced by the original cochain composite, with
 no sign inserted into the product itself. -/
@@ -148,8 +152,7 @@ theorem sourceHomologyAddEquiv_comp {i j k : ℤ} (h : i + j = k)
       (i * j).negOnePow • homClassComp h (sourceHomologyAddEquiv F G i z)
         (sourceHomologyAddEquiv G K j w) := by
   subst k
-  simp only [sourceHomologyAddEquiv_eq_sign, sourceHomologyComp,
-    AddMonoidHom.coe_mk, ZeroHom.coe_mk, AddEquiv.apply_symm_apply,
+  simp only [sourceHomologyAddEquiv_eq_sign, sourceHomologyUnscaledAddEquiv_comp,
     Units.smul_def, map_zsmul, AddMonoidHom.zsmul_apply, smul_smul,
     sourceHomSign_add, Units.val_mul]
   congr 1

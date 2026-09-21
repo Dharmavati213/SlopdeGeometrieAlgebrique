@@ -53,8 +53,8 @@ theorem regularLocal_localCohomology_finiteLength_iff_ext
     regularLocal_localCohomology_length_eq_ext n hdim i j h M]
 
 /-- **V.3.5, through the support step:** finite length is equivalent to
-vanishing of actual localizations of the complementary Ext module. This
-does not yet replace those localizations by local cohomology at the points. -/
+vanishing of localizations of complementary Ext. The local-cohomology
+form is proved in `LocalCohomologyFiniteLengthCriterion`. -/
 theorem regularLocal_localCohomology_finiteLength_iff_localizedExt
     (n : ℕ) (hdim : ringKrullDim R = n) (i j : ℕ) (h : i + j = n)
     (M : ModuleCat.{u} R) [Module.Finite R M] :

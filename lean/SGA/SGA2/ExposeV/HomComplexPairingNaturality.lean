@@ -5,7 +5,7 @@ Authors: SGAenglishpluslean contributors
 -/
 import SGA.SGA2.ExposeV.HomComplexBoundaryPairing
 
-/-! # Naturality of the original Hom pairing in its middle complex -/
+/-! # Naturality of the original Hom pairing in all three complexes -/
 
 noncomputable section
 universe v u
@@ -18,7 +18,7 @@ set_option backward.isDefEq.respectTransparency false
 namespace SGA.SGA2.ExposeV
 
 variable {C : Type u} [Category.{v} C] [Abelian C]
-  {F G H P : CochainComplex C ℤ} {i j k : ℤ}
+  {F F' G H P P' : CochainComplex C ℤ} {i j k : ℤ}
 
 /-- Original standard homology representatives commute with precomposition. -/
 theorem homComplexHomologyMk_precomp (f : F ⟶ G) (z : Cocycle G P i) :
@@ -44,14 +44,33 @@ theorem homologyComp_mk (h : i + j = k) (z : Cocycle F G i) (w : Cocycle G P j) 
   rw [homologyAddEquiv_homologyComp, homComplexHomologyMk_compare,
     homComplexHomologyMk_compare, homClassComp_mk, homComplexHomologyMk_compare]
 
-/-- Original composition is balanced across an unchanged middle chain map. -/
+/-- Original composition commutes with a chain map in its source. -/
+theorem homCocycleComp_naturality_first (f : F' ⟶ F) (h : i + j = k)
+    (z : Cocycle F G i) (w : Cocycle G P j) :
+    homCocycleComp (z.precomp f) w h = (homCocycleComp z w h).precomp f :=
+  Subtype.ext (Cochain.comp_assoc_of_first_is_zero_cochain _ _ _ h)
+
+/-- Original composition is balanced across a middle chain map. -/
 theorem homCocycleComp_naturality_middle (f : G ⟶ H) (h : i + j = k)
     (z : Cocycle F G i) (w : Cocycle H P j) :
-    homCocycleComp (z.postcomp f) w h = homCocycleComp z (w.precomp f) h := by
-  apply Subtype.ext
-  change (z.1.comp (Cochain.ofHom f) (add_zero i)).comp w.1 h =
-    z.1.comp ((Cochain.ofHom f).comp w.1 (zero_add j)) h
-  rw [Cochain.comp_assoc_of_second_is_zero_cochain]
+    homCocycleComp (z.postcomp f) w h = homCocycleComp z (w.precomp f) h :=
+  Subtype.ext (Cochain.comp_assoc_of_second_is_zero_cochain _ _ _ h)
+
+/-- Original composition commutes with a chain map in its target. -/
+theorem homCocycleComp_naturality_last (f : P ⟶ P') (h : i + j = k)
+    (z : Cocycle F G i) (w : Cocycle G P j) :
+    (homCocycleComp z w h).postcomp f = homCocycleComp z (w.postcomp f) h :=
+  Subtype.ext (Cochain.comp_assoc_of_third_is_zero_cochain _ _ _ h)
+
+/-- The standard homology pairing is natural in its source complex. -/
+theorem homologyComp_naturality_first (f : F' ⟶ F) (h : i + j = k)
+    (x : (HomComplex F G).homology i) (y : (HomComplex G P).homology j) :
+    homologyComp h (homologyMap (homComplexPrecomp f G) i x) y =
+      homologyMap (homComplexPrecomp f P) k (homologyComp h x y) := by
+  obtain ⟨z, rfl⟩ := homComplexHomologyMk_surjective F G i x
+  obtain ⟨w, rfl⟩ := homComplexHomologyMk_surjective G P j y
+  rw [homComplexHomologyMk_precomp, homologyComp_mk, homologyComp_mk,
+    homComplexHomologyMk_precomp, homCocycleComp_naturality_first]
 
 /-- **V.1, formula (1.4):** naturality of the actual standard cohomology
 pairing in the middle complex, retaining the original Hom-complex maps. -/
@@ -64,6 +83,26 @@ theorem homologyComp_naturality_middle (f : G ⟶ H) (h : i + j = k)
   rw [homComplexHomologyMk_postcomp, homComplexHomologyMk_precomp,
     homologyComp_mk, homologyComp_mk, homCocycleComp_naturality_middle]
 
+/-- The standard homology pairing is natural in its target complex. -/
+theorem homologyComp_naturality_last (f : P ⟶ P') (h : i + j = k)
+    (x : (HomComplex F G).homology i) (y : (HomComplex G P).homology j) :
+    homologyMap (homComplexPostcomp F f) k (homologyComp h x y) =
+      homologyComp h x (homologyMap (homComplexPostcomp G f) j y) := by
+  obtain ⟨z, rfl⟩ := homComplexHomologyMk_surjective F G i x
+  obtain ⟨w, rfl⟩ := homComplexHomologyMk_surjective G P j y
+  rw [homologyComp_mk, homComplexHomologyMk_postcomp, homComplexHomologyMk_postcomp,
+    homologyComp_mk, homCocycleComp_naturality_last]
+
+/-- The source homology pairing is natural in its source complex. -/
+theorem sourceHomologyComp_naturality_first (f : F' ⟶ F) (h : i + j = k)
+    (x : (sourceHomComplex F G).homology i) (y : (sourceHomComplex G P).homology j) :
+    sourceHomologyComp h (homologyMap (sourceHomPrecomp f G) i x) y =
+      homologyMap (sourceHomPrecomp f P) k (sourceHomologyComp h x y) := by
+  obtain ⟨z, rfl⟩ := sourceHomologyMk_surjective G F i x
+  obtain ⟨w, rfl⟩ := sourceHomologyMk_surjective P G j y
+  rw [sourceHomologyMk_precomp, sourceHomologyComp_mk, sourceHomologyComp_mk,
+    sourceHomologyMk_precomp, homCocycleComp_naturality_first]
+
 /-- The literal displayed-source pairing is natural in the middle complex,
 with its original unscaled product and unchanged pre/postcomposition maps. -/
 theorem sourceHomologyComp_naturality_middle (f : G ⟶ H) (h : i + j = k)
@@ -74,5 +113,15 @@ theorem sourceHomologyComp_naturality_middle (f : G ⟶ H) (h : i + j = k)
   obtain ⟨w, rfl⟩ := sourceHomologyMk_surjective P H j y
   rw [sourceHomologyMk_postcomp, sourceHomologyMk_precomp,
     sourceHomologyComp_mk, sourceHomologyComp_mk, homCocycleComp_naturality_middle]
+
+/-- The source homology pairing is natural in its target complex. -/
+theorem sourceHomologyComp_naturality_last (f : P ⟶ P') (h : i + j = k)
+    (x : (sourceHomComplex F G).homology i) (y : (sourceHomComplex G P).homology j) :
+    homologyMap (sourceHomPostcomp F f) k (sourceHomologyComp h x y) =
+      sourceHomologyComp h x (homologyMap (sourceHomPostcomp G f) j y) := by
+  obtain ⟨z, rfl⟩ := sourceHomologyMk_surjective G F i x
+  obtain ⟨w, rfl⟩ := sourceHomologyMk_surjective P G j y
+  rw [sourceHomologyComp_mk, sourceHomologyMk_postcomp, sourceHomologyMk_postcomp,
+    sourceHomologyComp_mk, homCocycleComp_naturality_last]
 
 end SGA.SGA2.ExposeV

@@ -41,6 +41,17 @@ theorem affineStructureStalk_ringKrullDim (p : PrimeSpectrum R) :
     StructureSheaf.IsLocalization.to_stalk R p
   exact IsLocalization.AtPrime.ringKrullDim_eq_height p.asIdeal _
 
+/-- Codimension can equally be computed using prime localizations. -/
+theorem affineSubsetCodimension_eq_iInf_localization (Z : Set (Spec R)) :
+    affineSubsetCodimension Z =
+      ⨅ p ∈ Z, ringKrullDim (Localization.AtPrime p.asIdeal) := by
+  apply iInf_congr
+  intro p
+  apply iInf_congr
+  intro _
+  exact (affineStructureStalk_ringKrullDim p).trans
+    (IsLocalization.AtPrime.ringKrullDim_eq_height p.asIdeal _).symm
+
 /-- The source's literal stalk-dimension codimension of the closure of a
 prime is its height, because that prime belongs to its closure and has
 minimal height there. -/

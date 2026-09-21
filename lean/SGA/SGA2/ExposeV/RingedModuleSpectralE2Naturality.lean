@@ -101,21 +101,6 @@ theorem ringedModulePushforwardE2TotalShiftIso_naturality
     Functor.map_comp_assoc, ExposeI.supportedSingleTotalShiftIso_naturality]
   simp only [Category.assoc]
 
-private theorem supportedExtHomAddEquiv_naturality
-    {A B : Sheaf AddCommGrpCat.{u} Y} (a : A ⟶ B) (p : ℕ)
-    (x : (DerivedCategory.singleFunctor (Sheaf AddCommGrpCat.{u} Y) 0).obj (ExposeI.zZX_closed Z) ⟶
-      ((DerivedCategory.singleFunctor (Sheaf AddCommGrpCat.{u} Y) 0).obj A)⟦(p : ℤ)⟧) :
-    Abelian.Ext.homAddEquiv.symm
-        (x ≫ ((DerivedCategory.singleFunctor (Sheaf AddCommGrpCat.{u} Y) 0).map a)⟦(p : ℤ)⟧') =
-      ExposeI.H_Z_map Z a p (Abelian.Ext.homAddEquiv.symm x) := by
-  apply (Abelian.Ext.homAddEquiv (X := ExposeI.zZX_closed Z) (Y := B) (n := p)).injective
-  change (Abelian.Ext.homAddEquiv.symm _).hom =
-    ((Abelian.Ext.homAddEquiv.symm x).comp (Abelian.Ext.mk₀ a) (add_zero p)).hom
-  rw [Abelian.Ext.comp_hom, Abelian.Ext.mk₀_hom, ShiftedHom.comp_mk₀]
-  change Abelian.Ext.homAddEquiv (Abelian.Ext.homAddEquiv.symm _) =
-    Abelian.Ext.homAddEquiv (Abelian.Ext.homAddEquiv.symm x) ≫ _
-  erw [AddEquiv.apply_symm_apply, AddEquiv.apply_symm_apply]
-
 /-- The original additive E₂ comparison intertwines the original higher-direct-image
 coefficient maps. -/
 theorem ringedModulePushforwardAdditiveSpectralSequenceE2Equiv_naturality

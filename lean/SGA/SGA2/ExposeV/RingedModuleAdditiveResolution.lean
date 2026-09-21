@@ -32,17 +32,6 @@ set_option backward.isDefEq.respectTransparency false
 
 variable {X : TopCat.{u}} (R : Sheaf RingCat.{u} X)
 
-local instance : (SheafOfModules.toSheaf.{u} R).Additive := inferInstance
-
-local instance : (SheafOfModules.toSheaf.{u} R).PreservesHomology :=
-  ((Functor.exact_tfae (SheafOfModules.toSheaf.{u} R)).out 1 3).mp
-    (fun _ hS ↦ moduleToSheaf_map_shortExact R hS)
-
-local instance (Z : Closeds X) (U : Opens X) :
-    (SheafOfModules.toSheaf.{u} R ⋙ ExposeI.gammaZSectionsFunctor Z U).Additive := by
-  have : (ExposeI.gammaZSectionsFunctor Z U).Additive := inferInstance
-  infer_instance
-
 local instance : HasDerivedCategory.{u + 1} (Sheaf AddCommGrpCat.{u} X) :=
   HasDerivedCategory.standard _
 

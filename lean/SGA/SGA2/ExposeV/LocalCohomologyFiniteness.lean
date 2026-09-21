@@ -4,19 +4,17 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: SGAenglishpluslean contributors
 -/
 import SGA.SGA2.ExposeV.LocalCohomologyDualCompletion
-import SGA.SGA2.ExposeIV.MatlisArtinianModules
-import SGA.SGA2.ExposeIV.CompleteModuleScalarChange
+import SGA.SGA2.ExposeV.LocalRingFiniteness
 
 /-!
 # Finiteness consequences of regular local duality
 
-Every local-cohomology module of a finite module over a regular local ring
-is genuinely Artinian, without completeness of the base. It has finite
-actual socle and finite-length power annihilators. Over a complete regular
-local ring, its actual dual is finite in every degree, by V, formula (22), and upper
-vanishing. Without completeness, the original completed dual is finite over
-the actual completed ring. The general-local finite-generation assertion is
-proved separately in `LocalRingFiniteness`; the dual-dimension bound remains open.
+These regular-local specializations use the general Artinianity and finiteness
+results in `LocalRingFiniteness`. Top local cohomology supplies the canonical
+dualizing coefficient; no completeness assumption is needed for Artinianity
+or finiteness of the completed dual. The dimension bound is proved in
+`CompletedDualDimension`. Dimension arguments are retained for compatibility
+with the regular-local API.
 -/
 
 noncomputable section
@@ -26,88 +24,70 @@ open SGA.SGA2.ExposeIV
 
 namespace SGA.SGA2.ExposeV
 
-set_option backward.isDefEq.respectTransparency false
-
 variable {R : Type u} [CommRing R] [IsRegularLocalRing R]
-variable (n : ℕ) (hdim : ringKrullDim R = n)
-variable (M : ModuleCat.{u} R) [Module.Finite R M]
 
-include n hdim
+/-- Local cohomology of a finite module is Artinian. -/
+theorem regularLocal_localCohomology_isArtinian
+    (n : ℕ) (_hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
+    (i : ℕ) :
+    IsArtinian R ((_root_.localCohomology (maximalIdeal R) i).obj M) :=
+  localRing_localCohomology_isArtinian M i
 
-/-- All actual local-cohomology values of a finite module are Artinian
-over a regular local base, even when that base is not complete. -/
-theorem regularLocal_localCohomology_isArtinian (i : ℕ) :
-    IsArtinian R ((_root_.localCohomology (maximalIdeal R) i).obj M) := by
-  by_cases hi : i ≤ n
-  · have := (regularLocal_localCohomology_dualizing n hdim).finiteSource_dual_isArtinian
-      (moduleExtValue M (ModuleCat.of R R) (n - i))
-    exact isArtinian_of_linearEquiv
-      (regularLocal_localCohomologyHomIso n hdim i (n - i) (by omega) M).symm.toLinearEquiv
-  · have := ModuleCat.subsingleton_of_isZero
-      (regularLocal_localCohomology_isZero_of_gt n hdim M i (by omega))
-    infer_instance
-
-/-- The actual local-cohomology socle is finite, using the literal
-annihilator comparison under canonical local duality. -/
-theorem regularLocal_localCohomology_socle_finite (i : ℕ) :
+/-- The maximal-ideal socle of local cohomology is finite. -/
+theorem regularLocal_localCohomology_socle_finite
+    (n : ℕ) (_hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
+    (i : ℕ) :
     Module.Finite R (localSocle (R := R)
-      ((_root_.localCohomology (maximalIdeal R) i).obj M)) := by
-  by_cases hi : i ≤ n
-  · have hD := regularLocal_localCohomology_dualizing n hdim
-    have := (hD.finiteSource_dual_locallyArtinian_finiteSocle
-      (moduleExtValue M (ModuleCat.of R R) (n - i))).2
-    exact Module.Finite.equiv (localSocleLinearEquiv
-      (regularLocal_localCohomologyHomIso n hdim i (n - i) (by omega) M).toLinearEquiv).symm
-  · have := ModuleCat.subsingleton_of_isZero
-      (regularLocal_localCohomology_isZero_of_gt n hdim M i (by omega))
-    infer_instance
+      ((_root_.localCohomology (maximalIdeal R) i).obj M)) :=
+  localRing_localCohomology_socle_finite M i
 
-/-- The actual local-cohomology object lies in the original Matlis category. -/
-theorem regularLocal_localCohomology_matlisArtinian (i : ℕ) :
-    matlisArtinianModuleProperty R ((_root_.localCohomology (maximalIdeal R) i).obj M) := by
-  have := regularLocal_localCohomology_isArtinian n hdim M i
-  exact ⟨fun N _ => inferInstance, regularLocal_localCohomology_socle_finite n hdim M i⟩
+/-- Local cohomology belongs to the Artinian Matlis category. -/
+theorem regularLocal_localCohomology_matlisArtinian
+    (n : ℕ) (_hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
+    (i : ℕ) :
+    matlisArtinianModuleProperty R ((_root_.localCohomology (maximalIdeal R) i).obj M) :=
+  localRing_localCohomology_matlisArtinian M i
 
-/-- Every original maximal-ideal-power annihilator has actual finite length. -/
-theorem regularLocal_localCohomology_annihilator_isFiniteLength (i k : ℕ) :
+/-- Every maximal-ideal-power annihilator has finite length. -/
+theorem regularLocal_localCohomology_annihilator_isFiniteLength
+    (n : ℕ) (_hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
+    (i k : ℕ) :
     IsFiniteLength R (Submodule.torsionBySet R
       ((_root_.localCohomology (maximalIdeal R) i).obj M)
       ((maximalIdeal R ^ k : Ideal R) : Set R)) :=
-  (show MatlisArtinianModuleCat R from
-    ⟨_, regularLocal_localCohomology_matlisArtinian n hdim M i⟩).annihilator_isFiniteLength k
+  localRing_localCohomology_annihilator_isFiniteLength M i k
 
-/-- For any original supported dualizing coefficient, the dual of local
-cohomology satisfies the literal complete-category conditions. -/
+/-- The dual of local cohomology belongs to the complete Matlis category. -/
 theorem regularLocal_localCohomology_dual_completeProperty_of_dualizing
+    (n : ℕ) (_hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
     (D : ModuleCat.{u} R) (hD : SupportedDualizingModule D) (i : ℕ) :
     matlisCompleteModuleProperty R
       ((moduleHomDual D).obj (op ((_root_.localCohomology (maximalIdeal R) i).obj M))) :=
-  matlisArtinianHom_completeProperty D hD
-    ⟨_, regularLocal_localCohomology_matlisArtinian n hdim M i⟩
+  localRing_localCohomology_dual_completeProperty M D hD i
 
-/-- The actual dual has the original completeness and finite-length
-power-quotient properties, even over a noncomplete base. -/
-theorem regularLocal_localCohomology_dual_completeProperty (i : ℕ) :
+/-- The canonical dual is complete and has finite-length power quotients. -/
+theorem regularLocal_localCohomology_dual_completeProperty
+    (n : ℕ) (hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
+    (i : ℕ) :
     matlisCompleteModuleProperty R
       ((moduleHomDual ((_root_.localCohomology (maximalIdeal R) n).obj (ModuleCat.of R R))).obj
         (op ((_root_.localCohomology (maximalIdeal R) i).obj M))) :=
   regularLocal_localCohomology_dual_completeProperty_of_dualizing n hdim M _
     (regularLocal_localCohomology_dualizing n hdim) i
 
-/-- **V.3.1(ii), finite-generation part over every regular local base.**
-The original completed dual is finite over the actual completed ring;
-the coefficient can be any original supported dualizing module. -/
+/-- **V.3.1(ii):** the completed dual is finite over the completed ring. -/
 theorem regularLocal_completedLocalCohomologyDual_finite_of_dualizing
+    (n : ℕ) (_hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
     (D : ModuleCat.{u} R) (hD : SupportedDualizingModule D) (i : ℕ) :
     Module.Finite (AdicCompletion (maximalIdeal R) R)
       (AdicCompletion (maximalIdeal R)
         ((moduleHomDual D).obj (op ((_root_.localCohomology (maximalIdeal R) i).obj M)))) :=
-  matlisComplete_completion_finite _
-    (regularLocal_localCohomology_dual_completeProperty_of_dualizing n hdim M D hD i)
+  localRing_completedLocalCohomologyDual_finite M D hD i
 
-/-- Actual completed-dual finiteness with top local cohomology as coefficient,
-without assuming the original regular local ring complete. -/
-theorem regularLocal_completedLocalCohomologyDual_finite (i : ℕ) :
+/-- The completed canonical dual is finite over the completed ring. -/
+theorem regularLocal_completedLocalCohomologyDual_finite
+    (n : ℕ) (hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
+    (i : ℕ) :
     Module.Finite (AdicCompletion (maximalIdeal R) R)
       (AdicCompletion (maximalIdeal R)
         ((moduleHomDual
@@ -116,21 +96,19 @@ theorem regularLocal_completedLocalCohomologyDual_finite (i : ℕ) :
   regularLocal_completedLocalCohomologyDual_finite_of_dualizing n hdim M _
     (regularLocal_localCohomology_dualizing n hdim) i
 
-/-- The finite-generation part over a complete regular base holds for
-any original supported dualizing coefficient, not only top local cohomology. -/
+/-- Over a complete base, the dual itself is finite. -/
 theorem regularLocal_localCohomology_dual_finite_of_dualizing
+    (n : ℕ) (_hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
     [IsAdicComplete (maximalIdeal R) R]
     (D : ModuleCat.{u} R) (hD : SupportedDualizingModule D) (i : ℕ) :
     Module.Finite R
-      ((moduleHomDual D).obj (op ((_root_.localCohomology (maximalIdeal R) i).obj M))) := by
-  have := regularLocal_localCohomology_socle_finite n hdim M i
-  exact hD.supported_finiteSocle_dual_finite
-    _ (show MatlisArtinianModuleCat R from
-      ⟨_, regularLocal_localCohomology_matlisArtinian n hdim M i⟩).supported
+      ((moduleHomDual D).obj (op ((_root_.localCohomology (maximalIdeal R) i).obj M))) :=
+  localRing_localCohomology_dual_finite M D hD i
 
-/-- **V.3.1(ii), finite-generation part over a complete regular base.**
-The dual is finite in every degree; no dimension bound is asserted here. -/
-theorem regularLocal_localCohomology_dual_finite [IsAdicComplete (maximalIdeal R) R]
+/-- **V.3.1(ii):** over a complete base, the canonical dual is finite. -/
+theorem regularLocal_localCohomology_dual_finite
+    (n : ℕ) (hdim : ringKrullDim R = n) (M : ModuleCat.{u} R) [Module.Finite R M]
+    [IsAdicComplete (maximalIdeal R) R]
     (i : ℕ) :
     Module.Finite R
       ((moduleHomDual ((_root_.localCohomology (maximalIdeal R) n).obj (ModuleCat.of R R))).obj
