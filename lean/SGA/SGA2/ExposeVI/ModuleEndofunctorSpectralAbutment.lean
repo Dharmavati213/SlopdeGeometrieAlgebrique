@@ -40,7 +40,8 @@ instance {G : SheafOfModules.{u} R} (I : InjectiveResolution G) :
     (moduleEndofunctorResolutionInt R T I).IsKInjective :=
   CochainComplex.isKInjective_of_injective _ 0
 
-local instance moduleEndofunctorAbutmentHasDerivedCategory : HasDerivedCategory.{u + 1} (SheafOfModules.{u} R) :=
+local instance moduleEndofunctorAbutmentHasDerivedCategory :
+    HasDerivedCategory.{u + 1} (SheafOfModules.{u} R) :=
   HasDerivedCategory.standard _
 
 variable (F : SheafOfModules.{u} R)
@@ -66,5 +67,15 @@ def moduleEndofunctorSpectralDerivedCompositeEquiv {G : SheafOfModules.{u} R}
   (moduleEndofunctorHomComplexTotalEquiv R T F I n).symm.trans
     (ExposeI.injectiveResolutionIntHomologyIso
       (T ⋙ preadditiveCoyoneda.obj (op F)) I n).addCommGroupIsoToAddEquiv
+
+/-- The unchanged total comparison followed by a proved natural identification
+of the original right-derived composite. -/
+def moduleEndofunctorSpectralComparedAbutmentEquiv
+    (U : SheafOfModules.{u} R ⥤ AddCommGrpCat.{u}) (n : ℕ)
+    (e : (T ⋙ preadditiveCoyoneda.obj (op F)).rightDerived n ≅ U)
+    {G : SheafOfModules.{u} R} (I : InjectiveResolution G) :
+    moduleEndofunctorSpectralTotal R T F I n ≃+ U.obj G :=
+  (moduleEndofunctorSpectralDerivedCompositeEquiv R T F I n).trans
+    (e.app G).addCommGroupIsoToAddEquiv
 
 end SGA.SGA2.ExposeVI

@@ -11,20 +11,19 @@ import SGA.SGA2.ExposeVI.ModuleSupportedSheafExtSpectralSequence
 import SGA.SGA2.ExposeVI.SheafFunctorSpectralNaturality
 import SGA.SGA2.ExposeVI.ModuleSupportSpectralAbutment
 import SGA.SGA2.ExposeVI.ModuleSupportSpectralNaturality
+import SGA.SGA2.ExposeVI.ModuleLocallyClosedSupportSpectralNaturality
 import SGA.SGA2.ExposeVI.ModuleSupportIndependence
 
 /-!
 # SGA 2, VI.1.6: spectral functors abutting to supported Ext
 
-The initial terms are supported cohomology of sheaf Ext and ordinary
+The three initial terms are supported cohomology of sheaf Ext, ordinary
 cohomology of supported sheaf Ext, and Ext against derived supported modules.
-These are genuine spectral functors on
-module sheaves, with all pages and differentials, proved E₂ identifications,
-and finite convergence to the original supported Ext. The constructions use
-the actual module-injective resolutions and VI.1.5 Hom flasqueness.
-
-The first and second sequences allow arbitrary locally closed support. The
-third sequence is constructed for closed support.
+All three are genuine spectral functors for arbitrary locally closed support,
+with actual pages and differentials, proved E₂ identifications, and finite
+convergence to the original locally supported Ext. The constructions use
+actual module-injective resolutions, Hom flasqueness, and the proved
+preservation of injectives by locally supported module sheaves.
 -/
 
 noncomputable section
@@ -57,9 +56,19 @@ abbrev VI_1_6_2_E2 (F G : SheafOfModules.{u} R) (W : ExposeI.LocallyClosedIn X)
 abbrev VI_1_6_3_E2 (F G : SheafOfModules.{u} R) (Z : Closeds X) (p q : ℕ) :=
   Abelian.Ext F ((derivedModuleGammaZSheaf R Z q).obj G) p
 
+/-- **VI.1.6.3 initial term for every locally closed support.** -/
+abbrev VI_1_6_3_locallyClosed_E2 (F G : SheafOfModules.{u} R)
+    (W : ExposeI.LocallyClosedIn X) (p q : ℕ) :=
+  Abelian.Ext F ((derivedModuleGammaLocallyClosedSheaf R W q).obj G) p
+
 /-- **VI.1.6 abutment:** the original supported Ext groups. -/
 abbrev VI_1_6_abutment (F G : SheafOfModules.{u} R) (Z : Closeds X) (n : ℕ) :=
   (moduleSupportedExtFunctor R F Z n).obj G
+
+/-- **VI.1.6, locally closed abutment:** the same original Ext functor for all three sequences. -/
+abbrev VI_1_6_locallyClosed_abutment (F G : SheafOfModules.{u} R)
+    (W : ExposeI.LocallyClosedIn X) (n : ℕ) :=
+  (moduleLocallyClosedSupportedExtFunctor R F W n).obj G
 
 /-- Positive supported Ext vanishes on actual injective coefficient module sheaves. -/
 theorem VI_1_6_1_deg0_isZero_succ_of_injective (F G : SheafOfModules.{u} R)
@@ -99,7 +108,7 @@ def VI_1_6_1_locallyClosed_grothendieck_abutment (F : SheafOfModules.{u} R)
     (W : ExposeI.LocallyClosedIn X) {G : SheafOfModules.{u} R} (I : InjectiveResolution G)
     (n : ℕ) :
     moduleLocallyClosedSheafExtSpectralTotal R F W I n ≃+
-      (moduleLocallyClosedSupportedExtFunctor R F W n).obj G :=
+      VI_1_6_locallyClosed_abutment R F G W n :=
   moduleLocallyClosedSheafExtSpectralAbutmentEquiv R F W I n
 
 /-- **VI.1.6.2:** ordinary cohomology of supported sheaf Ext from a module resolution. -/
@@ -127,6 +136,50 @@ def VI_1_6_3_grothendieck_E2 (F : SheafOfModules.{u} R) (Z : Closeds X)
     ((VI_1_6_3_grothendieck R F Z I).page 2).X ((p : ℤ), (q : ℤ)) ≃+
       VI_1_6_3_E2 R F G Z p q :=
   moduleSupportSpectralSequenceE2Equiv R Z F I p q
+
+/-- **VI.1.6.3 for arbitrary locally closed support:** actual pages and differentials. -/
+def VI_1_6_3_locallyClosed_grothendieck (F : SheafOfModules.{u} R)
+    (W : ExposeI.LocallyClosedIn X) {G : SheafOfModules.{u} R} (I : InjectiveResolution G) :
+    E₂CohomologicalSpectralSequence AddCommGrpCat.{u + 1} :=
+  moduleLocallyClosedSupportSpectralSequence R W F I
+
+/-- Module Ext against the original derived Γ_W gives the actual E₂ terms. -/
+def VI_1_6_3_locallyClosed_grothendieck_E2 (F : SheafOfModules.{u} R)
+    (W : ExposeI.LocallyClosedIn X) {G : SheafOfModules.{u} R} (I : InjectiveResolution G)
+    (p q : ℕ) :
+    ((VI_1_6_3_locallyClosed_grothendieck R F W I).page 2).X ((p : ℤ), (q : ℤ)) ≃+
+      VI_1_6_3_locallyClosed_E2 R F G W p q :=
+  moduleLocallyClosedSupportSpectralSequenceE2Equiv R W F I p q
+
+/-- The actual VI.1.6.3 locally closed total is the same original supported Ext. -/
+def VI_1_6_3_locallyClosed_grothendieck_abutment (F : SheafOfModules.{u} R)
+    (W : ExposeI.LocallyClosedIn X) {G : SheafOfModules.{u} R} (I : InjectiveResolution G)
+    (n : ℕ) :
+    moduleLocallyClosedSupportSpectralTotal R W F I n ≃+
+      VI_1_6_locallyClosed_abutment R F G W n :=
+  moduleLocallyClosedSupportSpectralAbutmentEquiv R W F I n
+
+/-- The actual VI.1.6.2 total has the same abutment for every locally closed support. -/
+def VI_1_6_2_locallyClosed_grothendieck_abutment (F : SheafOfModules.{u} R)
+    (W : ExposeI.LocallyClosedIn X) {G : SheafOfModules.{u} R} (I : InjectiveResolution G)
+    (n : ℕ) :
+    moduleSupportedSheafExtSpectralTotal R F W I n ≃+
+      VI_1_6_locallyClosed_abutment R F G W n :=
+  moduleSupportedSheafExtSpectralAbutmentEquiv R F W I n
+
+/-- **VI.1.6.1 as a spectral functor**, retaining every coefficient page map. -/
+abbrev VI_1_6_1_locallyClosed_spectralFunctor (F : SheafOfModules.{u} R)
+    (W : ExposeI.LocallyClosedIn X) :=
+  moduleLocallyClosedSheafExtSpectralSequenceFunctor R F W
+
+/-- **VI.1.6.2 as a spectral functor**, retaining every coefficient page map. -/
+abbrev VI_1_6_2_spectralFunctor (F : SheafOfModules.{u} R) (W : ExposeI.LocallyClosedIn X) :=
+  moduleSupportedSheafExtSpectralSequenceFunctor R F W
+
+/-- **VI.1.6.3 as a spectral functor**, retaining every coefficient page map. -/
+abbrev VI_1_6_3_locallyClosed_spectralFunctor (F : SheafOfModules.{u} R)
+    (W : ExposeI.LocallyClosedIn X) :=
+  moduleLocallyClosedSupportSpectralSequenceFunctor R W F
 
 /-- The actual VI.1.6.1 total is original supported Ext. -/
 def VI_1_6_1_grothendieck_abutment (F : SheafOfModules.{u} R) (Z : Closeds X)

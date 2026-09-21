@@ -31,7 +31,8 @@ variable {X : TopCat.{u}} (R : Sheaf RingCat.{u} X)
   (T : SheafOfModules.{u} R ⥤ SheafOfModules.{u} R) [T.Additive]
   (F : SheafOfModules.{u} R)
 
-local instance moduleEndofunctorNaturalityHasDerivedCategory : HasDerivedCategory.{u + 1} (SheafOfModules.{u} R) :=
+local instance moduleEndofunctorNaturalityHasDerivedCategory :
+    HasDerivedCategory.{u + 1} (SheafOfModules.{u} R) :=
   HasDerivedCategory.standard _
 
 variable {G H : SheafOfModules.{u} R} {I : InjectiveResolution G} {J : InjectiveResolution H}
@@ -42,7 +43,8 @@ theorem moduleEndofunctorDerivedHomologyIso_naturality
     (a : G ⟶ H) (α : I.cocomplex ⟶ J.cocomplex)
     (hα : I.ι.f 0 ≫ α.f 0 = a ≫ J.ι.f 0) (q : ℕ) :
     (DerivedCategory.homologyFunctor (SheafOfModules.{u} R) (q : ℤ)).map
-        (moduleEndofunctorDerivedObjectMap R T α) ≫ (moduleEndofunctorDerivedHomologyIso R T J q).hom =
+        (moduleEndofunctorDerivedObjectMap R T α) ≫
+        (moduleEndofunctorDerivedHomologyIso R T J q).hom =
       (moduleEndofunctorDerivedHomologyIso R T I q).hom ≫ (T.rightDerived q).map a := by
   have hQ := (DerivedCategory.homologyFunctorFactors (SheafOfModules.{u} R)
     (q : ℤ)).hom.naturality (moduleEndofunctorResolutionIntMap R T α)
@@ -153,7 +155,10 @@ private theorem moduleEndofunctorExtHomEquiv_naturality
     Abelian.Ext.homAddEquiv (Abelian.Ext.homAddEquiv.symm x) ≫ _
   erw [AddEquiv.apply_symm_apply, AddEquiv.apply_symm_apply]
 
-/-- The genuine E₂ page morphism is supported cohomology of the original derived map. -/
+-- Preserve the proved shift comparison while matching its naturality equation.
+attribute [local irreducible] moduleEndofunctorE2TotalShiftIso
+
+/-- The genuine E₂ page morphism is module Ext of the original derived coefficient map. -/
 theorem moduleEndofunctorSpectralSequenceE2Equiv_naturality
     (a : G ⟶ H) (α : I.cocomplex ⟶ J.cocomplex)
     (hα : I.ι.f 0 ≫ α.f 0 = a ≫ J.ι.f 0) (p q : ℕ)
@@ -164,10 +169,18 @@ theorem moduleEndofunctorSpectralSequenceE2Equiv_naturality
         (moduleEndofunctorSpectralSequenceE2Equiv R T F I p q x) := by
   rw [moduleEndofunctorSpectralSequenceE2Equiv_apply,
     moduleEndofunctorSpectralSequenceE2Equiv_apply,
-    moduleEndofunctorE2FirstPageIso_naturality_apply,
-    Category.assoc, moduleEndofunctorE2TotalShiftIso_naturality R T a α hα,
-    ← Category.assoc]
-  exact moduleEndofunctorExtHomEquiv_naturality R F _ p _
+    moduleEndofunctorE2FirstPageIso_naturality_apply]
+  let z := (moduleEndofunctorE2FirstPageIso R T F I p q).hom x
+  have hshift := moduleEndofunctorE2TotalShiftIso_naturality R T
+    (I := I) (J := J) a α hα p q
+  have hz := congrArg (fun k ↦ z ≫ k) hshift
+  have he := congrArg
+    (fun k ↦ (Abelian.Ext.homAddEquiv
+      (X := F) (Y := (T.rightDerived q).obj H) (n := p)).symm k) hz
+  have hn := moduleEndofunctorExtHomEquiv_naturality R F ((T.rightDerived q).map a) p
+    (z ≫ (moduleEndofunctorE2TotalShiftIso R T I p q).hom)
+  simp only [Category.assoc] at hn ⊢
+  exact he.trans hn
 
 /-- The actual map on the total interval, hence on its canonical image filtration. -/
 def moduleEndofunctorSpectralTotalMap (α : I.cocomplex ⟶ J.cocomplex) (n : ℤ) :

@@ -73,9 +73,10 @@ def moduleLocallyClosedSupportSpectralAbutmentEquiv {G : SheafOfModules.{u} R}
     (I : InjectiveResolution G) (n : ℕ) :
     moduleLocallyClosedSupportSpectralTotal R W F I n ≃+
       (moduleLocallyClosedSupportedExtFunctor R F W n).obj G :=
-  let e := ((moduleLocallyClosedSupportedExtViaSupportedSheafIso R F W n).app G).symm
-  (moduleEndofunctorSpectralDerivedCompositeEquiv R
-    (moduleGammaLocallyClosedSheafFunctor R W) F I n).trans e.addCommGroupIsoToAddEquiv
+  moduleEndofunctorSpectralComparedAbutmentEquiv R
+    (moduleGammaLocallyClosedSheafFunctor R W) F
+    (moduleLocallyClosedSupportedExtFunctor R F W n) n
+    (moduleLocallyClosedSupportedExtViaSupportedSheafIso R F W n).symm I
 
 /-- The finite increasing filtration of the actual total group identified with supported Ext. -/
 abbrev moduleLocallyClosedSupportSpectralFiniteFiltration {G : SheafOfModules.{u} R}

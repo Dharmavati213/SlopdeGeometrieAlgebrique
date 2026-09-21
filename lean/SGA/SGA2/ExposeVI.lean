@@ -27,6 +27,8 @@ import SGA.SGA2.ExposeVI.ModuleLocallyClosedSheafExtLinear
 import SGA.SGA2.ExposeVI.ModuleLocallyClosedSupportedSheafInjective
 import SGA.SGA2.ExposeVI.ModuleLocallyClosedSupportedHom
 import SGA.SGA2.ExposeVI.AffineExtComparison
+import SGA.SGA2.ExposeVI.TensorSupportObjectSequence
+import SGA.SGA2.ExposeVI.QuasiCoherentSupportedModules
 import SGA.SGA2.ExposeVI.Examples
 
 /-!
@@ -74,23 +76,25 @@ injectives through a proved mono-preserving quotient left adjoint. The
 locally closed module-support functor preserves injectives through its actual
 restriction/direct-image factorization, and VI.1.4.3 holds for that functor.
 
-VI.1.6.1–2 have actual spectral functors, E₂ identifications, original Ext
-abutments and finite convergence for arbitrary locally closed support.
-VI.1.6.3 has the same construction for closed support; its general locally
-closed form remains open. VI.1.8 gives actual long exact sequences of supported
-Ext groups and supported sheaf Ext, natural in both variables, with the original
-degree-zero maps. VI.1.9 has a genuine exact sequence with ordinary Ext
-endpoints and the standard Ext-zero comparison with actual module restriction.
-Equality with the independently defined standard higher Ext restriction
-map is still open.
+VI.1.6.1–3 have actual spectral functors, E₂ identifications, original Ext
+abutments and finite convergence for arbitrary locally closed support, with
+coefficient naturality of E₂ and abutment for VI.1.6.3. VI.1.7 gives the
+actual module support-object short exact sequence and its tensor version,
+with the original source maps. VI.1.8 gives actual long exact sequences of
+supported Ext groups and supported sheaf Ext, natural in both variables,
+with the original degree-zero maps. VI.1.9 has a genuine exact sequence with
+ordinary Ext endpoints; its restriction arrow is the standard Ext map of
+the exact open-restriction functor in every degree.
 
 The actual affine internal Hom is the associated sheaf of module Hom for
 finitely presented sources over arbitrary commutative rings. It commutes with
 open restriction and is quasi-coherent for coherent source and quasi-coherent
-target on locally noetherian schemes.
+target on locally noetherian schemes. Degree-zero closed-supported Hom and
+sheaf Ext⁰ are quasi-coherent for coherent source and quasi-coherent target
+on locally noetherian schemes.
 
-VI.1.7's module support-object sequence, the remaining higher-map comparisons,
-VI.2.1's supported sheaf Ext quasi-coherence and general VI.2.3 remain open.
-VI.2.3 currently includes the affine degree-zero quotient-Hom colimit and
-the structure-sheaf local-cohomology comparison.
+The remaining higher-map comparisons, higher supported sheaf Ext
+quasi-coherence, and general VI.2.3 remain open. VI.2.3 currently includes
+the affine degree-zero quotient-Hom colimit and the structure-sheaf
+local-cohomology comparison.
 -/

@@ -530,6 +530,9 @@ Exposé II (English: `translation/SGA2/ExposeII/`):
 - [x] **II.(4.2)–(4.3), noetherian rings** actual low-degree relative sequence
   and higher supported/open-complement cohomology comparison
   (`AffineRelativeSequence.lean`)
+- [x] **II.3, closed support in degree zero** actual supported-module sheaves
+  of quasi-coherent modules are quasi-coherent on locally noetherian schemes
+  (`ExposeVI/QuasiCoherentSupportedModules.lean`: `schemeModuleGammaZ_isQuasicoherent`)
 - [ ] **II.1–II.3** quasi-coherence of higher supported cohomology sheaves
   on general schemes (mathlib higher direct images of quasi-coherent modules
   under quasi-compact open immersions). Open-support identification
@@ -1118,10 +1121,16 @@ Exposé VI:
   filtrations and stable-page quotient comparisons
 - [x] **VI.1.6.3, closed support** the corresponding genuine spectral functor
   with E₂ `Ext^p(F, SheafH_Z^q(G))` and actual supported Ext abutment
-- [ ] **VI.1.6.3, locally closed support** generalize the module-valued supported
-  coefficient functor and its spectral construction to arbitrary witnesses
-- [ ] **VI.1.7** the actual module support-object short exact sequence and its
+- [x] **VI.1.6.3, locally closed support** genuine spectral functor with
+  E₂ `Ext^p(F, SheafH_W^q(G))` and original locally supported Ext abutment,
+  with coefficient naturality of E₂ and abutment
+  (`ModuleLocallyClosedSupportSpectralSequence.lean`,
+  `ModuleLocallyClosedSupportSpectralNaturality.lean`,
+  `ModuleEndofunctorSpectralAbutmentNaturality.lean`)
+- [x] **VI.1.7** the actual module support-object short exact sequence and its
   tensor version, with the original source maps
+  (`ModuleSupportObjectSequence.lean`, `TensorSupportObjectSequence.lean`,
+  `SheafTensorFunctor.lean`, `ExposeI/RepresentedFunctorSequence.lean`)
 - [x] **VI.1.8** genuine long exact sequences of the original supported
   Ext groups and supported sheaf Ext, for every locally closed support and
   every closed subset of its literal support space. The actual inclusion,
@@ -1133,16 +1142,22 @@ Exposé VI:
   Ext of the restricted modules. Its degree-zero restriction agrees with
   actual Hom.over under the standard Ext₀ = Hom comparison
   (`ModuleRelativeExtSequence.lean`, `ModuleRelativeExtCompatibility.lean`)
-- [ ] **VI.1.9, standard higher restriction** identify the transported
-  positive-degree restriction with the independent map induced by the exact
-  restriction functor; equality in degree zero is proved
+- [x] **VI.1.9, standard higher restriction** the transported restriction
+  agrees with the independent map induced by the exact restriction functor
+  in every degree (`moduleRelativeExtRestriction_eq_functor` in
+  `ModuleRelativeExtCompatibility.lean`; `ExposeI/ExtRightDerivedMap.lean`)
 - [x] **VI.2.3, affine degree zero / structure sheaf** quotient-Hom colimit
   and Ext-colimit of `R/I^n` (`VI_2_3_zero`, `VI_2_3_structure`,
   `VI_2_3_sheaf`)
 - [ ] **VI.2.3** `colim Ext(M/I^n M, N) → Ext_Y(X; F, G)` for general
   coherent `F` on a locally noetherian scheme
-- [ ] **VI.2.1** quasi-coherence of supported sheaf Ext for coherent source
-  and quasi-coherent coefficients
+- [x] **VI.2.1, degree zero** quasi-coherence of supported Hom and sheaf Ext⁰
+  for coherent source and quasi-coherent coefficients on locally noetherian
+  schemes (`QuasiCoherentSupportedModules.lean`:
+  `coherent_closedSupportedHom_isQuasicoherent`,
+  `coherent_closedSheafExtZero_isQuasicoherent`)
+- [ ] **VI.2.1** quasi-coherence of higher supported sheaf Ext for coherent
+  source and quasi-coherent coefficients
 - [x] **VI.2.1, affine ordinary Hom prerequisite** actual internal Hom
   is canonically the associated sheaf of module Hom when the source module
   is finitely presented, over any commutative ring (`AffineInternalHom.lean`)

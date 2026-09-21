@@ -39,7 +39,8 @@ instance {G : SheafOfModules.{u} R} (I : InjectiveResolution G) :
   dsimp [moduleEndofunctorResolutionInt]
   infer_instance
 
-local instance moduleEndofunctorSpectralHasDerivedCategory : HasDerivedCategory.{u + 1} (SheafOfModules.{u} R) :=
+local instance moduleEndofunctorSpectralHasDerivedCategory :
+    HasDerivedCategory.{u + 1} (SheafOfModules.{u} R) :=
   HasDerivedCategory.standard _
 
 /-- The actual derived mapped module object. -/

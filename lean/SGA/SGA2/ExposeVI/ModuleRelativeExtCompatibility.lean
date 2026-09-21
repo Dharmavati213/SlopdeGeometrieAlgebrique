@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: SGAenglishpluslean contributors
 -/
 import SGA.SGA2.ExposeVI.ModuleRelativeExtSequence
-import SGA.SGA2.ExposeI.ExtRightDerivedExactFunctor
+import SGA.SGA2.ExposeI.ExtRightDerivedMap
 
 /-!
 # Standard Ext comparisons for the relative module Ext sequence
@@ -193,5 +193,46 @@ theorem moduleRelativeExtRestriction_zero_eq_functor :
   change (Abelian.Ext.addEquiv₀ (Abelian.Ext.mk₀ a)).over Z.compl =
     Abelian.Ext.addEquiv₀ (Abelian.Ext.mk₀ (a.over Z.compl))
   simp only [← Abelian.Ext.addEquiv₀_symm_apply, AddEquiv.apply_symm_apply]
+
+/-- The ambient endpoint is the canonical represented right-derived Hom comparison. -/
+theorem moduleRelativeExtOrdinaryIso_eq (n : ℕ) :
+    moduleRelativeExtOrdinaryIso R F n =
+      ExposeI.rightDerivedFunctorIso (moduleRelativeHomOrdinaryIso R F) n ≪≫
+        ExposeI.rightDerivedCoyonedaNatIsoExt F n := by
+  rw [moduleRelativeHomOrdinaryIso_eq]
+  apply Iso.ext
+  simp only [moduleRelativeExtOrdinaryIso, moduleLocallyClosedSupportedExtTopIso,
+    moduleLocallyClosedSupportedExtClosedIso, moduleSupportedExtTopIso,
+    ExposeI.rightDerivedFunctorIso, Iso.trans_hom, NatTrans.rightDerived_comp, Category.assoc]
+
+/-- The open endpoint is the canonical represented comparison after exact restriction. -/
+theorem moduleRelativeExtOpenIso_eq (n : ℕ) :
+    moduleRelativeExtOpenIso R F Z n =
+      ExposeI.representedPrecomposeRightDerivedIso (moduleOpenRestriction R Z.compl)
+        (F.over Z.compl) (moduleRelativeHomOpenIso R F Z) n := by
+  rw [moduleRelativeHomOpenIso_eq]
+  apply Iso.ext
+  simp only [moduleRelativeExtOpenIso, moduleLocallyClosedSupportedExtOpenIsoOfAsSet,
+    moduleLocallyClosedSupportedExtIndependenceIso, moduleLocallyClosedSupportedExtOpenIso,
+    ExposeI.representedPrecomposeRightDerivedIso, moduleRelativeCanonicalHomOpenIso,
+    ExposeI.rightDerivedFunctorIso, Iso.trans_hom, NatTrans.rightDerived_comp, Category.assoc]
+
+/-- Actual `Hom.over` is the Hom map of the exact restriction functor. -/
+theorem moduleRelativeHomRestriction_eq_exactFunctorHomMap :
+    moduleRelativeHomRestriction R F Z =
+      ExposeI.exactFunctorHomMap (moduleOpenRestriction R Z.compl) F := rfl
+
+/-- **VI.1.9:** the restriction arrow in the proved exact sequence is the
+standard map on Ext induced by the actual exact open restriction functor,
+in every degree. -/
+theorem moduleRelativeExtRestriction_eq_functor (n : ℕ) :
+    moduleRelativeExtRestriction R F Z n = moduleRelativeFunctorExtRestriction R F Z n := by
+  rw [moduleRelativeExtRestriction, moduleRelativeExtOrdinaryIso_eq, moduleRelativeExtOpenIso_eq]
+  have h := moduleRelativeHomRestriction_original R F Z
+  rw [moduleRelativeHomRestriction_eq_exactFunctorHomMap] at h
+  exact ExposeI.representedExactFunctorMap_eq (moduleOpenRestriction R Z.compl) F
+    (moduleRelativeHomOrdinaryIso R F) (moduleRelativeHomOpenIso R F Z)
+    (moduleNestedSupportedHomRestriction R F moduleRelativeTotalSupport
+      (moduleRelativeClosedInTotal Z)) h n
 
 end SGA.SGA2.ExposeVI

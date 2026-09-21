@@ -157,13 +157,17 @@ sign conventions, and the formalization notes for theorem names and scope.
 Exposé VI has actual local Ext evaluation and sheafification, all-degree
 locally closed excision, the structure-module and tensor Hom representations,
 and genuine supported Ext long exact sequences natural in both arguments.
-VI.1.6.1–2 have actual spectral functors, original E₂ and Ext abutment
-comparisons and finite convergence for locally closed support; VI.1.6.3 has
-these for closed support. The ordinary Ext endpoints of VI.1.9 are identified.
-The source module support-object sequence, several higher-map compatibility
-statements, general VI.1.6.3, supported sheaf Ext quasi-coherence and general
-VI.2.3 remain open. VI.2.3 includes the affine degree-zero quotient-Hom
-colimit and structure-sheaf local-cohomology comparison.
+VI.1.6.1–3 have actual spectral functors, original E₂ and Ext abutment
+comparisons and finite convergence for locally closed support, including
+coefficient naturality of VI.1.6.3. VI.1.7 has the actual module
+support-object sequence and its tensor version. The ordinary Ext endpoints
+of VI.1.9, and the standard restriction map in every degree, are identified.
+Degree-zero closed-supported Hom and sheaf Ext⁰ are quasi-coherent for
+coherent source and quasi-coherent coefficients on locally noetherian
+schemes. Several higher-map compatibility statements, higher supported
+sheaf Ext quasi-coherence, and general VI.2.3 remain open. VI.2.3 includes
+the affine degree-zero quotient-Hom colimit and structure-sheaf
+local-cohomology comparison.
 Exposé VII proves internal-Hom zero detection on locally noetherian schemes,
 with literal stalk supports, a coherent source and an arbitrary quasi-coherent
 target. Its remaining vanishing and coherence theorems are open.

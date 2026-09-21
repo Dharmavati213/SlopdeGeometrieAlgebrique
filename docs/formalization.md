@@ -885,12 +885,13 @@ closed-support, open-restriction and direct-image decomposition.
 `moduleLocallyClosedSupportedHomFunctorIso` proves its actual VI.1.4.3
 factorization, and that factorization is derived in every degree.
 
-VI.1.6.1 and VI.1.6.2 have genuine coefficient spectral functors for arbitrary
-locally closed supports. VI.1.6.3 has one for closed supports. Each construction
-has actual pages and differentials, an explicit original E₂ identification,
-an original supported Ext abutment, and a finite filtration with stable pages
-identified with successive quotients. The general locally closed form of
-VI.1.6.3 remains open.
+VI.1.6.1, VI.1.6.2, and VI.1.6.3 have genuine coefficient spectral functors
+for arbitrary locally closed supports. Each construction has actual pages and
+differentials, an explicit original E₂ identification, an original supported
+Ext abutment, and a finite filtration with stable pages identified with
+successive quotients. VI.1.6.3's locally closed E₂ and abutment comparisons
+are natural in coefficients
+(`ModuleLocallyClosedSupportSpectralNaturality.lean`).
 
 VI.1.8 is the actual module-derived Ext long exact sequence, for any locally
 closed support and a closed subset of its literal support space. Both the
@@ -902,12 +903,19 @@ in both module arguments (`LocallyClosedExtSequences.lean`,
 ordinary Ext endpoints on the ambient space and open complement.
 `moduleRelativeExtRestriction_zero_standard` identifies its degree-zero map
 with literal Hom restriction under the standard Ext₀ = Hom isomorphisms.
-Equality with standard positive-degree Ext restriction remains open.
-VI.1.7's module support-object sequence is not yet claimed.
+`moduleRelativeExtRestriction_eq_functor` identifies the restriction arrow
+in every degree with the standard Ext map of the exact open-restriction
+functor (`ExtRightDerivedMap.lean`).
+VI.1.7's module support-object sequence and its tensor version are
+`moduleNestedSupportObjectSequence_shortExact` and
+`moduleNestedTensorSupportSequence_shortExact`.
 
 VI.2.3's affine degree-zero and structure-sheaf comparisons are `VI_2_3_zero`
-and `VI_2_3_structure`. Supported sheaf Ext quasi-coherence (VI.2.1) and the
-general comparison `colim Ext(M/IⁿM, N) → Ext_Y(X;F,G)` remain open.
+and `VI_2_3_structure`. Degree-zero supported Hom and sheaf Ext⁰ are
+quasi-coherent for coherent source and quasi-coherent coefficients on
+locally noetherian schemes (`schemeModuleGammaZ_isQuasicoherent`). Higher
+supported sheaf Ext quasi-coherence and the general comparison
+`colim Ext(M/IⁿM, N) → Ext_Y(X;F,G)` remain open.
 The actual ordinary internal Hom is now canonically the associated sheaf
 of module Hom on affines for finitely presented sources over arbitrary rings,
 with both source and coefficient naturality. It commutes with actual open

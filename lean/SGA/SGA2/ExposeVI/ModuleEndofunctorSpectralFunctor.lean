@@ -32,7 +32,8 @@ variable {X : TopCat.{u}} (R : Sheaf RingCat.{u} X)
   (F : SheafOfModules.{u} R)
 
 
-local instance moduleEndofunctorCoefficientHasDerivedCategory : HasDerivedCategory.{u + 1} (SheafOfModules.{u} R) :=
+local instance moduleEndofunctorCoefficientHasDerivedCategory :
+    HasDerivedCategory.{u + 1} (SheafOfModules.{u} R) :=
   HasDerivedCategory.standard _
 
 variable {G H K : SheafOfModules.{u} R}

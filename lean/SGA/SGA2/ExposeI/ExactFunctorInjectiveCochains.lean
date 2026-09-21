@@ -48,6 +48,15 @@ theorem mapInjectiveResolutionCochainXIso_ofNat (i : ℕ) :
         ((mapInjectiveResolution G I).cochainComplexXIso i i rfl).symm := by
   simp [mapInjectiveResolutionCochainXIso]
 
+/-- The degreewise comparison respects the canonical transports between equal degrees. -/
+@[reassoc]
+theorem mapInjectiveResolutionCochainXIso_inv_naturality {i j : ℤ} (h : i = j) :
+    G.map (I.cochainComplex.XIsoOfEq h).inv ≫ (mapInjectiveResolutionCochainXIso G I i).hom =
+      (mapInjectiveResolutionCochainXIso G I j).hom ≫
+        ((mapInjectiveResolution G I).cochainComplex.XIsoOfEq h).inv := by
+  subst j
+  simp
+
 /-- Exact functors commute with extension by zero of the resolution complex. -/
 def mapInjectiveResolutionCochainIso :
     (G.mapHomologicalComplex (.up ℤ)).obj I.cochainComplex ≅
