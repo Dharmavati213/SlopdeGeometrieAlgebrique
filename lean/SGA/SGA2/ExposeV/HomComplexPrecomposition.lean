@@ -103,18 +103,12 @@ instance homComplexPrecomp_quasiIso {F' F : CochainComplex C ℤ} (f : F' ⟶ F)
   let e := (ExposeI.homComplexHomologyDerivedHomEquiv F G n).trans
     ((Linear.homCongr ℤ (asIso (DerivedCategory.Q.map f)).symm (Iso.refl _)).toAddEquiv.trans
       (ExposeI.homComplexHomologyDerivedHomEquiv F' G n).symm)
-  have he : (fun z => (homologyMap (homComplexPrecomp f G) n) z) = e := by
+  have he : ⇑(homologyMap (homComplexPrecomp f G) n).hom = e := by
     funext z
     apply (ExposeI.homComplexHomologyDerivedHomEquiv F' G n).injective
     simp [e, homComplexHomologyDerivedHomEquiv_precomp, Linear.homCongr_apply]
-  constructor
-  · intro a b hab
-    apply e.injective
-    rw [← congr_fun he a, ← congr_fun he b]
-    exact hab
-  · intro b
-    obtain ⟨a, ha⟩ := e.surjective b
-    exact ⟨a, (congr_fun he a).trans ha⟩
+  rw [he]
+  exact e.bijective
 
 /-- Precomposition for the literal source differential, with no change of
 its original cochain components. -/
@@ -125,9 +119,7 @@ def sourceHomPrecomp {F' F : CochainComplex C ℤ} (f : F' ⟶ F)
       map_zero' := by simp
       map_add' z w := by simp }
   comm' i j hij := by
-    apply AddCommGrpCat.hom_ext
-    apply AddMonoidHom.ext
-    intro z
+    ext z
     change sourceHomδ i j ((Cochain.ofHom f).comp z (zero_add i)) =
       (Cochain.ofHom f).comp (sourceHomδ i j z) (zero_add j)
     simp [sourceHomδ, δ_ofHom_comp]

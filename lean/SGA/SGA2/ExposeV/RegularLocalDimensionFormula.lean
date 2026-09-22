@@ -111,4 +111,36 @@ theorem regularLocal_atPrime_dimension_add_quotient (p : Ideal R) [p.IsPrime] :
   rw [regularLocal_atPrime_dimension_eq_complement n hn p d (n - d) hd
     (Nat.add_sub_of_le hdn), hd, ← Nat.cast_add, Nat.sub_add_cancel hdn, hn]
 
+/-- Natural-number dimensions of a prime localization and its quotient,
+with the dimension formula ready for degree arithmetic. -/
+theorem regularLocal_atPrime_dimensions (n : ℕ) (hn : ringKrullDim R = n)
+    (p : Ideal R) [p.IsPrime] :
+    ∃ s d : ℕ, ringKrullDim (Localization.AtPrime p) = s ∧
+      ringKrullDim (R ⧸ p) = d ∧ s + d = n := by
+  have := regularLocal_atPrime_isRegularLocalRing p
+  let s := (maximalIdeal (Localization.AtPrime p)).spanFinrank
+  have hs : ringKrullDim (Localization.AtPrime p) = s :=
+    IsRegularLocalRing.spanFinrank_maximalIdeal.symm
+  let : IsLocalRing (R ⧸ p) :=
+    IsLocalRing.of_surjective' (Ideal.Quotient.mk p) Ideal.Quotient.mk_surjective
+  let d := (LTSeries.longestOf (PrimeSpectrum (R ⧸ p))).length
+  have hd : ringKrullDim (R ⧸ p) = d :=
+    Order.krullDim_eq_length_of_finiteDimensionalOrder
+  refine ⟨s, d, hs, hd, ?_⟩
+  have h := regularLocal_atPrime_dimension_add_quotient p
+  rw [hs, hd, hn, ← Nat.cast_add] at h
+  exact_mod_cast h
+
+/-- The quotient-dimension bound and the complementary local-dimension
+bound are equivalent. -/
+theorem regularLocal_quotient_dimension_le_iff_atPrime
+    (n : ℕ) (hn : ringKrullDim R = n) (i j : ℕ) (hij : i + j = n)
+    (p : Ideal R) [p.IsPrime] :
+    ringKrullDim (R ⧸ p) ≤ i ↔
+      (j : WithBot ℕ∞) ≤ ringKrullDim (Localization.AtPrime p) := by
+  obtain ⟨s, d, hs, hd, hsd⟩ := regularLocal_atPrime_dimensions n hn p
+  rw [hs, hd]
+  norm_cast
+  omega
+
 end SGA.SGA2.ExposeV

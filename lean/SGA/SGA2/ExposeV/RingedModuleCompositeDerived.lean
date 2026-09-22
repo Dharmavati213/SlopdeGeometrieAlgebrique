@@ -15,8 +15,9 @@ supported cohomology on the source, with scalars restricted along the map on
 structure-sheaf sections. Restriction of scalars is exact, so the comparison
 holds in all degrees and is natural in the coefficient module sheaf.
 
-This identifies the proposed abutment in V.3.2. The construction and E₂-page
-identification of the composed-functor spectral sequence are separate tasks.
+The spectral sequence is constructed in `RingedModuleSpectralModuleLift`.
+`RingedModuleSpectralE2Linear` identifies its E₂ page, and
+`RingedModuleSpectralAbutment` identifies its filtered total module with this abutment.
 -/
 
 noncomputable section

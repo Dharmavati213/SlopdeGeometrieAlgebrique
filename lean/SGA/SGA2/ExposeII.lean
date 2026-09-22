@@ -29,6 +29,12 @@ import SGA.SGA2.ExposeII.AffineCohomologyComparison
 import SGA.SGA2.ExposeII.AffineRelativeSequence
 import SGA.SGA2.ExposeII.Examples
 import SGA.SGA2.ExposeII.LocalCohomologyScalarChange
+import SGA.SGA2.ExposeII.KoszulSupportedComparison
+import SGA.SGA2.ExposeII.AffineExtColimitComparison
+import SGA.SGA2.ExposeII.TopologicalNoetherianFlasque
+import SGA.SGA2.ExposeII.ExamplesII5
+import SGA.SGA2.ExposeII.QuasiCoherentSupported
+import SGA.SGA2.ExposeII.GeneralSchemeComparison
 
 /-!
 # SGA 2, Exposé II — Algebraic foundations for local cohomology
@@ -106,6 +112,8 @@ general-scheme comparisons remain partial:
   to a principal open, and higher degrees vanish;
 * `Examples`: essential vanishing with nonzero homology terms, and empty families.
 
-The remaining higher-degree comparisons and the general flasque criterion are
-listed in `docs/formalization.md`.
+Open-support derived sheaves are higher direct images (`II_1_open`).
+Affine-chart restriction of derived supported sheaves is I.2.7. Quasi-coherence
+of higher supported sheaves on general schemes, sheaf Ext colimits off
+affines, and II.10 under mere topological noetherianity remain open.
 -/

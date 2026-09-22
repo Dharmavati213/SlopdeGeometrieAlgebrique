@@ -27,8 +27,9 @@ and `SourceHomContravariantBoundary.lean` compare actual contravariant Hom
 boundaries with the derived connecting arrow into K-injective targets.
 `InjectiveHomModuleExtBoundary.lean` now specializes both boundaries through
 the original augmentation and module-valued Ext comparisons for a supplied
-augmented short exact resolution sequence. Construction of such sequences
-and their coherent resolution-comparison maps remains open.
+augmented short exact resolution sequence. `InjectiveHorseshoe.lean`
+constructs these sequences, and `InjectiveResolutionSequenceComparison.lean`
+supplies coherent comparisons between arbitrary resolution models.
 -/
 
 noncomputable section

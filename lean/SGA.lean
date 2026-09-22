@@ -6,3 +6,4 @@ import SGA.SGA2.ExposeIII
 import SGA.SGA2.ExposeIV
 import SGA.SGA2.ExposeV
 import SGA.SGA2.ExposeVI
+import SGA.SGA2.ExposeVII

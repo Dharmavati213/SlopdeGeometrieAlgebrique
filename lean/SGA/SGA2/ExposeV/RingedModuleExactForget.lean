@@ -42,4 +42,10 @@ theorem moduleToSheaf_map_shortExact {S : ShortComplex (SheafOfModules.{u} R)}
     (hS : S.ShortExact) : (S.map (SheafOfModules.toSheaf R)).ShortExact :=
   hS.map_of_exact (SheafOfModules.toSheaf R)
 
+/-- Exactness of forgetting scalars also preserves the homology of complexes. -/
+instance moduleToSheaf_preservesHomology :
+    (SheafOfModules.toSheaf.{u} R).PreservesHomology :=
+  ((Functor.exact_tfae (SheafOfModules.toSheaf.{u} R)).out 1 3).mp
+    (fun _ hS ↦ moduleToSheaf_map_shortExact R hS)
+
 end SGA.SGA2.ExposeV

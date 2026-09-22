@@ -20,17 +20,6 @@ variable {C : Type u} [Category.{v} C] [Abelian C] [HasExt.{w} C]
   {S : ShortComplex C} (R : InjectiveResolutionSequence S) {Y : C}
   (J : InjectiveResolution Y)
 
-/-- The original normalized source Ext equivalence is the previously
-specified standard equivalence after the original normalization homology map. -/
-theorem sourceInjectiveHomologyExtAddEquiv_eq_normalized {X : C}
-    (I : InjectiveResolution X) (n : ℕ)
-    (x : (sourceHomComplex I.cochainComplex J.cochainComplex).homology (n : ℤ)) :
-    sourceInjectiveHomologyExtAddEquiv I J n x =
-      injectiveHomologyExtAddEquiv I J n
-        (homologyMap (sourceHomComplexIso I.cochainComplex J.cochainComplex).hom (n : ℤ) x) := by
-  rw [sourceInjectiveHomologyExtAddEquiv_eq_class, injectiveHomologyExtAddEquiv_eq_class]
-  rfl
-
 /-- Original lifted cocycles compute the actual Ext connecting class under
 the fixed augmentation comparison, including the contravariant sign. -/
 theorem injectiveHomClassExt_contravariantConnecting (hS : S.ShortExact) (n : ℕ)

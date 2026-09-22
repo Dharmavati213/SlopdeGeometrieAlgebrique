@@ -71,6 +71,13 @@ instance (Z : Closeds X) (U : Opens X) :
     (moduleGammaZSectionsFunctor R Z U).Additive where
   map_add := by intros; ext s; rfl
 
+/-- Supported sections of the underlying additive sheaf are additive in coefficients. -/
+instance moduleUnderlyingSupportedSections_additive (Z : Closeds X) (U : Opens X) :
+    (SheafOfModules.toSheaf.{u} R ⋙ ExposeI.gammaZSectionsFunctor Z U).Additive := by
+  have : (SheafOfModules.toSheaf.{u} R).Additive := inferInstance
+  have : (ExposeI.gammaZSectionsFunctor Z U).Additive := inferInstance
+  infer_instance
+
 /-- Forgetting scalars recovers the original supported-section functor of Exposé I. -/
 def moduleGammaZSectionsForgetIso (Z : Closeds X) (U : Opens X) :
     moduleGammaZSectionsFunctor R Z U ⋙ forget₂ _ AddCommGrpCat ≅

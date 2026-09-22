@@ -109,15 +109,10 @@ theorem homClassComp_assoc {i j k ij jk n : ℤ} (hij : i + j = ij) (hjk : j + k
 Hom-complex homology groups. -/
 def homologyComp {i j k : ℤ} (h : i + j = k) :
     (HomComplex F G).homology i →+
-      ((HomComplex G K).homology j →+ (HomComplex F K).homology k) where
-  toFun z :=
-    { toFun w := (HomComplex.homologyAddEquiv F K k).symm
-        (homClassComp h (HomComplex.homologyAddEquiv F G i z)
-          (HomComplex.homologyAddEquiv G K j w))
-      map_zero' := by simp
-      map_add' w w' := by simp }
-  map_zero' := by ext w; simp
-  map_add' z z' := by ext w; simp
+      ((HomComplex G K).homology j →+ (HomComplex F K).homology k) :=
+  ((homClassComp h).compl₂ (HomComplex.homologyAddEquiv G K j).toAddMonoidHom).compr₂
+    (HomComplex.homologyAddEquiv F K k).symm.toAddMonoidHom |>.comp
+      (HomComplex.homologyAddEquiv F G i).toAddMonoidHom
 
 /-- The homology pairing recovers the already verified class-level product. -/
 @[simp]

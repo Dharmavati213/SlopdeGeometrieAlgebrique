@@ -30,13 +30,6 @@ variable {X Y : TopCat.{u}} (f : X ⟶ Y)
   {R : Sheaf RingCat.{u} X} {S : Sheaf RingCat.{u} Y}
   (φ : S ⟶ (Sheaf.pushforward RingCat f).obj R)
 
-local instance e2ScalarsToSheafAdditive : (SheafOfModules.toSheaf.{u} S).Additive := inferInstance
-
-local instance e2ScalarsToSheafPreservesHomology :
-    (SheafOfModules.toSheaf.{u} S).PreservesHomology :=
-  ((Functor.exact_tfae (SheafOfModules.toSheaf.{u} S)).out 1 3).mp
-    (fun _ hT ↦ moduleToSheaf_map_shortExact S hT)
-
 local instance e2ScalarsHasDerivedCategory :
     HasDerivedCategory.{u + 1} (Sheaf AddCommGrpCat.{u} Y) :=
   HasDerivedCategory.standard _

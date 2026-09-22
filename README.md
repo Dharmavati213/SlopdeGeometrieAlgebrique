@@ -34,7 +34,7 @@ on [mathlib](https://github.com/leanprover-community/mathlib4).
 This is a working tree, not a finished edition. SGA 1 Exposés I, II, III, and VI
 have full English drafts, as does SGA 2 (Introduction and Exposés I–XIV);
 the Lean side of SGA 1 I and VI compiles against mathlib. SGA 2 has partial
-Lean formalizations of Exposés I–V, with exact coverage and remaining
+Lean formalizations of Exposés I–VII, with exact coverage and remaining
 gaps recorded in [`docs/formalization.md`](docs/formalization.md).
 
 ## Layout
@@ -56,11 +56,12 @@ docs/            status and formalization notes
 | SGA 1, Exposé VI — English | translated |
 | SGA 1, Exposé VI — Lean | compiling (mathlib language + numbered lemmas) |
 | SGA 2, Introduction–XIV — English | drafts in `translation/SGA2/` |
-| SGA 2, Exposés I–III — Lean | partial; locally closed internal Hom/sheaf Ext, arbitrary-coefficient extension sequences, group- and sheaf-valued nested-support sequences, general spectral sequences, noetherian affine comparison, II.8–II.11 algebra, all-degree depth and restriction criteria, Hartogs, and connected components |
+| SGA 2, Exposés I–III — Lean | partial; locally closed internal Hom/sheaf Ext, arbitrary-coefficient extension sequences, group- and sheaf-valued nested-support sequences, general spectral sequences, noetherian affine comparison, II.8–II.11 algebra, all-degree depth and restriction criteria, Hartogs, connected components, component chains in codimension, and catenary equidimensionality |
 | SGA 2, Exposé IV — Lean | partial; canonical representation, IV.3.1–3.2 duality criteria, nonlocal finite-length duality, supported injective envelopes, finite coinduction, quotient annihilators, locally Artinian completion equivalence and duality transfer, Macaulay quotient-dual colimit, orthogonality, cyclic/socle criterion, and regular-local global dimension with arbitrary-module upper Ext vanishing |
 | SGA 2, Exposé V — Lean | partial; canonical local duality, sharp upper vanishing, top nonvanishing, Artinianity and completed-dual finiteness/dimension bounds over arbitrary noetherian local rings; exact completed top-dual dimension and associated-prime formula; algebraic change of rings, V.3.2's functorial first-quadrant module spectral sequence with natural module-linear E₂ and source-cohomology abutment and a resolution-independent finite filtration, V.3.3's component criterion, V.3.4's affine-complement codimension bound, and V.3.5–V.3.6's full finite-length and punctured-depth criteria over quotients of regular local rings |
-| SGA 2, Exposé VI — Lean | partial; genuine local-linear Hom sheaf, VI.1.4.3 for closed support, VI.1.5 flasqueness and acyclicity, additive-valued supported Ext derived in module sheaves, and VI.2.3's affine degree-zero quotient-Hom colimit |
-| SGA 2, Exposés VII–XIV — Lean | not started |
+| SGA 2, Exposé VI — Lean | partial; genuine internal Hom and tensor support representations, module-derived supported Ext, actual local Ext and excision, long exact sequences, spectral functors with E₂ and Ext abutment comparisons, and affine degree-zero quotient-Hom colimits |
+| SGA 2, Exposé VII — Lean | partial; actual internal-Hom zero detection from literal stalk support on locally noetherian schemes |
+| SGA 2, Exposés VIII–XIV — Lean | not started |
 | Remaining exposés of SGA 1, and SGA 3–7 | not started |
 
 Tick-list: [`docs/status.md`](docs/status.md).
@@ -101,7 +102,7 @@ lake build
 Open `lean/` in VS Code (Lean 4 extension) or Neovim (`lean.nvim`).
 The root modules are `SGA.SGA1.ExposeI`, `SGA.SGA1.ExposeVI`,
 `SGA.SGA2.ExposeI`, `SGA.SGA2.ExposeII`, `SGA.SGA2.ExposeIII`, `SGA.SGA2.ExposeIV`,
-`SGA.SGA2.ExposeV`, and `SGA.SGA2.ExposeVI`.
+`SGA.SGA2.ExposeV`, `SGA.SGA2.ExposeVI`, and `SGA.SGA2.ExposeVII`.
 
 To check all imported SGA 2 declarations for additional axioms, run
 `lake env lean CheckSGA2Axioms.lean` from `lean/`.

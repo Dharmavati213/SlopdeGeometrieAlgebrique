@@ -117,6 +117,14 @@ theorem sourceHomologyUnscaledAddEquiv_postcomp (F : CochainComplex C ℤ)
       homComplexClassPostcomp F f n (sourceHomologyUnscaledAddEquiv F G n x) :=
   ConcreteCategory.congr_hom (sourceHomPostcompHomologyMapData F f n).homologyMap_comm x
 
+/-- Sign normalization preserves naturality in the target complex. -/
+theorem sourceHomologyAddEquiv_postcomp (F : CochainComplex C ℤ)
+    {G H : CochainComplex C ℤ} (f : G ⟶ H) (n : ℤ) (x : (sourceHomComplex F G).homology n) :
+    sourceHomologyAddEquiv F H n (homologyMap (sourceHomPostcomp F f) n x) =
+      homComplexClassPostcomp F f n (sourceHomologyAddEquiv F G n x) := by
+  simp only [sourceHomologyAddEquiv_eq_sign, sourceHomologyUnscaledAddEquiv_postcomp,
+    Units.smul_def, map_zsmul]
+
 /-- Actual postcomposition sends an original representative to its postcomposition. -/
 theorem sourceHomologyMk_postcomp (F : CochainComplex C ℤ)
     {G H : CochainComplex C ℤ} (f : G ⟶ H) {n : ℤ} (z : Cocycle F G n) :

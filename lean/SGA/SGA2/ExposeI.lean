@@ -88,6 +88,16 @@ import SGA.SGA2.ExposeI.LocallyClosed
 import SGA.SGA2.ExposeI.ExtensionByZero
 import SGA.SGA2.ExposeI.DerivedFunctors
 import SGA.SGA2.ExposeI.ExactSequences
+import SGA.SGA2.ExposeI.InternalHomBifunctor
+import SGA.SGA2.ExposeI.SheafExtRestriction
+import SGA.SGA2.ExposeI.SheafExtConnecting
+import SGA.SGA2.ExposeI.ClosedAsLocallyClosed
+import SGA.SGA2.ExposeI.OpenInclusionLeray
+import SGA.SGA2.ExposeI.LocallyClosedWitnessChangeSpectral
+import SGA.SGA2.ExposeI.RingedSpaceSupportHom
+import SGA.SGA2.ExposeI.ExtRightDerivedMap
+import SGA.SGA2.ExposeI.RepresentedFunctorSequence
+import SGA.SGA2.ExposeI.Examples
 
 /-!
 # SGA 2, Exposé I — Global and local cohomological invariants relative to a closed subspace
@@ -239,10 +249,15 @@ This module is the barrel for the Lean formalization of the exposé.
   to arbitrary locally closed supports on the original ambient space: actual
   E₂ terms, original `H_locallyClosed` abutment, finite convergence,
   coefficient functoriality, and resolution-independent filtered naturality.
-  A separate identification with a named general Leray spectral sequence
-  and spectral-level change of the locally closed witness remain unproved.
+  The constructed sequence is the Grothendieck spectral sequence of the
+  supported-sheaf functor; for open support its E₂ page is the Leray page
+  of the inclusion. Spectral-level witness change is proved.
 * **I.2.8 input / I.2.13 low degrees** Ext exactness for a supplied short
-  exact sequence and actual mono/isomorphism criteria — `ExactSequences.lean`
+  exact sequence and actual mono/isomorphism criteria — `ExactSequences.lean`.
+  `ExtRightDerivedMap.lean` proves that exact functors preserve Ext classes
+  of actual resolution cocycles and the induced Hom-complex maps.
+  `RepresentedFunctorSequence.lean` reconstructs a short exact sequence of
+  representing objects from an exact sequence of represented additive functors.
 * **I.2.8** the actual general locally closed nested-support sequence, with
   genuine extension-class connecting maps and coefficient naturality in all
   degrees — `NestedSupportCohomology.lean`, `NestedSupportLocallyClosed.lean`.

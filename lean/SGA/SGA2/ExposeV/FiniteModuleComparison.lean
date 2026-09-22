@@ -25,6 +25,21 @@ namespace SGA.SGA2.ExposeV
 set_option backward.isDefEq.respectTransparency false
 
 variable {R : Type u} [CommRing R]
+
+/-- A module map together with the inclusion of its linear kernel. -/
+abbrev moduleKernelShortComplex {P M : ModuleCat.{u} R} (q : P ⟶ M) :
+    ShortComplex (ModuleCat.{u} R) :=
+  ShortComplex.mk (ModuleCat.ofHom q.hom.ker.subtype) q
+    (ModuleCat.hom_ext q.hom.comp_ker_subtype)
+
+/-- A surjective module map gives a short exact kernel sequence. -/
+theorem moduleKernelShortComplex_shortExact {P M : ModuleCat.{u} R}
+    (q : P ⟶ M) (hq : Function.Surjective q) :
+    (moduleKernelShortComplex q).ShortExact where
+  exact := (ShortComplex.moduleCat_exact_iff _).mpr (fun y hy => ⟨⟨y, hy⟩, rfl⟩)
+  mono_f := (ModuleCat.mono_iff_injective _).mpr Subtype.val_injective
+  epi_g := (ModuleCat.epi_iff_surjective _).mpr hq
+
 variable {F G : ModuleCat.{u} R ⥤ ModuleCat.{u} R} [F.Additive] [G.Additive]
 variable (α : F ⟶ G) [IsIso (α.app (ModuleCat.of R R))]
 
@@ -53,17 +68,11 @@ theorem isIso_app_finite [IsNoetherianRing R]
   intro x hx
   obtain ⟨n, q, hq⟩ := Module.Finite.exists_fin' R M
   let P := ModuleCat.of R (Fin n → R)
-  let K := ModuleCat.of R q.ker
   let q' : P ⟶ M := ModuleCat.ofHom q
-  let k : K ⟶ P := ModuleCat.ofHom q.ker.subtype
-  let S : ShortComplex (ModuleCat.{u} R) := ShortComplex.mk k q' (by
-    apply ModuleCat.hom_ext
-    ext x
-    exact x.property)
-  have hS : S.ShortExact :=
-    { exact := (ShortComplex.moduleCat_exact_iff _).mpr (fun y hy => ⟨⟨y, hy⟩, rfl⟩)
-      mono_f := (ModuleCat.mono_iff_injective _).mpr Subtype.val_injective
-      epi_g := (ModuleCat.epi_iff_surjective _).mpr hq }
+  let S := moduleKernelShortComplex q'
+  let K := S.X₁
+  let k := S.f
+  have hS := moduleKernelShortComplex_shortExact q' hq
   have : Epi q' := hS.epi_g
   have : IsIso (α.app P) := isIso_app_finiteFree α n
   have : Epi (α.app K) := epi_app_finite α K

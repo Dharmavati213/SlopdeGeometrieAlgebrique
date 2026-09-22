@@ -52,17 +52,7 @@ theorem regularLocal_puncturedVanishing_iff_ext_atPrime (n : ℕ)
   · intro h p hp
     let Rp := Localization.AtPrime p.asIdeal
     have := regularLocal_atPrime_isRegularLocalRing p.asIdeal
-    let s := (maximalIdeal Rp).spanFinrank
-    have hs : ringKrullDim Rp = s := IsRegularLocalRing.spanFinrank_maximalIdeal.symm
-    let : IsLocalRing (R ⧸ p.asIdeal) :=
-      IsLocalRing.of_surjective' (Ideal.Quotient.mk _) Ideal.Quotient.mk_surjective
-    let d := (LTSeries.longestOf (PrimeSpectrum (R ⧸ p.asIdeal))).length
-    have hd : ringKrullDim (R ⧸ p.asIdeal) = d :=
-      Order.krullDim_eq_length_of_finiteDimensionalOrder
-    have hsd : s + d = n := by
-      have heq := regularLocal_atPrime_dimension_add_quotient p.asIdeal
-      rw [hs, hd, hn, ← Nat.cast_add] at heq
-      exact_mod_cast heq
+    obtain ⟨s, d, hs, hd, hsd⟩ := regularLocal_atPrime_dimensions n hn p.asIdeal
     have : Module.Finite Rp (M.localizedModule p.asIdeal.primeCompl) :=
       Module.Finite.of_isLocalizedModule p.asIdeal.primeCompl
         (M.localizedModuleMkLinearMap p.asIdeal.primeCompl)
@@ -74,16 +64,12 @@ theorem regularLocal_puncturedVanishing_iff_ext_atPrime (n : ℕ)
   · intro h p hp d j hd hji
     let Rp := Localization.AtPrime p.asIdeal
     have := regularLocal_atPrime_isRegularLocalRing p.asIdeal
-    let s := (maximalIdeal Rp).spanFinrank
-    have hs : ringKrullDim Rp = s := IsRegularLocalRing.spanFinrank_maximalIdeal.symm
-    have hsd : s + d = n := by
-      have heq := regularLocal_atPrime_dimension_add_quotient p.asIdeal
-      rw [hs, hd, hn, ← Nat.cast_add] at heq
-      exact_mod_cast heq
+    have hs : ringKrullDim Rp = j + q :=
+      regularLocal_atPrime_dimension_eq_complement n hn p.asIdeal d (j + q) hd (by omega)
     have : Module.Finite Rp (M.localizedModule p.asIdeal.primeCompl) :=
       Module.Finite.of_isLocalizedModule p.asIdeal.primeCompl
         (M.localizedModuleMkLinearMap p.asIdeal.primeCompl)
-    exact (regularLocal_localCohomology_isZero_iff_ext s hs j q (by omega)
+    exact (regularLocal_localCohomology_isZero_iff_ext (j + q) hs j q rfl
       (M.localizedModule p.asIdeal.primeCompl)).mpr (h p hp)
 
 /-- Above the original dimension, all the shifted punctured values vanish.
@@ -94,12 +80,8 @@ theorem regularLocal_puncturedVanishing_of_gt (n : ℕ) (hn : ringKrullDim R = n
   intro p _ d j hd hji
   let Rp := Localization.AtPrime p.asIdeal
   have := regularLocal_atPrime_isRegularLocalRing p.asIdeal
-  let s := (maximalIdeal Rp).spanFinrank
-  have hs : ringKrullDim Rp = s := IsRegularLocalRing.spanFinrank_maximalIdeal.symm
-  have hsd : s + d = n := by
-    have heq := regularLocal_atPrime_dimension_add_quotient p.asIdeal
-    rw [hs, hd, hn, ← Nat.cast_add] at heq
-    exact_mod_cast heq
+  obtain ⟨s, d', hs, hd', hsd⟩ := regularLocal_atPrime_dimensions n hn p.asIdeal
+  have hdd : d' = d := by exact_mod_cast hd'.symm.trans hd
   exact regularLocal_localCohomology_isZero_of_gt s hs _ j (by omega)
 
 /-- **V.3.5, regular-local case.** Finite length of original local

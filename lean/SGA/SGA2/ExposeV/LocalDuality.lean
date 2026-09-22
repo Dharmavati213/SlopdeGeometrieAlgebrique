@@ -45,17 +45,11 @@ theorem regularLocal_localDualityMap_isIso (n : ℕ) (hdim : ringKrullDim R = n)
   | succ j ih =>
       obtain ⟨r, q, hq⟩ := Module.Finite.exists_fin' R M
       let Q := ModuleCat.of R (Fin r → R)
-      let K := ModuleCat.of R q.ker
       let q' : Q ⟶ M := ModuleCat.ofHom q
-      let k : K ⟶ Q := ModuleCat.ofHom q.ker.subtype
-      let S : ShortComplex (ModuleCat.{u} R) := ShortComplex.mk k q' (by
-        apply ModuleCat.hom_ext
-        ext x
-        exact x.property)
-      have hS : S.ShortExact :=
-        { exact := (ShortComplex.moduleCat_exact_iff _).mpr (fun y hy => ⟨⟨y, hy⟩, rfl⟩)
-          mono_f := (ModuleCat.mono_iff_injective _).mpr Subtype.val_injective
-          epi_g := (ModuleCat.epi_iff_surjective _).mpr hq }
+      let S := moduleKernelShortComplex q'
+      let K := S.X₁
+      let k := S.f
+      have hS := moduleKernelShortComplex_shortExact q' hq
       have hnext : (i + 1) + j = n := by omega
       let A := ShortComplex.mk _ _ (localCohomologyYonedaBoundary_comp (maximalIdeal R) S hS i)
       let B := ShortComplex.mk _ _

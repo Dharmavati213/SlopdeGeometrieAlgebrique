@@ -89,49 +89,41 @@ def ringedModulePushforwardModuleSpectralObjectMap (a : I.cocomplex ⟶ J.cocomp
 @[simp]
 theorem ringedModulePushforwardModuleSpectralObjectMap_id :
     ringedModulePushforwardModuleSpectralObjectMap f φ Z (𝟙 I.cocomplex) = 𝟙 _ := by
-  apply Abelian.SpectralObject.Hom.ext
-  funext n
-  apply NatTrans.ext
-  funext D
-  ext x
-  have hm := congrArg (fun a ↦ (a.hom n).app D)
-    (ringedModulePushforwardAbelianSpectralObjectMap_id f φ Z (I := I))
-  have hx := ConcreteCategory.congr_hom hm x
-  exact hx
+  unfold ringedModulePushforwardModuleSpectralObjectMap
+  simp only [ringedModulePushforwardAbelianSpectralObjectMap_id, spectralObjectModuleMap_id]
+  rfl
 
 @[reassoc]
 theorem ringedModulePushforwardModuleSpectralObjectMap_comp
     (a : I.cocomplex ⟶ J.cocomplex) (b : J.cocomplex ⟶ K.cocomplex) :
     ringedModulePushforwardModuleSpectralObjectMap f φ Z (a ≫ b) =
-      ringedModulePushforwardModuleSpectralObjectMap f φ Z a ≫
+        ringedModulePushforwardModuleSpectralObjectMap f φ Z a ≫
         ringedModulePushforwardModuleSpectralObjectMap f φ Z b := by
-  apply Abelian.SpectralObject.Hom.ext
-  funext n
-  apply NatTrans.ext
-  funext D
-  ext x
-  have hm := congrArg (fun a ↦ (a.hom n).app D)
-    (ringedModulePushforwardAbelianSpectralObjectMap_comp f φ Z a b)
-  have hx := ConcreteCategory.congr_hom hm x
-  exact hx
+  unfold ringedModulePushforwardModuleSpectralObjectMap
+  simp only [ringedModulePushforwardAbelianSpectralObjectMap_comp]
+  exact spectralObjectModuleMap_comp _ _ _ _ _ _ _
+
+/-- Retaining the global scalar action preserves addition of resolution maps. -/
+@[simp]
+theorem ringedModulePushforwardModuleSpectralObjectMap_add
+    (a b : I.cocomplex ⟶ J.cocomplex) :
+    ringedModulePushforwardModuleSpectralObjectMap f φ Z (a + b) =
+      ringedModulePushforwardModuleSpectralObjectMap f φ Z a +
+        ringedModulePushforwardModuleSpectralObjectMap f φ Z b := by
+  unfold ringedModulePushforwardModuleSpectralObjectMap
+    ringedModulePushforwardAbelianSpectralObjectMap
+  simp only [ringedModulePushforwardDerivedObjectMap_add, Functor.map_add]
+  exact spectralObjectModuleMap_add _ _ _ _ _ _
 
 /-- Homotopic module lifts give exactly the same module spectral-object morphism. -/
 theorem ringedModulePushforwardModuleSpectralObjectMap_eq_of_homotopy
     {a b : I.cocomplex ⟶ J.cocomplex} (h : Homotopy a b) :
     ringedModulePushforwardModuleSpectralObjectMap f φ Z a =
       ringedModulePushforwardModuleSpectralObjectMap f φ Z b := by
-  have hab : ringedModulePushforwardAbelianSpectralObjectMap f φ Z a =
-      ringedModulePushforwardAbelianSpectralObjectMap f φ Z b := by
-    dsimp only [ringedModulePushforwardAbelianSpectralObjectMap]
-    rw [ringedModulePushforwardDerivedObjectMap_eq_of_homotopy f φ h]
-  apply Abelian.SpectralObject.Hom.ext
-  funext n
-  apply NatTrans.ext
-  funext D
-  ext x
-  have hm := congrArg (fun a ↦ (a.hom n).app D) hab
-  have hx := ConcreteCategory.congr_hom hm x
-  exact hx
+  unfold ringedModulePushforwardModuleSpectralObjectMap
+    ringedModulePushforwardAbelianSpectralObjectMap
+  congr 1
+  exact congrArg _ (ringedModulePushforwardDerivedObjectMap_eq_of_homotopy f φ h)
 
 /-- The genuine module-linear coefficient map on every page and every next-page isomorphism. -/
 def ringedModulePushforwardModuleSpectralSequenceMap (a : I.cocomplex ⟶ J.cocomplex) :
@@ -158,6 +150,17 @@ theorem ringedModulePushforwardModuleSpectralSequenceMap_comp
   dsimp only [ringedModulePushforwardModuleSpectralSequenceMap]
   rw [ringedModulePushforwardModuleSpectralObjectMap_comp,
     ExposeI.SpectralObjectCoefficientMaps.spectralSequenceMap_comp]
+
+/-- Addition of resolution maps induces addition on every whole page complex. -/
+@[simp]
+theorem ringedModulePushforwardModuleSpectralSequenceMap_add
+    (a b : I.cocomplex ⟶ J.cocomplex) (r : ℤ) (hr : 2 ≤ r) :
+    (ringedModulePushforwardModuleSpectralSequenceMap f φ Z (a + b)).hom r hr =
+      (ringedModulePushforwardModuleSpectralSequenceMap f φ Z a).hom r hr +
+        (ringedModulePushforwardModuleSpectralSequenceMap f φ Z b).hom r hr := by
+  dsimp only [ringedModulePushforwardModuleSpectralSequenceMap]
+  rw [ringedModulePushforwardModuleSpectralObjectMap_add]
+  exact spectralSequenceMap_hom_add _ _ r hr
 
 theorem ringedModulePushforwardModuleSpectralSequenceMap_eq_of_homotopy
     {a b : I.cocomplex ⟶ J.cocomplex} (h : Homotopy a b) :
@@ -201,6 +204,18 @@ theorem ringedModulePushforwardModuleSpectralSequenceCoefficientMap_comp (a : M 
     (InjectiveResolution.descCompHomotopy a b I J K)).trans
       (ringedModulePushforwardModuleSpectralSequenceMap_comp f φ Z _ _)
 
+/-- Every page is additive in the original coefficient morphism, independently of its lift. -/
+@[simp]
+theorem ringedModulePushforwardModuleSpectralSequenceCoefficientMap_add (a b : M ⟶ N)
+    (I : InjectiveResolution M) (J : InjectiveResolution N) (r : ℤ) (hr : 2 ≤ r) :
+    (ringedModulePushforwardModuleSpectralSequenceCoefficientMap f φ Z (a + b) I J).hom r hr =
+      (ringedModulePushforwardModuleSpectralSequenceCoefficientMap f φ Z a I J).hom r hr +
+        (ringedModulePushforwardModuleSpectralSequenceCoefficientMap f φ Z b I J).hom r hr := by
+  rw [← ringedModulePushforwardModuleSpectralSequenceMap_eq_coefficientMap f φ Z (a + b)
+    (InjectiveResolution.desc a J I + InjectiveResolution.desc b J I)
+    (by simp [Functor.map_add, Preadditive.comp_add, Preadditive.add_comp])]
+  exact ringedModulePushforwardModuleSpectralSequenceMap_add f φ Z _ _ r hr
+
 /-- V.3.2's actual module spectral sequence, functorial in the original coefficient module. -/
 def ringedModulePushforwardModuleSpectralSequenceFunctor :
     SheafOfModules.{u} R ⥤
@@ -209,6 +224,13 @@ def ringedModulePushforwardModuleSpectralSequenceFunctor :
   map a := ringedModulePushforwardModuleSpectralSequenceCoefficientMap f φ Z a _ _
   map_id _ := ringedModulePushforwardModuleSpectralSequenceCoefficientMap_id f φ Z _
   map_comp a b := ringedModulePushforwardModuleSpectralSequenceCoefficientMap_comp f φ Z a b _ _ _
+
+/-- Each page of V.3.2 is an additive functor of the coefficient module sheaf. -/
+instance ringedModulePushforwardModuleSpectralSequencePageFunctor_additive
+    (r : ℤ) (hr : 2 ≤ r) :
+    (ringedModulePushforwardModuleSpectralSequenceFunctor f φ Z ⋙
+      CategoryTheory.SpectralSequence.pageFunctor _ _ _ r hr).Additive where
+  map_add := ringedModulePushforwardModuleSpectralSequenceCoefficientMap_add f φ Z _ _ _ _ r hr
 
 /-- Canonical module-linear change of resolution, induced by the original identity coefficient. -/
 def ringedModulePushforwardModuleSpectralSequenceResolutionIso

@@ -91,14 +91,10 @@ def sourceHomComplex (F G : CochainComplex C ℤ) : CochainComplex AddCommGrpCat
   d n m := AddCommGrpCat.ofHom (sourceHomδ_hom F G n m)
   shape n m h := by
     apply AddCommGrpCat.hom_ext
-    apply AddMonoidHom.ext
-    intro z
-    exact sourceHomδ_shape n m h z
+    exact AddMonoidHom.ext (sourceHomδ_shape n m h)
   d_comp_d' n m k _ _ := by
     apply AddCommGrpCat.hom_ext
-    apply AddMonoidHom.ext
-    intro z
-    exact sourceHomδ_squared n m k z
+    exact AddMonoidHom.ext (sourceHomδ_squared n m k)
 
 /-- The explicit sign change from the source to Mathlib convention. -/
 def sourceHomSign (n : ℤ) : ℤˣ := (n * (n + 1) / 2).negOnePow
@@ -148,9 +144,7 @@ def sourceHomComplexIso (F G : CochainComplex C ℤ) :
     intro n m h
     have hm : n + 1 = m := h
     subst m
-    apply AddCommGrpCat.hom_ext
-    apply AddMonoidHom.ext
-    intro z
+    ext z
     change δ n (n + 1) ((sourceHomSign n) • z) =
       (sourceHomSign (n + 1)) • sourceHomδ n (n + 1) z
     simp only [sourceHomδ, sourceHomSign_succ, smul_smul, mul_assoc,
@@ -167,13 +161,8 @@ def sourceHomologyAddEquiv (F G : CochainComplex C ℤ) (n : ℤ) :
 
 /-- The source and standard differentials have exactly the same cocycles. -/
 theorem sourceHomδ_eq_zero_iff (n m : ℤ) (z : Cochain F G n) :
-    sourceHomδ n m z = 0 ↔ δ n m z = 0 := by
-  constructor
-  · intro h
-    have h' := congrArg (m.negOnePow • ·) h
-    simpa only [sourceHomδ, smul_smul, Int.units_mul_self, one_smul, smul_zero] using h'
-  · intro h
-    simp [sourceHomδ, h]
+    sourceHomδ n m z = 0 ↔ δ n m z = 0 :=
+  smul_eq_zero_iff_eq m.negOnePow
 
 /-- They also have the same actual coboundaries, with a corrected primitive. -/
 theorem exists_sourceHomδ_eq_iff (n m : ℤ) (z : Cochain F G m) :

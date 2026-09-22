@@ -13,8 +13,8 @@ For every module sheaf and every degree, forgetting scalars in its derived
 supported sections gives the original supported cohomology of its additive
 sheaf. The comparison uses the flasque-resolution quasi-isomorphism, not
 preservation of injectivity by forgetting scalars. Their naturality is proved
-in `RingedModuleAdditiveNaturality`; the spectral sequence of V.3.2 remains
-a separate task.
+in `RingedModuleAdditiveNaturality`. These comparisons identify the cohomology
+terms in the module spectral sequence constructed in `RingedModuleSpectralModuleLift`.
 -/
 
 noncomputable section
@@ -28,12 +28,6 @@ namespace SGA.SGA2.ExposeV
 set_option backward.isDefEq.respectTransparency false
 
 variable {X : TopCat.{u}} (R : Sheaf RingCat.{u} X)
-
-local instance (Z : Closeds X) (U : Opens X) :
-    (SheafOfModules.toSheaf.{u} R ⋙ ExposeI.gammaZSectionsFunctor Z U).Additive := by
-  have : (SheafOfModules.toSheaf.{u} R).Additive := inferInstance
-  have : (ExposeI.gammaZSectionsFunctor Z U).Additive := inferInstance
-  infer_instance
 
 /-- In all degrees, the additive group of module-derived supported sections
 is the original right-derived supported sections of the underlying sheaf. -/

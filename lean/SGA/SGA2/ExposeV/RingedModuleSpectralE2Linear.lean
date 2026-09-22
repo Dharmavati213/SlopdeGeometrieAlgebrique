@@ -146,7 +146,8 @@ theorem ringedModulePushforwardE2TotalShiftIso_scalar
     Functor.map_comp_assoc, ExposeI.supportedSingleTotalShiftIso_naturality]
   simp only [Category.assoc]
 
-private theorem supportedExtHomAddEquiv_naturality
+/-- The derived-Hom description of supported cohomology respects coefficient maps. -/
+theorem supportedExtHomAddEquiv_naturality
     {A B : Sheaf AddCommGrpCat.{u} Y} (a : A ⟶ B) (p : ℕ)
     (x : (DerivedCategory.singleFunctor (Sheaf AddCommGrpCat.{u} Y) 0).obj (ExposeI.zZX_closed Z) ⟶
       ((DerivedCategory.singleFunctor (Sheaf AddCommGrpCat.{u} Y) 0).obj A)⟦(p : ℤ)⟧) :

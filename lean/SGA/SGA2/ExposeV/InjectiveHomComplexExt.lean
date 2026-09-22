@@ -102,4 +102,16 @@ def injectiveHomologyExtAddEquiv (n : ℕ) :
     (sourceHomComplexIso I.cochainComplex J.cochainComplex).symm).addCommGroupIsoToAddEquiv.trans
       (sourceInjectiveHomologyExtAddEquiv I J n)
 
+/-- The source comparison is the standard comparison after sign normalization. -/
+theorem sourceInjectiveHomologyExtAddEquiv_eq_normalized
+    (J : InjectiveResolution Y) (I : InjectiveResolution X) (n : ℕ)
+    (x : (sourceHomComplex I.cochainComplex J.cochainComplex).homology (n : ℤ)) :
+    sourceInjectiveHomologyExtAddEquiv I J n x =
+      injectiveHomologyExtAddEquiv I J n
+        (homologyMap (sourceHomComplexIso I.cochainComplex J.cochainComplex).hom (n : ℤ) x) := by
+  let e := (homologyFunctor AddCommGrpCat (ComplexShape.up ℤ) (n : ℤ)).mapIso
+    (sourceHomComplexIso I.cochainComplex J.cochainComplex)
+  exact (congrArg (sourceInjectiveHomologyExtAddEquiv I J n)
+    (ConcreteCategory.congr_hom e.hom_inv_id x)).symm
+
 end SGA.SGA2.ExposeV
