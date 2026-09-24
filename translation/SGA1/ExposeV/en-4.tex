@@ -1,0 +1,434 @@
+\section{Galois categories}
+\label{V.5}
+% original p. 127
+
+\begin{definition}
+\label{V.5.1}
+A Galois category is
+a category $\cal{C}$ equivalent to a category
+$\cal{C}(\pi)$, where $\pi$ is a compact group, projective limit
+of finite groups (\ie totally disconnected).
+
+For the definition of~$\cal{C}(\pi)$, \cf the beginning of \No \Ref{V.4}. By
+Theorem~\Ref{V.4.1}, $\cal{C}$ is Galois if and only if
+it satisfies conditions (G 1) to (G 3), and if there exists a
+functor $F$ from
+$\cal{C}$
+into the category of finite sets satisfying conditions
+(G~4) to (G~6) (\ie which is \emph{exact} and \emph{conservative},
+in a general terminology). Such a functor will be
+called a \emph{fundamental functor}
+of the Galois category $\cal{C}$\kern1pt\footnote{It seems preferable to adopt the more suggestive term
+``fiber functor''.};
+it is pro-representable by a pro-object which we shall denote by~$P_F$;
+a pro-object $P$ such that the associated functor $F$ is fundamental
+is called a \emph{fundamental pro-object}.
+In this way, the category of fundamental functors on~$\cal{C}$ is anti-equivalent to the category of
+fundamental pro-objects; if $F$ and $P$ correspond to each other, the group
+$\Aut F$ is therefore isomorphic to the opposite of the group $\Aut P$,
+hence the group denoted $\pi$ in the preceding no.\ is
+none other than $\Aut P$. Let us recall that in the preceding no.\ we
+constructed, starting from a \emph{given} fundamental functor
+$F$, an equivalence of~$\cal{C}$ with
+$\cal{C}(\pi)$ (where $\pi=\Aut(F)$) which transforms the functor $F$
+into the canonical functor from~$\cal{C}(\pi)_x$ into the category of
+finite sets. In this typical case $\cal{C}=\cal{C}(\pi)$, $F=$
+canonical functor, the fundamental pro-object associated with $F$
+is none other than the projective system of the discrete quotients
+$\pi_i$ of~$\pi$.
+\end{definition}
+
+It may be useful to make explicit the category of pro-objects of
+$\cal{C}(\pi)$. One finds:
+
+\begin{proposition}
+\label{V.5.2}
+The category $\Prodash\cal{C}(\pi)$
+is canonically equivalent to the category
+$\cal{C}'(\pi)$ of spaces, with topological group $\pi$
+of operators, which are compact and totally disconnected.
+\end{proposition}
+
+Since the latter contains $\cal{C}(\pi)$ as a
+full subcategory (corresponding to the compact discrete spaces with
+operators) and since projective limits
+exist in it, one has in any case a canonical functor $g\colon
+\Prodash\cal{C}(\pi) \to \cal{C}'(\pi)$, associating with the projective system
+$Q=(Q_i)$
+the object $X=\varprojlim_{i} Q_i$ of~$\cal{C}'(\pi)$. To define
+a functor in the opposite direction, it suffices to define a contravariant
+functor from~$\cal{C}'(\pi)$ into the category of left exact functors
+$\cal{C}\to \Ens$, and we shall take for every
+$X\in\cal{C}'(\pi)$ the functor $h(X)(E)= \Hom(X, E)$
+% original p. 128
+(the $\Hom$ being taken in $\cal{C}'(\pi)$). It is immediate
+by definition that the functors $h$ and $g$ are adjoint to each
+other, and that $hg$ is canonically isomorphic to the identity functor
+of~$\Prodash\cal{C}(\pi)$. It remains to prove (in order to establish
+that $g$ and $h$ are quasi-inverse to each other) that every object of
+$\cal{C}'(\pi)$ is isomorphic to an object of the form $g(Q)$,
+where $Q\in\Prodash{\cal C}(\pi)$, in other words: \emph{every
+space $X$ with topological group $\pi$ of operators, which is
+compact and totally disconnected, is isomorphic to a projective
+limit of finite discrete spaces with operators}. Since $X$
+is the projective limit of its finite discrete quotients (as a
+topological space without operators), we are reduced to
+showing that in the set of these quotients, there is a
+cofinal system which is invariant under $\pi$. For this it suffices to show
+that for such a quotient $X'$, the set of transforms of this
+quotient by the operations of~$\pi$ is finite, (one will then take
+the sup of the said transforms, which will be an invariant quotient
+majorizing $X'$). Or again, that there is an open invariant subgroup
+$\pi'$ of~$\pi$ such that the elements of this subgroup
+leave $X'$ invariant. Now $X'$ corresponds to a finite partition of~$X$ into
+open sets $X_i$. By reason of continuity and of
+compactness of~$\pi$, there exists a neighborhood $V$ of
+the neutral element of~$\pi$ such that $s\in V$ implies
+$s\cdot X_i\subset X_i$ for every~$i$, hence $s$ leaves~$X'$ invariant. Now we know
+that the open invariant subgroups of~$\pi$ form a
+fundamental system of neighborhoods of the neutral element, which
+completes the proof.
+
+Let us note that one sees even more simply that the category
+$\Ind \cal{C}(\pi)$ is canonically equivalent to the
+category of sets on which $\pi$ operates
+continuously. We shall not need this here.
+
+\begin{proposition}
+\label{V.5.3}
+Let $\cal{C}$ be a Galois category, $F$ a fundamental
+functor
+on~$\cal{C}$,
+$P=(P_i)$ the associated pro-object, normalized in the usual
+way. Let
+$X\in\cal{C}$;
+for $X$ to be connected, it is necessary and sufficient that $\pi$ operate
+transitively on~$E=F(X)$.
+\end{proposition}
+
+We are reduced to the typical case $\cal{C}=\cal{C}(\pi)$, $F=$ canonical
+functor, where it is trivial.
+
+\begin{corollary}
+\label{V.5.4}
+Equivalent conditions on~$X$: \textup{(i)} $X$ is connected and
+$\not\simeq\emptyset_{\cal{C}}$ \textup{(ii)} the group $\pi$ is
+transitive on~$E=F(X)$, and $F(X)\ne\emptyset$ \textup{(iii)} $X$ is
+isomorphic to a $P_i$.
+\end{corollary}
+
+The equivalence
+% original p. 129
+of (i) and (iii) also already follows easily from
+\No \Ref{V.4},~e).
+
+\begin{proposition}
+\label{V.5.5}
+Let $Q=(Q_i)_{i\in I}$ be a pro-object
+of~$\cal{C}$,
+normalized in the usual way, and let $G$ be the
+corresponding functor $G(X)=\Hom(Q, X)$ from~$\cal{C}$
+(into~$\Ens$).
+The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] $G$ commutes with finite direct sums
+\item[(ii)] $G$ commutes with the sum of two objects
+\item[(iii)] The $Q_i$ are connected and
+$\not\simeq\emptyset_\cal{C}$
+\item[(iv)] $Q$ is isomorphic to $\pi/H$, where $H$ is a
+closed subgroup of~$\pi$.
+\item[(v)] The functor $G$ is isomorphic to the functor $E\mto
+E^H$ (set of invariants under $H$) defined by a closed
+subgroup $H$ of~$\pi$.
+\end{enumerate}
+\end{proposition}
+
+N.B. in the statement of (iv) and (v), one assumes chosen a
+fundamental functor, making it possible to identify $\cal{C}$ with the
+category~$\cal{C}(\pi)$.
+
+\subsubsection*{Proof} We may assume
+$\cal{C}=\cal{C}(\pi)$. The implication (i)$\To$(ii) is
+trivial, (ii)$\To$(iii) is proved like
+property d) of \No \Ref{V.4}. Let us prove (iii)$\To$(iv). Indeed,
+we know that $\varprojlim_i Q_i$ is nonempty as a projective
+limit of nonempty finite sets. Let $a$ be a point of
+$\varprojlim_i Q_i$; it defines a homomorphism of spaces with
+operators
+$$
+\pi\to Q
+$$
+which is \emph{surjective}, since for every $i$ the composite $\pi\to
+Q\to Q_i$ is, because $\pi$ is transitive on $Q_i$ by virtue
+of~\Ref{V.5.3}. If therefore $H$ is the stabilizer subgroup of
+$a$, one obtains an isomorphism $\pi/H\isomto Q$. The implications
+(iv)$\To$(v) and (v)$\To$(i) are again
+trivial.
+
+\begin{proposition}
+\label{V.5.6}
+Let $\cal{C}$ be a Galois category, $P$ a fundamental
+pro-object of~$\cal{C}$ and $F$ the associated fundamental
+functor. Let $P'=(P'_i)_{i\in I}$ be a pro-object of~$\cal{C}$, put
+in normal form, and $F'$ the associated functor $F'(X)=\Hom(P',X)$
+from~$\cal{C}$ into~$\Ens$. Equivalent conditions:
+\begin{enumerate}
+\item[(i)] $P'\simeq P$, or again $F'\simeq F$.
+\item[(ii)] $P'$ is fundamental, or again $F'$ is
+fundamental.
+\item[(iii)] $F'$ transforms a sum of two objects into a sum, and
+$X\not\simeq\emptyset_{\cal{C}}$ implies $F(X)\ne\emptyset$.
+\item[(iv)]
+% original p. 130
+The objects of~$\cal{C}$ that are connected and $\ne\emptyset_{\cal{C}}$ are
+exactly the objects isomorphic to a~$P'_i$.
+\end{enumerate}
+\end{proposition}
+
+We have trivially (i)$\To$(iii) and (i)$\To$(ii),
+moreover (ii)$\To$(iv) by virtue of~\Ref{V.5.4} (applied
+to $P'$ instead of~$P$). Moreover (iii) or (iv) implies by virtue
+of~\Ref{V.5.5} that $P'$ is of the form $\pi/H$ where $H$ is a
+closed subgroup of~$\pi$. In case (iii), there exists for every
+open invariant subgroup $\pi'$ of~$\pi$ a $\pi$-homomorphism
+$P'=\pi/H\to \pi/\pi'$, whence $H\subset \pi'$, whence $H=(0)$ and
+consequently (i), qed.
+
+\begin{corollary}
+\label{V.5.7}
+Let $\cal{C}$ be a Galois category. The fundamental
+pro-objects are isomorphic, the fundamental functors are
+isomorphic.
+\end{corollary}
+
+In other words, \emph{the category of fundamental functors
+is a connected groupoid~$\Gamma$},
+which one may call the \emph{fundamental groupoid}
+of the Galois category~$\cal{C}$. If $\cal{C}=\cal{C}(\pi)$,
+the group of automorphisms of an object of the fundamental groupoid
+is isomorphic to $\pi$, this isomorphism being well
+determined up to inner automorphism. (N.B. one
+calls a \emph{groupoid} a category in which all the
+morphisms are isomorphisms, a \emph{connected} groupoid a
+groupoid all of whose objects are isomorphic). The fundamental
+pro-objects of~$\cal{C}$ form a connected groupoid
+equivalent to the \emph{opposite} of the fundamental
+groupoid. If $F, F'$ are two fundamental functors, associated
+with fundamental pro-objects $P, P'$, then $\Hom(F, F')=\Isom(F,
+F')$ is sometimes denoted $\pi_{F', F}$ and plays the role of a
+``set of \emph{classes of paths} from~$F$ to~$F'$''. In
+particular $\pi_{F, F}=\pi_F$ is none other than the \emph{fundamental
+group of~$\cal{C}$} at $F$ constructed in the preceding
+no. As for the pro-object $P$ associated with~$F$, it
+plays the role of a \emph{universal covering at~$F$} of
+the final object $e_{\cal{C}}$ of~$\cal{C}$.
+
+It may be convenient to have a description of~$\cal{C}$ (up to
+equivalence) in terms of its fundamental groupoid
+$\Gamma$, without going through a choice of a particular object $F$ of the
+latter. Now to every object $X$ of~$\cal{C}$ is associated the
+functor $E_X$ on the fundamental groupoid, defined by
+$$
+E_X(F)=F(X),
+$$
+with values in~$\Ens$. (Such a functor is known in topology
+under the name of ``local system'' on the groupoid)
+$F(X)=E_X(F)$ may be called the \emph{fiber} of~$X$ at $F$,
+and the functor $E_X$ the fiber-functor associated with~$X$. The
+functor $E_X$ has the following
+% original p. 131
+property:
+\emph{for every $F$, $E_X(F)$ is a finite set
+on which the topological group $\pi_F=\Aut(F)$ operates continuously}.
+For a
+given covariant functor $\xi$ from the fundamental groupoid
+into~$\Ens$, the preceding condition is moreover equivalent
+to the same condition for \emph{one} arbitrary fixed $F$.
+This being so:
+
+\begin{proposition}
+\label{V.5.8}
+The functor $X\mto E_X$ is an equivalence of the category
+$\cal{C}$ with the category of covariant functors from the
+fundamental groupoid $\Gamma$ of~$\cal{C}$ into~$\Ens$, which
+satisfy the condition
+highlighted above.
+\end{proposition}
+
+Indeed, let $F_0$ be an object of the fundamental groupoid, and let
+$\pi_0=\Aut(F_0)$; then the functor $\xi\mto \xi(F_0)$ is an
+equivalence of the second category considered
+in~\Ref{V.5.8} with the category $\cal{C}(\pi_0)$, as one
+sees at once. On the other hand, the composite of the latter and
+of the functor $X\mto E_X$ is the natural equivalence
+$\cal{C}\to\cal{C}(\pi_0)$. It follows that the functor
+$X\mto E_X$ itself is an equivalence.
+
+\begin{corollary}
+\label{V.5.9}
+The category $\Prodash\cal{C}$
+is canonically equivalent to the category of covariant
+functors $\xi$ from the fundamental groupoid $\Gamma$ into the
+category of topological spaces, satisfying the condition:
+for every object $F$ of~$\Gamma$, $\xi(F)$ is a compact totally
+disconnected space with topological group $\pi_F$
+of operators.
+\end{corollary}
+
+Here again, one can verify this condition on~$\xi$; it suffices
+to verify it for \emph{one}~$F$. The proof is the
+same as for~\Ref{V.5.8}.
+
+\begin{remark}
+\label{V.5.10}
+Let $(F_s)_{s\in S}$ be a family
+of objects
+of the fundamental groupoid~$\Gamma$. Let us set, for $s, s'\in S$:
+$$
+\Hom(s, s')=\Hom(F_s, F_{s'})
+$$
+so that $S$ itself becomes a connected groupoid and
+the map $s\mto F_s$ a fully faithful functor from~$S$
+into $\Gamma$, call it~$f$. Considering then the functor $X\mto
+E_X\circ f$ from~$\cal{C}$ into the functor category
+$\Hom(S,\Ens)$, one obtains a variant of~\Ref{V.5.8}
+(and~\Ref{V.5.9}) with $\Gamma$ replaced by~$S$. The statement
+thus obtained reduces to Theorem~\Ref{V.4.1} when $S$
+is reduced to a point, and is none other than~\Ref{V.5.8}
+itself if $S$ is the set of objects of~$\Gamma$.
+\end{remark}
+
+We are going to use~\Ref{V.5.9} to define a canonical
+pro-object of~$\cal{C}$. For this, we consider the functor
+from~$\Gamma$ into the category of topological spaces
+% original p. 132
+(and even of topological groups):
+$$
+f\colon F\mto \Aut(F)=\pi_F.
+$$
+This functor satisfies the condition considered in~\Ref{V.5.8};
+the space with operators $f(F)$ under $\pi_F$ is none other than
+$\pi_F$, considered as a space with operators under
+itself by inner automorphisms. Hence the functor
+$f$ corresponds to a pro-object of~$\cal{C}$ determined up to
+unique isomorphism, which is even a pro-group of
+$\cal{C}$ and which is called the \emph{fundamental pro-group
+of~${\cal C}$},
+playing the role of a local system of fundamental
+groups. It is therefore a pro-group $\Pi$ of~$\cal{C}$ defined
+by the condition that one have an isomorphism functorial in $F$
+$$
+F(\Pi)\simeq\pi_F.
+$$
+
+If $X$ is an arbitrary pro-object of~$\cal{C}$, one has a canonical
+morphism
+$$
+\Pi\times X \to X
+$$
+which makes~$X$ an object with a group of operators on the left
+$G$ in $\Prodash\cal{C}$. For this it suffices to note that for $F$
+variable, one has a canonical map
+$$
+\Pi(F)\times X(F) \to X(F)
+$$
+\ie $$
+\Aut(F)\times E_X(F) \to E_X(F), \quad \text{or} \quad \pi_F\times
+F(X)\to F(X)
+$$
+which is functorial in~$F$. It is also functorial in $X$, hence
+for every morphism $X\to Y$ of pro-objects, the corresponding
+diagram
+$$
+\xymatrix{
+\Pi \times X \ar[r]\ar[d]& X\ar[d] \\ \Pi \times Y \ar[r]& Y
+}
+$$
+is commutative.
+
+\begin{remark}
+\label{V.5.11}
+One must be careful not to confuse a fundamental pro-object $P$ (which is not
+endowed with a group structure, and is connected) with the fundamental
+pro-group (which is a pro-\emph{group}, and in general not
+connected). Precisely, $G$ is connected if
+and
+only if $\pi_F$ operating on itself by inner
+automorphisms is transitive, \ie if $\pi$ is reduced to
+the neutral element, or again $\cal{C}$ equivalent to the
+category of finite sets. Another
+% original p. 133
+essential difference is that $G$ is determined up to
+unique isomorphism, and $P$ is determined only up to
+non-unique isomorphism.
+
+Let $E$ be a finite set and let us consider the constant functor on
+the groupoid~$\Gamma$ with value $E$: by virtue
+of~\Ref{V.5.8} it defines an object of~$\cal{C}$, denoted $E_{\cal{C}}$, which
+may also be interpreted as the sum of~$E$ copies of
+the final object $e_{\cal{C}}$ of~$\cal{C}$. One may consider
+$E_{\cal{C}}$ as a functor in $E$, from the category of
+finite sets into the category $\cal{C}$, and this functor is
+\emph{exact}, hence transforms finite groups into $\cal{C}$-groups,
+etc. If therefore $X$ is an object of~$\cal{C}$ on which the finite group
+$G$ operates on the right, we see that one may consider $X$
+as an object of~$\cal{C}$ having a $\cal{C}$-group of operators
+on the right~$G_{\cal{C}}$. We shall therefore say, by extension of a
+general terminology relative to objects with
+$\cal{C}$-groups of operators, that $X$ is \emph{formally
+principal homogeneous}
+under $G$ if $X$ is formally principal homogeneous under
+$G_{\cal{C}}$, \ie if the canonical morphism
+$$
+X\times G_{\cal{C}} \to X\times X
+$$
+deduced from the operation of~$G_{\cal{C}}$ on~$X$ on the right,
+is an isomorphism. We say that $X$ is \emph{principal homogeneous}
+under $G$ if it is so under $G_{\cal{C}}$, \ie if it is so formally,
+and if moreover the quotient $X/G=X/G_{\cal{C}}$ is~$e_{\cal{C}}$. If one
+fixes a fundamental functor, whence an equivalence of
+$\cal{C}$ with a category $\cal{C}(\pi)$, $X$ corresponds to
+a set on which $\pi$ operates on the left continuously,
+say $E=F(X)$. Making $G$ operate on~$X$ on the right then amounts
+to making $G$ operate on the set $E$ on the right, in such a way that the operations of~$G$ commute with those of~$\pi$. One
+then sees at once that $X$ is principal homogeneous under
+$G$ if and only if the set $E$ is a principal
+homogeneous space
+under $G$,
+\ie if and only if $G$ operates on it in a simply transitive way. (Moreover $X$ is formally
+principal homogeneous if and only if
+$E$ is principal homogeneous \emph{or} empty). Comparing
+with~\Ref{V.5.3}, we see that if $X$ is principal homogeneous under
+$G$ \emph{and connected}, then the given homomorphism from~$G$ into the
+group opposite to $\Aut(X)$ is an \emph{isomorphism}; and
+moreover, for an object $X$
+of~$\cal{C}$
+to be connected and principal homogeneous under the group opposite to
+$\Aut(X)$, it is necessary and sufficient, with the notation of \No \Ref{V.4}, that it
+be isomorphic to a \emph{Galois} $P_i$. In the typical case
+$\cal{C}=\cal{C}(\pi)$, this means that $X$ is isomorphic to a
+quotient of~$\pi$ by an invariant subgroup.
+
+Let us still suppose given a fundamental functor~$F$. Then the
+datum of an
+% original p. 134
+$X$ principal homogeneous under a finite group $G$ operating on
+the right, and of a point $a\in F(X)$, is equivalent to the
+datum of a homomorphism from~$\pi$ into the group~$G$. Indeed,
+to such a homomorphism one makes correspond the set $E=G$,
+making~$\pi$ operate on it on the left by means of the given homomorphism
+$\pi\to G$ and the left translations of~$G$, and
+making $G$ operate on it on the right by right translation, the
+marked point $a$ of~$E$ being the unit element
+of~$G$. Thanks to the foregoing, one thus obtains in an
+essentially unique way every triple $(X, G, a)$ having the
+properties considered above,
+since a
+principal homogeneous set with marked point under a group $G$ is identified
+with the latter. In this way, one has a direct geometric
+interpretation of the functor $G\mto \Hom(\pi, G)$ from the
+category of finite groups into~$\Ens$, a functor which is
+pro-representable by means of~$\pi$, and whose
+consideration would therefore furnish another construction of the group
+$\pi$ associated with~$F$.
+\end{remark}

@@ -1,0 +1,524 @@
+\Subsection*{4) Proof of 2)\kern2pt b)}
+
+4) 1. Case where $\Phi$ is a gerbe.
+
+One can find a surjective \'etale morphism of finite type $p
+\colon X_1 \to X$ such that $p^*\Phi$ is a trivial gerbe. By
+descent, as in 3)\kern2pt2, one sees that it suffices to prove the
+theorem for $X_1$, $X_1\times_X X_1$ and
+% original p. 403
+$X_1\times_X X_1\times_X X_1$. One is therefore reduced to the case where
+$\Phi$ is the gerbe of torsors under a constructible sheaf of groups
+$F$ whose fibers are of order prime to the
+residue characteristics of~$S$.
+
+By SGA~4 IX~2.14, one can find a finite family of
+finite morphisms $p_i \colon Z_i \to X$ and, for each $i$, a
+finite constant sheaf of groups $C_i$, of order prime to the
+residue characteristics of~$S$, such that one has a
+monomorphism
+$$
+j\colon F \to \prod_{i} p_{i*}C_i=G \quoi.
+$$
+Let $\Phi_i$ be the stack of torsors under $C_i$ and $\Psi$ the stack of
+torsors under $G$. It follows from 2)\kern2pt a) that, at the cost of
+restricting $S$ to a nonempty open subset, one may assume that the
+$(C_i,fp_i)$ are cohomologically proper relative to~$S$ in
+dimension $\le 1$, and that the stacks $f_*p_{i*}\Phi_i$ are
+$1$-constructible. It then follows from~\Ref{XIII.1.9} that the
+$(p_{i*}C_i,f)$ are cohomologically proper relative to~$S$
+in dimension $\le 1$; hence the same holds for~$(G,f)$. Moreover,
+since $p_{i*}\Phi_i$ is equivalent to the stack of torsors under the
+group $p_{i*}C_i$ (SGA~4 VIII~5.8), one sees that $f_*\Psi$ is
+$1$-constructible.
+
+Since $\R^1f_*G$ is constructible, one can find a sheaf
+representable by an \'etale $Y$-scheme of finite type $T$ and
+an epimorphism
+$$
+a \colon T \to \R^1f_*G
+$$
+(SGA~4 IX~2.7); moreover one may assume that the image of the identity
+section of~$T(T)$ is defined by a torsor $Q$ on~$X\times_Y
+T=X_T$, with group $G|X_T$. Let $f_T \colon X_T \to T$ be the canonical
+morphism, $F_T=F|X_T$, etc. By 1)\kern2pt b) one may assume,
+at the cost of restricting $S$ to a nonempty open subset, that
+$(Q/F_T,f_T)$ is cohomologically proper relative to~$S$ in
+dimension $\le 0$ and that $f_{T*}(Q/F_T)$ is constructible. It
+then follows from~\Ref{XIII.3.1.2} that $f_*\Psi$ is constructible.
+
+Let us show that $(F,f)$ is cohomologically proper relative to
+% original p. 404
+$S$ in dimension $\le 1$. By \Ref{XIII.1.13}~2) it suffices to
+prove that, for every scheme $Y_1$ \'etale over~$Y$ and every
+torsor $Q_1$ on~$X_1=X\times_Y Y_1$, if $f_1 \colon X_1 \to Y_1$ is
+the canonical morphism, then $(Q_1/F_1,f_1)$ is cohomologically
+proper relative to~$S$ in dimension $\le 0$. Now, by
+definition of~$T$, $Q_1$ is, locally for the \'etale topology
+of~$Y_1$, an inverse image of~$Q$, which proves our
+reduction.
+
+4) 2. General case.\par
+Using lemma~\Ref{XIII.6.1.1}, 4)\kern2pt1 and 1)\kern2pt a), one sees that,
+at the cost of restricting $S$ to a nonempty open subset, one may
+assume $S(f_*\Phi)$ constructible and $(S\Phi,f)$ cohomologically
+proper relative to~$S$ in dimension $\le 0$. One can then
+find a sheaf representable by an \'etale $Y$-scheme
+of finite type $T$ and an epimorphism
+$$
+a \colon T \to S(f_*\Phi)\quoi.
+$$
+One takes up again the notation of 4)\kern2pt1, and one sets moreover $Z=T\times_Y T$,
+$X_Z=X\times_Y Z$, and one denotes by $f_Z \colon X_Z \to Z$ the canonical
+morphism. One may assume $T$ chosen so that the image $q$ of the
+identity section of~$T(T)$ under $a$ is defined by an object~$p$
+of~$(f_*\Phi)_T=\Phi_{X_T}$. Let $p_1$ and $p_2$ (\resp~$q_1$ and
+$q_2$) be the inverse images of~$p$ (\resp~$q$) under the two projections
+of~$Z$ into $T$. One may assume, at the cost of restricting $S$ to
+a nonempty open subset, that $(\SheafAut_{X_T}(p),f_T)$ is
+cohomologically proper relative to~$S$ in dimension $\le 1$,
+that $(\SheafHom_{X_Z}(p_1,p_2),f_Z)$ is cohomologically proper
+relative to~$S$ in dimension $\le 0$, and that
+$f_{T*}(\SheafAut_{X_T}(p))$, $f_{Z*}(\SheafHom_{X_Z}(p_1,p_2))$ are
+constructible ( a)\kern2pt1) and 4)\kern2pt1)).
+
+From this one first deduces that, for every scheme $Y_1$ \'etale over~$Y$ and every pair of objects $y$, $y_1$ of~$(f_*\Phi)_{Y_1}$, the
+sheaf $\SheafAut_{Y_1}(y)$ (\resp $\SheafHom_{Y_1}(y,y_1)$) is
+constructible, such a sheaf being, locally for the \'etale
+topology of~$Y_1$, an inverse image of~$f_{T*}(\SheafAut_{X_T}(p))$
+(\resp of~$f_{Z*}(\SheafHom_{X_Z}(p_1,p_2))$).
+
+It remains to prove that $(\Phi,f)$ is cohomologically proper
+relative
+% original p. 405
+to~$S$ in dimension $\le 1$. For this it suffices to show that,
+for every $S'$-scheme $S$ and every geometric point
+$\overline{y}'$ of~$Y$, if one denotes by $\overline{Y}$ the strict
+localization of~$Y$ at $y'$, $\overline{X}=X \times_Y \overline{Y}$, etc.,
+then the canonical functor
+$$
+\overline{\varphi} \colon \Phi(\overline{X}) \to
+\Phi'(\overline{X'})
+$$
+is an equivalence of categories.
+
+Let us show that $\overline{\varphi}$ is fully faithful. Let
+$x$, $y \in \Phi(\overline{X})$, let $x'$, $y'$ be their images in
+$\Phi'(\overline{X'})$, and let us show that the canonical morphism
+\begin{equation*}
+\label{eq:XIII.4.*} \tag{$*$} {\Hom_{\overline{X}}(x,y)
+\to \Hom_{\overline{X'}}(x',y') }
+\end{equation*}
+is bijective. By definition of~$T$ there exist two morphisms from
+$\overline{Y}$ to $T$ such that $x$ and~$y$ are the inverse images
+of~$p$ under these two morphisms. This amounts to saying that there is a
+morphism $\overline {Y} \to Z$, whence a morphism $h\colon
+\overline{X} \to X_Z$ such that one has
+$$
+h^*(p_1)=x \qquad h^*(p_2)=y.
+$$
+Consequently one has a canonical isomorphism
+$$
+\SheafHom_{\overline{X}}(x,y)=h^*(\SheafHom_{X_Z}(p_1,p_2) )\quoi.
+$$
+but, taking into account the fact that $(\SheafHom_{X_Z}(p_1,p_2),f_Z)$ is
+cohomologically proper relative to~$S$ in dimension $\le 0$,
+one sees that the same holds for
+$(\SheafHom_{\overline{X}}(x,y),\overline{f})$, which proves that the
+morphism \eqref{eq:XIII.4.*} is bijective.
+
+Let us show that $\overline{\varphi}$ is essentially surjective. Let
+$x'\in \Phi'(\overline{X'})$. Since $(S\Phi,f)$ is cohomologically
+proper relative to~$S$ in dimension $\le 0$, the canonical
+morphism
+$$
+\H^0(\overline{X},\overline{S\Phi}) \to
+\H^0(\overline{X'},\overline{S\Phi}')
+$$
+is bijective. Let $G'$ be the maximal subgerbe of~$\Phi'$
+generated by $x'$; there then exists a maximal subgerbe $G$ of
+$\overline{\Phi}$ whose inverse image on~$\overline{X'}$ is
+$G'$. By 4)\kern2pt1, $(G,\overline{f})$ is cohomologically proper
+relative to~$S$ in dimension $\le 1$; consequently the canonical
+functor
+$$
+G(\overline{X}) \to G'(\overline{X'})
+$$
+% original p. 406
+is an equivalence of categories, which proves the existence
+of an element $x$ of~$\Phi(\overline{X})$ whose image in
+$\Phi'(X')$ is isomorphic to $x'$, and completes the
+proof of the theorem.
+
+\begin{sublemma}
+\label{XIII.3.1.1}
+Let $S$ be a locally noetherian scheme and
+$$
+\xymatrix@C=.5cm{ \Phi \ar[r]^p & \Phi_1 \ar@<2pt>[rr]^{p_1,p_2}
+\ar@<-2pt>[rr] && \Phi_2 }
+$$
+an exact diagram of stacks on~$S$ \eqref{XIII.1.10.1}. If $\Phi_1$
+is constructible, so is $\Phi$. If, for every
+scheme $S'$ \'etale over~$S$ and every pair
+of objects
+$x_1,~y_1$ of~$(\Phi_1)_{S'}$, the sheaf $\SheafHom_{S'}(x_1,y_1)$
+is constructible, then, for every pair of objects $x,~y$ of
+$\Phi_{S'}$, the same holds for~$\SheafHom_{S'}(x,y)$. Suppose
+that $\Phi_1$ is $1$-constructible (\Ref{XIII.0}) and that $\Phi_2$ is
+constructible; then $\Phi$ is $1$-constructible.
+\end{sublemma}
+
+For every scheme $S'$ \'etale over~$S$ and every object $x$ of
+$\Phi_{S'}$, one has a monomorphism
+$$
+\SheafAut_{S'}(x)\to\SheafAut_{S'}(p(x)).
+$$
+It therefore follows from SGA~4 IX~2.9 that, if $\Phi_1$ is
+constructible, so is $\Phi$, and the second
+assertion of the lemma is proved in the same way.
+
+Suppose now $\Phi_1$ $1$-constructible and $\Phi_2$
+constructible. The morphism $p$ induces on the sheaves of
+maximal subgerbes a morphism
+$$
+\varphi\colon S\Phi\to S\Phi_1.
+$$
+Let $G$ be the image of~$S\Phi$ under $\varphi$; by SGA~4 IX~2.9,
+$G$ is a constructible sheaf. One can therefore find a sheaf
+representable by an \'etale $S$-scheme of finite type $T$ and
+an epimorphism
+$$
+a\colon T\to G
+$$
+(SGA~4 IX~2.7).
+% original p. 407
+Moreover one can choose $T$ so that the image $y$ of the identity
+section of~$T(T)$ under $a$ is defined by an object $x_1$ of
+$(\Phi_1)_T$ of the form $x_1=p(x)$, where $x\in\Phi_T$.
+
+It suffices to show that, for every point $s$ of~$S$, there exists a
+nonempty open subset~$U$ of~$\overline{\{ s\} }$ such that $S\Phi|U$ is
+locally constant constructible. Let $s\in S$, let $\overline{s}$ be a
+geometric point over~$s$ and $\overline{y}_1,\dots,\overline{y}_n$ the elements of~$G_{\overline{s}}$. By
+definition of~$T$ there exist morphisms
+$h_i\colon\overline{s}\to T$ such that one has
+$h_i^*(y)=\overline{y}_i$. Let $S'$ be the fiber product over~$S$ of
+$n$ schemes isomorphic to $T$, $h\colon\overline{s}\to S'$ the
+fiber product of the $h_i$, $y_i$ (\resp $x_i$) the inverse image of
+$y$ (\resp $x$) under the $i$th projection of~$S'$ onto~$T$. Let
+$F_i$ be the subsheaf of~$S\Phi |S'$ that is the inverse image of~$y_i$,
+and let us show that the $F_i$ are constructible. The sheaf $F_i$ is
+a quotient of the sheaf $F'_i$ such that, for every scheme $S''$
+\'etale over~$S'$, one has
+\begin{multline*}
+F'_i(S'') = \{\text{classes mod.\ isomorphism of objects $z$ of
+$\Phi_{S''}$ equipped}\\
+\text{ with an isomorphism $i\colon p(z)\simeq p(x_i|S'')$}\}.
+\end{multline*}
+It suffices to show that the $F_i'$ are constructible. Now, if one
+sets $z_i=p_1p(x_i)$, $z_i'=p_2p(x_i)$, one has a monomorphism
+$$
+\Psi_i\colon F'_i\to\SheafIsom_{S'}(z_i,z_i'),
+$$
+obtained by associating, with every scheme $S''$ \'etale over~$S'$ and
+every object $z$ of~$\Phi_{S''}$ such that one has an isomorphism
+$i\colon p(z)\simeq p(x_i|S'')$, the isomorphism from~$z_i$ to $z_i'$
+defined by the condition that the diagram
+$$
+\xymatrix@C=1.2cm{
+p_1p(z) \ar[r]^-{p_1(i)}\ar[d]_-j& z_i\ar[d]\\ p_2p(z) \ar[r]^-{p_2(i)}& z'_i
+}
+$$
+be commutative ($j$ is the canonical morphism associated with the
+exact diagram).
+% original p. 408
+
+The morphism $\Psi_i$ is injective because to say that two objects $z,~z'$
+such that one has isomorphisms $i\colon p(z)\isomto
+p(x_i|S''),~i'\colon p(z')\isomto p(x_i|S'')$ define the
+same element of~$\SheafIsom_{S''}(z_i,z'_i)$ amounts to
+saying that one has $p_1(i'^{-1}i)=p_2(i'^{-1}i)$, \ie that $i'^{-1}i$
+comes from an isomorphism $z\to z'$. The sheaf $F'_i$, being a
+subsheaf of~$\SheafIsom_{S'}(z_i,z'_i)$, is constructible.
+
+Since one can find a nonempty open subset~$U$ of~$\overline{\{ s\}}$
+such that $y_1|U,\dots,y_n|U$ generate $G$, it follows from
+lemma~\Ref{XIII.6.1.2} below that $S\Phi |U$ is constructible,
+hence, at the cost of shrinking $U$, $S\Phi |U$ is locally constant
+constructible.
+
+\begin{sublemma}
+\label{XIII.3.1.2}
+Let $S$ be a locally noetherian scheme, $f\colon X\to S$
+a morphism, $F\to G$ a monomorphism of sheaves of groups on~$X$, $\Psi$ (\resp $\Psi_1$) the stack of torsors under $F$
+(\resp under $G$), $\Phi=f_*\Psi$, $\Phi_1=f_*\Psi_1$. Suppose
+given a sheaf on~$S$ representable by an \'etale $S$-scheme
+of finite type $T$ and a surjective morphism
+$$
+a\colon T\to S\Phi_1\simeq\R^1f_*G,
+$$
+such that there exists a torsor $Q$ on~$X_T=X\times_ST$ with group
+$G|X_T$ which defines in $\R^1f_*G(T)$ the image under $a$ of the
+identity section of~$T(T)$. Let $f_T\colon X_T\to T$ be the canonical
+morphism and set $F_T=F|X_T$. Suppose that $\Phi_1$ is
+$1$-constructible and that $f_{T*}(Q/F_T)$ is constructible. Then
+$\Phi$ is $1$-constructible.
+\end{sublemma}
+
+It suffices indeed to copy the proof
+of~\Ref{XIII.3.1.1}, the fact that one has morphisms $\Psi_i$
+being replaced by the fact that one has isomorphisms
+$$
+F'_i\isomto f_*(Q/F_T)|S'.
+$$
+
+\begin{subremark}
+\label{XIII.3.1.3}
+Suppose
+% original p. 409
+that $k=\kres(s)$ is of characteristic zero; then the
+schemes of finite type over~$\overline{k}$ of dimension $\leq\dim X$
+are strongly desingularizable, and the proof
+of~\Ref{XIII.3.1} makes it possible to prove the following results:
+\begin{enumerate}
+\item[a)] There exists a nonempty open subset~$S_1$ of~$S$ such that, for every
+scheme $S'$ over~$S_1$ whose maximal points are of
+characteristic zero and every locally
+constant constructible sheaf of sets $F$ on~$X'=X\times_SS'$, $(F,f')$ is
+cohomologically proper relative to~$S'$ in dimension $\leq
+0$.
+
+\item[b)] If all the residue characteristics of~$S$ are
+zero, there exists a nonempty open subset~$S_1$ of~$S$ such that, for every
+scheme $S'$ over~$S_1$ and every locally constant
+constructible sheaf of groups $F$ on~$X'$, $(F,f')$ is
+cohomologically proper relative to~$S'$ in dimension $\leq1$.
+\end{enumerate}
+
+It suffices indeed to copy the proof of
+\Ref{XIII.3.1}.2)\kern2pt a). Proposition~\Ref{XIII.2.7} used in
+3)\kern2pt 4 applies to the case of a locally constant sheaf $F$, because,
+taking up again the notation of 3)\kern2pt4, every torsor under $F$ is
+tamely ramified on~$P$ relative to~$S$, since
+all the residue characteristics of~$S$ are zero.
+\end{subremark}
+
+\begin{corollary}
+\label{XIII.3.2}
+Let $k$ be a field of characteristic $p\geq 0$, $p'$ the set
+of prime numbers distinct from~$p$, $f\colon X\to k$ a coherent
+morphism.
+\begin{enumerate}
+\item[1)] For every sheaf of sets $F$, $(F,f)$ is
+cohomologically proper in dimension $\leq 0$.
+\item[2)] Suppose that one of the following two conditions is satisfied:
+\begin{enumerate}
+\item[a)] $f$ is of finite type and the schemes of finite type of
+dimension $\leq\dim X$ over an algebraic closure of~$k$ are
+strongly de\-sin\-gu\-lar\-iz\-able.
+\item[b)] The schemes of finite type over an algebraic
+closure of~$k$ are
+% original p. 410
+strongly desingularizable.
+\end{enumerate}
+Then, for every sheaf of ind-$p'$-groups $F$, $(F,f)$ is
+cohomologically proper in dimension $\leq 1$.
+\end{enumerate}
+\end{corollary}
+
+Let $F$ be a sheaf of sets (\resp of
+ind-$p'$-groups). By SGA~4 IX~2.7.2 one can write
+$F$ as a filtered inductive limit
+$$
+F=\varinjlim F_i,
+$$
+where the $F_i$ are constructible sheaves of sets (\resp of
+ind-$p'$-groups). Since $f$ is coherent, $f_*$
+(\resp $\R^1f_*$) commutes with inductive limits (SGA~4 VII~3.3). If
+one knows that the $(F_i,f)$ are cohomologically proper in
+dimension $\leq 0$ (\resp that every sheaf of sets is
+cohomologically proper in dimension $\leq 0$ and that the $(F_i,f)$
+are cohomologically proper in dimension $\leq 1$), the same will
+hold for~$(F,f)$. One may therefore assume $F$ constructible.
+
+If one assumes $f$ of finite type (\resp satisfying a)), the
+proposition follows from \Ref{XIII.3.1}~1)\kern2pt b) (\resp from
+\Ref{XIII.3.1}~2)\kern2pt b)). Let us now prove~\Ref{XIII.3.2} when one no longer
+assumes $f$ of finite type. For every scheme $S'$ over
+$k$ and every geometric point $\overline{s}$ of~$S'$, one
+denotes by $\overline{k}$ (\resp $\overline{S'}$) the strict localization of
+$k$ at $\overline{s}$ (\resp of~$S'$ at $\overline{s}$),
+by $\overline{X}$ the inverse image of~$X$ over~$\overline{k}$, and one
+considers the cartesian square
+$$
+\xymatrix@C=1.2cm{
+\overline{X}\ar[d]_-{\overline{f}}&\ar[l]_g \overline{X'}\ar[d]^-{\overline{f}'}\\ \overline{k}&\ar[l]\overline{S'}
+}
+$$
+It suffices to prove that, for every $S'$ and every $\overline{s}$, the
+canonical morphism
+$$
+\H^0(\overline{X},\overline{F})\to
+\H^0(\overline{X'},\overline{F'})\qquad
+\text{(\resp $\H^1(\overline{X},\overline{F})\to
+\H^1(\overline{X'},\overline{F'})$)}
+$$
+is an isomorphism. It suffices to show that one has the relations
+% original p. 411
+\begin{equation*}
+\label{eq:XIII.3.*}
+\tag{$*$} \overline{F}\simeq g_*g^*\overline{F}\qquad
+\text{(\resp $\R^1g_*(g^*\overline{F})=0$).}
+\end{equation*}
+Now, in this form, the question is local on~$X$ for the \'etale
+topology. One may therefore assume $X$ affine; by passage to the
+limit one may assume $X$ of finite type over~$k$. One then knows that
+$(F,f)$ is cohomologically proper in dimension $\leq 0$
+(\resp $\leq 1$) and that the same holds when $X$ is replaced by
+a scheme \'etale of finite type over~$X$, which proves
+\eqref{eq:XIII.3.*}.
+
+\begin{theorem}
+\label{XIII.3.3}
+Let $S$ be an irreducible scheme with generic point
+$s$, $f\colon X\to S$ a morphism of finite
+presentation. Suppose that the schemes of finite type of dimension
+$\leqslant\dim X_s$ over an algebraic closure $\bar{k}$ of
+$k$ are desingularizable \textup{(EGA~IV 7.9.1)}. Then, if $\LL$
+denotes the set of prime numbers distinct from the
+residue characteristics of~$S$, one can find a nonempty open
+subset~$S_1$ of~$S$ such that the morphism $f|S_1$ is
+universally locally $1$-aspherical for~$\LL$.
+\end{theorem}
+
+One may assume $S$ integral and $X$ reduced (SGA~4
+VIII~1.1). By passage to the limit one may assume $S$
+noetherian. Moreover, to prove the theorem, it
+suffices to do so after a finite extension $S_1\to S$, where $S_1$
+is an integral scheme and where $S_1\to S$ is a composite
+of \'etale extensions and of surjective radicial extensions.
+
+Let us first show that, at the cost of restricting $S$ to a nonempty open
+subset, $f$ is universally locally $0$-acyclic. At the cost of
+making a radicial extension of~$\kres(s)$, one may assume that the
+morphism $(X_s)_\red\to s$ is separable; one may therefore assume,
+at the cost of restricting $S$ to a nonempty open subset and of making
+a surjective radicial extension of~$S$, that the morphism $f$ is
+flat, with separable geometric fibers (EGA~IV
+12.1.1), which implies that $f$ is universally
+$0$-acyclic (SGA~4 XV~4.1).
+
+Let us show that, at the cost of restricting $S$ to a nonempty open subset,
+$f$ is universally locally $1$-aspherical for
+$\LL$. At the cost of making a
+% original p. 412
+finite extension of~$\kres(s)$, which is permissible because one can
+consider it as a composite of an \'etale extension and of a
+radicial extension, one can find a surjective proper morphism
+$p_s\colon Y_s\to X_s$, where $Y_s$ is a scheme smooth over~$S$,
+of the same dimension as $X_s$, and one may assume that $p_s$
+comes from a surjective proper morphism $p\colon Y\to X$, where $Y$
+is a scheme smooth over~$S$ (EGA~IV 9.6.1 and 12.1.6). It suffices to
+show that, at the cost of restricting $S$ to a nonempty open subset,
+for every diagram with cartesian squares
+$$
+\xymatrix{ S''\ar[d]_i & X ''\ar[d]^j\ar[l]_{f''} \\ S'\ar[d] &
+X'\ar[d]\ar[l]_{f'} \\ S & X, \ar[l]_f }
+$$
+where $i$ is \'etale of finite presentation, and for every
+sheaf of ind-$\LL$-groups $F$ on~$S''$, if $\Phi$ is the stack
+of torsors under $F$, then the canonical morphism
+$$
+{f'}^*i_*\Phi \to j_*{f''}^*\Phi
+$$
+is an equivalence. Let $Z=Y\times_{X}Y,
+T=Y\times_{X}Y\times_{X}Y$. One has in a natural way a commutative
+diagram
+$$
+\xymatrix{ S'' \ar[d]_i & X''\ar[l]_{f''}\ar[d]_j &
+Y''\ar[l]_{p''}\ar[d] & Z''\ar[d]\ar@<-.4ex>[l]\ar@<.4ex>[l] &
+T''\ar[d]\ar[l]\ar@<-.8ex>[l]\ar@<.8ex>[l] \\ S' \ar[d] & X'
+\ar[l]_{f'}\ar[d] & Y'\ar[d]\ar[l]_{p'}&
+Z'\ar[d]\ar@<-.4ex>[l]\ar@<.4ex>[l] &
+T'\ar[d]\ar[l]\ar@<-.8ex>[l]\ar@<.8ex>[l] \\ S & X\ar[l]_f & Y\ar[l]_p
+& Z'\ar@<-.4ex>[l]\ar@<.4ex>[l] & T'\ar[l]\ar@<-.8ex>[l]\ar@<.8ex>[l]
+}
+$$
+Let
+% original p. 413
+$q\colon Z\to X$ and $r\colon T\to X$ be the canonical morphisms,
+the notations $q', r', q'', r''$ having an obvious
+meaning. By \Ref{XIII.1.11}~2), one has the following
+essentially commutative diagram, whose rows are exact:
+$$
+\xymatrix{ f'^* i_*\Phi \ar[r]\ar[d]_a &
+p'_*p'^*(f'^*i_*\Phi)\ar[d]_b\ar@<-.4ex>[r]\ar@<.4ex>[r] &
+q'_*q'^*(f'^*i_*\Phi)\ar[d]_c\ar[r]\ar@<-.8ex>[r]\ar@<.8ex>[r]&
+r'_*r'^*(f'^*i_*\Phi)\ar[d]_d \\ j_*f''^*\Phi \ar[r]&
+j_*p''_*p''^*(f''^*\Phi)\ar@<-.4ex>[r]\ar@<.4ex>[r] &
+j_*q''_*q''^*(f''^*\Phi)\ar[r]\ar@<-.8ex>[r]\ar@<.8ex>[r]&
+j_*r''_*r''^*(f''^*\Phi) }
+$$
+Since $Y$ is smooth over~$S$, the morphism $fp$ is universally
+locally $1$-aspherical for $\LL$ (SGA~XV~2.1),
+and it follows from \cite[VII 2.1.7]{XIII.2} that $b$ is an equivalence of
+categories. On the other hand, at the cost of restricting $S$ to a
+nonempty open subset, one may assume that the morphisms $Z\to S$ and $T\to
+S$ are universally locally $0$-acyclic. It follows
+that the functors $c$ and $d$ are fully faithful, and the
+diagram above then shows that $a$ is an equivalence, which
+completes the proof.
+\begin{corollary}
+\label{XIII.3.4}
+Let $k$ be a field of characteristic $p\geqslant0$, $p'$
+the set of prime numbers distinct from~$p$, $f\colon X\to k$ a
+coherent morphism. Suppose that one of the following two
+conditions is satisfied:
+\begin{enumerate}
+\item[a)] $f$ is of finite type and the schemes of finite type of
+dimension $\leqslant\dim X$ over an algebraic closure of~$k$
+are desingularizable.
+\item[b)] The schemes of finite type over an algebraic
+closure of~$k$ are desingularizable.
+\end{enumerate}
+Then $f$ is universally locally $1$-aspherical for $p'$.
+\end{corollary}
+
+Case a) follows from~\Ref{XIII.3.3}. In case b), the question
+being local on~$X$, one may assume $X$ affine; by passage
+to the limit (SGA~4 XV~1.3), one reduces to the case where $X$ is
+of finite type over~$k$.
+\begin{corollary}
+\label{XIII.3.5}
+Let
+% original p. 414
+$S$ be an irreducible scheme with generic point
+$s$, $f\colon X\to S$ a morphism of finite
+presentation. Suppose that the schemes of finite type of dimension
+$\leqslant\dim X_s$ over an algebraic closure $\overline{k}$
+of~$\kres(s)$ are strongly desingularizable \textup{(SGA~5 I~3.1.5)}. If
+$\LL$ denotes the set of prime numbers distinct from the
+residue characteristics of~$S$, one can find a nonempty open
+subset~$S_1$ of~$S$ such that, for every specialization
+$\bar{s}_1\to\bar{s}_2$ of geometric points of~$S_1$, the
+specialization morphism \eqref{XIII.2.10}
+$$
+\pi_1^{\LL}(X_{\bar{s}_1})\to\pi_1^{\LL}(X_{\bar{s}_2})
+$$
+is bijective.
+\end{corollary}
+
+By~\Ref{XIII.3.1} and~\Ref{XIII.3.3}, one may, at the cost of
+restricting $S$ to a nonempty open subset, assume that $f$ is
+locally $1$-aspherical for $\LL$, and that, for every finite constant sheaf
+of~$\LL$-groups $F$ on~$X$, $(F,f)$ is
+cohomologically proper in dimension $\leqslant 1$. It then follows
+from~\Ref{XIII.1.14} that, for every specialization
+$\bar{s}_1\to\bar{s}_2$ of geometric points of~$S_1$, the
+specialization morphism
+$$
+\left(\R^1 f_* F\right)_{\bar{s}_2} \to \left(\R^1 f_*
+F\right)_{\bar{s}_1}
+$$
+is bijective. The corollary is nothing but the translation of the
+foregoing in terms of fundamental groups.

@@ -1,0 +1,417 @@
+% English translation of the front matter of SGA 1 (abstract, preface,
+% Introduction, Avertissement), from lines 1--545 of the corrected SMF
+% source smf_doc-math_3_01.tex.
+
+\chapter*{Abstract}
+
+This volume is a newly typeset and annotated edition of the book
+``Rev\^etements \'Etales et Groupe Fondamental'', Lecture Notes in
+Mathematics, 224, Springer-Verlag, Berlin-Heidelberg-New York, 1971, by
+Alexander Grothendieck et al.
+
+The text presents the foundations of a theory of the fundamental group
+in Algebraic Geometry, from the ``Kroneckerian'' point of view, which
+makes it possible to treat on the same footing the case of an algebraic
+variety in the usual sense and that of the ring of integers of a number
+field, for example.
+
+\medskip
+\noindent\emph{Mathematics Subject Classification:} 14-02, 14A15, 14B25,
+14D15, 14E20, 14F35, 14H30.
+
+\smallskip
+\noindent\emph{Keywords:} \'Etale morphism, smooth morphism, flat
+morphism, scheme, fundamental group, covering, theory of descent,
+specialization.
+
+\chapter*{Preface}
+
+The present text is a newly typeset and annotated edition of the book
+``Rev\^etements \'Etales et Groupe Fondamental'', Lecture Notes in
+Mathematics, 224, Springer-Verlag, Berlin-Heidelberg-New York, 1971, by
+Alexander Grothendieck et al.
+
+The typesetting in \LaTeX 2e was carried out by volunteers participating
+in a project directed by Bas Edixhoven, about which more details can be
+found at the address \url{http://www.math.leidenuniv.nl/~edix/}. The
+page layout was completed by the \hbox{Soci\'et\'e} math\'ematique de
+France.
+
+This is a \emph{slightly corrected version} of the original text. It is
+published by the \hbox{Soci\'et\'e} math\'ematique de France
+(\url{http://smf.emath.fr/}) in the series ``Documents
+\hbox{Math\'ematiques}''. Some updates have been made by Michel Raynaud.
+These are delimited by brackets \lcrochetbf\,\rcrochetbf\ and indicated
+by the symbol (MR)
+% source: page references replaced by statement numbers
+(Remarks X~\Ref{X.2.14}, XI~\Ref{XI.1.4}, XII~\Ref{XII.5.6},
+XIII~\Ref{XIII.2.13}, and the footnote to III~6.6).
+In order to unify notation, the residue field of a point $x$ is denoted
+$\kres(x)$, and that of a local ring $A$ is denoted $\kres(A)$.\par
+There also exists an electronic version meant to reproduce the original
+text.
+
+The two versions have a single common source file, which is to be found
+on the arXiv.org e-Print archive server at \url{http://arxiv.org/}. The
+differences between the two versions are documented in the source file.
+
+The old page numbering is incorporated in the margin (the number~$n$
+marking the beginning of page~$n$).\footnote{Translator's note: in this
+English edition the original page numbers are kept only as comments in
+the \TeX{} source, and the page references of the SMF edition in the
+preceding paragraphs have been replaced by statement numbers.}
+
+\chapter*{Introduction}
+\setcounter{section}{0}\renewcommand{\thesubsection}{\arabic{subsection}}
+\label{I.0}
+
+In the first part of this introduction we give some details on the
+contents of the present volume; in the second, on the whole of the
+``\emph{S\'eminaire de G\'eom\'etrie Alg\'ebrique du Bois-Marie}'', of
+which the present volume constitutes the first volume.
+
+\subsection{}
+\label{I.introduction.1}
+The present volume presents the foundations of a theory of the
+fundamental group in Algebraic Geometry, from the ``Kroneckerian'' point
+of view, which makes it possible to treat on the same footing the case of
+an algebraic variety in the usual sense and that of the ring of integers
+of a number field, for example. This point of view can be expressed in a
+satisfactory way only in the language of schemes, and we shall use this
+language freely, as well as the main results expounded in the first
+three chapters of the \emph{\'El\'ements de G\'eom\'etrie Alg\'ebrique}
+of J\ptbl \textsc{Dieudonn\'e} and A\ptbl \textsc{Grothendieck} (cited
+EGA in what follows). The study of the present volume of the
+``\emph{S\'eminaire de G\'eom\'etrie Alg\'ebrique du Bois-Marie}''
+requires no other knowledge of Algebraic Geometry, and can therefore
+serve as an introduction to the present-day techniques of Algebraic
+Geometry for a reader wishing to become familiar with these techniques.
+
+Expos\'es \Ref{I} to \Ref{XI} of this book are a verbatim reproduction,
+practically unchanged, of the mimeographed notes of the oral Seminar,
+which were distributed by the \emph{Institut des Hautes \'Etudes
+Scientifiques}\footnote{As were the notes of the seminars following this
+one. This mode of distribution having proved impracticable and
+insufficient in the long run, all the ``\emph{S\'eminaire de
+G\'eom\'etrie Alg\'ebrique du Bois-Marie}'' will henceforth appear in
+book form, like the present volume.}. We have confined ourselves to
+adding a few footnotes to the original text, correcting some misprints,
+and making a terminological adjustment, the term ``simple morphism'' in
+particular having been replaced in the meantime by ``smooth morphism'',
+which does not lend itself to the same confusions.
+
+Expos\'es \Ref{I} to \Ref{IV} present the local notions of \emph{\'etale}
+morphism and \emph{smooth} morphism; they make hardly any use of the
+language of schemes, expounded in Chapter~I of the
+\emph{\'El\'ements}\footnote{A more complete study is now available in
+the \emph{\'El\'ements}, Chap.~IV, \oldS\S 17 and 18.}.
+Expos\'e~\Ref{V} presents the axiomatic description of the fundamental
+group of a scheme, useful even in the classical case where this scheme
+reduces to the spectrum of a field, where one finds a very convenient
+reformulation of the usual Galois theory. Expos\'es \Ref{VI} and
+\Ref{VIII} present the \emph{theory of descent}, which has taken on a
+growing importance in Algebraic Geometry in recent years, and which could
+render analogous services in Analytic Geometry and in Topology. It
+should be pointed out that Expos\'e VII had not been written up, and its
+substance is to be found incorporated in a work of J\ptbl Giraud
+(M\'ethode de la Descente, Bull.\ Soc.\ Math.\ France, M\'emoire~2,
+1964, viii + 150~p.). In Expos\'e~\Ref{IX} one studies more specifically
+the descent of \'etale morphisms, obtaining a systematic approach to
+theorems of \textsc{Van Kampen} type for the fundamental group, which
+appear here as simple translations of descent theorems. It is
+essentially a procedure for computing the fundamental group of a
+connected scheme~$X$ endowed with a surjective and proper morphism, say
+$X'\to X$, in terms of the fundamental groups of the connected
+components of~$X'$ and of the fibered products~$X'\times_X X'$,
+$X'\times_X X'\times_X X'$, and of the homomorphisms induced between
+these groups by the canonical simplicial morphisms between the preceding
+schemes. Expos\'e~\Ref{X} gives the theory of \emph{specialization of the
+fundamental group} for a proper and smooth morphism, the most striking
+result of which consists in the determination (to within very little) of the
+fundamental group of a smooth algebraic curve in characteristic $p>0$,
+thanks to the result known by transcendental means in characteristic
+zero. Expos\'e~\Ref{XI} gives some examples and complements, making
+explicit in particular, in cohomological form, the theory of
+\emph{\textsc{Kummer}} coverings, and that of
+\emph{\textsc{Artin}-\textsc{Schreier}}. For further comments
+on the text, see the \emph{Foreword} to the mimeographed version, which
+follows the present Introduction.
+
+Since the writing of the present Seminar in 1961, there have been
+developed, in collaboration by M\ptbl \textsc{Artin} and myself, the
+language of \emph{\'etale topology} and a corresponding cohomological
+theory, expounded in the part SGA~4 ``\'Etale cohomology of schemes'' of
+the \emph{S\'eminaire de G\'eom\'etrie Alg\'ebrique}, to appear in the
+same series as the present volume. This language, and the results it
+already has at its disposal, provide a particularly flexible tool for the
+study of the fundamental group, making it possible to understand better,
+and to go beyond, some of the results expounded here. There would
+therefore be reason to take up the theory of the fundamental group
+entirely anew from this point of view (all the key results in fact
+already appearing in \loccit). This is what was planned for the chapter
+of the \emph{\'El\'ements} devoted to the fundamental group, which was
+also to contain several other developments that could not find their
+place here (relying on the technique of resolution of singularities):
+computation of the ``local fundamental group'' of a complete local ring
+in terms of a suitable resolution of singularities of this ring, local
+and global K\"unneth formulas for the fundamental group without a
+properness hypothesis (\cf Exp\ptbl \Ref{XIII}), the results of
+M\ptbl \textsc{Artin} on the comparison of the local fundamental groups
+of an excellent henselian local ring and of its completion
+(SGA~4~XIX). Let us also point out the necessity of developing a theory
+of the fundamental group of a topos, which will encompass at the same
+time the ordinary topological theory, its semi-simplicial version, the
+``profinite'' variant developed in Expos\'e~\Ref{V} of the present volume,
+and the somewhat more general pro-discrete variant of SGA~3~X~7 (adapted
+to the case of non-normal and non-unibranch schemes). Pending an overall
+recasting of the theory from this point of view, Expos\'e \Ref{XIII} by
+Mme \textsc{Raynaud}, which uses the language and the results of SGA~4,
+is intended to show the advantage that can be drawn from them in some
+typical questions, in particular by generalizing certain results of
+Expos\'e~\Ref{X} to non-proper relative schemes. In it one gives in
+particular the structure of the ``prime-to-$p$'' fundamental group of a
+non-complete algebraic curve in arbitrary characteristic (which I had
+announced in 1959, but of which no proof had been published up to now).
+
+In spite of these numerous gaps and imperfections (others will say:
+because of these gaps and imperfections), I think that the present
+volume may be useful to the reader who wishes to become familiar with
+the theory of the fundamental group, as well as a reference work,
+pending the writing and publication of a text escaping the criticisms I
+have just enumerated.
+
+\subsection{}
+\label{I.introduction.2}
+The present volume constitutes volume 1 of the ``\emph{S\'eminaire de
+G\'eom\'etrie Alg\'ebrique du Bois-Marie}'', the following volumes of
+which are scheduled to appear in the same series as this one. The aim
+that the \emph{Seminar} sets itself, in parallel with the treatise
+``\emph{\'El\'ements de G\'eom\'etrie Alg\'ebrique}'' of
+J\ptbl \textsc{Dieudonn\'e} and A\ptbl \textsc{Grothendieck}, is to lay
+the foundations of Algebraic Geometry, following the points of view in
+this latter work. The standard reference for all the volumes of the
+\emph{Seminar} is constituted by Chapters~I, II, III of the
+``\emph{\'El\'ements de G\'eom\'etrie Alg\'ebrique}'' (cited EGA~I, II,
+III), and the reader is assumed to be in possession of the background in
+commutative algebra and homological algebra that these chapters
+presuppose\footnote{See the Introduction to EGA~I for details on this
+point.}. Moreover, in each volume of the \emph{Seminar} reference will
+be made freely, to the extent needed, to earlier volumes of the same
+\emph{Seminar}, or to other chapters of the ``\'El\'ements'' that have
+been published or are about to appear.
+
+Each \emph{part} of the \emph{Seminar} is centered on a principal
+subject, indicated in the title of the corresponding volume or volumes;
+the oral seminar generally extends over one academic year, sometimes
+more. The expos\'es within each part of the \emph{Seminar} are generally
+in close logical dependence on one another; on the other hand, the
+different parts of the \emph{Seminar} are to a large extent logically
+independent of one another. Thus the part ``Group Schemes'' is almost
+entirely independent of the two parts of the \emph{Seminar} that precede
+it chronologically; on the other hand, it makes frequent appeal to the
+results of EGA~IV. Here is the list of the parts of the \emph{Seminar}
+that are to appear shortly (cited SGA~1 to SGA~7 in what follows):
+\begin{enumerateb}
+\item[SGA 1.] \'Etale coverings and the fundamental group, 1960 and 1961.
+\item[SGA 2.] Local cohomology of coherent sheaves and local and global
+Lefschetz theorems, 1961/62.
+\item[SGA 3.] Group schemes, 1963 and 1964 (3~volumes), in~coll. with
+M\ptbl \textsc{Demazure}.
+\item[SGA 4.] Theory of topoi and \'etale cohomology of schemes, 1963/64
+(3~volumes), (in~coll. with M\ptbl \textsc{Artin} and
+J.L\ptbl \textsc{Verdier}).
+\item[SGA 5.] $l$-adic cohomology and $L$-functions, 1964 and 1965
+(2~volumes).
+\item[SGA 6.] Theory of intersections and the Riemann-Roch theorem,
+1966/67 (2~volumes) (in~coll. with P\ptbl \textsc{Berthelot} and
+L\ptbl \textsc{Illusie}).
+\item[SGA 7.] Local monodromy groups in algebraic geometry.
+\end{enumerateb}
+
+Three of these partial \emph{Seminars} were directed in
+\emph{collaboration} with other mathematicians, who will appear as
+co-authors on the cover of the corresponding volumes. As for the other
+active participants of the \emph{Seminar}, whose role (as much from the
+point of view of writing up as from that of the work of mathematical
+refinement) has been growing from year to year, the name of each
+participant appears at the head of the expos\'es for which he is
+responsible as lecturer or as writer, and the list of those who appear
+in a given volume is indicated on the flyleaf of the said volume.
+
+It is appropriate to give some details on the relations between the
+\emph{Seminar} and the \emph{\'El\'ements}. The latter were intended in
+principle to give a comprehensive exposition of the notions and
+techniques judged most fundamental in Algebraic Geometry, as these
+notions and techniques themselves emerge, through the natural play of
+requirements of logical and aesthetic coherence. From this perspective,
+it was natural to regard the \emph{Seminar} as a preliminary version of
+the \emph{\'El\'ements}, destined to be absorbed almost entirely, sooner
+or later, into the latter. This process had already begun to a certain
+extent some years ago, since Expos\'es I to IV of the present volume SGA~1
+are entirely absorbed by EGA~IV, and Expos\'es VI to VIII were to be
+absorbed within a few years in EGA~VI. However, as the work of
+construction undertaken in the \emph{\'El\'ements} and in the
+\emph{Seminar} develops, and as its overall proportions become clearer,
+the initial principle (according to which the \emph{Seminar} would
+constitute only a preliminary and provisional version) appears less and
+less realistic because of (among other things) the limits imposed by
+provident nature on the length of human life. Taking into account the
+care generally taken in writing up the various parts of the
+\emph{Seminar}, there will doubtless be reason to take up such a part
+again in the \emph{\'El\'ements} (or in treatises that might take over
+from them) only when progress subsequent to its writing makes it
+possible to bring very substantial improvements to it, at the price of
+fairly deep modifications. This is already the case for the present
+seminar SGA~1, as was said above, and also for SGA~2 (thanks to the
+recent results of Mme~\textsc{Raynaud}). On the other hand, nothing
+indicates at present that this will be so in the near future for any of
+the parts SGA~3 to SGA~7 cited above.
+
+References within the ``S\'eminaire de G\'eom\'etrie Alg\'ebrique du
+Bois Marie'' are given as follows. An \emph{internal reference} to one
+of the parts SGA~1 to SGA~7 of the Seminar is given in the style
+III~9.7, where the numeral III denotes the number of the expos\'e, which
+appears at the top of each page of the expos\'e in question, and~9.7 the
+number of the statement (or of the definition, remark, etc.) within the
+expos\'e. Where appropriate, longer decimal numbers may be used, for
+example 9.7.1, 9.7.2 to denote, for example, the various steps in the
+proof of a proposition~9.7. The reference III~9 denotes paragraph 9 of
+Expos\'e~III. The number of the expos\'e is omitted for references internal
+to an expos\'e. For a \emph{reference to another} of the \emph{parts} of
+the \emph{Seminar}, the same abbreviations are used, but preceded by mention
+of the part of the SGA in question, SGA~1~III~9.7. Likewise, the
+reference EGA~IV~11.5.7 means: \'El\'ements de G\'eom\'etrie
+Alg\'ebrique, Chap\ptbl IV, statement (or definition etc.)~11.5.7; here
+the first arabic numeral again denotes the number of the paragraph.
+Apart from these conventions, in force throughout the SGA, the
+bibliography relating to an expos\'e will generally be gathered at the end
+of it, and will be referred to within the expos\'e by numbers in square
+brackets such as [\textbf{3}], following the usual practice.
+
+Finally, for the convenience of the reader, whenever it seems necessary,
+we shall append at the end of the volumes of the SGA an index of
+notation and a terminological index containing, where appropriate, an
+English translation of the French terms used.
+
+I wish to add to this introduction an extra-mathematical comment. In the
+month of November 1969 I learned that the Institut des Hautes \'Etudes
+Scientifiques, of which I have been a professor essentially since its
+foundation, had for three years been receiving subsidies from the
+Ministry of the Armed Forces. Already as a beginning researcher I found
+extremely regrettable the lack of scruples that most scientists show in
+agreeing to collaborate in one form or another with the military
+apparatuses. My motivations at that time were essentially of a moral
+nature, and therefore hardly likely to be taken seriously. Today they
+acquire a new force and a new dimension, in view of the danger of
+destruction of the human species with which we are threatened by the
+proliferation of the military apparatuses and of the means of mass
+destruction that these apparatuses have at their disposal. I have
+explained myself elsewhere in more detail on these questions, which are
+much more important than the advancement of any science whatsoever
+(mathematics included); one may for example consult on this subject the
+article by G\ptbl Edwards in \no 1 of the journal Survivre (August 1970),
+summarizing a more detailed exposition of these questions that I had
+given elsewhere. Thus I found myself working for three years in an
+institution while it was taking part, without my knowledge, in a mode of
+financing that I consider immoral and dangerous\footnote{It goes without
+saying that the opinion I have just expressed is my own
+responsibility alone, and not that of the publishing house Springer,
+which publishes the present volume.}. Being at present alone in holding this
+opinion among my colleagues at the IHES, which has doomed to failure my
+efforts to obtain the removal of the military subsidies from the budget
+of the IHES, I have taken the decision that was called for, and am
+leaving the IHES on September 30, 1970, and am likewise suspending all
+scientific collaboration with this institution for as long as it
+continues to accept such subsidies. I have asked Mr.~Motchane, director
+of the IHES, that from October 1, 1970 on the IHES refrain from
+distributing mathematical texts of which I am the author, or which form
+part of the S\'eminaire de G\'eom\'etrie Alg\'ebrique du Bois Marie. As
+was said above, the distribution of this seminar will be taken over by
+the firm Julius Springer, in the series of the Lecture Notes. I am happy
+to thank here the Springer firm and Mr.~K\ptbl Peters for the efficient
+and courteous help they have given me in making this publication
+possible, by taking charge in particular of the typing, for photo-offset,
+of the new expos\'es added to the old seminars, and of the missing expos\'es
+of the incomplete seminars.
+
+I also thank Mr.~J.P\ptbl Delale, who took on the thankless task of
+compiling the index of notation and the terminological index.
+
+\bigskip\hfill Massy, August 1970.
+
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\chapter*{Foreword}
+\label{I.avertissement}
+
+Each of the written-up expos\'es gives the substance of several
+consecutive oral expos\'es. It did not seem useful to specify their dates.
+
+Expos\'e~VII, to which reference is made at various points in
+Expos\'e~\Ref{VIII}, has not been written up by the lecturer, who in the
+oral lectures had confined himself to sketching the language of descent
+in general categories, taking a strictly utilitarian point of view and
+without going into the logical difficulties raised by this language. It
+became apparent that a correct exposition of this language would go
+beyond the limits of the present notes, if only by its length. For a
+formal exposition of the theory of descent, I refer to an article in
+preparation by Jean \textsc{Giraud}. Until it
+appears\footnote{\label{footnotegiraud}Now published:
+J\ptbl \textsc{Giraud}, \emph{M\'ethodes de la descente}, M\'emoire
+\no 2 of the Soci\'et\'e math\'ematiques de France, 1964.}, I think that
+an attentive reader will have no trouble in supplying by his own means
+the phantom references of Expos\'e~VIII.
+
+Other oral expos\'es, coming after Expos\'e~\Ref{XI}, and to which allusion
+is made at certain places in the text, have not been written up either,
+and were intended to form the substance of an Expos\'e~\Ref{XII} and of an
+Expos\'e~\Ref{XIII}. The first ones among these oral expos\'es took up again, in the
+framework of schemes and of analytic spaces with nilpotent elements (as
+they are introduced in the S\'eminaire Cartan 1960/61), the
+construction of the analytic space associated with a prescheme locally
+of finite type over a complete valued field~$k$, the theorems of GAGA
+type in the case where $k$ is the field of complex numbers, and the
+application to the comparison of the fundamental group defined by
+transcendental means and the fundamental group studied in these notes
+(compare A\ptbl Grothendieck, Fondements de la G\'eom\'etrie
+Alg\'ebrique, S\'eminaire Bourbaki \no 190, page~10, December 1959). The
+last oral expos\'es sketched the generalization of the methods developed
+in the text to the study of coverings admitting tame ramification, and
+of the structure of the fundamental group of a complete curve with a
+finite number of points removed (compare \loccit, \no 182, page 27,
+theorem~14). These expos\'es introduce no essentially new idea, which is
+why it did not seem indispensable to give a formal write-up of them
+before the appearance of the corresponding chapters of the \'El\'ements
+de G\'eom\'etrie Alg\'ebrique\footnote{They are included in the present
+volume in Exp\ptbl \Ref{XII} by Mme~Raynaud, with a proof different from
+the original proof expounded in the oral Seminar (\cf introduction).}.
+
+On the other hand, the theorems of Lefschetz type for the fundamental
+group and the Picard group, from the local as well as from the global
+point of view, have been the subject of a separate Seminar in 1962,
+which has been completely written up and is available to
+users\footnote{\emph{\'Etale cohomology of coherent sheaves and local and
+global Lefschetz theorems} (SGA~2), published by North Holland Pub.\
+Co.}. Let us point out that the results developed both in the present
+Seminar and in that of 1962 will be used in an essential way in the
+appearance of several key results in the \'etale cohomology of preschemes,
+which will be the subject of a Seminar (conducted by M\ptbl Artin and
+myself) in 1963/64, at present in preparation\footnote{\emph{\'Etale
+cohomology of schemes} (cited SGA~4), to appear in this same series.}.
+
+Expos\'es \Ref{I} to~\Ref{IV}, of an essentially local and very elementary
+nature, will be entirely absorbed by Chapter IV of the
+\emph{\'El\'ements de G\'eom\'etrie Alg\'ebrique}, the first part of
+which is in press and which will doubtless be published around the end
+of '64. They may nevertheless be useful to a reader who would like to
+become acquainted with the essential properties of smooth, \'etale or flat
+morphisms before entering into the arcana of a systematic treatise. As
+for the other expos\'es, they will be absorbed into Chapter
+VIII\footnote{In fact, as a result of a modification of the plan
+initially envisaged for the \emph{\'El\'ements}, the study of the
+fundamental group is postponed there to a chapter later than the one
+just indicated. Compare the introduction that precedes the present
+``Foreword''.} of the ``\'El\'ements'', whose publication can hardly be
+envisaged for several years.
+
+\bigskip\hfill Bures, June 1963.

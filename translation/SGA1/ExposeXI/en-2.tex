@@ -1,0 +1,503 @@
+\section{The exact cohomology sequence}
+\label{XI.4}
+
+Let $S$ be a prescheme, so that the category
+$\Sch_{/S}$ of preschemes over~$X$ is determined,
+hence also the notion of group in it, which will also be called a
+\emph{group prescheme over~$S$}, or simply an
+\emph{$S$-group}. To simplify the exposition and fix
+ideas, we shall most often restrict ourselves in what follows to
+groups that are \emph{affine} and \emph{flat} over~$S$\kern1pt\footnote{In
+fact, for what follows, the quasi-affine hypothesis instead
+of the affine one would suffice, \cf footnote~\eqref{note-296}, p\ptbl\pageref{note-296}.}, which will
+suffice for the applications we have in view. (Of course, one
+encounters numerous cases where neither the one nor the other hypothesis
+is satisfied). Let
+% original p. 293
+$G$ be such an $S$-group, and let $P$ be a prescheme over~$S$ on
+which $G$ acts on the right, which implies in particular a
+morphism
+$$
+\pi:P\times_SG\to P
+$$
+in the category $\Sch_{/S}$, satisfying the well-known
+axioms. One says that $P$ is \emph{formally principal homogeneous
+under} $G$ if the morphism
+$$
+P\times_S G\to P\times_S P
+$$
+with components $\pr_1$ and $\pi$ is an isomorphism; it amounts to the
+same to say that for every object $S'$ of~$\Sch_{/S'}$,
+$P(S')=\Hom_S(S',P)$, considered as a set with groups
+of operators $G(S')=\Hom_S(S',G)$, is empty or principal
+homogeneous (\ie empty or isomorphic to $G(S')$ on which the
+group $G(S')$ acts by right translations). One says that
+$P$ is \emph{trivial} if $P$ is isomorphic to $G$, on which $G$
+acts by right translations, or what amounts to the
+same, if each of the sets with operators $P(S')$ under
+$G(S')$ is trivial. One verifies, for example by the
+patented procedure of passing to the set-theoretic case, that $P$
+\emph{is trivial if and only if it
+is formally principal homogeneous, and admits a section over~$S$}
+(this last fact being stated in categorical terms by
+saying that $P$ has a section over the final object $e=S$ of~$\Sch_{/S}$,
+\ie that there exists a morphism from~$e$ to $P$). To define the
+notion of principal homogeneous bundle $P$ under $G$, stronger
+than that of formally principal homogeneous bundle, one must
+first specify in $\Sch_{/S}$ a set of morphisms that
+will be used for ``descent'', and will play the role of
+``localization morphisms'' in order to ``trivialize'' bundles. The
+most suitable choice varies with the context, none
+containing all the others\footnote{\label{note-293}See on this subject
+SGA~3~IV, in particular~\S 4.}. Here it will be convenient to adopt the
+following definition:
+
+\begin{definition}
+\label{XI.4.1}
+Let $G$ be an $S$-group. One calls a \emph{principal
+homogeneous bundle} (on the right) under~$G$ an $S$-prescheme $P$
+with $S$-group~$G$ acting on the right, such that there exist a covering of~$S$ by open sets~$U_i$, and for every $i$ a faithfully flat
+and quasi-compact change of base morphism $S'_i\to U_i$, such that
+$P'=P\times_S S'$ is a trivial prescheme with operators
+under $G'=G\times_S S'$, where $S'$ is the
+$S$-prescheme disjoint sum of the~$S'_i$.
+\end{definition}
+
+(Note
+% original p. 294
+that the change of base functor $X\mto X'=X\times_S
+S'$,
+being left exact, transforms groups into groups, objects
+with group of operators into objects with groups
+of operators). Let us note that \Ref{XI.4.1} is \emph{stable under
+change of base}. Let us also note:
+
+\begin{proposition}
+\label{XI.4.2}
+Let $G$ be an $S$-group, flat and quasi-compact over~$S$, and $P$ an
+$S$-prescheme on which $G$ acts on the right. The following conditions
+are equivalent:
+\begin{enumerate}
+\item[(i)] $P$ is a principal homogeneous bundle
+under~$G$;
+\item[(ii)] $P$ is formally principal homogeneous under~$G$,
+and the structure morphism $P\to S$ is faithfully flat and
+quasi-compact.
+\end{enumerate}
+\end{proposition}
+
+If $P$ is principal homogeneous under~$G$, then with the notation
+of~\Ref{XI.4.1}, $P'$ is faithfully flat and quasi-compact over~$S'$
+(since $G'$ is, and $P'$ is $S'$-isomorphic to it), hence $P$ has the
+same properties over~$S$ (for ``surjective'' and
+``quasi-compact'', \cf VIII~\Ref{VIII.3.1}; for ``flat'' it is an
+omission in the sorites of Expos\'e~\Ref{VIII}). Conversely, if
+(ii) is satisfied, let us take the change of base $S'=P$, which
+is indeed faithfully flat and quasi-compact over~$S$; then $P'$ will be
+formally principal homogeneous over~$S'$ since $P$ is so over~$S$
+and the change of base functor is left exact; on the other
+hand $P'$ has a section over~$S'$,
+namely the diagonal section, hence
+it is a trivial principal bundle, which completes the
+proof.
+
+\begin{corollary}
+\label{XI.4.3}
+If $G$ is affine and flat over~$S$, every principal
+homogeneous bundle $P$ under $G$ is affine and flat over~$S$.
+\end{corollary}
+
+Indeed, it becomes so after a faithfully flat and
+quasi-compact extension of the base, and one applies (VIII~\Ref{VIII.5.6}).
+
+The usefulness of Definition~\Ref{XI.4.1} for $S$-groups that are
+\emph{flat} and \emph{affine} over~$S$ is due to
+(VIII~\Ref{VIII.2.1}), \ie to the fact that the morphisms $S'\to S$
+considered in~\Ref{XI.4.1} are effective descent morphisms
+for the category of preschemes affine over
+others. Thanks to this fact, the verification of the facts
+sketched below is done in an essentially
+``categorical'' way\footnote{\Cf \loccit in
+footnote~\eqref{note-293}, p\ptbl\pageref{note-293}.}. Let $E$ be an $S$-prescheme on which the
+$S$-group $G$ acts on the left, and let $P$ be a principal
+homogeneous bundle (on the right) under~$G$; we want to
+define an associated bundle $E^{(P)}$, ``locally''
+isomorphic to~$E$. For this, let us make $G$ act
+% original p. 295
+on the right on $P\times_S E$ according to the law $(x,y)\mto
+(xg,g^{-1}y)$, which describes such operations in the
+set-theoretic context, and extends to categories by the
+patented procedure. We shall set, subject to existence:
+$$
+E^{(P)}=(P\times_S E)/G
+$$
+whereupon one finds that $P\times_S E$ will be a prescheme
+over~$T=E^{(P)}$, with right groups of operators
+$G_T=G\times_S T$; to be at ease, one would like moreover
+$P\times_S E$ to be a principal homogeneous bundle over~$T$ with
+group $G_T$. To verify the existence of~$E^{(P)}$ and the
+preceding property, let us take again the $S'$ of
+Definition~\Ref{XI.4.1} and look at the situation over~$S'$
+that is the inverse image of the initial situation. From the fact that $P'$ is
+trivial,
+\ie isomorphic to $G'_d$, one sees at once that $E^{\prime(P')}$
+exists, and has the desired exactness property. In fact,
+$E'\times_{S'} P'$ is $G'$-isomorphic to the product $E'\times_{S'} G'$,
+hence $E^{\prime(P')}$ is isomorphic to~$E'$. Moreover, the formation of the
+``associated bundle'' in the case of a trivial space with operators
+commutes with every extension of the base, and taking in this
+instance the various extensions of the base
+$\xymatrix@C=.5cm{S''\ar@<2pt>[r]\ar@<-2pt>[r]&S'}$
+and
+$\xymatrix@C=.5cm{S'''\ar@<4pt>[r]\ar@<0pt>[r]\ar@<-4pt>[r]&S'}$, where
+$S''$ and $S'''$ are the double and triple fiber products of~$S'$
+over~$S$, one finds that $E^{\prime(P')}$ \emph{is endowed with a descent
+datum relative to the morphism $S'\to S$, and that $E^{(P)}$
+exists with the required properties if and only if this
+descent datum is effective}; of course $E^{(P)}$ is then
+nothing but the descended object. (Use the fact that $S'\to S$ is
+a descent morphism in the category of
+$S$-preschemes, \cf VIII~\Ref{VIII.5.2}). It follows~that
+\emph{the associated bundle exists if $E$ is affine over~$S$}. We
+shall apply this construction to the case where one has a homomorphism of~$S$-groups $G\to H$, and where one takes for $E$ the $S$-prescheme~$H$ endowed with the left operations of~$G$ on~$H$ resulting
+from the given morphism; since $H$~acts on the right on
+itself in such a way as to commute with the operations of~$G$
+on~$H$, and since (subject to existence over~$S$) the
+formation of the associated bundle commutes with extension of the
+base, one easily finds that $H$ will act on the right on~$P^{(H)}$, which is therefore a principal homogeneous bundle
+under $H$ in the sense of~\Ref{XI.4.1}, and
+% original p. 296
+more precisely is trivialized by the same
+morphism $S'\to S$ as~$P$. In particular, \emph{to every
+principal homogeneous bundle $P$ under $G$ and every homomorphism of~$S$-groups $G\to H$, with $H$ affine over~$S$, is associated a
+principal homogeneous bundle with group~$H$}, in a way
+functorial in $(G\to H)$, and compatible with arbitrary changes of base
+$T\to S$.
+
+\begin{definition}
+\label{XI.4.4}
+Let $G$ be an $S$-prescheme. One denotes by $\H^0(S,G)$ the set of
+sections of~$G$ over~$S$, which one will regard as a group when
+$G$ is an $S$-group. In this case, one denotes by $\H^1(S,G)$ the set of
+classes, up to isomorphism, of principal homogeneous
+bundles over~$S$ with group $S$, regarding $\H^1(S,G)$
+as endowed with the ``marked point'' that corresponds to the trivial
+bundles\footnote{\label{note-296}This notation is consistent
+with the general cohomological notation (SGA~4~V)
+only when one has criteria for effectiveness of descent,
+which are hardly ensured except if $G$ is affine (or only
+quasi-affine, \cf (VIII~\Ref{VIII.7.9})).}.
+\end{definition}
+
+Thus, $\H^0(S,G)$ is a functor in the $S$-prescheme~$G$,
+with values in the category of sets. This functor is
+left exact, a fortiori commutes with finite products, which
+indeed implies that it transforms groups into groups, commutative
+groups into commutative groups. Similarly,
+$\H^1(S,G)$ is a functor in the \emph{affine} $S$-group~$G$, with
+values in the category of sets, thanks to the
+formation of associated bundles; one easily finds that this
+functor commutes with finite products. In particular it transforms the
+groups in the category of affine $S$-groups, \ie the
+\emph{commutative affine} $S$-groups, into groups of the second,
+and even into commutative groups (since the groups of the
+first category are commutative). Thus, \emph{if $G$ is
+a commutative affine $S$-group, $\H^1(S,G)$ is a commutative
+group}, and a homomorphism $G\to H$ of commutative affine $S$-groups
+gives rise to a homomorphism of groups
+$\H^1(S,G)\to\H^1(S,H)$.
+
+For simplicity, we restrict ourselves in what follows to the
+consideration of \emph{affine and commutative} $S$-groups. Let
+$$
+0\to G'\lto{u} G\lto{v}G''\to 0
+$$
+be a sequence of morphisms of such groups; \emph{we shall say that this
+sequence is exact if $vu=0$} (which allows one to regard $G$
+as a prescheme over~$G''$, with right groups of operators~$G'_{G''}$) \emph{and if $G$ is a principal homogeneous
+bundle
+% original p. 297
+over~$G''$ with group $G'_{G''}=G'\times_S G''$}. This implies in
+particular that $u\colon G'\to G$ is a kernel of~$v$, and a fortiori
+it implies the exactness of the sequence
+$$0\to\H^0(X,G')\to\H^0(X,G)\to\H^0(X,G'').$$ It implies moreover the
+possibility of defining a map
+$$
+\partial\colon\H^0(X,G'')\to\H^1(X,G')\quoi,
+$$
+by associating to every section of~$G''$ over~$S$, \ie to every
+$S$-morphism $f\colon S\to G''$, the principal homogeneous bundle
+$P_f$ with group $G'\simeq f^*(G'_{G''})$ over~$S$, inverse image of the
+principal homogeneous bundle $G$ over~$G''$. From the point of view of
+$S$-preschemes, it is therefore nothing but the inverse image under
+$v\colon G\to G''$ of the subprescheme image of~$S$ under
+the immersion~$f$, and the operations of~$G'$ on~$P_f$ are induced
+by the right operations of~$G'$
+on~$G$.
+We likewise leave to the reader the verification of the
+following proposition, which presents no difficulties
+other than those of writing it up:
+
+\begin{proposition}
+\label{XI.4.5}
+The map $\partial\colon \H^0(X,G'')\to\H^1(X,G')$ is a
+homomorphism of groups. The following sequence of homomorphisms is
+exact:
+\begin{multline*}
+0\to\H^0(X,G')\lto{u^0}\H^0(X,G)\lto{v^0}\H^0(X,G')\lto{\partial}\H^1(X,G'')\\
+\lto{u^1}\H^1(X,G) \lto{v^1}\H^1(X,G'')
+\end{multline*}
+(where the homomorphisms other than $\partial$ come from the
+functoriality of~$\H^0$ \resp~$\H^1$).
+\end{proposition}
+
+\begin{remarks}
+\label{XI.4.6}
+The point of view presented here for the study of principal
+homogeneous bundles is visibly inspired by Serre~\cite{XI.7}, which
+the reader will have every interest in consulting. When one wants
+a formalism that applies also to structural $S$-groups
+that are quasi-projective over~$S$ (so as to
+include projective abelian schemes in particular), it is
+advantageous to modify \Ref{XI.4.1} by requiring there that $S'$
+be a sum of preschemes $S'_i$ that are finite and locally
+free over open sets $S_i$ of~$S$ covering $S$. The
+preceding developments are then valid, including
+in particular \Ref{XI.4.5}, on replacing everywhere the affine hypothesis
+by the quasi-projective hypothesis, and on interpreting
+correspondingly the definition given above of an
+exact sequence of~$S$-groups. It suffices indeed to replace the
+reference to (VIII~\Ref{VIII.2.1})
+% original p. 298
+by (VIII~\Ref{VIII.7.7}): the morphisms $S'\to S$ used are
+effective descent morphisms for the fibered category
+of preschemes quasi-projective over others. One should
+take care, however, that this second notion of principal
+homogeneous bundle is more restrictive than the
+first~\Ref{XI.4.1}.
+\end{remarks}
+
+\subsection{}
+\label{XI.4.7}
+One obtains an even more restrictive notion of principal
+homogeneous bundle by requiring that $S$ be covered by open sets $S_i$
+such that for every~$i$, $P|S_i$ is a trivial bundle with operators
+under~$G|S_i$: one will then say that $P$ is a \emph{locally trivial}
+principal homogeneous bundle.
+The classes of these bundles, for given $G$, form a subset
+of~$\H^1(X,G)$, which is in one-to-one correspondence with
+$\H^1(X,\cal{O}_X(G))$, where $\cal{O}_X(G)$ is the sheaf (in the
+ordinary sense) of sections of~$G$ over~$S$, \cf \cite{XI.2}. For these $\H^1$
+to still give rise to an exact cohomology
+sequence~\Ref{XI.4.5}, one must obviously assume that the sequence
+$0\to G'\to G\to G''\to 0$ is exact in the reasonable sense for this
+new context, \ie that $G$ is a locally trivial bundle
+over~$G''$, with group $G'_{G''}$; this also means that $u\colon
+G'\to G$ is a kernel of~$v\colon G\to G''$, and that $G$ locally admits
+a section over~$G''$.
+
+\subsection{}
+\label{XI.4.8}
+It is obviously very desirable to continue the exact
+sequence~\Ref{XI.4.5} by introducing the higher cohomology groups
+$\H^i(X,G)$. This is possible by placing oneself in
+the framework of ``Weil cohomology'': one considers the
+category $\cal{B}$ of quasi-compact preschemes over~$S$,
+endowed with the set $\cal{M}$ of faithfully flat and
+quasi-compact morphisms, which will be called localizing morphisms. An abelian ``Weil
+sheaf'' on~$S$ (or better, on~$(\cal{B},\cal{M})$) is
+then a contravariant functor $\cal{F}$ from~$\cal{B}$ to the
+category of abelian groups, transforming sums into
+products, and a sequence
+${\def\labelstyle{\scriptstyle}\xymatrix@C=.5cm{T''=T'\times_TT'\ar@<+2pt>[rr]^-{\pr_1,\pr_2}\ar@<-2pt>[rr] &&T'\ar[r]^f & T}}$, with $f\in\cal{M}$, into an \emph{exact} diagram
+of sets $\xymatrix@C=.5cm{\cal{F}(T)\ar[r] & \cal{F}(T')
+\ar@<2pt>[r]\ar@<-2pt>[r] & \cal{F}(T'')}$. The Weil sheaves
+form an abelian category with exact inductive limits
+admitting a generator, hence admitting enough
+injective objects~\cite{XI.1}. The right derived functors of the
+functor $\Gamma(\cal{F})=\cal{F}(S)$ are then denoted
+$\H^i(S,\cal{F})$. On the other hand, every commutative $S$-group
+obviously defines a Weil sheaf (VIII~\Ref{VIII.5.2}),
+whose $\H^0$ and $\H^1$ are none other than $\H^0(S,G)$ and
+$\H^1(S,G)$, which allows one to define the other $\H^i(S,G)$ in a
+reasonable way. One
+% original p. 299
+shows moreover that an exact sequence of~$S$-groups defines an
+exact sequence of Weil sheaves, which allows one to recover and to
+extend the exact sequence~\Ref{XI.4.5}\footnote{For a
+systematic study of this point of view, \cf SGA~4~I~to~IX.}.
+
+\subsection{}
+\label{XI.4.9}
+It would be advisable to develop the noncommutative variants
+of~\Ref{XI.4.5} as in~\cite{XI.2}. For a systematic
+development, in the appropriate framework, of the various
+cohomological notions sketched in the present no., we
+refer to a work in preparation by
+J\ptbl \textsc{Giraud}\footnote{\Cf J\ptbl \textsc{Giraud},
+\emph{Cohomologie non ab\'elienne},
+Springer-Verlag 1971.}.
+
+\section{Special cases of principal bundles}
+\label{XI.5}
+
+Suppose now that $S$ is connected and endowed with a geometric
+point~$a$, whence a fundamental group $\pi_1(S,a)$
+making it possible to classify the \'etale coverings of~$S$: the
+category of \'etale coverings of~$S$ is
+equivalent to the category of finite sets on which
+$\pi_1$ acts continuously. It follows that a finite and \'etale group
+scheme $G$ over~$S$ is
+essentially determined by an ordinary finite group $\cal{G}$, on which
+$\pi_1$ acts continuously by group automorphisms. An
+\'etale covering $P$ of~$S$ on which $G$ acts on the right
+is essentially determined by a finite set $\cal{P}$
+on which $\pi_1$ acts continuously (on the left), and on which
+$\cal{G}$ acts on the right in a way compatible with the
+operations of~$\pi_1$:
+$$
+s(p\cdot g)=(sp)\cdot(sg)\qquad \text{for }s\in\pi_1,\
+p\in\cal{P},\ g\in\cal{G}.
+$$
+One verifies that $P$ is a principal homogeneous bundle in the sense
+of~\Ref{XI.4.1} if and only if $\cal{P}$ is a principal
+homogeneous set under~$\cal{G}$ (use for example
+criterion~\Ref{XI.4.2}). In other words, \emph{the category
+of principal homogeneous bundles over~$S$ with group $G$ is
+equivalent to the category of principal
+homogeneous bundles with group $G$ in the category of finite sets
+on which $\pi_1$ acts continuously.} One deduces from this in
+particular a canonical bijection, functorial in $G$:
+\begin{equation*}
+\label{eq:XI.5.etoile}
+\tag{$*$} \H^1(S,G)\isomto \H^1(\pi_1,\cal{G})\quoi,
+\end{equation*}
+where
+% original p. 300
+the right-hand side denotes the set of classes, up to
+isomorphism, of principal homogeneous bundles under
+$\cal{G}$ in the category of finite sets on which $\pi_1$
+acts (there is moreover no need to specify: continuously),
+a set which is made explicit in a well-known way as the
+quotient set of the set $Z^1(\pi_1,G)$ of $1$-cocycles
+$\varphi:\pi_1\to \cal{G}$ (satisfying $\varphi(1)=1$,
+$\varphi(st)=\varphi(s)(s.\varphi(t))$) by the group $\cal{G}$, which
+acts on it in a natural way).
+
+\label{page-300}
+An important case is that where $\pi_1$ acts trivially on~$\cal{G}$, \ie when $G$ is a completely
+decomposed covering of~$S$, isomorphic to the sum of~$\cal{G}$
+copies of~$S$; one then also writes $\H^1(S,\cal{G})$ instead
+of~$\H^1(S,G)$, and this set is in one-to-one correspondence
+\eqref{eq:XI.5.etoile} with $\H^1(\pi_1,\cal G)= \Hom(\pi_1,\cal{G})/$inner automorphisms of~$\cal{G}$. Note moreover that in this case, a principal
+homogeneous bundle over~$S$ with group $G$ is nothing but a
+\emph{principal covering} of~$S$ with group $\cal{G}$
+(V~\Ref{V.2.7}), and the preceding one-to-one correspondence
+is the one deduced from the correspondence between principal
+coverings of~$S$ with group~$\cal{G}$, \emph{pointed} over~$a$, and the continuous homomorphisms from~$\pi_1(S,a)$ to $\cal{G}$
+(\Ref{V},~end~of~\No \Ref{V.5}).
+
+The interest of relating the theory of \'etale
+coverings with that of principal bundles (already
+implicit in \textsc{A\ptbl Weil}, G\'en\'eralisation des Fonctions
+Ab\'eliennes, and made explicit by \textsc{S\ptbl Lang} in his
+geometric class field theory, \cf Serre~\cite{XI.5}) comes from the fact
+that every $S$-group that is finite and \'etale over~$S$ can be embedded
+in an $S$-group~$H$, affine and smooth over~$S$, with
+connected fibers, commutative when $G$ is, so that by the exact
+sequence~\Ref{XI.4.5} (and possibly its noncommutative
+variants), the ``discrete'' classification of principal
+coverings with group $G$ can be studied with the help of the
+``continuous'' classification of principal bundles with group~$H$,
+and conversely, for that matter. For the idea of the
+general construction of the immersion of~$G$ into $H$ (rather little
+used in practice, it seems), refer to
+\cite[VI~2.8]{XI.5}. We content ourselves with developing in the next \No
+two important special cases, which are moreover classical. We shall
+need there an auxiliary result:
+
+\begin{proposition}
+\label{XI.5.1}
+Let
+% original p. 301
+$S$ be a prescheme, and $G$ an $S$-group isomorphic to
+$\Gl(n)_S$ (for example $\GG_{m\,S}$) or to $\GG_{a\,S}$; then every
+principal homogeneous bundle under $G$ is locally trivial.
+\end{proposition}
+
+Let us make precise that $\Gl(n)_S$ ($n$ an integer $\geq 0$) denotes the
+$S$-group that represents the contravariant functor $T\mto
+\Gl(n,\Gamma(T,\cal{O}_T))$ in the $S$-prescheme~$T$; in
+particular $\GG_{m\,S}$ (``multiplicative group over~$S$'')
+represents the contravariant functor $T\mto
+\Gamma(T,\cal{O}_T^*)$, hence as a prescheme over~$S$ is
+isomorphic to $\Spec {\cal{O}_S[t,t^{-1}]}$, where $t$ is an
+indeterminate. Similarly $\GG_{a\,S}$ represents the
+contravariant functor $T\mto \Gamma(T,\cal{O}_T)$; it is therefore
+isomorphic as an $S$-prescheme to $\Spec(\cal{O}_S[t])$,
+where $t$ is an indeterminate. Note that by d\'evissage,
+\Ref{XI.5.1} gives back the local triviality result of
+Rosenlicht, relating to the case where $G$ admits a ``composition
+series'' whose consecutive factors are groups of the
+type considered here. (For a finer study of the questions of
+local triviality of principal homogeneous bundles,
+\cf \cite{XI.7}~and~\cite{XI.3}).
+
+The first assertion is proved by remarking that
+$G(T)=\Aut(\cal{O}_T^n)$, and that the morphisms $S'\to S$ occurring
+in~\Ref{XI.4.1} (\ie which are faithfully flat and
+quasi-compact) are effective descent morphisms for the
+fibered category of Modules locally isomorphic to
+$\cal{O}_T^n$, \ie locally free of rank~$n$
+(VIII~\Ref{VIII.1.12}). The second is proved in an
+analogous way, by noting that in this case one has $G(T)=\Aut(\cal{E}_T)$,
+where $\cal{E}_T$ is the trivial \emph{extension} of~$\cal{O}_T$ by
+$\cal{O}_T$ (and where the automorphisms must of course
+respect the extension structure), that the morphisms $S'\to S$
+occurring in~\Ref{XI.4.1} are effective descent
+morphisms for the fibered category of extensions of~$\cal{O}_T$ by $\cal{O}_T$ (as follows easily from
+VIII~\Ref{VIII.1.1}), and that such extensions are automatically
+locally trivial.
+
+\begin{remark}
+\label{XI.5.2}
+Note that the same type of proof applies to the
+symplectic group $\Symp(2n)_S$, taking into account that an alternating
+form on a module locally isomorphic to
+$\cal{O}_S^{2n}$ which is ``nondegenerate'',
+\ie defines an isomorphism of this Module onto its dual, is
+locally isomorphic to the standard form. The result for the
+orthogonal group is on the other hand false, already if $S$ is the
+spectrum of a field, because there can be
+% original p. 302
+quadratic forms over a field that are not isomorphic to the
+standard form. Moreover, one essentially shows in \cite{XI.3} that the
+groups $\Gl$, $\Symp$, $\GG_a$ and those that decompose by d\'evissage into such
+groups are, more or less, the only ones for which one
+has a local triviality result of the type considered
+here.
+\end{remark}
+
+\begin{corollary}
+\label{XI.5.3}
+One has canonical bijections
+$$
+\H^1(S,\GL(n)_S)\isomfrom \H^1(S,\GL(n,\cal{O}_S))\quoi,
+$$
+in particular
+$$
+\H^1(S,\GG_{m\,S})\isomfrom \H^1(S,\cal{O}_S^*)\quoi,
+$$
+and
+$$
+\H^1(S,\GG_{a\,S})\isomfrom \H^1(S,\cal{O}_S)\quoi,
+$$
+where the right-hand sides denote cohomologies of
+the topological space $S$ with coefficients in ordinary
+sheaves.
+\end{corollary}
+
+In particular, $\H^1(S,\GL(n)_S)$ is identified with the set of
+classes, up to isomorphism, of locally free Modules of
+rank $n$ over~$S$, and $\H^1(S,\GG_{a\,S})$ is identified with the set
+of classes of extensions of the Module $\cal{O}_S$ by itself.

@@ -1,0 +1,424 @@
+\section{Decomposition and inertia groups. \'Etale case}
+\label{V.2}
+Let $G$ be a
+finite group acting on the right on the prescheme $X$. If
+$x\in X$, one calls
+% original p. 111
+\emph{decomposition group of~$x$}
+the stabilizer $G_d(x)$ of~$x$. This group acts canonically
+(on the left) on the residue field
+$\kres(x)$, and the set
+of elements of~$G_d(x)$ that act trivially is
+called the \emph{inertia group}
+of~$x$, denoted~$G_i(x)$.
+
+Suppose that $G$ acts on~$X$ in an admissible way and that
+$Y$ is a prescheme over a prescheme
+$Z$. Let us fix a $z\in Z$, and an algebraically
+closed extension $\Omega$
+of~$\kres(z)$ having a transcendence degree
+greater than that of the $\kres(x)/\kres(z)$, where $x$ is a
+point of~$X$ over~$z$. One can regard $\Spec(\Omega)$ as
+a $Z$-scheme, and the points of~$X$ with values in $\Omega$
+correspond to the homomorphisms
+of~$\kres(z)$-algebras $\kres(x)\to\Omega$,
+where $x$ is a point of~$X$ over~$z$;
+since $\Omega$ has been taken large enough, every point $x$ of~$X$
+over~$z$ is the locality of a point of~$X$ with values
+in $\Omega$. If $X(\Omega)$ and $Y(\Omega)$ denote
+respectively the set of points of~$X$ and $Y$ with values in
+$\Omega$, one has a natural map
+$$
+X(\Omega)\to Y(\Omega),
+$$
+on the other hand, $G$ acts on~$X(\Omega)$ and the
+preceding map is invariant under $G$. This being so, the
+conclusions (ii) and (iii) of~\Ref{V.1.3} can also be interpreted
+as follows: \emph{the preceding map is surjective and
+identifies $Y(\Omega)$ with the quotient $X(\Omega)/G$. Moreover, if $x$ is
+the locality of~$a\in X(\Omega)$, then the stabilizer of~$a$
+in $G$ is none other than the inertia group $G_i(x)$}. All this is
+moreover true without assuming $\Omega$ ``large enough''; this
+last hypothesis serves only to ensure that one can
+characterize the inertia group of every element of~$X$
+over~$z$ as a ``geometric'' stabilizer. One
+concludes from this, for instance, immediately:
+\begin{proposition}
+\label{V.2.1}
+Let us make an extension of the base $Z'\to Z$, whence
+$X'=X\times_ZZ'$. Let $x'$ be a point of~$X'$, $x$ its image in $X$;
+then one has $G_i(x)=G_i(x')$.
+\end{proposition}
+
+It suffices, in the considerations above, to take for
+$\Omega$ a sufficiently large extension
+of~$\kres(z')$
+(where $z,z'$ are the images of~$x,x'$ in $Z,Z'$).
+
+\begin{proposition}
+\label{V.2.2}
+Under the conditions of~\Ref{V.1.3}, suppose $Y$ locally
+noetherian, $X$ finite over~$Y$. Let $H$ be a subgroup of~$G$,
+consider $X'=X/H$ (\cf \Ref{cor:V.1.7}), let
+% original p. 112
+$x\in X$, $x'$ its image in $X'$ and $y$ its image in $Y$.
+\begin{enumerate}
+\item[(i)] If $H\supset G_d(x)$, then the homomorphism
+$\cal{O}_y\to\cal{O}_{x'}$ induces an isomorphism on the
+completions.
+\item[(ii)] If $H\supset G_i(x)$, then the homomorphism $\cal{O}_y\to
+\cal{O}_{x'}$ is \'etale, \ie $X'$ is \'etale over~$Y$ at $x'$.
+\end{enumerate}
+\end{proposition}
+Let $Y_1=\Spec(\widehat{\cal{O}_y})$; let us make the change of base
+$Y_1\to Y$; one finds an $X_1=X\times_Y Y_1$ finite over~$Y_1$, on
+which $G$ acts, the quotient being $Y_1$
+by~\Ref{V.1.9}. Let~$y_1$ be the unique point of~$Y_1$ over~$y$;
+since
+$\kres(y)=\kres(y_1)$,
+it follows that the fiber of~$X$ at~$y$
+is isomorphic to that of~$X_1$ at $y_1$, whence a unique point
+$x_1$ of~$X_1$ over~$x$. Moreover, by~\Ref{V.1.9} one will have
+$X_1/H=X'_1=X'\times_Y Y_1$; let $x'_1$ be the image of~$x_1$ in $X'_1$;
+it lies over~$x'$, and one easily checks ($X'$ being
+of finite type over~$Y$) that the homomorphism
+$\cal{O}_{x'}\to\cal{O}_{x'_1}$ induces an isomorphism on the
+completions. Hence one is reduced to the case where $Y$ is the
+spectrum of a complete local ring, say $B$, hence~$X$ the spectrum of a
+ring $A$ finite over~$B$, composed of a finite number of local rings~$A_x$ corresponding
+to the points $x_i$ of~$X$ over~$Y$. If $A_0$ corresponds to $x=x_0$,
+then $A$ is identified with the ring $\Hom_{G_d}(G,A_0)$ of the functions
+$f\colon G\to A_0$ such that $f(st)=sf(t)$ for $s\in G_d$, the
+operations of~$G$ on these functions being defined by
+$(uf)(t)=f(tu)$. One sees therefore that if $H$ is an arbitrary subgroup
+of~$G$, then $A^H$ is the ring of the functions $f\colon G\to A_0$
+such that
+$$
+f(stu)=sf(t)\qquad\text{for}\ s\in G_d,\ u\in H
+$$
+hence it is a semi-local ring whose local components
+correspond to the double cosets $G_daH$ in $G$, the double
+coset defined by $a\in G$ corresponding (thanks to
+the map $f\mto f(a)$) to the subring $A_0^{H(a)}$ of~$A_0$,
+where $H(a)=G_d\cap aHa^{-1}$. Moreover, the local component of
+$A^H$ corresponding to the image $x'$ of~$x$ is also the one
+corresponding to the double coset $G_dH$ of the neutral
+element; its local component is therefore $A_0^{G_d\cap H}$. If therefore
+$G_d\subset H$,
+one finds $A_0^{G_d}=A^G=B$, which proves (i). To
+prove (ii), one can, by passing to a suitable finite flat
+extension of~$A$, and using~\Ref{V.2.1}, reduce to the case where
+the residue extension
+$\kres(x)/\kres(y)$
+is trivial. But
+then $G_i(x)=G_d(x)$, and one is reduced to the preceding case.
+
+\begin{corollary}
+\label{V.2.3}
+Under
+% original p. 113
+the conditions of~\Ref{V.2.2}, suppose $G_i(x)=(e)$; then X
+is \'etale over~$Y$ at $x$. Hence if $G_i(x)=(e)$ for every $x \in
+X$, then $X \to Y$ is an \'etale morphism.
+\end{corollary}
+
+There is a partial converse:
+
+\begin{corollary}
+\label{V.2.4} Suppose $X$ connected and the group $G$ faithful
+on~$X$. For $p \colon X \to Y=X/G$ to be \'etale, it is necessary and
+sufficient that the inertia groups of the points of~$X$ be reduced
+to the neutral element. If this is so, $G$ is identified with the
+group of all $Y$-automorphisms of the $Y$-scheme~$X$.
+\end{corollary}
+
+Taking~\Ref{V.2.3} into account, one can suppose $X$ \'etale over~$Y$. But if an $s \in G$ is in some $G_i(x)$, it then follows
+from I~\Ref{I.5.4} that $s$ acts trivially on~$G$, hence is
+the unit element since $G$ is faithful, which proves
+the first assertion. Let $u$ be a $Y$-automorphism of~$X$, let
+$x \in X$. By proposition~\Ref{V.1.3}, there exists an $s \in
+G$ such that $s(x)=u(x)$, and inducing the same residue
+homomorphism
+$\kres(x)/\kres(x')$
+as $u$. By \loccit one therefore has
+$s=u$, which completes the proof.
+
+\begin{remark}
+\label{V.2.5}
+The hypothesis that $G$ acts faithfully is obviously
+not superfluous in corollary~\Ref{V.2.4}. The same holds
+for the hypothesis that $X$ is connected, as one sees for instance by
+taking $X=Y \times E$, $E$ being a finite set, and $G$ the
+group of permutations of~$E$: $G$ acts with plenty of inertia,
+nevertheless $(Y \times E)/G=Y \times (E/G)=Y$, and $X$ is \'etale
+over~$Y$. Taking for $G$ a group strictly smaller than the
+symmetric group of~$E$, but acting transitively on~$E$,
+one sees that there will also be $Y$-automorphisms of~$X$ not coming
+from~$G$.
+\end{remark}
+
+The typical example of a group $G$ acting without inertia is that of
+$Y \times G$, on which one makes $G$ act by means of its
+operations on the factor $G$ by right translations: a
+$Y$-prescheme $X$ with right group of operators
+$G$ is said to be \emph{trivial} if it is isomorphic to $Y \times G$.
+
+To make the link between preschemes with finite groups
+of operators and the notion of principal bundle in a
+category (a link which, moreover, we shall not need for the
+rest of the seminar, but which is important in other contexts) the
+following considerations are useful. We fix a
+base prescheme $Y$, and we place ourselves in the
+category of $Y$-preschemes. If $G$ is a finite
+% original p. 114
+group, we shall set for brevity $G_Y=Y \times G$; it is thus a
+finite group scheme over~$Y$ (\cf \numero 1), and if $X$ is
+a $Y$-prescheme, one has
+$$
+X \times_Y G_Y = X \times G
+$$
+(same reference). The datum of a $Y$-morphism $X
+\times_Y G_Y \to X$ is therefore equivalent to the datum of a
+$Y$-morphism $X \times G \to X$, \ie to the datum, for every
+$g \in G$, of a $Y$-morphism $T_g \colon X \to X$. One notes
+immediately that for the datum of the $T_g$ to define on~$X$ a structure of prescheme with right group of operators
+$G$ (\ie $T_{gg'}=T_{g'}T_g$, $T_e=\id_x$) it is necessary and
+sufficient that the corresponding $Y$-morphism $X \times_Y G_Y \to X$
+define on~$X$ a structure of~$Y$-prescheme with
+$Y$-group scheme of operators (in the general sense
+of objects with $\cal{C}$-group of operators in a
+category $\cal{C}$). Suppose that this is so. Let us recall that
+$X$ is said to be \emph{formally principal homogeneous}
+under~$G_Y$\kern1pt\footnote{one now says rather: $X$ is a
+pseudo-torsor under $G_Y$.} if the canonical morphism
+$$
+X \times_Y G_Y \to X \times_Y X
+$$
+whose components are respectively $\pr_1$ and the
+multiplication morphism $\pi \colon X \times_Y G_Y \to X$, is an
+isomorphism. In the present case, identifying the left-hand side with $X
+\times G$, the morphism considered is the one which, to every $g
+\in G$, associates the morphism
+$$
+(\id_X,T_g)=(\id_X \times_Y T_g)\Delta_{X/Y} \colon X \to X \times_Y X
+$$
+and consequently, to say that $X$ is formally principal homogeneous
+under $G_Y$ also means that $X \times_Y X$ is isomorphic to the
+direct sum of the transforms of the diagonal by the
+elements $(e,g)$ of~$G \times G$ (acting on~$X \times_Y
+X$ in the obvious way), where $e$ denotes the unit
+element of~$G$. If one wishes not to distinguish left and right,
+and to give a formula that remains applicable to the product of more than two
+factors identical to $X$, one can formulate the condition by saying
+that the canonical morphism
+$$
+X \times_G (G \times G) \to X \times_Y X
+$$
+obtained by attaching to the pair $(g,g')$ the morphism
+$$
+(T_g,T_{g'})=(T_g \times_Y T_{g'})\Delta_{X/Y} \colon X \to X \times_Y
+X
+$$
+and by making $G$ act on the left on~$G \times G$ via
+the diagonal homomorphism;
+$$
+s(g,g')=(sg,sg'),
+$$
+is an \emph{isomorphism}.
+
+The
+% original p. 115
+notion of \emph{principal homogeneous space}
+is deduced from that of formally principal
+homogeneous space by adding a supplementary axiom, ensuring that the
+``quotient'' of~$X$ by $G_Y$ exists and is precisely
+the right unit object of the category, here $Y$. This
+axiom may vary according to the context, and is often made explicit most
+conveniently (in the yoga of ``descent'') by requiring that
+the object with operators become ``trivial'', \ie isomorphic to the
+product $X \times_Y G_Y$ (in the present case $X \times G$) by a
+suitable change of base, of a specified type (in such a way, in practice, as to permit the technique of descent;
+\cf Grothendieck, Technique de descente et th\'eor\`emes
+d'existence en G\'eom\'etrie Alg\'ebrique, S\'em. Bourbaki
+\No 190, pages 26 to 28)\footnote{\Cf Exp\ptbl \Ref{VIII} for the
+theory of flat descent.}. In this order of ideas,
+let us point out here the characterization of principal
+homogeneous bundles with group $G$ (in the sense of \loccit):
+
+\begin{proposition}
+\label{V.2.6}
+Let $Y$ be a locally noetherian prescheme, $X$ a
+$Y$-prescheme with finite group $G$ of operators
+acting on the right. The following conditions are
+equivalent:
+\begin{enumerate}
+\item[(i)] $X$ is finite over~$Y$, $Y=X/G$, the inertia groups of the
+points of~$X$ are reduced to the unit element.
+\item[(ii)] There exists a faithfully flat and
+quasi-compact change of base $Y_1 \to Y$ such that $X_1=X \times_Y Y_1$ is a
+trivial $Y_1$-prescheme with operators, \ie isomorphic
+to $Y_1 \times G$.
+\item[(ii~bis)] Like (ii), but with $Y_1 \to Y$ being finite,
+\'etale, surjective.
+\item[(iii)] $X$ is formally principal homogeneous under $G_Y$,
+and faithfully flat and quasi-compact over~$Y$.
+\end{enumerate}
+\end{proposition}
+\textit{Proof} (i)$\To$(ii~bis) We shall take
+$Y_1=X$, noting that $X \to Y$ is indeed finite, \'etale by~\Ref{V.2.3},
+and surjective. Let us show that $X_1$ is then trivial over~$Y_1$, which
+will follow from the
+
+\begin{corollary}
+\label{V.2.7} If \textup{(i)} is satisfied and if $X$ admits a
+section over~$Y$, then $X$ is a trivial space with operators.
+\end{corollary}
+
+Indeed, this section makes it possible to define a $G$-morphism $X
+\times G \to X$, surjective since $G$ is transitive on the fibers of
+$X$, injective since $G$ acts without inertia; finally, it is a
+local isomorphism by virtue of I~\Ref{I.5.3} since $X$ is \'etale
+over~$Y$. Hence it is an isomorphism.
+
+(ii~bis)
+% original p. 116
+trivially implies (ii), which implies (i) because the ingredients
+of (i) are ``invariant'' under faithfully flat
+quasi-compact extension of the base (\cf the S\'eminaire Bourbaki cited
+above for ``finite''; for the inertia groups, one
+applies~\Ref{V.2.1}, and for $Y=X/G$, a converse
+of~\Ref{V.1.9} in the case of a \emph{faithfully flat} change of base,
+which we had forgotten to make explicit).
+
+We have proved (i)$\To$(iii) in passing, while proving
+(i)$\To$(ii~bis). Finally (iii)$\To$(ii), because the
+first hypothesis in (iii) means precisely that
+$X$ becomes trivial on making the change of base $Y_1=X$; whence
+(ii) since $X$ is faithfully flat and quasi-compact over~$Y$.
+
+\begin{definition}
+\label{V.2.8} A $Y$-prescheme $X$ with right group
+of operators $G$ satisfying the
+equivalent conditions of~\Ref{V.2.6} is called a \emph{principal
+covering of~$Y$, with Galois group~$G$}.
+\end{definition}
+
+\section{Automorphisms and morphisms of \'etale coverings}
+\label{V.3}
+
+\begin{proposition}
+\label{V.3.1} Let $X$ be \'etale, separated, of finite type over~$Y$, with $Y$ locally noetherian, and let $G$ be a finite group acting on~$X$ by $Y$-automorphisms. Then $G$ acts in an
+admissible way and the quotient prescheme $X/G$ is \'etale over~$Y$.
+\end{proposition}
+
+One does not suppose $X$ finite over~$Y$; however $X$ is quasi-projective
+over~$Y$, whence the existence of~$X/G$ thanks
+to~\Ref{V.1.8}. Let us first prove
+
+\begin{corollary}
+\label{V.3.2} The morphism $X \to X/G$ is \'etale.
+\end{corollary}
+
+One can obviously suppose $G$ transitive on the set of
+connected components of~$X$, then, by considering the
+stabilizer of a connected component, that $X$ is even
+connected. Finally, one can suppose that $G$ acts faithfully.
+But then one sees as in~\Ref{V.2.4} that $G$ acts without
+inertia, hence by~\Ref{V.2.3} it follows that $X \to X/G$ is
+\'etale. One concludes thanks to the
+
+\begin{lemma}[afterthought to Expos\'e I]
+\label{V.3.3} Let $X \to X' \to
+Y$ be morphisms of finite type, $x$ a point of~$X$, $x'$ and $y$ its
+images. Suppose $Y$ locally noetherian. If two of the
+morphisms considered are \'etale at the marked points, so is
+the third.
+\end{lemma}
+
+It remains only to look at the case where $X \to X'$ and $X \to
+Y$ are \'etale at $x$, and to prove that $X' \to Y$ is \'etale at $x'$ (which
+is the case that we need
+% original p. 117
+for~\Ref{V.3.1}). Making a suitable flat extension of the base
+$Y$, one is reduced to the case where the residue extension
+$\kres(x)/\kres(y)$
+is trivial. Consider the homomorphisms
+$\cal{O}_y \to \cal{O}_{x'} \to \cal{O}_x$ and the homomorphisms
+deduced by passing to the completions; the hypothesis
+means that $\hat{\cal{O}_y} \to \hat{\cal{O}_x}$ and
+$\hat{\cal{O}_{x'}} \to \hat{\cal{O}_x}$ are isomorphisms,
+whence immediately that $\hat{\cal{O}_y} \to \hat{\cal{O}_{x'}}$
+is one, which proves the lemma.
+
+\begin{corollary}
+\label{V.3.4} If $X$ is finite and \'etale over~$Y$, then $X/G$
+is finite and \'etale over~$Y$.
+\end{corollary}
+
+\begin{proposition}
+\label{V.3.5} Let $X$, $X'$ be two \'etale coverings of
+$Y$. Then every $Y$-morphism $f \colon X \to X'$ factors as the
+product of a surjective \'etale morphism $X \to X''$ and
+the canonical immersion $X'' \to X'$ of a subset $X''$ of~$X'$ that is
+both open and closed.
+\end{proposition}
+
+One knows (I~\Ref{I.4.8}) that $f$ is \'etale, hence an open
+morphism; on the other hand, $X$ being finite over~$Y$, $f$ is closed,
+hence $f(X)=X''$ is a subset of~$X'$ that is both open and closed. We are done (N.B. it would have sufficed that $X'$, instead of being an
+\'etale covering, be unramified over~$Y$).
+
+\begin{corollary}
+\label{V.3.6} With the preceding notation, $X \to X'$
+is a strict epimorphism in the category of
+preschemes, and $X' \to X''$ is a monomorphism (and even
+a strict monomorphism) in the category of preschemes.
+\end{corollary}
+
+The first assertion means by definition that the sequence of
+morphisms
+$$
+\xymatrix@C=.7cm{X \times_{X''} X \ar@<2pt>[r]^-{\pr_1}
+\ar@<-2pt>[r]_-{\pr_2} & X \ar[r] & X''}
+$$
+is exact, and this follows from the fact that $X \to X''$ is finite and
+faithfully flat, as one sees easily (\cf Grothendieck, \loccit). The dual assertion for $X'' \to X'$ is even more trivial.
+
+Corollary~\Ref{V.3.6} will be useful to us for the theory of the
+fundamental group in the next no.; it is possible (for those
+who do not like the notion of strict epimorphism) to replace
+corollary~\Ref{V.3.6} by such a variant as the reader will arrange
+to his personal taste. Let us merely take the opportunity to
+point out that a factorization
+% original p. 118
+$f=f'f''$, with $f''$ a strict epimorphism and $f'$ a
+monomorphism, is necessarily unique up to unique isomorphism
+(in any category); however, there may exist at the
+same time a factorization $f=f_1f_2$ having the
+dual properties: $f_2$ is an epimorphism, $f_1$ a
+strict monomorphism (also unique up to unique
+isomorphism), which is not isomorphic to the preceding one: it
+suffices to take for instance the category of topological vector spaces
+(Hausdorff, if one insists), and for $u \colon X \to
+X'$ a morphism such that $u(X)$ is not closed.
+
+\begin{proposition}
+\label{V.3.7} Let $Y$ be a \emph{connected} locally
+noetherian prescheme, $y$ a point of~$Y$, $\mathit{\Omega}$ an
+algebraically closed extension
+of~$\kres(y)$. For every $X$ over~$Y$, one
+denotes by $X(\Omega)$ the set of points of~$X$
+with values in $\Omega$. Let $X$, $X'$ be \'etale coverings
+of~$Y$ and $u \colon X \to X'$ a $Y$-morphism such that
+the corresponding map $X(\Omega) \to
+X'(\Omega)$ is an isomorphism. Then $u$ is an
+isomorphism.
+\end{proposition}
+
+One is immediately reduced to the case where $X'$ is
+connected. Since $X \to X'$ is finite and \'etale, one knows that the
+geometric number of points in a fiber of~$X \to X'$ is
+constant, and equal to 1 if and only if the morphism
+considered is an isomorphism. Now this number is also the
+number of elements in a fiber of~$X(\Omega) \to
+X'(\Omega)$, whence the conclusion.

@@ -1,0 +1,420 @@
+\chapter{Examples and complements}
+\label{XI}
+% original p. 285
+
+\section{Projective spaces, unirational varieties}
+\label{XI.1}
+
+\begin{proposition}
+\label{XI.1.1}
+Let $k$ be an algebraically closed field, $X=\PP_k^r$ the projective
+space of dimension $r$ over~$k$. Then $X$ is \emph{simply
+connected,} \ie $\pi_1(X)=0$.
+\end{proposition}
+
+For $r=0$, this is trivial. If $r=1$, one must show that if $X'$ is
+a nonempty connected \'etale covering of~$X=\PP_k^1$, then
+$X'\isomto X$. The genus formula gives us here, if~$g$ and $g'$ are
+the genera of~$X$ and~$X'$:
+$$
+1-g' = d(1-g)\quoi,
+$$
+where $d$ is the degree of~$X'$ over~$X$. Since $g=0$, we will therefore have
+$1-g'=d$, which requires $d=1$ since $g'\ge 0$, which proves
+$X'\isomto X$. When $r\ge 2$, one proceeds by induction
+on~$r$, assuming that $\PP^{r'}$ is simply connected for
+$r'<r$. Applying this to a hyperplane of~$\PP^r$ and using
+(X~\Ref{X.2.10}), it indeed follows that $\PP^r$ is simply
+connected. Another proof: we will have
+$\pi_1(\PP^1\times\cdots\times \PP^1) = \pi_1(\PP^1)\times\cdots
+\times \pi_1(\PP^1)$ by virtue of (X~\Ref{X.1.7}), hence $(\PP^1)^r$
+is simply connected since $\PP^1$ is, hence $\PP^r$ is
+simply connected by virtue of the birational invariance of the fundamental
+group (X~\Ref{X.3.4}). This proof shows more
+generally:
+
+\begin{corollary}
+\label{XI.1.2}
+Let $X$ be a proper and normal scheme over an
+algebraically closed field~$k$; if $X$ is a rational
+variety, \ie integral and its function field is a purely
+transcendental extension of~$k$, then $X$ is simply connected.
+\end{corollary}
+
+This result applies in particular to Grassmannian
+varieties and more
+% original p. 286
+generally to the varieties~$G/H$, where $G$ is a connected linear
+group over~$k$ and $H$ an algebraic subgroup containing a Borel
+subgroup of~$G$.
+
+Recall that one calls \emph{unirational variety over~$k$}
+a proper and integral scheme over~$k$ whose function
+field $K$ is contained in a purely transcendental extension~$K'$
+of~$k$, finite over~$K$ (\ie having the same transcendence degree
+over~$k$ as~$K$), \ie if there exists a dominant rational
+map $f\colon\PP_k^r\to X$, with $r=\dim X$. If $X$ is normal,
+one therefore sees by the reflections preceding X~\Ref{X.3.4}
+that for every connected \'etale covering $X'$ of~$X$, with
+field~$L/K$, the algebra $L\otimes_K K'$ over~$K'$ is
+unramified over the model~$\PP^r$, hence completely
+decomposed by virtue of~\Ref{X.1.1}, which shows that $L$ is
+$K$-isomorphic to a subextension of~$K'/K$. This therefore proves,
+taking into account V~\Ref{V.8.2}:
+
+\begin{corollary}
+\label{XI.1.3}
+The fundamental group of a normal unirational variety over
+an algebraically closed field is finite.
+\end{corollary}
+
+(N.B. One will note that in the definition of ``unirational'', one
+did not need $K'/K$ to be finite).
+
+\begin{remarks}
+\label{XI.1.4}
+Of course, the results of this no.\ are well
+known. On the other hand,
+J-P\ptbl
+Serre has shown~\cite{XI.10} that when $X$ is
+a smooth unirational projective variety over an
+algebraically closed field of \emph{characteristic zero,} $X$ is
+simply connected. His proof is transcendental in that
+it uses the Hodge symmetry theorem.
+
+\lcrochetbf Added in 2003 (MR) Let us restrict ourselves to the case of an algebraically closed field $k$ of
+characteristic $p\geq 0$. In characteristic $p>0$, the definition of
+unirational $k$-variety given above is that of weakly unirational
+$k$-variety, as opposed to that of strongly unirational
+$k$-variety, where one assumes moreover that $K'$ is a separable
+extension of~$K$.
+
+In the case of dimension $2$, there exist projective and
+smooth, weakly unirational surfaces which have a nontrivial fundamental group (finite
+by 1.3) and which are therefore not rational (T\ptbl Shioda, On unirationality of supersingular surfaces, Math.~Ann. \textbf{225}
+(1977), p\ptbl155--159.). On the other hand, a strongly
+unirational surface is rational: this follows from Castelnuovo's
+rationality criterion, extended to characteristic $p>0$ by O\ptbl Zariski (\cf J-P\ptbl Serre, S\'em. Bourbaki \no146, 1957 and {\OE}uvres--Collected
+papers, vol\ptbl 1, p\ptbl 467).
+
+Over the field $\CC$ of complex numbers, one knows examples of smooth projective
+varieties of \hbox{dimension $\geq 3$} which are unirational and not
+rational (\cf P\ptbl Deligne, Vari\'et\'es unirationnelles non
+rationnelles [d'apr\`es M\ptbl Artin et D\ptbl Mumford],  S\'em.\ Bourbaki
+\no402, 1971-72, Lecture Notes vol\ptbl 317). This is the case in particular for a
+smooth cubic hypersurface in the projective space $\PP^4$.
+Some of these examples extend to characteristic $>0$ to give
+strongly unirational non-rational varieties (\cf J.P\ptbl Murre, Reduction of the proof of the non-rationality of a non
+singular cubic threefold to a result of Mumford, Compositio Math. \textbf{27}
+(1973), p\ptbl63--82).
+
+Let $V$ be a normal, integral projective $k$-variety. One says that $V$ is
+rationally connected if there exist an integral $k$-scheme of finite type
+$T$ and a $k$-morphism $F : T\times\PP^1\to V$ such that the morphism:
+\begin{equation}\tag*{(1)}
+\begin{split}
+T \times\PP^1\times\PP^1&\to V\times V\\
+(t, u, u')&\mto(F(t,u), F(t,u'))
+\end{split}
+\end{equation}
+is dominant. In particular, through two sufficiently general rational
+points of~$V$ there passes a rational curve. The terminology is
+justified by the fact that if $V$ is rationally connected, one can
+join two rational points by a finite chain of rational
+curves. If $k$ is of characteristic $p>0$, one strengthens the
+preceding definition by requiring that the map (1) be
+generically smooth. One then obtains the notion of separably
+rationally connected variety. Thus unirational varieties
+are rationally connected and in characteristic
+$p>0$, strongly unirational varieties are separably
+rationally connected. J\ptbl Koll\'ar has shown that separably
+rationally connected varieties have a trivial algebraic
+fundamental group (\cf O\ptbl Debarre, Vari\'et\'es rationnellement
+connexes [d'apr\`es T\ptbl Graber, J\ptbl Harris, J\ptbl Starr et A.J\ptbl de~Jong],
+S\'em. Bourbaki \no906, 2001-2002).\rcrochetbf
+\end{remarks}
+
+\section{Abelian varieties}
+\label{XI.2}
+Let $k$ be an algebraically closed field, $A$ an abelian
+variety over~$k$, \ie a group scheme over~$k$, proper
+over~$k$, smooth over~$k$, and connected, and finally $G$ a
+commutative group scheme of finite type over~$k$. Let us denote by $\Ext(A,G)$ the
+group of classes of commutative extensions of~$A$ by~$G$, by
+$\H^1(A,G)$ the group of classes of principal bundles on~$A$ with
+group~$G$ (compare \No \Ref{XI.4} below), and let us consider
+the canonical homomorphism
+$$
+\Ext(A,G)\to \H^1(A,G)\quoi.
+$$
+An
+% original p. 287
+argument of Serre \cite[Chap\ptbl VII, Th\ptbl 5]{XI.5} shows that it is an
+injective homomorphism, whose image is the set of
+``primitive elements'' of~$\H^1(A,G)$, \ie of the
+elements $\xi$ for which one has:
+$$
+\pi^*(\xi) = \pr_1^*(\xi) + \pr_2^*(\xi)\quoi,
+$$
+where $\pr_i$ are the two projections of~$A\times A$
+onto~$A$, and $\pi\colon A\times A\to A$ the composition law of~$A$
+(N.B. Serre states his theorem only for $G$
+linear and connected, and of course smooth over~$k$, but by
+simplifying the first part of his argument, one sees that
+these restrictions are unnecessary: it suffices to note that every morphism
+from~$A$ to a group scheme $E$ of finite type over~$k$ which
+takes the unit to the unit is a group homomorphism, and
+to apply this to the sections over~$A$ of an extension $E$ of
+$A$ by~$G$).
+
+We are going to apply this result to the case where $G$ is a finite
+group separable over~$k$, \ie an ordinary finite group, assumed
+commutative. Using then $\pi_1(A\times A)\isomto\allowbreak \pi_1(A)\times
+\pi_1(A)$ (X~\Ref{X.1.7}) and interpreting $\H^1(X,G)$ as
+$\Hom(\pi_1(X),G)$ for every algebraic scheme~$X$, in
+particular for $X=A$ or $X=A\times A$, one sees that every class of
+$\H^1(A,G)$ is primitive, hence one has an isomorphism
+$$
+\Ext(A,G)\isomto \H^1(A,G)\quoi,
+$$
+in other words \emph{every principal covering of~$A$ with
+commutative structure group~$G$, pointed over the origin
+of~$A$, is endowed in a unique way with a structure of
+algebraic group admitting the marked point as origin, and such that
+$A'\to A$ is a homomorphism of algebraic groups.} In
+particular, if $A'$ is connected, it is also an
+abelian variety, isogenous to~$A$.
+
+On the other hand, since the functor $X\mto \pi_1(X)$ from pointed
+algebraic schemes $X$ to groups commutes with products
+(IX~\Ref{IX.1.7}), it transforms a group in the first
+category into a group in the category of groups, \ie into
+a \emph{commutative} group. Hence \emph{if $A$ is an abelian
+variety, $\pi_1(A)$
+% original p. 288
+is a commutative group.} Hence, in order to know $\pi_1(A)$, it
+suffices to know the functor $G\mto
+\H^1(A,G)=\Hom(\pi_1(A),G)$ for $G$ varying over the
+\emph{commutative} finite groups. Finally, let us recall that for every integer $n>0$,
+the homomorphism of multiplication by $n$ in~$A$:
+$$
+A\lto{n} A
+$$
+is surjective, hence with finite kernel, \ie it is an isogeny, and
+that it follows that every isogeny $A'\to A$ is a quotient
+of an isogeny of the preceding type. From this, and from
+standard arguments (\cf for example~\cite{XI.6}), one derives:
+
+\begin{theorem}[Serre-Lang]
+\label{XI.2.1}
+Let $A$ be an abelian variety over an
+algebraically closed field~$k$, and for every integer $n>0$ let us consider
+the ordinary finite group $K_n$ underlying the kernel ${}_nA$ of the
+multiplication by $n$ in~$A$; finally, let us set, for every prime
+number~$\ell$:
+$$
+T_\ell(A)=\varprojlim_r K_{\ell^r}
+$$
+and
+$$
+T_{.}(A)=\underset{\ell}{\prod}T_\ell(A)=\varprojlim_n K_n
+$$
+(where, for $m$ a multiple of~$n$, $m=ns$, one maps $K_m$ into $K_n$
+by multiplication by~$s$). Then the group $\pi_1(A)$ is
+canonically isomorphic to $T_{.}(A)$, hence for every prime
+number $\ell$, the $\ell$-primary component of~$\pi_1(A)$ is
+canonically isomorphic to $T_\ell(A)$.
+\end{theorem}
+
+One will note that these isomorphisms are functorial for variable $A$. The
+module $T_\ell(A)$ is called the \emph{$\ell$-adic Tate
+module} of the abelian variety~$A$. It is an
+additive functor in~$A$; in particular it gives rise to a
+representation of the ring $\Hom(A,A)$ of endomorphisms of~$A$
+in $T_\ell(A)$, called the \emph{$\ell$-adic representation
+of Weil}, and which plays an important role in the theory of
+abelian varieties (\cf for example \hbox{\cite[Chap~VII]{XI.4}}).
+Theorem~\Ref{XI.2.1} gives an interpretation of it in
+terms of the natural representation in the \emph{$\ell$-adic homology
+group} of~$A$, $\H_1(A,\ZZ_\ell)=\pi_1(A)_\ell$,
+which
+% original p. 289
+is evidently more satisfying a priori, notably from the point of view
+of the Lefschetz formula, \cite[Chap~V]{XI.4}. Let us recall here
+Weil's results on the structure of~$T_\ell(A)$:
+\begin{enumerate}
+\item[a)] If $n$ is prime to $\car(k)$, then $K_n$ is a free
+module of rank equal to $2\dim A$ over~$\ZZ/n\ZZ$, hence if $\ell$
+is a prime number $\neq \car(k)$, $T_\ell(A)$ is a free module
+of rank equal to $2\dim A$ over the ring $\ZZ_\ell$ of
+$\ell$-adic integers;
+\item[b)] If $n$ is a power of~$\car(k)=p$, then $K_n$ is a
+free module of rank $\nu\leq\dim A$ over~$\ZZ/n\ZZ$, $\nu$
+independent of~$n$, hence $T_p(A)$ is a free module of rank
+$\nu\leq \dim A$ over the ring $\ZZ_p$ of $p$-adic integers.
+\end{enumerate}
+
+This shows that in the theory of the fundamental group
+developed here, the fundamental group of a variable abelian
+variety does not vary in a regular way
+with the parameter, its $p$-primary component being liable to decrease
+abruptly for values of the parameter $t$ corresponding to
+a residue characteristic~$p$; the best-known case of
+this phenomenon is that of elliptic curves. One will note,
+however, that whatever $n$ may be (prime or not to the
+characteristic), the true kernel ${}_nA$ in $A$ for the
+multiplication by $n$ is a finite group scheme over~$k$ of
+degree $n^{2g}$, where $g=\dim A$, which will be non-separable over~$k$ if $n$ is a multiple of~$p=\car(k)$. Moreover, when $A$
+varies in a family of abelian varieties, \ie if one
+has an abelian scheme $A$ over a base scheme $S$, one
+shows more generally that ${}_n A$ is a finite and flat group
+scheme over~$S$, of degree $n^{2g}$ over~$S$;
+that is to say, provided one takes into account the infinitesimal
+parts of the kernels~${}_n A$, they behave in a regular way
+whatever $n$ may be. This suggests that the
+``true'' fundamental group of an abelian variety $A$
+is the algebraic pro-group (formal projective limit of
+finite groups over~$k$) $\varprojlim_n{{}_nA}$, where
+by ``true fundamental group'' of an algebraic scheme~$X$, one
+must understand: the pro-group which classifies the principal
+coverings of~$X$ with structure group an arbitrary finite group $G$
+over~$k$ (not necessarily separable over~$k$). In this
+way, for example, one recovers, through the
+representations of~$\Hom(A,A)$ in the $p$-primary component of the
+true fundamental group of~$A$, the characteristic polynomial of
+Weil defined by the latter with the help of the $\ell\neq p$, in a more natural way than Serre's construction~\cite{XI.8}.
+
+\section{Projecting cones, Zariski's example}
+\label{XI.3}
+% original p. 290
+
+As before, let $k$ be an algebraically closed field for simplicity, and
+let $V$ be a connected projective $k$-scheme, a closed
+subscheme of~$\PP^r_k$, which one may, if one wishes, assume
+nonsingular. Let $Y=\hat C$ be the projective projecting cone of~$V$,
+$y_0$ its vertex, $X=\hat C_V$ the usual projective closure of the
+vector bundle $C_V=\VV(\cal{O}_V(1))$ associated with
+$\cal{O}_V(1)$, and finally
+$$
+f\colon X\to Y
+$$
+the canonical morphism, contracting the zero section $X_0$ of~$C_V$
+over~$X$ to a point (EGA~II~8.6.4). Since $X$ is a locally
+trivial bundle over~$V$, with fibers $\PP^1$, hence with
+simply connected fibers, the morphism $p\colon X\to V$ induces, by virtue
+of~(X~\Ref{X.1.4}),
+an isomorphism:
+$$
+\pi_1(X)\isomto\pi_1(V)\quoi.
+$$
+Since $p$ induces an isomorphism $X_0\to V$, one concludes that \emph{an
+\'etale covering of~$X$ is completely decomposed
+if and only if its restriction to $X_0$ is}. Now for every
+\'etale covering $Y'$ of~$Y$, the inverse image $X'=X\times_Y
+Y'$ is an \'etale covering of~$X$ completely
+decomposed over the fiber~$X_0$, hence trivial. Since
+the homomorphism $\pi_1(X)\to\pi_1(Y)$ is surjective (IX~\Ref{IX.3.4}),
+one concludes that
+$$
+\pi_1(Y)=(e)
+$$
+in other words \emph{every projective projecting cone is
+simply connected.} (N.B. in characteristic~$0$, the
+same result will be valid if one takes for $Y$ the affine projecting
+cone).
+
+Suppose now $V$ regular, \ie smooth over~$k$; then
+$X$ is regular, and for a suitable projective embedding
+of~$V$, one then finds a \emph{normal} projecting cone $Y$. If
+$V$ is not simply connected, hence $X$ not simply connected,
+let $X'$ be a nontrivial connected \'etale covering
+of~$X$. Since the fibers of~$X$ at the points $y\in Y$ distinct from
+$y_0$ are reduced to a point, one sees that the restriction of
+$X'$ to its fibers (in particular to the
+generic
+% original p. 291
+fiber) is trivial; however $X$ does not come by
+inverse image from an \'etale covering of~$Y$, since $Y$ is
+simply connected and $X'$ would be completely
+decomposed. This shows that (X~\Ref{X.1.3} and~\Ref{X.1.4})
+become false if one replaces the hypothesis that $f$ is
+separable by the weaker one that its fibers are separable
+(or even smooth) algebraic schemes over
+the~$\kres(s)$. One will note likewise that the fundamental groups of the
+geometric fibers $\overline X_y$ of the $y\neq y_0$ are
+evidently reduced to $(e)$ since these fibers are
+reduced to a point, whereas $\pi_1(X_0)\neq e$; hence the
+semicontinuity theorem (X~\Ref{X.2.4}) likewise
+fails for~$f$.
+
+Let us finally indicate the example, pointed out by Zariski, which shows
+that these same theorems fail when one replaces in them
+the hypothesis that $f$ is separable by the hypothesis that $f$ is
+flat. Let $f\colon X\to Y$ be a morphism from a nonsingular projective
+surface to the rational line $Y=\PP^1$, such
+that
+$K=k(X)$
+is a ``regular'' extension, \ie primary and
+separable, of~$k(f)$ (\ie the geometric generic
+fiber is connected and separable), and such that the
+divisor $(f)=X_0-X_\infty$ is an
+$n$th multiple
+of a divisor (where $n$ is an integer prime to the
+characteristic). It is possible to construct such examples
+in every characteristic. Let $X'$ be the normalization of~$X$ in
+$K(f^{1/n})$, where $K=k(X)$ is the function field of~$X$. It
+follows from the hypothesis on~$(f)$ that $X'$ is \'etale
+over~$X$. Let $Y'$ be the normalization of~$Y$ in $k(t)(t^{1/n})$; it
+is ramified over~$Y$ at the points $t=0$ and $t=\infty$ exactly,
+and the restriction $X'|f^{-1}(U)$ is isomorphic to the inverse image
+of~$Y'|U$. In particular, the restriction of~$X'$ to the
+\emph{geometric} generic fiber of~$X$ over~$Y$
+decomposes completely. However, $X'$ is not isomorphic
+to the inverse image of an \'etale covering of~$Y$, for one
+sees at once that the latter would necessarily be~$Y'$, which
+is absurd since $Y'$ is ramified over~$Y$\kern2pt\footnote{One may
+remark, from the point of view of the ``\'etale topology'' (SGA~4~VII),
+that in this example $\R^1(f_{\et})_*(\ZZ/n\ZZ)$ is ``non-separated''
+over~$S$.}.
+
+Here is (after Serre) a simple way of realizing the
+conditions of this example, drawing inspiration from \cite[\No 20]{XI.5}: one takes
+for $n$ a prime number $\geq 5$, distinct from the
+characteristic, and one lets $G=\ZZ/n\ZZ$ act on
+$\underline{k}^4$%
+{{\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\kern1pt\footnote{\lcrochetbf Added in 2003: $\underline{k}^4$ denotes the affine space of dimension $4$ over $k$.\rcrochetbf}}}
+by multiplying the coordinates by four distinct
+characters of~$G$ (which is possible since $n\geq
+5$). Then $G$ acts on the projective space $\PP^3_k$, and the
+only points fixed under $G$ are the four points corresponding to the
+coordinate axes. The surface $X'$ with equation
+$x^n+y^n+z^n+t^n=0$
+is smooth over
+% original p. 292
+$k$ (Jacobian criterion), and contains none of the fixed points;
+hence $G$, being of prime order, acts on~$X$ ``without fixed
+points'', \ie $X$ is a principal covering of~$X=X'/G$ with group
+$G$. Let $g=x/y$ in $k(X')=K'$; it is a Kummer
+generator of~$K'$ over~$K=k(X)$ if the chosen characters
+were~$\chi^i$, $i=0,1,2,3$, with $\chi$ a primitive
+character; let $f$ be its $n$th power, which is an
+element of~$K$. One sees at once that $K'$ is a
+regular extension of~$k(g)$, which follows from the fact that
+the plane curve with homogeneous equation in $U,T,Z$:
+$T^n+Z^n+(1+g^n)U^n=0$ is smooth over~$k(g)$ (Jacobian criterion), and
+that one knows that every plane curve is connected. On the other hand one has
+$k(f)=K\cap k(g)$, since the right-hand side is an extension of
+$k(f)$ contained in the extension $k(g)$ of prime degree, and
+distinct from~$k(g)$ (since $g\not\in K$). This implies that $K$ is
+a regular extension of~$k(f)$. Finally the divisor of~$f$
+on~$X$ is an $n$th multiple of a divisor, since its
+inverse image on~$X'$ is the divisor of~$g^n$, hence an $n$th
+multiple, and one can descend back because $X'$ is \'etale over~$X$. One would be done if the rational map $f\colon X\to \PP^1$
+were a morphism, that is to say if the divisors of
+zeros and of poles of~$f$ did not meet. In fact,
+one easily verifies (again by looking on~$X'$) that the
+two divisors in question are the products by $n$ of two
+curves smooth over~$k$, intersecting transversally at a point~$a$. Replacing now $X$ by the scheme obtained by blowing up~$a$, the preceding conditions ($\divisor(f)$ divisible by
+$n$, and $k(X_1)=k(X)$ regular extension of~$k(X)$) remain
+satisfied, but moreover $f$ is a \emph{morphism} $X_1\to
+\PP^1$, hence we are under the desired conditions.

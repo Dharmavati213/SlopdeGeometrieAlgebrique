@@ -1,0 +1,680 @@
+% ---- en-chunk1.tex ----
+\label{VI}
+\section{Introduction}
+
+Contrary to what had been announced in
+the introduction to the preceding expos\'e, it has
+turned out to be impossible to do descent in the category
+of preschemes, even in special cases, without having
+first developed with sufficient care the language of
+descent in general categories.
+
+The notion of ``descent'' provides the general framework for all
+procedures of ``gluing'' of objects, and
+consequently of ``gluing'' of categories. The most
+classical case of gluing is relative to the datum of a
+topological space $X$ and a covering of~$X$ by open sets $X_i$; if
+one is given for every $i$ a fiber space (say) $E_i$ over
+$X_i$, and for every pair $(i,j)$ an isomorphism $f_{ji}$ of
+$E_i|X_{ij}$ onto~$E_j|X_{ij}$ (where one sets $X_{ij}=X_i\cap X_j$),
+satisfying a well-known transitivity condition (which one
+writes in abbreviated form $f_{kj}f_{ji}=f_{ki}$), one
+knows that there exists a fiber space $E$ over~$X$, defined up to
+isomorphism by the condition that one have isomorphisms
+$f_i\colon E|X_i\isomto E_i$, satisfying the relations
+$f_{ji}=f_jf_i^{-1}$ (with the usual abuse of writing). Let $X'$
+be the sum space of the $X_i$, which is thus a fiber space over
+$X$ (\ie equipped with a continuous map $X'\to X$). One can
+interpret more concisely the datum of the $E_i$
+as a fiber space $E'$ over~$X'$, and the datum of the $f_{ji}$
+as an isomorphism between the two inverse images (by the two
+canonical projections) $E''_1$ and $E''_2$ of~$E'$ on~$X''=X'\times_X
+X'$, the gluing condition then being able to be written as an
+identity between isomorphisms of fiber spaces $E'''_1$ and
+$E'''_3$ over the triple fibered product $X'''=X'\times_X X'\times_X
+X'$ (where $E'''_i$ denotes the inverse image of~$E'$ on~$X'''$
+by the canonical projection of index $i$). The construction of~$E$,
+starting from~$E'$ and from~$f$, is a typical case
+% original p. 146
+of a procedure of ``descent''. Moreover, starting from a fiber
+space $E$ over~$X$, one says that $X$ is ``locally trivial'', of
+fiber $F$, if there exists an open covering $(X_i)$ of~$X$ such that
+the $E|X_i$ are isomorphic to $F\times X_i$, or what amounts
+to the same, such that the inverse image $E'$ of~$E$ on~$X'=\coprod_i
+X_i$ is isomorphic to $X'\times F$.
+
+Thus, the notion of ``gluing'' of objects like that of
+``localization'' of a property, are tied to
+the study of certain types of ``changes of base'' $X'\to X$.
+In Algebraic Geometry, many other types of change
+of base, and notably the faithfully flat morphisms $X'\to X$,
+must be regarded as corresponding to a
+procedure of ``localization'' relative to
+preschemes, or other objects, ``over''~$X$. This type of
+localization is used just as much as simple
+topological localization (which is moreover a special case of it). The same holds
+(to a lesser extent) in Analytic Geometry.
+
+Most of the proofs, reducing to
+verifications, are omitted or merely sketched; if need
+be we specify the less evident diagrams
+which arise in a proof.
+
+\section{Universes, categories, equivalence of categories}
+\label{VI.1}
+
+To avoid certain logical difficulties, we shall admit
+here the notion of \emph{Universe}, which is a set ``large enough''
+that one does not leave it by the usual operations of
+set theory; an ``\emph{axiom of Universes}'' guarantees
+that every object lies in a Universe. For details, see
+a book in preparation by C\ptbl Chevalley and the speaker\footnote{%
+The definitive authors are C\ptbl Chevalley and P\ptbl Gabriel. The book is to appear in the year 3000. In the meantime, \cf also SGA~4 I.}. Thus, the symbol~$\Ens$
+designates, not the category of all sets (a notion
+which has no meaning), but the category of sets which
+lie in a given Universe (which we shall not specify
+here in the notation). Likewise, $\Cat$
+will designate the category of categories lying in
+the Universe in question, the ``morphisms'' from an object $X$ of~$\Cat$
+to another $Y$ being by definition the \emph{functors}
+from~$X$ to $Y$.
+
+If
+% original p. 147
+$\cal{C}$ is a category, we denote by $\Ob(\cal{C})$
+\emph{the set of objects} of~$\cal{C}$, by~$\Fl(\cal{C})$
+\emph{the set of arrows} of~$\cal{C}$ (or morphisms of
+$\cal{C}$). We shall thus write $X\in\Ob(\cal{C})$, avoiding
+the common abuse of notation $X\in\cal{C}$. If $\cal{C}$ and $\cal{C}'$
+are two categories, a \emph{functor} from~$\cal{C}$ to
+$\cal{C}'$ will always be what is commonly called a
+\emph{covariant} functor from~$\cal{C}$ to $\cal{C}'$; its datum implies
+that of the target category and the source
+category, $\cal{C}$ and $\cal{C}'$. The functors from~$\cal{C}$ to
+$\cal{C}'$ form a set, denoted $\Hom(\cal{C},\cal{C}')$, which
+is the set of objects of a category denoted
+$\SheafHom(\cal{C},\cal{C}')$.
+By definition, a \emph{contravariant functor} from~$\cal{C}$ to
+$\cal{C}'$ is a functor from the \emph{opposite category}
+$\cal{C}^\circ$
+of~$\cal{C}$ to~$\cal{C}'$.
+
+We shall admit the notion of \emph{projective limit} and of
+\emph{inductive limit} of a functor $F\colon \cal{I}\to \cal{C}$, and
+in particular the most common special cases of this notion:
+cartesian products and fibered products, dual notions of
+direct sums and of amalgamated sums, and the usual
+formal properties of these operations.
+
+For example, in the category $\Cat$ introduced above, the
+projective limits (relative to categories $\cal{I}$
+lying in the chosen Universe) exist; the set of objects
+(\resp the set of arrows) of the projective limit
+category $\cal{C}$ of the $\cal{C}_i$, is obtained by taking the
+projective limit of the sets of objects (\resp of the sets of arrows)
+of the categories $\cal{C}_i$. The best-known case is that of the
+product of a family of categories. We shall constantly use
+in the sequel the fibered product of two categories over a
+third.
+
+For everything concerning categories and functors, while
+awaiting the book in preparation already mentioned, see
+\cite{VI.1} (which is necessarily very incomplete, even as regards
+the generalities sketched in the
+present no.).
+
+Let us take this opportunity to make explicit the notion of equivalence of
+categories,
+which is not presented in a satisfactory way
+in~\cite{VI.1}. A functor $F\colon\cal{C}\to \cal{C}'$ is said to be
+\emph{faithful}
+(\resp \emph{fully faithful})
+if for every pair of objects $S$, $T$ of~$\cal{C}$, the map
+$u\mto F(u)$ from~$\Hom(S,T)$ to $\Hom(F(S),F(T))$ is injective
+(\resp bijective). One says that $F$ is an \emph{equivalence} of
+categories if
+% original p. 148
+$F$ is fully faithful, and if moreover every object $S'$ of
+$\cal{C}'$ is isomorphic to an object of the form $F(S)$. One shows
+that this amounts to the same as saying that there exists a functor $G$ from
+$\cal{C}'$ to $\cal{C}$ \emph{quasi-inverse of} $F$, \iev such that
+$GF$ is isomorphic to $\id_{\cal{C}}$. When this is so, the
+datum of a functor $G\colon\cal{C}'\to \cal{C}$ and of an
+isomorphism $\varphi\colon GF\to \id_{\cal{C}'}$ is equivalent to
+the datum, for every $S'\in\Ob(\cal{C}')$, of a pair $(S,u)$
+formed of an object $S$ of~$\cal{C}$ and an isomorphism $u\colon
+F(S)\to S'$, namely $(G(S),\varphi(S))$. (With these notations, there exists
+a unique functor $\cal{C}'\to\cal{C}$ having the given
+map $S\mto G(S)$ as object-map, and such that the map
+$S\mto \varphi(S)$ is a homomorphism of functors $FG\to
+\id_{\cal{C}'}$). Finally, if $G$ is a functor quasi-inverse of~$F$,
+and if one chooses isomorphisms $\varphi\colon
+FG\isomto\id_{\cal{C}'}$ and $\psi\colon GF\isomto\id_{\cal{C}}$, then
+the two compatibility conditions on~$\varphi$, $\psi$
+stated in \cite[I.1.2]{VI.1} are in fact equivalent to one
+another, and for every chosen isomorphism $\varphi$, there exists
+a unique isomorphism $\psi$ such that the said conditions are
+satisfied.
+
+\section{Categories over another}
+\label{VI.2}
+
+Let $\cal{E}$ be a category in~$\Univ$, it is thus an object
+of~$\Cat$, and one can consider the category
+$\Cat_{/\cal{E}}$
+of ``objects of~$\Cat$ over~$\cal{E}$''. An object of this
+category is thus a functor
+$$
+p\colon \cal{F}\to\cal{E}
+$$
+One also says that the category~$\cal{F}$, equipped with such a functor,
+is a \emph{category over}~$\cal{E}$, or an
+$\cal{E}$\emph{-category}. One will thus call an $\cal{E}$-functor
+from a category $\cal{F}$ over~$\cal{E}$ to a category
+$\cal{G}$ over~$\cal{E}$, a functor
+$$
+f\colon\cal{F}\to\cal{G}
+$$
+such that
+$$
+qf=p
+$$
+where $p$ and $q$ are the projection functors for $\cal{F}$
+\resp $\cal{G}$. The set of $\cal{E}$-functors $f$ from~$\cal{F}$
+to $\cal{G}$ is thus in one-to-one correspondence with the set
+of arrows with source $\cal{F}$ and target $\cal{G}$
+in~$\Cat_{/\cal{E}}$, without
+% original p. 149
+there being an identity there, however (since the datum of an
+$f$ as above does not determine $\cal{F}$ and $\cal{G}$ as
+categories over~$\cal{E}$); but of course, as in any
+other category~$\cal{C}_{/S}$, one will commonly make the abuse of
+language consisting in identifying the $\cal{E}$-functors (in the
+sense made explicit above) with arrows in a
+category~$\Cat_{/\cal{E}}$.
+
+One will denote by
+$$
+\Hom_{\cal{E}}(\cal{F},\cal{G})
+$$
+the set of $\cal{E}$-functors from~$\cal{F}$ to~$\cal{G}$. Of
+course, a composite of~$\cal{E}$-functors is an
+$\cal{E}$-functor (the composition in question corresponding by
+definition to the composition of arrows
+in~$\Cat_{/\cal{E}}$).
+
+Consider now two $\cal{E}$-functors
+$$
+f,g\colon \cal{F}\to\cal{G}
+$$
+and a homomorphism of functors:
+$$
+u\colon f\to g
+$$
+One says that $u$ is an $\cal{E}$-\emph{homomorphism} or a
+``\emph{homomorphism of~$\cal{E}$-functors}'', if for every
+$\xi\in\Ob(\cal{F})$, one has
+$$
+q(u(\xi))=\id_{p(\xi)} \quoi\text{,}
+$$
+in words: setting
+$S=p(\xi)=qf(\xi)=qg(\xi)\in\Ob(\cal{E})$,
+the morphism
+$$
+u(\xi)\colon f(\xi)\to g(\xi)
+$$
+in $\cal{G}$ is an $\id_S$-morphism. (In
+general, for every morphism $\alpha\colon T \to S$
+in~$\cal{E}$, and every category $\cal{G}$ over
+$\cal{E}$, a morphism $v$ in $\cal{G}$ is called an
+$\alpha$-\emph{morphism} if $q(v)=\alpha$, $q$ denoting the
+projection functor $\cal{G}\to \cal{E}$). If one has a third
+$\cal{E}$-functor $h\colon \cal{F}\to \cal{G}$ and an
+$\cal{E}$-homomorphism $v\colon g\to h$, then $vu$ is likewise
+an $\cal{E}$-homomorphism. Thus,
+% original p. 150
+\emph{the $\cal{E}$-functors from~$\cal{F}$ to~$\cal{G}$, and
+the $\cal{E}$-homomorphisms of such, form a subcategory
+of the category $\SheafHom(\cal{F},\cal{G})$ of all functors
+from~$\cal{F}$ to~$\cal{G}$, which one will call the category of
+$\cal{E}$-functors from~$\cal{F}$ to $\cal{G}$ and which one will denote}
+$$
+\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})
+$$
+It is also the kernel subcategory of the pair of functors
+$$
+\xymatrix@C=.5cm{R,S\colon\SheafHom(\cal{F},\cal{G})
+\ar@<2pt>[r]\ar@<-2pt>[r]&\SheafHom(\cal{F},\cal{E})}\quoi\text{,}
+$$
+where $R$ is the constant functor defined by the object $p$ of
+$\SheafHom(\cal{F},\cal{E})$, and where $S$ is the functor $f\mto
+q\circ f$ defined by $q\colon\cal{G}\to\cal{E}$.
+
+To finish these generalities, it remains to define the
+natural pairings among the categories
+$\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})$ by composition of
+$\cal{E}$-functors. In other words, one wants to define a
+``composition functor'':
+\begin{equation*}
+\tag{i}
+\label{eq:VI.2.i} {\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})\times
+\SheafHom_{\cal{E}/-}(\cal{G},\cal{H})\to
+\SheafHom_{\cal{E}/-}(\cal{F},\cal{H})}
+\end{equation*}
+when $\cal{F}$, $\cal{G}$, $\cal{H}$ are three categories
+over~$\cal{E}$, in such a way that this functor induce, for the
+objects, the composition map $(f,g)\mto gf$ of
+$\cal{E}$-functors $f\colon\cal{F}\to\cal{G}$ and $g\colon \cal{G}\to
+\cal{H}$. For this, let us recall that one defines a canonical
+functor:
+\begin{equation*}
+\tag{ii}
+\label{eq:VI.2.ii}
+{\SheafHom(\cal{F},\cal{G})\times\SheafHom(\cal{G},\cal{H})\to
+\SheafHom(\cal{F},\cal{H})}
+\end{equation*}
+which, for the objects, is nothing other than the composition map
+$(f,g)\mto gf$ of functors, and which transforms an arrow
+$(u,v)$,~where
+$$
+u\colon f\to f'\quoi,\quad v\colon g\to g'
+$$
+are arrows in $\SheafHom(\cal{F},\cal{G})$ \resp in
+$\SheafHom(\cal{G},\cal{H})$, into the arrow
+$$
+v*u\colon gf\to g'f'
+$$
+defined by the relation:
+% original p. 151
+$$
+v*u(\xi)=v(f'(\xi))\cdot g(u(\xi))=g'(u(\xi))\cdot v(f(\xi))
+$$
+It is well known that one thus indeed obtains a homomorphism from~$gf$
+to~$g'f'$, and that (for $f,g$ and $u,v$ variable) one thus obtains
+a functor~\eqref{eq:VI.2.ii}, \ie that one has
+\begin{equation*}
+\tag{I}
+\label{eq:VI.2.I} {\id_g*\id_f=\id_{gf}\quoi,}
+\end{equation*}
+\begin{equation*}
+\tag{II}
+\label{eq:VI.2.II} {(v'*u')\circ(v*u)=(v'\circ v)*(u'\circ u)}
+\end{equation*}
+Let us also recall that one has an associativity formula for the
+canonical pairings~\eqref{eq:VI.2.ii}, which is expressed on the one hand
+by the associativity $(hg)f=h(gf)$ of composition of functors,
+and on the other hand by the formula
+\begin{equation*}
+\tag{III}
+\label{eq:VI.2.III} {(w*v)*u=w*(v*u)}
+\end{equation*}
+for the composition products of homomorphisms of functors (where
+$u\colon f\to f'$ and $v\colon g\to g'$ are as above, and where one
+assumes given moreover a homomorphism $w\colon h\to h'$ of
+functors $h,h'\colon \cal{H}\to\cal{K}$). I now say that
+\emph{when~$\cal{F}$, $\cal{G}$ are $\cal{E}$-categories,
+the canonical composition functor}~\eqref{eq:VI.2.ii} \emph{induces a
+functor}~\eqref{eq:VI.2.i}. As one already knows that the
+composite of two $\cal{E}$-functors is an $\cal{E}$-functor,
+this amounts to saying that \emph{when $u\colon f\to f'$ and
+$v\colon g\to g'$ are homomorphisms of~$\cal{E}$-functors,
+then $v*u\colon gf\to g'f'$ is likewise a homomorphism of
+$\cal{E}$-functors.} This follows indeed trivially from the
+definitions. As the pairings~\eqref{eq:VI.2.i} are
+induced by the pairings~\eqref{eq:VI.2.ii}, they satisfy the
+same associativity property, expressed also
+in the formulae $(hg)f=h(gf)$ and $(w*v)*u=w*(v*u)$ for
+$\cal{E}$-functors and $\cal{E}$-homomorphisms of
+$\cal{E}$-functors.
+
+To complete the formulary~\eqref{eq:VI.2.I},
+\eqref{eq:VI.2.II}, \eqref{eq:VI.2.III}, let us also recall the formulae:
+\begin{equation*}
+\tag{IV}
+\label{eq:VI.2.IV} {v*\id_{\cal{F}}=v\quad\text{and}\quad\id_{\cal{G}}*u=u}\quoi,
+\end{equation*}
+where
+% original p. 152
+for simplicity one writes $v*f$ or $u*g$ instead of~$v*u$, when
+$u$ \resp $v$ is the identity automorphism of~$f$ \resp $g$.
+
+From the definition of the pairings~\eqref{eq:VI.2.i} it follows
+that $\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})$ \emph{is a functor in
+$\cal{F}$,~$\cal{G}$,
+of the product category
+${\Cat_{/\cal{E}}}^\circ\times\Cat_{/\cal{E}}$ to the
+category~$\Cat$}. If indeed $g\colon \cal{G}\to\cal{G}_1$ is
+an $\cal{E}$-functor, \ie an object of
+$\SheafHom_{\cal{E}/-}(\cal{G},\cal{G}_1)$, then setting
+in~\eqref{eq:VI.2.i} $\cal{H}=\cal{G}_1$, there corresponds to it a
+functor
+$$
+g_*\colon\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})\to
+\SheafHom_{\cal{E}/-}(\cal{F},\cal{G}_1)
+$$
+One defines analogously, for an $\cal{E}$-functor
+$f\colon \cal{F}_1\to \cal{F}$, a functor
+$$
+f^*:\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})\to
+\SheafHom_{\cal{E}/-}(\cal{F}_1,\cal{G})
+$$
+For brevity, one also denotes these functors by the symbols
+$f\mto g\circ f$ \resp $g\mto g\circ f$ (which designate
+only, in fact, the corresponding maps on the sets
+of objects). It follows from the associativity property
+indicated above that in this way, one indeed obtains as
+announced a functor
+$\Cat_{/\cal{E}}^\circ\times\Cat_{/\cal{E}}\to\Cat$.
+
+\section{Change of base in categories over~$\cal{E}$}
+\label{VI.3}
+
+As in $\Cat$ the projective limits (relative to
+categories $\cal{I}$ elements of~$\Univ$) exist, the same
+is true in $\Cat_{/\cal{E}}$, in particular cartesian
+products exist there, which are interpreted as fibered
+products in~$\Cat$. In accordance with the general
+notations, if $\cal{F}$ and $\cal{G}$ are categories
+over~$\cal{E}$, one denotes by
+$$
+\cal{F}\times_{\cal{E}}\cal{G}
+$$
+their product in~$\Cat_{/\cal{E}}$, \ie their fibered product
+over~$\cal{E}$ in~$\Cat$,
+% original p. 153
+as a category over~$\cal{E}$. Thus,
+$\cal{F}\times_{\cal{E}} \cal{G}$ is equipped with two $\cal{E}$-functors
+$\pr_1$ and $\pr_2$, which define, for every category
+$\cal{H}$ over~$\cal{E}$, a bijection
+$$
+\Hom_{\cal{E}}(\cal{H},\cal{F}\times_{\cal{E}}\cal{G})\isomto
+\Hom_{\cal{E}}(\cal{H},\cal{F})\times\Hom_{\cal{E}}(\cal{H},\cal{G}).
+$$
+This bijection arises moreover from an isomorphism of
+categories
+$$
+\SheafHom_{\cal{E}/-}(\cal{H},\cal{F}\times_{\cal{E}}
+\cal{G})\isomto\SheafHom_{\cal{E}/-}(\cal{H},\cal{F})\times
+\SheafHom_{\cal{E}/-}(\cal{H},\cal{G})
+$$
+by taking the sets of objects of the two sides, where the functor
+written is the one which has as components the functors $h\mto
+\pr_1\circ h$ and $h\mto \pr_2\circ h$ from the first side to the two
+factors of the second. The reader is left to verify that one
+thus indeed obtains an isomorphism (the analogous fact being true,
+more generally, whenever one has a projective limit
+of categories --- and not only in the case of a fibered
+product).
+
+Let us moreover recall that one has (as was said in~no.~\ref{VI.1}):
+\begin{eqnarray*}
+\Ob(\cal{F}\times_\cal{E}\cal{G})&=&
+\Ob(\cal{F})\times_{\Ob(\cal{E})}\Ob(\cal{G})\\
+\Fl(\cal{F}\times_\cal{E}\cal{G})&=&
+\Fl(\cal{F})\times_{\Fl(\cal{E})}\Fl(\cal{G})\quoi,
+\end{eqnarray*}
+the composition of arrows being performed moreover
+componentwise.
+
+In the sequel, we consider a functor
+$$
+\lambda\colon\cal{E}'\to\cal{E}
+$$
+and for every category $\cal{F}$ over~$\cal{E}$, one
+considers $\cal{F}\times_\cal{E}\cal{E}'$ as a category
+over~$\cal{E}'$ by means of $\pr_2$; in other words,
+we interpret the operation ``fibered product'' as an
+operation \emph{``change of base''}, the functor
+$\lambda\colon\cal{E}'\to\cal{E}$ taking the name of \emph{``change of
+base functor''.}
+In accordance with the well-known general facts, one thus obtains
+a functor, called the
+% original p. 154
+\emph{change of base functor} for $\lambda$:
+$$
+\lambda^*\colon\Cat_{/\cal{E}}\to\Cat_{/\cal{E}'}\quoi,
+$$
+(adjoint of the functor ``restriction of the base'' which, to every
+category $\cal{F}'$ over~$\cal{E}'$, with
+projection functor~$p'$, associates~$\cal{F}'$, regarded as a
+category over~$\cal{E}$ by the functor~$p=\lambda
+p'$). As is well known in the general case of a
+change of base functor in a category, the
+change of base functor ``commutes with projective limits'', and in
+particular ``transforms'' fibered products over~$\cal{E}$ into
+fibered products over~$\cal{E}'$.
+
+Let $\cal{F}$ and $\cal{G}$ be two categories over
+$\cal{E}$, one will define a \emph{canonical isomorphism}:
+\begin{multline*}
+\tag{i}
+\label{eq:VI.3.i}
+\SheafHom_{\cal{E}'/-}(\cal{F}',\cal{G}')\isomto
+\SheafHom_{\cal{E}/-}(\cal{F}\times_{\cal{E}}\cal{E}',\cal{G})\\
+\text{where }\cal{F}'=\cal{F}\times_{\cal{E}}\cal{E}'\text{, }
+\cal{G}'=\cal{G}\times_{\cal{E}}\cal{E}'.
+\end{multline*}
+For this, consider the functor
+$$
+\pr_1\colon\cal{G}'=\cal{G}\times_{\cal{E}}\cal{E}'\to \cal{G}\quoi,
+$$
+and define~\eqref{eq:VI.3.i} by
+$$
+F\mto \pr_1\circ F\quoi,
+$$
+which a priori designates a functor
+\begin{equation*}
+\tag{ii}
+\label{eq:VI.3.ii} {\SheafHom(\cal{F}',\cal{G}')\to\SheafHom(\cal{F}',\cal{G})}
+\end{equation*}
+It is therefore only necessary to verify that the latter induces a functor
+for the subcategories~\eqref{eq:VI.3.i}, and that the latter is
+an isomorphism. That~\eqref{eq:VI.3.ii} induces a bijection
+$$
+\Hom_{\cal{E}'/-}(\cal{F}',\cal{G}')\isomto
+\Hom_{\cal{E}/-}(\cal{F}\times_{\cal{E}}\cal{E}',\cal{G})
+$$
+is the characteristic property of the change of
+base functor. It remains therefore to
+% original p. 155
+prove that if $F$, $G$ are $\cal{E}'$-functors
+$\cal{F}'\to\cal{G}'$, then \emph{the map}
+$$
+u\mto \pr_1\circ u
+$$
+\emph{induces a bijection}
+$$
+\Hom_{\cal{E}'}(F,G)\isomto\Hom_{\cal{E}}(\pr_1\circ F,\pr_1\circ
+G)\quoi.
+$$
+The verification of this fact is immediate, and left to the
+reader.
+
+It follows from this isomorphism~\eqref{eq:VI.3.i}, and from the end of
+the preceding no., that
+$$
+\SheafHom_{\cal{E}'/-}(\cal{F}\times_{\cal{E}}\cal{E}',\cal{G}
+\times_{\cal{E}}\cal{E}')
+$$
+\emph{can be regarded as a functor in}
+$\cal{E}',\cal{F},\cal{G}$, \emph{from the category}
+$\Cat_{/\cal{E}}^\circ\times\Cat_{/\cal{E}}^\circ\allowbreak\times\Cat_{/\cal{E}}$
+\emph{to the category}~$\Cat$, isomorphic to the functor defined
+by the expression
+$\SheafHom_{\cal{E}/-}(\cal{F}\times_{\cal{E}}\cal{E}',\cal{G})$. In
+particular, for $\cal{F}$,~$\cal{G}$ fixed, one obtains a
+functor in $\cal{E}'$, $\cal{E}'\to
+\SheafHom_{\cal{E}''/-}(\cal{F}',\cal{G}')=
+\SheafHom_{\cal{E}'/-}(\cal{F}\times_{\cal{E}}
+\cal{E}',\cal{G}\times_{\cal{E}}\cal{E}')$, and in particular the
+projection $\cal{E}$-functor $\lambda\colon \cal{E}'\to\cal{E}$
+defines a morphism \ie a functor
+$$
+\lambda^*_{\cal{F},\cal{G}}\colon
+\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})\to
+\SheafHom_{\cal{E}'/-}(\cal{F}',\cal{G}')
+$$
+which we shall make explicit. For the sets of objects of the two
+sides, it is the map
+$$
+f\mto f'=f\times_{\cal{E}}\cal{E}'
+$$
+which expresses the functorial dependence of
+$\cal{F}\times_{\cal{E}}\cal{E}'$ on the object $\cal{F}$
+over~$\cal{E}$. On the other hand, consider two $\cal{E}$-functors
+$$
+f,g\colon\cal{F}\to \cal{G}
+$$
+and a homomorphism of~$\cal{E}$-functors
+$$
+u\colon f\to g\quoi,
+$$
+we
+% original p. 156
+shall make explicit the corresponding homomorphism of~$\cal{E}'$-functors:
+$$
+u'\colon f'\to g'\quoi.
+$$
+For every
+$$
+\xi'=(\xi,S')\in\Ob(\cal{F}')
+$$
+with
+$$
+\xi\in\Ob(\cal{F}),\quad S'\in\Ob(\cal{E}'),\quad p(\xi)=\lambda(S')=S
+$$
+the morphism
+$$
+u'(\xi')\colon f'(\xi')=(f(\xi),S')\to g'(\xi')=(g(\xi),S')\quad
+\text{in } \cal{G}'
+$$
+is defined by the formula
+$$
+u'(\xi')=(u(\xi),\id_{S'})
+$$
+(which is indeed an $S'$-morphism in~$\cal{G}'$, because
+$q(u(\xi))=\lambda(\id_{S'})=\id_S$).
+
+Consider now an arbitrary $\cal{E}$-functor
+$$
+\lambda'\colon\cal{E}''\to\cal{E}'
+$$
+and the corresponding functor
+$$
+\SheafHom_{\cal{E}'/-}(\cal{F}\times_{\cal{E}}\cal{E}',
+\cal{G}\times_{\cal{E}}\cal{E}')\to
+\SheafHom_{\cal{E}''/-}(\cal{F}\times_{\cal{E}}\cal{E}'',
+\cal{G}\times_{\cal{E}}\cal{E}'')\quoi,
+$$
+I say that this functor is nothing other than the functor one obtains by
+the preceding procedure, starting from~$\cal{F}'$ and
+$\cal{G}'$ over~$\cal{E}'$ and regarding $\cal{E}''$ as a
+category over~$\cal{E}'$, taking into account the isomorphisms of
+\emph{``transitivity of change of base''}:
+$$
+\cal{F}'\times_{\cal{E}'}\cal{E}''\isomto
+\cal{F}''=\cal{F}\times_{\cal{E}}\cal{E}''\quad
+\text{and}\quad\cal{G}'\times_{\cal{E}'}\cal{E}''\isomto\cal{G}''
+=\cal G\times_{\cal E}\cal E''\quoi,
+$$
+which imply a canonical isomorphism
+$$
+\SheafHom_{\cal{E}''/-}(\cal{F}'\times_{\cal{E}'}\cal{E}'',
+\cal{G}'\times_{\cal{E}'}\cal{E}'')\isomto
+\SheafHom_{\cal{E}''/-}(\cal{F}\times_{\cal{E}}\cal{E}'',
+\cal{G}\times_{\cal{E}}\cal{E}'')
+$$
+The
+% original p. 157
+verification of this compatibility is immediate, and
+left to the reader.
+
+The functors just defined are compatible with the
+pairings defined in the preceding no., in a precise way: if $\cal{F}$, $\cal{G}$,~$\cal{H}$ are
+categories over~$\cal{E}$ and if one sets
+$$
+\cal{F}'=\cal{F}\times_{\cal{E}}\cal{E}'\quoi,\quad \cal{G}'=
+\cal{G}\times_{\cal{E}}\cal{E}'\quoi,\quad \cal{H}'=
+\cal{H}\times_{\cal{E}}\cal{E}'\quoi,
+$$
+one has commutativity in the following diagram of functors:
+$$
+\xymatrix{ \SheafHom_{\cal{E}/-}(\cal{F},\cal{G})\times
+\SheafHom_{\cal{E}/-}(\cal{G},\cal{H}) \ar[r]
+\ar[d]_{\lambda^*_{\cal{F},\cal{G}}\times \lambda^*_{\cal{G},\cal{H}}}
+& \SheafHom_{\cal{E}/-}(\cal{F},\cal{H})
+\ar[d]^{\lambda^*_{\cal{F},\cal{H}}} \\
+\SheafHom_{\cal{E}'/-}(\cal{F}',\cal{G}')\times
+\SheafHom_{\cal{E}'/-}(\cal{G}',\cal{H}')\ar[r] &
+\SheafHom_{\cal{E}'/-}(\cal{F}',\cal{H}')}
+$$
+where the horizontal arrows are the composition functors
+defined in the preceding no. This commutativity
+is expressed by the formulae
+$$
+(gf)'=g'f'
+$$
+for $f\in\Hom_{\cal{E}}(\cal{F},\cal{G})$,
+$g\in\Hom_{\cal{E}}(\cal{G},\cal{H})$, (a formula which simply expresses
+the functoriality of change of base), and the formula
+$$
+(v*u)'=v'*u'
+$$
+when $u\colon f\to f_1$ is an arrow of
+$\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})$ and $v\colon g\to g_1$ an
+arrow of~$\SheafHom_{\cal{E}/-}(\cal{G},\cal{H})$. The
+verification of this formula follows easily from the
+definitions.
+
+In the sequel, we shall be interested mainly in
+$\SheafHom_{\cal{E}}(\cal{F},\cal{G})$ (and certain
+remarkable subcategories of the latter) when
+$\cal{F}=\cal{E}$, and we introduce for this reason a
+special notation:
+$$
+\mathbf{\Gamma}(\cal{G}/\cal{E})=
+\SheafHom_{\cal{E}}(\cal{E},\cal{G})\quoi,\quad
+\Gamma(\cal{G}/\cal{E})=\Ob(\mathbf{\Gamma}(\cal{G}/\cal{E}))=
+\Hom_{\cal{E}}(\cal{E},\cal{G})\quoi.
+$$
+
+\begin{remarks}
+When
+% original p. 158
+$\cal{E}$ is a punctual category,
+\ie $\Ob(\cal{E})$ and $\Fl(\cal{E})$ reduced to a single
+element, which also means that $\cal{E}$ is a
+final object of the category~$\Cat$, then the datum of a
+category over~$\cal{E}$ is equivalent to the datum
+of just a category, (because there will be a unique functor from
+$\cal{F}$ to~$\cal{E}$). More precisely,
+$\Cat_{/\cal{E}}$ is then isomorphic to~$\Cat$. Moreover, the
+categories $\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})$ are then nothing
+other than the $\SheafHom(\cal{F},\cal{G})$. Let us then recall that the
+fundamental formula
+$$
+\Hom(\cal{H},\SheafHom(\cal{F},\cal{G}))\isomto
+\Hom(\cal{F}\times\cal{H},\cal{G})
+$$
+(a functorial isomorphism in the three arguments which appear there),
+allows one to interpret $\SheafHom(\cal{F},\cal{G})$ axiomatically,
+in terms internal to the category~$\Cat$, so that the
+known formulary of the $\SheafHom$ categories appears as a
+special case of a formulary valid in categories such
+as~$\Cat$, where ``$\SheafHom$-objects'' (defined by the
+preceding formula) exist. There is an analogous
+interpretation of~$\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})$ when one assumes
+once more that $\cal{E}$ is arbitrary, by the formula
+$$
+\Hom(\cal{H},\SheafHom_{\cal{E}/-}(\cal{F},\cal{G}))\isomto
+\Hom_{\cal{E}}(\cal{F}\times\cal{H},\cal{G})
+$$
+(a functorial isomorphism in the three arguments). In this way,
+the formal properties set out in~no.~\ref{VI.2},~\ref{VI.3} are
+special cases of more general results, valid
+in categories where the objects
+$\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})$ (when $\cal{F}$,~$\cal{G}$
+are two objects of the category over a third~$\cal{E}$) exist.
+\end{remarks}
+
+% ---- en-chunk2.tex ----

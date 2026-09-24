@@ -1,0 +1,389 @@
+\chapter{Algebraic geometry and~analytic~geometry}
+\label{XII}
+% original p. 311
+
+\begin{center}
+{Mme M.\ \textsc{Raynaud}\footnote{After unpublished notes of
+A\ptbl Grothendieck.}}
+\end{center}
+\vspace*{1cm}
+
+Proceeding as in \cite{XII.10}, one associates with every scheme $X$
+locally of finite type over the field of complex numbers $\CC$ an
+analytic space~$X^\an$
+whose underlying set is $X(\CC)$.
+
+In nos.~\Ref{XII.2} and~\Ref{XII.3} of this expos\'e, we give a
+``dictionary'' between the usual properties of~$X$ and of
+$X^\an$ and between the properties of a morphism $f\colon X\to
+Y$ and of the associated morphism $f^\an\colon X^\an \to Y^\an$.
+
+We then show that the comparison theorems between
+coherent sheaves on~$X$ and $X^\an$, established in \cite[\No
+12]{XII.10} for a projective variety, are still valid when
+$X$ is a proper scheme.
+
+Finally we prove in \No \Ref{XII.5} the equivalence of the category of
+finite \'etale coverings of~$X$ and of the category of
+finite \'etale coverings of~$X^\an$. As a bonus for the reader, we
+give a new proof of the theorem of
+Grauert-Remmert \cite{XII.6}, using the resolution of
+singularities~\cite{XII.8}.
+
+\section{Analytic space associated with a scheme}
+\label{XII.1}
+% original p. 312
+
+Let $X$ be a scheme locally of finite type over~$\CC$. Let $\Phi$ be
+the functor from the category of analytic spaces \cite[\No 9]{XII.4} to
+the category of sets which associates with an analytic space~$\othercal{X}$ the set of morphisms of spaces ringed in
+$\CC$-algebras $\Hom_\CC (\othercal{X},X)$. We have the following
+theorem:
+
+\begin{theoremdefinition}
+\label{XII.1.1} The functor $\Phi$ is representable by an
+analytic space $X^\an$ and a morphism $\varphi\colon X^\an\to
+X$. One says that $X^\an$ is the analytic space associated with~$X$.
+
+If $|X^\an|$ is the set underlying $X^\an$, $\varphi$
+induces a bijection of~$|X^\an|$ onto the set $X(\CC)$ of points
+of~$X$ with values in $\CC$. Moreover, for each point $x$ of~$X^\an$, the morphism
+$$
+\varphi_x\colon\cal{O}_{X,\varphi(x)}\to\cal{O}_{X^\an,x},
+$$
+which is necessarily local, gives, by passing to the
+completions, an isomorphism
+$$
+\widehat{\varphi}_x\colon\widehat{\cal{O}}_{X,\varphi(x)}\isomto
+\widehat{\cal{O}}_{X^\an,x},
+$$
+In particular the morphism $\varphi$ is flat.
+\end{theoremdefinition}
+
+Let us note that the fact that $\varphi$ induces a bijection of~$X^\an$ onto~$X(\CC)$ follows from the universal property of~$X^\an$.
+On the other hand, we have the following assertions:
+
+\begin{enumerate}
+\item [a)] If the theorem is true for a scheme $Y$, the same
+holds for every subscheme $X$ of~$Y$. Let us first suppose
+that $X$ is an open subscheme of~$Y$; if $\psi\colon
+Y^\an\to Y$ is the canonical morphism, $\psi^{-1}(X)$ is an open subset
+% original p. 313
+of~$Y^\an$ which one endows with the analytic space structure induced
+by that of~$Y^\an$. Since every morphism from an analytic space
+$\othercal{X}$ into $X$ factors through $Y^\an$ by the
+universal property of the latter, hence through
+$X^\an$ which is the fiber product $Y^\an\times_Y X$, $X^\an$ is
+the analytic space associated with $X$. Finally the assertion
+concerning the $\varphi_x$ is evident.
+
+It now suffices to consider the case where $X$ is a
+closed subscheme of~$Y$. Let~$I$ be the coherent $\cal{O}_Y$-Ideal
+defining $X$; then $I\cdot\cal{O}_{Y^\an}$ is a
+coherent sheaf of ideals on~$\cal{O}_{Y^\an}$ which
+defines a closed analytic subspace $X^\an$ of~$Y^\an$; one
+sees as in the case of an open subscheme that $X^\an$ is
+the analytic space associated with $X$. Let $\varphi\colon
+X^\an\to X$ be the canonical morphism. For every point $x$ of~$X^\an$, the
+morphism $\varphi_x$ is none other than the morphism
+$$
+\cal{O}_{Y,\psi(x)}/I_{\psi(x)}\to
+\cal{O}_{Y^\an,x}/I_{\psi(x)}\cdot\cal{O}_{Y^\an,x}
+$$
+induced by $\psi_x$; its completion
+$$
+\widehat{\varphi}_x\colon
+\widehat{\cal{O}}_{Y,\psi(x)}/I_{\psi(x)}\cdot\widehat{\cal{O}}_{Y,\psi(x)}
+\to\widehat{\cal{O}}_{Y^\an,x}/I_{\psi(x)}\cdot\widehat{\cal{O}}_{Y^\an,x}
+$$
+is an isomorphism since $\widehat\psi_x$ is one, which
+proves a).
+
+\item [b)] If one has two $\CC$-schemes $X_1$, $X_2$, such that
+$X_1^\an$ and $X_2^\an$ exist, then the same holds for
+$(X_1\times X_2)^\an$. Indeed, let $\varphi_1\colon X_1^\an\to
+X_1$, $\varphi_2\colon X_2^\an\to X_2$ be the canonical morphisms, and
+$p_1$, $p_2$ the two projections of~$X_1^\an\times X_2^\an$. One
+deduces formally from EGA~I~1.8.1 that $X_1\times X_2$ is the
+product of~$X_1$ and $X_2$ in the category of locally ringed
+spaces; it follows that the morphisms
+$\varphi_1\cdot p_1$ and $\varphi_2\cdot p_2$ define a
+% original p. 314
+morphism $\varphi\colon X_1^\an\times X_2^\an\to X_1\times X_2$ and
+that the pair $(X_1^\an\times X_2^\an,\varphi)$ represents the
+functor $\othercal{X}\mto\Hom_\CC(\othercal{X},X_1\times X_2)$.
+
+\item [c)] If $\othercal{E}^1$ denotes the affine space of dimension 1,
+\ie the topological space $\CC$ endowed with the sheaf of holomorphic
+functions, the functor%
+{{\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{\lcrochetbf Added in 2003: $E^1_\CC$ denotes the (algebraic) affine line over $\CC$.\rcrochetbf}}}
+$\othercal{X}\mto\Hom_\CC (\othercal{X},E^1_\CC)$
+is representable by $\othercal{E}^1$, the canonical morphism
+$\varphi\colon\othercal{E}^1\to E^1_\CC$ being the
+evident morphism. Indeed, giving a morphism from an analytic space
+$\othercal{X}$ into $E^1_\CC$ is equivalent to giving an
+element of~$\Gamma(\othercal{X},\cal{O}_\othercal{X})$, which also amounts
+to giving a morphism from~$\othercal{X}$ into~$\othercal{E}^1$. One
+evidently has a bijection $|\othercal{E}^1|\simeq E^1(\CC)$, and, for
+each point $x\in\othercal{E}^1$, the morphism $\widehat\varphi_x$ is
+none other than the identity morphism of a ring of formal power series
+in one variable over~$\CC$.
+\end{enumerate}
+
+One deduces from b) and c) that the theorem is true for
+the affine space $E^n_\CC$, $n\geq 0$. Using a), one sees that the same
+holds for every affine scheme $X$ locally of finite
+type over~$\CC$. If one no longer supposes $X$ affine and if $(X_i)$ is
+a covering of~$X$ by affine open subsets, it follows from the
+universal property and from a) that the $X_i^\an$ glue together
+and thus define the analytic space $X^\an$ associated
+with~$X$.
+
+\subsection{}
+\label{XII.1.2}
+Let $f\colon X\to Y$ be a morphism of~$\CC$-schemes locally of
+finite type. If $\varphi\colon X^{\an}\to X$ and $\psi\colon Y^{\an}\to
+Y$ are the canonical morphisms, it follows from the
+universal property of~$Y^{\an}$ that there exists a unique
+morphism $f^{\an}\colon X^{\an}\to Y^{\an}$ such that the diagram
+$$
+\xymatrix{
+X^{\an} \ar[r]\ar[d]_-{f^{\an}}& X\ar[d]^-f\\ Y^{\an} \ar[r]& Y
+}
+$$
+is
+% original p. 315
+commutative. We have thus defined a functor $\Phi$ from the
+category of $\CC$-schemes locally of finite type to the
+category of analytic spaces.
+
+The functor $\Phi$ commutes with finite projective limits. Indeed, it
+suffices to see that $\Phi$ commutes with fiber products. Now, if
+$X$, $Y$, $Z$, are schemes locally of finite type over~$\CC$,
+it follows from the fact that $X\times_Z Y$ is the fiber product of
+$X$ and $Y$ over~$Z$ in the category of locally ringed
+spaces that $X^{\an}\times_{Z^{\an}}Y^{\an}$
+satisfies the universal property which characterizes
+$(X\times_Z Y)^{\an}$.
+
+\subsection{}
+\label{XII.1.3}
+Let $X$ be a $\CC$-scheme locally of finite type, $X^{\an}$
+the associated analytic space, $\varphi\colon X^{\an}\to X$ the
+canonical morphism. If $F$ is an ${\cal{O}}_X$-Module, the inverse
+image $\varphi^*F=F^{\an}$ is a sheaf of modules on~${\cal{O}}_{X^{\an}}$. One thus defines a functor from the
+category of $\cal{O}_X$-Modules to the category of
+Modules on~$X^{\an}$. This functor commutes with inductive limits
+(EGA~0~4.3.2). The sheaf $\cal{O}_{X^{\an}}$ being coherent
+\cite[\no18~\S 2~th\ptbl 2]{XII.4}, it transforms coherent sheaves into
+coherent sheaves (EGA~0~5.3.11). We have moreover:
+
+\begin{subproposition}
+\label{XII.1.3.1}
+The functor which associates with an $\cal{O}_{X^{\an}}$-Module $F$ its
+inverse image $F^{\an}$ on~$X^{\an}$ is exact, faithful,
+conservative.
+\end{subproposition}
+
+Exactness follows from the fact that the morphism $\varphi\colon
+X^{\an}\to X$ is flat \eqref{XIII.1.1}. Let us prove that the functor $F\mto
+F^{\an}$ is faithful. Taking exactness into account, it suffices to
+show that, if $F^{\an}$ is zero, then so is~$F$. Now,
+for every point $x$ of~$X^{\an}$, one then has $F_{\varphi
+(x)}\otimes_{\cal{O}_{X,\varphi (x)}}\cal{O}_{X^{\an},x}=0$. The
+morphism $\cal{O}_{X,\varphi (x)}\to \cal{O}_{X^{\an},x}$ being
+faithfully flat, one has $F_{\varphi (x)}=0$ for every closed
+point $\varphi (x)$ of~$X$, and, since $X$ is Jacobson
+(EGA~IV~10.4.8), this implies that $F$ is zero.
+
+The
+% original p. 316
+fact that the functor $F\mto F^{\an}$ is conservative is formal
+from exactness and faithfulness.
+
+\section[Comparison of the properties of a scheme]{Comparison of the properties of a scheme and of the associated
+analytic \hbox{space}}
+\label{XII.2}
+
+\begin{proposition}
+\label{XII.2.1}
+Let $X$ be a $\CC$-scheme locally of finite type, $X^{\an}$
+the associated analytic space, $n$ an integer. Consider the
+property $P$ of being
+\begin{itemize}
+\item[(i)] nonempty
+\item[(i')] discrete
+\item[(ii)] Cohen-Macaulay
+\item[(iii)] $(\mathrm{S}_n)$
+\item[(iv)] regular
+\item[(v)] $(\mathrm{R}_n)$
+\item[(vi)] normal
+\item[(vii)] reduced
+\item[(viii)] of dimension $n$.
+\end{itemize}
+Then, for $X$ to have the property $P$, it is necessary and
+sufficient that $X^{\an}$ have it.
+\end{proposition}
+
+Let $\varphi\colon X^{\an}\to X$ be the canonical
+morphism. (i)~follows from the fact that one has $|X^{\an}|=X(\CC )$
+\eqref{XIII.1.1} and from the fact that $X$ is Jacobson (EGA~IV~10.4.8). To say that~$X$
+(\resp $X^{\an}$) is discrete is equivalent to saying that one has $\dim
+X=0$ (\resp $\dim X^{\an}=0$ by \cite[\no19~\S 4~cor\ptbl 6]{XII.4}); (i')
+therefore follows from~(viii).
+
+Let $P$ be one of the properties (ii) to (vii). For $X$
+to have the property $P$, it is necessary and sufficient that $P$
+be satisfied at each closed point of~$X$; indeed, $X$
+being excellent (EGA~IV~7.8.6~(iii)), the set of points
+% original p. 317
+where $X$ satisfies $P$ is open (\loccit) and, if this open set
+contains all the closed points, it is equal to the whole of $X$.
+To say that $X$ (\resp $X^{\an}$) has the property $P$
+is therefore equivalent to saying that, for every point $x$ of~$X^{\an}$,
+the local ring $\cal{O}_{X,\varphi (x)}$ (\resp $\cal{O}_{X^{\an},x}$)
+has the property $P$. Since the fact that an excellent local ring
+has the property $P$ can be seen after passing to the
+completion, the proposition follows from the isomorphisms
+$\widehat{\cal{O}}_{X,\varphi(x)}\isomto\widehat{\cal{O}}_{X^{\an},x}$
+in cases (ii) to (vii). The same holds in case
+(viii), taking into account the relations
+$$
+\dim X=\sup_x~\dim \cal{O}_{X,\varphi (x)}\qquad \dim
+X^{\an}=\sup_x~\dim \cal{O}_{X^{\an},x}
+$$
+where $x\in X^{\an}$. This completes the proof.
+
+\begin{proposition}
+\label{XII.2.2}
+Let $X$ be a $\CC$-scheme locally of finite type,
+$\varphi\colon X^{\an}\to X$ the canonical morphism, $T$ a
+locally constructible subset of~$X$. Then one has the relation
+$$
+\varphi^{-1}(\overline{T})=\overline{\varphi^{-1}(T)}.
+$$
+\end{proposition}
+
+One may suppose that $T$ is a dense open subset of~$X$. Let $H$ be the
+reduced closed subscheme of~$X$ with underlying space
+$X-T$; the associated space $H^{\an}$ is a closed analytic
+subspace of~$X^{\an}$ with underlying space
+$X^{\an}-\varphi^{-1}(T)$. One must show that every point $x$ of
+$H^{\an}$ belongs to $\overline{\varphi^{-1}(T)}$. Now, at such a
+point $x$, the germ of analytic space $(X^{\an},x)$ contains the
+subgerm $(H^{\an},x)$, and the latter is defined by a
+non-nilpotent Ideal of~$\cal{O}_{X^{\an},x}$. It then follows from the
+Nullstellensatz \cite[\no19~\S 4~cor\ptbl 3]{XII.4} that every open neighborhood of~$x$
+contains points of~$X^{\an}$ which do not belong to
+$H^{\an}$, which indeed proves that one has
+$x\in\overline{\varphi^{-1}(T)}$.
+
+\begin{corollary}
+\label{XII.2.3}
+Let
+% original p. 318
+$X$ be a $\CC$-scheme locally of finite type, $\varphi
+\colon X^\an \to X$ the canonical morphism, $T$ a locally
+constructible subset of~$X$. For $T$ to be an open subset (\resp a
+closed subset, \resp a dense subset), it is necessary and sufficient that
+$\varphi^{-1} (T)$ be so.
+\end{corollary}
+
+The corollary follows from~\Ref{XII.2.2} and from the fact that, $X$
+being a Jacobson scheme (EGA~IV~10.4.8), two
+locally constructible subsets of~$X$ which have the same trace on the
+very dense set $X (\CC )$ are equal.
+
+\begin{proposition}
+\label{XII.2.4} Let $X$ be a $\CC$-scheme locally of
+finite type. For $X$ to be connected (\resp irreducible), it is necessary
+and sufficient that $X^\an$ be so.
+\end{proposition}
+
+Suppose $X^\an $ connected (\resp irreducible). The image $X (\CC)
+$ of~$X^\an$ in $X$ is then connected (\resp irreducible). It
+follows that $X$ is connected (\resp irreducible) since the
+closed subsets of~$X$ and of $X (\CC)$ correspond bijectively
+(EGA~IV~10.1.2).
+
+Conversely, suppose $X$ connected (\resp irreducible), and
+let us show that the same holds for~$X^\an$. One may restrict oneself to the case
+where $X$ is irreducible. Indeed, suppose $X$ connected.
+Given a point $x$ of~$X$, the set of points $y \in X$
+such that there exists a finite sequence of irreducible closed
+subschemes $X_1, \dots, X_n$ of~$X$, with $x \in X_1$, $y \in
+X_n$, $X_i \cap X_{i+1} \neq \emptyset $ for $1 \leq i \leq n-1$,
+is a set which is both open and closed, hence equal to
+the whole of $X$. For a sequence $X_1, \dots, X_n$ as
+above, one also has $X_{i}^\an \cap X_{i+1}^\an \neq
+\emptyset $ for $1 \leq i \leq n-1 $; if one supposes it
+proved that the $X_{i}^\an$ are connected, then the same
+holds for~$X^\an$.
+
+From
+% original p. 319
+now on we suppose $X$ irreducible. One may moreover suppose
+$X$ affine. Indeed, if $(U_i)_{i \in I}$ is a covering of~$X$
+by affine open subsets, any two of these open sets have a nonempty
+intersection, and the same property is therefore true for the
+covering $(U_{i}^\an)_{i \in I} $ of~$X^\an$; if one supposes it
+proved that the $U_{i}^\an $ are irreducible, then the same
+holds for~$X^\an$.
+
+One may moreover suppose that $X$ is normal. Indeed, let $\tilde X$ be
+the normalization of~$X$; since the morphism $\tilde X \to X$ is
+surjective, so is $\tilde X^\an \to X^\an$, which
+proves that, if $\tilde X^\an $ is irreducible, so
+is~$X^\an$.
+
+From now on we suppose $X$ affine and normal. Since the local rings
+of~$X^\an$ are integral, it amounts to the same to say that
+$X^\an$ is irreducible or that it is connected. Indeed, if
+$\cal{F}$ is a closed analytic subset of~$X^\an$, the set
+of points $x$ of~$X^\an$ where one has $\codim_x (\cal{F}, X^\an ) =
+0$ is a closed analytic subset of~$X^\an$ \cite[\no 20 A
+Cor\ptbl 1]{XII.4} which is also open; if $X^\an$ is connected, this proves that,
+if one has $\cal{F} \neq X^\an$, $\cal{F}$ is nowhere dense, hence that $X^\an$
+is irreducible. One is thus reduced to showing that
+$X^\an$ is connected.
+
+Let
+$$
+i \colon X \to P
+$$
+be a compactification of~$X$, where $P$ is a normal projective
+$\CC$-scheme and $i$ a dominant open immersion. It then
+follows from \cite[\no 12 th\ptbl 1]{XII.10} that $P^\an$ is connected. Since
+$X^\an$ is obtained by removing from $P^\an$ a nowhere dense closed
+analytic subset, it follows from~\Ref{XII.2.5} below that $X^\an$
+is also connected.
+
+\begin{lemma}
+\label{XII.2.5}
+Let
+% original p. 320
+$\cal{P} $ be a connected normal analytic space, $\cal{Y}$ a
+nowhere dense closed analytic subset; then $\cal{X} = \cal{P} - \cal{Y}$
+is connected.
+\end{lemma}
+
+When $\cal{Y}$ is of codimension $\geq 2$, the proposition
+follows from \cite[\no 3 prop\ptbl 4]{XII.11}. In the general case one may
+suppose, at the cost of removing from $\cal{P}$ a closed analytic
+subset of codimension $\geq 2$, that $\cal{P}$ and $\cal{Y}$
+(considered as a reduced analytic subspace of~$\cal{P}$) are regular.
+By the implicit function theorem, every point $y$ of~$\cal{Y}$ has a
+neighborhood $\cal{U}$ isomorphic to a ball of an affine space
+$\cal{E}^{n}$, such that $\cal{U} \cap \cal{Y}$ is defined by
+the vanishing of a certain number of coordinate functions. This
+proves that $\cal{U} - \cal{U} \cap \cal{Y}$ is connected, and
+therefore so is~$\cal{X}$.
+
+\begin{corollary}
+\label{XII.2.6} Let $X$ be a $\CC$-scheme locally of finite
+type; the morphism
+$$
+\pi_0 (X^{\an}) \to \pi_0 (X)
+$$
+induced by the canonical morphism $X^\an \to X$ is bijective.
+\end{corollary}

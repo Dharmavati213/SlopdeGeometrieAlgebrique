@@ -1,0 +1,420 @@
+\section[Application of the existence theorem for sheaves]{Application of the existence theorem for sheaves:
+semicontinuity theorem for the fundamental groups
+of the fibers of a proper and separable morphism}
+\label{X.2}
+% original p. 268
+
+\begin{theorem}
+\label{X.2.1}
+Let $Y$ be the spectrum of a \emph{complete} noetherian local ring,
+with residue field~$\kres$, $X$ a proper $Y$-scheme,
+$X_0=X\otimes_A \kres$, $a_0$ a geometric point of
+$X_0$ and $a$ the corresponding geometric point of~$X$. Then
+the canonical homomorphism $\pi_1(X_0,a_0)\to \pi_1(X,a)$ is an
+\emph{isomorphism.}
+\end{theorem}
+
+This is only a translation, into the language of the fundamental group,
+of the result recalled in IX~\Ref{IX.1.10}. It is here that the
+existence theorem for sheaves in formal algebraic geometry enters in
+an essential way into the theory of the fundamental group.
+
+Let us now introduce an algebraic closure $\bar{k}$ of the
+residue field $k$, and the geometric fiber $\overline X_0
+= X_0\otimes_k \bar{k}$. We thus have the exact sequence (IX~\Ref{IX.6.1})
+$$
+e\to \pi_1(\overline X_0,\overline a)\to \pi_1(X_0,a_0)\to
+\pi_1(k,\bar{k})\to e,
+$$
+on the other hand we have the isomorphism~\Ref{X.2.1} and the
+analogous, more elementary, isomorphism
+$$
+\pi_1(k,\bar{k})\to \pi_1(Y,b),
+$$
+where $b$ is the image of~$a$ in~$Y$. We thus find:
+
+\begin{corollary}
+\label{X.2.2}
+With the preceding notation, suppose
+$\overline X_0=X_0\otimes_k \bar{k}$
+connected, and let $\overline a_0$ be a geometric point of
+$\overline X_0$, $a_0$ its image in~$X$,
+$b_0$ its image in~$Y$. Then the following sequence of canonical
+homomorphisms
+$$
+e\to \pi_1(\overline X_0,\overline a)\to \pi_1(X,a_0)\to
+\pi_1(Y,b_0)\to e
+$$
+is exact.
+\end{corollary}
+
+One will compare this sequence with the exact sequence~\Ref{X.1.4}, but
+one will note that~a)~we have not had to make any hypothesis of flatness,
+or of separability on the fibers, for $X\to Y$; b)~we have the
+important complement that \emph{the morphism $\pi_1(\overline
+X_0,\overline a_0)\to \pi_1(X,a_0)$ is injective.}
+
+This last fact will allow us to compare the fundamental group of the
+other
+% original p. 269
+geometric fibers of~$X$ over~$Y$ with that of~$\overline
+X_0$. Indeed, let $y_1$ be an arbitrary point of~$Y$, $X_1$ its fiber
+and $\overline X_1$ its geometric fiber, relative to
+an algebraically closed extension of~$\kres(y_1)$, $\overline a_1$
+a geometric point of~$\overline X_1$, $a_1$ its image in
+$X$ and $b_1$ its image in~$Y$. Let us choose a ``class of paths''
+from~$a_1$ to $a_0$, whence a class of paths from~$b_1$ to
+$b_0$, whence a commutative diagram of homomorphisms:
+$$
+\xymatrix@=.5cm{
+&\pi_1(\overline X_1,\overline a_1) \ar[r] & \pi_1(X,a_1) \ar[r]\ar[d] & \pi_1(Y,b_1) \ar[r]\ar[d] & e \\
+e \ar[r]& \pi_1(\overline X_0,\overline a_0) \ar[r] & \pi_1(X,a_0) \ar[r] &\pi_1(Y,b_0) \ar[r] & e,
+}
+$$
+where the two vertical arrows drawn are
+isomorphisms. Since the second row is exact, we therefore find
+a canonical homomorphism, which we shall call \emph{the specialization
+homomorphism for the fundamental group} (depending only
+on the class of paths chosen from~$a_1$ to~$a_0$, hence
+\emph{defined modulo inner automorphism of}
+$\pi_1(X,a_0)$):
+$$
+\pi_1(\overline X_1,\overline a_1)\to \pi_1(\overline X_0,\overline
+a_0).
+$$
+When the first row above is also exact, it
+follows at once that the specialization homomorphism
+is surjective. We therefore find, taking~\Ref{X.1.4} into account:
+
+\begin{corollary}
+\label{X.2.3}
+Under the conditions of~\Ref{X.2.1}, suppose moreover that the morphism
+$f\colon X\to Y$ is \emph{separable} \eqref{X.1.1} and $\overline
+X_0$ connected (so that by virtue of~\Ref{X.1.2} we have
+$f_*(\cal{O}_X)=\cal{O}_Y$). Then for every geometric
+fiber $\overline X_1$ of~$X$ over~$Y$, equipped with a geometric
+point $\overline a_1$, the specialization homomorphism
+defined above is a \emph{surjective} homomorphism.
+\end{corollary}
+This is a \emph{semicontinuity} result for the
+fundamental group, which does not yet seem to have an analogue in
+algebraic topology. One can moreover state it under more
+general conditions:
+
+\begin{corollary}
+\label{X.2.4}
+Let
+% original p. 270
+$f\colon X\to Y$ be a proper morphism with geometrically connected
+fibers, with $Y$ locally noetherian,
+$y_0$ and $y_1$ two points of~$Y$ such that $y_0\in\overline{\{y_1\}}$,
+$\overline X_0$ and $\overline X_1$ the geometric fibers of
+$X$ corresponding to given algebraically closed extensions
+of~$\kres(y_0)$ and $\kres(y_1)$, $\overline a_0$
+\resp $\overline a_1$ a geometric point of~$\overline X_0$
+\resp $\overline X_1$. Then one can define in a
+natural way a specialization homomorphism:
+$$
+\pi_1(\overline X_1,\overline a_1)\to \pi_1(\overline X_0,\overline
+a_0),
+$$
+defined up to inner automorphism, and this is
+a \emph{surjective} homomorphism if $f$ is a separable
+morphism \eqref{X.1.1}.
+\end{corollary}
+
+Indeed, it follows first of all from~\Ref{X.1.8} that \Ref{X.2.4} is
+essentially independent of the algebraically closed extensions
+chosen for the residue fields $\kres(y_0)$
+and~$\kres(y_1)$. This allows us to replace $Y$ by a
+prescheme $Y'$ over~$Y$ having a point $y_0'$ (\resp~$y_1'$)
+above~$y_0$ (\resp $y_1$). We shall then take for $Y'$ the
+spectrum of the completion of the local ring of~$y_0$ in~$Y$, and we
+apply~\Ref{X.2.3}.
+
+\begin{remarks}
+\label{X.2.5}
+The final conclusion of~\Ref{X.2.4} on the surjectivity of
+the specialization homomorphism, and a fortiori the
+results~\Ref{X.1.3} and~\Ref{X.1.4} of which it is a
+consequence, becomes incorrect if one no longer assumes that $f\colon
+X\to Y$ is a separable morphism, even for
+projective schemes over an algebraically closed field of
+characteristic~$0$. We shall see examples of this later, both
+in the case where $f$ is flat but where $f$ admits a non-separable
+fiber ($X$ and $Y$ being nevertheless smooth over~$k$), and
+in the case where the fibers of~$f$ are indeed separable but
+where $f$ is not flat (for example $f\colon X\to Y$ being a
+birational morphism of integral normal schemes),
+\cf XI~\Ref{XI.3}. In these examples, it may happen that the
+fundamental group of the generic geometric fiber is
+zero, but not that of a suitable special geometric
+fiber. On the other hand, even if $f\colon X\to Y$ is a
+proper separable morphism as in~\Ref{X.2.4}, it
+commonly happens that the specialization morphism is
+% original p. 271
+not an isomorphism. Thus, it is easy to give examples
+where $\overline X_1$ is a nonsingular elliptic curve,
+(hence its fundamental group is commutative, and its
+$\ell$-primary component for a prime number $\ell$ prime to the
+characteristic is isomorphic to $\ZZ_\ell^2$, \cf \Ref{XI}),
+while $\overline X_0$ consists either of two nonsingular
+rational curves meeting in two points, or of
+two rational curves tangent at one point, or finally of a
+rational curve having a singular point which is a cusp.
+(For the complete classification of degenerate elliptic
+curves, see the recent work of Kodaira~\cite{X.1} and N\'eron).
+One then sees that in these cases, the
+fundamental group of~$\overline X_0$ is respectively $\hat\ZZ$,
+$e$, $e$, hence ``strictly smaller'' than that of~$\overline
+X_1$. We shall however see later, when $f$ is a
+\emph{smooth} morphism, a bound for the kernel of the
+specialization homomorphism, which implies in particular that if $\kres(y_0)$ is
+of \emph{characteristic} 0, the specialization homomorphism
+is an isomorphism. But even for a smooth morphism, if the
+characteristic of~$\kres(y_0)$ is $>0$, it may happen that
+the specialization homomorphism is not an isomorphism,
+as one sees for example in the case where $X$ is an abelian
+scheme over~$Y$ (of relative dimension~$1$, if one wishes),
+\cf XI~\Ref{XI.2}.
+A satisfactory theory of the
+specialization of the fundamental group must take into account the
+``continuous component'' of the ``true'' fundamental group, corresponding
+to the classification of principal coverings with
+infinitesimal groups as structure group; granting which one would be
+entitled to expect that the ``true'' fundamental groups of the
+geometric fibers of a smooth and proper morphism $f\colon
+X\to Y$ form a nice local system on~$X$, projective limit
+of finite and flat group schemes over~$X$\kern1pt\footnote{This
+extremely attractive conjecture is unfortunately contradicted
+by an unpublished example of M\ptbl Artin, already when
+the fibers of~$f$ are algebraic curves of given genus
+$g\ge 2$.}. We shall return later to this point of view,
+our present object being on the contrary to push as far
+as possible the phenomena common to the topological
+theory and the scheme-theoretic theory of the fundamental group.
+\end{remarks}
+
+Let now $X_0$ be a proper, smooth and connected curve of genus $g$
+over an algebraically closed field~$k$. If $k$ is of
+characteristic zero, its fundamental group can be
+determined by transcendental means in the following way. We
+know that $X_0$ comes by extension of the base from a curve
+defined
+% original p. 272
+over an algebraically closed extension of finite
+transcendence degree of the prime field $\QQ$, and taking
+\Ref{X.1.8} into account, we may assume that $k$ is itself of finite
+transcendence degree over~$\QQ$. We may therefore assume that $k$ is a
+subfield of the field $\CC$ of complex numbers, and a new
+application of~\Ref{X.1.8} allows us to assume that $k=\CC$. It
+is then not difficult to verify that the fundamental group of
+$X$ is isomorphic to the compactification of the fundamental group of the
+associated topological space $\tilde X$ (compact oriented surface of
+genus~$g$), for the topology defined by the subgroups
+of finite index\footnote{This deduction was made explicit
+in one of the oral expos\'es which were not
+written up.}. It is on the other hand classical that the
+topological fundamental group is generated by $2g$ generators
+$s_i,t_i$ ($1\le i\le g$), subject to a single relation:
+$$
+(s_1t_1s_1^{-1}t_1^{-1})\cdots(s_gt_gs_g^{-1}t_g^{-1})=1.
+$$
+Hence the fundamental group of~$X$ admits $2g$ \emph{topological}
+generators $s_i,t_i$ ($1\le i\le g$), bound by the single
+preceding relation. If now the characteristic of
+$k$ is $p>0$, let us denote by $A$ the ring of Witt vectors
+constructed with~$k$, by $K$ an algebraically closed extension of
+its field of fractions. We have seen in III~\Ref{III.7.4} that there
+exists a scheme $X$ over~$Y=\Spec(A)$, proper and smooth over~$Y$,
+reducing to $X_0$. Applying~\Ref{X.2.3} to it, we find a
+\emph{surjective} morphism
+$$
+\pi_1(X_1)\to \pi_1(X_0),
+$$
+where $X_1=X\otimes_A K$. It is immediate\footnote{\cf EGA
+IV~12.2.} that $X_1$ is smooth over~$K$, connected \eqref{X.1.2}, of
+dimension~$1$, and its genus is equal to~$g$ (by
+the invariance of the Euler-Poincar\'e characteristic, \cf EGA
+III~7). Since $K$ is of characteristic~$0$, one can
+apply the preceding result to it. We have thus proved by
+\emph{transcendental means}:
+
+\begin{theorem}
+\label{X.2.6}
+Let $X_0$ be a smooth proper and connected algebraic curve over an
+% original p. 273
+algebraically closed field $k$, and let $g$ be its genus. Then
+$\pi_1(X_0)$ admits a system of~$2g$ topological
+generators, bound by the relation written above. When the
+characteristic of~$k$ is~$0$, $\pi_1(X_0)$ is even the
+free group of Galois type for the generators and the
+relation which precede.
+\end{theorem}
+
+\begin{remarks}
+\label{X.2.7}
+There does not exist at the present time, to the knowledge of the
+writer, a proof by purely
+algebraic means of the preceding result, (except for the genera
+$0,1$). To begin with, one hardly sees how to distinguish in
+$\pi_1(X_0)$ $2g$~elements, which one could then expect
+to form a system of topological
+generators. In this respect, the situation of the rational
+line minus~$n$ points, and the study of the
+coverings of it tamely ramified at these
+points, is more congenial, since the consideration of the ramification groups
+at these $n$ points furnishes $n$ elements of the
+fundamental group to be studied, which one indeed shows
+topologically generate this fundamental group, as we shall see
+later\footnote{\Cf Exp\ptbl \Ref{XII}. Even so, these
+elements are really determined only modulo
+conjugation, and it is appropriate to make a judicious \emph{simultaneous}
+choice of these elements in their classes.}. But even
+in this particularly concrete case, there does not seem to exist
+a purely algebraic proof. Such a
+proof would obviously be extremely
+interesting. The only fact concerning the fundamental group of a
+curve that one knows how to prove by purely algebraic means
+(with the exception of the weak finiteness theorem~\Ref{X.2.12}
+below, proved by algebraic means by Lang-Serre~\cite{X.2}),
+seems to be the determination of the abelianized fundamental group
+via the Jacobian (pointed out in IX~\Ref{IX.5.8}, last
+line).
+\end{remarks}
+
+\subsection{}
+\label{X.2.8}
+The last assertion of~\Ref{X.2.6} is no longer valid in
+characteristic $p>0$, as one sees already in the case of
+elliptic curves. As we have already pointed out, we
+do not know whether the fundamental group of~$X_0$ is topologically of
+finite presentation; this seems quite improbable.
+
+\begin{theorem}
+\label{X.2.9}
+Let $k$ be an algebraically closed field, and $X$ a proper and
+connected scheme over~$k$. Then the fundamental group of~$X$ is
+topologically finitely generated.
+\end{theorem}
+
+We
+% original p. 274
+proceed by induction on~$n=\dim X$, the assertion
+being trivial for~$n\le 0$. Suppose therefore~$n>0$, and the
+theorem proved for the
+dimensions~$n'<n$. By Chow's lemma (EGA~II~5.6.2) there
+exists a projective scheme $X'$ over~$k$ and a surjective morphism
+$X'\to X$. We may obviously assume $X'$ reduced, and by
+passing to the normalization, normal. Thanks to the theory of
+descent, it suffices to prove that the fundamental groups of the
+connected components of~$X'$ are topologically finitely
+generated (IX~\Ref{IX.5.2}). This therefore brings us back
+to the case where $X$ is \emph{projective} and \emph{normal}. If
+then $n=1$, it suffices to apply~\Ref{X.2.6}. If $n\ge 2$, we
+consider a projective immersion $X\to \PP_k^r$, and a hyperplane
+section $Y=X\cdot H$
+(endowed
+with the induced reduced structure), such that
+$Y\ne X$,
+\ie $H\not\supset X$. We shall then have $\dim Y<n$, and taking into account
+the induction hypothesis, it suffices to prove that
+$\pi_1(Y)\to \pi_1(X)$ is \emph{surjective.} Now more
+generally:
+
+\begin{lemma}
+\label{X.2.10}
+Let $X$ be a prescheme proper over an algebraically closed
+field~$k$, $g\colon X\to \PP_k^r$ a morphism. Suppose $X$
+irreducible and normal and $\dim g(X)\ge 2$. Let $H$ be a
+hyperplane of~$\PP_k^r$ and $Y=X\times_{\PP_k^r} H$. Then $Y$ is
+connected, and the homomorphism $\pi_1(Y)\to\pi_1(X)$ is surjective.
+\end{lemma}
+
+These assertions indeed follow from the following one:
+
+\begin{corollary}
+\label{X.2.11}
+Under the preceding conditions, let $X'$ be a connected \'etale
+covering of~$X$, and $Y'=X'\times_X Y=X'\times_{\PP_k^r} H$ the
+induced covering on~$Y$. Then $Y'$ is connected.
+\end{corollary}
+
+Since $X$ is normal, $X'$ is normal, hence, being connected, $X'$
+is irreducible; moreover its image in $\PP_k^r$ is of
+dimension~$\ge 2$. A well-known lemma due to Zariski (and
+called ``\emph{Bertini's theorem}'') therefore implies that
+if $H_1'$ is the generic hyperplane in~$\PP_k^r$,
+defined over an extension $K$ of~$k$, then $X'\times_{\PP^r} H_1$
+is universally irreducible hence universally connected
+over~$K$. Zariski's connectedness theorem (EGA~III~4)
+then implies that for \emph{every} hyperplane $H$ (defined over an
+arbitrary extension of~$k$) $X'\times_{\PP^r} H$ is
+geometrically connected. This completes the proof
+of~\Ref{X.2.11}, hence of~\Ref{X.2.9}.
+
+\begin{corollary}[Lang-Serre]
+\label{X.2.12}
+Under
+% original p. 275
+the conditions of~\Ref{X.2.9}, for every
+finite group~$G$, the set of classes, up to isomorphism,
+of principal coverings of~$X$ with group~$G$, is finite.
+\end{corollary}
+
+\begin{remark}
+\label{X.2.13}
+Under the conditions of~\Ref{X.2.10} we shall prove, when $\dim
+g(X)\ge 3$ (at least when $g$ is an immersion and $X$
+regular), a more precise result, known in
+algebraic geometry under the name of
+``\emph{Lefschetz theorem}'': $\pi_1(Y)\to \pi_1(X)$
+\emph{is an isomorphism.}\footnote{\Cf the seminar SGA~2 (1962)
+following this one, theorem X~3.10.}
+There are, in the classical cases, analogous
+statements for the homology groups and the higher
+homotopy groups, which sooner or later will have to be
+encompassed in abstract algebraic
+geometry. Even for the Hodge cohomology $\H^p(X,\Omega^q)$,
+it does not seem that the question has yet been
+studied; it is moreover hardly probable that for this
+latter, the Lefschetz theorems remain valid as they stand
+in characteristic~$p>0$.
+\end{remark}
+
+\begin{remarkMR}
+\label{X.2.14}
+Let $R$ be a complete discrete valuation ring, with
+algebraically closed residue field $\kres$ of characteristic $p>0$, with
+field of fractions~$K$, and let $Y$ be a proper and smooth,
+connected curve of genus $g$ over~$R$. We thus have a surjective
+specialization morphism $\sp : \pi_1(Y_{\overline{K}}) 
+\to\pi_1(Y_{\kres})$.
+We have already noted that if $K$ is of characteristic 0, $\sp$ is not an
+isomorphism as soon as $g\geq1$. Suppose~$K$ of characteristic $p$,
+so that $R$ is isomorphic to the ring of formal
+power series~$\kres[[T]]$.
+In equal characteristic $p >0$, the fundamental group is not
+determined by the genus~$g$, as one already sees on elliptic curves,
+which may be ordinary or supersingular. Let us cite
+the recent result of A\ptbl Tamagawa (not yet published). If~$G$ is a
+profinite group, we denote by $G^{\res}$ the profinite quotient group of~$G$,
+projective limit of the topological quotients of~$G$ which are finite
+solvable.
+
+\begin{theoremstar}[A\ptbl Tamagawa]
+Suppose $g\geq2$, that the special fiber $Y_{\kres}$
+is definable over a finite field, and that the morphism
+$\sp^{\res}:\pi_1(Y_{\overline{K}})^{\res}\to\pi_1(Y_{\kres})^{\res}$ deduced from
+$\sp$ by passage to the quotient is bijective. Then the curve $Y$ is
+constant over~$R$.
+\end{theoremstar}
+
+Let us note that the Galois group of~$\overline{K}/K$ is solvable. The
+preceding statement can also be translated as follows: suppose that
+every finite \'etale covering $X_K\to Y_K$ of the generic fiber $Y_K$,
+Galois with solvable Galois group, has potentially good
+reduction (that is, extends to a finite \'etale covering of~$Y$
+after possible replacement of~$R$ by its normalization in a
+finite extension of~$K$). Then $Y$ is constant over~$R$.
+\end{remarkMR}

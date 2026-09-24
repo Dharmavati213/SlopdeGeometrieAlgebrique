@@ -1,0 +1,527 @@
+\section{Local criteria of flatness}
+\label{IV.5}
+
+\begin{proposition}
+\label{IV.5.1}
+Let $A$ be a ring equipped with an ideal $I$, $M$ an
+$A$-module. Suppose
+$$
+\Tor_1^A(M, A/I^n) = 0 \qquad \text{for $n>0$}
+$$
+then the canonical surjective homomorphism
+\begin{equation*}
+\label{eq:IV.5.1.*}
+\tag{$*$} {\gr_I^0(M) \otimes_{A/I} \gr_I(A) \to \gr_I(M)}
+\end{equation*}
+is an isomorphism. The converse is true if $I$ is nilpotent.
+\end{proposition}
+
+The hypothesis means that the homomorphisms
+$$
+I^n \otimes_A M \to I^n M
+$$
+are isomorphisms, whence at once the fact that the
+homomorphisms
+$$
+I^n / I^{n+1} \otimes_A M \to I^n M / I^{n+1} M
+$$
+are isomorphisms. Conversely, suppose this condition
+satisfied and $I$ nilpotent; let us prove $\Tor_1^A(M,A/I^n) =0$
+for every $n$. It is true for $n$ large; let us proceed by
+descending induction on~$n$, supposing it proved for
+$n+1$. We have a commutative diagram
+$$
+\xymatrix{ & M \otimes I^{n+1} \ar[r] \ar[d] & M \otimes I^n \ar[r]
+\ar[d] & M \otimes(I^n/I^{n+1}) \ar[r] \ar[d] & 0 \\ 0 \ar[r] &
+MI^{n+1} \ar[r] & MI^n \ar[r] & MI^n/MI^{n+1} \ar[r] & 0 }
+$$
+where
+% original p. 96
+the rows are exact. By hypothesis, the last vertical
+arrow is an isomorphism, and the induction hypothesis
+also means that the first vertical arrow is one. Hence the
+same holds for the middle vertical arrow, which
+completes the proof.
+
+The following proposition was brought out at the time of the
+Seminar by Serre; it allows substantial simplifications
+in the present no.
+\begin{proposition}
+\label{IV.5.2}
+Let $A \to B$ be a ring homomorphism, $M$ an $A$-module. The
+following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] For every $B$-module $N$, one has $\Tor_1^A(M,N) = 0$;
+\item[(ii)] $\Tor_1^A(M,B) = 0$, and $M_{(B)} = M \otimes_A B$ is
+$B$-flat.
+\end{enumerate}
+\end{proposition}
+
+We have a functorial isomorphism
+$$
+M \otimes_A N = (M \otimes_A B) \otimes_B N
+$$
+which expresses the left-hand side, considered as a functor in
+$M$, as a composite of two functors $M \mto M \otimes_A B$
+and $P \mto P \otimes_B N$. As the first transforms free
+modules over~$A$ into free modules over~$B$, hence projectives into
+projectives, we have the spectral sequence of composite functors
+$$
+\Tor_n^A(M,N) \From \Tor_p^B(\Tor_q^A(M,B),N)
+$$
+whence an exact sequence for the terms of low degree
+$$
+0 \from \Tor_1^B(M \otimes_A B,N) \from \Tor_1^A(M,N)
+\from \Tor_1^A(M,B) \otimes_A N
+$$
+If (i) is satisfied, then one concludes from this exact sequence
+$\Tor_1^B(M \otimes_A B,N) = 0$ for every $N$, \ie $M \otimes_A B$
+is $B$-flat, whence (ii). If conversely (ii) is satisfied,
+then in the exact sequence the terms surrounding $\Tor_1^A(M,N)$ are
+zero, hence we have (i).
+
+\begin{corollary}
+\label{IV.5.3}
+Suppose that $B = A/I$; then the preceding conditions
+are equivalent to the following one:
+\begin{enumerate}
+\item[(iii)] $\Tor_1^A(M,N) = 0$ for every $A$-module $N$ annihilated
+by a power of~$I$.
+\end{enumerate}
+\end{corollary}
+
+Indeed, (i) means that this is so if $N$ is annihilated by
+$I$. One deduces (iii) from this by applying the hypothesis to the
+$I^nN/I^{n+1}N$.
+
+\begin{corollary}
+\label{IV.5.4}
+Under the conditions of~\Ref{IV.5.3}, the conditions considered
+imply that
+% original p. 97
+the functorial ho\-mo\-mor\-phism
+\begin{equation*}
+\label{eq:IV.5.*}
+\tag{$*$} {\gr_I^0(M) \otimes_{A/I} \gr_I(A) \to \gr_I(M)}
+\end{equation*}
+is an isomorphism, and that $M \otimes_A A/I$ is flat over~$A/I$.
+\end{corollary}
+
+It suffices to apply (iii) and \eqref{IV.5.1}. Using the
+converse of~\Ref{IV.5.1} in the case $I$ nilpotent, one finds:
+\begin{corollary}
+\label{IV.5.5}
+Let $A$ be a ring equipped with a nilpotent ideal $I$, $M$ an
+$A$-module. The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] $M$ is $A$-flat
+\item[(ii)] $M \otimes_A A/I$ is $A/I$-flat, and $\Tor_1^A(M,A/I) = 0$
+\item[(iii)] $M \otimes_A A/I$ is $A/I$-flat, and the canonical
+homomorphism \eqref{eq:IV.5.*} on the graded modules is an isomorphism.
+\end{enumerate}
+\end{corollary}
+
+Indeed, these are respectively the preceding conditions (iii) and (ii),
+and those of corollary~\Ref{IV.5.4}.
+
+Let us no longer suppose $I$ nilpotent; then we shall only have a priori
+in~\Ref{IV.5.5} the implications (i)$\To$(ii)$\To$(iii). On the other hand, as condition (iii) remains
+stable on dividing by a power of~$I$, we see by virtue
+of~\Ref{IV.5.5} that it implies
+\begin{enumerate}
+\item[(iv)] \emph{for every integer $n$, $M \otimes A/I^n$ is flat over~$A/I^n$.}
+\end{enumerate}
+We propose to give conditions under which one can
+conclude from this~(i), \ie that $M$ is $A$-flat. I say that it suffices for
+this that $A$ be noetherian and that~$M$ satisfy the following
+finiteness condition: \emph{for every module of finite type $N$ over~$A$, $M
+\otimes_A N$ is separated for the
+$I$-preadic topology}. (It would suffice to verify it if~$N$ is an
+ideal of finite type in $A$). Indeed, let us prove that under these
+conditions, if $N' \to N$ is a monomorphism of modules of finite
+type, $M \otimes_A N' \to M \otimes_A N$ is a monomorphism. It
+suffices indeed to show that the kernel is contained in the $I^n(M
+\otimes_A N') = \Im(M \otimes_A I^n N' \to M \otimes_A N')$, or again
+in the $\Im(M \otimes_A V'_n \to M \otimes_A N') = \Ker (M \otimes_A
+N' \to M \otimes_A (N'/V'_n))$, where $V'_n$ runs through a countable
+fundamental system of neighborhoods of 0 in $N'$ (equipped with its
+$I$-adic topology). By Krull's theorem, the
+$I$-adic topology of~$N'$ is induced by that of~$N$, so we can
+take $V'_n = N' \cap I^n N$. Consider then the
+commutative diagram
+$$
+\xymatrix{ M \otimes_A N' \ar[r] \ar[d] & M \otimes_A (N'/V'_n) \ar[d]
+\\ M \otimes_A N \ar[r] & M \otimes_A (N / I^n N) }
+$$
+% original p. 98
+As $N'/V'_n$ and $N/I^n N$ are annihilated by $I^n$, the
+second vertical homomorphism is identified with the one deduced
+from the \emph{injective} homomorphism $N'/V'_n \to N/I^n N$ by
+tensoring over~$A/I^n$ with the \emph{flat} $(A/I^n)$-module $M
+\otimes_A A/I^n$; it is therefore \emph{injective}. Consequently, the kernel of
+$M \otimes_A N' \to M \otimes_A N$ is contained in that of~$M
+\otimes_A N' \to M \otimes_A (N'/V'_n),$ which is what we wanted.
+
+The ``finiteness'' condition considered on~$M$ is
+satisfied in particular if $M$ is a module of finite type over
+a noetherian $A$-algebra
+$B$ such that $IB$ is contained
+in the radical of~$B$: indeed, then $M \otimes_A N$ is a module
+of finite type over~$B$ for every module of finite type $N$ over~$A$, hence
+separated by Krull for the $I$-adic topology $=$ its
+$(IB)$-adic topology. We thus find:
+
+\begin{theorem}
+\label{IV.5.6}
+Let $A\to B$ be a homomorphism of noetherian rings, $I$ an
+ideal of~$A$ such that $IB$ is contained in the radical of~$B$, $M$
+a $B$-module of finite type. The following conditions are
+equivalent:
+%
+\begin{enumerate}
+\item[(i)] $M$ is $A$-flat
+\item[(ii)] $M\otimes_A A/I$ is $A/I$-flat, and $\Tor_1^A(M,A/I)=0$
+\item[(iii)] $M\otimes_A A/I$ is $A/I$-flat, and the canonical
+homomorphism
+%
+$$
+\gr_I^0(M)\otimes_{A/I}\gr_I(A)\to\gr_I(M)
+$$
+%
+is an isomorphism.
+\item[(iv)] For every integer $n$, $M\otimes_A A/I^n$ is flat
+over~$A/I^n$.
+\end{enumerate}
+\end{theorem}
+
+This result applies above all when $A$, $B$ are noetherian
+\emph{local} rings, $A\to B$ a local homomorphism, and~$I$
+an ideal of~$A$ contained in its maximal ideal (and one can
+immediately reduce~\Ref{IV.5.6} to this case). An interesting
+case is that where $A/I$ is a field, \ie $I$ maximal,
+in which case the condition that $M\otimes_A(A/I)$ be flat over~$A/I$
+becomes unnecessary; moreover, as then the $A/I^n$ are artinian
+local rings, condition (iv) means that the
+$M\otimes_A(A/I^n)$ are \emph{free} over the~$A/I^n$.
+
+\begin{corollary}
+\label{IV.5.7}
+Let
+% original p. 99
+$A\to B$ be a local homomorphism of noetherian local rings,
+$u\colon M'\to M$ a homomorphism of~$B$-modules of finite type;
+suppose $M$ flat over~$A$. Then the following conditions are
+equivalent:
+%
+\begin{enumerate}
+\item[(i)] $u$ is injective, and $\Coker u$ is flat over~$A$.
+\item[(ii)] $u\otimes_A k\colon M'\otimes_A k\to M\otimes_A k$ is
+injective
+\end{enumerate}
+%
+(where $k$ denotes the residue field of~$A$).
+\end{corollary}
+
+(i)$\To$(ii) by virtue of~\Ref{IV.1.1}; let us prove the
+converse. First of all $u$ is injective, for it suffices to
+verify this on the associated graded modules, where it follows from
+a commutative square that the reader will write down. Let $M''$ be its
+$\Coker$; we thus have an exact sequence
+%
+$$
+0\to M'\to M\to M''\to 0
+$$
+%
+whence by the exact sequence of the $\Tor$, taking into account
+hypothesis~(ii) and~$\Tor_1^A(M,k)=0$, the relation
+$\Tor_1^A(M'',k)=0$, hence $M''$ is flat over~$A$ by
+theorem~\Ref{IV.5.6}.
+
+\begin{corollary}
+\label{IV.5.8}
+Under the conditions of~\Ref{IV.5.6}, let $J$ be an ideal of~$B$
+containing $IB$ and contained in the radical. Let $\hat A$ be the
+$I$-adic completion of~$A$ and~$\hat B$ and~$\hat M$ the
+$J$-adic completions of~$B$ and~$M$. For $M$ to be
+$A$-flat, it is necessary and sufficient that $M$ be $\hat A$-flat.
+\end{corollary}
+
+(N.B. the sufficiency would already follow easily
+from~\Ref{IV.3.2}). We use criterion (iii) of~\Ref{IV.5.6}
+in the situation $(A,B,I,M)$ and in the situation $(\hat A,\hat
+B,I\hat A, \hat M)$. One observes that the conditions obtained for
+the one and the other case are equivalent, thanks
+to~\Ref{IV.3.2}.
+
+\begin{corollary}
+\label{IV.5.9}
+Let $A\to B\to C$ be local homomorphisms of noetherian local
+rings, $M$ a $C$-module of finite type (N.B. $C$
+intervenes only in order to be able to put a finiteness condition on~$M$). We suppose $B$ flat over~$A$. Let $k$ be the residue field
+of~$A$. Equivalent conditions:
+%
+\begin{enumerate}
+\item[(i)] $M$ is flat over~$B$.
+\item[(ii)] $M$ is flat over~$A$, and $M\otimes_A k$ is flat over~$B\otimes_A k$.
+\end{enumerate}
+\end{corollary}
+
+The implication (i)$\To$(ii) is trivial; let us prove
+(ii)$\To$(i). We apply criterion~(iii)
+of~\Ref{IV.5.6} to $(B,C,\goth{m}B=I,M)$; as
+$M\otimes_B(B/I)=M\otimes_B(B\otimes_A k) = M\otimes_A k$, the
+first condition of this criterion means precisely
+that $M\otimes_A k$ is flat over~$B\otimes_A k$,
+% original p. 100
+fine. The second condition of the criterion is
+satisfied because $M$ is flat over~$A$ and~$B$ flat over~$A$,
+by an associativity formula for the tensor product. --- Of
+course, referring to~\Ref{IV.5.5} instead
+of~\Ref{IV.5.6}, one obtains an analogous statement without noetherian
+and finiteness conditions, when one supposes on the other hand that
+the ideal~$\goth{m}$ of~$A$ is nilpotent. (The fact that $\goth{m}$
+was taken maximal has moreover not intervened; but
+it is in a sense the case ``$\goth{m}$ maximal'' which is ``the best
+possible'').
+
+\section{Flat morphisms and open sets}
+\label{IV.6}
+
+Let us first recall some results on constructible sets,
+which are moreover proved in notes
+in circulation of the Dieudonn\'e-Rosenlicht Seminar on
+Schemes\footnote{\Cf EGA~0$_\mathrm{III}$~9, EGA~IV~1.8 and~1.10.}.
+
+Let $X$ be a topological space. We say with Chevalley that a subset
+of~$X$ is \emph{constructible}
+if it is a finite union of locally closed subsets.
+
+\begin{lemma}
+\label{IV.6.1}
+Let $X$ be a noetherian topological space, let $Z$ be a subset
+of~$X$. For~$Z$ to be constructible, it is necessary and sufficient that
+for every irreducible closed subset $Y$ of~$X$, $Z\cap Y$
+be non-dense in $Y$ or contain a nonempty open subset of
+the space~$Y$.
+\end{lemma}
+
+One deduces from it, using a well-known lemma of Commutative
+Algebra:
+
+\begin{lemma}[Chevalley]
+\label{IV.6.2}
+Let $f\colon X\to Y$ be a morphism of finite type of
+preschemes, with $Y$ noetherian. Then $f(X)$ is
+constructible.
+\end{lemma}
+
+\begin{lemma}
+\label{IV.6.3}
+Let $X$ be a noetherian topological space every irreducible closed
+subset of which admits a generic point, $U$ a
+constructible subset of~$X$, $x\in X$. For $U$ to be a neighborhood
+of~$x$, it is necessary and sufficient that every generization $y$ of~$x$
+(\ie every $y\in X$ such that $x\in \bar{y}$) be in~$U$.
+\end{lemma}
+
+In particular
+
+\begin{corollary}
+\label{IV.6.4}
+Let $X$ be a noetherian topological space every irreducible closed
+subset of which admits a generic point, $U$ a
+subset of~$X$. For $U$ to be open, it is necessary and sufficient
+that it satisfy the following two conditions:
+%
+\begin{enumerate}
+\item[(a)] $U$ contains every generization of each of its
+points
+\item[(b)] if $x\in U$, then
+% original p. 101
+$U\cap\bar{x}$ contains a nonempty open subset of
+the space~$\bar{x}$.
+\end{enumerate}
+\end{corollary}
+
+Indeed, $U$ is necessarily constructible thanks
+to~\Ref{IV.6.1}, and we apply criterion~\Ref{IV.6.2}, which
+proves that $U$ is a neighborhood of each of its points.
+
+\begin{corollary}
+\label{IV.6.5}
+Let $f\colon X\to Y$ be a morphism of finite type of preschemes,
+with $Y$ locally noetherian, $x$ a point of~$X$, $y=f(x)$.
+For $f$ to transform every neighborhood of~$x$ into a neighborhood of~$y$,
+it is necessary and sufficient that for every generization $y'$ of~$y$,
+there exist a generization $x'$ of~$x$ such that $f(x')=y'$.
+\end{corollary}
+
+We can evidently suppose that $X$ and~$Y$ are affine, hence
+noetherian. The condition is sufficient, for it suffices to
+prove that $f(X)$ is a neighborhood of~$y$; now $f(X)$ is
+constructible by~\Ref{IV.6.1}, and it suffices to apply
+criterion~\Ref{IV.6.3}. The condition is necessary, for let
+$Y'=\overline{y'}$, and let $F$ be the union of the irreducible
+components of~$f^{-1}(Y')$ which do not contain $x$. Then
+$X-F$ is an open neighborhood of~$x$, hence its image is a neighborhood
+of~$y$, and a fortiori contains $y'$, hence there exists $x'_1\in X-F$ such
+that $f(x'_1)=y'$. Consider an irreducible component
+of~$f^{-1}(Y')$ containing $x'_1$; it necessarily contains $x$
+(for otherwise it would be contained in $F$); let $x'$ be its
+generic point. It is a generization of~$x$, and $f(x')$
+is a generization of~$f(x'_1)=y'$ contained in~$Y'$, hence
+is equal to $y'$, qed.
+
+\begin{theorem}
+\label{IV.6.6}
+Let $f\colon X\to Y$ be a morphism locally of finite type, with~$Y$
+locally noetherian, $F$ a coherent sheaf on~$X$ with
+support~$X$, flat with respect to~$Y$. Then $f$ is an
+open morphism (\iev transforms open sets into open sets).
+\end{theorem}
+
+It suffices to prove criterion~\Ref{IV.6.5} for every point $x\in
+X$. Now the generizations $x'$ of~$x$ correspond to the
+prime ideals of~$\cal{O}_x$, those~$y'$ of~$y$ correspond
+to the prime ideals of~$\cal{O}_y$, and one must therefore verify
+that every prime ideal of~$\cal{O}_y$ is induced by a prime
+ideal of~$\cal{O}_x$. Now $F_x$ is a nonzero $\cal{O}_x$-module and
+$\cal{O}_y$-flat, hence faithfully flat over~$\cal{O}_y$
+by~\Ref{IV.2.2}. We can therefore apply~\Ref{IV.2.3}, which
+completes the proof.
+
+\begin{remarksstar}
+As flatness is preserved by extension of the base, we see that
+under the conditions of~\Ref{IV.6.5} $f$ is even
+\emph{universally open}. I do not know however, when $Y$ is
+integral and $X$ of finite type over~$Y$, whether $f$ induces on every
+component $X_i$ of~$X$ an open morphism, or even only an
+equidimensional one\footnote{The answer to the second question is
+affirmative, the answer to the first negative even if $f$
+is \'etale; \cf EGA~IV~12.1.1.5 and EGA~Err$_{\rm IV}$~33.},
+\ie
+% original p. 102
+one all of whose fiber components have the same dimension (one knows
+only that $X_i$ \emph{dominates} $Y$). The question is linked
+to the following: let $A\to B$ be a local homomorphism of noetherian
+local rings, such that $B$ is flat over~$A$ and~$\goth{m}B$
+is an ideal of definition of~$B$ (which moreover implies
+$\dim B=\dim A$). Is it true that for every minimal prime
+ideal $\goth{p}_i$ of~$B$, one has $\dim B/\goth{p}_i=\dim B$?
+Let us point out only that the answer to the first question
+is negative when one replaces the flatness hypothesis
+of~\Ref{IV.6.5} by the sole hypothesis that $f$ be
+universally open.
+\end{remarksstar}
+
+\begin{lemma}
+\label{IV.6.7}
+Let $A$ be a noetherian integral domain, $B$ an
+$A$-algebra of finite type, $M$ a $B$-module of finite type. Then
+there exists a nonzero element $f$ of~$A$ such that $M_f$ is a
+free (a fortiori flat) module over~$A_f$.
+\end{lemma}
+
+Let $K$ be the field of fractions of~$A$; then $B\otimes_A K$ is an
+algebra of finite type over~$K$, and $M\otimes_A K$ a module of finite
+type over the latter. Let $n$ be the dimension of the support of this
+module; we shall reason by induction on~$n$.
+If $n<0$,
+\ie if $M\otimes_A K=0$, then taking a finite number of
+generators of~$M$ over~$B$, we see that there exists an $f\in A$
+which annihilates these generators, hence $M$, whence $M_f=0$ and we have
+won. Suppose $n\ge 0$. We know that the $B$-module~$M$ admits
+a composition series whose successive quotients are isomorphic
+to modules $B/\goth{p}_i$, the $\goth{p}_i$ being
+prime ideals of~$B$. As an extension of free modules is
+free, we are reduced to the case where $M$ itself is of the
+form $B/\goth{p}$, or again identical to $B$, $B$ being an
+$A$-algebra that is an \emph{integral domain}. Applying the Noether
+normalization lemma to the $K$-algebra $B\otimes_A K$, we
+see easily that there exists a nonzero element $f$ of~$A$ such
+that $B_f$ is integral over the subring $A_f[t_1,\dots,t_n]$, where
+the $t_i$ are indeterminates. Hence we can already
+suppose $B$ is integral over~$C=A[t_1,\dots,t_n]$; it is therefore a
+torsion-free $C$-module of finite type. Let $m$ be its rank; there exists
+therefore an exact sequence of~$C$-modules:
+$$
+0\to C^m\to B\to M'\to 0
+$$
+where $M'$ is a torsion $C$-module. It follows that the
+Krull dimension of the~$C\otimes_A K$-module $M'\otimes_A K$ is
+strictly less than the dimension~$n$ of~$C\otimes_A K$.
+By the induction hypothesis, it follows that, on
+condition of localizing with respect to a suitable nonzero $f$
+of~$A$, we can suppose that $M'$ is a free
+% original p. 103
+$A$-module. On the other hand, $C^m$ is a free $A$-module. Hence $B$ is
+then a free $A$-module; we are done.
+
+\begin{lemma}
+\label{IV.6.8}
+Let $A$ be a noetherian ring, $B$ an algebra of finite type
+over~$A$, $M$~a $B$-module of finite type, $\goth{p}$ a prime
+ideal of~$B$, $\goth{q}$ the prime ideal that it induces on~$A$. We suppose $M_\goth{p}$ flat over~$A_{\goth{q}}$ (or over~$A$,
+it is the same thing). Then there exists a $g\in B-\goth{p}$ such that
+\begin{enumerate}
+\item[(a)] $(M/\goth{q}M)_g$ is flat over~$A/\goth{q}$.
+\item[(b)] $\Tor_1^A(M,A/\goth{q})_g=0$.
+\end{enumerate}
+\end{lemma}
+Indeed, applying~\Ref{IV.6.7} to $(A/\goth(q), B/\goth{q}B,
+M/\goth{q}M)$ we see first that there exists an~$f$ in $A-\goth{q}$
+such that $(M/\goth{q}M)_f$ is flat over~$A/\goth{q}$. On the other hand,
+as $M_\goth{p}$ is flat over~$A$, we have
+$\Tor_1^A(M,A/\goth{q})_\goth{p}=\Tor_1^A(M_\goth{p},A/\goth{q})=0$,
+hence, as $\Tor_1^A(M,A/\goth{q})$ is a $B$-module of finite type, there
+exists a $g\in B-\goth{p}$ such that we have (b). We can then
+(replacing $g$ by $gf$) suppose that we have at the same time (a),
+which proves the corollary.
+
+\begin{corollary}
+\label{IV.6.9}
+With the notation of~\Ref{IV.6.8}, for every prime ideal
+$\goth{p}'$ of~$B$ containing~$\goth{p}$ and not containing~$g$,
+$M_{\goth{p}'}$ is flat over~$A$ (or, what amounts to the same, over~$A_{\goth{q}'}$, where $\goth{q}'$ is the prime ideal of~$A$
+induced by~$\goth{p}')$.
+\end{corollary}
+It suffices to apply criterion~\Ref{IV.5.6} (ii) to the system
+$(A, B_{\goth{q}'}, \goth{q}, M_{\goth{q'}})$, using the
+localization of the~$\Tor$.
+\begin{theorem}
+\label{IV.6.10}
+Let $f\colon X\to Y$ be a morphism of finite type, with $Y$ locally
+noetherian, and let $F$ be a coherent sheaf on~$X$. Let $U$
+be the set of points $x\in X$ such that $F_x$ is flat over~$\cal{O}_{f(x)}$. Then $U$ is an \emph{open} set.
+\end{theorem}
+
+\subsubsection*{Proof} We can suppose $X$ and $Y$ affine, with rings $B$
+and $A$, hence $F$ defined by a $B$-module $M$ of finite type. We
+apply criterion~\Ref{IV.6.4}. Condition (a) is
+verified trivially by \Ref{IV.1.2}~(i); it remains to
+verify condition (b) of~\Ref{IV.6.4}. This is what was
+done in lemma~\Ref{IV.6.8} and
+corollary~\Ref{IV.6.9}.
+
+In many questions, the following weaker form of
+theorem~\Ref{IV.6.10} is sufficient (which already follows
+from lemma~\Ref{IV.6.7}, and therefore requires neither the
+technique
+% original p. 104
+of constructibles, nor theorem~\Ref{IV.5.6}):
+\begin{corollary}
+\label{IV.6.11}
+Under the conditions of~\Ref{IV.6.10}, if we suppose $Y$ integral,
+then there exists a nonempty open set~$V$ in $Y$ such that $F$ is flat
+relative to $Y$ at all points of~$f^{-1}(V)$.
+\end{corollary}
+Indeed, the open set $U$ contains the fiber of the generic
+point of~$Y$ (since the local ring of this point is a
+field), hence it contains an open set of the form $f^{-1}(V)$, $X$
+being of finite type over~$Y$. From~\Ref{IV.6.11}, one also
+easily concludes the following result, where~$Y$ is assumed
+noetherian (but not necessarily integral): there exists
+a partition of~$Y$ into locally closed subsets $Y_i$
+such that (equipping $Y_i$ with the induced reduced structure) $F$
+induces on each $X_i=X\times_Y Y_i$ a sheaf flat with respect
+to~$Y_i$.

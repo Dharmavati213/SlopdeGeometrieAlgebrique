@@ -1,0 +1,478 @@
+\chapter{Flat morphisms}\label{IV}
+% original p. 87
+We give here mainly the flatness properties which have served us in
+the preceding expos\'es. A more detailed study will be found in
+Chapter~IV of the ``\'El\'ements de G\'eom\'etrie Alg\'ebrique'' in
+preparation\footnote{\Cf EGA IV 11 and 12.}, where one studies
+systematically the following situation: $X$ being locally of finite
+type over~$Y$ locally noetherian, and~$\cal{F}$ coherent on~$X$ and
+$Y$-flat, to give relations between the properties of~$Y$, those
+of~$\cal{F}$, and those of the coherent sheaves induced by~$\cal{F}$
+on the fibers of~$X\to Y$ (from the point of view notably of the
+dimension, of the cohomological dimension, of the depth etc.). One
+has in particular a systematic way of obtaining theorems of
+\emph{Seidenberg} or \emph{Bertini} type (for hyperplane sections).
+The essential result for the application of flatness methods in this
+context is the following (which will be proved below): If~$Y$ is
+integral, $X$ of finite type over~$Y$, $\cal{F}$ coherent on~$X$,
+there exists a nonempty open set~$U$ of~$Y$ such that~$\cal{F}$ is
+$Y$-flat at the points of~$X$ above~$U$. A second way, doubtless even
+more important, in which flatness enters Algebraic Geometry, is
+\emph{descent theory}: see for example the two expos\'es of
+Grothendieck on the subject at the S\'eminaire
+Bourbaki\footnote{and, for a more detailed account,
+Expos\'es~\Ref{VIII} and~\Ref{IX} below.}. Flatness thus seems to be
+one of the central technical notions in Algebraic Geometry.
+
+Let us recall that the notion of flatness and faithful flatness was
+introduced by Serre in GAGA. An account of the following
+nos.~\Ref{IV.1}~and~\Ref{IV.2} will also be found in Bourbaki's
+Alg.\ Comm.\ (which of course, as the title of the book indicates,
+does not confine itself to the case of commutative base
+rings)\footnote{N. Bourbaki, Alg\`ebre Commutative, Chap\ptbl I
+(Modules Plats), Act.\ Sc.\ Ind 1290, Paris, Hermann (1961).}.
+
+Contrary to the preceding expos\'es, we do not assume that the rings
+considered are necessarily noetherian.
+
+\section{Sorites on flat modules}
+\label{IV.1}
+
+A module $M$ over the ring~$A$ is called \emph{flat} (or $A$-flat if
+one wants to specify~$A$)
+% original p. 88
+if the functor
+$$
+T_M \colon N \mto M \otimes_{A}N
+$$
+(which is in any case right exact) is \emph{exact}, \ie transforms
+monomorphisms into monomorphisms. It amounts to the same to say that
+the first right derived functor, or all the right derived functors,
+are zero, \ie that one has
+$$
+\Tor^{A}_{1}(M,N)=0 \qquad \text{for all $N$,}
+$$
+\resp that one has
+$$
+\Tor^{A}_{i}(M,N)=0 \qquad \text{for $i>0$, all $N$.}
+$$
+Since the $\Tor_{i}$ commute with inductive limits, it suffices
+moreover to verify these conditions for $N$ of finite type, and even
+(taking then a composition series of~$N$ with monogenous quotients)
+that one has
+$$
+\Tor^{A}_{1}(M,N)=0
+$$
+if $N$ is monogenous, \ie of the form $A/I$, $I$ being an ideal
+of~$A$. Let us note moreover that
+$$
+\Tor^{A}_{1}(M,A/I)=0 \quad\Longleftrightarrow\quad I\otimes_{A}M \rightarrow
+M=A\otimes_{A}M\text{ is \emph{injective}},
+$$
+as one sees from the exact sequence of the $\Tor$, taking into account
+$\Tor^{A}_{1}(M,A)=0$. Hence $M$ flat is equivalent to saying that for
+every ideal~$I$, the natural homomorphism
+$$
+I\otimes_{A}M \to IM
+$$
+is an isomorphism. It suffices moreover to verify this for $I$ of
+finite type; a fortiori it suffices to verify that the functor
+$M\otimes$ is exact on modules \emph{of finite type}.
+
+As whenever one has an exact functor $T$, if one identifies, for a
+subobject $N'$ of~$N$, $T(N')$ with a subobject of~$T(N)$, one has
+$$
+T(N' \cap N'')=T(N') \cap T(N'')
+$$
+$$
+T(N' + N'')=T(N') + T(N'')
+$$
+for two subobjects $N'$, $N''$ of~$N$.
+
+A direct sum of flat modules, a direct factor of a flat module, is
+flat. In particular, $A$ being flat, a \emph{free} module, hence also
+a \emph{projective} module, is flat. The tensor product of two flat
+modules is flat, and if $M$ is flat over~$A$, then $M\otimes_{A}B$ is
+flat over~$B$ for every change of base $A \to B$ (because of the
+associativity of the tensor product and of the fact that a composite
+of
+% original p. 89
+exact functors is exact). If $M$ is flat over~$B$, $B$ flat over~$A$,
+then $M$ is flat over~$A$ (same reason).
+
+The exact sequence of the $\Tor$, plus the ``commutativity'' of the
+$\Tor$, gives:
+
+\begin{proposition}
+\label{IV.1.1}
+Let $0 \to M' \to M \to M'' \to 0$ be an exact sequence of~$A$-modules,
+$M''$ being flat. Then
+\begin{enumerate}
+\item[(i)] this sequence remains exact upon tensoring with any
+$A$-module $N$
+\item[(ii)] for $M$ to be flat, it is necessary and sufficient that
+$M'$ be so.
+\end{enumerate}
+\end{proposition}
+
+One can therefore say that from the point of view of behavior under
+tensor products, flat modules are ``as good'' as free or projective
+modules (and the exact sequence of~\Ref{IV.1.1} in particular is ``as
+good'' as if it split).
+
+Let $S$ be a multiplicatively stable subset of~$A$; then $S^{-1}A$ is
+flat over~$A$, since $S^{-1}A \otimes N=S^{-1}N$ is an exact functor
+in~$N$. If $M$ is $A$-flat, then $S^{-1}M=S^{-1}A \otimes M$ is
+$S^{-1}A$-flat, the converse being true if $M \to S^{-1}M$ is an
+isomorphism, \ie if the $s \in S$ are bijective in $M$ (because of the
+transitivity of flatness, $S^{-1}A$ being flat over~$A$). More
+generally, the case of a morphism of preschemes $X \to Y$ and of a
+quasi-coherent sheaf $\cal{F}$ on~$X$ whose flatness with respect
+to~$Y$ one wants to study leads to the situation with two rings:
+
+\begin{proposition}
+\label{IV.1.2}
+Let $A \to B$ be a homomorphism of rings, $M$ a $B$-module, $T$ a
+multiplicatively stable subset of~$B$.
+\begin{enumerate}
+\item[(i)] If $M$ is $A$-flat, then $T^{-1}M$ is $A$-flat (hence also
+$S^{-1}A$-flat for every multiplicatively stable subset $S$ of~$A$
+mapping into $T$).
+\item[(ii)] Conversely, if $M_{\goth{n}}$ is flat over~$A_{\goth{n}}$
+for every maximal ideal $\goth{n}$ of~$B$, $M_{\goth{n}}$ is flat
+over~$A$ (or, what amounts to the same, over~$A_{\goth{m}}$, where
+$\goth{m}$ is the prime ideal of~$A$ inverse image of~$\goth{n}$)
+then $M$ is $A$-flat.
+\end{enumerate}
+\end{proposition}
+
+Indeed one has the formula, functorial with respect to the
+$A$-module~$N$:
+$$
+T^{-1}M \otimes_{A} N=T^{-1}(M \otimes_{A} N)
+$$
+since the two sides are functorially isomorphic to $T^{-1}B
+\otimes_{B} M \otimes_{B} N_{(B)}$ (with $N_{(B)}=N \otimes_{A} B$) by
+virtue of the associativity formulas of~$\otimes$. It follows at once
+that if $M \otimes_{A} N$ is exact in~$N$, the same is true
+of~$T^{-1}M \otimes_{A} N$ (as a composite of two exact functors),
+whence~(i). And (ii) follows likewise, since to verify the exactness
+of a sequence of~$B$-modules, it suffices to verify the exactness of
+the localizations at all the maximal ideals of~$B$.
+
+\begin{proposition}
+\label{IV.1.3}
+\begin{enumerate}
+\item[(i)] Let
+% original p. 90
+$M$ be a flat $A$-module. If $x \in A$ is not a divisor of~$0$ in $A$,
+it is not a divisor of~$0$ in $M$. In particular, if $A$ is integral,
+$M$ is torsion-free.
+\item[(ii)] Suppose that $A$ is integral and that for every maximal
+ideal $\goth{m}$ of~$A$, $A_{\goth{m}}$ is principal (for example $A$
+a Dedekind ring, or even principal). For the $A$-module $M$ to be
+flat, it is necessary and sufficient that it be torsion-free.
+\end{enumerate}
+\end{proposition}
+
+One obtains (i) by noting that the homothety $x$ in $M$ is obtained by
+tensoring with~$M$ the homothety $x$ in $A$. For (ii), one may already
+assume $A$ principal thanks to~\Ref{IV.1.2} (ii); one must show that
+if $M$ is torsion-free, then for every ideal $I$ of~$A$, the injection
+$I \to A$ tensored with $M$ is an injection, which means that the
+generator $x$ of~$I$ is not a divisor of~$0$ in~$M$, O.K.
+
+\section{Faithfully flat modules}
+\label{IV.2}
+
+A functor $F$ from one category into another is called
+\emph{faithful} if for all $X$, $Y$, the map $\Hom (X,Y) \to \Hom
+(F(X),F(Y))$ is injective. If it is an additive functor of additive
+categories, it amounts to the same to say that $F(u)=0$ implies
+$u=0$, and this implies that $F(X)=0$ implies $X=0$. For $F$ to be
+\emph{faithful and exact}, it is necessary and sufficient that the
+following condition be satisfied: for every sequence $M' \to M \to
+M''$ of morphisms in $\cal{C}$, the transformed sequence
+$F(M') \to F(M) \to F(M'')$
+is exact \emph{if} and \emph{only if} the preceding one is. Or again:
+$F$ is exact, and $F(X)=0$ implies $X=0$. (N.B. to be able to speak
+of exactness, one must assume the categories in question
+\emph{abelian}). Suppose one has a family $(M_{i})$ of nonzero objects
+of~$\cal{C}$ such that every nonzero object of~$\cal{C}$ has a
+subobject admitting a quotient isomorphic to one of the $M_{i}$. Then
+$F$ faithful and exact is equivalent to: $F$ exact, and $F(M_{i}) \neq
+0$ for all~$i$. If $\cal{C}$ is the category of modules over a
+ring~$A$, one can take for example for $(M_{i})$ the family of the
+$A/\goth{m}$, $\goth{m}$ running through the maximal ideals of~$A$.
+(Indeed, every nonzero module admits a nonzero monogenous submodule,
+hence isomorphic to some $A/I$, $I$ an ideal~$\neq A$, which by Krull
+admits a quotient $A/\goth{m}$). From these sorites, one deduces in
+particular:
+
+\begin{proposition}
+\label{IV.2.1}
+Let $M$ be an $A$-module. Equivalent conditions:
+\begin{enumerate}
+\item[(i)] The functor $M \otimes_{A}$ is faithful and exact.
+\item[(i~bis)]
+% original p. 91
+$M$ is flat, and $M \otimes_{A} N=0$ implies $N=0$
+\item[(i~ter)] $M$ is flat, and $M \otimes A/\goth{m} \neq 0$ for
+every maximal ideal $\goth{m}$ of~$A$.
+\item[(ii)] For every sequence of homomorphisms $N' \to N \to N''$,
+the sequence tensored with $M$ is exact if and only if the initial
+sequence is.
+\end{enumerate}
+\end{proposition}
+
+One then says that $M$ is a \emph{faithfully flat} $A$-module. In
+particular, if $M$ is faithfully flat, then $N \to N'$ is a
+monomorphism (epimorphism, isomorphism) if and only if the
+homomorphism tensored with~$M$ is. A faithfully flat module is
+\emph{faithful}, since the homothety $f$ in~$M$ is obtained by
+tensoring with~$M$ the homothety $f$ in~$A$.
+
+One sees as in~\Ref{IV.1} the usual transitivity properties: the
+tensor product of two faithfully flat modules is faithfully flat; if
+$M$ is faithfully flat over~$A$, $M \otimes_{A}B$ is faithfully flat
+over~$B$ for every extension of the base $A \to B$; if $B$ is an
+$A$-algebra which is faithfully flat over~$A$ and if $M$ is a
+faithfully flat $B$-module, it is a faithfully flat $A$-module.
+
+\begin{corollary}
+\label{IV.2.2}
+Let $A \to B$ be a local homomorphism of local rings, $M$ a
+$B$-module of finite type. For $M$ to be faithfully flat over~$A$, it
+is necessary and sufficient that it be flat over~$A$ and nonzero.
+\end{corollary}
+
+This follows from criterion (i~ter) and from Nakayama. In particular,
+\emph{for $B$ to be $A$-flat, it is necessary and sufficient that it
+be faithfully $A$-flat}.
+
+\begin{proposition}
+\label{IV.2.3}
+Let $A \to B$ be a homomorphism of rings, $M$ a $B$-module which is
+faithfully flat over~$A$. For every prime ideal $\goth{p}$ of~$A$,
+there exists a prime ideal~$\goth{q}$ of~$B$ which induces it.
+\end{proposition}
+
+Dividing by $\goth{p}$, one is reduced to the case where
+$\goth{p}=0$. Localizing at the prime ideal $0$, one is reduced to the
+case where $A$ is a field. But $M$, being faithfully flat over~$A$, is
+nonzero, a fortiori $B \neq 0$, hence $B$ has a prime ideal, which can
+only induce the unique prime ideal of~$A$! Geometrically, one can say
+that the existence of a quasi-coherent sheaf $\cal{F}$ on~$X=\Spec
+(B)$ which is ``faithfully flat'' relative to~$A$ implies that $X \to
+Y=\Spec (A)$ is \emph{surjective}.
+
+\begin{corollary}
+\label{IV.2.4}
+Suppose $M$ flat over~$A$, of finite type over~$B$ and
+$\Supp M=\Spec(B)$ (\ie $M_{\goth{q}}\neq 0$ for every prime ideal
+$\goth{q}$ of~$B$). Then the prime ideals $\goth{q}$ of~$B$ minimal
+among those containing $\goth{p}B$ induce~$\goth{p}$.
+\end{corollary}
+
+One
+% original p. 92
+is again reduced to the case $\goth{p}=0$ (since the hypotheses are
+all preserved on dividing), hence $A$ integral. One is reduced to the
+following statement:
+
+\begin{corollary}
+\label{IV.2.5}
+$M$ being as above, every minimal prime ideal $\goth{q}$ of~$B$
+induces a prime ideal $\goth{p}$ of~$A$ which is minimal.
+\end{corollary}
+
+Indeed, localizing at $\goth{p}$ and $\goth{q}$, one is reduced to
+proving that if $A$ and $B$ are local and the homomorphism $A \to B$
+local, $M$ a nonzero $B$-module flat over~$A$, and if $B$ is of
+dimension $0$, then $A$ is of dimension $0$. By~\Ref{IV.2.2}
+and~\Ref{IV.2.3}, one concludes that every prime ideal of~$A$ is
+induced by a prime ideal of~$B$, hence by the maximal ideal of~$B$,
+hence is the maximal ideal, qed. Geometrically, \Ref{IV.2.5} means
+that every irreducible component of $X=\Spec (B)$ dominates some
+irreducible component of~$Y=\Spec (A)$ (granted the existence of a
+quasi-coherent sheaf of finite type on~$X$, with support~$X$, and flat
+with respect to~$Y$).
+
+It will be noted that one did not have to assume in~\Ref{IV.2.4} $M$
+faithfully flat over~$A$, but nothing then guarantees the existence of
+a prime ideal containing $\goth{p}B$ (hence of a minimal one among
+such).
+
+\begin{proposition}
+\label{IV.2.6}
+Let $i \colon A \to B$ be a homomorphism of rings. Equivalent
+conditions:
+\begin{enumerate}\item[(i)] $B$ is a faithfully flat $A$-module.
+\item[(ii)] $B$ is flat over~$A$, and $\Spec (B) \to \Spec (A)$ is
+surjective
+\item[(ii~bis)] $B$ is flat over~$A$, and every maximal ideal is
+induced by an ideal of~$B$.
+\item[(iii)] $i$ is injective and $\Coker i$ is a flat $A$-module.
+\item[(iv)] The functor $M_{(B)}=M \otimes_{A} B$ in the $A$-module
+$M$ is exact, and the canonical functorial homomorphism $M \to
+M_{(B)}$ is injective.
+\item[(iv~bis)] For every ideal $I$ of~$A$, $I \otimes_{A} B \to IB$
+is an isomorphism, and the inverse image of~$IB$ in $A$ is equal
+to~$I$.
+\end{enumerate}
+\end{proposition}
+
+One has (i)$\To$(ii) by~\Ref{IV.2.3}, (ii)$\To$(ii~bis) is trivial,
+(ii~bis)$\To$(i) by criterion (i~ter) of~\Ref{IV.2.1}. One has
+(iii)$\To$(iv) by~\Ref{IV.1.1}, (iv)$\To$(iv~bis) trivially (by
+taking $M=A/I$ in the second condition~(iv~bis)), and
+(iv~bis)$\To$(i) by virtue of the criterion of flatness by ideals seen
+at the beginning of~\Ref{IV.1} and of criterion \Ref{IV.2.1}~(i~ter).
+Finally, (iv)$\To$(iii) by an easy converse of~\Ref{IV.1.1}, and
+(i)$\To$(iv) since
+% original p. 93
+if $N$ is the kernel of~$M \to M \otimes_{A}B =T(M)$, then ($T$~being
+exact) $N \to T(N)$ is zero, whence $T(N)=N \otimes_{A}B =0$, whence
+$N=0$, qed.
+
+\section{Relations with completion}
+\label{IV.3}
+Let $A$ be a noetherian ring, $I$ an ideal in $A$, $\widehat{A}$ the
+separated completion of~$A$ for the $I$-preadic topology, and for
+every $A$-module $M$, let $\widehat{M}$ be its completion for the
+$I$-preadic topology. It is an $\widehat{A}$-module, whence a
+canonical homomorphism
+$$
+M \otimes_A \widehat{A} \to \widehat{M}.
+$$
+When $M$ runs through the modules \emph{of finite type}, the functor
+$M \mto \widehat{M}$ is exact, as follows easily from \emph{Krull's
+theorem: If $N \subset M$, the topology of~$N$ is the one induced by
+the topology of~$M$}. Since $M \otimes_A \widehat{A}$ is right exact,
+one easily concludes from this (by resolving $M$ by $L \to L' \to M$,
+with $L$ and $L'$ free of finite type) that the functorial
+homomorphism above is an \emph{isomorphism} ($\widehat{M}$ being also
+right exact) and consequently that $M \otimes_A \widehat{A}$ is also
+an \emph{exact} functor in $M$. Hence:
+\begin{proposition}
+\label{IV.3.1}
+Let $A$ be a noetherian ring, $I$ an ideal of~$A$; then the separated
+completion $\widehat{A}$ of~$A$ (for the $I$-preadic topology) is
+\emph{flat} over~$A$.
+\end{proposition}
+
+\begin{corollary}
+\label{IV.3.2}
+For $\widehat{A}$ to be faithfully flat over~$A$, it is necessary and
+sufficient that $I$ be contained in the radical of~$A$.
+\end{corollary}
+
+Indeed, it suffices to apply criterion \Ref{IV.2.1} (i~ter).
+
+These results summarize all that one knows how to say, from the point
+of view of linear algebra, about the relations between $A$ and
+$\widehat{A}$. Corollary \Ref{IV.3.2} is used above all when $A$ is a
+noetherian local ring and $I$ is contained in the maximal ideal
+$\goth{m}$ (and most often, is equal to it).
+
+\section{Relations with free modules}
+\label{IV.4}
+
+\begin{proposition}
+\label{IV.4.1}
+Let $A$ be a ring, $I$ an ideal of~$A$, $M$ an $A$-module. Suppose
+that one is under one or the other of the following hypotheses:
+\begin{enumerate}
+\item[(a)] $I$ is nilpotent
+\item[(b)] $A$ is noetherian, $I$ is in the radical of~$A$, and $M$ is
+of finite type.
+\end{enumerate}
+For $M$ to be free over~$A$, it is necessary and sufficient that $M
+\otimes A/I$ be free over~$A/I$, and that $\Tor_1^A(M,A/I) = 0$.
+\end{proposition}
+
+It is
+% original p. 94
+necessary; let us prove sufficiency. Let $(e_i)$ be a family of
+elements of~$M$ whose image in $M \otimes A/I = M/IM$ defines a basis
+of it over~$A/I$ (it is a finite family in case (b)). Let $L$ be the
+free $A$-module constructed on the same index set; one thus has a
+homomorphism $L \to M$ such that tensoring $T$ with $A/I$ induces an
+isomorphism $T(L) \isomto T(M)$. If $Q$ is the cokernel of~$L \to M$,
+one therefore has $T(Q) = 0$, whence $Q=0$ by virtue of Nakayama
+(valid under one or the other condition (a) or (b)). Hence $L \to M$
+is surjective; let $R$ be its kernel; one thus has an exact sequence
+$$
+0 \to R \to L \to M \to 0
+$$
+whence, since $\Tor_1^A(M,A/I)=0$, an exact sequence $0 \to T(R) \to
+T(L) \to T(M) \to 0$, whence $T(R)=0$, whence further $R=0$ by virtue
+of Nakayama (taking into account that in case (b), $R$ is of finite
+type since $A$ was assumed noetherian).
+
+\begin{corollary}\label{IV.4.2}
+One can replace the condition $\Tor_1^A(M,A/I)=0$ by: the canonical
+surjective homomorphism
+\begin{equation*}
+\label{eq:IV.2.*}
+\tag{$*$} { \gr_I^0(M) \otimes_{A/I} \gr_I(A) \to \gr_I(M) }
+\end{equation*}
+is an isomorphism.
+\end{corollary}
+
+Indeed, if $M$ is free, this is certainly satisfied. One must
+therefore prove that if $M \otimes A/I$ is free over~$A/I$ and the
+condition on the $\gr$ is satisfied, then $M$ is free. One takes up
+the proof above again, constructing $L \to M$; it follows from the
+hypothesis that this homomorphism induces an isomorphism for the
+associated graded modules, hence its kernel is contained in the
+intersection of the $I^nL$, hence is zero (as is trivial in (a), and
+well known in (b)). Qed.
+
+\begin{corollary}
+\label{IV.4.3}
+Suppose that $A/I$ is a field. Then the following conditions on~$M$
+are equivalent:
+\begin{enumerate}
+\item[(i)] $M$ is free
+\item[(ii)] $M$ is projective
+\item[(iii)] $M$ is flat
+\item[(iv)] $\Tor_1^A(M, A/I) = 0$
+\item[(v)] The canonical homomorphism \eqref{eq:IV.2.*} is bijective.
+\end{enumerate}
+\end{corollary}
+
+Indeed, in the case considered, $M \otimes A/I$ is automatically
+free.
+
+The preceding result is valid in the following two cases:
+\begin{enumerate}
+\item[(a)] $M$ is an \emph{arbitrary} module over a local ring $A$
+whose maximal ideal $I$ is \emph{nilpotent} (for example an artinian
+local ring).
+\item[(b)] $M$ is a module \emph{of finite type} over a
+\emph{noetherian local} ring.
+\end{enumerate}
+
+Let us recall,
+% original p. 95
+for the record:
+\begin{corollary}
+\label{IV.4.4}
+Suppose that $A$ is a \emph{noetherian local integral} ring with
+maximal ideal $\goth{m} = I$, residue field $k = A/I$, field of
+fractions $K$. Let $M$ be a module of finite type over~$A$. Then the
+equivalent conditions \textup{(i)} to \textup{(v)} above are also
+equivalent to
+\begin{enumerate}
+\item[(vi)] $M \otimes_A K$ and $M \otimes_A k$ are vector spaces of
+the same dimension (\ie the rank of~$M$ over~$A$ is equal to the
+minimum number of generators of the $A$-module $M$).
+\end{enumerate}
+\end{corollary}
+
+Immediate proof; we leave to the reader the task of generalizing to
+the case where~$A$ is only assumed to be without nilpotent elements:
+one must then require that the ranks of~$M$ at the minimal prime
+ideals of~$A$ be equal to the dimension of the vector space $M
+\otimes_A k$.

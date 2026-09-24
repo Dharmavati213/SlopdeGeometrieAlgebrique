@@ -13,8 +13,8 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 1. Keep the landed SGA 1 and SGA 2 translations compiling (`make tex`).
 2. Formalize SGA 1 VI against mathlib, section by section, starting
    from `lean/SGA/SGA1/ExposeVI.lean`.
-3. Translate further exposés of SGA 1 (IV–V, VIII–XIII), then formalize
-   each after its English text is in the tree.
+3. SGA 1 is now translated in full (front matter and Exposés I–VI,
+   VIII–XIII); formalize further exposés after I and VI.
 4. SGA 2 English drafts proceed in parallel with remaining SGA 1
    exposés; Lean for SGA 2 has partial Exposés I–VII (see below).
    Formalization follows the English text.
@@ -32,45 +32,60 @@ Exposé VII does not exist.
 
 | Exposé | Title | Translation | Lean |
 | --- | --- | --- | --- |
-| I | Étale morphisms | full draft in tree | compiling |
-| II | Smooth morphisms: generalities, differential properties | full draft in tree | — |
-| III | Smooth morphisms: extension properties | full draft in tree | — |
-| IV | Flat morphisms | — | — |
-| V | The fundamental group: generalities | — | — |
-| **VI** | **Fibered categories and descent** | **draft in tree** | **compiling** |
+| — | Preface, Introduction, Foreword | full draft in tree | — |
+| I | Étale morphisms | full draft in tree, reviewed | compiling |
+| II | Smooth morphisms: generalities, differential properties | full draft in tree, reviewed | — |
+| III | Smooth morphisms: extension properties | full draft in tree, reviewed | — |
+| IV | Flat morphisms | full draft in tree | — |
+| V | The fundamental group: generalities | full draft in tree | — |
+| **VI** | **Fibered categories and descent** | **full draft in tree, reviewed** | **compiling** |
 | VII | *(does not exist)* | | |
-| VIII | Faithfully flat descent | — | — |
-| IX | Descent of étale morphisms; application to the fundamental group | — | — |
-| X | Specialization of the fundamental group | — | — |
-| XI | Examples and complements | — | — |
-| XII | Algebraic geometry and analytic geometry | — | — |
-| XIII | Cohomological properness (sets and non-commutative groups) | — | — |
+| VIII | Faithfully flat descent | full draft in tree | — |
+| IX | Descent of étale morphisms; application to the fundamental group | full draft in tree | — |
+| X | Specialization of the fundamental group | full draft in tree | — |
+| XI | Examples and complements | full draft in tree | — |
+| XII | Algebraic geometry and analytic geometry | full draft in tree | — |
+| XIII | Cohomological properness (sets and non-commutative groups) | full draft in tree | — |
+
+"Reviewed" means the pre-existing English was compared sentence by
+sentence with the corrected French (2026-09-24) and corrected. Each new
+exposé was translated chunk by chunk and every chunk was independently
+re-checked against the French. Deeper scholarly proofreading of all
+exposés remains open; apparent misprints of the French source are listed
+in each exposé's README.
 
 ### Translation
 
+- [x] **Front matter** — Preface, Introduction (1970), Foreword (1963)
+  - [x] English TeX and PDF in `translation/SGA1/Introduction/`
 - [x] **I** — Étale morphisms
   - [x] Opening convention and §§1–6: English TeX and PDF in `translation/SGA1/ExposeI/`
   - [x] §§7–11: English TeX and PDF, including all proofs and footnotes
+  - [x] Sentence-by-sentence review against the corrected French (2026-09-24)
   - [ ] Scholarly proofreading; source issues recorded in [`ExposeI/README.md`](../translation/SGA1/ExposeI/README.md)
 - [x] **II** — Smooth morphisms: generalities, differential properties
   - [x] Opening convention and §§1–5, including errata: English TeX and PDF in `translation/SGA1/ExposeII/`
+  - [x] Sentence-by-sentence review against the corrected French (2026-09-24)
   - [ ] Scholarly proofreading; source issues recorded in [`ExposeII/README.md`](../translation/SGA1/ExposeII/README.md)
 - [x] **III** — Smooth morphisms: extension properties
   - [x] English TeX in `translation/SGA1/ExposeIII/`
   - [x] PDF in tree (`make tex`)
-  - [ ] Scholarly proofreading against the SMF source
-- [ ] **IV** — Flat morphisms
-- [ ] **V** — The fundamental group: generalities
+  - [x] Sentence-by-sentence review against the corrected French; statement numbering fixed (2026-09-24)
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeIII/README.md`](../translation/SGA1/ExposeIII/README.md)
+- [x] **IV** — Flat morphisms (`translation/SGA1/ExposeIV/`)
+- [x] **V** — The fundamental group: generalities (`translation/SGA1/ExposeV/`)
 - [x] **VI** — Fibered categories and descent
   - [x] English TeX in `translation/SGA1/ExposeVI/`
   - [x] PDF in tree (`make tex`)
-  - [ ] Proofread against the SMF source (labels, diagrams, numbering)
-- [ ] **VIII** — Faithfully flat descent
-- [ ] **IX** — Descent of étale morphisms. Application to the fundamental group
-- [ ] **X** — Specialization of the fundamental group
-- [ ] **XI** — Examples and complements
-- [ ] **XII** — Algebraic geometry and analytic geometry
-- [ ] **XIII** — Cohomological properness of sheaves of sets and of sheaves of non-commutative groups
+  - [x] Proofread against the SMF source (labels, diagrams, numbering), 2026-09-24
+  - [ ] Scholarly proofreading; source issues recorded in [`ExposeVI/README.md`](../translation/SGA1/ExposeVI/README.md)
+- [x] **VIII** — Faithfully flat descent (`translation/SGA1/ExposeVIII/`)
+- [x] **IX** — Descent of étale morphisms. Application to the fundamental group (`translation/SGA1/ExposeIX/`)
+- [x] **X** — Specialization of the fundamental group (`translation/SGA1/ExposeX/`)
+- [x] **XI** — Examples and complements (`translation/SGA1/ExposeXI/`)
+- [x] **XII** — Algebraic geometry and analytic geometry (`translation/SGA1/ExposeXII/`)
+- [x] **XIII** — Cohomological properness of sheaves of sets and of sheaves of non-commutative groups (`translation/SGA1/ExposeXIII/`)
+- [ ] Scholarly proofreading of IV, V, VIII–XIII; source issues recorded in each exposé's README
 
 ### Formalization (Lean 4)
 
@@ -138,9 +153,8 @@ below and in [`formalization.md`](formalization.md).
 - [x] **I.11** Geometrically unibranch (`Unibranch.lean`: definition)
   - [ ] I.11 examples; étale descent along a universal homeomorphism (IX.4.10)
 
-Other exposés of SGA 1: start only after the corresponding English text
-is ticked above. Exposé II now has English in the tree; Lean for II
-has not been started.
+Other exposés of SGA 1: the English text of every exposé is now in the
+tree; Lean has been started only for I and VI.
 
 ---
 

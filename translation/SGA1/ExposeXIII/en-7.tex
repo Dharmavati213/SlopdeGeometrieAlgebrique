@@ -1,0 +1,629 @@
+\section{Homotopy exact sequences}\label{XIII.4}\setcounter{subsection}{-1}
+\subsection{}
+\label{XIII.4.0}
+Let $X$ and $S$ be two connected schemes, $f\colon X\to S$ a
+morphism, $a$ a geometric point of~$X$, $\LL$ a set
+of prime numbers. Let $K$ be the kernel of the canonical homomorphism
+$\pi_1(X,a)\to\pi_1(S,a)$ and $N$ the smallest normal
+pro-subgroup of~$K$ such that $K/N$ is a pro-$\LL$-group
+$K^{\LL}$. Then $N$ is normal in $\pi_1(X,a)$ and we denote by
+$$
+\pi_1'(X,a)
+$$
+the
+% original p. 415
+quotient of~$\pi_1(X,a)$ by $N$. If $a$ is a geometric
+point of a geometric fiber~$X_{\bar{s}}$, the
+canonical morphisms
+$$
+\pi_1(X_{\bar{s}},a)\to \pi_1(X,a) \to
+\pi_1(S,a)
+$$
+allow one to define canonical morphisms
+$$
+\pi_1^{\LL}(X_{\bar{s}},a)\lto{u} \pi_1'(X,a) \lto{v} \pi_1(S,a)
+$$
+We have $vu=0$.
+
+\begin{proposition}
+\label{XIII.4.1}
+Let $S$ be a connected scheme, $f\colon X\to S$ a
+locally $0$-acyclic morphism \textup{(SGA~4 XV~1.11)}; suppose moreover
+that $f$ is $0$-acyclic (which, when $f$ is coherent, amounts to
+saying that the geometric fibers of~$f$ are connected \textup{(SGA~4
+XV~1.16)}). Let $\LL$ be a set of prime numbers. If $S'$ is a
+scheme \'etale over~$S$, we denote by $X'$, $f'$ the inverse images
+of~$X$, $f$ over~$S'$. Suppose that, for every \'etale covering
+$S'$ of~$S$ and for every \'etale covering $E$ of
+$X'$ that is a quotient of a Galois covering whose group is an
+$\LL$-group, $(E,f')$ is cohomologically proper relative
+to~$S'$ in dimension $\leqslant 0$ and $f'_* E$ is
+constructible. Then, if $\bar{s}$ is a geometric point of
+$S$ and $a$ a geometric point of the fiber $X_{\bar{s}}$, the
+sequence of group homomorphisms
+\begin{equation*}
+\label{eq:XIII.4.1.1}
+\tag{\thesubsection.1}
+\pi_1^{\LL}(X_{\bar{s}},a)\lto{u} \pi_1'(X,a)\lto{v}\pi_1(S,a)\to1
+\end{equation*}
+is exact
+\end{proposition}
+
+This statement generalizes X.\Ref{X.1.4}, whose proof we shall
+copy.
+
+Let us first show that $v$ is surjective. It suffices to show that, for
+every connected \'etale covering $S'$ of~$S$, $X'$ is also
+connected (V~\Ref{V.6.9}). Let $C$ be a set having at least two
+elements. It follows from the fact that $f$ is $0$-acyclic that
+the canonical morphism
+$$
+\H^0(S',C_{S'})\to \H^0(X',C_{X'})
+$$
+is bijective, hence that $X'$ is connected, whence the surjectivity
+of~$v$.
+
+By
+% original p. 416
+definition of~$K^{\LL}$ \eqref{XIII.4.0}, we have the exact sequence
+$$
+1\to K^{\LL} \to \pi_1'(X,a)\to \pi_1(S,a)\to 1
+$$
+Let $\widetilde{S}$ be the universal covering of~$S$ and
+$\widetilde{X}=\widetilde{S}\times_SX$; the group $K^{\LL}$ classifies the
+Galois coverings $P$ whose group is an $\LL$-group, such that there
+exist an \'etale covering $S'$ of~$S$ and a Galois covering
+$Q$ of~$X'=X\times_SS'$ such that one has an isomorphism
+$P\simeq Q\times_{X'}\widetilde{X}$. For the sequence
+\eqref{eq:XIII.4.1.1} to be exact, it is necessary and sufficient that the
+canonical morphism
+$$
+\pi_1^{\LL}(X_{\bar{s}},a)\to K^{\LL}
+$$
+be surjective. By the interpretation of~$K^{\LL}$ this
+amounts to saying that, for every \'etale covering $S'$ of~$S$
+and for every Galois covering $Q$ of~$X'$ whose group is an
+$\LL$-group, such that $P=Q\times_{X'}\widetilde{X}$ is connected,
+$Q|X_{\bar{s}}$ is then connected. Let us show that this last
+condition is satisfied. Indeed, let $S'$ be an \'etale
+covering of~$S$, $Q$ a Galois covering of~$X'$ whose group is an
+$\LL$-group $F$, such that $Q|X_{\bar{s}}$ is disconnected, and let us show
+that, after replacing $S'$ by an \'etale covering, $Q$
+becomes disconnected. There exist a subgroup $G$ of~$F$ distinct from
+$F$ and a torsor $R$ under $G|X_{\bar{s}}$ such that $Q|X_{\bar{s}}$
+is obtained by extension of the structure group $G\to F$ from
+$R$. The \'etale covering $E=Q/G$ of~$X'$ is such that
+$E|X_{\bar{s}}$ has a section. By~\Ref{XIII.1.16} $f_*E$
+is locally constant constructible and, after replacing $S'$
+by an \'etale covering, one may even assume that $f_*E$
+is constant. Since $(E,f')$ is cohomologically proper relative
+to~$S'$ in dimension $\leqslant0$ and since $\H^0(X_{\bar{s}},
+E|X_{\bar{s}})$ is nonempty, we see that $E$ has a section. But this
+proves that $Q$ is disconnected, which completes the proof.
+
+From~\Ref{XIII.4.1} we deduce the following lemma, which will be used
+in~\Ref{XIII.4.6}.
+
+\begin{lemma}
+\label{XIII.4.2}
+Let $S$ be a connected scheme, $f\colon X\to S$ a
+locally $0$-acyclic and $0$-acyclic morphism, $\LL$ a set of
+prime numbers. Suppose
+% original p. 417
+that, for every finite constant sheaf of~$\LL$-groups $F$ on~$X$,
+$(F,f)$ is cohomologically proper relative to~$S$ in
+dimension $\leqslant1$, and that, for every \'etale covering
+$S'$ of~$S$ and for every \'etale covering $E$ of~$X'$
+that is a quotient of a Galois covering whose group is an $\LL$-group,
+$f'_*E$ is constructible. Then, if $\bar{s}$ is a
+geometric point of~$S$ and $a$ a geometric point of the
+fiber $X_{\bar{s}}$, the sequence of group homomorphisms
+$$
+\pi_1^{\LL}(X_{\bar{s}},a)\to\pi_1'(X,a)\to\pi_1(S,a)\to1
+$$
+is exact.
+\end{lemma}
+
+the hypotheses of~\Ref{XIII.4.1} are satisfied. It follows
+indeed from~\Ref{XIII.1.13} 3) that, for every scheme $S'$
+\'etale over~$S$ and for every \'etale covering $E$ of~$X'$
+that is a quotient of a Galois covering whose group is an $\LL$-group,
+$(E,f')$ is cohomologically proper relative to~$S'$ in
+dimension $\leqslant 0$.
+\begin{proposition}
+\label{XIII.4.3}
+Let $S$ be a connected scheme, $\LL$ a set of prime
+numbers, $f\colon X\to S$ a $0$-acyclic morphism, locally
+$1$-aspherical for $\LL$ \textup{(SGA~4 XV~1.11)}, $g\colon S\to X$ a
+section of~$f$. Let $\bar{s}$ be a geometric point of~$S$,
+$a$ a geometric point of the fiber $X_{\bar{s}}$. Suppose
+that, for every constant sheaf of
+$\LL$-groups~$F$, $(F,f)$ is cohomologically proper in dimension
+$\leqslant1$, that the direct image under~$f$ of the stack of torsors under
+$F$ is a $1$-constructible stack \eqref{XIII.0} and that, for every
+\'etale covering $E$ of~$X'$ that is a quotient of a Galois
+covering whose group is an $\LL$-group, $f'_*E$ is constructible. Then
+the sequence of group homomorphisms
+\begin{equation*}
+\label{eq:XIII.4.3.1}
+\tag{\thesubsection.1}
+1\to\pi_1^{\LL}(X_{\bar{s}},a)\lto{u} \pi_1'(X,a)\lto{v}\pi_1(S,a)\to1
+\end{equation*}
+is exact.
+\end{proposition}
+
+Taking~\Ref{XIII.4.2} into account, it suffices to show the injectivity
+of the morphism $u$, \ie to prove that, for every principal
+covering $\overline{Z}$ of~$X_{\bar{s}}$
+% original p. 418
+whose group is an $\LL$-group~$C$, there exist an \'etale covering
+$Z$ of~$X$ and a morphism from a connected component of~$Z|X_{\bar{s}}$
+to~$\overline{Z}$ (V~\Ref{V.6.8}). So let $\overline{Z}$ be a
+principal covering of~$X_{\bar{s}}$ whose group is an $\LL$-group~$C$, and~$\bar{z}$ its class in
+$\H^1(X_{\bar{s}},C_{X_{\bar{s}}})$. By \Ref{XIII.1.5}~d), we
+have a canonical isomorphism
+$$
+\left(\R^1f_*C_X\right)_{\bar{s}}\isomto\H^1(X_{\bar{s}},C_{X_{\bar{s}}}),
+$$
+and by~\Ref{XIII.1.16}, $\R^1f_*C_X$ is a locally constant
+constructible sheaf. One can therefore find an
+\'etale covering $S'$ of~$S$ such that $\R^1f_*C_X|S'$ is
+constant. If $\bar{s}\to S'$ is a geometric point
+above the geometric point $\bar{s}\to S$, there exists an
+element~$z$ of~$\H^0(S', \R^1f_*C_X)$ whose image in
+$\H^1(X_{\bar{s}},C_{X_{\bar{s}}})$ is $\bar{z}$. By
+Lemma~\Ref{XIII.4.3.1} below, one can find an \'etale
+covering $S'_1$ of~$S'$ and a torsor $P$ on~$X'_1$ with group~$C$
+whose image in $\H^0(S'_1,\R^1f_*C)$ is equal to the
+restriction of~$z$. The torsor~$P$ is representable by an
+\'etale covering $Z$ of~$X'_1=X\times_SS'_1$ such that
+$Z\times_{X'_1}X_{\bar{s}}$ is isomorphic to $\overline{Z}$. If
+one regards $Z$ as an \'etale covering of~$X$, one
+then has a morphism from~$Z\times_XX_{\bar{s}}$ to $\overline{Z}$, which
+completes the proof.
+
+\begin{sublemma}
+\label{XIII.4.3.1}
+Let $f\colon X\to S$ be a $0$-acyclic and locally
+$0$-acyclic morphism, $g$ a section of~$f$. Let $C$ be a finite
+constant group such that $(C_X,f)$ is cohomologically proper in dimension
+$\leqslant0$ and such that the direct image under $f$ of the stack of torsors under
+$C_X$ is constructible. Then, for every section $z$ of
+$\H^0(S,\R^1f_*C_X)$, one can find an \'etale covering
+$S_1$ of~$S$ and, if $X_1=X\times_SS_1$, an element of
+$\H^1(X_1,C_{X_1})$ whose image under the canonical morphism
+$$
+\H^1(X_1,C_{X_1})\to\H^0(S_1,\R^1f_*C_{X_1})
+$$
+is equal to the restriction of~$z$ to
+$\H^0(S_1,\R^1f_*C_{X_1})$.
+\end{sublemma}
+
+For every scheme $S'$ \'etale over~$S$, we set $X'=X\times_SS'$,
+and we denote by $g'$ (\resp $F'$, etc.) the inverse image of~$g$ (\resp $F$,
+etc.) under the morphism
+% original p. 419
+$S'\to S$. The presheaf $G$ on~$S$ defined by
+\newlength{\tmpRacinet} \setlength{\tmpRacinet}{\textwidth}
+\addtolength{\tmpRacinet}{-7em}
+$$
+G(S') = \left\{\text{\parbox{\tmpRacinet}{classes mod.\ isomorphism of
+		torsors $P$ on~$X'$ with group $C_{X'}$, endowed with an
+		isomorphism $g'^*P\isomto C_{S'}$ }} \right\}
+$$
+is then a sheaf. Indeed, this follows by descent from the fact
+that an isomorphism of a torsor $P$ on~$X'$ is completely
+determined by its restriction to $g'(S')$. Moreover, we have a
+surjective morphism
+$$
+G\to \R^1f_*F.
+$$
+Let $z$ be an element of~$\H^0(S,\R^1f_*C_X)$ and $H$ the
+subsheaf of~$G$ that is the inverse image of~$z$. It suffices to show
+that $H$ is a locally constant constructible sheaf. Now, this
+property being local on~$S$, we may assume that $z$
+comes from an element of~$\H^1(X,C_X)$ represented by
+a torsor $P$ such that $g^*P$ is isomorphic to $C_S$. Giving an
+isomorphism $i\colon g^*P\isomto C_S$ amounts to giving a
+global section of~$\SheafAut_{C_S}(g^*P)$, and two isomorphisms $i$
+and $i'$ define the same element of~$G(X)$ if and
+only if $ii'^{-1}$ is the image of an element of
+$\Aut_{C_X}(P)$. If one considers the canonical injection
+$$
+f_*\SheafAut_{C_X}(P)\to\SheafAut_{C_S}(g^*P)\simeq C,
+$$
+$H$ is therefore identified with the quotient of~$\SheafAut_{C_S}(g^*P)$ by
+$f_*\SheafAut_{C_X}(P)$. By~\Ref{XIII.1.16}
+$f_*\SheafAut_{C_X}(P)$ is locally constant; hence the same
+holds for~$H$, which completes the proof.
+
+\begin{examples}
+\label{XIII.4.4}
+Let us note that, if $S$ is a connected scheme, the hypotheses
+of~\Ref{XIII.4.1} are satisfied when the morphism $f$ is proper,
+flat, of finite presentation, with separable connected geometric
+fibers, $\LL$ being arbitrary
+(\cf X~\Ref{X.1.3}). The hypotheses of~\Ref{XIII.4.3} are
+satisfied if moreover $f$ is smooth and has a section, if one
+denotes by $\LL$ the set of prime numbers distinct from the
+residue characteristics of~$S$ (SGA~4 XV~2.1 and XVI~5.2).
+
+The hypotheses of~\Ref{XIII.4.1} are also satisfied if $S$ is connected,
+if one has a scheme~$Z$ proper of finite presentation, flat over~$S$, with
+% original p. 420
+separable connected geometric fibers, such that $X$ is
+the complement in $Z$ of a divisor with normal crossings
+relative to~$S$, $\LL$ being the set of prime
+numbers distinct from the residue characteristics of~$S$
+\eqref{XIII.2.9}. The hypotheses of~\Ref{XIII.4.3} are
+satisfied if moreover $f$ is smooth and has a section.
+\end{examples}
+
+\subsection{}
+\label{XIII.4.5}
+Let us take up again the notation and hypotheses of~\Ref{XIII.4.3}. If
+$\bar{s}$ is a geometric point of~$S$ and $a=g(\bar{s})$,
+the section $g$ allows one to define a morphism
+$$
+w\colon \pi_1(S,a)\to \pi_1'(X,a),
+$$
+so that $\pi_1'(X,a)$ is identified with the semi-direct product of
+$\pi_1(S,a)$ by $\pi_1(X_{\bar{s}},a)$. The profinite group
+$\pi_1(S,a)$ therefore acts on~$\pi_1(X_{\bar{s}}, a)$. Since
+$\pi_1^\LL(X_{\bar{s}},a)$ is a strict projective limit of groups
+invariant under the action of~$\pi_1(S,a)$, the datum of
+$\pi_1^\LL(X_{\bar{s}},a)$ endowed with this action is equivalent
+to the datum of a strict projective system of finite \'etale
+group schemes over~$S$, which we denote by
+$$
+\pi_1^\LL(X/S,g,\bar{s})\quad\text{or
+simply}\quad\pi_1^\LL(X/S,g).
+$$
+
+We then have the following properties:
+\setcounter{subsubsection}{0}
+
+\subsubsection{}
+\label{XIII.4.5.1}
+For every finite \'etale group scheme $G$ over~$S$ whose
+fibers are $\LL$-groups, the set $E$ of classes of torsors
+$P$ under the inverse image $G_X$ of~$G$ on~$X$, endowed with an isomorphism
+$g^*P\isomto G$, is canonically isomorphic to the set
+$$
+\Hom_S(\pi_1^\LL(X/S,g,\bar{s}),G) \quad\text{mod.\ inner
+automorphisms of~$G$.}
+$$
+
+\subsubsection{}
+\label{XIII.4.5.2}
+For every finite \'etale group scheme $G$ over~$S$ whose
+fibers are $\LL$-groups, the sheaf $\R^1f_*G_X$ is
+canonically isomorphic to the sheaf associated with the presheaf
+$$
+S'\mto \Hom_{S'}(\pi_1^\LL(X/S,g,\bar{s}),G)\
+\text{mod.\ inner automorphisms of~$G$.}
+$$
+($S'$ denotes a scheme \'etale over~$S$).
+
+\subsubsection{}
+\label{XIII.4.5.3}
+Let
+% original p. 421
+$S'$ be a connected
+$S$-scheme, $\bar{s}$ a geometric point of~$S'$, $X'$, $g'$
+the respective inverse images of~$X,g$ over~$S'$. Then
+$\pi_1^\LL(X'/S',g',\bar{s})$ is canonically isomorphic to
+the inverse image of~$\pi_1^\LL(X/S,g,\bar{s})$ over~$S'$. For every
+geometric point $\xi$ of~$S$, the fiber
+$\pi_1^\LL(X/S,g,\bar{s})_\xi$ is isomorphic to $\pi_1^\LL(X_\xi)$.
+
+Indeed, the datum of~$G$ is equivalent to the datum
+of an abstract $\LL$-group $\mathbf{G}$
+on which $\pi_1(S,a)$ acts, whence an action of
+$\pi_1'(X,a)$ on~$\mathbf{G}$. The isomorphism defined
+in~\Ref{XIII.4.5.1} is then obtained by restriction to the subset
+$E$ from the canonical morphism
+\[
+\H^1(\pi_1'(X,a),\mathbf{G})\to
+\H^1(\pi_1^\LL(X_{\bar{s}},a),\mathbf{G}) =
+\Hom(\pi_1^\LL(X_{\bar{s}},a),\mathbf{G})/\text{inn.\ aut.\ }G,
+\]
+the set $E$ being mapped bijectively onto the subset of
+morphisms from $\pi_1^\LL(X_{\bar{s}},a)$ to $\mathbf{G}$ that are
+compatible with the action of
+$\pi_1(S,a)$. Assertion~\Ref{XIII.4.5.3} then follows from the
+definition of~$\pi_1^\LL(X/S,g,\bar{s})$ taking into account the homotopy
+exact sequence \eqref{eq:XIII.4.3.1}, and~\Ref{XIII.4.5.2} is
+deduced from \Ref{XIII.4.5.1} and~\Ref{XIII.4.5.3}.
+
+\begin{proposition}[K\"unneth formula]
+\label{XIII.4.6}
+Let $k$ be a separably closed field of characteristic
+$p\geq 0$, $X$ and $Y$ two connected $k$-schemes, $a$ a
+geometric point of~$X$, $b$ a geometric point of~$Y$,
+$c$ a geometric point of~$X\times_k Y$ above~$a$ and
+$b$. Suppose that one of the following two conditions is satisfied:
+\begin{enumerate}
+\item[a)] $X$ is of finite type over~$k$ and the schemes of finite type
+over an algebraic closure $\bar{k}$ of~$k$, of dimension
+$\leq\dim X$, are strongly desingularizable. \textup{(SGA~5 I~3.1.5)}.
+\item[b)] $X$ is quasi-compact and quasi-separated and every
+scheme of finite type over~$\bar{k}$ is strongly
+desingularizable.
+\end{enumerate}
+
+Then, if $p'$ is the set of prime numbers distinct from~$p$,
+the morphism
+\begin{equation*}
+\label{eq:XIII.4.6.0} \tag{\thesubsection.0} {}
+\pi_1^{p'}(X\times_k Y,c)\to\pi_1^{p'}(X,a)\times\pi_1^{p'}(Y,b),
+\end{equation*}
+deduced
+% original p. 422
+from the homomorphisms on the fundamental groups associated with the
+projections
+$$
+X\times_k Y\to X \quad \text{and} \quad X\times_k Y\to Y,
+$$
+is an isomorphism.
+\end{proposition}
+
+We may assume $k$ algebraically closed and $X$ reduced
+(SGA~4 VIII~1.1). Let $Z=X\times_k Y$, and let $g\colon X\to k$ and $f\colon
+Z\to Y$ be the canonical morphisms. The morphism $g$, hence also $f$,
+is universally locally $1$-aspherical for $p'$
+by~\Ref{XIII.3.5}. Since $X$ is connected, $f$ is
+$0$-acyclic (SGA~4 XV~1.16). On the other hand it follows
+from~\Ref{XIII.3.2} that, for every finite $p'$-group $C$, $(C_X,g)$ is
+cohomologically proper relative to $k$ in dimension $\leq
+1$. It follows that $(C_Z,f)$ is cohomologically proper
+relative to $Y$ in dimension $\leq 1$ (\Ref{XIII.1.5}~c)) and
+that $f_*C_Z$ and $\R^1f_*C_Z$ are constant sheaves. Consequently
+$g$ satisfies all the hypotheses of~\Ref{XIII.4.2}. We
+therefore have the exact sequence
+$$
+\pi_1^{p'}(X_b,c)\to\pi_1^{p'}(Z,c)\to\pi_1^{p'}(Y,b)\to 1.
+$$
+Moreover the composite morphism
+$$
+\pi_1^{p'}(X_b,c)\to\pi_1^{p'}(Z,c)\to\pi_1^{p'}(Y,b)
+$$
+is an isomorphism and we therefore have the exact sequence
+$$
+1\to\pi_1^{p'}(X,a)\to\pi_1^{p'}(Z,c)\to\pi_1^{p'}(Y,b)\to 1.
+$$
+On the other hand the morphism \eqref{eq:XIII.4.6.0} allows one to define
+a morphism from this exact sequence to the exact sequence
+$$
+1\to\pi_1^{p'}(X,a)\to
+\pi_1^{p'}(X,a)\times\pi_1^{p'}(Y,b)\times\pi_1^{p'}(Y,b)\to 1,
+$$
+and it follows that the morphism \eqref{eq:XIII.4.6.0} is an
+isomorphism.
+
+\subsection{}
+\label{XIII.4.7} Let
+$$
+\xymatrix@C=1.2cm{
+X \ar[d]_-f&\ar[l] X_U \ar[d]_-{f_U}& \ar[l]X_{\bar{s}}\ar[d] \\
+S&\ar[l] U &\ar[l]\bar{s}
+}
+$$
+be a
+% original p. 423
+diagram whose squares are cartesian, where $S$ is an
+arcwise connected scheme (SGA~4 IX~2.12), $U$ a connected open subset of
+$S$, $\bar{s}$ a geometric point of~$U$. Let $a$ be a
+geometric point of~$X_{\bar{s}}$, $\LL$ a set of
+prime numbers. Let $g$ be a section of~$f$ and suppose that the
+following conditions are satisfied:
+\begin{enumerate}
+\item[a)] The morphism $f$ is $0$-acyclic, locally $0$-acyclic,
+and, for every \'etale covering $S'$ of~$S$ and every
+\'etale covering $E$ of~$X\times_S S'$ that is a quotient of a
+Galois covering whose group is an $\LL$-group, $(E,f_{(S')})$ is
+cohomologically proper relative to~$S'$ in dimension $\leq
+0$.
+\item[b)] The morphism $f_U$ is locally $1$-aspherical for
+$\LL$, and, for every finite constant sheaf of~$\LL$-groups $F$ on~$X_U$, $(F,f_U)$ is cohomologically proper in dimension $\leq 1$ and
+the fibers of~$\R^1 f_{U*}F$ are finite.
+\end{enumerate}
+
+From~\Ref{XIII.4.1} and~\Ref{XIII.4.3} one then deduces the following
+commutative diagram, whose rows are exact:
+\begin{equation*}
+\label{eq:XIII.4.7.0} \tag{\thesubsection.0} {}
+\begin{array}{c}
+\xymatrix{
+1 \ar[r]& \pi_1^{\LL}(X_{\bar{s}},a) \ar[r]\ar@{=}[d]& \pi'_1(X_U,a) \ar[r]\ar[d]& \pi_1(U,a)\ar[r]\ar[d]& 1 \\
+&\pi_1^{\LL}(X_{\bar{s}},a) \ar[r]&\pi'_1(X,a) \ar[r]& \pi_1(S,a) \ar[r]& 1
+}
+\end{array}
+\end{equation*}
+
+Thanks to the section $g$, we have morphisms
+$$\pi_1(U,a)\to\pi'_1(X_U,a),\quad \pi_1(S,a)\to\pi'_1(X,a)\,\;$$
+from which one
+deduces a morphism from the amalgamated sum of~$\pi_1(S,a)$ and
+$\pi'_1(X_U,a)$ over~$\pi_1(U,a)$ to $\pi'_1(X,a)$:
+\begin{equation*}
+\label{eq:XIII.4.7.1} \tag{\thesubsection.1} {}
+\varphi\colon\pi=\pi_1(S,a)\coprod_{\pi_1(U,a)}\pi'_1(X_U,a)\to\pi'_1(X,a).
+\end{equation*}
+Suppose that the following condition is satisfied:
+\begin{enumerate}
+\item[c)] If $T=S-U$, we have $\prof \et_T(S)\geq 2$ (SGA~2 XIV~1.1).
+\end{enumerate}
+Then the functor which associates with an \'etale covering of~$S$
+its restriction to $U$ is fully faithful
+(SGA~2 XVI~1.4). It follows that the morphism
+$\pi_1(U,a)\to\pi_1(S,a)$ is surjective (V~\Ref{V.6.9}) and one
+deduces from the
+% original p. 424
+diagram \eqref{eq:XIII.4.7.0} that the same holds for the morphism
+$\pi'_1(X_U,a)\to\pi'_1(X,a)$; a fortiori $\varphi$ is an
+epimorphism. Let
+\begin{equation*}
+\label{eq:XIII.4.7.2} \tag{\thesubsection.2} {}
+K=\Ker(\pi_1(U,a)\to\pi_1(S,a)).
+\end{equation*}
+The group $\pi$ of \eqref{eq:XIII.4.7.1} is identified with the quotient of
+$\pi'_1(X_U,a)$ by the closed invariant subgroup generated
+by the image $L$ of~$K$ in $\pi'_1(X_U,a)$. Let us regard
+$\pi'_1(X_U,a)$ as the semi-direct product of~$\pi_1(U,a)$ by
+$\pi_1^\LL (X_{\bar{s}},a)$. The group $K$ then acts by
+inner automorphisms on~$\pi_1^\LL (X_{\bar{s}},a)$, and the
+quotient $\pi=\pi'_1(X_U,a)/L$ is identified with the semi-direct product of
+$\pi_1(U,a)/K=\pi_1(S,a)$ by the group $\pi_1^\LL(X_{\bar{s}},a)_K$
+of coinvariants of~$\pi_1^{\LL}(X_{\bar{s}},a)$ under~$K$. We
+finally have an epimorphism
+\begin{equation*}
+\label{eq:XIII.4.7.3} \tag{\thesubsection.3} {}
+\varphi\colon\pi=\pi_1^\LL(X_{\bar{s}},a)_K\cdot\pi_1(S,a)\to\pi'_1(X,a).
+\end{equation*}
+
+The proposition which follows gives conditions under which the
+morphism $\varphi$ is an isomorphism.
+
+\setcounter{subsubsection}{3}
+
+\begin{subproposition}
+\label{XIII.4.7.4} The notation is that of~\Ref{XIII.4.7}. We
+suppose that, in addition to conditions \textup{a), b), c)}, the following
+conditions are satisfied:
+\begin{enumerate}
+\item[d)] For every point $t$ of~$T=S-U$, the morphism $f$ is
+locally $1$-aspherical for $\LL$ at $g(t)$.
+\item[e)] For every point $t\in T$, every irreducible component
+of the fiber $X_t$ contains $g(t)$ and, for every point $x$ of
+$X_t-\{g(t)\}$ which is not maximal, we have
+$$
+\prof\hop_x(X)\geq 3 \quad\textup{(SGA~2 XIV~1.2)}
+$$
+and the ring $\cal{O}_{X,x}$ is noetherian.
+\end{enumerate}
+
+Then the morphism \eqref{eq:XIII.4.7.3} is an isomorphism.
+\end{subproposition}
+
+As was said previously, the group $\pi$ is identified with the
+quotient of~$\pi'_1(X_U,a)$ by the closed invariant subgroup $L$
+generated by the image of~$K$ \eqref{eq:XIII.4.7.2} in
+$\pi'_1(X_U,a)$. This amounts to saying that $\pi$ classifies the
+% original p. 425
+principal coverings $Z$ of~$X_U$ such that $g^{-1}_U(Z)$
+extends to an \'etale covering of~$S$, and which induce on~$X_{\bar{s}}$ a covering obtained by extension of the structure
+group from a principal covering whose group is an
+$\LL$-group. To prove that $\varphi$ is an isomorphism, it
+suffices to show that such a covering $Z$ extends to all
+of~$X$.
+
+Let us first show that $Z$ extends to an \'etale covering
+of an open set containing $X_U$ and $g(S)$. Let $W$ be a scheme
+\'etale over~$X$ whose image contains $X_U$ and $g(S)$, and let us set
+$W_U=W\times_S U$. From the fact that the morphism $W\to S$ is $0$-acyclic
+and from the relation $\mathrm{prof}.\,\et_T S\geq 2$, it follows that we have
+$$
+\mathrm{prof}.\,\et_{(W-W_U)} W\geq 2
+$$
+(SGA~2 XIV~1.13); consequently, if $Z|W_U$ extends to an
+\'etale covering of~$W$, this extension is unique up to
+unique isomorphism. It follows that the problem of
+extending $Z$ to a neighborhood of~$g(S)\cup X_U$ is local for the
+\'etale topology in the neighborhood of the points of~$g(T)$. If $t$ is a
+point of~$T$, we set $x=g(t)$, and we denote by $\bar{X}$ (\resp $\bar{S}$)
+the strict localization of~$X$ at $\bar{x}$ (\resp of~$S$ at
+$\bar{t}$), $\bar{U}=U\times_S \bar{S}$, $\bar{X}_U=\bar{X}\times_X
+X_U$, $\bar{g}\colon\bar{S}\to\bar{X}$ the morphism deduced from
+$g$. It suffices to show that, for every point $t$ of~$T$, the inverse
+image $\bar{Z}$ of~$Z$ on~$\bar{X}_U$ extends to $\bar{X}$
+or, what amounts to the same, is trivial. Now, by definition
+of~$Z$, the inverse image of~$\bar{Z}$ on~$\bar{U}$ is
+trivial. To prove that $\bar{Z}$ is trivial, it suffices to show
+that it is of the form $\bar{f}^*_U E$, where $E$ is a
+principal covering of~$\bar{U}$; indeed we shall then have
+$E\simeq\bar{g}^*_U\bar{f}^*_U E \simeq\bar{g}^*_U\bar{Z}$, whence
+the result since $\bar{g}^*_U\bar{Z}$ is trivial. Now, the
+morphism $\bar{f}_U$ being $0$-acyclic and locally $0$-acyclic,
+it suffices, in order to prove that $\bar{Z}$ comes from~$\bar{U}$, to
+show that, for every geometric point algebraic over a
+point of~$\bar{U}$, which one may assume to be the point
+$\bar{s}$, $\bar{Z}|X_{\bar{s}}$ is trivial (SGA~4 XV~1.15). But since
+$\bar{Z}|X_{\bar{s}}$ is obtained by extension of the structure
+group from a principal covering whose group is an
+$\LL$-group, this follows from the fact that the morphism $\bar{f}$ is
+$1$-aspherical for $\LL$.
+
+We
+% original p. 426
+have therefore shown that there exists an open neighborhood $V$ of
+$g(S)\cup X_U$ such that $Z$ extends to an \'etale covering
+$Z_V$ of~$V$. Let us show that $Z_V$ extends to all of~$X$.
+It suffices to see that, for every point $x$ of~$X-V$, we have
+$$
+\prof\hop_x X\geq 3.
+$$
+Now this follows from hypothesis e) and from the fact that a point $x$
+of~$X-V$ cannot be maximal in its fiber $X_t$ since, every
+irreducible component of~$X_t$ containing $g(t)$, every maximal
+point of~$X_t$ belongs to $V$.
+
+\begin{corollary} \label{XIII.4.8}
+The hypotheses are those of~\Ref{XIII.4.7.4}, but we assume moreover
+that $\pi_1(S,a)=1$. Then we have an isomorphism
+\begin{equation*}
+\label{eq:XIII.4.8.*} \tag{$*$}
+{}\pi_1^\LL(X,a)\isomto\pi_1^\LL(X_{\bar{s}},a)_K.
+\end{equation*}
+In particular, if $\pi_1^\LL(X_{\bar{s}},a)$ is topologically of
+finite presentation and if $K$ acts on~$\pi_1^\LL(X_{\bar{s}},a)$ through a group of finite
+type, then $\pi_1^\LL(X,a)$ is topologically of finite
+presentation.
+\end{corollary}
+
+The isomorphism \eqref{eq:XIII.4.8.*} was proved
+in~\Ref{XIII.4.7.4}. Suppose that $\pi_1^\LL(X_{\bar{s}},a)$ is the quotient
+of the free pro-$\LL$-group on $n$ generators
+$L(x_1,\dots,x_n)$ by the closed invariant subgroup generated
+by the elements $y_1,\dots,y_p$ of~$L(x_1,\dots,x_n)$, and
+suppose that $K$ acts through a group
+generated by elements $k_1,\dots,k_q$. If for every
+$i\in[1,n]$, $j\in[1,q]$, we denote by $z_{ij}$ an element of
+$L(x_1,\dots,x_n)$ lifting the element $(k_j\cdot
+x_i)x_i^{-1}$, then $\pi_1^\LL(X_{\bar{s}},a)_K$ is the quotient of
+$L(x_1,\dots,x_n)$ by the closed invariant subgroup generated
+by the elements $(y_i)_{i\in[1,p]}$,
+$(z_{ij})_{i\in[1,n],j\in[1,q]}$.
+
+\begin{remarks}
+\label{rem:XIII.4.6}
+a) Conditions a) to e) of~\Ref{XIII.4.7} are
+satisfied when $S$ is a connected normal scheme, $U$ a
+dense retrocompact open subset of~$S$, $f$ a proper morphism of
+finite presentation, with fibers that are geometrically connected
+and irreducible at every point $t$ of~$T$, $f$ being moreover
+separable,
+% original p. 427
+smooth at the points of~$X_U\cup g(T)$, $\LL$ being the set of
+prime numbers distinct from the residue characteristics of
+$S$, and $X$ being regular at every point of~$X_t$. Condition
+a) follows indeed from SGA~4 XV~4.1 and 1.4; conditions
+b) and d) follow from~\Ref{XIII.1.4} and SGA~4 XV~2.1 and
+XVI~5.2. Finally e) follows from SGA~XIV~1.11.
+\par\smallskip
+b) Corollary~\Ref{XIII.4.5} applies to compute the
+fundamental group $\pi_1^{p'}(X)$ of a proper and smooth surface $X$
+over a separably closed field $k$ of characteristic $p$
+($p'$~denoting the set of prime numbers distinct from
+$p$). The method was communicated to us by
+J.P\ptbl \textsc{Murre}; it consists in reducing, by blowing up
+$X$, to the case where one has a fibration $X\to\PP^1_k$ and an open set $U$
+of~$\PP^1_k$ satisfying the hypotheses of~\Ref{XIII.4.7} (see
+SGA~7 for more details). The same method can be
+used more generally (\loccit) to prove that, if
+$X$ is a connected $k$-scheme of finite type, and if the schemes
+of finite type of dimension $\leq\dim X$ over an algebraic
+closure of~$k$ are strongly desingularizable
+(SGA~5 I~3.1.5), then $\pi_1^{p'}(X)$ is topologically of
+finite presentation.
+\end{remarks}

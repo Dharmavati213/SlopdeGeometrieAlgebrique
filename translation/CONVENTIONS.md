@@ -98,6 +98,126 @@ Write in the same register as the original: slightly formal mid-century mathemat
 
 ---
 
+## SGA 1 — front matter and Exposés IV, V, VIII–XIII
+
+These use the shared package [`SGA1/sga1-en.sty`](SGA1/sga1-en.sty) (loaded by
+each wrapper `SGA1/Expose<N>/SGA1-<N>.tex`; body fragments are `en-<k>.tex`).
+Exposés I, II, III and VI keep their own wrappers and the rules above.
+
+Translate the French LaTeX **exactly**, as a mathematical text, into English LaTeX.
+Do **not** modernize, abridge, paraphrase, add commentary, or “fix” the arguments.
+Take the **corrected** SMF branch: `\ifthenelse{\boolean{orig}}{A}{B}` → keep **B** only
+(B may be empty). A misprint that survives in the corrected branch is translated
+as printed and reported (not repaired) in the exposé README.
+
+### Output
+
+- A LaTeX body fragment only (no preamble). Start exactly where the assigned
+  French chunk starts (a `\chapter`, `\section`, or a statement) and stop where it stops.
+- Every sentence, proof, footnote, diagram, table and bibliography item of the chunk.
+
+### Drop
+
+- `\index{...}`, `\oldindexnot{...}`, `\label{indnot:...}`
+- `\marginpar{N}` and the `% page: N` comment: replace the pair by one comment `% original p. N`
+- `\enlargethispage{...}`, `\chapterspace{...}`, `\skpt`, `\pagebreak`, `\nopagebreak`, other page-layout hacks
+- `\ifthenelse{\boolean{orig}}{...}{...}` wrappers (keep the corrected branch)
+- source-editing comments such as `% correction: ...` or `% remark: ...`
+- the notation and terminology indexes at the end of the volume
+
+### Keep verbatim
+
+- every `\label{...}` except `indnot:*`; every `\Ref{...}`, `\eqref{...}`, `\ref{...}`, `\cite{...}`
+  with the same keys (the package prints cross-exposé keys as the SMF volume does)
+- `\setcounter`, `\addtocounter`, `\refstepcounter` that belong to the corrected branch
+- `\subsection{}` / `\subsubsection{}` used for decimal numbering, `\Subsection*{...}` (translate the text)
+- all mathematics, `\xymatrix` diagrams, `\tag`s; translate only words inside `\text{...}`
+- footnotes (translated); the 2003 footnotes keep their `*` construction
+  `{{\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{\lcrochetbf Added in 2003: ...\rcrochetbf}}}`
+- `\begin{thebibliography}{D}{VIII.8}` with both arguments (it makes the numbered section “Bibliography”);
+  bibliography entries keep authors and titles as printed; translate only connecting words
+
+### Environments
+
+| French | English |
+|---|---|
+| `theoreme` | `theorem` |
+| `proposition` | `proposition` |
+| `lemme` | `lemma` |
+| `corollaire`, `corollaires` | `corollary`, `corollaries` |
+| `theoremedefinition` | `theoremdefinition` |
+| `theoremedepurete` | `puritytheorem` |
+| `subproposition`, `sublemme` | `subproposition`, `sublemma` |
+| `corollairestar`, `propositionstar`, `theoreme*` | `corollarystar`, `propositionstar`, `theoremstar` |
+| `definition`, `definitions`, `subdefinition`, `definitionstar` | same names |
+| `remarque`, `remarques`, `subremarque` | `remark`, `remarks`, `subremark` |
+| `remarquestar`, `remarquesstar`, `scholiestar` | `remarkstar`, `remarksstar`, `scholiumstar` |
+| `exemple`, `exemples` | `example`, `examples` |
+| `remarqueMR` | `remarkMR` (the heading “Remark N (added in 2003 (MR))” is built in; N is the label's number) |
+| `enonce*`{Name} | `enonce*`{translated name} |
+| `enumerateb`, `enumerate`, `itemize`, math environments | unchanged |
+
+Optional statement titles `[...]` are translated.
+
+### Macros
+
+All macros of `sga1-smf.sty` are available with the same names (`\cal`, `\goth`,
+`\othercal`, `\Hom`, `\SheafHom`, `\Spec`, `\Ob`, `\Sch`, `\Ens`, `\H`, `\R`, `\an`,
+`\tame`, `\et`, `\kres`, `\isomto`, `\lto`, `\mto`, `\To`, `\cf`, `\Cf`, `\ie`,
+`\iev`, `\resp`, `\loccit`, `\ptbl`, `\quoi`, `\No`, `\bbmu`, `\leftexp`, …).
+Keep them as used; do not define new macros in a body fragment. `\og ... \fg`
+becomes `` ... ''. `\red` prints “red”, `\car` prints “char”.
+
+### Terminology (mandatory; American spelling)
+
+| French | English |
+|---|---|
+| préschéma / schéma | prescheme / scheme |
+| revêtement (étale, principal) | (étale, principal) covering |
+| morphisme étale, net, non ramifié, lisse, plat | étale, net, unramified, smooth, flat morphism |
+| fidèlement plat | faithfully flat |
+| radiciel | radicial |
+| Module, Algèbre, Idéal (sheaves, capitalized) | Module, Algebra, Ideal (keep the capital) |
+| fibre | fiber |
+| voisinage | neighborhood |
+| corps résiduel | residue field |
+| groupe fondamental | fundamental group |
+| point géométrique | geometric point |
+| foncteur fibre | fiber functor |
+| catégorie galoisienne | Galois category |
+| groupe de décomposition / d'inertie | decomposition / inertia group |
+| préschéma quotient | quotient prescheme |
+| donnée de descente | descent datum (pl. descent data) |
+| descente effective; morphisme de descente (stricte) | effective descent; (strict) descent morphism |
+| (universellement) submersif | (universally) submersive |
+| spécialisation | specialization |
+| théorème d'existence (de faisceaux) | existence theorem (for sheaves) |
+| théorème de pureté | purity theorem |
+| modérément ramifié; ramification modérée | tamely ramified; tame ramification |
+| diviseur à croisements normaux | divisor with normal crossings |
+| cohomologiquement propre; propreté cohomologique | cohomologically proper; cohomological properness |
+| champ; gerbe; torseur | stack; gerbe; torsor |
+| localement acyclique | locally acyclic |
+| suite exacte d'homotopie | homotopy exact sequence |
+| géométriquement unibranche | geometrically unibranch |
+| hensélien, strictement local | henselian, strictly local |
+| anneau de valuation discrète | discrete valuation ring |
+| clôture intégrale; normalisé | integral closure; normalization |
+| espace analytique | analytic space |
+| fibré principal | principal bundle |
+| composante connexe | connected component |
+| de type fini; de présentation finie | of finite type; of finite presentation |
+| catégorie fibrée, cartésien, image inverse | fibered category, cartesian, inverse image (as in Exposé VI) |
+| il faut et il suffit | it is necessary and sufficient |
+| Je dis que | I say that |
+| cqfd; sorite | qed; sorites |
+| n° / No | no. (`\No`) |
+
+Register: formal mathematical English in the voice of the original; keep “we”
+or impersonal “one” as the French has it. Keep N.B., loc.\ cit., cf.
+
+---
+
 ## SGA 2
 
 Translate the French LaTeX **exactly**, as a mathematical text, into English LaTeX.

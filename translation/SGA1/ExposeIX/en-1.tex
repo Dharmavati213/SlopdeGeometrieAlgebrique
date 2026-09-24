@@ -1,0 +1,395 @@
+\chapter[Descent of \'etale morphisms]{Descent of \'etale morphisms.\\ Application to the fundamental group}
+\label{IX}
+% original p. 228
+
+\section{Recollections on \'etale morphisms}
+\label{IX.1}
+
+We shall review here the properties of \'etale morphisms
+(developed in~\Ref{I}) that will be of use to us, taking this
+opportunity to eliminate superfluous noetherian hypotheses from
+the theory. The reader will note that even if one is interested
+only in noetherian schemes, the technique of descent leads one to
+introduce non-noetherian schemes
+(such as~$\Spec(\widehat{A}\otimes_{A}\widehat{A})$,
+where~$A$ is a noetherian local ring), and in order to be able to
+apply the language of fibered categories, it is important to
+define notions such as \'etale morphism etc., without introducing
+any noetherian restriction into them. The reader who would be
+reluctant to verify or to accept that the statements below are
+true without noetherian hypotheses may content himself with
+accepting them under the noetherian hypotheses of~\Ref{I},
+provided he introduces these same noetherian hypotheses into the
+statements of the following nos., and uses
+Definition~\Ref{IX.1.1} below for the non-noetherian schemes that
+arise in the arguments.
+
+\begin{definition}
+\label{IX.1.1}
+Let~$f\colon X\to S$ be a morphism of preschemes, and~$x$ a
+point of~$X$. We say that~$f$ is \emph{\'etale at}~$x$,
+or that~$X$ is \'etale over~$S$ at~$x$, if there exist an affine
+open neighborhood~$U$ of~$s=f(x)$, an affine open neighborhood~$V$
+of~$x$ over~$U$, a \emph{noetherian} affine scheme~$U_{0}$,
+an \emph{\'etale}~\eqref{I} and affine $U_{0}$-scheme~$V_{0}$, a
+morphism~$U\to U_{0}$, and a~$U$-isomorphism
+$$
+V\isomto V_{0}\times_{U_{0}}U\quoi.
+$$
+\end{definition}
+
+Note
+% original p. 229
+that when~$S$ is locally noetherian, this terminology coincides
+with that of \loccit We shall likewise say that~$f$ \emph{is
+\'etale}, or that~$X$ \emph{is \'etale over}~$S$, if~$f$ is
+\'etale at every point~$x$ of~$X$. With these definitions, the
+propositions below reduce without difficulty to the noetherian
+case, where they are proved in~I~\No \Ref{I.4},
+\Ref{I.5},~\Ref{I.7}. For details, the reader may
+consult EGA~IV\footnote{More precisely, EGA~IV 17,~18.}.
+
+\begin{remarks}
+\label{IX.1.2}
+If $f$ is \'etale at $x$, then $f$ is ``\emph{of finite
+presentation at}~$x$'' (VIII~\Ref{VIII.3.5}), the local ring of~$x$
+in the fiber $f^{-1}(s)$ is a \emph{finite separable extension} of
+$\kres(s)$, and finally $f$ is \emph{flat at}~$x$. One can show
+that the converse is true, hence that Definition~\Ref{IX.1.1} is
+the same as in the case where $S$ is locally noetherian, except
+that the condition ``of finite type at~$x$'' must be replaced by
+``of finite presentation at~$x$''. Since this result has a
+delicate proof, we did not wish to give here this definition of
+the notion of \'etale morphism, which does not lend itself
+directly to the proof of the properties that will follow.
+\end{remarks}
+
+Let us first note that we trivially have:
+\begin{proposition}
+\label{IX.1.3}
+If $f\colon X\to S$ is \'etale, then every morphism $f'\colon
+X'\to S'$ deduced from it by a change of base $S'\to S$ is
+also \'etale.
+\end{proposition}
+
+We may therefore say that the \'etale morphisms form a
+\emph{fibered subcategory} of the category of
+arrows in~$\Sch$
+(\cf VI~\Ref{VI.11}~a)). The object of the present
+expos\'e is the study of the exactness properties of
+this fibered category over~$\Sch$.
+\begin{proposition}
+\label{IX.1.4}
+Let $f\colon X\to S$ be a morphism of preschemes. For it to be
+an open immersion, it is necessary and sufficient that it be
+\'etale and radicial.
+\end{proposition}
+
+\Cf I~\Ref{I.5.1}. We conclude from this that if $X$ is \'etale
+over~$S$, every section of~$X$ over~$S$ is an open immersion, hence,
+using~\Ref{IX.1.4} again, we find:
+\begin{corollary}
+\label{IX.1.5}
+Let $X$ be an \'etale $S$-prescheme. Then there is a
+one-to-one correspondence between the set of sections of~$X$
+over~$S$, and the set of
+% original p. 230
+open subsets $\Gamma$ of~$X$ such that the morphism $\Gamma \to S$
+induced by the structural morphism is \emph{radicial} and
+\emph{surjective}.
+\end{corollary}
+
+If moreover $X$ is separated over~$S$, $\Gamma$ will be a subset
+of~$X$ that is both open and closed, but this does not matter. ---
+Making an obvious change of base, one can put~\Ref{IX.1.5}
+in the apparently more general form:
+\begin{corollary}
+\label{IX.1.6}
+Let $X$ and $Y$ be two $S$-preschemes, $Y$ being \'etale
+over~$S$. Then the map $f \mto \Gamma_f$ which associates to
+every $S$-morphism $f$ from~$X$ to $Y$ the subset of~$X\times_S Y$
+underlying the graph of~$f$, is a bijection of~$\Hom_S(X,Y)$ onto
+the set of open subsets of~$\Gamma$ of~$X\times_S Y$ such
+that the morphism $\Gamma\to X$ induced by $\pr_1$ is
+\emph{radicial} and \emph{surjective}.
+\end{corollary}
+
+\begin{proposition}
+\label{IX.1.7}
+Let $S_0$ be the subprescheme of~$S$ defined by a quasi-coherent
+Nil-ideal, \ie such that $S_0$ has the same
+underlying set as~$S$. Then the functor $X \mto X\times_S
+S_0$ from the category of preschemes \'etale over~$S$
+to the category of preschemes \'etale over~$S_0$ is
+an equivalence of categories.
+\end{proposition}
+
+The fact that this functor is fully faithful is an
+immediate consequence of~\Ref{IX.1.6}. The fact that it is
+essentially surjective is contained in~I~\Ref{I.8.3}. Note
+that in the preceding equivalence,
+$X$ is of finite type \ie quasi-finite over~$S$, (\resp finite \ie an \'etale covering
+of~$S$), if and only if $X_0$ satisfies the analogous condition
+over~$S_0$; same remark for the separation condition. These facts
+are immediate, and are also contained in~\Ref{IX.2.4} below.
+
+\begin{corollary}
+\label{IX.1.8}
+Let $A$ be a complete noetherian local ring with residue field
+$k$. Then the functor $B \mto B\otimes_A k$ is an
+equivalence of the category of algebras finite and
+\'etale over~$A$ with the category of algebras finite and
+\'etale over~$k$, (\ie composed of a finite number of
+finite separable extensions of~$k$).
+\end{corollary}
+
+\begin{proposition}
+\label{IX.1.9}
+For $X$ to be an \emph{\'etale covering} of~$S$ \ie finite
+and \'etale over~$S$, it is necessary and sufficient that $X$ be
+$S$-isomorphic to the spectrum of an Algebra $\cal{A}$ over~$S$
+which is a locally free Module of finite type, and such that for
+every
+% original p. 231
+$s \in S$, $\cal{A}_s\otimes_{\cal{O}_s}\kres(s)$ is a separable
+algebra over~$\kres(s)$, hence in the present case a direct product
+of finite separable extensions of~$\kres(s)$.
+\end{proposition}
+
+Finally the following result is of a less elementary nature,
+being the conjunction of~I~\Ref{I.8.4} and of the
+\emph{existence theorem for sheaves in algebraic geometry},
+(EGA~III~5; \cf also \cite{IX.1} th\ptbl 3).
+
+\begin{theorem}
+\label{IX.1.10}
+Let $S$ be the spectrum of a complete noetherian local ring, $X$ a
+proper $S$-scheme, $X_0$ the fiber of~$X$ at the closed point of
+$S$, (so that $X_0$ is a closed subscheme of
+$X$). Then the restriction functor $X' \mto X'\times_X X_0$ is
+an equivalence of the category of \'etale coverings
+of~$X$ with the category of \'etale coverings of~$X_0$.
+\end{theorem}
+
+\section{Submersive and universally submersive morphisms}
+\label{IX.2}
+
+\begin{definition}
+\label{IX.2.1}
+A morphism $g\colon S' \to S$ of preschemes is said to be
+\emph{submersive}
+if it is surjective, and makes~$S$ a topological quotient space
+of~$S'$ (\ie a subset $U$ of~$S$ such that $f^{-1}(U)$ is
+open, is open). We say that $f$ is \emph{universally
+submersive}
+if for every morphism $T \to S$, the morphism $f'\colon T'=S'\times_S
+T \to T$ deduced from~$f$ by change of base is submersive.
+\end{definition}
+
+It is immediate that the composite of two submersive morphisms
+(\resp universally submersive morphisms) is submersive
+(\resp universally submersive), and that a change of base in a
+universally submersive morphism gives a universally submersive
+morphism (since one has done what is needed for this). If $fg$ is
+submersive (\resp universally submersive), $f$ is.
+\begin{examples}
+\label{IX.2.2}
+a) A surjective morphism which is open, or closed, is submersive,
+hence a surjective universally closed or
+universally open morphism is universally submersive. For example
+\emph{a surjective proper morphism is universally
+submersive}. On the other hand \emph{a faithfully flat and
+quasi-compact morphism is universally submersive} (VIII~\Ref{VIII.4.3}). These
+will be the two most important cases for us.
+\end{examples}
+
+One
+% original p. 232
+can apply to a submersive or universally
+submersive morphism $g\colon S' \to S$ the arguments of~VIII~\Ref{VIII.4.3};
+one finds in particular:
+\begin{proposition}
+\label{IX.2.3}
+Suppose $g\colon S' \to S$ submersive. Then the following diagram
+of maps is exact:
+$$
+\xymatrix@C=.5cm{\Ouv (S)\ar[r] &
+\Ouv (S')\ar@<2pt>[r]\ar@<-2pt>[r] & \Ouv(S''),}
+$$
+where $S'' = S'\times_S S'$, and where $\Ouv(X)$ denotes
+the set of open subsets of the prescheme~$X$.
+\end{proposition}
+
+\begin{proposition}
+\label{IX.2.4}
+Let $g\colon S' \to S$ be a universally submersive morphism,
+$f\colon X \to Y$ an $S$-morphism, and $f'\colon X' \to Y'$ the
+$S'$-morphism deduced from it by change of base. For
+$f$ to be open (\resp closed), it suffices that $f'$ be so. For
+$f$ to be universally open, \resp universally
+closed, \resp separated, it is necessary and sufficient that $f'$
+be so. If moreover $g$ is quasi-compact, and $f$ locally of finite
+type, for $f$ to be proper it is necessary and sufficient that $f'$ be so.
+\end{proposition}
+
+For this last point, one notes that if $f'$ is proper, hence
+quasi-compact, then $f$ is quasi-compact (VIII~\Ref{VIII.3.3}), hence
+of finite type since it is locally of finite type. On the other hand
+it is separated and universally closed by what
+precedes, hence it is proper.
+\begin{proposition}
+\label{IX.2.5}
+Let $S'$ be a prescheme of finite type over the spectrum $S$ of a
+complete noetherian local ring, suppose that the fiber of the closed
+point $s$ of~$S$ is finite, hence the local rings in $S'$ of the
+points $s'$ of this fiber are finite over~$A=\cal{O}_s$. Let~$S''$ be the
+scheme sum of the spectra of the $\cal{O}_{S',s'}$ in question,
+considered as a finite $S$-scheme. For $g\colon S' \to
+S$ to be universally submersive, it is necessary and sufficient that the
+structural morphism $S''\to S'$ be surjective.
+\end{proposition}
+
+Since there is a natural $S$-morphism $S'' \to S'$, and a
+finite surjective morphism is universally submersive by~\Ref{IX.2.2},
+the stated condition is sufficient. Let us therefore show that if
+$S''\to S'$ is not surjective, then $g$ is not universally
+submersive. Indeed, let $t$ be a point of~$S$ which is not in
+% original p. 233
+the image of~$S''$; there then exists an $S$-scheme $T$, spectrum of a
+discrete valuation ring, whose image in $S$ is
+$\{s,t\}$. Note that the image of~$S''$ in $S'$ is open, since the
+morphism $S'' \to S'$ is a local isomorphism, and on the other hand
+this image contains $S'_s$, and does not meet $S'_t$. It follows
+that the inverse image of the latter in $T'=S'\times_S T$ is
+\emph{open}, and identical to the inverse image of the closed point
+of~$T$. This shows that $T'\to T$ is not submersive, hence $S'\to S$
+is not universally submersive.
+\begin{remark}
+\label{IX.2.6}
+Using the criterion IV~\Ref{IV.6.3} for a constructible subset of
+a noetherian space to be open, one easily finds the following
+valuative criterion for a morphism
+$g\colon S'\to S$ \emph{of finite type}, with $S$ locally
+noetherian, to be universally submersive: it is necessary and sufficient
+that for every $S$-scheme $T$, spectrum of a discrete valuation
+ring, setting $T'=S'\times_S T$, the inverse image in $T'$ of the
+closed point of~$T$ be non-open.
+\end{remark}
+
+\section{Descent of morphisms of \'etale preschemes}
+\label{IX.3}
+
+\begin{proposition}
+\label{IX.3.1}
+Let $g\colon S'\to S$ be a \emph{surjective} morphism of
+preschemes, $X$ and $Y$ two preschemes over~$S$, $X'$,
+$Y'$ their inverse images over~$S'$. If $Y$ is unramified over~$S$, then the canonical map
+$$
+\Hom_S(X,Y) \to \Hom_{S'}(X',Y')
+$$
+is injective.
+\end{proposition}
+
+Indeed, by virtue of~\Ref{IX.1.6}, an $S$-morphism $f\colon X\to Y$
+is known when one knows the set underlying its
+graph $\Gamma$, which is a subset of~$Z=X\times_SY$. Since
+$$
+Z'=Z\times_SS'=X'\times_{S'}Y' \to Z
+$$
+is surjective, (since $S'\to S$ is), this subset $\Gamma$ is
+known when one knows its inverse image in $X'\times_{S'}Y'$,
+which is none other than the set underlying the graph of~$f'$. Whence
+the conclusion.
+
+A subset~$\Gamma$ of~$Z$ is the graph of an $S$-morphism $f\colon
+X\to Y$ if and only if it is open, and if the morphism induced
+by~$\pr_1$ from~$\Gamma$ to~$Y$ is radicial
+% original p. 234
+and surjective \cf \Ref{IX.1}. When the first
+property is satisfied, the second one is if and
+only if the inverse image~$\Gamma'$ of~$\Gamma$ in~$Z'$ satisfies
+the same condition VIII~\Ref{VIII.3.1}. If one knows finally that
+$Z'\to Z$ is submersive, which will be the case in particular if $S'\to
+S$ is universally submersive, then~$\Gamma$ is open if and
+only if~$\Gamma'$ is. Thus, the set $\Hom_S(X,Y)$ is
+then in one-to-one correspondence with the set of open
+subsets~$\Gamma'$ of~$Z'$ such that the projection morphism
+$\pr_1\colon Z'\to X'$ is radicial and surjective, (\ie corresponding to an $S'$-morphism $f'\colon X'\to Y'$), and which
+are saturated for the equivalence relation defined by
+$Z'\to Z$, \ie whose two inverse images in $Z''=Z'\times_Z
+Z'=Z\times_S S''$ (where $S''=S'\times_S S'$), by the one and the other
+projection, are equal. Now these latter are the graphs
+of the two $S''$-morphisms $X''\to Y''$ deduced from~$f'$ by
+change of base, by the one and the other projection $S''\to S'$. We have
+thus obtained:
+
+\begin{proposition}
+\label{IX.3.2}
+Let $g\colon S'\to S$ be a \emph{universally submersive} morphism
+of preschemes, $S''=S'\times_S S'$, $X$ and~$Y$ two
+$S$-preschemes, $X'$ and~$Y'$ their inverse images over~$S'$,
+and $X''$, $Y''$ their inverse images over~$S''$. If~$Y$ is \'etale
+over~$S$, the following canonical diagram of maps is exact:
+$$
+\xymatrix@C=.5cm{ {\Hom_S(X,Y)} \ar[r] & {\Hom_{S'}(X',Y')}
+\ar@<2pt>[r]\ar@<-2pt>[r] & {\Hom_{S''}(X'',Y'')}. }
+$$
+\end{proposition}
+
+Taking~$X$ and~$Y$ \'etale over~$S$, one finds the following
+statement, which moreover gives back~\Ref{IX.3.2} (even when
+restricting to $X=S$, a case to which one can indeed always
+reduce in~\Ref{IX.3.2}, by the change of base $X\to S$);
+
+\begin{corollary}
+\label{IX.3.3}
+A universally submersive morphism of preschemes is a
+descent morphism for the fibered category of
+preschemes \'etale over others.
+\end{corollary}
+
+I do not know, moreover, whether it is necessarily an
+\emph{effective} descent morphism for the fibered category in
+question, even when one makes in addition the hypothesis that~$S$ is
+noetherian and~$g$ of finite type, and restricts oneself to
+\'etale coverings. We shall nevertheless give in the
+following no. some useful criteria of effectiveness.
+
+\begin{corollary}
+\label{IX.3.4}
+Let
+% original p. 235
+$g\colon S'\to S$ be a universally submersive morphism whose
+fibers $g^{-1}(s)$ are ``geometrically connected'',
+\ie for every extension $K/\kres(s)$, $g^{-1}(s)\otimes_{\kres(s)} K$ is
+connected. Then~$S'$ is connected if~$S$ is. The functor from the
+category of preschemes \'etale over~$S$ to the
+category
+of preschemes \'etale over~$S'$ defined by~$g$ is
+fully faithful.
+\end{corollary}
+
+A subset of~$S'$ which is both open and closed is
+saturated for the set-theoretic equivalence relation defined
+by~$g$, since the fibers are connected, hence is the inverse image
+of a subset of~$S$, which is necessarily open and closed
+since~$g$ is submersive. If therefore~$S$ is connected, $S'$ is. This
+also implies the following result: the composite~$fg$ of two
+morphisms with universally connected fibers,
+$f$ being universally submersive, has universally
+connected fibers; if~$S_1'$ and~$S_2'$ over~$S$ have
+universally connected fibers, the same holds for~$S_1'\times_S
+S_2'$. In particular, under the conditions of~\Ref{IX.3.4}, $S''$ has
+universally connected fibers over~$S$. Let then~$X$ and~$Y$ be
+\'etale over~$S$, and let~$u'$ be an $S'$-morphism from~$X'$ to~$Y'$;
+let us prove that it is compatible with the descent data (which
+implies the desired conclusion thanks to~\Ref{IX.3.3}). Now
+let~$u_1''$ and~$u_2''$ be the two $S''$-morphisms $X''\to Y''$
+deduced from~$u'$. The subprescheme of~$S''$ of
+coincidences of~$u_1''$ and~$u_2''$ is an induced open
+subprescheme, closed fiber by fiber, as the inverse image of the
+diagonal prescheme of~$Y''$ over~$S''$\kern1pt\footnote{note that the
+fibers of~$S'$ over~$S$ are separated!}. It is therefore the inverse
+image of a subset of~$S$. Since it contains the diagonal
+in~$S''$, it is identical to~$S''$, whence $u_1''=u_2''$,
+qed.

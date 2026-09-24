@@ -1,0 +1,327 @@
+\chapter{Theory of specialization of the~fundamental~group}
+\label{X}
+% original p. 261
+In the present expos\'e, we confine ourselves to the study of the
+fundamental group of the geometric fibers in a
+\emph{proper} morphism, \ie of the fundamental group of a variable
+\emph{proper} algebraic scheme. In a later
+expos\'e, we shall generalize the technique employed
+to \emph{tamely ramified} \'etale coverings
+``at infinity''. This will give us for example a solution of the
+``Three-point problem'' in the case of Galois
+coverings of order prime to the characteristic (\ie a
+determination of the Galois coverings of the line
+$\PP_k^1$, ramified at most at three given points and
+tamely ramified at these points), and of its obvious
+variants.
+
+\section[The homotopy exact sequence for a proper morphism]
+{The homotopy exact sequence for a proper and separable morphism}
+\label{X.1}
+
+\begin{definition}
+\label{X.1.1}
+A prescheme $X$ over a field $k$ is said to be
+\emph{separable}, or \emph{separable over~$k$}, if for every
+extension $K$ of~$k$, $X\otimes_k K$ is reduced. If $f\colon X\to
+Y$ is a morphism of preschemes, one says that $f$ is
+\emph{separable}, or that $X$ \emph{is separable over~$Y$}, if
+$X$ is flat over~$Y$ and if for every $y\in Y$, the fiber $X\otimes_Y
+\kres(y)$ is separable over~$\kres(y)$.
+\end{definition}
+
+If $X$ is a prescheme over a field~$k$, to say that it is
+separable also means that it is \emph{reduced}, and that the
+fields~$\kres(x)$, for $x$ a generic point of an irreducible
+component of~$X$, are separable extensions of~$k$. If
+$k$ is perfect, it therefore amounts to the same to say that $X$ is
+reduced. Let us note that if $X$ is separable over~$Y$, then for
+every change of base $Y'\to Y$, $X'=X\times_Y Y'$ is separable
+over~$Y'$. One can also prove, under suitable finiteness
+hypotheses, that the composite of two separable
+morphisms is
+% original p. 262
+a separable morphism. We shall need this only in the
+following form: \emph{if $X$ is separable over~$Y$, and $X'$
+\'etale over~$X$, $X'$ is separable over~$Y$.} This is indeed
+an immediate consequence of the definitions
+and~I~\Ref{I.9.2}. Moreover, the hypothesis ``separable
+morphism'' will serve us through the following
+proposition:
+\begin{proposition}
+\label{X.1.2}
+Let $f\colon X\to Y$ be a proper and separable morphism, with $Y$
+locally noetherian, and consider its \emph{Stein}
+factorization $X\lto{f'}Y'\dpl\to Y$, (where
+$f_*'(\cal{O}_X)=\cal{O}_{Y'}$, $Y'$ being finite over~$Y$ and
+isomorphic to the spectrum of the algebra $f_*(\cal{O}_X)$). Then $Y'$
+is an \emph{\'etale covering} of~$Y$.
+\end{proposition}
+
+This proposition will appear in (EGA~III 7)\footnote{\Cf EGA~III
+7.8.10 (i)}. Let us indicate the principle of the proof. One easily
+reduces to the case where $Y$ is the spectrum of a complete local
+ring~$A$, and, making moreover a suitable finite flat
+extension of the latter (corresponding to a suitable
+residual extension), one can assume that the connected
+components of the fiber of the closed point $y$ are
+geometrically connected, which also means that
+$\H^0(X_y,\cal{O}_{X_y})$ decomposes into a product of fields
+identical to $k=\kres(y)$. Assuming then $X$ connected, which is
+permissible, one will have $\H^0(X_y,\cal{O}_{X_y})=k$, hence the homomorphism
+$A\to \H^0(X_y,\cal{O}_{X_y})$ is \emph{surjective}. One concludes from this by
+a general proposition (of K\"unneth type) that
+$f_*(\cal{O}_X)$ is defined by a module $B$ over~$A$ which is
+free over~$A$, and that $B/\goth{m} B\to \H^0(X_y,\cal{O}_{X_y})=k$ is
+bijective. Hence in the present case $B$ is an \'etale algebra
+over~$A$, which completes the proof.
+
+\begin{theorem}
+\label{X.1.3}
+Let $f\colon X\to Y$ be a proper and separable morphism, with $Y$
+locally noetherian and connected, and assume
+$f_*(\cal{O}_X)=\cal{O}_Y$ (which implies that the fibers of~$X$ over~$Y$ are geometrically connected, and conversely
+thanks to~\Ref{X.1.2}). Let $y$ be a point of~$Y$,
+$\overline{\kres(y)}$ an algebraic closure of~$\kres(y)$,
+$\overline X_y =X_y\otimes_{\kres(y)} \overline{\kres(y)}$. Finally, let $X'$ be a \emph{connected} \'etale covering of~$X$, and $\overline
+X_y' =X_y'\otimes_{\kres(y)} \overline{\kres(y)}$. For there to exist an
+\'etale covering $Y'$ of~$Y$ and an $X$-isomorphism
+% original p. 263
+$X'\isomto X\times_Y Y'$, it is necessary and sufficient that $\overline{X'}_y$
+admit a section over~$\overline X_y$.
+\end{theorem}
+
+Setting $Y'=\Spec(h_*(\cal{O}_{X'}))$ (where $h\colon X'\to Y$ is the
+composite morphism $X'\to X\to Y$), it suffices to prove that the
+canonical $Y$-morphism
+$$
+X'\to X\times_Y Y'
+$$
+is an \emph{isomorphism}, and that $Y'$ is \'etale over~$Y$. Now we
+already know by~\Ref{X.1.2} that $Y'$ is \'etale over~$Y$,
+hence $X\times_Y Y'$ is \'etale over~$X$, hence the morphism $X'\to
+X\times_Y Y'$ is also \'etale (I~\Ref{I.4.8}). Moreover,
+$Y'$ is connected as the image of~$X'$ which is so, hence $X\times_Y Y'$
+is connected since $X$ has connected fibers over~$Y$
+(IX~\Ref{IX.3.4} and V~\Ref{V.6.9}~(iii)). Hence to prove that
+$X'\to X\times_Y Y'$ is an isomorphism, it suffices to see that its
+degree of projection at \emph{one} point of~$X\times_Y Y'$ is
+equal to~1. Now this follows easily from the hypothesis
+that $\overline{X'}_y$ admits a section over~$\overline X_y$, either
+by use of IX~\Ref{IX.6.6}, or more simply by noting that it
+suffices to prove the existence of such a point in $X\times_Y Y'$
+after change of base
+$\Spec(\overline{\kres(y)})\to Y$, where this
+is evident. This completes the proof of~\Ref{X.1.3}.
+
+Taking into account IX~\Ref{IX.3.4} and the dictionary V~\Ref{V.6.9} and
+V~\Ref{V.6.11}, one can put~\Ref{X.1.3} in the following
+equivalent form
+
+\begin{corollary}
+\label{X.1.4}
+With the preceding notation for $f\colon X\to Y$ and
+$\overline X_y$, let $\bar{a}$ be a geometric point of
+$\overline X_y$, $a$ its image in $X$ and $b$ its image
+in~$Y$. Then the following sequence of group homomorphisms is
+\emph{exact}:
+$$
+\pi_1(\overline X_y,\bar{a})\to \pi_1(X,a)\to \pi_1(Y,b)\to e.
+$$
+\end{corollary}
+
+\begin{remarks}
+\label{X.1.5}
+One will note that the proof of~\Ref{X.1.3} makes essential
+use of~\Ref{X.1.2} and thereby of the ``first
+comparison theorem'' in formal algebraic
+geometry. On the other hand, the descent theory of
+Expos\'e~\Ref{IX}
+% original p. 264
+has intervened only through IX~\Ref{IX.3.4}, of which
+a direct proof in the case of a \emph{proper} morphism
+$f\colon X\to Y$ such that $f_*(\cal{O}_X)=\cal{O}_Y$ is easy. Indeed,
+let $Y'$ be \'etale over~$Y$ and assume that $X' = X\times_Y Y'$
+is the disjoint sum of two nonempty open sets; let us prove that the
+same holds for~$Y'$. Indeed, one will have $Y'=\Spec(\cal{A})$, hence
+$X'=\Spec(\cal{B})$ with $\cal{B}=\cal{A}\otimes_{\cal{O}_Y}
+\cal{O}_X$, and the decomposition of~$X'$ as a direct sum
+corresponds to a decomposition of~$\cal{B}$ as a product of two
+nonzero Algebras $\cal{B}_1$ and $\cal{B}_2$. Since
+$f_*(\cal{O}_X)=\cal{O}_Y$ one easily concludes
+$f_*(\cal{B})=\cal{A}$, hence $\cal{A}$ will be the sum of two Algebras
+(likewise nonzero, since their unit sections are
+nonzero) $f_*(\cal{B}_1)$ and $f_*(\cal{B}_2)$, qed.
+\end{remarks}
+
+\subsection{}
+\label{X.I.6}
+Let us again assume that $f$ is proper and separable, but let us no longer make
+any hypothesis on~$f_*(\cal{O}_X)$, which will correspond to a
+well-determined \'etale covering $Y'$ of~$Y$,
+moreover pointed over~$b$ by the image $b'$
+of~$a$. Applying then \Ref{X.1.4} to the canonical morphism $X\to Y'$,
+and assuming $f$ surjective, the exact sequence~\Ref{X.1.4} is
+replaced by the following one, analogue of the homotopy exact sequence
+of fiber spaces in algebraic topology:
+$$
+\pi_1(\overline X_y,\overline a)\to \pi_1(X,a)\to \pi_1(Y,b)\to
+\pi_0(\overline X_y,\overline a)\to \pi_0(X,a)\to \pi_0(Y,b)\to e.
+$$
+Of course, in~\Ref{X.1.4} one cannot in general
+assert that the homomorphism
+$\pi_1(\overline X_y,\overline a)\to \pi_1(X,a)$
+is injective; in algebraic topology, its kernel is the image of
+$\pi_2(Y,b)$, and there would be occasion in algebraic geometry
+as well to introduce homotopy groups in all
+dimensions, and the complete homotopy exact sequence for a
+proper morphism satisfying suitable hypotheses (for
+example that of being a smooth
+morphism).
+One does not have at present
+any result in this direction, with the exception of a
+reasonable (if not definitive) definition of the higher homotopy
+groups.
+
+\begin{corollary}
+\label{X.1.7}
+Let $k$ be an algebraically closed field, $X$ and $Y$ two
+connected preschemes over~$k$; one assumes $X$ proper over~$k$ and
+$Y$ locally
+% original p. 265
+noetherian. Let $a$ be a geometric point of~$X$, $b$
+a geometric point of~$Y$ with values in the same
+algebraically closed extension $K$ of~$k$; consider the
+geometric point $c=(a,b)$ of~$X\times_k Y$, and
+the homomorphism $\pi_1(X\times_k Y,c)\to \pi_1(X,a)\times\pi_1(Y,b)$
+deduced from the homomorphisms on the fundamental groups
+associated with the two projections $X\times_k Y\to X$ and $X\times_k
+Y\to Y$. The preceding homomorphism is an \emph{isomorphism}.
+\end{corollary}
+
+Let us first assume $K=k$. Let us set $Z=X\times_k Y$, consider the
+projection $f\colon Z\to Y$ and the locality $y$ of the
+geometric point $b$ of~$Y$, and let us apply to the situation the
+result~\Ref{X.1.4}. One will note for this that, at the cost of passing
+to $X_\red$ (which does not change the fundamental groups
+under consideration), one can already assume $X$ reduced, hence
+separable over~$k$, hence~$Z$ is separable over~$k$, and
+evidently with geometrically connected fibers (since~$X$ is connected). The geometric fiber of~$Z$ at $b$ is
+canonically isomorphic to $X\otimes_k K=X$. On the other hand, since the
+composite of the morphisms $X\to Z\to X$ is the identity, one finds
+that $\pi_1(X,a)\to \pi_1(Z,c)$ is injective, and 1.4 gives us an
+exact sequence:
+$$
+e\to \pi_1(X,a)\to \pi_1(Z,c)\to \pi_1(Y,b)\to e.
+$$
+On the other hand, one has the canonical exact sequence:
+$$
+e\to \pi_1(X,a)\to \pi_1(X,a)\times \pi_1(Y,b)\to \pi_1(Y,b)\to e,
+$$
+where the two homomorphisms written are the canonical injection
+and the canonical projection. Finally, one has a homomorphism from the
+first exact sequence into the second, by means of the
+identity morphisms on the extreme terms, and the canonical
+homomorphism $\pi_1(Z,c)\to \pi_1(X,a)\times\pi_1(Y,b)$ for the middle
+terms. The commutativity of the diagram thus obtained is
+verified trivially. Since the homomorphisms on the extreme
+terms are isomorphisms, the same holds for the middle
+terms, which proves \Ref{X.1.7} in this case.
+
+When one no longer assumes $K=k$, one finds only an isomorphism
+$$
+\pi_1(Z,c)\to \pi_1(X\otimes_k K,a)\times \pi_1(Y,b),
+$$
+% original p. 266
+and~\Ref{X.1.7} is then equivalent to the following particular case:
+
+\begin{corollary}
+\label{X.1.8}
+Let $X$ be a proper and connected scheme over an
+algebraically closed field~$k$, $k'$ an algebraically
+closed extension of~$k$, $a'$ a geometric point of~$X\otimes_k k'$ and
+$a$ its image in~$X$. Then the canonical homomorphism
+$\pi_1(X\otimes_k k',a')\to \pi_1(X,a)$ is an \emph{isomorphism.}
+\end{corollary}
+
+The fact that this homomorphism is surjective is equivalent to saying
+that if $X'$ is a connected \'etale covering of~$X$, then
+$X'\otimes_k k'$ is also connected, and follows
+immediately from the fact that $k$ is algebraically closed; it is also
+a particular case
+of~IX~\Ref{IX.3.4}.
+The hypothesis of properness on~$X$ has not yet been used. That
+said, to say that the homomorphism under consideration is injective also means
+this: \emph{every \'etale covering of~$X\otimes_k k'$ is
+isomorphic to the inverse image of an \'etale covering of~$X$.}
+It is essentially a matter of sorites that one can find a
+sub-$k$-algebra $A$ of
+$k'$,
+of finite type over~$k$, and an
+\'etale covering of~$X\otimes_k A$ whose inverse image on~$X\otimes_k k'$ is isomorphic to the given covering. Let then
+$Y=\Spec(A)$, which is an integral $k$-scheme of finite type, hence
+has rational points over~$k$. Let us then apply \Ref{X.1.7} to the
+fundamental group of~$X\times Y$ at a point $(a,b)$ rational
+over~$k$: one finds that every connected \'etale covering of
+$X\times Y$ is isomorphic to a quotient of a covering
+$X'\times Y'$, where $X'$, $Y'$ are Galois \'etale
+coverings of~$X$ and $Y$ with groups~$G$, $G'$, by a subgroup $H$
+of~$G\times G'$. This implies that the inverse image of this
+covering of~$X\times Y$ on~$X\times Y'$ is isomorphic to a
+covering of the form $X_1'\times Y'$, where $X_1'$ is an
+\'etale covering of~$X$. If then $L$ is the field of
+functions of~$Y$, equal to the field of fractions of~$A$ in~$k'$, the
+\'etale covering of~$X\otimes_k L$ induced by the
+given covering of~$X\times_k Y$ is such that there exists a
+finite separable extension $L'$ of~$L$ such that the inverse image
+of the said covering on~$X\otimes_k L'$ is isomorphic to
+$X_1'\otimes_k L'$. Now, $k'$ being algebraically closed, one can
+assume that the extension $L'$ of~$L$ is contained in~$k'$. This
+proves that the given \'etale covering of~$X\otimes_k k'$
+is isomorphic to $X_1'\otimes_k k'$, qed.
+
+The explicit form noted in passing for the \'etale
+coverings of a product
+% original p. 267
+$X\times_k Y$ immediately implies the following result:
+
+\begin{corollary}
+\label{X.1.9}
+Let $k$ be an algebraically closed field, $X$ and $Y$ two
+locally noetherian preschemes over~$k$, $Z=X\times_k
+Y$ their product, $Z'$ an \'etale covering of~$Z$. For every
+point $y\in Y$ rational over~$k$, let $i_y \colon \Spec(k)\to Y$ be the
+canonically associated morphism, $j_y = \id_X\times_k i_y$ the
+corresponding morphism $X\to Z$. Finally, let $X_y'$ be the \'etale
+covering of~$X$ inverse image of~$Z'$ by~$j_y$. One assumes $Y$
+connected, and $X$ or~$Y$ proper over~$k$. Then the coverings
+$X_y'$ of~$X$ are all isomorphic.
+\end{corollary}
+
+Figuratively, one can say that \emph{a family of
+\'etale coverings of~$X$, parametrized by a
+connected prescheme~$Y$, is constant if $X$ or the
+parameter prescheme~$Y$ is proper over~$k$.}
+
+\begin{remarks}
+\label{X.1.10}
+Corollaries~\Ref{X.1.7} to~\Ref{X.1.9} are due to
+Lang-Serre~\cite{X.2} in the case of normal algebraic schemes.
+(Their work was the initial motivation for the theory
+of the fundamental group developed in this Seminar). As
+these authors have remarked, these results become false
+when one drops the hypothesis of properness, at least in
+characteristic $p>0$. Taking for example for $X$ the affine
+line $X=\Spec(k[t])$, it is not difficult to see that the
+coverings of~$X$, parametrized by the affine line
+$Y=\Spec(k[s])$, defined by the equations
+$$
+x^p - x = st,
+$$
+are \'etale and pairwise non-isomorphic. This invalidates~\Ref{X.1.9}
+and a fortiori~\Ref{X.1.7}, and one sees
+similarly that if $s$ is considered as an element
+transcendental over~$k$ in an algebraically closed extension $K$
+of~$k$, one finds an \'etale covering $X'$ of~$X\otimes_kK$
+which does not come from an \'etale covering of~$X$.
+\end{remarks}

@@ -1,0 +1,276 @@
+%% Shared macros for the unofficial English drafts of SGA 1.
+%% Used by the Introduction and Exposés IV, V, VIII–XIII. (Exposés I, II,
+%% III and VI keep their own wrappers.) Numbering follows the SMF
+%% recomposition sga1-smf.sty: statements share the subsection counter
+%% (decimal system), equations are numbered within sections.
+%% Do not load the SMF class.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sga1-en}[2026/09/24 English SGA 1 macros]
+
+\RequirePackage{amsmath,amssymb,amsthm,mathtools}
+\RequirePackage[all,cmtip]{xy}
+\RequirePackage{mathrsfs}
+\RequirePackage{xspace}
+\RequirePackage{enumitem}
+\RequirePackage{url}
+\RequirePackage{ifthen}
+
+% --- numbering as in the SMF SGA 1 ---
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\theequation}{\arabic{equation}}
+\setcounter{secnumdepth}{4}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{corollaries}[subsection]{Corollaries}
+\newtheorem{theoremdefinition}[subsection]{Theorem and definition}
+\newtheorem{puritytheorem}[subsection]{Purity theorem}
+\newtheorem{subproposition}[subsubsection]{Proposition}
+\newtheorem{sublemma}[subsubsection]{Lemma}
+\newtheorem*{corollarystar}{Corollary}
+\newtheorem*{propositionstar}{Proposition}
+\newtheorem*{theoremstar}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{definitions}[subsection]{Definitions}
+\newtheorem{subdefinition}[subsubsection]{Definition}
+\newtheorem*{definitionstar}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{remarks}[subsection]{Remarks}
+\newtheorem{example}[subsection]{Example}
+\newtheorem{examples}[subsection]{Examples}
+\newtheorem{subremark}[subsubsection]{Remark}
+\newtheorem*{remarkstar}{Remark}
+\newtheorem*{remarksstar}{Remarks}
+\newtheorem*{scholiumstar}{Scholium}
+
+\numberwithin{equation}{section}
+
+% Unnumbered named statements (SMF \enonce*): \begin{enonce*}{Name} ...
+\newenvironment{enonce*}[2][plain]
+  {\par\addvspace{.5\baselineskip}\noindent\textbf{#2.}\ \itshape\ignorespaces}
+  {\par\addvspace{.5\baselineskip}}
+
+% Bracketed updating remarks added in 2003 by M. Raynaud (SMF remarqueMR).
+% The SMF prints them without a number, but their labels (X.2.14, XII.5.6,
+% XIII.2.13) name the next number of the section, each closes its section,
+% and the Preface refers to them; so they take that number here.
+\def\lcrochetbf{{\bfseries\upshape[}}
+\def\rcrochetbf{{\bfseries\upshape]}}
+\newenvironment{remarkMR}
+  {\par\addvspace{.5\baselineskip}\refstepcounter{subsection}%
+   \noindent\lcrochetbf\textbf{Remark \thesubsection}
+   (added in 2003 (MR)).\ \ignorespaces}
+  {\unskip\rcrochetbf\par\addvspace{.5\baselineskip}}
+
+% Unnumbered SMF sectioning (\Subsection*, \Subsubsection*).
+\def\Subsection*#1{\par\addvspace{\medskipamount}\noindent\textbf{#1}\par\nobreak\smallskip\@afterheading}
+\def\Subsubsection*#1{\par\addvspace{\smallskipamount}\noindent\textit{#1}\par\nobreak\@afterheading}
+
+% Aliases for French environment names left in a body by mistake.
+\let\theoreme\theorem \let\endtheoreme\endtheorem
+\let\lemme\lemma \let\endlemme\endlemma
+\let\corollaire\corollary \let\endcorollaire\endcorollary
+\let\corollaires\corollaries \let\endcorollaires\endcorollaries
+\let\sublemme\sublemma \let\endsublemme\endsublemma
+\let\remarque\remark \let\endremarque\endremark
+\let\remarques\remarks \let\endremarques\endremarks
+\let\exemple\example \let\endexemple\endexample
+\let\exemples\examples \let\endexemples\endexamples
+\let\subremarque\subremark \let\endsubremarque\endsubremark
+\let\remarquestar\remarkstar \let\endremarquestar\endremarkstar
+\let\remarquesstar\remarksstar \let\endremarquesstar\endremarksstar
+
+% --- references ---
+% Inside one exposé \Ref and \eqref resolve normally. A key that belongs to
+% another exposé (e.g. VIII.6.2) is not defined in a standalone build; it
+% then prints what the SMF volume prints, namely the key without its
+% leading exposé numeral (6.2). The text itself names the exposé, as in
+% the source (``VIII~\Ref{VIII.6.2}'').
+\makeatletter
+\def\sgaone@fallback#1{\expandafter\sgaone@fb\detokenize{#1}.\@nil}
+\def\sgaone@fb#1.#2\@nil{\ifx\relax#2\relax #1\else\sgaone@fbb#2\@nil\fi}
+\def\sgaone@fbb#1.\@nil{#1}
+\newcommand{\SourceRef}[2]{\@ifundefined{r@#1}{#2}{\ref{#1}}}
+\AddToHook{begindocument/end}{%
+  \let\sgaone@oldref\ref
+  \let\sgaone@oldpageref\pageref
+  \renewcommand{\ref}[1]{\textup{\@ifundefined{r@#1}{\sgaone@fallback{#1}}{\sgaone@oldref{#1}}}}%
+  \renewcommand{\pageref}[1]{\textup{\@ifundefined{r@#1}{\sgaone@fallback{#1}}{\sgaone@oldpageref{#1}}}}%
+  \renewcommand{\Ref}{\ref}%
+  \let\H\rH
+}
+\makeatother
+\providecommand{\Ref}[1]{\textup{\ref{#1}}}
+
+% --- fonts ---
+\renewcommand{\mathcal}{\mathscr}
+\let\Bbb\mathbb
+\let\goth\mathfrak
+\DeclareMathAlphabet{\othercal}{U}{eus}{m}{n}
+\let\rm\mathrm
+\let\it\mathit
+\let\bf\mathbf
+\let\cal\mathcal
+
+% --- operators and symbols of sga1-smf.sty ---
+\newcommand{\an}{\mathrm{an}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\SheafAut}{\mathbf{Aut}}
+\DeclareMathOperator{\car}{char}
+\DeclareMathOperator{\card}{card}
+\newcommand{\cart}{\mathrm{cart}}
+\newcommand{\Cat}{\mathbf{Cat}}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\coprof}{coprof}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\divisor}{\mathrm{div}}
+\newcommand{\Ens}{\mathbf{Ens}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Fer}{Fer}
+\newcommand{\Fib}{\mathrm{Fib}}
+\DeclareMathOperator{\Fl}{\mathrm{Fl}}
+\DeclareMathOperator{\CatFl}{\mathbf{Fl}}
+\DeclareMathOperator{\Gl}{\mathbf{GL}}
+\DeclareMathOperator{\GL}{\mathbf{GL}}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\rH}{H}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\SheafHom}{\mathbf{Hom}}
+\DeclareMathOperator{\hop}{hop}
+\newcommand{\id}{\mathrm{id}}
+\DeclareMathOperator{\Imm}{Im}\let\Im\Imm
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\SheafIsom}{\mathbf{Isom}}
+\newcommand{\kres}{\mathit{k}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator*{\Lim}{Lim}
+\DeclareMathOperator{\Norm}{N}
+\DeclareMathOperator{\Ob}{\mathrm{Ob}}
+\DeclareMathOperator{\Ouv}{Ouv}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Pro}{Pro}
+\DeclareMathOperator{\Prodash}{Pro-}
+\DeclareMathOperator{\prof}{prof}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Quot}{Quot}
+\newcommand{\R}{\mathrm{R}}
+\newcommand{\red}{\mathrm{red}}
+\newcommand{\Sch}{\mathbf{Sch}}
+\DeclareMathOperator{\Symp}{\mathbf{Sp}}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Symm}{Symm}
+\newcommand{\tame}{\mathrm{t}}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\trace}{tr}
+\newcommand{\Univ}{\mathbf{Univ}}
+\DeclareMathOperator{\Ind}{Ind}
+
+\newcommand{\isomto}{\overset{\sim}{\longrightarrow}}
+\newcommand{\isomfrom}{\overset{\sim}{\longleftarrow}}
+
+\def\AA{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\LL}{\mathbb{L}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\WW}{\mathbf{W}}
+
+\newcommand{\leftexp}[2]{{\vphantom{#2}}^{#1}{#2}}
+
+\def\to{\mathchoice{\longrightarrow}{\rightarrow}{\rightarrow}{\rightarrow}}
+\def\from{\mathchoice{\longleftarrow}{\leftarrow}{\leftarrow}{\leftarrow}}
+\def\mto{\mathchoice{\longmapsto}{\mapsto}{\mapsto}{\mapsto}}
+\def\To{\mathchoice{\Longrightarrow}{\Rightarrow}{\Rightarrow}{\Rightarrow}}
+\def\From{\mathchoice{\Longleftarrow}{\Leftarrow}{\Leftarrow}{\Leftarrow}}
+\def\labelstyle{\textstyle}
+\def\lto#1{\mathchoice{\xrightarrow{\labelstyle~~#1~}}{\stackrel{#1}{\longrightarrow}}{}{}}
+\def\mlto#1{\mathrel{\mapstochar\lto{#1}}}
+\def\lfrom#1{\mathchoice{\xleftarrow{\labelstyle~~#1~}}{\stackrel{#1}{\longleftarrow}}{}{}}
+
+\let\leq\leqslant
+\let\geq\geqslant
+\let\le\leqslant
+\let\ge\geqslant
+\let\dpl\displaystyle
+\newcommand{\skpt}{}
+\newcommand{\skippointrait}{}
+
+\def\cf{{cf.}\kern.3em}
+\def\Cf{{Cf.}\kern.3em}
+\def\ie{{i.e.}\kern.3em}
+\def\iev{{i.e.},\xspace}
+\def\loccit{loc.\kern2pt cit.\xspace}
+\let\oldS\S
+\def\S{\oldS\kern .15em }
+\def\ptbl{.\kern .2em }
+\def\resp{resp.\xspace}
+\def\quoi{}
+\newcommand{\No}{no.~}
+\newcommand{\no}{no.~}
+\newcommand{\numero}{no.~}
+
+\let\bar\overline
+\let\hat\widehat
+\let\tilde\widetilde
+
+\def\bbalpha{\boldsymbol{\alpha}}
+\def\bbmu{\boldsymbol{\mu}}
+\let\varinjLim\varinjlim
+\let\varprojLim\varprojlim
+\def\tbigcap{\mathop{\textstyle\bigcap}\limits}
+\def\tbigwedge{\mathop{\textstyle\bigwedge}\limits}
+\def\llbracket{[\![}
+\def\rrbracket{]\!]}
+
+\let\rd=d
+\def\sp{\mathrm{sp}}
+\def\tH{{}^t\!H}
+\def\bbullet{{\scriptscriptstyle\bullet}}
+\def\res{\mathrm{res}}
+\def\alg{\mathrm{alg}}
+\def\pr{\mathrm{pr}}
+
+\newenvironment{enumerateb}{\begin{enumerate}}{\end{enumerate}}
+
+% SMF bibliography: \begin{thebibliography}{widest label}{section label}
+% opens a numbered section "Bibliography" carrying the given label
+% (e.g. VIII.8), exactly as in the SMF volume.
+\makeatletter
+\renewenvironment{thebibliography}[2]{%
+  \section{Bibliography}\label{#2}%
+  \normalfont\labelsep .5em\relax
+  \list{\@biblabel{\@arabic\c@enumiv}}{%
+    \settowidth\labelwidth{\@biblabel{#1}}%
+    \leftmargin\labelwidth \advance\leftmargin\labelsep
+    \usecounter{enumiv}\let\p@enumiv\@empty
+    \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+  \sloppy\clubpenalty\@M \widowpenalty\clubpenalty
+  \sfcode`\.=\@m}
+  {\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+   \endlist}
+\makeatother
+
+\newcommand{\og}{``}
+\newcommand{\fg}{''}
+\providecommand{\chapterspace}[1]{}
+
+\endinput

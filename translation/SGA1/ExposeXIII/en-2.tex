@@ -1,0 +1,583 @@
+\begin{definitions}
+\label{XIII.1.10}
+\leavevmode
+\subsubsection{}
+\label{XIII.1.10.1}
+Let $E$ be a category and consider a diagram
+$$
+\xymatrix@C=.6cm{ \Phi \ar[r]^p & \Phi_1 \ar@<2pt>[r]^{p_1}
+\ar@<-2pt>[r]_{p_2} & \Phi_2 } \text{,}
+$$
+where $\Phi$, $\Phi_1$, $\Phi_2$ are fibered categories
+over~$E$ and the arrows are morphisms of fibered
+categories, and let
+$$
+a \colon p_1 p \isomto p_2 p
+$$
+be an isomorphism of functors.
+
+One says that the above diagram is exact if the following condition
+is satisfied
+
+a) For every pair of objects $x$, $y$ of~$\Phi$ and every morphism $f
+\colon p(x) \to p(y)$ such that $p_1(f) = p_2(f)$ ($p_1p$ and
+$p_2p$ being identified by means of $a$), there exists a
+unique morphism $g \colon x \to y$ such that $p(g)=f$.
+
+\subsubsection{}
+\label{XIII.1.10.2}
+Consider the diagram
+$$
+\xymatrix@C=.5cm{ \Phi \ar[r]^p & \Phi_1 \ar@<2pt>[rr]^{p_1,p_2}
+\ar@<-2pt>[rr] && \Phi_2 \ar@<4pt>[rrr]^{p_{12},p_{23},p_{31}} \ar[rrr]
+\ar@<-4pt>[rrr] &&& \Phi_3 } \text{,}
+$$
+where
+% original p. 358
+$\Phi$, $\Phi_i$, $1 \leqslant i \leqslant 3$, are fibered
+categories over~$E$ and the arrows are morphisms of fibered
+categories. Suppose given isomorphisms of
+functors
+$$
+a \colon p_1 p \isomto p_2 p
+$$
+$$
+a_1 \colon p_{31} p_2 \isomto p_{12} p_1 \text{,}\quad a_2 \colon p_{12}
+p_2 \isomto p_{23} p_1 \text{,}\quad a_3 \colon p_{23} p_2 \isomto
+p_{31}p_1
+$$
+such that the following diagram is commutative:
+$$
+\xymatrix@C=1.2cm{ p_{23} p_1 p \ar[r]^{\id.a} & p_{23} p_2 p \ar[r]^{a_3.\id}
+& p_{31} p_1 p \ar[d]^{\id.a} \\ p_{12} p_2 p \ar[u]^{a_2.\id} &
+p_{12} p_1 p \ar[l]^{\id.a} & p_{31} p_2 p \ar[l]^{a_1.\id} } \text{.}
+$$
+One identifies $p_1 p$ and $p_2 p$, $p_{31} p_2$ and $p_{12} p_1$, etc.
+
+One says that the above diagram is exact if the following
+conditions are satisfied:
+\begin{enumerate}
+\item[a)] Analogous to condition a) of~\Ref{XIII.1.10.1}.
+\item[b)] For every object $x_1$ of~$\Phi_1$ and every isomorphism
+$u \colon p_1(x_1) \isomto p_2(x_1)$ such that
+\begin{equation*}
+\label{eq:XIII.1.10.2.1}
+\tag{\thesubsubsection.1} { p_{23}(u) p_{31}(u) = p_{12}(u)^{-1}
+\text{,} }
+\end{equation*}
+there exists an object $x$ of~$\Phi$ such that there is an isomorphism $i
+\colon p(x) \isomto x_1$ making the diagram
+\begin{equation*}
+\label{eq:XIII.1.10.2.2}
+\tag{\thesubsubsection.2}
+\begin{array}{c}
+{ \xymatrix{ p_1p(x) \ar@{=}[r]
+\ar[d]_{p_1(i)} & p_2p(x) \ar[d]^{p_2(i)} \\ p_1(x_1) \ar[r]^{\sim}_u
+& p_2(x_1)
+} }
+\end{array}
+\end{equation*}
+commutative.
+\end{enumerate}
+
+\subsubsection{}
+\label{XIII.1.10.3}
+One defines in the obvious way the notion of a morphism of
+exact diagrams of fibered categories over a
+category $E$.
+\end{definitions}
+
+\subsubsection{}
+\label{XIII.1.10.4}
+We shall use
+% original p. 359
+in particular the notion of exact diagram in the
+case where $E$ is a site and $\Phi$, $\Phi_i$, $1 \leqslant i
+\leqslant 3$, are stacks over~$E$.
+
+Let $f \colon E \to E'$ be a morphism of sites and let
+\begin{equation*}
+\label{eq:XIII.1.10.4.1}
+\tag{\thesubsubsection.1} { \xymatrix@C=.5cm{ \Phi \ar[r]^p & \Phi_1
+\ar@<2pt>[rr]^{p_1,p_2} \ar@<-2pt>[rr] && \Phi_2
+\ar@<4pt>[rrr]^{p_{12},p_{23},p_{31}} \ar[rrr] \ar@<-4pt>[rrr] &&&
+\Phi_3 } }
+\end{equation*}
+be an exact diagram of stacks over~$E$. By direct image one obtains a
+diagram
+$$
+\xymatrix@C=.5cm{ f_* \Phi \ar[r] & f_* \Phi_1 \ar@<2pt>[r]
+\ar@<-2pt>[r] & f_* \Phi_2 \ar@<4pt>[r]\ar[r] \ar@<-4pt>[r] &
+f_* \Phi_3 }
+$$
+which is obviously exact.
+
+If $h \colon E'' \to E$ is a morphism of sites, one likewise has an
+exact diagram
+$$
+\xymatrix@C=.5cm{ h^* \Phi \ar[r]^{p''} & h^* \Phi_1
+\ar@<2pt>[rr]^{p''_1,p''_2} \ar@<-2pt>[rr] && h^* \Phi_2
+\ar@<4pt>[rrr]^{p''_{12},p''_{23},p''_{31}} \ar[rrr] \ar@<-4pt>[rrr] &&&
+h^* \Phi_3 }
+$$
+
+Let us first verify condition~a) of~\Ref{XIII.1.10.2}. Let
+$F''$ be an object of~$E''$, $x''$ and $y''$ two objects of~$(h^*
+\Phi)_{F''}$, $x''_1$ and $y''_1$ their respective images in
+$h^* \Phi_1$, and $x''_2$, $y''_2$ their images in $h^*
+\Phi_2$. Let $u''_1 \colon x''_1 \to y''_1$ be a morphism such that
+$p''_1(u''_1) = p''_2(u''_1)$, and let us prove that $u''_1$ comes
+from a unique morphism $u'' \colon x'' \to y''$. The question being
+local over~$F''$, one may assume that one has an object $F_1$ of~$E$, a
+morphism from~$F''$ into the inverse image $F''_1$ of~$F_1$ by $h$, and
+objects $x$, $y$ of~$\Phi_{F_1}$ whose inverse images over~$F''$
+are $x''$ and $y''$. Let $x_1$, $y_1$ (\resp $x_2$, $y_2$) be the
+images of~$x$, $y$ in $\Phi_1$ (\resp~$\Phi_2$). One may assume
+that $u''_1$ comes from a morphism $u_1 \colon x_1 \to y_1$ such that
+$p_1(u_1) = p_2(u_1)$. In view of the exactness of
+\eqref{eq:XIII.1.10.4.1}, one obtains a unique morphism $u \colon x
+\to y$ whose inverse image by $h$ is the required morphism
+$u''$.
+
+Condition~b)
+% original p. 360
+of~\Ref{XIII.1.10.2} is verified in an analogous
+way. Let $x''_1$ be an object of~$(h^* \Phi_1)_{F''}$ and $u''
+\colon p''_1(x''_1) \to p''_2(x''_1)$ a morphism satisfying
+the relation
+$$
+p''_{23}(u'')p''_{31}(u'')=p''_{12}(u'')^{-1} \text{,}
+$$
+and let us prove that there exist an object $x''$ of~$(h^* \Phi)_{F''}$ and
+an isomorphism $i'' \colon p''(x'') \simeq x''_1$ making commutative
+a diagram analogous to \eqref{eq:XIII.1.10.2.2}. Since the
+question is local over~$F''$, one may assume that one has an object
+$F_1$, a morphism $F'' \to F''_1$ as above, and an object $x_1$
+of~$(\Phi_1)_{F_1}$ whose inverse image in $(h^* \Phi_1)_{F''}$
+is $x''_1$. Likewise one may assume that $u''$ comes from a
+morphism $u \colon p_1(x_1) \to p_2(x_1)$ satisfying
+\eqref{eq:XIII.1.10.2.2}. The existence of an object $x$ of~$\Phi_{F_1}$
+whose inverse image by $h$ is an element $x''$
+answering the question then follows from the exactness of
+\eqref{eq:XIII.1.10.4.1}.
+
+\begin{examples}
+\label{XIII.1.11}
+\begin{enumerate}
+\item[1)] Let $f \colon X_1 \to X$ be a \emph{descent morphism}
+for the category of \'etale sheaves over variable
+schemes (for example a universally submersive morphism (SGA~4
+VIII~9.3)). Let $X_2 = X_1 \times_X X_1$, $g \colon X_2 \to X$ the
+canonical projection, and $F$ a sheaf of sets over~$X$. It then
+follows from \loccit that one has an exact sequence of
+sheaves of sets
+\begin{equation*}
+\label{eq:XIII.1.11.1}
+\tag{\thesubsection.1} { \xymatrix@C=.5cm{ F \ar[r] & f_* f^* F
+\ar@<2pt>[r] \ar@<-2pt>[r] & g_* g^* F \text{.}}
+}
+\end{equation*}
+If $\Phi$ is the stack in discrete categories associated
+to $F$ and $\Phi_3$ the final stack over~$X$, \ie the stack all of whose
+fibers are reduced to a single element
+having as its only morphism the identity morphism, to say that the sequence
+\eqref{eq:XIII.1.11.1} is exact amounts to saying that the same
+holds for the diagram of stacks
+$$
+\xymatrix@C=.5cm{ \Phi \ar[r] & f_* f^* \Phi \ar@<2pt>[r]
+\ar@<-2pt>[r] & g_* g^* \Phi \ar[r] \ar@<4pt>[r]
+\ar@<-4pt>[r] & \Phi_3 } \text{.}
+$$
+
+\item[2)]
+Let
+% original p. 361
+$f \colon X_1 \to X$ be an \emph{effective descent morphism}
+for the category of \'etale sheaves over variable
+schemes (for example a proper surjective morphism, or an integral
+surjective morphism, or a faithfully flat morphism locally of
+finite presentation (SGA~4 VIII~9.4)). Let $X_2 = X_1 \times_X
+X_1$, $g \colon X_2 \to X$ the canonical projection, $X_3 = X_1
+\times_X X_1 \times_X X_1$, $h \colon X_3 \to X$ the canonical
+morphism. Let $\Phi$ be a stack over~$X$, $\Phi_1 = f_* f^* \Phi$,
+$\Phi_2 = g_* g^* \Phi$, $\Phi_3 = h_* h^* \Phi$. One then has an
+exact diagram
+$$
+\xymatrix@C=.5cm{ \Phi \ar[r] & \Phi_1 \ar@<2pt>[r] \ar@<-2pt>[r] &
+\Phi_2 \ar[r] \ar@<4pt>[r] \ar@<-4pt>[r] & \Phi_3 \text{,} }
+$$
+where the arrows are the canonical morphisms associated with the
+projections.
+
+Indeed, consider $\Phi$ as a stack over the category
+$\Sch_X$ of schemes over~$X$, endowed with the \'etale
+topology. Then, by \cite[VII 2.2.8]{XIII.2}, $\Phi$ is also a
+stack for the finest topology on~$\Sch_X$ for which the
+covering morphisms are the effective descent morphisms for the
+category of \'etale sheaves. The exactness of the above diagram
+follows at once.
+\end{enumerate}
+\end{examples}
+
+\begin{proposition}
+\label{XIII.1.12}
+Let $S$ be a scheme and $f\colon X \to Y$ an $S$-morphism.
+\begin{enumerate}
+\item[1)] Let
+$$
+\xymatrix@C=.5cm{ \Phi \ar[r] & \Phi_1 \ar@<2pt>[r] \ar@<-2pt>[r] &
+\Phi_2 }
+$$
+be an exact diagram of stacks over~$X$. Suppose that $(\Phi_1, f)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 0$ and that $(\Phi_2, f)$ is cohomologically proper relative to~$S$ in dimension $\leqslant -1$. Then $(\Phi,f)$
+is cohomologically proper relative to~$S$ in dimension
+$\leqslant 0$.
+
+\item[2)] Let
+$$
+\xymatrix@C=.5cm{ \Phi \ar[r] & \Phi_1 \ar@<2pt>[r] \ar@<-2pt>[r] &
+\Phi_2 \ar@<4pt>[r] \ar[r] \ar@<-4pt>[r] & \Phi_3 }
+$$
+be an exact diagram of stacks over~$X$. Suppose that $(\Phi,f)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 1$, that $(\Phi_2, f)$ is cohomologically proper
+% original p. 362
+relative to~$S$ in dimension $\leqslant 0$, and that
+$(\Phi_3, f)$ is cohomologically proper
+relative
+to~$S$ in dimension $\leqslant -1$. Then $(\Phi,f)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 1$.
+\end{enumerate}
+\end{proposition}
+
+For every $S$-scheme $S'$, one considers the following commutative
+diagram, all of whose squares are cartesian:
+$$
+\xymatrix{ X' \ar[r]^{f'} \ar[d]_h & Y' \ar[r] \ar[d]_g & S' \ar[d] \\
+X \ar[r]^f & Y \ar[r] & S }
+$$
+
+Let us prove 2), the proof of 1) being
+analogous. Since the direct image and inverse image functors
+transform exact diagrams of stacks into exact diagrams
+\eqref{XIII.1.10.4}, one has the following morphism of exact diagrams of stacks:
+$$
+\xymatrix{ g^* f_* \Phi \ar[r]^\pi \ar[d]_{\varphi} & g^*
+f_* \Phi_1 \ar@<2pt>[r]^{\pi_1} \ar@<-2pt>[r]_{\pi_2}
+\ar[d]_{\varphi_1} & g^* f_* \Phi_2 \ar@<4pt>[r] \ar[r]
+\ar@<-4pt>[r] \ar[d]_{\varphi_2} & g^* f_* \Phi_3
+\ar[d]_{\varphi_3} \\ f'_* h^* \Phi \ar[r] & f'_* h^*
+\Phi_1 \ar@<2pt>[r] \ar@<-2pt>[r] & f'_* h^* \Phi_2
+\ar@<4pt>[r] \ar[r] \ar@<-4pt>[r] & f'_* h^* \Phi_3 }
+\text{.}
+$$
+By hypothesis $\varphi_1$ is an equivalence of
+categories, $\varphi_2$ is fully faithful and $\varphi_3$
+faithful. It therefore follows from the preceding diagram that
+$\varphi$ is an equivalence.
+
+\begin{proposition}
+\label{XIII.1.13}
+Let $f \colon X \to Y$ be an $S$-morphism.
+\begin{enumerate}
+\item[1)] Let
+$$
+\xymatrix@C=.5cm{ F \ar[r] & G \ar@<2pt>[r] \ar@<-2pt>[r] & H }
+$$
+be an exact diagram of sheaves of sets over~$X$. Suppose that
+$(G,f)$ is cohomologically proper relative to~$S$ in
+dimension $\leqslant 0$ and that $(H,f)$ is cohomologically proper
+relative to~$S$ in dimension $\leqslant -1$. Then $(F,f)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 0$.
+\item[2)]
+Let
+% original p. 363
+$F \to G$ be a monomorphism of sheaves of groups over~$X$. If
+$Y_1$ is a scheme \'etale over~$Y$, one sets $X_1 = Y_1 \times_Y
+X$, and one denotes by $f_1$ (\resp $F_1$, \resp $G_1$) the inverse image of~$f$
+(\resp $F$, \resp $G$) over~$Y_1$ (\cf \Ref{eq:XIII.1.0.2}). Suppose
+that $(G,f)$ is cohomologically proper relative to~$S$ in
+dimension $\leqslant 0$ (\resp in dimension $\leqslant 1$) and that,
+for every scheme $Y_1$ \'etale over~$Y$ and every torsor $Q$
+under $G_1$, $(Q/F_1, f_1)$ is cohomologically proper relative
+to~$S$ in dimension $\leqslant -1$ (\resp in dimension $\leqslant
+0$). Then $(F,f)$ is cohomologically proper relative to~$S$
+in dimension $\leqslant 0$ (\resp in dimension $\leqslant 1$).
+\item[3)] Let $F \to G$ be a monomorphism of sheaves of groups over~$X$. Suppose that $(F,f)$ is cohomologically proper relative
+to~$S$ in dimension $\leqslant 1$ and that $(G,f)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 0$. Then, for every torsor $Q$ under $G$, $(Q/F, f)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 0$.
+\end{enumerate}
+\end{proposition}
+
+\subsubsection*{Proof}
+1) Let $\Phi$ (\resp $\Phi_1$, \resp $\Phi_2$) be the stack in
+discrete categories associated to $F$ (\resp $G$,
+\resp $H$) and let $\Phi_3$ be the final stack over~$X$. One then has an
+exact diagram
+$$
+\xymatrix@C=.5cm{ \Phi \ar[r] & \Phi_1 \ar@<2pt>[r] \ar@<-2pt>[r] &
+\Phi_2 \ar@<4pt>[r] \ar[r] \ar@<-4pt>[r] & \Phi_3 }
+\text{.}
+$$
+By hypothesis $(\Phi_1, f)$ is cohomologically proper
+relative to~$S$ in dimension $\leqslant 1$ and $(\Phi_2, f)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 0$ \eqref{XIII.1.2}. Since $(\Phi_3, f)$ is obviously
+cohomologically proper relative to~$S$ in dimension
+$\leqslant -1$, it follows from~\Ref{XIII.1.12} that $(\Phi, f)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 1$, \ie that $(F,f)$ is cohomologically proper
+relative to~$S$ in dimension $\leqslant 0$.
+
+\smallskip
+2) Let us first show that, if $(G,f)$ is cohomologically
+proper relative to~$S$ in dimension $\leqslant 0$ and if the
+$(Q/F_1, f_1)$ are cohomologically
+% original p. 364
+proper relative to~$S$ in dimension $\leqslant -1$, then
+$(F,f)$ is cohomologically proper relative to~$S$ in
+dimension $\leqslant 0$. By~\Ref{XIII.1.3.1} it suffices to
+prove that, for every scheme $Y_1$ \'etale over~$Y$ and
+every torsor $P$ over~$X_1$ with group $F_1$, $(\leftexp{P\mkern-4mu}{F}_1,
+f_1)$ is cohomologically proper relative to~$S$ in dimension
+$\leqslant 0$ when one considers $\leftexp{P\mkern-4mu}{F}_1$ as a
+sheaf of sets, and that the canonical morphism
+$$
+d \colon g^*(\R^1 f_* F) \to \R^1 f'_* F'
+$$
+is injective. The first assertion follows at once from 1),
+since, if $Q$ denotes the torsor deduced from~$P$ by the extension
+$F_1 \to G_1$ of the structure group, one has an isomorphism
+$\leftexp{Q}{G}_1 / \leftexp{P\mkern-4mu}{F}_1 \isomto Q/F_1$.
+
+Let us show that $d$ is injective. It suffices to prove that, if $Y_1$ is
+a scheme \'etale over~$Y$ and if $P$ and $\tilde{P}$ are
+two torsors under $F_1$ whose inverse images $P'$ and~$\tilde{P}'$
+over~$X'_1$ are isomorphic, then, after possibly making a surjective
+\'etale extension of~$Y_1$, $P$ and~$\tilde{P}$ become
+isomorphic. Choose an isomorphism $p' \colon P' \isomto
+\tilde{P}'$. Let $Q$ (\resp~$\tilde{Q}$) be the torsor deduced from
+$P$ (\resp $\tilde{P}$) by the extension of the structure group $F_1 \to
+G_1$. The inverse images $Q'$ (\resp $\tilde{Q}'$) of~$Q$
+(\resp $\tilde{Q}$) over~$X'_1$ are deduced from~$P'$
+(\resp $\tilde{P}'$) by
+the extension
+of the structure group $F'_1 \to G'_1$; let $q' \colon Q' \isomto
+\tilde{Q}'$ be the isomorphism that one obtains in the same way from
+$p'$. Since $(G,f)$ is cohomologically proper relative to~$S$ in dimension $\leqslant 0$, one may assume, after possibly making
+a surjective \'etale extension of~$Y_1$, that $q'$ is the image of an
+isomorphism $q \colon Q \isomto \tilde{Q}$. To the torsor~$P$
+(\resp~$\tilde{P}$) is associated a section $x$ of~$Q/F_1$
+(\resp a section $\tilde{x}$ of~$\tilde{Q}/F_1$), and, for $P$
+and $\tilde{P}$ to be isomorphic, it is necessary and sufficient that there be an
+isomorphism $Q \isomto \tilde{Q}$ such that the isomorphism
+$$
+e \colon \H^0(X_1, Q/F_1) \to \H^0(X_1,\tilde{Q}/F_1)
+$$
+deduced from it transforms $x$ into $\tilde{x}$. One takes
+the isomorphism $q$. The sections $e(x)$ and $\tilde{x}$ of
+$\H^0(X_1,\tilde{Q}/F_1)$ have the same image in
+$\H^0(X'_1,\tilde{Q}'/F'_1)$. Since $(\tilde{Q}/F_1,f_1)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant -1$,
+% original p. 365
+after possibly making a surjective \'etale extension of~$Y_1$, one does
+have $e(x) = \tilde{x}$, which proves the injectivity of~$d$.
+
+To complete the proof, it remains to prove that, if
+$(G,f)$ is cohomologically proper relative to~$S$ in
+dimension $\leqslant 1$, and if, for every scheme $Y_1$ \'etale
+over~$Y$ and every torsor $Q$ over~$X_1$ with group $F_1$,
+$(Q/F_1, f_1)$ is cohomologically proper relative to~$S$ in
+dimension $\leqslant 0$, then the morphism $d$ is surjective. Let
+$P'$ be a torsor over~$X'_1$ with group $F'_1$, and $Q'$ the torsor under
+$G'_1$ obtained from~$P'$ by extension of the structure
+group. Giving~$P'$ is equivalent to giving
+$Q'$ and a section $x'$ of~$\H^0(X'_1,Q'/F'_1)$. It then
+follows from the surjectivity of the morphism
+$$
+g^*(\R^1 f_* G) \to \R^1 f'_* G'
+$$
+that, after possibly making a surjective \'etale extension of~$Y_1$,
+there exists a torsor $Q$ under~$G_1$ whose inverse image over~$X'_1$
+is isomorphic to $Q'$. Using the fact that $(Q/F_1, f_1)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 0$, one may likewise assume that there exists an
+element $x$ of~$\H^0(X_1, Q/F_1)$ whose image in
+$\H^0(X'_1, Q'/F'_1)$ is $x'$. The data of~$Q$ and of~$x$
+determine a torsor $P$ under $F_1$ whose inverse image over~$X_1$ is isomorphic to $P'$, which proves the
+surjectivity of~$d$.
+
+\smallskip
+3) Let us show that $(Q/F,f)$ is cohomologically proper
+relative to~$S$ in dimension $\leqslant -1$, \ie that, for
+every $S$-scheme $S'$ and every scheme $Y_1$ \'etale
+over~$Y$, if $x$, $\tilde{x}$ are two elements of
+$\H^0(X_1,Q_1/F_1)$ whose images $x'$, $\tilde{x}'$ in
+$\H^0(X'_1, Q'_1/F'_1)$ are equal, then, after a surjective
+extension of~$Y_1$, one has $x = \tilde{x}$. To~$x$ (\resp~$\tilde{x}$)
+is associated a torsor $P$ (\resp~$\tilde{P}$) under $F_1$ such that
+$Q_1$ is deduced from~$P$ (\resp~$\tilde{P}$) by the extension $F_1
+\to G_1$ of the structure group. From the relation $x' = \tilde{x}'$
+it follows that one has an isomorphism $u' \colon P' \isomto
+\tilde{P}'$ such that the isomorphism induced on~$Q'_1$ by~$u'$ is
+the identity. Since $(F,f)$ is cohomologically proper
+relative to~$S$ in dimension $\leqslant 0$, one deduces
+that,
+% original p. 366
+after a surjective \'etale extension of~$Y_1$, one has an
+isomorphism $u \colon P \to \tilde{P}$ lifting $u'$; the fact that
+$(G,f)$ is cohomologically proper relative to~$S$ in
+dimension $\leqslant -1$ then implies that $x =
+\tilde{x}$.
+
+Let us show that $(Q/F,f)$ is cohomologically proper relative to~$S$ in dimension $\leqslant 0$. Let $Y''$ be a scheme \'etale
+over~$Y'$ and $x''$ an element of~$\H^0(X'',Q''/F'')$. To~$x''$
+is associated a torsor $P''$ over~$X''$ with group $F''$. Since
+$(F,f)$ is cohomologically proper relative to~$S$ in
+dimension $\leqslant 1$, one can find surjective \'etale
+morphisms $Y''_1 \to Y''$ and $Y_1 \to Y$ such that one has a
+morphism $Y''_1 \to Y'_1$, and a torsor $P$ over~$X_1$ with group
+$F_1$ whose inverse image over~$X''_1$ is isomorphic to the inverse
+image of~$P''$. It then follows from the fact that $(G,f)$ is
+cohomologically proper relative to~$S$ in dimension
+$\leqslant 0$ that one can even choose $Y''_1$ and $Y_1$ such that
+the torsor deduced from~$P$ by extension of the structure group $F_1
+\to G_1$ is isomorphic to $Q_1$; to~$P$ there corresponds an
+element $x$ of~$\H^0(X_1,Q_1/F_1)$ whose image in
+$\H^0(X''_1,Q''_1/F''_1)$ is isomorphic to the inverse image of
+$x''$, which completes the proof.
+
+\begin{proposition}
+\label{XIII.1.14}
+Let $f \colon X \to S$ be an $S$-scheme and $F$ a sheaf
+of sets or of groups over~$X$ (\resp a sheaf of
+ind-$\LL$-groups, where $\LL$ is a set of prime
+numbers). Suppose $F$ locally constant, $(F,f)$
+cohomologically proper in dimension $\leqslant 0$ (\resp in
+dimension $\leqslant 1$), and $f$ locally $0$-acyclic
+(\resp locally $1$-aspherical for $\LL$) \textup{(SGA~4 XV~1.11)}.
+Then, for every specialization $\overline{s}_1 \to
+\overline{s}_2$ of geometric points of~$S$, the
+specialization morphism \textup{(SGA~4 VIII~7.1)}
+$$
+a_0 \colon (f_* F)_{\overline{s}_2} \to (f_*
+F)_{\overline{s}_1}
+$$
+is an isomorphism, and, if $F$ is a sheaf of groups, the
+morphism
+$$
+a_1 \colon (\R^1 f_* F)_{\overline{s}_2} \to (\R^1 f_*
+F)_{\overline{s}_1}
+$$
+is injective (\resp the morphisms $a_0$ and $a_1$ are
+isomorphisms).
+\end{proposition}
+
+The
+% original p. 367
+proof is obtained by copying word for word that of SGA~4
+XVI~2.3, but replacing in it the expression ``proper'' by
+the expression ``cohomologically proper''.
+
+\begin{corollary}
+\label{XIII.1.15}
+Let $f \colon X \to S$ be a morphism, $\Phi$ a stack over~$X$, and $\LL$
+a set of prime numbers. Suppose that, for every scheme
+$X_1$ \'etale over~$X$ and every pair of objects $x$, $y$ of
+$\Phi_{X_1}$, the sheaf $\SheafHom_{X_1}(x,y)$ is locally
+constant, that the sheaf $\SheafAut_{X_1}(x)$ is a locally constant
+ind-$\LL$-group, and that the sheaf of
+maximal subgerbes $S\Phi$ of~$\Phi$ \textup{\cite[III 2.1.7]{XIII.1}} is locally
+constant. Suppose that $(\Phi,f)$ is cohomologically proper in
+dimension $\leqslant 1$ and that $f$ is locally $1$-aspherical
+for $\LL$. Then, for every specialization $\overline{s}_1 \to
+\overline{s}_2$ of geometric points of~$S$, the
+specialization morphism
+$$
+a \colon (f_* \Phi)_{\overline{s}_2} \to (f_*
+\Phi)_{\overline{s}_1}
+$$
+is an equivalence of categories.
+\end{corollary}
+
+Let $\overline{S}_1$ (\resp $\overline{S}_2$) be the strict
+localization of~$S$ at $\overline{s}_1$ (\resp the strict localization of~$S$
+at $\overline{s}_2$), $\overline{X}_2$, $\overline{\Phi}_2$
+(\resp $\overline{X}_1$, $\overline{\Phi}_1$) the inverse images of
+$X_2$, $\Phi_2$ over~$\overline{S}_2$ (\resp of~$X_1$, $\Phi_1$ over~$\overline{S}_1$), and consider the cartesian square
+$$
+\xymatrix{ \overline{X}_1 \ar[r]^h \ar[d]_{\overline{f}_1} &
+\overline{X}_2 \ar[d]^{\overline{f}_2} \\ \overline{S}_1 \ar[r]^g &
+\overline{S}_2 }
+\text{.}
+$$
+One must show that the functor
+$$
+\varphi \colon \overline{\Phi}_2(\overline{X}_2) \to \overline{\Phi}_1
+(\overline{X}_1)
+$$
+is an equivalence. The functor $\varphi$ is fully
+faithful; indeed, let
+% original p. 368
+$x$, $y$ be two objects of~$(\overline{\Phi}_2)_{\overline{X}_2}$;
+the canonical morphism
+$$
+\Hom_{\overline{X}_2}(x,y) \to
+\Hom_{\overline{X}_1}(\varphi(x),\varphi(y))
+$$
+is identified with the canonical morphism
+$$
+\H^0(\overline{X}_2, \SheafHom_{\overline{X}_2}(x,y)) \to
+\H^0(\overline{X}_1,h^*(\SheafHom_{\overline{X}_2}(x,y)) \text{.}
+$$
+This morphism is an isomorphism by~\Ref{XIII.1.14}.
+
+Let us show that $\varphi$ is an equivalence. Let $x_1$ be an object
+of~$\overline{\Phi}_1(\overline{X}_1)$ and $G_1$ the maximal subgerbe
+of~$\overline{\Phi}_1$ generated by $x_1$. The morphism
+$$
+\H^0(\overline{X}_2, S\overline{\Phi}_2) \to \H^0(\overline{X}_1,
+h^*(S \overline{\Phi}_2)) =
+\H^0(\overline{X}_1,S\overline{\Phi}_1)
+$$
+is bijective, and there therefore exists a maximal subgerbe $G_2$ of
+$\overline{\Phi}_2$ such that $h^* G_2$ is isomorphic to
+$G_1$. It then suffices to prove that the functor
+$$
+G_2 \to h_* h^* G_2
+$$
+is an equivalence. But, in this form, the question is
+local for the \'etale topology on~$\overline{X}_2$. One may therefore
+assume that $G_2$ is a gerbe of torsors under the group of
+automorphisms of an object of~$G_2$, a case in which the assertion follows
+from~\Ref{XIII.1.14}.
+
+\begin{corollary}
+\label{XIII.1.16}
+The hypotheses are those of~\Ref{XIII.1.14}. If one assumes
+moreover that $F$ is a sheaf of sets (\resp of ind-$\LL$-groups)
+and that $f_* F$ (\resp $\R^1 f_* F$) is constructible, then
+$f_* F$ (\resp $\R^1 f_* F$) is locally constant.
+\end{corollary}
+
+The corollary follows from~\Ref{XIII.1.14} by means of SGA~4
+IX~2.11.
+
+\begin{remark}
+\label{XIII.1.17}
+Let us recall that the condition $f$ locally $0$-acyclic is satisfied
+if $f$ is flat with separable fibers, $X$ and $Y$ locally
+noetherian (SGA~4 XV~4.1), and that the condition $f$ locally
+$1$-aspherical
+% original p. 369
+for $\LL$ is satisfied if $f$ is smooth, $\LL$ being the set
+of prime numbers distinct from the residue
+characteristics of~$S$ (SGA~4 XV~2.1).
+\end{remark}
