@@ -1,0 +1,468 @@
+\section{Descent of morphisms of preschemes}
+\label{VIII.5}
+
+\begin{proposition}
+\label{VIII.5.1}
+Let $g\colon S'\to S$ be a morphism of preschemes.
+\begin{enumerate}
+\item[a)] Suppose that~$g$ is surjective, and that the homomorphism
+$$
+g^*\colon \mathcal{O}_{S}\to g_*(\mathcal{O}_{S'})
+$$
+is injective; then~$g$ is an epimorphism in the category
+of preschemes, and even in the category of ringed
+spaces.
+\item[b)] Suppose that~$g$ is surjective and makes~$S$ a topological
+quotient space of~$S'$. Let~$S''=S'\times_{S}S'$ and
+let~$h\colon S''\to S$ be the structural morphism; consider the
+canonical diagram of homomorphisms:
+$$
+\xymatrix@C=.5cm{\mathcal{O}_{S} \ar[r] &
+g_*(\mathcal{O}_{S'})\ar@<2pt>[r]\ar@<-2pt>[r] &
+h_*(\mathcal{O}_{S''})}\quoi,
+$$
+and suppose this diagram \emph{exact}. Then $g$ is an
+effective epimorphism
+in the category of preschemes (and also in the
+category of ringed spaces), \ie the diagram
+$$
+\xymatrix@C=.5cm{S & S'\ar[l] & S''\ar@<2pt>[l]\ar@<-2pt>[l]}
+$$
+is exact.
+\end{enumerate}
+\end{proposition}
+
+\subsubsection*{Proof} a) One must show that a morphism of ringed
+spaces~$f\colon S\to Z$ is known when one
+knows~$fg$. Now since~$g$ is surjective, one knows
+the set-theoretic map~$f_{0}$ underlying~$f$; it remains to
+determine the homomorphism of sheaves
+of rings~$\mathcal{O}_{Z}\to \mathcal{O}_{S}$, or what amounts to the
+same, the homomorphism
+% original p. 211
+of sheaves of rings
+$$
+u\colon f_{0}^{-1}(\mathcal{O}_{Z})\to \mathcal{O}_{S}
+$$
+defined by~$f$. One already knows the homomorphism
+$$
+(fg)_{0}^{-1}(\mathcal{O}_{Z})=
+g_{0}^{-1}(f_{0}^{-1}(\mathcal{O}_{Z}))\to \mathcal{O}_{S'}
+$$
+defined by~$fg$, or what amounts to the same, one has at one's
+disposal a homomorphism
+$$
+f_{0}^{-1}(\mathcal{O}_{Z})\to
+g_{0*}(\mathcal{O}_{S'})=g_*(\mathcal{O}_{S'})\quoi.
+$$
+One observes at once that the latter is nothing but the composite
+of~$g^*\colon \mathcal{O}_{S}\to g_*(\mathcal{O}_{S'})$ and
+of~$u$, and since $g^*$ is injective, $u$ is known when one
+knows~$g^*u$. [N.B. we have of course not used the fact
+that~$g\colon S'\to S$ is a morphism of preschemes;
+the statement would hold for an arbitrary morphism of ringed
+spaces; the same remark applies to b), both in the
+category of ringed spaces and in the category of
+spaces ringed in local rings. Note also that if~$g$ is a
+morphism of preschemes that is not necessarily surjective, but
+such that~$g^*\colon \mathcal{O}_{S}\to g_*(\mathcal{O}_{S'})$
+is injective, then for two morphisms~$f_{1},f_{2}$ from~$S$ into a
+\emph{scheme}~$Z$ such that~$f_{1}g=f_{2}g$, one has $f_{1}=f_{2}$;
+indeed, if~$I$ is the Ideal on~$S$ which defines the
+subprescheme of~$S$ of coincidences of~$f_{1},f_{2}$
+(inverse image of the diagonal subprescheme of~$Z\times Z$
+under~$(f_{1},f_{2})$), one sees that~$I$ is contained
+in~$\Ker(g^*)$].
+
+b) One must show that for every ringed space~$Z$, the
+following diagram of maps
+$$
+\xymatrix@C=.5cm{\Hom(S,Z)\ar[r] & \Hom(S',Z)\ar@<2pt>[r]\ar@<-2pt>[r] &
+\Hom(S'',Z)}
+$$
+is exact, and that the same holds when~$Z$ is a space
+ringed in local rings and one restricts oneself to homomorphisms
+of spaces ringed in local rings. Since one already knows by a)
+that the first map is injective, it remains to see that
+if~$f'\colon S'\to Z$ is a homomorphism of ringed spaces such
+that~$f'p_{1}=f'p_{2}$,
+% original p. 212
+then~$f'$ is of the form~$fg$, where~$f\colon S\to Z$ is a
+homomorphism of ringed spaces. Since~$g$ is surjective, it is
+then evident that if~$f'$ is a morphism of spaces ringed
+in local rings, the same will hold for~$f$.
+
+From the hypothesis on~$f'$ it follows that the underlying
+set-theoretic map~$f_{0}'$ is constant on the fibers of
+the map~$g_{0}$, hence, since the latter is surjective,
+$f_{0}'$ factors uniquely as~$f_{0}'=f_{0}g_{0}$,
+where~$f_{0}\colon S\to Z$ is a map, necessarily
+continuous since~$g_{0}$ identifies~$S$ with a topological
+quotient space of~$S'$. Now consider the homomorphism
+$$
+f_{0}^{-1}(\mathcal{O}_{Z})\to g_*(\mathcal{O}_{S'})
+$$
+deduced from the homomorphism~$(f_{0}g_{0})^{-1}(\mathcal{O}_{Z})\to
+\mathcal{O}_{S'}$ corresponding
+to~$f'$. The hypothesis~$f'p_{1}=f'p_{2}$ is then interpreted
+as saying that the composites of the preceding homomorphism
+with the two homomorphisms
+$\xymatrix@C=.5cm{g_*(\mathcal{O}_{S'})\ar@<2pt>[r]\ar@<-2pt>[r] &
+h_*(\mathcal{O}_{S''})}$ are the same, hence by
+hypothesis b) it factors through a morphism
+$$
+f_{0}^{-1}(\mathcal{O}_{Z})\to \mathcal{O}_{S}\quoi.
+$$
+The latter defines a morphism of ringed spaces~$f\colon
+S\to Z$, which is the desired morphism.
+
+\begin{theorem}
+\label{VIII.5.2}
+Let $\cal{F}$ be the fibered category of arrows in the
+category~$\Sch$ of preschemes
+\textup{(VI~\Ref{VI.11}.a)}. Then every faithfully flat and
+quasi-compact morphism~$g\colon S'\to S$ is an
+$\cal{F}$-descent morphism (or again, as one says, a descent
+morphism in~$\Sch$).
+\end{theorem}
+
+This therefore means the following: let~$S''=S'\times_{S}S'$, and for two
+preschemes~$X,Y$ over~$S$, consider their inverse
+images~$X',Y'$ over~$S'$ and their inverse images~$X'',Y''$
+over~$S''$, whence a diagram of maps
+$$
+\xymatrix@C=.5cm{\Hom_{S}(X,Y)\ar[r] &
+\Hom_{S'}(X',Y')\ar@<2pt>[r]\ar@<-2pt>[r] & \Hom_{S''}(X'',Y'')}\quoi;
+$$
+with these notations, \Ref{VIII.5.2} means that this diagram is
+exact. Note that it
+% original p. 213
+is not true in general that~$g$ is an effective descent
+morphism, \ie that for every prescheme~$X'$
+over~$S'$, every descent datum on~$X'$ relative
+to~$g\colon S'\to S$ is effective. The question of
+effectiveness, often delicate, will be examined in
+\No \Ref{VIII.7}.
+
+We have seen \cite{VIII.D}, (taking into account that fibered products
+exist in~$\Sch$) that statement~\Ref{VIII.5.2} is equivalent to the following:
+
+\begin{corollary}
+\label{VIII.5.3}
+A faithfully flat and quasi-compact morphism of
+preschemes is a universal effective epimorphism.
+\end{corollary}
+
+Since a faithfully flat and quasi-compact morphism remains such under
+every extension of the base, one is reduced to proving that it is
+an effective epimorphism. One then applies
+criterion~\Ref{VIII.5.1} b), which gives the desired result, taking
+into account~\Ref{VIII.4.3} and~\Ref{VIII.1.7}.
+
+\begin{corollary}
+\label{VIII.5.4}
+Let $g\colon S'\to S$ be a faithfully flat and
+quasi-compact morphism, $f\colon X\to Y$ an~$S$-morphism, $f'\colon X'\to Y'$
+the~$S'$-morphism deduced from it by the change of base~$S'\to
+S$. For~$f$ to be an isomorphism, it is necessary and sufficient that~$f'$
+be one.
+\end{corollary}
+
+Indeed, if $f'$ is an isomorphism, it is also an isomorphism
+for the natural descent structures on~$X',Y'$, and since the
+functor~$X\mto X'$ from~$\Sch_{/S}$ into the category of
+preschemes over~$S'$ endowed with a descent datum
+relative to~$g$ is fully faithful by~\Ref{VIII.5.2},
+the desired conclusion follows.
+
+\begin{corollary}
+\label{VIII.5.5}
+Under the conditions of~\Ref{VIII.5.4}, for~$f$ to be a closed
+immersion (\resp an open immersion, \resp a quasi-compact
+immersion) it is necessary and sufficient that~$f'$ be one.
+\end{corollary}
+
+One may suppose as usual that~$Y=S$, and one has to prove
+only the ``it is sufficient''. Note that the fact that~$X'/Y'$ is endowed
+with a descent datum relative to~$g\colon Y'\to Y$, and
+that the structural morphism~$f'\colon X'\to Y'$ is an immersion,
+hence a monomorphism, implies that the two subobjects of~$Y''$
+that are the inverse images
+% original p. 214
+of~$X'/Y'$ under the one and the other projection of~$S''$ into~$S'$
+are the same. If~$f'$ is a closed immersion, it
+follows by virtue of~\Ref{VIII.1.9} that there exists a
+closed subprescheme $X_{1}$ of~$Y$ whose inverse image
+under~$g\colon Y'\to Y$ is~$X'$. Hence by the uniqueness of the solution
+of a descent problem relative to an
+$\cal{F}$-descent morphism,
+it
+follows that~$X_{1}$ is $Y$-isomorphic to~$X$, hence $f\colon
+X\to Y$ is a closed immersion. One proceeds in the same way for
+an open immersion, using~\Ref{VIII.4.4}. If finally $f'$ is
+a quasi-compact immersion, $f$ is quasi-compact by virtue
+of~\Ref{VIII.3.3}, hence one can apply to the subset~$f(X)$
+of~$Y$ the criterion~\Ref{VIII.4.5}, which proves that~$f(X)$ is
+locally closed since its inverse image~$f'(X')$ in~$Y'$
+is so. Replacing then~$Y$ by an open subset in
+which~$f(X)$ is closed, one is reduced to the case where~$f'$
+is a closed immersion, hence $f$ is one by virtue of what
+precedes.
+
+\begin{corollary}
+\label{VIII.5.6}
+Under the conditions of~\Ref{VIII.5.4}, for~$f$ to be affine, it
+is necessary and sufficient that~$f'$ be so.
+\end{corollary}
+
+One proceeds as in~\Ref{VIII.5.5}, using~\Ref{VIII.2.1}
+(One can also use Serre's cohomological criterion [EGA II
+5.2], which proves~\Ref{VIII.5.6} without using any descent
+technique).
+
+\begin{corollary}
+\label{VIII.5.7}
+Under the conditions of~\Ref{VIII.5.4}, for~$f$ to be integral
+(\resp finite, \resp finite and locally free) it is necessary and sufficient
+that~$f'$ be so.
+\end{corollary}
+
+One has to prove only the ``it is sufficient'', and as usual
+one may suppose $Y=S$, $Y$ affine, and $Y'$ affine. Since
+the hypothesis implies that~$f'$ is affine, the same holds
+for~$f$ by~\Ref{VIII.5.6}, hence~$X$ and consequently~$X'$ are
+affine. Let~$A,A',B,B'=B\otimes_{A}A'$ be the rings
+of~$Y,Y',X,X'$. One has $B=\varinjlim_i B_{i}$, where~$B_{i}$
+runs through the sub-$A$-algebras of~$B$ that are of finite type
+over~$A$, whence $B'=\varinjlim_i B_{i}'$, where
+the~$B_{i}'$ are subalgebras of finite type of the
+$A'$-algebra~$B'$. If $B'$ is integral
+over~$A'$,
+the~$B_{i}'$ are modules of finite type over~$A'$, hence, $A'$
+being faithfully flat over~$A$, the~$B_{i}$ are modules of
+finite type over~$A$, \ie $B$ is integral over~$A$. One sees in the same way
+that if~$B'$ is finite over~$A'$, $B$ is so over~$A$. Same conclusion
+for ``locally free of finite type'', \cf \Ref{VIII.1.11}.
+
+\begin{corollary}
+\label{VIII.5.8}
+Under
+% original p. 215
+the conditions of~\Ref{VIII.5.4}, suppose~$f$ quasi-compact and
+let~$\mathcal{L}$ be an invertible Module on~$X$, and~$\mathcal{L}'$
+its inverse image on~$X'$. For~$\mathcal{L}$ to be ample
+(\resp very ample) relative to~$f$, it is necessary and sufficient
+that~$\cal{L}'$
+be ample (\resp very ample) relative to~$f'$.
+\end{corollary}
+
+One has to prove only the ``it is sufficient''. The hypothesis
+on~$\mathcal{L}$ implies in any case that~$f'$ is separated,
+hence $f$ is separated by~\Ref{VIII.4.8}, and since~$f$ is
+quasi-compact, and~$g\colon Y'\to Y$ is flat, the computation of direct
+images by affine coverings shows that one has isomorphisms
+$$
+g^*(f_*(\mathcal{L}^{\otimes n}))\isomto
+f_*'(\mathcal{L}'^{\otimes n})
+$$
+for every integer~$n$, hence one has an isomorphism
+$$
+g^*(\mathcal{S})\isomto \mathcal{S}'\quoi,
+$$
+where~$\mathcal{S}$ (\resp $\mathcal{S}'$) denotes the quasi-coherent
+graded Algebra on~$Y$ (\resp on~$Y'$) that is the direct sum
+of the~$f_*(\mathcal{L}^{\otimes n})$
+(\resp of the~$f_*'(\mathcal{L}'^{\otimes n})$) for~$n\geq
+0$. Note that for every~$n\geq 0$, the cokernel of the
+canonical homomorphism~$f'^*(\mathcal{S}_{n}')\to \mathcal{L}'^{\otimes n}$
+is the inverse image under~$X'\to X$ of the cokernel
+of~$f^*(\mathcal{S}_{n})\to \mathcal{L}^{\otimes n}$, hence its
+support~$Z_{n}'$ is the inverse image of the support~$Z_{n}$. If
+$\cal{L}'$
+is ample the intersection of the~$Z_{n}'$ is empty, hence, since~$X'\to X$
+is surjective, the intersection of the~$Z_{n}$ is empty, \ie one has a
+canonical morphism
+$$
+j\colon X\to \Proj(\mathcal{S})
+$$
+(EGA~II 3). Moreover, the analogous morphism
+$$
+j'\colon X'\to \Proj(\mathcal{S}')
+$$
+is none other than the one deduced from the preceding one by the
+change of base~$Y'\to Y$ (\loccit). This being so, to say that
+$\mathcal{L}'$ is ample relative to~$f'$ means that~$j'$ is
+an immersion, necessarily quasi-compact moreover,
+since~$f'$ is quasi-compact. Hence by virtue of~\Ref{VIII.5.5} $j$
+is an immersion, \ie $\mathcal{L}$ is ample relative
+to~$f$. --- One proceeds in an entirely analogous way in the case
+of ``very
+% original p. 216
+ample'', restricting oneself above to~$n=1$, and replacing the
+consideration of~$\Proj(\mathcal{S})$ by that of the projective
+bundle~$\mathcal{P}(\mathcal{S}_{1})$ associated
+to~$\mathcal{S}_{1}$.
+
+Recall (EGA~II 5.1.1) that a quasi-compact morphism~$f$ is said to be
+\emph{quasi-affine} if for every affine open set~$U$ in~$Y$,
+$f^{-1}(U)$ is a prescheme isomorphic to an
+open subscheme of an affine scheme. One shows (\loccit)
+that it amounts to the same to say that~$\mathcal{O}_{X}$ is ample (or
+also: very ample) relative to~$f$. Hence~\Ref{VIII.5.8}
+implies:
+
+\begin{corollary}
+\label{VIII.5.9}
+Under the conditions of~\Ref{VIII.5.4}, and supposing~$f$ quasi-compact,
+for~$f$ to be quasi-affine, it is necessary and sufficient that~$f'$ be so.
+\end{corollary}
+
+\begin{remarks}
+\label{VIII.5.10}
+Hironaka's example of a non-projective variety shows that one
+can have a proper morphism~$f\colon X\to Y$ of nonsingular
+algebraic varieties (with~$Y$ projective), such that~$Y$
+is the union of two open sets~$Y_{i}$ such
+that~$X_{i}=X\times_{Y}Y_{i}$ is projective over~$Y_{i}$, without~$f$
+being projective. Hence, setting~$Y'=Y_{1}\amalg Y_{2}$, $Y'$
+is faithfully flat and quasi-compact (and even quasi-finite)
+over~$Y$, $f'\colon X'\to Y'$ is projective, but~$f$ is not
+projective. One must therefore be careful that in order to
+apply~\Ref{VIII.5.8}, and to deduce from the fact that~$f'$ is
+projective the same conclusion for~$f$, one must already have
+on~$X'$ an invertible Module~$\mathcal{L}'$ ample for~$f'$,
+\emph{endowed with a descent datum relative to}~$X'\to X$,
+(which allows one to regard~$\mathcal{L}'$ as the inverse image
+of an invertible Module~$\mathcal{L}$ on~$X$, which will then be ample
+for~$f$ thanks to~\Ref{VIII.5.8}). When~$g\colon S'\to S$
+is finite and locally free, see however~\Ref{VIII.7.7}.
+\end{remarks}
+
+\section[Application to finite and quasi-finite morphisms]{Application to finite and quasi-finite morphisms\protect\footnotemark}
+\label{VIII.6}
+\footnotetext{\Cf EGA IV 18.12 for generalizations to preschemes that are not necessarily locally noetherian}
+
+We are going to prove the following two theorems:
+
+\begin{theorem}
+\label{VIII.6.1}
+Let~$f\colon X\to Y$ be a \emph{proper morphism with finite fibers},
+with~$Y$ locally noetherian. Then~$f$ is finite.
+\end{theorem}
+
+\begin{theorem}
+\label{VIII.6.2}
+Let~$f\colon X\to Y$ be a \emph{quasi-finite} and
+\emph{separated} morphism, with~$Y$ locally noetherian. Then~$f$
+is quasi-affine, and a fortiori quasi-projective.
+\end{theorem}
+
+\begin{remarks}
+\label{VIII.6.3}
+Theorem
+% original p. 217
+\Ref{VIII.6.1} is well known, and due to
+Chevalley in the case of algebraic varieties; one will
+also find a simple proof of it in [EGA III 4],
+using the ``theorem on holomorphic functions''. The
+proof given here does not use this latter
+theorem, but on the other hand uses the theory of descent; we
+give it as a bonus for the reader, since one gets it ``for nothing'' at
+the same time as that of~\Ref{VIII.6.2}. Recall also ([EGA III
+4] or \cite{VIII.1}) that the global form of Zariski's ``Main Theorem'',
+deduced from the ``theorem on holomorphic functions'', asserts
+that if~$f\colon X\to Y$ is quasi-finite and \emph{quasi-projective}, $Y$
+being noetherian, then~$X$ is $Y$-isomorphic to an
+open subprescheme of a
+\emph{finite} $Y$-prescheme~$Z$. The conjunction of the ``Main Theorem'' and
+of~\Ref{VIII.6.2} can therefore be stated as follows:
+\end{remarks}
+
+\begin{corollary}
+\label{VIII.6.4}
+Let~$f\colon X\to Y$ be a quasi-finite and separated morphism,
+with~$Y$ noetherian. Then~$X$ is $Y$-isomorphic to an
+open subprescheme of a finite $Y$-prescheme~$Z$.
+\end{corollary}
+
+Another interesting consequence of~\Ref{VIII.6.2} for the
+theory of descent will be given with~\Ref{VIII.7.9}.
+
+\subsubsection*{Proof of~\Ref{VIII.6.1} and~\Ref{VIII.6.2}}
+We shall admit the following fact, whose proof is
+easy\footnote{\Cf EGA IV 8}:
+
+\begin{lemma}
+\label{VIII.6.5}
+Let~$X$ be a prescheme of finite type over~$Y$ locally
+noetherian, and let~$y\in Y$. For there to exist an open
+neighborhood~$U$ of~$y$ such that~$X|U$ is finite (\resp quasi-affine,
+\resp\ ...) over~$U$, it is necessary and sufficient
+that~$X\times_{Y}\Spec(\mathcal{O}_{y})$ be finite (\resp quasi-affine,
+\resp\ ...) over~$\Spec(\mathcal{O}_{y})$.
+\end{lemma}
+
+Since on the other hand the property for~$f\colon X\to Y$
+of being finite, \resp quasi-affine, is local on~$Y$, one is
+reduced, in order to prove~\Ref{VIII.6.1} and~\Ref{VIII.6.2}, to the case
+where~$Y$ is the spectrum of a local ring, and is a fortiori of
+finite dimension. (N.B. one calls \emph{dimension of a
+prescheme}~$Y$ the sup of the Krull dimensions of its local
+rings). We proceed by induction on~$$
+n=\dim(Y)\quoi,
+$$
+the assertion
+% original p. 218
+being trivial for~$n<0$. We may therefore suppose~$n\geq 0$,
+and the assertion proved for the dimensions~$n'<n$. One may
+again suppose that~$Y$ is the spectrum of a noetherian local
+ring~$A$, of dimension~$n$. Note that the hypotheses
+made in~\Ref{VIII.6.1} and~\Ref{VIII.6.2} are stable under
+change of base (we have already used this in the reduction
+at the beginning), so they will remain true after the change
+of base~$\Spec(\widehat{A})\to \Spec(A)$. Since the latter is
+faithfully flat and quasi-compact,
+statements~\Ref{VIII.5.7} and~\Ref{VIII.5.9} reduce us to the
+case where~$A$ is moreover complete. Using then the fact that every
+noetherian local ring~$B$ over~$A$ that is quasi-finite over~$A$ is finite
+over~$A$, and the fact that~$X$ is separated over~$Y$ and the fiber
+of~$y$ consists of isolated points, one finds a
+decomposition
+$$
+X=X'\amalg X''
+$$
+where~$X'$ is \emph{finite} over~$Y$, and where the fiber of~$X''$
+at~$y$ is empty. If~$X$ is proper over~$Y$, so is~$X''$,
+hence its image in~$Y$ is closed, and since it does not
+contain~$y$, it is empty, hence~$X''=\emptyset$, hence~$X=X'$,
+which shows that~$X$ is finite over~$Y$ and proves~\Ref{VIII.6.1}
+(N.B. the induction hypothesis is useless here). If~$X$ is
+quasi-finite over~$Y$, so is $X''$; now~$X''$ in fact lies over
+the open set~$Y-\{ y\}$
+of~$Y$, \emph{which is of dimension} $<n$. By virtue of the induction
+hypothesis, $X''$ is quasi-affine
+over~$Y-\{ y\}$,
+hence also over~$Y$; the same obviously holds for~$X'$, hence
+also for their sum~$X$, which proves~\Ref{VIII.6.2}.
+
+\begin{remark}
+\label{VIII.6.6}
+Theorems~\Ref{VIII.6.1} and~\Ref{VIII.6.2} remain
+valid if one no longer supposes~$Y$ locally noetherian,
+provided one specifies that~$f$ is supposed to be of finite
+presentation
+(\cf \Ref{VIII.3.6}).
+Indeed, one can still suppose~$Y$ affine, and then one verifies
+without difficulty that the situation~$f\colon X\to Y$ is
+deduced,
+by a change of base~$Y\to Y_{0}$, from a situation~$f_{0}\colon
+X_{0}\to Y_{0}$ satisfying the same hypotheses as~$f$,
+with~$Y_{0}$ \emph{noetherian}. Hence by
+result~\Ref{VIII.6.1} \resp \Ref{VIII.6.2}, $f_{0}$ is finite
+\resp quasi-affine, hence so is~$f$. This kind of
+reasoning is often useful for getting rid of
+noetherian hypotheses,
+% original p. 219
+(which always end up being troublesome in the
+applications).
+\end{remark}

@@ -1,0 +1,590 @@
+\section{Exact functors from one Galois category into another}
+\label{V.6}
+
+\begin{proposition}
+\label{V.6.1}
+Let $\cal{C}$, $\cal{C'}$ be two Galois categories,
+$H\colon \cal{C}\to \cal{C'}$ a covariant functor, $F'$ a fundamental
+functor on~$\cal{C'}$ and $F=F' \circ H$. The following conditions are
+equivalent:
+\begin{enumerate}
+\item[(i)] $H$ is \emph{exact}, \ie left exact and right
+exact.
+\item[(ii)] $H$ is left exact, transforms finite sums into
+finite sums, and epimorphisms into epimorphisms (or again:
+objects $\not\approx \emptyset_{\cal{C}}$ into objects $\not\approx
+\emptyset_{\cal{C'}}$).
+\item[(iii)] $F$ is a fundamental functor on~$\cal{C}$.
+\end{enumerate}
+\end{proposition}
+
+The implication (i)$\To$(ii) is a general fact about
+categories. Moreover the first form given to (ii)
+implies the second, as one sees by noting that if $X$ is an object
+of~$\cal{C}$, then $X$ is $\not\approx \emptyset_{\cal{C}}$ if and only if the
+morphism $X\to e_{\cal{C}}$ is an epimorphism; one will note that
+$F$, being assumed left exact, transforms $e_{\cal{C}}$
+into~$e_{\cal{C'}}$. The second form given to (ii)
+implies~(iii), since $F$, being left exact and hence
+pro-representable, falls under~\Ref{V.5.6}
+criterion~(iii). Finally (iii) implies~(i), as follows from the
+fact that $F$ is exact, and ``conservative'' (\ie satisfies axiom
+(G~6) of~\no \Ref{V.4}).
+
+Let then $\Gamma$ be the fundamental groupoid of~$\cal{C}$, and
+$\Gamma'$ that of~$\cal{C'}$. Thus if
+% original p. 135
+$H$ is exact, then $F' \mto F' \circ H$ is a functor from the
+groupoid~$\Gamma'$ into the groupoid~$\Gamma$, which we shall
+denote by $\tH$:
+$$
+\tH (F')(X)=F' (H(X))
+$$
+which can also be written, with the notation $F(X)=E_X (F)$
+introduced in~\no \Ref{V.6}:
+$$
+E_{H(X)} (F')=E_X (\tH(F')).
+$$
+This last formula shows, taking into account~\Ref{V.5.8}
+or~\Ref{V.4.1}, that the exact functor $H$ is determined (up to
+unique isomorphism) when one knows the
+corresponding functor~$\tH$. Let us fix an~$F'$, and let $F=\tH (F')$;
+then $\tH$ defines a homomorphism from~$\pi_{F'} =\Aut(F')$
+into $\pi_F =\Aut(F)$:
+$$
+\tH\colon \pi_{F'} \to \pi_F \quad (F=\tH (F')=F' \circ H).
+$$
+Moreover the formula above shows (taking into account~\Ref{V.5.8})
+that this homomorphism has the following property: for every
+finite set $E$ on which $\pi_F$ operates continuously, the group
+$\pi_{F'}$ also operates \emph{continuously} by means of
+the preceding homomorphism $\pi_{F'} \to
+\pi_F$. \hbox{Applying} this to the quotients of~$\pi_F$ by its open
+invariant subgroups, one sees that the preceding condition
+also means that the homomorphism under consideration is
+continuous. Conversely,
+let us be given
+an object $F$ of~$\Gamma$, an
+object $F'$ of~$\Gamma'$ and a continuous homomorphism
+$$
+u\colon \pi_{F'} \to \pi_F ,
+$$
+to it there therefore corresponds a functor from~$\cal{C} (\pi)$
+into~$\cal{C}(\pi')$, manifestly exact, hence by virtue
+of~\Ref{V.4.1} there corresponds to it a functor $H$ from~$\cal{C}$ into
+$\cal{C'}$ which is exact, and such that $\tH\colon \pi_{F'} \to \pi_F$
+is precisely~$u$. One can also, instead of a
+homomorphism of groups, start from a \emph{functor}
+$$
+U\colon \Gamma' \to \Gamma
+$$
+which is such that for \emph{every} $F' \in \Gamma'$ (or for \emph{one} $F'
+\in \Gamma'$, which amounts to the same) the corresponding homomorphism
+$\pi_{F'} \to \pi_F$ is continuous: such a functor is isomorphic to
+a functor of the form~$\tH$, where $H\colon \cal{C} \to
+\cal{C'}$ is an exact functor determined up to unique
+isomorphism. Thus:
+
+\begin{corollary}
+\label{V.6.2}
+For
+% original p. 136
+a functor $H\colon \cal{C} \to \cal{C'}$ between Galois categories
+to be exact, it is necessary and sufficient that there exist
+equivalences $\cal{C}(\pi)\to\cal{C}$ and
+$\cal{C'}\to\cal{C}(\pi')$
+which transform the functor $H$ into the functor
+$\cal{C}(\pi)\to\cal{C}(\pi')$ associated with a homomorphism of
+topological groups $\pi'\to\pi$.
+\end{corollary}
+
+\begin{corollary}
+\label{V.6.3}
+Let $\cal{C}$, $\cal{C'}$ be two Galois categories, and
+$\Gamma$, $\Gamma'$ their fundamental groupoids. Then the
+category of exact functors from~$\cal{C}$ into $\cal{C'}$ is
+equivalent to the category of functors $U\colon \Gamma'
+\to \Gamma$ having the following property: for every $F'$ in~$\Gamma'$ (or for \emph{one} $F'$ in~$\Gamma'$, which amounts to the
+same), setting $F=U(F')$, the homomorphism
+$$
+\pi_{F'} =\Aut (F')\to \pi_F =\Aut (F)
+$$
+defined by $U$ is continuous.
+\end{corollary}
+
+Consider the fundamental pro-group $\Pi$ of~$\cal{C}$; then an
+exact functor $H$ transforms it into a pro-group $H(\Pi)$
+of~$\cal{C'}$; we are going to define a homomorphism
+$$
+\Pi' \to H(\Pi)
+$$
+(where $\Pi'$ is the fundamental pro-group of~$\cal{C'}$), by the
+condition that for every object $F'$ of~$\Gamma'$, the corresponding
+homomorphism
+$$
+F' (\Pi')=\pi_{F'} \to F' (H(\Pi))=\pi_F \qquad
+\text{(where $F=F'\circ H=\tH(F')$)}
+$$
+be the natural homomorphism
+$$
+\Aut(F')\to \Aut(F' \circ H).
+$$
+Since the latter is functorial in~$F'$, it indeed defines, by virtue
+of~\Ref{V.5.8}, a homomorphism of pro-objects, and in fact of
+pro-groups, of~$\cal{C'}$. This homomorphism is said to be
+\emph{associated} with the functor~$H$.
+
+Now let $H'$ be a second exact functor, from the
+Galois category $\cal{C'}$ into a
+Galois category~$\cal{C''}$. It is trivial that one has
+$$
+{}^t (H' H)=\tH\,\tH'
+$$
+(N.B. we have here an identity of functors, and not merely a
+canonical isomorphism). One has an analogous transitivity
+property for the associated homomorphisms of the
+fundamental pro-groups.
+
+We
+% original p. 137
+shall now interpret the properties of the exact
+functor $H$ in terms of the corresponding homomorphism
+$$
+u\colon \pi_{F'} \to \pi_{F} \qquad \text{(where $F' =F'\circ H$)}.
+$$
+It is convenient to introduce the notion of a \emph{pointed object}
+of the Galois category $\cal{C}$ (endowed with its fundamental
+functor $F$): it is by definition an object $X$ of~$\cal{C}$
+endowed with an element $a$ of~$F(X)$. It is therefore interpreted
+as a finite set on which $\pi_F$ operates continuously on the
+left, endowed with a point~$a$. Hence the \emph{connected} pointed
+objects of~$\cal{C}$ are identified, by virtue of~\Ref{V.5.3}, with the
+open subgroups of~$\pi_F$. If $U$ and $V$ are two such
+subgroups, corresponding to connected pointed objects
+$X$, $Y$ of~$\cal{C}$, then there exists a pointed homomorphism from
+$X$ into $Y$ if and only if $U\subset V$, and this homomorphism is
+then unique. Of course, the functor $H$ transforms pointed
+objects into pointed objects (since $F=F' \circ H$). Let us note
+on the other hand that a closed subgroup of a group such as $\pi_F$
+is the intersection of the open subgroups that contain it;
+consequently,
+if
+$M$, $N$ are two closed subgroups, then $M\subset N$ if and
+only if every open subgroup that contains $N$ also
+contains~$M$. Thanks to these remarks, one easily proves
+the results that follow:
+
+\begin{proposition}
+\label{V.6.4}
+Let $X$ be a connected pointed object of~$\cal{C}$, associated with
+an open subgroup $U$ of~$\pi_F$. In order that
+$U$
+contain $u(\pi_{F'})$ (\resp the closed invariant subgroup
+generated by~$u(\pi_{F'})$), it is necessary and sufficient that $H(X)$
+admit a pointed section (\resp be completely
+decomposed).
+\end{proposition}
+
+We shall call a \emph{section} --- understood: over the final
+object --- of an object $X$ of a Galois category~$\cal{C}$ a
+morphism from the final object $e_{\cal{C}}$ into~$X$, which amounts
+to giving an element $a$ of~$F(X)$ invariant under
+$\pi_F$; if $X$ is pointed, one says that one has a \emph{pointed
+section} if it is compatible with the pointed structures
+on~$X$ and~$e_{\cal{C}}$, \ie if $a$ is precisely the marked
+object of~$F(X)$. Such a section is therefore unique, and exists if
+and only if the marked object of~$F(X)$ is invariant
+under~$\pi_F$. Finally, an object of a Galois category is said to be
+\emph{completely decomposed}
+if it is isomorphic to a sum of final objects, \ie if $\pi_F$
+operates trivially on $F(X)$ --- a condition evidently
+stronger than the existence of a pointed section, when $X$ is
+pointed. Proposition~\Ref{V.6.4} follows trivially from the
+preceding definitions and remarks.
+
+\begin{corollary}
+\label{V.6.5}
+For
+% original p. 138
+$u$ to be trivial, it is necessary and sufficient that for every object
+$X$ of~$\cal{C}$, $H(X)$ be completely decomposed.
+\end{corollary}
+
+\begin{proposition}
+\label{V.6.6}
+Let $X'$ be a connected pointed object of~${\cal{C}}'$, associated
+with an open subgroup $U'$ of~$\pi_{F'}$. In order that $U'$
+contain~$\Ker u$, it is necessary and sufficient that there exist a
+connected pointed object $X$ of~$\cal{C}$ and a pointed homomorphism
+from the pointed connected component $X'_0$ of~$H(X)$ into~$X'$ (hence
+that $X$ be isomorphic as a pointed object to a quotient of the
+neutral connected component of the inverse image of a pointed object
+of~$\cal{C}$). If $u$ is surjective, the preceding condition
+is also equivalent to the following: $X$ is isomorphic to
+an~$H(X)$, where $X$ is a pointed object of~$\cal{C}$.
+\end{proposition}
+
+(One calls \emph{neutral connected component}
+of a pointed object $X$ of a Galois category~$\cal{C}$
+the unique connected pointed subobject of~$X$; it corresponds to the
+orbit under $\pi_F$ of the marked point of~$F(X)$, by virtue
+of~\Ref{V.5.3}). Since the fact that $U'$ contains $\Ker u$ does not
+depend on the chosen pointing of~$X'$ (because another
+pointing amounts to replacing $U$ by a subgroup
+conjugate to~$U$), one sees:
+
+\begin{corollary}
+\label{V.6.7}
+In order that $U'$ contain~$\Ker u$, it is necessary and sufficient that there exist an
+\hbox{object~$X$} of~$\cal{C}$ (which one may assume connected) and a morphism
+from a connected component of~$H(X)$ into~$X'$. If $u$ is surjective,
+this also means that $X'$ is isomorphic to an object of the
+form~$H(X)$.
+\end{corollary}
+
+\begin{corollary}
+\label{V.6.8}
+In order that $u$ be injective, it is necessary and sufficient that for every object
+$X'$ of~${\cal{C}}'$ there exist an object $X$ of~$\cal{C}$ and a
+homomorphism from a connected component of~$H(X)$ into~$X'$.
+\end{corollary}
+
+\begin{proposition}
+\label{V.6.9}
+The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] The homomorphism $u\colon \pi_{F'} \to \pi_F$ is surjective.
+\item[(ii)] For every connected object $X$ of~$\cal{C}$, $H(X)$ is
+connected.
+\item[(iii)] The functor $H$ is fully faithful.
+\end{enumerate}
+\end{proposition}
+
+This last fact means that for two objects~$X$, $Y$ of~$\cal{C}$,
+the natural map
+$$
+\Hom(X,Y) \to \Hom(H(X),H(Y))
+$$
+is bijective.
+
+\begin{corollary}
+\label{V.6.10}
+For
+% original p. 139
+$u$ to be an isomorphism, it is necessary and sufficient that $H$ be an
+equivalence of categories, or again that the following two conditions
+be satisfied:
+\begin{enumerate}
+\item[a)] for every connected object $X$ of~$\cal{C}$, $H(X)$ is connected
+\item[b)] every object of~$\cal{C}'$ is isomorphic to an object of the
+form~$H(X)$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proposition}
+\label{V.6.11}
+Let $H\colon \cal{C}\to \cal{C}'$ and $H'\colon\cal{C}\to \cal{C}''$
+be exact functors between Galois categories, and $F''$ a
+fundamental functor on~$\cal{C}''$; let us set $F'=F''H'$ and $F=F'H$, and
+consider the associated homomorphisms
+$$
+u'\colon\pi_{F''}\to \pi_{F'}\qquad u\colon\pi_{F'}\to \pi_F.
+$$
+In order that $\Ker u\subset \Im u'$, \ie in order that $uu'$ be
+the trivial homomorphism, it is necessary and sufficient that for every object $X$
+of~$\cal{C}$, $H'(H(X))$ be completely decomposed. In order
+that $\Ker u \supset \Im u' $, it is necessary and sufficient that for every
+connected pointed object $X'$ of~$\cal{C}'$ such that $H'(X')$ admits a
+pointed section, there exist an object~$X$ of~$\cal{C}$ and a
+homomorphism from a connected component of~$H(X)$ into~$X'$.
+\end{proposition}
+
+The first assertion follows from the last statement
+of~\Ref{V.6.4}. The second follows from the conjunction
+of~\Ref{V.6.4} and~\Ref{V.6.6}.
+
+\begin{remark}
+\label{V.6.12}
+It is not true in general, under the conditions
+of~\Ref{V.6.8}, that $X'$ is isomorphic to an object of the form
+$H(X)$. One can show that in order that every connected object (hence every
+object) of~$\cal{C}'$ be isomorphic to an object of the form $H(X)$,
+it is necessary and sufficient that $u$ be an isomorphism of~$\pi_{F'}$ onto a
+subgroup of~$\pi_F$ that is a \emph{direct factor}. In practice, however,
+one directly constructs a homomorphism $\pi_F\to\pi_{F'}$ right inverse
+to~$u$ by means of a suitable exact functor
+from~$\cal{C'}$ into~$\cal{C}$.
+\end{remark}
+
+\begin{proposition}
+\label{V.6.13}
+Let $\cal{C}$ be a Galois category endowed with a fundamental
+functor $F$, $S$ a connected object of~$\cal{C}$, and $\cal{C}'$ the
+category of objects of~$\cal{C}$ over~$S$. Then
+$\cal{C'}$ is a Galois category, and the functor $X\mto
+H(X)=X\times S$ from~$\cal{C}$ into~$\cal{C}'$ is exact. Let $a\in
+F(S)$, and let $F'$ be the functor from~$\cal{C}'$ into the category
+of finite sets defined by
+$$
+F'(X')=\text{inverse image of~$a$ under }F(X')\to F(S).
+$$
+Then one has an isomorphism $F\cong F'\circ H$, and the
+corresponding homomorphism
+$$
+u:\pi_{F'}\to \pi_F
+$$
+% original p. 140
+is an isomorphism of~$\pi_{F'}$ onto the open subgroup $U$ of
+$\pi_{F}$ that is the stabilizer of the marked element $a$ of~$F(X)$.
+\end{proposition}
+
+The proof is left to the reader.
+
+\section{The case of preschemes}
+\label{V.7}
+Let $S$ be a locally noetherian and
+\emph{connected} prescheme, and let
+$$
+a\colon \Spec(\Omega)\to S
+$$
+be a geometric point of~$S$, with values in an
+algebraically closed field $\Omega$. We shall set
+$$
+\cal{C}=\text{category of \'etale coverings of~$S$}
+$$
+and for an object $X$ of~$\cal{C}$, \ie an \'etale covering
+$X$ of~$S$, we set
+$$
+F(X)=\text{set of geometric points of~$X$
+over~$a$.}
+$$
+Thus $F$ becomes a functor on~$\cal{C}$ with values in the
+category of finite sets. Properties (G~1) to
+(G~6) are satisfied: for (G~1), this is contained in the sorites of
+I~\Ref{I.4.6}, (G~2) follows from~\Ref{V.3.4}, (G~3) from~\Ref{V.3.5},
+(G~4) is trivial by definition, (G~5) follows from~\Ref{V.3.5} and
+from the beginning of \No \Ref{V.2}, finally (G~6) is proved in~\Ref{V.3.7}. One
+can therefore apply the results of \No \Ref{V.4}, \Ref{V.5}, \Ref{V.6}. This makes it
+possible in particular to define a pro-object $P$ of~$\cal{C}$
+representing $F$, called the \emph{universal covering of~$S$
+at the point~$a$},
+and a topological group $\pi=\Aut(F)=\Aut^0 P$, called the
+\emph{fundamental group of~$S$ at~$a$},
+and denoted~$\pi_1(S,a)$.
+The functor $F$ then defines an equivalence of the
+category $\cal{C}$ with the category of finite sets
+on which $\pi=\pi_1(S,a)$ operates continuously. This
+equivalence therefore makes it possible to interpret the usual
+operations of projective limits and finite inductive limits on
+coverings (products, fiber products, sums, passage to the
+quotient, etc.) in terms of the analogous operations in
+$\cal{C}(\pi)$, \ie in terms of the obvious operations on
+finite sets on which $\pi$ operates. Let us note moreover, since
+the topological connected components of an \'etale covering
+are also \'etale coverings, that \emph{an \hbox{object $X$} of~$\cal{C}$ is connected in $\cal{C}$ if and only if it is
+topologically connected}; by virtue of~\Ref{V.5.3} this therefore means
+that $\pi_1$ operates transitively on~$F(X)$.
+% original p. 141
+Let us note that in order for an object $X$ of~$\cal{C}$ to be faithfully flat
+and quasi-compact over~$S$ (as it is already flat and
+quasi-compact over~$S$), it is necessary and sufficient that $X\to S$ be surjective,
+\ie be an epimorphism in $\cal{C}$, or again that $X\neq
+\emptyset$. One then concludes from criterion \Ref{V.2.6}~(iii) that~$X$
+\emph{is a principal covering of
+$S$
+with group $G$ if and only if it is a principal homogeneous space
+under $G$ in the category $\cal{C}$}, (as it was
+defined in \No \Ref{V.5}).
+
+If $a'$ is another geometric point of~$S$ (corresponding
+to an algebraically closed field $\Omega'$, which may be
+different from~$\Omega$ and which may even have a
+different characteristic), it defines a fiber functor
+$F'=F_{a'}$ from~$\cal{C}$ into the category of finite sets,
+which is again exact, hence isomorphic to $F=F_a$. Consequently, the
+fundamental groups $\pi_1(S;a)$
+for variable $a$ are isomorphic to one another. If one denotes by
+$\pi_1(S;a,a')$
+the set of isomorphisms (or, what amounts to the same,
+the set of homomorphisms) $F_a\to F_{a'}$ of the associated fiber functors,
+one thus obtains a \emph{groupoid} whose
+set of objects is the set of geometric points
+of~$S$, the fundamental groups being the automorphism
+groups of the objects of the said groupoid. The set
+$\pi_1(S;a',a)$ may be called the \emph{set of classes
+of paths from~$a$ to $a'$}. These classes therefore compose in the obvious way. Finally, one can define a pro-group $\Pi_1^S$
+of~$\cal{C}$, which one may call the \emph{fundamental pro-group
+of}~$S$
+or \emph{local system of fundamental groups on}~$S$,
+defined up to unique isomorphism by the condition that one
+have an isomorphism, functorial in the geometric point $a$ of
+$S$:
+$$
+F_a(\Pi_1^S)=\pi_1(S;a)
+$$
+(\cf remark~\Ref{V.5.10}). In particular, if $s$ is an ordinary
+point of~$S$, the fiber of~$G$ at~$s$ is a pro-group over~$\kres(s)$,
+a projective limit of finite \'etale groups over~$\kres(s)$; one could
+call this pro-group \emph{the fundamental group of~$S$ at the
+ordinary point $s$ of~$S$}, and denote it $\pi_1(S,s)$. By definition, these
+points with values in an algebraically closed extension
+$\Omega$ of~$\kres(s)$ are the elements of~$\pi_1(S;a)$, where
+$a$ is the geometric point of~$S$ defined by the said
+extension. In particular, (taking for $S$ the spectrum of a field)
+to every field $k$ there is associated canonically and functorially
+a pro-group over~$k$, which one could denote $\pi_1(k)$, a
+projective limit of finite \'etale groups over~$k$, and whose points
+in an algebraically closed extension $\Omega$ of~$k$
+are identified
+% original p. 142
+with the elements of the topological Galois group of~$\bar{k}/k$,
+where $\bar{k}$ is the Galois closure of~$k$ in $\Omega$
+(\cf \Ref{V.8.1}). This group $\pi_1(k)$ does not yet seem to have
+attracted the attention of algebraists.
+
+Now let
+$$
+f\colon S'\to S
+$$
+be a morphism from one connected locally noetherian prescheme
+into another, let $a'$ be a geometric point of~$S'$ and let
+$a=f(a')$ be its direct image in $S$. Then the ``inverse
+image'' functor induces a functor from the category $\cal{C}(S)$
+of \'etale coverings of~$S$ into the category
+$\cal{C}(S')$ of \'etale coverings of~$S'$:
+$$
+f^\bbullet:\cal{C}(S)\to \cal{C}(S')
+$$
+One has moreover an isomorphism of functors
+$$
+F_a\cong F_{a'}\circ f^\bbullet,
+$$
+so that $f^\bbullet$ is an \emph{exact} functor, to which
+the results of \No \Ref{V.6} apply. In particular one has a
+canonical homomorphism
+$$
+u=\pi_1(f;a'):\pi_1(S',a')\to \pi_1(S;a) \qquad (a'=f(a))
+$$
+which makes it possible to reconstruct the inverse image functor, as an
+operation of restriction of the groups of operators. The
+properties of the functor $f^\bbullet$ are therefore expressed in a
+simple way by the properties of the associated homomorphism of
+groups, as was made explicit in
+\No \Ref{V.6}. If in particular $S'$ is an \'etale covering of~$S$,
+then the homomorphism $u$ is an isomorphism of~$\pi_1(S',a')$ onto the
+open subgroup of~$\pi_1(S,a)$ that defines the pointed connected
+\'etale covering $S'$ of~$S$ (\ie the stabilizer~$U$
+of~$a'\in F_a(S')$ in $\pi_1(S;A)$).
+
+If one wishes to interpret the homomorphisms $\pi_1(f;a')$ for
+a variable geometric point $a'$, one must, in accordance
+with what was said in \No \Ref{V.6}, consider a
+homomorphism
+$$
+\Pi_1(f):\Pi_1^{S'}\to f^\bbullet(\Pi_1^S)
+$$
+of pro-groups over~$S$, and take the corresponding homomorphism for
+the geometric fibers.
+
+\section{The case of a normal base prescheme}
+\label{V.8}
+% original p. 143
+\begin{proposition}
+\label{V.8.1}
+Let $S$ be the spectrum of a field $k$, and let $\Omega$ be an
+algebraically closed extension of~$k$, defining a geometric
+point $a$ of~$S$ with values in $\Omega$. Let
+$\bar{k}$ be the separable closure of~$k$ in $\Omega$. Then there
+exists a canonical isomorphism of~$\pi_1(S,a)$ onto the topological
+Galois group of~$\bar{k}/k$.
+\end{proposition}
+
+Let $k'$ be the algebraic closure of~$k$ in $\Omega$; there
+therefore corresponds to it a geometric point~$b$ of~$S$, with
+values in $k'$. The natural homomorphism of functors $F_b\to F_a$
+is evidently an isomorphism, since a $k$-homomorphism of a
+finite separable extension of~$k$ into $\Omega$
+necessarily takes its values in $\bar{k}$ and a fortiori in
+$k'$. On the other hand, the group $\pi'$ of $k$-automorphisms of~$k'/k$
+operates in the obvious way on~$F_b$, whence a
+homomorphism $\pi'\to \Aut(F_b)\isomto \Aut(F_a)=\pi_1(S;a)$.
+On the other hand, it is well known that the natural homomorphism from~$\pi'$
+into the group $\pi$ of automorphisms of~$\bar{k}/k$ is an
+isomorphism. One thus obtains a canonical homomorphism $\pi\to
+\pi_1(S;a)$; it remains to show that it is an isomorphism. Indeed,
+this homomorphism is injective, since an element of the kernel is an
+automorphism of~$\bar{k}/k$ which induces the identity on every
+finite separable subextension, hence is trivial. This
+homomorphism is surjective, since if $X$ is a \emph{connected}
+\'etale covering of~$S$, hence defined by a finite separable
+\emph{extension}~$L/k$, then $\pi$ is transitive
+on the set of $k$-homomorphisms of~$L$ into $k'$, as is well
+known.
+
+\begin{proposition}
+\label{V.8.2}
+Let $S$ be a connected, locally noetherian and
+normal prescheme, $K=\kres(s)$ its function field $=$ the residue field at
+its generic point $s$, and $\Omega$ an
+algebraically closed extension of~$K$, defining a geometric
+point $a'$ of~$S'=\Spec(K)$ and a geometric
+point $a$ of~$S$. Then the homomorphism
+$\pi_1(S';a')\to\pi_1(S;a)$ is surjective. When one identifies the
+first group with the Galois group of the separable closure
+$\bar{K}$ of~$K$ in~$\Omega$ (\cf \Ref{V.8.1}), then the kernel of
+the preceding homomorphism corresponds by Galois theory
+to the subextension of~$\bar{K}/K$ composed of the
+finite extensions of~$K$ in $\Omega$ which are unramified over~$S$.
+\end{proposition}
+
+The first assertion means that the inverse image on~$S'$ of a
+connected \'etale covering $X$ of~$S$ is connected, \ie that $X$
+is integral; this is none other than (I~\Ref{I.10.1}). The kernel of
+the preceding homomorphism is then interpreted as
+consisting of the automorphisms of~$\bar{K}/K$ which induce
+the identity on the sets~$F_a(X)$,
+% original p. 144
+where one may assume the \'etale covering $X$ of~$S$
+connected. But this means that this automorphism induces
+the identity on the finite subextensions of~$\bar{K}/K$ which are
+unramified over~$S$, which proves the last assertion.
+
+\begin{remarkstar}
+Thanks to this interpretation of the fundamental group of the
+normal prescheme $S$ in terms of the usual Galois theory,
+the definition had been known in this case for a
+long time.
+\end{remarkstar}
+
+\section{The case of non-connected preschemes: multi-Galois
+categories}
+\label{V.9}
+
+Let $S$ be a locally noetherian prescheme, and let
+$(S_i)_{i\in I}$ be its connected components. Then the category
+$\cal{C}(S)$ of \'etale coverings of~$S$ is equivalent
+to the product category of the $\cal{C}(S_i)$, which
+are interpreted in terms of the fundamental groups of the $S_i$, once
+a geometric point has been chosen in each $S_i$. In the
+application of descent theory for \'etale morphisms, it is
+sometimes inconvenient to choose, for every $S_i$,
+a geometric point of~$S_i$. It is then more convenient
+to resort to the natural generalization of~\Ref{V.5.8}
+in order to interpret $\cal{C}(S)$ as a category of functors
+on the groupoid of geometric points of~$S$,
+considered as the sum of the groupoids corresponding to the
+connected components of~$S$; the functors in question are the
+functors with values in the category of finite sets
+satisfying the continuity property analogous to
+the one invoked in~\Ref{V.5.8}. In practice, one will have a family
+$(a_t)_{t\in E}$ of geometric points of~$S$ such that
+every connected component $S_i$ of~$S$ contains at least one of them, and one
+can then, as in~\Ref{V.5.10}, replace the groupoid of
+all geometric points of~$S$ by the
+analogous groupoid whose underlying set is~$E$. Of course, these
+considerations ought to fit into
+general definitions concerning the categories which are
+equivalent to product categories of categories
+of the form $\cal{C}(\pi)$, and which one may call
+\emph{multi-Galois categories}.
+We shall leave the details to the reader.

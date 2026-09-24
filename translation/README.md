@@ -8,18 +8,36 @@ Do not add the French source to the repository. See [`../COPYRIGHT.md`](../COPYR
 
 ## SGA 1
 
-| Exposé | Directory | Coverage | Build |
+Source: SMF recomposition, [arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2).
+All of SGA 1 is translated. The front matter and Exposés IV, V, VIII–XIII
+share the macros in [`SGA1/sga1-en.sty`](SGA1/sga1-en.sty); I, II, III
+and VI keep their own wrappers.
+
+| Part | Directory | Coverage | Build |
 | --- | --- | --- | --- |
-| I — Étale morphisms | [`SGA1/ExposeI/`](SGA1/ExposeI/) | Full exposé draft | `make -C SGA1/ExposeI` |
-| II — Smooth morphisms: generalities, differential properties | [`SGA1/ExposeII/`](SGA1/ExposeII/) | Full exposé draft | `make -C SGA1/ExposeII` |
-| III — Smooth morphisms: extension properties | [`SGA1/ExposeIII/`](SGA1/ExposeIII/) | Full exposé draft | `make -C SGA1/ExposeIII` |
-| VI — Fibered categories and descent | [`SGA1/ExposeVI/`](SGA1/ExposeVI/) | Full exposé draft | `make -C SGA1/ExposeVI` |
+| Preface, Introduction, Foreword | [`SGA1/Introduction/`](SGA1/Introduction/) | Full draft | `make -C SGA1/Introduction` |
+| I — Étale morphisms | [`SGA1/ExposeI/`](SGA1/ExposeI/) | Full draft, reviewed | `make -C SGA1/ExposeI` |
+| II — Smooth morphisms: generalities, differential properties | [`SGA1/ExposeII/`](SGA1/ExposeII/) | Full draft, reviewed | `make -C SGA1/ExposeII` |
+| III — Smooth morphisms: extension properties | [`SGA1/ExposeIII/`](SGA1/ExposeIII/) | Full draft, reviewed | `make -C SGA1/ExposeIII` |
+| IV — Flat morphisms | [`SGA1/ExposeIV/`](SGA1/ExposeIV/) | Full draft | `make -C SGA1/ExposeIV` |
+| V — The fundamental group: generalities | [`SGA1/ExposeV/`](SGA1/ExposeV/) | Full draft | `make -C SGA1/ExposeV` |
+| VI — Fibered categories and descent | [`SGA1/ExposeVI/`](SGA1/ExposeVI/) | Full draft, reviewed | `make -C SGA1/ExposeVI` |
+| VII | — | Does not exist | |
+| VIII — Faithfully flat descent | [`SGA1/ExposeVIII/`](SGA1/ExposeVIII/) | Full draft | `make -C SGA1/ExposeVIII` |
+| IX — Descent of étale morphisms. Application to the fundamental group | [`SGA1/ExposeIX/`](SGA1/ExposeIX/) | Full draft | `make -C SGA1/ExposeIX` |
+| X — Theory of specialization of the fundamental group | [`SGA1/ExposeX/`](SGA1/ExposeX/) | Full draft | `make -C SGA1/ExposeX` |
+| XI — Examples and complements | [`SGA1/ExposeXI/`](SGA1/ExposeXI/) | Full draft | `make -C SGA1/ExposeXI` |
+| XII — Algebraic geometry and analytic geometry (M. Raynaud) | [`SGA1/ExposeXII/`](SGA1/ExposeXII/) | Full draft | `make -C SGA1/ExposeXII` |
+| XIII — Cohomological properness of sheaves of sets and of sheaves of non-commutative groups (M. Raynaud) | [`SGA1/ExposeXIII/`](SGA1/ExposeXIII/) | Full draft | `make -C SGA1/ExposeXIII` |
+
+"Reviewed": the earlier English was compared sentence by sentence with
+the corrected French and corrected (2026-09-24). The new exposés were
+translated chunk by chunk, and each chunk was re-checked against the
+French by a second pass. Each exposé's README lists the apparent
+misprints of the French source that the translation retains.
 
 ```bash
-make -C SGA1/ExposeI           # latexmk -pdf → SGA1-I.pdf
-make -C SGA1/ExposeII          # latexmk -pdf → SGA1-II.pdf
-make -C SGA1/ExposeIII         # latexmk -pdf → SGA1-III.pdf
-make -C SGA1/ExposeVI          # latexmk -pdf → SGA1-VI.pdf
+make -C SGA1/ExposeIV           # latexmk -pdf → SGA1-IV.pdf
 make -C SGA1/ExposeIII clean
 ```
 
@@ -57,4 +75,4 @@ From the repository root, `make tex` builds all translated exposés.
 
 Needs a reasonably complete TeX Live (`amsart`, `amsbook`, `xy`, `mathtools`, …).
 
-New exposés go in `SGA<n>/Expose<Roman>/` with a `Makefile` like Exposé I or VI.
+New exposés go in `SGA<n>/Expose<Roman>/` with a `Makefile` like the existing ones.

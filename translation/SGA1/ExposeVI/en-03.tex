@@ -1,0 +1,541 @@
+\section{Cloven categories over~$\cal{E}$}
+\label{VI.7}
+
+\begin{definition}
+\label{VI.7.1} Let $\cal{F}$ be a category over~$\cal{E}$. One
+calls \emph{cleavage}
+of~$\cal{F}$ over~$\cal{E}$ a function which attaches to every
+$f\in\Fl(\cal{E})$ an inverse image functor for $f$ in $\cal{F}$,
+namely~$f^*$. The cleavage is said to be \emph{normalized}
+if $f=\id_S$ implies $f^*=\id_{\cal{F}_S}$. One calls
+\emph{cloven category} (\resp \emph{normalized cloven
+category})
+a category $\cal{F}$ over~$\cal{E}$ equipped with a cleavage
+(\resp with a normalized cleavage).
+\end{definition}
+
+It is clear that $\cal{F}$ admits a cleavage if and only if
+$\cal{F}$ is prefibered over~$\cal{E}$, and then $\cal{F}$
+admits a normalized cleavage. The set of cleavages on~$\cal{F}$
+is in bijective correspondence with the set of subsets $K$ of
+$\Fl(\cal{F})$ satisfying the following conditions:
+\begin{enumerate}
+\item[a)] The $\alpha\in K$ are cartesian morphisms.
+\item[b)] For every morphism $f\colon T\to S$ in $\cal{E}$ and every
+$\xi\in\Ob(\cal{F}_S)$, there exists a unique $f$-morphism in $K$, with
+target $\xi$.
+\end{enumerate}
+
+For the cleavage defined by $K$ to be normalized, it is necessary and
+sufficient that $K$ satisfy in addition the condition
+\begin{enumerate}
+\item[c)] The identity morphisms in $\cal{F}$ belong
+to~$K$.
+\end{enumerate}
+
+% original p. 171
+The morphisms that are elements of~$K$ may be called the
+\emph{``transport morphisms''}
+for the cleavage under consideration.
+
+The notion of isomorphism of cloven categories over~$\cal{E}$
+is clear. More generally, one may define the
+morphisms of cloven $\cal{E}$-categories as the functors
+of $\cal{E}$-categories $\cal{F}\to \cal{G}$ which send
+transport morphisms to transport morphisms. (These are in
+particular cartesian functors). In this way the
+cloven categories over~$\cal{E}$ are the objects of a
+category, the \emph{category of cloven categories
+over} $\cal{E}$. The reader will spell out the existence of products,
+related to the fact that if a category over~$\cal{E}$ is a product of
+categories $\cal{F}_i$ over~$\cal{E}$ each equipped with a cleavage,
+then $\cal{F}$ is equipped with a corresponding natural cleavage. One
+also leaves to the reader to spell out the notion of change of base
+in cloven categories.
+
+We shall denote by $\alpha_f(\xi)$ the canonical morphism
+$$
+\alpha_f(\xi)\colon f^*(\xi)\to\xi.
+$$
+It is, as has been said, functorial in $\xi$, \ie one has a functorial
+homomorphism
+$$
+\alpha_f\colon i_Tf^*\to i_S,
+$$
+where for every $S\in\Ob(\cal{E})$, $i_S$ denotes the inclusion
+functor
+$$
+i_S\colon\cal{F}_S\to \cal{F}
+$$
+
+Consider now morphisms
+$$
+f\colon T\to S\quad\text{ and }\quad g\colon U\to T
+$$
+in $\cal{E}$, and let $\xi\in\Ob(\cal{F}_S)$, there then exists a
+unique $U$-morphism
+$$
+c_{f,g}(\xi)\colon g^*f^*(\xi)\to (fg)^*(\xi)
+$$
+making
+% original p. 172
+the diagram commutative
+$$
+\xymatrix{
+f^*(\xi) \ar[d]_{\alpha_f(\xi)} & & \ar[ll]_{\alpha_g(f^*(\xi))}
+g^*(f^*(\xi)) \ar[d]^{c_{f,g}(\xi)} \\
+\xi & & \ar[ll]^{\alpha_{fg}(\xi)} (fg)^*(\xi) }
+$$
+(by virtue of the definition of~$(fg)^*(\xi)$). For variable $\xi$,
+this homomorphism is functorial, {i.e.}: one has a homomorphism
+$$
+c_{f,g}\colon g^*f^*\to (fg)^*
+$$
+of functors $\cal{F}_S\to\cal{F}_U$. Let us note at once:
+\begin{proposition}
+\label{VI.7.2} For the cloven category $\cal{F}$
+over~$\cal{E}$ to be fibered, it is necessary and sufficient that the $c_{f,g}$
+be isomorphisms.
+\end{proposition}
+
+One concludes from this, taking for $f$ an isomorphism, for $g$ its inverse,
+and considering the isomorphisms $c_{f,g}$ and $c_{g,f}$:
+\begin{corollary}
+\label{VI.7.3} If $\cal{F}$ is a \emph{fibered}
+cloven category over~$\cal{E}$, then for every isomorphism $f\colon T\to
+S$ in $\cal{E}$, $f^*$ is an equivalence of categories
+$\cal{F}_S\to \cal{F}_T$.
+\end{corollary}
+
+\begin{proposition}
+\label{VI.7.4} Let $\cal{F}$ be a cloven category over~$\cal{E}$.
+One has
+
+$\qquad\qquad A)\qquad
+\left\{\begin{array}{ccc}c_{f,\id_T}(\xi)&=&\alpha_{\id_T}(f^*(\xi))\\
+c_{\id_S,f}(\xi)&=&f^*(\alpha_{\id_S}(\xi))
+\end{array}\right.$
+
+\smallskip
+$\qquad\qquad B)\qquad c_{f,gh}(\xi)\cdot
+c_{g,h}(f^*(\xi))=c_{fg,h}(\xi)\cdot h^*(c_{f,g}(\xi))$
+
+\noindent(In
+% original p. 173
+these formulas, $f,g,h$ denote morphisms
+$$
+V\to U\to T\to S
+$$
+and $\xi$ an object of~$\cal{F}_S$).
+\end{proposition}
+
+The first and second relations, in the case of a normalized
+cleavage, take the simpler form
+\begin{equation*}
+\label{eq:VI.7.A'}\quad A')\qquad {c_{f,\id_T}=\id_{f^*},\quad
+c_{\id_S,f}=\id_{f^*}.\qquad\qquad\qquad\qquad\qquad\qquad}
+\end{equation*}
+
+As for the third, it is visualized by the
+commutativity of the diagram
+\begin{equation*}
+\tag{$D$}
+\label{eq:VI.7.D}
+\begin{split}
+\xymatrix@C=2.2cm{
+h^*g^*f^*(\xi) \ar[r]^-{c_{g,h}(f^*(\xi))} \ar[d]_{h^*(c_{f,g}(\xi))}
+& (gh)^*(f^*(\xi)) \ar[d]^{c_{f,gh}(\xi)} \\
+h^*(fg)^*(\xi) \ar[r]_-{c_{fg,h}(\xi)} & (fgh)^*(\xi) }
+\end{split}
+\end{equation*}
+In the case of fibered
+categories
+(where the $c_{f,g}$ are isomorphisms), this commutativity
+can be expressed intuitively by the fact that \emph{the successive
+use of isomorphisms of the form $c_{f,g}$ does not lead
+to ``contradictory identifications''.} One can equally
+write this formula without argument $\xi$, by using the
+convolution product of homomorphisms of functors:
+$$
+c_{fg,h}\circ (h^**c_{f,g})=c_{f,gh}\circ(c_{g,h}*f^*).
+$$
+
+The proof of the first two formulas~\ref{VI.7.4} is
+trivial; let us sketch that of the third. For this,
+consider, in addition to the square $(D)$, the square
+of homomorphisms:
+\begin{equation*}
+\tag{$D'$}
+\label{eq:VI.7.D'}
+\begin{split}
+\xymatrix@C=2cm{
+g^*f^*(\xi) \ar[r]^-{\alpha_g(f^*(\xi))}
+\ar[d]_{c_{f,g}(\xi)} & f^*(\xi) \ar[d]^{\alpha_f(\xi)} \\
+(fg)^*(\xi) \ar[r]_-{\alpha_{fg}(\xi)} & \xi }
+\end{split}
+\end{equation*}
+which
+% original p. 174
+is commutative by definition of
+$c_{f,g}(\xi)$. Consider the diagram obtained by joining the
+vertices of~$(D)$ to the corresponding vertices of~$(D')$ by the
+homomorphisms of the form $\alpha$:
+$$
+\begin{array}{ll}
+\alpha_h(g^*f^*(\xi)),&\alpha_{gh}(f^*(\xi))\\
+\alpha_h((fg)^*(\xi)),&\alpha_{fgh}(\xi).
+\end{array}
+$$
+The four lateral faces of the cube thus obtained are likewise
+commutative: for the left-hand one, this comes from the fact that the
+left-hand column of~$(D)$ is deduced from the left-hand column of~$(D')$
+by applying~$h$, and that $\alpha_h$ is a functorial
+homomorphism; for the other three, it is nothing other than the
+definition of the operations $c$ of the three remaining sides
+of~$(D)$. Thus the five faces of the cube other than the
+top face are commutative. It follows that the two
+$(fgh)$-morphisms $h^*g^*f^*(\xi)\to(fgh)^*(\xi)$ defined by
+$(D)$ have the same composite with $\alpha_{fgh}(\xi)\colon
+(fgh)^*(\xi)\to\xi$, hence they are equal by definition of
+$(fgh)^*$.
+
+Let us restrict ourselves in what follows to \emph{normalized}
+cloven categories. Such a category gives rise to the
+following objects:
+\begin{enumerate}
+\item[a)] A map $S\mto \cal{F}_S$ from~$\Ob(\cal{E})$ to
+$\Cat$.
+\item[b)] A map $f\mto f^*$, associating to every
+$f\in\Fl(\cal{E})$, with source $T$ and target $S$,
+a functor $f^*\colon \cal{F}_S\to\cal{F}_T$.
+\item[c)] A map $(f,g)\mto c_{f,g}$, associating to every
+pair of arrows $(f,g)$ of~$\cal{E}$, a functorial
+homomorphism $c_{f,g}\colon g^*f^*\to (fg)^*$.
+\end{enumerate}
+
+Moreover these data satisfy the conditions expressed in
+the formulas $A')$ and~$B)$ given above. (N.B. If one had not
+restricted oneself to the case of a normalized cleavage, it would have
+been necessary to introduce an additional object, namely a function
+$S\mto \alpha_S$ which associates to every object $S$ of~$\cal{E}$ a
+functorial homomorphism $\alpha_S\colon (\id_S)^*\to
+\id_{\cal{F}_S}$; the condition $A')$ would then be replaced by the
+condition $A)$).
+
+% original p. 175
+We shall now show how one can reconstruct (up to
+unique isomorphism) the normalized cloven
+category $\cal{F}$ over~$\cal{E}$ with the help of the preceding
+objects.
+
+\section[Cloven category defined by a pseudofunctor]{Cloven category defined by a pseudofunctor
+$\cal{E}^\circ\to\Cat$}
+\label{VI.8}
+
+Let us call, for brevity, a \emph{pseudofunctor} from~$\cal{E}^\circ$
+to $\Cat$ (one should say, a \emph{normalized} pseudofunctor),
+a set of data a), b), c) as above, satisfying the
+conditions $A')$ and $B)$. In the preceding no., we
+associated, to a normalized cloven category
+over~$\cal{E}$, a pseudofunctor $\cal{E}^\circ\to\Cat$; here we
+shall indicate the inverse construction. We shall leave to the reader the
+verification of most of the details, as well as of the fact that
+these constructions are indeed ``inverse'' to one another. More
+precisely, one should consider the
+pseudofunctors $\cal{E}^\circ\to\Cat$ as the objects of a
+new category, and show that our constructions
+furnish equivalences, quasi-inverse to one another,
+between the latter and the category of
+cloven categories over~$\cal{E}$, defined in the preceding
+no.
+
+One sets
+$$
+\cal{F}_\circ=\underset{S\in\Ob(\cal{E})}\coprod
+\Ob(\cal{F}(S)),
+$$
+the sum of the sets
+$\Ob(\cal{F}(S))$
+(N.B. we shall write here $\cal{F}(S)$ and not $\cal{F}_S$ for the value at
+the object $S$ of~$\cal{E}$ of the given pseudofunctor, to avoid
+confusions of notation in what follows). One thus has an obvious
+map:
+$$
+p_\circ\colon\cal{F}_\circ\to\Ob\cal{E}.
+$$
+Let
+$$
+\overline{\xi}
+=(S,\xi),\quad \overline{\eta}=(T,\eta)\qquad\qquad
+\text{(with $\xi\in\Ob\cal{F}(S)$, $\eta\in\Ob\cal{F}(T)$)}
+$$
+be two elements of~$\cal{F}_\circ$, and let $f\in\Hom(T,S)$, one
+will set
+$$
+h_f(\overline{\eta},\overline{\xi})=\Hom_{\cal{F}(T)}(\eta,f^*(\xi)).
+$$
+% original p. 176
+If moreover one has a morphism $g\colon U\to T$ in $\cal{E}$, and a
+$\zeta\in\Ob\cal{F}(U)$, one defines a map, denoted
+$(u,v)\mto u\circ v$:
+$$
+h_f(\overline{\eta},\overline{\xi})\times
+h_g(\overline{\zeta},\overline{\eta})\to
+h_{fg}(\overline{\zeta},\overline{\xi}),
+$$
+\ie a map
+$$
+\Hom_{\cal{F}(T)}(\eta,f^*(\xi))\times\Hom_{\cal{F}(U)}(\zeta,g^*(\eta))
+\to \Hom_{\cal{F}(U)}(\zeta,(fg)^*(\xi)),
+$$
+by the formula
+$$
+u\circ v=c_{f,g}(\xi)\cdot g^*(u)\cdot v,
+$$
+\ie $u\circ v$ is the composite of the sequence
+$$
+\zeta\lto{u}
+g^*(\eta)\lto{g^*(u)}
+g^*f^*(\xi)\lto{c_{f,g}(\xi)} (fg)^*(\xi).
+$$
+On the other hand one will set
+$$
+h(\overline{\eta},\overline{\xi})=\underset{f\in\Hom(T,S)}\coprod
+h_f(\overline{\eta},\overline{\xi}),
+$$
+and the preceding pairings define
+pairings
+$$
+h(\overline{\eta},\overline{\xi})\times
+h(\overline{\zeta},\overline{\eta})\to
+h(\overline{\zeta},\overline{\xi}),
+$$
+while the definition of the $h(\overline{\eta},\overline{\xi})$
+implies an obvious map:
+$$
+p_{\overline{\eta},\overline{\xi}}\colon
+h(\overline{\eta},\overline{\xi})\to \Hom(T,S).
+$$
+This being said, one verifies the following points:
+\begin{enumerate}
+\item[1)] The composition between elements of the
+$h(\overline{\eta},\overline{\xi})$
+is \emph{associative}.
+\item[2)]
+% original p. 177
+For every $\overline{\xi}=(\xi,S)$ in $\cal{F}_\circ$,
+consider the identity element
+of
+$$
+h_{\id_S}(\overline{\xi},\overline{\xi})=
+\Hom_{\cal{F}(S)}(\id_S^*(\xi),\xi)=\Hom_{\cal{F}(S)}(\xi,\xi),
+$$
+and its image in $h(\overline{\xi},\overline{\xi})$. This object is
+a \emph{unit} on the left and on the right for the composition
+between elements of the $h(\overline{\eta},\overline{\xi})$.
+
+This already shows that \emph{one obtains a category}
+$\cal{F}$, by setting
+$$
+\Ob\cal{F}=\cal{F}_\circ,\quad \Fl{\cal{F}}=
+\underset{\overline{\xi},\overline{\eta}\in\cal{F}_\circ}
+\coprod h(\overline{\eta},\overline{\xi}).
+$$
+(N.B. one cannot simply take for $\Fl\cal{F}$ the
+\emph{union} of the sets $h(\overline{\eta},\overline{\xi})$,
+for the latter are not necessarily disjoint). Moreover:
+\item[3)] The maps $p_\circ\colon \Ob\cal{F}\to\Ob\cal{E}$ and
+$p_1=(p_{\overline{\eta},\overline{\xi}})\colon\Fl\cal{F}\to\Fl{\cal{E}}$
+define a \emph{functor} $p\colon\cal{F}\to\cal{E}$. In
+this way, $\cal{F}$ becomes a category over~$\cal{E}$, and
+moreover the obvious map
+$h_f(\overline{\eta},\overline{\xi})\to\Hom(\overline{\eta},\overline{\xi})$
+induces a \emph{bijection}
+$$
+h_f(\overline{\eta},\overline{\xi})\isomto
+\Hom_f(\overline{\eta},\overline{\xi}).
+$$
+\item[4)] The obvious maps
+$$ \Ob\cal{F}(S)\to\cal{F}_\circ=\Ob\cal{F},\qquad \Fl\cal{F}(S)\to
+\Fl\cal{F},
+$$
+where the second is defined by the obvious
+maps
+$$
+\Hom_{\cal{F}(S)}(\xi,\xi')=
+h_{\id_S}(\overline{\xi},\overline{\xi}')\to
+\Hom(\overline{\xi},\overline{\xi}')
+$$
+define an \emph{isomorphism}
+$$
+i_S \colon \cal{F}(S)\isomto\cal{F}_S.
+$$
+\item[5)] For every object $\overline{\xi}=(S,\xi)$ of~$\cal{F}$, and
+every morphism $f\colon T\to S$ of~$\cal{E}$, consider
+% original p. 178
+the element $\overline{\eta}=(T,\eta)$ of~$\cal{F}_T$, with
+$\eta=f^*(\xi)$, and the element $\alpha_f(\xi)$ of
+$\Hom(\overline{\eta},\overline{\xi})$, image of~$\id_{f^*(\xi)}$ by
+the morphism
+$\Hom_{\cal{F}(T)}(f^*(\xi),f^*(\xi))=h_f(\overline{\eta},\overline{\xi})
+\to \Hom_f(\overline{\eta},\overline{\xi})$. \emph{This element
+is cartesian, and it is the identity in $\overline{\xi}$ if}
+$f=\id_S$, in other words, the set of the $\alpha_f(\xi)$
+defines a \emph{normalized cleavage of~$\cal{F}$ over}
+$\cal{E}$. Moreover, by construction, one has commutativity in the
+diagram of functors
+$$
+\xymatrix{
+\cal{F}(S) \ar[r]^{f^*} \ar[d]_{i_S} & \cal{F}(T) \ar[d]^{i_T} \\
+\cal{F}_S \ar[r]^{f^*_{\cal{F}}} & \cal{F}_T }
+$$
+where $f^*_{\cal{F}}$ is the inverse image functor by $f$, relative
+to the cleavage under consideration on~$\cal{F}$. Finally:
+\item[6)] the homomorphisms $c_{f,g}$ given with the
+pseudofunctor are transformed, by the isomorphisms $i_S$, into
+the functorial homomorphisms $c_{f,g}$ associated to the cleavage
+of~$\cal{F}$.
+\end{enumerate}
+
+We confine ourselves to giving the verification of 1) (which is, if
+possible, less trivial than the others). It suffices to prove
+the associativity of the composition between the objects of sets of
+the form $h_f(\overline{\eta},\overline{\xi})$. Consider therefore
+in $\cal{E}$ morphisms
+$$
+S\lfrom{f} T\lfrom{g} U\lfrom{h} V
+$$
+and objects
+$$
+\xi,\ \eta,\ \zeta,\ \tau
+$$
+in $\cal{F}(S),\cal{F}(T),\cal{F}(U),\cal{F}(V)$, finally
+elements
+$$
+\begin{array}{ccc}
+u\in
+h_f(\overline{\eta},\overline{\xi})&=&\Hom_{\cal{F}(T)}(\eta,f^*(\xi))\\
+v\in
+h_g(\overline{\zeta},\overline{\eta})&=&\Hom_{\cal{F}(U)}(\zeta,g^*(\eta))\\
+w\in
+h_h(\overline{\tau},\overline{\zeta})&=&\Hom_{\cal{F}(V)}(\tau,h^*(\zeta)).
+\end{array}
+$$
+One
+% original p. 179
+wants to prove the formula
+$$
+(u\circ v)\circ w = u\circ (v\circ w),
+$$
+which is an equality in
+$\Hom_{\cal{F}(V)}(\tau,(fgh)^*(\xi))$. By virtue of the definitions
+the two sides of this equality are obtained by composition
+along the upper and lower contours of the diagram
+below:
+$$
+\xymatrix{
+\tau \ar[r]^w \ar[drr]_{v\circ w} & h^*(\zeta)
+\ar[r]^{h^*(v)} \ar@<-2pt>
+`u[rrrrr] `[rrrrr]^{h^*(u\circ v)} [rrrrr] & h^*g^*(\eta)
+\ar[rr]^{h^*g^*(u)}
+\ar[d]_{c_{g,h}(\eta)} & & h^*g^*f^*(\xi) \ar[rr]^{h^*(c_{f,g}(\xi))}
+\ar[d]^{c_{g,h}(f^*(\xi))} & & h^*(fg)^*(\xi) \ar[d]^{c_{fg,h}(\xi)} \\
+& & (gh)^*(\eta) \ar[rr]^{(gh)^*(u)} & & (gh)^*f^*(\xi)
+\ar[rr]^{c_{f,gh}(\xi)} & & (fgh)^*(\xi) }
+$$
+Now the middle square is commutative because $c_{g,h}$ is a
+functorial homomorphism, and the right-hand square is commutative by
+virtue of the condition~$B)$ for a pseudofunctor. Whence the
+announced result.
+
+Of course, it remains to specify, when the pseudofunctor
+under consideration already comes from a normalized cloven
+category $\cal{F}'$ over~$\cal{E}$, how one obtains a
+natural isomorphism between $\cal{F}'$ and $\cal{F}$. We leave the
+details to the reader.
+
+We also leave to the reader to interpret, in terms of
+pseudofunctors, the notion of inverse image of a cloven
+category $\cal{F}$ over~$\cal{E}$ by a change of base functor
+$\cal{E}' \to\cal{E}$.
+
+\section[Example]{Example: cloven category defined by a functor
+$\cal{E}^\circ\to\Cat$; split categories over~$\cal{E}$}
+\label{VI.9}
+Suppose one has a functor
+$$
+\varphi\colon\cal{E}^\circ\to\Cat,
+$$
+it then defines a pseudofunctor by setting
+$$
+\cal{F}(S)=\varphi(S),
+\quad f^*=\varphi(f),\quad c_{f,g}=\id_{(fg)^*}
+$$
+% original p. 180
+Thus the construction of the preceding no. gives us a
+category $\cal{F}$ cloven over~$\cal{E}$, said to be associated to the
+functor $\varphi$. For a cloven category over~$\cal{E}$
+to be isomorphic to a cloven category defined by a
+functor $\varphi:\cal{E}^\circ\to\Cat$, it is necessary and sufficient,
+manifestly, that it satisfy the conditions:
+$$
+(fg)^*=g^*f^*,\quad c_{f,g}=\id_{(fg)^*}\quoi.
+$$
+In terms of the set $K$ of transport morphisms, this also simply
+means that \emph{the composite of two transport
+morphisms is a transport morphism}. A cleavage of a
+category $\cal{F}$ over~$\cal{E}$ satisfying the preceding
+condition is called a \emph{splitting}
+of~$\cal{F}$ over~$\cal{E}$, and a category $\cal{F}$
+over~$\cal{E}$ equipped with a splitting is called a
+\emph{split category over~$\cal{E}$}.
+It is thus a particular case of the notion of
+cloven category. The category of split categories
+over~$\cal{E}$ is thus equivalent to
+$\SheafHom(\cal{E}^\circ,\Cat)$. Note that a
+split category over~$\cal{E}$ is a fortiori a cloven category
+over~$\cal{E}$.
+
+If $\cal{F}$ is a fibered category over~$\cal{E}$, there
+does not always exist a splitting on~$\cal{F}$. Suppose for example
+that $\Ob\cal{E}$ and $\Ob\cal{F}$ are reduced to a
+single element, and that the set of endomorphisms of the said element is a
+group $E$ \resp $F$, so that the projection functor $p$ is
+given by a homomorphism of groups $p\colon F\to E$, surjective
+since $p$ is fibrant. One then verifies at once that
+the set of cleavages of~$\cal{F}$ over~$\cal{E}$ is in
+bijective correspondence with the set of maps $s\colon
+E\to F$ such that $ps=\id_E$ (\ie the set of ``systems of
+representatives'' for the classes mod the subgroup $G$ kernel of
+the surjective homomorphism $p\colon F\to E$). A cleavage is a
+splitting if and only if $s$ is a homomorphism of groups. To say
+that there exists a splitting therefore means that the group extension $F$
+of~$E$ by $G$ is trivial, which is expressed, when $G$ is
+commutative, by the vanishing of a certain cohomology class
+in $\H^2(E,G)$ (where $G$ is regarded as a group
+on which $E$ acts).
+
+Suppose however that $\cal{F}$ is a fibered category
+over~$\cal{E}$ such that the
+% original p. 181
+$\cal{F}_S$ are \emph{rigid} categories, \ie the group
+of automorphisms of every object of~$\cal{F}_S$ is reduced to
+the identity. It is then easy to prove that $\cal{F}$ admits a
+splitting over~$\cal{E}$. Indeed, one first observes that the question
+of existence of a splitting is not modified if one replaces
+$\cal{F}$ by an $\cal{E}$-equivalent category, which in the present
+instance brings us back to the case where the $\cal{F}_S$ are
+rigid \emph{and reduced} categories (\ie two isomorphic
+objects in $\cal{F}_S$ are identical). But if $G$ is a
+rigid and reduced category, every isomorphism of two
+functors $H\to G$ (where $H$ is an arbitrary category) is
+an identity. It follows that if $\cal{F}$ is a
+fibered category over~$\cal{E}$, such that the fiber-categories are
+rigid and reduced, then there exists a \emph{unique} cleavage of
+$\cal{F}$ over~$\cal{E}$, which is necessarily a splitting. Thus
+$\cal{F}$ is isomorphic to the category defined by a
+functor $\varphi\colon \cal{E}^\circ\to \Cat$, such that the
+$\varphi(S)$ are rigid and discrete categories, and the
+functor $\varphi$ is defined up to isomorphism.
+
+% ---- en-chunk4.tex ----

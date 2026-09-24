@@ -1,0 +1,364 @@
+\chapter{Faithfully flat descent}
+\label{VIII}
+% original p. 195
+
+\section{Descent of quasi-coherent Modules}
+\label{VIII.1}
+
+Let $\Sch$
+be the category of preschemes. Proceeding as
+in~VI~\Ref{VI.11}.b, one finds that the category of
+pairs~$(X,F)$ of a prescheme~$X$ and a Module~$F$ on~$X$
+(where the morphisms are defined as in \loccit with the
+help of the notion of direct image of a Module by a morphism
+of ringed spaces) can be regarded as a
+fibered category over~$\Sch$, the change of
+base functor relative to a morphism~$f\colon X\to Y$
+in $\Sch$ being the inverse image functor of Modules
+by~$f$. (One will note that the fiber-category at~$X\in \Ob(\Sch)$ of
+the preceding fibered category is the category
+\emph{opposite} to the category of Modules on~$X$.) As
+the inverse image of a quasi-coherent Module is quasi-coherent,
+one sees that the full subcategory of the category of
+pairs~$(X,F)$ formed by the pairs for which $F$ is
+quasi-coherent is a fibered subcategory of the
+preceding fibered category. (On the other hand, if one
+makes no hypotheses on~$f$, the direct image of a
+quasi-coherent Module is not in general a quasi-coherent
+Module.) One will simply call this fibered
+category the \emph{fibered category of quasi-coherent
+Modules on preschemes}.
+
+Let us recall on the other hand that a morphism~$f\colon X\to Y$ of
+ringed spaces is called \emph{faithfully flat}
+if it is \emph{flat} (\ie for every~$x\in X$, $\mathcal{O}_{X,x}$ is
+a flat module over~$\mathcal{O}_{Y,f(x)}$, \eqref{IV}) and
+\emph{surjective}. One says that $f$ is a \emph{quasi-compact} morphism
+if the inverse image by $f$ of every quasi-compact subset is
+quasi-compact; when $f$ is a morphism of preschemes,
+this also means that the inverse image by~$f$ of an affine open set
+of~$Y$ is a \emph{finite} union of affine open sets of~$X$.
+
+\begin{theorem}
+\label{VIII.1.1}
+Let
+% original p. 196
+$\cal{F}$ be the fibered category of quasi-coherent
+Modules on preschemes. Let
+$g\colon S'\to S$
+be a morphism of preschemes, faithfully flat and
+quasi-compact. Then $g$ is an effective $\cal{F}$-descent
+morphism.
+\end{theorem}
+
+Let us recall\footnote{We shall take for granted here the
+general theory of descent expounded expounded in detail
+in the article of J\ptbl \textsc{Giraud} cited in
+footnote~\eqref{footnotegiraud} at the foot of the page of the Foreword, a work
+which we shall cite as \cite{VIII.D} in what follows. \Cf also \cite{VIII.2} for a
+succinct exposition.} that this means two things:
+
+\begin{corollary}[Descent of homomorphisms of Modules]
+\label{VIII.1.2}
+Let $g\colon S'\to S$ be a morphism of preschemes,
+faithfully flat and quasi-compact, $F$ and $G$ two
+quasi-coherent Modules on~$S$, $F'$ and $G'$ their inverse images
+on~$S'$, and finally $F''$ and $G''$ their inverse images
+on~$S''=S'\times_{S}S'$. Consider the diagram of maps
+of sets defined by the change of base functors by~$g$,
+$p_{1}$, $p_{2}$ (where $\xymatrix@C=.5cm{p_{1},p_{2}\colon
+S'\times_{S}S'\ar@<2pt>[r]\ar@<-2pt>[r] & S'}$ are the two
+projections):
+$$
+\xymatrix@C=.5cm{\Hom_{S}(F,G)\ar[r] &
+\Hom_{S'}(F',G')\ar@<2pt>[r]\ar@<-2pt>[r] & \Hom_{S''}(F'',G'').}
+$$
+This diagram is exact, \ie it defines a bijection of the first
+set onto the set of coincidences of the two maps
+written from the second into the third.
+\end{corollary}
+
+In other words, the change of base functor
+by~$g$,
+$F\mto F'$, defines a \emph{fully
+faithful} functor from the category of quasi-coherent Modules on~$S$ into the category of quasi-coherent Modules on~$S'$
+equipped with a descent datum relative
+to~$g$.
+Moreover:
+
+\begin{corollary}[Descent of Modules]
+\label{VIII.1.3}
+For every quasi-coherent Module~$F'$ on~$S'$, every descent
+datum on~$F'$ relative to $g$ is \emph{effective},
+\ie $F'$ together with its descent datum is isomorphic to the inverse
+image by~$g$ of a quasi-coherent Module on~$S$
+(determined up to unique isomorphism by virtue
+of~\Ref{VIII.1.2}).
+\end{corollary}
+
+In other words, the preceding fully faithful functor
+is even an
+\emph{equivalence}. In practice, this means that it comes to the
+same thing to give oneself a quasi-coherent Module on~$S$, or a
+quasi-coherent Module on~$S'$ equipped with a descent datum
+relative to~$g$.
+
+\subsubsection*{Proof of~\Ref{VIII.1.1}}
+First let
+% original p. 197
+$T$ be an~$S$-prescheme which is $S$-isomorphic to
+the sum of a family
+of
+induced open sets~$S_{i}$ of~$S$ which cover~$S$. Then it is evident
+that the structural morphism~$T\to S$ is an effective
+$\cal{F}$-descent morphism (this means precisely that
+giving a quasi-coherent Module~$F$ on~$S$ is equivalent
+to giving quasi-coherent Modules~$F_{i}$ on
+the~$S_{i}$, and gluing isomorphisms~$\varphi_{ji}\colon
+F_{i}|S_{i}\cap S_{j}\to F_{j}|S_{i}\cap S_{j}$ satisfying the
+well-known cochain condition). By virtue of~VII,~8
+it follows that to verify that $g\colon S'\to S$ is an
+effective $\cal{F}$-descent morphism, it suffices to
+verify it for the morphism~$g_{T}\colon T'=T\times_{S}S'\to T$
+deduced from~$g$ by the change of base~$T\to S$. (Note that
+the hypothesis on~$T\to S$ remains stable under arbitrary change of base,
+hence that $T\to S$ is in fact a \emph{universal} effective
+$\cal{F}$-descent morphism.) Taking for~$S_{i}$
+affine open sets which cover~$S$, one is thus reduced to the case
+where~$S$ is affine.
+
+Then $S'$ is a finite union of affine open sets, and taking the
+$S$-scheme sum of the latter, one finds an affine
+$S$-scheme~$S_{1}$ and an $S$-morphism~$S_{1}\to S'$ which is flat and
+surjective. Hence $S_{1}$ is also faithfully flat over~$S$. If therefore
+one proves that a faithfully flat and affine morphism is an
+effective $\cal{F}$-descent morphism, hence a
+universal strict $\cal{F}$-descent morphism (the hypothesis being indeed
+stable under change of base), one concludes in particular that
+the structural morphism~$S_{1}\to S$ is a
+universal strict $\cal{F}$-descent morphism, and as there exists an
+$S$-morphism~$S_{1}\to S'$, it will indeed follow, by \cite{VIII.D}, that
+$g\colon S'\to S$ is a strict $\cal{F}$-descent morphism.
+
+This therefore brings us back to the case where $g$ is an affine morphism,
+and as we have seen one can then moreover suppose $S$ affine, hence
+\emph{one can suppose $S$ and $S'$ affine}. In this case,
+\Ref{VIII.1.2} is equivalent to the
+
+\begin{lemma}
+\label{VIII.1.4}
+Let $A$ be a ring, $A'$ a faithfully flat $A$-algebra,
+$M$ and $N$ two~$A$-modules, $M'$ and $N'$ the~$A'$-modules deduced
+by change of ring~$A\to A'$, and $M''$,$N''$
+the~$A''=A'\otimes_{A}A'$-modules deduced by change
+of ring~$A\to A''$. Then the sequence of set-theoretic maps
+$$
+\xymatrix@C=.5cm{\Hom_{A}(M,N)\ar[r] &
+\Hom_{A'}(M',N')\ar@<2pt>[r]\ar@<-2pt>[r] & \Hom_{A''}(M'',N'')}
+$$
+is exact.
+\end{lemma}
+
+As
+% original p. 198
+the homomorphism~$N\to N'$ is injective ($A'$ being faithfully
+flat over~$A$) one sees that the first arrow is injective. It
+remains to prove that if an
+$A'$-homomorphism
+$u'\colon M'\to N'$ is compatible with the descent data,
+then it comes from an $A$-homomorphism~$u\colon M\to N$. Now this
+also means simply that $u'$ maps the subset~$M$
+of~$M'$ into the subset~$N$ of~$N'$ (the induced map~$u\colon M\to
+N$ will then automatically be $A$-linear since $u'$
+is $A'$-linear, and one sees likewise that $u'$ is
+necessarily equal to~$u\otimes_{A}A'$). Now if $x\in M$,
+then $u'(x)$ is an element in the kernel of the pair
+of maps~$\xymatrix@C=.5cm{N'\ar@<2pt>[r]\ar@<-2pt>[r] & N''}$. One is
+therefore reduced, in order to prove~\Ref{VIII.1.4},
+to the following particular case (corresponding to the case where~$M=A$):
+
+\begin{corollary}
+\label{VIII.1.5}
+Let $N$ be an~$A$-module; then the sequence of set-theoretic maps
+$$
+\xymatrix@C=.5cm{N\ar[r] & N'\ar@<2pt>[r]\ar@<-2pt>[r] & N''}
+$$
+is exact.
+\end{corollary}
+
+Indeed, let $A_{1}$ be a faithfully flat $A$-algebra. To
+show that the sequence under consideration is exact, it suffices to prove
+that the sequence deduced from it by the change of ring~$A\to
+A_{1}$ is so. Now the latter, as one sees at once, is the one
+relative to the
+$A_1$-module
+$N_{1}=N\otimes_{A}A_{1}$ and to the $A_{1}$-algebra
+$A_{1}'=A_{1}\otimes_{A}A'$. It therefore suffices to find an $A_{1}$
+faithfully flat over~$A$, such that $\Spec(A_{1}')\to \Spec(A_{1})$
+is a strict $\cal{F}$-descent morphism. Now indeed it suffices
+to take $A_{1}=A'$, for then the preceding morphism admits
+a right inverse morphism, hence by virtue of~\cite{VIII.D} it is an
+effective descent morphism for any fibered category
+over~$\Sch$.
+
+It finally remains to show that if $N'$ is an~$A'$-module equipped with a
+descent datum for~$A\to A'$, \ie equipped with an isomorphism
+$$
+\varphi\colon N_{1}'\isomto N_{2}'
+$$
+between the two modules deduced from~$N$ by the changes
+of rings $\xymatrix@C=.5cm{A'\ar@<2pt>[r]\ar@<-2pt>[r] & A'\otimes_{A}A'}$,
+then
+% original p. 199
+$N'$ together with its descent datum is isomorphic to a
+module~$N\otimes_{A}A'$. One sees easily, taking
+into account~\Ref{VIII.1.5}, that this statement is equivalent to the following:
+
+\begin{lemma}
+\label{VIII.1.6}
+Let $N'$ be an~$A'$-module equipped with a descent datum
+relative to~$A\to A'$ (where $A'$ is an
+$A$-algebra). Let $N$ be the sub-$A$-module of~$N'$ formed
+by the~$x$ such that $\varphi(x\otimes_{A'}1_{A'})=1_{A'}\otimes_{A'}x$,
+and consider the canonical homomorphism
+$$
+N\otimes_{A}A'\to N'\quoi,
+$$
+(which is then compatible with the descent data). If $A'$
+is faithfully flat over~$A$, this homomorphism is an
+isomorphism.
+\end{lemma}
+
+Let us prove this lemma. Let again $A_{1}$ be a faithfully flat
+$A$-algebra; to show that the morphism under consideration is
+an isomorphism, it suffices to prove that it becomes one after the
+change of ring
+$A\to A_1$.
+Now, using the flatness of~$A_{1}$ over~$A$, one sees that
+the homomorphism thus obtained is none other than the one that one would obtain
+directly in terms of the module~$N'\otimes_{A}A_{1}$ over~$A_{1}'=A'\otimes_{A}A_{1}$, equipped with the descent datum
+relative to~$A_{1}\to A_{1}'$ which is deduced canonically
+by change of ring from the one which was given
+on~$N'$. Thus it suffices to find an~$A_{1}$ faithfully flat
+over~$A$ such that $\Spec(A_{1}')\to \Spec(A_{1})$ is an
+effective $\cal{F}$-descent morphism. One then takes, as above,
+$A_{1}=A'$. This completes the proof of~\Ref{VIII.1.6}, and
+thereby the proof of~\Ref{VIII.1.1}.
+
+\begin{corollary}[Descent of sections of Modules]
+\label{VIII.1.7}
+Let $g\colon S'\to S$ be a morphism of preschemes,
+faithfully flat and quasi-compact. For every
+quasi-coherent Module $G$ on~$S$, let $G'$ and $G''$ be its inverse
+images on~$S'$ and $S''=S'\times_{S}S'$, and consider the
+diagram of homomorphisms of Modules on~$S$:
+$$
+\xymatrix@C=.5cm{G\ar[r] & g_*(G')\ar@<2pt>[r]\ar@<-2pt>[r] & h_*(G'')}
+$$
+(where $h\colon S''\to S$ is the structural morphism). This diagram
+is \emph{exact}.
+\end{corollary}
+
+Indeed,
+% original p. 200
+this means that for every open set~$U$ in~$S$, the
+corresponding diagram formed by the sections over~$U$ is exact. One can
+evidently then suppose $U=S$, and the exactness in question is
+then a particular case of~\Ref{VIII.1.2}, obtained by taking
+$F=\mathcal{O}_{S}$.
+
+As the inverse image functor of Modules is right exact, one
+concludes formally from~\Ref{VIII.1.1}:
+
+\begin{corollary}[Descent of quotient Modules]
+\label{VIII.1.8}
+With the notation of~\Ref{VIII.1.7}, let moreover, for every
+quasi-coherent Module~$F$ on a prescheme, $\Quot(F)$ be the set
+of quasi-coherent quotient Modules of~$F$. With this
+convention, the diagram of maps of sets:
+$$
+\xymatrix@C=.5cm{\Quot(G)\ar[r] & \Quot(G')\ar@<2pt>[r]\ar@<-2pt>[r] &
+\Quot(G'')}
+$$
+is exact.
+\end{corollary}
+
+(One would evidently have the same statement with
+sub-Modules instead of quotient Modules, since the two
+correspond bijectively.) Taking in particular
+$G=\mathcal{O}_{S}$, one finds:
+
+\begin{corollary}[Descent of closed subpreschemes]
+\label{VIII.1.9}
+For every prescheme~$X$, let $H(X)$ be the set of
+closed subpreschemes of~$X$. With this notation, and
+under the conditions of~\Ref{VIII.1.7}, the following diagram of maps
+of sets
+$$
+\xymatrix@C=.5cm{H(S)\ar[r] & H(S')\ar@<2pt>[r]\ar@<-2pt>[r] & H(S'')}
+$$
+\emph{is exact}.
+\end{corollary}
+
+It is appropriate to supplement Theorem~\Ref{VIII.1.1} with the
+following result:
+
+\begin{proposition}[Descent of properties of Modules]
+\label{VIII.1.10}
+Let $g\colon S'\to S$ be a faithfully flat and
+quasi-compact morphism, $F$ a quasi-coherent Module on~$S$. For~$F$
+to be of finite type, \resp of finite presentation, \resp locally
+free and of finite type, it is necessary and sufficient that its inverse image $F'$
+on~$S'$ be so.
+\end{proposition}
+
+One need only prove the ``it is sufficient''. One can evidently
+suppose~$S$ affine,
+% original p. 201
+and then replacing~$S'$ by
+a
+sum of affine open sets covering~$S'$, one is reduced to the case
+where~$S'$ is also affine. Then our statement
+is equivalent to the following:
+
+\begin{corollary}
+\label{VIII.1.11}
+Let $A$ be a ring, $A'$ a faithfully flat $A$-algebra,
+$M$ an~$A$-module, $M'$ the~$A'$-module $M\otimes_{A}A'$. For~$M$
+to be of finite type (\resp of finite presentation, \resp locally
+free of finite type) it is necessary and sufficient that~$M'$ be so.
+\end{corollary}
+
+Indeed, one has $M=\varinjlim_i M_{i}$, where the~$M_{i}$
+are the submodules of finite type of~$M$. Consequently
+$M'=\varinjlim_i M_{i}'$, and if $M'$ is of finite type, $M'$
+is equal to one of the~$M_{i}'$, hence by faithful flatness
+$M$ is equal to~$M_{i}$, hence $M$ is of finite type. Consequently
+there exists an exact sequence
+$$
+0\to R\to L\to M\to 0\quoi,
+$$
+with $L$ free of finite type, whence an exact sequence
+$$
+0\to R'\to L'\to M'\to 0\quoi,
+$$
+with $L'$ free of finite type. If therefore $M'$ is of finite
+presentation, $R'$ is of finite type, hence by what precedes
+$R$ is of finite type, hence $M$ is of finite presentation. Finally,
+to say that~$M$ is locally free and of finite type means that it is
+of finite presentation and flat (\cf \Ref{IV} in the
+noetherian case; the general case is left to the
+reader). As each of these properties does descend, the
+same holds for their conjunction, which completes the
+proof.
+
+\begin{remark}
+\label{VIII.1.12}
+The conjunction of~\Ref{VIII.1.1} and of~\Ref{VIII.1.10} shows that
+the statement~\Ref{VIII.1.1} still remains valid when one
+replaces the fibered category~$\cal{F}$ by the
+fibered subcategory formed by the quasi-coherent Modules
+of finite type, \resp of finite presentation,
+\resp locally free of finite type, \resp locally free of
+given rank $n$.
+\end{remark}

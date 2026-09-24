@@ -2,7 +2,10 @@
 
 Full English draft: the opening convention, **all five sections**,
 and the closing errata, including proofs, footnotes, and both diagrams.
-Scholarly proofreading remains outstanding.
+On 2026-09-24 the English was compared with the corrected French
+sentence by sentence (see
+[Review against the French](#review-against-the-french-2026-09-24)).
+Deeper scholarly proofreading remains outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -74,11 +77,36 @@ scope, `\SourceRef{source-label}{printed-number}` preserves the source
 key and prints the original number without inventing a destination;
 it uses `\ref` if that label later becomes available.
 
+## Review against the French (2026-09-24)
+
+The whole exposé was compared with the corrected French, sentence by
+sentence, in four parts: `en-01-03.tex`; `en-04-08.tex` and
+`en-04-09-13.tex`; `en-04-14.tex` and `en-04-15-19.tex`; `en-05.tex`.
+Changes made:
+
+- two mistranslations in `en-01-03.tex`: the word order of “étale
+  $k(y)$-morphism” in the proof of 2.1, and *considéraient abusivement*
+  in 2.4, now “abusively regarded”;
+- the comment `% original p. 36` moved to the position of the source's
+  page marker;
+- three capitalizations in II.4.14: *Idéal*, a sheaf of ideals, is now
+  “Ideal”;
+- in the errata, “the present number” is now “the present no.”.
+
+The review found no omissions or formula errors. It confirmed that the
+statement numbering matches the source, including the repeated 1.1. The
+source's own keys for this exposé's 4.8 and 4.9 are `\Ref{I.4.8}` and
+`\Ref{I.4.9}`, which name Exposé I. The English keeps its internal
+`\ref{II.4.8}` and `\ref{II.4.9}`, which print the numbers the source
+means. The review confirmed all twelve source points below as present in
+the French, and it found the additional points listed after them.
+
 ## Source points for scholarly review
 
 These apparent issues are present in the corrected French TeX and the
 matching PDF. They have been retained in the translation, in accordance
-with the convention against silently repairing the source.
+with the convention against silently repairing the source. The 2026-09-24
+review confirmed each of the following in the French.
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -95,6 +123,29 @@ with the convention against silently repairing the source.
 | II.5.7 | $\Omega^1_{K/k}$ a free $k$-module | The rank is as a $K$-module in 5.6. |
 | II.5.10 | A point $x$ of a prescheme of finite type over $k$ | The prescheme $X$ is not named in the setup. |
 
+Additional points found by the 2026-09-24 review, also retained as
+printed:
+
+| Location | Source wording or notation retained | Point to review |
+| --- | --- | --- |
+| Proof of II.2.1 | The $g_i$ are elements of $B\otimes_A k = BS^{-1}$ | Localization gives $B_{\mathfrak p}$, not the fiber ring. |
+| Proof of II.2.1 | “up to multiplying the $g_i$ by one and the same nonzero element of $k$” | Clearing denominators in $BS^{-1}$ needs an element of $S$, not of $k$. |
+| II.2.2 | “$X$ flat (or again: smooth) over $S$ at $x$” | Only $Y$ flat over $S$ is assumed, so the two conditions are not obviously equivalent. |
+| After II.2.5 | An unclosed parenthesis after “excess component” | Typographic slip. |
+| Proof of II.4.10 | “elements of the form $dg_i$ ($1\le i\le n$)” | $i\le p$ is meant. |
+| Proof of II.4.12 | An unbalanced parenthesis | Typographic slip. |
+| Proof of II.4.13 | $X$ and $X'$ | Used without $X$ being introduced. |
+| II.4.14 | “there always exists a neighborhood of $Y$ isomorphic to …” | A neighborhood of $x$ is meant. |
+| II.4.14 | “for $(x_i)$ to be a minimal system of generators of $J$, it already suffices that …” | “Regular system of generators” is meant. |
+| II.4.14 | “the canonical homomorphism $S_{\mathcal O_Y}(\mathcal J/\mathcal J^2)\to\operatorname{gr}^{\mathcal J}(\mathcal O_X)$ be surjective” | “Isomorphism” is meant; the map is surjective in any case. |
+| Proof of II.4.15 | “the fiber of $X'\to X$ at $x'$” | $X\to X'$ is meant. |
+| Proof of II.4.15 | Polynomial rings “in $n-p$ indeterminates” | Check the number of indeterminates. |
+| Remarks II.4.18 | $f\mapsto D(fg)-D(f)$ | The usual recursive definition uses $D(fg)-gD(f)$. |
+| Proof of II.5.1 | “replacing $x$ by an open neighborhood” | $X$ is meant. |
+| Proof of II.5.8 | “generate this vector space over $k$”; “corollary 5.6, criterion (iii)” | $k(x)$ is meant; the argument uses (ii)/(ii bis). |
+| Proof of II.5.8 (`en-05.tex`) | `\eqref{II.4.8}`, `\eqref{II.5.1}` | The keys are statement labels, so the numbers print in parentheses. |
+| French slip | “un voisinages $Y_1$” (proof of II.4.15) | No effect on the English. |
+
 Validation: `make tex` succeeds. All 65 non-index source labels
 (including the numbered statements, the duplicate 1.1 and 4.18, the
 equation tags, and the errata), ten footnotes, and both diagrams were
@@ -105,14 +156,15 @@ the source (`1.1`--`1.3`, `3.1`--`3.2`, `4.1`--`4.6` with bis tags,
 duplicate destinations. Representative pages and the diagrams were
 visually checked.
 
-These checks do not settle the mathematical questions above;
-scholarly proofreading remains outstanding.
+These checks, and the sentence-by-sentence review, do not settle the
+mathematical questions above; deeper scholarly proofreading remains
+outstanding.
 
 ## Continuation
 
-The next untranslated exposé is **III — Smooth morphisms: extension
-properties**. Keep source review of Exposé II distinct from
-translation coverage. Lean for this exposé has not been started.
+All of SGA 1 is now translated (see
+[`../../README.md`](../../README.md)). Lean for this exposé does not
+exist yet; `lean/SGA/SGA1/` covers Exposés I and VI.
 
 License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
 translator's contribution).

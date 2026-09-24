@@ -1,0 +1,353 @@
+\section{Descent of \'etale preschemes: effectiveness
+criteria}
+\label{IX.4}
+
+\begin{proposition}
+\label{IX.4.1}
+Let $g\colon S'\to S$ be a faithfully flat and quasi-compact
+morphism. Then~$g$ is an effective descent morphism for
+the fibered category of preschemes \'etale,
+separated and of finite type over others.
+\end{proposition}
+
+It is indeed a descent morphism for the fibered category
+in question, by virtue of~\Ref{IX.3.3} or of
+VIII~\Ref{VIII.5.2}, as one prefers. It remains to show that if~$X'$ is
+\'etale, separated and of finite type over~$S'$, and endowed with a
+descent datum relative to $g\colon S'\to S$, the
+latter is effective in the fibered category in
+question. Now one easily sees that if~$X$ is a prescheme
+over~$S$, then
+% original p. 236
+it is \'etale over~$S$ if and only if it is \'etale over~$S'$
+(by virtue of definition~\Ref{IX.1.1} and of \loccit \Ref{VIII.3.6}). Hence it is \'etale, separated and of
+finite type over~$S$ if and only if~$X'$ is so over~$S'$, \cf for
+example~\Ref{IX.2.4}. Hence it suffices to make sure of the
+effectiveness of the descent datum on~$X$ for the
+fibered category of arrows of~$\Sch$. Now~$X'$ is
+quasi-affine over~$S'$ by virtue of VIII~\Ref{VIII.6.2}
+and~\Ref{VIII.6.6}. One can then conclude by using
+VIII~\Ref{VIII.7.9}. The reader will note moreover that the
+proof requires less if one restricts oneself to preschemes
+\'etale and \emph{finite} over others, for one can then invoke
+VIII~\Ref{VIII.2.1} directly.
+
+\begin{corollary}
+\label{IX.4.2}
+Let $g\colon S'\to S$ be a universally submersive morphism, $X'$
+an
+$S'$-prescheme
+\'etale separated and of finite type, endowed with a
+descent datum relative to~$g$, $S_1\to S$ a faithfully
+flat and quasi-compact morphism, $S_1'$ and~$X_1'$ deduced
+from~$S'$ and~$X'$ by change of base, so that $S_1'\to S_1$
+is universally submersive, $X_1'$ is \'etale separated and
+of finite type over~$S_1'$, and endowed with a descent datum
+relative to $g_1\colon S_1'\to S_1$. For the
+descent datum on~$X'$ to be effective, it is necessary and sufficient that the
+descent datum on~$X_1'$ be so.
+\end{corollary}
+
+This follows from the theory of descent in
+categories \cite{IX.D}, taking into account~\Ref{IX.4.1} and~\Ref{IX.3.3}.
+
+One proves in an analogous way:
+
+\begin{corollary}
+\label{IX.4.3}
+Let $g\colon S'\to S$ be a universally submersive morphism, $X'$
+an \'etale~$S'$-prescheme endowed with a descent datum
+relative to~$g$, $(S_i)$ a covering of~$S$ by
+open sets. For the descent datum to be effective, it is necessary
+and sufficient that for every~$i$, the corresponding descent
+datum on~$X_i'=X\times_S S_i$, relative to the morphism
+$g_i\colon S_i'=S'\times_S S_i\to S_i$, be so.
+\end{corollary}
+
+This last result leads to bringing out a local effectiveness
+criterion:
+
+\begin{proposition}
+\label{IX.4.4}
+Let $g\colon S'\to S$ be a morphism of finite presentation
+\textup{VIII}~\Ref{VIII.3.6}
+% original p. 237
+and universally submersive, $X'$ a prescheme \'etale and
+of finite presentation over~$S'$, endowed with a descent datum
+relative to~$g$, and finally~$a$ a point of~$S$. For there to exist
+an open neighborhood~$U$ of~$a$ such that the corresponding descent
+datum on~$X_U'=X'\times_S U$ relative to the morphism
+$$g_U\colon S_U'=S'\times_S U\to S_U=U$$ is effective, it is necessary and
+sufficient that the corresponding descent datum on $X_a'=X'\times_S\Spec(\cal{O}_a)$, relative to the morphism
+$$g_a\colon S_a'=S'\times_S\Spec(\cal{O}_a)\to S_a=\Spec(\cal{O}_a),$$
+be effective.
+\end{proposition}
+
+The necessity being trivial, let us show the sufficiency. We
+therefore have an \'etale prescheme of finite type~$X_a$
+over~$S_a$, and an isomorphism
+\begin{equation*}
+\label{eq:IX.4.*}
+\tag{$*$} {X_a'\isomto X_a\times_{S_a}S_a'}
+\end{equation*}
+compatible with the descent data. In accordance with
+an easy general sorites on preschemes
+defined over an inductive limit of rings (here the rings~$A_f$,
+where~$A$ is the ring of an affine open neighborhood of~$a$, and
+where~$f$ runs through the elements of~$A$ that are not in
+the prime ideal corresponding to~$a$), one can find an
+open neighborhood~$U$ of~$a$, an \'etale prescheme of finite
+type~$X_U$ over~$U=S_U$, and an $S_a$-isomorphism $X_a\isomto
+X_U\times_{S_U}S_a$. Moreover, taking~$U$ small enough, one can then
+assume that the isomorphism~\eqref{eq:IX.4.*} comes from an
+isomorphism:
+$$
+X_U'\isomto X_U\times_{S_U} S_U';
+$$
+the latter might not be compatible with the descent
+data; however, provided one shrinks~$U$, it will be
+compatible with the descent data. This completes the
+proof.
+
+\begin{corollary}
+\label{IX.4.5}
+Under the conditions of~\Ref{IX.4.4}, for the descent
+datum on~$X'$ to be effective, it is necessary and sufficient that for every
+$a\in S$, the corresponding descent datum on~$X_a'$,
+relative to the morphism
+$S_a'=S'\times_S\Spec(\cal{O}_a)\to\Spec(\cal{O}_a)$, be so.
+When~$S$ is locally noetherian, and~$X'$ separated
+over~$S'$, one can in the preceding criterion also replace
+$\cal{O}_a$ by its completion.
+\end{corollary}
+
+The
+% original p. 238
+first assertion follows from~\Ref{IX.4.4} and~\Ref{IX.4.3}, the
+second is then a consequence of~\Ref{IX.4.2}. Using
+\Ref{IX.4.2} again and the fact that for every noetherian local
+ring~$A$, one can find a complete noetherian local
+ring~$B$ and a local homomorphism $A\to B$ such that~$B$ is flat
+over~$A$ and $B/\goth{m}B$ is a given extension of the residue
+field $k=A/\goth{m}$ of~$A$, one finds:
+
+\begin{corollary}
+\label{IX.4.6}
+Under the conditions of~\Ref{IX.4.4}, assume moreover~$X'$
+separated over~$S'$, and~$S$ locally noetherian. For the
+descent datum on~$X'$ to be effective, it is necessary and sufficient
+that for every prescheme~$S_1$ over~$S$ which is the spectrum of a
+complete local ring with algebraically closed residue field, the
+corresponding descent datum on~$X_1'=X'\times_S S_1$,
+relative to the morphism $g_1\colon S_1'\to S_1$, be effective.
+\end{corollary}
+
+\begin{theorem}
+\label{IX.4.7}
+Let $g\colon S'\to S$ be a morphism which is finite and surjective, and of
+finite presentation (this last hypothesis being a
+consequence of the others if~$S$ is locally
+noetherian)\footnote{One can show that it in fact suffices that~$g$
+be an \emph{integral} morphism, by reducing to the case of the text by a
+limit procedure in the style of EGA IV~8.}.
+Then~$g$ is an effective descent morphism for the fibered
+category of preschemes \'etale, separated, of
+finite type over others.
+\end{theorem}
+
+One must show that if~$X'$ is \'etale, separated, of
+finite type over~$S'$, and endowed with a descent datum relative
+to~$g$, then this datum is effective.
+Using~\Ref{IX.4.3}, one easily reduces to the case where~$S$
+is noetherian. Thanks to~\Ref{IX.4.5}, one can therefore
+assume that~$S$ is the spectrum of a noetherian local ring, a
+fortiori that
+$$
+\dim S=n<+\infty.
+$$
+One then argues by induction on~$\dim S=n$, the assertion
+being trivial for $n<0$. Assume therefore $n\geq 0$ and the
+theorem proved for the dimensions $n'<n$. By
+virtue of~\Ref{IX.4.6} one is reduced to the case where~$S$ is the
+spectrum of a complete local ring, hence~$S'$ is a finite union
+of spectra of complete local rings. We therefore have
+$$
+X'=X_1'\sqcup X_2'
+$$
+where~$X_1'$ is \emph{finite} over~$S'$, and where~$X_2'$ has no
+point lying over any of the closed points
+% original p. 239
+of~$S'$. Consider the morphisms
+$$
+\xymatrix@C=.5cm{ q_1,q_2\colon X'' \ar@<2pt>[r] \ar@<-2pt>[r] & X' }
+$$
+corresponding to the descent datum, compatible with
+$\xymatrix@C=.5cm{p_1,p_2\colon S'' \ar@<2pt>[r] \ar@<-2pt>[r] & S'}$. One
+sees at once that
+$$
+X''=q_i^{-1}(X_1')\sqcup q_i^{-1}(X_2')\quad i=1,2
+$$
+is the analogous canonical decomposition of~$X''$ over~$S''$, which
+implies $q_1^{-1}(X_1')=\allowbreak q_2^{-1}(X_1')$ and consequently~$X_1'$ and~$X_2'$
+are endowed with induced descent data. Now let~$T$ be the open set
+of~$S$ complementary to its closed point, so that $T'=S'\times_S
+T$ is the part of~$S'$ complementary to the set of closed
+points, and~$X_2'$, which lies entirely over~$T'$,
+is endowed with a descent datum relative to the morphism $T'\to
+T$ induced by~$g$. As the latter is finite surjective, and as $\dim
+T<\dim S=n$, this descent datum is effective by
+the induction hypothesis. One therefore sees that it suffices to
+prove that the descent datum on~$X_1'$ is effective, hence
+one can now assume~$X'$ \'etale and \emph{finite} over~$S'$.
+(N.B. the argument by induction is unnecessary if one restricts oneself
+to \'etale coverings in statement~\Ref{IX.4.7}).
+Let then~$S_0$ be the spectrum of the residue field of~$A$, let
+$S_0'=S'\times_S S_0$, and define similarly~$S_0''$, $S_0'''$
+starting from the fibered squares and cubes~$S''$ and~$S'''$
+of~$S'$ over~$S$. By virtue of~\Ref{IX.1.8}, the morphisms $S_0\to S$,
+$S_0'\to S'$, etc.\ induce equivalences for the
+categories of \'etale coverings of~$S$ and~$S_0$ on the one
+hand, $S'$ and~$S_0'$ on the other hand, etc. By the sorites of
+the theory of descent in categories \cite{IX.D}, it follows
+that for $g\colon S'\to S$ to be an effective descent morphism
+for the fibered category of \'etale coverings, it
+is necessary and sufficient that the same hold for~$g_0\colon S_0'\to S_0$.
+But this is indeed the case, as a special case of~\Ref{IX.4.1}, for
+example. This completes the proof.
+
+\begin{corollary}
+\label{IX.4.8}
+The conclusion of~\Ref{IX.4.7} remains valid if one only assumes that
+$S'\to S$ is universally submersive, of finite type and quasi-finite,
+provided one assumes~$S$ locally noetherian.
+\end{corollary}
+
+By
+% original p. 240
+virtue of~\Ref{IX.4.6}, one can indeed assume that~$S$ is the
+spectrum of a complete noetherian local ring. Then by virtue
+of~\Ref{IX.2.5}, there exist a finite and surjective morphism $S_1\to S$
+and an $S$-morphism $S_1\to S'$. As $S_1\to S$ is a
+universal strict descent morphism for the fibered category
+under consideration, by virtue of~\Ref{IX.4.7}, and as $S'\to S$ is a
+universal descent morphism for the said category, \Ref{IX.4.8} follows
+from the general sorites~\cite{IX.D}.
+
+\begin{corollary}
+\label{IX.4.9}
+Let $g\colon S'\to S$ be a morphism of finite type, surjective and
+universally open, with~$S$ locally noetherian. Then~$g$
+is an effective descent morphism for the fibered
+category of preschemes \'etale, separated and of
+finite type over others.
+\end{corollary}
+
+Proceeding as in~\Ref{IX.4.7}, one is reduced to the case
+where~$S$ is the spectrum of a noetherian and
+complete local ring~$A$. Let~$A_1$ be a finite algebra over~$A$, with
+spectrum~$S_1$, such that $S_1\to S$ is finite and \emph{surjective},
+hence a universal effective descent morphism for the
+fibered category under consideration, thanks to~\Ref{IX.4.7}.
+It then follows from the general theorems \cite{IX.D}
+that~$g$ is an effective descent morphism for the fibered
+category under consideration if and only if the
+corresponding morphism $g_1\colon S_1'=S'\times_S S_1\to S_1$ is so. As the
+latter satisfies the same hypotheses as~$g$, one is
+reduced to proving~\Ref{IX.4.9} for~$S_1$ instead of~$S$.
+Taking first for~$A_1$ the direct product of the $A/\goth{p}_i$,
+for the minimal prime ideals~$\goth{p}_i$ of~$A$, one is
+reduced to the case where~$A$ is \emph{integral}. One then
+shows\footnote{\Cf EGA IV~14.3.13 and~14.5.4.} that there exists an
+integral subscheme~$S_1$ of~$S'$, quasi-finite over~$S$ and
+dominating~$S$, passing through a point of the fiber of~$S'$ at the
+closed point~$y$ of~$S$ (thanks to the fact that~$S'$ is universally
+open of finite type over~$S$ local noetherian integral, and
+$S_y'\neq\emptyset$). As~$A$ is complete, $S_1$ is finite over~$S$,
+and as it dominates~$S$, the morphism $S_1\to S$ is surjective.
+Replacing~$S$ by~$S_1$ once more, one is reduced to the
+case where~$S'$ has a section over~$S$, where the statement is
+trivial.
+
+\begin{theorem}
+\label{IX.4.10}
+Let $g\colon S'\to S$ be a finite radicial surjective morphism, of
+finite presentation (this last condition being
+superfluous if~$S$ is locally noetherian\footnote{It even suffices
+that~$g$ be integral, radicial surjective, as one sees by
+an easy reduction to the case of the text, in the style of EGA~IV~8, \cf SGA~4
+VIII~1.1.}).
+% original p. 241
+Then the inverse image functor induces an equivalence of the
+category of \'etale preschemes over~$S$ with the
+category of \'etale preschemes over~$S'$.
+\end{theorem}
+
+As the diagonal morphisms from~$S'$ into $S'\times_S S'$ and
+$S'\times_S S'\times_S S'$ are surjective immersions, hence
+induce, by virtue of~\Ref{IX.1.9}, equivalences of the
+categories of \'etale preschemes over~$S'\times_S S'$
+\resp $S'\times_S S'\times_S S'$ with the category of
+\'etale preschemes over~$S'$, it follows from the sorites of
+descent \cite{IX.D} that every~$X'$ \'etale over~$S'$ is endowed with one
+and only one descent datum relative to $g\colon
+S'\to S$. Hence~\Ref{IX.3.3} implies that the inverse image functor
+by~$g$, from the category of \'etale preschemes over~$S$
+into the category of \'etale preschemes over~$S'$, is
+\emph{fully faithful}. It remains to show that it is
+essentially surjective, \ie that every~$X'$ \'etale over~$S'$ is
+isomorphic to the inverse image of an~$X$ \'etale over~$S$. The
+question being evidently local on~$S$ \emph{and on}~$X'$,
+one can assume $S$,~$S'$,~$X'$ affine. But then~$X'$ is
+separated of finite type over~$S'$, and one can apply the
+effectiveness criterion~\Ref{IX.4.7}.
+
+\begin{corollary}
+\label{IX.4.11}
+The conclusion~\Ref{IX.4.9} remains valid when one replaces the hypothesis
+on~$g$ by: $g$~is faithfully flat, quasi-compact and radicial.
+\end{corollary}
+
+Same proof, invoking~\Ref{IX.4.1} instead
+of~\Ref{IX.4.7}.
+
+One will note that the proof of~\Ref{IX.4.7} is
+``elementary'' in that it does not use the
+finiteness and comparison theorems for proper morphisms (EGA~III~3,~4,~5). The same no longer holds for the following result:
+
+\begin{theorem}
+\label{IX.4.12}
+Let $g\colon S'\to S$ be a proper, surjective morphism, of
+finite presentation (this last hypothesis being a
+consequence of the first if~$S$ is locally
+noetherian). Then~$g$ is an effective descent morphism
+for the fibered category of \'etale coverings of
+preschemes.
+\end{theorem}
+
+By virtue of~\Ref{IX.3.3} and of~\Ref{IX.2.2}, one is reduced to
+proving that for every \'etale covering~$X'$ over~$S'$, endowed
+with a descent datum relative to $g\colon S'\to S$,
+this descent datum is effective. Using~\Ref{IX.4.3},
+one is easily reduced
+% original p. 242
+to the case where~$S$ is noetherian, and using~\Ref{IX.4.6}, one
+can therefore assume that~$S$ is the spectrum of a
+\emph{complete} noetherian local ring~$A$. Let us introduce~$S''$ and~$S'''$ as
+usual, let~$S_0$ be the spectrum of the residue field of~$A$, and
+let~$S_0'$,~$S_0''$,~$S_0'''$ be deduced from~$S'$,~$S''$,~$S'''$
+by the change of base $S_0\to S$, \ie the fibers
+of~$S'$,~$S''$,~$S'''$ at the closed point of~$S$.
+By~\Ref{IX.1.10}, the morphisms $S_0\to S$, $S_0'\to S'$,
+etc.\ induce equivalences of the category of
+\'etale coverings over the target scheme with the category
+of \'etale coverings over the source scheme. Consequently,
+$g\colon S'\to S$ is a strict descent morphism for the
+fibered category of \'etale coverings of
+preschemes if and only if $g_0\colon S_0'\to S_0$ is,
+which is indeed the case by virtue of~\Ref{IX.4.1}. This completes the
+proof of~\Ref{IX.4.12}. (In this argument, we needed
+from~\Ref{IX.1.10} only the fact that the functor considered
+in~\Ref{IX.1.10} is \emph{fully faithful}, which does \emph{not} use
+the existence theorem for coherent sheaves
+in algebraic geometry.)
+

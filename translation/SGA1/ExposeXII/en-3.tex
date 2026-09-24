@@ -1,0 +1,458 @@
+\section{Comparison theorems for \'etale coverings}
+\label{XII.5}
+\setcounter{subsection}{-1}
+\subsection{}
+\label{XII.5.0}
+Let us make precise the notion of finite covering of an analytic space.
+If $\othercal{X}$ is an analytic space, one says that an analytic space
+$\othercal{X}'$ finite over~$\othercal{X}$ is a finite covering of
+$\othercal{X}$ if every irreducible component of~$\othercal{X}'$ dominates
+an irreducible component of~$\othercal{X}$.
+
+\begin{theorem}[``Riemann existence theorem'']
+\label{XII.5.1}
+Let $X$ be a $\CC$-scheme locally of finite type, $X^{\an}$
+the analytic space associated with $X$. The functor $\Psi$ which,
+to every finite \'etale covering $X'$ of~$X$, associates
+$X^{\prime\an}$ is an equivalence
+% original p. 333
+from the category of finite \'etale coverings of~$X$ to
+the category of finite \'etale coverings of~$X^{\an}$.
+\end{theorem}
+
+1) \emph{The functor $\Psi$ is fully faithful.} Let $X'$
+and $X''$ be two finite \'etale coverings of~$X$, and let us prove that
+the canonical map
+\begin{equation*}
+\label{eq:XII.5.*}
+\tag{$*$} { \Hom_{X}(X',X'') \to
+\Hom_{X^{\an}}(X^{\prime\an},X^{\prime\prime\an}) }
+\end{equation*}
+is bijective. We may assume $X'$ connected. To give an
+$X$-morphism from~$X'$ to $X''$ is equivalent to giving a
+connected component $X_{i}$ of~$X'\times_{X}X''$ such that the morphism
+$X_{i}\to X'$ induced by the first projection is an
+isomorphism. Since the connected components of~$X'\times_{X}X''$
+correspond bijectively to the connected components of
+$X^{\prime\an}\times_{X^{\an}}X^{\prime\prime\an}$~\eqref{XII.2.6} and since a
+morphism $X_{i}\to X'$ is an isomorphism if and only if the same
+holds for~$X_{i}^{\an}\to X^{\prime\an}$, this proves the
+bijectivity of~\eqref{eq:XII.5.*}.
+
+2) \emph{The functor $\Psi$ is essentially surjective.} Let
+$\othercal{X}'$ be a finite \'etale covering of~$X^{\an}$ and let us prove
+that there exists an \'etale covering $X'$ of~$X$ such that we have
+an isomorphism $X^{\prime\an}\isomto\othercal{X}'$. Taking~1) into account, the
+question is local on~$X$, and we may therefore assume $X$ affine.
+
+a) Reduction to the case where $X$ is normal. We may assume $X$
+reduced. Indeed, suppose the theorem proved
+for $X_{\red}$. The functor which, to a finite \'etale
+covering $X'$ of~$X$, assigns the finite \'etale covering
+$X^{\prime\an}_{\red}$ of~$X_{\red}^{\an}$ is then an equivalence.
+Since it is obtained by composing $\Psi$ with the functor $\Theta$ which,
+to a finite \'etale covering of~$X^{\an}$, associates its inverse
+image on~$X_{\red}^{\an}$, and since $\Theta$ is fully
+faithful, this shows that $\Psi$ is an equivalence of
+categories.
+
+We
+% original p. 334
+may assume $X$ normal. Indeed, let $\widetilde{X}$ be the
+normalization of~$X$, $p\colon\widetilde{X}\to X$ the canonical
+morphism. Since $p$ is finite, $p$ is an effective descent
+morphism for the category of \'etale
+coverings~(IX~\Ref{IX.4.7}). The theorem being
+assumed proved for $\widetilde{X}$, if we set
+$\widetilde{\othercal{X}'}=\othercal{X}'\times_{X^{\an}}\widetilde{X}^{\an}$,
+there exist an \'etale covering $\widetilde{X}'$ of
+$\widetilde{X}$ and an isomorphism $\widetilde{X}'{}^{\an}\simeq
+\widetilde{\othercal{X}'}$. It then follows from~1) that the natural
+descent datum that we have on~$\widetilde{\othercal{X}'}$
+lifts to a descent datum on~$\widetilde{X}'$
+relative to $\widetilde{X}\to X$; this proves the existence of an
+\'etale covering $X'$ of~$X$ such that we have an isomorphism
+$i\colon X^{\prime\an}\times_{X^{\an}}\widetilde{X}^{\an} \simeq
+\widetilde{\othercal{X}'}$ whose inverse images under the two
+projections of
+$\widetilde{X}^{\an}\times_{X^{\an}}\widetilde{X}^{\an}$ are the
+same. By~IX~\Ref{IX.3.2}, whose proof is
+valid in the analytic case, the morphism $\widetilde{X}^{\an}\to
+X^{\an}$ is a descent morphism for the category of
+\'etale coverings, and consequently $i$ comes from an
+isomorphism $X^{\prime\an}\simeq
+\othercal{X}'$.
+
+b) Reduction to the case where $X$ is regular. Let $U$ be
+the open set of regular points of~$X$, $i\colon U\to X$,
+$i^{\an}\colon U^{\an}\to X^{\an}$ the canonical morphisms; since
+$X$ is normal, we have $\codim(X-U,X)\geq 2$. Suppose that there exists an
+\'etale covering $U'$ of~$U$ such that we have
+$U^{\prime\an}\simeq \othercal{X}'|U^{\an}$, and let us show that then $U'$
+extends to an \'etale covering $X'$ of~$X$ such that we have
+$X^{\prime\an}\simeq \othercal{X}'$. It suffices to see that $U'$ extends
+to an \'etale covering $X'$ of~$X$; indeed we shall then have an
+isomorphism $X^{\prime\an}|U^{\an}\simeq \othercal{X}'|U^{\an}$; but, if
+$\cal{F}$ and $\cal{G}$ are the coherent sheaves of algebras
+over~$\cal{O}_{X^{\an}}$ defining $\othercal{X}'$ and
+$X^{\prime\an}$ respectively, the fact that $X$ is normal and that we have
+$\codim(X-U,X)\geq 2$ implies that the canonical morphisms
+$$
+\cal{F}\to i_*^{\an}(\cal{F}|U^{\an}) \qquad
+\cal{G}\to i_*^{\an}(\cal{G}|U^{\an})
+$$
+are
+% original p. 335
+isomorphisms \cite[\no 3~prop\ptbl 4]{XII.11}. It follows that $\cal{F}$
+and $\cal{G}$, hence also $X^{\prime\an}$ and $\othercal{X}'$, are isomorphic.
+
+Let $\varphi\colon X^{\an}\to X$ be the canonical morphism. Since the
+problem of extending $U'$ to $X$ is local on~$X$, it suffices
+to prove that, for every point $y$ of~$X^{\an}- U^{\an}$, the \'etale covering
+$U'_{\varphi(y)}=U'\times_{X}\Spec\cal{O}_{X,\varphi(y)}$ of
+$U_{\varphi(y)}=U\times_{X}\Spec\cal{O}_{X,\varphi(y)}$ extends
+to $\Spec\cal{O}_{X,\varphi(y)}$. Let $H$ be the coherent
+$\cal{O}_{U}$-Algebra defining $U'$. The canonical
+morphism
+$$
+\alpha\colon (i_*H)^{\an} \to i_*^{\an}(H^{\an})
+=\cal{F}
+$$
+defines a morphism of sheaves of modules on~$\Spec\cal{O}_{X^{\an},y}$:
+$$
+\alpha_{y}\colon (i_*H)^{\an}_{y} \to \cal{F}_{y}\quoi,
+$$
+whose restriction to $U_{y}=U_{\varphi(y)}
+\times_{\Spec\cal{O}_{X,\varphi(y)}}\Spec\cal{O}_{X^{\an},y}$ is an
+isomorphism. But this proves that $H|U_{y}$ is trivial, hence that
+$U'_{\varphi(y)}$ extends to $\Spec\cal{O}_{X,\varphi(y)}$.
+
+c) Case where $X$ is affine regular. Let
+$$
+j\colon X\to P
+$$
+be a compactification of~$X$, where $P$ is a projective
+$\CC$-scheme and $j$ a dominant open immersion. Thanks to the
+resolution of singularities theorem~\cite{XII.8}, one can
+find a regular scheme $R$ and a projective morphism
+$r\colon R\to P$ such that $r$ induces an isomorphism $r^{-1}(X)\simeq
+X$ and $r^{-1}(X)$ is the complement in $R$ of a
+divisor with normal crossings. Let
+% original p. 336
+$$
+k\colon X\to R
+$$
+be the canonical immersion. We are going to show that there exists a normal
+finite covering~\eqref{XII.5.0} $\othercal{R}'$ of~$R^{\an}$ which extends the
+\'etale covering $X^{\prime\an}$. By
+Proposition~\Ref{XII.5.3} below, such a covering is
+unique; the problem of extending $X^{\prime\an}$ is therefore local on~$R^{\an}$ in a neighborhood of~$R^{\an}- X^{\an}$. Now each
+point of~$R^{\an}- X^{\an}$ has an open neighborhood
+$\othercal{V}$ isomorphic to a ball of an affine space
+$\othercal{E}^{n}$, such that $\othercal{V}- \othercal{V}\cap X^{\an}$
+is defined by the vanishing of the first $p$ coordinate
+functions $z_{1},\dots,z_{p}$, with $0\leq p\leq n$. The fundamental
+group of~$\othercal{U}=\othercal{V}\cap X^{\an}$ is isomorphic to
+$\ZZ^{p}$, and every \'etale covering of~$\othercal{U}$ is a quotient
+of a covering of the form
+$$
+\othercal{U}''= \othercal{U}[T_{1},\dots,T_{p}]/
+(T_{1}^{n_{1}}-z_{1},\dots,T_{p}^{n_{p}}-z_{p})\quoi,
+$$
+where the $n_{i}$ are integers $>0$, by a subgroup $H$ of the
+Galois group $\ZZ/n_{1}\ZZ\times\cdots\times\ZZ/n_{p}\ZZ$ of
+$\othercal{U}''$. Now $\othercal{U}''$ extends to the regular
+covering
+$$
+\othercal{V}''= \othercal{V}[T_{1},\dots,T_{p}]/
+(T_{1}^{n_{1}}-z_{1},\dots,T_{p}^{n_{p}}-z_{p})\quoi,
+$$
+of~$\othercal{V}$ on which $H$ acts, and the quotient of~$\othercal{V}''$
+by $H$ is the desired extension.
+
+The proof is then completed thanks to~\Ref{XII.4.6}.
+The covering $\othercal{R}'$ comes from a finite covering $R'$
+of~$R$; the restriction of~$R'$ to $X$ is a covering $X'$ of
+$X$ such that we have $X^{\prime\an}\simeq \othercal{X}'$, and
+by~\Ref{XII.3.1}(iii) $X'$ is an \'etale covering
+of~$X$.
+
+\begin{corollary}
+\label{XII.5.2}
+Let
+% original p. 337
+$X$ be a connected $\CC$-scheme locally of finite type,
+$\varphi\colon X^{\an}{\to} X$ the canonical morphism, $x$ a point of
+$X^{\an}$. Let $\pi_{1}(X^{\an},x)$ be the fundamental group of
+the topological space $X^{\an}$ at the point $x$, and $\pi_{1}(X,\varphi(x))$
+the fundamental group of the scheme $X$ at the point $\varphi(x)$
+\textup{(V~\Ref{V.7})}. Then $\pi_{1}(X,\varphi(x))$ is canonically
+isomorphic to the completion of~$\pi_{1}(X^{\an},x)$ for the
+topology of subgroups of finite index.
+\end{corollary}
+
+Indeed, let $\cal{C}$ be the category of finite \'etale
+coverings of~$X^{\an}$, $F$ the functor from~$\cal{C}$ to
+$\Ens$ which, to every finite \'etale covering $\othercal{X}'$ of
+$X^{\an}$, associates the set of points of~$\othercal{X}'$ over
+$x$, and let $\widehat{\pi}_{1}(X^{\an},x)$ be the profinite group
+associated with $\cal{C}$ and $F$ as explained in~V~\Ref{V.4}.
+Since every finite \'etale covering of~$X^{\an}$ is a quotient of the
+universal covering by a subgroup of finite index,
+$\widehat{\pi}_{1}(X^{\an},x)$ is none other than the completion of
+$\pi_{1}(X^{\an},x)$ for the topology of subgroups of finite index.
+The corollary therefore follows from~\Ref{XII.5.1} and~V~\Ref{V.6.10}.
+
+\begin{proposition}
+\label{XII.5.3}
+Let $\othercal{X}$ be a normal analytic space, $\othercal{Y}$ a
+closed analytic subset such that
+$\othercal{U}=\othercal{X}-\othercal{Y}$ is dense in $\othercal{X}$.
+Then the functor which, to every normal finite
+covering~\eqref{XII.5.0} $\othercal{X}'$ of~$\othercal{X}$, associates its restriction
+to $\othercal{U}$ is fully faithful.
+\end{proposition}
+
+Let $\othercal{X}'$ and $\othercal{X}''$ be two normal finite coverings
+of~$\othercal{X}$. We must show that the canonical map
+$$
+\Hom_{\othercal{X}}(\othercal{X}',\othercal{X}'') \to
+\Hom_{\othercal{U}}(\othercal{X}'|\othercal{U},\othercal{X}''|\othercal{U})
+$$
+is bijective. Let $u$, $v$ be two $\othercal{X}$-morphisms from
+$\othercal{X}'$ to $\othercal{X}''$ whose restrictions to $\othercal{U}$
+are the same, and let us prove that $u=v$. The morphisms $u$ and
+% original p. 338
+$v$ coincide on the dense open set
+$\othercal{U}\times_{\othercal{X}}\othercal{X}'$, hence on the underlying
+topological spaces. By \hbox{\cite[\no 19~\S 4~cor\ptbl 5]{XII.4}} this
+proves that we have $u=v$.
+
+Now let $u$ be a $\othercal{U}$-morphism from~$\othercal{X}'|\othercal{U}$
+to $\othercal{X}''|\othercal{U}$, and let us show that it extends to
+the whole of~$\othercal{X}'$. We may assume $\othercal{X}'$ regular.
+Indeed, $\othercal{X}'$ being normal, one can find an open set
+$\othercal{V}$ of~$\othercal{X}$ whose complement is an analytic
+subset of codimension $\geq 2$, such that
+$\othercal{X}'\times_{\othercal{X}}\othercal{V}=\othercal{V}'$ is regular.
+Let $\othercal{V}''=\othercal{X}''\times_{\othercal{X}}\othercal{V}$ and suppose the
+proposition proved for $\othercal{V}$. Consider the commutative
+diagram
+$$
+\xymatrix{ \othercal{V}' \ar[dd]_{g'}\ar[rd]\ar[rrr]^{i'} && &\othercal{X}'
+\ar[dd]^{\hbox{\raise10mm\hbox{$f'$}}} \cr &\othercal{V}'' \ar[ld]_{g''\mkern-10mu}\ar[rrr]^-{i''~~} & &
+&\othercal{X}'' \ar[ld]_{f''\mkern-12mu} \cr \othercal{V} \ar[rrr]^{i} && &\othercal{X} \cr
+}
+$$
+To $u$ is associated a morphism of
+$\cal{O}_{\othercal{V}}$-Algebras $g''_*\cal{O}_{\othercal{V}''}\to
+g'_*\cal{O}_{\othercal{V}'}$, from which one deduces a morphism
+$$
+i_*g''_*\cal{O}_{\othercal{V}''} \to
+i_*g'_*\cal{O}_{\othercal{V}'}\quoi.
+$$
+Taking into account the isomorphisms
+$i'_*\cal{O}_{\othercal{V}'}\simeq\cal{O}_{\othercal{X}'}$,
+$i''_*\cal{O}_{\othercal{V}''}\simeq\cal{O}_{\othercal{X}''}$
+\cite[\no 3~prop\ptbl 4]{XII.11}, one deduces from it a morphism of
+$\cal{O}_{\othercal{X}}$-Algebras
+$$
+f''_*\cal{O}_{\othercal{X}''} \to
+f'_*\cal{O}_{\othercal{X}'}\quoi,
+$$
+whence the desired morphism $\othercal{X}'\to\othercal{X}''$.
+
+From
+% original p. 339
+now on we assume $\othercal{X}'$ regular. Let
+$\othercal{U}'=\othercal{U}\times_{\othercal{X}}\othercal{X}'$,
+$\othercal{Y}'=\othercal{X}'-\othercal{U}'$. We regard $\othercal{Y}'$ as a
+reduced analytic subspace of~$\othercal{X}'$; if $\othercal{Y}'_{1}$
+is the singular closed set of~$\othercal{Y}'$, we have $\dim \othercal{Y}'_{1} <
+\dim \othercal{Y}'$~\cite[\no 20~D\ptbl Th\ptbl 3]{XII.4}. One therefore sees by induction
+on the dimension of~$\othercal{Y}'$ that we may assume $\othercal{Y}'$
+smooth. Since it suffices to extend $u$ to an open neighborhood of
+each point of~$\othercal{Y}'$, we may assume, by the implicit function
+theorem, that $\othercal{X}'$ is a ball of an affine
+space $\othercal{E}^{n}$ and $\othercal{Y}'$ the closed set defined by
+the vanishing of the first $p$ coordinate functions
+$z_{1},\dots,z_{p}$, with $0\leq p\leq n$.
+
+To $u$ we associate a section $s$ of
+$p\colon\othercal{X}'\times_{\othercal{X}}\othercal{X}''\to\othercal{X}'$ over
+$\othercal{U}'$; after restricting $\othercal{X}'$, we may assume
+$p_*(\cal{O}_{\othercal{X}'\times_{\othercal{X}}\othercal{X}''})$
+generated by elements $x_{1},\dots,x_{q}$ of
+$\Gamma(\othercal{X}',
+p_*\cal{O}_{\othercal{X}'\times_{\othercal{X}}\othercal{X}''})$; let
+$u_{1},\dots,u_{q}\in\Gamma(\othercal{U}',\cal{O}_{\othercal{X}'})$ be the images
+under $s$ of~${x_{1}}|\othercal{U}',\dots,{x_{q}}|\othercal{U}'$. To say
+that $s$ extends to $\othercal{X}'$ amounts to saying that the
+$u_{1},\dots,u_{q}$ extend to sections of
+$\Gamma(\othercal{X}',\cal{O}_{\othercal{X}'})$. But, since $f$ is finite,
+each $u_{i}$ is a Laurent series in $z_{1},\dots,z_{p}$,
+with coefficients power series in
+$z_{p{+}1},\dots,z_{n}$, which satisfy relations of
+integral dependence. It follows that $u_{i}$ is
+bounded, hence is a power series in $z_{1},\dots,z_{n}$,
+and consequently extends to $\othercal{X}'$.
+
+One may ask whether the functor introduced in~\Ref{XII.5.3} is
+an equivalence of categories. An answer to
+this question is provided by the theorem of \textsc{Grauert}-\textsc{Remmert} \cite{XII.6},
+of which we give a proof below using
+resolution of singularities. One could also have used the
+theorem of \textsc{Grauert}-\textsc{Remmert} to prove~\Ref{XII.5.1};
+this is what was done before~\cite{XII.8} was available.
+
+\begin{theorem}[\textsc{Grauert}-\textsc{Remmert} theorem]
+\label{XII.5.4}
+Let
+% original p. 340
+$\othercal{X}$ be a normal analytic space, $\othercal{Y}$ a
+closed analytic subset such that
+$\othercal{U}=\othercal{X}-\othercal{Y}$ is dense in~$\othercal{X}$. Let
+$\othercal{U}'$ be a normal finite covering of~$\othercal{U}$; assume
+that there exists a nowhere dense closed analytic subset $\othercal{S}$
+of~$\othercal{X}$ such that the restriction of~$\othercal{U}'$ to
+$\othercal{U}-\othercal{U}\cap\othercal{S}$ is \'etale. Then there exists a
+normal finite covering $\othercal{X}'$ of~$\othercal{X}$ which extends
+$\othercal{U}'$, and $\othercal{X}'$ is unique up to isomorphism.
+\end{theorem}
+
+Uniqueness follows from~\Ref{XII.5.3}. The problem of
+extending $\othercal{U}'$ is therefore local on~$\othercal{X}$. We may assume
+$\othercal{U}$ regular and $\othercal{U}'$ \'etale over~$\othercal{U}$.
+Indeed the set of regular points of~$\othercal{U}$ is an open set
+$\othercal{V}$ dense in~$\othercal{X}$ whose complement is an
+analytic subset \hbox{\cite[\no20~D th\ptbl 2]{XII.4}}, and it suffices to replace
+$\othercal{U}$ by the open set $\othercal{V}-\othercal{V}\cap\othercal{S}$.
+
+Let $y$ be a point of~$\othercal{X}-\othercal{U}$ and let us show that
+$\othercal{U}'$ can be extended to a neighborhood of~$y$. After
+restricting $\othercal{X}$ to an open neighborhood of~$y$, it
+follows from the resolution of singularities theorem
+\cite{XII.8} that one can find a regular analytic space
+$\othercal{X}_1$ and a projective morphism $f\colon\othercal{X}_1\to\othercal{X}$
+inducing by restriction to~$\othercal{U}$ an isomorphism
+$\othercal{U}_1=f^{-1}(\othercal{U})\simeq\othercal{U}$, such that $\othercal{U}_1$ is
+the complement in~$\othercal{X}_1$ of a divisor with
+normal crossings. Let us show that $\othercal{U}'$ extends to a
+normal finite covering of~$\othercal{X}_1$. Since the question is
+local on~$\othercal{X}_1$, we may assume that $\othercal{X}_1$ is a
+ball of an affine space $\othercal{E}^n$ and that $\othercal{X}_1-\othercal{U}_1$
+is defined by the vanishing of the first $p$ coordinate
+functions
+$z_1,\dots,z_p$,
+with $0\leq p\leq n$. The \'etale covering $\othercal{U}'$
+of~$\othercal{U}_1$ is a quotient of a covering of the form
+$$
+\othercal{U}_2=\othercal{U}_1[T_1,\dots,T_p]/\left(T_1^{n_1}-z_1,\dots,
+T_p^{n_p}-z_p\right)
+$$
+by a subgroup $H$ of the Galois group of~$\othercal{U}_2$. The
+covering $\othercal{U}_2$ extends
+% original p. 341
+to the covering
+$$
+\othercal{X}_2=\othercal{X}_1[T_1,\dots,T_p]/\left(T_1^{n_1}-z_1,\dots,
+T_p^{n_p}-z_p\right)
+$$
+of~$\othercal{X}_1$ on which $H$ acts, and $\othercal{X}_2/H$ extends
+$\othercal{U}'$ to~$\othercal{X}_1$.
+
+Denote by $\othercal{X}_1'$ the normal finite covering of~$\othercal{X}_1$ which
+extends $\othercal{U}'$, and by $\othercal{F}_1$ the coherent
+$\cal{O}_{\othercal{X}_1}$-Algebra defined
+by~$\othercal{F}_1$. By the finiteness theorem of
+\textsc{Grauert}-\textsc{Remmert} \hbox{\cite[\no15 th\ptbl 1.1]{XII.4}}, $f_*\othercal{F}_1$ is a
+coherent $\cal{O}_{\othercal{X}}$-Algebra. There therefore corresponds to it
+a finite covering $\othercal{X}'$ of~$\othercal{X}$, which is moreover
+normal since $\othercal{X}_1'$ is, and $\othercal{X}'$ is the desired
+extension of~$\othercal{U}'$.
+
+\begin{remark}
+\label{XII.5.5}
+In statement~\Ref{XII.5.4}, one cannot drop
+the hypothesis on the locus of points where the morphism
+$\othercal{U}'\to\othercal{U}$ is not \'etale. For example, let
+$\othercal{X}$ be the unit disk of the complex plane, $\othercal{U}$ the
+complement of the origin in~$\othercal{X}$,
+$\othercal{U}'=\othercal{U}[T]/(T^2-\sin 1/z)$, where~$z$ is the
+coordinate function on~$\othercal{X}$. Then $\othercal{U}'$ is a normal
+finite covering of~$\othercal{U}$ which does not extend
+to~$\othercal{X}$. Indeed, suppose that $\othercal{U}'$ extends to a
+finite covering $\othercal{X}'$ of~$\othercal{X}$; the locus of points
+of~$\othercal{X}$ where the morphism $\othercal{X}'\to\othercal{X}$ is not
+\'etale is then a closed analytic set which contains all the
+points $z$ such that $\sin 1/z=0$, which is absurd.
+
+One can, however, drop the hypothesis on the singular locus of the
+morphism $\othercal{U}'\to\othercal{U}$ when we have
+$\codim(\othercal{X}-\othercal{U},\othercal{X})\geq~2$. Indeed, we may assume
+$\othercal{U}$ regular. The locus of points of~$\othercal{U}$ where
+$\othercal{U}'\to\othercal{U}$ is not \'etale is a divisor
+of~$\othercal{U}$, and it follows from the theorem of \textsc{Remmert}-\textsc{Stein}
+\cite[th\ptbl 3]{XII.9} that it is
+% original p. 342
+the trace on~$\othercal{U}$ of a divisor of~$\othercal{X}$. Now, in this case,
+if $\othercal{A}$ is a coherent $\cal{O}_{\othercal{U}}$-Algebra
+such that $\othercal{U}'=\Spec \an(\othercal{A})$, and if $i:\othercal{U}\to\othercal{X}$
+is the canonical morphism, it suffices to take
+$\othercal{X}'=\Spec\an(i_*\othercal{A})$; indeed, we know that $i_*\othercal{A}$
+is coherent \cite[\no 1 th\ptbl 1]{XII.11}.
+\end{remark}
+
+\begin{remarkMR}
+\label{XII.5.6}
+There exist nontrivial groups $G$ of finite presentation
+which possess no subgroups of finite index
+distinct from~$G$, for example the group of G\ptbl Higman (\cf J-P\ptbl Serre, Arbres et amalgames, Ast\'erisque \No 46, prop\ptbl 6, chap\ptbl I, \S 1).
+Consequently, if such a group is realized as the topological fundamental
+group of a scheme $V$ over~$\CC$, say smooth and
+projective, the topological space $V_{\mathrm{top}}$ underlying $V$ is not
+simply connected, but $V$ is algebraically simply connected.
+At present, no such $V$ is known. Let us point out, however,
+that D\ptbl Toledo has constructed smooth projective schemes $V$ over~$\CC$ whose topological fundamental group is not separated
+for the topology of subgroups of finite index (the natural morphism
+$\pi_1(V_{\mathrm{top}})\to\pi_1(V_{\alg})$ is not injective). [D\ptbl Toledo, Projective varieties with non-residually finite fundamental group, Publ.\ Math.\ IHES \textbf{77} (1993), p\ptbl103--119].
+\end{remarkMR}
+
+\begin{thebibliography}{10}{XII.6}
+% original p. 343
+
+\bibitem[1]{XII.1} N\ptbl \textsc{Bourbaki},
+Topologie G\'en\'erale, Hermann, Paris (1960).
+
+\bibitem[2]{XII.2} N\ptbl \textsc{Bourbaki},
+Alg\`ebre Commutative, Hermann, Paris (1961).
+
+\bibitem[3]{XII.3} H\ptbl \textsc{Cartan}. S\'eminaire E.N.S., Paris (1956-57).
+
+\bibitem[4]{XII.4} H\ptbl \textsc{Cartan}. S\'eminaire E.N.S., Paris (1960-61).
+
+\bibitem[5]{XII.5} R\ptbl \textsc{Godement}, Th\'eorie des Faisceaux, Hermann, Paris
+(1958).
+
+\bibitem[6]{XII.6} H\ptbl \textsc{Grauert} and R\ptbl \textsc{Remmert},
+Komplexe R\"aume, Math.\ Ann. \textbf{136} (1958), p\ptbl 245--318.
+
+\bibitem[7]{XII.7} M\ptbl \textsc{Hakim}, Sch\'emas relatifs, thesis, Paris (1967).
+
+\bibitem[8]{XII.8} H\ptbl \textsc{Hironaka},
+Resolution of singularities of an algebraic variety over a field of characteristic zero, Ann.\ of Math. \textbf{39} (1964), p\ptbl 109--236.
+
+\bibitem[9]{XII.9} R\ptbl \textsc{Remmert} and K\ptbl \textsc{Stein},
+Ueber die wesentlichen Singularit\"aten analytischer Mengen,
+Math.\ Ann. \textbf{126} (1953), p\ptbl 263--306.
+
+\bibitem[10]{XII.10}
+J-P\ptbl\textsc{Serre},
+G\'eom\'etrie alg\'ebrique et g\'eom\'etrie analytique, Ann.\ Inst.\ Fourier (Grenoble) \textbf{6} (1956), p\ptbl 1--42.
+
+\bibitem[11]{XII.11}
+J-P\ptbl\textsc{Serre},
+Prolongement de faisceaux analytiques
+coh\'erents, Ann.\ Inst.\ Fourier (Grenoble) \textbf{16} (1966), p\ptbl 363--374.
+
+\end{thebibliography}

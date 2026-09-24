@@ -31,8 +31,9 @@ Unofficial English translations of Grothendieck’s *Séminaire de Géométrie
 Algébrique du Bois Marie* (SGA), together with a Lean 4 formalization
 on [mathlib](https://github.com/leanprover-community/mathlib4).
 
-This is a working tree, not a finished edition. SGA 1 Exposés I, II, III, and VI
-have full English drafts, as does SGA 2 (Introduction and Exposés I–XIV);
+This is a working tree, not a finished edition. SGA 1 is translated in
+full (front matter and Exposés I–VI, VIII–XIII; VII does not exist), as is
+SGA 2 (Introduction and Exposés I–XIV);
 the Lean side of SGA 1 I and VI compiles against mathlib. SGA 2 has partial
 Lean formalizations of Exposés I–VII, with exact coverage and remaining
 gaps recorded in [`docs/formalization.md`](docs/formalization.md).
@@ -47,14 +48,10 @@ docs/            status and formalization notes
 
 | Work | State |
 | --- | --- |
-| SGA 1, Exposé I — English | full draft ([TeX + PDF](translation/SGA1/ExposeI/)) |
+| SGA 1, front matter and Exposés I–VI, VIII–XIII — English | full drafts ([`translation/SGA1/`](translation/SGA1/)) |
 | SGA 1, Exposé I — Lean | compiling (mathlib language + numbered lemmas) |
-| SGA 1, Exposé II — English | full draft ([TeX + PDF](translation/SGA1/ExposeII/)) |
-| SGA 1, Exposé II — Lean | not started (translation only) |
-| SGA 1, Exposé III — English | full draft ([TeX + PDF](translation/SGA1/ExposeIII/)) |
-| SGA 1, Exposé III — Lean | not started (translation only) |
-| SGA 1, Exposé VI — English | translated |
 | SGA 1, Exposé VI — Lean | compiling (mathlib language + numbered lemmas) |
+| SGA 1, other exposés — Lean | not started |
 | SGA 2, Introduction–XIV — English | drafts in `translation/SGA2/` |
 | SGA 2, Exposés I–III — Lean | partial; locally closed internal Hom/sheaf Ext, arbitrary-coefficient extension sequences, group- and sheaf-valued nested-support sequences, general spectral sequences, noetherian affine comparison, II.8–II.11 algebra, all-degree depth and restriction criteria, Hartogs, connected components, component chains in codimension, and catenary equidimensionality |
 | SGA 2, Exposé IV — Lean | partial; canonical representation, IV.3.1–3.2 duality criteria, nonlocal finite-length duality, supported injective envelopes, finite coinduction, quotient annihilators, locally Artinian completion equivalence and duality transfer, Macaulay quotient-dual colimit, orthogonality, cyclic/socle criterion, and regular-local global dimension with arbitrary-module upper Ext vanishing |
@@ -62,7 +59,7 @@ docs/            status and formalization notes
 | SGA 2, Exposé VI — Lean | partial; genuine internal Hom and tensor support representations, module-derived supported Ext, actual local Ext and excision, long exact sequences, spectral functors with E₂ and Ext abutment comparisons, and affine degree-zero quotient-Hom colimits |
 | SGA 2, Exposé VII — Lean | partial; actual internal-Hom zero detection from literal stalk support on locally noetherian schemes |
 | SGA 2, Exposés VIII–XIV — Lean | not started |
-| Remaining exposés of SGA 1, and SGA 3–7 | not started |
+| SGA 3–7 | not started |
 
 Tick-list: [`docs/status.md`](docs/status.md).
 Sources and licenses: [`COPYRIGHT.md`](COPYRIGHT.md).
@@ -88,7 +85,7 @@ Needs [elan](https://github.com/leanprover/elan) and a TeX Live with `latexmk`.
 ```bash
 make            # Lean + PDF
 make lean       # lake build in lean/
-make tex        # PDFs of SGA 1 I, II, III, VI, and SGA 2 Intro–XIV
+make tex        # PDFs of all of SGA 1 and SGA 2
 ```
 
 First Lean build, from `lean/`:

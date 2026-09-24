@@ -1,0 +1,415 @@
+\section{Effectiveness criteria for a descent datum}
+\label{VIII.7}
+
+Consider as usual a morphism of preschemes
+$$
+g\colon S'\to S
+$$
+and an $S'$-prescheme~$X'$. In accordance with the
+general facts~VII,~9\footnote{does not exist; see expos\'e 212 of the
+S\'eminaire Bourbaki (1962)},
+giving a descent datum on~$X'$, relative
+to~$g$, is equivalent to giving an equivalence
+pair \cite{VIII.3}:
+$$
+\xymatrix@C=.5cm{ q_{1},q_{2}\colon X''\ar@<2pt>[r]\ar@<-2pt>[r] & X'}
+$$
+such that the structural morphism~$X'\to S'$ is compatible with this
+pair and the equivalence pair
+$$
+\xymatrix@C=.5cm{p_{1},p_{2}\colon
+S''=S'\times_{S}S'\ar@<2pt>[r]\ar@<-2pt>[r] & S'}
+$$
+defined by~$g$, and such that the two squares (or one of the two,
+which amounts to the same by reason of symmetry) extracted from the
+corresponding diagram
+$$
+\xymatrix{X'\ar[d] & X''\ar@<2pt>[l]\ar@<-2pt>[l]\ar[d]\\ S' &
+S''\ar@<2pt>[l]\ar@<-2pt>[l]}
+$$
+(using either~$p_{1},q_{1}$, or~$p_{2},q_{2}$), are
+\emph{cartesian}. A solution of the descent problem
+posed by this descent datum, \ie an object~$X$ over~$S$
+endowed with an isomorphism~$X\times_{S}S'\isomfrom X'$ compatible with the
+descent data, is equivalent to giving a
+\emph{cartesian} square
+$$
+\xymatrix{X\ar[d] & X'\ar[l]_{h}\ar[d]\\ S & S'\ar[l]_{g}}
+$$
+satisfying~$hq_{1}=hq_{2}$.
+
+Since
+% original p. 220
+the set of faithfully flat and quasi-compact morphisms is
+stable under change of base, and since a faithfully flat
+and quasi-compact morphism is an effective epimorphism by virtue
+of~\Ref{VIII.5.3}, it follows from the general theory
+\cite{VIII.D}:
+
+\begin{proposition}
+\label{VIII.7.1}
+Suppose~$g\colon S'\to S$ faithfully flat and quasi-compact. For
+a descent datum on~$X'$ relative to~$g$ to be
+effective, it is necessary and sufficient that the equivalence
+relation~$R=(q_{1},q_{2})$ which it defines be effective
+(\ie the quotient~$X'/R$ exists and $X''$ becomes the fibered
+square of~$X'$ over~$X'/R$), and that the canonical morphism~$X'\to
+X'/R$ be faithfully flat and quasi-compact.
+\end{proposition}
+
+Thus the question of the effectiveness of a descent datum
+is a special case of the question of effectiveness of an equivalence
+graph, and various effectiveness criteria given
+in this no.\ can be obtained in this way. Nevertheless, in the context
+of descent one has at one's disposal
+theorem~\Ref{VIII.2.1}, which implies that \emph{if $X'$ is
+affine over~$S'$, every descent datum on~$X'$ relative
+to~$g$ is effective}, a statement which has no analogue for
+passage to the quotient by a general flat equivalence
+graph. All the effectiveness criteria that we
+give here can also be considered as
+deduced from the preceding one.
+
+Let~$U'$ be a subprescheme of~$X'$ (or more
+generally a subobject of~$X'$ in the
+category~$\Sch$); one says that~$U'$ is \emph{stable under the
+descent datum} on~$X'$ if one can find on~$U'$ a
+descent datum relative to~$g$ such that
+the immersion~$U'\to X'$ is compatible with the descent
+data. This also means that the inverse images of~$U'$
+in~$X''$ under~$q_{1}$ and~$q_{2}$ are the same (or also, as
+one says, that~$U'$ is \emph{stable under the equivalence
+relation}~$R$), and of course the descent datum in
+question on~$U'$ is then unique, and is called the \emph{descent
+datum induced}
+by that of~$X'$. This being said:
+
+\begin{proposition}
+\label{VIII.7.2}
+Let~$(X_{i}')$ be a covering of~$X'$ by open sets~$X_{i}'$
+stable
+% original p. 221
+under the descent datum. For the descent datum
+on~$X'$ to be effective, it is necessary and sufficient that the
+same hold for the induced descent data on the~$X_{i}'$.
+\end{proposition}
+
+This is an easy consequence of~\Ref{VIII.7.1} for instance,
+and the details of the proof are left to the reader.
+
+\begin{corollary}
+\label{VIII.7.3}
+Let~$(S_{i})$ be an open covering of~$S$, and for every~$i$
+let~$S_{i}'$ and~$X_{i}'$ be deduced from~$S'$
+and
+$X'$ by the change of base~$S_{i}\to S$. For the descent
+datum on~$X'$ to be effective, it is necessary and sufficient that, for
+every~$i$, the descent datum on~$X_{i}'$ relative
+to~$g_{i}\colon S_{i}'\to S_{i}$ be effective.
+\end{corollary}
+
+This criterion practically always reduces us to the case where~$S$
+is affine. In the case where~$S'$ is also affine, which
+is the most frequent case in applications, one has:
+
+\begin{corollary}
+\label{VIII.7.4}
+Suppose~$S$ and~$S'$ affine. For the descent datum
+on~$X'$ to be effective, it is necessary and sufficient that~$X'$ be
+a union of open sets~$X_{i}'$ that are affine and stable under the
+descent datum.
+\end{corollary}
+
+The sufficiency comes from~\Ref{VIII.7.2} and from the fact that if~$X_{i}'$
+is affine, it is affine over~$S'$ and one can
+apply~\Ref{VIII.2.1}. For the necessity, one notes that
+if~$X'$ comes from~$X$, and if~$X$ is covered by affine open
+sets~$X_{i}$, then the~$X_{i}'=X_{i}\times_{S}S'$ are affine open
+sets stable under the descent data and covering~$X'$.
+
+\begin{corollary}
+\label{VIII.7.5}
+Let~$g\colon S'\to S$ be a faithfully flat, quasi-compact
+and \emph{radicial} morphism. Then~$g$ is an
+\emph{effective} descent morphism, \ie for every~$X'$ over~$S'$, every
+descent datum on~$X'$ relative to~$g\colon S'\to S$ is effective.
+\end{corollary}
+
+Indeed, by virtue of~\Ref{VIII.7.3} one may assume~$S$ affine; hence,
+as~$S'$ is radicial over~$S$ and hence separated, $S'$ is
+separated. Moreover, for every~$x'\in X'$, the
+fiber~$R(x')=q_{2}(q_{1}^{-1}(x'))$ of the set-theoretic equivalence
+relation defined
+% original p. 222
+by the equivalence relation~$R$ is reduced to a point,
+because, $g$ being radicial, the same holds for~$p_{1},p_{2}$, which
+are deduced from it by the change of base~$S'\to S$, hence also
+for~$q_{1},q_{2}$, which are deduced from the preceding ones by the
+change of base~$X'\to S''$. Hence \emph{every open set of~$X'$ is
+stable} under the descent datum. Let us then cover~$X'$ by
+affine open sets~$X_{i}'$; they are affine over~$S$ since~$S'$ is
+separated, hence the induced descent datum is effective
+by~\Ref{VIII.2.1}. One then concludes by~\Ref{VIII.7.2}.
+
+One will note that~\Ref{VIII.7.5} gives the only known case of an
+effective descent morphism in the category of preschemes, and
+it is probably indeed the only case, even when restricting oneself to
+noetherian schemes, or to schemes of finite type over a
+field.
+
+When one assumes~$S$ locally noetherian and~$S'$ of finite type
+over~$S$, the statement~\Ref{VIII.7.5} is also a special case
+of the following one (which generalizes Weil's Galois descent and
+Cartier's inseparable descent):
+
+\begin{corollary}
+\label{VIII.7.6}
+Let~$g\colon S'\to S$ be a finite locally free morphism
+(\ie defined by an Algebra over~$S$ which is a
+locally free module of finite type) and surjective (hence~$g$ is
+faithfully flat and quasi-compact, hence a descent
+morphism). Let~$X'$ be an~$S'$-prescheme endowed with a descent
+datum. For this datum to be effective, it is necessary and
+sufficient that for every~$x'\in X'$, the
+fiber~$R(x')=q_{2}(q_{1}^{-1}(x'))$ be contained in an affine open
+set (a condition automatically satisfied if~$X'$ is
+quasi-projective over~$S'$).
+\end{corollary}
+
+The remark in parentheses comes from the fact that if~$s$ is the
+point of~$S$ below~$x'$, then $R(x')$ is finite and contained
+in the
+fiber~$X'_{s}$;
+on the other hand, since~$X'$ is quasi-projective over~$S'$ and~$S'$ is finite
+over~$S$, $X'$ is quasi-projective over~$S$, which implies that a
+fiber
+of~$X'$ over~$S$
+is contained in an affine open set.
+
+Since every finite subset of an affine scheme admits a fundamental
+system of affine neighborhoods, one sees that one does not lose
+the hypothesis by restricting oneself to the part over an affine open set
+of~$S$, which by virtue of~\Ref{VIII.7.3} reduces us to the case
+where~$S$ is affine. By virtue of~\Ref{VIII.7.4}, we are reduced
+to showing
+that~$x'$
+is contained
+% original p. 223
+in an affine open set \emph{stable} under the descent
+datum. Indeed, let~$U$ be an affine open set containing~$R(x')$; then
+the saturation
+$$
+R(X'-U)=q_{2}(q_{1}^{-1}(X'-U))
+$$
+does not meet~$R(x')$; on the other hand, since~$q_{2}$ is finite (because~$g$,
+hence~$p_{2}$, is) and therefore closed, the right-hand side is a
+closed subset of~$X'$. Let~$U'$ be its complement in~$X'$;
+it is therefore a \emph{saturated} open set and one has
+$$
+R(x')\subset U'\subset U
+$$
+with~$U$ affine, but~$U'$ not affine a priori. Since a finite
+subset~$R(x')$ in an affine scheme~$U$ has a fundamental
+system of affine neighborhoods of the form~$U_{f}$, one sees,
+replacing~$f$ by its restriction to~$U'$, that there exists a
+section~$f$ of~$\mathcal{O}_{U}$ such that:
+$$
+R(x')\subset U_{f}',\quad U_{f}'\textrm{ is affine}.
+$$
+Then let~$U''=q_{1}^{-1}(U')=q_{2}^{-1}(U')$, let us again denote
+by~$q_{1},q_{2}$ the induced morphisms~$U''\to U'$, and
+consider
+$$
+f'=\Norm_{q_{2}}(q_{1}^*(f))\quoi,
+$$
+where~$\Norm_{q_{2}}$ denotes the \emph{norm} relative to the
+finite locally free morphism~$q_{2}\colon U''\to U'$. The
+compatibility of the formation of the norm with change
+of base easily implies that~$f'$ is an \emph{invariant} section:
+$$
+q_{1}^*(f')=q_{2}^*(f')
+$$
+which implies that~$U_{f'}'$ is a saturated open set of~$U'$. More
+precisely, in fact, denoting by~$Z(f')$
+the set of zeros of a section~$f'$, one finds, by virtue of the
+properties of norms:
+$$
+Z(f')=q_{2}(Z(q_{1}^*(f)))=q_{2}(q_{1}^*(Z(f)))=
+R(U'-U_{f}')\quoi,
+$$
+which
+% original p. 224
+implies that~$U_{f'}'=U'-Z(f')$ is saturated, contains~$R(x')$,
+and is contained in~$U_{f}'$. Since the latter is affine, it follows
+that~$U_{f'}'$ is affine too (since it is equal to~$(U_{f}')_{f''}$,
+with~$f''=f'|U_{f'}'$). It is therefore a saturated affine open set
+containing~$R(x')$, hence~$x'$, which completes the proof.
+
+One will note that this reasoning applies whenever one has an
+equivalence relation (or even only a pre-equivalence relation,
+\cf \cite{VIII.3}) in a prescheme~$X'$, finite
+and locally free, and moreover~\Ref{VIII.7.6} is also a special
+case of the analogous result for finite and locally free
+pre-equivalences, \cf \loccit The same remark
+applies to~\Ref{VIII.7.7} below.
+
+One can also, once the existence of a saturated quasi-affine open
+set~$U'$ containing~$x'$ has been obtained, appeal to~\Ref{VIII.7.9}
+and~\Ref{VIII.7.2}, which avoids recourse to norms.
+
+Let us note moreover that under the conditions of~\Ref{VIII.7.6}, if the
+descent datum on~$X'$ is effective, $X'$ coming from~$X$
+over~$S$, then the morphism~$X'\to X$ is finite, locally free and
+surjective, since it is deduced from~$g$ by the change of base~$X\to
+S$. It follows (EGA~II 6.6.4) that if~$X'$ is quasi-projective
+over~$S'$, hence over~$S$, then~$X$ is quasi-projective over~$S$ (a
+relatively ample invertible sheaf on~$X$ being obtained by
+taking the \emph{norm} of an invertible sheaf on~$X'$ relatively
+ample over~$S$, or over~$S'$, which amounts to the same). One thus
+obtains:
+
+\begin{corollary}
+\label{VIII.7.7}
+A finite locally free and surjective morphism~$g\colon S'\to S$ is
+an effective descent morphism for the fibered category
+of preschemes quasi-projective over other ones, \ie for
+every~$X'$ quasi-projective over~$S'$, every descent datum
+on~$X'$ relative to~$g$ is effective, and the
+descended $S$-prescheme~$X$ is quasi-projective over~$S$.
+\end{corollary}
+
+\begin{proposition}
+\label{VIII.7.8}
+Let~$g\colon S'\to S$ be a faithfully flat and
+quasi-compact morphism. Then~$g$ is an effective descent morphism for
+the fibered category of preschemes~$Z$ quasi-compact
+over a prescheme~$T$, endowed with an invertible sheaf ample
+% original p. 225
+relative to~$T$. In particular, for every
+prescheme~$X'$ over~$S'$ endowed with a descent datum
+relative to~$g\colon S'\to S$, and every invertible
+sheaf~$\mathcal{L}'$ on~$X'$ ample relative to~$S'$, also
+endowed with a descent datum relative to the one
+given on~$X'$ (\ie endowed with an isomorphism
+of~$q_{1}^*(\mathcal{L}')$ with~$q_{2}^*(\mathcal{L}')$
+satisfying the usual transitivity condition), the
+descent datum on~$X'$ is effective, and the invertible
+sheaf~$\mathcal{L}$ on the descended prescheme~$X$,
+deduced from~$\mathcal{L}'$ by descent, is ample relative
+to~$S$.
+\end{proposition}
+
+The proof is quite analogous to that of~\Ref{VIII.5.8},
+noting that on the quasi-coherent graded
+Algebra~$\mathcal{S}'$ over~$S'$ defined
+by~$\mathcal{L}'$ there is a descent datum, making it possible to
+construct a quasi-coherent graded
+Algebra~$\mathcal{S}$ over~$S$ thanks
+to~\Ref{VIII.1.1}, whence a~$P=\Proj(\mathcal{S})$ over~$S$ such
+that~$P'=\Proj(\mathcal{S}')$ is identified, together with its descent
+datum, with~$P\times_{S}S'$. Since by hypothesis $X'$
+is identified with an open set of~$P'$, necessarily stable under the
+descent datum on~$P'$, the descent datum on~$X'$
+is also effective, and one obtains the descended
+prescheme as an open set in~$P$. The details are left to the
+reader. --- In particular, taking~$\mathcal{L}'=\mathcal{O}_{X'}$, one
+finds:
+
+\begin{corollary}
+\label{VIII.7.9}
+Let~$g\colon S'\to S$ be a faithfully flat and
+quasi-compact morphism, and let~$X'$ be a \emph{quasi-affine}
+prescheme over~$S'$; then every descent datum on~$X'$
+relative to~$g$ is effective, and the descended
+prescheme~$X$ is quasi-affine over~$S$.
+\end{corollary}
+
+By virtue of~\Ref{VIII.6.2}, this result applies in particular
+if~$S'$ is locally noetherian and~$X'$ is quasi-finite and
+separated over~$S'$, more generally if~$S'$ is
+arbitrary and~$X'$ is of finite presentation, quasi-finite and
+separated over~$S'$ (\cf \Ref{VIII.6.6}).
+
+\begin{remarks}
+\label{VIII.7.10}
+The results given in this no.\ exhaust the effectiveness
+criteria currently known, and probably
+even the useful criteria that exist\footnote{This opinion
+has turned out to be partially mistaken, see for example J.P\ptbl \textsc{Murre},
+S\'em. Bourbaki 294 (Appendix), May 1965, and special
+results (notably of \textsc{N\'eron} and \textsc{Raynaud}). For the descent of
+group schemes; \cf M\ptbl Raynaud, thesis (1968).}. One will note
+the following counterexamples in support of this assertion:
+\begin{enumerate}
+\item[(i)]
+% original p. 226
+If~$S$ is the spectrum of a field, and~$S'$ is the spectrum of a
+Galois quadratic extension, one can find an~$X'$ over~$S'$,
+proper and smooth over~$S'$, of dimension 3, endowed with a
+descent datum which is not effective (Serre).
+\item[(ii)] One can find an~$S$ spectrum of a regular local ring
+of dimension 3 (if one wishes, the local ring of an
+algebraic scheme over a field of given
+characteristic), a~$T$ principal covering of~$S$ with
+group~$\ZZ/2\ZZ$, such that, if~$t$ denotes one of the points of~$T$
+above the closed point~$s$ of~$S$, and $S'=T-s$, one can
+find an~$X'$ \emph{projective} over~$S'$, regular, endowed with a
+descent datum relative to~$g\colon S'\to S$, this
+descent datum not being effective.
+\end{enumerate}
+
+For these constructions one uses Hironaka's example of
+non-projective varieties. For~(i), it suffices to use the
+fact that one can find over~$k$ a proper and
+smooth scheme~$X_{0}$ of dimension 3, on which~$G=\ZZ/2\ZZ$ acts without
+inertia, and in which there exist two points~$a,b$ rational
+over~$S$,
+congruent under~$G$, which are not contained in an affine open set. One
+then puts~$X'=X_{0}\times_{k}k'$, and one lets~$G$ act on~$X'$
+by means of the actions of~$G$ on the two factors, which
+gives a descent datum on~$X'$ relative to~$g\colon
+\Spec(k')\to \Spec(k)$. Above~$a$ \resp $b$, there is exactly
+one point~$a'$ \resp $b'$ (with quadratic residue field
+extension), and~$a'$ and~$b'$ are congruent under~$G$, since~$X'\to
+X_{0}$ is compatible with the actions of~$G$. Then~$a'$
+and~$b'$ cannot be contained in an affine open set, say~$U'$,
+for then~$U=X_{0}-\Im(X'-U')$ would be an open set of~$X_{0}$
+containing~$(a,b)$ and whose inverse image in~$X'$ would be contained
+in~$U'$, hence quasi-affine, hence~$U$ would be quasi-affine, and
+consequently~$(a,b)$ would have an affine neighborhood in~$U$.
+
+For~(ii), one uses the fact that in Hironaka's example, $X_{0}$
+is obtained as a prescheme proper over
+a projective $k$-scheme~$Y$, smooth over~$k$ (the
+morphism~$f\colon X_{0}\to Y$ being moreover birational, but
+that does not matter), the group~$G$ also acting on~$Y$
+compatibly with its actions on~$X_{0}$; finally,
+putting~$S'=Y-f(b)$, $X'=X_{0}|S'$, $X'$ is projective
+over~$S'$. Then~$X_{0}$ is endowed with a natural descent
+datum relative to the canonical
+% original p. 227
+morphism~$Y\to S=Y/G$, thanks to the actions of~$G$
+on~$X_{0}$ compatible with its actions on~$Y$. This
+descent datum is not effective, since~$(a,b)$ is not
+contained in an affine open set. The induced descent datum
+on~$X'$ relative to~$g\colon S'\to S$ is then not
+effective, as one easily verifies.
+\end{remarks}
+
+\begin{thebibliography}{D}{VIII.8}
+
+\bibitem[D]{VIII.D} J\ptbl \textsc{Giraud}, M\'ethode de la descente, M\'emoire \no 2
+de la Soc.\ Math.\ Fr., 1964.
+
+\bibitem[1]{VIII.1} A\ptbl \textsc{Grothendieck}, S\'eminaire Bourbaki:
+G\'eom\'etrie formelle et G\'eom\'etrie alg\'ebrique, May
+1959, \No 182.
+
+\bibitem[2]{VIII.2} A\ptbl \textsc{Grothendieck}, S\'eminaire Bourbaki: Technique de
+descente et Th\'eor\`emes d'existence~I, December 1959,
+\No 190.
+
+\bibitem[3]{VIII.3} A\ptbl \textsc{Grothendieck}, S\'eminaire Bourbaki: Technique de
+descente et Th\'eor\`emes d'existence~III, February 1961,
+\No 212.
+\end{thebibliography}

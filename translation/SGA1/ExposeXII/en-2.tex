@@ -1,0 +1,477 @@
+\section{Comparison of the properties of morphisms}
+\label{XII.3}
+
+\begin{proposition}
+\label{XII.3.1} Let $f \colon X \to Y$ be a morphism of
+$\CC$-schemes locally of finite type, $f^\an \colon X^\an \to
+Y^\an$ the morphism deduced from~$f$ on the associated
+analytic spaces. Let $P$ be the property of being
+\begin{enumerate}
+\item[(i)] flat
+\item[(ii)] net (\ie unramified)
+\item[(iii)] étale
+\item[(iv)] smooth
+\item[(v)] normal
+\item[(vi)]
+% original p. 321
+reduced
+\item[(vii)] injective
+\item[(viii)] separated
+\item[(ix)] an isomorphism
+\item[(x)] a monomorphism
+\item[(xi)] an open immersion.
+\end{enumerate}
+Then, for $f$ to have the property $P$, it is necessary and
+sufficient that $f^\an$ have it.
+\end{proposition}
+
+Let us denote by $\varphi \colon X^\an \to X $ and $\psi \colon Y^\an \to Y$ the
+canonical morphisms. Let $x$ be a point of~$X^\an$, $y = f^\an
+(x)$. The morphisms $\cal{O}_{Y^\an, y} \to {\mathcal O}_{X^\an, x}$
+and $\cal{O}_{Y, \psi(y)} \to \cal{O}_{X, \varphi(x)} $ deduced from
+$f$ and $f^{\an}$ give the same morphism on passing to the
+completions \eqref{XII.1.1}. By \cite[ch\ptbl 3 \S 5 prop\ptbl 4]{XII.2}
+(\resp EGA~IV 17.4.4) it therefore amounts to the same to say that $f^\an $
+satisfies property (i) (\resp (ii)) or to say that $f$
+satisfies (i) (\resp (ii)) at each closed point of~$X$. As
+the set of points of~$X$ where (i) (\resp (ii)) is
+satisfied is an open set (EGA~IV 11.1.1 and I 3.3), this
+proves (i) and (ii), hence also (iii).
+
+Let $P$ be the property (iv) (\resp (v), \resp (vi)). Taking into account
+\Ref{XII.2.1} ((v), (vi), (vii)), it amounts to the same to say that
+the geometric fibers of~$f^\an$ at the various points
+$y$ of~$Y^\an$ are regular (\resp normal, \resp reduced) or that the same holds for the geometric fibers of
+$f$ at the various closed points $\psi (y)$ of~$Y$. The cases
+(iv) (\resp (v), \resp (vi)) then follow from (i) and from the fact that
+the set of points of~$Y$ where the geometric fibers of
+$f$ are regular is an open set (EGA~IV 12.1.7).
+
+(vii). If $f$ is injective, so is $f^\an$.
+Conversely, suppose $f^\an$ injective and let us show that the same holds
+for~$f$. We may assume
+% original p. 322
+$f$ of finite type. The morphism $f^\an$ being injective, the fibers
+of~$f$ at the closed points of~$Y$ are radicial; as the set
+of points of~$Y$ whose fiber is radicial is locally
+constructible (EGA~IV 9.6.1) and as $Y$ is a Jacobson
+scheme, $f$ has all its fibers radicial, hence is injective.
+
+(viii). Let $\Delta \colon X \to X \times_Y X $ and $\Delta^\an
+\colon X^\an \to X^\an \times_{Y^\an} X^\an $ be the diagonal
+immersions, $\Theta \colon X^\an \times_{Y^\an} X^\an \to X \times_Y X
+$ the canonical morphism. By virtue of~\Ref{XII.2.3} it amounts to the
+same to say that $\Delta (X)$ is closed in $X \times_Y X $
+or that $\Delta^\an (X^\an)$ is closed in $X^\an \times_{Y^\an}
+X^\an$.
+
+As an open immersion is nothing other than an injective étale
+morphism (EGA~IV 17.9.1 and \cite[\no 13 \S 1]{XII.4}), (xi) follows from (iii)
+and (vii). An isomorphism being the same thing as a surjective
+open immersion, (ix) follows from (xi) and from
+(\Ref{XII.3.2}~(i)) below. To say that $f$ is a monomorphism
+is equivalent to saying that the diagonal morphism $\Delta \colon X \to
+X \times_Y X$ is an isomorphism, hence (x) follows from (ix).
+
+\begin{proposition}
+\label{XII.3.2}
+Let $X$ and $Y$ be two $\CC$-schemes locally of finite type,
+$f\colon X \to Y$ a morphism of finite type, $f^\an \colon X^\an \to
+Y^\an $ the morphism deduced from~$f$ on the associated
+analytic spaces. Let $P$ be the property of being
+\begin{enumerate}
+\item[(i)] surjective
+\item[(ii)] dominant
+\item[(iii)] a closed immersion
+\item[(iv)] an immersion
+\item[(v)] proper\footnote{We shall say that a morphism of analytic
+spaces is proper if it is so in the sense of \cite[ch\ptbl 1 \S 10 \no 1]{XII.1} and
+if it is separated.}
+\item[(vi)]
+% original p. 323
+finite.
+\end{enumerate}
+Then, for $f$ to have the property $P$, it is necessary and
+sufficient that $f^\an$ have it.
+\end{proposition}
+
+Let $\varphi \colon X^\an \to X$ and $\psi \colon Y^\an \to Y$ be the
+canonical morphisms.
+
+(i). If $f$ is surjective, for every point $y$ of~$Y^\an$, $f^{-1}
+(\psi (y)) $ is a nonempty closed subset of~$X$; it therefore
+contains at least one closed point, which proves that $f^\an$ is
+surjective. Conversely, if $f^\an$ is surjective, $f(X)$ is a
+locally constructible subset of~$Y$ (EGA~IV 1.8.4) which contains
+all the closed points of~$Y$; we therefore have $f(X)=Y$.
+
+(ii) follows from~\Ref{XII.2.2}.
+
+(iii). If $f$ is a closed immersion, so is
+$f^\an$ by \Ref{XII.1.1}~a). Conversely, if $f^\an$ is a closed
+immersion, so is~$f$ by
+\Ref{XII.3.1}~(x) and \Ref{XII.3.2}~(v), since this amounts to saying
+that $f$ is a proper monomorphism (EGA~IV 8.11.5).
+
+(iv). It is clear that, if $f$ is an immersion, so is~$f^\an$.
+Conversely, suppose that $f^\an$ is an
+immersion, and let $T$ be the image of~$X$ in $Y$, $\overline{T}$
+the scheme-theoretic closure of~$f$. We have a factorization of~$f$,
+$$
+X \lto{i} \overline{T} \lto{j} J \quoi,
+$$
+where $j$ is a closed immersion, $i$ the canonical morphism,
+and we deduce from it the following factorization of~$f^\an$
+$$
+X^\an \lto{i^\an} \overline{T}^{\mkern1mu \an} \lto{j^\an} Y^\an \
+.
+$$
+As
+% original p. 324
+$T = f(X)$ is a locally constructible subset of~$Y$ (EGA~IV
+1.8.4), we have, by~\Ref{XII.2.2}, $\overline{T}^{\mkern1mu \an} =
+\overline{f^\an (X^\an )}$. It follows that $i^\an (X^\an )$ is
+an open subset of~$\overline{T}^{\mkern1mu \an}$, hence that $i(X) $ is an open subset of
+$\overline{T}$. Consider the canonical factorization of~$i$
+$$
+X \lto{i_1} i (X) \lto{i_2} \overline{T}.
+$$
+The morphism $i_1^\an $ is a proper monomorphism, hence so is
+$i_1$ by \Ref{XII.3.2}~(v) and \Ref{XII.3.1}~(x);
+this proves that $i_1$, hence also $f$, is an immersion.
+
+(v). Suppose that $f$ is proper and let us show that so is~$f^\an$.
+Since the fact that $f^\an $ is proper is local
+over~$Y^\an$, we may assume $Y$ affine. By Chow's lemma
+(EGA~II 5.6.1), we can find a projective $Y$-scheme $X'$ and a
+projective surjective morphism
+$$
+g \colon X' \to X.
+$$
+The morphism $(fg)^\an = f^\an g^\an $ is projective hence proper,
+$g^\an $ is surjective, and it follows from \cite[ch\ptbl 1 \S 10]{XII.1} that
+$f^\an $ is proper.
+
+Conversely, suppose $f^\an $ proper and let us show that so is~$f$.
+By \Ref{XII.3.1}~(viii) $f$ is
+separated. It remains to prove that $f$ is universally
+closed, and it even suffices to show that $f$ is closed; indeed,
+for every $Y$-scheme $Y'$ locally of finite type, the
+morphism
+$$
+f_{(Y')} = h \colon X \times_Y Y' \to Y'
+$$
+will also be closed since $h^\an $ is proper. Let $T$ be a closed
+subset of~$X$; $f(T)$ is a locally constructible set, and
+we have
+$$
+f^\an (\varphi^{-1} (T)) = \psi^{-1} (f(T)).
+$$
+As
+% original p. 325
+$f^\an $ is proper, $\psi^{-1} (f (T))$ is a closed subset of
+$Y^\an $, and it therefore follows from~\Ref{XII.2.2} that we have
+$$
+\psi^{-1} (\overline{f(T)}) = \psi^{-1} (f(T))\quoi .
+$$
+This implies that we have $f(T) = \overline{f(T)}$, \ie that $f$
+is closed, hence that $f$ is proper.
+
+(vi). It amounts to the same to say that a morphism is finite or that it
+is proper with finite fibers (EGA~III 4.4.2 and \cite[\no 19 \S 5]{XII.4}).
+As the set of points where the fibers of~$f$ are finite is
+locally constructible (EGA~IV 9.7.9), the fibers of~$f$ are finite
+if and only if the same holds for the fibers of~$f^\an $; (vi)
+therefore follows from (v).
+
+\begin{remark}
+\label{XII.3.3}
+\begin{enumerate}
+\item[a)] let $f \colon X \to Y$ be a morphism of~$\CC$-schemes
+locally of finite type. The fact that $f^\an $ is a local
+isomorphism does not imply that the same holds for~$f$. Indeed,
+if $f$ is étale, $f^\an $ is étale hence is a local
+isomorphism \hbox{\cite[\no 13 \S 1]{XII.4}}, but this is not necessarily the case
+for~$f$.
+\item[b)]
+Statement~\Ref{XII.3.2}
+is not true if one does not assume
+$f$ of finite type. Let us show for example that $f^\an $ can be
+a closed immersion without $f$ being one. Indeed, it
+suffices to take for $X$ the sum of~$\ZZ $ copies of
+$\Spec \CC$, and for $Y$ the affine line, and for $f$ the morphism
+obtained by sending the points of~$X$ to distinct points of~$Y$
+forming a discrete subset.
+\end{enumerate}
+\end{remark}
+
+\section[Cohomological comparison theorems]{Cohomological comparison theorems and existence theorems}
+\label{XII.4}
+% original p. 326
+
+The object of this no.\ is to prove anew the results of
+\cite[\no 2 th\ptbl 5 and th\ptbl 6]{XII.3}; the latter generalize to the case
+of a proper scheme the theorems established in \cite[\no 12]{XII.10} when $X$ is projective, and extend them to the
+relative case. More general results, concerning
+relative schemes proper over an analytic space, are
+proved in \cite[ch\ptbl VIII \no 3]{XII.7}.
+
+Recall that the {\v{C}}ech cohomology used in \cite[\no 12]{XII.10} coincides with the usual cohomology in the
+algebraic case as in the analytic case (EGA~III 1.4.1. and \cite[II 5.10]{XII.5}).
+\subsection{}
+\label{XII.4.1}
+Let $f \colon X \to Y $ be a morphism of~$\CC$-schemes
+locally of finite type and consider the commutative diagram
+$$
+\xymatrix{ X^\an \ar[r]^\varphi \ar[d]_{f^\an} & X \ar[d]^f
+\\ Y^\an \ar[r]^\psi & Y \quoi.}
+$$
+If $F$ is an $\cal{O}_X$-Module, we have, for every integer $p \geq
+0$, morphisms
+$$
+\R^p f_* F \lto{i} \R^p f_* (\varphi_* F^\an )
+\lto{j} \R^p (f\cdot\varphi)_* F^\an \lto{k} \psi_*
+(\R^p f_*^\an F^\an ) \quoi,
+$$
+where $i$ is deduced from the canonical morphism $F \to \varphi_*
+F^\an $, and $j, k$ are ``edge homomorphisms'' of Leray
+spectral sequences. To the composite $k.j.i$ there is associated a
+canonical morphism
+\begin{equation*}
+\label{eq:XII.4.1.1}
+\tag{4.1.1} {\theta_p \colon (\R^p f_* F)^\an \to \R^p f_*^\an
+(F^\an )}
+\end{equation*}
+
+\begin{theorem}
+\label{XII.4.2}
+Let
+% original p. 327
+$f \colon X \to Y $ be a proper morphism of~$\CC$-schemes
+locally of finite type, $F$ a coherent
+$\cal{O}_X$-Module. Then, for every integer $p \geq 0$ the morphism
+\eqref{eq:XII.4.1.1}
+$$
+\theta_p \colon (\R^p f_* F)^\an \to \R^p f_*^\an (F^\an)
+$$
+is an isomorphism.
+\end{theorem}
+
+1) \emph{Case where $f$ is projective}. The proof is
+analogous to that of \cite[\no 13]{XII.10}. Let us recall it briefly. One
+reduces to the case where $X$ is a standard projective space $\PP^r_Y
+$ over~$Y$. Let $\cal{Y} = Y^\an$, $\cal{P} = \PP^r_\cal{Y}$;
+one first proves that we have
+$$
+f_*^\an \cal{O}_\cal{P} = \cal{O}_\cal{Y} \quoi, \qquad \R^p f_*^\an
+(\cal{O}_\cal{P}) = 0 \qquad \text{for } p>0
+$$
+To verify the preceding relations, one can indeed
+reduce to the case where $\cal{Y}$ is a ball $\cal{B}$ of an
+affine space $\cal{E}^n$. One considers the ``standard covering'' $\{
+\cal{U}_i \}$ of~$\cal{P}$ by $r+1$ open sets isomorphic to $\cal{B}
+\times \cal{E}^r$. As these open sets are Stein, we have, for every
+integer $p \geq 0$, isomorphisms
+$$
+\H^p (\{ \cal{U}_i \}, \cal{O}_\cal{P}) \isomto \H^p (\cal{P},
+\cal{O}_\cal{P})
+$$
+One can then express the sections of the structure sheaf
+$\cal{O}_\cal{P}$ over the open sets $\cal{U}_i $ and over their
+intersections in terms of Laurent series; an easy computation
+proves that we have
+$$
+\H^0 (\cal{P}, \cal{O}_\cal{P} ) \isomto \H^0 (\cal{Y},
+\cal{O}_\cal{Y} ) \quoi, \qquad \H^p (\cal{P}, \cal{O}_\cal{P} ) = 0
+\qquad \text{for } p>0
+$$
+The proof is then completed by copying \cite[\no 12
+lemma~5]{XII.10}, the cohomology groups being replaced by the
+cohomology sheaves.
+
+2)
+% original p. 328
+\emph{Case where $f$ is proper}. One uses EGA~III 3.1.2 to
+reduce to the projective case. Let $\cal{K}$ be the category of
+coherent $\cal{O}_X$-Modules such that $\theta_p$ is an
+isomorphism for every $p \geq 0$. It suffices to prove that, for
+every exact sequence $0 \to F' \to F \to F'' \to 0$
+of which two terms are in $\cal{K}$, the same holds for the
+third, that a direct factor of an object of~$\cal{K}$ is in
+$\cal{K}$, and that, for every point $x$ of~$X$, one can find an
+object $F$ of~$\cal{K}$ such that we have $F_x \neq 0$.
+
+The first condition follows by application of the five
+lemma to the following commutative diagram, whose rows are exact:
+$$
+\xymatrix@=.7cm{ \ar[r] & (\R^p f_* F')^\an \ar[d] \ar[r] &(\R^p f_*
+F)^\an \ar[d] \ar[r] & (\R^p f_* F'')^\an \ar[d] \ar[r] &
+(\R^{p+1} f_* F' )^\an \ar[r] \ar[d] &\, \\ \ar[r] & \R^p
+f_*^\an F'^\an \ar[r] &\R^p f_*^\an F^\an \ar[r] & \R^p
+f_*^\an F''^\an \ar[r] & \R^{p+1} f_*^\an F'^\an \ar[r] &
+\quoi,}
+$$
+and one verifies the second condition in an analogous way.
+
+To verify the third condition, one can restrict oneself to the case
+where $X$ is an irreducible scheme with generic
+point $x$. We could have assumed $Y$ noetherian from
+the start. By Chow's lemma (EGA~II 5.6.1), one can
+find a projective $Y$-scheme~$X'$ and a projective
+surjective morphism $g \colon X' \to X$. On the other hand there exists an integer~$n$
+such that we have $\R^p g_* (\cal{O}_{X'} (n)) = 0 $ for every $p>0$ and
+such that the canonical morphism $g^* g_* (\cal{O}_{X'} (n)) \to
+\cal{O}_{X'} (n)$ is surjective (EGA~III 2.2.1). If we set
+$F = g_* (\cal{O}_{X'} (n)) $, the sheaf $F$ answers
+the question. Indeed, we have $F_x \neq 0$; moreover, the Leray
+spectral sequence
+$$
+\R^p f_* (\R^q g_* (\cal{O}_{X'} (n))) \To \R^{p+q}
+(f\cdot g)_* (\cal{O}_{X'} (n))
+$$
+being degenerate, we have an isomorphism
+$$
+\R^p f_* F \isomto \R^p (f\cdot g)_* (\cal{O}_{X'} (n))
+$$
+% original p. 329
+As in the algebraic case, we have a canonical isomorphism
+$$\R^p f_*^\an F^\an \isomto
+\R^p (f\cdot g)_*^\an (\cal{O}_{X'}(n)^\an ),$$
+and the diagram
+$$
+\xymatrix@C=1cm{
+(\R^p f_* F)^\an \ar[d]_{\theta_p} \ar[r]^-{\sim} & (\R^p (f\cdot g)_* (\cal{O}_{X'} (n)))^\an \ar[d]_{\psi_p} \\
+\R^p f_*^\an F^\an \ar[r]^-{\sim} & \R^p (f\cdot g)_*^\an
+(\cal{O}_{X'}(n)^\an)}
+$$
+is commutative. By~1) $\psi_p $ is an isomorphism; hence so
+is~$\theta_p$, which completes the
+proof.
+
+\begin{corollary}
+\label{XII.4.3}
+Let $X$ be a proper $\CC$-scheme, $F$ a coherent $\cal{O}_X$-Module.
+Then, for every integer $p\geq 0$, the canonical
+morphism
+$$
+\H^p(X,F)\to \H^p(X^{\an},F^{\an})
+$$
+is an isomorphism.
+\end{corollary}
+
+\begin{theorem}
+\label{XII.4.4}
+Let $X$ be a proper $\CC$-scheme. The functor which associates to every
+coherent $\cal{O}_X$-Module $F$ its inverse image
+$F^{\an}$ on~$X^{\an}$ is an equivalence of categories.
+\end{theorem}
+
+1) \emph{The functor is fully faithful}. Indeed, let $F$
+and $G$ be two coherent $\cal{O}_X$-Modules. The canonical morphism
+$$
+\Hom_{\cal{O}_X}(F,G)\to \Hom_{\cal{O}_{X^{\an}}}(F^{\an},G^{\an})
+$$
+is identified with the canonical morphism
+$$
+\H^0(X,\SheafHom_{\cal{O}_X}(F,G))\to
+\H^0(X^{\an},\SheafHom_{\cal{O}_X}(F,G))
+$$
+% original p. 330
+(EGA~$0_{\textup{I}}$~6.7.6). As $\SheafHom_{\cal{O}_X}(F,G)$ is
+coherent, it follows from~\Ref{XII.4.3} that this morphism is
+bijective.
+
+2) \emph{The functor is essentially surjective}. When $X$ is
+projective, the assertion follows from \cite[\no 12~th\ptbl 3]{XII.10}. The
+general case reduces to the preceding one by using
+Chow's lemma (EGA~II~5.6.1). Indeed, let $X'$ be a projective
+$\CC$-scheme, $f\colon X'\to X$ a projective surjective morphism, $U$ a
+dense open subset of~$X$ such that $f$ induces an isomorphism
+$f^{-1}(U)\simeq U$. We argue by noetherian induction
+on~$X$; we may therefore assume that, for every coherent sheaf
+$\cal{G}$ on~$X^{\an}$ such that one can find a closed
+subset $Y$ of~$X$ distinct from~$X$, satisfying the relation
+$Y^{\an}\supset \Supp \cal{G}$, there exists a coherent sheaf $G$
+on~$X$ such that we have an isomorphism $G^{\an}\simeq \cal{G}$.
+
+Let $\cal{F}$ be a coherent sheaf of modules on~$\cal{O}_{X^{\an}}$, and $\cal{K}$ and $\cal{L}$ the coherent
+sheaves defined by the condition that the sequence
+$$
+0\to\cal{K}\to\cal{F}\to f_*^{\an}f^{\an *}\cal{F}\to\cal{L}\to 0
+$$
+be exact. As $X'$ is projective, there exists a coherent
+$\cal{O}_{X'}$-Module $F'$ such that we have
+$F'^{\an}\simeq {f^{\an}}^*\cal{F}$; one then deduces
+from~\Ref{XII.4.2} that we have an isomorphism $(f_*F')^{\an}\simeq
+f_*^{\an}{f^{\an}}^*\cal{F}$. As $\cal{K}|U^{\an}$ and
+$\cal{L}|U^{\an}$ are zero, there exist coherent $\cal{O}_X$-Modules
+$K$ and $L$ such that we have isomorphisms
+$K^{\an}\simeq \cal{K}$, $L^{\an}\simeq \cal{L}$. By~1) the
+morphism $f_*^{\an}{f^{\an}}^*\cal{F}\to\cal{L}$ comes from a unique
+morphism $f_*F'\to L$; let $I=\Ker(f_*F'\to L)$. The sheaf
+$\cal{F}$ is then an extension of~$I^{\an}$ by~$K^{\an}$, and it suffices
+to see that this extension comes
+% original p. 331
+by inverse image from an extension of~$I$ by~$K$. It therefore suffices to
+prove that the canonical morphism
+\begin{equation*}
+\label{eq:XII.4.*}
+\tag{$*$} \Ext_{\cal{O}_X}^q(I,K)^{\an}\isomto
+\Ext_{\cal{O}_{X^{\an}}}^q(I^{\an},K^{\an})\quad q\neq 1
+\end{equation*}
+is bijective. Now we have isomorphisms
+$\mathbf{Ext}_{\cal{O}_X}^q(I,K)^{\an}\isomto
+\mathbf{Ext}_{\cal{O}_{X^{\an}}}^q(I^{\an},K^{\an})$ for every integer
+$q\geq 0$ (EGA~$0_{\textup{III}}$~12.3.5), and a morphism of spectral
+sequences
+$$
+\xymatrix@R=.7cm@C=.5cm{
+\H^p(X,\mathbf{Ext}_{\cal{O}_X}^q(I,K))\ar@{=>}[r]\ar[d] &
+\Ext_{\cal{O}_X}^{p+q}(I,K)\ar[d]\\
+\H^p(X^{\an},\mathbf{Ext}_{\cal{O}_{X^{\an}}}^q(I^{\an},K^{\an}))\ar@{=>}[r] & \Ext_{\cal{O}_{X^{\an}}}^{p+q}(I^{\an},K^{\an}).
+}
+$$
+This morphism is an isomorphism since, by~\Ref{XII.4.3}, it
+is so on the terms $E^{pq}_2$, and this proves the
+bijectivity of~$(*)$.
+
+\begin{corollary}
+\label{XII.4.5}
+The functor which associates $X^{\an}$ to every proper $\CC$-scheme
+$X$ is fully faithful.
+\end{corollary}
+
+We must show that, if $X$ and $Y$ are two proper
+$\CC$-schemes, the canonical map
+$$
+\Hom_{\CC}(X,Y)\to\Hom(X^{\an},Y^{\an})
+$$
+is bijective. Now, to give a morphism from~$X$ to~$Y$ (\resp from
+$X^{\an}$ to $Y^{\an}$) is equivalent to giving its graph,
+\ie a closed subscheme $Z$ of~$X\times Y$ (\resp a closed
+analytic subspace $\othercal{Z}$ of~$X^{\an}\times
+Y^{\an}$), such that the restriction of the first projection
+$X\times Y\to X$ to~$Z$ (\resp of~$X^{\an}\times Y^{\an}\to
+X^{\an}$ to~$\othercal{Z}$) is
+% original p. 332
+an isomorphism. As the datum of a closed subscheme
+of~$X\times Y$ (\resp of a closed analytic subspace
+of~$X^{\an}\times Y^{\an}$) is equivalent to that of a coherent
+sheaf of ideals on~$\cal{O}_{X\times Y}$ (\resp on~$\cal{O}_{X^{\an}\times Y^{\an}}$), the corollary follows
+from~\Ref{XII.4.4}.
+
+\begin{corollary}
+\label{XII.4.6}
+Let $X$ be a proper $\CC$-scheme. The functor which associates $X'^{\an}$ to every
+finite (\resp finite étale) scheme $X'$ over~$X$
+is an equivalence of the category of finite
+(\resp finite étale) schemes over~$X$ with the category
+of finite (\resp finite étale) analytic spaces over~$X^{\an}$.
+\end{corollary}
+
+Indeed, to give a finite morphism $X'\to X$ (\resp $X'^{\an}\to
+X^{\an}$) is equivalent to giving a coherent sheaf
+of algebras on~$\cal{O}_X$ (\resp on~$\cal{O}_{X^{\an}}$)
+\cite[\no 19~\S 5~th\ptbl 2]{XII.4}. The corollary therefore follows from~\Ref{XII.4.4}
+in the case without ``resp.'', and the ``resp.''\ case is deduced from it taking
+into account~\Ref{XII.3.1}~(iii).

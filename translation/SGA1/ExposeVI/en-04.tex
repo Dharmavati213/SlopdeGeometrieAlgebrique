@@ -1,0 +1,609 @@
+\section{Cofibered categories, bifibered categories}
+\label{VI.10}
+Let us consider a category $\cal{F}$ over~$\cal{E}$,
+with the projection functor
+$$
+p\colon \cal{F}\to \cal{E},
+$$
+it defines a category $\cal{F}^\circ$ over
+$\cal{E}^\circ$, by the projection functor
+$$
+p^\circ\colon \cal{F}^\circ\to \cal{E}^\circ.
+$$
+A morphism $\alpha\colon \eta\to\xi$ in $\cal{F}$ is said to be
+\emph{cocartesian} if it is a cartesian morphism for
+$\cal{F}^\circ$ over~$\cal{E}^\circ$. Making this explicit, one sees that this
+means that for every object $\xi'$ of~$\cal{F}_S$, the map
+$u\mto u\circ \alpha$
+$$
+\Hom_S(\xi,\xi')\to\Hom_f(\eta,\xi')
+$$
+is bijective. One then also says that $(\xi,\alpha)$ is a
+\emph{direct image}
+of~$\eta$ by $f$, in the category $\cal{F}$ over~$\cal{E}$. If
+it exists for every $\eta$ in $\cal{F}_T$, one says that the
+direct image functor by $f$ exists, and one denotes this functor
+% original p. 182
+$f_*^{\cal{F}}$ or~$f_*$,
+once it has been chosen. It is thus defined by
+an isomorphism of bifunctors on~$\cal{F}_T^\circ\times\cal{F}_S$:
+$$
+\Hom_S(f_*(\eta),\xi)\isomto \Hom_f(\eta,\xi).
+$$
+Thus if $f_*$ exists, for $f^*$ to exist, it is necessary and sufficient that
+$f_*$
+admit an adjoint functor, \ie that there exist a functor
+$f^*\colon \cal{F}_S\to\cal{F}_T$ and an isomorphism of bifunctors
+$$
+\Hom_S(f_*(\eta),\xi)\isomto \Hom_T(\eta,f^*(\xi)).
+$$
+Let $g\colon U\to T$ be another morphism in $\cal{E}$, and suppose
+that the inverse images and direct images by $f,g$ and $fg$
+exist. Let us consider then the functorial homomorphisms
+$$
+\begin{array}{cccc}
+c^{f,g}\colon&f_*g_*&\dpl\from&(fg)_*\\
+c_{f,g}\colon&g^*f^*&\dpl\to&(fg)^*.
+\end{array}
+$$
+One observes that if one regards $f_*g_*$ and $g^*f^*$ as a
+pair of adjoint functors, as well as $(fg)_*$ and $(fg)^*$, the two
+preceding homomorphisms are adjoint to one another. Thus
+one is an isomorphism if and only if the other is. In
+particular:
+\begin{proposition}
+\label{VI.10.1} Suppose that the category $\cal{F}$ over~$\cal{E}$
+is prefibered and coprefibered. For it to be
+fibered, it is necessary and sufficient that it be
+cofibered.
+\end{proposition}
+
+Of course, one says that $\cal{F}$ is coprefibered \resp cofibered
+over~$\cal{E}$, if $\cal{F}^\circ$ is prefibered \resp fibered over~$\cal{E}$. We shall say that $\cal{F}$ is bifibered
+over~$\cal{E}$,
+if it is at once fibered and cofibered over~$\cal{E}$.
+
+\section{Various examples}
+\label{VI.11}
+
+\begin{enumerate}
+
+\item[a)] \textbf{Categories of arrows of}~$\cal{E}$. Let
+$\cal{E}$ be a category. Let us denote by $\mathbf{\Delta^1}$ the
+category associated to the totally ordered set
+with two elements $[0,1]$;
+% original p. 183
+it thus has two objects 0 and 1, and besides the two identity
+morphisms an arrow $(0,1)$ with source 0 and target 1. Let
+$$
+\CatFl(\cal{E})=\SheafHom(\mathbf{\Delta^1},\cal{E})
+$$
+one calls it the \emph{category of arrows of} $\cal{E}$.
+The object 1 of~$\mathbf{\Delta^1}$ defines a canonical functor,
+called the \emph{target functor}
+$$
+\CatFl(\cal{E})\to \cal{E}
+$$
+(the functor defined by the object 0 of~$\mathbf{\Delta^1}$ is
+called the \emph{source functor}). For every object $S$ of~$\cal{E}$,
+the fiber-category $\CatFl(\cal{E})_S$ is canonically isomorphic
+to the category $\cal{E}_{/S}$ of objects of~$\cal{E}$
+over~$S$.
+
+Let us consider a morphism $f\colon T\to S$ in $\cal{E}$, then there
+corresponds to it a canonical functor
+$$
+f_*\colon \cal{E}_{/T}=\cal{F}_T\to \cal{E}_{/S}=\cal{F}_S
+$$
+and a functorial isomorphism
+$$
+\Hom_S(f_*(\eta),\xi)\isomto\Hom_f(\eta,\xi)
+$$
+which thus makes of~$f_*$ a direct image functor for $f$ in
+$\cal{F}$. One has moreover here
+$$
+(\id_S)_*=\id_{\cal{F}_S},\quad (fg)_*=f_*g_*,\quad
+c^{f,g}=\id_{(fg)},
+$$
+\ie $\cal{F}$ is equipped with a co-splitting over~$\cal{E}$. A fortiori,
+$\cal{F}$ is cofibered over~$\cal{E}$. Let us now note that
+the set of morphisms in $\cal{F}$ is in bijective
+correspondence with the set of commutative square diagrams in
+$\cal{E}$.
+$$
+\xymatrix{
+X\ar[d]_-u&\ar[l]_-{f'}Y\ar[d]^-v\\
+S&\ar[l]_-{f}T
+}
+$$
+By
+% original p. 184
+definition, the morphism in question is cartesian if the
+square is cartesian in $\cal{E}$, \ie if it makes of~$Y$ a
+fibered product of~$X$ and $T$ over~$S$. The inverse image functor
+$f^*$
+thus exists if and only if for every object $X$ over~$S$, the fibered
+product $X\times_ST$ exists. It follows from~\ref{VI.10.1} that if
+the product of two objects over a third always exists in~$\cal{E}$, \ie if $\cal{F}$ is prefibered over~$\cal{E}$,
+then $\cal{F}$ is even fibered over~$\cal{E}$.
+
+\medskip
+\item[b)] \textbf{Category of presheaves or sheaves on
+variable spaces}
+
+Let $\cal{E}=\mathbf{Top}$ be the category of topological spaces.
+If $T$ is a topological space, we shall denote by $\cal{U}(T)$ the
+category of open sets of~$T$, where the morphisms are the
+inclusion maps. If $\cal{C}$ is a category, a
+functor $\cal{U}(T)^\circ\to \cal{C}$ is called a
+\emph{presheaf} on~$T$ with values in $\cal{C}$, and a
+\emph{sheaf} if it satisfies a left exactness condition
+which we do not repeat here. The \emph{category
+$\cal{P}(T)$ of presheaves on~$T$ with values in
+$\cal{C}$} is by definition the category
+$\SheafHom(\cal{U}(T)^\circ,\cal{C})$, and the category
+$\cal{F}(T)$ of sheaves on~$T$ with values in $\cal{C}$ is the
+full subcategory whose objects are the objects of
+$\SheafHom(\cal{U}(T)^\circ,\cal{C})$ which are sheaves. If
+$f\colon T\to S$ is a morphism in $\cal{E}$, \ie a
+continuous map of topological spaces, there corresponds to it by
+the increasing map $U\mto f^{-1}(U)$ a functor
+$\cal{U}(S)\to \cal{U}(T)$, whence a functor
+$$
+f_*\colon\SheafHom(\cal{U}(T)^\circ,\cal{C})\to
+\SheafHom(\cal{U}(S)^\circ,\cal{C})
+$$
+called the \emph{direct image functor of presheaves by}
+$f$. One sees immediately that the direct image of a sheaf is a
+sheaf, thus the functor
+$f_*\colon \cal{P}(T)\to\cal{P}(S)$
+induces a functor, likewise denoted
+$f_*\colon\cal{F}(T)\to\cal{F}(S)$.
+One moreover verifies trivially (by the associativity of the
+composition of functors) that one has, for a second continuous
+map $g\colon U\to T$, the identity
+$$
+(gf)_* =g_*f_*,\qquad
+\text{likewise }\ (\id_S)_*=\id_{\cal{P}(S)}.
+$$
+In this way, one has obtained a functor
+$$
+S\mto \cal{P}(S)
+$$
+\resp $$
+S\mto \cal{F}(S)
+$$
+from
+% original p. 185
+$\cal{E}$ to~$\Cat$. In fact, we are interested in the
+corresponding functor
+$$
+S\mto \cal{P}(S)^\circ,\qquad\text{\resp~}S\mto
+\cal{F}(S)^\circ.
+$$
+It defines a cofibered category, and even a
+co-split one, over the category of topological spaces, which one
+calls the \emph{cofibered category of presheaves}
+(\resp \emph{sheaves}) \emph{with values in} $\cal{C}$
+(understood: on variable spaces). Making explicit the construction
+of~no.~\ref{VI.8}, one sees that a morphism from a presheaf $B$ on~$T$
+to a presheaf $A$ on~$S$ is a pair $(f,u)$ consisting
+of a continuous map from~$T$ to $S$, and of a morphism $u\colon
+A\to f_*(B)$ in the category $\cal{P}(S)$. This description
+is equally valid for morphisms of sheaves, $\cal{F}$
+being a full subcategory of~$\cal{P}$.
+
+In the most important cases, the category $\cal{P}$ and the
+category $\cal{F}$ over~$\cal{E}$ are also
+fibered categories, \ie for every continuous map, the
+direct image functors $\cal{P}(T)\to \cal{P}(S)$ and
+$\cal{F}(T)\to\cal{F}(S)$ have an adjoint functor, which is then
+denoted $f^*$ and called the inverse image functor of
+presheaves \resp the inverse image functor of sheaves, by
+the continuous map $f$. This functor exists for example if
+$\cal{C}=\Ens$. One can show that the functor $f^*\colon
+\cal{P}(S)\to \cal{P}(T)$ exists whenever in $\cal{C}$ the
+inductive limits (relative to diagrams in the Universe
+under consideration) exist. The question is less easy for
+$\cal{F}$; indeed, one notes that (even in the case
+$\cal{C}=\Ens$) the inverse image of a presheaf which is a
+sheaf is in general not a sheaf, in other words the
+inverse image functor of sheaves is not isomorphic to the functor
+induced by the inverse image functor of presheaves (despite
+the common notation $f^*$). Thus, $\cal{F}$ is a
+cofibered subcategory of~$\cal{P}$, but not a
+fibered subcategory, \ie \emph{the inclusion functor
+$\cal{F}\to\cal{P}$ is not fibrant}.
+
+The cofibered category $\cal{P}$ can be deduced from a more
+general cofibered (or rather fibered) category,
+obtained as follows. For every category $\cal{U}$ (in
+the fixed Universe), one sets
+$$
+\cal{P}(\cal{U})=\SheafHom(\cal{U},\cal{C})
+$$
+and
+% original p. 186
+one notes that $\cal{U}\mto\cal{P}(\cal{U})$ is in a
+natural way a contravariant functor in~$\cal{U}$, from the category
+$\Cat$ to $\Cat$. It thus defines a split category
+over $\cal{E}=\Cat$, which we shall denote $\Cat_{/\!/\cal{C}}$. The
+objects of this category are the pairs $(\cal{U},p)$ of a
+category $\cal{U}$ and a functor $p\colon\cal{U}\to\cal{C}$,
+and a morphism from~$(\cal{U},p)$ to $(\cal{V},q)$ is
+essentially a pair $(f,u)$, where $f$ is a functor
+$\cal{U}\to\cal{V}$ and $u$ a homomorphism of functors $u\colon p\to
+qf$. We leave to the reader the task of making explicit the composition of
+morphisms in $\Cat_{/\!/\cal{C}}$. The projection functor
+$$
+\cal{F}=\Cat_{/\!/\cal{C}}\to\cal{E}=\Cat
+$$
+associates to the pair $(\cal{U},p)$ the object $\cal{U}$; the
+fiber-category at $\cal{U}$ is the category
+$\SheafHom(\cal{U},\cal{C})$ (up to isomorphism). When
+inductive limits exist in $\cal{C}$, one shows easily
+that the fibered category $\Cat_{/\!/\cal{C}}$ over~$\Cat$ is
+likewise cofibered over~$\Cat$, \ie one can define the
+notion of \emph{direct image of a functor} $p\colon\cal{U}\to\cal{C}$
+by a functor $f\colon\cal{U}\to\cal{V}$. The category of
+presheaves is deduced from the preceding fibered category
+by the change of base
+$$
+\mathbf{Top}^\circ\to\Cat
+$$
+(functor $S\mto\cal{U}(S)$ defined above), which gives a
+fibered category over~$\mathbf{Top}^\circ$, and passing to
+the opposite category, one obtains the
+cofibered category $\cal{P}$ of presheaves over
+$\mathbf{Top}$. The notion of inverse image of a functor corresponds
+to that of direct image of a presheaf, the notion of direct
+image of a functor to that of inverse image of a
+presheaf.
+
+\medskip
+\item[c)] \textbf{Objects with operators over an object
+with operators}
+
+Let $\cal{F}$ be a category over~$\cal{E}$, and let $S$ be an object of
+$\cal{E}$ on which a group $G$ operates, on the left to fix
+ideas. This object with operators can be interpreted as
+corresponding to a functor $\lambda\colon\cal{E}'\to \cal{E}$ from
+the category (with a single object, having $G$ as group
+of endomorphisms) $\cal{E}'$ defined by $G$, into the
+category $\cal{E}$, and thus there is defined by change of base
+a category $\cal{F}'$ over~$\cal{E}'$, which is
+fibered \resp cofibered when $\cal{F}$ is so
+over~$\cal{E}$. A
+% original p. 187
+section of~$\cal{E}'$ over~$\cal{F}'$ (necessarily
+cartesian, since $\cal{E}'$ is a groupoid, and every
+isomorphism in $\cal{F}'$ is cartesian by virtue
+of~\ref{VI.6.12}), can also be interpreted as an
+$\cal{E}$-functor $\cal{E}'\to\cal{F}$ over~$\lambda$, or
+also as an object with operators $\xi$ in $\cal{F}$
+``over'' the object with operators $S$.
+
+\medskip
+\item[d)] \textbf{Pairs of quasi-inverse adjoint functors;
+autodualities}
+
+When the base-category $\cal{E}$ is reduced to two
+objects $a,b$ and, besides the identity arrows, to two
+isomorphisms $f\colon a\to b$ and $g\colon b\to a$ inverse to one
+another (\ie $\cal{E}$ is a connected rigid groupoid with two
+objects), a normalized cloven category over~$\cal{E}$ is
+essentially the same thing as the system formed by
+two categories $\cal{F}_a$ and $\cal{F}_b$ and a \emph{pair of
+adjoint functors} $G\colon \cal{F}_a\to\cal{F}_b$ and $F\colon
+\cal{F}_b\to\cal{F}_a$, which are equivalences of
+categories (hence quasi-inverse to one another). One will take for
+$\cal{F}_a$ and $\cal{F}_b$ the fiber-categories of~$\cal{F}$,
+for $F$ and $G$ the functors $f^*$ and $g^*$, and the two
+isomorphisms
+$$
+u\colon FG\isomto\id_{\cal{F}_a}\qquad v\colon
+GF\isomto\id_{\cal{F}_b}
+$$
+are $c_{g,f}$ and $c_{f,g}$. The two usual
+compatibility conditions between $u$ and $v$ are none other than the condition
+\ref{VI.7.4}~$B)$ for the composites $fgf$ and $gfg$. It is easy
+to show that these conditions suffice to imply that one indeed has
+a pseudofunctor $\cal{E}^\circ\to\Cat$.
+
+An interesting case is that where one has
+$$
+\cal{F}_b=\cal{F}_a^\circ,\quad G=F^\circ,\quad v=u^\circ.
+$$
+One calls \emph{autoduality}
+in a category $\cal{C}$, the
+data of a functor $D\colon \cal{C}\to\cal{C}^\circ$, and of an
+isomorphism $u\colon DD^\circ\isomto\id_{\cal{C}}$, such that $u$ and
+the isomorphism $u^\circ\colon D^\circ D\isomto\id_{\cal{C}^\circ}$
+make of~$(D,D^\circ)$ a pair of adjoint functors,
+(necessarily quasi-inverse to one another). This condition
+is written:
+$$
+D(u(x))=u(D(x))\qquad \text{for every $x\in\Ob(\cal{C})$.}
+$$
+\item[e)]
+% original p. 188
+\textbf{Categories over a discrete category $\cal{E}$.} One says that $\cal{E}$ is a
+\emph{discrete category} if every arrow therein is an
+identity arrow, so that $\cal{E}$ is defined up to
+unique isomorphism by the knowledge of the set
+$I=\Ob(\cal{E})$. The data of a category $\cal{F}$
+over~$\cal{E}$ is thus equivalent (up to unique isomorphism)
+to the data of a family of categories
+$\cal{F}_i$ ($i\in I$), the fiber-categories. Every category
+$\cal{F}$ over~$\cal{E}$ is fibered, every $\cal{E}$-functor
+$\cal{F}\to\cal{G}$ is cartesian, one has a canonical isomorphism
+$$ \SheafHom_{\cal{E}/-}(\cal{F},\cal{G}) \isomto
+\prod_{i}\SheafHom(\cal{F}_i,\cal{G}_i).
+$$
+In particular, one obtains
+$$
+\mathbf{\Gamma}(\cal{F}/\cal{E})=\varprojLim\cal{F}/\cal{E}\isomto\prod_{i} \cal{E}_i.
+$$
+\item[f)] \textbf{Suppose that $\cal{E}$ has exactly two objects
+$S$ and $T$,} and besides the \textbf{identity morphisms, a
+morphism }$f\colon T\to S$. Then a category $\cal{F}$
+over~$\cal{E}$ is defined, up to unique $\cal{E}$-isomorphism,
+by the data of two categories $\cal{F}_S$
+and $\cal{F}_T$ and of a bifunctor $H(\eta,\xi)$ on~$\cal{F}_T^\circ\times\cal{F}_S$, with values in $\Ens$. Indeed,
+if~$\cal{F}$ is a category over~$\cal{E}$, one associates to it
+the two fiber-categories $\cal{F}_S$ and~$\cal{F}_T$ and
+the bifunctor $H(\eta,\xi)=\Hom_f(\eta,\xi)$. One leaves to the reader the
+task of making explicit the construction in the opposite direction. For the
+category under consideration to be fibered (or prefibered,
+which amounts to the same) it is necessary and sufficient that the functor $H$ be
+representable with respect to the argument $\xi$. For it
+to be cofibered, it is necessary and sufficient that $H$ be
+representable with respect to the argument~$\eta$.
+\item[g)] Let $\cal{F}=\cal{C}\times\cal{E}$, considered
+as a category over~$\cal{E}$ by means of
+$\pr_2$. Then $\cal{F}$ is fibered and cofibered over~$\cal{E}$,
+and is even equipped with a canonical splitting and co-splitting,
+corresponding to the constant functor on~$\cal{E}$, \resp on~$\cal{E}^\circ$, with values in $\Cat$, of value $\cal{C}$. One has
+$$
+\mathbf{\Gamma}(\cal{F}/\cal{E})\simeq\SheafHom(\cal{E},\cal{C})
+$$
+and
+% original p. 189
+$\varprojLim\cal{F}/\cal{E}$ corresponds to the
+full subcategory formed of the functors
+$F\colon\cal{E\to\cal{C}}$ transforming arbitrary morphisms into
+isomorphisms.
+\end{enumerate}
+
+\section{Functors on a cloven category}
+\label{VI.12}
+
+Let $\cal{F}$ be a normalized cloven category
+over~$\cal{E}$. For every object $S$ of~$\cal{E}$ one denotes by
+$$
+i_S\colon \cal{F}_S\to\cal{F}
+$$
+the inclusion functor. One thus has a functorial homomorphism, for
+every morphism $f\colon T\to S$ in~$\cal{E}$:
+$$
+\alpha_f\colon i_T f^*\to i_S,
+$$
+where $f^*$ is the change of base functor
+$\cal{F}_S\to\cal{F}_T$ for $f$ defined by the cleavage. Let
+now
+$$
+F\colon\cal{F}\to\cal{C}
+$$
+be a functor from~$\cal{F}$ to a category $\cal{C}$; set,
+for every~$S\in\Ob(\cal{E})$,
+$$
+F_S=F\circ i_S\colon\cal{F}_S\to\cal{C}
+$$
+and for every~$f\colon T\to S$ in~$\cal{E}$,
+$$
+\varphi_f=F*\alpha_f\colon F_T f^*\to F_S
+$$
+One has thus, to every functor $F\colon \cal{F}\to\cal{C}$,
+associated a family $(F_S)$ of functors $\cal{F}_S\to\cal{C}$, and
+a family $(\varphi_f)$ of homomorphisms of functors $F_T f^*\to
+F_S$. These families satisfy the following conditions:
+
+a) $\varphi_{\id_S}=\id_{F_S}$.
+
+b) For two morphisms $f\colon T\to S$ and $g\colon U\to T$
+in~$\cal{E}$, one has commutativity in the square
+of functorial homomorphisms:
+$$
+\xymatrix@C=2cm{ F_U g^* f^* \ar[r]^-{F_U*c_{f,g}} \ar[d]_{\varphi_g * f^*} &
+F_U(fg)^* \ar[d]^{\varphi_{fg}} \\ F_T f^*\ar[r]^-{\varphi_f} & F_S.}
+$$
+% original p. 190
+The first relation is trivial, and the second relation
+is obtained by applying the functor~$F$ to the commutative diagram
+$$
+\xymatrix@C=2cm{ g^* f^* (\xi) \ar[r]^-{c_{f,g}(\xi)}
+\ar[d]_{\alpha_g(f^*(\xi))} & (fg)^*(\xi) \ar[d]^{\alpha_{fg}(\xi)}\\
+f^*(\xi) \ar[r]^-{\alpha_f(\xi)}& \xi }
+$$
+for a variable object $\xi$ in~$\cal{F}_S$.
+
+If $G$ is a second functor $\cal{F}\to\cal{C}$, giving
+rise to functors $G_S\colon\cal{F}_S\to\cal{C}$ and
+functorial homomorphisms $\psi_f\colon G_Tf\to G_S$, and if $u\colon
+F\to G$ is a functorial homomorphism, then there correspond to it
+functorial homomorphisms $u*i_S$:
+$$
+u_S\colon F_S\to G_S
+$$
+and one observes immediately that for every morphism $f\colon T\to S$
+in $\cal{E}$, one has commutativity in the squares
+$$
+\begin{array}{c}
+\xymatrix@C=1.5cm{ F_Tf^* \ar[r]^-{\phi_f} \ar[d]_{u_T * f^*} & F_S
+\ar[d]^{u_S} \\ G_T f^* \ar[r]^-{\psi_f}& G_S}
+\end{array}
+\leqno\quad \textup{c)}
+$$
+
+\begin{proposition}
+\label{VI.12.1}
+Let $\cal{H}(\cal{F},\cal{C})$ be the category whose objects are
+the pairs of families $(F_S)$ ($S\in\Ob(\cal{F})$) of functors
+$\cal{F}_S\to\cal{C}$, and of families $(\varphi_f)$
+($f\in\Fl(\cal{F})$) of functorial homomorphisms $F_Tf^*\to F_S$,
+satisfying the conditions \emph{a) and~b)}, and where the morphisms
+are the families $(u_S)$ ($S\in\Ob(\cal{F})$) of homomorphisms
+% original p. 191
+$F_S\to G_S$, verifying the commutativity condition
+\emph{c)} written above, (the composition of morphisms being
+effected by the composition of the homomorphisms of functors
+$\cal{F}_S\to\cal{C}$). Then the two laws made explicit above
+define an \emph{isomorphism} $K$ of the category
+$\SheafHom(\cal{F},\cal{C})$ with the category
+$\cal{H}(\cal{F},\cal{C})$.
+\end{proposition}
+
+It is trivial that one has indeed here a \emph{functor} from the
+first category to the second. This functor is fully
+faithful, since for given $F,G$, $\Hom(F,G)\to\allowbreak\Hom(K(F),K(G))$
+is trivially injective; to show that it is surjective, it suffices
+to note that the commutativity condition c) expresses the
+functoriality of the maps $u(\xi)=u_S(\xi)\colon
+F(S)=F_S(\xi)\to G(\xi)=G_S(\xi)$ for the homomorphisms of the form
+$\alpha_f(\xi)$ in $\cal{F}$, on the other hand one has functoriality
+on each fiber-category \ie for the morphisms in $\cal{F}$
+which are $T$-morphisms ($T\in\Ob(\cal{E})$), whence
+functoriality for every morphism in $\cal{F}$,
+since an
+$f$-morphism (where $f\colon T\to S$ is a morphism in
+$\cal{E}$
+is in a unique way) a composite of a morphism
+$\alpha_f(\xi)$ and a $T$-morphism. It remains therefore to prove that
+the functor~$K$ is bijective on objects. The preceding
+argument already shows that $K$ is injective on
+objects; it remains to prove that it is surjective, \ie that if one starts
+from a system $(F_S),(\varphi_f)$, satisfying a) and b); and if one
+defines a map $\Ob\cal{F}\to\Ob\cal{C}$ by
+$$
+F(\xi)=F_S(\xi) \quad\text{for }
+\xi\in\Ob\cal{F}_S\subset\Ob\cal{F}
+$$
+and a map $\Fl(\cal{F})\to\Fl(\cal{C})$ by
+$$
+F(\alpha_f(\xi)u')=\varphi_f(\xi)\,F_T(u')
+$$
+for every morphism $f\colon T\to S$ in $\cal{E}$, every object $\xi$
+of~$\cal{F}_S$ and every $T$-morphism $u'$ with target $f^*(\xi)$, then one
+obtains a \emph{functor} $F$ from~$\cal{F}$ to $\cal{C}$. Indeed,
+the relation $F(\id_\xi)=\id_{F(\xi)}$ is trivial, it remains to
+prove the multiplicativity $F(uv)=F(u)F(v)$ when one has an
+$f$-morphism $u\colon\eta\to\xi$ and a $g$-morphism
+$v\colon\zeta\to\nu$, with $f\colon T\to S$ and $g\colon U\to T$
+morphisms of~$\cal{E}$. Setting $w=uv$, one will have
+$$
+u=\alpha_f(\xi)u'\quoi,\quad v=\alpha_g(\eta)v'\quoi,\quad w=\alpha_{fg}(\xi)w'
+$$
+% original p. 192
+with
+$$
+w'=c_{f,g}(\xi)g^*(u')v'\quad \hbox{(\cf no.~\ref{VI.8})}.
+$$
+
+With these notations, one must prove the commutativity of the outer
+contour of the diagram below:
+$$
+\xymatrix{ F_U(\zeta) \ar@{-<} `u[r] `[rrrrrr]^{F(w')} [rrrrrr]
+\ar[rr]^{F_u(v')} \ar[drr]_{F(v)} & & F_Ug^*(\eta)
+\ar[rr]^{F_ug^*(u')} \ar[d]^{\varphi_g(\eta)} & & F_Ug^*f^*(\xi)
+\ar[rr]^{F_U(c_{f,g}(\xi))}\ar[d]^{\varphi_g(f^*(\xi))}& &
+F_U(fg)^*(\xi) \ar[d]^{\varphi_{fg}(\xi)} \\ & & F_T(\eta) \ar@{-<}
+`d[r] `[rrrr]_{F(u)} [rrrr] \ar[rr]_{F_T(u')} & & F_Tf^*(\xi)
+\ar[rr]_{\varphi_f(\xi)} & & F_S(\xi) }
+$$
+Now the left triangle is commutative by definition of~$F(v)$, the
+middle square is commutative since it is deduced from the homomorphism
+$u'\colon \xi\to f(\eta)$ by the functorial homomorphism $\alpha_g$,
+finally the right-hand square is commutative by virtue of condition
+b). The desired conclusion follows.
+
+Suppose now that $\cal{C}$ is likewise a
+normalized cloven category over~$\cal{E}$, which we
+shall henceforth call $\cal{G}$, and that we are interested
+in the $\cal{E}$-functors from~$\cal{F}$ to $\cal{G}$. If $F$ is such a
+functor, it induces functors
+$$
+F_S\colon \cal{F}_S\to\cal{G}_S
+$$
+for the fiber-categories. On the other hand, for every morphism
+$f\colon T\to S$ in~$\cal{E}$, and every object $\xi$ in~$\cal{F}_S$,
+the $f$-morphism $F(\alpha_f(\xi))$ factors in a unique way
+through a $T$-morphism
+$$
+\varphi_f(\xi)\colon F_T(f^*_{\cal{F}}(\xi))\to
+f^*_{\cal{G}}(F_S(\xi))
+$$
+(where the $\cal{F}$ or the $\cal{G}$ in the index indicates the
+cloven category for which one takes the inverse image
+functor), whence a functorial homomorphism of functors from
+$\cal{F}_S$ to $\cal{G}_T$:
+$$
+\varphi_f\colon F_T f^*_{\cal{F}}\to f^*_{\cal{G}}F_S.
+$$
+% original p. 193
+The two systems $(F_S)$ and $(\varphi_f)$ satisfy the
+following conditions:
+
+a') $\varphi_{\id_S}=\id_{F_S}$.
+
+b') For two morphisms $f\colon T\to S$ and $g\colon U\to T$ in
+$\cal{E}$, one has commutativity in the following diagram of functorial
+homomorphisms:
+$$
+\xymatrix{ F_Ug_F^*f_F^* \ar[rr]^{F_U *c_{f,g}^\cal{F}}
+\ar[d]_{\varphi_{g^*}f^*_{\cal{F}}} & & F_U(fg)^*_F
+\ar[dd]^{\varphi_{fg}} \\ g^*_{\cal{G}}F_Tf^*_F
+\ar[d]_{g^*_{\cal{G}}*\varphi_f} & & \\ g^*_{\cal{G}}f^*_{\cal{G}}F_S
+\ar[rr]^{c_{f,g}^\cal{G}*F_S} & & (fg)^*_{\cal{G}}F_S. }
+$$
+We leave the verification to the reader, as well as
+the statement and the proof of the analogue of
+proposition~\ref{VI.12.1}, implying that one thus obtains a
+bijective correspondence between the set of $\cal{E}$-functors from
+$\cal{F}$ to $\cal{G}$, and the set of systems
+$(F_S)$,$(\varphi_f)$ satisfying the conditions a') and b')
+above. Of course, in this correspondence, the cartesian
+functors are characterized by the property that
+the homomorphisms $\varphi_f$ are isomorphisms.
+
+\begin{remark}
+Of course, it is most often advantageous to reason
+directly on fibered categories without using
+explicit cleavages, which in particular dispenses with having to appeal,
+for the simple notion of~$\cal{E}$-functor or of cartesian $\cal{E}$-functor,
+to a cumbersome interpretation as
+above. It is to avoid unbearable heaviness, and to
+obtain more intrinsic statements,
+% original p. 194
+that we have had to renounce starting as in \cite{VI.2} from the
+notion of cloven category (called ``fibered
+category'' in \loccit), which recedes to second rank in favor of
+that of fibered category. It is moreover probable that,
+contrary to the usage still predominant now,
+tied to old habits of thought, it will eventually
+prove more convenient in universal problems not to
+put the emphasis on \emph{one} solution supposed chosen once
+and for all, but to put all solutions on an equal
+footing.
+\end{remark}
+
+\begin{thebibliography}{9}
+\bibitem[1]{VI.1} A\ptbl \textsc{Grothendieck}, Sur quelques points d'alg\`ebre
+homologique,
+T\^ohoku Math.\ J. \textbf{9} (1957) p\ptbl 119--221.
+
+
+\bibitem[2]{VI.2} A\ptbl \textsc{Grothendieck}, Technique de descente et
+Th\'eor\`emes d'existence,~I, S\'eminaire Bourbaki~190,
+December~1959.
+\end{thebibliography}
+

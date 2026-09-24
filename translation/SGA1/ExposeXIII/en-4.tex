@@ -1,0 +1,508 @@
+\begin{theorem}
+\label{XIII.2.4}
+Let
+% original p. 380
+$f\colon X\to S$ be an $S$-scheme, $D$ a divisor on~$X$
+with normal crossings relative to~$S$ \eqref{XIII.2.1},
+$Y=\Supp D$, $U=X-Y$, $i\colon U\to X$ the canonical immersion. Let $F$
+be a sheaf of sets (\resp of groups) on~$U$, satisfying
+one of the following conditions:
+\begin{enumerate}
+\item[a)] $F$ is, locally for the \'etale topology \emph{on}
+$X$ and on~$S$, the inverse image of a sheaf of sets (\resp of a
+constructible sheaf of groups) on~$S$.
+\item[b)] $F$ is locally constant constructible on~$U$ and
+tamely ramified over~$X$ relative to~$S$.
+\end{enumerate}
+Then we have the following conclusions:
+\begin{enumerate}
+\item[1)]$(F,i)$ is cohomologically proper relative to~$S$
+in dimension $\leq 0$ (\resp for every morphism $h\colon S'\to S$, if
+$i'\colon U'\to X'$ is the inverse image of~$i$ over~$S'$, if $F'=F|U'$
+and if $k=h_{(X)}$, the canonical morphism
+$$
+\Psi\colon k^*(\R^1_{\tame}i_*F)\to\R^1_{\tame}i_*'F'
+$$
+is an isomorphism).
+
+If $F$ is a sheaf of groups prime to the residue characteristics
+of~$S$ (\Ref{XIII.2.3}.b)) (tamely
+ramified over~$X$ relative to~$S$), then $(F,i)$ is
+cohomologically proper relative to~$S$ in dimension $\leq 1$.
+\item[2)]If $F$ is a constructible sheaf of sets (\resp of groups),
+$i_*F$ (\resp $\R^1_{\tame}i_*F$) is constructible.
+\end{enumerate}
+\end{theorem}
+
+\subsubsection*{Proof}
+For every $S$-scheme $S'$, we consider the following diagram,
+all of whose squares are cartesian:
+$$
+\xymatrix{ U \ar[dd]_-g \ar[dr]^-i & & & U'\ar[lll] \ar[dd]_{\hbox{\raise10mm\hbox{$g'$}}}
+\ar[dr]^-{i'}& \\ & X \ar[dl]_{f\mkern-8mu} & & & X'\ar[lll]_{k\hspace*{1cm}} \ar[dl]_{f'\mkern-10mu} \\ S
+& & & S'\ar[lll]_-h & & }
+$$
+Since
+% original p. 381
+the question is local on~$X$ for the \'etale topology, we may
+assume that $D$ is a divisor with strictly normal crossings
+relative to~$S$ \eqref{XIII.2.1}; moreover, after
+restricting $X$ to a neighborhood of~$Y$, we may assume $X$ smooth
+over~$S$.
+
+\Subsubsection*{Proof of~\Ref{XIII.2.4}~\textup{1)}}
+\subsubsection{}
+\label{XIII.2.4.1}
+\emph{Case of a sheaf of sets satisfying} a). We may
+assume that we have $F=g^*G$, where $G$ is a sheaf on~$S$. It
+then follows from (SGA~4 XVI~3.2) that the canonical morphism
+\begin{equation*}
+\label{eq:XIII.2.4.1.1}
+\tag{\thesubsubsection.1} f^*G\to i_*F
+\end{equation*}
+is an isomorphism. For every $S$-scheme $h\colon S'\to S$, we have
+likewise an isomorphism $f'^*G'\to i_*'F'$; consequently the canonical
+morphism
+$$
+\varphi\colon k^*(i_*F)\to i_*'F'
+$$
+is identified with the natural isomorphism
+$$
+k^*f^*G\simeq f'^*G'
+$$
+
+\subsubsection{}
+\label{XIII.2.4.2}
+\emph{Case of a sheaf of sets satisfying} b). We must
+show that $\varphi$ is an isomorphism, and for this it suffices to
+see that this is so at each geometric point
+$\overline{x}'$ of~$X'$. Let $\overline{S}$ (\resp $\overline{X}$,
+\resp $\overline{S'}$, \resp $\overline{X'}$) be the strict localization
+of~$S$ (\resp~$X$, \resp~$S'$, \resp $X'$) at $\overline{x}'$ and let us put
+$\overline{U}=U_{(\overline{X})}$,
+$\overline{U'}=U_{(\overline{X'})}$, etc. The morphism
+$\varphi_{\overline{x}}$ is identified with the canonical morphism
+$$
+\overline{\varphi}\colon \H^0(\overline{U},\overline{F})\to
+\H^0(\overline{U'}, \overline{F'})
+$$
+We can find a principal covering $V$ of~$\overline{U}$, of the
+type appearing in~\Ref{XIII.5.4}, such that the inverse image of
+$\overline{F}$ on~$V$ is a constant sheaf with value $C$. If
+$\Pi$ is the Galois group of~$V$ over~$\overline{U}$, $\Pi$
+operates on~$\overline{F}|V$, and we have
+\begin{equation*}
+\label{eq:XIII.2.4.2.1}
+\tag{\thesubsubsection.1}
+\H^0(\overline{U},\overline{F}))\simeq \H^0(V,C_V)^{\Pi}
+\end{equation*}
+where the right-hand side denotes the set of the
+elements of~$\H^0(V,C_V)$ invariant
+% original p. 382
+under~$\Pi$. Since $V'=V\times_{\overline{U}}\overline{U'}$ is a
+principal covering of~$\overline{U'}$ with Galois group
+$\Pi'\simeq \Pi$, we see that the morphism $\overline{\varphi}$
+is obtained, by taking the invariants under $\Pi$, from the
+canonical morphism
+$$
+\H^0(V,C_V)\to \H^0(V',C_{V'}).
+$$
+Since $V$ and $V'$ are connected \eqref{XIII.5.4}, this morphism, hence
+also $\overline{\varphi}$, is an isomorphism.
+
+Let us note that if moreover $F$ is a sheaf of groups and if $P$ is a
+torsor on~$\overline{U}$ with group $\overline{F}$,
+tamely ramified relative to $D$, it follows
+from the preceding proof and from~\Ref{XIII.2.2} that
+$(\leftexp{P}{\overline{F}},\overline{i})$ is cohomologically
+proper relative to~$S$ in dimension $\leq 0$.
+
+\subsubsection{}
+\label{XIII.2.4.3}
+\emph{Case of a sheaf of groups.} To show that $\Psi$ is an
+isomorphism, it suffices to prove that, for every geometric
+point $\overline{y}'$ of~$Y'$, the morphism
+$$
+\Psi_{\overline{y}'}\colon
+(k^*(\R^1_{\tame}i_*F))_{\overline{y}'}\to (\R^1_{\tame}
+i_*'F')_{\overline{y}'}
+$$
+is an isomorphism. Now, by~\Ref{XIII.2.1.2},
+$\Psi_{\overline{y}'}$ is identified with the canonical morphism
+$$
+\overline{\Psi}\colon
+\H^1_{\tame}(\overline{U},\overline{F})\to
+\H^1_{\tame}(\overline{U'},\overline{F'}).
+$$
+Let $\widetilde{U}$ be the universal tamely
+ramified covering of~$\overline{U}$ \eqref{XIII.2.1.3} and $\widetilde{F}$
+the inverse image of~$\overline{F}$ on~$\widetilde{U}$. It follows
+from~\Ref{XIII.5.7} in case a) and from~\Ref{XIII.5.5} in case b)
+that $\H^1_{\tame}(\overline{U},\overline{F})$ is identified with the
+subset $\H^1(\overline{U},\overline{F})$ formed by the classes
+of~$\overline{F}$-torsors whose inverse image on~$\widetilde{U}$
+is trivial. On the other hand a
+classical argument (\cf IX~\Ref{IX.5}, p\ptbl\pageref{page-300})
+shows that
+the set of the elements of~$\H^1(\overline{U},\overline{F})$
+whose inverse image on~$\widetilde{U}$ is trivial is identified
+with
+$\H^1(\pi_1^{\tame}(\overline{U}),\H^0(\widetilde{U},\widetilde{F})).$
+We thus obtain a canonical isomorphism
+\begin{equation*}
+\label{eq:XIII.2.4.3.1} \tag{\thesubsubsection.1} {}
+\H^1_{\tame}(\overline{U},\overline{F})\isomto
+\H^1(\pi_1^{\tame}(\overline{U}),\H^0(\widetilde{U},\widetilde{F})).
+\end{equation*}
+
+Consequently the morphism $\overline{\Psi}$ is identified with the
+canonical morphism
+$$
+\H^1(\pi_1^{\tame}(\overline{U}),\H^0(\widetilde{U},\widetilde{F}))
+\to
+\H^1(\pi_1^{\tame}(\overline{U'}),\H^0(\widetilde{U}',\widetilde{F}')).
+$$
+Let us show
+% original p. 383
+that this morphism is an isomorphism. The morphism
+$\pi_1^{\tame}(\overline{U'})\to\pi_1^{\tame}(\overline{U})$
+is an isomorphism by~\Ref{XIII.5.6}, and the same
+holds for the morphism $\H^0(\widetilde{U},\widetilde{F})\to\allowbreak
+\H^0(\widetilde{U}',\widetilde{F}')$. Indeed, this is obvious
+in case b) since $\widetilde{F}$ is constant and $\widetilde{U}$ and
+$\widetilde{U}'$ are connected. In case a), let $\overline{G}$ be a
+constructible sheaf of groups on~$\overline{S}$ such that we have
+$\overline{F}=\overline{g}^*\overline{G};$ since the morphisms
+$\widetilde{U}\to\overline{S}$ and
+$\widetilde{U}'\to\overline{S'}$ are $0$-acyclic
+\eqref{XIII.5.7}, we have
+$$
+\H^0(\widetilde{U},\widetilde{F})\simeq
+\H^0(\overline{S},\overline{G}) \simeq
+\H^0(\overline{S'},\overline{G'})\simeq
+\H^0(\widetilde{U}',\widetilde{F}'),
+$$
+which implies that $\Psi$ is an isomorphism. The last
+assertion of \Ref{XIII.2.4}~1) follows from what precedes,
+taking into account \Ref{XIII.2.3}~b).
+
+\subsubsection*{Proof of~\Ref{XIII.2.4}~\textup{2)}}
+
+The case of a constructible sheaf of sets satisfying a)
+follows at once from \eqref{eq:XIII.2.4.1.1}. Let $F=g^*G$ be a
+sheaf of groups satisfying a), where $G$ is a constructible
+sheaf; we may assume $S$ affine; let $(S_j)_{j\in J}$ be
+a finite family of reduced closed subschemes of~$S$
+whose union covers $S$, such that the inverse image of~$G$ on~$S_j$ is a locally constant sheaf. Taking into account
+\Ref{XIII.2.4}~1), it suffices, in order to establish that $\R^1_{\tame}i_*F$
+is constructible, to see that this is so after the change
+of base $S_j\to S$, for each $j\in J$. We are thus
+reduced to case~b) where $F$ is locally constant.
+
+We assume from now on that $F$ is a sheaf of sets or of
+groups satisfying b). Since the question is local for the
+\'etale topology on~$X$, we may assume $X$ of finite
+presentation over~$S$, and, by passage to the limit, we may assume $X$
+and $S$ noetherian.
+
+Let $D=\sum_{1\leq i\leq r}\divisor f_i$, where, for each point
+$x$ of~$\Supp D$, if $I(x)$ is the set of the $i$ such that
+$f_i(x)=0$, the subscheme $V((f_i)_{i\in I(x)})$ is smooth over~$S$ of codimension $\card I(x)$ in~$X$. Let $\mathcal{P}$ be
+the set of subsets of~$[ 1,r ]$ and, for each $I\in\mathcal{P}$,
+let us put
+$$
+X_I=\textstyle\Big(\bigcap_{i\in I}V(f_i)\Big)\cap\Big(\bigcap_{i\not\in I}X_{f_i}\Big).
+$$
+Let
+% original p. 384
+$z$ be a point of~$X_I$. After first restricting to an
+\'etale neighborhood of~$z$, we can find an open subset $W$ of~$X$
+containing $z$ and a principal covering $V$ of~$U\cap W$,
+tamely ramified over~$W$ relative to~$S$, of the type
+considered in~\Ref{XIII.5.6.1}, such that the inverse
+image of~$F$ on~$V$ is a constant sheaf with
+value~$C$. Let $\pi$ be the Galois group of the covering~$V$. For
+every geometric point $\overline{x}$ of~$X_I$, we then have,
+by \eqref{eq:XIII.2.4.2.1},
+$$
+\H^0(\overline{U},\overline{F})\simeq \H^0(V,C_V)^{\pi}.
+$$
+It follows that $i_*F|X_I\cap W$ is locally constant (SGA~4
+IX~2.13) and consequently $i_*F$ is constructible.
+
+Let us finally show that if $F$ is a locally constant sheaf of groups,
+$\R^1_{\tame}i_*F|_{X_I}$ is constructible. If
+$\overline{x}$ is a geometric point of~$X$, we have obtained
+in \eqref{eq:XIII.2.4.3.1} the expression
+$$
+\H^1_{\tame}(\overline{U},\overline{F})\isomto
+\H^1(\pi^{\tame}_1(\overline{U}),\H^0(\widetilde{U},\widetilde{F})).
+$$
+If $p$ is the residue characteristic of~$\overline{X}$, we
+have, by~\Ref{XIII.5.6},
+$\pi_1^{\tame}(\overline{U})=\prod_{l\neq p }\ZZ_l(1)^{\card I}$. Let us denote by $\LL$ the set of prime numbers which
+divide the order of the finite group $\H^0(\widetilde{U},\widetilde{F})$ and
+let $K=\prod_{l\in\LL -\{p\}\cap\LL }\ZZ_l(1)^{\card I}$. It
+follows from \cite[I \S5 ex.2]{XIII.4} that we have
+$$
+\H^1_{\tame}(\overline{U},\overline{F})\simeq
+\H^1(K,\H^0(\widetilde{U},\widetilde{F})).
+$$
+Since $K$ is topologically of finite type and
+$\H^0(\widetilde{U},\widetilde{F})$ finite, we first of all
+deduce from this that the fibers of the sheaf $\R^1_{\tame}i_*F|_{X_I}$ are
+finite. On the other hand, the set $\LL$ does not depend on the point
+$\overline{x}$. For every $q\in\LL$, let $X_{I,q}$ be the closed subset of
+$X_I$ with equation $q=0$ and let $X_{I'}$ be the open subset of~$X_I$
+complementary to the union of the $X_{I,q}$. Then
+$\R^1_{\tame}i_*F|_{X_{I,q}}$ and $\R^1_{\tame}i_*F|_{X_I'}$ are
+locally constant; indeed a specialization arrow of
+geometric points of~$X_{I,q}$ (\resp of~$X_{I'}$) induces an
+isomorphism on the groups $K$ \eqref{XIII.5.6.1} hence also on the
+sets $\H^1_{\tame}(\overline{U},\overline{F})$, and one can apply
+SGA~4 IX~2.13.
+
+\begin{corollary}
+\label{XIII.2.5}
+Let
+% original p. 385
+$f\colon X\to S$ be a morphism, $D$ a divisor on~$X$
+with normal crossings relative to~$S$ \eqref{XIII.2.1},
+$Y=\Supp D$, $U=X- Y$, $i\colon U\to X$ the canonical
+immersion. Let $\Phi$ be a stack on~$U$ and suppose given
+surjective \'etale morphisms $S_1\to S$ and $X_2\to
+X\times_{S}S_1$, a stack $\Psi$ on~$S_1$ and an isomorphism
+$\Phi|U_2\simeq\Psi|U_2$ (\cf \Ref{XIII.2.2}).
+
+Then, for every morphism $h\colon S'\to S$, if $k=h_{(X)}$,
+the canonical functor
+$$
+\varphi\colon k^*i_*\Phi\to i_*'\Phi'
+$$
+is fully faithful. If $\Psi$ is constructible, the canonical
+functor
+$$
+\psi\colon k^*i_*^{\tame}\Phi\to i_*^{\prime\tame}\Phi'
+$$
+is an equivalence of categories.
+
+Moreover, if the stack $\Psi$ is constructible (\resp if $\Psi$ is
+$1$-constructible \eqref{XIII.0} and $S$ locally noetherian),
+$i_*\Phi$ is constructible (\resp $i_*^t\Phi$ is
+$1$-constructible).
+\end{corollary}
+
+Let us show that $\varphi$ is fully faithful. It suffices to see
+that, for every geometric point $\overline{x}'$ of~$X'$, this
+is so for the functor
+$$
+\overline{\varphi}\colon
+\Phi(\overline{U})\to\Phi'(\overline{U'})
+$$
+(we have taken up again the notation of~\Ref{XIII.2.4.2}). Let $a$, $b$ be two
+elements of~$\Phi(\overline{U})$, $a',\ b'$ their images under
+$\overline{\varphi}$. Since the morphism
+$\overline{U}\to\overline{S}$ is locally $0$-acyclic
+\eqref{XIII.5.7}, we have an isomorphism
+$$
+\H^0(\overline{U},\overline{S\Phi})
+\overset{\sim}{\to}\H^0(S,\overline{S\Psi}).
+$$
+Consequently $a$ and $b$ come by inverse image from elements
+of~$\Psi$, and hence so does
+$F=\SheafHom_{\overline{U}}(a,b)$. Since the sheaf
+$F'=\SheafHom_{\overline{U'}}(a',b')$ is the inverse image on~$\overline{U'}$ of~$F$, it follows from~\Ref{XIII.2.4.1} that the
+canonical morphism
+$$
+\H^0(\overline{U},F)\to \H^0(\overline{U'},F')
+$$
+is an isomorphism, which proves that $\overline{\varphi}$ is
+fully faithful.
+
+Let us show
+% original p. 386
+that, for every geometric point $\overline{x}'$ of~$X'$, the
+functor
+$$
+\overline{\psi}\colon i^{\tame}_*\Phi(\overline{X'})\to
+i_*^{\prime\tame}\Phi'(\overline{X'})
+$$
+is an equivalence. By what precedes,
+$\overline{\psi}$ is fully faithful. Let us show that
+$\overline{\psi}$ is essentially surjective. Let $a'$ be an
+element of~$\Phi'(\overline{U'})$ tamely
+ramified over~$X'$ relative to~$S'$ \eqref{XIII.2.2} and
+let us show that it is the image of a tamely
+ramified element of~$\Phi(\overline{U})$. It follows from~\Ref{XIII.2.4}
+1) that the canonical morphism
+$$
+\H^0(\overline{U},\overline{S}\overline{\Phi})\to
+\H^0(\overline{U'},\overline{S}\overline{\Phi}')
+$$
+is an isomorphism. Let $G'$ be the maximal subgerbe of~$\Phi'$
+generated by $a'$; there then exists a maximal subgerbe $G$ of
+$\overline{\Phi}$, inverse image of a gerbe on~$\overline{S}$, such
+that we have
+$$
+\overline{m}^*G\simeq G',
+$$
+where $m$ is the morphism $\overline{U'}\to
+\overline{U}$. The canonical functor
+\begin{equation*}
+\label{eq:XIII.2.5.*}
+\tag{$*$} {\overline{k}^*\overline{i}_*^{\tame}G\to
+\overline{i}_*^{\prime\tame}G'}
+\end{equation*}
+is an equivalence, since $G$ is identified with a gerbe of
+torsors under a constructible sheaf of groups coming from
+$\overline{S}$, and one can apply \Ref{XIII.2.4}~1). It
+then follows from \eqref{eq:XIII.2.5.*} that there exists an
+element $a$ of~$G(\overline{U})$, tamely
+ramified over~$X$ relative to~$S$, whose inverse image on~$\overline{U'}$ is $a'$, which proves that $\psi$ is an
+equivalence.
+
+If $\Psi$ is constructible, so is~$i_*\Phi$; indeed
+an object $x$ of~$i_*\Phi$ is, locally for the
+\'etale topology of~$S$, the inverse image of an object $y$ of~$\Psi$; it
+therefore follows from~\Ref{eq:XIII.2.4.1.1} that $\SheafAut (x)$ is
+the inverse image of~$\SheafAut (y)$, hence is constructible. Finally, if
+$\Psi$ is $1$-constructible, so is
+$i^{\tame}_*\Phi$ by~\Ref{XIII.6.3} below.
+
+\begin{corollary}
+\label{XIII.2.6}
+The
+% original p. 387
+notation is that of~\Ref{XIII.2.4}. Assume that $S$ is of
+characteristic zero at every point $s$ such that we have $Y_s\neq
+\emptyset.$ Then, if $\cal{ F}$ is a locally
+constant constructible sheaf of groups on~$U$ (\resp a constructible stack on~$U$ which
+is, locally on~$X$ and $S$, the inverse image of a constructible stack
+on~$S$), $(\cal{ F},i)$ is cohomologically proper relative
+to~$S$ in dimension $\leq 1.$
+\end{corollary}
+
+Since every constructible sheaf of sets on~$U$ is
+tamely ramified over~$X$ relative to~$S,$ the
+corollary follows from~\Ref{XIII.2.4} (\resp \Ref{XIII.2.5}).
+
+\begin{corollary}
+\label{XIII.2.7}
+The notation is that of~\Ref{XIII.2.4}, but we are given in addition
+an $S$-scheme $T$, a proper morphism $p\colon X\to T,$
+and we assume $X$ and $T$ of finite presentation over~$S$; let
+$q=pi$. Let $\cal{ F}$ be a constructible sheaf of sets on~$U$
+satisfying one of the conditions \textup{a)} or \textup{b)} of~\Ref{XIII.2.4}
+(\resp a sheaf of groups satisfying one of the conditions
+\textup{a)}, \textup{b)} of~\Ref{XIII.2.4}, \resp a stack on~$U$ which is, locally on~$X$ and $S$, the inverse image of a constructible stack $G$ on~$S$). Then
+we have the following conclusions:
+\begin{enumerate}
+\item[1)] $(\cal{ F},q)$ is cohomologically proper relative to~$S$ in dimension $\leq 0$ (\resp for every morphism $h\colon
+S^{'}\to S$, if $m=h_{(T)}$, the canonical morphism:
+$$
+\Theta\colon m^*(\R^1_{\tame}q_*\cal{ F})\to
+\R^1_{\tame}q_*^{'}\cal{ F}^{'}
+$$
+is an isomorphism, \resp for every morphism $S^{'}\to S$,
+the canonical morphism
+$$
+\xi \colon m^*(q_*^{\tame}\cal{ F})\to
+{q'}_*^{{\tame}}\cal{F}^{'}
+$$
+is an equivalence).
+\item[2)] the sheaf $q_*\cal{ F}$ (\resp the sheaf
+$\R_{\tame}^1q_*\cal{ F}$, \resp the stack $q_*^{\tame}\cal{ F}$)
+is constructible. In the last case, if we assume $S$ locally
+noetherian and $G$ $1$-constructible, the same is true
+of $q_*^{\tame}\cal{ F}.$
+\end{enumerate}
+\end{corollary}
+
+The
+% original p. 388
+first part follows at once from~\Ref{XIII.2.4},
+\Ref{XIII.2.5} and from the proof
+of~\Ref{XIII.1.8}. Let us prove~2). If $\cal{ F}$ is a constructible sheaf
+of sets on~$U$ satisfying \Ref{XIII.2.4}~a)
+or \Ref{XIII.2.4}~b), it follows from \Ref{XIII.2.4}~2) that
+$i_*\cal{ F}$ is constructible; hence so is
+$q_*\cal{ F}=p_*(i_*\cal{ F})$ (SGA~4 XIV~1.1).
+
+Let $\cal{F}$ be a constructible sheaf of groups on~$U$
+satisfying \Ref{XIII.2.4}~a) or \Ref{XIII.2.4}~b) and let us prove
+that $\R_{\tame}^1q_*\cal{ F}$ is constructible. By passage to
+the limit (EGA~IV 8.10.5 and 17.7.8) and using 1), we may
+assume $S$ noetherian. Let then $\Phi$ be the stack on~$X$ whose
+fiber at every scheme $X^{'}$ \'etale over~$X$ consists
+of the torsors on~$U^{'}=U\times_{X}X^{'}$, with group $\cal{F}|U$, which
+are tamely ramified over~$X$ relative to~$S$; we
+therefore have
+$$
+S(i_*^{\tame}\Phi)\simeq \R_{\tame}^1i_*\cal{ F}
+$$
+and this sheaf is constructible by \Ref{XIII.2.4}~2).
+It therefore follows from~\Ref{XIII.6.3} below that $S(p_*\Phi)$
+is constructible, \ie that $\R^1_{\tame}q_*\cal{ F}$ is
+constructible.
+
+Finally, if $\cal{ F}$ is a stack on~$U$ which is, locally on~$X$ and
+$S$, the inverse image of a constructible stack on~$S,$
+$i_*^{\tame}\cal{ F}$ is constructible, and hence so
+is~$q_*^{\tame}\cal{ F}=p_*(i_*^{\tame}\cal{ F})$. If
+moreover $S$ is locally noetherian and $SG$ constructible,
+$S(i_*^{\tame}\cal{ F})$ is constructible by 6.3; hence
+so is~$S(q_*i_*^{\tame}\cal{ F})$, \ie
+$S(q_*^{\tame}\cal{ F})$~\Ref{XIII.6.2}.
+
+\begin{corollary}
+\label{XIII.2.8}
+Let
+$$
+\xymatrix{ U \ar[r]^{i} \ar[d]_{g} & X \ar[ld]^{f} \\ S }
+$$
+be a commutative diagram of schemes, in which $U$ is the open set
+complementary
+% original p. 389
+in $X$ to a divisor with normal crossings relative to~$S$, $f$ a \emph {proper} morphism of finite presentation. Let
+$\LL$ be a set of prime numbers. We assume~$g$ locally
+$0$-acyclic (\resp locally $1$-aspherical for $\LL$). Then, if
+$\cal{ F}$ is a sheaf of sets on~$U$ (\resp a sheaf of
+$\LL$-groups) on~$U,$ locally constant constructible,
+tamely ramified over~$X$ relative to~$S$,
+$f_*\cal{ F}$ (\resp $\R^1_{\tame}f_*\cal{ F}$) is locally
+constant constructible and $(\cal{ F},f)$ is cohomologically proper
+relative to~$S$ in dimension $\leq 0$ (\resp the formation of
+$\R^1_{\tame}f_*\cal{ F}$ commutes with every change of base
+$S^{'}\to S$). In the case without ``resp.'', if $\cal{ F}$ is a
+sheaf of groups, for every specialization $\overline{s}_1
+\to \overline{s}_2$ of geometric points of~$S$, the
+specialization morphism
+$$
+(\R^1_{\tame}f_*\cal{ F})_{\overline{s}_2}\to
+(\R^1_{\tame}f_*\cal{ F})_{\overline{s}_1}
+$$
+is injective.
+\end{corollary}
+The corollary follows at once from~\Ref{XIII.2.6} and
+from~\Ref{XIII.1.14} (\resp from the analogue of~\Ref{XIII.1.14} for
+$\R^1_{\tame}f_*\cal{ F}$, which is proved as in \loccit).
+
+\begin{corollary} \label{XIII.2.9}
+Let
+$$
+\xymatrix{ U \ar[r]^{i} \ar[d]_{g} & X \ar[ld]^{f} \\ S }
+$$
+be a commutative diagram of schemes, in which $U$ is the open set
+complementary in~$X$ to a divisor with normal crossings
+relative to~$S$, $f$~a proper smooth morphism of
+finite presentation. Let~$\LL $ be the set of prime numbers
+distinct from the residue characteristics of~$S$. Let~$\cal{F}$ be a locally constant constructible sheaf of~$\LL $-groups
+on~$U$, tamely ramified over~$X$ relative
+to~$S$. Then $\R^1 f_*\cal{ F}$ is locally constant
+constructible and $(\cal{ F},f)$ is cohomologically proper
+relative
+% original p. 390
+to~$S$ in dimension $\leq 1$.
+\end{corollary}
+The corollary follows from~\Ref{XIII.2.8} and from the fact that we have
+$\R_{\tame}^1f_*\cal{ F}=\R^1f_*\cal{ F}$ (\Ref{XIII.2.3}~b)).

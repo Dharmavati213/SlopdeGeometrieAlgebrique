@@ -2,7 +2,10 @@
 
 Full English draft: the opening convention and **all eleven sections**,
 including proofs, footnotes, and the closing discussion of geometrically
-unibranch schemes. Scholarly proofreading remains outstanding.
+unibranch schemes. On 2026-09-24 the English was compared with the
+corrected French sentence by sentence (see
+[Review against the French](#review-against-the-french-2026-09-24)).
+Deeper scholarly proofreading remains outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -70,11 +73,25 @@ scope, `\SourceRef{source-label}{printed-number}` preserves the source
 key and prints the original number without inventing a destination;
 it uses `\ref` if that label later becomes available.
 
+## Review against the French (2026-09-24)
+
+The whole exposé was compared with the corrected French, sentence by
+sentence, in four parts: `en-01-03.tex` and `en-04-06.tex`; `en-07.tex`
+and `en-08.tex`; `en-09.tex`; `en-10.tex` and `en-11.tex`. There was one
+change: an omitted word was restored in `en-10.tex` (“we shall admit
+*here* Proposition 10.7”). The review found no other omissions,
+mistranslations, or formula errors. It confirmed that the statement
+numbering of §9 matches the source (Proposition 9.1, Corollary 9.2,
+Proposition 9.2, …) and that all sixteen labels of `en-09.tex` are
+present. It confirmed all twelve source points below as present in the
+French, and it found the additional points listed after them.
+
 ## Source points for scholarly review
 
 These apparent issues are present in the corrected French TeX and the
 matching PDF. They have been retained in the translation, in accordance
-with the convention against silently repairing the source.
+with the convention against silently repairing the source. The 2026-09-24
+review confirmed each of the following in the French.
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -91,6 +108,20 @@ with the convention against silently repairing the source.
 | I.10.7 and I.10.9 | “Upper semicontinuous” | Check the direction of semicontinuity against the source's conventions and the case of an open immersion. |
 | I.11(b) | A power series ring in the first example, a polynomial ring later | The corrected branch changes only the first occurrence; both forms are retained. |
 
+Additional points found by the 2026-09-24 review, also retained as
+printed:
+
+| Location | Source wording or notation retained | Point to review |
+| --- | --- | --- |
+| I.2, definition of quasi-finite morphisms | “or the `Y`-prescheme `f` is said to be quasi-finite at `x`” | The `Y`-prescheme is `X`. |
+| Proof of I.5.5 | “sections of `X/Y`”, after reducing to the case `Y = S` | The sections are those of `X` over `S`. |
+| Proof of I.5.8 | “the two algebras over `k(g(x))`” | Queried by the review. The source writes a plain `k` here, not the `\kres` macro it uses for residue fields elsewhere (the two look the same in print). |
+| After I.7.8 | “the jargon of 7.6” | This refers to the last sentence of I.7.6 (the étale case); the word is unexpected. |
+| Proof of I.10.1 | “in the field `K_i` of `X`” | `K_i` is the field of the component `X_i` (see also the point on I.10.1 above). |
+| Proof of I.10.2 | “`R/K` separable” | `L/K` is meant. |
+| Before I.10.3; I.10.4(ii) | An algebra “unramified over `X`” | Arguably over `Y`. |
+| I.10.9 | “over U” with `U` outside math mode | Typographic slip. |
+
 Validation: `make tex` succeeds. All 82 non-index source labels
 (including the 69 numbered statements), 91 reference targets, ten
 footnotes, and twelve displayed formulas or diagrams were checked
@@ -100,14 +131,15 @@ including the repeated 9.2. The PDF build has no TeX warnings,
 unresolved references, or duplicate destinations. Representative pages
 and the diagrams were visually checked.
 
-These checks do not settle the mathematical questions above;
-scholarly proofreading remains outstanding.
+These checks, and the sentence-by-sentence review, do not settle the
+mathematical questions above; deeper scholarly proofreading remains
+outstanding.
 
 ## Continuation
 
-The next untranslated exposé is **III — Smooth morphisms: extension
-properties**. Keep source review of Exposé I distinct from
-translation coverage. Lean for this exposé lives at `lean/SGA/SGA1/ExposeI.lean`.
+All of SGA 1 is now translated (see
+[`../../README.md`](../../README.md)). Lean for this exposé lives at
+`lean/SGA/SGA1/ExposeI.lean`, with modules in `lean/SGA/SGA1/ExposeI/`.
 
 License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
 translator's contribution).

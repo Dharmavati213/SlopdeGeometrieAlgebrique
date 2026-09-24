@@ -13,11 +13,11 @@ Let~$u\colon A\to B$ be a local homomorphism of local rings (noetherian, as reca
 
 (We denote by~$\overline{A}$, $\overline{B}$ the completed rings of~$A$, $B$.) Since~$B'$ is finite and free over~$\overline{B}$, it is indeed a semi-local ring, a direct sum of complete local rings, each of which is still a free module over~$\overline{B}$, hence has the same dimension as~$\overline{B}$, and therefore as~$B$. It follows that the number of variables~$t_i$ in the formal power-series rings considered in~\ref{III.1.1} is equal to $\dim \overline{B}-\dim \overline{A}=\dim B-\dim A$, and in particular is independent of the local component chosen. One sees at once that it is also the dimension of the ring $B\otimes k=B/\goth{m} B$, where~$k=A/\goth{m}$ is the residue field of~$A$; we shall call it the \emph{relative dimension of}~$B$ \emph{with respect to}~$A$.
 
-\begin{remark}
+\begin{remarks}
 \label{III.1.2}
-It is evident that Definition~\ref{III.1.1} depends only on the homomorphism on the completions~$\overline{A}\to\overline{B}$ induced by~$A\to B$, which justifies the terminology to some extent. We repent here of Definitions~I~\SourceRef{I.3.2}{I.3.2}~b) and I~\SourceRef{I.4.1}{I.4.1}~b), which risk being misleading, and prefer to say ``formally unramified'' respectively ``formally étale'' in the cases considered in these definitions, reserving the terminology ``unramified'' and ``étale'' for the case where~$B$ is a localization of an $A$-algebra of finite type\footnote{Or better, ``essentially unramified'' respectively ``essentially étale'', compare EGA IV 18.6.1.}. The reader will immediately verify that ``formally étale'' is equivalent to ``formally smooth and quasi-finite''. Finally, let us point out that there is a reasonable definition of ``formally smooth'' without any prior hypothesis on the residual extension
-$\kres(B)/\kres(A)$ (supposed finite here), encompassing among others the local homomorphisms~$A\to B$ such that~$B$ is \emph{flat} over~$A$ and $B/\goth{m}B$ is a \emph{separable extension} of~$A/\goth{m}=k$ (not necessarily of finite type); for example, a Cohen $p$-ring is formally \emph{smooth} over the ring of $p$-adic integers. It is the lifting property for homomorphisms (compare~\ref{III.2.1}) that should become the definition in this general case. For the applications we have in view, the case treated in Definition~\ref{III.1.1} will suffice; in what follows, by ``formally smooth'' we shall understand ``with finite residual extension''.
-\end{remark}
+It is evident that Definition~\ref{III.1.1} depends only on the homomorphism on the completions~$\overline{A}\to\overline{B}$ induced by~$A\to B$, which justifies the terminology to some extent. We repent here of Definitions~I~\SourceRef{I.3.2}{3.2}~b) and I~\SourceRef{I.4.1}{4.1}~b), which risk being misleading, and prefer to say ``formally unramified'' respectively ``formally étale'' in the cases considered in these definitions, reserving the terminology ``unramified'' and ``étale'' for the case where~$B$ is a localization of an $A$-algebra of finite type\footnote{Or better, ``essentially unramified'' respectively ``essentially étale'', compare EGA IV 18.6.1.}. The reader will immediately verify that ``formally étale'' is equivalent to ``formally smooth and quasi-finite''. Finally, let us point out that there is a reasonable definition of ``formally smooth'' without any prior hypothesis on the residual extension
+$\kres(B)/\kres(A)$ (supposed finite here), encompassing among others the local homomorphisms~$A\to B$ such that~$B$ is \emph{flat} over~$A$ and $B/\goth{m}B$ is a \emph{separable extension} of~$A/\goth{m}=k$ (not necessarily of finite type); for example, a Cohen $p$-ring is formally smooth over the ring of $p$-adic integers. It is the lifting property for homomorphisms (compare~\ref{III.2.1}) that should become the definition in this general case. For the applications we have in view, the case treated in Definition~\ref{III.1.1} will suffice; in what follows, by ``formally smooth'' we shall understand ``with finite residual extension''.
+\end{remarks}
 
 \begin{lemma}
 \label{III.1.3}
@@ -26,11 +26,12 @@ If $B$ is formally smooth over~$A$, then $B$ is flat over~$A$.
 
 Since flatness is invariant under completion, we may suppose that~$A$ and~$B$ are complete. Since flatness is invariant under a local flat (hence faithfully flat) extension of the base ring, Definition~\ref{III.1.1} reduces us to the case where~$B$ is a formal power-series algebra over~$A$. But then, as an $A$-module, $B$ is isomorphic to a product of $A$-modules isomorphic to~$A$, hence (the base ring~$A$ being noetherian) is $A$-flat as a product of flat $A$-modules.
 
+\medskip
 Let us place ourselves under the conditions of~\ref{III.1.1}. Since the residual extensions of the local components of~$B'$ over~$A'$ are trivial, it follows that $L\otimes_k k'$ is an artinian $k'$-algebra whose local components have trivial residual extensions (where~$L$, $k$, $k'$ are the residue fields of~$A$, $B$, $A'$). This necessary condition for the finite free extension~$A'$ to satisfy the condition stated in~\ref{III.1.1} is also sufficient, as follows at once from~\ref{III.1.4}~(i) and~\ref{III.1.5} below.
 
 \begin{proposition}
 \label{III.1.4}
-Let $A\to B$ be a local homomorphism of local rings, with finite residual extension, and let $A'$ be a finite local $A$-algebra over~$A$, such that $B'=B\otimes_A A'$ is finite over~$B$, hence a semi-local ring, also noetherian. \textup{(i)} If $B$ is formally smooth over~$A$, then the localizations of~$B'$ at its maximal ideals are formally smooth over~$A'$. \textup{(ii)} The converse is true if~$A'$ is free over~$A$.
+Let $A\to B$ be a local homomorphism of local rings, with finite residual extension, and let $A'$ be a finite local $A$-algebra over~$A$, so that $B'=B\otimes_A A'$ is finite over~$B$, hence a semi-local ring, also noetherian. \textup{(i)} If $B$ is formally smooth over~$A$, then the localizations of~$B$ at its maximal ideals are formally smooth over~$A'$. \textup{(ii)} The converse is true if~$A'$ is free over~$A$.
 \end{proposition}
 
 We are immediately reduced to the case where~$A$, $B$ are complete.
@@ -50,7 +51,7 @@ Let $A\to B$ be a local homomorphism of local rings, with \emph{trivial} residua
 
 Only the necessity has to be proved, and we may suppose that~$A$ and~$B$ are complete. Let~$\goth{m}$ ($\goth{n}$) be the maximal ideal of~$A$ ($B$), and let~$t_1,\dots,t_n$ be elements of~$\goth{n}$ defining a basis of the vector space
 \[
-(\goth{n}/\goth{n}^2)/\Im(\goth{m}/\goth{m}^2)=\goth{n}/(\goth{n}^2+\goth{m}B).
+(\goth{n}/\goth{n}^2)/\operatorname{Im}(\goth{m}/\goth{m}^2)=\goth{n}/(\goth{n}^2+\goth{m}B).
 \]
 These elements therefore define a homomorphism of local $A$-algebras
 \[
@@ -76,7 +77,7 @@ Making a suitable finite free local extension~$A'$ of~$A$ and using~\ref{III.1.4
 
 \begin{remark}
 \label{III.1.8}
-It would not be difficult to develop, for formally smooth homomorphisms, the analogue of all the properties of smooth morphisms studied in~\SourceRef{II}{II}. For the differential properties, however, this requires a modification of the usual definition of Kähler differentials (\cf I~\SourceRef{I.1}{I.1}), with completed tensor products replacing ordinary tensor products. We shall content ourselves with evoking these abysses here, what precedes being sufficient for our purpose.
+It would not be difficult to develop, for formally smooth homomorphisms, the analogue of all the properties of smooth morphisms studied in~\SourceRef{II}{II}. For the differential properties, however, this requires a modification of the usual definition of Kähler differentials (\cf I~\SourceRef{I.1}{1}), with completed tensor products replacing ordinary tensor products. We shall content ourselves with evoking these abysses here, what precedes being sufficient for our purpose.
 
 It remains to make the link between formal smoothness and the notion of smoothness developed in~\SourceRef{II}{II} (and of which we have not yet made any use):
 \end{remark}

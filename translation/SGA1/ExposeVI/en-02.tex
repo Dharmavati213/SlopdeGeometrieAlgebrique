@@ -1,0 +1,642 @@
+\section[Fiber-categories]{Fiber-categories; equivalence of
+$\cal{E}$-categories}
+\label{VI.4}
+
+Let~$\cal{F}$ be a category over~$\cal{E}$, and let $S \in
+\Ob({\cal{E}})$. One calls \emph{fiber-category of}~$\cal{F}$
+at~$S$
+the subcategory~$\cal{F}_S$
+of~$\cal{F}$, inverse image of the
+% original p. 159
+punctual subcategory of~$\cal{E}$ defined by $S$. Thus
+the objects of~$\cal{F}_S$ are the objects~$\xi$ of~$\cal{F}$ such that
+$p(\xi)=S$, its morphisms are the morphisms~$u$ of~$\cal{F}$ such
+that $p(u)=\id_S$, \ie the $S$-morphisms in $\cal{F}$. Of
+course,~$\cal{F}_S$ is canonically isomorphic to the fibered product
+$\cal{F} \times_{\cal{E}} \{S\}$, where~$\{S\}$ denotes the
+punctual subcategory of~$\cal{E}$ defined by~$S$, equipped
+with its inclusion functor into~$\cal{E}$. It follows (taking
+into account the transitivity of change of base) that if one performs the
+change of base $\lambda\colon \cal{E}' \to \cal{E}$, then for
+every $S' \in \Ob(\cal{E}')$, \emph{the projection $\pr_1\colon
+\cal{F}' = \cal{F} \times_{\cal{E}} \cal{E}' \to \cal{F}$ induces an
+isomorphism}
+$$
+\cal{F}'_{S'} \to \cal{F}_S \qquad (\text{where $S=\lambda(S')$}).
+$$
+
+\begin{proposition}
+\label{VI.4.1} Let $f\colon \cal{F} \to \cal{G}$ be an
+$\cal{E}$-functor. If~$f$ is fully faithful, then for every
+change of base $\cal{E}' \to \cal{E}$, the corresponding functor
+$f' \colon \cal{F}' = \cal{F} \times_{\cal{E}} \cal{E}' \to\allowbreak \cal{G}' =
+\cal{G} \times_{\cal{E}} \cal{E}'$ is fully faithful.
+\end{proposition}
+
+The verification is immediate; more generally, one
+can show that every projective limit of
+fully faithful functors
+(here,~$f$ and the identity functors
+in~$\cal{E},\cal{E}'$) is a fully faithful functor.
+
+One notes that the assertion analogous to 4.1,
+where
+``fully faithful'' is replaced by ``equivalence
+of categories'', is false, already for~$\cal{G}=\cal{E}$.
+However:
+
+\begin{proposition}
+\label{VI.4.2} Let $f \colon \cal{F} \to \cal{G}$ be an
+$\cal{E}$-functor. The following conditions are equivalent:
+\begin{enumerate}
+\item[(i)] There exists an $\cal{E}$-functor $g \colon \cal{G} \to
+\cal{F}$ and $\cal{E}$-isomorphisms
+$$
+gf \isomto \id_{\cal{F}}, \quad fg \isomto \id_{\cal{G}}.
+$$
+\item[(ii)] For every category $\cal{E}'$ over~$\cal{E}$, the
+functor
+$$
+f' = f \times_{\cal{E}} \cal{E}' \colon \cal{F}' = \cal{F}
+\times_{\cal{E}} \cal{E}' \to \cal{G}'=\cal{G} \times_{\cal{E}}
+\cal{E}'
+$$
+is an equivalence of categories.
+\item[(iii)]
+% original p. 160
+$f$ is an equivalence of categories, and for every $S \in
+\Ob(\cal{E})$, the functor $f_S \colon \cal{F}_S \to \cal{G}_S$ induced
+by~$f$ is an equivalence of categories.
+\item[(iii~bis)] $f$ is fully faithful, and for every $S \in
+\Ob(\cal{E})$ and every
+$\eta\in\Ob(\cal{G}_S)$,
+there exists a $\xi \in \Ob(\cal{F}_S)$ and an $S$-isomorphism
+$u \colon f(\xi) \to \eta$.
+\end{enumerate}
+\end{proposition}
+
+\subsubsection*{Proof} Obviously (i) implies that~$f$ is an
+equivalence of categories (a notion which is defined by the
+same condition, but where the isomorphisms of functors are
+not required to be $\cal{E}$-morphisms). On the other hand,
+it follows from the functorialities of the preceding no.
+that condition (i) is preserved after change of
+base~$\cal{E}'\to\cal{E}$. It follows that (i)$\To$(ii).
+Obviously (ii)$\To$(iii), for it suffices to take $\cal{E}'
+= \cal{E}$ and~$\cal{E}'=\{S\}$. It is even more trivial that
+(iii)$\To$(iii~bis), it remains to prove that (iii~bis)$\To$(i). For this, let us choose for every $\eta \in
+\Ob(\cal{G})$ a $g(\eta) \in \Ob(\cal{F})$ and an isomorphism
+$u(\eta)\colon f(g(\eta))\to\eta$ which is such that~$q(u(\eta)) =
+\id_S$, where~$S=q(\eta)$. This is possible thanks to the
+second condition (iii~bis). As is well-known and immediate,
+the fact that~$f$ is fully faithful implies that~$g$ can in a
+unique way be regarded as a functor
+from~$\cal{G}$ to~$\cal{F}$, in such a way that the~$u(\eta)$
+define a functorial homomorphism (hence an isomorphism)
+$u\colon fg \isomto \id_{\cal{G}}$. Moreover, by construction~$g$ is
+an $\cal{E}$-functor and~$u$ an $\cal{E}$-homomorphism. To the
+preceding data there then corresponds a functorial isomorphism
+$v\colon gf \to \id_{\cal{F}}$, defined by the condition
+that $f*v=u*f$, and one sees at once that it is likewise an
+$\cal{E}$-morphism, qed.
+
+\begin{definition}
+\label{VI.4.3} If the preceding conditions are
+satisfied, one says that~$f$ is an equivalence of
+categories over~$\cal{E}$, or an $\cal{E}$-equivalence.
+\end{definition}
+
+\begin{corollary}
+\label{VI.4.4} Suppose that the projection functor $p\colon
+\cal{F}\to\cal{E}$ is a transportable functor, \ie that for every
+isomorphism $\alpha\colon T \to S$ in~$\cal{E}$ and every object~$\xi$
+in~$\cal{F}_T$, there exists an isomorphism~$u$ in~$\cal{F}$ with
+source~$\xi$ such that~$p(u)=\alpha$. Then every $\cal{E}$-functor
+$f\colon \cal{F}\to\cal{G}$ which is an equivalence of
+categories, is an $\cal{E}$-equivalence.
+\end{corollary}
+
+Follows
+% original p. 161
+from the criterion (iii~bis).
+
+\begin{corollary}
+\label{VI.4.5} Let $f\colon \cal{F}\to\cal{G}$ be an
+$\cal{E}$-equivalence. Then for every category~$\cal{H}$
+over~$\cal{E}$, the corresponding functors:
+\begin{align*}
+\SheafHom_{\cal{E}/-}(\cal{G},\cal{H}) & \to
+\SheafHom_{\cal{E}/-}(\cal{F},\cal{H}) \\
+\SheafHom_{\cal{E}/-}(\cal{H},\cal{F})
+& \to \SheafHom_{\cal{E}/-}(\cal{H},\cal{G})
+\end{align*}
+(\cf no.~\ref{VI.2}) are equivalences of categories.
+\end{corollary}
+
+This follows from the criterion (i) by the usual reasoning.
+
+\section{Cartesian morphisms, inverse images, cartesian functors}
+\label{VI.5}
+
+Let~$\cal{F}$ be a category over~$\cal{E}$, with
+projection functor~$p$.
+
+\begin{definition}
+\label{VI.5.1} Consider a morphism
+$$
+\alpha\colon \eta\to\xi
+$$
+in~$\cal{F}$, and let
+$$
+S = p(\xi), \quad T = p(\eta), \quad f=p(\alpha).
+$$
+One says that~$\alpha$ is a \emph{cartesian morphism}
+if for every $\eta' \in \Ob(\cal{F}_T)$ and every $f$-morphism $u\colon
+\eta'\to\xi$, there exists a unique $T$-morphism $\overline{u}\colon
+\eta'\to\eta$ such that~$u=\alpha\circ\overline{u}$.
+\end{definition}
+
+This therefore means that for every $\eta'\in\Ob(\cal{F}_T)$,
+the map $v \mto \alpha\circ v$:
+\begin{equation}
+\tag{i} \Hom_T(\eta',\eta) \to \Hom_f(\eta',\xi)
+\end{equation}
+is bijective. This also means that the pair $(\eta,\alpha)$
+\emph{represents the functor in~$\eta'$} $\cal{F}^{\circ}_T \to
+\Ens$ of the right-hand side. If for a given morphism $f\colon T \to S$
+in~$\cal{E}$, and a given $\xi \in \Ob(\cal{F}_S)$, there
+exists such a pair $(\eta,\alpha)$, \ie a
+% original p. 162
+cartesian morphism~$\alpha$ in~$\cal{F}$ with target~$\xi$, such that
+$p(\alpha)=f$, then~$\eta$ is determined in $\cal{F}_T$
+up to unique isomorphism. One then says that \emph{the inverse
+image of~$\xi$ by~$f$ exists}, and an object~$\eta$ of~$\cal{F}_T$
+equipped with a cartesian $f$-morphism $\alpha\colon \eta \to \xi$ is
+called \emph{an inverse image of~$\xi$ by~$f$}.
+Often one assumes
+such an inverse image chosen whenever it exists ($\cal{F}$
+being fixed); one then denotes the inverse image by symbols
+such as~$f^*_{\cal{F}}(\xi)$, or simply~$f^*(\xi)$
+or~$\xi \times_S T$
+when these notations do not lead to
+confusion;
+the canonical morphism $\alpha\colon \eta \to \xi$ will then be
+denoted, in what follows, by~$\alpha_f(\xi)$.
+If for every $\xi \in \Ob(\cal{F}_S)$, the inverse image of~$\xi$
+by~$f$ exists, one will also say that \emph{the inverse image functor
+by~$f$ in~$\cal{F}$ exists}, and~$f^*(\xi)$ then becomes a
+\emph{functor covariant in~$\xi$}, from~$\cal{F}_S$ to~$\cal{F}_T$.
+This comes from the fact that the right-hand side in (i) depends
+covariantly on~$\xi$, \ie more precisely
+designates a functor from~$\cal{F}^{\circ}_T \times \cal{F}_S$
+to~$\Ens$. This functorial dependence for~$f^*(\xi)$
+is made explicit as follows: consider cartesian $f$-morphisms
+$$
+\alpha\colon \eta \to \xi, \quad \alpha'\colon \eta' \to \xi'
+$$
+and an $S$-morphism $\lambda\colon \xi \to \xi'$, then there exists a
+unique $T$-morphism $\mu\colon \eta\to\eta'$ such that one has
+$$
+\alpha' \mu = \lambda \alpha
+$$
+(as follows from the fact that~$\alpha'$ is cartesian).
+
+Let us also note the following immediate fact: consider a
+commutative diagram
+$$
+\xymatrix@C=1.2cm{
+\xi\ar[d]_-{\lambda}& \ar[l]_-{\alpha}\eta \ar[d]^-{\mu}\\
+\xi' &\ar[l]_-{\alpha'}\eta'
+}
+$$
+in~$\cal{F}$,
+% original p. 163
+where~$\alpha$ and~$\alpha'$ are $f$-morphisms, and~$\lambda$ an
+$S$-isomorphism,~$\mu$ a $T$-isomorphism. \emph{For~$\alpha$
+to be cartesian, it is necessary and sufficient that~$\alpha'$
+be so}.
+
+\begin{definition}
+\label{VI.5.2} An $\cal{E}$-functor $F\colon \cal{F}\to\cal{G}$ is
+called a \emph{cartesian functor}
+if it transforms cartesian morphisms into cartesian
+morphisms. One denotes by $\SheafHom_\cart(\cal{F},\cal{G})$
+the full subcategory of
+$\SheafHom_{\cal{E}/-}(\cal{F},\cal{G})$ formed of the
+cartesian functors.
+
+For example, considering~$\cal{E}$ as a category
+over~$\cal{E}$ by means of the identity functor, every morphism
+of~$\cal{E}$ is cartesian, hence a cartesian functor
+from~$\cal{E}$ to~$\cal{F}$ is a section functor $F\colon
+\cal{E}\to\cal{F}$ which transforms every morphism of~$\cal{E}$ into a
+cartesian morphism; such a functor is called a \emph{cartesian
+section} of~$\cal{F}$ over~$\cal{E}$.
+\end{definition}
+
+\begin{proposition}
+\label{VI.5.3} \textup{(i)}~A functor $F\colon \cal{F} \to \cal{G}$ which is an
+$\cal{E}$-equivalence, is a cartesian functor.
+\textup{(ii)}~Let~$F,G$ be two \emph{isomorphic} $\cal{E}$-functors~$\cal{F}\to\cal{G}$. If one is cartesian,
+so is the other. \textup{(iii)}~The composite of two cartesian functors
+$\cal{F}\to\cal{G}$ and $\cal{G}\to\cal{H}$ is a
+cartesian functor.
+\end{proposition}
+
+Assertion (iii) is trivial from the definition, (ii)
+follows from the remark preceding~\ref{VI.5.2}, (i) follows
+easily from the definition and from the criterion~\ref{VI.4.2}~(iii); more
+precisely, a morphism~$\alpha$ in~$\cal{F}$ is
+cartesian if and only if~$F(\alpha)$ is so.
+
+\begin{corollary}
+\label{VI.5.4}
+Let $F \colon \cal{F} \to \cal{G}$ be an
+$\cal{E}$-equivalence. Then for every category~$\cal{H}$
+over~$\cal{E}$, the corresponding functors $G \mto G \circ F$ and
+$G \mto F \circ G$ induce equivalences of
+categories:
+\begin{eqnarray*}
+\SheafHom_\cart(\cal{G},\cal{H})\lto{\approx}
+\SheafHom_\cart(\cal{F},\cal{H}) \\
+\SheafHom_\cart(\cal{H},\cal{F})\lto{\approx}
+\SheafHom_\cart(\cal{H}, \cal{G})
+\end{eqnarray*}
+\end{corollary}
+
+This is deduced in the usual way from~\ref{VI.4.2}
+criterion~(i) and from~\ref{VI.5.3} (i) (ii)~(iii).
+% original p. 164
+One can make more precise that \emph{the $\cal{E}$-functor
+$G\colon \cal{G} \to \cal{H}$ is cartesian if and only if $G
+\circ F$ is so}, and likewise \emph{an $\cal{E}$-functor $G\colon
+\cal{H} \to \cal{F}$ is cartesian if and only if $F \circ G$
+is so}.
+
+It follows from~\ref{VI.5.4}~(iii) that if one considers the
+subcategory~$\Cat^\cart_{/\cal{E}}$
+of~$\Cat_{/\cal{E}}$ whose objects are the same as those of
+$\Cat_{/\cal{E}}$, and whose morphisms are the
+\emph{cartesian} functors, then one has as in~no.~\ref{VI.2} pairings:
+$$
+\SheafHom_\cart(\cal{F},\cal{G})\times
+\SheafHom_\cart(\cal{G},\cal{H}) \to \SheafHom_\cart(\cal{F},\cal{H})
+$$
+induced
+by those of~no.~\ref{VI.2}, allowing one to consider
+$\SheafHom_\cart(\cal{F},\cal{G})$ as a functor in $\cal{F}$,
+$\cal{G}$, from the category $\left(\Cat^\cart_{/\cal{E}}
+\right)^\circ \times \Cat^\cart_{/\cal{E}}$
+to~$\Cat$.
+We will need this remark especially for the case where
+$\cal{F} = \cal{G}$:
+
+\begin{definition}
+\label{VI.5.5}
+Let $\cal{F}$ be a category over~$\cal{E}$. One denotes by
+$$
+\varprojLim\cal{F}/\cal{E}
+$$
+the category of cartesian $\cal{E}$-functors
+$\cal{E}\to\cal{F}$, \ie of cartesian sections of~$\cal{F}$
+over~$\cal{E}$.
+\end{definition}
+
+According to what has just been said,
+$\varprojLim\cal{F}/\cal{E}$ is a functor
+in~$\cal{F}$, from the category $\Cat^\cart_{/\cal{E}}$ to the
+category $\Cat$.
+
+We will see below the relations between this operation
+$\varprojLim$ and the notion of projective limit of
+categories, as well as numerous examples.
+
+\section[Fibered categories and prefibered categories]{Fibered categories and prefibered categories. Products and change of base therein}
+\label{VI.6}
+
+\begin{definition}
+\label{VI.6.1}
+A category $\cal{F}$ over~$\cal{E}$ is called a
+\emph{fibered category}
+(and one then says that the functor $\cal{F}\to\cal{E}$ is
+\emph{fibrant})
+if it satisfies the following two axioms:
+\begin{itemize}
+\item{$\Fib_{\mathrm{I}}$}
+% original p. 165
+For every morphism $f\colon T\to S$ in~$\cal{E}$, the inverse image functor
+by $f$ in $\cal{F}$ exists.
+\item{$\Fib_{\mathrm{II}}$} The composite of two cartesian morphisms
+is cartesian.
+\end{itemize}
+A category $\cal{F}$ over~$\cal{E}$ satisfying the condition
+$\Fib_{\mathrm{I}}$ is called a \emph{prefibered category
+over~$\cal{E}$}.
+\end{definition}
+
+If~$\cal{F}$ is a fibered category
+(\resp prefibered) over~$\cal{E}$, a subcategory
+$\cal{G}$ of~$\cal{F}$ is called a \emph{fibered subcategory}
+(\resp a \emph{prefibered subcategory}) if it is a
+fibered category (\resp prefibered) over~$\cal{E}$, and
+if moreover the inclusion functor is cartesian. If for example
+$\cal{G}$ is a \emph{full} subcategory of~$\cal{F}$, one
+sees that this means that for every morphism $f\colon T\to S$ in
+$\cal{E}$ and for every $\xi \in \Ob(\cal{G}_S)$, $f^*_{\cal{F}}(\xi)$
+is $T$-isomorphic to an object of~$\cal{G}_T$. Another
+interesting case is the following: $\cal{F}$ being a
+fibered category over~$\cal{E}$, consider the subcategory
+$\cal{G}$ of~$\cal{F}$ having the same objects, and whose morphisms
+are the \emph{cartesian} morphisms of~$\cal{F}$; in particular
+the morphisms of~$\cal{G}_S$ are the isomorphisms of
+$\cal{F}_S$. One sees at once that this is indeed a fibered subcategory
+of~$\cal{F}$, for in the bijection
+$$
+\Hom_T(\eta',\eta) \isomto \Hom_f(\eta',\xi)
+$$
+relative to a cartesian $f$-morphism $\alpha$ in $\cal{F}$,
+to the $T$-isomorphisms of the left-hand side correspond the cartesian
+morphisms of the right-hand side. By definition, the cartesian
+sections $\cal{E}\to\cal{F}$
+then correspond bijectively to arbitrary $\cal{E}$-functors
+$\cal{E}\to\cal{G}$ (but one notes that the natural functor
+$$
+\SheafHom_{\cal{E}/-}(\cal{E},\cal{G})\to
+\SheafHom_\cart(\cal{E},\cal{F})=
+\varprojLim(\cal{F}/\cal{E})
+$$
+is faithful, but in general is not fully
+faithful, \ie is not an isomorphism).
+
+\begin{remarks}
+Let $\cal{F}$ be a category over~$\cal{E}$. The following
+conditions are equivalent:~(i)~All morphisms of~$\cal{F}$
+are cartesian (ii)~$\cal{F}$~is a fibered category
+over~$\cal{E}$, and the $\cal{F}_S$ are groupoids
+(\ie every morphism in $\cal{F}_S$ is an isomorphism). One
+then says that $\cal{F}$ is a category \emph{fibered in
+groupoids}
+% original p. 166
+over~$\cal{E}$. These are the ones one encounters especially in ``theory
+of modules''. If $\cal{E}$ is a groupoid, one shows that
+conditions (i) and (ii) are also equivalent to the following:
+(iii)~$\cal{F}$ is a groupoid, and the projection functor
+$p\colon \cal{F}\to\cal{E}$ is transportable (\cf \ref{VI.4.4}). For
+example, if $\cal{E}$ and $\cal{F}$ are groupoids such that
+$\Ob(\cal{E})$ and $\Ob(\cal{F})$
+are reduced to a point, so that $\cal{E}$ and $\cal{F}$
+are defined, up to isomorphism, by groups $E$ and
+$F$, and the functor $p\colon \cal{F}\to\cal{E}$ is defined by a
+group homomorphism $p\colon F\to E$, then $\cal{F}$ is
+fibered over~$\cal{E}$ if and only if $p$ is surjective, \ie if
+$p$ defines an \emph{extension} of the group $E$ by the group $G =
+\Ker p$.
+\end{remarks}
+
+\begin{proposition}
+\label{VI.6.2}
+Let $F \colon \cal{F} \to \cal{G}$ be an
+$\cal{E}$-equivalence. For $\cal{F}$ to be a
+fibered category (\resp prefibered) over~$\cal{E}$, it is necessary and
+sufficient that $\cal{G}$ be so.
+\end{proposition}
+
+Follows easily from the definitions and from the remark
+noted above that a morphism
+$\alpha$
+in $\cal{F}$ is cartesian if and only if $F(\alpha)$ is so.
+
+\begin{proposition}
+\label{VI.6.3}
+Let $\cal{F}_1$, $\cal{F}_2$ be two categories over~$\cal{E}$, and
+let $\alpha = (\alpha_1,\alpha_2)$ be a morphism in
+$\cal{F}=\cal{F}_1 \times_{\cal{E}} \cal{F}_2$. For $\alpha$ to be
+cartesian, it is necessary and sufficient that its components be so.
+\end{proposition}
+
+Indeed, let $\xi_i$ be the target and $\eta_i$ the source of~$\alpha_i$, and
+let $f\colon T\to S$ be the morphism of~$\cal{E}$ such that $\alpha_1$ and
+$\alpha_2$ are $f$-morphisms. For every
+$\eta'=(\eta'_1,\eta'_2)$ in $\cal{F}_T$, one has a commutative
+diagram
+$$
+\xymatrix{ \Hom_T(\eta',\eta) \ar[r] \ar[d] & \Hom_f(\eta',\xi) \ar[d]
+\\ \Hom_T(\eta'_1,\eta_1)\times\Hom_T(\eta'_2,\eta_2) \ar[r] &
+\Hom_f(\eta'_1,\xi_1)\times \Hom_f(\eta'_2,\xi_2) }
+$$
+where the vertical arrows are bijections. Thus if one
+of the horizontal arrows is a bijection, so is
+the other. This already shows that if $\alpha_1$, $\alpha_2$
+are cartesian (hence the second horizontal arrow
+bijective) then $\alpha$ is so. The converse is seen by setting
+in the diagram above $\eta'_i=\eta_i$ whence
+$\Hom_T(\eta'_i,\eta_i) \neq \emptyset$, first for $i=2$ which
+proves that $\alpha_1$ is cartesian, then for $i=1$ which proves
+that $\alpha_2$ is cartesian.
+
+\begin{corollary}
+\label{VI.6.4}
+Let
+% original p. 167
+$\cal{F} = \cal{F}_1\times_{\cal{E}}\cal{F}_2$, and let
+$F=(F_1,F_2)$ be an $\cal{E}$-functor $\cal{G}\to\cal{F}$. For
+$F$
+to be cartesian, it is necessary and sufficient that $F_1$ and $F_2$
+be so. One thus obtains an isomorphism of categories
+$$
+\SheafHom_\cart(\cal{G}, \cal{F}_1 \times_{\cal{E}} \cal{F}_2) \isomto
+\SheafHom_\cart(\cal{G},\cal{F}_1)
+\times\SheafHom_\cart(\cal{G},\cal{F}_2)
+$$
+and in particular (setting $\cal{G}=\cal{E}$) an isomorphism of
+categories
+$$
+\varprojLim(\cal{F}_1 \times_{\cal{E}}
+\cal{F}_2/\cal{E}) \isomto
+\varprojLim(\cal{F}_1/\cal{E}) \times
+\varprojLim(\cal{F}_2/\cal{E})
+$$
+\end{corollary}
+
+\begin{corollary}
+\label{VI.6.5}
+Let $\cal{F}_1$ and $\cal{F}_2$ be two fibered categories
+(\resp prefibered) over~$\cal{E}$, then their fibered
+product $\cal{F}=\cal{F}_1 \times_{\cal{E}}\cal{F}_2$ is a
+fibered category (\resp prefibered) over~$\cal{E}$.
+\end{corollary}
+
+These results moreover extend to the case of the fibered
+product of an arbitrary family of categories over~$\cal{E}$.
+
+\begin{proposition}
+\label{VI.6.6}
+Let $\cal{F}$ be a category over~$\cal{E}$, with
+projection functor $p$, and let $\lambda \colon \cal{E}' \to \cal{E}$
+be a functor, consider
+$\cal{F}'=\cal{F}\times_{\cal{E}}\cal{E}'$ as a category over~$\cal{E}'$ by the projection functor $p'=p \times_{\cal{E}}
+\id_{\cal{E}'}$. Let $\alpha'$ be a morphism of~$\cal{F}'$; for
+$\alpha'$ to be a cartesian morphism, it is necessary and sufficient that
+its image $\alpha$ in $\cal{F}$ be so.
+\end{proposition}
+
+The proof is immediate and left to the reader.
+
+\begin{corollary}
+\label{VI.6.7}
+For every cartesian functor $F\colon \cal{F} \to \cal{G}$ of
+categories over~$\cal{E}$, the functor
+$F'=F\times_{\cal{E}}\cal{E}'$ from
+$\cal{F}'=\cal{F}\times_{\cal{E}}\cal{E}'$ to
+$\cal{G}'=\cal{G}\times_{\cal{E}}\cal{E}'$ is cartesian.
+\end{corollary}
+
+Consequently, the functor $\SheafHom_{\cal{E}}(\cal{F},\cal{G}) \to
+\SheafHom_{\cal{E}'}(\cal{F}',\cal{G}')$ considered in
+no.~\ref{VI.3} induces a functor
+$$
+\SheafHom_\cart(\cal{F},\cal{G}) \to
+\SheafHom_{\cart}(\cal{F}',\cal{G}')\,;
+$$
+in other terms, for $\cal{F}$, $\cal{G}$ fixed, \emph{one can
+consider}
+$$
+\SheafHom_\cart(\cal{F} \times_{\cal{E}} \cal{E}',
+\cal{G}\times_{\cal{E}} \cal{E}')
+$$
+\emph{as
+% original p. 168
+a functor in~$\cal{E}'$, from the category
+${\Cat_{/\cal{E}}}^\circ$ to $\Cat$}. If one likewise lets
+$\cal{F}$, $\cal{G}$ vary, one finds
+a functor from the category ${\Cat_{/\cal{E}}}^\circ \times \big(
+\Cat^\cart_{/\cal{E}} \big)^\circ \times \Cat^\cart_{/\cal{E}}$
+to~$\Cat$. When one takes into account the isomorphism
+$$
+\Hom_{\cal{E}'}(\cal{F}',\cal{G}') \isomto
+\Hom_\cal{E}(\cal{F}\times_\cal{E}\cal{E}',\cal{G})
+$$
+envisaged in no.~\ref{VI.3}, then the cartesian $\cal{E}'$-functors
+from~$\cal{F}'$ to~$\cal{G}'$ correspond to the $\cal{E}$-functors
+$\cal{F} \times_\cal{E} \cal{E}' \to \cal{G}$ which transform every
+morphism whose first projection is a cartesian
+morphism of~$\cal{F}$, into a cartesian morphism of
+$\cal{G}$. Setting $\cal{F}=\cal{E}$, one finds (after change
+of notation):
+
+\begin{corollary}
+\label{VI.6.8}
+$\varprojLim(\cal{F}'/\cal{E}')$ is isomorphic to
+the full subcategory of
+$\SheafHom_{\cal{E}/-}(\cal{E}',\cal{F})$ formed of the
+$\cal{E}$-functors $\cal{E}'\to\cal{F}$ which transform arbitrary
+morphisms into cartesian morphisms. In particular, if $\cal{F}$
+is a fibered category and if $\tilde{\cal{F}}$ is the
+subcategory of~$\cal{F}$ whose morphisms are the
+cartesian morphisms of~$\cal{F}$, then one has a bijection
+$$
+\Ob \varprojLim(\cal{F}'/\cal{E}') \isomto
+\Hom_{\cal{E}/-}(\cal{E}',\tilde{\cal{F}})\,.
+$$
+\end{corollary}
+
+This makes more precise the way in which the expression
+$\varprojLim(\cal{F} \times_{\cal{E}} \cal{E}' /
+\cal{E}')$ is to be considered as a functor in
+$\cal{E}'$ and in $\cal{F}$, from the category
+${\Cat_{/\cal{E}}}^\circ \times \Cat^\cart_{/\cal{E}}$ to the
+category $\Cat$. One will see later a more complete
+functorial dependence with respect to $\cal{E}'$, when
+$\cal{F}$ is required to be a fibered category.
+
+\begin{corollary}
+\label{VI.6.9}
+Let $\cal{F}$ be a fibered category (\resp prefibered)
+over~$\cal{E}$, then $\cal{F}'=\cal{F}\times_{\cal{E}}\cal{E}'$ is
+a fibered category (\resp prefibered) over~$\cal{E}'$.
+\end{corollary}
+
+\begin{proposition}
+\label{VI.6.10} Let $\cal{F}$, $\cal{G}$ be
+prefibered categories over~$\cal{E}$, $F$ a cartesian $\cal{E}$-functor
+from~$\cal{F}$ to $\cal{G}$. For $F$ to be
+faithful,
+% original p. 169
+(\resp fully faithful, \resp an $\cal{E}$-equivalence)
+it is necessary and sufficient that for every
+$S\in \Ob(\cal{E})$,
+the induced functor $F_S\colon \cal{F}_S\to \cal{G}_S$ be
+faithful (\resp fully faithful, \resp an equivalence).
+\end{proposition}
+
+Immediate proof from the definitions.
+
+To finish this no., we give some properties of
+fibered categories, using the axiom $\Fib_{\mathrm{II}}$.
+\begin{proposition}
+\label{VI.6.11} Let $\cal{F}$ be a prefibered category
+over~$\cal{E}$. For $\cal{F}$ to be fibered, it is necessary and
+sufficient that it satisfy the following condition:
+
+$\Fib_{\mathrm{II}}'$: Let $\alpha\colon\eta\to\xi$ be a
+cartesian morphism in $\cal{F}$ over the morphism $f\colon T\to S$
+of~$\cal{E}$. For every morphism $g\colon U\to T$ in $\cal{E}$, and
+every
+$\zeta\in\Ob(\cal{F}_U)$,
+the map $u\mto\alpha\circ u$:
+$$
+\Hom_g(\zeta,\eta)\to\Hom_{fg}(\zeta,\xi)
+$$
+is bijective.
+\end{proposition}
+
+In other terms, in a \emph{fibered} category
+over~$\cal{E}$, cartesian diagrams are characterized
+by a property, a priori stronger than that of the
+definition (which one obtains by setting $g=\id_T$ in
+the preceding statement).
+\begin{corollary}
+\label{VI.6.12} Let $\cal{F}$ be a category over~$\cal{E}$,
+$\alpha$ a morphism in $\cal{F}$. For $\alpha$ to be an
+isomorphism, it is necessary that $p(\alpha)=f$ be an isomorphism and that
+$\alpha$ be cartesian; the converse is true if $\cal{F}$
+is fibered over~$\cal{E}$.
+\end{corollary}
+
+Indeed, if $\alpha$ is an isomorphism then so is evidently
+$f=p(\alpha)$; for every
+$\eta'\in\Ob(\cal{F}_T)$,
+the map $u\mto \alpha\circ u$
+$$
+\Hom(\eta',\eta)\to \Hom(\eta',\xi)
+$$
+is bijective; as $f$ is an isomorphism, one sees at once
+that an
+element of the left-hand side is a $T$-morphism if and only
+if its image in the right-hand side is an $f$-morphism, hence one thus obtains a bijection
+$$
+\Hom_T(\eta',\eta)\to\Hom_f(\eta',\xi)
+$$
+which
+% original p. 170
+proves the first assertion. Conversely, suppose
+that $f$ is an isomorphism and that $\alpha$ satisfies the condition
+stated in $\Fib_{\mathrm{II}'}$ (which therefore means,
+when $\cal{F}$ is
+fibered
+over~$\cal{E}$, that $\alpha$ is cartesian), then one sees at
+once that for every $\zeta\in\Ob\cal{F}$, the map $u\mto
+\alpha\circ u$ from~$\Hom(\zeta,\eta)$ to $\Hom(\zeta,\xi)$ is
+bijective, hence $\alpha$ is an isomorphism.
+\begin{corollary}
+\label{VI.6.13} Let $\alpha\colon\eta\to\xi$ and
+$\beta\colon\zeta\to \eta$ be two composable morphisms in the
+category $\cal{F}$ fibered over~$\cal{E}$. If $\alpha$ is
+cartesian then $\beta$ is so if and only if $\alpha\beta$
+is so.
+\end{corollary}
+
+One uses the definition of cartesian morphisms in the
+strengthened form of~\ref{VI.6.11}.
+
+% ---- en-chunk3.tex ----

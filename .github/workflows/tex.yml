@@ -24,19 +24,46 @@ jobs:
   sga1:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        expose: [I, II, III, VI]
+        include:
+          - dir: Introduction
+            file: SGA1-Intro
+          - dir: ExposeI
+            file: SGA1-I
+          - dir: ExposeII
+            file: SGA1-II
+          - dir: ExposeIII
+            file: SGA1-III
+          - dir: ExposeIV
+            file: SGA1-IV
+          - dir: ExposeV
+            file: SGA1-V
+          - dir: ExposeVI
+            file: SGA1-VI
+          - dir: ExposeVIII
+            file: SGA1-VIII
+          - dir: ExposeIX
+            file: SGA1-IX
+          - dir: ExposeX
+            file: SGA1-X
+          - dir: ExposeXI
+            file: SGA1-XI
+          - dir: ExposeXII
+            file: SGA1-XII
+          - dir: ExposeXIII
+            file: SGA1-XIII
     steps:
       - uses: actions/checkout@v5
       - uses: xu-cheng/latex-action@v3
         with:
-          root_file: SGA1-${{ matrix.expose }}.tex
-          working_directory: translation/SGA1/Expose${{ matrix.expose }}
+          root_file: ${{ matrix.file }}.tex
+          working_directory: translation/SGA1/${{ matrix.dir }}
           latexmk_use_lualatex: false
       - uses: actions/upload-artifact@v4
         with:
-          name: SGA1-Expose-${{ matrix.expose }}-EN
-          path: translation/SGA1/Expose${{ matrix.expose }}/SGA1-${{ matrix.expose }}.pdf
+          name: ${{ matrix.file }}-EN
+          path: translation/SGA1/${{ matrix.dir }}/${{ matrix.file }}.pdf
 
   sga2:
     runs-on: ubuntu-latest

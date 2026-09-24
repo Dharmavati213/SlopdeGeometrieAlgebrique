@@ -5,6 +5,21 @@ all: lean tex
 lean:
 	cd lean && lake build
 
+SGA1_TEX_DIRS := \
+	translation/SGA1/Introduction \
+	translation/SGA1/ExposeI \
+	translation/SGA1/ExposeII \
+	translation/SGA1/ExposeIII \
+	translation/SGA1/ExposeIV \
+	translation/SGA1/ExposeV \
+	translation/SGA1/ExposeVI \
+	translation/SGA1/ExposeVIII \
+	translation/SGA1/ExposeIX \
+	translation/SGA1/ExposeX \
+	translation/SGA1/ExposeXI \
+	translation/SGA1/ExposeXII \
+	translation/SGA1/ExposeXIII
+
 SGA2_TEX_DIRS := \
 	translation/SGA2/Introduction \
 	translation/SGA2/ExposeI \
@@ -23,16 +38,8 @@ SGA2_TEX_DIRS := \
 	translation/SGA2/ExposeXIV
 
 tex:
-	$(MAKE) -C translation/SGA1/ExposeI
-	$(MAKE) -C translation/SGA1/ExposeII
-	$(MAKE) -C translation/SGA1/ExposeIII
-	$(MAKE) -C translation/SGA1/ExposeVI
-	@for d in $(SGA2_TEX_DIRS); do $(MAKE) -C $$d; done
+	@for d in $(SGA1_TEX_DIRS) $(SGA2_TEX_DIRS); do $(MAKE) -C $$d || exit 1; done
 
 clean:
 	cd lean && lake clean
-	$(MAKE) -C translation/SGA1/ExposeI clean
-	$(MAKE) -C translation/SGA1/ExposeII clean
-	$(MAKE) -C translation/SGA1/ExposeIII clean
-	$(MAKE) -C translation/SGA1/ExposeVI clean
-	@for d in $(SGA2_TEX_DIRS); do $(MAKE) -C $$d clean; done
+	@for d in $(SGA1_TEX_DIRS) $(SGA2_TEX_DIRS); do $(MAKE) -C $$d clean; done

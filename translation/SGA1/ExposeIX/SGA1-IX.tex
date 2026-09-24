@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper,oneside]{amsbook}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[american]{babel}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=1.1in}
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\usepackage{sga1-en}
+\usepackage[hidelinks]{hyperref}
+
+\addto\captionsamerican{\renewcommand{\chaptername}{Expos\'e}}
+
+\title[SGA~1, Expos\'e IX (English draft)]{Descent of \'etale morphisms. Application to the fundamental group\\
+{\normalsize SGA~1, Expos\'e IX\\English draft}}
+\author{A.\ Grothendieck}
+\date{}
+\hypersetup{
+  pdftitle={SGA 1, Expose IX: Descent of etale morphisms. Application to the fundamental group (English draft)},
+  pdfauthor={A. Grothendieck},
+  pdfsubject={Unofficial English translation of SGA 1, Expose IX}
+}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\chapter*{About this draft}
+This is an unofficial English translation of Expos\'e~IX,
+``Descente des morphismes \'etales. Application au groupe fondamental'', from SGA~1. The source volume is
+A.\ Grothendieck and M.\ Raynaud,
+\textit{Rev\^etements \'etales et groupe fondamental} (SGA~1),
+S\'eminaire de g\'eom\'etrie alg\'ebrique du Bois Marie, 1960--61.
+It follows the slightly corrected SMF recomposition,
+\href{https://arxiv.org/abs/math/0206203v2}{arXiv:math/0206203v2}.
+
+This draft contains the whole expos\'e, including proofs, footnotes,
+diagrams, the updating remarks added in 2003 by M.~Raynaud (between bold
+brackets and marked (MR)) where the expos\'e has them, and its bibliography.
+Statement numbering and mathematical notation follow the source.
+References to other expos\'es print the source's numbers. Apparent
+misprints in the source have been retained; they are recorded in the
+accompanying README, separately from the translated text. Scholarly
+proofreading remains outstanding.
+
+The translator's contribution is licensed under
+\href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}.
+The French original remains copyright of its authors and publishers.
+
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{8}
+\input{en-1.tex}
+\input{en-2.tex}
+\input{en-3.tex}
+\input{en-4.tex}
+\end{document}

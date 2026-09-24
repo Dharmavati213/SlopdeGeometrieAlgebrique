@@ -8,7 +8,7 @@ Let $A \to B$ be a local homomorphism of local rings defining a finite residual 
 \item[(i)]
 $B$ is formally smooth over~$A$
 \item[(ii)] For every local homomorphism $A \to C$, where $C$ is a
-local ring \emph{complete}, every ideal $J$ of~$C$ contained in
+\emph{complete} local ring, every ideal $J$ of~$C$ contained in
 $\goth{r}(C)$, and every local $A$-homomorphism $B \to C/J$, there
 exists an $A$-homomorphism (necessarily local) $B \to C$ which
 lifts it.
@@ -23,7 +23,7 @@ a local artinian ring, finite over~$A$.
 \end{enumerate}
 \end{theorem}
 
-\begin{remark}
+\begin{remarkstar}
 For the rest of this exposé, we shall use only the implication
 (iv)$\To$(i), or (iv~bis)$\To$(i); the direct implication
 (i)$\To$(ii) will be proved by another method in the next no. when
@@ -39,7 +39,7 @@ topologized ring $C$, \emph{separated} and \emph{complete}, a
 \emph{closed topologically nilpotent} ideal of~$C$, and a continuous
 homomorphism $A \to C$ (thus making $C$ a topological $A$-algebra);
 we shall leave this modification to the reader.
-\end{remark}
+\end{remarkstar}
 
 \subsubsection*{Proof of~\ref{III.2.1}}
 We shall prove (i)$\To$(iii)$\To$(ii), then (iv)$\To$(i). Since
@@ -116,7 +116,7 @@ $$
 v_q \colon B \to C_q
 $$
 such that (a) $v_q$ lifts $u_q$ and (b) $v_q$ lifts $v_{q-1}$. The
-possibility of the induction is easily verified, since
+possibility of the induction is easily verified, for as
 $$
 u_q \colon B \to C/(J + \goth{n}^q) \text{\quad and \quad} v_{q-1}
 \colon B \to C/\goth{n}^{q-1}
@@ -186,15 +186,15 @@ homomorphisms of $A$-algebras from $B$ into $B_1/\goth{n}_1^2$,
 $B_1/\goth{n}_1^3$, and so on; passing to the projective limit gives
 the homomorphism $B \to B_1$ with the desired property.
 
-(v)$\To$(i). As in the commutative diagram
+(v)$\To$(i). Since in the commutative diagram
 $$
 \xymatrix{ \goth{m}/\goth{m}^2 \ar[r] \ar[d] & \goth{n}/\goth{n}^2
 \ar[r] \ar[d] & \goth{n}/(\goth{n}^2+\goth{m}B) \ar[r] \ar[d] & 0 \\
 \goth{m}/\goth{m}^2 \ar[r] & \goth{n}_1/\goth{n}_1^2 \ar[r] &
 \goth{n}_1/(\goth{n}_1^2+\goth{m}B_1) \ar[r] & 0}
 $$
-the two rows are exact, and the extreme vertical arrows are
-surjective; the middle arrow is surjective and it follows (since $B$
+the two rows are exact, and the extreme vertical arrows
+surjective, the middle arrow is surjective and it follows (since $B$
 is complete) that $B \to B_1$ is \emph{surjective}. Let $x_i$
 ($1 \leq i \leq n$) be elements of~$B$ lifting the $t_i$. They
 therefore define a homomorphism of $A$-algebras $B_1 \to B$, which
