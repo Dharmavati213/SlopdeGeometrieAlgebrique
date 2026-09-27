@@ -135,6 +135,15 @@ These checks, and the sentence-by-sentence review, do not settle the
 mathematical questions above; deeper scholarly proofreading remains
 outstanding.
 
+### Found during the Lean formalization (2026-09)
+
+These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean statements use the corrected forms.
+
+| Location | Source wording | Point |
+| --- | --- | --- |
+| I.9.8 | The trace formula is stated for `F` monic separable with no restriction on its coefficients. | It needs `F ∈ A[t]`: for `F = t² + t/2` over `ℤ ⊆ ℚ` the conclusion fails. The Lean statement (`SGA.SGA1.ExposeI.forall_trace_mul_root_pow_mem_iff`) adds this hypothesis. |
+| I.10.7 and I.10.9 | “upper semicontinuous” | With `n(y)` the number of geometric points of the fibre, the function is lower semicontinuous: `n(y) ≤ n(y')` for `y'` near `y` (an open immersion gives `n = 1` on the open set and `0` off it). The Lean statements use this direction (`SGA.SGA1.ExposeI.geometricFiberCard_upperSemicontinuous_Statement`). |
+
 ## Continuation
 
 All of SGA 1 is now translated (see

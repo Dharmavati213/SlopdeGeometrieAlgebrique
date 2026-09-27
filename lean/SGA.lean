@@ -1,5 +1,16 @@
+import SGA.Foundations
 import SGA.SGA1.ExposeI
+import SGA.SGA1.ExposeII
+import SGA.SGA1.ExposeIII
+import SGA.SGA1.ExposeIV
+import SGA.SGA1.ExposeV
 import SGA.SGA1.ExposeVI
+import SGA.SGA1.ExposeVIII
+import SGA.SGA1.ExposeIX
+import SGA.SGA1.ExposeX
+import SGA.SGA1.ExposeXI
+import SGA.SGA1.ExposeXII
+import SGA.SGA1.ExposeXIII
 import SGA.SGA2.ExposeI
 import SGA.SGA2.ExposeII
 import SGA.SGA2.ExposeIII

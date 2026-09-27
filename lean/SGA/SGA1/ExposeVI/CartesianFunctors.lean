@@ -6,6 +6,7 @@ Authors: SGAenglishpluslean contributors
 import SGA.SGA1.ExposeVI.BasedEquivalences
 import SGA.SGA1.ExposeVI.Cartesian
 import Mathlib.CategoryTheory.ObjectProperty.FullSubcategory
+import Mathlib.CategoryTheory.ObjectProperty.Equivalence
 
 /-!
 # SGA 1, Exposé VI, VI.5.2–5.5: cartesian functors and cartesian sections
@@ -218,5 +219,63 @@ theorem isCartesianFunctor_postcomp_iff (F : BasedFunctor X Y) (hF : IsBasedEqui
     exact isCartesianFunctor_of_iso β.symm this
   · intro h
     exact isCartesianFunctor_comp G F h (isCartesianFunctor_of_isBasedEquivalence F hF)
+
+end SGA.SGA1.ExposeVI
+
+namespace SGA.SGA1.ExposeVI
+
+open CategoryTheory CategoryTheory.Functor ObjectProperty
+
+variable {E : Type u} [Category.{v} E]
+  {X : BasedCategory.{v₁, u₁} E} {Y : BasedCategory.{v₂, u₂} E}
+
+/-- VI.5.3(ii): cartesian functors are closed under isomorphism. -/
+instance cartesianFunctorProperty_isClosedUnderIsomorphisms :
+    (cartesianFunctorProperty (X := X) (Y := Y)).IsClosedUnderIsomorphisms :=
+  ⟨fun e h ↦ isCartesianFunctor_of_iso e h⟩
+
+namespace BasedQuasiInverse
+
+variable {F : BasedFunctor X Y} (Q : BasedQuasiInverse F) (Z : BasedCategory.{v₃, u₃} E)
+
+/-- VI.5.4: for an `E`-equivalence `F : 𝒳 ⥤ 𝒴`, `G ↦ G ∘ F` is an equivalence
+`Cart_E(𝒴, 𝒵) ≌ Cart_E(𝒳, 𝒵)`. -/
+def cartesianPrecompEquivalence : CartesianFunctors Y Z ≌ CartesianFunctors X Z :=
+  (Q.precompEquivalence Z).congrFullSubcategory (by
+    funext G
+    exact propext (isCartesianFunctor_precomp_iff F ⟨Q⟩ G))
+
+/-- VI.5.4: for an `E`-equivalence `F : 𝒳 ⥤ 𝒴`, `G ↦ F ∘ G` is an equivalence
+`Cart_E(𝒵, 𝒳) ≌ Cart_E(𝒵, 𝒴)`. -/
+def cartesianPostcompEquivalence : CartesianFunctors Z X ≌ CartesianFunctors Z Y :=
+  (Q.postcompEquivalence Z).congrFullSubcategory (by
+    funext G
+    exact propext (isCartesianFunctor_postcomp_iff F ⟨Q⟩ G))
+
+end BasedQuasiInverse
+
+end SGA.SGA1.ExposeVI
+
+namespace SGA.SGA1.ExposeVI
+
+open CategoryTheory CategoryTheory.Functor ObjectProperty
+
+variable {E : Type u} [Category.{v} E]
+  {X : BasedCategory.{v₁, u₁} E} {Y : BasedCategory.{v₂, u₂} E} {Z : BasedCategory.{v₃, u₃} E}
+
+/-- Remark after VI.5.4: the composition functor restricts to cartesian functors,
+`Cart_E(𝒳, 𝒴) × Cart_E(𝒴, 𝒵) ⥤ Cart_E(𝒳, 𝒵)`. -/
+def cartesianComposition :
+    CartesianFunctors X Y × CartesianFunctors Y Z ⥤ CartesianFunctors X Z :=
+  cartesianFunctorProperty.lift
+    ((cartesianFunctorProperty.ι.prod cartesianFunctorProperty.ι) ⋙ basedComposition)
+    (fun FG ↦ isCartesianFunctor_comp FG.1.obj FG.2.obj FG.1.property FG.2.property)
+
+/-- VI.5.5: `lim(𝒳/E)` is functorial in `𝒳` for cartesian functors: a cartesian functor
+`G : 𝒳 ⥤ 𝒴` induces `lim(𝒳/E) ⥤ lim(𝒴/E)`. -/
+def cartesianLimitMap (G : BasedFunctor X Y) (hG : IsCartesianFunctor G) :
+    cartesianLimit X ⥤ cartesianLimit Y :=
+  cartesianFunctorProperty.lift (cartesianFunctorProperty.ι ⋙ basedPostcomp G)
+    (fun s ↦ isCartesianFunctor_comp s.obj G s.property hG)
 
 end SGA.SGA1.ExposeVI

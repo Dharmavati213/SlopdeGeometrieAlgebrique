@@ -1,0 +1,415 @@
+/-
+Copyright (c) 2026 SGAenglishpluslean contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: SGAenglishpluslean contributors
+-/
+import Mathlib.RingTheory.Flat.EquationalCriterion
+import Mathlib.RingTheory.LocalProperties.FinitePresentation
+import Mathlib.RingTheory.LocalRing.Module
+import Mathlib.RingTheory.Flat.Localization
+import Mathlib.RingTheory.Localization.BaseChange
+import Mathlib.RingTheory.Localization.Free
+import Mathlib.Tactic.Algebraize
+import SGA.Foundations.QuasiCoherent.Pullback
+
+/-!
+# Quasi-coherent modules on affine schemes
+
+Mathlib proves that `M ↦ M^~` is an equivalence between `R`-modules and quasi-coherent
+`𝒪_{Spec R}`-modules (`AlgebraicGeometry.tildeEquiv`, [Stacks, Tag 01IB]). We add:
+
+* `AlgebraicGeometry.tildeCompPullbackSpecMapIso`: for `φ : R ⟶ S`, the inverse image of `M^~`
+  along `Spec S ⟶ Spec R` is `(S ⊗_R M)^~`, naturally in `M` ([Stacks, Tag 01I9]). It is obtained
+  from the uniqueness of left adjoints, since both functors are left adjoint to
+  `N ↦ Γ(Spec S, N)` viewed as an `R`-module.
+* `AlgebraicGeometry.isFiniteType_tilde_iff`, `isFinitePresentation_tilde_iff`,
+  `isLocallyFree_and_isFiniteType_tilde_iff`: `M^~` is of finite type (resp. of finite
+  presentation, resp. locally free of finite type) if and only if `M` is finitely generated
+  (resp. finitely presented, resp. finitely generated projective)
+  ([Stacks, Tag 01PB], [Stacks, Tag 01PC], [Stacks, Tag 00NX]).
+-/
+
+universe u
+
+open CategoryTheory Limits TopologicalSpace
+
+/-- The cokernel of a linear map between finite free modules is finitely presented. -/
+lemma ModuleCat.finitePresentation_of_isColimit_cokernelCofork {R : Type u} [CommRing R]
+    {I J : Type u} [Finite I] [Finite J] {M : ModuleCat.{u} R}
+    (a : ModuleCat.of R (J →₀ R) ⟶ ModuleCat.of R (I →₀ R)) (b : ModuleCat.of R (I →₀ R) ⟶ M)
+    (w : a ≫ b = 0) (h : IsColimit (CokernelCofork.ofπ b w)) :
+    Module.FinitePresentation R M := by
+  let e := IsColimit.coconePointUniqueUpToIso (ModuleCat.cokernelIsColimit a) h
+  have he : ModuleCat.ofHom (LinearMap.range a.hom).mkQ ≫ e.hom = b :=
+    IsColimit.comp_coconePointUniqueUpToIso_hom (ModuleCat.cokernelIsColimit a) h
+      WalkingParallelPair.one
+  have hb (x) : b.hom x = e.hom.hom ((LinearMap.range a.hom).mkQ x) :=
+    (congrArg (fun g ↦ g.hom x) he).symm
+  have hbij := ConcreteCategory.bijective_of_isIso e.hom
+  have hsurj : Function.Surjective b.hom := fun y ↦ by
+    obtain ⟨z, rfl⟩ := hbij.2 y
+    obtain ⟨x, rfl⟩ := Submodule.mkQ_surjective _ z
+    exact ⟨x, hb x⟩
+  have hker : LinearMap.ker b.hom = LinearMap.range a.hom := by
+    ext x
+    rw [LinearMap.mem_ker, hb, ← Submodule.Quotient.mk_eq_zero, ← map_zero e.hom.hom]
+    exact hbij.1.eq_iff
+  refine Module.finitePresentation_of_free_of_surjective b.hom hsurj ?_
+  rw [hker, ← Module.Finite.iff_fg]
+  infer_instance
+
+namespace AlgebraicGeometry
+
+open Scheme.Modules SheafOfModules
+
+section Pullback
+
+variable {R S : CommRingCat.{u}} (φ : R ⟶ S)
+
+/-- Global sections of a pushforward along `Spec S ⟶ Spec R`, as an `R`-module, are the global
+sections viewed as an `R`-module by restriction of scalars. -/
+noncomputable def pushforwardSpecMapCompModuleSpecΓFunctorIso :
+    Scheme.Modules.pushforward (Spec.map φ) ⋙ moduleSpecΓFunctor (R := R) ≅
+      moduleSpecΓFunctor (R := S) ⋙ ModuleCat.restrictScalars φ.hom :=
+  Functor.isoWhiskerRight (pushforwardCompModulesSpecToSheafIso φ)
+    (TopCat.Sheaf.forget _ _ ⋙ (CategoryTheory.evaluation _ _).obj (.op ⊤)) ≪≫
+  NatIso.ofComponents (fun _ ↦ Iso.refl _) (fun _ ↦ rfl)
+
+/-- The inverse image of `M^~` along `Spec S ⟶ Spec R` is `(S ⊗_R M)^~`, naturally in `M`. -/
+@[stacks 01I9]
+noncomputable def tildeCompPullbackSpecMapIso :
+    tilde.functor R ⋙ Scheme.Modules.pullback (Spec.map φ) ≅
+      ModuleCat.extendScalars φ.hom ⋙ tilde.functor S :=
+  (tilde.adjunction.comp (pullbackPushforwardAdjunction (Spec.map φ))).leftAdjointUniq
+    (((ModuleCat.extendRestrictScalarsAdj φ.hom).comp tilde.adjunction).ofNatIsoRight
+      (pushforwardSpecMapCompModuleSpecΓFunctorIso φ).symm)
+
+/-- The inverse image of `M^~` along `Spec S ⟶ Spec R` is `(S ⊗_R M)^~`. -/
+noncomputable def pullbackSpecMapTildeIso (M : ModuleCat.{u} R) :
+    (Scheme.Modules.pullback (Spec.map φ)).obj (tilde M) ≅
+      tilde ((ModuleCat.extendScalars φ.hom).obj M) :=
+  (tildeCompPullbackSpecMapIso φ).app M
+
+end Pullback
+
+section Generators
+
+variable {R : CommRingCat.{u}} {M : ModuleCat.{u} R}
+
+/-- A morphism `free I ⟶ M^~` comes from a linear map `(I →₀ R) → M`. -/
+noncomputable def tildeFinsuppPreimage {I : Type u} (p : SheafOfModules.free I ⟶ tilde M) :
+    ModuleCat.of R (I →₀ R) ⟶ M :=
+  (tilde.functor R).preimage ((tildeFinsupp I).hom ≫ p)
+
+lemma tilde_map_tildeFinsuppPreimage {I : Type u} (p : SheafOfModules.free I ⟶ tilde M) :
+    tilde.map (tildeFinsuppPreimage p) = (tildeFinsupp I).hom ≫ p :=
+  (tilde.functor R).map_preimage _
+
+/-- If `M^~` is generated by finitely many global sections, `M` is finitely generated. -/
+lemma finite_of_generatingSections_tilde (σ : (tilde M).GeneratingSections) [hσ : σ.IsFiniteType] :
+    Module.Finite R M := by
+  have hepi : Epi ((tilde.functor R).map (tildeFinsuppPreimage σ.π)) := by
+    change Epi (tilde.map _)
+    rw [tilde_map_tildeFinsuppPreimage]
+    exact epi_comp' (@IsIso.epi_of_iso _ _ _ _ _ (Iso.isIso_hom _)) σ.epi
+  have hg := (tilde.functor R).epi_of_epi_map hepi
+  have : Module.Finite R (σ.I →₀ R) := by
+    have := hσ.finite
+    infer_instance
+  exact Module.Finite.of_surjective _ ((ModuleCat.epi_iff_surjective _).mp hg)
+
+/-- If `M^~` is free on global sections, `M` is free. -/
+lemma free_of_generatingSections_tilde (σ : (tilde M).GeneratingSections) [hσ : IsIso σ.π] :
+    Module.Free R M := by
+  have hiso : IsIso ((tilde.functor R).map (tildeFinsuppPreimage σ.π)) := by
+    change IsIso (tilde.map _)
+    rw [tilde_map_tildeFinsuppPreimage]
+    exact IsIso.comp_isIso' (Iso.isIso_hom _) hσ
+  have := isIso_of_fully_faithful (tilde.functor R) (tildeFinsuppPreimage σ.π)
+  exact Module.Free.of_equiv (asIso (tildeFinsuppPreimage σ.π)).toLinearEquiv
+
+/-- `tildeFinsupp`, as an isomorphism in `SheafOfModules`. -/
+private noncomputable def tildeFinsupp' (I : Type u) :
+    (tilde (ModuleCat.of R (I →₀ R)) : SheafOfModules (Spec R).ringCatSheaf) ≅
+      SheafOfModules.free I :=
+  tildeFinsupp I
+
+/-- `tilde.map`, as a morphism in `SheafOfModules`. -/
+private noncomputable def tildeMap' {X Y : ModuleCat.{u} R} (g : X ⟶ Y) :
+    (tilde X : SheafOfModules (Spec R).ringCatSheaf) ⟶ tilde Y :=
+  tilde.map g
+
+set_option backward.isDefEq.respectTransparency false in
+/-- If `M^~` has a finite global presentation, `M` is finitely presented. -/
+lemma finitePresentation_of_presentation_tilde (P : (tilde M).Presentation) [hP : P.IsFinite] :
+    Module.FinitePresentation R M := by
+  let f : (SheafOfModules.free P.relations.I : SheafOfModules (Spec R).ringCatSheaf) ⟶
+      SheafOfModules.free P.generators.I :=
+    (freeHomEquiv _).symm P.relations.s ≫ kernel.ι _
+  obtain ⟨a, ha⟩ : ∃ a : ModuleCat.of R (P.relations.I →₀ R) ⟶ ModuleCat.of R (P.generators.I →₀ R),
+      tildeMap' a = (tildeFinsupp' _).hom ≫ f ≫ (tildeFinsupp' _).inv :=
+    ⟨_, (tilde.functor R).map_preimage _⟩
+  obtain ⟨b, hb⟩ : ∃ b : ModuleCat.of R (P.generators.I →₀ R) ⟶ M,
+      tildeMap' b = (tildeFinsupp' _).hom ≫ P.generators.π :=
+    ⟨_, tilde_map_tildeFinsuppPreimage P.generators.π⟩
+  have w' : tildeMap' a ≫ tildeMap' b = 0 := by
+    simp only [ha, hb, f, Category.assoc, Iso.inv_hom_id_assoc, kernel.condition, comp_zero]
+  have w : a ≫ b = 0 := by
+    apply (tilde.functor R).map_injective
+    exact (tilde.map_comp a b).trans (w'.trans tilde.map_zero.symm)
+  have h₁ : IsColimit (CokernelCofork.ofπ (C := SheafOfModules (Spec R).ringCatSheaf)
+      (f := tildeMap' a) (tildeMap' b) w') := by
+    refine IsCokernel.ofIso _ P.isColimit _ (tildeFinsupp' _).symm (tildeFinsupp' _).symm
+      (Iso.refl _) ?_ ?_
+    · simp [ha, f]
+    · simp [hb]
+  have h₂ : IsColimit (CokernelCofork.ofπ b w) :=
+    isColimitOfReflects (tilde.functor R) ((isColimitMapCoconeCoforkEquiv' _ w).symm h₁)
+  have : Finite P.relations.I := hP.isFiniteType_relations.finite
+  have : Finite P.generators.I := hP.isFiniteType_generators.finite
+  exact ModuleCat.finitePresentation_of_isColimit_cokernelCofork a b w h₂
+
+end Generators
+
+section Localization
+
+variable {R : CommRingCat.{u}}
+
+/-- The canonical map `M → S ⊗_R M` to the extension of scalars along `φ : R ⟶ S`. -/
+noncomputable def toExtendScalars (M : ModuleCat.{u} R) {S : CommRingCat.{u}} (φ : R ⟶ S) :
+    M →ₗ[R] (ModuleCat.restrictScalars φ.hom).obj ((ModuleCat.extendScalars φ.hom).obj M) :=
+  ((ModuleCat.extendRestrictScalarsAdj φ.hom).unit.app M).hom
+
+/-- The localization `R_r`, as a bundled commutative ring. It is a type synonym for
+`Localization.Away r`, whose `R`-algebra structure is given by `awayMap r`. -/
+def away (r : R) : CommRingCat.{u} := CommRingCat.of (Localization.Away r)
+
+/-- The localization map `R ⟶ R_r`. -/
+def awayMap (r : R) : R ⟶ away r := CommRingCat.ofHom (algebraMap R (Localization.Away r))
+
+instance (r : R) : IsOpenImmersion (Spec.map (awayMap r)) :=
+  Scheme.isOpenImmersion_SpecMap_localizationAway r
+
+lemma opensRange_awayMap (r : R) :
+    (Spec.map (awayMap r)).opensRange = PrimeSpectrum.basicOpen r :=
+  Scheme.Hom.opensRange_localizationAway r
+
+lemma isLocalization_away (r : R) :
+    letI := (awayMap r).hom.toAlgebra
+    IsLocalization.Away r (away r) :=
+  let := (awayMap r).hom.toAlgebra
+  ⟨(inferInstance : IsLocalization.Away r (Localization.Away r)).toIsLocalizationMap⟩
+
+variable (M : ModuleCat.{u} R)
+
+lemma isScalarTower_extendScalars_away (r : R) :
+    letI := (awayMap r).hom.toAlgebra
+    IsScalarTower R (away r)
+      ((ModuleCat.restrictScalars (awayMap r).hom).obj
+        ((ModuleCat.extendScalars (awayMap r).hom).obj M)) :=
+  let := (awayMap r).hom.toAlgebra
+  .of_algebraMap_smul fun _ _ ↦ rfl
+
+lemma isLocalizedModule_toExtendScalars_awayMap (r : R) :
+    IsLocalizedModule.Away r (toExtendScalars M (awayMap r)) := by
+  let := (awayMap r).hom.toAlgebra
+  have := isLocalization_away r
+  have := isScalarTower_extendScalars_away M r
+  have hb : IsBaseChange (away r) (toExtendScalars M (awayMap r)) :=
+    TensorProduct.isBaseChange R M (away r)
+  exact (isLocalizedModule_iff_isBaseChange (.powers r) (away r) _).mpr hb
+
+lemma finite_of_localizationSpan (s : Set R) (hs : Ideal.span s = ⊤)
+    (H : ∀ r : s, Module.Finite (away r.1) ((ModuleCat.extendScalars (awayMap r.1).hom).obj M)) :
+    Module.Finite R M := by
+  let (r : s) : Algebra R (away r.1) := (awayMap r.1).hom.toAlgebra
+  have (r : s) := isLocalization_away r.1
+  have (r : s) := isScalarTower_extendScalars_away M r.1
+  have (r : s) := isLocalizedModule_toExtendScalars_awayMap M r.1
+  exact Module.Finite.of_localizationSpan' s hs (Rₚ := fun r ↦ away r.1)
+    (fun r ↦ toExtendScalars M (awayMap r.1)) H
+
+lemma finitePresentation_of_localizationSpan (s : Set R) (hs : Ideal.span s = ⊤)
+    (H : ∀ r : s, Module.FinitePresentation (away r.1)
+      ((ModuleCat.extendScalars (awayMap r.1).hom).obj M)) :
+    Module.FinitePresentation R M := by
+  let (r : s) : Algebra R (away r.1) := (awayMap r.1).hom.toAlgebra
+  have (r : s) := isLocalization_away r.1
+  have (r : s) := isScalarTower_extendScalars_away M r.1
+  have (r : s) := isLocalizedModule_toExtendScalars_awayMap M r.1
+  exact Module.FinitePresentation.of_localizationSpan' s hs (Rₚ := fun r ↦ away r.1)
+    (fun r ↦ toExtendScalars M (awayMap r.1)) H
+
+lemma flat_of_localizationSpan (s : Set R) (hs : Ideal.span s = ⊤)
+    (H : ∀ r : s, Module.Flat (away r.1) ((ModuleCat.extendScalars (awayMap r.1).hom).obj M)) :
+    Module.Flat R M := by
+  let (r : s) : Algebra R (away r.1) := (awayMap r.1).hom.toAlgebra
+  have (r : s) := isLocalization_away r.1
+  have (r : s) := isScalarTower_extendScalars_away M r.1
+  have (r : s) := isLocalizedModule_toExtendScalars_awayMap M r.1
+  refine Module.flat_of_isLocalized_span R M s hs _ (fun r ↦ toExtendScalars M (awayMap r.1))
+    fun r ↦ ?_
+  have := IsLocalization.flat (away r.1) (.powers r.1)
+  have : Module.Flat (away r.1) ((ModuleCat.restrictScalars (awayMap r.1).hom).obj
+      ((ModuleCat.extendScalars (awayMap r.1).hom).obj M)) := H r
+  exact Module.Flat.trans R (away r.1) _
+
+/-- For `D(r) ⊆ U`, the open immersion `Spec R_r ⟶ Spec R` factors through `U`. -/
+noncomputable def awayLift {U : (Spec R).Opens} {r : R} (h : PrimeSpectrum.basicOpen r ≤ U) :
+    Spec (away r) ⟶ U :=
+  IsOpenImmersion.lift U.ι (Spec.map (awayMap r)) (by
+    rw [Scheme.Opens.range_ι, ← Scheme.Hom.coe_opensRange, opensRange_awayMap]
+    exact h)
+
+@[reassoc (attr := simp)]
+lemma awayLift_ι {U : (Spec R).Opens} {r : R} (h : PrimeSpectrum.basicOpen r ≤ U) :
+    awayLift h ≫ U.ι = Spec.map (awayMap r) :=
+  IsOpenImmersion.lift_fac _ _ _
+
+/-- For `D(r) ⊆ U`, the inverse image of `M^~` on `Spec R_r` is the inverse image of `M^~|_U`. -/
+noncomputable def tildeAwayIso {U : (Spec R).Opens} {r : R} (h : PrimeSpectrum.basicOpen r ≤ U) :
+    (Scheme.Modules.pullback (awayLift h)).obj ((tilde M).restrict U.ι) ≅
+      tilde ((ModuleCat.extendScalars (awayMap r).hom).obj M) :=
+  (pullbackIsoOfFac _ _ (awayLift_ι h) (tilde M)).symm ≪≫ pullbackSpecMapTildeIso _ M
+
+/-- Every open cover of `Spec R` is refined by basic open sets `D(r)` for `r` in a set generating
+the unit ideal. -/
+lemma exists_span_eq_top_of_isOpenCover {ι : Type*} {U : ι → (Spec R).Opens}
+    (hU : IsOpenCover U) :
+    ∃ s : Set R, Ideal.span s = ⊤ ∧ ∀ r : s, ∃ i, PrimeSpectrum.basicOpen r.1 ≤ U i := by
+  refine ⟨{r | ∃ i, PrimeSpectrum.basicOpen r ≤ U i}, ?_, fun r ↦ r.2⟩
+  rw [← PrimeSpectrum.iSup_basicOpen_eq_top_iff', eq_top_iff]
+  rintro p -
+  obtain ⟨i, hi⟩ := hU.exists_mem p
+  obtain ⟨_, ⟨r, rfl⟩, hp, hr⟩ := Opens.isBasis_iff_nbhd.mp PrimeSpectrum.isBasis_basic_opens hi
+  simp only [Opens.mem_iSup]
+  exact ⟨r, ⟨i, hr⟩, hp⟩
+
+end Localization
+
+section Properties
+
+variable {R : CommRingCat.{u}} (M : ModuleCat.{u} R)
+
+/-- `M^~` is of finite type if and only if `M` is finitely generated. -/
+@[stacks 01PB]
+theorem isFiniteType_tilde_iff : (tilde M).IsFiniteType ↔ Module.Finite R M := by
+  constructor
+  · intro _
+    obtain ⟨ι, U, σ, hU, hσ⟩ := exists_isOpenCover_generatingSections (tilde M)
+    obtain ⟨s, hs, hsU⟩ := exists_span_eq_top_of_isOpenCover hU
+    choose i hi using hsU
+    refine finite_of_localizationSpan M s hs fun r ↦ ?_
+    have := hσ (i r)
+    exact finite_of_generatingSections_tilde
+      ((generatingSectionsPullback (awayLift (hi r)) (σ (i r))).ofIso (tildeAwayIso M (hi r)))
+      (hσ := ⟨(hσ (i r)).finite⟩)
+  · intro _
+    obtain ⟨s, hs⟩ := Module.Finite.fg_top (R := R) (M := M)
+    let P := presentationTilde M (s : Set M) hs _ (Submodule.span_eq _)
+    exact isFiniteType_of_generatingSections P.generators
+      (hσ := ⟨inferInstanceAs (Finite (s : Set M))⟩)
+
+/-- `M^~` is of finite presentation if and only if `M` is finitely presented. -/
+@[stacks 01PC]
+theorem isFinitePresentation_tilde_iff :
+    (tilde M).IsFinitePresentation ↔ Module.FinitePresentation R M := by
+  constructor
+  · intro _
+    obtain ⟨ι, U, P, hU, hP⟩ := exists_isOpenCover_finitePresentation (tilde M)
+    obtain ⟨s, hs, hsU⟩ := exists_span_eq_top_of_isOpenCover hU
+    choose i hi using hsU
+    refine finitePresentation_of_localizationSpan M s hs fun r ↦ ?_
+    exact finitePresentation_of_presentation_tilde
+      ((presentationPullback (awayLift (hi r)) (P (i r))).ofIso (tildeAwayIso M (hi r)))
+      (hP := ⟨⟨(hP (i r)).isFiniteType_generators.finite⟩,
+        ⟨(hP (i r)).isFiniteType_relations.finite⟩⟩)
+  · intro h
+    obtain ⟨s, hs, t, ht⟩ : ∃ s : Finset M, Submodule.span R (s : Set M) = ⊤ ∧
+        ∃ t : Finset ((s : Set M) →₀ R),
+          Submodule.span R (t : Set ((s : Set M) →₀ R)) =
+            LinearMap.ker (Finsupp.linearCombination R ((↑) : ↥(s : Set M) → M)) := by
+      obtain ⟨s, hs, t, ht⟩ := h.out
+      exact ⟨s, hs, t, ht⟩
+    exact isFinitePresentation_of_presentation (presentationTilde M (s : Set M) hs t ht)
+      (hP := ⟨⟨inferInstanceAs (Finite (s : Set M))⟩,
+        ⟨inferInstanceAs (Finite (t : Set ((s : Set M) →₀ R)))⟩⟩)
+
+/-- A finitely generated projective module is free on a basic open neighbourhood of every
+point. -/
+lemma exists_free_away_of_projective [Module.Projective R M] [Module.Finite R M]
+    (p : PrimeSpectrum R) :
+    ∃ r : R, r ∉ p.asIdeal ∧
+      Module.Free (away r) ((ModuleCat.extendScalars (awayMap r).hom).obj M) := by
+  have : Module.FinitePresentation R M := Module.finitePresentation_of_projective R M
+  have : Module.Free (Localization.AtPrime p.asIdeal)
+      (LocalizedModule p.asIdeal.primeCompl M) := Module.free_of_flat_of_isLocalRing
+  obtain ⟨r, hr, hfree, -⟩ := Module.FinitePresentation.exists_free_localizedModule_powers
+    p.asIdeal.primeCompl (LocalizedModule.mkLinearMap p.asIdeal.primeCompl M)
+    (Localization.AtPrime p.asIdeal)
+  refine ⟨r, hr, ?_⟩
+  let _ : Algebra R (away r) := (awayMap r).hom.toAlgebra
+  have := isLocalization_away r
+  have := isScalarTower_extendScalars_away M r
+  have := isLocalizedModule_toExtendScalars_awayMap M r
+  let _ : Module (away r) (LocalizedModule.Away r M) :=
+    inferInstanceAs (Module (Localization.Away r) (LocalizedModule.Away r M))
+  have : IsScalarTower R (away r) (LocalizedModule.Away r M) :=
+    .of_algebraMap_smul fun a l ↦ algebraMap_smul (Localization.Away r) a l
+  have : Module.Free (away r) (LocalizedModule.Away r M) := hfree
+  let e := (IsLocalizedModule.linearEquiv (.powers r) (toExtendScalars M (awayMap r))
+    (LocalizedModule.mkLinearMap (.powers r) M)).extendScalarsOfIsLocalization (.powers r) (away r)
+  exact Module.Free.of_equiv e.symm
+
+/-- `M^~` is locally free of finite type if and only if `M` is finitely generated and
+projective. -/
+@[stacks 00NX]
+theorem isLocallyFree_and_isFiniteType_tilde_iff :
+    (tilde M).IsLocallyFree ∧ (tilde M).IsFiniteType ↔
+      Module.Projective R M ∧ Module.Finite R M := by
+  constructor
+  · rintro ⟨_, hM⟩
+    have hfin := (isFiniteType_tilde_iff M).mp hM
+    obtain ⟨ι, U, σ, hU, hσ⟩ := exists_isOpenCover_basis (tilde M)
+    obtain ⟨s, hs, hsU⟩ := exists_span_eq_top_of_isOpenCover hU
+    choose i hi using hsU
+    have hfree (r : s) : Module.Free (away r.1)
+        ((ModuleCat.extendScalars (awayMap r.1).hom).obj M) :=
+      free_of_generatingSections_tilde
+        ((generatingSectionsPullback (awayLift (hi r)) (σ (i r))).ofIso (tildeAwayIso M (hi r)))
+        (hσ := GeneratingSections.isIso_ofIso_π _ _ (hσ :=
+          GeneratingSections.isIso_mapOfAdjunction_π _ _ _ (hσ := hσ (i r))))
+    have hfin' (r : s) : Module.Finite (away r.1)
+        ((ModuleCat.extendScalars (awayMap r.1).hom).obj M) := by
+      let _ : Algebra R (away r.1) := (awayMap r.1).hom.toAlgebra
+      have := isLocalization_away r.1
+      have := isScalarTower_extendScalars_away M r.1
+      have := isLocalizedModule_toExtendScalars_awayMap M r.1
+      exact Module.Finite.of_isLocalizedModule (.powers r.1) (Rₚ := away r.1)
+        (Mₚ := (ModuleCat.restrictScalars (awayMap r.1).hom).obj
+          ((ModuleCat.extendScalars (awayMap r.1).hom).obj M))
+        (toExtendScalars M (awayMap r.1))
+    have : Module.FinitePresentation R M := finitePresentation_of_localizationSpan M s hs
+      fun r ↦ have := hfree r; have := hfin' r; Module.finitePresentation_of_projective _ _
+    have : Module.Flat R M := flat_of_localizationSpan M s hs
+      fun r ↦ have := hfree r; inferInstance
+    exact ⟨Module.Flat.projective_of_finitePresentation, hfin⟩
+  · rintro ⟨_, _⟩
+    refine ⟨?_, (isFiniteType_tilde_iff M).mpr inferInstance⟩
+    choose r hr hfree using exists_free_away_of_projective M
+    let E (p : PrimeSpectrum R) := (ModuleCat.extendScalars (awayMap (r p)).hom).obj M
+    let e (p : PrimeSpectrum R) : (Scheme.Modules.pullback (Spec.map (awayMap (r p)))).obj
+        (tilde M) ≅ SheafOfModules.free (Module.Free.ChooseBasisIndex (away (r p)) (E p)) :=
+      pullbackSpecMapTildeIso _ M ≪≫
+        (tilde.functor _).mapIso (Module.Free.chooseBasis (away (r p)) (E p)).repr.toModuleIso ≪≫
+        tildeFinsupp _
+    refine isLocallyFree_of_pullback_generatingSections
+      (fun p : PrimeSpectrum R ↦ Spec.map (awayMap (r p))) (fun p ↦ ⟨p, ?_⟩)
+      (fun p ↦ (SheafOfModules.free.generatingSections _).ofIso (e p).symm)
+      (hσ := fun p ↦ GeneratingSections.isIso_ofIso_π _ _)
+    rw [← Scheme.Hom.coe_opensRange, opensRange_awayMap]
+    exact hr p
+
+end Properties
+
+end AlgebraicGeometry

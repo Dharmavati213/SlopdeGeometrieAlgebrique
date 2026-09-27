@@ -4,6 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: SGAenglishpluslean contributors
 -/
 import Mathlib.CategoryTheory.FiberedCategory.Cartesian
+import Mathlib.CategoryTheory.FiberedCategory.Fiber
+import Mathlib.CategoryTheory.Yoneda
 
 /-!
 # SGA 1, Exposé VI, §5: cartesian morphisms
@@ -69,6 +71,54 @@ theorem isCartesian_iff_bijective {R S : E} (f : R ⟶ S) {a b : C} (φ : a ⟶ 
     exact congrArg Subtype.val ((h a').injective
       (show verticalPostcomp p f φ a' ⟨v, hv⟩ = verticalPostcomp p f φ a' u from
         (Subtype.ext hvφ).trans hu.symm))
+
+/-- VI.5.1: for `f : R ⟶ S` and `ξ` over `S`, the functor `η ↦ Hom_f(η, ξ)` on the fiber
+`𝒳_R`. -/
+def homOverFunctor {R S : E} (f : R ⟶ S) (ξ : Fiber p S) : (Fiber p R)ᵒᵖ ⥤ Type v₂ where
+  obj η := HomOver p f η.unop.val ξ.val
+  map {η η'} u := TypeCat.ofHom fun φ ↦
+    ⟨u.unop.val ≫ φ.val, by have := u.unop.property; have := φ.property; infer_instance⟩
+  map_id η := by
+    ext φ
+    exact Category.id_comp φ.val
+  map_comp u v := by
+    ext φ
+    exact Category.assoc _ _ _
+
+@[simp]
+theorem homOverFunctor_map_apply {R S : E} (f : R ⟶ S) (ξ : Fiber p S) {η η' : (Fiber p R)ᵒᵖ}
+    (u : η ⟶ η') (φ : (homOverFunctor p f ξ).obj η) :
+    ((homOverFunctor p f ξ).map u φ).val = u.unop.val ≫ φ.val := rfl
+
+/-- VI.5.1: an inverse image of `ξ` by `f` exists iff the functor `η ↦ Hom_f(η, ξ)` on `𝒳_R`
+is representable; a representing pair `(η, α)` is an inverse image. -/
+theorem exists_isCartesian_iff_isRepresentable {R S : E} (f : R ⟶ S) (ξ : Fiber p S) :
+    (∃ (η : Fiber p R) (φ : η.val ⟶ ξ.val), IsCartesian p f φ) ↔
+      (homOverFunctor p f ξ).IsRepresentable := by
+  constructor
+  · rintro ⟨η, φ, hφ⟩
+    exact ⟨η, ⟨{ homEquiv := cartesianHomEquiv p f φ _
+                 homEquiv_comp := fun u v ↦ Subtype.ext (Category.assoc _ _ _) }⟩⟩
+  · rintro ⟨η, ⟨e⟩⟩
+    have key : ∀ {η' : Fiber p R} (u : η' ⟶ η),
+        (e.homEquiv u).val = u.val ≫ (e.homEquiv (𝟙 η)).val := by
+      intro η' u
+      rw [e.homEquiv_eq u]
+      rfl
+    have := (e.homEquiv (𝟙 η)).property
+    refine ⟨η, (e.homEquiv (𝟙 η)).val, ⟨fun {a'} φ' hφ' ↦ ?_⟩⟩
+    let η' : Fiber p R := ⟨a', IsHomLift.domain_eq p f φ'⟩
+    let x : HomOver p f η'.val ξ.val := ⟨φ', hφ'⟩
+    have hu : e.homEquiv (X := η') ((e.homEquiv (X := η')).symm x) = x :=
+      Equiv.apply_symm_apply _ _
+    refine ⟨((e.homEquiv (X := η')).symm x).val, ⟨((e.homEquiv (X := η')).symm x).property,
+      ?_⟩, ?_⟩
+    · have := key ((e.homEquiv (X := η')).symm x)
+      rw [hu] at this
+      exact this.symm
+    · rintro χ ⟨hχ, hfac⟩
+      have h : e.homEquiv (X := η') ⟨χ, hχ⟩ = x := Subtype.ext ((key _).trans hfac)
+      rw [← h, Equiv.symm_apply_apply]
 
 /-- VI.5.1: two inverse images are uniquely isomorphic *over the identity*,
 with compatibility with their maps to the original object. -/

@@ -8,7 +8,8 @@ lake exe cache get    # first time: download mathlib oleans
 lake build
 ```
 
-Root modules: `SGA.SGA1.ExposeI`, `SGA.SGA1.ExposeVI`, `SGA.SGA2.ExposeI`,
+Root modules: `SGA.SGA1.ExposeI` … `SGA.SGA1.ExposeXIII` (no Exposé VII), `SGA.Foundations`
+(prerequisites of SGA 1 that mathlib lacks; see `SGA/Foundations/README.md`), `SGA.SGA2.ExposeI`,
 `SGA.SGA2.ExposeII`, `SGA.SGA2.ExposeIII`, `SGA.SGA2.ExposeIV`, `SGA.SGA2.ExposeV`,
 `SGA.SGA2.ExposeVI`, and `SGA.SGA2.ExposeVII`. Lemmas live in the matching
 exposé directories and are imported from the barrel modules. SGA 2 has partial Exposé I

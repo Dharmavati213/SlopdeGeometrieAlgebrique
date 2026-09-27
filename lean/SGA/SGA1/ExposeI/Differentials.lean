@@ -4,18 +4,18 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: SGAenglishpluslean contributors
 -/
 import Mathlib.RingTheory.Kaehler.Basic
+import Mathlib.RingTheory.Kaehler.TensorProduct
 import Mathlib.RingTheory.TensorProduct.Maps
 import Mathlib.RingTheory.Unramified.Basic
 
 /-!
 # SGA 1, Exposé I, §1: notions of differential calculus
 
-SGA writes `Ω¹_{X/Y}` for the conormal sheaf of the diagonal. On affines this is
-mathlib's module of Kähler differentials `Ω[S⁄R]`. Formally unramified means
-that this module vanishes. Finite type implies that it is a finite module.
-The sheaves of principal parts `Pⁿ_{X/Y}` are the infinitesimal neighbourhoods
-of the diagonal; they are recorded only as the corresponding quotient of
-`S ⊗[R] S`.
+SGA defines `Ω¹_{X/Y}` as `𝓘/𝓘²`, where `𝓘` is the ideal of the diagonal. On affines
+this is literally mathlib's definition of the module of Kähler differentials: `Ω[S⁄R]` is
+the cotangent module `I/I²` of the kernel `I` of the multiplication `S ⊗[R] S → S`.
+It is finite when `S` is of finite type, and it is compatible with base change. The
+sheaves of principal parts `Pⁿ_{X/Y}` are the rings `(S ⊗[R] S)/I^(n+1)`.
 -/
 
 universe u
@@ -26,8 +26,13 @@ open scoped TensorProduct
 
 variable (R S : Type u) [CommRing R] [CommRing S] [Algebra R S]
 
-/-- I.1: the module of relative differentials of an affine morphism. -/
-abbrev differentials : Type u := Ω[S⁄R]
+/-- I.1: the ideal `𝓘` of the diagonal, the kernel of `S ⊗[R] S → S`. -/
+noncomputable abbrev diagonalIdeal : Ideal (S ⊗[R] S) :=
+  KaehlerDifferential.ideal R S
+
+/-- I.1: `Ω¹_{S/R}` is by definition the conormal module `𝓘/𝓘²` of the diagonal. -/
+theorem kaehlerDifferential_eq_cotangent : Ω[S⁄R] = (diagonalIdeal R S).Cotangent :=
+  rfl
 
 /-- I.1: formally unramified means that `Ω¹` vanishes. -/
 theorem formallyUnramified_iff_subsingleton_differentials :
@@ -38,9 +43,13 @@ theorem formallyUnramified_iff_subsingleton_differentials :
 instance differentials_finite [Algebra.EssFiniteType R S] : Module.Finite S Ω[S⁄R] :=
   KaehlerDifferential.finite R S
 
-/-- I.1: the kernel of multiplication `S ⊗[R] S → S`, the ideal of the diagonal. -/
-abbrev diagonalIdeal : Ideal (S ⊗[R] S) :=
-  RingHom.ker (Algebra.TensorProduct.lmul' R (S := S)).toRingHom
+/-- I.1: `Ω¹` behaves well under extension of the base: for `S' = R' ⊗_R S`,
+`S' ⊗_S Ω¹_{S/R} ≅ Ω¹_{S'/R'}`. -/
+noncomputable def tensorKaehlerEquiv (R' S' : Type u) [CommRing R'] [CommRing S']
+    [Algebra R R'] [Algebra R S'] [Algebra R' S'] [Algebra S S'] [IsScalarTower R R' S']
+    [IsScalarTower R S S'] [Algebra.IsPushout R R' S S'] :
+    S' ⊗[S] Ω[S⁄R] ≃ₗ[S'] Ω[S'⁄R'] :=
+  KaehlerDifferential.tensorKaehlerEquiv R R' S S'
 
 /-- I.1: the algebra of principal parts of order `n`, i.e. the `n`th infinitesimal
 neighbourhood of the diagonal. -/

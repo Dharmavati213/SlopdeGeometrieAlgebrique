@@ -102,6 +102,14 @@ against silently repairing the source.
 | §3, footnote 1 | “SGA 2 X `\Ref{X.3.4}`” | The key is this exposé's own, so the link goes to SGA 1 X.3.4, not to SGA 2. |
 | French slips | “en topologies algébriques” (X.1.6); “les fibres géométrique”, “en droit à s'attendre” (§2); “d'autre applications” (X.3.5) | These do not affect the English. |
 
+### Found during the Lean formalization (2026-09)
+
+These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean statements use the corrected forms.
+
+| Location | Source wording | Point |
+| --- | --- | --- |
+| X.1.10 | “the coverings `x^p − x = ct` are pairwise non-isomorphic” | Not pairwise: `x ↦ jx` identifies `c` with `jc` for `j ∈ 𝔽_p^×` (`algEquivNeg` for `j = −1`). Infinitely many classes remain, so the counterexample stands. |
+
 ## Validation
 
 The local checker `source/SGA1/check_chunk.py`, which is not in the

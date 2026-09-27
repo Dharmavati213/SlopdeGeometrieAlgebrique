@@ -40,6 +40,10 @@ _minted*/
 .history/
 *.code-workspace
 
+# Local AI agent configuration and state
+.codex/
+.claude/
+
 # Local secrets
 .env
 .env.*

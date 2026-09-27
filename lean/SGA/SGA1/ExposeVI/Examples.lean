@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: SGAenglishpluslean contributors
 -/
 import SGA.SGA1.ExposeVI.BasedEquivalences
+import SGA.SGA1.ExposeVI.Fibers
 import SGA.SGA1.ExposeVI.Groupoids
 import Mathlib.CategoryTheory.CodiscreteCategory
 
@@ -64,6 +65,21 @@ theorem oneToTwo_not_basedEquivalence : ¬ IsBasedEquivalence oneToTwoOver := by
   have hfalse : Codiscrete.mk false = Codiscrete.mk true :=
     @IsHomLift.domain_eq _ _ _ _ (𝟭 (Codiscrete Bool)) _ _ _ _
       (𝟙 (Codiscrete.mk true)) e.hom he
+  cases hfalse
+
+/-- The object `true` of the base, as a change of base `pt ⥤ Codiscrete Bool`. -/
+def selectTrue : Discrete PUnit.{1} ⥤ Codiscrete Bool := Codiscrete.functor (fun _ ↦ true)
+
+/-- Remark after VI.4.1: the analogue of VI.4.1 for equivalences is false, already for
+`𝒢 = E`: `oneToTwoOver` is an equivalence of categories, but its change of base to the
+object `true` is not (its source is empty). -/
+theorem oneToTwo_changeOfBase_not_isEquivalence :
+    ¬ (changeOfBaseMap oneToTwoOver selectTrue).toFunctor.IsEquivalence := by
+  intro h
+  let y : BaseChange (𝟭 (Codiscrete Bool)) selectTrue := ⟨(Codiscrete.mk true, ⟨⟨⟩⟩), rfl⟩
+  obtain ⟨⟨⟨_, _⟩, hx⟩⟩ := (⟨(changeOfBaseMap oneToTwoOver selectTrue).toFunctor.objPreimage y⟩ :
+    Nonempty (BaseChange oneToTwo selectTrue))
+  have hfalse : false = true := congrArg Codiscrete.as hx
   cases hfalse
 
 /-- Every arrow in the one-object codiscrete category is invertible, hence cartesian. -/
