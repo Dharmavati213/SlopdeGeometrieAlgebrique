@@ -9,6 +9,9 @@ import Mathlib.RingTheory.Etale.Basic
 import Mathlib.RingTheory.Etale.Field
 import Mathlib.RingTheory.Etale.Locus
 import Mathlib.RingTheory.Etale.StandardEtale
+import Mathlib.AlgebraicGeometry.Morphisms.Smooth
+import Mathlib.RingTheory.Flat.FaithfullyFlat.Algebra
+import SGA.SGA1.ExposeI.Completion
 import SGA.SGA1.ExposeI.Unramified
 
 /-!
@@ -19,6 +22,13 @@ Mathlib's `Etale` is formally étale and of finite presentation, equivalently
 flat, formally unramified, and locally of finite presentation. Over a locally
 noetherian base the finite-type and finite-presentation conditions agree, so
 the two definitions match the exposé's standing locally noetherian hypothesis.
+
+For local homomorphisms SGA's definition b) is `IsEtaleLocalHom` (flat and
+unramified in the sense of I.3.2 b)). Corollary I.4.4 is proved here in the direction
+"étale ⇒ `Â ≅ B̂`" in the equivalent form that every `A/𝔪ⁿ → B/𝔪_Bⁿ` is bijective; the
+completed forms of I.3.7, I.4.2 and I.4.4 are in `CompletionCriteria`. For
+schemes, the set of points where a morphism locally of finite presentation is étale
+is open (I.4.5, `etaleLocusOpens`).
 -/
 
 universe u
@@ -47,7 +57,74 @@ theorem etale_over_field_iff {K : Type u} [Field K] [Algebra K S] :
         ∀ i, Module.Finite K (Ai i) ∧ Algebra.IsSeparable K (Ai i) :=
   Algebra.Etale.iff_exists_algEquiv_prod (K := K) (A := S)
 
+/-- I.4.1 b): a local homomorphism `A → B` is étale if `B` is flat over `A` and
+unramified in the sense of I.3.2 b). -/
+def IsEtaleLocalHom (R S : Type u) [CommRing R] [CommRing S] [Algebra R S] [IsLocalRing R]
+    [IsLocalRing S] [IsLocalHom (algebraMap R S)] : Prop :=
+  Module.Flat R S ∧ IsUnramifiedLocalHom R S
+
+section Local
+
+open IsLocalRing
+
+variable [IsLocalRing R] [IsLocalRing S] [IsLocalHom (algebraMap R S)]
+
+/-- I.4.4, necessity, with completions replaced by their truncations: if `A → B` is étale
+with trivial residue field extension (or `k(A)` algebraically closed), every
+`A/𝔪_Aⁿ → B/𝔪_Bⁿ` is bijective, i.e. `Â → B̂` is an isomorphism. -/
+theorem bijective_quotientMap_pow_of_isEtaleLocalHom (h : IsEtaleLocalHom R S)
+    (hk : Function.Bijective (ResidueField.map (algebraMap R S)) ∨ IsAlgClosed (ResidueField R))
+    (n : ℕ) :
+    Function.Bijective (Ideal.quotientMap (maximalIdeal S ^ n) (algebraMap R S)
+      (maximalIdeal_pow_le_comap R S n)) := by
+  obtain ⟨hflat, hm, hfin, -⟩ := h
+  have := Module.FaithfullyFlat.of_flat_of_isLocalHom (A := R) (B := S)
+  refine ⟨?_, ?_⟩
+  · rw [injective_iff_map_eq_zero]
+    intro x hx
+    obtain ⟨r, rfl⟩ := Ideal.Quotient.mk_surjective x
+    rw [Ideal.quotientMap_mk, Ideal.Quotient.eq_zero_iff_mem, ← hm, ← Ideal.map_pow,
+      ← Ideal.mem_comap, Ideal.comap_map_eq_self_of_faithfullyFlat] at hx
+    exact Ideal.Quotient.eq_zero_iff_mem.mpr hx
+  · intro y
+    have hsurj : Function.Surjective (ResidueField.map (algebraMap R S)) := by
+      rcases hk with hk | hk
+      · exact hk.2
+      · exact IsAlgClosed.algebraMap_bijective_of_isIntegral.2
+    obtain ⟨r, hr⟩ := surjective_quotient_pow_of_map_maximalIdeal hm hsurj n y
+    exact ⟨Ideal.Quotient.mk _ r, by rw [Ideal.quotientMap_mk]; exact hr⟩
+
+/-- I.3.7, sufficiency, completed form: if `Â → B̂` is surjective (`B` noetherian), then
+`A → B` is unramified with trivial residue field extension. -/
+theorem isUnramifiedLocalHom_of_surjective_completionMap [IsNoetherianRing S]
+    (h : Function.Surjective (completionMap R S)) :
+    IsUnramifiedLocalHom R S ∧ Function.Bijective (ResidueField.map (algebraMap R S)) := by
+  have H := surjective_quotient_pow_of_surjective_completionMap R S h
+  have hk : Function.Bijective (ResidueField.map (algebraMap R S)) :=
+    ⟨RingHom.injective _, (map_maximalIdeal_of_surjective_quotient_pow H).2⟩
+  exact ⟨(isUnramifiedLocalHom_iff_forall_surjective (Or.inl hk)).mpr H, hk⟩
+
+end Local
+
 variable {X Y : Scheme.{u}} (f : X ⟶ Y)
+
+/-- I.4.3: whether `f` is étale at `x` only depends on the local homomorphism
+`𝒪_{f(x)} → 𝒪_x`: for `f` locally of finite presentation, `f` is étale in a neighbourhood
+of `x` iff this map is formally étale. -/
+lemma setOf_formallyEtale_stalkMap_eq [LocallyOfFinitePresentation f] :
+    {x | (f.stalkMap x).hom.FormallyEtale} =
+      (f.smoothLocus : Set X) ∩ (unramifiedLocusOpens f : Set X) := by
+  ext x
+  let := (f.stalkMap x).hom.toAlgebra
+  exact (Algebra.FormallyEtale.iff_formallyUnramified_and_formallySmooth
+    (R := Y.presheaf.stalk (f x)) (A := X.presheaf.stalk x)).trans and_comm
+
+/-- I.4.5: the set of points where a morphism locally of finite presentation is étale is
+open. -/
+def etaleLocusOpens [LocallyOfFinitePresentation f] : X.Opens :=
+  ⟨{x | (f.stalkMap x).hom.FormallyEtale}, by
+    rw [setOf_formallyEtale_stalkMap_eq]
+    exact (f.smoothLocus ⊓ unramifiedLocusOpens f).2⟩
 
 /-- I.4.1: a morphism is étale iff it is flat, formally unramified, and
 locally of finite presentation. -/
@@ -73,7 +150,9 @@ instance etale_fst {X' : Scheme.{u}} (g : X' ⟶ Y) [Etale g] : Etale (pullback.
   inferInstance
 
 set_option backward.isDefEq.respectTransparency.types false in
-/-- I.4.7: a fibre product of étale morphisms is étale. -/
+/-- I.4.7, special case: base change along the other projection. SGA's cartesian product
+`X₁ ×_S X₂ ⟶ Y₁ ×_S Y₂` of two étale morphisms is not stated here; it follows from I.4.6 (ii)
+and (iii). -/
 instance etale_snd {X' : Scheme.{u}} (g : X' ⟶ Y) [Etale f] : Etale (pullback.snd f g) :=
   inferInstance
 

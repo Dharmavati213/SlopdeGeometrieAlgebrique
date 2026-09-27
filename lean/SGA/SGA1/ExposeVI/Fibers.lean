@@ -5,6 +5,7 @@ Authors: SGAenglishpluslean contributors
 -/
 import SGA.SGA1.ExposeVI.BaseChange
 import SGA.SGA1.ExposeVI.Equivalences
+import Mathlib.CategoryTheory.IsoCat
 
 /-!
 # SGA 1, Exposé VI, §4: fibers and full faithfulness
@@ -24,7 +25,7 @@ variable {E : Type u} [Category.{v} E]
   {X : BasedCategory.{v₁, u₁} E} {Y : BasedCategory.{v₂, u₂} E}
 
 /-- VI.4: restriction of an `E`-functor to the fiber at `S`. -/
-def fiberMap (F : BasedFunctor X Y) (S : E) : Fiber X.p S ⥤ Fiber Y.p S where
+abbrev fiberMap (F : BasedFunctor X Y) (S : E) : Fiber X.p S ⥤ Fiber Y.p S where
   obj x := ⟨F.obj x.val, (F.w_obj x.val).trans x.property⟩
   map f := ⟨F.map f.val, by
     have := f.property
@@ -138,5 +139,58 @@ instance identityBaseChange_essSurj : (BaseChange.fst p (𝟭 E)).EssSurj where
 instance identityBaseChange_isEquivalence : (BaseChange.fst p (𝟭 E)).IsEquivalence where
 
 end IdentityBaseChange
+
+section FiberOfBaseChange
+
+variable {C : Type u₁} [Category.{v₁} C] {D : Type u₃} [Category.{v₃} D] (p : C ⥤ E)
+  (L : D ⥤ E) (S' : D)
+
+/-- VI.4: the projection `pr₁ : 𝒳 ×_E D ⥤ 𝒳` on the fibers, `(𝒳 ×_E D)_{S'} ⥤ 𝒳_{L S'}`. -/
+@[simps]
+def baseChangeFiberFunctor : Fiber (BaseChange.snd p L) S' ⥤ Fiber p (L.obj S') where
+  obj x := ⟨x.val.val.1, x.val.property.trans (congrArg L.obj x.property)⟩
+  map {x y} u := ⟨u.val.left, by
+    have := u.property
+    have h := BaseChange.isHomLift_left (𝟙 S') u.val
+    rwa [L.map_id] at h⟩
+
+instance : (baseChangeFiberFunctor p L S').Faithful where
+  map_injective {x y} {u v} h := by
+    have := u.property
+    have := v.property
+    exact Subtype.ext (BaseChange.hom_ext_of_isHomLift (𝟙 S') (congrArg Subtype.val h))
+
+instance : (baseChangeFiberFunctor p L S').Full where
+  map_surjective {x y} w := by
+    have hx : x.val.val.2 = S' := x.property
+    have hy : y.val.val.2 = S' := y.property
+    have hw : IsHomLift p (𝟙 (L.obj S')) w.val := w.property
+    have : IsHomLift p (L.map (eqToHom (hx.trans hy.symm))) w.val := by
+      rw [eqToHom_map]
+      have : IsHomLift p (eqToHom (congrArg L.obj hx) ≫ 𝟙 (L.obj S') ≫
+          eqToHom (congrArg L.obj hy).symm) w.val := inferInstance
+      simpa using this
+    refine ⟨⟨⟨w.val, eqToHom (hx.trans hy.symm), this⟩, ?_⟩, rfl⟩
+    exact IsHomLift.of_fac' (BaseChange.snd p L) (𝟙 S') _ hx hy (by
+      change eqToHom (hx.trans hy.symm) = _
+      rw [Category.id_comp]
+      exact (eqToHom_trans _ _).symm)
+
+instance : (baseChangeFiberFunctor p L S').IsIso where
+  bijective_obj := by
+    constructor
+    · intro x y h
+      have h₁ : x.val.val.1 = y.val.val.1 := congrArg Subtype.val h
+      have h₂ : x.val.val.2 = y.val.val.2 := x.property.trans y.property.symm
+      exact Subtype.ext (Subtype.ext (Prod.ext h₁ h₂))
+    · intro x
+      exact ⟨⟨⟨(x.val, S'), x.property⟩, rfl⟩, rfl⟩
+
+/-- VI.4: `pr₁` induces an isomorphism of categories `(𝒳 ×_E D)_{S'} ≅ 𝒳_{L S'}`. -/
+noncomputable def baseChangeFiberIso :
+    IsoCat (Fiber (BaseChange.snd p L) S') (Fiber p (L.obj S')) :=
+  (baseChangeFiberFunctor p L S').asIsomorphism
+
+end FiberOfBaseChange
 
 end SGA.SGA1.ExposeVI

@@ -5,6 +5,8 @@ Authors: SGAenglishpluslean contributors
 -/
 import Mathlib.CategoryTheory.FiberedCategory.BasedCategory
 import Mathlib.CategoryTheory.Products.Basic
+import Mathlib.CategoryTheory.IsoCat
+import Mathlib.CategoryTheory.ObjectProperty.FullSubcategory
 
 /-!
 # SGA 1, Exposé VI, §2: categories over a base
@@ -120,5 +122,61 @@ def basedPostcomp (G : BasedFunctor Y Z) : BasedFunctor X Y ⥤ BasedFunctor X Z
 /-- VI.2: forgetting that natural transformations are over the base is faithful. -/
 instance basedForgetful_faithful : (BasedNatTrans.forgetful X Y).Faithful where
   map_injective h := BasedNatTrans.ext _ _ h
+
+/-- VI.2: based functors are determined by their underlying functors. -/
+theorem basedFunctor_ext {F G : BasedFunctor X Y} (h : F.toFunctor = G.toFunctor) : F = G := by
+  cases F
+  cases G
+  cases h
+  rfl
+
+/-- VI.2: the category of `E`-functors `𝒳 ⥤ 𝒴` is the kernel of the pair
+`R, S : Hom(𝒳, 𝒴) ⇉ Hom(𝒳, E)`, where `R` is constant at `p` and `S` is composition
+with `q`: a natural transformation is an `E`-homomorphism iff its composite with `q` is
+the identity of `p`. -/
+theorem isHomLift_app_iff_whiskerRight_eq {F G : BasedFunctor X Y}
+    (α : F.toFunctor ⟶ G.toFunctor) :
+    (∀ a, Y.p.IsHomLift (𝟙 (X.p.obj a)) (α.app a)) ↔
+      Functor.whiskerRight α Y.p = eqToHom F.w ≫ eqToHom G.w.symm := by
+  constructor
+  · intro h
+    ext a
+    have := h a
+    simpa [eqToHom_app] using IsHomLift.fac' Y.p (𝟙 (X.p.obj a)) (α.app a)
+  · intro h a
+    have h' := congrArg (fun β ↦ NatTrans.app β a) h
+    simp only [Functor.whiskerRight_app, NatTrans.comp_app, eqToHom_app] at h'
+    exact IsHomLift.of_fac' Y.p _ _ (F.w_obj a) (G.w_obj a) (by simpa using h')
+
+end SGA.SGA1.ExposeVI
+
+namespace CategoryTheory.ObjectProperty
+
+open CategoryTheory
+
+universe w₁ w₂ t₁ t₂
+
+variable {C : Type t₁} {D : Type t₂} [Category.{w₁} C] [Category.{w₂} D]
+
+/-- An isomorphism of categories restricts to full subcategories whose objects
+correspond. -/
+theorem isIso_lift_of_isIso (F : C ⥤ D) [F.IsIso] (P : ObjectProperty C)
+    (Q : ObjectProperty D) (h : ∀ X, P X ↔ Q (F.obj X)) :
+    (Q.lift (P.ι ⋙ F) (fun X ↦ (h X.obj).mp X.property)).IsIso where
+  faithful := ⟨fun {X Y} {f g} hfg ↦ ObjectProperty.hom_ext _
+    (F.map_injective (Q.ι.congr_map hfg))⟩
+  full := ⟨fun {X Y} f ↦ ⟨ObjectProperty.homMk (F.preimage f.hom),
+    ObjectProperty.hom_ext _ (F.map_preimage f.hom)⟩⟩
+  bijective_obj := by
+    constructor
+    · intro X Y hXY
+      exact FullSubcategory.ext ((F.bijective_obj).1 (congrArg FullSubcategory.obj hXY))
+    · intro Y
+      obtain ⟨X, hX⟩ := (F.bijective_obj).2 Y.obj
+      exact ⟨⟨X, (h X).mpr (hX ▸ Y.property)⟩, FullSubcategory.ext hX⟩
+
+end CategoryTheory.ObjectProperty
+
+namespace SGA.SGA1.ExposeVI
 
 end SGA.SGA1.ExposeVI
