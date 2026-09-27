@@ -121,6 +121,16 @@ against silently repairing the source.
 | V.7 | `π_1(S; a', a)` called the paths from `a` to `a'` | The direction may be reversed (uncertain). |
 | French slips | “il suffit `F(u)` le soit” (V.4 a)); “pout tout j” (after V.4 j)); “n'est évidemment par surabondante” (V.2.5); missing period before “`F(X) = E_X(F)` peut être appelé” (before V.5.8); “`X`” outside math mode in V.2.3 | These do not affect the English. |
 
+### Found during the Lean formalization (2026-09)
+
+These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean statements use the corrected forms.
+
+| Location | Source wording | Point |
+| --- | --- | --- |
+| V.6.8 | “for every object `X'`” | The criterion fails for `X' = ∅`; it holds for connected `X'` (`injective_autWhiskerLeft_iff`). |
+| V.6.12 | Second assertion (a subgroup all of whose finite sets extend is a direct factor) | Appears false: for `A₃ ⊂ S₃` every `A₃`-set is the restriction of an `S₃`-set (`S₃/⟨(12)⟩` restricts to the regular `A₃`-set), yet `A₃` is not a direct factor. Not formalized. |
+| V.6.11 | Second assertion, `Ker u ⊃ Im u'` | The two inclusions of V.6.11 are interchanged: the criterion stated for one inclusion is the one for the other. The Lean statement `SGA.SGA1.ExposeV.ker_le_range_iff` proves the corrected form, and its docstring explains the swap. |
+
 ## Validation
 
 The local checker `source/SGA1/check_chunk.py`, which is not in the

@@ -11,13 +11,11 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 ## Order of work
 
 1. Keep the landed SGA 1 and SGA 2 translations compiling (`make tex`).
-2. Formalize SGA 1 VI against mathlib, section by section, starting
-   from `lean/SGA/SGA1/ExposeVI.lean`.
-3. SGA 1 is now translated in full (front matter and Exposés I–VI,
-   VIII–XIII); formalize further exposés after I and VI.
-4. SGA 2 English drafts proceed in parallel with remaining SGA 1
-   exposés; Lean for SGA 2 has partial Exposés I–VII (see below).
-   Formalization follows the English text.
+2. SGA 1 is translated in full (front matter and Exposés I–VI, VIII–XIII) and formalized
+   exposé by exposé; the open items are listed in [`formalization.md`](formalization.md) and the
+   out-of-scope ones in [`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations/README.md).
+3. SGA 2 English drafts proceed in parallel; Lean for SGA 2 has partial Exposés I–VII (see
+   below). Formalization follows the English text.
 
 Related public translations (not this project):
 [thosgood/sga](https://github.com/thosgood/sga),
@@ -89,72 +87,26 @@ in each exposé's README.
 
 ### Formalization (Lean 4)
 
-Mathlib already has much of the language of Exposé VI. Import it; do not
-copy it. Details: [`formalization.md`](formalization.md).
-
-Scaffold:
+Barrels `SGA.SGA1.ExposeI` … `SGA.SGA1.ExposeXIII` and `SGA.Foundations`, all imported by
+`lean/SGA.lean`. Conventions: [`lean/SGA/SGA1/CONVENTIONS.md`](../lean/SGA/SGA1/CONVENTIONS.md).
+No `sorry`; `lake env lean CheckSGA1Axioms.lean` (from `lean/`) checks the axioms. A box is
+ticked when every numbered statement of the exposé is proved, possibly with the restrictions
+listed in [`formalization.md`](formalization.md).
 
 - [x] Lake project + mathlib pin (`lean/lean-toolchain`, `lean/lakefile.toml`)
-- [x] Root module `SGA.SGA1.ExposeI` imports mathlib étale / unramified / quasi-finite
-- [x] Root module `SGA.SGA1.ExposeVI` imports mathlib fibered categories / descent
-- [x] `lake build` stays green as files are added
-
-By section (English: `translation/SGA1/ExposeVI/`, Lean: `lean/SGA/SGA1/`):
-
-- [x] **VI.0** Introduction (no mathematics to formalize)
-- [x] **VI.1** Universes, categories, equivalence of categories (`Equivalences.lean`)
-- [x] **VI.2** Categories over another (`OverCategories.lean`)
-- [x] **VI.3** Change of base in categories over *E* (`BaseChange.lean`)
-- [x] **VI.4** Fiber-categories; equivalence of categories over *E* (`Fibers.lean`, `BasedEquivalences.lean`)
-- [x] **VI.5** Cartesian morphisms, inverse images, cartesian functors (`Cartesian.lean`, `CartesianFunctors.lean`)
-- [x] **VI.6** Fibered and prefibered categories
-  - [x] VI.6.1 Fib I / Fib II (`IsPreFibered`, `IsFibered` — mathlib; numbering in `Fibered.lean`)
-  - [x] Fibered in groupoids (remark after VI.6.1, with prefiberedness; `Groupoids.lean`)
-  - [x] VI.6.2 based equivalence preserves (pre)fiberedness (`FiberedProducts.lean`)
-  - [x] VI.6.11–13 (`Fibered.lean`)
-- [x] **VI.7** Cloven categories over *E* (`Cleavage.lean`: cleavage, comparison `c_{f,g}`)
-- [x] **VI.8** Cloven category defined by a pseudofunctor (`Split.lean`, mathlib `∫ᶜ`)
-- [x] **VI.9** Example: cloven category defined by a functor (`SplitFibered`)
-- [x] **VI.10** Cofibered categories, bifibered categories (`Cofibered.lean`)
-- [x] **VI.11** Various examples (discrete base in `BaseExamples.lean`; finite checks in `Examples.lean`)
-- [x] **VI.12** Functors on a cloven category (`ClovenFunctors.lean`: fiber functors and constraints)
-
-Gaps still open inside those files are listed in [`formalization.md`](formalization.md).
-
-### SGA 1 I — Étale morphisms
-
-English: `translation/SGA1/ExposeI/`. Lean: `lean/SGA/SGA1/ExposeI.lean`.
-Section files compile and have no `sorry`. That is **not** a complete
-formalization of every numbered statement; remaining items are unchecked
-below and in [`formalization.md`](formalization.md).
-
-- [x] **I.1** Differential calculus (`Differentials.lean`: `Ω[S⁄R]`, principal parts)
-- [x] **I.2** Quasi-finite morphisms (`QuasiFinite.lean`: isolated in the fibre; artinian I.2.2)
-  - [ ] I.2.1(iii): quasi-finite via finiteness of completions
-- [x] **I.3** Unramified / net morphisms (`Unramified.lean`: TFAE, graph, stability)
-  - [ ] I.3.7: unramified iff the map of completions is a quotient
-- [x] **I.4** Étale morphisms and coverings (`Etale.lean`: flat + unramified; stability)
-  - [ ] I.4.2–I.4.4: étale detected on completions
-  - [ ] I.4.10: discriminant / trace pairing
-- [x] **I.5** Fundamental property (`Fundamental.lean`: I.5.1 étale + radicial = open immersion)
-  - [ ] I.5.3–I.5.4 in full (iso onto a connected component; morphisms agreeing at a point)
-  - [ ] I.5.5 existence of the lifted morphism (uniqueness is proved)
-  - [ ] I.5.7–I.5.9 fibrewise criteria
-- [x] **I.6** Complete local rings (`CompleteLocal.lean`: artinian I.6.2)
-  - [ ] I.6.1 over a complete local ring
-- [x] **I.7** Standard étale presentations (`StandardEtale.lean`: I.7.4, I.7.6–I.7.8)
-  - [ ] I.7.1–I.7.3, I.7.5, I.7.9–I.7.10
-- [x] **I.8** Infinitesimal lifting (`Infinitesimal.lean`: uniqueness half of I.8.3)
-  - [ ] I.8.1–I.8.2 local existence; I.8.3 essential surjectivity; I.8.4 formal schemes
-- [x] **I.9** Permanence (`Permanence.lean`: reducedness over a field; integral closure)
-  - [ ] I.9.1 regularity; I.9.2–I.9.4 reduced in general; I.9.5 normality; I.9.10–I.9.12
-- [x] **I.10** Coverings of a normal scheme (`NormalCoverings.lean`: ZMT input, finite fibres)
-  - [ ] I.10.1–I.10.3, I.10.7–I.10.12 counting geometric fibre points
-- [x] **I.11** Geometrically unibranch (`Unibranch.lean`: definition)
-  - [ ] I.11 examples; étale descent along a universal homeomorphism (IX.4.10)
-
-Other exposés of SGA 1: the English text of every exposé is now in the
-tree; Lean has been started only for I and VI.
+- [x] Foundations: prerequisites missing from mathlib (`lean/SGA/Foundations/`)
+- [x] **I** Étale morphisms
+- [x] **II** Smooth morphisms (II.2.5 and the sufficiency half of II.2.6 not stated)
+- [ ] **III** Infinitesimal lifting (III.2–III.4 done; III.5–III.6 in special cases; III.7 open)
+- [x] **IV** Flat morphisms
+- [x] **V** The fundamental group: generalities
+- [x] **VI** Fibered categories and descent
+- [x] **VIII** Faithfully flat descent
+- [ ] **IX** Descent of étale morphisms (IX.1.10 for projective `X`; see `formalization.md`)
+- [ ] **X** Specialization of the fundamental group (X.2.1–X.2.4 for projective `X`; X.3.8 open)
+- [x] **XI** Examples and complements (XI.1.4 and XI.2.1 out of scope)
+- [x] **XII** Algebraic geometry and analytic geometry (XII.5.1 and triangulation out of scope)
+- [ ] **XIII** Cohomological properness (§1, §2, §4 and Appendix I in part; §3 out of scope)
 
 ---
 

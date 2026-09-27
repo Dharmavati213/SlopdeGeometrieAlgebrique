@@ -118,6 +118,15 @@ against silently repairing the source.
 | §12, diagram b') | `φ_{g^*} f^*_F`, and subscripts `_F` for `_{𝓕}` | Inconsistent notation. |
 | §12 | “(where `f: T → S` is a morphism in `𝓔` is in a unique way)” | The parenthesis is garbled. |
 
+### Found during the Lean formalization (2026-09)
+
+These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean statements use the corrected forms.
+
+| Location | Source wording | Point |
+| --- | --- | --- |
+| VI.9, rigid fibres | “the existence of a splitting is unchanged when passing to an `𝓔`-equivalent category” | False for normalized splittings: the fibered category `threeToTwo` (`SGA.SGA1.ExposeVI.not_exists_isSplitting_threeToTwo`) has rigid fibres and no splitting. The version up to `𝓔`-equivalence holds and is formalized (`exists_isSplitting_of_rigid`). |
+| Remarks after VI.6.1 | Condition (i): “every arrow of `F` is cartesian” | The equivalence with “`F` is fibered in groupoids” needs `F` to be prefibered; without the lifting condition it fails. The Lean statements (`SGA.SGA1.ExposeVI.allMorphismsCartesian_iff_fiberedInGroupoids`, `allMorphismsCartesian_and_isPreFibered_iff`) assume it. |
+
 ## Validation
 
 The local checker `source/SGA1/check_chunk.py`, which is not in the

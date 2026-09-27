@@ -4,15 +4,93 @@ The Lean library in `lean/` follows Grothendieck's numbering of SGA 1 and SGA 2.
 Mathlib already has the language of the exposés; we import it and add
 the statements that are still missing.
 
-## Exposé I — Étale morphisms
+## SGA 1 — *Revêtements étales et groupe fondamental*
 
-Entry point: `lean/SGA/SGA1/ExposeI.lean`.
+Entry points: the barrels `SGA.SGA1.ExposeI` … `SGA.SGA1.ExposeXIII` (there is no Exposé VII)
+and `SGA.Foundations`, all imported by `lean/SGA.lean`. Each barrel's module docstring lists its
+files and what they prove. The conventions for SGA 1 are in
+[`lean/SGA/SGA1/CONVENTIONS.md`](../lean/SGA/SGA1/CONVENTIONS.md); they differ from the SGA 2
+files and follow mathlib naming.
 
-SGA works with locally noetherian schemes after no. I.2 and defines
-étale as flat + unramified of finite type. Mathlib's `Etale` is
-formally étale of finite presentation. On a locally noetherian base
-these agree (`etale_of_flat_unramified_locallyNoetherian`).
-Universally injective is SGA's radicial.
+- Every declaration for a numbered item starts its docstring with the number
+  (`/-- IX.4.12: … -/`) and says how it differs from SGA when it does (extra hypotheses, special
+  cases, one direction).
+- A numbered statement that is not proved is recorded as a faithful `Prop`-valued
+  `…Statement` definition, and the consequences SGA draws from it are proved with it as a
+  hypothesis.
+- There is no `sorry`, `admit`, `native_decide` or custom axiom: from `lean/`,
+  `lake env lean CheckSGA1Axioms.lean` checks every declaration of `SGA.SGA1.*` and
+  `SGA.Foundations.*` and allows only `propext`, `Classical.choice` and `Quot.sound`.
+- Prerequisites that mathlib does not have live in `lean/SGA/Foundations/` (mathlib namespaces
+  and naming, references to EGA, SGA 4 and the Stacks Project). The results that are out of
+  scope, and why, are listed in [`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations/README.md).
+
+### Coverage by exposé
+
+| Exposé | State |
+| --- | --- |
+| I — Étale morphisms | Every numbered statement is proved. I.10.7–I.10.12 go through EGA IV 15.5.1 and the strict henselization (`GeometricPoints`); I.10.11 adds SGA's standing locally noetherian hypothesis. I.3.6 (iv) and I.4.7 are proved for base change along one projection only; I.3.1 is stated with global diagonals; I.7.9–I.7.10 (lemmas of the proof of I.7.6) and scheme forms of I.10.3–I.10.6 are not stated. |
+| II — Smooth morphisms | Every recorded statement is proved. II.2.5 (Hironaka's criterion) and the sufficiency half of II.2.6 need multiplicity theory and are not stated. |
+| III — Infinitesimal lifting | III.2.1 (without completeness), III.3.1–III.3.2 at scheme level, III.4, III.5.1–III.5.4 (Čech form over an affine base), III.5.8 for affine formal schemes, III.6.7 and III.6.10 when `X₀` is the union of two affine opens, III.6.8. Not formalized: III.5.8 for non-affine formal schemes, III.5.9, III.6.3 in general, III.6.9, III.7.1–III.7.3; III.7.4 is `SmoothProperCurveLiftStatement`. |
+| IV — Flat morphisms | Every numbered statement is proved. |
+| V — The fundamental group: generalities | Every numbered statement is proved. V.5.9 and V.5.11 are for small Galois categories, V.2.2 in ring form (`B` noetherian), V.8.2 for `Spec R`, V.9 for finitely many connected components. V.6.12 (second assertion) is false and not formalized. |
+| VI — Fibered categories and descent | Every numbered statement is proved, on mathlib's fibered categories. |
+| VIII — Faithfully flat descent | Every numbered statement is proved: VIII.6.4 over a noetherian base, as in SGA, the rest over an arbitrary base; ampleness and quasi-projectivity (VIII.5.8, VIII.7.7–VIII.7.8) use `SGA.Foundations.Projective`. |
+| IX — Descent of étale morphisms | IX.1.2–IX.1.9, IX.2, IX.3 and IX.4.1–IX.4.11 are proved over any base, with three exceptions: IX.2.6 (valuative criterion) is proved in one direction; IX.4.6 is proved with separably closed residue fields, and in SGA's form when the residue fields are perfect; IX.4.9 is proved from quasi-sections of universally open morphisms (EGA IV 14.5.4, `QuasiSectionStatement`). IX.1.10 is proved for `X` projective over `A`, with full faithfulness for `X` proper. IX.4.12 is proved over a locally noetherian base, and after any base change of such a morphism: IX.6.9 in full. IX.5.2, IX.5.6 (for proper coverings), IX.6.1 (fibre also quasi-separated), IX.6.2, IX.6.4, IX.6.7, IX.6.8 and IX.6.11 (locally noetherian base) are proved. Not formalized: IX.5.3–IX.5.5 and IX.5.7 (profinite presentations), IX.6.5–IX.6.6. |
+| X — Specialization of the fundamental group | X.1.1–X.1.5 and X.1.7–X.1.10 are proved (X.1.2 through EGA III 7.8.10 in `SGA.Foundations.Cohomology`; X.1.7 for a rational base point and `X` reduced). X.2.1–X.2.4 are proved for `X` projective over the base, and for `X` proper from IX.1.10; X.2.2–X.2.3 also over a complete local base. X.3.1–X.3.4 (Zariski–Nagata purity in every dimension) and X.3.6 are proved; X.3.9 follows from X.3.8, which is open. X.2.9 is out of scope (it uses the transcendental X.2.6). Not stated: X.1.6, X.2.5–X.2.8, X.2.10–X.2.11, X.3.5, X.3.7, X.3.10–X.3.11. |
+| XI — Examples and complements | XI.1.1 (`ℙʳ` simply connected, all `r`), XI.1.2 and XI.1.3 in SGA's form (through X.3.4), XI.2 (`π₁` of a proper group scheme is commutative), XI.4–XI.6 (torsors, non-abelian `H¹`, `H¹(S, G) ≅ H¹(π₁, G(s̄))` for finite étale `G`, Kummer and Artin–Schreier theory, `Pic`). XI.1.4 (Serre) and XI.2.1 (Serre–Lang) are out of scope. |
+| XII — Algebraic geometry and analytic geometry | Affine analytification and local rings (XII.1–XII.2.1), XII.2.2–XII.2.3 (through Rückert's Nullstellensatz, proved in `SGA.Foundations.Analytic`), XII.2.4 and XII.2.6 (connectedness, without GAGA), XII.3.1–XII.3.2, XII.4. XII.5.1 (Riemann existence) and the triangulation used in XII.5.2 are out of scope; XII.5.2 is proved from them. |
+| XIII — Cohomological properness | §1 (cohomological properness, with SGA 4 VIII 5.5 and 5.8 proved and 5.6 for finite morphisms), §2 (tame ramification: 2.0–2.0.3, 2.1.1, locally constant sheaves), §4 (4.0, 4.4 first part at all geometric points, 4.5, 4.6 for `π₁^L` and `X` proper), 2.12 for `g = 0`, `n = 1` and 2.13 for the affine line (proved algebraically), Appendix I (5.1, 5.3, 5.4 in full; 5.2 except in mixed characteristic over a ring that is not strictly henselian). §3, the parts of §4 that need `R¹f_*` and XIII 1.4 are out of scope. |
+
+### Open statements
+
+These `…Statement` definitions are still open and are not out of scope (the out-of-scope ones
+are in `lean/SGA/Foundations/README.md`). Most are already proved in the cases indicated.
+
+| Statement | Item | Proved so far | Missing |
+| --- | --- | --- | --- |
+| `GrothendieckExistenceStatement` (Foundations) | EGA III 5.1.4 | Full faithfulness for proper `X`; essential surjectivity for finite étale coverings of `X` projective, and its Chow/Stein descent step | Essential surjectivity for proper `X` (gluing along the conductor, noetherian induction) |
+| `EtaleCoveringsOfClosedFibreStatement`, `CompleteLocalBaseStatement` | IX.1.10 = X.2.1 | `X` projective over `A`; full faithfulness for `X` proper | The proper case of the existence theorem |
+| `SmoothProperCurveLiftStatement` | III.7.4 | — | Algebraization of formal schemes (EGA III 5.4.5) |
+| `IsEffectiveIffStrictlyLocalStatement` | IX.4.6 in SGA's form | Separably closed residue fields; algebraically closed ones when the residue fields are perfect | EGA 0_III 10.3.1 for inseparable residue extensions |
+| `QuasiSectionStatement` | input of IX.4.9 | IX.4.9 from it | Quasi-sections of universally open morphisms (EGA IV 14.5.4) |
+| `UniversallySubmersiveValuativeCriterionStatement` | IX.2.6, sufficiency | Necessity | Krull–Akizuki and DVRs dominating a noetherian local domain (EGA II 7.1.7) |
+| `EffectiveDescentOfProperStatement` | IX.4.12 | Locally noetherian base, and base changes of such | Reduction of a finitely presented proper morphism to a noetherian base (EGA IV 8.8.2, 8.10.5) |
+| `ProperDescentStatement`, `GeometricFibresStatement` | IX.6.8, IX.6.11 | Locally noetherian base | The same reduction, and EGA IV 9.7.7 |
+| `ExactSequenceStatement` | IX.6.1 | Closed fibre quasi-compact and quasi-separated | Nothing known without quasi-separatedness (the Stacks Project also assumes it) |
+| `LocalProperDescentStatement` | IX.6.5 | — | Stein factorization and its compatibility with completion |
+| `TameSpecializationStatement` | X.3.8 | X.3.9 from it | Reduction to a complete DVR (EGA II 7.1.7), Kummer base change and extension across the closed fibre |
+| `AbsoluteAbhyankarStatement` | XIII.5.2 | Existence of the extension for every regular local ring; the full statement in equal characteristic and in dimension 1 | The exponents are prime to `p` in mixed characteristic over a ring that is not strictly henselian |
+| `TameRamificationAtMaximalPointsStatement`, `TameBaseChangeStatement` | XIII.2.3 a), XIII.2.4 1) | — | The relative Abhyankar lemma XIII.5.5 |
+| `IntegralBaseChangeStatement` | SGA 4 VIII 5.6 (used in XIII 1.9) | Finite morphisms | Limits of étale sheaves (SGA 4 VII 5.7) |
+
+### Corrections to SGA 1
+
+Points where SGA 1 is wrong or needs an extra hypothesis, found while formalizing, are recorded in
+the table "Found during the Lean formalization" of each exposé's README under
+`translation/SGA1/`, with the Lean declaration that proves the corrected form: I.9.8, I.10.7 and
+I.10.9, V.6.8, V.6.11, V.6.12, the remarks after VI.6.1, VI.9 and X.1.10. Misprints found by the
+translators (for example IX.2.5, `S'' → S`) are in the same READMEs.
+
+### Foundations
+
+`SGA.Foundations` (`lean/SGA/Foundations/`, about 300 files) contains what SGA 1 needs and
+mathlib lacks: quasi-affine, ample and quasi-projective morphisms, relative `Proj`, norms and
+Chow's lemma (EGA II); regular local rings, Auslander–Buchsbaum, factoriality and Zariski–Nagata
+purity; dimension theory; henselization, strict henselization, strict localization and étale
+stalks (EGA IV 18); limits of schemes and of finite étale coverings, EGA IV 8 and 15.5.1;
+Čech and derived cohomology of quasi-coherent sheaves and the EGA III theorems (Serre vanishing,
+finiteness, formal functions, Zariski connectedness, Stein factorization, flat base change,
+Grothendieck existence); formal schemes; étale sheaves, torsors and non-abelian `H¹`; pro-objects;
+convergent power series, Rückert's Nullstellensatz and analytification; topological coverings.
+The module docstring of `SGA/Foundations.lean` lists the areas.
+
+### Mathlib correspondences
+
+SGA works with locally noetherian schemes after no. I.2 and defines étale as flat + unramified of
+finite type. Mathlib's `Etale` is formally étale of finite presentation. On a locally noetherian
+base these agree (`etale_of_flat_unramified_locallyNoetherian`). Universally injective is SGA's
+radicial.
 
 | SGA 1 I | Mathlib |
 | --- | --- |
@@ -30,12 +108,9 @@ Universally injective is SGA's radicial.
 | I.9.5 integral closure | `TensorProduct.toIntegralClosure_bijective_of_smooth` |
 | I.10 normalisation | `Scheme.Hom.toNormalization` |
 
-## Exposé VI — Fibered categories and descent
-
-These are the names to import, not to redo.
-
-| SGA 1 VI | Mathlib |
+| SGA 1 V, VI | Mathlib |
 | --- | --- |
+| V.4–V.5 Galois categories | `PreGaloisCategory`, `GaloisCategory`, `FiberFunctor` |
 | VI.2 category over another | `BasedCategory`, `BasedFunctor`, `BasedNatTrans` |
 | VI.4 fiber-category | `CategoryTheory.Functor.Fiber`, `HasFibers` |
 | VI.5.1 cartesian morphism | `Functor.IsCartesian` |
@@ -45,55 +120,6 @@ These are the names to import, not to redo.
 | VI.9 split (1-functor) | `Functor.toPseudofunctor'` then `∫ᶜ` |
 | VI.10 cocartesian | `Functor.IsCocartesian` |
 | descent data, (pre)stack | `Pseudofunctor.DescentData`, `IsPrestack`, `IsStack` |
-
-Entry point: `lean/SGA/SGA1/ExposeVI.lean`.
-
-## Corrections relative to the English draft
-
-- Both quasi-inverse identities are required for an equivalence of
-  categories (VI.1). A one-sided `GF ≅ id` is not enough; see
-  `Examples.selectFalse_not_isEquivalence`.
-- The remark after VI.6.1 needs prefiberedness in (i). All morphisms
-  cartesian does not imply lifts exist; see
-  `Examples.oneToTwo_not_prefibered`.
-- Ordinary equivalence is weaker than equivalence over the base
-  (VI.4.2); see `Examples.oneToTwo_not_basedEquivalence`.
-
-## Remaining gaps in Exposé I
-
-- I.2.1(iii): quasi-finite local homomorphisms via finiteness of completions.
-- I.3.7 / I.4.4: unramified (resp. étale) iff the map of completions is a
-  quotient (resp. an isomorphism), when the residue extension is trivial.
-- I.4.10: discriminant / trace pairing criterion for étale coverings.
-- I.5.3–I.5.4 in full: a section of a connected unramified scheme is an
-  isomorphism onto a connected component; two morphisms that agree
-  geometrically at a point are equal. Open-and-closed immersions of the
-  section are in `Fundamental.lean`; identification with a component uses
-  locally noetherian connectedness.
-- I.5.5 existence / I.8.3 essential surjectivity: étale schemes lift
-  uniquely along nilpotent closed immersions; existence of the lift of
-  the scheme (not just of morphisms) remains.
-- I.6.1 over a complete local ring (the artinian case of I.6.2 is proved).
-- I.8.4: étale coverings of a locally noetherian formal scheme.
-- I.9.1 in general (regularity of local étale algebras); the identification
-  `m_A S = m_S` is recorded.
-- I.9.5(ii) and I.9.11: unramified + injective over a normal local ring
-  is étale; dominant unramified over a normal base is étale.
-- I.10.3, I.10.7–I.10.12: the equivalence with unramified extensions of
-  the function field, and the counting of geometric fibre points.
-- I.11: the examples, and étale descent along a universal homeomorphism
-  (IX.4.10).
-
-## Remaining gaps in Exposé VI
-
-- VI.6.3–6.8, VI.6.10 (fiber products of cartesian arrows, fiberwise
-  criterion for cartesian functors).
-- VI.7.2 converse, VI.7.3–7.4 (normalized cleavages, associativity of
-  `c_{f,g}`).
-- VI.10.1 (prefibered + precofibered ⇒ fibered iff cofibered).
-- VI.11(a)–(d), (f)–(g) beyond the discrete-base case.
-- VI.12.1 as an isomorphism of functor categories (only the constraint
-  data of a total functor is recorded).
 
 ## SGA 2, Exposé I — Local cohomological invariants
 
@@ -936,7 +962,12 @@ Exposés VIII–XIV still have no Lean formalization.
 
 ## Axiom verification
 
-Run `lake env lean CheckSGA2Axioms.lean` from `lean/`. The check traverses
+For SGA 1 and the foundations, run `lake env lean CheckSGA1Axioms.lean` from `lean/`: it checks
+every declaration defined in an `SGA.SGA1.*` or `SGA.Foundations.*` module (selected by module,
+since the foundations use mathlib namespaces) and permits only `propext`, `Classical.choice`
+and `Quot.sound`.
+
+For SGA 2, run `lake env lean CheckSGA2Axioms.lean` from `lean/`. The check traverses
 every imported declaration in `SGA.SGA2` and its transitive axiom
 dependencies. It permits only `propext`, `Classical.choice`, and `Quot.sound`;
 additional mathematical axioms, `sorryAx`, and native evaluation axioms
