@@ -2,7 +2,7 @@
 
 - [ ] Translation
 - [ ] Lean
-- [ ] Repo / CI / docs
+- [ ] Repo / docs
 
 ## What
 
