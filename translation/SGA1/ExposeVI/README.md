@@ -152,5 +152,5 @@ All of SGA 1 is now translated (see
 [`../../README.md`](../../README.md)). Lean for this exposé lives at
 `lean/SGA/SGA1/ExposeVI.lean`, with modules in `lean/SGA/SGA1/ExposeVI/`.
 
-License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
+License: [`../../LICENSE`](../../LICENSE) (MIT for the
 translator's contribution).

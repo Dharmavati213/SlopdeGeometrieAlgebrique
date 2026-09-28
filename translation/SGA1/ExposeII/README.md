@@ -163,8 +163,9 @@ outstanding.
 ## Continuation
 
 All of SGA 1 is now translated (see
-[`../../README.md`](../../README.md)). Lean for this exposé does not
-exist yet; `lean/SGA/SGA1/` covers Exposés I and VI.
+[`../../README.md`](../../README.md)). Lean for this exposé lives at
+`lean/SGA/SGA1/ExposeII.lean`, with modules in `lean/SGA/SGA1/ExposeII/`;
+its coverage is in [`docs/formalization.md`](../../../docs/formalization.md).
 
-License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
+License: [`../../LICENSE`](../../LICENSE) (MIT for the
 translator's contribution).

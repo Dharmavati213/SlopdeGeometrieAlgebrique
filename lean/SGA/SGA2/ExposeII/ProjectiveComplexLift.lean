@@ -1,9 +1,9 @@
 /-
 Copyright (c) 2022 Jujian Zhang. All rights reserved.
-Copyright (c) 2026 SGAenglishpluslean contributors. All rights reserved.
-Released under Apache 2.0 license as described in the file LICENSE.
+Copyright (c) 2026 SlopdeGeometrieAlgebrique contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSES/Apache-2.0.txt.
 Authors: Markus Himmel, Kim Morrison, Jakob von Raumer, Joël Riou,
-  SGAenglishpluslean contributors
+  SlopdeGeometrieAlgebrique contributors
 -/
 import Mathlib.CategoryTheory.Abelian.Projective.Resolution
 

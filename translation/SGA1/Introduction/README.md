@@ -89,5 +89,5 @@ references were replaced by statement numbers. The reviewer also found
 the French slips listed above. These checks do not replace scholarly
 proofreading.
 
-License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
+License: [`../../LICENSE`](../../LICENSE) (MIT for the
 translator's contribution).

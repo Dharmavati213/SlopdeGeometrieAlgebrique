@@ -26,24 +26,26 @@ Related public translations (not this project):
 ## SGA 1 — *Revêtements étales et groupe fondamental*
 
 Source: SMF recomposition, [arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203).
-Exposé VII does not exist.
+Exposé VII does not exist. In the Lean column, "proved" means every numbered statement is
+proved, apart from the restrictions in [`formalization.md`](formalization.md) and the
+out-of-scope items in [`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations/README.md).
 
 | Exposé | Title | Translation | Lean |
 | --- | --- | --- | --- |
 | — | Preface, Introduction, Foreword | full draft in tree | — |
-| I | Étale morphisms | full draft in tree, reviewed | compiling |
-| II | Smooth morphisms: generalities, differential properties | full draft in tree, reviewed | — |
-| III | Smooth morphisms: extension properties | full draft in tree, reviewed | — |
-| IV | Flat morphisms | full draft in tree | — |
-| V | The fundamental group: generalities | full draft in tree | — |
-| **VI** | **Fibered categories and descent** | **full draft in tree, reviewed** | **compiling** |
+| I | Étale morphisms | full draft in tree, reviewed | proved |
+| II | Smooth morphisms: generalities, differential properties | full draft in tree, reviewed | proved |
+| III | Smooth morphisms: extension properties | full draft in tree, reviewed | partial |
+| IV | Flat morphisms | full draft in tree | proved |
+| V | The fundamental group: generalities | full draft in tree | proved |
+| VI | Fibered categories and descent | full draft in tree, reviewed | proved |
 | VII | *(does not exist)* | | |
-| VIII | Faithfully flat descent | full draft in tree | — |
-| IX | Descent of étale morphisms; application to the fundamental group | full draft in tree | — |
-| X | Specialization of the fundamental group | full draft in tree | — |
-| XI | Examples and complements | full draft in tree | — |
-| XII | Algebraic geometry and analytic geometry | full draft in tree | — |
-| XIII | Cohomological properness (sets and non-commutative groups) | full draft in tree | — |
+| VIII | Faithfully flat descent | full draft in tree | proved |
+| IX | Descent of étale morphisms; application to the fundamental group | full draft in tree | partial |
+| X | Specialization of the fundamental group | full draft in tree | partial |
+| XI | Examples and complements | full draft in tree | proved (two items out of scope) |
+| XII | Algebraic geometry and analytic geometry | full draft in tree | proved (two items out of scope) |
+| XIII | Cohomological properness (sets and non-commutative groups) | full draft in tree | partial |
 
 "Reviewed" means the pre-existing English was compared sentence by
 sentence with the corrected French (2026-09-24) and corrected. Each new
@@ -113,7 +115,7 @@ listed in [`formalization.md`](formalization.md).
 ## SGA 2 — *Cohomologie locale des faisceaux cohérents et théorèmes de Lefschetz locaux et globaux*
 
 Source: SMF recomposition, [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-GitHub checklist: [issue #9](https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique/issues/9).
+GitHub checklist: [issue #9](https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique/issues/9) (closed).
 Exposé XIV is by Michèle Raynaud.
 
 | Exposé | Title | Translation | Lean |

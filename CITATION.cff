@@ -1,27 +1,26 @@
 cff-version: 1.2.0
-title: "SGA, English + Lean"
+title: "Slop de Géométrie Algébrique: SGA in English and Lean"
 message: "If you use this translation or the Lean development, please cite it."
 type: software
 authors:
-  - name: "SGAenglishpluslean contributors"
-    website: "https://github.com/Dharmavati213/SGAenglishpluslean"
-repository-code: "https://github.com/Dharmavati213/SGAenglishpluslean"
-url: "https://github.com/Dharmavati213/SGAenglishpluslean"
+  - name: "SlopdeGeometrieAlgebrique contributors"
+    website: "https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique"
+repository-code: "https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique"
+url: "https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique"
 abstract: >
   Unofficial English translations of Grothendieck's Séminaire de
   Géométrie Algébrique du Bois Marie (SGA), together with a Lean 4
-  formalization on mathlib. The first text is SGA 1, Exposé VI
-  (fibered categories and descent).
+  formalization on mathlib. SGA 1 and SGA 2 are translated in full;
+  SGA 1 is formalized exposé by exposé, and SGA 2 in part (Exposés I–VII).
 keywords:
   - SGA
   - Grothendieck
   - algebraic geometry
-  - fibered categories
-  - descent
+  - étale fundamental group
+  - local cohomology
   - Lean 4
   - mathlib
-license: Apache-2.0
-license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+license: MIT
 references:
   - type: article
     title: "Revêtements étales et groupe fondamental (SGA 1)"
@@ -34,4 +33,16 @@ references:
     identifiers:
       - type: other
         value: "arXiv:math/0206203"
+        description: SMF recomposition
+  - type: article
+    title: "Cohomologie locale des faisceaux cohérents et théorèmes de Lefschetz locaux et globaux (SGA 2)"
+    authors:
+      - family-names: Grothendieck
+        given-names: Alexander
+      - family-names: Raynaud
+        given-names: Michèle
+    year: 2005
+    identifiers:
+      - type: other
+        value: "arXiv:math/0511279"
         description: SMF recomposition

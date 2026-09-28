@@ -156,5 +156,5 @@ points on V.1.3, V.3.7, the proof of V.5.2 (compactness), and the
 paragraph after V.5.9. These checks do not settle the mathematical
 questions above; scholarly proofreading remains outstanding.
 
-License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
+License: [`../../LICENSE`](../../LICENSE) (MIT for the
 translator's contribution).

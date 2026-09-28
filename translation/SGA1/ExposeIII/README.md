@@ -126,9 +126,11 @@ deeper scholarly proofreading remains outstanding.
 ## Continuation
 
 All of SGA 1 is now translated (see
-[`../../README.md`](../../README.md)). Lean for this exposé does not
-exist yet; `lean/SGA/SGA1/` covers Exposés I and VI.
+[`../../README.md`](../../README.md)). Lean for this exposé lives at
+`lean/SGA/SGA1/ExposeIII.lean`, with modules in `lean/SGA/SGA1/ExposeIII/`;
+its coverage is in [`docs/formalization.md`](../../../docs/formalization.md).
 
 The English translation is an unofficial derivative work. The translator's
-contribution is licensed under CC BY-SA 4.0; see [`../../LICENSE`](../../LICENSE)
-and [`../../../COPYRIGHT.md`](../../../COPYRIGHT.md).
+contribution was made under CC BY-SA 4.0 and, unlike the rest of the repository
+(MIT), stays under it; see [`LICENSE`](LICENSE) and
+[`../../../COPYRIGHT.md`](../../../COPYRIGHT.md).

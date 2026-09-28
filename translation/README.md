@@ -2,7 +2,7 @@
 
 Unofficial English TeX of SGA, following Grothendieck’s numbering.
 Conventions: [`CONVENTIONS.md`](CONVENTIONS.md).
-License: [`LICENSE`](LICENSE) (CC BY-SA 4.0).
+License: [`LICENSE`](LICENSE) (MIT; SGA 1 Exposé III is CC BY-SA 4.0).
 
 Do not add the French source to the repository. See [`../COPYRIGHT.md`](../COPYRIGHT.md).
 
@@ -44,7 +44,7 @@ make -C SGA1/ExposeIII clean
 ## SGA 2
 
 Source: SMF recomposition, [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-Checklist: [`docs/status.md`](../docs/status.md) and GitHub issue #9.
+Checklist: [`docs/status.md`](../docs/status.md) (the original GitHub checklist, issue #9, is closed).
 Shared macros: [`SGA2/sga2-en.sty`](SGA2/sga2-en.sty).
 
 | Exposé | Directory | Coverage | Build |

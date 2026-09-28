@@ -191,5 +191,5 @@ The reviewer also confirmed that the keys `XIII.1.10`/`XIII.1.11` in
 the mathematical questions above; scholarly proofreading remains
 outstanding.
 
-License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
+License: [`../../LICENSE`](../../LICENSE) (MIT for the
 translator's contribution).

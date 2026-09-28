@@ -9,7 +9,7 @@ Source: corrected SMF branch (`orig = false`) of
 [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
 The French TeX and PDF are not included in this repository.
 
-License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
+License: [`../../LICENSE`](../../LICENSE) (MIT for the
 translator's contribution).
 
 ## Source points for scholarly review

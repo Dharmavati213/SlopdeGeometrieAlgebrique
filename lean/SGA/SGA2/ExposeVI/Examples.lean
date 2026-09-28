@@ -1,7 +1,7 @@
 /-
-Copyright (c) 2026 SGAenglishpluslean contributors. All rights reserved.
-Released under Apache 2.0 license as described in the file LICENSE.
-Authors: SGAenglishpluslean contributors
+Copyright (c) 2026 SlopdeGeometrieAlgebrique contributors. All rights reserved.
+Released under MIT license as described in the file LICENSE.
+Authors: SlopdeGeometrieAlgebrique contributors
 -/
 import SGA.SGA2.ExposeVI.ModuleSheafExtLocal
 import SGA.SGA2.ExposeVI.Excision

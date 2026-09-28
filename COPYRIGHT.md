@@ -1,18 +1,23 @@
 # Copyright and sources
 
-This repository contains two kinds of work, under two licenses.
+Everything in this repository that is original to the project — the Lean 4
+formalization, the English translation, documentation, and repository
+tooling — is licensed under the MIT License. See `LICENSE`.
 
-1. Lean 4 formalization, documentation, and repository infrastructure
-   are licensed under the Apache License, Version 2.0. See `LICENSE`.
-   They depend on mathlib4 (Apache-2.0),
-   https://github.com/leanprover-community/mathlib4
-2. The English translation in `translation/` is an unofficial scholarly
-   translation of Grothendieck–Raynaud, *SGA 1*, SMF recomposition
-   arXiv:math/0206203, and of Grothendieck–Raynaud, *SGA 2*, SMF
-   recomposition arXiv:math/0511279. The translator’s original
-   contribution is licensed under CC BY-SA 4.0; the French original
-   remains copyright of the original authors and publishers and is not
-   redistributed here. See `translation/LICENSE`.
+Two parts keep the license under which they were contributed:
+
+1. `translation/SGA1/ExposeIII/` — the English translation of SGA 1,
+   Exposé III, contributed by [niclasrst](https://github.com/niclasrst)
+   under CC BY-SA 4.0 and later revised in this repository. Its ShareAlike
+   condition also covers the revisions. See
+   `translation/SGA1/ExposeIII/LICENSE`.
+2. `lean/SGA/SGA2/ExposeII/ProjectiveComplexLift.lean` — adapted from
+   mathlib's projective-resolution comparison (Apache-2.0, with the mathlib
+   authors named in its header). See `LICENSES/Apache-2.0.txt`.
+
+The Lean library depends on
+[mathlib4](https://github.com/leanprover-community/mathlib4) (Apache-2.0),
+which is not redistributed here.
 
 ## Original SGA
 
@@ -39,22 +44,20 @@ endorsement by the original authors or publishers.
 ## English translation
 
 The English translation in `translation/` is an original derivative work
-of the SMF recomposition, prepared for this project. Numbering of
-statements follows the original exposé. The translator’s contribution
-is offered under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
-See `translation/LICENSE`.
+of the SMF recompositions, prepared for this project. Numbering of
+statements follows the original exposés. The translator’s contribution
+is offered under the MIT License, except SGA 1, Exposé III (CC BY-SA 4.0,
+see above). See `translation/LICENSE`.
 
+No license in this repository grants any rights in the French original.
 If you are a rights holder and believe this use is not appropriate,
 open a GitHub issue or contact the repository owner.
 
 ## Lean formalization
 
-Lean source in `lean/SGA/` is original work of this project, building on
-[mathlib4](https://github.com/leanprover-community/mathlib4) (Apache-2.0).
-Mathlib already contains the language of fibered categories as in
-SGA 1 VI (cartesian morphisms, (pre)fibered categories, fibers, the
-Grothendieck construction) and the language of descent data / (pre)stacks.
-This repository records the correspondence with Grothendieck’s numbering
-and adds statements that mathlib does not yet name (in particular
-categories fibered in groupoids, and cofibered / bifibered categories
-as in SGA 1 VI.10).
+Lean source in `lean/SGA/` is original work of this project, apart from the
+Apache-2.0 file listed above, building on
+[mathlib4](https://github.com/leanprover-community/mathlib4). It covers
+SGA 1 (every exposé, with the open items listed in `docs/formalization.md`)
+and parts of SGA 2, Exposés I–VII. Prerequisites that mathlib lacks are in
+`lean/SGA/Foundations/`, written in mathlib's style.

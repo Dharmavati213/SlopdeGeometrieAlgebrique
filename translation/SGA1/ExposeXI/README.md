@@ -113,5 +113,5 @@ The reviewer confirmed all the translator's source points and added the
 query on `G`/`𝒢` in XI.5. These checks do not settle the mathematical
 questions above; scholarly proofreading remains outstanding.
 
-License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
+License: [`../../LICENSE`](../../LICENSE) (MIT for the
 translator's contribution).

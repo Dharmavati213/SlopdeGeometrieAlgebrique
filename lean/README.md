@@ -11,8 +11,37 @@ lake build
 Root modules: `SGA.SGA1.ExposeI` … `SGA.SGA1.ExposeXIII` (no Exposé VII), `SGA.Foundations`
 (prerequisites of SGA 1 that mathlib lacks; see `SGA/Foundations/README.md`), `SGA.SGA2.ExposeI`,
 `SGA.SGA2.ExposeII`, `SGA.SGA2.ExposeIII`, `SGA.SGA2.ExposeIV`, `SGA.SGA2.ExposeV`,
-`SGA.SGA2.ExposeVI`, and `SGA.SGA2.ExposeVII`. Lemmas live in the matching
-exposé directories and are imported from the barrel modules. SGA 2 has partial Exposé I
+`SGA.SGA2.ExposeVI`, and `SGA.SGA2.ExposeVII`, all imported by [`SGA.lean`](SGA.lean). Lemmas
+live in the matching exposé directories and are imported from the barrel modules; each barrel's
+module docstring lists its files and what they prove.
+
+Lean files are MIT-licensed, like the rest of the repository, and start with the MIT copyright
+header; `lakefile.toml` sets mathlib's header linter to expect it. The one exception is
+`SGA/SGA2/ExposeII/ProjectiveComplexLift.lean`, adapted from mathlib and kept under Apache-2.0
+(see [`../COPYRIGHT.md`](../COPYRIGHT.md)).
+
+## SGA 1
+
+Every exposé (I–VI, VIII–XIII) is formalized, following
+[`SGA/SGA1/CONVENTIONS.md`](SGA/SGA1/CONVENTIONS.md): mathlib naming, and the SGA number at the
+start of each docstring. Exposés I, II, IV–VI, VIII, XI and XII have every numbered statement
+proved, up to the restrictions recorded in the formalization notes; III, IX, X and XIII are mostly
+proved. A statement that is not proved is kept as a faithful `Prop`-valued `…Statement`
+definition, and the consequences SGA draws from it are proved with it as a hypothesis.
+
+Prerequisites that mathlib lacks (ampleness and quasi-projective morphisms, henselization and
+étale stalks, differentials, the cohomology of proper morphisms, formal schemes, torsors and
+étale sheaves, pro-objects, noetherian approximation, complex analytic spaces, …) are in
+[`SGA/Foundations/`](SGA/Foundations/), in mathlib namespaces and style. Its
+[README](SGA/Foundations/README.md) lists the results that are out of scope (Hodge theory, abelian
+varieties, resolution of singularities, GAGA, triangulation, SGA 4 étale cohomology).
+
+`lake env lean CheckSGA1Axioms.lean` checks every declaration of `SGA.SGA1.*` and
+`SGA.Foundations.*` modules. Only `propext`, `Classical.choice`, and `Quot.sound` are allowed.
+
+## SGA 2
+
+SGA 2 has partial Exposé I
 foundations, actual open extension by zero, the natural derived-supported-section
 comparison with Ext, and ordinary and closed-supported flasque acyclicity,
 affine supported-section and degree-zero comparisons in

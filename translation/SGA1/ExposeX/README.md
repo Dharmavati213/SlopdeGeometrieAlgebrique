@@ -128,5 +128,5 @@ noted that `\overline a` in X.2.2 was introduced by the SMF correction.
 These checks do not settle the mathematical questions above; scholarly
 proofreading remains outstanding.
 
-License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
+License: [`../../LICENSE`](../../LICENSE) (MIT for the
 translator's contribution).

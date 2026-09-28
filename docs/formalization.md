@@ -974,7 +974,7 @@ additional mathematical axioms, `sorryAx`, and native evaluation axioms
 cause failure. This verifies the axiom requirement for the imported library,
 not completeness of the source coverage.
 
-## Next geometric dependencies
+## Next geometric dependencies (SGA 2)
 
 `InjectiveFlasque.lean` proves that injective abelian sheaves are flasque
 using sheafification, free abelian groups, and Yoneda. `FlasqueCohomology.lean`

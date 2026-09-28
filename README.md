@@ -1,4 +1,6 @@
-# SGA, English + Lean
+# Slop de Géométrie Algébrique
+
+*SGA, English + Lean.*
 
 > ✨ **Welcome.** In today's rapidly evolving landscape of algebraic geometry, Grothendieck's *Séminaire de Géométrie Algébrique* remains a timeless tapestry of ideas — and yet, for too long, English readers and Lean formalizers have been left behind. That changes now. Let's dive in. 🚀
 
@@ -34,8 +36,9 @@ on [mathlib](https://github.com/leanprover-community/mathlib4).
 This is a working tree, not a finished edition. SGA 1 is translated in
 full (front matter and Exposés I–VI, VIII–XIII; VII does not exist), as is
 SGA 2 (Introduction and Exposés I–XIV);
-SGA 1 is formalized in Lean against mathlib exposé by exposé, with the open and
-out-of-scope items listed in [`docs/formalization.md`](docs/formalization.md). SGA 2 has partial
+SGA 1 is formalized in Lean against mathlib exposé by exposé, with the open items listed in
+[`docs/formalization.md`](docs/formalization.md) and the out-of-scope ones in
+[`lean/SGA/Foundations/README.md`](lean/SGA/Foundations/README.md). SGA 2 has partial
 Lean formalizations of Exposés I–VII, with exact coverage and remaining
 gaps recorded in [`docs/formalization.md`](docs/formalization.md).
 
@@ -45,6 +48,7 @@ gaps recorded in [`docs/formalization.md`](docs/formalization.md).
 translation/     English TeX + PDF
 lean/            Lean 4 library (Lake + mathlib)
 docs/            status and formalization notes
+LICENSES/        full texts of licenses other than MIT
 ```
 
 | Work | State |
@@ -68,7 +72,7 @@ Sources and licenses: [`COPYRIGHT.md`](COPYRIGHT.md).
 ## Claiming work
 
 To translate an exposé or formalize a stretch of one, [open an
-issue](https://github.com/Dharmavati213/SGAenglishpluslean/issues/new/choose)
+issue](https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique/issues/new/choose)
 and say what you intend to do (which SGA, which exposé or section).
 That is how a claim is made; it keeps two people off the same text.
 
@@ -106,10 +110,18 @@ To check all imported SGA 1 and foundation declarations (resp. SGA 2 declaration
 additional axioms, run `lake env lean CheckSGA1Axioms.lean` (resp. `CheckSGA2Axioms.lean`)
 from `lean/`.
 
+There is no CI: the full Lean build outgrows GitHub's hosted runners. Run `make lean`
+(and `make tex` if you touched TeX) locally before opening a pull request.
+
 ## License
 
-- Lean code, docs, and repo tooling: [Apache-2.0](LICENSE)
-- English translation: [CC BY-SA 4.0](translation/LICENSE)
+[MIT](LICENSE): the Lean code, the English translation, the docs, and the repo tooling.
+Two exceptions keep the license they came with:
 
-This is not an official edition of SGA. The French original is not in
-this repository.
+- SGA 1, Exposé III, English (`translation/SGA1/ExposeIII/`): contributed under
+  [CC BY-SA 4.0](translation/SGA1/ExposeIII/LICENSE).
+- `lean/SGA/SGA2/ExposeII/ProjectiveComplexLift.lean`: adapted from mathlib,
+  [Apache-2.0](LICENSES/Apache-2.0.txt).
+
+Details: [`COPYRIGHT.md`](COPYRIGHT.md). This is not an official edition of SGA. The
+French original is not in this repository, and no license here covers it.

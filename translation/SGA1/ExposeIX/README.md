@@ -125,5 +125,5 @@ the proof of IX.6.1 (`b'`) and IX.6.12 (*et*/*est*), and settled IX.4.12
 as above. These checks do not settle the mathematical questions above;
 scholarly proofreading remains outstanding.
 
-License: [`../../LICENSE`](../../LICENSE) (CC BY-SA 4.0 for the
+License: [`../../LICENSE`](../../LICENSE) (MIT for the
 translator's contribution).

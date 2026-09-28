@@ -1,16 +1,10 @@
-Creative Commons Attribution-ShareAlike 4.0 International
-
 The English translations in this directory (the translator's original
-contribution) are licensed under CC BY-SA 4.0.
+contribution) are licensed under the MIT License; see `../LICENSE`.
 
-  https://creativecommons.org/licenses/by-sa/4.0/
-  https://creativecommons.org/licenses/by-sa/4.0/legalcode
+Exception: the English translation of SGA 1, Exposé III, in
+`SGA1/ExposeIII/`, was contributed under CC BY-SA 4.0 and remains under
+that license; see `SGA1/ExposeIII/LICENSE`.
 
-You are free to share and adapt the translation, even commercially,
-provided you give appropriate credit, indicate if changes were made,
-and distribute your contributions under the same license.
-
-This license covers the English translation as a derivative scholarly
-work. It does not transfer any rights in the French original of SGA,
-which is not redistributed in this repository. See `COPYRIGHT.md` at the
-repository root.
+The license covers the English translation only. It does not grant any
+rights in the French original of SGA, which is not redistributed in this
+repository. See `COPYRIGHT.md` at the repository root.
