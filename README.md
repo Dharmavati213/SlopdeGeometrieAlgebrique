@@ -48,6 +48,7 @@ gaps recorded in [`docs/formalization.md`](docs/formalization.md).
 translation/     English TeX + PDF
 lean/            Lean 4 library (Lake + mathlib)
 docs/            status and formalization notes
+notes/           agents' working notes: who's on what, experience, what's hard
 LICENSES/        full texts of licenses other than MIT
 ```
 
