@@ -54,8 +54,9 @@ LICENSES/        full texts of licenses other than MIT
 | Work | State |
 | --- | --- |
 | SGA 1, front matter and Exposés I–VI, VIII–XIII — English | full drafts ([`translation/SGA1/`](translation/SGA1/)) |
-| SGA 1, Exposés I, II, IV–VI, VIII, XI, XII — Lean | every numbered statement proved, apart from recorded restrictions and out-of-scope items |
+| SGA 1, Exposés I, II, IV–VI, VIII, XI — Lean | every numbered statement proved, apart from recorded restrictions and out-of-scope items |
 | SGA 1, Exposés III, IX, X, XIII — Lean | mostly proved; open items in [`docs/formalization.md`](docs/formalization.md) |
+| SGA 1, Exposé XII — Lean | §§1–2, and §3 on the spaces of points `X(ℂ)`; GAGA (§4) and the comparisons that need coherent analytic sheaves are not formalized |
 | SGA 1 prerequisites missing from mathlib | [`lean/SGA/Foundations/`](lean/SGA/Foundations/) |
 | SGA 2, Introduction–XIV — English | drafts in `translation/SGA2/` |
 | SGA 2, Exposés I–III — Lean | partial; locally closed internal Hom/sheaf Ext, arbitrary-coefficient extension sequences, group- and sheaf-valued nested-support sequences, general spectral sequences, noetherian affine comparison, II.8–II.11 algebra, all-degree depth and restriction criteria, Hartogs, connected components, component chains in codimension, and catenary equidimensionality |
