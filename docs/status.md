@@ -44,7 +44,7 @@ out-of-scope items in [`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations
 | IX | Descent of étale morphisms; application to the fundamental group | full draft in tree | partial |
 | X | Specialization of the fundamental group | full draft in tree | partial |
 | XI | Examples and complements | full draft in tree | proved (two items out of scope) |
-| XII | Algebraic geometry and analytic geometry | full draft in tree | proved (two items out of scope) |
+| XII | Algebraic geometry and analytic geometry | full draft in tree | partial |
 | XIII | Cohomological properness (sets and non-commutative groups) | full draft in tree | partial |
 
 "Reviewed" means the pre-existing English was compared sentence by
@@ -107,7 +107,7 @@ listed in [`formalization.md`](formalization.md).
 - [ ] **IX** Descent of étale morphisms (IX.1.10 for projective `X`; see `formalization.md`)
 - [ ] **X** Specialization of the fundamental group (X.2.1–X.2.4 for projective `X`; X.3.8 open)
 - [x] **XI** Examples and complements (XI.1.4 and XI.2.1 out of scope)
-- [x] **XII** Algebraic geometry and analytic geometry (XII.5.1 and triangulation out of scope)
+- [ ] **XII** Algebraic geometry and analytic geometry (§§1–2 and §3 on the spaces of points `X(ℂ)`; XII.3.1 (i)–(vi), §4 (GAGA) and XII.5.3–XII.5.5 not formalized; XII.5.1 and triangulation out of scope)
 - [ ] **XIII** Cohomological properness (§1, §2, §4 and Appendix I in part; §3 out of scope)
 
 ---

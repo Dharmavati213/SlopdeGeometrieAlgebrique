@@ -28,7 +28,9 @@ class of the dual is the inverse (`Scheme.LineBundle.class_dual`), and two line 
 same class iff `L ⊗ L'^∨` has a coboundary as cocycle (`Scheme.LineBundle.class_eq_class_iff`).
 Thus `Pic X` is the group of isomorphism classes of line bundles.
 
-Not formalized: the comparison with `H¹(X_et, 𝔾_m)` and `H¹(X_fpqc, 𝔾_m)` (Hilbert 90).
+The comparison `H¹(X_fpqc, 𝔾_m) ≅ Pic X` (Hilbert 90) is proved in SGA 1 XI.5.3
+(`SGA.SGA1.ExposeXI.h1GmMulEquivPic`, in `SGA.SGA1.ExposeXI.PicardComparison`). Not formalized:
+the comparison with `H¹(X_et, 𝔾_m)`.
 
 ## References
 
