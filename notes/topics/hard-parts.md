@@ -394,9 +394,17 @@ The full table, with files, is in [`lean/SGA/Foundations/README.md`](../../lean/
 The README was written at the user's request on 2026-09-27 (deps.md). Each item stays a
 faithful `…Statement`, and its consequences are proved from it.
 
+A triage of every item below (2026-10-03, sga1-oos) found cheaper routes for several of them:
+X.2.9 over ℂ needs only the easy half of XII.5.2, XIII.4.6 has a resolution-free route, and
+XII.5.2 needs only local path-connectedness + semilocal simple connectedness. See
+`../log/2026-10-03-sga1-oos-out-of-scope-triage.md`; those claims are not proved yet.
+
 - X.2.9 `TopologicallyFiniteStatement`: uses the transcendental X.2.6 (Riemann existence over ℂ).
 - XI.1.4 `SerreUnirationalSimplyConnectedStatement`: needs Hodge theory in characteristic 0 and Riemann–Roch.
-- XI.2.1 `SerreLangStatement`: needs the theory of abelian varieties (rigidity, isogenies).
+- XI.2.1 `SerreLangStatement`: RESOLVED (2026-10-03, sga1-xi21) by `serreLangStatement`
+  (`lean/SGA/SGA1/ExposeXI/SerreLang.lean`), with no abelian-variety theory: commutativity of
+  `π₁(A)` plus Künneth X.1.7 plus the lifting criterion. SGA's actual XI.2.1,
+  `π₁(A) ≅ lim_n K_n` (Tate module), is still not stated; it needs the kernels of `n_A`.
 - XII.5.1 `RiemannExistenceStatement`, `SchemeRiemannExistenceStatement`: need GAGA and Grauert–Remmert.
 - XII.5.2 for singular `X`, `LocallyContractibleStatement`: needs triangulation of complex varieties.
 - XIII 1.4 `ProperBaseChangeStatement`: is the proper base change theorem (SGA 4 XII 5.1).

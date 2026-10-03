@@ -49,6 +49,7 @@ import SGA.SGA1.ExposeXI.RamifiedLattice
 import SGA.SGA1.ExposeXI.TameDiscriminant
 import SGA.SGA1.ExposeXI.TameCovering
 import SGA.SGA1.ExposeXI.TameGaloisCovering
+import SGA.SGA1.ExposeXI.SerreLang
 
 /-!
 # SGA 1, Exposé XI — Examples and complements
@@ -74,7 +75,9 @@ This module is the barrel for the Lean formalization of the exposé.
   triviality of Galois coverings of `𝔸¹` of degree prime to `p` (`TameGaloisCovering`).
   XI.2, the fundamental group of a proper connected reduced monoid scheme (e.g. an abelian
   variety) over an algebraically closed field is commutative, by X.1.7
-  (`AbelianFundamentalGroup`).
+  (`AbelianFundamentalGroup`). The key step of XI.2.1 (Serre–Lang): every connected étale
+  covering of an abelian variety is dominated by multiplication by some `n > 0`, since `n_A`
+  induces `σ ↦ σⁿ` on the commutative group `π₁(A)` (`SerreLang`).
 * §4 (principal homogeneous bundles): XI.4.1–XI.4.3 over an arbitrary base (`PrincipalBundle`);
   XI.4.4–XI.4.5 for group schemes and sheaves of groups, with the homomorphism properties of `∂`
   and of `H¹` (`GroupSchemeSequence`, `AbelianH1`); XI.4.7, locally trivial bundles and Zariski
@@ -100,5 +103,6 @@ This module is the barrel for the Lean formalization of the exposé.
   `Γ(S)/℘Γ(S) ≅ Hom_cont(π₁(S), ℤ/p)` (`ArtinSchreierScheme`).
 
 Not formalized: the identification of `H¹(S_Zar, GL_n(𝒪_S))` with locally free Modules of rank
-`n`; Serre's theorem XI.1.4 (Hodge theory) and the Serre–Lang theorem XI.2.1 (statements only).
+`n`; Serre's theorem XI.1.4 (Hodge theory, statement only); in XI.2.1, the identification of
+`π₁(A)` with the Tate module `lim_n K_n`.
 -/

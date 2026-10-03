@@ -293,10 +293,11 @@ theorem isCommMonObj_of_abelianVariety {K : Type u} [Field K] (G : Over (Spec (.
     [IsProper G.hom] [GeometricallyIntegral G.hom] [GrpObj G] : IsCommMonObj G :=
   isCommMonObj_of_isProper_of_geometricallyIntegral G
 
-/-- XI.2.1 (statement only; Serre–Lang): every connected finite étale covering of an abelian
-variety `A` over an algebraically closed field is dominated by multiplication by some `n > 0`.
-This is the key step of SGA's proof that `π₁(A) = lim_n K_n` (the Tate module), where `K_n` is
-the group of `n`-torsion points. -/
+/-- XI.2.1, key step (Serre–Lang): every connected finite étale covering of an abelian variety `A`
+over an algebraically closed field is dominated by multiplication by some `n > 0`. This is the
+key step of SGA's proof that `π₁(A) = lim_n K_n` (the Tate module), where `K_n` is the group of
+`n`-torsion points; that identification is not formalized. Proved as `serreLangStatement` (in
+`SerreLang`). -/
 def SerreLangStatement : Prop :=
   ∀ (k : Type u) [Field k] [IsAlgClosed k] (A : Over (Spec (.of k))) [GrpObj A]
     [IsProper A.hom] [Smooth A.hom] [ConnectedSpace A.left] ⦃Y : Scheme.{u}⦄ (f : Y ⟶ A.left)

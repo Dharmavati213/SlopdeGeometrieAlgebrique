@@ -318,6 +318,12 @@ briefs and from agents.
 - **VIII.6.4.** The finite quasi-coherent subalgebra of the normalization was glued with mathlib's
   `relativeGluingData`, instead of going through EGA I 9.4.7 (F-Proj-7).
 - **`FEt.hasQuotients` for every base `S`.** This made `π₁` unconditional, in one round (V-a-2).
+- **XI.2.1 (Serre–Lang key step) without abelian-variety theory** (2026-10-03, sga1-xi21). It was
+  listed as out of scope ("needs rigidity, isogenies"). `π₁(A)` commutative (XI.2) and Künneth
+  (X.1.7) give `(n_A)_* σ = σⁿ`; `σ^deg` fixes the fibre, so `n_A` lifts by the lifting
+  criterion. About 360 lines, one session (`ExposeXI/SerreLang.lean`). Trick for base points:
+  when the target `π₁` is commutative, `autMap H e` does not depend on `e` or on `H` up to iso
+  (`autMap_eq_of_iso_of_comm`), so `π₁` is strictly functorial (`pointedMap_pointedMap`).
 
 **Estimates against outcomes.** The estimates came from the agents themselves. Several large ones
 were met in a single round:
