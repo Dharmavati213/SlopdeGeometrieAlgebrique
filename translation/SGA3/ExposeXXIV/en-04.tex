@@ -1,0 +1,253 @@
+% original PDF p. 21; continuation of Proposition 3.13
+There exists a canonical isomorphism of $S$-group schemes
+\[
+T\isomto\prod_{\underline{\operatorname{Dyn}}(G)/S}\mathbf G_{\mathrm m,\underline{\operatorname{Dyn}}(G)}.
+\]
+(Recall (cf. Exp.~II, §~1) that the right-hand side is by definition the $S$-functor which associates to $S'\to S$ the group $\Gm(\underline{\operatorname{Dyn}}(G)\times_S S')$, or, equivalently, $\Gm(\underline{\operatorname{Dyn}}(G_{S'}))$.)
+\end{proposition}
+\begin{proof}[First proof]
+For simplicity let us give it in the adjoint case. Consider the composite morphism
+\[
+T\to\prod_{\mathscr D/S}T_{\mathscr D}\to\prod_{\mathscr D/S}\mathbf G_{\mathrm m,\mathscr D},
+\]
+where the first morphism is the canonical morphism and the second is $\prod_{\mathscr D/S}\alpha_{\mathscr D}$ (we have put $\mathscr D=\underline{\operatorname{Dyn}}(G)$). To verify that this morphism is an isomorphism, one may suppose $G$ split; now, in this case, it is nothing other than the morphism $T\to(\mathbf G_{\mathrm m,S})^\Delta$ with components $\alpha$, for $\alpha\in\Delta$, and the latter is an isomorphism (Exp.~XXII, 4.3.8).
+\end{proof}
+\begin{proof}[Second proof]
+By 2.8, 3.5 and 3.11, one may suppose that $G=\operatorname{Q\text{-}\acute Ep}_{S'/S}(\mathscr R)$, $T$ being the canonical maximal torus. Over $S'$, one has by Exp.~XXII 4.3.8 an isomorphism $T_{S'}\isomto(\mathbf G_{\mathrm m,S'})^\Delta$, defined by the simple roots (resp. the simple coroots). The group $E$ acts on the right-hand side by permuting $\Delta$. Now the bundle associated to $S'/S$ by $E\to\Aut(\Delta)$ is $\underline{\operatorname{Dyn}}(G)$ (3.7), and one concludes at once.
+\end{proof}
+Using Prop.~8.4 of the appendix, one derives:
+\begin{corollary}{3.14}\label{XXIV.3.14}
+Under the preceding conditions, one has
+\[
+\mathrm H^1(S,T)\isomto\mathrm H^1(\underline{\operatorname{Dyn}}(G),\Gm)\isomto\Pic(\underline{\operatorname{Dyn}}(G)).
+\]
+In particular, $\mathrm H^1(S,T)=0$ when $S$ is semi-local.
+\end{corollary}
+\begin{remark}{3.15}\label{XXIV.3.15}
+Let $S$ be a scheme, $G$ (resp. $G'$) a reductive $S$-group, $B\supset T$ (resp. $B'\supset T'$) a Killing pair of $G$ (resp. $G'$), and $u\in\underline{\operatorname{Isomext}}(G,G')(S)$. Put (cf. 2.10)
+\[
+P=\underline{\operatorname{Isomint}}_u(G,B,T;G',B',T');
+\]
+it is a principal homogeneous bundle under $T^{\mathrm{ad}}$ (by $(f,t)\mto f\circ\mathrm{int}(t)$).
+
+Let, on the other hand, $\mathscr D=\underline{\operatorname{Dyn}}(G)=\underline{\operatorname{Dyn}}(G')$ (identified by means of $u$ (3.5)), and let $L=\underline{\Isom}_{\mathscr D}(\mathfrak g^{\mathscr D},\mathfrak g'^{\mathscr D})$ be the principal homogeneous bundle under $\mathbf G_{\mathrm m,\mathscr D}$ defined by the invertible $\OO_{\mathscr D}$-module
+\[
+\underline{\Hom}_{\OO_{\mathscr D}}(\mathfrak g^{\mathscr D},\mathfrak g'^{\mathscr D})=\mathfrak g'^{\mathscr D}\otimes(\mathfrak g^{\mathscr D})^\vee.
+\]
+Each $f\in P(S')$ defines an isomorphism of $\mathfrak g^{\mathscr D}\otimes_{\OS}\OO_{S'}$ onto $\mathfrak g'^{\mathscr D}\otimes_{\OS}\OO_{S'}$, whence a canonical morphism
+\[
+P\to\prod_{\mathscr D/S}L.
+\]
+This morphism is an \emph{isomorphism}, compatible with the isomorphism of acting groups
+\[
+T^{\mathrm{ad}}\isomto\prod_{\mathscr D/S}\mathbf G_{\mathrm m,\mathscr D}
+\]
+defined above.
+% original PDF p. 22
+Indeed, it suffices to verify it in the case where the two groups are pinned, where it is easy.
+
+It follows in particular that in the isomorphism
+\[
+\mathrm H^1(S,T^{\mathrm{ad}})\isomto\Pic(\underline{\operatorname{Dyn}}(G))
+\]
+of 3.14, the class of the bundle $P$ is taken to $\operatorname{cl}(\mathfrak g'^{\mathscr D})-\operatorname{cl}(\mathfrak g^{\mathscr D})$. The bundle $P$ is therefore trivial if and only if $\mathfrak g'^{\mathscr D}$ and $\mathfrak g^{\mathscr D}$ are isomorphic.
+
+If $(G,B,T)$ is quasi-splittable, for example if for $G$ one takes the group $G'_{\text{q-pin.}}$, with its canonical Killing pair, it follows that the image of the class of $P$ is nothing other than the obstruction to the quasi-splitting of $G'$ defined in 3.9.
+\end{remark}
+\numpara{3.16}\label{XXIV.3.16}\textbf{Symmetries}
+\numpara{3.16.1}\label{XXIV.3.16.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $B\supset T$ a Killing pair of $G$. Put $\mathscr D=\underline{\operatorname{Dyn}}(G)$. Recall (Exp.~XXII, 5.9.1) that there exists a unique Borel subgroup $B^-$ of $G$ such that $B\cap B^-=T$. If $X\in\Gamma(\mathscr D,\mathfrak g^{\mathscr D})^\times$ defines a quasi-pinning of $G$ relative to $(B,T)$ (3.9), then $Y=-X^{-1}\in\Gamma(\mathscr D,(\mathfrak g^{\mathscr D})^\vee)^\times$ defines a quasi-pinning of $G$ relative to $(B^-,T)$; one says that it is the \emph{opposite quasi-pinning}.
+
+If $\mathscr R$ is a reduced pinned root datum and $\mathscr E$ an $\mathscr R$-pinning of the reductive $S$-group $G$, one defines an $\mathscr R$-pinning $\mathscr E^-$ said to be \emph{opposite to $\mathscr E$} as follows: one keeps the same maximal torus $T$, takes the opposite of the isomorphism $\mathrm D_S(M)\isomto T$, and ``pins'' by $Y_\alpha=-X_\alpha^{-1}\in\Gamma(S,\mathfrak g^{-\alpha})^\times$, for $\alpha\in\Delta$. The quasi-pinning underlying $\mathscr E^-$ is the quasi-pinning opposite to the quasi-pinning underlying $\mathscr E$.
+\begin{remark*}
+In the notation of Exp.~XIX, 3.1, if one puts
+\[
+w_\alpha(X_\alpha)=\exp(X_\alpha)\exp(-X_\alpha^{-1})\exp(X_\alpha),
+\]
+one has $w_\alpha(X_\alpha)=w_{-\alpha}(Y_\alpha)$ (loc. cit., 3.1 (vi)).
+\end{remark*}
+\begin{proposition}{3.16.2}\label{XXIV.3.16.2}
+Let $S$ be a scheme and $G$ a reductive $S$-group.
+\begin{enumeratei}
+\item Let $T$ be a maximal torus of $G$; there exists a unique
+\[
+i_T\in\bigl(\underline{\Aut}_{S\text{-gr.}}(G,T)/T^{\mathrm{ad}}\bigr)(S)\subset\Aut_{S\text{-gr.}}(T)
+\]
+such that $i_T(t)=t^{-1}$ for every section $t$ of $T$.
+\item Let $(B,T)$ be a Killing pair of $G$; there exists a unique section
+\[
+w_{B,T}\in(\uNorm_G(T)/T)(S)=\mathrm W_G(T)(S)
+\]
+such that $\mathrm{int}(w_{B,T})(B)=B^-$ (with the evident abuse of language).
+\item Let $\mathscr Q=(B,T,X)$ be a quasi-pinning of $G$, and $\mathscr Q^-=(B^-,T,Y)$ the opposite quasi-pinning; there exists a unique inner automorphism of $G$
+\[
+n_{\mathscr Q}\in\uNorm_{\ad(G)}(T^{\mathrm{ad}})(S)\subset\Aut_{S\text{-gr.}}(G)
+\]
+such that $n_{\mathscr Q}(\mathscr Q)=\mathscr Q^-$, i.e. $n_{\mathscr Q}(T)=T$, $n_{\mathscr Q}(B)=B^-$, $n_{\mathscr Q}(X)=Y$.
+% original PDF p. 23
+\item Let $(\mathscr R,\mathscr E)$ be a pinning of $G$, and $(\mathscr R,\mathscr E^-)$ the opposite pinning; there exists a unique automorphism of $G$
+\[
+u_{\mathscr E}\in\Aut_{S\text{-gr.}}(G,T)\subset\Aut_{S\text{-gr.}}(G)
+\]
+such that $u_{\mathscr E}(\mathscr E)=\mathscr E^-$, i.e. $u_{\mathscr E}(t)=t^{-1}$ for every section $t$ of $T$, and $\Ad(u_{\mathscr E})X_\alpha=Y_\alpha$ for every $\alpha\in\Delta$.
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+(ii) follows from Exp.~XXII, 5.5.5 (ii), then (iii) follows from 3.10, and (iv) follows from Exp.~XXIII, 4.1. Finally, to prove (i), one may suppose $G$ pinned. Existence follows from (iv), for example, and uniqueness from the fact that an automorphism of $G$ inducing the identity on $T$ is given by a section of $T^{\mathrm{ad}}$ (2.11).
+\end{proof}
+\begin{corollary}{3.16.3}\label{XXIV.3.16.3}
+One has
+\[
+i_T^2=w_{B,T}^2=n_{\mathscr Q}^2=u_{\mathscr E}^2=e.
+\]
+Moreover, $i_T$ (resp. $u_{\mathscr E}$) is $\ne e$ if $G\ne e$, and $w_{B,T}$ (resp. $n_{\mathscr Q}$) is $\ne e$ if $G$ is not a torus.
+\end{corollary}
+\begin{corollary}{3.16.4}\label{XXIV.3.16.4}
+In the situation of (iii) (resp. (iv)), $n_{\mathscr Q}$ projects to $w_{B,T}$ (resp. $u_{\mathscr E}$ projects to $i_T$) under the canonical morphism
+\[
+\uNorm_{\ad(G)}(T^{\mathrm{ad}})\to\mathrm W_{\ad(G)}(T^{\mathrm{ad}})\simeq\mathrm W_G(T),
+\]
+resp.
+\[
+\underline{\Aut}_{S\text{-gr.}}(G,T)\to\underline{\Aut}_{S\text{-gr.}}(G,T)/T^{\mathrm{ad}}.
+\]
+\end{corollary}
+\begin{corollary}{3.16.5}\label{XXIV.3.16.5}
+The preceding definitions are compatible with extension of the base, and are functorial under isomorphism (in an evident sense).
+\end{corollary}
+\begin{proposition}{3.16.6}\label{XXIV.3.16.6}
+\begin{enumeratei}
+\item One can define uniquely for every reductive group $G$ over a scheme $S$ an element
+\[
+s_G\in\underline{\operatorname{Autext}}(G)(S)
+\]
+in such a way that this construction is functorial in $G$ under isomorphism, is compatible with base change, and whenever $T$ is a maximal torus of the reductive $S$-group $G$, $s_G$ is the image of $i_T$ under the canonical morphism
+\[
+\underline{\Aut}_{S\text{-gr.}}(G,T)/T^{\mathrm{ad}}\to\underline{\operatorname{Autext}}(G).
+\]
+\item One has $s_G^2=e$, and $s_G$ is a central element of $\underline{\operatorname{Autext}}(G)$.
+\item Under the conditions of 3.16.2 (ii), if one identifies $\underline{\Aut}_{S\text{-gr.}}(G,B,T)/T^{\mathrm{ad}}$ with $\underline{\operatorname{Autext}}(G)$ (2.2), one has
+\[
+w_{B,T}i_T=i_Tw_{B,T}=s_G.
+\]
+\item Under the conditions of 3.16.2 (iv), if one identifies $\Aut_{S\text{-gr.-pin}}(G,\mathscr R,\mathscr E)$ with $\underline{\operatorname{Autext}}(G)$ (1.3 (iii)), one has
+\[
+n_{\mathscr E}u_{\mathscr E}=u_{\mathscr E}n_{\mathscr E}=s_G.
+\]
+\end{enumeratei}
+\end{proposition}
+% original PDF p. 24
+\begin{proof}
+(i) is proved without difficulty by descent. Moreover, since $i_T$ is evidently a central section of square $e$ in $\Aut_{S\text{-gr.}}(T)$, (ii) follows immediately; (iii) is a consequence of (iv) by descent. Finally, under the conditions of (iv), it is clear that $n_{\mathscr E}u_{\mathscr E}=u_{\mathscr E}n_{\mathscr E}$ and that this automorphism of $G$ respects the pinning; under the identification made, it is therefore equal to its image in $\underline{\operatorname{Autext}}(G)$; but $n_{\mathscr E}$ is inner and $u_{\mathscr E}$ projects to $s_G$.
+\end{proof}
+\begin{remark}{3.16.7}\label{XXIV.3.16.7}
+(i) One determines $s_G$ explicitly in each case of the classification by means of (iii): for each irreducible pinned root datum, it suffices to compose the symmetry about the origin with the symmetry in the Weyl group (i.e. the element $w_0$ of the Weyl group such that $w_0(\Delta)=-\Delta$). One finds the following results: $s_G=e$ except for $A_n$ ($n\geq2$), $D_n$ ($n$ odd) and $E_6$, in which case $s_G$ is the unique nontrivial ``outer automorphism''.
+
+(ii) The automorphism $u_{\mathscr E}$ is the one used to construct ``the compact real forms'' in the theory of semisimple Lie algebras.
+\end{remark}
+\begin{remark}{3.16.8}\label{XXIV.3.16.8}
+In 3.16.1 one has defined an involution on the $S$-scheme
+\[
+Q=\underline{\operatorname{Isomint}}(G_{\text{q-pin.}},G)
+\]
+of quasi-pinnings of $G$ (cf. 3.12.1); by transport of structure from $G_{\text{q-pin.}}$ to $G$, one sees at once that this involution is given by the action of an element of $\ad(G_{\text{q-pin.}})(S)$: the element $n_0$ defined (3.16.2 (iii)) by the canonical quasi-pinning of $G_{\text{q-pin.}}$.
+
+In the same way, one has defined an involution on the $S$-scheme
+\[
+P=\underline{\Isom}_{S\text{-gr.}}(\operatorname{\acute Ep}_S(\mathscr R),G)
+\]
+of $\mathscr R$-pinnings of $G$ (cf. 1.20). Reasoning as before, one sees that this involution is given by the action of the automorphism $u_0$ of $\operatorname{\acute Ep}_S(\mathscr R)$ defined (3.16.2 (iv)) by the canonical pinning of $\operatorname{\acute Ep}_S(\mathscr R)$.
+\end{remark}
+
+\sgasection{4}{Isotriviality of reductive groups and principal bundles under reductive groups}
+\numpara{4.1}\label{XXIV.4.1}\textbf{Definitions. Isotriviality theorem}
+\begin{definition}{4.1.1}\label{XXIV.4.1.1}
+Let $S$ be a scheme, $G$ an $S$-group scheme, and $P$ a principal homogeneous bundle under $G$. One says that $P$ is \emph{locally isotrivial} (resp. \emph{semi-locally isotrivial}) if for every point $s\in S$ (resp. every finite set $F$ of points of $S$ contained in an affine open subset) there exist an open subset $U$ of $S$ containing $s$ (resp. $F$) and a finite surjective étale morphism $S'\to U$ such that $P_{S'}$ is trivial.
+\end{definition}
+\begin{definition}{4.1.2}\label{XXIV.4.1.2}
+Let $S$ be a scheme and $G$ a reductive $S$-group. One says that $G$ is locally isotrivial (resp. semi-locally isotrivial) if for every point $s\in S$ (resp. every finite set $F$ of points of $S$ contained in an affine open subset) there exist an open subset $U$ of $S$ containing $s$ (resp. $F$) and a finite surjective étale morphism $S'\to U$ such that $G_{S'}$ is splittable.
+\end{definition}
+\begin{remark}{4.1.3}\label{XXIV.4.1.3}
+(i) The equivalence of categories of 1.17 respects, by definition, local (resp. semi-local) isotriviality.
+% original PDF p. 25
+
+(ii) Add to the conditions of 4.1.1: $G$ locally of finite presentation over $S$. Then the principal bundle $P$ (or the reductive group $G$) is locally isotrivial (resp. semi-locally isotrivial) if and only if for every $S'\to S$, with $S'$ local (resp. semi-local), $P_{S'}$ is isotrivial (or $G_{S'}$ is isotrivial), i.e. if there exists a finite surjective étale morphism $S''\to S'$ such that $P_{S''}$ is trivial (or $G_{S''}$ split).
+
+(iii) In the case of tori, Definition 4.1.2 coincides with that of Exp.~IX, 1.1.
+\end{remark}
+\numpara{4.1.4}\label{XXIV.4.1.4}
+Recall (Exp.~XXII, 4.3 and 6.2) that for every reductive group $G$ we have introduced the groups $\operatorname{rad}(G)$, $\operatorname{corad}(G)$ and $\operatorname{der}(G)$. The groups $\operatorname{rad}(G)$ and $\operatorname{corad}(G)$ are tori, which are split when $G$ is split; moreover, there exists an isogeny $\operatorname{rad}(G)\to\operatorname{corad}(G)$. The $S$-group $\operatorname{der}(G)$ is semisimple, and one has $G/\operatorname{der}(G)=\operatorname{corad}(G)$; it follows that for every principal homogeneous bundle $P$ under $G$, $P/\operatorname{der}(G)$ is a principal homogeneous bundle under $\operatorname{corad}(G)$. This being said, one has:
+\begin{theorem}{4.1.5}\label{XXIV.4.1.5}
+Let $S$ be a scheme and $G$ a reductive $S$-group of constant type.
+\begin{enumeratei}
+\item The following conditions are equivalent:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $G$ is locally (resp. semi-locally) isotrivial.
+\item The torus $\operatorname{rad}(G)$ is so.
+\item[(b')] The torus $\operatorname{corad}(G)$ is so.
+\item The Galois covering of $S$ associated to $G$ (3.11) is so.
+\end{enumerate}
+If $T$ is a maximal torus of $G$, these conditions are also equivalent to
+\begin{enumerate}[label=\textup{(\alph*)},start=4]
+\item The torus $T$ is locally (resp. semi-locally) isotrivial.
+\end{enumerate}
+\item Let $P$ be a principal homogeneous bundle under $G$; for $P$ to be locally (resp. semi-locally) isotrivial, it is necessary and sufficient that the principal $\operatorname{corad}(G)$-bundle $P/\operatorname{der}(G)$ be so.
+\end{enumeratei}
+\end{theorem}
+\begin{corollary}{4.1.6}\label{XXIV.4.1.6}
+The conditions of (i) hold when $G$ is semisimple or when $S$ is locally noetherian and normal (or, more generally, geometrically unibranch). The conditions of (ii) hold when $G$ is locally (resp. semi-locally) isotrivial.
+\end{corollary}
+\begin{proof}
+For (i), the first assertion is trivial from (b), and the second follows from (c) and Exp.~X, 5.14 and 5.15. For (ii), it suffices to observe that, by theorem 90, a principal bundle under a split torus is semi-locally isotrivial.
+\end{proof}
+\numpara{4.2}\label{XXIV.4.2}\textbf{Proof: the semisimple case}
+Let us first prove, for later reference:
+\begin{proposition}{4.2.1}\label{XXIV.4.2.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$ (resp. $B$ a Borel subgroup, resp. $B\supset T$ a Killing pair of $G$), $P$ a principal homogeneous bundle under $G$, and $G'$ the twisted form of $G$ associated to $P$ (via the morphism $\mathrm{int}:G\to\underline{\Aut}_{S\text{-gr.}}(G)$). One has canonical isomorphisms
+\[
+P/\uNorm_G(T)\isomto\underline{\operatorname{Tor}}(G'),\qquad
+P/B\isomto\underline{\operatorname{Bor}}(G'),\qquad
+P/T\isomto\underline{\operatorname{Kil}}(G').
+\]
+\end{proposition}
+% original PDF p. 26
+\begin{proof}
+By construction, $G'$ is the quotient of $P\times_S G$ by a certain action of $G$ ($(p,g')g=(pg,g^{-1}g'g)$); one therefore has a morphism $P\times_S G\to G'$, i.e. a morphism
+\[
+P\to\underline{\Hom}_S(G,G'),
+\]
+which, as one sees at once, factors through a morphism
+\[
+f:P\to\underline{\Isom}_{S\text{-gr.}}(G,G'),
+\]
+(to verify this assertion, one may suppose $G=P$, in which case one has $G'=G$, $f=\mathrm{int}$). The set-theoretic map $p\mto f(p)(T)$ defines a morphism
+\[
+P\to\underline{\operatorname{Tor}}(G').
+\]
+To verify that this morphism induces an isomorphism $P/\uNorm_G(T)\isomto\underline{\operatorname{Tor}}(G')$ as asserted, one may again suppose $P=G$, in which case one is reduced to Exp.~XXII, 5.8.3 (iii). (In fact, loc. cit. ought to be replaced by the above statement.) One reasons likewise for $\underline{\operatorname{Bor}}$ and $\underline{\operatorname{Kil}}$.
+\end{proof}
+\begin{proposition}{4.2.2}\label{XXIV.4.2.2}
+Let $S$ be a semi-local scheme and $G$ a semisimple $S$-group of constant type.
+\begin{enumeratei}
+\item $G$ is isotrivial.
+\item Every principal bundle under $G$ is isotrivial.
+\end{enumeratei}
+\end{proposition}
+Let us prove (i). After a finite surjective étale extension of the base, one may, by 3.9.2, suppose $G$ quasi-split. But then $G$ is isotrivial by construction (3.11, the group $E$ is finite). To prove (ii), one may, by (i), suppose $G$ split; one is then reduced to:
+\begin{lemma}{4.2.3}\label{XXIV.4.2.3}
+Let $S$ be a semi-local scheme. Every principal bundle under a split reductive group is isotrivial.
+\end{lemma}
+\begin{proof}
+Indeed, with the notation of 4.2.1, where $B\supset T$ denotes the canonical Killing pair of the split $G$, the $S$-scheme $\underline{\operatorname{Kil}}(G')$ has a section, after a finite surjective étale extension of the base, by 3.9.2. One can therefore reduce the structure group of $G$ to $T$; now $T$ is split, hence $\mathrm H^1(S,T)=0$ (theorem 90).
+% typo?: source says structure group of G rather than P; kept as printed.
+\end{proof}
+\begin{corollary}{4.2.4}\label{XXIV.4.2.4}
+Let $S$ be a scheme and
+\[
+1\to G\to G'\to G''\to1
+\]
+an exact sequence of $S$-group schemes (for (fpqc)), $G$ being semisimple of constant type. Let $P$ be a principal homogeneous bundle under $G'$, and suppose the associated sheaf\nde{We have replaced ``bundle'' by ``sheaf'', and then $G'$ by $G''$.} $P/G$ representable (for example $G''$ affine over $S$). For $P$ to be locally isotrivial (resp. semi-locally isotrivial), it is necessary and sufficient that $P/G$ be so (as a bundle under $G''$\footnotemark[24]).
+\end{corollary}
+\begin{proof}
+If $P$ is trivial, $P/G$ is also trivial, which shows that the condition is necessary. Conversely, suppose $S$ local (resp. semi-local) and $P/G$ isotrivial, hence trivialized by an étale finite surjective extension $S'$ of $S$. Extending the base to $S'$, one can reduce the structure group of $P_{S'}$ to $G_{S'}$.
+% Proof continues in en-05.tex; last sentence finishes on p. 27.

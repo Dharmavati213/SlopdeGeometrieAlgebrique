@@ -1,0 +1,119 @@
+\numpara{4.2}Take, in particular, for $G^\alpha$ the connected component $G^0$ of the origin of $G$. Then $\mathcal S(G^0)$ obviously contains the image of $F$ under $u$, which is none other than the equivalence class of the origin. On the other hand, if $F^\beta$ is a connected component of $F$, $F^\beta\times_AG^0$ is connected (2.1.2), so the image of $F^\beta\times_AG^0$ under $\lambda$ is contained in the connected component of $u(F^\beta)$ in $G$. In other words, $\mathcal S(G^0)$ is the union of the connected components meeting the image of $F$.
+
+One will also note that the open subscheme of $G$ whose underlying space is $\mathcal S(G^0)$ is a subgroup of $G$ (which we again denote by $\mathcal S(G^0)$): indeed, the inversion morphism of $G$ preserves the image of $F$ and permutes the connected components of $G$ meeting this image; it therefore suffices to show that $\nu:G\times_AG\to G$ sends $\mathcal S(G^0)\times_A\mathcal S(G^0)$ into $\mathcal S(G^0)$, and for this one can suppose $A$ an algebraically closed field (with the notation of 4.1, $\mathcal S(G^0)\otimes_A\overline k$ is indeed identified with the saturation of $(G\otimes_A\overline k)^0$ for the equivalence relation defined by the homomorphism $u\otimes_A\overline k$); if $G^\gamma$ and $G^\delta$ are then connected components of $\mathcal S(G^0)$, $G^\gamma\times_AG^\delta$ is connected and its image under $\nu$ meets the image of $F$; consequently, $u(G^\gamma\times_AG^\delta)$ is contained in a connected component of $G$ meeting $u(F)$.
+% typo?: kept as printed: u in the last expression, where nu occurred previously.
+
+\numpara{4.3}It follows from what precedes that the groupoid $G_*$ with base $G$ defined by $u$ is the direct sum of the groupoids $\mathcal S(G^\alpha_*)$ induced by $G_*$ on the various open and closed subsets of $G$ of the form $\mathcal S(G^\alpha)$. The cokernel of $G_*$ is therefore the direct sum of the cokernels of these groupoids $\mathcal S(G^\alpha_*)$, which one is led to study separately.
+
+First consider the groupoid $\mathcal S(G^0_*)$ induced by $G_*$ on $\mathcal S(G^0)$. It is clear that $\mathcal S(G^0_*)$ is the groupoid with base $\mathcal S(G^0)$ defined by the homomorphism from $F$ to $\mathcal S(G^0)$ induced by $u$ (§3.1). The cokernel whose existence we wish to prove is therefore identified with $F\backslash\mathcal S(G^0)$. Consider, on the other hand, the groupoid
+\[
+\xymatrix{G^0_2\ar@<1ex>[r]^{\ell'_2}\ar[r]^{\ell'_1}\ar@<-1ex>[r]_{\ell'_0}&G^0_1\ar@<.5ex>[r]^{\ell_1}\ar@<-.5ex>[r]_{\ell_0}&G^0_0=G^0}
+\]
+induced by $\mathcal S(G^0_*)$ on $G^0$. If one refers to the construction made explicit in V §3.b), the object then denoted $Y_0\times_{X_0}X_1$ is none other than $F\times_AG^0$, so $G^0_1$ is the inverse image of $G^0$ under the morphism $F\times_AG^0\to\mathcal S(G^0)$ induced by $\lambda$.
+
+I say that this inverse image is $F_0\times_AG^0$, where $F_0$ denotes the inverse image of $G^0$ under $u$. Indeed, if $F^\beta$ is a connected component of $F_0$, $F^\beta\times_AG^0$ is connected (2.1.2), and $\lambda(F\times_AG^0)$ is contained in $G^0$; conversely, if $F^\beta$ is a connected component of $F$ not contained in $F_0$, the image of $F^\beta\times_AG^0$ is again connected and contains $u(F^\beta)$; if $u(F^\beta)$ is not contained in $G^0$, $\lambda(F^\beta\times_AG^0)$ does not meet $G^0$.
+% typo?: kept as printed: F rather than F^beta in the first lambda expression.
+
+It follows from what precedes that the groupoid $G^0_*$ induced by $G_*$ on $G^0$ is the groupoid with base $G^0$ defined by the homomorphism $F_0\to G^0$ induced by $u$. Since $G^0$, and hence $F_0$, are of finite type over $A$, by paragraph 4, $G^0_*$ has a cokernel which is none other than $F_0\backslash G^0$.
+% typo?: kept as printed: paragraph 4.
+
+I now say that $F_0\backslash G^0$ is identified with $F\backslash\mathcal S(G^0)$. Indeed, the proof is analogous to that of the first part of assertion (i) of Lemma V §6.1; consider the diagram:
+\[
+\xymatrix{\mathcal S(G^0)&F\times_AG^0\ar[l]_v\ar[r]^{\mathrm{pr}_2}&G^0,}
+\]
+where $v$ is the morphism induced by $\lambda$. Since $\mathrm{pr}_2$ has a section, $\mathrm{pr}_2$ is an effective universal epimorphism, so $F_0\backslash G^0$ coincides with $\Coker(v_0,v_1)$, where
+\[
+\xymatrix{V_2\ar@<1ex>[r]^{v'_2}\ar[r]^{v'_1}\ar@<-1ex>[r]_{v'_0}&V_1\ar@<.5ex>[r]^{v_1}\ar@<-.5ex>[r]_{v_0}&V=F\times_AG^0}
+\]
+is the inverse image under $\mathrm{pr}_2$ of the groupoid $G^0_*$ (cf. V §3.a), that is, also the inverse image of $\mathcal S(G^0_*)$ under the composite morphism
+\[
+\xymatrix{F\times_AG^0\ar[r]^{\text{inclusion}}&F\times_A\mathcal S(G^0)\ar[r]^{\mathrm{pr}_2}&\mathcal S(G^0).}
+\]
+Similarly, since $v$ is faithfully flat and quasi-compact, $F\backslash\mathcal S(G^0)$ coincides with the cokernel of the inverse image of $\mathcal S(G^0_*)$ under the base change $v$. Now this inverse image is isomorphic to $V_*$ by Exp. V, §3.c; it follows that the canonical inclusion of $G^0_*$ into $\mathcal S(G^0_*)$ induces an isomorphism from $F_0\backslash G^0$ onto $F\backslash\mathcal S(G^0)$.
+
+Finally, note that construction of $F\backslash\mathcal S(G^0)$ commutes with finite locally free base changes, since the same holds for $F_0\backslash G^0$ (cf. N.D.E. (37) and 4.6 below).
+
+\numpara{4.4}It remains to construct the cokernel of the groupoid $\mathcal S(G^\alpha_*)$ when $G^\alpha$ is any connected component of $G$. If $A'$ is a sufficiently large local $A$-algebra finite and free (cf. 3.2), $G^\alpha\otimes_AA'$ is the union of finitely many connected components $C_1,\ldots,C_n$ of $G\otimes_AA'$, all having a strictly rational point. For every $i$, there therefore exists a right translation $r_i$ of $G\otimes_AA'$ sending $G^0\otimes_AA'$ onto $C_i$; this translation induces an isomorphism from the groupoid $\mathcal S(G^0_*)\otimes_AA'$ onto $\mathcal S(C^i_*)$, so the groupoid induced by $G_*\otimes_AA'$ on the saturation of $C_i$ has a cokernel.
+
+Since $\mathcal S(G^\alpha_*)\otimes_AA'$ is the direct sum of a certain number of the $\mathcal S(C^i_*)$, $\mathcal S(G^\alpha_*)\otimes_AA'$ has a cokernel; this cokernel is the direct sum of a certain number of copies of $(F_0\otimes_AA')\backslash(G^0\otimes_AA')$, so every finite subset of this cokernel is contained in an affine open subset; moreover, construction of this cokernel commutes with finite locally free extensions of the base (cf. N.D.E. (37) and 4.6 below). One therefore sees, as in 3.2.3, that this cokernel has the form $Y\otimes_AA'$, where $Y$ is a cokernel of $\mathcal S(G^\alpha_*)$.
+
+\numpara{4.5}We have therefore constructed $F\backslash G$ and shown that it is a direct sum of schemes of finite type over $A$. The other assertions of Theorem 3.2 reduce directly to assertions concerning the groupoids $\mathcal S(G^\alpha_*)$. As in V §6, the second assertion of (i) follows from the first and from (ii) and (iii), so it suffices to prove (ii), (iii) and (iv)(a). Since $A'$ is a local $A$-algebra finite and free, the morphism $A\to A'$ is faithfully flat and of finite presentation, so, by SGA 1, VIII (3.1, 4.6, 5.4), it suffices to verify the corresponding assertions for the groupoid $\mathcal S(G^\alpha_*)\otimes_AA'$. Now the latter is isomorphic to the direct sum of finitely many copies of $\mathcal S(G^0_*)\otimes_AA'$ (cf. 4.4), so one is reduced to the groupoid $\mathcal S(G^0_*)$.
+
+For the latter one continues to follow the proof established in V §6, as we began to do in 4.3.
+
+\numpara{4.6}To finish this paragraph, let us add some remarks concerning Lemma 6.1 and §9.a of Exposé V: with the hypotheses and notation of V §9.a, we seek a condition under which construction of the cokernel of the $(\mathrm{Sch}/S)$-groupoid $X_*$ commutes with an extension $\pi:S'\to S$ of the base. Since the cokernels of $X_*$ and $X'_*$ are identified with the cokernels of the groupoids $U_*$ and $U'_*$ induced by $X_*$ and $X'_*$ on the quasi-sections $U$ and $U'$, one is reduced to the case of a $(\mathrm{Sch}/S)$-groupoid satisfying the hypotheses of Theorem V 4.1.
+
+\nde{The following sentence has been added.}If $Y$ denotes the cokernel of $U_*$, $Y'=Y\times_SS'$, and $Y_1$ the cokernel of $U'_*$, we have seen in V §9.a that the canonical morphism $Y_1\to Y'$ is a homeomorphism (and even a universal homeomorphism); one can therefore identify $Y_1$ and $Y'$ as topological spaces. If $p:U\to Y$ is the canonical morphism and $p':U'\to Y'$ is obtained from it by base change, we then want the sequence of $\OO_{Y'}$-modules
+\[
+\xymatrix{\OO_{Y'}\ar[r]&p'_*(\OO_{U'})\ar@<.5ex>[r]\ar@<-.5ex>[r]&p'_*u'_{1*}(\OO_{U'_1})=p'_*u'_{0*}(\OO_{U'_1})}\tag{$*$}
+\]
+to be exact.\nde{In what follows, the original has been modified, the additional hypotheses made on $X_*$ being superfluous.} Since we have placed ourselves under the hypotheses of V 4.1, $u_0$ and $u_1$ are finite locally free; and, by V.4.1 (ii), $p$ is integral. Then $p$ and $p\circ u_i$ are affine, hence separated and quasi-compact.
+
+Consequently, if $S'$ is flat over $S$, it follows from EGA III$_1$, 1.4.15 (taking account of correction ErrIII 25 in EGA III$_2$) that sequence $(*)$ is identified with the inverse image of the sequence
+\[
+\xymatrix{\OO_Y\ar[r]&p_*(\OO_U)\ar@<.5ex>[r]\ar@<-.5ex>[r]&p_*u_{1*}(\OO_{U_1})=p_*u_{0*}(\OO_{U_1}),}\tag{$**$}
+\]
+which is an exact sequence.\nde{The following sentence and the numbering 4.6.1 below have been added to bring out the stated result.} An analogous argument applies when the groupoid $X_*$ ``locally'' has quasi-sections (cf. the proof of Theorem V 7.1). One therefore obtains:
+\begin{proposition}{4.6.1}\label{VIA.4.6.1}
+Construction of the cokernel of $X_*$ commutes with flat extensions of the base when $X_*$ locally has quasi-sections.
+\end{proposition}
+
+\numpara{4.7}Now consider the case of the groupoid $G_*$ of Theorem 3.2, temporarily supposing $F$ and $G$ of finite type over $A$.
+
+By 3.2.2, there exists an algebra $A'$ local, finite and free over $A$ such that the groupoid $G_*\otimes_AA'$ ``locally'' has quasi-sections. For every extension $T\to\Spec A$ of the base, the sequence
+\[
+\xymatrix{(F''\backslash G'')\times_{\Spec A}T\ar@<.5ex>[r]\ar@<-.5ex>[r]&(F'\backslash G')\times_{\Spec A}T\ar[r]&(F\backslash G)\times_{\Spec A}T}
+\]
+obtained from diagram $(*)$ of 3.2.3 is exact. If one further supposes $T$ flat over $\Spec A$, $(F''\backslash G'')\times_{\Spec A}T$ and $(F'\backslash G')\times_{\Spec A}T$ are identified respectively, by 4.6, with the cokernels of the groupoids
+\[
+(G_*\otimes_AA'')\times_{\Spec A}T\quad\text{and}\quad(G_*\otimes_AA')\times_{\Spec A}T.
+\]
+The diagram obtained from 3.2.3 $(*)$ by the base change $T\to\Spec A$ then shows that $(F\backslash G)\times_{\Spec A}T$ is identified with the cokernel of $G_*\times_{\Spec A}T$. An analogous argument holds in the general case (i.e. when $G$ and $F$ are locally of finite type over $A$). One therefore obtains:\nde{The numbering 4.7.1 below has been added to bring out the stated result.}
+\begin{proposition}{4.7.1}\label{VIA.4.7.1}
+Under the hypotheses of Theorem 3.2, for every flat $A$-scheme $T$, $(F\backslash G)\times_{\Spec A}T$ is identified with the left quotient of $G\times_{\Spec A}T$ by $F\times_{\Spec A}T$.
+\end{proposition}
+
+\sgasection{5}{Connections with Exposé IV and consequences}
+\numpara{5.1}\nde{The title of this section (called ``Supplements'' in the original) has been changed.}We return to the notation of §3 and the hypotheses of Theorem 3.2; one then has the following commutative diagram
+\[
+\xymatrix{F\times_AG\times_AG\ar[r]^{F\times\nu}\ar@<.5ex>[d]^{\mathrm{pr}_2\times G}\ar@<-.5ex>[d]_{\lambda\times G}&F\times_AG\ar@<.5ex>[d]^{\mathrm{pr}_2}\ar@<-.5ex>[d]_\lambda\\G\times_AG\ar[r]^\nu\ar[d]_{p\times G}&G\ar[d]^p\\(F\backslash G)\times_AG\ar@{-->}[r]_\rho&F\backslash G,}
+\]
+which satisfies $\mathrm{pr}_2\circ(F\times\nu)=\nu\circ(\mathrm{pr}_2\times G)$ and $\lambda\circ(F\times\nu)=\nu\circ(\lambda\times G)$. Moreover, since $G$ is supposed flat over $A$, the vertical sequence on the left is exact by 4.7, so $\nu$ induces a morphism of $A$-schemes:
+\[
+\rho:(F\backslash G)\times_AG\to F\backslash G.
+\]
+This morphism $\rho$ makes $G$ act on $F\backslash G$ on the right, as one verifies immediately; moreover, the canonical morphism $G\to F\backslash G$ commutes with the right actions of $G$ on $G$ and $F\backslash G$.
+
+\nde{What follows has been added.}This proves the first assertion of point (ii') of 3.2. By 2.5.4, one then obtains that the connected components of $X=F\backslash G$ are of finite type, irreducible and all of the same dimension. To evaluate this dimension, one can suppose $A=k$ and $k$ algebraically closed. By I, 2.3.3.1, the stabilizer of the $k$-point $p(e)$ is represented by the fiber $H=p^{-1}(p(e))$, and, since $F\backslash G$ is the quotient of $G$ by $F$ in the category of ringed spaces, this fiber has underlying space $u(F)$; since $\Ker(u)$ is finite, one therefore has $\dim H=\dim u(F)=\dim F$. By 2.5.4 (ii), one therefore obtains $\dim X=\dim G-\dim F$. This proves point (ii') of Theorem 3.2 (and hence also point (iv) of 3.3.2).
+
+\numpara{5.2}When the homomorphism of $A$-groups $u:F\to G$ is a monomorphism, one can recover 5.1 by using the results of Exposé IV. Indeed, the canonical morphism $p:G\to F\backslash G$ is faithfully flat and open by 3.2; it is therefore covering for the \fpqc topology (IV 6.3.1), and one can apply Corollaries IV.5.2.2 and IV.5.2.4.
+
+In particular, if we suppose, in addition to the hypotheses of 3.2, that $u$ is the inclusion of an invariant subgroup $F$ into $G$, there exists one and only one $A$-group structure on $F\backslash G$ such that the canonical morphism $p:G\to F\backslash G$ is a homomorphism of $A$-groups.\nde{The following sentence has been added.} This proves point (v) of 3.3.2.
+
+\numpara{5.3}We shall now review some statements of Exposé IV.
+\numpara{5.3.1}Statements IV 5.2.7 and IV 5.3.1 translate as follows. Let $F$ and $G$ be two groups locally of finite type and flat over $A$, $F$ being an invariant closed subgroup of $G$. The maps $H\mto F\backslash H$ and $H'\mto H'\times_{(F\backslash G)}G$ define a bijective correspondence between flat $A$-subgroups of $G$ containing $F$ and flat $A$-subgroups of $F\backslash G$. In this bijection, closed (resp. invariant) subgroups of $G$ containing $F$ correspond to closed (resp. invariant) subgroups of $F\backslash G$.\nde{In addition to the cited statements of Exp. IV, one uses the fact that, since $G\to F\backslash G$ is faithfully flat, an $A$-subgroup $H$ of $G$ is flat over $A$ if and only if $F\backslash H$ is.}
+
+\numpara{5.3.2}Proposition IV 5.2.9 implies the following result. Let $F,H,G$ be groups locally of finite type and flat over $A$; suppose $F\subset H\subset G$, with $F$ closed in $G$ and invariant in $H$. Under these conditions, $F\backslash H$ acts freely on $F\backslash G$ on the left, the quotient scheme $(F\backslash H)\backslash(F\backslash G)$ exists, and one has a canonical isomorphism of schemes with operator group $G$:
+\[
+(F\backslash H)\backslash(F\backslash G)=H\backslash G.
+\]
+\numpara{5.3.3}Finally, from IV 5.2.8 follows the assertion below. Let $F,H,G$ be groups locally of finite type and flat over $A$; suppose $F$ contained, closed and invariant in $G$, $H$ contained in $G$, and $F\cap H$ flat over $A$. Let, then, $F\mathbin{\overset{\tau}{\times}}_AH$ be the $A$-group with underlying scheme the product $F\times_AH$, multiplication being defined by the morphism ``$((x,h),(y,h'))\mto(xhyh^{-1},hh')$''; similarly, let $u:H\cap F\to F\mathbin{\overset{\tau}{\times}}_AH$ be the monomorphism $x\mto(x^{-1},x)$, and $F\cdot H$ the quotient $(F\cap H)\backslash(F\mathbin{\overset{\tau}{\times}}_AH)$. Under these conditions, there exists a canonical isomorphism
+\[
+F\backslash(F\cdot H)=(F\cap H)\backslash H.
+\]
+
+\numpara{5.4}\nde{The original has been expanded in what follows; in particular, Proposition 5.4.1 has been added.}Let $u:G\to H$ be a quasi-compact morphism between $A$-groups locally of finite type, whose kernel $N$ is flat over $A$. In this case, by 3.3.2 and 5.2, the quotient $A$-group $C=N\backslash G$ exists, and the morphism $p:G\to C$ is faithfully flat and locally of finite presentation. On the other hand, by IV 5.2.6, $u$ induces a monomorphism $v:C\to H$, which is quasi-compact (since $u$ is and $G\to C$ is surjective, cf. EGA IV$_1$, 1.1.3), hence is a closed immersion by 2.5.2. One has therefore obtained the following proposition:
+\begin{proposition}{5.4.1}\label{VIA.5.4.1}
+Let $u:G\to H$ be a quasi-compact morphism between $A$-groups locally of finite type, such that $N=\Ker u$ is flat over $A$. Then one has the factorization:
+\[
+\xymatrix{G\ar[r]^u\ar[d]_p&H\\N\backslash G\ar[ur]_i&}
+\]
+where $p$ is faithfully flat and locally of finite presentation, and $i$ a closed immersion.
+\end{proposition}
+Further suppose $G$ flat over $A$. Then, by 3.3.2, $C=N\backslash G$ is flat over $A$, and hence the quotient $X=C\backslash H$ exists in $(\mathrm{Sch}/A)$ and represents the quotient \fppf sheaf $\widetilde{C\backslash H}$, and $q:H\to X$ is a $C$-torsor. Consequently, denoting by $e:\Spec A\to G$ the unit section of $G$, $v$ induces an isomorphism of \fppf sheaves between $\widetilde C$ and the fibered product of $q$ and $q\circ e:\Spec A\to X$, represented by a closed subscheme of $H$. Consequently, $v$ is an isomorphism of $C$ onto a closed subgroup scheme $K$ of $G$ (equal to the stabilizer of the $A$-point $q\circ e$ of $X$). (This provides another proof that every quasi-compact monomorphism $v:C\to H$ between $A$-groups locally of finite type is a closed immersion, cf. 2.5.2 and VIB 1.4.2.)
+% typo?: kept as printed: e is a section of G and K a subgroup of G, though q has source H.
+
+Further suppose $C$ an invariant subgroup of $H$; in this case, the $A$-group $\overline H=C\backslash H$ is the cokernel in the category of $A$-groups of the morphism $u:G\to H$, and $K$ is the kernel of the morphism $H\to\overline H$. When $G$ and $H$ are abelian $A$-groups, $K$ is the image of $u$ in the category of abelian $A$-groups, whereas $C=(\Ker u)\backslash G$ is the coimage of $u$. Taking account of the isomorphism $C\isomto K$ just established, one obtains:\nde{The number 5.4.2 has been added to this theorem.}
+\begin{theorem}{5.4.2}\label{VIA.5.4.2}
+Let $k$ be a field. The category of commutative algebraic $k$-groups is abelian.
+\end{theorem}

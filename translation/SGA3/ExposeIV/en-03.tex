@@ -1,0 +1,437 @@
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{3.2. Equivalence relation defined by a group operating freely}\label{IV.sec.3.2}
+\par\addvspace{0.35\baselineskip}
+
+\begin{definition}{3.2.1}
+\label{IV.3.2.1}
+Let \(X\) be an object of~\(\mathcal{C}\) and \(H\) a \(\mathcal{C}\)-group operating
+on~\(X\) (that is, equipped with a morphism of
+\(\widehat{\mathcal{C}}\)-groups
+\[
+H\longrightarrow\Aut(X)\,).
+\]
+One says that \(H\) operates \emph{freely} on~\(X\) if the following equivalent
+conditions are satisfied:
+\begin{enumeratei}
+\item For every \(S\in\Ob(\mathcal{C})\), the group \(H(S)\) operates freely
+on~\(X(S)\);
+\item The morphism of functors
+\[
+H\times X\longrightarrow X\times X
+\]
+defined set-theoretically by \((h,x)\mapsto(hx,x)\) is a monomorphism.
+\end{enumeratei}
+(In the preceding definition, one has supposed that the group \(H\) operated
+``on the left'' on~\(X\). One evidently has an analogous notion in the case
+where the group operates ``on the right'', that is, when one has been given
+a morphism of groups from the group \(H^{\circ}\) opposite to~\(H\) into
+\(\Aut(X)\).)
+\end{definition}
+
+If \(H\) operates freely on~\(X\), the image of \(H\times X\) by the morphism
+of~(ii) is an equivalence relation in~\(X\), called the \emph{equivalence
+relation defined by the action of~\(H\) on~\(X\)}. When the quotient of~\(X\)
+by this equivalence relation exists, one denotes it by \(H\backslash X\)
+(\(X/H\) when \(H\) operates on the right). It represents the following
+covariant functor: if \(Z\) is an object of~\(\mathcal{C}\), one has
+\[
+\Hom(H\backslash X,Z)
+=\{\text{morphisms from \(X\) into \(Z\) invariant under \(H\)}\}
+\]
+where the morphism \(f\colon X\to Z\) is said to be invariant under~\(H\) if
+for every \(S\in\Ob(\mathcal{C})\), the corresponding morphism
+\(X(S)\to Z(S)\) is invariant under the group \(H(S)\).
+
+\begin{lemma}{3.2.2}
+\label{IV.3.2.2}
+Under the conditions of~3.2.1, let \(Y\) be a subobject of~\(X\). The
+following conditions are equivalent:
+\begin{enumeratei}
+\item \(Y\) is stable under the equivalence relation defined by~\(H\)
+(3.1.5);
+\item For every \(S\in\Ob(\mathcal{C})\), the subset \(Y(S)\) of~\(X(S)\) is
+stable under \(H(S)\);
+\item There exists a morphism~\(f\), necessarily unique, making the following
+diagram commutative
+\[
+\xymatrix@C=4.2em@R=2.4em{
+H\times Y \ar[r]^{f} \ar[d]
+  & Y \ar[d] \\
+H\times X \ar[r]
+  & X\,.
+}
+\]
+\end{enumeratei}
+Under these conditions, \(f\) defines a morphism of
+\(\widehat{\mathcal{C}}\)-groups
+\[
+H\longrightarrow\Aut(Y)
+\]
+and the equivalence relation defined in~\(Y\) by this operation of~\(H\) is
+none other than the equivalence relation induced in~\(Y\) by the equivalence
+relation defined in~\(X\) by the action of~\(H\).
+\end{lemma}
+
+\begin{proof}
+The proof is immediate. One evidently has an analogous statement for a
+``right operation''. The operation of~\(H\) on~\(Y\) defined above will be
+called the operation \emph{induced} in~\(Y\) by the given operation
+of~\(H\) on~\(X\).
+\end{proof}
+
+Let us now consider the following situation: \(H\) and \(G\) are two
+\(\mathcal{C}\)-groups and one has been given a morphism of groups
+\[
+u\colon H\longrightarrow G.
+\]
+Then \(H\) operates on~\(G\) by translations (one sets, set-theoretically,
+\(hg=u(h)g\)) and operates there \emph{freely} if and only if \(u\) is a
+\emph{monomorphism}. The quotient of~\(G\) by this operation of~\(H\) is
+denoted, when it exists, by \(H\backslash G\). One likewise defines a right
+operation of~\(H\) on~\(G\) and a quotient \(G/H\). These quotients are
+functorial with respect to the groups in question; precisely, one has the
+following lemma, stated for the right quotients:
+
+\begin{lemma}{3.2.3}
+\label{IV.3.2.3}
+Let \(u\colon H\to G\) and \(u'\colon H'\to G'\) be two monomorphisms of
+\(\mathcal{C}\)-groups. Suppose given a morphism of \(\mathcal{C}\)-groups
+\[
+f\colon G\longrightarrow G'.
+\]
+% typo: condition -> conditions
+The following conditions are equivalent:
+\begin{enumeratei}
+\item \(f\) is compatible with the equivalence relations defined in \(G\)
+and~\(G'\) by \(H\) and~\(H'\).
+% typo: équivalences -> équivalence
+\item For every \(S\in\Ob(\mathcal{C})\), one has
+\(fu(H(S))\subset u'(H'(S))\).
+\item There exists a morphism \(g\colon H\to H'\), necessarily unique and
+multiplicative, such that the following diagram is commutative
+\[
+\xymatrix@C=4.2em@R=2.4em{
+H \ar[r]^{g} \ar[d]_{u}
+  & H' \ar[d]^{u'} \\
+G \ar[r]_{f}
+  & G'\,.
+}
+\]
+\end{enumeratei}
+Under these conditions, if the quotients \(G/H\) and \(G'/H'\) exist, there
+exists a unique morphism~\(f\) making the following diagram commutative
+\[
+\xymatrix@C=4.2em@R=2.4em{
+G \ar[r]^{f} \ar[d]_{p}
+  & G' \ar[d]^{p'} \\
+G/H \ar[r]_{f}
+  & G'/H'\,.
+}
+\]
+\end{lemma}
+
+\begin{proof}
+The first part is proved by reduction to the set-theoretic case. The second
+follows immediately from~(i).
+\end{proof}
+
+One could carry over into the present situation the notions introduced above
+for general equivalence relations.
+% typo: équivalences -> équivalence
+Let us merely point out the following lemma, whose proof is immediate by
+reduction to the set-theoretic case:
+
+\begin{lemma}{3.2.4}
+\label{IV.3.2.4}
+Let \(u\colon H\to G\) be a monomorphism of \(\mathcal{C}\)-groups and \(G'\)
+a \(\mathcal{C}\)-subgroup of~\(G\). For the subobject \(G'\) of~\(G\) to be
+stable under the equivalence relation defined by~\(H\), it is necessary and
+sufficient that \(u\) factor through the canonical monomorphism \(G'\to G\),
+and under this condition the operation of~\(H\) on~\(G'\) induced by the
+operation of~\(H\) on~\(G\) defined by~\(u\) is none other than the operation
+deduced from the monomorphism \(H\to G'\) through which \(u\) factors.
+\end{lemma}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{3.3. Universal effective equivalence relations}\label{IV.sec.3.3}
+\par\addvspace{0.35\baselineskip}
+
+\begin{definition}{3.3.1}
+\label{IV.3.3.1}
+Let \(f\colon X\to Y\) be a morphism. One calls the \emph{equivalence relation
+defined by~\(f\) in~\(X\)}, and one denotes by \(\mathcal{R}(f)\), the
+\(\widehat{\mathcal{C}}\)-equivalence relation in~\(X\) which is the image of
+the canonical monomorphism
+\[
+X\times_{Y}X\longrightarrow X\times X.
+\]
+\end{definition}
+
+\begin{definition}{3.3.2}
+\label{IV.3.3.2}
+Let \(R\) be an equivalence relation in~\(X\). One says that \(R\) is
+\emph{effective} if
+\begin{enumeratei}
+\item \(R\) is representable (\ie is a \(\mathcal{C}\)-equivalence relation);
+\item the quotient \(Y=X/R\) exists in~\(\mathcal{C}\)%
+{\renewcommand{\thefootnote}{(13)}\nde{: One has added ``in \(\mathcal{C}\)''.}};
+\item the diagram
+\[
+\xymatrix@C=3.6em{
+R \ar@<0.55ex>[r]^{p_{1}} \ar@<-0.55ex>[r]_{p_{2}}
+  & X \ar[r]^{p}
+  & Y
+}
+\]
+makes \(R\) the fiber square of~\(X\) over~\(Y\), that is, \(R\) is the
+equivalence relation defined by~\(p\).
+\end{enumeratei}
+\end{definition}
+
+\begin{scholium}{3.3.2.1}
+\label{IV.3.3.2.1}
+{\renewcommand{\thefootnote}{(14)}\footnote{\normalfont\textbf{N.D.E.}
+One has added the numbering 3.3.2.1 (\resp~3.3.3.1) for later references.
+On the other hand, one has added remark~3.3.3.2.}}%
+\ If \(R\) is an effective equivalence relation in~\(X\), then \(p\) is an
+effective epimorphism (1.3). If \(f\colon X\to Y\) is an effective
+epimorphism, then \(\mathcal{R}(f)\) is an effective equivalence relation
+in~\(X\), one quotient of which is~\(Y\). There is therefore a one-to-one
+``Galois'' correspondence between effective equivalence relations in~\(X\)
+and effective quotients of~\(X\) (\ie equivalence classes of effective
+epimorphisms with source~\(X\)).
+\end{scholium}
+
+\begin{definition}{3.3.3}
+\label{IV.3.3.3}
+One says that the equivalence relation \(R\) in~\(X\) is \emph{universal
+effective} if the quotient \(Y=X/R\) exists, and if, for every \(Y'\to Y\),
+the fiber products \(X'=X\times_{Y}Y'\) and \(R'=R\times_{Y}Y'\) exist and
+\(R'\) is a fiber square of~\(X'\) over~\(Y'\). It amounts to the same to say
+that \(R\) is \emph{effective} and that \(p\colon X\to X/R\) is a
+\emph{universal effective epimorphism}.
+\end{definition}
+
+\begin{scholium}{3.3.3.1}
+\label{IV.3.3.3.1}
+\textsuperscript{(14)}
+There is therefore, as above, a one-to-one correspondence between universal
+effective equivalence relations in~\(X\) and universal effective quotients
+of~\(X\).
+\end{scholium}
+
+\begin{remark}{3.3.3.2}
+\label{IV.3.3.3.2}
+\textsuperscript{(14)}
+Suppose that \(\mathcal{C}\) is the category of \(S\)-schemes, and denote
+by~\(\mathbf{A}^{1}\) the affine space of dimension~\(1\) over~\(S\). Let
+\(R\subset X\times_{S}X\) be a universal effective equivalence relation and
+\(p\colon X\to Y\) the quotient. Then, for every open~\(U\) of~\(Y\),
+\(\mathcal{O}(U)=\Hom_{S}(U,\mathbf{A}^{1}_{S})\) is the set of elements
+\(\phi\) of
+\(\mathcal{O}(p^{-1}(U))=\Hom_{S}(p^{-1}(U),\mathbf{A}^{1}_{S})\) such that
+\(\phi\circ\mathrm{pr}_{1}=\phi\circ\mathrm{pr}_{2}\). In particular, if
+\(R\) is given by the action of a group \(H\) operating freely on the right
+on~\(X\) (\cf~3.2.1), then \(\mathcal{O}(U)\) is the set of
+\(\phi\in\mathcal{O}(p^{-1}(U))\) such that \(\phi(xh)=\phi(x)\), for every
+\(S'\to S\) and \(x\in X(S')\), \(h\in H(S')\).
+\end{remark}
+
+\begin{proposition}{3.3.4}
+\label{IV.3.3.4}
+Let \(R\) be a universal effective equivalence relation in~\(X\). Let
+\(f\colon X\to Z\) be a morphism compatible with~\(R\), hence factoring
+through \(g\colon X/R\to Z\). The following conditions are equivalent:
+\begin{enumeratei}
+\item \(g\) is a monomorphism;
+\item \(R\) is the equivalence relation defined by~\(f\).
+\end{enumeratei}
+\end{proposition}
+
+\begin{proof}
+Indeed, (i)~implies~(ii) trivially, and the converse is none other than~2.5.
+\end{proof}
+
+\begin{definition}{3.3.5}
+\label{IV.3.3.5}
+Let \(H\) be a \(\mathcal{C}\)-group operating freely on~\(X\). One says that
+\(H\) operates in an \emph{effective} manner, or that the operation of~\(H\)
+on~\(X\) is \emph{effective} (\resp\ \emph{universal effective}), if the
+equivalence relation defined in~\(X\) by the action of~\(H\) is effective
+(\resp\ universal effective).
+\end{definition}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{3.4. \((M)\)-effectivity.}\ ---
+\label{IV.sec.3.4}
+In practice, it is most often difficult to characterize the universal
+effective epimorphisms. One nevertheless often has at one's disposal a
+certain number of morphisms of this type, for example in the theory of
+schemes, the faithfully flat quasi-compact morphisms. This leads to the
+developments below.
+
+\numpara{3.4.1}
+\label{IV.3.4.1}
+Let us first state a certain number of conditions on a family~\((M)\) of
+morphisms of~\(\mathcal{C}\):
+\begin{enumeratea}
+\item \emph{\((M)\) is stable under base extension, \ie every
+\(u\colon T\to S\) which is an element of~\((M)\) is quarrable
+(\cf~1.4.0) and for every \(S'\to S\),
+\(u'\colon T\times_{S}S'\to S'\) is an element of~\((M)\).}
+\item \emph{The composite of two elements of~\((M)\) lies in~\((M)\).}
+\item \emph{Every isomorphism is an element of~\((M)\).}
+\item \emph{Every element of~\((M)\) is an effective epimorphism.}
+\end{enumeratea}
+
+Let us note that~(a) and~(b) imply:
+
+\emph{(a') The cartesian product of two elements of~\((M)\) lies
+in~\((M)\): Let \(u\colon X\to Y\) and \(u'\colon X'\to Y'\) be two
+\(S\)-morphisms which are elements of~\((M)\). If \(Y\times_{S}Y'\) exists,
+then \(X\times_{S}X'\) exists and \(u\times_{S}u'\) is an element
+of~\((M)\).}
+
+This follows from the diagram
+\[
+\xymatrix@C=2.6em@R=2.4em{
+  & Y'
+  & X' \ar[l]_{u'}
+\\
+X \ar[d]_{u}
+  & X\times_{S}Y' \ar[l] \ar[u] \ar[d]
+  & X\times_{S}X' \ar[l] \ar[u] \ar[dl]^{u\times_{S}u'}
+\\
+Y
+  & Y\times_{S}Y' \ar[l]
+  &
+}
+\,.
+\]
+Likewise~(a) and~(d) imply:
+
+\emph{(d') Every element of~\((M)\) is a universal effective epimorphism.}
+
+\numpara{3.4.2}
+\label{IV.3.4.2}
+The family \((M_{0})\) of universal effective epimorphisms satisfies
+conditions~(a) to~(d) of~3.4.1. Indeed, (a), (c) and~(d) are satisfied by
+definition, and~(b) follows from~1.8. In what follows, we shall assume given
+a family~\((M)\) of morphisms of~\(\mathcal{C}\) satisfying these conditions:
+our results will therefore apply to the family~\((M_{0})\) in particular.
+
+\begin{definition}{3.4.3}
+\label{IV.3.4.3}
+One says that the equivalence relation \(R\) in~\(X\) is \emph{of type~\((M)\)}
+if it is representable and if \(p_{1}\in(M)\) (which by~(b) and~(c) implies
+that \(p_{2}\in(M)\)).
+
+One says that \(R\) is \emph{\((M)\)-effective} if it is effective and if the
+canonical morphism \(X\to X/R\) is an element of~\((M)\).
+
+One says that the quotient \(Y\) of~\(X\) is \emph{\((M)\)-effective} if the
+canonical morphism \(X\to Y\) is an element of~\((M)\).
+\end{definition}
+
+From this definition there follow the following consequences:%
+{\renewcommand{\thefootnote}{(15)}\nde{: One has added the numbering
+3.4.3.1, for later references, and one has set out in detail the proof of
+point~(i).}}
+
+\begin{proposition}{3.4.3.1}
+\label{IV.3.4.3.1}
+\begin{enumeratei}
+\item An \((M)\)-effective equivalence relation is of type~\((M)\) and
+universal effective.
+\item An \((M)\)-effective quotient is universal effective (\cf~3.3.3).
+\item The maps \(R\mapsto X/R\) and \(p\mapsto\mathcal{R}(p)\) realize a
+one-to-one correspondence between \((M)\)-effective equivalence relations
+in~\(X\) and \((M)\)-effective quotients of~\(X\).
+\item \((M_{0})\)-effective is equivalent to universal effective.
+\end{enumeratei}
+\end{proposition}
+
+\begin{proof}
+Let us prove point~(i). Since \(R\) is \((M)\)-effective, one has a cartesian
+square
+\[
+\xymatrix@C=4.2em@R=2.4em{
+R \ar[r]^{p_{2}} \ar[d]_{p_{1}}
+  & X \ar[d]^{p} \\
+X \ar[r]_{p}
+  & X/R\,,
+}
+\]
+and \(p\in(M)\). Then, by~3.4.1~(a), \(p_{1}\) and \(p_{2}\) belong
+to~\((M)\), hence \(R\) is of type~\((M)\).
+
+Set \(Y=X/R\), and let \(Y'\to Y\) be an arbitrary morphism. By~3.4.1~(a),
+the fiber products \(X'=X\times_{Y}Y'\) and \(R'=R\times_{Y}Y'\) exist, and
+the morphisms \(X'\to Y'\) and \(p'_{i}\colon R'\to X'\) belong to~\((M)\).
+Finally, since \(R=X\times_{Y}X\), one obtains, by associativity of the
+fiber product:
+\[
+R'=X\times_{Y}X\times_{Y}Y'=X'\times_{Y'}X'.
+\]
+This shows that \(R'\) is \((M)\)-effective; hence, in particular, \(R\) is
+universal effective. This proves~(i), and also~(iv). Points~(ii) and~(iii)
+follow from this, taking definition~3.3.2 into account.
+\end{proof}
+
+\numpara{3.4.4}
+\label{IV.3.4.4}
+Let \(H\) be an \(S\)-group whose structural morphism is an element
+of~\((M)\). Then if \(H\) operates \emph{freely} on the \(S\)-object~\(X\), it
+defines on it an equivalence relation of type~\((M)\). Indeed, by~(a) the
+fiber product \(H\times_{S}X\) exists and
+\(\mathrm{pr}_{2}\colon H\times_{S}X\to X\) is an element of~\((M)\). One
+will say that the operation of~\(H\) is \emph{\((M)\)-effective} if the
+equivalence relation defined in~\(X\) by this operation is
+\((M)\)-effective.
+
+\begin{proposition}{3.4.5 ($(M)$-effectivity and base change)}
+\label{IV.3.4.5}
+Let \(R\) be an \((M)\)-effective equivalence relation in~\(X\) over~\(S\).
+Set \(Y=X/R\). Let \(S'\to S\) be a base change such that
+\(Y'=Y\times_{S}S'\) exists. Then \(X'=X\times_{S}S'\) exists,
+\(R'=R\times_{S}S'\) is an \((M)\)-effective equivalence relation in~\(X'\)
+over~\(S'\), and \(X'/R'\simeq(X/R)'\).
+\end{proposition}
+
+\begin{proof}
+Indeed, the canonical morphisms \(X\to Y\) and \(R\to Y\) are elements
+of~\((M)\), hence by~(a') \(X'\) and \(R'\) are representable. By
+associativity of the product, \(R'\) is the equivalence relation defined
+in~\(X'\) by the canonical morphism \(X'\to Y'\), which is an element
+of~\((M)\), whence the conclusion.
+\end{proof}
+
+\begin{proposition}{3.4.6 ($(M)$-effectivity and cartesian products)}
+\label{IV.3.4.6}
+Let \(R\) (\resp~\(R'\)) be an \((M)\)-effective equivalence relation in~\(X\)
+(\resp~\(X'\)) over~\(S\). If \((X/R)\times_{S}(X'/R')\) exists, then
+\(X\times_{S}X'\) exists, \(R\times_{S}R'\) is an \((M)\)-effective
+equivalence relation in \(X\times_{S}X'\) over~\(S\), and
+\[
+(X\times_{S}X')/(R\times_{S}R')
+\simeq
+(X/R)\times_{S}(X'/R').
+\]
+\end{proposition}
+
+\begin{proof}
+Set \(Y=X/R\), \(Y'=X'/R'\). By~(a'), the fiber product
+\(X\times_{S}X'\) exists and the canonical morphism
+\[
+q\colon X\times_{S}X'\longrightarrow Y\times_{S}Y'
+\]
+is an element of~\((M)\). Now the formula
+\[
+(X\times X')\times_{(Y\times Y')}(X\times X')
+\simeq
+(X\times_{Y}X)\times(X'\times_{Y'}X')
+\]
+(all unindexed products are taken over~\(S\)) shows that \(R\times_{S}R'\)
+is the equivalence relation defined by~\(q\) in \(X\times_{S}X'\), which
+completes the proof.
+\end{proof}

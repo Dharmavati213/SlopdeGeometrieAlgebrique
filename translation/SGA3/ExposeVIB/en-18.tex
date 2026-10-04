@@ -1,0 +1,88 @@
+On the other hand, for every $S'\to S$ and $h\in N(S')$, put $\pi(h)=\tau(1)\cdot h$ (where $1$ is the identity element of $G(S')$); this defines a morphism of $S$-schemes $\pi:N\to\tau(G)$ which is a retraction of $\rho'$ (when one identifies $G$ with $\tau(G)$). Since $N$ is separated over $S$, it follows that $\rho'$ is a closed immersion.
+
+(b) It seems that the proof of [Th87], Th. 3.1 requires the hypothesis that $G$ be essentially free over $S$, which does not appear in loc.\ cit.\ (the author invoking instead the fact that $H$ is essentially free). However, this hypothesis holds when $G$ is reductive (cf. Exp. XXII 5.7.8), hence holds in all cases considered in loc.\ cit., Cor. 3.2. In particular, Thomason proves in loc.\ cit., 2.5, that if $S$ is separated noetherian regular of dimension $\leq2$, and $G$ affine, of finite presentation, and such that $\mathscr A(G)$ is a locally projective $\OS$-module, then $(G,S)$ satisfies (RE); by 13.5, this gives 13.2 under a slightly more restrictive hypothesis.
+\end{remarks}
+
+To conclude, let us point out that the proof of [Th87], 2.5 can be slightly simplified as follows. (For brevity, we place ourselves in the situation where $S=\Spec(R)$ is affine.)
+
+\begin{proposition}{13.7}\label{VIB.13.7}
+Let $R$ be a noetherian regular ring of dimension $\leq2$, $C$ an $R$-coalgebra projective as an $R$-module, and $F$ a $C$-comodule of finite type over $R$. Then $F$ is the quotient of a $C$-comodule $V$ projective of finite type over $R$.
+\end{proposition}
+\begin{proof}
+Replacing $\Spec(R)$ by one of its connected components, one may suppose $R$ integral, with fraction field $K$. Denote by $\Delta$ (resp. $\varepsilon$) the comultiplication (resp. augmentation) of $C$ and by $\rho:F\to F\otimes C$ the comodule structure on $F$. Let $\pi:W\to F$ be a surjective morphism, where $W$ is a free $R$-module of finite rank. Endow $W\otimes C$ with the comodule structure defined by $\mathrm{id}_W\otimes\Delta$, and similarly for $F\otimes C$. Then $\rho:F\to F\otimes C$ is a morphism of $C$-comodules, which admits $\mathrm{id}_F\otimes\varepsilon$ as a section.
+% typo?: kept as printed: section for id_F tensor epsilon.
+
+Let $W'$ be the $C$-comodule defined by the cartesian square below:
+\[
+\xymatrix{W'\ar[r]\ar[d]&F\ar[d]^\rho\\W\otimes C\ar[r]_{\pi\otimes\mathrm{id}_C}&F\otimes C}
+\]
+i.e.\ $W'$ is identified with the kernel of the morphism $W\otimes C\to(F\otimes C)/\rho(F)$, and the projection $\pi':W'\to F$, given by $x\mto(\pi\otimes\varepsilon)(x)$, is surjective. Since $F$ is an $R$-module of finite type, there is a subcomodule $V'$ of $W'$ of finite type over $R$ such that $\pi'(V')=F$. Since $W\otimes C$ has no $R$-torsion, neither does $V'$, so, replacing $F$ by $V'$, one may suppose from the outset that $F$ is torsion-free.
+
+Applying the preceding construction to this new $F$, one obtains $V'$ as above. Consider then the subcomodule $V$, kernel of the morphism
+\[
+W\otimes C\to E=\frac{W\otimes C\otimes K}{V'\otimes K}.
+\]
+Then $V$ contains $V'$ and $Q=(W\otimes C)/V$ is a sub-$R$-module of the $K$-vector space $E$; put $Q'=E/Q$. Since $W\otimes C$ and $E$ are flat $R$-modules, one obtains, for every $R$-module $N$,
+\[
+\Tor_1^R(V,N)\simeq\Tor_2^R(Q,N)\simeq\Tor_3^R(Q',N)
+\]
+and since $R$ is regular of dimension $\leq2$, the right-hand term is zero. This shows that $V$ is a flat $R$-module. Finally, let us show that $V$ is an $R$-module of finite type. Put $M=W\otimes C$; it follows from the definition that $V/V'$ is isomorphic to the $R$-torsion submodule $(M/V')_{\mathrm{tors}}$ of $M/V'$.
+
+Since $M$ is a projective $R$-module, there is a projective $R$-module $P$ such that $M\oplus P$ is a free $R$-module $L$. Then $(M/V')_{\mathrm{tors}}\simeq(L/V')_{\mathrm{tors}}$. On the other hand, since $V'$ is of finite type, there is a direct summand $L'\simeq R^n$ of $L$ such that $V'\subset L'$, and one therefore also has $(L/V')_{\mathrm{tors}}\simeq(L'/V')_{\mathrm{tors}}$, and the latter is of finite type since $(L'/V')$ is. Consequently, $V$ is a flat $R$-module of finite type, hence projective of finite type ($R$ being noetherian). Proposition 13.7 is proved.
+\end{proof}
+
+\begin{thebibliography}{Ray70b}
+\bibitem[An73]{An73}\nde{Additional references cited in this Exposé.}
+S. Anantharaman, \emph{Schémas en groupes, espaces homogènes et espaces algébriques sur une base de dimension 1}, Mém. Soc. Math. France \textbf{33} (1973), 5--79.
+\bibitem[Ba55]{Ba55}
+I. Barsotti, \emph{Un teorema di struttura per le varietà gruppali}, Atti Acad. Naz. Lincei Rend. Cl. Sci. Fis. Mat. Nat. \textbf{18} (1955), 43--50.
+\bibitem[BLR]{BLR}
+S. Bosch, W. Lütkebohmert, M. Raynaud, \emph{Néron Models}, Springer-Verlag, 1990.
+% typo: corrupted printed LÃ¼tkebohmert -> Lütkebohmert.
+\bibitem[BAC]{BAC}
+N. Bourbaki, \emph{Algèbre commutative}, Chap. I--IV, V--VII and X, Masson, 1985 and 1998.
+\bibitem[BTop]{BTop}
+N. Bourbaki, \emph{Topologie générale}, Chap. I--IV, Hermann, 1971.
+\bibitem[Br09]{Br09}
+M. Brion, \emph{Anti-affine algebraic groups}, J. Algebra \textbf{321} (2009), no. 3, 934--952.
+\bibitem[Ch60]{Ch60}
+C. Chevalley, \emph{Une démonstration d'un théorème sur les groupes algébriques}, J. Maths. Pure Appl. \textbf{39} (1960), 307--317.
+\bibitem[Co02]{Co02}
+B. Conrad, \emph{A modern proof of Chevalley's theorem on algebraic groups}, J. Ramanujan Math. Soc. \textbf{17} (2002), 1--18.
+\bibitem[DG70]{DG70}
+M. Demazure, P. Gabriel, \emph{Groupes algébriques}, Masson \& North-Holland, 1970.
+\bibitem[Gr73]{Gr73}
+L. Gruson, \emph{Dimension homologique des modules plats sur un anneau noethérien}, Symposia Mathematica \textbf{XI} (1973), 243--254.
+\bibitem[Kn71]{Kn71}
+D. Knutson, \emph{Algebraic spaces}, Lect. Notes Maths. \textbf{203}, Springer-Verlag, 1971.
+\bibitem[Ma07]{Ma07}
+B. Margaux, \emph{Passage to the Limit in Non-Abelian Čech Cohomology}, J. Lie Theory \textbf{17} (2007), 591--596.
+\bibitem[MW94]{MW94}
+A. Masuoka, D. Wigner, \emph{Faithful flatness of Hopf algebras}, J. Algebra \textbf{170} (1994), 156--184.
+\bibitem[Per76]{Per76}
+D. Perrin, \emph{Approximation des schémas en groupes, quasi-compacts sur un corps}, Bull. Soc. Math. France \textbf{104} (1976), 323--335.
+\bibitem[Pes66]{Pes66}
+C. Peskine, \emph{Une généralisation du « Main Theorem » de Zariski}, Bull. Sci. Math. \textbf{90} (1966), 119--127.
+\bibitem[PY06]{PY06}
+G. Prasad, J.-K. Yu, \emph{On quasi-reductive group schemes}, J. Alg. Geom. \textbf{15} (2006), 507--549.
+\bibitem[Ray70a]{Ray70a}
+M. Raynaud, \emph{Faisceaux amples sur les schémas en groupes et les espaces homogènes}, Lect. Notes Maths. \textbf{119}, Springer-Verlag, 1970.
+\bibitem[Ray70b]{Ray70b}
+M. Raynaud, \emph{Anneaux locaux henséliens}, Lect. Notes Maths. \textbf{169}, Springer-Verlag, 1970.
+\bibitem[RG71]{RG71}
+M. Raynaud, L. Gruson, \emph{Critères de platitude et de projectivité}, Invent. math. \textbf{13} (1971), 1--89.
+\bibitem[Ro56]{Ro56}
+M. Rosenlicht, \emph{Some basic theorems on algebraic groups}, Amer. J. Math. \textbf{78} (1956), 401--443.
+\bibitem[SS09]{SS09}
+C. Sancho de Salas, F. Sancho de Salas, \emph{Principal bundles, quasi-abelian varieties and structure of algebraic groups}, J. Algebra \textbf{322} (2009), no. 8, 2751--2772.
+\bibitem[Se68]{Se68}
+J.-P. Serre, \emph{Groupes de Grothendieck des schémas en groupes réductifs déployés}, Publ. math. I.H.É.S. \textbf{34} (1968), 37--52.
+\bibitem[Se99]{Se99}
+C. S. Seshadri, \emph{Chevalley: some reminiscences}, Transform. Groups \textbf{4} (1999), nos. 2--3, 119--125.
+\bibitem[Ta72]{Ta72}
+M. Takeuchi, \emph{A correspondence between Hopf ideals and sub-Hopf algebras}, Manuscripta Math. \textbf{7} (1972), 251--270.
+\bibitem[Ta79]{Ta79}
+M. Takeuchi, \emph{Relative Hopf modules -- Equivalences and freeness criteria}, J. Algebra \textbf{60} (1979), 452--471.
+\bibitem[Th87]{Th87}
+R. W. Thomason, \emph{Equivariant resolution, linearization, and Hilbert's fourteenth problem over arbitrary base schemes}, Adv. Math. \textbf{65} (1987), 16--34.
+\end{thebibliography}

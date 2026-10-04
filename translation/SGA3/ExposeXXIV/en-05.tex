@@ -1,0 +1,187 @@
+% original PDF p. 27; continuation of proof of Corollary 4.2.4
+But $S'$ is still semi-local and $G_{S'}$ semisimple of constant type, so the bundle obtained is isotrivial (4.2.2).
+\end{proof}
+\numpara{4.3}\label{XXIV.4.3}\textbf{Proof: general case.}
+Observe first that 4.1.5 (ii) follows immediately by applying 4.2.4 to the exact sequence
+\[
+1\to\operatorname{der}(G)\to G\to\operatorname{corad}(G)\to1.
+\]
+Let us therefore prove (i). If $G$ is split, $\operatorname{rad}(G)$ and $\operatorname{corad}(G)$ are split, as is $\mathrm{rev}(G)$; thus (a) implies (b), (b'), and (c).
+\numpara{4.3.1}\label{XXIV.4.3.1}
+One has (c) $\Rightarrow$ (a). Let $\mathscr R$ be the type of $G$; one has an exact sequence
+\[
+1\to\ad(\operatorname{\acute Ep}_S(\mathscr R))\to A_S(\mathscr R)\to E_S\to1.
+\]
+Applying 4.2.4 to the bundle $P=\underline{\Isom}_{S\text{-gr.}}(\operatorname{\acute Ep}_S(\mathscr R),G)$ and the associated bundle $\mathrm{rev}(G)=P/\ad(\operatorname{\acute Ep}_S(\mathscr R))$, one has (c) $\Rightarrow$ (a).
+\numpara{4.3.2}\label{XXIV.4.3.2}
+One has (b) $\Rightarrow$ (a). It suffices for us to prove that if $\operatorname{rad}(G)$ is split, $G$ is semi-locally isotrivial. Now let $G_0=\operatorname{\acute Ep}_S(\mathscr R)$; consider the category of pairs $(G',f)$, where $G'$ is a form of $G_0$ and $f$ an isomorphism of $\operatorname{rad}(G_0)$ onto $\operatorname{rad}(G)$.
+
+One knows (2.16) that this category is equivalent to the category of principal homogeneous bundles under a certain $S$-group $H$, an extension of a finite twisted constant group by a semisimple group. It suffices for us to prove that every principal bundle under $H$ is semi-locally isotrivial; now this follows at once from 4.2.4.
+\numpara{4.3.3}\label{XXIV.4.3.3}
+One has (b') $\Rightarrow$ (a). One can reason as before (in fact the same group $H$ will occur). One can also see that (b) and (b') are equivalent: a torus isogenous to a locally split torus is also locally split (cf. Exp.~IX, 2.11 (iii)).
+\numpara{4.3.4}\label{XXIV.4.3.4}
+One has (d) $\Rightarrow$ (a). It suffices to prove that a group of constant type possessing a split maximal torus is semi-locally isotrivial; now this follows at once from 2.14.
+\numpara{4.3.5}\label{XXIV.4.3.5}
+One has (a) $\Rightarrow$ (d). It suffices to prove that a maximal torus of a split group is semi-locally isotrivial. More precisely, one has:
+\begin{lemma}{4.3.6}\label{XXIV.4.3.6}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group, $T_0$ a split maximal torus of $G$, $W_0=\uNorm_G(T_0)/T_0$ (it is a locally constant $S$-group, and constant if $G$ is of constant type, by 2.14), and $T$ a maximal torus of $G$.
+
+There exists a morphism $S'\to S$ which is principal homogeneous under $W_0$ (hence étale, finite and surjective, and even principal Galois if $G$ is of constant type), such that $T_{S'}$ is conjugate to $(T_0)_{S'}$ by an element of $G(S')$ (and therefore in particular split).
+\end{lemma}
+% original PDF p. 28
+\begin{proof}
+Indeed, one knows that $\uTransp_G(T_0,T)$ is a principal homogeneous bundle under $\uNorm_G(T_0)$ (cf. for example Exp.~XI, 5.4 bis). Put $S'=\uTransp_G(T_0,T)/T_0$; it is a principal homogeneous bundle under $W_0$. Extending the base from $S$ to $S'$, one can reduce the structure group of $\uTransp_G(T_0,T)$ to $T_0$. Now $S'$ is semi-local and $T_0$ split, so $\uTransp_G(T_0,T)$ has a section over $S'$.\nde{By ``theorem 90''.}
+\end{proof}
+\numpara{4.4}\label{XXIV.4.4}\textbf{Use of the existence of maximal tori}
+By using Grothendieck's theorem on the existence of maximal tori (Exp.~XIV, 3.20), one can considerably sharpen the preceding results. Let us state at once:
+\begin{theorem}{4.4.1}\label{XXIV.4.4.1}
+Let $S$ be a semi-local scheme, $\mathscr R$ a reduced pinned root datum, $W$ its Weyl group, and $E$ the group of its automorphisms. (Recall that $E$ acts naturally on $W$ and that the semidirect product $A=W\cdot E$ identifies with the group of automorphisms of the unpinned $\mathscr R$, cf. Exp.~XXI, 6.7.2.)
+\begin{enumeratei}
+\item Every principal homogeneous bundle under $\operatorname{\acute Ep}_S(\mathscr R)$ is trivialized by a principal Galois covering $S'\to S$ with group $W$.
+\item Let $G$ be a reductive $S$-group of type $\mathscr R$; let $\mathrm{rev}(G)=\underline{\operatorname{Isomext}}(\operatorname{\acute Ep}_S(\mathscr R),G)$ be the associated Galois covering of $S$ with group $E$. Let $W_0$ be the form of $W_S$ associated to $\mathrm{rev}(G)$. There exists a morphism $S'\to S$, which is a principal homogeneous bundle under $W_0$, such that $G_{S'}$ is quasi-splittable (i.e. possesses a Borel subgroup).
+\item Every reductive $S$-group of type $\mathscr R$ is split by a principal Galois covering $\bar S\to S$ with group $A$.
+\end{enumeratei}
+\end{theorem}
+Let us first state:
+\begin{proposition}{4.4.2}\label{XXIV.4.4.2}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $P$ a principal homogeneous bundle under $G$, and $G'$ the twisted form of $G$ associated to $P$ (one then has, cf. 4.2.1, a canonical isomorphism $P/\uNorm_G(T)\isomto\underline{\operatorname{Tor}}(G')$). Let $T'$ be a maximal torus of $G'$, defining a composite morphism
+\[
+S\to\underline{\operatorname{Tor}}(G')\isomto P/\uNorm_G(T).
+\]
+Consider the canonical morphisms
+\[
+P\to P/T\to P/\uNorm_G(T)
+\]
+and take their inverse images under the preceding morphism:
+\[
+\xymatrix{P\ar[r]&P/T\ar[r]&P/\uNorm_G(T)\\
+H\ar[u]\ar[r]&S'\ar[u]\ar[r]&S.\ar[u]}
+\]
+% original PDF p. 29
+Then $S'$ (resp. $H$) is a principal homogeneous bundle over $S$ (resp. $S'$) under $\mathrm W_G(T)$ (resp. $T_{S'}$). Moreover, if one lets $\mathrm W_G(T)$ act on $T$ in the evident way, the bundle associated to $S'$ is isomorphic to $T'$.
+\end{proposition}
+The first two assertions are trivial, and the last is proved as is the corresponding assertion of 2.6.
+\begin{corollary}{4.4.3}\label{XXIV.4.4.3}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group, and $T$ a maximal torus of $G$. Suppose that one of the following two conditions holds:
+\begin{enumeratei}
+\item $T$ is split.
+\item $T$ is contained in a Borel subgroup of $G$, and $G$ is either adjoint or simply connected.
+\end{enumeratei}
+Let moreover $P$ be a principal homogeneous bundle under $G$. There exists an $S$-scheme $S'$, which is a principal homogeneous bundle under $\mathrm W_G(T)$, such that $P_{S'}$ is trivial.
+\end{corollary}
+\begin{proof}
+Indeed, if $G'$ is the form of $G$ associated to $P$, then $G'$ possesses a maximal torus $T'$ (Exp.~XIV, 3.20). Taking up the notation of the preceding proposition, one sees that $\mathrm H^1(S',T_{S'})=0$ (by theorem 90 for (i), and by 3.14 for (ii)). The morphism $H\to S'$ has a section, so $P_{S'}$ also has a section over $S'$.
+\end{proof}
+Let us now prove the theorem. Assertion (i) is a special case of the preceding corollary (take $G=\operatorname{\acute Ep}_S(\mathscr R)$, equipped with its canonical split torus). Let us prove (ii). One knows (3.12) that $G$ is an inner twisted form of
+\[
+G_0=G^{\mathrm{q\acute Ep}}_{\mathrm{rev}(G)/S}(\mathscr R).
+\]
+If $T_0$ is the canonical maximal torus of $G_0$, $\mathrm W_{G_0}(T_0)$ is indeed the group $W_0$ described in the statement. The form $G$ of $G_0$ corresponds to a principal homogeneous bundle $P$ under $\ad(G_0)$ ($P=\underline{\operatorname{Isomint}}(G_0,G)$). The group $\mathrm W_{\ad(G_0)}(T_0^{\mathrm{ad}})$ is canonically isomorphic to $W_0$, and one obtains the desired result by applying 4.4.3 to the situation $(\ad(G_0),T_0^{\mathrm{ad}},P)$, hypothesis (ii) of 4.4.3 being satisfied. Let us finally prove (iii). Take up the notation of (ii); one has a diagram
+\[
+\xymatrix{\mathrm{rev}(G)\ar[d]_{E_S}&\\S&S'.\ar[l]^{W_0}}
+\]
+One knows that $G_{S'}$ is isomorphic to $(G_0)_{S'}$ and that $(G_0)_{\mathrm{rev}(G)}$ is splittable. If one puts $\bar S=S'\times_S\mathrm{rev}(G)$, $G_{\bar S}$ is indeed splittable, and it only remains to verify that $\bar S$ is indeed a principal Galois covering of $S$ with group $A$, which follows from the more general lemma below (naturally valid in any site):
+\begin{lemma}{4.4.4}\label{XXIV.4.4.4}
+Let $S$ be a scheme, $G$ and $H$ two $S$-group schemes, $G\to\underline{\Aut}_{S\text{-gr.}}(H)$ an action of $G$ on $H$, $E$ a principal homogeneous $G$-bundle, and $F$ a principal homogeneous $H_0$-bundle, where $H_0$ is the form of $H$ associated to $E$. Then $E\times_S F$ is naturally equipped with a structure of principal homogeneous bundle under the semidirect product $H\cdot G$.
+\end{lemma}
+% original PDF p. 30
+\begin{proof}
+Denote by $(e,g)\mto eg$ (resp. $(f,u)\mto fu$) the (right) action of $G$ on $E$ (resp. of $H_0$ on $F$). Denote by
+\[
+p:E\times_S H\to H_0
+\]
+the canonical projection ($H_0$ is by definition the quotient of $E\times_S H$ by $G$ acting on it according to the formula $(e,h)g=(eg,g^{-1}hg)$). Consider the morphism
+% typo: the source omits the closing parenthesis after this formula -> supplied.
+\[
+r:E\times_S F\times_S H\times_S G\to E\times_S F
+\]
+defined set-theoretically by
+\[
+r(e,f,h,g)=(eg,fp(e,h)).
+\]
+The morphism $r$ does indeed define an action of the semidirect product $H\cdot G$ on $E\times_S F$. Indeed, one has set-theoretically
+\[
+r(r(e,f,h,g),h',g')=(egg',fp(e,h)p(eg,h'));
+\]
+but
+\[
+p(e,h)p(eg,h')=p(e,h)p(e,gh'g^{-1})=p(e,hgh'g^{-1}),
+\]
+whence
+\[
+r(r(e,f,h,g),h',g')=r(e,f,hgh'g^{-1},gg'),
+\]
+which is what had to be proved.
+
+To prove now that this law is indeed a principal homogeneous bundle law, one may suppose that $E$ and $F$ are trivial, in which case one sees at once that $E\times_S F$ is also a trivial bundle.
+\end{proof}
+\numpara{4.5}\label{XXIV.4.5}\textbf{Isotriviality of maximal tori of semisimple groups}\nde{We have added this no. 4.5.}
+Let us bring out here the following result, implicitly contained in 2.6 (cf. N.D.E.~(13)) and mentioned at the end of Exp.~IX 1.2. Recall (XXIII 5.11) that, for every scheme $S$ and every reduced root datum $\mathscr R$, one denotes by $\operatorname{\acute Ep}_S(\mathscr R)$ the unique pinned $S$-group of type $\mathscr R$ (which exists by Exp.~XXV) and by $T_S(\mathscr R)$ its canonical maximal torus.
+\begin{proposition}{4.5.1}\label{XXIV.4.5.1}
+Let $G$ be a semisimple $S$-group of constant type $\mathscr R$; suppose that $G$ possesses a maximal torus $T$ (which is the case if $S$ is semi-local, by XIV 3.20).
+\begin{enumeratei}
+\item Then $P=\underline{\Isom}_{S\text{-gr.}}(\operatorname{\acute Ep}_S(\mathscr R),T_S(\mathscr R);G,T)/T_S(\mathscr R)^{\mathrm{ad}}$ is a principal $S$-bundle under the finite group $\Aut(\mathscr R)$, and $T_P$ is a split maximal torus of $G_P$. Consequently, $T$ is isotrivial.
+\item Moreover, for every finite set $F$ of points of $P$ contained in an affine open subset, there exists an open subset $U$ of $P$ containing $F$ such that $G_U$ is split.
+\end{enumeratei}
+\end{proposition}
+% original PDF p. 31
+\begin{proof}
+The exact sequence
+\[
+\xymatrix@C=1.4em{1\ar[r]&T_S(\mathscr R)^{\mathrm{ad}}\ar[r]&\underline{\Aut}_{S\text{-gr.}}(\operatorname{\acute Ep}_S(\mathscr R),T_S(\mathscr R))\ar[r]&\underline{\Aut}_{S\text{-gr.}}(T_S(\mathscr R))}
+\]
+induces for every $S'\to S$ a morphism of bundles $P_{S'}\to\underline{\Isom}_{S'\text{-gr.}}(T_{S'}(\mathscr R),T_{S'})$, so if $P_{S'}$ has a section, then $T_{S'}(\mathscr R)$ and $T_{S'}$ are isomorphic. This is in particular the case for $S'=P$.
+
+Observe moreover that $\underline{\Aut}_{S\text{-gr.}}(\operatorname{\acute Ep}_S(\mathscr R),T_S(\mathscr R))/T_S(\mathscr R)^{\mathrm{ad}}$ is nothing other than the constant $S$-group $\Aut(\mathscr R)_S$, and that $P$ identifies with the $\Aut(\mathscr R)_S$-torsor $\underline{\Isom}(\mathscr R,\widetilde{\mathscr R}(G,T))$, where $\widetilde{\mathscr R}(G,T)$ denotes the twisted root datum associated to $(G,T)$ (cf. XXII 1.10).
+
+Then (ii) follows from (i) and from 2.14, taking account of the fact that the $\mathfrak g^\alpha$ ($\alpha$ ranging over the roots of $\mathscr R$) are free $\OO_U$-modules of rank 1 on a sufficiently small affine open subset $U$ containing $F$.
+\end{proof}
+
+\sgasection{5}{Canonical decomposition of an adjoint or simply connected group}
+In this section we shall use the results of no. 1 to generalize to schemes a classical decomposition of adjoint (resp. simply connected) groups. To avoid overburdening the exposition indefinitely, the proofs are sketched and the details left to the reader; in fact these are always entirely standard proofs from the theory of principal bundles: reduction of the structure group, twisting, \ldots.
+\numpara{5.1}\label{XXIV.5.1}
+Recall (Exp.~XXI, 7.4) that a Dynkin diagram is the disjoint union of its connected components, which are Dynkin diagrams. Moreover, every nonempty connected Dynkin diagram corresponding to a root datum is isomorphic to one of the standard diagrams ($A_n$, $B_n$, \ldots, $G_2$) exhibited in Exp.~XXI, 7.4.6. In what follows we shall only be concerned with Dynkin diagrams whose connected components are of one of the preceding types. Let $\mathbf T$ be the set of these standard diagrams. For every Dynkin diagram $D$, let $n(t)=n_D(t)$ be the number of connected components of $D$ isomorphic to $t$, where $t\in\mathbf T$. The \emph{type} of $D$ is by definition $\sum_{t\in\mathbf T}n_D(t)t$.
+
+A Dynkin diagram of type $t$ is said to be \emph{simple of type $t$}, and a Dynkin diagram of type $nt$ is said to be \emph{isotypic of type $t$}. Let $D_0$ be the set of connected components of $D$ and let
+\[
+a:D_0\to\mathbf T
+\]
+be the evident map. The type of $D$ is nothing other than $\sum_{x\in D_0}a(x)$.
+\numpara{5.2}\label{XXIV.5.2}
+Let $S$ be a scheme and $D$ a \emph{Dynkin $S$-scheme} (satisfying the restrictive condition stated above). The cokernel of the pair of morphisms $L\rightrightarrows D$ ($L=$\nde{We have replaced $R$ by $L$, as in 3.2.} scheme of bonds of $D$) is denoted by $D_0$. It is the ``scheme of connected components'' of $D$ (it exists trivially when $D$ is constant; the general case follows by descent); it is a finite twisted constant $S$-scheme.
+% original PDF p. 32
+One has a canonical morphism
+\[
+a:D_0\to\mathbf T_S.
+\]
+For $t\in\mathbf T$, put $a^{-1}(t)=D_{0,t}$; it is a subscheme of $D_0$, whose inverse image in $D$, denoted by $D_t$, is the \emph{isotypic component of type $t$} of the Dynkin scheme $D$. Each $D_t$ is a subscheme of $D$, and one has
+\[
+D=\coprod_{t\in\mathbf T}D_t.
+\]
+Observe that the degree of $D_{0,t}$ at $s\in S$ is $n(s,t)$, if the type of $D$ at $s$ is $\sum_t n(s,t)t$.
+\numpara{5.3}\label{XXIV.5.3}
+In what follows we shall consider only adjoint (resp. simply connected) semisimple groups. To simplify the language, we shall state the results for adjoint groups; \emph{all the statements will remain valid} if one everywhere substitutes \emph{simply connected} for \emph{adjoint}.
+
+Recall that a reduced adjoint root datum is determined up to isomorphism by the type of its Dynkin diagrams. One will therefore say that an adjoint root datum $\mathscr R$ (resp. an adjoint semisimple group $G$) is of \emph{type} $\sum n(t)t$ if its Dynkin diagrams are so (resp. if its type is given by an adjoint root datum of type $\sum n(t)t$). One will say that $\mathscr R$ or $G$ is \emph{simple of type $t$} (resp. \emph{isotypic of type $t$}) if its type is $t$ (resp. $nt$, $n>0$).
+
+If $G$ is an adjoint semisimple group, we shall use the symbols $\underline{\operatorname{Dyn}}_0(G)$ and $\underline{\operatorname{Dyn}}_{0,t}(G)$ in the sense defined in 5.2.
+\numpara{5.4}\label{XXIV.5.4}
+Let $t_i$, $i=1,2,\ldots,n$, be distinct elements of $\mathbf T$, and let $\mathscr R_i$ be a pinned adjoint root datum isotypic of type $t_i$. Consider the product $\mathscr R=\mathscr R_1\times\cdots\times\mathscr R_n$ (Exp.~XXI, 6.4.1). Let $S$ be a scheme such that the various $\operatorname{\acute Ep}_S(\mathscr R_i)$ exist (cf. Exp.~XXV). One verifies at once that there exists a canonical isomorphism
+\begin{equation}\tag{$*$}
+\operatorname{\acute Ep}_S(\mathscr R)=\operatorname{\acute Ep}_S(\mathscr R_1)\times_S\cdots\times_S\operatorname{\acute Ep}_S(\mathscr R_n).
+\end{equation}
+Moreover, if $E_i$ denotes the group of automorphisms of $\mathscr R_i$, $E$ the group of automorphisms of $\mathscr R$, and $D_i$ (resp. $D$) the Dynkin diagram of $\mathscr R_i$ (resp. $\mathscr R$), one has isomorphisms:
+\[
+E_i\simeq\Aut(D_i),\qquad D=\coprod D_i,\qquad E\simeq\prod E_i\simeq\Aut(D).
+\]
+Combining with ($*$) and 1.4, one sees that ($*$) induces an isomorphism
+\[
+A_S(\mathscr R)\simeq A_S(\mathscr R_1)\times_S\cdots\times_S A_S(\mathscr R_n).
+\]
+\begin{proposition}{5.5}\label{XXIV.5.5}
+Let $S$ be a scheme and $G$ an adjoint semisimple $S$-group. There exists a unique decomposition
+\[
+G\simeq\prod_{t\in\mathbf T}G_t,
+\]
+where $G_t$ is an adjoint semisimple $S$-group isotypic of type $t$.
+% Proposition 5.5 continues in en-06.tex; sentence finishes on p. 33.

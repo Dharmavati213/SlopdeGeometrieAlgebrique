@@ -1,0 +1,178 @@
+\begin{lemma}{}\nde{We have added this lemma, which explains the terminology ``topologically flat''.}
+Let $f:X\to Y$ be a morphism of formal $k$-varieties, let $A,B$ be the affine algebras of $X,Y$, and let $f^\natural:B\to A$ be the morphism induced by $f$. The following conditions are equivalent:
+\begin{enumeratei}
+\item For every $x\in X$, the homomorphism $f_x^\natural:\OO_{Y,f(x)}\to\OO_{X,x}$ makes $\OO_{X,x}$ a topologically free pseudocompact $\OO_{Y,f(x)}$-module.
+\item For every $y\in Y$, the local component $A_y=\prod_{f(x)=y}\OO_{X,x}$ is a topologically free pseudocompact $B_y$-module.
+\item $f^\natural:B\to A$ makes $A$ a projective pseudocompact $B$-module.
+\item The functor $\mathbf{PC}(B)\to\mathbf{PC}(A)$, $M\mto M\widehat\otimes_B A$, is exact.
+\end{enumeratei}
+If these conditions hold, one says that $f$ is \emph{topologically flat}.
+\end{lemma}
+The implications (i) $\Rightarrow$ (ii) $\Leftrightarrow$ (iii) $\Leftrightarrow$ (iv) follow from 0.2.F(iii) and 0.3.7. Conversely, suppose that (ii) holds, and let $x\in X$ and $y=f(x)$. Since $\OO_{X,x}$ is a direct factor of $A_y$, it is a projective pseudocompact $B_y$-module, hence topologically free by 0.2.1 (since $B_y$ is local).
+On the other hand, a morphism $f:X\to Y$ of formal $k$-varieties is said to be \emph{surjective} if it induces a surjection of the underlying sets.
+\begin{proposition}{}
+Let $f:X\to Y$ be a surjective and topologically flat morphism of formal $k$-varieties. Then $f$ is an effective epimorphism (cf. IV 1.3).
+\end{proposition}
+Indeed, let $A,B$ be the affine algebras of $X,Y$, and $g:B\to A$ the morphism induced by $f$. One must show that $Y$ is identified with the cokernel of $X\times_Y X\rightrightarrows X$, \ie that, for every $\mathfrak n\in\Upsilon(B)$, $B_{\mathfrak n}$ is identified with the subring of $A_{\mathfrak n}=A\widehat\otimes_B B_{\mathfrak n}$ consisting of the $a$ such that $a\widehat\otimes1=1\widehat\otimes a$.
+One can therefore suppose that $B$ is local, with maximal ideal $\mathfrak n$. Our hypothesis then means that $g$ makes $A$ a nonzero topologically free $B$-module. By Nakayama's lemma 0.3.3, $A/\overline{\mathfrak nA}$ is nonzero, so the morphism $g':B/\mathfrak n\to A/\overline{\mathfrak nA}$ deduced from $g$ is injective. By Lemma 1.3.2 below, $B$ is a direct factor of $A$ as a $B$-module, say $A=B\oplus A'$; it follows that $B$ is identified with the part of $A$ consisting of the $a$ such that $a\widehat\otimes_B1=1\widehat\otimes_B a$.
+
+\begin{enonce}{1.3.2. Lemma}{}\label{VIIB.1.3.2}
+Let $B$ be a local pseudocompact ring, $\mathfrak n$ its maximal ideal, $M,N$ two projective pseudocompact $B$-modules, and $g$ a morphism $M\to N$. If $(B/\mathfrak n)\widehat\otimes_B g$ is injective, $g$ is an isomorphism from $M$ to a direct factor of $N$.
+\end{enonce}
+Indeed, suppose that $g'=(B/\mathfrak n)\widehat\otimes_B g$ is injective. Since $B/\mathfrak n$ is a field, $g'$ then has a retraction $r'$. Denote by $p$ and $q$ the canonical projections from $M$ and $N$ to $M/\overline{\mathfrak nM}$ and $N/\overline{\mathfrak nN}$; since $N$ is projective, there exists a morphism $r:N\to M$ such that $p\circ r=r'\circ q$; consequently, $r'$ is deduced from $r$ by passage to the quotient. Then, since $r'\circ g'$ is an isomorphism, so is $r\circ g$, by 0.3.4 (since $M$ is projective). Let $s$ be the inverse isomorphism of $r\circ g$; then $s\circ r$ is a retraction of $g$.
+
+\begin{enonce}{1.3.3. Proposition}{}\label{VIIB.1.3.3}
+Let $f:X\to Y$ and $g:Y\to Z$ be morphisms of formal $k$-varieties.
+\begin{enumeratei}
+\item If $f$ and $g$ are topologically flat, so is $g\circ f$.
+\item If $f$ and $g\circ f$ are topologically flat and $f$ is surjective, $g$ is topologically flat.
+\item If $f$ is topologically flat, so is $f\times_Y Y'$ for every base change $Y'\to Y$.
+\end{enumeratei}
+\end{enonce}
+Assertions (i) and (iii) are clear. To prove (ii), call $A,B,C$ the affine algebras of $X,Y,Z$, and $f':B\to A$, $g':C\to B$ the morphisms induced by $f$ and $g$. Since $g\circ f$ is topologically flat, $f'\circ g'$ makes $A$ a projective pseudocompact $C$-module; similarly, $f'$ makes $A$ a faithful projective pseudocompact $B$-module. When $P$ runs through the pseudocompact $C$-modules and $N$ through the pseudocompact $B$-modules, the functors $P\mto P\widehat\otimes_C A$ and $N\mto N\widehat\otimes_B A$ are therefore exact; since the second is moreover faithful, the functor $P\mto P\widehat\otimes_C B$ is exact; by 0.3.7, $B$ is therefore a projective pseudocompact $C$-module.
+
+\begin{enonce}{1.3.4. Proposition}{}\label{VIIB.1.3.4}
+Let $S$ be a scheme, $Y$ a locally noetherian $S$-scheme, and $f:X\to Y$ a faithfully flat $S$-morphism locally of finite type, so that $f$ is an effective epimorphism, \ie the sequence below is exact (cf. IV 6.3.1(iv) and IV 1.3):
+\begin{equation}\tag{*}
+\xymatrix{X\times_Y X\ar@<.5ex>[r]^{\mathrm{pr}_1}\ar@<-.5ex>[r]_{\mathrm{pr}_2}&X\ar[r]^f&Y.}
+\end{equation}
+Then the morphism of formal $\widehat S$-varieties $\widehat f:\widehat X/\widehat S\to\widehat Y/\widehat S$ (cf. 1.2.6) is surjective and topologically flat, and the sequence below deduced from (*) is exact:
+\begin{equation}\tag{$\widehat *$}
+\xymatrix{\widehat{X\times_Y X}/\widehat S\ar@<.5ex>[r]^{\widehat{\mathrm{pr}}_1}\ar@<-.5ex>[r]_{\widehat{\mathrm{pr}}_2}&\widehat X/\widehat S\ar[r]^{\widehat f}&\widehat Y/\widehat S.}
+\end{equation}
+\end{enonce}
+Indeed, let $y$ be a point of $Y$ with projection $s$ on $S$ such that $\kappa(y)$ is a finite extension of the residue field $\kappa(s)$ of $s$. Since $f$ is surjective and locally of finite type, $f^{-1}(y)$ is nonempty and locally of finite type over $\kappa(y)$; the closed points of $f^{-1}(y)$ are then the points of $\widehat X/\widehat S$ projecting to $y$. This shows that $\widehat f$ is surjective.
+\nde{We have detailed what follows; we have then taken advantage of the addition made in 1.2.6.}Let $x$ be a closed point of $f^{-1}(y)$. Since $Y$ is locally noetherian and $f$ locally of finite type, the local ring $\OO_{Y,y}$ (resp. $\OO_{X,x}$) is noetherian, so the powers of the maximal ideal have finite colength, and thus the local ring of $\widehat Y/\widehat S$ at $y$ (resp. of $\widehat X/\widehat S$ at $x$) is the completion $\widehat\OO_{Y,y}$ of $\OO_{Y,y}$ (resp. $\widehat\OO_{X,x}$ of $\OO_{X,x}$) for the $\mathfrak m$-adic topology. Then, since $f$ is flat, $\widehat\OO_{X,x}$ is flat over $\widehat\OO_{Y,y}$ by SGA 1, IV 5.8. Thus, by 0.3.8, $\widehat\OO_{X,x}$ is a topologically free $\widehat\OO_{Y,y}$-module. This shows that $\widehat f$ is topologically flat.
+Thus, by Proposition 1.3.1, $\widehat f$ is an effective epimorphism, \ie the sequence below (where we have written $\widehat X$ instead of $\widehat X/\widehat S$) is exact:
+\[
+\xymatrix{\widehat X\times_{\widehat Y}\widehat X\ar@<.5ex>[r]^{\widehat{\mathrm{pr}}_1}\ar@<-.5ex>[r]_{\widehat{\mathrm{pr}}_2}&\widehat X\ar[r]^{\widehat f}&\widehat Y.}
+\]
+Moreover, by 1.2.6, one has a natural isomorphism (in particular, commuting with the projections to $\widehat X$)
+\[
+\widehat{X\times_Y X}\simeq\widehat X\times_{\widehat Y}\widehat X.
+\]
+Consequently, sequence ($\widehat *$) is exact.
+
+\numpara{1.3.5}Let $k$ be a pseudocompact ring. A formal variety $X$ over $k$ is said to be \emph{topologically flat} if its affine algebra $A$ is a \emph{projective} pseudocompact $k$-module, \ie if the structural morphism $X\to\Spf(k)$ is topologically flat.
+\nde{We have added the following lemma, used implicitly in the original; moreover, we have introduced the numbering 1.3.5.A to 1.3.5.D for later references.}First note that 0.2.2 and 0.3.6 imply the following result (analogous to VII A, 3.1.1).
+\begin{lemma}{1.3.5.A}\label{VIIB.1.3.5.A}
+Suppose that $k$ is artinian. The functors $A\mto A^\dagger=\Hom_c(A,k)$ and $C\mto C^*=\Hom_k(C,k)$ define an anti-equivalence between the category of topologically flat profinite $k$-algebras and that of flat $k$-coalgebras.
+\end{lemma}
+Indeed, if $A$ is a topologically flat profinite $k$-algebra, then, by 0.3.6, one has an isomorphism of $k$-modules
+\[
+A^\dagger\otimes_k A^\dagger\isomto(A\widehat\otimes A)^\dagger,
+\]
+so multiplication $A\widehat\otimes A\to A$ induces by duality a $k$-coalgebra structure on $A^\dagger$. The rest then follows from Proposition 0.2.2.
+Let us return to the case of an arbitrary pseudocompact ring $k$.
+\begin{definition}{1.3.5.B}\label{VIIB.1.3.5.B}
+To every formal $k$-variety $X$ whose affine ring $A$ is a \emph{projective} pseudocompact $k$-module, one associates a flat $\mathbf O_k$-coalgebra $\mathbf H(X)$, defined as follows.
+Denote by $\mathbf H(X)$ the $\mathbf O_k$-module $\mathbf V_k^{\mathrm f}(A)$ ``dual to $A$''; it is a flat $\mathbf O_k$-module, since the pseudocompact $k$-module underlying $A$ is projective (cf. 1.2.3.C). Moreover, by 0.3.6, one has
+\[
+\mathbf V_k^{\mathrm f}(A\widehat\otimes A)\simeq\mathbf V_k^{\mathrm f}(A)\otimes\mathbf V_k^{\mathrm f}(A),
+\]
+and thus multiplication on $A$ induces by transposition a diagonal morphism
+\[
+\mathbf H(X)=\mathbf V_k^{\mathrm f}(A)\to\mathbf V_k^{\mathrm f}(A\widehat\otimes A)=\mathbf H(X)\otimes\mathbf H(X)
+\]
+which makes $\mathbf H(X)$ a flat $\mathbf O_k$-coalgebra. We shall say that $\mathbf H(X)$ is \emph{the coalgebra of $X$ over $\mathbf O_k$}.
+\end{definition}
+\begin{definition}{1.3.5.C}\label{VIIB.1.3.5.C}
+Conversely, to every $\mathbf O_k$-coalgebra $\mathbf C$ one can associate a $k$-functor (cf. 1.2.1) $\Spf^*(\mathbf C)$, defined as follows. For every object $B$ of $\mathbf{Alf}/k$, put (with the notation of VII A 3.1)
+\begin{equation}\tag{1}
+\begin{aligned}
+\Spf^*(\mathbf C)(B)&=\Hom_{B\text{-}\mathrm{coalg.}}(B,\mathbf C(B))\\
+&=\{x\in\mathbf C(B)\mid\varepsilon_{\mathbf C(B)}(x)=1\ \text{and }\Delta_{\mathbf C(B)}(x)=x\otimes x\}.
+\end{aligned}
+\end{equation}
+\end{definition}
+\nde{We have detailed what follows.}Suppose further that the $\mathbf O_k$-module underlying $\mathbf C$ is \emph{admissible} (cf. 1.2.1), and put
+\begin{equation}\tag{2}
+A=\Gamma^*(\mathbf C)=\varprojlim_{\mathfrak l}\mathbf C(k/\mathfrak l)^*.
+\end{equation}
+Then the algebra structures on each $\mathbf C(k/\mathfrak l)^*$ equip $A$ with a profinite $k$-algebra structure. For every object $B$ of $\mathbf{Alf}/k$, one has
+\begin{equation}\tag{3}
+\begin{aligned}
+\Hom_{\mathbf{Vaf}/k}(\Spf(B),\Spf(A))&=\Hom_{\mathbf{Alp}/k}(A,B)\\
+&=\Hom_{\mathbf{Alp}/B}(A\widehat\otimes B,B).
+\end{aligned}
+\end{equation}
+Finally, suppose that $\mathbf C$ is a flat $\mathbf O_k$-module. Then, by 1.2.3.E, $A=\Gamma^*(\mathbf C)$ is a \emph{projective} pseudocompact $k$-module. Moreover, in the proof of \loccit one has seen that if $\mathfrak l_0$ is an open ideal of $k$ contained in the kernel of $k\to B$, one has isomorphisms
+\begin{equation}\tag{4}
+\begin{aligned}
+A\widehat\otimes B=\varprojlim_{\mathfrak l}\mathbf C(k/\mathfrak l)^*\widehat\otimes_k B
+&\simeq\Hom_{k/\mathfrak l_0}(\mathbf C(k/\mathfrak l_0),B)\\
+&\simeq\Hom_B(\mathbf C(B),B),
+\end{aligned}
+\end{equation}
+and we shall denote the right-hand term by $\mathbf C(B)^*$. Finally, by Lemma 1.3.5.A applied to the artinian ring $B$, one has a natural isomorphism
+\begin{equation}\tag{5}
+\Hom_{B\text{-}\mathrm{coalg.}}(B,\mathbf C(B))\isomto\Hom_{\mathbf{Alp}/B}(\mathbf C(B)^*,B).
+\end{equation}
+Then, combining (1), (5), (4), (3), and (2), when $\mathbf C$ is a flat $\mathbf O_k$-coalgebra one obtains an isomorphism of functors
+\begin{equation}\tag{$\star$}
+\Spf^*(\mathbf C)\simeq\Spf(A)=\Spf(\Gamma^*(\mathbf C)).
+\end{equation}
+Consequently, if one denotes by $\mathscr A(X)$ the affine algebra of a formal $k$-variety $X$, taking 1.2.3.E into account one obtains:
+\begin{proposition}{1.3.5.D}\label{VIIB.1.3.5.D}
+\begin{enumeratei}
+\item The functors $X\mto\mathbf H(X)=\mathbf V_k^{\mathrm f}(\mathscr A(X))$ and $\mathbf C\mto\Spf^*(\mathbf C)=\Spf(\Gamma^*(\mathbf C))$ define an equivalence between the category of topologically flat formal $k$-varieties and that of flat $\mathbf O_k$-coalgebras.
+\item Moreover, this equivalence ``commutes with base change'': if $k\to K$ is a morphism of pseudocompact rings, $X\widehat\otimes_k K$ corresponds to $\mathbf H(X)\otimes_k K$.
+\end{enumeratei}
+\end{proposition}
+
+\numpara{1.3.6}In the remainder of this exposé, we shall repeatedly define a topologically flat formal $k$-variety $X$ by exhibiting the coalgebra $\mathbf H(X)$. We shall then have to interpret certain geometric properties of $X$ by means of $\mathbf H(X)$. Here we give an example of this situation: suppose that a section $\sigma$ of the structural morphism $X\to\Spf(k)$ is given, and ask under what condition $\sigma$ induces an isomorphism of the underlying topological spaces.\nde{In Lemma 1.3.6.A which follows, we have detailed the proof of parts (i) and (ii), and have added part (iii).}
+To begin with, suppose that $k$ is artinian. Let $(H,\Delta,\varepsilon)$ be a flat $k$-coalgebra, $H^+=\Ker(\varepsilon)$, and $A=H^*$ the profinite $k$-algebra dual to $H$. Suppose that a morphism of $k$-coalgebras $k\to H$ is given, \ie an element $\varphi$ of $H$ such that $\varepsilon(\varphi)=1$ and $\Delta(\varphi)=\varphi\otimes\varphi$. On the one hand, $\varphi$ defines a continuous morphism of algebras $\Phi:A\to k$, and hence a section $\sigma:\Spf(k)\to\Spf(A)$ of the projection $\Spf(A)\to\Spf(k)$.
+On the other hand, one defines $k$-submodules of $H$ by putting $H_0=k\varphi$ and, for $n\geq1$,
+\[
+H_n=\{x\in H\mid\Delta(x)-x\otimes\varphi\in H_{n-1}\otimes H^+\};
+\]
+this also holds for $n=0$ if one puts $H_{-1}=(0)$. One sees by induction on $n$ that $H_{n-1}\subset H_n$. One calls $H_0\subset H_1\subset\cdots$ the \emph{filtration of $H$ defined by $\varphi$}.
+\begin{remark}{}
+Since $\Delta(H_n)\subset H_n\otimes H_0\oplus H_{n-1}\otimes H^+$, one has $\Delta(H_n)\subset H_n\otimes H$. Since $\Delta$ is cocommutative (\ie $\sigma\circ\Delta=\Delta$, where $\sigma(a\otimes b)=b\otimes a$), one also has $\Delta(H_n)\subset H\otimes H_n$. When $H/H_n$ is flat over $k$, it follows that $H_n$ is a subcoalgebra of $H$ (see also 1.3.6.A(iii) below). But in general $\Delta:H_n\to H_n\otimes H$ does not factor through $H_n\otimes H_n$.\nde{For example, let $k_0$ be a field, $k=k_0[T]/(T^n)$, where $n\geq4$, and $H=k\varphi\oplus kx$, with $\varepsilon(x)=0$ and $\Delta(x)=x\otimes\varphi+\varphi\otimes x+tx\otimes x$, where $t$ is the image of $T$ in $k$. Then $H_i=k\varphi\oplus t^{n-i}x$ for $i=0,\ldots,n$, but for $2\leq i\leq n-2$, $\Delta(t^{n-i}x)$ does not belong to the image of $H_i\otimes H_i$ in $H\otimes H$.}
+\end{remark}
+\begin{lemma}{1.3.6.A}\label{VIIB.1.3.6.A}
+Let $k$ be an artinian ring, $H$ a flat $k$-coalgebra, $A=H^*$ the dual profinite $k$-algebra, and $\varphi$ an element of $H$ such that $\varepsilon(\varphi)=1$ and $\Delta(\varphi)=\varphi\otimes\varphi$. Let $\Phi:A\to k$ be the continuous morphism of algebras, $\sigma:\Spf(k)\to\Spf(A)$ the section of $\Spf(A)\to\Spf(k)$, and $(H_n)$ the filtration of $H$ defined by $\varphi$. Denote by $I$ the kernel of $\Phi$.
+\begin{enumeratei}
+\item For every $n\geq1$, $H_{n-1}$ is the orthogonal in $H$ of the closure $\overline{I^n}$ of $I^n$.
+\item Consequently, $\sigma$ induces a bijection of the underlying sets if and only if $H=\bigcup_n H_n$.\nde{In this case one says that the coalgebra $H$ is connected; cf. addition 2.9.}
+\item If, moreover, each $H/H_n$ is flat over $k$, then, for every $n\geq0$,
+\begin{equation}\tag{*}
+\Delta(H_n)\subset\sum_{i=0}^n H_i\otimes H_{n-i};
+\end{equation}
+in particular, each $H_n$ is then a subcoalgebra of $H$.
+\end{enumeratei}
+\end{lemma}
+\begin{proof}
+Note that, for every $x\in H$, the map $A\to k$, $f\mto f(x)$ is continuous, so if $I^n$ is annihilated by $x$, the same holds for its closure $\overline{I^n}$. For every $n\geq1$, one then puts
+\[
+(\overline{I^n})^\perp=\{x\in H\mid f(x)=0\ \text{for every }f\in\overline{I^n}\}.
+\]
+Suppose that $\sigma:\mathfrak m\mto\Phi^{-1}(\mathfrak m)$ is a bijection from $\Spf(k)$ to $\Spf(A)$. Since $I$ is contained in the intersection of the $\Phi^{-1}(\mathfrak m)$, it follows from 0.1.2 that the sequence of ideals $(I^n)$ tends to $0$. Let $x\in H$; since $J(x)=\{f\in A\mid f(x)=0\}$ is an open and closed $k$-submodule of $A$, it contains $I^n$ for sufficiently large $n$; in other words, $x\in(\overline{I^n})^\perp$ for sufficiently large $n$.
+Conversely, suppose that $H=\bigcup_n(\overline{I^n})^\perp$. Let $\mathfrak p$ be an open prime ideal of $A$; by the definition of the topology of $A$ (0.2.2), $\mathfrak p$ contains an open $k$-submodule of the form
+\[
+\mathcal V(x_1,\ldots,x_s)=\{f\in A\mid f(x_1)=\cdots=f(x_s)=0\}.
+\]
+By hypothesis, there exists an integer $n$ such that $x_1,\ldots,x_s\in(\overline{I^n})^\perp$, hence $I^n\subset\mathfrak p$. Moreover, since $k$ is artinian, $\Spf(k)$ is a finite set $\{\mathfrak m_1,\ldots,\mathfrak m_r\}$ and there exists an integer $t\geq1$ such that $(\prod_i\mathfrak m_i)^t=0$, whence
+\[
+\prod_i\Phi^{-1}(\mathfrak m_i)^t\subset I.
+\]
+Thus $\mathfrak p$ contains the product of the $\Phi^{-1}(\mathfrak m_i)^{tn}$; since $\mathfrak p$ is prime, it follows that $\mathfrak p$ contains, hence equals, one of the $\Phi^{-1}(\mathfrak m_i)$. One has thus proved that
+\[
+\sigma\text{ is a bijection}\quad\Longleftrightarrow\quad H=\bigcup_n(\overline{I^n})^\perp.
+\]\nde{This also holds without assuming $H$ cocommutative ($k$ remaining a commutative artinian ring): in this case, a base of neighborhoods of $0$ in $A=H^*$ is given by the two-sided ideals $J$ such that $A/J$ has finite length over $k$, and the preceding proof shows that $H=\bigcup_n(\overline{I^n})^\perp$ if and only if the $\Phi^{-1}(\mathfrak m_i)$ are the only open prime ideals of $A$.}
+On the other hand, one has $H=k\varphi\oplus H^+$; denote by $\pi$ the projection $H\to H^+$ with kernel $k\varphi$. For every $n\geq0$, let $\Delta^n$ be the ``iterated'' comultiplication $H\to H^{\otimes(n+1)}$, $\overline\Delta^{\,n}$ the composite of $\Delta^n$ with the projection $\pi^{\otimes(n+1)}:H^{\otimes(n+1)}\to(H^+)^{\otimes(n+1)}$, and
+\[
+\begin{aligned}
+H'_n=\Ker(\overline\Delta^{\,n})
+=\bigl\{x\in H\bigm|\Delta^n(x)\in\sum_{i=0}^n H^{\otimes(n-i)}\otimes H_0\otimes H^{\otimes i}\bigr\}.
+\end{aligned}
+\]
+(One puts $\Delta^0=\mathrm{id}_H$, whence $H'_0=H_0$.) One easily sees, by induction on $n$, that
+\begin{equation}\tag{*}
+H_n\subset H'_n\subset(\overline{I^{(n+1)}})^\perp.
+\end{equation}
+Until now, one has not used the hypothesis that $H$ is flat over $k$. Now suppose that $H$ is flat, hence projective over $k$, so that $A^\dagger=H$ by 0.2.2, and let us show that $H_n=(\overline{I^{(n+1)}})^\perp$. This is clear for $n=0$. Suppose therefore that it holds for $n<r$. Then $H_{r-1}$ is the kernel of the morphism $H\to(\overline{I^r})^\dagger$, and thus, since $H^+$ is flat, the morphism
+\[
+(H/H_{r-1})\otimes H^+\to(\overline{I^r})^\dagger\otimes H^+
+\]
+is injective.

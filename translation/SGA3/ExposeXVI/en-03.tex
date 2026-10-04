@@ -1,0 +1,120 @@
+% Source PDF pp. 13--17.
+Such a group $H$ is of finite presentation over $S$ (Exp. VIB 5.5), and $H\to G_T$ is a quasi-affine morphism (EGA IV 8.11.2). By effective descent of quasi-affine morphisms (SGA1 VIII 7.9), one deduces that $\mathscr F$ is a sheaf for the fpqc topology. Since $G/N$ is the sheaf associated to a subsheaf of $\mathscr F$, one sees that there exists a canonical monomorphism $G/N\to\mathscr F$. There therefore exists a subgroup $H'$ of $G\times_S(G/N)$, representable, smooth over $G/N$, with connected fibers, ``universal'' for the functor $G/N$. I say that the invertible sheaf $\mathscr L=(\det(\Lie H'))^{-1}$ is $S$-ample. In this form, the assertion becomes local on $S$, and the proof is analogous to that given in (Exp. XV 5.8).
+% typo?: the source says finite presentation over S for an H over T; kept.
+
+The following corollary was announced in Exp. XIV 4.8 bis.
+\begin{corollary}{2.5}\label{XVI.2.5}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth and of finite presentation over $S$, with connected fibers, $P$ a parabolic subgroup of $G$ (Exp. XIV 4.8 bis). Then $G/P$ is representable by an $S$-prescheme smooth and projective over $S$.
+\end{corollary}
+It remains only to show (loc. cit.) that $G/P$ is representable by a quasi-projective prescheme of finite presentation, which follows from 2.4, taking account of the fact that $P=\uNorm_G(P)$ (loc. cit.), hence is flat over $S$.
+
+\sgasection{3}{Groups with flat center}
+\begin{proposition}{3.1}\label{XVI.3.1}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth and of finite presentation over $S$, with connected fibers. Suppose that the center $Z$ of $G$ (which is representable by Exp. XI 6.11) is flat over $S$. For every integer $n>0$, denote by $G^{(n)}$ the locally free $\OO_S$-module equal to the $n$th normal invariant of $G$ along the unit section, and let $\rho_n$ be the natural ``adjoint representation'' of $G$ in $\mathrm{GL}_S(G^{(n)})$. Then:
+
+\noindent a) The quotient $G'=G/Z$ is representable by a group $S$-prescheme smooth, of finite presentation over $S$, quasi-affine, with affine connected fibers.
+
+\noindent b) The representation $\rho_n$ factors through $G'$:
+\[
+\xymatrix{G\ar[rr]^{\rho_n}\ar[dr]&&\mathrm{GL}_S(G^{(n)})\\&G/Z\ar[ur]_{i_n}&}
+\]
+If $S$ is quasi-compact, $i_n$ is a monomorphism for sufficiently large $n$.
+
+\noindent c) The functor $\mathscr T_{G'}$ of subtori of $G'$ is representable by an $S$-prescheme smooth over $S$, which is a sum of a family of preschemes affine over $S$ if $S$ is quasi-compact.
+\end{proposition}
+\par\noindent\emph{Proof.}
+The assertions in a) are local on $S$, which allows us to suppose $S$ quasi-compact. By Exp. XI 6.11 b), $Z$ is equal to $\Ker\rho_n$ for sufficiently large $n$, so the latter is flat over $S$. The fact that $G/Z$ is representable and that $i_n$ is a monomorphism therefore follows from 2.3. Since $G$ is smooth and of finite presentation over $S$, the same holds for $G'$ (Exp. VIB \S\ 9). The group $\mathrm{GL}_S(G^{(n)})$ is affine over $S$, and a monomorphism of finite presentation is quasi-affine (EGA IV 8.11.2), so $G'$ is quasi-affine over $S$ and has affine fibers. Since $G'$ is smooth over $S$, the functor $\mathscr T_{G'}$ is formally smooth (Exp. XI 2.1 bis). Taking account of Exp. XI 4.6 and 4.3, the assertions in 3.1 c) will therefore follow from the following lemma:
+
+% Source PDF p. 14.
+\begin{lemma}{3.2}\label{XVI.3.2}
+Let $S$ be a prescheme, $G$ and $H$ two group $S$-preschemes of finite presentation over $S$, $u:G\to H$ a group $S$-monomorphism, $\mathscr T_G$ (resp. $\mathscr T_H$) the functors of subtori of $G$ (resp. of $H$) (cf. Exp. XV \S\ 8). Then the map $T\mapsto u(T)$ defines a monomorphism (XV~8.3~c))
+\[
+\widetilde u:\mathscr T_G\longrightarrow\mathscr T_H
+\]
+which is representable by a closed immersion of finite presentation.
+\end{lemma}
+By the usual procedure, we are reduced to the following problem: let $T$ be a subtorus of $H$, $T'=G\times_T H$ its inverse image in $G$, $u_T:T'\to T$ the group $S$-monomorphism deduced from $u$. One must show that the $S$-functor $\prod_{T/S}(T'/T)$ is representable by a closed subprescheme of $S$, of finite presentation. But $T$, being a torus, is smooth over $S$ with connected fibers, and it suffices to apply Exp. XI 6.10.
+% typo?: the printed fibered product is G times_T H; kept as printed.
+\begin{theorem}{3.3}\label{XVI.3.3}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth and of finite presentation over $S$, with connected fibers, $Z$ the center of $G$. Suppose that $Z$ is flat over $S$ and that the unipotent rank (Exp. XV 6.1 ter) of $G$ is equal to that of $Z$. Then:
+
+\noindent a) The group $G'=G/Z$ is representable, and if $S$ is quasi-compact, the canonical morphism $i_n:G'\to\mathrm{GL}_S(G^{(n)})$ (cf. 3.1 b)) is an immersion for large $n$.
+
+\noindent b) The group $G'$ is quasi-affine over $S$, with affine fibers, the center of $G'$ is the unit group, and $G'$ has unipotent rank zero.
+
+\noindent c) The group $G'$ has locally for the étale topology maximal tori, and these are also Cartan subgroups of $G'$. The functor $\mathscr{TM}_{G'}$ of maximal tori of $G'$ (Exp. XV \S\ 8) is representable by an $S$-prescheme smooth and affine over $S$.
+
+\noindent d) The group $G$ has locally for the étale topology Cartan subgroups, and the functor $\mathscr C_G$ of Cartan subgroups of $G$ is representable by an $S$-prescheme smooth and affine over $S$.
+\end{theorem}
+\par\noindent\emph{Proof.}
+By 3.1, the group $G'$ is representable by an $S$-prescheme smooth and quasi-affine over $S$, with affine fibers. In view of the correspondence between Cartan subgroups of the fibers of $G$ and of the fibers of $G'$ (Exp. XII 6.6 e)), the hypothesis on the unipotent rank of $Z$ implies that $G'$ has unipotent rank zero. Using now Exp. XV 8.18, one sees that $G'$ has locally for the étale topology maximal tori. The fact that $i_n$ is an immersion for large $n$ then follows from 3.1 b) and 1.4 a). This finishes proving a).
+
+Let us now show c). Since $G'$ has unipotent rank zero, it is clear that every maximal torus of $G'$ is also a Cartan subgroup of $G'$. The functor of maximal tori of $G'$ is representable by a subprescheme, both open and closed, of the functor of subtori of $G'$; moreover, it is of finite type over $S$ (Exp. XV 8.15); it then follows from 3.1 c) that this functor is representable by an $S$-prescheme smooth and affine over $S$.
+
+% Source PDF p. 15.
+Since $G'$ has locally for the étale topology Cartan subgroups, the same holds for $G$, and the functor of Cartan subgroups of $G$ is canonically isomorphic to that of $G'$ (Exp. XV 7.3 iv)), so $\text{c)}\Rightarrow\text{d)}$.
+
+It remains for us to show b), and more precisely it remains to prove that the center $Z'$ of $G'$ is the unit group. Since $Z'$ is representable (Exp. XI 6.11) and of finite presentation over $S$, it suffices to show that the fibers of $Z'$ are reduced to the unit group (Exp. VIB 2.9), which reduces us to the case where $S$ is the spectrum of an algebraically closed field. The center $Z'$ is plainly contained in every Cartan subgroup of $G'$, hence in every maximal torus of $G'$ by c), so is of multiplicative type. Moreover, we shall see in Exp. XVII that if $G$ is a connected algebraic group with center $Z$, the center $Z'$ of $G/Z$ is unipotent. In the present case, $Z'$, being both of multiplicative type and unipotent, is reduced to the unit group (cf. Exp. XVII).
+
+\par\noindent\emph{Examples of groups whose center is flat}
+\begin{proposition}{3.4}\label{XVI.3.4}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation over $S$, smooth, with connected fibers, $Z$ the center of $G$. Then $Z$ is flat over $S$ in the following two cases:
+
+\noindent a) The unipotent rank $\rho_u$ (Exp. XV 6.1 ter) of the fibers of $G$ is zero.
+
+\noindent b) i) $S$ is reduced.
+
+\noindent\hspace*{1em}ii) The dimension of the fibers of $Z$ is a locally constant function on $S$.
+
+\noindent\hspace*{1em}iii) The unipotent rank of $G$ is equal to the unipotent rank of $Z$.
+\end{proposition}
+\par\noindent\emph{Proof of 3.4 a).}
+We shall prove at the same time the
+\begin{proposition}{3.5}\label{XVI.3.5}
+Under the hypotheses of 3.4 a), suppose moreover that $G$ has a maximal torus $T$, and let $C=\uCentr_G(T)$ be the Cartan subgroup of $G$ associated to $T$ (Exp. XII 7.1). Then:
+
+\noindent (i) $Z\cap T$ is a subgroup of multiplicative type of $G$.
+
+\noindent (ii) $C$ is commutative and equal to $T\cdot Z$.
+
+\noindent (iii) If the quotients $Z/Z\cap T$ and $C/T$ are representable, they are representable by abelian preschemes (i.e. group $S$-preschemes smooth over $S$ whose fibers are abelian varieties), and the canonical monomorphism $Z/Z\cap T\to C/T$ is an isomorphism.
+\end{proposition}
+Using the general properties of passage to the limit proved in Exp. VIB \S\ 10 and Exp. XV 6.2, 6.3 and 6.3 bis, one reduces as usual to the case where $S$ is noetherian (note that the assertions in 3.4 and 3.5 are local on $S$). We remarked in 3.1 that the hypotheses on $G$ imply that $Z$ is representable. To show that $Z$ is flat over $S$, one then reduces by EGA $0_{\mathrm{III}}$ 10.2.6 to the case where $S$ is local artinian. But then, $G$ being smooth, $G$ has locally for the étale topology maximal tori (Exp. XV 8.17). After making a finite flat extension of $S$ (which is permissible for proving that $Z$ is flat), we may therefore suppose that $G$ has a maximal torus $T$.
+
+% Source PDF p. 16.
+Let us show, in the same way, that to establish 3.5, we can reduce to the case where $S$ is artinian.
+
+i) Since $Z$ is closed in $G$ (Exp. XI 6.11), $Z\cap T$ is a closed group subscheme of $T$. It then follows from Exp. X 4.8 b) that $Z\cap T$ is of multiplicative type if and only if it is flat over $S$. As above, it suffices to establish that $Z\cap T$ is flat when $S$ is artinian.
+
+ii) Since $G$ has unipotent rank zero, every Cartan subgroup $C$ of $G$ satisfies the hypotheses of Lemma 1.6, hence is commutative. The fact that $C=T\cdot Z$ will follow from iii).
+
+iii) If $C/T$ is representable, $C/T$ is smooth over $S$ (Exp. VIB 9), and its fibers are abelian varieties (1.7), so $C/T$ is an abelian prescheme. To show that the canonical monomorphism
+\[
+i:Z/Z\cap T\longrightarrow C/T
+\]
+is an isomorphism, it suffices to verify this when $S$ is local artinian. Indeed, one will successively deduce that $Z/Z\cap T$ is flat over $S$ (EGA $0_{\mathrm{III}}$ 10.2.6), then that $i$ is flat (EGA IV 11.3.10), then that $i$ is an open immersion (EGA IV 17.9.1), then that $i$ is an isomorphism (since $C/T$ has connected fibers).
+
+We henceforth suppose that $S$ is local artinian with closed point $s$ and that $G$ has a maximal torus $T$. Let $C=\uCentr_G(T)$. The group $C$ is a Cartan subgroup of $G$ (Exp. XII 7.1) and contains $Z$.
+
+The algebraic group $M_s=Z_s\cap T_s$ is a subgroup of multiplicative type of $G_s$ which is central. Since $T$ is smooth over $S$, $M_s$ lifts to a group subscheme $M$ of $T$, of multiplicative type (Exp. IX 3.6 bis) and contained in the center of $G$ (Exp. IX 3.9), hence contained in $Z\cap T$. Since $S$ is artinian and $M$ and $T$ flat over $S$, the quotient groups $Z\cap T/M$, $Z'=Z/M$ and $A=C/T$ are representable (Exp. VIA \S\S\ 4 and 5). By construction, $(Z\cap T/M)_s$ is the unit group, so $Z\cap T=M$ (Exp. VIB 2.9); a fortiori, it is flat over $S$, which proves 3.5 i).
+
+By passage to the quotient, one has a canonical monomorphism $i:Z'\to A$, which is therefore a closed immersion (Exp. VIB 1.4.2). We have already remarked that $A$ is an abelian scheme. It remains to show that $i$ is an isomorphism. Indeed, this will prove 3.5 iii) and imply that $Z'$ is flat over $S$, hence that $Z$ is flat over $S$ (as an extension of $Z'$ by the flat group $M$ (Exp. VIB \S\ 9)). Since $Z_s$ has the same abelian rank as $G_s$ (Exp. XII 6.1), $i_s$ is an epimorphism, hence is an isomorphism. Let $q$ be an integer $>0$ invertible on $S$. By the density theorem of 1.6 iii), to see that $i(Z')=A$, it suffices to show that for every integer $n$ equal to a power of $q$, $i(S')$ contains ${}_nA$. Now let $M_s^0$ be the identity component of $M_s$. It is immediate by duality that raising to the $q$th power in $M_s^0$ is an epimorphism. One immediately deduces that if $m_0$ is the exponent of $q$ in the prime factorization of $\operatorname{card}(M_s/M_s^0)$, the image of ${}_{n m_0}Z_s$ in $A_s\simeq Z_s/M_s$ contains ${}_nA_s$. There therefore exists a subgroup of multiplicative type $M_s(n)$ of $Z_s$ whose image in $A_s$ is ${}_nA_s$. As above, one sees that $M_s(n)$ lifts to a central subgroup of multiplicative type $M(n)$ of $G$. The image of $M(n)$ in $A$ is a subgroup of multiplicative type (Exp. IX 6.8), hence necessarily equal to ${}_nA$, since this is so on the reduced fiber (Exp. IX 5.1 bis). This completes the proof of 3.4 a) and 3.5.
+% typo?: i(S') and the subscript n m_0 in the density argument are kept as printed.
+
+% Source PDF p. 17.
+\par\noindent\emph{Proof of 3.4 b).}
+The assertion to be proved is local on $S$, so we may suppose $S$ affine with ring $A$. Considering $A$ as the inductive limit of its $\mathbf Z$-subalgebras of finite type, one reduces as above to the case where $S$ is noetherian and reduced.
+
+To show that $Z$ is flat, one then has a valuative criterion of flatness (EGA IV 11.8.1), which allows us to reduce to the case where $S$ is the spectrum of a complete discrete valuation ring with algebraically closed residue field, with generic point $t$ and closed point $s$. Let $Z'$ be the schematic closure in $Z$ of $Z_t$. We must show that $Z'=Z$, and it even suffices to show that $Z_s=Z'_s$ (Exp. VIB 2.6). By (Exp. VIB \S\ 4), one has the inequalities
+\[
+\dim Z_t=\dim Z'_t=\dim Z'_s\leq\dim Z_s.
+\]
+But by hypothesis $\dim Z_t=\dim Z_s$, so $\dim Z'_s=\dim Z_s$, and consequently $Z'_s$ contains $(Z_s)^0_{\mathrm{red}}$. It follows that $G'_s=G_s/Z'_s$ is affine (Exp. XII 6.1). In view of the correspondence between Cartan subgroups of $G$ and $G'$ (Exp. XII 6.6 e)), hypothesis 3.4 iii) implies that the unipotent rank of $G'_s$ is zero, and consequently its Cartan subgroups are also its maximal tori. The image $Z''_s$ of $Z_s$ in $G'_s$ is a central algebraic subgroup of $G'_s$, hence contained in every Cartan subgroup of $G'_s$, that is to say, in every maximal torus; $Z''_s$ is therefore a subgroup of multiplicative type of $G'_s$. Under these conditions, we shall show in (Exp. XVII \S\ 7) that there exists a finite subgroup of multiplicative type $M_s$ of $Z_s$ whose image in $Z_s/Z'_s$ is $Z''_s$ (we used this fact in the proof of 3.4 a) when $Z''_s$ is étale). Since $G$ is smooth over $S$ and $S$ is the spectrum of a complete local ring, $M_s$ lifts to an $S$-subgroup of multiplicative type $M$ of $G$ (Exp. IX 3.6 bis and Exp. XV 1.6 b)) which is central (Exp. IX 5.6 a)). Thus $M_t$ is contained in $Z'_t=Z_t$, and since $M$ is flat, $M$ is contained in $Z'$. The group $M_s$ is therefore contained in $Z'_s$, but this implies that $Z''_s$ is the unit group, i.e. that $Z_s=Z'_s$. This completes the proof of 3.4 b).
+
+\par\noindent\emph{Example of a smooth group prescheme with connected fibers whose center is not flat}
+Let $S$ be the spectrum of a discrete valuation ring $A$, $\pi$ a uniformizer of $A$, $t$ the generic point of $S$, $s$ the closed point. Let $G$ be the $S$-group smooth and affine over $S$, with ring $B=A[T,T^{-1},U]/F$, where $F=1-T+\pi U$, the composition law being defined by
+\[
+(t,u),(t,u')\longmapsto(tt',\pi uu'+u+u').
+\]
+The generic fiber $G_t$ is therefore isomorphic to the multiplicative group $(\Gm)_t$, whereas the closed fiber $G_s$ is isomorphic to the additive group $(\Ga)_s$. The function $T$ is invertible in $\Gamma(G,\OO_G)$ and defines a group $S$-morphism $\varphi:G\to(\Gm)_S$ which is an isomorphism on the generic fiber and the zero morphism on the closed fiber. The datum $\varphi$ allows one to construct the semidirect product group $H=G\cdot(\Ga)_S$ (note that $(\Gm)_S$ acts on $(\Ga)_S$). The center $Z$ of $H$ is the unit group on the generic fiber and is equal to $H_s$ on the closed fiber, hence is not flat over $S$.
+% typo?: the composition law prints (t,u),(t,u') on the left; kept as printed.

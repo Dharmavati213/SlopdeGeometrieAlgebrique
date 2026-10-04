@@ -1,0 +1,179 @@
+It follows that $(A_i,A_i\cap J)$ satisfies the analogous property, hence that $N_i$ is invariant in $G_i$. On the other hand, one has $\varinjlim B_i=B$ and thus $\varprojlim N_i=N$.
+
+By what we saw above, each (fpqc) quotient sheaf $G_i/N_i$ is representable by an affine $k$-group $Q_i=\Spec(C_i)$. Put $C=\varinjlim C_i$. One therefore has a filtered projective system of affine $k$-groups $Q_i$; its projective limit $Q=\varprojlim Q_i$ is the $k$-group $\Spec(C)$ (cf. EGA IV$_3$, 8.2.3). One then has an exact sequence of $k$-groups:
+\[
+1\to N\to G\to Q.
+\]
+Let us show that $Q$ represents the (fpqc) quotient sheaf of $G$ by $N$; for this, it suffices to verify that the morphism $G\to Q$ is covering for the (fpqc) topology (cf. IV, 3.3.2.1 and 5.1.7.1). Now each morphism $G_i\to Q_i$ is faithfully flat (cf. 9.2 (xi)), in other words $A_i$ is faithfully flat over $C_i$; since $A=\varinjlim A_i$ and $C=\varinjlim C_i$, Lemma 11.17.1 implies that $A$ is faithfully flat over $C$, so that $G\to Q$ is a faithfully flat morphism. Since this morphism is affine, it is quasi-compact, hence covering for the (fpqc) topology. This completes the proof of Theorem 11.17.
+
+\numpara{11.18}\label{VIB.11.18}\textbf{Complements.}\nde{This subsection has been added.}
+Moreover, one deduces from 11.17 (and its proof) the following results, taken from [DG70], III \S\,3.7. Let $k$ be a field. Let us begin with the following lemma (cf. [An73], 2.3.3.2), which will be useful later (cf. 12.10).
+
+\begin{lemma}{11.18.1}\label{VIB.11.18.1}
+Let $u:G\to G'$ be a morphism of $k$-groups, $N=\Ker(u)$. Suppose $G'$ affine and $G$ of finite type.
+
+(i) The morphism $\tau:G/N\to G'$ is a closed immersion. In particular, $G/N$ is affine.
+
+(ii) If moreover the morphism $u^\natural:\OO(G')\to\OO(G)$ is injective, then $\tau$ is an isomorphism. (And thus $G'$ is of finite type and $u$ faithfully flat.)
+\end{lemma}
+Indeed, one knows (11.13) that $G'$ is the projective limit of a filtered system of affine algebraic $k$-groups $G'_i$. Denote by $u_i$ the composite morphism $G\to G'\to G'_i$ and by $N_i$ its kernel. Then the $N_i$ form a decreasing filtered system of closed subgroups of $G$, whose intersection is $N$. Since $G$ is noetherian, there is an index $i$ such that $N=N_i$. Since $G$ and $G_i$ are of finite type, then, by VIA, 3.2 and 5.4.1, the quotient $G/N$ is a $k$-group of finite type and $u_i$ is the composite of the projection $p:G\to G/N$, which is faithfully flat, and a closed immersion $\tau_i:G/N\hookrightarrow G_i$.
+% typo?: kept as printed: G_i without a prime in this sentence.
+
+Consider then the following commutative diagram:
+\[
+\xymatrix{G\ar[r]^u\ar[d]_p&G'\ar[d]^{q_i}\\G/N\ar[r]_{\tau_i}\ar[ur]^\tau&G_i.}
+\]
+Since $q_i\circ\tau=\tau_i$ is a closed immersion and $q_i$ separated ($G'$ being separated, cf. VIA, 0.3), then $\tau$ is a closed immersion (cf. EGA I, 5.4.4). It follows that $G/N$ is affine, and the morphism $\tau^\natural:\OO(G')\to\OO(G/N)$ is surjective, whence (i).
+
+If moreover $u^\natural:\OO(G')\to\OO(G)$ is injective, then so is $\tau^\natural$, so $\tau^\natural$ is an isomorphism, and hence $\tau$ too (since $G'$ and $G/N$ are affine). This proves (ii).
+
+\begin{theorem}{11.18.2}\label{VIB.11.18.2}
+Let $G$ and $G'$ be two affine $k$-groups with algebras $A$ and $A'$, and let $u:G\to G'$ be a morphism of $k$-groups, $N=\Ker(u)$, and $\varphi:A'\to A$ the morphism induced by $u$.
+
+(i) If $\varphi$ is injective, then $u$ is faithfully flat and identifies $G'$ with $G/N$.
+
+(ii) One has $G/N=\Spec(B)$, where $B=\varphi(A')$, and thus $u$ is the composite of the faithfully flat morphism $G\to G/N$, corresponding to the inclusion $B\hookrightarrow A$, and the closed immersion $G/N\hookrightarrow G'$, corresponding to the surjection $A'\to B$. Moreover, $N$ is defined in $G$ by the ideal $AB^+$, where $B^+$ denotes the augmentation ideal of $B$.
+
+(iii) In particular, if $u$ is a monomorphism, it is a closed immersion.
+\end{theorem}
+\begin{proof}
+(i) Suppose $\varphi$ injective and identify $A'$ with a Hopf subalgebra of $A$. By 11.13, $A$ is a filtered union of Hopf subalgebras $A_i=\OO(G_i)$ of finite type over $k$; denote by $G'_i=\Spec(A'_i)$, where $A'_i=A'\cap A_i$, and by $N_i$ the kernel of the morphism $G_i\to G'_i$ induced by the inclusion $A'_i\hookrightarrow A_i$. By the preceding lemma, one has $G_i/N_i\simeq G'_i$, and one therefore obtains, for every $i$, an exact sequence
+\[
+1\to N_i\to G_i\xrightarrow{p_i}G'_i\to1
+\]
+where $p_i$ is faithfully flat. Since $G=\varprojlim_i G_i$ and $G'=\varprojlim_i G'_i$, one therefore obtains an exact sequence
+\[
+1\to N\to G\xrightarrow{p}G/N
+\]
+where we have put $N=\varprojlim_i N_i$. Moreover, by Lemma 11.17.1, $p$ is faithfully flat (and affine), so $G'$ represents the (fpqc) quotient sheaf of $G$ by $N$. This proves (i).
+% typo?: kept as printed: G/N at the end of the limit sequence, rather than G'.
+
+In the general case, $B=\varphi(A')$ is a Hopf subalgebra of $A$; denote by $H$ the $k$-group $\Spec(B)$ and by $N'$ the kernel of the morphism $G\to H$ induced by the inclusion $B\hookrightarrow A$. By (i), $H$ is identified with $G/N'$, and $u$ is therefore the composite of the projection $G\to G/N'$ and the closed immersion $G/N'\hookrightarrow G'$ induced by the surjection $A'\to B$. It follows that $N'=N$. Moreover, by 9.2 (ii), one has a cartesian square:
+\[
+\xymatrix{N\ar[r]\ar[d]&G\ar[d]^p\\\Spec(k)\ar[r]_\varepsilon&G'}
+\]
+where $\varepsilon$ is the identity section of $G'$, which corresponds to the augmentation morphism $B\to k$. It follows that $N$ is defined in $G$ by the ideal $AB^+$. This proves (ii), and (iii) follows from it.
+% typo?: kept as printed: G' in the cartesian square and identity section, with augmentation B -> k.
+\end{proof}
+
+\begin{remark}{11.18.3}\label{VIB.11.18.3}
+Let $G$ be an affine $k$-group and $N$ an invariant $k$-subgroup. Since the morphism $p:G\to G/N$ is faithfully flat and quasi-compact, then, by IV 3.3.3.2, $\OO(G/N)$ is the subalgebra of $\OO(G)$ formed by functions $\varphi$ which are right $N$-invariant, i.e.\ satisfy $\varphi(gh)=\varphi(g)$, for every $k$-scheme $S$ and $g\in G(S)$, $h\in N(S)$. Denoting by $J$ the ideal of $A=\OO(G)$ defining $N$, this is equivalent to saying that $\Delta(\varphi)-\varphi\otimes1\in\OO(G)\otimes J$, where $\Delta$ is the comultiplication of $A$.
+\end{remark}
+The preceding theorem can then be reformulated in terms of Hopf algebras as follows.
+
+\begin{corollary}{11.18.4}\label{VIB.11.18.4}
+Let $k$ be a field, $A$ a commutative Hopf $k$-algebra, $G=\Spec(A)$.
+
+(i) If $B$ is a Hopf subalgebra of $A$, then $A$ is faithfully flat over $B$.
+
+(ii) The map $N\mto\OO(G/N)$ is a bijection between the set of invariant subgroups of $G$ and that of Hopf subalgebras of $A$; the inverse map is given by $B\mto\Spec(A/AB^+)$. Moreover, if $J$ is the ideal of $A$ defining $N$, one has
+\[
+\OO(G/N)=\{x\in A\mid\Delta(x)-x\otimes1\in A\otimes J\}.
+\]
+\end{corollary}
+
+\begin{remarks}{11.18.5}\label{VIB.11.18.5}
+(a) A consequence of the preceding theorem is that the category of commutative affine $k$-groups is abelian. For this, as well as other results on affine $k$-groups, we refer to [DG70], \S\,III.3, 7.4 to 7.8.
+
+(b) Finally, let us point out that M. Takeuchi gave another proof of results 11.17 to 11.18.4, cf. [Ta72], \S\,5; he moreover strengthened 11.18.4 (i) above by showing that $A$ is even a projective $B$-module, cf. [Ta79], Th. 5 (see also [MW94], Th. 3.6).
+\end{remarks}
+
+\sgasection{12}{Complements on $G_{\mathrm{af}}$ and ``anti-affine'' groups}
+\nde{This section has been added.} Let us begin with the following lemma, which extends 11.18.1 to the case where $G$ is not supposed of finite type.\nde{This lemma was communicated to us by M. Raynaud; it will be used in the proof of Proposition 12.9.}
+
+\begin{lemma}{12.1}\label{VIB.12.1}
+Let $k$ be a field, $u:G\to H$ a monomorphism of $k$-groups, with $H$ affine. Suppose $u$ quasi-compact. Then $u$ is a closed immersion.
+\end{lemma}
+\begin{proof}
+By (fpqc) descent, one may suppose $k$ algebraically closed. By VIA, 6.4, the closed image $I$ of $u$ is a closed subgroup scheme of $H$, hence still affine. Thus, replacing $H$ by $I$, one may suppose $u$ schematically dominant. Since $k$ is algebraically closed, $H'=H_{\mathrm{red}}$ is a subgroup scheme of $H$; denote by $G'=G\times_H H'$; then the morphism $u':G'\to H'$ obtained from $u$ by base change is a quasi-compact monomorphism, and is dominant (the underlying continuous map being the same for $u$ and $u'$). Thus, by VIA, 6.2, $u'$ is faithfully flat; it is therefore a faithfully flat quasi-compact monomorphism, hence an isomorphism (cf. IV 1.14).
+
+Thus $u:G\to H$ is a homeomorphism, hence affine by 2.9.1. Thus $G$ is affine, and therefore $u$ is a closed immersion by 11.18.2 (iii).
+\end{proof}
+
+\begin{theorem}{12.2}\label{VIB.12.2}
+Let $G$ be an algebraic $k$-group. Denote by $\rho$ the canonical morphism $G\to G_{\mathrm{af}}$ and by $N$ its kernel.
+
+(i) The canonical morphism $G/N\to G_{\mathrm{af}}$ is an isomorphism, and thus $G_{\mathrm{af}}$ is an affine algebraic group, and $\rho$ is faithfully flat.
+
+(ii) One has a canonical isomorphism $(G/N)_{\mathrm{af}}=G_{\mathrm{af}}$.
+
+(iii) $N$ is a characteristic subgroup of $G$.
+
+(iv) $\OO(N)=k$.
+
+(v) $N$ is smooth, connected and commutative.
+\end{theorem}
+\begin{proof}
+Point (i) is a special case of 11.18.1, and point (ii) follows from the universal properties of $G_{\mathrm{af}}$ and $(G/N)_{\mathrm{af}}$.
+
+Let us prove (iii). For an arbitrary $k$-scheme $\pi:S\to\Spec k$, consider the cartesian square:
+\[
+\xymatrix{G_S\ar[r]\ar[d]_q&G\ar[d]^p\\S\ar[r]_\pi&\Spec k,}
+\]
+since $p$ is quasi-compact and separated and $\pi$ flat, then, by EGA III 1.4.15 and EGA IV$_1$ 1.7.21, one has $q_*(\OO_{G_S})=\pi^*(\OO(G))=\pi^*(\OO(G_{\mathrm{af}}))$, and thus, by EGA II, 1.5.2, one has $(G_S)_{\mathrm{af}}=(G_{\mathrm{af}})_S$, so $N_S$, being the kernel of the canonical morphism $G_S\to(G_S)_{\mathrm{af}}$, is invariant under every automorphism of $G_S$, i.e.\ $N$ is a characteristic subgroup of $G$.
+
+To prove (iv), put $N'=\Ker(N\to N_{\mathrm{af}})$; by (ii), it is an invariant subgroup of $G$. Since $N$ is algebraic (being a closed subgroup of $G$), then, by (i), $N/N'\cong N_{\mathrm{af}}$; moreover, by VIA, 3.2 and 5.3.2, one has an isomorphism of $k$-groups
+\[
+(G/N')/N_{\mathrm{af}}\cong(G/N')/(N/N')\cong G/N.
+\]
+Since $N_{\mathrm{af}}$ is affine, the projection $G/N'\to G/N$ is too, by 9.2 (vii), and since $G/N=G_{\mathrm{af}}$ is affine, then $G/N'$ is also. Thus, by the universal property of $G_{\mathrm{af}}$, the projection $p':G\to G/N'$ factors through $G_{\mathrm{af}}=G/N$, whence $N\subset N'$ and therefore $N=N'$. Thus $N_{\mathrm{af}}$ is the trivial group, whence $\OO(N)=k$.
+
+Finally, assertion (v) is a consequence of the following lemma.
+\end{proof}
+\begin{lemma}{12.3}\label{VIB.12.3}
+Let $k$ be a field and $N$ an algebraic $k$-group such that $\OO(N)=k$. Then $N$ is smooth, connected and commutative.
+\end{lemma}
+Indeed, one may suppose $k$ algebraically closed. Then $H=N^0_{\mathrm{red}}$ is a subgroup $k$-scheme of $N$, and the quotient $k$-scheme $X=N/H$ is finite (hence affine) over $k$, by VIA, 5.5.1 and 5.6.1. On the other hand, since $p:N\to X$ is faithfully flat, one has $\OO(X)\subset\OO(N)=k$. It follows that $N=N^0_{\mathrm{red}}$, so $N$ is smooth (VIA 1.3.1) and connected.
+
+Let $Z$ then be the center of $N$. By 6.2.6, $N/Z$ is affine, and one obtains as above that $\OO(N/Z)=k$, whence $N=Z$. This proves 12.3 and completes the proof of 12.2.
+
+Let us also mention, without proof, the following theorem. (Recall that an abelian variety over a field $k$ is a proper, smooth and connected group $k$-scheme.)
+\begin{theorem}{12.4}\label{VIB.12.4}\textup{(Chevalley).}
+Let $k$ be a perfect field and $G$ a smooth connected algebraic $k$-group. Then there is an affine smooth connected $k$-subgroup $L$, invariant in $G$, such that the quotient $G/L$ is an abelian variety. Moreover, $L$ is unique and its formation commutes with extension of the base field.
+\end{theorem}
+
+\begin{remarks}{12.5}\label{VIB.12.5}
+(1) This theorem was announced in 1953 by C. Chevalley, who published his proof in 1960 ([Ch60]). Meanwhile, other proofs had been obtained independently by I. Barsotti and M. Rosenlicht ([Ba55, Ro56]); see [Se99] for historical comments.
+
+(2) A modern version (i.e.\ in the language of schemes) of Chevalley's proof was given by B. Conrad ([Co02]). (Note that in loc.\ cit., ``algebraic group'' means a smooth connected group $k$-scheme.)
+
+(3) On the other hand, a modern version of Rosenlicht's proof was given by Ngô B.-C. in a course at Orsay in 2005–2006.
+
+(4) If one omits the hypothesis that $k$ be perfect, there still exists a smallest connected invariant affine subgroup $L$ (not necessarily smooth) such that $G/L$ is an abelian variety ([BLR], \S\,9.2, Thm. 1).
+
+(5) One can also omit the hypothesis that $G$ be smooth over $k$: indeed, by VIIA, 8.3, there is an integer $n\geq1$ such that the quotient $G'=G/({}_{\mathrm{Fr}^n}G)$ is smooth; then $G'$ contains a subgroup $L'$ as in (4) above, and the inverse image of $L'$ in $G$ again has the same properties. Thus, for every connected algebraic group $G$ over a field $k$, there is an exact sequence
+\[
+1\to H\to G\to A\to1
+\]
+where $H$ is an affine $k$-group and $A$ an abelian $k$-variety. Moreover, by [Per76], Cor. 4.2.9, one has such an exact sequence for every connected $k$-group $G$ (not necessarily algebraic).
+
+(6) Let $k$ be an algebraically closed field and $G$ the semidirect product of an elliptic curve $E$ by the constant $k$-group $\{\pm1\}_k$, for the action defined by $(-1)\cdot x=-x$; in this case, if $L$ is a closed invariant subgroup of $G$ such that $G/L$ is connected, then $L=G$.
+\end{remarks}
+
+\begin{remark}{12.6}\label{VIB.12.6}
+Following [Br09], one will say that a $k$-group $N$ is \emph{anti-affine} if $\OO(N)=k$. By 12.3 and 12.4, if $k$ is perfect, every anti-affine algebraic $k$-group is an extension of an abelian variety by an affine smooth connected commutative algebraic $k$-group. For the precise structure of anti-affine algebraic groups over a perfect field, and various consequences, see the recent articles by M. Brion and C. \& F. Sancho de Salas ([Br09, SS09]).
+\end{remark}
+To finish this section, we shall prove two results due to M. Raynaud, the first being Remark 11.11.1, the second Proposition 2.1 of Exp. XVII, Appendix III. We shall need the following lemma,\nde{It is a version, improved by O. Gabber, of a statement communicated by M. Raynaud.} which improves (for a complete discrete valuation ring $R$) the flatness criteria given in [BAC], \S\,III.5.
+
+\begin{lemma}{12.7}\label{VIB.12.7}
+Let $R$ be a discrete valuation ring, $K$ its fraction field, $\pi$ a uniformizer. Let $A$ be a flat $R$-algebra and $M$ an $A$-module flat over $R$. Suppose that:
+
+(i) $M/\pi M$ is a flat module over $\overline A=A/\pi A$,
+
+(ii) $M\otimes_R K$ is a flat module over $A\otimes_R K$.
+
+Then $M$ is a flat $A$-module.
+\end{lemma}
+\begin{proof}
+By the flatness criterion in the nilpotent case (cf. [BAC], III \S\,5.2, Th. 1), $M/\pi^n M$ is a flat module over $A/\pi^n A$, for every $n\in\NN^*$. It then follows from [RG71], II Lemma 1.4.2.1, that $M$ is a flat $A$-module. For the reader's convenience, let us briefly indicate the proof. Put $s=\pi^n$ and $P=M/sM$. Since $P$ is flat over $A/sA$ and the latter has projective dimension $1$ over $A$, the spectral sequence of composite functors implies that $P$ has Tor-dimension $\leq1$ over $A$. Now, since $M$ is $R$-flat and hence has no $\pi$-torsion, $M_K/M$ is the inductive limit of the $A$-modules $\pi^{-n}M/M\simeq M/\pi^n M$, and thus $M_K/M$ also has Tor-dimension $\leq1$. Since one has the exact sequence $0\to M\to M_K\to M_K/M\to0$ and by hypothesis $M_K$ is flat over $A_K$, hence over $A$, it follows that $M$ is flat.
+
+For completeness, let us also indicate the following simpler proof, pointed out by O. Gabber. Let $I$ be an ideal of finite type of $A$; we must show that the morphism $u:M\otimes_A I\to M$ is injective. By hypothesis (ii), $u\otimes_R K$ is injective, so $\Ker(u)$ is an $R$-module of $\pi$-torsion. It therefore suffices to show that the $\pi$-torsion part of $M\otimes_A I$ is zero; now this is a quotient of $\Tor_1^A(M,I/\pi I)$, as one sees by tensoring with $M$ the exact sequence:
+\[
+0\to I\xrightarrow{\pi}I\to I/\pi I\to0.
+\]
+On the other hand, since $M$ has no $\pi$-torsion (being flat over $R$), one obtains that
+\[
+\Tor_i^A(M,\overline A)=0\quad\text{for every }i\geq1.
+\]
+Consequently, if $(P_\bullet)$ is a projective resolution of the $A$-module $M$, then $(P_\bullet\otimes_A\overline A)$ is a projective resolution of the $\overline A$-module $\overline M=M/\pi M$, and thus for every $\overline A$-module $N$, one has $\Tor_i^A(M,N)=\Tor_i^{\overline A}(\overline M,N)$, and this is zero for $i\geq1$ since $\overline M$ is flat over $\overline A$. One therefore has $\Tor_1^A(M,I/\pi I)=0$, which proves the lemma.
+\end{proof}

@@ -1,0 +1,200 @@
+% Source PDF pp. 25--30; the last sentence is completed on p. 31.
+\numpara{4.1.3}
+More generally, for every $S$-functor $X$, we define the $S$-functor $X^{(p^n)}$ by induction on $n$ using the formulas:
+\[
+X^{(p)}=X^{(p/S)}\qquad\text{and}\qquad X^{(p^n)}=(X^{(p^{n-1})})^{(p)}.
+\]
+Similarly, $\mathrm{Fr}^n(X/S)$ or $\mathrm{Fr}^n$ denote the composite functorial homomorphism
+\[
+\begin{aligned}
+X&\xrightarrow{\mathrm{Fr}(X/S)}X^{(p)}\xrightarrow{\mathrm{Fr}(X^{(p)}/S)}X^{(p^2)}\\
+&\longrightarrow\cdots\longrightarrow X^{(p^{n-1})}\xrightarrow{\mathrm{Fr}(X^{(p^{n-1})}/S)}X^{(p^n)}.
+\end{aligned}
+\]
+Note that, according to 4.1.1, $\mathrm{Fr}(X^{(p)}/S)$ coincides with $\mathrm{Fr}(X/S)^{(p)}$, \ie the following diagram is commutative:
+\[
+\xymatrix@C=4em{X^{(p)}\ar[r]\ar[d]_{\mathrm{Fr}(X^{(p)}/S)}&X\ar[d]^{\mathrm{Fr}(X/S)}\\X^{(p^2)}\ar[r]&X^{(p)}.}
+\]
+If $G$ is an $S$-group functor, $G^{(p^n)}$ is one also, and $\mathrm{Fr}^n(G/S)$ is a homomorphism of $S$-group functors.
+
+\begin{enoncerm}{Definition}{}
+We shall denote by ${}_{\mathrm{Fr}^n}G$ the kernel of $\mathrm{Fr}^n(G/S)$ and shall say that $G$ is of \emph{height $\leq n$} if $\mathrm{Fr}^n(G/S)$ is zero, that is, if ${}_{\mathrm{Fr}^n}G=G$.
+\end{enoncerm}
+\begin{enonce}{Lemma}{}
+The group subfunctor ${}_{\mathrm{Fr}^n}G$ of $G$ is characteristic, \ie for every $S$-scheme $T$, every endomorphism $\phi$ of the $T$-group functor $G_T$ induces an endomorphism of $({}_{\mathrm{Fr}^n}G)_T$.
+\end{enonce}
+Indeed, since the construction of $G^{(p^n)}$ and of $\mathrm{Fr}^n(G/S)$ commutes with base changes according to 4.1.1, one may suppose $T=S$; in this case, the assertion follows from the fact that $\mathrm{Fr}^n(G/S)$ is a functorial homomorphism.
+
+\numpara{4.1.4}
+Here are a few examples.
+
+\noindent a) First consider an ``abstract'' abelian group $M$ and the diagonalizable group $G=D_S(M)$ of type $M$ (I 4.4): for every $S$-scheme $T$, $G(T)$ is therefore the abelian group
+\[
+\Hom_{\Abcat}(M,\Gamma(T,\OO_T)^\times).
+\]
+Since $G$ is the inverse image of the diagonalizable group $D(M)$ over $\FF_p$, $G^{(p)}$ identifies with $G$, and $\mathrm{Fr}(G/S)(T)$ identifies with the endomorphism $x\mapsto x^p$ of $G(T)$ (4.1.1). In particular, when $M$ is equal to $\ZZ$, one has $D_S(M)=\mathbf G_{\mathrm m,S}$, so that:
+\begin{quote}\emph{${}_{\mathrm{Fr}}\mathbf G_{\mathrm m,S}$ is the $S$-group $\boldsymbol\mu_{p,S}$ which associates to every $S$-scheme $T$ the group of $p$-th roots of unity in $\Gamma(T,\OO_T)^*$.}\end{quote}
+
+\noindent b) Now consider a scheme $S$ of characteristic $p$ and a sheaf of modules $\mathscr E$ on $S$. According to I 4.6.2, there is a canonical isomorphism
+\[
+\mathbf W(\mathscr E)^{(p)}\simeq\mathbf W(\mathscr E^{(p)}),
+\]
+where $\mathscr E^{(p)}$ is the inverse image of $\mathscr E$ under $\mathrm{fr}(S)$. For every $S$-scheme $\pi:T\to S$, the map $\mathrm{Fr}(\mathbf W(\mathscr E))(\pi)$ is determined, according to 4.1 $(\dagger)$, by the commutative triangle
+\[
+\xymatrix@C=1.5em{\Gamma(T,\pi^*\mathrm{fr}(S)^*\mathscr E)\ar[rr]^\sim_{\mathrm{can.}}&&\Gamma(T,\mathrm{fr}(T)^*\pi^*\mathscr E)\\
+&\Gamma(T,\pi^*\mathscr E)\ar[ul]^{\mathrm{Fr}(\mathbf W(\mathscr E)/S)(\pi)}\ar[ur]_{f'}&,}
+\]
+where $f'$ is the map induced by $\mathrm{fr}(T)$.
+
+In particular, if $\mathscr E$ is equal to $\OS$, $\mathbf W(\mathscr E)$ identifies with the additive group $\mathbf G_{\mathrm a,S}$. In this case, one has $\mathscr E^{(p)}=\mathscr E=\OS$, and the Frobenius morphism $\mathrm{Fr}(\mathbf G_{\mathrm a,S}/S)$ sends $x\in\Gamma(T,\OO_T)$ to $x^p$. Thus:
+\begin{quote}\emph{${}_{\mathrm{Fr}}\mathbf G_{\mathrm a,S}$ is the $S$-group $\boldsymbol\alpha_{p,S}$ which associates to every $S$-scheme $T$ the group: $\{x\in\Gamma(T,\OO_T)\mid x^p=0\}$.}\end{quote}
+
+\noindent c) One would see similarly that, for every quasi-coherent $\OS$-algebra $\mathscr A$, $(\Spec\mathscr A)^{(p)}$ identifies with the spectrum $\Spec\mathscr A^{(p)}$ of the inverse image of $\mathscr A$ under $\mathrm{fr}(S)$. If $\pi$ denotes the endomorphism $x\mapsto x^p$ of the sheaf of rings $\OS$, one therefore has
+\[
+\mathscr A^{(p)}=\mathscr A\otimes_\pi\OS
+\]
+\nde{$\mathscr A\otimes_\pi\OS$ denotes the $\OS$-algebra obtained by the extension of scalars $\pi:\OS\to\OS$, \ie one has: $ax\otimes_\pi1=a\otimes_\pi x^p$, and $x\cdot(a\otimes_\pi1)=a\otimes_\pi x$.}
+and $\mathrm{Fr}((\Spec\mathscr A)/S)$ is induced by the morphism of $\OS$-algebras $\mathscr A\otimes_\pi\OS\to\mathscr A$ defined by $a\otimes_\pi x\mapsto a^px$.
+
+Finally, for every quasi-coherent $\OS$-module $\mathscr E$, there are canonical isomorphisms
+\[
+\mathbf V(\mathscr E)^{(p)}\simeq\mathbf V(\mathscr E^{(p)})\qquad\text{and}\qquad S(\mathscr E)^{(p)}\simeq S(\mathscr E^{(p)}),
+\]
+where $S(\mathscr E)$ denotes the symmetric algebra of the $\OS$-module $\mathscr E$.
+
+\noindent d) Let $\mathscr U$ be a $\OS$-coalgebra (3.1), and $T$ a scheme of characteristic $p$. If $\mathscr U^{(p/S)}$ or $\mathscr U^{(p)}$ denote the inverse image of the coalgebra $\mathscr U$ under $\mathrm{fr}(S)$, there is, as in b), a canonical isomorphism:
+\[
+(\Spec^*\mathscr U)^{(p)}\simeq\Spec^*\mathscr U^{(p)}.
+\]
+If $\mathscr U$ is a coalgebra in groups, the value of ${}_{\mathrm{Fr}}(\Spec^*\mathscr U)$, \ie of the kernel of the Frobenius morphism $\Spec^*\mathscr U\to(\Spec^*\mathscr U)^{(p)}$, at an $S$-scheme $T$ is therefore the set of elements $\gamma$ of
+\[
+(\Spec^*\mathscr U)(T)=\{x\in\Gamma(T,\mathscr U_T)\mid\varepsilon_{\mathscr U_T}(x)=1,\ \Delta_{\mathscr U_T}x=x\otimes x\}
+\]
+such that the image in $\Gamma(T,\mathscr U_T\otimes_{\mathrm{fr}(T)}\OO_T)$ of the element $\gamma\otimes_{\mathrm{fr}(T)}1$ of $\Gamma(T,\mathscr U_T)\otimes_{\mathrm{fr}(T)}\OO(T)$ is equal to $1$.
+
+\numpara{4.2}
+\nde{For the contents of nos.\ 4.2 and 4.3, one may also refer to [DG70], \S~IV.3, nos.\ 4--6.}
+We shall now deal with a construction close to the preceding one: let $S$ be a scheme of characteristic $p$, $X$ an $S$-scheme, and $X_S^p$ the product in the category $(\mathbf{Sch}/S)$ of $p$ copies of $X$.
+
+We then denote by $U^p(X)$ the open subscheme of $X_S^p$ which is the union of the products $U_S^p$, as $U$ ranges over the affine open subsets of $X$. A point $x$ of $X_S^p$ therefore belongs to $U^p(X)$ if and only if the projections $\mathrm{pr}_ix$ of $x$ onto the factors of $X_S^p$ belong to the same affine open subset of $X$. For example, if every finite subset of $X$ is contained in an affine open subset, one has $U^p(X)=X_S^p$.
+
+The symmetric group $\mathscr S_p$ of order $p$ acts on $X_S^p$ by permutation of the factors and leaves the open subset $U^p(X)$ stable. We shall call the quotient of $X_S^p$ by $\mathscr S_p$ in the category of ringed spaces the \emph{$p$-fold symmetric product of $X$}, and denote it by $\Sigma^pX$. Let $q(X)$, or simply $q$, be the canonical projection $X_S^p\to\Sigma^pX$.
+% typo?: the source calls S_p the symmetric group "of order p"; retained.
+
+Then $q$ maps $U^p(X)$ onto an open subset $V^p(X)$ of the symmetric product, which may be described as follows (cf.\ V 4.1). The structure sheaf of $\Sigma^pX$ induces on $V^p(X)$ a scheme structure; the morphism $q'(X):U^p(X)\to V^p(X)$ induced by $q(X)$ is affine and even integral; as $U$ ranges over the affine open subsets of $X$ which project into a varying affine open subset $V$ of $S$, the $\Sigma^pU$ form an affine covering of $V^p(X)$; if $R$ denotes the affine algebra of $V$ and $A$ that of $U$, $\Sigma^pU$ has as affine algebra the subalgebra $\Sigma^pA$ of $\bigotimes_R^pA$ consisting of symmetric tensors.
+
+Now consider the diagonal morphism $\delta$ from $X$ to $U^p(X)$. If $V=\Spec R$ is an affine open subset of $S$ and $U=\Spec A$ an affine open subset of $X$ over $V$, the restriction of $\delta$ to $U$ is defined by the algebra morphism
+\[
+\eta:\bigotimes_R^p A\longrightarrow A,\qquad a_1\otimes\cdots\otimes a_p\longmapsto a_1a_2\cdots a_p.
+\]
+One therefore has, if $N$ is the symmetrization operator:
+\[
+\begin{aligned}
+\eta\bigl(N(a_1\otimes\cdots\otimes a_p)\bigr)
+&=\eta\Bigl(\sum_{\sigma\in\mathscr S_p}a_{\sigma(1)}\otimes\cdots\otimes a_{\sigma(p)}\Bigr)\\
+&=p!\,a_1\cdots a_p=0.
+\end{aligned}
+\]
+In other words, $\eta$ vanishes on the subspace $N(\bigotimes_R^pA)$ of $\Sigma^pA$ consisting of symmetrized tensors. Moreover, if $f$ is a symmetric tensor, one clearly has $N(fa)=fN(a)$, which shows that $N(\bigotimes_R^pA)$ is an ideal of $\Sigma^pA$. From now on we shall write
+\[
+U^{[p/S]}=\Spec\Bigl(\Sigma^p A/N\bigl(\bigotimes_R^p A\bigr)\Bigr);
+\]
+this is a closed subscheme of $\Sigma^p(U)=V^p(U)$. The union of the $U^{[p/S]}$, as $U$ ranges over the affine open subsets of $X$ which project into a varying affine open subset $V$ of $S$, is a closed subscheme of $V^p(X)$, denoted by $X^{[p/S]}$.
+
+Moreover, if $i(X)$ denotes the inclusion of $X^{[p/S]}$ in $V^p(X)$, we have just seen that $q'(X)\circ\delta$ factors through $X^{[p/S]}$, whence a morphism $F^{[p]}(X/S):X\to X^{[p/S]}$:\nde{In the original, this morphism (resp.\ the relative Frobenius morphism) was denoted by $F'$ (resp.\ $F$).}
+\[
+\xymatrix@C=2.5em{X_S^p\ar[d]_{q(X)}&\supset&U^p(X)\ar[d]_{q'(X)}&X\ar[l]_{\delta(X)}\ar[d]^{F^{[p]}(X/S)}\\
+\Sigma^p(X)&\supset&V^p(X)&X^{[p/S]}\ar[l]^{i(X)}.}
+\]
+It is clear that $X^{[p/S]}$ is functorial in $X$ and that the map $F^{[p]}:X\mapsto F^{[p]}(X/S)$ is a functorial homomorphism.
+
+\numpara{4.2.1}
+The schemes $X^{[p/S]}$ and $X^{(p/S)}$ are clearly related: let $V$ be an affine open subset of $S$ with affine ring $R$, and $U$ an affine open subset of $X$ over $V$; let $A$ be the affine algebra of $U$. If $\pi$ denotes the endomorphism $x\mapsto x^p$ of $R$, then $U^{(p/S)}$ has $A\otimes_\pi R$ as affine algebra. One verifies, moreover, that the map
+\[
+a\otimes_\pi\lambda\longmapsto\Bigl(\lambda a\otimes\cdots\otimes a\quad\bmod N\bigl(\bigotimes_R^pA\bigr)\Bigr)
+\]
+defines a morphism of $R$-algebras from $A\otimes_\pi R$ to $\Sigma^p A/N(\bigotimes_R^pA)$, and the latter induces a morphism $\varphi(U):U^{[p/S]}\to U^{(p/S)}$ such that $\varphi(U)\circ F^{[p]}(U/S)=\mathrm{Fr}(U/S)$.
+
+``Gluing the pieces together'', one then obtains a commutative triangle
+\[
+\xymatrix{&X\ar[dl]_{F^{[p]}(X/S)}\ar[dr]^{\mathrm{Fr}(X/S)}&\\X^{[p/S]}\ar[rr]_{\varphi(X)}&&X^{(p/S)}.}
+\]
+For example, if $X$ is the subscheme of $S$ defined by a quasi-coherent ideal $\mathscr I$, $F^{[p]}(X/S)$ identifies with the identity morphism of $X$, so that $\varphi(X)$ is the canonical immersion from $\Spec(\OS/\mathscr I)$ into $\Spec(\OS/\mathscr I^{\{p\}})$. One thus sees that $\varphi(X)$ is not an isomorphism in general.
+
+However, when $M$ is a free $R$-module, it is clear that the map
+\[
+\begin{gathered}
+M\otimes_\pi R\longrightarrow\Sigma^p M/N\bigl(\bigotimes_R^pM\bigr),\\
+m\otimes_\pi\lambda\longmapsto\Bigl(\lambda m\otimes\cdots\otimes m\quad\bmod N\bigl(\bigotimes_R^pM\bigr)\Bigr)
+\end{gathered}
+\]
+is bijective; this map therefore remains bijective when $M$ is $R$-flat, because every flat module is a filtered inductive limit of free modules (Lazard{\renewcommand{\thefootnote}{*}\footnote{D. Lazard, \textit{C. R. Acad. Sc. Paris} \textbf{258}, 1964, pp.\ 6313--6316.}}\setcounter{footnote}{46}\nde{See also: D. Lazard, \textit{Bull. Soc. Math. France} \textbf{97} (1969), 81--128, or: [BAlg], X \S~1.6, Th.\ 1.}). It follows that
+\begin{quote}\emph{$\varphi(X):X^{[p/S]}\to X^{(p/S)}$ is an isomorphism if $X$ is a flat $S$-scheme.}\end{quote}
+
+\numpara{4.3}
+Finally, consider an \emph{$S$-scheme in abelian groups} $G$. Then the composite morphism $\mu(G):U^p(G)\hookrightarrow G_S^p\to G$, which is defined by multiplication, factors through $V^p(G)$, \ie there exists a morphism $\nu(G):V^p(G)\to G$ such that $\nu(G)\circ q'(G)=\mu(G)$, so that one has the following commutative diagram:
+\[
+\xymatrix@C=2.3em@R=3em{G&U^p(G)\ar[l]_{\mu(G)}\ar[d]^{q'(G)}&G\ar[l]_{\delta(G)}\ar[d]^{F^{[p]}(G/S)}\ar@/^1.8pc/[dd]^{\mathrm{Fr}(G/S)}\\
+&V^p(G)\ar[ul]^{\nu(G)}&G^{[p/S]}\ar[l]^{i(G)}\ar[dl]^{\varphi(G)}\\
+&G^{(p/S)}\ar@{.>}@/_2pc/[uul]_{\mathrm{Ver}(G/S)}&.}
+\]
+\emph{When $G$ is $S$-flat}, $\varphi(G)$ is an isomorphism and one can define a morphism (called \emph{Verschiebung})
+\[
+\mathrm{Ver}(G/S):G^{(p/S)}\longrightarrow G
+\]
+by means of the formula $\mathrm{Ver}(G/S)=\nu(G)\circ i(G)\circ\varphi(G)^{-1}$. As $G$ ranges over the flat $S$-schemes in abelian groups, the map $\mathrm{Ver}:G\mapsto\mathrm{Ver}(G/S)$ is clearly a functorial homomorphism; consequently, $\mathrm{Ver}(G/S)$ is a \emph{group homomorphism}. Finally, for every $S$-scheme $T$, the composite map
+\[
+G(T)\xrightarrow{\delta(G)(T)}U^p(G)(T)\xrightarrow{\mu(G)(T)}G(T)
+\]
+sends $x\in G(T)$ to $p\cdot x$. We may write $p\cdot\mathrm{id}_G$ instead of $\mu(G)\circ\delta(G)$, thus obtaining the classical formula:
+\begin{equation}\tag{$*$}\mathrm{Ver}(G/S)\circ\mathrm{Fr}(G/S)=p\cdot\mathrm{id}_G.\end{equation}
+
+\begin{examples}{4.3.1}\label{VIIA.4.3.1}
+(a) When $G$ is a constant $S$-scheme in abelian groups, we know that $\mathrm{Fr}(G/S)$ identifies with the identity morphism of $G$ (cf.\ 4.1.1.1). One therefore has $\mathrm{Ver}(G/S)=p\,\mathrm{id}_G$.
+
+(b) When $G$ is the diagonalizable $S$-group of type $M$, $\mathrm{Fr}(G/S)$ is equal to $p\,\mathrm{id}_G$ according to 4.1.4 (a); one then sees easily that $\mathrm{Ver}(G/S)$ is the identity morphism of $G$.
+
+(c) When $\mathscr E$ is a flat $\OS$-module and $G$ is the $S$-group $\mathbf V(\mathscr E)$, the morphism $\mathrm{Ver}(G/S)$ is zero, as is $p\cdot\mathrm{id}_G$. We shall see in Expos\'e VII B that a commutative algebraic group $G$ over a field $k$ is ``unipotent'' if and only if the composite homomorphism
+\[
+G^{(p^n)}\xrightarrow{\mathrm{Ver}(G^{(p^{n-1})}/S)}G^{(p^{n-1})}\longrightarrow\cdots\longrightarrow G^{(p)}\xrightarrow{\mathrm{Ver}(G/S)}G
+\]
+is zero for some $n$ (one has put $G^{(p^n)}=(G^{(p^{n-1})})^{(p)}$, cf.\ 4.1.3).\nde{Since this does not appear explicitly in VII B, we refer to [DG70], \S~IV.3, Prop.\ 4.11.}
+\end{examples}
+
+\numpara{4.3.2}
+Since the map $\mathrm{Ver}:G\mapsto\mathrm{Ver}(G/S)$ is a functorial homomorphism as $G$ ranges over the \emph{flat $S$-schemes in commutative groups}, the square
+\[
+\xymatrix@C=5em{G^{(p)}\ar[r]^{\mathrm{Ver}(G/S)}\ar[d]_{\mathrm{Fr}(G/S)^{(p)}}&G\ar[d]^{\mathrm{Fr}(G/S)}\\
+G^{(p^2)}\ar[r]_{\mathrm{Ver}(G^{(p)}/S)}&G^{(p)}}
+\]
+is commutative, where $\mathrm{Fr}(G/S)^{(p)}$ denotes the inverse image of $\mathrm{Fr}(G/S)$ by the base change $\mathrm{fr}(S)$. According to 4.1.1, one has $\mathrm{Fr}(G/S)^{(p)}=\mathrm{Fr}(G^{(p)}/S)$, hence, according to 4.3 $(*)$ applied to $G^{(p)}$, one obtains:
+\begin{equation}\tag{$**$}
+\begin{aligned}
+\mathrm{Fr}(G/S)\circ\mathrm{Ver}(G/S)&=\mathrm{Ver}(G^{(p)}/S)\circ\mathrm{Fr}(G^{(p)}/S)\\
+&=p\cdot\mathrm{id}_{G^{(p)}}.
+\end{aligned}
+\end{equation}
+
+\numpara{4.3.3}
+Finally, suppose that $G$ is a \emph{commutative, finite and locally free $S$-group}; let $\mathscr A$ be the affine $\OS$-algebra of $G$, and $\pi$ the endomorphism of the sheaf of rings $\OS$ sending a section $x$ of $\OS$ to $x^p$.\nde{The order has been modified by introducing first the objects occurring in the diagram which is to follow.} Denote by $\Sigma^p\mathscr A$ the subalgebra of $\bigotimes_{\OS}^p\mathscr A$ consisting of sections invariant under the action of the symmetric group, and by $i(\mathscr A)$ the inclusion of $\Sigma^p\mathscr A$ into the tensor product. Let $\Delta^p(\mathscr A):\mathscr A\to\bigotimes_{\OS}^p\mathscr A$ be the morphism obtained by iterating the diagonal morphism of the coalgebra $\mathscr A$ (it corresponds to the multiplication morphism from $U^p(G)=G_S^p$ to $G$); according to the beginning of paragraph 4.3, $\Delta^p(\mathscr A)$ factors through $\Sigma^p\mathscr A$, \ie induces a morphism
+\[
+a(\mathscr A):\mathscr A\longrightarrow\Sigma^p\mathscr A
+\]
+such that $i(\mathscr A)\circ a(\mathscr A)=\Delta^p(\mathscr A)$.
+
+On the other hand, let $S^p(\mathscr A)$ be the degree $p$ component of the symmetric algebra of $\mathscr A$, and $q(\mathscr A):\bigotimes_{\OS}^p\mathscr A\to S^p(\mathscr A)$ the canonical projection. The multiplication $m^p(\mathscr A):\bigotimes_{\OS}^p\mathscr A\to\mathscr A$ factors through $S^p(\mathscr A)$, \ie induces a map
+\[
+b(\mathscr A):S^p(\mathscr A)\longrightarrow\mathscr A
+\]
+such that $b(\mathscr A)\circ q(\mathscr A)=m^p(\mathscr A)$.
+
+Since $\Sigma^p\mathscr A$ is the affine algebra of $V^p(\mathscr A)$, according to the beginning of 4.3 again, the composite morphism $i(G)\circ\varphi(G)^{-1}$ induces an algebra homomorphism
+\[
+r(\mathscr A):\Sigma^p\mathscr A\longrightarrow\mathscr A\otimes_\pi\OS;
+\]
+this homomorphism vanishes on sections of the form
+\[
+\sum_{\sigma\in\mathscr S_p}a_{\sigma(1)}\otimes\cdots\otimes a_{\sigma(p)}
+\]
+and sends $a\otimes\cdots\otimes a$ to $a\otimes_\pi1$.
+% typo?: source V^p(A), rather than V^p(G), retained.

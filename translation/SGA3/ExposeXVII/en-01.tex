@@ -1,0 +1,142 @@
+\exposetitle{XVII}{Unipotent algebraic groups. Extensions between unipotent groups and groups of multiplicative type}
+\label{XVII}
+\begin{center}by M. Raynaud{\renewcommand{\thefootnote}{*}\footnotemark}\end{center}
+{\renewcommand{\thefootnote}{*}\footnotetext{\Cf the note on page 1 of Exposé XV.}}
+{\renewcommand{\thefootnote}{(0)}\footnotetext{xy version of 18/11/08}}
+\setcounter{footnote}{0}
+
+% Source PDF p. 1.
+\sgasection{0}{Some notation}
+In the present chapter, we shall mainly have to consider algebraic groups defined over a field $k$. The number $p\geq0$ will always denote the characteristic of $k$, $\FF_p$ the prime field with $p$ elements if $p>0$, $\overline k$ an algebraically closed extension of $k$, $q$ a prime number distinct from $p$.
+
+For every $S$-prescheme, $(\Ga)_S$ (resp. $(\Gm)_S$) denotes the additive group (resp. the multiplicative group) over $S$ (\cf Exp. I 4.3). For every integer $n>0$, $(\boldsymbol\mu_n)_S$ (resp. $(\ZZ/n\ZZ)_S$) denotes the group of $n$th roots of unity (Exp. I 4.4.4) (resp. the constant group over $S$ associated with the abstract group $\ZZ/n\ZZ$ (Exp. I 4.1)). The group $(\ZZ/n\ZZ)_S$ is finite and étale over $S$; the group $(\boldsymbol\mu_n)_S$ is flat and finite over $S$, and is étale over $S$ if and only if $n$ is invertible on $S$ (Exp. VIII 2.1).
+
+If $S$ is a prescheme of characteristic $p>0$, for every integer $n>0$ and every group $S$-prescheme $G$, we denote by ${}_{F^n}(G)$ the radicial group $S$-subprescheme of $G$ equal to the kernel of the $n$th iterate of the Frobenius morphism relative to $G$ (Exp. VIIA). In particular, if $G=(\Ga)_S$, we put ${}_{F^n}(G)=(\boldsymbol\alpha_{p^n})_S$, which is a radicial $S$-group, flat and finite over $S$, representing the following functor: for every $S$-prescheme $S'$, $(\boldsymbol\alpha_{p^n})_S(S')$ is the set of $x'\in\Gamma(S',\mathcal O_{S'})$ such that $x'^{p^n}=0$.
+
+The group $(\boldsymbol\mu_{p^n})_S$, already defined, is canonically isomorphic to ${}_{F^n}(\Gm)_S$.
+
+When there is no ambiguity about the base scheme $S$, we shall simply write $\Ga,\Gm,\boldsymbol\alpha_{p^n}$, etc., instead of $(\Ga)_S,(\Gm)_S,(\boldsymbol\alpha_{p^n})_S$, etc.
+
+If $G$ is a commutative group $S$-prescheme, for every integer $n>0$, ${}_nG$ is the group subprescheme of $G$ equal to the kernel of raising to the $n$th power in $G$.
+
+% Source PDF p. 2.
+For the reader's convenience, we have collected in an appendix some properties of algebraic groups proved in Exp. VI and VII, as well as elementary properties of Hochschild cohomology, which will be useful to us in this chapter.
+
+\sgasection{1}{Definition of unipotent algebraic groups}
+\begin{definition}{1.1}\label{XVII.1.1}
+An algebraic group $G$ defined over an algebraically closed field $k$ is said to be \emph{unipotent} if $G$ admits a composition series whose successive quotients are isomorphic to algebraic subgroups of $(\Ga)_k$.
+\end{definition}
+
+\begin{proposition}{1.2}\label{XVII.1.2}
+Let $k$ be an algebraically closed field, $K$ an algebraically closed extension of $k$, $G$ an algebraic group defined over $k$. Then, for $G$ to be unipotent, it is necessary and sufficient that $G_K$ be unipotent.
+\end{proposition}
+The necessity of the condition is clear, since a composition series gives a composition series by extension of the base.
+
+The proof of sufficiency is standard: $K$ is the inductive limit of its finitely generated $k$-subalgebras. By Exp. VIB \S~10, one can find a finitely generated $k$-subalgebra $A$ of $K$, a composition series $G_i$ of $G_S$ ($S=\Spec A$), and immersions $u_i:H_i=G_i/G_{i+1}\to(\Ga)_S$. To prove that $G$ is unipotent, it then suffices to make a $k$-extension of the base, $A\to k$, which is possible since $\Hom_{k\text{-alg}}(A,k)$ is nonempty, $A$ being a nonzero finitely generated $k$-algebra over the algebraically closed field $k$.
+
+\begin{definition}{1.3}\label{XVII.1.3}
+Let $G$ be an algebraic group defined over a field $k$. We shall say that $G$ is \emph{unipotent} if there is an algebraically closed extension $\overline k$ of $k$ such that $G_{\overline k}$ is unipotent (Definition 1.1).
+\end{definition}
+By 1.2, the property is independent of the chosen algebraically closed extension $\overline k$.
+
+\begin{definition}{1.4}\label{XVII.1.4}
+Let $G$ be an algebraic group defined over a field $k$, and $H$ an algebraic group defined over an extension $k'$ of $k$. We shall say that $H$ is a \emph{form} of $G$ over $k'$ if the algebraic groups $G_{k'}$ and $H_{k'}$ become isomorphic over $\overline{k'}$ (as above, one sees that the property does not depend on the choice of the algebraically closed extension $\overline{k'}$ of $k'$). We shall also say that $H$ is a ``twisted'' group $G$.
+\end{definition}
+We are now in a position to describe the algebraic subgroups of $\Ga$.
+
+\begin{proposition}{1.5}\label{XVII.1.5}
+% typo: "un corps caractéristique" -> "a field of characteristic".
+Let $k$ be a field of characteristic $p\geq0$. Then an algebraic subgroup $H$ of $(\Ga)_k$ is of one of the following types:
+\begin{enumeratei}
+\item $H=0$.
+\item $H=\Ga$.
+\item (If $p>0$) $H$ is an extension of a twisted constant group $(\ZZ/p\ZZ)^r$ by a radicial group $\boldsymbol\alpha_{p^n}$ ($r$ and $n$ integers $\geq0$, $r+n>0$). If, moreover, $k$ is perfect, this extension is necessarily trivial.
+\end{enumeratei}
+\end{proposition}
+
+% Source PDF p. 3.
+\noindent\emph{Proof.} If $H$ is of dimension 1, it is clear that $H=\Ga$. Otherwise $H$ is of dimension 0 and consequently is an extension\nde{Reference to VIIA?} of an étale group $H''$ by its neutral component $H'$, which is a radicial group. To describe $H''_{\overline k}$, it suffices to know the abstract group $H''(\overline k)$, isomorphic to $H(\overline k)$. Now the latter is a finite subgroup of $\Ga(\overline k)$, hence is zero if $p=0$ and is of the form $(\ZZ/p\ZZ)^r$ otherwise, since it is annihilated by $p$. The group $H'$ is closed in $\Ga$ and is defined by a single equation (the ring $k[T]$ of $\Ga$ is principal), which over $\overline k$ has 0 as its only root; hence this equation is of the form $T^n=0$. Compatibility with the group law implies that $(T+T')^n$ belongs to the ideal generated by $T^n$ and $T'^n$ in the ring $k[T,T']$; hence: if $p=0$, one has $n=1$ and $H'$ is the unit group; if $p>0$, one has $n=p^m$ and $H'=\boldsymbol\alpha_{p^m}$.
+
+The last assertion of 1.5 follows more generally from the lemma:
+\begin{lemma}{1.6}\label{XVII.1.6}
+If $k$ is a perfect field, every extension $H$ of an étale algebraic group $H''$ by a radicial group $H'$ is trivial. Moreover, there is a unique lifting of $H''$ into $H$, namely $H_{\mathrm{red}}$.
+\end{lemma}
+Indeed, since $k$ is perfect, the reduced $k$-scheme $H_{\mathrm{red}}$ is an algebraic subgroup of $H$ (Exp. VIA 0.2), geometrically reduced, hence smooth over $k$ (Exp. VIA, 1.3.1), hence étale, since $H$ is of dimension 0. To see that the canonical projection $H_{\mathrm{red}}\to H''$ is an isomorphism, it suffices to see it after extension of the base field $k\to\overline k$, in which case it suffices to show that one has an isomorphism on the points with values in $\overline k$, which is quite clear. The last assertion follows from the fact that every lifting of $H''$ into $H$, being étale over $k$, is reduced, hence is necessarily contained in $H_{\mathrm{red}}$.
+
+Note that $\boldsymbol\alpha_{p^n}$ is a multiple extension of groups isomorphic to $\boldsymbol\alpha_p$. One then deduces from 1.5 the corollary:
+\begin{corollary}{1.7}\label{XVII.1.7}
+For an algebraic group $G$ defined over an algebraically closed field $k$ to be unipotent, it is necessary and sufficient that it have a composition series whose successive quotients are isomorphic to $\Ga$ if $p=0$, and to one of the groups $\Ga,\ZZ/p\ZZ,\boldsymbol\alpha_p$ if $p>0$. (We shall call these groups the elementary unipotent groups.)
+\end{corollary}
+
+\sgasection{2}{First properties of unipotent groups}
+\begin{proposition}{2.1}\label{XVII.2.1}
+A unipotent algebraic group defined over a field $k$ is affine over $k$.
+\end{proposition}
+By (fpqc) descent of affine morphisms, it suffices to prove 2.1 when $k$ is algebraically closed. In this case, $G$ is, by definition, a multiple extension of affine algebraic groups, hence is affine, by Exp. VIB 9.2(viii) applied to affine morphisms.\nde{Check this reference.}
+
+\begin{proposition}{2.2}\label{XVII.2.2}
+\begin{enumerate}[label=\textup{\roman*)}]
+\item The property for an algebraic group of being unipotent is invariant under extension of the base field.
+% Source PDF p. 4.
+\item Every algebraic subgroup of a unipotent group is unipotent.
+\item Every algebraic quotient group of a unipotent group is unipotent.
+\item Every extension of a unipotent algebraic group by a unipotent algebraic group is likewise unipotent.
+\end{enumerate}
+\end{proposition}
+\noindent\emph{Proof.} i) follows immediately from 1.3 and 1.2. To establish the other properties, we can assume that the field $k$ is algebraically closed. Then iv) is obvious from Definition 1.3.
+
+Let therefore $G$ be a unipotent algebraic group, $G'$ an algebraic subgroup of $G$, $G''$ an algebraic quotient group of $G$, $G_i$ ($i=1,\ldots,n$) a composition series of $G$ such that $H_i=G_i/G_{i+1}$ is an elementary unipotent group (1.7).
+
+To prove ii), consider the composition series of $G'$ induced by that of $G$: $G'_i=G_i\cap G'$. The group $G'_i/G'_{i+1}$ is identified with an algebraic subgroup of $H_i$, hence is isomorphic to a subgroup of $\Ga$, and consequently $G'$ is unipotent.
+
+To prove iii), consider the composition series of $G''$ that is the image of that of $G$: $G''_i=$ image of $G_i$ in $G''$. The group $G''_i/G''_{i+1}$ is then a quotient of $H_i$, and it suffices to prove the lemma:
+\begin{lemma}{2.3}\label{XVII.2.3}
+If $H$ is an elementary unipotent group (1.7) defined over a field $k$, every algebraic quotient group $H''$ of $H$ is zero or is isomorphic to $H$ over $k$.
+\end{lemma}
+\noindent\emph{Proof.} If $H=\Ga$ in characteristic 0, or if $H=\boldsymbol\alpha_p$ or $\ZZ/p\ZZ$ ($p>0$), it suffices to note that it follows from 1.5 that $H$ has no algebraic subgroups other than 0 and $H$ (observe that a nonzero algebraic subgroup of $\boldsymbol\alpha_p$ is defined by a $k$-algebra of rank over $k$ at least equal to $p$ (1.5 iii), hence is equal to $\boldsymbol\alpha_p$).
+
+Let now $H=\Ga$ ($p>0$), so that one has an exact sequence:
+\[
+ 0\to N\to\Ga\to H''\to0.
+\]
+If $N=\Ga$, then $H''=0$. Otherwise, proceeding by induction on the length of a composition series of $N$, one can assume that $N=\boldsymbol\alpha_p$, or that $N$ is a form of $(\ZZ/p\ZZ)^r$ (1.5).
+
+\noindent a) If $N\simeq\boldsymbol\alpha_p$, the proof of 1.5 iii) shows that $N$ is necessarily the kernel of the Frobenius morphism $F$ in $\Ga$, and one concludes with the aid of the exact sequence:
+\[
+ 0\to\boldsymbol\alpha_p\to\Ga\xrightarrow{F}\Ga\to0.
+\]
+\noindent b) If $N\simeq\ZZ/p\ZZ$, it is immediate that there is $a\in k^*$ such that $N$ is the closed subscheme of $\Ga=\Spec k[X]$ defined by the equation $X^p-aX=0$. One then concludes with the aid of the exact sequence:
+\[
+ 0\to N\to\Ga\xrightarrow{\mathscr P}\Ga\to0,
+\]
+where $\mathscr P$ is the Artin--Schreier morphism: $x\mto x^p-ax$.
+
+\noindent c) If $N$ is a form of $(\ZZ/p\ZZ)^r$, there is a finite Galois extension $k'$ of $k$ trivializing $N$. By b) and an obvious induction on $r$, $\Ga/N$ is a form of $\Ga$ trivialized by $k'$. It then suffices to apply the following lemma:
+\begin{lemma}{2.3 bis}\label{XVII.2.3bis}
+Let $k$ be a field, $G$ an algebraic $k$-group that is a form of $\Ga$, trivialized by a finite separable extension $k'$ of $k$. Then $G$ is isomorphic to $\Ga$.
+\end{lemma}
+
+% Source PDF p. 5.
+Indeed, the group of $k'$-automorphisms of the algebraic group $(\Ga)_{k'}$ is the group of nonzero homotheties $(k')^\times$ (\emph{Bible}, Exp. 9, Lemma 1), and the Galois cohomology group $H^1(k'/k,\Gm)$ is zero (one can assume that $k'$ is a Galois extension of $k$), by Hilbert's Theorem 90. Lemma 2.3 bis then follows from the classification of $k$-forms of an algebraic group (\cf J.-P. Serre, \emph{Cohomologie galoisienne}, Chap. III, 1.3).
+
+This completes the proof of 2.2.
+\begin{proposition}{2.4}\label{XVII.2.4}
+Let $k$ be a field, $M$ a $k$-group of multiplicative type (Exp. VIII) and of finite type, $U$ a unipotent algebraic $k$-group. Then:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $\uHom_{k\text{-gr}}(M,U)=\underline e$ (a fortiori $\Hom_{k\text{-gr}}(M,U)=e$).
+\item $\Hom_{k\text{-gr}}(U,M)=e$.
+\end{enumerate}
+\end{proposition}
+To prove i), we must establish that for every prescheme $S$ over $k$, $\Hom_{S\text{-gr}}(M_S,U_S)=e$. But this follows from the following lemma:
+\begin{lemma}{2.5}\label{XVII.2.5}
+Let $S$ be a prescheme, $M$ an $S$-group of multiplicative type and of finite type over $S$, $U$ a group $S$-prescheme, of finite presentation over $S$, with unipotent fibers; then $\Hom_{S\text{-gr}}(M,U)=e$.
+\end{lemma}
+Indeed, under the hypotheses made, for a group $S$-morphism $u:M\to U$ to be the unit homomorphism, it suffices that the restriction of $u$ to the fibers of $M$ over the points of $S$ be the zero morphism (Exp. IX 5.2). We are therefore reduced to the case where $S$ is the spectrum of a field, which one can moreover assume to be algebraically closed. In view of Definition 1.1, one can restrict oneself to $U=\Ga$, in which case the property has already been proved (Exp. XII 4.4.1).
+
+Let us now prove 2.4 ii). Let therefore $u:U\to M$ be a group $k$-morphism. The image $u(U)$ is representable by an algebraic subgroup $U''$ of $M$ (Exp. VIB 5.4).\nde{Check this reference.} The group $U''$ is unipotent as a quotient of a unipotent group (2.2 iii)) and is of multiplicative type as a subgroup of a group of multiplicative type (\cf \emph{Bible}, Exp. 4, Th. 2 cor. 1, or Exp. IX 6.8), hence $U''$ is the unit group by 2.4 i).
+
+\begin{remark}{2.6}\label{XVII.2.6}
+Keeping the notation of 2.4, it is no longer true in general that the functor $\uHom_{k\text{-gr}}(U,M)$ is equal to $\underline e$. Thus, take a prescheme $S$ such that $\Gamma(S,\OS)$ contains a nonzero element $\varepsilon$ such that $\varepsilon^2=0$ (for example, the spectrum of the algebra of dual numbers of a ring $A$). For every $S'$ over $S$, the map $u\mto1+\varepsilon_{S'}u$ defines a homomorphism, functorial in $S'$, from the additive group $\Gamma(S',\mathcal O_{S'})$ to the multiplicative group $\Gamma(S',\mathcal O_{S'}^\times)$, hence defines a group $S$-morphism $(\Ga)_S\to(\Gm)_S$, and since $\varepsilon\neq0$, this morphism is nonzero.
+\end{remark}
+Recall (Exp. VIIA \S~3) that when $G$ is a commutative group $S$-prescheme, finite and flat over $S$, one has Cartier duality, and $G$ is reflexive in the sense of Exp. VIII \S~1. More precisely, the functor $G\mto\uHom_{S\text{-gr}}(G,\Gm)$ is representable by a commutative group $S$-prescheme $D(G)$, finite and flat over $S$, and the canonical morphism $G\to D(D(G))$ is an isomorphism.
+% This sentence begins on p. 5 and finishes on p. 6; the following properties belong to en-02.

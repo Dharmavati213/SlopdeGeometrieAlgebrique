@@ -1,0 +1,41 @@
+% Source PDF pp. 67--68; the first continued sentence belongs to en-11.
+$\text{iii)}\Rightarrow\text{ii)}$. Indeed, if condition iii) holds, we may use the results of Exp. XII 7.1. The functor $\mathscr{TM}$ is therefore canonically isomorphic to the functor of Cartan subgroups of $G$, and it suffices to apply 7.3 i).
+\begin{remark}{8.16}\label{XV.8.16}
+One can show that the prescheme $\mathscr{TM}$ of maximal tori of $G$ is affine over $S${\renewcommand{\thefootnote}{*}\footnote{Cf. M. Raynaud, \emph{Faisceaux amples sur les schémas en groupes et les espaces homogènes} (thesis, to appear)(N.D.E.: see Lecture Notes Math. 119 (1970), Springer), especially IX 2.9.}}\setcounter{footnote}{10}, which generalizes Exp. XII 5.4.
+\end{remark}
+\begin{corollary}{8.17}\label{XV.8.17}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth and of finite presentation over $S$. Suppose that the abelian rank and the reductive rank of the fibers of $G$ are locally constant functions on $S$; then $G$ satisfies the (equivalent) properties i) to iv) of 8.15.
+\end{corollary}
+We may suppose that the abelian rank and the reductive rank of the fibers of $G$ are constant. Proceeding as in 8.11 and taking account of 6.3 bis, one reduces to the case where $S$ is noetherian. But then $G$ has property AT (8.7), and one concludes by 8.15 v).
+\begin{corollary}{8.18}\label{XV.8.18}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth over $S$. Then the following conditions are equivalent:
+
+\noindent a) The unipotent rank $\rho_u$ and the abelian rank $\rho_{\mathrm{ab}}$ (6.1 ter) of the fibers of $G$ are locally constant functions on $S$.
+
+\noindent b) The unipotent rank $\rho_u$ is locally constant, and $G$ has, locally for the fpqc topology, maximal tori.
+
+\noindent c) The reductive rank $\rho_r$ (6.1 ter) and the abelian rank $\rho_{\mathrm{ab}}$ of the fibers of $G$ are locally constant functions on $S$.
+\end{corollary}
+\begin{remarks}{8.19}\label{XV.8.19}
+Under the hypotheses of 8.18, a more precise argument, using the lower semicontinuity of the abelian rank (announced in Exp. X 8.7), shows that if two of the three ranks $\rho_u$, $\rho_r$, $\rho_{\mathrm{ab}}$ are locally constant, then the same holds for the third.
+\end{remarks}
+\par\noindent\emph{Proof of 8.18.}
+Replacing $G$ by its identity component, we may suppose $G$ of finite presentation over $S$ (Exp. VIB 5.3.3).
+
+$\text{a)}\Rightarrow\text{c)}$. Let $s$ be a point of $S$. Since $\rho_{\mathrm{ab}}$ is locally constant, it follows from 8.11 that, after making an étale extension covering $S$, one may suppose that there exists a subtorus $T$ of $G$ whose fiber $T_s$ is a maximal torus of $G_s$. Let $C=\uCentr_G(T)$, which is a group subprescheme of $G$, smooth over $S$, with connected fibers. For every point $t$ of $S$, $C_t$ plainly contains a Cartan subgroup $C'_t$ of $G_t$. After restricting $S$, one may suppose $\rho_u$, $\rho_{\mathrm{ab}}$ and the relative dimension of $C$ over $S$ constant.
+
+% Source PDF p. 68.
+One then has the inequalities
+\[
+\begin{aligned}
+\dim C_s=\dim C_t\geq\dim C'_t
+&\geq\rho_u(t)+\rho_{\mathrm{ab}}(t)+\dim T_t\\
+&=\rho_u(s)+\rho_{\mathrm{ab}}(s)+\dim T_s=\rho_\nu(s)=\dim C_s.
+\end{aligned}
+\]
+One deduces that $C_t=C'_t$, hence that $T$ is a maximal torus of $G$, and a fortiori $\rho_r(t)=\rho_r(s)$.
+
+$\text{c)}\Rightarrow\text{b)}$ by 8.17.
+
+$\text{b)}\Rightarrow\text{a)}$. Indeed, since $G$ has, locally for the fpqc topology, maximal tori, it has, locally for the fpqc topology, Cartan subgroups, and consequently (Exp. XII 7.3) the nilpotent rank $\rho_\nu=\rho_u+\rho_r+\rho_{\mathrm{ab}}$ is locally constant. Since $\rho_r$ and $\rho_{\mathrm{ab}}$ are locally constant, $\rho_u$ is locally constant.
+% typo?: the printed final implication uses local constancy of rho_r and rho_ab; kept.

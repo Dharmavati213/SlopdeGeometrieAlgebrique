@@ -1,0 +1,130 @@
+Now $G^0\otimes_kk'$ is of finite type over $k'$ by 2.4, and $\pi^{-1}(x)$ is finite (of cardinality $\leq[k':k]$), so $C\otimes_kk'$ is of finite type over $k'$, and hence $C$ is of finite type over $k$.
+
+On the other hand, since $G^0\otimes_kk'$ is irreducible by 2.4, the same holds for $C'$,\nde{The original has been simplified here.} and therefore also for $C$, since the projection $C'\to C$ is surjective.
+
+Finally, we have seen above that $C\otimes_kk'$ is a disjoint union of finitely many translates of $G^0\otimes_kk'$. Since dimension is invariant under extension of the base field (cf. EGA IV$_2$, 4.1.4), it follows that $C$ has the same dimension as $G^0$. (Moreover, by EGA IV$_2$, 5.2.1, one has $\dim_gG=\dim G^0$ for every point $g\in G$.)
+
+\numpara{2.5}This paragraph has been added. The results below appear in Exp. VIB, but could (or should) have appeared in VIA, and it is useful to have them already, in order to make Theorem 3.2 below more precise.
+\begin{lemma}{2.5.1}\label{VIA.2.5.1}
+Let $(A,\mathfrak m)$ be an artinian local ring, and $k=A/\mathfrak m$ its residue field.
+\begin{enumeratei}
+\item If $X$ is an $A$-scheme such that $X\otimes_Ak$ is locally of finite type (resp. of finite type) over $k$, then the same holds for $X$ over $A$.
+\item Let $u:X\to Y$ be a morphism of $A$-schemes. If $u\otimes_Ak$ is an immersion (resp. a closed immersion), the same holds for $u$.
+\end{enumeratei}
+\end{lemma}
+\begin{proof}
+(i) Suppose $X\otimes_Ak$ locally of finite type over $k$. Let $U=\Spec B$ be an affine open subset of $X$. By hypothesis, there exist elements $x_1,\ldots,x_n$ of $B$ whose images generate $B/\mathfrak mB$ as a $k$-algebra, and it follows from the ``nilpotent Nakayama lemma'' that the $x_i$ generate $B$ as an $A$-algebra. This proves that $X$ is locally of finite type over $A$. If moreover $X\otimes_Ak$ is quasi-compact, the same holds for $X$ (which has the same underlying topological space), and hence $X$ is of finite type over $A$. This proves (i).
+
+Let us prove (ii). Suppose $u\otimes_Ak$ an immersion (resp. a closed immersion). Then $u$ is a homeomorphism from $X$ onto a locally closed (resp. closed) subset of $Y$ and, for every $x\in X$, the ring morphism $\varphi_x:\OO_{Y,u(x)}\to\OO_{X,x}$ is such that $\varphi_x\otimes_Ak$ is surjective. By the nilpotent Nakayama lemma, it follows that $\varphi_x$ is surjective, so $u$ is an immersion (resp. a closed immersion).
+\end{proof}
+\begin{proposition}{2.5.2}\label{VIA.2.5.2}
+Let $A$ be an artinian local ring with residue field $k$, and let $u:G\to H$ be a quasi-compact morphism between $A$-group schemes locally of finite type.
+
+\textup{(a)} The set $u(G)$ is a closed subset of $H$ whose connected components are irreducible and all have the same dimension.
+
+\textup{(b)} One has $\dim G=\dim u(G)+\dim\Ker(u)$.
+
+\textup{(c)} If $u$ is a monomorphism, it is a closed immersion.
+\end{proposition}
+\begin{proof}
+By the preceding lemma, it suffices to prove the proposition in the case $A=k$. Moreover, since the properties under consideration are stable under \fpqc descent, and dimension is invariant under extension of the base field, one can suppose $k$ algebraically closed.
+
+Let us prove (a). Denote by $C$ the reduced subscheme of $H$ whose underlying topological space is $\overline{u(G)}$. Since $u(G)$ is stable under the inversion morphism of $H$, so is $C$. On the other hand, $u:G\to C$ is quasi-compact and dominant, so, by EGA IV$_2$, 2.3.7, the same holds for $u\times_k\mathrm{id}_G$ and $\mathrm{id}_H\times_ku$, hence for their composite $u\times_ku:G\times_kG\to C\times_kC$. Consequently, multiplication in $H$ sends $C\times_kC$ into $C$, so $C$ is a subgroup scheme of $H$.
+
+Thus, replacing $H$ by $C$, one reduces to the case where $u$ is dominant. Then $G(k)$ is dense in $H$, hence meets every connected component of $H$, and therefore acts transitively on the set of these connected components. It thus suffices to show that $u(G)$ contains $H^0$. Replacing $G$ by $u^{-1}(H^0)$, one can therefore suppose $H=H^0$; in this case, by 2.4, $H$ is irreducible and of finite type over $k$, hence noetherian. On the other hand, $u$ is locally of finite type (cf. EGA I, 6.6.6) and quasi-compact, hence of finite type. Consequently, by Chevalley's constructibility theorem (cf. EGA IV$_1$, 1.8.5), $u(G)$ is a constructible (and dense) subset of $H=\overline{u(G)}$, and therefore contains a dense open subset $U$ of $H$ (cf. EGA $0_{\mathrm{III}}$, 9.2.2). Then, by 0.5, one has $H=U\cdot U\subset u(G)$, whence $u(G)=H$. Taking account of 2.4.1, this proves assertion (a).
+
+Let us prove (b). First recall that the functor $\Ker(u)$ (cf. I, 2.3.6.1) is represented by $u^{-1}(e)$, where $e$ denotes the neutral element of $H$. Since $u$ is of finite type, $\Ker(u)$ is of finite type over $k$. On the other hand, replacing $H$ by the reduced closed subscheme $u(G)$, one can suppose $u$ surjective. Denote by $u^0$ the restriction of $u$ to $G^0$. Since $G$ and $\Ker(u)$ are equidimensional, and $\Ker(u)^0\subset\Ker(u^0)$, one reduces to the case where $G$, and hence also $H$, are irreducible.
+
+Then, by EGA IV$_3$, 9.2.6.2 and 10.6.1 (ii), the set of $y\in H$ such that $\dim u^{-1}(y)=\dim G-\dim H$ contains a nonempty open subset $V$. Since $u$ is surjective, $U=u^{-1}(V)$ is then a nonempty open subset of $G$, and therefore contains a closed point $x$ of $G$, since $G$ is a Jacobson scheme (cf. EGA IV$_3$, 10.4.8). Then right translation $r_x$ is an isomorphism from $\Ker(u)$ onto $u^{-1}(u(x))$, whence:
+\[
+\dim\Ker(u)=\dim u^{-1}(u(x))=\dim G-\dim H.
+\]
+Let us prove (c), following [DG70], I, §3.4. (Another proof is given in Exp. VIB, 1.4.2.) Suppose $u$ a monomorphism. If $C$ is a connected component of $G$, there exists a closed point $x\in G$ such that $C=r_x(G^0)$, and, denoting by $u_C$ (resp. $u^0$) the restriction of $u$ to $C$ (resp. $G^0$), one has $u_C=r_{u(x)}\circ u^0\circ r_x^{-1}$; thus it suffices to show that $u^0$ is a closed immersion. One can therefore suppose $G=G^0$, so $G$ is irreducible and of finite type over $k$.
+
+Let $\xi$ be the generic point of $G$; then $\OO_{G,\xi}$ is an artinian local ring; denote its maximal ideal by $\mathfrak m$. On the other hand, let $h=u(\xi)$, $\mathfrak n$ the maximal ideal of $\OO_{H,h}$, and $A=\OO_{G,\xi}/\mathfrak n\OO_{G,\xi}$. Since $u$ is a monomorphism, so is the morphism $u_h:\Spec(A)\to\Spec(\kappa(h))$ obtained by base change, so the multiplication morphism $A\otimes_{\kappa(h)}A\to A$ is an isomorphism (cf. EGA I, 5.3.8), whence $A=\kappa(h)$. By Nakayama's lemma (since $\mathfrak n\OO_{G,\xi}$ is contained in $\mathfrak m$, hence nilpotent), it follows that the morphism $\OO_{H,h}\to\OO_{G,\xi}$ is surjective.
+
+Let, then, $V$ be an affine open subset of $H$ containing $h$, $U$ a nonempty affine open subset of $G$ contained in $u^{-1}(V)$, $\varphi:\OO_H(V)\to\OO_G(U)$ the morphism of $k$-algebras induced by $u$, $\mathfrak p$ the prime ideal of $\OO_G(U)$ corresponding to $\eta$, and $\mathfrak q=\varphi^{-1}(\mathfrak p)$. Since $G$ is of finite type over $k$, $\OO_G(U)$ is generated as a $k$-algebra by finitely many elements $a_1,\ldots,a_n$. By what precedes, there exist elements $b_1,\ldots,b_n,s$ in $\OO_H(V)$ such that $s\notin\mathfrak q$ and the equalities $a_i/1=\varphi(b_i)/\varphi(s)$ hold in $\OO_G(U)_{\mathfrak p}$. There therefore exist elements $t_1,\ldots,t_n$ of $\OO_G(U)-\mathfrak p$ such that $t_i(a_i\varphi(s)-\varphi(b_i))=0$. Then, putting $t=t_1\cdots t_n\varphi(s)\in\OO_G(U)-\mathfrak p$, the equalities $a_i/1=\varphi(b_i)/\varphi(s)$ already hold in $\OO_G(U)_t$, and, since $t\in\OO_G(U)=k[a_1,\ldots,a_n]$, there exists $b\in\OO_H(V)$ such that $t/1=\varphi(b)/\varphi(s)^r$ for some $r\in\NN$. Consequently, $\varphi$ induces a surjection from $\OO_H(V)_{sb}$ onto $\OO_G(U)_t$, and hence $u$ is a local immersion at $\xi$.
+% typo?: kept as printed: eta in the definition of p, following xi.
+
+The open subset $W$ of $G$ consisting of the points where $u$ is a local immersion is therefore nonempty. Since $G$ is a Jacobson scheme, $W$ contains a closed point $y$, and, to show that $W=G$, it suffices to show that every closed point of $G$ belongs to $W$. Now every closed point $x$ is the image of $y$ under translation $r_x\circ r_y^{-1}$, hence belongs to $W$, whence $W=G$. This proves that $u$ is a local immersion.
+
+Since $G$ is irreducible, it follows that $u$ is an immersion. Indeed, for every $x\in G$, let $U_x$ and $V_x$ be open subsets of $G$ and $H$ such that $x\in U_x$ and $u$ induces a closed immersion from $U_x$ into $V_x$. Since $U_x$ is dense in $G$, $u(U_x)$ is dense in $u(G)\cap V_x$, and since $u(U_x)$ is closed in $V_x$, one therefore has $u(U_x)=V_x$. Since moreover $u$ is injective, one has $U_x=u^{-1}(V_x)$, and it follows that $u$ induces a closed immersion from $G$ into the open subscheme of $H$ covered by the $V_x$. Thus $u:G\to H$ is an immersion. But we have already seen that $u(G)$ is a closed subset of $H$, so $u$ is a closed immersion.
+% typo?: kept as printed: u(U_x)=V_x.
+\end{proof}
+\begin{lemma}{2.5.3}\label{VIA.2.5.3}\nde{No finiteness hypotheses are made in this statement; this will be useful below (cf. 6.2 and VIB, §12).}
+Let $A$ be an artinian local ring, $k$ its residue field, $G$ a flat $A$-group, $X$ an $A$-scheme with a left action $\mu:G\times_AX\to X$ of $G$ and a section $s_0:\Spec A\to X$. (This is the case, for example, if $G'$ is a second $A$-group and one is given a morphism of $A$-groups $G\to G'$.)
+
+Let $\varphi$ be the morphism $\mu\circ(\mathrm{id}_G\times s_0)$ from $G=G\times_AA$ to $X$. If $\varphi$ is flat at one point $g$ of $G$, then $\varphi$ is flat.
+\end{lemma}
+\begin{proof}
+Since $G$ is flat over $A$, by the fiberwise flatness criterion (EGA IV$_3$, 11.3.10.2), it suffices to show that $\varphi\otimes_Ak$ is flat, so one can suppose $A=k$. In this case, giving $s_0$ amounts to giving a $k$-point $x_0\in X(k)$, and $\varphi$ is the morphism $h\mto hx_0$.
+
+Let, then, $h\in G$; let us show that $\varphi$ is flat at $h$. Let $K$ be an extension of $k$ containing a copy of $\kappa(g)$ and $\kappa(h)$; one has a cartesian square
+\[
+\xymatrix{G_K\ar[r]^{\varphi_K}\ar[d]&X_K\ar[d]\\G\ar[r]_\varphi&X}
+\]
+in which the two vertical arrows are faithfully flat. Thus, by V 7.4 (i), $\varphi_K$ is flat at every point $g'\in G_K$ above $g$, and, to show that $\varphi$ is flat at $h$, it suffices to show that $\varphi_K$ is flat at a point $h'$ above $h$. One is therefore reduced to the case where $g$ and $h$ are rational. Let, then, $u=hg^{-1}$, and let $\ell_u$ (resp. $\mu_u$) be the left translation of $G$ (resp. $X$) defined by $u$; since $\varphi\circ\ell_u=\mu_u\circ\varphi$, one obtains a commutative square
+\[
+\xymatrix{\OO_{G,h}\ar[r]^\sim&\OO_{G,g}\\\OO_{X,hx_0}\ar[u]\ar[r]^\sim&\OO_{X,gx_0}\ar[u]}
+\]
+in which the horizontal arrows are isomorphisms. Since the morphism $\OO_{X,gx_0}\to\OO_{G,g}$ is flat, the morphism $\OO_{X,hx_0}\to\OO_{G,h}$ is also so.
+\end{proof}
+\begin{proposition}{2.5.4}\label{VIA.2.5.4}
+Let $A$ be an artinian local ring, $k$ its residue field, $G$ an $A$-group locally of finite type, and $X\ne\varnothing$ an $A$-scheme locally of finite type with a left action of $G$. Suppose the morphism $\varphi:G\times_AX\to X\times_AX$, defined set-theoretically by $(g,x)\mto(gx,x)$, is surjective. Then:
+\begin{enumeratei}
+\item The connected components of $X$ are of finite type, irreducible and all of the same dimension.
+\item More precisely, let $\overline k$ be an algebraic closure of $k$ and $x$ a closed point of $X\otimes_A\overline k$; its stabilizer $F$ is a closed subgroup scheme of $G\otimes_A\overline k$, and the dimension of the irreducible components of $X$ is $\dim G-\dim F$.
+\end{enumeratei}
+\end{proposition}
+Taking account of Lemma 2.5.1, one can suppose $A=k$. First suppose $k$ algebraically closed. Then $G_{\mathrm{red}}$ is a $k$-group locally of finite type, and therefore, replacing $G$ by $G_{\mathrm{red}}$ and $X$ by $X_{\mathrm{red}}$, one can suppose $G$ and $X$ reduced.
+
+Since $G\times_kX$ is locally of finite type over $k$, $\varphi$ is locally of finite type (cf. EGA I, 6.6.6 (v)), hence locally of finite presentation since $X\times_kX$ is locally noetherian. Let $x$ be a rational point of $X$; then the morphism $\varphi_x:G\to X$ obtained from $\varphi$ by base change is surjective and locally of finite presentation. If $\eta$ is a maximal point of $X$, $\OO_{X,\eta}$ is a field (since $X$ is reduced), hence $\varphi_x$ is flat at every point of $G$ above $\eta$. Thus, by Lemma 2.5.3, $\varphi_x$ is flat. Consequently, $\varphi_x:G\to X$ is faithfully flat and locally of finite presentation, hence open (cf. EGA IV$_2$, 2.4.6). Since $G^0$ is open in $G$, irreducible and quasi-compact (by 2.4), each orbit $G^0x=\varphi_x(G^0)$, as $x$ ranges over the rational points of $X$, is an irreducible quasi-compact open subset of $X$, hence of finite type over $k$ (since $X$ is locally of finite type over $k$).
+
+Since every nonempty open subset of $X$ contains a rational point, it follows that $X$ is covered by these open subsets. Moreover, two such open subsets are either disjoint or equal. Indeed, if $\varphi_x(G^0)\cap\varphi_y(G^0)$ is nonempty, it contains a rational point $z$, so there exist two rational points $g,h\in G^0$ such that $gx=z=hy$, whence $x=g^{-1}z$ and $y=h^{-1}z$, and hence $\varphi_x(G^0)=\varphi_z(G^0)=\varphi_y(G^0)$. It follows that the orbits $\varphi_x(G^0)$ are also closed, and are therefore both the connected components and the irreducible components of $X$.
+
+Finally, let $x,y$ be two rational points of $X$. Since $\varphi_x$ is surjective, there exists a rational point $g\in G$ such that $y=gx$, and, since $G^0$ is an invariant subgroup of $G$, the orbit $G^0y$ is the image of $G^0$ under translation $\ell_g$ of $X$, so $G^0y$ and $G^0x$ have the same dimension.
+% typo?: kept as printed: image of G^0 under translation of X.
+
+Moreover, by I, 2.3.3.1, the stabilizer of $x$ is represented by the closed subscheme $F$ of $G$ defined by the cartesian square below:
+\[
+\xymatrix{F\ar[r]\ar[d]&G\ar[d]^{\varphi_x}\\\Spec k\ar[r]&X.}
+\]
+Then $F$ is a $k$-group locally of finite type, $F\cap G^0$ is a $k$-group of finite type containing $F^0$, and, by 2.4.1, $F$ and $F\cap G^0$ are equidimensional, of the same dimension as $F^0$. Let $C=\varphi_x(G^0)$ be the irreducible component of $X$ containing $x$. Proceeding as in the proof of point (b) of 2.5.2, one obtains $\dim C=\dim G^0-\dim F^0=\dim G-\dim F$.
+
+In the general case (i.e. for any field $k$), let $\overline k$ be an algebraic closure of $k$. Let $C$ be a connected component of $X$ and $C'$ a connected component of $C\otimes_k\overline k$; then $C'$ is a connected component of $X'=X\otimes_k\overline k$. The morphism $\pi:X'\to X$ is open (cf. EGA IV$_2$, 2.4.10), and, being integral, it is also closed; consequently $\pi(C')=C$. Since $C'$ is irreducible and quasi-compact, $C$ is irreducible and quasi-compact, hence of finite type over $k$ (since $X$ is locally of finite type over $k$).
+
+Finally, since dimension is invariant under extension of the base field (cf. EGA IV$_2$, 4.1.4), $\dim C=\dim C'$, and, since all irreducible components of $X'$ have the same dimension, the same holds for those of $X$.
+
+\numpara{2.6}\textbf{Supplements.} --- This paragraph, taken from [Per75] II, §§1--2, with supplements due to O. Gabber, has been added.\nde{These results were communicated to us by O. Gabber, in particular 2.6.6, which plays an important role in section 5 of VIB.} It shows that the preceding results hold for every group scheme $G$ over a field $k$. (This will be used in sections 5, 6 and 7 of Exp. VIB.)
+
+Fix a field $k$. Let us begin with the following lemma (loc. cit., II 2.1.1), which does not appear explicitly in EGA IV$_2$, §4.4 (although one can doubtless read it between the lines at the beginning of loc. cit., §4.4.1).
+\begin{lemma}{2.6.0}\label{VIA.2.6.0}
+Let $X$ be an irreducible $k$-scheme, $K$ an extension of $k$, and $X'$ an irreducible component of $X_K$. The projection $X'\to X$ is surjective.
+\end{lemma}
+Indeed, let $B$ be a transcendence basis of $K$ over $k$ and $L=k(B)\subset K$. By EGA IV$_2$, 4.3.2 and 4.4.1, $X_L$ is irreducible and $X'$ dominates $X_L$. The morphism $X'\to X_L$ is therefore integral and dominant, hence surjective. Since $X_L\to X$ is surjective (loc. cit., 4.4.1), $X'\to X$ is also so.
+
+For the remainder of 2.6, fix a $k$-group scheme $G$ and an action $\mu:G\times X\to X$ of $G$ on a $k$-scheme $X$ satisfying the following condition:
+\[
+\text{the morphism }\Phi:G\times X\to X\times X,\ (g,x)\mto(gx,x)\text{ is surjective}\tag{$\star$}
+\]
+(this is the case, in particular, for $G$ acting on itself by left translations). For brevity, one will then say: ``Let $X$ be a $G$-scheme satisfying $(\star)$''. Finally, denote by $k'$ the perfect closure of $k$.
+\begin{proposition}{2.6.1}\label{VIA.2.6.1}
+Let $X$ be a $G$-scheme satisfying $(\star)$.
+\begin{enumeratei}
+\item $X$ is geometrically pointwise irreducible over $k$, i.e. for every extension $K$ of $k$, every $x\in X_K$ belongs to a unique irreducible component of $X_K$.
+\item Every local ring of $(X_{k'})_{\mathrm{red}}$ is normal.
+\item Let $\eta$ be a maximal point of $(X_{k'})_{\mathrm{red}}$, $C=\overline{\{\eta\}}$, and $L$ the algebraic closure of $k$ in $\kappa(\eta)$. Then $C$ is an $L$-scheme and is geometrically irreducible over $L$ (i.e. $C\otimes_LK$ is irreducible for every extension $K$ of $L$).
+\item In particular, if $x$ is a rational point of $X$, the irreducible component of $X$ containing $x$ is geometrically irreducible over $k$.
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+(i) Since hypothesis $(\star)$ is preserved by every base change $k\to K$, it suffices to show that every $x\in X$ belongs to a unique irreducible component of $X$. Since the morphism $\Spec(k')\to\Spec(k)$ is a universal homeomorphism, one can further suppose $k$ perfect. One can then suppose $G$ and $X$ reduced. Let $\eta$ be a maximal point of $X$ and $z$ any point of $Z=\overline{\{\eta\}}$. Since $X$ is reduced, the local ring $\OO_{X,\eta}$ equals $\kappa(\eta)$, and, since $k$ is perfect, for every extension $K$ of $k$, $\kappa(\eta)\otimes_kK$ is normal (cf. EGA IV$_2$, 6.14.2), so every point of $X_K$ above $\eta$ is normal.
+
+Since $\Phi$ is surjective, there exists a point $\gamma$ of $G\times X$ such that $\Phi(\gamma)$ has projections $z$ and $\eta$. Let $K=\kappa(\gamma)$; there then exist rational points $g$ and $\eta'$ of $G_K$ and $X_K$ such that $\eta'$ lies above $\eta$ and $z'=g\eta'$ above $z$. By what precedes, $\eta'$ is a normal point of $X_K$, hence so is $z'$. Since $\pi:X_K\to X$ is flat, it follows that $z=\pi(z')$ is a normal point of $X$ (cf. EGA IV$_2$, 2.1.13). This proves (ii) and (i).
+
+The first assertion of (iii) then follows from (ii). Next, since $L$ is algebraically closed in $\kappa(\eta)$, $C$ is geometrically irreducible over $L$, by EGA IV$_2$, 4.5.9.
+
+Finally, if $X$ has a rational point $x$, it follows from (iii) that $L=k$, and hence $X$ is geometrically irreducible over $k$. This can also be seen directly as follows (cf. [Per75], II 2.1): let $C$ be the irreducible component of $X$ containing $x$, and let $K$ be an extension of $k$; $X_K$ has a unique point $e_K$ above $e$, and, by (i), $e_K$ belongs to a unique irreducible component $C'$ of $X_K$; on the other hand, by 2.6.0, every irreducible component of $C_K$ contains $e_K$, hence equals $C'$.
+% typo?: kept as printed: X geometrically irreducible, and e in place of x.
+\end{proof}
+\emph{Notation.} --- Temporarily denote by $C^0$ the reduced closed subscheme of $G$ whose underlying space is the unique irreducible component of $G$ containing the neutral element $e$.

@@ -1,0 +1,170 @@
+Denote by $S_0$ the reduced subscheme of $S$ whose underlying space is the closed point of $S$. Let $T'$ be an element of $\Ker[M(S')\rightrightarrows M(S'')]$, $T''$ its image in $M(S'')$. Since $S'_0=S'\times_S S_0$ is faithfully flat over $S_0$, there exists an $S$-subgroup of multiplicative type $T_0$ of $G_{S_0}$ whose inverse image in $G_{S'_0}$ is $T'_{S'_0}$ (fpqc descent). But $S$ is local noetherian complete, so there exist an $S$-group $T$ of multiplicative type and an $S_0$-morphism $u_0:T\times_S S_0\to T_0$ (Exp. X 3.3). The inverse image $u'_0$ of $u_0$ over $S'_0$ extends uniquely to an $S'$-isomorphism $u':T_{S'}\to T'$, again by Exp. X 3.3 (note that $S'$, being finite over $S$ local complete, is the sum of finitely many complete local schemes). The two inverse images of $u'$ over $S''$ are two morphisms from $T_{S''}$ to $T''$ which agree on $S_0\times_S S''$, hence agree (\loccit). Since $T$ is flat over $S$ and $S'\to S$ is a finite effective epimorphism, it follows from TDTE I page 8 that the diagram:
+\[
+\Hom_S(T,G)\to\Hom_{S'}(T_{S'},G_{S'})\rightrightarrows\Hom_{S''}(T_{S''},G_{S''})
+\]
+is exact. Thus $u'$ comes from a morphism of preschemes $u:T\to G$. Likewise, $T\times_S T$ is flat over $S$, and consequently the map:
+\[
+\Hom_S(T\times_S T,G)\to\Hom_{S'}(T_{S'}\times_{S'}T_{S'},G_{S'})
+\]
+is injective. One immediately deduces that $u$ is a group morphism, since this is so for $u'$. Moreover, $u$ is a monomorphism. Indeed, note first that $\Ker u$ is flat over $S$, for to establish this fact one may suppose $S$ local artinian (EGA $0_{\mathrm{III}}$ 10.2.2), hence $G$ separated (Exp. VIA 0.3), but then $\Ker u$ is of multiplicative type (Exp. IX 6.8), hence is flat over $S$. Since $\Ker(u)\times_S S'=\Ker(u')=0$, one has $\Ker(u)=0$ (3.8). But $u$, being a monomorphism, is an immersion (Exp. VIII, Remarks 7.13), and the image group $u(T)$ is indeed an element of $M(S)$ whose image in $M(S')$ is $T'$, which completes the proof of 3.7.
+
+\noindent\textbf{e)} End of the proof of I).
+
+By reduction c), one is reduced to the case where $S$ is the spectrum of a reduced complete noetherian local ring $A$. Let $S'$ be the spectrum of the normalization $A'$ of $A$, which is finite over $A$ by Nagata (EGA $0_{\mathrm{IV}}$ 23.1.5); $S'\to S$ is an epimorphism, since $A$ maps injectively into $A'$. Suppose then that there exists a torus $T'$ of $G_{S'}$ with underlying space $E_{S'}$. The two inverse images of $T'$ in $G_{S'\times_S S'}$ are two central subtori having the same underlying space, hence agreeing (Exp. IX 5 bis); so by 3.7, $T'$ comes from a central subtorus $T$ of $G_S$ which obviously has $E$ as underlying space. It therefore suffices to prove the existence of $T'$, which reduces one to the case where $S$ is normal and completes the proof of I).
+% typo?: source reference IX 5 bis is retained.
+
+\noindent\textbf{II)} Proof of $\text{(iii)}\implies\text{(ii)}$ when $S$ is normal.
+
+We may restrict to the case where $S$ is integral; let $t$ be its generic point. For every integer $n$ equal to a power of $q$, let ${}_nG$ be the subprescheme of $G$ which is the ``kernel'' of raising to the $n$th power in $G$. Since $E$ is locally closed in $G$ (by (iii) b)), the intersection of $\mathrm{ens}({}_nG)$ with $E$ is locally closed in $\mathrm{ens}(G)$; denote then by $E(n)$ the reduced subprescheme of $G$ with underlying space $\mathrm{ens}({}_nG)\cap E$.
+
+Let us show that the structural morphism $E(n)\to S$ is separated and universally open. For these two properties, one has a valuative criterion (EGA II 7.2.3 and EGA IV 14.5.8). Let therefore $S'$ be an $S$-scheme which is the spectrum of a complete discrete valuation ring with algebraically closed residue field. We have proved that 3.1 (iii) $\implies$ 3.1 (iv), so there exists a subtorus $T'$ of $G_{S'}$ with underlying space $E_{S'}$. Now ${}_nT'$ is finite and \'etale over $S'$, hence is separated and universally open over $S'$, and the same holds for $E(n)\times_S S'$, which has the same underlying space as ${}_nT'$.
+
+Moreover, the fibers of $E(n)$ have the same number of geometric points, namely $r^n$ if $r$ is the rank of the torus $T_t$. Finally, the generic fiber $E(n)_t$, being reduced, is equal to ${}_nT_t$, hence is \'etale over $\Spec(t)$. Since $S$ is normal, it then follows from SGA I 10.11 that $E(n)$ is an \'etale covering of $S$.
+% typo?: source gives r^n for the number of geometric points, kept as printed.
+
+If $s$ is a point of $S$, $E(n)_s$ is \'etale over $\Spec\kappa(s)$, hence is reduced and consequently agrees with the group of multiplicative type ${}_nT_s$. Let us show that $E(n)$ is a group subprescheme of $G$. Indeed, let $m$ be the morphism
+\[
+E(n)\times_S E(n)\to G
+\]
+induced by multiplication in $G$. The map $\mathrm{ens}(m)$ underlying $m$ factors through $E(n)$, so $m$ factors through the prescheme $E(n)$, since the first member $E(n)\times_S E(n)$ is \'etale over $S$, hence reduced. It then follows from Exp. X 4.8 a) that $E(n)$ is a subgroup of multiplicative type. As already noted (3.2 a)), the family of subgroups $E(n)$ is necessarily coherent. We have therefore proved that (iii) $\implies$ (ii) when $S$ is normal.
+
+\noindent\textbf{III)} Proof of $\text{(ii)}\implies\text{(i)}$.
+
+In fact, we shall show that there exists a unique subtorus $T$ of $G$ with underlying space equal to $E$ and such that ${}_nT=M_n$ for every $n$ equal to a power of $q$. The uniqueness of $T$ follows simply from Exp. IX 4.8 b). To establish the existence of $T$, taking uniqueness into account, we may suppose successively that:
+
+\noindent a) $S$ is noetherian.
+
+\noindent b) The $M_n$ are central subgroups. Indeed, it suffices to replace $G$ by $Z_n=\uCentr_G(M_n)$ for $n$ sufficiently large (2.5 and 2.5 bis).
+
+\noindent c) $S$ is the spectrum of a local ring. Suppose indeed that the problem is solved after every base change $\Spec(\OO_{S,s})\to S$, where $s$ ranges over the points of $S$. Let $T_s$ be the subtorus of $G\times_S\Spec(\OO_{S,s})$ thus obtained. For every $s$, there then exist an open neighborhood $U$ of $s$ and a subtorus $T$ of $G|_U$ extending $T_s$ (Exp. VIB \S~10 and 3.6). We have proved that 3.1 (ii) $\implies$ 3.1 (iv); since $S$ is noetherian, $E$ is therefore constructible (3.3). Consequently, after restricting $U$, one may suppose that $\mathrm{ens}(T)=E\times_S U$ (EGA IV 9.5.2). But then, for every integer $n$ equal to a power of $q$, ${}_nT$ and $M_n\times_S U$ are two subgroups of multiplicative type of $G|_U$ having the same fibers, hence agreeing, since $M_n$ is central (Exp. IX 5.3 bis). In brief, under the hypotheses made, there exists a solution locally on $S$, hence, because of uniqueness, there exists a global solution.
+
+\noindent d) $S$ is the spectrum of a complete noetherian local ring and, if $s$ is the closed point, $T_s$ is trivial. This follows from EGA $0_{\mathrm{III}}$ 10.3.1 and fpqc descent.
+
+\noindent e) $S$ is reduced. One applies 2.2.
+
+\noindent f) $S$ is normal. One applies Nagata's finiteness theorem (EGA $0_{\mathrm{IV}}$ 23.1.5) and Lemma 3.7 in the case of central subtori.
+
+These reductions having been made, since $T_s$ is trivial, $(M_n)_s$ is trivial, hence $M_n$ is trivial (Exp. X 3.3). If $t$ is a point of $S$, the subgroups ${}_nT_t$ of $T_t$ are therefore trivial for every $n$ equal to a power of $q$, and it follows easily from Exp. X 1.4 that $T_t$ itself is trivial. It then suffices to prove the lemma:
+\begin{lemma}{3.10}\label{XV.3.10}
+Under the hypotheses of 3.1 (ii), suppose in addition that $S$ is noetherian and normal, and that for every point $s$ of $S$, $T_s$ is a trivial torus. Then there exists a unique subtorus $T$ of $G$ with underlying space equal to $E$, such that ${}_nT=M_n$ for every $n$ equal to a power of $q$. Moreover, $T$ is trivial.
+\end{lemma}
+\begin{proof}
+The uniqueness of $T$ follows from the fact that $T$, being smooth over $S$, is reduced. To prove existence, one may suppose $S$ irreducible with generic point $\eta$. Let $r$ be the rank of $T_\eta$, $T'=\mathbf G_{\mathrm m,S}^r$, $u_\eta$ an isomorphism of $T'_\eta$ onto $T_\eta$, ${}_nu_\eta$ the restriction of $u_\eta$ to ${}_nT'_\eta$. Since ${}_nT'$ and $M_n$ are trivial, there exists a unique extension ${}_nu$ of ${}_nu_\eta$ to an $S$-isomorphism of ${}_nT'$ onto $M_n$. I say that for every point $s$ of $S$, there exists a group isomorphism, necessarily unique:
+\[
+u_s:T'_s\isomto T_s
+\]
+extending ${}_nu_s$ for every $n$ equal to a power of $q$. Indeed, let $S_1$ be an $S$-scheme, the spectrum of a complete discrete valuation ring with algebraically closed residue field, whose generic point $t_1$ projects to $\eta$ and whose closed point $s_1$ projects to $s$ (EGA II 7.1.9). It follows from the proof of 3.1 (ii) $\implies$ 3.1 (iv) that there exists a subtorus $T^1$ of $G_{S_1}$ such that $(M_n)_{S_1}={}_nT^1$ for every $n$ equal to a power of $q$. Since $S_1$ is normal, $T^1$ is isotrivial (Exp. X 5.16), and it follows from the classification of isotrivial tori (Exp. X 1.2) and SGA1 V 8.2 that $T^1$, having trivial generic fiber, is trivial. One can therefore extend the isomorphism $u_\eta\times_\eta t_1$ to an $S_1$-isomorphism of group schemes:
+\[
+u^1:T'\times_S S_1\isomto T^1.
+\]
+The restriction of $u^1$ to ${}_nT'\times_S S_1$, on the one hand, and ${}_nu\times_S S^1$, on the other hand, agree on the generic fiber by construction, hence agree. The restriction $u^1_{s_1}$ of $u^1$ to the closed fiber therefore gives the required extension after extension of the residue field $\kappa(s)\to\kappa(s_1)$. It then follows from Exp. IX 4.8 a) and fpqc descent that $u^1_{s_1}$ descends to $\kappa(s)$ as a group isomorphism $u_s:T'_s\isomto T_s$ answering the question.
+% typo?: source writes S^1 here although the scheme was denoted S_1.
+
+Moreover, $T'$ is smooth over $S$, which is normal, hence is normal. It then follows from an easy criterion for extending rational maps (EGA IV$_4$ 20.4.6) that, for there to exist an $S$-morphism $u:T'\to G$ whose restriction to $T'_s$, for every point $s$ of $S$, is the composite morphism:
+\[
+T'_s\xrightarrow{u_s}T_s\to G_s,
+\]
+it is necessary and sufficient that this be so after every base change $S_1\to S$, where $S_1$ is the spectrum of a complete discrete valuation ring with algebraically closed residue field.
+
+Now in the present case, an argument analogous to the one just made shows that the extension condition is indeed satisfied. Denote by $u$ the $S$-morphism $T'\to G$ thus obtained.
+
+Let us show that $u$ is indeed a group morphism. Let $m_{T'}$ (resp. $m_G$) be the morphism defining multiplication in $T'$ (resp. $G$). One must verify that $m_G\circ(u\times_S u)=u\circ m_{T'}$. Now the coincidence subprescheme of these two morphisms is a subprescheme of $T'\times_S T'$ containing the fibers (since $u_S$ is a group morphism), hence having the same underlying space as $T'\times_S T'$, hence equal to the latter, since $T'\times_S T'$ is smooth over $S$, thus reduced.
+% typo?: source says u_S rather than u_s, kept as printed.
+
+Finally, note that $u$ is a monomorphism (since this is so on the fibers), hence is an immersion (Exp. VIII 7.9). The image of $T'$ under $u$ is then a subtorus of $G$ having $E$ as underlying set.
+\end{proof}
+This completes the proof of Theorem 3.1.
+
+% original p. 398
+\sgasection{4}{\texorpdfstring{Characterization of a subtorus $T$ by the subgroups ${}_nT$}{Characterization of a subtorus T by the subgroups nT}}
+\par\medskip\noindent\textit{1. Statement of the main theorem}\par
+\begin{theorem}{4.1}\label{XV.4.1}
+Let $S$ be a connected locally noetherian prescheme, $G$ a group $S$-prescheme of finite type over $S$, $q$ an integer $>1$ invertible on $S$, $r$ a positive integer. For every integer $n$ equal to a power of $q$, let $M(n)$ be a group subscheme of $G$, of multiplicative type and of type $(\ZZ/n\ZZ)^r$. One supposes that:
+
+\noindent a) The family of subgroups $M(n)$ is coherent, that is, if the integer $m$ divides $n$, one has:
+\[
+{}_mM(n)=M(m).
+\]
+\noindent b) There exist a point $s$ of $S$ and a subtorus $T_s$ of $G_s$ such that:
+\[
+M(n)_s={}_nT_s\quad\text{for every }n.
+\]
+\noindent c) For every point $t$ of $S$, there exists a closed affine subscheme $F_{\bar t}$ of $G_{\bar t}$ containing $M(n)_{\bar t}$ for every $n$.
+
+Then there exists one and only one subtorus $T$ of $G$ such that ${}_nT=M(n)$ for every $n$ equal to a power of $q$.
+\end{theorem}
+
+One has an analogous theorem concerning the lifting of morphisms:
+\begin{theorem}{4.1 bis}\label{XV.4.1bis}
+Let $S,G,q$ be as above, $T$ an $S$-torus, and for every integer $n$ equal to a power of $q$, let $u(n)$ be a group $S$-morphism ${}_nT\to G$. One supposes that:
+
+\noindent a) The family of morphisms $u(n)$ is coherent, i.e. if $m$ divides $n$, one has:
+\[
+u(m)=u(n)|_{{}_mT}.
+\]
+\noindent b) There exist a point $s$ of $S$ and a group morphism:
+\[
+u_s:T_s\to G_s
+\]
+such that $u_s|_{{}_nT_s}=u(n)_s$ for every $n$ equal to a power of $q$.
+
+\noindent c) For every point $t$ of $S$, there exists a closed affine subscheme $F_{\bar t}$ of $G_{\bar t}$ containing $u(n)_{\bar t}({}_nT_{\bar t})$ for every $n$.
+
+Then there exists a unique group morphism $u:T\to G$ such that for every $n$ equal to a power of $q$, the restriction of $u$ to ${}_nT$ is equal to $u(n)$.
+\end{theorem}
+\begin{remark}{4.2}\label{XV.4.2}
+Using the lower semicontinuity of the abelian rank of a group prescheme flat of finite type over the spectrum of a discrete valuation ring (cf. Exp. X 8.7), one may, in the statements of 4.1 and 4.1 bis, weaken condition c) by merely asking that the required closed affine subscheme $F_{\bar t}$ exist for every maximal point $t$ of $S$.
+\end{remark}
+
+\par\noindent\emph{Let us show how 4.1 bis follows from 4.1.} Let $G'=G\times_S T$. For every integer $n$ equal to a power of $q$, consider the group morphism:
+\[
+v(n):{}_nT\to G'
+\]
+whose projections onto $G$ and $T$ are respectively $u(n)$ and the canonical immersion ${}_nT\to T$. The morphism $v(n)$ is therefore an immersion; let $M(n)$ be the image subgroup.
+% typo: respectivment -> respectively.
+It is clear that the family of subgroups $M(n)$ is coherent in the sense of 4.1, that the group $M(n)_s$ is equal to ${}_nT'_s$, where $T'_s$ is the subtorus of $G'_s$ which is the graph of $u_s$, and that for every point $t$ of $S$, the closed affine subscheme $F_{\bar t}\times_{\bar t}T_{\bar t}$ of $G'_{\bar t}$ contains the subgroups $M(n)_{\bar t}$ for every $n$. By 4.1, there therefore exists a subtorus $T'$ of $G'$ such that ${}_nT'=M(n)$ for every $n$ equal to a power of $q$. Let $f$ be the restriction to $T'$ of the projection of $G'$ onto $T$, and $f(n)$ the restriction of $f$ to $M(n)$. One has:
+\[
+f(n)\circ v(n)=\mathrm{id}_{{}_nT}.
+\]
+The fiber at $s$ of $T'$ is the torus already denoted by $T'_s$, equal to the graph of $u_s$ (this follows from Exp. IX 4.8 b)), so $f_s$ is an isomorphism. But $\Ker f$ and $\Coker f$ are groups of multiplicative type (Exp. IX 2.7), of constant type since $S$ is connected, hence reduced to the unit group, and $f$ is an isomorphism. Let $v$ be the inverse isomorphism of $f$. One has:
+\[
+v|_{{}_nT}=v(n).
+\]
+Consequently, the composite of $v$ and the projection of $G'$ onto $G$ is a morphism $u:T\to G$ answering the question. What precedes proves the existence of the morphism $u$; as for uniqueness, it follows in any case from Exp. IX 4.8 a).
+
+\par\medskip\noindent\textit{2. Application}\par
+We propose to generalize Theorem 7.1 of Exp. IX.
+
+Let $A$ be a complete noetherian local ring, $I$ its maximal ideal, $S=\Spec A$, $S_m=\Spec(A/I^m)$. For every prescheme $X$, put $X_m=X\times_S S_m$.
+
+Let then $G$ be a group $S$-prescheme of finite type, $T$ an $S$-torus, $q$ an integer invertible on $S$, and $u_m:T_m\to G_m$ ($m\in\NN$) a coherent family of group morphisms. With the integer $n$ ranging over the powers of $q$, denote by $u_m(n)$ the restriction of $u_m$ to ${}_nT_m$, and by $u(n)$ the unique group morphism:
+\[
+u(n):{}_nT\to G
+\]
+extending the morphisms $u_m(n)$ for every $m$ (1.6 a)). We shall say that the family $(u_m)$, $m\in\NN$, is admissible if for every point $t$ of $S$, there exists a closed affine subprescheme $F_{\bar t}$ of $G_{\bar t}$ containing $u(n)_{\bar t}({}_nT_{\bar t})$ for every $n$ equal to a power of $q$ (this property is independent of $q$, as we shall see).
+\begin{proposition}{4.3}\label{XV.4.3}
+With the notation above, the canonical map:
+\[
+\Hom_{S\text{-gr}}(T,G)\to\varprojlim_m\Hom_{S_m\text{-gr}}(T_m,G_m)
+\]
+induces an isomorphism from the first member onto the subset of the second member formed by the ``admissible'' coherent families.
+\end{proposition}
+Indeed, it suffices to apply 4.1 bis, taking as $s$ the closed point of $S$.
+\begin{corollary}{4.4}\label{XV.4.4}
+With the notation above, suppose in addition that $G$ has affine fibers; then the canonical map:
+\[
+\Hom_{S\text{-gr}}(T,G)\to\varprojlim_m\Hom_{S_m\text{-gr}}(T_m,G_m)
+\]
+is an isomorphism.
+\end{corollary}
+Indeed, if $G$ has affine fibers, every coherent family is ``admissible''.
+\begin{remark}{4.5}\label{XV.4.5}
+When $G$ is separated, in 4.3 one may replace the ring $A$ by a noetherian $I$-adic ring; indeed, one may use EGA III 5.4.1 instead of 1.6 a).
+\end{remark}
+
+\par\medskip\noindent\textit{3. Proof of 4.1}\par
+\begin{lemma}{4.6}\label{XV.4.6}
+Let $k$ be a field, $G$ an algebraic $k$-group, $q$ an integer prime to the residual characteristic of $k$, $r$ an integer $>0$, $M(n)$ (with $n$ ranging over the powers of $q$) a coherent family of subgroups of $G$, of multiplicative type and of type $(\ZZ/n\ZZ)^r$. Then there exists a smallest closed subscheme $H$ of $G$ containing the $M(n)$ for every $n$. Moreover, $H$ is an algebraic subgroup of $G$, smooth, connected and commutative, ``whose formation is compatible with extension of the base field''.
+\end{lemma}
+Let $M$ be the subset of $\mathrm{ens}(G)$ which is the union of the underlying sets of the subgroups $M(n)$ for every $n$, and $H$ the reduced closed subscheme of $G$ whose underlying space is the closure of $M$. Since $M(n)$ is \'etale over $k$, hence reduced, $M(n)$ is contained in $H$, and consequently $H$ is the smallest closed subscheme of $G$ containing $M(n)$ for every $n$. Let now $\bar k$ be an algebraically closed extension of $k$. By construction, the subschemes $M(n)$ are schematically dense in $H$ (Exp. IX 4.1), so the $M(n)_{\bar k}$ are schematically dense in $H_{\bar k}$ (Exp. IX 4.5); moreover, $M(n)_{\bar k}$ is reduced, and it follows that $H_{\bar k}$ is necessarily equal to the closed reduced subscheme of $G_{\bar k}$ whose underlying space is the closure of $M_{\bar k}$. This proves that $H$ is geometrically reduced (EGA IV 4.6.1). Since the family $M(n)$ is coherent, $M$ is stable under the group law; moreover, $M\times_k M$ is dense in $\mathrm{ens}(H\times_k H)$ and $H\times_k H$ is reduced (EGA IV 4.6.5); one immediately deduces that $H$ is an algebraic subgroup of $G$. Moreover, $H$ is smooth over $S$, since it is geometrically reduced (Exp. VIA 1.3.1), and $H$ is commutative since the $M(n)$ are commutative. It remains to see that $H$ is connected.
+% typo?: source says smooth over S rather than k, kept as printed.

@@ -1,0 +1,104 @@
+% PDF pp. 30--34.
+\sgasection{7}{Classification of twisted constant preschemes and groups of multiplicative type of finite type in terms of the enlarged fundamental group}
+\numpara{7.0}
+Let $S$ be a prescheme, which we again suppose locally noetherian, to ensure that $S$ and certain preschemes over $S$ which we shall consider (in particular those étale over $S$, more generally those locally of finite type over $S$) are locally connected.
+\begin{proposition}{7.0.1}\label{X.7.0.1}
+Every twisted constant prescheme $X$ over $S$ which is locally trivial for the (fppf) topology (i.e. split by a faithfully flat morphism locally of finite presentation $S'\to S$) is quasi-isotrivial (i.e. one may even choose $S'\to S$ étale surjective).
+\end{proposition}
+Indeed, one may suppose $S$ connected, hence $X$ of type $I$, where $I$ is a fixed set. Thus $X'=X\times_S S'$ is isomorphic to $I_{S'}$, so $I_{S'}$ is endowed with a descent datum relative to $S'\to S$, i.e. one has an isomorphism $I_{S''}\isomto I_{S''}$ satisfying the usual transitivity condition. Now $S''=S'\times_S S'$ is locally noetherian, hence locally connected, whence it follows that the automorphisms of $I_{S''}$ correspond to the sections of $G_{S''}$, where $G=\Aut(I)$ is the permutation group of $I$.
+
+In this way one obtains a descent datum on $G_{S'}$ (regarded as a trivial Galois principal bundle) relative to $S'\to S$. By 5.4 this descent datum is effective, whence a Galois principal bundle $P$ over $S$ with group $G$. By construction it represents the functor $\underline{\Isom}_S(I_S,X)$ in the category of locally noetherian preschemes over $S$. Consequently, the surjective étale base change $P\to S$ splits $X$, so $X$ is indeed quasi-isotrivial.
+\begin{remark}{7.0.2}\label{X.7.0.2}
+One should take care that even if $S$ is the spectrum of a field, it is not true in general that every twisted constant bundle over $S$ is quasi-isotrivial. It suffices, for example, to take for $X$ the sum scheme of a sequence of schemes of the form $\Spec(k_i)$, where the $k_i$ are separable extensions of $k$ of strictly increasing degrees.
+\end{remark}
+The proof given above shows at the same time that classification of quasi-isotrivial twisted constant bundles $X$ over $S$ of type $I$ is equivalent to that of Galois principal bundles over $S$ with group $G=\Aut(I)$. This is even an equivalence of categories.
+
+It may be put in a more convenient form as in SGA 1 V. For this, suppose $S$ connected and endowed with a geometric point $\xi$. Consequently the enlarged fundamental pro-group $\Pi=\Pi_1(S,\xi)$ is defined. On the other hand, for every quasi-isotrivial twisted constant bundle $X$ over $S$, let $I=X(\xi)$ be its set-theoretic fiber at $\xi$. Thus $X$ is of type $I$, and consequently associated, as just stated, with a Galois principal bundle $P=\underline{\Isom}_S(I_S,X)$ over $S$ with group $G=\Aut(I)$.
+
+By the definition of $\Pi$, one therefore obtains a canonical homomorphism from $\Pi$ to $G$, i.e. from one of the $\Pi_i$ to $G$. Since $G$ is the permutation group of $I=X(\xi)$, this means that $\Pi$ ``acts continuously on $I=X(\xi)$'', it being understood by this that the $\pi_i$ (large $i$) act on $I$ compatibly with the transition morphisms.
+
+We leave it to the reader to check that every $S$-morphism $X\to Y$ between quasi-isotrivial twisted constant bundles over $S$ induces a map $X(\xi)\to Y(\xi)$ compatible with the operations of $\Pi$, and that the functor so obtained is an equivalence of categories:
+\begin{proposition}{7.0.3}\label{X.7.0.3}
+Let $S$ be a connected locally noetherian prescheme, $\xi$ a geometric point of $S$, $\Pi=\Pi_1(S,\xi)$ the enlarged fundamental pro-group of $S$ at $\xi$. Then the functor
+\[
+X\mto X(\xi)
+\]
+is an equivalence between the category of quasi-isotrivial twisted constant bundles over $S$ and the category of sets on which $\Pi$ acts continuously.
+\end{proposition}
+This functor is compatible with the operations of finite sums and finite projective limits. It follows, for example, that quasi-isotrivial twisted constant groups (or rings, etc.) over $S$ correspond to ordinary groups (resp. rings, etc.) on which the pro-group $\Pi$ acts continuously. In particular:
+\begin{corollary}{7.0.4}\label{X.7.0.4}
+The category of quasi-isotrivial twisted constant commutative groups over $S$ is equivalent to the category of ``$\Pi$-modules'', i.e. of commutative groups $M$ on which $\Pi$ acts continuously.
+\end{corollary}
+Using now 5.7, one concludes the:
+\begin{theorem}{7.1}\label{X.7.1}
+Let $S$ be a connected locally noetherian prescheme, $\xi$ a geometric point of $S$, $\Pi=\Pi_1(S,\xi)$ the enlarged fundamental pro-group of $S$ at $\xi$. Then the functor
+\[
+G\mto\Hom_{\kappa(\xi)\text{-}\mathrm{gr.}}(G_\xi,\mathbf{G}_{\mathrm{m},\xi})
+\]
+induces an anti-equivalence of the category of quasi-isotrivial groups of multiplicative type over $S$ with the category of $\Pi$-modules.
+\end{theorem}
+Using 4.5 one concludes:
+\begin{corollary}{7.2}\label{X.7.2}
+The preceding functor induces an anti-equivalence of the category of groups of multiplicative type and of finite type over $S$ and the category of $\Pi$-modules of finite type over $\ZZ$.
+\end{corollary}
+\begin{example}{7.3}\label{X.7.3}
+Take again, for example, for $S$ a complete rational curve over an algebraically closed field, having exactly one multiple point with $n+1$ distinct branches. By 6.4 the enlarged fundamental group $\Pi(S,\xi)$ is a free group on $n$ generators. Thus by 7.2, classification of tori of relative dimension $m$ over $S$ is equivalent to classification of systems of $n$ endomorphisms $A_1,\dots,A_n$ of the $\ZZ$-module $\ZZ^m$, up to automorphism of $\ZZ^m$. Except for $n\leq1$ or $m\leq1$, explicit classification of such systems seems hopeless. One may at least define a host of nontrivial invariants for such a system, such as the characteristic polynomials of the $A_i$.\nde{In particular, this shows that the tori of relative dimension 2 considered in 1.6 are nonisotrivial.}
+% typo?: "endomorphisms" rather than automorphisms retained as printed.
+\end{example}
+\begin{remark}{7.4}\label{X.7.4}
+If no hypothesis is made on $S$, it remains true that for a given ordinary commutative group $M$ of finite type over $\ZZ$, the category of groups of multiplicative type of type $M$ over $S$ is anti-equivalent to the category of Galois principal bundles over $S$ with group $G=\Aut_{\mathrm{gr.}}(M)$. This follows easily from 5.9 and 5.10.
+\end{remark}
+\begin{remark}{7.5}\label{X.7.5}
+The theory of the fundamental pro-group which we have sketched in the present two nos. will advantageously be written in the setting of general sites. In this form it also applies, for example, to ordinary topological spaces, and gives a satisfactory theory at least for a locally connected topological space (not necessarily locally simply connected). In this case too it seems that one cannot content oneself with defining a fundamental group and that a pro-group is needed. Finally, let us note that once one has the language of topologies and descent (which is really at the heart of these questions), the exposition sketched here is also technically simpler than that of SGA 1 V, and should therefore in principle replace it.
+\end{remark}
+
+\sgasection{8}{Appendix: Elimination of certain affineness hypotheses}
+Our object is to prove the following generalization of 4.9.
+\begin{theorem}{8.1}\label{X.8.1}
+Let $S$ be a prescheme, $H$ an $S$-group prescheme flat and of finite presentation, with connected and affine fibers.\nde{Note that the hypotheses imply that $H$ is separated over $S$, by VI$_{\mathrm B}$, Th. 5.3 or Cor. 5.5.} Let $s\in S$; suppose $H_s$ is a torus. Then there exists an open neighborhood $U$ of $s$ such that $H|U$ is a torus.
+\end{theorem}
+One concludes immediately:
+\begin{corollary}{8.2}\label{X.8.2}
+Let $H$ be an $S$-group prescheme flat and of finite presentation over $S$. For $H$ to be a torus, it is necessary and sufficient that its fibers be tori.
+\end{corollary}
+\begin{remark}{8.3}\label{X.8.3}
+Even when $S$ is the spectrum of a discrete valuation ring, one cannot in 8.1 drop the hypothesis that the fibers of $H$ (here the generic fiber) are affine, for there are examples of smooth groups over $S$ whose generic fiber is an elliptic curve and whose special fiber is $\Gm$.
+\end{remark}
+\begin{proof}[Proof of 8.1]
+One may evidently suppose $S=\Spec(A)$ affine, which reduces us by the standard procedure (cf. EGA IV$_2$, 8.8.2) to the case where $S$ is in addition noetherian. We begin by proving 8.2 in this case.
+
+By 4.9 one is reduced to proving that $H$ is affine over $S$. One may therefore suppose\nde{By EGA IV$_2$, 8.8.2 again.} $A$ noetherian local, and since the completion $\widehat A$ is faithfully flat over $A$, one is reduced by descent to the case where $A$ is a complete noetherian local ring. Let $S'$ be the normalization of $S_{\mathrm{red}}$; one knows by Nagata that it is finite over $S$ (EGA $0_{\mathrm{IV}}$, 23 1.5); moreover $S'\to S$ is surjective, so $H'=H\times_S S'\to H$ is finite and surjective; hence, to prove that $H$ is affine, it suffices to show that $H'$ is so (EGA II, 6.7.1).
+
+\nde{The original has been expanded in what follows.} Replacing $S$ by a connected component of $S'$ reduces us to the case where $A$ is a noetherian (semilocal) normal integral ring. Moreover, replacing $A$ by its normalization in a finite separable extension of its field of fractions if necessary, one may suppose that the generic fiber $H_\eta$ of $H$ is diagonalizable, i.e. that one has an isomorphism
+\[
+u_\eta:H_\eta\isomto T_\eta,
+\]
+where $T=\mathbf{G}_{\mathrm{m},S}^r$. Now one has the
+\begin{lemma}{8.4}\label{X.8.4}
+Let $S$ be a locally noetherian normal irreducible prescheme with generic point $\eta$, $H$ a group prescheme over $S$ smooth with connected fibers, $T$ a group prescheme of multiplicative type and of finite type over $S$, $u_\eta:H_\eta\to T_\eta$ a homomorphism of algebraic groups over $\kappa(\eta)$.
+
+Then $u_\eta$ extends to a group homomorphism $u:H\to T$.
+\end{lemma}
+Replacing $S$ by its normalization in a finite separable extension of its function field if necessary, one may suppose $T$ diagonalizable (which is moreover the case in the application we have in mind). Then $T$ is a closed subgroup of a group of the form $\mathbf{G}_{\mathrm{m},S}^r$, which reduces us to the case where $T=\mathbf{G}_{\mathrm{m},S}$.
+
+Everything amounts to proving that $u_\eta$, regarded as a rational map from $H$ to $T=\mathbf{G}_{\mathrm{m},S}$, is everywhere defined (for the morphism $u:H\to T$ extending it is then necessarily a group homomorphism). One may regard $u_\eta$ as an invertible section $f$ of the structure sheaf of $H_\eta$, and must show that it extends to an invertible section of the structure sheaf of $H$. Now $H$, being smooth over normal $S$, is normal (SGA 1, II 3.1), so it suffices to find a closed subset $Z$ of $H$ of codimension $\geq2$ such that $f$ extends to an invertible section of the structure sheaf of $H-Z$. This reduces us immediately to the case where $S$ is the spectrum of a discrete valuation ring $A$ (by localizing at the codimension 1 points of $S$).
+
+Let $t$ be a uniformizer of $A$, $t'$ the section of $\OO_H$ it defines, so that the special fiber $H_0$ equals $\mathcal V(t')$. By hypothesis $H_0$ is smooth over the residue field $k$ and connected. Then $f$ is a rational function on $H$ with neither zeros nor poles in $H-H_0$; since $H_0=\mathcal V(t')$ is an irreducible divisor, there exists an integer $n\in\ZZ$ such that $t'^n f=t^n f$ has neither zeros nor poles, i.e. is an invertible section of $\OO_H$. It therefore defines a morphism $v:H\to\mathbf{G}_{\mathrm{m},S}$, and since $v_\eta=t'^n u_\eta$ and $u_\eta$ is a group homomorphism, $v$ transforms the unit section of $H$ into a section of $\mathbf{G}_{\mathrm{m},S}$ whose value at the generic point of $S$ is $t^n$; since it is a section of $\mathbf{G}_{\mathrm{m},S}$, $t^n$ must be a unit, i.e. $n=0$, so $v$ extends $u_\eta$, which finishes proving 8.4.
+
+Applying this lemma to the present case, one finds a group homomorphism
+\[
+u:H\to T=\mathbf{G}_{\mathrm{m},S}^r
+\]
+inducing an isomorphism on the generic fibers. Let us prove that $u$ is an isomorphism.
+\begin{lemma}{8.5}\label{X.8.5}
+For every integer $n>0$ prime to the residue characteristic of $A$, ${}_nH=\Ker(n\cdot\mathrm{id}_H)$ is finite over $S$.
+\end{lemma}
+If $n$ is prime to the residue characteristic of $A$, it is prime to all the residue characteristics of the points of $S$. Thus $n\cdot\mathrm{id}_H$ induces on every fiber of $H$ an étale morphism, so $n\cdot\mathrm{id}_H$ is étale (SGA 1, I 5.9), hence its kernel ${}_nH$ is étale over $S$. On the other hand, ${}_nH$ is separated over $S$ since $H$ is so.\footnote{By Raynaud's theorem VI$_{\mathrm B}$ 5.3.}\nde{Expand this point, in connection with the modifications in VI$_{\mathrm B}$ \S5.} Moreover, all its fibers have the same rank $n^r$, since the fibers of $H$ are tori, all of the same dimension $r$ ($H$ being smooth over $S$). One concludes that ${}_nH$ is finite over $S$ (SGA 1, I 10.9 or EGA IV$_4$, 18.2.9).
+
+Thus by the preceding lemma, $u({}_nH)$ is a closed subset of $T$. Since on the generic fiber $T_\eta$ this subset is identical to ${}_n(T_\eta)$, it follows that it contains the closure of this subset, namely ${}_nT$. Now for every $s\in S$, the ${}_n(T_s)$ are dense in $T_s$; as $u_s(H_s)$ is a closed subset (VI$_{\mathrm B}$ 1.4.2) containing them, one sees that $u_s(H_s)=T_s$, hence $u$ is surjective. Since a surjective homomorphism of tori of the same dimension over a field is flat,\nde{This follows, for example, from VIII 3.2 a); more generally, if $f:G\to H$ is a surjective morphism of algebraic groups over a field $k$ and $H$ is reduced, $f$ is flat (cf. VI$_{\mathrm B}$ 1.3).} it follows that $u$ induces a flat morphism on every fiber, so $u$ is flat (SGA 1 I 5.9). Consequently $K=\Ker(u)$ is flat over $S$,\nde{The original has been expanded in what follows.} hence equal to the closure of its generic fiber $K_\eta$. Now $K_\eta$ is the unit group by construction, and since $K$ is separated over $S$ (since $H$ is so), its unit section is closed, whence it follows that $K$ is the unit group. Thus $u$ is a monomorphism; as one has seen it to be faithfully flat, it is therefore an isomorphism (cf. SGA 1, I 5.1 or EGA IV$_4$, 17.9.1). This proves that $H$ is a torus, and hence completes the proof of 8.2.\nde{At least in the case considered so far, namely $S$ locally noetherian.}
+% typo: "groupe groupe unité" -> "unit group".
+\begin{remark}{8.5.1}\label{X.8.5.1}
+Instead of invoking 8.5, one may also invoke Zariski's ``Main Theorem'', which directly implies that $u$ is an open immersion, hence an isomorphism.\nde{The editors did not understand this remark, not understanding why $u$ would a priori have finite fibers and be surjective\dots}
+\end{remark}
+To prove 8.1, one is reduced, thanks to the quasi-isotriviality theorem, to the case where $S$ is local and $s$ its closed point,\nde{Expand this reduction\dots} and to proving that under the other hypotheses made $H$ is then a torus. By 8.2 already proved, one is reduced to proving that the fibers of $H$ are tori. One may suppose $S$ the spectrum of a complete noetherian local ring $A$. By 3.3 there exists for every $n>0$ a finite group of multiplicative type $T_n$ over $S$ and an isomorphism $(T_n)_s\simeq{}_n(H_s)$, where $s$ is the closed point of $S$.
+% Last sentence begun on PDF p. 34 completed on p. 35; proof continues in en-07.tex.

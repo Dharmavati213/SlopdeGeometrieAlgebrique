@@ -1,0 +1,192 @@
+We shall need, in the proof of 8.2, the following results.\nde{These results are mentioned without proof in the original; they have been brought out in the form of Lemmas 8.1.1 and 8.1.2, and the proofs have been expanded.}
+
+\begin{lemma}{8.1.1}\label{VIB.8.1.1}
+Let $A\subset G$ be sheaves of groups, with $A$ invariant in $G$.
+
+(i) $\underline{\mathrm{Comm}}_T(G,A)$ is the smallest invariant subsheaf of groups $C$ of $G$ such that the sheaf $(A/C)^\flat$, associated to the quotient presheaf $A/C$, is central in $(G/C)^\flat$.
+
+(ii) In particular, $\underline{\mathrm{Comm}}_T(G,G)$ is the smallest invariant subsheaf of groups $C$ of $G$ such that the quotient sheaf $(G/C)^\flat$ is commutative.
+\end{lemma}
+Obviously, (ii) is the special case $A=G$ of (i), so it suffices to show (i). Let $C$ be a subsheaf of groups of $A$, invariant in $G$, and such that the quotient sheaf $(A/C)^\flat$ is central in $(G/C)^\flat$. By Lemma IV 4.4.8.1, the presheaves $A/C$ and $G/C$ are separated, and thus, by IV 4.3.11, all the morphisms in the diagram below are monomorphisms:
+\[
+\xymatrix{A/C\ar@{^{(}->}[r]\ar@{^{(}->}[d] & G/C\ar@{^{(}->}[d]\\(A/C)^\flat\ar@{^{(}->}[r] & (G/C)^\flat.}
+\]
+Since $(A/C)^\flat$ is central in $(G/C)^\flat$, then $A/C$ is central in $G/C$, whence $\underline{\mathrm{Comm}}(G,A)\subset C$, and therefore $C$ contains $\underline{\mathrm{Comm}}_T(G,A)$, by IV 4.3.12.
+
+Conversely, $\underline{\mathrm{Comm}}(G,A)$ is a subpresheaf of groups of $A$, invariant in $G$, and separated (cf. IV 4.3.1, N.D.E. (24)), so, by IV 4.4.8.2 (i) and IV 4.3.11, $C=\underline{\mathrm{Comm}}_T(G,A)$ is a subsheaf of groups of $A$, invariant in $G$ and containing $\underline{\mathrm{Comm}}(G,A)$. Consequently, the presheaf $A/C$ is central in $G/C$ and thus, by IV 4.4.8.2 (ii), $(A/C)^\flat$ is central in $(G/C)^\flat$. This proves Lemma 8.1.1.
+
+\begin{lemma}{8.1.2}\label{VIB.8.1.2}
+Let $G$ be a sheaf of groups, $A$, $B$ two subpresheaves of groups of $G$.
+
+(i) The morphism $\tau:\underline{\mathrm{Comm}}(A,B)\to\underline{\mathrm{Comm}}(A^\flat,B^\flat)$ is a covering monomorphism.
+
+(ii) Consequently, one has an isomorphism
+\[
+\underline{\mathrm{Comm}}_T(A,B)\isomto\underline{\mathrm{Comm}}_T(A^\flat,B^\flat).
+\]
+\end{lemma}
+\begin{proof}
+(i) Since $A$ (resp. $B$) is a subpresheaf of $G$, then $A^\flat$ (resp. $B^\flat$) is a subpresheaf of $G$ containing $A$ (resp. $B$), and it follows that $\tau$ is a monomorphism.
+
+Let us show that $\tau$ is covering. Let $S\in\Ob\mathscr C$ and $g\in\underline{\mathrm{Comm}}(A^\flat,B^\flat)(S)$. Then there is an integer $n\geq1$ and, for $i=1,\ldots,n$, elements $a'_i\in A^\flat(S)$, $b'_i\in B^\flat(S)$, and $\varepsilon_i\in\{\pm1\}$, such that
+\[
+g=(a'_1,b'_1)^{\varepsilon_1}\cdots(a'_n,b'_n)^{\varepsilon_n},
+\]
+where $(a,b)$ denotes the commutator $aba^{-1}b^{-1}$, and there is a refinement $R$ of $S$ such that $a'_i\in A(R)$ and $b'_i\in B(R)$ for every $i$. Then $g$ is the composite morphism
+\[
+R\xrightarrow{(a'_1,\ldots,b'_n)}(A\times B)^n\xrightarrow{\Phi^{\varepsilon_1,\ldots,\varepsilon_n}}\underline{\mathrm{Comm}}(A,B),
+\]
+where $\Phi=\Phi^{\varepsilon_1,\ldots,\varepsilon_n}$ is the morphism defined set theoretically by:
+\[
+\Phi(a_1,b_1,\ldots,a_n,b_n)=(a_1,b_1)^{\varepsilon_1}\cdots(a_n,b_n)^{\varepsilon_n},
+\]
+for every $T\in\Ob\mathscr C$ and $a_i\in A(T)$, $b_i\in B(T)$. This shows that $g\in\underline{\mathrm{Comm}}(A,B)(R)$ and it follows, as in the proof of IV 4.3.11 (i), that $\underline{\mathrm{Comm}}(A,B)\to\underline{\mathrm{Comm}}(A^\flat,B^\flat)$ is covering.
+
+Since $\underline{\mathrm{Comm}}(A^\flat,B^\flat)\to\underline{\mathrm{Comm}}(A^\flat,B^\flat)^\flat$ is also a covering monomorphism (IV 4.3.11 (iv)), the same holds for $\underline{\mathrm{Comm}}(A,B)\to\underline{\mathrm{Comm}}(A^\flat,B^\flat)^\flat$ and thus, by IV 4.3.12, one obtains an isomorphism:
+\[
+\underline{\mathrm{Comm}}(A,B)^\flat\isomto\underline{\mathrm{Comm}}(A^\flat,B^\flat)^\flat.
+\]
+This proves Lemma 8.1.2.
+\end{proof}
+
+\begin{proposition}{8.2}\label{VIB.8.2}
+Let $\mathscr C$ be a category, $T$ a topology on $\mathscr C$, $G$ a sheaf of groups on $\mathscr C$, $n$ an integer $\geq0$. The following conditions are equivalent:
+
+(i) If one puts $K_0=G$, and for $p\geq1$, $K_p=\underline{\mathrm{Comm}}(K_{p-1},K_{p-1})$ (resp. $K_p=\underline{\mathrm{Comm}}(G,K_{p-1})$), then $K_n$ is the identity presheaf of groups.
+
+(ii) If one puts $K'_0=G$, and for $p\geq1$, $K'_p=\underline{\mathrm{Comm}}_T(K'_{p-1},K'_{p-1})$ (resp. $K'_p=\underline{\mathrm{Comm}}_T(G,K'_{p-1})$), then $K'_n$ is the identity sheaf of groups.
+
+(iii) There is a sequence $G=H_0\supset H_1\supset\cdots\supset H_n$ of invariant subsheaves of $G$, such that, for every $i$, the quotient sheaf $H_i/H_{i+1}$ is commutative (resp. central in $G/H_{i+1}$), and $H_n$ is the identity sheaf.
+\end{proposition}
+It is clear that $K_n\subset K'_n$; consequently (ii) implies (i). Let us show that (i) implies (ii). One has $K'_1=\underline{\mathrm{Comm}}_T(G,G)=K_1^\flat$, and one deduces by induction from Lemma 8.1.2 that $K'_p=K_p^\flat$ for every $p$. Consequently, if $K_n$ is the identity presheaf, then $K'_n=K_n^\flat$ is the identity sheaf.
+
+Finally, conditions (ii) and (iii) are equivalent by Lemma 8.1.1.
+
+\begin{definition}{8.2.1}\label{VIB.8.2.1}
+When these conditions hold, the sheaf $G$ is said to be \emph{solvable of class $n$} (resp. \emph{nilpotent of class $n$}). When there is an integer $n$ for which these conditions hold, one says that $G$ is \emph{solvable} (resp. \emph{nilpotent}).
+\end{definition}
+Note that, by condition (i), this does not depend on the topology $T$.
+
+\begin{proposition}{8.3}\label{VIB.8.3}
+Let $k$ be a field, $S$ a nonempty $k$-scheme, $\Omega$ an algebraically closed extension of $k$, $G$ a smooth $k$-group of finite type. The following conditions are equivalent:
+
+(i) $G$ is solvable of class $n$ (resp. nilpotent of class $n$).
+
+(ii) $G\times_k S$ is solvable of class $n$ (resp. nilpotent of class $n$).
+
+(iii) The group $G(\Omega)$ is solvable of class $n$ (resp. nilpotent of class $n$).
+
+(iv) If one puts $K_0=G$ and considers, for $p\geq1$, the $k$-groups $K_p=(K_{p-1},K_{p-1})$ (resp. $K_p=(G,K_{p-1})$) (cf. 7.2.2), then $K_n$ is the identity $k$-group.
+\end{proposition}
+The equivalence of conditions (i) and (ii) follows from Proposition 8.2, since the formation of the presheaf of groups of commutators commutes with base changes (IV 4.1.3).
+
+The equivalence of (i) and (iv) follows from the fact that, by 7.8, the $k$-group $K_p=(K_{p-1},K_{p-1})$ (resp. $K_p=(G,K_{p-1})$) represents the sheaf $\underline{\mathrm{Comm}}_T(K_{p-1},K_{p-1})$ (resp. $\underline{\mathrm{Comm}}_T(G,K_{p-1})$), where $T$ is the (fppf) (or (fpqc)) topology.
+
+To show that conditions (iii) and (iv) are equivalent, one may suppose that $k=\Omega$, and then the equivalence of conditions (iii) and (iv) follows from 7.10.
+
+\begin{proposition}{8.4}\label{VIB.8.4}
+Let $G$ be an $S$-group of finite presentation such that, for every $s\in S$, $G_s$ is smooth over $\kappa(s)$. Let $T$ be the set of $s\in S$ such that $G_s$ is solvable (resp. nilpotent).
+
+(i) Then $T$ is locally constructible in $S$.
+
+(ii) If one supposes moreover $G$ flat and separated over $S$ (i.e.\ when $G$ is smooth, quasi-compact and separated over $S$), then $T$ is closed in $S$.
+\end{proposition}
+It is clear that one may suppose $S$ affine with ring $A$. Then, by 10.1 and 10.10 b),\begingroup\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{In the course of this proof we shall use results established in no.\ 10 which, like no.\ 9, do not depend on the present no.\ 8.}\endgroup there is a noetherian subring $A'$ of $A$ and an $A'$-group of finite type $G'$ such that $G'\otimes_{A'}A$ is isomorphic to $G$. By EGA IV$_3$, 11.2.6 and 8.10.5,\nde{10.8.5 has been corrected to 8.10.5.} if $G$ is flat and separated over $S$, one may suppose $G'$ flat and separated over $S'=\Spec A'$.\nde{What follows has been expanded.} Since $G$ is of finite presentation over $S$, then (EGA IV$_3$, 9.7.7) the set of $s\in S$ such that $G_s$ is geometrically reduced (or, equivalently, smooth over $\kappa(s)$) is locally constructible. Thus, by EGA IV$_3$, 9.3.3, one may suppose that, for every $s'\in S'$, $G'_{s'}$ is smooth over $\kappa(s')$. On the other hand, if $s'$ denotes the image of $s$ in $S'$, one has $G'_{s'}\otimes_{\kappa(s')}\kappa(s)\simeq G_s$. Thus, by 8.3, for $G_s$ to be solvable (resp. nilpotent), it is necessary and sufficient that $G'_{s'}$ be so. We are therefore reduced to the case where $S$ is an affine noetherian scheme.
+% typo: Nous somme -> Nous sommes.
+
+Let us then show that $T$ is constructible. Applying the criterion (EGA 0$_{\mathrm{III}}$, 9.2.3), one sees, arguing as above, that one is reduced to showing that, when $S$ is noetherian and integral, $T$ or $S-T$ contains a nonempty open subset of $S$.
+
+Suppose therefore $S$ integral and noetherian, with generic point $\eta$. Put, for every $s\in S$, $K_s^0=G_s$, and $K_s^p=(K_s^{p-1},K_s^{p-1})$ (resp. $K_s^p=(G,K_s^{p-1})$). Let us first show that the sequence of closed subschemes $K_\eta^p$ is stationary. It follows from 7.3 (v) that each $K_\eta^p$ is invariant, so the sequence of $K_\eta^p$ is decreasing; this sequence is then stationary since $G_\eta$ is noetherian; there is therefore an integer $n$ such that, for every $p\geq n$, one has $K_\eta^p=K_\eta^n$.
+% typo?: kept as printed: G, rather than G_s, in the nilpotent recurrence.
+
+On the other hand, by 10.12.1 and 10.13, there is a nonempty open subset $S'$ of $S$ and an $S'$-group of finite presentation $D$ such that, for every $s\in S'$, one has $D_s=K_s^n$ and $(D_s,D_s)=D_s$ (resp. $(G_s,D_s)=D_s$). We may suppose that $S'=S$. Then, for every $s\in S$, and every $p\geq n$, one has $D_s=K_s^p$, so that $G_s$ is solvable (resp. nilpotent) if and only if $D_s$ is isomorphic to the identity $\kappa(s)$-group.
+
+But by EGA IV$_3$, 9.6.1 (xi), the set of $s\in S$ such that the structural morphism $D_s\to\Spec\kappa(s)$ is an isomorphism is constructible,\nde{Taking account of the fact that $S$ is supposed affine, hence quasi-compact and quasi-separated (cf. EGA 0$_{\mathrm{III}}$, 9.1.12).} and thus is either nowhere dense or contains a nonempty open subset of $S$. We have therefore obtained that $T$ is locally constructible.
+
+Let us show that if, moreover, $G$ is flat and separated over $S$, then $T$ is closed. Since $T$ is locally constructible, for $T$ to be closed it is necessary and sufficient that $T$ be stable under specialization (cf. EGA IV$_1$, 1.10.1).
+
+Let therefore $s\in S$ and $s'$ be a specialization of $s$ in $S$. Since we have reduced to the case where $S$ is noetherian, then, by EGA II, 7.1.9, there is a discrete valuation ring $A$ and a morphism $\Spec(A)\to S$ such that $s$ (resp. $s'$) is the image of the generic point $\alpha$ (resp. the closed point $a$) of $\Spec(A)$. It then suffices to show that, putting $G'=G\otimes_S A$, if $G'_\alpha$ is solvable (resp. nilpotent), then $G'_a$ is too. Note that, since $G$ is flat and separated over $S$, $G'_\alpha$ is flat and separated over $A$, so that one is reduced to the case where $S$ is the spectrum of a discrete valuation ring $A$.
+% typo?: kept as printed: G'_alpha is said to be flat and separated over A.
+
+Then, since $G_\alpha$ is supposed solvable (resp. nilpotent), there is an integer $q$ such that $K_\alpha^q$ (with the notation introduced above) is isomorphic to the identity $\kappa(\alpha)$-group. For every $n$, denote by $\overline{K_\alpha^n}$ the schematic closure (in the sense of EGA IV$_2$, 2.8.5) of $K_\alpha^n$ in $G$. Let us show, by induction on $p$, that $(\overline{K_\alpha^p})_a\supset K_a^p$. Note first that, since $G$ is flat over $A$, then $\overline{G_\alpha}$ is equal to $G$ (EGA IV$_2$, 2.8.5), so $(\overline{K_\alpha^0})_a=K_a^0$.
+
+Let $p\geq0$. Suppose we have established that $K_a^p\subset(\overline{K_\alpha^p})_a$, and denote by $\nu_a$, $\nu_\alpha$, $\overline\nu$, $\overline\nu_a$ the following morphisms, defined as in 7.2.2:
+\[
+\begin{array}{lll}
+&\text{solvable case}&\text{nilpotent case}\\[3pt]
+\nu_a:&K_a^p\times_{\kappa(a)}K_a^p\to G_a,&\text{resp. }G_a\times_{\kappa(a)}K_a^p\to G_a,\\
+\nu_\alpha:&K_\alpha^p\times_{\kappa(\alpha)}K_\alpha^p\to G_\alpha,&\text{resp. }G_\alpha\times_{\kappa(\alpha)}K_\alpha^p\to G_\alpha,\\
+\overline\nu:&\overline{K_\alpha^p}\times_A\overline{K_\alpha^p}\to G,&\text{resp. }G\times_A\overline{K_\alpha^p}\to G,\\
+\overline\nu_a:&(\overline{K_\alpha^p})_a\times_{\kappa(a)}(\overline{K_\alpha^p})_a\to G_a,&\text{resp. }G_a\times_{\kappa(a)}(\overline{K_\alpha^p})_a\to G_a.
+\end{array}
+\]
+Since $\nu_\alpha$ factors through $K_\alpha^{p+1}$, then $\overline\nu$ factors through $\overline{K_\alpha^{p+1}}$, which is obviously a subgroup scheme of $G$, so $\overline{K_\alpha^{p+1}}$ contains $\Gamma_G(\overline\nu)$. By 7.1 (iii), one has $\Gamma_G(\overline\nu)_a=\Gamma_{G_a}(\overline\nu_a)$; and, by the induction hypothesis, one has:
+\[
+K_a^p\times_{\kappa(a)}K_a^p\subset(\overline{K_\alpha^p})_a\times_{\kappa(a)}(\overline{K_\alpha^p})_a,\qquad\text{resp.}\quad G_a\times_{\kappa(a)}K_a^p\subset G_a\times_{\kappa(a)}(\overline{K_\alpha^p})_a,
+\]
+so that $K_a^{p+1}=\Gamma_{G_a}(\nu_a)\subset\Gamma_{G_a}(\overline\nu_a)=\Gamma_G(\overline\nu)_a\subset(\overline{K_\alpha^{p+1}})_a$.
+
+But since $K_\alpha^q$ is isomorphic to the identity $\kappa(\alpha)$-group, and the identity $A$-group is flat over $A$ and is isomorphic to a closed subscheme of $G$ (since $G$ is separated over $A$, cf. 5.1), EGA IV$_2$, 2.8.5 implies that the schematic closure $\overline{K_\alpha^q}$ is isomorphic to the identity $A$-group. Since we have just seen that $K_a^q\subset(\overline{K_\alpha^q})_a$, this implies that $K_a^q$ is isomorphic to the identity $\kappa(a)$-group, so that $G_a$ is solvable (resp. nilpotent).
+
+\sgasection{9}{Quotient sheaves}
+This section is essentially limited to recalling, in the special case of homogeneous spaces of groups, well-known general facts on taking quotients by flat equivalence relations (cf. Exp. IV).
+
+\begin{definition}{9.1}\label{VIB.9.1}
+Given a monomorphism $u:G'\to G$ of $S$-groups, one denotes by $G/G'$ (resp. $G'\backslash G$) and calls the \emph{right} (resp. \emph{left}) \emph{quotient sheaf of $G$ by $G'$} the sheaf (for the (fpqc) topology) quotient of $G$ by the equivalence relation defined by the monomorphism:
+\[
+G\times_S G'\xrightarrow{\delta\circ(\mathrm{id}_G\times u)}G\times_S G\qquad\bigl(\text{resp. }G'\times_S G\xrightarrow{\gamma\circ(u\times\mathrm{id}_G)}G\times_S G\bigr),
+\]
+where $\delta$ (resp. $\gamma$) denotes the automorphism of $G\times_S G$ defined by $(g,h)\mto(g,gh)$ (resp. $(h,g)\mto(hg,g)$) for $g,h\in G(T)$.
+\end{definition}
+
+\begin{proposition}{9.2}\label{VIB.9.2}
+Let $u:G'\to G$ be a monomorphism of $S$-groups. Suppose that $G/G'$ is representable by an $S$-scheme $G''$. Then:
+
+(i) The canonical morphism $p:G\to G''$ is covering for the (fpqc) topology.
+
+(ii) If one puts $\varepsilon''=p\circ\varepsilon$ (this morphism is called the identity section of $G''$), the following diagrams are cartesian:
+\[
+\xymatrix{G\times_S G'\ar[r]^{\mu\circ(\mathrm{id}_G\times u)}\ar[d]_{\mathrm{pr}_1}&G\ar[d]^p\\G\ar[r]_p&G''}
+\qquad,\qquad
+\xymatrix{G'\ar[r]^u\ar[d]_{\pi'}&G\ar[d]^p\\S\ar[r]_{\varepsilon''}&G''.}
+\]
+In particular, $u$ is an immersion.
+
+(iii) There is on $G''$ a unique structure of $S$-scheme with group of operators $G$ on the left such that $p$ is a morphism of $S$-schemes with group of operators $G$.
+
+(iv) If one supposes moreover that $G'$ is invariant in $G$, there is on $G''$ a unique structure of $S$-group such that $p$ is a morphism of $S$-groups.
+
+(v) Let $S_0$ be an $S$-scheme; put $G_0=G\times_S S_0$, and $G'_0=G'\times_S S_0$; then $G_0/G'_0$ is representable by $G''_0=G''\times_S S_0$.\nde{I.e., the quotient is universal, cf. Exp. IV \S\,3.}
+
+(vi) Let $\mathscr P$ be a property of an $S$-morphism. Suppose $\mathscr P$ stable under base change; then, if $p:G\to G''$ satisfies $\mathscr P$, the structural morphism $\pi':G'\to S$ does too.
+
+(vii) Let $\mathscr P$ be a property of an $S$-morphism. Suppose $\mathscr P$ local for the (fpqc) topology (cf. 2.0 and 2.1.2). Then, for the morphism $p:G\to G''$ to satisfy $\mathscr P$, it is necessary and sufficient that $\pi':G'\to S'$ do so.
+% typo?: kept as printed: S' in (vii), rather than S.
+
+(viii) Let $\mathscr P$ be a property of an $S$-morphism; suppose $\mathscr P$ local for the (fpqc) topology and stable under composition; then, if the structural morphisms $G''\to S$ and $G'\to S$ satisfy $\mathscr P$, the structural morphism $G\to S$ does too.
+
+(ix) Suppose $G$ reduced; then $G''$ is reduced.
+
+(x) For $G''$ to be separated over $S$, it is necessary and sufficient that $u$ (or, equivalently, $\varepsilon''$) be a closed immersion.
+
+(xi) For $G'$ to be flat over $S$, it is necessary and sufficient that $p$ be a flat morphism (or, equivalently, faithfully flat).
+
+In this case, for $G''$ to be flat over $S$, it is necessary and sufficient that $G$ be flat over $S$.
+
+(xii) For $G'$ to be flat and locally of finite presentation over $S$, it is necessary and sufficient that $p:G\to G''$ be faithfully flat and locally of finite presentation.
+
+In this case, for $G''$ to be locally of finite presentation (resp. locally of finite type, of finite type, smooth, étale, unramified, locally quasi-finite, quasi-finite) over $S$, it suffices that $G$ be so over $S$ (and the condition is also necessary in the first two cases, cf. (viii)).
+
+(xiii) Suppose $G'$ flat and of finite presentation over $S$.
+
+a) Then $p$ is of finite presentation and faithfully flat;
+
+b) moreover, for $G$ to be of finite presentation over $S$, it is necessary and sufficient that $G''$ be so.
+\end{proposition}
+Recall that the equivalence relation considered is universally effective (IV 4.4.9). Then assertions (i), (iii), (iv), (v) and the first assertion of (ii) follow from IV 4.4.3, 5.2.2, 5.2.4, 3.4.5 and 3.3.2 (iii). The second assertion of (ii) follows from the first, as shown by the following cartesian diagram, since $(G\times_S G')\times_G S$ is isomorphic to $G'$:
+\[
+\xymatrix@C=30pt{G'\ar[r]^{((\varepsilon\circ\pi'),\mathrm{id}_{G'})}\ar[d]_{\pi'}&G\times_S G'\ar[r]^{\mu\circ(\mathrm{id}_G\times u)}\ar[d]_{\mathrm{pr}_1}&G\ar[d]^p\\S\ar[r]_\varepsilon&G\ar[r]_p&G''.}
+\]
+Finally, it is clear that $\varepsilon''$ is an $S$-section of $G''$, hence an immersion (EGA I, 5.3.13); by the preceding cartesian diagram, the same holds for $u$, which finishes the proof of (ii). Moreover, (vi) is an immediate consequence of the second cartesian diagram of (ii).
+
+Let us show (vii). By (i), $p$ is covering for the (fpqc) topology; thus, by (ii), to show that $p$ satisfies $\mathscr P$, it suffices to show that the first projection $\mathrm{pr}_1:G\times_S G'\to G$ satisfies $\mathscr P$, which follows from the fact that $\mathscr P$ is stable under base change, since $\mathrm{pr}_1$ comes from $\pi'$ by base change.

@@ -1,0 +1,184 @@
+To establish the last assertion of the lemma, denote by $Z$ the stationary value of the family $Z_i$. It is clear that $\uCentr_G(H)$ is a subfunctor of $Z$; let us show that $Z$ centralizes $H$. Now let $E$ be the subprescheme of $H\times_S Z$ which is the kernel of the pair of morphisms:
+\[
+\begin{gathered}
+H\times_S Z\rightrightarrows G\\
+(h,c)\mto c\\
+(h,c)\mto hch^{-1}.
+\end{gathered}
+\]
+The prescheme $E$ contains $H_i\times_S Z$ for every $i$. On the other hand, the $H_i$ are flat over $S$, so (EGA IV 11.10.9) for every point $s$ of $S$, the $(H_i)_s$ are schematically dense in $H_s$, and the $H_i\times_S Z$ are schematically dense in $H\times_S Z$. Since $G_s$ is separated, $E_s$ is closed in $(H\times_s Z)_s$ and consequently is equal to it. But then $E$ is closed in $H\times_S Z$, and is therefore equal to $H\times_S Z$. This says that $Z$ centralizes $H$.
+% typo?: the printed lower-case s in (H times_s Z)_s is retained.
+
+Let us return to the proof of 2.2. By 2.5, $Z_n=\uCentr_G(M_n)$ is representable, and by 2.5 bis the decreasing family of subpreschemes $Z_n$ is stationary; let $Z$ be the stationary value. The group $Z$ contains $T_0$ and the $M_n$. After replacing $G$ by $Z$, one may therefore suppose the $M_n$ central.
+
+One is then in the conditions for applying Theorem 2.1, and there exists a subtorus $T$ of $G$ lifting $T_0$. The groups ${}_nT$ and $M_n$ are then two liftings of ${}_nT_0$, so they are conjugate (Exp. IX 3.2 bis), and consequently agree, since $M_n$ is central. The torus $T$ answers the question.
+
+\begin{proof}[Proof of Corollary 2.3]
+The uniqueness of $T$ follows from Exp. IX 5.1 bis, and the fact that $T$ is central follows from IX 5.6 b). This remark allows one to reduce by the usual procedure to the case where $S$ is affine (hence $S_0$ defined by a nilpotent ideal of finite type), then to the case where $S$ is noetherian. Restricting $S$ if necessary, one may suppose that there exists an integer $q$ invertible on $S$. Corollary 2.3 is then a consequence of 2.2 and 1.2.
+\end{proof}
+
+\begin{remark}{2.6}\label{XV.2.6}
+One shows easily that Corollary 2.3 remains true if one replaces the torus $T_0$ by a smooth central subgroup of multiplicative type of $G_0$.
+\end{remark}
+
+% original p. 362
+\par\medskip\noindent\textit{2. Proof of 2.1}\par
+\noindent\textbf{a)} Reduction to the case where $T_0=\mathbf G_{\mathrm m,S_0}$.
+
+Thanks to 1.1, one may suppose that $M_n$ is a subgroup of multiplicative type. Using Exp. IX 3.2 bis, one may suppose that the family of the $M_n$ is coherent (2.2). The centralizer $Z_n$ of $M_n$ in $G$ is representable (2.5), and the filtered family of the $Z_n$ is stationary (2.5 bis). After replacing $G$ by $Z_n$ for $n$ sufficiently large, one may therefore suppose $T_0$ and the $M_n$ central. The uniqueness of the lifting of $T_0$ is then assured (Exp. IX 5.1 bis).
+
+Proceeding as in the proof of 1.1, one may suppose that there exist an $S$-torus $T$ and an $S_0$-isomorphism:
+\[
+u_0:T\times_S S_0\isomto T_0
+\]
+and it is equivalent to lift $u_0$ or to lift $T_0$. In view of uniqueness, it suffices to prove the existence of a lifting of $u_0$ after making a faithfully flat affine extension $S'\to S$ of finite type (fpqc descent), which allows one to suppose $T=\mathbf G_{\mathrm m,S}^r$ (Exp. X 4.5). If the restriction of $u_0$ to each factor $\Gm$ lifts to an $S$-morphism, necessarily central, one immediately deduces a lifting of $u_0$. In brief, one may suppose $T_0=\mathbf G_{\mathrm m,S_0}$.
+
+\noindent\textbf{b)} Definition of the obstruction to the existence of a lifting of $T_0$.
+
+To prove 2.1, it suffices by 1.1 to find a subscheme of $G$, flat over $S$, lifting $T_0$. We shall see that one can define the obstruction to the existence of such a lifting as an element of a certain $\Ext^1(\ ,\ )$ of sheaves of modules.
+
+Let $U$ be an open subset of $G$ such that $T_0$ is closed in $U$, and again denote by $U$ (resp. $U_0$) the open subscheme of $G$ (resp. $G_0$) having $U$ as underlying space. The sheaf $\OO_{T_0}$, regarded as a sheaf on $U$, is therefore a quotient of $\OO_{U_0}$. Let $h$ be the canonical epimorphism:
+\[
+h:\OO_{U_0}\to\OO_{T_0}.
+\]
+\begin{lemma}{2.7}\label{XV.2.7}
+The canonical map:
+\[
+h'=\mathrm{id}_J\otimes h:J\otimes_{S_0}\OO_{U_0}\to J\otimes_{S_0}\OO_{T_0}
+\]
+factors (obviously uniquely) as $i\circ j_U$, where $j_U$ is the canonical epimorphism:
+\[
+J\otimes_{S_0}\OO_{U_0}\to J\OO_U\simeq J\OO_{U_0}.
+\]
+\end{lemma}
+\begin{proof}
+One must show that $h'(K)=0$, where $K$ is the kernel of $j_U$. Now for every integer $n$ equal to a power of $q$, one has an epimorphism:
+\[
+h_n:\OO_{T_0}\to\OO_{{}_nT_0},
+\]
+and since ${}_nT_0$ lifts to a scheme $M_n$ flat over $S$, the canonical morphism:
+\[
+j_n:J\otimes_{S_0}\OO_{{}_nT_0}\to J\OO_{M_n}
+\]
+is an isomorphism.
+
+The commutative diagram below:
+\[
+\xymatrix@C=15pt{
+K\ar[r]&J\otimes_{S_0}\OO_{U_0}\ar[r]^{j_U}\ar[d]_{h'}&J\OO_U\subset\OO_U\ar[dl]^{i}\\
+&J\otimes_{S_0}\OO_{T_0}\ar[d]_{h'_n}&\\
+&J\otimes_{S_0}\OO_{{}_nT_0}\ar[r]_{j_n}^{\simeq}&J\OO_{M_n}\subset\OO_{M_n}
+}
+\]
+proves that $h'(K)$ is contained in $\Ker h'_n$ for every $n$, hence is contained in $\bigcap_n\Ker h'_n$, and it suffices to show that the latter is zero. Now the sheaf $\OO_{T_0}$ is equal to the sheaf $\OO_{S_0}[\ZZ]$, the group algebra of $\ZZ$ with coefficients in $\OO_{S_0}$, whereas $\OO_{{}_nT_0}$ is the quotient algebra $\OO_{S_0}[\ZZ/n\ZZ]$.
+
+Let $a=\sum_{m\in\ZZ}a_m\otimes m$ be an element of $J\otimes_{S_0}\OO_{T_0}$. Thus the $a_m$ are sections of $J$, almost all zero. Take $n$ sufficiently large that the indices $m$ for which $a_m$ is nonzero have distinct images in $\ZZ/n\ZZ$. Then if $a\in\Ker h'_n$, one necessarily has $a=0$. This proves that $\bigcap_n\Ker h'_n=0$, and proves 2.7.
+\end{proof}
+
+Let then $K_0$ be the kernel of $h$; consider the following diagram:
+\[
+\xymatrix@C=15pt{
+&&&0\ar[d]&\\
+&J\OO_U\ar[d]^{\wr}&&K_0\ar[d]&\\
+0\ar[r]&J\OO_{U_0}\ar[r]\ar[d]_{i}&\OO_U\ar[r]&\OO_{U_0}\ar[r]\ar[d]^{h}&0\\
+&J\otimes_{S_0}\OO_{T_0}&&\OO_{T_0}\ar[d]&\\
+&&&0&
+}
+\]
+The sheaf $\OO_U$ defines an element $\Phi$ of the group $\Ext^1_{\OO_U}(\OO_{U_0},J\OO_{U_0})$. Let $\Psi$ be the element of $\Ext^1_{\OO_U}(K_0,J\otimes_{S_0}\OO_{T_0})$ deduced from $\Phi$ by the bifunctoriality of $\Ext^1(\ ,\ )$ thanks to the morphisms $K_0\to\OO_{U_0}$ and $i:J\OO_{U_0}\to J\otimes_{S_0}\OO_{T_0}$. It follows from Exp. III 4.1 and the infinitesimal flatness criterion (cf. Exp. III 4.3) that there exists a subscheme of $U$, flat over $S$, lifting $T_0$ if and only if $\Psi$ is zero.
+
+But note that $T_0$ is affine, so it suffices (Exp. III 4.5 and 4.6) to show that there exists locally on $U$ a subscheme flat over $S$ lifting $T_0$. In brief, it suffices to show that the image of $\Psi$ in the sheaf:
+\[
+\mathcal E=\mathscr{E}\!xt^{1}_{\OO_U}(K_0,J\otimes_{S_0}\OO_{T_0})
+\]
+is zero. We shall again denote by $\Psi$ this element of $\Gamma(U,\mathcal E)$.
+
+\noindent\textbf{c)} Reduction to the case of $S$ local artinian, with algebraically closed residue field.
+
+Since $K_0$ and $J\otimes_{S_0}\OO_{T_0}$ are coherent sheaves, the same holds for the sheaf $\mathcal E$; moreover, $\mathcal E$ has its support in $T_0$, since this is so for $J\otimes_{S_0}\OO_{T_0}$. To show that the section $f$ of $\mathcal E$ is zero, it suffices to see that for every point $u$ of $T_0$, the image of $f$ in the fiber of $\mathcal E$ at $u$ is zero. But the formation of $\mathscr{E}\!xt^{i}(\ ,\ )$ of coherent sheaves commutes with flat extensions of the base\nde{Cf. EGA $0_{\mathrm{III}}$, 12.3.5.}, so one is reduced to proving the existence of a lifting of $T_0\cap\Spec\OO_u$ which is flat over $S$. Let $s$ be the projection of $u$ to $S$; one may then replace $S$ by $\Spec\OO_s$ and $G$ by $G\times_S\Spec\OO_s$.
+% typo?: source changes the name of the obstruction section from Psi to f.
+
+After again making a faithfully flat extension, one may suppose that $\OO_s$ has an algebraically closed residue field (EGA $0_{\mathrm{III}}$ 10.3.1).
+
+Let $\mathfrak m$ be the maximal ideal of $\OO_s$, and $S_n=\Spec\OO_s/\mathfrak m^n$. Suppose one has shown that for every $n>0$, the obstruction to lifting $T_0\times_S S_n=(T_0)_n$ to a subscheme of $G_n=G\times_S S_n$, flat over $S_n$, is zero, and let $T_n$ be the unique lifting of $(T_0)_n$, flat over $S_n$, which is a subtorus of $G_n$. It is clear that if $n>n'$, one has:
+\[
+(T_n)\times_{S_n}S_{n'}=T_{n'}.
+\]
+If then $u$ is a point of $T_0$ projecting to $s$, it follows from the lemma below, applied to the coherent system of liftings $(T_n\cap\Spec\OO_u)$ of $(T_0)_n\cap\Spec\OO_u$, that there does indeed exist a lifting of $T_0\cap\Spec\OO_u$ flat over $\OO_s$. One is therefore reduced to proving that $\Psi$ is zero when $S=S_n$ is the spectrum of a local artinian ring with algebraically closed residue field, and to proving:
+\begin{lemma}{2.8}\label{XV.2.8}
+Let $A\to B$ be a local homomorphism of noetherian local rings, $\mathfrak m$ the maximal ideal of $A$, $J$ an ideal of square zero of $A$, $M$ a $B$-module of finite type, $A_0=A/J$, $B_0=B/JB$, $M_0=M/JM$, $N_0$ a quotient $B_0$-module of $M_0$ which is flat over $A_0$. For every integer $n>0$, denote by $A_n,A_{0,n}$, etc. the objects obtained by extension of the base $A\to A/\mathfrak m^n=A_n$, and let $J_n$ be the image of $J$ in $A_n$. For every integer $n>0$, let $N_n$ be a quotient $B_n$-module of $M_n$, flat over $A_n$, lifting $N_{0,n}$, and suppose that for $n\geq n'$, $N_{n'}$ is obtained from $N_n$ by extension of the base $A_n\to A_{n'}$. Then there exists a $B$-module $N$, quotient of $M$, flat over $A$, lifting $N_0$.
+\end{lemma}
+\begin{proof}[Proof of 2.8]
+Denote by $P_0$ the kernel of the epimorphism $M_0\to N_0$. For every $n>0$, one therefore has the following commutative diagram, where the horizontal rows are exact:
+\[
+(\ast)_n\quad\xymatrix@C=12pt{
+&&&&0\ar[d]&\\
+&&&&P_{0,n}\ar[d]&\\
+&0\ar[r]&J_nM_n\ar[r]\ar[dd]&M_n\ar[r]\ar[dd]&M_{0,n}\ar[r]\ar[dd]&0\\
+J_n\otimes_{A_{0,n}}M_{0,n}\ar[urr]\ar[drr]&&&&&\\
+&0\ar[r]&J_n\otimes_{A_{0,n}}N_{0,n}\ar[r]&N_n\ar[r]\ar[d]&N_{0,n}\ar[r]\ar[d]&0\\
+&&&0&0&
+}
+\]
+Moreover, by hypothesis, diagram $(\ast)_{n+1}$ reduces to $(\ast)_n$ modulo $\mathfrak m^n$.
+
+The Artin--Rees lemma (Bourbaki, \textit{Commutative Algebra}, Chap. 3 \S~3 Cor. 1) shows that the filtration defined on $JM$ (resp. $J\otimes_{A_0}M_0$ and $J\otimes_{A_0}N_0$) by the kernels of the morphisms:
+\[
+\begin{gathered}
+JM\to J_nM_n,\\
+\text{(resp. }J\otimes_{A_0}M_0\to J_n\otimes_{A_{0,n}}M_{0,n}\text{ and }\\
+J\otimes_{A_0}N_0\to J_n\otimes_{A_{0,n}}N_{0,n}\text{)}
+\end{gathered}
+\]
+is $\mathfrak mB$-good, so that by taking the projective limit of the diagrams $(\ast)_n$ and denoting by $\widehat Q$ the separated completion of a $B$-module $Q$ for the $\mathfrak mB$-adic topology, one obtains the following commutative diagram where the two horizontal rows are again exact:
+\[
+\widehat{(\ast)}\quad\xymatrix@C=12pt{
+&&&&0\ar[d]&\\
+&&&&\widehat P_0\ar[d]&\\
+&0\ar[r]&\widehat{JM}\ar[r]\ar[dd]&\widehat M\ar[r]\ar[dd]&\widehat M_0\ar[r]\ar[dd]&0\\
+J\widehat\otimes_{A_0}M_0\ar[urr]\ar[drr]&&&&&\\
+&0\ar[r]&J\widehat\otimes_{A_0}N_0\ar[r]&\varprojlim_n N_n\ar[r]\ar[d]&\widehat N_0\ar[r]\ar[d]&0\\
+&&&0&0&
+}
+\]
+Now $(B,\mathfrak mB)$ is a Zariski ring, and $J\otimes_{A_0}N_0$ is of finite type over $B$, hence is separated for the $\mathfrak mB$-adic topology. Diagram $\widehat{(\ast)}$ then shows that the morphism:
+\[
+J\otimes_{A_0}M_0\to J\otimes_{A_0}N_0
+\]
+deduced from the epimorphism $M_0\to N_0$ factors through $JM$:
+\[
+\xymatrix{J\otimes_{A_0}M_0\ar[rr]^{\mathrm{can.}}\ar[dr]&&JM\ar[dl]\\&J\otimes_{A_0}N_0&.}
+\]
+Under these conditions, it follows from Exp. III 4.1 and Exp. III 4.3 that there exists a quotient $B$-module $N$ of $M$, flat over $A$, lifting $N_0$, if and only if a certain element $g$ of $E=\Ext^1_B(P_0,J\otimes_{A_0}N_0)$ is zero. More precisely, the exact sequence:
+\[
+0\to JM\to M\to M_0\to0
+\]
+defines an element $f$ of $F$, where $F$ is the $B$-module $\Ext^1_B(M_0,JM)$, and $g$ is the image of $f$ under the natural morphism $F\to E$ arising by bifunctoriality from the morphisms:
+\[
+P_0\to M_0\qquad\text{and}\qquad JM\to J\otimes_{A_0}N_0.
+\]
+It follows from diagram $\widehat{(\ast)}$ and Exp. III 4.1 that the image of $g$ in $\widehat E$, canonically identified with $\Ext^1_{\widehat B}(\widehat P_0,J\widehat\otimes_{A_0}N_0)$, is zero. But $E$ is of finite type over $B$, hence is separated for the $\mathfrak mB$-adic topology, and consequently $g$ is indeed equal to $0$, which completes the proof of 2.8.
+\end{proof}
+
+\noindent\textbf{d)} Study of $\mathcal E$. We therefore suppose that $S$ is the spectrum of a local artinian ring $A$, with algebraically closed residue field $k$. Let $A_0$ be the ring of $S_0$, $\mathfrak m_0$ the maximal ideal of $A_0$. Since $S_0$ is artinian, $T_0$ is closed in $G$ (Exp. VIB 1.4.2); one may therefore take the open subset $U$ equal to $G$, so that:
+\[
+\mathcal E=\mathscr{E}\!xt^{1}_{\OO_G}(K_0,J\otimes_{S_0}\OO_{T_0}).
+\]
+Let $B_0$ be the ring of the affine $S_0$-scheme $T_0=\mathbf G_{\mathrm m,S_0}$, and $\overline B_0$ the ring of the special fiber $T_0\times_{S_0}\Spec(k)=\mathbf G_{\mathrm m,k}$ of $T_0$. The sheaf $\mathcal E$ is a coherent $\OO_{T_0}$-module, hence is defined by a $B_0$-module of finite type which we shall denote by $E$.
+
+Consider the graded module associated with $E$ and the $\mathfrak m_0B_0$-adic filtration:
+\[
+E_r=\mathfrak m_0^rE/\mathfrak m_0^{r+1}E.
+\]
+Each $E_r$ is therefore a $\overline B_0$-module of finite type, and $E_r=0$ for $r$ sufficiently large, since $S_0$ is artinian.
+
+Let then $g$ be a section of $G$ over $S$ inducing on $S_0$ a section $g_0$ of $T_0$. Translation (on the left, to fix ideas) by the element $g$ defines an ``automorphism of the situation'' from the point of view of the obstruction problem under consideration. In particular, to $g$ corresponds an $S_0$-automorphism of the sheaf $\mathcal E$ leaving the obstruction $\Psi$ fixed. More precisely, $g$ defines a semilinear automorphism of the $B_0$-module $E$ (relative to the $A_0$-automorphism of $B_0$ defined by translation by $g_0$ in the group $T_0$). By reduction modulo $\mathfrak m_0^{r+1}$, $g$ thus defines a semilinear automorphism of $E_r$ (relative to the $k$-automorphism of $\overline B_0$ defined by translation by $g_0\times_{S_0}\Spec(k)$ in $T_0\times_{S_0}\Spec(k)$).
+
+\begin{lemma}{2.9}\label{XV.2.9}
+For every integer $r\geq0$, $E_r$ is a locally free $\overline B_0$-module.
+\end{lemma}
+\begin{proof}
+Let $x$ be a point of $T_0$, $\kappa(x)$ its residue field, $(E_r)_x$ ``the fiber'' of $E_r$ at $x$, equal to $E_r\otimes_{\overline B_0}\kappa(x)$, $\ell(x)$ the rank of $(E_r)_x$ over $\kappa(x)$, $\ell$ the maximum value of $\ell(x)$ as $x$ ranges over the points of $T_0$. Denote by $L$ the largest closed subscheme of $\Spec\overline B_0=\mathbf G_{\mathrm m,k}$ over which $E_r$ is locally free of rank $\ell$ (TDTE IV Lemma 3.6). Let $\beta$ be a point of $L(k)$ (there are such points, since $L$ is of finite type over the algebraically closed field $k$), and let $\alpha$ be a point of $\mathbf G_{\mathrm m,k}(k)$ of order equal to a power $n$ of $q$. The point $\alpha$ is therefore rational over $k$, and since by hypothesis ${}_nT_0$ lifts to a subscheme $M_n$ \'etale over $S$, there exists a section $a$ of $G$ over $S$ lifting $\alpha$ and which, over $S_0$, is a section of $T_0$. The remarks made above then show that the fibers of $E_r$ are $k$-isomorphic at the points $\beta$ and $\alpha\beta$ of $\mathbf G_{\mathrm m,k}(k)$. But the points of order a power of $q$ are dense in $\mathbf G_{\mathrm m,k}$, and the same holds for their translates by $\beta$. Since $L$ is closed in $\mathbf G_{\mathrm m,k}$ and $\mathbf G_{\mathrm m,k}$ is reduced, $L$ equals $\mathbf G_{\mathrm m,k}$ and $E_r$ is locally free over $\overline B_0$, of rank $\ell$.
+\end{proof}
+
+\noindent\textbf{e)} End of the proof of Theorem 2.1.

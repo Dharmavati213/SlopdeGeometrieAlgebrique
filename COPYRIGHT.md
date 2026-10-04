@@ -34,6 +34,13 @@ English translations are the slightly corrected SMF recompositions:
   algébrique du Bois Marie 1962, recomposed edition,
   [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
 
+- M. Demazure, A. Grothendieck, *Schémas en groupes* (SGA 3),
+  Séminaire de géométrie algébrique du Bois Marie 1962–64.
+  The English follows the recomposition edited by P. Gille and P. Polo
+  (Société Mathématique de France, Documents Mathématiques;
+  corrected PDFs of 2008–2024). The French PDFs are not in this
+  repository.
+
 Those French texts are **not** redistributed in this repository. The original
 remains copyright of the authors and of the original publishers
 (IHÉS / Springer / Société Mathématique de France, as applicable).

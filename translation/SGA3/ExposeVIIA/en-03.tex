@@ -1,0 +1,195 @@
+% Source PDF pp. 13--18; continuation of Remark 2.4.1.
+For every integer $n\geq1$, put $\mathfrak p_{G/S}^n=\varepsilon^{-1}(\OO_G)/\mathscr I_\varepsilon^{n+1}$ (confer 1.3 and 1.4 for the notation).\nde{In what follows, the original has been corrected; it referred to the square formed by the morphisms $p,p,\eta$, and $\mathrm{pr}_1$, instead of $\varepsilon,\eta,\Delta$, and $p$.} Since the square formed by the morphisms $\varepsilon,\eta,\Delta$, and $p$ is cartesian, $\Delta^{-1}(\eta')$ induces \emph{an isomorphism of $\OO_G$-modules}:
+\[
+p^*(\mathfrak p_{G/S}^n)\isomto\mathscr P_{G/S}^n.
+\]
+The differential operators of $G$ over $S$ of order $\leq n$ therefore correspond bijectively to the morphisms of $\OO_G$-modules $p^*(\mathfrak p_{G/S}^n)\to\OO_G$, that is, to the morphisms of $\OS$-modules
+\[
+\mathfrak p_{G/S}^n\longrightarrow p_*(\OO_G).
+\]
+In this bijection, the right-invariant differential operators are associated to the composite arrows
+\[
+\mathfrak p_{G/S}^n\longrightarrow\OS\xrightarrow{\mathrm{can.}}p_*(\OO_G).
+\]
+One thus recovers the isomorphism of theorem 2.4.
+
+\numpara{2.5}
+\nde{In this paragraph the order has been modified, beginning by defining the map $\alpha:\Lie(G)\to U(G)$, and the original has been corrected as indicated in N.D.E.\ (17).}
+Let $\Lie(G)$ be the Lie algebra of $G$;\nde{In this expos\'e, if $G$ (resp.\ $X$) is an $S$-group scheme (resp.\ an $S$-scheme), the ``Lie algebra'' $\Lie(G)$ (resp.\ $\Lie(\underline{\Aut}\,X)$) denotes, with the notation of Expos\'e II, $\uLie(G/S)(S)$ (resp.\ $\uLie(\underline{\Aut}_S(X)/S)(S)$); this is a $\Gamma(\OS)$-Lie algebra, according to II, 4.11 and 3.14.} we shall define a morphism of $\Gamma(\OS)$-Lie algebras $\alpha:\Lie(G)\to U(G)$.
+
+Let $s:S\to I_S$ be the zero section of $I_S\to S$, and $\sigma$ the deviation of $s$ defined in 1.2.0. Recall (cf.\ II, 4.1) that $\Lie(G)$ is the set of morphisms $x:I_S\to G$ such that $x\circ s=\varepsilon_G$. Then the composite
+\[
+\xymatrix{S\ar[r]^\sigma_s&I_S\ar[r]^x&G}
+\]
+is an $S$-deviation of $\varepsilon_G$, \ie an element of $U(G)$; with the notation of 1.2 $(\dagger)$, it is denoted by $\sigma x$. Moreover, according to 1.2.1, the map $\alpha:x\mapsto\sigma x$ is an isomorphism of $\OS(S)$-modules from $\Lie(G)$ onto the submodule $\operatorname{D\acute er}(\varepsilon_G)$ of $U(G)$ consisting of the $S$-derivations of $\varepsilon_G$. We shall see that $\alpha$ is a morphism of Lie algebras.\nde{See also II, 4.11.} Let
+\[
+\rho':U(G)\longrightarrow\mathrm{Dif}_{G/S}
+\]
+be the algebra morphism which associates to an $S$-deviation $d$ of $\varepsilon_G$ the left-invariant differential operator ${}^Gd\in\mathrm{Dif}_{G/S}$, cf.\ 2.2, N.D.E.\ (17).
+
+Let $\rho:G\to\underline{\Aut}_S(G)$ be the homomorphism of group functors which associates to an $S$-morphism $g:T\to G$ the right translation of $G_T$ by $g$, \ie the morphism:
+\[
+G_T\simeq T\times_T G_T\xrightarrow{G_T\times g}G_T\times_TG_T\xrightarrow{m_T}G_T.
+\]
+Recall also (cf.\ 1.5 and II, 3.14) that $\Lie(\underline{\Aut}\,G)=\uLie(\underline{\Aut}_S(G)/S)(S)$ identifies with the infinitesimal automorphisms of $G$, \ie with the automorphisms of $I_S\times G$ inducing the identity on $G$. Since $\rho$ is a monomorphism, so is the morphism $\uLie(\rho):\uLie(G/S)\to\uLie(\underline{\Aut}_S(G)/S)$ (see, for example, Exp.\ II, N.D.E.\ (50)); hence $\Lie(\rho):\Lie(G)\to\Lie(\underline{\Aut}\,G)$ is injective.
+
+On the other hand, according to 1.5, the map $\beta$ which associates to every infinitesimal automorphism $u$ of $G$ the differential operator $D_u$ of $G$:
+\[
+G\simeq S\times G\xrightarrow{\sigma\times G}I_S\times G\xrightarrow{u}I_S\times G\xrightarrow{\mathrm{pr}_2}G
+\]
+is an isomorphism from $\Lie(\underline{\Aut}\,G)$ onto the Lie subalgebra of $\mathrm{Dif}_{G/S}$ consisting of the $p^{-1}(\OS)$-derivations of $\OO_G$.
+
+For every $x\in\Lie(G)$, there is the following commutative square determining the image of $x$ under $\Lie(\rho)$:
+\[
+\xymatrix@C=5em{I_S\times G\ar[r]^{\Lie(\rho)(x)}\ar[d]_{x\times G}&I_S\times G\ar[d]^{\mathrm{pr}_2}\\
+G\times G\ar[r]_m&G.}
+\]
+Taking this diagram into account, the image of $\Lie(\rho)(x)$ under $\beta$ is the composite deviation
+\[
+\xymatrix@C=2.3em{G\simeq S\times G\ar[r]^{\sigma\times G}_{s\times G}&I_S\times G\ar[r]^{G\times x}&G\times G\ar[r]^m&G}
+\]
+which, according to 2.2 N.D.E.\ (17), is none other than ${}^G(\sigma x)=\rho'(\alpha(x))$. One therefore obtains a commutative diagram:
+% typo?: the source labels the middle arrow G times x although its domain is I_S times G; retained.
+\[
+\xymatrix@C=4em@R=3em{\Lie(G)\ar@{^{(}->}[r]^{\Lie(\rho)}\ar@{^{(}->}[d]_\alpha&\Lie(\underline{\Aut}\,G)\ar@{^{(}->}[d]^\beta\\
+U(G)\ar@{^{(}->}[r]_{\rho'}&\mathrm{Dif}_{G/S}}
+\]
+where $\Lie(\rho)$, $\beta$, and $\rho'$ are morphisms of Lie algebras. Since $\rho'$ is injective, it follows that $\alpha$ too is a morphism of Lie algebras. Consequently, one has obtained:
+
+\begin{enonce}{Proposition}{}
+$\alpha$ is an isomorphism of $\OS(S)$-Lie algebras from $\Lie(G)$ to the Lie algebra of $S$-derivations of $\varepsilon_G$, itself isomorphic via $\Lie(\rho)$ to the Lie algebra of left-invariant $S$-derivations of $G$.\nde{There are examples of Lie algebras $\mathfrak g$ over a ring $A$ such that the map $\mathfrak g\to U(\mathfrak g)$ is not injective, cf.\ [BLie], \S~I.2, Ex.\ 9. The result above shows (since $\alpha$ factors as $\Lie(G)\to U(\Lie(G))\to U(G)$) that this cannot occur for ``algebraic'' Lie algebras, \ie those of the form $\Lie(G)$, where $G$ is an $A$-group scheme.}
+\end{enonce}
+
+\sgasection{3}{Coalgebras and Cartier duality}
+\numpara{3.1}
+Let $S$ be a scheme (or, more generally, a ringed space). An \emph{$\OS$-coalgebra}\nde{One also says ``cogebra'', cf.\ [BAlg], III \S~11.1. On the other hand, note that in this expos\'e (as well as in VII B) one works in the category of \emph{cocommutative} coalgebras (\ie satisfying condition (i)), which is crucial for defining the product and the notion of coalgebra in groups (cf.\ 3.1.0 and 3.2).} is a pair $(\mathscr U,\Delta_{\mathscr U})$ consisting of an $\OS$-module $\mathscr U$ and a morphism of $\OS$-modules $\Delta_{\mathscr U}:\mathscr U\to\mathscr U\otimes_{\OS}\mathscr U$ (called the \emph{diagonal morphism} or \emph{comultiplication}) such that:
+\begin{enumeratei}
+\item $\sigma\circ\Delta_{\mathscr U}=\Delta_{\mathscr U}$, where $\sigma(a\otimes b)=b\otimes a$.
+\item The square
+\[
+\xymatrix@C=4em{\mathscr U\ar[r]^{\Delta_{\mathscr U}}\ar[d]_{\Delta_{\mathscr U}}&\mathscr U\otimes_{\OS}\mathscr U\ar[d]^{\mathrm{id}_{\mathscr U}\otimes\Delta_{\mathscr U}}\\
+\mathscr U\otimes_{\OS}\mathscr U\ar[r]_{\Delta_{\mathscr U}\otimes\mathrm{id}_{\mathscr U}}&\mathscr U\otimes_{\OS}\mathscr U\otimes_{\OS}\mathscr U}
+\]
+is commutative.
+\item There exists a morphism of $\OS$-modules $\varepsilon_{\mathscr U}:\mathscr U\to\OS$, called the \emph{augmentation}, such that the composite morphisms
+\[
+\begin{gathered}
+\mathscr U\xrightarrow{\Delta_{\mathscr U}}\mathscr U\otimes_{\OS}\mathscr U\xrightarrow{\mathrm{id}_{\mathscr U}\otimes\varepsilon_{\mathscr U}}\mathscr U\otimes_{\OS}\OS\simeq\mathscr U\\
+\mathscr U\xrightarrow{\Delta_{\mathscr U}}\mathscr U\otimes_{\OS}\mathscr U\xrightarrow{\varepsilon_{\mathscr U}\otimes\mathrm{id}_{\mathscr U}}\OS\otimes_{\OS}\mathscr U\simeq\mathscr U
+\end{gathered}
+\]
+are the identity morphism of $\mathscr U$.
+\end{enumeratei}
+If $\varepsilon_{\mathscr U}$ and $\varepsilon'_{\mathscr U}$ are two augmentations, one has $\varepsilon_{\mathscr U}=(\varepsilon_{\mathscr U}\otimes\varepsilon'_{\mathscr U})\circ\Delta_{\mathscr U}=\varepsilon'_{\mathscr U}$; the augmentation is therefore uniquely determined by (iii).
+
+If $(\mathscr U,\Delta_{\mathscr U})$ and $(\mathscr V,\Delta_{\mathscr V})$ are two $\OS$-coalgebras, a \emph{morphism} from the first to the second is a morphism of $\OS$-modules $f:\mathscr U\to\mathscr V$ such that the diagrams
+\[
+\xymatrix@C=3em{\mathscr U\ar[r]^f\ar[d]_{\Delta_{\mathscr U}}&\mathscr V\ar[d]^{\Delta_{\mathscr V}}\\
+\mathscr U\otimes\mathscr U\ar[r]_{f\otimes f}&\mathscr V\otimes\mathscr V}
+\qquad\text{and}\qquad
+\xymatrix{\mathscr U\ar[rr]^f\ar[dr]_{\varepsilon_{\mathscr U}}&&\mathscr V\ar[dl]^{\varepsilon_{\mathscr V}}\\&\OS&}
+\]
+are commutative. Coalgebra morphisms compose like morphisms of $\OS$-modules, so that we shall be able to speak of the \emph{category of $\OS$-coalgebras}.
+
+\numpara{3.1.0}
+\nde{The numbering 3.1.0 has been added for later references.}
+This category has finite products: the final object is the $\OS$-module $\OS$, the comultiplication being the identity; the product of two coalgebras $(\mathscr U,\Delta_{\mathscr U})$ and $(\mathscr V,\Delta_{\mathscr V})$ is the tensor product $\mathscr U\otimes_{\OS}\mathscr V$, the comultiplication being the composite morphism
+\[
+\begin{aligned}
+\mathscr U\otimes\mathscr V&\xrightarrow{\Delta_{\mathscr U}\otimes\Delta_{\mathscr V}}\mathscr U\otimes\mathscr U\otimes\mathscr V\otimes\mathscr V\\
+&\xrightarrow{\mathrm{id}_{\mathscr U}\otimes\sigma\otimes\mathrm{id}_{\mathscr V}}\mathscr U\otimes\mathscr V\otimes\mathscr U\otimes\mathscr V
+\end{aligned}
+\]
+where $\sigma(a\otimes b)=b\otimes a$; the canonical projections from $\mathscr U\otimes\mathscr V$ to the factors $\mathscr U$ and $\mathscr V$ are the morphisms $\mathrm{id}_{\mathscr U}\otimes\varepsilon_{\mathscr V}$ and $\varepsilon_{\mathscr U}\otimes\mathrm{id}_{\mathscr V}$,\nde{What follows has been added. Recall also that, to show that $\mathscr U\otimes\mathscr V$ is indeed the product of $\mathscr U$ and $\mathscr V$ in the category of cocommutative $\OS$-cogebras, one verifies that if one has an arbitrary $\OS$-cogebra $\mathscr E$ and cogebra morphisms $f:\mathscr E\to\mathscr U$ and $g:\mathscr E\to\mathscr V$, then every cogebra morphism $\phi:\mathscr E\to\mathscr U\otimes\mathscr V$ such that $\mathrm{pr}_{\mathscr U}\circ\phi=f$ and $\mathrm{pr}_{\mathscr V}\circ\phi=g$ is necessarily equal to $(f\otimes g)\circ\Delta_{\mathscr E}$, and that the latter is a cogebra morphism if and only if it equals $(g\otimes f)\circ\Delta_{\mathscr E}$.} and the ``diagonal morphism'' $\mathscr U\to\mathscr U\otimes\mathscr U$ (corresponding to the pair of morphisms $(\mathrm{id}_{\mathscr U},\mathrm{id}_{\mathscr U})$) is none other than the comultiplication $\Delta_{\mathscr U}$.
+
+\numpara{3.1.1}
+Let $\mathscr A$ be a commutative $\OS$-algebra, \emph{locally free and of finite type} as an $\OS$-module. If we put
+\[
+\mathscr A^*=\mathscr H\!om_{\OS\text{-Mod.}}(\mathscr A,\OS),
+\]
+the canonical morphism $\varphi$ from $\mathscr A^*\otimes_{\OS}\mathscr A^*$ to $(\mathscr A\otimes_{\OS}\mathscr A)^*$ is invertible. If $m:\mathscr A\otimes\mathscr A\to\mathscr A$ is the morphism defining the multiplication of $\mathscr A$, one obtains by composition a diagonal morphism
+\[
+\Delta_{\mathscr A^*}:\mathscr A^*\xrightarrow{m^*}(\mathscr A\otimes\mathscr A)^*\xrightarrow{\varphi^{-1}}\mathscr A^*\otimes\mathscr A^*.
+\]
+This diagonal morphism clearly makes $\mathscr A^*$ a $\OS$-coalgebra having as augmentation the transpose of the morphism $\OS\to\mathscr A$ defined by the unit section of $\mathscr A$. Moreover, it is clear that:
+
+\emph{The functor $\mathscr A\mapsto\mathscr A^*$ is an anti-equivalence from the category of $\OS$-algebras which are locally free and of finite type as $\OS$-modules onto the category of $\OS$-coalgebras locally free and of finite type as $\OS$-modules.}
+
+\numpara{3.1.2}
+To every $\OS$-coalgebra $\mathscr U$ there is canonically associated an $S$-functor
+\[
+\Spec^*\mathscr U:(\mathbf{Sch}/S)^\circ\longrightarrow\Ens.
+\]
+Observe, indeed, that for every $S$-scheme $q:T\to S$, $q^*(\mathscr U\otimes_{\OS}\mathscr U)$ identifies with $q^*(\mathscr U)\otimes_{\OO_T}q^*(\mathscr U)$, so that $q^*(\Delta_{\mathscr U})$ makes $\mathscr U_T=q^*(\mathscr U)$ an $\OO_T$-coalgebra; we may therefore put, by definition and with an obvious abuse of notation:\nde{For every $x\otimes y\in\Gamma(T,\mathscr U_T)\otimes_{\OO(T)}\Gamma(T,\mathscr U_T)$, its image in $\Gamma(T,\mathscr U_T\otimes_{\OO_T}\mathscr U_T)$ is still denoted by $x\otimes y$.}
+\[
+(\Spec^*\mathscr U)(T)=\{x\in\Gamma(T,\mathscr U_T)\mid\varepsilon_{\mathscr U_T}(x)=1\text{ and }\Delta_{\mathscr U_T}(x)=x\otimes x\}.
+\]
+The sections $x$ of $\mathscr U_T$ clearly correspond to the morphisms of $\OO_T$-modules $\xi:\OO_T\to\mathscr U_T$; the conditions $\varepsilon(x)=1$ and $\Delta(x)=x\otimes x$ express simply that $\xi$ is a coalgebra morphism. One therefore also has:
+\[
+(\Spec^*\mathscr U)(T)=\Hom_{\OO_T\text{-coalg.}}(\OO_T,\mathscr U_T).
+\]
+In particular, one has the following proposition:\nde{The numbering 3.1.2.1 has been added for later references. Observe, on the other hand, that the $S$-functor $\Spec^*\mathscr U$ is a sheaf for the Zariski topology (and even for the (fpqc) topology if $\mathscr U$ is a quasi-coherent $\OS$-module).}
+
+\begin{proposition}{3.1.2.1}\label{VIIA.3.1.2.1}
+Let $\mathscr A$ be a commutative $\OS$-algebra which is locally free of finite type as an $\OS$-module. Then the $S$-functor $\Spec^*\mathscr A^*$ is represented by $\Spec\mathscr A$.
+\end{proposition}
+Indeed, for every $S$-scheme $T$, there are canonical isomorphisms:
+\[
+\begin{aligned}
+(\Spec^*\mathscr A^*)(T)&=\Hom_{\OO_T\text{-coalg.}}(\OO_T,\mathscr A_T^*)\\
+&\simeq\Hom_{\OO_T\text{-alg.}}(\mathscr A_T,\OO_T)\simeq(\Spec A)(T).
+\end{aligned}
+\]
+% typo?: the last Spec A is printed with roman A, retained.
+
+\numpara{3.2}
+An \emph{$\OS$-coalgebra in groups}, that is, a group in the category of $\OS$-coalgebras, consists in giving a $\OS$-coalgebra $(\mathscr U,\Delta_{\mathscr U})$ and three morphisms of $\OS$-coalgebras $m_{\mathscr U}:\mathscr U\otimes\mathscr U\to\mathscr U$, $\eta_{\mathscr U}:\OS\to\mathscr U$, and $c_{\mathscr U}:\mathscr U\to\mathscr U$ satisfying conditions $(\mathrm{ii})^*$, $(\mathrm{iii})^*$, and (vi) below; on the other hand, the fact that $m_{\mathscr U}$ is a cogebra morphism is expressed by the commutativity of diagrams (iv) and (v) below:
+\begin{equation}\tag{iv}
+\xymatrix@C=4em@R=2.7em{\mathscr U\otimes\mathscr U\ar[r]^{m_{\mathscr U}}\ar[d]_{\Delta_{\mathscr U}\otimes\Delta_{\mathscr U}}&\mathscr U\ar[dd]^{\Delta_{\mathscr U}}\\
+\mathscr U\otimes\mathscr U\otimes\mathscr U\otimes\mathscr U\ar[d]_{\mathrm{id}_{\mathscr U}\otimes\sigma\otimes\mathrm{id}_{\mathscr U}}&\\
+\mathscr U\otimes\mathscr U\otimes\mathscr U\otimes\mathscr U\ar[r]_{m_{\mathscr U}\otimes m_{\mathscr U}}&\mathscr U\otimes\mathscr U}
+\end{equation}
+\begin{equation}\tag{v}
+\xymatrix{\mathscr U\otimes\mathscr U\ar[rr]^{m_{\mathscr U}}\ar[dr]_{\varepsilon_{\mathscr U}\otimes\varepsilon_{\mathscr U}}&&\mathscr U\ar[dl]^{\varepsilon_{\mathscr U}}\\&\OS&}
+\end{equation}
+\noindent $(\mathrm{ii})^*$ The square
+\[
+\xymatrix@C=4em{\mathscr U\otimes\mathscr U\otimes\mathscr U\ar[r]^{\mathrm{id}_{\mathscr U}\otimes m_{\mathscr U}}\ar[d]_{m_{\mathscr U}\otimes\mathrm{id}_{\mathscr U}}&\mathscr U\otimes\mathscr U\ar[d]^{m_{\mathscr U}}\\
+\mathscr U\otimes\mathscr U\ar[r]_{m_{\mathscr U}}&\mathscr U}
+\]
+is commutative.
+
+\noindent $(\mathrm{iii})^*$ The two composites below equal the identity morphism of $\mathscr U$:
+\[
+\begin{gathered}
+\mathscr U\simeq\mathscr U\otimes\OS\xrightarrow{\mathrm{id}_{\mathscr U}\otimes\eta_{\mathscr U}}\mathscr U\otimes\mathscr U\xrightarrow{m_{\mathscr U}}\mathscr U\\
+\mathscr U\simeq\OS\otimes\mathscr U\xrightarrow{\eta_{\mathscr U}\otimes\mathrm{id}_{\mathscr U}}\mathscr U\otimes\mathscr U\xrightarrow{m_{\mathscr U}}\mathscr U.
+\end{gathered}
+\]
+\noindent (vi) The composite morphism below is equal to $\eta_{\mathscr U}\circ\varepsilon_{\mathscr U}$:
+\[
+\mathscr U\xrightarrow{\Delta_{\mathscr U}}\mathscr U\otimes\mathscr U\xrightarrow{c_{\mathscr U}\otimes\mathrm{id}_{\mathscr U}}\mathscr U\otimes\mathscr U\xrightarrow{m_{\mathscr U}}\mathscr U.
+\]
+
+\numpara{3.2.1}
+The morphisms $\eta_{\mathscr U}$ and $c_{\mathscr U}$ are uniquely determined by $m_{\mathscr U}$. On the other hand, conditions $(\mathrm{ii})^*$ and $(\mathrm{iii})^*$ express simply that $m_{\mathscr U}$ makes $\mathscr U$ an $\OS$-algebra having as unit section the image under $\eta_{\mathscr U}$ of the unit section of $\OS$. Condition (iv) also expresses that the diagonal morphism $\Delta_{\mathscr U}$ is compatible with multiplication; and indeed, $\Delta_{\mathscr U}:\mathscr U\to\mathscr U\otimes\mathscr U$ must be a homomorphism of coalgebras in groups, which also implies the commutativity of the triangle
+\begin{equation}\tag{$\mathrm{v}^*$}
+\xymatrix{&\OS\ar[dl]_{\eta_{\mathscr U}}\ar[dr]^{\eta_{\mathscr U}\otimes\eta_{\mathscr U}}&\\
+\mathscr U\ar[rr]_{\Delta_{\mathscr U}}&&\mathscr U\otimes\mathscr U.}
+\end{equation}
+On the other hand, as in every category, the antipode $c_{\mathscr U}$ is an isomorphism from $\mathscr U$ onto the ``opposite'' group object;\nde{\ie equipped with the multiplication $m'_{\mathscr U}=m_{\mathscr U}\circ\sigma$.} in particular, $c_{\mathscr U}$ induces an algebra isomorphism from $\mathscr U$ onto the opposite algebra $\mathscr U^\circ$.
+
+\numpara{3.2.2}
+Since the functor $\mathscr U\mapsto\Spec^*\mathscr U$ commutes with finite products, it transforms a coalgebra in groups into an $S$-group functor; and indeed, for every $S$-scheme $T$, the elements $x\in\Gamma(T,\mathscr U_T)$ belonging to $(\Spec^*\mathscr U)(T)$ form a group for the multiplication of the algebra $\Gamma(T,\mathscr U_T)$; the inverse of $x$ is none other than $c_{\mathscr U}(x)$. According to 3.1.2.1, one has:
+
+\begin{scholium}{3.2.2.1}\label{VIIA.3.2.2.1}
+\nde{This scholium, implicit in the original, has been added.}
+Let $\mathscr U$ be a $\OS$-coalgebra in groups, finite and locally free as an $\OS$-module. Then the $S$-group functor $\Spec^*\mathscr U$ is represented by the finite and locally free $S$-group $\Spec\mathscr U^*$.
+\end{scholium}
+
+\begin{remark}{3.2.2.2}\label{VIIA.3.2.2.2}
+Let $\mathscr L$ be a $\OS$-Lie algebra and $\mathscr U(\mathscr L)$ the \emph{enveloping algebra} of $\mathscr L$, that is, the sheaf on $S$ associated to the presheaf assigning to every open subset $V$ the enveloping algebra $U(\Gamma(V,\mathscr L))$ of the Lie algebra $\Gamma(V,\mathscr L)$.
+
+Every homomorphism from $\mathscr L$ to the Lie algebra underlying an associative $\OS$-algebra factors in one and only one way through the canonical morphism from $\mathscr L$ to $\mathscr U(\mathscr L)$; furthermore, this universal property implies, besides the functoriality of $\mathscr U(\mathscr L)$ in $\mathscr L$, that the enveloping algebra of a product of Lie algebras identifies with the tensor product of the enveloping algebras.
+\end{remark}
+% Remark 3.2.2.2 continues in en-04; no environment is left open.

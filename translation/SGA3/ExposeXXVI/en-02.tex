@@ -1,0 +1,207 @@
+% Source PDF p. 7; continuation of Proposition 1.21.
+\begin{enumeratei}
+\item $P$ possesses a largest invariant subgroup, smooth and of finite presentation over $S$, with connected solvable geometric fibers. This is a characteristic subgroup of $P$, called the \emph{radical} of $P$, and denoted $\operatorname{rad}(P)$. The quotient sheaf $P/\operatorname{rad}(P)$ is representable by a semisimple $S$-group.
+\item If $L$ is a Levi subgroup of $P$, $\operatorname{rad}(P)$ is the semidirect product of $\operatorname{rad}^{\mathrm u}(P)$ and $\operatorname{rad}(L)$; one has $\operatorname{rad}(L)=L\cap\operatorname{rad}(P)$, hence $L=\uCentr_G(L\cap\operatorname{rad}(P))$, and $P/\operatorname{rad}(P)\simeq L/\operatorname{rad}(L)$.
+\end{enumeratei}
+\end{proposition}
+Indeed, since assertion (i) is local, one can suppose that $G$ possesses a Levi subgroup $L$, and one is reduced to proving that $R=\operatorname{rad}^{\mathrm u}(P)\cdot\operatorname{rad}(L)$ possesses the properties stated in (i), which is immediate. For (ii), it remains only to prove that $\operatorname{rad}(L)=L\cap\operatorname{rad}(P)$, which follows immediately from the fact that $L\cap\operatorname{rad}(P)$ is smooth with connected fibers, $L$ being the centralizer of a torus.\nde{Cf.~XIX 1.4.}
+% typo?: "G possesses a Levi subgroup L" is kept as printed.
+
+\sgasection{2}{Structure of the unipotent radical of a parabolic subgroup}
+\begin{proposition}{2.1}\label{XXVI.2.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $P$ a parabolic subgroup of $G$, and $\operatorname{rad}^{\mathrm u}(P)$ its unipotent radical. There exists a sequence of group subschemes of $\operatorname{rad}^{\mathrm u}(P)$
+\[
+\operatorname{rad}^{\mathrm u}(P)=U_0\supset U_1\supset U_2\supset\cdots\supset U_n\supset\cdots
+\]
+possessing the following properties:
+\begin{enumeratei}
+\item Each $U_i$ is smooth, with connected fibers, characteristic and closed in $P$. The commutator of a section of $U_i$ and a section of $U_j$ is a section of $U_{i+j+1}$ (over a variable $S'\to S$).
+\item For each $i\ge0$, there exist a locally free $\OS$-module $\mathcal E_i$ and an isomorphism of $S$-sheaves of groups
+\[
+U_i/U_{i+1}\isomto W(\mathcal E_i).
+\]
+Moreover, the automorphisms of $P$ (over a variable $S'\to S$) act linearly on $W(\mathcal E_i)$.
+\item For every $s\in S$, one has $U_{n,s}=e$ for $n>\dim(\operatorname{rad}^{\mathrm u}(P)_s)$.
+\end{enumeratei}
+\end{proposition}
+\numpara{2.1.1}\label{XXVI.2.1.1}
+First suppose that the pair $(G,P)$ is pinnable. Let $(T,M,R,\Delta,\ldots)$ be a pinning of $G$ adapted to $P$; let $\Delta(P)$ be the subset of $\Delta$ defined by $P$. Let $\alpha_1,\ldots,\alpha_p$ be the elements of $\Delta(P)$, and $\beta_1,\ldots,\beta_q$ the elements of $\Delta-\Delta(P)$. Every root $\gamma\in R$ is written uniquely as
+\[
+\gamma=a_1\alpha_1+\cdots+a_p\alpha_p+b_1\beta_1+\cdots+b_q\beta_q.
+\]
+Put
+\[
+a(\gamma)=b_1+\cdots+b_q.\nde{$a_1+\cdots+a_p$ has been corrected to $b_1+\cdots+b_q$.}
+\]
+The following properties follow immediately from the definitions (cf.~1.12):
+
+% Source PDF p. 8.
+\begin{enumeratei}
+\item $U_\gamma\subset P\Leftrightarrow a(\gamma)\ge0$.
+\item $U_\gamma\subset\operatorname{rad}^{\mathrm u}(P)\Leftrightarrow a(\gamma)>0$.
+\item $a(n\gamma+m\gamma')=n\,a(\gamma)+m\,a(\gamma')$ for all $n,m\in\ZZ$.
+\end{enumeratei}
+For $i>0$, let $R_i$ be the set of roots $\gamma\in R$ such that $a(\gamma)>i$. Each $R_i$ is a closed set of roots satisfying $R_i\cap(-R_i)=\varnothing$. Consider (Exp.~XXII, 5.6.5) the $S$-group
+% typo?: i>0 in the definition of R_i is kept as printed.
+\[
+U_i=U_{R_i}=\prod_{\gamma\in R_i}U_\gamma.
+\]
+This is a closed group subscheme of $G$, smooth over $S$, with connected fibers.
+
+Let $\alpha,\beta\in R$; consider the commutation relation of Exp.~XXII, 5.5.2
+\[
+p_\alpha(x)p_\beta(y)p_\alpha(-x)=p_\beta(y)\prod_{n,m\in\NN^*}p_{n\alpha+m\beta}(C_{n,m,\alpha,\beta}x^ny^m),
+\]
+where each $p_\gamma$ is an isomorphism of vector groups $\mathbf G_{\mathrm a,S}\isomto U_\gamma$. First note that, if $a(\alpha)>i$ and $a(\beta)>j$, one has
+\[
+a(n\alpha+m\beta)=n\,a(\alpha)+m\,a(\beta)\ge n(i+1)+m(j+1)>i+j+1
+\]
+when $n$ and $m$ are $>0$. It follows that the commutator of a section of $U_\alpha$ and a section of $U_\beta$ is a section of $U_{i+j+1}$ (over a variable $S'\to S$), which indeed implies $(U_i,U_j)\subset U_{i+j+1}$. For each $i\ge0$, the quotient $U_i/U_{i+1}$ is therefore commutative; it is naturally identified with
+\[
+U_i/U_{i+1}\simeq\prod_{a(\gamma)=i+1}U_\gamma\simeq W(\mathcal E_i),
+\]
+where $\mathcal E_i$ is the direct sum of the $\mathfrak g^\gamma$ for $a(\gamma)=i+1$.
+
+Let us return to the commutation formula above, and suppose $a(\alpha)\ge0$, $a(\beta)>i$. If $n,m\in\NN^*$,
+\begin{itemize}
+\item either $a(n\alpha+m\beta)>i+1$,
+\item or $a(n\alpha+m\beta)=i+1$, in which case one necessarily has $m=1$.
+\end{itemize}
+This first proves that $\operatorname{int}(p_\alpha(x))$ preserves $U_i$ (hence also $U_{i+1}$), then that the expression $\operatorname{int}(p_\alpha(x))p_\beta(y)$ involves modulo $U_{i+1}$ only terms of the form $p_{n\alpha+\beta}(C_{n,1,\alpha,\beta}x^ny)$, which are therefore \emph{linear} in $y$. It follows that the inner automorphisms defined by sections of $U_\alpha$ act linearly on the quotient $U_i/U_{i+1}$ identified with $W(\mathcal E_i)$. Since this is also trivially true for the inner automorphisms defined by sections of $T$, and since $P$ is generated by $T$ and the $U_\alpha$, $a(\alpha)\ge0$, one deduces that:
+\begin{enumeratei}
+\item each $U_i$ is invariant in $P$,
+\item the inner automorphisms defined by sections of $P$ act linearly on $U_i/U_{i+1}\simeq W(\mathcal E_i)$.
+\end{enumeratei}
+
+\numpara{2.1.2}\label{XXVI.2.1.2}
+Now let $(T',M',R',\Delta',\ldots)$ be a new pinning of $G$ adapted to $P$. By 1.15, there exists an inner automorphism of $G$ coming from $P$ which transforms the old pinning into the new one. Extending $S$, one can suppose that this inner automorphism is of the form $\operatorname{int}(p)$, $p\in P(S)$.
+
+% Source PDF p. 9: preceding sentence begins on p. 8.
+If one repeats the preceding constructions using the new pinning, it is clear that the groups $U'_i$ and the isomorphisms $U'_i/U'_{i+1}\simeq W(\mathcal E'_i)$ obtained are deduced from $U_i$ and $U_i/U_{i+1}\simeq W(\mathcal E_i)$ by transport of structure by means of $\operatorname{int}(p)$. It follows from remarks (i) and (ii) above that one will therefore have $U'_i=U_i$, and that the two vector structures constructed on $U_i/U_{i+1}=U'_i/U'_{i+1}$ coincide.
+
+This shows us that the groups $U_i$ and the vector structures on the quotients $U_i/U_{i+1}$ are independent of the pinning considered (and in particular invariant under every automorphism of $P$, as one easily sees).
+
+We have therefore proved the proposition when the pair $(G,P)$ is pinnable (part (iii) is trivial, since by Exp.~XXI 3.1.2, the set $\{a(\gamma)\mid\gamma\in R\}$ is an interval of $\ZZ$, so one can have $\dim(U_{i,s})=\dim(U_{i+1,s})$ only if $U_{i,s}=e$).
+
+\numpara{2.1.3}\label{XXVI.2.1.3}
+In the general case, there exists a covering family for the (fpqc) topology, $\{S_j\to S\}$, such that each pair $(G_{S_j},P_{S_j})$ is pinnable (1.14). By the foregoing, one has descent data on the $\operatorname{rad}^{\mathrm u}(P_{S_j})_i$, compatible with the vector structures of the quotients, and one concludes by descent of closed subschemes (resp.~locally free modules).\nde{Cf.~SGA~1, VIII 1.3, 1.9 and 1.10.}
+
+\begin{corollary}{2.2}\label{XXVI.2.2}
+Let $S$ be an affine scheme, $G$ a reductive $S$-group, and $P$ a parabolic subgroup of $G$. One has
+\[
+\mathrm H^1(S,\operatorname{rad}^{\mathrm u}(P))=0,
+\]
+i.e.~every principal homogeneous bundle under $\operatorname{rad}^{\mathrm u}(P)$ is trivial.
+\end{corollary}
+Indeed, $S$ decomposes into a sum of subschemes on each of which $\operatorname{rad}^{\mathrm u}(P)$ has constant relative dimension. One can therefore, by (iii), suppose that there exists an $n$ such that $U_n=e$. Since $\mathrm H^1(S,U_i/U_{i+1})=\mathrm H^1(S,W(\mathcal E_i))=0$ by TDTE~I, B, 1.1 (or SGA~1, XI 5.1), one concludes immediately.
+
+\begin{corollary}{2.3}\label{XXVI.2.3}
+Under the preceding conditions, $P$ possesses a Levi subgroup $L$. If $L$ is a Levi subgroup of $P$, the canonical map
+\[
+\mathrm H^1(S,L)\to\mathrm H^1(S,P)
+\]
+is bijective (cf.~the introduction to Exp.~XXIV for the definition of $\mathrm H^1(S,\ )$).
+\end{corollary}
+The first assertion follows from 2.2 and 1.9. The canonical map $\mathrm H^1(S,L)\to\mathrm H^1(S,P)$ is surjective, since $P$ is the semidirect product $L\cdot\operatorname{rad}^{\mathrm u}(P)$. To prove that it is injective, it suffices to see that, for every principal homogeneous bundle $Q$ under $L$, one has $\mathrm H^1(S,\operatorname{rad}^{\mathrm u}(P)_Q)=0$, where the subscript $Q$ denotes the twisting operation by the $L$-bundle $Q$. This can be proved in two ways: one can repeat the proof of 2.2, using the fact that the vector structures on the $U_i/U_{i+1}$ are invariant under $L$; one can also note that $\operatorname{rad}^{\mathrm u}(P)_Q$ is identified with the unipotent radical of the parabolic subgroup $P_Q$ of $G_Q$, and apply 2.2 to $P_Q$.
+
+% Source PDF p. 10.
+\begin{corollary}{2.4}\label{XXVI.2.4}
+Let $S$ be a semilocal scheme, $G$ a reductive $S$-group, and $P$ a parabolic subgroup of $G$. There exists a maximal torus $T$ of $G$ contained in $P$.
+\end{corollary}
+Indeed, by 2.3, $P$ possesses a Levi subgroup $L$, and it suffices to prove that $L$ possesses a maximal torus, which follows from Exp.~XIV, 3.20.
+
+\begin{corollary}{2.5}\label{XXVI.2.5}
+Let $S$ be an affine scheme, $G$ a reductive $S$-group, and $P$ a parabolic subgroup of $G$. There exists a locally free $\OS$-module $\mathcal E$ such that $\operatorname{rad}^{\mathrm u}(P)$ is isomorphic as an $S$-scheme to $W(\mathcal E)$.
+\end{corollary}
+Indeed, let us prove by induction on $i$ that one has an isomorphism of $S$-schemes
+\[
+\operatorname{rad}^{\mathrm u}(P)/U_i\simeq W(\mathcal E_0\oplus\mathcal E_1\oplus\cdots\oplus\mathcal E_{i-1}).
+\]
+This is clear for $i=0$. Suppose $i>0$; then $\operatorname{rad}^{\mathrm u}(P)/U_i$ is a principal homogeneous bundle with base $\operatorname{rad}^{\mathrm u}(P)/U_{i-1}$, under the group
+\[
+(U_{i-1}/U_i)_{\operatorname{rad}^{\mathrm u}(P)/U_{i-1}}
+\simeq W(\mathcal E_{i-1}\otimes\OO_{\operatorname{rad}^{\mathrm u}(P)/U_{i-1}}).
+\]
+Now the base is affine (for example by the induction hypothesis), so this bundle is trivial (TDTE~I or SGA~1 XI, \loccit), and there exists an isomorphism of $S$-schemes $\operatorname{rad}^{\mathrm u}(P)/U_i\simeq(\operatorname{rad}^{\mathrm u}(P)/U_{i-1})\times_S(U_{i-1}/U_i)$, which completes the proof.
+
+\begin{corollary}{2.6}\label{XXVI.2.6}
+Let $S$ be a semilocal scheme, $\{s_i\}$ the set of its closed points, $G$ a reductive $S$-group, and $P$ a parabolic subgroup of $G$. The canonical map
+\[
+\operatorname{rad}^{\mathrm u}(P)(S)\to\prod_i\operatorname{rad}^{\mathrm u}(P)(\Spec\kappa(s_i))
+\]
+is surjective.
+\end{corollary}
+Indeed, if $S=\Spec(A)$, $\kappa(s_i)=A/\mathfrak p_i$, and if $\mathcal E$ is given by the projective (hence flat) module $E$, we must prove that the map
+\[
+E\to\prod_i E\otimes_A A/\mathfrak p_i
+\]
+is surjective. It suffices to do so when $E=A$, in which case this is well known (cf.~Bourbaki, \textit{Alg.~Comm.} Chap.~II, \S~1, no.~2, proposition~5).
+\begin{corollary}{2.7}\label{XXVI.2.7}
+Let $k$ be an infinite field, $G$ a reductive $k$-group, and $P$ a parabolic subgroup of $G$; then $\operatorname{rad}^{\mathrm u}(P)(k)$ is dense in $\operatorname{rad}^{\mathrm u}(P)$.
+\end{corollary}
+\begin{corollary}{2.8}\label{XXVI.2.8}
+Let $S$ be a semilocal scheme, $\{s_i\}$ the set of its closed points, $G$ a reductive $S$-group, $P$ a parabolic subgroup of $G$, and $L_i$ a Levi subgroup of $P_{s_i}$ for each $i$. There exists a Levi subgroup $L$ of $P$ inducing $L_i$ for each $i$.
+\end{corollary}
+Indeed, let $L_0$ be a Levi subgroup of $P$ (2.3). For each $i$, let $u_i\in\operatorname{rad}^{\mathrm u}(P)(\Spec(\kappa(s_i)))$ be such that $\operatorname{int}(u_i)L_{0,s_i}=L_i$ (1.8); if $u\in\operatorname{rad}^{\mathrm u}(P)(S)$ induces $u_i$ for each $i$ (2.6), then $L=\operatorname{int}(u)L_0$ has the required property.
+
+% Source PDF p. 11.
+\begin{corollary}{2.9}\label{XXVI.2.9}
+In the situation of 2.1, let moreover $H$ be a group subscheme of $G$, smooth and of finite presentation over $S$, with connected fibers, such that $P\cap H$ locally contains a maximal torus of $G$ for the (fpqc) topology. Then, for each $i\ge0$, there exists a submodule $\mathcal F_i$ of $\mathcal E_i$, locally a direct summand, such that the isomorphism $U_i/U_{i+1}\isomto W(\mathcal E_i)$ induces an isomorphism of groups
+\[
+(U_i\cap H)/(U_{i+1}\cap H)\isomto W(\mathcal F_i).
+\]
+\end{corollary}
+Indeed, $H$ is a subgroup of type (R) of $G$ (Exp.~XXII, 5.2.1). Moreover, the assertion to be proved is local for the (fpqc) topology, and one can suppose $G$ split relative to a maximal torus of $P\cap H$; one can even reduce to the situation of 2.1.1, $H$ being defined by a subset $R'$ of $R$. Taking up the notations of \loccit, one sees by Exp.~XXII, 5.6.7~(ii) that $U_i\cap H=\prod_{\alpha\in R_i\cap R'}U_\alpha$, hence that $(U_i\cap H)/(U_{i+1}\cap H)$ is identified with $\prod_{\alpha\in R',\,a(\alpha)=i+1}U_\alpha$, which implies the result.
+\begin{corollary}{2.10}\label{XXVI.2.10}
+In the situation of 2.9, the conclusions of 2.2, 2.5, 2.6, 2.7 are also valid on replacing $\operatorname{rad}^{\mathrm u}(P)$ by $\operatorname{rad}^{\mathrm u}(P)\cap H$.
+\end{corollary}
+\begin{corollary}{2.11}\label{XXVI.2.11}
+\nde{Corollary 2.11, which will be used in 4.5.1 and 6.17, has been added.}Let $G$ be a reductive $S$-group, $P$ a parabolic subgroup, and $H$ a subgroup of type (RC) of $P$ such that $\operatorname{rad}^{\mathrm u}(H)=\operatorname{rad}^{\mathrm u}(P)\cap H$. Then statements 2.2 to 2.8 are also valid on replacing $P$ by $H$.
+\end{corollary}
+
+\sgasection{3}{Scheme of parabolic subgroups of a reductive group}
+\numpara{3.1}\label{XXVI.3.1}
+Let $E$ be a finite twisted constant $S$-scheme (Exp.~X, 5.1). Consider the $S$-functor $\underline{\operatorname{Of}}(E)$, where $\underline{\operatorname{Of}}(E)(S')$ is the set of open and closed subschemes of $E_{S'}$ (or, equivalently, the set of open and closed subsets of $E_{S'}$); then $\underline{\operatorname{Of}}(E)$ is representable by a finite twisted constant $S$-scheme. Indeed, if $E=A_S$, where $A$ is a finite set, one immediately has $\underline{\operatorname{Of}}(E)\simeq\mathscr P(A)_S$ (where $\mathscr P(A)$ denotes the set of subsets of $A$), and one concludes by descent of open and closed subschemes. One evidently has:
+\[
+\underline{\operatorname{Of}}(E_{S'})=\underline{\operatorname{Of}}(E)_{S'},\qquad
+\underline{\operatorname{Of}}(E\times_S E')=\underline{\operatorname{Of}}(E)\times_S\underline{\operatorname{Of}}(E').
+\]
+
+\numpara{3.2}\label{XXVI.3.2}
+Let $S$ be a scheme and $G$ a reductive $S$-group. The functor $\underline{\operatorname{Par}}(G)$ of parabolic subgroups of $G$ is defined by
+\[
+\underline{\operatorname{Par}}(G)(S')=\text{set of parabolic subgroups of }G_{S'}.
+\]
+In particular $G\in\underline{\operatorname{Par}}(G)(S)$, $\underline{\operatorname{Bor}}(G)\subset\underline{\operatorname{Par}}(G)$. We propose to define a morphism
+\[
+t:\underline{\operatorname{Par}}(G)\to\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))
+\]
+possessing the following properties:
+\begin{enumeratei}
+\item $t$ is functorial in $G$ (with respect to isomorphisms) and commutes with extension of the base.
+% Source PDF p. 12.
+\item If $(T,M,R,\Delta,\ldots)$ is a pinning of $G$ adapted to the parabolic subgroup $P$ (1.11), the canonical isomorphism $\underline{\operatorname{Dyn}}(G)\simeq\Delta_S$ (Exp.~XXIV, 3.4~(iii)) transforms $t(P)$ into $\Delta(P)_S$ (notations of 1.11, 1.12).
+\end{enumeratei}
+First let $P$ be a parabolic subgroup of $G$, and $(T,M,R,\Delta,\ldots)$ a pinning of $G$ adapted to $P$. One defines $t(P)$ by (ii); the subscheme $t(P)$ of $\underline{\operatorname{Dyn}}(G)$ thus constructed is independent of the pinning chosen. Indeed, if $(T',M',R',\Delta',\ldots)$ is another pinning of $G$ adapted to $P$, the unique inner automorphism of $G$ transforming the first pinning into the second comes from $P$ (1.15); the canonical isomorphism $\Delta\isomto\Delta'$ therefore transforms $\Delta(P)$ into $\Delta'(P)$, which implies the stated result.
+
+If one now no longer necessarily supposes $(G,P)$ pinnable, it follows immediately from 1.14 and from the definition of $\underline{\operatorname{Dyn}}(G)$ (Exp.~XXIV, 3.3) that one can define by descent a unique open and closed subscheme $t(P)$ of $\underline{\operatorname{Dyn}}(G)$ such that, for every $S'\to S$ such that $(G,P)_{S'}$ is pinnable, one has $t(P)_{S'}=t(P_{S'})$.
+\begin{theorem}{3.3}\label{XXVI.3.3}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and
+\[
+t:\underline{\operatorname{Par}}(G)\to\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))
+\]
+the morphism defined above.
+\begin{enumeratei}
+\item In order that two parabolic subgroups $P$ and $P'$ of $G$ be locally conjugate for the (fpqc) topology (cf.~1.3), it is necessary and sufficient that $t(P)=t(P')$.
+\item $\underline{\operatorname{Par}}(G)$ is representable, and the morphism $t$ is smooth, projective, with integral geometric fibers.
+\end{enumeratei}
+\end{theorem}
+By 3.2~(i), and the fact that the inner automorphisms of $G$ act trivially on $\underline{\operatorname{Dyn}}(G)$ (Exp.~XXIV, 3.4~(iv)), one indeed has $t(P)=t(P')$ when $P$ and $P'$ are conjugate. Conversely, let $P$ and $P'$ be two parabolic subgroups of $G$ such that $t(P)=t(P')$; let us prove that $P$ and $P'$ are conjugate in $G$, locally for the (fpqc) topology. One can first suppose the pairs $(G,P)$ and $(G,P')$ pinnable (1.14); by conjugacy of pinnings in $G$ (Exp.~XXIV, 1.5), one can suppose that there exists a pinning $(T,M,R,\Delta)$ of $G$ adapted to $P$ and $P'$. Then $t(P)=t(P')$ implies $\Delta(P)=\Delta(P')$, hence $P=P'$ (cf.~1.4~(v)). We have therefore proved (i). To prove (ii), let us take up the notations of Exp.~XXII, 5.11.5.\nde{Recall (cf.~\loccit) that $\mathscr H_c=\mathscr H_c(G)$ denotes the functor of subgroups of $G$ of type (RC), $C\ell_c=C\ell_c(G)$ the functor of ``conjugacy classes'' of such subgroups, and that $c\ell:\mathscr H_c\to C\ell_c$ is the canonical projection.}
+
+One has a canonical morphism $\underline{\operatorname{Par}}(G)\to\mathscr H_c$, and it is clear (for example by reduction to the pinned case) that it fits into a cartesian square (where the vertical arrows are monomorphisms)
+\[
+\xymatrix@C=40pt@R=22pt{
+\underline{\operatorname{Par}}(G)\ar[r]^t\ar@{^{(}->}[d]&\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))\ar@{^{(}->}[d]\\
+\mathscr H_c\ar[r]_{c\ell}&C\ell_c.
+}
+\]

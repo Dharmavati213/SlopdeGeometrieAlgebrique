@@ -1,0 +1,370 @@
+On the one hand, by~1.2.4, \(f\) defines an element \(a\) of
+\(C^{1}(Y_0,L_{0X})\) such that \(f(y)=a(y_0)y\), for every
+\(y\in Y(S')\), \(S'\to S\), and by~4.27~(i), one has
+\[
+d^{1}(a)=d(Y,Y').
+\]
+Moreover, as \(Y,Y'\) are subgroups of \(X\), the above element belongs to
+\(Z^{1}(Y_0,N_0)\) (\cf~4.21). Then \(\partial a\) is an element of
+\(Z^{2}(Y_0,L_{0Y})\) whose image \(\partial a\) in \(H^{2}(Y_0,L_{0Y})\)
+depends only on the class \(d(Y,Y')\in H^{1}(Y_0,N_0)\); this being the
+definition of the boundary map
+\(\partial^{1}\colon H^{1}(Y_0,N_0)\to H^{2}(Y_0,L_{0Y})\), one therefore
+has:
+\[
+\partial^{1}\bigl(d(Y,Y')\bigr)=\partial a.
+\]
+
+On the other hand, let us transport by \(f\) the group structure of
+\(Y'\) and let \(Y_1\) be the group obtained (which therefore has \(Y\) as
+underlying scheme), that is, the group law \(\mu_1\) of \(Y_1\) is defined
+by: for every \(S'\to S\) and \(x,y\in Y(S')\),
+\[
+\mu_1(x,y)=f^{-1}\bigl(f(x)f(y)\bigr).
+\]
+By~3.5.1, \(Y_1\) defines a cocycle
+\(\delta(Y,Y_1)\in Z^{2}\bigl(Y_0,\mathcal{L}\mathrm{ie}(Y_0/S_0)\bigr)\)
+such that, for every \(S'\to S\) and \(x,y\in Y(S')\), one has
+\[
+\delta(Y,Y_1)(x_0,y_0)\,xy=\mu_1(x,y)=f^{-1}\bigl(f(x)f(y)\bigr).
+\]
+Let us set \(b=\delta(Y,Y_1)\). For every \(S'\to S\) and
+\(x,y\in Y(S')\), one has \((b(x_0,y_0)\,xy)_0=x_0y_0\), and hence one
+obtains that \(f(b(x_0,y_0)\,xy)\) equals, on the one hand,
+% typo?: kept as printed (\(b(x_0 y_0)\), without a comma)
+\(a(x_0y_0)\,b(x_0y_0)\,xy\) and, on the other hand,
+\[
+f(x)f(y)=a(x_0)\,x\,a(y_0)\,y=a(x_0)\,\Ad(x_0)\bigl(a(y_0)\bigr)\,xy.
+\]
+Comparing the two expressions, one obtains that \(b(x_0,y_0)\) equals
+\begin{align*}
+a(x_0y_0)^{-1}a(x_0)\,\Ad(x_0)\bigl(a(y_0)\bigr)
+&=\Ad(x_0)\bigl(a(y_0)\bigr)-a(x_0y_0)+a(x_0)\\
+&=(\partial a)(x_0,y_0),
+\end{align*}
+\ie \(\delta(Y,Y_1)=\partial a\). One has therefore obtained the
+
+\begin{proposition}{4.35.1}
+\label{III.4.35.1}
+\textsuperscript{(132)}
+Under the hypotheses of~4.21, suppose in addition that \(S_0\) is affine
+and that \(Y_{\mathcal{J}}\) is smooth over \(S_{\mathcal{J}}\) and
+affine. Let \(Y,Y'\) be two subgroups of \(X\) lifting \(Y_{\mathcal{J}}\)
+and flat (hence smooth) over \(S\), let \(f\colon Y\isomto Y'\) be an
+isomorphism of \(S\)-schemes inducing the identity on \(Y_{\mathcal{J}}\),
+and denote by \(Y_1\) the group obtained by transporting by \(f\) the group
+structure of \(Y'\). Then one has
+\[
+\partial^{1}d(Y,Y')=\delta(Y,Y_1).
+\]
+\end{proposition}
+
+\begin{proposition}{4.36}
+\label{III.4.36}
+Under the hypotheses of~4.21, suppose in addition that \(Y_{\mathcal{J}}\)
+is smooth over \(S_{\mathcal{J}}\) and that \(S_0\) is affine. The set of
+\(S\)-subgroups \(Y\) of \(X\) flat (or smooth) over \(S\), reducing to
+\(Y_{\mathcal{J}}\), modulo conjugation by sections of \(X\) over \(S\)
+inducing the unit section of \(X_{\mathcal{J}}\), is either empty or a
+principal homogeneous set under the group
+\[
+H^{1}\bigl(Y_0,
+\bigl[\mathcal{L}\mathrm{ie}(X_0/S_0)/\mathcal{L}\mathrm{ie}(Y_0/S_0)\bigr]
+\otimes_{\OO_{S_0}}\mathcal{J}\bigr).
+\]
+\end{proposition}
+
+It is enough for us to check that Corollary~4.29 applies, that is, that
+\[
+d^{0}\colon\Hom_{\OO_{S_0}}(\omega^{1}_{X_0/S_0},\mathcal{J})
+\longrightarrow
+\Hom_{\OO_{S_0}}(\mathfrak{n}_{Y_0/X_0},\mathcal{J})
+\]
+is surjective. Now this follows from the fact that the sequence~\((+)\)
+of~4.25~(ii) is split, \(S_0\) being
+affine.{\renewcommand{\thefootnote}{(133)}\nde{This also follows from the
+proof of~4.32.}}
+
+Let us finally state a corollary common to~4.21 and~4.36, which will, in
+fact, be the only form in which we shall use in the sequel the general
+results of this
+number.{\renewcommand{\thefootnote}{(134)}\nde{For example, 4.37 is used
+in Exposé~IX to prove the statements 3.2~bis and 3.6~bis.}}
+
+\begin{corollary}{4.37}
+\label{III.4.37}
+Let \(S\) be a scheme and \(S_0\) the closed subscheme defined by a
+nilpotent ideal \(\mathcal{I}\). Let \(X\) be an \(S\)-group smooth over
+\(S\), and \(Y_0\) an \(S_0\)-subgroup of \(X_0\), flat over \(S_0\).
+\begin{enumeratei}
+\item If \(S_0\) is affine, \(Y_0\) is smooth over \(S_0\), and if
+\[
+H^{1}\Bigl(Y_0,
+\bigl[\mathcal{L}\mathrm{ie}(X_0/S_0)/\mathcal{L}\mathrm{ie}(Y_0/S_0)\bigr]
+\otimes_{\OO_{S_0}}\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\Bigr)=0
+\]
+for every \(n\geqslant 0\), two \(S\)-subgroups of \(X\), flat (or smooth)
+over \(S\), reducing to \(Y_0\), are conjugate by a section of \(X\) over
+\(S\) inducing the unit section of \(X_0\).
+\item If \(Y_0\) is affine and of finite presentation and
+if{\renewcommand{\thefootnote}{(135)}\nde{One has replaced
+\(\mathcal{H}\mathrm{om}_{\OO_{S_0}}(\mathfrak{n}_{Y_0/X_0},
+\mathcal{I}^{n+1}/\mathcal{I}^{n+2})\) by
+\(\mathfrak{n}^{\vee}_{Y_0/X_0}\otimes_{\OO_{S_0}}
+\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\), in accordance with Remark~4.22.}}
+\[
+H^{2}\bigl(Y_0,\mathfrak{n}^{\vee}_{Y_0/X_0}\otimes_{\OO_{S_0}}
+\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\bigr)=0
+\]
+for every \(n\geqslant 0\), there exists an \(S\)-subgroup of \(X\), flat
+over \(S\), reducing to \(Y_0\).
+\end{enumeratei}
+\end{corollary}
+
+\numpara{4.38}
+\label{III.4.38}
+It remains for us to relate the three constructions that we have made in
+this exposé. In order to avoid inessential complications, we shall place
+ourselves in the following situation: \(S_0\) is the spectrum of a field
+\(k\), \(S\) is the spectrum of the dual numbers \(D(k)\), \(G\) is an
+\(S\)-group smooth over \(S\), and \(K\) an \(S\)-subgroup, \emph{smooth}
+over \(S\) and \emph{affine}.
+{\renewcommand{\thefootnote}{(136)}\nde{One has slightly modified the
+original in what follows. In particular, one has replaced \(X\) by \(G\)
+and \(Y\) by \(K\), and one has denoted by \(\mathfrak{g}_0\) and
+\(\mathfrak{k}_0\) their Lie algebras. On the other hand, one has written
+explicitly \(H^{i}(K_0,\ )\) in place of the abbreviation \(H^{i}(\ )\) of
+the original.}}
+Let us denote \(\mathfrak{g}_0=\mathcal{L}\mathrm{ie}\,G_0\) (which here
+equals \(\Gamma(S_0,\mathcal{L}\mathrm{ie}\,G_0)
+=\Lie(G_0/S_0)(S_0)\)) and \(\mathfrak{k}_0=\mathcal{L}\mathrm{ie}\,K_0\).
+One has an exact sequence of \(k\)-vector
+spaces{\renewcommand{\thefootnote}{(137)}\nde{Equipped with the adjoint
+action of \(K_0\).}}:
+\[
+0\longrightarrow\mathfrak{k}_0\xrightarrow{i}\mathfrak{g}_0
+\xrightarrow{d}\mathfrak{n}^{\vee}_{K_0/G_0}\longrightarrow 0,
+\]
+giving rise to an exact cohomology sequence:
+\begin{multline*}
+0\longrightarrow H^{0}(K_0,\mathfrak{k}_0)
+\xrightarrow{i^{0}}H^{0}(K_0,\mathfrak{g}_0)
+\xrightarrow{d^{0}}H^{0}(K_0,\mathfrak{g}_0/\mathfrak{k}_0)\\
+\xrightarrow{\partial^{0}}H^{1}(K_0,\mathfrak{k}_0)
+\xrightarrow{i^{1}}H^{1}(K_0,\mathfrak{g}_0)
+\xrightarrow{d^{1}}H^{1}(K_0,\mathfrak{n}^{\vee}_{K_0/G_0})
+\xrightarrow{\partial^{1}}H^{2}(K_0,\mathfrak{k}_0).
+\end{multline*}
+
+Now these various groups all have a geometric meaning.
+
+\noindent\textbf{a)}
+\(H^{0}(K_0,\mathfrak{k}_0)
+=\mathcal{L}\mathrm{ie}\,\Centr(K_0)\)%
+{\renewcommand{\thefootnote}{(138)}\nde{As the formation of centralizers
+and normalizers commutes with base change (\cf~I~2.3.3.1), one has written
+\(\Centr(K_0)\) in place of \(\Centr(K)_0\) in the original, and likewise
+\(\Centr_{G_0}(K_0)\) and \(\Norm_{G_0}(K_0)\) in place of
+\(\Centr_{G}(K)_0\) and \(\Norm_{G}(K)_0\).}}
+by~II~5.2.3.
+
+\noindent\textbf{b)}
+\(H^{0}(K_0,\mathfrak{g}_0)
+=\mathcal{L}\mathrm{ie}\,\Centr_{G_0}(K_0)\)%
+\textsuperscript{(138)}
+(\emph{idem}).
+
+\noindent\textbf{c)}
+\(H^{0}(K_0,\mathfrak{g}_0/\mathfrak{k}_0)
+=\mathcal{L}\mathrm{ie}\,\Norm_{G_0}(K_0)/\mathfrak{k}_0\)%
+\textsuperscript{(138)}
+(\emph{idem}).
+
+\noindent\textbf{d)}
+\(H^{1}(K_0,\mathfrak{k}_0)
+=\mathcal{L}\mathrm{ie}\bigl(\Aut_{S_0\text{-gr.}}(K_0)\bigr)
+/\Im(\mathfrak{k}_0)\),
+where \(\Im(\mathfrak{k}_0)\) denotes the image of \(\mathfrak{k}_0\) under
+the morphism \(\mathcal{L}\mathrm{ie}(\Int_0)\) deduced from
+\(\Int_0\colon K_0\to\Aut_{S_0\text{-gr.}}(K_0)\). Indeed, it follows
+from~2.1~(ii), applied to \(Y=X=K\) and \(f_0=\mathrm{id}_{K_0}\), that
+\(Z^{1}(K_0,\mathfrak{k}_0)\) is the group of infinitesimal automorphisms of
+the \(S_0\)-group \(K_0\), and that \(H^{1}(K_0,\mathfrak{k}_0)\) is
+obtained by quotienting by the inner infinitesimal automorphisms, \ie by
+the image of \(\mathfrak{k}_0\). Moreover, by~II~4.2.2, one also has
+\(Z^{1}(K_0,\mathfrak{k}_0)
+=\mathcal{L}\mathrm{ie}\bigl(\Aut_{S_0\text{-gr.}}(K_0)\bigr)\).%
+{\renewcommand{\thefootnote}{(139)}\nde{And this is the Lie algebra
+\(\text{Dér}_{k}(\mathfrak{k}_0)\) of the derivations of
+\(\mathfrak{k}_0\), so \(H^{1}(K_0,\mathfrak{k}_0)\) is the quotient of
+\(\text{Dér}_{k}(\mathfrak{k}_0)\) by the inner derivations
+(\ie by the image of
+\(\ad\colon\mathfrak{k}_0\to\text{Dér}_{k}(\mathfrak{k}_0)\)).}}
+
+\noindent\textbf{e)}
+\(H^{1}(K_0,\mathfrak{g}_0)\) is, by~2.1~(ii), the group of deviations
+between homomorphisms \(K\to G\) extending the canonical immersion
+\(i_0\colon K_0\to G_0\), modulo the deviations obtained by the action of
+the inner automorphisms of \(G\) defined by elements of \(G(S)\) giving the
+unit of \(G(S_0)\) (that is, elements of \(\mathfrak{g}_0\)).
+
+\noindent\textbf{f)}
+\(H^{1}(K_0,\mathfrak{n}^{\vee}_{K_0/G_0})\) is, by~4.36, the group of
+deviations between subgroups \(K'\) of \(G\) extending \(K_0\) and flat over
+\(S\) (hence \emph{smooth} over \(S\), \cf~SGA~1, II~4.10), modulo the
+deviations obtained by the action of the inner automorphisms of \(G\)
+constructed as previously.
+
+\noindent\textbf{g)}
+\(H^{2}(K_0,\mathfrak{k}_0)\) is, by~3.5~(ii), the group of deviations
+between group structures on \(K\) extending that of \(K_0\), modulo the
+\(S\)-automorphisms of \(K\) inducing the identity on \(K_0\).
+
+We now propose to show how one can make explicit the six morphisms of the
+preceding exact sequence in the geometric interpretation which we have just
+given.
+
+\noindent\textbf{1)}
+\(i^{0}\) and \(d^{0}\) are none other than the morphisms obtained by
+passage to the Lie algebra (then by passage to the quotient, for
+\(d^{0}\)), starting from the canonical monomorphisms:
+\[
+\Centr(K_0)\longrightarrow\Centr_{G_0}(K_0)
+\longrightarrow\Norm_{G_0}(K_0).
+\]
+This is indeed what follows immediately from the definition of the
+identifications~(a), (b), and~(c).
+
+\noindent\textbf{2)}
+One constructs \(\partial^{0}\) as follows. Let
+\(x\in\mathcal{L}\mathrm{ie}\,\Norm_{G_0}(K_0)/\mathfrak{k}_0\). Let us
+lift it to an
+\(x\in\mathcal{L}\mathrm{ie}\,\Norm_{G_0}(K_0)\subset\Norm_{G}(K)(S)\).
+Then \(\Int(x)\) defines an automorphism of \(K\) inducing the identity on
+\(K_0\), hence an element of
+\(\mathcal{L}\mathrm{ie}\,\Aut_{S_0\text{-gr.}}(K_0)\). Denote by
+\(\Int(x)\) the image of this element in
+\(\mathcal{L}\mathrm{ie}\,\Aut_{S_0\text{-gr.}}(K_0)/\Im(\mathfrak{k}_0)\).
+Then one has:
+\[
+\text{(*)}\qquad
+\partial^{0}(x)=-\Int(x)=\Int(x^{-1}).
+\]
+Indeed, let us compute the element of
+\(\mathcal{L}\mathrm{ie}\,\Aut_{S_0\text{-gr.}}(K_0)\) defined by
+\(\Int(x)\). By definition it will correspond to an element \(a\) of
+\(Z^{1}(K_0,\mathfrak{k}_0)\) such that
+\[
+xyx^{-1}=a(y_0)\,y,
+\qquad\text{for every}\quad y\in K(S'),\ S'\longrightarrow S.
+\]
+But this may also be written
+\(a(y_0)=xyx^{-1}y^{-1}=x-\Ad(y)x=-\partial(x)(y_0)\), whence
+\(a=-\partial(x)\).
+
+{\renewcommand{\thefootnote}{(140)}\nde{One has added the following
+sentence.}}
+On the other hand, the image of
+\(x\in\mathcal{L}\mathrm{ie}\,\Norm_{G_0}(K_0)\subset\mathfrak{g}_0\) under
+\(\partial\) is an element of \(Z^{1}(K_0,\mathfrak{k}_0)\), whose image
+\(\partial(x)\) in \(H^{1}(K_0,\mathfrak{k}_0)\) depends only on \(x\), and
+by definition of the boundary map \(\partial^{0}\), one has
+\[
+\partial^{0}(x)=\partial(x);
+\]
+combined with the equality \(a=-\partial(x)\), this proves~\((*)\).
+
+\noindent\textbf{3)}
+{\renewcommand{\thefootnote}{(141)}\nde{One has set out the original in
+more detail in what follows, and in~\((**)\) one has corrected \(u\circ i\)
+to \(i\circ u\).}}
+Denote by \(i\colon K\to G\) the canonical immersion. Let \(u\) be an
+element of \(H^{1}(K_0,\mathfrak{k}_0)\), the image of an
+\[
+u\in\mathcal{L}\mathrm{ie}\,\Aut_{S_0\text{-gr.}}(K_0)
+\subset\Aut_{S\text{-gr.}}(K).
+\]
+Then one has:
+\[
+\text{(**)}\qquad i^{1}(u)=d(i,i\circ u),
+\]
+where \(d(i,i\circ u)\) is the class defined in~2.1.1.
+
+Indeed, \(u\) is the image of an element \(v\in Z^{1}(K_0,\mathfrak{k}_0)\)
+such that \(u(y)=v(y_0)y\), and \(i^{1}(u)\) is the image in
+\(H^{1}(K_0,\mathfrak{g}_0)\) of the cocycle
+% typo: cocyle -> cocycle
+\(i\circ v\in Z^{1}(K_0,\mathfrak{g}_0)\).
+
+Now, as \(i\) is a morphism of groups, the equality \(u(y)=v(y_0)y\)
+implies \(iu(y)=iv(y_0)\,i(y)\). It follows that
+\(i\circ v=d(i,i\circ u)\), whence~\((**)\).
+
+\noindent\textbf{4)}\
+Let \(i'\colon K\to G\) be a morphism of groups lifting \(i_0\), let
+\(d(i,i')\) be the class defined in~2.1.1, and let
+% typo?: kept as printed (\(\mathfrak{n}_{K_0/X_0}\), not \(\mathfrak{n}^{\vee}_{K_0/G_0}\))
+\(d\bigl(K,i'(K)\bigr)\in C^{1}(K_0,\mathfrak{n}_{K_0/X_0})\) be the
+deviation defined in~4.5.1; by~4.21, \(d\bigl(K,i'(K)\bigr)\) belongs to
+\(Z^{1}(K_0,\mathfrak{n}_{K_0/X_0})\). Denote by \(d\bigl(K,i'(K)\bigr)\)
+its image in \(H^{1}(K_0,\mathfrak{n}_{K_0/X_0})\). Then, by~4.27~(i), one
+has:
+\[
+(\dagger)\qquad
+d^{1}\bigl(d(i,i')\bigr)=d\bigl(K,i'(K)\bigr).
+\]
+
+\noindent\textbf{5)}\
+Finally, let \(K'\) be a subgroup of \(G\) lifting \(K_0\) and flat, hence
+\emph{smooth}, over \(S\). One has supposed that \(K_0\) is \emph{affine}.
+Then one knows that \(K\) and \(K'\) are isomorphic as schemes extending
+\(K_0\) (\cf~0.15), hence that there exists an isomorphism of \(S\)-schemes
+\[
+f\colon K\isomto K'
+\]
+inducing the identity on \(K_0\). Let us transport by \(f\) the group
+structure of \(K'\) and let \(K_1\) be the group obtained (which therefore
+has \(K\) as underlying scheme), that is, the group law \(\mu_1\) of
+\(K_1\) is defined by: for every \(S'\to S\) and \(x,y\in K(S')\),
+\[
+\mu_1(x,y)=f^{-1}\bigl(f(x)f(y)\bigr).
+\]
+{\renewcommand{\thefootnote}{(142)}\nde{One has modified the original in
+what follows, taking into account the additions made in~3.5.1 and~4.35.1.}}
+By~3.5.1, \(K_1\) defines a cocycle
+\(\delta(K,K_1)\in Z^{2}(K_0,\mathfrak{k}_0)\) such that, for every
+\(S'\to S\) and \(x,y\in K(S')\), one has
+\[
+\delta(K,K_1)(x_0,y_0)\,xy=\mu_1(x,y)=f^{-1}\bigl(f(x)f(y)\bigr).
+\]
+Then, by~4.35.1, one has:
+\[
+(\ddagger)\qquad
+\partial^{1}d(K,K')=\delta(K,K_1).
+\]
+
+% Printed as a heading, not as a new chapter.
+\makeatletter
+\renewcommand{\@bibtitlestyle}{%
+  \par\addvspace{1.1\baselineskip}%
+  \noindent{\large\bfseries Bibliography}%
+  {\renewcommand{\thefootnote}{(143)}\nde{: additional references cited in this Exposé.}}%
+  \par\addvspace{0.45\baselineskip}%
+}
+\makeatother
+\begin{thebibliography}{DG70}
+
+\bibitem[BAlg]{BAlg}
+N.~Bourbaki, \emph{Algèbre}, Chap.~I--III, Hermann, 1970.
+
+\bibitem[BAC]{BAC}
+N.~Bourbaki, \emph{Algèbre commutative}, Chap.~I--IV, Masson, 1985.
+
+\bibitem[DG70]{DG70}
+M.~Demazure, P.~Gabriel, \emph{Groupes algébriques}, Masson \&
+North-Holland, 1970.
+
+\bibitem[Fr64]{Fr64}
+P.~Freyd, \emph{Abelian categories}, Harper and Row, 1964.
+
+\end{thebibliography}

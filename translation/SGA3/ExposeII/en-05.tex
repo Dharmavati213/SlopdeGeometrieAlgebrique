@@ -1,0 +1,933 @@
+Likewise, one lets \(G\) act on the right on
+\(\End_{I_{S}(\mathcal{M})/S}(G_{I_{S}(\mathcal{M})})\) as follows: for every
+\(S'\to S\), \(x\in G(S')\) and
+\(u\in\End_{I_{S}(\mathcal{M})/S}(G_{I_{S}(\mathcal{M})})(S')
+=\End_{I_{S'}(\mathcal{M})}(G_{I_{S'}(\mathcal{M})})\),
+\[
+(u\cdot x)(g)=u(g\cdot x^{-1})\cdot x,
+\]
+for every \(g\in G(S'')\), \(S''\to I_{S'}(\mathcal{M})\). Then the morphism
+of~3.12.1
+\[
+\Hom_{G/S}\bigl(G,T_{G/S}(\mathcal{M})\bigr)
+\longrightarrow
+\End_{I_{S}(\mathcal{M})/S}\bigl(G_{I_{S}(\mathcal{M})}\bigr)
+\]
+respects the operations of \(G\) and therefore induces, for every \(S'\to S\),
+a bijection between \(\Gamma(T_{G_{S'}/S'}(\mathcal{M})/G_{S'})\) and the set of
+\(I_{S'}(\mathcal{M})\)-endomorphisms \(u\) of \(G_{I_{S'}(\mathcal{M})}\) which
+induce the identity on \(G\) and which ``commute with the right
+translations'', \ie which satisfy \(u_{S''}\cdot x=u_{S''}\) for every
+\(S''\to S'\) and \(x\in G(S'')\). One therefore obtains:
+
+\begin{proposition}{4.1.3}\label{II.4.1.3}
+\((*)\) There exists a bijection, functorial in \(G\), between the set
+\[
+\Lie(G/S,\mathcal{M})(S)
+\]
+and the set of
+\(I_{S}(\mathcal{M})\)-endomorphisms of \(G_{I_{S}(\mathcal{M})}\) inducing the
+identity on \(G\) and commuting with the right translations of \(G\) (in the
+sense indicated above).
+\end{proposition}
+
+Now taking~3.13 into account:
+
+\begin{theorem}{4.1.4}\label{II.4.1.4}
+\((*)\) Let \(G\) be an \(S\)-group functor; suppose that \(G/S\) satisfies~(E).
+Then the group \(\Lie(G/S,\mathcal{M})(S)\) is identified, functorially in
+\(G\), with the group of \(I_{S}(\mathcal{M})\)-automorphisms of
+\(G_{I_{S}(\mathcal{M})}\) inducing the identity on \(G\) and commuting with
+the right translations of \(G\) (in the sense indicated above).
+\end{theorem}
+
+One thus recovers (in the case \(\mathcal{M}=\mathbf{O}_{S}\)) one of the
+classical definitions of the Lie algebra of a group.
+
+\numpara{4.2.0}\label{II.4.2.0}%
+{\renewcommand{\thefootnote}{(54)}\nde{One has added paragraph~4.2.0, whose
+results are used implicitly in~4.2 and~4.7 of the original.}}
+Before going further, let us establish new corollaries to~3.11. Let \(X\),
+\(Y\) be over \(Z\), and \(Z\) over \(S\), as in section~1. As one saw
+in~3.11, the isomorphisms~1.1~(4):
+\[
+(1)\qquad
+\resizebox{0.9\linewidth}{!}{\(\vcenter{\xymatrix@C=3.5em@R=2.4em{
+\Hom_{S}\bigl(I_{S}(\mathcal{M}),\Hom_{Z/S}(X,Y)\bigr)
+  \ar[rr]^{\sim}
+  \ar[dr]_{\simeq}
+&&
+\Hom_{Z/S}\bigl(X,\Hom_{Z}(I_{Z}(\mathcal{M}),Y)\bigr)
+  \ar[dl]^{\simeq}
+\\
+&
+\Hom_{Z/S}\bigl(X\times_{S}I_{S}(\mathcal{M}),Y\bigr)
+}}\)}
+\]
+induce the isomorphism \(\theta\) below
+\[
+(2)\qquad
+\resizebox{0.9\linewidth}{!}{\(\vcenter{\xymatrix@C=3.5em@R=2.4em{
+T_{\Hom_{Z/S}(X,Y)}(\mathcal{M})
+  \ar[rr]^{\theta}_{\sim}
+  \ar[dr]_{\simeq}
+&&
+\Hom_{Z/S}\bigl(X,T_{Y/Z}(\mathcal{M})\bigr)
+  \ar[dl]^{\simeq}
+\\
+&
+\Hom_{Z/S}\bigl(X\times_{S}I_{S}(\mathcal{M}),Y\bigr)
+.}}\)}
+\]
+
+By~1.3, if \(Y\) is a \(Z\)-group, the same is true of \(\Hom_{Z}(V,Y)\) for
+every \(V\to Z\) (in particular for \(V=I_{Z}(\mathcal{M})\)); explicitly, if
+\(Z''\to Z'\to Z\) and \(\varphi,\psi\in\Hom_{Z}(V_{Z'},Y)\), then
+\(\varphi\cdot\psi\) is defined by \((\varphi\cdot\psi)(v)=\varphi(v)\psi(v)\),
+for every \(v\in V_{Z'}(Z'')\).
+
+Suppose now that \(X\) and \(Y\) are \(Z\)-groups, and let us set the following
+definition.
+
+\begin{definition}{4.2.0.1}\label{II.4.2.0.1}
+Let \(\Hom_{(Z/S)\text{-gr.}}(X,Y)\) be the subfunctor of
+\(\Hom_{Z/S}(X,Y)\) defined by: for every \(S'\to S\),
+\begin{equation}
+\tag{3}
+\Hom_{(Z/S)\text{-gr.}}(X,Y)(S')
+=
+\Hom_{Z_{S'}\text{-gr.}}(X_{S'},Y_{S'}).
+\end{equation}
+This definition applies equally when one replaces \(Y\) by the \(Z\)-group
+\(T_{Y/Z}(\mathcal{M})\).
+\end{definition}
+
+One then sees easily that
+\(T_{\Hom_{(Z/S)\text{-gr.}}(X,Y)}(\mathcal{M})(S')\) corresponds, in the
+preceding isomorphisms~(2), to the \(Z_{S'}\)-morphisms
+\[
+\varphi\colon X_{S'}\times_{S'}I_{S'}(\mathcal{M})\longrightarrow Y_{S'}
+\]
+which are ``multiplicative in \(X\)'', \ie which satisfy
+\(\varphi(x_{1}x_{2},m)=\varphi(x_{1},m)\varphi(x_{2},m)\), and that these
+correspond to the morphisms of \(Z_{S'}\)-groups
+\(X_{S'}\to T_{Y/Z}(\mathcal{M})_{S'}\). One has thus obtained:
+
+\begin{proposition}{4.2.0.2}\label{II.4.2.0.2}
+Let \(X\), \(Y\) be \(Z\)-groups, with \(Z\) over \(S\). One has isomorphisms
+of \(S\)-functors, functorial in \(\mathcal{M}\):
+\[
+T_{\Hom_{(Z/S)\text{-gr.}}(X,Y)}(\mathcal{M})
+\isomto
+\Hom_{(Z/S)\text{-gr.}}\bigl(X,T_{Y/Z}(\mathcal{M})\bigr).
+\]
+\end{proposition}
+
+In particular, for \(Z=S\), one obtains the following corollary. Before
+stating it, let us remark that if \(Y\) is a commutative \(S\)-group, the
+same is true of \(T_{Y/S}(\mathcal{M})\), then of
+\(H=\Hom_{S\text{-gr.}}(X,Y)\) and
+\(\Hom_{S\text{-gr.}}(X,T_{Y/S}(\mathcal{M}))\), and finally of
+\(T_{H/S}(\mathcal{M})\).
+
+\begin{corollary}{4.2.0.3}\label{II.4.2.0.3}
+Let \(X\), \(Y\) be \(S\)-groups. One has isomorphisms of \(S\)-functors,
+functorial in \(\mathcal{M}\):
+\[
+T_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})
+\isomto
+\Hom_{S\text{-gr.}}\bigl(X,T_{Y/S}(\mathcal{M})\bigr).
+\]
+If \(Y\) is commutative, these are moreover isomorphisms of abelian
+\(S\)-groups.
+\end{corollary}
+
+\begin{definition}{4.2.0.4}\label{II.4.2.0.4}
+{\renewcommand{\thefootnote}{(55)}\nde{One has inserted here this
+definition, which in the original appeared in~4.3.}}
+If \(Y\) is an \(\mathbf{O}_{S}\)-module, the functor
+\(T_{Y/S}(\mathcal{M})\) (\resp \(\Lie(Y/S,\mathcal{M})\)) is equipped with an
+\(\mathbf{O}_{S}\)-module structure deduced from that of \(Y\). Equipped
+with this structure, one will denote it by \(T'_{Y/S}(\mathcal{M})\)
+(\resp \(\Lie'(Y/S,\mathcal{M})\)).
+\end{definition}
+
+Consequently, if \(X\), \(Y\) are \(\mathbf{O}_{S}\)-modules, then
+\(T'_{Y/S}(\mathcal{M})=\Hom_{S}(I_{S}(\mathcal{M}),Y)\) and
+\(H=\Hom_{\mathbf{O}_{S}\text{-mod.}}(X,Y)\), and then
+\(\Hom_{\mathbf{O}_{S}\text{-mod.}}(X,T'_{Y/S}(\mathcal{M}))\) and
+\(T'_{H/S}(\mathcal{M})\), are equipped with an \(\mathbf{O}_{S}\)-module
+structure, and one obtains the following:
+
+\begin{corollary}{4.2.0.5}\label{II.4.2.0.5}
+If \(X\), \(Y\) are \(\mathbf{O}_{S}\)-modules, one has isomorphisms of
+\(\mathbf{O}_{S}\)-modules, functorial in \(\mathcal{M}\):
+\[
+T'_{\Hom_{\mathbf{O}_{S}\text{-mod.}}(X,Y)/S}(\mathcal{M})
+\isomto
+\Hom_{\mathbf{O}_{S}\text{-mod.}}\bigl(X,T'_{Y/S}(\mathcal{M})\bigr).
+\]
+\end{corollary}
+
+\begin{definition}{4.2.A}\label{II.4.2.A}
+{\renewcommand{\thefootnote}{(56)}\nde{One has expanded the original in what
+follows; in particular, one has added definition~4.2.A and
+remark~4.2.B.}}
+Let \(X\), \(L\) be \(S\)-groups, with \(X\) operating on \(L\) by group
+automorphisms (\cf I~2.3.5). One defines the subfunctor \(Z^{1}_{S}(X,L)\)
+of \(\Hom_{S}(X,L)\) as follows: for every \(S'\to S\),
+\[
+Z^{1}_{S}(X,L)(S')
+=
+\left\{
+\varphi\in\Hom_{S'}(X_{S'},L_{S'})
+\;\middle|\;
+\begin{aligned}
+&\varphi(x_{1}x_{2})=\varphi(x_{1})\,(x_{1}\cdot\varphi(x_{2})),\\
+&\text{for every }x_{1},x_{2}\in X(S''),\ S''\to S'
+\end{aligned}
+\right\}.
+\]
+One calls it the ``functor of crossed homomorphisms from \(X\) to \(L\)''.
+\end{definition}
+
+\begin{remark}{4.2.B}\label{II.4.2.B}
+\textsuperscript{(56)}~a)~If \(L'\) is a second \(S\)-group on which \(X\) operates by group
+automorphisms, one has
+\[
+Z^{1}_{S}(X,L\times_{S}L')
+\simeq
+Z^{1}_{S}(X,L)\times_{S}Z^{1}_{S}(X,L').
+\]
+b) If \(L\) is a \(G\)-\(\mathbf{O}_{S}\)-module, % typo?: kept as printed (G-O_S-module, not X)
+\(Z^{1}_{S}(X,L)\) coincides with the kernel of the differential
+\[
+\partial\colon\Hom_{S}(X,L)\to\Hom_{S}(X^{2},L)
+\]
+defined in~I~5.1; in
+particular, \(Z^{1}_{S}(X,L)\) is in this case an \(\mathbf{O}_{S}\)-module.
+\end{remark}
+
+\numpara{4.2}\label{II.4.2}
+Let \(u\colon X\to Y\) be a morphism of \(S\)-groups; then
+\(L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})\) is described as follows.
+First, one saw in~3.11.3 that one has an isomorphism of \(S\)-functors,
+functorial in \(\mathcal{M}\):
+\[
+(\dagger)\qquad
+L^{u}_{\Hom_{S}(X,Y)/S}(\mathcal{M})
+\isomto
+\Hom_{Y/S}\bigl(X,T_{Y/S}(\mathcal{M})\bigr).
+\]
+On the other hand, as \(Y\) is an \(S\)-group; one then has
+\[
+T_{Y/S}(\mathcal{M})
+=
+\Lie(Y/S,\mathcal{M})\cdot Y
+=
+\Lie(Y/S,\mathcal{M})_{Y}\,;
+\]
+there results an isomorphism of \(S\)-functors, functorial in \(\mathcal{M}\):
+\[
+L^{u}_{\Hom_{S}(X,Y)/S}(\mathcal{M})
+\isomto
+\Hom_{S}\bigl(X,\Lie(Y/S,\mathcal{M})\bigr).
+\]
+For every \(S'\to S\), let us denote by \(u'\colon X'\to Y'\) the morphism
+deduced from \(u\) by base change. Let us consider the \(S\)-functor defined
+as follows:
+{\renewcommand{\thefootnote}{(57)}\nde{This is definition~4.2.0.1 applied
+to \(Z=Y\) and to the \(Y\)-groups \(u\colon X\to Y\) and
+\(T_{Y/S}(\mathcal{M})\).}}
+for every \(S'\to S\),
+\begin{align*}
+\Hom_{(Y/S)\text{-gr.}}\bigl(X,\Lie(Y/S,\mathcal{M})\cdot Y\bigr)(S')
+&=
+\Hom_{Y'\text{-gr.}}\bigl(X',(\Lie(Y/S,\mathcal{M})\cdot Y)_{S'}\bigr)\\
+&=
+\Hom_{Y'\text{-gr.}}\bigl(X',\Lie(Y'/S',\mathcal{M})\cdot Y'\bigr).
+\end{align*}
+Then one sees easily that the isomorphism \((\dagger)\) induces an
+isomorphism
+\[
+(\dagger')\qquad
+L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})
+\isomto
+\Hom_{(Y/S)\text{-gr.}}\bigl(X,\Lie(Y/S,\mathcal{M})\cdot Y\bigr).
+\]
+On the other hand, the morphism
+\[
+X\xrightarrow{u}Y\xrightarrow{\Ad}
+\Aut_{S\text{-gr.}}\bigl(\Lie(Y/S,\mathcal{M})\bigr)
+\]
+defines an operation of \(X\) on \(L=\Lie(Y/S,\mathcal{M})\) by group
+automorphisms.
+
+If \(\Phi\in\Hom_{Y/S}\bigl(X,\Lie(Y/S,\mathcal{M})\cdot Y\bigr)\) then, for
+every \(S''\to S'\to S\) and \(x\in X(S'')\), one can write in a unique way
+\[
+\Phi(S')(x)=\varphi(S')(x)\cdot u'(x),
+\qquad\text{where}\qquad
+\varphi(S')(x)\in\Lie(Y'/S',\mathcal{M})(S'');
+\]
+this determines an element \(\varphi\) of
+\(\Hom_{S}\bigl(X,\Lie(Y/S,\mathcal{M})\bigr)\). Then \(\Phi(S')\) is a
+morphism of groups if, and only if, for every \(x_{1},x_{2}\in X(S'')\) one
+has:
+\begin{align*}
+\varphi(S')(x_{1}x_{2})
+&=
+\varphi(S')(x_{1})\,
+\bigl(u(x_{1})\,\varphi(S')(x_{2})\,u(x_{1})^{-1}\bigr)\\
+&=
+\varphi(S')(x_{1})\,\bigl(x_{1}\cdot\varphi(S')(x_{2})\bigr),
+\end{align*}
+\ie if and only if \(\varphi\in Z^{1}_{S}\bigl(X,\Lie(Y/S,\mathcal{M})\bigr)\).
+One has thus obtained the following:
+
+\begin{proposition}{4.2}\label{II.4.2.prop}
+Let \(u\colon X\to Y\) be a morphism of \(S\)-groups. One has an isomorphism
+of \(S\)-functors, functorial in \(\mathcal{M}\):
+\[
+L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})
+\isomto
+Z^{1}_{S}\bigl(X,\Lie(Y/S,\mathcal{M})\bigr).
+\]
+\end{proposition}
+
+{\renewcommand{\thefootnote}{(58)}\nde{One has added the sentences which
+follow and proposition~4.2 bis, implicit in the original.}}
+Suppose moreover that \(Y/S\) satisfies~(E). Then it follows from~4.2.0.3,
+exactly as in the proof of~3.11.1, that
+\(\Hom_{S\text{-gr.}}(X,Y)/S\) satisfies~(E). Thus one has (\cf 3.5.1):
+\[
+L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M}\oplus\mathcal{N})
+\simeq
+L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})
+\times_{S}
+L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{N}).
+\]
+% typo: (Ceci ... a)). -> (Ceci ... a).
+(This also follows from~4.2 and~4.2.B~a).)
+Consequently,
+\(L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})\) is equipped, as is
+\(Z^{1}_{S}\bigl(X,\Lie(Y/S,\mathcal{M})\bigr)\) (\cf 4.2.B~b)), with an
+\(\mathbf{O}_{S}\)-module structure, deduced from the functoriality in
+\(\mathcal{M}\). One deduces from this that the isomorphism of~4.2 is, in
+this case, an isomorphism of \(\mathbf{O}_{S}\)-modules:
+
+\begin{proposition}{4.2. bis}\label{II.4.2.bis}
+\textsuperscript{(58)}\
+Let \(u\colon X\to Y\) be a morphism of \(S\)-groups; suppose that \(Y/S\)
+satisfies~(E). One has an isomorphism of \(\mathbf{O}_{S}\)-modules,
+functorial in \(\mathcal{M}\):
+\[
+L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})
+\isomto
+Z^{1}_{S}\bigl(X,\Lie(Y/S,\mathcal{M})\bigr).
+\]
+\end{proposition}
+
+Moreover, when \(Y/S\) satisfies~(E), one deduces from~3.13.1, exactly as in
+the proof of~3.13.2, that for every \(u\in\Isom_{S\text{-gr.}}(X,Y)\) one has
+an isomorphism functorial in \(\mathcal{M}\):
+\[
+(*)\qquad
+L^{u}_{\Isom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})
+\isomto
+L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M}).
+\]
+One deduces from this the following two corollaries.
+
+\begin{corollary}{4.2.1}\label{II.4.2.1}
+Let \(u\colon X\to Y\) be a morphism of \(S\)-groups; if \(Y/S\)
+satisfies~(E), one has an isomorphism of \(\mathbf{O}_{S}\)-modules,
+functorial in \(\mathcal{M}\):
+\[
+L^{u}_{\Isom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})
+\isomto
+Z^{1}_{S}\bigl(X,\Lie(Y/S,\mathcal{M})\bigr).
+\]
+\end{corollary}
+
+\begin{corollary}{4.2.2}\label{II.4.2.2}
+Let \(X\) be an \(S\)-group; if \(X/S\) satisfies~(E), one has an isomorphism
+of \(\mathbf{O}_{S}\)-modules, functorial in \(\mathcal{M}\):
+\[
+\Lie\bigl(\Aut_{S\text{-gr.}}(X)/S,\mathcal{M}\bigr)
+\isomto
+Z^{1}_{S}\bigl(X,\Lie(X/S,\mathcal{M})\bigr).
+\]
+\end{corollary}
+
+{\renewcommand{\thefootnote}{(59)}\nde{One has added the sentence which
+follows.}}
+Furthermore, if \(Y\) is \emph{commutative}, the adjoint action of \(Y\) on
+\(L=\Lie(X/S,\mathcal{M})\) is trivial, % typo?: kept as printed (adjoint action of Y on Lie(X/S, M))
+whence \(Z^{1}_{S}(X,L)=\Hom_{S\text{-gr.}}(X,L)\). Thus:
+
+\begin{corollary}{4.2.3}\label{II.4.2.3}
+Let \(Y\) be a commutative \(S\)-group; one has an isomorphism of
+\(S\)-functors, functorial in \(\mathcal{M}\):
+\[
+L^{u}_{\Hom_{S\text{-gr.}}(X,Y)/S}(\mathcal{M})
+\isomto
+\Hom_{S\text{-gr.}}\bigl(X,\Lie(Y/S,\mathcal{M})\bigr).
+\]
+\end{corollary}
+
+\numpara{4.3}\label{II.4.3}
+Let us now consider the case in which \(X\) and \(Y\) are
+\(\mathbf{O}_{S}\)-modules. Let us recall (\cf 4.2.0.4) that one denotes by
+\(T'_{Y/S}(\mathcal{M})\) (\resp \(\Lie'(Y/S,\mathcal{M})\)) the functor
+\(T_{Y/S}(\mathcal{M})\) (\resp \(\Lie(Y/S,\mathcal{M})\)) equipped with the
+\(\mathbf{O}_{S}\)-module structure deduced from that of \(Y\).
+
+When \(Y/S\) satisfies~(E), one will always denote by
+\(\Lie(Y/S,\mathcal{M})\) the functor \(\Lie(Y/S,\mathcal{M})\) equipped with
+the \(\mathbf{O}_{S}\)-module structure defined for every functor
+satisfying~(E). In this case, we know (\cf 3.9) that the abelian group
+structures of \(\Lie(Y/S,\mathcal{M})\) and \(\Lie'(Y/S,\mathcal{M})\)
+coincide, but the same is not a priori true of the module structures (see a
+counter-example in paragraph~6.3). For every \(S'\to S\) and
+\(a\in\mathbf{O}(S')\), one will denote by \(a\cdot' m\) (\resp \(a\cdot m\))
+the action of \(a\) on \(m\in\Lie'(Y/S,\mathcal{M})(S')\) (\resp on
+\(m\in\Lie(Y/S,\mathcal{M})(S')\)), and likewise for the action of \(a\) on
+\(T'_{Y/S}(\mathcal{M})\) and \(T_{Y/S}(\mathcal{M})\).
+
+One has \(T'_{Y/S}(\mathcal{M})\simeq\Lie'(Y/S,\mathcal{M})\oplus Y\) as
+\(\mathbf{O}_{S}\)-modules; consequently, one obtains, exactly as for
+% typo: les proposition -> les propositions
+propositions~4.2 and~4.2 bis, the following:
+
+\begin{proposition}{4.3}\label{II.4.3.prop}
+Let \(u\colon X\to Y\) be a morphism of \(\mathbf{O}_{S}\)-modules. One has
+an isomorphism of \(S\)-functors, functorial in \(\mathcal{M}\):
+\[
+(*)\qquad
+L^{u}_{\Hom_{\mathbf{O}_{S}\text{-mod.}}(X,Y)/S}(\mathcal{M})
+\isomto
+\Hom_{\mathbf{O}_{S}\text{-mod.}}\bigl(X,\Lie'(Y/S,\mathcal{M})\bigr).
+\]
+{\renewcommand{\thefootnote}{(60)}\nde{One has added the sentence which
+follows.}}
+If \(Y/S\) satisfies~(E), then
+\(\Hom_{\mathbf{O}_{S}\text{-mod.}}(X,Y)/S\) satisfies~(E) and \((*)\) is an
+isomorphism of \(\mathbf{O}_{S}\)-modules when one equips the two members
+with the \(\mathbf{O}_{S}\)-module structure deduced from the functoriality
+in \(\mathcal{M}\).
+{\renewcommand{\thefootnote}{(61)}\nde{Note that on the right-hand term, it
+is the structure defined by \((a\varphi)(x)=a\cdot\varphi(x)\), where
+\(a\cdot\varphi(x)\) denotes the action of \(a\) on
+\(\varphi(x)\in\Lie(Y/S,\mathcal{M})\). This differs from the action
+\((a\cdot'\varphi)(x)=a\cdot'\varphi(x)=\varphi(ax)\), but coincides with
+the latter if \(\Lie(Y/S,\mathcal{M})=\Lie'(Y/S,\mathcal{M})\).}}
+\end{proposition}
+
+\begin{remark}{4.3. bis}\label{II.4.3.bis}
+{\renewcommand{\thefootnote}{(62)}\nde{One has added this remark, which will
+be useful in~4.5.1.}}
+Let \(u\colon X\to Y\) be a morphism of \(\mathbf{O}_{S}\)-modules; let us
+denote by \(\tau_{u}\) the map which to every morphism of
+\(\mathbf{O}_{S}\)-modules
+\(\varphi\colon X\to\Lie'(Y/S,\mathcal{M})\) associates the morphism
+\[
+u\oplus\varphi\colon X\longrightarrow T'_{Y/S}(\mathcal{M})
+=
+Y\oplus\Lie'(Y/S,\mathcal{M}).
+\]
+\end{remark}
+
+Then the isomorphism of~4.3 fits into the following commutative diagram,
+functorial in \(\mathcal{M}\):
+\[
+\xymatrix{
+L^{u}_{\Hom_{\mathbf{O}_{S}\text{-mod.}}(X,Y)/S}(\mathcal{M})
+  \ar[r]^{\sim}
+  \ar@{^{(}->}[d]
+&
+\Hom_{\mathbf{O}_{S}\text{-mod.}}\bigl(X,\Lie'(Y/S,\mathcal{M})\bigr)
+  \ar@{^{(}->}[d]^{\tau_{u}}
+\\
+T_{\Hom_{\mathbf{O}_{S}\text{-mod.}}(X,Y)/S}(\mathcal{M})
+  \ar[r]^{\sim}
+&
+\Hom_{\mathbf{O}_{S}\text{-mod.}}\bigl(X,T'_{Y/S}(\mathcal{M})\bigr).
+}
+\]
+
+Moreover, when \(Y/S\) satisfies~(E), one deduces from~3.13.1, exactly as in
+the proof of~3.13.2, that for every
+\(u\in\Isom_{\mathbf{O}_{S}\text{-mod.}}(X,Y)\), one has
+\[
+(*)\qquad
+L^{u}_{\Isom_{\mathbf{O}_{S}\text{-mod.}}(X,Y)/S}(\mathcal{M})
+=
+L^{u}_{\Hom_{\mathbf{O}_{S}\text{-mod.}}(X,Y)/S}(\mathcal{M}).
+\]
+
+\begin{corollary}{4.3.1}\label{II.4.3.1}
+Let \(X\) be an \(\mathbf{O}_{S}\)-module satisfying~(E) with respect to \(S\).
+% typo: On un isomorphisme -> On a un isomorphisme
+One has a functorial isomorphism in \(\mathcal{M}\):
+\[
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\text{-mod.}}(X)/S,\mathcal{M}\bigr)
+\isomto
+\Hom_{\mathbf{O}_{S}\text{-mod.}}\bigl(X,\Lie'(X/S,\mathcal{M})\bigr)
+\]
+which respects the \(\mathbf{O}_{S}\)-module structures deduced from the
+functoriality in \(\mathcal{M}\).
+{\renewcommand{\thefootnote}{(63)}\nde{\Cf N.D.E.~(61). On the other hand,
+one has added the sentence which follows, as well as its proof.}}
+In particular, \(\Aut_{\mathbf{O}_{S}\text{-mod.}}(X)/S\) satisfies~(E).
+\end{corollary}
+
+\begin{proof}
+The first assertion follows from \((*)\) and~4.3; let us prove the second.
+Since \(X/S\) satisfies~(E), one has isomorphisms of
+\(\mathbf{O}_{S}\)-modules
+\(\Lie'(X/S,\mathcal{M}\oplus\mathcal{N})
+\simeq
+\Lie'(X/S,\mathcal{M})\times_{S}\Lie'(X/S,\mathcal{N})\), and hence:
+\begin{align*}
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\text{-mod.}}(X)/S,\mathcal{M}\oplus\mathcal{N}\bigr)
+&\simeq
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\text{-mod.}}(X)/S,\mathcal{M}\bigr)\\
+&\qquad\times_{S}
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\text{-mod.}}(X)/S,\mathcal{N}\bigr).
+\end{align*}
+In view of~4.1.1.2~a), this proves that
+\(\Aut_{\mathbf{O}_{S}\text{-mod.}}(X)/S\) satisfies~(E).
+\end{proof}
+
+\numpara{4.3.2}\label{II.4.3.2}
+Before continuing in this direction, let us examine more closely the
+relations between \(Y\), \(\Lie(Y/S)\) and \(\Lie'(Y/S)\). Let us first
+remark that
+\[
+(1)\qquad
+\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+=
+\Lie'(\mathbf{O}_{S}/S,\mathcal{M})
+=
+W(\mathcal{M})
+\]
+(where \(W(\mathcal{M})\) is defined in~I~4.6) and that one therefore has a
+canonical isomorphism
+\[
+(2)\qquad
+d\colon\mathbf{O}_{S}\isomto\Lie(\mathbf{O}_{S}/S).
+\]
+Now let \(F\) be an \(\mathbf{O}_{S}\)-module. For every
+\(S_{2}\to S_{1}\to S\)
+{\renewcommand{\thefootnote}{(64)}\nde{One has changed \(S'\to S\) into
+\(S_{2}\to S_{1}\to S\), for one must let \(S_{2}\) and \(S_{1}\) vary
+(\cf below). On the other hand, one has expanded the original in what
+follows.}}, one has a dihomomorphism
+\[
+(3)\qquad
+\begin{cases}
+F(S_{1})\to F(S_{2})\\
+\mathbf{O}(S_{1})\to\mathbf{O}(S_{2}),
+\end{cases}
+\]
+whence a morphism of \(\mathbf{O}(S_{2})\)-modules
+\[
+F(S_{1})\otimes_{\mathbf{O}(S_{1})}\mathbf{O}(S_{2})\longrightarrow F(S_{2}).
+\]
+
+In particular, setting \(S_{1}=S'\) and \(S_{2}=I_{S'}(\mathcal{M})\), one
+deduces from this morphisms of \(\mathbf{O}(S')\)-modules, functorial in
+\(\mathcal{M}\),
+\[
+F(S')\otimes_{\mathbf{O}(S')}T_{\mathbf{O}_{S}/S}(\mathcal{M})(S')
+\longrightarrow
+T'_{F/S}(\mathcal{M})(S');
+\]
+letting \(S'\) vary, one obtains morphisms of \(\mathbf{O}_{S}\)-modules,
+functorial in \(\mathcal{M}\),
+\[
+(4)\qquad
+F\otimes_{\mathbf{O}_{S}}T_{\mathbf{O}_{S}/S}(\mathcal{M})
+\longrightarrow
+T'_{F/S}(\mathcal{M}).
+\]
+These morphisms are functorial in \(\mathcal{M}\), hence compatible with the
+projections of the tangent bundles onto their bases; they therefore define
+morphisms of \(\mathbf{O}_{S}\)-modules
+\[
+(5)\qquad
+F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+\longrightarrow
+\Lie'(F/S,\mathcal{M})
+\]
+such that one has the commutative diagram:
+\[
+\xymatrix{
+0 \ar[r]
+&
+F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M}) \ar[r] \ar[d]
+&
+F\otimes_{\mathbf{O}_{S}}T_{\mathbf{O}_{S}/S}(\mathcal{M}) \ar[r] \ar[d]
+&
+F \ar[r]
+&
+0
+\\
+0 \ar[r]
+&
+\Lie'(F/S,\mathcal{M}) \ar[r]
+&
+T'_{F/S}(\mathcal{M}) \ar[r]
+&
+F \ar[r]
+&
+0.
+}
+\]
+
+One may regard the morphisms~(5) as morphisms of abelian \(S\)-groups
+\[
+(6)\qquad
+F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+\longrightarrow
+\Lie(F/S,\mathcal{M})\,;
+\]
+by tensoring \(F\) with the isomorphism
+\(d\colon\mathbf{O}_{S}\isomto\Lie(\mathbf{O}_{S}/S)\), one deduces from this
+(for \(\mathcal{M}=\mathbf{O}_{S}\)) a morphism of abelian \(S\)-groups
+\[
+(7)\qquad
+F\isomto F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S)
+\longrightarrow
+\Lie(F/S)
+\]
+also denoted \(d\colon F\to\Lie(F/S)\).
+
+\begin{remark}{4.3.3}\label{II.4.3.3}
+{\renewcommand{\thefootnote}{(65)}\nde{One found in the original the
+assertion that when \(F/S\) satisfies~(E), the morphisms~(6) (and hence~(7))
+are morphisms of \(\mathbf{O}_{S}\)-modules, an assertion contradicted by a
+counter-example given in~6.3. One has deleted this assertion, inserted here
+the aforementioned example, and modified definition~4.4 accordingly. This is
+of no consequence for what follows.}}
+When \(F/S\) satisfies~(E), the morphisms~(6) and~(7) are not necessarily
+morphisms of \(\mathbf{O}_{S}\)-modules, when one equips the two members
+with the module structures deduced from that of \(\mathcal{M}\) by means of
+condition~(E).
+
+For example, let \(k\) be a field of characteristic \(p>0\), \(S=\Spec(k)\),
+and \(F\) the \(\mathbf{O}_{S}\)-module which to every \(S\)-scheme \(T\)
+associates \(F(T)=\Gamma(T,\mathbf{O}_{T})\) equipped with the
+\(\mathbf{O}(T)\)-module structure obtained by letting the scalars operate
+via the \(p\)-th power, \ie \(r\cdot f=r^{p}f\), for \(r\in\mathbf{O}(T)\),
+\(f\in F(T)\). As an \(S\)-group functor, \(F\) is isomorphic to
+\(\mathbf{G}_{a,S}\). Thus \(F\) satisfies~(E) and \(\Lie(F/S)\) is identified with
+\(\Lie(\mathbf{G}_{a,S}/S)\simeq\mathbf{O}_{S}\). Then the canonical morphism
+\(d\colon F\to\Lie(F/S)\) is, for every \(T\to S\), the identity map
+\(F(T)\to\mathbf{O}(T)\): it does respect the abelian group structure but
+not the \(\mathbf{O}_{S}\)-module structure.
+\end{remark}
+
+\begin{remark}{4.3.4}\label{II.4.3.4}
+{\renewcommand{\thefootnote}{(66)}\nde{One has added this remark, which will
+be useful in~4.6.2.}}
+One can make the morphisms~(4) and~(5) explicit as follows. The morphism
+\(\Theta\colon F\otimes_{\mathbf{O}_{S}}T_{\mathbf{O}_{S}/S}(\mathcal{M})
+\to T'_{F/S}(\mathcal{M})
+% typo: Hom_S(I_S(M, F) -> Hom_S(I_S(M), F)
+=\Hom_{S}(I_{S}(\mathcal{M}),F)\)
+is defined by: for every \(S'\to S\),
+\(\alpha\in\mathbf{O}(I_{S'}(\mathcal{M}))\), and \(f\colon S'\to F\),
+\[
+\Theta(f\otimes\alpha)=\alpha\cdot(\tau_{0}\circ f)=\alpha\cdot(f\circ\rho),
+\]
+where \(\tau_{0}\) is the zero section \(F\to T'_{F/S}(\mathcal{M})\) and
+\(\rho\) the structural morphism \(I_{S'}(\mathcal{M})\to S'\). Then
+\(\Theta\) induces a morphism
+\(\theta\colon F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+\to\Lie'(F/S,\mathcal{M})\); this results from the ``functoriality in
+\(\mathcal{M}\)'' already mentioned after~(4), and can be seen explicitly as
+follows. On the one hand, one has
+\[
+\Lie'(F/S,\mathcal{M})(S')
+=
+\bigl\{\varphi\in\Hom_{S}(I_{S'}(\mathcal{M}),F)
+\bigm|\varphi\circ\varepsilon_{\mathcal{M}}=e\bigr\},
+\]
+where \(e\) denotes the unit section \(S'\to F\). On the other hand,
+\(\Lie(\mathbf{O}_{S}/S,\mathcal{M})(S')=\Gamma(S',\mathcal{M})\) is the
+kernel of the augmentation
+\(\eta\colon\mathbf{O}(I_{S'}(\mathcal{M}))\to\mathbf{O}(S')\), and it is
+therefore a matter of seeing that if \(f\in F(S')\) and
+\(\alpha\in\Gamma(S',\mathcal{M})\), then
+\(\alpha\cdot(f\circ\rho)\circ\varepsilon_{\mathcal{M}}=e\).
+
+Let us consider the dihomomorphism~(3), in the case where \(S_{2}\to S_{1}\)
+is the \(S\)-morphism
+\(\varepsilon_{\mathcal{M}}\colon S'\to I_{S'}(\mathcal{M})\); one then has
+a commutative diagram
+\[
+\xymatrix{
+F\bigl(I_{S'}(\mathcal{M})\bigr)
+  \ar[r]^{F(\varepsilon_{\mathcal{M}})}
+  \ar[d]_{\alpha}
+&
+F(S')
+  \ar[d]^{\eta(\alpha)}
+\\
+F\bigl(I_{S'}(\mathcal{M})\bigr)
+  \ar[r]^{F(\varepsilon_{\mathcal{M}})}
+&
+F(S')
+.}
+\]
+For every \(\varphi\colon I_{S'}(\mathcal{M})\to F\), one therefore has
+\((\alpha\cdot\varphi)\circ\varepsilon_{\mathcal{M}}
+=\eta(\alpha)\cdot(\varphi\circ\varepsilon_{\mathcal{M}})\), whence
+\((\alpha\cdot\varphi)\circ\varepsilon_{\mathcal{M}}=e\) if
+\(\eta(\alpha)=0\).
+
+In particular, taking \(\mathcal{M}=t\,\mathbf{O}_{S}\), one has
+\(\Lie(\mathbf{O}_{S}/S)=t\,\mathbf{O}_{S}\) and the morphism
+\(F\to\Lie'(F/S)\) is given by \(f\mapsto t\cdot(f\circ\rho)\).
+\end{remark}
+
+\begin{remark}{4.3.5}\label{II.4.3.5}
+{\renewcommand{\thefootnote}{(67)}\nde{One has added this remark, which will
+be useful in~4.5 and~4.7.}}
+Let \(F\) be an \(\mathbf{O}_{S}\)-module, set
+\(E=\End_{\mathbf{O}_{S}\text{-mod.}}(F)\) and denote by \(d_{F}\) and
+\(d_{E}\) the morphisms of \(\mathbf{O}_{S}\)-modules given by~4.3.2~(5):
+\begin{align*}
+d_{F}&\colon F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+\longrightarrow\Lie'(F/S,\mathcal{M}),\\
+d_{E}&\colon E\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+\longrightarrow\Lie'(E/S,\mathcal{M}).
+\end{align*}
+One deduces from~4.3.4 the following commutative diagram of morphisms of
+\(\mathbf{O}_{S}\)-modules:
+\[
+\xymatrix@C=4em{
+E\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+  \ar[r]^{d_{E}}
+&
+\Lie'(E/S,\mathcal{M})
+\\
+\Hom_{\mathbf{O}_{S}}\bigl(F,\,
+  F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})\bigr)
+  \ar[r]^{d_{F}}
+&
+\Hom_{\mathbf{O}_{S}}\bigl(F,\Lie'(F/S,\mathcal{M})\bigr)
+  \ar[u]_{\simeq\ (*)}
+}
+\]
+where the right-hand vertical arrow is the isomorphism \((*)\) of~4.3.
+Thus (\loccit), if \(F/S\) satisfies~(E), then \(E/S\) satisfies~(E) and
+\((*)\) is also an isomorphism of \(\mathbf{O}_{S}\)-modules when one equips
+the right-hand terms with the \(\mathbf{O}_{S}\)-module structure deduced
+from~(E).
+\end{remark}
+
+\begin{remark}{4.4.0}\label{II.4.4.0}
+{\renewcommand{\thefootnote}{(68)}\nde{In view of the modifications in
+definition~4.4 (\cf N.D.E.~(65)), one has inserted here this remark, which
+in the original appeared in the proof of~4.4.1.}}
+In~4.3.2, the morphisms~(4) are isomorphisms if and only if the
+morphisms~(5) are. Moreover, if these conditions are satisfied, then \(F/S\)
+satisfies~(E). Indeed, it suffices to check that
+\(\Lie'(F/S,\mathcal{M}\oplus\mathcal{N})
+\simeq
+\Lie'(F/S,\mathcal{M})\times_{S}\Lie'(F/S,\mathcal{N})\).
+Now one has the commutative diagram below, in which by hypothesis the
+horizontal arrows are isomorphisms:
+\[
+\xymatrix@C=3em{
+F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M}\oplus\mathcal{N})
+  \ar[r]^{\sim}
+  \ar[d]^{\wr}
+&
+\Lie'(F/S,\mathcal{M}\oplus\mathcal{N})
+  \ar[d]
+\\
+F\otimes_{\mathbf{O}_{S}}
+  \bigl(\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+    \times_{S}\Lie(\mathbf{O}_{S}/S,\mathcal{N})\bigr)
+  \ar[r]^{\sim}
+&
+\Lie'(F/S,\mathcal{M})\times_{S}\Lie'(F/S,\mathcal{N})\,;
+}
+\]
+the second vertical arrow is therefore also an isomorphism, \ie \(F/S\)
+satisfies~(E).
+\end{remark}
+
+\begin{definition}{4.4}\label{II.4.4}
+One says that \(F\) is a \emph{good} \(\mathbf{O}_{S}\)-module if the
+morphisms
+\[
+F\otimes_{\mathbf{O}_{S}}T_{\mathbf{O}_{S}/S}(\mathcal{M})
+\longrightarrow
+T_{F/S}(\mathcal{M})
+\]
+or, equivalently,
+\[
+F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+\longrightarrow
+\Lie(F/S,\mathcal{M}),
+\]
+are isomorphisms of abelian \(S\)-groups (so that \(F/S\) satisfies~(E)) and
+if moreover they respect the \(\mathbf{O}_{S}\)-module structures deduced
+from condition~(E).
+\end{definition}
+
+\begin{corollary}{4.4.1}\label{II.4.4.1}
+{\renewcommand{\thefootnote}{(69)}\nde{The original showed that~(i) implies
+(ii) and~(iii); one has added the implication~(ii)\(\Rightarrow\)(i).}}
+Let \(F\) be an \(\mathbf{O}_{S}\)-module. Consider the following conditions:
+\begin{enumeratei}
+\item \(F\) is a good \(\mathbf{O}_{S}\)-module.
+\item \(F/S\) satisfies~(E) and \(d\colon F\to\Lie(F/S)\) is an isomorphism
+of \(\mathbf{O}_{S}\)-modules.
+\item \(\Lie(F/S,\mathcal{M})=\Lie'(F/S,\mathcal{M})\).
+\end{enumeratei}
+Then one has \textup{(i)}\(\Leftrightarrow\)\textup{(ii)}\(\Rightarrow\)\textup{(iii)}.
+\end{corollary}
+
+\begin{proof}
+\textup{(i)}\(\Rightarrow\)\textup{(ii)} follows from the definition. To prove
+\textup{(ii)}\(\Rightarrow\)\textup{(i)}, one must show that the morphisms of
+abelian \(S\)-groups (functorial in \(\mathcal{M}\))
+\[
+F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+\isomto
+\Lie(F/S,\mathcal{M})
+\]
+are isomorphisms of \(\mathbf{O}_{S}\)-modules. Since \(F/S\) satisfies~(E),
+the two members transform finite direct sums of copies of \(\mathbf{O}_{S}\)
+into finite products of abelian \(S\)-groups. This reduces us to the case
+\(\mathcal{M}=\mathbf{O}_{S}\), which follows from the hypothesis.
+
+Finally \textup{(i)}\(\Rightarrow\)\textup{(iii)} follows from the definition
+and from the fact that the isomorphisms
+\[
+F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+\isomto
+\Lie'(F/S,\mathcal{M})
+\]
+of~4.3.2~(5) are morphisms of \(\mathbf{O}_{S}\)-modules.
+\end{proof}
+
+\begin{examples}{4.4.2}\label{II.4.4.2}
+For every quasi-coherent \(\mathbf{O}_{S}\)-Module \(\mathcal{E}\), the
+\(\mathbf{O}_{S}\)-modules \(V(\mathcal{E})\) and \(W(\mathcal{E})\) defined
+in~I~4.6 are good.
+\end{examples}
+
+{\renewcommand{\thefootnote}{(70)}\nde{One has added what follows.}}
+Indeed, for every \(f\colon S'\to S\), the morphisms
+\begin{align*}
+V(\mathcal{E})(S')\otimes_{\mathbf{O}(S')}\mathbf{O}\bigl(I_{S'}(\mathcal{M})\bigr)
+&\longrightarrow
+T_{V(\mathcal{E})/S}(\mathcal{M})(S')\\
+W(\mathcal{E})(S')\otimes_{\mathbf{O}(S')}\mathbf{O}\bigl(I_{S'}(\mathcal{M})\bigr)
+&\longrightarrow
+T_{W(\mathcal{E})/S}(\mathcal{M})(S')
+\end{align*}
+correspond, respectively, to the morphisms:
+\begin{align*}
+&\Hom_{\mathbf{O}_{S'}\text{-mod.}}\bigl(f^{*}(\mathcal{E}),\mathbf{O}_{S'}\bigr)
+\otimes_{\mathbf{O}(S')}
+\Gamma\bigl(S',\mathcal{D}_{\mathbf{O}_{S'}}(\mathcal{M})\bigr)\\
+&\qquad\longrightarrow
+\Hom_{\mathbf{O}_{S'}\text{-mod.}}\bigl(f^{*}(\mathcal{E}),
+  \mathcal{D}_{\mathbf{O}_{S'}}(\mathcal{M})\bigr)\\[0.4em]
+&\Gamma\bigl(S',f^{*}(\mathcal{E})\bigr)
+\otimes_{\mathbf{O}(S')}
+\Gamma\bigl(S',\mathcal{D}_{\mathbf{O}_{S'}}(\mathcal{M})\bigr)\\
+&\qquad\longrightarrow
+\Gamma\bigl(S',f^{*}(\mathcal{E})
+  \otimes_{\mathbf{O}_{S'}}\mathcal{D}_{\mathbf{O}_{S'}}(\mathcal{M})\bigr);
+\end{align*}
+these are isomorphisms since \(\mathcal{D}_{\mathbf{O}_{S'}}(\mathcal{M})\)
+is isomorphic, as an \(\mathbf{O}_{S'}\)-module, to a finite direct sum of
+copies of \(\mathbf{O}_{S'}\).
+
+\begin{proposition}{4.5}\label{II.4.5}
+Let \(F\) be a good \(\mathbf{O}_{S}\)-module. Then:
+\begin{enumeratei}
+\item \(\Aut_{\mathbf{O}_{S}\text{-mod.}}(F)/S\) satisfies~(E) and one has a
+functorial isomorphism
+\[
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\text{-mod.}}(F)/S,\mathcal{M}\bigr)
+\isomto
+\Hom_{\mathbf{O}_{S}\text{-mod.}}\bigl(F,\Lie(F/S,\mathcal{M})\bigr)
+\]
+which respects the \(\mathbf{O}_{S}\)-module structures deduced from
+condition~(E). In particular, one has an isomorphism of
+\(\mathbf{O}_{S}\)-modules
+\[
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\text{-mod.}}(F)/S\bigr)
+\isomto
+\End_{\mathbf{O}_{S}\text{-mod.}}(F).
+\]
+\item {\renewcommand{\thefootnote}{(71)}\nde{One has added point~(ii), an
+immediate consequence of what precedes.}}
+Moreover, \(\End_{\mathbf{O}_{S}\text{-mod.}}(F)\) is a good
+\(\mathbf{O}_{S}\)-module.
+\end{enumeratei}
+\end{proposition}
+
+Indeed, by~4.4.1, \(F/S\) satisfies~(E) and
+\begin{equation}
+\tag{1}
+\Lie(F/S,\mathcal{M})
+=
+\Lie'(F/S,\mathcal{M})
+\simeq
+F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M}).
+\end{equation}
+Assertion~(i) then follows from~4.3.1. Set
+\(E=\End_{\mathbf{O}_{S}\text{-mod.}}(F)\). By~(1) and remark~4.3.5, one has
+the following commutative diagram of morphisms of abelian \(S\)-groups:
+\[
+\xymatrix@C=3.2em{
+\End_{\mathbf{O}_{S}\text{-mod.}}(F)
+  \otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})
+  \ar[r]^{d_{E}}
+&
+\Lie\bigl(\End_{\mathbf{O}_{S}\text{-mod.}}(F)/S,\mathcal{M}\bigr)
+\\
+\Hom_{\mathbf{O}_{S}}\bigl(F,\,
+  F\otimes_{\mathbf{O}_{S}}\Lie(\mathbf{O}_{S}/S,\mathcal{M})\bigr)
+  \ar[r]^{d_{F}}
+&
+\Hom_{\mathbf{O}_{S}}\bigl(F,\Lie(F/S,\mathcal{M})\bigr)
+  \ar[u]_{\simeq\ (*)}
+}
+\]
+where \(d_{F}\) and \((*)\) are isomorphisms of \(\mathbf{O}_{S}\)-modules;
+consequently, the same is true of \(d_{E}\). This proves~(ii).
+
+\begin{scholium}{4.5.1}\label{II.4.5.1}
+{\renewcommand{\thefootnote}{(72)}\nde{One has added this scholium, implicit
+in the original, which will be useful in~4.7.1. (Here and in what follows,
+one denotes by \(t\), \(t'\), etc., variables of square zero, the letter
+\(\varepsilon\) being reserved for the unit section of groups.)}}
+Set (\cf 2.1) \(\mathbf{O}_{I_{S}}=\mathbf{O}_{S}\oplus t\,\mathbf{O}_{S}\)
+(with \(t^{2}=0\)), and let \(F\) be a good \(\mathbf{O}_{S}\)-module. Then,
+for every \(S'\to S\), the morphism
+\[
+F(S')\oplus t\,F(S')
+=
+F(S')\otimes_{\mathbf{O}(S')}\mathbf{O}(I_{S'})
+\longrightarrow
+F(I_{S'})
+=
+F(S')\oplus\Lie(F/S)(S')
+\]
+(which is the identity on \(F(S')\)) induces an isomorphism of
+\(\mathbf{O}(S')\)-modules
+\(t\,F(S')\simeq\Lie(F/S)(S')\).
+\end{scholium}
+% scholium 4.5.1 continues on the next page

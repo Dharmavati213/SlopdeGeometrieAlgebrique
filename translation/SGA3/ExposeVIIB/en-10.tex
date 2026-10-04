@@ -1,0 +1,135 @@
+In what follows, we shall say that $G$ is \emph{infinitesimal} if $G=G_0$.\nde{We have added the following sentence.} This is equivalent to saying that, for every $s\in\Spf(k)$, or again for every continuous morphism $k\to\kappa$, where $\kappa$ is a field equipped with the discrete topology, the identity is the unique element of $G(\kappa(s))$, resp. of $G(\kappa)$.
+Suppose further that $G$ is \emph{topologically flat over $k$}.\nde{We have detailed what follows.} Then, by 1.6.1, the morphism $p:G\to G_e$ is topologically flat, and since it is bijective, it is therefore an effective epimorphism by Proposition 1.3.1. Consequently, $G_e$ is identified with the quotient $G/G_0$. One has therefore obtained:
+\begin{corollary}{}
+Let $G$ be a formal group topologically flat over $k$. Then $G_e$ is identified with the quotient $G/G_0$; \ie one has an exact sequence of formal groups
+\[
+1\to G_0\xrightarrow{\mathrm{incl.}}G\xrightarrow p G_e\to1.
+\]
+\end{corollary}
+
+\numpara{2.5.2}Suppose that $k$ is a perfect field. In this case one has seen (cf. 1.6.2) that the morphism $p:X\mto X_e$ has a section $s:X_e\to X$ depending functorially on $X$; this section is therefore a morphism of formal groups when $X$ is a formal group. One therefore obtains the following:
+\begin{proposition}{}
+When $k$ is a perfect field, every formal $k$-group $G$ is canonically isomorphic to the semidirect product of an infinitesimal group $G_0$ and an étale group $G_e$ acting on $G_0$.\nde{The same argument also shows that, for an arbitrary field $k$, if all the residue fields of $G$ equal $k$, then $G_e$ is the constant $k$-group $(M)_k$, where $M=G(k)=\Spf^*H(G)$, and $H(G)$ is the semidirect product of $H(G_0)$ by the group algebra $kM$; cf. addition 2.9 below.}
+\end{proposition}
+If, moreover, $G$ is \emph{commutative}, $G$ is the product of $G_0$ and $G_e$. By 2.2.2, this canonical decomposition of commutative formal $k$-groups corresponds to an analogous decomposition of affine commutative group $k$-schemes; see paragraph 2.5.3 below.
+\begin{remark}{2.5.2.A}\label{VIIB.2.5.2.A}\nde{We have added this remark.}
+The exact sequence $1\to G_0\to G\to G_e\to1$ is not necessarily split when $k$ is not perfect: let us give the following example taken from \cite{DG70}, § III.6, 8.6. Let $k$ be a nonperfect field of characteristic $p>0$. Let $\lambda\in k-k^p$, let $L_\lambda$ be the abelian Lie $p$-algebra with basis $(x,y)$, the symbolic $p$th power (cf. VII A, 5.2) being given by $x^{(p)}=x$ and $y^{(p)}=\lambda x$, let $U_p(L_\lambda)=k[x,y]/(x^p-x,y^p-\lambda x)$ be the restricted enveloping algebra of $L_\lambda$ (cf. VII A, 5.3), and let $G_\lambda$ be the commutative formal $k$-group with affine algebra $U_p(L_\lambda)$. Then $G_\lambda$ is a nonsplit extension of the constant étale $k$-group $(\ZZ/p\ZZ)_k$ by the infinitesimal $k$-group $\alpha_{p,k}=\Spf k[x]/(x^p-x)$, \ie one has a nonsplit exact sequence of commutative formal $k$-groups:\nde{$\alpha_{p,k}$, $(\ZZ/p\ZZ)_k$, and $G_\lambda$ are also algebraic $k$-groups finite and flat over $k$; cf. N.D.E. (84) in 2.2.2.}
+\[
+0\to\alpha_{p,k}\to G_\lambda\to(\ZZ/p\ZZ)_k\to0.
+\]
+% typo?: alpha_{p,k} is printed as Spf k[x]/(x^p-x), retained.
+By duality, it corresponds to a nonsplit exact sequence of commutative algebraic $k$-groups
+\[
+0\to\mu_{p,k}\to D'(G_\lambda)\to\alpha_{p,k}\to0,
+\]
+where $\mu_{p,k}=\Spec k[t]/(t^p-1)$ (and in this way one obtains all the extensions of $\alpha_{p,k}$ by $\mu_{p,k}$; cf. \cite{DG70}, § III.6, 8.6).
+\end{remark}
+
+\numpara{2.5.3}\nde{We have introduced the numbering 2.5.3 and 2.5.3.A to 2.5.3.C.}Let $k$ be a field.
+\begin{definition}{2.5.3.A}\label{VIIB.2.5.3.A}
+One says that a commutative group $k$-scheme is \emph{unipotent} if it is isomorphic to $\Spec H(G)$, where $G$ is a commutative \emph{infinitesimal} formal $k$-group.\nde{This coincides with the ``usual'' notion of a unipotent group $k$-scheme; cf. addition 2.8 at the end of Section 2.}
+\end{definition}
+\nde{The original indicated: ``let us say that a commutative group $k$-scheme is of multiplicative type if it is isomorphic to $\Spec H(G)$, where $G$ is a commutative étale formal $k$-group''. Here we have given the ``usual'' definition, taken from Exp. IX, 1.1, and shown its equivalence to the preceding condition; see also \cite{DG70}, § IV.1, Th. 2.2.}Moreover, following Exp. IX, Definition 1.1, one says that a group $k$-scheme $H$ is \emph{of multiplicative type} if there exists a scheme $S$, faithfully flat and quasi-compact over $\Spec k$, such that $H_S$ is a diagonalizable $S$-group, \ie is isomorphic to $D_S(M)$ for some ``abstract'' abelian group $M$. By descent (fpqc), this implies that $H$ is \emph{affine} and commutative. Moreover, since one can replace $S$ by the residue field of one of its points, one sees that $H$ is of multiplicative type if and only if there exists an extension $K$ of $k$ such that $H_K$ is a diagonalizable $K$-group.
+\begin{proposition}{2.5.3.B}\label{VIIB.2.5.3.B}
+Let $T$ be an affine commutative group $k$-scheme and $k_s$ a separable closure of $k$.
+\begin{enumeratei}
+\item For $T$ to be of multiplicative type, it is necessary and sufficient that its dual $D(T)$ be a commutative étale formal $k$-group.
+\item Consequently, $T$ is of multiplicative type if and only if $T\otimes_k k_s$ is diagonalizable.
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+Denote by $\mathscr A$ the affine algebra of $D(T)$ and by $\mathscr A_0$ its local component at the identity; then $D(T)$ is étale over $k$ if and only if $\mathscr A_0=k$. If $K$ is an extension of $k$, the algebra $\mathscr A_0\widehat\otimes_k K$ is local (since it is a projective limit of artinian local rings), hence coincides with the local component $(\mathscr A\widehat\otimes_k K)_0$; moreover, since formation of $D(T)$ commutes with base change (cf. 2.2.2), one also has $\mathscr A\widehat\otimes_k K\simeq D(T_K)$.
+% typo?: source identifies the algebra with D(T_K), rather than its affine algebra; retained.
+Suppose that $T$ is of multiplicative type; then there exists an extension $K$ of $k$ such that $\OO(T)\otimes_k K$ is isomorphic, as a Hopf $K$-algebra, to the group algebra $KM$ for some abelian group $M$. Then $\mathscr A\widehat\otimes_k K$ is isomorphic to the algebra $K^M$, equipped with the product topology, so one has $K=(\mathscr A\widehat\otimes_k K)_0=\mathscr A_0\widehat\otimes_k K$, and this implies $\mathscr A_0=k$, hence $D(T)$ is étale.
+Conversely, suppose that $D(T)$ is étale. Then $D(T)\widehat\otimes_k k_s=D(T_{k_s})$ is a constant $k_s$-group $M$, so its covariant bialgebra is the group algebra $k_sM$ (cf. Remark 2.5.A), hence $\OO(T)\otimes_k k_s=k_sM$, which proves that $T$ is of multiplicative type and split by the extension $k\to k_s$. The proposition follows.
+\end{proof}
+By 2.2.2, 2.5.1, and 2.5, one obtains:
+\begin{corollary}{2.5.3.C}\label{VIIB.2.5.3.C}
+Let $k$ be a field and $G$ an affine commutative group $k$-scheme.
+\begin{enumeratei}
+\item $G$ contains a subgroup of multiplicative type $G_{\mathrm m}$ such that $G/G_{\mathrm m}$ is unipotent.
+\item When $k$ is perfect, there also exists a canonical retraction from $G$ to $G_{\mathrm m}$, so that $G$ is the product of a unipotent group and a group of multiplicative type.
+\item\nde{We have added part (iii), a consequence of Proposition 2.5.}Let $k_s$ be a separable closure of $k$ and $\Gamma=\Gal(k_s/k)$. The category of group $k$-schemes of multiplicative type is anti-equivalent to the category of continuous $\Gamma$-modules.
+\end{enumeratei}
+\end{corollary}
+
+\numpara{2.6}We shall now study infinitesimal formal groups, to which the following paragraphs are devoted. Lie algebras play a primordial role in this study.
+First suppose that the base ring $k$ is artinian, and let $G$ be a formal group over $k$. One can give three different interpretations of the Lie algebra of $G$, all of which we shall use:
+\begin{enumeratea}
+\item Let $D$ be the algebra $k[d]/(d^2)$ of dual numbers over $k$, and $\delta$ the homomorphism from $D$ to $k$ which annihilates $d$. For every formal group $G$ over $k$, $\Lie(G)$ is the kernel of $G(\delta)$, so by definition one has an \emph{exact sequence of groups}
+\[
+1\to\Lie(G)\to G(D)\xrightarrow{G(\delta)}G(k)\to1.
+\]
+\item Let $A$ be the affine algebra of $G$ and $I_A=\Ker\varepsilon_A$ its augmentation ideal. The elements of the group $G(D)$ are the morphisms of profinite $k$-algebras $f:A\to D$. The condition $G(\delta)(f)=1$ is equivalent to $\delta\circ f=\varepsilon_A$. Since $x-\varepsilon_A(x)\cdot1_A\in I_A$ for every $x\in A$, this is equivalent to $f(I_A)\subset k\cdot d$, so $\Ker(f)$ contains $I_A^2$, hence also $\overline{I_A^2}$, and thus $f$ induces a continuous linear map $f'$ from $I_A/\overline{I_A^2}=\omega_{G/k}$ to $k$ such that for every $x\in A$ one has the equality
+\[
+f(x)=\varepsilon_A(x)\cdot1_D+f'(\overline x)\cdot d,
+\]
+where $\overline x$ denotes the image of $x-\varepsilon_A(x)\cdot1_A$ in $I_A/\overline{I_A^2}$. One then sees that \emph{the map $f\mto f'$ defines a bijection} from $\Lie(G)$ to the topological dual $\omega_{G/k}^\dagger$ of $\omega_{G/k}$ (cf. 0.2.2).
+This bijection respects the group structures. Indeed, let $f,g$ be two elements of $\Lie(G)$; their product $f\cdot g$ is the composite map $h\circ\Delta_A$, where $h:A\widehat\otimes A\to D$ satisfies $h(b\widehat\otimes b')=f(b)g(b')$. Now, if $a\in I_A$, by 2.1(ii) one has $\Delta_A(a)-a\widehat\otimes1-1\widehat\otimes a\in I_A\widehat\otimes I_A$, whence $(f\cdot g)(a)=f(a)+g(a)$ (cf. also II 3.10).
+In what follows, we identify $\Lie(G)$ with $\omega_{G/k}^\dagger$ by means of the bijection $f\mto f'$ described above. \emph{The group $\Lie(G)$ is thus equipped with a $k$-module structure.}
+\item Let $A^\dagger,D^\dagger$ be the $k$-modules dual to $A,D$, and $\{1_D^\dagger,d^\dagger\}$ the basis dual to the basis $\{1_D,d\}$ of $D$ over $k$ (one has $1_D^\dagger=\delta$). Since $D$ is free of finite rank over $k$, the canonical map
+\[
+\Hom_c(A,D)\to\Hom_k(D^\dagger,A^\dagger),\qquad f\mto{}^t f
+\]
+is bijective. On the other hand, $f$ is determined by the values ${}^t f(1_D^*)$ and ${}^t f(d^*)=x$. The condition $G(\delta)(f)=1$ is equivalent to the equality ${}^t f(1_D^*)=\varepsilon_A$. Moreover, one easily sees that $f$ is compatible with multiplication if and only if one has (cf. 2.3)
+\begin{equation}\tag{*}
+\delta_G(x)=\varphi_G(x\otimes1+1\otimes x).
+\end{equation}
+Finally, it is clear that a continuous linear map $f:A\to D$ which is compatible with multiplication and satisfies $\delta\circ f=\varepsilon_A$ sends the identity element of $A$ to that of $D$.\nde{Indeed, $\delta\circ f=\varepsilon_A$ implies that $f(1)=1+\lambda d$, with $\lambda\in k$, and then $f(1)=f(1)^2=1+2\lambda d$ gives $\lambda=0$.} The map $f\mto x$ therefore allows us to identify $\Lie(G)$ with the set of ``primitive elements'' of $\mathbf H(G)$ (\ie the $x\in\mathbf H(G)$ satisfying relation (*)). If $x,y$ are two such elements, one has
+\[
+\begin{aligned}
+\delta_G(xy)&=\delta_G(x)\delta_G(y)=\varphi_G\bigl((x\otimes1+1\otimes x)(y\otimes1+1\otimes y)\bigr)\\
+&=\varphi_G(xy\otimes1+x\otimes y+y\otimes x+1\otimes xy),
+\end{aligned}
+\]
+whence $\delta_G(xy-yx)=\varphi_G\bigl((xy-yx)\otimes1+1\otimes(xy-yx)\bigr)$.
+This shows that the $k$-module $\Lie(G)$ is identified with a Lie subalgebra of $\mathbf H(G)$: we shall say that $\Lie(G)$ is \emph{the Lie algebra of $G$}.\nde{Comparing with VII A 2.5, one sees that if $K$ is a group $k$-scheme \emph{of finite type} and $G$ is the formal completion of $K$ at the origin (\ie $\mathscr A(G)$ is the completion of the local ring $\OO_{K,e}$ for the $\mathfrak m$-adic topology, where $\mathfrak m$ is the kernel of the augmentation $\varepsilon:\OO_{K,e}\to k$), then $\mathbf H(G)$ is identified with the algebra of distributions $U(K)$, and $\Lie(G)$ with $\Lie(K)$. (The condition that $K$ be of finite type over $k$ is used to ensure that $\mathfrak m/\mathfrak m^2$ is a $k$-module of finite length, hence discrete, so that its topological dual coincides with its ordinary dual.) In particular, when $G$ is a \emph{finite} formal $k$-group (\ie such that $\mathscr A(G)$ is a finite $k$-module), in which case $G$ can also be considered as the group $k$-scheme $\Spec\mathscr A(G)$, the two definitions of $\Lie(G)$ coincide.}
+\end{enumeratea}
+
+\numpara{2.6.1}When $k$ is an arbitrary pseudocompact ring and $G$ a formal group over $k$, we call the functor $\uLie(G)$ which associates to every object $C$ of $\mathbf{Alf}/k$ the $C$-Lie algebra of the formal $C$-group $G'=G\widehat\otimes_k C$ the \emph{$\mathbf O_k$-Lie algebra of $G$}:\nde{We have detailed the original in what follows.} put $A'=A\widehat\otimes_k C$; since $I_A$ is a direct factor of $A$, $I_{A'}$ equals $I_A\widehat\otimes_k C=I_A\widehat\otimes_A A'$, and since $\omega_{G/k}=I_A\widehat\otimes_A k$ and likewise $\omega_{G'/C}=I_{A'}\widehat\otimes_{A'}C$, one obtains $\omega_{G'/C}=\omega_{G/k}\widehat\otimes_A C$, and hence
+\[
+\uLie(G)(C)=\Hom_c(\omega_{G/k}\widehat\otimes_A C,C),\qquad\ie\quad\uLie(G)=\mathbf V_k^{\mathrm f}(\omega_{G/k})
+\]
+(with the notation of 1.2.3.B). Thus, by Proposition 1.2.3.E, $\uLie(G)$ is flat over $\mathbf O_k$ if and only if $\omega_{G/k}$ is a projective pseudocompact $k$-module.
+% typo?: source prints tensor_A C where tensor_k C is expected; retained.
+
+\numpara{2.6.2}Conversely, every Lie algebra $\mathbf L$ over $\mathbf O_k$ defines a group-valued $k$-functor. Indeed, denote by $\mathbf U(\mathbf L)$ the functor which associates to every object $C$ of $\mathbf{Alf}/k$ the enveloping algebra $U(\mathbf L(C))$ of the $C$-Lie algebra $\mathbf L(C)$. By VII A, 3.2.2, $\mathbf U(\mathbf L)$ is a bialgebra over $\mathbf O_k$ and therefore determines, by 2.2, a group-valued $k$-functor $\Spf^*\mathbf U(\mathbf L)$, which we shall henceforth denote by $\mathscr G(\mathbf L)$. Thus $\mathscr G(\mathbf L)(C)$ is the group of elements $z\in U(\mathbf L(C))$ of augmentation $1$ such that $\Delta_{U(\mathbf L(C))}(z)=z\otimes z$.
+Moreover, when $\mathbf L$ is flat over $\mathbf O_k$, one has the following proposition.
+\begin{proposition}{}\nde{We have brought out parts (i) and (ii), and added part (iii), which will be useful in 2.6.3 and 3.3.2.}
+Let $\mathbf L$ be a flat $\mathbf O_k$-Lie algebra.
+\begin{enumeratei}
+\item $\mathscr G(\mathbf L)$ is a formal group topologically flat over $k$, whose $\mathbf O_k$-bialgebra is $\mathbf U(\mathbf L)$.
+\item $\mathscr G(\mathbf L)$ is infinitesimal.
+\item For every object $C$ of $\mathbf{Alf}/k$, $\uLie(\mathscr G(\mathbf L))(C)$ is identified with the set
+\[
+\operatorname{Prim}U(\mathbf L(C))=\{x\in U(\mathbf L(C))\mid\varepsilon(x)=0\ \text{and }\Delta(x)=x\otimes1+1\otimes x\}
+\]
+of primitive elements of $U(\mathbf L(C))$. In particular, one has a natural morphism of $\mathbf O_k$-Lie algebras $\tau_{\mathbf L}:\mathbf L\to\uLie(\mathscr G(\mathbf L))$.
+\end{enumeratei}
+\end{proposition}
+Indeed, the hypothesis that $\mathbf L$ is flat over $\mathbf O_k$ means that for every morphism $C\to D$ of $\mathbf{Alf}/k$, one has $\mathbf L(D)=\mathbf L(C)\otimes_C D$, and that for each local component $C'$ of $C$, $\mathbf L(C')$ is a free $C'$-module. The first condition implies $U(\mathbf L(D))=U(\mathbf L(C))\otimes D$ (by the universal property of the tensor product and that of the functor $L\mto U(L)$), and the second condition implies, by the Poincaré--Birkhoff--Witt theorem (cf. Bourbaki, \textit{Groupes et algèbres de Lie}, I 2.7), that $U(\mathbf L(C'))$ is a free $C'$-module. Thus the bialgebra $\mathbf U(\mathbf L)$ is flat over $\mathbf O_k$.
+To prove (ii) and (iii), one can suppose that $k$ is artinian. Put $L=\mathbf L(k)$, $U=U(L)$, $U_0=k\cdot1_U$, and let $U^+$ be the two-sided ideal of $U$ generated by the image of $L$. Put, moreover, for every $n\geq1$,
+\[
+U_n=\{u\in U\mid\Delta_U(u)-u\otimes1\in U_{n-1}\otimes U^+\}.
+\]
+By 1.3.6 it suffices to show that $U$ is the union of the $U_n$. Now, if one identifies $L$ with its canonical image in $U$, $L$ is evidently contained in $U_1$. If $x_1,\ldots,x_n$ are elements of $L$, one therefore has $\Delta_U(x_1\cdots x_n)=(x_1\otimes1+1\otimes x_1)\cdots(x_n\otimes1+1\otimes x_n)$, which shows, by induction on $n$, that the product $x_1\cdots x_n$ belongs to $U_n$, hence that $U=\bigcup_n U_n$. This proves (ii).
+On the other hand, let $D=k[d]/(d^2)$ be the algebra of dual numbers over $k$. By hypothesis, one has $\mathbf L(D)\simeq L\otimes D$, whence $U(\mathbf L(D))\simeq U\otimes D$ by the universal properties of the tensor product and the enveloping algebra. It follows that $\uLie(\mathscr G(\mathbf L))(k)$ is identified with the set of elements $z=1+xd$ of $U\oplus Ud$ (where $x\in U$) such that $\varepsilon(z)=1$ and $\Delta(z)=z\otimes z$, which is equivalent to $\varepsilon(x)=0$ and $\Delta(x)=x\otimes1+1\otimes x$, \ie $x\in\operatorname{Prim}U$. In particular, the map $\tau_{\mathbf L}:x\mto1+dx$ is a morphism of $\mathbf O_k$-Lie algebras from $\mathbf L$ to $\uLie(\mathscr G(\mathbf L))$.
+
+\numpara{2.6.3}If $\mathbf L$ is a flat Lie algebra over $\mathbf O_k$, the formal group $\mathscr G(\mathbf L)$ can be characterized by a universal property.\nde{We have modified what follows, taking advantage of the addition made in 2.6.2.} Indeed, every morphism $\phi$ from $\mathscr G(\mathbf L)$ to a formal group $G$ induces a morphism $\uLie(\phi):\uLie(\mathscr G(\mathbf L))\to\uLie(G)$; composing it with the morphism $\tau_{\mathbf L}:\mathbf L\to\uLie(\mathscr G(\mathbf L))$ (cf. 2.6.2), one obtains a morphism $\phi':\mathbf L\to\uLie(G)$, and one has:
+\begin{proposition}{}
+If $G$ is a formal $k$-group and $\mathbf L$ a flat $\mathbf O_k$-Lie algebra, the map $\phi\mto\phi'$ defined above is a bijection
+\[
+\Hom_{\mathbf{Grf}/k}(\mathscr G(\mathbf L),G)\isomto\Hom_{\Lie}(\mathbf L,\uLie(G)),
+\]
+where the right-hand term denotes the set of morphisms of $\mathbf O_k$-Lie algebras from $\mathbf L$ to $\uLie(G)$.
+\end{proposition}
+Indeed, one immediately reduces to the case where $k$ is artinian. Put $L=\mathbf L(k)$. By 2.3.1, $\Hom_{\mathbf{Grf}/k}(\mathscr G(\mathbf L),G)$ is in bijection with the set of morphisms of unital algebras $\phi:U(L)\to H(G)$ such that the following diagram commutes:
+\[
+\xymatrix@C=22pt@R=17pt{
+U(L)\ar[r]^h\ar[dd]_{\Delta_{U(L)}}&H(G)\ar[dr]^{\delta_G}&\\
+&&H(G\times G)\\
+U(L)\otimes U(L)\ar[r]_{h\otimes h}&H(G)\otimes H(G)\ar[ur]_{\varphi_G}&.}
+\]
+Now $h$ is defined by its restriction to $L$, which is a morphism of Lie algebras from $L$ to the Lie algebra underlying $H(G)$, and commutativity of the diagram means that $h$ maps $L$ into the part of $H(G)$ consisting of the $x$ such that $\delta_G(x)=\varphi_G(x\otimes1+1\otimes x)$, which is precisely $\Lie(G)$; cf. 2.6 c).
+
+\numpara{2.7}We conclude these generalities with a statement going back to S. Lie which will serve us in paragraph 5.1. A \emph{formal monoid over $k$} is by definition a pair $(M,m)$ consisting of a formal variety $M$ and a morphism $m:M\times M\to M$ such that $m(C)$ makes $M(C)$ a monoid for every object $C$ of $\mathbf{Alf}/k$.\nde{Here and in what follows we have written ``monoid'' instead of ``monoid with identity'' (recall that a monoid is by definition a set equipped with an associative composition law and having an identity element).} In particular, the ``identity section'', which associates to every object $C$ the identity element of $M(C)$, defines a section $\varepsilon_M$ of the canonical projection $M\to\Spf(k)$.

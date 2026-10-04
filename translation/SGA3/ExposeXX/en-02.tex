@@ -1,0 +1,270 @@
+\begin{corollary}{1.21}\label{XX.1.21}
+The subgroups $U_\alpha$ and $U_{-\alpha}$ of $G$ do not commute on any fiber.
+\end{corollary}
+Indeed, if $(U_\alpha)_s$ and $(U_{-\alpha})_s$ commute, $\Omega_s$ is a subgroup of $G_s$, hence $\Omega_s=G_s${\renewcommand{\thefootnote}{(9)}\nde{By 1.18.}} and $G_s$ is solvable, which contradicts the hypothesis that $G_s$ is reductive of semisimple rank~1.
+
+\sgasection{2}{Structure of elementary systems}
+\label{XX.sec.2}
+\begin{theorem}{2.1}\label{XX.2.1}
+Let $S$ be a scheme, $(G,T,\alpha)$ an elementary $S$-system. There exist a morphism of $\OS$-modules
+\[
+\mathfrak g^\alpha\otimes_{\OS}\mathfrak g^{-\alpha}\to\OS,\qquad(X,Y)\mto\langle X,Y\rangle,
+\]
+and a morphism of $S$-groups
+\[
+\alpha^*:\mathbf G_{\mathrm m,S}\to T
+\]
+such that for every $S'\to S$ and all $X\in\Gamma(S',\mathfrak g^\alpha\otimes\OO_{S'})$, $Y\in\Gamma(S',\mathfrak g^{-\alpha}\otimes\OO_{S'})$ one has the equivalence
+\[
+\exp(X)\cdot\exp(Y)\in\Omega(S')\Longleftrightarrow 1+\langle X,Y\rangle\in\Gm(S'),
+\]
+and under these conditions one has the formula:
+\begin{equation}\tag{F}\label{XX.eq.F}
+\boxed{\exp(X)\cdot\exp(Y)=\exp\left(\frac{Y}{1+\langle X,Y\rangle}\right)\alpha^*(1+\langle X,Y\rangle)\exp\left(\frac{X}{1+\langle X,Y\rangle}\right).}
+\end{equation}
+Moreover, the morphisms $(X,Y)\mto\langle X,Y\rangle$ and $\alpha^*$ are uniquely determined, the first is an isomorphism, hence puts the modules $\mathfrak g^\alpha$ and $\mathfrak g^{-\alpha}$ in duality, and one has $\alpha\circ\alpha^*=2$ (squaring in $\mathbf G_{\mathrm m,S}$).
+\end{theorem}
+In view of the uniqueness assertions of the theorem, it suffices to give the proof locally on $S$. One may therefore suppose that $\mathfrak g^\alpha$ and $\mathfrak g^{-\alpha}$ are free over $S$. Take then $X\in\Gamma(S,\mathfrak g^\alpha)^\times$, $Y\in\Gamma(S,\mathfrak g^{-\alpha})^\times$, and put $p_\alpha(x)=\exp(xX)$, $p_{-\alpha}(y)=\exp(yY)$ for $x,y\in\Ga(S')$, $S'\to S$. By 1.5 and 1.21, it suffices to prove:
+
+\begin{proposition}{2.2}\label{XX.2.2}
+Let $S$ be a scheme, $G$ an $S$-group, $T$ a torus of $G$, $\alpha$ a character of $T$ nontrivial on each fiber, $p_\alpha:\mathbf G_{\mathrm a,S}\to G$ (resp. $p_{-\alpha}:\mathbf G_{\mathrm a,S}\to G$) a monomorphism of groups normalized by $T$ with multiplier $\alpha$ (resp. $-\alpha$). Suppose that:
+\begin{enumeratei}
+\item The morphism $\mathbf G_{\mathrm a,S}\times_ST\times_S\mathbf G_{\mathrm a,S}\to G$ defined by $(y,t,x)\mto p_{-\alpha}(y)tp_\alpha(x)$ is an open immersion. Denote its image by $\Omega$.
+\item For every $s\in S$, $(p_\alpha)_s(\mathbf G_{\mathrm a,\kappa(s)})$ and $(p_{-\alpha})_s(\mathbf G_{\mathrm a,\kappa(s)})$ do not commute.
+\end{enumeratei}
+Then there exist uniquely determined $a\in\Ga(S)$ and $\alpha^*\in\Hom_{S\text{-gr.}}(\mathbf G_{\mathrm m,S},T)$ with the following properties: for every $S'\to S$ and all $x,y\in\Ga(S')$, one has
+\[
+p_\alpha(x)p_{-\alpha}(y)\in\Omega(S')\Longleftrightarrow1+axy\in\Gm(S'),
+\]
+and, under this condition, one has the formula
+\[
+p_\alpha(x)p_{-\alpha}(y)=p_{-\alpha}\left(\frac{y}{1+axy}\right)\alpha^*(1+axy)p_\alpha\left(\frac{x}{1+axy}\right).
+\]
+Moreover, $a$ is invertible (i.e. $a\in\Gm(S)$) and $\alpha\circ\alpha^*=2$.
+\end{proposition}
+\emph{Proof:}
+
+\textbf{A)} Consider the morphism
+\[
+\mathbf G_{\mathrm a,S}^2\to G
+\]
+defined by $(x,y)\mto p_\alpha(x)p_{-\alpha}(y)$. Let $U$ be the inverse image of $\Omega$ by this morphism. It is an open subset of $\mathbf G_{\mathrm a,S}^2$ containing $0\times_S\mathbf G_{\mathrm a,S}$ and $\mathbf G_{\mathrm a,S}\times_S0$. There therefore exist uniquely determined morphisms of $S$-schemes
+\[
+A:U\to\mathbf G_{\mathrm a,S},\qquad C:U\to\mathbf G_{\mathrm a,S},\qquad B:U\to T
+\]
+satisfying the set-theoretic relation:
+\[
+p_\alpha(u)p_{-\alpha}(v)=p_{-\alpha}(A(u,v))B(u,v)p_\alpha(C(u,v)).
+\]
+One immediately has the relations
+\[
+\begin{gathered}
+A(0,v)=v,\quad A(u,0)=0,\qquad C(u,0)=u,\quad C(0,v)=0,\\
+B(u,0)=B(0,v)=e.
+\end{gathered}
+\]
+Let $S'$ be a separated $S$-scheme and $t\in T(S')$ a point of $T$. Since $\Omega_{S'}$ is stable under $\operatorname{int}(t)$, by the last formula of 1.16, $U_{S'}$ is stable under the automorphism $(x,y)\mto(\alpha(t)x,\alpha(t)^{-1}y)$ of $\mathbf G_{\mathrm a,S'}^2$, and one has the relations:
+\[
+\begin{aligned}
+A(\alpha(t)u,\alpha(t)^{-1}v)&=\alpha(t)^{-1}A(u,v),\\
+C(\alpha(t)u,\alpha(t)^{-1}v)&=\alpha(t)C(u,v),\\
+B(\alpha(t)u,\alpha(t)^{-1}v)&=B(u,v).
+\end{aligned}
+\]
+Since $\alpha$ is faithfully flat, one deduces that for every $S'\to S$ and every $z\in\Gm(S')$, $U_{S'}$ is stable under the transformation $(x,y)\mto(zx,z^{-1}y)$ and one has
+\[
+\begin{gathered}
+A(zu,z^{-1}v)=z^{-1}A(u,v),\qquad C(zu,z^{-1}v)=zC(u,v),\\
+B(zu,z^{-1}v)=B(u,v).
+\end{gathered}
+\]
+Suppose first that $v$ is invertible; putting $z=v$, one deduces that if $(u,v)$ is a section of $U$, then $(uv,1)$ is also one, and one has
+\[
+A(uv,1)=v^{-1}A(u,v),\qquad B(uv,1)=B(u,v).
+\]
+Let then $V$ be the open subset of $\mathbf G_{\mathrm a,S}^2$ defined by{\renewcommand{\thefootnote}{(10)}\nde{The condition ``$(1,uv)\in U(S')$'' has been added.}}
+\[
+(u,v)\in V(S')\Longleftrightarrow(u,v),\ (uv,1)\text{ and }(1,uv)\text{ belong to }U(S').
+\]
+Since $U$ is an open subset of $\mathbf G_{\mathrm a,S}^2$ containing $0\times_S\mathbf G_{\mathrm a,S}$ and $\mathbf G_{\mathrm a,S}\times_S0$, $V$ is a neighborhood of the zero section of $\mathbf G_{\mathrm a,S}^2$, and we have just seen that the morphisms
+\[
+\begin{aligned}
+(u,v)&\mto A(u,v)&\text{and}\quad(u,v)&\mto vA(uv,1),\\
+\text{resp. }(u,v)&\mto B(u,v)&\text{and}\quad(u,v)&\mto B(uv,1)
+\end{aligned}
+\]
+coincide in $V\cap(\mathbf G_{\mathrm a,S}\times_S\mathbf G_{\mathrm m,S})$. Since $\mathbf G_{\mathrm a,S}\times_S\mathbf G_{\mathrm m,S}$ is schematically dense in $\mathbf G_{\mathrm a,S}^2$, these morphisms therefore coincide in $V$.
+
+One knows that $A(0,1)=1$; it follows that there exists an open subset $W_1$ of $\mathbf G_{\mathrm a,S}$ containing the zero section, such that for every section $x$ of $W_1$, $A(x,1)$ is invertible; putting $A(x,1)^{-1}=\mathrm F(x)$, one obtains that if $(u,v)\in V(S')${\renewcommand{\thefootnote}{(11)}\nde{Here and in what follows, $U(S')$ has been replaced by $V(S')$.}} and $uv\in W_1(S')$, $S'\to S$, then $A(u,v)=vA(uv,1)=v\mathrm F(uv)^{-1}$. Reasoning similarly for $C$, one obtains that there exist an open subset $W_2$ of $\mathbf G_{\mathrm a,S}$ containing the zero section and an element $\mathrm E${\renewcommand{\thefootnote}{(12)}\nde{The element denoted $\mathrm G$ in the original has been denoted $\mathrm E$, since $G$ already denotes the $S$-group under consideration.}} of $\OO(W_2)^\times$ such that $C(u,v)=uC(1,uv)=u\mathrm E(uv)^{-1}$ if $(u,v)\in V(S')$ and $uv\in W_2(S')$. Consequently, putting $W=W_1\cap W_2$, one obtains:
+
+There exist an open subset $W$ of $\mathbf G_{\mathrm a,S}$ containing the zero section, and $S$-morphisms
+\[
+\begin{array}{lll}
+\mathrm F:W\to\mathbf G_{\mathrm m,S},&&\mathrm F(0)=1,\\
+\mathrm H:W\to T,&&\mathrm H(0)=e,\\
+\mathrm E:W\to\mathbf G_{\mathrm m,S},&&\mathrm E(0)=1,
+\end{array}
+\]
+such that if $(u,v)\in V(S')$ and $uv\in W(S')$, $S'\to S$, one has
+\begin{equation}\tag{+}\label{XX.eq.plus}
+p_\alpha(u)p_{-\alpha}(v)=p_{-\alpha}(v\mathrm F(uv)^{-1})\mathrm H(uv)p_\alpha(u\mathrm E(uv)^{-1}).
+\end{equation}
+
+\textbf{B)} Let us now use associativity in $G$ to write
+\[
+p_\alpha(u)p_{-\alpha}(v)p_{-\alpha}(w)=p_\alpha(u)p_{-\alpha}(v+w).
+\]
+There exists an open subset $L$ of $\mathbf G_{\mathrm a,S}^3$, containing the unit section, such that $(u,v,w)\in L(S')$ is equivalent to
+\[
+\begin{gathered}
+(u,v)\in V(S'),\quad(u\mathrm E(uv)^{-1},w)\in V(S'),\quad(u,v+w)\in V(S'),\\
+uv\in W(S'),\quad uw\mathrm E(uv)^{-1}\in W(S'),\quad u(v+w)\in W(S').
+\end{gathered}
+\]
+Using formula (+), one writes at once, for $(u,v,w)\in L(S')$, the relations:
+\[
+\begin{aligned}
+(1)\quad\mathrm E(uv+uw)&=\mathrm E(uw\mathrm E(uv)^{-1})\mathrm E(uv),\\
+(2)\quad\mathrm H(uv+uw)&=\mathrm H(uw\mathrm E(uv)^{-1})\mathrm H(uv),\\
+(3)\quad(v+w)\mathrm F(uv+uw)^{-1}&=\alpha(\mathrm H(uv)^{-1})w\mathrm F(uw\mathrm E(uv)^{-1})^{-1}\\
+&\qquad+v\mathrm F(uv)^{-1}.
+\end{aligned}
+\]
+It is immediate from the definition of $L$ that $(1,0,0)\in L(S)$. Consider therefore
+\[
+L\cap(1\times_S\mathbf G_{\mathrm a,S}\times_S\mathbf G_{\mathrm a,S})=1\times_SM;
+\]
+$M$ is an open subset of $\mathbf G_{\mathrm a,S}^2$ containing the section $(0,0)$, and, for $(v,w)\in M(S')$, one has $v,w\mathrm E(v)^{-1},v+w\in W(S')$ and
+\[
+\begin{aligned}
+(1')\quad\mathrm E(v+w)&=\mathrm E(w\mathrm E(v)^{-1})\mathrm E(v),\\
+(2')\quad\mathrm H(v+w)&=\mathrm H(w\mathrm E(v)^{-1})\mathrm H(v),\\
+(3')\quad(v+w)\mathrm F(v+w)^{-1}&=\alpha(\mathrm H(v))^{-1}w\mathrm F(w\mathrm E(v)^{-1})^{-1}+v\mathrm F(v)^{-1}.
+\end{aligned}
+\]
+Finally, consider the morphism from $M$ to $\mathbf G_{\mathrm a,S}^2$ defined set-theoretically by $(v,w)\mto(v,w\mathrm E(v)^{-1})$.{\renewcommand{\thefootnote}{(13)}\nde{The following has been corrected.}} It preserves the section $(0,0)$ and induces an isomorphism from $M$ onto an open subset $N$ of $\mathbf G_{\mathrm a,S}^2$ containing the zero section (the inverse isomorphism being given by $(x,y)\mto(x,y\mathrm E(x))$).{\renewcommand{\thefootnote}{(14)}\nde{I.e. one has made the ``change of variables'' $x=v$, $y=w\mathrm E(v)^{-1}$, that is, $v=x$, $w=y\mathrm E(x)$.}} One has therefore proved the following assertion:
+
+There exists an open subset $N$ of $\mathbf G_{\mathrm a,S}^2$ containing the zero section such that if $(x,y)\in N(S')$, then $x$, $y$ and $x+y\mathrm E(x)${\renewcommand{\thefootnote}{(15)}\nde{$y\mathrm E(x)$ has been corrected to $x+y\mathrm E(x)$.}} belong to $W(S')$ and:
+\[
+\begin{aligned}
+(1'')\quad\mathrm E(x+y\mathrm E(x))&=\mathrm E(x)\mathrm E(y),\\
+(2'')\quad\mathrm H(x+y\mathrm E(x))&=\mathrm H(x)\mathrm H(y),\\
+(3'')\quad(x+y\mathrm E(x))\mathrm F(x+y\mathrm E(x))^{-1}&=x\mathrm F(x)^{-1}+\alpha(\mathrm H(x))^{-1}y\mathrm E(x)\mathrm F(y)^{-1}.
+\end{aligned}
+\]
+
+\textbf{C)} Reasoning similarly with associativity on the left, one proves the following assertion:{\renewcommand{\thefootnote}{(16)}\nde{I.e. one writes the equalities resulting from $p_\alpha(t)p_\alpha(u)p_{-\alpha}(v)=p_\alpha(t+u)p_{-\alpha}(v)$, and puts $v=1$ and $x=u$, $t=y\mathrm F(u)$ (i.e. $y=t\mathrm F(u)^{-1}$).}}
+
+There exists an open subset $N'$ of $\mathbf G_{\mathrm a,S}^2$ containing the zero section such that if $(x,y)\in N'(S')$, then $x$, $y$ and $x+y\mathrm F(x)${\renewcommand{\thefootnote}{(17)}\nde{$y\mathrm F(x)$ has been corrected to $x+y\mathrm F(x)$.}} belong to $W(S')$, and
+\[
+\begin{aligned}
+(4'')\quad\mathrm F(x+y\mathrm F(x))&=\mathrm F(x)\mathrm F(y),\\
+(5'')\quad\mathrm H(x+y\mathrm F(x))&=\mathrm H(x)\mathrm H(y),\\
+(6'')\quad(x+y\mathrm F(x))\mathrm E(x+y\mathrm F(x))^{-1}&=x\mathrm E(x)^{-1}+\alpha(\mathrm H(x))^{-1}y\mathrm F(x)\mathrm E(y)^{-1}.
+\end{aligned}
+\]
+We are therefore led to solve the ``functional equation'' $(1'')$.
+
+\begin{lemma}{2.3}\label{XX.2.3}
+Let $S$ be a scheme, $W$ an open subset of $\mathbf G_{\mathrm a,S}$ containing the unit section, $\mathrm F:W\to\mathbf G_{\mathrm m,S}$ an $S$-morphism. Suppose that $\mathrm F(0)=1$ and that there exists an open subset $N$ of $\mathbf G_{\mathrm a,S}^2$ containing the zero section such that for $(x,y)\in N(S')$, $x$, $y$ and $x+y\mathrm F(x)${\renewcommand{\thefootnote}{(17)}\footnotemark} belong to $W(S')$ and one has:
+\begin{equation}\tag{$\dagger$}\label{XX.eq.dagger}
+\mathrm F(x+y\mathrm F(x))=\mathrm F(x)\mathrm F(y).
+\end{equation}
+\begin{enumeratei}
+\item If $S$ is the spectrum of a field $k$, there exists $a\in k$ such that $\mathrm F(x)=1+ax$.
+\item If $a=\mathrm F'(0)\in\Gamma(S,\OS)$ is invertible, then $\mathrm F(x)=1+ax$.
+\end{enumeratei}
+\end{lemma}
+By the hypotheses, we can differentiate the given equation at $x=0$ (resp. at $y=0$), and find that
+\begin{equation}\tag{$*$}\label{XX.eq.star}
+\mathrm F'(y)(1+y\mathrm F'(0))=\mathrm F'(0)\mathrm F(y)\quad\text{for }(0,y)\in N(S'),
+\end{equation}
+resp.
+\[
+\mathrm F'(x)\mathrm F(x)=\mathrm F(x)\mathrm F'(0)\quad\text{for }(x,0)\in N(S').
+\]
+Since $\mathrm F$ takes values in $\Gm$, the second relation gives
+\begin{equation}\tag{$*'$}\label{XX.eq.starprime}
+\mathrm F'(x)=\mathrm F'(0)\quad\text{for }(x,0)\in N(S');
+\end{equation}
+whence, by the first,
+\[
+\mathrm F'(0)(1+y\mathrm F'(0))=\mathrm F'(0)\mathrm F(y)\quad\text{for }(y,0),(0,y)\in N(S').
+\]
+If $a=\mathrm F'(0)$ is invertible, this gives
+\[
+\mathrm F(y)=1+ay,
+\]
+for $y$ a section of an open subset of $W$ containing the unit section, hence schematically dense in $W$, which proves (ii). This also proves (i) when $\mathrm F'(0)\ne0$.
+
+If $\mathrm F'(0)=0$, then, by ($*'$), $\mathrm F'(x)=0$ when $x$ is ``near~0'', hence $\mathrm F'=0$ by schematic density. If $k$ has characteristic~0, $\mathrm F$ is a rational fraction with zero derivative, hence constant and equal to $\mathrm F(0)=1$.
+
+If $k$ has characteristic $p$ and $\mathrm F$ is not constant,{\renewcommand{\thefootnote}{(18)}\nde{The following has been corrected.}} there exist an integer $n>0$ and a rational fraction $\mathrm F_1\in k(X)$ such that $\mathrm F'_1(X)\ne0$ and
+\[
+\mathrm F(X)=\mathrm F_1(X^{p^n})=\mathrm F_1(X)^{p^n}.
+\]
+Substituting in the functional equation, one finds
+\begin{equation}\tag{$\dagger_1$}\label{XX.eq.dagger1}
+\mathrm F_1(x+y\mathrm F_1(x)^{p^n})=\mathrm F_1(x)\mathrm F_1(y).
+\end{equation}
+Differentiating at $x=0$, one finds
+\begin{equation}\tag{$*_1$}\label{XX.eq.star1}
+\mathrm F'_1(y)=\mathrm F'_1(0)\mathrm F_1(y),
+\end{equation}
+and differentiating ($\dagger_1$) at $y=0$, one obtains
+\begin{equation}\tag{$*'_1$}\label{XX.eq.starprime1}
+\mathrm F'_1(x)\mathrm F_1(x)^{p^n}=\mathrm F_1(x)\mathrm F'_1(0).
+\end{equation}
+Since, by hypothesis, $\mathrm F'_1(X)$ is an invertible element of $k(X)$, one deduces from these two equalities that
+\[
+\mathrm F_1(X)^{p^n}=1,
+\]
+hence $\mathrm F_1$ is a constant, contradicting the initial hypothesis. This shows that $\mathrm F$ is constant and equal to $1=\mathrm F(0)$.
+
+\textbf{D)} \emph{Suppose that $S$ is the spectrum of a field.} If $\mathrm F'(0)=0$, then $\mathrm F=1$. Formula $(5'')$ then gives $\mathrm H(x+y)=\mathrm H(x)\mathrm H(y)$, which shows that $\mathrm H$ extends to a morphism of groups $\mathbf G_{\mathrm a,S}\to T$ (Exp.~XVIII 2.3), which is necessarily constant with value $e$. On the other hand, by lemma~2.3, one will also have $\mathrm E(x)=1+bx$ for some $b\in k$. But then $(6'')$ gives, for $(x,y)\in N(S')$,
+\[
+(x+y)\mathrm E(x+y)^{-1}=x\mathrm E(x)^{-1}+y\mathrm E(y)^{-1},
+\]
+hence,{\renewcommand{\thefootnote}{(19)}\nde{The following sentence has been added. One can also see by a direct calculation that the preceding equality implies $0=xyb(2+(x+y)b)$, whence $0=b(2+(x+y)b)$, and finally $b=0$.}} by Exp.~XVIII 2.3 again, $x\mto x\mathrm E(x)^{-1}$ extends to a morphism of $k$-groups $\mathbf G_{\mathrm a,k}\to\mathbf G_{\mathrm a,k}$, hence $x/(1+bx)=cx$ for some $c\in k$, whence $b=0$ (and $c=1$).
+
+This shows that $\mathrm F,\mathrm H,\mathrm E$ are constant with values $(1,e,1)$ in a neighborhood of the unit section, hence everywhere, which by (+) shows that $U_\alpha$ and $U_{-\alpha}$ commute, contrary to hypothesis (ii).
+
+\emph{If $S$ is now arbitrary}, one has therefore proved that $\mathrm F'(0)$ vanishes on no fiber, hence is invertible. The same is clearly true of $\mathrm E'(0)$, which, by lemma~2.3, shows that there exist $a,b\in\Gm(S)$ such that
+\begin{equation}\tag{$\diamondsuit_1$}\label{XX.eq.diamond1}
+\mathrm F(x)=1+ax,\quad\mathrm E(x)=1+bx,\qquad\text{for }x\in W(S').
+\end{equation}
+
+\textbf{E)} The rest is now easy. Substituting the preceding results in $(3'')$, one finds
+\[
+y\alpha(\mathrm H(x))(1+ay)=y\bigl(1+ax+ay(1+bx)\bigr)(1+ax).
+\]
+This formula is valid for every section $(x,y)$ of $N$. But since $\mathbf G_{\mathrm a,S}\times_S\mathbf G_{\mathrm m,S}$ is schematically dense in $\mathbf G_{\mathrm a,S}^2$, one deduces
+\[
+(1+ay)\alpha(\mathrm H(x))=\bigl(1+ax+ay(1+bx)\bigr)(1+ax).
+\]
+Putting $y=0$ gives $\alpha(\mathrm H(x))=(1+ax)^2$. Substituting this in the preceding equality, one finds{\renewcommand{\thefootnote}{(20)}\nde{In the preceding three equalities, the original has been corrected by replacing the factor $(1+bx)$ on the right by $1+ax$. Substituting the third equality in the second and taking account of the invertibility of $1+ax$, one indeed obtains $a^2xy=abxy$.}}
+\[
+a^2xy=abxy.
+\]
+Since $\mathbf G_{\mathrm m,S}$ is schematically dense in $\mathbf G_{\mathrm a,S}$, one deduces $a^2=ab$, whence, since $a$ is invertible,
+\begin{equation}\tag{$\diamondsuit_2$}\label{XX.eq.diamond2}
+a=b\quad\text{and}\quad\alpha(\mathrm H(x))=(1+ax)^2.
+\end{equation}
+Since $a$ is invertible, $x\mto1+ax$ is an automorphism of $\mathbf G_{\mathrm a,S}$; one can therefore find an open subset $W'$ of $\mathbf G_{\mathrm a,S}$ containing the section~1 and a morphism
+\[
+\mathrm P:W'\to T
+\]
+such that $\mathrm P(1+ax)=\mathrm H(x)$.{\renewcommand{\thefootnote}{(21)}\nde{I.e. one has made the change of variables $x'=1+ax$, that is, $x=(x'-1)/a$.}}
+
+Substituting in relation $(2')$, one finds at once, for $(x,y)\in N(S')$,
+\[
+\mathrm P(1+ax+ay)=\mathrm P\left(\frac{1+ax+ay}{1+ax}\right)\mathrm P(1+ax),
+\]
+which proves that there exists an open neighborhood of~1 in $\mathbf G_{\mathrm m,S}$ such that for $x$ and $y$ in this neighborhood one has $\mathrm P(x)\mathrm P(y)=\mathrm P(xy)$. By Exp.~XVIII 2.3, there exists a morphism of groups
+\begin{equation}\tag{$\diamondsuit_3$}\label{XX.eq.diamond3}
+\alpha^*:\mathbf G_{\mathrm m,S}\to T
+\end{equation}
+extending $\mathrm P$. Since $\alpha(\mathrm H(x))=(1+ax)^2$ in a neighborhood of the zero section, one has $\alpha(\alpha^*(z))=z^2$ in a neighborhood of the section~1, hence
+\begin{equation}\tag{$\diamondsuit_4$}\label{XX.eq.diamond4}
+\alpha\circ\alpha^*=2.
+\end{equation}

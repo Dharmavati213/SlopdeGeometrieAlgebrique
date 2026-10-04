@@ -1,0 +1,149 @@
+By a well-known theorem of Chevalley\nde{Give references here.}, $Z$ is an extension of an abelian variety by an affine group, which reduces us at once to proving our assertion in each of the following two cases: $1^\circ$) $Z$ is affine, $2^\circ$) $Z$ is an abelian variety. In case $1^\circ$), $G$ is affine and the result is well known (BIBLE~7 th.~3 a)). Thus suppose that $Z$ is an abelian variety. Since every homomorphism from the additive group $\Ga$ to the torus $G'=R$ or to the abelian variety $Z$ is trivial, it follows that the same holds for every homomorphism from $\Ga$ to $G$, hence $G$ contains no subgroup isomorphic to $\Ga$. By the structure theorem of Chevalley already invoked, one has an exact sequence
+\begin{equation}\tag{*}
+0\to T\to G\to A\to0,
+\end{equation}
+where $A$ is an abelian variety, and $T$ a smooth connected affine group. Since the latter is commutative and contains no additive subgroup, it follows that $T$ is a torus (and it is obviously the unique maximal torus of $G$). Everything amounts to proving that every epimorphism
+\[
+u:G\to R,
+\]
+where $R$ is a torus, satisfies $u(T)=R$. Put
+\[
+\Hom_{\mathrm{gr}}(T,\Gm)=M,\qquad\Hom_{\mathrm{gr}}(R,\Gm)=P,
+\]
+(these are free $\ZZ$-modules of finite type recovering $T,R$ up to isomorphism by $T=D_k(M)$, $R=D_k(P)$), and let
+\[
+B=\Ext^1_{k\text{-gr}}(A,\Gm),
+\]
+($B$ is also the set of points rational over $k$ of the abelian variety dual to $A$). One obviously has
+\begin{equation}\tag{xx}
+\begin{aligned}
+\Ext^1(A,T)&=\Hom_{\mathrm{gr}}(M,B),\\
+\Ext^1(A,R)&=\Hom_{\mathrm{gr}}(P,B),
+\end{aligned}
+\end{equation}
+in particular the extension $G$ of $A$ by $T$ is given by a homomorphism
+\[
+\theta:M\to B.
+\]
+On the other hand, exact sequence (*) gives the exact sequence
+\[
+0\to\Hom(A,R)\to\Hom(G,R)\to\Hom(T,R)\to\Ext^1(A,R),
+\]
+and moreover $\Hom(A,R)=0$, and $\Hom(T,R)\to\Ext^1(A,R)$ is identified with the homomorphism
+\[
+\Hom(P,M)\to\Hom(P,B)
+\]
+deduced from $\theta:M\to B$. Putting
+\[
+N=\Ker(\theta),
+\]
+one therefore finds a canonical bijection
+\[
+\Hom(G,R)\simeq\Hom(P,N)\simeq\Hom(S,R),\qquad\text{where }S=D_k(N),
+\]
+which one can immediately describe geometrically as follows:
+\begin{lemma}{6.5}\label{XII.6.5}
+Let $G$ be an extension of an abelian variety $A$ by a torus $T=D_k(M)$, defined by a homomorphism $\theta:M\to B=\Ext^1(A,\Gm)$ (algebraically closed base field $k$). Let $N=\Ker\theta$, $S=D_k(N)$ the corresponding torus, isomorphic to $T/U$ where $U=D_k(M/N)$; consider the extension $H=G/U$ of $A$ by $S$. This extension splits\nde{Is split!}, so one has a unique projection from $H$ to $S$, whence a unique homomorphism
+\[
+v:G\to S
+\]
+extending the canonical homomorphism $T\to S$. This being said, for every torus $R$ and every homomorphism $u:G\to R$, there exists a unique homomorphism $u':S\to R$ such that $u=u'v$. In particular, one has $\Im(u)=\Im(u')=u(T)$.
+\end{lemma}
+This shows in particular that if $u$ is an epimorphism, so is its restriction to $T$, which completes the proof of 6.4.
+\begin{theorem}{6.6}\label{XII.6.6}
+Let $G$ be a smooth connected algebraic group over an algebraically closed field $k$.
+\begin{enumerate}[label=\alph*)]
+\item The maximal tori of $G$ are conjugate.
+\item Let $T$ be a torus of $G$; then its centralizer is smooth and connected.
+\item The map $T\mto\Centr_G(T)$ establishes a one-to-one correspondence between the set of maximal tori $T$ of $G$ and the set of Cartan subgroups (\No1) of $G$. For an algebraic subgroup $C$ of $G$ to be a Cartan subgroup, it is necessary and sufficient that it be smooth, nilpotent and set-theoretically equal to its connected normalizer (and then it is even equal to its connected normalizer); one then has $C=\Centr_G(T)$, where $T$ is the unique maximal torus of $C$, and $\Norm_G(C)=\Norm_G(T)$.
+\item Let $v:G\to H$ be an epimorphism of smooth connected algebraic groups; then the maximal tori (resp. the Cartan subgroups) of $H$ are the images of the maximal tori (resp. the Cartan subgroups) of $G$. If $T$ is a maximal torus of $G$, $C$ its centralizer, then $v(C)$ is the centralizer of $v(T)$.
+\item Under the conditions of d), suppose that $\Ker v$ is a central subgroup of $G$; then $T\mto v(T)$ (resp. $C\mto v(C)$) establishes a one-to-one correspondence between the set of maximal tori (resp. of Cartan subgroups) of $G$ and the set of maximal tori (resp. of Cartan subgroups) of $H$. The Cartan subgroups of $G$ contain the center of $G$ and a fortiori $\Ker v$, and are the groups of the form $v^{-1}(C')$, where $C'$ is a Cartan subgroup of $H$.
+\end{enumerate}
+\end{theorem}
+Let us also describe explicitly at once the following immediate consequence of c):
+\begin{corollary}{6.7}\label{XII.6.7}
+For $G$ to be nilpotent (\ie the group $G(k)$ nilpotent), it is necessary and sufficient that the tori in $G$ be central, or again that $G$ have only one maximal torus (and then the latter is the largest subtorus of $G$).
+\end{corollary}
+\begin{proof}[Proof of 6.6]
+Let $Z$ be a central algebraic subgroup of $G$, let $G'=G/Z$, and $u:G\to G'$ the canonical homomorphism. Then $G'$ is a smooth connected group. If $T'$ is a subtorus of $G'$, it follows from 6.4 that $u^{-1}(T')$ is commutative, and that $T'$ is the image of a subtorus of $u^{-1}(T')$, hence of a subtorus of $G$.
+
+Since $u^{-1}(T')$ is commutative, it obviously admits a largest subtorus $T$ (for the sum of two subtori gives a third containing both), and one therefore has $u(T)=T'$. From this it follows immediately that for every maximal torus $T$ of $G$, its image $T'=u(T)$ is a maximal torus of $G'$, and that $T\mto u(T)$ is a one-to-one correspondence between maximal tori of $G$ and maximal tori of $G'$.
+
+We now take
+\[
+Z=\Centr(G)^0_{\mathrm{red}},
+\]
+then $G'$ is affine by 6.1. Since the maximal tori of $G'$ are then conjugate, so are those of $G$, which proves a). Moreover, for $G$ to be nilpotent, resp. to have only one maximal torus, it is necessary and sufficient that $G'$ satisfy the same condition; but since $G'$ is affine, the two conditions in question on $G'$ are equivalent (BIBLE~6 th.~4 cor.~2), so the same holds for the conditions in question for $G$. Moreover, if $G$ has only one maximal torus $T$, the latter is invariant, hence central, and since every torus in $G$ is contained in a maximal torus, it is central. Conversely, if every torus is central, so are the maximal tori, and by conjugacy theorem a) there is only one maximal torus. This proves 6.7.
+
+Let $T$ be any torus of $G$, $T'=u(T)$; then $C'=\Centr_{G'}(T')$ is connected (BIBLE~6 th.~6 a)), so by 6.3 the centralizer $C$ of $T$ is equal to $u^{-1}(C)$, hence connected (since $Z$ is connected), which proves b). If $T$ is maximal, hence $T'$ maximal, then one knows that $C'$ is nilpotent, hence $C$ (which is a central extension of $C'$) is nilpotent. In addition, $T$ is a maximal torus of $C$, hence by 6.7 it is the unique maximal torus of $C$, so the map $T\mto\Centr_G(T)$ from the set of maximal tori of $G$ to the set of Cartan subgroups is bijective. Moreover one has
+\[
+\Centr_G(T)=C\subset\Norm_G(C)\subset\Norm_G(T)
+\]
+and since one knows that the centralizer of $T$ is of finite index in its normalizer (\cf XI~5.9, whose argument is valid without an affine hypothesis, using only the representability of the two functors in question, as was pointed out in XI~6.5), and that $C$ is smooth and connected, one concludes
+\[
+C=\Norm_G(C)^0.
+\]
+In addition, by the one-to-one correspondence between maximal tori and Cartan subgroups, one sees that $\Norm_G(C)$ and $\Norm_G(T)$ have the same points with values in $k$, and since the second is smooth, one has
+\[
+\Norm_G(T)=\Norm_G(C).
+\]
+To complete the establishment of c), it remains to prove that if $C$ is a smooth connected nilpotent subgroup of $G$ of finite index in its normalizer, then $C$ is a Cartan subgroup. Now since $Z$ is central, the normalizer of $C$ contains $Z$, and since $Z$ is smooth and connected, one concludes $Z\subset C$, whence $C=u^{-1}(C')$, where $C'=u(C)$. One then has
+\[
+\Norm_G(C)=u^{-1}(\Norm_{G'}(C')),
+\]
+which proves that $C'$ is connected nilpotent of finite index in its normalizer, hence by BIBLE~7 th.~1 is a Cartan subgroup of $G'$, whence at once that $C$ is a Cartan subgroup of $G$.
+% typo?: u^{-1}(C) rather than u^{-1}(C') retained above.
+
+Let us prove e): one is under the conditions of the beginning of the proof (putting $\Ker u=Z$, $G'=H$); we have already seen that $T\mto u(T)$ is a one-to-one correspondence between maximal tori of $G$ and maximal tori of $G'$. Taking account of the one-to-one correspondence between maximal tori and Cartan subgroups just proved, one deduces a one-to-one correspondence between Cartan subgroups $C$ of $G$ and Cartan subgroups $C'$ of $G'$, by associating to $C=\Centr_G(T)$ the group $C'=\Centr_{G'}(T')$, where $T'=u(T)$. Since $C'$ is connected by b), it follows by 6.3 that $C'=u(C)$, and $C=u^{-1}(C')$, which proves e).
+
+It remains to prove d). Let $T$ be a maximal torus of $G$; let us prove that $v(T)$ is a maximal torus of $H$ (which, taking account of conjugacy theorem a), will imply that the maximal tori of $H$ are all of the form $v(T)$ as above). Thus let $R$ be a torus in $H$ containing $v(T)$, and let us prove $R=v(T)$. On replacing $H$ by $R$, $G$ by $v^{-1}(R)^0_{\mathrm{red}}$, one can suppose $R=H$, \ie that $H$ is a torus, and one is reduced to proving that then $v(T)=H$. Let again $Z=\Centr(G)^0_{\mathrm{red}}$, $G'=G/Z$, and $H'=H/v(Z)$:
+\begin{equation}\tag{D}
+\xymatrix@C=1.1em{e\ar[r]&Z\ar[r]\ar[d]^{v''}&G\ar[r]^u\ar[d]^v&G'\ar[r]\ar[d]^{v'}&e\\e\ar[r]&v(Z)\ar[r]&H\ar[r]_{u'}&H'\ar[r]&e.}
+\end{equation}
+We already know that $u(T)$ is a maximal torus of $G'$, and since $G'$ is affine, hence $v':G'\to H'$ an epimorphism of smooth connected affine groups, $v'(u(T))$ is a maximal torus of $H'$ (BIBLE~7 th.~3 a)), hence equal to $H'$, \ie $u'(v(T))=H'$, so to prove $v(T)=H$, it suffices to show that $v(T)\supset v(Z)$. Now $v(Z)$ is a smooth connected subgroup of $H$, hence a torus, and $v'':Z\to v(Z)$ is an epimorphism, so by 6.4 one has $v(Z)=v''(S)$, where $S$ is a torus of $Z$. But $S$, being central in $G$, is obviously contained in the maximal torus $T$, whence $v(Z)\subset v(T)$. This proves assertion d) in the case of maximal tori.
+
+Taking account of the one-to-one correspondence between maximal tori and Cartan subgroups, it remains to prove that if $T$ is a maximal torus of $G$, $C$ its centralizer, then $v(C)$ is the centralizer of $v(T)$. For this, take up again diagram (D) above (where of course $H$ is no longer supposed to be a torus), let $T'=u(T)$, $C'=u(C)$; we already saw in e) that $C'$ is the centralizer of the maximal torus $T'$, hence (since $G'$ is affine, hence $H'$ affine) $v'(C')$ is the centralizer of the maximal torus $v'(T')$ of $H'$ (BIBLE~7 th.~3 a)), \ie $u'(v(C))$ is the centralizer of $u'(v(T))$; since $C$ contains $Z$, hence $v(C)$ contains $v(Z)$, $v(C)$ is therefore the inverse image under $u'$ of $u'(v(C))$, \ie of the centralizer of $u'(v(T))$, hence is the centralizer of $v(T)$, as follows from e) applied to $u':H\to H'$ and to the maximal torus $v(T)$ of $H$. This completes the proof of 6.6.
+% typo: missing closing parenthesis after BIBLE 7 th. 3 a) -> supplied.
+\end{proof}
+
+\sgasection{7}{Application to smooth group preschemes not necessarily affine}
+\begin{theorem}{7.1}\label{XII.7.1}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme smooth, separated and of finite type over $S$. Suppose that $G$ admits locally for the faithfully flat quasi-compact topology a maximal torus. Then:
+\begin{enumerate}[label=\alph*)]
+\item The map
+\[
+T\mto\Centr_G(T)
+\]
+induces a bijection from the set of maximal tori of $G$ to the set of Cartan subgroups of $G$. If $C$ corresponds to $T$, then $T$ is the unique maximal torus of $C$.
+\item Let $T,T'$ be two maximal tori of $G$, $C,C'$ the corresponding Cartan subgroups; then one has
+\[
+\uTransp_G(T,T')=\uTransp_G(C,C')=\uTransp_G(T,C'),
+\]
+the first two terms are also identical to the strict transporters, and finally the functor in question is representable by a closed sub-prescheme of $G$ smooth over $S$. The tori $T,T'$ and the Cartan subgroups $C,C'$ are locally conjugate for the étale topology.
+\item There exists locally for the étale topology a maximal torus of $G$ and a Cartan subgroup of $G$.
+\item Suppose that every finite subset of a fiber $G_s$ of $G$ is contained in an affine open subset of $G$ (for example $G$ quasi-projective over $S$, or $S$ artinian); then the functor $\mathscr T:\Sch^\circ_{/S}\to\Ens$ defined in 1.10 (the functor of maximal tori of $G$), isomorphic to the functor $\mathscr T:\Sch^\circ_{/S}\to\Ens$ of Cartan subgroups of $G$, is representable by a prescheme smooth, separated, of finite type over $S$, which is quasi-projective over $S$ when $G$ is, and is affine over $S$ when $G$ is affine over $S$, or when $S$ is artinian.
+% typo?: both functors denoted T in source, retained.
+\item Let $u:G\to G'$ be a morphism of $S$-group preschemes, where $G'$ is smooth, separated, of finite type over $S$, and suppose that for every $s\in S$, one has $u_s(G_s)=G'_s$, \ie $u_s$ is faithfully flat (Exp.~VI\nde{Reference not located in VI$_{\mathrm B}$; see M.~Demazure and P.~Gabriel, \textit{Groupes algébriques}, I, Masson (1970), proposition II.5.1.(c).}). Then for every maximal torus $T$ of $G$, $u(T)$ is a maximal torus of $G'$; if $G'$ has connected fibers, then for every Cartan subgroup $C$ of $G$, $u(C)$ is a Cartan subgroup of $G'$, and if $C$ is the centralizer of $T$, $u(C)$ is the centralizer of $u(T)$. In either case, the induced morphism $T\to u(T)$, resp. $C\to u(C)$, is faithfully flat.
+\item Under the conditions of e), suppose in addition that $\Ker u$ is a central subgroup of $G$. Then $T\mto u(T)$ is a bijective map from the set of maximal tori of $G$ to the set of maximal tori of $G'$, and if $G'$ has connected fibers, $C\mto u(C)$ is likewise a bijective map from the set of Cartan subgroups of $G$ to the set of Cartan subgroups of $G'$; if $C'=u(C)$, one has $C=u^{-1}(C')$.
+% typo: "une applications" -> "une application".
+\end{enumerate}
+\end{theorem}
+\begin{remarks}{7.2}\label{XII.7.2}
+We shall see in XV that the conclusion of d) remains valid without the restrictive condition on finite subsets of the $G_s$. We shall also prove there the conclusions concerning Cartan subgroups alone contained in b) c) d) e), when one supposes only that $G$ admits locally for the faithfully flat quasi-compact topology a Cartan subgroup (but not necessarily a maximal torus). For this, we shall moreover have to use 7.1 in the case where $S$ is artinian. Moreover, the proof of c) and d) (in the case of non-artinian $S$) is considerably simplified by using the method of XV.
+% typo: "par nécessairement" -> "pas nécessairement".
+\end{remarks}
+\begin{proof}[Proof of 7.1]
+a) Proceeding as in 3.2, one sees that for every maximal torus $T$ of $G$, $C=\Centr_G(T)$ is indeed a Cartan subgroup of $G$, and $T$ is determined in terms of $C$ as the unique maximal torus of $C$, so it remains only to show that every Cartan subgroup $C$ of $G$ is defined by a maximal torus of $G$, or again that $C$ admits a central maximal torus. Since the question is again local for the fpqc topology, one can suppose that $G$ admits a maximal torus $T$. Then by XI~6.2, $\uTransp_G(T,C)$ is representable by a closed sub-prescheme $S'$ of $G$ smooth over $S$; moreover $S'\to S$ is surjective, as follows from 6.6 c). Thus on making the base change $S'\to S$, one can suppose that there exists a section $g$ of $G$ such that $\operatorname{ad}(g)\cdot T\subset C$, but then $\operatorname{ad}(g)\cdot T$ is a maximal torus of $C$, which is central fiber by fiber by 6.6 c), hence central by IX~5.6 b). \hfill Q.E.D.
+
+b) Let $T,T'$ be two maximal tori of $G$, and $C,C'$ the corresponding Cartan subgroups of $G$. Then the following conditions are equivalent:
+\[
+\begin{gathered}
+(1)\ T\subset T'\qquad(2)\ T=T'\qquad(3)\ T\subset C'\\
+(4)\ C\subset C'\qquad(5)\ C=C'.
+\end{gathered}
+\]
+This follows trivially from a). Using the same result after arbitrary base change, one concludes the identity stated in b) between various transporters and strict transporters. Moreover, it was already observed in a) that $\uTransp_G(T,C')$ is representable by a closed sub-prescheme of $G$, smooth over $S$, and that its structural morphism is surjective. Consequently, by Hensel there exists locally for the étale topology a section of this prescheme over $S$, so $T$ and $T'$ on the one hand, $C$ and $C'$ on the other, are locally conjugate for the étale topology, which proves b).
+
+c) Suppose first that $S$ is artinian local. When $G$ admits a maximal torus $T$, then it follows from the conjugacy theorem proved in b) that the functor $\mathscr T$ of maximal tori of $G$ is representable by the homogeneous space $G/N$, where $N$ is the normalizer of $T$ in $G$, which is smooth by b). Moreover, as was observed in VI$_{\mathrm A}$.3.2.1, since $\mathscr T$ is a homogeneous space under $G$, every finite subset of $\mathscr T$ is contained in an affine open subset. In the general case, there exists a finite extension $k'$ of the residue field $k$ of $S$ such that $G_{k'}$ has a maximal torus; then $k'$ comes from $k$ by a finite flat base change $S'\to S$, and the maximal torus of $G_{k'}$ lifts to a maximal torus $G_{S'}$ (XI~2.1 bis), so the functor $\mathscr T_{S'}$ is representable by a prescheme over $S'$, smooth, separated and of finite type over $S'$, every finite subset of which is contained in an affine open subset. Thus the natural descent datum on $\mathscr T_{S'}$ is effective, hence $\mathscr T$ is representable, and by descent one sees that $\mathscr T$ is smooth over $S$, separated and of finite type over $S$. From smoothness it follows, thanks to Hensel, that $\mathscr T$ admits a section locally for the étale topology.
+% typo?: "a maximal torus G_{S'}" rather than "of G_{S'}" kept as printed.
+% The proof of 7.1 continues in en-06.tex.

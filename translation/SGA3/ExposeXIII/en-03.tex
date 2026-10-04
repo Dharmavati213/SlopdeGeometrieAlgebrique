@@ -1,0 +1,374 @@
+% Continuation of the proof of Corollary 2.8.
+Thus $C,C'$ are two Cartan subgroups of $H$ (by a)) which contain the
+same regular element $g$ of $H$, and are therefore equal. \hfill Q.E.D.
+
+Let us prove c): denoting by $\nu(u)$ the nullity\nde{That is, the
+dimension of its nilspace.} of $\mathrm{id}-u$, for an endomorphism of
+a finite-dimensional vector space, one will have
+\[
+ \nu(\ad(g)_{\mathfrak g})=\nu(\ad(g)_{\mathfrak h})
+ +\nu(\ad(g)_{\mathfrak g/\mathfrak h}),
+\]
+now the two terms on the right-hand side are respectively $\geq$ the
+nilpotent rank of $H$ (equal to the nilpotent rank $\rho$ of $G$, by a))
+and $\geq0$, so one has $\nu(\ad(g)_{\mathfrak g})=\rho$ if and only
+if $\nu(\ad(g)_{\mathfrak h})=\rho$ and
+$\nu(\ad(g)_{\mathfrak g/\mathfrak h})=0$, i.e. $g$ is regular in $G$
+if and only if $g$ is regular in $H$ and $\ad(g)_{\mathfrak g/\mathfrak h}$
+has no nonzero invariants.
+\end{proof}
+
+\begin{remarks}{2.9}\label{XIII.2.9}
+In statement 2.1, one cannot weaken condition (iii) by supposing merely
+that $H$ contains a maximal torus and has finite index in its normalizer,
+even if one requires that this normalizer moreover be smooth, i.e. that
+one have $H=N^0$, and even when $G$ is affine and solvable. An example
+is provided by the group $G$ of matrices of the form
+\[
+ g=\begin{pmatrix}t&a&c\\0&1&b\\0&0&1\end{pmatrix},
+\]
+and the subgroup $H$ of matrices of the preceding form, with $b=c=0$
+(N.B. the Cartan subgroup of $G$ here consists of the matrices $g$
+with $a=c=0$).
+\end{remarks}
+
+\begin{remarks}{2.10}\label{XIII.2.10}
+Let $G$ be a smooth algebraic group over $k$, $H$ a smooth algebraic
+subgroup, but no longer suppose that $H$ and $G$ are connected. Suppose
+that $H^0$ contains a Cartan subgroup of $G^0$. Then
+$(\mathfrak g/\mathfrak h)^H\subset(\mathfrak g/\mathfrak h)^{H^0}=0$,
+so $H^0=N^0$ ($N$ is the normalizer of $H$); in particular $N$ is smooth.
+However, one easily constructs examples, with $G$ connected, where $H$
+has a connected component $H_i$ such that for no $h\in H_i(k)$ does
+one have $(\mathfrak g/\mathfrak h)^{\ad(h)}=0$, i.e. the morphism
+$(g,h)\mto\ad(g)\cdot h$ from $G\times H_i$ to $G$ is \'etale
+(or even quasi-finite) at no point (take, for example, for $H$ the
+normalizer of the maximal torus in $\SL(2)_k$). Likewise, even if the
+image $H'$ of $H$ in the finite group $G'=G/G^0$ is equal to $G'$, it
+is not necessarily true that the union of the conjugates of $H$ in
+$G$ is dense (take for $G$ the semidirect product of $\ZZ/2\ZZ$ with
+$G^0=\SL(2)_k$, on which it acts by ``symmetry'', and for $H$ the
+semidirect product $\ZZ/2\ZZ\cdot T$, where $T$ is a maximal torus
+of $G^0$). On the other hand, if one does not assume a priori that
+$H^0$ contains a Cartan subgroup of $G^0$, but that the union of the
+conjugates of $H$ in $G$ is dense, then $H^0$ necessarily contains a
+Cartan subgroup of $G^0$: to verify this, one may clearly suppose
+$G$ connected, and it suffices to repeat the proof of 2.1 (vi)
+$\Rightarrow$ (i), which is valid without supposing $H$ connected.
+% typo: closing parenthesis added after the SL(2)_k example.
+\end{remarks}
+
+\sgasection{3}{Case of an arbitrary base prescheme}
+Suppose first that one is over a base field $k$, not necessarily
+algebraically closed. Since conditions 2.1 (i bis), (iv bis), (v),
+(vi) are invariant under extension of the base field, one sees by
+passing to the algebraic closure $\bar k$ of $k$ that they are equivalent
+to one another, and equivalent to the fact that $H_{\bar k}$ contains
+a Cartan subgroup of $G_{\bar k}$. When this condition is satisfied,
+then (with the notation of 2.3) it will still be true that $k(X)$ is
+a finite separable extension of $k(G)$, of degree $d$ independent of
+any extension of the base. If $U$ is the largest open subset of $G$
+such that $\psi$ induces a morphism $\psi^{-1}(U)\to U$ which is finite
+and \'etale, then the formation of $U$ commutes with extension of the
+base field. If $\psi$ is birational, then $U$ is also the largest open
+subset of $G$ such that $\psi$ induces an isomorphism
+$\psi^{-1}(U)\isomto U$, and if then $g\in U(k)$, there exists one and
+only one subgroup $H'$ of $G$, conjugate to $H$ over the algebraic
+closure $\bar k$ of $k$, such that $H'\ni g$.
+
+A point $g\in G(k)$ is said to be \emph{regular} if it is regular as an
+element of $G(\bar k)=G_{\bar k}(\bar k)$. More generally, the construction
+of 2.7 gives one an open subset of $G$, whose formation commutes with
+every extension of the base field, called the \emph{open subset of
+regular points} of $G$, which is also characterized by the fact that
+for every algebraically closed extension $K$ of $k$ and every point
+$g\in G(K)$, $g$ is a regular point of $G_K$ if and only if $g\in U(K)$.
+If $g\in U(k)$\nde{Correction of $G(k)$ to $U(k)$.}, one sees that $g$
+is contained in one and only one Cartan subgroup of $G$, as we shall
+show under more general conditions below.
+% typo: on ouvert -> un ouvert; voit -> on voit.
+
+Let $G$ be a smooth separated group prescheme of finite type with
+connected fibers over the prescheme $S$; consider the functor
+$\mathcal C:(\Sch)^\circ_{/S}\to\Ens$ defined by
+\[
+ \mathcal C(S')=\text{set of Cartan subgroups (XII 3.1) of }G_{S'}.
+\]
+Suppose that this functor is representable by a prescheme smooth over
+$S$; we give in XV a necessary and sufficient condition for this to
+be so, but we already know that this hypothesis is satisfied if $G$
+is affine over $S$ of locally constant reductive rank (XII 3.3), or
+more generally if $G$ admits a maximal torus locally for the fpqc
+topology (XII 7.1 a)), for example if $S$ is the spectrum of a field.
+Let $X$ be the Cartan subgroup of the $\mathcal C$-group prescheme
+$G_{\mathcal C}$, the ``universal Cartan subgroup'' of $G$. As a
+prescheme over $S$, $X$ therefore represents the functor
+\[
+\begin{aligned}
+ X(S')=\{&(C,g): C\text{ a Cartan subgroup of }G_{S'}\text{ and }g\text{ a}\\
+ &\text{section of }C\text{ over }S'\}.
+\end{aligned}
+\]
+Consider the canonical projection morphism $(C,g)\mto g$
+\[
+ \psi:X\to G.
+\]
+One then has the
+
+\begin{theorem}{3.1}\label{XIII.3.1}
+Under the preceding conditions on $G$, and with the preceding notation,
+let $U$ be the set of $g\in G$ such that $g$ is a regular element of
+its fiber $G_s$. Then $U$ is open, and it is also the largest open subset
+$U$ of $G$ such that $\psi$ induces an isomorphism
+\[
+ \psi^{-1}(U)\isomto U.
+\]
+\end{theorem}
+\begin{proof}
+Let us first prove that $U$ is open. From the hypothesis of representability
+of $\mathcal C$ as a prescheme smooth over $S$, since its structural
+morphism is clearly surjective, one concludes at once that $G$ admits a
+Cartan subgroup locally for the \'etale topology, and that the nilpotent
+rank of the fibers of $G$ is locally constant. The same holds for the
+dimension of the fibers of $G$, and, localizing on $S$, one may suppose
+that both are constant, say $\rho$ and $n$. Consider then the Killing
+polynomial
+\[
+ P_G(t)=t^n+c_1t^{n-1}+\cdots+c_n\in A[t],
+ \qquad\text{where }A=\Gamma(G,\OO_G).
+\]
+The restriction of this polynomial to the fibers $G_s$ of $G$, and in
+particular to the fibers at the maximal points of $S$, is divisible
+by $(t-1)^\rho$, which is expressed by the fact that certain linear
+combinations with integer coefficients of the $c_i$ are zero on the
+fibers $G_s$. When $S$ is reduced (which one may suppose in order to
+establish that $U$ is open), it follows that they are themselves zero,
+hence that the Killing polynomial itself is divisible by $(t-1)^\rho$,
+say
+\[
+ P_G(t)=(t-1)^\rho(t^{n-\rho}+b_1t^{n-r-1}+\cdots+b_{n-\rho}).
+\]
+% typo?: kept as printed: n-r-1, with r rather than rho.
+Let $b$ be the sum of the coefficients $b_0=1,b_1,\ldots,b_{n-\rho}$ of
+the second factor; then by 2.7 applied to the fibers of $G$, one sees that
+\[
+ U=G_b,
+\]
+which indeed proves that $U$ is open.
+
+To prove that $\psi^{-1}(U)\to U$ is an isomorphism, one is reduced by
+SGA1 I 5.7 to verifying it fiber by fiber, which reduces one to the case
+of a base field, which may be supposed algebraically closed. Then there
+exists a Cartan subgroup $C$ of $G$, and if $N$ is its normalizer,
+$\mathcal C$ is identified by the conjugacy theorem XII 7.1 a) and b)
+with $G/N$, and the morphism $\psi:X\to G$ considered here is precisely
+that defined in \No 2. One then concludes by 2.6 b). The same argument
+also shows that $U$ is the largest open subset of $G$ such that $\psi$
+induces an isomorphism $\psi^{-1}(U)\to U$.
+\end{proof}
+
+\begin{corollary}{3.2}\label{XIII.3.2}
+Under the conditions of 3.1, let $g$ be a regular section of $G$, i.e.
+such that for every $s\in S$, $g(s)$ is a regular point of $G_s$. Then
+there exists one and only one Cartan subgroup $C$ of $G$ such that $g$
+is a section of $C$.
+\end{corollary}
+Indeed, the hypothesis on $g$ means that $g$ is a section of $U$, and
+the conclusion that there exists a unique section of $X$ lifting it,
+which is merely another way of expressing that $\psi^{-1}(U)\to U$
+is an isomorphism.
+
+Note now that the open subset $\psi^{-1}(U)$ of the Cartan subgroup
+$X$ of $G_{\mathcal C}$ is precisely the open subset of $X$ consisting
+of the points of $X$ which are regular in $G_{\mathcal C}$ (by which
+one means: regular in their fiber). One thus obtains a natural
+``fibration'' of the dense open subset $U$ of regular points of $G$
+over the prescheme $\mathcal C$, the fibers being dense open subsets
+of Cartan subgroups of the fibers of $G_{\mathcal C}$ (namely the
+open subsets of regular points in $G$). One finds, for example, the
+following result (which will be made considerably more precise in
+the next expos\'e):
+
+\begin{corollary}{3.3}\label{XIII.3.3}
+Let $G$ be a smooth connected algebraic group over the field $k$,
+$\mathcal T$ the scheme of maximal tori of $G$ ($\simeq$ the scheme
+of Cartan subgroups of $G$). Then the function field $k(G)$ of $G$
+is isomorphic to the function field of a smooth connected affine
+nilpotent algebraic group $C$ over the function field $k(\mathcal T)$
+of $\mathcal T$, namely $C=$ ``the generic Cartan subgroup of $G$''.
+If $G$ is affine of unipotent rank zero, i.e. if the Cartan subgroups
+of $G_K$ are tori, then $k(G)$ is a unirational extension of
+$k(\mathcal T)$.
+\end{corollary}
+Of course, by the generic Cartan subgroup of $G$, one means (by abuse
+of language) the Cartan subgroup of $G_{k(\mathcal T)}$ which is the
+generic fiber of $X$ over $\mathcal T$. It only remains to prove the
+last assertion of 3.3, which is contained in the following well-known
+result (due to Chevalley):
+
+\begin{lemma}{3.4}\label{XIII.3.4}
+Let $k$ be a field, $T$ a torus over $k$, and $k(T)$ the field of rational
+functions on $T$; then $k(T)$ is a unirational extension of $k$, i.e.
+is contained in a purely transcendental extension of $k$.
+\end{lemma}
+Indeed, let $k'$ be a finite separable extension of $k$ which splits\nde{Splits
+(?), or: ``over which $T$ is split''.} $T$ (X 1.4); then $T\otimes_k k'$
+is a rational variety, i.e. admits a dense open subset isomorphic to a
+dense open subset of affine space $\mathbb A^n_{k'}$, hence
+$T'=\prod_{\Spec(k')/\Spec(k)}T_{k'}/\Spec(k')$ is a rational variety
+(for it admits a dense open subset isomorphic to a dense open subset
+of $\prod_{\Spec(k')/\Spec(k)}\mathbb A^n_{k'}$, which is isomorphic to
+affine space of dimension $mn$ over $k$, where $m=[k':k]$). Consider
+the norm homomorphism from $T'$ to $T$ (defined as soon as $T$ is a
+commutative group scheme over $k$); the composite $T\to T'\to T$ is
+the $m$th power on $T$, hence dominant, so $T'\to T$ is dominant,
+which proves that $T$ is unirational.
+
+Let us return to the conditions of 3.1, but supposing even that $G$
+admits a maximal torus locally for the fpqc topology (XII 7.1). Let
+$Y$ be the maximal torus of the Cartan subgroup $X$ of $G$, so that
+the morphism $\psi:X\to G$ induces a morphism $Y\to G$ whose image
+consists, as a set, of the semisimple elements of the fibers of $G$
+(XII 8). Finally, it follows from 3.1 that the restriction of $\psi$
+to the open subset $Y^{\mathrm{reg}}$ of regular points of $Y$ induces
+a closed immersion
+\[
+ Y^{\mathrm{reg}}\to U=G^{\mathrm{reg}}.
+\]
+Making explicit the meaning of $Z=Y^{\mathrm{reg}}$ as a functor over
+$S$, one finds:
+\begin{corollary}{3.5}\label{XIII.3.5}
+Let $G$ be a smooth separated $S$-group prescheme of finite type with
+connected fibers over the prescheme $S$, admitting a maximal torus
+locally for the fpqc topology. Let $Z:(\Sch)^\circ_{/S}\to\Ens$ be the
+functor defined by
+\[
+\begin{aligned}
+ Z(S')=\{&\text{regular sections of }G_{S'}\text{ over }S'\text{ which are
+ contained in}\\
+ &\text{a maximal torus of }G_{S'}\}.
+\end{aligned}
+\]
+Then $Z$ is representable by a closed subprescheme, smooth over $S$,
+of the open subset $U=G^{\mathrm{reg}}$ of $G$ introduced in 3.1.
+\end{corollary}
+Finally, note the following result, which makes the density theorem
+2.1 (i) $\Rightarrow$ (vi) more precise:
+
+\begin{corollary}{3.6}\label{XIII.3.6}
+Under the conditions of 3.5, let $C$ be a Cartan subgroup of $G$,
+and consider the morphism
+\[
+ \varphi:Z\times C\to G
+\]
+defined by $\varphi(g,h)=\ad(g)h=ghg^{-1}$. Then $\varphi$ is dominant.
+\end{corollary}
+It clearly suffices to prove this fiber by fiber, which reduces one
+to the case where $S$ is the spectrum of an algebraically closed field.
+Let $T$ be the maximal torus of $C$, $t_0$ an element of $T(k)$ regular
+in $G$, and $c_0$ an element of $C(k)$ regular in $G$; consider
+$\varphi^{-1}(\varphi(t_0,c_0))$, whose points rational over $k$ are the
+pairs $(t,c)$, with $t\in Z(k)$, $c\in C(k)$, such that
+\[
+ \ad(t)c=\ad(t_0)c_0\qquad\text{i.e.}\qquad c=\ad(t^{-1}t_0)c_0,
+\]
+which are therefore in one-to-one correspondence with the $t\in Z(k)$
+such that $\ad(t^{-1}t_0)c_0\in C$, or, what amounts to the same thing,
+$c_0$ being regular, such that $t^{-1}t_0\in N$ (the normalizer of $C$),
+i.e. $t\in N$. One obtains an open and closed part of this fiber by
+restricting to the $t\in Z(k)$ such that $t\in C(k)$. Thus one has
+found a connected component of $\varphi^{-1}\varphi(t_0,c_0)$ isomorphic
+to $T$ (N.B. that the preceding set-theoretic argument does indeed give
+an isomorphism of schemes is seen by replacing points with values in
+$k$ by points with values in an arbitrary $k$-prescheme), so the generic
+fiber of $\varphi$ has dimension $\leq\dim T$, hence $\Im(\varphi)$ has
+dimension $\geq\dim Z\times C-\dim T=\dim Z+\dim C-\dim T$; now one has
+$\dim Z=\dim Y=\dim\mathcal C+\dim T=\dim G-\dim C+\dim T$, whence
+finally $\dim\Im(\varphi)\geq\dim G$, so $\varphi$ is dominant.
+\hfill Q.E.D.
+
+\begin{remarks}{3.7}\label{XIII.3.7}
+One will note that the argument shows in addition that the connected
+component at $(t_0,c_0)$ of the fiber of $\varphi(t_0,c_0)$ is isomorphic
+to $T$, in particular is smooth over $k$, and has the same dimension
+as the generic fiber, which implies that $\varphi$ is in fact smooth
+at $(t_0,c_0)$ (which one should also be able to verify by calculating
+the tangent map). It follows that under the conditions of 3.6 the
+induced morphism $Z\times_S C^{\mathrm{reg}}\to G^{\mathrm{reg}}$ (where
+one has set $C^{\mathrm{reg}}=C\cap G^{\mathrm{reg}}$) is a smooth morphism.
+One sees likewise that the analogous morphism
+$Z\times T^{\mathrm{reg}}\to Z$ (where $T$ is a maximal torus of $G$)
+is smooth; more generally, for every smooth connected invariant
+algebraic subgroup $H$ of $C$ containing a regular element $c_0$ of
+$G(k)$, the image of $Z\times H\to G$ is dense in that of $G\times H\to G$.
+\end{remarks}
+
+\sgasection{4}{Lie algebras over a field: rank, regular elements, Cartan subalgebras}
+In the remainder of this expos\'e, we take up again the theory developed
+by Chevalley in his book ``Th\'eorie des Groupes de Lie III'' (Act. Sc.
+Ind. 1226, Paris 1955), the technique of schemes allowing us to eliminate
+the characteristic-zero hypothesis. We begin by recalling in this
+section certain well-known notions and results.
+
+Let $\mathfrak g$ be a Lie algebra over a ring $k$. For every
+$a\in\mathfrak g$, one denotes by $\ad(a)$ the endomorphism
+\[
+ \ad(a)\cdot x=[a,x]
+\]
+of $\mathfrak g$, which is a derivation of the Lie algebra $\mathfrak g$.
+Now, for every derivation $D$ of the Lie algebra $\mathfrak g$, the
+nilspace of $D$, i.e. the union of the kernels of the iterates of $D$,
+is a Lie subalgebra of $\mathfrak g$, as one sees from Leibniz's formula
+\[
+ D^m([x,y])=\sum_{0\leq p\leq m}\binom{m}{p}[D^px,D^{m-p}y].
+\]
+We shall set
+\[
+ \operatorname{Nil}(a,\mathfrak g)=\text{nilspace of }\ad(a)
+ =\bigcup_{m\geq0}\Ker\ad(a)^m;
+\]
+when no confusion is to be feared, we shall denote it simply by
+$\operatorname{Nil}(a)$, and call it the nilspace of $a$ (in $\mathfrak g$).
+
+\begin{proposition}{4.1}\label{XIII.4.1}
+For every $a\in\mathfrak g$, its nilspace $\operatorname{Nil}(a,\mathfrak g)$
+is a Lie subalgebra of $\mathfrak g$, equal to its own normalizer.
+\end{proposition}
+It remains to prove that it is its own normalizer, i.e. that every
+element of $\mathfrak g/\operatorname{Nil}$ annihilated by the adjoint
+representation of $\operatorname{Nil}$ in
+$\mathfrak g/\operatorname{Nil}$ is zero, which is trivial (for every
+element in this quotient annihilated by $\Ad(a)$ is zero).
+% typo?: kept as printed: capital Ad(a).
+
+In the rest of this section, we suppose that $k$ is a field, and
+$\mathfrak g$ finite-dimensional over $k$. We shall denote by
+$\mathrm W(\mathfrak g)$ the scheme over $k$ defined by $\mathfrak g$,
+whose points in the $k$-algebra $A$ are the elements of
+$\mathfrak g\otimes_k A$. If $a\in\mathfrak g$, the characteristic
+polynomial of $\ad(a)$ is also called the characteristic polynomial
+or \emph{Killing polynomial} of $a$ in $\mathfrak g$, say
+\[
+ P_{\mathfrak g}(a,t)=t^n+c_1(a)t^{n-1}+\cdots+c_n(a),
+\]
+where $n=\operatorname{rank}_k\mathfrak g$, the $c_i(a)\in k$. Taking
+this polynomial also for $a\in\mathfrak g\otimes_k A$\nde{$\mathrm W\otimes_k A$
+has been corrected to $\mathfrak g\otimes_k A$.}, where $A$ is an
+arbitrary $k$-algebra, one sees that the $c_i(a)$ come from well-determined
+sections $c_i$ of the structure sheaf of $\mathrm W(\mathfrak g)$, i.e.
+elements of the symmetric algebra $A=\operatorname{Sym}_k(\mathfrak g^\vee)$,
+where $\mathfrak g^\vee$ is the dual of the $k$-module $\mathfrak g$.
+(When $k$ is an infinite field, the $c_i$ are determined by knowledge
+of the corresponding polynomial functions $\mathfrak g\to k$, but
+this is no longer so if $k$ is a finite field.) Let $r$ be the largest
+integer such that the Killing polynomial
+\[
+ P_{\mathfrak g}(t)=t^n+c_1t^{n-1}+\cdots+c_n\in A[t]
+\]
+is divisible by $t^r$, i.e. one has:
+\[
+ P_{\mathfrak g}(t)=t^n+c_1t^{n-1}+\ldots+c_{n-r}t^r,
+ \qquad c_{n-r}\ne0.
+\]
+The integer $r$ is called the \emph{nilpotent rank} of the Lie algebra
+$\mathfrak g$. It is invariant under extension of the base field.

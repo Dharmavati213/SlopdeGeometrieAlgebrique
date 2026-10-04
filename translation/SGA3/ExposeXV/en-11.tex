@@ -1,0 +1,185 @@
+% Source PDF pp. 61--66. The citation continuing the first sentence belongs to en-10.
+Since $G$ and $L$ are flat, one has $G=G'$, and the dimension of the fibers of $G$ and $L$ is constant on $S$ (Exp. VIB 4), so that one has the inequalities
+\[
+\text{abelian rank }G_s\leq\dim G_s-\dim L_s=\dim G_t-\dim L_t=\text{abelian rank }G_t.
+\]
+The hypothesis implies that these inequalities are equalities. It follows that $(G_s/L_s)^0_{\mathrm{red}}$ is an abelian variety, hence has reductive rank zero, and consequently $L_s$ has the same reductive rank as $G_s$.
+
+We are now in a position to prove the main theorems of this paragraph:
+\begin{theorem}{8.8}\label{XV.8.8}
+Let $G$ be a group prescheme of finite type over a locally noetherian prescheme $S$. Suppose $G$ flat over $S$ and with connected fibers. Then:
+
+\noindent a) For the functor $\mathscr{TC}$ of central subtori of $G$ to be representable, it is necessary and sufficient that $G$ have property ATC (8.4). Moreover, in this case, $\mathscr{TC}$ is representable by an $S$-prescheme étale and separated over $S$.
+
+\noindent b) Under the conditions of a), for every $S$-torus, the functor $\uHom^{\mathrm{cent}}_{S\text{-gr}}(T,G)$ of central homomorphisms from $T$ to $G$ is representable by an $S$-prescheme étale and separated over $S$.
+\end{theorem}
+\begin{theorem}{8.9}\label{XV.8.9}
+Let $S$ be a locally noetherian prescheme and $G$ a group $S$-prescheme of finite type, smooth over $S$.
+
+\noindent a) For the functor $\mathscr T$ of subtori of $G$ to be representable, it is necessary and sufficient that $G$ have property AT (8.4). Moreover, in this case, $\mathscr T$ is representable by an $S$-prescheme smooth and separated over $S$; more precisely, the structural morphism $\mathscr T\to S$ admits a canonical factorization
+\[
+\mathscr T\xrightarrow{u}Y\xrightarrow{v}S
+\]
+where $v$ is a smooth quasi-projective morphism (hence of finite type) and $u$ is a separated étale morphism.
+
+\noindent b) Under the conditions of a), for every $S$-torus $T$, the functor $\uHom_{S\text{-gr}}(T,G)$ of homomorphisms from $T$ to $G$ is representable by an $S$-prescheme smooth and separated over $S$.
+\end{theorem}
+\par\noindent\emph{Proof of 8.8 a).}
+If the functor $\mathscr{TC}$ is representable, it commutes with adic limits of artinian rings, and consequently (8.2 and 8.5 b)) $G$ has property ATC. To establish the converse, we shall use the following result, which will be proved in EGA VI, and is also found in Murre's exposé: Sém. Bourbaki, May 1965, \No 294, Theorem 1, Corollary 2.
+\begin{lemma}{8.10}\label{XV.8.10}
+Let $S$ be a locally noetherian prescheme, and $\mathscr F$ a contravariant functor defined on $\Sch/S$, with values in the category of sets. For $\mathscr F$ to be representable by an étale separated $S$-prescheme, (it is necessary and) it suffices that $\mathscr F$ satisfy the following five properties:
+
+\noindent i) $\mathscr F$ is a sheaf for the fpqc topology (Exp. IV).
+
+% Source PDF p. 62.
+\noindent ii) $\mathscr F$ commutes with inductive limits of rings (Exp. XI 3.2).
+
+\noindent iii) $\mathscr F$ commutes with adic limits of artinian local rings (8.1 i)).
+
+\noindent iv) $\mathscr F$ satisfies the ``valuative criterion of separation'', i.e. for every $S$-scheme $S'$ which is the spectrum of a discrete valuation ring, with generic point $t$, the canonical map
+\[
+\mathscr F(S')\longrightarrow\mathscr F(t)
+\]
+is injective.
+
+\noindent v) $\mathscr F$ is infinitesimally étale (Exp. XI 1.8).
+\end{lemma}
+Let us show that the functor $\mathscr{TC}$ of 8.8 satisfies the five conditions of 8.10.
+
+i) The functor $\mathscr T$ (resp. $\mathscr{TC}$) is a sheaf for the fpqc topology as soon as $G$ is of finite presentation over $S$. Indeed, every monomorphism from a torus to $G$ is then an immersion (Exp. VIII 7.9), and the property follows from fpqc descent of subpreschemes.
+
+ii) Corollary 6.3 proves that the functor $\mathscr T$ commutes with inductive limits of rings if $G$ is of finite presentation over $S$; one immediately deduces that the same holds for $\mathscr{TC}$.
+
+iii) By 8.5, condition iii) is precisely equivalent to property ATC.
+
+iv) follows simply from the fact that if $S$ is the spectrum of a discrete valuation ring, two subtori of $G$ having the same generic fiber coincide, and more precisely coincide with the identity component of the schematic closure in $G$ of their generic fiber.
+
+v) follows from 2.3, since $G$ is flat over $S$.
+
+\par\noindent\emph{Proof of 8.8 b).}
+Proceeding as in Exp. XI 4.2, one sees that it suffices to prove that the product group $T\times_S G$ still satisfies property ATC, which is immediate from the definition.
+
+\par\noindent\emph{Proof of 8.9 a).}
+Replacing $G$ by its identity component (Exp. VIB 3.10), one may suppose $G$ with connected fibers. If $T$ is a subtorus of $G$, its centralizer $\uCentr_G(T)$ is then representable (Exp. XI 6.11) by a group subprescheme of $G$, smooth over $S$ (Exp. XI 2.4), with connected fibers (Exp. XII 6.6 b)), hence is an element of $\mathscr{CT}(S)$, where $\mathscr{CT}$ is the functor defined in 7.1 i). It is clear that the map
+\[
+T\longmapsto\uCentr_G(T)
+\]
+defines an $S$-morphism
+\[
+u:\mathscr T\longrightarrow\mathscr{CT}.
+\]
+Since $\mathscr{CT}$ is representable by an $S$-prescheme smooth and quasi-projective over $S$ (7.1 i)), it suffices for us to prove that the morphism $u$ is representable by a separated étale morphism.
+
+After a suitable base change $S'\to S$ (with $S'=\mathscr{CT}$, hence $S'$ locally noetherian), we are reduced to the following problem: let $S$ be a locally noetherian prescheme, $G$ a group $S$-prescheme, smooth and of finite type over $S$, with connected fibers, $H$ a subgroup of $G$, smooth over $S$ and with connected fibers. Consider the subfunctor $X$ of $\mathscr{TC}_H$ such that, for every $S$-prescheme $S'$, $X(S')$ is the set of central subtori $T$ of $H_{S'}$ such that $\uCentr_{G_{S'}}(T)=H_{S'}$. We shall show that $X$ is representable by an $S$-prescheme étale and separated over $S$.
+
+% Source PDF p. 63.
+Indeed, by hypothesis, $G$ satisfies property AT, so the same holds for $H$ (8.7 ii)), and since $H$ has connected fibers, $H$ also satisfies property ATC (8.7 i)). On the other hand, $H$ is smooth over $S$, hence flat. By 8.8 a), $\mathscr{TC}_H$ is representable by an $S$-prescheme étale and separated over $S$. It then suffices for us to show that the canonical monomorphism $X\to\mathscr{TC}_H$ is representable by an open immersion.
+
+Put $S'=\mathscr{TC}_H$, and let $K$ be the centralizer in $G_{S'}$ of the ``universal'' central torus of $H_{S'}$. The group $K$ is a group scheme smooth over $S'$, with connected fibers, containing $H_{S'}$. By definition, one has $X=\prod_{K/S'}H_{S'}/K$, which is indeed representable by the subprescheme, both open and closed, of $S'$ over which $H_{S'}$ and $K$ have the same relative dimension.
+% typo?: the printed expression is product_{K/S'} H_{S'}/K; kept as printed.
+
+One proves 8.9 b) analogously to 8.8 b).
+\begin{corollary}{8.11}\label{XV.8.11}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth over $S$ and of finite presentation. Then, if the abelian rank of the fibers of $G$ is a locally constant function on $S$ (in particular if the fibers of $G$ are affine), the functor of subtori of $G$ is representable by an $S$-prescheme smooth and separated over $S$, and the same holds for the functor $\uHom_{S\text{-gr}}(T,G)$, for every $S$-torus $T$.
+\end{corollary}
+Indeed, the assertion is local on $S$, so we may suppose $S$ affine and the abelian rank of the fibers of $G$ constant. One can then find (Exp. VIB \S\ 10) an affine noetherian scheme $S_0$ and a group $S_0$-prescheme $G_0$, smooth and of finite type over $S_0$, such that $G$ is $S$-isomorphic to $G_0\times_{S_0}S$. Moreover, the abelian rank of the fibers of a group $S$-prescheme of finite presentation over $S$ is an ind-constructible function (6.3 bis). By a standard argument (EGA IV 8), one concludes that in the present case, one may suppose the abelian rank of the fibers of $G_0$ constant on $S_0$. But then $G_0$ has property AT (8.7 iii)), and consequently (8.10) the functor of subtori of $G_0$ is representable by an $S_0$-prescheme smooth and separated over $S_0$, whence the asserted property for $G$. As for the functor $\uHom_{S\text{-gr}}(T,G)$, one proceeds analogously.
+% typo?: 8.10 is the printed reference in the last argument; kept as printed.
+
+\par\noindent\emph{Generalization of 8.9.}
+Since the functor $\mathscr T$ of subtori of a smooth group $G$ is not necessarily representable, we shall state sufficient conditions for a subfunctor of $\mathscr T$ to be representable.
+% typo: n'étant par nécessairement -> n'étant pas nécessairement.
+\begin{proposition}{8.12}\label{XV.8.12}
+Let $S$ be a locally noetherian prescheme, $G$ a group $S$-prescheme, smooth over $S$, with connected fibers, and $\mathscr F$ a sub-$S$-functor of the functor $\mathscr T$ of subtori of $G$, satisfying the following properties:
+
+\noindent i) $\mathscr F$ is a sheaf for the fpqc topology (Exp. IV).
+
+\noindent ii) $\mathscr F$ commutes with inductive limits of rings (Exp. XI 3.2).
+
+% Source PDF p. 64.
+\noindent iii) $\mathscr F$ commutes with adic limits of artinian local rings (Exp. XI 3.3).
+
+\noindent iv) $\mathscr F$ is infinitesimally smooth over $S$ (Exp. XI 1.8).
+
+\noindent v) $\mathscr F$ is stable under inner automorphisms of $G$, i.e. for every $S$-prescheme $S'$, one has
+\[
+T\in\mathscr F(S')\text{ and }g\in G(S')\ \Rightarrow\ \operatorname{int}(g)T\in\mathscr F(S').
+\]
+Then $\mathscr F$ is representable by an $S$-prescheme smooth and separated over $S$.
+\end{proposition}
+\begin{proposition}{8.12 bis}\label{XV.8.12bis}
+Let $S$ and $G$ be as above, $T$ an $S$-torus and $\mathscr F$ a subfunctor of $\uHom_{S\text{-gr}}(T,G)$, satisfying the following properties:
+
+\noindent i), ii), iii), iv) as above.
+
+\noindent v) $\mathscr F$ is stable under inner automorphisms of $G$, i.e. for every $S$-prescheme $S'$, one has
+\[
+u\in\mathscr F(S')\text{ and }g\in G(S')\ \Rightarrow\ \operatorname{int}(g)u\in\mathscr F(S').
+\]
+Then $\mathscr F$ is representable by an $S$-prescheme smooth and separated over $S$.
+\end{proposition}
+\par\noindent\emph{Proof of 8.12.}
+(The proof of 8.12 bis is entirely analogous and is left to the reader.)
+
+Let $u:\mathscr F\to\mathscr{CT}$ (7.1 i)) be the $S$-morphism associating to every element $T$ of $\mathscr F(S')$ the element $\uCentr_{G_{S'}}(T)$ of $\mathscr{CT}(S')$. Since $\mathscr{CT}$ is representable by a smooth quasi-projective $S$-prescheme (7.1 i)), we are reduced to proving representability of $u$. After the base change $\mathscr{CT}\to S$, we are reduced to the following problem: given $S$ and $G$ as above, $H$ a smooth subgroup of $G$ with connected fibers, we must represent the functor $\mathscr F_H$ such that $\mathscr F_H(S')=$ set of elements $T\in\mathscr F(S')$ such that
+\[
+H_{S'}=\uCentr_{G_{S'}}(T).
+\]
+We shall show that $\mathscr F_H$ is étale and separated over $S$. To do so, it suffices for us to verify the five conditions of 8.10.
+
+Conditions i), ii) and iii) of 8.10 follow easily from 8.12 i), ii) and iii). It has already been remarked that $\mathscr{TC}_H$ is a separated infinitesimally étale functor, so $\mathscr F_H$, which is a subfunctor of $\mathscr{TC}_H$, is separated and infinitesimally unramified (Exp. XI 1.8). It therefore suffices for us to show that $\mathscr F_H$ is infinitesimally smooth (loc. cit.). Let $S$ be the spectrum of an artinian local ring, $S_0$ a subscheme of $S$ defined by a nilpotent ideal, $T_0$ an element of $\mathscr F_H(S_0)$; let us prove that $T_0$ lifts to an element $T$ of $\mathscr F_H(S)$. By hypothesis (8.12 iv)), $T_0$ lifts to an element $T'$ of $\mathscr F(S)$. On the other hand, $H$ being smooth, $T_0$ lifts to a subtorus $T''$ of $H_S$ (Exp. IX 3.6 bis) conjugate to $T'$ by an element $g\in G(S)$ (loc. cit.), so $T''\in\mathscr F(S)$ (8.12 v)). Since $\uCentr_{G_S}(T'')$ is smooth over $S$ and coincides with $H_{S_0}$ over $S_0$, $T''$ is in the center of $H_S$ (Exp. IX 5.6 a)), and its centralizer in $G$ is equal to $H_S$; in brief, $T''\in\mathscr F_H(S)$, and one takes $T=T''$.
+\begin{corollary}{8.13}\label{XV.8.13}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth and of finite presentation over $S$, with connected fibers, and let $\mathscr{TD}$ be the subfunctor of $\mathscr T$ whose set of points with values in an $S$-prescheme $S'$ is the set of subtori $T$ of $G_{S'}$ such that, for every point $s'$ of $S'$, $T_{s'}$ is contained in the derived subgroup (Exp. VIB 7) of $G_{s'}$. Then $\mathscr{TD}$ is representable by an $S$-prescheme smooth and separated over $S$.
+\end{corollary}
+% Source PDF p. 65.
+\begin{corollary}{8.13 bis}\label{XV.8.13bis}
+Let $S$ and $G$ be as above, $T$ an $S$-torus, and let
+\[
+\uHom^{\mathrm{der}}_{S\text{-gr}}(T,G)
+\]
+be the subfunctor of $\uHom_{S\text{-gr}}(T,G)$ whose set of points with values in $S'$ is the set of $S'$-morphisms $u:T_{S'}\to G_{S'}$ such that, for every point $s'$ of $S'$, $u_{s'}$ factors through the derived group of $G_{s'}$. Then this functor is representable by an $S$-prescheme smooth and separated over $S$.
+\end{corollary}
+Corollary 8.13 and Corollary 8.13 bis are proved analogously; let us prove, for example, 8.13 bis. By the usual procedure, we reduce to the case where $S$ is noetherian. Let us verify that the five conditions of 8.12 bis are satisfied:
+
+Conditions i) and iv) follow immediately from the corresponding properties of the functor $\uHom_{S\text{-gr}}(T,G)$. Condition v) is satisfied since the derived group of an algebraic group is invariant (Exp. VIB \S\ 7). To establish ii), we are reduced by a standard reduction (EGA IV 8) to proving that if $S$ is a noetherian integral scheme with generic point $\eta$ and $u:T\to G$ is a group $S$-morphism which on the generic fiber factors through the derived group of $G_\eta$, then there exists a neighborhood $U$ of $\eta$ such that, for every point $s$ of $U$, $u_s$ factors through the derived group of $G_s$. But this follows immediately from Exp. VIB 10.12. To establish iii), let us return to the notation of 4.3. To show that an element $(u_m)_{m\in\mathbf N}$ of $\varprojlim_m\uHom^{\mathrm{der}}_{S_m\text{-gr}}(T_m,G_m)$ is ``admissible'' in the sense of 4.3 and comes from an element of $\uHom^{\mathrm{der}}_{S\text{-gr}}(T,G)$, one immediately reduces to the case where $S$ is the spectrum of a complete discrete valuation ring (cf. 8.1). Let $t$ be the generic point and $s$ the closed point of $S$, $D$ the schematic closure in $G$ of the derived group $D_t$ of $G_t$.
+
+\noindent a) $D_s$ contains the derived group of $G_s$. Indeed, since $D_t$ is invariant in $G_t$ and $G$ is flat over $S$, $D$ is invariant in $G$. Moreover, the morphism
+\[
+G\times_S G\longrightarrow G,\qquad(x,y)\longmapsto xyx^{-1}y^{-1}
+\]
+factors through $D_t$ on the generic fiber, so it factors through $D$. Consequently the algebraic group $G_s/D_s$ is commutative, whence assertion a).
+
+\noindent b) If $u_m\in\uHom^{\mathrm{der}}_{S_m\text{-gr}}(T_m,G_m)$, $u_m$ factors through $D_m$. Indeed, by hypothesis, $u_s$ factors through the derived group of $G_s$, hence a fortiori factors through $D_s$, by a). Since $D_m$ is flat over $S_m$ and invariant in $G_m$, the quotient group $H_m=G_m/D_m$ is representable (Exp. VIA \S\ 4). Since the image of $T_m$ in $H_m$ is a torus (Exp. IX 6.8) whose closed fiber is zero, the image of $T_m$ is zero; this says that $u_m$ factors through $D_m$.
+
+\noindent c) The family $(u_m)_{m\in\mathbf N}$ is ``admissible'' and lifts to a morphism $T\to G$ belonging to $\uHom^{\mathrm{der}}_{S\text{-gr}}(T,G)$. In view of the foregoing and 4.1 bis, it suffices to prove that $D_t$ is an affine algebraic group, which follows from the following lemma:
+\begin{lemma}{8.14}\label{XV.8.14}
+Let $G$ be a smooth connected algebraic group defined over a field $k$. Then the derived group $D$ of $G$ is affine.
+\end{lemma}
+% Source PDF p. 66.
+Since formation of $D$ commutes with extension of the base field (Exp. VIB 7), one may suppose $k$ algebraically closed. But then $G$ is an extension of an abelian variety $A$ by a linear group $L$. Since $A$ is commutative, $D$ is necessarily contained in $L$, hence is affine.
+
+\par\noindent\emph{Maximal tori.}
+\begin{theorem}{8.15}\label{XV.8.15}
+Let $S$ be a locally noetherian prescheme and $G$ a group $S$-prescheme smooth and of finite type over $S$. Then the following conditions are equivalent:
+
+\noindent i) The $S$-functor $\mathscr{TM}$ whose set of points with values in an $S$-prescheme $S'$ is the set of maximal tori of $G_{S'}$ (Exp. XII 1.3) is representable.
+
+\noindent ii) The preceding functor $\mathscr{TM}$ is representable by an $S$-prescheme smooth and quasi-projective over $S$, with affine fibers.
+
+\noindent iii) The group $G$ has, locally for the étale topology, a maximal torus.
+
+\noindent iv) The group $G$ has, locally for the faithfully flat topology, a maximal torus.
+
+\noindent v) The group $G$ has property AT (8.4), and the reductive rank of its fibers is a locally constant function on $S$.
+\end{theorem}
+\par\noindent\emph{Proof:} $\text{ii)}\Rightarrow\text{i)}$ is clear.
+
+$\text{i)}\Rightarrow\text{iii)}$. Indeed, since $G$ is of finite presentation over $S$, it follows from 6.3 that $\mathscr{TM}$ commutes with inductive limits of rings, hence is locally of finite presentation if it is representable (EGA IV 8.14). Moreover, $\mathscr{TM}$ is formally smooth (Exp. XI 2.1 bis). Thus if it is representable, it is representable by a prescheme smooth over $S$, and iii) then follows from Hensel's lemma (Exp. XI 1.10).
+
+$\text{iii)}\Rightarrow\text{iv)}$ is clear.
+
+$\text{iv)}\Rightarrow\text{v)}$. Let $s$ be a point of $S$. By hypothesis, there exists an $S$-prescheme $S'$, flat over $S$, whose image contains $s$, such that $G_{S'}$ has a maximal torus $T'$. Let $s'$ be a point of $S'$ above $s$. The reductive rank of the fibers of $G_{S'}$ is therefore constant on $\Spec\OO_{S',s'}$, and consequently the reductive rank of the fibers of $G$ is constant on the image of $\Spec\OO_{S',s'}$, which is $\Spec\OO_{S,s}$ (EGA IV 2.3.4 ii)). Now the reductive rank of the fibers of $G$ is a locally constructible function on $S$ (6.3 bis), hence this rank is constant on a neighborhood of $s$ (EGA IV 1.10.1).
+
+To see that $G$ has property AT, consider an $S$-scheme $S_1$, the spectrum of a discrete valuation ring, the closed point $s_1$ of $S_1$ mapping to the preceding point $s$. The prescheme $S'_1=S_1\times_S S'$ is faithfully flat over $S_1$, and $G_{S'_1}$ has a maximal torus. Let $A$ (resp. $A'$) be the ring of $S_1$ (resp. $S'_1$). Considering $A'$ as the inductive limit of its $A$-subalgebras of finite type, it follows from 6.3 that there exists an $S_1$-scheme $S''_1$ such that $G_{S''_1}$ has a maximal torus and such that the structural morphism $S''_1\to S_1$ is of finite type and surjective. Using now EGA II 7.1.9, we may suppose that $S'_1$ is the spectrum of a discrete valuation ring. But then it is clear that $G_{S'_1}$, hence also $G_{S_1}$, has property AT. Since this is true for every $S$-prescheme $S_1$, the spectrum of a discrete valuation ring, $G$ has property AT.
+% typo?: the source returns from S''_1 to S'_1 after the reduction; kept as printed.
+
+$\text{v)}\Rightarrow\text{i)}$. Indeed, by 8.9 the functor $\mathscr T$ of subtori of $G$ is representable, and it is clear that $\mathscr{TM}$ is representable by the subprescheme, both open and closed, of $\mathscr T$ representing the subfunctor of tori of rank $r$, where $r$ denotes the reductive rank of $G$ (which one may suppose constant).

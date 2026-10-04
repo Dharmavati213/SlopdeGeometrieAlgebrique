@@ -1,0 +1,168 @@
+It is clear that the functor $\mathbf H\mto\Spf^*(\mathbf H)$ of 1.3.5 commutes with finite products. It therefore transforms a bialgebra over $\mathbf O_k$ into a \emph{group-valued $k$-functor}, that is, a (covariant) functor from $\mathbf{Alf}/k$ to the category of groups.
+Indeed, for every $k$-algebra $C$ of finite length, the elements of
+\[
+\Spf^*(\mathbf H)(C)=\Spf^*(\mathbf H(C))=\{x\in\mathbf H(C)\mid\varepsilon(x)=1\ \text{and }\Delta(x)=x\otimes x\}
+\]
+form a group for multiplication in the algebra $\mathbf H(C)$ (cf. VII A 3.2.2). Note, moreover, that the condition $\Delta(x)=x\otimes x$ implies the equality $\varepsilon(x)=\varepsilon(x)^2$, hence also $\varepsilon(x)=1$ if $C$ is local and $x\ne0$.\nde{Since $\Delta(x)=x\otimes x$, one has $x=\varepsilon(x)x$, so $\varepsilon(x)=0$ can occur only if $x=0$.}
+
+\numpara{2.2.1}A bialgebra $\mathbf H$ over $\mathbf O_k$ is said to be \emph{flat} if the underlying module is flat (cf. 1.2.1).\nde{We have detailed the original in what follows.} If $\mathbf H$ is flat, then, by 1.3.5, $A=\Gamma^*(\mathbf H)$ is a topologically flat profinite $k$-algebra, and $\Spf^*(\mathbf H)$ is isomorphic, as a functor from $(\mathbf{Alf}/k)^0=\mathbf{Vaf}/k$ to $\Ens$, to the functor
+\[
+\Spf(A):C\mto\Hom_{\mathbf{Vaf}/k}(\Spf(C),\Spf(A)).
+\]
+% typo?: equality (Alf/k)^0 = Vaf/k retained as printed.
+The group structure of $\Spf^*(\mathbf H)$ therefore equips $\mathscr G(\mathbf H)=\Spf(A)$ with a formal group structure, explicitly described as follows.
+For every object $C$ of $\mathbf{Alf}/k$, since the $C$-module underlying $\mathbf H(C)$ is projective, one deduces from Lemma 1.2.3.A by induction on $n$ natural isomorphisms
+\[
+\begin{aligned}
+(\mathbf H(C)^*)^{\widehat\otimes(n+1)}&\simeq\Hom_C\bigl(\mathbf H(C),(\mathbf H(C)^*)^{\widehat\otimes n}\bigr)\\
+&\simeq\Hom_C\bigl(\mathbf H(C),(\mathbf H(C)^{\otimes n})^*\bigr)
+\simeq(\mathbf H(C)^{\otimes(n+1)})^*.
+\end{aligned}
+\]
+From this one deduces (for $n=1,2$) that the $C$-algebra structure of $\mathbf H(C)$ equips $\mathbf H(C)^*$ with a diagonal map satisfying conditions 2.1(i)--(iii), all this functorially in $C$.
+Consequently, $A=\Gamma^*(\mathbf H)=\varprojlim\mathbf H(k/\mathfrak l)^*$ is equipped with a cogroup structure in $\mathbf{Alp}/k$, which defines the announced formal group structure on $\mathscr G(\mathbf H)$.
+Conversely, let $G$ be a topologically flat formal $k$-group with affine algebra $A$, and denote by $\mathbf H(G)$ the $\mathbf O_k$-coalgebra $\mathbf V_k^{\mathrm f}(A)$ (cf. 1.2.3). The diagonal morphism $\Delta_A:A\to A\widehat\otimes_k A$ then induces, for every $k$-algebra $C$ of finite length, a $C$-linear map
+\[
+\mathbf V_k^{\mathrm f}(A)(C)\otimes_C\mathbf V_k^{\mathrm f}(A)(C)\to\mathbf V_k^{\mathrm f}(A)(C)
+\]
+which makes the coalgebra $\mathbf V_k^{\mathrm f}(A)(C)$ a $C$-bialgebra. One says that $\mathbf H(G)$ is \emph{the covariant bialgebra of the formal group $G$}.\nde{We have added the adjective ``covariant'' to make clear that the functor $G\mto\mathbf H(G)$ is covariant; this terminology is used in \cite{Di73}, I § 2.14.} Thus, by Proposition 1.3.5.D:
+\begin{proposition}{}
+\begin{enumeratei}
+\item The functors $G\mto\mathbf H(G)$ and $\mathbf H\mto\mathscr G(\mathbf H)$ define an equivalence between the category of topologically flat formal $k$-groups and that of flat $\mathbf O_k$-bialgebras.\nde{Recall that in this exposé ``bialgebra'' means ``cocommutative Hopf algebra''.}
+\item This equivalence ``commutes with base change'': if $k\to K$ is a morphism of pseudocompact rings, then $\mathbf H(G\widehat\otimes_k K)=\mathbf H(G)\otimes_k K$ and $\mathscr G(\mathbf H\otimes_k K)=\mathscr G(\mathbf H)\widehat\otimes_k K$.
+\end{enumeratei}
+\end{proposition}
+When $k$ is an artinian ring and $G$ a topologically flat formal $k$-group, the functor $\mathbf H(G)$ is evidently determined by its value $H(G)=\mathbf H(G)(k)$ at $k$. One also says that $H(G)$ is the (covariant) bialgebra of $G$.\nde{We have introduced here the notation $\mathcal H_{\mathrm{plat}/k}^{\mathrm{cocom}}$, which will be useful below.} Consequently, denoting by $\mathcal H_k$ the category of $k$-Hopf algebras and by $\mathcal H_{\mathrm{plat}/k}^{\mathrm{cocom}}$ the full subcategory consisting of $k$-Hopf algebras flat over $k$ and cocommutative, one therefore obtains:
+\begin{corollary}{}
+Let $k$ be an artinian ring.
+\begin{enumeratei}
+\item The functors $G\mto H(G)$ and $H\mto\mathscr G(H)=\Spf^*H(G)$ define an equivalence between the category of topologically flat formal $k$-groups and $\mathcal H_{\mathrm{plat}/k}^{\mathrm{cocom}}$.
+% typo?: source prints Spf* H(G) after G(H), retained.
+\item This equivalence ``commutes with base change'': if $k\to K$ is a morphism of artinian rings, then $H(G\widehat\otimes_k K)=H(G)\otimes_k K$ and $\mathscr G(H\otimes_k K)=\mathscr G(H)\widehat\otimes_k K$.
+\end{enumeratei}
+\end{corollary}
+Moreover, denote also by $\mathcal H_{\mathrm{plat}/k}^{\mathrm{com}}$ the full subcategory of $\mathcal H_k$ consisting of $k$-Hopf algebras flat over $k$ and commutative, and recall that the functor $K\mto\OO(K)$ is an anti-equivalence from the category of affine group $k$-schemes to $\mathcal H_{\mathrm{plat}/k}^{\mathrm{com}}$.
+% typo?: source category of affine group schemes omits flatness, retained.
+
+\numpara{2.2.2}For simplicity suppose that $k$ is artinian, and let $G$ be a topologically flat formal $k$-group.\nde{We have detailed the original in what follows, in order to introduce the notation $D'(G)$ and $D(K)$; cf. \cite{Ca62}, § 14.} Then $G$ is commutative if and only if its affine algebra $\mathscr A(G)$ has a cocommutative comultiplication, which is equivalent to saying that the bialgebra $H(G)$ has commutative multiplication. In this case $H(G)$ is a commutative and cocommutative Hopf algebra flat over $k$, so if one puts $D'(G)=\Spec H(G)$, $D'(G)$ is a \emph{commutative group $k$-scheme, affine and flat} over $k$. Conversely, if $T$ is such a group $k$-scheme, its affine algebra $\OO(T)$ is a commutative group in the category of flat cocommutative $k$-coalgebras, and hence, by 1.3.5.C, one obtains a topologically flat formal $k$-group $D(T)$ by putting
+\[
+D(T)=\Spf^*\OO(T)=\Spf(\mathscr A),\qquad\text{where }\mathscr A=\OO(T)^*.
+\]
+Since, by 1.3.5.D, one has canonical isomorphisms $G=\Spf^*H(G)$ and $H(D(T))=\OO(T)$, one obtains canonical isomorphisms
+\[
+\begin{aligned}
+D(D'(G))&=\Spf^*\OO(D'(G))=\Spf^*H(G)=G,\\
+D'(D(T))&=\Spec H(D(T))=\Spec\OO(T)=T.
+\end{aligned}
+\]
+Moreover, denoting by $k\text{-}\mathrm{Gr.}$ the category of group $k$-schemes, by Corollary 2.2.1 one has functorial isomorphisms
+\[
+\Hom_{\mathbf{Grf}/k}(G,D(T))\simeq\Hom_{\mathcal H_k}(H(G),\OO(T))\simeq\Hom_{k\text{-}\mathrm{Gr.}}(T,D'(G)).
+\]
+One therefore obtains the following:
+\begin{proposition}{}(Cartier duality). Let $k$ be an artinian ring.
+\begin{enumeratei}
+\item The functors $G\mto D'(G)=\Spec H(G)$ and $T\mto D(T)=\Spf^*\OO(T)$ induce an anti-equivalence between the category $\mathcal{FC}_k$ of topologically flat commutative formal $k$-groups and the category $\mathcal{AC}_k$ of commutative group $k$-schemes, affine and flat, \ie $G$ and $D'(G)$ (resp. $T$ and $D(T)$) are related by the equalities\nde{If one denotes by $\mathcal{FC}_k^{\mathrm f}$ (resp. $\mathcal{AC}_k^{\mathrm f}$) the full subcategory of $\mathcal{FC}_k$ (resp. $\mathcal{AC}_k$) consisting of objects $G$ (resp. $T$) such that $H(G)$ (resp. $\OO(T)$) is a finite (and hence finite locally free) $k$-module, then $\mathcal{FC}_k^{\mathrm f}$ and $\mathcal{AC}_k^{\mathrm f}$ both have the same objects as the category $\mathcal C$ of commutative and cocommutative Hopf $k$-algebras finite and flat over $k$, the correspondence $G\mto H(G)$ (resp. $T\mto\OO(T)$) being covariant (resp. contravariant), and in this way one recovers the ``Cartier duality'' of the category $\mathcal{AC}_k$ already seen in VII A, 3.3.1.}
+\[
+H(G)=\OO(D'(G))\qquad\text{and}\qquad\OO(T)=H(D(T)).
+\]
+\item This anti-equivalence ``commutes with base change'': if $k\to K$ is a morphism of artinian rings, then $D'(G\widehat\otimes_k K)=D'(G)\otimes_k K$ and $D(T\otimes_k K)=D(T)\widehat\otimes_k K$.
+\item In particular, if $k$ is a field, one obtains an anti-equivalence between the category of commutative formal $k$-groups and that of affine commutative group $k$-schemes which commutes with extension of the base field.
+\end{enumeratei}
+\end{proposition}
+
+\numpara{2.3}Now consider an arbitrary\nde{\ie not necessarily topologically flat over $k$.} formal $k$-group $G$ with affine algebra $A$. Continue to denote by $\mathbf H(G)$ the $\mathbf O_k$-module $\mathbf V_k^{\mathrm f}(A)$ dual to $A$, and denote by $\varphi_G$ the functorial homomorphism
+\[
+\varphi_G:\mathbf H(G)\otimes_k\mathbf H(G)\to\mathbf H(G\times G)
+\]
+induced by the natural map (0.3.6), for every object $C$ of $\mathbf{Alf}/k$:
+\[
+(A\widehat\otimes_k C)^\dagger\otimes_C(A\widehat\otimes_k C)^\dagger
+\to\bigl((A\widehat\otimes_k C)\widehat\otimes_C(A\widehat\otimes_k C)\bigr)^\dagger.
+\]
+If $m:G\times G\to G$ is multiplication on $G$, the composite map
+\[
+\mathbf H(G)\otimes_k\mathbf H(G)\xrightarrow{\varphi_G}\mathbf H(G\times G)\xrightarrow{\mathbf H(m)}\mathbf H(G)
+\]
+makes $\mathbf H(G)$ an algebra over $\mathbf O_k$; for every $C\in\mathbf{Alf}/k$, the identity element of $\mathbf H(G)(C)=(A\widehat\otimes_k C)^\dagger$ is the augmentation of $A\widehat\otimes_k C$ (cf. 2.1).\nde{We have changed the order of the sentences in what follows.} If $G$ is not topologically flat over $k$, $\varphi_G$ is not necessarily an isomorphism, and thus the morphism $\delta_G:\mathbf H(G)\to\mathbf H(G\times G)$ induced by the diagonal morphism ``$x\mto(x,x)$'' from $G$ to $G\times G$ does not necessarily factor through $\mathbf H(G)\otimes_k\mathbf H(G)$, \ie $\mathbf H(G)$ is not necessarily an $\mathbf O_k$-bialgebra.
+For this reason, in the general case we shall simply say that $\mathbf H(G)$ is ``the covariant algebra'' of the formal group $G$.
+Of course, when $G$ is topologically flat over $k$, $\varphi_G$ is an isomorphism and one recovers the $\mathbf O_k$-bialgebra structure on $\mathbf H(G)$ defined in 2.2.1.
+
+\begin{enonce}{2.3.1. Proposition}{}\label{VIIB.2.3.1}
+Let $K,G$ be two formal $k$-groups with affine algebras $B,A$. Suppose that $K$ is topologically flat over $k$. There then exists a canonical bijection from $\Hom_{\mathbf{Grf}/k}(K,G)$ to the set of homomorphisms of unital $\mathbf O_k$-algebras $h:\mathbf H(K)\to\mathbf H(G)$ such that the diagram
+\begin{equation}\tag{*}
+\xymatrix@C=16pt@R=16pt{
+\mathbf H(K)\otimes_k\mathbf H(K)\ar[r]^{h\otimes h}&\mathbf H(G)\otimes_k\mathbf H(G)\ar[dr]^{\varphi_G}&\\
+&&\mathbf H(G\times G)\\
+\mathbf H(K)\ar[uu]^{\Delta_{\mathbf H(K)}}\ar[r]_h&\mathbf H(G)\ar[ur]_{\delta_G}&}
+\end{equation}
+commutes.
+\end{enonce}
+Since $K$ is topologically flat, $\mathbf H(K)$ is equipped with a bialgebra structure (cf. 2.2), and $\Delta_{\mathbf H(K)}$ is its diagonal morphism; in other words, with the notation of 2.3, one has $\Delta_{\mathbf H(K)}=\varphi_K^{-1}\circ\delta_K$. When $G$ is also topologically flat over $k$, our proposition follows from the equivalence of categories established in 2.2.1.
+In the general case one can suppose that $k$ is artinian and reason with the algebras $H(K)=B^\dagger$ and $H(G)=A^\dagger$. Let $\Hom_c(A,B)$ be the set of continuous $k$-linear maps from $A$ to $B$, and $\Hom_k(B^\dagger,A^\dagger)$ the set of $k$-linear maps from $B^\dagger$ to $A^\dagger$.
+\nde{We have detailed the remainder of the proof.}By 0.3.6.A one knows that, if $M,P$ are pseudocompact $k$-modules and $P$ is projective, the canonical map
+\[
+\Hom_c(M,P)\to\Hom_k(P^\dagger,M^\dagger),\qquad f\mto{}^t f
+\]
+(where ${}^t f$ denotes the transpose of $f$) is bijective. (One will apply this to $M=A\widehat\otimes A$ and $P=B$, or to $M=A$ and $P=B\widehat\otimes B$.)
+Let $f\in\Hom_c(A,B)$. Consider the diagrams below, in which the squares (0) commute and the two unnamed vertical arrows are ${}^t(f\widehat\otimes f)$.
+\[
+\xymatrix@C=30pt@R=26pt{
+A\widehat\otimes A\ar[r]^{m_A}\ar[d]_{f\widehat\otimes f}\ar@{}[dr]|{(1)}&A\ar[r]^{\Delta_A}\ar[d]^f\ar@{}[dr]|{(2)}&A\widehat\otimes A\ar[d]^{f\widehat\otimes f}\\
+B\widehat\otimes B\ar[r]_{m_B}&B\ar[r]_{\Delta_B}&B\widehat\otimes B}
+\]
+\[
+\xymatrix@C=22pt@R=34pt{
+A^\dagger\otimes A^\dagger\ar[r]^{\varphi_G}\ar@{}[dr]|{(0)}&(A\widehat\otimes A)^\dagger\ar@{}[dr]|{(1')}&A^\dagger\ar[l]_{\delta_G=m_A^t}\ar@{}[dr]|{(2')}&(A\widehat\otimes A)^\dagger\ar[l]_{\Delta_A^t}\ar@{}[dr]|{(0)}&A^\dagger\otimes A^\dagger\ar[l]_{\varphi_G}\\
+B^\dagger\otimes B^\dagger\ar[u]^{{}^t f\otimes{}^t f}\ar@{=}[r]&(B\widehat\otimes B)^\dagger\ar[u]&B^\dagger\ar[u]^{{}^t f}\ar[l]^{\delta_K=m_B^t}&(B\widehat\otimes B)^\dagger\ar[u]\ar[l]^{\Delta_B^t}&B^\dagger\otimes B^\dagger\ar[u]_{{}^t f\otimes{}^t f}\ar@{=}[l]}
+\]
+If $f:A\to B$ corresponds to a morphism of formal groups $K\to G$, the squares (1) and (2) commute, and $\varepsilon_B\circ f=\varepsilon_A$; consequently, the squares (1$'$) and (2$'$) commute and ${}^t f$ sends the identity of $B^\dagger=H(K)$ to that of $A^\dagger=H(G)$, \ie ${}^t f$ is a morphism of unital $k$-algebras $H(K)\to H(G)$ such that diagram (*) of the proposition commutes.
+Conversely, if ${}^t f$ satisfies these conditions, $\varepsilon_B\circ f=\varepsilon_A$ and the squares (1$'$) and (2$'$) commute. Since, for $M=A\widehat\otimes A$ and $P=B$ (resp. $M=A$ and $P=B\widehat\otimes B$), the map $g\mto{}^t g$ is injective, one deduces that the squares (1) and (2) commute, so $f$ is compatible with the multiplications and diagonal morphisms of $A$ and $B$. It remains to see that $f(1_A)=1_B$. Now it follows from the foregoing that $\varepsilon_Bf(1)=1$, $\Delta_Bf(1)=f(1)\widehat\otimes f(1)$, and $f(1)\cdot f(1)=f(1)$. The first two conditions imply, by 2.1(iii), that $f(1)$ has $c_Bf(1)$ as its inverse in $B$; consequently, $f(1)\cdot f(1)=f(1)$ implies $f(1)=1$. Thus $f:A\to B$ is a morphism in $\mathbf{Alp}/k$ compatible with the comultiplications of $A$ and $B$.
+
+\numpara{2.3.2}For simplicity, now suppose that the ring $k$ is artinian. When $G$ is topologically flat over $k$, the algebra $H(G)=\mathbf H(G)(k)$ can be characterized by a universal property (due to Cartier). Recall (cf. 1.2.1) that if $U$ is a $k$-module, $\mathbf W(U)$ denotes the functor which associates to every $k$-algebra $C$ of finite length the $C$-module $U\otimes_k C$.\nde{We have added the preceding sentence, and in what follows we have written $\mathbf W(U)^\times$ instead of $U_{\mathrm m}$. Recall, moreover (cf. 1.2.1), that one calls a covariant functor $\mathbf{Alf}/k\to\Ens$ a ``$k$-functor''.} If $U$ is a $k$-algebra (associative, with identity), the same holds for $U\otimes_k C$; we shall denote by $\mathbf W(U)^\times$ the group-valued $k$-functor which associates to every $C\in\Ob\mathbf{Alf}/k$ the multiplicative group of invertible elements of the algebra $U\otimes_k C$:
+\[
+\mathbf W(U)^\times(C)=(U\otimes_k C)^\times.
+\]
+Moreover, identify $G$ with the group-valued $k$-functor $C\mto\Hom_{\mathbf{Vaf}/k}(\Spf(C),G)$ and denote by $\Hom_{k\text{-}\mathrm{Gr.}}(G,\mathbf W(U)^\times)$ the set of homomorphisms of group-valued $k$-functors from $G$ to $\mathbf W(U)^\times$. One has the following
+\begin{proposition}{}
+Let $k$ be an artinian ring. For every formal group $G$ topologically flat over $k$ and every $k$-algebra $U$, there is a canonical isomorphism
+\[
+\Hom_{k\text{-}\mathrm{Gr.}}(G,\mathbf W(U)^\times)\isomto\Hom_{k\text{-}\mathrm{Alg.}}(H(G),U).
+\]
+\end{proposition}
+Denote by $A$ the affine algebra of $G$; by hypothesis it is a projective object of $\mathbf{PC}(k)$, and $H(G)=A^\dagger$. For every object $P$ of $\mathbf{PC}(k)$, denote by $U\widehat\otimes_k P$ the projective limit of the $k$-modules $U\otimes_k(P/N)$, where $N$ runs through the open submodules of $P$. One has linear maps
+\[
+U\otimes_k(P/N)\to\Hom_k((P/N)^*,U)
+\]
+which send $u\otimes x$ to the $k$-linear map $f\mto f(x)u$ and form a filtered projective system. One therefore obtains, by passage to the projective limit, a morphism
+\begin{equation}\tag{1}
+U\widehat\otimes_k P\xrightarrow{\psi_P}\Hom_k(P^\dagger,U).
+\end{equation}
+When $P=k$, $\psi_k$ is evidently an isomorphism; moreover, both sides of (1), considered as functors in $P$, commute with infinite products (every product being a filtered projective limit of finite products). One therefore obtains that (1) is an isomorphism when $P$ is a product of copies of $k$, and then when $P$ is a projective object of $\mathbf{PC}(k)$ (both sides of (1) commuting with finite direct sums).
+Now denote by $\Hom_{\mathscr F}(G,\mathbf W(U))$ the set of morphisms of $k$-functors from $G$ to $\mathbf W(U)$. Since $G=\Spf(A)=\varinjlim\Spf(A/\mathfrak l)$, where $\mathfrak l$ runs through the open ideals of $A$, one has canonical isomorphisms
+\[
+\begin{aligned}
+\Hom_{\mathscr F}(G,\mathbf W(U))&=\varprojlim\Hom_{\mathscr F}(\Spf(A/\mathfrak l),\mathbf W(U))\\
+&=\varprojlim U\otimes_k(A/\mathfrak l)=U\widehat\otimes_k A.
+\end{aligned}
+\]
+By the foregoing, one therefore obtains a canonical isomorphism
+\begin{equation}\tag{2}
+\Hom_{\mathscr F}(G,\mathbf W(U))=U\widehat\otimes_k A\xrightarrow{\psi_A}\Hom_k(H(G),U).
+\end{equation}
+For every $k$-algebra $C$ of finite length, multiplication makes $U\otimes_k C$ a monoid with identity, and every morphism of monoids with identity $G(C)\to U\otimes_k C$ is necessarily a morphism of groups $G(C)\to(U\otimes_k C)^\times$. Consequently, one obtains that $\Hom_{k\text{-}\mathrm{Gr.}}(G,\mathbf W(U)^\times)$ is the subset of $\Hom_{\mathscr F}(G,\mathbf W(U))$ consisting of morphisms of $k$-functors in monoids with identity.
+It remains to see that these morphisms correspond to the $k$-linear maps from $H(G)$ to $U$ which preserve multiplication and the identity elements.\nde{The original indicated that ``(this) follows from the functorial character of $\psi_A$''. We have detailed this in what follows.} To simplify the notation, $H(G)=A^\dagger$ will be denoted by $H$, and we shall write $\widehat\otimes$ instead of $\widehat\otimes_k$. Denote by $\Delta_A,m_A,\varepsilon_A$ (resp. $\Delta_H,m_H,\varepsilon_H$) the comultiplication, multiplication, and augmentation of $A$ (resp. $H$). Let $\theta\in\Hom_{\mathscr F}(G,\mathbf W(U))$; denote by $\gamma$ its image in $U\widehat\otimes A$, and by $\phi:H\to U$ the associated $k$-linear map. Then $\theta$ sends the identity section $s\in G(k)$ to an element $u$ of $U$, and since $s$ corresponds to the augmentation $\varepsilon:A\to k$, which is the identity element $1_H$ of $H$, one sees that $\theta(s)=1_U$ if and only if $\phi(1_H)=1_U$.
+Moreover, the morphism $\theta\circ m_G:G\times G\to\mathbf W(U)$ corresponds to the element $(\mathrm{id}_U\widehat\otimes\Delta_A)(\gamma)$, and this corresponds, by duality, to the map $\phi\circ m_H:H\otimes H\to U$.
+On the other hand, the morphism $\theta\circ\mathrm{pr}_1:G\times G\to\mathbf W(U)$ corresponds to the element $\gamma\widehat\otimes1_A$ of $U\widehat\otimes A\widehat\otimes A$, which corresponds by duality to $\phi\circ(\mathrm{id}_H\otimes\varepsilon):H\otimes H\to U$. Similarly, $\theta\circ\mathrm{pr}_2$ corresponds to the element $\tau(\gamma\widehat\otimes1_A)$ of $U\widehat\otimes A\widehat\otimes A$ (where $\tau(u\widehat\otimes a\widehat\otimes b)=u\widehat\otimes b\widehat\otimes a$), which corresponds by duality to $\phi\circ(\varepsilon\otimes\mathrm{id}_H):H\otimes H\to U$. Finally, the multiplication map $\mu=m_U\widehat\otimes A\widehat\otimes A$ below,
+\[
+\begin{gathered}
+(U\widehat\otimes A\widehat\otimes A)\times(U\widehat\otimes A\widehat\otimes A),\\
+(u\widehat\otimes a_1\widehat\otimes a_2,u'\widehat\otimes a_3\widehat\otimes a_4)
+\mto uu'\widehat\otimes a_1a_3\widehat\otimes a_2a_4,
+\end{gathered}
+\]
+can be viewed as the composite of the endomorphism $\sigma_{23}$ of $(U\otimes U)\widehat\otimes A^{\widehat\otimes4}$ which ``interchanges the factors $a_2$ and $a_3$'', and the map
+\[
+(U\otimes U)\widehat\otimes A^{\widehat\otimes2}\widehat\otimes A^{\widehat\otimes2}
+\xrightarrow{m_U\widehat\otimes m_A\widehat\otimes m_A}U\widehat\otimes A\widehat\otimes A.
+\]

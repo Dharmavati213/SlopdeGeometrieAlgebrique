@@ -1,0 +1,232 @@
+\item The sequence below (where $\tau_1(a)=a\widehat\otimes1$ and $\pi$ is the projection $A\to A/J_B$) is exact:
+\[
+\xymatrix@C=45pt{B\ar[r]&A\ar@<.6ex>[r]^{\tau_1}\ar@<-.6ex>[r]_{(\pi\widehat\otimes\id_A)\Delta_A}&A\widehat\otimes_k(A/J_B),}\tag{*}
+\]
+\ie $B$ is the set of all $x\in A$ such that $\Delta_A(x)-x\widehat\otimes1$ belongs to $A\widehat\otimes_k J_B$.
+\end{enumeratei}
+In this case, $H=\Spf(A/J_B)$ is a formal subgroup of $G$, and the sequence below (where $\lambda$ is the restriction to $G\times H$ of the multiplication of $G$) is exact:
+\[
+\xymatrix@C=38pt{G\times H\ar@<.6ex>[r]^{\operatorname{pr}_1}\ar@<-.6ex>[r]_\lambda&G\ar[r]&\Spf(B),}\tag{**}
+\]
+\ie $\Spf(B)$ is isomorphic to $G/H$.
+\end{proposition}
+% typo?: pi tensor id_A in (*) is retained, although its target has A/J_B on the right.
+Put $\overline A=A/J_B$ and $H=\Spf(\overline A)$; then $H$ is a formal subvariety of $G$. Since $J_B\subset I_A$, the augmentation $\varepsilon_A$ induces a continuous morphism of $k$-algebras $\overline\varepsilon:\overline A\to k$.
+
+If (i) holds, then $\Delta_A(I_B)\subset I_B\widehat\otimes1+A\widehat\otimes J_B$, and hence $\Delta_A$ induces, on passing to the quotient, a diagonal morphism $\overline\Delta$. Then $\overline\Delta$ and $\overline\varepsilon$ equip $H$ with a structure of formal submonoid of $G$. Since $G$ is infinitesimal, the same holds for $H$; thus, by Proposition 2.7, $H$ is a formal subgroup of $G$. It then follows from the definition of $G/H$ (cf. 2.4) that (ii) implies the last assertion of the proposition.
+
+On the other hand, it is clear that (ii) implies (i). The proof of the converse occupies paragraphs 5.1.1 to 5.1.5.
+
+\numpara{5.1.1}First consider the following category $\mathscr C$: an object of $\mathscr C$ is a pair $(A,J)$ consisting of a profinite $k$-algebra $A$ and a closed ideal $J$ of $A$; a morphism $\psi:(A,J)\to(A',J')$ of $\mathscr C$ is a continuous homomorphism of $k$-algebras $A\to A'$ which maps $J$ into $J'$. If one associates to $(A,J)$ the pair $(\Spf(A/J),\Spf(A))$, one clearly obtains an antiequivalence from $\mathscr C$ onto the category of pairs $(Z,Y)$ consisting of a formal $k$-variety $Y$ and a formal subvariety $Z$, a morphism $\phi:(Z,Y)\to(Z',Y')$ being a morphism of formal $k$-varieties $Y\to Y'$ which maps $Z$ into $Z'$.
+
+A \emph{cogroup} structure on an object $(A,J)$ of $\mathscr C$ consists of the data of a formal group structure on $\Spf(A)$ such that the following conditions hold (notation of 2.1):
+\begin{enumerate}
+\item[(1)] $\Delta_A(J)\subset J\widehat\otimes_k A+A\widehat\otimes_k J$;
+\item[(2)] $\varepsilon_A(J)=0$;
+\item[(3)] $c_A(J)\subset J$.
+\end{enumerate}
+These conditions also mean that $H=\Spf(A/J)$ is a formal subgroup of $G=\Spf(A)$.\nde{Note that if $(A',J')$ is a second cogroup of $\mathscr C$, corresponding to a pair $H'\subset G'$ of formal $k$-groups, then giving a morphism of cogroups $(A',J')\to(A,J)$ is equivalent to giving a morphism of formal $k$-groups $G\to G'$ which maps $H$ into $H'$.}
+
+Suppose, moreover, that $A$ is \emph{local}, \ie that $\Spf(A)$ is an infinitesimal formal group. Then, if $J\ne A$, conditions (2) and (3) are consequences of (1). Indeed, if $J$ is a closed ideal distinct from $A$, it is contained in the augmentation ideal $I_A$, so (2) holds, and $M=\Spf(A/J)$ is a formal submonoid of $G$. Since $G$ is infinitesimal, it follows from 2.7 that $M$ is a formal subgroup of $G$, \ie condition (3) holds.
+% typo?: the asserted implications for general pseudocompact k are retained without new flatness hypotheses.
+
+\numpara{5.1.2}Denote by $\mathbf{Alpg}/k$ the category of ``\emph{graded profinite}'' $k$-algebras: an object of this category consists of the data of a sequence $A_0,A_1,\ldots,A_n,\ldots$ of pseudocompact $k$-modules and a profinite algebra structure on the product $\prod_{n\ge0}A_n$ such that one has $A_n\cdot A_m\subset A_{m+n}$ ($A_n$ is identified with a subset of $\prod_{i\ge0}A_i$ by means of the canonical injection); a morphism $\psi:(A_n)\to(B_n)$ is a sequence of continuous linear maps $\psi_n:A_n\to B_n$ such that one has $\psi_{m+n}(a\cdot a')=\psi_m(a)\cdot\psi_n(a')$ if $a\in A_m$ and $a'\in A_n$.
+\begin{definitions}{}
+It is clear that two graded profinite $k$-algebras $(A_n)$ and $(B_n)$ have a \emph{coproduct}\nde{We have replaced ``direct sum'' by ``coproduct''.} in $\mathbf{Alpg}/k$, whose $n$th component is the product $\prod_{i=0}^n A_i\widehat\otimes_k B_{n-i}$ of the pseudocompact $k$-modules $A_i\widehat\otimes_k B_{n-i}$. This coproduct will be denoted by $(A_n)\widehat\otimes_k(B_n)$.
+
+Then a cogroup structure on an object $(A_n)$ of $\mathbf{Alpg}/k$ is the data of continuous $k$-linear maps $\Delta_n:A_n\to\prod_{i=0}^n A_i\widehat\otimes_k A_{n-i}$ and $\varepsilon:A_0\to k$ which induce on $\prod_{n\ge0}A_n$ (putting $\varepsilon(A_i)=0$ for $i\ge1$) a cogroup structure in $\mathbf{Alp}/k$.
+
+Finally, for every object $(A,J)$ of $\mathscr C$, one denotes by $\operatorname{Gr}_J(A)$ the graded profinite algebra associated with the filtration of $A$ by the closures $\overline{J^n}$ of the powers of $J$; one therefore has $\operatorname{Gr}_J(A)_n=\overline{J^n}/\overline{J^{n+1}}$ and the multiplication of $\operatorname{Gr}_J(A)$ is induced by that of $A$.
+\end{definitions}
+\begin{lemma}{}\nde{In the original, the lemma is stated when $k$ is a field, the proof being left to the reader in this case.}
+Let $U,V$ be two pseudocompact $k$-modules, with $U$ topologically flat, and let $U=U_0\supset U_1\supset\cdots$ and $V=V_0\supset V_1\supset\cdots$ be two decreasing sequences of closed sub-$k$-modules. Filter the completed tensor product $W=U\widehat\otimes_k V$ by means of the closed submodules
+\[
+W_n=U_n\widehat\otimes_k V_0+U_{n-1}\widehat\otimes_k V_1+\cdots+U_0\widehat\otimes_k V_n.
+\]
+Suppose that each $U_i/U_{i+1}$ is topologically flat over $k$ (so that $U/U_n$, hence also $U_n$, is as well, for every $n$). Then, for every $n$, one has an isomorphism
+\[
+W_n/W_{n+1}\simeq\bigoplus_{i+j=n}(U_i/U_{i+1})\widehat\otimes_k(V_j/V_{j+1}).
+\]
+\end{lemma}
+\begin{proof}
+Put $W_{i,j}=U_i\widehat\otimes V_j$ and $\overline W_{i,j}=(U_i/U_{i+1})\widehat\otimes_k(V_j/V_{j+1})$, for every $i,j\ge0$. Let us show by induction on $n$ that the natural map
+\[
+\pi_n:W_n\longrightarrow\bigoplus_{i+j=n}\overline W_{i,j}
+\]
+is surjective and that the inclusion $W_{n+1}\subset\Ker(\pi_n)$ is an equality. For $n=0$, the projection
+\[
+\pi_0:U_0\widehat\otimes_k V_0\longrightarrow(U_0/U_1)\widehat\otimes_k(V_0/V_1)
+\]
+is surjective and, since $U_0$, $U_0/U_1$ and hence $U_1$ are topologically flat over $k$, one sees that $\Ker(\pi_0)=U_0\widehat\otimes_k V_1+U_1\widehat\otimes_k V_0$ and that, moreover, $U_0\widehat\otimes_k V_1\cap U_1\widehat\otimes_k V_0=U_1\widehat\otimes_k V_1$.
+
+Suppose therefore that $n>0$ and the result is established for $n-1$. Put $M_0=U_0\widehat\otimes_k V_n$ and $S_0=\sum_{i=1}^n U_i\widehat\otimes_k V_{n-i}$. One has $S_0\subset U_1\widehat\otimes_k V_0$ and hence, by the preceding passage applied to $V_0\supset V_n$ instead of $V_0\supset V_1$, one has
+\[
+M_0\cap S_0\subset U_0\widehat\otimes_k V_n\cap U_1\widehat\otimes_k V=U_1\widehat\otimes_k V_n,
+\]
+whence one deduces that $M_0\cap S_0=U_1\widehat\otimes_k V_n$. Since $W_n=M_0+S_0$, one obtains a commutative diagram with exact rows, where one has put $U_i'=U_{i+1}$ and $\overline W'_{i,n-1-i}=\overline W_{i+1,n-1-i}$ for $i=0,\ldots,n-1$:
+\[
+\xymatrix@C=12pt@R=25pt{
+0\ar[r]&S_0\ar[r]\ar[d]_{\pi'_{n-1}}&W_n\ar[r]\ar[d]_{\pi_n}&(U_0/U_1)\widehat\otimes_k V_n\ar[r]\ar[d]_p&0\\
+0\ar[r]&\bigoplus_{i=0}^{n-1}\overline W'_{i,n-1-i}\ar[r]&\bigoplus_{i=0}^n\overline W_{i,n-1}\ar[r]&\overline W_{0,n}\ar[r]&0.}
+\]
+% typo?: middle bottom indices i,n-1 are retained as printed.
+Then $p$ is surjective, with kernel $(U_0/U_1)\widehat\otimes_k V_{n+1}$. Moreover, by the induction hypothesis applied to the sequence $(U_i')$, $\pi'_{n-1}$ is surjective, with kernel equal to $W_n'=\sum_{i=1}^n W_{i,n+1-i}$. It follows that $\pi_n$ is surjective, and that the inclusion $W_{n+1}\subset\Ker(\pi_n)$ is an equality. This proves the lemma.
+\end{proof}
+Return to an object $(A,J)$ of $\mathscr C$ and note that, by 0.2.G, the hypothesis that each $\overline{J^n}/\overline{J^{n+1}}$ be topologically flat over $k$ is equivalent to saying that $\operatorname{Gr}_J(A)$ is topologically flat over $k$.
+\begin{corollary}{}
+Let $\mathscr P$ be the full subcategory of $\mathscr C$ consisting of the objects $(A,J)$ such that $A$ and $\operatorname{Gr}_J(A)$ are topologically flat over $k$. Then the functor $\mathscr P\to\mathbf{Alpg}/k$, $(A,J)\mapsto\operatorname{Gr}_J(A)$ commutes with finite coproducts, hence transforms a cogroup of $\mathscr P$ into a cogroup of $\mathbf{Alpg}/k$.
+
+In particular, if $k$ is a field then, for every cogroup $(A,J)$ of $\mathscr C$, $\operatorname{Gr}_J(A)$ is a cogroup of $\mathbf{Alpg}/k$.\nde{To a pair $H\subset G$ of formal $k$-groups, one therefore associates the ``formal completion $\widehat G_H$ of $G$ along $H$'', which is a formal $k$-group; moreover, we shall see in 5.1.3--5.1.4 that the inclusion $\sigma:H\hookrightarrow\widehat G_H$ possesses a retraction $\pi:\widehat G_H\to H$ and that the formal $k$-group $N=\Ker(\pi)$ is identified, as a formal variety, with the completion of the homogeneous space $G/H$ along the identity section. This will be useful in 5.2.2.}
+\end{corollary}
+% typo?: the associated graded is described as a formal completion, retained.
+
+\numpara{5.1.3}Identify every profinite $k$-algebra $\Gamma$ with the graded profinite $k$-algebra $(\Gamma_n)_{n\ge0}$ such that $\Gamma_0=\Gamma$ and $\Gamma_n=0$ if $n>0$. In particular, if $(A_n)_{n\ge0}$ is a graded profinite $k$-algebra, we shall consider $A_0$ indifferently as a profinite $k$-algebra or as a graded profinite $k$-algebra. We shall then denote by $\rho:(A_n)\to A_0$ the morphism of $\mathbf{Alpg}/k$ such that $\rho_0=\id_{A_0}$ and $\rho_n=0$ if $n>0$. Similarly, $\tau:A_0\to(A_n)$ will denote the section of $\rho$ such that $\tau_0=\id_{A_0}$ and $\tau_n=0$ if $n>0$.
+
+Every cogroup structure on $(A_n)_{n\in\NN}$ induces a cogroup structure on $A_0$ such that $\rho$ and $\tau$ are homomorphisms of cogroups. In this case, denote by $I_0$ the augmentation ideal of $A_0$ and put $A_n'=A_n/\overline{I_0A_n}$ for every $n\ge0$ (so that $A_0'=k$).
+
+Then $(A_n')_{n\in\NN}$ is a cogroup in $\mathbf{Alpg}/k$ (note that, since $A_0=I_0\oplus k\cdot1$, $I_0\widehat\otimes_k A_n\simeq\overline{I_0A_n}$ is a direct summand of $A_n$, for every $n$). Since $\tau$ is a section of $\rho$, by 2.4.A the cogroup $(A_n)_{n\in\NN}$ is the ``semidirect coproduct'' of $A_0$ and the cogroup $(A_n')_{n\in\NN}$. More precisely, $(A_n')_{n\in\NN}$ is isomorphic, as an object of $\mathbf{Alpg}/k$, to the kernel of the pair:
+\[
+\xymatrix@C=50pt{(A_n)\ar@<.6ex>[r]^{\tau_1}\ar@<-.6ex>[r]_{(\id\widehat\otimes\rho)\Delta}&(A_n)\widehat\otimes_k A_0}
+\]
+(where $\Delta:(A_n)\to(A_n)\widehat\otimes(A_n)$ is the comultiplication of $(A_n)$ and $\tau_1(x)=x\widehat\otimes1$), and, identifying $A_n'$ with its image in $A_n$, the map
+\[
+(A_n'\widehat\otimes_k A_0)\longrightarrow(A_n),\qquad a_n'\widehat\otimes a_0\longmapsto a_n'a_0
+\]
+is an isomorphism of $\mathbf{Alpg}/k$. (N.B. This is not an isomorphism of cogroups, but $\Delta(A')\subset A\widehat\otimes A'$ and $(\gamma\rho'\widehat\otimes\id)\circ\Delta|_{A'}=\Delta'$, where $\Delta'$ is the comultiplication of $A'$ and $\gamma\rho'$ the projection $A\to A'$, cf. 2.4.A.)
+
+\numpara{5.1.4}Let $(A,J)$ be an object of $\mathscr C$ and $(A_n)=\operatorname{Gr}_J(A)$ the associated object of $\mathbf{Alpg}/k$, \ie $A_n=\overline{J^n}/\overline{J^{n+1}}$ for every $n\ge0$. It is clear that the algebra $\mathscr A=\prod_{n\ge0}A_n$ is generated by $A_0$ and $A_1$, that is, for $n\ge1$, the map
+\[
+A_1\widehat\otimes_{A_0}A_1\widehat\otimes_{A_0}\cdots\widehat\otimes_{A_0}A_1\longrightarrow A_n\tag{1}
+\]
+defined by multiplication is surjective.
+
+Suppose, moreover, that $(A,J)$ is a cogroup of $\mathscr C$ and that $A$ and the quotients $\overline{J^n}/\overline{J^{n+1}}$ are flat over $k$. Then, by Corollary 5.1.2, $\operatorname{Gr}_J(A)$ is a cogroup of $\mathbf{Alpg}/k$. Thus, by 5.1.3, if one puts
+\[
+\begin{split}
+A_n'=\biggl\{x\in\overline{J^n}/\overline{J^{n+1}}\ \biggm|\
+\Delta(x)-x\widehat\otimes1\in{}&\\[-12pt]
+\bigoplus_{i=1}^n(\overline{J^{n-i}}/\overline{J^{n-i+1}})\widehat\otimes(\overline{J^i}/\overline{J^{i+1}})&\biggr\},
+\end{split}\tag{2}
+\]
+then the map $(A_n'\widehat\otimes A_0)\to(A_n)$, $a_n'\widehat\otimes a_n'\mapsto a_n'a_0$ is an isomorphism of $\mathbf{Alpg}/k$.\nde{Let $G,H$ and $\widehat G_H$ be the formal $k$-groups corresponding to $A$, $A_0=A/J$ and $\operatorname{Gr}_J(A)$; then $\tau:A_0\hookrightarrow\operatorname{Gr}_J(A)$ corresponds to a retraction $\pi:\widehat G_H\to H$ of the inclusion $H\hookrightarrow\widehat G_H$, and the preceding passage means that $\widehat G_H$ is the semidirect product of $N=\Ker(\pi)$ by $H$.}
+% typo?: a_n' tensor a_n' instead of a_n' tensor a_0 is retained as printed.
+
+Denoting by $I_0$ the augmentation ideal of $A_0$, one deduces from (1) and from the commutative diagram below, where $A_1'^{\widehat\otimes n}$ denotes $A_1'\widehat\otimes_k\cdots\widehat\otimes_k A_1'$ ($n$ factors):
+\[
+\xymatrix@C=10pt@R=30pt{
+A_1\widehat\otimes_{A_0}\cdots\widehat\otimes_{A_0}A_1\ar[d]_m&A_1'^{\widehat\otimes n}\widehat\otimes_k A_0\ar[l]_\sim\ar[d]^{m'\widehat\otimes\id}&(A_1'^{\widehat\otimes n}\widehat\otimes_k I_0)\oplus A_1'^{\widehat\otimes n}\ar[l]_\sim\ar[d]^{m'\widehat\otimes\id\,\oplus m'}\\
+A_n&A_n'\widehat\otimes_k A_0\ar[l]_\sim&(A_n'\widehat\otimes_k I_0)\oplus A_n'\ar[l]_\sim}
+\]
+that the map
+\[
+m':A_1'\widehat\otimes_k\cdots\widehat\otimes_k A_1'\longrightarrow A_n'\tag{3}
+\]
+induced by multiplication is surjective; in other words, the profinite $k$-algebra $\mathscr A'=\prod_{n\ge0}A_n'$ is generated by its degree $1$ terms.
+
+\nde{We have detailed the original in what follows, and placed at the end the ``supplement'' $\overline{I_B^n}=B\cap\overline{J_B^n}$ (which is not necessary to establish Proposition 5.1).}Return now to hypothesis (i) of Proposition 5.1: let $G$ be a topologically flat infinitesimal formal $k$-group, $A$ its affine algebra, $I_A$ the augmentation ideal of $A$, $B$ a closed subalgebra of $A$, and $J=\overline{AI_B}$, where $I_B=B\cap I_A$. Denote by $H$ the formal subgroup $\Spf(A/J)$ and by $\pi$ the projection $A\to A/J$. Suppose that $A/\overline{J^n}$ is topologically flat over $k$, for every $n\ge1$, and that $B$ is contained in the kernel $\widetilde B$ of the pair:
+\[
+\xymatrix@C=55pt{A\ar@<.6ex>[r]^{\tau_1}\ar@<-.6ex>[r]_{(\id_A\widehat\otimes_k\pi)\Delta_A}&A\widehat\otimes_k(A/J).}
+\]
+Let $(A_n)=\operatorname{Gr}_J(A)$, let $I_0=I_A/J$ be the augmentation ideal of $A_0=A/J$, and define $(A_n')_{n\in\NN}$ as in (2) above. Denote by $(B_n)_{n\in\NN}$ (resp. $(\widetilde B_n)_{n\in\NN}$) the object of $\mathbf{Alpg}/k$ associated with the filtration of $B$ (resp. $\widetilde B$) induced by that of $A$, \ie defined by the ideals $B\cap\overline{J^n}$ (resp. $\widetilde B\cap\overline{J^n}$). Then it is clear that $B_n\subset\widetilde B_n\subset A_n'$ for every $n$, and that
+\[
+\mathscr B=\prod_{n\ge0}B_n\subset\widetilde{\mathscr B}=\prod_{n\ge0}\widetilde B_n
+\]
+are subalgebras of $\mathscr A'=\prod_{n\ge0}A_n'$.
+
+On the other hand, $J$ (resp. $\overline{J^2}$) is the image in $A$ of $I_B\widehat\otimes_k A$ (resp. $\overline{I_B^2}\widehat\otimes_k A$). Consequently, the map
+\[
+(I_B/\overline{I_B^2})\widehat\otimes_k A\longrightarrow J/\overline{J^2}=A_1\simeq A_1'\widehat\otimes_k A_0
+\]
+is surjective, and factors through $(I_B/\overline{I_B^2})\widehat\otimes_k A_0$. Since $A_0=k\cdot1\oplus I_0$, one deduces from the commutative exact diagram:
+\[
+\xymatrix@C=22pt@R=22pt{
+(I_B/\overline{I_B^2})\widehat\otimes_k A_0\ar[d]&(I_B/\overline{I_B^2})\widehat\otimes_k I_0\oplus(I_B/\overline{I_B^2})\ar[l]_\sim\ar[d]\\
+J/\overline{J^2}\ar[d]&A_1'\widehat\otimes_k I_0\oplus A_1'\ar[l]_\sim\ar[d]\\
+0&0}
+\]
+that $A_1'$ is the image of $I_B/\overline{I_B^2}$, so that one has $B_1=A_1'$. Since $\mathscr A'$ is generated by $A_1'$, it follows that, for every $n\ge1$, one has
+\[
+A_n'\subset B_n\subset\widetilde B_n\subset A_n',
+\]
+whence $B_n=\widetilde B_n=A_n'$.\nde{With the notation of N.D.E. (149), this implies that the formal completion of $G/H$ along the identity section (whose affine algebra is $\prod_n B_n$) is isomorphic, as a formal variety, to the formal $k$-group $N$.}
+
+Finally, since the formal group $G$ is \emph{infinitesimal}, one has $\mathfrak r(A)=I_A$ and hence the ideals $\overline{I_A^n}$ tend to $0$ (cf. 0.1.2); a fortiori, the ideals $\overline{J^n}$ tend to $0$, and hence the induced filtrations on $\widetilde B$ and $B$ are separated. Moreover, since $B$ is a \emph{closed} subalgebra of $A$, it is complete for the topology defined by the ideals $B\cap\overline{J^n}$. Consequently, it follows from \cite{CA}, § V.7, Lemma 1 (see also 5.1.5 below) that $B=\widetilde B$. This completes the proof of Proposition 5.1.
+
+One has, moreover, the following supplement. For every $n$, $\overline{J^n}=\overline{AI_B^n}$ is the image in $A$ of $A\widehat\otimes_B\overline{I_B^n}$ and also of $A\widehat\otimes_B(B\cap\overline{J^n})$. Now, by hypothesis, the affine algebra $A/J$ of the formal subgroup $H$ is topologically flat over $k$. Thus, by Theorem 2.4, the morphism $G=\Spf(A)\to G/H=\Spf(B)$ is \emph{surjective and topologically flat}; one therefore has
+\[
+A\widehat\otimes_B\overline{I_B^n}=\overline{J^n}=A\widehat\otimes_B(B\cap\overline{J^n}),
+\]
+and this implies that $\overline{I_B^n}=B\cap\overline{J^n}$ for every $n$. This also follows from the fact that the maps
+\[
+\overline{I_B^n}/\overline{I_B^{n+1}}\longrightarrow A_i'=(B\cap\overline{J^n})/(B\cap\overline{J^{n+1}})
+\]
+are surjective, and from 5.1.5 (ii) below, applied to $B_n'=\overline{I_B^n}$ and $B_n=B\cap\overline{J^n}$.
+% typo?: A_i' instead of A_n' is retained as printed.
+
+\begin{lemma}{5.1.5}\label{VIIB.5.1.5}\nde{The original stated only point (ii); for the reader's convenience, we have stated Lemma 1 of \cite{CA}, § V.7, in (i).}
+(i) Let $M$ and $N$ be two abelian groups filtered by decreasing sequences of subgroups $(M_n)_{n\in\ZZ}$ and $(N_n)_{n\in\ZZ}$. Suppose that the union of the $M_n$ (resp. $N_n$) equals $M$ (resp. $N$), that the intersection of the $M_n$ (resp. $N_n$) is zero, and that $M$ is complete for the topology defined by the $M_n$. Let $f:M\to N$ be a morphism of filtered groups.
+\begin{enumerate}
+\item[a)] If $f$ induces a surjection of the associated gradeds, then $f$ is a surjection and $N$ is complete for the topology defined by the $N_n$.
+\item[b)] If $f$ induces an injection of the associated gradeds, then $f$ is an injection.
+\end{enumerate}
+(ii) Let $B$ be an abelian group, and let $B=B_0'\supset B_1'\supset\cdots$ and $B=B_0\supset B_1\supset\cdots$ be two separated filtrations of $B$ by subgroups such that $B_n'\subset B_n$ for every $n$. Suppose that $B$ is complete for the topology defined by the filtration $(B_n')$.
+
+If the map $B_i'/B_{i+1}'\to B_i/B_{i+1}$ is surjective for every $i$, then $B_n'=B_n$ for every $n$.
+\end{lemma}
+Indeed, (i) is Lemma 1 of \cite{CA}, § V.7 (see also \cite{BAC}, III, § 2.8), and (ii) follows by taking $M=B_n'\supset B_{n+1}'\supset\cdots$ and $N=B_n\supset B_{n+1}\supset\cdots$.
+
+\numpara{5.2}\emph{Throughout the remainder of Section 5, $k$ denotes a perfect field of characteristic $p>0$}.
+
+We put $\overline\NN=\NN\cup\{\infty\}$. If $B$ is a profinite $k$-algebra and $r\in\overline\NN$, we denote by $((x^{p^r}))_{x\in\mathfrak r(B)}$ the closed ideal of $B$ generated by the elements $x^{p^r}$, where $x$ ranges over the radical $\mathfrak r(B)$ of $B$. If $r=\infty$, we use the same notation, agreeing that $((x^{p^\infty}))_{x\in\mathfrak r(B)}$ is the zero ideal. In both cases, $B_r$ denotes the quotient $B/((x^{p^r}))_{x\in\mathfrak r(B)}$.
+
+We say that $B$ has \emph{height $\le r$} if $((x^{p^r}))_{x\in\mathfrak r(B)}$ is the zero ideal; if this holds and $r$ is finite, we say that $B$ has \emph{finite height}.
+
+Consider in particular the case where $B$ is of the form $k[[\omega]]$, $\omega$ being a pseudocompact $k$-vector space (cf. 1.2.5).\nde{In the original, the author uses ``linearly compact vector space'', which is equivalent to ``pseudocompact vector space'' (cf. \cite{BAC}, § III.2, Exercises 15 a), 19 a) and 20 d)). We have preferred to retain the terminology ``pseudocompact'', used up to this point.} We then say that $B$ is a \emph{formal power series algebra} and that $B_r$ is a \emph{truncated formal power series algebra} ($r\in\overline\NN$; we therefore agree to say that $B=B_\infty$ is also ``truncated''). If $B=k[[\omega]]$, we also write $((x^{p^r}))_{x\in\omega}$ instead of $((x^{p^r}))_{x\in\mathfrak r(B)}$.
+\begin{notation}{}
+Let $\omega$ be a pseudocompact $k$-vector space filtered by an increasing sequence of closed vector subspaces
+\[
+0=\omega_0\subset\omega_1\subset\omega_2\subset\omega_3\subset\cdots.
+\]
+(a) The closed ideal of $k[[\omega]]$ generated by the elements $x^{p^r}$, where $r$ ranges over $\NN$ and $x$ ranges over $\omega_r$, will be denoted by $((x^{p^r}))_{r\in\omega_r}$.
+% typo?: r in omega_r, rather than x in omega_r, is printed in this notation, retained.
+
+(b) On the other hand, we shall denote by ${}_r\omega$ the filtered pseudocompact vector space such that
+\[
+{}_r\omega_i=\omega_i\quad\text{if }i<r,\qquad{}_r\omega_i=\omega\quad\text{if }i\ge r.
+\]
+\end{notation}
+\begin{theorem}{}\label{VIIB.5.2}\textup{(Dieudonné--Cartier).}
+Let $H\to G$ be a monomorphism of infinitesimal formal groups over a perfect field $k$ of characteristic $p>0$. Let $B$ be the affine algebra of the homogeneous space $G/H$ and suppose that one of the following three conditions holds:\nde{On the one hand, we have replaced $H\backslash G$ by $G/H$, and likewise in the proof; on the other hand, we have added condition (iii).}
+\begin{enumeratei}
+\item $B$ has finite height (this holds in particular if $G$ has finite height).
+\item $B$ is a complete noetherian local ring.
+\item $B$ is a reduced ring.
+\end{enumeratei}
+Then $B$ is isomorphic to the completed tensor product of a finite family of truncated formal power series algebras.
+\end{theorem}
+The proof of this theorem occupies paragraphs 5.2.1 to 5.2.5.
+
+\numpara{5.2.1}Let $A$ be the affine algebra of $G$, $I_A$ its augmentation ideal, and $I=B\cap I_A$. By 2.4, one has $H=\Spf(A/\overline{AI})$ and $B=\{x\in A\mid\Delta(x)-1\widehat\otimes x\in A\widehat\otimes\overline{AI}\}$. Put $\omega=I/\overline{I^2}$. One denotes by $I_r$ the closed subideal of $I$ consisting of the $x$ such that $x^{p^r}=0$, and by $\omega_r$ the canonical image of $I_r$ in $\omega$. We shall prove:
+% typo?: 1 tensor x, rather than x tensor 1, is printed here, retained.
+\begin{proposition}{}
+If there exists a continuous section $\sigma:\omega\to I$ of the projection $I\to I/\overline{I^2}$ such that $\sigma(\omega_r)\subset I_r$ for every $r$, then $B$ is isomorphic to $k[[\omega]]/((x^{p^r}))_{x\in\omega_r}$.
+\end{proposition}
+Such a section indeed extends to a continuous morphism $k[[\omega]]\to B$, which factors through $B'=k[[\omega]]/((x^{p^r}))_{x\in\omega_r}$. We prove in 5.2.2 to 5.2.5 that the morphism
+\[
+\phi:B'=k[[\omega]]/((x^{p^r}))_{x\in\omega_r}\longrightarrow B
+\]
+thus obtained is an isomorphism.
+
+\numpara{5.2.1.A}\label{VIIB.5.2.1.A}\nde{We have added paragraphs 5.2.1.A and 5.2.1.B.}For each $r\in\NN$, put $\mathcal I_r=\overline{I^2}+I_r$, so that $\mathcal I_r/\overline{I^2}\simeq\omega_r$; one then has a commutative diagram with exact rows
+\[
+\xymatrix@C=20pt@R=24pt{
+0\ar[r]&\mathcal I_{r-1}\ar[r]\ar[d]&\mathcal I_r\ar[r]\ar[d]&\mathcal I_r/\mathcal I_{r-1}\ar[r]\ar[d]^\wr&0\\
+0\ar[r]&\omega_{r-1}\ar[r]&\omega_r\ar[r]&\omega_r/\omega_{r-1}\ar[r]&0}
+\]
+and since $k$ is a field, the rows are split: one can extend a pseudobasis $\mathscr B_{r-1}$ of $\mathcal I_{r-1}$ to a pseudobasis $\mathscr B_{r-1}\cup\mathscr B_r'$ of $\mathcal I_r$, and then the closed subspace $S_r$ with pseudobasis $\mathscr B_r'$ is a complement to $\mathcal I_{r-1}$ in $\mathcal I_r$, and the projection $\pi:I\to\omega$ induces an isomorphism from $S_r$ onto a complement $\omega_r'$ to $\omega_{r-1}$ in $\omega_r$. Denote by $\mathcal I_\infty$ the closed ideal $\overline{\bigcup_r\mathcal I_r}$; it likewise admits a complement $S_\infty$ in $I$, and $\pi$ induces an isomorphism from $\mathcal I_\infty/\overline{I^2}$ (resp. from $S_\infty$) onto the closure $\omega_\infty$ of the union of the $\omega_r$ (resp. onto a complement $\omega_\infty'$ to $\omega_\infty$ in $\omega$). Denote by $\eta$ the isomorphism $S_\infty\isomto\omega_\infty'$. One then obtains continuous linear maps:
+\[
+\xymatrix@C=25pt@R=25pt{
+\overline{I^2}\times S_\infty\times\widehat{\bigoplus}_r S_r\ar[r]^\phi\ar[d]_{\eta\times\theta}&I\\
+\omega=\omega_\infty'\times\omega_\infty&}
+\]
+where $\widehat{\bigoplus}_r S_r$ is the direct sum of the $S_r$ in $\mathbf{PC}(k)$, \ie $(\prod_r S_r^\dagger)^*$ (cf. N.D.E. (16) of 0.2.2), and where $\theta:\widehat{\bigoplus}_r S_r\to\omega_\infty$ is induced by the maps $S_r\isomto\omega_r'\hookrightarrow\omega_\infty$.

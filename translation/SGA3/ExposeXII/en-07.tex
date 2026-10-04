@@ -1,0 +1,105 @@
+\begin{corollary}{7.12}\label{XII.7.12}
+Let $G,G'$ be two smooth $S$-group preschemes of finite presentation, $u:G\to G'$ a faithfully flat group homomorphism (\ie for every $s\in S$, $u_s$ is faithfully flat); suppose $\Ker u$ central and $G$ with connected fibers. Then the map
+\[
+H'\mto H=u^{-1}(H')
+\]
+establishes a one-to-one correspondence between group sub-preschemes $H'$ of $G'$, smooth of finite presentation over $S$, having the same reductive rank and the same nilpotent rank as $G'$ at every $s\in S$, and the set of group sub-preschemes $H$ of $G$, smooth of finite presentation over $S$, having the same reductive rank and the same nilpotent rank as $G$ at every $s\in S$. For $H$ to have connected fibers, it is necessary and sufficient that $H'$ do so.
+\end{corollary}
+Let $H$ be a group sub-prescheme of $G$ having the properties just specified. Then by 7.10, $H$ contains $Z=\Ker u$, hence by faithfully flat descent theory is of the form $u^{-1}(H')$, where $H'$ is a well-determined group sub-prescheme of $G'$, and one observes at once, taking account of 6.6 e), that the latter has the properties stated above. Moreover, if $H$ has connected fibers, so obviously does $H'=H/Z$. Thus it remains to prove that if one starts from a subgroup $H'$ of $G'$ having the stated properties, then $u^{-1}(H')=H$ has the same properties in $G$; and that if $H'$ has connected fibers, so does $H$. Taking account of 6.6 e), one is reduced to proving that $H$ is smooth over $S$ (resp. and has connected fibers). Now $H$ is already flat over $S$ as the inverse image of $H'$, which is so, under the flat morphism $u$, hence one is reduced to verifying that the geometric fibers of $H$ are smooth (resp. and connected), which reduces us to the case where $S$ is the spectrum of an algebraically closed field. Then $H'$ contains a Cartan subgroup $C'$ of $G'$, hence $H$ contains the inverse image $C$ of $C'$, which is a Cartan subgroup of $G$ by 6.6 e), hence $C$ is smooth and connected. Consequently 7.11 follows from the following lemma:
+% typo?: references 7.10 and 7.11 in the proof of 7.12 kept as printed.
+\begin{lemma}{7.13}\label{XII.7.13}
+Let $G,G'$ be two flat group preschemes of finite presentation over $S$, $u:G\to G'$ a group homomorphism that is faithfully flat, $C'$ a group sub-prescheme of $G$ of finite presentation over $S$, such that $C=u^{-1}(C')$ is smooth over $S$ (resp. has connected fibers). Then for every group sub-prescheme $H'$ of $G'$ of finite presentation over $S$, containing $C'$, and such that $H'$ is smooth over $S$ (resp. has connected fibers), its inverse image $H=u^{-1}(H')$ is smooth over $S$ (resp. has connected fibers).
+% typo?: C' of G rather than G' kept as printed.
+\end{lemma}
+As we observed above, this statement reduces at once to the case where $S$ is the spectrum of a field. Note then that $H$ is a principal bundle with base $H/C$ and group $C$ (Exp.~VI$_{\mathrm B}$.9); on the other hand $H/C\simeq H'/C'$ (\cf Exp.~IV), and since $H'$ is smooth (resp. connected), so is $H'/C'$, hence $H/C$. Since by hypothesis the same holds for $C$, it follows at once that it holds again for the bundle $H$. \hfill Q.E.D.
+
+\sgasection{8}{Semisimple elements, union and intersection of maximal tori in group schemes not necessarily affine}
+Throughout this \No, $G$ denotes a smooth group prescheme of finite presentation over $S$, with connected fibers.
+
+Suppose first that $S$ is the spectrum of an algebraically closed field. When $G$ is affine, the notion of a \emph{semisimple element} of $G(k)$ was defined in BIBLE~4 \No4; one observes at once that this notion is invariant under an algebraically closed extension $k'/k$ of the base field. In addition, one saw in BIBLE~6 th.~5 (c) that $g\in G(k)$ is semisimple if and only if it is contained in a maximal torus of $G$. When $G$ is no longer supposed affine, $G$ is written canonically (thanks to Chevalley) as an extension of an abelian variety by a smooth connected affine algebraic group:
+\begin{equation}\tag{*}
+e\to V\to G\to A\to e.
+\end{equation}
+We shall say that an element $g$ of $G(k)$ is \emph{semisimple} if it is a semisimple element of $V(k)$. Since the maximal tori of $V$ are obviously identical to the maximal tori of $G$, it amounts to the same thing to say that $g$ belongs to a maximal torus of $G$. This is obviously again a notion invariant under an algebraically closed extension $k'/k$ of the base field $k$.
+
+Suppose now that $S$ is the spectrum of an arbitrary field $k$, and let $g\in G$. Then (choosing an algebraically closed extension $K$ of $\kappa(g)$) one sees that $g$ is the image of a geometric point $g'$ of $G$ with values in an algebraically closed extension $K$ of $k$, and we shall say that $g$ is \emph{semisimple} if $g'$ is semisimple, which is independent of the particular choice of $g'$, thanks to what was said above. If $k'$ is an extension of $k$, then the set of semisimple elements of $G_{k'}$ is the inverse image of the set $G^{\mathrm{ss}}$ of semisimple elements of $G$.
+
+Suppose finally $S$ arbitrary; then a point $g\in G$ is said to be semisimple if it is semisimple in its fiber $G_s$. If $S'\to S$ is any morphism, then $G^{\mathrm{ss}}_{S'}$ is therefore the inverse image of $G^{\mathrm{ss}}$. Suppose that the functor $\mathscr T$ defined in 1.10 (the functor of maximal tori) is representable by a prescheme of finite presentation over $S$ (which is the case, for example, if $G$ admits locally for fpqc a maximal torus, by 7.1 d), at least if $G$ is quasi-projective over $S$). Consider the canonical maximal torus $\underline T$ of $G_{\mathscr T}$ (``universal maximal torus of $G$''), and the morphism
+\[
+u:\underline T\to G
+\]
+induced by the projection $G_{\mathscr T}\to G$. Then it follows at once from the definition that $G^{\mathrm{ss}}$ is nothing other than the image of the preceding morphism. One will conclude:
+\begin{proposition}{8.1}\label{XII.8.1}
+The set $G^{\mathrm{ss}}$ of semisimple elements of $G$ is locally constructible (hence constructible if $S$, hence $G$, is quasi-compact and quasi-separated).
+\end{proposition}
+One reduces as usual to the case where $S$ is affine noetherian; in addition one can suppose (by the usual noetherian criterion of constructibility (EGA~$0_{\mathrm{III}}$~9.2.3)) that $S$ is integral, and restrict oneself to proving that there exists a nonempty open subset $U$ of $S$ such that $G^{\mathrm{ss}}|_U$ is constructible. Taking $U$ small enough, and replacing it if necessary by a finite covering, one can suppose that $G$ is separated over $S$ and contains a maximal torus $T$. But then by 7.1 d), the functor $\mathscr T$ is representable by a prescheme of finite presentation over $S$, and so therefore is $\underline T$, whose image in $G$ is consequently constructible. \hfill Q.E.D.
+
+Suppose again that $k$ is a field, and consider the subgroup $H$ of $G$ generated by the preceding morphism (\cf VI$_{\mathrm B}$.1.2). It is a smooth group subscheme of $G$, connected since $\underline T$ is, whose formation is obviously compatible with every extension of the base field (\cf VI), that of $\underline T$ being so. When $k$ is algebraically closed, one sees immediately that $H$ is also the algebraic subgroup of $G$ generated by the maximal tori of $G$, or, what amounts to the same thing, by the tori of $G$, and it is also the smallest algebraic subgroup of $G$ containing the semisimple elements of $G(k)$. (In fact, these characterizations of $H$ remain valid as soon as $k$ is an infinite field, thanks to the fact, proved in XIV, that the set of points of $\underline T$ rational over $k$ is dense in $\underline T$). Moreover, $H$ is invariant in $G$, for to see this one can restrict oneself to the case where $k$ is algebraically closed, and then ($H$ and $G$ being smooth over $k$) it suffices to verify that $H$ is stable under the inner automorphisms $\operatorname{int}(g)$, $g\in G(k)$, which is obvious. (One could even show that $H$ is a characteristic subgroup of $G$, \ie stable under $\underline{\Aut}_{k\text{-gr}}(G)$). It then follows at once from 6.6 d) that the reductive rank of $G/H$ is zero; more precisely, if $K$ is an invariant algebraic subgroup of $G$, it follows at once from the fact that for algebraically closed $k$ the maximal tori of $G/K$ are the direct images of the maximal tori of $G$, that the reductive rank of $G/K$ is zero if and only if $K$ contains all the maximal tori of $G$ ($k$ being supposed algebraically closed), or again if and only if $K$ contains $H$ ($k$ arbitrary): hence $H$ is the smallest invariant algebraic subgroup of $G$ such that $G/H$ has zero reductive rank. Another obvious characterization of $H$ is the following: it is the smallest algebraic subgroup of $G$ having the same reductive rank as $G$. Note finally that $H$ is affine: indeed, to see this one can again suppose $k$ algebraically closed, and taking up again exact sequence (*) from the beginning of the \No, one notes that the maximal tori of $G$ are contained in $V$, hence so is $H$, so since $V$ is affine, $H$ is. Let us summarize the results obtained:
+\begin{proposition}{8.2}\label{XII.8.2}
+Let $G$ be a smooth connected algebraic group over the field $k$, and let $\overline k$ be an algebraic closure of $k$. There exists an algebraic subgroup $H$ of $G$ such that $H_{\overline k}$ is the algebraic subgroup of $G_{\overline k}$ generated by the maximal tori (or again by the tori) of $G_{\overline k}$. The group $H$ is also characterized as the smallest algebraic subgroup of $G$ having the same reductive rank as $G$, or the smallest invariant algebraic subgroup of $G$ such that the reductive rank of $G/H$ is zero. It is a smooth connected invariant affine subgroup of $G$, whose formation commutes with every extension of the base field.
+\end{proposition}
+To use the characterization of $H$ in terms of $G/H$, it is appropriate to state explicitly the
+\begin{corollary}{8.3}\label{XII.8.3}
+Let $G$ be a smooth connected algebraic group over an algebraically closed field $k$. For $G$ to have zero reductive rank (\ie with the notation of 8.2, for one to have $H=(e)$), it is necessary and sufficient that $G$ be an extension of an abelian variety by a smooth connected unipotent algebraic group (\ie a successive extension of groups isomorphic to the additive group $\Ga$).
+% typo: duplicated k in "un corps k algébriquement clos k" -> single k.
+\end{corollary}
+Indeed, thanks to Chevalley's exact sequence (*), one is reduced to proving that the reductive rank of the smooth connected affine group $V$ is zero if and only if $V$ is unipotent, which is contained in BIBLE~6.4. th.~4 cor.~3.
+
+Thus, with the notation of 8.2, $H$ is the smallest invariant algebraic subgroup of $G$ such that $(G/H)_{\overline k}$ is an extension of an abelian variety by a smooth connected affine unipotent algebraic group. One also concludes:
+\begin{corollary}{8.4}\label{XII.8.4}
+With the notation of 8.2, for one to have $G=H$ (\ie $G_{\overline k}$ generated by its maximal tori), it is necessary and sufficient that $G$ be affine and that every homomorphism from $G_{\overline k}$ to the additive group be trivial.
+% typo: "la groupe additif" -> "le groupe additif".
+\end{corollary}
+\begin{remarks}{8.5}\label{XII.8.5}
+a) Let $\overline V$ be the largest smooth connected affine algebraic subgroup of $G_{\overline k}$ (so $G_{\overline k}$ is an extension of an abelian variety by $\overline V$). It is well known (Rosenlicht\nde{Indicate references here.}), if $k$ is not perfect, that $\overline V$ is not in general ``defined over $k$'', \ie there does not in general exist an algebraic subgroup $V$ of $G$ such that $V_{\overline k}=\overline V$. However, when $\overline V$ is generated by its maximal tori, \ie when $\overline V$ has no quotient group isomorphic to the additive group $\mathbf G_{\mathrm a,\overline k}$, there exists such a $V$, namely the group $H$ of 8.2. One therefore sees that in this question of rationality, as in many others (\cf for example XIV \No6), all the troubles come from unipotent groups, \ie from the additive group, whereas it is the presence of (sufficiently many) groups of multiplicative type that ensures, on the contrary, that things work well.
+
+b) One can also introduce, with the notation of 8.2, the inverse image $H'$ in $G$ of the commutator subgroup of $G/H$; then $H'$ is the smallest invariant algebraic subgroup of $G$ such that $(G/H')_{\overline k}$ is a commutative extension of an abelian variety by a smooth connected affine unipotent algebraic group. $H'$ is again a smooth connected affine subgroup of $G$. Let $H''$ be the inverse image in $G$ of $p^n(G/H')$ for large $n$, $p$ being the characteristic (supposed $>0$); then one sees easily that $H''/H'$ is an abelian variety, and $H''$ is the smallest invariant algebraic subgroup of $G$ such that $G/H''$ is a smooth connected affine unipotent commutative algebraic group. This being said, one sees easily that for $\overline V=H_{\overline k}$ (notation of a)), \ie for every homomorphism from $\overline V$ to the additive group to be trivial, it is necessary and sufficient that $H''=G$, or again that every homomorphism from $G_{\overline k}$ to the additive group be trivial.
+\end{remarks}
+
+To finish, we shall generalize to smooth groups with connected fibers the notion of reductive center developed in \No4, taking inspiration from 4.10. Let $Z$ be the subfunctor of $G$ defined by
+\[
+\begin{aligned}
+Z(S')={}&\text{Set of sections }g'\text{ of }G_{S'}\text{ over }S'\text{ such that}\\
+&\text{for every }S''\text{ over }S'\text{ and every maximal torus }T''\\
+&\text{of }G_{S''},\text{ the inverse image }g''\text{ of }g'\text{ under }S''\to S'\\
+&\text{is a section of }T''\text{ over }S''.
+\end{aligned}
+\]
+Introducing the functors $\mathscr T(S')=$ set of maximal tori of $G_{S'}$, and $\underline T(S')=$ set of pairs $(T',g')$, where $T'$ is a maximal torus of $G_{S'}$ and $g'$ a section of $T'$ over $S'$, one sees that $\underline T$ is a subfunctor of $\mathscr T\times_S G=\mathscr T_G$, and with this notation one can also write
+\[
+Z=\prod_{\mathscr T_G/G}\underline T/\mathscr T_G.
+\]
+
+Using XI~6.8, and 7.1 d), which ensures the representability of $\mathscr T$ by a smooth $S$-prescheme under certain conditions, one could conclude the representability of $Z$ under certain conditions, which we shall, however, obtain by a more direct route below.
+\begin{definition}{8.6}\label{XII.8.6}
+Let $G$ be a smooth $S$-group prescheme of finite presentation with connected fibers. One says that $G$ \emph{admits a reductive center} if the preceding functor $Z$ (which is obviously a subgroup of $G$) is representable by a group of multiplicative type. One then says that $Z$ is the \emph{reductive center} of $G$.
+\end{definition}
+One will note that if $Z$ is a reductive center of $G$, then for every base change $S'\to S$, $Z_{S'}$ is a reductive center of $G_{S'}$; on the other hand, the existence of a reductive center is obviously a local question for the fpqc topology. As for the terminology ``reductive center'', note that $Z$ is in any case central, for obviously $Z$ is invariant under
+\[
+\underline{\Aut}_S(G)
+\]
+and a fortiori is an invariant subgroup of $G$, and one applies IX~5.5.
+
+Lemma 4.5 must here be replaced by:
+\begin{lemma}{8.7}\label{XII.8.7}
+Let $u:H\to G$ be a central homomorphism, where $H$ is of multiplicative type and of finite type over $S$; suppose that for every algebraically closed field $k$ over $S$, $u_k(H_k)$ is contained in the largest smooth connected affine subgroup of $G_k$. Then $u$ factors through every maximal torus $T$ of $G$ (hence $u$ in fact factors through the subfunctor $Z$ of $G$ defined above).
+\end{lemma}
+Using an easy variant of IX~5.1 bis (where the sign $=$ would be replaced by an inclusion sign), one is reduced to the case where $S$ is the spectrum of a field $k$, which one can suppose algebraically closed. (Reduce to the case of affine noetherian $S$, then artinian, then use IX~3.6). Since $T$ is contained in the largest smooth connected affine subgroup $V$ of $G$, one is then reduced to the case where $G=V$, \ie where $G$ is affine, where the result was proved in 4.5.
+\begin{proposition}{8.8}\label{XII.8.8}
+Let $G$ be a smooth $S$-group prescheme of finite presentation with connected fibers.
+\begin{enumerate}[label=\alph*)]
+\item If $S$ is the spectrum of a field $k$, then $G$ admits a reductive center $Z$. When $G$ is an extension of an abelian variety by a smooth connected affine algebraic group $V$ (for example if $k$ is algebraically closed), then $Z$ is also the reductive center of $V$, and it is the largest central subgroup of multiplicative type of $V$.
+\item Let $Z$ be a group sub-prescheme of multiplicative type of $G$. Then $Z$ is a reductive center of $G$ if and only if for every $s\in S$, $Z_s$ is a reductive center of $G_s$. Then $Z$ is the largest subgroup $K$ of multiplicative type of $G$ such that for every $s\in S$, $K_s$ is contained in the reductive center of $G_s$; more generally, for every homomorphism $u:H\to G$, with $H$ of multiplicative type and of finite type over $S$, such that for every algebraically closed field $k$ over $S$, $u_k:H_k\to G_k$ factors through the largest smooth connected affine subgroup of $G_k$, $u$ factors through $Z$ (and in particular $u$ is central).
+% typo?: no centrality hypothesis on u in this assertion, retained.
+\item If $G$ admits locally for the fpqc topology a maximal torus, then $G$ admits a reductive center.
+\item Let $T$ be a maximal torus of $G$. Then $T\cap\Centr(G)=\Ker(T\to\GL(\mathfrak g))$ and this is a reductive center of $G$.
+\item Let $Z$ be a reductive center of $G$, and suppose $G'=G/Z$ representable (for example $S$ artinian); then $G'$ admits the identity subgroup as reductive center, and $T'\mto T=u^{-1}(T')$ establishes a one-to-one correspondence between maximal tori of $G'$ and maximal tori of $G$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+a) Suppose that $S$ is the spectrum of a field $k$. To prove then the existence of a reductive center, one can suppose $k$ algebraically closed, and consequently one is reduced to the case where $G$ is an extension of an abelian variety by a smooth connected affine algebraic group $V$. Since for every $S'$ over $k$, the maximal tori of $G_{S'}$ are those of $V_{S'}$ (by IX~5.2 and the fact that over an algebraically closed field a homomorphism from a torus to an abelian variety is trivial), it follows that the functor $Z$ defined above in terms of $G$ is the same as that defined in terms of $V$. One is thus reduced to the case of affine $G$. Since $\mathscr T$ is representable, and necessarily ``essentially free'' over $k$ (VIII~6.1), it follows that $\mathscr T_G$ is essentially free over $G$, and since $\underline T$ is a closed subscheme of $\mathscr T_G=G_{\mathscr T}$ (by, for example, VIII~5.7), it follows by VIII~6.4 that $Z=\prod_{\mathscr T_G/G}\underline T/\mathscr T_G$ is representable by a closed subscheme of $G$. Thus it is a group subscheme of $G$; I say that it is of multiplicative type: indeed, one can suppose $k$ algebraically closed; then $G$ admits a maximal torus $T$, and by definition one will have $Z\subset T$, so $Z$ is of multiplicative type as an algebraic subgroup of a group of multiplicative type (IX.8). This proves that $Z$ is a reductive center of $G$. The fact that it is the largest central subgroup of multiplicative type of $V$ is contained in 8.7.
+
+b) The ``only if'' being trivial, let us prove that if $Z$ is a subgroup of multiplicative type of $G$ such that for every $s\in S$, $Z_s$ is the reductive center of $G_s$, then $Z$ is a reductive center of $G$. One must first prove that $Z$ is contained in every maximal torus of $G$ (which will therefore remain true after every base change): this is an immediate consequence of 8.7. Next, one must prove that if $g$ is a section of $G$ over $S$ such that for every $S'$ over $S$, and every maximal torus $T'$ of $G_{S'}$, $g_{S'}$ is a section of $T'$, then $g$ is a section of $Z$. Note that one could reduce as usual (taking account of the fact that $\prod_{\mathscr T_G/G}\underline T/\mathscr T_G=Z'$ is a sheaf for fpqc that commutes with inductive limits of rings) to the case of affine $S$, then noetherian $S$, and finally artinian $S$. Then $\mathscr T$ is representable by a smooth prescheme over $S$ by 7.1 d), so proceeding as in a), one sees that $\prod_{\mathscr T_G/G}\underline T/\mathscr T_G$ is representable by a closed subscheme $Z'$ of $G$. We have already seen that $Z\subset Z'$; on the other hand, by the hypothesis on $Z$, one has $Z_k=Z'_k$ (where $k$ is the residue field), but since $Z$ is flat over $S$, it follows that $Z=Z'$, which proves that $Z$ is a reductive center of $G$. The other assertions of b) are contained in 8.7.
+
+c) Reduces immediately to d).
+% Proof continues in en-08.tex.

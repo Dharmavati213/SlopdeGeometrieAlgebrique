@@ -1,0 +1,114 @@
+% PDF pp. 19--24; continuation of proof of 5.1.
+Thus $K$ is of finite type over $S$, hence of finite presentation over $S$, since $S$ is locally noetherian. Consequently, by EGA IV$_3$, 8.8.2.4, to show that there exists an open neighborhood $U$ of $s$ such that $K_U=H_U$, it suffices to show that $K_{S'}=H_{S'}$, where $S'$ is the spectrum of $A=\OO_{S,s}$. One may therefore suppose $S$ local with closed point $s$. Replacing the noetherian local ring $A$ by its completion $\widehat A$ if necessary, which introduces a faithfully flat and quasi-compact base change $\widehat S\to S$, one may even suppose\nde{For $K=H$ if $K_{\widehat S}=H_{\widehat S}$, cf. SGA 1, VIII 5.4; but what follows does not use the hypothesis ``$A$ complete''.} $A$ complete if one wishes.
+
+By 3.4 one has $u_n=v_n$ for every $n$, where, as usual, the subscript $n$ indicates reduction modulo $\goth m^{n+1}$ ($\goth m$ being the maximal ideal of $A$). For every integer $m>0$, denoting by ${}_mu,{}_mv$ the homomorphisms ${}_mH\to G$ induced by $u,v$, one therefore also has $({}_mu)_n=({}_mv)_n$. This being true for every $n$, and ${}_mH$ being finite over $S$ by 2.2, it follows that ${}_mu={}_mv$ by 5.0. This being true for every $m$, one therefore has $u=v$ by 4.7.
+
+b) $G$ of finite presentation.\nde{The original has been expanded in what follows.} Since $H$ is also of finite presentation over $S$, by EGA IV$_3$, 8.8.2, we may again suppose $S$ local with closed point $s$ and prove that then $u=v$. If $f:S'\to S$ is a faithfully flat quasi-compact morphism, and if one denotes by $f_H$ the morphism $H'\to H$ and by $u',v':H'\to G'$ the morphisms deduced from $u,v$, then the equality $u'=v'$ implies $u'\circ f_H=v'\circ f_H$, whence $u=v$, since $f_H$ is an epimorphism. Thus, making a faithfully flat and quasi-compact extension of the base if necessary, one may suppose in addition $H$ diagonalizable, hence of the form $D_S(M)$, with $M$ a commutative group of finite type.
+% typo?: u' composed with f_H retained as printed.
+Introduce, as in the proof of 4.6, the increasing filtering family of $\ZZ$-subalgebras of finite type $A_i$ of $A=\OO_{S,s}$, and $S_i=\Spec(A_i)$.\footnotemark[\value{footnote}] Note that $H=D_S(M)$ comes, for every $i$, from the diagonalizable group $H_i=D_{S_i}(M)$. Since $G$ is of finite presentation over $S$, by EGA IV$_3$, 8.8.2 (see also VI$_{\mathrm B}$, 10.2 and 10.3), there exists an index $i$, a group prescheme $G_i$ of finite presentation over $S_i$, and morphisms of $S_i$-groups $u_i,v_i:H_i\to G_i$ from which $u,v$ come by base change. Let $s_i$ be the image of $s$ in $S_i$, and let $\rho_i:H_i\times_{S_i}G_i\to G_i$ be the morphism of $S_i$-preschemes defined by $\rho_i(h,g)=u_i(h)g u_i(h)^{-1}$. Then, since $u_s$ is central, $\rho_s=\rho_i\times_{\kappa(s_i)}\kappa(s)$ equals the second projection, and hence the same is true of $\rho_i$ (since $\kappa(s_i)\to\kappa(s)$ is faithfully flat and quasi-compact), i.e. $(u_i)_{s_i}$ is central. Similarly, since $u_s=v_s$, one has $(u_i)_{s_i}=(v_i)_{s_i}$. One may then apply a) to the situation over $S_i$, whence immediately the announced conclusion.
+% typo?: rho_i rather than its fiber retained as printed.
+\begin{corollary}{5.2}\label{IX.5.2}
+Let $u:H\to G$ be a homomorphism of $S$-group preschemes, with $H$ of multiplicative type and of finite type, and $S$ locally noetherian or $G$ of finite presentation over $S$. Let $s\in S$ and suppose that $u_s$ is the unit homomorphism. Then there exists an open neighborhood $U$ of $s$ such that $u_U$ is the unit homomorphism.
+\end{corollary}
+\begin{corollary}{5.3}\label{IX.5.3}
+Let $u,H,G$ be as in 5.2, and suppose in addition $G$ separated over $S$. Let $U$ be the set of $s\in S$ such that $u_s$ is the unit homomorphism. Then $U$ is an open and closed subset of $S$, and $u_U:H_U\to G_U$ is the unit homomorphism.
+\end{corollary}
+It remains only to prove that $U$ is closed. Now let $K=\Ker(u)$; since $G$ is separated over $S$, $K$ is a closed subprescheme of $H$, and $U$ is the set of $s\in S$ such that $K_s=H_s$. One then easily sees that $U$ is closed, for example as an application of VIII 6.4 ($H$ being essentially free over $S$ by VIII 6.3), or by noting that one may suppose $S$ reduced and $U$ dense in $S$, hence schematically dense in $S$, which implies $H_U$ schematically dense in $H$ since $H$ is flat over $S$,\nde{And of finite presentation over $S$, cf. EGA IV$_3$, 11.10.5 (ii) and 11.9.10 (ii).} and as $u$ and the unit homomorphism coincide on $H_U$, they coincide on $H$.
+\begin{corollary}{5.4}\label{IX.5.4}
+Let $S$ be a prescheme, $H$ and $G$ two $S$-groups, with $H$ of multiplicative type and of finite type and $G$ separated and of finite presentation over $S$, $\pi:S'\to S$ a\nde{``Covering morphism for the faithfully flat and quasi-compact topology'' has been replaced by ``universal effective epimorphism'', in order to be able to apply this to the morphism $K\to S$ of 5.5, and the beginning of the proof has been modified accordingly.} universal effective epimorphism (for example a faithfully flat and quasi-compact morphism, or a morphism admitting a section, cf. IV 1.12) with geometrically connected fibers.\nde{This is the case, for example, if $S=\Spec k$ and $S'=\Spec k'$, where $k$ is a field and $k'$ a radicial extension of $k$, cf. X, Prop. 1.4.}
+
+Let $u':H'\to G'$ be a central homomorphism of the $S'$-groups deduced from $H,G$ by the base change $S'\to S$. Then there exists a unique homomorphism $u:H\to G$ of $S$-groups such that $u\times_S S'=u'$. When $S'/S$ admits a section $g$, $u$ is the morphism deduced from $u'$ by the base change $g:S\to S'$.
+\end{corollary}
+Since $\pi$ is a universal effective epimorphism, the same is true of $H'\to H$, whence uniqueness of $u$, cf. the beginning of the proof of 5.1 b). If $\pi$ admits a section $g$, then $u'=\pi^*(u)$ implies $u=g^*\pi^*(u)=g^*(u')$.
+
+For the existence of $u$, one is reduced, by IV 2.3, to showing that the two homomorphisms $u''_1,u''_2:H''\to G''$ of $S''$-groups deduced from $u'$ by the two base changes $\operatorname{pr}_1,\operatorname{pr}_2:S''=S'\times_S S'\to S'$ are identical. Now they coincide on the diagonal of $S''$; more precisely, the inverse images of $u''_1$ and $u''_2$ by the diagonal morphism $S'\to S''$ are identical (being equal to $u'$).\nde{The following sentence has been added.} Since $u''_1$ and $u''_2$ are central, one may apply 5.3 to the morphism $u''_1(u''_2)^{-1}$. There therefore exists an open and closed subset $U$ of $S''$, containing the diagonal of $S''$, such that $u''_1$ and $u''_2$ coincide over $U$.
+
+Now the fibers of $S'/S$ being geometrically connected, the same is true of those of $S''/S$, which are therefore a fortiori connected, whence it follows that $U$ (containing the diagonals of the said fibers) contains the said fibers, and hence equals $S''$, which completes the proof.
+\begin{corollary}{5.5}\label{IX.5.5}
+Let $S$ be a prescheme, $K$ an $S$-group prescheme locally of finite type\nde{The hypothesis ``locally of finite type'' has been added to agree with the reference VI$_{\mathrm A}$, 2.4. In fact, one can show that over a field every connected group scheme is geometrically connected.} and with connected fibers, $H$ an invariant subgroup of multiplicative type and of finite type of $K$. Then $H$ is a central subgroup of $K$.
+\end{corollary}
+\nde{The original has been expanded in what follows.} Let us first note that $\pi:K\to S$ has geometrically connected fibers, since for a group scheme locally of finite type over a field, connected implies geometrically connected (cf. VI$_{\mathrm A}$ 2.4). One may then apply 5.4 by putting $G=H$ and $S'=K$ to the homomorphism of $K$-groups $u':H_K\to H_K$ defined set-theoretically by $(h,k)\mto(khk^{-1},k)$, which is central since $H$ is commutative. The inverse image of $u'$ by the unit section $\varepsilon:S\to K$ is the identity homomorphism of $K$, so by 5.4 the same is true of $H_K\to H_K$, hence $H$ is central in $K$.
+% typo?: "identity homomorphism of K" retained as printed.
+Let us state the variants of the preceding results for central subgroups of multiplicative type. One obtains, proceeding as for the preceding results (and using 3.2 bis):
+\begin{theorem}{5.1 bis}\label{IX.5.1bis}
+Let $G$ be an $S$-group prescheme, $H_1$ and $H_2$ two subgroup preschemes of multiplicative type and of finite type, with $(H_1)_s$ central. Suppose $S$ locally noetherian or $G$ of finite presentation over $S$. Then for every $s\in S$ such that $(H_1)_s=(H_2)_s$ there exists an open neighborhood $U$ of $s$ such that $H_1|U=H_2|U$.
+\end{theorem}
+\begin{corollary}{5.3 bis}\label{IX.5.3bis}
+Under the preceding conditions, suppose in addition $G$ separated over $S$. Let $U$ be the set of $s\in S$ such that $(H_1)_s=(H_2)_s$. Then $U$ is an open and closed subset of $S$, and $H_1|U=H_2|U$.
+\end{corollary}
+\begin{corollary}{5.4 bis}\label{IX.5.4bis}
+Let $S$ be a prescheme, $G$ a group prescheme separated and of finite presentation over $S$, $S'\to S$ a covering morphism for the faithfully flat quasi-compact topology, with geometrically connected fibers, $H'$ a subgroup of multiplicative type and of finite type of $G'=G\times_S S'$.
+
+Then there exists a unique subgroup $H$ of $G$ such that $H'=H\times_S S'$, and $H$ is of multiplicative type and of finite type over $S$, by 1.1 and 2.1 b). If $S'\to S$ admits a section $g$, $H$ is the inverse image of the subgroup $H'$ of $G'$ by $g:S\to S'$.
+\end{corollary}
+\begin{theorem}{5.6}\label{IX.5.6}
+Let $S$ be a prescheme, $u:H\to G$ a homomorphism of $S$-group preschemes, with $H$ of multiplicative type and of finite type, $G$ of finite presentation over $S$.
+
+a) Suppose $G$ to have connected fibers, and let $s\in S$ be such that $u_s:H_s\to G_s$ is a central homomorphism. Then there exists an open neighborhood $U$ of $s$ such that the homomorphism $H|U\to G|U$ induced by $u$ is central.
+
+b) Suppose that for every $s\in S$, $u_s:H_s\to G_s$ is central. Then $u$ is central.
+\end{theorem}
+\nde{The original has been expanded in the proof of a).} Let us prove (a). Proceeding exactly as in the proof of 5.1 (b), one may suppose $S$ local with closed point $s$, then $H=D_S(M)$ diagonalizable, then that there exists a $\ZZ$-subalgebra of finite type $A_i$ of $A=\OO_{S,s}$ and a morphism $u_i:D_{S_i}(M)\to G_i$ such that $u_{s_i}$ is central (where $s_i$ is the image of $s$ in $S_i$) and from which $u$ comes by base change. This reduces us to the case where $S$ is local noetherian with closed point $s$, and one must then prove that $u$ is central.
+
+Let $K$ be the subprescheme $\Ker(v,w)$, where $v,w:H\times_S G\rightrightarrows G$ are defined by
+\[
+v(h,g)=g,\qquad w(h,g)=\operatorname{int}(u(h))\cdot g=u(h)g u(h)^{-1}.
+\]
+Then $K$ is a sub-$G$-group of the $G$-group $H_G=H\times_S G$, and one wants to show that it equals $H_G$ itself. By 4.9 one is reduced to proving that it contains the ${}_m(H_G)=({}_mH)\times_S G$ for every integer $m>0$, which reduces us to the case where $H={}_mH$, hence $H$ finite over $S$.
+
+Let $e$ be the unit element of the fiber $G_s$; then $S'=\Spec(\OO_{G,e})$ is a noetherian local scheme ($G$ being of finite presentation over noetherian $S$); put $S'_n=S'\times_S S_n$, where $S_n=\Spec(A/\goth m^{n+1})$. Then $K_{S'}=K\times_G S'$ is a subprescheme of $H_{S'}=H\times_S S'$, and by 3.9 one has $K_{S'_n}=H_{S'_n}$ for every $n$.\nde{The original has been expanded and corrected, replacing ``unit section of $(G_H)_n$ over $H_n$'' by $H_{S'_n}$.} Since $H_{S'}$ is finite over $S'$, one concludes from 5.0 (applied to the noetherian local ring $B$) that $K_{S'}=H_{S'}$.
+
+On the other hand, since $H\times_S G$ is noetherian (being of finite presentation over noetherian $S$), the immersion $K\hookrightarrow H\times_S G$ is of finite type (cf. EGA I, 6.3.5), so $K$ is of finite type, hence of finite presentation over $G$. Then the equality $K_{S'}=H_G\times_G S'$ implies, by EGA IV$_3$, 8.8.2.4, that there exists an open neighborhood $W$ of $e$ in $G$ such that $K\times_G W=H_G\times_G W=H\times_S W$. Thus $K$ contains the open neighborhood $V=H\times_S W$ of the unit section of $G_H$ over $H$.
+
+For every $t\in H$, the fiber $G_t$ (being an algebraic $\kappa(t)$-group) is Cohen-Macaulay (VI$_{\mathrm A}$, 1.1.1), and hence without embedded components; as it is in addition connected, hence irreducible (VI$_{\mathrm A}$, 2.4), it has its generic point as its unique associated point. Thus by EGA IV$_2$, 3.1.8, the open subset $V_t$ is schematically dense in $G_t$. By 4.3, $V$ is therefore schematically dense in $G_H$. Moreover, since $K$ is a sub-$H$-group of $G_H$, it induces on each fiber $G_h$ a subgroup $K_h$, and as the latter contains an open neighborhood of the neutral element and $G_h$ is connected, it follows that $K_h=G_h$, whence $K=G_H$ set-theoretically. Thus $K$ is a closed subprescheme of $G_H$ containing the schematically dense subprescheme $V$, hence $K=G_H$, which proves a).
+
+Finally, b) is a direct consequence of 3.9, in view of the fact that to check that a subprescheme $K$ of $P=G\times_S H$ is identical to $P$, it suffices to check that for every base change $S'\to S$, where $S'$ is an artinian quotient of a local ring of $S$, one has $K'=P'$.
+
+\sgasection{6}{Monomorphisms of groups of multiplicative type, and canonical factorization of a homomorphism of such a group}
+\begin{lemma}{6.1}\label{IX.6.1}
+Let $S$ be a quasi-compact prescheme, $G$ a commutative $S$-group prescheme, of finite presentation and quasi-finite over $S$. Then there exists an integer $n>0$ such that $n\cdot\mathrm{id}_G=0$, i.e. $G={}_nG$.
+\end{lemma}
+If $S$ is the spectrum of a field $k$, $G$ is finite over $k$, and by VII$_{\mathrm A}$ 8.5 it suffices to take $n=\deg(G/k)$. Suppose now $S=\Spec(A)$ local artinian; let $k$ be the residue field of $A$, $G_0=G\otimes_A k$, and $n_0=\deg(G_0/k)$. Distinguish two cases.
+
+a) $k$ is of characteristic zero. Then $G_0$ is separable over $k$, hence $G$ unramified over $S$. Then the unit section of $G$ is an open immersion, hence ${}_nG=\Ker(n\cdot\mathrm{id}_G)$ is an open subscheme of $G$, so for it to equal $G$ it suffices that it do so set-theoretically; one may therefore then take $n=n_0$.
+
+b) $k$ is of characteristic $p>0$. Denote by $\goth m$ the maximal ideal of $A$ and put $S_r=\Spec(A/\goth m^{r+1})$ for every $r$. Let $m$ be an integer such that $\goth m^{m+1}=0$; I say that one may take $n=p^m n_0$. Indeed, proceeding by induction on $m$ and putting $n'=p^{m-1}n_0$, one may suppose that $n'\cdot\mathrm{id}_G$ induces the zero endomorphism in $G_{m-1}=G\times_S S_{m-1}$.
+
+\nde{The original has been expanded in what follows, specifying the results of Exp. III that are used.} Denote by $E$ the set of endomorphisms $u$ of $G$ having this property and by $K$ the kernel of the morphism of group functors $G\to\prod_{S_{m-1}/S}G$ (cf. III 0.1.2). Then $E$ is identified with $\Hom_{S\text{-}\mathrm{gr.}}(G,K)$; in particular the abelian group law on $E$ is induced by that of $K$. Now by III 0.9, $K$ is the $S$-group functor associating with every $g:T\to S$ the $k$-vector space
+\[
+\Hom_{\OO_{T_0}}(g_0^*(\Omega^1_{G_0/S_0}),\goth m^m\OO_T);
+\]
+one therefore has $pu=0$ for every $u\in E$. Thus one has $pn'\cdot\mathrm{id}_G=0$, i.e. $p^m n_0\cdot\mathrm{id}_G=0$.
+
+Suppose now $S$ noetherian (one reduces to this in 6.1 by the usual reduction to the noetherian case\nde{Since $S$ is quasi-compact, it is covered by finitely many affine open subsets, so one is reduced to the case where $S=\Spec(A)$. Then, since $G$ is of finite presentation over $S$, one may apply EGA IV$_3$, 8.8.2.}). It then suffices to combine the preceding with the
+\begin{lemma}{6.2}\label{IX.6.2}
+Let $X$ be a prescheme quasi-finite over noetherian $S$, and consider an increasing filtering family of subpreschemes $(X^i)_{i\in I}$ having the following property:
+\[
+\begin{gathered}
+\text{for every }s\in S\text{ and }n\geq0,\text{ putting }S_{s,n}=\Spec(\OO_{S,s}/\goth m^{n+1}),\text{ there exists }i\in I\\
+\text{such that }X^i\times_S S_{s,n}=X\times_S S_{s,n}.
+\end{gathered}
+\]
+Under these conditions there exists an $i\in I$ such that $X^i=X$.
+\end{lemma}
+Since $S$ is noetherian, there exists a maximal open subset $U$ such that one has $X|U=X^i|U$ for large $i$; one shall show that $U=S$. In other words, one shall show that if $U\ne S$, one can find a $U'$ strictly larger than $U$, and an $i$ such that $X|U'=X^i|U'$. Localizing at a maximal point $s$ of $S-U$, one is reduced to the case where $S$ is local with closed point $s$ and $U=S-\{s\}$. (Indeed, if one denotes by $S'=\Spec(\OO_{S,s})$ and if there exists $i$ such that $X\times_S S'=X^i\times_S S'$, then\nde{$X-\{s\}$ has been corrected above to $S-\{s\}$. On the other hand, recall that a quasi-finite morphism is supposed of finite type, cf. EGA II, 6.2.3 (and EGA III$_2$, Err$_{\mathrm{III}}$ 20 for the definition of ``locally quasi-finite''). Thus here ($S$ being noetherian), $X$ is of finite presentation over $S$, each immersion $X^i\hookrightarrow X$ is of finite type (by EGA I, 6.3.5), so $X^i$ is of finite presentation over $S$, and one may apply EGA IV$_3$, 8.8.2.} there exists an open neighborhood $V$ of $s$ such that $X|V=X^i|V$; thus, taking $i$ sufficiently large that $X^i|U=X|U$, one shall have $X|W=X^i|W$, where $W=U\cup V$.)
+
+Then for large $i$, since $X|U=X^i|U$, one sees that $X^i$ is a closed subprescheme of $X$ defined by an ideal $\cal J^{(i)}$ with support contained in $X_s=X_0=X\times_S S_0$ (where $S_n=\Spec(A/\goth m^{n+1})$, $S=\Spec(A)$). As $X_0$ is quasi-finite over $S_0$, $X_0$ is a finite closed subset of noetherian $X$, so $\cal J^{(i)}$ is a module of finite length. It follows that there exists an integer $n\geq0$ such that $\cal J^{(i)}\cap\goth m^{n+1}\OX=0$. On the other hand, by the hypothesis in 6.2 one may suppose (on increasing $i$) that the image of $\cal J^{(i)}$ in $\OO_{X_n}=\OX/\goth m^{n+1}\OX$ is zero. This implies $\cal J^{(i)}=0$, hence $X^i=X$. \hfill Q.E.D.
+\begin{lemma}{6.3}\label{IX.6.3}
+Let $S$ be a prescheme, $K$ a group prescheme over $S$, locally of finite presentation, $s\in S$ such that $K_s$ is quasi-finite (resp. unramified) over $\kappa(s)$ at the unit element. Then there exists an open neighborhood $U$ of $s$ such that $K|U$ is locally quasi-finite (resp. unramified) over $U$.\footnote{Cf. VI$_{\mathrm B}$ 2.5 (ii) for a more general statement.}
+\end{lemma}
+Indeed, let $V$ be the set of points $x$ of $K$ such that, denoting by $t$ the image of $x$ in $S$, the fiber $K_t$ is quasi-finite (resp. unramified) over $\kappa(t)$ at $x$, i.e. such that $x$ is isolated in $K_t$ (resp. and its local ring in $K_t$ a separable extension of $\kappa(t)$). One knows that $V$ is open since $K$ is locally of finite presentation over $S$,\nde{Cf. EGA IV$_3$, 13.1.4 and EGA IV$_4$, 17.4.1. Moreover, the image of $x$ has been denoted by $t$ (instead of $s$).} so if $\varepsilon$ denotes the unit section of $K$, $\varepsilon^{-1}(V)$ is open. By hypothesis it contains $s$, so it is an open neighborhood $U$ of $s$. The latter does the job; in other words $t\in U$ implies that $K_t$ is locally quasi-finite (resp. unramified) over $\kappa(t)$: indeed, since $K_t$ is a group locally of finite type over $\kappa(t)$, this follows from the fact that it is quasi-finite (resp. unramified) over $\kappa(t)$ at the point $\varepsilon(t)$, cf. VI$_{\mathrm B}$ 1.3.
+
+Combining 6.1 and 6.3 one finds the
+\begin{theorem}{6.4}\label{IX.6.4}
+Let $S$ be a prescheme, $H$ an $S$-group of multiplicative type and of finite type, $K$ a closed subgroup prescheme, of finite presentation over $S$. Let $s\in S$ be such that $K_s$ is finite.
+
+Then there exists an open neighborhood $U$ of $s$ such that $K|U$ is contained in ${}_nH|U$ for some $n$, and a fortiori (${}_nH$ being finite over $S$) such that $K|U$ is finite over $U$.
+\end{theorem}
+Using Nakayama's lemma, one deduces:
+\begin{corollary}{6.5}\label{IX.6.5}
+With the preceding notation, suppose that $K_s$ is the unit group. Then there exists an open neighborhood $U$ of $s$ such that $K|U$ is the unit group.
+\end{corollary}
+\begin{corollary}{6.6}\label{IX.6.6}
+Let $u:H\to G$ be a homomorphism of $S$-group preschemes, with $H$ of multiplicative type and of finite type, and $G$ separated over $S$. Suppose in addition $S$ locally noetherian, or $G$ locally of finite presentation\nde{In fact it suffices to suppose $G$ locally of finite type over $S$; by EGA IV$_4$, 1.4.3 (v), this implies ($H\to S$ being of finite presentation) that $H\to G$ is locally of finite presentation, and hence also $K\to S$, which is deduced from it by base change.} over $S$.
+% Statement continues on PDF p. 25, in en-05.tex.

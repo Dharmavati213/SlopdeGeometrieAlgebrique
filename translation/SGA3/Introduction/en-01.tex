@@ -1,0 +1,303 @@
+\fronttitle{Foreword and introduction}
+\label{Intro}
+
+\begin{center}
+{\large\bfseries Foreword}
+\end{center}
+
+We present here a slightly revised re-edition of the original Seminar, whose
+aim and content are indicated in the Introduction. The revision consisted
+essentially in the correction of misprints, the addition (in footnotes) of a
+few supplementary remarks or references, the present division into three
+volumes each provided with a detailed table of contents and an index of
+notations, and the addition of a terminological index at the end of
+volume~3. Moreover, expos\'e~$\mathrm{VI}_{\mathrm{B}}$ of J.-E.~Bertin has
+been partially rewritten by him, notably paragraphs~5 and~10, so that certain
+references to this expos\'e differ from the references to the original
+expos\'e. The reader will find a list of the expos\'es of the Seminar at the
+beginning of the present volume.
+
+Since the publication of the first edition of the present Seminar, the whole
+of the \emph{\'El\'ements de G\'eom\'etrie Alg\'ebrique}, Chap.~IV, has
+appeared, which renders certain passages of the Seminar unnecessary; we have
+sometimes indicated in footnotes the relevant references to EGA~IV which make
+it possible to bypass such passages.
+
+For another expos\'e on algebraic groups making systematic use of the
+language of schemes, we mention the book of M.~Demazure and P.~Gabriel,
+\emph{Groupes alg\'ebriques} (North-Holland \& Masson et Cie). Unlike the
+present Seminar, this book assumes no knowledge of algebraic geometry, but
+contains all the necessary preliminaries of scheme theory, and its reading
+can therefore serve as an introduction to the study of our Seminar. (It
+contains, moreover, themes not covered in the Seminar, such as the structure
+theory \`a la Dieudonn\'e of commutative affine algebraic groups, in
+\loccit Chap.~V.)
+
+\medskip
+\begin{flushright}
+Bures-sur-Yvette, March~1970
+\end{flushright}
+
+\begin{center}
+{\large\bfseries Introduction}
+\end{center}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{1.}\label{Intro.sec.1}
+The aim of the present seminar is twofold.
+
+On the one hand, we aim to give convenient foundations for the theory of
+group schemes in general. Expos\'es~I to~IV will give, in this respect, the
+indispensable preliminary exercises in schematic and categorical syntax. In
+order to obtain a language which ``sticks'' without effort to the geometric
+intuition, and to avoid circumlocutions which are unbearable in the long
+run, we always identify a prescheme~$X$ over another~$S$ with the functor
+\(\Sch^{\circ}/S\to\Ens\) which it represents%
+{\renewcommand{\thefootnote}{(*)}\footnote{Such a point of view seems to have
+been envisaged for the first time eight or nine years ago, in connection
+with the theory of formal groups, by P.~Cartier, who unfortunately did not
+take the trouble to make it precise and to systematize it as it
+deserved.}},
+and it is necessary to give numerous definitions in such a way that they
+apply to arbitrary functors, representable or not. Moreover, almost all the
+functors which we shall have to use will be ``sheaves'' (for the ``faithfully
+flat quasi-compact topology''); expos\'e~IV, which treats groups only incidentally, gives a sketch of the language of ``localization'' and of
+sheaves, which likewise proves very convenient in questions of
+representability of functors. This expos\'e will above all provide us, for
+questions of passage to the quotient, with the most convenient framework for
+the sequel.
+
+Expos\'e~V gives some general results on the existence of quotients, taken
+up again in expos\'e~$\mathrm{VI}_{\mathrm{A}}$ in the case of the quotient
+of an algebraic group over a field (or, more generally, over an artinian
+ring) by a subgroup%
+{\renewcommand{\thefootnote}{(**)}\footnote{For a more thorough study of
+passage to the quotient, notably by reductive groups, see the important
+study of D.~Mumford, \emph{Geometric Invariant Theory}, Ergebnisse der
+Mathematik, Bd~34, Springer 1965. Let us observe that on one important
+point, the terminology of this book does not agree with ours, for over a
+field of characteristic \(p > 0\), the groups which Mumford calls
+``reductive''\textsuperscript{(1)}, are the smooth groups of multiplicative
+type in the sense of the Seminar (\cf Exp.~IX). One may doubtless consider
+that the sense in which Mumford takes the word ``reductive'', which loses
+its meaning over a base which is not a field, was adopted by him
+provisionally and as a sort of makeshift (and this is also more or less what
+Mumford explains, for other reasons, from the second paragraph of his
+preface!). \textsuperscript{(1)}~\textbf{N.D.E.} see the remarks added at
+the end of this Introduction.}}.
+This latter expos\'e and expos\'e~$\mathrm{VI}_{\mathrm{B}}$, which follows
+it, also contain various elementary results special to algebraic groups over
+a field, commonly used in the sequel.
+
+Expos\'e~VII studies certain facts connected with the characteristic of the
+base field and develops in particular, with the appropriate generality, the
+correspondence between radicial group schemes of height~\(1\) and restricted
+Lie \(p\)-algebras.
+
+Finally, expos\'e~XVIII contains the generalization, in the theory of
+schemes, of Weil's theorem on the ``birational'' definition of algebraic
+groups.
+
+On the other hand, we propose to generalize, to groups over an arbitrary
+base prescheme, the Borel--Chevalley structure theory of affine algebraic
+groups. It has moreover become apparent, on the occasion of the writing up
+of the notes of the seminar, that the affine hypothesis was unnecessary for
+many results of the theory. The most complete results are of course obtained
+in the cases of ``semi-simple group schemes'', or more generally
+``reductive'' ones, with which we shall concern ourselves exclusively from
+expos\'e~XIX on. Chevalley himself had already given the construction of the
+groups ``of T\^ohoku'' over the ring of integers, a construction which will
+be taken up again in the present seminar. The principal uniqueness
+theorem%
+{\renewcommand{\thefootnote}{(2)}\nde{\label{Intro.fn.2}This refers to corollary~XXIII.5.6,
+which follows easily from the uniqueness theorem for split reductive groups
+(\cf XXIII, th.~4.1 and cor.~5.2), given that every semi-simple $S$-group is
+a ``twisted form'' (for the \'etale topology) of a group ``of T\^ohoku''
+(\cf XXII, cor.~2.3).}}
+gives a simple characterization of the ``twisted'' variants of these T\^ohoku
+groups, over a base prescheme~$S$: these are the groups which are affine and
+smooth over~$S$, whose geometric fibers are connected semi-simple groups in
+the usual sense%
+{\renewcommand{\thefootnote}{(***)}\footnote{This is the essential result of
+the thesis of M.~Demazure (\emph{Sch\'emas en groupes r\'eductifs}, Bull.\
+Soc.\ Math.\ France \textbf{93} (1965), 369--413).}}\,\textsuperscript{(2)}.
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{2.}\label{Intro.sec.2}
+As in the case of the known theory over an algebraically closed field, a
+crucial role is played by the subtori of the group schemes under
+consideration. Thus the preliminary study of tori, and more generally of
+``group schemes of multiplicative type'', (both from the intrinsic point of
+view and from the point of view of the subgroups of multiplicative type of a
+given group), takes a rather large place in this Seminar
+(expos\'es~VIII to~XII). Their remarkable rigidity (greater even, in certain
+respects, than that of abelian schemes, or of semi-simple group schemes)
+makes them very effective working tools for the study of certain more
+general groups.
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{3.}\label{Intro.sec.3}
+From expos\'e~XII on (to the exclusion of expos\'e~XVIII, already mentioned)
+we shall commonly use the theory of affine algebraic groups over an
+algebraically closed field, which the reader will find in the Chevalley
+Seminar~1956, more particularly in expos\'es~IV to~IX of this Seminar. We
+shall also use, but to a lesser extent, the later expos\'es of the Chevalley
+Seminar, devoted to the structure of semi-simple algebraic groups. Indeed,
+we shall take up Chevalley's theory directly in the framework of schemes:
+one will see that in this way (even over a base field) the expos\'e gains in
+simplicity and in precision.
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{4.}\label{Intro.sec.4}
+The principal object of the present Seminar is of course to develop
+techniques which apply to the study of group schemes over an arbitrary base,
+\ie essentially to the study of families of algebraic groups. As such, the
+infinitesimal properties of such families, and in particular the case of an
+artinian base scheme, play an important role. These properties intervene
+even for the study of algebraic groups over a field~$k$, in the case where
+the latter is not perfect, so as to be able in particular to apply the
+technique of descent in the non-Galois case. Among the new results obtained
+in this case, let us mention the existence of maximal tori and of Cartan
+subgroups in an arbitrary smooth algebraic group, the rationality of the
+variety of maximal tori, and various related results
+(Exp.~XIV
+{\renewcommand{\thefootnote}{(3)}\nde{in particular, theorems~1.1 and~6.1.}}),
+or the correspondence between the ``forms'' of a semi-simple group and the
+principal homogeneous bundles under a suitable semi-simple algebraic group
+(in general not connected) (Exp.~XXIV, 1.16--1.20). In general, one may say
+that the methods required in order to work over a base field which is not
+perfect are essentially those used for arbitrary base preschemes, and
+thereby fall outside the framework of classical algebraic geometry.
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{5.}\label{Intro.sec.5}
+It did not seem useful to indicate at the head of the written expos\'es the
+date or the dates of the corresponding oral expos\'es of the Seminar. Let us
+be content to say that the order of the mimeographed expos\'es (from~I
+to~XXVI) corresponds well to the order of the oral expos\'es. Moreover, the
+writing of the definitive text is sometimes distinctly later than that of
+the oral expos\'e, and often differs from it rather substantially, the
+written text being generally more detailed and more complete (such as
+Exp.~IV and~$\mathrm{VII}_{\mathrm{B}}$), or even appreciably more general
+(such as Exp.~XII or~$\mathrm{VII}_{\mathrm{B}}$) than the oral expos\'e.
+Other written expos\'es correspond to no oral expos\'e
+($\mathrm{VI}_{\mathrm{B}}$, $\mathrm{VII}_{\mathrm{A}}$, XV, XVI, XVII, and
+the essential part of~XXVI), and were written and inserted into the
+mimeographed Seminar, either to provide convenient references for various
+other expos\'es (this is notably the case of~$\mathrm{VI}_{\mathrm{B}}$), or
+because they constitute a natural extension of the notions and techniques
+already developed. One will note as a consequence that the reading of
+expos\'es~$\mathrm{VII}_{\mathrm{A}}$, $\mathrm{VII}_{\mathrm{B}}$, XV, XVI,
+XVII is not necessary for the study of the rest of the Seminar, and in
+particular for the part of this Seminar devoted to reductive group schemes.
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{6.}\label{Intro.sec.6}
+From the theory of schemes, we shall use above all the general language of
+schemes, set out in EGA~I, the notions of flat morphism, \'etale morphism,
+smooth morphism, set out in SGA~1, I to~V, and finally the theory of
+faithfully flat descent of SGA~1, VIII. We have as far as possible avoided
+formulating unnecessary noetherian hypotheses, which has on the other hand
+obliged us to replace the usual hypothesis ``of finite type'' by the
+hypothesis ``of finite presentation''. For the notion of morphism of finite
+presentation, the reader will consult EGA~IV, 1.4 and~1.6. The results of
+SGA~1, I to~IV, stated most often in the noetherian context, will be
+developed in the general case in EGA~IV%
+{\renewcommand{\thefootnote}{(****)}\footnote{Since the writing of this
+introduction, the four parts (\S\S~1 to~21) of EGA~IV have appeared.}},
+where standard methods will likewise be developed in detail for reducing
+certain types of statements (involving hypotheses of finite presentation) to
+the noetherian case (EGA~IV, paragraphs~8, 9, 11). The reader who does not
+wish to admit these results of EGA~IV may simplify certain statements or
+their proof by supposing the base prescheme to be locally noetherian. He
+does, however, expose himself to difficulties in the cases where the proof
+proceeds by descent from~$\widehat{A}$ to~$A$, where~$\widehat{A}$ is the
+completion of a noetherian local ring~$A$, for this method leads one to
+introduce the ring (in general non-noetherian)
+\(\widehat{A}\otimes_{A}\widehat{A}\).
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{7.}\label{Intro.sec.7}
+References will be made according to the usual decimal system: the
+reference~5.7.11 refers to the proposition (or lemma, definition, etc.)\ of
+that name in the same expos\'e; in the reference~XVII~7.8 the Roman numeral
+indicates the number of the expos\'e. We shall use the following sigla for
+our standard references:
+
+\medskip
+\noindent
+\begin{tabular}{@{}lp{0.72\textwidth}@{}}
+Bible
+  & $=$ S\'eminaire Chevalley ``Groupes de Lie alg\'ebriques'', 1956/58.\\[0.45em]
+EGA~$X$, $x.y.z$
+  & $=$ J.~Dieudonn\'e and A.~Grothendieck, \emph{\'El\'ements de G\'eom\'etrie
+    Alg\'ebrique}, Chap.~$X$, statement~$x.y.z$ (or subsection~$x.y$, etc.).\\[0.45em]
+SGA~$n$, $X$~$y.z$
+  & $=$ S\'eminaire de G\'eom\'etrie Alg\'ebrique du Bois-Marie, year~$n$,
+    statement~$y.z$ of expos\'e~$X$.\\[0.45em]
+TDTE
+  & $=$ A.~Grothendieck, \emph{Techniques de descente et Th\'eor\`emes
+    d'existence en G\'eom\'etrie Alg\'ebrique}, expos\'es given in the
+    Bourbaki Seminar between 1959 and 1962.
+\end{tabular}
+
+\medskip
+{\renewcommand{\thefootnote}{(1)}%
+\nde{Concerning the quotient by a reductive group, the situation has
+evolved considerably since the writing of Note~(**) by A.~Grothendieck.
+Indeed, for an affine algebraic group over an arbitrary field~$k$, the
+``good'' notion, introduced by Mumford, is that of a ``geometrically
+reductive'' group. (One says, on the other hand, that~$G$ is ``linearly
+reductive'' if every rational representation of~$G$ is completely reducible,
+but, as pointed out in Note~(**), this condition is too restrictive if
+\(\operatorname{car}(k) > 0\)). According to the results of M.~Nagata and
+W.~J.~Haboush (\cite{Na64}, \cite{NM64}, \cite{Ha75}), the geometrically
+reductive \(k\)-groups are exactly the reductive \(k\)-groups in the sense
+of the present Seminar. For all of this, see the later editions of Mumford's
+book (\cite{MF82}). Moreover, the extension to the case of an arbitrary base
+of the notion of ``geometric reductivity'', and of its consequences for
+passage to the quotient, has been carried out by C.~S.~Seshadri
+(\cite{Se77}), and additions, due to M.~Raynaud, are to be found in the
+article~\cite{CTS79} of J.-L.~Colliot-Th\'el\`ene and J.-J.~Sansuc. Finally,
+for more recent developments concerning passage to the quotient by an
+algebraic group or, more generally, by a groupoid (\cf Expos\'e~V of the
+present Seminar), let us mention the articles~\cite{Ko97} and~\cite{KM97} of
+J.~Koll\'ar and of S.~Keel and S.~Mori.}}
+
+\renewcommand{\bibname}{Bibliography}
+\begin{thebibliography}{CTS79}
+
+\bibitem[CTS79]{CTS79}
+J.-L.~Colliot-Th\'el\`ene \& J.-J.~Sansuc, Fibr\'es quadratiques et
+composantes connexes r\'eelles, \emph{Math.\ Ann.} \textbf{244} (1979),
+105--134.
+
+\bibitem[Ha75]{Ha75}
+W.~J.~Haboush, Reductive groups are geometrically reductive, \emph{Ann.\ of
+Math.} \textbf{102} (1975), \No 1, 67--83.
+
+\bibitem[KM97]{KM97}
+S.~Keel \& S.~Mori, Quotient by groupoids, \emph{Ann.\ of Math.}
+\textbf{145} (1997), \No 1, 193--213.
+
+\bibitem[Ko97]{Ko97}
+J.~Koll\'ar, Quotient spaces modulo algebraic groups, \emph{Ann.\ of Math.}
+\textbf{145} (1997), \No 1, 33--79.
+
+\bibitem[MF82]{MF82}
+D.~Mumford \& J.~Fogarty, \emph{Geometric invariant theory}, 2nd~ed.,
+Springer-Verlag, 1982; (\resp 3rd~ed., with F.~Kirwan, 1994).
+
+\bibitem[Na64]{Na64}
+M.~Nagata, Invariants of a group in an affine ring, \emph{J.\ Math.\ Kyoto
+Univ.} \textbf{3} (1964), \No 3, 369--377.
+
+\bibitem[NM64]{NM64}
+M.~Nagata \& T.~Miyata, Note on semi-reductive groups, \emph{J.\ Math.\ Kyoto
+Univ.} \textbf{3} (1964), \No 3, 379--382.
+
+\bibitem[Se77]{Se77}
+C.~S.~Seshadri, Geometric reductivity over an arbitrary base, \emph{Adv.\
+Math.} \textbf{26} (1977), \No 3, 225--274.
+
+\end{thebibliography}

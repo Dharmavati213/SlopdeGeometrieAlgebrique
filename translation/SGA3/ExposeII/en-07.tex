@@ -1,0 +1,528 @@
+\numpara{4.11}
+\label{II.4.11}
+Suppose now that \(G\) is a group scheme over \(S\). By~4.1.4,
+\(\Lie(G/S)(S)\) is identified with the group of right-invariant infinitesimal
+automorphisms of \(G/S\), that is, by~3.14, with the group of derivations
+of \(\mathcal{O}_G\) over \(\OS\) invariant under right translation. Moreover
+this identification respects the module structure and is
+an{\renewcommand{\thefootnote}{(84)}\nde{One has corrected a sign error in
+the original, \cf~\textbf{[DG70]}, \S~II.4, 4.4 and~4.6.}}
+anti-isomorphism of Lie algebras, as one sees by arguing as in~4.7.3: let
+us set \(\mathcal{O}_I=\OS[t]\) and \(\mathcal{O}_{I'}=\OS[t']\), and let
+\(x\in L(I)\) and \(y\in L(I')\). The left translation \(\lambda_x\)
+(resp.\ \(\lambda_y\)) is an \(S\)-automorphism of \(G_{I\times I'}\) which
+induces the identity on \(G_{I'}\) (resp.\ \(G_I\)) and which corresponds to
+an \(\OS\)-automorphism
+\[
+u=\mathrm{id}+td_x
+\qquad\text{resp.}\qquad
+v=\mathrm{id}+t'd_y
+\]
+of \(\mathcal{O}_{G_{I\times I'}}=\mathcal{O}_G[t,t']/(t^2,{t'}^2)\), where
+\(d_x\), \(d_y\) are \(\OS\)-derivations of \(\mathcal{O}_G\) invariant under
+right translation. As the correspondence between \(S\)-automorphisms of
+\(G_{I\times I'}\) and \(\OS\)-automorphisms of \(\mathcal{O}_{G_{I\times I'}}\)
+is contravariant, \(\lambda_x\lambda_y\lambda_x^{-1}\lambda_y^{-1}\) corresponds
+to \(v^{-1}u^{-1}vu=\mathrm{id}+tt'(d_yd_x-d_xd_y)\). One deduces from this,
+by~4.7.3, that the map \(x\mapsto -d_x\) is an isomorphism of Lie algebras
+(for more details, see \textbf{[DG70]}, \S~II.4, 4.4 and~4.6). The foregoing
+is valid for \(\Lie(G/S)(S')=\Lie(G_{S'}/S')(S')\) for every \(S'\to S\).
+One then recovers the classical
+definition:{\renewcommand{\thefootnote}{(85)}\nde{One has set out the
+original in more detail in what follows; in particular, one has added, for
+later references, the numbering 4.11.1 to~4.11.8.}}
+
+\begin{scholium}{4.11.1}
+\label{II.4.11.1}
+Via the isomorphism \(x\mapsto -d_x\), \(\Lie(G/S)\) is identified with the
+functor which, to every \(S'\) over \(S\), associates the
+\(\mathrm{O}(S')\)-Lie algebra of the derivations of \(G_{S'}\) with respect
+to \(S'\) invariant under right translation.
+\end{scholium}
+
+As one already knows, by~4.6.1, that every representable group is good, it
+follows from the foregoing:
+
+\begin{corollary}{4.11.2}
+\label{II.4.11.2}
+Every representable group is very good.
+\end{corollary}
+
+Let \(\varepsilon\colon S\to G\) be the unit section of \(G\). Set
+\(\omega^1_{G/S}=\varepsilon^*(\Omega^1_{G/S})\) and recall (\cf~3.3) that
+\(\Lie(G/S)\) is representable by the vector bundle
+\(\mathbb{V}(\omega^1_{G/S})\).
+
+\begin{scholium}{4.11.3}
+\label{II.4.11.3}
+One has therefore associated functorially, to every \(S\)-group scheme \(G\),
+a vector bundle \(\mathbb{L}\mathrm{ie}(G/S)=\mathbb{V}(\omega^1_{G/S})\)
+over \(S\), which represents the functor \(\Lie(G/S)\), and hence is equipped
+with a structure of \(S\)-scheme in \(\OS\)-Lie algebras. Moreover
+(\cf~3.4 and~3.8), this construction commutes with base change and with
+finite products.
+\end{scholium}
+
+\begin{remarks}{4.11.4}
+\label{II.4.11.4}
+{\renewcommand{\thefootnote}{(86)}\nde{One has set out what follows in more
+detail, taking into account the additions made in Exp.~I, \S~6.8.}}
+Let \(\pi\) denote the morphism \(G\to S\).
+
+a) The \(\mathcal{O}_G\)-module \(\Omega^1_{G/S}\) is evidently
+\((G\times_S G)\)-equivariant (\cf~I, \S~6) and hence, by~I~6.8.1, one has
+\(\Omega^1_{G/S}\simeq\pi^*(\omega^1_{G/S})\). It follows for example that
+\(\Omega^1_{G/S}\) is locally free (\resp\ locally free of finite type) if
+\(\omega^1_{G/S}\) is, which is in particular the case if \(S\) is the
+spectrum of a field (\resp\ if \(S\) is the spectrum of a field and \(G\) is
+locally of finite type over \(S\)).
+
+b) Moreover, by~I~6.8.2, \(\omega^1_{G/S}\) is equipped with a canonical
+structure of \(G\)-\(\OS\)-module, which induces on
+\(\mathbb{V}(\omega^1_{G/S})=\mathbb{L}\mathrm{ie}(G/S)\) the adjoint
+operation.{\renewcommand{\thefootnote}{(87)}\nde{For this reason, the linear
+operation of \(G\) on \(\omega^1_{G/S}\) could be called the ``pre-adjoint''
+operation; in fact, by abuse of language, one will still speak of ``the
+adjoint operation'' on \(\omega^1_{G/S}\). Let us point out here a somewhat
+more general construction, which will be used in Exp.~III (\cf\ in particular
+III~0.8). Suppose given, for every \(Y\to S\), an \(\mathcal{O}_Y\)-module
+\(\mathcal{N}(Y)\), and for every \(S\)-morphism \(\varphi\colon Z\to Y\), a
+morphism of \(\mathcal{O}_Z\)-modules
+\(\mathcal{N}(\varphi)\colon\varphi^*\mathcal{N}(Y)\to\mathcal{N}(Z)\),
+functorial in \(\varphi\) (this is the case, for example, if \(\mathcal{J}\)
+is a quasi-coherent ideal of \(\OS\) and if one sets
+\(\mathcal{N}(Y)=\mathcal{J}\mathcal{O}_Y\), \cf\ Exp.~III); then the
+operation of \(G\) on \(\omega^1_{G/S}\) induces a (generalized) ``adjoint
+operation'' of \(G\) on the \(S\)-functor in abelian groups which, to every
+\(f\colon Y\to S\), associates
+\(\Hom_{\mathcal{O}_Y}\bigl(f^*(\omega^1_{G/S}),\mathcal{N}(Y)\bigr)\).}}
+
+c) On the other hand (\cf\ EGA~I, 5.3.11 and~5.4.6), \(\varepsilon\) is an
+immersion, and is a closed immersion if \(G\) is separated over \(S\). Thus
+\(\omega^1_{G/S}\) is identified with \(\mathcal{I}/\mathcal{I}^2\), where
+\(\mathcal{I}\) is the quasi-coherent ideal defining \(\varepsilon(S)\) in an
+open \(U\) of \(G\) in which \(\varepsilon(S)\) is closed (if \(G\to S\) is
+separated, one may take \(U=G\), and if \(G=\Spec\mathcal{A}(G)\) is affine
+over \(S\), \(\mathcal{I}\) is none other than the augmentation ideal of
+\(\mathcal{A}(G)\), \ie\ the kernel of
+\(\varepsilon^{\natural}\colon\mathcal{A}(G)\to\OS\), \cf~I~4.2).%
+{\renewcommand{\thefootnote}{(88)}\nde{One has added the preceding
+description of \(\omega^1_{G/S}\), which will be useful later (for example,
+in \(\mathrm{VII}_{\mathrm{A}}\), 5.5).}}
+\end{remarks}
+
+\begin{remark}{4.11.5}
+\label{II.4.11.5}
+One can deduce from the isomorphism
+\(\Omega^1_{G/S}\simeq\pi^*(\omega^1_{G/S})\) that the \(\OS\)-module
+\(\omega^1_{G/S}\) is identified with the sheaf
+\(\pi^G_*(\Omega^1_{G/S})\) of ``differentials of \(G\) with respect to \(S\)
+invariant on the right'', that is, the sheaf whose sections over an open
+\(U\) of \(S\) are the sections of \(\Omega^1_{G/S}\) over \(\pi^{-1}(U)\),
+invariant under right translation (\cf~I, 6.8.3, compare also with
+\(\mathrm{VII}_{\mathrm{A}}\), 2.4).%
+{\renewcommand{\thefootnote}{(89)}\nde{This description of
+\(\omega^1_{G/S}\) in terms of invariant differentials will not be used in
+the sequel.}}
+\end{remark}
+
+\begin{notation}{4.11.6}
+\label{II.4.11.6}
+One denotes by \(\mathcal{L}\mathrm{ie}(G/S)\) the sheaf of sections of the
+vector bundle \(\mathbb{L}\mathrm{ie}(G/S)\to S\); it is the \(\OS\)-module
+\((\omega^1_{G/S})^{\vee}
+=\mathcal{H}\mathrm{om}_{\OS}(\omega^1_{G/S},\OS)\) dual to
+\(\omega^1_{G/S}\) (\cf\ EGA~II~1.7.9). It is equipped with a structure of
+\(\OS\)-Lie algebra.
+
+As this construction does not commute with base change (in general), the
+Lie algebra structure on this module does not make it possible to reconstruct
+the structure of \(S\)-scheme in \(\OS\)-Lie algebras on
+\(\mathbb{L}\mathrm{ie}(G/S)\).%
+{\renewcommand{\thefootnote}{(90)}\nde{For
+\(\mathcal{L}\mathrm{ie}(G/S)\simeq(\omega^1_{G/S})^{\vee}\) does not
+necessarily determine \(\omega^1_{G/S}\). For example, if
+\(S=\mathbf{A}^1_k\) (\(k\) a field) and if \(G\) is the \(S\)-group whose
+fiber at \(s=0\) is \(\mathbf{G}_{\mathrm{a},k}\) and whose other fibers are the trivial
+group, then \(\mathcal{L}\mathrm{ie}(G/S)=0\) but
+\(\Lie(G_s/k)(k)=k\).}}
+\end{notation}
+
+However one has:
+
+\begin{lemma}{4.11.7}
+\label{II.4.11.7}
+One supposes \(\omega^1_{G/S}\) locally free of finite type (which occurs in
+particular if \(G\) is smooth over \(S\) (\cf\ EGA~IV\(_4\), 17.2.4), or if
+\(S\) is the spectrum of a field and \(G\) is locally of finite type over
+\(S\)). Then
+\(\mathcal{L}\mathrm{ie}(G/S)^{\vee}
+\simeq(\omega^1_{G/S})^{\vee\vee}
+\simeq\omega^1_{G/S}\)
+and hence
+\[
+\mathbb{L}\mathrm{ie}(G/S)
+=\mathbb{V}(\omega^1_{G/S})
+=\mathbb{V}\bigl(\mathcal{L}\mathrm{ie}(G/S)^{\vee}\bigr)
+=\mathbb{W}\bigl(\mathcal{L}\mathrm{ie}(G/S)\bigr)
+\]
+(the last equality resulting from I~4.6.5.1).
+\end{lemma}
+
+Finally, let \(G\to H\) be a monomorphism of group functors. Then
+\(\Lie(G/S)\to\Lie(H/S)\) is likewise a monomorphism (\cf~3.7). As every
+vector monomorphism of vector bundles is a closed
+immersion{\renewcommand{\thefootnote}{(91)}\nde{Let
+\(f\colon\mathcal{M}\to\mathcal{N}\) be a morphism of \(\OS\)-modules and
+\(\mathcal{P}=\Coker(f)\). If \(\mathbb{V}(\mathcal{N})\to\mathbb{V}(\mathcal{M})\)
+is a monomorphism, the surjective morphism
+\(\operatorname{Sym}(\mathcal{N})\to\operatorname{Sym}(\mathcal{P})\) factors
+through \(\OS\), hence \(\mathcal{P}=0\).}}
+one obtains:
+
+\begin{corollary}{4.11.8}
+\label{II.4.11.8}
+Let \(G\hookrightarrow H\) be a monomorphism of \(S\)-group schemes.
+\begin{enumeratei}
+\item \(\mathbb{L}\mathrm{ie}(G/S)\to\mathbb{L}\mathrm{ie}(H/S)\) is a closed
+immersion, and hence \(\omega^1_{H/S}\to\omega^1_{G/S}\) is an epimorphism.
+\item If \(\omega^1_{G/S}\) is locally free of finite type, then the
+corresponding morphism
+\(\mathcal{L}\mathrm{ie}(G/S)\to\mathcal{L}\mathrm{ie}(H/S)\) is an
+isomorphism of \(\mathcal{L}\mathrm{ie}(G/S)\) onto a submodule of
+\(\mathcal{L}\mathrm{ie}(H/S)\) which is locally a direct factor.
+\end{enumeratei}
+\end{corollary}
+
+\sgasection{5}{Computation of some Lie algebras}
+\label{II.sec.5}
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{5.1. Examples of Lie algebras: the diagonalizable groups.}\ ---
+\label{II.ssec.5.1}
+Let \(G=\mathrm{D}_S(M)\) be a diagonalizable group over \(S\) (I~4.4). As the
+formation of \(\Lie(G/S)\) commutes with base change, it suffices to carry
+out the construction for \(G=\mathrm{D}(M)\). One then has:
+\[
+G(I_S)
+=\Hom_{\mathrm{gr.}}\bigl(M,\Gamma(I_S,\mathcal{O}_{I_S})^{\times}\bigr)
+=\Hom_{\mathrm{gr.}}\bigl(M,\Gamma(S,\mathrm{D}\OS)^{\times}\bigr).
+\]
+Now one has a split exact sequence
+\[
+1\to\Gamma(S,\OS)\to\Gamma(S,\mathrm{D}\OS)^{\times}
+\to\Gamma(S,\OS)^{\times}\to 1,
+\]
+which gives that \(\Lie(G)(S)\) is identified with
+\(\Hom_{\mathrm{gr.}}(M,\mathrm{O}(S))\) equipped with its evident structure
+of \(\mathrm{O}(S)\)-module. One therefore obtains, after base change:
+
+\begin{proposition}{5.1}
+\label{II.5.1}
+One has isomorphisms
+\[
+\Hom_{S\text{-gr.}}(M_S,\OS)\isomto\Lie(\mathrm{D}_S(M)/S)
+\qquad\text{and}\qquad
+\mathcal{H}\mathrm{om}_{\mathrm{gr.}}(\widetilde{M}_S,\OS)
+\isomto\mathcal{L}\mathrm{ie}(\mathrm{D}_S(M)/S),
+\]
+(where, in the second isomorphism, \(\widetilde{M}_S\) denotes the constant
+sheaf of groups on \(S\) defined by \(M\), and
+\(\mathcal{H}\mathrm{om}_{\mathrm{gr.}}\) the sheaf of homomorphisms of
+sheaves of groups).
+\end{proposition}
+
+\begin{corollary}{5.1.1}
+\label{II.5.1.1}
+If \(M\) is free of finite type (or, as we shall say later, if
+\(\mathrm{D}_S(M)\) is a split torus) then (see~I, 4.6.5 for the definition
+of~\(\mathbb{W}\))
+\begin{align*}
+\mathbb{W}\bigl(\mathcal{L}\mathrm{ie}(\mathrm{D}_S(M)/S)\bigr)
+&\isomto\mathbb{L}\mathrm{ie}(\mathrm{D}_S(M)/S),\\
+M^{\vee}\otimes_{\ZZ}\OS
+&\isomto\mathcal{L}\mathrm{ie}(\mathrm{D}_S(M)/S),
+\end{align*}
+where \(M^{\vee}\) denotes the dual of the abelian group \(M\). In particular
+\[
+\OS\isomto\Lie(\mathbf{G}_{\mathrm{m},S}/S)
+\qquad\text{and}\qquad
+\OS\isomto\mathcal{L}\mathrm{ie}(\mathbf{G}_{\mathrm{m},S}/S).
+\]
+\end{corollary}
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{5.2. Normalizers and centralizers.}\ ---
+\label{II.5.2}
+Let us first prove a few lemmas.
+Recall (\cf~I~3.1.1) that a sequence \(0\to F'\to F\to F''\to 0\) of
+\(\OS\)-modules is said to be \emph{exact} if for every \(S'\to S\) the
+sequence \(0\to F'(S')\to F(S')\to F''(S')\to 0\) of
+\(\mathrm{O}(S')\)-modules is exact.
+
+Likewise, a sequence \(1\to G'\to G\to G''\to 1\) of \(S\)-groups is said to
+be exact if for every \(S'\to S\) the sequence of groups
+\(1\to G'(S')\to G(S')\to G''(S')\to 1\) is exact.
+
+\begin{lemma}{5.2.1}
+\label{II.5.2.1}
+{\renewcommand{\thefootnote}{(92)}\nde{One has set out the statement of the
+lemma (and its proof) in more detail; this will be useful in~5.3.1.}}
+Let \(1\to G'\to G\to G''\to 1\) be an exact sequence of \(S\)-groups.
+\begin{enumeratei}
+\item The sequences
+\(1\to\mathrm{T}_{G'/S}(\mathcal{M})\to\mathrm{T}_{G/S}(\mathcal{M})
+\to\mathrm{T}_{G''/S}(\mathcal{M})\to 1\)
+and
+\[
+1\to\Lie(G'/S,\mathcal{M})\to\Lie(G/S,\mathcal{M})
+\to\Lie(G''/S,\mathcal{M})\to 1
+\]
+are then exact.
+\item Let \(1\to H'\to H\to H''\to 1\) be a second sequence of groups; it is
+exact if and only if the sequence below is exact:
+\[
+1\to G'\times_S H'\to G\times_S H\to G''\times_S H''\to 1.
+\]
+\item If two of the \(S\)-groups \(G'\), \(G\), \(G''\) satisfy~(E), the third
+also satisfies~(E).
+\item If \(0\to F'\to F\to F''\to 0\) is an exact sequence of
+\(\OS\)-modules and if two of the modules \(F'\), \(F\), \(F''\) are good,
+the third is also good.
+\item If two of the \(S\)-groups \(G'\), \(G\), \(G''\) are good, the third
+is also good.
+\end{enumeratei}
+\end{lemma}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+{\renewcommand{\thefootnote}{(93)}\nde{One has added the proof of
+points~(iii) and~(v).}}
+The first part of~(i) is immediate, and the second part follows from it.
+Likewise, (ii) is immediate. Let us prove~(iii). For brevity, let us write
+\(L(\mathcal{M})=\Lie(G,\mathcal{M})\),
+\(L'(\mathcal{M})=\Lie(G',\mathcal{M})\), etc. Then one has the following
+commutative diagram
+\[
+\xymatrix{
+1 \ar[r]
+  & L'(\mathcal{M}\oplus\mathcal{N}) \ar[r] \ar[d]
+  & L(\mathcal{M}\oplus\mathcal{N}) \ar[r] \ar[d]
+  & L''(\mathcal{M}\oplus\mathcal{N}) \ar[r] \ar[d]
+  & 1
+\\
+1 \ar[r]
+  & L'(\mathcal{M})\times_S L'(\mathcal{N}) \ar[r]
+  & L(\mathcal{M})\times_S L(\mathcal{N}) \ar[r]
+  & L''(\mathcal{M})\times_S L''(\mathcal{N}) \ar[r]
+  & 1
+}
+\]
+in which the first (\resp\ the second) row is exact by~(i) (\resp\ by~(i)
+and~(ii)). Assertion~(iii) follows from this.
+
+Let us prove~(iv). One has a commutative diagram
+\[
+\xymatrix{
+0 \ar[r]
+  & F'\otimes_{\OS}\mathrm{T}_{\OS/S}(\mathcal{M}) \ar[r] \ar[d]
+  & F\otimes_{\OS}\mathrm{T}_{\OS/S}(\mathcal{M}) \ar[r] \ar[d]
+  & F''\otimes_{\OS}\mathrm{T}_{\OS/S}(\mathcal{M}) \ar[r] \ar[d]
+  & 0
+\\
+0 \ar[r]
+  & \mathrm{T}_{F'/S}(\mathcal{M}) \ar[r]
+  & \mathrm{T}_{F/S}(\mathcal{M}) \ar[r]
+  & \mathrm{T}_{F''/S}(\mathcal{M}) \ar[r]
+  & 0
+}
+\]
+with exact rows (the first, because \(\mathrm{T}_{\OS/S}(\mathcal{M})\) is a
+free \(\OS\)-module, hence flat, the second by~(i)). It follows that if two
+of the modules \(F'\), \(F\), \(F''\) are good, the third is also good.
+Finally, (v) follows from~(iii) and~(iv).
+\end{proof}
+
+\begin{lemma}{5.2.2}
+\label{II.5.2.2}
+Let \(G\) be an \(S\)-group, \(E\), \(H\) two \(G\)-objects, and \(F\) a
+\(G\)-\(\OS\)-module.
+\begin{enumeratei}
+\item The canonical homomorphism
+\(E^G\times_S H^G\to(E\times_S H)^G\) is an isomorphism.
+\item If \(F\) is a good \(\OS\)-module, then so is \(F^G\).
+\end{enumeratei}
+\end{lemma}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+{\renewcommand{\thefootnote}{(94)}\nde{One has set out the original in more
+detail in what follows.}}
+The first assertion is immediate; let us prove the second. For every
+\(S'\to S\), one has a commutative diagram
+\[
+\xymatrix{
+F^G\bigl(I_{S'}(\mathcal{M})\bigr) \ar@{^{(}->}[r]
+  & F\bigl(I_{S'}(\mathcal{M})\bigr) \\
+F^G(S')\otimes_{\mathrm{O}(S')}\mathrm{O}\bigl(I_{S'}(\mathcal{M})\bigr)
+  \ar@{^{(}->}[r] \ar[u]_{\varphi}
+  & F(S')\otimes_{\mathrm{O}(S')}\mathrm{O}\bigl(I_{S'}(\mathcal{M})\bigr)
+  \ar[u]^{\simeq}_{\varphi_1}
+}
+\]
+and one must prove that \(\varphi\) is bijective; now, it is evidently
+injective; let us show that it is surjective. Let \((t_0,\ldots,t_n)\) be a
+basis of the free \(\mathrm{O}(S')\)-module
+\(\mathrm{O}(I_{S'}(\mathcal{M}))\) and let
+\[
+u=\sum_{i=0}^{n}f_i\otimes t_i
+\]
+be an element of
+\(F(S')\otimes_{\mathrm{O}(S')}\mathrm{O}(I_{S'}(\mathcal{M}))\) such that
+\(\varphi_1(u)\) belongs to \(F^G(I_{S'}(\mathcal{M}))\). Let us show that
+the \(f_i\) belong to \(F^G(S')\).
+
+Let \(S''\to S'\); one may regard \(S''\) as lying over
+\(I_{S'}(\mathcal{M})\) via the zero section \(\varepsilon_{\mathcal{M}}\).
+Then, for every \(g\in G(S'')\), one has:
+\[
+u_{S''}=g\cdot u_{S''}
+=\sum_{i=0}^{n}g\cdot(f_i)_{S''}\otimes(t_i)_{S''}.
+\]
+As the \((t_i)_{S''}\) form a basis of
+\(\mathrm{O}(I_{S''}(\mathcal{M}))
+\simeq\mathrm{O}(I_{S'}(\mathcal{M}))\otimes_{\mathrm{O}(S')}\mathrm{O}(S'')\)
+over \(\mathrm{O}(S'')\), it follows that
+\(g\cdot(f_i)_{S''}=(f_i)_{S''}\), whence \(f_i\in F^G(S')\) for every~\(i\).
+\end{proof}
+
+\par\addvspace{0.7\baselineskip}%
+\noindent\textbf{Notations.}\ ---
+{\renewcommand{\thefootnote}{(95)}\nde{One has set out these notations in
+more detail.}}
+If \(E\) is an \(S\)-group and \(F\) a sub-\(S\)-group of \(E\), one denotes
+by \(E/F\) the \(S\)-functor which to every \(S'\to S\) associates the set
+\(E(S')/F(S')\) of classes \(x=x\,F(S')\), \(x\in E(S')\). If \(E\) is a
+commutative \(S\)-group then \(E/F\) is a commutative \(S\)-group.
+
+Let now \(G\) be an \(S\)-group and \(K\) a sub-\(S\)-group of \(G\); set
+\(E=\Lie(G/S,\mathcal{M})\) and \(F=\Lie(K/S,\mathcal{M})\). The adjoint
+action of \(K\) on \(E\) stabilizes \(F\), hence induces an action of \(K\)
+on the \(S\)-functor \(E/F\). Then, for every \(S'\to S\), one has:
+\[
+(E/F)^K(S')
+=
+\left\{
+x\in E(S')/F(S')
+\;\middle|\;
+\begin{aligned}
+&\text{for every }f\colon S''\to S'\text{ and }k\in K(S''),\\
+&f^*(x^{-1})\,\Ad(k)\bigl(f^*(x)\bigr)\in F(S'')
+\end{aligned}
+\right\},
+\]
+where \(f^*(x)\) denotes the image of \(x\) in \(E(S'')\).
+
+\begin{theorem}{5.2.3}
+\label{II.5.2.3}
+Let \(G\) be an \(S\)-group, and \(K\) a sub-\(S\)-group of \(G\). Let us denote
+(I~2.3.3)
+\[
+\mathrm{N}=\Norm_G(K),
+\qquad
+\mathrm{Z}=\Centr_G(K).
+\]
+Let us make \(K\) operate on \(\Lie(G/S,\mathcal{M})\) by means of the adjoint
+representation of \(G\).
+\begin{enumeratei}
+\item If the group law of \(\Lie(G/S,\mathcal{M})\) is
+commutative{\renewcommand{\thefootnote}{(*)}\footnote{Condition
+automatically satisfied if \(G\) satisfies~(E) (\cf~3.9), for example if
+\(G\) is representable.}}%
+{\renewcommand{\thefootnote}{(96)}\nde{For an example where the \(S\)-group
+\(\Lie(G/S)\) is not commutative, see~6.3.}},
+then
+\[
+\Lie(N/S,\mathcal{M})\big/\Lie(K/S,\mathcal{M})
+=
+\bigl(\Lie(G/S,\mathcal{M})\big/\Lie(K/S,\mathcal{M})\bigr)^{K}.
+\]
+\item If the group law of \(\Lie(G/S,\mathcal{M})\) is commutative~\((*)\),
+then
+\[
+\Lie(Z/S,\mathcal{M})=\Lie(G/S,\mathcal{M})^{K}.
+\]
+\item If \(G\) satisfies~(E) (\resp\ if \(G\) and \(K\) satisfy~(E)), then
+\(Z\) satisfies~(E) (\resp~\(N\) satisfies~(E)).
+\item Suppose \(G\) is good; then \(Z\) is good; if moreover \(G\) is very
+good, then \(Z\) is very good.
+\item Suppose \(G\) and \(K\) are good; then \(N\) is good; if moreover \(G\)
+is very good, then \(N\) is very good.
+\end{enumeratei}
+\end{theorem}
+
+To prove~(i) and~(ii)%
+{\renewcommand{\thefootnote}{(97)}\nde{One has set out the proof in more
+detail, adding in particular Lemma~5.2.3.0, implicit in the original.}}
+we shall use the following lemma, which results from the diagram of exact
+sequences considered in~4.1.B (with \(G\) and \(H\) interchanged).
+
+\begin{lemma}{5.2.3.0}
+\label{II.5.2.3.0}
+Let \(G\) be an \(S\)-group, \(H\) a sub-\(S\)-group of \(G\), and
+\(\mathcal{M}\) a free \(\OS\)-module of finite type. Then
+\(\mathrm{T}_{H/S}(\mathcal{M})\) and \(\Lie(G/S,\mathcal{M})\) are
+sub-\(S\)-groups of \(\mathrm{T}_{G/S}(\mathcal{M})\) and one has:
+\[
+\mathrm{T}_{H/S}(\mathcal{M})\cap\Lie(G/S,\mathcal{M})
+=\Lie(H/S,\mathcal{M}),
+\]
+where one has set
+\(\mathrm{T}_{H/S}(\mathcal{M})\cap\Lie(G/S,\mathcal{M})
+\overset{\mathrm{def}}{=}
+\mathrm{T}_{H/S}(\mathcal{M})
+\times_{\mathrm{T}_{G/S}(\mathcal{M})}
+\Lie(G/S,\mathcal{M})\).
+\end{lemma}
+
+As the functors considered in~(i) and~(ii) commute with base change, it
+suffices to show the equalities of \(S\)-points.
+
+Set \(H=N\) (resp.\ \(=Z\)) and let \(\alpha=\pm 1\). By the preceding lemma
+and the definition of \(N\) and \(Z\) (\cf~I~2.3.3), one has:
+\(\Lie(H/S,\mathcal{M})(S)=\)
+\[
+\left\{
+\begin{gathered}
+X\in\Lie(G/S,\mathcal{M})(S)\subset G\bigl(I_S(\mathcal{M})\bigr)
+\;\big|\;\\
+\begin{aligned}
+&\text{for every }f\colon S'\to I_S(\mathcal{M})\text{ and }u\in K(S'),\\
+&f^*(X^{\alpha})\cdot u\cdot f^*(X^{-\alpha})\cdot u^{-1}\in K(S')\\
+&\text{resp.\ }f^*(X)\cdot u\cdot f^*(X^{-1})\cdot u^{-1}=1
+\end{aligned}
+\end{gathered}
+\right\}
+\quad(*),\qquad
+\]
+where \(f^*(X)\) denotes the image of \(X\) in \(G(S')\).
+
+To simplify the writing, let us set
+\[
+\mathfrak{g}=\Lie(G/S,\mathcal{M}),\quad
+\mathfrak{k}=\Lie(K/S,\mathcal{M}),\quad
+\mathfrak{n}=\Lie(N/S,\mathcal{M}),\quad
+\mathfrak{z}=\Lie(Z/S,\mathcal{M}).
+\]
+If \(X\in\Lie(H/S,\mathcal{M})(S)\), the equalities \((*)\) are valid for
+every \(f\colon S'\to S\), since \(f=\rho\circ\varepsilon_{\mathcal{M}}\circ f\)
+factors through \(I_S(\mathcal{M})\) (where
+\(\rho\colon I_S(\mathcal{M})\to S\) is the structural morphism and
+\(\varepsilon_{\mathcal{M}}\colon S\to I_S(\mathcal{M})\) the zero section).
+One deduces from this that
+\[
+\mathfrak{n}(S)/\mathfrak{k}(S)
+\subset(\mathfrak{g}/\mathfrak{k})^{K}(S)
+\qquad\text{and}\qquad
+\mathfrak{z}(S)\subset\mathfrak{g}^{K}(S).
+\]

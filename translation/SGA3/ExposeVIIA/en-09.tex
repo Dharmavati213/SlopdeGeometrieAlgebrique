@@ -1,0 +1,154 @@
+% Source PDF pp. 49--54; last sentence and its diagram completed on p. 55.
+\par
+\nde{What follows has been added. (The original indicated ``the case of $\mathbf W(\mathscr F)$ is analogous''.)}
+Finally, consider the case where $G=\mathbf W(\mathscr F)$, keeping the preceding notation. First, giving a morphism of $S$-functors $\phi:H\to\mathbf W(\mathscr F)$ is equivalent to giving an element $\theta$ of $\Gamma(H,\mathscr F\otimes\OO_H)$, and since $H$ is finite locally free over $S$, one has:
+\[
+\Gamma(H,\mathscr F\otimes\OO_H)=\Gamma(S,\mathscr F\otimes\mathscr A)=\Hom_{\OS}(\mathscr U,\mathscr F).
+\]
+The condition that $\phi$ be a group morphism is then expressed by the fact that $\theta$, considered as a morphism of $\OS$-modules $\mathscr U\to\mathscr F$, vanishes on $1_{\mathscr U}$ and on $\mathscr J/\mathscr J^2$, where $\mathscr J$ is the augmentation ideal of $\mathscr U$, whence
+\begin{equation}\tag{1}
+\Hom_{S\text{-gr.}}(H,\mathbf W(\mathscr F))=\Hom_{\OS}(\mathscr J/\mathscr J^2,\mathscr F).
+\end{equation}
+% typo?: source says theta vanishes on J/J^2; retained.
+On the other hand, consider the quasi-coherent sheaf $[\mathscr L,\mathscr L]$, the image of the morphism $\mathscr L\otimes\mathscr L\to\mathscr L$, $x\otimes y\mapsto[x,y]$; for every affine open subset $V$ of $S$, one has $[\mathscr L,\mathscr L](V)=[\mathscr L(V),\mathscr L(V)]$. Then there is an exact sequence
+\begin{equation}\tag{$\dagger$}
+0\longrightarrow[\mathscr L,\mathscr L]\longrightarrow\mathscr L\xrightarrow{\pi}\mathscr J/\mathscr J^2\longrightarrow0,
+\end{equation}
+where $\pi$ is the composite of the inclusion $\mathscr L\hookrightarrow\mathscr J$ and the projection $\mathscr J\to\mathscr J/\mathscr J^2$.
+
+Indeed, the question being local on $S$, one may suppose that $S$ is affine with ring $R$ and that $L=\mathscr L(S)$ is free with basis $(x_1,\ldots,x_r)$. Identifying $L$ with its image in $U=U_p(L)$, let $K$ be the sub-$R$-module of $U$ which is the direct sum of $[L,L]$ and the submodule with basis the monomials $x_1^{n_1}\cdots x_r^{n_r}$ such that $n_1+\cdots+n_r\geq2$; one then verifies that $K$ is a two-sided ideal of $U$. Since $K$ is contained in $J^2$ (where $J$ is the augmentation ideal of $U$) and contains all the products $x_ix_j$ (which generate $J^2$), one deduces that $K=J^2$, whence $J^2\cap L=[L,L]$, and one has exact sequence $(\dagger)$.
+
+On the other hand, one knows according to 6.4.2 that $\uLie\mathbf W(\mathscr F)$ is none other than $\mathbf W(\mathscr F)$, the Lie bracket and symbolic $p$-th power being zero. From this and what precedes one deduces that
+\begin{equation}\tag{2}
+\Hom_p(\mathscr L,\mathscr F)=\Hom_{\OS}(\mathscr L/[\mathscr L,\mathscr L],\mathscr F)=\Hom_{\OS}(\mathscr J/\mathscr J^2,\mathscr F)
+\end{equation}
+and this, combined with (1), completes the proof of theorem 7.2.
+% typo?: the printed argument and (2) use [L,L] without a symbolic-p-power term; retained.
+
+\begin{lemma}{7.3}\label{VIIA.7.3}
+If $\mathscr L$ is a finite locally free $\OS$-Lie $p$-algebra, the morphism $j_{\mathscr L}:\mathscr L\to\mathscr L\!\mathrm{ie}\,G_p(\mathscr L)$ of 5.5 is invertible.
+\end{lemma}
+\nde{To avoid changing the numbering, statement 7.3 has been retained, although it was included, with its proof, in 5.5.1.}
+For the proof, see 5.5.1.
+
+\numpara{7.4}
+To conclude this section, we shall give a characterization of the $S$-group schemes of the form $G_p(\mathscr L)$, where $\mathscr L$ is a finite locally free $\OS$-Lie $p$-algebra.
+
+Let $G$ be an $S$-group scheme, $\varepsilon_G$ its unit section, and $\mathscr I'$ the kernel of the morphism $\varepsilon_G^{-1}(\OO_G)\to\OS$ corresponding to $\varepsilon_G$. The image of $\uLie(G/S)(S)$ in $U(G)$ identifies, according to 2.5 and 1.3.1, with the morphisms of $\OS$-modules from $\varepsilon_G^{-1}(\OO_G)$ to $\OS$ which vanish on the unit section of $\varepsilon_G^{-1}(\OO_G)$ and on $\mathscr I'^2$. One thus recovers the canonical isomorphism from $\uLie(G/S)(S)$ onto $\Hom_{\OS}(\mathscr I'/\mathscr I'^2,\OS)$ of II, 3.3 and 4.11.4.\nde{If $G$ is affine over $S$ and $\mathscr I$ denotes the augmentation ideal of $\mathscr A(G)$, then $\mathscr I'/\mathscr I'^2$ identifies with $\varepsilon_G^*(\mathscr I/\mathscr I^2)$, cf.\ loc.\ cit.} We shall put $\omega_{G/S}=\mathscr I'/\mathscr I'^2$ as in loc.\ cit., so that the sheaf $\mathscr L\!\mathrm{ie}(G/S)$ identifies with $\omega_{G/S}^*=\mathscr H\!om_{\OS}(\omega_{G/S},\OS)$.\nde{The following sentence has been added.} Moreover, if $G=G_p(\mathscr L)$, where $\mathscr L$ is a finite locally free $\OS$-Lie $p$-algebra, we saw in 5.5.3 that $\omega_{G/S}=\mathscr L^*$.
+
+\begin{enonce}{Theorem}{}\label{VIIA.7.4}
+If $G$ is a group scheme over a scheme $S$ of characteristic $p>0$, the following assertions are equivalent:
+\begin{enumerate}[label={},leftmargin=2.2em]
+\item[(i)] There exists a finite locally free $\OS$-Lie $p$-algebra $\mathscr L$ such that $G\simeq G_p(\mathscr L)$.
+\item[(i$'$)] The $\OS$-Lie $p$-algebra $\mathscr L\!\mathrm{ie}(G)$ is finite locally free and $G\simeq G_p(\mathscr L\!\mathrm{ie}(G))$.
+\item[(ii)] $G$ is affine over $S$, $\omega_{G/S}$ is a locally free $\OS$-module of finite type, and the affine algebra of $G$ is locally isomorphic to the quotient of the symmetric algebra $S_{\OS}(\omega_{G/S})$ by the ideal generated by the $p$-th powers of sections of $\omega_{G/S}$.
+\item[(iii)] $G$ is locally of finite presentation over $S$, of height $\leq1$, and $\omega_{G/S}$ is locally free.
+\item[(iii$'$)] $G$ is locally of finite type over $S$, of height $\leq1$, and $\omega_{G/S}$ is locally free.
+\item[(iv)] $G$ is locally of finite presentation and flat over $S$, of height $\leq1$.\nde{On the one hand, assertion (i$'$), implicit in the original, has been added, and on the other hand assertions (iii$'$) and (iv), pointed out by O. Gabber; assertion (iv) takes up a footnote of the original, which indicated: ``The condition on $\omega_{G/S}$ is in fact unnecessary, as one sees easily by reducing to the case where $S$ is local with residue field $k$, and applying the theorem to the group $G_k$.'' As pointed out by Gabber, this is incorrect without a flatness hypothesis: if $A$ is a local artinian ring of characteristic $p>0$ and $J$ a proper nonzero ideal of $A$, let $H$ be the subgroup $\Spec A[x]/(x^p,Jx)$ of $\boldsymbol\alpha_{p,A}$ (\ie for every $A$-algebra $R$, $H(R)=\{x\in R\mid x^p=0\text{ and }Jx=0\}$); then $H$ is not flat over $A$, hence is not of the form $G_p(\mathscr L)$, where $\mathscr L$ is a free Lie $p$-algebra of finite rank over $A$.}
+\end{enumerate}
+\end{enonce}
+
+\numpara{7.4.1}
+The equivalence (i) $\Leftrightarrow$ (i$'$) follows from 5.5.3 (i), the implications (ii) $\Rightarrow$ (iii) $\Rightarrow$ (iii$'$) are clear, and one has (i) $\Rightarrow$ (iv) since $G_p(\mathscr L)$ is finite locally free and of height $\leq1$, according to 5.5.2 and lemma 7.2. Let us show that (i) implies (ii). Denote by $\mathscr I$ the augmentation ideal of $\mathscr A=\mathscr U_p(\mathscr L)^*$. We already saw in 5.5.3 (ii) that $\omega_{G/S}=\mathscr I/\mathscr I^2$ identifies with $\mathscr L^*$, hence is finite locally free.
+
+Now suppose that $S$ is \emph{affine}. There is then a section $\sigma:\omega_{G/S}\to\mathscr I$ of the projection $\mathscr I\to\mathscr I/\mathscr I^2$; it induces an algebra morphism $\sigma':S_{\OS}(\omega_{G/S})\to\mathscr A$, and, according to lemma 7.2, $\sigma'$ factors into a morphism
+\[
+\phi:S_{\OS}(\omega_{G/S})/\mathscr K\longrightarrow\mathscr A,
+\]
+where $\mathscr K$ denotes the ideal generated by the $p$-th powers of sections of $\omega_{G/S}$. If one filters $\mathscr A$ (resp.\ $S_{\OS}(\omega_{G/S})/\mathscr K$) by the powers of $\mathscr I$ (resp.\ of the ideal generated by $\omega_{G/S}$), it is clear that $\phi$ induces an epimorphism of the associated graded objects. Thus $\phi$ is an epimorphism of locally free $\OS$-modules of the same rank (cf.\ 5.3.3); hence $\phi$ is an isomorphism. This proves that (i) $\Rightarrow$ (ii).
+
+\numpara{7.4.2}
+Now suppose that $G$ is of height $\leq1$ and locally of finite presentation over $S$.\nde{The original has been expanded (and simplified) in what follows.} Since the Frobenius morphism $\mathrm{Fr}:G\to G^{(p)}$ is integral and factors through the unit section of $G^{(p)}$, $G$ is integral (hence affine) over $S$. Put $\mathscr A=\mathscr A(G)$; since $G$ is assumed locally of finite presentation over $S$, it follows that $G$ is finite and of finite presentation over $S$, hence that $\mathscr A(G)$ is a finitely presented $\OS$-module (cf.\ EGA~IV$_1$, 1.4.7). Let $\mathscr I$ be the augmentation ideal of $\mathscr A$; since $\mathscr A=\eta_{\mathscr A}(\OS)\oplus\mathscr I$ (where $\eta_{\mathscr A}$ is the unit section of $\mathscr A$), $\mathscr I$ is a finitely presented $\OS$-module, and therefore so is $\omega_G=\mathscr I/\mathscr I^2$. When one assumes that $G$ is of height $\leq1$ and locally of finite type over $S$, one obtains similarly that $\mathscr A(G)$, $\mathscr I$, and $\omega_G=\mathscr I/\mathscr I^2$ are $\OS$-modules of finite type.
+
+Thus, under hypothesis (iii$'$), one obtains that $\omega_{G/S}$ is finite locally free over $\OS$, as is $\mathscr L=\mathscr L\!\mathrm{ie}(G/S)=\omega_{G/S}^*$. Put $\mathscr B=\mathscr U_p(\mathscr L)^*$ and $H=G_p(\mathscr L)=\Spec\mathscr B$. According to theorem 7.2, the identity map of $\mathscr L$ corresponds to a group morphism from $H=G_p(\mathscr L)$ to $G$, hence to a morphism of $\OS$-algebras $\theta:\mathscr A\to\mathscr B$. One must show that $\theta$, which by definition induces an isomorphism from $\omega_{G/S}$ to $\omega_{H/S}$, is an isomorphism.
+
+For this purpose one may restrict to the case where $S$ is affine. There is then a section $\tau$ of the projection $\mathscr I\to\omega_{G/S}$; it induces an algebra morphism $\tau':S_{\OS}(\omega_{G/S})\to\mathscr A$, and since every local section of $\mathscr I$ has zero $p$-th power (because $\mathrm{Fr}:G\to G^{(p)}$ factors through the unit section of $G^{(p)}$), $\tau'$ induces a morphism of $\OS$-algebras $\psi$ occurring in the commutative diagram below:
+\[
+\xymatrix@C=4em{S_{\OS}(\omega_{G/S})/\mathscr K\ar[r]^\psi\ar[dr]_\phi&\mathscr A\ar[d]^\theta\\&\mathscr B}
+\]
+where $\mathscr K$ is the ideal generated by the $p$-th powers of sections of $\omega_{G/S}$. On the one hand, one shows as in 7.4.1 that $\psi$ is an epimorphism of $\OS$-modules. On the other hand, we saw in 7.4.1 that $\phi=\theta\circ\psi$ is an isomorphism. The same is therefore true of $\theta$. This proves that (iii$'$) $\Rightarrow$ (i).
+
+\numpara{7.4.3}
+\nde{This paragraph has been added to prove that (iv) $\Rightarrow$ (iii), cf.\ N.D.E.\ (71).}
+Finally, let us show that (iv) implies (iii). It suffices to show that $\omega_{G/S}$ is locally free, so one may suppose that $S$ is affine with ring $R$. As observed at the beginning of 7.4.2, hypothesis (iv) then implies that $G=\Spec A$, for an $R$-algebra $A$ which is a finitely presented $R$-module, as is $\omega_{G/A}=I/I^2$ (where $I$ is the augmentation ideal of $A$). Since one also assumes that $G$ is flat over $S$, $A$ is a finite locally free $R$-module (cf.\ [BAC] II, \S~5.2, Th.\ 1 and cor.\ 2), and, according to loc.\ cit., to show that $\omega_{G/A}$ is locally free of finite rank, it suffices to show that $(\omega_{G/A})_{\mathfrak m}$ is flat for every maximal ideal $\mathfrak m$ of $R$. Thus one may suppose that $R$ is local and $A$ free of rank $n+1$, hence $I$ free of rank $n$. Let $\mathfrak m$ be the maximal ideal of $R$ and $k=R/\mathfrak m$.
+% typo?: source omega_{G/A}, rather than omega_{G/R}, retained.
+
+Denote by $I_k$ the augmentation ideal of $A_k$ and by $r$ the dimension of $\omega_{G_k/k}=I_k/I_k^2$. Let $(e_1,\ldots,e_n)$ be a basis of $I_k$ such that $(e_{r+1},\ldots,e_n)$ is a basis of $I_k^2$, and let $x_1,\ldots,x_n$ be elements of $I$ lifting the $e_i$. According to Nakayama's lemma, $(x_1,\ldots,x_n)$ is a basis of $I$ over $R$. Let $N$ be the sub-$R$-module of $I$ with basis $(x_1,\ldots,x_r)$, and let $B$ be the quotient of the symmetric algebra of $N$ by the ideal generated by the elements $x^p$, for $x\in N$. Since every element of $I$ has zero $p$-th power, one obtains a morphism of $R$-algebras
+\[
+\psi:B\longrightarrow A.
+\]
+According to 7.4.2, $\psi\otimes k$ is an isomorphism. It follows that $\Coker\psi=0$ and that, denoting $\Ker\psi$ by $K$, the morphism $\tau:K\otimes k\to B\otimes k$ is zero. But since $\psi$ is surjective and $A$ flat over $R$, $\tau$ is also injective, whence $K\otimes k=0$. On the other hand, since $A$ is a finitely presented $R$-module, $K$ is an $R$-module of finite type (cf.\ [BAC] I, \S~2.8, Lemma 9), whence $K=0$ according to Nakayama. Thus $\psi$ is an isomorphism of $R$-algebras, and since $\psi^{-1}(I)$ contains the augmentation ideal $J$ of $B$, it follows that $\psi^{-1}(I)=J$, and hence $\psi^{-1}$ induces an isomorphism of $R$-modules from $I/I^2$ to $J/J^2=N$. This proves that $\omega_{G/S}$ is finite locally free, whence the implication (iv) $\Rightarrow$ (iii). This completes the proof of theorem 7.4.
+
+\begin{remark}{7.5}\label{VIIA.7.5}
+\nde{This remark has been added.}
+It clearly follows from theorems 7.2 and 7.4 that the functors $G\mapsto\mathscr L\!\mathrm{ie}(G)$ and $\mathscr L\mapsto G_p(\mathscr L)$ induce equivalences, quasi-inverse to one another, between the category of $S$-groups locally of finite presentation and flat, of height $\leq1$, and the full subcategory of that of $\OS$-Lie $p$-algebras consisting of finite locally free $\OS$-Lie $p$-algebras.
+\end{remark}
+
+\sgasection{8}{Case of a base field}
+\numpara{8.1}
+Let us now summarize the results obtained in the case where $S$ is \emph{the spectrum of a field $k$} of characteristic $p>0$. Let us say that a $k$-group scheme is \emph{algebraic} if the underlying scheme is of finite type over $k$. In this case, according to theorem 7.2, one obtains:\nde{The numbering 8.1.1 to 8.1.3 has been added to bring out the results stated there.}
+
+\begin{theorem}{8.1.1}\label{VIIA.8.1.1}
+The functor $G_p$, which associates to every Lie $p$-algebra $\mathscr L$ of finite dimension over $k$ the $k$-group $G_p(\mathscr L)$, is left adjoint to the functor which associates to every algebraic $k$-group $G$ its $\Lie(G)$.
+\end{theorem}
+Combining this with theorem 7.4, one obtains:
+\begin{theorem}{8.1.2}\label{VIIA.8.1.2}
+The functors $G_p:\mathscr L\mapsto G_p(\mathscr L)$ and $G\mapsto\mathscr L\!\mathrm{ie}(G)$ induce equivalences, quasi-inverse to one another, between the category of Lie $p$-algebras of finite dimension over $k$ and that of algebraic $k$-groups of height $\leq1$.
+\end{theorem}
+
+Then, since $G_p$ is a left adjoint functor, \emph{it commutes with inductive limits},\nde{What follows, as well as the proof of the corollary below, has been expanded.} hence in particular with the formation of cokernels. On the other hand, if one has two morphisms $\phi:G\to H$ and $\phi':G'\to H$ between algebraic $k$-groups of height $\leq1$, the fibered product $G\times_HG'$ is again an algebraic $k$-group of height $\leq1$ (for the morphism $\mathrm{Fr}:G\to G^{(p)}$ commutes with fibered products). Thus the inclusion of the category of algebraic $k$-groups of height $\leq1$ into that of all algebraic $k$-groups commutes with fibered products, hence in particular with the formation of kernels. One deduces the:
+\begin{corollary}{8.1.3}\label{VIIA.8.1.3}
+The functor $G_p$ is exact in the following sense. If $\pi:\mathscr L_1\to\mathscr L_2$ is a surjective morphism between Lie $p$-algebras of finite dimension over $k$ and $i$ is the inclusion of $\mathscr L_0=\Ker\pi$ into $\mathscr L_1$, there is an exact sequence of algebraic $k$-groups:
+\[
+1\longrightarrow G_p(\mathscr L_0)\xrightarrow{G_p(i)}G_p(\mathscr L_1)\xrightarrow{G_p(\pi)}G_p(\mathscr L_2)\longrightarrow1.
+\]
+\nde{Moreover, according to VI A, 3.2, $G_p(\mathscr L_2)$ represents the (fppf) quotient sheaf of $G_p(\mathscr L_1)$ by $G_p(\mathscr L_0)$.}
+\end{corollary}
+Indeed, according to what precedes, $G_p(i)$ induces an isomorphism from $G_p(\mathscr L_0)$ onto $\Ker(G_p(\pi))$ (this kernel being the same in the category of all algebraic $k$-groups $H$ or in that of the $H$ of height $\leq1$), and $G_p(\pi):G_p(\mathscr L_1)\to G_p(\mathscr L_2)$ identifies $G_p(\mathscr L_2)$ with the quotient of $G_p(\mathscr L_1)$ by $G_p(\mathscr L_0)$ in the category of algebraic $k$-groups.
+% typo: source "la categories" -> singular "the category".
+
+\begin{remark}{8.1.4}\label{VIIA.8.1.4}
+\nde{This remark, pointed out by O. Gabber, has been added; it will be useful in 8.3.1.}
+Let $\phi:G\to H$ be a morphism of $k$-groups and $K=\Ker(\phi)$. One assumes that $\phi$ is covering for the (fpqc) topology (this will be the case, in particular, if $\phi$ is covering for a coarser topology, for example the (fppf) topology). Then, on the one hand, $\phi$ is a $K$-torsor over $H$ (cf.\ IV 5.1.7.1). On the other hand (cf.\ IV 6.3.1), there exists a covering of $H$ by affine open subsets $S_i$, and for each $i$ an affine faithfully flat morphism $T_i\to S_i$ factoring through $\phi$. Then $G\times_H T_i$ is $T_i$-isomorphic to $K\times T_i$, hence faithfully flat over $T_i$, and therefore, by (fpqc) descent, $G\times_H S_i\to S_i$ is faithfully flat, so that $\phi$ is faithfully flat.
+
+Conversely, if $\phi$ is faithfully flat and quasi-compact (resp.\ and locally of finite presentation), it is covering for the (fpqc) (resp.\ (fppf)) topology, cf.\ IV 6.3.1. Finally, recall that a sheaf morphism is covering if and only if it is an epimorphism, cf.\ IV 4.4.3. One therefore obtains, in particular, that a quasi-compact morphism of $k$-groups is faithfully flat if and only if it is an epimorphism of (fpqc) sheaves.
+\end{remark}
+
+\begin{proposition}{8.2}\label{VIIA.8.2}
+Consider an exact sequence\nde{\ie $\pi$ is faithfully flat and $i$ is an isomorphism from $G'$ onto $\Ker\pi$, so that $G''$ represents the (fppf) quotient sheaf of $G$ by $G'$, cf.\ VI A, 3.2 and 5.2.} of algebraic groups over a field $k$ of characteristic $p>0$
+\[
+1\longrightarrow G'\xrightarrow{\tau}G\xrightarrow{\pi}G''\longrightarrow1
+\]
+and the following assertions:
+\begin{enumeratei}
+\item The morphism $\pi$ is smooth.
+\item $G'$ is smooth.
+\item For every integer $n>0$, the sequence below, induced by $\tau$ and $\pi$, is exact:
+\[
+1\longrightarrow{}_{\mathrm{Fr}^n}G'\longrightarrow{}_{\mathrm{Fr}^n}G\longrightarrow{}_{\mathrm{Fr}^n}G''\longrightarrow1.
+\]
+\item The morphism ${}_{\mathrm{Fr}}\pi:{}_{\mathrm{Fr}}G\to{}_{\mathrm{Fr}}G''$ is an epimorphism of (fppf) sheaves.
+\item The morphism $\Lie(\pi):\Lie(G)\to\Lie(G'')$ is surjective.
+\end{enumeratei}
+Then one has the implications (i) $\Leftrightarrow$ (ii) $\Rightarrow$ (iii) $\Rightarrow$ (iv) $\Leftrightarrow$ (v), and all the assertions are equivalent when $G$ is smooth over $k$.
+\end{proposition}
+% typo?: note 79 uses i whereas the sequence labels the inclusion tau; retained.
+Indeed, (i) is equivalent to (ii) according to VI B 9.2 (vii), and it is clear that (iii) implies (iv). On the other hand, the equivalence of (iv) and (v) follows from 8.1.3.
+
+The implication (ii) $\Rightarrow$ (iii) follows from the diagram:
+\[
+\xymatrix@C=3em@R=3em{1\ar[r]&G'\ar[r]^\tau\ar[d]_{\mathrm{Fr}^n(G'/k)}&G\ar[r]^\pi\ar[d]_{\mathrm{Fr}^n(G/k)}&G''\ar[r]\ar[d]^{\mathrm{Fr}^n(G''/k)}&1\\
+1\ar[r]&G'^{(p^n)}\ar[r]_{\tau^{(p^n)}}&G^{(p^n)}\ar[r]_{\pi^{(p^n)}}&G''^{(p^n)}\ar[r]&1}
+\]
+whose two rows are exact: since $\mathrm{Fr}^n(G'/k)$ is an epimorphism of (fppf) sheaves according to corollary 8.3.1 below, $\pi$ induces an epimorphism from ${}_{\mathrm{Fr}^n}G$ onto ${}_{\mathrm{Fr}^n}G''$ (generalize the snake lemma to sheaves in groups which are not necessarily commutative).
+
+Similarly, when $G$ is smooth over $k$, $\mathrm{Fr}(G/k)$ is an epimorphism, hence if in addition ${}_{\mathrm{Fr}}\pi$ is an epimorphism, the same snake lemma applied to the diagram above for $n=1$ shows that $\mathrm{Fr}(G'/k)$ is an epimorphism, hence that $G'$ is smooth over $k$, according to 8.3.1 below.
+
+\begin{proposition}{8.3}\label{VIIA.8.3}
+If $G$ is a group locally of finite type\nde{``Algebraic'' has been replaced by ``locally of finite type''.} over a field $k$ of characteristic $p>0$, there exists an integer $n_0$ such that $G/({}_{\mathrm{Fr}^n}G)$ is smooth over $k$ for $n\geq n_0$.
+\end{proposition}
+Since the construction of $G/({}_{\mathrm{Fr}^n}G)$ commutes with extension of the base field (4.1.1 and VI A, 3.3.2), we may suppose that $k$ is perfect. In this case $G_{\mathrm{red}}$ is a $k$-group locally of finite type (cf.\ VI A 0.2), and one has the following commutative and exact diagram, where $H$ denotes the $k$-scheme $G_{\mathrm{red}}\backslash G$:
+\[
+\xymatrix@C=3em@R=3em{1\ar[r]&G_{\mathrm{red}}\ar[r]\ar[d]_{\mathrm{Fr}^n(G_{\mathrm{red}}/k)}&G\ar[r]\ar[d]_{\mathrm{Fr}^n(G/k)}&H\ar[d]^{\mathrm{Fr}^n(H/k)}\\
+1\ar[r]&G_{\mathrm{red}}^{(p^n)}\ar[r]&G^{(p^n)}\ar[r]&H^{(p^n)}.}
+\]

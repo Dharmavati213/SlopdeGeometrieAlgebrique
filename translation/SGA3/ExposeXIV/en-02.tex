@@ -1,0 +1,591 @@
+% Continuation of the proof of Proposition 2.9.
+\begin{remark}{2.12}\label{XIV.2.12}
+I do not know whether statement 2.11 a) and b) is valid without a
+hypothesis of existence of regular points (when $k(s)$ is finite).
+\end{remark}
+It remains to prove implication $(\mathrm C_3)\Rightarrow(\mathrm C_2)$.
+Note also the following equivalent form of $(\mathrm C_3)$:
+
+\noindent $(\mathrm C'_3)$ One has $(\mathrm C_0)$, i.e. the nilpotent
+rank of the $\mathfrak g(s)$ ($s\in S$) is locally constant, and on
+every open subset $V$ of $S$ where this rank has value $r$, the Killing
+polynomial of $\mathfrak g|_V$ is divisible by $t^r$.
+
+One must show that this condition implies that every quasi-regular
+section $a$ of $\mathfrak g$ is regular. Taking 2.6 into account,
+this is contained in the following lemma (applied to the endomorphism
+$\ad(a)$ of $\mathfrak g$), (iv) $\Rightarrow$ (iii):
+
+\begin{lemma}{2.13}\label{XIV.2.13}
+Let $A$ be a ring, $M$ a projective $A$-module of finite type, and
+$u$ an endomorphism of $M$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $M$ is the direct sum of two stable modules $M',M''$ such that
+$u|_{M'}$ is nilpotent, and $u|_{M''}$ is an automorphism of $M''$.
+\item There exists an integer $n>0$ such that $\Im u^n+\Ker u^n=M$.
+\item The nilspace $\operatorname{Nil}(u)=\bigcup_{n>0}\Ker u^n$ is a
+direct summand of $M$, and $M=\operatorname{Nil}(u)+u(M)$.
+\end{enumeratei}
+These conditions are implied by the following one (and are equivalent
+to it when $A$ is reduced):
+
+\noindent (iv) Locally on $\Spec(A)$ (for the Zariski topology) the
+characteristic polynomial $P_u(t)$ of $u$ can be put in the form
+\[
+ t^r(t^{n-r}+c_1t^{n-r-1}+\cdots+c_{n-r}),
+\]
+where $c_{n-r}$ is invertible.
+\end{lemma}
+The equivalence of (i), (ii), (iii) is immediate and is recorded for
+reference. The fact that (i) implies (iv) when $A$ is reduced follows
+from the fact that in this case a nilpotent endomorphism of a projective
+module of rank $r$ has characteristic polynomial $t^r$, whereas in
+all cases the characteristic polynomial of an automorphism of a
+projective module of finite type has as constant term the determinant
+of $u$ up to sign (locally on $\Spec(A)$), hence an invertible element
+of $A$. Finally, to prove (iv) $\Rightarrow$ (i), one notes that $M$
+is a module over the polynomial ring $A[t]$, letting $t$ act by $u$,
+and the well-known identity
+\[
+ P(u)=0
+\]
+shows that $M$ is annihilated by $PA[t]$, hence can be considered as
+a module over $A[t]/PA[t]$. Now, writing $P=t^rQ$, where the constant
+term of $Q$ is invertible, one sees at once that
+\[
+ PA[t]=t^rA[t]\cap QA[t],
+\]
+so $A[t]/PA[t]$ decomposes as the product of the rings $A[t]/t^rA[t]$
+and $A[t]/QA[t]$, whence a corresponding decomposition of $M$ as
+a sum of two $A[t]$-modules, i.e. as a sum of two sub-$A$-modules
+$M'$ and $M''$ stable under $u$; this is the decomposition considered
+in (i).
+
+This completes the proof of 2.13, hence of 2.9.
+\end{proof}
+
+\begin{corollary}{2.14}\label{XIV.2.14}
+When condition $(\mathrm C_3)$ of 2.9 holds, the Cartan subalgebras
+of $\mathfrak g$ are strictly nilpotent (2.2).
+\end{corollary}
+The proof is immediate.
+
+\begin{remark}{2.15}\label{XIV.2.15}
+\noindent a) Let us point out that one can prove a converse of 2.14:
+$(\mathrm C_3)$ is equivalent to the fact that for every $S'$ over
+$S$, every quasi-regular section of $\mathfrak g_{S'}$ is regular
+and every Cartan subalgebra of $\mathfrak g_{S'}$ strictly nilpotent,
+or again every quasi-regular section of $\mathfrak g_{S'}$ contained
+in a strictly nilpotent Cartan subalgebra of $\mathfrak g_{S'}$.
+
+\noindent b) Unlike the other conditions $(\mathrm C_0)$ to
+$(\mathrm C_2)$, condition $(\mathrm C_3)$ is of ``infinitesimal
+nature''; more precisely, when $S$ is locally noetherian,
+$\mathfrak g$ satisfies condition $(\mathrm C_3)$ if and only if
+for every base change $S'\to S$, with $S'$ artinian local (if one
+wishes, $S'$ the spectrum of an artinian quotient of a local ring
+of $S$), $\mathfrak g_{S'}$ satisfies the same condition. Likewise,
+when $(\mathrm C_0)$ holds, the condition for a section of
+$\mathfrak g$ to be regular is of infinitesimal nature.
+
+\noindent c) When $\mathfrak g$ is the Lie algebra of a smooth group
+prescheme of finite presentation over $S$, then we shall see that
+conditions $(\mathrm C_0),(\mathrm C_1),(\mathrm C'_1),(\mathrm C_2)$
+on $\mathfrak g$ are equivalent (5.2 a)); I do not know what happens
+in general (except that, even for $S$ artinian local,
+$(\mathrm C_0)$ does not imply $(\mathrm C_1)$). However, even in
+the case where $\mathfrak g$ comes from a $G$, and $S$ is artinian
+local, it is not true in general that $(\mathrm C_2)$ implies
+$(\mathrm C_3)$, for $\mathfrak g$ can be nilpotent without being
+strictly nilpotent. One obtains an example of this fact by starting
+from a smooth affine group scheme $G$ over the spectrum $S$ of a
+discrete valuation ring, such that the Lie algebra of the general
+fiber is not nilpotent (for example, the general fiber is an adjoint
+semisimple group), and that of the special fiber is nilpotent
+(for example, the special fiber being a vector group): then for
+$n$ sufficiently large, the Lie algebra of $G_n=G\times_S S_n$
+is not strictly nilpotent, but it is nilpotent.
+\end{remark}
+
+Let us still place ourselves under the conditions of 2.4, and let
+\[
+ \mathscr D:(\Sch)^\circ_{/S}\longrightarrow\Ens
+\]
+be the functor defined by
+\[
+ \mathscr D(S')=\text{set of Cartan subalgebras of }\mathfrak g_{S'}.
+\]
+Introduce also the functor
+\[
+\begin{aligned}
+ X(S')=\{&(\mathfrak d,a):\mathfrak d\text{ is a Cartan subalgebra of }\mathfrak g_{S'}\\
+ &\text{and }a\text{ a section of }\mathfrak d\}.
+\end{aligned}
+\]
+One thus has two projections $(\mathfrak d,a)\mto\mathfrak d$ and
+$(\mathfrak d,a)\mto a$:
+\[
+ p:X\longrightarrow\mathfrak d\qquad\text{and}\qquad
+ \psi:X\longrightarrow\mathrm W(\mathfrak g).
+\]
+When $(\mathrm C_0)$ holds, we also consider the open subset $U$
+of regular points of $\mathrm W(\mathfrak g)$ (cf. 2.10), and
+condition $(\mathrm C_2)$ is then expressed by the fact that the
+morphism
+\[
+ \psi^{-1}(U)\longrightarrow U
+\]
+induced by $\psi$ is an isomorphism (a priori, it is a monomorphism
+by 2.6). Note that it is trivial that the morphism
+$p:X\to\mathfrak d$ is representable by a projection of vector
+bundles (i.e. for every $S$-morphism $S'\to\mathfrak d$,
+corresponding to a Cartan subalgebra $\mathfrak d$ of
+$\mathfrak g_{S'}$, $X\times_{\mathfrak d}S'$ is representable
+by a vector bundle over $S'$, namely $\mathrm W(\mathfrak d)$);
+hence if $\mathfrak d$ is representable, so is $X$. Now one has:
+% typo?: kept as printed: fraktur d is used as the target instead of script D.
+
+\begin{theorem}{2.16}\label{XIV.2.16}
+Let $S$ be a prescheme, $\mathfrak g$ a Lie algebra over $S$
+which is a locally free $\OS$-module of finite type; suppose
+condition $(\mathrm C_0)$ of 2.9 holds.
+
+\noindent a) The functor $\mathscr D$ of Cartan subalgebras of
+$\mathfrak g$ defined above is representable by a quasi-projective
+prescheme of finite presentation over $S$. The same holds for
+the functor $X$ defined above.
+
+\noindent b) When condition $(\mathrm C_2)$ of 2.9 holds,
+$\mathscr D$ and $X$ are smooth over $S$, and the morphism
+$\psi^{-1}(U)\to U$ induced by $\psi$ is an isomorphism.
+
+\noindent c) Still supposing condition $(\mathrm C_2)$ holds,
+let $s\in S$, and let $\mathfrak d_0$ be a Cartan subalgebra
+of $\mathfrak g(s)$ corresponding to a point $d$ of
+$\mathscr D$ rational over $k(s)$. Suppose that
+$\mathfrak d_0$ contains a regular point of $\mathfrak g(s)$
+(a condition automatically verified if $k(s)$ is infinite).
+Let $r$ be the infinitesimal rank of $\mathfrak g(s)$,
+and $n$ its rank over $k(s)$; then there exists an open
+neighborhood $V$ of $d$ in $\mathscr D$ which is
+$S$-isomorphic to an open subset $V'$ of $S[t_1,\ldots,t_{n-r}]$.
+\end{theorem}
+\begin{proof}
+One may suppose that $\mathfrak g$ has constant rank $n$
+and constant nilpotent rank $r$. The assertions made about
+$X$ in a) and b) follow at once from the assertions made
+about $\mathscr D$ and the fact that $X$ is a vector bundle
+over $\mathscr D$ defined by a locally free module, and
+are included merely for reference.
+
+\noindent a) The functor $\mathscr D$ is a subfunctor of
+the functor $\underline{\operatorname{Grass}}_{n-r}(\mathfrak g)$
+whose value at $S'$ is the set of locally free quotient
+modules of rank $n-r$ of $\mathfrak g_{S'}$, and it is
+well known that the latter functor is representable by
+a projective prescheme smooth over $S$ (cf., for example,
+S\'eminaire Cartan 1960/61, Exp. 12, Nos. 2 and 3, whose
+constructions carry over unchanged to the case of
+preschemes)%
+{\renewcommand{\thefootnote}{*}\footnote{Cf. also EGA I,
+2nd edition (to appear in North Holland Publishing Cie).}\addtocounter{footnote}{-1}}%
+\nde{See \S I.1.3 of M. Demazure and P. Gabriel,
+\emph{Groupes alg\'ebriques}, Masson (1970).}.
+One is therefore reduced to a relative problem, namely
+the following: given a locally free quotient module
+of rank $n-r$ of $\mathfrak g$, or, what amounts to
+the same thing, a locally free submodule $\mathfrak d$
+of rank $r$ which is locally a direct summand, represent
+the following functor: $F(S')=\varnothing$ if
+$\mathfrak d$ is not a Cartan subalgebra of
+$\mathfrak g_{S'}$, $F(S')=\{\varnothing\}$ otherwise.
+In fact, we shall see that $F$ is representable by
+a subprescheme of finite presentation of $S$ (which
+will show that $\mathscr D\to\underline{\operatorname{Grass}}$
+is representable by an immersion of finite presentation,
+and will finish proving a)). One begins by expressing
+the condition that $\mathfrak d_{S'}$ be a Lie
+subalgebra of $\mathfrak g_{S'}$; one sees immediately
+that this is expressed by the fact that $S'\to S$
+factors through a certain closed subprescheme $S_1$
+of $S$, of finite presentation over $S$ (whose local
+equations over $S$ are written down immediately using
+a basis of $\mathfrak g$ adapted to the submodule
+$\mathfrak d$). One may therefore suppose that one
+already has $S=S_1$. One must next express that
+$\mathfrak d_{S'}$ contains, locally for fpqc, a
+quasi-regular section of $\mathfrak g_{S'}$, and for
+this one considers $V=\mathrm W(\mathfrak d)\cap U$,
+where $U$ is the open subset of regular points of
+$\mathrm W(\mathfrak g)$ (2.10); then the structural
+morphism $V\to S$ being smooth and quasi-compact,
+its image $S_1$ is an open part of $S$, and the
+immersion morphism $S_1\to S$ is quasi-compact,
+i.e. of finite presentation. The condition considered
+on $S'$ is then expressed by saying that $S'\to S$
+factors through $S_1$. Thus one is reduced to the
+case $S=S_1$, and, using descent theory, to the
+case where $\mathfrak d$ admits a section $a$
+which is a quasi-regular section of $\mathfrak g$.
+One must finally express that the section $a_{S'}$
+of $\mathfrak g_{S'}$ deduced from $a$ satisfies
+$\ad(a_{S'})_{\mathfrak g_{S'}/\mathfrak d_{S'}}$
+bijective, which again amounts to saying that
+$S'\to S$ factors through a certain open subprescheme
+of finite presentation of $S$, namely $S_D$, where
+$D$ is the determinant of $\ad(a)_{\mathfrak g/\mathfrak d}$.
+But then one sees immediately that $\mathfrak d|_{S_D}$
+is a Cartan subalgebra of $\mathfrak g|_{S_D}$,
+so $S_D$ represents the functor $F$, which proves a).
+
+\noindent b) Is immediate by 2.11 a) and XI 1.5.
+Of course, b) is also a consequence of the more
+precise statement c).
+
+\noindent c) Let $a_0$ be a regular point of
+$\mathfrak g(s)$ contained in $\mathfrak d_0$;
+extend it to a section $a$ of $\mathfrak g$
+over an open neighborhood $V$ of $s$; one may
+clearly suppose $V=S$. On the other hand, let
+$M_0$ be a complement of the vector space
+$\mathfrak d_0$ in $\mathfrak g(s)$; then in
+an open neighborhood $V$ of $S$ there exists
+a submodule $M$ of $\mathfrak g$, a direct
+summand of $\mathfrak g|_V$, such that $M(s)=M_0$,
+and one may again suppose $V=S$. Let now $\mathbf V$
+be the subfunctor of $\mathscr D$ such that
+$\mathbf V(S')$ is the set of Cartan subalgebras
+$\mathfrak d'$ of $\mathfrak g_{S'}$ satisfying
+the following two conditions:
+\begin{enumerate}[label=$\arabic*^\circ)$]
+\item $\mathfrak d'$ is complementary to $M_{S'}$, and
+\item the unique section of $(a_{S'}+M_{S'})\cap\mathfrak d$
+is a regular section of $\mathfrak g_{S'}$.
+\end{enumerate}
+Condition $1^\circ)$ corresponds to an open subset
+$V_1$ of $\mathfrak d$ (induced by the open subset
+of $\underline{\operatorname{Grass}}_{n-r}(\mathfrak g)$
+defined by the same condition $1^\circ)$); the
+conjunction of $1^\circ$ and $2^\circ$ corresponds
+to an open subset of $V_1$ by 2.10 and
+$(\mathrm C_2)$. Thus $\mathbf V$ is represented
+by an open subprescheme $V$ of $\mathscr D$,
+clearly containing $a$.
+% typo?: kept as printed: d rather than d' in condition 2; V contains a.
+
+On the other hand, let $\mathbf V'$ be the
+subfunctor of $\mathrm W(M)$ defined by
+\[
+\begin{aligned}
+ \mathbf V'(S')=\{&\text{sections }u'\text{ of }M_{S'}\text{ such that:}\\
+ &\text{(i) }a_{S'}+u'\text{ is a regular section of }\mathfrak g_{S'},\text{ and}\\
+ &\text{(ii) the unique Cartan subalgebra }\mathfrak d'\text{ of }\mathfrak g_{S'}\\
+ &\text{containing }a_{S'}+u'\text{ is complementary to }M_{S'}\}.
+\end{aligned}
+\]
+Then condition $1^\circ)$ corresponds to an open
+subprescheme $V'_1$ of $\mathrm W(M)$, namely
+the inverse image of the open subset $U$ of
+regular points of $\mathrm W(\mathfrak g)$
+(cf. 2.10) under the translation morphism
+$m\mto a+m$. The conjunction of (i) and (ii)
+corresponds to an open subset $V'$ of $V'_1$,
+namely the inverse image of $V$ under the
+obvious morphism $V'_1\to\mathscr D$
+(associating to $u'$ the unique Cartan
+subalgebra $\mathfrak d'$ of $\mathfrak g_{S'}$
+containing $a_{S'}+u'$). The restriction of
+this last morphism to $V'$ is a morphism
+\[
+ V'\longrightarrow V,
+\]
+which is clearly an isomorphism. This proves c).
+% typo?: kept as printed: condition 1 degrees rather than (i).
+\end{proof}
+
+\begin{corollary}{2.17}\label{XIV.2.17}
+Let $\mathfrak g$ be a finite-dimensional Lie
+algebra over a field $k$. Then the scheme
+$\mathscr D$ of Cartan subalgebras of
+$\mathfrak g$ (2.16 a)) is quasi-projective,
+smooth and irreducible. When $\mathfrak g$
+contains a regular element (for example
+when $k$ is infinite), $\mathfrak d$ is a
+rational variety, i.e. its function field
+is a pure extension of $k$.
+\end{corollary}
+The fact that $\mathscr D$ is irreducible
+follows from the fact that one has a
+surjective morphism $\psi^{-1}(U)\to\mathscr D$,
+and $\psi^{-1}(U)$ is irreducible, being
+isomorphic to the open subset $U$ of
+$\mathrm W(\mathfrak g)$. The assertion
+about the function field is an immediate
+consequence of c).
+
+\begin{remarks}{2.18}\label{XIV.2.18}
+I do not know whether this conclusion
+remains true if $k$ is finite, without
+supposing that $\mathfrak g$ contains a
+regular point; compare 2.12. One can prove
+that it is so when $\mathfrak g$ is the
+Lie algebra of a smooth algebraic group
+$G$ over $k$, at least when $G/\text{radical}$
+is an ``adjoint'' semisimple group, using
+a result of Chevalley mentioned below
+(cf. Appendix). It is plausible that this
+result remains valid without restriction
+on $G$; for this it would suffice that
+the cited result of Chevalley be proved
+for every semisimple algebraic group
+(not necessarily adjoint).
+\end{remarks}
+
+\sgasection{3}{Subgroups of type (C) of group preschemes over an arbitrary prescheme}
+\begin{theorem}{3.1}\label{XIV.3.1}
+Let $S$ be a prescheme, $G$ a smooth
+$S$-group prescheme, $\mathfrak g$ its
+Lie algebra (which is a locally free
+module of finite type over $S$), and
+$\mathfrak h$ a Lie subalgebra of
+$\mathfrak g$ which is (as a module)
+locally a direct summand in
+$\mathfrak g$, and such that for every
+$s\in S$, the geometric fiber
+$\mathfrak h_{\bar s}$ contains a
+Cartan subalgebra of $\mathfrak g_{\bar s}$.
+Let $a$ be a quasi-regular section of
+$\mathfrak g$ (2.5). Then
+\[
+ M_a=\uTransp_G(a,\mathfrak h)
+\]
+(the subfunctor of $G$ whose points
+with values in $S'$ are the
+$g\in G(S')$ such that
+$\ad(g)\cdot a_{S'}\in\Gamma(s',\mathfrak h_S)$)
+is representable by a closed subprescheme\nde{One
+will denote it by $\Transp_G(a,\mathfrak h)$.}
+of $G$ smooth over $S$, whose structural
+morphism to $S$ is surjective.
+% typo?: kept as printed: Gamma(s',h_S).
+\end{theorem}
+Consider the canonical morphism
+\[
+ \varphi:G\underset S\times\mathrm W(\mathfrak h)
+ \longrightarrow\mathrm W(\mathfrak g)
+\]
+given by $(g,x)\mto\ad(g)\cdot x$;
+then $M_a$ is $S$-isomorphic to
+$\varphi^{-1}(a)$, the inverse image
+of $a$ (considered as a section of
+$\mathrm W(\mathfrak g)$ over $S$)
+under $\varphi$. It will therefore
+suffice for the smoothness of $M_a$
+that we show that $\varphi$ is smooth
+at the points of $G\times_S\mathrm W(\mathfrak h)$
+over $\Im(a)$; more generally,
+$\varphi$ is smooth at every point
+over a point of $\mathrm W(\mathfrak g)$
+which is regular in its fiber
+$\mathrm W(\mathfrak g(s))$ over $S$.
+To see this, since the source and
+target of $\varphi$ are smooth,
+hence flat and locally of finite
+presentation over $S$, one is
+reduced to verifying it fiber by
+fiber, which reduces one to the
+case where $S$ is the spectrum of
+an algebraically closed field,
+$G$ thus being a locally algebraic
+group over $k$, $\mathfrak h$ a
+subalgebra of its Lie algebra
+$\mathfrak g$ containing a Cartan
+subalgebra of $\mathfrak g$, and
+$a$ a regular point of
+$\mathfrak g$. One may clearly
+suppose (taking into account that
+$\varphi$ is a $G$-morphism) that
+the point considered in
+$G\times\mathrm W(\mathfrak h)$
+is of the form $(e,a)$. One may
+clearly suppose $G$ connected,
+hence of finite type over $k$,
+but then our assertion is
+precisely XIII 5.4. Moreover,
+the fact that $M_a$ is a closed
+subprescheme of $G$ (of finite
+presentation over $S$) is trivial,
+since $M_a$ is the inverse
+image of $\mathrm W(\mathfrak h)$
+under the morphism
+$g\mto\ad(g)\cdot a$ from $G$
+to $\mathrm W(\mathfrak g)$.
+The surjectivity of the
+structural morphism $M_a\to S$
+also reduces to the case of
+an algebraically closed base
+field, but then $\mathfrak h$
+contains a Cartan subalgebra
+$\mathfrak d$ by hypothesis,
+which is therefore conjugate
+to the Cartan subalgebra
+$\mathfrak d=\operatorname{Nil}(a,\mathfrak g)$
+by the conjugacy theorem XIII
+6.1 a), hence $\mathfrak h$
+contains a conjugate of $a$.
+This completes the proof of 3.1.
+% typo?: kept as printed: both Cartan subalgebras are named d.
+
+\begin{corollary}{3.2}\label{XIV.3.2}
+Let $G,\mathfrak g$ be as in
+3.1, with $G$ of finite type
+over $S$, and let
+$\mathfrak k,\mathfrak h$ be
+two Lie subalgebras of
+$\mathfrak g$, locally direct
+summands (as modules); suppose
+that one is under one of
+the following two hypotheses:
+
+\noindent a) For every $s\in S$,
+the geometric fiber
+$\mathfrak k_{\bar s}$ is
+nilpotent and contains a
+regular element of
+$\mathfrak g_{\bar s}$;
+the geometric fiber
+$\mathfrak h_{\bar s}$
+contains a Cartan subalgebra
+of $\mathfrak g_{\bar s}$.
+
+\noindent b) $\mathfrak k$
+is a Cartan subalgebra of
+$\mathfrak g$.
+
+Then $\uTransp_G(\mathfrak k,\mathfrak h)$
+is a closed subprescheme of
+$G$ smooth over $S$; moreover,
+in case a), its structural
+morphism to $S$ is surjective.
+% typo: sous-akgebres -> sous-algebres.
+\end{corollary}
+The fact that the transporter
+is representable by a closed
+subprescheme of finite
+presentation of $G$ is
+immediate, and is left to
+the reader. Let us first
+prove smoothness in case a).
+Suppose first that there
+exists a section $a$ of
+$\mathfrak k$ which is
+quasi-regular in
+$\mathfrak g$. Then it
+suffices to apply 3.1 and the
+
+\begin{lemma}{3.3}\label{XIV.3.3}
+Under the conditions of
+3.2 a), if $a$ is a section
+of $\mathfrak k$ quasi-regular
+in $\mathfrak g$, then one has
+\[
+ \uTransp_G(\mathfrak k,\mathfrak h)
+ =\uTransp_G(a,\mathfrak h).
+\]
+\end{lemma}
+Indeed, taking the definitions
+into account, this amounts
+to showing that if $a$ is
+moreover a section of
+$\mathfrak h$, then one
+has $\mathfrak k\subset\mathfrak h$.
+Now, since by hypothesis
+$\mathfrak k$ is locally
+nilpotent, it follows from
+2.1 that $\mathfrak k\subset
+\operatorname{Nil}(a,\mathfrak g)$;
+on the other hand,
+$\operatorname{Nil}(a,\mathfrak g)\subset\mathfrak h$
+for $\ad(a)_{\mathfrak g/\mathfrak h}$
+is injective (being so
+fiber by fiber by XIII
+4.8 b)). Whence the conclusion.
+In the general case,
+one reduces to the case
+where $S$ is affine
+noetherian by the usual
+standard procedure, then
+to the case where $S$ is
+artinian local (smoothness
+being a property of
+infinitesimal nature),
+and by flat descent to
+the case where its residue
+field is infinite, hence
+the fiber $\mathscr K_0$
+admits an element regular
+in $\mathfrak g_0$.
+One lifts this element
+to an element of
+$\mathscr K=\Gamma(\mathfrak k)$,
+which reduces one to
+the preceding case.
+Thus one has proved,
+in case a), smoothness
+of the transporter;
+as for the fact that
+its structural morphism
+is surjective, it reduces
+to the case where $S$ is
+the spectrum of an
+algebraically closed
+field, hence where
+$\mathscr K$ contains
+a regular point of
+$\mathfrak g$, and
+one applies 3.3 and 3.1.
+
+To prove b), one is
+reduced by the definition
+of smoothness (XI 1.1)
+to proving that if $S$
+is affine, $S_0$ a
+subscheme defined by a
+nilpotent quasi-coherent
+Ideal $J$, and $g_0$ an
+element of $G(S_0)$
+transporting $\mathfrak k_0$
+into $\mathfrak g_0$,
+then $g_0$ lifts to
+an element $g$ of
+$G(S)$ transporting
+$\mathfrak k$ into
+$\mathfrak g$. Now
+the hypothesis made
+on $g_0$ implies that
+one is under the
+conditions of a),
+already treated.
+This completes the proof.
+% typo?: kept as printed: transports k_0 into g_0, and k into g.
+
+Of course, when in
+3.2 b) $\mathfrak h$
+satisfies the stronger
+hypothesis of 3.1,
+then (and only then)
+the structural morphism
+$\uTransp_G(\mathfrak d,\mathfrak h)\to S$
+is surjective. Using
+Hensel's lemma XI 1.10,
+one concludes from
+3.1 and 3.2:
+% typo?: kept as printed: d rather than k.
+
+\begin{corollary}{3.4}\label{XIV.3.4}
+Under the conditions
+of 3.1 for $G$ and
+$\mathfrak h$, and
+supposing $G$ of
+finite type over $S$:
+% Statement continues in en-03.tex.

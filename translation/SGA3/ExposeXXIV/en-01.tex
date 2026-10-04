@@ -1,0 +1,264 @@
+\exposetitle{XXIV}{Automorphisms of reductive groups}
+\label{XXIV}
+% original PDF p. 1
+\setcounter{footnote}{-1}
+\nde{Version of 13/10/2024.}The first part of this exposé (nos. 1 to 5) is a direct consequence of the existence, for a reductive group, of ``sufficiently many outer automorphisms'', a result which is a consequence of the weakest form of the isomorphism theorem for pinned groups. The second part (nos. 6 and 7) presents two applications of the more precise results of the preceding exposé; in particular, no. 7 uses the theorem on generators and relations in its explicit form. Finally, in an appendix (no. 8) we have given results on ``Galois'' cohomology used in the text.
+
+Let us specify our cohomological notation: if $S$ is a scheme and $G$ an $S$-group scheme, we shall denote by $\mathrm H^1(S,G)$ the first cohomology set of $S$ with coefficients in $G$, computed for the (fpqc) topology; it is also the set of isomorphism classes of (fpqc) principal homogeneous sheaves under $G$. We shall denote by $\mathrm H^1_{\mathrm{\acute et}}(S,G)$ the corresponding set for the étale topology; it is therefore the part of $\mathrm H^1(S,G)$ consisting of the classes of homogeneous sheaves under $G$ which are quasi-isotrivial (= locally trivial for the étale topology). We shall denote by $\operatorname{Fib}(S,G)$ the part of $\mathrm H^1(S,G)$ consisting of the classes of representable sheaves (principal homogeneous bundles). We therefore have the inclusions
+\[
+\mathrm H^1_{\mathrm{\acute et}}(S,G)\subset\mathrm H^1(S,G),\qquad
+\operatorname{Fib}(S,G)\subset\mathrm H^1(S,G).
+\]
+If every principal homogeneous sheaf under $G$ is representable (for example if $G$ is quasi-affine over $S$, cf. SGA~1, VIII 7.9), we therefore have $\operatorname{Fib}(S,G)=\mathrm H^1(S,G)$.
+
+If $S'\to S$ is a covering morphism for the (fpqc) topology, we denote by $\mathrm H^1(S'/S,G)$ the kernel of the canonical map $\mathrm H^1(S,G)\to\mathrm H^1(S',G_{S'})$. One knows that $\mathrm H^1(S'/S,G)$ can be computed simplicially (TDTE~I, §~A.4), which implies that when $S'\to S$ is covering for the étale topology, $\mathrm H^1(S'/S,G)$ is also the kernel of $\mathrm H^1_{\mathrm{\acute et}}(S,G)\to\mathrm H^1_{\mathrm{\acute et}}(S',G_{S'})$.
+
+% original PDF p. 2
+Finally, following Exp.~VIII, 4.5, one calls ``theorem 90'' the following assertion: ``every principal homogeneous sheaf under $\mathbf G_{\mathrm m,S}$ is representable and locally trivial'', an assertion equivalent to ``$\mathrm H^1(S,\mathbf G_{\mathrm m,S})=\Pic(S)$'', or again to ``$\mathrm H^1(S,\mathbf G_{\mathrm m,S})=0$ for $S$ local (or, more generally, semi-local)''.
+
+\sgasection{1}{Scheme of automorphisms of a reductive group}
+\numpara{1.0}\label{XXIV.1.0}
+It is appropriate first to specify certain definitions from the preceding exposé. Let $S$ be a nonempty scheme, $G$ a reductive $S$-group, and $\mathscr R=(M,M^*,R,R^*,\Delta)$ a reduced pinned root datum (Exp.~XXIII 1.5). One calls a \emph{pinning of $G$ of type $\mathscr R$}, or an \emph{$\mathscr R$-pinning of $G$}, the datum:
+\begin{enumeratei}
+\item of an isomorphism of $\mathrm D_S(M)$ onto a maximal torus $T$ of $G$ (or, equivalently, of a monomorphism $\mathrm D_S(M)\to G$ whose image is a maximal torus $T$ of $G$), identifying $R$ with a root system of $G$ relative to $T$ (Exp.~XIX, 3.6) and $R^*$ with the set of corresponding coroots,
+\item for each $\alpha\in\Delta$, of an $X_\alpha\in\Gamma(S,\mathfrak g^\alpha)^\times$.
+\end{enumeratei}
+For $G$ to possess an $\mathscr R$-pinning, it is necessary and sufficient that it be splittable and of type $\mathscr R$ (Exp.~XXII, 2.7).
+
+If $u:G\to G'$ is an isomorphism of reductive $S$-groups, to every $\mathscr R$-pinning $\mathscr E$ of $G$ there corresponds, by ``transport of structure'', an $\mathscr R$-pinning $u(\mathscr E)$ of $G'$. If $v:\mathscr R'\to\mathscr R$ is an isomorphism of pinned root data, to every $\mathscr R'$-pinning $\mathscr E$ of $G'$ there corresponds by transport of structure an $\mathscr R$-pinning $v(\mathscr E)$ of $G$.
+% typo?: the source says G' and G in this transport-of-structure sentence; kept as printed.
+
+Let us call a \emph{pinned group} a triple $(G,\mathscr R,\mathscr E)$ where $G$ is a reductive $S$-group, $\mathscr R$ a reduced pinned root datum, and $\mathscr E$ a pinning of $G$ of type $\mathscr R$. One calls an \emph{isomorphism} of the pinned group $(G,\mathscr R,\mathscr E)$ onto the pinned group $(G',\mathscr R',\mathscr E')$ a pair $(u,v)$ where $u$ is an isomorphism $u:G\to G'$ and $v$ an isomorphism of pinned root data $v:\mathscr R'\to\mathscr R$, such that $u(\mathscr E)=v(\mathscr E')$.\nde{Thus $\Lie(u)(X_{v(\alpha)})=X'_\alpha$, for every $\alpha\in R'$.}
+
+N.~B. \emph{If $S$ is nonempty}, $v$ is uniquely determined by $u$, and by abuse of language one will also say that $u$ is an isomorphism of the pinned groups. In particular, if $(G,\mathscr R,\mathscr E)$ is a pinned group, an automorphism of $(G,\mathscr R,\mathscr E)$ is therefore an automorphism $u$ of $G$ such that there exists an automorphism $v$ of $\mathscr R$ such that $u(\mathscr E)=v(\mathscr E)$; it is therefore an automorphism of $G$, normalizing $T$, inducing on $T$ an automorphism of the form $\mathrm D_S(h)$, where $h$ is an automorphism of $M$, and permuting the elements $X_\alpha$, $\alpha\in\Delta$, among themselves. (As one readily sees, the preceding conditions in fact characterize the automorphisms of $(G,\mathscr R,\mathscr E)$.)
+
+One has an evident contravariant functor
+\[
+\Phi:\quad (G,\mathscr R,\mathscr E)\mto\mathscr R,\qquad (u,v)\mto v
+\]
+and the principal result of the preceding exposé (Exp.~XXIII, 4.1) shows us that it is a fully faithful functor (we shall moreover see in the following exposé that it is an equivalence of categories). It follows in particular that the group of automorphisms of $(G,\mathscr R,\mathscr E)$ is canonically isomorphic to the group of automorphisms of the pinned root datum $\mathscr R$ (cf. Exp.~XXIII, 5.5).
+
+% original PDF p. 3
+\numpara{1.1}\label{XXIV.1.1}
+Let $S$ be a scheme; equip $\Sch/S$ with the (fpqc) topology and consider the $S$-sheaf of groups $\underline{\Aut}_{S\text{-gr.}}(G)$, where $G$ is an $S$-group scheme. One has an exact sequence of $S$-sheaves of groups
+\[
+\xymatrix{1\ar[r]&\uCentr(G)\ar[r]&G\ar[r]^{\mathrm{int}}&\underline{\Aut}_{S\text{-gr.}}(G)}
+\]
+which defines a monomorphism
+\[
+j:G/\uCentr(G)\to\underline{\Aut}_{S\text{-gr.}}(G).
+\]
+The image sheaf of $j$ is the sheaf of inner automorphisms of $G$; for an automorphism $u$ of $G$ to be inner, it is necessary and sufficient that there exist a covering family $\{S_i\to S\}$ and, for each $i$, a $g_i\in G(S_i)$ such that $\mathrm{int}(g_i)=u_{S_i}$. In this case, if $v$ is another automorphism of $G$, one sees at once that $\mathrm{int}(v)u=vuv^{-1}$ is the inner automorphism defined by the family $g'_i=v(g_i)$. It follows that the image of $j$ is normal in $\underline{\Aut}_{S\text{-gr.}}(G)$. The quotient sheaf of groups, denoted by $\underline{\operatorname{Autext}}(G)$, is the sheaf of outer automorphisms of $G$. One therefore has an exact sequence
+\[
+1\to G/\uCentr(G)\to\underline{\Aut}_{S\text{-gr.}}(G)
+\to\underline{\operatorname{Autext}}(G)\to1.
+\]
+The preceding definitions are all compatible with base change. They are of course valid in any site.
+
+\numpara{1.2}\label{XXIV.1.2}
+Let $S$ be a scheme and $(G,\mathscr R,\mathscr E)$ a pinned reductive $S$-group. Let $E$ be the (abstract) group of automorphisms of the pinned root datum $\mathscr R$, i.e. the group of automorphisms of $\mathscr R$ normalizing $\Delta$. By Exp.~XXIII, 5.5, one has a canonical monomorphism
+\[
+E\to\underline{\Aut}_{S\text{-gr.}}(G)
+\]
+which associates to $h\in E$ the unique automorphism $u$ of the pinned group $G$ such that $\Phi(u)=h$. This monomorphism canonically defines a monomorphism of sheaves
+\begin{equation}\tag{$*$}
+a:E_S\to\underline{\Aut}_{S\text{-gr.}}(G).
+\end{equation}
+For an automorphism $u$ of $G$ to be a section of the image sheaf of $a$, it is necessary and sufficient that the following conditions hold:
+\begin{enumeratei}
+\item $u$ normalizes $T$. One then knows that $u$ permutes the roots of $G$ relative to $T$. If $\alpha\in R$, then $u(\alpha):t\mto\alpha(u^{-1}(t))$ is therefore locally on $S$ of the form $t\mto\beta(t)$, with $\beta\in R$. The second condition can then be written as follows:
+\item If $\alpha\in\Delta$ and if $U$ is an open subset of $S$ such that $u(\alpha)_U\in R$, then $u(\alpha)_U\in\Delta$ and
+\[
+\Lie(u_U)(X_\alpha)_U=(X_{u(\alpha)})_U.
+\]
+\end{enumeratei}
+It follows at once from the definitions that the sections of $a(E_S)$ normalize the subgroups of $G$ defined by the pinning: $T$, $B$, $B^-$, $U$, $U^-$. These definitions being given, one has:
+
+% original PDF p. 4
+\begin{theorem}{1.3}\label{XXIV.1.3}
+Let $S$ be a scheme and $G$ a reductive $S$-group. Consider the canonical exact sequence of $S$-sheaves of groups\nde{Recall that $\ad(G)=G/\uCentr(G)$ denotes the adjoint group of $G$, cf. XXII 4.3.6.}
+\[
+\xymatrix{1\ar[r]&\ad(G)\ar[r]&\underline{\Aut}_{S\text{-gr.}}(G)\ar[r]^p&\underline{\operatorname{Autext}}(G)\ar[r]&1.}
+\]
+\begin{enumeratei}
+\item $\underline{\Aut}_{S\text{-gr.}}(G)$ is representable by a smooth separated $S$-scheme.
+\item $\underline{\operatorname{Autext}}(G)$ is representable by a twisted constant $S$-scheme of finite generation (Exp.~X, 5.1).
+\item If $G$ is splittable, the preceding exact sequence is split. More precisely, for every pinning of $G$, the morphism (cf. 1.2 ($*$))
+\[
+p\circ a:E_S\to\underline{\operatorname{Autext}}(G)
+\]
+is an isomorphism.
+\end{enumeratei}
+\end{theorem}
+
+Let us first show how the theorem follows from the following lemma:
+\begin{lemma}{1.4}\label{XXIV.1.4}
+Under the hypotheses of (iii), $\underline{\Aut}_{S\text{-gr.}}(G)$ is the semidirect product $a(E_S)\cdot\ad(G)$.\nde{Here and in what follows we have replaced the notation $\mathrm{int}(G)$ by $\ad(G)$.}
+\end{lemma}
+
+The lemma immediately implies the theorem when $G$ is splittable. Since $G$ is locally splittable for the étale topology (Exp.~XXII, 2.3), hence also for the (fppf) topology, and since the latter is ``of effective descent'' for the fibered category of twisted constant morphisms (Exp.~X, 5.5), one deduces (ii) in the general case (cf. Exp.~IV, 4.6.8). To deduce (i), one observes that $\ad(G)$ is affine over $S$, hence the morphism $p$ is affine when $\underline{\Aut}_{S\text{-gr.}}(G)$ is representable, and one concludes by descent of affine schemes.\nde{Cf. SGA~1, VIII 2.1.}
+
+It therefore only remains for us to prove 1.4. To do so, it suffices to prove:
+\begin{lemma}{1.5}\label{XXIV.1.5}
+If $(\mathscr R,\mathscr E)$ and $(\mathscr R',\mathscr E')$ are two pinnings of the reductive $S$-group $G$, there exists a unique inner automorphism $u$ of $G$ over $S$ taking one pinning to the other (i.e. such that there exists $v:\mathscr R'\isomto\mathscr R$ such that $u(\mathscr E)=v(\mathscr E')$, cf. 1.0).
+\end{lemma}
+
+\numpara{1.5.1}\label{XXIV.1.5.1}\textit{Uniqueness.} It suffices to prove that if $G$ is a pinned $S$-group and if $\mathrm{int}(g)$ is an automorphism of a pinned group ($g\in G(S)$), then $\mathrm{int}(g)=\mathrm{id}$. Now one first has $\mathrm{int}(g)T=T$, $\mathrm{int}(g)B=B$, hence $g\in\uNorm_G(T)(S)\cap\uNorm_G(B)(S)=T(S)$ (cf. for example Exp.~XXII, 5.6.1). It follows that $\mathrm{int}(g)$ normalizes each $U_\alpha$ and that
+\[
+\Lie(\mathrm{int}(g))X_\alpha=\Ad(g)X_\alpha=\alpha(g)X_\alpha
+\]
+for every $\alpha\in\Delta$. One therefore has $\alpha(g)=1$ for $\alpha\in\Delta$, hence $g\in\bigcap_{\alpha\in\Delta}(\Ker\alpha)(S)=\uCentr(G)(S)$ (Exp.~XXII, 4.1.8). \hfill Q.E.D.
+
+% original PDF p. 5
+\numpara{1.5.2}\label{XXIV.1.5.2}\textit{Existence.} It suffices to prove it locally for the (fpqc) topology. Let
+\[
+(T,M,R,\Delta,(X_\alpha)_{\alpha\in\Delta})\quad\text{and}\quad
+(T',M',R',\Delta',(X'_{\alpha'})_{\alpha'\in\Delta'})
+\]
+be the two pinnings. By conjugacy of maximal tori, one may suppose $T=T'$. After restricting $S$, one may suppose that the isomorphism $\mathrm D_S(M)\simeq\mathrm D_S(M')$ comes from an isomorphism $M\simeq M'$ taking $R$ onto $R'$, and one is reduced to the situation $T=T'$, $M=M'$, $R=R'$. Since the systems of simple roots are conjugate under the Weyl group (Exp.~XXI, 3.3.7), one may also suppose $\Delta=\Delta'$. There then exists for each $\alpha\in\Delta$ a scalar $z_\alpha\in\Gm(S)$ such that $X'_\alpha=z_\alpha X_\alpha$, and it suffices to construct locally for (fpqc) a section $t$ of $T$ such that $\alpha(t)=z_\alpha$ for each $\alpha\in\Delta$. But the morphism $T\to(\mathbf G_{\mathrm m,S})^\Delta$ with components $\{\alpha,\alpha\in\Delta\}$ is the dual of an \emph{injection} $\ZZ^\Delta\to M$, hence is faithfully flat, which completes the proof of 1.5.2 and therefore of 1.3.
+
+\begin{corollary}{1.6}\label{XXIV.1.6}
+Let $S$ be a scheme and $G$ a reductive $S$-group. The following conditions are equivalent:
+\begin{enumeratei}
+\item $\underline{\Aut}_{S\text{-gr.}}(G)$ is affine (resp. of finite type, resp. of finite presentation, resp. quasi-compact) over $S$.
+\item $\underline{\operatorname{Autext}}(G)$ is finite over $S$.
+\item For every $s\in S$, one has $\operatorname{rkred}(G_s)-\operatorname{rkss}(G_s)\leq1$.
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+Indeed, since $\ad(G)$ is affine, flat and of finite presentation over $S$, the morphism $p:\underline{\Aut}_{S\text{-gr.}}(G)\to\underline{\operatorname{Autext}}(G)$ is affine, faithfully flat and of finite presentation.
+
+If $\underline{\operatorname{Autext}}(G)$ is finite over $S$, it is affine over $S$, hence so is $\underline{\Aut}_{S\text{-gr.}}(G)$, which proves (ii) $\Rightarrow$ (i). If $\underline{\Aut}_{S\text{-gr.}}(G)$ is quasi-compact over $S$, it is of finite presentation over $S$ (being in any case locally of finite presentation and separated over $S$); by Exp.~V, 9.1, $\underline{\operatorname{Autext}}(G)$ is then of finite presentation over $S$, hence finite, which proves (i) $\Rightarrow$ (ii). Finally, to prove the equivalence of (ii) and (iii), one may suppose $G$ split, and one is reduced to Exp.~XXI, 6.7.8.
+\end{proof}
+
+\begin{corollary}{1.7}\label{XXIV.1.7}
+Let $S$ be a scheme and $G$ a reductive $S$-group. Then one has $\underline{\Aut}_{S\text{-gr.}}(G)^0\simeq\ad(G)$.
+\end{corollary}
+\begin{corollary}{1.8}\label{XXIV.1.8}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $H$ a smooth affine $S$-group scheme with connected fibers over $S$. Then the $S$-functor
+\[
+\underline{\Isom}_{S\text{-gr.}}(G,H)
+\]
+is representable by a smooth separated $S$-scheme (which is affine over $S$ if $G$ is semisimple).
+\end{corollary}
+Indeed, let $U$ be the set of points $s$ of $S$ such that $H_s$ is reductive; it is open (Exp.~XIX, 2.6); if $S'$ is an $S$-scheme, $H_{S'}$ is reductive if and only if $S'\to S$ factors through $U$. It follows that the canonical morphism $\underline{\Isom}_{S\text{-gr.}}(G,H)\to S$ factors through $U$. One may therefore suppose $S=U$ and one is reduced to:
+
+% original PDF p. 6
+\begin{corollary}{1.9}\label{XXIV.1.9}
+Let $S$ be a scheme and $G$, $G'$ two reductive $S$-groups. Then
+\[
+F=\underline{\Isom}_{S\text{-gr.}}(G,G')
+\]
+is representable by a smooth separated $S$-scheme (affine if $G$ or $G'$ is semisimple). Moreover, $S$ decomposes as the sum of two open subschemes $S_1$ and $S_2$ such that $F_{S_1}=\varnothing$ and $F_{S_2}$ is a left (resp. right) principal homogeneous bundle under $\underline{\Aut}_{S_2\text{-gr.}}(G'_{S_2})$ (resp. $\underline{\Aut}_{S_2\text{-gr.}}(G_{S_2})$).
+\end{corollary}
+\begin{proof}
+Indeed, let $S_2$ be the set of points of $S$ where $G$ and $G'$ have the same type, and let $S_1$ be its complement.
+
+Since the type of a reductive group is a locally constant function, $S_1$ and $S_2$ are open. It is clear that $F_{S_1}=\varnothing$, and one may suppose $S=S_2$. By Exp.~XXIII, 5.6, $F$ is a principal homogeneous sheaf under $\underline{\Aut}_{S\text{-gr.}}(G)$, locally trivial for the étale topology. It follows that $F_0=F/\ad(G)$ is a principal homogeneous sheaf under $\underline{\operatorname{Autext}}(G)$, locally trivial for the étale topology, hence representable (Exp.~X, 5.5). Since $\ad(G)$ is affine, $F$ is therefore also representable.
+\end{proof}
+Let us observe that in the course of the proof one has obtained:
+\begin{corollary}{1.10}\label{XXIV.1.10}
+Let $S$ be a scheme and $G$, $G'$ two reductive $S$-groups of the same type at every $s\in S$. Then $\ad(G)$ acts freely (on the right) on $\underline{\Isom}_{S\text{-gr.}}(G,G')$, and the quotient sheaf
+\[
+\underline{\operatorname{Isomext}}(G,G')=\underline{\Isom}_{S\text{-gr.}}(G,G')/\ad(G)
+\]
+is representable by a twisted constant $S$-scheme, which is a principal homogeneous bundle under $\underline{\operatorname{Autext}}(G)$ (and which is therefore finite over $S$ if $G$ is semisimple). Moreover, the isomorphism
+\[
+\underline{\Isom}_{S\text{-gr.}}(G,G')\simeq\underline{\Isom}_{S\text{-gr.}}(G',G)
+\]
+defined by $u\mto u^{-1}$ induces an isomorphism
+\[
+\underline{\operatorname{Isomext}}(G,G')\simeq\underline{\operatorname{Isomext}}(G',G).
+\]
+\end{corollary}
+\begin{remark}{1.11}\label{XXIV.1.11}
+If $\underline{\operatorname{Isomext}}(G,G')(S)\ne\varnothing$, one says that $G$ is an inner twisted form of $G'$; then $G'$ is an inner twisted form of $G$; one can then reduce the structure group of $\underline{\Isom}_{S\text{-gr.}}(G,G')$ to $\ad(G)$. More precisely, let $u\in\underline{\operatorname{Isomext}}(G,G')(S)$, considered as a section $u:S\to\underline{\operatorname{Isomext}}(G,G')$. Denote by
+\[
+\underline{\operatorname{Isomint}}_u(G,G')
+\]
+the inverse image, under the canonical morphism $\underline{\Isom}_{S\text{-gr.}}(G,G')\to\underline{\operatorname{Isomext}}(G,G')$, of the closed subscheme of $\underline{\operatorname{Isomext}}(G,G')$ which is the image of $u$. The natural action of $\ad(G)$ on $\underline{\operatorname{Isomint}}_u(G,G')$ equips this scheme with a structure of principal homogeneous bundle; by extension of the structure group\nde{We have corrected $\ad(G)\to\underline{\operatorname{Autext}}(G)$ to $\ad(G)\to\underline{\Aut}(G)$.} $\ad(G)\to\underline{\Aut}(G)$, $\underline{\operatorname{Isomint}}_u(G,G')$ gives back $\underline{\Isom}_{S\text{-gr.}}(G,G')$.
+\end{remark}
+By Hensel's lemma (Exp.~XI, 1.11), 1.8 immediately gives:
+
+% original PDF p. 7
+\begin{corollary}{1.12}\label{XXIV.1.12}
+Let $S$ be a henselian local scheme, $G$ a reductive $S$-group, $G'$ a smooth affine $S$-group with connected fibers, and $s$ the closed point of $S$. If $G_s$ and $G'_s$ are isomorphic algebraic $\kappa(s)$-groups, $G$ and $G'$ are isomorphic. More precisely, every $\kappa(s)$-isomorphism $G_s\simeq G'_s$ comes from an $S$-isomorphism $G\simeq G'$.
+\end{corollary}
+Applying 1.7 (resp. 1.12) to the scheme of dual numbers over a field, one deduces from Exp.~III, 2.10 (resp. 3.10) part (i) (resp. (ii)) of the following corollary.
+\begin{corollary}{1.13}\label{XXIV.1.13}
+Let $k$ be a field and $G$ a reductive $k$-group.
+\begin{enumeratei}
+\item If $G$ is adjoint, one has $\mathrm H^1(G,\Lie(G/k))=0$.\nde{We have corrected the original, which stated (i) without assuming $G$ adjoint. According to the characterization of the $\mathrm H^i(G,-)$ as derived functors of $\Hom_G(k,-)$ (Exp.~I, 5.3.1, see also [Ja87], I 4.16), one has $\mathrm H^i(G,V)=\Ext^i_G(k,V)$ for every $G$-module $V$; now if $\operatorname{char}(k)=p>0$ and if $G=\SL_{p,k}$, then $\Lie(\GL_p/k)$ is a nontrivial extension of $k$ by $\mathfrak g=\Lie(\SL_p/k)$, hence $\mathrm H^1(G,\mathfrak g)\ne0$. See also the addition 1.15.1 below.}
+\item One has $\mathrm H^2(G,\Lie(G/k))=0$.
+\end{enumeratei}
+\end{corollary}
+\begin{remark}{1.14}\label{XXIV.1.14}
+(i) The assertion concerning $\mathrm H^1$ was known (Chevalley); that concerning $\mathrm H^2$ was proved by Chevalley in most cases of the classification.
+
+(ii) In fact, the conjunction of 1.13 and the uniqueness theorem over an algebraically closed field is essentially equivalent to the uniqueness theorem. A direct proof of 1.13 would therefore give a way to deduce the general uniqueness theorem from Chevalley's uniqueness theorem over a field.
+
+The existence of reductive groups of all types over all schemes (Exp.~XXV) shows that the obstructions to lifting a reductive $k$-group $G$ over Artinian rings with residue field $k$ (which, by Exp.~III, 3.8, are elements of
+\[
+\mathrm H^3(G,\Lie(G/k)\otimes V)\simeq\mathrm H^3(G,\Lie(G/k))\otimes V,
+\]
+where $V$ is a certain $k$-vector space (equipped with the trivial action of $G$)) vanish. This seems to suggest that $\mathrm H^3(G,\Lie(G/k))=0$. Here again, a direct proof of this fact (if it is true) would doubtless give a way to deduce the general existence theorem from the existence theorem over a field (Chevalley's Tôhoku).
+\end{remark}
+\begin{corollary}{1.15}\label{XXIV.1.15}
+Let $k$ be a field,\nde{We have replaced ``scheme'' by ``field''.} and $G$ a reductive $k$-group. Consider $k$ as a trivial $G$-module. Then
+\[
+\mathrm H^1(G,k)=\mathrm H^2(G,k)=0.
+\]
+\end{corollary}
+\begin{proof}
+\nde{Because of the correction made in 1.13, we have given another proof in the case of $\mathrm H^1$. Moreover, it follows from a theorem of G.~Kempf that $\mathrm H^i(G,k)=0$ for every $i>0$, cf. [Ja87], II 4.5 and 4.11.}Since $\mathrm H^i(G_{\bar k},\bar k)=\mathrm H^i(G,k)\otimes\bar k$, one may suppose $k$ algebraically closed. An element of $\mathrm H^1(G,k)$ is nothing other than a morphism of $k$-groups $\phi:G\to\mathbf G_{\mathrm a,k}$. Then $\phi(G)=G/\Ker(\phi)$ is a smooth, connected and reductive subgroup (cf. XIX 1.7) of $\mathbf G_{\mathrm a,k}$, hence trivial. Thus $\mathrm H^1(G,k)=0$.
+
+% original PDF p. 8
+Consider now the reductive $k$-group $H=G\times_k\mathbf G_{\mathrm m,k}$. One has $\Lie(H/k)=\Lie(G/k)\oplus k$, a decomposition stable under $H$. For an arbitrary $H$-module $V$, one has
+\[
+\mathrm H^i(H,V)=\mathrm H^i(G,\mathrm H^0(\mathbf G_{\mathrm m,k},V))
+\]
+(this follows from the characterization of the $\mathrm H^i(H,-)$ as derived functors of $\mathrm H^0(H,-)=\mathrm H^0(G,\mathrm H^0(\mathbf G_{\mathrm m,k},-))$, and from the fact that the functor $\mathrm H^0(\mathbf G_{\mathrm m,k},-)$ is exact, cf. Exp.~I, 5.3.1 and 5.3.3). In particular, for every $i$ one has
+\[
+\mathrm H^i(H,\Lie(H/k))=\mathrm H^i(G,\Lie(G/k))\oplus\mathrm H^i(G,k)
+\]
+hence $\mathrm H^2(G,k)=0$ by applying 1.13 (ii) to the reductive group $H$.
+\end{proof}
+\begin{corollary}{1.15.1}\label{XXIV.1.15.1}
+\nde{We have added this corollary, drawn from remarks of O.~Gabber, which makes 1.13 (i) more precise.}Let $k$ be a field, $G$ a reductive $k$-group, $Z$ its center and $\mathscr R=\allowbreak(M,\allowbreak M^*,\allowbreak R,\allowbreak R^*)$ the type of $G$. Then one has
+\[
+\mathrm H^1(G,\Lie(G/k))\simeq\Ext^1_{\ZZ}(M/\Gamma_0(R),k).
+\]
+In particular, $\mathrm H^1(G,\Lie(G/k))=0$ if and only if $Z$ is smooth over $k$.
+\end{corollary}
+\begin{proof}
+Indeed, let $\mathfrak g$ (resp. $\mathfrak z$, resp. $\mathfrak g_{\mathrm{ad}}$) be the Lie algebra of $G$ (resp. $Z$, resp. $G_{\mathrm{ad}}=G/Z$). It follows from 1.15 (and its proof) that
+\[
+\mathrm H^1(G,\mathfrak g)=\mathrm H^1(G_{\mathrm{ad}},\mathfrak g)\simeq\mathrm H^1(G_{\mathrm{ad}},\mathfrak g/\mathfrak z).
+\]
+Put $C=\Coker(\mathfrak g\to\mathfrak g_{\mathrm{ad}})$; one has an exact sequence
+\[
+\xymatrix{0\ar[r]&\mathfrak g/\mathfrak z\ar[r]&\mathfrak g_{\mathrm{ad}}\ar[r]&C\ar[r]&0.}
+\]
+Since $\mathrm H^1(G_{\mathrm{ad}},\mathfrak g_{\mathrm{ad}})=0$ (1.13) and $\mathrm H^0(G_{\mathrm{ad}},\mathfrak g_{\mathrm{ad}})=0$ (cf. Exp.~II, 5.2.3), one obtains
+\[
+\mathrm H^1(G_{\mathrm{ad}},\mathfrak g/\mathfrak z)\simeq\mathrm H^0(G_{\mathrm{ad}},C).
+\]
+To compute the right-hand term, one may suppose $k$ algebraically closed. Let $(G,T,M,R)$ be a splitting of $G$; then $Z=\mathrm D_k(M/\Gamma_0(R))$ and $C$ identifies with
+\[
+\Coker\bigl(\Hom_{\ZZ}(M,k)\to\Hom_{\ZZ}(\Gamma_0(R),k)\bigr)
+\simeq\Ext^1_{\ZZ}(M/\Gamma_0(R),k),
+\]
+equipped with the trivial action of $G_{\mathrm{ad}}$. The corollary follows, since $Z$ is not smooth over $k$ if and only if $\operatorname{char}(k)=p>0$ and $M/\Gamma_0(R)$ has $p$-torsion (Exp.~IX, 2.1).
+\end{proof}
+\begin{definition}{1.16}\label{XXIV.1.16}
+Let $S$ be a scheme and $G$ a reductive $S$-group. One calls a \emph{form of $G$ over $S$} an $S$-group scheme $G'$ locally isomorphic to $G$ for the (fpqc) topology (it amounts to the same thing to say (cf. Exp.~XXIII, 5.6) that $G'$ is locally isomorphic to $G$ for the étale topology, or again that $G'$ is a reductive $S$-group of the same type as $G$ at every point of $S$).
+\end{definition}
+\begin{corollary}{1.17}\label{XXIV.1.17}
+Let $S$ be a scheme and $G$ a reductive $S$-group.
+\begin{enumeratei}
+\item The functor
+\[
+G'\mto\underline{\Isom}_{S\text{-gr.}}(G,G')
+\]
+is an equivalence between the category of forms of $G$ over $S$ and the category of principal homogeneous bundles under $\underline{\Aut}_{S\text{-gr.}}(G)$.
+% Corollary 1.17 and enumeratei continue in en-02.tex, PDF p. 9.

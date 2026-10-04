@@ -1,0 +1,487 @@
+As the functor \(\Gamma\) is exact, the same holds for the
+\(H^{n}(\mathbf{G},\,)\). It will now suffice for us to prove:
+
+\begin{lemma}{5.2.2}
+\label{I.5.2.2}
+For every \(\mathbf{P}\in\Ob(\mathbf{O}\text{-}\mathrm{Mod.})\), one has:
+\[
+H^{n}(\mathbf{G},\Hom(\mathbf{G},\mathbf{P}))=0
+\quad\text{and}\quad
+\underline{H}^{n}(\mathbf{G},\uHom(\mathbf{G},\mathbf{P}))=0,
+\quad\text{for }n>0.
+\]
+\end{lemma}
+
+It suffices for us to prove that \(C^{*}(\mathbf{G},\Hom(\mathbf{G},\mathbf{P}))\) and
+\(\underline{C}^{*}(\mathbf{G},\uHom(\mathbf{G},\mathbf{P}))\) are homotopically
+trivial in degrees \(>0\). It even suffices to do so for the second, the
+corresponding result for the first being deduced from it by base
+change.\nde{The original has been expanded in what follows.}
+Now, one defines for every \(n\geqslant 0\) a morphism
+\[
+\sigma\colon
+\underline{C}^{n+1}(\mathbf{G},\uHom(\mathbf{G},\mathbf{P}))
+\longrightarrow
+\underline{C}^{n}(\mathbf{G},\uHom(\mathbf{G},\mathbf{P}))
+\]
+as follows. Let \(f\in\underline{C}^{n+1}(\mathbf{G},\uHom(\mathbf{G},\mathbf{P}))\);
+for every \(S\in\Ob(\mathcal{C})\) and \(g_{1},\ldots,g_{n}\in\mathbf{G}(S)\),
+\(\sigma(f)(g_{1},\ldots,g_{n})\) is the element of
+\(\Hom_{S}(\mathbf{G}_{S},\mathbf{P}_{S})\) defined by: for every \(S'\to S\)
+and \(x\in\mathbf{G}(S')\),
+\[
+\sigma(f)(g_{1},\ldots,g_{n})(x)
+=f(x,g_{1},\ldots,g_{n})(e)\in\mathbf{P}(S')
+\]
+(where \(e\) denotes the unit element of \(\mathbf{G}(S')\)). Then \(\sigma\) is a
+homotopy operator in degrees \(>0\). Indeed, for every
+\(g_{1},\ldots,g_{n+1}\in\mathbf{G}(S)\) and \(x\in\mathbf{G}(S')\) one has, on
+the one hand:
+\begin{align*}
+\partial\sigma(f)(g_{1},\ldots,g_{n+1})(x)
+&=f(xg_{1},g_{2},\ldots,g_{n+1})(e)\\
+&\quad+\sum_{i=1}^{n}(-1)^{i}f(x,g_{1},\ldots,g_{i}g_{i+1},\ldots,g_{n+1})(e)
+\\
+&\quad+(-1)^{n+1}f(x,g_{1},\ldots,g_{n})(e),
+\end{align*}
+and on the other hand:
+% typo?: in \(\sigma(\partial f)\), the summand has no \((e)\), unlike the neighbouring terms; kept as printed.
+\begin{align*}
+\sigma(\partial f)(g_{1},\ldots,g_{n+1})(x)
+&=(xf(g_{1},g_{2},\ldots,g_{n+1}))(e)
+-f(xg_{1},g_{2},\ldots,g_{n+1})(e)\\
+&\quad+\sum_{i=1}^{n}(-1)^{i+1}f(x,g_{1},\ldots,g_{i}g_{i+1},\ldots,g_{n+1})
+\\
+&\quad+(-1)^{n+2}f(x,g_{1},\ldots,g_{n})(e),
+\end{align*}
+whence
+\[
+\bigl(\partial\sigma(f)+\sigma(\partial f)\bigr)(g_{1},\ldots,g_{n+1})(x)
+=f(g_{1},\ldots,g_{n+1})(x),
+\]
+\ie \(\partial\sigma+\sigma\partial\) is the identity map of
+\(\underline{C}^{n+1}(\mathbf{G},\uHom(\mathbf{G},\mathbf{P}))\), for every
+\(n\geqslant 0\).
+
+\begin{remark}{5.2.3}
+\label{I.5.2.3}
+\nde{This remark has been added.}
+The hypothesis ``\(\mathcal{C}\) small'' is used only to ensure the existence
+of the derived functors \(R^{n}H^{0}\) and \(R^{n}\underline{H}^{0}\). In all
+cases, what precedes shows that the functors \(H^{n}(\mathbf{G},\,)\)
+\resp \(\underline{H}^{n}(\mathbf{G},\,)\) form a cohomological functor,
+effaceable in degrees \(>0\), hence they are the (right) satellite functors
+of the left exact functor \(H^{0}(\mathbf{G},\,)\)
+\resp \(\underline{H}^{0}(\mathbf{G},\,)\), in the sense of \cite{Gr57}, 2.2;
+if \((\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.})\) has enough injective
+objects (which is the case if \(\mathcal{C}\) is small), they coincide with
+the derived functors (\loccit 2.3).
+\end{remark}
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{5.3.}\ Cohomology of the \(G\)-\(\OS\)-modules.\ ---\ \label{I.5.3}%
+Let \(S\) be a scheme, \(G\) an \(S\)-group and \(\mathcal{F}\) a quasi-coherent
+\(G\)-\(\OS\)-module. One defines the cohomology groups of \(G\) with values in
+\(\mathcal{F}\) by
+\[
+H^{n}(G,\mathcal{F})=H^{n}(\mathbf{h}_{G},\mathbf{W}(\mathcal{F})).
+\]
+(for the notations, \cf 4.6).
+
+Suppose \(G\) is \emph{affine} over \(S\). Then, in view of proposition 4.6.4,
+this cohomology is computed in the following way: \(H^{n}(G,\mathcal{F})\) is
+the \(n\)-th homology group of the complex \(C^{*}(G,\mathcal{F})\) whose
+\(n\)-th term is:
+\[
+C^{n}(G,\mathcal{F})
+=\Gamma\Bigl(S,\,
+\mathcal{F}\otimes
+\underbrace{\mathcal{A}(G)\otimes\cdots\otimes\mathcal{A}(G)}_{n\text{ times}}\Bigr).
+\]
+If \(f\) \resp \(a_{i}\) is a section of \(\mathcal{F}\) \resp of
+\(\mathcal{A}(G)\) over an open of \(S\), one has
+% typo?: no \(\otimes\) between \(a_{2}\) and \(\cdots\); kept as printed.
+\begin{align*}
+\partial(f\otimes a_{1}\otimes\cdots\otimes a_{n})
+&=\mu_{\mathcal{F}}(f)\otimes a_{1}\otimes a_{2}\otimes\cdots\otimes a_{n}\\
+&\quad+\sum_{i=1}^{n}(-1)^{i}f\otimes a_{1}\otimes\cdots\otimes\Delta a_{i}\otimes\cdots\otimes a_{n}\\
+&\quad+(-1)^{n+1}f\otimes a_{1}\otimes a_{2}\cdots\otimes a_{n}\otimes 1,
+\end{align*}
+where \(\Delta\colon\mathcal{A}(G)\to\mathcal{A}(G)\otimes\mathcal{A}(G)\) and
+\(\mu_{\mathcal{F}}\colon\mathcal{F}\to\mathcal{F}\otimes\mathcal{A}(G)\)
+describe the coalgebra structure of \(\mathcal{A}(G)\) and the comodule
+structure of \(\mathcal{F}\). Let us note in passing that the cohomology of
+\(G\) with values in \(\mathcal{F}\) therefore depends only on the comodule
+structure of \(\mathcal{F}\), and in particular only on the \(S\)-monoid
+structure of \(G\).
+
+One has in particular
+\[
+H^{0}(G,\mathcal{F})=\Gamma(S,\mathcal{F}^{G}),
+\]
+where \(\mathcal{F}^{G}\), the \emph{sheaf of invariants} of \(\mathcal{F}\),
+is defined as the sheaf whose sections over the open \(U\) of \(S\) are the
+sections of \(\mathcal{F}\) over \(U\) whose inverse image in every \(S'\)
+over \(U\) is invariant under \(G(S')\) (\cf 4.7.1.2).
+
+\begin{theorem}{5.3.1}
+\label{I.5.3.1}
+Let \(S\) be an affine scheme, \(G\) an \(S\)-group affine and flat over \(S\).
+The functors \(H^{n}(G,\,)\) are the derived functors of \(H^{0}(G,\,)\) on the
+category of quasi-coherent \(G\)-\(\OS\)-modules.
+\end{theorem}
+
+\begin{proof}
+\nde{The original has been modified, in order to show that the category
+\((\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.q.c.})\) is abelian and has enough
+injective objects. One may compare with \cite{Ja03}, Part~I, 3.3--3.4, 3.9,
+4.2 and 4.14--4.16 (where one will take care that ``\(k\)-group scheme'' means
+``affine \(k\)-group scheme'', \cf\loccit, 2.1).}
+As \(G\) is affine and flat over \(S\), then, by 4.7.2.1, the category
+\((\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.q.c.})\) is equivalent to the
+category \((\mathcal{A}(G)\text{-}\mathrm{Comod.q.c.})\) of quasi-coherent
+\(\mathcal{A}(G)\)-comodules on \(\OS\), and is therefore abelian. On the
+other hand, \(\mathcal{A}(G)\) being a flat \(\OS\)-module, each functor
+\(\mathcal{F}\mapsto\mathcal{F}\otimes_{\OS}\mathcal{A}(G)^{\otimes n}\) is
+exact; as moreover \(S\) is affine, one obtains that \(C^{*}(G,\,)\) is an
+exact functor on \((\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.q.c.})\).
+
+Let us denote by \(\Delta\) \resp \(\eta\) the comultiplication \resp the
+augmentation of \(\mathcal{A}(G)\). For every quasi-coherent \(\OS\)-module
+\(\mathcal{P}\), one denotes
+\(\mathrm{Ind}(\mathcal{P})=\mathcal{P}\otimes_{\OS}\mathcal{A}(G)\) equipped
+with the \(\mathcal{A}(G)\)-comodule structure defined by
+\[
+\mathrm{id}_{\mathcal{P}}\otimes\Delta\colon
+\mathcal{P}\otimes_{\OS}\mathcal{A}(G)
+\longrightarrow
+\mathcal{P}\otimes_{\OS}\mathcal{A}(G)\otimes_{\OS}\mathcal{A}(G);
+\]
+this defines a functor
+\(\mathrm{Ind}\colon(\OS\text{-}\mathrm{Mod.q.c.})\to(\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.q.c.})\).
+
+It follows from 4.6.4.1, 5.2.0 and 5.2.0.1 that one has an isomorphism of
+\(G\)-\(\OS\)-modules:
+\[
+(*)\qquad
+\mathbf{W}(\mathrm{Ind}(\mathcal{P}))
+\simeq
+E(\mathbf{W}(\mathcal{P}))
+=\Hom(G,\mathbf{W}(\mathcal{P})).
+\]
+Via this identification, the morphism
+\(\varepsilon\colon E(\mathbf{W}(\mathcal{P}))\to\mathbf{W}(\mathcal{P})\)
+corresponds to the morphism of \(\OS\)-modules
+\(\mathrm{id}_{\mathcal{P}}\otimes\eta\colon\mathrm{Ind}(\mathcal{P})\to\mathcal{P}\).
+
+% typo?: \(\mathbf{W}\colon(\OS\text{-}\mathrm{Mod.})\to(\OS\text{-}\mathrm{Mod.})\) kept as printed.
+One has already used that the functor
+\(\mathbf{W}\colon(\OS\text{-}\mathrm{Mod.})\to(\OS\text{-}\mathrm{Mod.})\) is
+fully faithful; the same holds, by definition 4.7.1, of its restriction to
+\((\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.})\), \ie if \(\mathcal{M}\),
+\(\mathcal{M}'\) are \(G\)-\(\OS\)-modules, one has a functorial isomorphism
+\[
+\Hom_{\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.}}(\mathcal{M},\mathcal{M}')
+\simeq
+\Hom_{\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.}}(\mathbf{W}(\mathcal{M}),\mathbf{W}(\mathcal{M}')).
+\]
+Consequently, one deduces from lemma 5.2.0.2 the
+
+\begin{corollary}{5.3.1.1}
+\label{I.5.3.1.1}
+(i) The functor \(\mathrm{Ind}\) is right adjoint to the forgetful functor
+\[
+(\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.q.c.})\to(\OS\text{-}\mathrm{Mod.q.c.}).
+\]
+More precisely, the map
+\[
+\mathrm{id}_{\mathcal{P}}\otimes\eta\colon\mathrm{Ind}(\mathcal{P})\to\mathcal{P}
+\]
+induces, for every object \(\mathcal{M}\) of
+\((\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.q.c.})\), a bijection
+\[
+\Hom_{\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.}}(\mathcal{M},\mathrm{Ind}(\mathcal{P}))
+\xrightarrow{\sim}
+\Hom_{\OS}(\mathcal{M},\mathcal{P}).
+\]
+(ii) Consequently, if \(\mathcal{I}\) is an injective object of
+\((\OS\text{-}\mathrm{Mod.q.c.})\) then \(\mathrm{Ind}(\mathcal{I})\) is an
+injective object of \((\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.q.c.})\).
+\end{corollary}
+
+Let \(\mathcal{F}\) be a \(G\)-\(\OS\)-module and
+\(\mu_{\mathcal{F}}\colon\mathcal{F}\to\mathrm{Ind}(\mathcal{F})\) the map
+defining the \(\mathcal{A}(G)\)-comodule structure. It follows from 5.2.0.3
+(or else from the axioms (CM~1) and (CM~2) of 4.7.2) that \(\mu_{\mathcal{F}}\)
+is a morphism of \(G\)-\(\OS\)-modules, and that
+\((\mathrm{id}_{\mathcal{F}}\otimes\eta)\circ\mu_{\mathcal{F}}=\mathrm{id}_{\mathcal{F}}\),
+hence that \(\mathcal{F}\) is a direct factor of \(\mathrm{Ind}(\mathcal{F})\)
+as an \(\OS\)-module; in particular, \(\mu_{\mathcal{F}}\) is a monomorphism.
+As one has, by \((*)\) and 5.2.2,
+\[
+H^{n}(G,\mathbf{W}(\mathrm{Ind}(\mathcal{F})))
+\simeq
+H^{n}(G,\Hom_{S}(G,\mathbf{W}(\mathcal{F})))
+=0
+\qquad\text{for }n>0,
+\]
+one therefore obtains that \(H^{n}(G,\,)\) is effaceable for \(n>0\).
+
+Finally, \(S\) being affine, \((\OS\text{-}\mathrm{Mod.q.c.})\) has enough
+injective objects. Let therefore \(\mathcal{F}\hookrightarrow\mathcal{I}\) be a
+monomorphism of \(\OS\)-modules, where \(\mathcal{I}\) is an injective object
+of \((\OS\text{-}\mathrm{Mod.q.c.})\); then, \(\mathcal{A}(G)\) being flat over
+\(\OS\), \(\mathrm{Ind}(\mathcal{F})\) is a sub-\(G\)-\(\OS\)-module of
+\(\mathrm{Ind}(\mathcal{I})\), whence:
+
+\begin{corollary}{5.3.1.2}
+\label{I.5.3.1.2}
+The abelian category \((\mathrm{G}\text{-}\OS\text{-}\mathrm{Mod.q.c.})\) has
+enough injective objects.
+\end{corollary}
+
+Taking into account \cite{Gr57}, 2.2.1 and 2.3 (already used in the proof of
+5.2.1), this completes the proof of theorem 5.3.1.
+\end{proof}
+
+\begin{remark}{5.3.1.3}
+\label{I.5.3.1.3}
+One can also prove 5.3.1.1 by the following computation. To every morphism of
+\(G\)-\(\OS\)-modules
+\(\phi\colon\mathcal{M}\to\mathcal{P}\otimes_{\OS}\mathcal{A}(G)\) one
+associates the \(\OS\)-morphism
+\((\mathrm{id}_{\mathcal{P}}\otimes\eta)\circ\phi\colon\mathcal{M}\to\mathcal{P}\).
+Conversely, to every \(\OS\)-morphism \(f\colon\mathcal{M}\to\mathcal{P}\) one
+associates the morphism of \(G\)-\(\OS\)-modules
+\((f\otimes\mathrm{id}_{\mathcal{A}(G)})\circ\mu_{\mathcal{M}}\colon\mathcal{M}\to\mathcal{P}\otimes_{\OS}\mathcal{A}(G)\).
+One sees at once that
+% typo?: \((f\otimes\mathrm{id}_{\OS})\circ(\mathrm{id}_{\mathcal{P}}\otimes\eta)\) kept as printed.
+\begin{equation*}
+(\mathrm{id}_{\mathcal{P}}\otimes\eta)\circ(f\otimes\mathrm{id}_{\mathcal{A}(G)})\circ\mu_{\mathcal{M}}
+=(f\otimes\mathrm{id}_{\OS})\circ(\mathrm{id}_{\mathcal{P}}\otimes\eta)\circ\mu_{\mathcal{M}}
+=f.
+\end{equation*}
+
+On the other hand, for every \(\phi\) the diagram below is commutative:
+\[
+\xymatrix{
+\mathcal{M} \ar[r]^{\phi} \ar[d]_{\mu_{\mathcal{M}}}
+  & \mathcal{P}\otimes_{\OS}\mathcal{A}(G) \ar[d]^{\mathrm{id}_{\mathcal{P}}\otimes\Delta} \\
+\mathcal{M}\otimes_{\OS}\mathcal{A}(G) \ar[r]_-{\phi\otimes\mathrm{id}_{\mathcal{A}(G)}}
+  & \mathcal{P}\otimes_{\OS}\mathcal{A}(G)\otimes_{\OS}\mathcal{A}(G).
+}
+\]
+It follows that
+\begin{align*}
+\Bigl(\bigl((\mathrm{id}_{\mathcal{P}}\otimes\eta)\circ\phi\bigr)\otimes\mathrm{id}_{\mathcal{A}(G)}\Bigr)\circ\mu_{\mathcal{M}}
+&=(\mathrm{id}_{\mathcal{P}}\otimes\eta\otimes\mathrm{id}_{\mathcal{A}(G)})\circ(\phi\otimes\mathrm{id}_{\mathcal{A}(G)})\circ\mu_{\mathcal{M}}\\
+&=(\mathrm{id}_{\mathcal{P}}\otimes\eta\otimes\mathrm{id}_{\mathcal{A}(G)})\circ(\mathrm{id}_{\mathcal{P}}\otimes\Delta)\circ\phi
+=\phi.
+\end{align*}
+This proves 5.3.1.1\,(i) (and (ii) follows).
+\end{remark}
+
+Let \(\mathcal{F}\) be a \(G\)-\(\OS\)-module; one has seen above that axiom (CM~2)
+of 4.7.2 shows that, considered as an \(\OS\)-module, \(\mathcal{F}\) is a
+direct factor of \(E(\mathcal{F})\). This entails:
+
+\begin{proposition}{5.3.2}
+\label{I.5.3.2}
+Let \(S\) be an affine scheme and \(G\) an affine and flat \(S\)-group; suppose
+that every exact sequence \(0\to\mathcal{F}_{1}\to\mathcal{F}_{2}\to\mathcal{F}_{3}\to 0\)
+of quasi-coherent \(G\)-\(\OS\)-modules, which splits as a sequence of
+\(\OS\)-modules, likewise splits as a sequence of \(G\)-\(\OS\)-modules.
+
+Then the functors \(H^{n}(G,\,)\) are zero for \(n>0\) (or, what amounts to the
+same, the functor \(H^{0}(G,\,)\) is \emph{exact}).
+\end{proposition}
+
+Indeed, by the hypothesis, the sequence of \(G\)-\(\OS\)-modules
+\[
+0\longrightarrow\mathcal{F}\longrightarrow E(\mathcal{F})\longrightarrow E(\mathcal{F})/\mathcal{F}\longrightarrow 0
+\]
+is split; \(\mathcal{F}\) is therefore a direct factor, as a
+\(G\)-\(\OS\)-module, in \(E(\mathcal{F})\), but the cohomology of the latter is
+zero.
+
+One deduces immediately from this and from proposition 4.7.4:
+
+\begin{theorem}{5.3.3}
+\label{I.5.3.3}
+Let \(S\) be an affine scheme and \(G\) a diagonalizable \(S\)-group. For every
+quasi-coherent \(G\)-\(\OS\)-module \(\mathcal{F}\), one has
+\(H^{n}(G,\mathcal{F})=0\), for \(n>0\).
+\end{theorem}
+
+\begin{remark*}
+Proposition 5.3.2 remains valid when \(G\) is not necessarily flat over \(S\);
+the proof then appeals to relative cohomology.\nde{The editors have not sought
+to develop this remark.}
+\end{remark*}
+
+\sgasection{6}{\texorpdfstring{$G$-equivariant objects and modules}{G-equivariant objects and modules}}
+\label{I.sec.6}
+\nde{This section has been added.}
+Let \(\mathcal{C}\) be a category having a final object and in which fiber
+products exist. Let \(\mathbf{G}\) be a \(\widehat{\mathcal{C}}\)-group,
+\(\pi\colon\mathbf{M}\to\mathbf{X}\) a morphism of \(\widehat{\mathcal{C}}\),
+and \(\lambda=\lambda_{\mathbf{X}}\colon\mathbf{G}\times\mathbf{X}\to\mathbf{X}\)
+an action of \(\mathbf{G}\) on \(\mathbf{X}\). In what follows, one will denote
+by \(\mathbf{Y}\times_{f}\mathbf{M}\) the fiber product of
+\(\pi\colon\mathbf{M}\to\mathbf{X}\) and of an \(\mathbf{X}\)-functor
+\(f\colon\mathbf{Y}\to\mathbf{X}\).
+
+For every \(U\in\Ob(\mathcal{C})\) and \(x\in\mathbf{X}(U)\), one will denote
+\(\mathbf{M}_{x}=U\times_{x}\mathbf{M}\), \ie for every
+\(\varphi\colon U'\to U\), one has
+\[
+\mathbf{M}_{x}(U')
+=\{m\in\mathbf{M}(U')\mid \pi(m)=x_{U'}=\varphi^{*}(x)\}.
+\]
+Finally, if \(g\in\mathbf{G}(U)\) one will also denote by \(gx\) the element
+\(\lambda(g,x)\) of \(\mathbf{X}(U)\).
+
+\begin{definition}{6.1}
+\label{I.6.1}
+a) One says that \(\mathbf{M}\) is a \emph{\(G\)-equivariant
+\(\mathbf{X}\)-object} if one has given oneself an action
+\(\Lambda\colon\mathbf{G}\times\mathbf{M}\to\mathbf{M}\) of \(\mathbf{G}\) on
+\(\mathbf{M}\) lifting \(\lambda\), \ie such that the square below is
+commutative:
+\[
+\xymatrix{
+\mathbf{G}\times\mathbf{M} \ar[r]^{\Lambda} \ar[d]_{\mathrm{id}_{\mathbf{G}}\times\pi}
+  & \mathbf{M} \ar[d]^{\pi} \\
+\mathbf{G}\times\mathbf{X} \ar[r]^{\lambda}
+  & \mathbf{X}.
+}
+\]
+This amounts to giving, for every morphism
+\((g,x)\colon U\to\mathbf{G}\times\mathbf{X}\), maps
+\[
+\Lambda^{U}_{x}(g)\colon
+\mathbf{M}_{x}(U)\longrightarrow\mathbf{M}_{gx}(U),
+\qquad m\longmapsto g\cdot m
+\]
+satisfying \(1\cdot m=m\) and \(g\cdot(h\cdot m)=(gh)\cdot m\) and functorial in
+the \((\mathbf{G}\times\mathbf{X})\)-object \(U\).
+This amounts again to giving morphisms of \(U\)-objects:
+\[
+\Lambda_{x}(g)\colon
+\mathbf{M}_{x}\longrightarrow\mathbf{M}_{gx}
+\]
+satisfying \(\Lambda_{x}(1)=\mathrm{id}\) and
+\(\Lambda_{hx}(g)\circ\Lambda_{x}(h)=\Lambda_{x}(gh)\).
+
+b) Let now \(\mathbf{O}\) be a \(\widehat{\mathcal{C}}\)-ring and let
+\(\mathbf{O}_{\mathbf{X}}=\mathbf{O}\times\mathbf{X}\). Under the conditions of
+(a), one says that \(\mathbf{M}\) is a \emph{\(G\)-equivariant
+\(\mathbf{O}_{\mathbf{X}}\)-module} if it is an
+\(\mathbf{O}_{\mathbf{X}}\)-module (\cf definition 4.3.3.1, valid for every
+ring-valued functor on a category \(\mathcal{C}\)) and if the action
+\(\Lambda\) is compatible with the \(\mathbf{O}_{\mathbf{X}}\)-module structure
+of \(\mathbf{M}\), \ie if for every
+\((g,x)\in\mathbf{G}(U)\times\mathbf{X}(U)\)
+(\(U\in\Ob(\mathcal{C})\)), the map
+\(\Lambda_{x}(g)\colon\mathbf{M}_{x}\to\mathbf{M}_{gx}\), \(m\mapsto g\cdot m\)
+is a morphism of \(\mathbf{O}_{U}\)-modules.
+\end{definition}
+
+\begin{remark}{6.2}
+\label{I.6.2}
+(i) In (a) above, the conditions \(\Lambda_{x}(1)=\mathrm{id}\) and
+\(\Lambda_{hx}(g)\circ\Lambda_{x}(h)=\Lambda_{x}(gh)\) evidently entail that
+each \(\Lambda_{x}(g)\) is an \emph{isomorphism}, with inverse
+\(\Lambda_{gx}(g^{-1})\). Conversely, if one supposes that each
+\(\Lambda_{x}(g)\) is an isomorphism, the condition
+\(\Lambda_{hx}(g)\circ\Lambda_{x}(h)=\Lambda_{x}(gh)\) applied to \(h=1\) gives
+\(\Lambda_{x}(1)=\mathrm{id}\).
+
+(ii) Let \(\mathbf{M}\) be an \(\mathbf{O}_{\mathbf{X}}\)-module. First, one
+sees that giving a morphism \(\Lambda\colon\mathbf{G}\times\mathbf{M}\to\mathbf{M}\)
+making the diagram of 6.1 commutative and such that each morphism
+\(\Lambda_{x}(g)\colon\mathbf{M}_{x}\to\mathbf{M}_{gx}\), \(m\mapsto g\cdot m\),
+is an isomorphism of \(\mathbf{O}_{U}\)-modules, amounts to giving an
+\emph{isomorphism} of \(\mathbf{O}_{\mathbf{G}\times\mathbf{X}}\)-modules:
+\begin{align*}
+\theta\colon
+\mathbf{G}\times\mathbf{M}
+&=(\mathbf{G}\times\mathbf{X})\times_{\mathrm{pr}_{\mathbf{X}}}\mathbf{M}
+\isomto
+(\mathbf{G}\times\mathbf{X})\times_{\lambda}\mathbf{M}\\
+&\qquad(g,x,m)\longmapsto(g,x,g\cdot m).
+\end{align*}
+As one has supposed that each \(\Lambda_{x}(g)\) is an isomorphism, the equality
+\(\Lambda_{x}(1)=\mathrm{id}\) will be a consequence of the equality
+\(\Lambda_{hx}(g)\circ\Lambda_{x}(h)=\Lambda_{x}(gh)\) applied to \(h=1\). One
+therefore obtains that \(\Lambda\) is an \emph{action} of \(\mathbf{G}\) on
+\(\mathbf{M}\) (\ie \(g\cdot(h\cdot m)=(gh)\cdot m\)) if and only if the
+diagram of \((\mathbf{G}\times\mathbf{G}\times\mathbf{X})\)-isomorphisms below
+is commutative (where one denotes by \(\mu\) the multiplication of
+\(\mathbf{G}\) and by \(f^{*}(\theta)\) the isomorphism deduced from \(\theta\) by
+a base change \(f\colon\mathbf{G}\times\mathbf{G}\times\mathbf{X}\to\mathbf{G}\times\mathbf{X}\)):
+\[
+\xymatrix@C=0.6em@R=2.6em{
+(\mathbf{G}\times\mathbf{G}\times\mathbf{X})
+  \times_{\mathrm{pr}_{\mathbf{X}}\circ\mathrm{pr}_{2,3}}
+  \mathbf{M}
+\ar[rr]^-{\mathrm{pr}_{2,3}^{*}(\theta)}_-{\sim}
+&&
+(\mathbf{G}\times\mathbf{G}\times\mathbf{X})
+  \times_{\lambda\circ\mathrm{pr}_{2,3}}
+  \mathbf{M}
+\\
+(\mathbf{G}\times\mathbf{G}\times\mathbf{X})
+  \times_{\mathrm{pr}_{\mathbf{X}}\circ(\mu\times\mathrm{id}_{\mathbf{X}})}
+  \mathbf{M}
+\ar[d]_-{(\mu\times\mathrm{id}_{\mathbf{X}})^{*}(\theta)}^-{\sim}
+&&
+(\mathbf{G}\times\mathbf{G}\times\mathbf{X})
+  \times_{\mathrm{pr}_{\mathbf{X}}\circ(\mathrm{id}_{\mathbf{G}}\times\lambda)}
+  \mathbf{M}
+\ar[d]^-{\sim}_-{(\mathrm{id}_{\mathbf{G}}\times\lambda)^{*}(\theta)}
+\\
+(\mathbf{G}\times\mathbf{G}\times\mathbf{X})
+  \times_{\lambda\circ(\mu\times\mathrm{id}_{\mathbf{X}})}
+  \mathbf{M}
+&&
+(\mathbf{G}\times\mathbf{G}\times\mathbf{X})
+  \times_{\lambda\circ(\mathrm{id}_{\mathbf{G}}\times\lambda)}
+  \mathbf{M}.
+}
+\]
+One therefore sees that giving a structure of \(G\)-equivariant
+\(\mathbf{O}_{\mathbf{X}}\)-module on \(\mathbf{M}\) amounts to giving an
+isomorphism \(\theta\) of \(\mathbf{O}_{\mathbf{G}\times\mathbf{X}}\)-modules as
+above, such that the diagram above is commutative.
+
+(iii) Everything that precedes extends to the case where \(\mathbf{G}\) is
+only a \(\widehat{\mathcal{C}}\)-monoid: in this case, giving an action
+\(\Lambda\colon\mathbf{G}\times\mathbf{M}\to\mathbf{M}\) lifting \(\lambda\) and
+such that each
+\(\Lambda_{x}(g)\colon\mathbf{M}_{x}\to\mathbf{M}_{gx}\) is a morphism of
+\(\mathbf{O}_{U}\)-modules, amounts to giving a \emph{morphism} \(\theta\) of
+\(\mathbf{O}_{\mathbf{G}\times\mathbf{X}}\)-modules as in (ii), such that the
+diagram above (without the signs \(\sim\) under the arrows) is commutative,
+and such that
+\(p_{\mathbf{M}}\circ\theta\circ(\varepsilon_{\mathbf{G}}\times\mathrm{id}_{\mathbf{M}})=\mathrm{id}_{\mathbf{M}}\),
+where \(\varepsilon_{\mathbf{G}}\) denotes the unit section of \(\mathbf{G}\)
+and \(p_{\mathbf{M}}\) the projection onto \(\mathbf{M}\).
+\end{remark}
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{6.3. \(G\)-equivariant morphisms.}\ ---\ \label{I.6.3}%
+Let \(\mathbf{Y}\) be a second object of \(\widehat{\mathcal{C}}\), equipped
+with an action \(\lambda_{\mathbf{Y}}\colon\mathbf{G}\times\mathbf{Y}\to\mathbf{Y}\)
+of \(\mathbf{G}\), and let \(\mathbf{N}\) be a second \(G\)-equivariant
+\(\mathbf{O}_{\mathbf{X}}\)-module. One says that a
+\(\widehat{\mathcal{C}}\)-morphism \(f\colon\mathbf{Y}\to\mathbf{X}\)
+\resp a morphism of \(\mathbf{O}_{\mathbf{X}}\)-modules
+\(\phi\colon\mathbf{M}\to\mathbf{N}\) is \emph{\(G\)-equivariant} if it
+commutes with the action of \(\mathbf{G}\), \ie if one has, set-theoretically,
+\(f(g\cdot y)=g\cdot f(y)\) \resp \(\phi(g\cdot m)=g\cdot\phi(m)\), which
+amounts to saying that
+\(f\circ\lambda_{\mathbf{Y}}=\lambda_{\mathbf{X}}\circ(\mathrm{id}_{\mathbf{G}}\times f)\)
+\resp \(\phi\circ\Lambda_{\mathbf{M}}=\Lambda_{\mathbf{N}}\circ(\mathrm{id}_{\mathbf{G}}\times\phi)\).
+
+One then obtains at once the following lemma:

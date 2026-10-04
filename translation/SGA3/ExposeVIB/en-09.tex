@@ -1,0 +1,166 @@
+Thus this sequence is stationary, and there is an integer $m$ such that $\overline{f'^m(X'^m)}=\Gamma_G(f)$.
+
+Moreover, since $X$ and $G$ are of finite type over $k$, the morphisms $f'^n$ are of finite type over $k$. Consequently, $f'^m(X'^m)$ is constructible in $G$ (EGA IV$_1$, 1.8.5), and thus contains an open subset $U$ of its closure $\Gamma_G(f)$ (EGA 0$_{\mathrm{IV}}$, 9.2.3). Then, by VIA 0.5, one has:
+\[
+\Gamma_G(f)\subset U\cdot U\subset f'^{2m}(X'^{2m})\subset\Gamma_G(f),
+\]
+whence $f'^{2m}(X'^{2m})=\Gamma_G(f)$.
+
+\textbf{Second case.} Suppose that $X$ has exactly two irreducible components $A_1$ and $A_2$. Then, since $X$ is connected and $k$ algebraically closed, there is $a\in(A_1\cap A_2)(k)$. Thus the four irreducible subsets $A_i\times_k A_j$ ($i,j=1,2$) cover $X\times_k X$, and the image of each of them under the morphism $f'^1=\mu\circ(f\times_k(c\circ f))$ contains $e$. If $f'^1_{ij}$ denotes the restriction of $f'^1$ to the reduced subscheme $A_i\times_k A_j$, put
+\[
+Y=(A_1\times_k A_1)\times_k(A_1\times_k A_2)\times_k(A_2\times_k A_2)\times_k(A_2\times_k A_1)
+\]
+and
+\[
+g=\mu\circ\Bigl(\bigl(\mu\circ(f'^1_{11}\times_k f'^1_{12})\bigr)\times_k\bigl(\mu\circ(f'^1_{22}\times_k f'^1_{21})\bigr)\Bigr).
+\]
+Then $Y$ is irreducible, reduced and of finite type, so we have just seen that there is an integer $m$ such that $\overline{g'^m(Y'^m)}=\Gamma_G(g)$. Now, for every $n\geq1$, one has $f'^n(X'^n)\subset g'^n(Y^n)\subset f'^{4n}(X'^{4n})$, whence $\Gamma_G(f)=\Gamma_G(g)$ and $f'^{4m}(X'^{4m})=\Gamma_G(f)$.
+% typo?: kept as printed: Y^n, rather than Y'^n, in the middle inclusion.
+
+\textbf{General case.} Let us argue by induction on the number of irreducible components of $X$ (this number is finite since $X$, being of finite type over $k$, is noetherian). Suppose the proposition proved when $X$ has at most $r-1$ irreducible components, and suppose that it has $r$, namely $A_1,\ldots,A_r$. Then $e$ belongs to the image of one of the $A_i$; suppose, for example, that $e\in f(A_1)$. Put $Y=\Gamma_G(f_r)$, where $f_r$ denotes the restriction of $f$ to the reduced subscheme $X_r=A_1\cup\cdots\cup A_{r-1}$ (we suppose the numbering of the $A_i$ chosen so that this scheme is connected, which is always possible). Then $Y$ is a closed, reduced and irreducible subgroup of $G$, by Corollary 7.2.1.
+
+Put $Z=\overline{f(A_r)}$, and let $T=Y\cup Z$, endowed with the reduced closed subscheme structure, and $i$ the injection of $T$ into $G$. It is clear (7.2 (ii)) that $\Gamma_G(i)=\Gamma_G(f)$ and that $T$ is connected (for, since $X$ is connected, $A_1\cup\cdots\cup A_{r-1}$ and $A_r$ have a point $a$ in common, and $Y$ and $Z$ have the point $f(a)$ in common). Moreover, $e\in T$, and $T$ has at most two irreducible components, since $Y$ and $Z$ are irreducible. By the induction hypothesis, there is an integer $m$ such that $\overline{f_r'^m(X_r'^m)}=\Gamma_G(f_r)=Y$. Since $X=X_r\cup A_r$ and since $Z=\overline{f(A_r)}$ is contained in $\overline{f'^m(X'^m)}$ (since $e\in f(A_1)$), one therefore has:
+\[
+f(X)\subset Y\cup Z\subset\overline{f'^m(X'^m)}.
+\]
+On the other hand, since $T$ has at most two irreducible components, we have already seen that there is an integer $p$ such that $i'^p(T'^p)=\Gamma_G(i)=\Gamma_G(f)$. Now $T\subset\overline{f'^m(X'^m)}$, so $\overline{f'^{mp}(X'^{mp})}=\Gamma_G(f)$, and one shows, as in the first case, that this last equality implies $f'^{2mp}(X'^{2mp})=\Gamma_G(f)$.
+
+\begin{lemma}{7.5}\label{VIB.7.5}
+Let $S$ be a scheme, $G$ a group $S$-scheme, $X$ an $S$-prescheme, $f:X\to G$ an $S$-morphism. Suppose that $X$ and $G$ are locally of finite presentation over $S$, and that for every $s\in S$ and every maximal point $g$ of $G_s$, there is a point $x$ of $X$ such that $f(x)=g$ and $f$ is flat at $x$. Then the morphism $\mu\circ(f\times_S f):X\times_S X\to G$ is covering for the (fppf) topology.
+\end{lemma}
+\nde{The original has been expanded in what follows.}
+By EGA IV$_3$, 11.3.1, the set $V$ of points of $X$ at which $f$ is flat is open and $f|_V$ is an open morphism, so $U=f(V)$ is an open subset of $G$; moreover, by hypothesis, $U\cap G_s$ is dense in $G_s$, for every $s\in S$. Denote by $\phi$ the restriction of $\mu\circ(f\times_S f)$ to $V\times_S V$.
+
+It suffices to show that $\phi$ is covering for the (fppf) topology, and for this it suffices to show that $\phi$ is faithfully flat and of finite presentation (cf. IV, 6.3.1 (iv)). Now $\phi$ is the composite $V\times_S V\xrightarrow{f|_V\times f|_V}U\times_S U\xrightarrow{\mu}G$, where the first morphism is faithfully flat and locally of finite presentation, since $f|_V$ is. It will therefore suffice to prove that the same holds for the restriction of $\mu$ to $U\times_S U$.
+
+Now, since $G\to S$ is locally of finite presentation and flat, the same holds for $\mu:G\times_S G\to G$ (which is isomorphic to the morphism obtained from $G\to S$ by the base change $G\to S$, cf. VIA 0.1), and thus also for the induced morphism $U\times_S U\to G$. To prove that the latter is surjective, it suffices to look fiber by fiber, where this follows from VIA 0.5, since $U\cap G_s$ is a dense open subset of $G_s$, for every $s\in S$.
+
+\begin{remark}{7.6.0}\label{VIB.7.6.0}
+\nde{This definition has been added; in the original it was contained in the statement of Proposition 7.6.}
+Let $S$ be a scheme, $H$ an $S$-group, and $f:X\to H$ a morphism of $S$-schemes. The \emph{subpresheaf of groups of $H$ generated by the image of $f$}, denoted by $\langle\Im f\rangle$, is the subgroup $k$-functor of $H$ which associates to every $S$-scheme $S'$ the subgroup of $H(S')$ generated by $f(X(S'))$. Since every element of this subgroup can be written as a finite product $f(x_1)^{\varepsilon_1}\cdots f(x_n)^{\varepsilon_n}$, with $n\in\NN^*$, $x_i\in X(S')$ and $\varepsilon_i=\pm1$, one therefore sees that, if one puts $X^1=X\coprod X$ and defines the morphisms $f^n:X^n\to H$ as in 7.1, then $\langle\Im f\rangle$ is precisely the \emph{image presheaf} of the morphism
+\[
+f^\infty:X^\infty\to H,
+\]
+where $X^\infty=\coprod_{n\geq1}X^n$ and $f^\infty:X^\infty\to H$ is the $S$-morphism whose restriction to each $X^n$ is $f^n$.
+% typo?: kept as printed: subgroup k-functor, although the base is S.
+\end{remark}
+
+\begin{proposition}{7.6}\label{VIB.7.6}
+\nde{The original stated this result under the hypotheses of the special case, but the more general form was used implicitly in the proof of 10.12; the statement has been rewritten accordingly.}
+Let $S$ be a scheme, $X$ an $S$-scheme flat and locally of finite presentation over $S$, $H$ an $S$-group locally of finite presentation over $S$ with reduced fibers, let $f:X\to H$ be a morphism of $S$-schemes, and let $f^\infty:X^\infty\to H$ be the $S$-morphism introduced above. The following conditions are equivalent:
+
+(i) $H$ represents the (fppf) $S$-sheaf associated to the presheaf $\langle\Im f\rangle$.
+
+(ii) $f^\infty$ is covering for the (fppf) topology.
+
+(iii) $f^\infty$ is surjective, i.e.\ $H=\bigcup_{n\geq1}f^n(X^n)$.
+
+If moreover $H$ is quasi-compact, these conditions are also equivalent to the following:
+
+(iv) There is an integer $n$ such that $f^n:X^n\to H$ is covering for the (fppf) topology (and a fortiori surjective).
+
+This applies in particular when $X$ is a $k$-scheme locally of finite type and geometrically reduced, $G$ a $k$-group locally of finite type, $\phi:X\to G$ a morphism of $k$-schemes, $H=\Gamma_G(\phi)$ and $f:X\to H$ is the morphism induced by $\phi$.
+\end{proposition}
+\begin{proof}
+The sheaf considered in (i) is the image sheaf of $X^\infty$ under $f^\infty$, so, by IV 4.4.3, saying that $H$ represents this sheaf is equivalent to saying that $f^\infty$ is covering, and this implies that $f^\infty$ is surjective. Conversely, suppose $f^\infty$ surjective and let us show that it is then covering for the (fppf) topology.
+
+Let $s\in S$, $\eta$ be a maximal point of the fiber $H_s$, and $x\in X_s^\infty$ such that $f^\infty(x)=\eta$ (such an $x$ exists, since $f^\infty$ is surjective). Since the fiber $H_s$ is reduced, $\OO_{H_s,\eta}$ is a field, so $f_s^\infty$ is flat at the point $x$. Since $X^\infty$ and $H$ are locally of finite presentation over $S$, and $X^\infty$ flat over $S$, the fiberwise criterion for flatness (EGA IV$_3$, 11.3.10) implies that $f^\infty$ is flat at the point $x$. Thus, by Lemma 7.5, the morphism
+\[
+\mu\circ(f^\infty\times_S f^\infty):X^\infty\times_S X^\infty\to H
+\]
+is covering for the (fppf) topology. Now, since $X^n\times_S X^m$ is canonically isomorphic to $X^{n+m}$, and in this isomorphism $\mu\circ(f^n\times_S f^m)$ corresponds to $f^{n+m}$, it is clear that $\mu\circ(f^\infty\times_S f^\infty)$ factors through $f^\infty$, so that $f^\infty$ is covering for the (fppf) topology. This proves that (iii) $\Rightarrow$ (ii), whence the equivalence of conditions (i), (ii) and (iii).
+
+Note moreover that, since the morphisms $X\to S$ and $H\to S$ are locally of finite presentation, the same holds for $f:X\to H$ (cf. EGA IV$_1$, 1.4.3 (v)), and since $\mu:H\times_S H$ is also of finite presentation (cf. VIA, 0.1), it follows that each $f^n:X^n\to H$ is too. Thus, by EGA IV$_1$, 1.9.5 (viii), the $f^n(X^n)$ are ind-constructible subsets of $H$.
+% typo?: kept as printed: the target of mu is omitted and finite presentation is asserted.
+
+Suppose moreover that $H$ is quasi-compact (then $S$ is too, since $H\to S$ is surjective). Then, by EGA IV$_1$, 1.9.9, one concludes that there is $p$ such that $f^p(X^p)=H$. As above, one then deduces from the reducedness of the fibers of $H$ and Lemma 7.5 that the morphism $\mu\circ(f^p\times_S f^p):X^p\times_S X^p\to H$ is covering for the (fppf) topology; since this morphism equals $f^{2p}:X^{2p}\to H$, this finishes the proof of 7.6.
+\end{proof}
+
+\begin{remark}{7.6.1}\label{VIB.7.6.1}
+Obviously the equivalent conditions of 7.6 imply that the sheaf $F$ under consideration is representable. The converse is false in general:\nde{The original has been expanded in what follows.} for example, if $k$ has characteristic $0$, let $G=\Ga{}_{,k}$ and let $f:\Spec k\to G$ be the morphism given by the point $1$ of $G(k)$, then $F$ is represented by the constant $k$-group $\ZZ_k$, whereas $\Gamma_G(f)=G$, so the monomorphism $\ZZ_k\hookrightarrow G$ is not surjective.
+
+For simplicity, let us place ourselves under the hypotheses of the special case of 7.6, and suppose $F$ representable. Then EGA IV$_3$, 8.14.2 implies that $F$ is locally of finite presentation over $k$, so the question is then whether the dominant monomorphism $F\to\Gamma_G(f)$ is an isomorphism, or again, a closed immersion. This will be the case, by 1.4.2, if $F$ is quasi-compact, and, by VIA, 0.5.1, this will hold if $F$ is connected, hence, in particular (7.2.1), if $X$ is connected and $f(X)$ contains the identity element of $G$.
+\end{remark}
+
+\begin{lemma}{7.7}\label{VIB.7.7}
+Let $k$ be an algebraically closed field, $G$ a $k$-group locally of finite type, $X$ a geometrically reduced $k$-scheme locally of finite type, $f:X\to G$ a $k$-morphism and $H$ a subgroup scheme of $G$ such that $H\subset f(X)$. Put
+\[
+\Gamma'=\bigcup_{n\geq1}f^n(X^n),\qquad\Gamma'_0=\Gamma'\cap G(k),\qquad H_0=H(k)
+\]
+and suppose $H_0$ of finite index in $\Gamma'_0$.
+
+Then there is an integer $m$ such that $f^m(X^m)=\Gamma_G(f)$ (cf. 7.6), and $\Gamma_G(f)$ is the union of finitely many translates of $H$.
+\end{lemma}
+For every $n\geq1$, $f^n(X^n)$ is an ind-constructible subset of $G$ (EGA IV$_1$, 1.9.5 (viii)), and thus so is $\Gamma'$, so that, since $G$ is a Jacobson scheme, $\Gamma'_0$ is dense in $\Gamma'$. By hypothesis there is a finite sequence $a_1,\ldots,a_r$ of points of $\Gamma'_0$ such that $\Gamma'_0=a_1H_0\cup\cdots\cup a_rH_0$, whence
+\begin{align*}
+\Gamma_G(f)&=\overline{\Gamma'}=\overline{\Gamma'_0}=\overline{a_1H_0\cup\cdots\cup a_rH_0}\\
+&=\overline{a_1H_0}\cup\cdots\cup\overline{a_rH_0}=a_1\overline{H_0}\cup\cdots\cup a_r\overline{H_0},
+\end{align*}
+the last equality following from the fact that translation by $a_i$ is a homeomorphism of $G$ onto $G$. One therefore has $\Gamma_G(f)=a_1H\cup\cdots\cup a_rH$. It is also clear that there is an integer $p$ such that each of the $a_i$ ($1\leq i\leq r$) belongs to $f^p(X^p)$. Finally, since $H\subset f(X)$, one has, for every $i$, $a_iH\subset f^{p+1}(X^{p+1})$, so that $f^{p+1}(X^{p+1})=\Gamma_G(f)$.
+
+\begin{proposition}{7.8}\label{VIB.7.8}
+Let $G$ be a $k$-group locally of finite type, $A$ and $B$ two geometrically reduced subgroup $k$-schemes (thus smooth at the generic points of their irreducible components, hence smooth by 1.3) of $G$. Suppose one of the following conditions a) or b) holds:
+
+a) $A$ and $B$ are invariant and of finite type over $k$.
+
+b) $A$ is connected and $B$ is of finite type over $k$.
+
+Then $(A,B)$ is of finite type over $k$, and represents the sheaf associated for the (fppf) (or (fpqc)) topology to the presheaf of groups of commutators of $A$ and $B$ in $G$. Moreover,\nde{What follows has been made more precise and, in the proof, the reduction to the case where $k$ is algebraically closed has been expanded.} the $k$-groups $(A,B^0)$ and $(A^0,B)$ are connected, and one has
+\[
+(A,B)^0=(A,B^0)\cdot(A^0,B).
+\]
+\end{proposition}
+By 7.6, to show that $(A,B)$ is the desired associated sheaf, it suffices to show that there is an integer $n$ such that $\nu^n((A\times_k B)^n)=(A,B)$ (notation of 7.2.2). To show this, as well as to show the other two assertions, one may suppose $k$ algebraically closed. Indeed, let $\overline{k}$ be an algebraic closure of $k$. By 7.1 (iii) and VIA 2.4, one has, with obvious notation:
+\[
+(A,B)_{\overline{k}}=(A_{\overline{k}},B_{\overline{k}}),\quad ((A,B)^0)_{\overline{k}}=(A_{\overline{k}},B_{\overline{k}})^0,\quad (A,B^0)_{\overline{k}}=(A_{\overline{k}},B_{\overline{k}}^0),\quad\text{etc.}
+\]
+Consequently, if one shows that $(A_{\overline{k}},B_{\overline{k}})$ is of finite type over $\overline{k}$ (resp. that $(A_{\overline{k}},B_{\overline{k}}^0)$ and $(A_{\overline{k}}^0,B_{\overline{k}})$ are connected, and that the morphism $(A_{\overline{k}},B_{\overline{k}}^0)\times_{\overline{k}}(A_{\overline{k}},B_{\overline{k}}^0)\to(A_{\overline{k}},B_{\overline{k}})^0$ is surjective), then the analogous assertions will hold over $k$, by EGA IV$_2$, 2.7.1 and 2.6.1.
+% typo?: kept as printed: the two factors of the displayed-in-prose morphism coincide.
+
+Let $B^1,\ldots,B^p$ then be the connected components of $B$ other than the identity component $B^0$ (there are finitely many of these since $B$ is supposed of finite type over $k$, hence noetherian), and in case (a), similarly let $A^1,\ldots,A^q$ be those of $A$. (In case (b), one will consider only $A^0=A$.) Let $\nu_{ij}$ be the restriction of $\nu$ to $A^i\times_k B^j$. Then each $A^i$ and each $B^j$ is irreducible (VIA 2.4.1), and thus so are $A^0\times_k B^j$ and $A^i\times_k B^0$. Since the identity element of $G$ belongs to $A^0$ and to $B^0$, it belongs to $\nu_{0j}(A^0\times_k B^j)$ and to $\nu_{i0}(A^i\times_k B^0)$. Then each $\Gamma_G(\nu_{0j})$ and $\Gamma_G(\nu_{i0})$ is connected (7.2.1). Similarly, if $u_{0j}$ (resp. $u_{i0}$) denotes the injection of $\Gamma_G(\nu_{0j})$ (resp. $\Gamma_G(\nu_{i0})$) into $G$, then
+\[
+(A^0,B)=\Gamma_G((u_{0j})_{j=0}^p)\qquad\text{and}\qquad(A,B^0)=\Gamma_G((u_{i0})_{i=0}^q)
+\]
+are connected. Moreover, one readily deduces from 7.4 and the preceding constructions that there is an index $r$ such that $(A^0,B)$ and $(A,B^0)$ are included in $\nu^r((A\times_k B)^r)$. In case b), one has $(A,B)=(A^0,B)$, and we are done.
+
+Let us now consider case (a).\nde{The original has been expanded in what follows, taking account of the addition 7.1.1.} We already know that $(A^0,B)$ and $(A,B^0)$ are smooth connected subgroup $k$-schemes of $G$, hence of finite type (cf. VIA, 2.4). On the other hand, since $A^0$ is a characteristic subgroup of $A$ (cf. VIA, 2.6.5), it is an invariant subgroup of $G$ and hence, by 7.3 (v), $(A^0,B)$ is an invariant subgroup of $G$, and similarly for $(A,B^0)$. Thus, by 7.1.1, the subgroup $H$ of $G$ generated by $(A,B^0)$ and $(A^0,B)$ is precisely $(A,B^0)\cdot(A^0,B)$. In particular, one therefore has $H\subset\nu^{2r}((A\times_k B)^{2r})$.
+
+Given a subset $X$ of $G$ stable under the group law (cf. 3.0), we shall denote by $X_0$ the group of $k$-points of $G$ belonging to $X$. Put $\Gamma'=\bigcup_{q\geq1}\nu^q((A\times_k B)^q)$. Then, by Proposition 7.9 below, one has:
+\[
+(A^0,B)_0=(A_0^0,B_0),\qquad(A,B^0)_0=(A_0,B_0^0)\qquad\text{and}\qquad\Gamma'_0=(A_0,B_0),
+\]
+so that $H_0=(A_0^0,B_0)\cdot(A_0,B_0^0)$ has finite index in $\Gamma'_0$ (Bible, Exp. 3, Appendix), since $A_0$ and $B_0$ are invariant, and $A_0^0$ (resp. $B_0^0$) has finite index in $A_0$ (resp. $B_0$). We are then under the conditions of Lemma 7.7: since $H\subset\nu^{2r}((A\times_k B)^{2r})$, there is an integer $m$ such that $\nu^{2rm}((A\times_k B)^{2rm})=(A,B)$, and there is a finite sequence $a_1,\ldots,a_n$ of $k$-points of $G$ such that $(A,B)=a_1H\cup\cdots\cup a_nH$. Then, since $H$ is of finite type over $k$, each $a_iH$ is quasi-compact, so their union $(A,B)$ is quasi-compact, hence of finite type over $k$. Since $H$ is irreducible, so is each $a_iH$, and since $e\in H$, it is clear that $H=(A,B)^0$.
+
+\begin{proposition}{7.9}\label{VIB.7.9}
+Let $k$ be an algebraically closed field, $G$ a $k$-group locally of finite type.
+
+(i) Let $A$ and $B$ be two ind-constructible subsets of $G$. Denote by $A_0$ the set of rational points of $G$ belonging to $A$. Then $(A\cdot B)_0=A_0\cdot B_0$, the second product being taken in the group $G(k)$.
+
+(ii) Let $X$ be a geometrically reduced $k$-scheme locally of finite type, and $f:X\to G$ a $k$-morphism. Put $\Gamma'_G(f)=\bigcup_{n\geq1}f^n(X^n)$. Then $\Gamma'_G(f)_0$ is the subgroup of $G(k)$ generated by $f(X)_0$.
+
+(iii) In particular, let $A$ and $B$ be two smooth subgroup schemes of $G$; put $\Gamma'=\bigcup_{n\geq1}\nu^n(A\times_k B)^n$ (notation of 7.2.2). Then $\Gamma'_0$ is the commutator group of $A(k)$ and $B(k)$ in $G(k)$.
+\end{proposition}
+Let us prove (i). It is clear that $A_0\cdot B_0\subset(A\cdot B)_0$. Conversely, let $z\in(A\cdot B)_0$. Then $\mu^{-1}(z)$ is a closed subset of $G\times_k G$, and $A\times_k B$ (cf. 3.0) is an ind-constructible subset of $G\times_k G$, so that $\mu^{-1}(z)\cap(A\times_k B)$ is a nonempty ind-constructible subset of $G\times_k G$; by EGA IV$_3$, 10.4.8, it therefore contains a rational point of $G\times_k G$, whose projections $x$ and $y$ are rational points of $G$ such that $x\in A$, $y\in B$ and $x\cdot y=z$, so that $(A,B)_0=A_0\cdot B_0$.
+% typo?: kept as printed: (A,B)_0 at the conclusion, instead of (A dot B)_0.
+
+To show (ii), note that, since $f^n$ is locally of finite type, $f^n(X^n)$ is an ind-constructible subset of $G$ (EGA IV$_4$, 1.9.5 (viii)). Assertion (i) then allows one to show by induction that, putting $A=f(X)_0$, one has $f^n(X^n)_0=(A\cup A^{-1})^n$, and consequently,
+\[
+\Gamma'_G(f)_0=\bigcup_{n\geq1}f^n(X^n)_0=\bigcup_{n\geq1}(A\cup A^{-1})^n,
+\]
+which is the subgroup of $G(k)$ generated by $A=f(X)_0$.
+
+Finally, (iii) follows from (ii) and the definitions.
+
+\begin{corollary}{7.10}\label{VIB.7.10}
+Under the conditions of 7.8, if $k$ is algebraically closed, then $(A,B)(k)$ is the commutator subgroup of $A(k)$ and $B(k)$ in $G(k)$.
+\end{corollary}
+Indeed, it suffices to apply 7.9 (iii), 7.8 and 7.6.
+
+\sgasection{8}{Solvable or nilpotent group schemes}
+\numpara{8.1}\label{VIB.8.1}
+Let $\mathscr C$ be a category endowed with a topology $T$ (cf. IV \S\,4). For every presheaf $P$ on $\mathscr C$, one shall denote by $P^\flat$ the associated sheaf.
+
+Let $G$ be a presheaf of groups on $\mathscr C$, $A$ and $B$ two subpresheaves of groups of $G$, and let $\underline{\mathrm{Comm}}(A,B)$ be the presheaf of groups of commutators of $A$ and $B$ in $G$; i.e., for every $S\in\Ob\mathscr C$, $\underline{\mathrm{Comm}}(A,B)(S)$ is the subgroup of $G(S)$ generated by the commutators $aba^{-1}b^{-1}$, with $a\in A(S)$ and $b\in B(S)$. One puts
+\[
+\underline{\mathrm{Comm}}_T(A,B)=\underline{\mathrm{Comm}}(A,B)^\flat.
+\]

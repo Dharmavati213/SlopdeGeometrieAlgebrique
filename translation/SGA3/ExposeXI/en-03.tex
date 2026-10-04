@@ -1,0 +1,156 @@
+I say that these latter are representable by open immersions. To see this, one applies criterion 3.1 (iii): $X_{i,j}$ satisfies the three exactness conditions (being a sheaf, commuting with $\varinjlim$ of rings and with adic $\varprojlim$ of artinian local rings), for $F,X_i,X_j$ satisfy them, and these conditions are stable under finite projective limits, in particular under fibered products; since $X_i\to F$ is a monomorphism, so is $v_{i,j}:X_{i,j}\to X_i$, which is deduced from it by the base change $X_j\to F$, and symmetrically $v_{j,i}$ is a monomorphism; finally the condition ``infinitesimally étale'' is also preserved by base change. This proves that one is under conditions 3.1 (iii).
+% typo?: the printed base change X_j to F is retained.
+
+We can now use the $X_i,X_{i,j},v_{i,j}$ and $w_{i,j}$ to construct in the usual way an $S$-prescheme $X$, such that the $X_i$ are identified with open subsets of $X$, the $X_{i,j}$ with the intersections $X_i\cap X_j$ and the $v_{i,j},w_{i,j}$ with the canonical immersions. Note that $X$ is also the quotient of
+\[
+\mathbf X=\coprod_i X_i
+\]
+by the equivalence relation $R=\coprod_{i,j}X_{i,j}$ (the two projections $v,w:R\rightrightarrows Y$ being defined by the $v_{i,j}$, resp. the $w_{i,j}$). More precisely, since $F$ is a sheaf for fpqc, the $u_i:X_i\to F$ come from a $u:\mathbf X\to F$, and $R$ is nothing other than the equivalence relation defined by $u$, $R=\mathbf X\times_F\mathbf X$; finally the quotient $X=Y/R$ is also a quotient in the category of sheaves for fpqc (and even in the category of sheaves for the Zariski topology): it suffices to use the definitions of ``quotient'' and ``sheaf'' to convince oneself of this. Consequently $u$ factors uniquely through a morphism
+\[
+u:X\to F,
+\]
+and this morphism is a monomorphism. It remains to show that it is an isomorphism. Since $F$ is of a local nature, one can suppose $S$ affine, and since moreover $F$ commutes with inductive limits of rings, it suffices to verify that for every $T$ affine of finite type over $S$, every morphism $T\to F$ factors through $X$ (\cf 3.4). For this, consider $G=X\times_F T\to T$; it suffices to prove that this is an isomorphism. Now, since $T$ is noetherian, one sees as above that it is an open immersion (N.B. $X\to F$ is infinitesimally étale, as follows at once from the fact that the induced morphisms $u_i:X_i\to F$ are). But by hypothesis $X\to F$ is set-theoretically surjective, and one sees immediately that this is a condition stable under base change, so $G\to T$ is set-theoretically surjective, hence an isomorphism since it is an open immersion. \hfill Q.E.D.
+% typo?: the source alternates bold X and Y for the coproduct; kept.
+
+\begin{proposition}{3.7}\label{XI.3.7}
+Let $S$ be a locally noetherian prescheme, $I$ an increasingly filtered index set, $(T_i)_{i\in I}$ a projective system of $S$-preschemes locally of finite type, $T=\varprojlim T_i$ the projective limit functor, $F$ a functor over $S$, $u:F\to T$ an $S$-morphism. Suppose the following conditions hold:
+\begin{enumerate}[label=\alph*)]
+\item $F$ is a sheaf for the faithfully flat quasi-compact topology, commutes with inductive limits of rings, and with adic projective limits of artinian local rings.
+\item The morphism $u:F\to T$ is a monomorphism.
+\item[$\mathrm b'$)] The morphism $u:F\to T$ is infinitesimally étale.
+\item For every point $\xi$ of $F$ with values in the spectrum of a field $k$, denoting by $\xi_i\in T_i(\Spec(k))$ its image and by $t_i$ the corresponding element of $T_i$, there exists an $i\in I$ such that for $j\ge i$ the transition morphism $p_{i,j}:T_j\to T_i$ is étale at $t_j$.
+\item For every prescheme $X$ locally of finite type over $S$, and every $S$-morphism $X\to F$, the set of $x\in X$ at which this morphism is infinitesimally étale is open.
+\end{enumerate}
+Under these conditions, $F$ is representable by a prescheme locally of finite type over $S$.
+\end{proposition}
+Let us note at once that in the case which will concern us in the following \No, conditions c) and d) will be verified by means of the following corollary:
+\begin{corollary}{3.8}\label{XI.3.8}
+Assuming a), b), b'), conditions c) and d) are implied by the following:
+
+c') The $T_i$ are smooth over $S$, and the transition morphisms $p_{i,j}:T_j\to T_i$ are smooth.
+
+d') For every point $\xi$ of $F$ with values in the spectrum of a field $k$, let $t_i(\xi)$ be the element of $T_i$ defined by $\xi$, $d_i(\xi)$ the relative dimension of $T_i$ over $S$ at $t_i(\xi)$, and $d(\xi)=\operatorname{Sup}d_i(\xi)$. Then:
+\begin{enumerate}[label=\arabic*$^\circ$)]
+\item for every $\xi$ as above, one has $d(\xi)<+\infty$, and
+\item for every prescheme $X$ locally of finite type over $S$, and every $S$-monomorphism $v:X\to F$, the function $x\mto d(\xi_x)$ on $X$ is locally constant (where, for $x\in X$, $\xi_x$ denotes the point of $F$ with values in $\kappa(x)$ induced by $v$).
+\end{enumerate}
+\end{corollary}
+
+Let us prove 3.7. Place ourselves under the conditions of c), let $t$ be the element of $\operatorname{ens}(F)$ defined by $\xi$ (\cf 3.6) and put
+\[
+\OO_t=\varinjlim_i\OO_{T_i,t_i}.
+\]
+Then, using the condition stated in c), one sees easily that $\OO_t$ is a \emph{noetherian} local ring (EGA~$0_{\mathrm{IV}}$~10.3.1.3). Its residue field $\kappa(t)$ is the inductive limit of the residue fields $\kappa(t_i)$, and $k$ is an extension of it. If $\eta$ denotes the spectrum of $\kappa(t)$, $\xi$ that of $k$, one has a commutative diagram
+\[
+\xymatrix{\xi\ar[r]\ar[d]&F\ar[d]\\\eta\ar[r]&T,}
+\]
+whose definition is obvious and left to the reader. Since $\xi\to\eta$ is covering for the fpqc topology, $F$ is a sheaf for that topology by a), and $F\to T$ a monomorphism by b), one sees at once that the morphism $\eta\to T$ factors (uniquely) through a morphism $\eta\to F$. Let us now note the
+\begin{lemma}{3.9}\label{XI.3.9}
+Under the conditions of 3.7, let $T'=\Spec(A)$ be a noetherian local scheme, $T'_0=\Spec(k(A))$, $i:T'_0\to T'$ the canonical immersion, and suppose given a commutative square of morphisms
+\[
+\xymatrix{T'_0\ar[r]\ar[d]_i&F\ar[d]\\T'\ar[r]&T.}
+\]
+Then there exists a unique $T$-morphism $T'\to F$.
+\end{lemma}
+The proof is that of 3.1 (iii) $\Rightarrow$ (ii) (where the fact that the $S$ of the cited statement is representable was not used), using that $F$ is a sheaf for the fpqc topology, commutes with adic projective limits of artinian local rings (in this case the $A/\operatorname{rad}(A)^{n+1}$), and that $F\to T$ is a monomorphism and is infinitesimally étale.
+
+We shall apply lemma 3.9 to the case where $T'=\Spec(\OO_t)$, hence $T'_0=\Spec(\kappa(t))$, noting that we have just constructed $T'_0\to F$, and that the canonical homomorphisms $\OO_{T_i,t_i}\to\OO_t$ define a projective system of morphisms $\Spec(\OO_t)\to T_i$, whence a canonical morphism $\Spec(\OO_t)\to T$. The commutativity of the corresponding square (x) is trivial (for, by definition of $T$, it suffices to verify it with $T$ replaced by $T_i$), whence a unique $T$-morphism
+\[
+v':T'=\Spec(\OO_t)\to F.
+\]
+Since $F$ commutes with inductive limits of rings, this morphism factors through
+\[
+v'_i:T'_i=\Spec(\OO_{T_i,t_i})\to F
+\]
+for large $i$. For such an $i$, one has
+\[
+T'\isomto T'_i\quad\ie\quad\OO_{T_i,t_i}\isomto\OO_t.
+\]
+Indeed, since $T'\to T'_i$ is faithfully flat quasi-compact and hence an effective epimorphism, it suffices to see that it is a monomorphism. Now if one has two morphisms $R\rightrightarrows T'$ (with $R$ representable) having the same composite with $T'\to T'_i$, they have the same composite with $T'\to T$ (which factors through $T'\to T'_i$), hence the same composite with $T'\to T_j$ for every $j$, hence with $T'\to T'_j$ for every $j$, and are therefore equal since $T'$ is the projective limit of the $T'_j$ in the category $\Sch$.
+
+Consider the diagram
+\[
+\xymatrix{T'\ar[r]^{v'}\ar[d]&F\ar[d]\\T'_i\ar[r]\ar[ur]^{v'_i}&T_i,}
+\]
+where the unspecified arrows are the obvious arrows. The square is commutative and the upper triangle also, so since $T'\to T'_i$ is an epimorphism, it follows that the lower triangle is commutative. Now $\OO_{T_i,t_i}$ is the inductive limit of the affine rings of the affine open neighborhoods of $t_i$ in $T_i$, so since $F$ commutes with inductive limits of rings, $v'_i$ comes from a morphism
+\[
+v_t:U_t\to F
+\]
+from an open neighborhood $U_t$ of $t_i$ in $T_i$. One sees immediately that, on restricting this neighborhood if necessary, $v_t$ is necessarily a $T_i$-morphism ($T_i$ being locally of finite type over $S$, hence also commuting with inductive limits of rings). Then the composite of $v_t$ with $F\to T_i$ is a monomorphism, so $v_t$ is a monomorphism. I say that it is \emph{infinitesimally étale at $t_i$}. Since $F\to T$ is infinitesimally étale, it amounts to the same thing to say that the composite $T_i\to F\to T$ is infinitesimally étale at $t_i$, or again that the induced morphism $T'_i\to T$ is infinitesimally étale, or finally (since $T'\isomto T'_i$) that $T'\to T$ is infinitesimally étale, which is immediate, this morphism being the projective limit of the infinitesimally étale morphisms $T'_i\to T_i$.
+% typo?: T_i to F to T, instead of U_t, kept as printed.
+
+Let us now apply condition d) (which had not yet been used); it follows that $v_t$ is infinitesimally étale near $t$, so on replacing $U_t$ by a smaller open subset one can suppose that $v_t$ is an infinitesimally étale monomorphism.
+
+For variable $t\in\operatorname{ens}(F)$, the family of morphisms $v_t$ falls under 3.5, which implies the conclusion of 3.7.
+
+Let us now prove 3.8, supposing that conditions c') and d') of 3.8 hold. Then, with the notation of d'), one will have $d_i(\xi)=\text{constant}$ for large $i$, so the relative dimension of $T_j$ over $T_i$ at $t_j$, equal to $d_j(\xi)-d_i(\xi)$, is zero, hence $T_j\to T_i$ is étale at $t_j$, which proves condition c). Consequently the preceding proof applies to give, for every $t\in\operatorname{ens}(F)$, an index $i$, an open neighborhood $U_t$ of $t_i$ and a morphism $U_t\to F$ that is a monomorphism, infinitesimally étale at $t_i$, and everything amounts to proving that this morphism is infinitesimally étale near $t_i$. Now with the notation of d') $2^\circ$, where one takes $X=U_t$, one can suppose, on replacing $U_t$ by the connected component of $t_i$ in $U_t$, that for every $x\in U_t$ one has
+\[
+d(\xi_x)=d(\xi_{t_i})\quad\text{for every }x\in U_t.
+\]
+But $d(\xi_{t_i})=\text{relative dimension of }T_i\text{ over }S\text{ at }t_i$, and since the relative dimension of $T_i$ over $S$ remains constant on $U_t$, one will also have, for every $x\in U_t$:
+\begin{equation}\tag{*}
+d(\xi_x)=\text{relative dimension of }U_t\text{ over }S\text{ at }x.
+\end{equation}
+On the other hand, with the notation of the proof of 3.7, one sees at once that for every noetherian local prescheme $R'=\Spec(A)$, putting $R'_0=\Spec k(A)$, every morphism $R'\to F$ such that the induced morphism $R'_0\to F$ factors through $F$ (\ie taking the closed point of $R'$ to $t\in\operatorname{ens}(F)$) factors (obviously uniquely) through $T'$. (The proof is that of 3.1 or 3.9: one uses that $T'\to F$ is a monomorphism infinitesimally étale at $t$, and that $T'$ is a sheaf for fpqc commuting with adic $\varprojlim\ldots$). Applying this result to the morphism $\Spec(\OO_{U_t,x})=R'\to F$ induced by $v_t$ and to the point $t_x\in\operatorname{ens}(F)$ that is the image of the closed point of $R'$, \ie the image of $x$ under $v_t$, one finds a factorization
+\[
+\Spec(\OO_{U_t,x})\to\Spec(\OO_{t_x})\to F
+\]
+and since the second arrow is infinitesimally étale at $t_x$, to prove that the composite is so at $x$, it suffices to prove that the first is so at $t_x$.
+% typo?: "factors through F" kept as printed.
+
+Now, thanks to formula (x) above, it is a local $S$-homomorphism of the localizations, at two points $x,t_x$, of smooth $S$-preschemes $U_t,U_{t_x}$ of the same relative dimension $d$ over $S$ at $t,t_x$. This morphism is induced by an $S$-morphism
+\[
+w:U\to V
+\]
+where $U$ is an open neighborhood of $x$ in $U_t$, and where $V=U_{t_x}$ (EGA~I~6.5.1). Everything amounts to proving that this morphism is étale at $x$. Moreover $U$ and $V$ are endowed with monomorphisms $U\to F$, $V\to F$, and one sees at once that, on restricting $U$ further, $w$ is an $F$-morphism, so $w$ is a monomorphism. It now suffices to prove the
+% typo?: the reference (x), while the displayed formula is (*), kept as printed.
+\begin{lemma}{3.10}\label{XI.3.10}
+Let $U,V$ be two smooth $S$-preschemes, of the same relative dimension $d$ over $S$, and $w:U\to V$ an $S$-morphism that is a monomorphism; then $w$ is an open immersion (and a fortiori is étale).
+\end{lemma}
+By SGA~I~5.7 one is reduced to the case where $S$ is the spectrum of a field, which one can suppose algebraically closed. By SGA~I~5.1 it suffices to prove that $w$ is étale, and it suffices to prove it at the closed points of $U$. Let $x$ be such a point, $y=w(x)$; then, taking a regular system of parameters $f_1,\ldots,f_d$ of $\OO_{V,y}$, one sees that $A=\OO_{U,x}/\sum f_i\OO_{U,x}$ is the trivial extension of $k=\OO_{V,y}/\sum f_i\OO_{V,y}$ (for, since $w$ is a monomorphism, so is the structural morphism $\Spec(A)\to\Spec(k)$ deduced from it by base change). Since $\OO_{U,x}$ is a regular local ring of dimension $d$, it follows that the $f_i$ form a regular system of parameters of this ring, which implies at once that $w$ is étale at $x$ and completes the proof of 3.10, hence of 3.8.
+
+\begin{corollary}{3.11}\label{XI.3.11}
+Under the conditions of 3.8, for every quasi-compact open subset $U$ of $F$ separated over $S$, there exists an $i\in I$ such that for every $j\ge i$ the morphism $u_j|U:U\to T_j$ is an open immersion. In particular, if the $T_i$ are quasi-affine over $S$, then every open subset $U$ of $F$ quasi-compact over $S$, \ie of finite type over $S$, is quasi-affine over $S$.
+\end{corollary}
+The proof of 3.7 shows that for every $t\in F$, there exists an $i\in I$ such that $u_i:F\to T_i$ is a local isomorphism at $t$, and then $u_j$ is a local isomorphism at $x$ for every $j\ge i$. By quasi-compactness, one can choose $i$ independent of $x\in U$. It remains to prove that for large $i$, $u_i|U:U\to T_i$ is a monomorphism. Now, since $U\to T$ is a monomorphism, one sees that the intersection of the equivalence relations $U\times_{T_i}U\subset U\times_S U$ is reduced to the diagonal, and since $U\times_S U$ is a noetherian prescheme and the $U\times_{T_i}U$ closed sub-preschemes, it follows that one of these $U\times_{T_i}U$ is already reduced to the diagonal, \ie $u_i|U$ is a monomorphism. This proves the first assertion in 3.11, and the second is an immediate consequence of it.
+
+\begin{proposition}{3.12}\label{XI.3.12}
+Let $S$ be a prescheme, $G$ an affine $S$-group prescheme.
+\begin{enumerate}[label=\alph*)]
+\item Let $F$ be the functor $\Sch^\circ_{/S}\to\Ens$ such that, for every $T$ over $S$,
+\[
+\begin{split}
+F(T)=\text{set of subgroups of multiplicative type of }G_{T_S}\\
+\text{that are finite over }T.
+\end{split}
+\]
+Suppose $S$ locally noetherian or $G$ of finite presentation over $S$. Then the functor $F$ is representable and is affine over $S$. If $G$ is of finite presentation over $S$, then $F$ is locally of finite presentation over $S$.
+% typo?: G_{T_S} kept as printed.
+\item Let $H$ be an $S$-group prescheme of multiplicative type, and finite over $S$. Then $\uHom_{S\text{-gr}}(H,G)$ is representable. It is affine over $S$, and if $G$ is of finite type (resp. of finite presentation) over $S$, then so is $\uHom_{S\text{-gr}}(H,G)$.
+\end{enumerate}
+\end{proposition}
+\begin{remark}{3.13}\label{XI.3.13}
+Except for the precision that $\uHom_{S\text{-gr}}$ is affine, and in the case where $G$ is of finite presentation over $S$ (which will suffice for us), 3.12 is an immediate consequence of the theory of Hilbert Schemes (A.~Grothendieck, \textit{Techniques de construction et théorèmes d'existence en Géométrie Algébrique: IV Les Schémas de Hilbert}, Séminaire Bourbaki, May 1961, \No221). It even suffices that $G$ be quasi-projective over $S$; in case a), one can also represent the larger functor
+\[
+F'(T)=\left\{\begin{array}{l}
+\text{set of group sub-preschemes of }G_T,\\
+\text{flat, proper and of finite presentation over }T,
+\end{array}\right\}
+\]
+(the canonical monomorphism $F\to F'$ is an ``open immersion'', as follows from criterion 3.1 and X~4.7 b), so the representability of $F'$ implies that $F$ is representable by an open subset of $F$); in case b), one can restrict oneself to supposing that $H$ is projective and of finite presentation over $S$. In both cases, one obtains a functor locally of finite presentation over $S$. In the present exposé, 3.12 is only a technical lemma for proving a key result in the following \No, so we shall sketch an easy direct proof of 3.12, not using Hilbert schemes.
+% typo?: "an open subset of F" kept as printed.
+\end{remark}
+
+Let us first prove b). It will suffice that we prove that $\uHom_S(H,G)$ is representable (independently of any group structure on $H,G$), and has the additional properties stated for $\uHom_{S\text{-gr}}(H,G)$, for, using also the same result for $\uHom_S(H\times_S H,G)$, one describes the subfunctor $\uHom_{S\text{-gr}}(H,G)$ of $\uHom_S(H,G)$ by a finite projective limit (in fact, by means of fibered products) involving $G$, $\uHom_S(H,G)$ and $\uHom_S(H\times_S H,G)$, which we leave the reader to describe explicitly. On the other hand, one will have
+\[
+H=\Spec(\mathscr B),
+\]
+where $\mathscr B$ is a sheaf of algebras on $S$ that is locally free as a sheaf of modules (this is the only hypothesis on $H$ that we shall have to retain). Since the representability question considered is local on $S$, we can suppose $S$ affine with ring $A$. On the other hand, one will have $G=\Spec(C)$, where $C$ is an $A$-algebra. When $G=S[t]=G_0$, $t$ an indeterminate, the functor $\uHom$ is nothing other than
+\[
+T\mto\Gamma(T,\mathscr B_T),
+\]
+which is representable ($\mathscr B$ being locally free) by the vector bundle $\mathbf V(\mathscr B^\vee)$, where $\mathscr B^\vee$ is the sheaf of modules dual to $\mathscr B$. When $G=S[(t_i)]$, with $(t_i)$ a family (not necessarily finite) of indeterminates, one will therefore have $G=G_0^I$ (product over $S$ of a family of copies of $G_0$), which is representable by the affine scheme
+\[
+\uHom_S(H,G)^I=\mathbf V(\mathscr B^\vee)^I=\mathbf V(\mathscr B^{\vee(I)}).
+\]
+% typo?: Hom_S(H,G)^I kept as printed.

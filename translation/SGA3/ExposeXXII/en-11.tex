@@ -1,0 +1,267 @@
+\numpara{6.1.1}\label{XXII.6.1.1}
+One denotes by $T'$ the subtorus of $T$ ``image of the family $\alpha^*$, $\alpha\in R$''; in other words $T'$ is the image of the morphism of groups
+\[
+\mathbf G_{m,S}^R\to T
+\]
+defined by $(z_\alpha)_{\alpha\in R}\mto\prod_{\alpha\in R}\alpha^*(z_\alpha)$. One sees at once that if $\Delta$ denotes the set of simple roots of $R_+$, the morphism
+\[
+\mathbf G_{m,S}^\Delta\to T'
+\]
+defined in the same way is surjective with finite kernel. If one identifies $T$ with $\mathrm D_S(M)$, then $T'$ is identified with $\mathrm D_S(M/N)$, where
+\[
+N=M\cap\mathcal V(R^*)^\perp
+\]
+(one denotes by $\mathcal V(R^*)^\perp$ the orthogonal of $\mathcal V(R^*)$ in the duality between $V$ and $V^*$).
+\begin{lemma}{6.1.2}\label{XXII.6.1.2}
+The morphism defined by the product in $T$
+\[
+\operatorname{rad}(G)\underset S\times T'\to T
+\]
+is an isogeny (\cf 4.2.9).
+\end{lemma}
+Indeed, the canonical morphism $\operatorname{rad}(T)\to T/T'$ comes by duality from the morphism of commutative groups
+\[
+M\cap\mathcal V(R^*)^\perp\to M/M\cap\mathcal V(R),
+\]
+which one sees at once to be injective with finite cokernel (\cf Exp.~XXI 6.3).
+% typo?: kept as printed: rad(T) in the proof, rather than rad(G).
+\begin{definition}{6.1.3}\label{XXII.6.1.3}
+One puts $\Omega'=U^-\cdot T'\cdot U$; it is a closed subscheme of $\Omega=U^-\cdot T\cdot U$.
+\end{definition}
+\begin{lemma}{6.1.4}\label{XXII.6.1.4}
+Let $\alpha$ be a simple root and $w_\alpha\in\uNorm_G(T)(S)$ lifting $s_\alpha$. One has
+\[
+\operatorname{int}(w_\alpha)\Omega'\cap\Omega\subset\Omega'.
+\]
+\end{lemma}
+It suffices to prove that if $g\in\Omega'(S)$ and if $\operatorname{int}(w_\alpha)g\in\Omega(S)$, then $\operatorname{int}(w_\alpha)g\in\Omega'(S)$. By 5.6.8, write
+\[
+g=a\exp_{-\alpha}(Y)t\exp_\alpha(X)b,
+\]
+with $a\in U_{-\widehat\alpha}(S)$, $Y\in\Gamma(S,\mathfrak g^{-\alpha})$, $t\in T'(S)$, $X\in\Gamma(S,\mathfrak g^\alpha)$, $b\in U_{\widehat\alpha}(S)$. One then has
+\[
+\begin{gathered}
+\operatorname{int}(w_\alpha)g=\operatorname{int}(w_\alpha)a\cdot
+\operatorname{int}(w_\alpha)\bigl(\exp_{-\alpha}(Y)t\exp_\alpha(X)\bigr)\cdot\operatorname{int}(w_\alpha)b.
+\end{gathered}
+\]
+By 5.6.8 (iv), one has
+\[
+\operatorname{int}(w_\alpha)a\in U_{-\widehat\alpha}(S),\qquad
+\operatorname{int}(w_\alpha)b\in U_{\widehat\alpha}(S).
+\]
+The following equivalences result (putting $h=\exp_{-\alpha}(Y)t\exp_\alpha(X)$):
+\[
+\begin{aligned}
+\operatorname{int}(w_\alpha)g\in\Omega(S)&\quad\Longleftrightarrow\quad\operatorname{int}(w_\alpha)h\in\Omega(S),\\
+\operatorname{int}(w_\alpha)g\in\Omega'(S)&\quad\Longleftrightarrow\quad\operatorname{int}(w_\alpha)h\in\Omega'(S).
+\end{aligned}
+\]
+One is therefore reduced to the case where $g=h$. Since one has (4.1.12)
+\[
+Z_\alpha\cap\Omega=U_{-\alpha}\cdot T\cdot U_\alpha,\qquad
+Z_\alpha\cap\Omega'=U_{-\alpha}\cdot T'\cdot U_\alpha,
+\]
+one is reduced to proving the following assertion:
+\[
+\operatorname{int}(w_\alpha)h\in(U_{-\alpha}\cdot T\cdot U_\alpha)(S)\quad\Longrightarrow\quad
+\operatorname{int}(w_\alpha)h\in(U_{-\alpha}\cdot T'\cdot U_\alpha)(S).
+\]
+Now the latter follows at once from Exp.~XX 3.12, which shows that the component on $T$ of $\operatorname{int}(w_\alpha)h$ has the form $t\cdot\alpha^*(z)\in T'(S)$.
+\begin{lemma}{6.1.5}\label{XXII.6.1.5}
+For every $w\in\uNorm_G(T)(S)$, there exists an open subset $V_w$ of $G$, containing the identity section, such that
+\[
+\operatorname{int}(w)\Omega'\cap V_w\subset\Omega'.
+\]
+\end{lemma}
+Choose for each simple root $\alpha$ an $n_\alpha\in\uNorm_G(T)(S)$ lifting $s_\alpha$. For every point $s\in S$, there exist an open subset $V$ of $S$ containing $s$, a $t\in T(V)$, and over $V$ a relation
+\[
+w=n_{\alpha_1}\cdots n_{\alpha_p}t,\quad\text{with the $\alpha_i$ simple}.
+\]
+One may clearly content oneself with giving the proof for $V=S$; it is done by induction on $p$. If $p=0$, then $w\in T(S)$ and one takes $V_w=G$; assume therefore $w=n_\alpha\cdot w'$, with $w'$ satisfying the conclusion of the lemma; there therefore exists an open subset $V_{w'}$ of $G$, containing the identity section, such that $\operatorname{int}(w')\Omega'\cap V_{w'}\subset\Omega'$. One may then write
+\[
+\begin{aligned}
+\operatorname{int}(w)\Omega'\cap\operatorname{int}(n_\alpha)V_{w'}\cap\Omega
+&=\operatorname{int}(n_\alpha)\bigl(\operatorname{int}(w')\Omega'\cap V_{w'}\bigr)\cap\Omega\\
+&\subset\operatorname{int}(n_\alpha)\Omega'\cap\Omega\subset\Omega',
+\end{aligned}
+\]
+by 6.1.4. One then takes $V_w=\operatorname{int}(n_\alpha)V_{w'}\cap\Omega$ and one is done.
+\begin{lemma}{6.1.6}\label{XXII.6.1.6}
+There exists an open subset $V_0$ of $G$, containing the identity section, such that for every $S'\to S$, one has
+\[
+U(S')U^-(S')\cap V_0(S')\subset\Omega'(S').
+\]
+\end{lemma}
+Let indeed $n_0$ be an element of $\uNorm_G(T)(S)$ lifting the reflection $w_0$ of the Weyl group,{\renewcommand{\thefootnote}{(60)}\nde{The reflection $w_0$ is defined in XXI 3.6.14.}} that is, such that $\operatorname{int}(n_0)U=U^-$ (\cf Exp.~XXI 3.6.14); then $n_0^2\in T(S)$. Let us show that the open subset $V_0=V_{n_0}$ of 6.1.5 answers the question. Indeed
+\[
+\begin{aligned}
+U(S')U^-(S')&=\operatorname{int}(n_0)\bigl(\operatorname{int}(n_0)^{-1}U(S')\cdot\operatorname{int}(n_0)^{-1}U^-(S')\bigr)\\
+&=\operatorname{int}(n_0)\bigl(U^-(S')\cdot U(S')\bigr)\subset\operatorname{int}(n_0)\Omega'(S').
+\end{aligned}
+\]
+Whence
+\[
+U(S')U^-(S')\cap V_0(S')\subset\operatorname{int}(n_0)\Omega'(S')\cap V_0(S')\subset\Omega'(S').
+\]
+\begin{lemma}{6.1.7}\label{XXII.6.1.7}
+Consider the morphism
+\[
+f:\Omega=U^-\cdot T\cdot U\to T/T'
+\]
+composite of the second projection and the canonical morphism from $T$ to $T/T'$. Then $f$ is ``generically multiplicative'': there exists an open subset $V$ of $\Omega\times_S\Omega$, containing the identity section (and hence relatively schematically dense, Exp.~XVIII 1.3), such that for every $S'\to S$ and every $(x,y)\in V(S')$, one has $xy\in\Omega(S')$ and $f(xy)=f(x)f(y)$.
+\end{lemma}
+Let indeed $x$ and $y$ be two sections of $\Omega$ over $S'$. Write
+\[
+x=utv,\quad y=u't'v',\quad\text{with }u,u'\in U^-(S'),\ t,t'\in T(S'),\ v,v'\in U(S').
+\]
+Let $V_0$ be the open subset of 6.1.6 and $V$ the open subset of $\Omega\times_S\Omega$ defined by ``$vu'\in V_0(S')$'' (it is the inverse image of $V_0$ by the morphism $\Omega\times_S\Omega$ written set-theoretically $(x,y)\mto vu'$). Then $V$ answers the question. Indeed, for $(x,y)\in V(S')$, one has
+\[
+xy=(utv)(u't'v')=(ut)(vu')(t'v').
+\]
+But $vu'\in\Omega'(S')$, whence
+\[
+xy\in U^-(S')t\Omega'(S')t'U(S')\subset U^-(S')tt'T'(S')U(S'),
+\]
+which shows that $xy\in\Omega(S')$ and that
+\[
+f(xy)=f(tt')=f(t)f(t')=f(x)f(y).
+\]
+\begin{proposition}{6.1.8}\label{XXII.6.1.8}
+There exists a morphism of groups
+\[
+f:G\to T/T'
+\]
+inducing on $T$ the canonical projection. The kernel $\Ker(f)$ of $f$ is a closed group subscheme of $G$, smooth over $S$ and with connected fibers. Every morphism of groups from $G$ into a presheaf of commutative groups over $S$, separated for (fppf), vanishes on $\Ker(f)$.
+\end{proposition}
+The first assertion follows at once from 4.1.11. One has immediately $\Ker(f)\cap\Omega=\Omega'$, which proves that $\Ker(f)$ is smooth over $S$ at every point of the identity section.{\renewcommand{\thefootnote}{(61)}\nde{``At every point of the identity section'' has been added, as well as the reference to VIB 3.10 at the end of the proof. On the other hand, in the following sentence ``prescheme'' has been replaced by ``presheaf''.}} By 5.6.9 (ii), every morphism $\varphi$ from $G$ into a presheaf of commutative groups separated for (fppf) vanishes on $U$ and $U^-$. By Exp.~XX 2.7, $\varphi$ therefore also vanishes on $T'$, hence on $\Omega'$. Taking the notations of 5.7.10, one sees that the monoid $U_1$ is contained in $\Ker(f)(S)$, which shows that
+\[
+\Ker(f)=\bigcup_{u\in U_1}u\Omega'.
+\]
+It follows on the one hand that every $\varphi$ as above vanishes on $\Ker(f)$, and on the other hand that $\Ker(f)$ has connected fibers, hence is smooth over $S$ by Exp.~VIB 3.10.
+
+\sgasection{6.2}{Derived group of a reductive group}
+\begin{theorem}{6.2.1}\label{XXII.6.2.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group.
+\begin{enumeratei}
+\item $\mathrm D_S(G)=\uHom_{S\text{-gr.}}(G,\mathbf G_{m,S})$ is representable by a twisted constant $S$-group, whose type at $s\in S$ is $\ZZ^{\operatorname{rgred}(G_s)-\operatorname{rgss}(G_s)}$.
+\item Write $\operatorname{corad}(G)=\mathrm D_S(\mathrm D_S(G))$, which is thus an $S$-torus. The biduality morphism (\cf Exp.~VIII \S~1)
+\[
+f_0:G\to\operatorname{corad}(G)
+\]
+is smooth and surjective.
+\item The composite morphism
+\[
+\operatorname{rad}(G)\to G\to\operatorname{corad}(G)
+\]
+is an isogeny (\cf 4.2.9).
+\item The kernel of $f_0$, denoted
+\[
+\operatorname{d\acute er}(G)=\Ker(f_0)
+\]
+is a closed group subscheme of $G$, semisimple over $S$, which one calls the \emph{derived group} of $G$. If $G$ is semisimple, one has $\operatorname{d\acute er}(G)=G$.
+\item Every morphism of groups from $G$ into an $S$-presheaf of commutative groups, separated for (fppf), vanishes on $\operatorname{d\acute er}(G)$ and therefore factors through $f_0$.
+\end{enumeratei}
+\end{theorem}
+\begin{proof}
+All assertions of the theorem are local for the \'etale topology; one may therefore reduce to the case where $G$ is split over $S$. Consider then the morphism $f$ of 6.1.8. By the last assertion of 6.1.8, one has at once an isomorphism
+\[
+\uHom_{S\text{-gr.}}(G,\mathbf G_{m,S})\isomto\uHom_{S\text{-gr.}}(T/T',\mathbf G_{m,S}),
+\]
+which proves (i), then (ii), and gives a commutative diagram
+\[
+\xymatrix{G\ar[r]^{f_0}\ar[dr]_f&\operatorname{corad}(G)\ar[d]^\sim\\&T/T'.}
+\]
+One then has (v) by 6.1.8, and (iii) by 6.1.2. One also has $\Ker(f)=\Ker(f_0)$, which by 6.1.8 implies that $\operatorname{d\acute er}(G)$ is smooth over $S$ and has connected fibers; it remains to verify that its fibers are semisimple; now they are reductive by Exp.~XIX 1.7, as invariant subgroups of reductive groups. By (iii), $\operatorname{rad}(G)\cap\operatorname{d\acute er}(G)$ is finite, which indeed implies that the fibers of $\operatorname{d\acute er}(G)$ are semisimple.
+\end{proof}
+\begin{remark}{6.2.2}\label{XXII.6.2.2}
+a) By construction, in the case where $G$ is split, $\operatorname{d\acute er}(G)$ is the (fppf) subsheaf of $G$ generated by the $U_\alpha$, $\alpha\in R$. (It even suffices to take the $U_\alpha$, $\alpha\in\Delta\cup-\Delta$, where $\Delta$ is a basis of $R$).
+
+b) {\renewcommand{\thefootnote}{(62)}\nde{In what follows, the original has been expanded, and the assertion that ``$\operatorname{d\acute er}(G)$ is the separated (fppf) presheaf of commutators of $G$'' has been deleted.}}Let $C$ be the presheaf of commutators of $G$, i.e. the $S$-group functor which associates with every $S'\to S$ the commutator group of $G(S')$ (i.e. the subgroup of $G(S')$ generated by the elements $xyx^{-1}y^{-1}$, for $x,y\in G(S')$), and let $\widetilde C$ be the associated (fppf) sheaf. Since the quotient $G/\operatorname{d\acute er}(G)=T/T'$ is commutative, $\operatorname{d\acute er}(G)$ contains $C$ and hence $\widetilde C$ (\cf Exp.~IV 4.3.12).
+
+On the other hand, the quotient presheaf $G/\widetilde C$ is separated (Exp.~IV 4.4.8.1), and hence by (v) one has $\operatorname{d\acute er}(G)\subset\widetilde C$, whence $\operatorname{d\acute er}(G)=\widetilde C$, i.e. $\operatorname{d\acute er}(G)$ is the (fppf) sheaf of commutators of $G$.
+
+Note finally that $C$, being a subpresheaf of $G$, is separated, but is not equal to $\operatorname{d\acute er}(G)$ in general: for example, $\operatorname{d\acute er}(\SL_2)=\SL_2$ but $\SL_2(\FF_2)\simeq\mathfrak S_3$ is not equal to its derived group.
+
+c) When $S$ is the spectrum of an algebraically closed field $k$, $\operatorname{d\acute er}(G)(k)$ is the commutator group of $G(k)$ (Exp.~VIB 7.10).
+\end{remark}
+\numpara{6.2.3}\label{XXII.6.2.3}
+Consider now the two exact sequences
+\[
+\begin{gathered}
+1\to\operatorname{rad}(G)\to G\to\operatorname{ss}(G)\to1,\\
+1\to\operatorname{d\acute er}(G)\to G\to\operatorname{corad}(G)\to1.
+\end{gathered}
+\]
+Since $\operatorname{rad}(G)$ is central in $G$, the product in $G$ defines a morphism of groups
+\[
+u:\operatorname{rad}(G)\underset S\times\operatorname{d\acute er}(G)\to G
+\]
+which is covering by 6.2.1 (iii), hence surjective and flat (Exp.~VIB 9.2 (xi)).{\renewcommand{\thefootnote}{(63)}\nde{Indeed, $G$ is the (fppf) quotient of $\operatorname{rad}(G)\times_S\operatorname{d\acute er}(G)$ by $\Ker(u)$, which is a group of multiplicative type, hence flat over $S$. Hence, by VIB 9.2 (xi), the morphism $u$ is flat.}}
+% typo: "mutiplicatif" -> "multiplicatif" in editorial note 63.
+Its kernel is isomorphic to $\operatorname{rad}(G)\cap\operatorname{d\acute er}(G)$, which is also the kernel of $\operatorname{rad}(G)\to\operatorname{corad}(G)$, hence is a finite subgroup of multiplicative type of $\operatorname{rad}(G)$.
+
+One argues in the same way for the morphism
+\[
+G\to\operatorname{corad}(G)\underset S\times\operatorname{ss}(G),
+\]
+whose kernel is $\operatorname{d\acute er}(G)\cap\operatorname{rad}(G)$. One therefore has the
+\begin{proposition}{6.2.4}\label{XXII.6.2.4}
+Let $G$ be a reductive $S$-group. The morphisms
+\[
+\begin{gathered}
+\operatorname{rad}(G)\underset S\times\operatorname{d\acute er}(G)\to G,\qquad
+G\to\operatorname{corad}(G)\underset S\times\operatorname{ss}(G),\\
+\operatorname{rad}(G)\to\operatorname{corad}(G)
+\end{gathered}
+\]
+are central isogenies, and their kernels are isomorphic.
+\end{proposition}
+\begin{corollary}{6.2.5}\label{XXII.6.2.5}
+The following conditions are equivalent:
+\begin{enumeratei}
+\item $G$ is the product of a semisimple group and a torus.
+\item $\operatorname{rad}(G)\times_S\operatorname{d\acute er}(G)\isomto G$.
+\item $G\isomto\operatorname{corad}(G)\times_S\operatorname{ss}(G)$.
+\item $\operatorname{rad}(G)\cap\operatorname{d\acute er}(G)=e$.
+\end{enumeratei}
+\end{corollary}
+\numpara{6.2.6}\label{XXII.6.2.6}
+Let us return temporarily to the case of a split group. Keep the notations of 6.1. Put $N=M\cap\mathcal V(R^*)^\perp$. One therefore has $T'=\mathrm D_S(M/N)$. One has seen that $U^-\cdot T'\cdot U$ was an open neighborhood of the identity section of $\operatorname{d\acute er}(G)$. One therefore has
+\[
+\uLie(\operatorname{d\acute er}(G)/S)=\mathfrak t'\oplus\coprod_{\alpha\in R}\mathfrak g^\alpha.
+\]
+Since the characters induced on $T'$ by the $\alpha\in R$ are nonzero and distinct (\cf Exp.~XXI 1.2.5---one has moreover already used this fact in 6.1.2), $R$ is a system of roots of $\operatorname{d\acute er}(G)$ with respect to $T'$. It is then immediate (for $U_\alpha\subset\operatorname{d\acute er}(G)$) that the $\exp$ morphisms of $\operatorname{d\acute er}(G)$ ``are'' those of $G$, and likewise for the coroots.
+
+It follows:
+\begin{proposition}{6.2.7}\label{XXII.6.2.7}
+In the preceding notations, $(\operatorname{d\acute er}(G),T',M/N,R)$ is a split group with root datum $\operatorname{d\acute er}(\mathscr R(G))$. The canonical morphism $\operatorname{d\acute er}(G)\to G$ gives by functoriality the canonical morphism of root data $\mathscr R(G)\to\operatorname{d\acute er}(\mathscr R(G))$ of Exp.~XXI 6.5.
+\end{proposition}
+N.B. The reader may as an exercise construct the diagram of split groups corresponding to the three left-hand columns of the diagram of root data of Exp.~XXI 6.5.7.
+\begin{proposition}{6.2.8}\label{XXII.6.2.8}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $\operatorname{d\acute er}(G)$ its derived group.
+\begin{enumeratei}
+\item For every maximal torus $T$ of $G$, $T\cap\operatorname{d\acute er}(G)$ is a maximal torus of $\operatorname{d\acute er}(G)$. For every maximal torus $T'$ of $\operatorname{d\acute er}(G)$, $\uCentr_G(T')=\operatorname{rad}(G)\cdot T'$ is a maximal torus of $G$. The two preceding constructions are mutually inverse and establish a bijective correspondence between maximal tori of $G$ and of $\operatorname{d\acute er}(G)$.
+\item For every Borel subgroup $B$ of $G$, $B\cap\operatorname{d\acute er}(G)$ is a Borel subgroup $B'$ of $\operatorname{d\acute er}(G)$. One has $B'{}^u=B^u$. For every Borel subgroup $B'$ of $\operatorname{d\acute er}(G)$, $\uNorm_G(B')=\operatorname{rad}(G)\cdot B'$ is a Borel subgroup of $G$. The preceding maps are mutually inverse and establish a bijective correspondence between Borel subgroups of $G$ and of $\operatorname{d\acute er}(G)$.
+\end{enumeratei}
+\end{proposition}
+By the local conjugacy theorem for maximal tori and the construction of the derived group, the only assertion which remains to be proved in (i) is the following: if $T$ is a maximal torus of $G$, then
+\[
+T=(T\cap\operatorname{d\acute er}(G))\cdot\operatorname{rad}(G)=\uCentr_G(T\cap\operatorname{d\acute er}(G)).
+\]
+The first equality is trivial (for one reduces to the split case); the second follows at once, for $\operatorname{rad}(G)$ is central in $G$, hence $T=\uCentr_G(T)=\uCentr_G(T\cap\operatorname{d\acute er}(G))$. One argues in the same way for (ii).
+
+\sgasection{6.3}{Subgroups with commutative quotients}
+\numpara{6.3.1}\label{XXII.6.3.1}
+Let $G$ be a reductive $S$-group. If $H$ is a subsheaf of groups of $G$, the following conditions are equivalent:
+\begin{itemize}
+\item $H$ contains $\operatorname{d\acute er}(G)$.
+\item $H$ is invariant and $G/H$ is commutative.
+\end{itemize}
+In this case, the canonical morphism $f_0:G\to\operatorname{corad}(G)$ maps $H$ onto a subsheaf $f_0(H)$ of $\operatorname{corad}(G)$; one has
+\[
+\begin{gathered}
+G/H\simeq\operatorname{corad}(G)/f_0(H),\qquad H/\operatorname{d\acute er}(H)\simeq f_0(H),\\
+\operatorname{d\acute er}(G)=\operatorname{d\acute er}(H),\qquad H=f_0^{-1}(f_0(H)).
+\end{gathered}
+\]

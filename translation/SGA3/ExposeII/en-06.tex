@@ -1,0 +1,473 @@
+{\itshape
+Letting \(S'\) vary, one obtains an isomorphism which one may denote
+\(\Lie(\mathbf{F}/S)\simeq t\,\mathbf{F}\).
+
+For every \(S'\to S\), one therefore has, by~4.5, a commutative diagram:
+\[
+\xymatrix@C=1.1em@R=1.5em{
+\End_{\mathbf{O}_{S'}\textup{-mod.}}(\mathbf{F}_{S'}) \ar[r]^{\sim}
+&
+\Hom_{\mathbf{O}_{S'}\textup{-mod.}}(\mathbf{F}_{S'},t\,\mathbf{F}_{S'})
+  \ar[r]^{\sim} \ar[d]
+&
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})/S\bigr)(S') \ar[d]
+\\
+&
+\Aut_{\mathbf{O}_{\mathrm{I}_{S'}}\textup{-mod.}}(\mathbf{F}_{\mathrm{I}_{S'}})
+&
+\mathrm{T}_{\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})/S}(S')
+}
+\]
+and one deduces from 4.3~bis that every
+\(X\in\End_{\mathbf{O}_{S'}\textup{-mod.}}(\mathbf{F}_{S'})\) corresponds to the element
+\(\mathrm{id}+tX\) of
+\(\Aut_{\mathbf{O}_{\mathrm{I}_{S'}}\textup{-mod.}}(\mathbf{F}_{\mathrm{I}_{S'}})\).
+\par}
+
+\begin{definition}{4.6}\label{II.4.6}
+One says that the group \(S\)-functor \(\mathbf{G}\) is \emph{good} if \(\mathbf{G}/S\)
+satisfies condition~(E) and if \(\Lie(\mathbf{G}/S)\) is a good
+\(\mathbf{O}_{S}\)-module.
+{\renewcommand{\thefootnote}{(73)}\nde{One has added the following sentence.}}
+Note that if \(\mathbf{F}\) is a good \(\mathbf{O}_{S}\)-module, it is a good
+\(S\)-group; indeed \(\mathbf{F}/S\) satisfies~(E) and
+\(\Lie(\mathbf{F}/S)\simeq\mathbf{F}\) is a good \(\mathbf{O}_{S}\)-module.
+\end{definition}
+
+\begin{example}{4.6.1}\label{II.4.6.1}
+If \(\mathbf{G}\) is representable, it is good. Indeed, \(\mathbf{G}/S\)
+satisfies~(E) and \(\Lie(\mathbf{G}/S)\) is of the form \(\mathbf{V}(\mathcal{E})\),
+hence good, by~4.4.2.
+\end{example}
+
+\begin{lemma}{4.6.2}\label{II.4.6.2}
+{\renewcommand{\thefootnote}{(74)}\nde{One has added this lemma.}}
+Let \(\mathbf{G}\) be a group \(S\)-functor such that \(\mathbf{G}/S\) satisfies~(E),
+and let \(\mathbf{F}=\Lie(\mathbf{G}/S)\). Then \(\mathbf{F}\) satisfies~(E) and the
+morphism of abelian groups \(d\colon\mathbf{F}\to\Lie(\mathbf{F}/S)\) respects the
+\(\mathbf{O}_{S}\)-module structures.
+
+Consequently, \(\mathbf{G}\) is good if and only if
+\(\mathbf{F}\to\Lie(\mathbf{F}/S)\) is bijective.
+\end{lemma}
+
+\begin{proof}
+Suppose that \(\mathbf{G}/S\) satisfies~(E). Let \(\mathcal{M}\), \(\mathcal{N}\) be
+free \(\mathcal{O}_{S}\)-modules of finite rank. Write
+\(\mathbf{F}(\mathcal{N})=\Lie(\mathbf{G}/S,\mathcal{N})\) and let \(e\) be the unit
+section of \(\mathbf{G}\).
+
+For every \(S'\to S\), one has
+\(\mathbf{F}(\mathcal{N})(S')=\{g\in\Hom_{S}(\mathrm{I}_{S'}(\mathcal{N}),\mathbf{G})
+\mid g\circ\varepsilon_{\mathcal{N}}=e\}\) and
+\(\Lie(\mathbf{F}(\mathcal{N})/S,\mathcal{M})(S')
+=\Hom_{S}(\mathrm{I}_{S'}(\mathcal{M}),\mathbf{F}(\mathcal{N}))\) is identified with
+\[
+\left\{
+\Phi\in\Hom_{S}\bigl(\mathrm{I}_{S'}(\mathcal{N})\times_{S'}\mathrm{I}_{S'}(\mathcal{M}),
+\mathbf{G}\bigr)
+\;\middle|\;
+\begin{aligned}
+&\Phi\circ\bigl(\varepsilon_{\mathcal{N}}\times\mathrm{id}_{\mathrm{I}_{S'}(\mathcal{M})}\bigr)
+  =e\in\mathbf{G}\bigl(\mathrm{I}_{S'}(\mathcal{M})\bigr)\\
+&\Phi\circ\bigl(\mathrm{id}_{\mathrm{I}_{S'}(\mathcal{N})}\times\varepsilon_{\mathcal{M}}\bigr)
+  =e\in\mathbf{G}\bigl(\mathrm{I}_{S'}(\mathcal{N})\bigr)
+\end{aligned}
+\right\}.
+\]
+This shows that
+\begin{equation}
+\Lie\bigl(\mathbf{F}(\mathcal{N})/S,\mathcal{M}\bigr)
+  \simeq\Lie\bigl(\mathbf{F}(\mathcal{M})/S,\mathcal{N}\bigr).
+\tag{1}
+\end{equation}
+As \(\mathbf{G}/S\) satisfies~(E), one deduces from this:
+\[
+\begin{aligned}
+\Lie\bigl(\mathbf{F}(\mathcal{N})/S,\mathcal{M}_{1}\oplus\mathcal{M}_{2}\bigr)
+  &\simeq\Lie\bigl(\mathbf{F}(\mathcal{M}_{1}\oplus\mathcal{M}_{2})/S,\mathcal{N}\bigr)\\
+  &\simeq\Lie\bigl((\mathbf{F}(\mathcal{M}_{1})\times_{S}\mathbf{F}(\mathcal{M}_{2}))/S,
+    \mathcal{N}\bigr).
+\end{aligned}
+\]
+By~3.8, the right-hand term is isomorphic to
+\[
+\Lie\bigl(\mathbf{F}(\mathcal{M}_{1})/S,\mathcal{N}\bigr)
+  \times_{S}
+\Lie\bigl(\mathbf{F}(\mathcal{M}_{2})/S,\mathcal{N}\bigr)
+  \simeq
+\Lie\bigl(\mathbf{F}(\mathcal{N})/S,\mathcal{M}_{1}\bigr)
+  \times_{S}
+\Lie\bigl(\mathbf{F}(\mathcal{N})/S,\mathcal{M}_{2}\bigr).
+\]
+
+It follows that
+\begin{equation}
+\Lie\bigl(\mathbf{F}(\mathcal{N})/S,\mathcal{M}_{1}\oplus\mathcal{M}_{2}\bigr)
+  \simeq
+\Lie\bigl(\mathbf{F}(\mathcal{N})/S,\mathcal{M}_{1}\bigr)
+  \times_{S}
+\Lie\bigl(\mathbf{F}(\mathcal{N})/S,\mathcal{M}_{2}\bigr),
+\tag{2}
+\end{equation}
+hence \(\mathbf{F}(\mathcal{N})/S\) satisfies~(E), by remark~4.1.1.2~a).
+
+Let us now show that the morphism of abelian groups
+\(d\colon\mathbf{F}(\mathcal{N})\to\Lie(\mathbf{F}(\mathcal{N})/S)\) respects the
+\(\mathbf{O}_{S}\)-module structures. Let us consider the free
+\(\mathcal{O}_{S}\)-module \(\mathcal{M}=t\,\mathcal{O}_{S}\), so that
+\[
+\mathbf{O}\bigl(\mathrm{I}_{S'}(\mathcal{M})\bigr)
+  =\mathbf{O}(S')[t]/(t^{2})
+  =\mathbf{O}(S')\oplus t\,\mathbf{O}(S')
+\]
+and \(\Lie(\mathbf{O}_{S}/S)\simeq t\,\mathbf{O}_{S}\). One will denote by \(\rho_{t}\)
+the structural morphism \(\mathrm{I}_{S}(\mathcal{M})\to S\), which corresponds to the
+injection
+\(u_{t}\colon\mathcal{O}_{S}\hookrightarrow\mathcal{D}_{\mathcal{O}_{S}}(\mathcal{M})
+=\mathcal{O}_{S}\oplus t\,\mathcal{O}_{S}\). Recall (\cf~3.4.2) that, for every
+\(S\)-functor \(X\),
+\(\mathbf{F}(\mathcal{N})(X)=\Lie(\mathbf{G}/S,\mathcal{N})(X)\) is the set of
+\(S\)-morphisms \(\phi\colon\mathrm{I}_{X}(\mathcal{N})\to\mathbf{G}\) such that
+\(\phi\circ\varepsilon_{\mathcal{N}}=e\), and that the operation of
+\(a\in\mathbf{O}(X)\) is given by \(a\cdot\phi=\phi\circ a^{*}\), where \(a^{*}\) is
+the endomorphism of \(\mathrm{I}_{X}(\mathcal{N})\) associated with \(a\), \cf~2.1.3.
+
+Consequently, by~4.3.4, the morphism
+\(d\colon\mathbf{F}(\mathcal{N})\isomto
+\mathbf{F}(\mathcal{N})\otimes_{\mathbf{O}_{S}}t\,\mathbf{O}_{S}
+\to\Lie(\mathbf{F}(\mathcal{N})/S)\)
+is given by: for every \(S'\to S\) and
+\(f\in\Hom_{S}(S',\mathbf{F}(\mathcal{N}))\),
+\[
+f\mapsto f\otimes t\mapsto t\cdot(f\circ\rho_{t})=f\circ\rho_{t}\circ t^{*},
+\]
+where, in the last term,
+\[
+f\circ\rho_{t}\in\mathbf{F}(\mathcal{N})\bigl(\mathrm{I}_{S'}(\mathcal{M})\bigr)
+\]
+is
+regarded as an \(S\)-morphism
+\(\phi\colon\mathrm{I}_{\mathrm{I}_{S'}(\mathcal{M})}(\mathcal{N})\to\mathbf{G}\)
+(such that \(\phi\circ\varepsilon_{\mathcal{N}}=e\)). It remains to see that \(d\) is
+a morphism of \(\mathbf{O}_{S}\)-modules, \ie that
+\(d(a\cdot f)=u_{t}(a)\cdot d(f)\) for every \(a\in\mathbf{O}(S')\).
+
+Regarding \(f\in\mathbf{F}(\mathcal{N})(S')\) as a morphism
+\(\mathrm{I}_{S'}(\mathcal{N})\to\mathbf{G}\), one likewise has
+\(a\cdot f=f\circ a^{*}\). On the other hand, by the functoriality in \(X\) of the
+operation of \(\mathbf{O}(X)\) on \(\mathrm{I}_{X}(\mathcal{N})\) (\cf~2.1.3), one has
+the commutative diagram below:
+\[
+\xymatrix@C=3em@R=1.4em{
+\mathrm{I}_{S'}(\mathcal{N}) \ar[r]^{a^{*}}
+  & \mathrm{I}_{S'}(\mathcal{N}) \\
+\mathrm{I}_{\mathrm{I}_{S'}(\mathcal{M})}(\mathcal{N})
+  \ar[u]_{\rho_{t}} \ar[r]^{u_{t}(a)^{*}}
+  & \mathrm{I}_{\mathrm{I}_{S'}(\mathcal{M})}(\mathcal{N}) \ar[u]_{\rho_{t}}
+}
+\]
+One therefore has
+\begin{align*}
+d(a\cdot f)
+  &=f\circ a^{*}\circ\rho_{t}\circ t^{*}
+   =f\circ\rho_{t}\circ u_{t}(a)^{*}\circ t^{*}\\
+  &=f\circ\rho_{t}\circ t^{*}\circ u_{t}(a)^{*}
+   =u_{t}(a)\cdot d(f)
+\end{align*}
+(the penultimate equality resulting from the fact that \(\mathbf{O}\) is
+commutative). This completes the proof of lemma~4.6.2.
+\end{proof}
+
+\begin{theorem}{4.7}\label{II.4.7}
+If \(\mathbf{F}\) is a good \(\mathbf{O}_{S}\)-module, the \(S\)-group
+\(\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})\) is good.
+\end{theorem}
+
+{\renewcommand{\thefootnote}{(75)}\nde{One has simplified the original, using the additions made in~4.3.1 and~4.5.}}
+Indeed, by~4.5, \(\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})/S\) satisfies~(E) and
+\[
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})/S\bigr)
+\simeq\End_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})
+\]
+is a good \(\mathbf{O}_{S}\)-module.
+
+\numpara{4.7.1}\label{II.4.7.1}
+{\renewcommand{\thefootnote}{(76)}\nde{One has added the numbering 4.7.1, 4.7.2, 4.7.3.}}
+Let now \(\mathbf{G}\) be an \(S\)-group and \(\mathbf{F}\) a \emph{good}
+\(\mathbf{O}_{S}\)-module. Suppose given a \emph{linear representation} of
+\(\mathbf{G}\) in \(\mathbf{F}\), that is~(I~4.7.1), a morphism of \(S\)-groups
+\[
+\rho\colon\mathbf{G}\longrightarrow\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F}).
+\]
+If \(\mathbf{G}/S\) satisfies~(E), one deduces from this, by~4.1.C and~4.5, a
+morphism of \(\mathbf{O}_{S}\)-modules, denoted \(\rho'\) or \(d\rho\):
+\[
+\Lie(\mathbf{G}/S)\longrightarrow
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})/S\bigr)
+\simeq\End_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F}).
+\]
+{\renewcommand{\thefootnote}{(77)}\nde{One has added the following sentence.}}
+Moreover, setting \(\mathcal{O}_{\mathrm{I}_{S}}=\mathcal{O}_{S}\oplus t\,\mathcal{O}_{S}\)
+(with \(t^{2}=0\)), one deduces from~4.5.1 that, if \(S'\to S\) and
+\(X\in\Lie(\mathbf{G}/S)(S')\subset\mathbf{G}(\mathrm{I}_{S'})\), then one has in
+\(\Aut_{\mathbf{O}_{\mathrm{I}_{S'}}\textup{-mod.}}(\mathbf{F}_{\mathrm{I}_{S'}})\) the
+following equality:
+\begin{equation}
+\rho(X)=\mathrm{id}+t\,\rho'(X),
+\tag{*}
+\end{equation}
+\ie for every \(S''\to\mathrm{I}_{S'}\) and \(f\in\mathbf{F}(S'')\), one has in
+\(\mathbf{F}(S'')\) the equality \(\rho(X)(f)=f+t\rho'(X)(f)\).
+
+\begin{definition}{4.7.2}\label{II.4.7.2}
+Let \(\mathbf{G}\) be a \emph{good} \(S\)-group. Then \(\Lie(\mathbf{G}/S)\) is a good
+\(\mathbf{O}_{S}\)-module, and one has a morphism of \(S\)-groups
+\(\Ad\colon\mathbf{G}\to\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\Lie(\mathbf{G}/S))\). One
+deduces from this, by~4.7.1, a morphism of \(\mathbf{O}_{S}\)-modules
+\[
+\ad\colon\Lie(\mathbf{G}/S)\longrightarrow
+\End_{\mathbf{O}_{S}\textup{-mod.}}\bigl(\Lie(\mathbf{G}/S)\bigr),
+\]
+or, what amounts to the same thing, an \(\mathbf{O}_{S}\)-bilinear morphism:
+\[
+\Lie(\mathbf{G}/S)\times_{S}\Lie(\mathbf{G}/S)\longrightarrow\Lie(\mathbf{G}/S),
+\qquad
+(x,y)\mapsto[x,y]=\ad(x)\cdot y
+\]
+(where \(x\) and \(y\) denote two arbitrary elements of
+\(\Lie(\mathbf{G}/S)(S')=\Lie(\mathbf{G}_{S'}/S')(S')\)). If \(\mathbf{G}\) is
+commutative, then \([x,y]=0\).
+\end{definition}
+
+\numpara{4.7.3}\label{II.4.7.3}
+One may give an equivalent definition of the bracket, as follows: let us first
+observe that it suffices to do so for \(x,y\in\Lie(\mathbf{G}/S)(S)\). Let us next
+observe that there is a canonical isomorphism
+\(\mathrm{I}_{S}\times_{S}\mathrm{I}_{S}\simeq\mathrm{I}_{\mathrm{I}_{S}}\); to avoid
+confusion, let us denote by \(\mathrm{I}\) and \(\mathrm{I}'\) two copies of
+\(\mathrm{I}_{S}\) and set \(\mathcal{O}_{\mathrm{I}}=\mathcal{O}_{S}[t]\),
+\(\mathcal{O}_{\mathrm{I}'}=\mathcal{O}_{S}[t']\), where \(t^{2}=0=t'^{2}\).
+One then has a commutative diagram
+\[
+\xymatrix{
+\mathrm{I}\times\mathrm{I}' \ar[r] \ar[d] & \mathrm{I}' \ar[d] \\
+\mathrm{I} \ar[r] & S\,,
+}
+\]
+the two arrows issuing from \(\mathrm{I}\times\mathrm{I}'\) identifying the latter
+with the scheme of dual numbers on \(\mathrm{I}\) or on \(\mathrm{I}'\). There
+results a commutative diagram of groups (where one writes
+\(L=\Lie(\mathbf{G}/S)\)):
+\[
+(1)\qquad
+\xymatrix@C=1.15em@R=1.2em{
+& & 1 \ar[d] & 1 \ar[d] & \\
+& & L(\mathrm{I}) \ar[r] \ar[d] & L(S) \ar[r] \ar[d] & 1 \\
+1 \ar[r] & L(\mathrm{I}') \ar[r] \ar[d]
+  & \mathbf{G}(\mathrm{I}\times\mathrm{I}') \ar[r] \ar[d]
+  & \mathbf{G}(\mathrm{I}') \ar[r] \ar[d] & 1 \\
+1 \ar[r] & L(S) \ar[r] \ar[d]
+  & \mathbf{G}(\mathrm{I}) \ar[r] \ar[d]
+  & \mathbf{G}(S) \ar[r] \ar[d] & 1 \\
+& 1 & 1 & 1 &
+}
+\]
+
+The ninth piece of the puzzle is none other than \(\Lie(L/S)(S)\). If \(\mathbf{G}\)
+is \emph{good}, this is \(L(S)\), and one therefore has the following commutative
+diagram, in which the rows and the columns are exact sequences of groups, the five
+\(L(\ )\) are commutative,%
+{\renewcommand{\thefootnote}{(78)}\nde{One has expanded the original in what follows.}}
+and in which, taking into account the identification
+\(L(\mathrm{I})=L(S)\oplus t\,L(S)\)
+(\resp \(L(\mathrm{I}')=L(S)\oplus t'\,L(S)\)), the injection
+\(L(S)\hookrightarrow L(\mathrm{I})\)
+(\resp \(L(S)\hookrightarrow L(\mathrm{I}')\)) is given by \(u\mapsto tu\)
+(\resp \(u\mapsto t'u\)):
+\[
+(2)\qquad
+\xymatrix@C=1.6em@R=1.35em{
+z\in L(S) \ar[r]^{t} \ar[d]_{t'}
+  & L(\mathrm{I}) \ar[r] \ar[d]
+  & L(S)\ni x \ar[d] \\
+L(\mathrm{I}') \ar[r] \ar[d]
+  & \mathbf{G}(\mathrm{I}\times\mathrm{I}') \ar[r] \ar[d]
+  & \mathbf{G}(\mathrm{I}') \ar[d] \\
+y\in L(S) \ar[r]
+  & \mathbf{G}(\mathrm{I}) \ar[r]
+  & \mathbf{G}(S)\,.
+}
+\]
+
+Now in such a diagram, if one takes two elements \(x\) and \(y\) as marked, and if one
+lifts \(x\) \resp \(y\) arbitrarily to an element \(\widetilde{x}\in L(\mathrm{I})\)
+\resp \(y'\in L(\mathrm{I}')\), the commutator
+\(\widetilde{x}\,y'\,\widetilde{x}^{-1}\,{y'}^{-1}\) in
+\(\mathbf{G}(\mathrm{I}\times\mathrm{I}')\) does not depend on the chosen lifts and is
+the image of an element \(z\) as marked. The reader will verify that one has
+\(z=[x,y]\).%
+{\renewcommand{\thefootnote}{(79)}\nde{The original indicated in a footnote: ``(*)~The writer acknowledges, at Gabriel's request, that the exercise is not immediate; this is moreover the reason why it is not in the text''. One has given the details, taking into account the addition made in~4.7.1; see also [DG70], \S~II.4, 4.2.}}
+
+Indeed, if one still denotes by \(x\) the image of \(x\) under the canonical section
+\(L(S)\to L(\mathrm{I})\) (and likewise for \(y\)), then \(\widetilde{x}=xu\) and
+\(y'=yv\), with \(u,v\in L(S)=L(\mathrm{I})\cap L(\mathrm{I}')\), and since
+\(L(\mathrm{I})\) and \(L(\mathrm{I}')\) are commutative one has
+\[
+\widetilde{x}\,{y'}\,\widetilde{x}^{-1}\,{y'}^{-1}
+  =x\,u\,y\,v\,u^{-1}\,x^{-1}\,v^{-1}\,y^{-1}
+  =x\,u\,y\,u^{-1}\,v\,x^{-1}\,v^{-1}\,y^{-1}
+  =x\,y\,x^{-1}\,y^{-1}.
+\]
+
+Moreover, this element is sent to the unit element of \(\mathbf{G}(\mathrm{I})\) and of
+\(\mathbf{G}(\mathrm{I}')\), hence comes from a (unique) \(z\) as indicated. Finally,
+regarding \(y\) (\resp \(x\)) as an element of \(L_{\mathrm{I}'}(\mathrm{I}')\)
+(\resp of \(L(S)\subset\mathbf{G}(\mathrm{I}')\)), one has by~4.7.1~(\(*\)):
+\[
+xyx^{-1}=\Ad(x)(y)=\bigl(\mathrm{id}+t'\,\ad(x)\bigr)(y)=y+t'[x,y]\,,
+\]
+hence the element \(xyx^{-1}y^{-1}\) of \(L(\mathrm{I}')\) is the image of the element
+\(z=[x,y]\) of \(L(S)\).
+
+In this construction the following two properties appear:
+\begin{enumeratei}
+\item the bracket is ``functorial in \(\mathbf{G}\)''\,: precisely,
+\(\mathbf{G}\mapsto\Lie(\mathbf{G}/S)\) is a functor from the category of good
+\(S\)-groups to the category of good \(\mathbf{O}_{S}\)-modules equipped with an
+\(\mathbf{O}_{S}\)-bilinear composition law.
+\item One has \([x,y]+[y,x]=0\): indeed the diagram is symmetric with respect to the
+main diagonal.%
+{\renewcommand{\thefootnote}{(80)}\nde{I.e., \(x\) and \(y\) play symmetric roles: the image in \(\mathbf{G}(\mathrm{I}\times\mathrm{I}')\) of \([y,x]\) equals the commutator \(y'\widetilde{x}{y'}^{-1}\widetilde{x}^{-1}\), which is the inverse of \(\widetilde{x}\,y'\,\widetilde{x}^{-1}{y'}^{-1}=[x,y]\). On the other hand (\cf~4.10 below), one does not know whether one necessarily has \([x,x]=0\): if one regards \(x\) as an element of \(\widetilde{x}\in L(\mathrm{I})\) (\resp \(x'\in L(\mathrm{I}')\)) it is not a priori clear that \(\widetilde{x}\) and \(x'\) commute\ldots}}
+\end{enumeratei}
+
+\begin{proposition}{4.8}\label{II.4.8}
+Let \(\mathbf{F}\) be a good \(\mathbf{O}_{S}\)-module. Via the identification
+\[
+\Lie\bigl(\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})/S\bigr)
+  =\End_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})
+\]
+one has
+\[
+\Ad(g)\cdot Y=g\circ Y\circ g^{-1}
+\qquad\text{and}\qquad
+[X,Y]=X\circ Y-Y\circ X,
+\]
+for every \(S'\to S\), \(g\in\Aut_{\mathbf{O}_{S'}\textup{-mod.}}(\mathbf{F}_{S'})\), and
+\[
+X,Y\in\Lie\bigl(\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})/S\bigr)(S')
+=\End_{\mathbf{O}_{S'}\textup{-mod.}}(\mathbf{F}_{S'}).
+\]
+\end{proposition}
+
+\begin{proof}
+{\renewcommand{\thefootnote}{(81)}\nde{One has expanded and simplified the original in what follows.}}
+By base change, one reduces to \(S'=S\), which makes it possible to lighten the
+notation. Set \(\mathrm{I}=\mathrm{I}_{S}\) and
+\(\mathcal{O}_{\mathrm{I}}=\mathcal{O}_{S}[t]\) (with \(t^{2}=0\)). Recall
+(\cf~4.5.1) that the inclusion
+\(i\colon\End_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})
+\hookrightarrow\Aut_{\mathbf{O}_{\mathrm{I}}\textup{-mod.}}(\mathbf{F}_{\mathrm{I}})\)
+sends \(Y\) to \(\mathrm{id}+tY\). Then, by definition of \(\Ad(g)\) (\cf~4.1.A), one
+has:
+\[
+\mathrm{id}+t\,\Ad(g)(Y)
+  =g\circ(\mathrm{id}+tY)\circ g^{-1}
+  =\mathrm{id}+t\,(g\circ Y\circ g^{-1}),
+\]
+whence \(\Ad(g)(Y)=g\circ Y\circ g^{-1}\).
+
+Let \(\mathrm{I}'\) be a second copy of \(\mathrm{I}_{S}\), and set
+\(\mathcal{O}_{\mathrm{I}'}=\mathcal{O}_{S}[t']\) (with \(t'^{2}=0\)). Let us apply the
+results of~4.7.3 to \(\mathbf{G}=\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})\) and
+% typo?: kept as printed (L = Lie(G/S) equals End, not Aut, by the identification above)
+\(L=\Lie(\mathbf{G}/S)=\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})\). One identifies
+\(X\) with its image under the canonical section \(L(S)\hookrightarrow L(\mathrm{I})\);
+its image in \(\mathbf{G}(\mathrm{I}\times\mathrm{I}')\) is then \(\mathrm{id}+t'X\),
+whose inverse is \(\mathrm{id}-t'X\). Likewise, \(Y\) lifts to \(\mathrm{id}+tY\),
+whose inverse is \(\mathrm{id}-tY\). Then the commutator
+\[
+(\mathrm{id}+t'X)\circ(\mathrm{id}+tY)\circ(\mathrm{id}-t'X)\circ(\mathrm{id}-tY)
+  =\mathrm{id}+tt'(X\circ Y-Y\circ X)
+\]
+is the image in \(\mathbf{G}(\mathrm{I}\times\mathrm{I}')\) of the element
+\(Z=X\circ Y-Y\circ X\) of \(L(S)\) (indeed, \(Z\) is sent to \(tZ\in L(\mathrm{I})\),
+then to \(\mathrm{id}+t'tZ\in\mathbf{G}(\mathrm{I}\times\mathrm{I}')\)). By~4.7.3,
+this shows that \([X,Y]=X\circ Y-Y\circ X\).
+\end{proof}
+
+\begin{corollary}{4.8.1}\label{II.4.8.1}
+Let \(\mathbf{G}\) be a good \(S\)-group and
+\(x,y,z\in\Lie(\mathbf{G}/S)(S')\). One has:
+\[
+[x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0.
+\]
+\end{corollary}
+
+{\renewcommand{\thefootnote}{(82)}\nde{One has expanded the original in what follows.}}
+Indeed, since \(\mathbf{G}\) is good, \(\Lie(\mathbf{G}/S)\) is a good
+\(\mathbf{O}_{S}\)-module and hence, by~4.7,
+\[
+\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\Lie(\mathbf{G}/S))
+\]
+is a good \(S\)-group. Then
+the morphism of \(S\)-groups
+\[
+\Ad\colon\mathbf{G}\longrightarrow
+\Aut_{\mathbf{O}_{S}\textup{-mod.}}\bigl(\Lie(\mathbf{G}/S)\bigr)
+\]
+given by the functoriality~4.7.3~(i): \({\ad}[x,y]=[{\ad}\,x,{\ad}\,y]\). Combined with~4.8,
+this gives:
+\[
+{\ad}[x,y]=[{\ad}\,x,{\ad}\,y]={\ad}\,x\circ{\ad}\,y-{\ad}\,y\circ{\ad}\,x,
+\]
+which, applied to an element \(z\), gives the Jacobi relation.
+
+\begin{corollary}{4.8.2}\label{II.4.8.2}
+Let \(\mathbf{G}\) be a good \(S\)-group operating linearly on a good
+\(\mathbf{O}_{S}\)-module \(\mathbf{F}\) (\ie let \(\mathbf{F}\) be a
+\(\mathbf{G}\)-\(\mathbf{O}_{S}\)-module, \(\mathbf{G}\) and \(\mathbf{F}\) good).
+Then the linear map
+\(\rho'\colon\Lie(\mathbf{G}/S)\to\End_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})\) is a
+representation, that is, one has
+\[
+\rho'([x,y])=\rho'(x)\circ\rho'(y)-\rho'(y)\circ\rho'(x).
+\]
+\end{corollary}
+
+\begin{scholium}{4.9}\label{II.4.9}
+To every good \(S\)-group (for example a representable one), one has associated a good
+\(\mathbf{O}_{S}\)-module \(\Lie(\mathbf{G}/S)\) equipped functorially with a bilinear
+map satisfying
+\[
+[x,y]+[y,x]=0,
+\qquad
+[x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0.
+\]
+We shall call \(\Lie(\mathbf{G}/S)\) equipped with this structure the ``Lie algebra''
+of \(\mathbf{G}\) over \(S\) (the quotation marks being justified by the fact that one
+does not know whether \(\Lie(\mathbf{G}/S)\) is strictly speaking an
+\(\mathbf{O}_{S}\)-Lie algebra%
+{\renewcommand{\thefootnote}{(83)}\nde{For one does not know whether \([x,x]=0\); see~4.10 below.}}).
+To every linear representation of \(\mathbf{G}\) in a good \(\mathbf{O}_{S}\)-module
+\(\mathbf{F}\) is associated a representation of its ``Lie algebra''. In particular,
+to the adjoint representation of \(\mathbf{G}\) is associated the adjoint
+representation of its ``Lie algebra''.
+\end{scholium}
+
+\begin{definition}{4.10}\label{II.4.10}
+A group functor \(\mathbf{G}\) over \(S\) is said to be \emph{very good} if it is good
+and if \(\Lie(\mathbf{G}/S)\) is an \(\mathbf{O}_{S}\)-Lie algebra (that is, if one
+has identically \([x,x]=0\)).
+\end{definition}
+
+\begin{examples}{4.10.1}\label{II.4.10.1}
+The following \(S\)-groups are very good:
+\(\Aut_{\mathbf{O}_{S}\textup{-mod.}}(\mathbf{F})\) for every good
+\(\mathbf{O}_{S}\)-module \(\mathbf{F}\) (\cf~4.7 and~4.8), every representable group
+(see below), every good \(S\)-group admitting a monomorphism into a very good
+\(S\)-group, for example every good group subfunctor of a representable group, or
+every good \(S\)-group admitting a faithful linear representation in a good
+\(\mathbf{O}_{S}\)-module, for example every good \(S\)-group such that \(\Ad\) is a
+monomorphism\ldots
+\end{examples}

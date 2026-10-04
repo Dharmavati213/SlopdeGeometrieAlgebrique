@@ -1,0 +1,465 @@
+In general, the cartesian square of~3.7 defines a morphism of \(X\)-functors:
+\[
+\xymatrix{
+\mathrm{T}_{X/S}(\mathcal{M})\ar[rr]\ar[rd]
+& & \mathrm{T}_{X'/S}(\mathcal{M})\times_{X'}X\ar[ld]\\
+& X. &
+}
+\]
+
+\begin{proposition}{3.7. bis}\label{II.3.7.bis}
+Let \(f\colon X\to X'\) be an \(S\)-morphism; if \(X\) and \(X'\) satisfy
+\textup{(E)} with respect to~\(S\), then
+\[
+\mathrm{T}_{X/S}(\mathcal{M})\xrightarrow{\mathrm{T}(f)}
+\mathrm{T}_{X'/S}(\mathcal{M})_{X}
+\qquad\text{resp.}\qquad
+\mathrm{L}^{u}_{X/S}(\mathcal{M})\xrightarrow{\mathrm{L}(f)}
+\mathrm{L}^{f\circ u}_{X'/S}(\mathcal{M})
+\]
+is a morphism of \(\OX\)-modules (\resp of \(\OS\)-modules).
+\end{proposition}
+
+This follows from Proposition~3.7 by functoriality in~\(\mathcal{M}\).
+
+\begin{proposition}{3.8}\label{II.3.8}
+Let \(X\) and \(Y\) be two functors over~\(S\). One has isomorphisms, functorial
+in~\(\mathcal{M}\):
+\begin{equation}
+\mathrm{T}_{X/S}(\mathcal{M})\times_{S}\mathrm{T}_{Y/S}(\mathcal{M})
+\isomto
+\mathrm{T}_{(X\times_{S}Y)/S}(\mathcal{M}),
+\tag{3.8.1}
+\end{equation}
+\begin{equation}
+\mathrm{L}^{u}_{X/S}(\mathcal{M})\times_{S}\mathrm{L}^{v}_{Y/S}(\mathcal{M})
+\isomto
+\mathrm{L}^{(u,v)}_{(X\times_{S}Y)/S}(\mathcal{M}).
+\tag{3.8.2}
+\end{equation}
+\end{proposition}
+
+{\renewcommand{\thefootnote}{(28)}\nde{\normalfont What follows has been spelled out.}}
+The first isomorphism follows from~1.2~(*), and the second is deduced from it
+by the base change \((u,v)\colon S\to X\times_{S}Y\).
+
+\begin{remark}{3.8.0}\label{II.3.8.0}
+Let us observe that \textup{(3.8.1)} may also be interpreted as an isomorphism
+of \(X\times_{S}Y\)-functors
+\[
+\bigl(\mathrm{T}_{X/S}(\mathcal{M})\times_{X}(X\times_{S}Y)\bigr)
+\times_{X\times_{S}Y}
+\bigl(\mathrm{T}_{Y/S}(\mathcal{M})\times_{Y}(X\times_{S}Y)\bigr)
+\isomto
+\mathrm{T}_{(X\times_{S}Y)/S}(\mathcal{M}).
+\]
+\end{remark}
+
+\begin{corollary}{3.8.1}\label{II.3.8.1}
+If \(X/S\) is equipped with an algebraic structure defined by finite cartesian
+products, then \(\mathrm{T}_{X/S}(\mathcal{M})\) is equipped with a structure of
+the same species, and the projection
+\(\mathrm{T}_{X/S}(\mathcal{M})\to X\) is a morphism of this species of
+structure.
+\end{corollary}
+
+\begin{proposition}{3.8. bis}\label{II.3.8.bis}
+If \(X/S\) and \(Y/S\) satisfy \textup{(E)}, then \((X\times_{S}Y)/S\) satisfies
+\textup{(E)}, and \textup{(3.8.1)} (resp.\ \textup{(3.8.2)}) is an isomorphism
+of \(\mathcal{O}_{X\times_{S}Y}\)-modules (\resp of \(\OS\)-modules).
+\end{proposition}
+
+\begin{proof}%
+{\renewcommand{\thefootnote}{(29)}\nde{\normalfont This proof has been added.}}
+Suppose that \(X/S\) and \(Y/S\) satisfy \textup{(E)}. Then, by~3.5.1
+and~\textup{(3.8.1)}, the same holds for \((X\times_{S}Y)/S\). Let us show
+that \textup{(3.8.1)} is an isomorphism of
+\(\mathcal{O}_{X\times_{S}Y}\)-modules.
+
+Let \((x,y)\colon Z\to X\times_{S}Y\) be an \(S\)-morphism; taking~3.4.2 into
+account, it suffices to see that the map
+\[
+\begin{aligned}
+&\{\phi\in\Hom_{S}(\mathrm{I}_{Z}(\mathcal{M}),X)
+\mid \phi\circ\varepsilon_{\mathcal{M}}=x\}
+\times
+\{\psi\in\Hom_{S}(\mathrm{I}_{Z}(\mathcal{M}),Y)
+\mid \psi\circ\varepsilon_{\mathcal{M}}=y\}\\
+&\qquad\longrightarrow
+\{\theta\in\Hom_{S}(\mathrm{I}_{Z}(\mathcal{M}),X\times_{S}Y)
+\mid \theta\circ\varepsilon_{\mathcal{M}}=(x,y)\}
+\end{aligned}
+\]
+which to \((\phi,\psi)\) associates \(\phi\times\psi\) is a morphism of
+\(\mathcal{O}(Z)\)-modules. But this is clear, for if
+\(a\in\mathcal{O}(Z)\), then
+\(a\cdot(\phi,\psi)=(\phi\circ a^{*},\psi\circ a^{*})\) is sent to
+\[
+(\phi\circ a^{*})\times(\psi\circ a^{*})
+=(\phi\times\psi)\circ a^{*}
+=a\cdot(\phi\times\psi).
+\]
+Likewise, using~3.2.1, one shows that \textup{(3.8.2)} is an isomorphism of
+\(\OS\)-modules.
+\end{proof}
+
+\numpara{3.9.0}\label{II.3.9.0}%
+{\renewcommand{\thefootnote}{(30)}\nde{\normalfont This paragraph has been added, in order to explain the introduction of the notion of \(S\)-H-functor.}}
+If \(X\) is an \(S\)-group and if \(e\colon S\to X\) denotes its unit section,
+one denotes:
+\[
+\Lie(X/S,\mathcal{M})=\mathrm{L}^{e}_{X/S}(\mathcal{M}),
+\]
+\ie \(\Lie(X/S,\mathcal{M})\) is defined by the cartesian square:
+\[
+\xymatrix{
+\Lie(X/S,\mathcal{M})\ar[r]^{i}\ar[d]
+& \mathrm{T}_{X/S}(\mathcal{M})\ar[d]^{p}\\
+S\ar[r]^{e}
+& X.
+}
+\]
+
+By Corollary~3.8.1, the projection
+\(p\colon\mathrm{T}_{X/S}(\mathcal{M})\to X\) is a morphism of \(S\)-groups, and
+it follows that \(\Lie(X/S,\mathcal{M})\) is equipped with a structure of
+\(S\)-group, and is isomorphic via~\(i\) to the kernel of~\(p\).
+
+If, moreover, \(X/S\) satisfies condition~\textup{(E)}, one will see in
+Proposition~3.9 that the structure of \(S\)-group on
+\(\Lie(X/S,\mathcal{M})\), induced by that of~\(X\), \emph{coincides with the
+structure of abelian group induced by the functoriality in~\(\mathcal{M}\)}
+(\cf 3.5.1). In fact, this result is valid under the weaker hypothesis that
+\(X\) be an \(S\)-functor in monoids or, more generally, an \(S\)-functor in
+H-sets (\cf the definition below).
+
+\begin{enoncerm}{Definitions}{3.9.0.1}\label{II.3.9.0.1}
+a)~Let us introduce the following terminology:%
+{\renewcommand{\thefootnote}{(31)}\nde{\normalfont This is inspired by the notion of H-space in topology.}}
+an H-set is a set \(X\) equipped with a composition law with two-sided
+unit, denoted \(e_{X}\) or simply~\(e\). If \(f\colon X\to Y\) is a morphism
+of H-sets, its kernel \(\Ker f\) is \(f^{-1}(e_{Y})\); it is a
+sub-H-set of~\(X\).
+
+b)~An H-object in a category \(\mathcal{C}\) is defined in the usual way: it
+is thus an object \(X\) of \(\mathcal{C}\), equipped with a morphism
+\(X\times X\to X\) such that there exists a section of~\(X\) (over the final
+object) possessing the properties of a two-sided unit. Every
+\(\mathcal{C}\)-monoid, in particular every \(\mathcal{C}\)-group, is thus a
+\(\mathcal{C}\)-H-object. In particular, an H-object of the category of
+functors over the scheme~\(S\) will be called an \(S\)-H-functor.
+
+c)~If \(X\) is an \(S\)-H-functor (for example, an \(S\)-group), and if
+\(e\colon S\to X\) denotes the unit section of~\(X\), one denotes:
+\[
+\Lie(X/S,\mathcal{M})=\mathrm{L}^{e}_{X/S}(\mathcal{M})
+\quad\text{and}\quad
+\Lie(X/S)=\Lie(X/S,\OS).
+\]
+\end{enoncerm}
+
+Let us then make explicit the following particular case of~3.8.1.%
+{\renewcommand{\thefootnote}{(32)}\nde{\normalfont Corollary~3.9.0.2 has been added; it will be useful in~4.1.}}
+
+\begin{corollary}{3.9.0.2}\label{II.3.9.0.2}
+If \(X\) is an \(S\)-H-functor (\resp an \(S\)-group), then
+\(\mathrm{T}_{X/S}(\mathcal{M})\) and \(\Lie(X/S,\mathcal{M})\) are also
+\(S\)-H-functors (resp.\ \(S\)-groups), and one has morphisms of
+\(S\)-H-functors (\resp of \(S\)-groups):
+\[
+\xymatrix{
+\Lie(X/S,\mathcal{M})\ar[r]^{i}
+& \mathrm{T}_{X/S}(\mathcal{M})\ar@<0.5ex>[r]^{p}
+& X\ar@<0.5ex>[l]^{s}\,,
+}
+\]
+where \(i\) is an isomorphism of \(\Lie(X/S)(\mathcal{M})\) onto \(\Ker p\) and
+\(s\) is a section of~\(p\).
+% typo?: printed Lie(X/S)(M), not Lie(X/S, M); kept as printed
+\end{corollary}
+
+\begin{proposition}{3.9}\label{II.3.9}
+Let \(X\) be an \(S\)-H-functor satisfying \textup{(E)} with respect to~\(S\).
+The structure of \(S\)-H-functor on \(\Lie(X/S,\mathcal{M})\) coming from that
+of~\(X\) coincides with the structure of \(S\)-group defined in~3.5.1.
+\end{proposition}
+
+It follows from what has been said above that \(\Lie(X/S,\mathcal{M})\) is an
+H-object in the category of \(\OS\)-modules. The proposition will then follow
+from the following lemma:%
+{\renewcommand{\thefootnote}{(33)}\nde{\normalfont Inspired by the standard proof that the fundamental group of an H-space is abelian.}}
+
+\begin{lemma}{3.10}\label{II.3.10}
+Let \(\mathcal{C}\) be a category. Let \(G\) be an H-object in the category of
+\(\mathcal{C}\)-H-objects; \(G\) is thus a \(\mathcal{C}\)-H-object (whose
+composition law we shall denote by \(f\colon G\times G\to G\)) equipped with
+a morphism of \(\mathcal{C}\)-H-objects \(h\colon G\times G\to G\).%
+{\renewcommand{\thefootnote}{(34)}\nde{\normalfont \(G\times G\) is equipped with the law \((G\times G)\times(G\times G)\to G\times G\), \(((x,z),(y,t))\mapsto(f(x,y),f(z,t))\).}}
+Then \(f=h\) and \(f\) is commutative.
+\end{lemma}
+
+By taking the values of the functors on a variable argument, one reduces in
+the usual way to checking the lemma when \(\mathcal{C}\) is the category of
+sets. One thus has a set \(G\) and two maps \(f\), \(h\colon G\times G\to G\)
+such that
+\[
+h\bigl(f(x,y),f(z,t)\bigr)=f\bigl(h(x,z),h(y,t)\bigr).
+\]
+On the other hand one has two elements of~\(G\), namely \(e\) and~\(u\), with
+\(f(e,x)=f(x,e)=x\), \(h(u,x)=h(x,u)=x\). One sees first that
+\[
+h\bigl(f(u,y),f(x,u)\bigr)=f(x,y)=h\bigl(f(x,u),f(u,y)\bigr).
+\]
+In particular, for \(y=e\), resp.\ \(x=e\), one obtains, respectively,
+\begin{align*}
+x&=f(x,e)=h\bigl(f(u,e),f(x,u)\bigr)=h\bigl(u,f(x,u)\bigr)=f(x,u),\\
+y&=f(e,y)=h\bigl(f(e,u),f(u,y)\bigr)=h\bigl(u,f(u,y)\bigr)=f(u,y),
+\end{align*}
+whence, substituting back into the original equality,
+\[
+h(y,x)=f(x,y)=h(x,y).
+\]
+This proves the lemma, and also Proposition~3.9. One then deduces from~3.9
+the following corollaries.
+
+\begin{corollary}{3.9.1}\label{II.3.9.1}
+If \(X\) is an \(S\)-H-functor satisfying \textup{(E)} with respect to~\(S\),
+every element of \(X(\mathrm{I}_{S}(\mathcal{M}))\) which projects onto the
+unit element of \(X(S)\) is invertible.
+\end{corollary}
+
+\begin{corollary}{3.9.2}\label{II.3.9.2}
+If \(X\) is an \(S\)-monoid satisfying \textup{(E)} with respect to~\(S\), an
+element of \(X(\mathrm{I}_{S}(\mathcal{M}))\) is invertible if and only if its
+image in \(X(S)\) is invertible.
+\end{corollary}
+
+\begin{corollary}{3.9.3}\label{II.3.9.3}
+If \(X\) is an \(S\)-group satisfying \textup{(E)} with respect to~\(S\), the
+two \(S\)-group laws on \(\Lie(X/S,\mathcal{M})\) coincide.
+\end{corollary}
+
+\begin{corollary}{3.9.4}\label{II.3.9.4}%
+{\renewcommand{\thefootnote}{(35)}\nde{\normalfont This corollary has been added; it amplifies Remark~4.1.1.2 further on.}}
+Let \(G\) be an \(S\)-group satisfying \textup{(E)} with respect to~\(S\). For
+\(n\in\ZZ\), let \(n_{G}\colon G\to G\) be the morphism of \(S\)-functors
+defined by \(g\mapsto g^{n}\). Then the derived morphism
+\(\mathrm{L}(n_{G})\colon\Lie(G/S)\to\Lie(G/S)\) is the ``multiplication
+by~\(n\)'', \ie the map which to every \(x\in\Lie(G/S)(S')\) associates
+\(n\,x\).
+\end{corollary}
+
+Let us first observe that \(n_{G}\) is not in general a morphism of groups,
+but that it preserves the unit section \(e\colon S\to G\), so the derived
+morphism \(\mathrm{L}(n_{G})\) does indeed send
+\(\Lie(G/S)=\mathrm{L}^{e}_{X/S}\) into itself.
+% typo?: printed L^e_{X/S}, not L^e_{G/S}; kept as printed
+If one denotes by~\(i\) the inclusion
+\(\Lie(G/S)\hookrightarrow\mathrm{T}_{G/S}\), then \(\mathrm{L}(n_{G})\) is
+defined by the equality \(i\bigl(\mathrm{L}(n_{G})(x)\bigr)=i(x)^{n}\), for
+every \(S'\to S\) and every \(x\in\Lie(G/S)(S')\). Now, by~3.9, the two group
+laws on \(\Lie(G/S)\) (the one coming from condition~\textup{(E)} and the one
+coming from the law of~\(G\)) coincide, \ie one has
+\(i(x)^{n}=i(n\,x)\), whence \(\mathrm{L}(n_{G})(x)=n\,x\).
+
+Before drawing further consequences from Proposition~3.9, let us prove
+another functoriality result:
+
+\begin{proposition}{3.11}\label{II.3.11}
+In the situation of Section~1, one has an isomorphism, functorial
+in~\(\mathcal{M}\),
+\[
+\mathrm{T}_{\Hom_{Z/S}(X,Y)/S}(\mathcal{M})
+\isomto
+\Hom_{Z/S}\bigl(X,\mathrm{T}_{Y/Z}(\mathcal{M})\bigr).
+\]
+\end{proposition}
+
+Indeed, one has by definition (\cf 3.1):
+\[
+\mathrm{T}_{\Hom_{Z/S}(X,Y)/S}(\mathcal{M})
+=\Hom_{S}\bigl(\mathrm{I}_{S}(\mathcal{M}),\Hom_{Z/S}(X,Y)\bigr).
+\]
+By isomorphism~(4) of~1.1, applied to \(T=\mathrm{I}_{S}(\mathcal{M})\),
+one has:
+\[
+\Hom_{S}\bigl(\mathrm{I}_{S}(\mathcal{M}),\Hom_{Z/S}(X,Y)\bigr)
+\simeq
+\Hom_{Z/S}\bigl(X,\Hom_{Z}(Z\times_{S}\mathrm{I}_{S}(\mathcal{M}),Y)\bigr).
+\]
+Taking account of the isomorphism
+\(Z\times_{S}\mathrm{I}_{S}(\mathcal{M})\simeq\mathrm{I}_{Z}(\mathcal{M})\),
+this gives
+\begin{align*}
+\mathrm{T}_{\Hom_{Z/S}(X,Y)/S}(\mathcal{M})
+&\simeq
+\Hom_{Z/S}\bigl(X,\Hom_{Z}(\mathrm{I}_{Z}(\mathcal{M}),Y)\bigr)\\
+&=\Hom_{Z/S}\bigl(X,\mathrm{T}_{Y/Z}(\mathcal{M})\bigr).
+\end{align*}
+
+\begin{corollary}{3.11.1}\label{II.3.11.1}
+If \(Y/Z\) satisfies \textup{(E)}, then \(\Hom_{Z/S}(X,Y)/S\) satisfies
+\textup{(E)}, and the isomorphism of~3.11 respects the structures of
+\(\mathcal{O}\)-modules over \(\Hom_{Z/S}(X,Y)\).%
+{\renewcommand{\thefootnote}{(36)}\nde{\normalfont Setting \(H=\Hom_{Z/S}(X,Y)\), this implies, in particular, that \(\mathrm{T}_{H/S}(\mathcal{M})\) is equipped with a natural structure of module over \(\prod_{X\times_{S}H/H}\mathcal{O}_{H}\). This result seemed a little surprising to the editors; for this reason its proof has been spelled out.}}
+\end{corollary}
+
+\begin{proof}
+Let \(\mathcal{M}\), \(\mathcal{N}\) be two free \(\OS\)-modules of finite
+type. If \(Y/Z\) satisfies \textup{(E)}, then
+\[
+\mathrm{T}_{Y/Z}(\mathcal{M}\oplus\mathcal{N})
+\simeq
+\mathrm{T}_{Y/Z}(\mathcal{M})\times_{Y}\mathrm{T}_{Y/Z}(\mathcal{N}).
+\]
+The right-hand term is a subfunctor of
+\(\mathrm{T}_{Y/Z}(\mathcal{M})\times_{S}\mathrm{T}_{Y/Z}(\mathcal{N})\), and
+via the isomorphism of~1.2~(*), one obtains an isomorphism
+\begin{align*}
+&\Hom_{Z/S}\bigl(X,\mathrm{T}_{Y/Z}(\mathcal{M}\oplus\mathcal{N})\bigr)\\
+&\qquad\simeq
+\Hom_{Z/S}\bigl(X,\mathrm{T}_{Y/Z}(\mathcal{M})\bigr)
+\times_{\Hom_{Z/S}(X,Y)}
+\Hom_{Z/S}\bigl(X,\mathrm{T}_{Y/Z}(\mathcal{N})\bigr).
+\end{align*}
+Combined with~3.11, this yields:
+\begin{align*}
+&\mathrm{T}_{\Hom_{Z/S}(X,Y)/S}(\mathcal{M}\oplus\mathcal{N})\\
+&\qquad\simeq
+\mathrm{T}_{\Hom_{Z/S}(X,Y)/S}(\mathcal{M})
+\times_{\Hom_{Z/S}(X,Y)}
+\mathrm{T}_{\Hom_{Z/S}(X,Y)/S}(\mathcal{N}),
+\end{align*}
+so \(\Hom_{Z/S}(X,Y)\) satisfies \textup{(E)} with respect to~\(S\). This
+proves the first assertion of the corollary.
+
+Let us turn to the second. Write \(H=\Hom_{Z/S}(X,Y)\), and let us take an
+\(S\)-morphism \(\Delta\colon H'\to\Hom_{Z/S}(X,Y)\), \ie a \(Z\)-morphism
+\(\delta\colon H'\times_{S}X\to Y\), which thus makes \(H'\times_{S}X\) into
+a \(Y\)-object.
+
+On the one hand, one has a commutative diagram:
+\[
+\xymatrix@C=1.6em@R=2.2em{
+\Hom_{H}\bigl(H',\Hom_{Z/S}(X,\mathrm{T}_{Y/Z}(\mathcal{M}))\bigr)
+  \ar@{^{(}->}[r]\ar[d]
+& \Hom_{S}\bigl(H',\Hom_{Z/S}(X,\mathrm{T}_{Y/Z}(\mathcal{M}))\bigr)\ar[d]\\
+\Hom_{Y}\bigl(H'\times_{S}X,\mathrm{T}_{Y/Z}(\mathcal{M})\bigr)
+  \ar@{^{(}->}[r]\ar[d]
+& \Hom_{Z}\bigl(H'\times_{S}X,\mathrm{T}_{Y/Z}(\mathcal{M})\bigr)\ar[d]\\
+\bigl\{\psi\in\Hom_{Z}(\mathrm{I}_{H'\times_{S}X}(\mathcal{M}),Y)
+  \mid\psi\circ\varepsilon_{\mathcal{M}}=\delta\bigr\}
+  \ar@{^{(}->}[r]
+& \Hom_{Z}\bigl(\mathrm{I}_{H'\times_{S}X}(\mathcal{M}),Y\bigr).
+}
+\]
+By~1.3, the action of \(\alpha\in\mathcal{O}(H'\times_{S}X)\) on
+\(\Psi\in\Hom_{Y}(H'\times_{S}X,\mathrm{T}_{Y/Z}(\mathcal{M}))\) is given by:
+for every \(U\to S\) and every
+\((h,x)\in\Hom_{S}(U,H'\times_{S}X)\) (with \(U\) then lying over~\(Y\) via
+\(\delta\circ(h,x)\)), one has:
+\[
+(\alpha\Psi)(h,x)=\alpha(h,x)\,\Psi(h,x),
+\]
+where \(\alpha(h,x)\in\mathcal{O}(U)\) acts on
+\(\Psi(h,x)\in\mathrm{T}_{Y/Z}(\mathcal{M})(U)\) via the structure of
+\(\mathcal{O}_{Y}\)-module on \(\mathrm{T}_{Y/Z}(\mathcal{M})\). By~3.4.2,
+the latter is given, via the identification
+\[
+\begin{aligned}
+&\Hom_{Y}\bigl(H'\times_{S}X,\mathrm{T}_{Y/Z}(\mathcal{M})\bigr)\\
+&\quad=
+\bigl\{\psi\in\Hom_{Z}(\mathrm{I}_{H'\times_{S}X}(\mathcal{M}),Y)
+\mid\psi\circ\varepsilon_{\mathcal{M}}=\delta\bigr\},
+\end{aligned}
+\]
+by: for every
+\((m,h,x)\in\Hom_{S}(U,\mathrm{I}_{S}(\mathcal{M})\times_{S}H'\times_{S}X)\),
+\begin{equation}
+(\alpha\psi)(m,h,x)=\psi\bigl(m\cdot\alpha(h,x),h,x\bigr).
+\tag{1}
+\end{equation}
+
+On the other hand, let us consider the tangent space
+\(\mathrm{T}_{H/S}(\mathcal{M})=\Hom_{S}(\mathrm{I}_{S}(\mathcal{M}),H)\); one
+has a commutative diagram:
+\[
+\xymatrix@C=1.6em@R=2.4em{
+\Hom_{H}\bigl(H',\mathrm{T}_{H/S}(\mathcal{M})\bigr)
+  \ar@{^{(}->}[r]\ar[d]
+& \Hom_{S}\bigl(H',\mathrm{T}_{H/S}(\mathcal{M})\bigr)\ar[d]\\
+\bigl\{\Phi\in\Hom_{S}(\mathrm{I}_{H'}(\mathcal{M}),H)
+  \mid\Phi\circ\varepsilon_{\mathcal{M}}=\Delta\bigr\}
+  \ar@{^{(}->}[r]\ar[d]_{(\ast)}
+& \Hom_{S}\bigl(\mathrm{I}_{H'}(\mathcal{M}),H\bigr)\ar[d]\\
+\bigl\{\phi\in\Hom_{Z}(\mathrm{I}_{H'\times_{S}X}(\mathcal{M}),Y)
+  \mid\phi\circ\varepsilon_{\mathcal{M}}=\delta\bigr\}
+  \ar@{^{(}->}[r]
+& \Hom_{Z}\bigl(\mathrm{I}_{H'\times_{S}X}(\mathcal{M}),Y\bigr),
+}
+\]
+where the bijection \((*)\) is given as follows (\cf 1.1~(2) and I~1.7.1):
+for every \(U\to S\) and every
+\((m,h,x)\in\Hom_{S}\bigl(U,\mathrm{I}_{S}(\mathcal{M})\times_{S}H'\times_{S}X\bigr)\)
+(so that \(U\) lies over~\(Z\) via \(U\xrightarrow{x}X\to Z\)), one has
+\(\Phi(m,h)\in\Hom_{Z}(X\times_{S}U,Y)\) and
+\begin{equation}
+\phi(m,h,x)=\Phi(m,h)\circ(x\times\mathrm{id}_{U})
+\in\Hom_{Z}(U,Y).
+\tag{\dag}
+\end{equation}
+By~3.4.2 (where one replaces \(X\) by \(\Hom_{Z/S}(X,Y)\) and \(X'\)
+by~\(H'\)), the action of \(a\in\mathcal{O}(H')\) on
+\(\Phi\in\Hom_{S}(\mathrm{I}_{H'}(\mathcal{M}),H)\) is given by: for every
+\(U\to S\) and every
+\((m,h)\in\Hom_{S}(U,\mathrm{I}_{S}(\mathcal{M})\times_{S}H')\),
+\[
+(a\Phi)(m,h)=\Phi\bigl(m\cdot a(h),h\bigr).
+\]
+Consequently, if \(\phi\) (resp.\ \(a\phi\)) is the element of
+\(\Hom_{Z}(\mathrm{I}_{H'\times_{S}X}(\mathcal{M}),Y)\) associated with
+\(\Phi\) (resp.\ \(a\Phi\)), one has, by~\((\dagger)\),
+\begin{equation}
+\begin{aligned}
+(a\phi)(m,h,x)
+&=\Phi\bigl(m\cdot a(h),h\bigr)\circ(x\times\mathrm{id}_{U})\\
+&=\phi\bigl(m\cdot a(h),h,x\bigr).
+\end{aligned}
+\tag{2}
+\end{equation}
+Together with~(1), this shows that the isomorphism
+\(\mathrm{T}_{H/S}(\mathcal{M})\isomto
+\Hom_{Z/S}\bigl(X,\mathrm{T}_{Y/Z}(\mathcal{M})\bigr)\)
+of~3.11.1 is an isomorphism of \(\mathcal{O}(H)\)-modules; moreover, for every
+\(H'\to H\), the structure of \(\mathcal{O}(H')\)-module on
+\(\Hom_{H}\bigl(H',\mathrm{T}_{H/S}(\mathcal{M})\bigr)\) extends, in a manner
+functorial in~\(H'\), to a structure of
+\(\mathcal{O}(H'\times_{S}X)\)-module.
+\end{proof}
+
+In particular, for \(Z=S\), one obtains the following corollary.
+
+\begin{corollary}{3.11.2}\label{II.3.11.2}
+One has an isomorphism, functorial in~\(\mathcal{M}\),
+\[
+\mathrm{T}_{\Hom_{S}(X,Y)/S}(\mathcal{M})
+\isomto
+\Hom_{S}\bigl(X,\mathrm{T}_{Y/S}(\mathcal{M})\bigr).
+\]
+Moreover, if \(Y/S\) satisfies \textup{(E)}, then \(\Hom_{S}(X,Y)/S\)
+satisfies \textup{(E)}, and the preceding isomorphism respects the structures
+of \(\mathcal{O}\)-modules over \(\Hom_{S}(X,Y)\).
+\end{corollary}
+
+{\renewcommand{\thefootnote}{(37)}\nde{\normalfont The following sentences have been added.}}
+Let \(u\colon X\to Y\) be an \(S\)-morphism; one identifies it with the
+constant morphism \(u\colon S\to\Hom_{S}(X,Y)\) such that \(u(f)=u\) for
+every \(f\colon S'\to S\). One then sees at once that the fibered product of
+\(u\) and of
+\(\Hom_{S}\bigl(X,\mathrm{T}_{Y/S}(\mathcal{M})\bigr)\to\Hom_{S}(X,Y)\)
+is identified with
+\(\Hom_{Y/S}\bigl(X,\mathrm{T}_{Y/S}(\mathcal{M})\bigr)\), where \(X\) lies
+over~\(Y\) via~\(u\). Consequently, from the definition of
+\(\mathrm{L}^{u}_{\Hom_{S}(X,Y)/S}(\mathcal{M})\) and from the preceding
+corollary, one deduces the following:
+% Corollary 3.11.3 begins on the next page and is in en-04.tex.

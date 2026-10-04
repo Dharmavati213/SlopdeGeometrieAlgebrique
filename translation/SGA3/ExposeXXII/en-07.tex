@@ -1,0 +1,224 @@
+It therefore only remains to prove assertion (ii) $\Rightarrow$ (vi). One may reduce to the case where $G$ is adjoint. One then has, by 5.3.3
+\[
+\uNorm_G(H_{R''})=\uNorm_G(\mathfrak g_{R''})\subset\uTransp_G(\mathfrak t,\mathfrak g_{R''}).
+\]
+{\renewcommand{\thefootnote}{(39)}\nde{The inclusion follows from $\mathfrak t\subset\mathfrak g_{R''}$.}}%
+By 5.4.5, it suffices to prove
+\begin{equation}\tag{x}\label{XXII.eq.x}
+H_{R'}(S)\cap\Transp_{G(S)}(\mathfrak t,\mathfrak g_{R''})\subset H_{R'\cap R''}(S).
+\end{equation}
+Let us first prove a lemma.
+\begin{lemma}{5.6.2}\label{XXII.5.6.2}
+In the notations of 5.5.7, let
+\[
+u=\exp(x_1X_1)\cdots\exp(x_NX_N)
+\]
+where $x_i\in\mathbf G_a(S)$. Let $m$ be an integer, $1\le m\le N$, such that $x_i=0$ for $i<m$.
+
+a) If $H\in\Gamma(S,\mathfrak t)$, the component of $\Ad(u)H$ on $\mathfrak g^{\alpha_m}$ is
+\[
+-\overline\alpha_m(H)x_mX_m.
+\]
+b) If $Y\in\Gamma(S,\mathfrak g^{-\alpha_m})$, the component of $\Ad(u)Y$ on $\mathfrak t$ is (with the notations of Exp.~XX 2.6)
+\[
+x_m\langle X_m,Y\rangle H_{\alpha_m}.
+\]
+\end{lemma}
+Denote indeed by $\mathfrak u=\mathfrak g^{\alpha_{m+1}}+\cdots+\mathfrak g^{\alpha_N}$. By 5.4.9, one has
+\[
+\Ad(\exp(x_iX_i))\mathfrak u\subset\mathfrak u,\qquad\text{for }i>m.
+\]
+By Exp.~XX 2.10, one has
+\[
+\Ad(\exp(x_iX_i))H=H-\overline\alpha_i(H)x_iX_i.
+\]
+This gives at once, modulo $\mathfrak u$,
+\[
+\Ad(u)H=\Ad(\exp(x_mX_m))H=H-\overline\alpha_m(H)x_mX_m,
+\]
+which implies the first result.
+
+Likewise, denote{\renewcommand{\thefootnote}{(40)}\nde{The original has been corrected in what follows.}} by $\mathfrak n=\mathfrak g^{\alpha_1}+\cdots+\mathfrak g^{\alpha_N}$ and $u_1=\exp(x_{m+1}X_{m+1})\cdots\exp(x_NX_N)$. For $i>m$, one has $\alpha_i>\alpha_m$, hence, by 5.4.9, one has, modulo $\mathfrak n$,
+\[
+\Ad(u_1)Y\equiv Y\qquad\text{whence}\quad\Ad(u)Y\equiv\Ad(\exp(x_mX_m))Y.
+\]
+Applying Exp.~XX 2.10, one therefore obtains, modulo $\mathfrak n$,
+\[
+\Ad(u)Y-Y\equiv x_m\langle X_m,Y\rangle H_{\alpha_m}
+\]
+whence the second result.
+
+Let us return to the proof of inclusion (x). Assume there exists $h\in H_{R'}(S)$, $h\notin H_{R'\cap R''}(S)$, such that
+\[
+\Ad(h)\mathfrak t\subset\mathfrak g_{R''}.
+\]
+One may write
+\[
+h=t\exp(x_1X_1)\cdots\exp(x_NX_N).
+\]
+Since $h\notin H_{R'\cap R''}(S)$, there exists a smallest $m$ such that
+\[
+\begin{gathered}
+t\exp(x_1X_1)\cdots\exp(x_{m-1}X_{m-1})\in H_{R'\cap R''}(S)\\
+\text{and}\quad\alpha_m\notin R'',\quad x_m\ne0.
+\end{gathered}
+\]
+Then $h'=\exp(x_mX_m)\cdots\exp(x_NX_N)$ also satisfies the conditions imposed on $h$ above. But by 5.6.2, for every $H\in\Gamma(S,\mathfrak t)$ the component of $\Ad(h')H$ on $\mathfrak g^{\alpha_m}$ is $-\overline\alpha_m(X)x_mX_m$. By the hypothesis on $h$ and on $m$, one therefore has $\overline\alpha_m(H)=0$ for every $H\in\Gamma(S,\mathfrak t)$, which is impossible (for $G$ is assumed adjoint and $\overline\alpha_m$ is therefore nonzero on each fiber).
+% typo?: kept as printed: alpha_m(X), rather than alpha_m(H).
+\begin{remark}{5.6.2 bis}\label{XXII.5.6.2bis}
+Let us return to the notations of 5.6.2. If $\Ad(u)$ is the identity on $\mathfrak t$ and on $\mathfrak g^{-\alpha_m}$, one has $x_m=0$. Indeed, one has $x_m\overline\alpha_m=0$ and $x_mH_{\alpha_m}=0$; if $\alpha_m\notin2M$, then $\overline\alpha_m$ is nonzero on each fiber; if $\alpha_m\in2M$, then $\alpha_m^*\notin2M^*$ and $H_{\alpha_m}$ is nonzero on each fiber; in each case, this implies $x_m=0$. It follows that $u=e$ if $\Ad(u)$ acts trivially on $\mathfrak g$.
+\end{remark}
+\begin{remark}{5.6.3}\label{XXII.5.6.3}
+If $H$ is a subgroup of type (R) of the reductive group $G$, with solvable geometric fibers, then $H$ is closed in $G$ and $\uNorm_G(H)/H$ is representable by a separated finite \'etale $S$-scheme.
+\end{remark}
+This follows from 5.3.18 and, as one chooses, 3.5 or Exp.~XIX 2.5 (ii).
+\begin{corollary}{5.6.4}\label{XXII.5.6.4}
+Let $(G,T,M,R)$ be a split reductive group. If $R'\subset R$ is closed and if $R'\cap-R'=\varnothing$, then $R'$ is contained in a system of positive roots.{\renewcommand{\thefootnote}{(41)}\nde{This is in fact a statement on root systems, supplementing expos\'e XXI (\cf [BLie], VI \S~1.7, Prop.~22), and proved here by an indirect route.}}
+\end{corollary}
+Indeed, $R'$ is of type (R) by 5.4.7, hence the result follows from 5.6.1.
+\begin{corollary}{5.6.5}\label{XXII.5.6.5}
+Under the conditions of 5.6.1, the product in $G$ induces an isomorphism
+\[
+\prod_{\alpha\in R'}U_\alpha\isomto U_{R'},
+\]
+where $U_{R'}$ is a closed group subscheme of $G$, smooth over $S$, with connected unipotent geometric fibers, independent of the choice of the order on $R'$. Moreover, $H_{R'}$ is the semidirect product $T\cdot U_{R'}$ ($U_{R'}$ invariant).
+\end{corollary}
+Indeed, if $R'\subset R_+$, then $H_{R'}\cap U_{\ge1}$ (notations of 5.5.6) is a closed subgroup of $G$ of finite presentation, invariant in $H_{R'}$. By 5.6.1 (iv), one has $H_{R'}=T\cdot U_{R'}$, which implies the other assertions.
+\begin{remark}{5.6.6}\label{XXII.5.6.6}
+In particular, $U_{R_+}$ is the group $U_{\ge1}$ of 5.5.6.
+\end{remark}
+Let us extract some corollaries from the preceding results concerning groups of the type $U_{R'}$.
+\begin{corollary}{5.6.7}\label{XXII.5.6.7}
+Let $(G,T,M,R)$ be a split reductive group, $R'$ and $R''$ two subsets of $R$ of type (R), with $R'\cap-R'=\varnothing$.
+\begin{enumeratei}
+\item One has
+\[
+U_{R'}\cap\uNorm_G(H_{R''})=U_{R'\cap R''}.
+\]
+\item Assume $R'$ closed. If the conditions $\alpha\in R'$, $\beta\in R''$ and $\alpha+\beta\in R$ imply $\alpha+\beta\in R'$, then $H_{R''}$ normalizes $U_{R'}$.
+\end{enumeratei}
+\end{corollary}
+Indeed, (i) follows at once from 5.6.5 and 5.6.1 (vi). To prove (ii), it suffices, in view of 5.4.4, to show that $T$ and each $U_\beta$, $\beta\in R''$, normalize $U_{R'}$.{\renewcommand{\thefootnote}{(42)}\nde{Indeed, $G$ has connected fibers, hence is separated over $S$ by VIB 5.5, so by XI 6.11 (see also addition 6.5.5 in VIB), $\uNorm_G(U_{R'})$ is represented by a closed group subscheme $N$ of $G$. If $N$ contains $T$ and the $U_\beta$, for $\beta\in R''$, it contains the big cell $\Omega_{R_+,R''}$; this is schematically dense in $H_{R''}$ by 5.4.4 and EGA IV$_3$, 11.10.10 (the fibers of $H_{R''}$ are integral and $\Omega_{R_+,R''}$ contains a nonempty open subset of each fiber). It follows that $H_{R''}\subset N$, hence $H_{R''}$ normalizes $U_{R'}$.}} For $T$, this is trivial; for $U_\beta$, this follows from 5.5.2 and Exp.~XXI 3.1.2.{\renewcommand{\thefootnote}{(43)}\nde{One must see that, under the hypotheses of (ii), if $\alpha\in R'$ and $\beta\in R''$, then all roots of the form $i\alpha+j\beta$ with $i,j\in\NN^*$ belong to $R'$, and for this the reference XXI 2.3.5 has been replaced by XXI 3.1.2. This may also be seen directly by inspection of the root systems of rank $2$.}}
+\begin{corollary}{5.6.8}\label{XXII.5.6.8}
+Let $(G,T,M,R)$ be a split $S$-group, $R_+$ a system of positive roots, $\alpha$ a simple root of $R_+$ (i.e. an element of $R_+$ such that $R_+-\{\alpha\}$ is closed). Write
+\[
+U_{\widehat\alpha}=U_{R_+-\{\alpha\}}.
+\]
+Then
+\begin{enumeratei}
+\item $U_{\widehat\alpha}$ is an invariant subgroup of $B_{R_+}$.
+\item $U_{R_+}$ is the semidirect product of $U_{\widehat\alpha}$ by $U_\alpha$.
+\item $U_{-\alpha}$ normalizes $U_{\widehat\alpha}$.
+\item $Z_\alpha$ normalizes $U_{\widehat\alpha}$.
+\end{enumeratei}
+If one similarly defines $U_{-\widehat\alpha}=U_{R_--\{-\alpha\}}$ (where $R_-=-R_+$), one has
+\[
+\Omega_{R_+}=U_{-\widehat\alpha}\cdot U_{-\alpha}\cdot T\cdot U_\alpha\cdot U_{\widehat\alpha}.
+\]
+\end{corollary}
+Indeed, (ii) follows from 5.6.5, and (i) from 5.6.7 (ii). Likewise, (iii) follows from 5.5.2 (indeed, if $\beta\in R_+$, $\beta\ne\alpha$, no combination $i(-\alpha)+j\beta$, with $i,j>0$, can be negative, for $\beta$ contains at least one simple root $\ne\alpha$). Then (iv) follows from (i) and (iii), for $U_{-\alpha}\cdot T\cdot U_\alpha$ is schematically dense in $Z_\alpha$. Finally, the last assertion follows from (ii) and its analogue for $U_{R_-}$.
+
+Let us return to the general situation.
+\begin{proposition}{5.6.9}\label{XXII.5.6.9}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $H$ a subgroup of type (R), with solvable geometric fibers.
+\begin{enumeratei}
+\item $\mathrm D_S(H)=\uHom_{S\text{-gr.}}(H,\mathbf G_{m,S})$ is representable by a twisted constant $S$-group, whose type at $s\in S$ is $\ZZ^{\operatorname{rgred}(G_s)}$. The biduality morphism (Exp.~VIII \S~1)
+\[
+f:H\to\mathrm D_S(\mathrm D_S(H))
+\]
+is smooth and surjective.
+\item The kernel $H^u$ of $f$ is the largest invariant closed group subscheme of $H$, smooth over $S$, with connected unipotent geometric fibers. One says that it is the \emph{unipotent part} of $H$ and one also writes $H^u=\operatorname{rad}^u(H)$.
+
+Then $H^u$ is also the commutator sheaf of $H$: every morphism of groups from $H$ into an $S$-presheaf of commutative groups, separated for (fppf), vanishes on $H^u$ and therefore factors through $H/H^u=\mathrm D_S(\mathrm D_S(H))$.
+\item If $T$ is a maximal torus of $H$, the morphism $T\to H$ induces isomorphisms $\mathrm D_S(H)\isomto\mathrm D_S(T)$ and $T\isomto\mathrm D_S(\mathrm D_S(H))$. Moreover, $H$ is identified with the semidirect product of $H^u$ by $T$.
+\item In the situation of 5.6.1, if $H=H_{R'}$, then $H^u=U_{R'}$.
+\end{enumeratei}
+\end{proposition}
+The assertions of the proposition are local for the \'etale topology (Exp.~X 5.5). One may therefore reduce to the case of 5.6.1. One then knows (5.6.5) that $H_{R'}$ is the semidirect product of $U_{R'}$ by $T$. Let us show that $U_{R'}$ is the commutator sheaf of $H_{R'}$: since $H_{R'}/U_{R'}=T$ is commutative, it suffices to prove that every morphism of groups $\varphi:H_{R'}\to V$ as in (ii) vanishes on $U_{R'}$. It suffices to prove that $\varphi$ vanishes on each $U_\alpha$, $\alpha\in R'$. Now if $t\in T(S')$, $X\in\mathrm W(\mathfrak g^\alpha)(S')$, one has
+\[
+1=\varphi\bigl(t\exp_\alpha(X)t^{-1}\exp_\alpha(-X)\bigr)=\varphi\bigl(\exp_\alpha((\alpha(t)-1)X)\bigr).
+\]
+Since $\alpha:T\to\mathbf G_{m,S}$ is faithfully flat, one deduces at once that $\varphi$ vanishes on $U_\alpha^\times$; but every section of $U_\alpha$ is locally a sum of two sections of $U_\alpha^\times$. One therefore has
+\[
+\Hom_{S\text{-gr.}}(H,V)=\Hom_{S\text{-gr.}}(H/U_{R'},V)
+\]
+for every $V$ as above. Applying this result to $V=\mathbf G_{m,S}$, one deduces at once (i) and (iii), then (iv) and the second assertion of (ii). It now suffices to prove the first assertion of (ii); the only nontrivial fact is that every invariant closed subgroup $U$ of $H$, smooth over $S$ with connected unipotent geometric fibers, is a subgroup of $H^u$. Now one first has:
+\begin{lemma}{5.6.10}\label{XXII.5.6.10}
+Let $G$ be a reductive $S$-group, $T$ a maximal torus, $U$ a group subscheme of $G$, smooth over $S$, with unipotent geometric fibers, normalized by $T$. Then $U\cap T=e$.
+\end{lemma}
+Indeed, since $T=\uCentr_G(T)$, one has $U\cap T=U^T$ (invariants under $\operatorname{int}(T)$). Applying Exp.~XIX 1.4, one deduces that $U\cap T$ is smooth over $S$, but it is also radicial over $S$: for every $s\in S$, $U(\overline s)\cap T(\overline s)$ consists of elements which are both unipotent and semisimple. This proves the lemma.
+
+Let us return to the proof of 5.6.9 (ii). If $U$ is an invariant subgroup of $H$ as above, then the semidirect product $T\cdot U$ is a subgroup of type (R) of $G$, with solvable geometric fibers. One may therefore assume it of the form $H_{R''}$, with $R''\subset R'$. It suffices to prove $U=U_{R''}$ and one is therefore reduced to the case where $H=T\cdot U$; but since the quotient $H/U$ is commutative, $U$ is a subsheaf of the commutator sheaf of $H$, which is $H^u$.\hfill Q.E.D.
+% typo?: kept as printed: the final assertion says U is a subsheaf of H^u.
+
+Note that we have in fact just proved:
+\begin{proposition}{5.6.11}\label{XXII.5.6.11}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$. The maps
+\[
+H\mto H^u,\qquad U\mto T\cdot U
+\]
+are mutually inverse bijections between the set of subgroups $H$ of type (R) of $G$, containing $T$ and with solvable geometric fibers, and the set of subgroups $U$ of $G$, smooth over $S$, normalized by $T$, with connected unipotent geometric fibers.{\renewcommand{\thefootnote}{(44)}\nde{The hypothesis that $U$ is closed has been deleted, since it holds automatically. Indeed, for such a $U$, one has $U\cap T=e$ by 5.6.10, hence the semidirect product $H=T\cdot U$ is a subgroup of type (R) of $G$ (\cf 5.2.1), with solvable geometric fibers. Hence, by 5.6.3, $H$ is closed in $G$, and since $U$ is closed in $H$, it is closed in $G$.}}
+
+In particular, when $(G,T,M,R)$ is split, the groups $H_{R'}$ and $U_{R'}$ correspond to one another.
+\end{proposition}
+\begin{corollary}{5.6.12}\label{XXII.5.6.12}
+Let $S$ be a scheme, $(G,T,M,R)$ a split $S$-group (resp. and $R_+$ a system of positive roots of $R$ defining the Borel subgroup $B$).
+
+Every smooth group subscheme of $G$, with connected unipotent geometric fibers (resp. every smooth group subscheme of $B^u$), normalized by $T$, is locally over $S$ of the form $U_{R'}$, where $R'$ is a subset of $R$ contained in a system of positive roots (resp. a subset of $R_+$) of type (R).
+\end{corollary}
+For the ``resp.'' case, it suffices to note that the geometric fibers of the given group are unipotent and connected by \textit{Bible}, \S~13.2, th.~1 (d).
+
+Proposition 5.6.9 has moreover the following corollary:
+\begin{corollary}{5.6.13}\label{XXII.5.6.13}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $H$ a subgroup of type (R) with solvable geometric fibers, $\underline{\Tor}(H)$ the functor of maximal tori of $H$:
+\[
+\underline{\Tor}(H)(S')=\{\text{maximal tori of }H_{S'}\}.
+\]
+Then $\underline{\Tor}(H)$ is representable by an affine smooth $S$-scheme, which is a principal homogeneous bundle under $H^u$ for the law $(h,T)\mto\operatorname{int}(h)T$.{\renewcommand{\thefootnote}{(45)}\nde{This proves again and sharpens XII 1.10 (for $G$ reductive).}}
+\end{corollary}
+Indeed, if $T$ and $T'$ are two maximal tori of $H_{S'}$, there exists a unique section $h\in H^u(S')$ such that $\operatorname{int}(h)T=T'$. The uniqueness of $h$ follows at once from the equality
+\[
+\uNorm_G(T)\cap H^u=e
+\]
+(\cf for example 5.6.1); it therefore suffices to prove the existence of $h$ locally for the \'etale topology. By 5.2.6 and 5.1.2 (a), one may assume $T$ and $T'$ conjugate by a section of $H$, whence the desired conclusion since $H=H^u\cdot T$ by 5.6.9 (iii). It follows that $\underline{\Tor}(H)$ is a principal homogeneous sheaf under $H^u$, which is affine and smooth over $S$, which implies the statement at once{\renewcommand{\thefootnote}{(46)}\nde{By SGA 1, VIII 2.1 and EGA IV$_4$, 17.7.1.}}.
+
+\sgasection{5.7}{Bruhat's theorem}
+\begin{enoncerm}{Recall}{5.7.1}\label{XXII.5.7.1}
+Let $k$ be an algebraically closed field, $G$ a reductive $k$-group, $B$ a Borel subgroup of $G$, $T$ a maximal torus of $B$, $N=\uNorm_G(T)$. Then
+\[
+G(k)=B(k)N(k)B(k);
+\]
+this is Bruhat's theorem (\textit{Bible}, \S~13.4, cor.~1 to th.~3); more precisely, with the notations of 3.6, the sets
+\[
+B(k)N_w(k)B(k)=B^u(k)N_w(k)B^u(k)
+\]
+form, as $w$ ranges over $(N/T)(k)$, a partition of $G(k)$. If $B'$ is another Borel subgroup of $G$ containing $T$, the sets $B'(k)N_w(k)B(k)$ also form a partition of $G(k)$. Indeed, if $y\in N(k)$ is such that $\operatorname{int}(y)B=B'$, one has
+\[
+yB(k)N_w(k)B(k)=B'(k)N_{yw}(k)B(k).
+\]
+\end{enoncerm}
+\begin{definition}{5.7.2}\label{XXII.5.7.2}
+Let $(G,T,M,R)$ be a split $S$-group, $R_-$ a system of positive roots of $R$, $B'=B_{R_-}$ the Borel group it defines. For $w\in W$, one writes (\cf 5.6.5):
+\[
+R_-^w=R_-\cap w(R_-),\qquad B'{}^u_w=U_{R_-^w}=\prod_{\alpha\in R_-^w}U_\alpha.
+\]
+If $n_w\in\uNorm_G(T)(S)$ is a representative of $w$ (3.8), one may also write
+\[
+B'{}^u_w=B'{}^u\cap\operatorname{int}(n_w)B'{}^u.
+\]
+\end{definition}
+\begin{lemma}{5.7.3}\label{XXII.5.7.3}
+Let $(G,T,M,R)$ be a split $S$-group, $R_+$ a system of positive roots of $R$, $R_-=-R_+$, $B$ (resp. $B'$) the Borel subgroup of $G$ defined by $R_+$ (resp. $R_-$). Let $w\in W$, $N_w$ and $B'{}^u_w$ be the corresponding subschemes of $G$ (3.8 and 5.7.2).
+\begin{enumeratei}
+\item The sheaf $B'\cdot N_w\cdot B$, image of the morphism
+\[
+B'\underset S\times N_w\underset S\times B\to G
+\]
+induced by the product in $G$, is representable by a subscheme of $G$ (and in fact a closed subscheme of the open subset $n_w\Omega_{R_+}$).
+\item The morphism
+\[
+B'{}^u_w\underset S\times N_w\underset S\times B^u\to G,
+\]
+induced by the product in $G$, is an immersion with image the preceding subscheme.
+\end{enumeratei}
+\end{lemma}

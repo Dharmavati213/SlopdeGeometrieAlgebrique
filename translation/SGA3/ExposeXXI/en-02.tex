@@ -1,0 +1,273 @@
+\begin{remark}{2.2.4}\label{XXI.2.2.4}
+The roots $\alpha$ and $\beta$ are orthogonal if and only if the coroots $\alpha^*$ and $\beta^*$ are orthogonal.
+\end{remark}
+\begin{lemma}{2.2.5}\label{XXI.2.2.5}
+If $\alpha$ and $\beta$ are two orthogonal roots, then $\alpha+\beta\in R$ if and only if $\alpha-\beta\in R$.
+\end{lemma}
+Indeed, $s_\beta(\alpha+\beta)=s_\beta(\alpha)+s_\beta(\beta)=\alpha-\beta$.
+\begin{lemma}{2.2.6}\label{XXI.2.2.6}
+Let $\alpha$ and $\beta$ be two nonorthogonal roots. If one defines $\ell(\gamma^*)$ for a coroot $\gamma^*$ as $\ell$ of the root $\gamma^*$ of $\mathcal R^*$, one has the relation
+\begin{equation}\tag{12}\label{XXI.eq.12}
+\ell(\alpha)\ell(\alpha^*)=\ell(\beta)\ell(\beta^*).
+\end{equation}
+\end{lemma}
+Indeed, multiplying formula (11) by the corresponding formula for $\mathcal R^*$, and taking account of $(\gamma^*)^*=\gamma$ for every $\gamma\in R$, one finds:
+\[
+(\beta^*,\alpha)(\alpha^*,\beta)\ell(\alpha)\ell(\alpha^*)=(\beta^*,\alpha)(\alpha^*,\beta)\ell(\beta)\ell(\beta^*).
+\]
+
+\sgasection{2.3}{General case}
+\begin{proposition}{2.3.1}\label{XXI.2.3.1}
+If $\alpha$ and $\beta$ are any two roots, one has
+\begin{equation}\tag{13}\label{XXI.eq.13}
+0\leq(\alpha^*,\beta)(\beta^*,\alpha)\leq4.
+\end{equation}
+If $\alpha$ and $\beta$ are neither proportional nor orthogonal, one has
+\[
+1\leq(\alpha^*,\beta)(\beta^*,\alpha)\leq3.
+\]
+\end{proposition}
+Indeed, one has $4(p(\alpha),\beta)^2=\ell(\alpha)\ell(\beta)(\alpha^*,\beta)(\beta^*,\alpha)$. On the other hand, by 1.2.6, the symmetric bilinear form $(p(x),y)$ is positive nondegenerate on $\mathcal V(R)$, whence $(p(x),y)^2\leq\ell(x)\ell(y)$.{\renewcommand{\thefootnote}{(4)}\nde{With equality if and only if $x$ and $y$ are proportional.}}
+
+\begin{corollary}{2.3.2}\label{XXI.2.3.2}
+Let $\alpha$ and $\beta$ be two nonorthogonal roots. If $\ell(\alpha)=\ell(\beta)$, there exists $w\in W$ such that $w(\alpha)=\beta$.
+\end{corollary}
+Indeed, if $\alpha$ and $\beta$ are proportional, since $\ell(\alpha)=\ell(\beta)$, one has $\alpha=\beta$ or $\alpha=-\beta$; in this case take $w=1$ or $w=s_\alpha$. If $\alpha$ and $\beta$ are neither proportional nor orthogonal, by formula (11) and 2.3.1 one has:
+\[
+(\beta^*,\alpha)=(\alpha^*,\beta)=\pm1.
+\]
+If $(\beta^*,\alpha)=(\alpha^*,\beta)=1$, take $w=s_\beta s_\alpha s_\beta$. If $(\beta^*,\alpha)=(\alpha^*,\beta)=-1$, take $w=s_\alpha s_\beta$.
+
+\begin{corollary}{2.3.3}\label{XXI.2.3.3}
+If $\alpha$ and $\beta$ are two roots, if $\alpha\ne\beta$ and $(\beta^*,\alpha)>0$ (resp. if $\alpha\ne-\beta$ and $(\beta^*,\alpha)<0$), then $\alpha-\beta$ (resp. $\alpha+\beta$) is a root.
+\end{corollary}
+The second case is deduced from the first by changing $\beta$ to $-\beta$. If $\alpha$ and $\beta$ are proportional and $(\beta^*,\alpha)>0$, one has $\beta=\alpha$, $2\beta=\alpha$, or $\beta=2\alpha$. The first case is excluded. In the others, one respectively has $\alpha-\beta=\beta\in R$ or $\alpha-\beta=-\alpha\in R$. If $\alpha$ and $\beta$ are not proportional, $(\alpha^*,\beta)$ and $(\beta^*,\alpha)$ are two strictly positive integers whose product is at most~3. One of them is therefore~1. If $(\beta^*,\alpha)=1$, one has $\alpha-\beta=s_\beta(\alpha)\in R$; if $(\alpha^*,\beta)=1$, one has $\alpha-\beta=-s_\alpha(\beta)\in R$.
+
+\begin{lemma}{2.3.4}\label{XXI.2.3.4}
+Let $\alpha$ and $\beta$ be two nonproportional roots. If $\beta-\alpha$ is not a root, then $\beta+k\alpha\in R$ for $k=-(\alpha^*,\beta)$, but not for $k=-(\alpha^*,\beta)+1$.
+\end{lemma}
+Indeed, one has $\beta-(\alpha^*,\beta)\alpha=s_\alpha(\beta)\in R$, but $\beta+(-(\alpha^*,\beta)+1)\alpha=s_\alpha(\beta-\alpha)\notin R$.
+
+\begin{proposition}{2.3.5}\label{XXI.2.3.5}
+Let $\alpha$ and $\beta$ be two nonproportional roots. The set of integers $k$ such that $\beta+k\alpha\in R$ is an interval $[p,q]$ ($p\leq0$, $q\geq0$), and one has $p+q=-(\alpha^*,\beta)$.
+\end{proposition}
+For the first assertion, it suffices, for example, to prove that if $\beta+k\alpha\in R$, $k$ an integer $>0$, then $\beta+(k-1)\alpha\in R$. If $k=1$, this is trivial. If $k\geq2$, one has
+\[
+(\alpha^*,\beta+k\alpha)=(\alpha^*,\beta)+2k\geq-3+4>0,
+\]
+and one concludes by 2.3.3. Let therefore $[p,q]$ be the interval in question. Applying 2.3.4 to $\beta+p\alpha$, one finds
+\[
+q-p=-(\alpha^*,\beta+p\alpha)=-(\alpha^*,\beta)-2p.
+\]
+{\renewcommand{\thefootnote}{(5)}\nde{$+2p$ has been corrected to $-2p$.}}
+\begin{remark}{2.3.6}\label{XXI.2.3.6}
+The preceding formula contains the qualitative statements 2.2.5 and 2.3.3.
+\end{remark}
+\begin{enoncerm}{Supplements}{2.3.7}\label{XXI.2.3.7}
+{\renewcommand{\thefootnote}{(6)}\nde{These supplements, useful for the proof of 3.1.5, have been added.}}%
+By 1.2.1 (9) and 1.2.6, the bilinear form on $\mathcal V(R)$ defined by
+\[
+\langle x,y\rangle=(p(x),y)
+\]
+is symmetric and positive definite. By 1.2.1 (10), for every $\alpha\in R$ and $y\in\mathcal V(R)$,
+\[
+\langle\alpha,y\rangle=\frac{\ell(\alpha)}2(\alpha^*,y),
+\]
+where $\ell(\alpha)=\langle\alpha,\alpha\rangle$. Consequently, one deduces from 2.3.3 the following corollary.
+\end{enoncerm}
+\begin{corollary}{}\label{XXI.2.3.7.corollary}
+Let $\alpha\ne\beta$ in $R$. If $\alpha-\beta\notin R$, then $\langle\alpha,\beta\rangle\leq0$.
+\end{corollary}
+
+\sgasection{3}{Simple roots, positive roots}\label{XXI.sec.3}
+\sgasection{3.1}{Systems of simple roots}
+\begin{lemma}{3.1.1}\label{XXI.3.1.1}
+Let $\alpha$ and $\alpha_i$, $i=1,\ldots,n$, be roots. Suppose $\alpha$ distinct from the $\alpha_i$. If one has a relation
+\[
+\alpha=\sum_{i=1}^nq_i\alpha_i,\qquad q_i\in\QQ_+,
+\]
+there exists an index $i$ such that $q_i\ne0$, $(\alpha^*,\alpha_i)>0$, $\alpha-\alpha_i\in R$.
+\end{lemma}
+Indeed, one writes $2=(\alpha^*,\alpha)=\sum_{i=1}^nq_i(\alpha^*,\alpha_i)$, which proves the first two assertions. The third then follows from 2.3.3.
+
+\begin{proposition}{3.1.2}\label{XXI.3.1.2}
+Let $\alpha$ and $\alpha_i$, $i=1,\ldots,n$, be roots. If
+\[
+\alpha=\sum_{i=1}^nm_i\alpha_i,\qquad m_i\in\NN_+,
+\]
+there exists a sequence $\beta_1,\ldots,\beta_m$ of roots taken from among the $\alpha_i$ (not necessarily pairwise distinct) such that if one puts
+\[
+\gamma_p=\sum_{i=1}^p\beta_i,\qquad p=1,\ldots,m,
+\]
+one has $\gamma_p\in R$ and $\gamma_m=\alpha$.
+\end{proposition}
+Let us argue by induction on the integer $\sum m_i=m'$. If $\alpha$ is equal to one of the $\alpha_i$, say $\alpha_{i_0}$ (which is automatic if $m'=1$), take $m=1$, $\beta_1=\alpha_{i_0}$. Otherwise, apply the preceding lemma, and there exists an index $i$ such that $m_i\ne0$ and $\alpha-\alpha_i$ is a root. One then has $(m_i-1)\in\NN$ and
+\[
+\alpha-\alpha_i=(m_i-1)\alpha_i+\sum_{j\ne i}m_j\alpha_j.
+\]
+One need only apply the induction hypothesis to $\alpha-\alpha_i$.
+
+\begin{corollary}{3.1.3}\label{XXI.3.1.3}
+Let $R'\subset R$. The following conditions are equivalent:
+\begin{enumeratei}
+\item If $\alpha,\beta\in R'$ and $\alpha+\beta\in R$, then $\alpha+\beta\in R'$.
+\item $(\NN\cdot R')\cap R\subset R'$.
+\end{enumeratei}
+\end{corollary}
+Indeed, clearly (ii) $\Rightarrow$ (i). The converse follows at once from the proposition.
+\begin{definition}{3.1.4}\label{XXI.3.1.4}
+A set of roots satisfying the conditions of 3.1.3 is said to be \emph{closed}.
+\end{definition}
+
+\begin{proposition}{3.1.5}\label{XXI.3.1.5}
+Let $\Delta\subset R$ be a set of roots. The following conditions are equivalent:
+\begin{enumeratei}
+\item The elements of $\Delta$ are indivisible, linearly independent, and
+\[
+R\subset(\QQ_+\cdot\Delta)\cup(-\QQ_+\cdot\Delta).
+\]
+\item The elements of $\Delta$ are linearly independent and
+\[
+R\subset(\NN\cdot\Delta)\cup(-\NN\cdot\Delta).
+\]
+\item Every root has a unique expression as a linear combination of the elements of $\Delta$, with integer coefficients all of the same sign.
+\end{enumeratei}
+\end{proposition}
+{\renewcommand{\thefootnote}{(7)}\nde{In what follows, the order has been modified and the proof of the implication (iii) $\Rightarrow$ (i) expanded.}}%
+Clearly (ii) $\Rightarrow$ (iii). Denote by $\alpha_1,\ldots,\alpha_n$ the (distinct) elements of $\Delta$. Let us prove (i) $\Rightarrow$ (ii). Let $\alpha\in R$. One therefore has a unique expression
+\[
+\varepsilon\alpha=\sum q_i\alpha_i,\qquad q_i\in\QQ_+,\quad\varepsilon=\pm1.
+\]
+Let us show that the $q_i$ are integers. This is certainly true if they are all zero except one (cf. 2.1.5). Otherwise, $\alpha$ is distinct from the $\alpha_i$ and, applying 3.1.1, one finds an $i_0$ such that $\alpha'=\varepsilon\alpha-\alpha_{i_0}\in R$ and $q_{i_0}\ne0$. This gives
+\[
+\alpha'=(q_{i_0}-1)\alpha_{i_0}+\sum_{i\ne i_0}q_i\alpha_i.
+\]
+Since at least one of the $q_i$, $i\ne i_0$, is nonzero, (i) implies $q_{i_0}-1\geq0$. One repeats the operation for $\alpha'$, and after finitely many steps one has proved that the $q_i$ are integers.
+
+Let us show (iii) $\Rightarrow$ (i). Let us show that $\alpha_1,\alpha_2,\ldots,\alpha_n$ are linearly independent over $\QQ$. Otherwise, one would have an equality
+\[
+x=\sum_{i\in I}a_i\alpha_i=\sum_{j\in J}b_j\alpha_j,
+\]
+where $I,J$ are two disjoint subsets of $\{1,\ldots,n\}$, at least one of them, say $I$, being nonempty, and $a_i,b_j\in\NN^*$. By corollary~2.3.7, one has $\langle\alpha_i,\alpha_j\rangle\leq0$ if $i\in I$ and $j\in J$, whence $\langle x,x\rangle\leq0$, and hence $x=0$. Let $i_0\in I$; then the equalities
+\[
+\alpha_{i_0}=\alpha_{i_0}+\sum_{i\in I}a_i\alpha_i=\alpha_{i_0}+\sum_{j\in J}b_j\alpha_j
+\]
+imply (by (iii)) $a_i=0=b_j$ for all $i,j$, a contradiction. This shows that the elements of $\Delta$ are linearly independent over $\QQ$; let us show that they are also indivisible.
+
+Let therefore $\beta\in\Delta$ be divisible. One has $\beta/2\in R$, whence
+\[
+\frac\beta2=\varepsilon\sum_{\alpha\in\Delta}m_\alpha\alpha,\qquad m_\alpha\in\NN,\quad\varepsilon=\pm1,
+\]
+and hence also $\beta=2\varepsilon\sum_\alpha m_\alpha\alpha$, whence, by uniqueness, $m_\alpha=0$ if $\alpha\ne\beta$ and $2\varepsilon m_\beta=1$, a contradiction.
+
+\begin{definition}{3.1.6}\label{XXI.3.1.6}
+A set $\Delta$ of roots satisfying the conditions of 3.1.5 is called a \emph{system of simple roots}, or a \emph{basis} of $R$.
+\end{definition}
+If $w\in W$ and $\Delta$ is a system of simple roots, then $w(\Delta)$ is a system of simple roots.
+\begin{remark}{3.1.7}\label{XXI.3.1.7}
+This definition involves only $R$, and not $\mathcal R$; in fact, it even involves only $\operatorname{ind}(R)$.
+\end{remark}
+\begin{remark}{3.1.8}\label{XXI.3.1.8}
+If $\Delta$ is a system of simple roots, $\Delta$ is a basis of the free abelian group $\Gamma_0(R)$. One therefore has $\operatorname{Card}(\Delta)=\operatorname{rgss}(\mathcal R)$.
+\end{remark}
+\begin{remark}{3.1.9}\label{XXI.3.1.9}
+The conditions of 3.1.5 are then clearly equivalent to the following:
+\begin{enumerate}[label=\textup{(\roman*')}]
+\item The elements of $\Delta$ are indivisible, number $\leq\operatorname{rgss}(R)$, and $R\subset(\QQ_+\cdot\Delta)\cup(-\QQ_+\cdot\Delta)$.
+\item One has $\operatorname{Card}(\Delta)\leq\operatorname{rgss}(R)$, and $R\subset(\NN\cdot\Delta)\cup(-\NN\cdot\Delta)$.
+\end{enumerate}
+\end{remark}
+
+\begin{corollary}{3.1.10}\label{XXI.3.1.10}
+If $\Delta$ is a system of simple roots, $\operatorname{ind}(\Delta^*)$ is a system of simple coroots (i.e. a system of simple roots of $R^*$).
+\end{corollary}
+Indeed, if $\beta=\sum_{\alpha\in\Delta}a_\alpha\alpha$ ($a_\alpha\in\NN$), then $p(\alpha)=\sum_{\alpha\in\Delta}a_\alpha p(\alpha)$, whence, by 1.2.1 (10):
+% typo?: p(alpha) on the left rather than p(beta) kept as printed.
+\[
+\beta^*=\sum_{\alpha\in\Delta}a_\alpha\frac{\ell(\alpha)}{\ell(\beta)}\alpha^*,
+\]
+which proves that $\operatorname{ind}(\Delta^*)$ satisfies $(i')$.
+
+{\renewcommand{\thefootnote}{(8)}\nde{The following sentence has been added, and in 3.1.11 $4a_\alpha\ell(\alpha)$ has been replaced by $2a_\alpha\ell(\alpha)$.}}%
+By 2.1.1, if $\alpha^*$ is not indivisible, then $\alpha^*=2u^*$, where $u^*\in\operatorname{ind}(\Delta^*)$ (and $u=2\alpha$). One deduces:
+\begin{corollary}{3.1.11}\label{XXI.3.1.11}
+If $\Delta$ is a system of simple roots and $\beta=\sum_{\alpha\in\Delta}a_\alpha\alpha$ ($a_\alpha\in\ZZ$) is the expression of $\beta$ in $\Delta$, then $2a_\alpha\ell(\alpha)$ is divisible by $\ell(\beta)$ (and even by $2\ell(\beta)$ if $\alpha^*$ is indivisible).
+\end{corollary}
+Before continuing to state the properties of systems of simple roots, let us show that they exist.
+
+\sgasection{3.2}{Systems of positive roots}
+\begin{definition}{3.2.1}\label{XXI.3.2.1}
+A set $R_+\subset R$ is called a \emph{system of positive roots} of $\mathcal R$ (or of $R$, cf. remark~3.2.2) if it satisfies the following conditions:
+\[
+\begin{array}{ll}
+\text{(P 1)}&R_+\cap-R_+=\varnothing.\\
+\text{(P 2)}&R_+\cup-R_+=R.\\
+\text{(P 3)}&(\QQ_+\cdot R_+)\cap R\subset R_+.
+\end{array}
+\]
+\end{definition}
+In particular, such a set is closed. We shall see later (3.3.8) that in fact a closed set satisfying (P 1) and (P 2) also satisfies (P 3), hence is a system of positive roots. If $w\in W$ and $R_+$ is a system of positive roots, $w(R_+)$ is a system of positive roots.
+\begin{remark}{3.2.2}\label{XXI.3.2.2}
+This definition involves only $R$. One will also say that $R_+$ is a system of positive roots of $R$.
+\end{remark}
+\begin{remark}{3.2.3}\label{XXI.3.2.3}
+From (P 1) and (P 2), one deduces at once
+\[
+\operatorname{Card}(R_+)=\operatorname{Card}(R)/2.
+\]
+It follows that if $R_+$ and $R'_+$ are two systems of positive roots and $R_+\subset R'_+$, then $R_+=R'_+$.
+\end{remark}
+\begin{remark}{3.2.4}\label{XXI.3.2.4}
+If $R_+$ is a system of positive roots, $R_+^*$ is a system of positive coroots (i.e. a system of positive roots of $R^*$).
+\end{remark}
+This follows at once from 1.1.4 and 1.2.2.
+\begin{definition}{3.2.5}\label{XXI.3.2.5}
+Let $\Delta$ be a system of simple roots. Put
+\[
+\mathcal P(\Delta)=(\QQ_+\cdot\Delta)\cap R=(\NN_+\cdot\Delta)\cap R.
+\]
+\end{definition}
+
+\begin{proposition}{3.2.6}\label{XXI.3.2.6}
+If $\Delta$ is a system of simple roots, $\mathcal P(\Delta)$ is a system of positive roots. If $\Delta$ is a system of simple roots and $R_+$ a system of positive roots, one has the equivalence:
+\[
+\Delta\subset R_+\Longleftrightarrow R_+=\mathcal P(\Delta).
+\]
+\end{proposition}
+The first assertion is immediate. If $\Delta\subset R_+$, then $\mathcal P(\Delta)\subset R_+$ by (P 3), hence $\mathcal P(\Delta)=R_+$ by 3.2.3. The rest is trivial.
+\begin{remark}{3.2.7}\label{XXI.3.2.7}
+There exist systems of positive roots: let $\geq$ be a totally ordered vector space structure on $\mathcal V(R)$. The set of roots $\geq0$ for this order relation is a system of positive roots.
+\end{remark}
+
+\begin{theorem}{3.2.8}\label{XXI.3.2.8}
+Let $R_+$ be a system of positive roots. There exists a unique system of simple roots $\mathcal S(R_+)$ such that $\mathcal S(R_+)\subset R_+$, i.e. such that $R_+=\mathcal P(\mathcal S(R_+))$.
+\end{theorem}
+Uniqueness follows at once from:
+\begin{lemma}{3.2.9}\label{XXI.3.2.9}
+Let $\Delta$ be a system of simple roots. Then for $\alpha\in\mathcal P(\Delta)$ to belong to $\Delta$, it is necessary and sufficient that $\alpha$ not be the sum of two elements of $\mathcal P(\Delta)$.
+\end{lemma}
+This lemma follows at once from the definitions and 3.1.2.
+
+Let us now prove the existence of $\mathcal S(R_+)$. Consider the set of subsets $T$ of $R_+$ such that $T=\operatorname{ind}(T)$ and $(\QQ_+\cdot T)\supset R_+$. This set is nonempty, for it contains $\operatorname{ind}(R_+)$. Let $\Delta$ be a minimal element of this set for inclusion. Let us show that $\Delta$ is a system of simple roots, i.e., by 3.1.5 (i), that $\Delta$ is a linearly independent subset of $M\otimes\QQ$.
+\begin{lemma}{3.2.10}\label{XXI.3.2.10}
+If $\alpha,\beta\in\Delta$ and $q\alpha+q'\beta\in R$, where $q,q'\in\QQ$, then $qq'\geq0$.
+\end{lemma}
+Indeed, if $qq'<0$, one can write (interchanging $\alpha$ and $\beta$ if necessary)
+\[
+a\alpha-b\beta\in R_+,\qquad a,b\in\QQ_+^*,
+\]
+hence by hypothesis there exists a relation
+\[
+a\alpha-b\beta=\sum_{\gamma\in\Delta}c(\gamma)\gamma,\qquad c(\gamma)\in\QQ_+.
+\]
+If $a\leq c(\alpha)$, it is written
+\[
+-\beta=\frac{c(\alpha)-a}b\alpha+\sum_{\gamma\ne\alpha}\frac{c(\gamma)}b\gamma.
+\]
+Then this element belongs to $(\QQ_+\cdot\Delta)\cap R$, which is contained in $R_+$ by (P 3). But then $\beta\in R_+\cap-R_+$, which contradicts (P 1).
+
+If, on the contrary, $a>c(\alpha)$, one writes
+\[
+(a-c(\alpha))\alpha=b\beta+\sum_{\gamma\ne\alpha}c(\gamma)\gamma,
+\]
+which proves that $\Delta\subset\QQ_+\cdot(\Delta-\{\alpha\})$, contrary to the minimality of $\Delta$.

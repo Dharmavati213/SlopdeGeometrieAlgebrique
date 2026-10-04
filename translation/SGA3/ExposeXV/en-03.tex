@@ -1,0 +1,166 @@
+Let $K_0(n)$ be the sheaf of ideals of $\OO_{G_0}$ defining the closed subscheme ${}_nT_0$. The sheaf $K_0$\nde{Introduced after Lemma 2.7.} is therefore a subsheaf of $K_0(n)$. To simplify, put:
+\[
+R=J\otimes_{S_0}\OO_{T_0}\qquad\text{and}\qquad R(n)=J\otimes_{S_0}\OO_{{}_nT_0}.
+\]
+The sheaf $R(n)$ is therefore a quotient of $R$, and one has the diagram of maps:
+\[
+\xymatrix@C=18pt{&&&K_0\ar[d]&\\&&&K_0(n)\ar[d]&\\0\ar[r]&J\OO_G\ar[r]\ar[d]&\OO_G\ar[r]&\OO_{G_0}\ar[r]&0\\&R\ar[d]&&&\\&R(n)&&&}
+\]
+Using the bifunctoriality of $\mathscr{E}\!xt^1_{\OO_G}(\ ,\ )$, one then obtains the following commutative diagram:
+\[
+\xymatrix@C=12pt{
+\mathscr{E}\!xt^1_{\OO_G}(\OO_{G_0},J\OO_G)\ar[dr]&&\\
+&\mathscr{E}\!xt^1_{\OO_G}(K_0(n),R)\ar[r]\ar[d]&\mathscr{E}\!xt^1_{\OO_G}(K_0,R)=\mathcal E\ar[d]\\
+&\mathscr{E}\!xt^1_{\OO_G}(K_0(n),R(n))\ar[r]&\mathscr{E}\!xt^1_{\OO_G}(K_0,R(n)).
+}
+\]
+Again denote by $\Phi$ the element of $\mathscr{E}\!xt^1_{\OO_G}(\OO_{G_0},J\OO_G)$ defined by the exact sequence:
+\[
+0\to J\OO_G\to\OO_G\to\OO_{G_0}\to0,
+\]
+so that $\Psi$ is the image of $\Phi$ in $\mathcal E$. Since ${}_nT_0$ lifts to a subscheme $M_n$ of $G$, flat over $S$, the image of $\Phi$ in the sheaf $\mathscr{E}\!xt^1_{\OO_G}(K_0(n),R(n))$ is zero (Exp. III 4.1); a fortiori the image of $\Phi$ in $\mathscr{E}\!xt^1_{\OO_G}(K_0,R(n))$, which is also the image of $\Psi$, is zero.
+\begin{lemma}{2.10}\label{XV.2.10}
+The canonical morphism:
+\[
+\mathscr{E}\!xt^1_{\OO_G}(K_0,R)\otimes_{B_0}\OO_{{}_nT_0}\to\mathscr{E}\!xt^1_{\OO_G}(K_0,R(n))
+\]
+is injective for every integer $n$.
+\end{lemma}
+\begin{proof}
+Indeed, the affine scheme $T_0=\mathbf G_{\mathrm m,S_0}$ has ring:
+\[
+B_0=A_0[T,T^{-1}].
+\]
+The subscheme ${}_nT_0$ is defined by the vanishing of the following section of $B_0$:
+\[
+h(n)=T^n-1,
+\]
+which is regular (EGA $0_{\mathrm{IV}}$ 15.2.2) and remains regular after every base change $S'_0\to S_0$. One therefore has an exact sequence of sheaves:
+\[
+0\to\OO_{T_0}\xrightarrow{h(n)}\OO_{T_0}\to\OO_{{}_nT_0}\to0.
+\]
+Since ${}_nT_0$ is flat over $S$, by tensoring with $J$ over $\OO_{S_0}$ one obtains the exact sequence:
+% typo?: source says flat over S rather than S_0, kept as printed.
+\[
+0\to R\xrightarrow{h(n)}R\to R(n)\to0,
+\]
+then the exact sequence of $\mathscr{E}\!xt$:
+\[
+\cdots\to\mathscr{E}\!xt^1_{\OO_G}(K_0,R)\xrightarrow{h(n)}\mathscr{E}\!xt^1_{\OO_G}(K_0,R)\to\mathscr{E}\!xt^1_{\OO_G}(K_0,R(n)),
+\]
+which completes the proof of the lemma.
+\end{proof}
+
+What precedes shows that for every integer $n$ equal to a power of $q$, the image of $\Psi$ in $E/h(n)E$ is zero. To show that $\Psi$ is zero, it suffices to see that if $\Psi\in\mathfrak m_0^rE$, then $\Psi\in\mathfrak m_0^{r+1}E$. Let $\overline\Psi$ be the image of $\Psi$ in $E_r$. There exists an element $\Psi(n)$ of $E$ such that:
+\[
+\Psi=\Psi(n)h(n)\qquad(n\text{ equal to a power of }q).
+\]
+We noted that the image $\overline{h(n)}$ of $h(n)$ in $\overline B_0$ is again $\overline B_0$-regular. Since $E_s$ is locally free over $\overline B_0$ for every $s$ (2.9), multiplication by $\overline{h(n)}$ in $E_s$ is injective. One immediately deduces that $\Psi(n)$ is in $\mathfrak m_0^rE$. Let $\overline{\Psi(n)}$ be its image in $E_r$, so that one has the relation:
+\[
+\overline\Psi=\overline{h(n)}\,\overline{\Psi(n)}\qquad(n\text{ equal to a power of }q).
+\]
+This shows that the set $F$ of points of $\mathbf G_{\mathrm m,k}$ at which $\overline\Psi$ takes the value $0$ contains the dense set of points of order a power of $q$. Moreover, $F$ is closed (since $E_r$ is locally free over $\overline B_0$), and $\mathbf G_{\mathrm m,k}$ is reduced, so $\overline\Psi$ is zero.
+
+This completes the proof of Theorem 2.1.
+
+% original p. 374
+\sgasection{3}{Characterization of a subtorus by its underlying set}
+\par\medskip\noindent\textit{1. Statement of the theorem}\par
+\begin{notation}{}\label{XV.notation3}
+If $X$ is a prescheme, $\mathrm{ens}(X)$ denotes the underlying set of $X$. If $X$ and $S'$ are two $S$-preschemes, $X_{S'}=X\times_S S'$, $u:X_{S'}\to X$ the canonical morphism, $E$ a subset of $\mathrm{ens}(X)$, one denotes by $E_{S'}$ (or $E\times_S S'$) the subset of $\mathrm{ens}(X_{S'})$ equal to $u^{-1}(E)$.
+\end{notation}
+\begin{theorem}{3.1}\label{XV.3.1}
+Let $S$ be a locally noetherian prescheme, $G$ a group $S$-prescheme of finite type, $q$ an integer $>0$ invertible on $S$, $E$ a subset of $\mathrm{ens}(G)$. Consider the following assertions concerning $E$:
+\begin{enumeratei}
+\item The set $E$ is the underlying set of a subtorus $T$ of $G$.
+\item a) For every point $s$ of $S$, there exists a subtorus $T_s$ of $G_s$ such that $E\cap\mathrm{ens}(G_s)=E_s$ is the underlying set of $T_s$.
+
+b) With the integer $n$ ranging over the powers of $q$, there exists a coherent family (cf. 2.2) $M_n$ of group subschemes of $G$, of multiplicative type, such that for every point $s$ of $S$, one has:
+\[
+(M_n)_s={}_nT_s.
+\]
+\item a) As in (ii) a).
+
+b) The set $E$ is locally closed in $\mathrm{ens}(G)$, and the dimension of the fibers of $E$, relative to $S$, is locally constant.
+\item a) As in (ii) a).
+
+b) For every $S$-scheme $S'$ which is the spectrum of a complete discrete valuation ring with algebraically closed residue field, $E_{S'}$ is the underlying set of a subtorus of $G_{S'}$.
+\end{enumeratei}
+Then one has the following implications:
+
+\noindent A) $\textup{(i)}\iff\textup{(ii)}\implies\textup{(iii)}\implies\textup{(iv)}$.
+
+\noindent B) If $G$ is separated over $S$, one has $\textup{(iii)}\iff\textup{(iv)}$, and moreover $E$ is closed.
+
+\noindent C) Conditions (i), (ii), (iii) (and also (iv), if $G$ is separated over $S$) are equivalent in the following two cases:
+
+\noindent First case: a) The prescheme $S$ is reduced, or else $G$ is flat over $S$, and
+
+\hspace*{2em}b) For every point $s$ of $S$, $T_s$ is a central torus of $G_s$.
+
+\noindent Second case: $S$ is normal.
+
+Moreover, in the two cases above, the torus $T$ with underlying space $E$ is unique.
+\end{theorem}
+
+\begin{remarks}{3.2}\label{XV.3.2}
+a) When $S$ is reduced, it is unnecessary in (ii) to suppose that the family $M_n$ is coherent, this condition being implied by the other hypotheses. Indeed, if the integer $m$ divides $n$, the subgroups ${}_mM_n$ and $M_m$ are \'etale over $S$, hence reduced, and have the same underlying space, so they agree.
+
+b) If $S$ is no longer supposed normal, it is no longer true in general that $\textup{(iii)}\implies\textup{(i)}$, even when $S$ is reduced, geometrically unibranch, and $G$ is a group scheme smooth over $S$. Indeed, consider the Borel subgroup of $\SL_{2,S}$ formed by matrices of the form:
+\[
+\begin{pmatrix}t&u\\0&t^{-1}\end{pmatrix},
+\]
+where $S$ is the affine curve over a field $k$ with ring:
+\[
+k[x,y]/(y^2-x^3).
+\]
+Consider then the set $E$ obtained as follows: over the ``cusp of $S$'' ($x=y=0$), we take the diagonal torus ($u=0$). Over the complementary open subset ($x\ne0$), we take the torus deduced from the diagonal torus by conjugation by the element:
+\[
+\begin{pmatrix}1&y/x\\0&1\end{pmatrix}.
+\]
+The set $E$ obtained satisfies (iii) a); on the other hand, it is closed in $G$, and the reduced subscheme with underlying set $E$ has equations:
+\[
+\begin{cases}xu+y(t-t^{-1})=0,\\u^2-x(t-t^{-1})^2=0.\end{cases}
+\]
+It is therefore not a subtorus of $G$, since the fiber over the cusp is not reduced.
+\end{remarks}
+
+\par\noindent\emph{Plan of the proof of 3.1.}
+In a first part, we shall establish the following ``easy'' implications:
+\[
+\xymatrix@R=12pt{&\text{(ii)}\ar@{=>}[dr]&\\\text{(i)}\ar@{=>}[ur]\ar@{=>}[dr]&&\text{(iv)}\\&\text{(iii)}\ar@{=>}[ur]&}
+\]
+and $\text{(iv)}\implies[\text{(iii) and }E\text{ closed}]$ if $G$ is separated over $S$.
+
+The proof of the more delicate implications will proceed in three stages:
+
+\noindent I) Reduction of the implication $\text{(iii)}\implies\text{(i)}$ (under the hypotheses of C), first case) to the case where $S$ is normal.
+
+\noindent II) $\text{(iii)}\implies\text{(ii)}$ if $S$ is normal.
+
+\noindent III) $\text{(ii)}\implies\text{(i)}$.
+
+\par\medskip\noindent\textit{2. Proof of the ``easy'' assertions contained in 3.1}\par
+$\text{(i)}\implies\text{(ii) and (iii)}$ is trivial.
+
+$\text{(iii)}\implies\text{(iv)}$. After replacing $S$ by $S'$, we may suppose that $S$ is the spectrum of a discrete valuation ring. Let $t$ be the generic point of $S$, and $s$ the closed point.
+
+Since $E$ is locally closed, there exists a subprescheme of $G$ which is reduced and whose underlying space is $E$; we shall denote it by $\overline E$. The generic fiber $\overline E_t$ of $\overline E$ is therefore equal to the subtorus $T_t$ of rank $r$ of $G_t$ (by (iii) a)). Let $E'$ be the schematic closure of $\overline E_t$ in $\overline E$. The prescheme $E'$ is irreducible, and its closed fiber $E'_s$ is nonempty (it contains the unit section of $G_s$), so $E'_s$ has dimension $r$ (EGA IV 14.3.10). But $E'_s$ is then a closed subscheme of $\overline E_s$, and the latter has dimension $r$ (by (iii) b)) and is irreducible (since it has the same underlying space as $T_s$), so $E'_s$ has the same underlying space as $\overline E_s$, and consequently $E'=\overline E$, which proves that $\overline E$ is flat over $S$.
+
+Let now $E''$ be the schematic closure of $\overline E_t$ in $G$. Then $E''$ is a group subprescheme of $G$, flat over $S$ (Exp. VIII 7.1), containing $E'$, hence $\overline E$. The closed fiber $E''_s$ is an algebraic subgroup of $G_s$, of dimension $r$ (\loccit). Since $T_s$ is an irreducible closed subset of $G_s$, of dimension $r$, $E_s$ has the same underlying set as the neutral component $(E''_s)^0$ of $E''_s$. Let $(E'')^0$ be the ``neutral component'' of $E''$, i.e. the open subgroup of $E''$ complementary to the union of the irreducible components of $E''_s$ not containing the origin. One therefore has:
+\[
+E=\mathrm{ens}[(E'')^0].
+\]
+Since $\overline E$ and $E''$ are reduced, one even has $\overline E=(E'')^0$. Finally, $\overline E$ is a group subprescheme of $G$, flat and of finite type over $S$, with connected fibers, hence separated (Exp. VIB 5.2), whose generic fiber is a torus $T_t$, and whose reduced closed fiber is a torus $T_s$; but then $\overline E$ is a torus (Exp. X 8.8).
+
+$\text{(ii)}\implies\text{(iv)}$. One may again suppose that $S$ is the spectrum of a discrete valuation ring, and we retain the notation introduced above. The schematic closure in $G$ of $T_t$ is a group subprescheme $\overline T$ of $G$, flat over $S$, containing $M_n$ for every integer $n$ equal to a power of $q$. Consequently, the closed fiber of $\overline T$ is a closed subscheme of $G_s$ containing $(M_n)_s$ for every $n$, hence containing $T_s$. For reasons of dimension, the ``neutral component'' $\overline T^0$ of $\overline T$ has $E$ as underlying set, and one concludes as above that $\overline T^0$ is a subtorus of $G$.
+
+$\text{(iv)}\implies[\text{(iii) and }E\text{ closed}]$, if $G$ is separated over $S$. Let us show that $E$ is closed.\nde{The fact that (iv) $\implies$ (iii) will appear in the course of the proof.} Let us first prove the lemma:
+\begin{lemma}{3.3}\label{XV.3.3}
+If the conditions stated in 3.1 iv) are satisfied, $E$ is a locally constructible subset of $\mathrm{ens}(G)$.
+\end{lemma}
+\begin{proof}
+By the usual method, one is reduced to studying the case where $S$ is noetherian, integral, with generic point $\eta$. After restricting $S$, one may suppose (Exp. VIB 10.10) that there exists a group subscheme of $G$, say $H$, flat over $S$, with connected fibers, whose generic fiber $H_\eta$ is equal to $T_\eta$. To prove 3.3, it then suffices to show that $\mathrm{ens}(H)=E$. Now if $s$ is a point of $S$, by EGA II 7.1.9 there exists an $S$-scheme $S'$, the spectrum of a discrete valuation ring, which one may suppose complete with algebraically closed residue field, whose generic point $t'$ projects to $\eta$ and whose closed point $s'$ projects to $s$. By (iv) b), there exists a subtorus $T_{S'}$ of $G_{S'}$ with underlying space $E_{S'}$. The two group subpreschemes $T_{S'}$ and $H_{S'}=H\times_S S'$ of $G_{S'}$ are flat over $S'$, have connected fibers, and have the same generic fiber $T_{t'}$, so they agree with the neutral component of the schematic closure of $T_{t'}$ in $G_{S'}$. Consequently $\mathrm{ens}(H_s)=E_s$, hence $\mathrm{ens}(H)=E$, which proves the lemma.
+\end{proof}
+
+This being so, knowing that $E$ is locally constructible, to see that $E$ is closed it suffices to show that every specialization in $G$ of a point of $E$ is a point of $E$. By the usual technique, one is reduced to the case where $S$ is the spectrum of a complete discrete valuation ring with algebraically closed residue field. But then, the subtorus of $G$ with underlying space $E$ ((iv) b)) is closed in $G$, since $G$ is separated (Exp. VIII 7.12).

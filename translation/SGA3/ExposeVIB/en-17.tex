@@ -1,0 +1,160 @@
+\begin{remark}{12.8}\label{VIB.12.8}
+Let $S$ be a locally noetherian regular scheme of dimension $1$, and $X$ an $S$-scheme flat, quasi-separated and quasi-compact over $S$. Then $\mathscr A(X)$ is a flat $\OS$-module. Indeed, one may suppose $S$ local; denote by $s$ its closed point, $i$ the inclusion $X_s\hookrightarrow X$, and $\pi$ a uniformizer of $R=\OO(S)$; since $X$ is flat over $S$, one has an exact sequence of sheaves
+\[
+0\to\OX\xrightarrow{\pi}\OX\to i_*(\OO_{X_s})\to0
+\]
+and thus, taking global sections, one obtains that $\mathscr A(X)$ is an $R$-module without $\pi$-torsion, hence flat.\nde{This holds more generally if $S$ is locally noetherian regular of dimension $\leq2$, cf. [Ray70a], VII 3.2.} One obtains moreover that the morphism from $\mathscr A((X_{\mathrm{af}})_s)=\mathscr A(X)/\pi\mathscr A(X)$ to $\mathscr A(X_s)$, induced by the morphism $X\to X_{\mathrm{af}}$, is injective.
+\end{remark}
+We can now prove the following proposition (cf. Remark 11.11.1).
+
+\begin{proposition}{12.9}\label{VIB.12.9}
+Let $S$ be a locally noetherian regular scheme of dimension $\leq1$, $G$ a group $S$-scheme flat, quasi-separated and quasi-compact over $S$. Then the following conditions are equivalent:
+
+(i) $G$ is affine over $S$.
+
+(ii) $G$ is quasi-affine over $S$.
+
+(iii) $G$ acts faithfully on a quasi-affine flat $S$-scheme $X$.
+
+(iv) $G$ acts linearly and faithfully on a quasi-coherent module $\mathscr E$ flat over $S$.
+
+(v) The morphism $\rho:G\to G_{\mathrm{af}}$ is a monomorphism.
+\end{proposition}
+\begin{proof}
+The implication (i) $\Rightarrow$ (ii) is evident, as is (ii) $\Rightarrow$ (iii) (take $X=G$).
+
+Suppose (iii) holds. Since $\mathscr A(G)$ and $\mathscr A(X)$ are flat $\OS$-modules, one obtains, proceeding as in 11.11, that $G$ acts faithfully (on the right) on $X_{\mathrm{af}}$, and thus acts linearly and faithfully (on the left) on the flat quasi-coherent $\OS$-module $\mathscr A(X)$.
+
+On the other hand, if (iv) holds, then, by 11.6.1 (ii), the monomorphism $G\to\underline{\Aut}_{\OS}(\mathscr E)$ factors through $G_{\mathrm{af}}$, so $G\to G_{\mathrm{af}}$ is a monomorphism.
+
+Finally, suppose (v) holds and let us show that $\rho:G\to G_{\mathrm{af}}$ is an isomorphism. Replacing $S$ by one of its connected components, one may suppose $S$ irreducible, with generic point $\eta$. Since the formation of $G_{\mathrm{af}}$ commutes with flat base changes, one has $(G_{\mathrm{af}})_\eta=(G_\eta)_{\mathrm{af}}$, and hence the morphism $G_\eta\to(G_\eta)_{\mathrm{af}}$ is a monomorphism, hence a closed immersion, by 12.1, hence an isomorphism since $\OO((G_\eta)_{\mathrm{af}})=\OO(G_\eta)$. If $S=\Spec(\kappa(\eta))$, we are done; one may therefore suppose $\dim S=1$.
+
+Let $s$ then be a closed point of $S$; let us show that $G_s\to(G_{\mathrm{af}})_s$ is an isomorphism and that $\rho$ is flat at all points of $G_s$. For this, one may suppose $S$ local, with closed point $s$. The morphism $\rho_s:G_s\to(G_{\mathrm{af}})_s$ obtained by base change is a monomorphism, hence a closed immersion by 12.1, so the morphism $\OO((G_{\mathrm{af}})_s)\to\OO(G_s)$ induced by $\rho_s$ is surjective. Now, by the preceding remark, it is also injective, hence an isomorphism. (In particular, $\rho$ is therefore surjective.)
+
+It then follows from Lemma 12.7 that $\rho:G\to G_{\mathrm{af}}$ is faithfully flat. Since $G$ is quasi-compact over $S$ and $G_{\mathrm{af}}$ separated over $S$, then $\rho$ is also quasi-compact (cf. EGA I, 6.6.4). Consequently, $\rho$ is a faithfully flat quasi-compact monomorphism, hence an isomorphism. This proves the proposition.
+\end{proof}
+Finally, let us prove Prop. 2.1 of Exp. XVII, Appendix III; taking account of [Per76], Cor. 4.2.5, ``quasi-compact and quasi-separated'' has been substituted for ``of finite type'' among the hypotheses (if one supposes $G$ of finite type, one may use 12.1 instead of loc.\ cit.).
+
+\begin{proposition}{12.10}\label{VIB.12.10}
+Let $S$ be a locally noetherian regular scheme of dimension $\leq1$, $G$ a group $S$-scheme flat, quasi-compact and quasi-separated.
+
+(i) The canonical morphism $\rho:G\to G_{\mathrm{af}}$ is faithfully flat and quasi-compact. Consequently, $G_{\mathrm{af}}$ represents the (fpqc) quotient sheaf of $G$ by $N=\Ker(\rho)$.
+
+(ii) If moreover $G$ is of finite type over $S$, then $\rho$ is of finite presentation and $G_{\mathrm{af}}$ represents the (fppf) quotient sheaf of $G$ by $N$ and is of finite type over $S$.
+
+(iii) Suppose moreover $G_\eta$ affine for every maximal point $\eta$ of $S$. Then $N$ is an étale $S$-group, and is the identity group if $G$ is separated over $S$.
+\end{proposition}
+\begin{proof}
+First, since $G_{\mathrm{af}}$ is affine and hence separated over $S$, then $\rho$ is quasi-compact (cf. EGA I, 6.6.4) and the kernel $N=\Ker(\rho)$ is a closed subgroup of $G$. Moreover, replacing $S$ by one of its connected components, one may suppose $S$ irreducible, with generic point $\eta$.
+
+Note that to prove (i) and (ii), it suffices to show that $\rho$ is faithfully flat; for then, by Exp. IV, 5.1.7.1, $G_{\mathrm{af}}$ represents the (fpqc) quotient sheaf of $G$ by $N$, and if moreover $G$ is of finite type over $S$, hence of finite presentation ($S$ being locally noetherian), then, by 9.2 (xiii), $\rho$ is of finite presentation (as is $G_{\mathrm{af}}\to S$) and thus $\rho$ is covering for the (fppf) topology.
+% typo: toplogie -> topologie.
+
+One may therefore suppose $S=\Spec(R)$, where $R$ is a discrete valuation ring (if $\dim S=1$) or the field $\kappa(\eta)$ (if $\dim S=0$). Denote by $s$ the closed point of $S$. Since the formation of $G_{\mathrm{af}}$ commutes with flat base changes, the canonical morphism $G_\eta\to(G_\eta)_{\mathrm{af}}$ is identified with the morphism $\rho_\eta:G_\eta\to(G_{\mathrm{af}})_\eta$, and since $\OO((G_{\mathrm{af}})_\eta)=\OO((G_\eta)_{\mathrm{af}})=\OO(G_\eta)$, then $\rho_\eta$ is faithfully flat by [Per76], 4.2.5 (see also the addition VIA, 6.6). If $\dim S=1$, one similarly obtains that $\rho_s$ is faithfully flat, since the morphism $\OO((G_{\mathrm{af}})_s)\to\OO(G_s)$ is injective, by Remark 12.8. Thus, by Lemma 12.7, $\rho$ is faithfully flat. This proves (i) and (ii). In particular, $N$ is flat over $S$.
+
+Suppose now $G_\eta$ affine. Since $\rho_\eta$ coincides with the canonical morphism $G_\eta\to(G_\eta)_{\mathrm{af}}$, its kernel $N_\eta$ is the identity group. Let us show that $N$ is étale over $S$. Since $N$ is flat over $S$, it remains to see that $N_s$ is étale over $\kappa(s)$, for every point $s\ne\eta$ of $S$. There is nothing to show if $S=\Spec(\kappa(\eta))$, so one may suppose $S=\Spec(R)$, where $R$ is a discrete valuation ring. Let $s$ be the closed point of $S$, $K$ the fraction field of $R$, and $\pi$ a uniformizer. Let $x\in N_s$ and $U_x$ be an affine open neighborhood of $x$ in $N$; since $N$ is flat over $S$, then $U_x\cap N_\eta$ is nonempty, hence equal to $\{\varepsilon(\eta)\}$, where $\varepsilon$ denotes the identity section. Thus $A=\OO(U_x)$ is a flat $R$-algebra such that $A_K=K$ and $\pi^{-1}\notin A$ (since $\pi$ belongs to the maximal ideal of $\OO_{U,x}$). It follows that $A=R$, and hence the projection $U_x\to S$ is an isomorphism. This proves that $N$ is étale over $S$; if moreover $G$ is separated over $S$, then the inverse isomorphism $S\to U_x$ equals the identity section (since they coincide on the dense open subset $\{\eta\}$ of $S=\Spec(R)$), so $N$ is the identity group. The proposition is proved.
+\end{proof}
+One obtains in particular the following corollary, two other proofs of which are found in [An73], Prop. 2.3.1 and [PY06], Prop. 3.1.
+% typo: missing final period supplied.
+
+\begin{corollary}{12.10.1}\label{VIB.12.10.1}
+Let $R$ be a discrete valuation ring, $K$ its fraction field, $G$ a group $R$-scheme separated, flat and of finite type over $R$. If $G_K$ is affine, then $G$ is affine.
+\end{corollary}
+
+\begin{remarks}{12.10.2}\label{VIB.12.10.2}
+(a) On the one hand, O. Gabber indicated to us examples where $G$ is a flat group of finite type over a discrete valuation ring, whose generic fiber is an abelian variety, and where the kernel $N$ of $G\to G_{\mathrm{af}}$ is not smooth.
+
+(b) On the other hand, let us point out that M. Raynaud gave an example, for $S$ the affine space of dimension $2$ over a field $k$, of a smooth quasi-affine group $S$-scheme, with affine connected fibers, which is not affine over $S$, cf. [Ray70a], \S\,VII.3, p. 116.
+\end{remarks}
+
+\sgasection{13}{Flat affine groups over a regular base of dimension $\leq2$}
+\nde{This section has been added.} Let us begin by noting that the well-known argument showing that every affine algebraic group over a field $k$ is linear, as well as Lemma 11.12, extends to the case of a group scheme $G$ affine, flat and of finite type over a noetherian regular base scheme $S$ of dimension $\leq2$. For $S$ of dimension $\leq1$, this proves point (b) of Remark 11.11.1. The extension to the case $\dim S=2$ rests on the following lemma, which was communicated to us by O. Gabber.
+
+\begin{lemma}{13.1}\label{VIB.13.1}
+Let $S$ be a noetherian normal scheme, $\mathscr A$ a flat quasi-coherent $\OS$-module, $\mathscr F$ a sub-$\OS$-module of finite type of $\mathscr A$, $\mathscr F^{**}$ its bidual, and $U$ the flatness locus of $\mathscr F$, i.e.\ the set of points $s\in S$ such that $\mathscr F_s$ is a flat $\OO_{S,s}$-module.
+
+(i) $U$ is an open subset of $S$ and $\mathscr F^{**}=j_*j^*(\mathscr F)$, where $j$ denotes the inclusion $U\hookrightarrow X$.
+% typo?: kept as printed: U -> X, rather than S.
+
+(ii) The canonical morphism $j_*(\mathscr E)\otimes_{\OS}\mathscr A\to j_*(\mathscr E\otimes_{\OO_U}j^*(\mathscr A))$ is an isomorphism, for every quasi-coherent $\OO_U$-module $\mathscr E$.
+
+(iii) In particular, $\mathscr V=j_*j^*(\mathscr F)$ is a submodule of $\mathscr A=j_*j^*(\mathscr A)$, and the canonical morphism $\mathscr V\otimes_{\OS}\mathscr A\to j_*j^*(\mathscr F\otimes_{\OS}\mathscr A)$ is an isomorphism.
+\end{lemma}
+\begin{proof}
+Replacing $S$ by one of its connected components, one may suppose $S$ integral. By EGA IV$_2$, 2.1.12, the flatness locus of $\mathscr F$, i.e.\ the set of points $s\in S$ such that $\mathscr F_s$ is a flat $\OO_{S,s}$-module, is an open subset $U$ of $S$; denote by $j$ the inclusion $U\hookrightarrow S$. Since $\mathscr A_s$ is flat, hence torsion-free, so is $\mathscr F_s$, so $U$ contains all points of codimension $\leq1$. Consequently, by [BAC], VII, \S\,4.2, cor. of th. 1, one has $\mathscr F^{**}=j_*j^*(\mathscr F)$, and one therefore obtains a monomorphism $\mathscr F^{**}\to j_*j^*(\mathscr A)$.
+
+The proof of (ii) is analogous to that of EGA III, 1.4.15, recalled in 11.0. On the other hand, since $S$ is normal, the morphism $\OS\to j_*j^*(\OS)$ is an isomorphism (cf. EGA IV$_2$, 5.8.6 and 5.10.5). By (ii) applied to $\mathscr E=\OO_U$, one therefore has $\mathscr A=j_*j^*(\mathscr A)$. Finally, since $j^*(\mathscr F\otimes_{\OS}\mathscr A)=j^*(\mathscr F)\otimes_{\OO_U}j^*(\mathscr A)$, the last assertion of (iii) follows from (ii) applied to $\mathscr E=j^*(\mathscr F)$. The lemma is proved.
+\end{proof}
+Furthermore, recall that an $R$-module of finite type $M$ is said to be reflexive if the canonical morphism from $M$ to its bidual $M^{**}$ is an isomorphism. When $R$ is a noetherian regular ring of dimension $\leq2$, this implies that $M$ is projective. Indeed, for every $R$-module of finite type $N$, consider a resolution $L_1\to L_0\to N\to0$, where $L_0$ and $L_1$ are finite free $R$-modules; then one has an exact sequence
+\[
+0\to N^*\to L_0^*\to L_1^*\to Q\to0,
+\]
+where $Q$ denotes the cokernel of $L_0^*\to L_1^*$, and since $R$ has homological dimension $\leq2$ (cf. [BAC], X \S\,4.2, cor. 1 of th. 1), it follows that $N^*$ is projective.
+
+\begin{proposition}{13.2}\label{VIB.13.2}
+Let $S$ be a noetherian regular scheme of dimension $\leq2$, $G$ an affine flat $S$-group, $\mathscr A(G)$ its affine algebra.
+
+(i) If $G$ is of finite type over $S$, it is isomorphic to a closed subgroup of $H=\underline{\Aut}_{\OS}(\mathscr V)$, for some locally free $\OS$-module $\mathscr V$ of finite rank. If moreover $S$ is affine, one may take $\mathscr V=\OS^{\oplus d}$ for some $d$, whence $H=\GL_{d,S}$.
+
+(ii) $\mathscr A(G)$ is the filtered inductive limit of flat sub-$\OS$-Hopf algebras of finite type.
+\end{proposition}
+\begin{proof}
+Let $\mathscr B$ be a sub-$\OS$-algebra of finite type of $\mathscr A(G)$. Since every coherent module on an open subset of $S$ extends to a coherent module on $S$ (cf. EGA I, 9.4.5), there is a coherent sub-$\OS$-module $\mathscr M$ of $\mathscr B$ which generates $\mathscr B$ as an $\OS$-algebra (loc.\ cit., 9.6.5). By 11.10.bis, $\mathscr M$ is contained in a coherent $G$-stable sub-$\OS$-module $\mathscr F$. (N.B. Since $G$ is here affine over $S$, the proof in loc.\ cit.\ takes a simpler form: one can there replace $f_*f^*(\mathscr E)$ by $\mathscr E\otimes_{\OS}\mathscr A(G)$, etc.)
+
+Let $j$ be the inclusion $U\hookrightarrow S$, where $U$ denotes the flatness locus of $\mathscr F$. By Lemma 13.1 and the recollection following it, $\mathscr V=j_*j^*(\mathscr F)$ is a locally free sub-$\OS$-module of $\mathscr A(G)$, and since the canonical morphism
+\[
+\mathscr V\otimes\mathscr A(G)\to j_*j^*(\mathscr F\otimes\mathscr A(G))
+\]
+is an isomorphism, then $\mathscr V$ is a sub-$G$-module of $\mathscr A(G)$. The action of $G$ on $\mathscr V$ then induces a morphism of affine $S$-groups $\rho_{\mathscr V}:G\to H=\underline{\Aut}_{\OS}(\mathscr V)$, hence a morphism of Hopf $\OS$-algebras $\phi_{\mathscr V}:\mathscr A(H)\to\mathscr A(G)$. Denote by $\mathscr A_{\mathscr V}$ the image of $\phi_{\mathscr V}$; it is the affine algebra of a closed subgroup $G_{\mathscr V}$ of $H$, which is the closed image of $\rho_{\mathscr V}$. Let us show that $\mathscr A_{\mathscr V}$ contains $\mathscr B$.
+
+Since the question is local on $S$, one may suppose $S=\Spec(R)$ and $V=\Gamma(S,\mathscr V)$ a free $R$-module with basis $v_1,\ldots,v_n$; in this case $H\simeq\GL_{n,R}$ and $\mathscr A(H)$ is generated as an $R$-algebra by the ``matrix coefficients'' $c_{ij}$ and the element $d^{-1}$, where $d$ denotes the determinant. Let $\Delta$ (resp. $\varepsilon$) be the comultiplication (resp. augmentation) of $A$. For $j=1,\ldots,n$, write $\Delta(v_j)=\sum_{i=1}^n v_i\otimes a_{ij}$; then $a_{ij}=\phi(c_{ij})$ belongs to $\Im(\phi)$. On the other hand, since $V$ is a sub-$R$-module of $A$, one can use the equality $(\varepsilon\otimes\mathrm{id}_A)\circ\Delta=\mathrm{id}_A$, which implies that $v_j=\sum_i\varepsilon(v_i)a_{ij}$ belongs to $\Im(\phi)$. Since $V$ contains a set of generators of $B=\Gamma(S,\mathscr B)$, it follows that $B\subset\Im(\phi)$.
+
+If $G$ is of finite type over $S$, one may take $\mathscr B=\mathscr A(G)$, and $\phi$ is then surjective, so the morphism of $S$-groups $G\to H=\underline{\Aut}_{\OS}(\mathscr V)$ is a closed immersion.
+
+If moreover $S$ is affine, there is a locally free $\OS$-module $\mathscr V'$ of finite rank such that $\mathscr V\oplus\mathscr V'=\OS^d$ as $\OS$-modules. Considering $\mathscr V'$ as a trivial $G$-module, one can replace $\mathscr V$ by $\OS^d$, and one thus obtains that $G$ is a closed subgroup of $\GL_{d,S}$.
+
+Finally, let us return to the case of an arbitrary affine flat $S$-group $G$. By EGA I, 9.4.9, $\mathscr A(G)$ is the union of its coherent sub-$\OS$-modules $\mathscr M$, hence also of the sub-$\OS$-Hopf algebras $\mathscr A_{\mathscr V}$ as above, whence (ii).
+\end{proof}
+
+\begin{example}{13.3}\label{VIB.13.3}
+Let $R$ be a discrete valuation ring, with uniformizer $\pi$ and fraction field $K$. Consider the filtered projective system of $R$-groups:
+\[
+\cdots\to\Ga{}_{,R}\xrightarrow{\times\pi}\Ga{}_{,R}\xrightarrow{\times\pi}\Ga{}_{,R}
+\]
+(which corresponds to the inductive system $R[X_0]\to R[X_1]\to R[X_2]\to\cdots$, whose transition morphisms are given by $X_n=\pi X_{n+1}$). Its projective limit $G$ is a flat affine group $R$-scheme, not of finite type, whose special fiber is trivial and whose generic fiber is $\Ga{}_{,K}$; the affine $R$-algebra $\mathscr A(G)$ is the subring of $K[X]$ formed by polynomials whose constant coefficient belongs to $R$. (N.B. We have already encountered this example in Remark 11.10.1.) Note that $G$ represents the functor which associates to every $R$-algebra $B$ the set of sequences $(x_n)_{n\in\NN}$ of elements of $B$, where $x_n=\pi x_{n+1}$ for every $n$. (In particular, each $x_n$ is indefinitely $\pi$-divisible.)
+\end{example}
+Let $S$ now be a noetherian scheme such that every coherent $\OS$-module is the quotient of a locally free $\OS$-module of finite type; this is the case, for example, if $S$ is a separated noetherian regular scheme, cf. SGA 6, Exp. II, 2.1.1 and 2.2.7. (One can show that every noetherian regular scheme of dimension $\leq1$ also has this property; on the other hand, it does not hold when $S$ is the affine plane over a field $k$ with its origin doubled, cf. loc.\ cit., 2.2.7.2.)
+
+\begin{definition}{13.4}\label{VIB.13.4}
+Let $G$ be an affine flat $S$-group. Following R. W. Thomason ([Th87], 2.1), let us say that the pair $(G,S)$ possesses the \emph{equivariant resolution property}, or satisfies (RE), if, for every coherent $G$-$\OS$-module $\mathscr F$, there is a locally free $G$-$\OS$-module $\mathscr E$ of finite rank, and a $G$-equivariant epimorphism $\mathscr E\to\mathscr F$.
+\end{definition}
+In loc.\ cit., Th. 3.1, Thomason proves the result below under the hypothesis that $G$ be essentially free over $S$ (cf. the remark below). Gabber indicated to us the simpler proof below, which does not use this hypothesis.
+
+\begin{proposition}{13.5}\label{VIB.13.5}
+Let $S$ be a noetherian scheme and $G$ an affine flat $S$-group of finite type, with affine algebra $\mathscr A(G)$. Suppose that $(G,S)$ satisfies (RE). Then:
+
+(i) $G$ is isomorphic to a closed subgroup of $H=\underline{\Aut}_{\OS}(\mathscr V)$, for some locally free $\OS$-module $\mathscr V$ of finite rank.
+
+(ii) If moreover $S$ is affine, one may take $\mathscr V=\OS^{\oplus d}$ for some $n$, whence $H=\GL_{d,S}$.
+% typo?: kept as printed: some n, with exponent d.
+\end{proposition}
+The proof is analogous to that of 13.2. As in loc.\ cit., there is a coherent $G$-stable sub-$\OS$-module $\mathscr F$ which generates $\mathscr A=\mathscr A(G)$ as an $\OS$-algebra. Replacing $S$ by one of its connected components, one may suppose $S$ connected. By hypothesis (RE), there is a locally free $G$-$\OS$-module $\mathscr E$ of rank $n$, and an epimorphism of $\mathscr A$-comodules $\pi:\mathscr E\to\mathscr F$. Put $H=\underline{\Aut}_{\OS}(\mathscr E)$; it is a group $S$-scheme locally isomorphic to $\GL_{n,S}$. The action of $G$ on $\mathscr E$ induces a morphism of affine $S$-groups $\rho:G\to H$, corresponding to a morphism of Hopf $\OS$-algebras $\phi:\mathscr A(H)\to\mathscr A(G)$. Let us show that $\rho$ is a closed immersion.
+
+Since the question is local on $S$, one may suppose $S=\Spec(R)$ and $V=\Gamma(S,\mathscr E)$ a free $R$-module with basis $v_1,\ldots,v_n$; in this case $H\simeq\GL_{n,R}$ and $B=\Gamma(S,\mathscr A(H))$ is generated as an $R$-algebra by the ``matrix coefficients'' $c_{ij}$ and the element $d^{-1}$, where $d$ denotes the determinant. Let $\Delta$ (resp. $\varepsilon$) be the comultiplication (resp. augmentation) of $A=\Gamma(S,\mathscr A(G))$, let $\mu:V\to V\otimes_R A$ be the $A$-comodule structure on $V$, and let $F=\Gamma(S,\mathscr F)$. For $j=1,\ldots,n$, write
+\[
+\mu(v_j)=\sum_{i=1}^n v_i\otimes a_{ij}
+\]
+then $\phi(c_{ij})=a_{ij}$. On the other hand, since $\pi:V\to F$ is a morphism of $A$-comodules, one has
+\[
+\sum_{i=1}^n\pi(v_i)\otimes a_{ij}=(\pi\otimes_R\mathrm{id}_A)(\mu(v_j))=\Delta(\pi(v_j))
+\]
+and thus
+\[
+\pi(v_j)=(\varepsilon\otimes_R\mathrm{id}_A)\Delta(\pi(v_j))=\sum_{i=1}^n\varepsilon\pi(v_i)a_{ij}=\phi\Bigl(\sum_{i=1}^n\varepsilon\pi(v_i)c_{ij}\Bigr).
+\]
+Thus $\phi(B)$ contains $\pi(V)=F$, which generates $A$ as an $R$-algebra, and hence $\phi$ is surjective. This shows that $\rho$ is a closed immersion, whence assertion (i).
+
+If moreover $S$ is affine, there is a locally free $\OS$-module $\mathscr V'$ of finite rank such that $\mathscr V\oplus\mathscr V'=\OS^d$ as $\OS$-modules. Considering $\mathscr V'$ as a trivial $G$-module, one can replace $\mathscr V$ by $\OS^d$, and one thus obtains that $G$ is a closed subgroup of $\GL_{d,S}$. The proposition is proved.
+
+\begin{remarks}{13.6}\label{VIB.13.6}
+(a) For completeness, let us briefly sketch Thomason's argument ([Th87], Th. 3.1), retaining the preceding notation. The $G$-equivariant epimorphism $\pi:\mathscr E\to\mathscr F$ induces a closed immersion $\tau:G\to V(\mathscr E)$ such that $\tau(g'g)=\tau(g')\cdot g$ (N.B.: $G$ acts on the right on $V(\mathscr E)$), and one has an isomorphism $H\simeq\underline{\Aut}_{\OS}(V(\mathscr E))^{\mathrm{op}}$, which is compatible with the operations of $G$ on the left on $\mathscr E$ and on the right on $V(\mathscr E)$. Let $N$ then be the strict transporter $\uTransp_H^{\mathrm{str}}(\tau(G),\tau(G))$; when $G$ is essentially free over $S$, it follows from 6.2.4 e) that $N$ is a closed subgroup scheme of $H$, hence affine over $S$. Moreover, $\rho$ factors as a morphism of $S$-groups $\rho':G\to N$.

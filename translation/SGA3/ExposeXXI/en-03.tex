@@ -1,0 +1,258 @@
+Recall (cf. 2.3.7) that the bilinear form on $\mathcal V(R)$ defined by $\langle x,y\rangle=(p(x),y)$ is a Euclidean scalar product; moreover, for $\alpha\in R$, one has $\langle\alpha,y\rangle=\ell(\alpha)(\alpha^*,y)/2$, so that $\langle\alpha,y\rangle$ and $(\alpha^*,y)$ have the same sign.
+\begin{lemma}{3.2.11}\label{XXI.3.2.11}
+If $\alpha,\beta\in\Delta$, then $(\beta^*,\alpha)\leq0$, and hence $\langle\beta,\alpha\rangle\leq0$.
+\end{lemma}
+Indeed, $s_\beta(\alpha)=\alpha-(\beta^*,\alpha)\beta\in R$, whence $(\beta^*,\alpha)\leq0$ by 3.2.10.
+
+Let us now prove that $\Delta$ is linearly independent. Otherwise, 3.2.11 implies, as in the proof of 3.1.5, that there exists a nontrivial relation
+\[
+\sum_{\alpha\in\Delta}m(\alpha)\alpha=0,\qquad m(\alpha)\in\NN,
+\]
+whence $-\alpha_0=(m(\alpha_0)-1)\alpha_0+\sum_{\alpha\ne\alpha_0}m(\alpha)\alpha$ if $m(\alpha_0)\geq1$. Then, by (P 3), $\alpha_0$ belongs to $R_+\cap-R_+$, contradicting (P 1).
+
+This shows that $\Delta$ is a basis of $R$ and completes the proof of theorem~3.2.8.
+
+\begin{corollary}{3.2.12}\label{XXI.3.2.12}
+Let $R_+$ be a system of positive roots, $\Delta$ a basis of $R$, and $w\in W$. One has:
+\[
+\Delta\subset R_+\Longleftrightarrow R_+=\mathcal P(\Delta)\Longleftrightarrow\Delta=\mathcal S(R_+),
+\]
+\[
+\mathcal P(\operatorname{ind}(\Delta^*))=\mathcal P(\Delta)^*,\qquad
+\mathcal S(R_+^*)=\operatorname{ind}(\mathcal S(R_+)^*);
+\]
+\[
+\mathcal S(w(R_+))=w(\mathcal S(R_+)),\qquad\mathcal P(w(\Delta))=w(\mathcal P(\Delta)).
+\]
+\end{corollary}
+\begin{definition}{3.2.13}\label{XXI.3.2.13}
+If one has chosen a system of simple roots $\Delta$, the elements of $\mathcal P(\Delta)$ will be called \emph{positive}. If one has chosen a system of positive roots $R_+$, the elements of $\mathcal S(R_+)$ will be called \emph{simple}.
+\end{definition}
+\begin{corollary}{3.2.14}\label{XXI.3.2.14}
+Let $R_+$ be a system of positive roots. Let $\alpha\in R_+$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $\alpha$ is simple (i.e. $\alpha\in\mathcal S(R_+)$).
+\item $\alpha$ is not the sum of two elements of $R_+$.
+\item $R_+-\{\alpha\}$ is closed (cf. 3.1.4).
+\end{enumeratei}
+\end{corollary}
+The equivalence of (i) and (ii) follows at once from 3.2.9. The equivalence of (ii) and (iii) is immediate.
+\begin{definition}{3.2.15}\label{XXI.3.2.15}
+Let $\Delta$ be a system of simple roots. The sum of the coefficients of the decomposition of a root $\alpha$ in $\Delta$ is called the \emph{order} of $\alpha$ relative to $\Delta$, and is denoted $\operatorname{ord}_\Delta(\alpha)$.
+\end{definition}
+One has the equivalences:
+\[
+\alpha\in\mathcal P(\Delta)\Longleftrightarrow\operatorname{ord}_\Delta(\alpha)>0,\qquad
+\alpha\in\Delta\Longleftrightarrow\operatorname{ord}_\Delta(\alpha)=1.
+\]
+\begin{lemma}{3.2.16}\label{XXI.3.2.16}
+Let $\Delta$ be a system of simple roots and $\alpha\in\mathcal P(\Delta)$. There exists a sequence $\alpha_i\in\Delta$, $i=1,\ldots,m$, such that
+\[
+\alpha_1+\alpha_2+\cdots+\alpha_p\in\mathcal P(\Delta)\quad\text{for }p=1,\ldots,m,
+\]
+\[
+\alpha_1+\alpha_2+\cdots+\alpha_m=\alpha.
+\]
+Moreover, for every sequence $\alpha_i$ satisfying these conditions, one has $m=\operatorname{ord}_\Delta(\alpha)$.
+\end{lemma}
+Trivial by 3.1.2.
+
+\sgasection{3.3}{Characterization and conjugacy of systems of positive roots}
+\begin{lemma}{3.3.1}\label{XXI.3.3.1}
+If $\alpha\in\mathcal P(\Delta)$, $\beta\in\Delta$, and $\alpha$ and $\beta$ are not proportional, then $s_\beta(\alpha)\in\mathcal P(\Delta)$.
+\end{lemma}
+Indeed, $s_\beta(\alpha)=\alpha-(\beta^*,\alpha)\beta$. Since at least one simple root other than $\beta$ occurs in the decomposition of $\alpha$ with a nonzero (hence strictly positive) coefficient, and therefore also in the decomposition of $s_\beta(\alpha)$ with the same coefficient, $s_\beta(\alpha)$ is also positive.
+\begin{corollary}{3.3.2}\label{XXI.3.3.2}
+If $\beta\in\Delta$, the reflection $s_\beta$ interchanges the elements of $\mathcal P(\Delta)$ not proportional to $\beta$.
+\end{corollary}
+\begin{lemma}{3.3.3}\label{XXI.3.3.3}
+If $\alpha\in\mathcal P(\Delta)-\Delta$, $\alpha$ indivisible, there exists $\beta\in\Delta$ such that $s_\beta(\alpha)\in\mathcal P(\Delta)$ and $\operatorname{ord}_\Delta(s_\beta(\alpha))<\operatorname{ord}_\Delta(\alpha)$.
+\end{lemma}
+Indeed, by 3.1.1 there exists $\beta\in\Delta$ such that $(\beta^*,\alpha)>0$. Since $\alpha\notin\Delta$ and is indivisible, $\alpha$ cannot be proportional to $\beta$. Thus $s_\beta(\alpha)\in\mathcal P(\Delta)$ by 3.3.1, and one has $\operatorname{ord}_\Delta(s_\beta(\alpha))=\operatorname{ord}_\Delta(\alpha)-(\beta^*,\alpha)<\operatorname{ord}_\Delta(\alpha)$.
+\begin{corollary}{3.3.4}\label{XXI.3.3.4}
+If $\alpha\in\mathcal P(\Delta)$ is indivisible, there exists a sequence $\beta_p\in\Delta$, $p=1,\ldots,q$, such that
+\[
+\alpha_p=s_{\beta_p}\cdots s_{\beta_1}(\alpha)\in\mathcal P(\Delta)\quad\text{for }p=1,\ldots,q,
+\]
+and $\alpha_q\in\Delta$.
+\end{corollary}
+This follows from 3.3.3 by induction on $\operatorname{ord}_\Delta(\alpha)$.
+\begin{proposition}{3.3.5}\label{XXI.3.3.5}
+The Weyl group is generated by the $s_\alpha$ for $\alpha\in\Delta$. Every indivisible root is conjugate to a simple root by an element of the Weyl group.
+\end{proposition}
+The second assertion follows at once from 3.3.4. The first follows from it by 1.2.10 and 2.1.1.
+\begin{proposition}{3.3.6}\label{XXI.3.3.6}
+Let $R_+$ be a system of positive roots. Let $P'\subset R$ satisfy (P 2) and be closed. Then there exists $w\in W$ such that $w(R_+)\subset P'$.
+\end{proposition}
+Let us state the corollaries immediately.
+\begin{corollary}{3.3.7}\label{XXI.3.3.7}
+The Weyl group acts transitively on the set of systems of positive roots (resp. of systems of simple roots).
+\end{corollary}
+\begin{corollary}{3.3.8}\label{XXI.3.3.8}
+For a subset of $R$ to be a system of positive roots, it is necessary and sufficient that it satisfy (P 1) and (P 2) and be closed.
+\end{corollary}
+\begin{corollary}{3.3.9}\label{XXI.3.3.9}
+If one equips $\Gamma_0(R)$ with an ordered group structure such that every root is $>0$ or $<0$, the set of roots positive for this order structure is a system of positive roots.
+\end{corollary}
+Let us now prove 3.3.6. One can find $w\in W$ such that $\operatorname{Card}(w(R_+)\cap P')$ is maximal, hence, replacing $R_+$ by $w(R_+)$, one may suppose that
+\begin{equation}\tag{$*$}\label{XXI.eq.star}
+\operatorname{Card}(R_+\cap P')\geq\operatorname{Card}(R_+\cap s_\alpha(P'))
+\end{equation}
+for every $\alpha\in\mathcal S(R_+)=\Delta$. Let us prove that $R_+\subset P'$. Otherwise, since $P'$ is closed, there exists $\alpha\in\Delta$, $\alpha\notin P'$. But since $P'$ satisfies (P 2), one then has $-\alpha\in P'$ (hence $-2\alpha\in P'$ if $2\alpha$ is a root). For every $\beta\in R_+\cap P'$, one has $\beta\ne\alpha$; if $2\alpha$ is not a root, one then has $s_\alpha(\beta)\in R_+$ (by 3.3.1), hence
+\[
+s_\alpha(R_+\cap P')\subset R_+\cap s_\alpha(P');
+\]
+but $R_+\cap s_\alpha(P')$ also contains $\alpha=s_\alpha(-\alpha)$, which contradicts inequality ($*$). If $2\alpha$ is a root, one reasons similarly.
+
+To study the sets of roots satisfying (P 2) and closed, one is therefore reduced to the case where they contain a set of positive roots.
+\begin{proposition}{3.3.10}\label{XXI.3.3.10}
+Let $R_+$ be a system of positive roots and $P'$ a closed subset of $R$ containing $R_+$. If one puts $\Delta=\mathcal S(R_+)$ and $\Delta'=\Delta\cap-P'$, then $P'$ is the union of $R_+$ and the set of roots which are linear combinations with negative coefficients of the elements of $\Delta'$.
+\end{proposition}
+Let us prove the assertion by induction on the order of a root $\gamma\in P'-R_+$. If $\operatorname{ord}_\Delta(\gamma)=-1$, then $-\gamma\in\Delta$ and $\gamma\in-\Delta'$. If $\operatorname{ord}_\Delta(\gamma)<-1$, there exists, by 3.1.2, $\beta\in\Delta$ such that $-\gamma-\beta\in R$; then
+\[
+0<\operatorname{ord}_\Delta(-\gamma-\beta)=\operatorname{ord}_\Delta(-\gamma)-1<\operatorname{ord}_\Delta(-\gamma),
+\]
+and the first inequality shows that $-\gamma-\beta\in R_+$. Thus, since $R_+\cap-R_+=\varnothing$, and since $\gamma+\beta$ is the sum of two roots of $P'$, it is an element of $P'-R_+$ such that $\operatorname{ord}_\Delta(\gamma+\beta)>\operatorname{ord}_\Delta(\gamma)$. Hence, by the induction hypothesis, $\gamma+\beta$ is a linear combination with negative coefficients of the elements of $\Delta'$. Since $\gamma=(\gamma+\beta)-\beta$, it suffices to check that $\beta\in-P'$. Now $\gamma\in P'$ and $-(\gamma+\beta)\in R_+\subset P'$, so that $-\beta=\gamma-(\gamma+\beta)$ belongs to $P'$.
+\begin{definition}{3.3.10.1}\label{XXI.3.3.10.1}
+{\renewcommand{\thefootnote}{(9)}\nde{This definition has been inserted here.}}%
+One says that a subset $R'$ of $R$ is \emph{symmetric} if $-R'=R'$.
+\end{definition}
+\begin{scholium}{3.3.11}\label{XXI.3.3.11}
+Let $P'$ be a set of roots satisfying (P 2) and closed. There exist a system of simple roots $\Delta$ and a subset $\Delta'$ of $\Delta$ such that
+\[
+P'=R\cap(\NN\cdot\Delta\cup-\NN\cdot\Delta').
+\]
+If one puts $R_{\Delta'}=(\ZZ\cdot\Delta')\cap R$, which is a closed symmetric subset of $R$, then $P'$ is therefore the disjoint union of $R_{\Delta'}$ and the closed subset of $\mathcal P(\Delta)$ formed by the $\alpha\in\mathcal P(\Delta)-\NN\cdot\Delta'$, i.e. the positive roots which in their decomposition in $\Delta$ ``contain at least one root of $\Delta-\Delta'$''.
+\end{scholium}
+
+\sgasection{3.4}{Closed symmetric sets of roots}
+\begin{proposition}{3.4.1}\label{XXI.3.4.1}
+Let $\mathcal R=(M,M^*,R,R'^*)$ be a root datum and $R'$ a closed symmetric subset of $R$. Then:
+% typo?: R prime star in the original datum kept as printed.
+\begin{enumeratei}
+\item $\mathcal R'=(M,M^*,R',R'^*)$ is a root datum;
+\item for every system of positive roots $R_+$ of $R$, $R'_+=R_+\cap R'$ is a system of positive roots of $R'$;
+\item the Weyl group $W(\mathcal R')$ of $\mathcal R'$ is the subgroup of $W(\mathcal R)$ generated by the $s_\alpha$ for $\alpha\in R'$.
+\end{enumeratei}
+\end{proposition}
+The first assertion is trivial by 1.2.11, the second follows from 3.3.8, and the third is obvious.
+\begin{corollary}{3.4.2}\label{XXI.3.4.2}
+Let $w\in W(\mathcal R')$. The order of $w$ is the least integer $n>0$ such that $w^n(\alpha')=\alpha'$ for every $\alpha'\in R'$.
+\end{corollary}
+It suffices to apply 1.2.7 to the root datum $\mathcal R'$.
+\begin{corollary}{3.4.3}\label{XXI.3.4.3}
+Let $\alpha$ and $\beta$ be two nonproportional roots. Let $n$ be the least integer $>0$ such that $(s_\alpha s_\beta)^n(\alpha)=\alpha$ and $(s_\alpha s_\beta)^n(\beta)=\beta$. Then the subgroup $W_{\alpha,\beta}$ of $W$ generated by $s_\alpha$ and $s_\beta$ is defined by the relations:
+\[
+s_\alpha^2=1,\qquad s_\beta^2=1,\qquad(s_\alpha s_\beta)^n=1.
+\]
+\end{corollary}
+Taking account of 3.4.2, it suffices to check:
+\begin{lemma}{3.4.4}\label{XXI.3.4.4}
+Let $G$ be the group generated by two elements $x$ and $y$ subject to $x^2=y^2=1$. Every invariant subgroup of $G$ containing neither $x$ nor $y$ is generated (as an invariant subgroup) by an element of the form $(xy)^n$, where $n>0$.
+\end{lemma}
+{\renewcommand{\thefootnote}{(10)}\nde{The original has been corrected in what follows.}}%
+Indeed, every element of $G$ is written $(xy)^n$, or $(yx)^n=(xy)^{-n}$, or:
+\[
+(a)\qquad x(yx)^{2n}\quad\text{or}\quad y(xy)^{2n+1},
+\]
+\[
+(b)\qquad y(xy)^{2n}\quad\text{or}\quad x(yx)^{2n+1},
+\]
+where $n\in\NN$. Now the elements of type (a), resp. (b), are conjugate to $x$, resp. to $y$.
+\begin{remark}{3.4.5}\label{XXI.3.4.5}
+One immediately calculates the integer $n$: if one puts
+\[
+(\alpha^*,\beta)=p,\qquad(\beta^*,\alpha)=q,
+\]
+one has{\renewcommand{\thefootnote}{(11)}\nde{The original has been corrected in what follows.}}
+\[
+(s_\alpha s_\beta)(\alpha)=(pq-1)\alpha-q\beta,\qquad(s_\alpha s_\beta)(\beta)=p\alpha-\beta.
+\]
+The integer $n$ is therefore the order of the matrix
+\[
+\begin{pmatrix}pq-1&p\\-q&-1\end{pmatrix}.
+\]
+If $pq=0$, then $p=q=0$ by 2.2.2, whence $n=2$. Otherwise, by 2.3.1, $pq$ is $1$, $2$ or $3$, and one finds, respectively, $n=3$, $4$ or $6$.
+
+N.~B. Writing that the order of the preceding matrix is finite, one recovers inequality (13) of 2.3.1.
+\end{remark}
+\begin{definition}{3.4.6}\label{XXI.3.4.6}
+Let $\Delta$ be a system of simple roots and $\Delta'\subset\Delta$. Put
+\[
+R_{\Delta'}=R\cap(\QQ\cdot S')=R\cap(\ZZ\cdot\Delta').
+\]
+% typo?: S prime instead of Delta prime kept as printed.
+\end{definition}
+\begin{lemma}{3.4.7}\label{XXI.3.4.7}
+$R_{\Delta'}$ is closed and symmetric, $\Delta'$ is a system of simple roots of the root datum $(M,M^*,R_{\Delta'},R^*_{\Delta'})$, whose Weyl group is the subgroup $W_{\Delta'}$ of $W$ generated by the $s_\alpha$ for $\alpha\in\Delta'$. One has $\Delta\cap R_{\Delta'}=\Delta'$.
+\end{lemma}
+Trivial.
+\begin{proposition}{3.4.8}\label{XXI.3.4.8}
+Let $R'\subset R$. The following conditions are equivalent:
+\begin{enumeratei}
+\item There exists a vector subspace $V'$ of $V$ (or of $\mathcal V(R)$) such that $R'=R\cap V'$.
+\item There exist a system of simple roots $\Delta$ of $R$ and a subset $\Delta'$ of $\Delta$ such that $R'=R_{\Delta'}$.
+\end{enumeratei}
+More precisely, under these conditions, every system of simple roots $\Delta'$ of $(M,M^*,R',R'^*)$ is contained in a system of simple roots $\Delta$ of $R$, and one has $R'=R_{\Delta'}$.
+\end{proposition}
+Clearly (ii) $\Rightarrow$ (i). Suppose (i) holds: then $R'$ is closed and symmetric, hence
+\[(M,M^*,R',R'^*)\]
+is a root datum. Let $\Delta'$ be a system of simple roots of this datum and $R'_+=\mathcal P(\Delta')$. If $V'=V$, then $\Delta'$ is a system of simple roots of $R$, and the proof is finished. Otherwise, there exists $x\in V^*$ such that
+\[
+(x,V')=\{0\},\qquad(x,\alpha)\ne0\quad\text{for every }\alpha\in R-R'.
+\]
+Put $R_+(x)=\{\alpha\in R\mid(x,\alpha)>0\}$ and $R_+=R_+(x)\cup R'_+$. For every $\alpha\in R$, one has the equivalences
+\[
+\begin{aligned}
+(x,\alpha)>0&\Longleftrightarrow\alpha\in R_+(x),\\
+(x,\alpha)<0&\Longleftrightarrow\alpha\in-R_+(x),\\
+(x,\alpha)=0&\Longleftrightarrow\alpha\in R'.
+\end{aligned}
+\]
+It follows at once from 3.3.8 that $R_+$ is a system of positive roots of $R$. Put $\Delta=\mathcal S(R_+)$. Clearly, it suffices to prove $\Delta'\subset\Delta$. Otherwise, let $\alpha\in\Delta'-\Delta$. Then, by 3.2.14, there exist $\beta,\gamma\in R_+$ such that $\alpha=\beta+\gamma$. If $\beta,\gamma\in R_+(x)$, one has $\alpha\in R_+(x)$, which is absurd since $(x,S')=0$.
+% typo?: S prime in this pairing kept as printed.
+If $\beta$ or $\gamma$, for example $\beta$, belongs to $R'_+$, then, since $R'$ is symmetric and closed, $\gamma=\alpha-\beta$ belongs to $R_+\cap R'=R'_+$; but then $\alpha$ is not simple in $R'_+$.
+\begin{lemma}{3.4.9}\label{XXI.3.4.9}
+Under the preceding conditions, let $\alpha\in\mathcal P(\Delta)-R'$. For every $w\in W_{\Delta'}$, one has $w(\alpha)\in\mathcal P(\Delta)-R'$.
+\end{lemma}
+Indeed, it suffices to check this for $w=s_\beta$, $\beta\in\Delta'$, in which case it follows from 3.3.1 and $s_\beta(R')=R'$.
+\begin{lemma}{3.4.10}\label{XXI.3.4.10}
+Let $w\in W$. Under the conditions of 3.4.8, the following conditions are equivalent:
+\begin{enumeratei}
+\item $w\in W_{\Delta'}$.
+\item For every $m\in M$, $w(m)-m\in V'$.
+\item For every $\alpha\in R$, $w(\alpha)-\alpha\in V'$.
+\end{enumeratei}
+\end{lemma}
+Clearly (i) $\Rightarrow$ (ii) $\Rightarrow$ (iii). Let us prove (iii) $\Rightarrow$ (i). Let therefore $w\in W$ be such that $w(\alpha)-\alpha\in V'$ for every $\alpha\in R$. Write $w=s_{\alpha_n}\cdots s_{\alpha_1}$, with $\alpha_i\in\Delta$, and let us show by induction on $n$ that each $\alpha_i\in\Delta'$. One may suppose that $w'=s_{\alpha_{n-1}}\cdots s_{\alpha_1}\in W_{\Delta'}$. One then has, for every $\alpha\in R$,
+\[
+w(\alpha)-\alpha=w'(\alpha)-\alpha-(\alpha_n^*,w'(\alpha))\alpha_n.
+\]
+Taking $\alpha=w'^{-1}(\alpha_n)$, one finds $2\alpha_n\in V'$, whence $\alpha_n\in\Delta'$, hence $w=s_{\alpha_n}w'$ belongs to $W_{\Delta'}$.
+
+\sgasection{3.5}{Various remarks}
+\begin{proposition}{3.5.1}\label{XXI.3.5.1}
+Let $R_+$ be a system of positive roots. Put
+\[
+\rho_{R_+}=\frac12\sum_{\alpha\in\operatorname{ind}(R_+)}\alpha.
+\]
+Then $(\beta^*,\rho_{R_+})=1$ for every $\beta\in\mathcal S(R_+)$.
+\end{proposition}
+Indeed, one can write
+\[
+2\rho_{R_+}=\beta+\sum_{\substack{\alpha\in\operatorname{ind}(R_+)\\\alpha\ne\beta}}\alpha,
+\]
+hence $s_\beta(2\rho_{R_+})=2\rho_{R_+}-2\beta$, by 3.3.2.
+\begin{corollary}{3.5.2}\label{XXI.3.5.2}
+Put $\rho_{R_+}^*=\frac12\sum_{\alpha^*\in\operatorname{ind}(R_+^*)}\alpha^*$. Then:
+\begin{enumeratei}
+\item $(\rho_{R_+}^*,\alpha)>0$ for every $\alpha\in R_+$ (i.e. $\rho_{R_+}^*\in\mathcal C(R_+)$, cf. 3.6.8).
+\item For every $\alpha\in R$, one has $\operatorname{ord}_{\mathcal S(R_+)}(\alpha)=(\rho_{R_+}^*,\alpha)$.{\renewcommand{\thefootnote}{(12)}\nde{Indeed, by 3.1.5, it suffices to check the formula for $\alpha\in\Delta$. Now, by 3.5.1 applied to $R^*$, one has in this case $(\rho_{R_+}^*,\alpha)=1=\operatorname{ord}_{\mathcal S(R_+)}(\alpha)$.}}
+\end{enumeratei}
+\end{corollary}
+\begin{remark}{3.5.3}\label{XXI.3.5.3}
+If $w\in W$, one has $\rho_{w(R_+)}=w(\rho_{R_+})$ and $\rho_{w(R_+)}^*=w(\rho_{R_+}^*)$.
+\end{remark}
+\begin{proposition}{3.5.4}\label{XXI.3.5.4}
+Let $\alpha$ and $\gamma$ be two nonproportional roots, $\alpha$ being supposed indivisible. There exists a system of simple roots containing $\alpha$ and a root $\beta$ such that $\gamma=a\alpha+b\beta$, with $a,b\in\NN$.
+\end{proposition}

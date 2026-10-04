@@ -1,0 +1,339 @@
+% Source PDF pp. 21--25; original pp. 296--305.
+% Continuation of 3.4.2; previous sentence ends in en-03.tex.
+One immediately has
+\[
+\begin{aligned}
+\Ad(w_\beta)X_{\alpha+\beta}&=\alpha(t_\beta)X_\alpha=-X_\alpha,\\
+\Ad(w_\alpha)X_{2\alpha+\beta}&=\alpha(t_\alpha)\beta(t_\alpha)X_{\alpha+\beta}=-X_{\alpha+\beta},\\
+\Ad(w_\alpha)X_{3\alpha+\beta}&=-\beta(t_\alpha)X_\beta=X_\beta,\\
+\Ad(w_\beta)X_{3\alpha+2\beta}&=\alpha(t_\beta)^3\beta(t_\beta)X_{3\alpha+\beta}=-X_{3\alpha+\beta}.
+\end{aligned}
+\]
+Finally, since $(3\alpha+2\beta)\pm\alpha$ and $(2\alpha+\beta)\pm\beta$ are not roots, one has:
+\[
+\Ad(w_\alpha)X_{3\alpha+2\beta}=X_{3\alpha+2\beta},\qquad\Ad(w_\beta)X_{2\alpha+\beta}=X_{2\alpha+\beta},
+\]
+which completes the proof of (ii).
+\numpara{3.4.3}
+By Exp. XXII, 5.5.2, there exist scalars\nde{Absolute constants A, B, \ldots, J are introduced here. These constants will be determined in the following pages; their values are $A=B=C=D=1$, $E=2$, $J=-1$, $F=G=H=3$, \cf 3.4.8.}
+\[
+A,B,C,D,E,F,G,H,J\in\Ga(S),
+\]
+such that
+\begin{equation}\tag{1}
+\begin{aligned}
+p_\beta(y)p_\alpha(x)&=p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(Axy)p_{2\alpha+\beta}(Bx^2y)\\
+&\qquad p_{3\alpha+\beta}(Cx^3y)p_{3\alpha+2\beta}(Dx^3y^2).
+\end{aligned}
+\end{equation}
+\begin{equation}\tag{2}
+\begin{aligned}
+p_{\alpha+\beta}(y)p_\alpha(x)&=p_\alpha(x)p_{\alpha+\beta}(y)p_{2\alpha+\beta}(Exy)\\
+&\qquad p_{3\alpha+\beta}(Fx^2y)p_{3\alpha+2\beta}(Gxy^2).
+\end{aligned}
+\end{equation}
+\begin{equation}\tag{3}
+p_{2\alpha+\beta}(y)p_\alpha(x)=p_\alpha(x)p_{2\alpha+\beta}(y)p_{3\alpha+\beta}(Hxy).
+\end{equation}
+\begin{equation}\tag{4}
+p_{3\alpha+\beta}(y)p_\beta(x)=p_\beta(x)p_{3\alpha+\beta}(y)p_{3\alpha+2\beta}(Jxy).
+\end{equation}
+\numpara{3.4.4}
+Let $\operatorname{int}(w_\beta)$ act on (1), (3) and (4):
+\begin{equation}\tag{5}
+\begin{aligned}
+p_{-\beta}(-y)p_{\alpha+\beta}(x)&=p_{\alpha+\beta}(x)p_{-\beta}(-y)p_\alpha(-Axy)\\
+&\qquad p_{2\alpha+\beta}(Bx^2y)p_{3\alpha+2\beta}(Cx^3y)p_{3\alpha+\beta}(-Dx^3y^2).
+\end{aligned}
+\end{equation}
+\begin{equation}\tag{6}
+p_{2\alpha+\beta}(y)p_{\alpha+\beta}(x)=p_{\alpha+\beta}(x)p_{2\alpha+\beta}(y)p_{3\alpha+2\beta}(Hxy).
+\end{equation}
+\begin{equation}\tag{7}
+p_{3\alpha+2\beta}(y)p_{-\beta}(-x)=p_{-\beta}(-x)p_{3\alpha+2\beta}(y)p_{3\alpha+\beta}(-Jxy).
+\end{equation}
+Similarly letting $\operatorname{int}(w_\alpha)$ act on (1), one finds
+% typo?: last factor p_{3alpha+beta}, kept as printed.
+\begin{equation}\tag{8}
+\begin{aligned}
+p_{3\alpha+\beta}(-y)p_{-\alpha}(-x)&=p_{-\alpha}(-x)p_{3\alpha+\beta}(-y)p_{2\alpha+\beta}(Axy)\\
+&\qquad p_{\alpha+\beta}(-Bx^2y)p_\beta(Cx^3y)p_{3\alpha+\beta}(Dx^3y^2).
+\end{aligned}
+\end{equation}
+\numpara{3.4.5}
+Let us write
+\[
+w_\beta p_\alpha(x)w_\beta^{-1}=p_{\alpha+\beta}(x),
+\]
+that is, $\alpha+2\beta$ not being a root:
+% typo?: third factor p_alpha(-1) in (9), kept as printed.
+\begin{equation}\tag{9}
+p_\beta(1)p_\alpha(x)p_\alpha(-1)=p_{-\beta}(1)p_{\alpha+\beta}(x)p_{-\beta}(-1).
+\end{equation}
+Transforming the left side of (9) by (1), then (4), one obtains:
+\begin{equation}\tag{10}
+\begin{aligned}
+&p_\beta(1)p_\alpha(x)p_\beta(-1)\\
+&=p_\alpha(x)p_\beta(1)p_{\alpha+\beta}(Ax)p_{2\alpha+\beta}(Bx^2)\\
+&\qquad p_{3\alpha+\beta}(Cx^3)p_{3\alpha+2\beta}(Dx^3)p_\beta(-1)\\
+&=p_\alpha(x)p_\beta(1)p_{\alpha+\beta}(Ax)p_{2\alpha+\beta}(Bx^2)p_\beta(-1)\\
+&\qquad p_{3\alpha+\beta}(Cx^3)p_{3\alpha+2\beta}((D-CJ)x^3)\\
+&=p_\alpha(x)p_{\alpha+\beta}(Ax)p_{2\alpha+\beta}(Bx^2)p_{3\alpha+\beta}(Cx^3)\\
+&\qquad p_{3\alpha+2\beta}((D-CJ)x^3).
+\end{aligned}
+\end{equation}
+Let us transform the right side of (9) by (5), then (7):
+\begin{equation}\tag{11}
+\begin{aligned}
+&p_{-\beta}(1)p_{\alpha+\beta}(x)p_{-\beta}(-1)\\
+&=p_{\alpha+\beta}(x)p_{-\beta}(1)p_\alpha(Ax)p_{2\alpha+\beta}(-Bx^2)\\
+&\qquad p_{3\alpha+2\beta}(-Cx^3)p_{3\alpha+\beta}(-Dx^3)p_{-\beta}(-1)\\
+&=p_{\alpha+\beta}(x)p_\alpha(Ax)p_{2\alpha+\beta}(-Bx^2)\\
+&\qquad p_{3\alpha+2\beta}(-Cx^3)p_{3\alpha+\beta}((CJ-D)x^3).
+\end{aligned}
+\end{equation}
+Now using (2), this right side becomes
+\begin{equation}\tag{12}
+\begin{aligned}
+&p_\alpha(Ax)p_{\alpha+\beta}(x)p_{2\alpha+\beta}(AEx^2)p_{3\alpha+\beta}(A^2Fx^3)p_{3\alpha+2\beta}(AGx^3)\times\\
+&\qquad p_{2\alpha+\beta}(-Bx^2)p_{3\alpha+2\beta}(-Cx^3)p_{3\alpha+\beta}((CJ-D)x^3)\\
+&=p_\alpha(Ax)p_{\alpha+\beta}(x)p_{2\alpha+\beta}((AE-B)x^2)\\
+&\qquad p_{3\alpha+\beta}((A^2F+CJ-D)x^3)p_{3\alpha+2\beta}((AG-C)x^3).
+\end{aligned}
+\end{equation}
+Thus (9) can be rewritten:
+\[
+\begin{aligned}
+&p_\alpha(x)p_{\alpha+\beta}(Ax)p_{2\alpha+\beta}(Bx^2)p_{3\alpha+\beta}(Cx^3)p_{3\alpha+2\beta}((D-CJ)x^3)\\
+&\quad=p_\alpha(Ax)p_{\alpha+\beta}(x)p_{2\alpha+\beta}((AE-B)x^2)\\
+&\qquad p_{3\alpha+\beta}((A^2F+CJ-D)x^3)p_{3\alpha+2\beta}((AG-C)x^3)
+\end{aligned}
+\]
+which gives
+\[
+A=1,\qquad E=2B,\qquad C+D=F+CJ,\qquad F=G.
+\]
+\numpara{3.4.6}
+Let us now write
+\[
+w_\alpha p_\beta(y)w_\alpha^{-1}=p_{3\alpha+\beta}(-y),
+\]
+that is, $4\alpha+\beta$ not being a root:
+\begin{equation}\tag{13}
+p_\alpha(1)p_\beta(y)p_\alpha(-1)=p_{-\alpha}(1)p_{3\alpha+\beta}(-y)p_{-\alpha}(-1).
+\end{equation}
+Let us transform the left side by (1):
+\[
+\begin{aligned}
+p_\alpha(1)p_\beta(y)p_\alpha(-1)&=p_\beta(y)p_{\alpha+\beta}(-Ay)p_{2\alpha+\beta}(By)\\
+&\qquad p_{3\alpha+\beta}(-Cy)p_{3\alpha+2\beta}(-Dy^2).
+\end{aligned}
+\]
+Let us transform the right side of (13) successively by (8), (6) and (4):
+\[
+\begin{aligned}
+&p_{-\alpha}(1)p_{3\alpha+\beta}(-y)p_{-\alpha}(-1)\\
+&=p_{3\alpha+\beta}(-y)p_{2\alpha+\beta}(Ay)p_{\alpha+\beta}(-By)p_\beta(Cy)p_{3\alpha+2\beta}(Dy^2)\\
+&=p_{3\alpha+\beta}(-y)p_{\alpha+\beta}(-By)p_{2\alpha+\beta}(Ay)\\
+&\qquad p_{3\alpha+2\beta}(-ABHy^2)p_\beta(Cy)p_{3\alpha+2\beta}(Dy^2)\\
+&=p_\beta(Cy)p_{3\alpha+\beta}(-y)p_{\alpha+\beta}(-By)p_{2\alpha+\beta}(Ay)\\
+&\qquad p_{3\alpha+2\beta}((D-CJ-ABH)y^2)\\
+&=p_\beta(Cy)p_{\alpha+\beta}(-By)p_{2\alpha+\beta}(Ay)p_{3\alpha+\beta}(-y)\\
+&\qquad p_{3\alpha+2\beta}((D-CJ-ABH)y^2).
+\end{aligned}
+\]
+Thus (13) can be rewritten:
+\[
+\begin{aligned}
+&p_\beta(Cy)p_{\alpha+\beta}(-By)p_{2\alpha+\beta}(Ay)p_{3\alpha+\beta}(-y)p_{3\alpha+2\beta}((D-CJ-ABH)y^2)\\
+&\qquad=p_\beta(y)p_{\alpha+\beta}(-Ay)p_{2\alpha+\beta}(By)p_{3\alpha+\beta}(-Cy)p_{3\alpha+2\beta}(-Dy^2)
+\end{aligned}
+\]
+whence
+\[
+C=1,\qquad A=B,\qquad D-CJ-ABH=-D.
+\]
+Let us take into account the results already obtained:
+\[
+\begin{gathered}
+A=B=C=1,\qquad E=2,\qquad F=G,\\
+D+1=F+J,\qquad 2D=H+J.
+\end{gathered}
+\]
+\numpara{3.4.7}
+Let us write
+\[
+w_\beta p_{3\alpha+\beta}(x)w_\beta^{-1}=p_{3\alpha+2\beta}(x),
+\]
+that is
+\[
+p_\beta(1)p_{3\alpha+\beta}(x)p_\beta(-1)=p_{-\beta}(1)p_{3\alpha+2\beta}(x)p_{-\beta}(-1).
+\]
+Transforming the left side by (4), and the right side by (7), one obtains:
+\[
+p_{3\alpha+\beta}(x)p_{3\alpha+2\beta}(-Jx)=p_{3\alpha+2\beta}(x)p_{3\alpha+\beta}(-Jx),
+\]
+that is, $J=-1$.
+\numpara{3.4.8}
+Finally, let us write
+\[
+w_\alpha p_{\alpha+\beta}(y)w_\alpha^{-1}=p_{2\alpha+\beta}(y),
+\]
+that is
+\[
+\begin{split}
+p_\alpha(1)p_{\alpha+\beta}(y)p_\alpha(-1)&\\
+{}=p_{-\alpha}(1)&p_\alpha(-1)p_{2\alpha+\beta}(y)p_\alpha(1)p_{-\alpha}(-1).
+\end{split}
+\]
+Transforming the left side by (2), and the right side by (3), one obtains:
+\[
+\begin{aligned}
+&p_{\alpha+\beta}(y)p_{2\alpha+\beta}(-Ey)p_{3\alpha+\beta}(Fy)p_{3\alpha+2\beta}(-Gy^2)\\
+&\qquad=p_{-\alpha}(1)p_{2\alpha+\beta}(y)p_{3\alpha+\beta}(Hy)p_{-\alpha}(-1).
+\end{aligned}
+\]
+It is immediate to see that if one commutes $p_{-\alpha}(-1)$ with $p_{3\alpha+\beta}(Hy)$, then $p_{2\alpha+\beta}(y)$, one introduces no new terms in $p_{3\alpha+\beta}$ on the right side. The latter can thus be written, denoting by empty parentheses the quantities whose exact value does not matter to us:
+\[
+p_{\alpha+\beta}(\ )p_{2\alpha+\beta}(\ )p_\beta(\ )p_{3\alpha+\beta}(Hy)p_{3\alpha+2\beta}(\ ).
+\]
+Comparing with the left side, one immediately has $F=H$, whence, by the earlier results, $2D=D+1$, that is, $D=1$, and finally $F=G=H=2D-J=3$, which completes the determination of the coefficients $A,\ldots,J$ and the proof of (iii).
+\numpara{3.4.9}
+Finally, let us prove (i) in the usual manner. One successively has:
+\[
+w_\alpha w_\beta w_\alpha=w_\alpha w_\beta w_\alpha^{-1}t_\alpha=w_{3\alpha+\beta}^{-1}\cdot t_\alpha,
+\]
+\[
+\begin{aligned}
+w_\beta(w_\alpha w_\beta)^2
+&=w_\beta w_{3\alpha+\beta}^{-1}w_\beta^{-1}\cdot s_\beta(t_\alpha)\cdot t_\beta\\
+&=w_{3\alpha+2\beta}^{-1}\cdot t_\alpha t_\beta\cdot t_\beta=w_{3\alpha+2\beta}^{-1}\cdot t_\alpha,
+\end{aligned}
+\]
+\[
+w_\alpha(w_\beta w_\alpha)^3=w_\alpha w_{3\alpha+2\beta}^{-1}w_\alpha^{-1}=w_{3\alpha+2\beta}^{-1},
+\]
+\[
+w_\beta(w_\alpha w_\beta)^4=w_\beta w_{3\alpha+2\beta}^{-1}w_\beta^{-1}\cdot t_\beta=w_{3\alpha+\beta}\cdot t_\beta,
+\]
+% typo?: s_alpha(t_beta) is followed by t_beta on the left, kept as printed.
+\[
+\begin{aligned}
+w_\alpha(w_\beta w_\alpha)^5
+&=w_\alpha w_{3\alpha+\beta}w_\alpha^{-1}\cdot s_\alpha(t_\beta)\cdot t_\beta\\
+&=w_\beta\cdot t_\beta t_\alpha\cdot t_\alpha=w_\beta^{-1}.
+\end{aligned}
+\]
+Whence
+\[
+(w_\alpha w_\beta)^6=(w_\beta w_\alpha)^6=e.
+\]
+\begin{remark}{3.4.10}\label{XXIII.3.4.10}
+Condition (v) of 2.4 consists of
+% typo?: reference 2.4, kept as printed.
+\[
+\text{(A)}\quad\begin{cases}
+\operatorname{int}(h_\alpha h_\beta h_\alpha h_\beta h_\alpha)v_\beta=v_\beta,\\
+\operatorname{int}(h_\beta h_\alpha h_\beta h_\alpha h_\beta)v_\alpha=v_\alpha,
+\end{cases}
+\]
+and, putting
+\[
+\begin{aligned}
+v_{\alpha+\beta}&=\operatorname{int}(h_\beta)v_\alpha,&v_{2\alpha+\beta}&=\operatorname{int}(h_\alpha h_\beta)v_\alpha,\\
+v_{3\alpha+\beta}&=\operatorname{int}(h_\alpha)v_\beta^{-1};&v_{3\alpha+2\beta}&=\operatorname{int}(h_\beta h_\alpha)v_\beta^{-1},
+\end{aligned}
+\]
+of the commutation relations:
+\[
+\text{(B)}\quad\begin{cases}
+v_\beta v_\alpha=v_\alpha v_\beta v_{\alpha+\beta}v_{2\alpha+\beta}v_{3\alpha+\beta}v_{3\alpha+2\beta},\\
+v_{\alpha+\beta}v_\alpha=v_\alpha v_{\alpha+\beta}v_{2\alpha+\beta}^2v_{3\alpha+\beta}^3v_{3\alpha+2\beta}^3,\\
+v_{2\alpha+\beta}v_\alpha=v_\alpha v_{2\alpha+\beta}v_{3\alpha+\beta}^3,\\
+v_{3\alpha+\beta}v_\alpha=v_\alpha v_{3\alpha+\beta},\\
+v_{3\alpha+2\beta}v_\alpha=v_\alpha v_{3\alpha+2\beta},
+\end{cases}
+\]
+\[
+\text{(B)}\quad\begin{cases}
+v_{\alpha+\beta}v_\beta=v_\beta v_{\alpha+\beta},\\
+v_{2\alpha+\beta}v_\beta=v_\beta v_{2\alpha+\beta},\\
+v_{3\alpha+\beta}v_\beta=v_\beta v_{3\alpha+\beta}v_{3\alpha+2\beta}^{-1},\\
+v_{3\alpha+2\beta}v_\beta=v_\beta v_{3\alpha+2\beta},\\
+v_{2\alpha+\beta}v_{\alpha+\beta}=v_{\alpha+\beta}v_{2\alpha+\beta}v_{3\alpha+2\beta}^3,
+\end{cases}
+\]
+\[
+\text{(B)}\quad\begin{cases}
+v_{3\alpha+\beta}v_{\alpha+\beta}=v_{\alpha+\beta}v_{3\alpha+\beta},\\
+v_{3\alpha+2\beta}v_{\alpha+\beta}=v_{\alpha+\beta}v_{3\alpha+2\beta},\\
+v_{3\alpha+\beta}v_{2\alpha+\beta}=v_{2\alpha+\beta}v_{3\alpha+\beta},\\
+v_{3\alpha+2\beta}v_{2\alpha+\beta}=v_{2\alpha+\beta}v_{3\alpha+2\beta},\\
+v_{3\alpha+2\beta}v_{3\alpha+\beta}=v_{3\alpha+\beta}v_{3\alpha+2\beta}.
+\end{cases}
+\]
+\end{remark}
+
+\numpara{3.5}\textbf{Explicit form of the theorem on generators and relations}
+\begin{theorem}{3.5.1}\label{XXIII.3.5.1}
+Let S be a scheme, G a pinned S-group, T its maximal torus, $\Delta$ its system of simple roots, and $u_\alpha\in U_\alpha(S)^\times$ and $w_\alpha\in\uNorm_G(T)(S)$ the elements defined by the pinning $(\alpha\in\Delta)$. Let
+\[
+f_T:T\to H,\qquad f_\alpha:U_\alpha\to H,\quad\alpha\in\Delta
+\]
+be group morphisms, H being an S-group sheaf for \fppf; let $h_\alpha\in H(S)$, $(\alpha\in\Delta)$ be sections of H; put $v_\alpha=f_\alpha(u_\alpha)$, $\alpha\in\Delta$. For there to exist a group morphism
+\[
+f:G\to H
+\]
+extending $f_T$, $f_\alpha$ $(\alpha\in\Delta)$ and satisfying $f(w_\alpha)=h_\alpha$ $(\alpha\in\Delta)$ (and then necessarily unique), it is necessary and sufficient that the following conditions hold:
+\begin{enumeratei}
+\item For every $S'\to S$, every $\alpha\in\Delta$, every $t\in T(S')$ and every $x\in U_\alpha(S')$, one has
+\begin{equation}\tag{1}
+\operatorname{int}(f_T(t))f_\alpha(x)=f_\alpha(\operatorname{int}(t)x)=f_\alpha(x^{\alpha(t)}).
+\end{equation}
+\item For every $\alpha\in\Delta$, every $S'\to S$ and every $t\in T(S')$, one has
+\begin{equation}\tag{2}
+\operatorname{int}(h_\alpha)f_T(t)=f_T(s_\alpha(t))=f_T(t\cdot\alpha^*\alpha(t)^{-1}).
+\end{equation}
+\item For every $\alpha\in\Delta$, one has\nde{Relations $(3_1)$ and $(3_2)$ form the description of the normalizer of the torus, $(3_1)$ being, like (4), in a rank 1 group, whereas $(3_2)$ is in a rank 2 group.}
+\begin{equation}\tag{$3_1$}
+h_\alpha^2=f_T(\alpha^*(-1)),
+\end{equation}
+\begin{equation}\tag{4}
+(h_\alpha v_\alpha)^3=e.
+\end{equation}
+\item For all $\alpha,\beta\in\Delta$, $\alpha\ne\beta$, such that $(\alpha^*,\beta)=0$ (resp. $(\alpha^*,\beta)=-1$, resp. $(\alpha^*,\beta)=-2$, resp. $(\alpha^*,\beta)=-3$), one has:
+
+(a) the relation
+\begin{equation}\tag{$3_2$}
+\begin{cases}
+(h_\alpha h_\beta)^2=f_T(\alpha^*(-1)\beta^*(-1))&\text{if }(\alpha^*,\beta)=0;\\
+(h_\alpha h_\beta)^3=e,&\text{if }(\alpha^*,\beta)=-1;\\
+(h_\alpha h_\beta)^4=f_T(\alpha^*(-1)),&\text{if }(\alpha^*,\beta)=-2;\\
+(h_\alpha h_\beta)^6=e,&\text{if }(\alpha^*,\beta)=-3.
+\end{cases}
+\end{equation}
+(b) The relations (A) and (B) of 3.1.3 (resp. 3.2.8, resp. 3.3.7, resp. 3.4.10).
+\end{enumeratei}
+\end{theorem}
+This follows immediately from 2.3, 2.6 and the calculations made in each particular case.
+\begin{remark}{3.5.2}\label{XXIII.3.5.2}
+One may present the preceding results in a slightly different manner: one gives morphisms, for $\alpha\in\Delta$,
+\[
+a_\alpha:T\cdot U_\alpha\to H,\qquad b_\alpha:\uNorm_{Z_\alpha}(T)\to H,
+\]
+and one puts
+\[
+h_\alpha=b_\alpha(w_\alpha),\qquad v_\alpha=a_\alpha(u_\alpha);
+\]
+then the conditions to be checked are the following:
+
+(1) all the $a_\alpha$ $(\alpha\in\Delta)$ and all the $b_\alpha$ $(\alpha\in\Delta)$ have the same restriction to T;
+
+(2) conditions (4) and (iv) of 3.5.1 above hold.
+\end{remark}
+\numpara{3.5.3}
+Various applications of this theorem will be given in the following exposé. Let us mention one here: Theorem 3.5.1 gives a description by generators and relations of G in the category of S-sheaves for \fppf; in other words, consider for each $S'\to S$ the group $H(S')$ generated by $T(S')$, $U_\alpha(S')$, $\alpha\in R$, and $w_\alpha$, $\alpha\in R$, subject to relations analogous to (1), (2), $(3_1)$, (4), $(3_2)$, (A), (B); then G is precisely the sheaf associated with the presheaf $S'\mto H(S')$.
+% typo?: generators indexed by R rather than Delta, kept as printed.
+
+In particular, if $S'$ is the spectrum of an algebraically closed field k, one has $G(S')=H(S')$ (an immediate consequence of the Nullstellensatz in the form: ``an \fppf covering sieve of an algebraically closed field is trivial''), so that 3.5.1 immediately gives an explicit description by generators and relations of the ``abstract'' group $G(k)$.\nde{For an arbitrary field k and simply connected G, R. Steinberg gave a presentation of the group $G(k)$ in [St62], Th. 3.2; see also [St67], \S 6, Th. 8.}
+% Last sentence and note 10 finish on PDF p. 26; owned by this chunk.

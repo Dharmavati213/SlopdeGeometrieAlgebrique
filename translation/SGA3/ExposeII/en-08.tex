@@ -1,0 +1,465 @@
+To prove the reverse inclusions, let us henceforth suppose
+\(\mathfrak{g}=\Lie(G/S,\mathcal{M})\) commutative; then \(\mathfrak{g}^{K}\) and
+\((\mathfrak{g}/\mathfrak{k})^{K}\) are commutative \(S\)-groups. Let
+\(X\in\mathfrak{g}(S)\) and \(X\) its image in
+\((\mathfrak{g}/\mathfrak{k})(S)\), suppose that
+\(X\in(\mathfrak{g}/\mathfrak{k})^{K}(S)\) (\resp~\(X\in\mathfrak{g}^{K}(S)\))
+and let us show that \(X\in\mathfrak{n}(S)\)
+(\resp~\(X\in\mathfrak{z}(S)\)).
+
+Let \(f\colon S'\to I_S(\mathcal{M})\); let us show that the preceding
+condition~\((*)\) is satisfied for every \(u\in K(S')\). Consider the
+cartesian square
+\[
+\xymatrix{
+I_{S'}(\mathcal{M}) \ar[r]^{p} \ar[d]_{\rho'}
+  & I_S(\mathcal{M}) \ar[d]^{\rho} \\
+S' \ar[r]_{\rho\circ f} & S
+}
+\]
+and let \(h\) be the section of \(\rho'\) defined by~\(f\). It suffices to
+show that, for every \(v\in K(I_{S'}(\mathcal{M}))\), one has
+\[
+\left.
+\begin{aligned}
+p^{*}(X^{\alpha})\cdot v\cdot p^{*}(X^{-\alpha})\cdot v^{-1}
+  &\in K\bigl(I_{S'}(\mathcal{M})\bigr)\\
+\text{resp.}\quad
+p^{*}(X)\cdot v\cdot p^{*}(X^{-1})\cdot v^{-1}
+  &=1
+\end{aligned}
+\right\}
+\quad(**).
+\]
+Indeed, taking \(v=\rho^{\prime*}(u)\) and applying \(h^{*}\) to~\((**)\),
+one obtains~\((*)\), since \(\rho'\circ h=\mathrm{id}_{S'}\) and
+\(p\circ h=f\).
+
+Let us now show~\((**)\); to simplify, one will write \(X\) in place of
+\(p^{*}(X)\). Every \(v\in K(I_{S'}(\mathcal{M}))\) may be written uniquely
+\(Y\cdot k\) where \(Y\in\Lie(K/S,\mathcal{M})(S')\) and \(k\in K(S')\).
+The expression \(X^{\alpha}\cdot u\cdot X^{-\alpha}\cdot u^{-1}\) then
+% typo?: kept as printed (u, not the running variable v)
+becomes \(X^{\alpha}\cdot Y\cdot(k\cdot X^{-\alpha}\cdot k^{-1})\cdot Y^{-1}\)
+which, as \(\Lie(G/S,\mathcal{M})\) is commutative, is written
+\(X^{\alpha}\,\Ad(k)(X^{-\alpha})\). Now the latter lies a priori in
+\(\Lie(G/S,\mathcal{M})(S')\); taking Lemma~5.2.3.0 into account, the
+condition~\((**)\) for \(X\) therefore becomes: for every
+\(k\in K(S')\),
+\[
+\begin{cases}
+\Ad(k)(X)=X
+  & \text{if }H=Z;\\
+X^{\alpha}\,\Ad(k)(X^{-\alpha})\in\Lie(K/S,\mathcal{M})(S')
+  & \text{if }H=N.
+\end{cases}
+\]
+When \(H=Z\), this condition is indeed a consequence of the hypothesis
+\(X\in\mathfrak{g}^{K}(S)\).
+When \(H=N\), the condition may also be written:
+\[
+(*')\qquad
+\Ad(k)(X)=X
+\qquad\text{and}\qquad
+\Ad(k)(X^{-1})=X^{-1},
+\]
+now the second condition of~\((*')\) is a consequence of the first, since
+the operation of \(K\) on \(\mathfrak{g}/\mathfrak{k}\) respects the group
+structure of the latter. Thus, when \(H=N\), the condition~\((**)\) for
+\(X\) is indeed a consequence of the hypothesis
+\(X\in(\mathfrak{g}/\mathfrak{k})^{K}(S)\). This proves~(i) and~(ii).
+
+To prove~(iii)--(v), let us write
+\(\mathfrak{g}(\mathcal{M})=\Lie(G/S,\mathcal{M})\) and let us define
+likewise \(\mathfrak{k}(\mathcal{M})\), \(\mathfrak{z}(\mathcal{M})\) and
+\(\mathfrak{n}(\mathcal{M})\). If \(G/S\) satisfies~(E), then
+\(\mathfrak{g}(\mathcal{M}\oplus\mathcal{N})
+\simeq\mathfrak{g}(\mathcal{M})\times_S\mathfrak{g}(\mathcal{N})\)
+and hence, by~5.2.2~(i),
+\[
+\mathfrak{g}(\mathcal{M}\oplus\mathcal{N})^{K}
+\simeq
+\mathfrak{g}(\mathcal{M})^{K}\times_S\mathfrak{g}(\mathcal{N})^{K}
+\]
+whence
+\(\mathfrak{z}(\mathcal{M}\oplus\mathcal{N})
+\simeq\mathfrak{z}(\mathcal{M})\times_S\mathfrak{z}(\mathcal{S})\),
+% typo?: kept as printed \(\mathfrak{z}(\mathcal{S})\); the parallel isomorphism has \(\mathcal{N}\)
+hence \(Z\) satisfies~(E). If moreover \(K/S\) satisfies~(E), one obtains
+successively isomorphisms:
+\begin{align*}
+(\mathfrak{g}/\mathfrak{k})(\mathcal{M}\oplus\mathcal{N})
+  &\simeq
+  (\mathfrak{g}/\mathfrak{k})(\mathcal{M})
+  \times_S
+  (\mathfrak{g}/\mathfrak{k})(\mathcal{N})\\
+(\mathfrak{g}/\mathfrak{k})^{K}(\mathcal{M}\oplus\mathcal{N})
+  &\simeq
+  (\mathfrak{g}/\mathfrak{k})(\mathcal{M})^{K}
+  \times_S
+  (\mathfrak{g}/\mathfrak{k})(\mathcal{N})^{K},
+\end{align*}
+then a commutative diagram:
+\[
+\xymatrix@C=1.35em@R=1.55em{
+0 \ar[r]
+  & \mathfrak{k}(\mathcal{M}\oplus\mathcal{N}) \ar[r] \ar[d]^{\wr}
+  & \mathfrak{n}(\mathcal{M}\oplus\mathcal{N}) \ar[r] \ar[d]
+  & (\mathfrak{n}/\mathfrak{k})(\mathcal{M}\oplus\mathcal{N}) \ar[r] \ar[d]^{\wr}
+  & 0
+\\
+0 \ar[r]
+  & \mathfrak{k}(\mathcal{M})\times_S\mathfrak{k}(\mathcal{N}) \ar[r]
+  & \mathfrak{n}(\mathcal{M})\times_S\mathfrak{n}(\mathcal{N}) \ar[r]
+  & (\mathfrak{n}/\mathfrak{k})(\mathcal{M})
+      \times_S(\mathfrak{n}/\mathfrak{k})(\mathcal{N}) \ar[r]
+  & 0
+}
+\]
+whence it follows that
+\(\mathfrak{n}(\mathcal{M}\oplus\mathcal{N})
+\simeq\mathfrak{n}(\mathcal{M})\times_S\mathfrak{n}(\mathcal{N})\),
+hence \(N\) satisfies~(E).
+
+Henceforth, let us write \(\mathfrak{g}=\mathfrak{g}(\OS)=\Lie(G/S)\) and
+let us define likewise \(\mathfrak{k}\), \(\mathfrak{z}\), \(\mathfrak{n}\).
+If \(G\) is \emph{good}, \(\mathfrak{g}\) is a \emph{good} \(\OS\)-module,
+hence, by~5.2.2~(ii), so is \(\mathfrak{z}\simeq\mathfrak{g}^{K}\), hence
+\(Z\) (which satisfies~(E) by~(iii)) is \emph{good}. If moreover \(K\) is
+\emph{good}, then \(\mathfrak{k}\) is a \emph{good} \(\OS\)-module, hence,
+by~5.2.1~(iv) and~5.2.2~(ii), the same is true of
+\(\mathfrak{g}/\mathfrak{k}\) and \((\mathfrak{g}/\mathfrak{k})^{K}\). In
+view of the exact sequence
+\[
+0\longrightarrow\mathfrak{k}\longrightarrow\mathfrak{n}
+\longrightarrow(\mathfrak{g}/\mathfrak{k})^{K}\longrightarrow 0,
+\]
+one obtains, by~5.2.1~(iv) again, that \(\mathfrak{n}\) is \emph{good}.
+Finally, if in addition to the preceding conditions \(G\) is \emph{very
+good}, that is, if one has identically \([x,x]=0\) for every
+\(x\in\mathfrak{g}\), it is clear that \(Z\) and \(N\) are \emph{very
+good}. This proves~(iii), (iv) and~(v).
+
+\begin{corollary}{5.2.3.1}
+\label{II.5.2.3.1}
+One has \(\Lie(\Centr(G)/S)=\Lie(G/S)^{G}\) if the group law of
+\(\Lie(G/S)\) is commutative.
+\end{corollary}
+
+\begin{corollary}{5.2.3.2}
+\label{II.5.2.3.2}
+If the group law of \(\Lie(G/S)\) is commutative and if \(K\) is an
+invariant subgroup of \(G\), then
+\[
+\bigl(\Lie(G/S)\big/\Lie(K/S)\bigr)^{K}
+=\Lie(G/S)\big/\Lie(K/S).
+\]
+\end{corollary}
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{5.3. Linear representations.}\ ---
+\label{II.5.3}
+Let \(G\) be a \emph{good} \(S\)-group operating linearly on a \emph{good}
+\(\OS\)-module \(F\) via
+\[
+\rho\colon G\longrightarrow\Aut_{\OS\text{-mod.}}(F).
+\]
+One has defined (4.7.1 and~4.8.2) a corresponding linear representation
+\[
+\rho'\colon\Lie(G/S)\longrightarrow\End_{\OS\text{-mod.}}(F).
+\]
+The sub-\(S\)-groups \(\Norm_G(E)\) and \(\Centr_G(E)\) are defined for every
+subset \(E\) of \(F\), for example for every sub-\(\OS\)-module \(E\) of~\(F\).
+
+\begin{definition}{5.3.0}
+\label{II.5.3.0}
+One will set, analogously: for every \(S'\to S\),
+\begin{align*}
+\Norm_{\Lie(G/S)}(E)(S')
+&=
+\bigl\{X\in\Lie(G/S)(S')\mid \rho'(X)E_{S'}\subset E_{S'}\bigr\};\\
+\Centr_{\Lie(G/S)}(E)(S')
+&=
+\bigl\{X\in\Lie(G/S)(S')\mid \rho'(X)E_{S'}=0\bigr\}.
+\end{align*}
+(Let us note that this construction is carried out for every linear
+representation of an \(\OS\)-``Lie algebra'' (in the sense of~4.9) and that
+the two subobjects constructed are sub-\(\OS\)-modules stable under the
+bracket).
+\end{definition}
+
+\begin{theorem}{5.3.1}
+\label{II.5.3.1}
+Let \(G\) be a good \(S\)-group operating linearly on a good \(\OS\)-module
+\(F\) and let \(E\) be a sub-\(\OS\)-module of~\(F\).
+\begin{enumeratei}
+\item One has \(\Lie(\Centr_G(E)/S)=\Centr_{\Lie(G/S)}(E)\) and
+\(\Centr_G(E)\) is a good \(S\)-group; it is very good if \(G\)~is.
+\item Suppose that \(E\) is a good \(\OS\)-module. Then%
+{\renewcommand{\thefootnote}{(98)}\nde{One has corrected the original,
+which stated the following equality without hypotheses on~\(E\); see~6.5.1
+for counterexamples.}}
+\(\Lie(\Norm_G(E)/S)=\Norm_{\Lie(G/S)}(E)\) and \(\Norm_G(E)\) is a good
+\(S\)-group; it is very good if \(G\)~is.
+\end{enumeratei}
+\end{theorem}
+
+The proof is left to the reader.
+
+\numpara{5.3.2}
+\label{II.5.3.2}
+Let \(G\) be a good \(S\)-group; the foregoing applies in particular to the
+case where one takes for \(\rho\) the adjoint representation of~\(G\). Let
+\(E\) be a \emph{good}%
+{\renewcommand{\thefootnote}{(99)}\nde{One has added this hypothesis;
+\cf~6.5.1.}}
+submodule of \(\Lie(G/S)\); one therefore associates with it two subgroups
+of~\(G\), its centralizer and its normalizer. By~5.3.1, their Lie algebras
+are respectively the centralizer and the normalizer of \(E\) in
+\(\Lie(G/S)\), computed as usual by means of the bracket:
+\begin{align*}
+\Centr_{\Lie(G/S)}(E)(S')
+&=
+\bigl\{X\in\Lie(G/S)(S')\mid [X,E_{S'}]=0\bigr\}.\\
+\Norm_{\Lie(G/S)}(E)(S')
+&=
+\bigl\{X\in\Lie(G/S)(S')\mid [X,E_{S'}]\subset E_{S'}\bigr\}.
+\end{align*}
+
+\numpara{5.3.3}
+\label{II.5.3.3}
+Let \(K\) be a sub-\(S\)-group of~\(G\), then \(\Lie(K/S)\) is a
+sub-\(\OS\)-module of \(\Lie(G/S)\); suppose that \(\Lie(K/S)\) is a
+\emph{good} \(\OS\)-module%
+{\renewcommand{\thefootnote}{(99)}\ndemark}
+(which is the case if \(K\) is a \emph{good} \(S\)-group). One evidently has
+\begin{align*}
+\Centr_G(K)&\subset\Centr_G\bigl(\Lie(K/S)\bigr)\\
+\Norm_G(K)&\subset\Norm_G\bigl(\Lie(K/S)\bigr),
+\end{align*}
+whence, by~5.3.1,
+\begin{align*}
+\Lie(\Centr_G(K)/S)
+  &\subset\Centr_{\Lie(G/S)}\bigl(\Lie(K/S)\bigr)\\
+\Lie(\Norm_G(K)/S)
+  &\subset\Norm_{\Lie(G/S)}\bigl(\Lie(K/S)\bigr),
+\end{align*}
+but none of these four inclusions is a priori an identity; we shall see
+many examples of this later.
+
+It follows in particular from these inclusions that if \(K\) is an
+\emph{invariant subgroup} of~\(G\), then \(\Lie(K/S)\) is an \emph{ideal}
+of \(\Lie(G/S)\).
+
+\sgasection{6}{Miscellaneous remarks}
+\label{II.sec.6}
+
+\numpara{6.1}
+\label{II.6.1}
+One can define the bracket of two infinitesimal automorphisms for an
+\(S\)-functor \(X\) which is not necessarily a group. It suffices to apply
+the results of this exposé to the group \(\Aut_S(X)\). In order to arrive
+at a pleasant formalism, one is led to suppose \(X\) \emph{good}, that is,
+to suppose that the \(\mathcal{O}_X\)-module \(\mathrm{T}_{X/S}\) is
+\emph{good} (if \(X\) is an \(S\)-group, this definition evidently coincides
+with definition~4.6).
+
+\numpara{6.2}
+\label{II.6.2}
+There exist functors possessing infinitesimal endomorphisms which are not
+automorphisms, hence \emph{a fortiori} not satisfying
+condition~(E).%
+{\renewcommand{\thefootnote}{(100)}\nde{One has set out the original in
+more detail in what follows. In particular, the correct definition of the
+``free abelian monoid on a pointed set'' was pointed out to us by
+O.~Gabber.}}
+For every pointed set \((E,x_0)\), let \(\mathrm{MA}(E)\) be the free
+abelian monoid generated by \(E\) and let \(\mathrm{MA}_{\mathrm{P}}(E,x_0)\)
+be the abelian monoid obtained by quotienting \(\mathrm{MA}(E)\) by the
+equivalence relation generated by the relation \(m\sim x_0+m\). Then
+\((E,x_0)\mapsto\mathrm{MA}_{\mathrm{P}}(E,x_0)\) is the left adjoint of the
+forgetful functor from the category of abelian monoids to that of pointed
+sets; one will say that \(\mathrm{MA}_{\mathrm{P}}(E,x_0)\) is the ``free
+abelian monoid on the pointed set \((E,x_0)\)''.
+
+Let us then take for \(X\) the functor which to every scheme \(S\)
+associates the free abelian monoid on the set \(\mathrm{O}(S)\), pointed
+by the zero element. Each morphism
+\(f\colon S\to I_{\ZZ}=\Spec(\ZZ[\varepsilon])\) corresponds to an element
+\(u_f\) of square zero of \(\mathrm{O}(S)\), hence defines an endomorphism
+of \(X(S)\) by \(x\mapsto x+u_f\) (sum in
+\(\mathrm{MA}_{\mathrm{P}}(\mathrm{O}(S),0)\)). One thus obtains an
+endomorphism \(\phi\) of \(X_{I_{\ZZ}}=X\times_{\ZZ}I_{\ZZ}\), defined as
+follows. For every \(f\in I_{\ZZ}(S)\) and \(x\in X(S)\),
+\[
+\phi\bigl((x,f)\bigr)=(x+u_f,f).
+\]
+If \(f_0\colon S\to I_{\ZZ}\) is the composite of the structural morphism
+\(S\to\Spec(\ZZ)\) and of the zero section of \(I_{\ZZ}\), the corresponding
+element is \(u_{f_0}=0\), and hence
+\(\phi\bigl((x,f_0)\bigr)=(x,f_0)\), since \(x+0=x\) in
+\(\mathrm{MA}_{\mathrm{P}}(\mathrm{O}(S),0)\). This shows that \(\phi\)
+induces the identity on~\(X\); it is therefore an infinitesimal
+endomorphism of \(X\) which is evidently not an automorphism.
+
+\numpara{6.3}
+\label{II.6.3}
+There exist modules which are not \emph{good}. On the one hand, one can
+slightly modify the preceding counterexample:%
+{\renewcommand{\thefootnote}{(101)}\nde{One has added what follows.}}
+let us take for \(F(S)\) the free \(\mathrm{O}(S)\)-module with basis the
+elements of \(\mathrm{O}(S)\); then \(F\) does not satisfy condition~(E)
+with respect to \(\Spec(\ZZ)\); moreover, let \(G\) be the \(\ZZ\)-group
+defined by \(G(S)=\GL_n(R(S))\), where \(n\geqslant 2\) and \(R(S)\) is
+the \(\mathrm{O}(S)\)-algebra of the abelian group \(\mathrm{O}(S)\); then
+the \(\ZZ\)-group \(\Lie(G/\ZZ)\) is not commutative.
+
+{\renewcommand{\thefootnote}{(102)}\nde{In what follows, one has set out
+example~a) in more detail and added example~b).}}%
+On the other hand, one can give the following counterexamples. Let
+\(S=\Spec(k)\), \(k\) a field of characteristic \(p>0\).
+
+a)~Let \(F\) be the \(\OS\)-module which to every \(S\)-scheme \(T\)
+associates \(F(T)=\Gamma(T,\mathcal{O}_T)\) equipped with the structure of
+\(\mathrm{O}(T)\)-module obtained by making the scalars operate via the
+\(p\)-th power, that is, \(r\cdot f=r^{p}f\), for \(r\in\mathrm{O}(T)\),
+\(f\in F(T)\). As an \(S\)-group functor, \(F\) is isomorphic to
+\(\mathbf{G}_{\mathrm{a},S}\). Hence \(F/S\) satisfies~(E) and
+\(\Lie(F/S)\) is identified with
+\(\Lie(\mathbf{G}_{\mathrm{a},S}/S)\simeq\OS\). Then, the canonical
+morphism \(F\to\Lie(F/S)\) is,
+for every \(T\to S\), the identity map \(F(T)\to\mathrm{O}(T)\): it does
+respect the structure of abelian group but not the structure of module.
+Hence \(F\) is not \emph{good} (\cf~4.4.1).
+
+b)~Let \(\alpha_{p,k}\) be the \(k\)-group functor which to every
+\(S\)-scheme \(T\) associates
+\[
+\alpha_{p,k}(T)=\{x\in\mathrm{O}(T)\mid x^{p}=0\},
+\]
+it is represented by \(\Spec(k[X]/(X^{p}))\) hence it is a \emph{very good}
+\(S\)-group; it is also equipped with a structure of \(\OS\)-module, but it
+is not a \emph{good} \(\OS\)-module, for the canonical morphism
+\(\alpha_{p,k}\to\Lie(\alpha_{p,k}/k)=\mathbf{G}_{\mathrm{a},k}\) is not
+bijective.
+
+\numpara{6.4}
+\label{II.6.4}
+Let \(G\) be a group functor over~\(S\). One has by definition the following
+implications
+\[
+\bigl(G/S\text{ satisfies~(E)}\bigr)
+\Longleftarrow
+\bigl(G\text{ is \emph{good}}\bigr)
+\Longleftarrow
+\bigl(G\text{ is \emph{very good}}\bigr).
+\]
+{\renewcommand{\thefootnote}{(103)}\nde{And \(G\) is very good if it is
+representable (4.11). For criteria of representability, see for
+example~[MO67]. On the other hand, for the automorphisms of an affine
+algebraic group (over an algebraically closed field of characteristic~\(0\)),
+let us cite~[HM69].}}
+It would be interesting to prove or to give counterexamples for the
+implications in the reverse direction.
+
+\numpara{6.5}
+\label{II.6.5}
+{\renewcommand{\thefootnote}{(104)}\nde{One has added this paragraph.}}%
+Let \(\mathrm{Nil}\) be the \(\ZZ\)-group functor defined as follows: for
+every scheme \(S\), \(\mathrm{Nil}(S)\) is the ideal of \(\mathrm{O}(S)\)
+consisting of the nilpotent elements, \ie
+\[
+\mathrm{Nil}(S)
+=
+\bigl\{x\in\mathrm{O}(S)\mid
+\text{there exists }n\in\NN\text{ such that }x^{n}=0\bigr\}.
+\]
+(\(\mathrm{Nil}\) is \emph{very good} but is not representable). Let
+\(\mathrm{Nil}^{2}\), \(\mathrm{O}_{\mathrm{red}}\) and \(F\) be the
+\(\ZZ\)-group functors which to every scheme \(S\) associate, respectively,
+the ideal \(\mathrm{Nil}(S)^{2}\) and
+\[
+\mathrm{O}_{\mathrm{red}}(S)=\mathrm{O}(S)/\mathrm{Nil}(S),
+\qquad
+F(S)=\mathrm{O}(S)/\mathrm{Nil}(S)^{2}.
+\]
+One sees easily that \(\Lie(\mathrm{O}_{\mathrm{red}}/\ZZ)=0\), hence the
+\(\mathcal{O}_{\ZZ}\)-module \(\mathrm{O}_{\mathrm{red}}\) is not
+\emph{good} (although it is a \emph{good} \(\ZZ\)-group). If
+\(\mathcal{M}\), \(\mathcal{N}\) are free \(\ZZ\)-modules of finite rank,
+one has
+\[
+\mathrm{Nil}^{2}\bigl(I_S(\mathcal{M}\oplus\mathcal{N})\bigr)
+\simeq
+\mathrm{Nil}^{2}(S)
+\oplus\mathrm{Nil}(S)\otimes_{\ZZ}\mathcal{M}
+\oplus\mathrm{Nil}(S)\otimes_{\ZZ}\mathcal{N}
+\]
+and hence
+\[
+F\bigl(I_S(\mathcal{M}\oplus\mathcal{N})\bigr)
+\simeq
+F(S)
+\oplus\mathrm{O}_{\mathrm{red}}(S)\otimes_{\ZZ}\mathcal{M}
+\oplus\mathrm{O}_{\mathrm{red}}(S)\otimes_{\ZZ}\mathcal{N}.
+\]
+One deduces from this, on the one hand, that the \(\ZZ\)-group functor \(F\)
+satisfies condition~(E) and, on the other hand, that
+\(\Lie(F/\ZZ)=\mathrm{O}_{\mathrm{red}}\); as the latter is not a
+\emph{good} \(\mathcal{O}_{\ZZ}\)-module, this shows that \(F\) is an
+example of a \(\ZZ\)-group which satisfies~(E) but which is not
+\emph{good}.
+
+\numpara{6.5.1}
+\label{II.6.5.1}
+Let us also give the counterexamples indicated in~5.3.1--5.3.3. Let \(S\)
+be a scheme, \(F\) the \emph{good} \(\OS\)-module \(\OS^{\oplus 2}\)
+equipped with the natural action of the \emph{good} \(S\)-group
+\(G=\GL_{2,S}\), and \(E\) the sub-\(\OS\)-module of \(F\) consisting of the
+pairs \((x_1,x_2)\) such that \(x_2\) is nilpotent. Set
+\(N=\Norm_G(E)\). Then \(\Lie(N/S)=\Lie(G/S)\) whereas, for every
+\(S'\to S\), one has
+\[
+\Norm_{\Lie(G/S)}(E)(S')
+=
+\left\{
+\begin{pmatrix} a & b \\ x & c \end{pmatrix}
+\;\middle|\;
+a,\,b,\,c,\,x\in\mathrm{O}(S'),\ x\text{ nilpotent}
+\right\}
+\]
+hence \(\Lie(\Norm_G(E)/S)\neq\Norm_{\Lie(G/S)}(E)\).
+
+By considering the semidirect product \(G_1=F\cdot G\), one obtains an
+analogous counterexample in which \(E\) is a sub-\(\OS\)-module of
+\(\Lie(G_1/S)\); moreover, with the notations introduced above,
+\(E=\Lie(K/S)\) where \(K\) is the subgroup
+\(\OS\oplus\mathrm{Nil}^{2}\) of~\(F\) (that is, for every \(S'\to S\),
+\(K(S')\) consists of the pairs \((x_1,x_2)\) such that
+\(x_2\in\mathrm{Nil}(S')^{2}\)).
+
+\makeatletter
+\renewcommand{\@bibtitlestyle}{%
+  \par\addvspace{1.1\baselineskip}%
+  \noindent{\large\bfseries Bibliography}%
+  {\renewcommand{\thefootnote}{(105)}\nde{Additional references cited in
+  this Exposé.}}%
+  \par\addvspace{0.45\baselineskip}%
+}
+\makeatother
+\begin{thebibliography}{DG70}
+
+\bibitem[DG70]{DG70}
+M.~Demazure, P.~Gabriel, \emph{Groupes Algébriques}, Masson \&
+North-Holland, 1970.
+
+\bibitem[HM69]{HM69}
+G.~Hochschild, G.~D.~Mostow, \emph{Automorphisms of affine algebraic
+groups}, J.~Algebra \textbf{13} (1969), 535--543.
+
+\bibitem[MO67]{MO67}
+H.~Matsumura, F.~Oort, \emph{Representability of group functors and
+automorphisms of algebraic schemes}, Invent.\ math.\ \textbf{4} (1967),
+1--25.
+
+\end{thebibliography}

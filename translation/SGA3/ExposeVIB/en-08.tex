@@ -1,0 +1,211 @@
+The general case proceeds by reduction to the preceding case. For every $s\in S$, there is an affine open neighborhood $U$ of $s$ and an affine open neighborhood $V$ of $\varepsilon(s)$ such that $f(V)\subset U$. Then $f(V)$ is an open neighborhood of $s$ contained in $U$, and if $S'$ is an affine open neighborhood of $s$ contained in $\varepsilon^{-1}(V)\cap f(V)$, and $X'=V\cap f^{-1}(S')$, then $X'$ and $S'$ are affine open subsets of $X$ resp. $S$, and $X'/S'$ admits a section. Since 6.5.2 and 6.5.3 are local, one may suppose $S=S'$. Then $X'$ is an affine open subset of $X$ containing $\varepsilon(S)$. Since every fiber $X_s$ is supposed irreducible, $X'_s$ is schematically dense in $X_s$, hence, by EGA IV$_3$, 11.10.10, $X'$ is schematically dense in $X$; similarly, for every base change $S_1\to S$, $X'\times_SS_1$ is schematically dense in $X\times_SS_1$.
+
+It follows that $\prod_{X/S}Y/X=\prod_{X'/S}Y'/X'$, where $Y'=Y\cap X'$. This reduces us to the case where $X=X'$, so one may suppose $S$ and $X$ affine. Moreover, if $X=\Spec(B)$ and $J$ is the ideal of $B$ defining $Y$, then $J$ is the inductive limit of its finitely generated subideals, so $Y$ is the intersection of closed subschemes $Y_i$ of $X$ of finite presentation over $X$, and consequently $\prod_{X/S}Y/X=\bigcap_i\prod_{X/S}Y_i/X$, which reduces us, to prove 6.5.2, to the case where $Y$ is of finite presentation over $X$, with $S$ and $X$ affine.
+
+But then $X$ and $Y$ over $S$ come, by base change $S\to S_0$, from an analogous situation $X_0$ and $Y_0$ over $S_0$, with $S_0$ noetherian, which reduces us to the case where $S$ is noetherian, already treated. This completes the proof of 6.5.2 and 6.5.3.
+% typo: S et noetherien -> S est noetherien.
+\begin{corollary}{6.5.4}\label{VIB.6.5.4}
+Let $X$ be a smooth $S$-group scheme of finite presentation with connected fibers, $Y$ a group scheme of finite presentation over $S$, $i:Y\to X$ a monomorphism of $S$-group schemes.
+\begin{enumeratei}
+\item Then $\prod_{X/S}Y/X$ is representable by a closed subscheme of finite presentation of $S$.
+\item If moreover $S$ is quasi-compact, for sufficiently large $n$ one has:
+\[
+\prod_{X/S}Y/X=\prod_{X_n/S}Y_n/X_n,
+\]
+where $X_n$ denotes the $n$-th infinitesimal neighborhood of the unit section $\varepsilon:S\to X$, and $Y_n=X_n\cap Y$.
+\end{enumeratei}
+\end{corollary}
+The proof is essentially that of 6.5.3.\nde{The original has been expanded in what follows, adding references to EGA IV.} On the one hand, $i$ is locally of finite presentation (cf. EGA IV$_1$, 1.4.3). On the other hand, the unit sections of $Y$ and $X$ induce bijective immersions $S\to Y_n$ and $S\to X_n$, hence isomorphisms of $S_{\mathrm{red}}$ with $(Y_n)_{\mathrm{red}}$ and $(X_n)_{\mathrm{red}}$. Consequently, $i_n$ is quasi-compact, hence of finite type, and one has a commutative diagram:
+\[
+\xymatrix{(Y_n)_{\mathrm{red}}\ar[r]^\tau\ar[dr]_\sigma&Y_n\ar[d]^{i_n}\\&X_n}
+\]
+where $\sigma,\tau$ are closed immersions and $\tau$ is surjective. Since $i_n$ is separated (being a monomorphism), it follows that $i_n$ is proper (cf. EGA II, 5.4.3). Thus $i_n$ is a proper monomorphism of finite presentation, hence a closed immersion (cf. EGA IV$_3$, 8.11.5). Consequently, by 6.2.3, already used, $\prod_{X_n/S}Y_n/X_n$ is representable by a closed subscheme $T_n$ of $S$ of finite presentation over $S$, and it therefore remains to prove the last assertion of 6.5.4 in the case where $S$ is moreover supposed affine.
+
+One again immediately reduces to the case where $S$ is noetherian, and one is reduced to proving that one then has $R=T$ (with the notation of the proof of 6.5.3), or that $Y\supset X_n$ for every $n$ implies $Y=X$. Now the hypothesis implies that $i:Y\to X$ is étale at the points of the unit section of $Y$ over $S$, so $Y$ is smooth over $S$ at the points of the unit section, whence it follows that the open subset $U$ of points of $Y$ at which $Y$ is smooth over $S$ is an induced open subgroup of $Y$ (cf. 2.3). Then $\tau:U\to X$ is an étale monomorphism by 2.5, hence an open immersion; now, since the fibers of $X$ are connected and every open subgroup of an algebraic group is also closed, it follows that $\tau$ is a surjective open immersion, i.e. an isomorphism. Thus $U=X$ and a fortiori $Y=X$, which completes the proof of 6.5.4.
+
+Proceeding as in 6.2.4 e), one concludes from 6.5.4:
+\begin{corollary}{6.5.5}\label{VIB.6.5.5}
+Let $G$ be an $S$-group scheme locally of finite type and quasi-separated over $S$, $H$ a smooth group scheme of finite presentation over $S$ with connected fibers, $i:H\to G$ a monomorphism of $S$-groups. Then:
+\begin{enumeratea}
+\item $\uCentr_G(H)$ and $\uNorm_G(H)$ are representable by closed subschemes of $G$, of finite presentation over $G$.
+\item[(a$'$)] Similarly, for every monomorphism $j:K\to G$ of finite presentation of $S$-group schemes, $\uTransp_G(H,K)$ is representable by a closed subscheme of $G$, of finite presentation over $G$.
+\item[(b)] If $G$ is quasi-compact, there is an integer $n\ge0$ such that (if $H_n$ denotes the $n$-th infinitesimal neighborhood of the unit section of $H$) one has:
+\[
+\begin{gathered}
+\uCentr_G(H)=\uCentr_G(H_n),\qquad\uNorm_G(H)=\uNorm_G(H_n),\\
+\uTransp_G(H,K)=\uTransp_G(H_n,K)=\uTransp_G(H_n,K_n).
+\end{gathered}
+\]
+\end{enumeratea}
+\end{corollary}
+\begin{proof}
+\nde{What follows has been expanded. On the other hand, this completes the insertion of XI, 6.8 to 6.11, i.e. in 6.6 below one returns to the original text of VIB.}First note that the hypothesis on $G$ implies that the monomorphism $H\to G$ is of finite presentation (EGA IV$_1$, 1.2.4 and 1.4.3), as is the diagonal immersion $\Delta_{G/S}:G\to G\times_SG$ (loc. cit. 1.4.3.1). The case of $\uNorm_G(H)$ therefore reduces to that of the transporter by taking $H=K$. Taking account of 6.2.4 e), we shall apply 6.5.4 to the group scheme $X=H_G=H\times_SG$ over the base scheme $G$, and to the following subgroup scheme $Y$.
+
+In the case of $\uTransp_G(H,K)$, take for $Y$ the inverse image of $K_G$ under the morphism of $G$-groups $H\times_SG\to G\times_SG$, $(h,g)\mto(ghg^{-1},g)$. In the case of $\uCentr_G(H)$, take for $Y$ the inverse image of the diagonal subgroup $\Delta_{G/S}(G)_G$ of $(G\times_SG)_G$ under the morphism of $G$-groups
+\[
+H\times_SG\longrightarrow G\times_SG\times_SG,\qquad(h,g)\mto(h,ghg^{-1},g).
+\]
+\end{proof}
+\begin{definition}{6.6}\label{VIB.6.6}
+Let $G$ be an $S$-group functor, $H$ a subgroup $S$-functor; one says that $H$ is \emph{invariant} (resp. \emph{central}, resp. \emph{characteristic}) in $G$ if $\uNorm_GH=G$ (resp. if $\uCentr_GH=G$, resp. if, for every $S$-scheme $T$ and every automorphism $a\in\Aut_{T\text{-gr.}}(G_T)$, one has $a(H_T)\subset H_T$), in other words, if, for every $S$-scheme $T$, the subgroup $H(T)$ of $G(T)$ is invariant in $G(T)$ (resp. central in $G(T)$, resp. invariant under every automorphism of $G_T$).
+
+N.B. If $H$ is central (resp. characteristic), it is invariant.
+\end{definition}
+\begin{remark}{6.7}\label{VIB.6.7}
+Let $G$ and $H$ be two $S$-groups and $u:H\to G$ a monomorphism. For $H$ to be invariant (resp. central) in $G$, it is necessary and sufficient that the morphism
+\[
+\mu\circ\bigl(c\circ\mathrm{pr}_2,\mu\circ(u\times\mathrm{id}_G)\bigr):H\times_SG\longrightarrow G
+\]
+(defined by $(h,g)\mto g^{-1}hg$ for every $g\in G(S')$ and $h\in H(S')$) factor through $u$ (resp. equal $u\circ\mathrm{pr}_1$), and, for $H$ to be characteristic in $G$, it is necessary and sufficient that, for every $S$-scheme $T$ and every $T$-group automorphism $a$ of $G_T$, $a\circ u_{(T)}$ factor through $u_{(T)}$.
+\end{remark}
+\begin{example}{6.8}\label{VIB.6.8}
+Let $G$ be an $S$-group functor. Then $\uCentr G$ is characteristic and central. If, for every $s\in S$, $G_s$ is representable, $G^0$ is characteristic. This follows from the definitions and 3.3.
+\end{example}
+\numpara{6.9}\nde{This subsection has been added.}In [RG71], I 3.3.3, the authors introduce the geometric notion of a pure $S$-scheme, which is local on $S$ for the étale topology; we refer to loc. cit. for the precise definition. Let us simply point out the following:
+\begin{enumeratea}
+\item (loc. cit., Th. 3.3.5) If $B$ is a flat $A$-algebra of finite presentation, $B$ is a projective $A$-module if and only if $\Spec(B)$ is pure over $\Spec(A)$.
+\item Consequently, if $X\to S$ is locally of finite presentation, flat and pure, $X$ is essentially free over $S$.
+\item (loc. cit., 3.3.4 (iii)) If $X\to S$ is locally of finite type, flat, with geometrically irreducible fibers and without embedded components, $X$ is pure over $S$.
+\end{enumeratea}
+Since every group scheme locally of finite type over a field is Cohen--Macaulay (cf. VIA, 1.1.1), hence without embedded components, one obtains in particular:
+\begin{enumeratea}\setcounter{enumi}{3}
+\item Every $S$-group scheme $G$ locally of finite presentation, flat and with connected fibers is pure over $S$, hence essentially free over $S$.
+\end{enumeratea}
+One may then take up all the statements of 6.2.4 e), taking account of results (b) and (d) above.
+
+\sgasection{7}{Generated subgroups; commutator group}
+In this number, $k$ denotes a fixed field.
+\begin{proposition}{7.1}\label{VIB.7.1}
+Let $G$ be a $k$-group, $(X_i)_{i\in I}$ a family of geometrically reduced $k$-schemes;\nde{Here and below, the little-used terminology ``separable'' has been replaced by the usual terminology ``geometrically reduced'', cf. EGA IV$_2$, 4.6.2.} for every $i\in I$, let $f_i:X_i\to G$ be a $k$-morphism.
+\begin{enumeratei}
+\item There is a smallest closed subgroup $k$-scheme of $G$ containing each of the $f_i$, denoted by $\Gamma_G((f_i)_{i\in I})$. It is a geometrically reduced $k$-scheme, hence smooth if $G$ is supposed locally of finite type over $k$ (1.3.1).
+\item Put $X=\coprod_{i\in I}X_i$ and let $f:X\to G$ be the morphism whose restriction to $X_i$ is $f_i$ for every $i\in I$. Put $X^1=X\coprod X$, and let $f^1:X^1\to G$ be the morphism whose restrictions to $X$ are respectively $f$ and $c\circ f$. For every $n>1$, put
+\[
+X^n=X^1\times_kX^{n-1}\quad\text{and}\quad f^n=\mu\circ(f^1\times_kf^{n-1}):X^n\longrightarrow G.
+\]
+Then $\Gamma_G((f_i)_{i\in I})$ is the reduced subscheme of $G$ with underlying space the closure of the union of the $f^n(X^n)$, for $n\ge1$.
+\item For every $k$-scheme $S$, $\Gamma_G((f_i)_{i\in I})_S$ is the smallest closed subgroup scheme of $G_S$ containing each of the $f_{i,S}:X_S\to G_S$.
+\item[(iii$'$)] Moreover, $\Gamma_G((f_i)_{i\in I})_S$ is the smallest subgroup scheme of $G_S$ containing each of the $f_{i,S}$.\nde{The original stated (iii$'$) under the additional hypothesis that $G$ be locally of finite type over $k$, but this can be omitted, by VIA, 0.5.2.}
+\end{enumeratei}
+\end{proposition}
+% typo: sous l'hypotheses -> sous l'hypothese, and peut-etre omise -> peut etre omise.
+% typo?: kept as printed: X_S rather than X_{i,S} in (iii).
+First observe that, to prove (i), (iii) and (iii$'$), defining $X$ and $f$ as in (ii) reduces one to the case where $I$ consists of one element.
+
+Let $H$ be the reduced subscheme of $G$ with underlying set $\overline{\bigcup_{n\ge1}f^n(X^n)}$. Then the family of morphisms $f^n:X^n\to H$ is schematically dominant (cf. EGA IV$_3$, 11.10.4), so every closed subscheme of $G$ containing the $f^n$ also contains $H$. Moreover, by loc. cit., 11.10.7, $H$ is geometrically reduced. Thus, to prove (i) and (ii), it suffices to show that $H$ is a subgroup scheme of $G$, hence that the restriction of $c$ to $H$ and the restriction of $\mu$ to $H\times_kH$ factor through the injection $H\to G$.
+
+Since $H$ is geometrically reduced, $H\times_kH$ is reduced, and it suffices to check that $c(H)\subset H$ and $\mu(H\times_kH)\subset H$ (as sets). But, by EGA IV$_3$, 11.10.6, the union of the $f^n_{(H)}(X^n\times_kH)$ is schematically dense in $H\times_kH$. Similarly, for every $n\ge1$, the union of the $f^m_{(X^n)}(X^n\times_kX^m)$, for $m\ge1$, is schematically dense in $X^n\times_kH$. Thus it suffices to show that $\mu(f^n_{(H)}(f^m_{(X^n)}(X^n\times_kX^m)))\subset H$ and $c(f^n(X^n))\subset H$. Now
+\[
+\begin{aligned}
+\mu\bigl(f^n_{(H)}(f^m_{(X^n)}(X^n\times_kX^m))\bigr)
+&=\mu\bigl((f^n\times_kf^m)(X^n\times_kX^m)\bigr)\\
+&=f^{n+m}(X^{n+m})\subset H;
+\end{aligned}
+\]
+and, since $c(f^1(X^1))\subset f^1(X^1)$, one has, for every $n$, $c(f^n(X^n))\subset f^n(X^n)\subset H$. This proves (i) and (ii).
+
+Now let us prove (iii). Let $G'$ be a closed subgroup scheme of $G_S$ containing $f_S$; one must show that $G'$ contains $H_S$, or, equivalently, that $H_S=H_S\times_{G_S}G'$. Put $H'_S=H_S\times_{G_S}G'=G'\cap H_S$. Since $G'$ and $H_S$ both contain the $f_S^n$, so does $H'_S$. Now (EGA IV$_3$, 11.10.6), since the family of $f^n:X^n\to H$ is schematically dominant, so is the family of $f_S^n:X_S^n\to H_S$, so $H'_S$, containing each of the $f_S^n$, equals $H_S$ by EGA IV$_3$, 11.10.1 c). This proves (iii).
+
+Finally let us show that $H_S$ is the smallest (not necessarily closed) subgroup scheme of $G_S$ containing $f_S$.
+
+Let $G'$ be a subgroup scheme of $G_S$ containing $f_S$. One must similarly show that, putting $H'_S=H_S\times_{G_S}G'$, one has $H'_S=H_S$. For this it suffices to show that $H'_S$ is closed in $H_S$ and apply (iii). It therefore suffices to show that $H_S$ and $H'_S$ have the same underlying set; a fortiori it suffices to show that, for every $s\in S$, $H_s$ equals
+\[
+H'_s:=H'_S\times_S\kappa(s)=H_s\times_{G_s}G'_s.
+\]
+Now, by VIA, 0.5.2, the subgroup $\kappa(s)$-scheme $G'_s$ is closed in $G_s$. Thus $H'_s$ is closed in $H_s$, and then the preceding argument, applied to $H'_s$, $H_s$ and the $f_s^n$, shows that $H'_s=H_s$.
+\begin{corollary}{7.1.1}\label{VIB.7.1.1}\nde{This corollary has been added to point out this special case of 7.1.}
+Let $G$ be a $k$-group locally of finite type and let $A,B$ be two $k$-subgroups of $G$, smooth and of finite type, and $i_A$ (resp. $i_B$) the inclusion of $A$ (resp. $B$) into $G$. Suppose $B$ normalizes $A$; then $A\cdot B=\Gamma_G(i_A,i_B)$.
+\end{corollary}
+Indeed, let $H=A\rtimes B$ be the semidirect product of $A$ and $B$ (cf. I, 2.3.5); it is a smooth $k$-group of finite type. Then the morphism of groups $u:H\to G$, $(a,b)\mto ab$, is quasi-compact, so, by 1.2, $u(H)=A\cdot B$ is a reduced closed subscheme of $G$, which is a group in the category $(\mathbf{Sch}/k)_{\mathrm{red}}$. Now, by EGA IV$_3$, 11.10.7, $A\cdot B=\overline{u(H)}$ is geometrically reduced (since $H$ is), so it is a closed subgroup of $G$. Since one evidently has $A\cdot B\subset\Gamma_G(i_A,i_B)$, the corollary follows.
+\begin{enoncerm}{Definitions and remarks}{7.2}\label{VIB.7.2}\nde{Point (viii) of the original has been put in (i$'$), and points (vi) and (vii) have been brought out in the form of Corollary 7.2.1 and Definition 7.2.2 below.}
+(i) Given a $k$-group $G$, a family $(X_i)_{i\in I}$ of geometrically reduced $k$-schemes, and, for each $i\in I$, a $k$-morphism $f_i:X_i\to G$, one calls the \emph{closed subgroup scheme of $G$ generated by the family $(f_i)_{i\in I}$}, and in this number we shall denote by $\Gamma_G((f_i)_{i\in I})$, the smallest closed subgroup scheme of $G$ containing each of the $f_i$. If $X$ is a subscheme of $G$, geometrically reduced over $k$, and $f$ is the immersion $X\hookrightarrow G$, one writes $\Gamma_G(X)$ instead of $\Gamma_G(f)$.
+
+(i$'$) With the notation of 7.1 (ii), we shall sometimes put $\Gamma'_G(f)=\bigcup_{n\ge1}f^n(X^n)$. Note that $\Gamma'_G(f)$ is a subset of $G$ stable under the group law (in the sense of 3.0).
+
+(ii) It is clear that if $X_1$ and $X_2$ are two geometrically reduced $k$-schemes and $f_1:X_1\to G$ and $f_2:X_2\to G$ two $k$-morphisms such that the sets $\overline{f_1(X_1)}$ and $\overline{f_2(X_2)}$ are equal, $\Gamma_G(f_1)=\Gamma_G(f_2)$.
+
+(iii) Let $E$ be a subset of $G$ such that the reduced subscheme $\overline E$ of $G$ is geometrically reduced. One calls the \emph{closed subgroup scheme of $G$ generated by $E$}, and denotes by $\Gamma_G(E)$, the subgroup scheme $\Gamma_G(i)$, where $i$ is the injection of the reduced subscheme $\overline E$ of $G$ into $G$.
+
+(iv) Since every subgroup scheme of $G$ is closed, by VIA, 0.5.2,\nde{The hypothesis that $G$ be locally of finite type over $k$ has been removed here.} one will speak of the ``generated subgroup scheme'' instead of the ``generated closed subgroup scheme''.
+
+(v) Let $X$ be a geometrically reduced $k$-scheme and $f:X\to G$ a $k$-morphism. Suppose $f(X)$ contains the identity element $e$ of $G$. Put $X'^1=X\times_kX$ and $f'^1=\mu\circ(f\times_k(c\circ f))$, and, for $n>1$,
+\[
+X'^n=X'^1\times_kX'^{n-1}\quad\text{and}\quad f'^n=\mu\circ(f'^1\times_kf'^{n-1}).
+\]
+Then $\Gamma_G(f)$ is the reduced subscheme of $G$ whose underlying space is the closure of the union of the $f'^n(X'^n)$, for $n\ge1$.
+
+Indeed, recalling the notation of 7.1 (ii), $X^1=X\sqcup X$ and $X^n=X^1\times_kX^{n-1}$ for $n\ge2$, one has the following inclusions, where the first follows from the hypothesis $e\in f(X)$:
+\[
+f^n(X^n)\subset f'^n(X'^n)\subset f^{2n}(X^{2n}),\qquad\text{for every }n\ge1.
+\]
+This shows moreover that, for there to be an integer $n$ such that $f^n(X^n)=\Gamma_G(f)$, it is necessary and sufficient that there be an integer $m$ such that $f'^m(X'^m)=\Gamma_G(f)$.
+\end{enoncerm}
+One deduces from Remark 7.2 (v) the following
+\begin{corollary}{7.2.1}\label{VIB.7.2.1}
+Let $X$ be a geometrically reduced and geometrically connected $k$-scheme, and $f:X\to G$ a $k$-morphism such that $f(X)$ contains the identity element of $G$. Then the $k$-group $\Gamma_G(f)$ is connected, hence irreducible.
+\end{corollary}
+Indeed, every $X'^n$ is then connected, so the union of the $f'^n(X'^n)$ (which all contain the identity element) is connected, and the same holds for its closure $\Gamma_G(f)$. Thus $\Gamma_G(f)$ is irreducible, by VIA, 2.4 (when $G$, hence also $\Gamma_G(f)$, is locally of finite type over $k$) and 2.6.5 (iii) (in the general case).
+\begin{definition}{7.2.2}\label{VIB.7.2.2}
+Let $G$ be a $k$-group.
+\begin{enumeratea}
+\item Let $A$ and $B$ be two geometrically reduced subgroup $k$-schemes of $G$. One calls the \emph{commutator subgroup scheme of $A$ and $B$ in $G$}, and denotes by $(A,B)_G$ or simply $(A,B)$, the closed subgroup scheme of $G$ generated by the morphism $\nu:A\times_kB\to G$ defined by $(a,b)\mto aba^{-1}b^{-1}$, for every $k$-scheme $S$ and $a\in A(S)$, $b\in B(S)$.
+\item Suppose $G$ geometrically reduced over $k$. One calls the \emph{derived group of $G$}, and denotes by $\mathfrak D(G)$,\nde{The notation $\underline{\operatorname{Der}}(G)$ of the original has been changed to avoid any risk of confusion with a space of derivations.} the group $(G,G)$.
+\end{enumeratea}
+N.B. For $G$ to be commutative, it is necessary and sufficient that $\mathfrak D(G)$ be the unit $k$-group.
+\end{definition}
+\begin{enoncerm}{Reminders}{7.3.0}\label{VIB.7.3.0}\nde{These reminders have been added, and the statement of 7.3 modified accordingly and expanded.}
+Recall that if $\phi:Y\to Z$ is a morphism of $S$-schemes, the image presheaf $\phi(Y)$ is the $S$-functor which associates to every $S'$ over $S$ the subset $\phi(Y(S'))$ of $Z(S')$. Observe that if $T$ is a subscheme of $Z$ and the inclusion of presheaves $\phi(Y)\hookrightarrow Z$ factors through $T$, i.e. if $\phi\circ h\in T(S')$ for every $S$-morphism $h:S'\to Y$, one has $\phi(Y)\subset T$ as sets (take $h=\mathrm{id}_Y$), and the converse holds if $Y$ is reduced, for in this case $\phi$ factors through $T$.
+
+Also recall that, by 6.2, if $H$ is a closed subgroup $k$-scheme of $G$, $\uCentr_GH$ and $\uNorm_GH$ are representable by closed subgroup $k$-schemes of $G$.
+\end{enoncerm}
+\begin{corollary}{7.3}\label{VIB.7.3}
+Let $G$ be a $k$-group, $X$ a geometrically reduced $k$-scheme, $f:X\to G$ a $k$-morphism.
+
+(i) Let $S$ be a $k$-scheme and $u$ an endomorphism of the $S$-group $G_S$.
+\begin{enumeratea}
+\item If one has $u(f_S(X_S))\subset\Gamma_G(f)_S$ (as sets), the morphism $u:\Gamma_G(f)_S\to G_S$ factors through $\Gamma_G(f)_S$.
+\item If $u$ is an automorphism of the $S$-group $G_S$ and one has $u(f_S(X_S))=f_S(X_S)$ (as sets), $u$ induces an automorphism of $\Gamma_G(f)_S$. In particular, if an element $g\in G(S)$ satisfies $\mathrm{int}(g)(f_S(X_S))=f_S(X_S)$ (as sets), $g\in\uNorm_{G_S}(\Gamma_G(f)_S)(S)$.
+\item If $u\circ f_S=f_S$, the restriction of $u$ to the subgroup $\Gamma_G(f)_S$ of $G_S$ is the identity. In particular, if an element $g\in G(S)$ satisfies $\mathrm{int}(g)(f_S)=f_S$, $g\in\uCentr_{G_S}(\Gamma_G(f)_S)(S)$.
+\end{enumeratea}
+(ii) Let $H$ be a subgroup scheme of $G$; then $H$ centralizes (resp. normalizes) $\Gamma_G(f)$ if and only if, for every $S\to\Spec k$ and $h\in H(S)$, one has $\mathrm{int}(h)\circ f_S=f_S$ (resp. $\mathrm{int}(h)(f_S(X_S))\subset\Gamma_G(f)_S$), i.e. if, for every $S'\to S$ and $x\in X(S')$, the elements $h_{S'}$ and $f(x)$ of $G(S')$ commute (resp. $h_{S'}f(x)h_{S'}^{-1}\in\Gamma_G(f)(S')$).
+
+(iii) In particular, let $Y$ be a second geometrically reduced $k$-scheme and $\phi:Y\to G$ a $k$-morphism. Suppose that, for every $k$-scheme $S'$ and every $x\in X(S')$ and $y\in Y(S')$, the elements $\phi(y)$ and $f(x)$ of $G(S')$ commute (resp. $\mathrm{int}(\phi(y))(f(x))\in\Gamma_G(f)(S')$).
+
+Then $\Gamma_G(\phi)$ is a $k$-subgroup of $\uCentr_G\Gamma_G(f)$, resp. $\uNorm_G\Gamma_G(f)$.
+
+(iv) If $g$ is a $k$-point of $G$, the $k$-group $\Gamma_G(\{g\})$ is commutative.
+
+(v) Let $A$ and $B$ be two subgroup schemes of $G$ geometrically reduced over $k$. If $A$ and $B$ are invariant (resp. characteristic), so is $(A,B)$.
+\end{corollary}
+\begin{proof}
+(i) Let us prove (a). Put $\Gamma_S=\Gamma_G(f)_S$. Then $u^{-1}(\Gamma_S)$ is a closed subgroup $S$-scheme of $G_S$, so, by 7.1 (iii), it suffices to show that $f_S$ factors through $u^{-1}(\Gamma_S)$. Now, since $u(f_S(X_S))\subset\Gamma_S$ and $X_S$ is reduced, $u\circ f_S$ factors through $\Gamma_S$, so $f_S$ factors through $u^{-1}(\Gamma_S)$. This proves (a).
+% typo?: kept as printed: X_S is said to be reduced for arbitrary S.
+
+Then the first assertion of (b) is a consequence of (a), applied to $u$ and $u^{-1}$ (and in fact it suffices to suppose $u(f_S(X_S))\subset\Gamma_S$ and $u^{-1}(f_S(X_S))\subset\Gamma_S$), and the second assertion is its special case where $u=\mathrm{int}(g)$.
+
+Let us prove (c). Consider the morphism of $S$-groups $G_S\to G_S\times_SG_S$, $g\mto(u(g),g)$ and denote by $H$ the inverse image of the diagonal; it is a subgroup scheme of $G_S$. Since $G$ is separated over $k$ (VIA 0.3), $G_S$ is separated over $S$, so $H$ is closed in $G_S$. Since, by hypothesis, $H$ contains $f_S$, it contains $\Gamma_G(f)_S$, by 7.1 (iii). This proves the first assertion of (c), and the second is its special case where $u=\mathrm{int}(g)$.
+
+Let us prove (ii). Put $\Gamma=\Gamma_G(f)$ and denote by $i$ the inclusion $\Gamma\hookrightarrow G$. Then $H$ is contained in $N=\uNorm_G(\Gamma)$ if and only if, for every $k$-scheme $S$ and $h\in H(S)$, one has $\mathrm{int}(h)(\Gamma_S)\subset\Gamma_S$ (this condition applied to $h$ and $h^{-1}$ implying that $\mathrm{int}(h)(\Gamma_S)=\Gamma_S$); and, by (i)(a), this holds if and only if $\mathrm{int}(h)(f_S(X_S))\subset\Gamma_S$.
+
+Similarly, $H$ is contained in $C=\uCentr_G(\Gamma)$ if and only if, for every $k$-scheme $S$ and $h\in H(S)$, one has $\mathrm{int}(h)\circ i_S=i_S$, and, by (i)(c), this holds if and only if $\mathrm{int}(h)(f_S)=f_S$. This proves (ii).
+
+Let us prove (iii). In view of (ii), the hypothesis implies that $\phi$ factors through $C$ (resp. $N$); since the latter is a closed subgroup of $G$, by 6.2, it therefore contains $\Gamma_G(f)$, by 7.1 (i).
+% typo?: kept as printed: Gamma_G(f) at the end of the proof of (iii), rather than Gamma_G(phi).
+
+Assertion (iv) follows from (iii), taking for $f$ and $\phi$ the closed immersion $\Spec k\hookrightarrow G$ defined by $g$: in this case, for every $k$-scheme $S$, $X(S)$ and $Y(S)$ have only one point, sent by $f$ (resp. $\phi$) to $g$.
+
+Finally let us show (v). Let $\nu$ be the morphism $G\times G\to G$, $(g,h)\mto ghg^{-1}h^{-1}$ and let $\nu'$ be its restriction to $A\times B$; by definition (7.2.2), $(A,B)=\Gamma_G(\nu')$. Let $S$ be a $k$-scheme, and $u$ an inner automorphism (resp. an $S$-group automorphism) of $G_S$. One has $u\circ\nu_S=\nu_S\circ(u\times u)$. On the other hand, the hypothesis implies that $u$ induces an automorphism $u_1$ of $A_S$ (resp. $u_2$ of $B_S$), so
+\[
+u\bigl(\nu'_S(A_S\times_SB_S)\bigr)=\nu'_S\bigl(u_1(A_S)\times_Su_2(B_S)\bigr)=\nu'_S(A_S\times_SB_S).
+\]
+Thus, by (i)(b), $u$ induces an automorphism of $(A,B)_S$. This proves (v).
+\end{proof}
+\begin{proposition}{7.4}\label{VIB.7.4}
+Let $G$ be a $k$-group locally of finite type, $X$ a $k$-scheme of finite type, geometrically reduced and geometrically connected, and $f:X\to G$ a $k$-morphism such that $f(X)$ contains the identity element $e$ of $G$. Then, with the notation of 7.1 (ii), there is an integer $N$ such that one has (as sets):
+\[
+f^N(X^N)=\Gamma_G(f).
+\]
+\end{proposition}
+By 7.1 (iii) and EGA IV$_2$, 2.6.1, we may suppose $k$ algebraically closed. By Corollary 7.2.1, we may suppose $G=G^0$; finally, it suffices to show that there is an integer $N$ such that $f'^N(X'^N)=\Gamma_G(f)$, with the notation of 7.2 (v).
+
+\textbf{First case.} Suppose $X$ irreducible. Then the $\overline{f'^n(X'^n)}$ form an increasing sequence of irreducible closed subsets of the space $G$, which is noetherian, since $G=G^0$ is of finite type over $k$ (VIA 2.4).

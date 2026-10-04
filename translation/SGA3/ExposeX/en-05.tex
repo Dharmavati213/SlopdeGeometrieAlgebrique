@@ -1,0 +1,137 @@
+% PDF pp. 23--29; continuation of statement 5.11.
+(iii) The connected components of $R$ are finite over $S$.
+
+a) Then (i) $\Rightarrow$ (ii) $\Rightarrow$ (iii).\nde{Compare with examples 1.6\dots}
+
+b) One has (i) $\Leftrightarrow$ (ii) $\Leftrightarrow$ (iii) if $S$ is locally noetherian.
+
+c) Finally, (i) $\Leftrightarrow$ (ii) if $R$ is finitely generated (i.e. if $H$ is of finite type over $S$), at least if $S$ is quasi-compact or its connected components are open.
+\end{proposition}
+First decomposing $S$ as a sum prescheme of preschemes $S_i$ on each of which $H$ has constant type (cf. IX 1.4.1), one is reduced to the case where $H$, and hence $R$, has constant type $M$. We shall need the
+\begin{lemma}{5.12}\label{X.5.12}
+Let $S$ be a prescheme, $R$ a twisted constant prescheme over $S$. Then every closed subprescheme $Z$ of $R$ which is quasi-compact over $S$ is finite over $S$.
+\end{lemma}
+Indeed, one is reduced to the case where $R$ is constant, hence of the form $I_S$, where $I$ is a set, hence the increasing filtering union of the $J_S$, where $J$ ranges over the finite subsets of $I$. One may suppose in addition $S$ affine; then $Z$ is quasi-compact, hence contained in one of the $J_S$. Since $J_S$ is finite over $S$, so is $Z$.
+
+Lemma 5.12 already establishes the assertion in parentheses in 5.11 (ii).\nde{The original has been expanded in what follows.} The implication (ii) $\Rightarrow$ (iii) is then clear, since the connected components of $R$ are closed; by 5.11.0 they are open and closed if $S$ is locally noetherian ($R$ being étale, hence locally of finite type over $S$), whence (iii) $\Rightarrow$ (ii) in this case.
+
+Let us prove (i) $\Rightarrow$ (ii). For this, let $S'\to S$ be a finite surjective étale morphism splitting $H$, and hence $R$ (cf. 5.3), so that $R'$ is isomorphic to $M_{S'}=\coprod_{m\in M}R'_m$, where the $R'_m$ are disjoint open subsets of $R'$, $S'$-isomorphic to $S'$. Let $g:R'\to R$ be the projection, which is a finite surjective étale morphism, hence an open and closed morphism; then the $R_m=g(R'_m)$ are subsets both open and closed in $R$, and evidently quasi-compact over $S$ since the $R'_m$ are so.
+
+Finally, suppose $H$ of finite type over $S$, and let us prove (ii) $\Rightarrow$ (i). The case where the connected components of $S$ are open reduces immediately to the case where $S$ is connected, so one may suppose $S$ quasi-compact or connected. Since $M$ is finitely generated, one may write $M=\ZZ^r\times N$, where $r$ is an integer $\geq0$ and $N$ a finite abelian group. Let $G=D_S(M)$; consider the preschemes
+\[
+P=\underline{\Isom}_{S\text{-}\mathrm{gr.}}(H,G)\subset\uHom_{S\text{-}\mathrm{gr.}}(H,G)=Q,
+\]
+cf. 5.8 and 5.10. One has isomorphisms
+\[
+\begin{aligned}
+Q&\simeq\uHom_{S\text{-}\mathrm{gr.}}(M_S,R)\\
+&\simeq\uHom_{S\text{-}\mathrm{gr.}}(\ZZ^r_S,R)\times\uHom_{S\text{-}\mathrm{gr.}}(N_S,R)\simeq R^r\times E,
+\end{aligned}
+\]
+where $E=\uHom_{S\text{-}\mathrm{gr.}}(N_S,R)$ is finite over $S$.\nde{For it is a twisted constant group of type $\End_{\mathrm{gr.}}(N)$ (cf. 5.6 and 5.8).} It follows that $Q$ is a union of subpreschemes $Q_i$ both open and closed and finite over $S$. Thus $P$ is the union of the subpreschemes $P_i=P\cap Q_i$, both open and closed and finite over $S$. Since they are étale over $S$, their images in $S$ are subsets $S_i$ both open and closed, and they cover $S$. If $S$ is connected or quasi-compact, there therefore exists a finite set of indices $i$ such that the $S_i$ cover $S$; let $S'$ be the union of the corresponding $P_i$. Then $S'\to S$ is finite surjective étale, and putting $P'=P\times_S S'=\underline{\Isom}_{S'\text{-}\mathrm{gr.}}(H',G')$, one sees that $P'$ has a section over $S'$, so there exists an isomorphism of $S'$-groups
+\[
+H'=H\times_S S'\isomto G'=G\times_S S'=D_{S'}(M),
+\]
+which proves that $S'$ splits $H$. This completes the proof of 5.11.\nde{Modulo verification that (ii) $\Rightarrow$ (i) when $S$ is locally noetherian and $R$ is not finitely generated\dots}
+\begin{remark}{5.11 bis}\label{X.5.11bis}
+Let us note moreover that when $H$ is of finite type over $S$ and of constant type one may give the following isotriviality criterion (where it is no longer necessary to impose any restriction on $S$): $H=D_S(R)$ is isotrivial if and only if $R$ is a union of a sequence of subsets both open and closed and finite over $S$.\nde{Expand this point: $M$ being a $\ZZ$-module of finite type, it is countable, and the proof of 5.11 (i) $\Rightarrow$ (ii) shows that $R$ is a union of a countable family of open and closed subsets finite over $S$. One should see the converse\dots}
+\end{remark}
+\begin{lemma}{5.13}\label{X.5.13}
+Let $S$ be a locally noetherian connected prescheme, $P$ a quasi-isotrivial twisted constant $S$-prescheme, $Z$ an open and closed subset of $P$ such that there exists an $s\in S$ with $Z_s$ finite. Then $Z$ is finite over $S$.
+\end{lemma}
+Let us not initially suppose $S$ connected: let $U$ be the set of $s\in S$ such that $Z_s$ is finite; we shall prove that $U$ is both open and closed, and that $Z|U$ is finite over $U$. This is evidently a statement essentially equivalent to 5.13 but with the advantage of being ``of local nature'' on $S$ for the étale topology (say), which reduces us to the case where $P$ is constant, i.e. of the form $I_S$, where $I$ is a set. (N.B. The locally noetherian hypothesis is not lost by an étale base change; this is where one uses the quasi-isotriviality of $P$ over $S$.)
+
+One may suppose in addition $S$ connected, since its connected components are open ($S$ being locally noetherian). But then one necessarily has $Z=J_S$, where $J$ is a subset of $I$, and hence $U=\varnothing$ or $U=S$ according as $J$ is infinite or finite, which gives the desired conclusion.
+\begin{enoncerm}{Recollections}{5.14.0}\label{X.5.14.0}
+\nde{The original treated in 5.14 the case where $S$ is locally noetherian and normal, and pointed out in Remark 5.15 that the argument applies more generally if one merely supposes $S$ geometrically unibranch instead of normal. The statement of 5.14 (and also 5.16) has been modified accordingly, and these ``recollections'' taken from EGA IV$_4$, 18.10.6 and 18.10.7 have been added, showing that the proof of 5.14 applies verbatim to the geometrically unibranch case.} Let $S$ be a locally noetherian prescheme, and let $\widetilde S$ be the normalization of $S_{\mathrm{red}}$ (cf. EGA II, 6.3.8). Recall that $S$ is said to be \emph{geometrically unibranch} (cf. EGA $0_{\mathrm{IV}}$, \S23.2 and IV$_2$, \S6.15) if the canonical morphism $\widetilde S\to S$ is radicial (and hence a universal homeomorphism); in particular, the connected components of $S$ are irreducible.
+
+Suppose then $S$ connected, hence irreducible; let $\eta$ be its generic point and let $f:P\to S$ be a flat and locally quasi-finite morphism. Let $P_i$ be the irreducible components of $P$, and $\xi_i$ the generic point of $P_i$. Since $P$ is flat over $S$, each $\xi_i$ lies over $\eta$ (cf. EGA IV$_2$, 2.3.4), and therefore $(P_i)_\eta=P_i\cap P_\eta$ is the closure of $\xi_i$ in $P_\eta$. Since the fiber $P_\eta$ is discrete, one therefore has $(P_i)_\eta=\{\xi_i\}$. This applies in particular when $f$ is étale; in this case $P$ is also locally noetherian and geometrically unibranch (cf. EGA IV$_4$, 17.5.7), so its irreducible components are its connected components and are open (and closed).
+\end{enoncerm}
+\begin{corollary}{5.14}\label{X.5.14}
+Let $S$ be a locally noetherian geometrically unibranch prescheme, $P$ a quasi-isotrivial twisted constant $S$-prescheme. Then the connected components of $P$ are finite over $S$.
+\end{corollary}
+One may evidently suppose $S$ connected, hence irreducible; let $\eta$ be its generic point. By the preceding, each connected component $P_i$ of $P$ is open and closed and meets the fiber $P_\eta$ in a single point. Thus 5.13 applies and shows that each $P_i$ is finite over $S$.
+\begin{theorem}{5.16}\label{X.5.16}
+\nde{Remark 5.15, rendered obsolete by addition 5.14.0 (cf. the preceding N.D.E.), has been deleted, and in 5.16 ``normal'' has been replaced by ``geometrically unibranch''.} Let $S$ be a locally noetherian geometrically unibranch prescheme. Then every $S$-group of multiplicative type and of finite type is isotrivial.
+\end{theorem}
+Indeed, one may suppose $S$ connected, hence $H$ of constant type $M$. It suffices to apply 5.14 to $P=\underline{\Isom}_{S\text{-}\mathrm{gr.}}(H,G)$, where $G=D_S(M)$, then to argue as in the proof of 5.11 (ii) $\Rightarrow$ (i). One may also apply 5.14 to $P=R=D_S(H)$ (cf. 5.9), then use 5.11.
+
+\sgasection{6}{Infinite Galois principal coverings and the enlarged fundamental group}
+(The results of the present \No\ and the next will no longer be used in the rest of this Seminar.)
+
+Let $S$ be a prescheme; we propose to determine the principal homogeneous bundles $P$ over $S$ with structural group of the form $G_S$, the constant $S$-group defined by an ordinary group $G$ (not necessarily finite), which one shall also call \emph{Galois principal bundles over $S$ with group $G$}. We take ``principal bundle'' in the sense of the faithfully flat and quasi-compact topology (cf. Exp. IV, Def. 5.1.5), but one will note that for such a $P$, the structural morphism $P\to S$ is necessarily étale and surjective, hence covering for the étale topology, so $P$ is also locally trivial for the étale topology (cf. IV, Prop. 5.1.6).\nde{Note that $P$ is supposed to be a prescheme --- in the a priori more general case of an (fpqc) sheaf $P$ which is a $G_S$-torsor, is $P$ necessarily representable?}
+
+We shall suppose that $S$ is a sum of connected preschemes, i.e. that its connected components are open, which reduces us immediately to the case where $S$ is connected. We shall then choose a ``geometric point'' $\xi$ of $S$, i.e. an $S$-scheme $\xi$ which is the spectrum of an algebraically closed field $\Omega=\kappa(\xi)$. Then for every Galois principal bundle $P$ over $S$ with group $G$, $P_\xi$ is a Galois principal bundle over the algebraically closed field $\kappa(\xi)$, and hence trivial. We shall therefore specify the initial problem by proposing to determine the category of Galois principal bundles over $S$ pointed over $\xi$, i.e. endowed with an $S$-homomorphism $\xi\to P$, i.e. with a trivialization of $P_\xi$. For fixed $G$, the set of classes of such bundles up to an isomorphism respecting the base point will be denoted by $\pi^1(S,\xi;G)$. Then the set $\pi^1(S;G)$ of isomorphism classes of Galois principal bundles over $S$ with group $G$ (without specified base point) is isomorphic to the set of orbits of $G$ in $\pi^1(S,\xi;G)$ (taking account of the natural operations of $G$ on this set, corresponding to translation by $G$ of the marked point in a pointed Galois principal bundle $P$):
+\[
+\pi^1(S;G)=\pi^1(S,\xi;G)/G.
+\]
+For every morphism $S'\to S$ which is a morphism of universal effective descent for the fibered category of twisted constant preschemes over a variable base (for example $S'\to S$ faithfully flat and locally of finite presentation, cf. 5.4; for other examples cf. SGA 1 IX), we propose to determine the subsets of the preceding sets, denoted by $\pi^1(S'/S,\xi;G)$ and $\pi^1(S'/S;G)$, consisting of Galois principal bundles over $S$ which become trivial over $S'$ (or, as one says, are ``split'' by $S'$). One will in fact determine the category of Galois principal bundles $P$ over $S$ split by $S'$. Of course, one shall then have
+\[
+\pi^1(S,\xi;G)=\varinjlim_{S'}\pi^1(S'/S,\xi;G),
+\]
+where on the right-hand side $S'$ ranges over a cofinal system in the set of $S'/S$ covering for the étale topology (for example, when $S$ is quasi-compact, the set of $S'$ over $S$ which are quasi-compact with étale and surjective structural morphism). Similarly, the category of Galois principal bundles over $S$ will be the inductive limit of the subcategories defined by the $S'$ (consisting of bundles split over $S'$).
+
+Thanks to the hypothesis on $S'/S$, the category of Galois principal bundles over $S$ split by $S'$ is equivalent to the category of trivial Galois principal bundles over $S'$ (hence of the form $G_{S'}$, where $G$ acts by right translations), endowed with a descent datum relative to $S'\to S$. Giving a base point on a Galois principal bundle $P$ over $S$ split by $S'$ amounts, in terms of the corresponding trivial bundle $P'$ over $S'$ and its descent datum, to giving a trivialization of $P'\times_{S'}S'_\xi$ compatible with the induced descent datum relative to $S'_\xi\to\xi$ (N.B. One has put $S'_\xi=S'\times_S\xi$), i.e. a section $\sigma$ of $P'_\xi$ over $S'_\xi$ compatible with the descent datum. It is then useful, for any $S$-prescheme $S'$ (for which one no longer supposes that $S'\to S$ is a morphism of universal effective descent for the fibered category of twisted constant bundles\dots), to define $\pi^1(S'/S;G)$ and $\pi^1(S'/S,\xi;G)$ as the set of isomorphism classes of the structures with descent data just specified. One then obtains for these functors in $G$ a very simple simplicial description, in terms of the fibered square and cube $S'',S'''$ of $S'$ over $S$, which we shall sketch below (cf. 6.3).
+
+The important conclusion to retain will be the following:
+\begin{proposition}{6.1}\label{X.6.1}
+Suppose that the connected components of $S'$ and $S''$ are open, and, for example, that the quotient set of $\pi_0(S')$ by the equivalence relation induced by the two projections $\pi_0(S'')\to\pi_0(S')$ consists of one point.\nde{The hypothesis that the connected components of $S'$ are open has been added, as has the second hypothesis. The latter means that the simplicial set $\mathbf K_\bullet=\pi_0(S_\bullet)$ defined in 6.3 is connected; in fact a weaker hypothesis suffices, namely that the cone $\widetilde{\mathbf K}_\bullet$ of a certain morphism of simplicial sets $\mathbf k_\bullet\to\mathbf K_\bullet$ be connected (cf. loc. cit.).}
+
+(i) The functor $G\mto\pi^1(S'/S,\xi;G)$ from the category of groups to the category of sets is representable by a group, denoted by $\pi_1(S'/S,\xi)$ and called the fundamental group of $S$ at $\xi$ relative to $S'\to S$. One therefore has a functorial bijection:
+\[
+\pi^1(S'/S,\xi;G)\simeq\Hom_{\mathrm{gr.}}(\pi_1(S'/S,\xi),G).
+\]
+(ii) This group has a set of generators in bijection with $\pi_0(S'')$, and is described in terms of these generators by relations in bijection with the elements of $\pi_0(S''')$.\nde{The superfluous hypothesis that the connected components of $S'''$ are open has been deleted. On the other hand, the description given below (cf.\dots) gives as natural set of generators the set $\pi_0(S'')\coprod\pi_0(S'_\xi)$; one then reduces to $\pi_0(S'')$ by means of the relations between these generators coming from the 2-cells. See, for example, [Kan58], \S19 for a finer description.} In particular, $\pi^1(S'/S,\xi)$ is finitely generated (resp. of finite presentation) if $\pi_0(S'')$ (resp. as well as $\pi_0(S'')$) is finite.
+% typo?: pi^1 and repeated S'' rather than S''' retained as printed.
+(iii) The category of Galois principal bundles over $S$ split by $S'$, with base point over $\xi$, is equivalent to the category of ordinary groups $G$ endowed with a homomorphism from $\pi_1(S'/S,\xi)$ to $G$.
+\end{proposition}
+The proof is given below, cf.\dots
+
+\numpara{6.2}
+When $S$ is a connected locally noetherian prescheme, which implies that every étale prescheme $S'$ over $S$ is locally noetherian and hence has open connected components, one concludes from the preceding\nde{One could expand this deduction; $I$ is in bijection with a cofinal set of morphisms $S'\to S$ covering for the étale topology\dots} that the functor $G\mto\pi^1(S,\xi;G)$ from the category of ordinary groups to the category of sets is strictly pro-representable (cf. Séminaire Bourbaki, February 1960, \No195, \S\S A.2 and A.3), i.e. there exists a projective system
+\[
+\Pi=\Pi_1(S;\xi)=(\pi_i)_{i\in I}
+\]
+of ordinary groups over an increasing filtering index set $I$ which is ``strict'' (i.e. with surjective transition morphisms $\pi_j\to\pi_i$), and an isomorphism of functors in $G$
+\[
+\pi^1(S,\xi;G)\simeq\varinjlim_i\Hom_{\mathrm{gr.}}(\pi_i,G).
+\]
+The right-hand side is also simply denoted by $\Hom_{\mathrm{pro}\text{-}\mathrm{gr.}}(\Pi,G)$ (cf. loc. cit.).
+
+In the case where the projective limit $\pi=\varprojlim\pi_i$ is ``sufficiently large'', more precisely when the canonical homomorphisms $\Pi\to\Pi_i$ are surjective, there is occasion to endow $\Pi$ with the projective limit topology of the discrete topologies of the $\Pi_i$, and the preceding isomorphism is also written:
+\[
+\pi^1(S,\xi;G)\simeq\Hom_{\mathrm{gr.\ top.}}(\pi,G),
+\]
+where the right-hand side denotes the set of homomorphisms of topological groups, it being understood that $G$ is endowed with the discrete topology.
+% typo?: capital Pi rather than pi in the preceding description retained as printed.
+The hypothesis just formulated on the projective system $\Pi$ is satisfied, as is well known, when the $\pi_i$ are finite groups (cf. [BEns], III \S7.4, Th. 1). This latter condition evidently also means that every Galois principal bundle over $S$ is isotrivial, i.e. split by a finite surjective étale morphism. This is the case when $S$ is geometrically unibranch (for example normal), as follows immediately from 5.14.\nde{5.13 has been corrected to 5.14.} In the case where the $\pi_i$ are finite, the group $\pi$ also coincides with the fundamental group $\pi_1(S,\xi)$ introduced in SGA 1, V.
+
+Thus, in the favorable case ($\pi\to\pi_i$ surjective), one could call $\pi$ the \emph{enlarged fundamental group} of $S$ at $\xi$. Outside this favorable case, $\pi$ itself is of little interest, and the role of the usual fundamental group is played by the projective system $\Pi$ itself, which one shall call the \emph{enlarged fundamental pro-group} of $S$ at $\xi$. (Any terminological suggestion better than ``enlarged'' is welcome!\nde{Some authors speak of the ``true'' fundamental group.}) One will note that knowledge of this pro-group is more precise than that of the usual fundamental group $\pi_1(S,\xi)$ of SGA 1 V; more precisely, the latter is the projective limit of the projective system consisting of the finite quotients of the $\pi_i$.
+
+\numpara{6.3}
+Let us indicate briefly the ``calculation'' of $\pi_1(S'/S,\xi)$. Let $S_i$ be the $(i+1)$-st fibered power of $S'$ over $S$ (i.e. $S_0=S'$, $S_1=S''$, etc.). There are evident simplicial operations between the $S_i$, making $(S_i)_{i\in\NN}$ a simplicial object of $\Sch_{/S}$.
+
+Transforming this simplicial object by the functor ``set of connected components''
+\[
+\pi_0:\Sch_{/S}\to\Ens,
+\]
+one finds a simplicial set $\mathbf K_\bullet=(K_i)_{i\in\NN}$, with $K_i=\pi_0(S_i)$.
+
+Similarly, the $S_{i\xi}$ ($=$ the $(i+1)$-st fibered power of $S'_\xi$ over $\xi$) form a simplicial object of $\Sch_{/\xi}$, hence of $\Sch_{/S}$, moreover endowed with a natural homomorphism of simplicial objects into $(S_i)_{i\in\NN}$, whence a simplicial set $\mathbf k_\bullet$ (with $k_i=\pi_0(S_{i\xi})$) and a canonical homomorphism
+\[
+\mathbf k_\bullet\to\mathbf K_\bullet.
+\]
+We may form a new simplicial set by taking the cone of this morphism (cf. 9.5.1):
+\[
+\widetilde{\mathbf K}_\bullet=\operatorname{Cone}(\mathbf k_\bullet\to\mathbf K_\bullet).
+\]
+\nde{The original has been corrected: it considers $\widetilde{\mathbf K}_\bullet=\mathbf K_\bullet/\mathbf k_\bullet$, whereas on the one hand $\mathbf k_\bullet$ is already contractible (cf. 9.7.1), and on the other hand the morphism $\mathbf k_\bullet\to\mathbf K_\bullet$ is not in general injective. It is an epimorphism if $S'/S$ is finite étale (cf. 9.7.3).} In this way one obtains a ``pointed simplicial set'' $\widetilde{\mathbf K}_\bullet$ (i.e. a simplicial set endowed with a homomorphism $\widetilde\xi:\mathbf e_\bullet\to\widetilde{\mathbf K}_\bullet$, where $\mathbf e_\bullet$ is the final simplicial set). We may construct its well-known combinatorial invariants $\pi_0(\widetilde{\mathbf K}_\bullet,\widetilde\xi)$ and $\pi_1(\widetilde{\mathbf K}_\bullet,\widetilde\xi)$, whose construction moreover involves only the components of degree $\leq1$ resp. of degree $\leq2$. These invariants are defined without restriction on $S$ or $S'$. One verifies without difficulty, when the connected components of $S_0,S_1$ are open and $\widetilde{\mathbf K}_\bullet$ is connected,\nde{The hypothesis that $\widetilde{\mathbf K}_\bullet$ is connected has been added; for the proof, see the addenda below (section 9).} that $\pi_1(\widetilde{\mathbf K}_\bullet,\widetilde\xi)$ represents the functor $G\mto\pi^1(S'/S,\xi;G)$, i.e. that one has:
+\[
+\pi_1(S'/S;\xi)\simeq\pi_1(\widetilde{\mathbf K}_\bullet,\widetilde\xi).
+\]
+Let us also point out that when the morphism $S'\to S$ is ``universally submersive'' (cf. SGA 1, IV 2.1), and the connected components of $S'$ are open,\nde{What follows has been modified, taking account of the correction made above, cf. N.D.E. (53). (The original was: ``$\pi_0(\widetilde{\mathbf K}_\bullet,\widetilde\xi)$ is also canonically isomorphic to the set $\pi_0(S,\xi)$ of connected components of $S$, pointed by the connected component of $\xi$ in $S$''.)} the simplicial set $\mathbf K_\bullet$, and hence also $\widetilde{\mathbf K}_\bullet$, is connected.
+\begin{examples}{6.4}\label{X.6.4}
+It remains to give examples of enlarged fundamental groups. Return to examples 1.6, i.e. let $k$ be an algebraically closed field, $C_1$ a complete rational curve over $k$ having exactly one singular point, this point being an ordinary double point, and $C_2$ a curve which is a union of two irreducible components isomorphic to $\mathbb P^1_k$ and meeting at exactly two points, which are ordinary double points of $C_2$. In either case the enlarged fundamental group of the curve is isomorphic to $\ZZ$.\nde{One could expand this: first, in view of 5.14, the enlarged fundamental group of the projective line $\mathbb P^1_k$ is zero, i.e. $\mathbb P^1_k$ is ``truly'' simply connected. Then one should extend to the case of the enlarged fundamental group and of the category of principal bundles (not necessarily finite) Corollary 5.4 of SGA 1 IX and the discussion following it. (Let $\Gamma_1,\Gamma_2$ be two copies of $\mathbb P_k$, $a_i,b_i$ two distinct points of $\Gamma_i$, $C''_2$ the disjoint union of $\Gamma_1,\Gamma_2$, $C'_2$ the curve obtained by identifying $a_1$ with $a_2$; then $C_2$ is obtained from $C'_2$ by further identifying $b_1$ with $b_2$. The discussion following loc. cit., extended to the enlarged case, then shows that the enlarged fundamental group of $C'_2$ (resp. $C_2$) is zero (resp. $\ZZ$).)}
+
+In general, there would be occasion to reconsider (simplifying and correcting them) the results of SGA 1 IX 5 in the setting of the enlarged fundamental group. The examples of loc. cit., 5.5 would give as many examples of enlarged fundamental pro-groups which are not profinite. Thus, if instead of an ordinary double point one took in the first example a double point with $n$ distinct branches,\nde{This is an $n$-fold point with $n$ distinct tangents, for example the curve $X^n-Y^n=X^{n+1}$.} one would find as enlarged fundamental group the free (discrete!) group on $n-1$ generators.
+\end{examples}

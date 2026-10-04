@@ -1,0 +1,226 @@
+\begin{corollary}{2.6.2}\label{VIA.2.6.2}
+$C^0$ is geometrically irreducible over $k$ and is stable set-theoretically under the group law, i.e. $(C^0_{k'})_{\mathrm{red}}$ is a subgroup of $(G_{k'})_{\mathrm{red}}$. Consequently $C^0$ is quasi-compact.
+\end{corollary}
+Indeed, by 2.6.1, $C^0$ is geometrically irreducible over $k$, so $C^0\times C^0$ is irreducible, hence $\nu(C^0\times C^0)\subset C^0$, where $\nu$ denotes the morphism $(g,h)\mto gh^{-1}$. Since $\Spec k'\to\Spec k$ is a universal homeomorphism, one has the same conclusion for $C^0_{k'}$, then for $H=(C^0_{k'})_{\mathrm{red}}$, and hence, since $H\times_{k'}H$ is reduced, $\nu$ induces a morphism $H\times_{k'}H\to H$, i.e. $H$ is a subgroup of $(G_{k'})_{\mathrm{red}}$. Consequently, by 0.5.1, $H$ (and therefore also $C^0$) is quasi-compact.
+\begin{enoncerm}{Recall}{2.6.3}\label{VIA.2.6.3}
+Let $Y$ be a scheme. Recall (EGA $0_{\mathrm{III}}$, 9.1.1) that a subset $E$ of $Y$ is said to be retrocompact if the inclusion $E\hookrightarrow Y$ is quasi-compact, and that, by EGA IV$_1$, 1.9.5 (v) and 1.10.1, if $U$ is a retrocompact open subset of $Y$, the closure $\overline U$ of $U$ is the union of the closures $\overline{\{y\}}$ of the points $y\in U$, and of course it suffices to let $y$ range over the maximal points of $U$, i.e. the maximal points of $Y$ contained in $U$.
+
+Consequently, if $Y$ is quasi-separated and $\eta$ a maximal point of $Y$, the intersection of the closed neighborhoods of $\eta$ equals $\overline{\{\eta\}}$: indeed, if $y\in Y-\overline{\{\eta\}}$, $y$ is contained in an affine open subset $V$ not containing $\eta$; since $Y$ is quasi-separated, $V$ is retrocompact, so $\overline V$ is the union of the $\overline{\{\xi\}}$ as $\xi$ ranges over the maximal points of $Y$ belonging to $V$, and therefore $\eta\notin\overline V$, i.e. $Y-\overline V$ is a closed neighborhood of $\eta$ not containing $y$.
+% typo?: kept as printed: Y minus Vbar called a closed neighborhood.
+\end{enoncerm}
+\begin{proposition}{2.6.4}\label{VIA.2.6.4}
+Let $X$ be a $G$-scheme satisfying $(\star)$, and let $U$ be an open subset of $X$.
+\begin{enumeratei}
+\item $C^0U$ is an open subset of $X$, equal to the union of the irreducible components of $X$ whose generic point belongs to $U$.
+\item[(i')] Consequently, if $X$ is irreducible, it is quasi-compact.
+\item If moreover $U$ is retrocompact in $X$, $C^0U$ equals $\overline U$, hence is an open and closed subset of $X$.
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+(i) First, $C^0U$ is open, since it is the union, for $g\in C^0$, of the projections of the open subsets $g\cdot U_{\kappa(g)}\subset X_{\kappa(g)}$, and each projection $X_{\kappa(g)}\to X$ is open.
+
+To prove the second assertion of (i), one can replace $k$ by $k'$ (since $\Spec k'\to\Spec k$ is a universal homeomorphism), hence suppose $k$ perfect. One can then suppose $G$ and $X$ reduced, hence geometrically reduced.
+
+Let $\eta$ be a maximal point of $X$ contained in $U$, and $Z$ its closure. Consider the morphism $\mu':C^0\times Z\to X$. Since $C^0$ is geometrically irreducible, $C^0\times Z$ is irreducible; denote its generic point by $\gamma$. Since $\mu'$ sends the point $\varepsilon(\eta)$ (where $\varepsilon$ denotes the unit section of $C^0$) to $\eta$, $\gamma$ is sent to a generalization of $\eta$, hence to $\eta$. Thus $\mu'$ sends the underlying space of $C^0\times Z$ into $Z$, and hence, since $C^0\times Z$ is reduced, $\mu'$ factors through $Z$.
+
+Now let $z\in Z$. Put $K=\kappa(z)$; then the morphism $\mu_z:G_K\to X_K$, $h\mto h\cdot z$, is surjective; let $\alpha$ be a maximal point of $X_K$; the local ring $\OO_{X_K,\alpha}$ is a field, since $X_K$ is reduced, so $\mu_z$ is flat at every point of $G_K$ above $\alpha$, and therefore $\mu_z$ is flat by Lemma 2.5.3.
+
+On the other hand, $\mu_z$ sends the generic point $\omega$ of $C^0_K$ to a point $t\in Z_K$. Let $\beta$ be a maximal point of $Z_K$ such that $t\in\overline{\{\beta\}}$; since $\mu_z$ is flat, there exists a generalization $\xi$ of $\omega$ such that $\mu_z(\xi)=\beta$, and, since $\omega$ is a maximal point of $G_K$, necessarily $\xi=\omega$, so $\mu_z(\omega)$ equals $\beta$, which lies above $\eta$ (since $Z_K\to Z$ is flat).
+
+Put $L=\kappa(\omega)$ and let $\omega_L,z_L$ be the $L$-points obtained from $\omega,z$; then $\omega_L\cdot z_L=\beta'$ is a point of $Z_L$ above $\beta$, and therefore $z_L=\omega_L^{-1}\cdot\beta'\in C^0_L\cdot U_L$, whence $z\in C^0\cdot U$. This proves (i).
+
+Since $C^0$ is quasi-compact by 2.6.2, point (i') follows: if $X$ is irreducible and $U$ a nonempty affine open subset, $X$ equals $C^0U$, i.e. is the image of the morphism $C^0\times U\to X$, hence is quasi-compact. Finally, if $U$ is retrocompact in $X$, by 2.6.3, $\overline U$ is the union of the $\overline{\{\eta\}}$ as $\eta$ ranges over the maximal points of $X$ contained in $U$, hence equals $C^0U$. This proves (ii).
+\end{proof}
+One then obtains the following result ([Per75] II Th. 2.4; see also [Per76], Prop. 4.1.1):
+\begin{theorem}{2.6.5}\label{VIA.2.6.5}
+Let $k$ be a field and $G$ a $k$-group scheme.
+\begin{enumeratei}
+\item There exists a unique subgroup scheme $G^0$ of $G$, called the neutral component of $G$, such that:
+\begin{enumeratea}
+\item The underlying space of $G^0$ is the irreducible component of the neutral element.
+\item $G^0\to G$ is a flat closed immersion, i.e. $\OO_{G,g}=\OO_{G^0,g}$ for every $g\in G^0$.
+\end{enumeratea}
+\item Moreover, $G^0$ is quasi-compact, geometrically irreducible, and a characteristic subgroup of $G$.
+\item If $G$ is connected, then $G=G^0$.
+\end{enumeratei}
+\end{theorem}
+\begin{proof}
+(i) First recall that $G$ is separated (0.3), hence a fortiori quasi-separated. Let $U$ be an affine open subset of $G$ containing the generic point $\omega$ of $C^0$. By 2.6.3 and 2.6.4, $\overline U=C^0U$ is both open and closed, and $C^0=\overline{\{\omega\}}$ is set-theoretically the intersection of these open and closed subsets.
+
+As $U$ ranges over the affine open subsets containing $\omega$, one obtains a projective system of $G$-schemes $\overline U$, whose transition morphisms are affine (since they are closed immersions). One can therefore form its projective limit $G^0$ (cf. EGA IV$_3$, 8.2.2), i.e. for every affine open subset $V$ of $G$, $G^0\cap V$ is the spectrum of the algebra
+\[
+\varinjlim_{\overline U}\OO_G(V\cap\overline U)=\OO_G(V)/\sum_{\overline U}I_{\overline U}(V),
+\]
+where $I_{\overline U}(V)$ denotes the kernel of $\OO_G(V)\to\OO_G(V\cap\overline U)$. It follows that $G^0$ has underlying space $C^0$ and $G^0\to G$ is a closed immersion. Moreover, for every $g\in G^0$, $\OO_{G^0,g}$ is the inductive limit, as $V$ ranges over the affine open subsets of $G$ containing $g$, of the $k$-algebras $\OO_{G^0}(V\cap G^0)=\varinjlim_{\overline U}\OO_G(V\cap\overline U)$, and this double inductive limit is identified with
+\[
+\varinjlim_{\overline U}\ \varinjlim_{\substack{V\\g\in V\subset\overline U}}\OO_G(V)=\OO_{G,g},
+\]
+i.e. one has $\OO_{G^0,g}=\OO_{G,g}$ (see also EGA IV$_2$, 5.13.3 (ii)). Thus $i:G^0\to G$ is a flat closed immersion. Conversely, this condition implies $i^*(\OO_G)=\OO_{G^0}$, and hence $G^0$ is uniquely determined by conditions (a) and (b). This proves (i).
+
+The first two assertions of (ii) follow from 2.6.2. Finally, let $S$ be a $k$-scheme and $\varphi$ an automorphism of the $S$-group $G_S$. For every $s\in S$, $\varphi_s$ sends $G^0_{\kappa(s)}$ into itself, hence $\varphi(G^0_S)\subset G^0_S$. Moreover, the closed immersion $i_S:G^0_S\hookrightarrow G_S$ obtained from $i$ by base change is flat, so $\OO_{G_S,\varphi(z)}=\OO_{G^0_S,\varphi(z)}$ for every $z\in G^0_S$, and hence $\varphi\circ i_S$ factors through $G^0_S$. This proves that $G^0$ is a characteristic subgroup of $G$, whence (ii). Finally, (iii) is a special case of point (i) of the following proposition.
+\end{proof}
+\nde{This proposition (as well as the preceding results) was communicated to us by O. Gabber; it will be used to correct the proof of Theorem 5.3 of VIB.}
+\begin{proposition}{2.6.6}\label{VIA.2.6.6}
+Let $k$ be a field and $G$ a $k$-group acting on a $k$-scheme $X$ so that the morphism $G\times X\to X\times X$, $(g,x)\mto(gx,x)$, is surjective. Suppose $X$ quasi-separated. Then:
+\begin{enumeratei}
+\item Every connected component $C$ of $X$ is irreducible.
+\item Let $\eta$ be the generic point of $C$ and $L$ the algebraic closure of $k$ in $\kappa(\eta)$. Then $C$ is an $L$-scheme, geometrically irreducible over $L$, and the morphism
+\[
+G^0_L\times_LC\to C\times_LC
+\]
+is surjective.
+\item In particular, if $C$ contains a rational point $x$, $C$ is geometrically irreducible over $k$, and the morphism $\varphi:G^0\to C$, $g\mto gx$, is surjective.
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+(i) Let $C$ be a connected component of $X$, $Y$ an irreducible component of $X$ contained in $C$, $\eta$ the generic point of $Y$, and $U$ an affine open subset of $X$ containing $\eta$. Since $X$ is quasi-separated, $U$ is retrocompact in $X$, so, by 2.6.4, $\overline U=G^0U$ is an open and closed subset of $X$ meeting $C$, hence contains $C$. Now, by 2.6.3, the intersection of the $\overline U$, as $U$ ranges over a fundamental system of affine open neighborhoods of $\eta$, equals $\overline{\{\eta\}}$. It follows that $C=\overline{\{\eta\}}$. This proves (i).
+
+The first assertion of (ii) (and also of (iii)) follows from 2.6.1. Let us begin by showing the second assertion of (iii). Denote by $\omega$ (resp. $\eta$) the generic point of $G^0$ (resp. $C$). Let $z\in C$ and $K=\kappa(z)$. Since $G^0$ (resp. $C$) is geometrically irreducible over $k$, $G^0_K$ (resp. $C_K$) is irreducible; denote its generic point by $\xi$ (resp. $\beta$). We have seen in the proof of 2.6.4 that the morphism $\mu_z:G_K\to C_K$, $h\mto h\cdot z$, sends $\xi$ to $\beta$, and similarly $\varphi(\omega)=\eta$.
+
+Let $L=\kappa(\xi)$ and let $\xi_L,z_L$ be the $L$-points obtained from $\xi,z$; then $\xi_L\cdot z_L=\beta'$ is a point of $C_L$ above $\beta\in C_K$, hence also above $\eta\in C$. Consider the cartesian square:
+\[
+\xymatrix{G^0_L\ar[r]^{\varphi_L}\ar[d]_{\pi_{G^0}}&C_L\ar[d]^{\pi_C}\\G^0\ar[r]_\varphi&C,}
+\]
+since $\varphi_L(\pi_{G^0}^{-1}(\omega))=\pi_C^{-1}(\eta)$ (cf. EGA I, 3.4.8), there exists $g\in G^0_L$ such that $\varphi_L(g)=\beta'$. Thus $z_L=\xi_L^{-1}\cdot\varphi_L(g)=\varphi_L(\xi_L^{-1}g)$, whence $\varphi(\pi_{G^0}(\xi_L^{-1}g))=\pi_C(z_L)=z$. This proves that $\varphi$ is surjective.
+
+Now let us prove the second assertion of (ii). It suffices to show that, for every $z\in C$, the morphism $\mu_z:G^0_L\otimes_L\kappa(z)\to C\otimes_L\kappa(z)$ is surjective, but this follows from (iii), since $z$ is a rational point of $C\otimes_L\kappa(z)$.
+\end{proof}
+\begin{remark}{2.6.7}\label{VIA.2.6.7}
+Under the hypotheses of 2.6.6, if $C(k)=\varnothing$, the morphism $G^0\times_kC\to C\times_kC$ is not necessarily surjective. For example, for $k=\RR$ and $G=\{\pm1\}_{\RR}$, the $G$-torsor $X=\Spec\RR[X]/(X^2+1)$ is connected, but the morphism $G^0\times_{\RR}X\to X\times_{\RR}X$ is not surjective. (But one has $L=\CC$, and the morphism $G^0\times_{\RR}X\to X\times_{\CC}X$ is an isomorphism.)
+\end{remark}
+
+\sgasection{3}{Construction of quotients $F\backslash G$ (for $G,F$ of finite type)}
+\numpara{3.1}Let $A$ be an artinian local ring and $u:F\to G$ a homomorphism of $A$-groups. If $\mu:F\times_AF\to F$ and $\nu:G\times_AG\to G$ denote the multiplication morphisms, and $\lambda$ the composite morphism
+\[
+\xymatrix{F\times_AG\ar[r]^{u\times G}&G\times_AG\ar[r]^\nu&G,}
+\]
+recall that the left quotient $F\backslash G$ of $G$ by $F$ is the cokernel of the $(\mathrm{Sch}/A)$-groupoid $G_*$ described below:
+\[
+\xymatrix@C=4em{F\times_AF\times_AG\ar@<1.5ex>[r]^{F\times\lambda}\ar[r]|{\mu\times G}\ar@<-1.5ex>[r]_{\mathrm{pr}_{2,3}}&F\times_AG\ar@<.5ex>[r]^\lambda\ar@<-.5ex>[r]_{\mathrm{pr}_2}&G}
+\]
+($\mathrm{pr}_2$ and $\mathrm{pr}_{2,3}$ are the projections of $F\times_AG$ and $F\times_A(F\times_AG)$ onto the second factors). We shall say that $G_*$ is the groupoid with base $G$ defined by $u$ (cf. Exp. V, §2.a; as in Exposé V, we do not follow in this exposé the convention of IV, 4.6.15).
+
+Since the unique $A$-morphism $F\to\Spec A$ is universally open (EGA IV$_2$, 2.4.9), $\mathrm{pr}_2$ is an open morphism; the same therefore holds for $\lambda$, the composite of $\mathrm{pr}_2$ and the automorphism $\sigma$ of $F\times_AG$ defined by the following formulas: $\sigma(S)(x,y)=(x,u(S)(x)\cdot y)$, where $S$ is a varying $A$-scheme and $x,y$ belong to $F(S),G(S)$. One sees in the same way that $\mathrm{pr}_2$ and $\lambda$ are flat when $F$ is flat over $A$.
+
+To finish these preliminaries, note also that every $A$-morphism $s:\Spec A\to G$ defines an automorphism of the groupoid $G_*$ inducing on $G$, $F\times_AG$ and $F\times_AF\times_AG$ the automorphisms $r_s$, $\mathrm{id}_F\times_Ar_s$ and $\mathrm{id}_F\times_A\mathrm{id}_F\times_Ar_s$ respectively. We shall again denote this automorphism of $G_*$ by $r_s$, and shall say that $r_s$ is the right translation defined by $s$ (cf. 0.4).
+\begin{theorem}{3.2}\label{VIA.3.2}
+Let $F$ and $G$ be flat groups locally of finite type over an artinian local ring $A$. Let $u:F\to G$ be a quasi-compact homomorphism of $A$-groups with kernel finite over $A$. Then:\nde{Point (ii') has been added and point (iv) expanded, taking account of the additions made in 2.5.2, 2.5.4 and Exp. V, 6.1.}
+\begin{enumeratei}
+\item The left quotient $F\backslash G$ of $G$ by $F$ exists in $(\mathrm{Sch}/A)$, and the sequence
+\[
+\xymatrix{F\times_AG\ar@<.5ex>[r]^\lambda\ar@<-.5ex>[r]_{\mathrm{pr}_2}&G\ar[r]^p&F\backslash G}
+\]
+is exact in the category of all ringed spaces.
+\item The canonical morphism $p:G\to F\backslash G$ is surjective and open, and $F\backslash G$ is a direct sum of schemes of finite type over $A$.
+\item[(ii')] More precisely, $X=F\backslash G$ has a right action of $G$ such that $p(e)\cdot g=p(g)$ for every $g\in G$; consequently, the connected components of $X$ are of finite type over $A$, irreducible and all of dimension $\dim G-\dim F$.
+\item The canonical morphism $F\times_AG\to G\times_{(F\backslash G)}G$ is surjective.
+\item If $u$ is a monomorphism,\nde{In this case, the hypothesis that $G$ is flat can be dropped, cf. subsection 3.3.} then:
+\begin{enumeratea}
+\item $F\times_AG\xrightarrow{(\lambda,\mathrm{pr}_2)}G\times_{(F\backslash G)}G$ is an isomorphism, and $G\to F\backslash G$ is faithfully flat and locally of finite presentation.
+\item[(a')] $F\backslash G$ represents the quotient \fppf sheaf $\widetilde{F\backslash G}$, and $G\to F\backslash G$ is an $F$-torsor locally trivial for the \fppf topology.
+\item $F\backslash G$ is flat over $A$, and is smooth over $A$ if $G$ is.
+\item $u:F\to G$ is a closed immersion, and $F\backslash G$ is separated.
+\item If moreover $F$ is an invariant subgroup of $G$, there exists one and only one $A$-group structure on $F\backslash G$ such that $p:G\to F\backslash G$ is a morphism of $A$-groups.
+\end{enumeratea}
+\end{enumeratei}
+\end{theorem}
+In the proof of this theorem, $A'$ will denote a local $A$-algebra finite and free over $A$. If $R$ is a relation involving $A'$, we shall say that ``$R(A')$ is true when $A'$ is sufficiently large'' if there exists an algebra $A_1$, local, finite and free over $A$, such that the relation $R(A')$ holds for every algebra $A'$, local, finite and free over $A_1$.
+
+We shall first prove the theorem when $F$ and $G$ are of finite type over $A$.
+
+\numpara{3.2.1}Suppose for a moment that every point of $G$ has a saturated open neighborhood $W$ such that the groupoid induced by $G_*$ on $W$ has a quasi-section (cf. V §6). Then, by V 6.1, one has assertions (i), (ii), (iii) and (iv)(a), and $F\backslash G$ is of finite type over $k$. Moreover, under the hypothesis of (iv), since $G\to F\backslash G$ is faithfully flat and locally of finite presentation, assertion (b) follows from EGA IV, 2.2.14 and 17.7.7. On the other hand, assertion (iv)(a') follows from (iv)(a), by Exp. IV, 3.4.3.1, 5.2.2 and 5.1.6. Finally, we shall prove (iv)(c) in 3.2.5, and (ii') and (iv)(d) in section 5.
+% typo?: kept as printed: of finite type over k.
+
+Let us now show the following assertion:
+\[
+\text{every finite subset of }F\backslash G\text{ is then contained in an affine open subset.}\tag{$\dagger$}
+\]
+\nde{Let us mention here that if $A=k$ is a field, every quasi-compact open subset of $F\backslash G$ is quasi-projective (a result due to Chow for smooth algebraic groups), cf. [Ray70], VI 2.6. On the other hand, over the artinian local ring $A=\CC[\varepsilon]/(\varepsilon^2)$ there exist abelian $A$-schemes $G$ which are not projective (loc. cit., XII 4.2).}
+If $U$ is a quasi-section of the groupoid induced by $G_*$ on a saturated open subset $W$ of $G$, $U\otimes_AA'$ is a quasi-section of the $(\mathrm{Sch}/A')$-groupoid induced by $G_*\otimes_AA'$ on $W\otimes_AA'$. Moreover, if $U_*$ is the $(\mathrm{Sch}/A)$-groupoid induced by $G_*$ on $U$, $U_*\otimes_AA'$ is identified with the $(\mathrm{Sch}/A')$-groupoid induced by $G_*\otimes_AA'$ on $U\otimes_AA'$.\nde{What precedes holds for every base change $A\to A'$.}
+
+It then follows from the proofs in Exposé V that construction of the quotient $X=F\backslash G$ commutes with an extension $A\to A'$ of the base of the type considered here.\nde{This is expanded in 4.6 below: one must see that formation of the direct image under the morphisms $p,\lambda,\mathrm{pr}_2$ commutes with flat base changes $A\to A'$. Since $F$ and $G$ are of finite type over artinian $A$, the morphisms $f$ in question are all quasi-compact and quasi-separated, and the equality $f_*(\OO_X)\otimes_AA'=f'_*(\OO_{X'})$ (with obvious notation) follows from EGA IV$_1$, 1.7.21.}
+
+Let, then, $x_1,\ldots,x_n$ be points of $X=F\backslash G$, which we can suppose closed,\nde{Indeed, let $y_1,\ldots,y_n$ be arbitrary points of $X$; since $X$ is of finite type over $A$, each $y_i$ has in its closure a closed point $x_i$, and every open subset containing $x_i$ contains $y_i$.} and $g_1,\ldots,g_n$ closed points of $G$ projecting to $x_1,\ldots,x_n$. Let $V$ be an everywhere dense affine open subset of $X$,\nde{Such an open subset exists, since $X$ is of finite type over $k$: $X$ has finitely many irreducible components $C_1,\ldots,C_p$, and it suffices to take, for each $i$, a nonempty affine open subset contained in $C_i-\bigcup_{j\ne i}C_j$. (Here one further knows, by (ii'), that the $C_i$ are disjoint\dots)} and $U$ its inverse image in $G$. By 1.2, there exists a local $A$-algebra $A'$, finite and free over $A$, such that the points $g'_1,\ldots,g'_p$ of $G'=G\otimes_AA'$ above $g_1,\ldots,g_n$ are strictly rational over $A'$.\nde{The original has been expanded in what follows.} Since the morphisms $G'\to G$ and $G\to X$ are open, $U'=U\otimes_AA'$ is dense in $G'$, so the open subset $\bigcap_{i=1}^p(U')^{-1}\cdot g'_i$ is nonempty, and therefore contains a closed point $x$. Thus, by 1.2 (and 0.4.1), one can suppose, enlarging $A'$ if necessary, that $x$ is strictly rational over $A'$. Then, since $x\in(U')^{-1}\cdot g'_i$, one has $g'_i\in U'\cdot x$.
+
+Denote by $V'$ the inverse image of $V$ in $X'=X\otimes_AA'$; it is an affine open subset of $X'$, and also the image of $U'$ under the projection $G'\to X'$. Since right translation $r_x$ is an automorphism of the groupoid $G_*\otimes_AA'$, it induces an automorphism, again denoted $r_x$, of the quotient $X'$. Consequently, the image $V'\cdot x=r_x(V')$ of $U'\cdot x$ in $X'$ is an affine open subset of $X'$ containing the images $x'_1,\ldots,x'_p$ of $g'_1,\ldots,g'_p$.
+
+Now consider the equivalence relation on $X'=X\otimes_AA'$ defined by the projection $X\otimes_AA'\to X$:
+\[
+\xymatrix{X\otimes_AA'\otimes_AA'\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X\otimes_AA'\ar[r]&X,}
+\]
+where $d_0$ and $d_1$ are induced by the two canonical injections of $A'$ into $A'\otimes_AA'$. Since $A'$ is a finite free $A$-algebra, say of rank $n$, $d_0$ and $d_1$ are finite locally free of rank $n$; consequently, one can apply the argument in Exp. V, 5.b (taken from the proof of SGA 1, VIII.7.6). One thus obtains that $x'_1,\ldots,x'_p$ are contained in a saturated affine open subset $W'$ contained in the affine open subset $V'\cdot x$. The image of $W'$ in $X$ then contains $x_1,\ldots,x_n$ and is an affine open subset of $X$, by V, 4.1 (ii).
+
+\numpara{3.2.2}For every algebra $A'$ local, finite and free over $A$, denote now by $U(A')$ the set of points of $G\otimes_AA'$ having a saturated open neighborhood $W$ such that the groupoid induced by $G_*\otimes_AA'$ on $W$ has a quasi-section. It is quite clear that $U(A')$ is saturated for the actions of $G(\Spec A')$ on $G\otimes_AA'$. We shall see that, when $A'$ is sufficiently large, $U(A')$ equals $G\otimes_AA'$.
+
+By Theorem V 8.1, $U(A)$ is nonempty, hence contains a closed point $y$. The proof then proceeds by induction on $\dim(G-U(A))$. Let $g_1,\ldots,g_n$ be closed points belonging to the various irreducible components of $G-U(A)$. By 1.2, there exists $A'$ local, finite and free over $A$ such that the points $g'_1,\ldots,g'_p$ (resp. $x=x_1,\ldots,x_r$) of $G'=G\otimes_AA'$ projecting to $g_1,\ldots,g_n$ (resp. $y$) are strictly rational over $A'$. Then $U(A')$ contains $(U(A)\otimes_AA')\cdot x^{-1}g'_i$ for every $i$; hence $U(A')$ contains $g'_1,\ldots,g'_p$, and one has
+\[
+\dim(G'-U(A'))<\dim(G-U(A)).
+\]
+The induction hypothesis then implies the existence of an algebra $A''$ local, finite and free over $A'$ such that $U(A'')=G'\otimes_{A'}A''=G\otimes_AA''$.
+
+\numpara{3.2.3}We are now in a position to prove the existence of $F\backslash G$ when $F$ and $G$ are of finite type over $A$. Let $A'$ be sufficiently large over $A$ for $U(A')$ to coincide with $G\otimes_AA'$ (cf. 3.2.2). We shall put $A''=A'\otimes_AA'$, and, for every $A$-scheme $X$, denote by $X'$ and $X''$ the fibered products $X\otimes_AA'$ and $X\otimes_AA''$. By 3.2.1 and 3.2.2, the quotients $F'\backslash G'$ and $F''\backslash G''$ exist, and one has the following commutative diagram, in which the first two rows and columns are exact:
+\[
+\xymatrix{F''\times_{A''}G''\ar@<.5ex>[r]^{\mathrm{pr}''_2}\ar@<-.5ex>[r]_{\lambda''}\ar@<.5ex>[d]^{w_1}\ar@<-.5ex>[d]_{w_2}&G''\ar[r]^{p''}\ar@<.5ex>[d]^{v_1}\ar@<-.5ex>[d]_{v_2}&F''\backslash G''\ar@<.5ex>[d]^{u_1}\ar@<-.5ex>[d]_{u_2}\\F'\times_{A'}G'\ar@<.5ex>[r]^{\mathrm{pr}'_2}\ar@<-.5ex>[r]_{\lambda'}\ar[d]_h&G'\ar[r]^{p'}\ar[d]^g&F'\backslash G'\\F\times_AG\ar@<.5ex>[r]^{\mathrm{pr}_2}\ar@<-.5ex>[r]_\lambda&G&.}\tag{$*$}
+\]
+In this diagram, $\mathrm{pr}'_2$ and $\lambda'$ (resp. $\mathrm{pr}''_2$ and $\lambda''$) are obtained from $\mathrm{pr}_2$ and $\lambda$ by obvious base changes; the morphisms $g$ and $h$ are induced by the canonical injection $A\to A'$. The canonical morphisms are denoted by $p'$ and $p''$; the morphisms $v_1,v_2$ and $w_1,w_2$ are induced by the two canonical injections of $A'$ into $A''$. Finally, since construction of the quotient $F'\backslash G'$ commutes with the two base changes $f_1,f_2:\Spec A''\rightrightarrows\Spec A'$, one has, denoting by $\pi':F'\backslash G'\to\Spec A'$ the structure morphism, canonical isomorphisms for $i=1,2$:
+\[
+\tau_i:F''\backslash G''\isomto(F'\backslash G')\times_{\pi',f_i}\Spec A'',
+\]
+and the morphism $u_i$ is the composite of $\tau_i$ and the projection $(F'\backslash G')\times_{\pi',f_i}\Spec A''\to F'\backslash G'$.
+
+Now, when one has a diagram of type $(*)$, the first two rows and columns being exact, one easily verifies that $\Coker(\mathrm{pr}_2,\lambda)$ exists if and only if $\Coker(u_1,u_2)$ does, and these two cokernels are identified. The existence of $F\backslash G$ will therefore follow from that of $\Coker(u_1,u_2)$.
+
+Now it follows from compatibility of formation of $F\backslash G$ with the extensions of the base considered here (cf. N.D.E. (37) in 3.2.1, and 4.6 below) that the composite morphism
+\[
+(F'\backslash G')\times_{\pi',f_1}\Spec A''\xrightarrow{\tau_1^{-1}}F''\backslash G''\xrightarrow{\tau_2}(F'\backslash G')\times_{\pi',f_2}\Spec A''
+\]
+is a descent datum on $F'\backslash G'$ relative to $f:\Spec A'\to\Spec A$. By 3.2.1 $(\dagger)$ and SGA 1, VIII 7.6, this descent datum is effective, that is, $\Coker(u_1,u_2)$ exists (one could moreover use directly Theorem 4.1 of Exp. V).
+
+\numpara{3.2.4}To finish the proof of assertions (i), (ii), (iii) and (iv)(a) of 3.2 in the case where $F$ and $G$ are of finite type over $A$, it remains to study the quotient $F\backslash G$. By V 6.1, assertions (ii), (iii) and (iv)(a) ``become true'' after the base change $f:\Spec A'\to\Spec A$; by EGA IV$_2$, 2.6.1, 2.6.2 and 2.7.1, these assertions were therefore true before the base change. Finally, to prove the second assertion of (i), i.e. that $F\backslash G$ is the cokernel of $(\mathrm{pr}_2,\lambda)$ in the category of all ringed spaces, one need only refer to V §6.c).
+
+\numpara{3.2.5}\nde{This paragraph has been added.}Let us now show assertion (iv)(c) of 3.2, using the proof of VIB, 9.2.1. Denote by $X=F\backslash G$ and by $d$ the morphism $F\times_AG\to G\times_AG$ with components $\lambda$ and $\mathrm{pr}_2$.
+
+Since $u$ is a closed immersion by 2.5.2, and $d=\sigma\circ(u\times\mathrm{id}_G)$, where $\sigma$ is the automorphism of $G\times_AG$ defined by $\sigma(x,y)=(xy,y)$, $d$ is a closed immersion. On the other hand, by (iv)(a), one has the cartesian square below
+\[
+\xymatrix{F\times_AG\ar[r]^d\ar[d]&G\times_AG\ar[d]^{p\times p}\\X\ar[r]_{\Delta_X}&X\times_AX}
+\]
+and $p$, hence also $p\times p$, is faithfully flat and locally of finite presentation. Thus, by \fppf descent, since $d$ is a closed immersion, so is $\Delta_X$, i.e. $X$ is separated.
+% typo: ``Dautre'' -> ``On the other''.
+
+\numpara{3.3}\nde{This subsection has been added.}In Theorem 3.2, the hypothesis that $G$ is flat can be dropped when $u:F\to G$ is a monomorphism. This generalization is mentioned in Remark 9.3 b) of Exp. VIB, and also in [Ray67a], Example a) i), p. 82. The proof, found in Theorem 4 of [An73], follows from Theorem 3.2 and the following theorem of Grothendieck (mentioned in [Ray67a], Th. 1 ii) and proved in [DG70], §III.2, 7.1). If $X$ is a scheme and $R$ an equivalence relation on $X$, $\widetilde{X/R}$ will denote the quotient \fppf sheaf of $X$ by $R$ (cf. IV 4.4.9).
+\begin{theorem}{3.3.1 (Grothendieck)}\label{VIA.3.3.1}
+Let $A$ be a ring, $X$ an $A$-scheme, and $d_0,d_1:R\to X$ an $A$-equivalence relation on $X$ such that $d_i$ is faithfully flat and of finite presentation. Let $X_0$ be a saturated closed subscheme of $X$ defined by a nilpotent ideal, and $R_0$ the equivalence relation induced by $R$ on $X_0$. Then, if the quotient \fppf sheaf $\widetilde{X_0/R_0}$ is represented by an $A$-scheme, the same holds for $\widetilde{X/R}$.
+\end{theorem}
+For the proof, we refer to [DG70], §III.2, 7.1. Now return to the case where $A$ is an artinian local ring. Let $u:F\to G$ be a quasi-compact morphism between $A$-groups locally of finite type, and further suppose $u$ a monomorphism. Then, by 2.5.2, $u$ is a closed immersion.
+
+One can now state the following variant of Theorem 3.2.
+\begin{theorem}{3.3.2}\label{VIA.3.3.2}
+Let $A$ be an artinian local ring, $G$ an $A$-group locally of finite type, and $F$ a closed subgroup of $G$, flat over $A$.\nde{For an example where $F$ is not flat and $\widetilde{F\backslash G}$ is not representable, see [DG70], §III.3, no. 3.3.} Then:
+\begin{enumeratei}
+\item The quotient \fppf sheaf $\widetilde{F\backslash G}$ is represented by a separated $A$-scheme $F\backslash G$ locally of finite type; moreover, the sequence
+\[
+\xymatrix{F\times_AG\ar@<.5ex>[r]\ar@<-.5ex>[r]&G\ar[r]^p&F\backslash G}
+\]
+is exact in the category of all ringed spaces.
+\item $F\times_AG\xrightarrow{(\lambda,\mathrm{pr}_2)}G\times_{(F\backslash G)}G$ is an isomorphism, and $p:G\to F\backslash G$ is faithfully flat and locally of finite presentation, so $p$ is an $F$-torsor locally trivial for the \fppf topology.
+\item If $G$ is flat (resp. of finite type, resp. smooth) over $A$, $F\backslash G$ is also so.
+\item $X=F\backslash G$ has a right action of $G$ such that $p(e)\cdot g=p(g)$ for every $g\in G$; consequently the connected components of $X$ are of finite type over $A$, irreducible and all of dimension $\dim G-\dim F$.
+\item If moreover $F$ is an invariant subgroup of $G$, there exists one and only one $A$-group structure on $F\backslash G$ such that $p:G\to F\backslash G$ is a morphism of $A$-groups.
+\end{enumeratei}
+\end{theorem}
+Assertions (i) and (ii) follow from 3.2 and 3.3.1, and, since $G\to F\backslash G$ is faithfully flat and locally of finite presentation, assertion (iii) follows from EGA IV, 2.2.14, 2.7.1 and 17.7.7. We shall prove assertions (iv) and (v) in section 5. Let us immediately note the following corollary.
+\begin{corollary}{3.3.3}\label{VIA.3.3.3}
+Let $A$ be an artinian local ring, $G$ an $A$-group locally of finite type, and $H$ a closed subgroup of $G$, flat over $A$. Denote by $p$ the morphism $G\to G/H$, and by $\lambda$ (resp. $\mathrm{pr}_1$) the morphism $G\times H\to G$ defined by $\lambda(g,h)=gh$ (resp. the projection $G\times H\to G$). Then, for every open subset $U$ of $G/H$, one has
+\[
+\OO(U)=\{\varphi\in\OO(p^{-1}(U))\mid\varphi\circ\lambda=\varphi\circ\mathrm{pr}_1\},
+\]
+i.e. $\OO(U)$ is the set of $\varphi\in\OO(p^{-1}(U))$ such that $\varphi(gh)=\varphi(g)$ for every $A$-scheme $S$ and $g\in G(S)$, $h\in H(S)$.
+\end{corollary}
+Indeed, since $p:G\to G/H$ is faithfully flat and locally of finite presentation, hence a covering for the \fppf topology, this follows from IV, 3.3.3.2.
+
+\sgasection{4}{Construction of quotients $F\backslash G$ (general case)}
+We now suppose the hypotheses of Theorem 3.2 satisfied, $F$ and $G$ not necessarily being of finite type over $A$.
+
+\numpara{4.1}First consider a connected component $G^\alpha$ of $G$, and let us show that the saturation $\mathcal S(G^\alpha)$\nde{The saturation of $G^\alpha$ has been denoted by $\mathcal S(G^\alpha)$ instead of $\overline G^\alpha$.} of $G^\alpha$ for the equivalence relation defined by the groupoid $G_*$ is an open and closed subset of $G$ (in other words, the union of certain connected components of $G$).
+
+This saturation is the image of $F\times_AG^\alpha$ under $\lambda$, hence is open in $G$ (cf. §3.1). If $k$ is the residue field of $A$ and $\overline k$ an algebraic closure of $k$, it remains to show that the image of $(F\times_AG^\alpha)\otimes_Ak$ under $\lambda\otimes_Ak$ is closed in $G\otimes_Ak$, or, by SGA 1, VIII.4.4, that the image of $(F\times_AG^\alpha)\otimes_A\overline k$ under $\lambda\otimes_A\overline k$ is closed. Since $G^\alpha\otimes_A\overline k$ is the union of finitely many connected components of $G\otimes_A\overline k$, one reduces to the case where $A$ is an algebraically closed field, which we shall suppose. In this case, $\mathcal S(G^\alpha)$ is the union of the images of $G^\alpha$ under left translations $\ell_{u(x)}$, where $x$ ranges over the closed points of $F$; the assertion therefore follows from the fact that these images are connected components of $G$.

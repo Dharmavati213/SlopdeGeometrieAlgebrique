@@ -1,0 +1,264 @@
+% Source PDF pp. 26--30; original pp. 305--313.
+\sgasection{4}{Uniqueness of pinned groups: fundamental theorem}
+\begin{theorem}{4.1}\label{XXIII.4.1}
+Let S be a nonempty scheme. The functor $\mathscr R$ of 1.6 is fully faithful: let G and $G'$ be two pinned S-groups, p\nde{To avoid a problem of notation later, we have replaced q here by p, so that in what follows, q (resp. $q_1$) is an arbitrary power of p.} an integer $>0$ such that $x\mto x^p$ is an endomorphism of $\mathbf G_{\mathrm a,S}$, and $h:\mathscr R(G')\to\mathscr R(G)$ a p-morphism of pinned root data. There exists a unique morphism of pinned groups
+\[
+f:G\to G'
+\]
+such that $\mathscr R(f)=h$.
+\end{theorem}
+Uniqueness is proved in 1.9. It suffices to prove existence. By hypothesis, one has a bijection $d:R\isomto R'$ and a map $\mathbf q:R\to\{p^n\mid n\in\NN\}$ such that
+\[
+h(d(\alpha))=\mathbf q(\alpha)\alpha\qquad\text{and}\qquad {}^th(\alpha^*)=\mathbf q(\alpha)d(\alpha)^*
+\]
+for every $\alpha\in R$. In particular, the semisimple ranks of G and $G'$ coincide.
+\numpara{4.1.1}
+Suppose $\operatorname{rgss}(G)=\operatorname{rgss}(G')=0$. Then G and $G'$ are tori: one has $G=T=D_S(M)$, $G'=T'=D_S(M')$ and h is simply a morphism of ordinary groups $h:M'\to M$. One then takes $f=D_S(h)$.
+\numpara{4.1.2}
+Suppose $\operatorname{rgss}(G)=\operatorname{rgss}(G')=1$. Then consider
+\[
+f_T=D_S(h):T\to T'.
+\]
+By hypothesis one has a commutative diagram, where $\alpha'=d(\alpha)$:
+\[
+\xymatrix@C=3.8em@R=3em{
+\mathbf G_{\mathrm m,S}\ar[r]^{\alpha^*}\ar[d]_{\mathbf q(\alpha)}&T\ar[r]^\alpha\ar[d]^{f_T}&\mathbf G_{\mathrm m,S}\ar[d]^{\mathbf q(\alpha)}\\
+\mathbf G_{\mathrm m,S}\ar[r]_{\alpha'^*}&T'\ar[r]_{\alpha'}&\mathbf G_{\mathrm m,S}.
+}
+\]
+One then applies Exp. XX, 4.1.
+\numpara{4.1.3}
+Suppose $\operatorname{rgss}(G)=\operatorname{rgss}(G')=2$. Then, by Exp. XXI, 7.5.3, one knows all the possibilities for $h:\mathscr R(G')\to\mathscr R(G)$. Let us study them successively, checking each time the conditions of 2.5.
+
+Write $\Delta=\{\alpha,\beta\}$, $\Delta'=\{\alpha',\beta'\}$ so that $d(\alpha)=\alpha'$, $d(\beta)=\beta'$.
+\numpara{4.1.4}
+G and $G'$ of type $A_1\times A_1$. One then has
+\[
+h(\alpha')=q\alpha,\qquad h(\beta')=q_1\beta.
+\]
+Let us show that the conditions of 2.5 hold: (ii) and (iii) follow from 3.1.2 (ii) and (iii); let us prove (i). One has
+\[
+\begin{aligned}
+D_S(h)t_{\alpha\beta}&=D_S(h)(t_\alpha t_\beta)={}^th(\alpha^*)(-1)\cdot{}^th(\beta^*)(-1)\\
+&=\alpha'^*((-1)^q)\cdot\beta'^*((-1)^{q_1}).
+\end{aligned}
+\]
+\nde{We have expanded what follows.}Now the hypothesis that $x\mto x^p$ is an endomorphism of $\mathbf G_{\mathrm a,S}$ (and $S\ne\varnothing$) implies that $p=1$ or that S has characteristic p; in every case one has $(-1)^q=-1$ (if q is even, $p=2$ and $1=-1$). Consequently,
+\[
+D_S(h)t_{\alpha\beta}=\alpha'^*(-1)\cdot\beta'^*(-1)=t'_{\alpha'\beta'}.
+\]
+This shows that condition 2.5 (i) holds.
+\numpara{4.1.5}
+G and $G'$ of type $A_2$. One then has
+\[
+h(\alpha')=q\alpha,\qquad h(\beta')=q\beta.
+\]
+Put $X_{\alpha+\beta}=\Ad(w_\beta)X_\alpha$ and $X'_{\alpha'+\beta'}=\Ad(w_{\beta'})X_{\alpha'}$. Let us check the conditions of 2.5.
+% typo?: missing primes on w_{beta'} and X_{alpha'} on the right, kept as printed.
+For (i), one argues as above, using 3.2.1 (i); for (ii), this is immediate by 3.2.1 (ii); it remains to check (iii). One must check that
+\[
+p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(z)\mto p'_{\alpha'}(x^q)p'_{\beta'}(y^q)p'_{\alpha'+\beta'}(z^q)
+\]
+is a group morphism. The only nontrivial commutation relation is that of 3.2.1 (iii), which can be written
+\[
+p_\beta(y)p_\alpha(x)=p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(xy),
+\]
+\[
+p'_{\beta'}(y^q)p'_{\alpha'}(x^q)=p'_{\alpha'}(x^q)p'_{\beta'}(y^q)p'_{\alpha'+\beta'}(x^qy^q).
+\]
+\numpara{4.1.6}
+One argues in the same way for G and $G'$ of type $B_2$ (resp. $G_2$), when the root exponents are equal, using 3.3.1 (resp. 3.4.1); to finish the case of rank 2 groups, it therefore remains to treat the two exceptional cases of Exp. XXI, 7.5.3.
+\numpara{4.1.7}
+G and $G'$ are of type $B_2$, S has characteristic 2, and one has $\mathbf q(\alpha)=2q$, $\mathbf q(\beta)=q$. The positive roots are $\{\alpha,\beta,\alpha+\beta,2\alpha+\beta\}$ and $\{\alpha',\beta',\alpha'+\beta',\alpha'+2\beta'\}$ (observe that the ``short'' simple roots are $\alpha$ and $\beta'$). One has
+\[
+\begin{gathered}
+h(\alpha')=2q\alpha,\qquad h(\beta')=q\beta,\\
+h(\alpha'+\beta')=q(2\alpha+\beta),\qquad h(\alpha'+2\beta')=2q(\alpha+\beta),
+\end{gathered}
+\]
+which gives
+\[
+\begin{aligned}
+d(\alpha+\beta)&=\alpha'+2\beta',&\mathbf q(\alpha+\beta)&=2q,\\
+d(2\alpha+\beta)&=\alpha'+\beta',&\mathbf q(2\alpha+\beta)&=q.
+\end{aligned}
+\]
+Put
+\[
+\begin{aligned}
+X_{\alpha+\beta}&=\Ad(w_\beta)X_\alpha,&X_{2\alpha+\beta}&=\Ad(w_\alpha)X_\beta,\\
+X'_{\alpha'+\beta'}&=\Ad(w'_{\alpha'})X'_{\beta'},&X'_{\alpha'+2\beta'}&=\Ad(w'_{\beta'})X'_{\alpha'}.
+\end{aligned}
+\]
+Let us now check the conditions of 2.5.
+
+(i) Since S has characteristic 2, one has $-1=1$ on S, hence $t_{\alpha\beta}=t_\alpha=\alpha^*(-1)=e=\beta'^*(-1)=t'_{\beta'}=t'_{\alpha'\beta'}$ (\cf 3.3.1 (i)).
+
+(ii) By construction one has
+\[
+\begin{aligned}
+\Ad(w_\alpha)X_\beta&=X_{2\alpha+\beta},&\Ad(w'_{\alpha'})X'_{\beta'}&=X'_{\alpha'+\beta'}=X'_{d(2\alpha+\beta)};\\
+\Ad(w_\beta)X_\alpha&=X_{\alpha+\beta},&\Ad(w'_{\beta'})X'_{\alpha'}&=X'_{\alpha'+2\beta'}=X'_{d(\alpha+\beta)}.
+\end{aligned}
+\]
+By 3.3.1 (ii) and the fact that $-1=1$ on S, one has on either side
+\[
+\begin{gathered}
+\Ad(w_\alpha)X_{\alpha+\beta}=X_{\alpha+\beta},\\
+\Ad(w'_{\alpha'})X'_{d(\alpha+\beta)}=\Ad(w'_{\alpha'})X'_{\alpha'+2\beta'}=X'_{\alpha'+2\beta'}=X'_{d(\alpha+\beta)};\\[.4em]
+\Ad(w_\alpha)X_{2\alpha+\beta}=X_\beta,\\
+\Ad(w'_{\alpha'})X'_{d(2\alpha+\beta)}=\Ad(w'_{\alpha'})X'_{\alpha'+\beta'}=X'_{\beta'}=X'_{d(\beta)};\\[.4em]
+\Ad(w_\beta)X_{\alpha+\beta}=X_\alpha,\\
+\Ad(w'_{\beta'})X'_{d(\alpha+\beta)}=\Ad(w'_{\beta'})X'_{\alpha'+2\beta'}=X'_{\alpha'}=X'_{d(\alpha)};\\[.4em]
+\Ad(w_\beta)X_{2\alpha+\beta}=X_{2\alpha+\beta},\\
+\Ad(w'_{\beta'})X'_{d(2\alpha+\beta)}=\Ad(w'_{\beta'})X'_{\alpha'+\beta'}=X'_{\alpha'+\beta'}=X'_{d(2\alpha+\beta)}.
+\end{gathered}
+\]
+(iii) By 3.3.1 (iii), one sees that the only nontrivial commutation relation in U (resp. $U'$) is
+\[
+p_\beta(y)p_\alpha(x)=p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(xy)p_{2\alpha+\beta}(x^2y),
+\]
+resp.
+\[
+p'_{\alpha'}(y')p'_{\beta'}(x')=p'_{\beta'}(x')p'_{\alpha'}(y')p'_{\alpha'+\beta'}(x'y')p'_{\alpha'+2\beta'}(x'^2y').
+\]
+We must check that the morphism
+\[
+\begin{aligned}
+p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(z)p_{2\alpha+\beta}(t)
+&\mto p'_{\alpha'}(x^{2q})p'_{\beta'}(y^q)\\
+&\qquad p'_{\alpha'+2\beta'}(z^{2q})p'_{\alpha'+\beta'}(t^q)
+\end{aligned}
+\]
+is a group morphism; one immediately sees that this amounts to seeing that
+\[
+\begin{aligned}
+p'_{\beta'}(y^q)p'_{\alpha'}(x^{2q})&=p'_{\alpha'}(x^{2q})p'_{\beta'}(y^q)\\
+&\qquad p'_{\alpha'+2\beta'}((xy)^{2q})p'_{\alpha'+\beta'}((x^2y)^q),
+\end{aligned}
+\]
+which is precisely the second relation above (putting $y'=x^{2q}$, $x'=y^q$).
+\numpara{4.1.8}
+G and $G'$ are of type $G_2$, S has characteristic 3, and one has $\mathbf q(\alpha)=3q$ and $\mathbf q(\beta)=q$. The positive roots are $\{\alpha,\beta,\alpha+\beta,2\alpha+\beta,3\alpha+\beta,3\alpha+2\beta\}$ on the one hand, $\{\alpha',\beta',\alpha'+\beta',\alpha'+2\beta',\alpha'+3\beta',2\alpha'+3\beta'\}$ on the other hand (as in the preceding case, the short simple roots are $\alpha$ and $\beta'$). One has
+\[
+\begin{gathered}
+h(\alpha')=3q\alpha,\qquad h(\beta')=q\beta,\qquad h(\alpha'+\beta')=q(3\alpha+\beta),\\
+h(\alpha'+2\beta')=q(3\alpha+2\beta),\qquad h(\alpha'+3\beta')=3q(\alpha+\beta),\\
+h(2\alpha'+3\beta')=3q(2\alpha+\beta),
+\end{gathered}
+\]
+which gives
+\[
+\begin{aligned}
+d(\alpha+\beta)&=\alpha'+3\beta',&\mathbf q(\alpha+\beta)&=3q,\\
+d(2\alpha+\beta)&=2\alpha'+3\beta',&\mathbf q(2\alpha+\beta)&=3q,\\
+d(3\alpha+\beta)&=\alpha'+\beta',&\mathbf q(3\alpha+\beta)&=q,\\
+d(3\alpha+2\beta)&=\alpha'+2\beta',&\mathbf q(3\alpha+2\beta)&=q.
+\end{aligned}
+\]
+Put
+\[
+\begin{aligned}
+X_{\alpha+\beta}&=\Ad(w_\beta)X_\alpha,&X_{2\alpha+\beta}&=\Ad(w_\alpha)X_{\alpha+\beta},\\
+X_{3\alpha+\beta}&=-\Ad(w_\alpha)X_\beta,&X_{3\alpha+2\beta}&=\Ad(w_\beta)X_{3\alpha+\beta};\\
+X'_{\alpha'+\beta'}&=-\Ad(w'_{\alpha'})X'_{\beta'},&X'_{\alpha'+2\beta'}&=\Ad(w'_{\beta'})X'_{\alpha'+\beta'},\\
+X'_{\alpha'+3\beta'}&=\Ad(w'_{\beta'})X'_{\alpha'},&X'_{2\alpha'+3\beta'}&=\Ad(w'_{\alpha'})X'_{\alpha'+3\beta'}.
+\end{aligned}
+\]
+Let us now check the conditions of 2.5.
+
+(i) One has $t_{\alpha\beta}=e$ and $t'_{\alpha'\beta'}=e$ by 3.4.1 (i).
+
+(ii) By construction one has
+\[
+\begin{gathered}
+\Ad(w_\beta)X_\alpha=X_{\alpha+\beta},\qquad\Ad(w'_{\beta'})X'_{\alpha'}=X'_{\alpha'+3\beta'}=X'_{d(\alpha+\beta)};\\
+\Ad(w_\alpha)X_\beta=-X_{3\alpha+\beta},\qquad\Ad(w'_{\alpha'})X'_{\beta'}=-X'_{\alpha'+\beta'}=-X'_{d(3\alpha+\beta)};\\
+\Ad(w_\beta)X_{3\alpha+\beta}=X_{3\alpha+2\beta},\\
+\Ad(w'_{\beta'})X'_{d(3\alpha+\beta)}=\Ad(w'_{\beta'})X'_{\alpha'+\beta'}=X'_{\alpha'+2\beta'}=X'_{d(3\alpha+2\beta)};\\
+\Ad(w_\alpha)X_{\alpha+\beta}=X_{2\alpha+\beta},\\
+\Ad(w'_{\alpha'})X'_{d(\alpha+\beta)}=\Ad(w'_{\alpha'})X'_{\alpha'+3\beta'}=X'_{2\alpha'+3\beta'}=X'_{d(2\alpha+\beta)}.
+\end{gathered}
+\]
+By 3.4.1 (ii), one has on either side:
+\[
+\begin{gathered}
+\Ad(w_\alpha)X_{2\alpha+\beta}=-X_{\alpha+\beta},\\
+\Ad(w'_{\alpha'})X'_{d(2\alpha+\beta)}=\Ad(w'_{\alpha'})X'_{2\alpha'+3\beta'}=-X'_{\alpha'+3\beta'}=-X'_{d(\alpha+\beta)};\\
+\cdots\hspace{8em}\cdots\\
+\Ad(w_\beta)X_{3\alpha+2\beta}=-X_{3\alpha+\beta},\\
+\Ad(w'_{\beta'})X'_{d(3\alpha+2\beta)}=\Ad(w'_{\beta'})X'_{\alpha'+2\beta'}=-X'_{\alpha'+\beta'}=-X'_{d(3\alpha+\beta)}.
+\end{gathered}
+\]
+(The dots replace four checks of the same kind.)
+
+(iii) The only nontrivial commutation relations in U and $U'$ are, by 3.4.1 (iii) (and taking account of $3=0$ on S):
+\[
+\begin{aligned}
+p_\beta(y)p_\alpha(x)&=p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(xy)p_{2\alpha+\beta}(x^2y)\\
+&\qquad p_{3\alpha+\beta}(x^3y)p_{3\alpha+2\beta}(x^3y^2),\\
+p_{\alpha+\beta}(y)p_\alpha(x)&=p_\alpha(x)p_{\alpha+\beta}(y)p_{2\alpha+\beta}(-xy),\\
+p_{3\alpha+\beta}(y)p_\beta(x)&=p_\beta(x)p_{3\alpha+\beta}(y)p_{3\alpha+2\beta}(-xy);
+\end{aligned}
+\]
+\[
+\begin{aligned}
+p'_{\alpha'}(y')p'_{\beta'}(x')&=p'_{\beta'}(x')p'_{\alpha'}(y')p'_{\alpha'+\beta'}(-x'y')\\
+&\qquad p'_{\alpha'+2\beta'}(-x'^2y')p'_{\alpha'+3\beta'}(-x'^3y')p'_{2\alpha'+3\beta'}(-x'^3y'^2),\\
+p'_{\alpha'+\beta'}(y')p'_{\beta'}(x')&=p'_{\beta'}(x')p'_{\alpha'+\beta'}(y')p'_{\alpha'+2\beta'}(x'y'),\\
+p'_{\alpha'+3\beta'}(y')p'_{\alpha'}(x')&=p'_{\alpha'}(x')p'_{\alpha'+3\beta'}(y')p'_{2\alpha'+3\beta'}(x'y').
+\end{aligned}
+\]
+We must check that the morphism $\varphi$ from U to $U'$ defined by
+\[
+\begin{aligned}
+&\varphi\bigl(p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(t)p_{2\alpha+\beta}(u)p_{3\alpha+\beta}(v)p_{3\alpha+2\beta}(w)\bigr)\\
+&\qquad=p'_{\alpha'}(x^{3q})p'_{\beta'}(y^q)p'_{\alpha'+3\beta'}(t^{3q})p'_{2\alpha'+3\beta'}(u^{3q})\\
+&\qquad\quad p'_{\alpha'+\beta'}(v^q)p'_{\alpha'+2\beta'}(w^q)
+\end{aligned}
+\]
+is a group morphism. Now one immediately checks that the last three commutation relations can also be written
+\[
+\begin{aligned}
+p'_{\beta'}(y^q)p'_{\alpha'}(x^{3q})&=p'_{\alpha'}(x^{3q})p'_{\beta'}(y^q)p'_{\alpha'+3\beta'}((xy)^{3q})\\
+&\qquad p'_{2\alpha'+3\beta'}((x^2y)^{3q})p'_{\alpha'+\beta'}((x^3y)^q)p'_{\alpha'+2\beta'}((x^3y^2)^q),\\
+p'_{\alpha'+3\beta'}(y^{3q})p'_{\alpha'}(x^{3q})&=p'_{\alpha'}(x^{3q})p'_{\alpha'+3\beta'}(y^{3q})p'_{2\alpha'+3\beta'}(-(xy)^{3q}),\\
+p'_{\alpha'+\beta'}(y^q)p'_{\beta'}(x^q)&=p'_{\beta'}(x^q)p'_{\alpha'+\beta'}(y^q)p'_{\alpha'+2\beta'}(-(xy)^q);
+\end{aligned}
+\]
+which shows that $\varphi$ is indeed a group morphism and completes the proof of 4.1.7.
+% typo?: concluding reference 4.1.7, kept as printed.
+\numpara{4.1.9}
+Case where G and $G'$ have semisimple rank $>2$. For each root $\alpha\in\Delta$, write $\alpha'=d(\alpha)\in\Delta'=d(\Delta)$. For each $(\alpha,\beta)\in\Delta\times\Delta$, consider the pinned groups of semisimple rank $\leq2$, $Z_{\alpha\beta}$ and $Z'_{\alpha'\beta'}$. The group morphism $M'\to M$ underlying h defines a p-morphism of root data
+% typo?: displayed direction of h_{alpha beta}, kept as printed.
+\[
+h_{\alpha\beta}:\mathscr R(Z_{\alpha\beta})\to\mathscr R(Z'_{\alpha'\beta'}).
+\]
+By the preceding results, there thus exists a morphism of pinned groups
+\[
+f_{\alpha\beta}:Z_{\alpha\beta}\to Z'_{\alpha'\beta'}
+\]
+such that $\mathscr R(f_{\alpha\beta})=h_{\alpha\beta}$. Let us prove that the $f_{\alpha\beta}$ satisfy the gluing condition of 2.5; indeed, $f_{\alpha\beta}|_{Z_\alpha}$ and $f_{\alpha\alpha}$ are two morphisms of pinned groups
+\[
+Z_\alpha\to Z'_{\alpha'}
+\]
+corresponding to the same morphism of pinned root data, and hence coincide by the uniqueness result already proved. By 2.5, there thus exists a group morphism
+% typo?: references to 2.5 for gluing rather than 2.4, kept as printed.
+\[
+f:G\to G'
+\]
+extending the $f_{\alpha\beta}$. This is obviously a morphism of pinned groups such that $\mathscr R(f)=h$, which completes the proof of Theorem 4.1.
+
+\sgasection{5}{Corollaries of the fundamental theorem}
+The most important is:
+\begin{corollary}{5.1}\label{XXIII.5.1}
+Let S be a nonempty scheme, G and $G'$ two pinned S-groups, and h an isomorphism of pinned root data
+\[
+h:\mathscr R(G')\isomto\mathscr R(G).
+\]
+There exists a unique isomorphism of pinned S-groups
+\[
+f:G\isomto G'
+\]
+such that $\mathscr R(f)=h$.
+\end{corollary}

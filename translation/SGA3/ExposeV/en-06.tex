@@ -1,0 +1,181 @@
+Then $\varphi\circ\pi$ is the inverse of $d_0\boxtimes d_1:X_1\isomto X_0\times_YX_0$. It follows that the equivalence relation defined by $X_*$, that is, the monomorphism
+\[
+\xymatrix{X_1\ar[r]^{d_0\boxtimes d_1}_\sim&X_0\times_YX_0\ar@{^{(}->}[r]&X_0\times_SX_0,}
+\]
+is identified with the equivalence relation $R(q_S)$ defined by the morphism $q_S:X_0\to Q_S$. Since the latter is faithfully flat and of finite presentation, hence an effective universal epimorphism, $R(q_S)$ has quotient $Q_S$ (cf. IV 3.3.2). Thus $Y\simeq Q\times_TS$, so $Y\to S$ and $p$ are of finite presentation. Moreover, by IV 6.3.3, $(Y,p)$ is also a cokernel of $(d_0,d_1)$ in the category of sheaves for the \fppf topology.
+\end{proof}
+\begin{proposition}{9.1}\label{V.9.1}
+Consider morphisms of schemes
+\[
+X_0\xrightarrow{p}Y\xrightarrow{q}S
+\]
+such that $qp$ is of finite type (resp. of finite presentation) and $p$ faithfully flat of finite presentation. Then $q$ is of finite type (resp. of finite presentation).\footnote{Cf. EGA IV$_4$, 17.7.5 for a more general result.}
+\end{proposition}
+Since $p$ is surjective and $qp$ quasi-compact, $q$ is quasi-compact. One can therefore suppose $S,Y$ and $X_0$ affine with rings $A,B,C$. One has $B=\varinjlim B_i$, where the $B_i$ range over the finitely generated $A$-subalgebras of $B$. Since $C$ is of finite presentation over $B$, there exist an index $i_0$, a finitely presented $B_{i_0}$-algebra $C_{i_0}$ and an isomorphism $C\simeq C_{i_0}\otimes_{B_{i_0}}B$; if one puts $C_i=C_{i_0}\otimes_{B_{i_0}}B_i$ for $i\geq i_0$, one therefore has $C\simeq C_i\otimes_{B_i}B$.
+\[
+\xymatrix{B\ar[r]&C\\B_i\ar[u]\ar[r]&C_i\ar[u]\\A\ar[u]&}
+\]
+Since $C$ is faithfully flat over $B$, one deduces from EGA IV$_3$, 11.2.6 and 8.10.5 (vi) the existence of an $i_1\geq i_0$ such that $C_{i_1}$ is faithfully flat over $B_{i_1}$; consequently $C_i$ is faithfully flat over $B_i$ for $i\geq i_1$. For $i\geq i_1$, the canonical map $C_i\to C$ is then injective, for it is obtained from $B_i\to B$ by faithfully flat extension of the base.
+
+If $C$ is of finite type over $A$, it follows that there exists an index $j\geq i_1$ such that $C_j=C$, whence $B_j=B$, since $C_j$ is faithfully flat over $B_j$. Consequently $B$ is of finite type over $A$.
+
+Now suppose $C$ of finite presentation over $A$. By what precedes, $B$ is of finite type over $A$, hence of the form $\overline B/I$, where $\overline B$ is a polynomial algebra over $A$ in finitely many indeterminates and $I$ an ideal of $\overline B$. Then $I$ is the union of its finitely generated subideals $I_\alpha$; whence $B=\varinjlim B_\alpha$ with $B_\alpha=\overline B/I_\alpha$. Proceeding as above, there exist an index $\alpha_0$, a finitely presented $B_{\alpha_0}$-algebra $C_{\alpha_0}$ and an isomorphism $C\simeq C_{\alpha_0}\otimes_{B_{\alpha_0}}B$. For $\alpha\geq\alpha_0$, one again puts $C_\alpha=C_{\alpha_0}\otimes_{B_{\alpha_0}}B_\alpha$, so that $C\simeq C_\alpha\otimes_{B_\alpha}B$ for $\alpha\geq\alpha_0$. Again by EGA IV$_3$, 11.2.6 and 8.10.5 (vi), one concludes as above that $C_\alpha$ is faithfully flat over $B_\alpha$ for sufficiently large $\alpha$. In this case, the kernel of the map $C_\alpha\to C$ (resp. $C_\alpha\to C_\beta$ for $\beta\geq\alpha$) is identified with $C_\alpha\otimes_{B_\alpha}(I/I_\alpha)$ (resp. $C_\alpha\otimes_{B_\alpha}(I_\beta/I_\alpha)$).
+
+Since $C_\alpha$ and $C$ are of finite presentation over $A$ and $C_\alpha\to C$ is surjective, $C_\alpha\otimes_{B_\alpha}(I/I_\alpha)$ is a finitely generated ideal\nde{Cf. EGA IV$_1$, 1.4.4.} and is the union of the ideals $C_\alpha\otimes_{B_\alpha}(I_\beta/I_\alpha)$. One therefore has $C_\alpha\otimes_{B_\alpha}(I_\beta/I_\alpha)=C_\alpha\otimes_{B_\alpha}(I/I_\alpha)$ for sufficiently large $\beta$, whence also $I_\beta=I$ (for $C_\alpha$ is faithfully flat over $B_\alpha$); thus $B$ is of finite presentation over $A$.
+
+\sgasection{10}{Supplement: quotients by a group scheme}
+Paragraphs 10.2--10.4 below, written following indications of M. Raynaud, aim to apply the preceding theorems to the case of an action of a group scheme. For the reader's convenience, we have begun by reproducing, in §10.1, statements 2.1 to 2.3 of Exp. XVI.
+
+\numpara{10.1}\textbf{Representability theorems for quotients.} --- Let us first ``recall'' the following result:
+\begin{theorem}{10.1.1}\label{V.10.1.1}
+Let $S$ be a scheme, $X$ and $Y$ two $S$-schemes, and $f:X\to Y$ an $S$-morphism. Suppose one is in one of the following two cases:
+
+$\alpha)$ The morphism $f$ is locally of finite presentation.
+
+$\beta)$ The scheme $S$ is locally noetherian and $X$ is locally of finite type over $S$.
+
+Then the following conditions are equivalent:
+\begin{enumeratei}
+\item There exist an $S$-scheme $X'$ and a factorization of $f$:
+\[
+f:X\xrightarrow{f'}X'\xrightarrow{f''}Y,
+\]
+where $f'$ is a faithfully flat $S$-morphism locally of finite presentation and $f''$ is a monomorphism.
+\item The (first) projection
+\[
+p_1:X\times_YX\to X
+\]
+is a flat morphism.
+\end{enumeratei}
+Moreover, if the preceding conditions hold, $(X',f')$ is a quotient of $X$ by the equivalence relation defined by $f$ (for the \fppf topology), so the factorization $f=f''\circ f'$ of i) is unique up to isomorphism.
+\end{theorem}
+The case $Y$ locally noetherian, $X$ of finite type over $Y$, is treated in [Mur65], cor. 2 of th. 2. We shall see that one can reduce to this case.
+
+Let us first make some remarks:
+
+\textbf{a)} The implication (i) $\Rightarrow$ (ii) is trivial. Indeed, the first projection
+\[
+p'_1:X\times_{X'}X\to X
+\]
+factors through $X\times_YX$:
+\[
+p'_1:X\times_{X'}X\xrightarrow{u}X\times_YX\xrightarrow{p_1}X.
+\]
+The morphism $u$ is an isomorphism, since $f''$ is a monomorphism, and $p'_1$ is flat, since $f'$ is flat; hence $p_1$ is flat.
+
+\textbf{b)} The assertions of 10.1.1 are local on $Y$ (hence local on $S$); they are also local on $X$, as follows easily from the fact that a flat morphism locally of finite presentation is open (EGA IV$_3$, 11.3.1).
+
+\textbf{c)} Under the hypotheses of 10.1.1 $\alpha)$, in view of what precedes, we are reduced to the case where $X$ and $Y$ are affine and $f$ of finite presentation. By replacing $S$ by $Y$ if necessary, one can suppose $X$ and $Y$ of finite presentation over $S$. One then reduces to the case $S$ noetherian by EGA IV$_3$, 11.2.6.
+
+\textbf{d)} Under the hypotheses of 10.1.1 $\beta)$, one can suppose $S,X,Y$ affine, $S$ noetherian and $X$ of finite type over $S$. Regard $Y$ as a filtered projective limit of affine schemes $Y_i$ of finite type over $S$. The schemes $X\times_{Y_i}X$ form a decreasing filtered family of closed subschemes of $X\times_SX$, whose projective limit is $X\times_YX$. Since $X\times_SX$ is noetherian, one has $X\times_{Y_i}X=X\times_YX$ for sufficiently large $i$, so that $f_i:X\xrightarrow{f}Y\to Y_i$ satisfies the hypotheses of 10.1.1 ii) if $f$ does. Since the equivalence relation defined by $f$ on $X$ coincides with that defined by $f_i$, it is clear that it suffices to prove ii) $\Rightarrow$ i) for $f_i$, which reduces us to the case where $Y$ is of finite type over $S$.
+
+\emph{Application to group schemes.} Let $S$ be a scheme and $G$ an $S$-group scheme locally of finite presentation over $S$, acting (on the left) on an $S$-scheme $X$. If $X\to S$ has a section $\xi$, recall that the stabilizer $\mathrm{Stab}_G(\xi)$ is representable by a subgroup scheme of $G$ (cf. I, 2.3.3).
+\begin{theorem}{10.1.2}\label{V.10.1.2}
+Let $S$ be a scheme and $G$ an $S$-group scheme locally of finite presentation over $S$, acting on an $S$-scheme $X$.
+
+Suppose $X\to S$ has a section $\xi$ whose stabilizer $H$ in $G$ is flat over $S$. If one of the hypotheses below holds:
+
+\textup{a)} $X$ is locally of finite type over $S$,
+
+\textup{b)} $S$ is locally noetherian,
+
+then the quotient \fppf sheaf $G/H$ is representable by an $S$-scheme locally of finite presentation over $S$, and the $S$-morphism
+\[
+f:G\to X,\qquad g\mto g\cdot\xi
+\]
+factors as:
+\[
+\xymatrix{G\ar[d]_p\ar[dr]^f&\\G/H\ar@{^{(}->}[r]_i&X,}
+\]
+where $p$ is the canonical projection, a faithfully flat morphism locally of finite presentation, and $i$ is a monomorphism.
+\end{theorem}
+\begin{proof}
+The morphism $f$ makes $G$ an $X$-scheme. By definition of the stabilizer of $\xi$, the morphism
+\[
+G\times_SH\to G\times_XG,\qquad(g,h)\mto(g,gh)
+\]
+is an isomorphism. Since $H$ is flat over $S$, $G\times_SH$ is flat over $G$, hence the first projection $p_1:G\times_SG\to G$ is a flat morphism. Furthermore, if $X$ is locally of finite type over $S$, $f$ is locally of finite presentation (EGA IV$_1$, 1.4.3 (v)); otherwise $S$ is supposed locally noetherian. One then need only apply 10.1.1 to the morphism $f$. It remains to see that $G/H$ is locally of finite presentation over $S$, but this follows immediately from 9.1.
+% typo?: kept as printed: the projection in the proof is written G times_S G.
+\end{proof}
+\begin{corollary}{10.1.3}\label{V.10.1.3}
+Let $S$ be a scheme and $u:G\to H$ a morphism of $S$-group schemes. Suppose $G$ locally of finite presentation over $S$, and either $H$ locally of finite type over $S$ or $S$ locally noetherian.
+
+Then, if $K=\Ker(u)$ is flat over $S$, the quotient group $G/K$ is representable by an $S$-group scheme locally of finite presentation over $S$, and $u$ factors as:
+\[
+\xymatrix{G\ar[rr]^u\ar[dr]_p&&H\\&G/K\ar[ur]_i&}
+\]
+where $p$ is the canonical projection and $i$ a monomorphism.
+\end{corollary}
+Proof: one applies 10.1.2 with $X=H$ and $\xi$ the unit section of $H$.
+
+\numpara{10.2}\textbf{Stabilizer of the diagonal.} --- Let $S$ be a noetherian scheme, $X$ an $S$-scheme of finite type, and $G$ a flat $S$-group scheme of finite type acting on $X$ on the left, i.e. one has an $S$-action $d_0:G\times_SX\to X$. Denote by $d_1:G\times_SX\to X$ the projection onto the second factor. Following §2.a), one has the groupoid
+\[
+\xymatrix@C=4em{G\times_SG\times_SX\ar@<1.5ex>[r]^{\mathrm{pr}_{2,3}}\ar[r]|{\mu\times X}\ar@<-1.5ex>[r]_{G\times d_0}&G\times_SX\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X,}
+\]
+whose cokernel, if it exists, is denoted $G\backslash X$.
+\begin{definition}{10.2.1}\label{V.10.2.1}
+Denote by $F\subset G\times_SX$ the stabilizer of the diagonal section, i.e. the $X$-scheme defined by the cartesian product
+\[
+\xymatrix{F\ar[r]\ar[d]&X\ar[d]^\Delta\\G\times_SX\ar[r]_{(d_0,d_1)}&X\times_SX.}
+\]
+Then $F$ is a subgroup $X$-scheme of $G\times_SX$. Since $G\times_SX$ is of finite type over noetherian $S$, hence noetherian, $F$ is of finite type over $S$ and over $X$ (EGA I, 6.3.5 and 6.3.6). Moreover, if $X\to S$ is separated, $F$ is a closed subgroup $X$-scheme of $G\times_SX$.
+\end{definition}
+Recall that one says $G$ acts freely on $X$ if the morphism
+\[
+G\times_SX\xrightarrow{(d_0,d_1)}X\times_SX
+\]
+is a monomorphism (cf. Exp. III, 3.2.1). This amounts to saying that $F$ is the trivial group scheme with base $X$.
+
+\numpara{10.3}\textbf{Case where $F$ is quasi-finite over $X$.} --- Since $F$ is of finite type over $X$, it is quasi-finite over $X$ if and only if the stabilizers of the geometric points of $X$ are finite.
+\begin{theorem}{10.3.1}\label{V.10.3.1}\nde{Here too there exists a largest open subset $U$ of $X$ satisfying the conclusions of the theorem, cf. N.D.E. (44).}
+Under the hypotheses of 10.2, suppose $F$ quasi-finite over $X$. Then there exists a dense $G$-saturated open subset $U$ of $X$ satisfying the following properties:
+\begin{enumeratei}
+\item In $(\mathrm{Sch}/S)$, the cokernel $V=G\backslash U$ exists; moreover, the scheme $V$ is a quotient in the category of ringed spaces.
+\item $p:U\to V$ is surjective, open and of finite presentation.
+\item $V$ is of finite presentation over $S$.
+\item The morphism $G\times_SU\to U\times_VU$, $(g,x)\mto(gx,x)$, is surjective.
+\item Further suppose $G$ acts freely on $X$. Then $U\to V$ is a (left) $G$-torsor locally trivial for the \fppf topology. In particular, $U\to V$ is faithfully flat.\nde{If one further supposes that $G$ is a reductive $S$-group scheme and the (free) action of $G$ on $X$ is linearizable, one then knows that $G\backslash X$ is representable and $X\to G\backslash X$ is a (left) $G$-torsor. This follows from results of Raynaud and Seshadri and appears in the article [CTS79] (proposition 6.11).}
+\end{enumeratei}
+\end{theorem}
+\begin{proof}
+One has supposed that the morphism $G\times_SX\to X\times_SX$, $(g,x)\mto(gx,x)$, is quasi-finite. Theorem 8.1 therefore applies to the groupoid defined by $(X,G)$. Thus there exists a dense saturated open subset $U\subset X$ such that the quotient $G\backslash U$ exists; it satisfies properties (i), (ii), (iii).
+
+To establish (iv), recall that $G$ acts freely on $X$ if and only if $(d_0,d_1)$ is an equivalence pair (III 3.2.1). In this case, Theorem 8.1 (iv) shows that the morphism $G\times_SU\to U\times_VU$ is an isomorphism and $p$ is faithfully flat and of finite presentation. Thus $U$ is a $G$-torsor with base $V$, locally trivial for the \fppf topology.
+% typo?: kept as printed: this paragraph proving the torsor assertion says (iv), not (v).
+\end{proof}
+
+\numpara{10.4}\textbf{Case where $F$ is flat over $X$.} --- Denote by
+\[
+d=(d_0,d_1):G\times_SX\to X\times_SX
+\]
+the morphism $d(g,x)=(gx,x)$. Recall that the sheaf graph $\widetilde\Gamma$ of the equivalence relation associated to $(X,G)$ is the \fppf $S$-subsheaf of $X\times_SX$ that is the image of $(d_0,d_1)$. It is the \fppf sheaf associated to the graph functor:
+\[
+T\mto\Gamma(T)=\{(x_0,x_1)\in X(T)\times X(T)\mid x_0\in G(T)x_1\}.
+\]
+Put $G_X=G\times_SX$. For every $S$-scheme $T$, one has a surjective map
+\[
+G_X(T)\to\Gamma(T),\qquad(g,x)\mto(gx,x),
+\]
+which induces a bijective map
+\[
+\varphi(T):G_X(T)/F(T)\isomto\Gamma(T);
+\]
+indeed, if $(g,x),(g',x')\in G_X(T)$ satisfy $(gx,x)=(g'x',x')$, then $x'=x$ and $g^{-1}g'x=x$, hence $(g^{-1}g'x,x)\in F(T)$, and $(g,x)$ and $(g',x)$ have the same image in $G_X(T)/F_X(T)$.
+% typo?: kept as printed: (g^{-1}g'x,x) and the subscript F_X occur in the source.
+
+By definition (cf. IV, 4.4.1 (ii) or the proof of 5.2.1), the quotient sheaf $G_X/F$ is the \fppf sheaf associated to the presheaf
+\[
+T\mto G_X(T)/F(T)\simeq\Gamma(T).
+\]
+One therefore has an isomorphism of sheaves $\varphi:G_X/F\to\widetilde\Gamma$.
+\begin{theorem}{10.4.1}\label{V.10.4.1}\nde{This is point (2) of Theorem 3 of [Ray67b]. Another proof of th. 10.1.1 is sketched in this Note.}
+Under the hypotheses of 10.2, one has:
+
+\textup{a)} $\widetilde\Gamma$ is representable if and only if $F$ is flat over $X$.
+
+\textup{b)} Suppose $F$ flat over $X$. Then the morphisms induced by $d_1$ and $d_0$:
+\[
+\xymatrix{G_X/F\ar@<.5ex>[r]^{\overline d_1}\ar@<-.5ex>[r]_{\overline d_0}&X}
+\]
+are faithfully flat and of finite presentation.
+\end{theorem}

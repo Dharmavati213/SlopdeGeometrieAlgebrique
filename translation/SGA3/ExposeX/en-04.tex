@@ -1,0 +1,169 @@
+% PDF pp. 17--22; continuation of proof of 4.4.
+This reduces us to the case where $A$ is local and noetherian. Let us now distinguish two cases.
+
+1$^\circ$) $A$ is local noetherian and henselian. Let $\widehat A$ be its completion, $\widehat S=\Spec(\widehat A)$ and $\widehat H=H\times_S\widehat S$. Apply theorem 3.7: one finds a $\widehat S$-group $\widehat G$ of multiplicative type, isotrivial and of finite type, and a homomorphism of $\widehat S$-groups
+\[
+\widehat u:\widehat G\to\widehat H
+\]
+which is an open immersion and a closed immersion, such that $\widehat u$ induces an isomorphism $\widehat u_0:\widehat G_0\isomto\widehat H_0$.
+
+By remark 4.0.1, the base change functor by $\widehat S\to S$ induces an equivalence between the category of isotrivial groups of multiplicative type over $S$ and over $\widehat S$; in particular $\widehat G$ ``comes from'' an $S$-group of multiplicative type $G$, isotrivial and of finite type. By 4.3, $\widehat u$ comes from a homomorphism
+\[
+u:G\to H;
+\]
+moreover, $u$ is an open and closed immersion and induces an isomorphism $u_0:G_0\to H_0$, since this is so after the faithfully flat quasi-compact base change $\widehat S\to S$. This therefore proves 4.4 in this case (taking of course, in the conclusion of 4.4, $S'=S$ and $s'=s$).
+
+2$^\circ$) $A$ is local noetherian. Reduction to case 1$^\circ$) is immediate by applying 1$^\circ$) to the ``henselization'' $A^h$ of $A$. More precisely, one sees easily (using SGA 1, I \S5\footnote{Or EGA IV$_4$, \S18.6.}) that the local rings $\OO_{S',s'}$ of étale $S$-preschemes $S'$ endowed with a point $s'$ over $s$ such that $\kappa(s')/\kappa(s)$ is trivial form a filtering inductive system whose inductive limit is a noetherian henselian local ring $A^h$ (called the ``henselization'' of $A$); for details of this construction (due to Nagata in the normal case), cf. SGA 4, VIII \S4.\footnotemark[\value{footnote}] The sorites of EGA IV$_3$, \S8 then allow one, as in part a) of the proof, to deduce from a result known over the inductive limit $A^h$ of the $\OO_{S',s'}$ an analogous result over one of the $(S',s')$, which proves 4.4.
+\begin{corollary}{4.5}\label{X.4.5}
+Let $S$ be a prescheme, $H$ an $S$-group prescheme of multiplicative type and of finite type. Then $H$ is quasi-isotrivial, i.e. is split by a surjective étale morphism $S'\to S$.
+\end{corollary}
+Indeed, let $s\in S$. By 4.4, there exists an étale morphism $S'\to S$, an $s'\in S'$ over $s$ such that $\kappa(s)=\kappa(s')$, and a subgroup $G'$ of $H'$, of isotrivial multiplicative type and of finite type, such that $G'_{s'}=H'_{s'}$. Since $G',H'$ are of multiplicative type and of finite type, by IX 2.9 there exists an open neighborhood $U'$ of $s'$ such that $G'|U'=H'|U'$.
+
+\nde{The original has been expanded in the preceding and following passages.} Suppose in addition $S$ local henselian with closed point $s$; then by EGA IV$_4$, 18.5.11 b) there exists a section $\sigma$ of $S'\to S$ such that $\sigma(s)=s'$. (N.B. One may see directly that $B=\OO_{S',s'}$ equals $A=\OO_{S,s}$ as follows: by 4.3.0 (i), one has $B\simeq A/I$, and since $B$ is an $A$-algebra of finite presentation and flat, $I$ is an ideal of finite type (cf. EGA IV$_1$, 1.4.7), and $I=I\goth m$ (where $\goth m$ is the maximal ideal of $A$), whence $I=0$.) Thus $H$ is already isotrivial. One therefore obtains:
+\begin{corollary}{4.6}\label{X.4.6}
+Let $A$ be a henselian local ring, $k$ its residue field, and $\pi$ the topological Galois group of an algebraic closure of $k$.
+
+(i) Every group of multiplicative type and of finite type over $S=\Spec(A)$ is isotrivial.
+
+(ii) The category of these groups over $S$ is equivalent (via the functor $H\mto H\otimes_A k$) to the analogous category over $S_0=\Spec(k)$; it is therefore anti-equivalent, by 1.4, to the category of Galois modules under $\pi$ of finite type as $\ZZ$-modules.
+\end{corollary}
+\begin{corollary}{4.7}\label{X.4.7}
+Under the conditions of 4.4, suppose in addition one of the following conditions satisfied:
+
+a) For every generization $t$ of $s$, $H_t$ is of multiplicative type and of the same type as $H_s$.
+
+b) $H$ is commutative and the ${}_nH$ ($n>0$) are finite over $S$ in a neighborhood of $s$.
+
+c) For every generization $t$ of $s$, the fiber $H_t$ is connected.
+
+Then there exists an open neighborhood $U$ of $s$ such that $H|U$ is of multiplicative type.
+\end{corollary}
+Taking account of the fact that an étale morphism is open, one is reduced to proving that there exists (with the notation of the conclusion of 4.4) an open neighborhood $U'$ of $s'$ such that $G'|U'=H'|U'$. Put $S''=\Spec(\OO_{S',s'})$; as $G',H'$ are of finite presentation over $S'$, it suffices to show, by EGA IV$_3$, 8.8.2, that $G''=H''$. One may therefore suppose $S=S''$, and then hypotheses (a), (b), (c) become those of the lemma below, whose proof is the same as that of 3.8:
+\begin{lemma}{4.7.1}\label{X.4.7.1}
+Let $S$ be a local scheme, $s$ its closed point, $H$ an $S$-group scheme of finite type, $G$ an open and closed subgroup of $H$, of multiplicative type, such that $G_s=H_s$. Suppose in addition one of the following conditions satisfied:
+
+a) The fibers of $H$ are of multiplicative type and of the same type as $H_s$.
+
+b) $H$ is commutative and the ${}_nH$ ($n>0$) are finite over $S$.
+
+c) The fibers of $H$ are connected.
+
+Then $G=H$.
+\end{lemma}
+\begin{corollary}{4.8}\label{X.4.8}
+Let $S$ be a prescheme, $H$ an $S$-group prescheme affine, flat and of finite presentation over $S$, with fibers of multiplicative type.
+
+For $H$ to be of multiplicative type, it is necessary and sufficient that it satisfy one of the following two conditions (equivalent under the preceding conditions):
+
+a) The type of $H_s$ (cf. IX 1.4) is a locally constant function of $s\in S$.
+
+b) $H$ is commutative, and the ${}_nH$ ($n>0$) are finite over $S$.
+
+Moreover, these conditions a), b) are implied by the following:
+
+c) The fibers of $H$ are connected.
+\end{corollary}
+In particular, one finds:
+\begin{corollary}{4.9}\label{X.4.9}
+Let $S$ be a prescheme, $H$ an $S$-group prescheme flat and of finite presentation over $S$. Suppose in addition $H$ affine over $S$ with connected fibers.\nde{This result is generalized in 8.1: in fact it suffices to suppose the fibers of $H$ affine and connected.} If $s\in S$ is such that $H_s$ is a torus, there exists an open neighborhood $U$ of $s$ such that $H|U$ is a torus.
+
+In particular, if all the fibers of $H$ are tori, $H$ is a torus.
+\end{corollary}
+
+\sgasection{5}{Scheme of homomorphisms from one group of multiplicative type into another. Twisted constant groups and groups of multiplicative type}
+\begin{definition}{5.1}\label{X.5.1}
+a) Let $S$ be a prescheme, $R$ a group prescheme over $S$. One says that $R$ is a \emph{twisted constant group over $S$} if it is locally isomorphic, in the sense of the faithfully flat quasi-compact topology, to a constant group scheme, i.e. of the form $M_S$ with $M$ an ordinary group.
+
+b) One says that the twisted constant group $R$ over $S$ is \emph{quasi-isotrivial}, resp. \emph{isotrivial}, resp. \emph{locally isotrivial}, resp. \emph{locally trivial}, resp. \emph{trivial}, if in the above definition one can replace the faithfully flat quasi-compact topology by the étale topology, resp. the global finite étale topology, resp. the finite étale topology, resp. the Zariski topology, resp. the coarsest (or ``chaotic'') topology, cf. IX 1.1 and 1.2, and IV 6.6.
+
+Saying that $R$ is quasi-isotrivial (resp. isotrivial) therefore means that there exists a surjective étale (resp. and finite) morphism $S'\to S$ such that $R'=R\times_S S'$ is a constant group over $S$; saying that it is trivial means that $R$ is a constant group.
+% typo?: "constant group over S" rather than S' retained as printed.
+c) One defines as in VIII 1.4 the \emph{type} of a twisted constant group $R$ over $S$ at an $s\in S$; it is an isomorphism class of ordinary groups which, for variable $s$, is a locally constant function of $s$, and hence constant if $S$ is connected. One will also say that $R$ is ``of type $M$'' if all the fibers of $R$ are of type $M$.
+
+One should take care that $R$ is quasi-compact over $S$ only if it is finite over $S$, i.e. if its type at every $s\in S$ is a finite group.\nde{See lemma 5.12 below.}
+
+d) The case of greatest interest to us is that where $R$ is commutative. We shall then say that $R$ is ``finitely generated'' if its type at every point $s\in S$ is given by a $\ZZ$-module of finite type, a notion which must not be confused with the schematic notion ``$R$ of finite type over $S$'' (cf. above).
+\end{definition}
+\begin{remark}{5.2}\label{X.5.2}
+We shall also have to consider $S$-preschemes $X$ which are locally isomorphic (for the faithfully flat quasi-compact topology) to constant preschemes, independently of any group structure. We shall then say that $X$ is a \emph{twisted constant bundle over $S$}, and extend to these preschemes the terminology introduced in 5.1. Of course, one should take care that when $X$ is endowed with an $S$-group structure, the meaning of the expressions ``twisted constant'', ``isotrivial'', etc. changes according to whether one takes account of the group structure over $S$. The same is true if one considers on $X$ any other kind of algebraic structure (for example that of a Galois principal bundle, which will be considered in the next \No).
+% typo: "platequasi-compacte" -> "flat quasi-compact".
+\end{remark}
+\begin{proposition}{5.3}\label{X.5.3}
+Let $R$ be a commutative twisted constant group over $S$.
+
+(i) The functor $H=D_S(R)$ (cf. VIII 1) is representable and is a group of multiplicative type over $S$.
+
+(ii) For every $s\in S$, the type of $R$ at $s$ equals that of $H$ at $s$.
+
+(iii) For $R$ to be quasi-isotrivial (resp. isotrivial, resp. trivial, resp. locally isotrivial, resp. locally trivial), it is necessary and sufficient that $H$ be so.
+\end{proposition}
+\begin{remark}{5.3.1}\label{X.5.3.1}
+\nde{This remark, which appeared after the proof in the original, has been moved here.} One may be concerned to see the term ``type'' used in 5.3 in two different senses according to whether $R$ or $H$ is involved; fortunately, when an $S$-group prescheme $G$ is both a twisted constant group and of multiplicative type, its type in either sense is the same, thanks to the fact that an ordinary finite commutative group is isomorphic to its dual!
+\end{remark}
+\begin{proof}
+As covering families for the faithfully flat quasi-compact topology are families of effective descent for the fibered category of affine group preschemes over variable base preschemes (SGA 1, VIII 2.1), one sees that $H$ is representable (and affine over $S$), since it is so ``locally''\nde{Cf. VIII \S1.7.} (for it is so when $R$ is constant, and then $H$ is a diagonalizable group).
+
+The fact that $H$ is of multiplicative type is then evident by definition, as is the fact that the type of $R$ and $H$ at $s\in S$ is the same. Finally, since $H_{S'}=D_{S'}(R_{S'})$, the last assertion is reduced to the ``trivial'' case, i.e. to checking that $R$ is trivial if and only if $H$ is so, which follows immediately from biduality theorem VIII 1.2.
+\end{proof}
+To finish specifying the correspondence between twisted constant groups and groups of multiplicative type, one must start with a group of multiplicative type $H$ and study $R=D_S(H)$. If the latter is representable, it is evidently a twisted constant group, and one shall have $H\simeq D_S(R)$. In other words:
+\begin{scholium}{5.4.0}\label{X.5.4.0}
+The functor $R\mto D_S(R)$ is an anti-equivalence\nde{``Equivalence'' has been corrected to ``anti-equivalence''.} between the category of twisted constant groups over $S$ and that of groups of multiplicative type $H$ over $S$ such that $D_S(H)$ is representable.
+\end{scholium}
+I do not know whether this condition on $H$ is always satisfied; we shall nevertheless see that it is when $H$ is quasi-isotrivial, in particular when $H$ is of finite type.
+\begin{lemma}{5.4}\label{X.5.4}
+Let $S'\to S$ be a faithfully flat morphism locally of finite presentation, $X'$ an $S'$-prescheme separated, locally of finite presentation and locally quasi-finite over $S'$.
+
+Then every descent datum on $X'$ relative to $S'\to S$ is effective, i.e. there exists an $S$-prescheme $X$ and an $S'$-isomorphism $X\times_S S'\simeq X'$ compatible with the descent datum.
+\end{lemma}
+One has already noted that the hypothesis on $S'\to S$ implies that it is a covering morphism for the faithfully flat quasi-compact topology (IV 6.3.1 (iv)), a fortiori a morphism of effective descent.
+
+When $X'\to S'$ is quasi-compact, hence of finite presentation and quasi-finite, it is a quasi-affine morphism (cf. SGA 1, VIII 6.2\nde{(When $S'$ is locally noetherian, and EGA IV$_3$, 8.11.2 in general.)}), and effectiveness follows in this case from SGA 1, VIII 7.9. In the general case one reduces immediately to the case where $S,S'$ are affine. One covers $X'$ by affine open subsets $U'_i$; let $V'_i$ be the saturation of $U'_i$ for the equivalence relation in $X'$ defined by the descent datum, i.e. $V'_i=q_2(q_1^{-1}(U'_i))$, where $q_1,q_2$ are the two projections of $X''_1=X'\times_{S'}(S'',p_1)$ onto $X'$ ($q_1=\operatorname{pr}_1$, and $q_2$ is deduced from the first projection of $X''_2=X'\times_{S'}(S'',p_2)$ by the given descent isomorphism $X''_1\simeq X''_2$). Since $S'\to S$ is faithfully flat quasi-compact locally of finite presentation, so is $p_1:S''=S'\times_S S'\to S'$, hence so are $q_1,q_2$, which are consequently open morphisms (SGA 1 IV 6.6\nde{(When $S'$ is locally noetherian, and EGA IV$_2$, 2.4.6 in general.)}). Consequently $V'_i$ is an open and quasi-compact subset of $X'$. By what has already been seen, the descent data induced on the $V'_i$ are effective, whence it follows that the datum on $X'$ is also so (SGA 1, VIII 7.2).
+\begin{corollary}{5.5}\label{X.5.5}
+A faithfully flat morphism of finite presentation $S'\to S$ is a morphism of effective descent for the fibered category of twisted constant groups (over variable base preschemes).
+\end{corollary}
+Indeed, this amounts to asserting the effectiveness of a descent datum under the conditions of 5.4 when $X'$ is a constant $S'$-prescheme.
+\begin{theorem}{5.6}\label{X.5.6}
+Let $S$ be a prescheme, $G,H$ two $S$-group preschemes of quasi-isotrivial multiplicative type, with $G$\nde{$H$ has been corrected to $G$.} of finite type.
+
+Then $\uHom_{S\text{-}\mathrm{gr.}}(H,G)$ is representable by, and is, a quasi-isotrivial twisted constant group over $S$;\nde{The following has been added.} for every $s\in S$, if the type of $G$ (resp. $H$) at $s$ is $M$ (resp. $N$), that of $\uHom_{S\text{-}\mathrm{gr.}}(H,G)$ is $\Hom_{\mathrm{gr.}}(M,N)$.
+\end{theorem}
+One proceeds as in 4.2, using the fact that the assertion is established (VIII 1.5) when $G,H$ are trivial. The necessary effectiveness criterion is supplied by 5.5 (in the case of a surjective étale morphism $S'\to S$).
+
+In particular, putting $G=\mathbf{G}_{\mathrm{m},S}$, one finds:
+\begin{corollary}{5.7}\label{X.5.7}
+(i) Let $H$ be an $S$-group of quasi-isotrivial multiplicative type; then the $S$-group $D_S(H)$ is representable and is a quasi-isotrivial twisted constant group over $S$.
+
+(ii) The functors $R\mto D_S(R)$ and $H\mto D_S(H)$ are anti-equivalences, quasi-inverse to one another, between the category of quasi-isotrivial twisted constant $S$-groups and that of $S$-groups of quasi-isotrivial multiplicative type.
+
+(iii) These functors induce anti-equivalences between the subcategories consisting of isotrivial, resp. locally isotrivial, resp. locally trivial, resp. trivial groups.
+\end{corollary}
+The last assertion is mentioned only for the record, being already contained in 5.3.
+
+Moreover, since every $S$-group of multiplicative type and of finite type is quasi-isotrivial by 4.5, one deduces from 5.6:
+\begin{corollary}{5.8}\label{X.5.8}
+Let $S$ be a prescheme, $G,H$ two $S$-group preschemes of multiplicative type and of finite type; then $\uHom_{S\text{-}\mathrm{gr.}}(H,G)$ is representable and is a finitely generated quasi-isotrivial twisted constant $S$-group over $S$.
+\end{corollary}
+Note also that in 5.3, $R$ is finitely generated if and only if $H=D_S(R)$ is of finite type (IX 2.1 b)). By 4.5, $H$ is then quasi-isotrivial, so $R$ is quasi-isotrivial. One thus finds:
+\begin{corollary}{5.9}\label{X.5.9}
+The functors of 5.7 induce anti-equivalences quasi-inverse to one another between the category of $S$-groups $H$ of multiplicative type of finite type and that of finitely generated twisted constant $S$-groups $R$; moreover, every such group $R$ is quasi-isotrivial.
+\end{corollary}
+\begin{corollary}{5.10}\label{X.5.10}
+Let $H,G$ be two $S$-group preschemes of multiplicative type and of finite type.
+
+\begingroup\emergencystretch=3em
+(i) Then $\underline{\Isom}_{S\text{-}\mathrm{gr.}}(H,G)$ is representable by an open and closed subprescheme of $\uHom_{S\text{-}\mathrm{gr.}}(H,G)$, and is a twisted constant $S$-prescheme.\par
+\endgroup
+
+(ii) In particular, $\underline{\Aut}_{S\text{-}\mathrm{gr.}}(H)$ is representable and is a twisted constant $S$-group (in general noncommutative).
+\end{corollary}
+This follows from 5.8 and VIII 1.6.\nde{Correct this reference by treating the case of the functor $\underline{\Isom}_{S\text{-}\mathrm{gr.}}(H,G)$ in an addition 1.5.1 in VIII\dots}
+\begin{enoncerm}{Recollection}{5.11.0}\label{X.5.11.0}
+\nde{This recollection has been added; it is used several times in what follows. (See also EGA I, 6.1.9; note, however, that the proof in loc. cit. seems unnecessarily complicated.)} Recall that if $X$ is a locally noetherian prescheme, its connected components (which are always closed) are open. Indeed, let $C$ be a connected component of $X$, $x\in C$ and $U$ a noetherian open neighborhood of $x$; then $U$ has only finitely many connected components, so the connected component $U_x$ of $x$ in $U$ is open in $U$, hence in $X$; as $U_x\subseteq C$, this shows that $C$ is open in $X$.
+\end{enoncerm}
+\begin{proposition}{5.11}\label{X.5.11}
+Let $S$ be a prescheme, $R$ a commutative twisted constant group over $S$, $H=D_S(R)$ the group of multiplicative type it defines. Consider the following conditions:
+
+(i) $H$ is isotrivial (i.e. $R$ is isotrivial).
+
+(ii) $R$ is a union of subpreschemes $R_i$ which are both open and closed and quasi-compact over $S$ (and then necessarily finite over $S$).
+% Proposition continues on PDF p. 23, in en-05.tex.

@@ -1,0 +1,202 @@
+% Source PDF pp. 11–16.
+\noindent\emph{Proof of 3.9 iii).} $G$ is étale. Proceeding as in ii), one reduces to the case where $G$ is commutative, then to the case where $G$ is annihilated by $p$; but then $G_{\overline k}$ is isomorphic to $(\ZZ/p\ZZ)^r$.
+
+\noindent\emph{Proof of 3.5 i) $\Rightarrow$ iv) in case b), $p=0$.} The group $G$ is then smooth and connected, and, proceeding as in 3.9 ii), one reduces to the case where $G$ is moreover commutative. One then has the following more precise result:
+\begin{lemma}{3.9 ter}\label{XVII.3.9ter}
+Let $k$ be a field of characteristic 0, $G$ a commutative unipotent algebraic $k$-group, $\mathfrak g=\Lie G$. Then there is a canonical isomorphism:
+\[
+ \exp:W(\mathfrak g)\isomto G.
+\]
+The morphism $\exp$ is the unique homomorphism $W(\mathfrak g)\to G$ inducing the identity on the Lie algebras.
+\end{lemma}
+% typo: "un-k-groupe" -> "a ... k-group".
+Since $G$ is unipotent, $G$ can be realized as an algebraic subgroup of $\operatorname{Trigstr}(n)$ for a suitable integer $n$ (3.5 i) $\Rightarrow$ v)). The choice of such an embedding allows one to identify $\mathfrak g$ with a Lie subalgebra of $\mathfrak{gl}(n)$ consisting of nilpotent endomorphisms. Hence a $k$-morphism:
+\[
+ \exp:W(\mathfrak g)\to\GL(n),\qquad T\mto\sum_{i\geq0}\frac{T^i}{i!}.
+\]
+Since $G$ is commutative, the morphism $\exp$ is a homomorphism. Let $G'$ be the algebraic group that is the image of $W(\mathfrak g)$ under the morphism $\exp$. If one canonically identifies $\Lie W(\mathfrak g)$ with $\mathfrak g$, the linear tangent map to $\exp$ is simply the injection $\mathfrak g\to\mathfrak{gl}(n)$. Consequently, $\Lie(G\cap G')=\mathfrak g\cap\mathfrak g=\mathfrak g$. Since $G\cap G'$ is smooth (Exp. VIB 1.6.1), and $G$ is connected (since it is a multiple extension of groups $\Ga$ (3.5 i) $\Rightarrow$ ii)), one necessarily has $G=G'$. The kernel $\Ker(\exp)$ is an étale unipotent group, hence is the unit group, and consequently $\exp$ is an isomorphism from $W(\mathfrak g)$ onto $G$.
+
+If $h:W(\mathfrak g)\to G$ is another homomorphism such that $\Lie(h)$ is the identity map of $\mathfrak g$, the morphism $h-\exp$ is a homomorphism ($G$ is commutative) whose linear tangent map is zero. Since $k$ is of characteristic 0 and $W(\mathfrak g)$ is connected, it again follows from Cartier's theorem that one necessarily has $h=\exp$.
+
+\begin{proposition}{3.10}\label{XVII.3.10}
+Let $G$ be an algebraic group defined over an algebraically closed field $k$. Then the following properties are equivalent:
+\begin{enumerate}[label={}]
+\item i) Every morphism from a group of multiplicative type $M$ to $G$ is the zero morphism.
+\item i bis) $G$ has no nonzero subgroups of multiplicative type.
+\item ii) a) if $p=0$: $G(k)$ contains no points of finite order other than $e$;
+\par b) if $p\neq0$: for every prime number $q\neq p$, $x\in G(k)$ and $x^q=e$ imply $x=e$,
+\par for every $X\in\mathfrak g=\Lie G$ such that $X^{(p)}=X$, one has $X=0$.
+% Source PDF p. 12.
+\item ii bis) a) if $p=0$: as in ii) a);
+\par b) if $p\neq0$: every finite subgroup of $G(k)$ is a $p$-group,
+\par for every $X\in\mathfrak g=\Lie G$ such that $X^{(p)}=X$, one has $X=0$.
+\end{enumerate}
+\end{proposition}
+\noindent\emph{Proof.}
+
+\noindent i) $\Leftrightarrow$ i bis), since the image of a group of multiplicative type is of multiplicative type (Exp. IX 2.7).
+
+\noindent ii) $\Leftrightarrow$ ii bis). For if an ordinary finite group $H$ has an order that is not a power of $p$, there are a prime number $q\neq p$ and an element $x$ of $H$ distinct from $e$ such that $x^q=e$ (Sylow's theorem, \cf J.-P. Serre, \emph{Corps locaux}, chap. IX \S~2).
+
+\noindent i) $\Rightarrow$ ii) follows from the following lemma:
+\begin{lemma}{3.11}\label{XVII.3.11}
+Let $G$ be an algebraic group defined over a field $k$.
+
+\noindent a) If $k$ contains the $n$th roots of unity, $n$ an integer prime to $p$, one has:
+\[
+ \Hom_{k\text{-gr}}(\boldsymbol\mu_n,G)\simeq
+ \Hom_{k\text{-gr}}(\ZZ/n\ZZ,G)\simeq{}_nG(k)
+\]
+(points of order $n$ of $G(k)$).
+
+\noindent b) If $p>0$, $\Hom_{k\text{-gr}}(\boldsymbol\mu_p,G)\simeq\{X\in\mathfrak g=\Lie G\mid X^{(p)}=X\}$.
+\end{lemma}
+Indeed, to prove a), one notes that $\boldsymbol\mu_n$ is then isomorphic over $k$ to $(\ZZ/n\ZZ)$, and b) follows from App. II 2.1.
+
+\noindent ii) $\Rightarrow$ i bis). By Lemma 3.11, ii) is equivalent to the fact that for every prime number $r$, $G$ contains no subgroups $\boldsymbol\mu_r$, which implies i bis) by:
+\begin{lemma}{3.12}\label{XVII.3.12}
+Let $G$ be a diagonalizable $S$-group, of finite type over $S$ and distinct from the unit group. Then there are a prime number $r$ and a subgroup of $G$ isomorphic to $(\boldsymbol\mu_r)_S$.
+\end{lemma}
+Let $G=D_S(M)$, where $M$ is a finitely generated abelian group, hence an extension of a free group $M''$ by a finite group $M'$. If $M''\neq0$, it is clear that $M$ admits quotients isomorphic to $\ZZ/r\ZZ$ for every integer $r$. If $M''=0$, $M'$ admits a quotient isomorphic to $\ZZ/r\ZZ$ for every prime number $r$ dividing the order of $M$. One deduces the lemma by duality.
+
+We have seen (Prop. 2.4) that a unipotent group satisfies the equivalent conditions of 3.10. The purpose of the following paragraph is to prove the converse.
+
+\sgasection{4}{A characterization of unipotent groups}
+As announced, we shall show that an algebraic group $G$ defined over an algebraically closed field $k$, containing no nonzero subgroup of multiplicative type, is unipotent. In fact, it suffices that it contain no ``elementary'' subgroups of multiplicative type of certain very particular kinds, depending on the hypotheses made on $G$. Before stating the general theorem, let us study a few particular cases in detail.
+
+% Source PDF p. 13.
+\par\medskip\noindent\textbf{4.1. Smooth connected affine algebraic groups.}\ ---\par\label{XVII.4.1}
+\begin{proposition}{4.1.1}\label{XVII.4.1.1}
+Let $k$ be a field, $G$ a smooth connected affine algebraic $k$-group, $\mathfrak g=\Lie G$. Then the following properties are equivalent:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $G$ is unipotent.
+\item $G$ has a central composition series whose successive quotients are forms of $\Ga$.
+\item $G$ has a central characteristic composition series whose successive quotients are forms of $(\Ga)^r$.
+\item There is an integer $n>1$ such that $G_{\overline k}$ contains no subgroup isomorphic to $\boldsymbol\mu_n$.
+\item Every maximal torus of $G$ is the unit group.
+\end{enumerate}
+Suppose moreover that $G$ is an algebraic subgroup of a linear group $\GL(n)$. Then the preceding conditions are also equivalent to:
+\begin{enumerate}[label=\textup{\roman*)},start=6]
+\item $\mathfrak g\subset\mathfrak{gl}(n)$ consists of nilpotent endomorphisms.
+\item $\mathfrak g$ is nilpotent, and its center contains no nonzero semisimple endomorphism.
+\end{enumerate}
+\end{proposition}
+\noindent\emph{Proof.} ii) $\Rightarrow$ i) is clear, and i) $\Rightarrow$ iii) was seen in 3.9. The implication iii) $\Rightarrow$ ii) will follow from the following lemma:
+\begin{lemma}{4.1.2}\label{XVII.4.1.2}
+Let $k$ be a field, $G$ an algebraic $k$-group that is a form of $(\Ga)^r$. Then:
+
+\noindent a) $G$ can be realized as an algebraic subgroup of the group $(\Ga)^n$ for a suitable integer $n$.
+
+\noindent b) $G$ has a composition series whose successive quotients are forms of $\Ga$.
+\end{lemma}
+Indeed, by hypothesis, there is an extension $k'$ of $k$ such that $G_{k'}$ is isomorphic to $(\mathbf G_{\mathrm a,k'})^r$. By the principle of finite extension (EGA IV 9.1.1), one can assume that $k'$ is a finite extension of $k$. But then, for a), it suffices to consider the canonical closed immersion (EGA V\nde{Give another reference here\ldots}):
+\[
+ G\to\prod_{k'/k}(G_{k'})/k'\isomto(\mathbf G_{\mathrm a,k})^n
+ \quad\text{(with }n=r\deg(k'/k)\text{)}.
+\]
+To prove b), in view of a), one can assume that $G$ is a closed subgroup of $G'=(\Ga)^n$. If $G\neq0$, there is a hyperplane $\mathfrak h$ of $\mathfrak g'=\Lie G'$ that does not contain $\mathfrak g$. Let $H$ be the vector subgroup $W(\mathfrak h)$ of $W(\mathfrak g')=G'$. Since $H$ is defined by one equation in $G'$, $H\cap G$ is defined by one equation in $G$, and one has the inequalities:
+\[
+\begin{aligned}
+ \dim G-1&\leq\dim(G\cap H)\\
+ &\leq\dim\Lie(G\cap H)=\dim_k(\mathfrak g\cap\mathfrak h)\\
+ &=\dim_k(\mathfrak g)-1=\dim G-1.
+\end{aligned}
+\]
+Hence $\dim(G\cap H)=\dim\Lie(G\cap H)$, and consequently $G\cap H$ is smooth. The group $G_1=(G\cap H)^0$ is a smooth connected algebraic subgroup of $G$ such that $G/G_1$ is smooth, connected, of dimension 1, hence is a form of $\Ga$ (4.1 i) $\Rightarrow$ iii)).
+% Source PDF p. 14.
+One finishes by induction on the dimension of $G$.
+
+Before continuing the proof of 4.1, note that the equivalence i) $\Leftrightarrow$ ii) and 2.3 bis imply the following corollary:
+\begin{corollary}{4.1.3}\label{XVII.4.1.3}
+If $k$ is a perfect field, a smooth connected algebraic $k$-group is unipotent if and only if it has a composition series with successive quotients isomorphic to $\Ga$.
+\end{corollary}
+\noindent\emph{Continuation of the proof of 4.1.}
+
+\noindent i) $\Rightarrow$ iv) by 2.4 i).
+
+\noindent iv) $\Rightarrow$ v). By Exp. XIV 4.1, $G$ has a maximal torus $T$ defined over $k$. Now, if $r=\dim T$, $({}_nT)_{\overline k}$ is isomorphic to $(\boldsymbol\mu_n)^r$. Hence $r=0$.
+
+\noindent v) $\Rightarrow$ i), as one observed in the proof of 3.8.
+
+\noindent i) $\Rightarrow$ vi). By 3.4, $G$ is in fact contained in an algebraic subgroup of $\GL(n)$ isomorphic to $\operatorname{Trigstr}(n)$, hence $\mathfrak g$ consists of nilpotent endomorphisms.
+
+\noindent vi) $\Rightarrow$ vii). Indeed, $\mathfrak g$ is nilpotent by Engel's theorem (Bourbaki, \emph{Groupes et algèbres de Lie}, chap. I \S~4 cor. 3).
+
+\noindent vii) $\Rightarrow$ v). Let $T$ be a maximal subtorus of $G$ (Exp. XIV 1.1), $\mathfrak t$ its Lie algebra. The embedding of $G$ in $\GL(n)$ defines a representation of $T$ that is necessarily semisimple (this is seen over an algebraic closure $\overline k$ of $k$, and one applies Exp. I 4.7.3). Thus, if $X\in\mathfrak t$, $X$ is a semisimple endomorphism in $\mathfrak{gl}(n)$. One immediately sees that this implies that the map:
+\[
+ \ad X:Y\mto[X,Y]
+\]
+is a semisimple endomorphism of $\mathfrak{gl}(n)$, hence of $\mathfrak g$. Since, moreover, this endomorphism is nilpotent, $\mathfrak g$ being nilpotent, $\ad X$ is zero, hence $X$ is central. But then $\mathfrak t$ is central and consists of semisimple endomorphisms, hence is zero by hypothesis; a fortiori, $T$ is the unit group.
+
+\begin{remark}{4.1.4}\label{XVII.4.1.4}
+\noindent a) We shall give later (4.3.1) an infinitesimal characterization of unipotent groups in characteristic $p>0$, independent of an embedding in $\GL(n)$.
+
+\noindent b) When $k$ is \emph{perfect}, conditions ii) and iii) of 4.1.1 simplify by virtue of the following lemma:
+\end{remark}
+\begin{lemma}{4.1.5}\label{XVII.4.1.5}
+If $k$ is a perfect field, every algebraic $k$-group $G$ that is a form of $(\Ga)^r$ is isomorphic to $(\Ga)^r$.
+\end{lemma}
+The lemma follows from 3.9 ter if the characteristic $p$ of $k$ is zero, and from 2.3 bis if $r=1$. In the general case ($p>0$), realize $G$ as an algebraic subgroup of $(\Ga)^n$ for a suitable integer $n$ (4.1.2), and argue by induction on the integer $n-r$. If $r=n$, one does indeed have $G=(\Ga)^r$. Otherwise, the quotient group $\Ga^n/G$ is a nonzero smooth connected unipotent group which, in view of 4.1.1 i) $\Rightarrow$ ii) and 2.3 bis, has a composition series with quotients isomorphic to $\Ga$. One deduces that there is a smooth connected algebraic subgroup $G_1$ of $(\Ga)^n$, containing $G$, such that $\Ga^n/G_1=\Ga$.
+% Source PDF p. 15.
+By induction, it suffices to show that $G_1$ is isomorphic to $(\Ga)^{n-1}$. Now it is immediate to check that a homomorphism from $\Spec k[X_1,\ldots,X_n]=\Ga^n$ to $\Ga=\Spec k[T]$ is defined by an additive polynomial of the form:
+\[
+ \sum_{i,j}a_{i,j}X_i^{p^j}.
+\]
+Since $G_1$ is smooth, the linear part of this polynomial is nonzero. After making a linear change in the coordinates $X_i$, we can assume that $G_1$ is an algebraic subgroup of $(\Ga)^n$ defined by the equation:
+\begin{equation}\tag{*}
+ P(X)=-X_1+\sum_{j=1}^q a_jX_1^{p^j}+Q(X_2,\ldots,X_n)=0,
+\end{equation}
+\[
+ \text{with }Q(X_2,\ldots,X_n)=\sum_{\substack{i>1\\j>0}}b_{i,j}X_i^{p^j}.
+\]
+Let us then proceed by induction on the degree of $P$. If $\deg P=1$, it is clear that $G_1\isomto\Ga^{n-1}$. Otherwise, since $k$ is perfect, one has $Q(X)=Q_1(X)^p$, and we can define an endomorphism $v$ of $\Ga^n$ by the formulas:
+\[
+ X_i\mto X_i\quad\text{for }i>1,\qquad
+ X_1\mto\sum_{j=1}^q a_j^{1/p}X_1^{p^{j-1}}+Q_1(X).
+\]
+It is clear that $v$ induces an isomorphism on $G_1$ and that $v(G_1)$ has equation in $\Ga^n$:
+\begin{equation}\tag*{$(*)_1$}
+ P_1(X)=-X_1+\sum_{j=1}^q a_j^{1/p}X_1^{p^j}+Q_1(X_2,\ldots,X_n)=0.
+\end{equation}
+Let us then distinguish two cases:
+
+\noindent\emph{First case.} $\deg(Q)=\deg P>p^q$. Then one has $\deg P_1<\deg P$, and the induction hypothesis gives the result.
+
+\noindent\emph{Second case.} $\deg P=p^q$ ($a_q\neq0$). One then has $\deg P_1=\deg P=p^q$ and $\deg Q_1<p^q$. (One cannot have $Q=0$, for then $G_1$ would not be connected.) If the polynomial $Q_1$ has no linear part, one can repeat the preceding transformation. Continuing the process, one finally obtains an equation of the form:
+\begin{equation}\tag*{$(*)_s$}
+ P_s(X)=-X_1+\sum_{j=1}^q a_j^{1/p^s}X_1^{p^j}+Q_s(X),
+\end{equation}
+where $Q_s(X)=Q(X_2,\ldots,X_n)^{1/p^s}$ is an additive polynomial with a nonzero linear part and, moreover, $\deg Q_s<p^q$. Suppose, for example, that the coefficient of $X_2$ in $Q_s$ is nonzero, and let $-L$ be the linear part of $P_s(X)$. After making a linear change of coordinates, the equation of $G_1$ becomes:
+\[
+ P'(X)=-L+\sum_{j=1}^q a_j^{1/p^s}X_1^{p^j}+Q'(L,X_3,\ldots,X_n),
+\]
+where $Q'$ is an additive polynomial, without linear part, and $\deg(Q')<p^q$. But then we are reduced to the first case\nde{By replacing $X_1$ by $L$.}.
+% Source PDF p. 16.
+
+\par\medskip\noindent\textbf{4.2. Radicial groups.}\ ---\par\label{XVII.4.2}
+\begin{proposition}{4.2.1}\label{XVII.4.2.1}
+Let $G$ be a radicial algebraic group defined over a field $k$ of characteristic $p>0$. Then the following conditions are equivalent:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $G$ is unipotent.
+\item $G$ has a central composition series with successive quotients isomorphic to $\boldsymbol\alpha_p$.
+\item $G$ has a central characteristic composition series with successive quotients isomorphic to $(\boldsymbol\alpha_p)^r$.
+\item $G_{\overline k}$ contains no subgroup isomorphic to $\boldsymbol\mu_p$.
+\item $\mathfrak g=\Lie G$ is a unipotent Lie $p$-algebra (3.6).
+\end{enumerate}
+\end{proposition}
+\noindent\emph{Proof.} iii) $\Rightarrow$ ii) $\Rightarrow$ i) is clear, i) $\Rightarrow$ iii) is 3.9 i), and i) $\Rightarrow$ iv) by 2.4 i).
+
+We shall need the following lemma on abelian Lie $p$-algebras:
+\begin{lemma}{4.2.2}\label{XVII.4.2.2}
+Let $\mathfrak g$ be an abelian Lie $p$-algebra, finite-dimensional over a perfect field $k$. Then $\mathfrak g$ can be written uniquely as the direct sum of a Lie $p$-subalgebra $\mathfrak r$ on which the $p$th power is bijective and a unipotent Lie $p$-subalgebra $\mathfrak u$ (3.6). (The algebra $\mathfrak r$ will be called the \emph{reductive part} of $\mathfrak g$, and $\mathfrak u$ the \emph{unipotent part}.) The formation of $\mathfrak r$ and $\mathfrak u$ is compatible with extension of the field $k$. If, moreover, $k$ is algebraically closed, $\mathfrak r$ admits a basis $e_i$ such that $e_i^{(p)}=e_i$.
+\end{lemma}
+The proof of this lemma is easy and left to the reader (\cf Bourbaki, \emph{Groupes et algèbres de Lie}, chap. I \S~1 exercise 23). Let us simply say that $\mathfrak u$ is the kernel of a suitable iterate of the map $X\mto X^{(p)}$, and that $\mathfrak r$ is the image of the same iterate.
+
+This being so, let us prove iv) $\Rightarrow$ v). After extending the base field, one can assume that $k$ is algebraically closed.
+
+Let then $X$ be an element of $\mathfrak g$, and $\mathfrak h$ the Lie $p$-subalgebra generated by $X$ in $\mathfrak g$. The algebra $\mathfrak h$ is obviously commutative, and its reductive part (4.2.2) is zero, for otherwise, by \loccit, $\mathfrak h$ would contain an element $Y\neq0$ such that $Y^{(p)}=Y$, and consequently (App. II 2.1 and 2.2) $G$ would contain a subgroup isomorphic to $\boldsymbol\mu_p$, contrary to the hypothesis. Thus $\mathfrak h$, and consequently $\mathfrak g$, is a unipotent Lie $p$-algebra.
+
+\noindent v) $\Rightarrow$ i). This is the least trivial implication of 4.2.1.
+
+\noindent a) \emph{Case where $G$ is of height 1} (Exp. VIIA 4.1.3). Since $G$ is radicial, it is affine, hence isomorphic to an algebraic subgroup of a linear group $\GL(V)$ (Exp. VIB \S~11). This embedding identifies $\mathfrak g$ with a Lie $p$-subalgebra of $\End(V)$, the $p$th power of $X$ in $\mathfrak g$ coinciding with the $p$th power of the endomorphism $X$ (Exp. VIIA 6.4.4). Since $\mathfrak g$ is unipotent by hypothesis, $\mathfrak g$ is therefore an algebra of nilpotent endomorphisms of $V$, and by \emph{Engel's theorem} (Bourbaki, \emph{Groupes et algèbres de Lie}, chap. I \S~4 th. 1) is a Lie subalgebra of the Lie algebra $\mathfrak h$ of the group of strict upper triangular matrices $\operatorname{Trigstr}(n)$ with respect to a suitable basis of $V$.
+% The sentence starts on p. 16 and finishes on p. 17; the next sentence belongs to en-04.

@@ -1,0 +1,321 @@
+% Source PDF pp. 9--14; original pp. 275--286.
+\begin{lemma}{2.1.8}\label{XXIII.2.1.8}
+Let $n\in\uNorm_G(T)(S)$. For every $S'\to S$ and every $g\in\Omega(S')$ such that $\operatorname{int}(n)g\in\Omega(S')$, one has
+\[
+f(ngn^{-1})=f_N(n)f(g)f_N(n)^{-1}.
+\]
+\end{lemma}
+\begin{proof}
+This is trivial if $n\in T(S)$ (by 2.1.3). The two sides of the preceding formula define morphisms from $\Omega\cap\operatorname{int}(n)^{-1}\Omega$ to H; to check that they coincide, it suffices to check that there exists an open subset $V_n$ of $\Omega$, containing the identity section, such that $\operatorname{int}(n)V_n\subset\Omega$, and that $f\circ\operatorname{int}(n)$ and $\operatorname{int}(f_N(n))\circ f$ coincide on $V_n$. By the structure of $\uNorm_G(T)$, it suffices to prove that if the preceding assertion holds for an $n'\in\uNorm_G(T)(S)$ and if $\alpha\in\Delta$, it holds for $n=n'w_\alpha$. Put
+\[
+V_n=\Omega\cap\operatorname{int}(w_\alpha)^{-1}V_{n'}.
+\]
+One has $\operatorname{int}(n)V_n\subset\operatorname{int}(n')V_{n'}\subset\Omega$. If $g\in V_n(S')$, one has
+\[
+\operatorname{int}(n)g=\operatorname{int}(n')\operatorname{int}(w_\alpha)g.
+\]
+Now $\operatorname{int}(w_\alpha)g\in V_{n'}(S')$, so by hypothesis
+\[
+f\bigl(\operatorname{int}(n')\operatorname{int}(w_\alpha)g\bigr)
+=\operatorname{int}(f_N(n'))f(\operatorname{int}(w_\alpha)g);
+\]
+since $\operatorname{int}(w_\alpha)g\in\Omega(S')$, one may apply 2.1.7, which gives
+\[
+f(\operatorname{int}(w_\alpha)g)=\operatorname{int}(f_N(w_\alpha))f(g),
+\]
+and one concludes immediately.
+\end{proof}
+
+Let us now prove 2.1.2. Let $x,x'\in\Omega(S')$; write as usual
+\[
+x=vtu,\qquad x'=v't'u',
+\]
+whence
+\[
+xx'=vt(uv')t'u'.
+\]
+By 2.1.6 and the relation $U^-(S')\Omega(S')U(S')=\Omega(S')$, one is reduced to proving that if $uv'\in\Omega(S')$, one has $f(uv')=f(u)f(v')$. Let $n\in\uNorm_G(T)(S')$ be as in 2.1.5 (ii).
+% typo?: reference 2.1.5 (ii), kept as printed.
+One has
+\[
+\begin{gathered}
+f(u)=f_N(n)^{-1}f(nun^{-1})f_N(n),\\
+f(v')=f_N(n)^{-1}f(nv'n^{-1})f_N(n),
+\end{gathered}
+\]
+by \loccit, whence
+\[
+f(u)f(v')=f_N(n)^{-1}f(nun^{-1})f(nv'n^{-1})f_N(n).
+\]
+But $nun^{-1}\in U^-(S')$, $nv'n^{-1}\in U(S')$, so that
+\[
+f(nun^{-1})f(nv'n^{-1})=f\bigl((nun^{-1})(nv'n^{-1})\bigr)=f(nuv'n^{-1}),
+\]
+which gives
+\[
+f(u)f(v')=f_N(n)^{-1}f(nuv'n^{-1})f_N(n).
+\]
+If $uv'\in\Omega(S')$, one may apply 2.1.8 and the proof is complete.
+
+\begin{remark}{2.2}\label{XXIII.2.2}
+Instead of giving $f_N$, one may give a group morphism $f_T:T\to H$, and sections $h_\alpha\in H(S)$ $(\alpha\in\Delta)$ satisfying the conditions of 1.8.2. One must then replace condition (ii) of the theorem by
+
+(ii$'$) There exists a group morphism $F_\alpha:Z_\alpha\to H$ which extends
+\[
+f_\alpha,\ f_{-\alpha},\ f_T\quad\text{and satisfies }F_\alpha(w_\alpha)=h_\alpha.
+\]
+\end{remark}
+
+We shall now give the preceding theorem a more explicit form. Retain the preceding notation.
+\begin{theorem}{2.3}\label{XXIII.2.3}
+Let S be a scheme, and G a pinned S-group. Let H be an S-group sheaf for \fppf,
+\[
+f_T:T\to H,\qquad f_\alpha:U_\alpha\to H,\quad\alpha\in\Delta,
+\]
+group morphisms, and
+\[
+h_\alpha\in H(S),\qquad(\alpha\in\Delta),
+\]
+sections of H. For there to exist a group morphism
+\[
+f:G\to H
+\]
+(necessarily unique) inducing $f_T$ and the $f_\alpha$ $(\alpha\in\Delta)$ and satisfying $f(w_\alpha)=h_\alpha$ for every $\alpha\in\Delta$, it is necessary and sufficient that the following conditions hold:
+\begin{enumeratei}
+\item For every $S'\to S$, every $t\in T(S')$, every $\alpha\in\Delta$ and every $x\in U_\alpha(S')$, one has
+\begin{equation}\tag{1}
+f_T(t)f_\alpha(x)f_T(t)^{-1}=f_\alpha(\operatorname{int}(t)x).
+\end{equation}
+\item For every $\alpha\in\Delta$, every $S'\to S$, every $t\in T(S')$, one has
+\begin{equation}\tag{2}
+h_\alpha f_T(t)h_\alpha^{-1}=f_T(s_\alpha(t))=f_T(t\cdot\alpha^*\alpha(t)^{-1}).
+\end{equation}
+\item For every $(\alpha,\beta)\in\Delta\times\Delta$, one has
+\begin{equation}\tag{3}
+(h_\alpha h_\beta)^{n_{\alpha\beta}}=f_T(t_{\alpha\beta}).
+\end{equation}
+\item For every $\alpha\in\Delta$, one has (recall that one writes $u_\alpha=\exp_\alpha(X_\alpha)$)
+\begin{equation}\tag{4}
+(h_\alpha f_\alpha(u_\alpha))^3=e.
+\end{equation}
+\item For every $(\alpha,\beta)\in\Delta\times\Delta$, $\alpha\ne\beta$, there exists a group morphism
+\[
+f_{\alpha\beta}:U_{\alpha\beta}\to H
+\]
+satisfying the following two conditions:
+
+ a) One has
+\begin{equation}\tag{5}
+f_{\alpha\beta}|_{U_\alpha}=f_\alpha,\qquad f_{\alpha\beta}|_{U_\beta}=f_\beta,
+\end{equation}
+ b) For every $\gamma\in R^+_{\alpha\beta}$, $\gamma\ne\alpha$ (resp. $\gamma\ne\beta$), and every $x\in U_\gamma(S')$, $S'\to S$, one has
+% typo?: w_alpha in the beta alternative of (6), kept as printed.
+\begin{equation}\tag{6}
+\begin{gathered}
+\operatorname{int}(h_\alpha)f_{\alpha\beta}(x)=f_{\alpha\beta}(\operatorname{int}(w_\alpha)x),\\
+\text{(resp.}\quad\operatorname{int}(h_\beta)f_{\alpha\beta}(x)=f_{\alpha\beta}(\operatorname{int}(w_\alpha)x)\text{).}
+\end{gathered}
+\end{equation}
+\end{enumeratei}
+\end{theorem}
+\emph{Proof.} Uniqueness is clear by 1.9.2. Let us prove existence.
+\begin{lemma}{2.3.1}\label{XXIII.2.3.1}
+There exists a group morphism
+\[
+f_N:\uNorm_G(T)\to H
+\]
+extending $f_T$ and satisfying $f_N(w_\alpha)=h_\alpha$.
+\end{lemma}
+Indeed, this is what 1.8.2 asserts, taking conditions (2) and (3) into account.
+\begin{lemma}{2.3.2}\label{XXIII.2.3.2}
+There exists a group morphism
+\[
+F_\alpha:Z_\alpha\to H,\qquad\alpha\in\Delta,
+\]
+extending $f_T$, $f_\alpha$ and satisfying $F_\alpha(w_\alpha)=h_\alpha$, hence extending $f_N|_{\uNorm_{Z_\alpha}(T)}$.
+\end{lemma}
+This is clear by Exp. XX, 6.2 and conditions (1), (3) and (4).
+\begin{lemma}{2.3.3}\label{XXIII.2.3.3}
+For every $(\alpha,\beta)\in\Delta\times\Delta$, $\alpha\ne\beta$, every $n\in\uNorm_{Z_{\alpha\beta}}(T)(S)$ such that $\bar n(\alpha)=\alpha$ (resp. $\bar n(\alpha)=\beta$), i.e., $\operatorname{int}(n)U_\alpha=U_\alpha$ (resp. $\operatorname{int}(n)U_\alpha=U_\beta$), every $S'\to S$ and every $x\in U_\alpha(S')$, one has
+\[
+\begin{aligned}
+\operatorname{int}(f_N(n))f_\alpha(x)&=f_\alpha(\operatorname{int}(n)x)\\
+\text{resp.}\quad\operatorname{int}(f_N(n))f_\alpha(x)&=f_\beta(\operatorname{int}(n)x).
+\end{aligned}
+\]
+\end{lemma}
+\begin{proof}
+Indeed, there exist a $t\in T(S)$ and a sequence $\{\alpha_i\}\subset\{\alpha,\beta\}$ such that $n=tw_{\alpha_k}\cdots w_{\alpha_1}$. The condition holds for $n=t$ by condition (1). One may therefore suppose $n=w_{\alpha_k}\cdots w_{\alpha_1}$. Let us give the proof by induction on k, i.e., suppose the assertion proved for every n which can be written as a product of fewer than $k-1$ simple reflections (and satisfies the hypotheses of the lemma). Consider the roots
+\[
+\gamma_i=s_{\alpha_i}\cdots s_{\alpha_1}(\alpha).
+\]
+If all the $\gamma_i$ are positive, i.e., belong to $R^+_{\alpha\beta}$, one may apply condition (v) of 2.3; adopting the notation of 2.3 (v), one concludes immediately by induction that
+\[
+\operatorname{int}\bigl(f_N(w_{\alpha_i}\cdots w_{\alpha_1})\bigr)f_\alpha(x)
+=f_{\alpha\beta}(\operatorname{int}(w_{\alpha_i}\cdots w_{\alpha_1})x),
+\]
+which, for $i=k$, is the desired property. If not all the $\gamma_i$ are positive, there exists an index $j<k$ such that
+\[
+\gamma_j\in R_+,\qquad\gamma_{j+1}\notin R_+.
+\]
+Since $\gamma_{j+1}=s_{\alpha_j}(\gamma_j)$, it follows immediately that $\gamma_j=\alpha_j$, by Exp. XXI, 3.3.2, hence that $\gamma_j$ is $\alpha$ or $\beta$, and one may decompose n as
+% typo?: alpha_j rather than alpha_{j+1}, and fewer than k-1 in this proof, kept as printed.
+\[
+\begin{aligned}
+n&=n'\cdot n'',\\
+n'&=w_{\alpha_k}\cdots w_{\alpha_{j+1}},\\
+n''&=w_{\alpha_j}\cdots w_{\alpha_1},
+\end{aligned}
+\]
+$n'$ and $n''$ satisfying the hypotheses of the lemma and being products of fewer than $k-1$ reflections, hence satisfying the conclusion of the lemma by the induction hypothesis.
+\end{proof}
+\begin{lemma}{2.3.4}\label{XXIII.2.3.4}
+Let $\alpha\in R$. If $n,n'\in\uNorm_G(T)(S)$ and $\beta,\beta'\in\Delta$ satisfy $\bar n(\alpha)=\beta$ and $\bar n'(\alpha)=\beta'$, one has
+% typo?: f_T evaluated on n,n' in the normalizer, kept as printed.
+\[
+\operatorname{int}\bigl(f_T(n)^{-1}\bigr)f_\beta(nxn^{-1})
+=\operatorname{int}\bigl(f_T(n')^{-1}\bigr)f_{\beta'}(n'xn'^{-1}),
+\]
+for every $x\in U_\alpha(S')$, $S'\to S$.
+\end{lemma}
+\begin{proof}
+It suffices to check that if $\bar n(\alpha)=\beta$, $\alpha,\beta\in\Delta$, then $\operatorname{int}(f_T(n))\circ f_\alpha=f_\beta\circ\operatorname{int}(n)$. Now, by Tits's lemma (Exp. XXI, 5.6), there exist a sequence of simple roots $\alpha_0=\alpha$, $\alpha_1,\ldots,\alpha_m=\beta$, and a sequence of elements $w_i\in W$, $i=0,1,\ldots,m-1$, with
+\[
+\begin{aligned}
+\bar n&=w_{m-1}\cdots w_0,\\
+w_i(\alpha_i)&=\alpha_{i+1},\qquad i=0,1,\ldots,m-1,
+\end{aligned}
+\]
+the following condition being moreover satisfied: for every $i=0,1,\ldots,m-1$, there exists a simple root $\beta_i$ such that
+\[
+w_i\in W_{\alpha_i\beta_i},\qquad\alpha_{i+1}=\alpha_i\quad\text{or}\quad\beta_i.
+\]
+One is then reduced by induction to the case treated in the preceding lemma.
+\end{proof}
+\begin{lemma}{2.3.5}\label{XXIII.2.3.5}
+There exists a family of group morphisms $f'_\gamma:U_\gamma\to H$, $\gamma\in R$, satisfying
+\begin{enumeratei}
+\item For $\alpha\in\Delta$, one has $f'_\alpha=f_\alpha$ and $f'_{-\alpha}=F_\alpha|_{U_{-\alpha}}$, where $F_\alpha$ is defined in 2.3.2.
+\item For $\alpha,\beta\in\Delta$ and $\gamma\in R^+_{\alpha\beta}$, one has $f'_\gamma=f_{\alpha\beta}|_{U_\gamma}$.
+\item For every $n\in\uNorm_G(T)(S)$ and $\alpha,\beta\in R$ such that $\bar n(\alpha)=\beta$, one has
+\[
+\operatorname{int}(f_N(n))f'_\alpha(x)=f'_\beta(\operatorname{int}(n)x)
+\]
+for every $x\in U_\alpha(S')$, $S'\to S$.
+\end{enumeratei}
+\end{lemma}
+\begin{proof}
+For every root $\alpha\in R$, there exists an $n\in\uNorm_G(T)(S)$ such that $\bar n(\alpha)\in\Delta$. Define $f'_\alpha(x)$ to be the expression of 2.3.4. This is independent of the choice of n and $f'_\alpha$ is indeed a group morphism. Property (iii) holds by construction. The first assertion of (i) is clear (take $n=e$), and so is the second (take $n=w_\alpha$ and apply 2.3.2); if $\gamma\in R^+_{\alpha\beta}$, $(\alpha,\beta\in\Delta)$, there exists $n\in\uNorm_{Z_{\alpha\beta}}(T)(S)$ such that $\bar n(t)=\alpha$ or $\beta$; one then applies (iii) and conditions (5) and (6) and has proved (ii).
+% typo?: n-bar(t) rather than n-bar(gamma), kept as printed.
+\end{proof}
+\numpara{2.3.6}
+Let us now prove the theorem by proving that the conditions of 2.1 hold for the morphisms $f_N$ and $f'_\alpha$, $\alpha\in R$.
+
+2.1 (i) follows from 2.3.5 (iii),
+
+2.1 (ii) follows from 2.3.5 (i) and 2.3.2,
+
+2.1 (iii) follows from 2.3.5 (ii) and the fact that $f_{\alpha\beta}$ is a group morphism.
+
+An obvious corollary is:
+\begin{corollary}{2.4}\label{XXIII.2.4}
+Let S be a scheme, G a pinned S-group of semisimple rank $\geq1$, and H an \fppf S-group sheaf. For each $(\alpha,\beta)\in\Delta\times\Delta$, let
+\[
+F_{\alpha\beta}:Z_{\alpha\beta}\to H
+\]
+be a group morphism. For there to exist a group morphism
+\[
+f:G\to H
+\]
+inducing the $F_{\alpha\beta}$, it is necessary and sufficient that for every $(\alpha,\beta)\in\Delta\times\Delta$, one have
+\[
+F_{\alpha\beta}|_{Z_\alpha}=F_{\alpha\alpha}.
+\]
+\end{corollary}
+\begin{proof}
+The condition is obviously necessary. Suppose it satisfied. Put $f_T=F_{\alpha\alpha}|_T$ (which does not depend on $\alpha$, since $F_{\alpha\alpha}|_T=F_{\alpha\beta}|_T=F_{\beta\beta}|_T$). Put
+% typo?: p_alpha instead of f_alpha, kept as printed.
+\[
+p_\alpha=F_{\alpha\alpha}|_{U_\alpha},\qquad h_\alpha=F_{\alpha\alpha}(w_\alpha),\qquad f_{\alpha\beta}=F_{\alpha\beta}|_{U_{\alpha\beta}}.
+\]
+The conditions of 2.3 are obviously satisfied: (1), (2), (4) ``are checked'' in $Z_\alpha$, (3), (5) and (6) in $Z_{\alpha\beta}$. There thus exists a morphism $f:G\to H$ extending $f_T$, the $f_\alpha$, $\alpha\in\Delta$, and satisfying $f(w_\alpha)=h_\alpha$; it coincides with $F_{\alpha\beta}$ on generators of $Z_{\alpha\beta}$, hence satisfies $f|_{Z_{\alpha\beta}}=F_{\alpha\beta}$.
+\end{proof}
+One also has the following technical corollary:
+\begin{corollary}{2.5}\label{XXIII.2.5}
+Let S be a scheme, G and $G'$ two pinned S-groups of semisimple rank 2, q an integer $>0$ such that $x\mto x^q$ is an endomorphism of $\mathbf G_{\mathrm a,S}$, and $h:\mathscr R(G')\to\mathscr R(G)$ a q-morphism of pinned root data. For each $\alpha\in R_+$, choose an $X_\alpha\in\Gamma(S,\goth g^\alpha)^\times$ and an $X'_{d(\alpha)}\in\Gamma(S,\goth g'^{d(\alpha)})^\times$ (extending the canonical choices for $\alpha\in\Delta$). Suppose the following conditions hold:
+\begin{enumeratei}
+\item If $\Delta=\{\alpha,\beta\}$, one has $D_S(h)(t_{\alpha\beta})=t'_{d(\alpha)d(\beta)}$.
+\item For every $\alpha\in\Delta$ and every $\beta\in R_+$, $\beta\ne\alpha$ (whence $s_\alpha(\beta)\in R_+$), if $z\in\Gm(S)$ is defined by
+\[
+\Ad(w_\alpha)X_\beta=zX_{s_\alpha(\beta)},
+\]
+one also has
+\[
+\Ad(w'_{d(\alpha)})X'_{d(\beta)}=z^{q(\beta)}X'_{d(s_\alpha(\beta))}.
+\]
+\item There exists a group morphism $f:U\to U'$ such that for every $\alpha\in R_+$ one has, for every $x\in\Ga(S')$, $S'\to S$,
+\[
+f(\exp(xX_\alpha))=\exp(x^{q(\alpha)}X'_{d(\alpha)}).
+\]
+\end{enumeratei}
+Then there exists a morphism of pinned groups $G\xrightarrow{g}G'$ such that $\mathscr R(g)=h$.
+\end{corollary}
+\begin{proof}
+Indeed, one defines $f_\alpha:U_\alpha\to G'$ by
+\[
+f_\alpha(\exp(xX_\alpha))=\exp(x^{q(\alpha)}X'_{d(\alpha)});
+\]
+one puts $f_T=D_S(h)$, $h_\alpha=w'_{d(\alpha)}$. The conditions of 2.3 are satisfied (observe that $q(s_\alpha(\beta))=q(\beta)$ (Exp. XXI, 6.8.4) and that one always has $D_S(h)(t_\alpha)=t'_{d(\alpha)}$) and one concludes immediately.
+\end{proof}
+\begin{remark}{2.6}\label{XXIII.2.6}
+One may make condition (v) of 2.3 more precise as follows. One must first check:
+
+(a) For every word in $w_\alpha$ and $w_\beta$ such that the corresponding word takes $\alpha$ or $\beta$ to $\alpha$ or $\beta$, the corresponding relation of type 2.3.3 holds. In fact the proof of 2.3.3 shows that it suffices to check it for the words in $w_\alpha$ and $w_\beta$ which are minimal (in the sense that every nontrivial initial subword fails to satisfy the imposed conditions).
+
+If condition (a) holds, one may now define, for each $\gamma\in R^+_{\alpha\beta}$, an $f_\gamma:U_\gamma\to H$ as in 2.3.5; one must then write:
+
+(b) The morphism defined by the $f_\gamma$
+\[
+U_{\alpha\beta}=\prod_{\gamma\in R^+_{\alpha\beta}}U_\gamma\to H
+\]
+is a group morphism. According to Exp. XXII, 5.5.8, (b) is implied by:
+
+(b$'$) The preceding morphism respects the commutation relations between $U_\gamma$ and $U_\delta$ for $\gamma,\delta\in R^+_{\alpha\beta}$, $\gamma>\delta$ (i.e., the relations in $C_{i,j,\gamma,\delta}$ of Exp. XII, 5.5.2).
+% typo?: Exp. XII rather than XXII, kept as printed.
+
+It is clear that, conversely, the collection of conditions (a) and (b$'$) is equivalent to (v).
+
+One may even reduce the preceding conditions to conditions involving only the elements $h_\alpha$, $h_\beta$, $f_\alpha(u_\alpha)$, $f_\beta(u_\beta)$ of H. A condition of type (a) will be written, for example, if $s_\alpha s_\beta s_\alpha(\beta)=\alpha$:
+\begin{equation}\tag{1}
+\operatorname{int}(h_\alpha h_\beta h_\alpha)f_\beta(x)=f_\alpha(\operatorname{int}(w_\alpha w_\beta w_\alpha)x);
+\end{equation}
+for every $x\in U_\alpha(S')$, $S'\to S$. In particular, for $x=u_\beta$, one has $\operatorname{int}(w_\alpha w_\beta w_\alpha)u_\beta=u_\alpha^z$ for a certain section z of $\Gm(S)$, and the preceding relation gives
+% typo?: x in U_alpha rather than U_beta in this argument, kept as printed.
+\begin{equation}\tag{1$'$}
+\operatorname{int}(h_\alpha h_\beta h_\alpha)f_\beta(u_\beta)=f_\alpha(u_\alpha)^z.
+\end{equation}
+Let us show that, conversely, taking conditions (i) to (iv) of 2.3 into account, (1$'$) implies (1). If $t\in T(S')$, $S'\to S$, let $\operatorname{int}(t)$ act on (1$'$); taking conditions (i) and (ii) into account, one obtains (1) for $x=\operatorname{int}(t)u_\beta=u_\beta^{\beta(t)}$. It now suffices to observe that $\beta:T\to\mathbf G_{\mathrm m,S}$ is faithfully flat, hence that condition (1) certainly holds for $x\in U_\alpha(S')^\times$, $S'\to S$. Since it is additive in x and every section of $U_\alpha$ can locally be written as a sum of two sections of $U_\alpha^\times$, one does indeed conclude that (1$'$) + (i) + (ii) $\Longrightarrow$ (1).
+
+One argues in the same way with conditions of type (b). One must then use the fact that if $\gamma$ and $\gamma'$ are two distinct positive roots (and hence linearly independent over $\QQ$), the morphism $T\to\mathbf G_{\mathrm m,S}^2$ with components $\gamma$ and $\gamma'$ is faithfully flat. We leave the details of this transposition to the reader.
+\end{remark}
+
+\sgasection{3}{Groups of semisimple rank 2}
+\numpara{3.1}\textbf{Generalities}
+\begin{lemma}{3.1.1}\label{XXIII.3.1.1}
+Let S be a scheme, G a pinned S-group, and $\alpha$ and $\beta$ two roots of G, with $\alpha+\beta\ne0$.
+\begin{enumeratei}
+\item If $\alpha+\beta\notin R$, one has
+\[
+\exp(X_\alpha)\exp(X_\beta)=\exp(X_\beta)\exp(X_\alpha)
+\]
+for all $X_\alpha\in\mathbf W(\goth g^\alpha)(S')$, $X_\beta\in\mathbf W(\goth g^\beta)(S')$, $S'\to S$.
+\item If $\alpha+\beta$ and $\alpha-\beta$ are not roots, one has
+\[
+w_\alpha(z_\alpha)\exp(X_\beta)w_\alpha(z_\alpha)^{-1}=\exp(X_\beta)
+\]
+for all $X_\beta\in\mathbf W(\goth g^\beta)(S')$, $z_\alpha\in\mathbf W(\goth g^\alpha)^\times(S')$, $S'\to S$, and
+\[
+w_\alpha(z_\alpha)w_\beta(z_\beta)=w_\beta(z_\beta)w_\alpha(z_\alpha)
+\]
+for all $z_\alpha\in\mathbf W(\goth g^\alpha)^\times(S')$ and $z_\beta\in\mathbf W(\goth g^\beta)^\times(S')$, $S'\to S$.
+% Lemma 3.1.1 and enumeratei continue in en-03.tex (item iii begins on PDF p. 15).

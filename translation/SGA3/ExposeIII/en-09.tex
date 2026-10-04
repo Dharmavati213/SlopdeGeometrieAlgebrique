@@ -1,0 +1,565 @@
+{\renewcommand{\thefootnote}{(97)}\nde{One has added what follows.}}%
+One can now complete the proof of~4.8\,(iii). The equality~\((\ast\ast\ast)\)
+is checked locally on~\(T\), so one is reduced to the affine situation
+described above.
+Denote by~\(d_{A/\Lambda}\) the differential \(A\to\Omega^1_{A/\Lambda}\). Then
+\(a\) corresponds, above~\(U\), to an element~\(a_U\) of
+\[
+\Hom_{C_0}(\Omega^1_{A_0/\Lambda_0}\otimes_{A_0}C_0,JC)
+\simeq
+\Hom_{B_0}(\Omega^1_{A/\Lambda}\otimes_A B_0,JC)
+\simeq
+\Hom_A(\Omega^1_{A/\Lambda},JC).
+\]
+Then, on the one hand, \(v_{f_0}(a)\) corresponds above~\(U\) to the
+element \(a_U\circ D_0\), where \(D_0\) is the morphism of
+\(B\)-modules%
+{\renewcommand{\thefootnote}{(98)}\nde{\Cf N.D.E.~(93).}}
+\[
+I_Y/I_Y^2\longrightarrow\Omega^1_{A/\Lambda}\otimes_A B_0,
+\qquad
+x+I_Y^2\mapsto d_{A/\Lambda}(x)\otimes 1.
+\]
+On the other hand (\cf the proof of~0.1.8 and~0.1.9), the morphism of
+\(\Lambda\)-algebras \(\phi'\colon A\to C\) corresponding to \(a\cdot f\)
+differs from~\(\phi\) by the \(\Lambda\)-derivation \(A\to JC\) associated
+with~\(a_U\), \ie one has:
+\[
+\phi'=\phi+a_U\circ d_{A/\Lambda}=\phi+a_U\circ(d_{A/\Lambda}\otimes 1).
+\]
+Consequently, writing \(c'=c(X,Y,a\cdot f)\), one has for every
+\(x\in I_Y\), writing \(x\) for its image in \(I_Y/I_Y^2\):
+\[
+(c'-c)(x\otimes 1)
+=a_U(d_{A/\Lambda}(x)\otimes 1)
+=(a_U\circ D_0)(x)
+=v_{f_0}(a)(x).
+\]
+This shows that \(c'-c=v_{f_0}(a)\).
+
+\numpara{4.10}\label{III.4.10}
+One has deleted remark~4.10 of the original, rendered obsolete by the
+addition of remark~4.8.0.
+
+\numpara{4.11}\label{III.4.11}
+We now propose to study the following situation. Let \(S\),
+\(S_{\mathcal{J}}\) and \(S_0\) be as in~4.8; one has three \(S\)-schemes
+\(X\), \(X'\), \(T\), a subscheme \(Y\) of \(X\) (\resp \(Y'\) of \(X'\)), and
+morphisms \(f\colon T\to X'\) and \(g\colon X'\to X\).
+\[
+\xymatrix@C=3.2em@R=1.6em{
+& Y' \ar@{^{(}->}[d]^{i'} & Y \ar@{^{(}->}[d]^{i} \\
+T \ar[r]^{f} & X' \ar[r]^{g} & X\,.
+}
+\]
+
+One supposes that by reduction modulo~\(\mathcal{J}\), this diagram
+completes to a commutative diagram
+\[
+\xymatrix@C=3.4em@R=1.7em{
+& Y'_{\mathcal{J}} \ar@{-->}[rr] \ar@{^{(}->}[d]_{i'_{\mathcal{J}}}
+& & Y_{\mathcal{J}} \ar@{^{(}->}[d]^{i_{\mathcal{J}}} \\
+T_{\mathcal{J}} \ar@{-->}[ur] \ar[r]_{f_{\mathcal{J}}}
+& X'_{\mathcal{J}} \ar[rr]_{g_{\mathcal{J}}}
+& & X_{\mathcal{J}}\,.
+}
+\]
+One therefore has, by~4.8, obstructions:
+\begin{align*}
+c(X,Y,g\circ i')
+&\in
+\Hom_{\mathcal{O}_{Y'_0}}\bigl(
+i'^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_Y}\mathcal{O}_{Y_0}),
+\mathcal{J}\mathcal{O}_{Y'}\bigr),\\
+c(X',Y',f)
+&\in
+\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0(\mathcal{N}_{Y'/X'}\otimes_{\mathcal{O}_{Y'}}\mathcal{O}_{Y'_0}),
+\mathcal{J}\mathcal{O}_T\bigr),\\
+c(X,Y,g\circ f)
+&\in
+\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_Y}\mathcal{O}_{Y_0}),
+\mathcal{J}\mathcal{O}_T\bigr),
+\end{align*}
+whose relations one seeks to calculate.%
+{\renewcommand{\thefootnote}{(99)}\nde{From~4.17 onwards, one will apply
+this to the case where \(X\) is an \(S\)-group, \(g\colon X\times_S X\to X\)
+the multiplication, \(Y\) a subscheme of \(X\) such that \(Y_{\mathcal{J}}\)
+is a subgroup of \(X_{\mathcal{J}}\), \(Y'=Y\times_S Y\), and to the two
+morphisms \(Y^3\to X^2\) which send \((y_1,y_2,y_3)\) to
+\((y_1 y_2,y_3)\), \resp \((y_1,y_2 y_3)\). In this case, the comparison of
+the obstructions above will show that the obstruction to \(Y\) being a
+subgroup of \(X\) lies in a certain cohomology group (of Hochschild)
+\(\mathrm{H}^2(Y_0,N_0)\).}}
+
+\begin{lemma}{4.12}\label{III.4.12}
+Suppose \(Y'\) flat over \(S\), so that
+\(\mathcal{J}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{Y'_0}
+=\mathcal{J}\mathcal{O}_{Y'}\).
+\begin{enumeratei}
+\item One has a natural morphism
+\[
+b_{f_0}\colon
+\Hom_{\mathcal{O}_{Y'_0}}\bigl(
+i'^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes\mathcal{O}_{Y_0}),
+\mathcal{J}\mathcal{O}_{Y'}\bigr)
+\longrightarrow
+\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes\mathcal{O}_{Y_0}),
+\mathcal{J}\mathcal{O}_T\bigr).
+\]
+\item One also has a natural morphism, functorial in~\(T\)%
+{\renewcommand{\thefootnote}{(100)}\nde{One has deleted the hypothesis
+``\(Y'_0\) locally a complete intersection in \(X'_0\)'', superfluous
+by~4.8.0; on the other hand, one has added that \(a_{g_0}(f_0)\) is
+``functorial in \(T\)'', this playing a crucial role in the proof
+of~4.17.}}
+\[
+a_{g_0}(f_0)\colon
+\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0(\mathcal{N}_{Y'/X'}\otimes\mathcal{O}_{Y'_0}),
+\mathcal{J}\mathcal{O}_T\bigr)
+\longrightarrow
+\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes\mathcal{O}_{Y_0}),
+\mathcal{J}\mathcal{O}_T\bigr).
+\]
+\end{enumeratei}
+\end{lemma}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+{\renewcommand{\thefootnote}{(101)}\nde{One has spelled out the proof, in
+order to bring out the ``functoriality in \(T\)'' of~\(a_{g_0}\).}}%
+Let us first remark that, \(X\), \(X'\), \(Y\), \(Y'\) being fixed, giving
+a \(T\) as above is equivalent to giving a morphism
+\((f,f_{\mathcal{J}})\colon T\to X'\times_{X'_+}Y'_+\).
+Set \(Z=X'\times_{X'_+}Y'_+\) and denote by \(M\) and \(M'\) the
+\(Z\)-functors defined by: for every \(f\colon T\to Z\),
+\[
+\begin{aligned}
+M(T)
+&=\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes\mathcal{O}_{Y_0}),
+\mathcal{J}\mathcal{O}_T\bigr),\\
+M'(T)
+&=\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0(\mathcal{N}_{Y'/X'}\otimes\mathcal{O}_{Y'_0}),
+\mathcal{J}\mathcal{O}_T\bigr).
+\end{aligned}
+\]
+{\renewcommand{\thefootnote}{(102)}\nde{The situation will simplify
+from~4.16 onwards: one will restrict oneself to schemes \emph{flat}
+over~\(S\), \(Y\) will be a flat \(S\)-group and \(Y'=Y\times_S Y\), and one
+will then obtain \(S_0\)-functors \(N_0\) and \(N'_0\).}}%
+One has in any case a commutative diagram:
+\[
+\xymatrix@C=4.5em@R=1.8em{
+f_0^*(\mathcal{J}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{Y'_0}) \ar[d]
+& \mathcal{J}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{T_0} \ar[d] \\
+f_0^*(\mathcal{J}\mathcal{O}_{Y'}) \ar@{-->}[r]
+& \mathcal{J}\mathcal{O}_T
+}
+\]
+and as \(Y'\) is flat over \(S\), the left-hand arrow is an isomorphism,
+so one obtains a morphism of \(\mathcal{O}_{T_0}\)-modules
+\(f_0^*(\mathcal{J}\mathcal{O}_{Y'})\to\mathcal{J}\mathcal{O}_T\). The
+latter induces a morphism of abelian groups
+\[
+\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes\mathcal{O}_{Y_0}),
+f^*_0(\mathcal{J}\mathcal{O}_{Y'})\bigr)
+\longrightarrow M(T)
+\]
+and, composing with the morphism
+\[
+M(Y')\longrightarrow
+\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes\mathcal{O}_{Y_0}),
+f^*_0(\mathcal{J}\mathcal{O}_{Y'})\bigr),
+\]
+induced by \(f_0^*\), one obtains the morphism
+\(b_{f_0}\colon M(Y')\to M(T)\).
+
+Likewise, one has in any case a diagram
+\[
+\xymatrix@C=3.2em@R=1.9em{
+g_0^*(\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_Y}\mathcal{O}_{Y_0})
+  \ar@{-->}[r] \ar[d]
+& \mathcal{N}_{Y'/X'}\otimes_{\mathcal{O}_{Y'}}\mathcal{O}_{Y'_0} \ar[d] \\
+g_0^*(\mathcal{N}_{Y_0/X_0}) \ar[r]
+& \mathcal{N}_{Y'_0/X'_0}
+}
+\]
+and as \(Y'\) is flat over \(S\), the second vertical arrow is an
+isomorphism, by~4.8.0. One therefore obtains an
+\(\mathcal{O}_{Y'_0}\)-morphism
+\[
+i'^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_Y}\mathcal{O}_{Y_0})
+\longrightarrow
+\mathcal{N}_{Y'/X'}\otimes_{\mathcal{O}_{Y'}}\mathcal{O}_{Y'_0}
+\]
+which induces a morphism
+\(a_{g_0}(\mathrm{id}_{Y'})\colon M'(Y')\to M(Y')\) and, for every
+\(f\colon T\to Z\), a morphism
+\(a_{g_0}(f)\colon M'(T)\to M(T)\) such that one has a commutative diagram
+\[
+\xymatrix@C=4.2em@R=1.7em{
+M'(Y') \ar[r]^{a_{g_0}(\mathrm{id}_{Y'})} \ar[d]_{b'_{f_0}}
+& M(Y') \ar[d]^{b_{f_0}} \\
+M'(T) \ar[r]_{a_{g_0}(f_0)}
+& M(T)
+}
+\]
+(where \(b'_{f_0}\) is defined as \(b_{f_0}\)).
+\hfill Q.E.D.
+\end{proof}
+
+\begin{remark}{4.12.1}\label{III.4.12.1}
+{\renewcommand{\thefootnote}{(103)}\nde{One has added this remark, used
+in the proof of~4.17.}}%
+Let us denote by \(M_0\) and \(M'_0\) the \(Y'_0\)-functors defined by: for
+every \(f\colon T_0\to Y'_0\),
+% typo?: printed M_0(T) and M'_0(T), while f\colon T_0\to Y'_0; kept as printed
+\[
+\begin{aligned}
+M_0(T)
+&=\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0 g^*_0(\mathcal{N}_{Y/X}\otimes\mathcal{O}_{Y_0}),
+\mathcal{J}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{T_0}\bigr),\\
+M'_0(T)
+&=\Hom_{\mathcal{O}_{T_0}}\bigl(
+f^*_0(\mathcal{N}_{Y'/X'}\otimes\mathcal{O}_{Y'_0}),
+\mathcal{J}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{T_0}\bigr).
+\end{aligned}
+\]
+Let us remark at once that \(Z_0=Y'_0\) and that on the category of
+\(Z\)-schemes \(T\) which are \emph{flat} over~\(S\), \(M\) and \(M'\)
+coincide, respectively, with the functors
+\(\prod_{S_0/S}M_0\) and \(\prod_{S_0/S}M'_0\). In this case, \(b_{f_0}\)
+is simply the morphism
+% typo?: codomain printed M(T_0), not M_0(T_0); kept as printed
+\[
+f_0^*\colon M_0(Y'_0)\longrightarrow M(T_0)
+\]
+induced by~\(f_0\), and for every morphism \(u\colon U\to T\), setting
+\(h=f\circ u\), one has a commutative diagram
+\[
+\xymatrix@C=4em@R=1.7em{
+M'_0(T_0) \ar[r]^{a_{g_0}(f_0)} \ar[d]_{u_0^*}
+& M_0(T_0) \ar[d]^{u_0^*} \\
+M'_0(U_0) \ar[r]_{a_{g_0}(h_0)}
+& M_0(U_0)
+}
+\]
+\ie \(a_{g_0}\) becomes a morphism of functors
+\(\prod_{S_0/S}M'_0\to\prod_{S_0/S}M_0\).
+\end{remark}
+
+\begin{proposition}{4.13}\label{III.4.13}
+Suppose \(Y'\) flat over \(S\). One then has the formula:
+\[
+c(X,Y,g\circ f)
+=a_{g_0}\bigl(c(X',Y',f)\bigr)
++b_{f_0}\bigl(c(X,Y,g\circ i')\bigr).
+\]
+\end{proposition}
+
+As the definition of the various obstructions and of the morphisms
+\(a_{g_0}\) and \(b_{f_0}\) is local, one sees easily that it suffices to
+check the given formula when the various schemes in question are affine.
+Let us therefore write \(S=\Spec(\Lambda)\), \(S_J=\Spec(\Lambda/J)\),
+\(S_0=\Spec(\Lambda/I)\), \(T=\Spec(C)\), \(X=\Spec(A)\),
+\(Y=\Spec(A/I_Y)=\Spec(B)\), \(X'=\Spec(A')\),
+\(Y'=\Spec(A'/I_{Y'})=\Spec(B')\).
+
+One therefore has a diagram of rings and ideals%
+{\renewcommand{\thefootnote}{(104)}\nde{One has kept the notations of the
+original, writing \(f\colon A'\to C\) and \(g\colon A\to A'\) for the ring
+morphisms corresponding to \(f\colon T\to X'\) and \(g\colon X'\to X\). This
+explains the formula \(c(X,Y,g\circ f)(x\otimes 1)=f(g(x))\), for
+\(x\in I_Y\).}}
+\[
+\xymatrix@C=3em@R=1.55em{
+& B' & B \\
+C & A' \ar[l]_{f} \ar[u]_{\pi'} & A \ar[l]_{g} \ar[u]_{\pi} \\
+& I_{Y'} \ar@{^{(}->}[u] & I_Y \ar@{^{(}->}[u]\,.
+}
+\]
+Let us study the various terms of the formula to be proved. In what
+follows, if \(x\in I_Y\) (\resp \(u\in I_{Y'}\)), one denotes by \(x\)
+(\resp \(u\)) its image in \(I_Y/I_Y^2\)
+(\resp \(I_{Y'}/I_{Y'}^2\)); on the other hand, if \(m\) belongs to a
+\(\Lambda\)-module \(M\), one denotes by \(m_0\) its image in
+\(M_0=M/IM\).
+
+One has seen that \(c=c(X,Y,g\circ f)\) is the unique \(C_0\)-morphism
+\(I_Y/I_Y^2\otimes_B C_0\to JC\) such that \(c(x\otimes 1)=f(g(x))\), for
+every \(x\in I_Y\).
+
+Let us fix \(x\in I_Y\); one has \(g(x)\in I_{Y'}+JA'\) since
+\(g_J(Y'_J)\subset Y_J\). Let us write
+\(g(x)=x'+\sum\lambda_i a'_i\), with \(x'\in I_{Y'}\), \(\lambda_i\in J\),
+\(a'_i\in A'\). One therefore has
+\begin{equation}
+c(X,Y,g\circ f)(x\otimes 1)
+=f(g(x))=f(x')+\sum\lambda_i f(a'_i).
+\tag{1}
+\end{equation}
+
+Let us now consider \(a_{g_0}(c(X',Y',f))\). By the definitions set down,
+it is defined by the diagram
+\[
+\xymatrix@C=1.5em@R=2.15em{
+& I_{Y'} \ar[d] \ar[r]^{f} & C \\
+I_{Y'_0}/I_{Y'_0}^2\otimes_{B'_0}C_0
+& I_{Y'}/I_{Y'}^2\otimes_{B'}C_0
+  \ar[l]^{\sim}
+  \ar[r]^{c(X',Y',f)}
+& JC \\
+I_{Y_0}/I_{Y_0}^2\otimes_{B_0}C_0 \ar[u]_{g_0}
+& I_Y/I_Y^2\otimes_B C_0
+  \ar[l]
+  \ar[u]
+  \ar[ur]_{a_{g_0}(c(X',Y',f))}
+&
+}
+\]
+One therefore has
+\(a_{g_0}(c(X',Y',f))(x\otimes 1)=f(u)\), where \(u\) is an element of
+\(I_{Y'}\) whose image \(u\) in \(I_{Y'_0}/I_{Y'_0}^2\) satisfies
+% typo?: the two factors g_0(x_0) are printed alike; kept as printed
+\(u_0\otimes 1=g_0(x_0)\otimes 1=g_0(x_0)\otimes 1\).
+One may therefore take \(u=x'\), and one finds
+\begin{equation}
+a_{g_0}(c(X',Y',f))(x\otimes 1)=f(x').
+\tag{2}
+\end{equation}
+
+Let us finally consider \(b_{f_0}(c(X,Y,g\circ i'))\). By hypothesis, the
+morphism of \(\Lambda_0\)-algebras \(f_0\colon A'_0\to C_0\) factors through
+\(B'_0\) and hence, as
+\(J\otimes_{\Lambda_0}B'_0\xrightarrow{\sim}JB'\)
+(\(B'\) being flat over~\(\Lambda\)), one obtains a morphism of
+\(B'_0\)-modules \(\psi\colon JB'\to JC\) such that one has a commutative
+diagram:
+\[
+\xymatrix@C=2.6em@R=1.8em{
+J\otimes_{\Lambda_0}A'_0 \ar[r]^{\mathrm{id}\otimes\pi'} \ar[d]
+& J\otimes_{\Lambda_0}B'_0 \ar[r]^{\mathrm{id}\otimes f_0} \ar[d]^{\wr}
+& J\otimes_{\Lambda_0}C_0 \ar[d] \\
+JA' \ar[r]_{\pi'}
+& JB' \ar@{-->}[r]_{\psi}
+& JC.
+}
+\]
+Denote by \(\phi\colon JB'\otimes_{B'_0}C_0\to JC\) the morphism of
+\(C_0\)-modules deduced from~\(\psi\); then one has, for every
+\(a'\in A'\), \(\lambda\in J\),
+\begin{equation}
+\phi(\lambda\pi'(a')\otimes 1)=\lambda f(a').
+\tag{\dag}
+\end{equation}
+
+Then, \(b_{f_0}(c(X,Y,g\circ i'))\) is defined by the commutative diagram:
+\[
+\xymatrix@C=2.4em@R=1.85em{
+I_Y \ar[rr]^{\pi'\circ g} \ar[d]
+& & B' \\
+I_Y/I_Y^2\otimes_B B'_0
+  \ar[rr]^{c(X,Y,g\circ i')} \ar[d]
+& & JB' \ar[d] \\
+I_Y/I_Y^2\otimes_B C_0
+  \ar[rr] \ar[drr]_{b_{f_0}(c(X,Y,g\circ i'))}
+& & JB'\otimes_{B'_0}C_0 \ar[d]^{\phi} \\
+& & JC.
+}
+\]
+One therefore has at once
+\begin{equation}
+b_{f_0}(c(X,Y,g\circ i'))(x\otimes 1)
+=\phi\Bigl(\sum\lambda_i\pi'(a'_i)\otimes 1\Bigr)
+=\sum\lambda_i f(a'_i),
+\tag{3}
+\end{equation}
+the last equality following from~\((\dagger)\) above. The comparison of
+the three explicit results~(1), (2), (3) gives the desired formula.
+
+\begin{corollary}{4.14}\label{III.4.14}
+Let \(Y\), \(Y'\) be two subschemes of \(X\), flat, reducing
+to~\(Y_{\mathcal{J}}\); suppose \(Y_0\) locally a complete intersection
+in~\(X_0\). If \(f\colon T\to X\) is an \(S\)-morphism such that
+\(f_{\mathcal{J}}\) factors through
+\(Y_{\mathcal{J}}\to X_{\mathcal{J}}\), one has the formula
+\[
+c(X,Y,f)-c(X,Y',f)=b_{f_0}\bigl(d(Y,Y')\bigr).
+\]
+\end{corollary}
+
+Indeed, applying the preceding formula to the diagram
+\[
+\xymatrix@C=3.2em@R=1.6em{
+& Y' \ar@{^{(}->}[d]^{i'} & Y \ar@{^{(}->}[d]^{i} \\
+T \ar[r]^{f} & X \ar[r]^{\mathrm{id}} & X
+}
+\]
+one finds \(c(X,Y,f)-c(X,Y',f)=b_{f_0}(c(X,Y,i'))\). Moreover, by~4.8\,(ii),
+one has \(c(X,Y,i')=d(Y,Y')\).
+
+\begin{proposition}{4.15}\label{III.4.15}
+Let \(X\) be an \(S\)-group smooth over \(S\) and \(Y\) an \(S\)-subgroup flat
+and locally of finite presentation over \(S\). Then \(Y\) is locally a
+complete intersection (\cf 4.6.2) in~\(X\).
+\end{proposition}
+
+\begin{proof}
+{\renewcommand{\thefootnote}{(105)}\nde{One has added to the statement the
+hypothesis that \(Y\) be locally of finite presentation over \(S\), and one
+has given the proof which follows, more direct than the one sketched in
+the original. For completeness, let us also spell out the latter. As in
+the proof given above, one first reduces to the case where
+\(S=\Spec(k)\), \(k\) being an algebraically closed field. By
+EGA~IV\(_4\), 16.9.10 and~19.3.2, it suffices to see that, for every
+\(y\in Y\), the completion of the local ring \(\mathcal{O}_{Y,y}\) is the
+quotient of a complete noetherian local ring by a regular sequence. By
+\loccit, 19.3.3, the set of \(y\in Y\) satisfying this property is an open
+subset \(U\) of \(Y\); as \(Y\) is of finite type over \(k\), it suffices
+to show that \(U\) contains every closed point. As \(Y\) is a \(k\)-group
+it suffices, by a translation argument, to show that the property holds
+for the completion of \(\mathcal{O}_{Y,e}\), \ie for the ``formal group''
+\(\widehat{Y}\) corresponding to \(Y\) (\cf Exp.~\(\mathrm{VII}_{\mathrm{B}}\)).
+Now, as \(X\) is smooth, the affine algebra \(A(\widehat{X})\) is an algebra
+of formal power series \(k[[X_1,\ldots,X_n]]\), and one concludes by means
+of the structure theorem of Dieudonn\'e, which shows that \(A(\widehat{Y})\)
+is isomorphic to a quotient
+\(k[[X_1,\ldots,X_{r+s}]]/(X_1^{p^{n_1}},\ldots,X_r^{p^{n_r}})\),
+where \(p\) is the characteristic exponent of \(k\) and
+\(r+s\leqslant n\), \cf \(\mathrm{VII}_{\mathrm{B}}\), Remark~5.5.2\,(b).}}%
+One will show that the immersion \(Y\to X\) is regular in the sense of
+EGA~IV\(_4\), 16.9.2, which implies that it is so also in the sense
+of~4.6.2, by EGA~IV\(_4\), 19.5.1 (moreover, by \loccit, the two
+definitions are equivalent if \(S\) is locally noetherian). Thus, in what
+follows, one takes ``regular immersion'' in the sense of
+EGA~IV\(_4\), 16.9.2. As \(X\) and \(Y\) are flat and locally of finite
+presentation over \(S\), then, by EGA~IV\(_4\), 19.2.4, it suffices to
+show that, for every \(s\in S\), \(Y_s\to X_s\) is a regular immersion. By
+EGA~IV\(_4\), 19.1.5\,(ii), one is reduced to checking the assertion on
+the geometric fibers of \(S\), hence when \(S\) is the spectrum of an
+algebraically closed field \(k\).
+
+Then, by \(\mathrm{VI}_{\mathrm{A}}\), 3.2, the quotient \(X/Y\) exists
+and is smooth, the morphism \(\pi\colon X\to X/Y\) is flat, and one has a
+cartesian square
+\[
+\xymatrix@C=3.2em@R=1.6em{
+Y \ar[r]^{f} \ar[d] & X \ar[d]^{\pi} \\
+e \ar[r]_{i} & X/Y
+}
+\]
+(where \(e\) is the image in \(X/Y\) of the unit point of \(X\)). Thus, by
+flat base change (\cf EGA~IV\(_4\), 19.1.5\,(ii)), it suffices to see that
+\(i\) is a regular immersion, which is immediate since the noetherian local
+ring \(\mathcal{O}_{X/Y,e}\) is smooth, hence its maximal ideal is
+generated by a regular sequence.
+\end{proof}
+
+\numpara{4.16}\label{III.4.16}
+{\renewcommand{\thefootnote}{(106)}\nde{One has reorganized~4.16 by
+gathering in it, on the one hand, the hypotheses stated at the end of~4.15
+and, on the other hand, the definition of the obstruction \(DY\).}}%
+Let \(X\) be an \(S\)-group \emph{smooth} over \(S\); denote by
+\(\mu\colon X\times_S X\to X\) its group law.
+Let us be given an \(S_{\mathcal{J}}\)-subgroup \(Y_{\mathcal{J}}\) of
+\(X_{\mathcal{J}}\), \emph{flat and locally of finite presentation}
+over~\(S_{\mathcal{J}}\). By~4.15, \(Y_{\mathcal{J}}\) is locally a
+complete intersection in~\(X\).
+% typo?: kept as printed (``dans X'', not ``dans X_J'')
+
+Thus, by~4.6.5, every \emph{flat}%
+{\renewcommand{\thefootnote}{(107)}\nde{One has corrected the original by
+adding ``flat''.}}
+\(S\)-scheme \(Y\) lifting \(Y_{\mathcal{J}}\) is locally a complete
+intersection in~\(X\). For such a \(Y\) one has, by~4.8.0,
+\begin{equation}
+\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_Y}\mathcal{O}_{Y_0}
+=\mathcal{N}_{Y_0/X_0}
+=\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}
+  \otimes_{\mathcal{O}_{Y_{\mathcal{J}}}}\mathcal{O}_{Y_0}.
+\tag{4.16.1}
+\end{equation}
+
+On the other hand, let us denote by \(\varepsilon_0\colon S_0\to Y_0\) the
+unit section of \(Y_0\) and by \(\mathfrak{n}_{Y_0/X_0}\) the
+quasi-coherent \(\mathcal{O}_{S_0}\)-module:
+\[
+\mathfrak{n}_{Y_0/X_0}=\varepsilon_0^*(\mathcal{N}_{Y_0/X_0}).
+\]
+As \(Y_0\) and \(X_0\) are \(S_0\)-groups, one sees easily that
+\(\mathcal{N}_{Y_0/X_0}\) is invariant under the translations (say on the
+left) of \(Y_0\), hence%
+{\renewcommand{\thefootnote}{(108)}\nde{See~4.25 below.}}
+is the inverse image under \(Y_0\to S_0\) of \(\mathfrak{n}_{Y_0/X_0}\),
+\ie one has
+\begin{equation}
+\mathcal{N}_{Y_0/X_0}
+=\mathfrak{n}_{Y_0/X_0}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{Y_0}.
+\tag{4.16.2}
+\end{equation}
+Taking~(4.16.1) and~(4.16.2) into account, one deduces on the one hand
+from~4.5 that the set of sub-\(S\)-schemes \(Y\) of \(X\), \emph{flat}
+over~\(S\), lifting \(Y_{\mathcal{J}}\), is empty or a principal
+homogeneous space under
+\begin{equation}
+\Hom_{\mathcal{O}_{Y_0}}\bigl(
+\mathfrak{n}_{Y_0/X_0}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{Y_0},\,
+\mathcal{J}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{Y_0}\bigr),
+\tag{4.16.3}
+\end{equation}
+and one deduces on the other hand from~4.8\,(i) that, for every such \(Y\)
+and every \(S\)-morphism \(f\colon T\to X\) such that
+\(f_{\mathcal{J}}\colon T_{\mathcal{J}}\to X_{\mathcal{J}}\) factors
+through \(Y_{\mathcal{J}}\), the obstruction \(c(X,Y,f)\) to \(f\)
+factoring through \(Y\) is an element of
+\[
+\Hom_{\mathcal{O}_{T_0}}\bigl(
+\mathfrak{n}_{Y_0/X_0}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{T_0},\,
+\mathcal{J}\mathcal{O}_T\bigr);
+\]
+if moreover \(T\) is \emph{flat} over \(S\), this last group equals
+\[
+\Hom_{\mathcal{O}_{T_0}}\bigl(
+\mathfrak{n}_{Y_0/X_0}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{T_0},\,
+\mathcal{J}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_{T_0}\bigr).
+\]
+This leads one to introduce the group functor \(N_0\) below:
+
+\begin{definition}{4.16.1}\label{III.4.16.1}
+Let \(N_0\) be the commutative group \(S_0\)-functor defined by: for every
+\(Z\in\Ob\Sch/S_0\),
+\begin{equation}
+\Hom_{S_0}(Z,N_0)
+=\Hom_{\mathcal{O}_Z}\bigl(
+\mathfrak{n}_{Y_0/X_0}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_Z,\,
+\mathcal{J}\otimes_{\mathcal{O}_{S_0}}\mathcal{O}_Z\bigr).
+\tag{*}
+\end{equation}
+Then the set of sub-\(S\)-schemes \(Y\) of \(X\), \emph{flat} over \(S\),
+lifting \(Y_{\mathcal{J}}\), is empty or a principal homogeneous space under
+\[
+\Hom_{S_0}(Y_0,N_0)=C^1(Y_0,N_0).
+\]
+For each such \(Y\), let us consider the following diagram:
+\[
+\xymatrix@C=3.4em@R=1.6em{
+Y\times_S Y \ar@{^{(}->}[d]_{(i,i)} & Y \ar@{^{(}->}[d]^{i} \\
+X\times_S X \ar[r]_{\mu} & X
+}
+\]
+and let us denote by \(DY=c(X,Y,\mu\circ(i,i))\) the obstruction to
+\(\mu\circ(i,i)\) factoring through \(Y\), \ie to \(Y\) being stable under
+the group law of \(X\); by what precedes, \(DY\) is an element of
+\[
+N_0(Y_0\times_{S_0}Y_0)=C^2(Y_0,N_0).
+\]
+\end{definition}

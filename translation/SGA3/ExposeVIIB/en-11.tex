@@ -1,0 +1,191 @@
+We shall say that the formal monoid $M$ is \emph{infinitesimal} if $\varepsilon_M$ induces a bijection of the underlying sets.
+\begin{proposition}{}
+Every topologically flat infinitesimal formal $k$-monoid $M$ is a formal $k$-group.\nde{By the equivalence of categories of 1.3.5.D, a monoid in the category of topologically flat formal $k$-varieties ``is the same thing'' as a monoid in the category of flat cocommutative $\mathbf O_k$-coalgebras, \ie a cocommutative $\mathbf O_k$-bialgebra (in the usual sense, \ie not necessarily equipped with an antipode). Moreover, by 1.3.6, the hypothesis that $M$ be infinitesimal is equivalent to saying that the corresponding bialgebra is connected. Thus, if $k$ is an artinian ring, the proposition is equivalent to saying that: every connected cocommutative $k$-bialgebra, flat over $k$, is a $k$-Hopf algebra, \ie possesses an antipode (and the cocommutativity hypothesis is in fact superfluous, cf. the proof).}
+\end{proposition}
+We must show that $M(C)$ is a group for every object $C$ of $\mathbf{Alf}/k$. One therefore immediately reduces to the case where $k$ is artinian. Let then $U=H(M)$ be the coalgebra of $M$ (1.3.5); the multiplication $m:M\times M\to M$ induces a morphism of coalgebras $m_U:U\otimes U\to U$, which makes $U$ an associative algebra over $k$; the identity element of this algebra is the image of the identity element of $k$ under the map from $k$ to $U$ induced by the identity section $\varepsilon_M$ of $M$. Similarly, the projection $M\to\Spf(k)$ induces a homomorphism $\varepsilon_U$ from $U$ to $k$; we shall denote the kernel of $\varepsilon_U$ by $U^+$.
+
+We must show that there exists an antipodism, that is, a morphism of coalgebras $c_U:U\to U$ such that, for every $u\in U$, one has:
+\[
+(m_U\circ(c_n\otimes\id_U)\circ\Delta_U)(x)=\varepsilon_U(u)\cdot1_U.\tag{*}
+\]
+% typo?: c_n and x in the displayed identity for every u are retained as printed.
+Let $(U_n)$ be the filtration of $U$ defined in 1.3.6; put $U_n^+=U^+\cap U_n$. Since $M$ is infinitesimal, $U^+$ is the union of the submodules $U_n^+$.\nde{The original continued thus: ``one then shows easily, by induction on $n$, that there exists one and only one linear map $c_n:U_n\to U_n$ such that the composite map $m_U\circ(c_n\otimes\id_U)\circ\Delta_U:U_n^+\to U$ is zero''; we have detailed the proof, which rests on that of Lemma 1.3.6.A.} One then puts $c_0(1)=1$ and $c_1(x)=-x$ if $x\in U_1^+$, \ie if $x$ is a primitive element. Suppose that $c_{n-1}:U_{n-1}\to U$ has been constructed so as to satisfy (*) for every $x\in U_{n-1}$, and let $x\in U_n^+$. By the proof of Lemma 1.3.6.A, one has $\Delta_U(x)-x\otimes1\in U_{n-1}\otimes U^+$ (this is where the hypothesis that $U$ be flat over $k$ enters), so one can write $\Delta_U(x)=x\otimes1+\sum_i y_i\otimes z_i$, with $y_i\in U_{n-1}$; one then puts $c_n(x)=-\sum_i c_{n-1}(y_i)z_i$. One thus obtains a $k$-linear map $c:U\to U$, which is the left inverse of $\id_U$ for the monoid law on $\End_k(U)$ defined by $f\cdot g=m_U\circ(f\otimes g)\circ\Delta_U$ (the identity element being the map $\eta:u\mapsto\varepsilon(u)\cdot1_U$). It follows that $c$ is uniquely determined, and is also the right inverse of $\id_U$, \ie one also has $m_U\circ(c_n\otimes\id_U)\circ\Delta_U=\eta$ (without assuming $U$ cocommutative).
+% typo?: the displayed composition asserted to be the right inverse repeats c_n tensor id_U, retained.
+
+\numpara{2.8}\textbf{Unipotent group schemes over a field.} --- \nde{We have added this subsection.}Let $k$ be a field. ``Recall'' that a group $k$-scheme $G$ is said to be \emph{unipotent} if it satisfies the following two conditions (cf. \cite{DG70}, § IV.2, Prop. 2.5):
+\begin{enumerate}
+\item[(a)] $G$ is affine.
+\item[(b)] Every simple $\mathcal O(G)$-comodule is trivial, \ie if $\rho:V\to V\otimes_k\mathcal O(G)$ is an $\mathcal O(G)$-comodule structure on a $k$-vector space $V\ne0$, and if there is no nonzero subspace $W\ne V$ such that $\rho(W)\subset W\otimes_k\mathcal O(G)$, then $V$ has dimension $1$ and $\rho(v)=v\otimes1$ for every $v\in V$.
+\end{enumerate}
+According to loc. cit., when $G$ is of finite type over $k$, this is equivalent to the definition given in Exp. XVII, § 1, namely that $G$ possesses a finite composition series whose successive quotients are isomorphic to $k$-subgroups of $\mathbf G_{a,k}$.
+
+Now, for every affine group $k$-scheme $G$, the comultiplication of $\mathcal O(G)$ equips the pseudocompact $k$-module $A=\mathcal O(G)^*$ with a structure of profinite $k$-algebra, not necessarily commutative, the identity element $1_A$ being the augmentation $\varepsilon:\mathcal O(G)\to k$. On the other hand, let $I=\{f\in A\mid f(1_{\mathcal O(G)})=0\}$; this is a two-sided ideal of $A$, and one has $A=k\cdot1_A\oplus I$, cf. 1.3.6.
+
+Let $V$ be a subspace of $A$ of finite codimension; consider the continuous $k$-bilinear map $\varphi:A\times A\to A/V$, $(a,b)\mapsto ab+V$; by Lemma 0.3.1, there exist two subspaces $L_1,L_2$ of finite codimension in $A$ such that $V$ contains $AL_2$ and $L_1A$; then $L=L_1\cap L_2$ is a subspace of $A$ of finite codimension, and $V$ contains the two-sided ideal $ALA$, which has finite codimension. This shows that the two-sided ideals of finite codimension form a basis of neighborhoods of $0$. One deduces that an $\mathcal O(G)$-comodule ``is the same thing'' as a \emph{continuous $A$-module}, \ie an $A$-module $V$ such that the map $A\times V\to V$ is continuous, $V$ being equipped with the discrete topology. Such a module is clearly the union of submodules $V_i$ of finite dimension over $k$, each being a module over a quotient $k$-algebra $A_i$ of $A$, of finite dimension over $k$. It follows that if $M$ is a simple continuous module, it has finite dimension over $k$, and is a faithful simple module over the finite-dimensional $k$-algebra $A/\Ann(M)$; the latter is therefore a simple finite-dimensional $k$-algebra, \ie $\Ann(M)$ is an open maximal ideal of $A$. Conversely, let $P$ be an open prime ideal\nde{Recall that a two-sided ideal $P$ of a ring $A$ is said to be prime if in $A/P$ the product of two nonzero two-sided ideals is nonzero.} of $A$; then $A/P$ is a finite-dimensional $k$-algebra in which the ideal $(0)$ is prime, so it is a simple finite-dimensional $k$-algebra, and hence there exists, up to isomorphism, a unique simple continuous $A$-module whose annihilator is $P$. It follows that the map $M\mapsto\Ann(M)$ defines a bijection between the isomorphism classes of simple continuous $A$-modules and the open prime ideals of $A$. In particular, one calls the $A$-module $A/I$, which has dimension $1$ over $k$, the ``trivial module''; it corresponds to the trivial $\mathcal O(G)$-comodule $V$ of dimension $1$, \ie such that $\rho(v)=v\otimes1_{\mathcal O(G)}$ for every $v\in V$. One therefore obtains the following proposition:
+\begin{proposition}{2.8.1}\label{VIIB.2.8.1}
+Let $k$ be a field, $G$ an affine group $k$-scheme, and $A=\mathcal O(G)^*$.
+\begin{enumeratei}
+\item Then $G$ is unipotent if and only if $I$ is the unique open prime ideal of $A$.\nde{This is also equivalent to saying that $k\cdot1_{\mathcal O(G)}$ is the unique simple $k$-subcoalgebra of $\mathcal O(G)$; see for example \cite{Ab80}, 3.1.4; let us mention in passing a misprint in loc. cit., p. 130, line 4: $M\simeq C^*/\operatorname{ann}M$ is to be replaced by $C^*/\operatorname{ann}M\simeq\End_k(M)$.}
+\item In particular, if $G$ is commutative, so that $\mathcal O(G)=H(D(G))$, where $D(G)=\Spf(A)$ denotes the Cartier dual of $G$, then $G$ is unipotent if and only if $D(G)$ is infinitesimal.
+\end{enumeratei}
+\end{proposition}
+
+\numpara{2.9}\textbf{Pointed cocommutative Hopf algebras over a field.} --- \nde{We have added this paragraph, to translate Proposition 2.5.2, as well as the variant mentioned in N.D.E. (100), into the language of cocommutative Hopf algebras.}Let $k$ be a field, $C$ a $k$-coalgebra, and $A$ the algebra $C^*$ equipped with the structure of profinite $k$-algebra, not necessarily commutative, described in 2.8; by 0.2.2, one has $C=A^\dagger=\Hom_c(A,k)$. One deduces that the map $D\mapsto D^\perp=\{f\in A\mid f(D)=0\}$ is a bijection from the set of subcoalgebras of $C$ onto that of closed two-sided ideals (in what follows, we shall simply say ``ideals'') of $A$; the inverse bijection is given by $I\mapsto I^\perp=\{x\in C=A^\dagger\mid x(I)=0\}$. Since every maximal closed ideal is an open maximal ideal (cf. 0.2.1), every subcoalgebra therefore contains a simple subcoalgebra, necessarily of finite dimension.
+
+Recall that a subcoalgebra $D$ of $C$ is said to be \emph{irreducible} if it contains only one simple subcoalgebra $S_0$, which is equivalent to saying that $\mathfrak m_0=S_0^\perp$ is the unique open maximal ideal containing $D^\perp$, \ie that $D^\perp+\mathfrak m=A$ for every open maximal ideal $\mathfrak m\ne\mathfrak m_0$. This is in particular the case if $D=S_0$. Then the sum $\Sigma_0$ of all the irreducible subcoalgebras $C_i$ containing $S_0$ is clearly a subcoalgebra, and it is irreducible since, for every $\mathfrak m\ne\mathfrak m_0$, one has, by 0.2.D:
+\[
+\mathfrak m+\bigcap_i C_i^\perp=\bigcap_i(\mathfrak m+C_i^\perp)=A.
+\]
+One says that $\Sigma_0$ is the \emph{irreducible component} of $C$ corresponding to $C_0$.
+% typo?: C_0 instead of S_0 is retained as printed.
+
+On the other hand, one says that $C$ is \emph{pointed} if every simple sub-$k$-coalgebra of $C$ has dimension $1$; this is equivalent to saying that for every open maximal ideal $\mathfrak m$ of $A$, one has $A/\mathfrak m=k$. Recall also that $C$ is said to be \emph{connected} if it is irreducible and pointed. (Let us note in passing that if $C$ is a bialgebra, it is connected if and only if it is irreducible, since $k\cdot1_C$ is a simple subcoalgebra.)
+
+Suppose henceforth that $C$ is \emph{cocommutative}. Then $A$ is commutative and is therefore the product of its local components $A_{\mathfrak m}$, for $\mathfrak m\in\Upsilon(A)$ (cf. 0.1.1); denote by $S_{\mathfrak m}$ the simple subcoalgebra $\mathfrak m^\perp\simeq(A/\mathfrak m)^*$ and by $\Sigma_{\mathfrak m}$ its irreducible component. One can describe $\Sigma_{\mathfrak m}$ as follows. Denote by $J_{\mathfrak m}$ the kernel of the projection $A\to A_{\mathfrak m}$; it is contained in $\mathfrak m$ and is the smallest closed ideal $I$ of $\mathfrak m$ such that $I+\mathfrak m'=A$ for every $\mathfrak m'\ne\mathfrak m$. Indeed, if $I$ has this property, then $I$ contains $A_{\mathfrak m'}$ for every $\mathfrak m'\ne\mathfrak m$, hence contains $J_{\mathfrak m}$. Since $A=J_{\mathfrak m}\oplus A_{\mathfrak m}$, it follows that $\Sigma_{\mathfrak m}=J_{\mathfrak m}^\perp$ is identified with $A_{\mathfrak m}^\dagger$. One can now prove the:
+\begin{proposition}{2.9.1}\label{VIIB.2.9.1}
+Let $k$ be a field.
+\begin{enumeratei}
+\item Let $G$ be a formal $k$-group such that all the residue fields of $G$ equal $k$. Then $G_e$ is the constant $k$-group $M_k$, where $M=G(k)=\{x\in H(G)\mid\varepsilon(x)=1\text{ and }\Delta(x)=x\otimes x\}$, and $H(G)$ is the semidirect product of $H(G_0)$ by $kM$ (cf. 2.4.B).
+\item Equivalently: let $H$ be a pointed cocommutative $k$-Hopf algebra. Then $H$ is the semidirect product of the irreducible component $H_0$ of the identity element $1_H$ by $kM$, where $M=\{x\in H\mid\varepsilon(x)=1\text{ and }\Delta(x)=x\otimes x\}$.
+\end{enumeratei}
+\end{proposition}
+Let us prove (i). Since all the residue fields of $G$ equal $k$, the projection $\pi:G\to G_e$ admits the section $s:G_e\to G$ defined by $\mathcal O_{G,g}\to\kappa(g)=k$, for every $g\in G$; moreover, for every $g,h\in G$, $\mathcal O_{G,g}\widehat\otimes_k\mathcal O_{G,h}$ is local with residue field $k$, and one therefore obtains that $s\times s$ is a section of the projection $\pi\times\pi:G\times G\to(G\times G)_e=G_e\times G_e$. Since $\pi$ is a morphism of groups, it follows that $\pi\circ m_G\circ(s\times s)=m_{G_e}=\pi\circ s\circ m_{G_e}$, and since $\pi$ is an epimorphism this implies that $s$ is a morphism of groups. One therefore obtains that $G=G_0\rtimes G_e$, and hence $H(G)$ is the semidirect product of $H(G_0)$ by $H(G_e)$. Moreover, since all the residue fields of $G$ equal $k$, $H(G_e)$ is the group algebra $kM$, where $M=G_e(k)$ (cf. 2.5.A). Finally, since $G_0$ is infinitesimal, the morphism $G(k)\to G_e(k)$ is injective; it is therefore bijective (since it admits a section), so $M=G(k)$. Point (i) follows.
+% typo?: cancellation using the epimorphism pi, as printed, is retained.
+
+To prove (ii), it only remains to see that $H_0$ equals $H(G_0)$. Now the identity element $1_H$ of $H$ is none other than the augmentation $\varepsilon_A:A\to k$, which is the identity section of $G(k)$; thus the local component of $\mathscr A(G)$ corresponding to $H_0$ is none other than $\mathscr A(G_0)$ and hence, by what we have seen above, one has $H_0=\mathscr A(G_0)^\dagger=H(G_0)$. This proves the proposition.
+\begin{remarks}{2.9.2}\label{VIIB.2.9.2}
+(a) The above proposition, implicitly contained in 2.5.2, was obtained independently by B. Kostant (cf. \cite{Sw69}, Preface). Combined with Cartier's Theorem 3.3 below (cf. \cite{Ca62}, § 12, Th. 3), also obtained by Kostant (cf. \cite{Sw69}, loc. cit.), this result is often called the ``Cartier--Gabriel--Kostant theorem''.
+
+(b) In the form (ii), 2.9.1 was extended by R. G. Heyneman and M. E. Sweedler to the case where one assumes that $H$ is pointed and a direct sum of its irreducible components (but is not necessarily cocommutative), cf. \cite{HS69}, Th. 3.5.8.
+\end{remarks}
+
+\sgasection{3}{Phenomena particular to characteristic 0}
+Throughout Section 3, we assume that the pseudocompact ring $k$ contains the field of rational numbers $\QQ$.
+\begin{lemma}{3.1}\label{VIIB.3.1}
+Let $C$ be a commutative unital $\QQ$-algebra and $L$ a Lie algebra over $C$ whose underlying $C$-module is free. Then the canonical map $L\to U(L)$ is an isomorphism from $L$ onto the set of primitive elements of $U(L)$.
+\end{lemma}
+Indeed, identify $L$ with its canonical image in $U(L)$; let $I$ be a totally ordered set and $(x_i)_{i\in I}$ a basis of $L$ indexed by $I$; denote by $\NN^{(I)}$ the set of families $n=(n_i)_{i\in I}$ of natural numbers such that $n_i$ is zero except perhaps for a finite number of indices $i_1<i_2<\cdots<i_s$ (these indices depend on $n$); finally, put $x^n=x_{i_1}^{n_{i_1}}x_{i_2}^{n_{i_2}}\cdots x_{i_s}^{n_{i_s}}$ and $n!=(n_{i_1}!)(n_{i_2}!)\cdots(n_{i_s}!)$.
+
+One then knows that the $x^n$ form a basis of $U(L)$ (the Poincaré--Birkhoff--Witt theorem) and one sees easily that one has
+\[
+\Delta_{U(L)}\left(\frac{x^n}{n!}\right)=\sum\frac{x^m}{m!}\otimes\frac{x^{n-m}}{(n-m)!},\tag{*}
+\]
+the sum being taken over all the elements $m$ of $\NN^{(I)}$ such that $0\le m\le n$ (\ie such that $0\le m_i\le n_i$ for every $i$). It clearly follows that one has $\Delta_{U(L)}(u)=u\otimes1+1\otimes u$ if and only if $u$ is a linear combination of the $x_i$.
+
+\numpara{3.2}Suppose now that $C$ is \emph{artinian}, with radical $\mathfrak r$. For every (associative, unital) $C$-algebra $U$, the ideal $\mathfrak rU$ therefore consists of nilpotent elements; if $x$ belongs to $\mathfrak rU$, we shall put
+\[
+\exp_Ux=1+x+\frac{x^2}{2!}+\cdots.\qquad\mbox{\footnotemark}
+\]
+\ndetext{If $x,x'\in\mathfrak rU$ commute, one therefore has $\exp_U(x+x')=(\exp_Ux)(\exp_Ux')$.}
+One thus obtains a bijection from $\mathfrak rU$ onto $1+\mathfrak rU$; the inverse bijection maps an element $1+y$ of $1+\mathfrak rU$ to
+\[
+\log_U(1+y)=y-\frac{y^2}{2}+\frac{y^3}{3}-\cdots.
+\]
+Moreover, it is clear that the map $\exp_U$ is functorial in $U$.\nde{\ie for every morphism $\phi:U\to V$ of $C$-algebras, one has $\phi(\exp_U(x))=\exp_V\phi(x)$.}
+
+The ring $C$ still being artinian, suppose that $U$ is equipped with a bialgebra structure over $C$ (cf. 2.2). For every primitive element $x$ of $\mathfrak rU$ (cf. VII A 3.2.3), one then has
+\[
+\begin{aligned}
+\Delta_U(\exp_Ux)&=\exp_{U\otimes U}(\Delta_U(x))\\
+&=\exp_{U\otimes U}(x\otimes1+1\otimes x)\\
+&=\exp_{U\otimes U}(x\otimes1)\cdot\exp_{U\otimes U}(1\otimes x)\\
+&=((\exp_Ux)\otimes1)\cdot(1\otimes(\exp_Ux))\\
+&=(\exp_Ux)\otimes(\exp_Ux).
+\end{aligned}
+\]
+One therefore sees that the bijection $\exp_U$ transforms a primitive element of $\mathfrak rU$ into an element $z$ of $1+\mathfrak rU$ such that $\Delta_U(z)=z\otimes z$. Conversely, if $z$ satisfies these conditions then, putting $x=\log_U(z)$, the preceding calculation shows that $\exp_{U\otimes U}(x\otimes1+1\otimes x)$ equals $z\otimes z=\Delta(\exp_Ux)=\exp_{U\otimes U}(\Delta_U(x))$, whence $x\otimes1+1\otimes x=\Delta_U(x)$.\nde{We have detailed the preceding passage and added the following sentence.} Note further that if $z\in1+\mathfrak rU$ satisfies $\Delta_U(z)=z\otimes z$, then $\varepsilon_U(z)^2=\varepsilon_U(z)$ and since $\varepsilon_U(z)$ is invertible (since $z$ is, $\mathfrak r$ being nilpotent), it follows that $\varepsilon_U(z)=1$.
+
+Consider in particular a Lie algebra $L$ flat over $C$, take for $U$ the enveloping algebra $U(L)$ of $L$ over $C$ and identify $L$ with its canonical image in $U$. By Lemma 3.1, $L$ is therefore the set of primitive elements of $U$ (indeed $L$ is a product of free modules over the local components of $C$). Then consider the formal $C$-group $\mathscr G(L)=\Spf^*U(L)$, which has $U=U(L)$ for its covariant bialgebra (cf. 2.6.2). Let $\mathfrak m$ be a maximal ideal of $C$ and $\overline C=C/\mathfrak m$. Since $\mathscr G(L)$ is infinitesimal (loc. cit.), the identity element of $\overline U=U\otimes_C\overline C$ is the only element $\overline z$ of $\overline U$ such that\nde{We have added the condition $\varepsilon_{\overline U}(\overline z)=1$, omitted in the original.} $\varepsilon_{\overline U}(\overline z)=1$ and $\Delta_{\overline U}(\overline z)=\overline z\otimes\overline z$. It follows that the elements $z$ of $U$ such that $\varepsilon_U(z)=1$ and $\Delta_U(z)=z\otimes z$ necessarily belong to $1+\mathfrak rU$.
+
+Finally, since $L\cap\mathfrak rU$ is identified with $\mathfrak rL=L\otimes_C\mathfrak r$, one sees at last that: \emph{$\exp_U$ defines a bijection from $L\otimes_C\mathfrak r$ onto the group $\mathscr G(L)(C)$}. We summarize:
+\begin{proposition}{}
+Let $k$ be a pseudocompact ring containing $\QQ$ and $\mathbf L$ a flat $\mathbf O_k$-Lie algebra.
+\begin{enumeratei}
+\item For every object $C$ of $\mathbf{Alf}/k$, denote its radical by $\mathfrak r(C)$; then the map
+\[
+\exp_{U(\mathbf L(C))}:\quad\mathbf L(C)\otimes_C\mathfrak r(C)\longrightarrow\mathscr G(\mathbf L)(C)
+\]
+is bijective and functorial in $C$ and $\mathbf L$.
+\item The natural morphism $\mathbf L\to\uLie(\mathscr G(\mathbf L))$ (cf. 2.6.2) is an isomorphism of $\mathbf O_k$-Lie algebras.\nde{We have added point (ii), an immediate consequence of 3.1.}
+\end{enumeratei}
+\end{proposition}
+
+\numpara{3.2.1}The bijection $\exp_{U(\mathbf L(C))}$ allows one to define, by transport of structure, a group law on the set $\mathbf L(C)\otimes_C\mathfrak r(C)$ (which one identifies with a subset of $U(\mathbf L(C))$ as in 3.2). If $x$ and $y$ are two elements of $\mathbf L(C)\otimes_C\mathfrak r(C)$, this law is such that
+\[
+\begin{aligned}
+x\cdot y&=\log((\exp x)(\exp y))=\log\left(1+\sum_{p+q>0}\frac{x^py^q}{p!\,q!}\right)\\
+&=\sum_{m\ge1}\ \sum_{p_i+q_i>0}\frac{(-1)^{m-1}}m\frac{x^{p_1}y^{q_1}}{p_1!\,q_1!}\cdots\frac{x^{p_m}y^{q_m}}{p_m!\,q_m!}
+=\sum_{\ell\ge1}P_\ell(x,y),
+\end{aligned}
+\]
+where $P_\ell(x,y)$ denotes the sum of the monomials of total degree $\ell$ in $x$ and $y$. One has for example:
+\[
+\begin{aligned}
+P_1(x,y)&=x+y,\\
+P_2(x,y)&=\underbrace{\frac{x^2}2+xy+\frac{y^2}2}_{m=1}-\underbrace{\frac12(x^2+xy+yx+y^2)}_{m=2}\\
+&=\frac12(xy-yx)=\frac12[x,y],
+\end{aligned}
+\]
+and $P_3(x,y)$ is the sum of the following three terms:
+\[
+\begin{aligned}
+&\underbrace{\frac{x^3}6+\frac{x^2y}2+\frac{xy^2}2+\frac{y^3}6}_{m=1}\\
+&\quad-\underbrace{\frac12\left(x^3+\frac32x^2y+\frac12yx^2+xyx+yxy+\frac12y^2x+\frac32xy^2+y^3\right)}_{m=2}\\
+&\quad+\underbrace{\frac13(x^3+x^2y+yx^2+xyx+yxy+y^2x+xy^2+y^3)}_{m=3},
+\end{aligned}
+\]
+whence
+\[
+\begin{aligned}
+P_3(x,y)&=\frac1{12}(x^2y+yx^2-2xyx-2yxy+y^2x+xy^2)\\
+&=\frac1{12}\bigl([[y,x],x]+[y,[y,x]]\bigr).
+\end{aligned}
+\]
+One can show more generally that one has the \emph{Campbell--Hausdorff formula}:\nde{We have corrected the formula given, which was erroneous, and added the reference \cite{BLie}.}
+\[
+\begin{aligned}
+P_\ell(x,y)&=\sum_{m=1}^{\ell}\frac{(-1)^{m-1}}{m\cdot\ell}
+\sum_{\substack{p_1,\ldots,p_m\\q_1,\ldots,q_{m-1}}}
+\left(\prod_{i=1}^{m-1}\frac{(\operatorname{ad}x)^{p_i}}{p_i!}\frac{(\operatorname{ad}y)^{q_i}}{q_i!}\right)
+\frac{(\operatorname{ad}x)^{p_m}}{p_m!}(y)\\
+&\quad+\sum_{m=1}^{\ell}\frac{(-1)^{m-1}}{m\cdot\ell}
+\sum_{\substack{p_1,\ldots,p_{m-1}\\q_1,\ldots,q_{m-1}}}
+\left(\prod_{i=1}^{m-1}\frac{(\operatorname{ad}x)^{p_i}}{p_i!}\frac{(\operatorname{ad}y)^{q_i}}{q_i!}\right)(x),
+\end{aligned}
+\]
+where the $p_j,q_i\in\NN$ satisfy $p_i+q_i\ge1$ for $i=1,\ldots,m-1$ and $p_m+\sum_{i=1}^{m-1}(p_i+q_i)=\ell-1$ (\ie in the above sums, every nonzero ``Lie monomial'' has total degree $\ell$); for a proof, see N. Jacobson, \textit{Lie Algebras} (Interscience, 1962), § V.5, or \cite{BLie}, II § 6.4, Th. 2.
+
+\numpara{3.3}If $G$ is a formal $k$-group with affine algebra $A$, recall that one denotes by $I_A$ the augmentation ideal of $A$ and by $\omega_{G/k}$ the pseudocompact $k$-module $I_A/\overline{I_A^2}\simeq I_A\widehat\otimes_A k$.
+\begin{theorem}{}\label{VIIB.3.3}\textup{(Cartier).}
+Let $k$ be a pseudocompact ring\nde{We have removed the hypothesis that $k$ be local (the proof reduces to this case).} containing $\QQ$ and $G$ a formal $k$-group. The following assertions are equivalent:
+\begin{enumeratei}
+\item There exists a flat $\mathbf O_k$-Lie algebra $\mathbf L$ such that $G$ is isomorphic to $\mathscr G(\mathbf L)$ (and in this case $\mathbf L=\uLie(G)$ by 3.2).
+\item There exists a projective pseudocompact $k$-module $\omega$ such that the formal variety underlying $G$ is isomorphic to the formal variety $V_k^{f,0}(\omega)$ (cf. 1.2.5) with affine algebra $k[[\omega]]$ (and in this case $\omega\simeq\omega_{G/k}$).
+\item $G$ is infinitesimal and $\omega_{G/k}$ is a projective pseudocompact $k$-module.
+\item $G$ is infinitesimal and topologically flat over $k$.
+\end{enumeratei}
+\end{theorem}
+\begin{proof}
+(i) $\Rightarrow$ (ii): Let $\omega=\Gamma^*(\mathbf L)$ be the pseudocompact $k$-module dual to $\mathbf L$ (cf. 1.2.3.D). For every object $C$ of $\mathbf{Alf}/k$, we must exhibit an isomorphism from $V_k^{f,0}(\omega)(C)$ onto $\mathscr G(\mathbf L)(C)$ which is functorial in $C$. By 1.2.5, $V_k^{f,0}(\omega)(C)$ is identified with the set $\Hom_c(\omega,\mathfrak r(C))$ of continuous $k$-linear maps from $\omega$ to the radical of $C$. This set is naturally isomorphic to the set $\Hom_c(\omega\widehat\otimes_k C,\mathfrak r(C))$ of continuous $C$-linear maps from $\omega\widehat\otimes_k C$ to $\mathfrak r(C)$; finally, since $\omega\widehat\otimes_k C$ is a projective pseudocompact $C$-module, the canonical map
+\[
+(\omega\widehat\otimes_k C)^\dagger\otimes_C\mathfrak r(C)\longrightarrow\Hom_c(\omega\widehat\otimes_k C,\mathfrak r(C))
+\]
+is bijective (cf. 0.3.6.A). Since, by 1.2.3.E, $\mathbf L(C)$ is identified with $V_k^f(\Gamma^*(\mathbf L))(C)=(\omega\widehat\otimes_k C)^\dagger$, one obtains that $V_k^{f,0}(\omega)(C)$ is canonically isomorphic to $\mathbf L(C)\otimes_C\mathfrak r(C)$, which is canonically isomorphic to $\mathscr G(\mathbf L)(C)$ by Proposition 3.2. This proves the implication (i) $\Rightarrow$ (ii).
+
+(ii) $\Rightarrow$ (iii): Let $\omega$ be a projective object of $\mathbf{PC}(k)$ and $h$ an isomorphism from $k[[\omega]]$ onto the affine algebra $A$ of $G$. Composing $h$ with the augmentation $\varepsilon_A:A\to k$, one obtains a homomorphism $\varepsilon_A\circ h:k[[\omega]]\to k$, which is determined by its restriction $\lambda$ to $\omega$; the latter sends $\omega$ into the radical $\mathfrak r$ of $k$. Thus the map $x\mapsto x-\lambda(x)$, from $\omega$ to the radical of $k[[\omega]]$, extends, by the universal property of $k[[\omega]]$ (cf. 1.2.5), to an endomorphism $\ell_\lambda$ of $k[[\omega]]$. The equalities $\ell_\lambda\circ\ell_{-\lambda}=\ell_{-\lambda}\circ\ell_\lambda=\id$ show that $\ell_\lambda$ is an automorphism of $k[[\omega]]$. Consequently, $h\circ\ell_\lambda$ is, like $h$, an isomorphism from $k[[\omega]]$ onto $A$ and moreover $\varepsilon_A\circ h\circ\ell_\lambda$ maps $\omega$ to $0$. Replacing $h$ by $h\circ\ell_\lambda$ if necessary, one can therefore suppose that $\varepsilon_A\circ h$ vanishes on the closed ideal $I$ of $k[[\omega]]$ generated by $\omega$. In this case, $h$ induces an isomorphism from $I/\overline{I^2}$ onto $I_A/\overline{I_A^2}$; since $I/\overline{I^2}\simeq\omega$, it follows that $\omega_{G/k}=I_A/\overline{I_A^2}$ is isomorphic to $\omega$, hence projective. It is clear, on the other hand, that $V_k^{f,0}(\omega)$ is infinitesimal, as is $G$.
+
+(iii) $\Rightarrow$ (i): Suppose that $G$ is infinitesimal and that $\omega_{G/k}$ is projective. Let $\mathbf L$ be the $\mathbf O_k$-Lie algebra of $G$; its underlying $\mathbf O_k$-module is $V_k^f(\omega_{G/k})$, by 2.6.1. Consequently, $\mathbf L$ is flat over $\mathbf O_k$, and $\Gamma^*(\mathbf L)\simeq\omega_{G/k}$, by Proposition 1.2.3.E. Thus, by the proof of (i) $\Rightarrow$ (ii), the affine algebra of the formal $k$-group $\mathscr G(\mathbf L)$ is identified with $k[[\omega_{G/k}]]$. On the other hand, by 2.6.3, the identity morphism of $\mathbf L$ is canonically associated with a morphism of formal groups $\mathscr G(\mathbf L)\to G$, hence with a continuous morphism of $k$-algebras
+\[
+\phi:\quad A\longrightarrow k[[\omega_{G/k}]].
+\]
+Let $I$ be the closed ideal of $k[[\omega_{G/k}]]$ generated by $\omega_{G/k}$; filter $k[[\omega_{G/k}]]$ (resp. $A$) by the closures of the ideals $I^n$ (resp. $I_A^n$). We have to show that $\phi$, which by definition induces the identity on $\omega_{G/k}=I_A/\overline{I_A^2}=I/\overline{I^2}$, is an isomorphism.
+
+Since $\omega_{G/k}$ is a projective object of $\mathbf{PC}(k)$, there exists a section $\tau$ of the canonical projection $I_A\to\omega_{G/k}$. By the universal property of $k[[\omega_{G/k}]]$ (cf. 1.2.5), $\tau$ defines a continuous morphism of algebras
+\[
+\psi:\quad k[[\omega_{G/k}]]\longrightarrow A
+\]
+and $\phi\circ\psi$ induces the identity map on $\omega_{G/k}$, hence also on the associated graded of $k[[\omega_{G/k}]]$. It follows that $\phi\circ\psi$ is an isomorphism, by \cite{CA}, § V.7, Lemma 1.\nde{Cf. 5.1.5 below; see also \cite{BAC}, III, § 2.8, Th. 1 and corollaries. On the other hand, we have detailed the original in what follows.}
+
+Moreover, $\psi$ induces an isomorphism from $I/\overline{I^2}$ onto $I_A/\overline{I_A^2}$, hence a \emph{surjection} of the associated gradeds of $k[[\omega_{G/k}]]$ and $A$. On the other hand, since $G$ is radicial, $I_A$ is contained in the radical of $A$, so that the intersection of the $\overline{I_A^n}$ is zero. Thus, by loc. cit., $\psi$ is surjective. Then, since $\phi\circ\psi$ is an isomorphism and $\psi$ a surjection, $\psi$ and $\phi$ are isomorphisms. This proves that (iii) $\Rightarrow$ (i).
+
+Note finally that it is clear that (i) or (ii) imply (iv), so that it remains to prove the implication (iv) $\Rightarrow$ (ii). For this, one can suppose that $k$ is local, with residue field $k_0$.

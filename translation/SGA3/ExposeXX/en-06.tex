@@ -1,0 +1,123 @@
+\emph{Proof.} Let us write $U_\alpha$ and $U_{-\alpha}$ additively, and their vector structure multiplicatively. If $f$ satisfies the conditions of the statement, one necessarily has, for every $y\in U_{-\alpha}(S')$,
+\[
+f(y)=f(w^{-1}wyw^{-1}w)=hf_\alpha(w^{-1}yw)h^{-1}.
+\]
+Let therefore $f_{-\alpha}:U_{-\alpha}\to H$ be the morphism defined by
+\begin{equation}\tag{$*_1$}\label{XX.6.eq.star1}
+f_{-\alpha}(y)=hf_\alpha(w^{-1}yw)h^{-1}.
+\end{equation}
+It is a morphism of groups. On the other hand, $f$ is determined on the big cell $\Omega$ by
+\[
+f(ytx)=f_{-\alpha}(y)f_T(t)f_\alpha(x).
+\]
+This shows the uniqueness of $f$; since the conditions of the statement are manifestly necessary, let us show that they are sufficient.
+
+By (4), one has
+\[
+hf_\alpha(u)h^{-1}h^2=f_\alpha(-u)h^{-1}f_\alpha(-u).
+\]
+Now, by (3) and (1), $h^2=h^{-2}$ commutes with $f_\alpha(-u)$, which gives
+\[
+hf_\alpha(u)h^{-1}=f_\alpha(-u)hf_\alpha(-u).
+\]
+But, by definition, $hf_\alpha(u)h^{-1}=f_{-\alpha}(wuw^{-1})$; by 3.7, since $u=\exp(X)$ and $w=w_\alpha(X)$, one has
+\begin{equation}\tag{$*_2$}\label{XX.6.eq.star2}
+wuw^{-1}=-\widetilde u,
+\end{equation}
+where $\widetilde u$ denotes the element paired with $u$. One therefore obtains:
+\begin{equation}\tag{$*_3$}\label{XX.6.eq.star3}
+f_{-\alpha}(-\widetilde u)=f_\alpha(-u)hf_\alpha(-u).
+\end{equation}
+Let now $t$ be a section of $T$ over a variable $S'\to S$. Let $\operatorname{int}(f_T(t))$ act on the preceding formula. On the left-hand side, one obtains{\renewcommand{\thefootnote}{(37)}\nde{The following has been corrected.}}
+\[
+\begin{aligned}
+f_T(t)f_{-\alpha}(-\widetilde u)f_T(t)^{-1}&=f_T(t)hf_\alpha(u)h^{-1}f_T(t)^{-1}\\
+&=h(h^{-1}f_T(t)h)f_\alpha(u)(h^{-1}f_T(t)^{-1}h)h^{-1}\\
+&=hf_T(s_\alpha(t))f_\alpha(u)f_T(s_\alpha(t))^{-1}h^{-1}\\
+&=hf_\alpha(\alpha(s_\alpha(t))u)h^{-1}
+\end{aligned}
+\]
+by (2) and (1); then, since $s_\alpha(t)=t\cdot\alpha^*(\alpha(t)^{-1})$ and $\alpha\circ\alpha^*=2$, this equals
+\[
+hf_\alpha(\alpha(t)^{-1}u)h^{-1}.
+\]
+Finally, by ($*_1$) and ($*_2$), one has
+\[
+hf_\alpha(\alpha(t)^{-1}u)h^{-1}=f_{-\alpha}(\alpha(t)^{-1}wuw^{-1})=f_{-\alpha}(-\alpha(t)^{-1}\widetilde u).
+\]
+The right-hand side of ($*_3$) gives
+\[
+f_\alpha(-\alpha(t)u)\cdot f_T(t)hf_T(t)^{-1}h^{-1}\cdot h\cdot f_\alpha(-\alpha(t)u),
+\]
+and since $hf_T(t)^{-1}h^{-1}=f_T(s_\alpha(t^{-1}))=f_T(t\cdot\alpha^*(\alpha(t)))$, this equals
+\[
+f_\alpha(-\alpha(t)u)\cdot f_T(\alpha^*(\alpha(t)))\cdot h\cdot f_\alpha(-\alpha(t)u).
+\]
+Comparing the two expressions obtained, one obtains
+\[
+f_{-\alpha}(-\alpha(t)^{-1}\widetilde u)=f_\alpha(-\alpha(t)u)\cdot f_T(\alpha^*(\alpha(t)))\cdot h\cdot f_\alpha(-\alpha(t)u).
+\]
+Since $\alpha:T\to\mathbf G_{\mathrm m,S}$ is faithfully flat and $H$ is a separated presheaf, one may replace $-\alpha(t)^{-1}$ by an arbitrary section of $\mathbf G_{\mathrm m,S}$ and obtains:
+
+\begin{lemma}{6.2.1}\label{XX.6.2.1}
+For every $z\in\Gm(S')$, $S'\to S$, one has
+\[
+f_{-\alpha}(z\widetilde u)=f_\alpha(z^{-1}u)\cdot f_T(\alpha^*(-z^{-1}))\cdot h\cdot f_\alpha(z^{-1}u).
+\]
+\end{lemma}
+Let now $x,y\in\Ga(S')$, $S'\to S$; suppose $y$ and $(1+xy)$ invertible. First applying the lemma with $z=y$, one obtains{\renewcommand{\thefootnote}{(38)}\nde{The following calculations have been expanded.}}
+\[
+f_\alpha(xu)f_{-\alpha}(y\widetilde u)=f_\alpha((x+y^{-1})u)\cdot f_T(\alpha(-y^{-1}))\cdot h\cdot f_\alpha(y^{-1}u).
+\]
+% typo?: alpha without star in this f_T factor kept as printed.
+Now $x+y^{-1}=y^{-1}(1+xy)$. Applying the lemma with $z=y/(1+xy)$, one finds
+\[
+\begin{split}
+f_\alpha((x+y^{-1})u)={}&f_{-\alpha}\left(\frac y{1+xy}\widetilde u\right)f_\alpha(-(x+y^{-1})u)\\
+&\cdot h^{-1}\cdot f_T\left(\alpha^*\left(\frac{-y}{1+xy}\right)\right).
+\end{split}
+\]
+Substituting this in the preceding equality, one obtains
+\[
+\begin{split}
+f_\alpha(xu)f_{-\alpha}(y\widetilde u)={}&f_{-\alpha}\left(\frac y{1+xy}\widetilde u\right)f_\alpha(-(x+y^{-1})u)\\
+&\cdot h^{-1}\cdot f_T(\alpha^*(1+xy)^{-1})\cdot h\cdot f_\alpha(y^{-1}u).
+\end{split}
+\]
+Since $h^{-1}f_T(t)h=f_T(s_\alpha(t))$ by (2) (note that $s_\alpha^2=\mathrm{id}$), and since $s_\alpha\circ\alpha^*=-\alpha^*$ (cf. 6.2.1), this equals
+\[
+f_{-\alpha}\left(\frac y{1+xy}\widetilde u\right)f_\alpha(-(x+y^{-1})u)\cdot f_T(\alpha^*(1+xy))\cdot f_\alpha(y^{-1}u).
+\]
+Finally, since for all $x'\in U_\alpha(S')$ and $z\in\Gm(S')$, one has
+\[
+f_\alpha(x')f_T(\alpha^*(z))=f_T(\alpha^*(z))f_\alpha(z^{-2}x'),
+\]
+one obtains
+\[
+\begin{aligned}
+f_\alpha(xu)f_{-\alpha}(y\widetilde u)
+&=f_{-\alpha}\left(\frac y{1+xy}\widetilde u\right)\cdot f_T(\alpha^*(1+xy))\cdot
+ f_\alpha\left(\left(\frac{-y^{-1}(1+xy)}{(1+xy)^2}+y^{-1}\right)u\right)\\
+&=f_{-\alpha}\left(\frac y{1+xy}\widetilde u\right)\cdot f_T(\alpha^*(1+xy))\cdot f_\alpha\left(\frac x{1+xy}u\right).
+\end{aligned}
+\]
+One has therefore proved:
+\begin{lemma}{6.2.2}\label{XX.6.2.2}
+Let $S'\to S$. If $a\in U_\alpha(S')$, $b\in U_{-\alpha}^\times(S')$, and $1+ab\in\Gm(S')$, one has
+\[
+f_\alpha(a)f_{-\alpha}(b)=f_{-\alpha}\left(\frac b{1+ab}\right)f_T(\alpha^*(1+ab))f_\alpha\left(\frac a{1+ab}\right).
+\]
+\end{lemma}
+By schematic density, this formula remains valid when $b\in U_{-\alpha}(S')$, $1+ab$ still being invertible. Consider then the morphism
+\[
+f:\Omega\to H
+\]
+defined by $f(ytx)=f_{-\alpha}(y)f_T(t)f_\alpha(x)$.
+
+It follows at once from 6.2.2, condition 6.2 (i), and formula ($F'$) of 2.4, that if $g,g'\in\Omega(S')$ and $gg'\in\Omega(S')$, one has $f(gg')=f(g)f(g')$. By Exp.~XVIII 2.3 (iii) and 2.4,{\renewcommand{\thefootnote}{(39)}\nde{Note that each geometric fiber of $G$ is connected, for example by 1.1.}} there therefore exists a morphism of groups $G\to H$ extending $f$. Denote it also by $f$; it answers the question; indeed, it suffices to prove that $f(w_\alpha)=h$. Now $w_\alpha=u\cdot(-\widetilde u)\cdot u$, whence, by ($*_3$):{\renewcommand{\thefootnote}{(40)}\nde{The original has been simplified by invoking ($*_3$).}}
+\[
+f(w_\alpha)=f_\alpha(u)f_{-\alpha}(-\widetilde u)f_\alpha(u)=h.
+\]
+\begin{remark}{6.3}\label{XX.6.3}
+We shall supplement these results in Exp.~XXIII 3.5.
+\end{remark}

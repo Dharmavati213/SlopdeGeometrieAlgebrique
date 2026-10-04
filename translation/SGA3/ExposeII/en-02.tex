@@ -1,0 +1,508 @@
+\begin{corollary}{2.2.1}
+\label{II.2.2.1}
+Let \(X\) be an \(S\)-scheme and \(\mathcal{M}\) a free \(\OO_S\)-module of finite
+type.
+The functor \(\Hom_S(\mathrm{I}_S(\mathcal{M}),X)\) is isomorphic (as a functor
+over \(X\)) to a finite product (over \(X\)) of copies of
+\(\Hom_S(\mathrm{I}_S,X)\).
+\end{corollary}
+
+\begin{enoncerm}{Nota}{2.2.2}
+\label{II.2.2.2}
+It follows from the proof of the proposition that
+\(\Hom_S(\mathrm{I}_S,X)\) is isomorphic as an \(X\)-functor to
+\(\mathbf{V}(\Omega^1_{X/S})\) (I~4.6.1), hence representable by the vector
+fibration%
+{\renewcommand{\thefootnote}{(12)}\nde{Cf.\ N.D.E.~(33) of Expos\'e~I.}}
+\(\mathbf{V}(\Omega^1_{X/S})\).
+\end{enoncerm}
+
+\sgasection{3}{The tangent bundle, the condition (E)}
+\label{II.sec.3}
+
+In this section, unless the contrary is indicated, the letters \(\mathcal{M}\),
+\(\mathcal{M}'\), \(\mathcal{N}\), etc., will always denote free
+\(\OO_S\)-modules of finite type (that is, isomorphic to a finite direct sum of
+copies of \(\OO_S\)).
+
+We shall systematically use the identifications justified in Expos\'e~I; thus
+we shall say ``functor over \(S\)'' to designate indiscriminately a functor
+equipped with a morphism to \(S\) (\(=\mathbf{h}_S\)) or a functor on the
+category of objects over \(S\). One will likewise say ``group functor over
+\(S\)'', etc.
+
+\begin{definition}{3.1}
+\label{II.3.1}
+Let \(S\) be a scheme and \(\mathcal{M}\) a free \(\OO_S\)-module of finite
+type. Let \(X\) be a functor over \(S\). One calls the tangent bundle to \(X\)
+over \(S\) relative to the \(\OO_S\)-module \(\mathcal{M}\), and one denotes by
+\(\mathrm{T}_{X/S}(\mathcal{M})\), the \(S\)-functor
+\[
+\mathrm{T}_{X/S}(\mathcal{M})=\Hom_S(\mathrm{I}_S(\mathcal{M}),X).
+\]
+In particular, one calls the tangent bundle to \(X\) over \(S\), and one
+denotes by \(\mathrm{T}_{X/S}\), the functor
+\[
+\mathrm{T}_{X/S}=\mathrm{T}_{X/S}(\OO_S)=\Hom_S(\mathrm{I}_S,X).
+\]%
+{\renewcommand{\thefootnote}{(13)}\nde{When \(S=\Spec(k)\) and \(X\) is a
+\(k\)-scheme, one has
+\(\mathrm{T}_{X/S}(S')=\Hom_S(S'\otimes_k k[\varepsilon],X)
+=X(S'\otimes_k k[\varepsilon])\); one thus recovers one of the usual
+definitions of the tangent bundle.}}
+\end{definition}
+
+Then \(\mathcal{M}\mapsto\mathrm{T}_{X/S}(\mathcal{M})\) is a covariant functor
+from the category of free \(\OO_S\)-modules of finite type to the category of
+\(S\)-functors. In particular the morphisms%
+{\renewcommand{\thefootnote}{(14)}\nde{``\(0\to\mathcal{M}\) and
+\(\mathcal{M}\to 0\)'' has been corrected to: ``\(\mathcal{M}\to 0\) and
+\(0\to\mathcal{M}\)''.}}
+\(\mathcal{M}\to 0\) and \(0\to\mathcal{M}\) define respectively an
+\(S\)-morphism
+\[
+\pi_{\mathcal{M}}\colon
+\mathrm{T}_{X/S}(\mathcal{M})\to\mathrm{T}_{X/S}(0)\simeq X
+\]
+and a section \(\tau_0\) of the latter, called the zero section (or null
+section).
+
+\begin{remark}{3.1.1}
+\label{II.3.1.1}
+{\renewcommand{\thefootnote}{(15)}\nde{Paragraphs 3.1.1 and 3.1.2 have been
+added.}}
+One will note that the projection
+\(\pi_{\mathcal{M}}\colon\mathrm{T}_{X/S}(\mathcal{M})\to X\) is induced by
+the zero section \(\varepsilon_{\mathcal{M}}\colon S\to\mathrm{I}_S(\mathcal{M})\),
+while the null section
+\(\tau_0\colon X\to\mathrm{T}_{X/S}(\mathcal{M})\) is induced by the structural
+morphism \(\rho\colon\mathrm{I}_S(\mathcal{M})\to S\); \ie for every point
+\(t\in\mathrm{T}_{X/S}(\mathcal{M})(S')\)
+(\resp \(x\in X(S')\)), corresponding to an \(S\)-morphism
+\(f\colon S'\times_S\mathrm{I}_S(\mathcal{M})\to X\)
+(\resp \(g\colon S'\to X\)), one has
+\(\pi(t)=f\circ(\mathrm{id}_{S'}\times\varepsilon_{\mathcal{M}})\)
+(\resp \(\tau_0(x)=g\circ(\mathrm{id}_{S'}\times\rho)\)).
+\end{remark}
+
+It follows from 3.1 that \(\mathcal{M}\mapsto\mathrm{T}_{X/S}(\mathcal{M})\)
+is a covariant functor from the category of free \(\OO_S\)-modules of finite
+type to that of functors over \(X\). In particular \(\mathbf{O}(S)\) is a
+monoid of operators of the \(X\)-functor \(\mathrm{T}_{X/S}(\mathcal{M})\)
+which respects ``the functoriality in \(\mathcal{M}\)''.
+
+\begin{scholium}{3.1.2}
+\label{II.3.1.2}
+\textup{\textsuperscript{(15)}}
+What precedes means, in particular, the following things. For every
+\(S\)-morphism \(\phi\colon X'\to X\), set
+\[
+\Sigma(X',\mathcal{M})=\Hom_X(X',\mathrm{T}_{X/S}(\mathcal{M})).
+\]
+One has an action of the multiplicative monoid
+\(\End_{\OO_S}(\mathcal{M})\) on \(\Sigma(X',\mathcal{M})\), denoted
+\((\lambda,x)\mapsto\lambda\ast x\), such that
+\(\lambda\ast(\mu\ast x)=(\lambda\mu)\ast x\), \(1\ast x=x\), and
+\(0\ast x=\tau_0\circ\phi\), where \(\tau_0\) is the null section
+\(X\to\mathrm{T}_{X/S}(\mathcal{M})\). One likewise has an action of
+\(\End_{\OO_S}(\mathcal{M}\oplus\mathcal{M})\) on
+\(\Sigma(X',\mathcal{M}\oplus\mathcal{M})\).%
+{\renewcommand{\thefootnote}{(16)}\nde{In fact, one is interested only in the
+action of \(\mathbf{O}(S)\) (\resp \(\mathbf{O}(S)\times\mathbf{O}(S)\)) on
+\(\Sigma(X',\mathcal{M})\)
+(\resp \(\Sigma(X',\mathcal{M}\oplus\mathcal{M})\)), \cf below and the proof
+of~3.6.}}
+
+Moreover, let \(m\colon\mathcal{M}\oplus\mathcal{M}\to\mathcal{M}\)
+(\resp \(\delta\colon\mathcal{M}\to\mathcal{M}\oplus\mathcal{M}\)) be the
+addition (\resp the diagonal map) of \(\mathcal{M}\), and denote by
+\(m_{X'}\colon\Sigma(X',\mathcal{M}\oplus\mathcal{M})\to\Sigma(X',\mathcal{M})\)
+and
+\(\delta_{X'}\colon\Sigma(X',\mathcal{M})\to\Sigma(X',\mathcal{M}\oplus\mathcal{M})\)
+the morphisms induced by \(m\) and \(\delta\). For \(\lambda,\mu\in\mathbf{O}(S)\),
+denote by \(\ell_{\lambda}\) (\resp \(\ell_{\lambda,\mu}\)) multiplication by
+\(\lambda\) in \(\mathcal{M}\) (\resp by \((\lambda,\mu)\) in
+\(\mathcal{M}\oplus\mathcal{M}\)).
+Since \(m\circ\ell_{\lambda,\lambda}=\ell_{\lambda}\circ m\) and
+\(m\circ\ell_{\lambda,\mu}\circ\delta=\ell_{\lambda+\mu}\), one has, for every
+\(z\in\Sigma(X',\mathcal{M}\oplus\mathcal{M})\) and
+\(x\in\Sigma(X',\mathcal{M})\):
+\[
+(\dagger)\qquad
+\lambda\ast m(z)=m((\lambda,\lambda)\ast z),\qquad
+m((\lambda,\mu)\ast\delta(x))=(\lambda+\mu)\ast x.
+\]
+\end{scholium}
+
+\begin{definition}{3.2}
+\label{II.3.2}
+Let \(u\in X(S)=\Hom_S(S,X)=\Gamma(X/S)\). One calls the tangent space to
+\(X\) over \(S\) at the point \(u\) relative to \(\mathcal{M}\), and one denotes
+by \(\mathrm{L}^{u}_{X/S}(\mathcal{M})\), the \(S\)-functor obtained from the
+\(X\)-functor \(\mathrm{T}_{X/S}(\mathcal{M})\) by inverse image under the
+morphism \(u\colon S\to X\):
+\[
+\xymatrix{
+  \mathrm{L}^{u}_{X/S}(\mathcal{M}) \ar[r] \ar[d]
+    & \mathrm{T}_{X/S}(\mathcal{M}) \ar[d]^{\pi} \\
+  S \ar[r]^{u}
+    & X.
+}
+\]
+In particular \(\mathrm{L}^{u}_{X/S}(\OO_S)\) is denoted by
+\(\mathrm{L}^{u}_{X/S}\). It is the tangent space to \(X\) over \(S\) at the
+point \(u\).
+\end{definition}
+
+\begin{remark}{3.2.1}
+\label{II.3.2.1}
+{\renewcommand{\thefootnote}{(17)}\nde{This remark has been added.}}
+It follows from 3.1.1 that, for every \(t\colon S'\to S\),
+\(\mathrm{L}^{u}_{X/S}(\mathcal{M})(S')\) is the set of \(S\)-morphisms
+\(f\colon\mathrm{I}_{S'}(\mathcal{M})\to X\) such that
+\(f\circ\varepsilon_{\mathcal{M}}=u\circ t\), where
+\(\varepsilon_{\mathcal{M}}\colon S'\to\mathrm{I}_{S'}(\mathcal{M})\) is the
+zero section.
+\end{remark}
+
+Let us immediately record the
+
+\begin{proposition}{3.3}
+\label{II.3.3}
+If \(X\) is representable by an \(S\)-scheme denoted \(\widetilde{X}\), then
+\(\mathrm{T}_{X/S}(\mathcal{M})\) and \(\mathrm{L}^{u}_{X/S}(\mathcal{M})\) are
+representable. In particular \(\mathrm{T}_{X/S}\) and
+\(\mathrm{L}^{u}_{X/S}\) are representable by vector fibrations over
+\(\widetilde{X}\) and over \(S\) which are respectively
+\(\mathbf{V}(\Omega^1_{\widetilde{X}/S})\) and
+\(\mathbf{V}(u^*(\Omega^1_{\widetilde{X}/S}))\).
+\end{proposition}
+
+It obviously suffices to prove the proposition for
+\(\mathrm{T}_{X/S}(\mathcal{M})\), the analogous results for
+\(\mathrm{L}^{u}_{X/S}(\mathcal{M})\) being deduced from it by inverse image.
+By Corollary~2.2.1, it even suffices to do so for \(\mathrm{T}_{X/S}\), and
+in this case the proposition is nothing other than the remark indicated
+in~2.2.2.
+
+\begin{remark}{3.3.1}
+\label{II.3.3.1}
+From this proposition there follows a particularly simple description of the
+vector fibration representing \(\mathrm{L}^{u}_{X/S}\): the image of the
+section \(u\) of \(X\) over \(S\) is locally closed%
+{\renewcommand{\thefootnote}{(18)}\nde{\Cf EGA~I, 5.3.11.}},
+hence defined by a quasi-coherent ideal \(\mathfrak{m}\) of a scheme induced
+on an open of \(X\). The quotient \(\mathfrak{m}/\mathfrak{m}^2\) may be
+regarded as a quasi-coherent module over \(S\). It is this module which
+defines the vector fibration sought.
+
+For example, let \(X\) be an algebraic scheme over a field \(k\) and \(u\) a
+point of \(X\) rational over \(k\). Let \(\mathfrak{m}\) be the maximal ideal
+of the local ring \(\OO_{X,u}\) and let \(t\) be the \(k\)-vector space dual
+of \(\mathfrak{m}/\mathfrak{m}^2\); it is the Zariski tangent space of
+\(\OO_{X,u}\) at the point \(u\). Then, with the notations of I~4.6.5.1, one
+has:
+\[
+\mathrm{L}^{u}_{X/k}=\mathbf{V}(\mathfrak{m}/\mathfrak{m}^2)=\mathbf{W}(t).
+\]
+
+This parenthesis being closed, let us return to the general situation. Let us
+first remark that \(\mathrm{L}^{u}_{X/S}(\mathcal{M})\) is a covariant functor
+from the category of free \(\OO_S\)-modules of finite type to that of functors
+over \(S\). In particular \(\mathbf{O}(S)\) is a set of operators of the
+\(S\)-functor \(\mathrm{L}^{u}_{X/S}(\mathcal{M})\) which respects the
+functoriality in \(\mathcal{M}\).%
+{\renewcommand{\thefootnote}{(19)}\nde{\Cf 3.1.2.}}
+\end{remark}
+
+\begin{proposition}{3.4}
+\label{II.3.4}
+% typo?: statement prints L_{X/S}(M) with no superscript u; kept as printed
+The formation of \(\mathrm{T}_{X/S}(\mathcal{M})\) and
+\(\mathrm{L}_{X/S}(\mathcal{M})\) commutes with extension of the base: for
+every \(S\)-scheme \(S'\), one has isomorphisms functorial in \(\mathcal{M}\)
+\begin{align*}
+\mathrm{T}_{X_{S'}/S'}(\mathcal{M}\otimes\OO_{S'})
+  &\isomto\mathrm{T}_{X/S}(\mathcal{M})_{S'},\\
+\mathrm{L}^{u'}_{X_{S'}/S'}(\mathcal{M}\otimes\OO_{S'})
+  &\isomto\mathrm{L}^{u}_{X/S}(\mathcal{M})_{S'},
+  \qquad\text{where }u'=u_{S'}.
+\end{align*}
+\end{proposition}
+
+This follows immediately from the fact that the \(\Hom\) commute with
+extension of the base.
+
+\begin{corollary}{3.4.1}
+\label{II.3.4.1}
+The \(X\)-functor \(\mathrm{T}_{X/S}(\mathcal{M})\) (\resp the \(S\)-functor
+\(\mathrm{L}^{u}_{X/S}(\mathcal{M})\)) is endowed naturally with a structure of
+object with operators \(\mathbf{O}_X\) (\resp \(\mathbf{O}_S\)), this
+structure being functorial in \(\mathcal{M}\).
+\end{corollary}
+
+Let us first show this for \(\mathrm{L}^{u}_{X/S}(\mathcal{M})\). For each
+\(S'\) over \(S\), \(\mathbf{O}(S')\) operates on
+\(\mathcal{M}\otimes\OO_{S'}\), hence on
+\(\mathrm{L}^{u'}_{X_{S'}/S'}(\mathcal{M}\otimes\OO_{S'})
+=\mathrm{L}^{u}_{X/S}(\mathcal{M})_{S'}\); now one checks that this operation
+is functorial in \(S'\). It therefore endows
+\(\mathrm{L}^{u}_{X/S}(\mathcal{M})\), as announced, with a structure of
+functor with operators \(\mathbf{O}_S\).
+
+For \(\mathrm{T}_{X/S}(\mathcal{M})\) it is a little more complicated. For each
+\(X'\) over \(X\), set
+\(\mathrm{T}_{X/S}(\mathcal{M})_{X'}
+=\mathrm{T}_{X/S}(\mathcal{M})\times_X X'\);
+one must endow
+\(\mathrm{T}_{X/S}(\mathcal{M})_{X'}(X')
+=\Hom_X(X',\mathrm{T}_{X/S}(\mathcal{M}))\)
+with a structure of set with monoid of operators \(\mathbf{O}(X')\), in a
+manner functorial in \(X'\). For this one constructs the following diagram,
+where \(X_{X'}\) denotes \(X\times_S X'\) and \(f'\) the section of
+\(X_{X'}\) over \(X'\) defined by \(f\colon X'\to X\).
+% typo?: kept as printed (diagram arrowheads: left-hand down, right-hand up)
+\[
+\xymatrix@C=1.6em@R=1.5em{
+  & \mathrm{T}_{X_{X'}/X'}(\mathcal{M}) \ar[dl] & \\
+  \mathrm{T}_{X/S}(\mathcal{M})
+    & & \mathrm{T}_{X/S}(\mathcal{M})_{X'} \ar[ul]
+}
+\]
+\[
+\xymatrix@C=2.2em@R=1.5em{
+  & X_{X'} \ar[dl] & \\
+  X \ar[dr]
+    & & X' \ar[ul]_{f'} \ar[ll]^{f} \ar[dl] \\
+  & S &
+}
+\]
+{\renewcommand{\thefootnote}{(20)}\nde{The original has been set out in
+detail in what follows.}}
+This diagram, together with 3.2.1, shows that
+\(\mathrm{T}_{X/S}(\mathcal{M})_{X'}(X')\) is identified with
+\[
+\mathrm{L}^{f'}_{X_{X'}/X'}(\mathcal{M})(X')
+=\{\text{\(X'\)-morphisms }
+\psi\colon\mathrm{I}_{X'}(\mathcal{M})\to X_{X'}
+\text{ such that }\psi\circ\varepsilon_{\mathcal{M}}=f'\},
+\]
+on which every \(a\in\mathbf{O}(X')\) operates via its action on
+\(\mathrm{I}_{X'}(\mathcal{M})\), \ie with the notations of~2.1.1, one has:
+\(a\psi=\psi\circ a^*\), \ie for every \(X''\to X'\) and
+\(x\in\mathrm{I}_{X'}(\mathcal{M})(X'')\),
+\((a\psi)(x)=\psi(x\cdot a)\).
+One then checks easily that this construction is functorial in \(X'\).
+
+The isomorphisms of Proposition~3.4 are then by construction isomorphisms
+for the structures of \(\mathbf{O}_{X_{S'}}\)-objects, \resp
+\(\mathbf{O}_{S'}\)-objects.
+
+\begin{remark}{3.4.2}
+\label{II.3.4.2}
+{\renewcommand{\thefootnote}{(21)}\nde{Remarks 3.4.2 and 3.4.3 have been
+added.}}
+The operation of \(\mathbf{O}_X\) on \(\mathrm{T}_{X/S}(\mathcal{M})\) may be
+seen, more simply, as follows. For every \(f\colon X'\to X\), one has
+\[
+\Hom_X(X',\mathrm{T}_{X/S}(\mathcal{M}))
+=\{\phi\in\Hom_S(\mathrm{I}_{X'}(\mathcal{M}),X)
+\mid\phi\circ\varepsilon_{\mathcal{M}}=f\},
+\]
+and one has seen in~2.1.3 that \(\mathrm{I}_{X'}(\mathcal{M})\), considered as
+an \(S\)-functor, is endowed with an operation of the monoid
+\(\mathbf{O}(X')\) which preserves the zero section
+\(\varepsilon_{\mathcal{M}}\colon X'\to\mathrm{I}_{X'}(\mathcal{M})\).
+Consequently, if one denotes by \(a^*\) the \(X'\)-endomorphism of
+\(\mathrm{I}_{X'}(\mathcal{M})\) defined by \(a\in\mathbf{O}(X')\), one has:
+\(a\phi=\phi\circ a^*\), \ie for every \(S'\to S\) and
+\((m,x')\in\Hom_S(S',\mathrm{I}_S(\mathcal{M})\times_S X')\),
+\[
+(a\phi)(m,x')=\phi(m\cdot a(x'),x')
+\]
+(note that \(a^*\circ\varepsilon_{\mathcal{M}}=\varepsilon_{\mathcal{M}}\),
+whence \((a\phi)\circ\varepsilon_{\mathcal{M}}=\phi\circ\varepsilon_{\mathcal{M}}=f\)).
+
+Likewise, the operation of \(\mathbf{O}_S\) on
+\(\mathrm{L}^{u}_{X/S}(\mathcal{M})\) may be described as follows. For every
+\(t\colon S'\to S\), \(\mathrm{L}^{u}_{X/S}(\mathcal{M})(S')\) is the set of
+\(S\)-morphisms \(\phi\colon\mathrm{I}_{S'}(\mathcal{M})\to X\) such that
+\(\phi\circ\varepsilon_{\mathcal{M}}=u\circ t\); for such a \(\phi\) and
+\(a\in\mathbf{O}(S')\), one has: \(a\phi=\phi\circ a^*\).
+\end{remark}
+
+\begin{remark}{3.4.3}
+\label{II.3.4.3}
+\textup{\textsuperscript{(21)}}
+The observations of~3.1.2 hold equally for the operation of
+\(\mathbf{O}_S\) on \(\mathrm{L}^{u}_{X/S}(\mathcal{M})\) and for that of
+\(\mathbf{O}_X\) on \(\mathrm{T}_{X/S}(\mathcal{M})\).
+\end{remark}
+
+\begin{definition}{3.5}
+\label{II.3.5}
+Let \(S\) be a scheme and \(X\) an \(S\)-functor. One says that \(X\) satisfies
+the condition~(E) relative to \(S\) if, for every \(S'\) over \(S\) and all free
+\(\OO_{S'}\)-modules of finite type \(\mathcal{M}\) and \(\mathcal{N}\), the
+diagram of sets
+\[
+\xymatrix@C=1.4em@R=1.4em{
+  & X(\mathrm{I}_{S'}(\mathcal{M}\oplus\mathcal{N})) \ar[dl] \ar[dr] & \\
+  X(\mathrm{I}_{S'}(\mathcal{M})) \ar[dr]
+    & & X(\mathrm{I}_{S'}(\mathcal{N})) \ar[dl] \\
+  & X(S') &
+}
+\]
+obtained by applying \(X\) to the diagram \((*)\) defined in~2.1, is
+cartesian.%
+{\renewcommand{\thefootnote}{(22)}\nde{For examples of \(S\)-functors and
+\(S\)-groups not satisfying~(E), see 6.2 and~6.3.}}
+\end{definition}
+
+\numpara{3.5.1}
+\label{II.3.5.1}
+\emph{It comes to the same to say that the functor
+\(\mathcal{M}\mapsto\mathrm{T}_{X/S}(\mathcal{M})\) takes direct sums of free
+\(\OO_S\)-modules of finite type to products of \(X\)-functors};%
+{\renewcommand{\thefootnote}{(23)}\nde{What follows has been added.}}
+in this case, the same holds for the functor
+\(\mathcal{M}\mapsto\mathrm{L}^{u}_{X/S}(\mathcal{M})
+=S\times_X\mathrm{T}_{X/S}(\mathcal{M})\),
+for every \(u\in\Gamma(X/S)\).
+
+Proposition~2.2 shows that \emph{every representable functor satisfies the
+condition~(E)}.
+
+\emph{Abbreviation}: instead of saying ``\(X\) satisfies the condition~(E)
+with respect to \(S\)'', one will sometimes say ``\(X/S\) satisfies the
+condition~(E)''.
+
+If \(X/S\) satisfies the condition~(E), the functor
+\(\mathcal{M}\mapsto\mathrm{T}_{X/S}(\mathcal{M})\) commutes with products,
+hence takes groups to groups. In particular
+\(\mathrm{T}_{X/S}(\mathcal{M})\) is a commutative \(X\)-group. For the same
+reason, \(\mathrm{L}^{u}_{X/S}(\mathcal{M})\) is a commutative \(S\)-group.
+
+\begin{proposition}{3.6}
+\label{II.3.6}
+If \(X/S\) satisfies~(E), the structure of abelian group on
+\(\mathrm{T}_{X/S}(\mathcal{M})\)
+(\resp \(\mathrm{L}^{u}_{X/S}(\mathcal{M})\)) and the operation of
+\(\mathbf{O}_X\) (\resp \(\mathbf{O}_S\)) endow
+\(\mathrm{T}_{X/S}(\mathcal{M})\)
+(\resp \(\mathrm{L}^{u}_{X/S}(\mathcal{M})\)) with a structure of
+\(\mathbf{O}_X\)-module (\resp \(\mathbf{O}_S\)-module).
+\end{proposition}
+
+The operation of \(\mathbf{O}_X\) (\resp \(\mathbf{O}_S\)) is functorial in
+\(\mathcal{M}\); it therefore respects the structure of abelian group which
+is deduced by functoriality from that of \(\mathcal{M}\).%
+{\renewcommand{\thefootnote}{(24)}\nde{What follows has been set out in
+detail.}}
+Indeed, let us take up again the notations of~3.1.2. The structure of
+(abelian) \(X\)-group on \(\mathrm{T}_{X/S}(\mathcal{M})\) is defined by the
+composite:
+\[
+\mathrm{T}_{X/S}(\mathcal{M})\times_X\mathrm{T}_{X/S}(\mathcal{M})
+\simeq
+\mathrm{T}_{X/S}(\mathcal{M}\oplus\mathcal{M})
+\xrightarrow{m}
+\mathrm{T}_{X/S}(\mathcal{M}),
+\]
+and on the other hand the morphism
+\[
+\mathrm{T}_{X/S}(\mathcal{M})
+\xrightarrow{\delta}
+\mathrm{T}_{X/S}(\mathcal{M}\oplus\mathcal{M})
+\simeq
+\mathrm{T}_{X/S}(\mathcal{M})\times_X\mathrm{T}_{X/S}(\mathcal{M})
+\]
+is the diagonal morphism. Taking Remark~3.4.3 into account, one deduces from
+the equalities \((\dagger)\) of~3.1.2 that
+\[
+\lambda(x+y)=\lambda x+\lambda y,\qquad (\lambda+\mu)x=\lambda x+\mu x,
+\]
+for every \(f\colon X'\to X\),
+\(x,y\in\Hom_X(X',\mathrm{T}_{X/S}(\mathcal{M}))\) and
+\(\lambda,\mu\in\mathbf{O}(X')\).
+
+\begin{remark}{3.6.1}
+\label{II.3.6.1}
+If \(X\) is representable, in which case, on the one hand it satisfies~(E),
+and on the other hand \(\mathrm{T}_{X/S}\) and \(\mathrm{L}^{u}_{X/S}\) are
+representable by vector fibrations, the preceding laws are the same as those
+which are deduced from the structures of vector fibration
+(\cf I~4.6).%
+{\renewcommand{\thefootnote}{(25)}\nde{That is, for every \(S\)-morphism
+\(f\colon X'\to X\), the action of \(\mathbf{O}(X')\) on
+\(\Hom_X(X',\mathrm{T}_{X/S}(\mathcal{M}))\) corresponds, via the
+identification
+\(\Hom_X(X',\mathrm{T}_{X/S}(\mathcal{M}))
+\simeq
+\Hom_{\OO_{X'}}\bigl(f^*(\Omega^1_{X/S}),
+\mathcal{M}\otimes_{\OO_S}\OO_{X'}\bigr)\),
+to the natural action of \(\mathbf{O}(X')\) on the term on the right; this
+follows from the proof of SGA~1, III~5.1 (see also the addition~0.1.8 in
+Expos\'e~III).}}
+\end{remark}
+
+\begin{proposition}{3.4. bis}
+\label{II.3.4.bis}
+If \(X/S\) satisfies~(E), then \(X_{S'}/S'\) satisfies~(E) and the
+isomorphisms of~3.4 respect the structures of
+\(\mathbf{O}_{X_{S'}}\)-modules, \resp of \(\mathbf{O}_{S'}\)-modules.
+\end{proposition}
+
+Without comment.
+
+\begin{proposition}{3.7}
+\label{II.3.7}
+The functors \(\mathrm{T}_{X/S}(\mathcal{M})\) and
+\(\mathrm{L}^{u}_{X/S}(\mathcal{M})\) are functorial in \(X\), \ie if
+\(f\colon X\to X'\) is an \(S\)-morphism, one has commutative diagrams:
+\[
+\xymatrix{
+  \mathrm{T}_{X/S}(\mathcal{M}) \ar[r]^{\mathrm{T}(f)} \ar[d]
+    & \mathrm{T}_{X'/S}(\mathcal{M}) \ar[d] \\
+  X \ar[r]
+    & X',
+}
+\qquad
+\xymatrix{
+  \mathrm{L}^{u}_{X/S}(\mathcal{M}) \ar[rr]^{\mathrm{L}(f)} \ar[dr]
+    & & \mathrm{L}^{f\circ u}_{X'/S}(\mathcal{M}) \ar[dl] \\
+  & S. &
+}
+\]
+\end{proposition}
+
+{\renewcommand{\thefootnote}{(26)}\nde{The sentence which follows has been
+added.}}
+\emph{Moreover, if \(f\) is a monomorphism, the same holds of
+\(\mathrm{T}(f)\) and \(\mathrm{L}(f)\).}
+
+The existence of \(\mathrm{T}(f)\) and \(\mathrm{L}(f)\), as well as the last
+assertion, are deduced immediately from the definitions. The commutativity of
+the diagrams then results from the functoriality of these morphisms with
+respect to \(\mathcal{M}\) and from the fact that
+\(\mathrm{T}_{X/S}(0)=X\).
+
+\begin{remark}{3.7.1}
+\label{II.3.7.1}
+{\renewcommand{\thefootnote}{(27)}\nde{The hypothesis that \(X\) and \(X'\)
+are representable has been added, and what follows has been set out in
+detail.}}
+Suppose \(X\) and \(X'\) representable, and let \(r\) be the rank of the free
+\(\OO_S\)-module \(\mathcal{M}\). Then, by~2.2.2,
+\(\mathrm{T}_{X/S}(\mathcal{M})\) is isomorphic to the product over \(X\) of
+\(r\) copies of \(\mathbf{V}(\Omega^1_{X/S})\), and likewise for
+\(\mathrm{T}_{X'/S}(\mathcal{M})\). Consequently, the square above is
+cartesian when \(f\) is an open immersion, more generally when
+\(f^*(\Omega^1_{X'/S})=\Omega^1_{X/S}\), for example if \(f\) is \'etale;
+under these conditions, one has an isomorphism of \(S\)-functors
+\[
+\mathrm{L}^{u}_{X/S}(\mathcal{M})
+\isomto
+\mathrm{L}^{f\circ u}_{X'/S}(\mathcal{M}).
+\]
+\end{remark}

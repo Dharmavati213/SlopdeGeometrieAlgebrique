@@ -1,0 +1,532 @@
+% Proof of Theorem 0.1.8, continued from the previous page.
+Consequently, \(\mathrm{P}(g_{\mathfrak{J}})\) is in bijection with the set of
+morphisms of algebras \(\mathcal{A}\to\mathcal{O}_{Y}\) which reduce according
+to \(\varepsilon_{\mathfrak{J}}\), and via this bijection, \(g\) corresponds
+to \(\varepsilon\).
+
+Set \(\mathcal{M}=g^{*}(\Omega^{1}_{X/S})\). Then
+\(\Hom_{\mathcal{O}_{Y}\textup{-alg.}}(\mathcal{A},\mathcal{O}_{Y})\) is
+identified with the set of \(\mathcal{O}_{Y}\)-morphisms
+\(\psi\colon\mathcal{M}\to\mathcal{O}_{Y}\) such that \(\Im(\psi)\) is an ideal
+of square zero, and one is interested in those which induce the zero
+morphism \(\mathcal{M}\to\mathcal{O}_{Y_{\mathfrak{J}}}
+=\mathcal{O}_{Y}/\mathfrak{J}\), \ie which map \(\mathcal{M}\) into
+\(\mathfrak{J}\). Conversely, since \(\mathfrak{J}^{2}=0\), every
+\(\mathcal{O}_{Y}\)-morphism \(\phi\colon\mathcal{M}\to\mathfrak{J}\) comes
+from a (unique) morphism of algebras \(\mathcal{A}\to\mathcal{O}_{Y}\),
+reducing according to \(\varepsilon_{\mathfrak{J}}\). Finally, one has
+\[
+\Hom_{\mathcal{O}_{Y}}(g^{*}(\Omega^{1}_{X/S}),\mathfrak{J})
+=\Hom_{\mathcal{O}_{Y_{\mathfrak{J}}}}(g_{\mathfrak{J}}^{*}(\Omega^{1}_{X/S}),\mathfrak{J})
+\]
+since \(\mathfrak{J}^{2}=0\) (\cf the proof of~(b) already seen). One
+therefore obtains a bijection
+\[
+\mathrm{P}(g_{\mathfrak{J}})
+\simeq
+\Hom_{\mathcal{O}_{Y_{\mathfrak{J}}}}(g_{\mathfrak{J}}^{*}(\Omega^{1}_{X/S}),\mathfrak{J})
+\]
+by which \(g\) corresponds to the zero morphism.
+
+For every \(m\in\Hom_{\mathcal{O}_{Y_{\mathfrak{J}}}}(g_{\mathfrak{J}}^{*}(\Omega^{1}_{X/S}),\mathfrak{J})\),
+let us denote by \(m\cdot g\) the element of \(\mathrm{P}(g_{\mathfrak{J}})\)
+associated with \(g\) and \(m\) by the preceding bijection. One has already
+seen that \(0\cdot g=g\); it remains to see that
+\[
+(0.1.8\ (*))\qquad m'\cdot(m\cdot g)=(m+m')\cdot g.
+\]
+This is verified locally.%
+{\renewcommand{\thefootnote}{(14)}\nde{What precedes is reproduced almost
+word for word from SGA~1, III~5.1; what follows has been spelled out.}}
+Indeed, the two preceding morphisms \(Y\to X\) induce the same continuous
+map as \(g\) between the underlying topological spaces; it therefore
+suffices to check that for every affine open \(U=\Spec(A)\) of \(X\) lying
+over an affine open \(\Spec(\Lambda)\) of \(S\), and every affine open
+\(V=\Spec(B)\) of \(g^{-1}(U)\), they induce the same morphism of
+\(\Lambda\)-algebras \(A\to B\).
+
+Let \(J=\Gamma(V,\mathfrak{J})\) and let \(\phi\), \(\psi\) and \(\eta\) be the
+morphisms \(A\to B\) induced by \(g\), \(m\cdot g\) and \(m'\cdot(m\cdot g)\)
+respectively; they coincide modulo \(J\). One can write in a unique way
+\(\psi=\phi+D\) (\resp \(\eta=\psi+D'\)), where \(D\) (\resp \(D'\)) is an
+element of
+\[
+\operatorname{D\acute{e}r}_{\phi}(A,J)
+=\{\delta\in\Hom_{\Lambda}(A,J)\mid
+\delta(ab)=\phi(a)\delta(b)+\phi(b)\delta(a)\}
+\]
+(\resp \(\operatorname{D\acute{e}r}_{\psi}(A,J)\)). But
+\(\operatorname{D\acute{e}r}_{\phi}(A,J)=\operatorname{D\acute{e}r}_{\psi}(A,J)\) since
+\(J^{2}=0\), and both are identified with
+\[
+\Hom_{B/J}(\Omega^{1}_{A/\Lambda}\otimes_{A}B/J,\,J),
+\]
+and via this identification \(D\) corresponds to \(m\) and \(D'\) to \(m'\).
+Then \(\eta=\phi+D+D'\) and \(D+D'\) corresponds to \(m+m'\), whence the
+equality~\((*)\).\qed
+
+\begin{corollary}{0.1.9}
+\label{III.0.1.9}
+{\renewcommand{\thefootnote}{(15)}\nde{\normalfont One has added this
+corollary of SGA~1, III~5.1, which proves point~(i) of proposition~0.2
+further on.}}%
+Let \(X\) be an \(S\)-scheme; let us take up again the notations of~0.1.5.
+Then \(X\) is equipped with a (left) operation of the abelian
+\(X^{+}\)-group \(L_{X}\), which makes \(X\) into a formally
+principal homogeneous object under \(L_{X}\) over \(X^{+}\), \ie
+one has an isomorphism of \(X^{+}\)-functors:
+\[
+L_{X}\times_{X^{+}}X
+\isomto
+X\times_{X^{+}}X
+\]
+(defined set-theoretically by \((m,x)\mapsto(x,\,m\cdot x)\)).
+\end{corollary}
+
+\begin{proof}
+Let \(i_{0}\) be the immersion \(X_{0}\hookrightarrow X\). Let us first note
+that, since \(X_{0}=X\times_{S}S_{0}\), one has
+\(i_{0}^{*}(\Omega^{1}_{X/S})\simeq\Omega^{1}_{X_{0}/S_{0}}\)
+(\cf EGA~IV,~16.4.5).
+
+Let \(Y\) be an \(X^{+}\)-scheme, given by an \(S\)-morphism
+\(g_{\mathcal{J}}\colon Y_{\mathcal{J}}\to X\), and let
+\(g_{0}\colon Y_{0}\to X_{0}\) be the morphism obtained by base change.
+By~0.1.8, if \(\Hom_{X^{+}}(Y,X)\) is non-empty, it is a principal
+homogeneous set under the group
+\[
+\Hom_{\mathcal{O}_{Y_{0}}}(g_{0}^{*}i_{0}^{*}(\Omega^{1}_{X/S}),\,\mathcal{J}\mathcal{O}_{Y}),
+\]
+which is identified with
+\(\Hom_{\mathcal{O}_{Y_{0}}}(g_{0}^{*}(\Omega^{1}_{X_{0}/S_{0}}),\,\mathcal{J}\mathcal{O}_{Y})
+=L_{X}(Y)\). One therefore has a bijection
+\[
+L_{X}(Y)\times\Hom_{X^{+}}(Y,X)
+\isomto
+\Hom_{X^{+}}(Y,\,X\times_{X^{+}}X)
+\]
+given by \((m,g)\mapsto(g,\,m\cdot g)\). Let us show that this is ``functorial
+in \(Y\)''.
+
+Let \(f\colon Z\to Y\) be a morphism of \(S\)-schemes. The point is to show
+that the diagram below is commutative:
+\[
+\xymatrix@C=3.2em@R=2.4em{
+L_{X}(Y)\times\Hom_{X^{+}}(Y,X)
+  \ar[r]^{\sim}
+  \ar[d]_{L_{X}(f)\times f}
+& \Hom_{X^{+}}(Y,\,X\times_{X^{+}}X)
+  \ar[d]^{f\times f}
+\\
+L_{X}(Z)\times\Hom_{X^{+}}(Z,X)
+  \ar[r]^{\sim}
+& \Hom_{X^{+}}(Z,\,X\times_{X^{+}}X).
+}
+\]
+If \(\Hom_{X^{+}}(Y,X)=\emptyset\), there is nothing to show. It therefore
+suffices to see that, for every \(S\)-morphism \(g\colon Y\to X\) extending
+\(g_{\mathcal{J}}\) and every \(m\in L_{X}(Y)\), one has:
+\[
+(0.1.9\ (*))\qquad (m\cdot g)\circ f=L_{X}(f)(m)\cdot(g\circ f).
+\]
+These two \(S\)-morphisms \(Z\to X\) coincide on \(Z_{\mathcal{J}}\) with
+\(g_{\mathcal{J}}\circ f_{\mathcal{J}}\); in particular, they induce the
+same continuous map as \(g\circ f\) between the underlying topological
+spaces. Consequently, it suffices to see that, if \(z\in Z\), \(y=f(z)\),
+\(x=g(y)\), and if \(A\), \(B\), \(C\) denote respectively the local rings
+\(\mathcal{O}_{X,x}\), \(\mathcal{O}_{Y,y}\), \(\mathcal{O}_{Z,z}\), then
+the morphisms \(A\to C\) induced by \((m\cdot g)\circ f\) and
+\(L_{X}(f)(m)\cdot(g\circ f)\) coincide. Let us denote by \(s\) the
+image of \(x\) in \(S\), \(\Lambda=\mathcal{O}_{S,s}\), and let \(J\) and
+\(I\) be the ideals of \(\Lambda\) corresponding to \(\mathcal{J}\) and
+\(\mathcal{I}\), and let \(\phi,\psi\colon A\to B\) and \(\theta\colon B\to C\)
+be the morphisms of \(\Lambda\)-algebras induced by \(g\), \(m\cdot g\) and
+\(f\). Then \(m\) induces an element \(D\) of
+\[
+\Hom_{B/IB}(\Omega^{1}_{A/\Lambda}\otimes_{A}B/IB,\,JB)
+=\operatorname{D\acute{e}r}_{\Lambda}(A,JB)
+\]
+and one has \(\psi=\phi+D\); hence \((m\cdot g)\circ f\) corresponds to
+\(\theta\circ\psi=\theta\circ\phi+\theta\circ D\). Now, one has seen in~0.1.5
+that \(\theta\circ D\) is the image of \(L_{X}(f)(m)\) in
+\[
+\Hom_{C/IC}(\Omega^{1}_{A/\Lambda}\otimes_{A}C/IC,\,JC)
+=\operatorname{D\acute{e}r}_{\Lambda}(A,JC);
+\]
+consequently, \(\theta\circ\phi+\theta\circ D\) is the image of
+\(L_{X}(f)(m)\cdot(g\circ f)\). This proves the equality
+\((0.1.9\ (*))\).
+\end{proof}
+
+\begin{corollary}{0.1.10}
+\label{III.0.1.10}
+{\renewcommand{\thefootnote}{(16)}\nde{\normalfont One has spelled out the
+``functoriality in \(X\)'' of \(L_{X}\), in particular point~b)
+below.}}%
+a) \(L_{X}\) depends functorially on \(X\): for every
+\(S\)-morphism \(f\colon X\to W\), there exists an \(S\)-morphism
+\(L_{f}\colon L_{X}\to L_{W}\) which is a morphism
+of abelian groups ``over \(f^{+}\)'', \ie the diagram
+\[
+\xymatrix@C=4em@R=1.8em{
+L_{X} \ar[r]^{L_{f}} \ar[d]
+& L_{W} \ar[d]
+\\
+X^{+} \ar[r]^{f^{+}}
+& W^{+}
+}
+\]
+is commutative and, for every \(Y\to X^{+}\),
+\[
+L_{f}(Y)\colon
+\quad\Hom_{X^{+}}(Y,L_{X})\longrightarrow\Hom_{W^{+}}(Y,L_{W})
+\]
+(where \(Y\) is over \(W^{+}\) via \(f^{+}\)) is a morphism of abelian groups.
+
+b) Moreover, the following diagram is commutative:
+\[
+\xymatrix@C=4em@R=2.2em{
+L_{X}\times_{X^{+}}X
+  \ar[r]^{\sim}
+  \ar[d]_{L_{f}\times f}
+& X\times_{X^{+}}X
+  \ar[d]^{f\times f}
+\\
+L_{W}\times_{W^{+}}W
+  \ar[r]^{\sim}
+& W\times_{W^{+}}W.
+}
+\]
+\end{corollary}
+
+\begin{proof}
+a) \(L_{f}\) is induced by the morphism of
+\(\mathcal{O}_{X_{0}}\)-modules
+\(f_{X_{0}/W_{0}/S_{0}}\colon
+f_{0}^{*}(\Omega^{1}_{W_{0}/S_{0}})\to\Omega^{1}_{X_{0}/S_{0}}\)
+(\cf~0.1.7~b)): for every \(X^{+}\)-scheme \(Y\), given by an \(S\)-morphism
+\(g_{\mathcal{J}}\colon Y_{\mathcal{J}}\to X\), one has a commutative
+diagram, functorial in \(Y\):
+\[
+\xymatrix@C=2.6em@R=2.6em{
+\Hom_{\mathcal{O}_{Y_{0}}}(g_{0}^{*}(\Omega^{1}_{X_{0}/S_{0}}),\,\mathcal{J}\mathcal{O}_{Y})
+  \ar[r]^{L_{f}(Y)}
+  \ar[d]
+& \Hom_{\mathcal{O}_{Y_{0}}}(g_{0}^{*}f_{0}^{*}(\Omega^{1}_{W_{0}/S_{0}}),\,\mathcal{J}\mathcal{O}_{Y})
+  \ar[d]
+\\
+\{g_{\mathcal{J}}\}
+  \ar[r]
+& \{f_{\mathcal{J}}\circ g_{\mathcal{J}}\}
+}
+\]
+where \(L_{f}(Y)\) is the map
+\(\psi\mapsto\psi\circ g_{0}^{*}(f_{X_{0}/W_{0}/S_{0}})\), which is indeed a
+morphism of abelian groups.%
+{\renewcommand{\thefootnote}{(17)}\nde{One will note that \(L_{f}\)
+depends only on \(f_{0}\colon X_{0}\to W_{0}\).}}
+
+Let us prove~(b). Let \(Y\) be an \(X^{+}\)-scheme; if
+\(\Hom_{X^{+}}(Y,X)=\emptyset\) there is nothing to show. Let therefore
+\(g\in\Hom_{X^{+}}(Y,X)\); one must see that for every
+\(m\in L_{X}(Y)\), one has:
+\[
+(0.1.10\ (*))\qquad f\circ(m\cdot g)=L_{f}(Y)(m)\cdot(f\circ g).
+\]
+Now, \(g\) being fixed, \(\Hom_{X}(Y,\,X\times_{X^{+}}X)\) is a subset of
+\(\Hom_{X}(Y,\Delta^{(1)}_{X/S})\) and
+\[
+L_{X}(Y)
+=\Hom_{\mathcal{O}_{Y_{0}}}(g_{0}^{*}(\Omega^{1}_{X_{0}/S_{0}}),\,\mathcal{J}\mathcal{O}_{Y})
+=\Hom_{\mathcal{O}_{Y}}(g^{*}(\Omega^{1}_{X/S}),\,\mathcal{J}\mathcal{O}_{Y})
+\]
+a subset of \(L^{\square}_{X}(Y)\) (\cf~0.1.7); finally
+\(L_{f}(Y)\) is the restriction to \(L_{X}(Y)\) of the map
+\(L^{\square}_{f}(Y)\). Moreover, the bijection
+\[
+L_{X}(Y)\isomto\Hom_{X}(Y,\,X\times_{X^{+}}X),
+\qquad m\mapsto(g,\,m\cdot g)
+\]
+is (the inverse of) the restriction to
+\(L_{X}(Y)\subset L^{\square}_{X}(Y)\) of the bijection
+\(\Hom_{X}(Y,\Delta^{(1)}_{X/S})\isomto
+\{g\}\times L^{\square}_{X}(Y)\) considered in~0.1.7.1.
+Consequently, the equality \((0.1.10\ (*))\) follows from
+\((0.1.7\ (*))\); indeed, if one denotes by \(g'\) the \(X\)-morphism
+\(Y\to\Delta^{(1)}_{X/S}\) defined by \((g,\,m\cdot g)\), then the element
+of \(L_{W}(Y)\) corresponding to \((f\circ g,\,f\circ g')\) is
+\(L^{\square}_{f}(Y)(m)=L_{f}(Y)(m)\), \ie one indeed has
+\[
+L_{f}(m)\cdot(f\circ g)=f\circ(m\cdot g).
+\]
+\end{proof}
+
+\begin{lemma}{0.1.11}
+\label{III.0.1.11}
+Let \(X\), \(X'\) be two \(S\)-schemes. One has a commutative diagram:
+\[
+\xymatrix@C=4.5em@R=2.8em{
+L_{X}\times_{S}L_{X'}
+  \ar[r]^{\sim}
+  \ar[d]
+& L_{X\times_{S}X'}
+  \ar[d]
+\\
+X^{+}\times_{S}X'^{+}
+  \ar[r]^{\sim}
+& (X\times_{S}X')^{+}.
+}
+\]
+\end{lemma}
+
+\begin{proof}
+{\renewcommand{\thefootnote}{(18)}\nde{One has spelled out the proof.}}%
+First, for every \(S\)-scheme \(Y\),
+\(\Hom_{S}(Y,\,X^{+}\times_{S}X'^{+})\) equals
+\(\Hom_{S}(Y,X^{+})\times\Hom_{S}(Y,X'^{+})\) and the latter is isomorphic to
+\[
+\Hom_{S}(Y_{\mathcal{J}},X)\times\Hom_{S}(Y_{\mathcal{J}},X')
+=\Hom_{S}(Y,\,(X\times_{S}X')^{+});
+\]
+this proves that \(X^{+}\times_{S}X'^{+}\simeq(X\times_{S}X')^{+}\).
+
+Next, let \(Y\) be a scheme over \(X^{+}\times_{S}X'^{+}\) via a morphism
+\(h\colon Y_{\mathcal{J}}\to X\times_{S}X'\); set \(f=p\circ h\) and
+\(g=q\circ h\), where one has denoted by \(p\), \(q\) the projections of
+\(X\times_{S}X'\) to \(X\) and \(X'\). Since
+\[
+\Omega^{1}_{(X_{0}\times_{S_{0}}X'_{0})/S_{0}}
+\simeq
+p_{0}^{*}(\Omega^{1}_{X_{0}/S_{0}})\oplus q_{0}^{*}(\Omega^{1}_{X'_{0}/S_{0}})
+\]
+(\cf EGA~\(\mathrm{IV}_{4}\),~16.4.23), one obtains a natural isomorphism:
+\begin{align*}
+&\Hom_{\mathcal{O}_{Y_{0}}}(f_{0}^{*}(\Omega^{1}_{X_{0}/S_{0}}),\,\mathcal{J}\mathcal{O}_{Y})
+\times
+\Hom_{\mathcal{O}_{Y_{0}}}(g_{0}^{*}(\Omega^{1}_{X'_{0}/S_{0}}),\,\mathcal{J}\mathcal{O}_{Y})\\
+&\qquad\simeq
+\Hom_{\mathcal{O}_{Y_{0}}}(h_{0}^{*}(\Omega^{1}_{(X_{0}\times_{S_{0}}X'_{0})/S_{0}}),\,\mathcal{J}\mathcal{O}_{Y}),
+\end{align*}
+\ie \(L_{X}(Y)\times L_{X'}(Y)\simeq L_{X\times_{S}X'}(Y)\).
+\end{proof}
+
+\begin{remark}{0.1.12}
+\label{III.0.1.12}
+{\renewcommand{\thefootnote}{(19)}\nde{One has added this remark, as well as
+the corollary which follows.}}%
+Let \(\mathcal{C}\) be a category stable under fibered products, \(S\) an
+object of \(\mathcal{C}\), \(T_{1}\), \(T_{2}\) two objects over \(S\) and,
+for \(i=1,2\), \(L_{i}\) and \(X_{i}\) two objects over \(T_{i}\):
+\[
+\xymatrix@C=1.5em@R=1.6em{
+L_{1}\ar[dr]
+& & X_{1}\ar[dl]
+& & L_{2}\ar[dr]
+& & X_{2}\ar[dl]
+\\
+& T_{1}\ar[drr]
+& & & & T_{2}\ar[dll]
+\\
+& & & S
+}
+\]
+Then one has a natural isomorphism:
+\[
+(L_{1}\times_{T_{1}}X_{1})\times_{S}(L_{2}\times_{T_{2}}X_{2})
+\simeq
+(L_{1}\times_{S}L_{2})\times_{T_{1}\times_{S}T_{2}}(X_{1}\times_{S}X_{2}).
+\]
+Consequently, one deduces from the preceding lemma the:
+\end{remark}
+
+\begin{corollary}{0.1.13}
+\label{III.0.1.13}
+Let \(X_{1}\), \(X_{2}\) be two \(S\)-schemes. One has a commutative diagram
+of isomorphisms:
+\[
+\xymatrix@C=1.2em@R=2.6em{
+*+{L_{X_{1}\times_{S}X_{2}}\times_{(X_{1}\times_{S}X_{2})^{+}}(X_{1}\times_{S}X_{2})}
+  \ar[d]_{(0.1.11)\ \simeq}
+  \ar[dr]^{\simeq}
+&
+\\
+*+{(L_{X_{1}}\times_{S}L_{X_{2}})\times_{(X_{1}^{+}\times_{S}X_{2}^{+})}(X_{1}\times_{S}X_{2})}
+  \ar[r]^{\sim}_{(0.1.12)}
+& *+{(L_{X_{1}}\times_{X_{1}^{+}}X_{1})\times_{S}(L_{X_{2}}\times_{X_{2}^{+}}X_{2}).}
+}
+\]
+\end{corollary}
+
+% original p. 88
+We can now state:
+
+\begin{proposition}{0.2}
+\label{III.0.2}
+For every \(S\)-scheme \(X\), one can define a (left) operation of the
+abelian \(X^{+}\)-group \(L_{X}\) on the \(X^{+}\)-object \(X\),
+such that:
+\begin{enumeratei}
+\item this operation makes \(X\) into a formally principal homogeneous
+object under \(L_{X}\) over \(X^{+}\), \ie the morphism
+\[
+L_{X}\times_{X^{+}}X\longrightarrow X\times_{X^{+}}X
+\]
+is an isomorphism of \(X^{+}\)-functors;
+\item this operation is functorial in the \(S\)-scheme \(X\), \ie for every
+\(S\)-morphism \(f\colon X\to W\), the following diagram is commutative:
+\[
+\xymatrix@C=4em@R=2.2em{
+L_{X}\times_{X^{+}}X
+  \ar[r]
+  \ar[d]_{L_{f}\times f}
+& X
+  \ar[d]^{f}
+\\
+L_{W}\times_{W^{+}}W
+  \ar[r]
+& W\,;
+}
+\]
+\item this operation ``commutes with fibered product'', \ie for all
+\(S\)-schemes \(X_{1}\) and \(X_{2}\), the following diagram is commutative:
+\[
+\xymatrix@C=1em@R=2.8em{
+*+{L_{X_{1}\times_{S}X_{2}}\times_{(X_{1}\times_{S}X_{2})^{+}}(X_{1}\times_{S}X_{2})}
+  \ar[rr]
+  \ar[d]_{\simeq}
+  \ar[drr]^{\simeq}
+& & X_{1}\times_{S}X_{2}
+\\
+*+{(L_{X_{1}}\times_{S}L_{X_{2}})\times_{(X_{1}\times_{S}X_{2})^{+}}(X_{1}\times_{S}X_{2})}
+  \ar[rr]^{\sim}
+& & *+{(L_{X_{1}}\times_{X_{1}^{+}}X_{1})\times_{S}(L_{X_{2}}\times_{X_{2}^{+}}X_{2}).}
+  \ar[u]
+}
+\]
+\end{enumeratei}
+\end{proposition}
+
+\begin{proof}
+{\renewcommand{\thefootnote}{(20)}\nde{One has modified and spelled out the
+original, taking into account the additions made previously; these
+incorporate, spelling it out, the content of page~89 of the original.}}%
+% original p. 89
+(i)~and~(ii) follow respectively from corollaries~0.1.9 and~0.1.10. To
+prove~(iii), set \(\mathrm{P}(X)=L_{X}\times_{X^{+}}X\),
+for every \(S\)-scheme \(X\). Then, by~(ii) applied to the projections
+\(p_{i}\colon X_{1}\times_{S}X_{2}\to X_{i}\), one obtains commutative
+squares
+\[
+\xymatrix@C=4em@R=2.2em{
+\mathrm{P}(X_{1}\times_{S}X_{2})
+  \ar[r]
+  \ar[d]_{L_{p_{i}}\times p_{i}}
+& X_{1}\times_{S}X_{2}
+  \ar[d]^{p_{i}}
+\\
+\mathrm{P}(X_{i})
+  \ar[r]
+& X_{i}
+}
+\]
+for \(i=1,2\), and hence a commutative square:
+\[
+\xymatrix@C=4em@R=2.4em{
+\mathrm{P}(X_{1}\times_{S}X_{2})
+  \ar[r]
+  \ar[d]
+& X_{1}\times_{S}X_{2}
+\\
+\mathrm{P}(X_{1})\times_{S}\mathrm{P}(X_{2})
+  \ar[r]
+& X_{1}\times_{S}X_{2}.
+}
+\]
+Combining this with corollary~0.1.13, one obtains that the vertical arrow
+is an isomorphism, and that one has the commutative diagram announced
+in~(iii).
+% original p. 90
+\end{proof}
+
+\begin{remark}{0.3}
+\label{III.0.3}
+Suppose the \(X^{+}\)-scheme \(Y\) \emph{flat} over \(S\) (\cf SGA~1,~IV).
+One can then write
+\[
+\Hom_{X^{+}}(Y,L_{X})
+=\Hom_{\mathcal{O}_{Y_{0}}}(g_{0}^{*}(\Omega^{1}_{X_{0}/S_{0}}),\,
+\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}}).
+\]
+\end{remark}
+
+\begin{remark}{0.4}
+\label{III.0.4}
+Let us denote by \(\pi_{0}\colon X_{0}\to S_{0}\) the structural morphism
+and suppose that there exists an \(\mathcal{O}_{S_{0}}\)-module
+\(\omega^{1}_{X_{0}/S_{0}}\) such that
+\(\Omega^{1}_{X_{0}/S_{0}}\simeq\pi_{0}^{*}(\omega^{1}_{X_{0}/S_{0}})\)
+(the case will present itself in particular when \(X_{0}\) is an
+\(S_{0}\)-group, \cf II,~4.11). If one defines a functor \(L'_{X}\)
+over \(S\) by the formula
+\[
+(0.4.1)\qquad
+\Hom_{S}(Y,L'_{X})
+=\Hom_{\mathcal{O}_{Y_{0}}}(\omega^{1}_{X_{0}/S_{0}}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}},\,
+\mathcal{J}\mathcal{O}_{Y}),
+\]
+one then has \(\Hom_{X^{+}}(Y,L_{X})=\Hom_{S}(Y,L'_{X})\)
+for every \(X^{+}\)-scheme \(Y\), \ie
+\[
+L_{X}=L'_{X}\times_{S}X^{+}.
+\]
+{\renewcommand{\thefootnote}{(21)}\nde{One has spelled out what follows.}}%
+Then, since \(L_{X}\times_{X^{+}}X=L'_{X}\times_{S}X\),
+the operation of \(L_{X}\) on \(X\) induces an operation of
+\(L'_{X}\) on \(X\), and this operation respects the morphism
+\(p_{X}\colon X\to X^{+}\); indeed, if \(Y\) is an \(S\)-scheme,
+\(h\colon Y\to X\) an \(S\)-morphism and \(m\) an element of
+\(L'_{X}(Y)\), then \(h\) and \(m\cdot h\) have the same restriction
+to \(Y_{\mathcal{J}}\), \ie \(p_{X}(m\cdot h)=p_{X}(h)\).
+\end{remark}
+
+\begin{remark}{0.5}
+\label{III.0.5}
+% original p. 91
+Let us keep the hypotheses and notations of~0.4 and suppose moreover that
+\(Y\) is an \(S\)-scheme \emph{flat} over \(S\). One then has
+\[
+\Hom_{X^{+}}(Y,L_{X})
+=\Hom_{S}(Y,L'_{X})
+=\Hom_{S_{0}}(Y_{0},L_{0X}),
+\]
+where the \(S_{0}\)-functor in abelian groups \(L_{0X}\) is defined
+by the following identity (with respect to the variable \(S_{0}\)-scheme
+\(T\)):
+\[
+(0.5.1)\qquad
+\Hom_{S_{0}}(T,L_{0X})
+=\Hom_{\mathcal{O}_{T}}(\omega^{1}_{X_{0}/S_{0}}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T},\,
+\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T}).
+\]
+In the notations of~II,~1, one has therefore shown that the functors
+\(L'_{X}\) and \(\prod_{S_{0}/S}L_{0X}\) have the same
+restriction to the full subcategory of \((\mathbf{Sch})_{/S}\) whose objects
+are the \(S\)-schemes \(Y\) \emph{flat} over \(S\).
+\end{remark}
+
+\begin{remark}{0.6}
+\label{III.0.6}
+Let us keep the hypotheses and notations of~0.5%
+{\renewcommand{\thefootnote}{(22)}\nde{One has added the hypothesis which
+follows, implicit in the original.}}
+and suppose moreover that there exists a section \(\varepsilon_{0}\) of
+\(\pi_{0}\colon X_{0}\to S_{0}\); one then has
+\(\omega^{1}_{X_{0}/S_{0}}\simeq\varepsilon_{0}^{*}(\Omega^{1}_{X_{0}/S_{0}})\).
+First, one has (independently of the preceding hypothesis):
+\[
+\Hom_{S_{0}}(T,L_{0X})
+=\Gamma\bigl(T,\,
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{T}}(\omega^{1}_{X_{0}/S_{0}}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T},\,
+\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T})\bigr).
+\]
+\end{remark}

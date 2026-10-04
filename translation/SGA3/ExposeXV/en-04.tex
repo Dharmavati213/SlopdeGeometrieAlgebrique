@@ -1,0 +1,143 @@
+\par\medskip\noindent\textit{3. Continuation of the proof of 3.1}\par
+\noindent\textbf{I)} Reduction of $\text{(iii)}\implies\text{(i)}$ (C, first case) to the case where $S$ is normal.
+
+\noindent\textbf{a)} Reduction to the case of $S$ affine reduced.
+
+We therefore suppose that for every point $s$ of $S$, $E_s$ is the underlying space of a central subtorus of $G_s$. The uniqueness of $T$ then follows from Exp. IX 5.1 bis, and moreover $T$ will necessarily be central (\loccit). In view of uniqueness, to prove the existence of $T$, we may suppose $S$ noetherian, affine with ring $A$. If $S$ is not reduced, by hypothesis $G$ is flat over $S$. By 2.3, it then suffices to solve the problem for $S_{\mathrm{red}}$ and $G\times_S S_{\mathrm{red}}$. We may therefore suppose in addition that $S$ is reduced.
+
+\noindent\textbf{b)} Reduction to the case where the ring $A$ is of finite type over $\ZZ$.
+
+Let us first prove two lemmas:
+\begin{lemma}{3.4}\label{XV.3.4}
+Let $k$ be a field, $G$ an algebraic $k$-group, $E$ a subset of $G$, $k'$ an extension of $k$, $T_{k'}$ a subtorus of $G_{k'}$ with underlying space $E_{k'}$. Then if $T_{k'}$ is central or $k$ is perfect, $E$ is the underlying set of a subtorus of $G_k$.
+\end{lemma}
+\begin{proof}
+Indeed, by fpqc descent, it suffices to show that the two inverse images of $T_{k'}$ in $G_{k''}$, where $k''=k'\otimes_k k'$, agree. Now they have the same underlying space, namely the inverse image of $E$. If $T_{k'}$ is central, the lemma is then a consequence of Exp. IX 5.1 bis. If $k$ is perfect, $k''$ is reduced, and the two inverse images of $T_{k'}$, being smooth over $k''$, are reduced, hence agree.
+\end{proof}
+\begin{remark}{3.5}\label{XV.3.5}
+It follows from the preceding lemma that in the statement of 3.1 (iv), property (iv) a) is a consequence of (iv) b) in the following two cases:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item One supposes that the residue fields of the points of $S$ are perfect.
+\item For every $S'$ as in (iv) b), one supposes that the torus with underlying space equal to $E_{S'}$ is central in $G_{S'}$.
+\end{enumerate}
+\end{remark}
+\begin{lemma}{3.6}\label{XV.3.6}
+Let $S$ be a prescheme which is a projective limit of affine schemes $S_i$ (cf. EGA IV 8), $H$ a group $S$-scheme of multiplicative type and of finite type. Then there exist an index $i$, a group $S_i$-scheme $H_i$ of multiplicative type and of finite type, and an $S$-isomorphism:
+\[
+H_i\times_{S_i}S\isomto H.
+\]
+If in addition $H$ is isotrivial, one may suppose $H_i$ isotrivial.
+\end{lemma}
+\begin{proof}
+Since $H$ is of finite type over $S$, $H$ is even of finite presentation over $S$ (Exp. IX 2.1 b)), so there exist an index $\ell$ and a group $S_\ell$-scheme $H_\ell$ such that $H_\ell\times_{S_\ell}S$ is isomorphic to $H$ (Exp. VIB 10). Putting $H_i=\prod H_\ell{}_{S_i}S_\ell$, one therefore has $H\simeq\prod H_i{}_{S}S_i$ for every $i\geq\ell$.
+% typo?: the two printed product expressions and their subscripts are retained.
+
+Since $H$ is of finite type over $S$, $H$ is quasi-isotrivial (Exp. X 4.5), hence trivialized by an \'etale surjective morphism $S'\to S$. Using the quasi-compactness of $S$, one sees easily that there exists a covering of $S$ by finitely many affine open subsets $S_\alpha$ and, for every $\alpha$, an \'etale, surjective morphism of finite presentation $S'_\alpha\to S_\alpha$ trivializing $H|_{S_\alpha}$. This covering $(S_\alpha)$ of $S$ then comes from a covering $(S_{i,\alpha})$ of $S_i$ for $i$ sufficiently large (EGA IV 8). After replacing $S_i$ by $S_{i,\alpha}$ and $S$ by $S_\alpha$, one may therefore suppose that $H$ is trivialized by an \'etale surjective morphism $S'\to S$ of finite presentation. For $i$ sufficiently large, there then exist a prescheme $S'_i$, an \'etale surjective morphism $S'_i\to S_i$ of finite presentation, and an $S$-isomorphism $S'_i\times_{S_i}S\to S'$ (EGA IV 17.16). Put then, for $j$ sufficiently large:
+\[
+S'_j=S'_i\times_{S_i}S_j,\quad H'_j=H_j\times_{S_j}S'_j,\quad H'=H\times_S S'.
+\]
+In view of the choice of $S'$, there exist an abelian group $M$ of finite type and an $S$-isomorphism of group schemes $D_{S'}(M)\isomto H'$. Since the $S'_i$ are quasi-compact and $S'=\varprojlim S'_i$, it follows from Exp. VIB 10 that there exist an index $j$ and an $S'_j$-isomorphism of group schemes:
+\[
+D_{S'_j}(M)\isomto H'_j.
+\]
+But this says that $H_j$ is a quasi-isotrivial group of multiplicative type.
+
+When $H$ is isotrivial, one proceeds in an analogous manner, using a trivialization of $H$ by a finite \'etale morphism $S'\to S$.
+\end{proof}
+
+This being so, we can carry out the announced reduction b). The ring $A$ of $S$ is the filtered inductive limit of its subrings $A_i$ of finite type over $\ZZ$. Let $S_i=\Spec A_i$, $u_j:S\to S_j$ and $u_{jk}:S_k\to S_j$ ($k\geq j$) be the transition morphisms. Since $S$ is noetherian and $G$ is of finite presentation over $S$, there exist an index $i$ and a group $S_i$-prescheme $G_i$, of finite type over $S_i$, such that $G$ is $S$-isomorphic to $G_i\times_{S_i}S$. Likewise, since $E$ is locally closed in $G$, one may suppose that there exists a locally closed subset $E_i$ of $G_i$ such that $E=E_i\times_{S_i}S$ (EGA IV 8.3.11). For every $j>i$, denote by $G_j=G_j\times_{S_i}S_j$ and $E_j=E_i\times_{S_i}S_j$, and let $Q_j$ be the set of points $s$ of $S_j$ such that $(E_j)_s$ is the underlying set of a central subtorus of $(G_j)_s$.
+% typo?: source prints G_j = G_j times_{S_i} S_j, kept as printed.
+
+It follows from 3.4 that $Q_k=u_{jk}^{-1}(Q_j)$ for $k\geq j$, and by hypothesis $\mathrm{ens}(S)=u_j^{-1}(Q_j)$ for $j\geq i$. Moreover, I say that $Q_j$ is ind-constructible (EGA IV 1.9.4). Indeed, since $S_j$ is noetherian, it suffices (EGA IV 1.9.10) to see that if $S$ is an integral noetherian scheme with generic point $\eta$, and if $E_\eta$ is the underlying set of a central subtorus $T_\eta$ of $G_\eta$, there exists a neighborhood $U$ of $\eta$ such that for every point $s$ of $U$, $E_s$ has the same property. Now after restricting $S$, one may suppose that the center $Z$ of $G$ is representable and that there exists a group subscheme $T$ of $G$ whose generic fiber is $T_\eta$ (VIB \S~10). But then $\mathrm{ens}(T)$ and $E$ are two locally closed subsets of $\mathrm{ens}(G)$ which agree on the generic fiber, so one can find a neighborhood $U$ of $\eta$ such that, over $U$, $\mathrm{ens}(T)=E$ (EGA IV 8.3.11). For the same reasons, one may suppose that over $U$, $T$ is central, since $T$ is a torus (3.6).
+
+Knowing now that $Q_j$ is ind-constructible, it follows from EGA IV 8.3.4 that $Q_j=\mathrm{ens}(S_j)$ for $j$ sufficiently large. We may then replace $S,G,E$ by $S_j,G_j,E_j$, which reduces one to the case where $S$ is a reduced affine scheme of finite type over $\ZZ$.
+
+\noindent\textbf{c)} Reduction to the case where $S$ is the spectrum of a reduced complete noetherian local ring.
+
+Because of the uniqueness of the torus with underlying space $E$, the usual technique (EGA IV 8) and Lemma 3.6 allow one to replace $S$ by the spectrum of the local ring $A$ of a point of $S$. Let $\widehat S$ be the spectrum of the completion $\widehat A$ of $A$ for the topology defined by the maximal ideal. Since $A$ is the localization of an algebra of finite type over $\ZZ$, $\widehat S$ is again reduced (EGA IV 7.6.5). I say that it suffices to solve the problem after extension of the base $\widehat S\to S$. Indeed, if $\widehat T$ denotes the subtorus of $G_{\widehat S}$ with underlying space $E_{\widehat S}$, its two inverse images in $G_{\widehat S\times_S\widehat S}$ are two central subtori having the same underlying space, hence agreeing (Exp. IX 5.1 bis); and by fpqc descent, $\widehat T$ comes from a torus $T$ of $G$ answering the question (cf. 3.4).
+
+\noindent\textbf{d)} A descent lemma.
+
+Recall the following properties of finite morphisms, which were pointed out in TDTE I: let $S$ and $S'$ be two preschemes and $u:S'\to S$ a finite morphism. Then:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item The morphism $u$ is an epimorphism if and only if the canonical sheaf morphism:
+\[
+\OO_S\to u_*(\OO_{S'})
+\]
+is injective.
+\item The morphism $u$ is an effective epimorphism (Exp. IV 1.3) if and only if the canonical diagram:
+\[
+0\to\OO_S\to u_*(\OO_{S'})\rightrightarrows u_*(\OO_{S'})\otimes_{\OO_S}u_*(\OO_{S'})
+\]
+is exact.
+\item If in addition $S$ is noetherian and $u$ is an epimorphism, $u$ is the composite of a finite sequence of finite effective epimorphisms.
+\end{enumerate}
+We are then in a position to prove the following lemma, whose proof uses a technique of nonflat descent:
+\begin{lemma}{3.7}\label{XV.3.7}
+Let $S$ be a locally noetherian prescheme, $G$ a group $S$-prescheme of finite type, $S'$ a prescheme, and $u:S'\to S$ a finite morphism. For every $S$-prescheme $T$, denote by $M(T)$ the set of subgroups of multiplicative type of $G_T$ (resp. the set of central subgroups of multiplicative type of $G_T$), so that $M$ is naturally a contravariant functor defined on $\Sch/S$. Then if $u$ is an effective epimorphism (resp. an epimorphism), the diagram of sets:
+\begin{equation}\tag{$\ast$}
+M(S)\to M(S')\rightrightarrows M(S'\times_S S')
+\end{equation}
+is exact.
+\end{lemma}
+\par\noindent\emph{Proof.} i) \emph{Reduction to the case where $u$ is an effective epimorphism.} We are therefore interested in the functor of central subgroups of multiplicative type of $G$. The injectivity of $M(S)\to M(S')$ is a question local in nature on $S$, and once this injectivity is granted, the exactness of $(\ast)$ becomes a problem local in nature on $S$. One may therefore suppose $S$ affine noetherian.
+
+Let us study the case where $u:S\to S'$ is the composite of two finite epimorphisms:
+% typo?: the source reverses the direction of u in this sentence, kept as printed.
+\[
+S'\xrightarrow{v}S''\xrightarrow{w}S.
+\]
+I say that if the two diagrams:
+\begin{align}\tag{$\ast'$}
+M(S'')&\to M(S')\rightrightarrows M(S'\times_{S''}S'),\\\tag{$\ast''$}
+M(S)&\to M(S'')\rightrightarrows M(S''\times_S S'')
+\end{align}
+are exact, the same holds for $(\ast)$.
+
+Indeed, the injectivity of $M(S)\to M(S')$ is clear. If now $T'$ is an element of $\Ker[M(S')\rightrightarrows M(S'\times_S S')]$, a fortiori $T'$ belongs to $\Ker[M(S')\rightrightarrows M(S'\times_{S''}S')]$, so by the exactness of $(\ast)'$, it comes from a unique element $T''$ of $M(S'')$. It suffices to show that $T''$ belongs to $\Ker[M(S'')\rightrightarrows M(S''\times_S S'')]$, for in view of the exactness of $(\ast)''$, $T''$ will descend to $S$. Let therefore $T''_1$ and $T''_2$ be the two inverse images of $T''$ in $M(S''\times_S S'')$. Since they are two central subgroups of multiplicative type of $G_{S''\times_S S''}$, to show that $T''_1=T''_2$, it suffices to see that they have the same fibers (Exp. IX 5.1 bis). Consider the commutative diagram:
+\[
+\xymatrix{S'\ar[d]_v&S'\times_S S'\ar@<.4ex>[l]\ar@<-.4ex>[l]\ar[d]^{v\times v}\\S''&S''\times_S S''\ar@<.4ex>[l]\ar@<-.4ex>[l].}
+\]
+The morphism $v$ is a finite epimorphism, hence is dominant (property (a) above) and closed, so is surjective, and the same holds for $v\times v$. Let then $x''$ be a point of $S''\times_S S''$, and $x'$ a point of $S'\times_S S'$ over $x''$. It follows from the commutativity of the diagram above that the two inverse images of $(T''_1)_{x''}$ and $(T''_2)_{x''}$ in $G_{x'}$ agree, hence $(T''_1)_{x''}=(T''_2)_{x''}$ (EGA IV 2.2.15).
+
+What precedes and an immediate induction on the number of factors of a factorization of $u:S'\to S$ into effective epimorphisms (property c) recalled above) show that to prove the exactness of $(\ast)$ in the case of central subgroups of multiplicative type, one may restrict to the case where $u$ is an effective epimorphism. Finally, using Exp. IX 5.1 bis once more, one sees that it suffices to prove 3.7 when $M$ is the functor of subgroups of multiplicative type of $G$ and $u$ an effective epimorphism.
+
+\noindent ii) \emph{Injectivity of $M(S)\to M(S')$.} Since $u:S'\to S$ is an epimorphism, the canonical morphism:
+\[
+\OO_S\to u_*(\OO_{S'})
+\]
+is injective; moreover, an $S$-group of multiplicative type is flat over $S$; the injectivity of $M(S)\to M(S')$ is therefore a consequence of the following more general lemma:
+\begin{lemma}{3.8}\label{XV.3.8}
+Let $f:X\to S$ and $g:S'\to S$ be two morphisms of preschemes, $\mathcal F$ a quasi-coherent $\OO_X$-module, $X'=X\times_S S'$, $\mathcal F'=\mathcal F\otimes_{\OO_S}\OO_{S'}$, $Q(\mathcal F)$ the set of quotient $\OO_X$-modules $\mathcal G$ of $\mathcal F$ which are quasi-coherent and flat over $S$, $Q(\mathcal F')$ the analogue relative to $\mathcal F',X'$ and $S'$. Suppose $g$ quasi-compact and $\OO_S\to g_*(\OO_{S'})$ injective; then the canonical map:
+\[
+\begin{aligned}
+Q(\mathcal F)&\to Q(\mathcal F')\\
+\mathcal G&\mto\mathcal G\otimes_{\OO_S}\OO_{S'}
+\end{aligned}
+\]
+is injective.
+\end{lemma}
+Indeed, one may suppose $S$ affine, then $X$ affine. Since the morphism $g$ is quasi-compact, $S'$ is then the union of finitely many affine open subsets $S'_i$. After replacing $S'$ by $\coprod S'_i$ (an operation preserving the injectivity of $\OO_S\to g_*(\OO_{S'})$), one may suppose $S'$ affine. One is then reduced to proving the following lemma, whose proof is immediate:
+\begin{lemma}{3.9}\label{XV.3.9}
+Let $A\to A'$ be an injective ring homomorphism, $M$ an $A$-module, $N=M/P$ a quotient $A$-module flat over $A$, $M'=M\otimes_A A'$, $N'=N\otimes_A A'=M'/P'$. Then $P$ is the inverse image of $P'$ under the canonical homomorphism $M\to M'$ (so $N$ and $P$ are known when one knows $N'$ and $P'$).
+\end{lemma}
+
+\noindent iii) \emph{Exactness of 3.7 $(\ast)$ at $M(S')$.} Let $T'$ be an element of $\Ker[M(S')\rightrightarrows M(S'\times_S S')]$. Suppose one has proved iii) when $S$ is the spectrum of a noetherian local ring. For every point $s$ of $S$, there therefore exists a subgroup of multiplicative type $T_s$ of $G\times_S\Spec(\OO_{S,s})$ arising by descent from $T'\times_{S'}u^{-1}\Spec(\OO_{S,s})$. By Exp. VIB \S~10 and 3.6, there exist a neighborhood $U$ of $s$ in $S$ and a group subscheme $T$ of $G$ over $U$, of multiplicative type, extending $T_s$. Let $U'$ be the inverse image of $U$ in $S'$. One then knows two subschemes of $G'|_{U'}$: $T'|_{U'}$ and $T\times_U U'$, agreeing on $u^{-1}(\Spec(\OO_{S,s}))$. If one regards $u^{-1}(\Spec(\OO_{S,s}))$ as the projective limit of the schemes $u^{-1}(V)$, where $V$ ranges over the open neighborhoods of $s$ in $U$, it follows from EGA IV 8 that there exists an open subset $V$ of $U$ containing $s$ such that $T\times_U U'$ and $T'$ agree over $u^{-1}(V)$. Thus, under the hypotheses made, $T'$ descends locally on $S$, but because of the uniqueness proved in ii), $T'$ then descends globally on $S$. In brief, it suffices to prove iii) when $S$ is the spectrum of a noetherian local ring.
+
+Denote then by $\widehat S$ the spectrum of the completion of the ring of $S$, and let $S''=S'\times_S S'$, $\widehat S'=\widehat S\times_S S'$, $\widehat S''=\widehat S\times_S S''=\widehat S'\times_S\widehat S'$. I say that it suffices to show that the diagram:
+\begin{equation}\tag{$\ast$}
+M(\widehat S)\to M(\widehat S')\rightrightarrows M(\widehat S'')
+\end{equation}
+is exact at $M(\widehat S')$. This follows from the commutative diagram below, where the second row is exact at $M(\widehat S')$ by hypothesis, where the first two columns are exact (fpqc descent), and where the map $f$ is injective, as follows from ii) applied to the finite epimorphism:
+\[
+\widehat S'\times_{S'}\widehat S'\to\widehat S\times_S\widehat S
+\]
+deduced from $S'\to S$ by the flat base change $\widehat S\times_S\widehat S\to S$:
+\[
+\xymatrix@C=12pt{
+M(S)\ar[r]\ar[d]&M(S')\ar@<.4ex>[r]\ar@<-.4ex>[r]\ar[d]&M(S'')\ar[d]\\
+M(\widehat S)\ar[r]\ar@<.4ex>[d]\ar@<-.4ex>[d]&M(\widehat S')\ar@<.4ex>[r]\ar@<-.4ex>[r]\ar@<.4ex>[d]\ar@<-.4ex>[d]&M(\widehat S'')\\
+M(\widehat S\times_S\widehat S)\ar[r]^f&M(\widehat S'\times_{S'}\widehat S')&
+}
+\]
+(the diagram chasing is left to the reader). It follows from characterization b) of finite effective epimorphisms that the morphism $\widehat S'\to\widehat S$, deduced from $S'\to S$ by the flat base change $\widehat S\to S$, is again a finite effective epimorphism. One is therefore reduced to the case where in addition $S$ is the spectrum of a complete noetherian local ring.

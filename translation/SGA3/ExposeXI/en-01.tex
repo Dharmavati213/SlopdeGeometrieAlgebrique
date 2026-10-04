@@ -1,0 +1,127 @@
+\exposetitle{XI}{Representability criteria. Applications to subgroups of multiplicative type of affine group schemes}
+\label{XI}
+\begin{center}by A.~Grothendieck\end{center}
+{\renewcommand{\thefootnote}{0}\footnotetext{xy version of 5/12/08.}}
+\setcounter{footnote}{0}
+
+\sgasection{0}{Introduction}
+As we have already seen examples in Exp.~X, Nos.~4, 5, the representability of certain functors, such as certain functors of the type $\uHom_S(X,Y)$ and various variants, plays an important role in many questions concerning group preschemes.
+
+Among the results particularly useful in this theory, let us mention (in addition to the questions of representability of quotients, studied in exposés V and VI and in Exp.~VIII~5) the question of representability of functors of the form $\prod_{X/S}Y/X$ ($Y$ a subobject of $X$), studied in Exp.~VIII~6 in a very elementary case, of which variants will be given in \No6 of the present exposé; these results provide us with the representability of various centralizers, normalizers, transporters.
+
+Less elementary representability criteria, using results that will appear in EGA~VI, are indicated in 6.12 and in Exp.~XV, XVI, where a criterion for representability of quotients $G/H$ in cases not covered by the preceding exposés will be given (a criterion that was not developed in the oral exposés).
+
+Our main object in the present exposé is the proof of theorems 4.1 and 4.2, which provide a typical example of a nonprojective construction technique (close to that which will be developed in EGA~VI). It has moreover become apparent, since the oral exposé and the writing of the present text, that the affine hypotheses made in 4.1 and 4.2 can be eliminated to a large extent (\cf XV), and that, on the other hand, for the essential part of the theory developed in the following exposé, one can dispense with 4.1 and 4.2. Finally, it might be interesting to prove the analogue of these results for a general reductive (for example semisimple) group prescheme instead of a group of multiplicative type, in which case 4.1 and 4.2 will doubtless be the key result for the proof.
+
+\sgasection{1}{Review of smooth, étale, unramified morphisms}
+The reader is referred to EGA~IV §§~17 \& 18, and, pending its publication, to SGA~1 I, II, III (where, however, certain noetherian hypotheses, inconvenient in applications, should be replaced by hypotheses of finite presentation).
+
+\begin{definition}{1.1}\label{XI.1.1}
+Let $S$ be a prescheme, $F$ a functor $\Sch^\circ_{/S}\to\Ens$. One says that $F$ is \emph{formally smooth} (resp. \emph{formally unramified}{\renewcommand{\thefootnote}{*}\footnote{One will now rather say ``net'' instead of ``unramified''.}\addtocounter{footnote}{-1}}, resp. \emph{formally étale}) if for every $S$-prescheme $S'$, affine (in the absolute sense), and every subscheme $S'_0$ of $S'$ defined by a nilpotent ideal $\mathscr J$, the map
+\[
+F(S')\to F(S'_0)
+\]
+is surjective (resp. injective, resp. bijective). A prescheme $X$ over $S$ is said to be formally smooth over $S$ (resp. formally unramified over $S$, resp. formally étale over $S$) if the corresponding functor is formally smooth (resp. formally unramified, resp. formally étale); one says that $X$ is \emph{smooth} over $S$ (resp. \emph{unramified} over $S$, resp. \emph{étale} over $S$) if it satisfies the preceding condition and if, in addition, $X$ is locally of finite presentation over $S$.
+\end{definition}
+
+The interest of these definitions for $X$ lies in the fact that, on the one hand, they are expressed in a remarkably simple way in terms of the functor represented by $X$ (and in practice, $X$ is often given as the object over $S$ representing an explicitly described functor), and that, on the other hand, they are also expressed by remarkable properties concerning the local structure of $X$, which we shall recall in the following statements (for the proof we refer to \loccit).
+
+\begin{proposition}{1.2}\label{XI.1.2}
+Let $X$ be a prescheme locally of finite presentation over $S$. Then:
+\begin{enumeratei}
+\item For $X$ to be smooth over $S$, it is necessary and sufficient that $X$ be flat over $S$, and that its geometric fibers $X\otimes_S\Spec(\overline{\kappa(s)})$ be regular schemes. More generally, for $X$ to be smooth over $S$ in a neighborhood of the point $x\in X$ (one then says that $X$ is smooth over $S$ at $x$), it is necessary and sufficient that $X$ be flat over $S$ at $x$ and $X_s$ be smooth over $\kappa(s)$ at $x$, \ie $X_s\otimes_{\kappa(s)}\overline{\kappa(s)}$ be regular at the points (or simply, one point) above $x$.
+\item Suppose $S$, hence $X$, locally noetherian, let $x\in X$ and $s\in S$ be its image in $S$; then the smoothness of $X$ over $S$ at $x$ can be recognized on the local homomorphism $A=\OO_{S,s}\to B=\OO_{X,x}$ of noetherian local rings (or even on the local homomorphism $\widehat A\to\widehat B$ of their completions), by the following characteristic property: $B$ is flat over $A$, and $B\otimes_A k$ is geometrically regular over $k$ (the residue field of $A$), \ie for every finite extension $k'$ of $k$, $(B\otimes_A k)\otimes_k k'=B\otimes_A k'$ is a regular semilocal ring. When the residue extension $k(B)/k(A)$ is trivial, these conditions are also equivalent to the following: $\widehat B$ is isomorphic as an $\widehat A$-algebra to a formal power series algebra $\widehat A[[t_1,\ldots,t_n]]$.
+\end{enumeratei}
+\end{proposition}
+
+Thus, from the ``formal'' point of view, the structure of $X$ over $S$ is that of the \emph{standard affine space} $S[t_1,\ldots,t_n]$ over $S$.
+
+\begin{proposition}{1.3}\label{XI.1.3}
+Let $X$ be a prescheme locally of finite presentation over $S$. Then:
+\begin{enumeratei}
+\item The following conditions are equivalent:
+\begin{enumerate}[label=\alph*)]
+\item $X$ is unramified over $S$.
+\item The diagonal morphism $X\to X\times_S X$ is an open immersion.
+\item $\Omega^1_{X/S}=0$.
+\item The geometric fibers of $X/S$ are discrete and reduced, \ie isomorphic to sums of copies of the base field.
+\item For every $s\in S$, the fiber $X\otimes_S\Spec\kappa(s)=X_s$ is unramified over $\kappa(s)$, or again is isomorphic to a sum of spectra of finite separable extensions of $\kappa(s)$.
+\end{enumerate}
+\item One has analogous conditions of a pointwise nature for $X$ to be unramified over $S$ at a given point $x$ (\ie in a neighborhood of the said point); for example, it is necessary and sufficient that $\OO_{X_s,x}$ be a finite separable extension of $\kappa(s)$, which can also be expressed in terms of the local homomorphism $A=\OO_{S,s}\to B=\OO_{X,x}$ by the condition that $B\otimes_A k$ be a finite separable extension of $k$ (the residue field of $A$), \ie $\mathfrak r(A)B=\mathfrak r(B)$ and $k(B)$ is a finite separable extension of $k(A)$. When $A$, hence also $B$, is noetherian, and $k(A)\isomto k(B)$, this also means that $\widehat A\to\widehat B$ is surjective.
+\end{enumeratei}
+\end{proposition}
+Thus, from the ``formal'' point of view, saying that $X$ is unramified over $S$ means that $X$ is essentially a \emph{sub-prescheme} of $S$. Observe also that conditions d) and e) are expressed solely in terms of the fibers of $X/S$.
+
+\begin{proposition}{1.4}\label{XI.1.4}
+Let $X$ be a prescheme locally of finite presentation over $S$. For $X$ to be étale over $S$, it is necessary and sufficient that it be smooth over $S$ and unramified over $S$ (trivial by definition), which allows the criteria 1.2 and 1.3 to be applied. One finds in particular:
+\begin{enumeratei}
+\item For $X$ to be étale over $S$, it is necessary and sufficient that it be flat over $S$ and unramified over $S$. An analogous local criterion for $X$ to be étale over $S$ at a given point $x$.
+\item Suppose in addition $S$, hence $X$, locally noetherian. Then the fact that $X$ is étale over $S$ at a point $x$ can be recognized on the local homomorphism $A=\OO_{S,s}\to B=\OO_{X,s}$ (and even on the local homomorphism $\widehat A\to\widehat B$) by the following characteristic property: $B$ is flat over $A$, and $B\otimes_A k$ is a finite separable extension of $k$ (the residue field\nde{``Residue extension'' has been replaced by ``residue field''.} of $A$). When $k(A)\isomto k(B)$, this condition simply means that $\widehat A\to\widehat B$ is an isomorphism.
+% typo?: O_{X,s} kept as printed.
+\end{enumeratei}
+\end{proposition}
+Thus, from the ``formal'' point of view, saying that $X$ is étale over $S$ simply means that $X$ is locally isomorphic to $S$.
+
+\begin{remark}{1.5}\label{XI.1.5}
+When $X$ is locally of finite presentation over $S$, and a point $x\in X$ is given, then the fact that $X$ is smooth (resp. unramified, resp. étale) over $S$ at $x$, \ie near $x$, can still be recognized on the functor $X:\Sch^\circ_{/S}\to\Ens$ by the following property: for every $S'$ over $S$, $S'$ the spectrum of a local ring, every subscheme $S'_0$ of $S'$ defined by a nilpotent ideal, and every $S$-morphism $u_0:S'_0\to X$ taking the closed point $s'$ of $S'$ to $x$, there exists at least one (resp. at most one, resp. exactly one) $S$-morphism $u:S'\to X$ extending it. This statement shows in particular that in definition 1.1 one can restrict oneself to $S'$ that are local schemes (provided the functor considered is representable by a prescheme locally of finite presentation over $S$). On the other hand, when $S$ is locally noetherian, in the preceding pointwise criterion one can even restrict oneself to $S'$ that are artinian local schemes, and one can therefore make the same restriction on $S'$ in definition 1.1 (provided $S$ is locally noetherian and the functor considered is represented by a prescheme locally of finite type over $S$).
+\end{remark}
+
+\begin{remark}{1.6}\label{XI.1.6}
+Of course, given a morphism $f:X\to Y$ of preschemes, one will say that $f$ is smooth (resp.\ $\ldots$) if $f$ makes $X$ a smooth $Y$-prescheme (resp.\ $\ldots$). When $X$ and $Y$ are $S$-preschemes and $f$ an $S$-morphism of finite presentation, these properties of $f$ are expressed immediately in terms of the morphism of functors $F,G:\Sch^\circ_{/S}\to\Ens$ defined by $f$: $f$ is smooth (resp. unramified, resp. étale) if for every $S$-prescheme $S'$, $S'$ affine (in the absolute sense), and every subscheme $S'_0$ of $S'$ defined by a nilpotent ideal $\mathscr J$, the map
+\[
+F(S')\to F(S'_0)\times_{G(S'_0)}G(S')
+\]
+deduced from the commutative square
+\[
+\xymatrix{F(S')\ar[r]\ar[d]&G(S')\ar[d]\\F(S'_0)\ar[r]&G(S'_0)}
+\]
+is surjective (resp. injective, resp. bijective), \ie for every commutative square of morphisms of functors over $S$ (where $S',S'_0$ are as above and $i:S'_0\to S'$ is the canonical immersion):
+\begin{equation}\tag{Q}
+\xymatrix{S'_0\ar[r]^i\ar[d]_{u_0}&S'\ar[d]^v\\F\ar[r]_f&G}
+\end{equation}
+there exists at least one (resp. at most one, resp. exactly one) morphism
+\[
+\xymatrix{&S'\ar[dl]^u\\F&}
+\]
+making the two corresponding triangles commutative:
+\[
+u_0=ui\quad\text{and}\quad v=fu.
+\]
+This property for a homomorphism of functors $f:F\to G$ over $S$ still makes sense even if the functors considered are not representable; one will say (if it holds) that the homomorphism of functors $f:F\to G$ is formally smooth (resp. formally unramified, resp. formally étale). One will note that it depends only on the homomorphism of functors $\Sch^\circ\to\Ens$ defined by $F,G$ (\cf I~1.4.1), and not on the structural morphisms $F\to S$ and $G\to S$. An equivalent way of expressing the preceding definition, rather easier to handle in applications, is the following: \emph{the morphism of functors $F\to G$ over $S$ is said to be formally smooth (resp. formally unramified, resp. formally étale) when, for every $S'$ over $S$ and every morphism $S'\to G$, the functor $F'=F\times_G S'$ over $S'$ is formally smooth (resp. formally unramified, resp. formally étale).}
+\end{remark}
+
+\begin{remark}{1.7}\label{XI.1.7}
+Under the conditions of 1.6, when a ``point of $F$'' with values in a field $k$ is given, \ie an element $x$ of $F(\Spec(k))$ or, what amounts to the same thing, a morphism $\Spec(k)\to F$, one likewise says that $f$ is formally smooth (resp. formally unramified, resp. formally étale) \emph{at $x$} if the condition of the preceding definition holds whenever $S'$ is a local scheme and the morphism $S'_0\to F$ in diagram (Q) above is ``compatible with the marked points'' in the following sense: if $k'$ denotes the residue field of $S'$ and $S'_0$ at their closed point, the diagram
+\[
+\xymatrix{\Spec(k')\ar[d]_j&\Spec(k)\ar[d]^x\\S'_0\ar[r]_{u_0}&F}
+\]
+(where $j:\Spec(k')\to S'_0$ denotes the canonical immersion) can be completed to a \emph{commutative diagram}
+\[
+\xymatrix{&\Spec(k'')\ar[dl]\ar[dr]&\\\Spec(k')\ar[d]&&\Spec(k)\ar[d]\\S'_0\ar[rr]&&F,}
+\]
+where $k''$ is the spectrum of a field. When $F,G$ are representable by $S$-preschemes $X,Y$ and the $S$-morphism $f:X\to Y$ is locally of finite presentation, this condition means precisely (by 1.5) that $f:X\to Y$ is smooth at the point of $X$ that is the image of $\Spec(k)$ under $x:\Spec(k)\to X$.
+% typo?: "k'' is the spectrum of a field" kept as printed.
+\end{remark}
+
+\begin{remark}{1.8}\label{XI.1.8}
+When the condition of the preceding definition holds on restricting oneself to artinian local $S'$, one will say that $F\to G$ is \emph{infinitesimally smooth} (resp. \emph{infinitesimally unramified}, resp. \emph{infinitesimally étale}) at $x$, and one says that $F\to G$ is infinitesimally smooth (resp.\ $\ldots$) if it is so at every point $x$, in other words if the condition considered in 1.6 holds whenever $S'$ is artinian local. This variant of the preceding notions is technically useful, for it is often more convenient to check, being a weaker notion, while frequently being sufficient (for example if $F\to G$ is a morphism locally of finite presentation, with $G$ representable by a locally noetherian prescheme$\ldots$) to imply the strong condition.
+\end{remark}
+
+Smooth morphisms of preschemes behave remarkably simply with respect to differential calculus. We shall restrict ourselves here to recalling the following property:
+\begin{proposition}{1.9}\label{XI.1.9}
+Let $f:X\to S$ be a smooth morphism of preschemes. Then $\Omega^1_{X/S}$ is a locally free module of finite type on $X$, its rank at a point $x\in X$ is equal to the dimension of the fiber $X_s$ (where $s=f(x)$) near the point $x$.
+\end{proposition}
+One calls this dimension the \emph{relative dimension} of $X$ over $S$ at $x$. One will note that it is zero (when $f$ is smooth at $x$) if and only if $f$ is étale at $x$. In practice, this dimension can also be calculated in terms of the functor $F$ represented by $X$, in the following way. Let $\xi$ be a point of $F$ with values in a field $k$, ``localized at $x$'', \ie a morphism $\Spec(k)\to F=X$ whose image is $x$. Consider the algebra $D(k)=k[t]/(t^2)$ of dual numbers over $k$, considered as an $S$-prescheme, and consider the map
+\[
+F(D(k))\to F(k)
+\]
+deduced from the augmentation $D(k)\to k$; finally, let $F(D(k),\xi)$ be the inverse image of $\xi\in F(k)$ under this map. Then this set is naturally endowed with a vector space structure over $k$ (in fact, it is the vector space dual to $\Omega^1_{X/S}\otimes_{\OO_{X,x}}k$), whose dimension is the relative dimension of $X$ over $S$ at $x$.
+
+To describe the vector space law on $F(D(k),\xi)$ explicitly, it is useful to introduce more generally, as in exposé II, for every vector space $V$ over $k$, the algebra $D_k(V)=k+V$ ($V$ an ideal of square zero), and to consider $F(D_k(V),\xi)$, the inverse image of $\xi$ under $F(D_k(V))\to F(k)$, as a covariant functor in $V$ with values in $\Ens$. It then suffices that this functor commute with products of two factors (which means that $F$ transforms certain amalgamated sums of a very particular type into fibered products, compare exposé II, a condition always satisfied if $F$ is representable) to conclude that the $F(D_k(V),\xi)$ and in particular $F(D(k),\xi)$ are endowed with vector space structures over $k$. One can thus define the relative dimension of $F$ over $X$ at the ``point'' $\xi$ under conditions substantially broader than the representability of $F$.
+% typo?: F over X kept as printed.
+
+In the present exposé, the fact that certain functors which we shall describe explicitly are representable by smooth preschemes over $S$ will serve us chiefly through the following result, which will be for us the technical intermediary for passing from constructions on the completion of the local ring $A$ of a point $s$ of a noetherian scheme $S$ to a local ring $A'$ over $A$ étale over $A$, which will give in particular a means of passing from $s$ to neighboring points:
+\begin{proposition}{1.10}\label{XI.1.10}
+Let $f:X\to S$ be a smooth morphism of preschemes, $s$ a point of $S$, and $x$ a point of $X$ above $s$ such that $\kappa(x)$ is a finite separable extension of $\kappa(s)$. Then there exists a subscheme $S'$ of $S$, étale over $S$, passing through $x$. Thus one can find an étale morphism $S'\to S$, a point $s'$ of $S'$ above $s$ with residue extension equal to $\kappa(x)/\kappa(s)$, and an $S$-morphism $S'\to X$ taking $s'$ to $x$.
+% typo?: "subscheme S' of S" kept as printed.
+\end{proposition}

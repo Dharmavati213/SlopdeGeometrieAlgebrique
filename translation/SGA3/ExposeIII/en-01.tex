@@ -1,0 +1,621 @@
+\exposetitle{III}{Infinitesimal extensions}
+\label{III}
+
+\begin{center}
+\textit{by M.~Demazure}
+\end{center}
+
+{\renewcommand{\thefootnote}{(0)}\nde{Version of 14/10/2024}}%
+In this expos\'e, one places oneself in the following general situation.
+One has a scheme~\(S\) and a coherent nilpotent ideal~\(\mathcal{I}\)
+on~\(S\). One denotes by~\(S_n\) the closed subscheme of~\(S\) defined
+by the ideal~\(\mathcal{I}^{n+1}\) (\(n\geqslant 0\)). In particular
+\(S_0\) is defined by~\(\mathcal{I}\). As \(\mathcal{I}\) is nilpotent,
+\(S_n\) equals~\(S\) for \(n\) large enough, and the~\(S_i\) have the same
+underlying topological space. A typical example of this situation is the
+following: \(S\) is the spectrum of a local artinian ring~\(A\),
+\(\mathcal{I}\) is the ideal defined by the radical of~\(A\), hence
+\(S_0\) is the spectrum of the residue field of~\(A\).
+
+In the preceding situation, one is given a certain number of data
+above~\(S_0\), and one seeks above~\(S\) data which lift them, that is to
+say, which give them back by base change from~\(S\) to~\(S_0\). This is
+done step by step, by means of the~\(S_n\). At each step, one proposes
+to define the obstructions encountered and to classify, when they exist,
+the solutions obtained.
+
+The passage from~\(S_n\) to~\(S_{n+1}\) may be generalized as follows:
+one has a scheme~\(S\), two ideals \(\mathcal{I}\) and~\(\mathcal{J}\)
+with \(\mathcal{I}\supset\mathcal{J}\), and
+\(\mathcal{I}\cdot\mathcal{J}=0\) (in the preceding case, \(S\),
+\(\mathcal{I}\) and~\(\mathcal{J}\) are respectively \(S_{n+1}\),
+\(\mathcal{I}/\mathcal{I}^{n+2}\),
+\(\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\)). One denotes by~\(S_0\)
+(\resp \(S_{\mathcal{J}}\)) the closed subscheme of~\(S\) defined
+by~\(\mathcal{I}\) (\resp \(\mathcal{J}\)), and one poses a problem of
+extension from~\(S_{\mathcal{J}}\) to~\(S\).
+
+In SGA~1~III were treated the problems of extension of morphisms of
+schemes and of extension of schemes. We shall pose here the problems of
+extension of morphisms of groups, of extension of group structures and
+of extension of subgroups.
+
+We have gathered in an n\textsuperscript{o}~0 the results of SGA~1~III
+which will be useful to us, so as to put them in the form most practical
+for our purpose, and so as to spare the reader from having constantly to
+refer to SGA~1~III.%
+{\renewcommand{\thefootnote}{(1)}\nde{The reader may prefer to begin by
+reading section~1, which is easier, and which can serve as motivation
+and as a guide for the results obtained in section~0.}}
+The n\textsuperscript{o}~1 gathers computations of cohomology of groups,
+useful in the sequel, and which have nothing to do with the theory of
+schemes. Numbers~2 and~3 treat respectively of \emph{the extension of
+morphisms of groups and of the extension of group structures}. In
+n\textsuperscript{o}~4, we have briefly recalled the proof of a result
+stated in TDTE~IV concerning the extension of subschemes, and applied
+this result to the problem of extension of subgroups. \emph{For the
+sequel of the Seminar, only the result of n\textsuperscript{o}~2,
+concerning the extension of morphisms of groups, will be
+indispensable.}%
+{\renewcommand{\thefootnote}{(2)}\nde{However, 3.10 is used in XXIV,
+1.13. On the other hand, 4.37 is used in the proof of IX, 3.2~bis
+and 3.6~bis, but these also follow from results of Exp.~X, which do not
+use~4.37.}}
+
+The idea of reducing the problems of infinitesimal extensions to the
+usual cohomology computations in group extensions was suggested by
+J.~Giraud during the oral expos\'e (whose computations were distinctly
+more complicated and less transparent). Unfortunately, it seems that
+this method applies well only to the first two problems studied, and we
+have been unable to avoid rather painful computations in the case of
+extensions of subgroups.
+
+To simplify the language, we shall call \(Y\)-functor, \resp
+\(Y\)-scheme, etc., a functor, \resp scheme, etc., equipped with a
+morphism into the functor~\(Y\), thus extending the definitions of
+Expos\'e~I (which concerned only the case of a representable~\(Y\)).
+
+\sgasection{0}{Reminders from SGA 1 III and various remarks}
+\label{III.sec.0}
+
+Let us first state a general definition.
+
+\begin{definition}{0.1}
+\label{III.0.1}
+Let \(\mathcal{C}\) be a category, \(X\) an object of
+\(\widehat{\mathcal{C}}\), \(G\) a \(\widehat{\mathcal{C}}\)-group
+operating on~\(X\). One says that \(X\) is formally principal
+homogeneous%
+{\renewcommand{\thefootnote}{(3)}\nde{One also says ``pseudo-torsor'',
+\cf EGA~\(\mathrm{IV}_{4}\), 16.5.15. On the other hand, the more
+general notion of formally homogeneous object (not necessarily
+principal homogeneous) is defined in Exp.~IV, 6.7.1.}}
+under~\(G\) if the following equivalent conditions are satisfied:
+\begin{enumeratei}
+\item for each object \(S\) of~\(\mathcal{C}\), the set \(X(S)\) is empty
+or principal homogeneous under \(G(S)\);
+\item the morphism of functors \(G\times X\to X\times X\) defined
+set-theoretically by \((g,x)\mapsto(gx,x)\) is an isomorphism.
+\end{enumeratei}
+\end{definition}
+
+This done, we are going to put the results of SGA~1~III, \S~5%
+{\renewcommand{\thefootnote}{(4)}\nde{See also
+EGA~\(\mathrm{IV}_{4}\), 16.5.14--18.}}
+in the form which will be the most useful to us. We shall employ the
+following general notations throughout this number. One has a
+scheme~\(S\) and on~\(S\) two quasi-coherent ideals \(\mathcal{I}\)
+and~\(\mathcal{J}\) such that
+\[
+\mathcal{I}\supset\mathcal{J}
+\qquad\text{and}\qquad
+\mathcal{I}\cdot\mathcal{J}=0.
+\]
+One will therefore have in particular \(\mathcal{J}^{2}=0\). One will
+denote by~\(S_0\) (\resp \(S_{\mathcal{J}}\)) the closed subscheme
+of~\(S\) defined by the ideal~\(\mathcal{I}\)
+(\resp \(\mathcal{J}\)). For every \(S\)-functor~\(X\), one will
+systematically denote by \(X_0\) and~\(X_{\mathcal{J}}\) the functors
+obtained by base change from~\(S\) to \(S_0\) and~\(S_{\mathcal{J}}\).
+The same notations for a morphism.
+
+\begin{definition}{0.1.1}
+\label{III.0.1.1}
+{\renewcommand{\thefootnote}{(5)}\nde{One has added the numbering
+0.1.1, \ldots, 0.1.13, so as to bring out the definitions and results
+which are found there.}}%
+Let \(X\) be an \(S\)-functor. Let us define a functor~\(X^{+}\)
+above~\(S\) by the formula
+\[
+\Hom_S(Y,X^{+})
+=\Hom_{S_{\mathcal{J}}}(Y_{\mathcal{J}},X_{\mathcal{J}})
+=\Hom_S(Y_{\mathcal{J}},X)
+\]
+for a variable \(S\)-scheme~\(Y\). In the notations of Exp.~II, 1, one
+has
+\[
+X^{+}\simeq\prod_{S_{\mathcal{J}}/S}X_{\mathcal{J}}.
+\]
+The identity morphism of~\(X_{\mathcal{J}}\) defines by construction an
+\(S\)-morphism
+\[
+p_X\colon X\longrightarrow X^{+}.
+\]
+{\renewcommand{\thefootnote}{(6)}\nde{One has added the following
+sentence, and spelled out the two remarks which follow.}}%
+Explicitly, for every \(S\)-scheme~\(Y\), the map
+\[
+p_X(Y)\colon
+\Hom_S(Y,X)\longrightarrow\Hom_S(Y,X^{+})=\Hom_S(Y_{\mathcal{J}},X)
+\]
+is the map induced by the morphism \(Y_{\mathcal{J}}\to Y\).
+\end{definition}
+
+\begin{remark}{0.1.2}
+\label{III.0.1.2}
+Let us now remark that if \(X\) is an \(S\)-functor in groups,
+\(X_{\mathcal{J}}\) is an \(S_{\mathcal{J}}\)-functor in groups; then
+the defining formula of~\(X^{+}\) equips it with a structure of
+\(S\)-functor in groups, and the description of~\(p_X\) above shows that
+\(p_X\colon X\to X^{+}\) is a morphism of \(S\)-functors in groups.
+\end{remark}
+
+\begin{remark}{0.1.3}
+\label{III.0.1.3}
+On the other hand, for every \(S\)-functor in groups~\(Y\), one has
+\[
+\Hom_{S\text{-gr.}}(Y,X^{+})
+=\Hom_{S_{\mathcal{J}}\text{-gr.}}(Y_{\mathcal{J}},X_{\mathcal{J}}).
+\]
+Indeed, let \(f\in\Hom_S(Y,X^{+})\), corresponding to
+\(f_{\mathcal{J}}\in\Hom_{S_{\mathcal{J}}}(Y_{\mathcal{J}},X_{\mathcal{J}})\);
+the condition for \(f\in\Hom_{S\text{-gr.}}(Y,X^{+})\) is that, for every
+\(T\to S\) and \(y,y'\in Y(T)\), one has
+\(f(y\cdot y')=f(y)\cdot f(y')\), and this is equivalent to
+\[
+f_{\mathcal{J}}(y_{\mathcal{J}})\cdot f_{\mathcal{J}}(y'_{\mathcal{J}})
+=f_{\mathcal{J}}((y\cdot y')_{\mathcal{J}});
+\]
+as \((y\cdot y')_{\mathcal{J}}=y_{\mathcal{J}}\cdot y'_{\mathcal{J}}\)
+(since \(Y(T)\to Y(T_{\mathcal{J}})=Y_{\mathcal{J}}(T_{\mathcal{J}})\) is
+a morphism of groups), this is the condition for \(f_{\mathcal{J}}\) to
+be a morphism of groups. Applying this to \(Y=X\), one finds again that
+\(p_X\), which corresponds to \(\mathrm{id}_{X_{\mathcal{J}}}\), is a
+morphism of \(S\)-functors in groups.
+\end{remark}
+
+Let us now return to the general case, but suppose that \(X\) is an
+\(S\)-scheme. An \(S\)-morphism of a variable \(S\)-scheme~\(Y\)
+into~\(X^{+}\) being by definition an \(S_{\mathcal{J}}\)-morphism
+\(g_{\mathcal{J}}\) of~\(Y_{\mathcal{J}}\) into~\(X_{\mathcal{J}}\), one
+is going to define an \(X^{+}\)-functor in abelian groups~\(L_X\) as
+follows.
+
+\begin{scholium}{0.1.4}
+\label{III.0.1.4}
+{\renewcommand{\thefootnote}{(7)}\nde{One has added this scholium.}}%
+If \(\pi\colon Y\to S\) is a morphism of schemes and \(\mathcal{M}\) an
+\(\OS\)-module, one denotes by \(\mathcal{M}\otimes_{\OS}\OY\) the
+inverse image \(\pi^{*}(\mathcal{M})\). If \(\mathcal{J}\) is an ideal
+of~\(\OS\), one denotes by \(\mathcal{J}\OY\) the ideal of~\(\OY\), image
+of the morphism
+\[
+\pi^{*}(\mathcal{J})=\mathcal{J}\otimes_{\OS}\OY\longrightarrow\OY.
+\]
+\end{scholium}
+
+Let us note that, for every morphism of \(S\)-schemes
+\(f\colon Z\to Y\), one has an epimorphism of \(\mathcal{O}_Z\)-modules
+\[
+(0.1.4)\qquad
+f^{*}(\mathcal{J}\OY)\longrightarrow\mathcal{J}\mathcal{O}_Z,
+\]
+as follows from the commutative diagram below:
+\[
+\xymatrix{
+\mathcal{J}\otimes_{\OS}\OY\otimes_{\OY}\mathcal{O}_Z \ar[d]
+  & \mathcal{J}\otimes_{\OS}\mathcal{O}_Z \ar[d] \\
+f^{*}(\mathcal{J}\OY)=(\mathcal{J}\OY)\otimes_{\OY}\mathcal{O}_Z \ar[r]
+  & \mathcal{J}\mathcal{O}_Z.
+}
+\]
+
+\begin{definition}{0.1.5}
+\label{III.0.1.5}
+{\renewcommand{\thefootnote}{(8)}\nde{The introduction of the functor
+\(L_X\) leads to an extension ``functorial in \(Y\)'' (and in \(X\)) of
+SGA~1, III, Prop.~5.1; see below 0.1.8 and~0.1.9, as well as 0.1.10
+and~0.2. Moreover, when \(X\) is an \(S\)-functor in groups, \(L_X\)
+gives rise, under certain hypotheses, to an \(S\)-functor in groups
+\(L'_X\) and to an exact sequence \(1\to L'_X\to X\to X^{+}\) (\cf 0.4,
+0.9 and~0.11), which play an essential role in this expos\'e (\cf
+Theorems~2.1, 3.5 and~4.21).}}%
+Let \(X\) be an \(S\)-scheme. For every \(X^{+}\)-scheme~\(Y\), given by a
+morphism \(g_{\mathcal{J}}\colon Y_{\mathcal{J}}\to X_{\mathcal{J}}\),
+one sets
+\[
+\Hom_{X^{+}}(Y,L_X)
+=\Hom_{\mathcal{O}_{Y_0}}\bigl(g_0^{*}(\Omega^1_{X_0/S_0}),\mathcal{J}\OY\bigr),
+\]
+where \(\Omega^1_{X_0/S_0}\) denotes the module of relative differentials
+of~\(X_0\) with respect to~\(S_0\) (\cf SGA~1, I.1 or
+EGA~\(\mathrm{IV}_{4}\), 16.3), and where one regards \(\mathcal{J}\OY\)
+as an \(\mathcal{O}_{Y_0}\)-module thanks to the fact that it is
+annihilated by~\(\mathcal{I}\).
+\end{definition}
+
+Then, \(L_X\) is an \(X^{+}\)-functor in abelian groups.%
+{\renewcommand{\thefootnote}{(9)}\nde{One has added what follows.}}
+Indeed, for every \(X^{+}\)-morphism \(f\colon Z\to Y\), the
+functor~\(f_0^{*}\) and the morphism
+\(f_0^{*}(\mathcal{J}\OY)\to\mathcal{J}\mathcal{O}_Z\) of~(0.1.4) induce a
+natural morphism of abelian groups \(L_X(f)\):
+\begin{align*}
+\Hom_{\mathcal{O}_{Y_0}}\bigl(g_0^{*}(\Omega^1_{X_0/S_0}),\mathcal{J}\OY\bigr)
+&\longrightarrow
+\Hom_{\mathcal{O}_{Z_0}}\bigl(f_0^{*}g_0^{*}(\Omega^1_{X_0/S_0}),
+f_0^{*}(\mathcal{J}\OY)\bigr)\\
+&\longrightarrow
+\Hom_{\mathcal{O}_{Z_0}}\bigl(f_0^{*}g_0^{*}(\Omega^1_{X_0/S_0}),
+\mathcal{J}\mathcal{O}_Z\bigr).
+\end{align*}
+
+Finally, let us remark that \(L_X(f)\) is described in a simple way
+locally, as follows. Let us first note that \(Y\) and~\(Y_{\mathcal{J}}\)
+have the same underlying topological space, and that the same holds for
+\(V\) and~\(V_{\mathcal{J}}\), if \(V\) is an open of~\(Y\). Let then
+\(U=\Spec(A)\) be an affine open of~\(X\) above an affine open
+\(\Spec(\Lambda)\) of~\(S\), \(V=\Spec(B)\) an affine open of~\(Y\) such
+that \(g_{\mathcal{J}}(V_{\mathcal{J}})\subset U\), and \(W=\Spec(C)\) an
+affine open of~\(f^{-1}(V)\). Let \(J\) and~\(I\) be the ideals
+of~\(\Lambda\) corresponding to \(\mathcal{J}\) and~\(\mathcal{I}\). Then
+\(f\) (\resp \(g_{\mathcal{J}}\)) induces a morphism of
+\(\Lambda\)-algebras \(\theta\colon B\to C\)
+(\resp \(\phi\colon A\to B/JB\)), and one evidently has
+\(\theta(JB)\subset JC\). On the other hand,
+\(m\in\Hom_{\mathcal{O}_{Y_0}}\bigl(g_0^{*}(\Omega^1_{X/S}),\mathcal{J}\OY\bigr)\)
+induces an element~\(D\) of
+\begin{align*}
+\Hom_{\mathcal{O}_{V_0}}\bigl(g_0^{*}(\Omega^1_{U/S}),\mathcal{J}\mathcal{O}_V\bigr)
+&=\Hom_{B/IB}\bigl(\Omega^1_{A/\Lambda}\otimes_A B/IB,\,JB\bigr)\\
+&=\operatorname{Der}_{\Lambda}(A,JB),
+\end{align*}
+and the image of \(L_X(f)(m)\) in
+\begin{align*}
+\Hom_{\mathcal{O}_{W_0}}\bigl(f_0^{*}g_0^{*}(\Omega^1_{U/S}),
+\mathcal{J}\mathcal{O}_Z\bigr)
+&=\Hom_{C/IC}\bigl(\Omega^1_{A/\Lambda}\otimes_A C/IC,\,JC\bigr)\\
+&=\operatorname{Der}_{\Lambda}(A,JC)
+\end{align*}
+is none other than \(\theta\circ D\).
+% typo?: printed \(\Omega^1_{X/S}\), \(\Omega^1_{U/S}\) (not
+% \(\Omega^1_{X_0/S_0}\), \(\Omega^1_{U_0/S_0}\)) and
+% \(\mathcal{J}\mathcal{O}_Z\) in the \(\mathcal{O}_{W_0}\)-Hom; kept as printed
+
+\begin{remark}{0.1.6}
+\label{III.0.1.6}
+{\renewcommand{\thefootnote}{(10)}\nde{One has spelled out this
+remark.}}%
+Let \(f\colon X\to W\) be an \(S\)-morphism. It induces an \(S\)-morphism
+\(f^{+}\colon X^{+}\to W^{+}\) defined as follows: if \(g\) is an element
+of \(\Hom_S(Y,X^{+})\), corresponding to an \(S\)-morphism
+\(g_{\mathcal{J}}\colon Y_{\mathcal{J}}\to X\), then \(f^{+}(g)\) is the
+element \(f\circ g_{\mathcal{J}}\) of \(\Hom_S(Y,W^{+})\). It is clear
+that the following diagram is commutative:
+\[
+\xymatrix{
+X \ar[r]^{f} \ar[d]_{p_X} & W \ar[d]^{p_W} \\
+X^{+} \ar[r]^{f^{+}} & W^{+}.
+}
+\]
+\end{remark}
+
+\begin{enoncerm}{Reminders}{0.1.7}
+\label{III.0.1.7}
+{\renewcommand{\thefootnote}{(11)}\nde{One has added this paragraph
+(see also \textup{[DG70]}, \S~I.4, n\textsuperscript{os}~1--2).}}%
+In this paragraph, given an \(S\)-scheme~\(X\), one ``recalls'' certain
+functorial properties of the module of differentials
+\(\Omega^1_{X/S}\) and of the first infinitesimal neighborhood of the
+diagonal, \(\Delta^{(1)}_{X/S}\), properties which follow easily from
+EGA~\(\mathrm{IV}_{4}\), \S\S~16.1--16.4, but which do not appear there
+explicitly.
+
+a)~Let us begin by recalling the following facts (\cf EGA~II,
+\S\S~1.2--1.5). Let \(g\colon Y\to X\) be a morphism of schemes,
+\(\pi\colon X'\to X\) an \emph{affine} \(X\)-scheme, \(\mathcal{B}\) the
+quasi-coherent \(\OX\)-algebra \(\pi_{*}(\mathcal{O}_{X'})\); then the
+\(Y\)-scheme \(Y\times_X X'\) is affine and corresponds to the
+quasi-coherent \(\OY\)-algebra \(g^{*}(\mathcal{B})\), and one has a
+commutative diagram of bijections:
+\[
+\xymatrix{
+\Hom_X(Y,X') \ar[r]^{\sim} \ar[d]_{\wr}
+  & \Hom_Y(Y,Y\times_X X') \ar[d]^{\wr} \\
+\Hom_{\OX\text{-alg.}}(\mathcal{B},g_{*}(\OY)) \ar[r]^{\sim}
+  & \Hom_{\OY\text{-alg.}}(g^{*}(\mathcal{B}),\OY).
+}
+\]
+Moreover, these bijections are functorial in the pair \((X,X')\),
+\ie, if \(W'\) is an affine \(W\)-scheme, corresponding to the
+quasi-coherent \(\mathcal{O}_W\)-algebra~\(\mathcal{A}\), if one has a
+commutative diagram of morphisms of schemes
+\[
+\xymatrix{
+& X' \ar[r]^{f'} & W' \\
+Y \ar[ur]^{g'} \ar[r]_{g} & X \ar[r]_{f} & W
+}
+\]
+and if one denotes by \(\phi\colon\mathcal{A}\to f_{*}(\mathcal{B})\) and
+\(\phi^{\sharp}\colon f^{*}(\mathcal{A})\to\mathcal{B}\)
+(\resp \(\theta\colon\mathcal{B}\to g_{*}(\OY)\) and
+\(\theta^{\sharp}\colon g^{*}(\mathcal{B})\to\OY\)) the algebra morphisms
+associated with~\(f'\) (\resp with a variable \(X\)-morphism
+\(g'\colon Y\to X'\)), then one has the following commutative diagram
+(where \(Y\) is viewed as a \(W\)-scheme via \(f\circ g\)):
+\[
+\xymatrix@C=1.6em@R=2.6em{
+\Hom_X(Y,X') \ar[r]^-{g'\mapsto f'\circ g'} \ar[dd]_{\wr}
+  & \Hom_W(Y,W') \ar[dr]^{\sim}
+  & \\
+&
+  & \Hom_{\mathcal{O}_W\text{-alg.}}(\mathcal{A},f_{*}g_{*}(\OY))
+    \ar[dl]_{\wr} \\
+\Hom_{\OX\text{-alg.}}(\mathcal{B},g_{*}(\OY))
+  \ar[r]^-{\theta\mapsto\theta\circ\phi^{\sharp}}
+  \ar[d]_{\wr}
+  \ar[urr]^-{\theta\mapsto f_{*}(\theta)\circ\phi}
+  & \Hom_{\OX\text{-alg.}}(f^{*}(\mathcal{A}),g_{*}(\OY)) \ar[d]^{\wr}
+  & \\
+\Hom_{\OY\text{-alg.}}(g^{*}(\mathcal{B}),\OY)
+  \ar[r]^-{\theta^{\sharp}\mapsto\theta^{\sharp}\circ g^{*}(\phi^{\sharp})}
+  & \Hom_{\OY\text{-alg.}}(g^{*}f^{*}(\mathcal{A}),\OY).
+  &
+}
+\]
+
+b)~Let now \(X\) be an \(S\)-scheme. Let \(\Omega^1_{X/S}\) be the module
+of differentials of~\(X\) over~\(S\), and \(\Delta^{(1)}_{X/S}\) the first
+infinitesimal neighborhood of the diagonal immersion
+\(\delta_X\colon X\to X\times_S X\); it is a subscheme of
+\(X\times_S X\), of which the diagonal \(\Delta_{X/S}\) is a closed
+subscheme. One denotes by \(\mathrm{pr}^{i}_X\) (\(i=1,2\)) the two
+projections of \(X\times_S X\), and by~\(\pi_X\) the restriction of
+\(\mathrm{pr}^{1}_X\) to~\(\Delta^{(1)}_{X/S}\).
+
+On the one hand, every morphism \(f\colon X\to W\) of \(S\)-schemes
+induces an \(S\)-morphism
+\(\Delta^{(1)}f\colon\Delta^{(1)}_{X/S}\to\Delta^{(1)}_{W/S}\) such that
+the following diagram is commutative:
+\[
+\xymatrix{
+X \ar[r]^{\delta_X} \ar[d]_{f}
+  & \Delta^{(1)}_{X/S} \ar[r] \ar[d]_{\Delta^{(1)}f}
+  & X\times_S X \ar[r]^{\mathrm{pr}^{i}_X} \ar[d]_{f\times f}
+  & X \ar[d]^{f} \\
+W \ar[r]_{\delta_W}
+  & \Delta^{(1)}_{W/S} \ar[r]
+  & W\times_S W \ar[r]_{\mathrm{pr}^{i}_W}
+  & W.
+}
+\]
+On the other hand, \(\Delta^{(1)}_{X/S}\) is, via the projection
+\(\pi_X\), an affine \(X\)-scheme, spectrum of the augmented
+quasi-coherent \(\OX\)-algebra
+\[
+\mathcal{P}^{1}_{X/S}=\OX\oplus\Omega^1_{X/S},
+\]
+where \(\Omega^1_{X/S}\) is an ideal of square zero; the augmentation is
+the morphism of \(\OX\)-algebras
+\(\varepsilon_X\colon\mathcal{P}^{1}_{X/S}\to\OX\) which vanishes
+on~\(\Omega^1_{X/S}\) and which corresponds to the closed immersion
+\(\delta_X\colon X\hookrightarrow\Delta^{(1)}_{X/S}\). Then, every
+morphism of \(S\)-schemes \(f\colon X\to W\) induces a morphism of
+augmented \(\OX\)-algebras
+\[
+f^{*}(\mathcal{P}^{1}_{W/S})
+=\OX\oplus f^{*}(\Omega^1_{W/S})
+\longrightarrow
+\mathcal{P}^{1}_{X/S}
+=\OX\oplus\Omega^1_{X/S},
+\]
+\ie, in an equivalent way, a morphism of \(\OX\)-modules
+\[
+f_{X/W/S}\colon f^{*}(\Omega^1_{W/S})\longrightarrow\Omega^1_{X/S},
+\]
+\cf EGA~\(\mathrm{IV}_{4}\) (16.4.3.6) (and (16.4.18.2) for the notation
+\(f_{X/W/S}\)).
+
+As \(\pi_X\colon\Delta^{(1)}_{X/S}\to X\) is affine, then, by~a),
+\(\Delta^{(1)}f\) is entirely determined by~\(f_{X/W/S}\) and, for every
+\(X\)-scheme \(g\colon Y\to X\), the set
+\[
+\Hom_X\bigl(Y,\Delta^{(1)}_{X/S}\bigr)
+\simeq
+\Hom_{\OY\text{-alg.}}\bigl(\OY\oplus g^{*}(\Omega^1_{X/S}),\OY\bigr)
+\]
+is identified with a subset of
+\(\Hom_{\OY}\bigl(g^{*}(\Omega^1_{X/S}),\OY\bigr)\), namely the subset
+\[
+\Hom^{\square}_{\OY}\bigl(g^{*}(\Omega^1_{X/S}),\OY\bigr)
+\]
+formed of the \(\OY\)-morphisms
+\(\psi\colon g^{*}(\Omega^1_{X/S})\to\OY\) such that \(\Im(\psi)\) is an ideal
+of~\(\OY\) of square zero.%
+{\renewcommand{\thefootnote}{(12)}\nde{In the proof of SGA~1, III~5.1,
+one must accordingly correct the sentence ``Now the algebra
+homomorphisms \(\mathcal{A}\to\OY\) correspond~\ldots'' (the sequel of
+\loccit being unchanged).}}
+
+Consequently, applying~a) to the diagram
+\[
+\xymatrix{
+& \Delta^{(1)}_{X/S} \ar[r]^{\Delta^{(1)}f} & \Delta^{(1)}_{W/S} \\
+Y \ar[ur]^{g'} \ar[r]_{g} & X \ar[r]_{f} & W
+}
+\]
+and taking into account the fact that \(\Delta^{(1)}f\) is the restriction
+to~\(\Delta^{(1)}_{X/S}\) of \(f\times f\), one obtains the following
+commutative diagram, functorial in the \(X\)-scheme
+\(Y\xrightarrow{g}X\):
+% typo?: top right target printed as \(\Hom_W(Y,\Delta^{(1)}_{W/S})\),
+% the same object as the middle right target; kept as printed
+\[
+\xymatrix@C=2.2em@R=1.8em{
+& \Hom_X(Y,X\times_S X)
+  \ar[rr]^-{(g,g')\mapsto(f\circ g,\,f\circ g')}
+  && \Hom_W\bigl(Y,\Delta^{(1)}_{W/S}\bigr) \\
+\textup{\scriptsize(0.1.7 (*))}
+  & \Hom_X\bigl(Y,\Delta^{(1)}_{X/S}\bigr)
+  \ar[rr]^-{g'\mapsto(\Delta^{(1)}f)\circ g'}
+  \ar@{^{(}->}[u]
+  && \Hom_W\bigl(Y,\Delta^{(1)}_{W/S}\bigr)
+  \ar@{^{(}->}[u] \\
+& \Hom^{\square}_{\OY}\bigl(g^{*}(\Omega^1_{X/S}),\OY\bigr)
+  \ar[rr]^-{\psi\mapsto\psi\circ g^{*}(f_{X/W/S})}
+  \ar[u]_{\simeq}
+  && \Hom^{\square}_{\OY}\bigl(g^{*}f^{*}(\Omega^1_{W/S}),\OY\bigr)
+  \ar[u]^{\simeq}
+}
+\]
+\end{enoncerm}
+
+\begin{remark}{0.1.7.1}
+\label{III.0.1.7.1}
+Let us end this paragraph with the following remark, which will be useful
+later (\cf 0.1.10). If one denotes by \(L^{\square}_X\) the \(X\)-functor
+which, to every \(X\)-scheme \(g\colon Y\to X\), associates
+\(\Hom^{\square}_{\OY}\bigl(g^{*}(\Omega^1_{X/S}),\OY\bigr)\), and by
+\(L^{\square}_f\colon L^{\square}_X\to L^{\square}_W\) the morphism of
+functors defined above (which, to every \(\psi\in L^{\square}_X(Y)\),
+associates \(\psi\circ g^{*}(f_{X/W/S})\)), what precedes shows that one
+has a commutative diagram of functors:
+\[
+\xymatrix{
+X\times_X L^{\square}_X \ar[d]_{f\times L^{\square}_f}
+  & \Delta^{(1)}_{X/S} \ar[l]_{\sim} \ar@{^{(}->}[r] \ar[d]_{\Delta^{(1)}f}
+  & X\times_S X \ar[d]^{f\times f} \\
+W\times_W L^{\square}_W
+  & \Delta^{(1)}_{W/S} \ar[l]^{\sim} \ar@{^{(}->}[r]
+  & W\times_S W.
+}
+\]
+\end{remark}
+
+\begin{theorem}{0.1.8}
+\label{III.0.1.8}
+(SGA~1, III~5.1)%
+{\renewcommand{\thefootnote}{(13)}\nde{One has reproduced here the
+statement and the proof of SGA~1, III~5.1, which one needs in order to
+prove Proposition~0.2 below (see already Corollary~0.1.9 which follows).
+On the other hand, \(\mathfrak{J}\) (\resp \(\mathfrak{I}\)) is another
+calligraphy of the letter~J (\resp~I); returning to the earlier notations
+(\(\mathcal{J}\subset\mathcal{I}\) ideals of \(\OS\) such that
+\(\mathcal{I}\mathcal{J}=0\)), one will apply this to
+\(\mathfrak{J}=\mathcal{J}\OY\)
+(\resp \(\mathfrak{I}=\mathcal{I}\OY\)).}}
+Let \(Y\), \(X\) be two \(S\)-schemes, \(\mathfrak{J}\) a quasi-coherent
+ideal of~\(\OY\) of square zero, \(Y_{\mathfrak{J}}\) the closed subscheme
+of~\(Y\) defined by~\(\mathfrak{J}\), and
+\(g_{\mathfrak{J}}\colon Y_{\mathfrak{J}}\to X\) an \(S\)-morphism.
+
+a)~The set \(\mathrm{P}(g_{\mathfrak{J}})\) of \(S\)-morphisms
+\(g\colon Y\to X\) which extend~\(g_{\mathfrak{J}}\) is either empty, or
+principal homogeneous under the abelian group
+\[
+\Hom_{\mathcal{O}_{Y_{\mathfrak{J}}}}
+\bigl(g_{\mathfrak{J}}^{*}(\Omega^1_{X/S}),\mathfrak{J}\bigr).
+\]
+
+b)~If \(i\colon Y_0\hookrightarrow Y_{\mathfrak{J}}\) is the closed
+immersion defined by a quasi-coherent ideal
+\(\mathfrak{I}\supset\mathfrak{J}\) such that
+\(\mathfrak{I}\mathfrak{J}=0\), and if
+\(g_0=g_{\mathfrak{J}}\circ i\), the preceding abelian group is
+isomorphic to
+\[
+\Hom_{\mathcal{O}_{Y_0}}
+\bigl(g_0^{*}(\Omega^1_{X/S}),\mathfrak{J}\bigr).
+\]
+\end{theorem}
+
+\begin{proof}
+(b)~follows at once from~(a). Indeed, \(\mathfrak{J}\), being annihilated
+by~\(\mathfrak{I}\), may be regarded as an \(\mathcal{O}_{Y_0}\)-module,
+whence, by adjunction,
+\[
+\Hom_{\mathcal{O}_{Y_{\mathfrak{J}}}}
+\bigl(g_{\mathfrak{J}}^{*}(\Omega^1_{X/S}),\mathfrak{J}\bigr)
+=\Hom_{\mathcal{O}_{Y_0}}
+\bigl(i^{*}g_{\mathfrak{J}}^{*}(\Omega^1_{X/S}),\mathfrak{J}\bigr).
+\]
+To prove~(a), one may suppose \(\mathrm{P}(g_{\mathfrak{J}})\neq\emptyset\),
+\ie that there exists an \(S\)-morphism \(g\colon Y\to X\)
+extending~\(g_{\mathfrak{J}}\). Let us denote by~\(j\) the immersion
+\(Y_{\mathfrak{J}}\hookrightarrow Y\). Then \(\mathrm{P}(g_{\mathfrak{J}})\)
+is the set of \(S\)-morphisms \(g'\colon Y\to X\) such that
+\(g'\circ j=g_{\mathfrak{J}}\). The datum of such a~\(g'\) is equivalent
+to the datum of an \(S\)-morphism
+\[
+h\colon Y\longrightarrow X\times_S X
+\]
+such that \(\mathrm{pr}_1\circ h=g\) and
+\(h_{\mathfrak{J}}=\delta\circ g_{\mathfrak{J}}\), where
+\(h_{\mathfrak{J}}=h\circ j\) and \(\delta\) is the diagonal immersion
+\(X\hookrightarrow X\times_S X\):
+\[
+\xymatrix{
+X\times_S X \ar[d]_{\mathrm{pr}_1}
+  & Y_{\mathfrak{J}}
+    \ar[l]_-{h_{\mathfrak{J}}=\delta\circ g_{\mathfrak{J}}}
+    \ar[d]^{j} \\
+X
+  & Y \ar[l]_{g} \ar@{-->}[ul]_{h}.
+}
+\]
+As \(h_{\mathfrak{J}}\) factors through~\(\delta\) and \(Y\) is in the first
+infinitesimal neighborhood of the immersion
+\(j\colon Y_{\mathfrak{J}}\to Y\) (since \(\mathfrak{J}^{2}=0\)), then, by
+functoriality (\cf EGA~\(\mathrm{IV}_{4}\), 16.2.2~(i)), the sought-for
+\(h\) factor, in a unique way, through~\(\Delta^{(1)}_{X/S}\)
+(\cf 0.1.7). Let us set
+\[
+Y'=\Delta^{(1)}_{X/S}\times_X Y
+\qquad\text{and}\qquad
+Y'_{\mathfrak{J}}
+=Y'\times_Y Y_{\mathfrak{J}}
+=\Delta^{(1)}_{X/S}\times_X Y_{\mathfrak{J}}.
+\]
+Then the sought-for \(h\) are in bijection with the sections~\(u\) of
+\(Y'\to Y\) which extend the section
+\(u_{\mathfrak{J}}=(\delta\circ g_{\mathfrak{J}},\mathrm{id})\) of
+\(Y'_{\mathfrak{J}}\to Y_{\mathfrak{J}}\). On the other hand, \(Y'\)
+(\resp \(Y'_{\mathfrak{J}}\)) is a scheme \emph{affine over}~\(Y\)
+(\resp \(Y_{\mathfrak{J}}\)), corresponding to the quasi-coherent algebra
+\[
+\mathcal{A}=\OY\oplus g^{*}(\Omega^1_{X/S}),
+\qquad\text{resp.}\qquad
+\mathcal{A}_{\mathfrak{J}}
+=\mathcal{A}\otimes_{\OY}\mathcal{O}_{Y_{\mathfrak{J}}}
+=\mathcal{O}_{Y_{\mathfrak{J}}}\oplus
+g_{\mathfrak{J}}^{*}(\Omega^1_{X/S}).
+\]
+Let us denote by \(\varepsilon\colon\mathcal{A}\to\OY\) the canonical
+augmentation of~\(\mathcal{A}\) (\ie the morphism of \(\OY\)-algebras
+\(\mathcal{A}\to\OY\) which vanishes on \(g^{*}(\Omega^1_{X/S})\)), and let
+us define likewise
+\(\varepsilon_{\mathfrak{J}}\colon\mathcal{A}_{\mathfrak{J}}
+\to\mathcal{O}_{Y_{\mathfrak{J}}}\). Then
+\[
+\Gamma(Y'/Y)\simeq\Hom_{\OY\text{-alg.}}(\mathcal{A},\OY),
+\qquad
+\Gamma(Y'_{\mathfrak{J}}/Y_{\mathfrak{J}})
+\simeq\Hom_{\mathcal{O}_{Y_{\mathfrak{J}}}\text{-alg.}}
+\bigl(\mathcal{A}_{\mathfrak{J}},\mathcal{O}_{Y_{\mathfrak{J}}}\bigr),
+\]
+and, via these isomorphisms, the section
+\(u=(\delta\circ g,\mathrm{id})\) (\resp \(u_{\mathfrak{J}}\)) corresponds
+to~\(\varepsilon\) (\resp \(\varepsilon_{\mathfrak{J}}\)).
+% proof continues on the next page; tombstone suppressed at the chunk boundary
+\renewcommand{\qedsymbol}{}
+\end{proof}

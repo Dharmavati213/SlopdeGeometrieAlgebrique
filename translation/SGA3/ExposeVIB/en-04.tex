@@ -1,0 +1,123 @@
+Thus $u$ is flat, by the ``fiberwise flatness criterion'' (EGA IV$_3$, 11.3.11).
+
+\sgasection{4}{Dimension of the fibers of groups locally of finite presentation}
+\begin{proposition}{4.1}\label{VIB.4.1}
+Let $G$ be an $S$-scheme locally of finite type, endowed with an $S$-section $\varepsilon$, and such that, for every $s\in S$, one has $\dim G_s=\dim_{\varepsilon(s)}G_s$ (as is the case if $G$ is an $S$-group (1.5)).
+\begin{enumeratei}
+\item The function $s\mto\dim G_s$ is upper semicontinuous on $S$.
+\item If moreover $G$ is locally of finite presentation over $S$, this function is locally constructible.
+\end{enumeratei}
+\end{proposition}
+Let $\pi:G\to S$ be the structure morphism. Chevalley's semicontinuity theorem (EGA IV$_3$, 13.1.3) asserts that the function $x\mto\dim_x\pi^{-1}(\pi(x))$ is upper semicontinuous on $G$. Now, for every $s\in S$, one has
+\[
+\dim G_s=\dim\pi^{-1}(s)=\dim_{\varepsilon(s)}\pi^{-1}(\pi(\varepsilon(s)));
+\]
+and, since the function $s\mto\varepsilon(s)$ is continuous on $S$, the composite function $s\mto\dim G_s$ is upper semicontinuous on $S$.
+
+Suppose $G$ locally of finite presentation over $S$. To show that the function $s\mto\dim G_s$ is locally constructible, arguing as before one sees that it suffices to show that the function $x\mto\dim_x\pi^{-1}(\pi(x))$ is locally constructible on $G$, which follows from EGA IV$_3$, 9.9.1.
+\begin{proposition}{4.2}\label{VIB.4.2}
+Let $\pi:G\to S$ be an $S$-scheme locally of finite presentation, endowed with an $S$-section $\varepsilon$ and satisfying the following two conditions (which hold if $G$ is an $S$-group, by 1.5 and VIA 2.4.1):
+\begin{enumeratea}
+\item For every $s\in S$ and every $x\in G_s$, one has $\dim G_s=\dim_xG_s$ (or, equivalently (1.5), for every $s\in S$, all the irreducible components of $G_s$ have the same dimension).
+\item For every $s\in S$, denoting by $G_s^0$ the connected component of $G_s$ containing $\varepsilon(s)$, $G_s^0$ is geometrically irreducible.
+\end{enumeratea}
+Let $s\in S$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $G$ is universally open over $S$ at the points of $G_s^0$.
+\item[(i bis)] $G$ is universally open over $S$ at every point of a neighborhood of $\varepsilon(s)$ in $G_s^0$.\nde{The original reads: ``at the points of $\varepsilon(s)$''; it is not sufficient to suppose that $G$ is universally open over $S$ at $\varepsilon(s)$, as the example given in N.D.E. (19) shows. The proof has been corrected accordingly.}
+\item[(ii)] The function $t\mto\dim G_t$ is constant in a neighborhood of $s$ in $S$.
+\item[(iii)] $\underline{G^0}$ is ``universally open over $S$ at the points of $G_s^0$'', that is, given $S'\to S$, $s'\in S'_s$, $g\in G_{s'}^0$ and an open neighborhood $V$ of $g$ in $G'=G_{S'}$, $\pi(V\cap\underline{G'^0})$ is an open neighborhood of $s'$ in $S'$.\nde{Condition (iii), pointed out by O. Gabber, has been added; it will be useful later (5.7).}
+\end{enumeratei}
+\end{proposition}
+Evidently (i) $\Rightarrow$ (i bis). By EGA IV$_3$, 14.3.3.1 (ii), the set of points of $G_s^0$ where $\pi_G$ is universally open is closed in $G_s^0$. Thus, since $G_s^0$ is irreducible, one has (i bis) $\Rightarrow$ (i).
+
+Let us show that (i) implies (ii). Let $T$ be the set of $t\in S$ such that $\dim G_t=\dim G_s$. By 4.1, $T$ is locally constructible, so, by EGA IV$_1$, 1.10.1, to show that $T$ is a neighborhood of $s$, it suffices to show that every generization $s'$ of $s$ belongs to $T$.
+
+Let $x$ be the generic point of $G_s^0$ and $U$ an open subset of $G$ containing $x$. Since $\pi_G$ is universally open at $\xi$, by EGA IV$_3$, 14.3.13, for every generization $s'$ of $s$, one has $\dim(U\cap G_{s'})\ge\dim_x(U\cap G_s)$. In view of our hypothesis a), this implies $\dim G_{s'}\ge\dim G_s$. Now, since the function $s\mto\dim G_s$ is upper semicontinuous, by 4.1, one also has $\dim G_{s'}\le\dim G_s$, whence $s'\in T$. This proves that (i) $\Rightarrow$ (ii).
+% typo?: kept as printed: xi in the second sentence, after x was introduced.
+
+It is clear that (iii) $\Rightarrow$ (i); let us show that (ii) $\Rightarrow$ (iii). Since the dimension of the fibers is unchanged by extension of the base field and the formation of $\underline{G^0}$ commutes with base change (cf. the proof of 3.3), one may suppose that $S'=S$ and $s'=s$. Moreover, since every open subset $V$ of $G$ meeting $G_s^0$ contains the generic point $\eta$ of $G_s^0$, one may suppose that $g=\eta$.
+
+One may moreover suppose $S$ affine. Let $U$ be an affine open neighborhood of $\varepsilon(s)$; it is then of finite presentation over $S$. Replacing $S$ by $\varepsilon^{-1}(U)$ and then $U$ by $U\cap\pi^{-1}(S)$, one is reduced to the case where $\pi:U\to S$ is of finite presentation and admits $\varepsilon:S\to U$ as section. Then, by EGA IV$_3$, 9.7.12, $\underline{G^0}\cap U$ is constructible in $U$. Then, replacing $V$ by an affine open subset contained in $V\cap U$, one obtains that $\underline{G^0}\cap V$ is constructible in $V$. Since $\pi:V\to S$ is of finite presentation, $\pi(\underline{G^0}\cap V)$ is locally constructible in $S$, by Chevalley's constructibility theorem (cf. EGA IV$_1$, 1.8.4).
+
+Thus, by loc. cit., 1.10.1, to show that $\pi(\underline{G^0}\cap V)$ is an open neighborhood of $s$, it suffices to show that, for every generization $t$ of $s$, there is a generization $\xi$ of $\eta$ belonging to $\underline{G^0}$ (and hence to $\underline{G^0}\cap V$). Now the generic point $\xi$ of $G_t^0$ is a generization of $\eta$. Indeed, $\varepsilon(s)$ belongs to the closure $X$ of $\{\xi\}$ in $G$, so, by Chevalley's semicontinuity theorem (cf. EGA IV$_3$, 13.1.3), one has $\dim_{\varepsilon(s)}X_s\ge\dim_\xi X_t$; on the other hand, hypothesis (ii) implies that $\dim_\xi G_t^0=\dim_{\varepsilon(s)}G_s$. It follows that one of the irreducible components of $X_s$ containing $\varepsilon(s)$ equals $G_s^0$, whence $\eta\in\overline{\{\xi\}}$. This proves that (ii) $\Rightarrow$ (iii), which proves the proposition.
+% typo: composante irreductibles -> composantes irreductibles.
+
+\nde{The preceding argument was communicated to us by O. Gabber; the proof of the implication (ii) $\Rightarrow$ (i) given in the original has also been retained.}One may also prove the implication (ii) $\Rightarrow$ (i) as follows. Since $\pi$ is locally of finite presentation, there is an open subset $U$ of $G$ containing $\varepsilon(s)$ and an open subset $V$ of $S$ containing $s$ such that $\pi(U)\subset V$ and the morphism $\pi':U\to V$ obtained from $\pi$ is of finite presentation. Then put $T=\varepsilon^{-1}(U)$ and $W=\pi'^{-1}(T)=U\cap\pi^{-1}(T)$. Then the morphism $\pi'':W\to T$ obtained from $\pi'$ is of finite presentation and admits as section the morphism $\varepsilon'':T\to W$ obtained from $\varepsilon$. Moreover, for every $t\in T$, since $G_t^0$ is irreducible, $W\cap G_t^0$ is dense in $G_t^0$, hence irreducible, hence connected: it is therefore the connected component of $\pi''^{-1}(t)$ containing $\varepsilon''(t)$.
+
+Since $W\cap G_t^0$ is a dense open subset of $G_t^0$, by 1.5 and EGA IV$_2$, 5.2.1, one has $\dim(W\cap G_t^0)=\dim G_t^0=\dim G_t$, so the function $t\mto\dim W\cap G_t^0$ is constant in a neighborhood of $s$ in $T$. Finally let us show that, for every $t\in T$, $W\cap G_t^0$ is geometrically irreducible. Let $K$ be an extension of $\kappa(t)$; then $(W\cap G_t^0)\otimes_{\kappa(t)}K=(W\otimes_{\kappa(t)}K)\cap(G_t^0\otimes_{\kappa(t)}K)$ is a nonempty open subset of $G_t^0\otimes_{\kappa(t)}K$, hence is irreducible since $G_t^0\otimes_{\kappa(t)}K$ is.
+
+We are then in the situation to apply EGA IV$_3$, 15.6.6 (ii), which asserts that $\pi''$ (hence $\pi$) is universally open at the points of $W\cap G_s^0$. But, by EGA IV$_3$, 14.3.3.1 (ii), the subset of $G_s$ formed by the points where $\pi$ is universally open is closed in $G_s$; since it contains $W\cap G_s^0$, it therefore contains its closure $G_s^0$.
+\begin{corollary}{4.3}\label{VIB.4.3}
+Let $G$ be a flat $S$-group locally of finite presentation. Then the function $s\mto\dim G_s$ is locally constant on $S$.
+\end{corollary}
+This follows immediately from 4.2, for every flat morphism locally of finite presentation is universally open (EGA IV$_2$, 2.4.6).
+\begin{corollary}{4.4}\label{VIB.4.4}
+Let $G$ be an $S$-group locally of finite presentation over $S$ at the points of the unit section. Consider the conditions:
+\begin{enumeratei}
+\item $G$ is smooth over $S$ at the points of the unit section (cf. 3.10).
+\item For every $s\in S$, $G_s$ is smooth over $\kappa(s)$, and the function $s\mto\dim G_s$ is locally constant on $S$.
+\item For every $s\in S$, $G_s$ is smooth over $\kappa(s)$, and there is a neighborhood $V$ of the unit section such that $\pi_V:V\to S$ is universally open.
+\item For every $s\in S$, $G_s^0$ is smooth over $\kappa(s)$, and $G^0$ is representable by an open subgroup scheme of $G$, universally open over $S$.
+\end{enumeratei}
+Then one has the following implications: (i) $\Rightarrow$ (ii) $\Leftrightarrow$ (iii) $\Leftrightarrow$ (iv).
+
+If moreover $S$ is supposed reduced, conditions (i) to (iv) are equivalent, and imply that $G^0$ is smooth over $S$.\nde{One cannot dispense here with the hypothesis that $S$ be reduced: if $k$ is a field, $S=\Spec A$, where $A=k[\delta]$ with $\delta^2=0$, and $G$ is the closed subgroup $\Spec A[X]/(\delta X)$ of $\mathbf G_{\mathrm a,S}$ (which associates to every $A$-algebra $R$ the subgroup of $r\in R$ such that $\delta r=0$), then $G$ is an $S$-group satisfying (ii)--(iv), but is not flat, hence not smooth, over $S$.}
+\end{corollary}
+Let us show that (i) implies (ii). For every $x\in G$, one has $\dim_x\pi^{-1}(\pi(x))=\dim\pi^{-1}(\pi(x))$, by 1.5. Consequently, by EGA IV$_4$, 17.10.2, the function
+\[
+x\mto\dim_x\pi^{-1}(\pi(x))=\dim\pi^{-1}(\pi(x))
+\]
+is continuous in a neighborhood of the unit section; thus the function $s\mto\dim G_s$ is continuous on $S$, hence locally constant on $S$. On the other hand, for every $s\in S$, $G_s$ is smooth over $\kappa(s)$, by 1.3.1.
+
+Let us show that (ii) implies (iv). It suffices to show that $\underline{G^0}$ is open in $G$, for then, by 3.4, $G^0$ will be representable by the subgroup scheme induced on $\underline{G^0}$, and the properties of $G^0$ cited in the statement will follow from 2.4 and 4.2. Given $s\in S$, construct $W$, $T$, $\pi''$, $\varepsilon''$ and $W^0$ as in the proof of 3.10. Then, by EGA IV$_3$, 15.6.7, $W^0$ is open in $W$. On the other hand, under hypothesis 4.4 (ii), it follows from 4.2 that $\pi$ is universally open at every point of $W^0$, hence (VIA 0.1) $\mu$ is universally open at every point of $W^0\times_SW^0$, which shows that $W^0\cdot W^0$ is open, and one concludes as in the proof of Theorem 3.10.
+
+It is clear that (iv) $\Rightarrow$ (iii), and (iii) $\Rightarrow$ (ii) follows from 4.2 applied to $V$.
+
+Finally, suppose (ii)--(iv) satisfied and let us show that $G^0$ is smooth over $S$ if $S$ is reduced.\nde{The original has been expanded in what follows.} For this one may suppose $G=G^0$. Then $G$ is of finite presentation over $S$ by 5.5 below. Thus $\pi_G$ is of finite presentation, with geometrically integral fibers of locally constant dimension on $S$. Then, by EGA IV$_3$, 15.6.7, the morphism $G\times_SS_{\mathrm{red}}\to S_{\mathrm{red}}$ obtained from $\pi_G$ is flat, hence $\pi_G$ is flat if $S$ is reduced. In this case, $G=G^0$ is smooth over $S$, by Theorem 3.10.
+
+\sgasection{5}{Separation of groups and homogeneous spaces}
+\begin{proposition}{5.1}\label{VIB.5.1}
+For an $S$-group $G$ to be separated, it is necessary and sufficient that the unit section of $G$ be a closed immersion.
+\end{proposition}
+The condition is necessary (EGA I, 5.4.6); it is sufficient by the following cartesian diagram (cf. VIA 0.3):
+\[
+\xymatrix@C=4em{G\times_SG\ar[r]^{\mu\circ(\mathrm{id}_G\times c)}&G\\G\ar[u]^{\Delta_{G/S}}\ar[r]^\pi&S\ar[u]_\varepsilon}\ .
+\]
+\begin{proposition}{5.2}\label{VIB.5.2}
+If $S$ is discrete, every $S$-group is separated.
+\end{proposition}
+Indeed, $S$ then equals $\coprod_{s\in S}\Spec\OO_{S,s}$, and, by EGA I, 5.5.5, it suffices to show that, for every $s\in S$, $G\times_S\Spec\OO_{S,s}$ is separated, which follows from VIA 0.3, since $\OO_{S,s}$ is a zero-dimensional local ring.\nde{``Artinian'' has been replaced by ``zero-dimensional'' (and this generalization has been mentioned in VIA 0.3).}
+\begin{theorem}{5.3}\label{VIB.5.3}
+Let $S$ be a scheme, $G$ an $S$-group scheme locally of finite presentation over $S$ and universally open over $S$ in a neighborhood of the unit section, $X$ an $S$-scheme on which $G$ acts so that the morphism
+\[
+\Phi:G\times_SX\longrightarrow X\times_SX,\qquad(g,x)\mto(gx,x)
+\]
+is surjective. Suppose moreover that, for every $s\in S$:
+\begin{enumeratei}
+\item there is an open subscheme $U$ of $X$, separated over $S$, such that $U_s$ is dense in $X_s$,
+\item the fiber $X_s$ is locally of finite type over $\kappa(s)$.\nde{The original has been corrected by supposing $G$ universally open over $S$ in a neighborhood of the unit section and adding hypothesis (ii); see below for examples due to O. Gabber, which show that statements 5.3 and 5.4 of the original are false without additional hypotheses. On the other hand, let us point out that Theorem 5.3 is a revised version of Theorem 5.3A below, which appears in the 1965 edition of SGAD, and is due to M. Raynaud, cf. the Notes (*) in Exp. X, 8.5 and 8.8.
+\begin{theorem}{5.3A (Raynaud)}\label{VIB.5.3A}
+Let $G$ be an $S$-group locally of finite presentation, universally open over $S$, and with connected fibers. Then $G$ is separated over $S$.
+
+More generally, every $S$-scheme $X$ locally of finite presentation over $S$, endowed with an action of $G$ such that the morphism $\Phi:G\times_SX\to X\times_SX$, $(g,x)\mto(gx,x)$ is surjective, is separated over $S$.
+\end{theorem}}
+\end{enumeratei}
+Then $X$ is separated over $S$.
+\end{theorem}
+% typo: exemples du -> exemples dus.
+\begin{corollary}{5.4}\label{VIB.5.4}
+Let $S,G,X$ be as in the preliminary hypotheses of 5.3. Suppose moreover $X$ has fibers locally of finite type and connected. Then:
+\begin{enumeratei}
+\item $X$ is separated over $S$.
+\item If there is an open subset $V$ of $X$, quasi-compact over $S$ and meeting every nonempty fiber $X_s$,\nde{Without this hypothesis, one has the following counterexample, pointed out by O. Gabber: let $G=S$ be a local scheme with closed point $s$, such that $S^*=S-\{s\}$ is not quasi-compact, and $X$ the disjoint union of $\{s\}$ and $S^*$.} then $X$ is quasi-compact over $S$.
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+(i) Indeed, let $s\in S$ be such that $X_s\ne\varnothing$. Since the morphism $\Phi_s:G_s\times_{\kappa(s)}X_s\to X_s\times_{\kappa(s)}X_s$ obtained from $\Phi$ by base change is surjective, and since $X_s$ is connected, $X_s$ is irreducible, by VIA, 2.5.4. Thus, if $U$ is an affine open subset of $X$ such that $U_s$ is nonempty, $U_s$ is dense in $X_s$, and the theorem applies.
+
+To prove (ii), one may suppose $S$ affine. Then $V$ is quasi-compact and, by 3.5, there is a quasi-compact open subset $U$ of $G$ containing $\underline{G^0}$. Let $s\in S$ be such that $X_s\ne\varnothing$. Then $X_s$ is irreducible (VIA, 2.6.6) and hence, since $U_s$ contains $G_s^0$, the morphism $U_s\times_{\kappa(s)}V_s\to X_s$, $(g,x)\mto gx$ is surjective (VIA, 2.6.4). Consequently the morphism $U\times_SV\to X$ is surjective and hence $X$ is quasi-compact (since $U$ and $V$ are); since we have supposed $S$ affine, hence separated, it follows that $X$ is quasi-compact over $S$ (cf. EGA I, 6.6.4 (v)).
+\end{proof}
+\begin{remark}{5.4.1}\label{VIB.5.4.1}\nde{This remark has been added, cf. N.D.E. (34).}
+One will see in the course of the proof that the conclusion of Theorem 5.3 holds if one makes only the hypothesis: (i$'$) there is an open subscheme $U$ of $X$, separated over $S$, such that $U_s$ is dense in every irreducible component of $X_s$. (This follows from (i) if $X_s$ locally has a finite number of irreducible components, as is the case under hypothesis (ii).) On the other hand, one will see later that 5.4 also holds under the hypothesis that each fiber $X_s$ is quasi-separated and connected.
+\end{remark}

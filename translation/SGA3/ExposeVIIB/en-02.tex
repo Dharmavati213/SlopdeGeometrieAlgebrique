@@ -1,0 +1,169 @@
+Indeed, $\varphi^{-1}(0)$ is an open neighborhood of $(0,0)$, hence contains an open set of the form $L_1\times M_1$, where $L_1$ and $M_1$ are open submodules of $L$ and $M$. Since $L/L_1$ has finite length, there exist elements $x_1,\ldots,x_r$ of $L$ such that $L_1+Ax_1+\cdots+Ax_r=L$. If $M'\subset M_1$ is ``sufficiently small'', one also has $\varphi(x_i,M')=0$ for every $i$, because the map $y\mto\varphi(x_i,y)$ is continuous; from this one obtains $\varphi(L,M')=\{0\}$; similarly, $\varphi(L',M)=\{0\}$ if $L'$ is sufficiently small.
+
+\begin{corollary}{0.3.1.1}\label{VIIB.0.3.1.1}\nde{We have added this corollary.}Let $M$ be a pseudocompact $A$-module.
+\begin{enumeratei}
+\item For every open submodule $M'$, there exists an open ideal $\mathfrak l$ of $A$ such that $\overline{\mathfrak lM}\subset M'$.
+\item Consequently, $M\simeq\varprojlim_{\mathfrak l}M/\overline{\mathfrak lM}$, where $\mathfrak l$ runs through the filtered projective system of open ideals of $A$ and each $M/\overline{\mathfrak lM}$ is equipped with the quotient topology (which makes it a pseudocompact module, cf. 0.2.D).
+\end{enumeratei}
+\end{corollary}
+Indeed, consider the map $\varphi:A\times M\to M/M'$, $(a,m)\mto am+M'$; by 0.3.1 there exists an open ideal $\mathfrak l$ of $A$ such that $\mathfrak lM\subset M'$, and since $M'$ is also closed, it also contains $\overline{\mathfrak lM}$. Since the intersection of the open submodules of $M$ is zero, one therefore has $\bigcap_{\mathfrak l}\overline{\mathfrak lM}=(0)$. Moreover, by 0.2.D, the map $\phi:M\to\varprojlim_{\mathfrak l}M/\overline{\mathfrak lM}$ is surjective; by (the proof of) 0.2.B, $\phi$ therefore induces an isomorphism $M/\Ker(\phi)\isomto\varprojlim_{\mathfrak l}M/\overline{\mathfrak lM}$, and we have just seen that $\Ker(\phi)=\bigcap_{\mathfrak l}\overline{\mathfrak lM}$ is zero.
+
+\begin{remark}{0.3.1.2}\label{VIIB.0.3.1.2}\nde{We have added this remark.}The completed tensor product satisfies the usual associativity condition: if $L,M,P$ are pseudocompact $A$-modules, one has a canonical isomorphism
+\[
+(L\widehat\otimes M)\widehat\otimes P\simeq L\widehat\otimes(M\widehat\otimes P);
+\]
+indeed, these two objects represent the functor which associates to every object $N$ of $\mathbf{LF}(A)$ the abelian group of continuous $A$-trilinear maps from $L\times M\times P$ to $N$.
+\end{remark}
+
+\numpara{0.3.2}Let $L'\xrightarrow{f}L\xrightarrow{g}L''\to0$ be an exact sequence and $M$ an object of $\mathbf{PC}(A)$. It is clear that, for every object $N$ of $\mathbf{LF}(A)$, the induced sequences
+\[
+\xymatrix@C=12pt{
+0\ar[r]&\operatorname{Bil}_c(L''\times M,N)\ar[r]\ar@{=}[d]&\operatorname{Bil}_c(L\times M,N)\ar[r]\ar@{=}[d]&\operatorname{Bil}_c(L'\times M,N)\ar@{=}[d]\\
+0\ar[r]&\Hom_c(L''\widehat\otimes_A M,N)\ar[r]&\Hom_c(L\widehat\otimes_A M,N)\ar[r]&\Hom_c(L'\widehat\otimes_A M,N)}
+\]
+are exact. By 0.2.E, this is equivalent to saying that the sequence
+\begin{equation}\tag{*}
+L'\widehat\otimes_A M\xrightarrow{f\widehat\otimes M}L\widehat\otimes_A M\xrightarrow{g\widehat\otimes M}L''\widehat\otimes_A M\to0
+\end{equation}
+is exact. Thus:
+\begin{corollary}{}
+For every pseudocompact $A$-module $M$, the functor $-\widehat\otimes_A M$ is right exact.
+\end{corollary}
+Take, in particular, the ring $A$ for $L$, the inclusion of a closed ideal $\mathfrak a$ in $A$ for $f$, and the canonical projection from $A$ to $A/\mathfrak a$ for $g$. One can then identify $A\widehat\otimes_A M$ with $M$ by means of the map $x\widehat\otimes_A m\mto xm$. Since the image of $\mathfrak a\widehat\otimes_A M$ is closed in $M$ (cf. 0.2.B), and the image of $\mathfrak a\otimes_A M$ is everywhere dense in $\mathfrak a\widehat\otimes_A M$, the image of $f\widehat\otimes_A M$ is precisely the closure $\overline{\mathfrak aM}$ of $\mathfrak aM$ in $M$. The exact sequence (*) therefore yields the isomorphism
+\[
+(A/\mathfrak a)\widehat\otimes_A M\isomto M/\overline{\mathfrak aM}.
+\]
+
+\begin{enonce}{0.3.3. Nakayama's lemma}{}\label{VIIB.0.3.3}
+Let $A$ be a pseudocompact ring, $M$ a pseudocompact $A$-module, and $\mathfrak a$ an ideal of $A$ contained in the radical $\mathfrak r(A)$. The equality $\overline{\mathfrak aM}=M$ then implies $M=0$.
+\end{enonce}
+Indeed, suppose that $\overline{\mathfrak aM}=M$.\nde{Replacing $\mathfrak a$ by its closure if necessary, one can suppose that $\mathfrak a$ is \emph{closed}.} Let $M'$ be an open submodule of $M$ and $M''$ the quotient $M/M'$. Since $M''$ is discrete, $\mathfrak aM''$ is closed in $M''$, hence equal to $\overline{\mathfrak aM''}$. By 0.3.2, the canonical map from $M/\overline{\mathfrak aM}$ to $M''/\overline{\mathfrak aM''}$ is surjective, so one has $\mathfrak aM''=\overline{\mathfrak aM''}=M''$. Since $M''$ is a finitely generated $A$-module and $\mathfrak a\subset\mathfrak r(A)$, this implies $M''=0$ by the usual Nakayama lemma. Consequently, every open submodule $M'$ of $M$ equals $M$, so $M$ is zero.\nde{since it equals the projective limit of the $M/M'=0$.}
+
+\numpara{0.3.4}From Nakayama's lemma one obtains the usual consequences:
+\begin{corollary}{}
+Let $\mathfrak a$ be a closed ideal contained in $\mathfrak r(A)$ and $f:M\to N$ a morphism of pseudocompact $A$-modules.
+\begin{enumeratei}
+\item $f$ is surjective if the induced map $f':M/\overline{\mathfrak aM}\to N/\overline{\mathfrak aN}$ is surjective.\nde{Consequently, every pseudocompact $A$-module is a quotient of a topologically free $A$-module (one first reduces to the case where $A$ is local); cf. the proof of 0.3.7.}
+\item If $N$ is projective, $f$ is invertible if $f'$ is invertible.
+\end{enumeratei}
+\end{corollary}
+Indeed, (i) follows from Lemma 0.3.3 applied to $\Coker f$. For (ii), suppose that $f'$ is invertible. Then, by (i), $f$ is surjective, hence has a section; one then applies 0.3.3 to $\Ker f$.
+When $A$ is local with maximal ideal $\mathfrak m$, one can also deduce from 0.3.3 the following \emph{exchange theorem}:
+\begin{theorem}{}
+Let $A$ be a local pseudocompact ring, $\mathfrak m$ its maximal ideal, $M$ a topologically free $A$-module with pseudobasis $(m_i)_{i\in I}$ (0.2.1), and $N$ a (closed) direct factor of $M$. There exists a pseudobasis of $M$ consisting of elements of $N$ and of certain $m_i$.
+\end{theorem}
+Indeed, this is clear when $A$ is a field (use the duality of 0.2.2 and apply the usual exchange theorem); consequently, $N/\overline{\mathfrak mN}$\nde{We have corrected $N/\mathfrak mN$ to $N/\overline{\mathfrak mN}$, and likewise for $M/\overline{\mathfrak mM}$ below.} has as a complement a topologically free module over $A/\mathfrak m$ with pseudobasis $(\overline m_i)_{i\in J}$, where $\overline m_i$ is the image of $m_i$ in $M/\overline{\mathfrak mM}$ and $J$ is a subset of $I$. If $P$ denotes the direct product $\prod_{i\in J}Am_i$, the canonical map from $N\oplus P$ to $M$ is ``bijective modulo $\mathfrak m$''; it is therefore bijective by the foregoing (for another proof see \cite{CA}, § IV.2, Prop. 8).
+
+\numpara{0.3.5}Now consider three pseudocompact $A$-modules $L,M,N$, where $N$ has finite length. Equipping the $A$-module $\Hom_c(M,N)$ with the discrete topology, every element $\psi$ of $\Hom_c(L,\Hom_c(M,N))$ defines a continuous bilinear map $\psi':(\ell,m)\mto\psi(\ell)(m)$ from $L\times M$ to $N$. In this way one obtains a natural isomorphism
+\begin{equation}\tag{1}
+\Hom_c(L,\Hom_c(M,N))\isomto\Hom_c(L\widehat\otimes_A M,N),
+\end{equation}
+hence another characterization of $\Hom_c(L\widehat\otimes_A M,N)$, which we shall use when $M$ is the projective limit of a filtered projective system of pseudocompact $A$-modules $M_i$. Then, by (1) and 0.2.F(ii), one has natural isomorphisms
+\begin{equation}\tag{2}
+\begin{aligned}
+\Hom_c(L\widehat\otimes_A\varprojlim M_i,N)&\simeq\Hom_c(L,\Hom_c(\varprojlim M_i,N))\\
+&\simeq\Hom_c(L,\varinjlim\Hom_c(M_i,N)).
+\end{aligned}
+\end{equation}
+Moreover, since the module $\varinjlim\Hom_c(M_i,N)$ is discrete, every continuous map with source $L$ factors through a quotient of $L$ of finite length. Consequently, the natural map below is an isomorphism:
+\begin{equation}\tag{3}
+\varinjlim\Hom_c(L,\Hom_c(M_i,N))\to\Hom_c(L,\varinjlim\Hom_c(M_i,N)).
+\end{equation}
+Finally, by (1) and 0.2.F(ii) again, one has natural isomorphisms
+\begin{equation}\tag{4}
+\begin{aligned}
+\varinjlim\Hom_c(L,\Hom_c(M_i,N))&\simeq\varinjlim\Hom_c(L\widehat\otimes_A M_i,N)\\
+&\simeq\Hom_c(\varprojlim(L\widehat\otimes_A M_i),N).
+\end{aligned}
+\end{equation}
+Combining isomorphisms (2), (3), (4), one obtains:
+\begin{proposition}{}
+Let $(M_i)$ be a filtered projective system of objects of $\mathbf{PC}(A)$, and let $L$ (resp. $N$) be an object of $\mathbf{PC}(A)$ (resp. $\mathbf{LF}(A)$). One has an isomorphism functorial in $N$:
+\[
+\Hom_c(L\widehat\otimes_A\varprojlim M_i,N)\simeq\Hom_c(\varprojlim(L\widehat\otimes_A M_i),N),
+\]
+and hence an isomorphism
+\[
+L\widehat\otimes_A\varprojlim M_i\simeq\varprojlim(L\widehat\otimes_A M_i).
+\]
+Thus the completed tensor product commutes with filtered projective limits.\nde{In this way one recovers 0.3.1.1: $L=L\widehat\otimes_A A=L\widehat\otimes_A\varprojlim_{\mathfrak l}(A/\mathfrak l)\simeq\varprojlim_{\mathfrak l}L/\overline{\mathfrak lL}$, where $\mathfrak l$ runs through the open ideals of $A$.}
+\end{proposition}
+
+\numpara{0.3.6}In particular,\nde{Cf. N.D.E. (12).} \emph{the completed tensor product commutes with infinite products}. For example, since the ring $A$ is the product of its local components $A_{\mathfrak m}$ (0.1.1), every pseudocompact $A$-module $M$ ($\simeq A\widehat\otimes_A M$) is identified with the product of the modules $M_{\mathfrak m}=A_{\mathfrak m}\widehat\otimes_A M$ (the \emph{local components} of $M$).
+Similarly, let $M$ and $N$ be two pseudocompact $A$-modules. Recall (cf. 0.2.2) that $M^\dagger$ denotes $\Hom_c(M,A)$. Consider the map
+\[
+\varphi:M^\dagger\otimes_A N^\dagger\to(M\widehat\otimes_A N)^\dagger
+\]
+which associates to an element $f\otimes g$ of $M^\dagger\otimes_A N^\dagger$ the map $m\widehat\otimes n\mto f(m)g(n)$ from $M\widehat\otimes_A N$ to $A$. This map $\varphi$ is bijective when $M$ is isomorphic to $A$.
+\begin{corollary}{}
+When $A$ is artinian, $\varphi$ is an isomorphism whenever $M$ is topologically free (or, more generally, projective).
+\end{corollary}
+Indeed, for fixed $N$, the functor $M\mto(M\widehat\otimes_A N)^\dagger$ (resp. $M\mto M^\dagger\otimes_A N^\dagger$) transforms every direct product into a direct sum, by the foregoing and 0.2.F.
+
+\begin{remark}{0.3.6.A}\label{VIIB.0.3.6.A}\nde{We have added this remark, which will be useful in 2.3.1.}Using 0.2.F in a similar way, one also obtains the following result: Let $A$ be an artinian ring, $M,Q$ objects of $\mathbf{PC}(A)$, and $N$ an object of $\mathbf{LF}(A)$. Suppose that $Q$ is projective; then one has natural isomorphisms
+\[
+\Hom_c(M,Q)\isomto\Hom_A(Q^\dagger,M^\dagger)\qquad\text{and}\qquad
+Q^\dagger\otimes_A N\isomto\Hom_c(Q,N).
+\]
+\end{remark}
+
+\numpara{0.3.7}For every $\mathfrak m\in\Upsilon(A)$, the functor $M\mto A_{\mathfrak m}\widehat\otimes_A M$ is evidently exact. Since every projective pseudocompact $A$-module $P$ is a product of modules of the form $A_{\mathfrak m}$, it follows that the functor $M\mto P\widehat\otimes_A M$ is exact when $P$ is projective. The converse is true:
+\begin{proposition}{}
+Let $A$ be a pseudocompact ring and $P$ a pseudocompact $A$-module. The following conditions are equivalent:
+\begin{enumeratei}
+\item $P$ is a projective object of $\mathbf{PC}(A)$.
+\item Each local component $P_{\mathfrak m}$ is a topologically free $A_{\mathfrak m}$-module.
+\item The functor $M\mto P\widehat\otimes_A M$ is exact.
+\end{enumeratei}
+\end{proposition}
+Indeed, the equivalence of (i) and (ii) follows from 0.2.F(iii) and 0.2.1, and we have just seen that (ii) $\Rightarrow$ (iii). Suppose that the functor $M\mto P\widehat\otimes_A M$ is exact. Since $P\widehat\otimes_A M$ is the product of its local components
+\[
+(P\widehat\otimes_A M)_{\mathfrak m}\simeq P_{\mathfrak m}\widehat\otimes_{A_{\mathfrak m}}M_{\mathfrak m},
+\]
+one is reduced to the case where the ring $A$ is local. We shall then prove that $P$ is \emph{topologically free}.
+Let $\mathfrak m$ be the maximal ideal of $A$; then $P/\overline{\mathfrak mP}$ is a linearly compact vector space over $A/\mathfrak m$, hence a product of copies of $A/\mathfrak m$ (cf. 0.2.2). There is therefore a family $(A_i)_{i\in I}$ of copies of $A$ and an isomorphism $\varphi:\prod_{i\in I}(A_i/\mathfrak m)\isomto P/\overline{\mathfrak mP}$. Since $\prod_{i\in I}A_i$ is projective, there is a commutative square
+\[
+\xymatrix{
+\prod_{i\in I}A_i\ar[r]^\psi\ar[d]^p&P\ar[d]^q\\
+\prod_{i\in I}(A_i/\mathfrak m)\ar[r]^\varphi_\sim&P/\overline{\mathfrak mP}}
+\]
+where $p$ and $q$ denote the canonical projections. Applying Nakayama's lemma to $\Coker\psi$, and noting that $(A/\mathfrak m)\widehat\otimes_A\psi$ is precisely $\varphi$, one sees that $\psi$ is surjective.\nde{This shows the result announced in N.D.E. (22): every pseudocompact $A$-module $M$ is a quotient of a topologically free $A$-module. (Since products are exact in $\mathbf{PC}(A)$, one reduces to the case where $A$ is local, treated above.)}
+Putting $B=\prod_{i\in I}A_i$ and $N=\Ker\psi$, one then has the following commutative exact diagram:
+\[
+\xymatrix@C=13pt@R=20pt{
+&&&0\ar[d]\ar@{-->} `r[dr]+<12pt,15pt> `d[ddr]+<12pt,15pt> `l[ddlll]+<-12pt,15pt> `d[dddlll]+<-12pt,0pt> [dddll]\\
+&\mathfrak m\widehat\otimes_A N\ar[r]\ar[d]&\mathfrak m\widehat\otimes_A B\ar[r]\ar[d]&\mathfrak m\widehat\otimes_A P\ar[r]\ar[d]&0\\
+0\ar[r]&A\widehat\otimes_A N\ar[r]\ar[d]&A\widehat\otimes_A B\ar[r]^\psi\ar[d]&A\widehat\otimes_A P\ar[r]\ar[d]&0\\
+&(A/\mathfrak m)\widehat\otimes_A N\ar[r]&(A/\mathfrak m)\widehat\otimes_A B\ar[r]^\varphi&(A/\mathfrak m)\widehat\otimes_A P\ar[r]&0.}
+\]
+The ``snake lemma'' applied to the first two rows then shows that, in the bottom row, the morphism $(A/\mathfrak m)\widehat\otimes_A N\to(A/\mathfrak m)\widehat\otimes_A B$ is a monomorphism. But then, since $\varphi$ is an isomorphism, $(A/\mathfrak m)\widehat\otimes_A N$ is zero; hence $N=0$ (0.3.3) and $\psi$ is an isomorphism.\nde{An entirely analogous proof, using the ``nilpotent Nakayama lemma'', shows that if $A$ is artinian and $P$ is a flat $A$-module, every local component of $P$ is a free $A$-module (cf. \cite{BAC}, II § 3.2, Cor. 2 of Prop. 5).}
+
+\begin{corollary}{0.3.8}\label{VIIB.0.3.8}
+Let $A$ be a complete noetherian local ring and $P$ a pseudocompact $A$-module. Then $P$ is topologically free if and only if $P$ is flat over $A$.
+\end{corollary}
+Indeed, the canonical map from $M\otimes_A P$ to $M\widehat\otimes_A P$ is bijective when $M$ equals $A$, hence also when $M$ is noetherian (take a finite presentation of $M$ and use right exactness of the tensor product and the completed tensor product).
+Now $P$ is flat if and only if the functor $M\mto M\otimes_A P$ is exact when $M$ runs through the noetherian modules. Similarly, in the proof of Proposition 0.3.7 one has seen that $P$ is topologically free if the sequence
+\[
+0\to\mathfrak m\widehat\otimes_A P\to A\widehat\otimes_A P\to(A/\mathfrak m)\widehat\otimes_A P\to0
+\]
+is exact. Thus $P$ is topologically free if and only if the functor $M\mto M\widehat\otimes_A P$ is exact when $M$ runs through the noetherian modules. The corollary therefore follows from the equality $M\otimes_A P=M\widehat\otimes_A P$ established above.
+
+\numpara{0.4}Let $k$ be a pseudocompact ring; a \emph{topological $k$-algebra} is a (commutative) topological ring $A$ equipped with a morphism of topological rings $k\to A$. One says that $A$ is a \emph{profinite $k$-algebra} if the underlying topological $k$-module is pseudocompact.
+In this case, let $\mathfrak l$ be an open $k$-submodule of $A$. The composite map
+\[
+\varphi:A\times A\xrightarrow{\mathrm{mult.}}A\xrightarrow{\mathrm{can.}}A/\mathfrak l
+\]
+is continuous, so, by Lemma 0.3.1, there exists an open $k$-submodule $\mathfrak n$ of $A$ such that $\varphi(A\times\mathfrak n)=0$. This means that $\mathfrak l$ contains the open ideal $A\mathfrak n$ and implies that $A$ is a \emph{pseudocompact ring}.
+Similarly, let $M$ be a topological $A$-module whose underlying $k$-module is pseudocompact. If $M'$ is an open $k$-submodule of $M$, Lemma 0.3.1 applied to the map
+\[
+A\times M\xrightarrow{\mathrm{mult.}}M\xrightarrow{\mathrm{can.}}M/M'
+\]
+shows that $M'$ contains an open $A$-submodule, hence that $M$ is also a \emph{pseudocompact $A$-module}.\nde{We have added the following lemma; cf. N.D.E. (36) in Proposition 0.5.} Conversely:
+\begin{lemma}{}
+Let $A$ be a profinite $k$-algebra and $M$ a pseudocompact $A$-module. Then the $k$-module $M|_k$ obtained by restriction of scalars is pseudocompact.
+\end{lemma}
+Indeed, every pseudocompact $A$-module of finite length is isomorphic to a quotient $A^n/L$ (where $L$ is an open submodule of $A^n$), hence is a pseudocompact $k$-module. Since $M|_k$ is a projective limit of such modules, it is a pseudocompact $k$-module.
+
+\numpara{0.4.1}If $A$ and $B$ are two profinite $k$-algebras, a \emph{morphism} from $A$ to $B$ is, by definition, a continuous homomorphism of $k$-algebras. The category of profinite $k$-algebras will be denoted by $\mathbf{Alp}/k$.
+It evidently has projective limits: the algebra underlying a projective limit is the projective limit of the underlying algebras; the topology is the projective limit topology.
+It also has \emph{finite inductive limits}:\nde{We shall see in 0.4.2 that it has arbitrary inductive limits.} for example, if $f:A\to B$ and $g:A\to C$ are two morphisms of profinite $k$-algebras, the amalgamated sum of $B$ and $C$ under $A$ has $B\widehat\otimes_A C$ as its underlying topological $A$-module (by 0.4, $f$ and $g$ equip $B$ and $C$ with pseudocompact $A$-module structures); the multiplication on $B\widehat\otimes_A C$ evidently satisfies $(b\widehat\otimes c)(b'\widehat\otimes c')=(bb')\widehat\otimes(cc')$ if $b,b'\in B$ and $c,c'\in C$.

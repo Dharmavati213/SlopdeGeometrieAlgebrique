@@ -1,0 +1,305 @@
+One then has successively:
+\begingroup\small
+\[
+\begin{aligned}
+w_\alpha(X)w_{-\alpha}(Y)&=\exp(X)\exp(-X^{-1})\exp(X)\exp(Y)\exp(-Y^{-1})\exp(Y)\\
+&=\exp(X)\exp(-X^{-1})\exp\left(\frac Y{1+XY}\right)\alpha^*(1+XY)\\
+&\quad\exp\left(\frac X{1+XY}\right)\exp(-Y^{-1})\exp(Y)\\
+&=\exp(X)\exp\left(\frac{-X^{-1}}{1+XY}\right)\alpha^*(1+XY)\exp\left(\frac{-Y^{-1}}{1+XY}\right)\exp(Y)\\
+&=\exp(-X^{-2}Y^{-1})\alpha^*\left(\frac{XY}{1+XY}\right)\exp(X+Y^{-1})\\
+&\quad\alpha^*(1+XY)\exp\left(\frac{-Y^{-1}}{1+XY}\right)\exp(Y)\\
+&=\exp(-X^{-2}Y^{-1})\alpha^*(XY)\exp\left(\frac{Y^{-1}+X}{(1+XY)^2}\right)\exp\left(\frac{-Y^{-1}}{1+XY}\right)\exp(Y)\\
+&=\alpha^*(XY)\exp(-Y)\exp(Y)=\alpha^*(XY).
+\end{aligned}
+\]
+\endgroup
+
+\begin{corollary}{3.2}\label{XX.3.2}
+Let $n\in\ZZ$, $n\ne0$. For every $w\in G(S)$, the following conditions are equivalent:
+\begin{enumeratei}
+\item $w\in N^\times(S)$,
+\item one has $\operatorname{int}(w)\circ n\alpha^*=-n\alpha^*$ (recall that $(n\alpha^*)(z)=\alpha^*(z)^n$).
+\end{enumeratei}
+\end{corollary}
+One has (i) $\Rightarrow$ (ii) (assertion (iii) of theorem~3.1); conversely, one may suppose that $N^\times$ has a section, and one is reduced to proving:
+\begin{lemma}{3.3}\label{XX.3.3}
+One has $\uCentr_G(n\alpha^*)=T$ for $n\ne0$.
+\end{lemma}
+Indeed, the image $T'$ of $n\alpha^*$ is a subtorus of $G$. It follows (Exp.~XIX 2.8) that $\uCentr_G(n\alpha^*)$ is a reductive subgroup of $G$, containing $T$. Since on each fiber one has $\uCentr_{G_{\overline{s}}}(n\alpha^*_{\overline{s}})\ne G_{\overline{s}}$, one has $\uCentr_{G_{\overline{s}}}(n\alpha^*_{\overline{s}})=T_{\overline{s}}$ (Exp.~XIX 1.6.3{\renewcommand{\thefootnote}{(27)}\nde{The hypothesis $\uCentr_{G_{\overline{s}}}(n\alpha^*_{\overline{s}})\ne G_{\overline{s}}$ implies that $\dim\uCentr_{G_{\overline{s}}}(n\alpha^*_{\overline{s}})-\dim T_{\overline{s}}<2$, whereas this difference is even, by loc.~cit.}}), hence $\uCentr_G(n\alpha^*)=T$, since these are smooth subgroups of $G$.
+
+\begin{remark}{3.4}\label{XX.3.4}
+The construction of $w_\alpha$ and the fact that $w_\alpha(X)$ normalizes $T$ rely only on formula (F). In particular, if $G$ is an $S$-group satisfying the conditions of 2.2, $\uNorm_G(T)$ is different from $T$ on each fiber. It follows that if $G$ is an affine $S$-group with connected fibers satisfying the conditions of 2.2, it is reductive of semisimple rank~1. Indeed, it is smooth in a neighborhood of the unit section, hence smooth, and one can apply the criterion of Exp.~XIX 1.11.
+\end{remark}
+
+\numpara{3.5} Before stating the following theorem, let us make a few remarks. As usual, we identify $\mathfrak g^{-\alpha}$ with $(\mathfrak g^\alpha)^{\otimes-1}$. Similarly, we shall identify $\uHom_{\OS}(\mathfrak g^{-\alpha},\mathfrak g^\alpha)$ with $(\mathfrak g^\alpha)^{\otimes2}$, and hence
+\[
+\underline{\Isom}_{\OS\text{-mod.}}(\mathrm W(\mathfrak g^{-\alpha}),\mathrm W(\mathfrak g^\alpha))\simeq\mathrm W((\mathfrak g^\alpha)^{\otimes2})^\times.
+\]
+If $w\in N^\times(S)$, $\Ad(w)$ interchanges $\mathfrak g^\alpha$ and $\mathfrak g^{-\alpha}$ (3.1, (iii)), hence defines an isomorphism
+\[
+a_\alpha(w):\mathfrak g^{-\alpha}\isomto\mathfrak g^\alpha,
+\]
+which we shall therefore identify with a section $a_\alpha(w)\in\Gamma(S,(\mathfrak g^\alpha)^{\otimes2})^\times$. This construction is compatible with base change and therefore defines a morphism
+\[
+a_\alpha:N^\times\to\mathrm W((\mathfrak g^\alpha)^{\otimes2})^\times,
+\]
+such that $a_\alpha(w)Y=\Ad(w)Y$ for all $w\in N^\times(S')$, $Y\in\Gamma(S',\mathfrak g^{-\alpha})^\times$, $S'\to S$.
+
+\begin{theorem}{3.6}\label{XX.3.6}
+\begin{enumeratei}
+\item One has
+\[
+\operatorname{int}(w)\exp(Y)=\exp(a_\alpha(w)Y)
+\]
+for every $S'\to S$ and all $w\in N^\times(S')$, $Y\in\mathrm W(\mathfrak g^{-\alpha})(S')$.
+\item One has
+\[
+a_\alpha(tw)=\alpha(t)a_\alpha(w),\qquad a_\alpha(wt)=\alpha(t)^{-1}a_\alpha(w).
+\]
+\item If one similarly defines $a_{-\alpha}:N^\times\to\mathrm W((\mathfrak g^{-\alpha})^{\otimes2})^\times$, one has
+\[
+a_{-\alpha}(w)=a_\alpha(w)^{-1}.
+\]
+{\renewcommand{\thefootnote}{(28)}\nde{I.e. $a_{-\alpha}(w)$ and $a_{-\alpha}(w)$ are paired, cf. 2.6.1.}}
+% typo?: repeated a_{-alpha} in note (28) kept as printed.
+\item For every $X\in\mathrm W(\mathfrak g^\alpha)^\times(S')$, $S'\to S$, one has
+\[
+a_\alpha(w_\alpha(X))=-X^2.
+\]
+\end{enumeratei}
+\end{theorem}
+Assertion (i) is trivial by the characterization of the morphisms $\exp$ given in 1.5. Assertion (ii) is immediate, as is (iii). Let us prove (iv): let $X\in\Gamma(S',\mathfrak g^\alpha)^\times$, $Z\in\Gamma(S',\mathfrak g^\alpha)$; by definition, one has{\renewcommand{\thefootnote}{(29)}\nde{The following has been expanded.}}
+\[
+\begin{split}
+a_\alpha(w_\alpha(X))^{-1}(Z)&=\Ad(w_\alpha(X))(Z)\\
+&=\Ad(\exp(X))\Ad(\exp(-X^{-1}))\Ad(\exp(X))(Z).
+\end{split}
+\]
+Applying formulas $(2')$ and (2) of lemma~2.10, as well as the equalities $H_{-\alpha}=-H_\alpha$, $\overline\alpha(H_\alpha)=2$ (loc.~cit. (4) and (5)) and $\langle X,X^{-1}\rangle=1$ (2.6), one obtains that the right-hand term equals, successively:
+\[
+\begin{aligned}
+\Ad(\exp(X))\Ad(\exp(-X^{-1}))(Z)
+&=\Ad(\exp(X))(Z+\langle X^{-1},Z\rangle(H_\alpha-X^{-1}))\\
+&=Z+\langle X^{-1},Z\rangle(H_\alpha-2X-X^{-1}-H_\alpha+X)\\
+&=Z-\langle X^{-1},Z\rangle X-\langle X^{-1},Z\rangle X^{-1}.
+\end{aligned}
+\]
+But $Z=\langle X^{-1},Z\rangle X$ and $\langle X^{-1},Z\rangle X^{-1}=X^{-2}Z$, hence this shows that $a_\alpha(w_\alpha(X))^{-1}=-X^{-2}$, whence $a_\alpha(w_\alpha(X))=-X^2$.
+
+\begin{corollary}{3.7}\label{XX.3.7}
+In particular, one has
+\[
+\operatorname{int}(w_\alpha(X))\exp(X)=\exp(-X^{-1}),
+\]
+whence (by the definition of $w_\alpha(X)$):
+\[
+w_\alpha(X)\exp(X)w_\alpha(X)^{-1}=\exp(-X)w_\alpha(X)\exp(-X),
+\]
+i.e. by an immediate calculation,
+\[
+(w_\alpha(X)\exp(X))^3=e.
+\]
+\end{corollary}
+
+\begin{corollary}{3.8}\label{XX.3.8}
+Let $X\in\Gamma(S,\mathfrak g^\alpha)^\times$ and $n\in\ZZ$, $n\ne0$. Then $w_\alpha(X)$ is the unique section $w\in G(S)$ satisfying
+\begin{enumeratei}
+\item $\operatorname{int}(w)\circ n\alpha^*=-n\alpha^*$.
+\item $(w\exp(X))^3=e$.
+\end{enumeratei}
+\end{corollary}
+One knows that $w_\alpha(X)$ indeed satisfies these conditions. Conversely, let $w\in G(S)$ satisfy (i) and (ii). By 3.2 and 3.1 (ii), one knows that there exists $t\in T(S)$ such that $w=w_\alpha(X)t$. Put $u=\exp(X)$. One then has
+\[
+wuw^{-1}=w_\alpha(X)t\exp(X)t^{-1}w_\alpha(X)^{-1}=\exp(-\alpha(t)X^{-1}),
+\]
+and, on the other hand,
+\[
+\begin{aligned}
+u^{-1}wu^{-1}&=\exp(-X)w_\alpha(X)t\exp(-X)\\
+&=\exp(-X)w_\alpha(X)\exp(-X)\exp(X-\alpha(t)X)t\\
+&=\exp(-X^{-1})\exp(X-\alpha(t)X)t=\exp(-X^{-1})t\exp(H).
+\end{aligned}
+\]
+Now $(wu)^3=e\Longleftrightarrow wuw^{-1}=u^{-1}wu^{-1}$; comparing the two decompositions of this element on $U_{-\alpha}\cdot T\cdot U_\alpha$, one obtains $t=e$.
+
+\begin{remark}{3.9}\label{XX.3.9}
+One can summarize a number of the results of this section by the following diagram of principal homogeneous bundles (on the left):
+\[
+\xymatrix@C=2em{
+\mathrm W(\mathfrak g^\alpha)^\times\ar[r]^{w_\alpha}&N^\times\ar[r]^{a_\alpha}&\mathrm W((\mathfrak g^\alpha)^{\otimes2})^\times\\
+\mathbf G_{\mathrm m,S}\ar[r]^{\alpha^*}&T\ar[r]^\alpha&\mathbf G_{\mathrm m,S}.
+}
+\]
+Note that $a_\alpha$ is faithfully flat (since $\alpha$ is) and that $w_\alpha$ is a monomorphism if and only if $\alpha^*$ is a monomorphism. We leave it to the reader to write the corresponding diagrams for the structures of principal bundles on the right, as well as diagrams of the same kind for the root $-\alpha$, and to study the relations between these various diagrams.
+\end{remark}
+
+\begin{lemma}{3.10}\label{XX.3.10}
+Let $S$ be a scheme, $q$ an integer $>0$ such that $x\mto x^q$ defines an endomorphism of $\mathbf G_{\mathrm a,S}$, $(G,T,\alpha)$ and $(G',T',\alpha')$ two elementary $S$-systems, $f:G\to G'$ a morphism of $S$-groups. Let
+\[
+h:(\mathfrak g^\alpha)^{\otimes q}\isomto\mathfrak g'^{\alpha'}
+\]
+be an isomorphism of $\OS$-modules, and
+\[
+h^\vee:(\mathfrak g^{-\alpha})^{\otimes q}\isomto\mathfrak g'^{-\alpha'}
+\]
+the contragredient isomorphism. For every $S'\to S$ and every $X\in\mathrm W(\mathfrak g^\alpha)(S')$, suppose that:
+\[
+f(\exp(X))=\exp(h(X^q)).
+\]
+Then the following conditions are equivalent:
+\begin{enumeratei}
+\item $f(\alpha^*(z))=\alpha'^*(z)^q$.
+\item $f(w_\alpha(Z))=w_{\alpha'}(h(Z^q))$.
+\item $f(\exp(Y))=\exp(h^\vee(Y^q))$.
+\end{enumeratei}
+(Each condition is to be read: for every $S'\to S$ and every $z\in\Gm(S')$, $Z\in\mathrm W(\mathfrak g^\alpha)^\times(S')$, $Y\in\mathrm W(\mathfrak g^{-\alpha})(S')$, one has \ldots.)
+\end{lemma}
+Indeed, (i) $\Rightarrow$ (ii) by 3.8, (ii) $\Rightarrow$ (iii) by 3.7, (iii) $\Rightarrow$ (i) by 2.7.
+
+\begin{proposition}{3.11}\label{XX.3.11}
+Let $S$ be a scheme, $q\in\ZZ$, $q>0$, such that $x\mto x^q$ defines an endomorphism of $\mathbf G_{\mathrm a,S}$, $(G,T,\alpha)$ and $(G',T',\alpha')$ two elementary $S$-systems, $f:G\to G'$ a morphism of $S$-groups. The following conditions on $f$ are equivalent:
+\begin{enumeratei}
+\item The restriction of $f$ to $T$ factors as a morphism $f_T:T\to T'$ making the diagram commute:
+\[
+\xymatrix{
+\mathbf G_{\mathrm m,S}\ar[r]^{\alpha^*}\ar[d]_q&T\ar[r]^\alpha\ar[d]^{f_T}&\mathbf G_{\mathrm m,S}\ar[d]^q\\
+\mathbf G_{\mathrm m,S}\ar[r]_{\alpha'^*}&T'\ar[r]_{\alpha'}&\mathbf G_{\mathrm m,S}.
+}
+\]
+\item There exists a (unique) isomorphism of $\OS$-modules
+\[
+h:(\mathfrak g^\alpha)^{\otimes q}\to\mathfrak g'^{\alpha'}
+\]
+such that
+\[
+f(\exp(X))=\exp(h(X^q)),\qquad f(\exp(Y))=\exp(h^\vee(Y^q))
+\]
+for all $X\in\mathrm W(\mathfrak g^\alpha)(S')$, $Y\in\mathrm W(\mathfrak g^{-\alpha})(S')$, $S'\to S$ (it follows that $f$ also satisfies the equivalent conditions of 3.10).
+\end{enumeratei}
+\end{proposition}
+One has (ii) $\Rightarrow$ (i). Indeed, by 3.10, condition (ii) implies $f\circ\alpha^*=q\alpha'^*$, hence, by 3.3, $f|_T$ factors through $T'$. It remains to prove that $\alpha'(f(t))=\alpha(t)^q$, which follows at once from the fact that $f$ induces a morphism of groups $T\cdot U_\alpha\to T'\cdot U_{\alpha'}$.
+
+Let us prove (i) $\Rightarrow$ (ii). Let $X\in\Gamma(S,\mathfrak g^\alpha)$, $Y\in\Gamma(S,\mathfrak g^{-\alpha})$. Put $p_+(x)=f(\exp(xX))$ and $p_-(x)=f(\exp(yY))$; these are morphisms of groups
+\[
+p_+,p_-:\mathbf G_{\mathrm a,S}\to G.
+\]
+% typo?: p_-(x), y in its definition, and target G kept as printed.
+Now one has
+\[
+\begin{aligned}
+\operatorname{int}(\alpha'^*(z))^q(p_+(x))&=\operatorname{int}(f_T(\alpha^*(z)))(f(\exp(xX)))\\
+&=f(\operatorname{int}(\alpha^*(z))(\exp(xX)))\\
+&=f(\exp(z^2xX))=p_+(z^2x).
+\end{aligned}
+\]
+Applying lemma~1.2 (with $Q=\alpha'^*(\mathbf G_{\mathrm m,S})$), one deduces that there exists a section $X'\in\Gamma(S,\mathfrak g^{\alpha'})$ such that
+\[
+f(\exp(xX))=p_+(x)=\exp(x^qX').
+\]
+Similarly, there exists a section $Y'\in\Gamma(S,\mathfrak g^{-\alpha'})$ such that
+\[
+f(\exp(yY))=\exp(y^qY').
+\]
+% typo?: missing primes on g in these two section modules kept as printed.
+Writing now that $f$ is a morphism of groups, hence respects formula (F), one obtains at once
+\[
+X^qY^q=(XY)^q=X'Y'.
+\]
+One easily concludes that $X^q\mto X'$ and $Y^q\mto Y'$ define isomorphisms $h$ and $h^\vee$ as announced.
+
+\begin{proposition}{3.12}\label{XX.3.12}
+Let $(G,T,\alpha)$ be an elementary $S$-system, $w\in N^\times(S)$; put
+\[
+\Omega_0=\Omega\cap\operatorname{int}(w^{-1})(\Omega).
+\]
+Let $d$ be the function on $\Omega$ defined by
+\[
+d(\exp(Y)\cdot t\cdot\exp(X))=\alpha(t)^{-1}+XY.
+\]
+Then $\Omega_0=\Omega_d$, and for $\exp(Y)\cdot t\cdot\exp(X)\in\Omega_0(S')$ one has the following formula (put $z=d(\exp(Y)\cdot t\cdot\exp(X))$):
+\begin{equation}\tag{$\star$}\label{XX.eq.conjugation}
+\begin{split}
+\operatorname{int}(w)(\exp(Y)\cdot t\cdot\exp(X))={}&\exp(z^{-1}a_\alpha(w)^{-1}X)\\
+&\cdot t\alpha^*(z)\cdot\exp(z^{-1}a_\alpha(w)Y).
+\end{split}
+\end{equation}
+Moreover, $d\circ\operatorname{int}(w)=d^{-1}$.
+\end{proposition}
+Indeed, one has at once{\renewcommand{\thefootnote}{(30)}\nde{The original has been corrected by interchanging $a_\alpha(w)$ and $a_\alpha(w)^{-1}$, and the proof of $d\circ\operatorname{int}(w)=d^{-1}$ has been expanded.}}
+\[
+\begin{aligned}
+\operatorname{int}(w)(\exp(Y)\cdot t\cdot\exp(X))
+&=\exp(a_\alpha(w)Y)\cdot t\alpha^*(\alpha(t)^{-1})\cdot\exp(a_\alpha(w)^{-1}X)\\
+&=\exp(a_\alpha(w)Y)\cdot\exp(\alpha(t)a_\alpha(w)^{-1}X)\cdot t\alpha^*(\alpha(t)^{-1}).
+\end{aligned}
+\]
+By 2.1, this is a section of $\Omega$ if and only if $1+\alpha(t)XY$ is invertible, which indeed proves $\Omega_0=\Omega_d$; then applying formula (F) of loc.~cit., one deduces by an immediate calculation the announced formula ($\star$). Finally, it follows from ($\star$) that one has
+\[
+\begin{split}
+(d\circ\operatorname{int}(w))(\exp(Y)\cdot t\cdot\exp(X))
+&=\alpha(t\alpha^*(z))^{-1}+z^{-2}XY\\
+&=z^{-2}(\alpha(t)^{-1}+XY)=z^{-1},
+\end{split}
+\]
+whence the last assertion.
+
+N.~B. One will note that the function $d$ is independent of the choice of $w$.
+
+\sgasection{4}{The isomorphism theorem}
+\label{XX.sec.4}
+\begin{theorem}{4.1}\label{XX.4.1}
+Let $S$ be a scheme, $q\in\ZZ$, $q>0$, such that $x\mto x^q$ is an endomorphism of $\mathbf G_{\mathrm a,S}$, $(G,T,\alpha)$ and $(G',T',\alpha')$ two elementary $S$-systems. Let
+\[
+h:(\mathfrak g^\alpha)^{\otimes q}\to\mathfrak g'^{\alpha'}\quad\text{and}\quad
+h^\vee:(\mathfrak g^{-\alpha})^{\otimes q}\to\mathfrak g'^{-\alpha'}
+\]
+be two mutually contragredient isomorphisms. Let $f_T:T\to T'$ be a morphism of $S$-groups making the diagram commute:
+\[
+\xymatrix{
+\mathbf G_{\mathrm m,S}\ar[r]^q\ar[d]_{\alpha^*}&\mathbf G_{\mathrm m,S}\ar[d]^{\alpha'^*}\\
+T\ar[r]^{f_T}\ar[d]_\alpha&T'\ar[d]^{\alpha'}\\
+\mathbf G_{\mathrm m,S}\ar[r]^q&\mathbf G_{\mathrm m,S}.
+}
+\]
+There exists a unique morphism of $S$-groups $f:G\to G'$ extending $f_T$ and satisfying
+\[
+f(\exp(X))=\exp(h(X^q))
+\]
+for every $X\in\mathrm W(\mathfrak g^\alpha)(S')$, $S'\to S$. Moreover, this morphism also satisfies
+\[
+f(\exp(Y))=\exp(h^\vee(Y^q))\quad\text{and}\quad f(w_\alpha(Z))=w_\alpha(h(Z^q)),
+\]
+for every $S'\to S$ and all $Y\in\Gamma(S',\mathfrak g^{-\alpha})$, $Z\in\Gamma(S',\mathfrak g^\alpha)^\times$.
+% typo?: alpha without a prime on the last w kept as printed.
+\end{theorem}
+If $f:G\to G'$ extends $f_T$, then $f\circ\alpha^*=(\alpha'^*)^q$. If in addition $f$ satisfies the second condition, it also satisfies the other two by 3.10. It follows that $f$ is determined on $\Omega$ by the relation
+\[
+f(\exp(Y)t\exp(X))=\exp(h^\vee(Y^q))f_T(t)\exp(h(X^q)).
+\]
+Since $\Omega$ is schematically dense in $G$, this already proves the uniqueness of $f$. To prove its existence, it suffices, by Exp.~XVIII 2.3, to prove that the preceding formula defines a ``generically multiplicative'' morphism from $\Omega$ to $G'$. Now, by 2.4, this amounts to checking that $\alpha'\circ f=\alpha^q$, which follows from the fact that $f$ extends $f_T$.
+
+\begin{scholium}{4.2}\label{XX.4.2}
+One can also interpret 4.1 as follows: consider the category $\mathcal E$ of elementary $S$-systems and the category $\mathcal D$ of pairs
+\[
+\left(\mathbf G_{\mathrm m,S}\xrightarrow{\alpha^*}T\xrightarrow\alpha\mathbf G_{\mathrm m,S},\mathcal L\right),
+\]
+where $T$ is a torus, $\alpha$ and $\alpha^*$ morphisms of groups such that $\alpha\circ\alpha^*=2$, and $\mathcal L$ an invertible $\OS$-module (the reader will specify the morphisms of the two categories considered). One defines a functor $\mathcal E\to\mathcal D$ by
+\[
+(G,T,\alpha)\mto\left(\mathbf G_{\mathrm m,S}\xrightarrow{\alpha^*}T\xrightarrow\alpha\mathbf G_{\mathrm m,S},\mathfrak g^\alpha\right).
+\]
+The preceding theorem says that this functor is \emph{fully faithful}. It is in fact an equivalence of categories, as will be seen in the next section. One already has:
+\end{scholium}
+
+\begin{corollary}{4.3}\label{XX.4.3}
+If $q=1$ and $f_T$ is an isomorphism, then $f$ is an isomorphism.
+\end{corollary}
+\begin{corollary}{4.4}\label{XX.4.4}
+If $q=1$ and $f_T$ is faithfully flat with kernel $Q$ (cf. Exp.~IX 2.7), then $f$ is faithfully flat (quasi-compact) with kernel $Q$, hence identifies $G'$ with $G/Q$.
+\end{corollary}
+Indeed, if $f_T$ is faithfully flat with kernel $Q$, then
+\[
+Q=\Ker(f_T)\subset\Ker(f_T\circ\alpha')=\Ker(\alpha).
+\]
+% typo?: order f_T composed with alpha prime kept as printed.
+Introducing the elementary $S$-system $(G/Q,T/Q,r/Q)$ of 2.13, one is reduced by 2.14 to proving that $f/Q$ induces an isomorphism from $G/Q$ onto $G'$, which follows at once from 4.3.
+% typo?: r/Q kept as printed.

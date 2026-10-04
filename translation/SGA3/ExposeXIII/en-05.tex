@@ -1,0 +1,327 @@
+% Proof of Corollary 5.3; its statement is completed in en-04.tex.
+Indeed, $H=N^0$ will satisfy the desired conditions; on the other
+hand, if $H$ satisfies them, then (since $H$ normalizes its Lie
+algebra $\mathfrak h$) one has $H\subset N$, so, since this is an
+inclusion of smooth groups with the same Lie algebra, with $H$
+connected, one will have $H=N^0$. For the identity
+$\Norm_G(H)=\Norm_G(\mathfrak h)$, one may suppose $k$ algebraically
+closed; then from what one has just seen it follows immediately
+that the points of the two groups with values in $k$ are the same;
+on the other hand the inclusions $H\subset\Norm_G(H)\subset N$
+show that $\Norm_G(H)$ and $N$ have the same Lie algebra, hence
+they are identical.
+
+\begin{corollary}{5.4}\label{XIII.5.4}
+Under the equivalent conditions (i) to (iv), let $a\in\mathfrak h$.
+Then the following conditions are equivalent, and hold if $a$ is
+regular in $\mathfrak g$:
+\begin{enumeratei}
+\item $\varphi$ is smooth at $(e,a)$.
+\item $M_a=\Transp_G(a,\mathfrak h)$ is smooth at $e$, and
+$\dim_e(M_a)=\operatorname{rank}_k\mathfrak h$.
+\item $\ad(a)_{\mathfrak g/\mathfrak h}$ is injective (or again,
+bijective).
+\end{enumeratei}
+When one is under the equivalent conditions (xi) to (xiii), let
+$H$ be the algebraic subgroup of $G$ considered in 5.3. Then the
+preceding conditions are also equivalent to the following conditions:
+\begin{enumerate}[label=\textup{(\roman*)},start=4]
+\item $\psi$ is \'etale at $(\bar e,a)$.
+\item Denoting by $M_a^0$ the connected component of $e$ in the
+transporter $M_a$ of $a$ into $\mathfrak h$, equipped with the
+structure induced by $M_a$, one has
+\[
+ H=M_a^0.
+\]
+\end{enumerate}
+\end{corollary}
+Clearly (i) $\Rightarrow$ (ii), since $M_a$ is isomorphic to the
+fiber $\varphi^{-1}(a)$, the point $e$ corresponding to $(e,a)$,
+and one has (ii) $\Rightarrow$ (i), for (ii) implies that $\varphi$
+is ``equidimensional'' at $(e,a)$ (i.e. the dimension of the fiber
+through this point is that of the generic fiber), which implies
+($G\times\mathrm W(\mathfrak h)$ and $\mathrm W(\mathfrak g)$ being
+regular) that it is flat at $(e,a)$, hence smooth since its fiber
+is so at this point. The equivalence of (i) and (iii) was seen in
+the proof of 5.1 as resulting from the simple calculation of the
+tangent map. Moreover, one has seen in 4.8 b) that ``$a$ regular
+in $\mathfrak g$'' $\Rightarrow$ (iii). Under conditions (xi) to
+(xiii), since $q:G\times\mathrm W(\mathfrak h)\to X$ is smooth
+($N$ being smooth), it follows that (i) is equivalent to $\psi$
+smooth at $(\bar e,a)$, and since $\psi$ is generically \'etale,
+this is equivalent to (iv). Finally, as was noted at the end of
+the proof of 1.1, (iv) implies that $N$ is the prescheme induced
+on $M_a$ by an open and closed part of $M_a$, whence (v); finally
+(v) $\Rightarrow$ (ii) trivially (or again (v) $\Rightarrow$ (iv)
+by 1.1, for $\psi$ being dominant and $\mathrm W(\mathfrak g)$
+normal, ``unramified'' is here equivalent to ``\'etale''); this
+completes the proof of 5.4.
+
+\begin{corollary}{5.5}\label{XIII.5.5}
+Let $G$ be a smooth algebraic group over a field $k$, $H$ a smooth
+algebraic subgroup such that its Lie algebra $\mathfrak h$ contains
+(at least over a suitable extension of $k$) a Cartan subalgebra of
+the Lie algebra $\mathfrak g$ of $G$. Let $K$ be a connected
+algebraic subgroup of $G$ (not necessarily smooth), with Lie algebra
+$\mathfrak k$; suppose that $\mathfrak k$ contains a regular element
+$a$ of $\mathfrak g$ (at least over a suitable extension of $k$).
+Then $H$ contains $K$ if and only if $\mathfrak h$ contains
+$\mathfrak k$.
+\end{corollary}
+Indeed, by 5.4 (iii) $\Rightarrow$ (v) one has $H=M_a^0$ (N.B.
+of course, this relation being invariant under extension of the
+base field, it is valid without the hypothesis that the latter
+be infinite!); on the other hand $\mathfrak k\subset\mathfrak h$
+clearly implies $K\subset M_a$, so, since $K$ is connected,
+$K\subset M_a^0$, whence $K\subset H$. \hfill Q.E.D.
+% typo?: kept as printed: H=M_a^0 although H was not assumed connected.
+
+% original p. 290
+\begin{corollary}{5.6}\label{XIII.5.6}
+Let $G,H$ be as in 5.5 and let $K$ be an algebraic subgroup of
+$G$; one supposes $H$ connected and $K$ smooth. Then $K$ contains
+$H$ if and only if $\mathfrak k$ contains $\mathfrak h$.
+\end{corollary}
+Indeed, if $\mathfrak k\supset\mathfrak h$, then $K$ satisfies
+the hypothesis considered in 5.5 for $H$; on the other hand $H$
+clearly satisfies the condition considered for $K$ in 5.5. The
+conclusion then follows from 5.5.
+
+\begin{corollary}{5.7}\label{XIII.5.7}
+Let $\mathfrak g$ be the Lie algebra of a smooth algebraic group
+$G$ over a field $k$. Then:
+
+\noindent a) Let $\mathfrak d$ be a Lie subalgebra of $\mathfrak g$.
+For $\mathfrak d$ to be a Cartan subalgebra, it is necessary and
+sufficient that $\mathfrak d$ be nilpotent and equal to its own
+normalizer.
+
+\noindent b) Let $a$ be an element of $\mathfrak g$; for $a$ to
+be regular, it is necessary and sufficient that
+$\operatorname{Nil}(a,\mathfrak g)$ be nilpotent.
+\end{corollary}
+Extending the base field, one may suppose $k$ infinite. Taking
+4.4 into account, one is reduced for a) to proving that if
+$\mathfrak d$ is nilpotent and contains an element $a$ such that
+$\ad(a)_{\mathfrak g/\mathfrak d}$ is injective, then
+$\mathfrak d$ is a Cartan subalgebra. Now by 5.1 (ii)
+$\Rightarrow$ (i), $\mathfrak d$ contains a Cartan subalgebra
+$\mathfrak d'=\operatorname{Nil}(a,\mathfrak g)$, and by 4.3 one
+concludes from the fact that $\mathfrak d$ is nilpotent that
+$\mathfrak d=\mathfrak d'$. To prove b), one notes that
+$\operatorname{Nil}(a,\mathfrak g)$ is a Cartan subalgebra of
+$\mathfrak g$ by a), hence $a$ is regular.
+
+\begin{corollary}{5.8}\label{XIII.5.8}
+Let $G$ be a smooth algebraic group over a field $k$, $H$ a smooth
+algebraic subgroup, and $\mathfrak g,\mathfrak h$ the Lie algebras;
+suppose that after a suitable extension of the base field,
+$\mathfrak h$ contains a Cartan subalgebra of $\mathfrak g$.
+Let $\mathfrak d$ be a subalgebra of $\mathfrak h$; then it is
+a Cartan subalgebra of $\mathfrak h$ if and only if it is a
+Cartan subalgebra of $\mathfrak g$.
+\end{corollary}
+Taking 4.8 c) into account, it remains to show that if
+$\mathfrak d$ is a Cartan subalgebra of $\mathfrak h$, it is a
+Cartan subalgebra of $\mathfrak g$, and for this one is reduced
+to showing that $\mathfrak d$ contains an element $a$ regular
+in $\mathfrak g$, supposing (as one may) $k$ algebraically
+closed. But since there is a dense open subset of
+$\mathfrak h$ consisting of regular points of $\mathfrak g$,
+our assertion follows from 5.1 (i) $\Rightarrow$ (vii) applied
+to $(\mathfrak h,\mathfrak d)$.
+
+\sgasection{6}{Cartan subalgebras and subgroups of type (C), relative to a smooth algebraic group}
+For simplicity, we confine ourselves in the following theorem
+to the case of an algebraically closed base field (the case of
+an arbitrary base prescheme being treated in the next expos\'e):
+
+\begin{theorem}{6.1}\label{XIII.6.1}
+Let $G$ be a smooth algebraic group over an algebraically closed
+field $k$, and $\mathfrak g$ its Lie algebra. Then:
+
+\noindent a) The Cartan subalgebras of $\mathfrak g$ are conjugate.
+
+\noindent b) Let $\mathfrak d$ be a Cartan subalgebra of
+$\mathfrak g$. Then its normalizer $N$ in $G$ is smooth, and
+$D=N^0$ is the only smooth connected subgroup of $G$ whose
+Lie algebra is $\mathfrak d$. One has
+\[
+ \Norm_G(\mathfrak d)=\Norm_G(D)=N,
+ \quad\text{hence }D=\Norm_G(D)^0.
+\]
+\noindent c) With $\mathfrak d$ as in b), set, as in \No 5,
+$X=G\times^N\mathrm W(\mathfrak d)$, and consider the
+canonical morphism
+\[
+ \psi:X\to\mathrm W(\mathfrak g),
+\]
+(whose fiber at $a\in\mathfrak g$ has as its points with
+values in $k$ the set of Cartan subalgebras of $\mathfrak g$
+which contain $a$). Then $\psi$ is a birational morphism.
+
+\noindent d) With the notation of c), let $U$ be the largest
+open subset of $\mathrm W(\mathfrak g)$ such that $\psi$
+induces an isomorphism
+\[
+ \psi^{-1}(U)\isomto U.
+\]
+Then for $a\in\mathfrak g$, the following conditions are equivalent:
+\begin{enumeratei}
+\item $a\in U(k)$.
+\item $a$ is contained in one and only one Cartan subalgebra
+of $\mathfrak g$.
+\item The set of Cartan subalgebras of $\mathfrak g$ containing
+$a$ is finite and nonempty.
+\item The fiber $\psi^{-1}(a)$ has an isolated point.
+\item (If $a\in\mathfrak d$) The morphism $\psi$ is \'etale
+(or merely: quasi-finite) at the point $(\bar e,a)$.
+\item $a$ is a regular element of $\mathfrak g$.
+\item With the notation of 5.4 (iii), one has $N=M_a$.
+\end{enumeratei}
+\end{theorem}
+\begin{proof}
+Let us apply 5.1 when $\mathfrak h$ is a Cartan subalgebra
+$\mathfrak d$ of $\mathfrak g$; let us show that the strongest
+conditions (xi) to (xiii) then hold. This is clear, either
+in form (xiii), taking 4.7 into account (which implies that
+for a regular element $a$ of $\mathfrak g$ contained in
+$\mathfrak d$, one has $N=M_a$), or in form (xi) $=$ (x) $+$
+(i), for condition (i) is trivial and condition (x) follows
+from the fact that a regular point of $\mathfrak g$ is
+contained in only one Cartan subalgebra of $\mathfrak g$
+(4.6 a)), and a fortiori in only one conjugate of
+$\mathfrak d$. Then b) follows from 5.3, and c) follows
+from the fact that $\psi$ is generically \'etale and that
+a sufficiently general point (more precisely, a regular
+point) of $\mathfrak g$ is contained in only one Cartan
+subalgebra of $\mathfrak g$. Under these conditions, the
+equivalence of conditions (i) to (v) on $a$ is an immediate
+consequence of Zariski's Main Theorem for the separated
+birational morphism $\psi$, taking into account that
+$\mathrm W(\mathfrak g)$ is normal and $X$ integral.
+The equivalence of (v) and (vi) is a particular case of
+5.4 (iii) $\Leftrightarrow$ (iv) (reducing to the case where
+$a\in\mathfrak d$ by transforming $a$ by a suitable element
+$g\in G(k)$), taking 4.6 b) into account. Moreover, by 5.4,
+(v) and (vi) are also equivalent to $N\supset M_a^0$, and
+by 4.7, already invoked, this even implies $N=M$.
+% typo?: kept as printed: M rather than M_a.
+This proves d).
+
+Of course, b), c), and the equivalence of (i), (iv), (v),
+(vi), (vii) remain valid over an arbitrary base field.
+Let us now prove a), using the fact that $k$ is algebraically
+closed. By 5.1 (i) $\Rightarrow$ (vii),
+$\psi:X\to\mathrm W(\mathfrak g)$ is dominant, hence there
+exists a dense open subset $V$ of $\mathrm W(\mathfrak g)$
+such that every $a\in V(k)$ is the image of an element
+of $X(k)$, i.e. is contained in a conjugate of
+$\mathfrak d$. Applying this result to a second Cartan
+subalgebra $\mathfrak d'$ of $\mathfrak g$, one sees
+that one may take $V$ such that every element of $V(k)$
+is conjugate to an element of $\mathfrak d$ and to an
+element of $\mathfrak d'$. Taking a regular element
+in $V(k)$, it follows that there is a conjugate
+$\mathfrak d''$ of $\mathfrak d'$ which contains an
+element of $\mathfrak d$ regular in $\mathfrak g$,
+and hence is equal to $\mathfrak d$ by 4.6 a).
+This completes the proof of 6.1.
+\end{proof}
+
+\begin{definition}{6.2}\label{XIII.6.2}
+Let $G$ be a smooth algebraic group over a field $k$.
+One calls a \emph{subgroup of type (C)} of $G$ any
+smooth connected algebraic subgroup whose Lie algebra
+is a Cartan subalgebra of $\mathfrak g$. One calls the
+\emph{infinitesimal rank} of $G$ the nilpotent rank of
+its Lie algebra $\mathfrak g$, equal to the dimension
+of every subgroup of type (C) of $G$.
+\end{definition}
+From 6.1 b) one concludes at once:
+
+\begin{corollary}{6.3}\label{XIII.6.3}
+Under the conditions of 6.2, the map
+$D\mto\mathfrak d=\Lie D$ establishes a one-to-one
+correspondence between subgroups of type (C) of $G$
+and Cartan subalgebras $\mathfrak d$ of $\mathfrak g$.
+If $D$ is a subgroup of type (C) of $G$, $D$ is its
+own connected normalizer:
+\[
+ D=\Norm_G(D)^0.
+\]
+\end{corollary}
+Combining 6.1 (a) and 6.3, one finds:
+
+\begin{corollary}{6.4}\label{XIII.6.4}
+If $k$ is algebraically closed, the subgroups of type
+(C) of $G$ are conjugate to one another.
+\end{corollary}
+
+\begin{corollary}{6.5}\label{XIII.6.5}
+Let $G$ be a smooth algebraic group over algebraically
+closed $k$, $H$ a smooth algebraic subgroup of $G$,
+and $\mathfrak g$ and $\mathfrak h$ the Lie algebras.
+For $\mathfrak h$ to contain a Cartan subalgebra of
+$\mathfrak g$, it is necessary and sufficient that $H$
+contain a subgroup $D$ of type (C) of $G$.
+\end{corollary}
+This is clearly sufficient, and it is also necessary,
+for $H\supset D$ holds if and only if
+$\mathfrak h\supset\mathfrak d$, by 5.5.
+
+\begin{remarks}{6.6}\label{XIII.6.6}
+\noindent a) One will note that the connected subgroups
+$H$ of $G$ described in 6.5 correspond one-to-one to
+the Lie subalgebras $\mathfrak h$ of $\mathfrak g$
+which satisfy the strongest condition (xii) of 5.1
+(and by 5.5, the inclusion relations between such
+subgroups can already be recognized on their Lie algebras).
+
+\noindent b) Still suppose $k$ algebraically closed,
+and let $D$ be a subgroup of type (C) of $G$; then
+it is easy to show that $D$ contains a Cartan subgroup
+$C$ of $G$: indeed, let $V=\mathfrak g/\mathfrak d$;
+then for a ``general'' element $a$ of $\mathfrak d$,
+$\ad(a)$ acting on $V$ is injective (it suffices that
+$a$ be regular in $\mathfrak g$), whence one easily
+concludes that for ``general'' $g\in D(k)$,
+$\Ad(g)$ acting on $V$ has no nonzero invariant,
+which allows one to apply 2.1 (vii) $\Rightarrow$ (i).
+In fact, we shall see in the next expos\'e a more
+precise result: every Cartan subgroup $C$ of $G$
+is contained in one and only one subgroup of type
+(C) of $G$.
+
+\noindent c) One should take care not to confuse
+Cartan subgroups and subgroups of type (C) in general:
+the subgroups of type (C) of $G$ are Cartan subgroups
+if and only if they are nilpotent (Cartan subgroups
+being indeed maximal nilpotent subgroups); now it
+may happen that $\mathfrak g$ is nilpotent without
+$G$ being so (example: $\SL(2)_k$ for $k$ of
+characteristic $2$); then the Cartan subalgebras
+of $\mathfrak g$ are identical to $\mathfrak g$,
+i.e. $G$ is a subgroup of type (C) of itself if
+$G$ is connected, but it is not a Cartan subgroup
+of $G$! On the other hand, we shall see in XIV
+that if $G$ is an adjoint semisimple group, then
+its subgroups of type (C) are its Cartan subgroups.
+Likewise, in characteristic $0$, without restriction
+on the smooth algebraic group $G$ over $k$, the
+same conclusion holds: this follows at once from
+the fact that in characteristic $0$, a connected
+algebraic group is nilpotent if (and only if) its
+Lie algebra is. This follows at once from the fact
+that in characteristic zero, the center $Z$ of
+the connected algebraic group $G$ has as Lie algebra
+the center of $\mathfrak g$ (for one obtains a priori
+the space of invariants of $\mathfrak g$ under the
+adjoint representation of $G$; now $G$ being connected
+and $k$ of characteristic zero, these are also the
+``invariants'' in the infinitesimal sense of the
+adjoint representation of $\mathfrak g$, i.e. the
+center of $\mathfrak g$), and that by Cartier's
+theorem (cf. VI\textsubscript{B} 1.6.1) $Z$ is smooth.
+\end{remarks}
+% Source PDF p. 30 is blank.

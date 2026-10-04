@@ -1,0 +1,159 @@
+Indeed, when $k$ is a field, $\Ker(u)$ is flat over $k$ whatever $u$ may be.
+
+\nde{What follows has been added.}Note that the full subcategory of affine commutative algebraic $k$-groups is thick. Indeed, consider an exact sequence of commutative algebraic $k$-groups:
+\[
+\xymatrix{1\ar[r]&N\ar[r]&G\ar[r]&G/N\ar[r]&1.}
+\]
+If $G$ is affine, it is clear that $N$ is so, and $G/N$ is also so by a theorem of Chevalley, cf. VIB, 11.17. Conversely, if $N$ and $G/N$ are affine, $G$ is also so by VIB, 9.2 (viii). One therefore obtains:
+\begin{corollary}{5.4.3}\label{VIA.5.4.3}
+Let $k$ be a field. The category of affine commutative algebraic $k$-groups is abelian.
+\end{corollary}
+Let us further mention that the category of all affine commutative $k$-groups (not necessarily of finite type) is abelian; this follows from VIB, 11.17 and 11.18.2 (cf. [DG70], §III.3, 7.4); see also VIIB, 2.4.2 for a proof using formal groups.
+
+\numpara{5.5}Let $G$ be a group locally of finite type and flat over an artinian local ring $A$. One knows (2.3) that the connected component $G^0$ of the origin is an invariant open subgroup scheme of $G$, hence also flat over $A$. Then, by 3.2 and 5.2, $G^0\backslash G$ is an $A$-group scheme flat over $A$. Moreover, since each connected component $G^\alpha$ of $G$ is saturated for the equivalence relation defined by $G^0$, $G^0\backslash G$ is the direct sum of the $G^0\backslash G^\alpha$ (cf. 4.3). In particular, the connected component of the origin in $G^0\backslash G$ is none other than $G^0\backslash G^0\simeq\Spec A$, and hence $G^0\backslash G\to\Spec A$ is a local isomorphism at the origin. Consequently, $G^0\backslash G$ is étale over $\Spec A$, by VIB, 1.3.\nde{The original has been expanded in what precedes, and Proposition 5.5.1 has been added to bring out this result.} One therefore obtains the following proposition (for point (ii), we refer to [DG70], §II.5, 1.7--1.10):
+\begin{proposition}{5.5.1}\label{VIA.5.5.1}
+Let $A$ be an artinian local ring and $G$ an $A$-group locally of finite type and flat.
+\begin{enumeratei}
+\item $G^0\backslash G$ is an étale $A$-group.
+\item Consequently, if $A=k$ is an algebraically closed field, $G^0\backslash G$ is a constant $k$-group, acting simply transitively on the set of connected components of $G$; hence, if $G$ is algebraic, $G^0\backslash G$ is finite.
+\end{enumeratei}
+\end{proposition}
+
+\numpara{5.6}Let now $k$ be a perfect field and $G$ a $k$-group locally of finite type. We have seen (0.2) that $G_{\mathrm{red}}$ is then a subgroup scheme of $G$. Moreover, the equivalence class of the origin of $G$ for the left action of $G_{\mathrm{red}}$ on $G$ is the whole underlying space of $G$. Thus, by Theorem 3.2, one obtains:
+\begin{proposition}{5.6.1}\label{VIA.5.6.1}
+Let $k$ be a perfect field and $G$ a $k$-group locally of finite type. Then the $k$-scheme $G_{\mathrm{red}}\backslash G$ is the spectrum of a finite local $k$-algebra with residue field $k$.
+\end{proposition}
+\nde{The numbering 5.6.1 and the following proof have been added.}Indeed, by 3.2, $G_{\mathrm{red}}\backslash G$ has only one point, with residue field $k$, and is a $k$-scheme of finite type; it is therefore the spectrum of a finite-dimensional local $k$-algebra (cf. EGA I, 6.4.4).
+\begin{proposition}{5.6.2}\label{VIA.5.6.2}
+Let $u:F\to G$ be a morphism between groups locally of finite type over a perfect field $k$. The following assertions are equivalent:
+\begin{enumeratei}
+\item $u$ is flat.
+\item $u^0:F^0\to G^0$ is dominant, and the morphism $v:F_{\mathrm{red}}\backslash F\to G_{\mathrm{red}}\backslash G$ induced by $u$ is flat.
+\end{enumeratei}
+\end{proposition}
+\nde{The proof of (ii) $\Rightarrow$ (i) has been expanded, and the diagram below simplified.}Indeed, consider the following commutative diagram:
+\[
+\xymatrix{F\ar[r]^p\ar[d]_u&F_{\mathrm{red}}\backslash F\ar[d]^v\\G\ar[r]_q&G_{\mathrm{red}}\backslash G,}
+\]
+where $p$ and $q$ denote the canonical projections. By 3.2 (iv), $p$ and $q$ are faithfully flat; consequently, if $u$ is flat, $q\circ u=v\circ p$ is flat, and therefore so is $v$.
+
+Conversely, suppose $v$ flat and $u^0$ dominant. Since $u^0$ is quasi-compact ($F^0$ being of finite type over $k$ by 2.4, hence noetherian), it sends the generic point $\xi$ of $F^0$ to the generic point $\eta$ of $G^0$. Let $R$ be the finite local $k$-algebra whose spectrum is $G_{\mathrm{red}}\backslash G$, and $\mathfrak m$ its maximal ideal. One has local morphisms of local rings $R\to\OO_{G,\eta}\to\OO_{F,\xi}$. Note that one has a cartesian square:
+\[
+\xymatrix{G_{\mathrm{red}}\ar[r]\ar[d]&G\ar[d]^q\\\Spec(R/\mathfrak m)\ar[r]&\Spec(R)}
+\]
+and therefore $\OO_{G,\eta}/\mathfrak m\OO_{G,\eta}\simeq\OO_{G_{\mathrm{red}},\eta}=\kappa(\eta)$, so $\OO_{F,\xi}/\mathfrak m\OO_{F,\xi}$ is flat over $\OO_{G,\eta}/\mathfrak m\OO_{G,\eta}$.
+
+On the other hand, since $q$ and $v\circ p$ are flat, $G$ and $F$ are flat over $R$. Consequently, by the local flatness criterion (cf. EGA IV$_3$, 11.3.10.2), $\OO_{F,\xi}$ is flat over $\OO_{G,\eta}$, that is, $u$ is flat at $\xi$. Thus, by 2.5.3, $u$ is flat.
+
+\sgasection{6}{Supplements on $k$-groups not necessarily of finite type}
+\nde{The following results, taken from [Per75], have been added. Note that Lemma 6.1 can be expressed, in Weil's language, by saying that ``every point of $G$ is a product of two generic points''.}Let us further mention the following results, which will be useful in the addition VIB, §12. Fix a base field $k$.
+\begin{lemma}{6.1}\label{VIA.6.1}
+Let $G$ be a $k$-group. For every $x\in G$, there exists a point $u\in G\times G$ such that $\mu(u)=x$ and both projections $p_1(u)$ and $p_2(u)$ are maximal points of $G$.
+\end{lemma}
+\begin{proof}
+Put $K=\kappa(x)$. Since the projection $G_K\to G$ sends maximal points to maximal points, one reduces to the case where $x$ is rational. Then left translation $\lambda_x$ (resp. right translation $\rho_x$) gives a morphism $G\to G\times G$, $g\mto(\lambda_x(g^{-1}),g)$ (resp. $g\mto(g,\rho_x(g^{-1}))$, inducing an isomorphism from $G$ onto $\mu^{-1}(x)$, inverse to $p_2$ (resp. $p_1$). Thus, if $u$ is a maximal point of $\mu^{-1}(x)$, $p_1(u)$ and $p_2(u)$ are maximal points of $G$, so $u$ has the required property.
+% typo: ``la translations'' -> ``translation''.
+\end{proof}
+\begin{corollary}{6.2}\label{VIA.6.2}
+Let $f:G\to H$ be a quasi-compact dominant morphism of $k$-groups.
+\begin{enumeratei}
+\item $f$ is surjective.
+\item If $H$ is reduced, $f$ is faithfully flat.
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+Denote by $\mu_H$ (resp. $\mu_G$) multiplication in $H$ (resp. $G$). Let $h\in H$. By 6.1, there exists $u\in H\times H$ such that $\mu_H(u)=h$ and $\alpha=p_1(u)$ and $\beta=p_2(u)$ are maximal points of $H$. Since $f$ is quasi-compact and dominant, $f^{-1}(\alpha)$ and $f^{-1}(\beta)$ are nonempty (cf. EGA IV$_1$, 1.1.5), so there exists $v\in G\times G$ such that $(f\times f)(v)=u$ (cf. EGA I, 3.5.2). Then $g=\mu_G(v)$ satisfies $f(g)=h$. This shows that $f$ is surjective.
+
+Further suppose $H$ reduced. Then $\OO_{H,\alpha}$ is a field, and we have seen above that $f^{-1}(\alpha)\ne\varnothing$, so $f$ is flat at every point $\xi$ of $f^{-1}(\alpha)$, hence $f$ is flat by Lemma 2.5.3.
+\end{proof}
+\begin{enoncerm}{Recall}{6.3}\label{VIA.6.3}
+Recall (cf. EGA IV$_3$, 11.10.1) that a morphism of schemes $f:X\to Y$ is said to be schematically dominant if it satisfies the following condition: for every open subset $U$ of $Y$, if $Z$ is a closed subscheme of $U$ such that the morphism $f^{-1}(U)\to U$ factors through $Z$, then $Z=U$. When $f$ is quasi-compact and quasi-separated, this amounts to saying that the closed image of $X$ under $f$ is $Y$ (cf. loc. cit., 11.10.3 (iv) and EGA I, 9.5.8).
+\end{enoncerm}
+\begin{proposition}{6.4}\label{VIA.6.4}
+Let $f:H\to G$ be a quasi-compact morphism of $k$-groups. Then the closed image of $f$ is a subgroup scheme $H'$ of $G$, and $f$ factors as:
+\[
+\xymatrix{H\ar[r]^f\ar[d]_{f'}&G\\H'\ar[ur]_i&}
+\]
+where $f'$ is schematically dominant, quasi-compact and surjective.
+\end{proposition}
+\begin{proof}
+Since $H$ is separated (0.3), $f$ is quasi-compact and separated, so $f_*(\OO_H)$ is a quasi-coherent $\OO_G$-module, and the closed image $H'$ of $f$ exists and is the closed subscheme of $G$ defined by the quasi-coherent ideal $I=\Ker(\OO_G\to f_*(\OO_H))$ (cf. EGA I, §9.5).
+
+Denote by $c_G,\mu_G$ (resp. $c_H,\mu_H$) the inversion and multiplication morphisms of $G$ (resp. $H$). Then $c_G\circ f=f\circ c_H$ factors through the closed subscheme $c_G(H')$, whence $H'\subset c_G(H')$, and therefore $H'=c_G(H')$ (since $c_G^2=\mathrm{id}_G$). Similarly, since $f\circ\pi_H=\pi_G\circ(f\times f)$ factors through $H'$, $f\times f$ factors through the closed subscheme $\pi_G^{-1}(H')$ of $G\times G$. On the other hand, since formation of the closed image commutes with flat base changes (EGA III 1.4.15 and IV$_1$ 1.7.21), the closed image of $f\times\mathrm{id}_H$ (resp. $\mathrm{id}_{H'}\times f$) is $H'\times H$ (resp. $H'\times H'$). Thus, by ``transitivity of closed images'' (EGA I, 9.5.5), the closed image of $f\times f$ is $H'\times H'$, hence contained in $\pi_G^{-1}(H')$, i.e. the restriction of $\pi_G$ to $H'\times H'$ factors through $H'$. This shows that $H'$ is a closed subgroup scheme of $G$. Denote the inclusion $H'\hookrightarrow G$ by $i$.
+% typo?: kept as printed: pi_G and pi_H in the multiplication expressions.
+
+Then $f=i\circ f'$, where $f':H\to H'$ is schematically dominant and quasi-compact (since $f$ is quasi-compact and $i$ separated). Thus, by 6.2, $f'$ is surjective. This proves 6.4.
+\end{proof}
+One can now state the following theorem ([Per75], V 3.1 \& 3.2; see also [Per76], 0.0 \& 0.1).
+\begin{theorem}{6.5 (D. Perrin)}\label{VIA.6.5}
+Let $G$ be a quasi-compact $k$-group. Then:
+\begin{enumeratei}
+\item $G$ is the projective limit of a filtered system $(G_i)$ of $k$-groups of finite type (whose transition morphisms $u_{ij}:G_j\to G_i$ are affine for sufficiently large $i$), and the morphisms $G\to G_i$ are faithfully flat (and affine for sufficiently large $i$).
+\item Let $H$ be a closed $k$-subgroup of $G$. Then the quotient \fpqc sheaf $\widetilde{G/H}$ is a $k$-scheme in the following two cases:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item The immersion $H\to G$ is of finite presentation; in this case, $G/H$ is of finite type over $k$.
+\item $H$ is invariant in $G$.
+\end{enumerate}
+\end{enumeratei}
+\end{theorem}
+For the proof of this theorem (which rests on several intermediate theorems), we refer to [Per75]. For the reader's convenience, let us nevertheless prove the two corollaries below, cf. [Per75] V 3.3 to 3.4 or [Per76] 4.2.3 to 4.2.5.
+\begin{corollary}{6.6}\label{VIA.6.6}
+Let $f:G\to H$ be a quasi-compact morphism of $k$-groups.
+\begin{enumeratei}
+\item If $f$ is schematically dominant, it is faithfully flat.
+\item This is the case, in particular, if $H$ is affine and the morphism $f^\natural:\OO(H)\to\OO(G)$ is injective.
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+Suppose $f$ schematically dominant. Then, by 6.2 (i), $f$ is surjective, so, by 2.5.3, it suffices to show $f$ flat at the neutral element of $G$. Since $\OO_{H,e}=\OO_{H^0,e}$ (cf. 2.6.5), one can replace $H$ by $H^0$, hence suppose $H$ irreducible. Then $H$ is quasi-compact (loc. cit.), and, since $f$ is quasi-compact, so is $G$. By 6.5 (i), $H=\varprojlim_iH_i$, where each $H_i$ is an algebraic $k$-group. Denote by $N_i$ the kernel of $G\to H_i$; it is a closed invariant $k$-subgroup of $G$. Moreover, since the unit section $\{e\}\to H_i$ is of finite presentation, so is the immersion $N_i\to G$; hence, by 6.5 (ii), the \fpqc quotient $G/N_i$ is an algebraic $k$-group. One then has a commutative diagram
+\[
+\xymatrix{G\ar[r]^f\ar[d]_{q_i}&H\ar[d]^{p_i}\\G/N_i\ar[r]_{f_i}&H_i}
+\]
+where $f$ is schematically dominant and $p_i,q_i$ faithfully flat (hence schematically dominant). Then $f_i\circ q_i=p_i\circ f$ is schematically dominant, and hence so is $f_i$. On the other hand, $f_i$ is a monomorphism, hence a closed immersion, since $G/N_i$ and $H_i$ are algebraic (2.5.2). It follows that $f_i$ is an isomorphism, and therefore $G\to H_i$ is faithfully flat. Then, by [BAC] I §2.7, Prop. 9, the morphism $G\to H$ is flat; on the other hand, it is surjective by 6.2 (i), hence faithfully flat. This proves point (i), and point (ii) follows, for if $H$ is affine and $f^\natural$ injective, the closed image of $f$ equals $H$, so $f$ is schematically dominant (cf. 6.4).
+\end{proof}
+\begin{corollary}{6.7}\label{VIA.6.7}
+Let $u:G\to H$ be a morphism of $k$-groups, and $N=\Ker(u)$. Suppose $u$ quasi-compact.
+\begin{enumeratei}
+\item The quotient \fpqc sheaf $\widetilde{G/N}$ is represented by a $k$-group scheme $G/N$, and $u$ factors as:
+\[
+\xymatrix{G\ar[r]^u\ar[d]_p&H\\G/N\ar[ur]_i&}
+\]
+where $p$ is faithfully flat and $i$ a closed immersion.
+\item In particular, if $u$ is a monomorphism, $u$ is a closed immersion, and if $u$ is schematically dominant, $u$ is faithfully flat.
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+(i) By 6.4 and 6.6, the closed image $G'$ of $u$ is a closed subgroup scheme of $G$, and $p:G\to G'$ is faithfully flat and quasi-compact. One obviously has $\Ker(p)=\Ker(u)=N$, and hence, by Exp. IV, 3.3.2.1 and 5.1.7, $G'$ represents the quotient \fpqc sheaf $\widetilde{G/N}$.
+% typo?: kept as printed: G' described as a subgroup of G.
+
+(ii) The second assertion is contained in 6.6; let us show the first. If $u$ is a monomorphism, so is $p$; then $p$ is both a monomorphism and an effective epimorphism, hence an isomorphism (cf. IV, 1.14). This proves 6.7.
+\end{proof}
+Finally, let us mention the following corollaries (cf. [Per76], 4.2.6 to 4.2.8).
+\begin{corollary}{6.8}\label{VIA.6.8}
+The category of quasi-compact commutative $k$-group schemes is abelian.
+\end{corollary}
+Taking account of 6.7, the proof is analogous to that of 5.4.2.
+\begin{corollary}{6.9}\label{VIA.6.9}
+If $\operatorname{char}(k)=0$, every $k$-group scheme $G$ is geometrically reduced.
+\end{corollary}
+Indeed, if $g\in G$ and $K$ is an algebraic closure of $\kappa(g)$, one has $\OO_{G,e}\otimes_kK\simeq\OO_{G_K,g_K}$, so it suffices to show that $\OO_{G,e}=\OO_{G^0,e}$ is geometrically reduced. One is thus reduced to the case where $G$ is connected, hence quasi-compact (2.6.5). Then the result follows from 6.5 and Cartier's theorem for algebraic groups (cf. VIB, 1.6.1 or [DG70] §II.6, Th. 1.1).
+\begin{corollary}{6.10}\label{VIA.6.10}
+Let $G$ be a quasi-compact $k$-group. Suppose $k$ algebraically closed.
+\begin{enumeratei}
+\item Let $f:G\to H$ be a faithfully flat morphism of $k$-groups. Then the induced map $G(k)\to H(k)$ is surjective.
+\item The set of rational points is dense in $G$.
+\end{enumeratei}
+\end{corollary}
+For the proof, we refer to [Per75], V 3.7 \& 3.9.
+
+\begin{thebibliography}{Ray67b}
+\bibitem[An73]{VIA.An73}\nde{Additional references cited in this exposé.} S. Anantharaman, \emph{Schémas en groupes, espaces homogènes et espaces algébriques sur une base de dimension 1}, Mém. Soc. Math. France \textbf{33} (1973), 5--79.
+\bibitem[BAC]{VIA.BAC} N. Bourbaki, \emph{Algèbre commutative}, Chap. I--IV and V--VII, Masson, 1985.
+\bibitem[DG70]{VIA.DG70} M. Demazure, P. Gabriel, \emph{Groupes algébriques}, Masson \& North-Holland, 1970.
+\bibitem[Per75]{VIA.Per75} D. Perrin, \emph{Schémas en groupes quasi-compacts sur un corps}, Publ. Math. Orsay no. 165--75.46 (1st part), \url{http://portail.mathdoc.fr/PMO/}.
+\bibitem[Per76]{VIA.Per76} D. Perrin, \emph{Approximation des schémas en groupes, quasi-compacts sur un corps}, Bull. Soc. Math. France \textbf{104} (1976), 323--335.
+% typo: ``Mah.'' -> ``Math.''.
+\bibitem[Ray67a]{VIA.Ray67a} M. Raynaud, \emph{Passage au quotient par une relation d'équivalence plate}, pp. 78--85 in: \emph{Proc. Conf. Local Fields} (Driebergen) (ed. T. A. Springer), Springer-Verlag, 1967.
+\bibitem[Ray67b]{VIA.Ray67b} M. Raynaud, \emph{Sur le passage au quotient par un groupoïde plat}, C. R. Acad. Sci. Paris (Sér. A) \textbf{265} (1967), 384--387.
+\bibitem[Ray70]{VIA.Ray70} M. Raynaud, \emph{Faisceaux amples sur les schémas en groupes et les espaces homogènes}, Lect. Notes Maths. \textbf{119}, Springer-Verlag, 1970.
+\end{thebibliography}

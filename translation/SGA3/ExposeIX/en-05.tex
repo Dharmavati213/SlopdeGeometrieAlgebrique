@@ -1,0 +1,205 @@
+% PDF pp. 25--32; continuation of statement 6.6.
+Let $s\in S$ be such that $u_s:H_s\to G_s$ is a monomorphism; then there exists an open neighborhood $U$ of $s$ such that $u$ induces a monomorphism $H|U\to G|U$.
+\end{corollary}
+Indeed, let $K=\Ker(u)$; the hypothesis on $u_s$ means that $K_s$ is the unit group, the conclusion that $K|U$ is the unit group for suitable $U$. Now $G$ being separated over $S$, $K$ is a closed subgroup of $H$, and in the case where one does not suppose $S$ locally noetherian, but on the other hand $G$ locally of finite presentation over $S$, $K$ is locally of finite presentation over $S$,\footnotemark[\value{footnote}] and hence of finite presentation over $S$ since it is separated over $S$ ($H$ being so) and quasi-compact over $S$ (being closed in $H$, which is quasi-compact over $S$). One may therefore apply 6.5, whence 6.6.
+\begin{remark}{6.6.1}\label{IX.6.6.1}
+\nde{The numbering 6.6.1 has been added, for later references.} Under the hypotheses of 6.6, one will note that when $G$ is in addition affine over $S$ (resp. of finite presentation over $S$), $H|U\to G|U$ is even a closed immersion, as pointed out in 2.5 (resp. 2.6).
+\end{remark}
+\begin{corollary}{6.7}\label{IX.6.7}
+Let $u:H\to G$ be a homomorphism of $S$-group preschemes, with $H$ of multiplicative type and of finite type; suppose $S$ locally noetherian or $G$ locally of finite presentation over $S$.
+
+If all the homomorphisms induced on the fibers $u_s:H_s\to G_s$ are monomorphisms, then $u$ is a monomorphism.
+\end{corollary}
+The reasoning is the same as in 6.6, the hypothesis that $G$ is separated over $S$ being unnecessary here to ensure that $K$ is closed in $H$, since the hypothesis that the $u_s$ are monomorphisms implies that $K$ is set-theoretically reduced to the unit section of $G$.
+% typo?: G rather than H in the last phrase retained as printed.
+\begin{theorem}{6.8}\label{IX.6.8}
+Let $u:H\to G$ be a homomorphism of $S$-group preschemes, with $H$ of multiplicative type and of finite type, and $G$ separated over $S$. Suppose in addition $S$ locally noetherian or $G$ of finite presentation over $S$.
+
+Then $K=\Ker(u)$ is a subgroup of multiplicative type and of finite type of $H$, and $u$ factors as
+\[
+H\xrightarrow{u'}H/K\xrightarrow{u''}G,
+\]
+where $H/K$ is of multiplicative type and of finite type, $u'$ is the canonical homomorphism and is faithfully flat (and affine), and $u''$ is a monomorphism.
+\end{theorem}
+(N.B. As remarked in 6.6.1, $u''$ is a closed immersion if $G$ is affine over $S$ or of finite presentation over $S$.) It suffices to prove that $K$ is of multiplicative type, the rest of the proposition then following from 2.7 and IV 5.2.6.
+
+Suppose first $G$ of finite presentation over $S$. This hypothesis being stable under base change, to prove that $K$ is of multiplicative type one is reduced to the case where $H$ is diagonalizable, i.e. $H=D_S(M)$, where $M$ is a commutative group of finite type. Let $s\in S$; then $K_s$ is a closed subgroup of $H_s=D_{\kappa(s)}(M)$, hence by 8.1\nde{The erroneous reference to IV 4.7.5 has been corrected. Note that \No8 of the present expos\'e is independent of nos. 2 to 7.} is of the form $D_{\kappa(s)}(N)$, where $N$ is a quotient group of $M$. Put $K'=D_S(N)$; then $K'$ is a subgroup of multiplicative type of $H$; let $v':K'\to G$ be induced by $u$.\nde{``Induced by $G$'' has been corrected to ``induced by $u$''.} Then $v'_s$ is the unit homomorphism by construction, so by 5.2 there exists an open neighborhood $U$ of $s$ such that $v'|U:K'|U\to G|U$ is the unit homomorphism. Thus, replacing $S$ by $U$ if necessary, one may suppose that $v'$ is the unit homomorphism, and hence that $u$ factors as
+\[
+H\xrightarrow{u'}H/K'\xrightarrow{u''}G.
+\]
+Now, since $u''_s$ is deduced from $u_s$ by factoring through $H_s\to H_s/\Ker(u_s)$, $u''_s$ is a monomorphism (IV 5.2.6), so by 6.6 there exists an open neighborhood $U$ of $s$ such that $u''|U:(H/K')|U\to G|U$ is a monomorphism. Thus, restricting $S$ if necessary, one sees that $u''$ is a monomorphism, hence $\Ker(u)=\Ker(u')=K'$, which proves that $\Ker u$ is of multiplicative type.
+
+The same proof is valid if, instead of supposing $G$ of finite presentation over $S$, one supposes $S$ locally noetherian, at least in the case where $H$ is diagonalizable. In the case where one does not make this hypothesis on $H$, one must show that one can find a covering base change $S'\to S$, with $S'$ locally noetherian, which trivializes $H$. This is indeed what one will see in the next expos\'e (X 4.6).
+
+\sgasection{7}{Algebraicity of formal homomorphisms into an affine group}
+\begin{theorem}{7.1}\label{IX.7.1}
+Let $A$ be a noetherian ring endowed with an ideal $I$ such that $A$ is separated and complete for the $I$-adic topology, $S=\Spec(A)$, $S_n=\Spec(A/I^{n+1})$, $H,G$ $S$-group preschemes, with $H$ of isotrivial multiplicative type and $G$ affine.
+
+Then the canonical map
+\begin{equation}\tag{x}
+\theta:\Hom_{S\text{-}\mathrm{gr.}}(H,G)\to\varprojlim_n\Hom_{S_n\text{-}\mathrm{gr.}}(H_n,G_n)
+\end{equation}
+is bijective (where $H_n,G_n$ are the $S_n$-groups deduced from $H,G$ by the base change $S_n\to S$).
+\end{theorem}
+Suppose first $H$ diagonalizable, hence of the form
+\[
+H=\Spec A(M),
+\]
+where $B=A(M)$ is the group algebra of the commutative group $M$ with coefficients in $A$. One also has $G=\Spec(C)$, where $C$ is an $A$-algebra endowed with a diagonal map (satisfying the known axioms). Then the homomorphisms of $S$-groups $H\to G$ correspond bijectively to the homomorphisms of $A$-algebras $\varphi:C\to B$ compatible with the diagonal maps, i.e. such that for every $f\in C$,
+\[
+\Delta_H(\varphi(f))=(\varphi\otimes\varphi)(\Delta_G(f))
+\]
+where $\Delta_H$ and $\Delta_G$ are the diagonal maps. One has an analogous description for the homomorphisms of $S_n$-groups $H_n\to G_n$, defined by certain homomorphisms of $A_n$-algebras $\varphi_n:C_n\to B_n$ (where one puts $A_n=A/I^{n+1}$, $B_n=B\otimes_A A_n$, $C=C\otimes_A A_n$). Put
+\[
+\widehat B=\varprojlim_n B_n\quad\text{and}\quad\widehat C=\varprojlim_n C_n;
+\]
+then $\widehat B=\varprojlim_n A_n(M)$ is identified with a submodule of the product $A^M$ (namely that consisting of the families $(a_m)_{m\in M}$ of elements of $A$ tending to 0 (for the $I$-adic topology) along the filter of complements of finite subsets of $M$). This already implies that the canonical homomorphism $B\to\widehat B$ is injective,\nde{What follows has been expanded.} since the projective system $\theta(\varphi)=(\varphi_n)_{n\geq0}$ defines a homomorphism $\widehat\varphi=\widehat C\to\widehat B$ such that the diagram below is commutative:
+\[
+\xymatrix{C\ar[r]^\varphi\ar[d]&B\ar[d]\\\widehat C\ar[r]_{\widehat\varphi}&\widehat B.}
+\]
+% typo?: C rather than C_n in the definition and equals sign after widehat varphi retained as printed.
+Let us prove that $\theta$ is surjective: take a projective system $(\varphi_n)_{n\geq0}$ and prove that it comes by reduction from a $\varphi$ in the left-hand side. A priori, $(\varphi_n)$ defines a homomorphism on the completed algebras
+\[
+\widehat\varphi:\widehat C\to\widehat B,
+\]
+and everything amounts to seeing that its composite $\Phi:C\to\widehat C\xrightarrow{\widehat\varphi}\widehat B$ with the canonical homomorphism $C\to\widehat C$ maps $C$ into $B$. Indeed, if this is so, one finds a homomorphism of $A$-algebras $\varphi:C\to B$ reducing to the $\varphi_n$, whence one concludes immediately that it is compatible with the diagonal maps (since the $\varphi_n$ are so and $B\otimes_A B\to\widehat{B\otimes_A B}$ is injective, as one sees as above on replacing $M$ by $M\times M$).
+
+Let us note that the diagonal homomorphism $\Delta_H$ of $H$ defines, on passing to completions, a homomorphism
+\[
+\widehat\Delta_H:\widehat B\to\widehat{B\otimes_A B},
+\]
+and one has a commutative diagram (deduced by passing to the projective limit from the analogous diagrams defined by the $\varphi_n$):
+\[
+\xymatrix{C\ar[r]^\Phi\ar[d]_{\Delta_G}&\widehat B\ar[d]^{\widehat\Delta_H}\\C\otimes_A C\ar[r]_\Psi&\widehat{B\otimes_A B},}
+\]
+where $\Psi$ is the composite
+\[
+C\otimes_A C\xrightarrow{\Phi\otimes\Phi}\widehat B\otimes_A\widehat B\to\widehat{B\otimes_A B}
+\]
+(the last arrow is the evident canonical homomorphism). It follows that for every $f\in C$, $\Phi(f)$ is an element of $\widehat B$ whose image under $\widehat\Delta_H$ is a ``decomposable'' element of $\widehat{B\otimes_A B}$, i.e. is in the image of $\widehat B\otimes_A\widehat B$.
+
+Denote by $(e_m)_{m\in M}$ the canonical basis of $A(M)$ and by $(e_{m,m'})$ that of $A(M\times M)=A(M)\otimes_A A(M)$. Since $\Delta_H(e_m)=e_m\otimes e_m=e_{m,m}$ for every $m$, it now suffices to apply the
+\begin{lemma}{7.2}\label{IX.7.2}
+Let $A$ be a noetherian ring, $M$ a set, $(a_{m,m'})$ a family of elements of $A$ indexed by $M\times M$, such that
+
+(i) $a_{m,m'}=0$ if $m\ne m'$ (i.e. the support of the family is contained in the diagonal of $M\times M$),
+
+(ii) One has
+\[
+a_{m,m'}=\sum_i b^i_m c^i_{m'}
+\]
+where the $b^i,c^i$ are finitely many elements of $A^M$ (i.e. $(a_{m,m'})$ belongs to the image of the canonical homomorphism $A^M\otimes_A A^M\to A^{M\times M}$).
+
+Under these conditions, the support of the family $(a_{m,m'})$ is finite.
+\end{lemma}
+By (i), the family $(a_{m,m'})$ is determined by knowing the $a_m=a_{m,m}$. Put, for every $x=(x_n)_{n\in M}\in A^{(M)}$:
+\[
+(u\cdot x)_m=\sum_{m'}a_{m,m'}x_{m'},
+\]
+i.e. interpret $(a_{m,m'})$ as the matrix of a homomorphism $u:A^{(M)}\to A^M$. Then by (i) one simply has
+\[
+(u\cdot x)_m=a_m x_m.
+\]
+On the other hand, by (ii) one has
+\[
+u\cdot x\in\sum_i A\cdot b^i,
+\]
+so $u(A^{(M)})$ stays in an $A$-module of finite type. Consequently, denoting by $(e^m)_{m\in M}$ the canonical basis of $A^{(M)}\subseteq A^M$, the $a_me^m$ stay in an $A$-module of finite type. As $A$ is noetherian, the module they generate is itself of finite type, which implies (since the $e^m$ are linearly independent) that all but finitely many of the $a_m$ are zero. This proves 7.2 and hence 7.1 in the case where $H$ is diagonalizable.
+
+Let us now prove the general case of 7.1, where one merely supposes $H$ isotrivial, i.e. that there exists a finite surjective étale morphism $S'\to S$ such that $H'=H\times_S S'$ is diagonalizable. We shall use only the fact that $S'\to S$ is finite and covering (for the faithfully flat and quasi-compact topology, or simply for the canonical topology of $\Sch$) --- thus the hypothesis ``étale'' could be replaced by ``flat''.
+
+Let $S''=S'\times_S S'$; introduce similarly $S'_n$ and $S''_n=S''\times_S S_n=S'_n\times_{S_n}S'_n$, and $H',G',H'',G'',H'_n,G'_n,H''_n,G''_n$ deduced from $H$ and $G$ by the base changes which one can guess. Note that $H'$ and $H''$ are now diagonalizable. Note also that $S'$, and hence $S''$, is affine, and that if $S'=\Spec(A')$, $S''=\Spec(A'')$, then $A'$ and $A''$ are separated and complete for the topology defined by $IA'$ resp. by $IA''$ (since $A'$ and $A''$ are finite over $A$). Since $S'\to S$ and $S'_n\to S_n$ are covering, one obtains a commutative diagram of maps of sets whose two rows are exact:
+\begingroup\small
+\[
+\xymatrix@C=12pt{
+\Hom_{S\text{-}\mathrm{gr.}}(H,G)\ar[r]\ar[d]_u&\Hom_{S'\text{-}\mathrm{gr.}}(H',G')\ar@<.5ex>[r]\ar@<-.5ex>[r]\ar[d]_{u'}&\Hom_{S''\text{-}\mathrm{gr.}}(H'',G'')\ar[d]^{u''}\\
+\varprojlim_n\Hom_{S_n\text{-}\mathrm{gr.}}(H_n,G_n)\ar[r]&\varprojlim_n\Hom_{S'_n\text{-}\mathrm{gr.}}(H'_n,G'_n)\ar@<.5ex>[r]\ar@<-.5ex>[r]&\varprojlim_n\Hom_{S''_n\text{-}\mathrm{gr.}}(H''_n,G''_n).}
+\]
+\endgroup
+(N.B. The second row is exact as a projective limit of exact diagrams relative to the various $S'_n\to S_n$.) By what has already been proved (diagonalizable case), $u'$ and $u''$ are bijective. The same is therefore true of $u$, which completes the proof of 7.1.
+\begin{corollary}{7.3}\label{IX.7.3}
+Under the conditions of 7.1, suppose in addition $G$ smooth over $S$, and let $u_0:H_0\to G_0$ be a homomorphism of $S_0$-groups. Then there exists a homomorphism of $S$-groups $u:H\to G$ lifting $u_0$. Two such liftings $u,u'$ are conjugate by an element $g$ of $G(S)$ reducing to the unit element of $G_0(S_0)$.
+\end{corollary}
+Follows from the conjunction of 3.6 and 7.1. To construct a $u$, one constructs the $u_n$ successively, which is possible by 3.6, and by 7.1 the system $(u_n)$ comes from a $u$. Given two liftings $u$ and $u'$, to construct $g$ such that $u'=\operatorname{int}(g)u$, $g_0=1$, one constructs successively $g_n$ such that $g_0=1$, $g_n$ is deduced from $g_{n+1}$ by reduction, $u'_n=\operatorname{int}(g_n)u_n$; this is possible thanks to 3.6. Since $A$ is separated and complete, the $g_n$ come from a $g\in G(S)$, and to prove that $u'=\operatorname{int}(g)u$ it suffices to use injectivity in assertion 7.1.
+\begin{remark}{7.4}\label{IX.7.4}
+One will compare 7.1 with EGA III 5.4.1, which implies that statement 7.1 is valid if, instead of supposing $H$ of multiplicative type and $G$ affine, one supposes $H$ proper over $S$, and $G$ separated and locally of finite type over $S$. Having a statement like 7.1 without a properness hypothesis is rather exceptional, and must here be interpreted as one of the aspects of the great ``rigidity'' of the structure of a group of multiplicative type. The analogous statement with $G=H=\Ga$ (additive group) is false in general, as one sees by taking $A$ of characteristic $p>0$ and defining the $u_n$ by reduction modulo $I^{n+1}$ from an additive formal series
+\[
+u(T)=\sum_{n\geq0}a_n T^{p^n},
+\]
+where the $a_n$ are elements of $A$ tending to 0 for the $I$-adic topology, but not for the discrete topology. Statement 7.1 also becomes false if one suppresses the hypothesis $G$ affine, even for $H=\Gm$ (multiplicative group); one sees an example (with $A$ a complete discrete valuation ring) by starting with an elliptic curve over the field of fractions $K$ of $A$ which reduces (in the Néron-Kodaira reduction theory, say) to the group $\Gm$ over the residue field $k$:\nde{One could make such an example explicit\dots} one shall therefore have a smooth commutative group scheme $G$ over $S$ whose special fiber is $\mathbf{G}_{\mathrm{m},k}$ (which allows one, thanks to 3.6, to define a projective system of isomorphisms $u_n:H_n\isomto G_n$, where $H=\mathbf{G}_{\mathrm{m},A}$), but whose generic fiber is an abelian variety, so that there is no homomorphism of $S$-groups $H\to G$ other than 0.
+\end{remark}
+
+\sgasection{8}{Subgroups, quotient groups and extensions of groups of multiplicative type over a field}
+\footnote{Added in July 1969. This afterthought \No\ is independent of nos. 3 to 7.}
+\begin{scholium}{8.0}\label{IX.8.0}
+\nde{This scholium has been added.} Let $k$ be a field, $H$ an affine $k$-group scheme. Denote by $k[H]$ its affine algebra and by $X(H)=\Hom_{k\text{-}\mathrm{gr.}}(H,\mathbf{G}_{\mathrm{m},k})$ the group of characters of $H$. By the independence lemma for characters, $X(H)$ is a linearly independent subset of $k[H]$. It follows that $H$ is diagonalizable if and only if $X(H)$ generates $k[H]$ as a $k$-vector space.
+\end{scholium}
+\begin{proposition}{8.1}\label{IX.8.1}
+Let $G$ be a diagonalizable (resp. multiplicative type) group scheme over a field $k$.\nde{``Over a field $k$'', implicit in the original, has been added; on the other hand, ``algebraic group'' has been replaced by ``group scheme'', since $G$ is not supposed of finite type.} Then for every subgroup scheme $H$ of $G$, $H$ and $G/H$ are diagonalizable (resp. of multiplicative type).
+\end{proposition}
+Definition 1.1 reduces us immediately to the case without ``resp.'' An easy passage to the limit, using VI$_{\mathrm B}$ 11.13 and VIII 3.1, reduces us to the case where $G$ is of finite type over $k$.\nde{Expand this ``passage to the limit'': this uses 8.0 and also the equality $G/H=\varprojlim_i G_i/H_i$, cf. VI$_{\mathrm B}$, proof of 11.17. To see that $H=\varprojlim_i(H\cap G_i)$, does one use the fact that $H$ is closed in $G$? Using this, one can give a direct proof\dots} By VI$_{\mathrm B}$ 11.16,\nde{VI$_{\mathrm B}$ 11.16 ought doubtless to be rewritten in the usual, more pleasant form. In particular, a single $f_i$ suffices below\dots} one can find a finite family of nonzero elements
+\begin{equation}\tag{8.1.1}
+f_i=\sum a_{im}m,\qquad a_{im}\in k
+\end{equation}
+of the affine ring $k(M)$ of $G=D_k(M)$ such that the points of $H$ (with values in an arbitrary $k$-algebra $k'$) are the points $g\in G(k')$ such that one has
+\begin{equation}\tag{8.1.2}
+\tau_g f_i=\lambda_i(g)f_i,\qquad\text{with }\lambda_i(g)\in k',
+\end{equation}
+where $\tau_g$ denotes translation by $g$. Now one has
+\begin{equation}\tag{8.1.3}
+\tau_g f_i=\sum a_{im}\chi_m(g)m,
+\end{equation}
+$\chi_m:G\to\mathbf{G}_{\mathrm{m},k}$ being the character associated with $m$, so that (8.1.2) is equivalent to the relation
+\begin{equation}\tag{8.1.4}
+\chi_m(g)=\chi_{m'}(g)\qquad\text{if }m,m'\in Z_i,
+\end{equation}
+$Z_i$ denoting the set of $m\in M$ such that $a_{im}\ne0$. This relation may also be written
+\[
+\chi_{m'-m}(g)=1\qquad\text{if }m,m'\in Z_i.
+\]
+Denoting by $N$ the subgroup of $M$ generated by all the $m'-m$ ($i$ variable, and $m,m'\in Z_i$), one deduces from the definition of $D_k(M)$ ($\simeq G$) that $H$ is identified with $D_k(M/N)$. It then follows from VIII 3.1 that $G/H$ is identified with $D_k(N)$. \hfill Q.E.D.
+\begin{proposition}{8.2}\label{IX.8.2}
+\nde{The statement, as well as its proof, has been expanded.} Let $k$ be a field, $H,K$ $k$-group schemes of multiplicative type and of finite type, and $G$ a $k$-group scheme such that one has an exact sequence
+\[
+1\to H\to G\to K\to1
+\]
+(which implies that $G$ is of finite type over $k$).
+
+(i) If one supposes $G$ commutative or $K$ connected, then $G$ is of multiplicative type.
+
+(ii) If $K$ and $H$ are diagonalizable, $K$ being a torus, then $G$ is diagonalizable.
+\end{proposition}
+For the proof of (i), the reader will refer to XVII 7.1.1, of which 8.2 (i) is a particular case; the case of a field is treated in part (i) of the proof of XVII 7.1.1 (not using the results of the following expos\'es).
+
+(ii) Suppose now $K$ and $H$ diagonalizable:
+\[
+K\simeq D_k(M)\quad\text{and}\quad H\simeq D_k(N),
+\]
+\footnotemark[\value{footnote}] and suppose $G$ of multiplicative type (which is the case by (i) if $K$ is a torus). Then, by X 1.4, $G$ is isotrivial over $k$, i.e. there exists a finite separable extension $k'/k$ such that $G'=G\times_k k'$ is diagonalizable, hence $G'=D_{k'}(E)$ for a commutative group $E$, and one has an exact sequence
+\begin{equation}\tag{1}
+0\to D_{k'}(N)\to D_{k'}(E)\to D_{k'}(M)\to0.
+\end{equation}
+Thus, by VIII, 3.1 and 3.2, $M$ is a subgroup of $E$, and one has an exact sequence
+\begin{equation}\tag{2}
+0\to M\to E\to N\to0.
+\end{equation}
+For a given extension $E_0$ of $N$ by $M$, consider the diagonalizable $k$-group $G_0=D_k(E_0)$; then the $k$-group functor $A$ of automorphisms of the extension
+\begin{equation}\tag{3}
+1\to H\to G_0\to K\to1
+\end{equation}
+i.e. the group subfunctor of $\underline{\Aut}_{k\text{-}\mathrm{gr.}}(G_0)$ whose points over a $k$-prescheme $T$ are the $\phi\in\Aut_{T\text{-}\mathrm{gr.}}(G_T)$ inducing the identity on $H_T$ and on $K_T$, is identified with $\uHom_{k\text{-}\mathrm{gr.}}(K,H)$, which by VIII 1.5 is the constant $k$-group with value $L=\Hom_{\mathrm{gr.}}(N,M)$.
+
+One therefore sees that the classification of extensions $G$ of $K$ by $H$ which over a separable closure $k_s$ of $k$ become isomorphic to extension (3) is the same as that of $k$-torsors for the étale topology under the constant group $L_k$. Denoting by $\Gamma=\Gal(k_s/k)$, these are classified by the Galois cohomology group ($L$ being a trivial $\Gamma$-module):
+\[
+H^1_{\mathrm{\acute et}}(k,L_k)=H^1(\Gamma,L)=\Hom_{\mathrm{gr.\ top.}}(\Gamma,L).
+\]
+If, in addition, $K$ is a torus, $M$ is torsion-free, and hence so is $L$, whence $\Hom_{\mathrm{gr.\ top.}}(\Gamma,L)=0$; it follows that every extension of $K$ by $H$ is already diagonalizable.
+\begin{remark}{8.3}\label{IX.8.3}
+As already pointed out in the proof of 8.2, the first assertion is stated and proved over an arbitrary base in XVII 7.1.1. On the other hand, the second assertion generalizes, with essentially the same proof, to the case of a normal integral base scheme (or more generally a geometrically unibranch one), using X 5.13 below.
+
+Finally, one may also consider 8.1 as a corollary of the (considerably less trivial) result 6.8, also valid over an arbitrary base scheme.\nde{Note, however, that the proof of 6.8 uses 8.1!}
+\end{remark}
+\begin{thebibliography}{BEns}
+\item[]\nde{Additional references cited in this Expos\'e.}
+\bibitem[BEns]{IX.BEns} N. Bourbaki, \emph{Théorie des ensembles}, Chap. I--IV, Hermann, 1970.
+\end{thebibliography}

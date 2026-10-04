@@ -1,0 +1,190 @@
+\begin{corollary}{2.3}\label{XXII.2.3}
+Let $S$ be a scheme, $G$ a reductive $S$-group (resp. and $T$ a maximal torus of $G$). Then $G$ is locally splittable (resp. locally splittable relative to $T$) for the \'etale topology on $S$.
+\end{corollary}
+\begin{corollary}{2.4}\label{XXII.2.4}
+Let $k$ be a field, $G$ a reductive $k$-group. There exists a finite separable extension $K/k$ such that $G_K$ is splittable.
+\end{corollary}
+\begin{remark}{2.5}\label{XXII.2.5}
+Using 2.1 and the remark Exp.~XIX 2.9, one proves at once the following result: let $G=(G,T,M,R)$ be a split $S$-group; there exists a covering of $S$ by open subsets $U_i$ such that each split group $G_{U_i}$ comes by base change from a split group over a noetherian ring (and in fact a $\ZZ$-algebra of finite type). We will moreover prove that every split group over $S$ already comes from a split $\ZZ$-group (Exp.~XXV).
+\end{remark}
+\numpara{2.6}\label{XXII.2.6}
+Let $k$ be an algebraically closed field and $G$ a reductive $k$-group. One knows (2.4 for example) that splittings of $G$ exist. Let $(G,T,M,R)$ and $(G,T',M',R')$ be two splittings of $G$; the root data $\mathscr R(G,T,M,R)$ and $\mathscr R(G,T',M',R')$ are then isomorphic.
+
+Indeed, one sees first that one may reduce to the case where $T=T'$ (for there exists $g\in G(k)$ such that $T'=\operatorname{int}(g)T$, and one easily verifies that if one transports a splitting by an automorphism of $G$, one obtains a root datum isomorphic to the initial datum); but since $S=\Spec(k)$ is connected, the isomorphism $\mathrm D_k(M)\isomto T\isomto\mathrm D_k(M')$ comes from a unique isomorphism $M\simeq M'$; for the same reason, there exists at most one system of roots of $G$ with respect to $T$.
+\begin{definition}{2.6.1}\label{XXII.2.6.1}
+{\renewcommand{\thefootnote}{(4)}\nde{The number 2.6.1 has been added, for later references.}}%
+If $G$ is a reductive $k$-group ($k$ an algebraically closed field), one will call the \emph{type of $G$} the isomorphism class of the root datum defined by any splitting of $G$; if $G$ is a torus, of type $M$ in the sense of Exp.~IX 1.4, then the type of $G$ as a reductive group is given by the trivial root datum $(M,M^*,\varnothing,\varnothing)$.
+\end{definition}
+By 1.15 b){\renewcommand{\thefootnote}{(5)}\nde{The original, which referred to 1.17, has been corrected.}}, the type is invariant under (algebraically closed) extension of the base field.
+\begin{definition}{2.7}\label{XXII.2.7}
+If $G$ is a reductive $S$-group and if $s\in S$, one calls the \emph{type of $G$ at $s$} the type of the reductive $\overline s$-group $G_{\overline s}$.
+
+For every $S'\to S$ and every $s'\in S'$ projecting to $s\in S$, the type of $G_{S'}$ at $s'$ is equal to the type of $G$ at $s$.
+
+If $G$ is splittable, and if $(G,T,M,R)$ is a splitting of $G$, then the type of $G$ at $s$ is the isomorphism class of $\mathscr R(G,T,M,R)$ by 1.15 b){\renewcommand{\thefootnote}{(5)}\footnotemark[6]}. One then obtains at once from 2.3 the
+\end{definition}
+\begin{proposition}{2.8}\label{XXII.2.8}
+Let $G$ be a reductive $S$-group ($S\ne\varnothing$). The function
+\[
+s\mto\text{type of $G$ at $s$}
+\]
+is locally constant on $S$. In particular, there exists a partition of $S$ into nonempty open subschemes such that on each of them $G$ has constant type. More precisely, let $E$ be the set of types of the fibers of $G$; for every $t\in E$, let $S_t$ be the set of points $s\in S$ where $G$ has type $t$; then $(S_t)_{t\in E}$ is a partition of $S$ and each $S_t$ is open and closed (and nonempty).
+\end{proposition}
+
+\sgasection{3}{The Weyl group}\label{XXII.sec.3}
+\numpara{3.1}\label{XXII.3.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$. Then
+\[
+W_G(T)=\uNorm_G(T)/T
+\]
+is a finite \'etale $S$-group (Exp.~XIX 2.5). The morphism $n\mto\operatorname{int}(n)$ induces on passing to the quotient a canonical monomorphism (which is moreover an open immersion):
+\[
+W_G(T)\to\underline{\Aut}_{S\text{-gr.}}(T).
+\]
+\numpara{3.2}\label{XXII.3.2}
+Assume now that $G$ is splittable relative to $T$. Choose a splitting, say $(G,T,M,R)$. One then has a canonical isomorphism (Exp.~VIII 1.5)
+\[
+\underline{\Aut}_{S\text{-gr.}}(T)\simeq(\Aut_{\mathrm{gr.}}(M))_S.
+\]
+In particular, if $W$ is the Weyl group of the root datum $\mathscr R(G)$ (Exp.~XXI 1.1.8), one has a monomorphism
+\[
+W_S\to\underline{\Aut}_{S\text{-gr.}}(T).
+\]
+\numpara{3.3}\label{XXII.3.3}
+For each root $\alpha\in R$, the reflection $s_\alpha\in W$ acts on $M$ by
+\[
+s_\alpha(x)=x-(\alpha^*,x)\alpha,
+\]
+hence on $T$ (by the preceding morphism), by
+\[
+s_\alpha(t)=t\cdot\alpha^*(\alpha(t))^{-1}.
+\]
+On the other hand, since $\mathfrak g^\alpha$ is assumed free, there exists an $X\in\Gamma(S,\mathfrak g^\alpha)^\times$. Consider then $w_\alpha(X)\in\uNorm_G(T)(S)$ (Exp.~XX 3.1). One has (\loccit)
+\[
+\operatorname{int}(w_\alpha(X))(t)=s_\alpha(t).
+\]
+Since $W$ is generated by the $s_\alpha$, $\alpha\in R$, it follows from the preceding remarks that if one considers $W$ and $\uNorm_G(T)(S)/T(S)$ as groups of automorphisms of $T$, one has
+\[
+W\subset\uNorm_G(T)(S)/T(S)\subset W_G(T)(S).
+\]
+By definition of the constant group $W_S$ associated with $W$ (\cf I 1.8), one therefore has a commutative diagram
+\[
+\xymatrix{W_S\ar[rr]\ar[dr]&&W_G(T)\ar[dl]\\&\underline{\Aut}_{S\text{-gr.}}(T).&}
+\]
+\begin{proposition}{3.4}\label{XXII.3.4}
+Let $S$ be a scheme, $(G,T,M,R)$ a split $S$-group, $W$ the Weyl group of the root datum $\mathscr R(G)$. Then the canonical monomorphism
+\[
+W_S\to W_G(T)=\uNorm_G(T)/T
+\]
+is an isomorphism.
+\end{proposition}
+These are indeed \'etale groups over $S$; it therefore suffices to verify that for every $s\in S$, $W_S(\overline s)\to W_G(T)(\overline s)$ is an isomorphism.{\renewcommand{\thefootnote}{(6)}\nde{Indeed, since $W_S$ and $W_G(T)=\uNorm_G(T)/T$ are \'etale over $S$, the morphism $f:W_S\to W_G(T)=\uNorm_G(T)/T$ is \'etale (EGA IV$_4$, 17.3.4); if moreover each $f_{\overline s}$ is an isomorphism then, according to \loccit, 17.9.1, $f$ will be a surjective open immersion, hence an isomorphism.}} Now this last assertion follows, for example, from \textit{Bible}, \S~11.3, th.~2.
+\begin{remark}{3.5}\label{XXII.3.5}
+Using 2.3, the preceding proposition gives a new proof of the fact that the Weyl group of a maximal torus of a reductive $S$-group $G$ is finite over $S$ (Exp.~XIX 2.5 (ii)).{\renewcommand{\thefootnote}{(7)}\nde{Indeed, let $T$ be a maximal torus of $G$. The fact that $W_G(T)$ is finite over $S$ is local for the (fpqc) topology (EGA IV$_2$, 2.7.1), hence a fortiori for the \'etale topology. By 2.3, one may therefore assume that $G$ is split relative to $T$, in which case the assertion follows from 3.4.}}
+\end{remark}
+\numpara{3.6}\label{XXII.3.6}
+Under the conditions of 3.1, for every $w\in W_G(T)(S)$, one denotes by $N_w${\renewcommand{\thefootnote}{(8)}\nde{$Q_w$ has been replaced by $N_w$, just as in XX 3.0 $Q$ had been replaced by $N^\times$.}} the fibered product of the following diagram:
+\[
+\xymatrix{N_w\ar[r]\ar[d]&\uNorm_G(T)\ar[d]\\ S\ar[r]_w&W_G(T).}
+\]
+It is an open and closed subscheme of $\uNorm_G(T)$, which is a principal homogeneous bundle under $T$ on the left (resp. on the right) by the law $(t,q)\mto tq$ (resp. $(q,t)\mto qt$). If $n\in N_w(S)$, one has
+\[
+N_{ww'}=n\cdot N_{w'},\qquad N_{w'w}=N_{w'}\cdot n.
+\]
+\numpara{3.7}\label{XXII.3.7}
+In particular, if $\alpha$ is a root of $G$ with respect to $T$, $N_{s_\alpha}$ is none other than what had been denoted by $N^\times$ in Exp.~XX 3.0. If $\mathfrak g^\alpha$ is free over $S$, one therefore has $N_{s_\alpha}(S)\ne\varnothing$.
+
+By 3.4 and condition (D 2) of the splitting, one deduces the
+\begin{corollary}{3.8}\label{XXII.3.8}
+Under the conditions of 3.4, the morphism
+\[
+\uNorm_G(T)(S)\to W_G(T)(S)=\Hom_{\mathrm{loc.cons.}}(S,W)
+\]
+is surjective. In particular, for every $w\in W$, there exists an $n_w\in\uNorm_G(T)(S)$ such that $\operatorname{int}(n_w)|_T=w$.
+\end{corollary}
+
+\sgasection{4}{Homomorphisms of split groups}\label{XXII.sec.4}
+\sgasection{4.1}{The ``big cell''}
+\numpara{4.1.1}\label{XXII.4.1.1}
+Let $(G,T,M,R)$ be a split reductive $S$-group. Choose a \emph{system of positive roots} (Exp.~XXI 3.2.1) $R_+$ of the root datum $\mathscr R(G)$. Put $R_-=-R_+$.
+
+Choose a total order on $R_+$ (resp. $R_-$) and consider the morphism induced by the product in $G$
+\[
+u:\prod_{\alpha\in R_-}U_\alpha\underset S\times T\underset S\times\prod_{\alpha\in R_+}U_\alpha\to G.
+\]
+It is an \emph{open immersion}. Indeed, since both sides are flat and of finite presentation over $S$, it suffices to verify this on each geometric fiber (SGA 1, I 5.7 and VIII 5.4); one is therefore reduced to the case where $S$ is the spectrum of an algebraically closed field; but, by \textit{Bible}, \S~13.4, cor.~2 to th.~3, $u$ is radicial and dominant; since the tangent map to $u$ at the origin is an isomorphism (definition of a system of roots), $u$ is birational; but since $G$ is normal, one may apply Zariski's ``Main Theorem'' (EGA III$_1$, 4.4.9) and $u$ is an open immersion.
+
+Let us show that the image $\Omega$ of this open immersion is independent of the order chosen on $R_+$ (resp. $R_-$). Since this amounts to comparing open subsets of $G$, one is reduced to proving that they have the same geometric points, so one may again assume that $S$ is the spectrum of an algebraically closed field. But then the assertion is none other than \textit{Bible}, \S~13, prop.~1 (c) and th.~1 (a).
+
+One has therefore proved:
+\begin{proposition}{4.1.2}\label{XXII.4.1.2}
+Let $(G,T,M,R)$ be a split $S$-group. Let $R_+$ be a system of positive roots of $R$. There exists an open subset $\Omega_{R_+}$ of $G$ such that for every total order on $R_+$ (resp. $R_-$), the morphism induced by the product in $G$
+\[
+\prod_{\alpha\in R_-}U_\alpha\underset S\times T\underset S\times\prod_{\alpha\in R_+}U_\alpha\to G
+\]
+is an open immersion with image $\Omega_{R_+}$.
+\end{proposition}
+\begin{remark}{4.1.3}\label{XXII.4.1.3}
+% typo?: kept as printed: the reference is 1.19.
+One may express 4.1.2 as follows: choose for every $\alpha\in R$ an isomorphism of vector groups $p_\alpha:\mathbf G_{a,S}\isomto U_\alpha$ (\cf 1.19); then the morphism (one puts $N=\operatorname{Card}(R_+)=\operatorname{Card}(R_-)$)
+\[
+\mathbf G_{a,S}^N\underset S\times T\underset S\times\mathbf G_{a,S}^N\to G
+\]
+defined set-theoretically by
+\[
+((x_\alpha)_{\alpha\in R_-},t,(x_\alpha)_{\alpha\in R_+})\mto
+\prod_{\alpha\in R_-}p_\alpha(x_\alpha)\cdot t\cdot\prod_{\alpha\in R_+}p_\alpha(x_\alpha)
+\]
+is an open immersion whose image depends only on $R_+$ (and not on the choice of the $p_\alpha$ and of the orders on $R_+$ and $R_-$).
+\end{remark}
+\begin{notation}{4.1.4}\label{XXII.4.1.4}
+One denotes $\Omega_{R_+}=\prod_{\alpha\in R_-}U_\alpha\cdot T\cdot\prod_{\alpha\in R_+}U_\alpha$.{\renewcommand{\thefootnote}{(9)}\nde{And one calls it the ``big cell'' corresponding to $R_+$.}}
+\end{notation}
+\begin{proposition}{4.1.5}\label{XXII.4.1.5}
+The scheme $\Omega_{R_+}$ is of finite presentation over $S$ (hence retrocompact in $G$) and is universally schematically dense in $G$ relative to $S$ (\cf Exp.~XVIII 1).
+\end{proposition}
+The first assertion is trivial. Then,{\renewcommand{\thefootnote}{(10)}\nde{The original has been expanded in what follows.}} $\Omega_{R_+}$ is flat and of finite presentation over $S$, and contains the identity section, hence meets each fiber of $G$ in a nonempty, hence dense, open subset; the second assertion therefore follows from Exp.~XVIII 1.3{\renewcommand{\thefootnote}{(11)}\nde{See also EGA IV$_3$, 11.10.10.}}.
+\begin{corollary}{4.1.6}\label{XXII.4.1.6}
+Let $(G,T,M,R)$ be a split reductive $S$-group. Then
+\[
+\uCentr(G)=\bigcap_{\alpha\in R}\Ker(\alpha).
+\]
+{\renewcommand{\thefootnote}{(12)}\nde{The following sentence has been added.}}%
+Consequently, $\uCentr(G)$ is representable by a diagonalizable closed subgroup of $G$.
+\end{corollary}
+The second assertion follows at once from the first. To prove the latter, one may invoke Exp.~XII 4.8 and 4.11; one may also proceed directly as follows. {\renewcommand{\thefootnote}{(13)}\nde{The original has been expanded in what follows.}}Let $S'\to S$. If $t\in T(S')$ and if $\alpha(t)=1$ for every $\alpha\in R$, then $\operatorname{int}(t)$ induces the identity on $T_{S'}$ and on each $(U_\alpha)_{S'}$, $\alpha\in R$, hence also on $(\Omega_{R_+})_{S'}$, hence on $G_{S'}$ by schematic density, whence $t\in\uCentr(G)(S')$.
+
+Conversely, since $\uCentr_{G_{S'}}(T_{S'})=T_{S'}$ (\cf Exp.~XIX 2.8), if $g\in G(S')$ centralizes $T_{S'}$ and the $(U_\alpha)_{S'}$, it is a section of $T_{S'}$ which annihilates the $\alpha\in R$.
+\begin{corollary}{4.1.7}\label{XXII.4.1.7}
+Let $S$ be a scheme, $G$ a reductive $S$-group. Then the center of $G$ is representable by a closed subgroup of $G$, of multiplicative type; it is also ``the intersection of the maximal tori of $G$'' in the following sense: for every $S'\to S$, $\uCentr(G)(S')$ is the set of $g\in G(S')$ whose inverse image in $G(S'')$, for every $S''\to S'$, is contained in all the $T(S'')$, where $T$ ranges over the set of maximal tori of $G_{S''}$.
+\end{corollary}
+Taking 2.3 into account, the first assertion follows from 4.1.6 by descent.{\renewcommand{\thefootnote}{(14)}\nde{Indeed, representability of the center by a closed subscheme of $G$ is local for the (fpqc) topology (SGA 1, VIII 5.2 and 5.4), hence a fortiori for the \'etale topology, and the same holds for the property ``of multiplicative type''.}} Let us prove the second assertion. Let $H$ be ``the intersection of the maximal tori of $G$'' in the preceding sense. One clearly has $\uCentr(G)\subset H$.{\renewcommand{\thefootnote}{(15)}\nde{The original has been expanded in what follows.}} Then, by descent, it suffices to prove $\uCentr(G)=H$ in the case where $G$ is split. Since $H$ is contained in the intersection of the maximal tori of $G$ in the usual sense, this then follows from the following remark: if $(G,T,M,R)$ is a splitting, $\alpha\in R$ and $X\in\Gamma(S,\mathfrak g^\alpha)^\times$, then $\operatorname{int}(\exp_\alpha(X))(T)\cap T=\Ker(\alpha)$, as a trivial calculation shows. (\Cf also Exp.~XII 8.6 and 8.8 for a more general statement).
+\begin{remark}{4.1.8}\label{XXII.4.1.8}
+In what follows, in the split case we will systematically identify $T$ with $\mathrm D_S(M)$. Then $\uCentr(G)$ is none other than $\mathrm D_S(M/\Gamma_0(R))$, where $\Gamma_0(R)$ is the subgroup of $M$ generated by $R$ (\cf Exp.~XXI 1.1.6). If $\{\alpha_1,\alpha_2,\ldots,\alpha_n\}$ is a system of simple roots of $R$, one has at once (\cf Exp.~XX 1.19):
+\[
+\uCentr(G)=\bigcap\Ker(\alpha_i)=\bigcap\uCentr(Z_{\alpha_i}).
+\]
+\end{remark}
+\begin{proposition}{4.1.9}\label{XXII.4.1.9}
+Let $S$ be a scheme, $(G,T,M,R)$ a split $S$-group, $Q$ an $S$-torus, $\alpha_0$ a character of $Q$, $\mathcal L$ an invertible $\OS$-module,
+\[
+f:Q\to T,\qquad p:\mathrm W(\mathcal L)\to G
+\]
+morphisms of groups satisfying the set-theoretic relation
+\[
+p(\alpha_0(q)x)=\operatorname{int}(f(q))\cdot p(x),
+\]
+for all $q\in Q(S')$, $x\in\mathrm W(\mathcal L)(S')$, $S'\to S$. Assume that $f$ separates the elements of $R$ in the following sense: if $\alpha,\alpha'\in R$ and if $m,m'\in\ZZ$, then $m\alpha\circ f=m'\alpha'\circ f$ implies $m\alpha=m'\alpha'$.{\renewcommand{\thefootnote}{(16)}\nde{Note that this is equivalent to the hypothesis: if $\alpha,\alpha'\in R$ and $m,m'\in\ZZ$ and if $(m\alpha\circ f)_{\overline s}=(m'\alpha'\circ f)_{\overline s}$ for every geometric point $\overline s$ of $S$, then $m\alpha=m'\alpha'$. In particular, this separation hypothesis is stable under base change.}} Finally let $s\in S$ be such that $(\alpha_0)_{\overline s}\ne e$ and $p_{\overline s}\ne e$.
+
+There then exist an open subset $U$ of $S$ containing $s$, an integer $q>0$ such that $x\mto x^q$ is an endomorphism of $\mathbf G_{a,U}$, a root $\alpha\in R$ and an isomorphism of $\OO_U$-modules
+\[
+h:(\mathcal L|_U)^{\otimes q}\isomto\mathfrak g^\alpha|_U
+\]
+such that
+\begin{enumeratei}
+\item $(\alpha\circ f)_U=(q\alpha_0)_U$,
+\item $p(X)=\exp_\alpha(h(X^q))$ for every $X\in\mathrm W(\mathcal L)(S')$, $S'\to U$.
+\end{enumeratei}
+Moreover, once $U$ has been chosen, $q$, $\alpha$ and $h$ are uniquely determined.
+\end{proposition}
+Restricting $S$, we may assume that $\alpha_0$ is nonzero on each fiber of $S$. Choose a system of positive roots $R_+$ of $R$ and let $V=p^{-1}(\Omega_{R_+})$.

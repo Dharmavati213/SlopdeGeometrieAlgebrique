@@ -1,0 +1,952 @@
+\begin{lemma}{4.17}\label{III.4.17}
+{\renewcommand{\thefootnote}{(109)}\nde{\normalfont One has modified 4.17 and~4.18, taking into account the additions made in~4.16.}}
+Let \(X\) be an \(S\)-group smooth over~\(S\), and \(Y_{\mathcal{J}}\) a
+sub-\(S_{\mathcal{J}}\)-group of \(X_{\mathcal{J}}\), flat and locally of finite
+presentation over \(S_{\mathcal{J}}\). For each subscheme \(Y\) of~\(X\), flat
+over~\(S\) and lifting \(Y_{\mathcal{J}}\),
+% typo: missing space after the comma in ``relevant \(Y_{\mathcal{J}}\),consid\'erons''
+let us consider the obstruction defined in~4.16.1:
+\[
+DY\in\Hom_{S_0}(Y_0\times_{S_0}Y_0,\,N_0)=C^{2}(Y_0,N_0)
+\]
+(i)~In order that \(Y\) be a sub-\(S\)-group of~\(X\), it is necessary and
+sufficient that \(DY=0\).
+
+(ii)~If one lets \(Y_0\) act on \(N_0\) by functoriality, starting from the
+inner automorphisms of \(Y_0\), then \(DY\in Z^{2}(Y_0,N_0)\).
+
+(iii)~If \(Y\) and \(Y'\) are two subschemes of~\(X\), flat over~\(S\), lifting
+\(Y_{\mathcal{J}}\) (so that the deviation \(d(Y,Y')\in C^{1}(Y_0,N_0)\) is
+defined, \cf~4.5.1), one has \(DY'-DY=\partial^{1}d(Y,Y')\).%
+{\renewcommand{\thefootnote}{(110)}\nde{\normalfont In the original, one finds \(DY'-DY=-\partial d(Y,Y')\), but \(\partial\) there is the opposite of the differential \(\partial^{1}\) defined in~I, 5.1.}}
+\end{lemma}
+
+Let us prove these various assertions in succession.
+
+\numpara{4.18}\label{III.4.18}
+{\itshape Proof of 4.17~(i).}
+By definition, one has \(DY=0\) if and only if \(Y\) is stable under the group
+law of~\(X\). Thus \(DY=0\) if \(Y\) is a subgroup of~\(X\). Conversely, if
+\(DY=0\), \(Y\) is equipped with the induced law \(\mu^{Y}\), which is
+associative and reduces modulo \(\mathcal{J}\) according to the group law
+on \(X_{\mathcal{J}}\); since \(Y\) is flat and locally of finite presentation
+over~\(S\), it follows from~3.3 that \(\mu^{Y}\) is a group law.
+
+\numpara{4.19}\label{III.4.19}
+{\itshape Proof of 4.17~(ii).}
+This is done by comparing the two values of
+\(u=c(X,Y,\mu^{2}\circ(i,i,i))\) computed in the following two diagrams
+\((D_{j})\), \(j=1,2\):
+\[
+(D_{j})\qquad
+\xymatrix@C=2.6em@R=1.7em{
+Y\times_{S}Y\times_{S}Y
+  \ar@{^{(}->}[d]^{{(i,i,i)}}
+&
+Y\times_{S}Y
+  \ar@{^{(}->}[d]^{{(i,i)}}
+&
+Y
+  \ar@{^{(}->}[d]^{i}
+\\
+X\times_{S}X\times_{S}X
+  \ar[r]_{f_{j}}
+&
+X\times_{S}X
+  \ar[r]^{\mu}
+&
+X
+}
+\]
+where \(f_{1}=(1,\pi)\), \(f_{2}=(\pi,1)\), and where one denotes by \(\mu^{2}\)
+the morphism
+\[
+\mu\circ f_{1}=\mu\circ f_{2}\colon
+X\times_{S}X\times_{S}X\longrightarrow X.
+\]
+% typo?: \(f_1=(1,\pi)\) and \(f_2=(\pi,1)\) here; below, \(f_1=(1,\mu)\) and \(f_2=(\mu,1)\). Kept as printed.
+{\renewcommand{\thefootnote}{(111)}\nde{One has slightly modified the notations, and spelled out the beginning of the argument.}}
+Set \(\mu^{Y}=\mu\circ(i,i)\), \(f_{j}^{Y}=f_{j}\circ(i,i,i)\) and
+\(\mu^{2,Y}=\mu^{2}\circ(i,i,i)\). For \(j=1,2\), let us denote by \(a_{j}\)
+and \(b_{j}\) the morphisms
+\[
+a_{j}=a_{\mu_{0}}\bigl((f_{j}^{Y})_{0}\bigr)
+\qquad\text{and}\qquad
+b_{j}=b_{(f_{j}^{Y})_{0}}\,,
+\]
+associated with the pair of morphisms \((f_{j}^{Y},\mu)\) by Lemma~4.12; one
+therefore has:
+\[
+(\dagger)\qquad
+\begin{cases}
+\Hom_{\OO_{Y_{0}^{3}}}\bigl(
+  (f_{j}^{Y})_{0}^{*}(\mathcal{N}_{Y_{0}\times Y_{0}/X_{0}\times X_{0}}),\,
+  \mathcal{J}\,\OO_{Y_{0}^{3}}\bigr)
+\xrightarrow{a_{j}}
+\Hom_{\OO_{Y_{0}^{3}}}\bigl(
+  (\mu^{2,Y})_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}}),\,
+  \mathcal{J}\,\OO_{Y_{0}^{3}}\bigr)
+\\[0.9em]
+\Hom_{\OO_{Y_{0}^{2}}}\bigl(
+  (\mu^{Y})_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}}),\,
+  \mathcal{J}\,\OO_{Y_{0}^{2}}\bigr)
+\xrightarrow{b_{j}}
+\Hom_{\OO_{Y_{0}^{3}}}\bigl(
+  (\mu^{2,Y})_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}}),\,
+  \mathcal{J}\,\OO_{Y_{0}^{3}}\bigr)\,.
+\end{cases}
+\]
+
+Since \(\mathcal{N}_{Y_{0}\times Y_{0}/X_{0}\times X_{0}}
+\simeq\mathrm{pr}_{1}^{*}\mathcal{N}_{Y_{0}/X_{0}}
+\oplus\mathrm{pr}_{2}^{*}\mathcal{N}_{Y_{0}/X_{0}}\)
+(since \(X_{0}\) and \(Y_{0}\) are \emph{flat} over \(S_{0}\)), and
+\(\mathcal{N}_{Y_{0}/X_{0}}\simeq\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{Y_{0}}\),
+one has:
+\[
+(f_{j}^{Y})_{0}^{*}(\mathcal{N}_{Y_{0}\times Y_{0}/X_{0}\times X_{0}})
+\simeq
+(\mathbf{n}_{Y_{0}/X_{0}}\oplus\mathbf{n}_{Y_{0}/X_{0}})\otimes\OO_{Y_{0}^{3}}
+\]
+and, likewise,
+\[
+(\mu^{2,Y})_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}})
+\simeq
+\mathbf{n}_{Y_{0}/X_{0}}\otimes\OO_{Y_{0}^{3}}
+\qquad\text{and}\qquad
+(\mu^{Y})_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}})
+\simeq
+\mathbf{n}_{Y_{0}/X_{0}}\otimes\OO_{Y_{0}^{2}}\,.
+\]
+Moreover, since \(Y_{0}^{2}\) and \(Y_{0}^{3}\) are \emph{flat} over \(S_{0}\),
+\((\dagger)\) is rewritten in the following form:
+\[
+(\ddagger)\qquad
+\begin{cases}
+a_{j}\colon\Hom_{S_{0}}(Y_{0}^{3},\,N_{0}\oplus N_{0})
+  \to\Hom_{S_{0}}(Y_{0}^{3},\,N_{0})
+\\
+b_{j}\colon\Hom_{S_{0}}(Y_{0}^{2},\,N_{0})
+  \to\Hom_{S_{0}}(Y_{0}^{3},\,N_{0})\,.
+\end{cases}
+\]
+Applying~4.13 twice to \(c(X,Y,\mu^{2,Y})=u\), one obtains:
+\[
+a_{1}\bigl(c(X^{2},Y^{2},f_{1})\bigr)+b_{1}\bigl(c(X,Y,\mu^{Y})\bigr)
+=
+u
+=
+a_{2}\bigl(c(X^{2},Y^{2},f_{2})\bigr)+b_{2}\bigl(c(X,Y,\mu^{Y})\bigr)\,.
+\]
+Now, \(c(X,Y,\mu^{Y})=DY\) and, since \(f_{1}=(1,\mu)\) and \(f_{2}=(\mu,1)\),
+one has, with evident notations:
+\[
+c(X^{2},Y^{2},f_{1})=(0,DY)
+\qquad\text{and}\qquad
+c(X^{2},Y^{2},f_{2})=(DY,0)\,.
+\]
+Thus one obtains:
+\[
+u=a_{1}((0,DY))+b_{1}(DY)=a_{2}((DY,0))+b_{2}(DY)\,.
+\]
+The first thing that one notices is that \(b_{j}\) is none other than
+\(\Hom_{S_{0}}((f_{j}^{Y})_{0},N_{0})\), that is, the morphism deduced from
+\((f_{j}^{Y})_{0}\) by functoriality.
+
+The identity above therefore becomes:
+\[
+a_{1}((0,DY))-\Hom((\mu,1),N_{0})(DY)
++\Hom((1,\mu),N_{0})(DY)
+-a_{2}((DY,0))=0\,.
+\]
+One recognizes the two middle terms: they are the parts ``\(DY(xy,z)\)'' and
+``\(DY(x,yz)\)'' of the formula of the \(2\)-coboundary. It therefore only
+remains to identify the two other terms.
+
+We must first compute the map \(a_{j}\). Now it arises, by inverse image
+under \((f_{j}^{Y})_{0}\), from the morphism of \(\OO_{Y_{0}^{2}}\)-modules
+\[
+P\colon
+\mathbf{n}_{Y_{0}/X_{0}}\otimes\OO_{Y_{0}^{2}}
+\longrightarrow
+(\mathbf{n}_{Y_{0}/X_{0}}\oplus\mathbf{n}_{Y_{0}/X_{0}})\otimes\OO_{Y_{0}^{2}}
+\]
+induced by the product in \(Y_{0}\). Now this morphism is described in the
+following way: let us consider the vector bundle
+\(\mathbf{V}=\mathbf{V}(\mathbf{n}_{Y_{0}/X_{0}})\); \(P\) gives by duality a
+morphism
+\[
+\mathbf{V}(P)\colon
+\mathbf{V}\times_{S_{0}}\mathbf{V}\times_{S_{0}}Y_{0}\times_{S_{0}}Y_{0}
+\longrightarrow
+\mathbf{V}\times_{S_{0}}Y_{0}\times_{S_{0}}Y_{0}
+\]
+which is expressed set-theoretically by
+\[
+\mathbf{V}(P)(u,v,a,b)=(u+\Ad(a)v,\,ab,\,b)\,.
+\]
+{\renewcommand{\thefootnote}{(112)}\nde{One has replaced \(a\), \(b\) by \(ab\), \(b\), in order to make it plain that \(\mathbf{V}(P)\) arises by inverse image on \(Y_{0}^{2}\) from the multiplication morphism \(\mathbf{V}_{Y_{0}}\times_{S_{0}}\mathbf{V}_{Y_{0}}\to\mathbf{V}_{Y_{0}}\).}}
+This is proved exactly like the corresponding fact for Lie algebras, that is,
+for the module \(\omega^{1}_{Y_{0}/S_{0}}\). One first observes that
+\(\mathbf{V}\) is equipped, by functoriality in \(Y_{0}\), with a group
+structure in the category of vector bundles over \(S_{0}\); by virtue of the
+lemma already used for Lie algebras (Expos\'e~II, 3.10), this structure
+coincides with the group structure underlying its structure of
+\(\OO_{S}\)-module.
+% typo?: printed \(\OO_S\)-module; the surrounding base is \(S_0\). Kept as printed.
+One then sees that
+\(\mathbf{V}(\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{Y_{0}})
+=\mathbf{V}(\mathcal{N}_{Y_{0}/X_{0}})\)
+is likewise equipped with a structure of \(S_{0}\)-group which is none other
+than the semidirect product of that of \(\mathbf{V}\) by that of \(Y_{0}\).
+It only remains to identify the operations of \(Y_{0}\) on \(\mathbf{V}\) in
+order to establish the desired formula.
+
+Let us now compute the two remaining terms. Let us first consider
+\(a_{1}((0,DY))\). One computes it by the diagram (where \(\mathbf{n}\) denotes
+\(\mathbf{n}_{Y_{0}/X_{0}}\)):
+\[
+\xymatrix@C=5.5em@R=1.55em{
+\mathbf{n}\otimes\OO_{Y_{0}^{2}}
+  \ar[r]^{P}
+  \ar[dd]_{(f_{1}^{Y})_{0}^{*}}
+&
+(\mathbf{n}+\mathbf{n})\otimes\OO_{Y_{0}^{2}}
+  \ar[dd]^{(f_{1}^{Y})_{0}^{*}}
+\\
+\\
+\mathbf{n}\otimes\OO_{Y_{0}^{3}}
+  \ar[dr]_{{a_{1}((0,DY))}}
+&
+(\mathbf{n}+\mathbf{n})\otimes\OO_{Y_{0}^{3}}
+  \ar[d]^{{(0,DY)}}
+\\
+&
+\mathcal{J}\otimes\OO_{Y_{0}^{3}}\,.
+}
+\]
+Considering now the vector bundles defined by these various modules as so
+many schemes over \(S_{0}\), and taking the points with values in anything
+whatsoever, one has, denoting by \((u,x,y,z)\) a point of
+\(\mathbf{V}(\mathcal{J})\times Y_{0}^{3}\):
+\[
+\xymatrix@C=7em@R=2.5em{
+\bigl(\Ad(x)\,DY_{y,z}(u),\,x,\,yz\bigr)
+&
+\bigl(0+DY_{y,z}(u),\,x,\,yz\bigr)
+  \ar[l]
+\\
+&
+\bigl(0+DY_{y,z}(u),\,x,\,y,\,z\bigr)
+  \ar[u]
+\\
+\bigl(\Ad(x)\,DY_{y,z}(u),\,x,\,y,\,z\bigr)
+  \ar[uu]
+&
+\bigl(u,\,x,\,y,\,z\bigr)
+  \ar[l]
+  \ar[u]
+}
+\]
+One has therefore obtained
+\(a_{1}((0,DY))(x,y,z)=\Ad(x)\,DY(y,z)\), which is indeed the first term of
+the coboundary. One would likewise have
+\(a_{2}((DY,0))(x,y,z)=DY(x,y)\), whence%
+{\renewcommand{\thefootnote}{(113)}\nde{One has changed the signs, in order to make them compatible with~I 5.1.}}
+\[
+0=\Ad(x)\,DY(y,z)-DY(xy,z)+DY(x,yz)-DY(x,y)
+=(\partial^{2}DY)(x,y,z)\,.
+\]
+
+\numpara{4.20}\label{III.4.20}
+{\itshape Proof of 4.17~(iii).}%
+{\renewcommand{\thefootnote}{(114)}\nde{One has spelled out the original in what follows.}}
+This is done by comparing the two values of
+\(v=c(X,Y,\mu\circ(i',i'))\) computed in the following two diagrams
+\[
+(*)\qquad
+\xymatrix@C=3.2em@R=1.6em{
+&
+Y'
+  \ar@{^{(}->}[d]^{i'}
+&
+Y
+  \ar@{^{(}->}[d]^{i}
+\\
+Y'\times_{S}Y'
+  \ar[r]^{{\mu\circ(i',i')}}
+&
+X
+&
+X
+}
+\]
+\[
+(\dagger)\qquad
+\xymatrix@C=3.2em@R=1.6em{
+&
+Y\times_{S}Y
+  \ar@{^{(}->}[d]^{{(i,i)}}
+&
+Y
+  \ar@{^{(}->}[d]^{i}
+\\
+Y'\times_{S}Y'
+  \ar[r]^{{(i',i')}}
+&
+X\times_{S}X
+  \ar[r]^{\mu}
+&
+X\,.
+}
+\]
+Let us denote \(f=\mu\circ(i',i')\); then \((*)\) gives
+\begin{equation*}
+(1)\qquad
+v=DY'+f_{0}^{*}\bigl(c(X,Y,i')\bigr)\,.
+\end{equation*}
+Now \(Y'_{0}=Y_{0}\) and \(f_{0}\) is the multiplication \(Y_{0}^{2}\to Y_{0}\);
+one deduces from this that
+\begin{equation*}
+(2)\qquad
+f_{0}^{*}\bigl(c(X,Y,i')\bigr)(x_{0},y_{0})
+=
+c(X,Y,i')(x_{0}y_{0})\,.
+\end{equation*}
+Set \(c=c(X,Y,i')\); via the identification \(N'_{0}\simeq N_{0}\oplus N_{0}\),
+\(c(X\times_{S}X,\,Y\times_{S}Y,\,(i',i'))\) is identified with the pair
+\((c,c)\). Then, denoting \(h=(i',i')\), \((\dagger)\) gives
+\begin{equation*}
+(3)\qquad
+v=h_{0}^{*}(DY)+a_{\mu_{0}}(c,c)\,.
+\end{equation*}
+Now \(h_{0}\) is the identity map of \(Y_{0}^{2}\), whence
+\(h_{0}^{*}(DY)=DY\). Finally, by the computation of \(a_{\mu_{0}}\) carried
+out previously, one has, for every \(S'\to S\) and
+\(x_{0},\,y_{0}\in Y_{0}(S'_{0})\),
+\begin{equation*}
+(4)\qquad
+a_{\mu_{0}}(c,c)(x_{0},y_{0})
+=
+c(x_{0})+\Ad(x_{0})\bigl(c(y_{0})\bigr)\,.
+\end{equation*}
+One therefore obtains:
+\begin{align*}
+(DY'-DY)(x_{0},y_{0})
+&=
+\Ad(x_{0})\bigl(c(X,Y,i')(y_{0})\bigr)
+-c(X,Y,i')(x_{0}y_{0})
++c(X,Y,i')(x_{0})
+\\
+&=
+\bigl(\partial^{1}c(X,Y,i')\bigr)(x_{0},y_{0})\,.
+\end{align*}
+Since \(c(X,Y,i')=d(Y,Y')\) (\cf~4.8~(ii)), this shows that
+\(DY'-DY=\partial^{1}d(Y,Y')\).
+% typo: printed \(\partial^{1}d((Y,Y')\) -> \(\partial^{1}d(Y,Y')\)
+
+\begin{theorem}{4.21}\label{III.4.21}
+Let \(S\) be a scheme, \(\mathcal{I}\) and \(\mathcal{J}\) two ideals%
+{\renewcommand{\thefootnote}{(115)}\nde{\normalfont One has removed the hypothesis that \(\mathcal{I}\) be nilpotent, which seems superfluous.}}
+on \(S\) such that \(\mathcal{I}\supset\mathcal{J}\) and
+\(\mathcal{I}\cdot\mathcal{J}=0\). Let \(X\) be an \(S\)-group smooth over~\(S\),
+and \(Y_{\mathcal{J}}\) a sub-\(S_{\mathcal{J}}\)-group of \(X_{\mathcal{J}}\),
+flat and locally of finite presentation over \(S_{\mathcal{J}}\). Let us
+consider the commutative \(S_{0}\)-group functor \(N_{0}\) defined by
+\[
+\Hom_{S_{0}}(T,N_{0})
+=
+\Hom_{\OO_{T}}(\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{T},\,
+\mathcal{J}\otimes_{\OO_{S_{0}}}\OO_{T})\,,
+\qquad
+T\in\Ob\Sch_{/S_{0}}\,,
+\]
+on which \(Y_{0}\) acts by means of the inner automorphisms of \(X_{0}\).
+
+(i)~In order that there exist a sub-\(S\)-group of~\(X\), flat over~\(S\),
+which reduces to \(Y_{\mathcal{J}}\), it is necessary and sufficient that the
+following two conditions be satisfied:
+
+(i\(_1\))~There exists a subscheme \(Y\) of~\(X\), flat over~\(S\), lifting
+\(Y_{\mathcal{J}}\) (a condition automatically satisfied if \(Y_{0}\) is
+affine, \cf~4.6.5).
+
+(i\(_2\))~A certain canonical obstruction, an element of
+\(H^{2}(Y_{0},N_{0})\), is zero.
+
+(ii)~If the conditions of~(i) are satisfied, the set of sub-\(S\)-groups \(Y\)
+of~\(X\), flat over~\(S\) and reducing to \(Y_{\mathcal{J}}\), is a principal
+homogeneous set under the group \(Z^{1}(Y_{0},N_{0})\).%
+{\renewcommand{\thefootnote}{(116)}\nde{\normalfont The question whether the preceding set, modulo conjugation by the \(x\in X(S)\) inducing the unit element of \(X(S_{\mathcal{J}})\), is principal homogeneous under \(H^{1}(Y_{0},N_{0})\), occupies nos.~4.23 to~4.36.}}
+\end{theorem}
+
+Indeed, condition (i\(_1\)) is necessary. Let us assume it satisfied, and let
+\(Y\) be flat over~\(S\) and lifting \(Y_{\mathcal{J}}\). We must seek a \(Y'\)
+flat over~\(S\), also lifting \(Y_{\mathcal{J}}\), such that \(DY'=0\),%
+{\renewcommand{\thefootnote}{(117)}\nde{One has corrected \(\partial DY'\) to \(DY'\).}}
+\cf~4.17~(i). By~4.17~(iii), this amounts to seeking a
+\(d(Y',Y)\in C^{1}(Y_{0},N_{0})\) such that
+\(DY=\partial^{1}d(Y',Y)\).%
+{\renewcommand{\thefootnote}{(118)}\nde{\normalfont \Cf\ N.D.E.~(110).}}
+
+Let \(c\in H^{2}(Y_{0},N_{0})\) be the image class of \(DY\), which is a
+cocycle by~4.17~(ii). It does not depend on the choice of \(Y\) by~4.17~(iii),
+and its vanishing is necessary and sufficient for the existence of a
+\(d(Y',Y)\) satisfying the preceding equation. This proves~(i).
+
+If one has now chosen \(Y\) such that \(DY=0\), the equation to be solved
+reads \(\partial^{1}d(Y',Y)=0\), which proves~(ii).
+
+\begin{remark}{4.22}\label{III.4.22}
+One keeps the notations of~4.21. By~4.15, \(Y_{0}\) is locally a complete
+intersection in \(X_{0}\), so \(\mathcal{N}_{Y_{0}/X_{0}}\) is a finite
+locally free \(\OO_{Y_{0}}\)-module, and consequently
+\(\mathbf{n}_{Y_{0}/X_{0}}=\varepsilon_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}})\)
+is a finite locally free \(\OO_{S_{0}}\)-module. Thus, denoting
+\(\mathbf{n}^{\vee}_{Y_{0}/X_{0}}
+=\mathcal{H}\mathrm{om}_{\OO_{Y_{0}}}(\mathbf{n}_{Y_{0}/X_{0}},\OO_{Y_{0}})\),
+% typo?: dual written as \(\mathcal{H}\mathrm{om}\) over \(\OO_{Y_0}\). Kept as printed.
+one has
+\[
+\mathcal{H}\mathrm{om}_{\OO_{T}}
+  (\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{T},\,
+   \mathcal{J}\otimes_{\OO_{S_{0}}}\OO_{T})
+\simeq
+\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J}
+  \otimes_{\OO_{S_{0}}}\OO_{T}
+\]
+for every \(T\to S_{0}\).%
+{\renewcommand{\thefootnote}{(119)}\nde{One has spelled out what precedes; this shows that the isomorphism which follows is valid without a flatness hypothesis. On the other hand, since~4.16, one has restricted oneself to the \(S\)-schemes \(f\colon T\to S\) \emph{flat} over~\(S\), in order to ensure that the group \(\Hom_{\OO_{T_{0}}}(\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{T_{0}},\,\mathcal{J}\,\OO_{T})\), in which the obstruction \(c(X,Y,f)\) lies, coincides with \(N_{0}(T_{0})\) (\cf\ the end of~4.16).}}
+Consequently, the \(S_{0}\)-functor \(N_{0}\) is isomorphic to the functor
+\[
+\mathbf{W}(\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J})
+\simeq
+\mathbf{W}\bigl(\mathcal{H}\mathrm{om}_{\OO_{S_{0}}}
+  (\mathbf{n}_{Y_{0}/X_{0}},\mathcal{J})\bigr)\,.
+\]
+There result the isomorphisms:%
+{\renewcommand{\thefootnote}{(120)}\nde{with the notations of~I 5.3, assuming \(Y_{0}\) affine over \(S_{0}\).}}
+\begin{align*}
+H^{2}(Y_{0},N_{0})
+&\simeq
+H^{2}\bigl(Y_{0},\,
+  \mathcal{H}\mathrm{om}_{\OO_{S_{0}}}(\mathbf{n}_{Y_{0}/X_{0}},\mathcal{J})\bigr)
+\simeq
+H^{2}(Y_{0},\,\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J})\,,
+\\
+Z^{1}(Y_{0},N_{0})
+&\simeq
+Z^{1}\bigl(Y_{0},\,
+  \mathcal{H}\mathrm{om}_{\OO_{S_{0}}}(\mathbf{n}_{Y_{0}/X_{0}},\mathcal{J})\bigr)
+\simeq
+Z^{1}(Y_{0},\,\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J})\,.
+\end{align*}
+% typo: an extra closing parenthesis after each of the two displays. Removed.
+\end{remark}
+
+\numpara{4.23}\label{III.4.23}
+Still under the hypotheses of~4.21, we shall now study how the set of the
+\(Y\) lifting \(Y_{\mathcal{J}}\) behaves with respect to conjugation by
+sections of~\(X\). If \(x\) is a section of \(X\) over \(S\) inducing the unit
+section of \(X_{\mathcal{J}}\), the inner automorphism \(\Int(x)\) defined
+by~\(x\) transforms flat subgroups of \(X\) lifting \(Y_{\mathcal{J}}\) into
+flat subgroups of \(X\) lifting \(Y_{\mathcal{J}}\). Now, under the conditions
+of~4.21~(ii), the set of these subgroups is principal homogeneous under
+\(Z^{1}(Y_{0},N_{0})\); we shall see that there then exists a subgroup
+\(\Gamma\) of \(B^{1}(Y_{0},N_{0})\)%
+{\renewcommand{\thefootnote}{(121)}\nde{One has replaced \(Z^{1}(Y_{0},N_{0})\) by \(B^{1}(Y_{0},N_{0})\), since the proof shows that \(\Gamma\) is a subgroup of \(B^{1}(Y_{0},N_{0})\), \cf~4.27--4.29.}}
+such that two subgroups of~\(X\), flat over~\(S\) and lifting
+\(Y_{\mathcal{J}}\), are conjugate (by \(x\in X(S)\) inducing the unit element
+of \(X(S_{\mathcal{J}})\)) if and only if their ``difference'' in
+\(Z^{1}(Y_{0},N_{0})\) is an element of~\(\Gamma\). In the most favorable
+cases, we shall show that \(\Gamma\) equals \(B^{1}(Y_{0},N_{0})\), so that
+the set of flat subgroups of \(X\) lifting \(Y_{\mathcal{J}}\), modulo
+conjugation by the \(x\in X(S)\) inducing the unit element of
+\(X(S_{\mathcal{J}})\), is empty or principal homogeneous under
+\(H^{1}(Y_{0},N_{0})\) (\cf~4.29 and~4.36).
+
+\numpara{4.24}\label{III.4.24}
+One keeps the notations of~4.21. Let \(Y\) be a flat subgroup of~\(X\),
+reducing to \(Y_{\mathcal{J}}\). Let us recall that we introduced in~0.5 the
+functor \(L_{0X}\) (\resp\ \(L_{0Y}\)) defined by the following identity with
+respect to the variable \(S_{0}\)-scheme~\(T\):
+\[
+\Hom_{S_{0}}(T,\,L_{0X})
+=
+\Hom_{\OO_{T}}(\omega^{1}_{X_{0}/S_{0}}\otimes_{\OO_{S_{0}}}\OO_{T},\,
+\mathcal{J}\otimes_{\OO_{S_{0}}}\OO_{T})
+\]
+(\resp\ likewise upon replacing \(X\) by~\(Y\)), as well as the functor
+\(L'_{X}=\prod_{S_{0}/S}L_{0X}\).
+
+Now one has:
+
+\begin{lemma}{4.25}\label{III.4.25}
+There exists a canonical exact sequence of \(Y_{0}\)-\(\OO_{S_{0}}\)-modules
+\[
+(+)\qquad
+\mathbf{n}_{Y_{0}/X_{0}}
+\xrightarrow{d}
+\omega^{1}_{X_{0}/S_{0}}
+\longrightarrow
+\omega^{1}_{Y_{0}/S_{0}}
+\longrightarrow
+0
+\]
+having the following properties:
+
+(i)~By inverse image on \(Y_{0}\), \(d\) gives the morphism \(D_{0}\) of
+4.8~(iii).
+
+(ii)~If \(X_{0}\) and \(Y_{0}\) are smooth over \(S_{0}\), then \(d\) is
+injective. Since the two \(\omega^{1}\) are then locally free of finite type,
+the same holds for \(\mathbf{n}_{Y_{0}/X_{0}}\), and the sequence is locally
+split.
+\end{lemma}
+
+\begin{proof}
+{\renewcommand{\thefootnote}{(122)}\nde{One has spelled out the proof, taking into account the additions made in Exp.~I, \S~6.8.}}
+Let \(\pi_{0}\) denote the morphism \(Y_{0}\to S_{0}\). By SGA~1~II,
+formula~(4.3) (see also EGA~IV\(_4\), 16.4.21), one has a canonical exact
+sequence of \(\OO_{Y_{0}}\)-modules
+\[
+(\dagger)\qquad
+\mathcal{N}_{Y_{0}/X_{0}}
+\xrightarrow{D_{0}}
+\Omega^{1}_{X_{0}/S_{0}}\otimes_{\OO_{X_{0}}}\OO_{Y_{0}}
+\longrightarrow
+\Omega^{1}_{Y_{0}/S_{0}}
+\longrightarrow
+0\,.
+\]
+Since this sequence is formed of \((Y_{0}\times_{S}Y_{0})\)-equivariant
+modules and morphisms, its inverse image \((+)\) by \(\varepsilon_{0}^{*}\) is
+an exact sequence of \(Y_{0}\)-\(\OO_{S_{0}}\)-modules, and \((\dagger)\) is the
+inverse image of \((+)\) by \(\pi_{0}^{*}\) (\cf\ Exp.~I, \S~6.8). This
+proves~(i).
+
+Suppose moreover that \(X_{0}\) and \(Y_{0}\) are smooth over \(S_{0}\). Then,
+by SGA~1~II~4.10 (see also EGA~IV\(_4\), 17.2.3~(i) and~17.2.5), \(D\) is
+injective and the sequence \((\dagger)\) is formed of
+\(\OO_{Y_{0}}\)-modules locally free of finite type (hence is locally split).
+By the equivalence of categories I,~6.8.1, \(d\) is likewise injective, and
+thus the sequence \((+)\) has the properties indicated.
+% typo?: the arrow of \((\dagger)\) is labeled \(D_0\), while the prose says ``\(D\) is injective''. Kept as printed.
+\end{proof}
+
+\numpara{4.26}\label{III.4.26}
+{\renewcommand{\thefootnote}{(123)}\nde{One has spelled out the original, in order to make it plain that one has an exact sequence of \(Y_{0}\)-\(\OO_{S_{0}}\)-modules.}}
+For every \(S_{0}\)-scheme \(f\colon T\to S_{0}\), \((+)\) gives an exact
+sequence of \(Y_{0}(T)\)-\(\OO(T)\)-modules
+\[
+\begin{aligned}
+0&\longrightarrow
+\Hom_{\OO_{T}}\bigl(f^{*}(\omega^{1}_{Y_{0}/S_{0}}),\,f^{*}(\mathcal{J})\bigr)
+\longrightarrow
+\Hom_{\OO_{T}}\bigl(f^{*}(\omega^{1}_{X_{0}/S_{0}}),\,f^{*}(\mathcal{J})\bigr)
+\\
+&\longrightarrow
+\Hom_{\OO_{T}}\bigl(f^{*}(\mathbf{n}_{Y_{0}/X_{0}}),\,f^{*}(\mathcal{J})\bigr)\,,
+\end{aligned}
+\]
+one therefore has an exact sequence of \(Y_{0}\)-\(\OO_{S_{0}}\)-modules:
+\begin{equation}
+0\longrightarrow L_{0Y}\longrightarrow L_{0X}\xrightarrow{d}N_{0}\,.
+\tag{4.26.1}
+\end{equation}
+One deduces from this an exact sequence of complexes of abelian groups:
+\[
+0\longrightarrow
+C^{*}(Y_{0},L_{0Y})\longrightarrow
+C^{*}(Y_{0},L_{0X})\xrightarrow{d^{*}}
+C^{*}(Y_{0},N_{0})\,,
+\]
+and in particular, a commutative diagram with exact rows
+\[
+\xymatrix@C=1.5em@R=1.8em{
+0\ar[r]
+&
+C^{0}(Y_{0},L_{0Y})
+  \ar[r]
+  \ar[d]^{\partial}
+&
+C^{0}(Y_{0},L_{0X})
+  \ar[r]^{d^{0}}
+  \ar[d]^{\partial}
+&
+C^{0}(Y_{0},N_{0})
+  \ar[d]^{\partial}
+\\
+0\ar[r]
+&
+C^{1}(Y_{0},L_{0Y})
+  \ar[r]
+&
+C^{1}(Y_{0},L_{0X})
+  \ar[r]^{d^{1}}
+&
+C^{1}(Y_{0},N_{0})\,.
+}
+\]
+Let us note that \(C^{0}(Y_{0},L_{0Y})\) (\resp\ \(C^{0}(Y_{0},L_{0X})\)) is
+none other than \(\Hom_{S_{0}}(S_{0},L_{0Y})=\Hom_{S}(S,L'_{Y})\)
+(\resp\ \(\cdots\)), \ie\ (\cf~0.9) the group of sections of \(Y\) (\resp\
+of~\(X\)) over \(S\) inducing the unit section of \(X_{\mathcal{J}}\). Let us
+also note that \(d^{1}\) is none other than the morphism \(v_{i_{Y_{0}}}\)
+of~4.8~(iii), where \(i_{Y_{0}}\colon Y_{0}\to X_{0}\) is the canonical
+immersion.%
+{\renewcommand{\thefootnote}{(124)}\nde{This follows from the definition of \(d\colon\mathbf{n}_{Y_{0}/X_{0}}\to\Omega^{1}_{X_{0}/S_{0}}\) (\cf~4.25) and from that of \(v_{i_{Y_{0}}}\) (\cf~4.8).}}
+% typo?: footnote~(124) prints \(\Omega^{1}_{X_0/S_0}\); the map \(d\) of~4.25 lands in \(\omega^{1}_{X_0/S_0}\). Kept as printed.
+
+\begin{lemma}{4.27}\label{III.4.27}
+Under the conditions of~4.21 for \(S\), \(\mathcal{I}\), \(\mathcal{J}\)
+and~\(X\), let \(Y\) be a subgroup of~\(X\), flat over~\(S\) and lifting
+\(Y_{\mathcal{J}}\). Let \(i\colon Y\hookrightarrow X\) denote the canonical
+immersion.%
+{\renewcommand{\thefootnote}{(125)}\nde{\normalfont One has added point~(i) below, which will be useful in~4.35.1 and then in~4.38~(4) and~(5).}}
+
+(i)~Let \(i'\colon Y\to X\) be a morphism of \(S\)-schemes lifting \(i_{0}\)
+(so that \(i'\) is also an immersion), let \(Y'=i'(Y)\) and let \(d(i,i')\) be
+the element of \(C^{1}(Y_{0},L_{0X})\) such that \(i'=d(i,i')\cdot i\)
+(\cf~1.2.4). Then the deviation \(d(Y,Y')\in C^{1}(Y_{0},N_{0})\)
+(\cf~4.5.1) is given by the formula:
+\[
+d(Y,Y')=d^{1}\bigl(d(i,i')\bigr)\,.
+\]
+
+(ii)~Let \(x\in C^{0}(Y_{0},L_{0X})\) be a section of \(X\) over \(S\) inducing
+the unit section of \(X_{\mathcal{J}}\) over \(S_{\mathcal{J}}\). Then the
+deviation \(d(Y,\Int(x)Y)\in C^{1}(Y_{0},N_{0})\) (\cf~4.5.1) is given by the
+formula:
+\[
+-d\bigl(Y,\Int(x)Y\bigr)=d^{1}\partial x=\partial\,d^{0}x\,.
+\]
+\end{lemma}
+
+Indeed, \(Y'\) is the image of \(Y\) by the composite morphism:%
+{\renewcommand{\thefootnote}{(126)}\nde{One recalls that \(L'_{X}=\prod_{S_{0}/S}L_{0X}\).}}
+\[
+Y\xrightarrow{(d(i,i'),\,i)}L'_{X}\times_{S}X\longrightarrow X\,,
+\]
+which is denoted \(d(i,i')\cdot i\) in~4.8~(iii); by \loccit\ and the equality
+\(v_{i_{0}}=d^{1}\), one therefore has:
+\[
+c\bigl(X,Y',\,d(i,i')\cdot i\bigr)-c(X,Y',i)
+=
+v_{i_{0}}\bigl(d(i,i')\bigr)
+=
+d^{1}\bigl(d(i,i')\bigr)\,.
+\]
+But \(d(i,i')\cdot i=i'\) factors through \(Y'\) by definition, so the first
+term is zero; moreover, by~4.8~(ii), one has
+\(c(X,Y',i)=d(Y',Y)=-d(Y,Y')\). Thus
+\(d(Y,Y')=d^{1}\bigl(d(i,i')\bigr)\), which proves~(i).
+
+Now let \(x\) be as in~(ii). By the formula
+\[
+xyx^{-1}=xyx^{-1}y^{-1}y=(x-\Ad(y)x)y=(-\partial x)(y)\cdot y\,,
+\]
+one sees that \(Y'\) is the image of \(Y\) by the immersion
+\(i'=(-\partial x)\cdot i_{Y}\). Thus, by~(i), one obtains
+\[
+-d\bigl(Y,\Int(x)Y\bigr)=d^{1}\partial x=\partial\,d^{0}x\,.
+\]
+
+\begin{corollary}{4.28}\label{III.4.28}
+In order that two subgroups \(Y\) and \(Y'\) of~\(G\), flat over~\(S\) and
+lifting \(Y_{\mathcal{J}}\), be conjugate by a section of \(X\) over \(S\)
+inducing the unit section of \(X_{\mathcal{J}}\), it is necessary and
+sufficient that
+\(d(Y,Y')\in\partial\,d^{0}\,C^{0}(Y_{0},L_{0X})
+\subset\partial\,C^{0}(Y_{0},N_{0})=B^{1}(Y_{0},N_{0})\).
+% typo?: printed ``of \(G\)''; the surrounding group is \(X\). Kept as printed.
+\end{corollary}
+
+\begin{corollary}{4.29}\label{III.4.29}
+If \(d^{0}\) is surjective, \(Y\) and \(Y'\) as above are conjugate by a
+section of \(X\) over \(S\) inducing the unit section of \(X_{\mathcal{J}}\)
+if and only if \(d(Y,Y')\in B^{1}(Y_{0},N_{0})\).
+\end{corollary}
+
+\begin{corollary}{4.30}\label{III.4.30}
+Let \(Y\) be as in~4.27; the set of conjugates of \(Y\) by sections of \(X\)
+over \(S\) inducing the unit section of \(X_{\mathcal{J}}\) is isomorphic to:
+\[
+d^{1}\partial\,C^{0}(Y_{0},L_{0X})
+=
+C^{0}(Y_{0},L_{0X})\big/\Ker d^{1}\partial\,.
+\]
+\end{corollary}
+
+Let us now note that \(C^{0}(Y_{0}/L_{0X})/\Ker d^{1}\partial\) is computed
+solely by means of the left-hand square of the commutative diagram of~4.26.
+% typo?: printed \(C^{0}(Y_{0}/L_{0X})\); the line above has \(C^{0}(Y_{0},L_{0X})\). Kept as printed.
+It follows in particular that one can also compute it in any diagram of the
+same type having the same left-hand square. Let us consider in particular the
+functor \(L_{0X}/L_{0Y}\) over \(S_{0}\) defined by
+\[
+\Hom_{S_{0}}(T,\,L_{0X}/L_{0Y})
+=
+\Hom_{S_{0}}(T,\,L_{0X})/\Hom_{S_{0}}(T,\,L_{0Y})\,.
+\]
+One has a commutative diagram
+\[
+\xymatrix@C=1.35em@R=1.8em{
+0\ar[r]
+&
+C^{0}(Y_{0},L_{0Y})
+  \ar[r]
+  \ar[d]^{\partial}
+&
+C^{0}(Y_{0},L_{0X})
+  \ar[r]
+  \ar[d]^{\partial}
+&
+C^{0}(Y_{0},L_{0X}/L_{0Y})
+  \ar[r]
+  \ar[d]^{\partial}
+&
+0
+\\
+0\ar[r]
+&
+C^{1}(Y_{0},L_{0Y})
+  \ar[r]
+&
+C^{1}(Y_{0},L_{0X})
+  \ar[r]
+&
+C^{1}(Y_{0},L_{0X}/L_{0Y})
+  \ar[r]
+&
+0\,,
+}
+\]
+whence, by the preceding remark:
+
+\begin{corollary}{4.31}\label{III.4.31}
+Let \(Y\) be as in~4.27; the set of conjugates of \(Y\) by sections of \(X\)
+over \(S\) inducing the unit section of \(X_{\mathcal{J}}\) is isomorphic to
+\[
+E=\partial\,C^{0}(Y_{0},\,L_{0X}/L_{0Y})
+=
+C^{0}(Y_{0},\,L_{0X}/L_{0Y})
+\big/
+H^{0}(Y_{0},\,L_{0X}/L_{0Y})\,.
+\]
+\end{corollary}
+
+\begin{corollary}{4.32}\label{III.4.32}
+Suppose moreover that \(S_{0}\) is affine and that \(\omega^{1}_{Y_{0}/S_{0}}\)%
+{\renewcommand{\thefootnote}{(127)}\nde{\normalfont One has corrected \(\mathcal{L}\mathrm{ie}(Y_{0}/S_{0})\) to \(\omega^{1}_{Y_{0}/S_{0}}\).}}
+is finite locally free. If one denotes
+\(\mathcal{F}_{0}
+=\bigl(\mathcal{L}\mathrm{ie}(X_{0}/S_{0})
+/\mathcal{L}\mathrm{ie}(Y_{0}/S_{0})\bigr)
+\otimes_{\OO_{S_{0}}}\mathcal{J}\),
+one has \(E=\Gamma(S_{0},\mathcal{F}_{0})/H^{0}(Y_{0},\mathcal{F}_{0})\).
+\end{corollary}
+
+{\renewcommand{\thefootnote}{(128)}\nde{One has spelled out the original in what follows.}}
+Indeed, since \(\omega^{1}_{Y_{0}/S_{0}}\) is finite locally free, as is
+\(\omega^{1}_{X_{0}/S_{0}}\) (since \(X\) is assumed smooth over~\(S\)), one
+has, by~0.6:
+\[
+L_{0Y}
+=
+\mathbf{W}\bigl(\mathcal{L}\mathrm{ie}(Y_{0}/S_{0})\otimes_{\OO_{S_{0}}}\mathcal{J}\bigr)
+\qquad\text{and}\qquad
+L_{0X}
+=
+\mathbf{W}\bigl(\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\otimes_{\OO_{S_{0}}}\mathcal{J}\bigr)\,.
+\]
+On the other hand, by~4.25, one has an exact sequence of
+\(Y_{0}\)-\(\OO_{S_{0}}\)-modules:
+\[
+0\longrightarrow\mathcal{K}\longrightarrow
+\omega^{1}_{X_{0}/S_{0}}
+\xrightarrow{\phi}
+\omega^{1}_{Y_{0}/S_{0}}
+\longrightarrow 0
+\]
+(where \(\mathcal{K}=\Ker(\phi)\)). Since \(\omega^{1}_{Y_{0}/S_{0}}\) and
+\(\omega^{1}_{X_{0}/S_{0}}\) are finite locally free, one has a locally split
+exact sequence:
+\[
+0\longrightarrow
+\mathcal{L}\mathrm{ie}(Y_{0}/S_{0})\otimes_{\OO_{S_{0}}}\mathcal{J}
+\longrightarrow
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\otimes_{\OO_{S_{0}}}\mathcal{J}
+\longrightarrow
+\mathcal{F}_{0}
+\longrightarrow 0
+\]
+It follows that one has an exact sequence of
+\(Y_{0}\)-\(\OO_{S_{0}}\)-modules:
+\[
+0\longrightarrow L_{0Y}\longrightarrow L_{0X}\longrightarrow\mathbf{W}(\mathcal{F}_{0})\,.
+\]
+By the argument which we used to prove~4.31, we may compute \(E\) as the
+image of the composite map
+\[
+C^{0}(Y_{0},L_{0X})
+\xrightarrow{\pi}
+C^{0}(Y_{0},\,\mathbf{W}(\mathcal{F}_{0}))
+\xrightarrow{\partial}
+C^{1}(Y_{0},\,\mathbf{W}(\mathcal{F}_{0}))\,.
+\]
+Now the map \(\pi\) above is the map
+\(\Gamma\bigl(S_{0},\,
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\otimes_{\OO_{S_{0}}}\mathcal{J}\bigr)
+\to\Gamma(S_{0},\mathcal{F}_{0})\).
+Thus, \(S_{0}\) being affine, \(\pi\) is surjective, and one indeed finds the
+result announced.
+
+\begin{corollary}{4.33}\label{III.4.33}
+Let \(S\), \(\mathcal{I}\), \(\mathcal{J}\) and \(X\) be as in~4.21, and let
+\(Y\) be a diagonalizable subgroup of~\(X\). Suppose that
+\(\omega^{1}_{Y_{0}/S_{0}}\) is finite locally free and that \(S_{0}\) is
+affine.%
+{\renewcommand{\thefootnote}{(129)}\nde{\normalfont One has added the hypothesis on \(\omega^{1}_{Y_{0}/S_{0}}\) and replaced the hypothesis ``\(S\) affine'' by ``\(S_{0}\) affine''.}}
+The set of subgroups of~\(X\), conjugates of \(Y\) by a section of \(X\)
+over \(S\) inducing the unit section of \(X_{\mathcal{J}}\), is isomorphic to
+\[
+E
+=
+\Gamma\Bigl(S_{0},\,
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})
+\big/
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})^{\mathrm{ad}(Y_{0})}
+\Bigr)
+\otimes_{\Gamma(S_{0},\OO_{S_{0}})}
+\Gamma(S_{0},\mathcal{J})
+\]
+{\renewcommand{\thefootnote}{(130)}\nde{\normalfont One has added what follows, \cf~4.34.}}
+that is, to \(L_{0X}(Y_{0})/H^{0}(Y_{0},L_{0X})\).
+\end{corollary}
+
+Indeed, one writes, by~I 4.7.3 (\cf~2.13):
+\[
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})
+=
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})^{\mathrm{ad}(Y_{0})}
+\oplus
+\mathcal{R}\,.
+\]
+Since \(Y_{0}\) is commutative, one has
+\(\mathcal{L}\mathrm{ie}(Y_{0}/S_{0})
+\subset
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})^{\mathrm{ad}(Y_{0})}\),
+hence
+\begin{align*}
+\mathcal{F}_{0}
+&=
+\bigl(
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})^{\mathrm{ad}(Y_{0})}
+\big/
+\mathcal{L}\mathrm{ie}(Y_{0}/S_{0})
+\bigr)
+\otimes\mathcal{J}
+\oplus
+\mathcal{R}\otimes\mathcal{J}\,,
+\\
+\mathcal{F}_{0}^{\mathrm{ad}(Y_{0})}
+&=
+\bigl(
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})^{\mathrm{ad}(Y_{0})}
+\big/
+\mathcal{L}\mathrm{ie}(Y_{0}/S_{0})
+\bigr)
+\otimes\mathcal{J}\,.
+\end{align*}
+By~4.32, one therefore has \(E\simeq\Gamma(S_{0},\,\mathcal{R}\otimes\mathcal{J})\).
+Returning to the definition of \(\mathcal{R}\), one is done.
+
+\begin{corollary}{4.34}\label{III.4.34}
+Let \(S\), \(\mathcal{I}\), \(\mathcal{J}\) and \(X\) be as in~4.21, and let
+\(Y\) be a diagonalizable subgroup of~\(X\). Suppose that
+\(\omega^{1}_{Y_{0}/S_{0}}\) is finite locally free and that \(S_{0}\) is
+affine.%
+{\renewcommand{\thefootnote}{(131)}\nde{\normalfont \Cf\ N.D.E.~(129).}}
+If \(x\in X(S)\) induces the unit section of \(X_{\mathcal{J}}\) and
+normalizes~\(Y\), then it centralizes~\(Y\).
+\end{corollary}
+
+This follows immediately from the comparison of the preceding corollary and
+of~2.14. Indeed, 4.33 shows that the elements of \(C^{0}(Y_{0},L_{0X})\)
+which globally preserve \(Y\) are the elements of \(H^{0}(Y_{0},L_{0X})\), and
+one has seen in~2.14 that they are precisely those which act trivially on
+the canonical immersion \(Y\to X\).
+
+\numpara{4.35}\label{III.4.35}
+Let us return to the general situation of~4.21 and assume \(Y_{\mathcal{J}}\)
+smooth over \(S_{\mathcal{J}}\). Then, by~4.25~(ii), one has an exact
+sequence of \(Y_{0}\)-\(\OO_{S_{0}}\)-modules:
+\[
+(*)\qquad
+0\longrightarrow
+\mathcal{L}\mathrm{ie}(Y_{0}/S_{0})
+\longrightarrow
+\mathcal{L}\mathrm{ie}(X_{0}/S_{0})
+\longrightarrow
+\mathbf{n}^{\vee}_{Y_{0}/X_{0}}
+\longrightarrow 0
+\]
+and these are finite locally free \(\OO_{S_{0}}\)-modules.
+
+On the other hand, by SGA~1, II~4.10, every subscheme \(Y\) of \(X\) lifting
+\(Y_{\mathcal{J}}\) and \emph{flat} over \(S\) will be \emph{smooth} over~\(S\).%
+{\renewcommand{\thefootnote}{(132)}\nde{One has added what follows and Proposition~4.35.1, implicit in the original, \cf~4.38~(5).}}
+Suppose moreover that \(S_{0}\) and \(Y_{\mathcal{J}}\) are \emph{affine}.
+Then, since \(\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\) is a locally free
+\(\OO_{S_{0}}\)-module, the sequence \((*)\) remains exact when one applies
+\(\otimes_{\OO_{S_{0}}}\mathcal{J}\) to it, and then takes the inverse image
+on \(Y_{0}^{n}\), and since the \(Y_{0}^{n}\) are affine, one therefore
+obtains an exact sequence of complexes of abelian groups:
+\[
+0\longrightarrow
+C^{*}(Y_{0},L_{0Y})\longrightarrow
+C^{*}(Y_{0},L_{0X})\xrightarrow{d^{*}}
+C^{*}(Y_{0},N_{0})\longrightarrow 0
+\]
+and in particular, a commutative diagram with exact rows
+\[
+\xymatrix@C=1.45em@R=1.8em{
+0\ar[r]
+&
+C^{1}(Y_{0},L_{0Y})
+  \ar[r]
+  \ar[d]^{\partial}
+&
+C^{1}(Y_{0},L_{0X})
+  \ar[r]^{d^{1}}
+  \ar[d]^{\partial}
+&
+C^{1}(Y_{0},N_{0})
+  \ar[r]
+  \ar[d]^{\partial}
+&
+0
+\\
+0\ar[r]
+&
+C^{2}(Y_{0},L_{0Y})
+  \ar[r]
+&
+C^{2}(Y_{0},L_{0X})
+  \ar[r]^{d^{2}}
+&
+C^{2}(Y_{0},N_{0})
+  \ar[r]
+&
+0\,.
+}
+\]
+Now let \(Y\), \(Y'\) be two subgroups of \(X\) lifting \(Y_{\mathcal{J}}\) and
+\emph{flat}, hence \emph{smooth}, over~\(S\). Since \(Y_{\mathcal{J}}\) is
+affine, then, by~0.15, \(Y\) and \(Y'\) are isomorphic as schemes extending
+\(Y_{\mathcal{J}}\), \ie\ there exists an isomorphism of \(S\)-schemes
+\[
+f\colon Y\isomto Y'
+\]
+inducing the identity on \(Y_{\mathcal{J}}\).

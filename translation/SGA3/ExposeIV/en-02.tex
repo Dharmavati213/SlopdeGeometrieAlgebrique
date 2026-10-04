@@ -1,0 +1,433 @@
+In the second part of the definition, one has therefore used identifications
+and abuses of notation in current
+use%
+{\renewcommand{\thefootnote}{(8)}\nde{: for example, one has identified,
+on the one hand,
+\(\mathrm{pr}_{2,1}^{*}(X''_{1})=\mathrm{pr}_{3,1}^{*}(X''_{1})\) and, on the
+other hand,
+\(\mathrm{pr}_{2,1}^{*}(X''_{2})=\mathrm{pr}_{3,2}^{*}(X''_{2})\).}},
+which experience proves to be harmless, but which it is obviously advisable
+to avoid in a rigorous expos\'e of the theory of descent, (which must
+precisely justify to a certain extent these current abuses of language).
+Such a formal expos\'e ([D]) has been written by Giraud, (with a view to
+justifying and making precise SGA~1, VII, which has never been written).
+For a detailed expos\'e of the results of faithfully flat descent, of which
+constant use will be made in the present Seminar, one may consult
+SGA~1, VIII.
+
+Let \(f\colon S'\to S\) still be a morphism such that \(S''=S'\times_{S}S'\)
+exists, and let \(X\) be an object over \(S\) such that \(X'=X\times_{S}S'\)
+and \(X''=X\times_{S}S''\) exist; then the inverse images of \(X'\) by
+\(\mathrm{pr}_{i}\) (\(i=1,2\)) exist and are canonically isomorphic, and
+consequently \(X'/S'\) is endowed with a canonical gluing datum relative
+to~\(f\). When \(S'''\) and \(X'''=X\times_{S}S'''\) exist, it is even a
+descent datum. If \(Y\) is another object over \(S\), satisfying the same
+conditions as \(X/S\), then for every \(S\)-morphism \(X\to Y\), the
+corresponding \(S'\)-morphism \(X'\to Y'\) is ``compatible with the
+canonical gluing data'' on \(X'\), \(Y'\). If in particular \(S'\to S\) is a
+\emph{quarrable} morphism, then
+\[
+X\longmapsto X'=X\times_{S}S'
+\]
+is a functor from the category \(\mathcal{C}_{/S}\) into the ``category of
+objects over \(S'\) endowed with a descent datum relative to~\(f\)''\,---\,a
+category whose definition is left to the reader, and which is a full
+subcategory of the ``category of objects over \(S'\) endowed with a gluing
+datum relative to~\(f\)''.
+
+This being said:
+
+\begin{definition}{2.2}
+\label{IV.2.2}
+One says that a morphism \(f\colon S'\to S\) is a \emph{descent morphism}
+(\resp an \emph{effective descent morphism}) if \(f\) is \emph{quarrable}
+(\ie for every \(X\to S\), the fiber product \(X\times_{S}S'\) exists), and
+if the preceding functor \(X\mapsto X'=X\times_{S}S'\) from the category
+\(\mathcal{C}_{/S}\) of objects over \(S\), into the category of objects
+over \(S'\) endowed with a descent datum relative to~\(f\), is fully faithful
+(\resp an equivalence of categories).
+\end{definition}
+
+One will note that the first of these two notions can be expressed with the
+help of only the notion of gluing datum (hence without involving the triple
+fiber product \(S'''\)), \(f\) being a descent morphism if \(f\) is
+\emph{quarrable}
+and \(X\mapsto X'\) is a fully faithful functor from the category
+\(\mathcal{C}_{/S}\) into the category of objects over \(S'\) endowed with a
+gluing datum relative to~\(f\). When one makes this definition explicit, one
+finds that this means that for two objects \(X\), \(Y\) over \(S\), the
+following diagram of sets
+\[
+(\mathrm{x})\qquad
+\xymatrix@C=2.4em{
+\Hom_{S}(X,Y) \ar[r]
+  & \Hom_{S'}(X',Y')
+      \ar@<0.55ex>[r]^{p_{1}}
+      \ar@<-0.55ex>[r]_{p_{2}}
+  & \Hom_{S''}(X'',Y'')
+}
+\]
+is exact, where \(p_{i}(u')\) denotes the inverse image of
+\(u'\in\Hom_{S'}(X',Y')\) by the projection
+\(\mathrm{pr}_{i}\colon S''\to S'\), for \(i=1,2\); indeed, the kernel of
+the pair \((p_{1},p_{2})\) is by definition nothing other than the set of
+\(S'\)-morphisms \(X'\to Y'\) compatible with the canonical gluing data.
+
+Let us note that, by definition of the inverse images \(Y'\), \(Y''\), one
+has canonical bijections
+\[
+\Hom_{S'}(X',Y')\simeq\Hom_{S}(X',Y)
+\qquad\text{and}\qquad
+\Hom_{S''}(X'',Y'')\simeq\Hom_{S}(X'',Y),
+\]
+so that the exactness of the diagram~\((\mathrm{x})\) is equivalent to that
+of
+\[
+(\mathrm{xx})\qquad
+\xymatrix@C=2.8em{
+\Hom_{S}(X,Y) \ar[r]
+  & \Hom_{S}(X',Y)
+      \ar@<0.55ex>[r]
+      \ar@<-0.55ex>[r]
+  & \Hom_{S}(X'',Y)\,,
+}
+\]
+obtained by applying \(\Hom_{S}(-,Y)\) to the diagram in
+\(\mathcal{C}_{/S}\):
+\[
+(\mathrm{xxx})\qquad
+\xymatrix@C=3em{
+X'' \ar@<0.5ex>[r] \ar@<-0.5ex>[r] & X' \ar[r] & X
+}
+\]
+which is deduced from
+\[
+\xymatrix@C=3em{
+S'' \ar@<0.5ex>[r] \ar@<-0.5ex>[r] & S' \ar[r] & S
+}
+\]
+by the change of base \(X\to S\). This proves, taking~1.6 into account, the
+first part of the following proposition:
+
+\begin{proposition}{2.3}
+\label{IV.2.3}
+Let \(f\colon S'\to S\) be a morphism. If it is a universal effective
+epimorphism, it is a descent morphism, and the converse is true if \(S\) is
+a quarrable object of \(\mathcal{C}\) (\ie its product by every object of
+\(\mathcal{C}\) exists).
+\end{proposition}
+
+It remains to prove that if \(f\) is a descent morphism, it is a universal
+effective epimorphism, that is, that for every morphism \(X\to S\), the
+diagram~\((\mathrm{xxx})\) is exact, \ie for every object \(Z\) of
+\(\mathcal{C}\), the transform of this diagram by \(\Hom(-,Z)\) is an exact
+diagram of sets. Now by hypothesis \(Z\times S\) exists; let \(Y\) be the
+object of \(\mathcal{C}_{/S}\) which it defines; then the transform of
+diagram~\((\mathrm{xxx})\) by \(\Hom(-,Z)\) is isomorphic to the transform
+by \(\Hom_{S}(-,Y)\), now the latter is exact by the hypothesis on~\(f\).
+
+One may therefore apply to universal effective epimorphisms the results on
+descent morphisms, such as the following:
+
+\begin{proposition}{2.4}
+\label{IV.2.4}
+Let \(f\colon S'\to S\) be a descent morphism (for example a universal
+effective epimorphism). Then:
+
+a)~For every \(S\)-morphism \(u\colon X\to Y\), \(u\) is an isomorphism
+(\resp a monomorphism) if and only if \(u'\colon X'\to Y'\) is.
+
+b)~Let \(X\), \(Y\) be two subobjects of \(S\), and \(X'\) and \(Y'\) the
+subobjects of \(S'\), inverse images of the preceding ones. In order that
+\(X\) be majorized by \(Y\) (\resp be equal to \(Y\)), it is necessary and
+sufficient that the same hold for \(X'\), \(Y'\).
+\end{proposition}
+
+For~(a), it follows from the definition that if \(u'\) is an isomorphism in
+the category of objects with gluing datum, then \(u\) is an isomorphism; now
+one sees at once that every isomorphism of objects over \(S'\), compatible
+with gluing data, is an isomorphism of objects with gluing datum,
+% typo: un isomorphismes -> un isomorphisme
+\ie its inverse is likewise compatible with the gluing data. For~b), one is
+reduced to proving that if \(X'\) is majorized by \(Y'\), \ie if there
+exists an \(S'\)-morphism \(X'\to Y'\), then the same holds for \(X\), \(Y\)
+over \(S\). Now since \(Y'\to S'\), hence also \(Y''\to S''\), is a
+monomorphism, one sees that \(X'\to Y'\) is automatically compatible with
+the gluing data, hence comes from an \(S\)-morphism \(X\to Y\). Let us note
+that the proof holds more generally when one has two objects \(X\), \(Y\)
+over \(S\), with \(Y\to S\) a monomorphism, and one asks whether the morphism
+\(X\to S\) factors through \(Y\): it suffices that \(X'\to S'\) factor
+through \(Y'\).
+
+\begin{corollary}{2.5}
+\label{IV.2.5}
+Let \(f\colon S'\to S\) be a universal effective epimorphism and
+\(g\colon S\to T\) a morphism such that \(S\times_{T}S\) exists. Suppose that
+\(S''=S'\times_{S}S'\) is also a fiber product of \(S'\) by itself over \(T\),
+\ie \(S'\times_{S}S'\isomto S'\times_{T}S'\). Then \(g\colon S\to T\) is a
+monomorphism (and conversely, of course).
+\end{corollary}
+
+Indeed, let us consider the cartesian diagram
+\[
+\xymatrix@C=4.2em@R=2.4em{
+S'\times_{S}S' \ar[r]^{\sim} \ar[d]
+  & S'\times_{T}S' \ar[d]^{f} \\
+S \ar[r]
+  & S\times_{T}S\,,
+}
+\]
+where the second horizontal arrow is the diagonal morphism. By virtue
+of~1.9 the second vertical arrow \(f\) is a universal effective
+epimorphism, by hypothesis the first horizontal arrow is an isomorphism,
+hence by virtue of~2.4~a) or~b), at one's
+choice%
+{\renewcommand{\thefootnote}{(9)}\nde{: applied to
+\(f\colon S'\times_{T}S'\to S\times_{T}S=Y\).}},
+the same holds of \(S\to S\times_{T}S\), which means precisely that
+\(g\colon S\to T\) is a monomorphism.
+
+\begin{remark}{2.6}
+\label{IV.2.6}
+The notions introduced in~2.1, in terms of morphisms between certain
+projective limits, are made explicit in an evident way in terms of the
+contravariant functors defined by the objects \(S\), \(S'\), \(X'\)
+envisaged: subject to the existence of the fiber products envisaged
+in~2.1, there is a one-to-one correspondence between the gluing data
+(\resp descent data) on \(X'/S'\) relative to \(S'\to S\), and the gluing
+data (\resp descent data) for the corresponding objects in
+\(\widehat{\mathcal{C}}=\Hom(\mathcal{C}^{\circ},\Ens)\). This makes it
+possible, if one so desires, to extend these notions to the case where one
+makes no existence hypothesis on fiber products in \(\mathcal{C}\).
+\end{remark}
+
+\begin{remark}{2.7}
+\label{IV.2.7}
+The notions introduced in this number generalize to the case of families of
+morphisms. They can on the other hand be presented in a more intrinsic
+manner with the help of the notion of sieve~(4.1). For these questions, the
+reader is referred to~[D].
+\end{remark}
+
+\sgasection{3}{Universal effective equivalence relations}
+\label{IV.sec.3}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{3.1. Equivalence relations: definitions}\label{IV.sec.3.1}
+\par\addvspace{0.35\baselineskip}
+
+\begin{definition}{3.1.1}
+\label{IV.3.1.1}
+A \emph{representable subfunctor} \(R\) of the functor \(X\times X\), such
+that for every \(S\in\Ob(\mathcal{C})\), \(R(S)\) is the graph of an
+equivalence relation in \(X(S)\), is called a
+\emph{\(\mathcal{C}\)-equivalence relation} in \(X\in\Ob(\mathcal{C})\).
+\end{definition}
+
+This definition applies in particular to the category
+\(\widehat{\mathcal{C}}\). If one considers \(X\) as an object of
+\(\widehat{\mathcal{C}}\), one sees then that a
+\(\widehat{\mathcal{C}}\)-equivalence relation in \(X\) is nothing other
+than a subfunctor \(R\) of \(X\times X\) such that \(R(S)\) is the graph of
+an equivalence relation in \(X(S)\) for every object \(S\) of
+\(\mathcal{C}\).%
+{\renewcommand{\thefootnote}{(10)}\nde{: The condition is obviously
+necessary. Conversely, if for every \(S\in\Ob(\mathcal{C})\), \(R(S)\) is
+the graph of an equivalence relation, then this equivalence relation extends
+to \(R(F)\) for every \(F\in\Ob(\widehat{\mathcal{C}})\), by declaring that
+two morphisms \(\varphi,\psi\colon F\to R\) are equivalent if, for every
+\(S\in\Ob(\mathcal{C})\) and \(x\in F(S)\), \(\varphi(x)\) and \(\psi(x)\) are
+equivalent in \(X(S)\).}}
+% typo?: footnote (10) prints \(\varphi,\psi\colon F\to R\); kept as printed
+
+If \(R\) is a \(\mathcal{C}\)-equivalence relation in \(X\), one denotes by
+\(p_{i}\) the morphism from \(R\) into \(X\) induced by the projection
+\(\mathrm{pr}_{i}\colon X\times X\to X\). One therefore has a diagram
+\[
+p_{1},p_{2}\colon R\rightrightarrows X.
+\]
+
+\begin{definition}{3.1.2}
+\label{IV.3.1.2}
+A morphism \(u\colon X\to Z\) is said to be \emph{compatible} with \(R\) if
+\(up_{1}=up_{2}\). An object of \(\mathcal{C}\), cokernel of the pair
+\((p_{1},p_{2})\), is also called a \emph{quotient-object} of \(X\) by \(R\)
+and denoted \(X/R\).
+\end{definition}
+
+One therefore has an exact diagram
+\[
+\xymatrix@C=3.6em{
+R \ar@<0.55ex>[r]^{p_{1},p_{2}} \ar@<-0.55ex>[r]
+  & X \ar[r]^{p}
+  & X/R
+}
+\]
+and \(X/R\) represents the \emph{covariant} functor
+\[
+\Hom_{\mathcal{C}}(X/R,Z)
+=\{\text{morphisms from \(X\) into \(Z\) compatible with \(R\)}\}.
+\]
+As the quotient-objects have been chosen in \(\mathcal{C}\), the quotient
+\(X/R\) is unique (when it exists).
+
+These definitions generalize at once to the case of a
+\(\widehat{\mathcal{C}}\)-equivalence relation in \(X\), but one will
+observe that the identification of the objects of \(\mathcal{C}\) with
+their images in \(\widehat{\mathcal{C}}\) \emph{does not commute with the
+formation of quotients}, that is, that the quotient \(X/R\) of \(X\) by
+\(R\) in \(\mathcal{C}\) is not \emph{a priori} a quotient of \(X\) by \(R\)
+in \(\widehat{\mathcal{C}}\). One will therefore take care not to identify
+\(\mathcal{C}\) rashly with its image in \(\widehat{\mathcal{C}}\) in
+questions involving passages to the
+quotient.%
+{\renewcommand{\thefootnote}{(11)}\nde{: Let us illustrate this remark by
+giving a glimpse of the sequel of this Expos\'e. Let \(G\) be a
+\(\mathcal{C}\)-group, \(H\) a \(\mathcal{C}\)-subgroup, \(R\) the
+equivalence relation in \(G\) defined by \(G\times H\to G\times G\),
+\((g,h)\mapsto(g,gh)\) (\cf~3.2). The functor \(Q\) defined by
+\(Q(S)=G(S)/H(S)\) is a quotient in \(\widehat{\mathcal{C}}\) (by~4.4.9
+applied to the coarsest topology, \cf~4.4.2), but it is not in general the
+quotient that one wishes. For example, for \(\mathcal{C}=\Sch\), one has an
+exact sequence of (affine) group schemes:
+\[1\longrightarrow\bmu_{2}\longrightarrow\Gm\xrightarrow{p}\Gm\longrightarrow1\]
+which identifies \(\Gm\) with the quotient \(\Gm/\bmu_{2}\). Moreover, as
+\(p\) is a finite and locally free morphism, \(\Gm\) is then the
+\emph{quotient-sheaf} of \(\Gm\) by \(\bmu_{2}\) in the larger category of
+\emph{sheaves for the \textup{(fppf)} topology}, \cf~4.6.6\,(ii) and~6.3.2. By
+contrast, the quotient \(Q\) in \(\widehat{\mathcal{C}}\) is not isomorphic
+to \(\Gm\) since, for example, \(Q(\ZZ)=\{1\}\) whereas
+\(\Gm(\ZZ)=\{\pm1\}\). Hence \(Q\) is not an \textup{(fppf)} sheaf, and a
+fortiori \(Q\) is not representable.}}
+
+In the sequel, \emph{we shall say simply equivalence relation for
+\(\widehat{\mathcal{C}}\)-equivalence relation}; we shall specify, when the
+case arises, whether it is a matter of \(\mathcal{C}\)-equivalence
+relations.%
+% typo: relations d'équivalences -> relations d'équivalence
+{\renewcommand{\thefootnote}{(12)}\nde{: Take care that, even for a
+\(\widehat{\mathcal{C}}\)-equivalence relation in \(X\), one is interested
+in the existence of a quotient \emph{in \(\mathcal{C}\)}. }}
+
+\begin{definition}{3.1.3}
+\label{IV.3.1.3}
+If \(X\) is an object of \(\mathcal{C}\) over \(S\), an equivalence relation
+\(R\) in \(X\) such that the structural morphism \(X\to S\) is compatible
+with \(R\) is called an equivalence relation in \(X\) over \(S\).
+\end{definition}
+
+The canonical monomorphism \(R\to X\times X\) then factors through the
+monomorphism
+\[
+X\times_{S}X\longrightarrow X\times X
+\]
+and defines an equivalence relation in the object \(X\to S\) of
+\(\mathcal{C}_{/S}\). When the quotient \(X/R\) exists, it is endowed with
+a canonical morphism into \(S\) and the corresponding object of
+\(\mathcal{C}_{/S}\) is a quotient of \(X\in\Ob(\mathcal{C}_{/S})\) by the
+preceding equivalence relation. Conversely, if \(S\) is a \emph{quarrable}
+object of \(\mathcal{C}\) and if \(Y\to S\) is a quotient of \(X\) by this
+equivalence relation (in \(\mathcal{C}_{/S}\)), then \(Y\) is a quotient of
+\(X\) by \(R\) in \(\mathcal{C}\). In any case, we shall never have to
+consider quotients in \(\mathcal{C}_{/S}\) which are not already quotients
+in \(\mathcal{C}\).
+
+\begin{definition}{3.1.4}
+\label{IV.3.1.4}
+If \(X\) (\resp\ \(X'\)) is an object of \(\mathcal{C}\) endowed with an
+equivalence relation \(R\) (\resp \(R'\)), a morphism
+\[
+u\colon X\to X'
+\]
+is said to be \emph{compatible with \(R\) and \(R'\)} if the following
+equivalent conditions are satisfied:
+\begin{enumeratei}
+\item for every \(S\in\Ob(\mathcal{C})\), two points of \(X(S)\) congruent
+modulo \(R(S)\) are transformed by \(u\) into two points of \(X'(S)\)
+congruent modulo \(R'(S)\);
+\item there exists a morphism \(R\to R'\) (necessarily unique) making the
+following diagram commutative
+\[
+\xymatrix@C=4.5em@R=2.6em{
+R \ar[r] \ar[d]
+  & R' \ar[d] \\
+X\times X \ar[r]_{u\times u}
+  & X'\times X'\,.
+}
+\]
+\end{enumeratei}
+\end{definition}
+
+By the universal property of \(X/R\), there then exists (when the quotients
+\(X/R\) and \(X'/R'\) exist) a unique morphism \(v\) making the following
+diagram commutative
+\[
+\xymatrix@C=4em@R=2.4em{
+X \ar[r]^{p} \ar[d]_{u}
+  & X/R \ar[d]^{v} \\
+X' \ar[r]_{p'}
+  & X'/R'\,.
+}
+\]
+
+\begin{definition}{3.1.5}
+\label{IV.3.1.5}
+A subobject (\(={}\) a representable subfunctor) \(Y\) of \(X\) is said to
+be \emph{stable} under the equivalence relation \(R\) if the following
+equivalent conditions are satisfied:
+\begin{enumeratei}
+\item For every \(S\in\Ob(\mathcal{C})\), the subset \(Y(S)\) of \(X(S)\) is
+stable under \(R(S)\).
+\item The two subobjects of \(R\), inverse images of \(Y\) by \(p_{1}\) and
+\(p_{2}\), are identical.
+\end{enumeratei}
+\end{definition}
+
+An important particular case of a stable subobject of \(X\) is the
+following: the quotient \(X/R\) exists and \(Y\) is the inverse image on
+\(X\) of a subobject of \(X/R\).
+
+\begin{definition}{3.1.6}
+\label{IV.3.1.6}
+Let \(R\) be an equivalence relation in \(X\) and \(X'\to X\) a morphism.
+The equivalence relation \(R'\) in \(X'\) obtained by the cartesian diagram
+\[
+\xymatrix@C=4.5em@R=2.6em{
+R' \ar[r] \ar[d]
+  & R \ar[d] \\
+X'\times X' \ar[r]
+  & X\times X
+}
+\]
+is called the equivalence relation in \(X'\), \emph{inverse image} of the
+equivalence relation \(R\) in \(X\). In particular, if \(X'\) is a subobject
+of \(X\), one will say that it is the equivalence relation \emph{induced}
+in \(X'\) by \(R\); one will denote it by \(R_{X'}\).
+\end{definition}
+
+The morphism \(X'\to X\) is compatible with \(R'\) and \(R\); one therefore
+has, when the quotients exist, a morphism \(X'/R'\to X/R\) (3.1.4). If
+\(X'\) is a subobject of \(X\), we shall see later that in certain cases one
+can prove that \(X'/R'\to X/R\) is a monomorphism, hence identifies
+\(X'/R'\) with a subobject of \(X/R\). When this is the case, the inverse
+image of this subobject in \(X\) will be a subobject of \(X\) majorizing
+\(X'\) and stable under \(R\): the \emph{saturation} of \(X'\) for the
+equivalence relation \(R\).
+
+\begin{proposition}{3.1.7}
+\label{IV.3.1.7}
+If the subobject \(Y\) of \(X\) is stable under \(R\), one has two cartesian
+squares, for \(i=1,2\):
+\[
+\xymatrix@C=4em@R=2.4em{
+R_{Y} \ar[r] \ar[d]_{p_{i}}
+  & R \ar[d]^{p_{i}} \\
+Y \ar[r]
+  & X\,.
+}
+\]
+\end{proposition}
+
+\begin{proof}
+Immediate.
+\end{proof}

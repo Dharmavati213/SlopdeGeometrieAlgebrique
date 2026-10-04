@@ -1,0 +1,196 @@
+% PDF pp. 13--18.
+\nde{The following has been added.} Indeed, let $S^1$ be the kernel of the norm morphism $N:\prod_{\CC/\RR}\mathbf{G}_{\mathrm{m},\CC}\to\mathbf{G}_{\mathrm{m},\RR}$; it is a $\CC/\RR$-twisted form of $\mathbf{G}_{\mathrm{m},\RR}$. The equation $N(z)=-1$ in $\prod_{\CC/\RR}(\mathbf{G}_{\mathrm{m},\CC})$ defines an $S^1$-torsor $X$ over $\Spec(\RR)$, locally trivial for the étale topology, but nontrivial since $X(\RR)=\varnothing$. Let us show that $H^1_{\mathrm{\acute et}}(\RR,S^1)\simeq\ZZ/2\ZZ$. One has an exact sequence of smooth commutative algebraic $\RR$-groups:
+\[
+1\to S^1\to\prod_{\CC/\RR}\mathbf{G}_{\mathrm{m},\CC}\to\mathbf{G}_{\mathrm{m},\RR}\to1
+\]
+which gives rise to a long exact sequence of étale cohomology (or Galois cohomology):
+\[
+0\to S^1(\RR)\to\CC^\times\xrightarrow{N}\RR^\times\to H^1_{\mathrm{\acute et}}(\RR,S^1)\to H^1_{\mathrm{\acute et}}(\RR,\prod_{\CC/\RR}\mathbf{G}_{\mathrm{m},\CC})\to\cdots
+\]
+Now (see, for example, XXIV, 8.4), $H^1_{\mathrm{\acute et}}(\RR,\prod_{\CC/\RR}\mathbf{G}_{\mathrm{m},\CC})\simeq H^1_{\mathrm{\acute et}}(\CC,\mathbf{G}_{\mathrm{m},\CC})$, and the latter is zero by 4.5 (or, here, since $\CC$ is algebraically closed). One therefore obtains an isomorphism $H^1_{\mathrm{\acute et}}(\RR,S^1)\simeq\RR^\times/N(\CC^\times)\simeq\{\pm1\}$.
+
+We shall need the following result in the next \No:
+\begin{proposition}{4.6}\label{VIII.4.6}
+Under the conditions of 4.1, conditions a) and b) are equivalent to the following conditions:
+
+a') $\OS\to\cal A_0$ is an isomorphism.
+
+b') For every $m$ in $M$ (it suffices: in a system of generators of $M$), one has:
+\[
+\cal A_m\cdot\cal A_{-m}=\cal A_0.
+\]
+\end{proposition}
+Necessity being evident, in view of 4.2\nde{4.1 has been corrected to 4.2.}, we shall reduce to proving the
+\begin{corollary}{4.7}\label{VIII.4.7}
+Let $A=\coprod_{n\in\ZZ}A_n$ be a $\ZZ$-graded ring such that
+\[
+A_1\cdot A_{-1}=A_0.
+\]
+Then the $A_n$ are invertible $A_0$-modules, and, for $n,n'\in\ZZ$, the homomorphism
+\[
+A_n\otimes_{A_0}A_{n'}\to A_{n+n'}
+\]
+induced by multiplication in $A$ is an isomorphism.
+\end{corollary}
+By hypothesis, there exist $f_i\in A_1$, $g_i\in A_{-1}$ such that
+\begin{equation}\tag{*}
+\sum_i f_ig_i=1.
+\end{equation}
+As the conclusion to be established is local on $\Spec(A_0)$,\nde{The following passage has been expanded.} and as, by (*), $\Spec(A_0)$ is covered by the affine open subsets $D(f_ig_i)$, one is reduced to the case where there exists an element $f\in A_1$ invertible in $A$. Then, for every $n\in\ZZ$, $f^n$ is an element of $A_n$ invertible in $A$, and therefore defines an isomorphism $h\mto f^nh$ from $A_0$ onto $A_n$. Moreover, this shows that one obtains an isomorphism $A_0[t,t^{-1}]\to A$ of graded $A_0$-algebras by sending $t$ to $f$, which completes the proof of 4.7.
+
+Then, under the conditions of 4.6, 4.7 already implies that the $\cal A_m$ ($m\in M$) are invertible. To prove condition 4.1 b), one may therefore suppose that $\cal A_m$ and $\cal A_{m'}$ have bases $f_m$ and $f_{m'}$, with inverses $f_m^{-1}\in\Gamma(\cal A_{-m})$ and $f_{m'}^{-1}\in\Gamma(\cal A_{-m'})$. Then multiplication by $f_m^{-1}f_{m'}^{-1}\in\Gamma(\cal A_{-m-m'})$ defines a homomorphism $\cal A_{m+m'}\to\cal A_0\simeq\OS$, transforming the image of $f_m\otimes f_{m'}$ into the section 1 of $\OS$. In the diagram
+\[
+\xymatrix{\cal A_m\otimes\cal A_{m'}\ar[r]^u\ar@/^2pc/[rr]^w&\cal A_{m+m'}\ar[r]^v&\cal A_0\simeq\OS}
+\]
+$w$ and $v$ are therefore epimorphisms of invertible sheaves, hence isomorphisms, so $u$ is an isomorphism. \hfill Q.E.D.
+
+\sgasection{5}{Quotient of an affine scheme by a diagonalizable group acting freely}
+\nde{The following sentence has been added.} Denote by $\cal M$ the set of faithfully flat quasi-compact morphisms, and recall that we consider torsors in the sense of the (fpqc) topology.
+\begin{theorem}{5.1}\label{VIII.5.1}
+Let $S$ be a prescheme, $M$ an ordinary commutative group, $G=D_S(M)$ the diagonalizable group over $S$ that it defines, $P$ an $S$-prescheme affine over $S$ on which $G$ acts freely on the right.
+
+Then the equivalence relation defined by $G$ in $P$ is $\cal M$-effective (cf. IV, 3.4), i.e. the quotient $X=P/G$ exists and $P$ is a torsor over $X$ with group $G_X=D_X(M)$. Moreover, $P/G$ is affine over $S$; more precisely, if $P$ is defined by the algebra $\cal A$ graded of type $M$, then $P/G$ is isomorphic to $\Spec(\cal A_0)$, where $\cal A_0=\cal A^G$ is the degree 0 component of $\cal A$.
+\end{theorem}
+\begin{proof}
+Put $X=\Spec(\cal A_0)$; then one has a natural morphism $P\to X$, deduced from $\cal A_0\to\cal A$, which is invariant under the operations of $G$. In this way $P$ becomes an $X$-prescheme, affine over $X$, with group of operators $G_X=D_X(M)$, and the hypothesis that $G$ acts freely on $P/S$ implies that $G_X$ acts freely on $P/X$. Everything amounts to showing that $P$ is a principal homogeneous bundle under $G_X$, using the fact that $\cal B_0=\OX$, where $\cal B$ is the algebra graded of type $M$ over $X$ that defines $P/X$. One may then suppose $X=S$ and $S$ affine, so $P$ is affine, given by a ring $A$ graded of type $M$, whose homogeneous part of degree $m$ will be denoted by $A_m$, so that $S=\Spec(A_0)$. In view of 4.6, it remains to check that one has:
+\begin{equation}\tag{x}
+A_m\cdot A_{-m}=A_0\qquad\text{for every }m\in M.
+\end{equation}
+One also verifies by an immediate calculation that (x) is equivalent to saying that $P\times_S G\to P\times_S P$ is a \emph{closed immersion}, and not merely a monomorphism (according to the hypothesis that $G$ acts freely), i.e. that the homomorphism on affine rings
+\[
+\theta:A\otimes_{A_0}A\to A(M)
+\]
+is surjective.\nde{Indeed, for every $b\in A$, $a_m\in A_m$, one has $\theta(b\otimes a_m)=ba_m\otimes e_m$, so surjectivity of $\theta$ is equivalent to (x).} This gives 5.1 when one supposes that the equivalence relation defined by $G$ in $P$ is closed. We shall, however, show that this hypothesis is already a consequence of the fact that $G$ acts freely (which is, moreover, implicitly contained in theorem 5.1, since $G\times_S P$ must be isomorphic to $P\times_X P$, which is closed in $P\times_S P$ since $X$ is affine over $S$ and hence separated over $S$).
+
+Let $R=P\times_S G$. The hypothesis that $G$ acts freely, i.e. that $R\to P\times_S P$ is a monomorphism, is expressed by saying that the diagonal morphism
+\[
+R\to R\mathop{\times}_{(P\times_S P)}R=R'
+\]
+is an isomorphism. One has $R=\Spec(A(M))$ and
+\[
+R'=\Spec(A(M\times M)/K)
+\]
+\nde{The ideal denoted by $J$ in the original has been denoted by $K$, to distinguish it from the ideals $J_p$ of $A_0$ which appear in (xxx). On the other hand, it has been made explicit below that relations (xx) are equivalent to the equality $K=K'$ (see what follows).}
+where $K$ is the ideal generated by the elements of the form
+\[
+x_m(e_{m,0}-e_{0,m}),\qquad\text{with }m\in M,\ x_m\in A_m;
+\]
+let $\phi:A(M\times M)\to A(M)$ be the surjective ring homomorphism defined by
+\[
+x e_{m,n}\mto x e_{m+n}\qquad(m,n\in M,\ x\in A)
+\]
+(where the $e_m$, resp. $e_{m,n}=e_m\otimes e_n$, are the elements of the canonical basis of $A(M)$, resp. $A(M\times M)$). Then the diagonal morphism $R\to R'$ corresponds to the homomorphism
+\[
+\overline\phi:A(M\times M)/K\to A(M)
+\]
+obtained by passing to the quotient by $K$. Now the kernel of $\phi$ is the ideal $K'$ generated by the
+\[
+d_m=e_{m,0}-e_{0,m}.
+\]
+One has $K\subseteq K'$, and the hypothesis that $G$ acts freely on $P$, i.e. that $\overline\phi$ is an isomorphism, is equivalent to the equality $K'=K$, which is expressed by the relations
+\begin{equation}\tag{xx}
+d_m\in K=\sum_p A(M\times M)A_pd_p,\qquad\text{for every }m\in M.
+\end{equation}
+Using the natural trigrading of $A(M\times M)$, and the fact that the first degree of $d_m$ is zero, this means that one can write $d_m$ as a sum of elements of the form
+\[
+f e_{r,s}(e_{p,0}-e_{0,p})\qquad\text{with }f\in A_{-p}\cdot A_p,
+\]
+and, using the fact that the total degree of $d_m$ is $m$, one may restrict to terms such that
+\[
+r+s+p=m.
+\]
+Thus one must have, for every $m\in M$, an expression:
+\begin{equation}\tag{xxx}
+\begin{cases}
+d_m=e_{m,0}-e_{0,m}=\displaystyle\sum_{r,s}\lambda_{r,s}(e_{m-s,s}-e_{r,m-r})\\
+\text{with }\lambda_{r,s}\in J_p=A_p\cdot A_{-p}\subseteq A_0,\quad p=m-(r+s).
+\end{cases}
+\end{equation}
+One must deduce relation (x), i.e. the relations
+\begin{equation}\tag{xxxx}
+J_n=A_0\qquad\text{for every }n\in M.
+\end{equation}
+Now for this it suffices to establish the same relation modulo every maximal ideal of $A_0$. As the hypotheses made are invariant under such a reduction, one may already suppose that $A_0$ is a \emph{field}.
+
+\begin{lemma}{5.2}\label{VIII.5.2}
+Under the preceding conditions (with $A_0$ a field), if $M\ne0$, there exists a $p\in M-\{0\}$ such that $J_p=A_0$.
+\end{lemma}
+Indeed, if this were not so, the sum in the last member of (xxx) would be zero for every $m\in M$, which is absurd.
+\begin{corollary}{5.3}\label{VIII.5.3}
+Under the preceding conditions, but without any longer supposing that $A_0$ is a field, there exists a finite number of elements $p_i\in M-\{0\}$ such that $\sum_i J_{p_i}=A_0$.
+\end{corollary}
+Indeed, one applies result 5.2 to the situations deduced from $A/A_0$ by reduction modulo the maximal ideals of $A_0$.\nde{It follows from 5.2 that $\sum_{p\ne0}J_p=A_0$, so 1 is written as a finite sum $\sum_i x_i$, with $x_i\in J_{p_i}$.}
+\begin{corollary}{5.4}\label{VIII.5.4}
+Suppose again that $A_0$ is a field. Then for every subgroup $N$ of $M$ such that $N\ne M$, there exists a $p\in M-N$ such that $J_p=A_0$.
+\end{corollary}
+Indeed, let $M'=M/N$, and consider the ring $A'$ graded of type $M'$ whose underlying ring is $A$ and whose grading is given by
+\[
+A'_{m'}=\coprod_{m\in h^{-1}(m')}A_m,
+\]
+where $h:M\to M'=M/N$ is the canonical homomorphism. Geometrically, this construction amounts to considering the subgroup $G'=D_S(M')$ of $G$, and the structure on $P$ of a scheme with group of operators $G'$ induced by the operations of $G$. It is then evident that $G'$ acts freely on $P'$, i.e. the pair $(M',A')$ satisfies the hypotheses of 5.3. One therefore obtains
+\[
+1=\sum_i f_ig_i\quad\text{with }f_i\in A'_{m'_i},\quad g_i\in A'_{-m'_i}\quad\text{and }m'_i\in M'-\{0\},
+\]
+whence immediately conclusion 5.4 by taking the components of the right-hand side in $A_0$, and using the fact that $A_0$ is a field.
+
+Let us now note that
+\[
+J_p\cdot J_q\subseteq J_{p+q}\quad\text{and }J_p=J_{-p},
+\]
+so, if $N$ denotes the set of $m\in M$ such that $J_p=A_0$, one sees that $N$ is a subgroup of $M$. Using 5.4 one sees that it equals $M$. This completes the proof of theorem 5.1.
+% typo?: m and p in the preceding sentence are retained as printed.
+\end{proof}
+As we pointed out in the course of the proof, theorem 5.1 implies:
+\begin{corollary}{5.5}\label{VIII.5.5}
+Under the conditions of 5.1, the graph morphism
+\[
+P\times_S G\to P\times_S P
+\]
+is a closed immersion.
+\end{corollary}
+One concludes immediately:
+\begin{corollary}{5.6}\label{VIII.5.6}
+Let $\sigma$ be a section of $P$ over $S$. Then the morphism $g\mto\sigma\cdot g$ from $G$ to $P$ defined by $\sigma$ is a closed immersion.
+\end{corollary}
+\begin{corollary}{5.7}\label{VIII.5.7}
+Let $G,H$ be two $S$-groups, with $G$ diagonalizable, $H$ affine over $S$, and let $u:G\to H$ be a homomorphism of $S$-groups which is a monomorphism. Then $u$ is a closed immersion, $H/G=X$ exists and $H$ is a principal homogeneous bundle over $X$ with group $G_X$; finally, $X$ is affine over $S$.
+\end{corollary}
+\begin{corollary}{5.8}\label{VIII.5.8}
+Under the conditions of 5.1, if $P$ is of finite type (resp. of finite presentation) over $S$, the same is true of $X=P/G$.
+\end{corollary}
+Indeed, it follows from the hypothesis that the fibers of $G_X$ are of finite type, so $G_X$ is of finite presentation over $X$ by 2.1 b); hence $P$, being a torsor under $G_X$, is of finite presentation over $X$.\nde{Cf. EGA II, 2.7.1 (vi).} Since it is also faithfully flat over $X$, our conclusion then follows from Exp. V, Prop. 9.1.
+
+\sgasection{6}{Essentially free morphisms, and representability of certain functors of the form $\prod_{Y/S}Z/Y$}
+\footnote{The present \No\ is independent of the theory of diagonalizable groups; its natural place would be in VI$_{\mathrm B}$.}
+\begin{definition}{6.1}\label{VIII.6.1}
+Let $f:X\to S$ be a morphism of preschemes. One says that $f$ is \emph{essentially free}, or again that $X$ is \emph{essentially free over $S$}, if one can find a covering of $S$ by affine open subsets $S_i$, for every $i$ an $S_i$-prescheme $S'_i$ affine and faithfully flat over $S_i$, and a covering $(X'_{ij})_j$ of $X'_i=X\times_S S'_i$ by affine open subsets $X'_{ij}$, such that for every $(i,j)$ the ring of $X'_{ij}$ is a free module over the ring of $S'_i$.\nde{One may replace ``free'' by ``projective'', cf. 6.8 below. On the other hand, this notion should be compared with that of a flat and pure $S$-prescheme, introduced and developed in [RG71]; see in particular loc. cit., Part 1, 3.3.12 and Part 2, 3.1.4.1.}
+\end{definition}
+\begin{proposition}{6.2}\label{VIII.6.2}
+a) If $X$ is essentially free over $S$, it is flat over $S$, the converse being true if $S$ is artinian.
+
+b) If $S$ is the spectrum of a field, every $S$-prescheme is essentially free over $S$.
+
+c) If $X$ is essentially free over $S$, and if $S'\to S$ is a base change morphism, $X'=X\times_S S'$ is essentially free over $S'$. The converse is true if $S'\to S$ is faithfully flat and quasi-compact.
+\end{proposition}
+The proof is immediate, using for the converse in a) the fact that a flat module over an artinian local ring is free.\nde{Indeed, let $(A,\goth m)$ be an artinian local ring, $k$ its residue field, $M$ an arbitrary $A$-module, $(x_i)_{i\in I}$ elements of $M$ whose images form a basis of $M/\goth mM$ over $k$. Let $F$ be the free $A$-module with basis $(e_i)_{i\in I}$, and $\phi:F\to M$ the $A$-morphism defined by $\phi(e_i)=x_i$. Then $Q=\Coker\phi$ satisfies $Q=\goth mQ$, whence, since $\goth m$ is nilpotent, $Q=0$. Suppose in addition that $M$ is flat over $A$; then $K=\Ker\phi$ satisfies $K\otimes_A k=0$, i.e. $K=\goth mK$, whence $K=0$.}
+\begin{proposition}{6.3}\label{VIII.6.3}
+Let $H$ be a diagonalizable $S$-group prescheme (more generally, one which becomes diagonalizable by a suitable faithfully flat quasi-compact extension of every affine open subset of $S$, i.e. $H$ is ``of multiplicative type'', cf. IX 1.1). Then $H$ is essentially free over $S$.
+\end{proposition}
+Indeed, if $H$ is diagonalizable, it is affine over $S$ and defined by an algebra which is a free $\OS$-module.
+
+The introduction of definition 6.1 is justified by the
+\begin{theorem}{6.4}\label{VIII.6.4}
+Let $S$ be a prescheme, $Z$ an essentially free $S$-prescheme, $Y$ a closed subprescheme of $Z$. Consider the following functor\nde{Cf. II.1, where this functor is denoted by $\prod_{Z/S}Y$.}
+\[
+F=\prod_{Z/S}Y/Z:\Sch_{/S}^{\circ}\to\Ens,\qquad
+F(S')=\Gamma(Y_{S'}/Z_{S'})=
+\begin{cases}\varnothing&\text{if }Z_{S'}\ne Y_{S'};\\\{\mathrm{id}_{Z_{S'}}\}&\text{if }Z_{S'}=Y_{S'}.\end{cases}
+\]
+This functor is representable by a closed subprescheme of $S$.\nde{$Z$ has been corrected to $S$.}
+\end{theorem}
+\nde{The original has been expanded in what follows; see also 1.7.3.} Let us first note that $F$ is a sheaf for the (fpqc) topology: since $F(S')=\varnothing$ or $\{\mathrm{pt}\}$ for every $S'$, this amounts to checking that if $(S_i)$ is an open covering of $S$ (resp. $S'\to S$ a faithfully flat and quasi-compact morphism), and if each $Y_{S_i}\to Z_{S_i}$ (resp. if $Y_{S'}\to Z_{S'}$) is an isomorphism, the same is true of $Y\to Z$; now this is clear (resp. follows from SGA 1, VIII 5.4 or EGA IV$_2$, 2.7.1).
+% typo: "morphisme fidèlement et quasi-compact" -> "faithfully flat and quasi-compact morphism".
+Moreover, by SGA 1, VIII 2.1 and 5.5, faithfully flat and quasi-compact morphisms are of effective descent for the fibered category of closed immersion arrows. This allows us to restrict, with the notation of 6.1, to the case where $S=S'_i$.
+
+Let then $(Z_j)$ be a covering of $Z$ by affine open subsets such that $\OO(Z_j)$ is a free module over $A=\OO(S)$, and let $Y_j=Y\cap Z_j$ and $F_j:\Sch_{/S}^{\circ}\to\Ens$ be the functor defined in terms of $(Z_j,Y_j)$ as $F$ is in terms of $(Z,Y)$. It is a subfunctor of the final functor, and one evidently has $F=\bigcap_j F_j$, which reduces us to proving that each $F_j$ is representable by a closed subscheme $T_j$ of $S$ (for then $F$ will be representable by the closed subscheme $T$ which is the intersection of the $T_j$).
+% The sentence begun on PDF p. 18 ends above; the proof continues in en-04.tex.

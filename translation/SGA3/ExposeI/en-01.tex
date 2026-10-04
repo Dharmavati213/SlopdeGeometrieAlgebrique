@@ -1,0 +1,499 @@
+\exposetitle{I}{Algebraic structures. Cohomology of groups}
+\label{I}
+
+\begin{center}
+\textit{by M.~Demazure}
+\end{center}
+
+{\renewcommand{\thefootnote}{(0)}\nde{Version of 13/10/2024}}%
+This expos\'e consists of two parts; the first collects a certain number
+of general definitions and sets down notations which will often be used
+in the sequel, the second treats the cohomology of groups and leads to
+Theorem~5.3.3 (vanishing of the cohomology of diagonalizable groups).
+
+We choose once and for all a
+Universe.%
+{\renewcommand{\thefootnote}{(1)}\nde{\Cf SGA~4, Exp.~I, \S0 and the
+Appendix; see also the discussion in \textup{[DG70]}, p.~xxvi.}}
+All the definitions introduced and all the constructions carried out
+will be relative to this Universe. We shall systematically allow
+ourselves the following abuse of language: in order to define a functor
+\(f\colon\mathcal{C}\to\mathcal{C}'\), we shall content ourselves with
+defining the object \(f(S)\) of \(\mathcal{C}'\) for every object \(S\)
+of \(\mathcal{C}\), whenever there will be no ambiguity as to the manner
+of defining \(f(h)\) for an arrow \(h\) of \(\mathcal{C}\). In practice,
+we shall say: let \(f\colon\mathcal{C}\to\mathcal{C}'\) be the functor
+defined by \(f(S)=\cdots\).
+
+\sgasection{1}{Generalities}
+\label{I.sec.1}
+
+\numpara{1.1}
+Let \(\mathcal{C}\) be a category. One will denote by
+\(\widehat{\mathcal{C}}\) the category
+\(\Hom(\mathcal{C}^{\circ},\Ens)\) of contravariant functors from
+\(\mathcal{C}\) to the category \(\Ens\) of
+sets.%
+{\renewcommand{\thefootnote}{(2)}\nde{One calls it the category of
+presheaves on \(\mathcal{C}\), \cf IV~4.3.1.}}
+There exists a canonical functor
+\(\mathbf{h}\colon\mathcal{C}\to\widehat{\mathcal{C}}\) which associates
+with every \(X\in\Ob(\mathcal{C})\) the functor \(\mathbf{h}_{X}\) such
+that
+\[
+\mathbf{h}_{X}(S)=\Hom(S,X).
+\]
+For every functor \(\mathbf{F}\in\Ob(\widehat{\mathcal{C}})\), one defines
+(\cf for example EGA \(0_{\mathrm{III}}\), 8.1.4) a
+bijection%
+{\renewcommand{\thefootnote}{(3)}\nde{This result is often called the
+``Yoneda lemma''; we shall use this terminology in other N.D.E.}}
+\[
+\Hom(\mathbf{h}_{X},\mathbf{F})\isomto\mathbf{F}(X).
+\]
+
+In particular, for every pair \(X\), \(Y\) of objects of \(\mathcal{C}\),
+the canonical map below is bijective:
+\[
+\Hom_{\mathcal{C}}(X,Y)\isomto
+\Hom_{\widehat{\mathcal{C}}}(\mathbf{h}_{X},\mathbf{h}_{Y});
+\]
+\ie the functor \(\mathbf{h}\) is \emph{fully faithful}. It therefore
+defines an isomorphism of \(\mathcal{C}\) onto a \emph{full} subcategory of
+\(\widehat{\mathcal{C}}\), and an equivalence of \(\mathcal{C}\) with the
+\emph{full} subcategory of \(\widehat{\mathcal{C}}\) formed of the
+\emph{representable} functors (\ie isomorphic to a functor of the form
+\(\mathbf{h}_{X}\)). In the sequel, we shall often identify \(X\) and
+\(\mathbf{h}_{X}\). The following numbers are intended to show that this
+identification can be made without danger.
+
+\begin{remark}{1.1.1}
+\label{I.1.1.1}
+{\renewcommand{\thefootnote}{(4)}\nde{This remark has been added.}}%
+One sometimes needs the following variant. Let \(\mathcal{D}\) be a
+\emph{full} subcategory of \(\mathcal{C}\) and let
+\(X,Y\in\Ob(\mathcal{D})\); denote by \(\mathbf{h}'_{X}\) and
+\(\mathbf{h}'_{Y}\) the restrictions to \(\mathcal{D}\) of
+\(\mathbf{h}_{X}\) and \(\mathbf{h}_{Y}\). Then one has
+\[
+\Hom_{\mathcal{C}}(X,Y)=\Hom_{\mathcal{D}}(X,Y)
+=\Hom_{\widehat{\mathcal{D}}}(\mathbf{h}'_{X},\mathbf{h}'_{Y})
+\]
+and hence: to give a morphism \(X\to Y\) ``is the same thing'' as to
+give, in a manner functorial in \(T\), a map
+\(\varphi(T)\colon\Hom(T,X)\to\Hom(T,Y)\), for every
+\(T\in\Ob(\mathcal{D})\).
+\end{remark}
+
+\numpara{1.2}
+{\renewcommand{\thefootnote}{(5)}\nde{The order has been modified, so as
+to introduce fibered products before monomorphisms, \cf N.D.E.~(9).}}%
+One will say that \(\mathbf{F}\) is a \emph{subobject} (or a
+\emph{subfunctor}) of \(\mathbf{G}\) if \(\mathbf{F}(S)\) is a subset of
+\(\mathbf{G}(S)\) for each \(S\).
+
+\emph{In \(\widehat{\mathcal{C}}\) ``arbitrary'' projective limits exist
+and are computed by:}%
+{\renewcommand{\thefootnote}{(6)}\nde{Likewise, ``arbitrary'' inductive
+limits exist and are computed ``argument by argument'', \ie
+\((\varinjlim_{i}\mathbf{F}_{i})(S)=\varinjlim_{i}\mathbf{F}_{i}(S)\);
+but in general the functor \(\mathbf{h}\) does not commute with inductive
+limits.}}
+\[
+\bigl(\varprojlim_{i}\mathbf{F}_{i}\bigr)(S)
+=\varprojlim_{i}\mathbf{F}_{i}(S).
+\]
+In particular, fibered products are defined
+by:%
+{\renewcommand{\thefootnote}{(7)}\nde{In particular, the kernel of a pair
+of morphisms \(u,v\colon\mathbf{F}\rightrightarrows\mathbf{G}\) is the
+subfunctor \(\Ker(u,v)\) of \(\mathbf{F}\) defined by
+\(\Ker(u,v)(S)=\{x\in\mathbf{F}(S)\mid u(x)=v(x)\}\).}}
+\[
+\bigl(\mathbf{F}\times_{\mathbf{G}}\mathbf{F}'\bigr)(S)
+=\mathbf{F}(S)\times_{\mathbf{G}(S)}\mathbf{F}'(S).
+\]
+
+We shall choose as final object of \(\widehat{\mathcal{C}}\) the functor
+\(\mathbf{e}\) such that \(\mathbf{e}(S)=\{\varnothing\}\)\/.%
+{\renewcommand{\thefootnote}{(8)}\nde{\(\{\varnothing\}\) (the set of
+subsets of the empty set) denotes the one-element set.}}
+Every \(\mathbf{F}\in\Ob(\widehat{\mathcal{C}})\) possesses a unique
+morphism into \(\mathbf{e}\), and one sets
+\[
+\mathbf{F}\times\mathbf{F}'=\mathbf{F}\times_{\mathbf{e}}\mathbf{F}'.
+\]
+
+\emph{The functor \(\mathbf{h}\) commutes with projective limits; in
+particular, for \(X\times X'\) to exist
+(\(X,X'\in\Ob(\mathcal{C})\)), \resp for \(\mathcal{C}\) to admit a final
+object \(e\), it is necessary and sufficient that
+\(\mathbf{h}_{X}\times\mathbf{h}_{X'}\) be representable, \resp that
+\(\mathbf{e}\) be representable, and one has}
+\[
+\mathbf{h}_{X}\times\mathbf{h}_{X'}\simeq\mathbf{h}_{X\times X'}
+\qquad\text{and}\qquad
+\mathbf{h}_{e}\simeq\mathbf{e}.
+\]
+
+\emph{A monomorphism of \(\widehat{\mathcal{C}}\) is nothing other than a
+morphism \(\mathbf{F}\to\mathbf{G}\) such that, for
+\(S\in\Ob(\mathcal{C})\), the corresponding map of sets
+\(\mathbf{F}(S)\to\mathbf{G}(S)\) is injective.}%
+{\renewcommand{\thefootnote}{(9)}\nde{If
+\(\mathbf{F}(S)\to\mathbf{G}(S)\) is injective for every \(S\), it is
+clear that \(\mathbf{F}\to\mathbf{G}\) is a monomorphism; the converse
+is seen by considering the diagram
+\(\mathbf{F}\times_{\mathbf{G}}\mathbf{F}\rightrightarrows\mathbf{F}\to\mathbf{G}\).
+One thus obtains that: ``\(\mathbf{F}\to\mathbf{G}\) is a monomorphism
+if and only if the diagonal morphism
+\(\mathbf{F}\to\mathbf{F}\times_{\mathbf{G}}\mathbf{F}\) is an
+isomorphism'' (\cf EGA~I, 5.3.8). Likewise, it is clear that if
+\(\mathbf{F}(S)\to\mathbf{G}(S)\) is surjective for every \(S\), then
+\(\mathbf{F}\to\mathbf{G}\) is an \emph{epimorphism}, and the converse
+is seen by considering the amalgamated sum
+\(\mathbf{G}\amalg_{\mathbf{F}}\mathbf{G}\), \cf the proof of
+Lemma~4.4.4 in Exp.~IV.}}
+
+\emph{The functor \(\Gamma\).}
+For every \(\mathbf{F}\in\Ob(\widehat{\mathcal{C}})\) one sets
+\[
+\Gamma(\mathbf{F})=\Hom(\mathbf{e},\mathbf{F});
+\]
+an element of \(\Gamma(\mathbf{F})\) is thus a family
+\((\gamma_{S})_{S\in\Ob(\mathcal{C})}\),
+\(\gamma_{S}\in\mathbf{F}(S)\), such that for every arrow
+\(f\colon S'\to S''\) of \(\mathcal{C}\), one has
+\(\mathbf{F}(f)(\gamma_{S''})=\gamma_{S'}\).
+
+One sets \(\Gamma(X)=\Gamma(\mathbf{h}_{X})\) for
+\(X\in\Ob(\mathcal{C})\). If \(\mathcal{C}\) has a final object \(e\), one
+thus has an isomorphism \(\Gamma(X)\simeq\Hom(e,X)\).
+
+\numpara{1.3}
+Let \(S\in\Ob(\mathcal{C})\). One denotes by \(\mathcal{C}/S\) the
+category of objects of \(\mathcal{C}\) over \(S\), \ie the category whose
+objects are the arrows \(f\colon T\to S\) of \(\mathcal{C}\), the set
+\(\Hom(f,f')\) being the subset of \(\Hom(T,T')\) formed of the \(u\) such
+that \(f=f'\circ u\). If \(\mathcal{C}\) possesses a final object \(e\),
+then \(\mathcal{C}/e\) is isomorphic to \(\mathcal{C}\). The category
+\(\mathcal{C}/S\) possesses a final object: the identity arrow
+\(S\to S\).
+
+If \(f\colon T\to S\) is an object of \(\mathcal{C}/S\), then one can
+form the category \((\mathcal{C}/S)/f\), which one denotes, by abuse of
+language, \((\mathcal{C}/S)/T\), and one has a canonical isomorphism
+\[
+\mathcal{C}/T\simeq(\mathcal{C}/S)/T.
+\]
+This construction also applies to the category \(\widehat{\mathcal{C}}\);
+one defines in particular the category
+\(\widehat{\mathcal{C}}/\mathbf{h}_{S}\). On the other hand, one can
+form the category \(\widehat{\mathcal{C}/S}\).
+
+If \(f\colon T\to S\) is an object of \(\mathcal{C}/S\), then
+\(\Gamma(f)\) is identified with the set \(\Gamma(T/S)\) of sections of
+\(T\) over \(S\), that is, of the arrows \(S\to T\) which are right
+inverses of \(f\). Let us observe that
+\(\mathbf{h}_{f}\colon\mathbf{h}_{T}\to\mathbf{h}_{S}\) is then an
+object of \(\widehat{\mathcal{C}}/\mathbf{h}_{S}\) and that one has:
+\[
+\Gamma(\mathbf{h}_{f})\simeq\Gamma(\mathbf{h}_{T}/\mathbf{h}_{S})
+\simeq\Gamma(T/S)\simeq\Gamma(f).
+\]
+
+\numpara{1.4}
+One now proposes to define an equivalence of the categories
+\(\widehat{\mathcal{C}/S}\) and \(\widehat{\mathcal{C}}/\mathbf{h}_{S}\),
+that is, to prove that ``to give a functor on the category of objects
+of \(\mathcal{C}\) over \(S\), is ``the same thing'' as to give a functor
+on \(\mathcal{C}\) equipped with a morphism into
+\(\mathbf{h}_{S}\)''.
+
+\begin{enumeratei}
+\item \emph{Construction of
+\(\alpha_{S}\colon\widehat{\mathcal{C}}/\mathbf{h}_{S}
+\to\widehat{\mathcal{C}/S}\).}
+
+Let first \(\mathbf{H}\colon\mathbf{F}\to\mathbf{h}_{S}\) be an object of
+\(\widehat{\mathcal{C}}/\mathbf{h}_{S}\). One must define a functor
+\(\alpha_{S}(\mathbf{H})\) on \(\mathcal{C}/S\). Let therefore first
+\(f\colon T\to S\) be an object of \(\mathcal{C}/S\); let us define
+\(\alpha_{S}(\mathbf{H})(f)\) to be the inverse image of
+\(f\in\mathbf{h}_{S}(T)\) under the map
+\(\mathbf{H}(T)\colon\mathbf{F}(T)\to\mathbf{h}_{S}(T)\).%
+{\renewcommand{\thefootnote}{(10)}\nde{For example, if
+\(\mathbf{F}=\mathbf{h}_{X}\), then \(\mathbf{H}\) corresponds to a
+morphism \(h\colon X\to S\) and
+\(\mathbf{H}(T)\colon\Hom_{\mathcal{C}}(T,X)\to\Hom_{\mathcal{C}}(T,S)\)
+is the map \(g\mto h\circ g\), whence
+\(\alpha_{S}(\mathbf{h}_{X})=\Hom_{\mathcal{C}/S}(-,X)\).}}
+
+Let next \(u\colon f\to f'\) be an arrow of \(\mathcal{C}/S\); then
+\(\mathbf{F}(u)\colon\mathbf{F}(T')\to\mathbf{F}(T)\) induces a map from
+\(\alpha_{S}(\mathbf{H})(f')\) to \(\alpha_{S}(\mathbf{H})(f)\), which one
+denotes \(\alpha_{S}(\mathbf{H})(u)\). One checks at once that the maps
+\[
+f\mto\alpha_{S}(\mathbf{H})(f)
+\qquad\text{and}\qquad
+u\mto\alpha_{S}(\mathbf{H})(u)
+\]
+do define a functor on \(\mathcal{C}/S\), hence an object
+\(\alpha_{S}(\mathbf{H})\) of \(\widehat{\mathcal{C}/S}\).
+
+Let finally \(\mathbf{H}\colon\mathbf{F}\to\mathbf{h}_{S}\) and
+\(\mathbf{H}'\colon\mathbf{F}'\to\mathbf{h}_{S}\) be two objects of
+\(\widehat{\mathcal{C}}/\mathbf{h}_{S}\) and
+\(\mathbf{U}\colon\mathbf{H}\to\mathbf{H}'\) a morphism of
+\(\widehat{\mathcal{C}}/\mathbf{h}_{S}\):
+\[
+\xymatrix{
+\mathbf{F}\ar[rr]^-{\mathbf{U}}\ar[rd]_-{\mathbf{H}}
+& & \mathbf{F}'\ar[ld]^-{\mathbf{H}'}\\
+& \mathbf{h}_{S} &
+}
+\]
+Then for every \(f\colon T\to S\), the map
+\(\mathbf{U}(T)\colon\mathbf{F}(T)\to\mathbf{F}'(T)\) induces a map
+\[
+\alpha_{S}(\mathbf{U})(f)\colon
+\alpha_{S}(\mathbf{H})(f)\to\alpha_{S}(\mathbf{H}')(f),
+\]
+which defines a morphism of functors
+\[
+\alpha_{S}(\mathbf{U})\colon
+\alpha_{S}(\mathbf{H})\to\alpha_{S}(\mathbf{H}').
+\]
+One checks easily that the maps
+\[
+\mathbf{H}\mto\alpha_{S}(\mathbf{H})
+\qquad\text{and}\qquad
+\mathbf{U}\mto\alpha_{S}(\mathbf{U})
+\]
+do define a functor
+\(\alpha_{S}\colon\widehat{\mathcal{C}}/\mathbf{h}_{S}
+\to\widehat{\mathcal{C}/S}\).
+
+\item
+\begin{proposition}{1.4.1}
+\label{I.1.4.1}
+The functor
+\(\alpha_{S}\colon\widehat{\mathcal{C}}/\mathbf{h}_{S}
+\to\widehat{\mathcal{C}/S}\)
+is an equivalence of categories.
+\end{proposition}
+\end{enumeratei}
+
+Let us merely indicate the principle of the construction of a
+quasi-inverse functor
+\(\beta_{S}\colon\widehat{\mathcal{C}/S}
+\to\widehat{\mathcal{C}}/\mathbf{h}_{S}\).
+Let \(\mathbf{G}\) be a functor on \(\mathcal{C}/S\); for every object
+\(T\) of \(\mathcal{C}\), one sets
+\[
+\beta_{S}(\mathbf{G})(T)
+=\text{sum of the sets \(\mathbf{G}(f)\)
+for \(f\in\Hom(T,S)=\mathbf{h}_{S}(T)\)},
+\]
+which defines a functor \(\beta_{S}(\mathbf{G})\) on \(\mathcal{C}\),
+equipped with an obvious projection onto \(\mathbf{h}_{S}\).
+
+\numpara{1.5}
+\emph{The equivalence \(\alpha_{S}\) commutes with the functors
+\(\Gamma\).}
+In other words, if \(\mathbf{H}\colon\mathbf{F}\to\mathbf{h}_{S}\) is an
+object of \(\widehat{\mathcal{C}}/\mathbf{h}_{S}\) and
+\(\alpha_{S}(\mathbf{H})\) the corresponding object of
+\(\widehat{\mathcal{C}/S}\), one has
+\[
+\Gamma(\alpha_{S}(\mathbf{H}))\simeq\Gamma(\mathbf{H})
+\simeq\Gamma(\mathbf{F}/\mathbf{h}_{S}).
+\]
+\emph{The equivalence \(\alpha_{S}\) commutes with the functors
+\(\mathbf{h}\), \ie if \(f\colon T\to S\) is an object of
+\(\mathcal{C}/S\),
+\(\mathbf{h}_{f}\colon\mathbf{h}_{T}\to\mathbf{h}_{S}\) is an object of
+\(\widehat{\mathcal{C}}/\mathbf{h}_{S}\) whose transform by
+\(\alpha_{S}\) is none other than \(\mathbf{h}_{\mathcal{C}/S}(f)\),
+where}
+\[
+\mathbf{h}_{\mathcal{C}/S}\colon\mathcal{C}/S
+\to\widehat{\mathcal{C}/S}
+\]
+is the canonical functor%
+{\renewcommand{\thefootnote}{(11)}\nde{\Cf N.D.E.~(10).}}.
+Consequently:
+
+\begin{proposition}{1.5.1}
+\label{I.1.5.1}
+Let \(\mathbf{H}\colon\mathbf{F}\to\mathbf{h}_{S}\) be an object of
+\(\widehat{\mathcal{C}}/\mathbf{h}_{S}\). For
+\(\alpha_{S}(\mathbf{H})\colon(\mathcal{C}/S)^{\circ}\to\Ens\) to be
+representable, it is necessary and sufficient that
+\(\mathbf{F}\colon\mathcal{C}^{\circ}\to\Ens\) be representable; if
+\(\mathbf{F}\simeq\mathbf{h}_{T}\), then \(\alpha_{S}(\mathbf{H})\) is
+representable by the object \(T\to S\) of \(\mathcal{C}/S\).
+\end{proposition}
+
+\emph{The equivalence \(\alpha_{S}\) is transitive in \(S\): if
+\(f\colon T\to S\) is an object of \(\mathcal{C}/S\), one has a
+commutative diagram of equivalences}
+\[
+\xymatrix@C=2.6em@R=1.8em{
+(\widehat{\mathcal{C}}/\mathbf{h}_{S})/\mathbf{h}_{T}
+  \ar[rr]^-{\alpha_{S}/\mathbf{h}_{T}}
+  \ar[rd]_-{\simeq}
+&&
+\widehat{(\mathcal{C}/S)}/\mathbf{h}_{T}
+  \ar[rr]^-{\alpha_{f}}
+&&
+\widehat{(\mathcal{C}/S)}/T
+  \ar[ld]^-{\simeq}
+\\
+&
+\widehat{\mathcal{C}}/\mathbf{h}_{T}
+  \ar[rr]_-{\alpha_{T}}
+&&
+\widehat{\mathcal{C}/T}
+&
+},
+\]
+where \(\alpha_{S}/\mathbf{h}_{T}\) denotes (provisionally) the
+\emph{restriction} (\cf 1.6) of the functor \(\alpha_{S}\) to the objects
+over \(\mathbf{h}_{T}\).
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{1.6. Base change in a functor.}\ ---
+For every \(S\in\Ob(\mathcal{C})\), one has a canonical functor
+\[
+i_{S}\colon\mathcal{C}/S\to\mathcal{C}
+\]
+defined by \(i_{S}(f)=T\) if \(f\) is the arrow \(T\to S\). If
+\(f\colon T\to S\) is an object of \(\mathcal{C}/S\), one denotes
+\(i_{T/S}=i_{f}\) the functor:
+\[
+i_{T/S}\colon(\mathcal{C}/S)/T\to\mathcal{C}/S,
+\]
+and one has the commutative diagram:
+\[
+\xymatrix@C=3.2em{
+(\mathcal{C}/S)/T
+  \ar[r]^-{i_{T/S}}
+  \ar[rd]_-{\simeq}
+&
+\mathcal{C}/S
+  \ar[r]^-{i_{S}}
+&
+\mathcal{C}
+\\
+&
+\mathcal{C}/T
+  \ar[ru]_-{i_{T}}
+&
+}.
+\]
+\emph{That is, identifying \((\mathcal{C}/S)/T\) with \(\mathcal{C}/T\) as
+we shall do henceforth,}
+\[
+i_{S}\circ i_{T/S}=i_{T}.
+\]
+In the same way, if one identifies \(\mathcal{C}\) and \(\mathcal{C}/e\),
+when \(\mathcal{C}\) possesses a final object \(e\), then
+\(i_{S/e}\colon\mathcal{C}/S\to\mathcal{C}/e\) is identified with
+\(i_{S}\).
+
+For \(X\in\Ob(\mathcal{C})\) (\resp \(Y\in\Ob(\mathcal{C}/S)\)), let
+\(p_{S}(X)\) (\resp \(p_{T/S}(Y)\)) be the object of \(\mathcal{C}/S\)
+(\resp of \(\mathcal{C}/T\)) when it exists, defined by \(X\times S\)
+(\resp \(Y\times_{S}T\)) equipped with its second projection:
+\[
+\vcenter{\xymatrix@R=1.5em{
+X\times S\ar[d]_{p_{S}(X)}\\
+S
+}}
+\qquad\text{resp.}\qquad
+\vcenter{\xymatrix@R=1.5em{
+Y\times_{S}T\ar[d]^{p_{T/S}(Y)}\\
+T
+}}.
+\]
+
+The (partially defined) functor \(p_{S}\) (\resp \(p_{T/S}\)) is called
+the \emph{base change functor}. It is, by definition of the product
+(\resp of the fibered product), the functor right adjoint to the functor
+\(i_{S}\) (\resp \(i_{T/S}\))%
+{\renewcommand{\thefootnote}{(12)}\nde{I.e., if \(g\colon U\to S\)
+(\resp \(h\colon V\to T\)) is an object of \(\mathcal{C}/S\)
+(\resp \(\mathcal{C}/T\)), then \(i_{S}(g)=U\) and \(i_{T/S}(h)\) is the
+object \(f\circ h\colon V\to S\) of \(\mathcal{C}/S\), and one has
+\(\Hom_{\mathcal{C}/S}(U,X\times S)\simeq\Hom_{\mathcal{C}}(U,X)\),
+resp.\
+\(\Hom_{\mathcal{C}/T}(V,X\times_{S}T)\simeq\Hom_{\mathcal{C}/S}(V,X)\).}}%
+.
+One likewise denotes
+\[
+p_{S}(X)=X_{S}
+\qquad\text{and}\qquad
+p_{T/S}(Y)=Y_{T}.
+\]
+The functor \(i_{S}\) defines a functor (\emph{restriction})
+\[
+i_{S}^{*}\colon\widehat{\mathcal{C}}\to\widehat{\mathcal{C}/S};
+\]
+one denotes \(\mathbf{F}_{S}=i_{S}^{*}(\mathbf{F})=\mathbf{F}\circ i_{S}\).
+One evidently has
+\[
+i_{T/S}^{*}\circ i_{S}^{*}=i_{T}^{*},
+\]
+that is, for every functor \(\mathbf{F}\in\Ob(\widehat{\mathcal{C}})\),
+\[
+(\mathbf{F}_{S})_{T}=\mathbf{F}_{T}.
+\]
+The notation calls for a justification, which is as follows:
+
+\begin{proposition}{1.6.1}
+\label{I.1.6.1}
+For the functor
+\((\mathbf{h}_{X})_{S}\colon(\mathcal{C}/S)^{\circ}\to\Ens\)
+to be representable, it is necessary and sufficient that the product
+\(X\times S\) exist. One then has
+\[
+(\mathbf{h}_{X})_{S}\simeq\mathbf{h}_{X_{S}}.
+\]
+\end{proposition}
+
+This shows that \(\mathbf{F}_{S}\) has two interpretations:
+\emph{restriction} of the functor \(\mathbf{F}\) to \(\mathcal{C}/S\),
+functor obtained by \emph{base change} \(\mathbf{e}\leftarrow S\). This
+leads to the following notation:
+\[
+\xymatrix@R=1.8em@C=3em{
+\mathbf{F} & \mathbf{F}_{S} & \mathbf{F}_{T}\\
+\mathbf{e} & S\ar[l] & T\ar[l]
+}
+\]
+which accounts well for the two preceding interpretations.
+
+Let us observe that one has
+\[
+\Gamma(\mathbf{F}_{S})\simeq\Hom(\mathbf{h}_{S},\mathbf{F})\simeq\mathbf{F}(S),
+\]
+in particular
+\[
+\Gamma(X_{S})\simeq\Hom(S,X).
+\]
+
+\numpara{1.7.0}
+{\renewcommand{\thefootnote}{(13)}\nde{The lemma below has been added
+(\cf SGA~4, I.3.4); it is used in the proof of 1.7.1 and will be useful
+several times in the sequel.}}%
+Let \(\mathbf{E}\) be an object of \(\widehat{\mathcal{C}}\). Let us
+consider the category \(\mathcal{C}_{/\mathbf{E}}\) of objects of
+\(\mathcal{C}\) over \(\mathbf{E}\): its objects are the pairs
+\((V,\rho)\) consisting of an object \(V\) of \(\mathcal{C}\) and of a
+\(\widehat{\mathcal{C}}\)-morphism
+\(\rho\colon\mathbf{h}_{V}\to\mathbf{E}\), \ie
+\(\rho\in\mathbf{E}(V)\); a morphism from \((V,\rho)\) to
+\((V',\rho')\) is the datum of a \(\mathcal{C}\)-morphism
+\(f\colon V\to V'\) such that \(\rho'\circ f=\rho\)
+(\ie \(\mathbf{E}(f)(\rho')=\rho\)).

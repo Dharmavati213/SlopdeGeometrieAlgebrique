@@ -1,0 +1,265 @@
+Indeed, construct a basis of the vector space $\mathcal V(R)$ containing $\alpha_1=\alpha$, $\alpha_2=\gamma$. Consider the lexicographic order relative to this basis. Denoting the set of roots $>0$ by $R_+$, it is clear that $R_+$ is a system of positive roots, and that{\renewcommand{\thefootnote}{(13)}\nde{The original has been modified to take account of the case where $2\alpha$ is a root.}} the least element of $R_+$ not proportional to $\alpha$ is simple. This element has the form
+\[
+\beta=p\alpha+q\gamma,\qquad0<q\leq1.
+\]
+One therefore has $\gamma=q^{-1}\beta-q^{-1}p\alpha$, and, since $q^{-1}>0$, one has $q^{-1}\in\NN^*$ and $-q^{-1}p\in\NN$.
+
+Finally, let us make two remarks on the group $\Gamma_0(R)$.
+\begin{proposition}{3.5.5}\label{XXI.3.5.5}
+Let $G$ be an abelian group and $f:R\to G$ a map satisfying the following two conditions:
+\begin{enumeratei}
+\item If $\alpha\in R$, $f(-\alpha)=-f(\alpha)$.
+\item If $\alpha,\beta,\alpha+\beta\in R$, $f(\alpha+\beta)=f(\alpha)+f(\beta)$.
+\end{enumeratei}
+Then there exists a unique group homomorphism $\overline f:\Gamma_0(R)\to G$ such that $\overline f(\alpha)=f(\alpha)$ for $\alpha\in R$.
+\end{proposition}
+Indeed, if $\Delta$ is a system of simple roots of $R$, and $\beta\in R$ is written $\sum_{\alpha\in\Delta}a(\alpha)\alpha$, it follows at once from 3.2.16 that $f(\beta)=\sum_{\alpha\in\Delta}a(\alpha)f(\alpha)$. Now $\Delta$ is a basis of $\Gamma_0(R)$.
+\begin{proposition}{3.5.6}\label{XXI.3.5.6}
+Let $\Delta$ be a system of simple roots. There exists on $\Gamma_0(R)$ a totally ordered group structure such that the roots $>0$ are the elements of $\mathcal P(\Delta)$ and $\alpha\mto\operatorname{ord}_\Delta(\alpha)$ is an increasing function.
+\end{proposition}
+Indeed, let $\alpha_1,\alpha_2,\ldots,\alpha_n$ ($n=\operatorname{rgss}(\mathcal R)$) be the elements of $\Delta$. For $x\in\Gamma_0(R)$, one has a decomposition
+\[
+x=\sum_{i=1}^nm_i(x)\alpha_i.
+\]
+It suffices to take the lexicographic order relative to the functions $\sum m_i$, $m_n$, $m_{n-1}$, \ldots, $m_2$.
+\begin{remark}{3.5.7}\label{XXI.3.5.7}
+The first roots are, in order:
+\[
+\alpha_1,\alpha_2,\ldots,\alpha_n;
+\]
+then one has (if they are roots) $2\alpha_1$, $\alpha_1+\alpha_2$, $\alpha_1+\alpha_3$, \ldots.
+\end{remark}
+
+\sgasection{3.6}{Weyl chambers}
+\begin{lemma}{3.6.1}\label{XXI.3.6.1}
+Let $V$ be a finite-dimensional $\RR$-vector space.{\renewcommand{\thefootnote}{(14)}\nde{$\QQ$ has been replaced by $\RR$.}} Let $f_i$ be independent linear forms. Put
+\[
+C=\{x\in V\mid f_i(x)>0\}.
+\]
+Then $C$ is a maximal convex subset of $X=V-\bigcup_i f_i^{-1}(0)$.
+\end{lemma}
+Trivial.
+\begin{definition}{3.6.2}\label{XXI.3.6.2}
+A subset $C$ of $V$ which can be described by the procedure of 3.6.1 will be called (here) a \emph{chamber} of $V$.
+\end{definition}
+\begin{definition}{3.6.3}\label{XXI.3.6.3}
+One says that the hyperplane $H$ of $V$ is a \emph{wall} of $C$ if $H\cap(\overline C-C)$ contains a nonempty open subset of $H$.
+\end{definition}
+\begin{remark}{3.6.4}\label{XXI.3.6.4}
+For a convex subset, the closure can be described without appealing to the topology of $V$: it is the set of endpoints of all open segments contained in the given subset.
+\end{remark}
+\begin{lemma}{3.6.5}\label{XXI.3.6.5}
+Under the conditions of 3.6.1, one has
+\[
+\overline C=\{x\in V\mid f_i(x)\geq0\}.
+\]
+The walls of $C$ are the hyperplanes $f_i^{-1}(0)$.
+\end{lemma}
+This is clear for the first assertion. The second then follows from $\overline C-C\subset\bigcup_i f_i^{-1}(0)$ and the fact that the $f_i^{-1}(0)$ are clearly walls of $C$.
+\begin{proposition}{3.6.6}\label{XXI.3.6.6}
+Let $C$ be a chamber of $V$. If $H_i$, $i=1,2,\ldots,n$, are the distinct walls of $C$, then for every system of linear forms $\{u_i\}$ such that $H_i=u_i^{-1}(0)$, there exist $\varepsilon_i\in\{-1,+1\}$ such that $C$ is defined by
+\[
+C=\{x\in V\mid\varepsilon_i u_i(x)>0\}.
+\]
+For every wall $H$ of $C$, one has $H\cap C=\varnothing$ and $H\cap\overline C=\overline{C_H}$, where $C_H$ is a chamber in $H$. The walls of $C_{H_i}$ are the $H_j\cap H_i$ for $j\ne i$.
+\end{proposition}
+This follows trivially from the lemma.
+\begin{definition}{3.6.7}\label{XXI.3.6.7}
+The $C_{H_i}$ are the \emph{faces} of $C$.
+\end{definition}
+Let now $\mathcal R=(M,M^*,R,R^*)$ be a root datum. Put $V_\RR^*=M^*\otimes\RR$.
+\begin{definition}{3.6.8}\label{XXI.3.6.8}
+{\renewcommand{\thefootnote}{(15)}\nde{The definition of the hyperplanes $\mathcal H_\alpha$ has been added.}}%
+For every $\alpha\in R$, put
+\[
+\mathcal H_\alpha=\{x\in V_\RR^*\mid(x,\alpha)=0\}.
+\]
+Put $X=V_\RR^*-\bigcup_{\alpha\in R}\mathcal H_\alpha$. For every $x\in X$, put
+\[
+R_+(x)=\{\alpha\in R\mid(x,\alpha)>0\}.
+\]
+For every system of positive roots $R_+$, put
+\[
+\mathcal C(R_+)=\{x\in V_\RR^*\mid(x,\alpha)>0\text{ for every }\alpha\in R_+\}.
+\]
+\end{definition}
+\begin{proposition}{3.6.9}\label{XXI.3.6.9}
+\begin{enumeratei}
+\item For every $x\in X$, $R_+(x)$ is a system of positive roots. For every system of positive roots $R_+$, $\mathcal C(R_+)$ is a chamber in $V_\RR^*$. The $\mathcal C(R_+)$ are the maximal convex subsets of $X$.
+\item Let $\Delta$ be a system of simple roots. One has
+\[
+\mathcal C(\mathcal P(\Delta))=\{x\in V_\RR^*\mid(x,\alpha)>0\text{ for every }\alpha\in\Delta\}.
+\]
+The walls of $\mathcal C(\mathcal P(\Delta))$ are the hyperplanes $\mathcal H_\alpha=\alpha^{-1}(0)$, for $\alpha\in\Delta$; its faces are the
+\[
+C_\alpha=\{x\in V_\RR^*\mid(x,\alpha)=0,\ (x,\beta)>0\text{ for }\beta\in\Delta,\ \beta\ne\alpha\}.
+\]
+\item One has the equivalence
+\[
+R_+(x)=R_+\Longleftrightarrow x\in\mathcal C(R_+).
+\]
+\end{enumeratei}
+\end{proposition}
+First, it is clear that $R_+(x)$ is a system of positive roots. Since $x\in\mathcal C(R_+(x))$, the union of the $\mathcal C(R_+(x))$ is $X$. Property (iii) is immediate; it follows that the $\mathcal C(R_+)$ form a partition of $X$. The first assertion of (ii) is obvious. It follows at once that $\mathcal C(R_+)$ is a chamber in $V$, which proves the rest of (i). Putting $C=\mathcal C(\mathcal P(\Delta))$, one need only note that
+\[
+\overline C\,\bigcup_{\alpha\in R}\alpha^{-1}(0)=\overline C\,\bigcup_{\alpha\in\Delta}\alpha^{-1}(0)
+\]
+% typo?: adjacency of C-bar and the unions kept as printed.
+to complete the proof of (ii) by 3.6.1.
+\begin{definition}{3.6.10}\label{XXI.3.6.10}
+The $\mathcal C(R_+)$ are called the \emph{Weyl chambers} of the root datum. On the other hand, for every Weyl chamber $C$, put $R_+(C)=R_+(x)$ for any $x\in C$.
+\end{definition}
+\begin{corollary}{3.6.11}\label{XXI.3.6.11}
+The maps $R_+\mto\mathcal C(R_+)$ and $C\mto R_+(C)$ give a bijective correspondence between systems of positive roots and Weyl chambers.
+\end{corollary}
+This correspondence is invariant under the Weyl group:
+\begin{lemma}{3.6.12}\label{XXI.3.6.12}
+If $w\in W(\mathcal R)$, one has $\mathcal C(w(R_+))=w(\mathcal C(R_+))$.
+\end{lemma}
+\begin{corollary}{3.6.13}\label{XXI.3.6.13}
+The correspondences $\Delta\leftrightarrow R_+\leftrightarrow C$ are isomorphisms of homogeneous spaces under $W(\mathcal R)$.
+\end{corollary}
+We shall see later that these homogeneous spaces are principal (5.5).
+\begin{remark}{3.6.14}\label{XXI.3.6.14}
+If $C$ is a Weyl chamber, $-C$ is also one, called the \emph{opposite} of $C$. There therefore exists $w_0\in W$ (and in fact only one, cf. 5.5) such that $w_0(C)=-C$; it is called the \emph{reflection} of the root datum relative to the Weyl chamber $C$ (or relative to $R_+(C)$ or $\mathcal S(R_+(C))$, \ldots).
+\end{remark}
+
+\sgasection{4}{Reduced root data of semisimple rank 2}\label{XXI.sec.4}
+\numpara{4.0} {\renewcommand{\thefootnote}{(16)}\nde{The numbering 4.0 has been added for subsequent references.}}%
+Let $\mathcal R$ be a root datum of semisimple rank~2. Let $\{\alpha,\beta\}$ be a system of simple roots. Suppose $\ell(\alpha)\leq\ell(\beta)$. By 2.3.1 and 3.2.1, one then has four possibilities:
+\[
+\begin{array}{c|cccc}
+\text{Type}&\ell(\beta)/\ell(\alpha)&\ell(\beta^*)/\ell(\alpha^*)&(\beta^*,\alpha)&(\alpha^*,\beta)\\\hline
+A_1\times A_1&-&-&0&0\\
+A_2&1&1&-1&-1\\
+B_2&2&1/2&-1&-2\\
+G_2&3&1/3&-1&-3
+\end{array}
+\]
+It then follows from 3.4.5 that the order of $s_\alpha s_\beta$ is respectively $2$, $3$, $4$, $6$.
+
+Let us study each of these systems separately and give the list of indivisible roots.
+
+\emph{Type $A_1\times A_1$.} The indivisible roots are $\alpha$, $\beta$, $-\alpha$, $-\beta$. The corresponding coroots are $\alpha^*$, $\beta^*$, $-\alpha^*$, $-\beta^*$.
+
+\emph{Type $A_2$.} The positive indivisible roots are as follows:
+\[
+\begin{array}{c|ccc}
+\text{root }\gamma&\alpha&\beta&\alpha+\beta\\\hline
+\ell(\gamma)/\ell(\alpha)&1&1&1\\\hline
+\text{coroot }\gamma^*&\alpha^*&\beta^*&\alpha^*+\beta^*\\\hline
+\ell(\gamma^*)/\ell(\beta^*)&1&1&1
+\end{array}
+\]
+The half-sum of the positive indivisible roots is $\rho=\alpha+\beta$.
+
+\emph{Type $B_2$.} The positive indivisible roots are the following:
+\[
+\begin{array}{c|cccc}
+\text{root }\gamma&\alpha&\beta&\alpha+\beta&2\alpha+\beta\\\hline
+\ell(\gamma)/\ell(\alpha)&1&2&1&2\\\hline
+\text{coroot }\gamma^*&\alpha^*&\beta^*&2\alpha^*+\beta^*&\alpha^*+\beta^*\\\hline
+\ell(\gamma^*)/\ell(\beta^*)&2&1&2&1
+\end{array}
+\]
+The half-sum of the positive indivisible roots is $\rho=(4\alpha+3\beta)/2$.
+
+\emph{Type $G_2$.} The positive indivisible roots are the following:
+\[
+\begin{array}{c|cccccc}
+\text{root }\gamma&\alpha&\beta&\alpha+\beta&2\alpha+\beta&3\alpha+\beta&3\alpha+2\beta\\\hline
+\ell(\gamma)/\ell(\alpha)&1&3&1&1&3&3\\\hline
+\text{coroot }\gamma^*&\alpha^*&\beta^*&\alpha^*+3\beta^*&2\alpha^*+3\beta^*&\alpha^*+\beta^*&\alpha^*+2\beta^*\\\hline
+\ell(\gamma^*)/\ell(\beta^*)&3&1&3&3&1&1
+\end{array}
+\]
+The half-sum of the positive indivisible roots is $\rho=5\alpha+3\beta$.
+
+\begin{proposition}{4.1}\label{XXI.4.1}
+{\renewcommand{\thefootnote}{($*$)}\footnote{The following paragraphs 4.1 to 4.4 are used in the proof of 5.1. There are now simpler proofs of 5.1 (see [BLie], \S~V.3, Th.~1). \textbf{N.D.E.} The reference has been specified, and this Note, which in the original appeared in 4.2, has been placed here.}}%
+Let $n$ be the order of $s_\alpha s_\beta$. Put $u_0=0$ and, for $p\in\NN$,
+\[
+\begin{cases}
+u_{2p+1}=u_{2p}+(s_\alpha s_\beta)^p(\alpha);\\
+u_{2p+2}=u_{2p+1}+(s_\alpha s_\beta)^ps_\alpha(\beta).
+\end{cases}
+\]
+Then:{\renewcommand{\thefootnote}{(17)}\nde{Let $\rho$ be the half-sum of the positive roots (cf. 3.5.1); if one puts, as in 4.2 below, $w_0=1$, $w_1=s_\alpha$, $w_2=s_\beta s_\alpha$, $w_3=s_\alpha s_\beta s_\alpha$, etc., then $u_k$ is precisely $\rho-w_k^{-1}(\rho)$, which proves (i), since $w_{2n}=\mathrm{id}$.}}
+\begin{enumeratei}
+\item $u_{k+2n}=u_k$ for every $k\in\NN$.
+\item $u_0=0$, $u_1=\alpha$, $u_{2n-1}=\beta$, $u_{2n}=0$.
+\item If $1<k<2n-1$, one has $u_k=a_k\alpha+b_k\beta$ with $a_k,b_k\in\NN^*$.
+\end{enumeratei}
+\end{proposition}
+Assertion (i) follows from $(s_\alpha s_\beta)^n=1$ and $u_{2n}=0$.
+
+Let us prove (ii) and (iii). Calculation gives at once, in the four cases, the sequences of values:{\renewcommand{\thefootnote}{(18)}\nde{The original has been corrected to agree with the convention $\ell(\alpha)\leq\ell(\beta)$ of 4.0.}}
+\[
+\begin{array}{ll}
+(A_1\times A_1)&0,\alpha,\beta+\alpha,\beta,0.\\[3pt]
+(A_2)&0,\alpha,\beta+2\alpha,2\beta+2\alpha,2\beta+\alpha,\beta,0.\\[3pt]
+(B_2)&0,\alpha,\beta+3\alpha,2\beta+4\alpha,3\beta+4\alpha,3\beta+3\alpha,2\beta+\alpha,\beta,0.\\[3pt]
+(G_2)&0,\alpha,\beta+4\alpha,2\beta+6\alpha,4\beta+9\alpha,5\beta+10\alpha,6\beta+10\alpha,\\
+&6\beta+9\alpha,5\beta+6\alpha,4\beta+4\alpha,2\beta+\alpha,\beta,0.
+\end{array}
+\]
+
+\begin{lemma}{4.2}\label{XXI.4.2}
+Put $w_{2p}=(s_\beta s_\alpha)^p$, $w_{2p+1}=s_\alpha(s_\beta s_\alpha)^p$, so that $w_0,\ldots,w_{2n-1}$ are the distinct elements of $W$. Let $u_0,\ldots,u_{2n-1}$ be the elements of $V$ defined in 4.1. For every $x\in V^*$, one has
+\[
+x-w_k(x)=n_k\alpha^*+m_k\beta^*,
+\]
+with $n_k,m_k\in\QQ$ and $n_k+m_k=(x,u_k)$.{\renewcommand{\thefootnote}{(19)}\nde{Taking account of N.D.E.~(17), this follows immediately from 3.5.1 and 1.1.9: one has $n_k+m_k=(x-w_k(x),\rho)=(x,\rho-w_k^{-1}(\rho))=(x,u_k)$.}}
+\end{lemma}
+The proof is by induction on $k$. If $k=0$, the formula is trivially satisfied. Let us carry out, for example, the step from $w_{2p}$ to $w_{2p+1}$. One has $w_{2p+1}=s_\alpha w_{2p}$, whence
+\[
+\begin{split}
+x-w_{2p+1}(x)&=x-w_{2p}(x)+w_{2p}(x)-s_\alpha w_{2p}(x)\\
+&=n_{2p}\alpha^*+m_{2p}\beta^*+(w_{2p}(x),\alpha)\alpha^*.
+\end{split}
+\]
+Thus
+\[
+\begin{aligned}
+n_{2p+1}+m_{2p+1}&=n_{2p}+m_{2p}+((s_\beta s_\alpha)^p(x),\alpha)\\
+&=(x,u_{2p})+(x,(s_\alpha s_\beta)^p(\alpha))=(x,u_{2p+1}).
+\end{aligned}
+\]
+\begin{corollary}{4.3}\label{XXI.4.3}
+{\renewcommand{\thefootnote}{(20)}\nde{The statement has been corrected.}}%
+Let $x\in V^*$. For every $w\in W$, put
+\[
+x-w(x)=a_w\alpha^*+b_w\beta^*.
+\]
+If $(x,\alpha)\geq0$ and $(x,\beta)\geq0$, then $a_w+b_w\geq0$. If in addition $(x,\alpha)>0$ (resp. $(x,\beta)>0$), then $a_w+b_w>0$ for $w\ne1,s_\beta$ (resp. for $w\ne1,s_\alpha$).
+\end{corollary}
+This follows at once from 4.1 and 4.2.
+\begin{corollary}{4.4}\label{XXI.4.4}
+Let $\mathcal R$ be any root datum and $\Delta$ a system of simple roots. Let $\gamma$ be a positive root, $\alpha,\beta$ two simple roots, $W_{\alpha,\beta}$ the subgroup of $W$ generated by $s_\alpha$ and $s_\beta$. If
+\[
+\operatorname{ord}_\Delta(s_\alpha(\gamma))<\operatorname{ord}_\Delta(\gamma),\qquad
+\operatorname{ord}_\Delta(s_\beta(\gamma))\leq\operatorname{ord}_\Delta(\gamma),
+\]
+then, for every $w\in W_{\alpha,\beta}$, one has $\operatorname{ord}_\Delta(w(\gamma))\leq\operatorname{ord}_\Delta(\gamma)$; moreover, $\operatorname{ord}_\Delta(w(\gamma))<\operatorname{ord}_\Delta(\gamma)$ if $w\ne1$, $w\ne s_\beta$.
+\end{corollary}
+Indeed, consider the dual root datum $\mathcal R^*$, and then the datum $(M^*,M,R'^*,R')$, where $R'$ is the set of roots which are rational linear combinations of $\alpha$ and $\beta$. Applying 4.3 to this datum, one obtains the announced corollary.{\renewcommand{\thefootnote}{(21)}\nde{Indeed, the hypotheses amount to saying that $(\gamma,\alpha^*)>0$ and $(\gamma,\beta^*)\geq0$; then $\gamma-w(\gamma)$ belongs to $\NN\alpha+\NN\beta$ for every $w\in W_{\alpha,\beta}$, and is $\ne0$ if $w\notin\{1,s_\beta\}$.}}
+
+\sgasection{5}{The Weyl group: generators and relations}\label{XXI.sec.5}
+Let $\mathcal R$ be a root datum. Since the Weyl group is the same for this datum and for the corresponding reduced datum, one may suppose $\mathcal R$ \emph{reduced} to study the Weyl group.
+
+Let $\Delta=\{\alpha_1,\ldots,\alpha_n\}$ be a system of simple roots ($n=\operatorname{rgss}(\mathcal R)$). Let $n_{ij}$ be the order of the element $s_{\alpha_i}s_{\alpha_j}$ of $W$. In particular, one has $n_{ii}=1$, and we saw in 3.4.2 and 3.4.3 that the subgroup $W_{ij}$ of $W$ generated by $s_{\alpha_i}$ and $s_{\alpha_j}$ was defined by the relations:
+\[
+s_{\alpha_i}^2=s_{\alpha_j}^2=(s_{\alpha_i}s_{\alpha_j})^{n_{ij}}=1.
+\]
+\begin{theorem}{5.1}\label{XXI.5.1}
+The group $W$ is the group generated by the elements $s_{\alpha_i}$, $i=1,2,\ldots,n$, subject to the relations $(s_{\alpha_i}s_{\alpha_j})^{n_{ij}}=1$.
+\end{theorem}
+We have already seen that the theorem is true when $n=2$; we shall use this remark in the course of the proof. Introduce the group $\overline W$ generated by elements $T_i$, $i=1,2,\ldots,n$, subject to the relations $(T_iT_j)^{n_{ij}}=1$. In particular, one has $n_{ii}=1$, whence $T_i^2=1$. Let $p:\overline W\to W$ be the morphism of groups sending $T_i$ to $s_{\alpha_i}$. One knows that $p$ is surjective; we shall show that it is injective.
+\begin{lemma}{5.2}\label{XXI.5.2}
+One can define uniquely, for each $\alpha\in\mathcal P(\Delta)$, an element $T_\alpha\in\overline W$ in such a way that the following properties hold:
+\begin{enumeratei}
+\item $p(T_\alpha)=s_\alpha$,
+\item $T_{\alpha_i}=T_i$,
+\item if $\beta$ and $\alpha$ are two positive roots such that $s_{\alpha_i}(\alpha)=\beta$, then $T_iT_\alpha T_i=T_\beta$.
+\end{enumeratei}
+\end{lemma}

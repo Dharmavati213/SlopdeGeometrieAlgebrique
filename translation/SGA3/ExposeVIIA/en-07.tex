@@ -1,0 +1,174 @@
+% Source PDF pp. 37--42.
+\par
+In particular, if $r$ is an element of $R$ and $R'$ is the localized ring $R_r$, one sees that $\mathfrak g_r=R_r\otimes_R\mathfrak g$ is canonically equipped with a Lie $p$-algebra structure over $R_r$, so that the sheaf $\widetilde{\mathfrak g}$ on $\Spec R$ is a quasi-coherent Lie $p$-algebra on $\Spec R$. Moreover, the restricted enveloping algebra $U_p^{R_r}(\mathfrak g_r)$ identifies with $U_p^R(\mathfrak g)_r$, so that the sheaf associated to the presheaf $V\mapsto U_p(\Gamma(V,\mathfrak g))$ is quasi-coherent.
+
+\begin{enoncerm}{Definition}{}
+More generally, if $S$ is a scheme of characteristic $p$ and $\mathscr G$ a quasi-coherent Lie $p$-algebra over $\OS$, the sheaf associated to the presheaf $V\mapsto U_p(\Gamma(V,\mathscr G))$ is quasi-coherent; it will be denoted by $\mathscr U_p(\mathscr G)$ and called the \emph{restricted enveloping algebra of $\mathscr G$}. If $V$ is affine, $U_p(\Gamma(V,\mathscr G))$ identifies with $\Gamma(V,\mathscr U_p(\mathscr G))$.
+\end{enoncerm}
+
+\numpara{5.4}
+The universal character of $U_p(\mathfrak g)$ implies that $U_p(\mathfrak g)$ is functorial in $\mathfrak g$: every homomorphism of Lie $p$-algebras $\phi:\mathfrak g\to\mathfrak h$ induces one and only one homomorphism of unital algebras $U_p(\phi)$ such that $j_{\mathfrak h}\circ\phi=U_p(\phi)\circ j_{\mathfrak g}$. Here are a few examples:
+
+\noindent a) If $\mathfrak h=0$, $U_p(\mathfrak h)$ identifies with the base ring and $U_p(\phi)$ is an algebra homomorphism $\varepsilon_{\mathfrak g}:U_p(\mathfrak g)\to R$ called the \emph{augmentation}.
+
+\noindent b) Now take for $\mathfrak h$ the algebra $\mathfrak g^\circ$ opposite to $\mathfrak g$, \ie $\mathfrak g^\circ$ has the same underlying module as $\mathfrak g$, the same symbolic $p$-th power, the bracket of two elements in $\mathfrak g^\circ$ being the negative of the bracket in $\mathfrak g$. It is clear that we may identify $U_p(\mathfrak g^\circ)$ with the algebra opposite to $U_p(\mathfrak g)$. Moreover, the isomorphism $x\mapsto-x$ from $\mathfrak g$ to $\mathfrak g^\circ$ induces an isomorphism $c_{\mathfrak g}$ from $U_p(\mathfrak g)$ to $U_p(\mathfrak g^\circ)\simeq U_p(\mathfrak g)^\circ$. One says that $c_{\mathfrak g}$ is the \emph{antipode} of $U_p(\mathfrak g)$.
+
+\noindent c) Finally, let $\mathfrak f$ and $\mathfrak g$ be two Lie $p$-algebras and $\mathfrak h$ the \emph{product Lie $p$-algebra} $\mathfrak f\times\mathfrak g$ having as underlying $R$-module the direct product $\mathfrak f\times\mathfrak g$, the bracket and symbolic $p$-th power being defined by the formulas
+\[
+[(x,y),(x',y')]=([x,x'],[y,y'])\quad\text{and}\quad(x,y)^{(p)}=(x^{(p)},y^{(p)}).
+\]
+If $h_1:\mathfrak f\to\mathfrak k$ and $h_2:\mathfrak g\to\mathfrak k$ are two homomorphisms of Lie $p$-algebras such that $[h_1(x),h_2(y)]=0$ for every $x$ of $\mathfrak f$ and every $y$ of $\mathfrak g$, the map $h_1+h_2:(x,y)\mapsto h_1(x)+h_2(y)$ is a homomorphism of Lie $p$-algebras; conversely, every homomorphism from $\mathfrak f\times\mathfrak g$ to $\mathfrak k$ is of this type, which allows one to characterize $\mathfrak f\times\mathfrak g$ as the solution to a universal problem. For example, the maps
+\[
+h_1:x\mapsto i_{\mathfrak f}(x)\otimes1\qquad\text{and}\qquad h_2:y\mapsto1\otimes i_{\mathfrak g}(y)
+\]
+induce a homomorphism $h_1+h_2$ from $\mathfrak f\times\mathfrak g$ to the Lie $p$-algebra underlying $U_p(\mathfrak f)\otimes U_p(\mathfrak g)$. It follows from the universal characters of $\mathfrak f\times\mathfrak g$ and of the restricted enveloping algebras that $h_1+h_2$ extends to an isomorphism:
+\[
+\varphi:U_p(\mathfrak f\times\mathfrak g)\isomto U_p(\mathfrak f)\otimes U_p(\mathfrak g).
+\]
+% typo?: the printed h_1,h_2 use i rather than the restricted canonical map j; retained.
+\begin{enoncerm}{Definition}{}
+If $\mathfrak f=\mathfrak g$, the diagonal map $\delta:x\mapsto(x,x)$ from $\mathfrak g$ to $\mathfrak g\times\mathfrak g$ induces a homomorphism from $U_p(\mathfrak g)$ to $U_p(\mathfrak g\times\mathfrak g)$. We shall denote by $\Delta_{\mathfrak g}$ the composite of this homomorphism with the isomorphism $\varphi:U_p(\mathfrak g\times\mathfrak g)\isomto U_p(\mathfrak g)\otimes U_p(\mathfrak g)$.\nde{\ie $\Delta_{\mathfrak g}(x)=x\otimes1+1\otimes x$ for every $x\in\mathfrak g$; in particular, the comultiplication $\Delta_{\mathfrak g}$ is indeed cocommutative\ldots}
+\end{enoncerm}
+One then sees easily that $\Delta_{\mathfrak g}$ and the multiplication of the algebra $U_p(\mathfrak g)$ make $U_p(\mathfrak g)$ an $R$-coalgebra in groups (cf.\ 3.2) having $\varepsilon_{\mathfrak g}$ as augmentation and $c_{\mathfrak g}$ as antipode.
+
+\numpara{5.5}
+\nde{Section 5.4.1 of the original has been transformed into this \S~5.5: on the one hand, proposition 5.5.1 brings together the results of Section 5 and proposition 3.2.3, and contains lemma 7.3 of the original; on the other hand, the proof of 5.5.3 (ii) takes up and expands that of the implication (i) $\Rightarrow$ (ii) in theorem 7.4 below.}
+Now let $S$ be a scheme of characteristic $p$. First, if $\mathscr U$ is a $\OS$-coalgebra in groups and $G$ the $S$-group functor $\Spec^*\mathscr U$, we saw (3.2.3) that, for every $T\to S$, $(\uLie G)(T)$ is the Lie subalgebra of $\Gamma(T,\mathscr U_T)$ consisting of primitive elements. Now, if $x$ is such an element, one has $\Delta(x^p)=x^p\otimes1+1\otimes x^p$ (since $\binom pi=0\bmod p$ for $0<i<p$), \ie $x^p$ is again a primitive element. It follows, according to 5.1 and 5.2, that the map $x\mapsto x^p$ equips $(\uLie G)(T)$ with an $\OO(T)$-Lie $p$-algebra structure.
+
+Now let $\mathscr L$ be a $\OS$-Lie $p$-algebra, quasi-coherent over $\OS$. As $V$ ranges over the open subsets of $S$, the structures of coalgebras in groups previously defined on the sets $U_p(\Gamma(V,\mathscr L))$ induce on the associated sheaf, \ie on the restricted enveloping algebra $\mathscr U_p(\mathscr L)$, a structure of $\OS$-coalgebra in groups. Moreover, for every $S$-scheme $T$, there is an isomorphism $\mathscr U_p(\mathscr L_T)\isomto\mathscr U_p(\mathscr L)_T$.
+
+Denote by $\operatorname{Prim}\mathscr U_p(\mathscr L)$ the subpresheaf of $\mathscr U_p(\mathscr L)$ associating to every open subset $V$ the set of primitive elements of $\mathscr U_p(\mathscr L)(V)$; one sees easily that this is a sheaf. As $V$ ranges over the open subsets of $S$, the composite maps
+\[
+\Gamma(V,\mathscr L)\xrightarrow{j}\operatorname{Prim}U_p(\Gamma(V,\mathscr L))\longrightarrow\operatorname{Prim}\mathscr U_p(\mathscr L)(V)
+\]
+define a morphism $\mathscr L\to\operatorname{Prim}\mathscr U_p(\mathscr L)$, which we shall still denote by $j$ or $j_{\mathscr L}$, and the latter again defines a morphism of $\mathbf O_S$-Lie $p$-algebras $\mathbf W(\mathscr L)\to\operatorname{Prim}\mathbf W(\mathscr U_p(\mathscr L))$ (cf.\ 3.2.3).
+
+\begin{proposition}{5.5.1}\label{VIIA.5.5.1}
+Let $\mathscr L$ be a $\OS$-Lie $p$-algebra, locally free as an $\OS$-module. Then $j_{\mathscr L}$ induces an isomorphism of $\mathbf O_S$-Lie $p$-algebras:
+\[
+\mathbf W(\mathscr L)\isomto\operatorname{Prim}\mathbf W(\mathscr U_p(\mathscr L)).
+\]
+\end{proposition}
+\begin{proof}
+Let $T$ be an $S$-scheme; taking account of the identification $\mathscr U_p(\mathscr L_T)=\mathscr U_p(\mathscr L)_T$, one must show that the map $\Gamma(T,\mathscr L_T)\to\operatorname{Prim}\Gamma(T,\mathscr U_p(\mathscr L_T))$ is bijective. Replacing $S$ by $T$, one is reduced to the case where $T=S$, and it then suffices to show that the sheaf morphism $j_{\mathscr L}:\mathscr L\to\operatorname{Prim}\mathscr U_p(\mathscr L)$ is an isomorphism. This question being local on $S$, we may suppose that $S$ is affine with ring $R$ and that $\mathscr L$ is the sheaf associated to an $R$-Lie $p$-algebra $L$ with basis $(x_\alpha)$. As in 5.3.3, denote by $z_\alpha$ the image of $x_\alpha$ in $U=U_p(L)$, and, for every family $n=(n_\alpha)$ of integers between $0$ and $p-1$, zero except for finitely many of them, denote by $z^{(n)}$ the product
+\[
+\prod_\alpha\frac{z_\alpha^{n_\alpha}}{n_\alpha!}
+\]
+(the basis $(x_\alpha)$ is assumed totally ordered and the products taken in increasing order).
+
+Since $\Delta(z_\alpha)=z_\alpha\otimes1+1\otimes z_\alpha$, one sees easily that
+\[
+\Delta(z^{(n)})=\sum_r z^{(n-r)}\otimes z^{(r)}
+\]
+the sum being taken over the (finite!) set of $r$ such that $0\leq r_\alpha\leq n_\alpha$ for every $\alpha$. Since the $z^{(n)}$ (resp.\ the $z^{(n)}\otimes z^{(m)}$) form a basis of $U$ (resp.\ of $U\otimes U$), one deduces that an element $u$ of $U$ satisfies $\Delta(u)=u\otimes1+1\otimes u$ if and only if $u$ is a linear combination of the $z_\alpha$. This proves 5.5.1.
+\end{proof}
+
+\begin{remark}{5.5.2}\label{VIIA.5.5.2}
+Recall (cf.\ 3.2.2 and 3.2.3) that the $S$-group functor $G=\Spec^*\mathscr U_p(\mathscr L)$ is very good and that $\uLie(G)=\operatorname{Prim}\mathbf W(\mathscr U_p(\mathscr L))$. The preceding proposition therefore means that $j_{\mathscr L}$ induces an isomorphism $\mathbf W(\mathscr L)\isomto\uLie(G)$.
+
+If one assumes, in addition, that $\mathscr L$ is a locally free $\OS$-module of finite rank, then $\mathscr U_p(\mathscr L)$ is finite locally free over $\OS$, according to 5.3.3, hence $\Spec^*\mathscr U_p(\mathscr L)$ is represented by the $S$-group $G_p(\mathscr L)=\Spec\mathscr U_p(\mathscr L)^*$ (cf.\ 3.2.2.1), and one obtains the following more precise proposition:
+\end{remark}
+
+\begin{proposition}{5.5.3}\label{VIIA.5.5.3}
+Let $\mathscr L$ be a $\OS$-Lie $p$-algebra, locally free of finite rank as an $\OS$-module, let $\mathscr A=\mathscr U_p(\mathscr L)^*$, and let $G=G_p(\mathscr L)$ be the affine $S$-group $\Spec\mathscr A$.
+\begin{enumeratei}
+\item $j_{\mathscr L}$ induces an isomorphism $\mathbf W(\mathscr L)\isomto\uLie(G)$ of $\mathbf O_S$-Lie $p$-algebras.
+\item Let $\mathscr I$ be the augmentation ideal of $\mathscr A$, and $\omega_G=\mathscr I/\mathscr I^2$ (cf.\ II, 4.11.4). Then $\omega_G$ identifies with $\mathscr L^*=\mathscr H\!om_{\OS}(\mathscr L,\OS)$, hence is a locally free $\OS$-module of finite rank (and one has $\omega_{G/S}^*=\mathscr L$).
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+Since (i) follows from 5.5.2, let us prove (ii). Denote by $\eta_{\mathscr U}$ and $\varepsilon_{\mathscr U}$ the unit section and augmentation of $\mathscr U=\mathscr U_p(\mathscr L)$, by $\eta_{\mathscr A}$ and $\varepsilon_{\mathscr A}$ those of $\mathscr A$, and put $\mathscr J=\Ker\varepsilon_{\mathscr U}$. One then has:
+\begin{equation}\tag{1}\mathscr U=\eta_{\mathscr U}(\OS)\oplus\mathscr J.\end{equation}
+Let $\delta$ be the morphism defined by the diagram below, where $\tau$ and $\pi$ denote the inclusion and projection deduced from decomposition (1):
+\[
+\xymatrix@C=4em{\mathscr J\ar[r]^\delta\ar[d]_\tau&\mathscr J\otimes\mathscr J\\
+\mathscr U\ar[r]_\Delta&\mathscr U\otimes\mathscr U\ar[u]_\pi}
+\]
+then there is an exact sequence:
+\begin{equation}\tag{$*$}
+0\longrightarrow\mathscr L^*\xrightarrow{j_{\mathscr L}}\mathscr J\xrightarrow{\delta}\mathscr J\otimes\mathscr J.
+\end{equation}
+% typo?: source has L^* at the start of (*) and L in the dual (**); retained.
+Moreover, according to 5.3.3, the $\OS$-module $\mathscr J/\mathscr L$ is locally free and, according to 5.5.1, sequence $(*)$ remains exact after every base change. Thus, according to [BAC], II \S~3, prop.\ 6, $\delta$ induces an isomorphism from $\mathscr J/\mathscr L$ onto a submodule $\mathscr Q$ locally a direct factor of $\mathscr J\otimes\mathscr J$. It follows that $(*)$ gives by duality the exact sequence:
+\begin{equation}\tag{$**$}
+0\longleftarrow\mathscr L\xleftarrow{{}^tj_{\mathscr L}}\mathscr I\xleftarrow{{}^t\delta}\mathscr I\otimes\mathscr I.
+\end{equation}
+Now decomposition (1) corresponds by duality to the decomposition:
+\begin{equation}\tag{2}\mathscr A=\eta_{\mathscr A}(\OS)\oplus\mathscr I\end{equation}
+and the transpose of $\Delta$ is the multiplication $m_{\mathscr A}:\mathscr A\otimes\mathscr A\to\mathscr A$. Since $\mathscr I$ is an ideal of $\mathscr A$, $m_{\mathscr A}$ sends $\mathscr I\otimes\mathscr I$ into $\mathscr I$; more precisely, taking account of decomposition (2), there is a commutative square
+\[
+\xymatrix@C=4em{\mathscr I&\mathscr I\otimes\mathscr I\ar[l]_{m'}\ar[d]^{{}^t\pi}\\
+\mathscr A\ar[u]^{{}^t\tau}&\mathscr A\otimes\mathscr A\ar[l]^{m_{\mathscr A}}}
+\]
+which shows that the restriction $m'$ of $m_{\mathscr A}$ to $\mathscr I\otimes\mathscr I$ is the transpose of $\delta$. Exact sequence $(**)$ then gives $\mathscr I/\mathscr I^2\simeq\mathscr L^*$, and the proposition follows.
+\end{proof}
+
+\sgasection{6}{Lie $p$-algebra of an $S$-group scheme}
+Let $S$ be a scheme of characteristic $p>0$. In paragraph 5.5 we associated to every quasi-coherent $\OS$-Lie $p$-algebra $\mathscr L$ an $S$-group functor $G_p(\mathscr L)=\Spec^*\mathscr U_p(\mathscr L)$. We shall now see that, for every $S$-group scheme $G$, the $\mathbf O_S$-Lie algebra $\uLie(G/S)$ defined in II 4.11 is naturally equipped with a $\mathbf O_S$-Lie $p$-algebra structure.
+
+\numpara{6.1}
+First identify $\uLie(G/S)(S)$ and $\uLie(\underline{\Aut}\,G/S)(S)$ respectively with Lie subalgebras of $U(G)$ and $\mathrm{Dif}_{G/S}$ by means of the injections $\alpha$ and $\beta$ of 2.5; $\uLie(\underline{\Aut}\,G/S)(S)$ is therefore identified with the $\Gamma(\OS)$-Lie algebra of $S$-derivations of $\OO_G$. According to 5.2, the latter is a Lie $p$-subalgebra of $\mathrm{Dif}_{G/S}$.
+
+On the other hand, the image of $L=\uLie(G/S)(S)$ under the injective algebra morphism $\ell:U(G)\to\mathrm{Dif}_{G/S}$, $d\mapsto{}^Gd$, consists of the left-invariant derivations (cf.\ 2.2, N.D.E.\ (17), 2.4 and 2.5). If $x$ belongs to $L$, $\ell(x)^p$ is none other than $\ell(x^p)$, according to loc.\ cit.\ Since $\ell(x)^p$ is again a derivation, one sees that $x^p$ belongs to $\uLie(G/S)(S)$. Thus:\nde{One can also show directly (without using $\mathrm{Dif}_{G/S}$) that the Lie algebra of derivations of $G$ at the origin (isomorphic to $\uLie(G/S)(S)$ according to 2.5) is stable under raising to the power $p$ in $U(G)$: this is done in 6.2 below.}
+\begin{quote}\emph{$\uLie(G/S)(S)$ is a Lie $p$-subalgebra of the infinitesimal algebra $U(G)$.}\end{quote}
+
+\numpara{6.1.1}
+Let $\phi:G\to H$ be a homomorphism of $S$-group schemes. It is clear that the homomorphisms $\uLie(\phi/S)(S)$ and $U(\phi)$ are compatible with the identifications of $\uLie(G/S)(S)$ and $\uLie(H/S)(S)$ with Lie $p$-subalgebras of $U(G)$ and $U(H)$. Since $U(\phi)$ is an algebra homomorphism, one therefore sees that $\uLie(\phi/S)(S)$ is a homomorphism of Lie $p$-algebras.
+
+Similarly, if $s:T\to S$ is a base change, the map from $\uLie(G/S)(S)$ to $\uLie(G/S)(T)$ induced by $s$ is a homomorphism of Lie $p$-algebras. One may express this by saying that the functor $\uLie(G/S)$ is equipped with a $\mathbf O_S$-Lie $p$-algebra structure. In particular, as $T$ ranges over the open subsets of $S$, one sees that the sheaf $\mathscr L\!\mathrm{ie}(G/S)$ is equipped with a $\OS$-Lie $p$-algebra structure.
+
+\numpara{6.2}
+Following an idea of Demazure, we shall now generalize what precedes to certain $S$-group functors which are not necessarily representable. For this purpose, we shall first give another definition of the symbolic $p$-th power in the Lie algebra of an $S$-group scheme $G$.
+
+Let $D$ be a derivation of $G$ at the origin;\nde{The original has been expanded in what follows.} according to 1.2.1, $D$ is the composite of the $S$-derivation $\delta=(\tau,\partial_t)$ of the zero section $\tau:S\to I_S$ and a morphism $x:I_S\to G$ such that $x\circ\tau=\varepsilon$ (\ie $x\in\uLie(G/S)(S)$). According to the definition which we gave in 2.1, $D^p$ is the following composite deviation:
+\[
+\begin{aligned}
+S\simeq\underbrace{S\times S\times\cdots\times S}_p
+&\xrightarrow{\delta\times\cdots\times\delta}I_S\times\cdots\times I_S\\
+&\xrightarrow{x\times\cdots\times x}G\times\cdots\times G\xrightarrow{m^{(p)}}G
+\end{aligned}
+\]
+where $m^{(p)}$ is the morphism induced by the multiplication $m:G\times G\to G$. Since $I_S\times\cdots\times I_S$ is affine over $S$ and has as affine algebra $\mathscr B=\OS[d_1,\ldots,d_p]/(d_1^2,\ldots,d_p^2)$, the deviation $\delta\times\cdots\times\delta$ is defined by the morphism of $\OS$-modules
+\[
+\phi:\mathscr B\longrightarrow\OS
+\]
+sending the monomial $d_1d_2\cdots d_p$ to $1$ and the other monomials $d_{i_1}\cdots d_{i_r}$, for $0\leq r<p$, to $0$. On the other hand, if $\mathrm{pr}_i$ denotes the projection from $I_S^p$ onto the $i$-th factor and $x_i$ is the image in $G(I_S^p)$ of $x$ under $G(\mathrm{pr}_i)$, then the composite morphism $m^{(p)}\circ(x\times\cdots\times x)$ is none other than the product $x_1x_2\cdots x_p$. Consequently, $D^p$ is also the following composite deviation:
+\[
+S\xrightarrow{\delta\times\cdots\times\delta}I_S\times\cdots\times I_S\xrightarrow{x_1x_2\cdots x_p}G.
+\]
+This description allows us to prove again that $D^p$ is a derivation of $G$ at the origin. Indeed, since $G$ is a very good group (II 4.11), the images $G(\mathrm{pr}_1)(x)$ and $G(\mathrm{pr}_2)(x)$ of $x$ in $G(I_S\times I_S)$ commute with one another. It follows that the elements $x_i$ of $G(I_S^p)$ commute pairwise, and therefore, for every permutation $\gamma$ of the factors of $I_S^p$, one has $(x_1\cdots x_p)\circ\gamma=x_1\cdots x_p$; it follows that $x_1\cdots x_p$ factors through the canonical projection from $I_S^p$ to the symmetric product $\Sigma^p I_S$ (cf.\ 4.2).
+
+The symmetric product $\Sigma^p I_S$ has as affine algebra the subalgebra $\mathscr A$ of $\mathscr B$ having as basis over $\OS$ the elementary symmetric functions $1=\sigma_0,\sigma_1,\ldots,\sigma_p$ of $d_1,\ldots,d_p$. Denote by $\kappa$ the inclusion $\mathscr A\hookrightarrow\mathscr B$ and by $\pi$ the morphism of $\OS$-algebras $\mathscr A\to\OS[t]/(t^2)$ vanishing on $\sigma_1,\ldots,\sigma_{p-1}$ and sending $\sigma_p$ to $t$; then one has $\phi\circ\kappa=\partial_t\circ\pi$ (recall that $\partial_t:\OS[t]/(t^2)\to\OS$ is the morphism of $\OS$-modules vanishing on $1$ and sending $t$ to $1$). Consequently, denoting by $i$ the closed immersion $I_S\hookrightarrow\Sigma^p I_S$ defined by $\pi$, there is a commutative diagram:
+\[
+\xymatrix@C=4em@R=3em{S\ar[r]^{\delta\times\cdots\times\delta}\ar@/^2pc/[rr]^{D^p}\ar[d]_\delta&I_S^p\ar[r]^{x_1\cdots x_p}\ar[d]^{\mathrm{can.}}&G\ar@{=}[d]\\
+I_S\ar[r]_i\ar@/_2pc/[rr]_y&\Sigma^p I_S\ar[r]&G}
+\]
+which shows that $D^p$ is of the form $y\circ\delta$, and thus is indeed a derivation of $G$ at the origin.
+
+\numpara{6.3}
+Let $\mathscr S_p$ be the symmetric group of order $p$, and $I_S^p\times\mathscr S_p$ the direct sum of a family of copies of $I_S^p$ indexed by $\mathscr S_p$. We denote by $\pi:I_S^p\times\mathscr S_p\to I_S^p$ the canonical projection, and by
+\[
+\mu:I_S^p\times\mathscr S_p\longrightarrow I_S^p
+\]
+the morphism defining the action of $\mathscr S_p$ on $I_S^p$ (\ie if $\tau$ is an element of $\mathscr S_p$, the restriction of $\mu$ to $I_S^p\times\tau$ has $\mathrm{pr}_{\tau(j)}$ as $j$-th component). This being so, we put forward the following definition:
+\begin{enoncerm}{Definition}{}
+A functor $X:(\mathbf{Sch}/S)^\circ\to\Ens$ satisfies condition (F) if:
+\begin{enumerate}[label=\alph*)]
+\item $X$ transforms finite direct sums into direct products,
+\item for every $S$-scheme $T$, the sequence below is exact:
+\[
+\xymatrix@C=3.2em{X(T\times\Sigma^p I_S)\ar[r]&X(T\times I_S^p)\ar@<1ex>[r]^{X(\mathrm{id}_T\times\pi)}\ar@<-1ex>[r]_{X(\mathrm{id}_T\times\mu)}&X(T\times I_S^p\times\mathscr S_p).}
+\]
+\end{enumerate}
+\end{enoncerm}
+Every $S$-scheme satisfies (F); if $\mathscr F$ is an $\OS$-module, $\mathbf W(\mathscr F)$ satisfies (F); every projective limit of functors satisfying (F) also satisfies (F); if $Y$ satisfies (F) and $X$ is an arbitrary $S$-functor, $\uHom_S(X,Y)$ satisfies (F).
+
+Let $X$ be a \emph{very good group (II 4.10) satisfying condition (F)}. Denoting by $x:I_S\to X$ a morphism extending the unit section of $X$ and using again the notation of 6.2, one sees as above that $x_1\cdots x_p:I_S^p\to X$ factors through $\Sigma^p I_S$:
+\[
+\xymatrix{I_S^p\ar[rr]^{x_1\cdots x_p}\ar[dr]_{\mathrm{can.}}&&X\\&\Sigma^p I_S\ar[ur]_{\Sigma^p(x)}&}
+\]
+and defines by composition a morphism
+\[
+x^{(p)}:I_S\xrightarrow{i}\Sigma^p I_S\xrightarrow{\Sigma^p(x)}X
+\]
+which we shall call the \emph{symbolic $p$-th power of $x$}.

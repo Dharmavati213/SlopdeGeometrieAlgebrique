@@ -1,0 +1,202 @@
+One clearly has (i) $\Rightarrow$ (ii) (it suffices to verify it fiber by fiber and $R'$ is a system of roots of $H_{R'}$ with respect to $T$). To prove (ii) $\Rightarrow$ (i), one notes by 5.4.3 that
+\[
+H_{R'}\cap Z_\alpha=\uCentr_{H_{R'}}(T_\alpha)=Z_\alpha
+\]
+for every $\alpha\in R'$ and one applies the criterion of Exp.~XIX 1.12.
+
+If $R_+$ is a system of positive roots of $R$, then $R'_+=R_+\cap R'$ is clearly a closed subset of $R'$ such that $R'_+\cup-R'_+=R'$ and $R'_+\cap-R'_+=\varnothing$, hence a system of positive roots of $R'$. The two other assertions follow respectively from 5.6.1 (vi) and 5.6.7 (i).
+\begin{corollary}{5.10.2}\label{XXII.5.10.2}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $H$ a reductive $S$-subgroup such that for every $s\in S$, $G_{\overline s}$ and $H_{\overline s}$ have the same reductive rank. Then $H$ is closed in $G$, $\uNorm_G(H)$ is smooth over $S$, $\uNorm_G(H)/H$ is representable by a finite \'etale $S$-scheme.
+
+If $T$ is a maximal torus of $H$ and $B$ a Borel subgroup of $G$ containing $T$, then $B\cap H$ is a Borel subgroup of $H$, whose unipotent part is $(B\cap H)^u=B^u\cap H$.
+\end{corollary}
+The first assertions follow at once from 5.3.10 and 5.3.18, through the fact that the Weyl groups of $G$ and of $H$ are finite (Exp.~XIX 2.5). The other assertions are local for the \'etale topology and reduce to the case studied in 5.10.1.
+\begin{proposition}{5.10.3}\label{XXII.5.10.3}
+Let $S$ be a scheme, $G$ a reductive $S$-group.
+
+a) If $Q$ is a torus of $G$, $\uCentr_G(Q)$ is a subgroup of type (R) of $G$ with reductive fibers. If $Q\subset Q'$ are two tori of $G$, then $\uCentr_G(Q)\supset\uCentr_G(Q')$.
+
+b) If $H$ is a subgroup of type (R) of $G$ with reductive fibers, then $\operatorname{rad}(H)$ (4.3.6) is a torus of $G$. If $H\subset H'$ are two subgroups of type (R) of $G$ with reductive fibers, then $\operatorname{rad}(H)\supset\operatorname{rad}(H')$.
+
+c) If $Q$ is a torus of $G$, one has
+\[
+\begin{gathered}
+\operatorname{rad}(\uCentr_G(Q))\supset Q\qquad\text{and}\\
+\uCentr_G(\operatorname{rad}(\uCentr_G(Q)))=\uCentr_G(Q).
+\end{gathered}
+\]
+d) If $H$ is a subgroup of type (R) of $G$ with reductive fibers, one has
+\[
+\uCentr_G(\operatorname{rad}(H))\supset H\quad\text{and}\quad
+\operatorname{rad}(\uCentr_G(\operatorname{rad}(H)))=\operatorname{rad}(H).
+\]
+% typo: rad(Centr_G(rad(H)) -> rad(Centr_G(rad(H))) (missing parenthesis).
+\end{proposition}
+Indeed, a) follows at once from Exp.~XIX 2.8. To prove b), it suffices to note that $\operatorname{rad}(H')\subset H$, for $H$ contains (locally for (fpqc)) a maximal torus of $G$, hence of $H'$. The first assertion of c) (resp. d)) is trivial; the second follows by the usual argument.
+
+This proposition leads to the following definition:
+\begin{definition}{5.10.4}\label{XXII.5.10.4}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $H$ a reductive subgroup of type (R) of $G$, and $Q$ a subtorus of $G$.{\renewcommand{\thefootnote}{(58)}\nde{The original has been modified by introducing the terminology ``C-critical torus'' instead of ``critical torus'', in order to avoid confusion in later references (\cf Exp.~XXVI, 3.9). Statement 5.10.5 has also been expanded and remark 5.10.5.1 added.}}
+
+1) One says that $H$ is a \emph{critical subgroup} if it is the centralizer of its radical.
+
+2) One says that $Q$ is a \emph{C-critical torus} if it is the radical of its centralizer.
+\end{definition}
+It then follows from proposition 5.10.3:
+\begin{corollary}{5.10.5}\label{XXII.5.10.5}
+\begin{enumeratei}
+\item For every subtorus $Q$ of $G$, $\uCentr_G(Q)$ is critical.
+\item For every subgroup of type (R) with reductive fibers $H$ of $G$, $\operatorname{rad}(H)$ is a C-critical torus of $G$.
+\item The maps
+\[
+Q\mto\uCentr_G(Q),\qquad H\mto\operatorname{rad}(H)
+\]
+are mutually inverse bijections between the set of C-critical tori of $G$ and that of its critical reductive subgroups of type (R).
+\item If $Q$ is a torus of $G$, $\operatorname{rad}(\uCentr_G(Q))$ is the smallest C-critical torus of $G$ containing $Q$.
+\item If $H$ is a reductive subgroup of type (R) of $G$, $\uCentr_G(\operatorname{rad}(H))$ is the smallest critical reductive subgroup of type (R) of $G$ containing $H$.
+\end{enumeratei}
+\end{corollary}
+\begin{remark}{5.10.5.1}\label{XXII.5.10.5.1}
+{\renewcommand{\thefootnote}{(58)}\footnotemark[59]}%
+1) A torus $T$ of $G$ is a critical subgroup of $G$ if and only if it is a maximal torus.
+
+2) In what follows, ``critical torus'' means ``C-critical torus''.
+\end{remark}
+\begin{proposition}{5.10.6}\label{XXII.5.10.6}
+Let $(G,T,M,R)$ be a split $S$-group, $R'$ a subset of $R$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $R'$ is of type (R), $H_{R'}$ is reductive and critical.
+\item There exists a system of simple roots $\Delta$ of $R$ and a subset $\Delta'$ of $\Delta$ such that $R'$ is the set of elements of $R$ which are linear combinations of the elements of $\Delta'$.
+\item $R'$ is closed, symmetric, and every system of simple roots of $R'$ is the intersection with $R'$ of a system of simple roots of $R$.
+\end{enumeratei}
+\end{proposition}
+Indeed, by Exp.~XXI 3.4.8, (ii) and (iii) are equivalent and are also equivalent to the fact that $R'$ is the intersection of $R$ with a $\QQ$-vector subspace of $M\otimes\QQ$. Now this last condition is implied by (i): if $H_{R'}=\uCentr_G(Q)$, then $R'$ is the set of elements of $R$ vanishing on $Q$ (Exp.~II 5.2.3 (ii)). Finally, this condition implies (i), for $\operatorname{rad}(H_{R'})$ is the maximal torus of $\bigcap_{\alpha\in R'}\Ker(\alpha)$, hence $\uCentr_G(\operatorname{rad}(H_{R'}))$ is none other than $H_{R''}$ where $R''$ is the intersection of $R$ with the vector subspace generated by $R'$.
+\numpara{5.10.7}\label{XXII.5.10.7}
+Let us collect some of the preceding results: let $(G,T,M,R)$ be a split $S$-group, and let $\Delta$ be a system of simple roots of $R$ and $R_+$ the corresponding system of positive roots; choose a subset $\Delta'$ of $\Delta$, denote by $R'$ the set of elements of $R$ which are linear combinations of the elements of $\Delta'$, and put $R'_+=R'\cap R_+$. Let $T_{\Delta'}$ be the maximal torus of $\bigcap_{\alpha\in\Delta'}\Ker(\alpha)$ and $Z_{\Delta'}=\uCentr_G(T_{\Delta'})$.
+
+Then $Z_{\Delta'}$ is a reductive subgroup of $G$, with radical $T_{\Delta'}$; $(Z_{\Delta'},T,M,R')$ is a split $S$-group; $B_{R_+}\cap Z_{\Delta'}$ is the Borel subgroup of $Z_{\Delta'}$ defined by the system of positive roots $R'_+$ (or by the system of simple roots $\Delta'$), and its unipotent part is $U_{R_+}\cap Z_{\Delta'}=U_{R'_+}$.
+\begin{remark}{5.10.8}\label{XXII.5.10.8}
+Under the conditions of 5.10.4, let $Q$ be a critical torus of $G$, $L=\uCentr_G(Q)$ its centralizer. Since $Q=\operatorname{rad}(L)$, $Q$ is a characteristic subgroup of $L$; it follows at once that
+\[
+\uNorm_G(L)=\uNorm_G(Q),
+\]
+hence also
+\[
+\uNorm_G(L)/L=\uNorm_G(Q)/\uCentr_G(Q)=W_G(Q).
+\]
+\end{remark}
+By 5.10.2, one deduces
+\begin{proposition}{5.10.9}\label{XXII.5.10.9}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $Q$ a critical torus of $G$. The Weyl group $W_G(Q)$ is (\'etale) finite over $S$.
+\end{proposition}
+\begin{remark}{5.10.10}\label{XXII.5.10.10}
+Under the conditions of 5.10.7, one may make explicit
+\[
+W_G(T_{\Delta'})=\uNorm_G(Z_{\Delta'})/Z_{\Delta'}.
+\]
+It is the constant group associated with the quotient $W_1/W_2$, where $W_1$ is the subgroup of $W$ consisting of the elements which normalize the subgroup of $M$ generated by $\Delta'$ and $W_2$ the subgroup of $W$ generated by the $s_\alpha$, $\alpha\in\Delta'$.
+\end{remark}
+
+\sgasection{5.11}{Subgroups of type (RC)}
+\begin{definition}{5.11.1}\label{XXII.5.11.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group. A group subscheme $H$ of $G$ is said to be \emph{of type (RC)} if it is of type (R), i.e. (5.2.1) satisfies the following two conditions:
+\begin{enumeratei}
+\item $H$ is smooth over $S$, with connected fibers;
+\item for every $s\in S$, $H_{\overline s}$ contains a maximal torus of $G_{\overline s}$;
+\end{enumeratei}
+and if it satisfies in addition the following condition:
+\begin{enumerate}[label=\textup{(\roman*)},start=3]
+\item for every $s\in S$ and every maximal torus $T$ of $H_{\overline s}$, the set of roots of $H_{\overline s}$ with respect to $T$ is a closed subset of the set of all roots of $G_{\overline s}$ with respect to $T$.
+\end{enumerate}
+\end{definition}
+\begin{remark}{5.11.2}\label{XXII.5.11.2}
+As we have already pointed out in 5.4.8, condition (iii) is a consequence of the others when $6$ is invertible on $S$.{\renewcommand{\thefootnote}{(59)}\nde{i.e. when each residue characteristic of $S$ is $>3$.}}
+\end{remark}
+\begin{lemma}{5.11.3}\label{XXII.5.11.3}
+Let $(G,T,M,R)$ be a split $S$-group and $R'$ a closed subset of $R$. Let
+\[
+R_1=\{\alpha\in R',\ -\alpha\in R'\}\quad\text{and}\quad
+R_2=\{\alpha\in R',\ -\alpha\notin R'\}.
+\]
+Then $R_1$ and $R_2$ are closed. Consider the groups $H_{R'}$, $H_{R_1}$ and $U_{R_2}$ (5.4.7 and 5.6.5), which are smooth and have connected fibers.
+\begin{enumeratei}
+\item The group $U_{R_2}$ is invariant in $H_{R'}$ and $H_{R'}$ is the semidirect product of $U_{R_2}$ by $H_{R_1}$.
+\item $H_{R_1}$ is reductive, $U_{R_2}$ has connected unipotent geometric fibers; every invariant subgroup of $H_{R'}$, smooth over $S$ and with connected unipotent geometric fibers, is contained in $U_{R_2}$, and every reductive subgroup of $H_{R'}$ containing $T$ is contained in $H_{R_1}$.
+\item One has $U_{R_2}\cap\uNorm_G(H_{R_1})=e$.
+\end{enumeratei}
+\end{lemma}
+One first has (iii) by 5.6.7 (i). The first assertion of (i) follows from 5.6.7 (ii). Since $U_{R_2}\cap H_{R_1}=e$ by (iii), the semidirect product $H_{R_1}\cdot U_{R_2}$ is a subgroup of $H_{R'}$; but these are two subgroups of type (R) of $G$, containing $T$, and they have the same Lie algebra $\mathfrak g_{R'}$; they therefore coincide by 5.3.5, which completes the proof of (i).
+
+Let us now prove (ii); the first two assertions are none other than 5.10.1 and 5.6.5. Let $U$ be a group subscheme of $H_{R'}$, smooth and of finite presentation, invariant (hence normalized by $T$), with connected unipotent geometric fibers; by 5.6.12, one has, locally over $S$, $U=U_{R''}$, where $R''$ is a subset of $R'$ such that $R''\cap-R''=\varnothing$. If $U\not\subset U_{R_2}$, then $R''\not\subset R_2$, hence there exists $\alpha\in R''$ such that $-\alpha\in R'$. Then $Z_\alpha\subset H_{R'}$ (5.4.3), hence $Z_\alpha$ normalizes $U$. But $U$ contains $U_\alpha$ and $Z_\alpha$ possesses a section $w$ such that $\operatorname{int}(w)U_\alpha=U_{-\alpha}$; this implies $-\alpha\in R''$, contradicting the hypothesis $R''\cap-R''=\varnothing$.
+
+Finally, if $L$ is a reductive subgroup of $H_{R'}$ containing $T$, one has locally over $S$, $L=H_{R'''}$, with $R'''$ symmetric and contained in $R'$, hence contained in $R_1$.
+\begin{proposition}{5.11.4}\label{XXII.5.11.4}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $H$ a group subscheme of $G$ of type (RC).
+\begin{enumeratei}
+\item $H$ is closed in $G$, $\uNorm_G(H)/H$ is representable by a finite \'etale $S$-group scheme.
+\item $H$ possesses a largest smooth invariant group subscheme of finite presentation over $S$, with connected unipotent geometric fibers; one says that it is the \emph{unipotent radical} of $H$ and denotes it by $\operatorname{rad}^u(H)$. The quotient sheaf $H/\operatorname{rad}^u(H)$ is representable by a reductive $S$-group.
+\item If $T$ is a maximal torus of $H$, $H$ possesses a reductive subgroup $L$ containing $T$, of type (RC), having the following two properties:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item Every reductive subgroup of $H$ containing $T$ is contained in $L$.
+\item $H$ is the semidirect product $H=L\cdot\operatorname{rad}^u(H)$, i.e. the canonical morphism $L\to H/\operatorname{rad}^u(H)$ is an isomorphism.
+\end{enumerate}
+\end{enumeratei}
+Moreover, $L$ is the unique reductive subgroup of $H$ containing $T$ and satisfying either of the two preceding conditions. Finally, one has the following equalities:
+\[
+\uNorm_H(L)=L,\quad\uNorm_H(T)=\uNorm_L(T),\quad W_H(T)=W_L(T),
+\]
+in particular $W_H(T)$ is finite over $S$.
+\end{proposition}
+\begin{proof}
+Note first that (i) is local for the \'etale topology. Hence, by corollary 5.3.18, (i) is a consequence of the last assertion of (iii).
+
+The assertions of (ii) are local for the \'etale topology. One may therefore assume one is in the situation of 5.11.3, where one concludes at once by (i) and (ii).
+
+By the uniqueness assertions it contains, (iii) is also local for the \'etale topology and one may again reduce to the situation of 5.11.3, where properties (a) and (b) have been verified. The uniqueness of an $L$ satisfying (a) is trivial; the uniqueness of an $L$ satisfying (b) is obvious, in view of (a). The equality $\uNorm_H(L)=L$ is none other than 5.11.3 (iii); if a section of $H$ normalizes $T$, then it normalizes $L$, by uniqueness of $L$, hence is a section of $L$ by what has just been proved, which proves the second equality; the third is then trivial.
+\end{proof}
+\begin{proposition}{5.11.5}\label{XXII.5.11.5}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $\mathscr H_c$ the functor of subgroups of type (RC) of $G$, which is a subfunctor of the functor $\mathscr H$ of 5.8.1.
+\begin{enumeratei}
+\item $\mathscr H_c$ is representable by an open subscheme of $\mathscr H$, smooth, quasi-projective and of finite presentation over $S$.
+\item There exists a finite \'etale $S$-scheme $C\ell_c$ and a morphism
+\[
+c\ell:\mathscr H_c\to C\ell_c,
+\]
+smooth, quasi-projective, of finite presentation, surjective and with connected geometric fibers, having the following property:
+
+For every $S'\to S$ and all $H,H'\in\mathscr H_c(S')$, $c\ell(H)=c\ell(H')$ if and only if $H$ and $H'$ are conjugate in $G$ locally for the \'etale topology (or, equivalently by 5.3.11, if for every $s\in S$, $H_{\overline s}$ and $H'_{\overline s}$ are conjugate by an element of $G(\overline s)$).
+\item $C\ell_c$ and $c\ell$ are determined (up to a unique isomorphism) by the preceding conditions.
+\item If $(G,T,M,R)$ is a splitting of $G$, let $E$ be the set of conjugacy classes modulo $W$ of closed subsets of $R$; then there exists an isomorphism $C\ell_c\isomto E_S$ such that, for every closed subset $R'$ of $R$, $c\ell(H_{R'})$ corresponds to the canonical image of $R'$ in $E_S(S)=\Hom_{\mathrm{loc.const.}}(S,E)$.
+\end{enumeratei}
+\end{proposition}
+It is first clear that $\mathscr H_c$ is a sheaf for the \'etale topology and that (ii) implies that $C\ell_c$ is none other than the quotient sheaf of $\mathscr H_c$ by the equivalence relation defined by conjugacy.
+
+This implies first (iii), as well as the fact that it suffices to verify (i) and (ii) locally for the \'etale topology. One therefore reduces to the situation of (iv); let us first construct a morphism
+\[
+f:\mathscr H_c\to E_S.
+\]
+It suffices to construct a map $\mathscr H_c(S)\to E_S(S)$ functorial in $S$; let therefore $H$ be a subgroup of type (RC) of $G$; since $H$ possesses maximal tori locally for the \'etale topology, and since the maximal tori of $G$ are conjugate locally for the \'etale topology, there exist a covering family $\{S_i\to S\}$ and for each $i$ a $g_i\in G(S_i)$ and a closed subset $R_i$ of $R$ such that $\operatorname{int}(g_i)(H\times_S S_i)=H_{R_i}\times_S S_i$; each $R_i$ defines a section $\eta_i$ of $E_{S_i}$, i.e. an element of $E_S(S_i)$; it now suffices to prove that the family $(\eta_i)$ comes from a section $\eta=f(H)$ of $E_S$ over $S$, and that the latter depends only on $H$.
+
+To do this, one is reduced to proving that $H_{R'}$ and $H_{R''}$ are conjugate locally for the \'etale topology if and only if $R'$ and $R''$ are conjugate by an element of the Weyl group $W$, which is trivial.
+
+For every $\eta\in E$, there exists an $H_0\in\mathscr H_c(S)$ such that $f(H_0)=\eta$: it suffices to take $H_0=H_{R'}$ where $R'$ is a closed subset of $R$ whose image in $E$ is $\eta$. If $H\in\mathscr H_0(S')$, $S'\to S$, $H$ is conjugate to $H_0$ locally for the \'etale topology if and only if $f(H)=\eta$ (as one sees at once by the preceding argument), which shows that $f^{-1}(\eta)$ is identified with the quotient $G/\uNorm_G(H_0)$, which by 5.8.2 is an open subset of $\mathscr H$, smooth, quasi-projective of finite presentation over $S$, with connected nonempty fibers. Since $E_S$ is the sum of the open subschemes which are the images of the sections corresponding to the $\eta\in E$, $\mathscr H_c$ is identified with the sum of the $f^{-1}(\eta)$, $\eta\in E$, which proves (i) and (ii). Finally (iv) holds by construction.
+% typo?: kept as printed: H in mathscr H_0(S'), though the functor introduced is H_c.
+\begin{corollary}{5.11.6}\label{XXII.5.11.6}
+If $u\in C\ell_c(S')$, $S'\to S$, $c\ell^{-1}(u)$ is a smooth quasi-projective $S'$-scheme of finite presentation with connected nonempty fibers; it is an open subset of $\mathscr H_c$ and a ``homogeneous'' scheme under $G_{S'}$ (by inner automorphisms). In particular, if $H\in c\ell^{-1}(u)(S')$, the morphism $G_{S'}\to(\mathscr H_c)_{S'}$ defined by $g\mto\operatorname{int}(g)H$ identifies $G_{S'}/\uNorm_{G_{S'}}(H)$ with $c\ell^{-1}(u)$.
+\end{corollary}
+\begin{examples}{5.11.7}\label{XXII.5.11.7}
+In particular, one has two canonical sections $u_t,u_b$ of $C\ell_c$ corresponding respectively to maximal tori ($R'=\varnothing$) and to Borel subgroups ($R'=$ system of positive roots). The $S$-schemes $c\ell^{-1}(u_t)$ and $c\ell^{-1}(u_b)$ are none other than the $S$-schemes $\underline{\Tor}(G)$ and $\underline{\operatorname{Bor}}(G)$ introduced in 5.8.3. We will see other examples in Exp.~XXVI.
+\end{examples}
+\begin{remark}{5.11.8}\label{XXII.5.11.8}
+One may construct an $S$-scheme $C\ell$, of finite presentation and unramified, and a smooth surjective morphism $\mathscr H\to C\ell$, with connected geometric fibers, enjoying properties analogous to 5.11.5 (ii) and (iii).
+\end{remark}
+
+\sgasection{6}{The derived group}\label{XXII.sec.6}
+\sgasection{6.1}{Preliminaries}
+In this number, one fixes a scheme $S$, a split $S$-group $(G,T,M,R)$, a system of positive roots $R_+$ of $R$, and one writes
+\[
+\begin{gathered}
+B=B_{R_+},\quad B^-=B_{R_-},\quad U=B^u,\quad U^-=(B^-)^u,\\
+\Omega=\Omega_{R_+}=U^-\cdot T\cdot U.
+\end{gathered}
+\]

@@ -1,0 +1,88 @@
+% Source PDF p. 9.
+Now one has:
+\begin{lemma}{3.3}\label{XXV.3.3}
+Let $S$ be a scheme and $G$ an admissible $S$-group. Then $G$ is smooth and of finite presentation over $S$, with affine connected semisimple fibers.
+\end{lemma}
+Since $\Omega_S$ is smooth and of finite presentation over $S$, with connected fibers, the same holds for $G$, by condition (ii). To verify 3.3, one can therefore suppose that $S$ is the spectrum of a field $K$. Identify $\Omega_K$ with its image in $G$. It is clear that $\Omega_K$ is the product
+\[
+\prod_{\alpha\in R_-}U_{\alpha,K}\cdot T_K\cdot\prod_{\alpha\in R_+}U_{\alpha,K}
+\]
+of the subgroups $T_K$ and $U_{\alpha,K}$ ($\alpha\in R$) of $G$. The Lie algebra of $G$ is therefore identified with the direct sum
+\[
+\Lie(T_K)\oplus\coprod_{\alpha\in R}\Lie(U_{\alpha,K}).
+\]
+Since the inner automorphism defined by a section of $T_K$ acts on $U_{\alpha,K}$, and hence on $\Lie(U_{\alpha,K})$, through the character
+\[
+\alpha\in R\subset M\simeq\Hom_{K\text{-gr.}}(T_K,\mathbf G_{\mathrm m,K}),
+\]
+the preceding decomposition of $\Lie(G)$ is exactly the decomposition under the adjoint action of $T$. The roots of $G_K$ relative to $T_K$ are therefore the $\alpha\in R$. Apply Exp.~XIX, 1.13. Let $T_\alpha$ be the maximal torus of $\Ker(\alpha)\subset T_K$, and let $Z_\alpha=\uCentr_G(T_\alpha)$; it suffices for us to prove that each $Z_\alpha$ is reductive. Now $Z_\alpha\cap\Omega_K$ is precisely
+\[
+\prod_{\substack{\beta\in R_-\\\beta|T_\alpha=e}}U_{\beta,K}\cdot T_K\cdot
+\prod_{\substack{\beta\in R_+\\\beta|T_\alpha=e}}U_{\beta,K};
+\]
+but the roots vanishing on $T_\alpha$ are the rational multiples of $\alpha$, hence $\alpha$ and $-\alpha$; this proves
+\[
+Z_\alpha\cap\Omega_K=U_{-\alpha,K}\cdot T_K\cdot U_{\alpha,K}.
+\]
+To prove that $Z_\alpha$ is reductive, it suffices, by Exp.~XX 3.4, to prove that $U_{\alpha,K}$ and $U_{-\alpha,K}$ do not commute, which follows immediately from 2.11.
+
+It follows from 3.2 and 3.3 that the proof will be complete if we prove:
+\begin{lemma}{3.4}\label{XXV.3.4}
+If $S$ is a locally noetherian scheme of dimension $\le1$, and if $G$ is a smooth $S$-group of finite type, with affine connected semisimple fibers, then $G$ is affine (and hence semisimple).
+\end{lemma}
+\noindent\textbf{Nota.}\ --- In Exp.~XVI, one saw that 3.4 holds without any hypothesis on $S$, but the proof is relatively delicate; since here we need only the special case 3.4, we give a direct proof of it.
+
+Consider the Lie algebra $\mathfrak g$ of $G$, which is a locally free $\OS$-module, and the adjoint representation of $G$
+\[
+\Ad:G\to\GL_{\OS}(\mathfrak g).
+\]
+
+% Source PDF p. 10.
+To prove that $G$ is affine over $S$, it suffices to prove that the morphism $\Ad$ is affine. Since $G$ is smooth with connected fibers, it is separated over $S$ (VIB 5.5), hence the morphism $\Ad$ is separated. Using a result proved in the appendix (see 4.1), it suffices to prove that the morphism $\Ad$ is quasi-finite. One is therefore reduced to the case where $S$ is the spectrum of a field; in this case $G$ is affine, hence semisimple, and one is reduced to Exp.~XXII 5.7.14.
+
+\sgasection{4}{Appendix}
+We used the following proposition in the course of the proof:
+\begin{proposition}{4.1}\label{XXV.4.1}
+Let $S$ be a locally noetherian scheme of dimension $\le1$, $G$ and $H$ two group $S$-schemes of finite type, and $f:G\to H$ a quasi-finite separated group morphism. If $G$ is flat over $S$,\nde{We have added the flatness hypothesis, which had been omitted.} then $f$ is affine.
+\end{proposition}
+We shall give the proof only in the case where $G$ is smooth over $S$, a hypothesis which is indeed satisfied in the application we have made of the proposition.
+
+\numpara{4.2}\label{XXV.4.2}
+By EGA~II, 1.6.4, one can suppose $S$ reduced. By the usual techniques of passage to the limit,\nde{Cf.~EGA~IV$_3$, 8.10.5~(viii).} one can suppose $S$ local. If $\dim(S)=0$, the assertion is trivial;\nde{Indeed, if $S=\Spec(k)$ ($k$ a field), then $f$ is the composite of the projection $p:G\to G/\Ker(f)$ and a closed immersion $i$, and since $\Ker(f)$ is finite over $k$, $p$ is finite (VIB 9.2).} suppose $\dim(S)=1$. By faithfully flat descent, one can suppose that $S$ is complete with algebraically closed residue field. Replacing $S$ by its normalization $\widetilde S$, one can (EGA~II, 6.7.1 and EGA~0$_{\mathrm{IV}}$ 23.1.5) suppose $S$ normal.\nde{Indeed, the irreducible components $S_1,\ldots,S_r$ of $S$ are complete integral noetherian local schemes, hence, by a theorem of Nagata (cf.~EGA~0$_{\mathrm{IV}}$, 23.1.5), the normalization $\widetilde S_i$ is finite over $S_i$, and so $\widetilde S$ is finite over $S$. Then, by a theorem of Chevalley (cf.~EGA~II, 6.7.1), if $f\times_S\widetilde S$ is an affine morphism, the same holds for $f$.} One is therefore reduced to the case where $S$ is the spectrum of a complete discrete valuation ring $A$ with algebraically closed residue field.
+
+\numpara{4.3}\label{XXV.4.3}
+Let $\eta$ (resp.~$s$) be the generic (resp.~closed) point of $S$. Consider the image $f_\eta(G_\eta)$ of $G_\eta$ in $H_\eta$. This is a closed group subscheme of $H_\eta$. Let $H'$ be the schematic closure in $H$ of $f_\eta(G_\eta)$. Since $H'\to H$ is affine (it is a closed immersion), one can replace $H$ by $H'$, and hence suppose $H$ flat over $S$ and $f_\eta$ surjective. Since $f_\eta$ is finite, and $G$ and $H$ flat over $S$, one has
+\[
+\dim(G_s)=\dim(G_\eta)=\dim(H_\eta)=\dim(H_s).
+\]
+
+\numpara{4.4}\label{XXV.4.4}
+Let $H_s^0,\ldots,H_s^n$ be the irreducible components of $H_s$, where $H_s^0$ denotes the identity component, and let $z_0,\ldots,z_n$ be their generic points. Since each local ring $\OO_{H,z_i}$ has dimension $\le1$, the morphism $G\times_H\OO_{H,z_i}\to\OO_{H,z_i}$ is affine, since it is quasi-finite and separated (cf.~Exp.~XVI, lemma~4.2), hence $G$ is affine over $H$ in a neighborhood of $z_i$. Denoting by $V$ the largest open subset of $H$ such that $G|_V$ is affine over $V$, it follows that $V$ contains all the $z_i$,\nde{The following phrase has been added.} hence contains at least one closed point $y_i\in H_s^i$ (and one has $\kappa(y_i)=\kappa(s)$, since $\kappa(s)$ is algebraically closed).
+
+% Source PDF p. 11: preceding sentence begins on p. 10.
+On the other hand, $V$ is evidently stable under the translation defined by any element $g\in G(S)$. But one has $\dim(G_s)=\dim(H_s)$ and $f_s$ is finite, so
+\[
+f(s):G_s^0(s)\to H_s^0(s)
+\]
+is surjective. Since $A$ is complete and $G$ smooth over $S$, the canonical map $G^0(S)\to G_s^0(s)$ is surjective; since $H_s^0(s)$ acts transitively on each $H_s^i(s)$, it follows that $V\supset H_s(s)$, hence (since $\kappa(s)$ is algebraically closed) $V\supset H_s$.\nde{When $G$ is not supposed smooth over $S$, one can proceed as follows. Let $h_0$ be a rational point of $H_s^0$, and $g_0$ a rational point of $G_s^0$ such that $f(g_0)=h_0$. By VIB 5.6.1, there exists a commutative diagram
+\[
+\xymatrix@C=27pt@R=24pt{
+S''\ar[r]^g\ar[d]_\pi\ar[dr]^{\phi}&G\ar[d]\\
+S'\ar[r]_w&S
+}
+\]
+where $w$ is \'etale and surjective, $\pi$ finite and surjective, and $\phi^{-1}(s)$ consists of a single point $s''$ such that $g(s'')=g_0$. Then the morphism $G_{S''}\to H_{S''}$ is affine above a neighborhood of $h_0y_i$, and the same holds for $G_{S'}\to H_{S'}$ (EGA~II, 6.7.1), then for $G\to H$ by faithfully flat descent (EGA~IV$_2$, 2.7.1~(xiii)). Thus $h_0y_i\in V$, and it follows that $V$ contains $H_s(s)$ and hence $H_s$.}
+
+Since one evidently has $V\supset H_\eta$, since $f_\eta$ is finite, one therefore has $V=H$. Q.E.D.
+
+\begin{thebibliography}{BT84}
+\item[]\nde{Additional references cited in this expos\'e.}
+\bibitem[BLie]{BLie} N.~Bourbaki, \textit{Groupes et alg\`ebres de Lie}, Chap.~I and VII--VIII, Hermann, 1960 and 1975.
+\bibitem[BT84]{BT84} F.~Bruhat, J.~Tits, \textit{Groupes r\'eductifs sur un corps local II. Sch\'emas en groupes. Existence d'une donn\'ee radicielle valu\'ee}, Publ.~Math.~I.H.\'E.S. \textbf{60} (1984), 5--184.
+\bibitem[DG70]{DG70} M.~Demazure, P.~Gabriel, \textit{Groupes alg\'ebriques}, Masson \& North-Holland, 1970.
+\bibitem[Ko66]{Ko66} B.~Kostant, \textit{Groups over $\ZZ$}, pp.~90--98 in: \textit{Algebraic groups and their discontinuous subgroups} (eds.~A.~Borel \& G.~D.~Mostow), Proc.~Symp.~Pure Math.~IX, Amer.~Math.~Soc., 1966.
+\bibitem[Lu09]{Lu09} G.~Lusztig, \textit{Study of a $\ZZ$-form of the coordinate ring of a reductive group}, J.~Amer.~Math.~Soc. \textbf{22} (2009), no.~3, 739--769.
+\bibitem[Se66]{Se66} J.-P.~Serre, \textit{Alg\`ebres de Lie semi-simples complexes}, Benjamin, 1966.
+\bibitem[Sp98]{Sp98} T.~A.~Springer, \textit{Linear algebraic groups}, 2nd ed., Birkh\"auser, 1998.
+\bibitem[Ti66]{Ti66} J.~Tits, \textit{Sur les constantes de structure et le th\'eor\`eme d'existence des alg\`ebres de Lie semi-simples}, Publ.~Math.~I.H.\'E.S. \textbf{31} (1966), 21--58.
+\end{thebibliography}

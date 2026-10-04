@@ -1,0 +1,473 @@
+% Continues Remark 3.5.1.
+One will denote by \(\delta(\mu,\mu')\) the image of \(\delta(\mu,\mu')\) in
+\(H^{2}(X_{0},L_{0})\). Finally, if \(X\) equipped with the group law \(\mu\)
+(\resp \(\mu'\)) is denoted simply by \(X\) (\resp \(X'\)), one will write
+\(\delta(X,X')\) instead of \(\delta(\mu,\mu')\), and likewise for
+\(\delta(X,X')\).
+
+\begin{remark}{3.6}\label{III.3.6}
+Let \(X_{J}\) be an \(S_{J}\)-scheme \emph{smooth} over \(S_{J}\) and
+\emph{affine}. By~0.15, there exists, up to isomorphism, a unique
+\(S\)-scheme \(X\), \emph{smooth} over \(S\), and reducing to \(X_{J}\). If
+\(X_{J}\) is equipped with a structure of \(S_{J}\)-group, it follows
+from~0.16 that condition \((i_{1})\) is automatically satisfied. Moreover,
+by~0.6 the definition of \(L_{0}\) simplifies and one obtains:
+\end{remark}
+
+\begin{corollary}{3.7}\label{III.3.7}
+Let \(S\), \(\mathcal{I}\) and \(\mathcal{J}\) be as in~3.1. Let \(X_{J}\)
+be an \(S_{J}\)-group smooth over \(S_{J}\) and affine.
+\begin{enumeratei}
+\item The set of \(S\)-groups smooth over \(S\) and reducing to \(X_{J}\),
+up to isomorphism (inducing the identity on \(X_{J}\)), is empty or a
+principal homogeneous set under the group
+\[
+H^{2}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})
+  \otimes_{\mathcal{O}_{S_{0}}}\mathcal{J}\bigr).
+\]
+\item There exists an \(S\)-group smooth over \(S\) reducing to \(X_{J}\) if
+and only if a certain obstruction in
+\[
+H^{3}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})
+  \otimes_{\mathcal{O}_{S_{0}}}\mathcal{J}\bigr)
+\]
+is zero.
+\end{enumeratei}
+\end{corollary}
+
+One deduces from this, as usual, the following corollaries:
+
+\begin{corollary}{3.8}\label{III.3.8}
+Let \(S\) be a scheme and \(S_{0}\) a closed subscheme defined by a
+nilpotent ideal \(\mathcal{I}\). Let \(X_{0}\) be an \(S_{0}\)-group smooth
+over \(S\) and affine.%
+% typo?: kept as printed (lisse sur S, not sur S_0)
+\begin{enumeratei}
+\item If
+\(H^{2}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})
+  \otimes_{\mathcal{O}_{S_{0}}}\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\bigr)=0\)
+for every \(n\geqslant 0\), two \(S\)-groups smooth over \(S\) and reducing
+to \(X_{0}\) are isomorphic (by an isomorphism inducing the identity on
+\(X_{0}\)).
+\item If
+\(H^{3}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})
+  \otimes_{\mathcal{O}_{S_{0}}}\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\bigr)=0\)
+for every \(n\geqslant 0\), there exists an \(S\)-group smooth over \(S\),
+reducing to \(X_{0}\).
+\end{enumeratei}
+\end{corollary}
+
+\begin{corollary}{3.9}\label{III.3.9}
+Let \(S\) be an affine scheme and \(S_{0}\) a closed subscheme defined by a
+nilpotent ideal \(\mathcal{I}\). Suppose the
+\(\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\) are locally free over \(S_{0}\).
+Let \(X_{0}\) be an \(S_{0}\)-group smooth and affine over
+\(S_{0}\).%
+% typo: missing period after S_0
+\begin{enumeratei}
+\item If \(H^{2}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\bigr)=0\),
+two \(S\)-groups smooth over \(S\) and reducing to \(X_{0}\) are isomorphic.
+\item If \(H^{3}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\bigr)=0\),
+there exists an \(S\)-group smooth over \(S\) reducing to \(X_{0}\).
+\end{enumeratei}
+\end{corollary}
+
+\begin{corollary}{3.10}\label{III.3.10}
+Let \(S_{0}\) be a scheme and \(S=\mathrm{I}_{S_{0}}\) the scheme of dual
+numbers over \(S_{0}\). Let \(X_{0}\) be an \(S_{0}\)-group smooth over
+\(S_{0}\). In order that every \(S\)-group \(Y\), smooth over \(S\), such
+that \(Y_{0}\) is \(S_{0}\)-isomorphic to \(X_{0}\), be \(S\)-isomorphic to
+\(X=X_{0}\times_{S_{0}}S\), it is necessary and sufficient that
+\(H^{2}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\bigr)=0\).%
+{\renewcommand{\thefootnote}{(72)}\nde{This is used in XXIV, 1.13.}}
+\end{corollary}
+
+Indeed, by virtue of~3.5, the set of classes, up to an isomorphism of
+\(S\)-groups ``inducing the identity on \(X_{0}\)'', of such groups \(Y\),
+is in bijection with
+\(H^{2}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\bigr)\), hence the
+set of classes, up to an arbitrary isomorphism of \(S\)-groups, is in
+bijection with
+\[
+H^{2}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\bigr)/\Gamma_{0}\,,
+\]
+where
+\[
+\Gamma_{0}=\Aut_{S_{0}\text{-gr.}}(X_{0})
+\]
+(which operates in an evident way on the \(H^{2}\)). The conclusion follows
+at once from this.%
+{\renewcommand{\thefootnote}{(73)}\nde{Indeed,
+\(\Aut_{S_{0}\text{-gr.}}(X_{0})\) operates by group automorphisms on the
+abelian group
+\(H^{2}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\bigr)\), hence the
+orbit of \(0\) is the singleton \(\{0\}\); consequently the quotient set is
+a singleton if and only if
+\(H^{2}\bigl(X_{0},\mathcal{L}\mathrm{ie}(X_{0}/S_{0})\bigr)=\{0\}\).}}
+
+\sgasection{4}{Infinitesimal extensions of closed subgroups}
+\label{III.sec.4}
+
+Let us first state a result valid in an arbitrary \emph{abelian category}.
+
+\begin{lemma}{4.1}\label{III.4.1}
+Let \(0\to A'\xrightarrow{i}A\xrightarrow{p}A''\to 0\) be an exact sequence,
+\(\phi\colon A'\to Q\) a morphism and \(\pi\colon A''\to P\) an epimorphism
+with kernel \(C\). Let \(E\) be the set (up to isomorphism) of the
+quadruples \((B,f,g,h)\) such that the sequence
+\[
+0 \longrightarrow Q \xrightarrow{f} B \xrightarrow{g} P \longrightarrow 0
+\]
+is exact and the diagram below is commutative:
+\[
+\xymatrix@C=2.6em@R=2.4em{
+0 \ar[r] & A' \ar[r]^{i} \ar[d]_{\phi}
+  & A \ar[r]^{p} \ar[d]_{h}
+  & A'' \ar[r] \ar[d]_{\pi} & 0 \\
+0 \ar[r] & Q \ar[r]^{f}
+  & B \ar[r]^{g}
+  & P \ar[r] & 0.
+}
+\]
+\begin{enumeratei}
+\item In order that \(E\) be non-empty, it is necessary and sufficient that
+the image in \(\Ext^{1}(C,Q)\) of the element \(A\) of \(\Ext^{1}(A'',A')\)
+be zero.
+\item Under these conditions, \(E\) is a principal homogeneous set under
+the abelian group \(\Hom(C,Q)\).
+\end{enumeratei}
+\end{lemma}
+
+Let us introduce the amalgamated sum \(B'=A\amalg^{A'}Q\). One then has a
+commutative diagram in which the rows are exact:%
+{\renewcommand{\thefootnote}{(74)}\nde{One has
+\(\Coker(j)=B'\amalg^{Q}0=A\amalg^{A'}0=A''\), and one sees that
+\(\Ker(j)\simeq\Ker(i)=0\) by arguing ``as if \(C\) were a category of
+modules''; for a proof solely in terms of arrows, see for example
+\textup{[Fr64]}, Th.~2.5.4~$(*)$.}}
+\[
+\xymatrix@C=2.6em@R=2.4em{
+0 \ar[r] & A' \ar[r]^{i} \ar[d]_{\phi}
+  & A \ar[r]^{p} \ar[d]
+  & A'' \ar[r] \ar[d] & 0 \\
+0 \ar[r] & Q \ar[r]^{j}
+  & B' \ar[r]
+  & A'' \ar[r] & 0,
+}
+\]
+and it is clear that the category of solutions of the problem posed is
+canonically isomorphic to the category of solutions of the corresponding
+problem for the sequence
+\[
+0 \longrightarrow Q \longrightarrow B' \longrightarrow A'' \longrightarrow 0
+\]
+and the morphisms \(\mathrm{id}_{Q}\) and \(\pi\colon A''\to P\).%
+{\renewcommand{\thefootnote}{(75)}\nde{In what follows, one has replaced
+\(A\) by \(B'\), and set out the end of the argument.}}
+In this case, the set \(E\) is in bijection with the set of subobjects \(N\)
+of \(B'\) such that \(B'\to A''\) induces an isomorphism of \(N\) with the
+kernel \(C\) of \(A''\to P\), that is, the set of morphisms
+\(\varepsilon\colon C\to B'\) lifting the canonical morphism \(C\to A''\).
+The abelian group \(G=\Hom(C,Q)\) acts on \(E\) by
+\(g\cdot\varepsilon=g+\varepsilon\) (addition in \(\Hom(C,B')\)), and if
+\(E\neq\varnothing\) this makes \(E\) into a principal homogeneous set under
+\(G\).
+
+One deduces from this:
+
+\begin{proposition}{4.2}\label{III.4.2}
+{\renewcommand{\thefootnote}{(76)}\nde{One has rewritten the statement so
+as to lie exactly in the setting of the application which is made of it
+in~4.3; on the other hand, one has set out the proof, following the
+indications given by M.~Demazure.}}%
+Let \(S\) be a scheme, \(S_{J}\) the closed subscheme defined by a
+quasi-coherent ideal \(\mathcal{J}\) of square zero, \(X\) an \(S\)-scheme,
+\(\mathcal{F}\) an \(\mathcal{O}_{X}\)-module,
+\(X_{J}=X\times_{S}S_{J}\),
+\(\mathcal{F}_{J}=\mathcal{F}\otimes_{\mathcal{O}_{S}}\mathcal{O}_{S_{J}}\),
+and \(\mathcal{G}_{J}=\mathcal{F}_{J}/\mathcal{H}_{J}\) a quotient module of
+\(\mathcal{F}_{J}\). Suppose given a morphism of
+\(\mathcal{O}_{X_{J}}\)-modules
+\[
+f\colon\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{G}_{J}
+  \longrightarrow\mathcal{Q}.
+\]
+Let \(\mathcal{E}\) be the sheaf of sets on \(X\) defined as follows: for
+each open \(U\) of \(X\), \(\mathcal{E}(U)\) is the set of quotient modules
+\(\mathcal{G}\) of \(\mathcal{F}|_{U}\), such that
+\(\mathcal{G}/\mathcal{J}\mathcal{G}=\mathcal{G}_{J}|_{U}\) and such that
+there exists an isomorphism
+\[
+h\colon\mathcal{J}\mathcal{G}\isomto\mathcal{Q}|_{U}
+\]
+making the following diagram commutative:
+\[
+\xymatrix@C=1.2em@R=1.6em{
+\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}(\mathcal{G}_{J}|_{U})
+  \ar[rr]^{f|_{U}} \ar[dr]_{\mathrm{can.}}
+&& \mathcal{Q}|_{U} \\
+& \mathcal{J}\mathcal{G} \ar[ur]_{h}^{\sim}
+}\,.
+\]
+(\(h\) is then unique, since
+\(\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}(\mathcal{G}_{J}|_{U})
+  \to\mathcal{J}\mathcal{G}\)
+is an epimorphism). Then \(\mathcal{E}\) is a formally principal homogeneous
+sheaf under the sheaf of commutative groups
+\[
+\mathcal{A}
+  =\mathcal{H}\mathrm{om}_{\mathcal{O}_{X}}(\mathcal{H}_{J},\mathcal{Q})
+  =\mathcal{H}\mathrm{om}_{\mathcal{O}_{X_{J}}}(\mathcal{H}_{J},\mathcal{Q}).
+\]
+\end{proposition}
+
+\begin{proof}
+If \(\mathcal{E}(U)=\varnothing\) there is nothing to prove; one may
+therefore suppose that \(\mathcal{E}(U)\) contains an element
+\(\widetilde{\mathcal{G}}\). Then, in the diagram below, \(h\) is an
+isomorphism and all the arrows are epimorphisms:
+\[
+\xymatrix@C=1.6em@R=2.2em{
+\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}(\mathcal{F}_{J}|_{U})
+  \ar[r] \ar[d]_{\mathrm{can.}}
+& \mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}(\mathcal{G}_{J}|_{U})
+  \ar[r]^{f|_{U}} \ar[d]_{\mathrm{can.}}
+& \mathcal{Q}|_{U} \\
+\mathcal{J}\mathcal{F}|_{U} \ar[r]
+& \mathcal{J}\widetilde{\mathcal{G}} \ar[ur]_{h}^{\sim}
+&
+}\,.
+\]
+Thus, the morphism
+\(\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}(\mathcal{F}_{J}|_{U})
+  \to\mathcal{Q}|_{U}\)
+induces an epimorphism (necessarily unique)
+\(\phi\colon\mathcal{J}\mathcal{F}|_{U}\to\mathcal{Q}|_{U}\), and if
+\(\mathcal{G}\) is an \(\mathcal{O}_{U}\)-module such that
+\(\mathcal{G}/\mathcal{J}\mathcal{G}=\mathcal{G}_{J}|_{U}\) and one has a
+commutative diagram with exact rows:
+\[
+\xymatrix@C=2.2em@R=2.2em{
+0 \ar[r]
+  & \mathcal{J}\mathcal{F}|_{U} \ar[r] \ar[d]_{\phi}
+  & \mathcal{F}|_{U} \ar[r] \ar[d]
+  & \mathcal{F}_{J}|_{U} \ar[r] \ar[d]_{\pi}
+  & 0 \\
+0 \ar[r]
+  & \mathcal{Q}|_{U} \ar[r]
+  & \mathcal{G} \ar[r]^{p_{J}}
+  & \mathcal{G}_{J}|_{U} \ar[r]
+  & 0
+}
+\]
+(where \(p_{J}\) is the projection
+\(\mathcal{G}\to\mathcal{G}/\mathcal{J}\mathcal{G}=\mathcal{G}_{J}|_{U}\),
+so that \(\mathcal{Q}|_{U}=\Ker(p_{J})=\mathcal{J}\mathcal{G}\)), then one
+may identify \(\mathcal{G}\) with a quotient module of
+\(\mathcal{F}|_{U}\). Consequently, by~4.1~(ii), the set
+\(\mathcal{E}(U)\) is a principal homogeneous set under the abelian group
+\[
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{X}}(\mathcal{H}_{J},\mathcal{Q})(U)
+  =\mathcal{H}\mathrm{om}_{\mathcal{O}_{X_{J}}}(\mathcal{H}_{J},\mathcal{Q})(U).
+\]
+\end{proof}
+
+\begin{proposition}{4.3}\label{III.4.3}
+(TDTE~IV~5.1) Let \(S\) be a scheme, \(S_{J}\) the closed subscheme defined
+by a quasi-coherent ideal \(\mathcal{J}\) of square zero, \(X\) an
+\(S\)-scheme, \(\mathcal{F}\) a quasi-coherent \(\mathcal{O}_{X}\)-module,
+\(X_{J}=X\times_{S}S_{J}\),
+\(\mathcal{F}_{J}=\mathcal{F}\otimes_{\mathcal{O}_{S}}\mathcal{O}_{S_{J}}\).
+Let \(\mathcal{G}_{J}=\mathcal{F}_{J}/\mathcal{H}_{J}\) be a quasi-coherent
+quotient module of \(\mathcal{F}_{J}\), flat over \(S_{J}\).
+
+For every open \(U\) of \(X\), let \(\mathcal{E}(U)\) be the set of
+quasi-coherent quotient modules \(\mathcal{G}\)%
+{\renewcommand{\thefootnote}{(77)}\nde{In order to lighten the statement,
+one has added here the hypothesis that \(\mathcal{G}\) be quasi-coherent,
+and deferred to the proof the remark that this hypothesis is automatically
+verified; one has set out the proof accordingly.}}
+of \(\mathcal{F}|_{U}\), flat over \(S\) and such that
+\(\mathcal{G}/\mathcal{J}\mathcal{G}\simeq\mathcal{G}_{J}|_{U}\). Then the
+\(\mathcal{E}(U)\) form a sheaf of sets \(\mathcal{E}\) on \(X\), which is
+formally principal homogeneous under the sheaf of commutative groups
+\[
+\mathcal{A}
+  =\mathcal{H}\mathrm{om}_{\mathcal{O}_{X_{J}}}\bigl(\mathcal{H}_{J},
+    \mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{G}_{J}\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+Let us denote by \(\pi\colon X\to S\) the structural morphism. Let \(U\) be
+an open of \(X\) and \(\mathcal{G}\) an \(\mathcal{O}_{U}\)-module
+\emph{flat} over \(S\) and such that
+\(\mathcal{G}/\mathcal{J}\mathcal{G}\simeq\mathcal{G}_{J}|_{U}\). Then, for
+every \(x\in U\), \(\mathcal{G}_{x}\) is a module \emph{flat} over the local
+ring \(\mathcal{O}_{S,s}\) (where \(s=\pi(x)\)), and therefore the morphism
+\[
+\mathcal{J}_{s}\otimes_{\mathcal{O}_{S,s}}(\mathcal{G}/\mathcal{J}\mathcal{G})_{x}
+  =\mathcal{J}_{s}\otimes_{\mathcal{O}_{S,s}}\mathcal{G}_{x}
+  \longrightarrow(\mathcal{J}\mathcal{G})_{x}
+\]
+is bijective; one therefore has an exact sequence
+\[
+0 \longrightarrow
+  \mathcal{J}\otimes_{\mathcal{O}_{S}}(\mathcal{G}_{J}|_{U})
+  \longrightarrow\mathcal{G}
+  \longrightarrow\mathcal{G}_{J}|_{U}
+  \longrightarrow 0
+\]
+and since \(\mathcal{J}\otimes_{\mathcal{O}_{S}}(\mathcal{G}_{J}|_{U})\) and
+\(\mathcal{G}_{J}|_{U}\) are \emph{quasi-coherent} \(\mathcal{O}_{U}\)-modules,
+so is \(\mathcal{G}\) (\cf\ EGA~III, 1.4.17).
+
+Conversely, since one has supposed \(\mathcal{G}_{J}\) \emph{flat} over
+\(S_{J}\), if \(\mathcal{G}\) is a \emph{quasi-coherent}
+\(\mathcal{O}_{U}\)-module such that
+\(\mathcal{G}/\mathcal{J}\mathcal{G}\simeq\mathcal{G}_{J}\) and the morphism
+\(\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{G}_{J}
+  \to\mathcal{J}\mathcal{G}\)
+is bijective, then \(\mathcal{G}\) is \emph{flat} over \(S\), by the
+``fundamental criterion of flatness'' (\cf\ SGA~1~IV,
+5.5%
+{\renewcommand{\thefootnote}{(78)}\nde{See also \textup{[BAC]},
+\S~III.5, th.~1.}}).
+
+Consequently, the set \(\mathcal{E}(U)\) considered here coincides with the
+set considered in~4.2, taking for \(f\) the identity morphism of
+\(\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{G}_{J}\), and the
+conclusion therefore follows from~4.2.
+\end{proof}
+
+{\renewcommand{\thefootnote}{(79)}\nde{One has set out what follows and
+added corollary~4.3.1. On the other hand, one recalls that ``pseudo-torsor''
+is synonymous with ``formally principal homogeneous''. }}%
+One keeps the preceding notations. Let \(Y_{J}\) be a closed subscheme of
+\(X_{J}\), defined by a \emph{quasi-coherent} ideal \(\mathcal{I}_{Y_{J}}\).
+One supposes \(Y_{J}\) \emph{flat} over \(S_{J}\). Then, applying~4.3 to
+\(\mathcal{F}=\mathcal{O}_{X}\) and
+\(\mathcal{G}_{J}=\mathcal{O}_{Y_{J}}
+  =\mathcal{O}_{X_{J}}/\mathcal{I}_{Y_{J}}\),
+one obtains the following corollary.
+
+\begin{corollary}{4.3.1}\label{III.4.3.1}
+Let \(S\), \(S_{J}\), \(\mathcal{J}\), \(X\), \(X_{J}\), \(Y_{J}\) and
+\(\mathcal{I}_{Y_{J}}\) be as above; one supposes \(Y_{J}\) flat over
+\(S_{J}\). Let us denote by \(\mathcal{A}_{J}\) the sheaf of commutative
+groups
+\[
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{X_{J}}}\bigl(\mathcal{I}_{Y_{J}},
+  \mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{O}_{Y_{J}}\bigr)
+\]
+on \(X_{J}\) and \(\mathcal{A}=i_{*}(\mathcal{A}_{J})\), where \(i\) is the
+immersion \(X_{J}\hookrightarrow X\).
+
+For every open \(U\) of \(X\), let \(\mathcal{E}(U)\) be the set of closed
+subschemes \(Y\) of \(U\), flat over \(S\), such that
+\(Y\times_{S}S_{J}=Y_{J}\cap U\). Then \(\mathcal{E}\) is an
+\(\mathcal{A}\)-pseudo-torsor.
+\end{corollary}
+
+If moreover a \(Y\) exists locally (\ie, if every \(x\in X\) has an open
+neighborhood \(U\) such that \(\mathcal{E}(U)\neq\varnothing\)), then
+\(\mathcal{E}\) is an \(\mathcal{A}\)-torsor. Now one knows (see for example
+EGA~IV\(_{4}\), 16.5.15) that the \(\mathcal{A}\)-torsors on \(X\) are
+parametrized by the group
+\(H^{1}(X,\mathcal{A})=H^{1}(X_{J},\mathcal{A}_{J})\), and that
+\(\mathcal{E}\) possesses a global section (\ie,
+\(\mathcal{E}(X)\neq\varnothing\)) if and only if the cohomology class
+corresponding to \(\mathcal{E}\) is zero. One therefore obtains the:
+
+\begin{corollary}{4.4}\label{III.4.4}
+Let \(S\), \(S_{J}\), \(\mathcal{J}\), \(X\), \(X_{J}\), \(Y_{J}\) and
+\(\mathcal{I}_{Y_{J}}\) be as above; one supposes \(Y_{J}\) flat over
+\(S_{J}\). Let \(E\) be the set of closed subschemes \(Y\) of \(X\), flat
+over \(S\), such that \(Y\times_{S}S_{J}=Y_{J}\).
+\begin{enumeratei}
+\item The set \(E\) is empty or a principal homogeneous set under the
+abelian group
+\[
+H^{0}(X,\mathcal{A})
+  =H^{0}(X_{J},\mathcal{A}_{J})
+  =\Hom_{\mathcal{O}_{X_{J}}}\bigl(\mathcal{I}_{Y_{J}},
+    \mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{O}_{Y_{J}}\bigr).
+\]
+\item In order that \(E\) be non-empty, it is necessary and sufficient that
+the following two conditions be satisfied:
+\begin{enumeratea}
+\item There exists locally on \(X\) a solution of the problem.
+\item A certain obstruction is zero, which lies in
+\[
+H^{1}\bigl(X_{J},
+  \mathcal{H}\mathrm{om}_{\mathcal{O}_{X_{J}}}\bigl(\mathcal{I}_{Y_{J}},
+    \mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{O}_{Y_{J}}\bigr)\bigr).
+\]
+\end{enumeratea}
+\end{enumeratei}
+\end{corollary}
+
+\begin{enoncerm}{Complement}{4.4.1}\label{III.4.4.1}
+{\renewcommand{\thefootnote}{(80)}\nde{One has added this complement,
+useful for proving point~(ii) of proposition~4.8.}}%
+Let us keep the notations of~4.4 and suppose that \(E\) contains an element
+\(Y\). Let us denote by \(\mathcal{I}_{Y}\) the ideal of \(\mathcal{O}_{X}\)
+defining \(Y\), and by \(\mathcal{I}_{Y_{J}}\) its image in
+\(\mathcal{O}_{X_{J}}\). Then, as one has seen in the proof of~4.2, one has
+a commutative diagram
+\[
+\xymatrix@C=3.2em@R=2.2em{
+\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{O}_{X_{J}}
+  \ar@{->>}[r] \ar[d]
+& \mathcal{J}\mathcal{O}_{X} \ar[d] \ar@{-->}[dl] \\
+\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{O}_{Y_{J}}
+  \ar[r]^{\sim}
+& \mathcal{J}\mathcal{O}_{Y}
+}
+\]
+hence an epimorphism of \(\mathcal{O}_{X}\)-modules
+\(\phi\colon\mathcal{J}\mathcal{O}_{X}
+  \to\mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{O}_{Y_{J}}\);
+let us denote by \(\mathcal{K}\) its kernel. Then, for every element \(Y'\)
+of \(E\), the morphism \(\mathcal{O}_{X}\to\mathcal{O}_{Y'}\) factors
+through \(\mathcal{O}_{X}/\mathcal{K}\) (which is the amalgamated sum \(B'\)
+of the proof of lemma~4.1) and, denoting by \(\mathcal{I}_{Y'}\) the ideal
+of \(Y'\) in \(\mathcal{O}_{X}\), one has a commutative diagram:
+\[
+\xymatrix@C=1.5em@R=1.45em{
+& & 0 \ar[d] & 0 \ar[d] & \\
+& & \mathcal{I}_{Y'}/\mathcal{K} \ar[r]^{\sim} \ar[d]
+  & \mathcal{I}_{Y_{J}} \ar[d] & \\
+0 \ar[r]
+  & (\mathcal{J}\mathcal{O}_{X})/\mathcal{K} \ar[r] \ar[d]^{\sim}
+  & \mathcal{O}_{X}/\mathcal{K} \ar[r] \ar[d]
+  & \mathcal{O}_{X_{J}} \ar[r] \ar[d]
+  & 0 \\
+0 \ar[r]
+  & \mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{O}_{Y_{J}}
+      \ar[r] \ar[d]
+  & \mathcal{O}_{Y'} \ar[r] \ar[d]
+  & \mathcal{O}_{Y_{J}} \ar[r] \ar[d]
+  & 0 \\
+& 0 & 0 & 0 &
+}
+\]
+Thus, replacing \(X\) by the closed subscheme defined by \(\mathcal{K}\), one
+reduces to \(\mathcal{K}=0\). Then, giving \(Y'\) is equivalent to giving
+the sub-\(\mathcal{O}_{X}\)-module \(\mathcal{I}_{Y'}\) of
+\(\mathcal{O}_{X}\), mapping bijectively onto \(\mathcal{I}_{Y_{J}}\) by the
+projection \(p\colon\mathcal{O}_{X}\to\mathcal{O}_{X_{J}}\); let us denote
+by \(f'\colon\mathcal{I}_{Y_{J}}\isomto\mathcal{I}_{Y'}\)
+(\resp \(f\colon\mathcal{I}_{Y_{J}}\isomto\mathcal{I}\)) the inverse
+isomorphism.%
+% typo?: kept as printed (target of f is I, not I_Y)
+Then \(f'-f\) is an element of
+\[
+\Hom_{\mathcal{O}_{X_{J}}}\bigl(\mathcal{I}_{Y_{J}},
+  \mathcal{J}\otimes_{\mathcal{O}_{S_{J}}}\mathcal{O}_{Y_{J}}\bigr)
+  =\Hom_{\mathcal{O}_{X_{J}}}\bigl(\mathcal{I}_{Y_{J}},
+    \mathcal{J}\mathcal{O}_{Y}\bigr)
+\]
+which one will denote by \(d(Y',Y)\). (Note that
+\(d(Y,Y')=-d(Y',Y)\).)
+\end{enoncerm}

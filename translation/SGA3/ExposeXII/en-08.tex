@@ -1,0 +1,160 @@
+d) Of course, $\mathfrak g$ denotes the Lie algebra of $G$, and $T\to\GL(\mathfrak g)$ the homomorphism induced by the adjoint representation of $G$. One trivially has
+\[
+T\cap\Centr_G\subset\Ker(T\to\GL(\mathfrak g));
+\]
+the proof of the reverse inclusion is the same as in 4.7 d), and we do not repeat it here. Let $Z$ be the group in question; as $\Ker(T\to\GL(\mathfrak g))$ it is of multiplicative type (\cf for example IX~6.8). To prove that it is a reductive center of $G$, one is reduced by b) to the case where $S$ is the spectrum of a field. Let then $Z'$ be the reductive center (which exists by a)); one obviously has $Z'\subset T\cap\Centr(G)=Z$; on the other hand, since $Z$ is a central subgroup of multiplicative type contained in the smooth connected affine subgroup $T$, it follows from a) that $Z'\supset Z$, hence $Z'=Z$. \hfill Q.E.D.
+
+e) Under the conditions of 7.1 f), put $Z=\Ker u$ and suppose that for every algebraically closed field $k$ over $S$, $Z_k$ is contained in a maximal torus of $G_k$. Then one observes easily that the map $T'\mto u^{-1}(T')$ induces a one-to-one correspondence between the set of maximal tori of $G'$ and the set of maximal tori of $G$. Applying this to situation 8.8 e), the desired conclusion follows at once.
+\end{proof}
+\begin{remarks}{8.9}\label{XII.8.9}
+a) The proof given of 8.8 is independent of the results of \No4, and in particular that of 8.8 a) does not use 4.4 (whose proof is somewhat laborious).
+
+b) One sees easily that the subgroup $Z$ of $G$ considered in 8.6 is always central (whether representable or not), and it may be tempting to call it the reductive center of $G$ in all cases.
+
+c) One can also generalize 4.9; one finds the following statement: let $G$ be a smooth connected algebraic group over an algebraically closed field; for $G$ to be an extension of an abelian variety by a smooth connected unipotent algebraic group (\ie for the reductive rank of $G$ to be zero, \cf 8.3), it is necessary and sufficient that the reductive center of $G$ be reduced to the identity group, and that the Lie algebra of $G$ be nilpotent.
+\end{remarks}
+
+\sgasection{9}{Supplement: action of a group scheme and fixed points}
+The aim of this section, added in January 2008, is to study the fixed points under the action of a group scheme.
+
+\numpara{9.1}\textbf{Representability of the fixed-point functor.}---Let $S$ be a scheme, $G$ an $S$-group scheme acting on an $S$-scheme $X$. One defines the subfunctor $X^G$ of $X$ of fixed points of $X$ under $G$: for every $S$-scheme $T$, $X^G(T)$ is the subset of $X(T)$ formed by the fixed points under $G$ (VIII.6.e).
+
+Let us recall the notion of an ``$S$-pure scheme'' introduced in ([G-R], §~3.3, [R]). Let $G$ be a flat $S$-group scheme of finite presentation. Since the fibers of $G$ have no embedded components, the notion of purity for $G$ takes the following form. The scheme $G$ is $S$-pure if for every strictly henselian local $S$-scheme $T$, with closed point $t$, every generic point $\widetilde x$ of a fiber of $G\times_S T$ specializes to a point of $G_t$, \ie the closure of $\widetilde x$ in $G\times_S T$ meets $G_t$.
+% typo: stray quote preceding the source's opening quotation mark -> omitted.
+
+\par\medskip\noindent\textbf{Examples.}---
+\begin{enumerate}[label=(\arabic*)]
+\item If $G$ is quasi-finite and separated over $S$, $G$ is $S$-pure if and only if $G$ is finite over $S$.
+\item If $S=\Spec(R)$ and $G=\Spec(A)$, $G$ is $S$-pure if and only if $A$ is a projective $R$-module ([G-R], 3.3.5). In particular $G$ is $S$-pure if $G$ is diagonalizable.
+\item A group scheme of multiplicative type is $S$-pure, for the notion of purity is local for the étale topology on $S$.
+\item The scheme $G$ is $S$-pure if $G$ is $S$-proper or if the fibers of $G$ are irreducible or if $S$ is semilocal artinian.
+\item In particular, a reductive $S$-group scheme $G$ is $S$-pure.
+\end{enumerate}
+\begin{proposition}{9.2}\label{XII.9.2}
+Let $G$ be an $S$-group scheme of finite presentation, $S$-flat and $S$-pure, acting on an $S$-scheme $X$ of finite presentation. Then the functor $X^G$ of fixed points of $X$ under $G$ is representable by a closed subscheme of $X$, of finite presentation over $S$.
+\end{proposition}
+Indeed, let $a$ be in $X(S)$ and let $H$ be the group subscheme of $G$ that is the stabilizer of $a$. Then $a$ is fixed under $G$ if and only if $H=G$. Now the subfunctor $C$ of $S$ of coincidences (more precisely, if $T$ is an $S$-scheme, $C(T)=\{\varnothing\}$ if $H\times_S T\to G\times_S T$ is bijective, and $C(T)=\varnothing$ otherwise) of $H$ with $G$ is representable by a closed subscheme of $S$, defined by a sheaf of ideals of finite type ([G-R], 4.1.1). One applies this result with $S=X$, taking for $a$ the universal point of $X$ (\ie the identity in $X(X)=\Hom_S(X,X)$).
+
+\numpara{9.3}\textbf{Infinitesimal obstruction.}---Under the hypothesis that $G$ is a flat $S$-group scheme of finite presentation acting (on the left) on a smooth $S$-prescheme $X$, we shall now study the formal smoothness of the functor $X^G$.
+
+One supposes here that $S$ is endowed with a closed subscheme $S_0$ defined by a sheaf of quasi-coherent ideals $\mathscr I$ of square zero. One writes $j:S_0\to S$, $G_0=G\times_S S_0$, $X_0=X\times_S S_0$.
+% typo: "un faisceaux" -> "un faisceau".
+
+Let $\epsilon_0$ be a point of $X^G(S_0)$ lifting to a point of $X(S)$. We shall study the obstruction to lifting $\epsilon_0$ to a point of $X^G(S)$. Since $X$ is smooth, one knows that the liftings of $\epsilon_0$ to $X(S)$ form a trivial principal homogeneous space under the abelian group
+\[
+\Hom_{\OO_{S_0}}(\epsilon_0^*(\Omega^1_{X_0/S_0}),\mathscr I)
+\]
+(III.0.2, 0.3). One then puts
+\[
+L_0=\uHom_{\OO_{S_0}}(\epsilon_0^*(\Omega^1_{X_0/S_0}),\mathscr I),
+\]
+which is an $\OO_{S_0}$-module. Moreover, since $\epsilon_0$ is fixed under $G$, $L_0$ is naturally a $G_0$-$\OO_{S_0}$-module. One denotes by $\rho_0:G_0\to\underline{\Aut}_{S_0}(L_0)$ (resp. $\rho:G\to\underline{\Aut}_S(j_*L_0)$) the associated representation.
+% typo: "pour le sous le groupe" -> "sous le groupe".
+\begin{lemma}{9.4}\label{XII.9.4}
+There exists a certain class $c(\epsilon_0)\in H^1(G,j_*L_0)\simeq H^1(G_0,L_0)$, defined canonically by $\epsilon_0$, such that $\epsilon_0$ lifts to $X^G(S)$ if and only if $c(\epsilon_0)=0$.
+\end{lemma}
+The adjunction $H^1(G,j_*L_0)\simeq H^1(G_0,L_0)$ is that of lemma III.1.1.2. We shall work with the small fppf site over $S$. For every scheme $T$ flat and of finite presentation over $S$, write $G_T=G\times_S T$, $X_T=X\times_S T$ for the corresponding objects over $T$. Consider the sheaf $A$ on the small fppf site of $S$ such that for every $T$ flat and of finite presentation over $S$, one has:
+\[
+A(T)=\left\{\text{set of liftings of }\epsilon_0\times_S T\text{ to }X(T)\right\}.
+\]
+Since the formation of $L_0$ commutes with flat base changes, the preceding considerations indicate that $A(T)$ is a trivial principal homogeneous space under the abelian group $H^0(T,j_*L_0)$. Again because $\epsilon_0$ is fixed, for every $T$ flat and of finite presentation over $S$, and every $g$ in $G(T)$, $g$ acts by affine automorphisms on $A(T)$, compatibly with the action of $G$ on $j_*L_0$. That is:
+\[
+g(a_T+v)=g(a_T)+\rho(g)(v),\qquad v\in H^1(T,j_*L_0).
+\]
+Since $G$ is flat of finite type, one can apply these considerations by taking $T=G$ and for $g$ the universal point $\mathrm{id}_G$ of $G$. One thus obtains an action of the fppf sheaf $G$ on $A$.
+% typo?: H^1 rather than H^0 in the affine-action formula retained.
+
+Let $a$ be a lifting of $\epsilon_0$ to $X(S)$. Denote by $g^\sharp$ the universal point of $G$ and define $v^\sharp\in H^0(G,j_*L_0)$ by
+\[
+\rho(g^\sharp)(v^\sharp)=g^\sharp\cdot a_G-a_G.
+\]
+For every $S$-prescheme $Y$, put $z(Y):G(Y)\to H^0(Y,j_*L_0)$, $g\mto v^\sharp(g)$. This defines the $1$-cocycle $z$ in $Z^1(G,L)$ (exposé I, §~5).
+% typo?: L in Z^1(G,L) not specified, retained.
+
+Its class $c(\epsilon_0)$ in $H^1(G,j_*L_0)$ does not depend on the choice of $a$. In particular, if $\epsilon_0$ lifts to $X^G(S)$, one has $c(\epsilon_0)=0$. Conversely, if $c(\epsilon_0)=0$, then there exists $w\in H^0(S,j_*L_0)$ such that $z(Y)(g)=g\cdot w_Y-w_Y$ for every $S$-prescheme $Y$ and every $g\in G(Y)$. Applying this to $Y=G$ and to $g^\sharp$, one concludes that $a-w\in X^G(S)$. We have therefore established that $\epsilon_0$ lifts to $X^G(S)$ if and only if $c(\epsilon_0)=0$.
+% typo: missing "pour" before "tout S-préschéma" -> supplied in English.
+\begin{remark}{9.5}\label{XII.9.5}
+In the case where $G$ is affine and flat of finite type over affine $S$, one can refine this obstruction to a class $\widetilde c(\epsilon_0)\in H^1_{G_0}(X_0,L_0)$, where $H^1_{G_0}(X_0,L_0)$ is the $G_0$-equivariant cohomology group defined by Wevers ([W], app.~C). In this case, it is not necessary to suppose that $\epsilon_0$ lifts to $X(S)$.
+% typo?: name Wevers in prose differs from Wewers in bibliography; retained.
+\end{remark}
+
+\numpara{9.6}\textbf{Smoothness of fixed points.}---
+\begin{theorem}{9.7}\label{XII.9.7}
+Let $G$ be a flat $S$-group scheme of finite type over a noetherian base $S$, acting on a smooth $S$-scheme $X$. Suppose that $G$ is $S$-pure, and for every geometric point $s$ over $S$ (with algebraically closed residue field), one has
+\[
+H^1\bigl(G_s,(\Omega^1_{X_s})^*\bigr)=0.
+\]
+Then the functor $X^G$ of fixed points of $X$ under $G$ is representable by a closed subscheme of $X$ smooth over $S$.
+\end{theorem}
+Let us prove theorem 9.7. One knows that $X^G$ is representable by a closed subscheme of $X$ of finite presentation over $S$. One can suppose $S=\Spec(A)$ local. Following the smoothness criterion (SGA~1 III.3.1.iii.bis), it suffices to verify the formal smoothness of $X^G$ for $S'=\Spec(A')$ and the closed subscheme $S'_0=\Spec(A'/\mathscr I')=\Spec(A'_0)$, where $A'$ is an artinian local ring and $\mathscr I'$ a square-zero ideal of $A'$. By reduction, one is reduced to the case where $\mathscr I'$ is annihilated by the maximal ideal of $A'$. In particular, if $k$ denotes the residue field of $A'$, $\mathscr I'$ is a $k$-vector space.
+
+One therefore gives oneself an element $\epsilon'_0\in X^G(S'_0)$ which one wishes to lift to $X^G(S')$. One then writes $X'=X\times_S S'$, $G'=G\times_S S'$, $X'_0=X\times_S S'_0$, $G'_0=G\times_S S'_0$. Since $S'$ is affine and $X'$ is smooth over $S'$, $\epsilon'_0\in X^G(S'_0)$ lifts to $X(S')$. According to lemma 9.4, the class
+\[
+c(\epsilon_0)\in H^1(G'_0,L'_0)
+\]
+is the obstruction to lifting $\epsilon'_0$ to $X^G(S')$, where $L'_0=\uHom_{\OO_{S'_0}}(\epsilon'_0{}^*(\Omega^1_{X'_0/S'_0}),\mathscr I')$. Since $L'_0$ is a $k$-vector space, one has a canonical isomorphism $H^1(G'_0,L'_0)\isomto H^1(G'_0\times_{A'_0}k,L'_0)$. It suffices to show that $H^1(G'_0\times_{A'_0}k,L'_0)=0$. Writing $\overline k$ for an algebraic closure of $k$, one has an isomorphism (IX.3.1 in the affine case, lemma 9.11 in general)
+\[
+H^1(G'_0\times_{A'_0}k,L'_0)\otimes_k\overline k
+\isomto H^1(G'_0\times_{A'_0}\overline k,L'_0\otimes_k\overline k).
+\]
+One then observes that the representation $L'_0\otimes_k\overline k$ is a direct sum of $(\Omega^1_{X'_0\times_k\overline k})^*$. By hypothesis one has $H^1(G'_0\times_{\overline k}A'_0,(\Omega^1_{X'_0\times_k\overline k})^*)=0$, which implies $H^1(G'_0\times_{A'_0}k,L'_0)=0$.
+% typo?: c(epsilon_0) lacks a prime; reversed fiber-product base G'_0 times_{bar k} A'_0 and the displayed differentials retained as printed.
+\begin{corollary}{9.8}\label{XII.9.8}
+Let $G$ be a flat $S$-group scheme of finite presentation acting on a smooth $S$-scheme $X$ of finite presentation. Suppose that $G$ admits a composition series whose factors are of one of the following types:
+\begin{enumerate}[label=(\arabic*)]
+\item $S$-abelian scheme (\ie $G$ is smooth over $S$ and its fibers are abelian varieties),
+\item $S$-group scheme of multiplicative type,
+\item finite étale $S$-group scheme of degree invertible on $S$,
+\item reductive $S$-group if $S$ is a $\QQ$-scheme.
+\end{enumerate}
+Then the functor $X^G$ of fixed points of $X$ under $G$ is representable by a closed subscheme of $X$, of finite presentation, smooth over $S$.
+\end{corollary}
+Indeed, if $1\to G'\to G\to G''\to1$ is an exact sequence of $S$-groups satisfying the hypotheses of the theorem, the $S$-group $G''$ acts on the functor $X^{G'}$ and the functor $X^G$ is nothing other than that of fixed points of $X^{G'}$ under $G''$. Thus one is reduced to the case of an $S$-group of one of the four types above. By passage to the limit, one can suppose $S$ noetherian. One will verify the cohomological criterion stated above for a fiber $G_s$ over a geometric point $s$ of $S$ and a finite-dimensional linear representation $V$ of $G_s$.
+
+In the case of an abelian scheme, every map from $G_s^n$ to $V$ is constant and consequently the $H^i(G_s,V)$ vanish for $i>0$.
+
+In the case of a group scheme of multiplicative type, $G_s$ is a diagonalizable group. Theorem I.5.3.3 shows that the $H^i(G_s,V)$ vanish for $i>0$.
+
+In the next two cases, the argument is the same, since it rests on the semisimplicity of linear representations of $G_s$. Indeed, in the case of a finite étale $S$-group scheme of degree invertible on $S$, $G_s$ is a finite constant group of degree invertible in the residue field $\kappa(s)$; it is well known that every linear representation of $G_s$ is semisimple.
+
+For the reductive case, the residue field $\kappa(s)$ is supposed (algebraically closed) of characteristic zero. One then knows that every linear representation of $G_s$ is semisimple (see [T-Y], theorem 27.3.3).
+% typo: missing "que" after "On sait alors" -> supplied in English.
+\begin{remark}{9.9}\label{XII.9.9}
+This applies in particular to the case of an action of $G/S$ on a smooth $S$-group scheme $H$. If $G$ is a group of multiplicative type acting by inner transformations on $H$ smooth and affine over $S$, one then recovers corollary XI.5.3 asserting the smoothness of the centralizer of $G$ in $H$.
+% typo: "tranformations" -> "transformations".
+\end{remark}
+\begin{remark}{9.10}\label{XII.9.10}
+In the case where $S=\Spec(k)$ and $G$ is a linearly reductive algebraic group defined over the algebraically closed field $k$, this result is due independently to Fogarty ([F], theorem 5.4) and Iversen ([I], proposition 1.3).
+\end{remark}
+
+The proof of theorem 9.7 uses the following lemma, well known in the case of an affine group scheme (IX.3.1).
+\begin{lemma}{9.11}\label{XII.9.11}
+Let $G$ be a group scheme over an affine scheme $S=\Spec(A)$, and $f:S'=\Spec(A')\to S$ a flat morphism. Put $G'=G\times_S S'$. Then for every quasi-coherent $G$-$\OS$-module $M$, one has canonical isomorphisms
+\[
+H^i(G,M)\otimes_A A'\isomto H^i(G',M\otimes_A A')\qquad(i\ge0).
+\]
+\end{lemma}
+Since chains of degree $n\ge1$ for Hochschild cohomology are determined by their value at the point $(\mathrm{id},\ldots,\mathrm{id})\in G(G)\times\cdots G(G)$, one has an isomorphism of $A$-modules $C^n(G,M)\simeq\Gamma(G^n,M\otimes_A\OO_{G^n})$. The cohomology group $H^n(G,M)$ is the $n$th cohomology group of the complex
+\[
+\begin{aligned}
+L&\to\Gamma(G,M\otimes_A\OO_G)\to\Gamma(G^2,M\otimes_A\OO_{G^2})\\
+&\to\Gamma(G^3,M\otimes_A\OO_{G^3})\to\cdots
+\end{aligned}
+\]
+Since $A'$ is flat over $A$, by EGA~IV$_1$, 1.7.21, one has
+\[
+\Gamma(G^n,M\otimes_A\OO_{G^n})\otimes_A A'
+\isomto\Gamma(G'{}^n,(M\otimes_A A')\otimes_{A'}\OO_{G'{}^n}).
+\]
+This implies the desired assertion on taking cohomology.
+% typo?: L, rather than M, as first term of complex retained.
+
+\begin{thebibliography}{RG71}
+\item[]\nde{Additional references cited in this Exposé.}
+\bibitem[Fo73]{XII.Fo73} J.~Fogarty, \textit{Fixed point schemes}, Amer.~J.~Math. \textbf{95} (1973), 35--51.
+\bibitem[RG71]{XII.RG71} M.~Raynaud, L.~Gruson, \textit{Critères de platitude et de projectivité}, Invent.~math. \textbf{13} (1971), 1--89.
+\bibitem[Iv72]{XII.Iv72} B.~Iversen, \textit{A fixed point formula for action of tori on algebraic varieties}, Invent.~math. \textbf{16} (1972), 229--236.
+\bibitem[Ray72]{XII.Ray72} M.~Raynaud, \textit{Flat modules in algebraic geometry}, Compositio Math. \textbf{24} (1972), 11--31.
+\bibitem[TY06]{XII.TY06} P.~Tauvel, R.~W.~T.~Yu, \textit{Lie algebras and algebraic groups}, Springer-Verlag, 2006.
+\bibitem[We05]{XII.We05} S.~Wewers, \textit{Formal deformation of curves with group scheme action}, Ann.~Inst.~Fourier (Grenoble) \textbf{55} (2005), 1105--1165.
+\end{thebibliography}

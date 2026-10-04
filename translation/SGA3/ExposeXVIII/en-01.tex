@@ -1,0 +1,478 @@
+% French PDF pp. 1--6; final sentence completed on p. 7.
+\exposetitle{XVIII}{Weil's theorem on the construction of a group from a rational law}
+\label{XVIII}
+\begin{center}by Michael Artin\end{center}
+\renewcommand{\thefootnote}{(\arabic{footnote})}
+\footnotetext[0]{Version of 8 May 2009.}
+
+\sgasection{0}{Introduction}
+This exposé is devoted to the well-known theorem of Weil [1]
+which gives the construction of a group variety from a birational
+law. It seems that the generalization of this result to the case
+where the base is the spectrum of a discrete valuation ring was
+already known to several people; one may, for example, see [2].
+Here we shall prove the theorem for a flat group of finite
+presentation over an arbitrary base prescheme \(S\).
+Since one must make the hypotheses with a little more care,
+the statement is not in the form given by Weil; but when \(S\)
+is the spectrum of a field, one sees that the form given here
+is essentially equivalent to Weil's.
+We use the following suggestion of Grothendieck:
+given a \og group germ\fg{} \(X\) over a prescheme \(S\),
+one must construct the group as the quotient of \(X\times_S X\)
+by a suitable equivalence relation.
+
+\sgasection{1}{\og Recollections\fg{} on rational maps}
+Let \(X/S\) be a relative prescheme and \(U\subseteq X\)
+an open subset. One says that \(U\) is \emph{schematically
+dense in \(X\) relative to \(S\)}, or that
+\(U\hookrightarrow X\) is \emph{relatively schematically dense},
+if for every base change \(S'\to S\) the open subset
+\(U\times_S S'\) is schematically dense in \(X\times_S S'\).
+For the definition and properties of this notion one refers
+to Exp. IX, \(\S\) 4.
+{\renewcommand{\thefootnote}{(*)}\addtocounter{footnote}{-1}%
+\footnote{Cf. also EGA IV$_3$, 11.9 and 11.10
+(in particular 11.10.8), where one says
+\og universally schematically dense relative to \(S\)\fg.}}
+
+\begin{proposition}{1.1}\label{XVIII.1.1}
+(i) A finite intersection, as well as the union of a nonempty
+family of open subsets schematically dense relative to \(S\),
+is schematically dense relative to \(S\).
+
+(ii) If \(U\subseteq X\) is schematically dense relative to
+\(S\) and \(S\to T\) is a morphism, then
+\(U_T\subseteq X_T\) is schematically dense relative to \(T\).
+
+(iii) Let \(U\subseteq V\subseteq X\) be open immersions.
+For \(U\) to be schematically dense in \(X\) relative to
+\(S\), it is necessary and sufficient that it be so in
+\(V\) and that \(V\) be so in \(X\).
+
+(iv) If \(U\subseteq X\) and \(V\subseteq Y\) are relatively
+schematically dense, then \(U\times_S V\) is schematically
+dense in \(X\times_S Y\) relative to \(S\).
+\end{proposition}
+In Exp. IX one finds the following criterion:
+\begin{proposition}{1.2}\label{XVIII.1.2}
+Let \(X/S\) be locally of finite presentation and flat,
+and let \(U\) be an open subset of \(X\).
+If, for each \(s\in S\), the fiber \(U_s\) is schematically
+dense in \(X_s\), then \(U\) is schematically dense in \(X\)
+relative to \(S\).
+\end{proposition}
+In particular:
+\begin{corollary}{1.3}\label{XVIII.1.3}
+If \(X/S\) is locally of finite presentation and flat,
+and each fiber \(X_s\) is \og without embedded components\fg,
+then \(U\) is schematically dense in \(X\) relative to \(S\)
+if and only if, for each \(s\in S\), \(U_s\) is dense in
+\(X_s\) in the topological sense.
+\end{corollary}
+One easily deduces from the definition the
+\begin{proposition}{1.4}\label{XVIII.1.4}
+Let \(U\subseteq X\) be schematically dense relative to
+\(S\), and let \(f,g:X\to Y\) be two morphisms of functors
+over \(S\), where \(Y\) satisfies one of the following conditions:
+
+(i) \(Y\) is a prescheme over \(S\), and each fiber \(Y_s\)
+is separated.
+
+(ii) \(Y\) is a presheaf\nde{Specify for which topology:
+a priori (fpqc).} over \(S\) such that the diagonal morphism
+\(Y\to Y\times_S Y\) is represented by a closed immersion.
+\nde{Let us recall here the definition of a closed immersion.
+A morphism of \(S\)-functors \(F\to G\) is relatively
+representable if, for every \(S\)-morphism \(T\to G\),
+where \(T\) is an \(S\)-prescheme, the \(T\)-functor
+\(F_T=F\times_S T\) is represented by a \(T\)-prescheme.
+A morphism of \(S\)-functors \(F\to G\) is an open
+(resp. closed) immersion if it is relatively representable
+and, for every \(S\)-morphism \(T\to G\), where \(T\)
+is an \(S\)-prescheme, the \(T\)-morphism \(F_T\to T\)
+is an open (resp. closed) immersion.}
+
+Then, if \(f=g\) on \(U\), one has \(f=g\).
+\end{proposition}
+\begin{proof}
+In case (i), the standard argument after IX 4.1 shows
+that \(f,g\) are equal on each fiber; hence the
+subprescheme \(\Ker(f,g)\) of \(X\) is set-theoretically
+equal to \(X\), hence is closed, and since it contains
+\(U\), it is equal to \(X\), i.e. \(f=g\).
+Case (ii) is proved as in \loccit.
+\nde{Give details of this point\ldots}
+\end{proof}
+\begin{definition}{1.5}\label{XVIII.1.5}
+{\renewcommand{\thefootnote}{(*)}\addtocounter{footnote}{-1}%
+\footnote{Cf. EGA IV$_4$, 20.5, where one says
+\og pseudo-morphism from \(X\) to \(Y\) relative to \(S\)\fg,
+so as not to conflict with EGA I, 7.12.}}
+Let \(X\) be a prescheme over \(S\), and \(Y\) a presheaf
+over \(S\). One calls a \emph{rational map}
+\(f:X\to Y\) over \(S\) an equivalence class of morphisms
+\(f:U\to Y\) over \(S\), where \(U\) is an open subset
+of \(X\) schematically dense relative to \(S\), and
+where one sets \((f:U\to Y)\sim(f':U'\to Y)\) if and
+only if there exists an open subset \(U''\subseteq U'\cap U\),
+schematically dense relative to \(S\), such that
+\(f=f'\) on \(U''\).
+\end{definition}
+This definition is made in such a way that one can
+define in an evident manner the rational map
+\(f\times_S S'\) for every base extension \(S'\to S\).
+
+If \(U\) is an open subset of \(X\), one says that
+the rational map \(f\) is \emph{defined on \(U\)}
+if there exists a morphism representing \(f\) whose
+set of definition contains \(U\).
+\begin{definition}{1.5.1}\label{XVIII.1.5.1}
+\nde{The number 1.5.1 has been added.}
+If \(Y\) satisfies one of conditions (i), (ii) of
+1.4, it is clear that there exists a largest open
+subset \(U\) of \(X\) such that \(f\) is defined on
+\(U\), and this \(U\) is schematically dense relative
+to \(S\). One calls it the \emph{domain of definition
+of \(f\) over \(S\)}, and denotes it by \(\operatorname{Dom}(f)\).
+% typo: duplicated corrupt text "sisisch. dense rel.schématiquement"
+% is rendered once as "schematically".
+\end{definition}
+This notion does not commute with base changes, but one has
+\begin{proposition}{1.6}\label{XVIII.1.6}
+Let \(X\) be an \(S\)-prescheme and \(Y\) an
+\(S\)-functor satisfying one of hypotheses (i), (ii)
+of 1.4. Let \(f:X\to Y\) be a rational map over
+\(S\), \(S'\to S\) a flat morphism locally of finite
+presentation, and \(f'=f\times_S S'\). Then
+\[
+\operatorname{Dom}(f')=\operatorname{Dom}(f)\times_S S'.
+\]
+% typo: "Soiten" and "Soenit" -> "Soit".
+\end{proposition}
+\begin{proof}
+Set \(U=\operatorname{Dom}(f)\).
+It is clear that \(V'=\operatorname{Dom}(f')\)
+contains \(U\times_S S'\).
+Let \(V\) be the image of \(V'\), which is an
+open subset of \(X\), since \(X'\to X\) is open.
+One must prove that \(V=U\), that is, one must
+find a morphism \(V\to Y\) representing \(f\).
+Set \(S''=S'\times_S S'\),
+\[
+X''=X\times_S S'',\qquad U''=U\times_S S'',\qquad
+V''=V'\times_V V'.
+\]
+Then \(U''\) is schematically dense in \(X''\)
+relative to \(S''\), hence \(U''\) is schematically
+dense in \(V''\) relative to \(S\), since
+\(U''\subseteq V''\subseteq X''\).
+The restriction of \(f':V'\to Y'\) to \(U'\)
+is deduced from \(f:U\to Y\) by base change.
+The two morphisms \(V''\to Y\) deduced from
+\(g\) by base change are equal on \(U''\), hence
+equal. Now, since \(V'\to V\) is flat and
+locally of finite presentation, it is fppf-covering
+(Exp. IV 6.3), and one finds the morphism \(V\to Y\)
+by descent.
+% typo?: g is not defined; relative to S is kept as printed above.
+\end{proof}
+We shall frequently use the following triviality:
+\begin{proposition}{1.7}\label{XVIII.1.7}
+Let \(X/S\) be faithfully flat, locally of finite
+presentation, and let \(U\subseteq X\) be a relatively
+schematically dense open subset.
+Then there exists a base extension \(S'\to S\)
+which is fppf-covering, and a section \(x\in X(S')\)
+which is contained in \(U(S')\).
+\end{proposition}
+\begin{proof}
+Indeed, \(U/S\) is fppf-covering.
+Set \(S'=U\), and take as section the \(S\)-graph
+of the inclusion of \(U\) in \(X\).
+\end{proof}
+
+\sgasection{2}{Local determination of a morphism of groups}
+Let \(G,H\) be groups, and let \(U\subseteq G\)
+be a subset such that \(U\cdot U=G\).
+Then, if \(f,g\) are homomorphisms from \(G\)
+to \(H\) such that \(f=g\) on \(U\), one has \(f=g\).
+Similarly:
+\begin{proposition}{2.1}\label{XVIII.2.1}
+Let \(S\) be a site (cf. Exp. IV\nde{That is,
+a category endowed with a topology, cf. IV, \(\S\) 4.2.}),
+\(G\) a sheaf of groups on \(S\), and
+\(U\subseteq G\) a subsheaf of sets such that
+the morphism \(U\times U\to G\) induced by
+multiplication is an epimorphism.
+Then, if \(f,g\) are homomorphisms from \(G\)
+to a sheaf of groups \(H\), equal on \(U\),
+one has \(f=g\).
+\end{proposition}
+\begin{corollary}{2.2}\label{XVIII.2.2}
+Let \(G\) be an \(S\)-group prescheme locally
+of finite presentation and flat, let
+\(U\subseteq G\) be a relatively schematically
+dense open subset, and \(H\) a sheaf of groups
+on \(S\) for the fppf topology.
+Then every homomorphism \(f:G\to H\)
+is determined by its restriction to \(U\).
+\end{corollary}
+\begin{proof}
+Indeed, since \(G\) is flat over \(S\),
+the composition law in \(G\) is a flat
+morphism (VIB.9.2.xi), and it follows that
+\(U\times_S U\to G\) is faithfully flat
+and locally of finite presentation,
+hence fppf-covering, hence an epimorphism.
+\end{proof}
+\begin{proposition}{2.3}\label{XVIII.2.3}
+Let \(G\) be a group prescheme locally
+of finite presentation and flat over \(S\),
+\(U\subseteq G\) a relatively schematically
+dense open subset, and \(H\) a sheaf of
+groups for the fppf topology.
+Denote by \(m_G\) the multiplication of
+\(G\), and by \(m_H\) that of \(H\).
+
+Let \(\overline f:U\to H\) be an \(S\)-morphism,
+and suppose that there exists a relatively
+schematically dense open subset \(V\) of
+\(m_G^{-1}(U)\cap(U\times_S U)\) such that the diagram
+\[
+\xymatrix{
+V\ar[r]^{(\overline f\times\overline f)|_V}\ar[d]_{m_G}
+ & H\times_S H\ar[d]^{m_H}\\
+U\ar[r]_{\overline f} & H }
+\]
+is commutative. Then there exists a morphism
+of \(S\)-groups \(f:G\to H\) (necessarily
+unique) extending \(\overline f\), in each
+of the following situations:
+
+(i) \(H\) is representable.
+
+(ii) The diagonal morphism \(H\to H\times_S H\)
+is represented by a closed immersion.
+\nde{See the note in 1.4.}
+
+(iii) For every section \(a\in U(S)\),
+the open subset
+\(\mathrm{pr}_2((a\times_S U)\cap V)\)
+is relatively schematically dense in \(U\),
+{\renewcommand{\thefootnote}{(*)}\addtocounter{footnote}{-1}%
+\footnote{Or in \(G\), which amounts to the same
+by virtue of 1.1 (iv).}}
+and this statement remains true after
+every base change \(S'\to S\).
+\end{proposition}
+\begin{proof}
+First note that \(V\) is relatively schematically
+dense in \(G\times_S G\).
+Indeed, \(V\) is relatively schematically dense in
+\[
+m_G^{-1}(U)\cap(U\times_S G)\cap(G\times_S U),
+\]
+and the three factors are deduced from
+\(U\subseteq G\) by an evident base change
+\(G\times_S G\to G\), which implies the
+assertion by 1.1.
+
+To construct a morphism \(f:G\to H\),
+it suffices, since \(U\times_S U\to G\)
+is fppf-covering, to find a morphism
+from \(U\times_S U\) to \(H\) such that
+the two induced morphisms on
+\((U\times_S U)\times_G(U\times_S U)\)
+are the same.
+Take \(m_H\circ(\overline f\times\overline f):
+U\times_S U\to H\).
+One must verify that whenever one has
+sections \(a,b,c,d\in U(S')\), with
+\(S'\to S\) arbitrary, such that \(ab=cd\),
+one also has
+\(\overline f(a)\overline f(b)=\overline f(c)\overline f(d)\).
+By hypothesis, this is true if
+\((a,d)\) and \((c,d)\) are contained in
+\(V(S')\), since in this case one has
+\(\overline f(a)\overline f(b)=\overline f(ab)\)
+and \(\overline f(c)\overline f(d)=\overline f(cd)\).
+Thus it is true whenever
+\((a,b,c,d)\in(V\times_G V)(S')\).
+% typo?: (a,d), rather than (a,b), retained as printed.
+
+I say that \(V\times_G V\) is an open
+subset of \((U\times_S U)\times_G(U\times_S U)\)
+schematically dense relative to \(S\).
+This will complete the proof in cases
+(i) and (ii), by 1.4, the facts that the
+morphism \(f\) thus constructed extends
+\(\overline f\), and that \(f\) is a
+homomorphism, being evident, also by 1.4.
+Now write
+\[
+V\times_G V=
+\bigl(V\times_G(G\times_S G)\bigr)
+\cap\bigl((G\times_S G)\times_G V\bigr).
+\]
+By symmetry and 1.1, it suffices to
+verify that \(V\times_G(G\times_S G)\)
+is relatively schematically dense in
+\((G\times_S G)\times_G(G\times_S G)\).
+But this last prescheme is \(S\)-isomorphic
+to \(G\times_S G\times_S G\), the
+morphism being given by
+\((a,b,c,d)\mapsto(a,b,c)\).
+Thus what one must prove is that
+\(V\times_S G\) is schematically dense
+in \(G\times_S G\times_S G\) relative
+to \(S\), which is a consequence of
+the fact that \(V\) is relatively
+schematically dense in \(G\times_S G\).
+
+It remains to treat case (iii).
+To prove
+\(\overline f(a)\overline f(b)=\overline f(c)\overline f(d)\),
+one may make an fppf-covering base
+extension. Suppose that one has a
+section \(x\in G(S')\), with
+\(S'\to S\) fppf-covering, such that
+\((b,x),(a,bx),(d,x),(c,dx)\)
+are all in \(V\).
+Then one will have
+\[
+\begin{aligned}
+\overline f(a)\overline f(b)\overline f(x)
+ &=\overline f(a)\overline f(bx)
+=\overline f(abx)=\overline f(cdx)\\
+ &=\overline f(c)\overline f(dx)
+=\overline f(c)\overline f(d)\overline f(x),
+\end{aligned}
+\]
+whence the desired equality.
+
+\nde{The beginning of the following sentence has been added.}
+To find such an \(x\), set, for every \(z\in U(S')\),
+\[
+V_z=\mathrm{pr}_2((z\times_{S'}U_{S'})\cap V_{S'}).
+\]
+Then the hypotheses on \(x\) mean that \(x\in W\), where
+\[
+W=V_b(S')\cap V_d(S')\cap b^{-1}V_a(S')\cap d^{-1}V_c(S').
+\]
+By (iii), \(W\) is relatively schematically
+dense in \(G\).
+Thus the existence of a section \(x\)
+after an fppf-covering extension follows
+from Proposition 1.7.
+
+Let us verify that the morphism thus
+constructed is multiplicative:
+let \(a,b\in G(S')\), with \(S'\to S\)
+arbitrary, and write \(S'=S\).
+Choose an fppf-covering base extension
+\(S'\to S\) and a section \(x\in G(S')\)
+such that \(x\in U(S')\) and
+\(ax^{-1}\in U(S')\), that is,
+\(x\in(a^{-1}U)^{-1}(S')\).
+Choose moreover another fppf-covering
+extension \(S''\to S'\) and a section
+\(y\in G(S'')\) such that
+\[
+y,\;by^{-1},\;aby^{-1}\quad\text{belong to }U(S''),
+\]
+and
+\[
+by^{-1}\in V_x,\qquad xby^{-1}\in V_{ax}^{-1}.
+\]
+Then, by definition of \(f\), one has over \(S''\)
+\[
+\begin{gathered}
+f(a)=\overline f(ax^{-1})\overline f(x),\qquad
+f(b)=\overline f(by^{-1})\overline f(y),\\
+f(ab)=\overline f(aby^{-1})\overline f(y).
+\end{gathered}
+\]
+Moreover,
+\[
+\begin{aligned}
+f(a)f(b)
+ &=\overline f(ax^{-1})\overline f(x)
+\overline f(by^{-1})\overline f(y)\\
+ &=\overline f(ax^{-1})\overline f(xby^{-1})\overline f(y)\\
+ &=\overline f(aby^{-1})\overline f(y)=f(ab),
+\end{aligned}
+\]
+whence multiplicativity.
+% typo?: V_ax^{-1} and the adjacent V_x condition are retained as printed.
+
+The fact that \(f\) extends \(\overline f\)
+is now easy: let \(a\in U(S')\), write
+\(S'=S\), and choose \(S'\to S\)
+fppf-covering and sections
+\(x,y\in G(S')\) such that
+\((x,y),(ax,y),(a,xy)\) are in \(V(S')\).
+Then
+\[
+\begin{gathered}
+f(xy)=\overline f(x)\overline f(y)=\overline f(xy),\\
+f(axy)=\overline f(ax)\overline f(y)=\overline f(axy).
+\end{gathered}
+\]
+Thus
+\[
+\begin{aligned}
+f(a)&=f(axy)f((xy)^{-1})
+=f(axy)f(xy)^{-1}\\
+&=\overline f(axy)\overline f(xy)^{-1}=\overline f(a).
+\end{aligned}
+\]
+\end{proof}
+\begin{remark}{2.3.1}\label{XVIII.2.3.1}
+In many cases hypothesis (iii) is true,
+for it will even be true if one
+replaces \(U\) by a smaller open subset
+\(U'\), still relatively schematically
+dense in \(G\). For example, one has:
+\end{remark}
+\begin{proposition}{2.4}\label{XVIII.2.4}
+With the situation as in 2.3, suppose
+that each geometric fiber of \(G/S\)
+is irreducible.
+Let \(U'=\mathrm{pr}_1 V\), and
+\[
+V'=V\cap m_G^{-1}(U')\cap(U'\times_S U').
+\]
+Then \(U'\subseteq U\) is a relatively
+schematically dense open subset of \(G\),
+and the objects \(U'\), \(\overline f|_{U'}\),
+and \(V'\) satisfy hypothesis (iii).
+\end{proposition}
+\begin{proof}
+\(U'\) is open, since \(G\times_S G\to G\)
+is flat and locally of finite presentation.
+All the other verifications are trivial,
+except for hypothesis (iii).
+Let \(a\in U(S')\), and write \(S'=S\).
+To verify that
+\(\mathrm{pr}_2((a\times U')\cap V')\)
+is relatively schematically dense in
+\(U'\), it suffices to do so fiber
+by fiber by Corollary 1.3, that is,
+it suffices to treat the case where
+\(S\) is the spectrum of a field,
+and in this case it suffices to prove
+that \(U'\) is nonempty, since \(G\)
+is irreducible and \og without embedded
+components\fg{} (cf. VIA, 1.1.1).
+Now
+\[
+\begin{aligned}
+\mathrm{pr}_2((a\times U')\cap V')
+&=\mathrm{pr}_2((a\times U')\cap V)\\
+&\quad\cap\mathrm{pr}_2((a\times U')\cap m_G^{-1}(U')),
+\end{aligned}
+\]
+and the second term of the right-hand
+member is dense in \(G\).
+% Proof continues in en-02.tex.

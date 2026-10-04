@@ -1,0 +1,137 @@
+\exposetitle{X}{Characterization and classification of groups of multiplicative type}
+\label{X}
+\begin{center}by A. Grothendieck\end{center}
+\footnotetext{Version xy of November 6, 2009: Addenda placed in Sect. 9, revised through 8.8.}
+
+\sgasection{1}{Classification of isotrivial groups. Case of a base field}
+Recall (IX 1.1) that the group of multiplicative type $H$ over the prescheme $S$ is said to be \emph{isotrivial} if there exists a finite surjective étale morphism $S'\to S$ such that $H'=H\times_S S'$ is diagonalizable. When $S$ is connected, $S'$ decomposes as a finite sum of connected components $S'_i$, and one may therefore (replacing $S'$ by one of the $S'_i$ if necessary) suppose $S'$ connected. Finally, one knows that one may dominate $S'$ by an $S'_1$ finite étale connected, which is \emph{Galois}, i.e. a principal homogeneous bundle over $S$ with group $\Gamma_S$, where $\Gamma$ is an ordinary finite group (cf. SGA 1, V nos. 7 \& 3 when $S$ is locally noetherian, and EGA IV$_4$, 18.2.9 in the general case).\nde{More precisely, this follows from the ``axiomatic conditions of a Galois theory'', cf. SGA 1, V \No4 g); when $S$ is locally noetherian, the verification of the axioms is made in loc. cit., nos. 7 \& 3, in particular 3.7, which rests on SGA 1, I 10.9. This latter result is proved, without noetherian hypotheses, in EGA IV$_4$, 18.2.9.} We suppose $S'$ chosen in this way, and propose to determine the groups of multiplicative type $H$ over $S$ which are ``trivialized'' by $S'$, i.e. such that $H'=H\times_S S'$ is diagonalizable.\nde{In what follows one shall say that an $S$-group of multiplicative type is ``split'' if it is ``trivial'' in the sense of IX 1.2, i.e. if it is a diagonalizable $S$-group.} By descent theory (cf. SGA 1, VIII 5.4), the category of these $H$ is equivalent to the category of diagonalizable groups $H'$ over $S'$, endowed with operations of $\Gamma$ on $H'$ compatible with the operations of $\Gamma$ on $S'$. (N.B. Since the groups considered are affine over the base, the question of effectiveness of a descent datum is resolved in the affirmative, cf. SGA 1, VIII 2.1.) Now $S'$ being connected, the contravariant functor
+\[
+M\mto D_{S'}(M)
+\]
+is an anti-equivalence of the category of ordinary commutative groups with the category of diagonalizable groups over $S'$ (cf. VIII 1.6), a quasi-inverse functor being $H\mto\Hom_{S'\text{-}\mathrm{gr.}}(H,\mathbf{G}_{\mathrm{m},S'})$.\nde{$S$ has been corrected to $S'$.}
+% typo: "se résoud" -> "is resolved".
+\begin{proposition}{1.1}\label{X.1.1}
+Let $S$ be a connected prescheme, $S'$ a connected principal covering of $S$ with (finite) group $\Gamma$. Then the category of groups of multiplicative type over $S$ split\nde{Here and in what follows, ``splittés'' has been replaced by ``déployés'', ``splitte'' by ``déploie'', etc.} by $S'$ is anti-equivalent to the category of $\Gamma$-modules, i.e. of ordinary commutative groups $M$ endowed with a homomorphism $\Gamma\to\Aut_{\mathrm{gr.}}(M)$.
+\end{proposition}
+One concludes in the standard manner:
+\begin{corollary}{1.2}\label{X.1.2}
+Let $S$ be a connected prescheme, $\xi:\Spec(\Omega)\to S$ a ``geometric point'' of $S$, i.e. a homomorphism into $S$ from the spectrum of an algebraically closed field $\Omega$; consider the fundamental group of $S$ at $\xi$ (cf. SGA 1 V, \No7):
+\[
+\pi=\pi_1(S,\xi).
+\]
+Then the category of isotrivial groups of multiplicative type $H$ over $S$ is anti-equivalent to the category of ``Galois modules'' under $\pi$, i.e. of $\pi$-modules $M$ such that the stabilizer in $\pi$ of every point of $M$ is an open subgroup.
+\end{corollary}
+In this correspondence, with the isotrivial group of multiplicative type $H$ is associated the group $M=\Hom_{\Omega\text{-}\mathrm{gr.}}(H_\xi,\mathbf{G}_{\mathrm{m},\Omega})$, where $H_\xi$ is the fiber of $H$ at $\xi$; this group is naturally endowed with operations of $\pi_1(S,\xi)$.
+\begin{remark}{1.3}\label{X.1.3}
+We shall see below (cf. 5.16) that if $S$ is normal, or more generally geometrically unibranch, every group of multiplicative type and of finite type over $S$ is necessarily isotrivial, so classification principle 1.2 applies to groups of multiplicative type and of finite type over $S$, which correspond to the Galois $\pi$-modules of finite type over $\ZZ$. For the moment, let us restrict to the following result:
+\end{remark}
+\begin{proposition}{1.4}\label{X.1.4}
+Let $k$ be a field, $H$ a group of multiplicative type and of finite type over $k$; then $H$ is isotrivial, i.e. there exists a finite separable extension $k'$ of $k$ which splits $H$.
+\end{proposition}
+Consequently, by 1.2, if $\pi$ is the topological Galois group of an algebraic closure $\Omega$ of $k$, the category of groups of multiplicative type and of finite type $H$ over $k$ is anti-equivalent to the category of Galois modules $M$ under $\pi$ of finite type as $\ZZ$-modules.
+
+It follows first from the fact that $H$ is of finite type over $k$ and from the ``finite extension principle'' (cf. EGA IV$_3$, 9.1.4) that there exists a finite extension $k'$ of $k$ which splits $H$. Recall the principle of the proof: by hypothesis there exists a diagonalizable group of finite type $G$ over $k$, an $S'$ faithfully flat over $S=\Spec(k)$, and an isomorphism of $S'$-groups $H_{S'}\simeq G_{S'}$. Replacing $S'$ by the residue field of a point of $S'$ if necessary, one may suppose that $S'$ is the spectrum of an extension $K$ of $k$. The latter is the inductive limit of its subalgebras $A_i$ of finite type, whence it follows easily (cf. EGA IV$_3$, 8.8.2.4) that $u$ comes from an $A_i$-isomorphism $u_i:H_{A_i}\simeq G_{A_i}$ for sufficiently large $i$. By the Nullstellensatz there exists a quotient ring $k'$ of $A_i$ which is a finite extension of $k$. This therefore splits $H$.
+
+Then $k'$ is a radicial extension of a separable extension $k'_s$ of $k$. By IX 5.4, the isomorphism $u':H_{k'}\simeq G_{k'}$ comes from an isomorphism $H_{k'_s}\simeq G_{k'_s}$, which proves that $k'_s$ splits $H$ and establishes 1.4.
+\begin{remark}{1.5}\label{X.1.5}
+Statement 1.2 supplies in particular a characterization of isotrivial tori over $S$ of relative dimension $n$: putting $\pi=\pi_1(S,\xi)$, they correspond to the classes (up to ``equivalence'') of representations $\pi\to\GL(n,\ZZ)$ with kernel an open subgroup of $\pi$.
+\end{remark}
+\numpara{1.6}
+Even when $S$ is an algebraic curve, there may exist tori (of relative dimension 2) over $S$ which are not locally isotrivial (and a fortiori not isotrivial); there may also exist locally trivial tori which are not isotrivial. (Note, however, that such phenomena can occur only if $S$ is not normal, as already pointed out in 1.3.) Let, for example, $S$ be an irreducible algebraic curve (over an algebraically closed field to fix ideas) having an ordinary double point $a$; let $S'$ be its normalization, and $b,c$ the two points of $S'$ over $a$. One then constructs a connected principal homogeneous bundle $P$ over $S$ with structural group $\ZZ$, by joining together infinitely many copies of $S'$ according to the diagram
+\[
+\xymatrix@C=11pt@R=10pt{\cdots&b\ar@{-}[dl]\ar@{-}[dr]&&b\ar@{-}[dl]\ar@{-}[dr]&&b\ar@{-}[dl]\ar@{-}[dr]&&b\ar@{-}[dl]\ar@{-}[dr]&\cdots\\{}&&c&&c&&c&&{}}
+\]
+(N.B. This is a principal bundle in the sense of the étale topology.) Now one has a homomorphism
+\[
+\varphi:\ZZ\to\GL(2,\ZZ),\qquad\varphi(n)=\begin{pmatrix}1&n\\0&1\end{pmatrix},
+\]
+which allows one to construct a torus $T$ over $S$ of relative dimension 2 from the trivial torus $\Gm^2$ over $P$ and the descent datum on the latter deduced from $\varphi$. (N.B. One will note that the projection $P\to S$ is covering for the étale topology and a fortiori for the canonical topology of $\Sch$, and that the descent datum considered is necessarily effective, since $\mathbf{G}_{\mathrm{m},P}^2$ is affine over $P$.) It is not difficult to prove that $T$ is not isotrivial in a neighborhood of $a$\nde{See 7.3 below.} (it is nevertheless trivial on $S-\{a\}$).
+
+One finds a variant of this construction by taking for $S$ a curve having two irreducible components $S_1,S_2$ meeting at two points $a',a''$, which allows one to construct a connected and locally trivial principal homogeneous bundle $P$ over $S$ with group $\ZZ_S$, whence an associated torus $T$ which is locally trivial but not isotrivial.
+
+\sgasection{2}{Infinitesimal variations of structure}
+\nde{This ``recollection'' has been added, for later references.} Let us begin by recalling the following result (cf. SGA 1, I 8.3 in the case of $S$ locally noetherian, EGA IV$_4$, 18.1.2 in general).
+\begin{enonce}{Recollection}{2.0}\label{X.2.0}
+Let $S$ be a prescheme, $S_0$ a subprescheme with the same underlying set. Then the functor
+\[
+X\mto X_0=X\times_S S_0
+\]
+is an equivalence between the category of preschemes étale over $S$ and the analogous category over $S_0$.
+\end{enonce}
+\begin{proposition}{2.1}\label{X.2.1}
+Let $S$ be a prescheme, $S_0$ a subprescheme with the same underlying set (i.e. defined by a nil ideal $\cal I$). Then the functor
+\[
+H\mto H_0=H\times_S S_0
+\]
+from the category of group preschemes of multiplicative type over $S$ to the analogous category over $S_0$ is fully faithful.
+
+Moreover, it induces an equivalence between the category of quasi-isotrivial groups of multiplicative type over $S$ and the analogous category over $S_0$.
+\end{proposition}
+Let us first prove full faithfulness, i.e. that if $H,G$ over $S$ are of multiplicative type, then
+\[
+\Hom_{S\text{-}\mathrm{gr.}}(H,G)\to\Hom_{S_0\text{-}\mathrm{gr.}}(H_0,G_0)
+\]
+is bijective. The question being local on $S$, one may suppose $S$ affine; there then exists a faithfully flat and quasi-compact morphism $S'\to S$ splitting $H$ and $G$. Let $S''=S'\times_S S'$; denote by $H',G'$, resp. $H'',G''$, the groups deduced from $H,G$ by the base change $S'\to S$, resp. $S''\to S$; define similarly $S'_0,S''_0$, the latter being also isomorphic to $S'_0\times_{S_0}S'_0$. One then finds a commutative diagram with exact rows:
+\begingroup\small
+\[
+\xymatrix@C=12pt{\Hom_{S\text{-}\mathrm{gr.}}(H,G)\ar[r]\ar[d]_u&\Hom_{S'\text{-}\mathrm{gr.}}(H',G')\ar@<.5ex>[r]\ar@<-.5ex>[r]\ar[d]_{u'}&\Hom_{S''\text{-}\mathrm{gr.}}(H'',G'')\ar[d]^{u''}\\\Hom_{S_0\text{-}\mathrm{gr.}}(H_0,G_0)\ar[r]&\Hom_{S'_0\text{-}\mathrm{gr.}}(H'_0,G'_0)\ar@<.5ex>[r]\ar@<-.5ex>[r]&\Hom_{S''_0\text{-}\mathrm{gr.}}(H''_0,G''_0),}
+\]
+\endgroup
+so to prove that $u$ is bijective, it suffices to prove that $u'$ and $u''$ are so, which reduces us to the case where $H$ and $G$ are diagonalizable, hence of the form $D_S(M)$ and $D_S(N)$, where $M,N$ are ordinary commutative groups. One shall therefore similarly have $H_0=D_{S_0}(M)$, $G_0=D_{S_0}(N)$. One then has a commutative diagram\nde{The original has been corrected by interchanging $M$ and $N$ in the right-hand terms.}
+\[
+\xymatrix{\Hom_{S\text{-}\mathrm{gr.}}(N_S,M_S)\ar[r]^\sim\ar[d]&\Hom_{S\text{-}\mathrm{gr.}}(D_S(M),D_S(N))\ar[d]\\\Hom_{S_0\text{-}\mathrm{gr.}}(N_{S_0},M_{S_0})\ar[r]^\sim&\Hom_{S_0\text{-}\mathrm{gr.}}(D_{S_0}(M),D_{S_0}(N)),}
+\]
+where the horizontal arrows are isomorphisms by VIII 1.4, so one is reduced to proving that the homomorphism
+\begin{equation}\tag{x}
+\Hom_{S\text{-}\mathrm{gr.}}(N_S,M_S)\to\Hom_{S_0\text{-}\mathrm{gr.}}(N_{S_0},M_{S_0})
+\end{equation}
+is bijective, i.e. to proving that the functor $M_S\mto M_{S_0}$ from constant commutative group preschemes over $S$ to constant commutative group preschemes over $S_0$ is fully faithful. Now (x) is also identified with the natural map
+\[
+\Hom_{\mathrm{gr.}}(N,\Gamma(M_S))\to\Hom_{\mathrm{gr.}}(N,\Gamma(M_{S_0}))
+\]
+deduced from $\Gamma(M_S)\to\Gamma(M_{S_0})$; now the latter map is evidently bijective (since $\Gamma(M_S)=$ the set of locally constant maps from $S$ to $M$ depends only on the underlying topological space of $S$), whence the desired conclusion.
+
+To prove the second assertion of 2.1, it remains to see that every quasi-isotrivial group of multiplicative type $H_0$ over $S_0$ comes from a quasi-isotrivial group of multiplicative type $H$ over $S$. To see this, let $S'_0\to S_0$ be a surjective étale morphism splitting $H_0$.
+
+One knows (cf. 2.0) that there exists an étale morphism $S'\to S$ and an $S_0$-isomorphism $S'\times_S S_0\simeq S'_0$, so one may suppose that $S'_0$ comes from $S'$ by reduction. Since $H'_0$ is diagonalizable, one sees immediately that it is isomorphic to the group deduced by base change $S'_0\to S'$ from a diagonalizable group $H'$ over $S'$ (N.B. if $H'_0=D_{S'_0}(M)$, one takes $H'=D_{S'}(M)$). Put, as usual, $S''=S'\times_S S'$, $S'''=S'\times_S S'\times_S S'$, and define similarly $S''_0,S'''_0$, deduced from the preceding ones by base change $S_0\to S$ and also isomorphic to the fibered square resp. cube of $S'_0$ over $S_0$. Using the full faithfulness already proved in the cases $(S'',S''_0)$ and $(S''',S'''_0)$, one sees that the natural descent datum on $H'_0$ relative to $S'_0\to S_0$ (cf. IV 2.1) comes from a well-determined descent datum on $H'$ relative to $S'\to S$. This descent datum is effective since $H'$ is affine over $S'$ (SGA 1, VIII 2.1); there therefore exists an $S$-group $H$ such that $H\times_S S'=H'=D_{S'}(M)$, and $H$ is thus of quasi-isotrivial multiplicative type.
+
+One then easily checks, now using the full faithfulness result for $(S',S'_0)$, that the given isomorphism between $H'_0$ and $H'\times_{S'}S'_0$ comes from an isomorphism between $H_0$ and $H\times_S S_0$. (For a more formal exposition of results of this type, see Giraud's article in preparation\footnote{Cf. J. Giraud, \emph{Méthode de la descente}, Bull. Soc. Math. France, Mémoire 2 (1964).} on descent theory.)
+\begin{corollary}{2.2}\label{X.2.2}
+Let $H$ be an $S$-group of multiplicative type, and $H_0=H\times_S S_0$. For $H$ to be quasi-isotrivial (resp. locally isotrivial, resp. isotrivial, resp. locally trivial, resp. trivial), it is necessary and sufficient that $H_0$ be so.
+\end{corollary}
+The ``necessary'' part is trivial; the ``sufficient'' part has already been seen in the quasi-isotrivial case, since thanks to full faithfulness it suffices to know that every quasi-isotrivial group over $S_0$ lifts to a quasi-isotrivial group over $S$. The same argument works for ``trivial''. For the ``isotrivial'' case one repeats the argument establishing the second assertion of 2.1, but taking $S'_0\to S_0$ étale surjective and finite. The ``locally isotrivial'' and ``locally trivial'' cases follow immediately from the ``isotrivial'' and ``trivial'' cases.
+
+One may generalize 2.2 somewhat when $\cal I$ is nilpotent, by not supposing a priori $H$ of multiplicative type:\nde{Recall that 2.3 is used to prove theorem IX 3.6 bis.}
+\begin{corollary}{2.3}\label{X.2.3}
+Suppose the ideal $\cal I$ defining $S_0$ locally nilpotent. Let $H$ be a group prescheme over $S$, flat over $S$, and $H_0=H\times_S S_0$. For $H$ to be of quasi-isotrivial multiplicative type, it is necessary and sufficient that $H_0$ be so.
+\end{corollary}
+Indeed, suppose that $H_0$ is of quasi-isotrivial multiplicative type, and let us prove that $H$ is so. The question being local for the étale topology, and the category of preschemes étale over $S$ being equivalent to the category of preschemes étale over $S_0$ by the functor $S'\mto S'\times_S S_0$ (cf. 2.0), one is reduced immediately to the case where $H_0$ is diagonalizable, hence isomorphic to a group $D_{S_0}(M)$. Let $G=D_S(M)$; one therefore has an isomorphism $u_0:H_0\isomto G_0$; I say that it comes from a unique homomorphism $u:H\to G$, which will therefore be an isomorphism since $u_0$ is so ($H$ and $G$ being flat over $S$ and $\cal I$ locally nilpotent\nde{Since $u_0$ is an isomorphism, it suffices to see that for every $h\in H$ the morphism $\phi:\OO_{G,u(h)}\to\OO_{H,h}$ is bijective. It is so by reduction modulo $I=\cal I_s$ (where $s$ is the image of $h$ in $S$), so its cokernel $C$ satisfies $C=IC$, whence $C=0$ since $I$ is nilpotent. Then, since $\OO_{H,h}$ is flat over $\OO_{S,s}$, the kernel $K$ of $\phi$ also satisfies $K=IK$, whence $K=0$.}), which will establish 2.3. Now one has (cf. VIII 1 (xxx))
+\[
+\Hom_{S\text{-}\mathrm{gr.}}(H,G)\simeq\Hom_{S\text{-}\mathrm{gr.}}(M_S,\uHom_{S\text{-}\mathrm{gr.}}(H,\mathbf{G}_{\mathrm{m},S})),
+\]
+and the right-hand side is also identified with
+\[
+\Hom_{\mathrm{gr.}}(M,\Hom_{S\text{-}\mathrm{gr.}}(H,\mathbf{G}_{\mathrm{m},S})),
+\]
+so the homomorphism
+\begin{equation}\tag{x}
+\Hom_{S\text{-}\mathrm{gr.}}(H,G)\to\Hom_{S_0\text{-}\mathrm{gr.}}(H_0,G_0)
+\end{equation}
+is isomorphic to the homomorphism
+\[
+\Hom_{\mathrm{gr.}}(M,\Hom_{S\text{-}\mathrm{gr.}}(H,\mathbf{G}_{\mathrm{m},S}))\to\Hom_{\mathrm{gr.}}(M,\Hom_{S_0\text{-}\mathrm{gr.}}(G_0,\mathbf{G}_{\mathrm{m},S_0}))
+\]
+% typo?: G_0 rather than H_0 in the preceding Hom retained as printed.
+deduced from the restriction homomorphism
+\begin{equation}\tag{xx}
+\Hom_{S\text{-}\mathrm{gr.}}(H,\mathbf{G}_{\mathrm{m},S})\to\Hom_{S_0\text{-}\mathrm{gr.}}(H_0,\mathbf{G}_{\mathrm{m},S_0}),
+\end{equation}
+so to prove that (x) is bijective it suffices to prove that (xx) is so. The question is local on $S$, so one may suppose $S$ affine. Now $\mathbf{G}_{\mathrm{m},S}$ being commutative and smooth over $S$, the situation is covered by IX 3.6, which completes the proof.
+% typo: "lefoncteur" -> "the functor".
+\begin{corollary}{2.4}\label{X.2.4}
+Let $A$ be an artinian local ring with residue field $k$, $S=\Spec(A)$, $S_0=\Spec(k)$.
+
+(i)\nde{The statement has been rewritten retaining only the nontrivial implication, in order to bring it out.} Let $H$ be a flat $S$-group prescheme locally of finite type, such that $H_0=H\times_S S_0$ is of multiplicative type. Then $H$ is of multiplicative type, of finite type, and isotrivial. In particular, every $S$-group prescheme $H$ of multiplicative type and of finite type is isotrivial.
+
+(ii) The functor $H\mto H_0$ is an equivalence between the category of groups of multiplicative type of finite type over $A$ and the analogous category over $k$.
+\end{corollary}

@@ -1,0 +1,273 @@
+Putting $x=0$ in the formula obtained, one finds $Y_0=X_\beta$, which completes the proof.
+\begin{remark}{5.4.10}\label{XXII.5.4.10}
+Differentiating the preceding formula at $x=0$, one finds
+\[
+[X_\alpha,X_\beta]=\begin{cases}
+N_{\alpha,\beta}X_{\alpha+\beta},\text{ where }N_{\alpha,\beta}=M_{\alpha,\beta,1},&\text{if }\alpha+\beta\in R,\\
+0&\text{if }\alpha+\beta\notin R,\quad\alpha+\beta\ne0.
+\end{cases}
+\]
+\end{remark}
+Let us now prove 5.4.7. If $R'$ is a closed subset of $R$, then $\mathfrak g_{R'}$ is a Lie subalgebra of $\mathfrak g$, by 5.4.10 and Exp.~XX 2.10, formula (3). By 5.4.9 and Exp.~XX 2.10, formula (2), $U_\alpha$ normalizes $\mathfrak g_{R'}$ for each $\alpha\in R'$. Choose a system of positive roots $R_+$ and consider the open subset $\Omega_{R_+}$ of 4.1.2; let $\Omega_{R_+,R'}$ be the closed subscheme of $\Omega_{R_+}$ defined as follows:
+\[
+\Omega_{R_+,R'}=\left(\prod_{\alpha\in R'\cap-R_+}U_\alpha\right)\cdot T\cdot\left(\prod_{\alpha\in R'\cap R_+}U_\alpha\right).
+\]
+The canonical immersion $\Omega_{R_+,R'}\to G$ factors through $i:\Omega_{R_+,R'}\to\uNorm_G(\mathfrak g_{R'})$. Assume $G$ adjoint; the tangent map to $i$ at the points of the identity section is bijective by 5.3.2; in particular, the morphism $i$ is \'etale at every point of the identity section, hence is a local immersion{\renewcommand{\thefootnote}{(36)}\nde{By EGA IV$_4$, 17.11.2, $i$ is \'etale at every point of the identity section (and $\uNorm_G(\mathfrak g_{R'})$ is smooth at every point of the identity section). Moreover, let $V$ be the largest open subset of $\Omega_{R_+,R'}$ on which $i$ is \'etale; since $i$ is a monomorphism, $i_V$ is an open immersion (ibid., 17.9.1).}} at every point of the identity section, hence $\uNorm_G(\mathfrak g_{R'})$ is smooth at every point of the identity section, as was to be proved.
+
+\sgasection{5.5}{Borel subgroups of a split reductive group}
+\begin{proposition}{5.5.1}\label{XXII.5.5.1}
+Let $(G,T,M,R)$ be a split $S$-group. For every system of positive roots $R_+$ of $R$, $H_{R_+}$ (which exists by 5.4.7) is a Borel subgroup of $G$ and, for every order on $R_+$, the morphism induced by the product in $G$
+\[
+T\underset S\times\prod_{\alpha\in R_+}U_\alpha\to G
+\]
+is a closed immersion with image $H_{R_+}$. One writes $B_{R_+}=H_{R_+}$.
+\end{proposition}
+By definition of Borel subgroups, the first assertion may be verified on replacing $S$ by the spectrum of an algebraically closed field. Let then $B$ be the Borel subgroup of $G$ containing $T$ and corresponding to the system of positive roots $R_+$ (\textit{Bible}, \S~10.4, prop.~9); the Lie algebra of $B$ is $\mathfrak g_{R_+}$; one therefore has $B=H_{R_+}$ by 5.3.5.
+
+Let us prove the second assertion: the morphism of the statement induces an open immersion $i:T\times_S\prod_{\alpha\in R_+}U_\alpha\to H_{R_+}$ (5.4.4). Now $i$ is surjective (\textit{Bible}, \S~15.1, cor.~1 to prop.~1).
+\begin{corollary}{5.5.2}\label{XXII.5.5.2}
+Choose any order on $R_+$ and for each $\alpha\in R_+$ an $X_\alpha\in\Gamma(S,\mathfrak g^\alpha)^\times$. Let $\alpha,\beta\in R_+$. For each pair $(i,j)\in\NN^*\times\NN^*$ such that $i\alpha+j\beta\in R$, there exists a unique section
+\[
+C_{i,j,\alpha,\beta}\in\Gamma(S,\OS)
+\]
+such that, for all $x,y\in\mathbf G_a(S')$, $S'\to S$, one has
+\[
+\begin{gathered}
+\exp_\alpha(xX_\alpha)\exp_\beta(yX_\beta)\exp_\alpha(xX_\alpha)^{-1}=\\
+\exp_\beta(yX_\beta)\prod_{\substack{i,j\in\NN^*\\i\alpha+j\beta\in R}}
+\exp_{i\alpha+j\beta}(C_{i,j,\alpha,\beta}\,x^iy^jX_{i\alpha+j\beta}).
+\end{gathered}
+\]
+\end{corollary}
+If $\alpha=\beta$, the assertion is trivial. Assume therefore $\alpha\ne\beta$; then, by the proposition, there exist unique morphisms
+\[
+F_0:\mathbf G_{a,S}^2\to T,\qquad F_\gamma:\mathbf G_{a,S}^2\to\mathbf G_{a,S}\quad(\gamma\in R_+)
+\]
+such that one has
+\[
+\exp(xX_\alpha)\exp(yX_\beta)\exp(xX_\alpha)^{-1}=F_0(x,y)\prod_{\gamma\in R_+}\exp(F_\gamma(x,y)X_\gamma).
+\]
+Let $t\in T(S')$, $S'\to S$. Apply $\operatorname{int}(t)$ to this formula; one has at once the relations
+\begin{equation}\tag{1}\label{XXII.eq.5.5.2.1}
+F_0(\alpha(t)x,\beta(t)y)=F_0(x,y),
+\end{equation}
+\begin{equation}\tag{2}\label{XXII.eq.5.5.2.2}
+F_\gamma(\alpha(t)x,\beta(t)y)=\gamma(t)F_\gamma(x,y).
+\end{equation}
+Since $\alpha$ and $\beta$ are two linearly independent characters (over $\QQ$) of $T$, one concludes as usual from the first relation that $F_0$ is constant, hence $F_0(x,y)=e$. Write next
+\[
+F_\gamma(x,y)=\sum a_{ij}x^iy^j,\quad\text{with }a_{ij}\in\Gamma(S,\OS).
+\]
+Substituting in relation (2) and identifying the polynomials on both sides, one finds
+\[
+a_{ij}\bigl(\alpha(t)^i\beta(t)^j-\gamma(t)\bigr)=0.
+\]
+If $\gamma\ne i\alpha+j\beta$, one knows (Exp.~XIX 4.13) that there exist a faithfully flat quasi-compact $S'\to S$ and a $t\in T(S')$ such that $\alpha(t)^i\beta(t)^j-\gamma(t)=1$. One therefore has $a_{ij}=0$ on $S'$, hence on $S$. If $\gamma=i\alpha+j\beta$, one puts $a_{ij}=C_{i,j,\alpha,\beta}$. Putting $x=0$ (resp. $y=0$), one finds $C_{0,1,\alpha,\beta}=1$ (resp. $C_{1,0,\alpha,\beta}=0$).
+\begin{remark}{5.5.3}\label{XXII.5.5.3}
+Differentiating at $y=0$ and comparing with 5.4.9, one finds
+\[
+C_{i,1,\alpha,\beta}=M_{\alpha,\beta,i}.
+\]
+\end{remark}
+\begin{corollary}{5.5.4}\label{XXII.5.5.4}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $\alpha\ne\beta$ two roots of $G$ with respect to $T$ such that $\alpha+\beta$ is nontrivial on each fiber. Order the set of $i\alpha+j\beta$ ($i,j\in\NN^*$) in any way. For all $i,j\in\NN^*$ such that $i\alpha+j\beta\in R$, there exists a unique morphism of $\OS$-modules
+\[
+f_{\alpha,\beta,i,j}:(\mathfrak g^\alpha)^{\otimes i}\otimes(\mathfrak g^\beta)^{\otimes j}\to\mathfrak g^{i\alpha+j\beta}
+\]
+such that for every $S'\to S$ and all $X\in\mathrm W(\mathfrak g^\alpha)(S')$, $Y\in\mathrm W(\mathfrak g^\beta)(S')$ one has (the $\exp$ on the right-hand side being taken in the sense of 1.2{\renewcommand{\thefootnote}{(37)}\nde{That is, if $\mathfrak g^{i\alpha+j\beta}=0$ on a connected component of $S$, the corresponding exponential is $1$ on this component.}}):
+\[
+\begin{gathered}
+\exp_\alpha(X)\exp_\beta(Y)\exp_\alpha(-X)=\\
+\exp_\beta(Y)\prod_{(i,j)}\exp_{i\alpha+j\beta}(f_{\alpha,\beta,i,j}(X^i\otimes Y^j)).
+\end{gathered}
+\]
+\end{corollary}
+The assertion is local for (fpqc). By \S~2, one may therefore assume $G$ split relative to $T$, $\alpha$ and $\beta$ constant in the splitting. Since $\alpha+\beta\ne0$, there exists a system of positive roots $R_+$ containing $\alpha$ and $\beta$ (Exp.~XXI 3.5.4) and one is reduced to 5.5.2.
+\begin{corollary}{5.5.5}\label{XXII.5.5.5}
+Let $S$ be a scheme, $G$ a reductive $S$-group.
+\begin{enumeratei}
+\item $G$ possesses Borel subgroups locally for the \'etale topology. If $T$ is a maximal torus of $G$, then $G$ also possesses Borel subgroups containing $T$ locally for the \'etale topology.
+\item If $T$ is a maximal torus of $G$, the ``functor of Borel subgroups of $G$ containing $T$'' is representable by a principal homogeneous bundle under $W_G(T)$.
+\item If $(G,T,M,R)$ is split, every Borel subgroup $B$ of $G$ containing $T$ is locally over $S$ of the form $B_{R_+}$, where $R_+$ is a system of positive roots of $R$.
+\item If $T\subset B$ is a Killing pair of $G$, there exists a covering family $\{S_i\to S\}$ for the \'etale topology, and for each $i$ a splitting $(G_{S_i},T_{S_i},M_i,R_i)$ and a system of positive roots $R_{i+}$ of $R_i$ such that $B_{S_i}=B_{R_{i+}}$.
+\end{enumeratei}
+\end{corollary}
+Indeed, (i) follows from 2.3 and 5.5.1, (ii) from (i) and 5.3.15, (iii) from (ii) and 5.5.1, (iv) from (iii) and 2.3.
+\begin{lemma}{5.5.6}\label{XXII.5.5.6}
+Choose on the group $\Gamma_0(R)$ generated by the roots a totally ordered group structure such that the roots $>0$ are the elements of $R_+$ (\cf Exp.~XXI 3.5.6){\renewcommand{\thefootnote}{(38)}\nde{Note that such an order is necessarily compatible with $\operatorname{ord}_\Delta$, where $\Delta=\mathscr S(R_+)$ (\cf XXI 3.2.15).}}. Let $\alpha_1<\cdots<\alpha_N$ be the elements of $R_+$. Consider the isomorphism
+\[
+f:T\underset S\times U_{\alpha_1}\underset S\times\cdots\underset S\times U_{\alpha_N}\to B_{R_+}
+\]
+induced by the product in $G$. Put for $i=1,\ldots,N$,
+\[
+U_{\ge i}=f(U_{\alpha_i}\underset S\times\cdots\underset S\times U_{\alpha_N}).
+\]
+\begin{enumeratei}
+\item Each $U_{\ge i}$ is an invariant subgroup of $B_{R_+}$.
+\item For $1\le i\le N-1$, $U_{\ge i}$ is identified with the semidirect product
+\[
+U_{\ge i}=U_{\alpha_i}\cdot U_{\ge i+1}.
+\]
+\item $B_{R_+}$ is identified with the semidirect product
+\[
+B_{R_+}=T\cdot U_{\ge1}.
+\]
+\item For $1\le i\le N-1$, the inner automorphisms of $U_{\ge1}$ act trivially on $U_{\ge i}/U_{\ge i+1}$ (which is identified with $U_{\alpha_i}$ by (ii)).
+\end{enumeratei}
+\end{lemma}
+Let us first prove by induction on $i$ the following assertion:
+\begin{quote}
+$U_{\ge i}$ is an invariant subgroup of $B_{R_+}$, a semidirect product of $U_{\alpha_i}$ and $U_{\ge i+1}$.
+\end{quote}
+The assertion is true for $i=N$; assume it true for $i+1$ and let us prove it for $i$. One has (as schemes)
+\[
+U_{\ge i}=U_{\alpha_i}\cdot U_{\ge i+1};
+\]
+it is first clear that $U_{\ge i}$ is stable under the inner automorphisms of $B_{R_+}$. This is clear for $\operatorname{int}(t)$, $t\in T(S)$; it suffices to verify it for $\operatorname{int}(x)$, $x\in U_\alpha(S)$, $\alpha\in R_+$. Now $U_{\ge i+1}$ is assumed invariant, so it suffices to see that $\operatorname{int}(x)U_{\alpha_i}\subset U_{\ge i}$. By 5.5.2, if $y\in U_{\alpha_i}(S')$, one has $y^{-1}xyx^{-1}\in U_{\ge i+1}(S')$, which implies $\operatorname{int}(x)(y)\in U_{\ge i}(S')$.
+
+Let us now prove that $U_{\ge i}$ is a subgroup of $B_{R_+}$. If $x,y\in U_{\ge i}(S)$, one may write $x=px'$, $y=qy'$, with $p,q\in U_{\alpha_i}(S)$, and $x',y'\in U_{\ge i+1}(S)$. One has
+\[
+xy=px'qy'=pq(q^{-1}x'q)y'\in U_{\alpha_i}(S')U_{\ge i+1}(S');
+\]
+likewise $x^{-1}=p^{-1}(px'^{-1}p^{-1})\in U_{\alpha_i}(S')U_{\ge i+1}(S')$. We have therefore proved (i) and (ii), as well as (iv) along the way. As for (iii), it is a trivial consequence of 5.5.1.
+\begin{lemma}{5.5.7}\label{XXII.5.5.7}
+With the preceding notations, choose for each $1\le i\le N$ an $X_i\in\Gamma(S,\mathfrak g^{\alpha_i})^\times$ and consider the isomorphism
+\[
+a:\mathbf G_{a,S}^N\to U_{\ge1}
+\]
+defined set-theoretically by
+\[
+a(x_1,\ldots,x_N)=\exp_{\alpha_1}(x_1X_1)\cdots\exp_{\alpha_N}(x_NX_N).
+\]
+There exists a unique family $(Q_i)$, $i=1,\ldots,N$, of polynomials
+\[
+Q_i=Q_i(x_1,\ldots,x_N,y_1,\ldots,y_N)
+\]
+with coefficients in $\Gamma(S,\OS)$ such that one has set-theoretically
+\[
+a(x_1,\ldots,x_N)\,a(y_1,\ldots,y_N)=a\bigl(Q_1(x_1,\ldots,y_N),\ldots,Q_N(x_1,\ldots,y_N)\bigr).
+\]
+Moreover, the $Q_i$ have coefficients in the subring of $\Gamma(S,\OS)$ generated by the $C_{i,j,\alpha,\beta}$ of 5.5.2 ($\alpha,\beta\in R_+$, $i,j\in\NN^*$) and each $Q_i$ has the form
+\[
+Q_i(x_1,\ldots,y_N)=x_i+y_i+Q'_i(x_1,\ldots,x_{i-1},y_1,\ldots,y_{i-1}).
+\]
+\end{lemma}
+The existence and uniqueness of the $Q_i$ follow at once from the fact that $a$ is an isomorphism of schemes. Denoting by $z,z',z''$ sections of $U_{\ge i+1}$, one has
+\[
+\begin{aligned}
+a(x_1,\ldots,x_N)\,a(y_1,\ldots,y_N)={}&a(x_1,\ldots,x_{i-1},0,\ldots,0)\exp(x_iX_i)z\\
+&\cdot a(y_1,\ldots,y_{i-1},0,\ldots,0)\exp(y_iX_i)z';
+\end{aligned}
+\]
+using 5.5.6 (i) and (iv), the right-hand term is written
+\[
+\begin{gathered}
+a(x_1,\ldots,x_{i-1},0,\ldots,0)\,a(y_1,\ldots,y_{i-1},0,\ldots,0)\\
+\cdot\exp((x_i+y_i)X_i)z'';
+\end{gathered}
+\]
+which gives, using 5.5.6 again,
+\[
+Q_i(x_1,\ldots,x_N,y_1,\ldots,y_N)=x_i+y_i+Q'_i(x_1,\ldots,x_{i-1},y_1,\ldots,y_{i-1}),
+\]
+with
+\[
+\begin{gathered}
+Q'_i(x_1,\ldots,x_{i-1},y_1,\ldots,y_{i-1})\\
+=Q_i(x_i,\ldots,x_{i-1},0,\ldots,0,y_1,\ldots,y_{i-1},\ldots,0);
+\end{gathered}
+\]
+that is, the precise form requested.
+% typo?: kept as printed: x_i,...,x_{i-1} in the right-hand side.
+
+Let us finally prove the assertion on the coefficients of the polynomials $Q_i$. Let $A$ be the subring of $\Gamma(S,\OS)$ generated by the $C_{i,j,\alpha,\beta}$ ($\alpha,\beta\in R_+$, $i,j\in\NN^*$). Let us prove by descending induction on $i$ that if $x_1=\cdots=x_{i-1}=0$ and $y_1=\cdots=y_{i-1}=0$, that is, if $a(x_1,\ldots,x_N)$ and $a(y_1,\ldots,y_N)$ are sections of $U_{\ge i}$, then the polynomials
+\[
+R_j(x_i,\ldots,x_N,y_i,\ldots,y_N)=Q_j(x_1,\ldots,x_N,y_1,\ldots,y_N),
+\]
+have coefficients in $A$. This is trivial for $i=N$ and also for $j<i$ (for $R_j=0$ for $j<i$). Let $i<N$, assume the assertion holds for $i+1$ and let us prove it for $i$ (and $j\ge i$). One has
+\[
+\begin{gathered}
+a(0,\ldots,0,x_i,\ldots,x_N)=\exp(x_iX_i)\,a(0,\ldots,0,x_{i+1},\ldots,x_N)\\
+=\exp(x_iX_i)Z_i.
+\end{gathered}
+\]
+Write likewise
+\[
+a(0,\ldots,y_i,\ldots,y_N)=\exp(y_iX_i)T_i.
+\]
+One has
+\[
+\begin{gathered}
+a(0,\ldots,x_i,\ldots,x_N)\,a(0,\ldots,y_i,\ldots,y_N)\\
+=\exp((x_i+y_i)X_i)\operatorname{int}(\exp(-y_iX_i))(Z_i)\cdot T_i.
+\end{gathered}
+\]
+Now
+\[
+\begin{gathered}
+\operatorname{int}(\exp(-y_iX_i))(Z_i)\\
+=\operatorname{int}(\exp(-y_iY_i))\bigl(\exp(x_{i+1}X_{i+1})\cdots\exp(x_NX_N)\bigr)
+\end{gathered}
+\]
+is a product of $N-i-1$ sections of $U_{\ge i+1}$ whose coefficients in the decomposition $U_{\ge i+1}=U_{\alpha_{i+1}}\cdots U_{\alpha_N}$ are polynomials in $y_i$ and $x_{i+1},\ldots,x_N$ with coefficients in $A$ (by 5.5.2). Applying the induction hypothesis, one deduces that the coefficients of
+\[
+\operatorname{int}(\exp(-y_iX_i))(Z_i)\cdot T_i
+\]
+are also polynomials with coefficients in $A$, which completes the proof.
+% typo?: kept as printed: Y_i and N-i-1 in the preceding formula and sentence.
+
+Note that the preceding induction gives at once a proof of the
+\begin{lemma}{5.5.8}\label{XXII.5.5.8}
+With the notations of 5.5.6, let for each $i=1,\ldots,N$ a morphism of groups
+\[
+f_i:U_{\alpha_i}\to H,
+\]
+where $H$ is an $S$-group functor. For the morphism
+\[
+f:U_{\ge1}\to H
+\]
+defined by
+\[
+f\bigl(\exp(x_1X_1)\cdots\exp(x_NX_N)\bigr)=f_1(\exp(x_1X_1))\cdots f_N(\exp(x_NX_N))
+\]
+to be a morphism of groups, it is necessary and sufficient that for every pair $i<j$, one have
+\[
+\begin{gathered}
+f_j(\exp(x_jX_j))\,f_i(\exp(x_iX_i))\,f_j(\exp(-x_jX_j))=\\
+f\bigl(\exp(x_jX_j)\exp(x_iX_i)\exp(-x_jX_j)\bigr).
+\end{gathered}
+\]
+\end{lemma}
+
+\sgasection{5.6}{Subgroups of type (R) with solvable fibers}
+\begin{proposition}{5.6.1}\label{XXII.5.6.1}
+Let $(G,T,M,R)$ be a split $S$-group, $R'$ a subset of $R$ of type (R) (5.4.2), $H_{R'}$ the corresponding subgroup of $G$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $H_{R'}$ has solvable geometric fibers.
+\item There exists a system of positive roots $R_+$ such that $R'\subset R_+$, hence $H_{R'}\subset B_{R_+}$ (\cf 5.4.5).
+\item $R'\cap-R'=\varnothing$.
+\item For every order on $R'$, the morphism induced by the product in $G$
+\[
+T\underset S\times\prod_{\alpha\in R'}U_\alpha\to H_{R'}
+\]
+is an isomorphism.
+\item $H_{R'}\cap\uNorm_G(T)=T$.
+\item For every subset $R''$ of $R$, of type (R), one has (\cf 5.4.5)
+\[
+H_{R'}\cap\uNorm_G(H_{R''})=H_{R'\cap R''}.
+\]
+\end{enumeratei}
+\end{proposition}
+We are going to prove these equivalences according to the logical diagram
+\[
+\xymatrix@R=1em@C=2em{\text{(iii)}\ar@{=>}[dd]&\text{(ii)}\ar@{=>}[l]\ar@{=>}[r]\ar@{=>}[d]&\text{(vi)}\ar@{=>}[dd]\\
+&\text{(iv)}\ar@{=>}[dr]&\\
+\text{(i)}\ar@{=>}[uur]&&\text{(v)}\ar@{=>}[ll].}
+\]
+One clearly has (ii) $\Rightarrow$ (iii) and (vi) $\Rightarrow$ (v) (take $R''=\varnothing$). By 5.4.6, it suffices to verify (i) $\Rightarrow$ (ii) on the geometric fibers; now if $S$ is the spectrum of an algebraically closed field, $H_{R'}$ is contained in a Borel group containing $T$, hence of the form $H_{R_+}$ (5.5.5 (iii)).
+
+Likewise (iii) $\Rightarrow$ (i) is verified on the geometric fibers; assume (iii) satisfied; if $H_{R'}$ were not solvable, there would exist a subtorus $Q$ of $T$, of codimension $1$ in $T$, such that $\uCentr_{H_{R'}}(Q)$ is not solvable (\textit{Bible}, \S~10.4, prop.~8); now $\uCentr_{H_{R'}}(Q)$ has as Lie algebra $\mathfrak g_{R''}$, where $R''$ is the set of roots of $R'$ vanishing on $Q$, hence $R''=\varnothing$ or $\{\alpha\}$ (by (iii)); hence $\uCentr_{H_{R'}}(Q)$, which is a subgroup of type (R) of $G$, is $T$ or $T\cdot U_\alpha$, hence solvable contrary to the hypothesis.
+
+Likewise (ii) $\Rightarrow$ (iv) is verified on the geometric fibers (for these are flat $S$-schemes of finite presentation); by \textit{Bible}, \S~13.2, th.~1 d), the morphism in question is bijective; it induces an isomorphism on the tangent spaces at the origin, and one concludes as usual (\cf 4.1.1).
+
+One has (iv) $\Rightarrow$ (v) by 4.2.7. To prove (v) $\Rightarrow$ (i), one is again reduced to the case where $S$ is the spectrum of an algebraically closed field and one concludes by \textit{Bible}, \S~10.3, cor. to prop.~6 and \S~9.3, cor.~3 to th.~1.

@@ -1,0 +1,273 @@
+% original PDF p. 39
+Let, on the other hand, $H$ be an $S$-group scheme; we are interested in the functor $\underline{\Hom}_{S\text{-gr.}}(G,H)$, and more precisely in the morphism
+\[
+q:\underline{\Hom}_{S\text{-gr.}}(G,H)\to\underline{\Hom}_{S\text{-gr.}}(T,H).
+\]
+Let therefore
+\[
+f_T:T\to H
+\]
+be a morphism of $S$-groups, and consider $q^{-1}(f_T)=\mathscr F$. It is the functor defined by
+\[
+\mathscr F(S')=\{f\in\Hom_{S'\text{-gr.}}(G_{S'},H_{S'})\mid f=(f_T)_{S'}\text{ on }T_{S'}\}.
+\]
+One has a morphism of $S$-functors
+\[
+i:\mathscr F\to H^{2n},
+\]
+where $n=\operatorname{Card}(\Delta)$, defined set-theoretically by $i(f)=(f(u_\alpha),f(w_\alpha))_{\alpha\in\Delta}$. By Exp.~XXIII, 1.9, $i$ is moreover a monomorphism.
+\begin{proposition}{7.1.2}\label{XXIV.7.1.2}
+If $H$ is separated over $S$, $\mathscr F$ is representable and $i$ is a closed immersion.
+\end{proposition}
+The usual technique of relative representability\nde{See for example the proof of XXII 5.8.1.} shows us that it suffices to prove that, given sections
+\[
+v_\alpha,h_\alpha\in H(S),\qquad\text{for }\alpha\in\Delta,
+\]
+the $S$-schemes $S'$ such that there exists an $S'$-homomorphism
+\[
+f:G_{S'}\to H_{S'}
+\]
+extending $(f_T)_{S'}$ and satisfying $f(u_\alpha)=v_\alpha$, $f(w_\alpha)=h_\alpha$, are precisely those which factor through a certain closed subscheme of $S$. One may evidently suppose $S$ affine.
+
+To simplify what follows, let us say that a morphism $Y\to X$\nde{We have corrected $X\to Y$ to $Y\to X$.} of affine schemes satisfies condition (L) if $Y$ is the spectrum of an $\OO(X)$-algebra which is a free $\OO(X)$-module. It is clear that if one restricts to the category of affine schemes, a product or a composite of morphisms satisfying (L) satisfies (L), and that (L) is stable under extension of the base.
+\begin{lemma}{7.1.3}\label{XXIV.7.1.3}
+Suppose $S$ affine, and let $\alpha\in\Delta$. Consider the morphism
+\[
+a:T\times_S T\to\mathbf G_{\mathrm a,S}
+\]
+defined set-theoretically by $a(t,t')=\alpha(t)+\alpha(t')$.
+\begin{enumeratei}
+\item $a$ is faithfully flat and of finite presentation.
+\item Let $R$ be the fibered square of $a$. The structure morphism $R\to S$ satisfies (L).
+\end{enumeratei}
+\end{lemma}
+% original PDF p. 40
+\begin{proof}
+It is first clear that the morphism $a$ is surjective, since $\alpha:T\to\mathbf G_{\mathrm m,S}$ is so. It is trivial that $a$ is of finite presentation. Since $\alpha$ satisfies (L), it suffices, to prove (i) and (ii), to show that the morphism
+\[
+u:(\mathbf G_{\mathrm m,S})^2\to\mathbf G_{\mathrm a,S}
+\]
+defined set-theoretically by $u(x,y)=x+y$ satisfies (L). In other words, it suffices to verify that for every ring $A$, the ring $A[X,Y,X^{-1},Y^{-1}]$ is a free module over its subring $A[X+Y]$.\nde{We have simplified the proof in the original.}Now $A[X,Y]$ is a free module with basis $\{1,X\}$ over the subring $B=A[X+Y,XY]$ (one has $X^2-(X+Y)X+XY=0$), hence $A[X^{\pm1},Y^{\pm1}]=A[X,Y]_{XY}$ is free over $B_{XY}=A[X+Y,(XY)^{\pm1}]$ with basis $\{1,X\}$, and free over $A[X+Y]$ with basis the elements $(XY)^p$ and $X(XY)^p$, for $p\in\ZZ$.
+\end{proof}
+\begin{lemma}{7.1.4}\label{XXIV.7.1.4}
+Let $\alpha\in\Delta$, and let $b:T\times_S T\to H$ be the morphism defined set-theoretically by
+\[
+b(t,t')=\bigl(\mathrm{int}(f_T(t))v_\alpha\bigr)\bigl(\mathrm{int}(f_T(t'))v_\alpha\bigr).
+\]
+Let $f_\alpha:U_\alpha\to H$ be an $S$-morphism. The following conditions are equivalent:\nde{In what follows, the group law of $U_\alpha$ is written additively, i.e. if one denotes by $p_\alpha:\mathbf G_{\mathrm a,S}\isomto U_\alpha$ the isomorphism such that $p_\alpha(1)=u_\alpha$ and if $x=p_\alpha(z)$, then $\alpha(t)x$ (resp. $a(t,t')u_\alpha$) denotes $p_\alpha(\alpha(t)z)$ (resp. $p_\alpha(a(t,t'))=\alpha(t)u_\alpha+\alpha(t')u_\alpha$).}
+\begin{enumeratei}
+\item $f_\alpha$ is a group morphism; one has $f_\alpha(u_\alpha)=v_\alpha$ and
+\[
+f_T(t)f_\alpha(x)f_T(t)^{-1}=f_\alpha(\alpha(t)x)
+\]
+for all $t\in T(S')$, $x\in U_\alpha(S')$, $S'\to S$.
+\item One has $f_\alpha(u_\alpha)=v_\alpha$ and the relation
+\[
+f_\alpha(a(t,t')u_\alpha)=b(t,t')
+\]
+for all $t,t'\in T(S')$, $S'\to S$.
+\end{enumeratei}
+\end{lemma}
+\begin{proof}
+If $f_\alpha$ satisfies (i), one has $f_\alpha(\alpha(t)u_\alpha)=\mathrm{int}(f_T(t))v_\alpha$, which immediately implies (ii). Conversely, suppose (ii) holds and let us prove the various conditions of (i); let us first prove the last one. Since $a$ is covering for (fpqc), it suffices to prove that if $t,t',t''\in T(S')$, one has
+\[
+f_T(t)f_\alpha(a(t',t'')u_\alpha)f_T(t)^{-1}=f_\alpha(\alpha(t)a(t',t'')u_\alpha);
+\]
+now this can also be written
+\[
+f_T(t)b(t',t'')f_T(t)^{-1}=b(tt',tt''),
+\]
+a property evident from the definition of $b$. It remains to prove that $f_\alpha$ is a group morphism. Now the preceding property immediately gives
+\[
+\begin{aligned}
+f_\alpha(\alpha(t)u_\alpha)f_\alpha(\alpha(t')u_\alpha)
+&=\bigl(f_T(t)f_\alpha(u_\alpha)f_T(t)^{-1}\bigr)\cdot\bigl(f_T(t')f_\alpha(u_\alpha)f_T(t')^{-1}\bigr)\\
+&=b(t,t')=f_\alpha\bigl(\alpha(t)u_\alpha+\alpha(t)\alpha(t')u_\alpha\bigr).
+\end{aligned}
+\]
+% typo?: the source's last sum has alpha(t)alpha(t') as its second coefficient; kept as printed.
+One therefore has $f_\alpha(x+x')=f_\alpha(x)f_\alpha(x')$ whenever $x$ and $x'$ are sections of the open subset $U_\alpha^\times$ of $U_\alpha$, which is schematically dense; one then concludes by Exp.~XVIII, 1.4.
+\end{proof}
+% original PDF p. 41
+\numpara{7.1.5}\label{XXIV.7.1.5}
+Let us provisionally fix an $\alpha\in\Delta$. The morphism $a$ is faithfully flat and quasi-compact, hence $\mathbf G_{\mathrm a,S}$ identifies with the quotient of $T\times_S T$ by the equivalence relation $R$ defined by $a$. Let
+\[
+\xymatrix{R\ar@<.6ex>[r]^{i_1}\ar@<-.6ex>[r]_{i_2}&T\times_S T}
+\]
+be this equivalence relation.
+
+For the morphism $b$ to factor through $a$,\nde{I.e. for condition (ii) of 7.1.4 to hold.} it is necessary and sufficient that $b\circ i_1=b\circ i_2$; in other words, if one denotes by $K$ the kernel of the pair of morphisms
+\[
+\xymatrix{R\ar@<.6ex>[r]^{b\circ i_1}\ar@<-.6ex>[r]_{b\circ i_2}&H,}
+\]
+it is necessary and sufficient that $K=R$. Now $H$ is assumed separated over $S$, hence $K$ is a closed subscheme of $R$. Recall, on the other hand, that $R$ is essentially free over $S$ (7.1.3).
+\numpara{7.1.6}\label{XXIV.7.1.6}
+According to the above, if $S'$ is an $S$-scheme, for there to exist over $S'$ an $f_\alpha$ satisfying the conditions of 7.1.4 (i) (and then necessarily unique), it is necessary and sufficient that $K_{S'}=R_{S'}$, and that the morphism $f_\alpha$ obtained satisfy $f_\alpha(u_\alpha)=v_\alpha$.
+
+The first condition is equivalent to $S'\to S$ factoring through a certain closed subscheme of $S$ (Exp.~VIII, 6.4\nde{See also the addition in Exp.~VIB, 6.2.3.}); if one replaces $S$ by this closed subscheme, the second condition again defines a closed subscheme of $S$ (equality of two sections of $H$, and $H$ is assumed separated over $S$).
+
+After replacing $S$ by this closed subscheme, one may therefore suppose that there exists a morphism $f_\alpha:U_\alpha\to H$ satisfying the conditions of 7.1.4 (i). Taking the intersection of the subschemes of $S$ obtained for each $\alpha\in\Delta$, one may suppose this condition satisfied for every $\alpha\in\Delta$.
+\numpara{7.1.7}\label{XXIV.7.1.7}
+Likewise, consider for each $\alpha\in\Delta$ the two morphisms of $S$-groups
+\[
+f_T\circ\mathrm{int}(w_\alpha),\ \mathrm{int}(h_\alpha)\circ f_T:T\to H.
+\]
+Since $H$ is separated over $S$ and $T$ essentially free over $S$, the same reasoning as before shows that, after replacing $S$ by a closed subscheme, one may suppose that for every $\alpha\in\Delta$ one has
+\[
+f_T\circ\mathrm{int}(w_\alpha)=\mathrm{int}(h_\alpha)\circ f_T.
+\]
+\numpara{7.1.8}\label{XXIV.7.1.8}
+Using now the theorem on generators and relations (Exp.~XXIII, 3.5), one sees that there exists a group homomorphism $f:G\to H$ satisfying the required conditions if and only if a certain finite set of algebraic relations between the sections $h_\alpha$, $v_\alpha$, $f_T(\alpha^*(-1))$ ($\alpha\in\Delta$) of $H$ holds:
+\[
+R_i\bigl((h_\alpha)_\alpha,(v_\alpha)_\alpha,(f_T(\alpha^*(-1)))_\alpha\bigr)=e,\qquad i=1,\ldots,n.
+\]
+% original PDF p. 42
+Since $H$ is separated over $S$, this again defines a closed subscheme of $S$, and the proof is complete.
+\begin{corollary}{7.1.9}\label{XXIV.7.1.9}
+Let $S$ be a scheme, $G$ a split reductive $S$-group, $T$ its maximal torus, and $H$ a separated $S$-group scheme. Let, on the other hand, $\mathscr P$ be a property of morphisms such that:
+\begin{enumeratei}
+\item A closed immersion satisfies $\mathscr P$.
+\item The composite of two morphisms satisfying $\mathscr P$ also satisfies $\mathscr P$.
+\item $\mathscr P$ is stable under base change.
+\item The structure morphism $H\to S$ satisfies $\mathscr P$.
+\end{enumeratei}
+Then the canonical morphism
+\[
+\underline{\Hom}_{S\text{-gr.}}(G,H)\to\underline{\Hom}_{S\text{-gr.}}(T,H)
+\]
+is relatively representable by a separated morphism satisfying $\mathscr P$.\nde{I.e. for every $S'\to\underline{\Hom}_{S\text{-gr.}}(T,H)$, with $S'$ representable, $\underline{\Hom}_{S\text{-gr.}}(G,H)\times_S S'$ is representable and the morphism of $S$-schemes $\underline{\Hom}_{S\text{-gr.}}(G,H)\times_S S'\to S'$ is separated and satisfies $\mathscr P$.}
+% typo?: source fiber products in this note are over S; kept as printed.
+\end{corollary}
+\begin{proof}
+Indeed, one may suppose $G$ pinned; the structure morphism $H^{2n}\to S$ satisfies $\mathscr P$ and one concludes by 7.1.2.
+\end{proof}
+\begin{corollary}{7.1.10}\label{XXIV.7.1.10}
+Let $S$ be a scheme, $G$ a split reductive $S$-group, and $H$ a smooth $S$-group scheme with affine fibers.\nde{We have removed the hypothesis that $H$ be quasi-separated, which is superfluous.}Then the functor $\underline{\Hom}_{S\text{-gr.}}(G,H)$ is representable by an $S$-scheme locally of finite presentation and separated over $S$.
+\end{corollary}
+\begin{proof}
+Indeed, since $H$ is smooth over $S$, one can consider its identity component $H^0$, which has affine fibers and is smooth, separated and of finite presentation over $S$ (Exp.~VIB, 3.10 and 5.5). Since $G$ has connected fibers, one can replace $H$ by $H^0$. Since $G$ and $H$ are then of finite presentation, one may suppose $S$ noetherian, and one applies 7.1.9 taking for $\mathscr P$ the property ``of finite type''. But, by Exp.~XV, 8.9, one knows that $\underline{\Hom}_{S\text{-gr.}}(T,H)$ is representable by an $S$-scheme separated and locally of finite type.
+% typo: printed 'H est lisse S' -> 'H is smooth over S'.
+\end{proof}
+\begin{remark}{7.1.11}\label{XXIV.7.1.11}
+If $H$ is affine over $S$, one can replace the reference to Exp.~XV by Exp.~XI, 4.2.
+\end{remark}
+\numpara{7.2}\label{XXIV.7.2}\textbf{General case}
+\begin{proposition}{7.2.1}\label{XXIV.7.2.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $T$ a maximal torus of $G$. Let, on the other hand, $H$ be an $S$-group scheme such that the structure morphism $H\to S$ satisfies the following condition:
+
+(+) Every point $s\in S$ has an open neighborhood $U$ such that the morphism $H_U\to U$ is quasi-projective.
+
+Then the canonical morphism
+\[
+\underline{\Hom}_{S\text{-gr.}}(G,H)\to\underline{\Hom}_{S\text{-gr.}}(T,H)
+\]
+is relatively representable by a morphism satisfying (+).
+\end{proposition}
+% original PDF p. 43
+When $G$ is splittable relative to $T$, one applies 7.1.9 taking for $\mathscr P$ property (+) above. When $G$ is locally isotrivial, for example semisimple (4.2.2), one observes that the assertion of the theorem is local for the local finite étale topology (indeed, the property of being quasi-projective is local for the global finite étale topology and ensures effectiveness of descent for this topology, cf. SGA~1, VIII, 7.7). Finally, in the general case, one uses the following lemma:
+\begin{lemma}{7.2.2}\label{XXIV.7.2.2}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $G'$ the derived group of $G$ (Exp.~XXII, 6.2), and $T'=T\cap G$ the maximal torus of $G'$ corresponding to $T$ (Exp.~XXII, 6.2.8). Then the diagram
+% typo?: source prints T'=T intersect G, without prime; kept as printed.
+\[
+\xymatrix{G&G'\ar[l]\\T\ar[u]&T'\ar[l]\ar[u]}
+\]
+is an amalgamated sum in the category of $S$-sheaves of groups: i.e. for every $S$-sheaf of groups $H$, the following square is cartesian:
+\[
+\xymatrix{\underline{\Hom}_{S\text{-gr.}}(G,H)\ar[r]\ar[d]&\underline{\Hom}_{S\text{-gr.}}(G',H)\ar[d]\\
+\underline{\Hom}_{S\text{-gr.}}(T,H)\ar[r]&\underline{\Hom}_{S\text{-gr.}}(T',H).}
+\]
+\end{lemma}
+\begin{proof}
+Indeed, if $\operatorname{rad}(G)$ is the radical of $G$, then $\operatorname{rad}(G)\subset T$, hence
+\[
+\operatorname{rad}(G)\cap G'=\operatorname{rad}(G)\cap T'=K,
+\]
+and multiplication in $G$ induces isogenies (Exp.~XXII, 6.2)
+\[
+i:G'\times_S\operatorname{rad}(G)\to G,\qquad j:T'\times_S\operatorname{rad}(G)\to T.
+\]
+Let $f_{G'}:G'\to H$, $f_T:T\to H$, and $f_{T'}:T'\to H$ be morphisms of $S$-groups such that $f_{G'}|_{T'}=f_T|_{T'}=f_{T'}$. Let us show that there exists a unique morphism of $S$-groups $f:G\to H$ inducing $f_{G'}$ and $f_T$. Let $f_{\mathrm{rad}}=f_T|_{\operatorname{rad}(G)}$\nde{We have replaced $f_r$ by $f_{\mathrm{rad}}$.} and let
+\[
+f_1=f_{G'}\cdot f_{\mathrm{rad}}:G'\times_S\operatorname{rad}(G)\to H.
+\]
+For $f$ to exist (and it will evidently be unique), it is necessary and sufficient that $f_1$ induce the identity on the kernel of $i$, i.e. that $f_{G'}$ and $f_{\mathrm{rad}}$ agree on $K$; but the existence of $f_T$ shows by the same reasoning that $f_{T'}$ and $f_{\mathrm{rad}}$ agree on $K$. It only remains to observe that $f_{G'}$ and $f_{T'}$ evidently agree on $K\subset T'$.
+\end{proof}
+Reasoning now as in 7.1.10, one deduces from 7.2.1:
+\begin{corollary}{7.2.3}\label{XXIV.7.2.3}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $H$ an $S$-group scheme, smooth and quasi-projective over $S$ with affine fibers. Then $\underline{\Hom}_{S\text{-gr.}}(G,H)$ is representable by an $S$-scheme locally of finite presentation and separated over $S$.
+\end{corollary}
+% original PDF p. 44
+\numpara{7.3}\label{XXIV.7.3}\textbf{Phenomena peculiar to characteristic 0}
+If $G$ and $H$ are two smooth $S$-groups, and $\mathfrak g$ and $\mathfrak h$ their Lie algebras, one has a canonical morphism
+\[
+\Lie:\underline{\Hom}_{S\text{-gr.}}(G,H)\to\underline{\Hom}_{\OS\text{-Lie alg.}}(\mathfrak g,\mathfrak h),
+\]
+where the right-hand side has an evident definition.
+\begin{proposition}{7.3.1}\label{XXIV.7.3.1}
+Let $S$ be a scheme of characteristic 0 (i.e. a $\QQ$-scheme), $G$ a reductive $S$-group, and $H$ an $S$-group scheme smooth and quasi-projective over $S$ with affine fibers.
+\begin{enumeratei}
+\item $\underline{\Hom}_{S\text{-gr.}}(G,H)$ is representable by an $S$-scheme smooth and separated over $S$.
+\item If $G$ is semisimple, this scheme is affine and of finite presentation over $S$.
+\item If $G$ is simply connected (Exp.~XXII, 4.3.3), the canonical morphism
+\[
+\Lie:\underline{\Hom}_{S\text{-gr.}}(G,H)\to\underline{\Hom}_{\OS\text{-Lie alg.}}(\mathfrak g,\mathfrak h)
+\]
+is an isomorphism.
+\end{enumeratei}
+\end{proposition}
+\begin{lemma}{7.3.2}\label{XXIV.7.3.2}
+Let $k$ be a field of characteristic 0, $G$ a reductive $k$-group, $V$ a finite-dimensional $k$-vector space, and $G\to\GL(V)$ a linear representation of $G$ on $V$. One has
+\[
+\mathrm H^0(G,V)=\mathrm H^0(\mathfrak g,V),\qquad\mathrm H^i(G,V)=0,\quad\text{for }i>0.
+\]
+\end{lemma}
+\begin{proof}
+The first equality is true in general for a smooth connected group;\nde{Indeed, it is clear that $V^G\subset V^{\mathfrak g}$. Moreover, $H=\Centr_G(V^{\mathfrak g})$ is a closed subgroup of $G$, smooth since $\operatorname{char}(k)=0$; by Exp.~II 5.3.1, one has $\Lie(H)=\Centr_{\mathfrak g}(V^{\mathfrak g})=\mathfrak g$, and since $H$ is smooth and $G$ connected this implies $H=G$, whence $V^{\mathfrak g}\subset V^G$ (see also [DG70], §~II.6, Prop.~2.1 (c)).}in the case of a reductive group, one can prove it as follows: one may suppose $k$ algebraically closed, hence $G$ splittable, hence $G$ generated by subgroups isomorphic to $\mathbf G_{\mathrm m,k}$,\nde{Indeed, the union of the maximal tori of $G$ is dense in $G$, cf. Bible, §~6.5, Th.~5 (= [Ch05], §~6.6, Th.~6).}and it suffices to verify the assertion for this group, which is easy.
+
+From this first equality it follows that $\mathrm H^0(G,V)$ is an exact functor in $V$ when $G$ is semisimple; $\mathfrak g$ is then indeed a semisimple Lie algebra and one applies [BLie], §~I.6, Exercise 1 (b). The assertion remains true when $G$ is reductive; indeed, introducing the radical $R$ of $G$\nde{Note that $R$ is a torus.}and the quotient $G/R$, which is semisimple, one has $\mathrm H^0(G,V)=\mathrm H^0(G/R,\mathrm H^0(R,V))$, and $\mathrm H^0(G,-)$ is the composite of two exact functors. Applying Exp.~I, 5.3.1, one then deduces $\mathrm H^i(G,V)=0$ for $i>0$.
+\end{proof}
+\begin{remark}{7.3.3}\label{XXIV.7.3.3}
+Under the preceding conditions, if $G$ is semisimple, one has $\mathrm H^1(\mathfrak g,V)=\mathrm H^2(\mathfrak g,V)=0$, cf. [BLie], loc. cit. (b) and (d).
+\end{remark}
+% original PDF p. 45
+\numpara{7.3.4}\label{XXIV.7.3.4}
+Let us now prove the proposition. Already, by 7.2.3, $\underline{\Hom}_{S\text{-gr.}}(G,H)$ is representable by an $S$-scheme locally of finite presentation and separated over $S$; to show that it is smooth, it suffices to prove that it is infinitesimally smooth (Exp.~XI, 1.8),\nde{I.e. for every local Artinian $S$-scheme $S'$, with closed point $s'$, every morphism of $\kappa(s')$-groups $G_{s'}\to H_{s'}$ lifts to a morphism of $S'$-groups $G_{S'}\to H_{S'}$. By Exp.~III 2.8, this follows from the vanishing of $\mathrm H^2(G_{s'},V)$, where $V=\Lie(H_{s'}/\kappa(s'))$.}which follows from Exp.~III, 2.8 (i) by 7.3.2. One has therefore proved (i).
+
+Let us show that (ii) follows from (iii). It suffices first to prove that $\underline{\Hom}_{S\text{-gr.}}(G,H)$ is affine over $S$; it will then be of finite presentation over $S$, since it is smooth over $S$ by (i); in any case $\underline{\Hom}_{\OS\text{-Lie alg.}}(\mathfrak g,\mathfrak h)$ is representable by a closed subscheme of
+\[
+\underline{\Hom}_{\OS\text{-mod.}}(\mathfrak g,\mathfrak h)\simeq\mathbf W(\mathfrak g^\vee\otimes_{\OS}\mathfrak h)
+\]
+which is an affine $S$-scheme, and the desired conclusion appears when $G$ is simply connected.
+
+In the general case, one may suppose $G$ split, hence $G\simeq\operatorname{\acute Ep}_S(\mathscr R)$; introducing the simply connected root datum $\operatorname{sc}(\mathscr R)$ (Exp.~XXI, 6.5.5), and using the existence theorem (Exp.~XXV, 1.1), one constructs a simply connected $S$-group $\bar G$ and a central isogeny $\bar G\to G$. The kernel $K$ of this isogeny is a finite diagonalizable $S$-group (hence a twisted constant $S$-group, $S$ being of characteristic 0) and $\underline{\Hom}_{S\text{-gr.}}(K,H)$ is (trivially) representable by a separated $S$-scheme (if $K\simeq(\ZZ/n\ZZ)_S$, then $\underline{\Hom}_{S\text{-gr.}}(K,H)$ is isomorphic to $\Ker(H\xrightarrow{n}H)$). One has an exact sequence of ``pointed $S$-schemes'':
+\[
+\xymatrix@C=1.5em{1\ar[r]&\underline{\Hom}_{S\text{-gr.}}(G,H)\ar[r]^u&\underline{\Hom}_{S\text{-gr.}}(\bar G,H)\ar[r]&\underline{\Hom}_{S\text{-gr.}}(K,H),}
+\]
+hence $u$ is a closed immersion, hence $\underline{\Hom}_{S\text{-gr.}}(G,H)$ is affine over $S$.
+\numpara{7.3.5}\label{XXIV.7.3.5}
+Let us finally prove (iii). Reasoning as in the proof of (i) and using 7.3.3, one can show that the $S$-scheme $\underline{\Hom}_{\OS\text{-Lie alg.}}(\mathfrak g,\mathfrak h)$ is smooth over $S$. To prove (iii), one may therefore suppose that $S=\Spec(k)$, where $k$ is an algebraically closed field of characteristic 0; it even suffices to prove that the morphism $\Lie$ is bijective on points with values in $k$ and induces a bijection on the tangent spaces at two corresponding points. Let us first show that
+\[
+\Hom_{k\text{-gr.}}(G,H)\to\Hom_{k\text{-Lie alg.}}(\mathfrak g,\mathfrak h)
+\]
+is bijective.
+
+If $u:G\to H$ is a morphism of $k$-groups, the graph of $u$ is a connected subgroup of $G\times_k H$ which is determined by its Lie algebra, which is the graph of $\Lie(u)$; the map is therefore injective. Conversely, if $v:\mathfrak g\to\mathfrak h$ is a Lie algebra morphism, the graph $\mathfrak k$ of $v$ is a Lie subalgebra of $\mathfrak g\times\mathfrak h$, isomorphic to $\mathfrak g$. In particular, since $\mathfrak g$ is its own derived algebra, the same is true of $\mathfrak k$ and therefore, by a theorem of Chevalley ([Ch51], §~14, Th.~15), $\mathfrak k$ is the Lie algebra of a connected subgroup $K$ of $G\times_k H$.\nde{See also [Bo91], II 7.9. Moreover, we have added the following sentence.}
+% original PDF p. 46
+Moreover, since $\mathfrak k\simeq\mathfrak g$ is semisimple, $G$ is a semisimple $k$-group. Since
+% typo?: source says G is semisimple here, not K; kept as printed.
+\[
+\dim(K)=\dim(\mathfrak k)=\dim(\mathfrak g)=\dim(G)
+\]
+and since $K\cap H$ is finite (because its Lie algebra is zero), the canonical morphism $\operatorname{pr}_1:K\to G$ is finite and dominant; since $G$ is connected, $\operatorname{pr}_1$ is surjective; it is therefore an isogeny. Since $G$ is simply connected and $K$ semisimple, by Exp.~XXI 6.2.7, $\operatorname{pr}_1$ is an isomorphism, hence $K$ is the graph of a morphism of $k$-groups $u:G\to H$ such that $\Lie(u)=v$.
+
+Finally, let $u:G\to H$ be a morphism of $k$-groups. The tangent space to $\underline{\Hom}_{k\text{-gr.}}(G,H)$ at $u$ identifies with $\mathrm Z^1(G,\mathfrak h)$ (cf. Exp.~II, 4.2; $G$ acts on $\mathfrak h$ by $\Ad_H\circ u$); in the same way, one can prove that the tangent space to $\underline{\Hom}_{k\text{-Lie alg.}}(\mathfrak g,\mathfrak h)$ at $\Lie(u)$ identifies with $\mathrm Z^1(\mathfrak g,\mathfrak h)$. We must therefore prove that the canonical map $\mathrm Z^1(G,\mathfrak h)\to\mathrm Z^1(\mathfrak g,\mathfrak h)$ is bijective. Now one has a commutative diagram
+\[
+\xymatrix@C=1.5em{
+0\ar[r]&\mathfrak h^G\ar[r]\ar[d]&\mathfrak h\ar[r]\ar@{=}[d]&\mathrm Z^1(G,\mathfrak h)\ar[r]\ar[d]&\mathrm H^1(G,\mathfrak h)\\
+0\ar[r]&\mathfrak h^{\mathfrak g}\ar[r]&\mathfrak h\ar[r]&\mathrm Z^1(G,\mathfrak h)\ar[r]&\mathrm H^1(\mathfrak g,\mathfrak h)}
+\]
+% typo?: bottom row in the source has Z^1(G,h), not Z^1(g,h); kept as printed.
+and by 7.3.2 and 7.3.3 one has $\mathfrak h^G=\mathfrak h^{\mathfrak g}$ and $\mathrm H^1(G,\mathfrak h)=0=\mathrm H^1(\mathfrak g,\mathfrak h)$, whence the desired conclusion.
+\begin{remark}{7.3.6}\label{XXIV.7.3.6}
+It is likely that if $S$ is a locally noetherian scheme, $G$ a simply connected semisimple $S$-group, $H$ a smooth $S$-group scheme, and $\widehat G$ and $\widehat H$ their formal completions along the identity section, every homomorphism $\widehat G\to\widehat H$ comes from a unique homomorphism from $G$ to $H$, which would generalize 7.3.1 (iii). When $S$ is the spectrum of a field $k$ and $H$ is affine and of finite type, this follows from a theorem of Dieudonné ([Di57], §~15, Th.~4).\nde{See Exp.~VIIB for the definition of the formal groups $\widehat G$ and $\widehat H$. Suppose that $S=\Spec(k)$, where $k$ is a field. By loc. cit., 2.2.1, giving a morphism of formal $k$-groups $v:\widehat G\to\widehat H$ is equivalent to giving a morphism of Hopf $k$-algebras $\phi:\operatorname{Dist}(G)\to\operatorname{Dist}(H)$, where $\operatorname{Dist}(G)$ denotes the algebra of distributions (at the origin) of $G$, cf. Exp.~VIIA, 2.1 or [DG70], §~II.4, 6.1 or [Ja87], I 7.7 (it is called the ``hyperalgebra'' of $G$ in [Di57] and [Ta75]). Theorem 4 of [Di57] (see also [Ta75], 0.3.4 (f) and (g)) generalizes in this context the theorem of Chevalley used in 7.3.5; one thus obtains that there exists a connected closed $k$-subgroup $K$ of $G\times H$ such that $\widehat K$ equals the graph of $v$; since $\operatorname{Dist}(K)\to\operatorname{Dist}(G)$ is an isomorphism, $K\to G$ is a finite étale morphism. One then deduces that $K$ is semisimple and then, by Exp.~XXI 6.2.7, that $K\to G$ is an isomorphism (since $G$ is simply connected); see also [Ta75], 1.8 and 2.2. More generally, loc. cit. studies the $k$-groups $G$ with property (SC): every finite étale morphism of $k$-groups $G'\to G$, with $G'$ connected, is an isomorphism. Finally, observe that the above shows that every finite-dimensional $\operatorname{Dist}(G)$-module $V$ is, uniquely, a $G$-module; for an extension to the case of a split reductive $k$-group $G$ (or even of a Borel subgroup of $G$), see [Ja87], II 1.20 (and the references there).}
+\end{remark}

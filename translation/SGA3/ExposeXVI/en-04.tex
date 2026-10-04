@@ -1,0 +1,111 @@
+% Source PDF pp. 18--22, including the final sentence's continuation on p. 23.
+\sgasection{4}{Groups with affine fibers of unipotent rank zero}
+\begin{theorem}{4.1}\label{XVI.4.1}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth over $S$, of finite presentation, with affine connected fibers of unipotent rank (Exp. XV 6.1 ter) zero. Then:
+
+\noindent a) The center $Z$ of $G$ is a group of multiplicative type (and consequently is a reductive center of $G$ (Exp. XII 4.1)).
+
+\noindent b) $G$ satisfies conditions a) to d) of 3.3.
+
+\noindent c) $G$ has locally for the étale topology maximal tori, and these are also Cartan subgroups of $G$. The functor $\mathscr{TM}_G$ of maximal tori of $G$ is representable by an $S$-prescheme smooth and affine over $S$.
+
+\noindent d) $G$ is quasi-affine over $S$. Moreover, if $T$ is a maximal torus of $G$, $N=\uNorm_G T$ its normalizer in $G$, $W=N/T$ the Weyl group corresponding to $T$, the following conditions are equivalent:
+
+\noindent\hspace*{1em}(i) $G$ is affine over $S$.
+
+\noindent\hspace*{1em}(ii) $G'=G/Z$ is affine over $S$.
+
+\noindent\hspace*{1em}(iii) $N$ is affine over $S$.
+
+\noindent\hspace*{1em}(iv) $W$ is affine over $S$.
+
+These conditions always hold if $S$ is locally noetherian of dimension $\leq1$.
+\end{theorem}
+\par\noindent\emph{Proof.}
+Since $G$ has affine fibers (hence abelian rank zero) and unipotent rank zero, $G$ has locally for the étale topology maximal tori (Exp. XV 8.18), and every maximal torus of $G$ is plainly a Cartan subgroup of $G$, which proves the first part of c). To see that $Z$ is of multiplicative type, one may suppose, by the foregoing, that $G$ has a maximal torus $T$. Since $T$ is also a Cartan subgroup, $T$ contains $Z$ (for $T=\uCentr_G(T)$ by Exp. XII 7.1), and $Z=Z\cap T$ is of multiplicative type by 3.5 i). This proves a). Assertion b) is clear, taking account of a). On the other hand, the functor $\mathscr{TM}_G$ is isomorphic to the functor of Cartan subgroups of $G$ (Exp. XII 7.1), hence is smooth and affine over $S$ (3.3 c)), which finishes proving c). It remains to prove d).
+
+\par\noindent\emph{Proof of d).}
+Since $G'$ is quasi-affine (3.5 b)) and $Z$ is of multiplicative type, hence affine over $S$, $G$ is quasi-affine (Exp. VIB \S\ 9).
+% typo?: 3.5 b) is the printed reference; kept.
+
+$\text{i)}\Leftrightarrow\text{ii)}$. If $G$ is affine, $G'$ is affine by Exp. IX 2.3. If $G'$ is affine, $G$ is affine as an extension of an affine group by an affine group (Exp. VIB \S\ 9).
+
+$\text{i)}\Leftrightarrow\text{iii)}$. If $G$ is affine, $N$ is affine since it is closed in $G$ (Exp. XI 6.11 a)). Moreover, $G/N$ is isomorphic to the functor $\mathscr{TM}_G$ (conjugacy of maximal tori, cf. Exp. XII 7.1 b)), hence is affine over $S$ by c). Thus if $N$ is affine over $S$, $G$ is affine as an ``extension'' of an affine homogeneous space by an affine group (Exp. VIB \S\ 9).
+
+$\text{iii)}\Leftrightarrow\text{iv)}$. If $N$ is affine, $W=N/T$ is affine (Exp. IX 2.3), and conversely by Exp. VIB \S\ 9.
+
+Moreover, $N/T$ is representable by a group $S$-prescheme étale and separated over $S$, of finite type (Exp. XV 7.1 iv)), hence quasi-finite over $S$. The last assertion of d) will therefore follow from the following lemma, applied with $X=W$ and $Y=S$:
+
+% Source PDF p. 19.
+\begin{lemma}{4.2}\label{XVI.4.2}
+Let $S$ be a locally noetherian prescheme of dimension $1$, $X$ and $Y$ two $S$-preschemes locally of finite type over $S$, $u:X\to Y$ a quasi-finite separated $S$-morphism. Suppose that for every point $s$ of $S$, the morphism $u_s:X_s\to Y_s$ deduced from $u$ by the base change $\Spec\kappa(s)\to S$ is finite. Then $u$ is an affine morphism.
+\end{lemma}
+The assertion to be proved is local on $Y$, which allows us to suppose $Y$ (hence also $X$) of finite type over $S$. By EGA IV 8, one sees that it suffices to prove 4.2 when $S$ is the spectrum of a local ring $A$. By fpqc descent, one may suppose $A$ complete, then $A$ reduced (EGA II 1.6.4), then $A$ normal (Nagata's theorem (EGA $0_{\mathrm{IV}}$ 22) and Chevalley's theorem (EGA II 6.7.1)). If $A$ is a field, $u$ is finite by hypothesis, hence affine. Otherwise $A$ is a discrete valuation ring; let $s$ be the closed point of $S$, $t$ the generic point, $\pi$ a uniformizer of $A$. Let $y$ be a point of $Y_s$. Applying EGA IV 8 once again, one may replace $Y$ by the spectrum $Y'$ of $\OO_{Y,y}$ and $X$ by $X'=X\times_Y Y'$; finally, one may suppose $\OO_{Y,y}$ complete. Since $u$ is quasi-finite and separated, by EGA II 6.2.6, $X'$ is the sum of two schemes $X_1$ and $X_2$, with $X_1$ finite over $Y'$ (hence affine) and $X_2$ such that $u(X_2)$ does not contain the closed point $y$ of $Y'$. I say that under these conditions, $X_2$ does not meet the closed fiber $X'_s$. Indeed, by hypothesis, $X'_s\to Y'_s$ is finite, so the restriction of this morphism to the closed subset $(X_2)_s$ is finite, and its image in $(Y')_s$ is closed. Since this image does not contain the closed point of the local scheme $(Y')_s$, $(X_2)_s$ is empty. Since $u_t$ is finite, the restriction to $(X_2)_t=X_2$ of the morphism $X'_t\to Y'_t$ is finite. Moreover, one has $Y'_t=Y'_\pi$, so the open immersion $Y'_t\to Y'$ is affine. In brief, the composite morphism $X_2\to Y'_t\to Y'$ is affine, and it indeed follows that the morphism $X'=X_1\coprod X_2\to Y'$ is affine.
+% typo: on pout supposer -> on peut supposer.
+\begin{corollary}{4.3}\label{XVI.4.3}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth and of finite presentation over $S$, with affine solvable connected fibers of unipotent rank zero. Then $G$ is affine over $S$. If moreover the center of $G$ is the unit group and $S$ is quasi-compact, the canonical morphism $i_n:G\to\mathrm{GL}_S(G^{(n)})$ (cf. 3.1 b)) is a closed immersion for sufficiently large $n$.
+\end{corollary}
+To prove that $G$ is affine over $S$, one may suppose that $G$ has a maximal torus $T$ (4.1 c)). The group $G$ having solvable fibers, the Weyl group corresponding to $T$ is the unit group (BIBLE 6 Th. 1 Cor. 3), and condition 4.1 d) iv) is satisfied. If the center of $G$ is the unit group, $i_n$ is a monomorphism for sufficiently large $n$ (3.1), hence is a closed immersion (1.5 b)).
+
+\sgasection{5}{Application to reductive and semisimple groups}
+\begin{definition}{5.1}\label{XVI.5.1}
+A group $S$-prescheme $G$ is said to be reductive (resp. semisimple) if $G$ is smooth and affine over $S$, with reductive (resp. semisimple) fibers.
+\end{definition}
+% Source PDF p. 20.
+\numpara{5.1.1}\label{XVI.5.1.1}
+Reductive groups will be systematically studied beginning with Exp. XIX. In this paragraph, we shall need the following properties, which will be proved in Exp. XIX (without using the developments of the present exposé).
+
+\noindent a) Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth and affine over $S$, with connected fibers, $s$ a point of $S$ such that $G_s$ is reductive (resp. semisimple). Then there exists a neighborhood $U$ of $s$ such that $G|_U$ is reductive (resp. semisimple).
+
+\noindent b) If $G$ is reductive, $G$ has locally for the étale topology maximal tori, and if $T$ is a maximal torus of $G$, the Weyl group $W=\uNorm_G(T)/T$ is finite over $S$.
+
+\noindent c) A reductive group has unipotent rank zero.
+
+This being admitted, we propose to improve assertion a) above.
+\begin{theorem}{5.2}\label{XVI.5.2}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth and of finite presentation over $S$, with connected fibers, $s$ a point of $S$. Then:
+
+\noindent (i) If the fibers of $G$ are affine and $G_s$ is reductive, there exists an open neighborhood $U$ of $s$ such that $G|_U$ is reductive.
+
+\noindent (ii) If $G_s$ is semisimple, there exists an open neighborhood $U$ of $s$ such that $G|_U$ is semisimple.
+\end{theorem}
+Using Exp. XV 6.2 i) and Exp. VIB \S\ 10, one reduces to the case where $S$ is noetherian.
+
+In case ii), consider the center $Z$ of $G$, which is representable (Exp. XI 6.11 a)). Since $G_s$ is semisimple, it is well known that $Z_s$ is finite. Consequently (Exp. VIB \S\ 4), there exists a neighborhood $U$ of $s$ such that $Z$ is quasi-finite over $U$. For every point $t$ of $U$, $G_t$ is then affine (Exp. XII 6.1). After restricting $S$, we may therefore suppose that the fibers of $G$ are affine, in case ii) as in case i).
+
+To prove 5.2, it suffices, taking account of a), to prove that $G$ is affine over $S$. Since $G$ has affine fibers, we know that the functor of subtori of $G$ is representable by a smooth $S$-prescheme (Exp. XV 8.11 and 8.9). After making an étale extension covering $s$, which is permissible, we may therefore suppose that there exists a subtorus $T$ of $G$ such that $T_s$ is a maximal torus of $G_s$. But then $C=\uCentr_G(T)$ is a smooth subgroup of $G$ with connected fibers, containing $T$, such that $C_s=T_s$ (since $C_s$ is a Cartan subgroup of $G_s$ and $G_s$ has unipotent rank zero by c)). It follows that $C=T$, so $T$ is a Cartan subgroup and a maximal torus of $G$; a fortiori, the unipotent rank of $G$ is zero, and one can apply 4.1.
+
+By 4.1 d), it suffices to show that the Weyl group $W$ corresponding to $T$ is affine over a neighborhood $U$ of $s$. In fact, we shall see that $W$ is even finite over a neighborhood of $s$. Since $W$ is quasi-finite over $S$ (Exp. XV 7.1 iv)), to say that $W$ is finite over a neighborhood $U$ of $s$ is equivalent to saying that the morphism $W\to S$ is proper at $s$ (EGA IV 15.7 and EGA III 4.4.2), and to establish this one has the valuative criterion of local properness (EGA IV 15.7), which reduces us to the case where $S$ is the spectrum of a discrete valuation ring with closed point $s$. But then, by the last assertion of 4.1 d), $G$ is affine over $S$, and one can apply property a) recalled above to conclude that $G$ is reductive (resp. semisimple). Using now property b), one concludes that $W$ is indeed finite over $S$, which completes the proof of 5.2.
+
+% Source PDF p. 21.
+\sgasection{6}{Applications: Extension of certain rigidity properties of tori to groups of unipotent rank zero}
+\begin{proposition}{6.1}\label{XVI.6.1}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth over $S$, of finite presentation, with affine connected fibers, and whose center is of multiplicative type (for example, $G$ of unipotent rank zero, cf. 4.1 a)). Then every invariant closed subgroup $K$ of $G$, of finite presentation over $S$, quasi-finite over $S$, is finite over $S$.
+\end{proposition}
+Indeed, for every geometric point $\bar s$ over $S$, $(K_{\bar s})_{\mathrm{red}}$ is a finite étale subgroup of $G_{\bar s}$, invariant, hence central (since $G_{\bar s}$ is connected). Consequently $K'=Z\cap K$ (where $Z$ denotes the center of $G$) has the same underlying space as $K$, and it suffices to show that $K'$ is finite over $S$. Now $K'$ is a closed quasi-finite subgroup of the group of multiplicative type $Z$, hence is finite, as one sees immediately (locally on $S$, $K'$ will be contained in ${}_nZ$ for a suitable integer $n$, and ${}_nZ$ is finite over $S$).
+\begin{corollary}{6.2}\label{XVI.6.2}
+Let $S$ and $G$ be as above, $K$ a group subprescheme of $G$, of finite presentation over $S$, invariant and closed in $G$, $s$ a point of $S$. If $K_s$ is finite (resp. is the unit group), there exists an open neighborhood $U$ of $s$ such that $K|_U$ is finite over $S$ (resp. is the unit group).
+\end{corollary}
+In view of the upper semicontinuity of the dimension of the fibers of $K$ (Exp. VIB \S\ 4), one may already suppose, after restricting $S$, that $K$ is quasi-finite over $S$, hence finite (6.1). If moreover $K_s$ is the unit group, one easily deduces by Nakayama's lemma that $K$ is the unit group over $\Spec\OO_s$, hence over a neighborhood of $s$.
+\begin{proposition}{6.3}\label{XVI.6.3}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth and of finite presentation over $S$, with affine connected fibers of unipotent rank zero, $H$ a group $S$-prescheme, $s$ a point of $S$, $u:G\to H$ a group $S$-morphism such that $\Ker u_s$ is central. Suppose moreover that $H$ is of finite presentation over $S$, or that $S$ is locally noetherian and $G$ locally of finite type over $S$. Then there exists an open neighborhood $U$ of $s$ such that, if $K=\Ker u$, $K|_U$ is central, of multiplicative type. Moreover, $G'=(G|_U)/(K|_U)$ is representable, and the morphism $u':G'\to H|_U$ deduced from $u$ by passage to the quotient is an immersion.
+% typo?: G, rather than H, is printed in the local finite-type alternative; kept.
+\end{proposition}
+\par\noindent\emph{Proof.}
+Let $Z$ be the center of $G$, and $K'=K\cap Z$.
+
+\noindent a) $K'$ is a subgroup of multiplicative type over a neighborhood $U$ of $s$. Indeed, after making an étale extension over a neighborhood $U$ of $s$, which is legitimate, we may suppose that $G$ has a maximal torus $T$ (4.1 c)). But then $T\cap K$ is a group of multiplicative type (Exp. XV 8.3) whose fiber at $s$ is central by hypothesis, so $T\cap K$ is central over a neighborhood of $s$ (Exp. IX 5.6 a)), and consequently coincides with $K'$.
+
+% Source PDF p. 22.
+\noindent b) Let us show that $K'=K$ over a neighborhood $U$ of $s$. By a), one may already suppose that $K'$ is of multiplicative type, hence flat over $S$. Since $K'_s=K_s$, the natural immersion $K'\to K$ is then open over a neighborhood $U$ of $s$ (Exp. VIB 2.6). If $t\in U$, the image of $K_t$ in the group $G'_t=G_t/Z_t$ is therefore a finite étale group invariant in $G'_t$ (since $K_t$ is invariant in $G_t$), hence central, hence reduced to the unit group (3.3 b)). This says that $K_t$ is contained in $Z_t$, hence is equal to $K'_t$, whence $K=K'$ over $U$.
+
+\noindent c) Representability of $G'$ then follows from 2.3; the fact that $u'$ is an immersion is contained in 1.3 a), taking account of 4.1 c) applied to $G'$.
+\begin{proposition}{6.4}\label{XVI.6.4}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth, of finite presentation over $S$, with connected fibers, $s$ a point of $S$ such that $G_s$ is generated by its subtori (Exp. XII 8.2) (for example, $G_s$ affine of unipotent rank zero), $H$ a group $S$-prescheme, $u$ and $v:G\to H$ two $S$-homomorphisms such that $u_s=v_s$ and $u_s$ is central. Suppose moreover that $H$ is of finite presentation over $S$, or that $S$ is locally noetherian. Then there exists a neighborhood $U$ of $s$ such that $u|_U=v|_U$.
+\end{proposition}
+One reduces as usual to the case where $S$ is noetherian (to study the condition ``$G_s$ is generated by its subtori'', one uses Exp. VIB 7.4). Since $G$ has connected fibers, to show that $u=v$ over a neighborhood $U$ of $s$, it suffices to show that $u=v$ after reduction by every power of the maximal ideal of the local ring $\OO_{S,s}$, which reduces us to the case where $S$ is local artinian.
+
+But then the functor of maximal subtori of $G$ is representable by an $S$-scheme $X$, smooth and of finite type over $S$ (Exp. XV 8.17). Let $T$ be the maximal subtorus of $G_X$, universal for the functor $X$. The hypothesis on $G_s$ means that the algebraic subgroup of $G_s$ generated (Exp. VIB \S\ 7) by the $\kappa(s)$-morphism $f:T_s\to G_s$ (the composite of the immersion $T_s\to G_{X_s}$ and the canonical projection $G_{X_s}\to G_s$) is equal to the whole of $G_s$. But $X_s$ is geometrically connected (for if $T$ is a maximal torus of $G_s$ and $N$ its normalizer in $G_s$, $X_s$ is isomorphic to $G_s/N$), and the image of $T_s$ under $f$ contains the unit section of $G_s$; it then follows from Exp. VIB 7.4 that there exist an integer $N>0$ and a certain $S$-morphism $f^N:T^N\to G$ (where $T^N=T\times_S\cdots\times_S T$ ($N$ factors), and $f^N$ depends only on $f$ and on the multiplication law of $G$) such that $(f^N)_s$ is surjective.
+
+Consider the base change $X\to S$ and the restrictions of $u_X$ and $v_X$ to the subtorus $T$ of $G_X$. By hypothesis, one has $u_{X_s}=v_{X_s}$, and $u_{X_s}:T_{X_s}\to H_{X_s}$ is a central homomorphism. It then follows from Exp. IX 5.1 that one has $u_X|_T=v_X|_T$. Making the definition of $f^N$ explicit and taking account of the fact that $u$ and $v$ are homomorphisms, one immediately deduces that $uf^N=vf^N$. But the $\kappa(s)$-morphism $f_s^N$ is surjective, and $G_s$ is smooth, hence reduced, so $f_s^N$ is generically flat. Since $T$ is smooth over $S$, hence flat, there exists a nonempty open subset $V$ of $T$ such that $f^N|_V$ is flat (EGA IV 11.3.10). The image of $V$ is an open subset $W$ of $G$ (EGA IV 11.3.1), and $f^N:V\to W$ is faithfully flat, of finite presentation, hence a covering for the fpqc topology. The equality $uf^N=vf^N$ then implies $u|_W=v|_W$. Since $W$ is schematically dense in $G$ (EGA IV 11.10.10) and $H$ separated over $S$ (Exp. VIA 0.3), one immediately deduces that $u=v$.
+% typo?: V is printed as an open subset of T, although f^N has domain T^N; kept.

@@ -1,0 +1,453 @@
+% French PDF pp. 55--60.
+\begin{corollary}{4.7.3}\label{IV.4.7.3}
+Let \(X\in\Ob\mathcal C\), and \(R\) an (M)-effective equivalence
+relation in \(X\); suppose moreover that \(R\to X\times X\)
+belongs to (N), where (N) satisfies (a) and
+\((\mathrm f_{\mathcal T})\).
+Then, for every \(Y\) as in 4.7.2, \(R_Y\to Y\times Y\)
+also belongs to (N), and hence, by 4.7.1, one has:
+\[
+(Y/R_Y)(S)=\left\{\begin{array}{l}
+\text{sub-}S\text{-objects }Z\text{ of }Y_S\text{ stable under }R_Y\times S,\\
+\text{such that }Z\to Y_S\text{ belongs to (N) (then }Z\to X_S
+\text{ does too),}\\
+Z\to S\text{ is covering, and }R_Z\simeq Z\times_S Z
+\end{array}\right\}.
+\]
+\end{corollary}
+
+\sgasection{5}{Passage to the quotient and algebraic structures}
+\sgasection{5.1}{Principal homogeneous bundles}
+\begin{definition}{5.1.0}\label{IV.5.1.0}
+\nde{The numbering 5.1.0 has been introduced for later references.}
+Recall (III 0.1) that an object \(X\) with a group of operators
+\(H\) (on the right) is said to be \emph{formally principal
+homogeneous} under \(H\)\nde{One also says \og pseudo-torsor\fg,
+cf. EGA IV$_4$, 16.5.15. Moreover, the more general notion
+of formally homogeneous object (not necessarily principal
+homogeneous) is defined in the addition 6.7.1 at the end of
+this exposé.} if the canonical morphism (of functors)
+\[
+X\times H\longrightarrow X\times X
+\]
+defined by \((x,h)\mapsto(x,xh)\) is an isomorphism.
+It amounts to the same to say (cf. \loccit) that for every
+\(S\in\Ob\mathcal C\), \(X(S)\) is formally principal
+homogeneous under \(H(S)\), that is, empty or principal
+homogeneous under \(H(S)\).
+In particular, if one lets \(H\) act on itself by translations
+(on the right), \(H\) becomes formally principal homogeneous
+under itself.
+\end{definition}
+\begin{definition}{5.1.1}\label{IV.5.1.1}
+The object \(X\) with a group of operators \(H\) is said
+to be \emph{trivial} if it is isomorphic (as an object with
+a group of operators \(H\)) to \(H\) on which \(H\) acts
+by translations.
+\end{definition}
+\begin{proposition}{5.1.2}\label{IV.5.1.2}
+Let \(X\) be formally principal homogeneous under \(H\).
+One has an isomorphism
+\[
+\Gamma(X)\isomto\Isom_{H\text{-obj.}}(H,X)
+\]
+of principal homogeneous sets under \(\Gamma(H)\).
+\end{proposition}
+\begin{proof}
+To every section \(x\) of \(X\) one associates the morphism
+from \(H\) to \(X\) defined set-theoretically by \(h\mapsto xh\).
+The stated assertion is immediate, by reduction to the
+set-theoretic case.
+\end{proof}
+\begin{corollary}{5.1.3}\label{IV.5.1.3}
+One has an isomorphism of objects with operators \(H\)
+\[
+X\isomto\underline{\Isom}_{H\text{-obj.}}(H,X).
+\]
+\end{corollary}
+\begin{corollary}{5.1.4}\label{IV.5.1.4}
+For an object with a group of operators to be trivial,
+it is necessary and sufficient that it be formally principal
+homogeneous and that it possess a section.
+\end{corollary}
+\begin{definition}{5.1.5}\label{IV.5.1.5}
+Let \(\mathcal C\) be a category endowed with a topology.
+One says that the \(S\)-object \(X\) with an \(S\)-group
+of operators \(H\) is a \emph{principal homogeneous bundle}
+under \(H\) if it is locally trivial, that is, if the
+following equivalent conditions hold:
+\nde{In this case one also says that \(X\) is an \(H\)-torsor.}
+\begin{enumeratei}
+\item The set of \(T\to S\) such that (the functor)
+\(X\times_S T\) is trivial under \(H\times_S T\) is
+a refinement of \(S\).
+\item There exists a covering family (for a pretopology
+defining the given topology) \(\{S_i\to S\}\) such that
+for each \(i\), the \(S_i\)-functor \(X\times_S S_i\)
+with an \(S_i\)-group-functor of operators \(H\times_S S_i\)
+is trivial (= possesses a section over \(S_i\)).
+\end{enumeratei}
+\end{definition}
+\begin{proposition}{5.1.6}\label{IV.5.1.6}
+Let \(\mathcal C\) be a category endowed with a topology
+\(\mathcal T\). Let (M) be a family of morphisms of
+\(\mathcal C\) satisfying axioms (a) to
+\((\mathrm e_{\mathcal T})\) of 4.6.3.
+Let \(H\) be an \(S\)-group such that the structural
+morphism \(H\to S\) is an element of (M), and \(P\)
+an \(S\)-object with an \(S\)-group of operators \(H\).
+The following conditions are equivalent:
+\begin{enumeratei}
+\item \(P\) is a principal homogeneous bundle under
+\(H\) (Definition 5.1.5).
+\item \(P\) is formally principal homogeneous under
+\(H\) and the structural morphism \(P\to S\) is
+an element of (M).
+\item There exists a morphism \(S'\to S\) which is an
+element of (M), such that by base extension from \(S\)
+to \(S'\), \(P\) becomes trivial, that is,
+\(P\times_S S'\) is trivial under \(H\times_S S'\).
+\item \(H\) acts freely on \(P\), in an (M)-effective
+manner, and the quotient \(P/H\) is isomorphic to \(S\).
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+First remark that (ii) and (iv) are equivalent, taking
+account of the fact that in either case \(P\to S\)
+is an element of (M), hence base-changeable, which
+ensures the representability of the fibered products
+\(H\times_S P\), \(P\times_S P\).
+It is clear that (ii) implies (iii), for one may take
+\(P\) itself as \(S'\), the hypothesis that \(P\)
+is formally principal homogeneous implying that
+\(P\times_S P\) is trivial under \(H\times_S P\)
+(5.1.4), for it has a section (the diagonal section).
+It is clear that (iii) implies (i), for \(\{S'\to S\}\)
+is a covering family by axiom \((\mathrm d_{\mathcal T})\).
+It therefore remains to show that (i) implies (ii).
+The morphism of sheaves \(P\times_S H\to P\times_S P\)
+is locally an isomorphism, hence an isomorphism (4.5.8);
+thus \(P\) is formally principal homogeneous.
+The structural morphism \(P\to S\) is locally isomorphic
+to the structural morphism \(H\to S\), which is an element
+of (M). It is therefore itself an element of (M)
+by \((\mathrm e_{\mathcal T})\).
+\end{proof}
+The equivalence between (i) and (iv) generalizes:
+\begin{proposition}{5.1.7}\label{IV.5.1.7}
+Under the same hypotheses on \(\mathcal C\) and (M),
+let \(H\) be an \(S\)-group, and \(X\) an \(S\)-object
+on which \(H\) acts (on the right).
+Suppose that the structural morphism \(H\to S\)
+is an element of (M). The following conditions are equivalent:
+\begin{enumeratei}
+\item \(H\) acts freely on \(X\), in an (M)-effective manner.
+\item There exists an \(S\)-morphism \(p:X\to Y\)
+compatible with the equivalence relation defined in
+\(X\) by the action of \(H\), such that the action
+of \(H\times_S Y\) on \(X\) over \(Y\) deduced from
+it makes \(X\) a principal homogeneous bundle under
+\(H_Y\) over \(Y\).
+\end{enumeratei}
+Under these conditions \(p\) identifies \(Y\) with
+the quotient \(X/H\).
+\end{proposition}
+\begin{proof}
+If \(p:X\to Y\) is a morphism compatible with the
+action of \(H\), then the action of \(H\times_S Y\)
+on \(X\) over \(Y\) deduced from it defines in \(X\)
+the same equivalence relation as the action of \(H\),
+by virtue of the formula
+\[
+H_Y\times_Y X\isomto H\times_S X.
+\]
+The proposition follows from this remark and the
+preceding equivalence (iv) \(\Leftrightarrow\) (i).
+\end{proof}
+\begin{corollary}{5.1.7.1}\label{IV.5.1.7.1}
+\nde{This particular case has been added as a corollary,
+and will be used several times in the following exposés.}
+Let \(\mathcal C\) be a category possessing a final object,
+stable under fibered products and endowed with a
+topology \(\mathcal T\) less fine than the canonical topology.
+Let \(f:G\to H\) be a morphism of \(\mathcal C\)-groups,
+and \(K=\Ker(f)\). Suppose that \(f\) is covering for
+the topology \(\mathcal T\).
+
+Then \(H\) represents the quotient sheaf \(G/K\),
+and \(f\) is a \(K_H\)-torsor.
+(N.B. One will also say: \og \(G\) is a \(K\)-torsor
+over \(H\)\fg.)
+\end{corollary}
+\begin{proof}
+Indeed, since \(f\) is covering, it is a universal
+effective epimorphism (4.4.3), hence by 3.3.3.1,
+\(H\) is the quotient of \(G\) by the equivalence
+relation \(\mathcal R(f)=G\times_H G\).
+On the other hand, the morphism \(G\times K\to G\times_H G\),
+\((g,k)\mapsto(g,gk)\), is an isomorphism of objects
+with a group of operators \(K_G=G\times_H K_H\)
+(its inverse being given by \((g,g')\mapsto(g,g^{-1}g')\)).
+Thus, on the one hand, \(\mathcal R(f)\) is the
+equivalence relation defined by \(K\); on the other,
+since the morphism \(f:G\to H\) is covering,
+\(f\) is a \(K_H\)-torsor by 5.1.6 (ii)
+(or directly by Definition 5.1.5 (ii)).
+\end{proof}
+We may now specify Theorem 4.6.6 in the case of passage
+to the quotient by a group of operators:
+\begin{proposition}{5.1.8}\label{IV.5.1.8}
+Under the hypotheses of 5.1.7, denote by \(F_0\)
+the functor over \(S\) defined as follows:
+for each \(S'\to S\), \(F_0(S')\) is the set of
+representable sub-\(S'\)-functors \(Z\) of \(X\times_S S'\),
+stable under \(H\times_S S'\) and principal homogeneous
+bundles under this \(S'\)-group for the induced action (3.2.2).
+
+(i) The following conditions are equivalent:
+
+a) The action of \(H\) on \(X\) is (M)-effective and free.
+\nde{\og and free\fg{} has been added.}
+
+b) \(F_0\) is representable.
+
+Under these conditions \(F_0=X/H\).
+
+(ii) Let (N) be a family of morphisms stable under
+base change, such that for every covering family
+\(\{S'_i\to S'\}\) and every family \(\{T_i\to S'_i\}\)
+of morphisms of (N), every descent datum on the
+\(T_i\) relative to \(\{S'_i\to S'\}\) is effective.
+Suppose that the morphism \(X\times_S H\to X\times_S X\)
+is an element of (N), and that \(X\) is base-changeable.
+Then the element \(p\) of \(\Hom(X,F_0)\) corresponding
+to the subobject \(X\times_S H\) of \(X\times_S X\)
+identifies \(F_0\) with the quotient sheaf \(X/H\).
+\end{proposition}
+
+\sgasection{5.2}{Group structures and passage to the quotient}
+In this number we concern ourselves with the algebraic
+structures that one can put on the quotient \(G/H\)
+of a group by a subgroup.
+We shall first work in the category of sheaves on
+\(\mathcal C\) for an arbitrary topology.
+Taking the canonical topology and using 4.5.12,
+we shall obtain results for passage to the universal
+effective quotient in \(\mathcal C\).
+
+\begin{proposition}{5.2.1}\label{IV.5.2.1}
+Let \(u:H\to G\) be a monomorphism of sheaves of groups.
+There exists on the quotient sheaf \(G/H\) a unique
+structure of object with a group of operators \(G\)
+such that the canonical morphism
+\[
+p:G\longrightarrow G/H
+\]
+is a morphism of objects with a group of operators \(G\).
+This structure is functorial in the pair \((G,H)\):
+if one has a commutative diagram
+\[
+\xymatrix{H\ar[r]\ar[d] & G\ar[d]^f\\ H'\ar[r] & G' },
+\]
+the morphism \(\overline f:G/H\to G'/H'\) (3.2.3)
+is compatible with the morphism \(f\) on the groups
+of operators.
+\end{proposition}
+\begin{proof}
+Indeed, the sheaf \(G/H\) is the sheaf associated to the presheaf
+\[
+i(G)/i(H):S\longmapsto G(S)/H(S);
+\]
+since the functor \(a\) is left exact, it transforms
+objects with groups of operators into objects with
+a group of operators.
+Since the presheaf \(i(G)/i(H)\) is endowed with a
+structure of object with a group of operators \(i(G)\),
+\(G/H=a(i(G)/i(H))\) is endowed with a structure of
+object with operators \(a(i(G))=G\).
+This structure evidently enjoys all the stated properties.
+\end{proof}
+\begin{corollary}{5.2.2}\label{IV.5.2.2}
+Let \(u:H\to G\) be a monomorphism of \(\mathcal C\)-groups.
+Suppose that the action of \(H\) on \(G\) is universal
+effective. There exists on the quotient object
+\(G/H\in\Ob\mathcal C\) a unique structure of object
+with a group of operators \(G\) such that \(p:G\to G/H\)
+is a morphism of objects with operators.
+This structure is functorial in the pair \((H,G)\)
+(\(H\) acting in a universal effective manner on \(G\))
+in the preceding sense.
+\end{corollary}
+\begin{proposition}{5.2.3}\label{IV.5.2.3}
+Let \(u:H\to G\) be a monomorphism of sheaves of groups
+identifying \(H\) with an invariant subsheaf of groups
+of \(G\). There exists on the quotient sheaf \(G/H\)
+a unique structure of sheaf of groups such that
+the canonical morphism \(p:G\to G/H\) is a morphism
+of groups. This structure is functorial in the pair
+\((H,G)\) (\(H\) invariant).
+\end{proposition}
+\begin{proof}
+The proof is similar to that of 5.2.1.
+\end{proof}
+\begin{corollary}{5.2.4}\label{IV.5.2.4}
+Let \(u:H\to G\) be a monomorphism of \(\mathcal C\)-groups
+identifying \(H\) with an invariant subgroup of \(G\).
+Suppose that the action of \(H\) on \(G\) is universal
+effective. There exists on the quotient object
+\(G/H\in\Ob\mathcal C\) a unique group structure such
+that the canonical morphism \(G\to G/H\) is a morphism
+of groups. This structure is functorial in the pair
+\((H,G)\) (\(H\) invariant, \(H\) acting in a universal
+effective manner).
+\end{corollary}
+One can characterize the group structure of \(G/H\)
+in a more expressive manner:
+\begin{proposition}{5.2.5}\label{IV.5.2.5}
+Under the conditions of 5.2.4, let \(K\) be a
+\(\mathcal C\)-group, and \(f:G\to K\) a morphism.
+The following conditions are equivalent:
+\begin{enumeratei}
+\item \(f\) is a morphism of groups compatible with
+the equivalence relation defined by \(H\).
+\item \(f\) is a morphism of groups inducing the
+trivial morphism \(H\to K\).
+\item \(f\) factors through a morphism of groups \(G/H\to K\).
+\end{enumeratei}
+In particular, one has an isomorphism functorial in the group \(K\)
+\[
+\Hom_{\mathcal C\text{-gr.}}(G/H,K)
+\isomto\{f\in\Hom_{\mathcal C\text{-gr.}}(G,K)\mid f\circ u=e\}.
+\]
+\end{proposition}
+\begin{proof}
+The equivalence of (i) and (ii) is proved set-theoretically.
+One evidently has (iii) \(\Rightarrow\) (ii).
+The equivalence of (iii) and (ii) follows from the formula
+\[
+\Hom(G/H,K)\simeq\Hom(i(G)/i(H),K)
+\]
+and the definition of the group structure of \(G/H\).
+\end{proof}
+\begin{remark}{5.2.6}\label{IV.5.2.6}
+In the preceding situation, if the kernel of \(f\)
+is exactly \(H\), the morphism \(G/H\to K\) through
+which \(f\) factors is a monomorphism.
+This follows at once from 3.3.4.
+\end{remark}
+In the case of sheaves of groups, one can specify 4.4.11 by the
+\begin{proposition}{5.2.7}\label{IV.5.2.7}
+Let \(G\) be a sheaf of groups and \(H\) an invariant
+subsheaf of groups. For every subsheaf of groups \(K\)
+of \(G\) containing \(H\), let \(K'\) be the quotient
+group \(K/H\) considered as a subgroup of \(G'=G/H\).
+
+One has \(K=K'\times_{G'}G\), and the maps
+\(K\mapsto K/H\), \(K'\mapsto K'\times_{G'}G\)
+establish a bijection between the set of subsheaves
+of groups of \(G\) containing \(H\) and the set of
+subsheaves of groups of \(G'\).
+Under this correspondence, invariant subsheaves of
+groups of \(G,G'\) correspond.
+\end{proposition}
+\begin{proof}
+The first part follows easily from 4.4.11 and 3.2.4.
+It remains to see that \(K\) is invariant in \(G\)
+if and only if \(K'\) is invariant in \(G'\).
+If \(K\) is invariant in \(G\), then the presheaf
+\(i(K)/i(H)\) is invariant in \(i(G)/i(H)\).
+The same is true of the associated sheaves, by
+virtue of the customary argument.
+Conversely, if \(K'\) is invariant in \(G'\), then
+the fibered product \(K\times_{G'}G\) is invariant
+in \(G\), as one sees immediately.
+% typo?: kept as printed: K rather than K' in the last fibered product.
+\end{proof}
+If now \(L\) is any subsheaf of groups of \(G\),
+let \(\overline L\) be the saturation of \(L\) for
+the equivalence relation defined by \(H\);
+one will also write \(\overline L=L\cdot H\).
+\begin{proposition}{5.2.8}\label{IV.5.2.8}
+Under the preceding conditions, \(L\cdot H\) is a
+subsheaf of groups of \(G\) containing \(H\), and
+the image of \(L\) in \(G/H\) is identified with
+\[
+(L\cdot H)/H\simeq L/(H\cap L).
+\]
+\end{proposition}
+\begin{proof}
+Indeed, denote by \(L'\) the image sheaf of \(L\)
+in \(G/H\). It is a subsheaf of groups of \(G/H\)
+corresponding to \(L\cdot H\) under the correspondence
+of the preceding proposition.
+Since the morphism \(L\to L'\) is covering, hence
+a universal effective epimorphism of sheaves,
+it follows from 4.4.9 that \(L'\) is identified
+with the quotient of \(L\) by the kernel of
+\(L\to L'\), which is evidently precisely \(H\cap L\).
+\end{proof}
+
+Finally consider the following situation:
+one has a sheaf of groups \(G\), a subsheaf of
+groups \(K\), and a subsheaf of groups \(H\) of
+\(K\), invariant in \(K\).
+First let us define an action (on the right) of
+the sheaf of groups \(H\backslash K\) (\(=K/H\))
+on \(G/H\). The group \(K\) acts by right translations
+on \(G\). Since \(H\) is invariant in \(K\), this
+action is compatible with the equivalence relation
+defined by the action of \(H\), and therefore defines
+an action of \(K\) on \(G/H\), that is, a morphism
+from the group \(K^\circ\) opposite to \(K\)
+to \(\underline{\Aut}(G/H)\).
+Since the latter is a sheaf (4.5.13) and this
+morphism is trivial on \(H\), it factors through
+\(K/H\) and defines the desired action.
+Since the right and left actions of \(G\) on
+itself commute, the actions of \(G,K/H\) on
+\(G/H\) commute.
+
+\begin{proposition}{5.2.9}\label{IV.5.2.9}
+Under the preceding conditions, \(K/H\) acts
+freely (on the right) on \(G/H\), and one has
+a canonical isomorphism of sheaves with a
+group of operators \(G\)
+\[
+(G/H)/(K/H)\simeq G/K.
+\]
+When \(K\) is invariant in \(G\), in which case
+\(K/H\) is invariant in \(G/H\) (5.2.7), this
+isomorphism respects the group structures of
+the two members.
+\end{proposition}
+\begin{proof}
+One has an isomorphism of presheaves
+\[
+(i(G)/i(H))/(i(K)/i(H))\isomfrom i(G)/i(K),
+\]
+which respects the structures of objects with
+a group of operators \(i(G)\).
+The announced result is obtained by applying
+the functor \(a\) to this relation.
+\end{proof}
+\begin{corollary}{5.2.10}\label{IV.5.2.10}
+Let \(G\) be a \(\mathcal C\)-group, \(K\) a
+sub-\(\mathcal C\)-group of \(G\), and \(H\)
+an invariant sub-\(\mathcal C\)-group of \(K\).
+Let (M) be a family of morphisms of \(\mathcal C\)
+satisfying axioms (a) to \((\mathrm e_{\mathcal T})\).
+Suppose that the action of \(H\) on \(G\)
+(resp. \(K\)) on the right is (M)-effective.
+Then \(K/H\) acts naturally and freely on
+the right on \(G/H\); this action commutes
+with that of \(G\). The following conditions are equivalent:
+\begin{enumeratei}
+\item The action of \(K\) on \(G\) is (M)-effective.
+\item The action of \(K/H\) on \(G/H\) is (M)-effective.
+\end{enumeratei}
+Under these conditions one has an isomorphism
+of objects\nde{Of \(\mathcal C\).} with a group of operators \(G\):
+\[
+(G/H)/(K/H)\simeq G/K.
+\]
+\end{corollary}

@@ -1,0 +1,57 @@
+\emph{Proof of a):} Suppose the \fppf sheaf $G_X/F$ represented by an $X$-scheme $Y$. Then, by IV 6.3.3, $p:G_X\to Y$ is faithfully flat and locally of finite presentation, and the second square of the diagram below is cartesian:
+\[
+\xymatrix{F\ar[r]\ar[d]&F\times_XG_X\ar[r]\ar[d]&G_X\ar[d]^p\\X\ar[r]_{e_X}&G_X\ar[r]&Y,}
+\]
+the first square being obtained by base change by the unit section $e_X:X\to G_X$. Since $p$ is faithfully flat and locally of finite presentation, the same holds for $F\to X$.
+
+Conversely, suppose $F$ flat over $X$. Put $X^2=X\times_SX$. The morphism $d:G_X\to X^2$ allows one to form the fibered product:
+\[
+\xymatrix{G_X\times_{X^2}G_X\ar[r]\ar[d]&G_X\ar[d]\\G_X\ar[r]&X^2.}
+\]
+Then the morphism $G_X\times_{X^2}G_X\to X^2$ is an $F\times_XX^2$-torsor over $X^2$, and is therefore flat and of finite type (since $F$ is). By Theorem 10.1.1, the morphism $d$ factors uniquely:
+\[
+G_X\xrightarrow{\psi}Y\xrightarrow{\tau}X\times_SX,
+\]
+where $\psi$ is faithfully flat (of finite type) and $\tau$ is a monomorphism of schemes.
+% typo?: kept as printed: the source describes the morphism to X^2 as a torsor.
+
+Thus the morphism of sheaves $\psi:G_X\to Y$ is $F$-invariant, and one obtains a morphism of sheaves $\overline\psi:G_X/F\to Y$. Furthermore, since $\psi$ is faithfully flat (of finite type), the monomorphism of sheaves $\tau$ factors through the image sheaf of $d$, that is, $\widetilde\Gamma$. The isomorphism of sheaves $G_X/F\simeq\widetilde\Gamma$ therefore factors through the monomorphism $Y\to\widetilde\Gamma$. One concludes that $Y$ represents $G_X/F$.
+
+\emph{Proof of b):} Suppose $F$ flat over $X$. Then, by a) and its proof, $G_X/F$ is representable, and the morphism $p:G_X\to G_X/F$ is faithfully flat and of finite presentation. On the other hand, the morphisms $d_i:G_X\to X$ ($i=0,1$) are faithfully flat and of finite presentation by hypothesis. Since $d_i=\overline d_i\circ p$, it follows from EGA IV$_2$, 2.2.13 (iii) and EGA IV$_3$, 11.3.16 that $\overline d_i$ is faithfully flat and of finite presentation.
+\begin{theorem}{10.4.2}\label{V.10.4.2}\nde{Here too there exists a largest open subset $U$ of $X$ satisfying the conclusions of the theorem; moreover, a point $x\in X$ of codimension 1 in $X$ belongs to $U$ if and only if the morphism $(G_X/F)\times_X\Spec(\OO_{X,x})\to\Spec(\OO_{X,x})\times_S\Spec(\OO_{X,x})$ is a closed immersion, cf. N.D.E. (44).}
+Under the hypotheses of 10.2, suppose $F$ flat over $X$. Then there exists a dense saturated open subset $U$ of $X$ such that the quotient \fppf sheaf $V=G\backslash U$ is an $S$-scheme of finite type and $U\to V$ is faithfully flat and of finite presentation.
+\end{theorem}
+\begin{proof}
+Theorem 10.4.1 shows that $G_X/F\simeq\widetilde\Gamma$ is representable. Then the \fppf sheaf $G\backslash X$ is identified with the quotient sheaf of
+\[
+\xymatrix{G_X/F\ar@<.5ex>[r]^{\overline d_1}\ar@<-.5ex>[r]_{\overline d_0}&X.}
+\]
+By what precedes, $\overline d_i:G_X/F\to X$ is faithfully flat and of finite presentation ($i=0,1$), and the morphism
+\[
+\xymatrix{G_X/F\ar[r]^\sim&\widetilde\Gamma\ar@{^{(}->}[r]&X\times_SX}
+\]
+is a monomorphism, that is, $(\overline d_0,\overline d_1)$ is an equivalence pair. Consequently, Theorem 8.1 applies. There therefore exists a dense saturated open subset $U$ of $X$ such that the quotient \fppf sheaf $V=G\backslash U$ is an $S$-scheme of finite type and $U\to V$ is faithfully flat and of finite presentation.
+\end{proof}
+Taking account of the generic flatness theorem (EGA IV$_2$, 6.9.3), one obtains the
+\begin{corollary}{10.4.3}\label{V.10.4.3}
+Under the hypotheses of 10.2, suppose $X$ reduced. Then there exists a dense saturated open subset $U$ of $X$ such that the quotient \fppf sheaf $G\backslash U$ is an $S$-scheme of finite type and $U\to G\backslash U$ is faithfully flat and of finite presentation.
+\end{corollary}
+
+\begin{thebibliography}{Ray67b}
+\bibitem[AK80]{V.AK80}\nde{Additional references cited in this exposé.} A. B. Altman, S. L. Kleiman, \emph{Compactifying the Picard Scheme}, Adv. Math. \textbf{35} (1980), 50--112.
+\bibitem[An73]{V.An73} S. Anantharaman, \emph{Schémas en groupes, espaces homogènes et espaces algébriques sur une base de dimension 1}, Mém. Soc. Math. France \textbf{33} (1973), 5--79.
+\bibitem[BLR90]{V.BLR90} S. Bosch, W. Lütkebohmert, M. Raynaud, \emph{Néron models}, Springer-Verlag, 1990.
+\bibitem[CTS79]{V.CTS79} J.-L. Colliot-Thélène, J.-J. Sansuc, \emph{Fibrés quadratiques et composantes connexes réelles}, Math. Ann. \textbf{244} (1979), 105--134.
+\bibitem[DG70]{V.DG70} M. Demazure, P. Gabriel, \emph{Groupes algébriques}, Masson \& North-Holland, 1970.
+\bibitem[DR81]{V.DR81} J. Dixmier, M. Raynaud, \emph{Sur le quotient d'une variété algébrique par un groupe algébrique}, pp. 327--344 in: \emph{Mathematical Analysis and Applications} (L. Schwartz 65th birthday, ed. L. Nachbin), Adv. Math. Suppl. Stud., Vol. 7A, 1981.
+\bibitem[Fe03]{V.Fe03} D. Ferrand, \emph{Conducteur, descente et pincement}, Bull. Soc. Math. France \textbf{131} (2003), no. 4, 553--585.
+\bibitem[Hi62]{V.Hi62} H. Hironaka, \emph{An example of a non-Kählerian complex analytic deformation of Kählerian complex structures}, Ann. of Math. \textbf{75} (1962), no. 1, 190--208.
+\bibitem[KM97]{V.KM97} S. Keel, S. Mori, \emph{Quotient by groupoids}, Ann. of Math. \textbf{145} (1997), no. 1, 193--213.
+\bibitem[Ko97]{V.Ko97} J. Kollár, \emph{Quotient spaces modulo algebraic groups}, Ann. of Math. \textbf{145} (1997), no. 1, 33--79.
+\bibitem[Ko08]{V.Ko08} J. Kollár, \emph{Quotients by finite equivalence relations}, arXiv: 0812.3608.
+\bibitem[Mum65]{V.Mum65} D. Mumford, \emph{Geometric invariant theory}, Springer-Verlag, 1965; 2nd (resp. 3rd) ed. with J. Fogarty (resp. and F. Kirwan), 1982 (resp. 1994).
+\bibitem[Mur65]{V.Mur65} J. P. Murre, \emph{Representation of unramified functors. Applications} (according to unpublished results of A. Grothendieck), Sém. Bourbaki, Vol. 9, Exp. 294 (1965), Soc. Math. France, 1995.
+% typo: unmatched opening parenthesis in Mur65 -> closed after Grothendieck.
+\bibitem[Ray67a]{V.Ray67a} M. Raynaud, \emph{Passage au quotient par une relation d'équivalence plate}, pp. 78--85 in: \emph{Proc. Conf. Local Fields} (Driebergen) (ed. T. A. Springer), Springer-Verlag, 1967.
+\bibitem[Ray67b]{V.Ray67b} M. Raynaud, \emph{Sur le passage au quotient par un groupoïde plat}, C. R. Acad. Sci. Paris (Sér. A) \textbf{265} (1967), 384--387.
+\end{thebibliography}

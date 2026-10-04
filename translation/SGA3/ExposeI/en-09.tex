@@ -1,0 +1,138 @@
+% Sentences that begin on pp.~47--48.
+% The proof of Proposition~6.8.1 begins on p.~46. The sentence that
+% ends there (``fully faithful \ldots'') is not repeated here.
+
+By hypothesis, one has an isomorphism
+\(\theta\colon\mathrm{pr}_2^*(\mathcal{F})\isomto\mu^*(\mathcal{F})\);
+taking the inverse image of~\(\theta\) by the morphism
+\(\tau\colon G\to G\times_S G\) with components \((\mathrm{id}_G,\varepsilon\circ\pi)\),
+one obtains an isomorphism \(\mathcal{F}\isomto\pi^*\varepsilon^*(\mathcal{F})\).
+
+\begin{remarks}{6.8.2}\label{I.6.8.2}
+(a)~Let us consider the action of \(G\times_S G\) on~\(G\) defined by
+\((g_1,g_2)\cdot g=g_1\,g\,g_2^{-1}\);
+then the stabilizer of the unit section \(\varepsilon\colon S\to G\) is the
+diagonal subgroup~\(H\) of \(G\times_S G\). Consequently, if~\(\mathcal{F}\)
+is a quasi-coherent \((G\times_S G)\)-equivariant \(\OO_G\)-module, then,
+by~6.5.2, \(\mathcal{E}=\varepsilon^*(\mathcal{F})\) is endowed with the
+structure of an \(H\)-\(\OS\)-module.
+
+(b)~One can show that \(\mathcal{F}\mapsto\varepsilon^*(\mathcal{F})\) is an
+equivalence of categories, between the category of quasi-coherent
+\((G\times_S G)\)-equivariant \(\OO_G\)-modules and that of quasi-coherent
+\(H\)-\(\OS\)-modules. This is a particular case of more general ``descent''
+results (\cf Exp.~IV, \S 2 and SGA~1, VIII); see for example \cite{Th87},
+1.2--1.3.
+\end{remarks}
+
+\begin{remark}{6.8.3}\label{I.6.8.3}
+One keeps the notations of~6.8.1. For every quasi-coherent
+\(\OS\)-module~\(\mathcal{E}\), let us denote by \(\pi_*^G\,\pi^*(\mathcal{E})\)
+the sub-\(\OS\)-module of \(\pi_*\pi^*(\mathcal{E})\) whose sections over
+every open~\(V\) of~\(S\) are the
+\(\gamma\in\Gamma(\pi^{-1}(V),\pi^*(\mathcal{E}))\) such that
+\(g\cdot\gamma_{S'}=\gamma_{S'}\) for every \(S'\to V\) and every
+\(g\in G(S')\). Then the natural morphism
+\(\mathcal{E}\to\pi_*^G\,\pi^*(\mathcal{E})\) is an isomorphism: this is
+immediate if \(\pi_*\pi^*(\mathcal{E})=\mathcal{E}\otimes_{\OS}\pi_*(\OO_G)\)
+(for example if \(G\to S\) is affine, or if \(G\to S\) is quasi-compact and
+quasi-separated and~\(\mathcal{E}\) is flat), and this is verified without
+difficulty in the general case.
+\end{remark}
+
+\begin{remark}{6.8.4}\label{I.6.8.4}
+Let \(S\) be a scheme, \(H\) an \(S\)-group scheme operating on an
+\(S\)-scheme~\(X\), and \(\mathcal{F}\) an \(\OX\)-module. One assumes
+that~\(H\) is \emph{flat} over~\(S\), and one denotes by
+\(\mathbf{W}_{\mathrm{P}}(\mathcal{F})\) the restriction of the functor
+\(\mathbf{W}(\mathcal{F})\) to the full subcategory consisting of the
+\emph{flat} \(S\)-schemes.
+Since, by~6.5.1, endowing~\(\mathcal{F}\) with an \(H\)-equivariant module
+structure is equivalent to giving an isomorphism
+\(\theta\colon\mathrm{pr}_X^*(\mathcal{F})\to\lambda^*(\mathcal{F})\) of
+sheaves on \(G\times_S X\), satisfying the ``cocycle condition''
+\((\star\star)\), one sees that, in order to give an \(H\)-equivariant
+module structure on~\(\mathcal{F}\), it suffices to give such a structure
+on \(\mathbf{W}_{\mathrm{P}}(\mathcal{F})\).
+% typo: cocyle -> cocycle
+% typo?: kept as printed (sheaves on \(G\times_S X\), while the group is \(H\))
+\end{remark}
+
+\begin{enonce}{Recall}{6.8.5}\label{I.6.8.5}
+Let \(X\) be an \(S\)-scheme and \(Y\) a sub-\(S\)-scheme of~\(X\). One denotes
+by \(\mathcal{N}_{Y/X}\) the conormal sheaf of the immersion
+\(i\colon Y\hookrightarrow X\) (\cf EGA~IV\(_4\), 16.1.2). If \(S'\to S\) is a
+\emph{flat} morphism and if one denotes by \(i'\colon Y'\hookrightarrow X'\)
+the immersion deduced from~\(i\) by base change, then, by \loccit,
+16.2.2~(iii), one has
+\(\mathcal{N}_{Y/X}\otimes_{\OO_Y}\OO_{Y'}=\mathcal{N}_{Y'/X'}\).
+\end{enonce}
+
+\begin{proposition}{6.8.6}\label{I.6.8.6}
+Let \(S\) be a scheme, \(X\) an \(S\)-group scheme, and \(Y\) a group
+sub-\(S\)-scheme of~\(X\). One assumes that~\(Y\) is \emph{flat} over~\(S\).
+Then the conormal sheaf \(\mathcal{N}_{Y/X}\) is a
+\((Y\times_S Y)\)-equivariant \(\OO_Y\)-module.
+\end{proposition}
+
+Indeed, \(H=Y\times_S Y\) is flat over~\(S\), so, by remark~6.8.4, it
+suffices to endow \(\mathbf{W}_{\mathrm{P}}(\mathcal{N}_{Y/X})\) with the
+structure of an \(H\)-equivariant module. Let \(S'\) be a flat \(S\)-scheme,
+let \(Y'\hookrightarrow X'\) be the immersion obtained by base change, and
+let \(\mathcal{N}'=\mathcal{N}_{X/Y}\otimes_{\OO_Y}\OO_{Y'}\).
+% typo?: kept as printed (\(\mathcal{N}_{X/Y}\); 6.8.5 has \(\mathcal{N}_{Y/X}\))
+By~6.8.5, one has \(\mathcal{N}'=\mathcal{N}_{Y'/X'}\).
+
+Every \(h\in H(S')\) induces an automorphism of~\(Y'\), and one therefore
+obtains, for every \(y\in Y'(S')\), isomorphisms
+\[
+\Gamma(S',y^*(\mathcal{N}'))\isomto\Gamma(S',y^*h^*(\mathcal{N}'))
+\]
+which endow \(\mathbf{W}_{\mathrm{P}}(\mathcal{N})\) with the structure of an
+\(H\)-equivariant module (\cf 6.1).
+
+% Printed as a heading on the same page, not as a new chapter.
+\makeatletter
+\renewcommand{\@bibtitlestyle}{%
+  \par\addvspace{1.1\baselineskip}%
+  \noindent{\large\bfseries Bibliography}%
+  \nde{: additional references cited in this Exposé.}%
+  \par\addvspace{0.45\baselineskip}%
+}
+\makeatother
+\begin{thebibliography}{DG70}
+
+\bibitem[DG70]{DG70}
+M.~Demazure, P.~Gabriel, \emph{Groupes Algébriques}, Masson \&
+North-Holland, 1970.
+
+\bibitem[Gr57]{Gr57}
+A.~Grothendieck, Sur quelques points d'algèbre homologique, \emph{Tôhoku
+Math.\ J.}\ \textbf{9} (1957), 119--221.
+
+\bibitem[Ja03]{Ja03}
+J.~C.~Jantzen, \emph{Representations of algebraic groups}, Academic Press,
+1987; 2nd~ed.\ Amer.\ Math.\ Soc., 2003.
+
+\bibitem[GIT]{GIT}
+D.~Mumford, \emph{Geometric invariant theory}, Springer-Verlag, 1965;
+2nd~ed., with J.~Fogarty, 1982; 3rd~ed., with J.~Fogarty \& F.~Kirwan, 1994.
+
+\bibitem[Ni02]{Ni02}
+N.~Nitsure, Representability of~\(\GL_E\), \emph{Proc.\ Indian Acad.\ Sci.}\
+\textbf{112} (2002), \No 4, 539--542.
+
+\bibitem[Ni04]{Ni04}
+N.~Nitsure, Representability of \(\Hom\) implies flatness, \emph{Proc.\
+Indian Acad.\ Sci.}\ \textbf{114} (2004), \No 1, 7--14.
+
+\bibitem[Se68]{Se68}
+J.-P.~Serre, Groupes de Grothendieck des schémas en groupes réductifs
+déployés, \emph{Publ.\ math.\ I.H.É.S.}\ \textbf{34} (1968), 37--52.
+
+\bibitem[Th87]{Th87}
+R.~W.~Thomason, Equivariant resolution, linearization, and Hilbert's
+fourteenth problem over arbitrary base schemes, \emph{Adv.\ Maths.}\
+\textbf{65} (1987), 16--34.
+
+\end{thebibliography}

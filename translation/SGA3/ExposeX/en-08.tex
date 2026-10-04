@@ -1,0 +1,100 @@
+% PDF pp. 41--44; continuation of sketch of proof of 9.3.1.
+(See also [Ill72], VI.8.1.6.)
+\end{itemize}
+\end{proof}
+For every group $H$, the equivalences of categories above induce equivalences between the categories of $H$-torsors, the latter being locally constant sheaves endowed with an action of $H$, with fibers isomorphic to $H$ acting on itself by translation.
+
+\numpara{9.4}\textbf{Fundamental groups and groupoids.} --- It follows from the preceding equivalences of categories that for every group $H$ and every simplicial set $E$, the sets of isomorphism classes of $H$-torsors $H^1(E,H)$, $H^1(E^\sim,H)$, $\pi_0(\Hom(\Pi(E),BH))$ and $H^1(|E|,H)$ are naturally in bijection. Recall that $BH$ denotes the one-object groupoid associated with $H$, and $\pi_0$ the functor associating with a category the set of isomorphism classes of its objects.
+
+Similarly, if $e$ is a point of $E$, the preceding equivalences induce bijections between the sets of isomorphism classes of $H$-torsors trivialized over $e$, denoted respectively by $H^1(E\ \mathrm{rel}\ e,H)$, $H^1(E^\sim\ \mathrm{rel}\ e^\sim,H)$, $\Hom(\pi_1(\Pi(E),e),H)$ and $H^1(|E|\ \mathrm{rel}\ |e|,H)$. Recall that $\pi_1(\Pi(E),e)$ denotes the group $\Isom_{\Pi(E)}(e,e)$. For variable $H$, these functors are represented, in the connected case, by a group denoted by $\pi_1(E,e)$. The group $\pi_1(E,e)$ is isomorphic to $\pi_1(\Pi(E),e)$ and $\pi_1(|E|,|e|)$, hence also to the fundamental group of a simplicial set as defined by Kan (cf. e.g. [May67], 16.1 or [Ill72], I.2.1.1). (Recall that the set $H^1(E,H)$ is for its part isomorphic to the set $H^1(\pi_1(E,e),H)$ of morphisms to $H$ modulo conjugacy, also denoted by $\Hom\operatorname{ext}(\pi_1(E,e),H)$.)
+
+\numpara{9.5}\textbf{Cones.} ---
+\begin{enoncerm}{Definitions}{9.5.1}\label{X.9.5.1}
+(1) Let $f:E'\to E$ be a morphism of simplicial sets. Recall (cf. for example [Del74], 6.3.1) that $C(f)$ denotes the pointed simplicial set whose underlying set in degree $n\geq0$ is
+\[
+E_n\coprod\left(\coprod_{i<n}E'_i\right)\coprod\star,
+\]
+where $\star$ is a singleton. We leave it to the reader to define the simplicial maps, the definition of the faces in degrees at most two being recalled below. (See also [GZ67], VI.2 for a pointed variant.) The category of locally constant sheaves on $C(f)$ is equivalent to the category of locally constant sheaves on $E$ endowed with a trivialization of the inverse image over $E'$. The simplicial set $C(f)$ is naturally pointed by $\star\to C(f)$.
+
+(2) Let $f:T'\to T$ be a morphism of topoi. Denote by $C(f)$ the topos whose objects are the quintuples $(F,F',A,\alpha:f^*F\to F',\beta:A\to\Gamma(T',F'))$, where $F$ (resp. $F'$) is an object of $T$ (resp. $T'$), $A$ is a set, and $\alpha$ (resp. $\beta$) is a morphism in $T'$ (resp. $\Ens$). (See also [Del80], 4.3.4 and [Ill72], III.4 for a variant of this construction.) The category of locally constant sheaves on $C(f)$ is equivalent to the category of locally constant sheaves on $T$ endowed with a trivialization of the inverse image over $T'$. The topos $C(f)$ is naturally pointed by the fiber functor sending the quintuple $(F,F',A,\alpha:f^*F\to F',\beta:A\to\Gamma(T',F'))$ to the set $A$.
+
+(3) Let $f:G'\to G$ be a morphism of groupoids. Denote by $C(f)$ the colimit of the diagram
+\[
+G\from G'\to B1
+\]
+where $B1$ is the one-object category (one object, one arrow). The category of locally constant sheaves on $C(f)$ is equivalent to the category of locally constant sheaves on $G$ endowed with a trivialization of the inverse image over $G'$.
+
+(4) Let $f:X'\to X$ be a morphism of topological spaces. Denote by $C(f)$ the colimit of the diagram
+\[
+\star\from X'\times\{0\}\to X'\times[0,1]\from X'\times\{1\}\to X.
+\]
+The category of locally constant sheaves on $C(f)$ is equivalent to the category of locally constant sheaves on $X$ endowed with a trivialization of the inverse image over $X'$. The topological space $C(f)$ is naturally pointed by $\star\to C(f)$.
+\end{enoncerm}
+\numpara{9.5.2}\textbf{Descent data on the cone of a simplicial map.}
+Let $f:E'\to E$ be a morphism of simplicial sets and $C(f)$ its cone (cf. above, (1)). Use the letter $p$ (resp. $q,r$) to denote the face maps of $E'$ (resp. $E,C(f)$). Before stating the proposition below, let us make explicit the faces $r$ in degrees at most two in terms of $p,q$. By convention, $p_{ij}$ (resp. $p_i$) is the face map $E'_2=E'_{\{1,2,3\}}\to E'_1=E'_{\{1,2\}}$ (resp. $E'_1=E'_{\{1,2\}}\to E'_0=E'_{\{1\}}$) corresponding to the increasing map $\{1,2\}\to\{1,2,3\}$ (resp. $\{1\}\to\{1,2\}$) with image $\{i,j\}$ (resp. $\{i\}$).\footnote{This convention departs from the current simplicial standard but is closer to the notation used by Grothendieck in his descent theory.} One adopts the same convention for the faces of $E$ and $C(f)$.
+The morphism
+\[
+r_1:C(f)_1=E_1\coprod E'_0\coprod\star\to C(f)_0=E_0\coprod\star
+\]
+(resp. $r_2$) is:
+\begin{itemize}
+\item $q_1:E_1\to E_0$ (resp. $q_2:E_1\to E_0$) on $E_1$;
+\item $E'_0\to\star$ (resp. $f_0:E'_0\to E_0$) on $E'_0$;
+\item $\star\to\star$ on $\star$.
+\end{itemize}
+Similarly, the morphism
+\[
+r_{21}:C(f)_2=E_2\coprod E'_1\coprod E'_0\coprod\star\to C(f)_1=E_1\coprod E'_0\coprod\star
+\]
+(resp. $r_{32},r_{31}$) is:
+\begin{itemize}
+\item $q_{21}:E_2\to E_1$ (resp. $q_{32},q_{31}$) on $E_2$;
+\item $p_1:E'_1\to E'_0$ (resp. $f_1:E'_1\to E_1$, $p_2:E'_1\to E'_0$) on $E'_1$;
+\item $E'_0\to\star$ (resp. $\mathrm{Id}:E'_0\to E'_0$, $\mathrm{Id}:E'_0\to E'_0$) on $E'_0$.
+\end{itemize}
+Let $H$ be a descent datum on $C(f)$, i.e. a sheaf $H_0$ on $C(f)_0=E_0\coprod\star$ endowed with an isomorphism $\gamma:r_1^*H_0\isomto r_2^*H_0$ between its inverse images on $C(f)_1=E_1\coprod E'_0\coprod\star$ satisfying the cocycle relation $r_{31}^*\gamma=r_{32}^*\gamma\circ r_{21}^*\gamma$.
+
+The restriction of the isomorphism $\gamma$ to $E_1$ (resp. $E'_0$) is a descent datum $\beta:q_1^*G_0\isomto q_2^*G_0$, where $G_0$ is the restriction of $H_0$ to $E_0$ (resp. a trivialization $t:\underline{H_0(\star)}\isomto f^*G_0=:F_0$, where $\underline{H_0(\star)}$ is the constant sheaf with stalk $H_0(\star)$). The restriction of the cocycle relation satisfied by $\gamma$ to $E_2$ (resp. $E'_1$) is the cocycle relation for $\beta$ (resp. $p_2^*(t)=f_1^*(\beta)\circ p_1^*(t)$). This latter relation means that the trivialization $t$ is compatible with the descent datum $f_1^*(\beta)$ induced by $\beta$ on $F_0$. It follows that:
+\begin{proposition}{9.5.3}\label{X.9.5.3}
+Let $f:E'\to E$ be a morphism of simplicial sets and $C(f)$ its cone, pointed by $\star$. The category of descent data on $C(f)$ trivialized over $\star$ is equivalent to the category of descent data on $E$ endowed with a trivialization of the descent datum induced on $E'$.
+\end{proposition}
+
+\numpara{9.6}\textbf{Representability of the functor $\pi^1(S'/S,\xi;-)$}. --- The notation is that of page 90, and one henceforth supposes the connected components of $S_0=S'$ and $S_1=S'\times_S S'$ open. Under this hypothesis one has the following explicit combinatorial description, which follows immediately from the recollections above.
+\begin{proposition}{9.6.1}\label{X.9.6.1}
+For every group $G$, the set $\pi^1(S'/S,\xi;G)$ of isomorphism classes of descent data endowed with a trivialization over $\xi$ is in natural bijection with the relative nonabelian cohomology set $H^1(K\ \mathrm{rel}\ k,G):=H^1(\widetilde K\ \mathrm{rel}\star,G)$.
+\end{proposition}
+It follows that this functor is representable by a group, denoted by $\pi_1(K,k)$ (the ``relative fundamental group''), as soon as the simplicial set $\widetilde K=C(k\to K)$ is connected. One verifies immediately that this is so if and only if the map $\pi_0(k)\to\pi_0(K)$ is surjective. In particular it suffices that the simplicial set $K$ be connected. As indicated in the text, this is the case if the scheme $S$ is connected and the morphism $S'\to S$ universally submersive.
+
+\numpara{9.7}\textbf{Contractibility of $k$, counterexample to injectivity of $\mathbf k_\bullet\to\mathbf K_\bullet$.} --- The following two propositions make N.D.E. (53) more precise.
+\begin{proposition}{9.7.1}\label{X.9.7.1}
+Let $\kappa$ be an algebraically closed field, and $X$ a connected $\kappa$-scheme. For every integer $i\geq0$, denote by $X_i$ the $(i+1)$-st fibered power of $X$ over $\kappa$. For every integer $i\geq0$, the canonical map
+\[
+\pi_0(X_i)\to\pi_0(X)^{i+1}
+\]
+is a bijection. In particular, the simplicial set $\pi_0(X_\bullet)$ is contractible.
+\end{proposition}
+It suffices to prove the following lemma, which follows by passage to the limit from the Künneth formula. [Expand?]
+\begin{lemma}{9.7.2}\label{X.9.7.2}
+Let $\kappa$ be an algebraically closed field and $X,Y$ two connected $\kappa$-schemes. Then the fibered product $X\times_\kappa Y$ is connected.
+\end{lemma}
+\begin{proposition}{9.7.3}\label{X.9.7.3}
+Let $X$ be a connected scheme, $X'\to X$ a finite étale morphism and $\overline x$ a geometric point of $X$ located at a point $x$. The canonical morphism $\pi_0(X'_{\overline x})\to\pi_0(X')$ is surjective.
+\end{proposition}
+Indeed, every connected component of $X'$ has as image an open and closed subset of $X$, and hence meets the fiber $X'_x$. The morphism $\pi_0(X'_x)\to\pi_0(X')$ is therefore surjective, as is the morphism $\pi_0(X'_{\overline x})\to\pi_0(X'_x)$.
+
+\begin{thebibliography}{May67}
+\item[]\nde{Additional references cited in this Expos\'e; references [AM69] and following concern the Addenda.}
+\bibitem[BAC]{X.BAC} N. Bourbaki, \emph{Algèbre commutative}, Chap. I--IV, Hermann, 1961, Masson, 1985, Springer-Verlag, 2006.
+\bibitem[BEns]{X.BEns} N. Bourbaki, \emph{Théorie des ensembles}, Chap. I--IV, Hermann, 1970.
+\bibitem[Pes66]{X.Pes66} C. Peskine, \emph{Une généralisation du ``Main Theorem'' de Zariski}, Bull. Sci. Math. \textbf{90} (1966), 119--127.
+\bibitem[PY06]{X.PY06} G. Prasad, J.-K. Yu, \emph{On quasi-reductive group schemes}, J. Alg. Geom. \textbf{15} (2006), 507--549.
+\bibitem[Ray70]{X.Ray70} M. Raynaud, \emph{Anneaux locaux henséliens}, Lect. Notes Maths. \textbf{169}, Springer-Verlag, 1970.
+\bibitem[AM69]{X.AM69} M. Artin \& B. Mazur, \emph{Etale homotopy}, Lect. Notes Maths \textbf{100}, Springer, 1969.
+\bibitem[Del74]{X.Del74} P. Deligne, \emph{Théorie de Hodge III}, Publ. Math. IHÉS \textbf{44} (1974), 5--77.
+\bibitem[Del80]{X.Del80} P. Deligne, \emph{La conjecture de Weil II}, Publ. Math. IHÉS \textbf{52} (1980), 137--252.
+\bibitem[Fri82]{X.Fri82} E. M. Friedlander, \emph{Etale homotopy of simplicial schemes}, Princeton Univ. Press, 1982.
+\bibitem[GZ67]{X.GZ67} P. Gabriel \& M. Zisman, \emph{Calculus of fractions and homotopy theory}, Springer, 1967.
+\bibitem[Ill72]{X.Ill72} L. Illusie, \emph{Complexe cotangent et déformations I \& II}, Lect. Notes Maths \textbf{239} \& \textbf{283}, Springer, 1971 \& 1972.
+\bibitem[Kan58]{X.Kan58} D. Kan, \emph{A combinatorial definition of homotopy groups}, Ann. of Math. \textbf{67} (1958), 282--312.
+\bibitem[May67]{X.May67} J. P. May, \emph{Simplicial objects in algebraic topology}, Univ. of Chicago Press, 1967.
+\end{thebibliography}

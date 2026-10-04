@@ -1,0 +1,206 @@
+% Source PDF pp. 39–44; continuation of Corollary 5.7.
+\begin{enumeratei}
+\item Let $t,t'\in\underline{\mathrm{Of}}(\underline{\mathrm{Dyn}}(G))(S)$. If there exist in $G$ a parabolic subgroup of type $t$ and a parabolic subgroup of type $t'$, there exists a parabolic subgroup of type $t\cap t'$. In particular, there is a least element $t_{\min}$ in the set of the $t(P)$, as $P$ ranges over the set of parabolic subgroups of $G$.
+\item Every parabolic subgroup of $G$ contains a minimal parabolic subgroup. For a parabolic subgroup of $G$ to be minimal, it is necessary and sufficient that it be of type $t_{\min}$. Two minimal parabolic subgroups of $G$ are conjugate by an element of $G(S)$.
+\end{enumeratei}
+\end{corollary}
+This follows at once from 5.4 and 5.5(i).
+
+\begin{remark}{5.8}\label{XXVI.5.8}
+A parabolic subgroup opposite to a minimal parabolic subgroup is also minimal; this implies $s(t_{\min})=t_{\min}$.
+\end{remark}
+
+\begin{corollary}{5.9}\label{XXVI.5.9}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $P$ a parabolic subgroup of $G$. The canonical morphism
+\[
+ G\to G/P=X
+\]
+makes $G$ a locally trivial $X$-bundle (in the Zariski sense) with group $P_X$. If $L$ is a Levi subgroup of $P$, the canonical morphism (\cf 3.12)
+\[
+ G\to G/L=Y
+\]
+makes $G$ a locally trivial $Y$-bundle (in the Zariski sense) with group $L_Y$.
+\end{corollary}
+It suffices to prove that if one has a morphism $S'\to S$, where $S'$ is local, and a morphism $S'\to X$ (resp. $S'\to Y$), it lifts to a morphism $S'\to G$. In other words, one can assume that $S$ is local and must show that the map $G(S)\to X(S)$ (resp. $G(S)\to Y(S)$) is surjective.
+
+The first assertion was proved in 5.2; let us prove the second. Let $y\in Y(S)$; its canonical image in $X(S)$ comes from a $g\in G(S)$; the projection $y'$ of $g$ in $Y(S)$ therefore has the same projection as $y$ in $X(S)$. There is therefore a unique $u\in\operatorname{rad}^{\mathrm u}(P)(S)$ such that $y'u=y$, and the projection of $gu$ in $Y(S)$ is indeed $y$.
+
+\begin{corollary}{5.10}\label{XXVI.5.10}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group.
+\begin{enumeratei}
+\item Let $P$ be a parabolic subgroup of $G$, $L$ a Levi subgroup of $P$. The canonical maps (\cf 3.21) induce bijections
+\[
+ H^1(S,L)\isomto H^1(S,P)\isomto H^1_{t(P)}(S,G).
+\]
+\item Let $t,t'\in\underline{\mathrm{Of}}(\underline{\mathrm{Dyn}}(G))(S)$; one has (\cf 3.21)
+\[
+ H^1_t(S,G)\cap H^1_{t'}(S,G)=H^1_{t\cap t'}(S,G).
+\]
+% Source PDF p. 40.
+\item If $P$ and $Q$ are two parabolic subgroups of $G$ in osculatory position, the following canonical diagram is cartesian and consists of injections:
+\[
+\xymatrix{
+ H^1(S,P)\ar[r]&H^1(S,G)\\
+ H^1(S,P\cap Q)\ar[u]\ar[r]&H^1(S,Q)\ar[u].
+}
+\]
+\end{enumeratei}
+\end{corollary}
+Let us prove (i). The map $H^1(S,L)\to H^1(S,P)$ is bijective by 2.3; the map $H^1(S,P)\to H^1_{t(P)}(S,G)$ is surjective (3.21); let us show that it is injective, \ie that the canonical map $H^1(S,P)\to H^1(S,G)$ is injective. Let $Q$ be a principal bundle under $P$, $Q_1$ the associated principal bundle under $G$, $P'$ and $G'$ the corresponding twisted forms of $P$ and $G$. It is clear that $G'$ is a reductive $S$-group and that $P'$ is a parabolic subgroup of it. The set of elements of $H^1(S,P)$ that have the same image as the class of $Q$ in $H^1(S,G)$ is naturally identified with the kernel of the canonical map $H^1(S,P')\to H^1(S,G')$, and the latter, by the cohomology exact sequence, with the set of orbits of $G'(S)$ in $(G'/P')(S)$ (for these arguments in nonabelian cohomology, see Giraud's thesis\nde{See \cite{Gi71}, \S~III.3.}). But $G'(S)$ acts transitively on $(G'/P')(S)$ by 5.2.
+
+Let us prove (ii): let $Q$ be a principal homogeneous bundle under $G$ and $G^Q$ the corresponding twisted form of $G$. By definition (3.21), we must prove that $G^Q$ has a parabolic subgroup of type $t\cap t'$ if and only if it has parabolic subgroups of type $t$ and $t'$, which is simply the conjunction of 3.8 and 5.7(i). Finally, (iii) follows at once from (i) and (ii).
+
+Let us now state a consequence of 5.3.
+\begin{corollary}{5.11}\label{XXVI.5.11}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group, $P$ a parabolic subgroup of $G$. If $P\neq G$, there are at least three distinct parabolic subgroups of $G$ of the same type as $P$; in other words, $P\neq G$ implies $(G(S):P(S))\geq3$.
+\end{corollary}
+Indeed, let $P'$ be a parabolic subgroup of $G$ opposite to $P$ (4.3.5(i)). Since $P\neq G$, one has $\operatorname{rad}^{\mathrm u}(P')\neq e$ (by 4.3.2, for example). By 2.1, $\operatorname{rad}^{\mathrm u}(P')(S)\neq e$; let therefore $u\in\operatorname{rad}^{\mathrm u}(P')(S)$, $u\neq e$. Then $\operatorname{int}(u)P\neq P$, and by 5.3 there is a $P_1$ of the same type as $P$ and opposite to $P$ and $\operatorname{int}(u)P$; then $P_1,P$ and $\operatorname{int}(u)P$ are three distinct parabolic subgroups of $G$ of the same type as $P$.
+
+\sgasection{6}{Parabolic subgroups and split tori}
+\begin{proposition}{6.1}\label{XXVI.6.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $\mathfrak g=\Lie(G/S)$, and $Q$ a split subtorus of $G$. Write $Q=D_S(M)$ and let
+\[
+ \mathfrak g=\coprod_{\alpha\in M}\mathfrak g^\alpha
+\]
+be the decomposition of $\mathfrak g$ under the action of $Q$. Let $M_1$ be a subset of $M$ such that $0\in M_1$ and $\alpha,\beta\in M_1\Rightarrow\alpha+\beta\in M_1$.
+% Source PDF p. 41.
+\begin{enumeratei}
+\item There is a unique smooth subgroup $H_{M_1}$ of $G$, with connected fibers, containing $\uCentr_G(Q)$ and whose Lie algebra is $\coprod_{\alpha\in M_1}\mathfrak g^\alpha$.
+\item One has the following implications:
+\[
+\begin{aligned}
+ M_1=\{0\}&\ \Longrightarrow\ H_{M_1}=\uCentr_G(Q),\\
+ M_1=-M_1&\ \Longrightarrow\ H_{M_1}\text{ is reductive},\\
+ M_1\cup(-M_1)=M&\ \Longrightarrow\ H_{M_1}\text{ and }H_{-M_1}\text{ are opposite}\\
+ &\hspace{3.3em}\text{parabolic subgroups of }G,\text{ with common}\\
+ &\hspace{3.3em}\text{Levi subgroup }H_{M_1\cap-M_1}.
+\end{aligned}
+\]
+\end{enumeratei}
+\end{proposition}
+To prove (i) and (ii), which are local for the (fpqc) topology, one can assume that $Q$ is contained in a maximal torus $T$ of $G$; one can moreover split $G$ relative to $T$. Assertion (i) then follows at once from Exp. XXII, 5.3.5, 5.4.5 and 5.4.7; the assertions of (ii) follow from Exp. XXII, 5.3.5, 5.10.1, 5.11.3 and from this exposé, 1.4 and 4.3.2.
+
+\begin{corollary}{6.2}\label{XXVI.6.2}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $Q$ a split subtorus of $G$. There is a parabolic subgroup of $G$ of which $\uCentr_G(Q)$ is a Levi subgroup.
+\end{corollary}
+Indeed, writing $Q=D_S(M)$, one chooses a total ordering on the group $M$ and calls $M_1$ the set of positive elements of $M$; the group $H_{M_1}$ answers the question.
+
+\begin{corollary}{6.3}\label{XXVI.6.3}
+If the reductive $S$-group $G$ has a noncentral split subtorus, it has a proper parabolic subgroup (\ie $\neq G$).
+\end{corollary}
+By 5.9 and 5.10, one deduces from 6.2:
+\begin{corollary}{6.4}\label{XXVI.6.4}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $Q$ a split subtorus of $G$. The canonical morphism $G\to G/\uCentr_G(Q)$ is a locally trivial fibration.
+
+If $S$ is semi-local, the map $G(S)\to(G/\uCentr_G(Q))(S)$ is surjective, and the map $H^1(S,\uCentr_G(Q))\to H^1(S,G)$ is injective.
+\end{corollary}
+
+\numpara{6.5}\label{XXVI.6.5}
+Suppose that $S$ is connected. If $T$ is an $S$-torus and if $T'$ and $T''$ are two split subtori of $T$, their product $T'\cdot T''$\nde{One has adopted multiplicative notation, \ie replaced ``their sum $T'+T''$'' by ``their product $T'\cdot T''$''.} is also a split subtorus of $T$. Indeed, it is identified with the quotient of $T'\times_S T''$ by $T'\cap T''$, a quotient that is split by Exp. IX, 2.11. It follows that $T$ has a largest split subtorus; one denotes it by $T_{\mathrm{spl}}$.
+
+\begin{lemma}{6.6}\label{XXVI.6.6}
+Let $S$ be a connected scheme, $T$ an isotrivial $S$-torus, $T_{\mathrm{spl}}$ its largest split subtorus. The following conditions are equivalent:
+\begin{enumeratei}
+\item There is a homomorphism $T\to\mathbf{G}_{\mathrm m,S}$ distinct from $e$.
+% Source PDF p. 42.
+\item $T_{\mathrm{spl}}\neq e$.
+\end{enumeratei}
+\end{lemma}
+Since $T$ is assumed to be isotrivial, there are a finite group $\Gamma$, a connected Galois principal covering $S'\to S$ with group $\Gamma$, and an isomorphism $T_{S'}\simeq D_{S'}(M)$; $M$ is then endowed with a $\Gamma$-module structure, and one has a natural isomorphism $\Hom_S(T,\mathbf{G}_{\mathrm m,S})=H^0(\Gamma,M)$.
+
+Moreover, let $V$ be the vector subspace of $M\otimes\QQ$ generated by the elements of the form $g(m)-m$, $g\in\Gamma$, $m\in M$. One checks at once that $(T_{\mathrm{spl}})_{S'}$ is identified with $D_{S'}(M/M\cap V)$. Assertion (i) is therefore equivalent to $H^0(\Gamma,M)\neq0$, or again to $H^0(\Gamma,M\otimes\QQ)\neq0$, whereas assertion (ii) is equivalent to $M\neq M\cap V$, or again to $M\otimes\QQ\neq V$. Now one has $M\otimes\QQ=H^0(\Gamma,M\otimes\QQ)\oplus V$, as one checks at once (consider the projector $M\otimes\QQ\to H^0(\Gamma,M\otimes\QQ)$ that sends $x$ to the average of its transforms by $\Gamma$).
+
+\begin{lemma}{6.7}\label{XXVI.6.7}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $P$ a parabolic subgroup of $G$ such that $P\neq G$, $L$ a Levi subgroup of $P$, $Q$ its radical. There is a homomorphism $Q\to\mathbf{G}_{\mathrm m,S}$ distinct from $e$.
+\end{lemma}
+Consider the unipotent radical $U$ of $P$; it is invariant under $\operatorname{int}(P)$, hence under $\operatorname{int}(Q)$. Consider the invertible $\OS$-module $\det(\Lie(U))$, the ``maximum exterior power'' of the locally free $\OS$-module $\Lie(U)$. The adjoint representation defines a group homomorphism
+% typo: the source is missing a closing parenthesis in Aut(det(Lie(U))).
+\[
+ f:\ Q\to\underline{\Aut}(\det(\Lie(U)))=\mathbf{G}_{\mathrm m,S}.
+\]
+If $P\neq G$, then $U\neq e$. Choose an $s\in S$ such that $U_{\overline s}\neq e$. Splitting $G_{\overline s}$ relative to a maximal torus containing $Q_{\overline s}$, one sees at once that $f_{\overline s}\neq e$.
+
+\begin{proposition}{6.8}\label{XXVI.6.8}
+Let $S$ be a connected semi-local scheme, $G$ a reductive $S$-group, $P$ a parabolic subgroup of $G$, $L$ a Levi subgroup of $P$, $Q$ its radical, $Q_{\mathrm{spl}}$ the largest split subtorus of $Q$ (\ie the largest split central subtorus of $L$). Then
+\[
+ L=\uCentr_G(Q_{\mathrm{spl}}).
+\]
+\end{proposition}
+Put $L'=\uCentr_G(Q_{\mathrm{spl}})$; it is a reductive subgroup of $G$ containing $L$; moreover, $P'=P\cap L'$ is a parabolic subgroup of $L'$, with Levi subgroup $L$ (1.20). If $L'\neq L$, then $L'\not\subset P$ (since $L$ is a maximal reductive subgroup of $P$, \cf 1.7), hence $P'\neq L'$.
+
+Let $G_1$ be the derived group of $G$, and $P_1=P'\cap G_1$. By 1.19, $P_1$ is a parabolic subgroup of the semisimple group $G_1$, $L_1=L\cap G_1$ is a Levi subgroup of it, and
+% typo?: the proof uses the derived group of G, not L'; kept as printed.
+\[
+ Q_1=\operatorname{rad}(L_1)=(\operatorname{rad}(L)\cap G_1)^0=(Q\cap G_1)^0.
+\]
+Since $L_1$ has a maximal torus $T_1$ (Exp. XIV, 3.20), and the latter is isotrivial (Exp. XXIV, 4.1.5), $Q_1$, which is a subtorus of $T_1$, is also isotrivial (Exp. IX, 2.11); since $P_1\neq G_1$, one can apply 6.7 and 6.6, and therefore has $(Q_1)_{\mathrm{spl}}\neq e$, whence $(Q_{\mathrm{spl}}\cap G_1)^0\neq e$, hence $Q_{\mathrm{spl}}\not\subset\operatorname{rad}(L')$ (since $\operatorname{rad}(L')\cap G_1$ is finite), which contradicts the definition of $L'$.
+
+% Source PDF p. 43.
+\begin{corollary}{6.9}\label{XXVI.6.9}
+Let $S$ be a connected semi-local scheme, $G$ a reductive $S$-group, $Q$ a critical subtorus of $G$ (\ie such that $\operatorname{rad}(\uCentr_G(Q))=Q$). For $\uCentr_G(Q)$ to be a Levi subgroup of a parabolic subgroup of $G$, it is necessary and sufficient that $\uCentr_G(Q)=\uCentr_G(Q_{\mathrm{spl}})$, that is, that $\Lie(G)^Q=\Lie(G)^{Q_{\mathrm{spl}}}$.
+\end{corollary}
+This follows from 6.2 and 6.8.
+
+\begin{corollary}{6.10}\label{XXVI.6.10}
+Let $S$ be a connected semi-local scheme, $G$ a reductive $S$-group, $L$ a subgroup of $G$. The following conditions are equivalent:
+\begin{enumeratei}
+\item There is a parabolic subgroup of $G$ of which $L$ is a Levi subgroup.
+\item There is a split subtorus of $G$ of which $L$ is the centralizer.
+\item There is a homomorphism $\mathbf{G}_{\mathrm m,S}\to G$ of which $L$ is the centralizer.
+\end{enumeratei}
+\end{corollary}
+Indeed, one has (i) $\Rightarrow$ (ii) by 6.8, and (iii) $\Rightarrow$ (i) by 6.1; it remains to prove (ii) $\Rightarrow$ (iii). Suppose therefore that $L=\uCentr_G(Q)$, with $Q=D_S(M)$; write $\mathfrak g=\Lie(G/S)$ and
+\[
+ \mathfrak g=\coprod_{\alpha\in M}\mathfrak g^\alpha,
+\]
+and let $R$ be the set of the $\alpha\in M-\{0\}$ such that $\mathfrak g^\alpha\neq0$.
+
+Since $R$ is finite and does not contain 0, there is a homomorphism $u:M\to\ZZ$ such that $u(\alpha)\neq0$ for every $\alpha\in R$. By duality, $u$ gives a homomorphism $\mathbf{G}_{\mathrm m,S}\to Q$, hence a homomorphism $f:\mathbf{G}_{\mathrm m,S}\to G$. One has $\uCentr_G(f)\supset\uCentr_G(Q)$; these are two smooth subgroups of $G$, with connected fibers; their Lie algebras coincide (since both are equal to $\mathfrak g^0$); they therefore coincide, by a usual argument.
+
+\begin{corollary}{6.11}\label{XXVI.6.11}
+Let $S$ be a connected semi-local scheme, $G$ a reductive $S$-group. The maps
+\[
+ L\mto\operatorname{rad}(L)_{\mathrm{spl}},\qquad Q\mto\uCentr_G(Q)
+\]
+are mutually inverse bijections, reversing the natural order structures, between the set of subgroups $L$ of $G$ that are Levi subgroups of parabolic subgroups of $G$ and the set of split subtori $Q$ of $G$ such that $\operatorname{rad}(\uCentr_G(Q))_{\mathrm{spl}}=Q$.
+\end{corollary}
+
+\begin{corollary}{6.12}\label{XXVI.6.12}
+Let $S$ be a connected semi-local scheme, $G$ a reductive $S$-group. Consider the following assertions:
+\begin{enumerate}[label={}]
+\item (i) There is a parabolic subgroup of $G$ distinct from $G$.
+\item (ii) $G$ has a noncentral split subtorus.
+\item (ii bis) $G$ has a noncentral split subtorus of relative dimension 1.
+\item (iii) There is a group homomorphism $\mathbf{G}_{\mathrm a,S}\to G$ that is a closed immersion.
+\end{enumerate}
+Then one has (i) $\Leftrightarrow$ (ii) $\Leftrightarrow$ (ii bis) $\Rightarrow$ (iii).
+\end{corollary}
+The only new assertion is (i) $\Rightarrow$ (iii). Let therefore $P$ be a parabolic subgroup of $G$ distinct from $G$. Then $U=\operatorname{rad}^{\mathrm u}(P)\neq e$. Consider the last nontrivial subgroup $U_n$ of the composition series of $U$ (2.1). One has an isomorphism $U_n\simeq W(\mathcal E_n)$, where $\mathcal E_n$ is a locally free $\OS$-module, hence free\nde{Since $S$ is assumed to be semi-local and connected.}.
+% Source PDF p. 44.
+Since $\mathcal E_n\neq0$, there is a monomorphism $\OS\to\mathcal E_n$ that is locally a direct summand, hence a closed immersion $\mathbf{G}_{\mathrm a,S}=W(\OS)\hookrightarrow W(\mathcal E_n)\simeq U_n$, which implies (iii) at once.
+
+\begin{remark}{6.12.1}\label{XXVI.6.12.1}
+When $S$ is the spectrum of a field of characteristic 0, it follows from the Jacobson--Morozov theorem that (iii) $\Rightarrow$ (ii bis). The four preceding conditions are then equivalent (``Godement's criterion'', \cf \cite{BT65}, 8.5).\begingroup\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{This is more generally true when $S$ is the spectrum of a perfect field (Tits).\begingroup\renewcommand{\thefootnote}{31}\ndemark\endgroup}\endgroup\ndetext{This is Corollary 3.7 of the article \cite{BT71}.}
+\end{remark}
+
+\begin{definition}{6.13}\label{XXVI.6.13}
+Let $S$ be a connected semi-local scheme, $G$ a reductive $S$-group. One says that $G$ is \emph{anisotropic} if $G$ contains no split subtorus not reduced to $e$.
+\end{definition}
+
+\begin{corollary}{6.14}\label{XXVI.6.14}
+Let $S$ be a connected semi-local scheme. For the reductive $S$-group $G$ to be anisotropic, it is necessary and sufficient that it have no parabolic subgroup $P\neq G$ and that its radical be anisotropic.
+\end{corollary}
+Using now 6.6, Exp. XXIV, 4.1.5, and Exp. XXII, 6.2, one deduces:
+
+\begin{corollary}{6.15}\label{XXVI.6.15}
+Let $S$ be a connected semi-local scheme, $G$ an isotrivial reductive $S$-group (for example, $G$ semisimple, or $S$ normal (Exp. X 5.16)). For $G$ to be anisotropic, it is necessary and sufficient that $G$ have no parabolic subgroup $P\neq G$ and that $\Hom_{S\text{-gr.}}(G,\mathbf{G}_{\mathrm m,S})=e$.
+\end{corollary}
+
+\begin{proposition}{6.16}\label{XXVI.6.16}
+Let $S$ be a connected semi-local scheme, $G$ a reductive $S$-group. The maximal split subtori of $G$ are the largest split central subtori of the Levi groups of the minimal parabolic subgroups of $G$. Two such tori are conjugate by an element of $G(S)$.
+\end{proposition}
+Let $Q$ be a maximal split subtorus of $G$.\nde{One has expanded the sentence that follows.} Then, by 6.2, $L=\uCentr_G(Q)$ is a Levi subgroup of a parabolic subgroup $P$ of $G$, and since $Q\subset\operatorname{rad}(\uCentr_G(Q))_{\mathrm{spl}}$, the maximality of $Q$ implies $Q=\operatorname{rad}(\uCentr_G(Q))_{\mathrm{spl}}$. By 6.11, $L$ is a minimal element of the set of Levi subgroups of parabolic subgroups of $G$, hence $P$ is a minimal parabolic subgroup of $G$ by 1.20. It then follows from 5.7 and 5.5(iv) that two subtori such as $Q$ are conjugate by a section of $G(S)$. The conjugacy of the $Q$ and of the pairs $(P,L)$ then implies the first assertion of 6.16.
+
+\begin{corollary}{6.17}\label{XXVI.6.17}
+Let $S$ be a connected semi-local scheme, $P$ and $P'$ two minimal parabolic subgroups in standard position (4.5.1.1). Then $P\cap P'$ contains a common Levi subgroup of $P$ and $P'$.
+\end{corollary}

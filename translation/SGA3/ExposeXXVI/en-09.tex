@@ -1,0 +1,95 @@
+% Source PDF pp. 51–53.
+\numpara{7.12}\label{XXVI.7.12}
+One now proposes to study the variation of $\mathscr R(G/S)$ with $S$. Let therefore $S'$ be an $S$-scheme, also semi-local, connected and nonempty. Let $Q$ be a maximal split torus of $G$; then $Q_{S'}$ is a split torus of $G_{S'}$; let $Q'$ be a maximal split torus of $G_{S'}$ containing $Q_{S'}$. Put
+\[
+\begin{aligned}
+ M&=\Hom_{S\text{-gr.}}(Q,\mathbf G_{\mathrm m,S})
+ \simeq\Hom_{S'\text{-gr.}}(Q_{S'},\mathbf G_{\mathrm m,S'}),\\
+ M'&=\Hom_{S'\text{-gr.}}(Q',\mathbf G_{\mathrm m,S'}).
+\end{aligned}
+\]
+The monomorphism $Q_{S'}\to Q'$ induces an epimorphism $u:M'\to M$. Write
+\[
+ L=\uCentr_G(Q),\qquad L'=\uCentr_{G_{S'}}(Q');
+\]
+one has $L'\subset L_{S'}$.
+
+If $H$ is a subgroup of $G$ containing $L$, then $H_{S'}$ contains $L'$, and one has
+\[
+\begin{aligned}
+ \Lie(H)&=\Lie(L)\oplus\coprod_{\alpha\in R_H}\Lie(H)^\alpha,\\
+ \Lie(H_{S'})&=\Lie(L')\oplus\coprod_{\alpha'\in R'_{H_{S'}}}\Lie(H_{S'})^{\alpha'},
+\end{aligned}
+\]
+where $R_H$ (resp. $R'_{H_{S'}}$) denotes the set of roots of $H$ (resp. $H_{S'}$) relative to $Q$ (resp. $Q'$). One immediately deduces that
+\[
+ R_H\subset u(R'_{H_{S'}})\subset R_H\cup\{0\}.
+\]
+Taking $H=G$, one first sees that $R\subset u(R')\subset R\cup\{0\}$; then taking for $H$ a minimal parabolic subgroup $P$ with Levi subgroup $L$, one sees that $R'_{H_{S'}}$ contains a system of positive roots of $R'$, hence (7.4) that there is a minimal parabolic subgroup $P'$ of $G_{S'}$ with Levi subgroup $L'$ contained in $P_{S'}$. One has therefore constructed a diagram
+\[
+\begin{array}{ccccc}
+ Q_{S'}&\subset&L_{S'}&\subset&P_{S'}\\
+ \cap&&\cup&&\cup\\
+ Q'&\subset&L'&\subset&P'.
+\end{array}
+\]
+If $R_+$ (resp. $\Delta$) is the system of positive (resp. simple) roots of $R$ defined by $P$, and if one defines $R'_+$ and $\Delta'$ similarly, one readily checks that
+\[
+ R_+\subset u(R'_+)\subset R_+\cup\{0\},\qquad
+ \Delta\subset u(\Delta')\subset\Delta\cup\{0\}.
+\]
+Let now $w\in W\simeq\uNorm_G(Q)(S)/\uCentr_G(Q)(S)$, and let $n\in\uNorm_G(Q)(S)$ be a representative of $w$. One has $\operatorname{int}(n)Q=Q$, hence $\operatorname{int}(n)L=L$, hence $\operatorname{int}(n)L_{S'}=L_{S'}$. Then $Q'$ and $\operatorname{int}(n)Q'$ are two maximal split tori of $L_{S'}$, hence are conjugate by a section $x\in L(S')$, and one has $\operatorname{int}(nx)Q'=Q'$, hence $nx\in\uNorm_{G_{S'}}(Q')(S')$. Let $w'$ be the image of $n'=nx$ in $W'\simeq\uNorm_{G_{S'}}(Q')(S')/\uCentr_{G_{S'}}(Q')(S')$. It is clear that the action of $w'$ on $M'$ is compatible with the projection $u:M'\to M$, and that the induced action on $M$ coincides with the one defined by $w$.
+
+Using now the definition of relative root data and the conjugacy theorems, one proves without difficulty:
+
+% Source PDF p. 52; the theorem begins here.
+\begin{theorem}{7.13}\label{XXVI.7.13}
+Let $S$ and $S'$ be two nonempty connected semi-local schemes, $S'\to S$ a morphism of $S$-schemes, $G$ a reductive $S$-group,
+\[
+\begin{aligned}
+ \mathscr R(G/S)&=(\underline M,\underline{M^*},\underline R,\underline{R^*},\underline{R_+}),\\
+ \mathscr R(G_{S'}/S')&=(\underline{M'},\underline{M'^*},\underline{R'},\underline{R'^*},\underline{R'_+})
+\end{aligned}
+\]
+the relative pinned root data. There is a canonical homomorphism
+\[
+ \underline u:\underline{M'}\to\underline M
+\]
+satisfying the following conditions:
+\begin{enumeratei}
+\item $\underline u$ is surjective.
+\item For every $w\in\underline W$, there is an element $w'$ of $\underline{W'}$ compatible with $\underline u$ and inducing $w$ on $\underline M$.
+\item For every subset $X$ of $\underline M$, write $X^\wedge=X\cap(\underline M-\{0\})$. Then
+\[
+ \underline u(\underline{R'_+})^\wedge=\underline{R_+},\qquad
+ \underline u(\underline{\Delta'})^\wedge=\underline\Delta.
+\]
+\item For every parabolic subgroup $H$, consider $t_{\mathrm r}(H)\subset\underline\Delta$ and $t_{\mathrm r}(H_{S'})\subset\underline{\Delta'}$. Then
+\[
+\begin{aligned}
+ t_{\mathrm r}(H_{S'})
+ &=\underline u^{-1}\bigl(t_{\mathrm r}(H)\cup\{0\}\bigr)\cap\underline{\Delta'}\\
+ &=\{\alpha'\in\underline{\Delta'}\mid\underline u(\alpha')\in t_{\mathrm r}(H)
+       \text{ or }\underline u(\alpha')=0\}.
+\end{aligned}
+\]
+\end{enumeratei}
+\end{theorem}
+
+\begin{remark}{7.14}\label{XXVI.7.14}
+If $G$ is splittable over $S$, its maximal split tori are maximal tori, and the relative notions introduced here then coincide with the absolute notations already introduced. The preceding theorem therefore gives a description of the relative root datum $\mathscr R(G/S)$ and of the relative type $t_{\mathrm r}$ by means of the absolute root datum and the absolute type of the group $G_{S'}$, where $S'$ is chosen in such a way that $G_{S'}$ is splittable (\cf Exp. XXIV, 4.4.1). Let us refer to \cite{BT65}, 6.12 and following, for this description.
+\end{remark}
+
+\numpara{7.15}\label{XXVI.7.15}
+Let $S$ be a \emph{henselian local} scheme, $s_0$ its closed point, $S_0$ the spectrum of the residue field of $s_0$, identified with a closed subscheme of $S$; for every object $X$ over $S$, denote by $X_0$ the object over $S_0$ obtained from $X$ by base change. Let, finally, $G$ be a reductive $S$-group. For every parabolic subgroup $P$ of $G$, $P_0$ is a parabolic subgroup of $G_0$; conversely, for every parabolic subgroup $\overline P$ of $G_0$, there is a parabolic subgroup $P$ of $G$ such that $P_0=\overline P$ (this follows from Hensel's lemma and the fact that $\underline{\mathrm{Par}}(G)$ is a smooth $S$-scheme); in particular (\cf 5.7), a parabolic subgroup $P$ of $G$ is minimal if and only if $P_0$ is minimal. Once such a subgroup $P$ of $G$ has been chosen, an analogous argument shows that the maximal split subtori of $P_0$ are of the form $T_0$, where $T$ is a maximal split subtorus of $P$. It follows without difficulty that \emph{the relative root data of $G$ over $S$ and of $G_0$ over $S_0$ are canonically isomorphic}, so that the theory of parabolic subgroups of $G$ reduces to that of parabolic subgroups of $G_0$.
+
+Observe, moreover, that every reductive $S_0$-group is of the form $G_0$ (Exp. XXIV, Prop. 1.21), which conversely allows one to reduce the study of parabolic subgroups of a reductive $S_0$-group to the corresponding study over $S$.
+
+% Source PDF p. 53. The bibliography environment supplies its heading.
+\begin{thebibliography}{DG70}
+\bibitem[BT65]{BT65} A. Borel, J. Tits, \textit{Groupes réductifs}, Publ. Math. I.H.É.S. \textbf{27} (1965), 55--150.\nde{To this reference, which appeared in the original, one has added the references that follow.}
+\bibitem[BT71]{BT71} A. Borel, J. Tits, \textit{Éléments unipotents et sous-groupes paraboliques de groupes réductifs. I}, Invent. Math. \textbf{12} (1971), 95--104.
+\bibitem[Ch05]{Ch05} C. Chevalley, \textit{Classification des groupes algébriques semi-simples} (with the collaboration of P. Cartier, A. Grothendieck, M. Lazard), Collected Works, vol. 3, Springer, 2005.
+\bibitem[DG70]{DG70} M. Demazure, P. Gabriel, \textit{Groupes algébriques}, Masson \& North-Holland, 1970.
+\bibitem[Gi71]{Gi71} J. Giraud, \textit{Cohomologie non abélienne}, Springer-Verlag, 1971.
+\end{thebibliography}

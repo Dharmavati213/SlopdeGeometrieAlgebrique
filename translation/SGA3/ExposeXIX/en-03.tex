@@ -1,0 +1,186 @@
+\begin{proposition}{3.8}\label{XIX.3.8}
+Let $S$ be a scheme, $G$ an $S$-group, $T$ a maximal torus of $G$. The functor $\mathcal R$ of roots of $G$ with respect to $T$ is representable by a finite twisted constant $S$-scheme (Exp.~X 5.1) which is an open and closed subscheme of $\uHom_{S\text{-gr.}}(T,\mathbf{G}_{\mathrm m,S})$.
+
+For $R\subset\Hom_{S\text{-gr.}}(T,\mathbf{G}_{\mathrm m,S})$ to be a root system of $G$ with respect to $T$, it is necessary and sufficient that the morphism $R_S\to\uHom_{S\text{-gr.}}(T,\mathbf{G}_{\mathrm m,S})$ defined by the preceding inclusion induce an isomorphism $R_S\isomto\mathcal R$.
+\end{proposition}
+
+\numpara{3.9} Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $\alpha$ a root of $G$ with respect to $T$ (i.e. a section of $\mathcal R$). Consider the kernel $\Ker(\alpha)$ of $R$, its unique maximal torus $T_\alpha$, and the centralizer of the latter, $Z_\alpha=\uCentr_G(T_\alpha)$.
+% typo?: "kernel Ker(alpha) of R" kept as printed.
+This is an $S$-group closed in $G$, \emph{reductive} (2.8), of \emph{semisimple rank}~1 (1.12). Moreover,
+\[
+\mathcal{L}\!ie(Z_\alpha/S)=\mathfrak t\oplus\mathfrak g^\alpha\oplus\mathfrak g^{-\alpha},
+\]
+hence $\{\alpha,-\alpha\}$ is a root system of $Z_\alpha$ with respect to $T$.
+
+\numpara{3.10} Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $\alpha$ a root of $G$ with respect to $T$. If $q\in\QQ$ and $q\alpha$ is a root of $G$ with respect to $T$, then $q=1$ or $q=-1$. This follows at once from 1.12.
+
+\sgasection{4}{Roots and vector group schemes}
+\label{XIX.sec.4}
+\numpara{4.1} Let $S$ be a scheme, $\mathcal F$ a \emph{locally free} $\OS$-module of finite type. The $S$-scheme $\mathrm W(\mathcal F)$ is \emph{smooth} over $S$. Its Lie algebra is canonically isomorphic to $\mathcal F$. Indeed, one has a canonical isomorphism
+\[
+\mathrm W(\mathcal F)\isomto\uLie(\mathrm W(\mathcal F)/S)=\mathrm W(\mathcal{L}\!ie(\mathrm W(\mathcal F)/S)).
+\]
+(Exp.~II, 4.4.1 and 4.4.2). We shall always identify $\mathcal F$ and $\mathcal{L}\!ie(\mathrm W(\mathcal F)/S)$.
+
+\begin{lemma}{4.2}\label{XIX.4.2}
+Let $S$ be a scheme, $V$ a vector bundle over $S$, smooth over $S$. There then exists a unique isomorphism of $\OS$-modules
+\[
+\exp:\mathrm W(\mathcal{L}\!ie(V/S))\isomto V
+\]
+inducing the identity on Lie algebras.{\renewcommand{\thefootnote}{(32)}\nde{The proof of the original has been retained; one may also expand it as follows. Let $\mathcal F$ be a quasi-coherent $\OS$-module, $V=\mathrm V(\mathcal F)$. Let $\pi$ denote the projection $V\to S$ and $\varepsilon$ the zero section $S\to V$. Then $\Omega^1_{V/S}=\pi^*\mathcal F$, whence
+\begin{equation}\tag{1}\label{XIX.note32.eq.1}
+\omega^1_{V/S}=\varepsilon^*\Omega^1_{V/S}\simeq\varepsilon^*\pi^*\mathcal F\simeq\mathcal F,
+\end{equation}
+and hence $\mathcal{L}\!ie(V/S)=(\omega^1_{V/S})^\vee\simeq\mathcal F^\vee$. If one supposes $V$ smooth over $S$, then, by (1), $\mathcal F$ is locally free of finite type, and hence
+\begin{equation}\tag{2}\label{XIX.note32.eq.2}
+V=\mathrm V(\mathcal F)\simeq\mathrm W(\mathcal F^\vee)\simeq\mathrm W(\mathcal{L}\!ie(V/S)).
+\end{equation}
+Now, if $U$ is an $S$-scheme equipped with a section $\tau:S\to U$, and one has given an isomorphism $\phi:V\isomto U$ of ``pointed'' $S$-schemes, i.e. such that $\phi\circ\varepsilon=\tau$ (for example if $U$ is an $S$-group), then $\phi$ induces an isomorphism $d\phi:\mathcal F^\vee\isomto\mathcal{L}\!ie(U/S)$, whence an isomorphism $\psi$:
+\[
+\xymatrix@C=1.2em@R=1.8em{
+\mathrm W(\mathcal F^\vee)\ar@{=}[r]&\mathrm V(\mathcal F)\ar[r]^{\phi}_{\sim}&U\\
+&\mathrm W(\mathcal{L}\!ie(U/S))\ar[ul]^{\mathrm W(d\phi^{-1})}_{\simeq}\ar[ur]_{\psi}^{\simeq}&
+}
+\]
+which allows one to identify $U$ with $\mathrm W(\mathcal{L}\!ie(U/S))$. Since the functor $\mathrm W$ is fully faithful, there exists a unique isomorphism $\exp:\mathrm W(\mathcal{L}\!ie(U/S))\isomto U$ such that $\mathcal{L}\!ie(\psi^{-1}\circ\exp)=\mathrm{id}$. In fact, one can see directly that $\mathcal{L}\!ie(\psi)=\mathrm{id}$, so that $\exp=\psi$.}}
+\end{lemma}
+Indeed, one has $V=\mathrm V(\mathcal F)$ for some quasi-coherent $\OS$-module $\mathcal F$. Since $V$ is smooth over $S$, $\mathcal F\simeq\omega^1_{V/S}$ is locally free of finite type, and hence
+\[
+\uLie(V/S)=\mathrm V(\omega^1_{V/S})\simeq\mathrm W(\mathcal{L}\!ie(V/S)).
+\]
+Moreover, by Exp.~II loc.~cit., one has a canonical isomorphism
+\[
+V\isomto\uLie(V/S)\simeq\mathrm W(\mathcal{L}\!ie(V/S)),
+\]
+and the uniqueness of $\exp$ follows at once, since $\mathrm W$ is fully faithful.
+
+\numpara{4.3} \textbf{Notations.} If $V$ is a vector bundle over $S$, $V^\times$ will denote the open subset of $V$ obtained by removing the zero section. Let us write the group law of $V$ in multiplicative notation. The action of $\mathbf O_S$ on $V$ defining the module structure will then be written exponentially:
+\[
+\mathbf O_S\mathbin{\times_S}V\to V,\qquad(x,v)\mto v^x.
+\]
+One has $(vv')^x=v^xv'^x$, $v^{x+x'}=v^xv^{x'}$, $v^{xx'}=(v^x)^{x'}$. In particular, if one restricts the operator law to $\mathbf{G}_{\mathrm m,S}$, $V^\times$ is stable and is therefore equipped with the structure of an object with operator group $\mathbf{G}_{\mathrm m,S}$. One will again denote this law by $(z,v)\mto v^z$.
+
+\begin{definition}{4.4.1}\label{XIX.4.4.1}
+{\renewcommand{\thefootnote}{(33)}\nde{For subsequent references, 4.4 has been changed into 4.4.1 and 4.4.2.}}%
+Let $\mathcal L$ be an invertible module over $S$ and $\mathrm W(\mathcal L)$ the associated vector bundle. Then $\mathrm W(\mathcal L)^\times$ is a (locally trivial) principal homogeneous bundle under $\mathbf{G}_{\mathrm m,S}$. One puts $\Gamma(S,\mathcal L)^\times=\mathrm W(\mathcal L)^\times(S)$.
+\end{definition}
+\begin{scholium}{4.4.2}\label{XIX.4.4.2}
+There is a bijective correspondence between isomorphisms of $\OS$-modules $\OS\simeq\mathcal L$, isomorphisms of $\mathbf O_S$-modules $\mathbf O_S\simeq\mathrm W(\mathcal L)$,{\renewcommand{\thefootnote}{(34)}\nde{Here the vector bundle $\mathrm W(\mathcal L)$ is identified with the functor in $\mathbf O_S$-modules which it represents.}} and sections $S\to\mathrm W(\mathcal L)^\times$.
+\end{scholium}
+This correspondence is given by $f\mto\mathrm W(f)\mto\mathrm W(f)(1)$. It is compatible with extension of the base. One may therefore regard $\mathrm W(\mathcal L)^\times$ as the ``scheme of trivializations of $\mathrm W(\mathcal L)$''.
+
+\numpara{4.5} Let $S$ be a scheme, $T$ a torus over $S$, $P$ an $S$-group with operator group $\mathbf{G}_{\mathrm m,S}$ (for example, a vector bundle), $\alpha$ a character of $T$. One denotes by $T\cdot_\alpha P$ the semidirect product of $P$ by $T$, where $T$ acts on $P$ by the composite morphism
+\[
+\xymatrix{T\ar[r]^\alpha&\mathbf{G}_{\mathrm m,S}\ar[r]&\underline{\Aut}_{S\text{-gr.}}(P).}
+\]
+
+\begin{definition}{4.6}\label{XIX.4.6}
+Let $S$ be a scheme, $G$ a group $S$-scheme, $T$ a subgroup of $G$, $\alpha$ a character of $T$, $\mathcal L$ an $\OS$-module. Let
+\[
+p:\mathbf W(\mathcal L)\to G
+\]
+{\renewcommand{\thefootnote}{(35)}\nde{Here $\mathbf W(\mathcal L)$ has been written (with $W$ in bold), since, for an arbitrary $\OS$-module $\mathcal L$, $\mathbf W(\mathcal L)$ is not necessarily representable. But in what follows, $\mathcal L$ will be supposed locally free of finite rank (and even invertible), in which case the functor is representable by the vector bundle $\mathrm V(\mathcal L^\vee)$, and it will simply be denoted $\mathrm W(\mathcal L)$.}}%
+be a morphism of group $S$-functors. One says that $p$ is \emph{normalized by $T$ with multiplier $\alpha$} if it satisfies the following equivalent conditions:
+\begin{enumeratei}
+\item $p$ is a morphism of objects with operator group $T$, if one makes $T$ act on $\mathbf W(\mathcal L)$ by $\alpha$ and on $G$ by inner automorphisms. In other words, for every $S'\to S$ and all $t\in T(S')$ and $x\in\mathbf W(\mathcal L)(S')=\Gamma(S',\mathcal L\otimes\OO_{S'})$, one has
+\[
+\operatorname{int}(t)p(x)=p(\alpha(t)x).
+\]
+\item The morphism $T\cdot_\alpha\mathbf W(\mathcal L)\to G$ defined by the product in $G$ (i.e. by $(t,x)\mto t\cdot p(x)$) is a morphism of groups.
+\end{enumeratei}
+\end{definition}
+
+\begin{lemma}{4.7}\label{XIX.4.7}
+Under the conditions of 4.6, suppose in addition that $G$ is smooth and has connected fibers,{\renewcommand{\thefootnote}{(36)}\nde{Cf. N.D.E.~(28).}} $T$ is a maximal torus of $G$, and $\mathcal L$ invertible. If $p$ is a monomorphism and $\alpha$ nonzero on each fiber, then $\alpha$ is a root of $G$ with respect to $T$.
+\end{lemma}
+Indeed, $\mathcal{L}\!ie(p):\mathcal L\to\mathfrak g$ is a monomorphism which factors through $\mathfrak g^\alpha$.
+
+\begin{proposition}{4.8}\label{XIX.4.8}
+Under the conditions of 4.7, suppose that $G$ is reductive and that $p$ is a monomorphism. Then $\alpha$ is a root of $G$ with respect to $T$, and $\mathcal{L}\!ie(p)$ induces an isomorphism
+\[
+\mathcal{L}\!ie(p):\mathcal L\isomto\mathfrak g^\alpha.
+\]
+\end{proposition}
+Indeed, by 4.7 and the fact that $\mathfrak g^\alpha$ is invertible, it suffices to prove that $\alpha$ is nonzero on each fiber. Let therefore $s\in S$ be such that $\alpha_{\overline{s}}=0$ ($=1$ in multiplicative notation). If $X$ is a nonzero section of $\mathcal L\otimes_S\kappa(\overline{s})$, $p(X)$ is a unipotent element $\ne e$ of $G(\overline{s})$ which centralizes $T_{\overline{s}}$, which is impossible, since the latter is its own centralizer.
+
+\begin{corollary}{4.9}\label{XIX.4.9}
+Under the conditions of 4.8, there exists a monomorphism of groups with operators $T$ (i.e. normalized by $T$ with multiplier $\alpha$)
+\[
+\mathrm W(\mathfrak g^\alpha)\to G
+\]
+which induces on Lie algebras the canonical morphism $\mathfrak g^\alpha\to\mathfrak g$.
+\end{corollary}
+We shall soon see that 4.9 in fact holds whenever $G$ is a reductive group and $\alpha$ a root of $G$ with respect to $T$, and that such a morphism is unique.
+
+\begin{enoncerm}{Reminder}{4.10}\label{XIX.4.10}
+Let $k$ be an algebraically closed field, $G$ a reductive $k$-group, $T$ a maximal torus of $G$, $\alpha$ a root of $G$ with respect to $T$. There exists a monomorphism
+\[
+p:\mathbf{G}_{\mathrm a,k}\to G
+\]
+normalized by $T$ with multiplier $\alpha$.
+\end{enoncerm}
+See \textit{Bible}, \S~13.1, th.~1.
+
+\numpara{4.11} Let us finish this section with a technical result which will be useful to us. Let $S$ be a scheme and $\mathcal L$ an invertible $\OS$-module. Let $q$ be an integer $>0$ such that $x\mto x^q$ is an endomorphism of the $S$-group $\mathbf{G}_{\mathrm a,S}$. (If $S\ne\varnothing$, one has $q=1$, or $q=p^n$, $p$ being a prime number zero on $S$; this follows at once from the following elementary fact: the gcd of the binomial coefficients $\binom qi$, for $i\ne0,q$, is $p$ if $q=p^n$, $p$ prime, and $1$ otherwise.) The morphism defined by the $q$th power
+\[
+\mathcal L\to\mathcal L^{\otimes q}
+\]
+is a morphism of sheaves of abelian groups. By base change, it defines a morphism of group $S$-schemes:
+\[
+\mathrm W(\mathcal L)\to\mathrm W(\mathcal L^{\otimes q}).
+\]
+In particular, if $\mathcal L'$ is another invertible module and one has a morphism of $\OS$-modules
+\[
+h:\mathcal L^{\otimes q}\to\mathcal L',
+\]
+one deduces a morphism of group $S$-schemes:
+\[
+\mathrm W(\mathcal L)\to\mathrm W(\mathcal L'),\qquad x\mto h(x^q).
+\]
+With these notations, one has
+
+\begin{proposition}{4.12}\label{XIX.4.12}
+Let $S$ be a scheme, $T$ (resp. $T'$) an $S$-torus, $\mathcal L$ (resp. $\mathcal L'$) an invertible $\OS$-module, $\alpha$ (resp. $\alpha'$) a character of $T$ (resp. $T'$).{\renewcommand{\thefootnote}{(37)}\nde{``Consider the semidirect product $T\cdot_\alpha\mathrm W(\mathcal L)$, resp. $T'\cdot_{\alpha'}\mathrm W(\mathcal L')$'' has been deleted. On the other hand, the hypothesis in (b) that $g$ be a morphism of groups, combined with ($\star$), amounts to saying that the morphism $(t,x)\mto(f(t),g(x))$ is a morphism of groups from $T\cdot_\alpha\mathrm W(\mathcal L)$ to $T'\cdot_{\alpha'}\mathrm W(\mathcal L')$.}} Let $f:T\to T'$ be a morphism of groups and $g:\mathrm W(\mathcal L)\to\mathrm W(\mathcal L')$ a morphism of $S$-schemes (not necessarily a morphism of $S$-groups) satisfying the following condition:
+\begin{equation}\tag{$\star$}\label{XIX.eq.star}
+g(\alpha(t)x)=\alpha'(f(t))g(x)
+\end{equation}
+for all $x\in\mathrm W(\mathcal L)(S')$, $t\in T(S')$, $S'\to S$. Let $s_0\in S$ be such that $\alpha_{\overline{s}_0}\ne0$.
+\begin{enumerate}[label=\textup{\alph*)}]
+\item Suppose that $g$ sends the zero section to the zero section and that for every integer $n>0$ one has $(\alpha'\circ f)_{\overline{s}_0}\ne n\alpha_{\overline{s}_0}$. Then $g=0$ in a neighborhood of $s_0$.
+\item Suppose that $g$ is a morphism of groups such that $g_{\overline{s}_0}\ne0$. There then exist an open subset $U$ of $S$ containing $s_0$ and an integer $q>0$ such that $x\mto x^q$ is an endomorphism of $\mathbf{G}_{\mathrm a,U}$ and $(\alpha'\circ f)_U=q\alpha_U$.
+\item Suppose that $(\alpha'\circ f)_{\overline{s}_0}=q\alpha_{\overline{s}_0}$, where $q$ is an integer $>0$ such that $x\mto x^q$ is an endomorphism of $\mathbf{G}_{\mathrm a,S}$. There then exist an open subset $U$ of $S$ containing $s_0$ and a unique morphism of $\OS$-modules
+\[
+h:\mathcal L^{\otimes q}|_U\to\mathcal L'|_U
+\]
+such that $g_U$ is the composite morphism
+\[
+\mathrm W(\mathcal L)_U\xrightarrow{x\mapsto x^q}\mathrm W(\mathcal L^{\otimes q})_U\xrightarrow{\mathrm W(h)}(\mathcal L')_U.
+\]
+% typo?: endpoint (L')_U rather than W(L')_U kept as printed.
+\end{enumerate}
+\end{proposition}
+Let us prove (a). Since the conclusion is local on $S$, one may suppose that $\mathrm W(\mathcal L)=\mathrm W(\mathcal L')=\mathbf{G}_{\mathrm a,S}$ and hence that $g$ is expressed as a polynomial
+\[
+g(X)=\sum_{n\geq0}a_nX^n,\qquad a_n\in\Gamma(S,\OS).
+\]
+Condition ($\star$), which relates $f$ and $g$, is written as an identity in $\Gamma(S',\OO_{S'})[X]$:
+\[
+\sum_{n\geq0}a_n\alpha'(f(t))X^n=\sum_{n\geq0}a_n\alpha(t)^nX^n,
+\]
+i.e. for every $n\geq0$, every $S'\to S$ and every $t\in T(S')$,
+\[
+a_n(\alpha'(f(t))-\alpha(t)^n)=0.
+\]
+For each $n\geq0$, let $S_n$ be the set of $s\in S$ such that $(\alpha'\circ f)_{\overline{s}}=n\alpha_{\overline{s}}$. One knows (Exp.~IX 5.3) that the $S_n$ are open and closed, and that $(\alpha'\circ f)_{S_n}=n\alpha_{S_n}$. Moreover, since $\alpha_{\overline{s}_0}\ne0$, one may, restricting $S$ if necessary, suppose that $\alpha$ is nonzero on each fiber (same reference), which implies that the $S_n$ are disjoint. Restricting $S$ if necessary, one may therefore suppose that one is in one of the following two cases: there exists an $n$ such that $S=S_n$, or all the $S_n$ are empty.
+
+Let $m\geq0$ be such that $S_m=\varnothing$; I say that then $a_m=0$; indeed, $\alpha'\circ f$ and $m\alpha$ are distinct on each fiber of $S$, and one has:
+\begin{lemma}{4.13}\label{XIX.4.13}
+Let $S$ be a scheme, $T$ an $S$-torus, $\alpha$ and $\alpha'$ two characters of $T$ distinct on each fiber; there exists a family $\{S_i\to S\}$ covering for (fpqc), and, for each $i$, a $t_i\in T(S_i)$ such that $\alpha(t_i)-\alpha'(t_i)=1$.
+\end{lemma}
+The lemma is trivial, by reduction to the diagonalizable case, then to the case $T=\mathbf{G}_{\mathrm m,S}$.
+
+Let us resume the proof of proposition~4.12; we have just proved (a). In cases (b) and (c), there exists an $n$ such that $S=S_n$ ($n=q$ in (c)). By the preceding result, one therefore has $a_m=0$ for $m\ne n$, which proves that $g$ is written
+\[
+g(X)=a_nX^n,\qquad a_n\in\Gamma(S,\OS).
+\]
+This proves (c) at once. In case (b), one knows that $a_n(s_0)\ne0$, and one may therefore suppose $a_n$ invertible on $S$, which implies that $x\mto x^n$ is an endomorphism of $\mathbf{G}_{\mathrm a,S}$ (by the hypothesis of (b)) and completes the proof.

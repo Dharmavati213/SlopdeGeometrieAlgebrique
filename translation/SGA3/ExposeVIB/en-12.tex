@@ -1,0 +1,196 @@
+\begin{corollary}{10.11.1}\label{VIB.10.11.1}
+Let $S$ be an integral scheme with generic point $\eta$, $G,H,K$ be $S$-groups of finite presentation, $i:H\to G$ and $j:K\to G$ two quasi-compact monomorphisms of $S$-groups. Then there is a nonempty open subset $S'$ of $S$ such that the morphisms $i':H'\to G'$ and $j':K'\to G'$ obtained by base change are closed immersions, and the functors:
+\[
+\uTransp_{G'}(H',K')\quad\text{and}\quad\uTransp^{\mathrm{str}}_{G'}(H',K')
+\qquad\bigl(\text{resp. }\uCentr_{G'}H'\text{ and }\uNorm_{G'}H'\bigr)
+\]
+are representable by closed sub-$S'$-schemes (resp. sub-$S'$-groups) of $G'$, of finite presentation over $S'$.
+\end{corollary}
+This follows from the preceding proposition for, by 1.4.2, the hypotheses imply that $i_\eta$ and $j_\eta$ are closed immersions.
+
+\begin{proposition}{10.12}\label{VIB.10.12}
+Let $S$ be an integral scheme, $G$ an $S$-group of finite presentation, $A$ and $B$ two subgroup schemes of $G$, of finite presentation over $S$ and with smooth generic fiber. Suppose moreover that one of the following conditions holds:
+
+a) $A$ has connected generic fiber,
+
+b) $A$ and $B$ are invariant in $G$.
+
+Then there is a nonempty open subset $S'$ of $S$ and a closed subgroup scheme $D'$ of $G'=G|_{S'}$, of finite presentation over $S'$, with smooth fibers, which represents the (fppf) sheaf associated to the presheaf of groups of commutators of $A'=A|_{S'}$ and $B'=B|_{S'}$ in $G'$, and $D'$ has connected fibers in case (a), and is invariant in $G'$ in case (b).
+
+In particular, for every $s\in S'$, one has $D'_s=(A_s,B_s)$ with the notation of 7.2.2.
+\end{proposition}
+Let $\eta$ be the generic point of $S$; put $H_\eta=(A_\eta,B_\eta)$. Since $A_\eta$ and $B_\eta$ are smooth, then, by 7.8 in case (a), and 7.3 (v) in case (b), $H_\eta$ is connected (resp. invariant in $G_\eta$).
+
+We are in the situation of 10.0 corresponding to 10.10 (a); thus, by 10.3 and 10.1, there is a nonempty open subset $S'$ of $S$ and a subgroup $S'$-scheme $D'$ of finite presentation and closed in $G'$, such that $D'_\eta=D'\otimes_{S'}\kappa(\eta)$ equals $H_\eta$. Moreover, by EGA IV$_3$, 9.7.7 and 9.3.3, one may suppose that $D'$ has geometrically reduced fibers. In case (a), one may suppose, by EGA IV$_3$, 9.7.7 and 9.3.3 again, that $D'$ has connected fibers, hence geometrically connected fibers (cf. VIA, 2.1.1). In case (b), one may suppose, by 10.4, that $D'$ is invariant in $G'$.
+
+Moreover, in the course of the proof of 7.8 we saw that there is an integer $n$ such that $\nu_\eta^n((A_\eta\times_{\kappa(\eta)}B_\eta)^n)=D'_\eta$, where $\nu_\eta$ and $\nu_\eta^n$ are defined as in 7.2.2 (a) and 7.1 (ii). We can define by the same formulas the morphisms
+\[
+\nu':A'\times_{S'}B'\to G'\qquad\text{and}\qquad\nu'^n:(A'\times_{S'}B')^n\to G',
+\]
+and one has $\nu'^n\otimes_{S'}\kappa(\eta)=\nu_\eta^n$.
+
+Consequently, by 10.1, one can choose $S'$ such that the morphism $\nu'^n$ is flat and factors through $D'$, and that the resulting morphism $\nu'^n:(A'\times_{S'}B')^n\to D'$ is surjective. Then, by 7.5, the morphism\nde{Below, $n+1$ has been corrected to $2n$.}
+\[
+\nu'^{2n}=\mu\circ(\nu'^n\times_{S'}\nu'^n):(A'\times_{S'}B')^{2n}\to D'
+\]
+is covering for the (fppf) topology. Thus, by 7.6, $D'$ represents the (fppf) sheaf associated to the presheaf of commutators of $A'$ and $B'$ in $G'$.
+
+Moreover, $\nu'^n$ induces, for every $s\in S'$, a surjective morphism $\nu_s^n:(A_s\times_{\kappa(s)}B_s)^n\to D'_s$.\nde{The original has been expanded in what follows.} Then $D'_s$ is a closed subgroup of $G_s$ containing $\nu_s(A_s\times_{\kappa(s)}B_s)$, hence also $(A_s,B_s)$. Since $\nu_s^n$ is surjective, then $D'_s$ equals $(A_s,B_s)$ and represents, by 7.6, the (fppf) sheaf of commutators of $A_s$ and $B_s$ in $G_s$.
+
+\begin{corollary}{10.12.1}\label{VIB.10.12.1}
+\nde{This corollary, used in the proof of 8.4, has been added.}
+Let $S$ be an integral scheme with generic point $\eta$, and $G$ an $S$-group of finite presentation with smooth fibers. Put $K_\eta^0=G_\eta$ and $K_\eta^p=(K_\eta^{p-1},K_\eta^{p-1})$ (resp. $K_\eta^p=(G,K_\eta^{p-1})$) for every $p\in\NN^*$. Fix $n\in\NN^*$. Then there is a nonempty open subset $S'$ of $S$ and a subgroup scheme $D$ invariant in $G|_{S'}$, of finite presentation and with smooth fibers, such that $D_s=K_s^n$ for every $s\in S'$.
+% typo?: kept as printed: G in the generic-fiber nilpotent recurrence.
+\end{corollary}
+This follows from 10.12, by induction on $n$.
+
+\begin{corollary}{10.13}\label{VIB.10.13}
+Let $S$ be an integral scheme with generic point $\eta$, let $G$ be an $S$-group, $H$ a subgroup $S$-scheme invariant in $G$; suppose $G$ and $H$ of finite presentation over $S$ and with smooth generic fiber.\nde{The original supposed $G$, $H$ of finite presentation and $H$ with smooth fibers; the hypothesis has been modified in order to be able to apply 10.12. The proof has also been expanded.}
+
+If one has $(H_\eta,H_\eta)=H_\eta$ (resp. $(G_\eta,H_\eta)=H_\eta$), then there is a nonempty open subset $S'$ of $S$ such that, for every $s\in S'$, one has $(H_s,H_s)=H_s$ (resp. $(G_s,H_s)=H_s$).
+\end{corollary}
+Indeed, by the proof of 10.12, there is a nonempty open subset $S'$ of $S$ and a subgroup $S'$-scheme $D$ of $G|_{S'}$, of finite presentation and with smooth fibers, such that $D_s=(H_s,H_s)$ (resp. $D_s=(G_s,H_s)$) for every $s\in S'$. On the other hand, since $D_\eta=H_\eta$ and $D$ and $H$ are of finite presentation over $S'$, then, by EGA IV$_3$, 8.8.2.5, there is a nonempty open subset $S''$ of $S'$ such that $D|_{S''}=H|_{S''}$. For every $s\in S''$, one therefore has $H_s=D_s=(H_s,H_s)$ (resp. $H_s=D_s=(G_s,H_s)$).
+
+\numpara{10.14}\label{VIB.10.14}
+Statements 10.2 and 10.3 concerning the category of $S$-groups of finite presentation extend to the category of pairs formed by an $S$-group of finite presentation and an $S$-scheme of finite presentation with group of operators $G$. More precisely, in the situation recalled at the beginning of 10.0:
+
+(i) let $j\in I$ and $G_j$, $G'_j$ be two $S_j$-groups of finite presentation, $H_j$ (resp. $H'_j$) an $S_j$-scheme of finite presentation with group of operators $G_j$ (resp. $G'_j$). Put, for $i\in I$, $i\geq j$, $G_i=G_j\times_{S_j}S_i$ and $G=G_j\times_{S_j}S$, and define similarly $G'_i$, $G'$, $H_i$, $H$, $H'_i$ and $H'$. Denote by $\mathrm{Dihom}_{S\text{-gr.}}((G,H),(G',H'))$ the set of di-morphisms of $S$-groups and $S$-schemes with a group of operators from the pair $(G,H)$ to the pair $(G',H')$. Then the canonical map
+\[
+\varinjlim_{i\geq j}\mathrm{Dihom}_{S_i\text{-gr.}}((G_i,H_i),(G'_i,H'_i))\to\mathrm{Dihom}_{S\text{-gr.}}((G,H),(G',H'))
+\]
+is bijective.
+
+(ii) let $G$ be an $S$-group of finite presentation and $H$ an $S$-scheme of finite presentation with group of operators $G$; there is then an index $j\in I$, an $S_j$-group of finite presentation $G_j$, an $S_j$-scheme of finite presentation $H_j$ with group of operators $G_j$ and a di-isomorphism of $S$-groups and $S$-schemes with groups of operators from $(G_j\times_{S_j}S,H_j\times_{S_j}S)$ onto $(G,X)$.
+% typo?: kept as printed: (G,X), rather than (G,H), in (ii).
+
+\begin{definition}{10.15}\label{VIB.10.15}
+\nde{The original has been corrected by distinguishing the notions of a ``formally homogeneous'' or ``homogeneous'' object, see IV \S\S\,5.1 and 6.7.}
+Let $T$ be a topology on $\Sch_{/S}$, coarser than the canonical topology. Given a group $S$-scheme $G$ and an $S$-scheme $X$ with group of operators $G$, one says that $X$ is a \emph{formally homogeneous space under $G$} (relative to the topology $T$) if the morphism $\Phi:G\times_S X\to X\times_S X$, defined by $(g,x)\mto(gx,x)$ for every $S'\to S$ and $g\in G(S')$, $x\in X(S')$, is an epimorphism in the category of sheaves for the topology $T$, which is equivalent to saying that $\Phi$ is covering for the topology $T$ (cf. IV 4.4.3).
+
+One says that $X$ is a \emph{homogeneous} space if it is formally homogeneous and if, moreover, the morphism $X\to S$ is also covering for the topology $T$.
+
+In particular, one says that $X$ is a \emph{formally principal homogeneous} space under $G$ if $\Phi$ is an isomorphism, and that $X$ is a \emph{principal homogeneous bundle} (or \emph{$G$-torsor}) if $\Phi$ is an isomorphism and if, moreover, the morphism $X\to S$ is covering for the topology $T$ (cf. IV 5.1.5 and 5.1.6 (ii)).
+\end{definition}
+
+\begin{proposition}{10.16}\label{VIB.10.16}
+We place ourselves in the situation considered at the beginning of 10.0. Let $j\in I$, $G_j$ be an $S_j$-group and $X_j$ an $S_j$-scheme with group of operators $G_j$. Suppose $G_j$ and $X_j$ of finite presentation over $S_j$.
+
+For $X=X_j\times_{S_j}S$ to be a homogeneous space (resp. a principal homogeneous bundle) under $G=G_j\times_{S_j}S$ for the (fppf) topology, it is necessary and sufficient that there be an index $i\geq j$ such that $X_i=X_j\times_{S_j}S_i$ is a homogeneous space (resp. a principal homogeneous bundle) under $G_i=G_j\times_{S_j}S_i$.
+\end{proposition}
+Taking account of 10.14 and EGA IV$_3$, 8.8.2, 8.8.3 and 8.10.5, the statement follows from the property concerning covering morphisms for the (fppf) topology recalled in 10.1.\nde{For the limit properties of torsors in terms of Čech cohomology, see also SGA 4, VII 5.7 and its corollaries. This has been expanded in the article [Ma07].}
+
+\sgasection{11}{Affine group schemes}
+\numpara{11.0}\label{VIB.11.0}\textbf{Recollections.}\nde{This paragraph of recollections has been added.}
+Let $q:X\to S$ be a quasi-compact and quasi-separated morphism of schemes (cf. EGA IV$_1$, 1.1 \& 1.2), and let $\mathscr F$ be a quasi-coherent $\OX$-module. Recall that $q_*(\mathscr F)$ is a quasi-coherent $\OS$-module (EGA I, 9.2.1). Moreover, by EGA III, 1.4.15 (supplemented by EGA IV$_1$, 1.7.21), one has point (c) below, and the proof in loc.\ cit.\ also gives points (a) and (b):
+
+(a) If $\mathscr F$ is a filtered inductive limit of quasi-coherent submodules $\mathscr F_\alpha$, then $q_*(\mathscr F)=\varinjlim_\alpha q_*(\mathscr F_\alpha)$.
+
+(b) If $\mathscr E$ is a flat $\OS$-module, the canonical morphism $\mathscr E\otimes_{\OS}q_*(\OX)\to q_*q^*(\mathscr E)$ is an isomorphism.
+
+(c) Let $p:S'\to S$ be a flat morphism, $q':X'\to S'$ the morphism obtained from $q$ by base change, and $\mathscr F'$ the inverse image of $\mathscr F$ on $X'$. Then the canonical morphism $p^*q_*(\mathscr F)\to q'_*(\mathscr F')$ is an isomorphism.
+
+Indeed, let $U=\Spec(A)$ be an arbitrary affine open subset of $S$. By hypothesis, $q^{-1}(U)$ is a union of affine open subsets $V_i=\Spec(B_i)$, for $i=1,\ldots,n$, and each intersection $V_i\cap V_j$ is a union of finitely many affine open subsets $W_{ijk}=\Spec(C_{ijk})$. Then $\Gamma(U,q_*(\mathscr F))=\Gamma(q^{-1}(U),\mathscr F)$ is the kernel of the morphism
+\[
+\bigoplus_{i=1}^n\Gamma(V_i,\mathscr F)\to\bigoplus_{i,j,k}\Gamma(W_{ijk},\mathscr F).
+\]
+Point (a) follows, for each of the terms above commutes with filtered inductive limits (since the $V_i$ and $W_{ijk}$ are affine, hence quasi-compact). Let us prove (b): $E=\Gamma(U,\mathscr E)$ is a flat $A$-module, and $\Gamma(U,q_*q^*(\mathscr E))$ is the kernel $K(E)$ of the morphism
+\[
+\bigoplus_{i=1}^n B_i\otimes_A E\to\bigoplus_{i,j,k}C_{ijk}\otimes_A E
+\]
+and since $E$ is flat over $A$, this kernel is identified with $K(A)\otimes_A E=\OX(q^{-1}(U))\otimes_A E$. Finally, if $U'$ is an arbitrary affine open subset of $S'$ lying over $U$, then $A'=\OO(U')$ is a flat $A$-algebra, and one obtains as above that $\mathscr F(q^{-1}(U))\otimes_A A'\isomto\mathscr F'(q'^{-1}(U))$.
+% typo: aux limite inductives -> aux limites inductives.
+% typo?: kept as printed: U, rather than U', in q'^{-1}(U).
+
+\par\medskip\noindent\textbf{Notation.}\ --- Let $S$ be a scheme, $X$ an $S$-scheme, $f:X\to S$ the structural morphism; one shall put $\mathscr A(X)=f_*(\OX)$.
+
+\begin{lemma}{11.1}\label{VIB.11.1}
+Let $X$ and $Y$ be two $S$-schemes quasi-compact and quasi-separated over $S$, $f:X\to S$ and $g:Y\to S$ the structural morphisms. Then the canonical homomorphism
+\[
+\varphi:\mathscr A(X)\otimes_{\OS}\mathscr A(Y)\to\mathscr A(X\times_S Y)
+\]
+is an isomorphism in each of the following cases:\nde{Note that, if $k$ is a field and $X$ is an infinite sum of copies of $S=\Spec k$ (so that $X$ is not quasi-compact), then $\mathscr A(X)=k^X$ and the canonical morphism $k^X\otimes k^X\to k^{X\times X}$ is not surjective.}
+
+a) $f$ and $g$ are affine,
+
+b) $g$ (or $f$) is flat and affine,
+
+c) $g$ is flat and $f_*(\OX)$ is a flat $\OS$-module.
+\end{lemma}
+In case (b), one shall suppose that it is $g$ that is flat and affine. Put then $S'=\Spec\mathscr A(X)$, $Y'=Y\times_S S'$, $g'=g\times_S S'$ and denote by $v$ the morphism $S'\to S$:
+\[
+\xymatrix{Y'\ar[r]\ar[d]_{g'}&Y\ar[d]^g\\\Spec\mathscr A(X)=S'\ar[r]_v&S.}
+\]
+In cases (a) and (b), $g$ is affine and therefore, by EGA II, 1.5.2, one has:
+\begin{equation*}\tag{1}
+g'_*(\OO_{Y'})=v^*g_*(\OO_Y)=\mathscr A(Y)\otimes_{\OS}\OO_{S'}.
+\end{equation*}
+One has the same equality in case (c), by 11.0 (c), since $S'$ is flat over $S$ and $g$ is quasi-compact and quasi-separated.
+
+On the other hand (EGA II 1.2.7), $f:X\to S$ factors through $v$ by a morphism $p:X\to S'$, and one has $p_*(\OX)=\OO_{S'}$ and $X\times_S Y=X\times_{S'}Y'$. Since $f$ is quasi-separated, $p$ is too (EGA IV$_1$, 1.2.2), and since $f$ is quasi-compact and $v$ quasi-separated, $p$ is also quasi-compact (EGA IV$_1$, 1.2.4). Consider then the cartesian square:
+\[
+\xymatrix{X\times_S Y\ar[r]^{p'}\ar[d]&Y'\ar[d]^{g'}\\X\ar[r]_p&S'.}
+\]
+In cases (b) and (c), $Y$ is flat over $S$, so $Y'$ is flat over $S'$; applying 11.0 (c) again, one obtains:
+\begin{equation*}\tag{2}
+p'_*(\OO_{X\times_S Y})=g'^*p_*(\OX)=g'^*(\OO_{S'})=\OO_{Y'},
+\end{equation*}
+and one has the same equality in case (a), for in this case $p$ and $p'$ are isomorphisms.
+
+Finally, since $v$ is affine, one has, by EGA II, 1.4.7, $v_*(\mathscr F\otimes_{\OS}\OO_{S'})=\mathscr F\otimes_{\OS}\mathscr A(X)$ for every quasi-coherent $\OS$-module $\mathscr F$. Combined with (2) and (1), this gives:
+\begin{align*}
+\mathscr A(X\times_S Y)&=v_*g'_*p'_*(\OO_{X\times_S Y})\overset{(2)}=v_*g'_*(\OO_{Y'})\\
+&\overset{(1)}=v_*(\mathscr A(Y)\otimes_{\OS}\OO_{S'})=\mathscr A(Y)\otimes_{\OS}\mathscr A(X).
+\end{align*}
+
+\begin{corollary}{11.2}\label{VIB.11.2}
+The functor $X\mto\Spec\mathscr A(X)$, from the full subcategory of $\Sch_{/S}$ formed by $S$-schemes $X$ flat, quasi-compact and quasi-separated over $S$, and such that $\mathscr A(X)$ is a flat $\OS$-module, to that of $S$-schemes flat and affine over $S$, commutes with finite products, hence transforms $S$-groups into $S$-groups.
+\end{corollary}
+
+\begin{definition}{11.3}\label{VIB.11.3}
+Given an $S$-group $G$ flat, quasi-compact and quasi-separated over $S$, such that $\mathscr A(G)$ is flat over $\OS$,\nde{Let us point out that if $S$ is a locally noetherian regular scheme of dimension $\leq2$, and $X$ an $S$-scheme flat, quasi-compact and quasi-separated, then $\mathscr A(X)$ is a flat $\OS$-module, cf. [Ray70a], VII 3.2.} we shall denote by $G_{\mathrm{af}}$, and call the \emph{affine envelope of $G$}, the $S$-group $G_{\mathrm{af}}=\Spec\mathscr A(G)$.
+\end{definition}
+
+\begin{proposition}{11.3.1}\label{VIB.11.3.1}
+\nde{This proposition has been added; see also the additional paragraph 12 below for a study of the morphism $G\to G_{\mathrm{af}}$ and its kernel.}
+The canonical morphism $\tau_G:G\to G_{\mathrm{af}}$ is a morphism of $S$-groups. Moreover, it satisfies the following universal property:
+
+(i) For every morphism of $S$-schemes $\phi:G\to H$, where $H$ is affine over $S$, there is a unique morphism of $S$-schemes $\phi':G_{\mathrm{af}}\to H$ such that $\phi=\phi'\circ\tau_G$.
+
+(ii) If moreover $H$ is an $S$-group and $\phi$ is a morphism of $S$-groups, then $\phi'$ is too.
+\end{proposition}
+
+\numpara{11.4}\label{VIB.11.4}
+\nde{In 11.4–11.6, $\uHom_{\OS}(\mathbf W(\mathscr E),\mathbf W(\mathscr F))$ has been considered in place of $\uHom_{\OS}(\mathbf V(\mathscr F),\mathbf V(\mathscr E))$ (cf. I, 4.6.3), and the original simplified taking account of the addition 11.0 (b).}
+Let $\mathscr E$ and $\mathscr F$ be two quasi-coherent $\OS$-modules. Consider the $S$-functor $\uHom_{\OS}(\mathbf W(\mathscr E),\mathbf W(\mathscr F))$ (cf. I, 3.1.4), i.e.\ for every $S$-scheme $f:X\to S$,
+\[
+\uHom_{\OS}(\mathbf W(\mathscr E),\mathbf W(\mathscr F))(X)=\Hom_{\OX}(\mathbf W(\mathscr E)_X,\mathbf W(\mathscr F)_X).
+\]
+Moreover, by I, 4.6.2, one has $\mathbf W(\mathscr E)_X=\mathbf W(f^*(\mathscr E))$ (and similarly for $\mathscr F$) and
+\[
+\Hom_{\OX}\bigl(\mathbf W(f^*(\mathscr E)),\mathbf W(f^*(\mathscr F))\bigr)=\Hom_{\OX}(f^*(\mathscr E),f^*(\mathscr F)).
+\]
+One therefore obtains (using the adjunction formula for the last equality):
+\begin{equation*}\tag{$\dagger$}
+\begin{split}
+\uHom_{\OS}(\mathbf W(\mathscr E),\mathbf W(\mathscr F))(X)&=\Hom_{\OX}(f^*(\mathscr E),f^*(\mathscr F))\\
+&=\Hom_{\OS}(\mathscr E,f_*f^*(\mathscr F)).
+\end{split}
+\end{equation*}
+
+\begin{proposition}{11.5}\label{VIB.11.5}
+Let $X$ be an $S$-scheme quasi-compact and quasi-separated over $S$, $f:X\to S$ the structural morphism, $\mathscr E$ and $\mathscr E'$ two quasi-coherent $\OS$-modules. Suppose that one of the following two conditions holds:
+
+a) $f$ is affine,
+
+b) $\mathscr E$ is flat over $\OS$.
+
+Then the canonical morphism $\mathscr E\otimes_{\OS}\mathscr A(X)\to f_*f^*(\mathscr E)$ is an isomorphism, and one therefore has
+\[
+\uHom_{\OS}(\mathbf W(\mathscr E'),\mathbf W(\mathscr E))(X)=\Hom_{\OS}(\mathscr E',\mathscr E\otimes_{\OS}\mathscr A(X)).
+\]
+\end{proposition}
+Indeed, the second assertion follows from 11.4 and the first; the latter follows from EGA II, 1.4.7 in case (a), and 11.0 (b) in case (b).\nde{The original has been simplified; it used the isomorphism $\uHom_{\OS}(\mathbf W(\mathscr E'),\mathbf W(\mathscr E))\simeq\uHom_{\OS}(\mathbf V(\mathscr E),\mathbf V(\mathscr E'))$, then the inclusion of the right-hand term into
+\[
+\uHom_S(\mathbf V(\mathscr E),\mathbf V(\mathscr E'))=\Hom_{\OS}\bigl(\mathscr E',f_*f^*(\mathrm{Sym}(\mathscr E))\bigr)
+\]
+and applied EGA III, 4.1.15 to $\mathbf V(\mathscr E)=\Spec(\mathrm{Sym}(\mathscr E))$ to deduce 11.0 (b).}

@@ -1,0 +1,419 @@
+% French PDF pp. 43--48, completing the last sentence on p. 49.
+\begin{proposition}{4.4.11}\label{IV.4.4.11}
+Let \(R\) be a \(\widetilde{\mathcal C}\)-equivalence relation
+in the sheaf \(X\). For every subsheaf \(Y\) of \(X\) stable under
+\(R\), denote by \(Y'\) the quotient \(Y/R_Y\), considered as a
+subsheaf of \(X'=X/R\).
+Then \(Y=Y'\times_{X'}X\), and the maps \(Y\mapsto Y/R_Y\)
+and \(Y'\mapsto Y'\times_{X'}X\) establish a bijective
+correspondence between the set of subsheaves \(Y\) of \(X\)
+stable under \(R\) and the set of subsheaves \(Y'\) of \(X'\).
+\end{proposition}
+\begin{proof}
+If \(Y'\) is a subsheaf of \(X'\), then \(Y'\times_{X'}X\)
+is a subsheaf of \(X\) stable under \(R\).
+\nde{And one has \((Y'\times_{X'}X)/R=Y'\).}
+If \(Y'\) is obtained by passage to the quotient from a subsheaf
+\(Y\) of \(X\), then \(Y\) is a subobject of \(Y'\times_{X'}X\).
+It therefore suffices to show that if one has two subsheaves
+\(Y,Y_1\) of \(X\), stable under \(R\), with \(Y_1\) containing
+\(Y\), and if the quotients \(Y/R_Y\), \(Y_1/R_{Y_1}\) are
+identical, then \(Y=Y_1\). One is evidently reduced to proving
+the same assertion in the case where \(Y_1=X\).
+Then denoting by \(P\) (resp. \(Q\)) the presheaf
+\(i(X)/i(R)\) (resp. \(i(Y)/i(R_Y)\)), the diagram
+\[
+\xymatrix{
+X\ar[r] & P\\
+Y\ar@{^{(}->}[u]\ar[r] & Q\ar@{^{(}->}[u] }
+\]
+is cartesian. Since one has a commutative diagram
+\[
+\xymatrix{
+P\ar@{^{(}->}[r] & a(P)\\
+Q\ar@{^{(}->}[u]\ar@{^{(}->}[r] & a(Q) },
+\]
+and since \(Q\hookrightarrow a(Q)\) is covering (4.3.11),
+the monomorphism \(Q\hookrightarrow P\) is covering,
+hence \(Q\) is a refinement of \(P\).
+By base change, \(Y\) is a refinement of \(X\).
+Since \(X,Y\) are sheaves, this implies (4.3.12) \(Y=X\).
+\end{proof}
+
+\numpara{4.4.12}\label{IV.4.4.12}
+In particular, if \(Y\) is a subsheaf of \(X\), and if \(Y'=Y/R_Y\),
+then the preceding correspondence defines a subsheaf \(\overline Y\)
+of \(X\), stable under \(R\), containing \(Y\), and minimal
+for these properties, which one calls the \emph{saturation} of
+\(Y\) for the equivalence relation \(R\).
+
+\sgasection{4.5}{The case of a topology less fine than the canonical topology}
+By 4.3.6 and 4.3.8, the following conditions are equivalent
+for a topology \(\mathcal T\) on \(\mathcal C\):
+\begin{enumeratei}
+\item \(\mathcal T\) is less fine than the canonical topology of \(\mathcal C\).
+\item Every representable presheaf is a sheaf for \(\mathcal T\).
+\item Every covering sieve for \(\mathcal T\) is universal effective epimorphic.
+\end{enumeratei}
+If \(\mathcal T\) is defined by a pretopology \(S\mapsto R(S)\),
+these conditions are also equivalent to
+
+(iv) Every family belonging to \(R(S)\) is universal effective epimorphic.
+
+In the case where these conditions hold, the canonical functor
+\(\mathcal C\to\widehat{\mathcal C}\) factors through a functor
+\(j_{\mathcal C}=j:\mathcal C\to\widetilde{\mathcal C}\)
+(one will also write \(j(S)=\widetilde S\)).
+\nde{And one will also write \(h_S=\widehat S\), cf. the first
+commutative diagram of 4.5.4.}
+
+\begin{proposition}{4.5.1}\label{IV.4.5.1}
+The functor \(j:\mathcal C\to\widetilde{\mathcal C}\) is fully
+faithful and commutes with arbitrary projective limits.
+In particular, it is left exact, and therefore preserves algebraic
+structures defined by finite projective limits.
+\end{proposition}
+\begin{proof}
+This follows immediately by considering the commutative diagram
+\[
+\xymatrix{
+\mathcal C\ar[rr]\ar[dr]_j & & \widehat{\mathcal C}\\
+ & \widetilde{\mathcal C}\ar[ur]_i & },
+\]
+and from 4.4.1 (i).
+\end{proof}
+
+Before exhibiting other properties of the functor \(j\), we must
+define the topology induced on a category \(\mathcal C_{/S}\).
+No longer necessarily assuming that the given topology is less
+fine than the canonical topology, one does this as follows:
+if \(C\) is a sieve of \(T\) in \(\mathcal C\) and if one has a
+morphism \(T\to S\), then \(C\) naturally defines a sieve of
+\(T\) in \(\mathcal C_{/S}\), denoted \(J(T)\)
+(for the definition of a sieve of \(T\) depends only on the
+category \(\mathcal C_{/T}=(\mathcal C_{/S})_{/T}\)).
+If, for example, \(C\) is defined by the family \(\{T_i\to T\}\),
+then its image in \(\mathcal C_{/S}\) is defined by the same
+family considered as a family of morphisms of \(\mathcal C_{/S}\).
+This said, the map \(T\mapsto J(T)\) defines a topology on
+\(\mathcal C_{/S}\), called the topology induced by the given
+topology. With the definitions of [AS], 2.3, this is the least
+fine topology on \(\mathcal C_{/S}\) for which the canonical functor
+\[
+i_S:\mathcal C_{/S}\longrightarrow\mathcal C
+\]
+is a comorphism.\nde{That is, such that for every object
+\(T\to S\) of \(\mathcal C_{/S}\), every covering sieve \(R'\)
+of \(i_S(T\to S)=T\), considered as a sieve of
+\((T\to S)\in\Ob\mathcal C_{/S}\), is covering.}
+One will remark that the identifications
+\[
+(\mathcal C_{/S})_{/T}=\mathcal C_{/T}
+\]
+respect the topologies by definition.
+
+\begin{proposition}{4.5.2}\label{IV.4.5.2}
+Let \(S\) be a representable sheaf on \(\mathcal C\) and
+\(F\to S\) a morphism of \(\widehat{\mathcal C}\).
+For \(S'\mapsto\Hom_S(S',F)\) to be a separated presheaf
+(resp. a sheaf) on \(\mathcal C_{/S}\), it is necessary and
+sufficient that \(F\) be a separated presheaf (resp. a sheaf)
+on \(\mathcal C\).
+\end{proposition}
+\begin{proof}
+For every functor \(P\), one has (I 1.4.1)
+\[
+\Hom(P,F)=\coprod_{f\in\Hom(P,S)}\Hom_f(P,F).
+\]
+\nde{The original has been given in detail in what follows.}
+Let \(S'\in\Ob\mathcal C\), and let \(\eta:C'\to S'\) be
+a covering sieve. Since \(S\) is a sheaf, the map
+\(f\mapsto f\circ\eta\) establishes a bijection
+\(\Hom(S',S)\isomto\Hom(C',S)\).
+Consequently the map
+\[
+\Hom_{\widehat{\mathcal C}}(S',F)
+\longrightarrow\Hom_{\widehat{\mathcal C}}(C',F)
+\]
+decomposes into a \og disjoint union\fg{} of the maps
+\[
+\Hom_f(S',F)\longrightarrow\Hom_{f\circ\eta}(C',F).
+\]
+The proposition follows.
+\end{proof}
+
+\begin{corollary}{4.5.3}\label{IV.4.5.3}
+The topology induced on \(\mathcal C_{/S}\) by a topology
+on \(\mathcal C\) less fine than the canonical topology of
+\(\mathcal C\) is less fine than the canonical topology of
+\(\mathcal C_{/S}\).
+\end{corollary}
+
+\begin{corollary}{4.5.4}\label{IV.4.5.4}
+Suppose that the given topology on \(\mathcal C\) is less fine
+than the canonical topology. For every \(S\in\Ob\mathcal C\),
+one has an equivalence of categories
+\[
+\widetilde{\mathcal C}_{/\widetilde S}
+\longrightarrow\widetilde{\mathcal C_{/S}}.
+\]
+The following diagrams are commutative up to isomorphism
+(all unlabeled arrows are equivalences):
+\[
+\xymatrix@C=1.4em@R=3em{
+\mathcal C_{/S}\ar[r]^{(j_{\mathcal C})_{/S}}\ar@{=}[d]
+ & \widetilde{\mathcal C}_{/\widetilde S}
+\ar[r]^{(i_{\mathcal C})_{/\widetilde S}}\ar[d]_{\simeq}
+ & \widehat{\mathcal C}_{/\widehat S}
+\ar[r]^{(a_{\mathcal C})_{/\widehat S}}\ar[d]_{\simeq}
+ & \widetilde{\mathcal C}_{/\widetilde S}\ar[d]_{\simeq}\\
+\mathcal C_{/S}\ar[r]_{j_{\mathcal C_{/S}}}
+ & \widetilde{\mathcal C_{/S}}\ar[r]_{i_{\mathcal C_{/S}}}
+ & \widehat{\mathcal C_{/S}}\ar[r]_{a_{\mathcal C_{/S}}}
+ & \widetilde{\mathcal C_{/S}} },
+\]
+\[
+\xymatrix@C=1.3em@R=3em{
+(\widetilde{\mathcal C}_{/\widetilde S})_{/\widetilde T}
+\ar[r]\ar[d]_{\simeq}
+ & (\widetilde{\mathcal C_{/S}})_{/\widetilde T}
+\ar[dr] & \\
+\widetilde{\mathcal C}_{/\widetilde T}
+\ar[r] & \widetilde{\mathcal C_{/T}}\ar[r]_{\simeq}
+ & \widetilde{(\mathcal C_{/S})_{/T}} }.
+\]
+\end{corollary}
+\begin{proof}
+The commutativity of the first two squares follows from the
+definition of the equivalence
+\(\widetilde{\mathcal C}_{/\widetilde S}
+\to\widetilde{\mathcal C_{/S}}\).
+To prove the commutativity of the last, one must see that
+the following square is commutative:
+\[
+\xymatrix{
+\widehat{\mathcal C}_{/\widehat S}\ar[r]^{L'}\ar[d]
+ & \widehat{\mathcal C}_{/\widehat S}\ar[d]\\
+\widehat{\mathcal C_{/S}}\ar[r]_{L''}
+ & \widehat{\mathcal C_{/S}} },
+\]
+where \(L'\) is the restriction of the functor \(L_{\mathcal C}\)
+to \(\widehat{\mathcal C}_{/\widehat S}\), and \(L''\) the
+functor \(L_{\mathcal C_{/S}}\); this is easily seen by returning
+to the definition of the functors \(L\) (given after 4.3.9).
+As for the second diagram, it is simply the restriction to
+the categories of sheaves of the corresponding diagram for
+the categories of presheaves (Exposé I, no.\ 1), which is commutative.
+\end{proof}
+
+\begin{scholium}{4.5.5}\label{IV.4.5.5}
+The various assertions of this number show that in the case
+where the given topology is less fine than the canonical topology,
+one may identify \(\mathcal C\) with a full subcategory of
+\(\widetilde{\mathcal C}\), itself a full subcategory of
+\(\widehat{\mathcal C}\), and that in this identification
+one may indulge in the customary abuses of language concerning
+\(\mathcal C\to\widehat{\mathcal C}\), justified by the preceding
+commutativities. Let us remark explicitly that the first diagram
+of 4.5.4 shows that one may use the functor \(a\) without special precautions.
+\end{scholium}
+
+We shall see in the next number that the identification of
+\(\mathcal C\) with a full subcategory of \(\widetilde{\mathcal C}\)
+(contrary to what happened for \(\widehat{\mathcal C}\)) commutes
+with the formation of certain inductive limits, and we shall
+then say how to use this fact.
+
+From now on, unless expressly stated otherwise, we shall assume
+that the given topology is less fine than the canonical topology,
+and we shall systematically make the identifications set out above.
+
+\begin{proposition}{4.5.6}\label{IV.4.5.6}
+Let \(F,G\) be two sheaves over \(S\), and \(f:F\to G\) an
+\(S\)-morphism. The following conditions on \(f\) are equivalent:
+
+(i) \(f\) is a monomorphism (resp. an epimorphism, resp. an
+isomorphism) in \(\widetilde{\mathcal C}\).
+
+(ii) \(f\) is a monomorphism (resp. an epimorphism, resp. an
+isomorphism) in
+\(\widetilde{\mathcal C}_{/S}=\widetilde{\mathcal C_{/S}}\).
+\end{proposition}
+\begin{proof}
+For monomorphisms and isomorphisms this is evident (it is a
+question of presheaves). For epimorphisms, this follows from
+the description of epimorphisms as covering morphisms (4.4.3)
+and the fact that, by definition of the induced topology,
+these are the same in \(\widetilde{\mathcal C}\) and
+\(\widetilde{\mathcal C}_{/S}\).
+\end{proof}
+
+\begin{proposition}{4.5.7}\label{IV.4.5.7}
+Let \(f:F\to G\) be a morphism of sheaves.
+The following conditions are equivalent:
+
+(i) \(f\) is a monomorphism (resp. an epimorphism, resp. an isomorphism).
+
+(ii) For each \(S\in\Ob\mathcal C\), \(f_S:F_S\to G_S\)
+is locally a monomorphism (resp. an epimorphism, resp. an
+isomorphism), that is:
+
+(iii) For each \(S\in\Ob\mathcal C\), the set of \(T\to S\)
+such that \(F_T\to G_T\) is a monomorphism (resp. an
+epimorphism, resp. an isomorphism) is a refinement of \(S\).
+
+If the given topology is defined by a pretopology \(R\),
+these conditions are also equivalent to the following:
+
+(iv) For each \(S\in\Ob\mathcal C\), there exists a covering
+family \(\{S_i\to S\}\in R(S)\) such that for every \(i\),
+\(F_{S_i}\to G_{S_i}\) is a monomorphism (resp. an
+epimorphism, resp. an isomorphism).
+
+If the category \(\mathcal C\) possesses a final object \(e\),
+one may restrict oneself to taking \(S=e\) in conditions
+(ii), (iii), (iv).
+\end{proposition}
+\begin{proof}
+One evidently has (ii) \(\Leftrightarrow\) (iii)
+\(\Leftrightarrow\) (iv).
+To prove the equivalence of (i) and (ii), as well as the
+supplement concerning the final object, one must show that
+(ii) implies (i) and that the notions considered are stable
+under base extension. Let us first prove the latter point.
+For monomorphisms and isomorphisms, this is evident
+(it is a question of presheaves). For epimorphisms, it follows
+from the fact that every epimorphism of sheaves is universal (4.4.3).
+
+Finally let us show that (ii) implies (i).
+First suppose that \(f_S:F_S\to G_S\) is locally a monomorphism
+(resp. an isomorphism). There then exists a covering sieve \(C\)
+of \(S\) such that for every \(T\to C\), \(f_T\) is a
+monomorphism (resp. an isomorphism). Since a projective limit
+of monomorphisms (resp. isomorphisms) is one,
+\(\Hom(C,f)\) will be a monomorphism (resp. an isomorphism)
+(cf. 4.1.4). The commutative diagram
+\[
+\xymatrix{
+\Hom(C,F)\ar[r]^{\Hom(C,f)} & \Hom(C,G)\\
+F(S)\ar[u]^{\simeq}\ar[r]_{f(S)} & G(S)\ar[u]_{\simeq} }
+\]
+then shows that \(f(S)\) is injective (resp. bijective).
+Finally suppose that \(f:F\to G\) is locally an epimorphism,
+and let \(H\subset G\) be its image.
+For each \(S\to G\), \(H\times_G S\) is the image of
+\(f\times_G S:F\times_G S\to S\).
+To show that \(f\) is an epimorphism, one must show that
+\(H\) is a refinement of \(G\), that is, \(H\times_G S\)
+is a refinement of \(S\) for each \(S\).
+But since this is so after every base change \(T\to S\)
+from a refinement of \(S\) (since \(f\times_G S\) is locally
+covering), \(H\times_G S\) is indeed a refinement of \(S\)
+(Axiom (T 2)).
+\end{proof}
+
+\begin{corollary}{4.5.8}\label{IV.4.5.8}
+Let \(F,G\) be two sheaves over \(S\), and \(f:F\to G\)
+an \(S\)-morphism. For \(f\) to be a monomorphism, resp.
+an epimorphism, resp. an isomorphism, it is necessary and
+sufficient that it be so locally on \(S\).
+\end{corollary}
+\begin{remark}{4.5.9}\label{IV.4.5.9}
+The proof of the proposition shows that it remains valid,
+for the part concerning monomorphisms (resp. isomorphisms),
+when one assumes only that \(F\) is a separated presheaf
+(resp. a sheaf) and \(G\) is any presheaf
+(resp. a separated presheaf).
+\end{remark}
+Let us temporarily return to the case of an arbitrary topology
+and give a definition.
+\begin{definition}{4.5.10}\label{IV.4.5.10}
+Let \(G\to F\) be a morphism of \(\widehat{\mathcal C}\).
+One says that \(G\) is a \emph{relative sheaf over \(F\)} if
+for each \(F\)-functor \(H\) and each refinement \(R\) of \(H\),
+the canonical map
+\[
+\Hom_F(H,G)\isomto\Hom_F(R,G)\tag{+}
+\]
+is bijective.
+\end{definition}
+Proposition 4.5.2 generalizes at once:
+\begin{proposition}{4.5.11}\label{IV.4.5.11}
+If \(F\) is a sheaf, \(G\) is a relative sheaf over \(F\)
+if and only if it is a sheaf.
+\end{proposition}
+\begin{lemma}{4.5.12}\label{IV.4.5.12}
+In the situation \(X\to T\to S\) (where \(X,T,S\) are three
+objects of \(\widehat{\mathcal C}\)), if \(X\) is a relative
+sheaf over \(T\), then \(U=\prod_{T/S}X\) is a relative sheaf over \(S\).
+\end{lemma}
+\begin{proof}
+Indeed, for every \(S\)-functor \(Y\), one has
+\[
+\Hom_S(Y,U)=\Hom_T(T\times_S Y,X).
+\]
+If \(C\) is a sieve of \(Y\), then \(T\times_S C\) is a sieve
+of \(T\times_S Y\); one concludes at once.
+\end{proof}
+\begin{corollary}{4.5.13}\label{IV.4.5.13}
+The presheaves \(\uHom_{T/S}(X,Y)\),
+\(\underline{\Isom}_S(X,Y)\), etc., are sheaves when the
+arguments which occur in them are also sheaves.
+\end{corollary}
+\begin{proof}
+Indeed, all these presheaves are constructed with the aid of
+fibered products and presheaves \(\prod\) (I 1.7 and II 1).
+It therefore suffices to verify the result for a presheaf
+\(\prod_{T/S}X\); in this case, the assertion follows from
+4.5.11 and 4.5.12.
+\end{proof}
+
+\sgasection{4.6}{Description of the quotient of a sheaf by an equivalence relation}
+Recall that we assume that the given topology \(\mathcal T\)
+is less fine than the canonical topology.
+\begin{proposition}{4.6.1}\label{IV.4.6.1}
+Let \(R\xrightarrow{p_1,p_2}X\) be a
+\(\widetilde{\mathcal C}\)-equivalence relation in the sheaf \(X\).
+Let \(F\in\Ob\widehat{\mathcal C}\) be defined as follows:
+for each \(S\) of \(\mathcal C\),
+\[
+F(S)=\left\{\begin{array}{l}
+\text{sub-}S\text{-sheaves }Z\text{ of }X_S\text{ stable under }R\times S,\\
+\text{whose quotient by }R_Z\text{ is }S,\text{ that is, such that}\\
+\text{the diagram }R_Z\rightrightarrows Z\to S\text{ is exact}
+\end{array}\right\}.
+\]
+\nde{\(R\times S\) denotes the equivalence relation in \(X\times S\)
+defined by \(R\times S_{\mathrm{diagonal}}\subset X\times X\times S\times S\),
+and \(R_Z\) is the equivalence relation which it induces in \(Z\)
+(cf. 3.1.6).}
+Then, for every sheaf \(Y\), \(\Hom(Y,F)\) is identified with the set:
+\[
+\left\{\begin{array}{l}
+\text{sub-}Y\text{-sheaves of }X\times Y\text{ stable under }R\times Y\\
+\text{and whose quotient is }Y
+\end{array}\right\}.
+\]
+In particular, the subsheaf \(R\) of \(X\times X\) corresponds
+to an element \(p\) of \(\Hom(X,F)\), and the diagram
+\[
+\xymatrix{R\ar@<.5ex>[r]^{p_1}\ar@<-.5ex>[r]_{p_2}
+ & X\ar[r]^p & F }
+\]
+is exact, hence identifies \(F\) with the quotient sheaf \(X/R\).
+\end{proposition}
+\begin{proof}
+Indeed, set \(Q=X/R\). For every sheaf \(Y\) and every morphism
+\(f\in\Hom(Y,Q)\) corresponding to a section
+\(s:Y\hookrightarrow Q\times Y\), consider the diagram
+\[
+\xymatrix{
+R\times Y\ar@<.5ex>[r]\ar@<-.5ex>[r] & X\times Y\ar[r] & Q\times Y\\
+ & Z\ar@{^{(}->}[u]\ar[r] & Y\ar@{^{(}->}[u]_s }.\tag{*}
+\]
+Here the square is cartesian. It is immediate by 4.4.11 that
+\(Z\) is a sub-\(Y\)-sheaf of \(X\times Y\), stable under
+\(R\times Y\), whose quotient is \(Y\), and that conversely,
+every \(Z\) of this type comes from a unique section of
+\(Q\times Y\) over \(Y\).
+% Proof continues in en-09.tex.

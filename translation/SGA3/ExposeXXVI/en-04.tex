@@ -1,0 +1,192 @@
+% Source PDF p. 21; continuation of the proof of 4.2.1.
+One has:
+\[
+\begin{aligned}
+\dim(G)&=\dim(T)+\operatorname{Card}(R),&\dim(P)&=\dim(T)+\operatorname{Card}(R_1),\\
+\dim(Q)&=\dim(T)+\operatorname{Card}(R_2),&\dim(P\cap Q)&=\dim(T)+\operatorname{Card}(R_1\cap R_2),
+\end{aligned}
+\]
+by Exp.~XXII, 5.4.4 and 5.4.5, for example. Condition (v) is therefore equivalent to
+\[
+\operatorname{Card}(R_1\cap R_2)=\operatorname{Card}(R_1)+\operatorname{Card}(R_2)-\operatorname{Card}(R),
+\]
+that is, $R_1\cup R_2=R$. To prove (vi), it suffices, by Exp.~XXII, 5.9.2 and 5.4.5, to prove that $R_1\cap-R_2$ contains a system of positive roots of $R$. One is therefore reduced to proving:
+\begin{lemma}{4.2.2}\label{XXVI.4.2.2}
+Let $R$ be a ``root system'' (for example the set of roots of a root datum in the sense of Expos\'e~XXI). Let $R_1$ and $R_2$ be two closed subsets of $R$, each containing a system of positive roots. If $R_1\cup R_2=R$, then $R_1\cap-R_2$ contains a system of positive roots.
+\end{lemma}
+Indeed, since $R_1\cap-R_2=R_3$ is evidently closed, and by Exp.~XXI, 3.3.6, it suffices to show that $R_3\cup-R_3=R$. Now one knows that $R_1\cup-R_1=R=R_2\cup-R_2$, and one concludes by the following elementary fact: if $A,A',B,B'$ are four subsets of a set $E$, and if $A\cup A'=B\cup B'=A\cup B=A'\cup B'=E$, one has $(A\cap B')\cup(A'\cap B)=E$.
+
+This completes the proof of (v) $\Rightarrow$ (vi) in the case where the base is the spectrum of an algebraically closed field. Let us now return to the general case and suppose (v) satisfied. Let $s\in S$; by the foregoing, one can find a Borel subgroup $\overline B$ (resp.~$\overline B'$) of $P_{\overline s}$ (resp.~$Q_{\overline s}$) such that $\overline B\cap\overline B'$ is a maximal torus of $G_{\overline s}$.
+
+Since the $S$-scheme $\underline{\operatorname{Bor}}(P)\simeq\underline{\operatorname{Bor}}(P/\operatorname{rad}^{\mathrm u}(P))$ of Borel subgroups of $P$ is smooth, one can, applying ``Hensel's lemma'' (cf.~Exp.~XI 1.10) and reasoning locally for the \'etale topology (i.e.~replacing $S$ by an \'etale $S'\to S$ covering $s$, and $s$ by a point of its fiber in $S'$), suppose that there exists a Borel subgroup $B$ of $P$ projecting onto $\overline B$; one can similarly suppose that there exists a Borel subgroup $B'$ of $Q$ projecting onto $\overline B'$. Since $\overline B\cap\overline B'$ is a maximal torus of $G$, there exists an open subset $U$ of $S$ containing $s$ and such that $B_U\cap B'_U$ is a maximal torus of $G_U$ (Exp.~XXII, 5.9.4), which proves (vi).
+% typo?: G (rather than its geometric fiber) after barred B is kept as printed.
+\end{proof}
+\begin{definition}{4.2.3}\label{XXVI.4.2.3}
+A pair $(P,Q)$ satisfying the equivalent conditions (i) to (vii) of theorem 4.2.1 is said to be \emph{in transversal position}. One also says that $P$ is \emph{in transversal position relative to $Q$}, or, by abuse of language, that $P$ and $Q$ are in (mutual) transversal position.
+\end{definition}
+By (vi), this definition coincides, in the case of Borel subgroups, with that of Exp.~XXII, 5.9.1.
+\begin{corollary}{4.2.4}\label{XXVI.4.2.4}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $P$ and $Q$ two parabolic subgroups of $G$.
+% Source PDF p. 22.
+\begin{enumeratei}
+\item In order that $(P,Q)$ be in transversal position, it is necessary and sufficient that, for each point $s$ of $S$, the pair $(P_{\overline s},Q_{\overline s})$ be in transversal position; if $S'\to S$ is a surjective morphism, and if $(P_{S'},Q_{S'})$ is in transversal position, then $(P,Q)$ is in transversal position.
+\item There exists an open subscheme $U$ of $S$ satisfying the following property: in order that a morphism $S'\to S$ factor through $U$, it is necessary and sufficient that $(P_{S'},Q_{S'})$ be in transversal position.
+\item Consider the subfunctors
+\[
+\begin{aligned}
+\underline{\operatorname{Gen}}(G)&\subset\underline{\operatorname{Par}}(G)\times_S\underline{\operatorname{Par}}(G),\\
+\underline{\operatorname{Gen}}(/Q)&\subset\underline{\operatorname{Par}}(G),\\
+\underline{\operatorname{Gen}}(P/Q)&\subset G,
+\end{aligned}
+\]
+defined as follows: for $S'\to S$, $\underline{\operatorname{Gen}}(G)(S')$ is the set of pairs of parabolic subgroups of $G_{S'}$ in transversal position, $\underline{\operatorname{Gen}}(/Q)(S')$ is the set of parabolic subgroups of $G_{S'}$ in transversal position relative to $Q_{S'}$, and $\underline{\operatorname{Gen}}(P/Q)(S')$ is the set of $g\in G(S')$ such that $\operatorname{int}(g)P_{S'}$ is in transversal position relative to $Q_{S'}$.
+
+Each of these functors is representable by an open subscheme universally schematically dense over $S$\nde{``Relatively dense'' has been replaced by ``universally schematically dense over $S$'', cf.~EGA~IV$_3$, Def.~11.10.8.} (cf.~Exp.~XVIII \S~1) of the corresponding $S$-scheme $\underline{\operatorname{Par}}(G)\times_S\underline{\operatorname{Par}}(G)$, resp.~$\underline{\operatorname{Par}}(G)$, resp.~$G$.
+\end{enumeratei}
+\end{corollary}
+Assertions (i) follow immediately from the description 4.2.1~(i) of the term ``transversal position''. To prove (ii), one takes $U=S-\Supp(\Coker u)$, where $u$ is the canonical morphism $\Lie(P)\oplus\Lie(G)\to\Lie(G)$.
+% typo?: Lie(G) as the second summand is kept as printed.
+
+Since one has cartesian diagrams
+\[
+\xymatrix@C=18pt@R=22pt{
+G\ar[r]^f&\underline{\operatorname{Par}}(G)\\
+\underline{\operatorname{Gen}}(P/Q)\ar@{^{(}->}[u]\ar[r]&\underline{\operatorname{Gen}}(/Q)\ar@{^{(}->}[u]
+}
+\qquad
+\xymatrix@C=15pt@R=22pt{
+\underline{\operatorname{Par}}(G)\ar[r]^{f'}&\underline{\operatorname{Par}}(G)\times_S\underline{\operatorname{Par}}(G)\\
+\underline{\operatorname{Gen}}(/Q)\ar@{^{(}->}[u]\ar[r]&\underline{\operatorname{Gen}}(G)\ar@{^{(}->}[u]
+}
+\]
+(where $f(g)=\operatorname{int}(g)P$ and $f'(R)=(R,Q)$), it suffices to verify (iii) in the case of $\underline{\operatorname{Gen}}(G)$. Let then $P_0$ be the canonical parabolic subgroup of $G_{\underline{\operatorname{Par}}(G)}$; put
+\[
+\begin{gathered}
+X=\underline{\operatorname{Par}}(G)\times_S\underline{\operatorname{Par}}(G),\\
+P=\mathrm{pr}_1^*(P_0),\qquad Q=\mathrm{pr}_2^*(P_0);
+\end{gathered}
+\]
+applying assertion (ii) to the parabolic subgroups $P$ and $Q$ of $G_X$, one constructs an open subscheme $U$ of $X$ which, as one immediately verifies, is indeed identified with $\underline{\operatorname{Gen}}(G)$. It remains to verify the density assertion, which can be done on the geometric fibers;\nde{Cf.~EGA~IV$_3$, 11.10.10.} one can therefore suppose $S=\Spec(k)$, $k$ an algebraically closed field; since $\underline{\operatorname{Par}}(G)$ is smooth, it suffices to verify that $\underline{\operatorname{Gen}}(G)$ meets every irreducible component of $\underline{\operatorname{Par}}(G)\times_S\underline{\operatorname{Par}}(G)$; in other words, by 3.3, it suffices to see that, if $t,t'\in\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))(S)$, there exists a pair $(P,P')$ in transversal position, with $t(P)=t$, $t(P')=t'$.
+
+% Source PDF p. 23: preceding sentence begins on p. 22.
+Now this is immediate: one chooses a pair $(B,B')$ of Borel subgroups of $G$ such that $B\cap B'$ is a maximal torus (one splits $G$ and applies Exp.~XXII, 5.9.2), then applies 3.8 to construct $P\supset B$ and $P'\supset B'$, with $t(P)=t$, $t(P')=t'$; $P$ and $P'$ have the desired types and are in transversal position by 4.2.1~(vi).
+\begin{corollary}{4.2.5}\label{XXVI.4.2.5}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $P$ and $Q$ two parabolic subgroups of $G$, the pair $(P,Q)$ being in transversal position.
+\begin{enumeratei}
+\item Let $P'$ and $Q'$ be two parabolic subgroups of $G$ of the same types as $P$ and $Q$ respectively. In order that the pair $(P',Q')$ be in transversal position, it is necessary and sufficient that it be conjugate to the pair $(P,Q)$, locally for the \'etale topology. (N.B.~We shall see in \S~5 that one can replace the \'etale topology by the Zariski topology.)
+\item The canonical morphism $P\times_S Q\to G$ induces a smooth surjective morphism $P\times_S Q\to\underline{\operatorname{Gen}}(Q/P)$, and an isomorphism
+\[
+(P\times_S Q)/(P\cap Q)\simeq\underline{\operatorname{Gen}}(Q/P)
+\]
+(where $P\cap Q=R$ acts on $P\times_S Q$ by $(p,q)r=(pr,r^{-1}q)$).
+\item The canonical morphism $P\to\underline{\operatorname{Par}}_{t(Q)}(G)$ (defined set-theoretically by $p\mto\operatorname{int}(p)Q$) induces a smooth surjective morphism $P\to\underline{\operatorname{Gen}}(/P)\cap\underline{\operatorname{Par}}_{t(Q)}(G)$, and an isomorphism
+\[
+P/(P\cap Q)\simeq\underline{\operatorname{Gen}}(/P)\cap\underline{\operatorname{Par}}_{t(Q)}(G).
+\]
+\item The canonical morphism $G\to\underline{\operatorname{Par}}_{t(P)}(G)\times_S\underline{\operatorname{Par}}_{t(Q)}(G)$ (defined set-theoretically by $g\mto(\operatorname{int}(g)P,\operatorname{int}(g)Q)$) induces a smooth surjective morphism
+\[
+G\to\underline{\operatorname{Gen}}(G)\cap\bigl(\underline{\operatorname{Par}}_{t(P)}(G)\times_S\underline{\operatorname{Par}}_{t(Q)}(G)\bigr)
+\]
+and an isomorphism
+\[
+G/(P\cap Q)\simeq\underline{\operatorname{Gen}}(G)\cap\bigl(\underline{\operatorname{Par}}_{t(P)}(G)\times_S\underline{\operatorname{Par}}_{t(Q)}(G)\bigr).
+\]
+\end{enumeratei}
+\end{corollary}
+Let us prove (i). It is clear that the condition is sufficient; let us prove that it is necessary. Let therefore $(P',Q')$ be in transversal position. Since $P$ and $P'$ are locally conjugate for the \'etale topology, one can suppose $P=P'$, and it suffices for us to prove that, if $Q$ and $Q'$ are two parabolic subgroups of $G$ in transversal position relative to $P$ and of the same type, they are then conjugate, locally for the \'etale topology, by a section of $P$. Using 4.2.1~(vi), one can suppose that there exist Borel subgroups $B,B',B_1,B'_1$ of $P,P,Q,Q'$ respectively such that $B\cap B_1=T$ and $B'\cap B'_1=T'$ are maximal tori of $G$. Now the Killing pairs $(B,T)$ and $(B',T')$ of $P$ are locally conjugate in $P$ for the \'etale topology (1.16), and one can suppose $B=B'$, $T=T'$, in which case one has $B_1=B'_1$ by Exp.~XXII, 5.9.2, hence $Q=Q'$ by 3.8.
+
+Assertions (ii), (iii) and (iv) are proved in parallel fashion. Let us prove (ii), for example; let $g\in\underline{\operatorname{Gen}}(Q/P)(S)$, i.e.~let $g\in G(S)$ be such that $\operatorname{int}(g)Q$ is in transversal position relative to $P$. By the preceding proof, $Q$ and $\operatorname{int}(g)Q$ are locally conjugate for the \'etale topology by a section of $P$.
+
+% Source PDF p. 24: preceding sentence begins on p. 23.
+Reasoning locally for this topology, one can suppose that there exists $p\in P(S)$ such that $\operatorname{int}(g)Q=\operatorname{int}(p)Q$, hence $p^{-1}g\in\uNorm_G(Q)(S)=Q(S)$; this proves the existence of a $q\in Q(S)$ such that $g=pq$. We have therefore proved that the morphism considered in (ii) is covering for the \'etale topology. Comparing with 4.2.1~(ii), one deduces that it is smooth and surjective. Moreover, an immediate argument shows that the equivalence relation defined on $P\times_S Q$ by the morphism $P\times_S Q\to G$ is the equivalence relation associated with the action of the group $R=P\cap Q$ (acting by $(p,q)r=(pr,r^{-1}q)$), which proves the last assertion of (ii) (since a smooth surjective morphism is an effective epimorphism, for example).
+\begin{remark}{4.2.6}\label{XXVI.4.2.6}
+If $P$ and $Q$ are in transversal position, one will often denote by $P\cdot Q$ the open subset $\underline{\operatorname{Gen}}(Q/P)$ of $G$, a notation justified by 4.2.5~(ii).
+\end{remark}
+\begin{proposition}{4.2.7}\label{XXVI.4.2.7}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $P$ and $Q$ two parabolic subgroups of $G$, the pair $(P,Q)$ being in transversal position.
+\begin{enumeratei}
+\item The group $P\cap Q$ is smooth over $S$ (and in fact has connected fibers by 4.1.2); let us then introduce $(P\cap Q)^0$ (cf.~Exp.~VIB 3.10); this is a subgroup of type (RC) of $G$ (Exp.~XXII, 5.11.1), whose unipotent radical (\loccit, 5.11.4) decomposes as a direct product
+\[
+\operatorname{rad}^{\mathrm u}((P\cap Q)^0)=
+(\operatorname{rad}^{\mathrm u}(P)\cap Q)\times_S(P\cap\operatorname{rad}^{\mathrm u}(Q)).
+\]
+\item If $S$ is affine, $\mathrm H^1(S,\operatorname{rad}^{\mathrm u}(P\cap Q)^0)=0$. If $S$ is semilocal, $P\cap Q$ contains a maximal torus of $G$.
+\end{enumeratei}
+\end{proposition}
+Indeed, $P\cap Q$ is smooth by 4.2.1~(ii) and the cartesian diagram
+\[
+\xymatrix@C=35pt@R=22pt{
+P\times_S Q\ar[r]&G\\
+P\cap Q\ar[r]\ar[u]&S.\ar[u]
+}
+\]
+To verify the stated assertions about $(P\cap Q)^0$, one can reason locally for the \'etale topology, hence by 4.2.1~(vii) suppose that one has chosen a splitting $(G,T,M,R)$ of $G$ such that $P$ and $Q$ contain $T$ and are defined respectively by subsets $R_1$ and $R_2$ of $R$, $R_1$ containing a system of positive roots $R_+$, and $R_2$ containing the opposite system $R_-$. Let $\Delta$ be the set of simple roots of $R_+$; put
+\[
+A_1=\Delta\cap-R_1,\qquad A_2=\Delta\cap R_2,\qquad A=A_1\cap A_2.
+\]
+By 1.4~(v) and 1.12, one has
+\[
+\begin{aligned}
+R_1&=R_+\cup(R_-\cap-\NN A_1),&
+R_2&=(R_+\cap\NN A_2)\cup R_-,\\
+\operatorname{rad}^{\mathrm u}(P)&=\prod_{\substack{\alpha\in R_1\\\alpha\notin-R_1}}U_\alpha,&
+\operatorname{rad}^{\mathrm u}(Q)&=\prod_{\substack{\alpha\in R_2\\\alpha\notin-R_2}}U_\alpha.
+\end{aligned}
+\]
+
+% Source PDF p. 25.
+By Exp.~XXII, 5.6.7, one therefore has
+\[
+\begin{aligned}
+\operatorname{rad}^{\mathrm u}(P)\cap Q&=\prod_{\substack{\alpha\in R_1\cap R_2\\\alpha\notin-R_1}}U_\alpha=\prod_{\alpha\in K_2}U_\alpha,\\
+\operatorname{rad}^{\mathrm u}(Q)\cap P&=\prod_{\substack{\alpha\in R_1\cap R_2\\\alpha\notin-R_2}}U_\alpha=\prod_{\alpha\in K_1}U_\alpha,
+\end{aligned}
+\]
+where $K_2$ is the set of positive roots which are linear combinations of the elements of $A_2$, but not linear combinations of the elements of $A$, and $K_1$ the set of negative roots which are linear combinations of the elements of $A_1$, but not linear combinations of the elements of $A$. It is clear that, if $\alpha\in K_2$, $\beta\in K_1$, $\alpha+\beta$ is never a root, nor zero, which implies that the two groups above commute.
+
+Moreover, one knows by Exp.~XXII, 5.4.5 that $H=(P\cap Q)^0$ is defined by the set of roots $R_1\cap R_2$, namely
+\[
+R_1\cap R_2=(R_+\cap\NN A_2)\cup(R_-\cap-\NN A_1).
+\]
+Since $R_1\cap R_2$ is closed, $H$ is of type (RC) by definition (Exp.~XXII 5.11.1), and by \loccit, 5.11.3 and 5.11.4, one has
+\[
+\operatorname{rad}^{\mathrm u}(H)=\prod_{\alpha\in K}U_\alpha,
+\]
+where $K$ is the set of $\alpha\in R_1\cap R_2$ such that $\alpha\notin-(R_1\cap R_2)$. Since the symmetric part of $R_1\cap R_2$ is evidently $R\cap\ZZ A$, one sees immediately that $K=K_1\cup K_2$, which ends the proof of (i).
+
+The first assertion of (ii) then follows from (i) and 2.10; let us prove the second. Since $(P\cap Q)^0/\operatorname{rad}^{\mathrm u}((P\cap Q)^0)$ is reductive, it possesses a maximal torus $\overline T$ if the base is semilocal. The inverse image of $\overline T$ in $(P\cap Q)^0$ is a subgroup $N$ of type (R) of $G$ with solvable fibers, and one has $N^{\mathrm u}=\operatorname{rad}^{\mathrm u}((P\cap Q)^0)$ (Exp.~XXII, 5.6.9). The scheme of maximal tori of $N$ is a principal homogeneous bundle under $N^{\mathrm u}$ (\loccit, 5.6.13), and so possesses a section, since $\mathrm H^1(S,N^{\mathrm u})=0$.
+
+\sgasection{4.3}{Opposite parabolic subgroups}
+\numpara{4.3.1}\label{XXVI.4.3.1}
+If $G$ is a reductive $S$-group, one defined in Exp.~XXIV, 3.16.6 a canonical ``outer automorphism'' $s_G$ of order $\le2$\nde{``Of order $2$'' has been replaced by ``of order $\le2$'', since $s_G$ can be trivial (for example if $G$ is of type $A_1,B_n,C_n,\ldots$).} of $G$, hence a canonical automorphism of order $\le2$ of $\underline{\operatorname{Dyn}}(G)$, hence also an automorphism of order $\le2$ of $\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))$, which we shall also denote by $s_G$, or simply $s$. Two types of parabolic subgroups $t,t'\in\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))(S)$ will be called \emph{opposite} when $t=s_G(t')$.
+\begin{theorem}{4.3.2}\label{XXVI.4.3.2}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $P$ a parabolic subgroup of $G$.
+\begin{enumeratea}
+\item If $L$ is a Levi subgroup of $P$, there exists a unique parabolic subgroup $P'$ of $G$ such that $P\cap P'=L$.
+% Source PDF p. 26.
+\item For every parabolic subgroup $Q$ of $G$, the following conditions are equivalent:
+\begin{enumerate}[label={},leftmargin=2.8em]
+\item[(i)] For every $s\in S$, $((P\cap Q)_{\overline s})^0$ (which is smooth by 4.1.1) is reductive.
+\item[(ii)] $P\cap Q$ is a Levi subgroup of $P$ and of $Q$.
+\item[(iii)] $P$ and $Q$ have opposite types, and the pair $(P,Q)$ is in transversal position (cf.~4.2.3).
+\item[(iv)] $P$ and $Q$ have opposite types, and $\operatorname{rad}^{\mathrm u}(P)\cap Q=e$.
+\item[(v)] $\operatorname{rad}^{\mathrm u}(P)\cap Q=\operatorname{rad}^{\mathrm u}(Q)\cap P=e$.
+\item[(vi)] The canonical morphism $\operatorname{rad}^{\mathrm u}(P)\times_S Q\to G$ is an open immersion.
+\item[(vi$'$)] The canonical morphism $\operatorname{rad}^{\mathrm u}(P)\to G/Q$ is an open immersion.
+\item[(vii)] There exist a covering family for the \'etale topology $\{S_i\to S\}$, and for each $i$ a splitting $(T_i,M_i,R_i)$ of $G_{S_i}$ and a subset $R_i^{(1)}$ of $R_i$ such that $P_{S_i}$ (resp.~$Q_{S_i}$) is the subgroup of type (R) of $G_{S_i}$ containing $T_i$ and defined by $R_i^{(1)}$ (resp.~by $R_i^{(2)}=-R_i^{(1)}$).
+\end{enumerate}
+\end{enumeratea}
+\end{theorem}
+\begin{proof}
+Let us first prove the second part of the theorem; one first sees that (iii) $\Leftrightarrow$ (vii), by 4.2.1~(vii) and the definition of $s_G$ in the split case (Exp.~XXII, 3.16.2~(iv)); one evidently has (ii) $\Rightarrow$ (i); one has (vi$'$) $\Rightarrow$ (vi) by the base change $G\to G/Q$.
+% typo?: Exp. XXII, 3.16.2 (iv) is kept as printed.
+
+Now suppose (vii) satisfied, and let us prove all the other conditions; since they are local for the \'etale topology, one can suppose $G=(G,T,M,R)$ split, $P$ defined by the subset $R'$ of $R$, and $Q$ by the subset $-R'$. If $L$ is the subgroup of type (R) of $G$ containing $T$ defined by $R'\cap-R'$, it is clear by Exp.~XXII, 5.11.3 that $L$ is a common Levi subgroup of $P$ and $Q$. But $P=L\cdot\operatorname{rad}^{\mathrm u}(P)$, $Q=L\cdot\operatorname{rad}^{\mathrm u}(Q)$, and by Exp.~XXII, 5.6.7, $\operatorname{rad}^{\mathrm u}(P)\cap Q=Q\cap\operatorname{rad}^{\mathrm u}(P)=e$; hence $P\cap Q=L$, and one has proved (ii) and (v). Since $P$ and $Q$ are in transversal position, the canonical morphism $P\to G/Q$ induces an open immersion $P/P\cap Q\to G/Q$ (4.2.1); but the canonical morphism $\operatorname{rad}^{\mathrm u}(P)\to P/P\cap Q=P/L$ is an isomorphism, so that one has proved (vi$'$). In view of what one has already seen, all the assertions are therefore consequences of (vii).
+% typo?: repeated rad^u(P) in the two intersections, and reference 4.2.1, are kept as printed.
+
+It now suffices for us to prove that any one of assertions (i), (iv), (v), (vi) implies (vii); since we have already proved the equivalence of (ii) and (iii), it suffices to give the proof on the geometric fibers, and one can suppose that $S$ is the spectrum of an algebraically closed field. By 4.1.1, there exists a maximal torus $T$ of $G$ contained in $P\cap Q$. Let $R$ (resp.~$R_1$, resp.~$R_2$) be the set of roots of $G$ (resp.~$P$, resp.~$Q$) relative to $T$.
+
+Let $R_1^{\mathrm a}$ be the asymmetric part of $R_1$ (i.e.~$R_1^{\mathrm a}=\{\alpha\in R_1\mid-\alpha\notin R_1\}$). Similarly introduce $R_2^{\mathrm a}$. One must prove that $R_1=-R_2$.
+\begin{itemize}
+\item Condition (i) implies that $R_1\cap R_2$ is symmetric; let $\alpha\in R_1$; if $\alpha\notin R_2$, then $\alpha\in-R_2$, and if $\alpha\in R_2$, then $\alpha\in R_1\cap R_2=-(R_1\cap R_2)\subset-R_2$; one therefore has $R_1\subset-R_2$, hence, by symmetry, $R_1=-R_2$.
+% The list and proof continue in en-05.tex, source PDF p. 27.

@@ -1,0 +1,442 @@
+\numpara{3.4.7}\label{IV.3.4.7}%
+{\renewcommand{\thefootnote}{(16)}\nde{: One has added this paragraph.}}%
+Suppose that \(\mathcal{C}\) possesses a final object \(e\) and let
+\(f\colon G\to G'\) be a morphism of \(\mathcal{C}\)-groups, such that
+\(f\in(M)\). Then, by~3.4.1\,(a), the kernel \(\Ker(f)\) is representable
+by \(e\times_{G'}G\), and the morphism \(\Ker(f)\to e\) belongs to~\((M)\).
+
+On the other hand, the equivalence relation defined by~\(f\) is the same as
+that defined by the action of \(\Ker(f)\) (say, on the right) on~\(G\),
+\ie it is the image of the morphism
+\(G\times\Ker(f)\to G\times G\), defined set-theoretically by
+\((g,h)\mapsto(g,gh)\). Consequently, one deduces from~3.3.2.1 the
+following corollary:
+
+\begin{corollary}{3.4.7.1}
+\label{IV.3.4.7.1}
+Suppose that \(\mathcal{C}\) possesses a final object \(e\) and let
+\(f\colon G\to G'\) be a morphism of \(\mathcal{C}\)-groups, such that
+\(f\in(M)\). Then the action of \(\Ker(f)\) on \(G\) is \((M)\)-effective
+and \(G'\) is the quotient \(G/\Ker(f)\).
+\end{corollary}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{3.5. Construction of quotients by descent.}\label{IV.sec.3.5}\ ---
+It frequently happens that one does not know how to construct a quotient
+directly, but that one knows how to do so after a suitable base change.
+The present number gives a useful criterion in this situation.
+
+One has seen in paragraph~2.1 the definition of a descent datum on an
+object \(X'\) over \(S'\) relative to a morphism \(S'\to S\).
+
+\begin{definition}{3.5.1}
+\label{IV.3.5.1}
+One says that a descent datum on \(X'\) relative to \(S'\to S\) is
+\emph{effective}, if \(X'\) equipped with this descent datum is isomorphic
+to the inverse image on \(S'\) of an object \(X\) over \(S\), equipped with
+its canonical descent datum.
+\end{definition}
+
+If \(S'\to S\) is a descent morphism (2.2), then the \(X\) of the definition
+is unique up to unique isomorphism. To say that \(S'\to S\) is an effective
+descent morphism (2.2) is to say that it is a descent morphism and that
+every descent datum relative to this morphism is effective.
+
+Let us now consider an equivalence relation \(R\) in an object \(X\) over
+\(S\). Let \(X'\) (\resp \(X''\), \resp \(X'''\)) be the inverse images of
+\(X\) on \(S'\), \(S''=S'\times_{S}S'\) and
+\(S'''=S'\times_{S}S'\times_{S}S'\), and let \(R'\), \(R''\), \(R'''\) be
+the equivalence relations deduced from \(R\) by inverse image. Suppose
+that the equivalence relation \(R'\) in \(X'\) is \((M)\)-effective, and
+consider the quotient \(Y'=X'/R'\), which is an object over \(S'\). Its
+two inverse images on \(S''\) are isomorphic to \(X''/R''\) by~3.4.5. The
+\(S'\)-object \(Y'\) is therefore equipped with a canonical gluing datum.
+Using likewise the uniqueness of \(X'''/R'''\), one sees that it is even a
+descent datum. (Remark: one has implicitly supposed in this proof that
+all the fiber products written existed, which is the case in particular if
+\(S'\to S\) is quarrable, for example a descent morphism.)
+
+\begin{proposition}{3.5.2}
+\label{IV.3.5.2}
+Let \(R\) be an equivalence relation in the object \(X\) over \(S\). Let
+\(S'\to S\) be a universal effective epimorphism. Suppose that every
+\(S\)-morphism whose inverse image on \(S'\) is in \((M)\) is itself in
+\((M)\). The following conditions are equivalent:
+\begin{enumeratei}
+\item \(R\) is \((M)\)-effective in \(X\);
+\item \(R'\) is \((M)\)-effective in \(X'\) and the canonical descent datum
+on \(X'/R'\) is effective.
+\end{enumeratei}
+If this is so, the ``descended'' object of \(X'/R'\) is canonically
+isomorphic to \(X/R\).
+\end{proposition}
+
+The fact that (i)~entails~(ii) is nothing other than the translation into
+the language of descent of~3.4.4.%
+% typo?: 3.4.4 kept as printed
+If one shows the converse, the last assertion of the proposition will be a
+consequence of the fact that a universal effective epimorphism is a
+descent morphism (2.3), hence that the ``descended object'' is unique (up
+to unique isomorphism).
+
+Let us therefore prove (ii)\(\Rightarrow\)(i). Let \(Y'\) be the quotient
+\(X'/R'\) and \(Y\) the descended object. As the canonical morphism
+\(p'\colon X'\to X'/R'=Y'\) is compatible by construction with the descent
+data (its inverse images on \(S''\) coincide with the canonical morphism
+\(X''\to X''/R''\)), it arises by inverse image on \(S'\) from an
+\(S\)-morphism \(p\colon X\to Y\). As \(p'\) is an element of~\((M)\), it
+follows from the hypothesis made on the morphism \(S'\to S\) that \(p\) is
+likewise an element of~\((M)\). As \(p'\) is compatible with the
+equivalence relation \(R'\), \(p\) is compatible with \(R\), again because
+a universal effective epimorphism is a descent morphism. One therefore
+has a morphism
+\[
+R\longrightarrow X\times_{Y}X.
+\]
+To prove that \(R\) is \((M)\)-effective and that \(Y\) is isomorphic to
+\(X/R\), it suffices to prove that this morphism is an isomorphism. Now it
+becomes one by extension of the base from \(S\) to \(S'\), for \(R'\) is
+effective; it is therefore an isomorphism for the same reason as
+previously (2.4).
+
+Let us remark that the hypothesis of the text is verified if one takes
+for~\((M)\) the family \((M_{0})\) of universal effective epimorphisms and
+if \(\mathcal{C}\) possesses fiber products (1.10).
+One deduces from this the
+
+\begin{corollary}{3.5.3}
+\label{IV.3.5.3}
+Suppose that \(\mathcal{C}\) possesses fiber products (over \(S\) would
+suffice). Let \(R\) be an equivalence relation in \(X\) over \(S\) and
+\(S'\to S\) a universal effective epimorphism. The following conditions
+are equivalent:
+\begin{enumeratei}
+\item \(R\) is universally effective in \(X\),
+\item \(R'\) is universally effective in \(X'\) and the canonical descent
+datum on \(X'/R'\) is effective.
+\end{enumeratei}
+If this is so, the ``descended'' object of \(X'/R'\) is canonically
+isomorphic to \(X/R\).
+\end{corollary}
+
+\sgasection{4}{Topologies and sheaves}
+\label{IV.sec.4}
+
+The notion of sieve, and the presentation of the notion of topology
+(4.2.1) adopted here, (more intrinsic and more convenient in many respects
+than that by covering families of~[MA]), are due to J.~Giraud~[AS].
+
+\sgasection{4.1}{Sieves}\label{IV.sec.4.1}
+
+\begin{definition}{4.1.1}
+\label{IV.4.1.1}
+One calls a sieve of the category \(\mathcal{C}\) a subfunctor \(C\) of the
+final functor \(\mathbf{e}\colon\mathcal{C}^{\circ}\to\Ens\).
+\end{definition}
+
+With every sieve \(C\) of \(\mathcal{C}\) one associates the set \(E(C)\) of
+the objects \(X\) of \(\mathcal{C}\) such that \(C(X)\neq\varnothing\), that
+is, such that the structural morphism \(X\to\mathbf{e}\) factors
+through~\(C\). One therefore has the equivalences
+\[
+(+)\qquad
+\begin{cases}
+\,X\in E(C)\iff C(X)=\mathbf{e}(X)=\{\varnothing\}.\\
+\,X\notin E(C)\iff C(X)=\varnothing.
+\end{cases}
+\]
+The set \(E=E(C)\) enjoys the following property:
+
+\par\smallskip\noindent
+\((++)\)\qquad
+If \(X\in E\) and if \(\Hom(Y,X)\neq\varnothing\), then \(Y\in E\).
+
+\noindent
+(Let us remark that if one equips the set \(\Ob(\mathcal{C})\) with its
+\emph{natural preorder structure},
+(\(Y\) \emph{dominating} \(X\) if there exists an arrow from \(Y\) to \(X\)),
+the sets \(E\) satisfying \((++)\) are the subsets of \(\Ob(\mathcal{C})\)
+which contain every majorant%
+{\renewcommand{\thefootnote}{(17)}\nde{: Here, ``majorant'' is taken in
+the sense of the preorder relation mentioned above, that is, \(Y\)
+majorizes \(X\) if there exists an arrow \(Y\to X\). On the other hand, if
+\(X\), \(Y\) are two subobjects of an object \(Z\), one says (\cf~2.4)
+that \(Y\) majorizes \(X\) if \(X\subset Y\). To avoid any ambiguity
+between these two terminologies, one has in the sequel replaced
+``majorant'' by ``dominating'' in the first case, and by ``containing'',
+in the second.}}
+of one of their elements.)
+
+Conversely, if \(E\) is a subset of \(\Ob(\mathcal{C})\) enjoying the
+property~\((++)\), then \(E\) may be written in a unique manner in the form
+\(E(C)\) and \(C\) is defined by the formulas~\((+)\). There is therefore a
+one-to-one correspondence between the sieves of \(\mathcal{C}\) and the
+subsets of \(\Ob(\mathcal{C})\) satisfying the condition~\((++)\). By
+\emph{abuse of language}, we shall sometimes say that the set \(E(C)\) is
+a sieve of~\(\mathcal{C}\).
+
+{\renewcommand{\thefootnote}{(18)}\nde{: One has spelled out the sentence
+which follows.}}%
+Let \(C\) and \(C'\) be two sieves of \(\mathcal{C}\); as they are two
+subfunctors of the final functor \(\mathbf{e}\), it amounts to the same to
+say that \(C\) \emph{dominates} \(C'\) (for the domination relation in
+\(\Ob(\widehat{\mathcal{C}})\)), or that \(C\) is a \emph{subfunctor}
+of~\(C'\), or again that \(E(C)\subset E(C')\); one will then say that
+\(C\) is \emph{finer} than~\(C'\). One sees that one is dealing in this
+case with an order structure on the set of sieves of~\(\mathcal{C}\).
+Moreover, one has \(E(C)\cap E(C')=E(C\times C')\) and hence the set of
+sieves of \(\mathcal{C}\) is \emph{filtered} for the order relation ``being
+finer''.
+
+Every subset \(E\) of \(\Ob(\widehat{\mathcal{C}})\), for example a subset
+of \(\Ob(\mathcal{C})\), defines a sieve \(C(E)\): the set of the
+\(X\in\Ob(\mathcal{C})\) such that \(F(X)\neq\varnothing\) for at least one
+\(F\in E\) satisfies the condition~\((++)\) and defines the sieve sought.
+
+This sieve may also be defined as the \emph{image} of the family of
+morphisms \(\{F\to\mathbf{e},\ F\in E\}\) in the sense of the following
+definition:
+
+\begin{definition}{4.1.2}
+\label{IV.4.1.2}
+Let \(\{F_{i}\to F\}\) be a family of morphisms of
+\(\widehat{\mathcal{C}}\) with the same target~\(F\). One calls the
+\emph{image} of this family the subfunctor of \(F\) defined by
+\[
+S\longmapsto\bigcup_{i}\Im F_{i}(S)\subset F(S).
+\]
+\end{definition}
+
+\begin{proposition}{4.1.3}
+\label{IV.4.1.3}
+The formation of the image commutes with extension of the base: in the
+preceding notations, let us denote by \(I\) the image of the family
+\(\{F_{i}\to F\}\); for every morphism \(G\to F\) of
+\(\widehat{\mathcal{C}}\), the image of the family of morphisms
+\(\{F_{i}\times_{F}G\to G\}\) is the subfunctor \(I\times_{F}G\) of~\(G\).
+\end{proposition}
+
+\begin{definition}{4.1.4.0}
+\label{IV.4.1.4.0}
+{\renewcommand{\thefootnote}{(19)}\nde{: One has added the
+numbering~4.1.4.0, in order to bring this definition into evidence.}}%
+Let \(C\) be a sieve of \(\mathcal{C}\). If \(E\) is a subset of
+\(\Ob(\mathcal{C})\) such that \(C(E)=C\), one says that \(E\) is a
+\emph{base} of~\(C\). Every sieve \(C\) possesses a base, for example the
+set \(E(C)\).
+\end{definition}
+
+We propose to describe the set \(\Hom(C,F)\), where \(C\) is a sieve of
+\(\mathcal{C}\) and \(F\) an object of \(\widehat{\mathcal{C}}\), by means
+of a base \(\{S_{i}\}\) of~\(C\). For each pair \((i,j)\), one has a
+diagram in \(\widehat{\mathcal{C}}\):
+\[
+\xymatrix@C=4em@R=2.4em{
+S_{i}\times S_{j} \ar[r] \ar[d] & S_{i} \ar[d] \\
+S_{j} \ar[r] & \mathbf{e}\,,
+}
+\]
+whence a diagram of sets
+\[
+\xymatrix@C=3.4em{
+\Gamma(F)=\Hom(\mathbf{e},F) \ar[r]^-{\sigma}
+  & \displaystyle\prod_{i}\Hom(S_{i},F)
+      \ar@<0.65ex>[r]^-{\tau_{1}}
+      \ar@<-0.65ex>[r]_-{\tau_{2}}
+  & \displaystyle\prod_{i,j}\Hom(S_{i}\times S_{j},F)
+}
+\]
+such that \(\tau_{1}\sigma=\tau_{2}\sigma\). One therefore has a morphism
+\[
+\Hom(\mathbf{e},F)\longrightarrow
+\Ker\Biggl(\prod_{i}\Hom(S_{i},F)
+  \Rightarrow
+  \prod_{i,j}\Hom(S_{i}\times S_{j},F)\Biggr).
+\]
+One verifies immediately:
+
+\begin{proposition}{4.1.4}
+\label{IV.4.1.4}
+One has an isomorphism, functorial in~\(F\),
+\[
+\Hom(C,F)\isomto
+\Ker\Biggl(\prod_{i}\Hom(S_{i},F)
+  \Rightarrow
+  \prod_{i,j}\Hom(S_{i}\times S_{j},F)\Biggr),
+\]
+such that the diagram
+\[
+\xymatrix@C=2.2em@R=2.8em{
+\Hom(\mathbf{e},F) \ar[r]
+  & \Ker\Bigl(\prod_{i}\Hom(S_{i},F)
+      \Rightarrow
+      \prod_{i,j}\Hom(S_{i}\times S_{j},F)\Bigr)
+\\
+\Hom(\mathbf{e},F) \ar[r]
+  & \Hom(C,F) \ar[u]_{\wr}
+\,,}
+\]
+where the last line is induced by the canonical morphism
+\(C\to\mathbf{e}\), is commutative.
+\end{proposition}
+
+\begin{corollary}{4.1.5}
+\label{IV.4.1.5}
+Suppose that the fiber products \(S_{i}\times S_{j}\) are representable,
+for example that the \(S_{i}\) be quarrable. One then has, for every
+\(F\in\Ob(\widehat{\mathcal{C}})\), an isomorphism
+\[
+\Hom(C,F)\isomto
+\Ker\Biggl[\prod_{i}F(S_{i})
+  \Rightarrow
+  \prod_{i,j}F(S_{i}\times S_{j})\Biggr].
+\]
+\end{corollary}
+
+\begin{remark}{4.1.6}
+\label{IV.4.1.6}
+Let \(R\) be a sieve of \(\mathcal{C}\); let us denote by \(\mathcal{R}\)
+the full subcategory of \(\mathcal{C}\) whose set of objects is \(E(R)\)
+and by
+\[
+i_{R}\colon\mathcal{R}\longrightarrow\mathcal{C}
+\]
+the inclusion functor. One has an isomorphism, functorial in
+\(F\in\Ob(\widehat{\mathcal{C}})\),
+\[
+\Hom(R,F)\isomto\Gamma(F\circ i_{R})
+\]
+such that the diagram
+\[
+\xymatrix@C=4.2em@R=2.6em{
+\Hom(\mathbf{e},F) \ar[r] \ar[d]_{\wr}
+  & \Hom(R,F) \ar[d]^{\wr} \\
+\Gamma(F) \ar[r]
+  & \Gamma(F\circ i_{R})
+\,,}
+\]
+where the second line is induced by the functor \(i_{R}\), is commutative.
+\end{remark}
+
+\begin{definition}{4.1.7}
+\label{IV.4.1.7}
+Let \(\mathcal{C}\) be a category. One calls a sieve of the object \(S\) of
+\(\mathcal{C}\) a sieve of the category \(\mathcal{C}_{/S}\).
+\end{definition}
+
+A sieve of \(S\) is therefore a sub-\(\widehat{\mathcal{C}}\)-object
+of~\(S\). There corresponds to it canonically a subset of
+\(\Ob(\mathcal{C}_{/S})\) containing the source of every arrow whose target
+it contains. By \emph{abuse of language}, such a set will also be called a
+sieve of~\(S\).
+
+\sgasection{4.2}{Topologies: definitions}\label{IV.sec.4.2}
+
+\begin{definition}{4.2.1}
+\label{IV.4.2.1}
+Let \(\mathcal{C}\) be a category. One calls a topology on \(\mathcal{C}\)
+the giving, for each \(S\) of \(\mathcal{C}\), of a set \(J(S)\) of sieves
+of~\(S\), called \emph{covering} sieves or \emph{refinements} of~\(S\),
+this giving satisfying the following axioms:
+\begin{enumerate}[label=\textup{(T~\arabic*)},leftmargin=2.8em,itemsep=0.45em,topsep=0.45em]
+\item For every refinement \(R\) of \(S\) and every morphism \(T\to S\), the
+sieve \(R\times_{S}T\) of \(T\) is \emph{covering} (``stability under
+\emph{base change}'').
+\item If \(R\), \(C\) are two sieves of \(S\), if \(R\) is covering and if
+for every \(T\in\Ob(\mathcal{C})\) and every morphism \(T\to R\), the sieve
+\(C\times_{S}T\) of \(T\) is covering, then \(C\) is a refinement
+of~\(S\).%
+{\renewcommand{\thefootnote}{(20)}\nde{: that is: if \(C\) is covering
+``locally with respect to the covering sieve \(R\)'', then \(C\) is
+covering.}}
+\item If \(C\supset R\) are two sieves of \(S\) and if \(R\) is covering,
+then \(C\) is covering.
+\item For every \(S\), \(S\) is a refinement of \(S\).
+\end{enumerate}
+\end{definition}
+
+One may reformulate these axioms in the following manner. Suppose given a
+topology \(S\mapsto J(S)\) on \(\mathcal{C}\) and, for every object \(F\) of
+\(\widehat{\mathcal{C}}\), let us denote by \(J(F)\) the set of
+subfunctors \(R\) of \(F\) such that for every morphism \(T\to F\) of
+\(\widehat{\mathcal{C}}\), where \(T\) is \emph{representable},
+\(R\times_{F}T\), which is a sieve of \(T\), is \emph{covering}. By virtue
+of~(T~1), this notation is indeed compatible with the preceding one. One
+will likewise say that \(R\in J(F)\) is a \emph{refinement} of~\(F\). One
+verifies immediately that the preceding axioms entail the following
+properties:
+
+\par\smallskip\noindent
+(\(T'\)~0) If \(F\supset G\) are two objects of \(\widehat{\mathcal{C}}\),
+and if for every \(S\in\Ob(\mathcal{C})\) and every morphism \(S\to F\),
+\(G\times_{F}S\in J(S)\), then \(G\in J(F)\).
+
+\par\smallskip\noindent
+(\(T'\)~1) If \(G\in J(F)\), and if \(H\to F\) is a morphism of
+\(\widehat{\mathcal{C}}\), then \(G\times_{F}H\in J(H)\).
+
+\par\smallskip\noindent
+(\(T'\)~2) If \(F\supset G\supset H\) are three objects of
+\(\widehat{\mathcal{C}}\), if \(G\in J(F)\) and \(H\in J(G)\), then
+\(H\in J(F)\).
+
+\par\smallskip\noindent
+(\(T'\)~3) If \(F\supset G\supset H\) are three objects of
+\(\widehat{\mathcal{C}}\) and if \(H\in J(F)\), then \(G\in J(F)\).
+
+\par\smallskip\noindent
+(\(T'\)~4) For every \(F\in\Ob(\widehat{\mathcal{C}})\), \(F\in J(F)\).
+
+Conversely, if one gives oneself for every
+\(F\in\Ob(\widehat{\mathcal{C}})\) a set \(J(F)\) of subobjects of \(F\)
+satisfying the properties (\(T'\)~0) to (\(T'\)~4), the map
+\(S\mapsto J(S)\) defines a topology on \(\mathcal{C}\) and the two
+preceding constructions are inverse to one another.
+
+From (\(T'\)~1), (\(T'\)~2) and (\(T'\)~3)%
+{\renewcommand{\thefootnote}{(21)}\nde{: (\(T'\)~1) and (\(T'\)~2)
+suffice: \(G\cap H=G\times_{F}H\) belongs to \(J(H)\), by (\(T'\)~1), hence
+to \(J(F)\), by (\(T'\)~2).}}
+there results the following property:
+
+\par\smallskip\noindent
+(\(T'\)~5) If \(G\) and \(H\) are two subobjects of \(F\) and if
+\(G,\,H\in J(F)\), then \(G\cap H\in J(F)\).
+
+\noindent
+The set \(J(F)\), ordered by the relation \(\supset\), is therefore
+\emph{filtered}; this remark will be of use to us later.
+
+\numpara{4.2.2}\label{IV.4.2.2}
+One will say that the topology defined by \(J\) is finer than the topology
+defined by \(J'\) if for every \(S\in\Ob(\mathcal{C})\),
+\(J(S)\supset J'(S)\) (it amounts to the same to say that for every
+\(F\in\Ob(\widehat{\mathcal{C}})\), \(J(F)\supset J'(F)\)).
+
+Every set of topologies on \(\mathcal{C}\) possesses a greatest
+\emph{lower} bound: let \(I\) be a set of indices,
+and for each \(i\in I\), let \(S\mapsto J_{i}(S)\) be a topology on
+\(\mathcal{C}\). Set \(J(S)=\bigcap_{i\in I}J_{i}(S)\); it is immediate
+that one has thus defined a topology on \(\mathcal{C}\), and that it is
+indeed the greatest \emph{lower} bound of the given set.
+
+In particular, let us give ourselves, for each \(S\in\Ob(\mathcal{C})\), a
+set \(E(S)\) of sieves of~\(S\). One calls the topology \emph{generated} by
+these sets the \emph{least fine} topology for which the elements of
+\(E(S)\) are refinements of \(S\) for every~\(S\).
+
+\begin{definition}{4.2.3}
+\label{IV.4.2.3}
+Let \(\{F_{i}\to F\}\) be a family of morphisms of
+\(\widehat{\mathcal{C}}\). Let \(G\subset F\) be the image (4.1.2) of this
+family. The family is said to be \emph{covering} if \(G\in J(F)\). A
+morphism is said to be \emph{covering} if the family reduced to this
+morphism is covering.
+\end{definition}
+
+This definition applies in particular to an inclusion: a sieve \(C\) of
+\(S\) is covering if and only if the canonical morphism \(C\to S\) is
+covering.
+
+The axioms (\(T'\)~0) to (\(T'\)~5) entail for covering families the
+following properties:

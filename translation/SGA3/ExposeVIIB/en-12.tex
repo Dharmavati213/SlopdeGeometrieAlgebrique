@@ -1,0 +1,145 @@
+Put then $G_0=G\widehat\otimes_k k_0$, $\omega=\omega_{G/k}$, $\omega_0=\omega\widehat\otimes_k k_0$, etc.\nde{We have detailed the original in what follows.} Since $k_0$ is a field, the pseudocompact $k_0$-module $\omega_0$ possesses a pseudobasis $(y_\lambda)_{\lambda\in\Lambda}$; denoting by $\omega'$ the topologically free $k$-module which is the product of copies $k_\lambda$ of $k$, for $\lambda\in\Lambda$, and lifting each $y_\lambda$ to an element $x_\lambda$ of $\omega$, one obtains a continuous $k$-linear map $f:\omega'\to\omega$ such that $f_0=f\widehat\otimes_k k_0$ is invertible.\nde{One does not know a priori that $\omega$ is a projective pseudocompact $k$-module, but this will follow from what comes next: compare with the proof of (iv) $\Rightarrow$ (iii) in VII A, 7.4.} Since $\omega'$ is a projective pseudocompact $k$-module, $f$ lifts to a continuous $k$-linear map $g:\omega'\to I_A$ such that $\pi\circ g=f$, where $\pi$ is the projection $I_A\to\omega$. By the universal property of $k[[\omega']]$ (cf. 1.2.5), $g$ induces a morphism of topological algebras $\phi:k[[\omega']]\to A$.
+
+Now $\omega'\widehat\otimes_k k_0$ is identified with $\omega\widehat\otimes_k k_0=\omega_{G_0/k_0}$ and hence $k[[\omega']]\widehat\otimes_k k_0$ is identified with $k_0[[\omega_{G_0/k_0}]]$. Since the hypotheses (iii) hold for $k_0$ and $G_0$, the proof of (iii) $\Rightarrow$ (i) shows that $\phi_0=\phi\widehat\otimes_k k_0$ is invertible. Since, on the other hand, $k[[\omega']]$ and $A$ are projective pseudocompact $k$-modules, $\phi$ is invertible by 0.3.4. (In particular, denoting by $I$ the augmentation ideal of $k[[\omega']]$, $\phi$ induces an isomorphism from $\omega'=I/\overline{I^2}$ onto $I_A/\overline{I_A^2}=\omega$.)
+\end{proof}
+
+\begin{corollary}{3.3.1}\label{VIIB.3.3.1}
+Let $S$ be a locally noetherian scheme over $\QQ$ and $G$ a flat group $S$-scheme locally of finite type.\nde{We have added the flatness hypothesis, omitted in the original.} If $\omega_{G/S}$ is a locally free $\mathcal O_S$-module, $G$ is smooth over $S$ at every point of the identity section.
+\end{corollary}
+Indeed, let $x$ be a point of the identity section, $s$ its image in $S$, and $\mathcal O_x$ and $\mathcal O_s$ the local algebras of $x$ and $s$.\nde{We have detailed the original in what follows.} Since, by hypothesis, $\mathcal O_s$ and $\mathcal O_x$ are noetherian local rings, the $\mathfrak m$-adic topology on each of these rings coincides with the ``pseudocompact'' topology defined by the ideals of finite codimension. Denote by $\widehat{\mathcal O}_x$ and $\widehat{\mathcal O}_s$ the completions for this topology. By EGA IV$_4$, 17.5.3, $G$ is smooth over $S$ at $x$ if and only if $\widehat{\mathcal O}_x$ is formally smooth over $\widehat{\mathcal O}_s$, both these algebras being equipped with the $\mathfrak m$-adic topology; it therefore suffices to show this last property. Now $\widehat{\mathcal O}_x$ and $\widehat{\mathcal O}_s$ are the local rings of $x$ and $s$ in the formal varieties $\widehat G/\widehat S$ and $\widehat S$ defined in 1.2.6. Put $k=\widehat{\mathcal O}_s$ and $H=\Spf(\widehat{\mathcal O}_x)$; then $H$ is an infinitesimal formal $k$-variety and, since the formation of $\widehat G/\widehat S$ commutes with products (loc. cit.), $H$ is an infinitesimal formal $k$-group. Denote by $I$ the augmentation ideal of $\mathcal O_x$. By the hypotheses, $\omega_{G/S,x}=I/I^2$ is a locally free $\mathcal O_s$-module of finite rank $n$. Since $\mathcal O_s$ is noetherian, it follows that $\omega_{H/k}$, which is the completion of $\omega_{G/S,x}$, is identified with $\omega_{G/S}\otimes_{\mathcal O_S}\widehat{\mathcal O}_s$, hence is a topologically free $k$-module of rank $n$. Thus, by the implication (iv) $\Rightarrow$ (ii) of 3.3, $\widehat{\mathcal O}_x$ is isomorphic to $k[[\omega_{H/k}]]$, \ie to a formal power series algebra $k[[t_1,\ldots,t_n]]$. Finally, the latter is formally smooth over $k$, by EGA 0$_{\mathrm{IV}}$, 19.3.3. This proves the corollary.
+
+We thus recover a result obtained elsewhere for group schemes locally of finite presentation over an arbitrary scheme $S$, cf. VI B, 1.6.
+\begin{corollary}{3.3.2}\label{VIIB.3.3.2}
+Let $k$ be a field of characteristic $0$. The functor $L\mapsto\mathscr G(L)$ is an equivalence from the category of $k$-Lie algebras onto that of infinitesimal formal $k$-groups.\nde{Since, by 2.7, 2.2.1 and 1.3.6, an infinitesimal formal $k$-group $G$ is ``the same thing'' as a connected cocommutative $k$-bialgebra $H$ (cf. 2.9), this statement is equivalent to the theorem below, obtained independently by Kostant (cf. 2.9.2). This theorem had previously been obtained by J. W. Milnor and J. C. Moore (\cite{MM65}), under the additional hypothesis that $H$ be generated as an algebra by its primitive elements (although published in 1965, this text had circulated before 1960, cf. the review \cite{Ja65}), so that it is often called the ``Cartier--Kostant--Milnor--Moore theorem''.
+\par\smallskip\noindent\textbf{Theorem (Cartier--Kostant--Milnor--Moore).} --- \emph{Let $k$ be a field of characteristic $0$. The functors $L\mapsto U(L)$ and $H\mapsto\operatorname{Prim}(H)$ define an equivalence between the category of $k$-Lie algebras and that of connected cocommutative $k$-bialgebras.}
+\par\smallskip On the other hand, if $k$ is an artinian ring containing $\QQ$, then 3.2 (ii) and 3.3 (combined with 2.7, 2.2.1 and 1.3.6) likewise show that the functor $L\mapsto\mathscr G(L)$ (resp. $L\mapsto U(L)$) is an equivalence from the category of flat $k$-Lie algebras onto that of topologically flat infinitesimal formal $k$-groups (resp. onto that of flat connected cocommutative $k$-bialgebras).}
+\end{corollary}
+Indeed, when $G$ ranges over the infinitesimal formal $k$-groups, the functor $G\mapsto\mathscr G(\Lie G)$ is isomorphic, by Theorem 3.3, to the identity functor of the category of infinitesimal $k$-groups. Similarly, by 3.2 (ii), the functor $L\mapsto\Lie(\mathscr G(L))=\operatorname{Prim}U(L)$ is isomorphic to the identity functor of the category of $k$-Lie algebras.
+
+\numpara{3.3.3}Still suppose that $k$ is a field of characteristic $0$. Let $\overline k$ be an algebraic closure of $k$ and $\Gamma$ the topological Galois group of $\overline k$ over $k$.
+
+For every formal $k$-group $G$, we denote by $\underline{\Aut}_k(G)$ the $k$-group functor which associates to every finite-dimensional commutative $k$-algebra $C$ the group of automorphisms of the formal $C$-group $G\widehat\otimes_k C$.\nde{The original indicated: ``This $k$-functor is manifestly left exact ($H$ is topologically flat over $k$!)''. We have detailed this in what follows.} Since $G$ is topologically flat over $k$ (since $k$ is a field), \ie its affine algebra $A=A(G)$ is topologically flat over $k$, or, equivalently, its covariant bialgebra $H=H(G)$ is flat over $k$, this $k$-functor is a formal $k$-group. Indeed, since $\underline{\Aut}_k(G)$ is identified with the fibered product of the following diagram (cf. Exp. I, 1.7.3):
+\[
+\xymatrix@C=26pt{
+&\underline{\End}_k(G)\times\underline{\End}_k(G)\ar[d]\\
+\Spf(k)\ar[r]&\underline{\End}_k(G)\times\underline{\End}_k(G),}
+\]
+where the vertical (resp. horizontal) arrow is given by $(\phi,\psi)\mapsto(\phi\circ\psi,\psi\circ\phi)$ (resp. is the identity section), it suffices to see that the $k$-functor $\underline{\End}_k(G)$ is represented by an element of $\mathbf{Vaf}/k$, \ie (cf. 1.1 and 0.4.2) that it is left exact, \ie commutes with fibered products of $k$-algebras.
+% typo: est est exact -> is left exact.
+Now giving an element of $\underline{\End}_k(G)(C)$ is equivalent to giving, say, a morphism of $k$-algebras $\phi:H\to H\otimes_k C$ which also respects the coalgebra structure, \ie such that the well-known diagrams commute; since $H$ is flat over $k$, $H\otimes_k-$ commutes with fibered products of $k$-algebras, and one deduces that the $k$-functor $\underline{\End}_k(G)$ is left exact, so that we can treat it as a formal $k$-group.
+% typo?: End_k(G) called a formal group in the source, retained.
+
+If $L$ is a $k$-Lie algebra and $G$ the formal group $\mathscr G(L)$, Theorem 3.3 shows that $\underline{\Aut}_k(G)$ is isomorphic to the $k$-group functor $\underline{\Aut}_k(L)$ which associates to a finite-dimensional $k$-algebra $C$ the group of automorphisms of the $C$-Lie algebra $C\otimes_k L$.
+
+If $G$ is an arbitrary formal $k$-group, we have seen in 2.5.2 that $G$ decomposes canonically into a semidirect product of an étale formal group $G_e$ and an infinitesimal formal group $G_0$. This semidirect product is determined by the data of $L=\Lie(G)=\Lie(G_0)$, of the $\Gamma$-group $M=G_e(\overline k)=G(\overline k)$, and of a morphism of formal $k$-groups
+\[
+\Phi:G_e\longrightarrow\underline{\Aut}_k(G_0)\simeq\underline{\Aut}_k(L).
+\]
+Such a morphism sends $G_e$ into the ``étale part'' $\underline{\Aut}_k(L)_e$ of $\underline{\Aut}_k(L)$, cf. 2.5.1. It is therefore determined by the data of a morphism of $\Gamma$-groups:
+\[
+\phi=\Phi(\overline k):\quad M\longrightarrow(\underline{\Aut}_k L)(\overline k)=\Aut_{\overline k}(L\otimes_k\overline k).
+\]
+If one makes $\Gamma$ act on $L\otimes_k\overline k$ by means of the formula $\gamma(\ell\otimes t)=\ell\otimes\gamma(t)$, then $\phi$ makes $M$ act on $L\otimes_k\overline k$ by automorphisms of $\overline k$-Lie algebra in such a way that one has $\phi(\gamma(m))=\gamma\circ\phi(m)\circ\gamma^{-1}$, \ie:
+\[
+\gamma(m)(\ell\otimes t)=\gamma\bigl(m(\ell\otimes\gamma^{-1}(t))\bigr)
+\]
+for every $m\in M$, $\gamma\in\Gamma$ and $\ell\otimes t\in L\otimes_k\overline k$. We express this last condition by saying that $M$ \emph{acts on $L\otimes_k\overline k$ compatibly with $\Gamma$}.
+
+One can summarize the situation with a ``learned'' statement: call a \emph{$\Gamma$-Lie algebra over $k$} the data of a triple $(L,M,\phi)$ consisting of a $k$-Lie algebra $L$, a $\Gamma$-group $M$, and an action $\phi$ of $M$ on $L\otimes_k\overline k$ which is ``compatible with the action of $\Gamma$ on $M$ and on $L\otimes_k\overline k$''.
+
+If $(L,M,\phi)$ and $(L',M',\phi')$ are two such $\Gamma$-Lie algebras, a morphism from the former to the latter is a pair $(f,\theta)$ consisting of a morphism $f:L\to L'$ of $k$-Lie algebras and a morphism $\theta:M\to M'$ of $\Gamma$-groups such that
+\[
+(f\otimes1)(m\cdot x)=\theta(m)\cdot(f\otimes1)(x)
+\]
+for every $x\in L\otimes_k\overline k$ and $m\in M$. One then obtains:
+\begin{theorem}{}
+Let $k$ be a field of characteristic $0$. Then the functor which associates to $G$ the triple $(\Lie(G),G(\overline k),\Phi(\overline k))$ is an equivalence from the category of formal $k$-groups onto that of $\Gamma$-Lie algebras.\nde{In particular, when $\overline k=k$, one thus recovers the ``Cartier--Gabriel--Kostant theorem'' mentioned in 2.9.2.}
+\end{theorem}
+
+\sgasection{4}{Phenomena particular to characteristic $p>0$}
+Throughout Section 4, we denote by $p$ a prime number, by $k$ a pseudocompact ring of characteristic $p$, and by $\pi$ the continuous endomorphism $x\mapsto x^p$ of $k$.
+
+\numpara{4.1}Let $X$ be a formal $k$-variety with affine algebra $A$; one denotes by $X^{(p/k)}$ or $X^{(p)}$ the formal $k$-variety $X\widehat\otimes_\pi k$ obtained by the base change $\pi:k\to k$ (cf. 1.2.D); its affine algebra is the completed tensor product $A\widehat\otimes_\pi k$. Then the continuous morphism $A\widehat\otimes_\pi k\to A$ which maps $a\widehat\otimes_\pi\lambda$ to $a^p\lambda$ induces a morphism of formal $k$-varieties
+\[
+\Fr(X/k):\quad X\longrightarrow X^{(p/k)}.
+\]
+In what follows, we shall say that $\Fr(X/k)$ is the \emph{Frobenius morphism of $X$ relative to $k$} and we shall often write $\Fr$ instead of $\Fr(X/k)$.
+
+\numpara{4.1.1}\nde{We have corrected the original, which gave the inclusion $(\widehat X/\widehat S)^{(p)}\subset\widehat{X^{(p)}}/\widehat S$ instead of the reverse inclusion. Let us mention, on the other hand, that this paragraph is not used in what follows.}Now consider a scheme $S$ over the prime field $\mathbf F_p$ and an $S$-scheme $\eta:X\to S$; let $\operatorname{fr}(S)$ be the ``absolute'' Frobenius morphism of $S$ (it induces the identity on the underlying topological space and maps every section $f$ of the structure sheaf to $f^p$; cf. VII A 4.1) and let $X^{(p)}$ be the $S$-scheme $X\times_{\operatorname{fr}(S)}S$ (VII A, loc. cit.), \ie the structure morphism $X^{(p)}\to S$ is $\operatorname{fr}(S)\circ\eta$.
+% typo?: structure morphism identified with fr(S) composed with eta, retained.
+
+Let $\widehat S$ be the formal scheme whose underlying topological space is the set of closed points of $S$, equipped with the discrete topology, the local ring $\mathcal O_{\widehat S,s}$ at such a closed point $s$ being the separated completion $\widehat{\mathcal O}_{S,s}$ of $\mathcal O_{S,s}$ for the linear topology defined by the ideals of finite colength (cf. 1.2.6); its affine algebra $k=\mathscr A(\widehat S)$ is therefore the product of the $\widehat{\mathcal O}_{S,s}$, for $s$ ranging over the closed points of $S$. Recall (loc. cit.) that one denotes by $\widehat X/\widehat S$ the formal $k$-variety consisting of the points $x\in X$ such that $[\kappa(x):\kappa(s)]<\infty$, where $s$ is the image of $x$ in $S$, the local ring $\mathcal O_{\widehat X/\widehat S,x}$ being the separated completion $\widehat{\mathcal O}_{X,x}$ of $\mathcal O_{X,x}$ for the linear topology defined by the ideals $I$ such that $\mathcal O_{X,x}/I$ has finite length as an $\mathcal O_{X,x}$-module (and hence also as an $\mathcal O_{S,s}$-module). One can therefore form, by base change, the formal $k$-variety $(\widehat X/\widehat S)^{(p)}=(\widehat X/\widehat S)\widehat\otimes_\pi k$.
+
+One can also consider the formal $k$-variety $\widehat{X^{(p)}}/\widehat S$: the underlying set consists of the $x\in X^{(p)}=X$ such that, denoting by $s$ the image of $x$ in $S$, the morphism
+\[
+\xymatrix{\kappa(s)\ar[r]^{\operatorname{fr}}&\kappa(s)\ar[r]^{\eta^\natural}&\kappa(x)}
+\]
+makes $\kappa(x)$ a finite-degree extension of $\kappa(s)$; in this case, the same holds for $\eta^\natural:\kappa(s)\to\kappa(x)$, \ie $x$ is a point of $\widehat X/\widehat S$, and one then has
+\[
+\mathcal O_{\widehat{X^{(p)}}/\widehat S,x}=\widehat{\mathcal O}_{X,x}\widehat\otimes_\pi\widehat{\mathcal O}_{S,s}=\widehat{\mathcal O}_{X^{(p)},x}
+\]
+(the second equality because $X\mapsto\widehat X/\widehat S$ commutes with products, cf. 1.2.6). One therefore sees that: $\widehat{X^{(p)}}/\widehat S$ is identified with a formal subvariety of $(\widehat X/\widehat S)^{(p)}$. Moreover, one has equality if and only if for every closed point $s$ of $S$, $\kappa(s)$ has finite degree over $\kappa(s)^p$, which is the case, for example, if $S$ is a scheme locally of finite type over a field $\kappa$ such that $[\kappa:\kappa^p]<+\infty$.
+
+\numpara{4.1.2}Let $G$ be a formal $k$-group. Since the functor $X\mapsto X^{(p)}=X\widehat\otimes_\pi k$ commutes with finite products, it transforms a formal $k$-group into a formal $k$-group. Moreover, since $\Fr(X/k)$ is functorial in $X$, the morphism
+\[
+\Fr:G\longrightarrow G^{(p)}
+\]
+is a homomorphism of formal $k$-groups. If one puts $G^{(p^{n+1})}=(G^{(p^n)})^{(p)}$, the same holds for the composite morphism
+\[
+\Fr^n=\Fr^n(G/k):\quad G\xrightarrow{\Fr}G^{(p)}\xrightarrow{\Fr}G^{(p^2)}\xrightarrow{\Fr}\cdots\xrightarrow{\Fr}G^{(p^n)}.
+\]
+Denote by $A$ the affine algebra of $G$ and by $I_A$ its augmentation ideal.
+\begin{definitions}{}
+(a) The kernel of $\Fr^n$ will be denoted by ${}_{\Fr^n}G$. It follows directly from the definitions that ${}_{\Fr^n}G$ is infinitesimal and has affine algebra the quotient $A/I_A^{\{p^n\}}$, where $I_A^{\{p^n\}}$ denotes the closed ideal of $A$ generated by the $p^n$th powers of the elements of $I_A$.
+
+(b) One says that $G$ has \emph{height $\le n$} if $I_A^{\{p^n\}}=0$, that is, if one has ${}_{\Fr^n}G=G$.
+\end{definitions}
+
+\numpara{4.2}It is clear that \emph{the Lie algebra $\uLie(G)$ of a formal $k$-group $G$ is a Lie $p$-subalgebra of the algebra $H(G)$} (cf. 2.3). Indeed, one immediately reduces to the case where $k$ is artinian; in this case, $\uLie(G)$ is the subset of $H(G)$ consisting of the elements $x$ such that $\varphi_G(x\otimes1+1\otimes x)=\Delta_G(x)$ with the notation of 2.3 and 2.6 (c). One then has
+\[
+\begin{aligned}
+\varphi_G(x^p\otimes1+1\otimes x^p)&=\varphi_G((x\otimes1+1\otimes x)^p)\\
+&=\varphi_G(x\otimes1+1\otimes x)^p=\Delta_G(x)^p=\Delta_G(x^p).
+\end{aligned}
+\]
+
+\numpara{4.2.1}Conversely, every Lie $p$-algebra $\mathbf L$ over $\mathbf O_k$ defines a $k$-group functor. Indeed, denote by $U_p(\mathbf L)$ the functor which associates to every object $C$ of $\mathbf{Alf}/k$ the restricted enveloping algebra $U_p(\mathbf L(C))$ of the Lie $p$-algebra $\mathbf L(C)$ over $C$ (VII A 5.3). By VII A 5.4, $U_p(\mathbf L)$ is an $\mathbf O_k$-bialgebra and therefore determines, by 2.2, a $k$-group functor $\Spf^*U_p(\mathbf L)$ which we shall henceforth denote by $\mathscr G_p(\mathbf L)$.
+
+Thus, $\mathscr G_p(\mathbf L)(C)$ is the group of elements $z\in U_p(\mathbf L(C))$ of augmentation $1$ and such that $\Delta_{U_p(\mathbf L(C))}(z)=z\otimes z$.
+
+\numpara{4.2.2}Suppose that $\mathbf L$ is a Lie $p$-algebra flat over $\mathbf O_k$. Then, taking account of VII A 5.3.3, one shows as in point (i) of Proposition 2.6.2 that $U_p(\mathbf L)$ is flat over $\mathbf O_k$; thus $\mathscr G_p(\mathbf L)$ is a topologically flat formal $k$-group which has $U_p(\mathbf L)$ for its covariant $\mathbf O_k$-bialgebra.
+
+\nde{We have detailed what follows.}By the proof of 2.6.2 (iii), for every $k$-algebra $C$ of finite length, $\uLie(\mathscr G_p(\mathbf L))(C)$ is the set of primitive elements of $U_p(\mathbf L)(C)=U_p(\mathbf L(C))$ (see also VII A 3.2.3); moreover, by VII A 5.5.3, the canonical morphism $\mathbf L\to U_p(\mathbf L)$ induces an isomorphism of Lie $p$-algebras
+\[
+\tau_{p,\mathbf L}:\mathbf L\isomto\uLie(\mathscr G_p(\mathbf L))
+\]
+(compare with 3.1 in characteristic $0$).
+
+The formal group $\mathscr G_p(\mathbf L)$ can be characterized by a universal property. Indeed, every morphism $h$ from $\mathscr G_p(\mathbf L)$ to a formal group $G$ induces a morphism $\uLie(h):\uLie(\mathscr G_p(\mathbf L))\to\uLie(G)$. Composing the latter with the isomorphism $\tau_{p,\mathbf L}$, one obtains a morphism $h':\mathbf L\to\uLie(G)$.
+\begin{proposition}{}
+If $k$ is a pseudocompact ring of characteristic $p>0$, $G$ a formal $k$-group and $\mathbf L$ a Lie $p$-algebra flat over $\mathbf O_k$, the map $h\mapsto h'$ defined above is a bijection
+\[
+\Hom_{\mathbf{Grf}/k}(\mathscr G_p(\mathbf L),G)\isomto\Hom_{p\text{-}\Lie}(\mathbf L,\uLie(G)),
+\]
+where the right-hand term denotes the set of morphisms of Lie $p$-algebras from $\mathbf L$ to $\uLie(G)$.
+\end{proposition}
+\nde{The proof is identical to that of 2.6.3.}Indeed, one immediately reduces to the case where $k$ is artinian. Put $L=\mathbf L(k)$. By 2.3.1, $\Hom_{\mathbf{Grf}/k}(\mathscr G_p(\mathbf L),G)$ is in bijection with the set of morphisms of unital algebras $h:U_p(L)\to H(G)$ such that the following diagram commutes:
+\[
+\xymatrix@C=22pt@R=17pt{
+U_p(L)\ar[r]^h\ar[dd]_{\Delta_{U_p(L)}}&H(G)\ar[dr]^{\delta_G}&\\
+&&H(G\times G)\\
+U_p(L)\otimes U_p(L)\ar[r]_{h\otimes h}&H(G)\otimes H(G)\ar[ur]_{\varphi_G}&.}
+\]
+Now $h$ is defined by its restriction to $L$, which is a morphism of Lie $p$-algebras from $L$ to the Lie $p$-algebra underlying $H(G)$, and commutativity of the diagram means that $h$ maps $L$ into the subset of $H(G)$ consisting of the $x$ such that $\delta_G(x)=\varphi_G(x\otimes1+1\otimes x)$, which is none other than $\uLie(G)$, cf. 2.6 (c).
+
+\numpara{4.3}We now propose to study the formal $k$-group $\mathscr G_p(\mathbf L)$ in greater detail when $\mathbf L$ is a Lie $p$-algebra flat over $\mathbf O_k$.
+
+For this, we first consider a ring $C$ of characteristic $p$ and a Lie $p$-algebra $L$ over $C$ whose underlying module is free with basis $(x_i)_{i\in I}$. Denote, moreover, by $P$ the set of families $n=(n_i)_{i\in I}$ consisting of natural numbers such that $0\le n_i<p$ and such that the $n_i$ are zero except perhaps for a finite number of them. If we equip $I$ with a total order and call $i_1,i_2,\ldots,i_r$ ($i_1<i_2<\cdots<i_r$) the indices $i$ such that $n_i\ne0$, we can therefore put $|n|=n_{i_1}+\cdots+n_{i_r}$ and
+\[
+x^n=x_{i_1}^{n_{i_1}}\cdot x_{i_2}^{n_{i_2}}\cdots x_{i_r}^{n_{i_r}},\qquad n!=(n_{i_1}!)\cdots(n_{i_r}!).
+\]
+One knows that the monomials $x^n/n!$ form a basis of $U_p(L)$ (VII A 5.3.3) and it is clear that one has
+\[
+\Delta\left(\frac{x^n}{n!}\right)=\sum_{m\le n}\frac{x^m}{m!}\otimes\frac{x^{n-m}}{(n-m)!},\tag{*}
+\]
+the sum being taken over all $m\in P$ such that one has $m\le n$ (\ie $m_i\le n_i$ for every $i\in I$).

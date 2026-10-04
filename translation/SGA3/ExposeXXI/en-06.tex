@@ -1,0 +1,273 @@
+\sgasection{6.4}{Products of root data}
+\begin{definition}{6.4.1}\label{XXI.6.4.1}
+Let $\mathcal R=(M,M^*,R,R^*)$ and $\mathcal R'=(M',M'^*,R',R'^*)$ be two root data. One calls the \emph{product root datum} of $\mathcal R$ and $\mathcal R'$, and denotes by $\mathcal R''=\mathcal R\times\mathcal R'$, the root datum $(M'',M''^*,R'',R''^*)$ where
+\[
+\begin{gathered}
+M''=M\times M',\qquad M''^*=M^*\times M'^*,\\
+R''=(R\times0)\cup(0\times R'),\qquad R''^*=(R^*\times0)\cup(0\times R'^*),
+\end{gathered}
+\]
+the map $\alpha\mto\alpha^*$ being the obvious map.
+\end{definition}
+\begin{proposition}{6.4.2}\label{XXI.6.4.2}
+Under the preceding conditions, one has canonical isomorphisms
+\[
+\Gamma_0(R'')\simeq\Gamma_0(R)\times\Gamma_0(R'),\qquad
+\mathcal V(R'')\simeq\mathcal V(R)\times\mathcal V(R'),
+\]
+\[
+W(\mathcal R'')\simeq W(\mathcal R)\times W(\mathcal R'),
+\]
+etc., and the equalities
+\[
+\begin{gathered}
+\operatorname{rgred}(\mathcal R'')=\operatorname{rgred}(\mathcal R)+\operatorname{rgred}(\mathcal R'),\\
+\operatorname{rgss}(\mathcal R'')=\operatorname{rgss}(\mathcal R)+\operatorname{rgss}(\mathcal R').
+\end{gathered}
+\]
+One also has a canonical isomorphism of root data
+\[
+(\mathcal R\times\mathcal R')^*\simeq\mathcal R^*\times\mathcal R'^*.
+\]
+\end{proposition}
+The preceding definitions generalize at once to a product of several factors. One has at once:
+\begin{proposition}{6.4.3}\label{XXI.6.4.3}
+Let $\mathcal R=\mathcal R_1\times\mathcal R_2\times\cdots\times\mathcal R_n$ be a product of root data. The following conditions are equivalent:
+\begin{enumeratei}
+\item $\mathcal R$ is semisimple (resp. simply connected, resp. adjoint, resp. reduced).
+\item Each $\mathcal R_i$ is semisimple (resp. simply connected, resp. adjoint, resp. reduced).
+\end{enumeratei}
+\end{proposition}
+Consider the following particular case: let $\mathcal R_0$ be a trivial root datum and $\mathcal R_1$ a semisimple root datum. One then has a commutative diagram
+\[
+\xymatrix{&\mathcal R_0\times\mathcal R_1\ar[dr]&\\
+\mathcal R_1\ar[ur]\ar[rr]_{\mathrm{id}}&&\mathcal R_1.}
+\]
+\begin{lemma}{6.4.4}\label{XXI.6.4.4}
+One has canonical isomorphisms
+\[
+\xymatrix{\operatorname{corad}(\mathcal R_0\times\mathcal R_1)\ar[rr]^{\sim}\ar[dr]_{\simeq}&&\operatorname{rad}(\mathcal R_0\times\mathcal R_1)\\
+&\mathcal R_0\ar[ur]_{\simeq}&}.
+\]
+In particular, $N(\mathcal R_0\times\mathcal R_1)=0$.
+\end{lemma}
+We shall see later that, conversely, if $N(\mathcal R)=0$, the root datum $\mathcal R$ is the product of a semisimple datum and a trivial datum.
+
+\sgasection{6.5}{Induced and coinduced root data}
+Let $\mathcal R=(M,M^*,R,R^*)$ be a root datum. Let $N\subset M$ be a subgroup containing the roots, i.e. such that
+\[
+\Gamma_0(R)\subset N\subset M.
+\]
+The canonical linear map $i_N:N\to M$ gives by transposition a linear map
+\[
+{}^ti_N:M^*\to N^*.
+\]
+Put $R_N=R$ and $R_N^*={}^ti_N(R^*)$.
+\begin{lemma}{6.5.1}\label{XXI.6.5.1}
+$\mathcal R_N=(N,N^*,R_N,R_N^*)$ is a root datum, and $i_N$ a morphism.
+\end{lemma}
+Let us first show that ${}^ti_N$ induces an isomorphism from $R^*$ onto $R_N^*$. If $\alpha,\beta\in R$ and ${}^ti_N(\alpha^*)={}^ti_N(\beta^*)$, one has $(\alpha^*,x)=(\beta^*,x)$ for every $x\in N$, in particular for $x\in R$, which gives $\alpha=\beta$ by 1.1.4. The rest follows without difficulty.
+\begin{definition}{6.5.2}\label{XXI.6.5.2}
+$\mathcal R_N$ is called the root datum \emph{induced} by $\mathcal R$ on $N$.
+\end{definition}
+\begin{lemma}{6.5.3}\label{XXI.6.5.3}
+Let $f:\mathcal R'\to\mathcal R$ be a morphism. Put $N=f(M')\subset M$. Then $f$ factors uniquely through $i_N$.
+\end{lemma}
+In particular, isogenies $\mathcal R'\to\mathcal R$, up to isomorphism, correspond bijectively to subgroups of finite index of $M/\Gamma_0(R)$, which makes 6.2.7 more precise.
+
+Let now $N^*$ be a subgroup of $M^*$ containing $R^*$. One defines the datum \emph{coinduced} by $\mathcal R$ on $N^*$ by
+\[
+\mathcal R^{N^*}=(\mathcal R^*_{N^*})^*,
+\]
+and one has a canonical morphism:
+\[
+p^{N^*}:\mathcal R\to\mathcal R^{N^*}.
+\]
+\begin{lemma}{6.5.4}\label{XXI.6.5.4}
+Let $f:\mathcal R'\to\mathcal R$ be a morphism. There exist subgroups $N\subset M$ and $N'^*\subset M'^*$ such that $f$ factors as
+\[
+\xymatrix{\mathcal R'\ar[r]^f\ar[d]_{p^{N'}}&\mathcal R\\
+\mathcal R'^{N'^*}\ar[r]^{f_0}_{\sim}&\mathcal R_N\ar[u]_{i_N},}
+\]
+where $f_0$ is an isomorphism.
+\end{lemma}
+Indeed, take $N=f(M')$ as in 6.5.3. The resulting morphism $M'\to N$ is surjective, hence its transpose injective. Take the image of the latter as $N'^*$.
+
+Let us now treat certain particular cases. If one takes $N=\Gamma_0(R)$, one will write $\mathcal R_N=\operatorname{ad}(\mathcal R)$. If one takes $N=\mathcal V(R)\cap M$, one will write $\mathcal R_N=\operatorname{ss}(\mathcal R)$. One therefore has a diagram:
+\[
+\operatorname{ad}(\mathcal R)\to\operatorname{ss}(\mathcal R)\to\mathcal R.
+\]
+Put $\operatorname{d\acute er}(\mathcal R)=\operatorname{ss}(\mathcal R^*)^*$ and $\operatorname{sc}(\mathcal R)=\operatorname{ad}(\mathcal R^*)^*$; by duality, one obtains a diagram:
+\[
+\mathcal R\to\operatorname{d\acute er}(\mathcal R)\to\operatorname{sc}(\mathcal R).
+\]
+\begin{proposition}{6.5.5}\label{XXI.6.5.5}
+\begin{enumeratei}
+\item In the first row of the diagram
+\[
+\xymatrix@C=1.5em{
+\operatorname{ad}(\mathcal R)\ar[r]&\operatorname{ss}(\mathcal R)\ar[rr]\ar[dr]&&\operatorname{d\acute er}(\mathcal R)\ar[r]&\operatorname{sc}(\mathcal R)\\
+&&\mathcal R\ar[ur]&&
+}
+\]
+the four data are semisimple and the three morphisms are isogenies.
+\item $\operatorname{ad}(\mathcal R)$ is an adjoint datum, and $\mathcal R$ is adjoint if and only if $\operatorname{ad}(\mathcal R)\to\mathcal R$ is an isomorphism.
+\item $\operatorname{sc}(\mathcal R)$ is a simply connected datum, and $\mathcal R$ is simply connected if and only if $\mathcal R\to\operatorname{sc}(\mathcal R)$ is an isomorphism.
+\item The following conditions are equivalent:
+\begin{enumeratea}
+\item $\mathcal R$ is semisimple,
+\item $\operatorname{ss}(\mathcal R)\to\mathcal R$ is an isomorphism,
+\item $\mathcal R\to\operatorname{d\acute er}(\mathcal R)$ is an isomorphism.
+\end{enumeratea}
+\end{enumeratei}
+\end{proposition}
+Let us pause a moment on the morphism $\operatorname{ss}(\mathcal R)\to\operatorname{d\acute er}(\mathcal R)$. Returning to the construction of $\operatorname{ss}(\mathcal R)$ and $\operatorname{d\acute er}(\mathcal R)$, it is easy to prove:
+\begin{lemma}{6.5.6}\label{XXI.6.5.6}
+Let $h:\operatorname{ss}(\mathcal R)\to\operatorname{d\acute er}(\mathcal R)$ be the canonical isogeny. One has $K(h)\simeq N(\mathcal R)$.
+\end{lemma}
+
+\numpara{6.5.7} Consider other particular cases of induced data. Put
+\[
+N=\{x\in M\mid(\alpha^*,x)=0\text{ for }\alpha\in R\}\times\Gamma_0(R);
+\]
+one knows that the sum is direct by 1.2.5. It follows that the root datum $\mathcal R_N$ is identified with the product $\operatorname{ad}(\mathcal R)\times\operatorname{corad}(\mathcal R)$.
+
+One can do the same replacing $\Gamma_0(R)$ by $\mathcal V(R)\cap M$, then dualize these two constructions. One thus obtains a diagram of root data:
+\[
+\resizebox{0.97\linewidth}{!}{$\xymatrix@C=0.8em{
+\operatorname{ad}(\mathcal R)\ar[r]\ar[d]&\operatorname{ss}(\mathcal R)\ar[rr]\ar[d]&&\operatorname{d\acute er}(\mathcal R)\ar[r]\ar[d]&\operatorname{sc}(\mathcal R)\ar[d]\\
+\operatorname{ad}(\mathcal R)\times\operatorname{corad}(\mathcal R)\ar[r]\ar[d]&\operatorname{ss}(\mathcal R)\times\operatorname{corad}(\mathcal R)\ar[r]\ar[d]&\mathcal R\ar[r]&\operatorname{d\acute er}(\mathcal R)\times\operatorname{rad}(\mathcal R)\ar[r]\ar[d]&\operatorname{sc}(\mathcal R)\times\operatorname{rad}(\mathcal R)\ar[d]\\
+\operatorname{ad}(\mathcal R)\ar[r]&\operatorname{ss}(\mathcal R)\ar[rr]&&\operatorname{d\acute er}(\mathcal R)\ar[r]&\operatorname{sc}(\mathcal R)
+}$};
+\]
+which is commutative, as one checks at once. This diagram is self-dual in an obvious sense. The horizontal morphisms are isogenies. The composites of the vertical arrows are the identity.
+\begin{lemma}{6.5.8}\label{XXI.6.5.8}
+Let $h_1$ and $h_2$ be the canonical isogenies:
+\[
+\operatorname{ss}(\mathcal R)\times\operatorname{corad}(\mathcal R)\xrightarrow{h_1}\mathcal R\xrightarrow{h_2}\operatorname{d\acute er}(\mathcal R)\times\operatorname{rad}(\mathcal R).
+\]
+One has $K(h_1)\simeq K(h_2)\simeq N(\mathcal R)$.
+\end{lemma}
+This is trivial from the definitions.
+\begin{corollary}{6.5.9}\label{XXI.6.5.9}
+Let $\mathcal R$ be a root datum. The following conditions are equivalent:
+\begin{enumeratei}
+\item $N(\mathcal R)=0$, i.e. $\operatorname{corad}(\mathcal R)\to\operatorname{rad}(\mathcal R)$ is an isomorphism.
+\item $h:\operatorname{ss}(\mathcal R)\to\operatorname{d\acute er}(\mathcal R)$ is an isomorphism.
+\item $h_1:\operatorname{ss}(\mathcal R)\times\operatorname{corad}(\mathcal R)\to\mathcal R$ is an isomorphism.
+\item $h_2:\mathcal R\to\operatorname{d\acute er}(\mathcal R)\times\operatorname{rad}(\mathcal R)$ is an isomorphism.
+\item $\mathcal R$ is the product of a semisimple datum and a trivial datum.
+\end{enumeratei}
+\end{corollary}
+Let us also state a trivial consequence of the preceding remarks:
+\begin{corollary}{6.5.10}\label{XXI.6.5.10}
+For every root datum $\mathcal R$, there exist isogenies
+\[
+\operatorname{ad}(\mathcal R)\times\mathcal R_0\to\mathcal R\to\operatorname{sc}(\mathcal R)\times\mathcal R_0,
+\]
+where $\mathcal R_0$ is ``the'' trivial root datum of rank $\operatorname{rgred}(\mathcal R)-\operatorname{rgss}(\mathcal R)$.
+\end{corollary}
+Finally, let us point out a result which may be useful:
+\begin{lemma}{6.5.11}\label{XXI.6.5.11}
+Let $\mathcal R$ be a root datum, $\Delta$ a system of simple roots, $\Delta'$ a subset of $\Delta$; consider the root datum (cf. 3.4.7)
+\[
+\mathcal R_{\Delta'}=(M,M^*,R_{\Delta'},R^*_{\Delta'}).
+\]
+\begin{enumeratei}
+\item If $\mathcal R$ is simply connected, $\operatorname{d\acute er}(\mathcal R_{\Delta'})$ is simply connected.
+\item If $\mathcal R$ is adjoint, $\operatorname{ss}(\mathcal R_{\Delta'})$ is adjoint.
+\end{enumeratei}
+\end{lemma}
+The two assertions are clearly equivalent by duality. The second reduces to checking the formula:
+\[
+M\cap\mathcal V(R_{\Delta'})=\Gamma_0(R_{\Delta'});
+\]
+now, if $M=\Gamma_0(R)$, both sides are equal to the subgroup of $M$ generated by $\Delta'$.
+
+\sgasection{6.6}{Weights}
+\begin{definition}{6.6.1}\label{XXI.6.6.1}
+Let $\mathcal R$ be a root datum. Put{\renewcommand{\thefootnote}{(26)}\nde{$\Gamma(\mathcal R)$ has been replaced by $\Lambda(\mathcal R)$ to avoid any risk of confusion with $\Gamma_0(R)$.}}
+\[
+\Lambda(\mathcal R)=\{x\in V(R)\mid(\alpha^*,x)\in\ZZ\text{ for every }\alpha^*\in R^*\}.
+\]
+The elements of $\Lambda(\mathcal R)$ are called the \emph{weights} of $\mathcal R$. The weights of $\mathcal R^*$ are called the \emph{coweights} of $\mathcal R$.
+\end{definition}
+One has $\Gamma_0(R)\subset\Lambda(\mathcal R)$, and $\Lambda(\mathcal R)$ is stable under $W(\mathcal R)$.
+\begin{lemma}{6.6.2}\label{XXI.6.6.2}
+The bilinear map $V^*\times V\to\QQ$ induces a duality
+\[
+\Gamma_0(R^*)\times\Lambda(\mathcal R)\to\ZZ.
+\]
+\end{lemma}
+Trivial.
+\begin{corollary}{6.6.3}\label{XXI.6.6.3}
+Let $\Delta^*=(\alpha_1^*,\ldots,\alpha_n^*)$ be a system of simple coroots. Let $p_i$, $i=1,2,\ldots,n$, be the elements of $\mathcal V(R)$ defined by
+\[
+(\alpha_i^*,p_j)=\delta_{ij},
+\]
+(whence $s_{\alpha_i}(p_i)=p_i-\alpha_i$ and $s_{\alpha_i}(p_j)=p_j$ for $i\ne j$).{\renewcommand{\thefootnote}{($*$)}\footnote{Attention: if the datum is not reduced, the $\alpha_i$ do not form a system of simple roots.}} Then $\Lambda(\mathcal R)$ is the free abelian group generated by the $p_i$.
+\end{corollary}
+The $p_i$ are called the \emph{fundamental weights} corresponding to the system of simple coroots $\Delta^*$.
+\begin{corollary}{6.6.4}\label{XXI.6.6.4}
+For every $\alpha^*\in\Delta^*$, one therefore has $(\alpha^*,\sum_i p_i)=1$, hence $\sum_i p_i=\rho_{R_+}$ (cf. 3.5.1), where $R_+=\mathcal P(\operatorname{ind}(\Delta))$.
+\end{corollary}
+\begin{corollary}{6.6.5}\label{XXI.6.6.5}
+For every $x\in\mathcal V(R)$, one has $x=\sum_i(\alpha_i^*,x)p_i$.
+\end{corollary}
+Note that $R^*\subset\Gamma_0(R^*)$ and $R\subset\Lambda(\mathcal R)$, hence $(\Lambda(\mathcal R),\Gamma_0(R^*),R,R^*)$ is a root datum.
+\begin{corollary}{6.6.6}\label{XXI.6.6.6}
+The canonical morphism $\Gamma_0(R^*)\to M^*$ is the transpose of the morphism $x\mto\sum_i(\alpha_i^*,x)p_i$, which defines a morphism of root data, and one has a commutative diagram:
+\[
+\xymatrix{&\operatorname{sc}(\mathcal R)\ar[d]^{\simeq}\\
+\mathcal R\ar[ur]\ar[r]&(\Lambda(\mathcal R),\Gamma_0(R^*),R,R^*).}
+\]
+\end{corollary}
+One therefore has an explicit description of $\operatorname{sc}(\mathcal R)$ in terms of the weights of $\mathcal R$. Similarly, one finds a commutative diagram:
+\[
+\xymatrix{\operatorname{ad}(\mathcal R)\ar[d]_{\simeq}\ar[dr]&\\
+(\Gamma_0(R),\Lambda(\mathcal R^*),R,R^*)\ar[r]&\mathcal R}.
+\]
+\begin{corollary}{6.6.7}\label{XXI.6.6.7}
+For $\mathcal R$ to be simply connected, it is necessary and sufficient that $M=\Lambda(\mathcal R)$.
+\end{corollary}
+\begin{remark}{6.6.8}\label{XXI.6.6.8}
+One has $\Lambda(\mathcal R)\cap M=\mathcal V(R)\cap M$. For $\mathcal R$ to be semisimple, it is therefore necessary and sufficient that $M\subset\Lambda(\mathcal R)$.
+\end{remark}
+It also follows from the results of 6.5 that:
+\begin{corollary}{6.6.9}\label{XXI.6.6.9}
+For $\mathcal R$ to be the product of a simply connected datum and a trivial datum, it is necessary and sufficient that $M\supset\Lambda(\mathcal R)$.
+\end{corollary}
+Consider now the canonical isogeny
+\[
+f:\operatorname{ad}(\mathcal R)\to\operatorname{sc}(\mathcal R),
+\]
+and put $Z(\mathcal R)=K(f)$. One has $Z(\mathcal R)\simeq Z(\operatorname{sc}\mathcal R)\simeq Z(\operatorname{ad}\mathcal R)$.
+\begin{corollary}{6.6.10}\label{XXI.6.6.10}
+One has a canonical isomorphism $Z(\mathcal R)=\Lambda(\mathcal R)/\Gamma_0(R)$. More precisely, one has an exact sequence of $W(\mathcal R)$-modules:
+\[
+0\to\Gamma_0(R)\to\Lambda(\mathcal R)\to Z(\mathcal R)\to0.
+\]
+\end{corollary}
+\begin{corollary}{6.6.11}\label{XXI.6.6.11}
+One has a canonical pairing
+\[
+Z(\mathcal R^*)\times Z(\mathcal R)\to\QQ/\ZZ
+\]
+putting these groups in duality.
+\end{corollary}
+\begin{remark}{6.6.12}\label{XXI.6.6.12}
+One has $Z(\mathcal R\times\mathcal R')\simeq Z(\mathcal R)\times Z(\mathcal R')$. Consider, in particular, simply connected data $\mathcal R_i$, $i=1,2,\ldots,n$, and a trivial datum $\mathcal R_0$. Put $\mathcal R=\mathcal R_0\times\mathcal R_1\times\cdots\times\mathcal R_n$. Let $\mathcal R=(M,M^*,R,R^*)$, $\mathcal R_0=(M_0^*,M_0^*,\varnothing,\varnothing)$. One has
+% typo?: repeated M_0 star in the trivial datum kept as printed.
+\[
+M/\Gamma_0(R)\simeq M_0\times Z(\mathcal R_1)\times\cdots\times Z(\mathcal R_n).
+\]
+\end{remark}
+
+\sgasection{6.7}{Automorphisms}
+An automorphism of $\mathcal R$ is, by 6.1.4, an automorphism $u$ of $M$ such that $u(R)=R$, ${}^tu(R^*)=R^*$. In particular, every element $w$ of $W(\mathcal R)$ defines an automorphism of $\mathcal R$.
+\begin{lemma}{6.7.1}\label{XXI.6.7.1}
+$W(\mathcal R)$ is an invariant subgroup of $\Aut(\mathcal R)$. More precisely, if $u\in\Aut(\mathcal R)$ and $\alpha\in R$, one has
+\[
+us_\alpha u^{-1}=s_{u(\alpha)}.
+\]
+\end{lemma}

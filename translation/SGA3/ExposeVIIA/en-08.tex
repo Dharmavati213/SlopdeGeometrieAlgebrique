@@ -1,0 +1,176 @@
+% Source PDF pp. 43--48.
+\par
+The endomorphism $x\mapsto x^{(p)}$ of $\uLie(G/S)(S)$ is clearly compatible with base changes and functorial in $G$. It would be interesting to know for which $G$ this endomorphism makes $\uLie(G/S)(S)$ a Lie $p$-algebra.
+
+\numpara{6.4}
+The last definition of symbolic $p$-th power, which we have just given, is particularly well suited to calculation. Here are a few examples:
+
+\numpara{6.4.1}
+Let $M$ be an ``abstract'' abelian group and $D_S(M)$ the diagonalizable $S$-group of type $M$ (I 4.4.2). For every $S$-scheme $T$, one therefore has
+\[
+D_S(M)(T)=\Hom_{\Abcat}(M,\OO(T)^\times).
+\]
+Let $x$ be an element of $\uLie(D_S(M)/S)(S)$, that is, a homomorphism of abelian groups
+\[
+M\xrightarrow{x}\Gamma(S,\OS+d\OS)^\times
+\]
+of the form $m\mapsto1+d\xi(m)$, where $\xi\in\Hom_{\Abcat}(M,\OO(S))$. With the notation of 6.2 and 6.3, the product $x_1\cdots x_p$ associates to an element $m$ of $M$ the expression
+\[
+(1+d_1\xi(m))\cdots(1+d_p\xi(m))
+\]
+that is, $1+\sigma_1\xi(m)+\sigma_2\xi(m)^2+\cdots+\sigma_p\xi(m)^p$.
+
+This expression does indeed belong to $\OO(\Sigma^pI_S)$. Projecting this into $\OO(S)[d]/(d^2)$ by annihilating $\sigma_1,\ldots,\sigma_{p-1}$ and sending $\sigma_p$ to $d$, one sees that $x^{(p)}$ is the following homomorphism from $M$ to $\Gamma(S,\OS+d\OS)^\times$:
+\[
+m\longmapsto1+d\xi(m)^p.
+\]
+To summarize, if one identifies $\uLie(D_S(M)/S)(S)$ with $\Hom_{\Abcat}(M,\OO(S))$ as in II 5.1, the symbolic $p$-th power associates to $\xi$ the homomorphism $\xi^{(p)}:m\mapsto\xi(m)^p$.
+
+\numpara{6.4.2}
+Let $\mathscr F$ be an $\OS$-module and $G$ the $S$-functor in abelian groups $\mathbf W(\mathscr F)$ (cf.\ I, 4.6). Let $y$ be an element of $\mathbf W(\mathscr F)(S)=\Gamma(S,\mathscr F)$ and $y'$ its image in $\mathbf W(\mathscr F)(I_S)$ under $\mathbf W(\mathscr F)(I_S\to S)$.
+
+One knows (cf.\ II, 4.4.2 and 4.5.1) that the map $y\mapsto dy'$ is an isomorphism of $\OO(S)$-modules from $\mathbf W(\mathscr F)(S)$ onto $\uLie(\mathbf W(\mathscr F)/S)(S)$. If one puts $x=dy'$, the quantity $x_i$ of 6.2 is none other than $d_iy''$, where $y''$ denotes the canonical image of $y'$\nde{$x$ has been corrected to $y'$.} in $\mathbf W(\mathscr F)(I_S^p)$. Consequently, the product $x_1\cdots x_p$ is here equal to
+\[
+x_1+\cdots+x_p=(d_1+\cdots+d_p)y''=\sigma_1y''
+\]
+and belongs to $\mathbf W(\mathscr F)(\Sigma^pI_S)$. Since the homomorphism $\OO(\Sigma^pI_S)\to\OO(I_S)$ defining the morphism $i$ of 6.1 annihilates $\sigma_1$, one sees that $x^{(p)}$ is zero. Thus:
+\begin{quote}\emph{For every $\OS$-module $\mathscr F$, the operation $x\mapsto x^{(p)}$ in $\uLie\mathbf W(\mathscr F)$ is zero.}\end{quote}
+% typo?: the source refers to 6.1 for i, which was defined in 6.2; retained.
+
+\numpara{6.4.3}
+Let $X$ be an $S$-scheme, $G$ the $S$-group functor $\underline{\Aut}_S X$, and $D$ an $S$-derivation of the structure sheaf $\OX$. According to 1.5, $D$ may be identified with an $I_S$-automorphism $x$ of $X_{I_S}$ inducing the identity on $X$, which may be described as follows. If $f$ is a section of $\OS[d]/(d^2)$ of the form $a+bd$, put $D_{I_S}f=Da+(Db)d$; in other words, $D_{I_S}$ is deduced from $D$ by the base change $I_S\to S$; then the automorphism in question of $X_{I_S}$ is associated to the endomorphism $f\mapsto f+(D_{I_S}f)d=a+(D(a)+b)d$ of $\OS[d]/(d^2)$.
+
+Similarly, let $D_{I_S^p}$ be the differential operator of $X_{I_S^p}$ deduced from $D$ by the base change $I_S^p\to S$. With the notation of 6.2, the automorphism $x_i$ of $X_{I_S^p}$ is then associated to the endomorphism $f\mapsto f+(D_{I_S^p}f)d_i$ of $\OS[d_1,\ldots,d_p]/(d_1^2,\ldots,d_p^2)$. The product $x_1\cdots x_p$ is therefore associated to the endomorphism
+\[
+(1+d_1D_{I_S^p})(1+d_2D_{I_S^p})\cdots(1+d_pD_{I_S^p})
+\]
+that is, to $1+\sigma_1D_{I_S^p}+\sigma_2D_{I_S^p}^2+\cdots+\sigma_pD_{I_S^p}^p$.
+% typo?: the source repeatedly has O_S in these endomorphism formulas; retained.
+The coefficient of $\sigma_p$ is $D_{I_S^p}^p$, which means that the Lie algebra isomorphism $\operatorname{D\acute er}_S(\OX)\isomto\Lie(\underline{\Aut}_S X)$, $D\mapsto x$ (cf.\ 1.5), is also an isomorphism of Lie $p$-algebras.
+
+\numpara{6.4.4}
+Using the same method, one sees that, for every $\OS$-module $\mathscr F$, the isomorphism
+\[
+\uLie(\underline{\Aut}_{\mathbf O_S\text{-mod.}}\mathbf W(\mathscr F)/S)(S)\isomto(\underline{\End}_{\mathbf O_S\text{-mod.}}\mathbf W(\mathscr F))(S)
+\]
+of Lie algebras (cf.\ II 4.8) is also an isomorphism of Lie $p$-algebras.
+
+\numpara{6.4.5}
+\nde{The numbering 6.4.5 has been added, and the original expanded.}
+Let $\mathscr U$ be a $\OS$-coalgebra in groups and $G$ the $S$-group functor $\Spec^*\mathscr U$; suppose that $G$ is \emph{representable}. In this case, for every $T\to S$, two Lie $p$-algebra structures have been defined in 5.5 and 6.1.1 on $L(T)=\uLie(G)(T)$. Since one has a commutative diagram
+\[
+\xymatrix@C=4em@R=3em{L(T)\ar@{^{(}->}[r]^\tau\ar@{^{(}->}[d]_\alpha\ar[dr]^i&\Gamma(T,\mathscr U_T)\\
+U(G_T)&U(L(T))\ar[l]^\phi\ar[u]_\psi}
+\]
+where $U(L(T))$ is the enveloping algebra of $L(T)$ and $\phi,\psi$ the algebra morphisms induced by $\alpha,\tau$, one sees that the two Lie $p$-algebra structures coincide: if one identifies $x\in L(T)$ with its image in $U(G_T)$ (resp.\ $\Gamma(T,\mathscr U_T)$), then $x^{(p)}$ is the image of the element $x^p$ of $U(L(T))$ under $\phi$ (resp.\ $\psi$).
+
+\sgasection{7}{Radicial groups of height 1}
+\nde{For the results of this section, one may also refer to [DG70], \S~II.7, nos.\ 3--4.}
+Let $S$ be a scheme of characteristic $p>0$. We shall say that a $\OS$-algebra $\mathscr A$ (resp.\ a $\OS$-Lie $p$-algebra $\mathscr L$) is \emph{finite locally free} if the $\OS$-module underlying $\mathscr A$ (resp.\ $\mathscr L$) is locally free and of finite type. If $\mathscr L$ is a finite locally free $\OS$-Lie $p$-algebra, we know (cf.\ 5.5.2) that the $S$-group functor $\Spec^*\mathscr U_p(\mathscr L)$ is represented by a finite and locally free $S$-group scheme $G_p(\mathscr L)$. We shall see that this $S$-group scheme is the solution to a universal problem (7.2), and we shall characterize the $S$-group schemes of the form $G_p(\mathscr L)$ (7.4).
+
+\begin{definition}{7.0}\label{VIIA.7.0}
+\nde{This definition (cf.\ [DG70], \S~II.4, 7.1), which will be used in 7.2.1, has been added.}
+Let $H=\Spec\mathscr A$ be a finite locally free $S$-group scheme. One says that $H$ is \emph{infinitesimal} if the unit section $\varepsilon_H:S\to H$ is a homeomorphism, which is equivalent to saying that the augmentation ideal of $\mathscr A$ is locally nilpotent.
+\end{definition}
+
+\numpara{7.1}
+\nde{The original has been simplified, taking account of the additions made in 5.5.}
+Let $\mathscr L$ be a finite locally free $\OS$-Lie $p$-algebra and $G_p(\mathscr L)$ the affine $S$-group $\Spec\mathscr U_p(\mathscr L)$. According to 5.5, one knows that $\mathscr L$ identifies with $\mathscr L\!\mathrm{ie}\,G_p(\mathscr L)$.
+% typo?: source Spec U_p(L) has no dual star here; retained.
+Now consider a very good $S$-group functor $G$ satisfying condition (F) of 6.3, and let $\phi:G_p(\mathscr L)\to G$ be a morphism of $S$-group functors. According to 6.3, the morphism of $\OS$-Lie algebras $\mathscr L\!\mathrm{ie}\,\phi:\mathscr L\!\mathrm{ie}\,G_p(\mathscr L)\to\mathscr L\!\mathrm{ie}\,G$ is compatible with symbolic $p$-th power. If we denote by $\Hom_p(\mathscr L,\mathscr L\!\mathrm{ie}\,G)$ the set of morphisms of $\OS$-Lie algebras compatible with symbolic $p$-th power, there is therefore a map
+\[
+\mathscr L\!\mathrm{ie}:\Hom_{S\text{-Gr.}}(G_p(\mathscr L),G)\longrightarrow\Hom_p(\mathscr L,\mathscr L\!\mathrm{ie}\,G),\quad\phi\longmapsto\mathscr L\!\mathrm{ie}\,\phi.
+\]
+
+\begin{theorem}{7.2}\label{VIIA.7.2}
+If $\mathscr L$ is a finite locally free $\OS$-Lie $p$-algebra, the map
+\[
+\Hom_{S\text{-gr.}}(G_p(\mathscr L),G)\longrightarrow\Hom_p(\mathscr L,\mathscr L\!\mathrm{ie}\,G)
+\]
+is bijective in each of the following cases:
+\begin{enumeratei}
+\item $G$ is an $S$-group scheme;
+\item $G$ is of the form $\underline{\Aut}_S X$, where $X$ is an $S$-scheme;
+\item $G$ is of one of the forms $\mathbf W(\mathscr F)$ or $\underline{\Aut}_{\mathbf O_S\text{-mod}}\mathbf W(\mathscr F)$, where $\mathscr F$ denotes a quasi-coherent $\OS$-module.
+\end{enumeratei}
+\end{theorem}
+The proof of the theorem rests on the following lemma:
+\begin{enonce}{Lemma}{}
+If $\mathscr L$ is a finite locally free $\OS$-Lie $p$-algebra, the $S$-group $G=G_p(\mathscr L)$ is annihilated by the Frobenius morphism $\mathrm{Fr}:G\to G^{(p)}$. In particular, $G$ is infinitesimal.
+\end{enonce}
+
+\nde{The original has been expanded in what follows. For another proof, see [DG70], \S~II.7, 3.9.}
+Let, indeed, $\mathscr U$ be the restricted enveloping algebra of $\mathscr L$, $\mathscr A=\mathscr U^*$ the affine algebra of $G$, and $\mathscr I=\Ker\varepsilon_{\mathscr A}$ the augmentation ideal of $\mathscr A$. One has
+\begin{equation}\tag{1}\mathscr A=\mathscr I\oplus\eta_{\mathscr A}(\OS),\end{equation}
+where $\eta_{\mathscr A}$ denotes the unit section of $\mathscr A$, and since $\varepsilon_{\mathscr A}$ (resp.\ $\eta_{\mathscr A}$) is the transpose of $\eta_{\mathscr U}$ (resp.\ $\varepsilon_{\mathscr U}$), this decomposition corresponds by duality to the decomposition
+\begin{equation}\tag{2}\mathscr U=\mathscr J\oplus\eta_{\mathscr U}(\OS),\end{equation}
+where $\mathscr J$ is the augmentation ideal of $\mathscr U$; one therefore has $\mathscr J=\mathscr I^*$.
+
+Denote by $\pi$ the endomorphism $x\mapsto x^p$ of $\OS$. We must show that the morphism $\mathrm{Fr}:G\to G^{(p)}$ factors through the unit section of $G^{(p)}$, which is equivalent to saying (cf.\ 4.1.4 (c)) that the morphism $\Phi:a\otimes_\pi x\mapsto a^px$ from $\mathscr I\otimes_\pi\OS$ to $\mathscr A$ is zero. Since $\mathscr A$ is finite locally free over $\OS$, it suffices to see that the transpose morphism ${}^t\Phi$ is zero.
+
+Now $\Phi$ is none other than the following composite
+\[
+\mathscr I\otimes_\pi\OS\xrightarrow{\tau}\mathscr A\otimes_\pi\OS\xrightarrow{j(\mathscr A)}S^p\mathscr A\xrightarrow{b(\mathscr A)}\mathscr A,
+\]
+where $\tau$ is deduced from the inclusion $\mathscr I\hookrightarrow\mathscr A$, and $b(\mathscr A)$ and $j(\mathscr A)$ are defined as in 4.3.3 (\ie $b(\mathscr A)$ is induced by the multiplication of $\mathscr A$ and $j(\mathscr A)$ sends $a\otimes_\pi1$ to the image of $a\otimes\cdots\otimes a$ in $S^p\mathscr A$). Since the dual $\OS$-module of $S^p\mathscr A$ is none other than the submodule $\Sigma^p\mathscr U$ of $\bigotimes^p\mathscr U$ consisting of sections invariant under the action of the symmetric group of order $p$, one sees that ${}^t\Phi$ is the following composite morphism:
+\[
+\mathscr U\xrightarrow{a(\mathscr U)}\Sigma^p\mathscr U\xrightarrow{r(\mathscr U)}\mathscr U\otimes_\pi\OS\xrightarrow{q}\mathscr J\otimes_\pi\OS,
+\]
+where $q$ is deduced from the projection $\mathscr U\to\mathscr J$ with kernel $\eta_{\mathscr U}(\OS)$, $a(\mathscr U)$ is induced by the comultiplication of $\mathscr U$, and $r(\mathscr U)$ vanishes on symmetrized tensors and sends a section $x\otimes\cdots\otimes x$ to $x\otimes_\pi1$ (confer 4.3.3).
+
+It is clear that ${}^t\Phi\circ\eta_{\mathscr U}=0$ and hence, according to (2), it remains to see that ${}^t\Phi$ annihilates the augmentation ideal $\mathscr J$. Since ${}^t\Phi$ is an algebra morphism and the ideal $\mathscr J$ is generated by $\mathscr L$ (identified with its image in $\mathscr U$), it suffices to see that ${}^t\Phi(x)=0$ for every section $x$ of $\mathscr L$. Now $-a(\mathscr U)(x)=(p-1)!\,a(\mathscr U)(x)$ is the symmetrization of $x\otimes1\otimes\cdots\otimes1$, hence its image under $r(\mathscr U)$ is zero. This proves the first assertion of the lemma.
+
+The second follows from it. Indeed, since every local section of $\mathscr I$ has zero $p$-th power and $\mathscr I$ is an $\OS$-module of finite type, $\mathscr I$ is locally nilpotent (explicitly, if $V$ is an affine open subset of $S$ such that $I=\Gamma(V,\mathscr I)$ is generated by $r$ elements, then $I^{r(p-1)+1}=0$), whence $G_{\mathrm{red}}=S_{\mathrm{red}}$, and hence the unit section $\varepsilon_G:S\to G$ is a homeomorphism.
+
+\numpara{7.2.1}
+\nde{The original has been expanded in what follows.}
+We shall first prove assertion (ii) of theorem 7.2. Let $\pi:X\to S$ be an $S$-scheme. First consider an arbitrary infinitesimal $S$-group $H$. Morphisms $\phi$ from $H$ to $\underline{\Aut}\,X$ correspond bijectively to left actions $\mu:H\times X\to X$ of $H$ on $X$. For such an action, if $\varepsilon$ is the unit section of $H$, the composite morphism
+\[
+X\simeq S\times X\xrightarrow{\varepsilon\times X}H\times X\xrightarrow{\mu}X
+\]
+must be the identity. Since $(H\times X)_{\mathrm{red}}$ identifies with $X_{\mathrm{red}}$, one sees that $\mu$ must induce the identity on the associated reduced schemes. In particular, $\mu$ induces an action of $H$ on every open subset of $X$, and one therefore obtains, for every open subset $U$ of $X$ affine over $S$, a morphism of associative unital algebras:
+\[
+\mathscr A(U)\longrightarrow\mathscr A(H)\otimes\mathscr A(U)
+\]
+making $\mathscr A(U)$ a left $\mathscr A(H)$-comodule, in such a way that the restriction maps $\mathscr A(U)\to\mathscr A(U')$, for $U'\subset U$, are comodule morphisms. Conversely, every datum of this type comes from a unique left action $\mu:H\times X\to X$. On the other hand, one has the following lemma:
+
+\begin{enonce}{Lemma}{}
+Let $X=\Spec\mathscr C$ be an affine $S$-scheme, $H=\Spec\mathscr A$ an infinitesimal $S$-group, and $\mathscr U=\mathscr A^*=\mathscr H\!om_{\OS}(\mathscr A,\OS)$. The left actions of $H$ on $X$ correspond bijectively to the representations of the algebra $\mathscr U$ in the $\OS$-module $\mathscr C$ such that one has:
+\begin{align*}
+\text{(a)}\quad&u(1_{\mathscr C})=\varepsilon(u)\cdot1_{\mathscr C}\\
+\text{(b)}\quad&u(xy)=\sum_i v_i(x)w_i(y)\qquad\text{if }\Delta u=\sum_i v_i\otimes w_i.
+\end{align*}
+\end{enonce}
+(In the formulas above, $u$ denotes an arbitrary section of $\mathscr U$ over an affine open subset $V$ of $S$, and $x$ and $y$ sections of $\mathscr C$ over $V$; $1_{\mathscr C}$ denotes the unit section of $\mathscr C$, and $\varepsilon$ and $\Delta$ the augmentation and diagonal morphism of $\mathscr U$.) Indeed, a left action $\mu$ of $H$ on $X$ is defined by a morphism of associative unital algebras:
+\[
+\lambda:\mathscr C\longrightarrow\mathscr A\otimes\mathscr C
+\]
+making $\mathscr C$ a left $\mathscr A$-comodule. We shall denote by $\alpha$ the composite morphism
+\[
+\mathscr U\otimes_{\OS}\mathscr C\xrightarrow{\mathscr U\otimes\lambda}\mathscr U\otimes_{\OS}\mathscr A\otimes_{\OS}\mathscr C\xrightarrow{\gamma\otimes\mathscr C}\OS\otimes_{\OS}\mathscr C\simeq\mathscr C
+\]
+where $\gamma$ is the ``contraction'' from $\mathscr A^*\otimes_{\OS}\mathscr A$ to $\OS$. Since $\mathscr A$ is finite locally free over $\OS$, one knows that the map $\lambda\mapsto(\gamma\otimes\mathscr C)(\mathscr U\otimes\lambda)$ is a bijection from $\Hom_{\OS}(\mathscr C,\mathscr A\otimes\mathscr C)$ onto $\Hom_{\OS}(\mathscr U\otimes\mathscr C,\mathscr C)$. Moreover, one sees easily that the condition that $\lambda$ define a left $\mathscr A$-comodule structure (resp.\ be a morphism of associative unital algebras) is equivalent, by duality, to the condition that $\alpha$ be a representation of $\mathscr U$ in $\mathscr C$ (resp.\ that $\alpha$ satisfy conditions (a) and (b)). This proves the lemma.
+
+Moreover, it is clear that, for every representation of $\mathscr U$ in the $\OS$-module $\mathscr C$, the sections $u$ of $\mathscr U$ satisfying conditions (a) and (b) of the lemma form a subalgebra of $\mathscr U$.
+
+In the particular case $H=G_p(\mathscr L)$ which interests us, these conditions will therefore hold for all sections $u$ of $\mathscr U=\mathscr U_p(\mathscr L)$ if they are true for the sections $u$ of $\mathscr L$ (identifying $\mathscr L$ with its image in $\mathscr U_p(\mathscr L)$). Now, if $u$ is a section of $\mathscr L$, conditions (a) and (b) mean simply that $u(1_{\mathscr C})=0$ and $u(xy)=u(x)y+xu(y)$, \ie that $\alpha(u)$ is a $\OS$-derivation of $\mathscr C=\mathscr A(X)$. Assertion (ii) of 7.2 follows. Indeed, every morphism $\phi$ from $G_p=G_p(\mathscr L)$ to $\underline{\Aut}\,X$ defines a morphism of Lie $p$-algebras $\mathscr L\!\mathrm{ie}\,\phi$ from $\mathscr L=\mathscr L\!\mathrm{ie}\,G_p$ to $\pi_*(\mathscr D\!\operatorname{\acute er}_{\OS}\OX)$, and conversely every datum of this type comes, according to what precedes, from a unique action $\mu:G\times X\to X$.
+% typo?: source uses G rather than G_p in the last action; retained.
+
+\numpara{7.2.2}
+Let us now show how assertion (i) of theorem 7.2 follows from (ii). Let $G$ be an $S$-group scheme. If $T$ is an $S$-scheme and $x$ an element of $G(T)$, we denote by $\ell_x^T$ (resp.\ $r_x^T$) the left (resp.\ right) translation of $G_T$ defined by $x$. The maps $\ell^T:x\mapsto\ell_x^T$ therefore determine a homomorphism $\ell$ from $G$ to $\underline{\Aut}\,G$. Let, on the other hand, $f$ be a $T$-automorphism of $G_T$; one then defines ${}^xf$ to be equal to $(r_x^T)^{-1}fr_x^T$, \ie for every $T'\to T$ and $g\in G(T')$, $({}^xf)(g)=f(gx)x^{-1}$. In this way $G$ acts on the left on the $S$-group functor $\underline{\Aut}\,G$, hence also on the functors $T\mapsto\Hom_{T\text{-Gr.}}(G_p(\mathscr L_T),\underline{\Aut}\,G_T)$ and $T\mapsto\Hom_p(\mathscr L_T,\mathscr L\!\mathrm{ie}(\underline{\Aut}\,G_T/T))$. On the other hand, the morphism $\ell_T:G_T\to\underline{\Aut}\,G_T$ identifies $G_T$ with the group of automorphisms of the $T$-scheme $G_T$ commuting with right translations, and the derived morphism $\mathscr L\!\mathrm{ie}(\ell_T)$ identifies $\mathscr L\!\mathrm{ie}\,G_T$ with the Lie $p$-algebra of $\OO_T$-derivations of $\OO_{G_T}$ commuting with right translations (cf.\ II, 4.11.1); they therefore induce commutative squares
+\[
+\resizebox{\linewidth}{!}{$\xymatrix@C=2.5em@R=3em{\Hom_{T\text{-Gr.}}(G_p(\mathscr L_T),G_T)\ar[r]^{\mathscr L\!\mathrm{ie}}\ar[d]_{\ell_T}&\Hom_p(\mathscr L_T,\mathscr L\!\mathrm{ie}(G_T/T))\ar[d]^{\mathscr L\!\mathrm{ie}\,\ell_T}\\
+\Hom_{T\text{-Gr.}}(G_p(\mathscr L_T),\underline{\Aut}\,G_T)\ar[r]_{\mathscr L\!\mathrm{ie}}&\Hom_p(\mathscr L_T,\mathscr L\!\mathrm{ie}(\underline{\Aut}\,G_T/T)).}$}
+\]
+The images of the two vertical arrows are the subfunctors consisting of the invariants under the action of the $S$-group $G$. Since the lower horizontal arrow is invertible according to 7.2.1 and is compatible with the action of $G$, the upper horizontal arrow is invertible also. This proves 7.2 (i).
+
+\numpara{7.2.3}
+Now consider the case where $G=\underline{\Aut}_{\mathbf O_S\text{-mod.}}\mathbf W(\mathscr F)$.\nde{In what follows, the original has been expanded (and simplified), taking account of VI B, 11.6.1.} Put $\mathscr U=\mathscr U_p(\mathscr L)$, $\mathscr A=\mathscr U^*$, and $H=G_p(\mathscr L)=\Spec\mathscr A$. Since $H$ is affine over $S$, according to VI B 11.6.1 a morphism of $S$-groups from $H$ to $\underline{\Aut}_{\mathbf O_S\text{-mod.}}\mathbf W(\mathscr F)$ is the same thing as a right $\mathscr A$-comodule structure
+\[
+\mu:\mathscr F\longrightarrow\mathscr F\otimes\mathscr A.
+\]
+Moreover, since $\mathscr A$ is finite locally free over $\OS$, this is equivalent to giving a representation
+\[
+\alpha:\mathscr U\longrightarrow\mathscr E\!\mathrm{nd}_{\OS}(\mathscr F)
+\]
+of $\mathscr U$ in $\mathscr F$. Finally, according to the universal property of $\mathscr U=\mathscr U_p(\mathscr L)$, giving such a morphism $\alpha$ is equivalent to giving its restriction $\rho$ to $\mathscr L$ (identified with its image in $\mathscr U$), which is a morphism of Lie $p$-algebras from $\mathscr L$ to $\mathscr E\!\mathrm{nd}_{\OS}(\mathscr F)$.

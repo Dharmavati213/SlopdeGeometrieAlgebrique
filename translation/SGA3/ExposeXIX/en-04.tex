@@ -1,0 +1,199 @@
+\sgasection{5}{An instructive example}
+\label{XIX.sec.5}
+\numpara{5.1} Let $k$ be an algebraically closed field of characteristic~0. Put $A=k[t]$, the polynomial ring in one variable over $k$, and $S=\Spec(A)$. Consider the following Lie algebra $\mathfrak g$ over $\OS$: as a module, it is free of dimension~3, with basis $\{X,Y,H\}$; its multiplication table is
+\[
+[X,Y]=2tH,\qquad[H,X]=X\quad\text{and}\quad[H,Y]=-Y.
+\]
+For $s\in S$, $s\ne s_0$ (the point defined by $t=0$), the fiber $\mathfrak g(s)=\mathfrak g\otimes_A\kappa(s)$ is isomorphic to the Lie algebra of the group $\PGL_{2,\kappa(s)}$. For $s=s_0$, it is a solvable Lie algebra.
+
+\numpara{5.2} Let $G_1$ be the group scheme of automorphisms of $\mathfrak g$: for every $S'\to S$, $G_1(S')$ is the group of automorphisms of the Lie $\OO_{S'}$-algebra $\mathfrak g\otimes_{\OS}\OO_{S'}$. This is a closed subscheme of the group $\GL(\mathfrak g)$ of automorphisms of the $\OS$-module $\mathfrak g$. Let $S'\to S$ and $u\in\mathrm M_3(\Gamma(S',\OO_{S'}))$, considered as an endomorphism of the $\OS$-module $\mathfrak g\otimes_{\OS}\OO_{S'}$:
+\[
+\begin{aligned}
+u(X)&=aX+bY+eH,\\
+u(Y)&=b'X+a'Y+e'H,\\
+u(H)&=cX+c'Y+dH.
+\end{aligned}
+\]
+One sees at once that $u$ is a section of $G_1$ if and only if $\det(u)$ is invertible and one has the relations:{\renewcommand{\thefootnote}{(38)}\nde{The equality $[u(X),u(Y)]=2t\,u(H)$ (resp. $[u(H),u(X)]=u(X)$, resp. $[u(H),u(Y)]=-u(Y)$) gives relations (4), $(4')$ and (5) (resp. (1--3), resp. $(1'\text{--}3')$).}}
+\[
+\begin{aligned}
+(1)\quad a(d-1)&=ec,& (1')\quad a'(d-1)&=e'c',\\
+(2)\quad b(d+1)&=ec',& (2')\quad b'(d+1)&=e'c,\\
+(3)\quad e&=2t(bc-ac'),& (3')\quad e'&=2t(b'c'-a'c),\\
+(4)\quad 2tc&=eb'-ae',& (4')\quad 2tc'&=be'-ea',\\
+(5)\quad 2t(aa'-bb')&=2td.&&
+\end{aligned}
+\]
+
+\begin{lemma}{5.3}\label{XIX.5.3}
+Relations (1), $(1')$, (2), $(2')$ imply
+\[
+\det(u)=aa'(2-d)+bb'(d+2),\qquad aa'-bb'=d\cdot\det(u).
+\]
+\end{lemma}
+Indeed, the first assertion follows at once by substituting relations (1), $(1')$, (2), $(2')$ into the expansion of $\det(u)$:
+\[
+\begin{aligned}
+\det(u)&=aa'd+be'c+b'c'e-a'ec-ae'c'-bb'd\\
+&=aa'd+bb'(d+1)+bb'(d+1)-aa'(d-1)-bb'd-aa'(d-1)\\
+&=aa'(d-d+1-d+1)+bb'(d+1+d+1-d)\\
+&=aa'(2-d)+bb'(d+2).
+\end{aligned}
+\]
+Multiplying this relation by $d$, one obtains
+\[
+d\cdot\det(u)=aa'(2d-d^2)+bb'(d^2+2d).
+\]
+But the relation $(1)\times(1')=(2)\times(2')$ gives at once
+\[
+aa'(d-1)^2=bb'(d+1)^2.
+\]
+Combining the preceding two relations, one finds at once the second desired formula.
+
+\numpara{5.4} Consider then $G=G_1\cap\SL(\mathfrak g)$. This is the closed subgroup of $G_1$ defined by the equation $\det(u)=1$. It is therefore an affine group over $S$.
+
+\begin{proposition}{5.5}\label{XIX.5.5}
+The group $G$ is smooth over $S$.
+\end{proposition}
+To prove the proposition, one will need the following lemmas.
+
+\begin{lemma}{5.6}\label{XIX.5.6}
+Let $U$ be the open subset of $\underline{\End}_A(\mathfrak g)\simeq\mathrm W(\mathrm M_3(\OS))$ defined by the condition ``the product $ad$ is invertible'', i.e. the open subset $\underline{\End}_A(\mathfrak g)_f$, where $f$ is the function defined by $f(u)=ad$. Then $U\cap G$ is the closed subscheme of $U$ defined by the six equations:
+\[
+(1),\quad(2),\quad(2'),\quad(3),\quad(3')\quad\text{and}\quad(D):aa'-bb'=d.
+\]
+\end{lemma}
+First, it is clear that these six relations are satisfied by every ``point'' of $G$ (lemma~5.3), in particular by every ``point'' of $U\cap G$. Conversely, one must show that if $u\in U(S')$ (for every $S'\to S$), and $u$ satisfies the six conditions of the statement, then $\det(u)=1$ and $u$ also satisfies $(1')$, (4), $(4')$ and (5).
+
+First, one has (D) $\Rightarrow$ (5). By (2) and $(2')$, one has
+\[
+bb'(d+1)=bce'=b'c'e.
+\]
+But by (3) and $(3')$, writing $2t(bc-ac')(b'c'-a'c)$ in two ways, one has
+\[
+(bc-ac')e'=(b'c'-a'c)e.
+\]
+Combining this with the preceding relation gives $ac'e'=a'ce$. But by (1), $a'ce=a'a(d-1)$, which proves $a(a'(d-1)-e'c')=0$ and implies $(1')$, since $a$ is assumed invertible.
+
+Thus (1), (2), $(2')$ and $(1')$ hold, hence by lemma~5.3 and (D) one has $d(\det(u)-1)=0$. Since $d$ is assumed invertible, this implies $\det(u)=1$.
+
+Let us prove (4) and $(4')$. Let us do so, for example, for $(4')$, the other calculation being deduced from it by symmetry. By (3), $(3')$ and (D), one has at once
+\[
+a'e+be'=-2t(aa'-bb')c'=-2tdc'.
+\]
+Combining $(1')$ and (2), one also has{\renewcommand{\thefootnote}{(39)}\nde{The sign has been corrected.}}
+\[
+a'e+be'=-d(be'-ea'),
+\]
+which finishes the proof of $(4')$, since $d$ is assumed invertible.
+
+\begin{lemma}{5.7}\label{XIX.5.7}
+$G$ is smooth over $S$ along the unit section.
+\end{lemma}
+By 5.6 and SGA~1, II 4.10, it suffices to prove that the differentials of the functions
+\[
+\begin{gathered}
+a(d-1)-ec,\qquad b(d+1)-ec',\qquad b'(d+1)-e'c,\\
+e-2t(bc-ac'),\qquad e'-2t(b'c'-a'c),\qquad aa'-bb'-d,
+\end{gathered}
+\]
+at the points of the unit section of $G$ are linearly independent. Now, denoting by a capital letter the differential of the corresponding lower-case letter, these are{\renewcommand{\thefootnote}{(40)}\nde{$A+A'+B$ has been corrected to $A+A'-D$.}}
+\[
+D,\quad2B,\quad2B',\quad E+2tC',\quad E'+2tC,\quad A+A'-D,
+\]
+which are indeed linearly independent modulo every $(t-\lambda)$, $\lambda\in k$.{\renewcommand{\thefootnote}{(41)}\nde{``$(t-a)$, $a\in A$'' has been corrected to ``$(t-\lambda)$, $\lambda\in k$''.}}
+
+\begin{lemma}{5.8}\label{XIX.5.8}
+For $s\in S$, $s\ne s_0$, the fiber $G_s$ is connected and semisimple.
+\end{lemma}
+{\renewcommand{\thefootnote}{(42)}\nde{The following sentence has been slightly modified.}}%
+Indeed, since $s\ne s_0$, $\mathfrak g(s)$ is isomorphic to the Lie algebra of $\PGL_{2,\kappa(s)}$, and, on the other hand, one has $G_s=(G_1)_s$; now it is known that the group of automorphisms of the Lie algebra of $\PGL_2$ over a field of characteristic~0 is $\PGL_2$ itself, which is connected and semisimple.
+
+\begin{lemma}{5.9}\label{XIX.5.9}
+The fiber $G_{s_0}$ is solvable and has two connected components of the following form:
+\[
+G_{s_0}^0=\left\{\begin{pmatrix}a&0&0\\0&a^{-1}&0\\c&c'&1\end{pmatrix}\right\}
+\quad\text{and}\quad
+G_{s_0}^-=\left\{\begin{pmatrix}0&b&0\\b^{-1}&0&0\\c&c'&-1\end{pmatrix}\right\}.
+\]
+\end{lemma}
+Indeed, one has $e=e'=0$, since $t=0$ at $s_0$. One then immediately solves equations (1), $(1')$, \ldots, (5) and (D).
+
+\begin{lemma}{5.10}\label{XIX.5.10}
+$w=\begin{pmatrix}0&1&0\\1&0&0\\0&0&-1\end{pmatrix}$ is a section of $G$ over $S$ such that $w(s_0)\in G_{s_0}^-$.
+\end{lemma}
+Let us now prove 5.5.{\renewcommand{\thefootnote}{(43)}\nde{The following sentence has been modified, adding the reference to VI$_{\mathrm B}$, 3.10.}} Denote by $G^0$ the union of the identity components of the fibers of $G$ (that is, the complement of $G_{s_0}^-$); since $G$ is smooth over $S$ along the unit section (5.7), $G^0$ is an open subgroup of $G$, smooth over $S$, by VI$_{\mathrm B}$, 3.10. Since, by translation, $G$ is clearly smooth at the points of $w(S)$, $G$ is smooth over $S$.
+
+\numpara{5.11} Consider the morphism $\mathbf{G}_{\mathrm m,S}\to G^0$ defined by $z\mto\begin{pmatrix}z&0&0\\0&1/z&0\\0&0&1\end{pmatrix}$. It is a monomorphism defining a torus $T$ of $G^0$. I say that one has
+\[
+T=\uCentr_G(T)=\uCentr_{G^0}(T).
+\]
+Indeed, it suffices to check the first equality. Since these are subgroups of $G$ smooth over $S$, it suffices to check that they have the same geometric points. For the fibers at points $s\ne s_0$, this follows from the fact that $\PGL_{2,\kappa(s)}$ is reductive and that $T_s$ is a maximal torus of it for dimension reasons (cf. 1.11). On the fiber at $s_0$, the calculation is immediate. In particular, it follows that $T$ is a maximal torus of $G$ and of $G^0$.
+
+\numpara{5.12} The section $w$ of $G$ defined in 5.9 normalizes $T$. It follows at once (cf. 2.4) that the Weyl group of $G$ is isomorphic to $(\ZZ/2\ZZ)_S$, and in particular finite over $S$.
+% typo?: reference 5.9 kept as printed.
+\[
+W_G(T)=\uNorm_G(T)/T=(\ZZ/2\ZZ)_S.
+\]
+On the other hand, $W_{G^0}(T)$ \emph{is not finite} over $S$: it ``lacks a point'' above $s_0$.
+
+\numpara{5.13} The open immersion $G^0\to G$ is not a closed immersion (since $G^0$ is dense in $G$); it is nevertheless an affine morphism (and hence $G^0$ is affine over $S$). Indeed, since $G_{s_0}^0$ is closed in $G_{s_0}$, which is closed in $G$, the complement $U$ of $G_{s_0}^0$ in $G$ is open; $G^0$ and $U$ form an open covering of $G$, and it suffices to check that the immersions $G^0\to G^0$ and $G^0\cap U\to U$ are affine; for the first this is trivial, for the second one notes that $U\cap G^0$ is defined in $U$ by the equation $b\ne0$.
+% typo?: b nonzero kept as printed.
+
+One has therefore constructed a smooth affine $S$-group $G^0$, with connected fibers, having a maximal torus $T$ which is its own centralizer and whose Weyl group $W_{G^0}(T)$ \emph{is not finite} (compare with theorem~2.5).
+
+\sgasection{6}{Local existence of maximal tori. The Weyl group}
+\label{XIX.sec.6}
+In the course of the proof of 2.5, we used a result of Exp.~XI on the local existence, for the \'etale topology, of maximal tori; the proof of Exp.~XI uses a delicate representability result (XI 4.1). In the particular case which concerns us, one can give another proof, based on the ideas of Exp.~XII \No~7, and of a much more elementary nature.
+
+\begin{proposition}{6.1}\label{XIX.6.1}
+Let $S$ be a scheme, $G$ a group $S$-scheme smooth, affine and with connected fibers over $S$, and $s_0$ a point of $S$ such that the maximal tori of the geometric fiber $G_{\overline{s}_0}$ are their own centralizer. There exists an \'etale morphism $S'\to S$ covering $s_0$, and a split maximal torus $T$ of $G_{S'}$.
+\end{proposition}
+First, one may suppose $S$ affine.{\renewcommand{\thefootnote}{(44)}\nde{The preceding sentence has been added, as well as the reference to EGA IV in what follows.}} Since $G$ is of finite presentation over $S$, one may suppose $S$ noetherian, then local, then henselian with separably closed residue field (cf. EGA IV, 8.12, \S~8.8, and \S~18.8). Put therefore $S=\Spec(A)$, $A$ henselian with separably closed residue field $k=\kappa(s_0)$. Choose a maximal torus $T_0$ of $G_0$ ($=G_k$) (one exists, for example, because the scheme of maximal tori of $G_0$ is smooth over $k$, Exp.~XII, 7.1 c)); since $k$ is separably closed, $T_0$ is split (cf. X 1.4), and is therefore given by a monomorphism of groups
+\[
+f_0:\mathbf{G}_{\mathrm m,k}^r\to G_0.
+\]
+Let $m$ be an integer $>1$ prime to the characteristic of $k$. By Exp.~VIII 6.7, for every $h>0$, $\uCentr_{G_0}({}_{m^h}T_0)$ is representable by a closed subscheme of $G_0$. Since the ${}_{m^h}T_0$ are schematically dense in $T_0$ (cf. Exp.~IX 4.10) and $G_0$ is noetherian, there exists an $h$ such that
+\[
+\uCentr_{G_0}({}_{m^h}T_0)=\uCentr_{G_0}(T_0)=T_0.
+\]
+Put $n=m^h$; since $n$ is invertible on $S$, ${}_n\mathbf{G}_{\mathrm m,S}$ is isomorphic to $(\ZZ/n\ZZ)_S$; $f_0$ therefore defines a monomorphism of groups
+\[
+u_0:(\ZZ/n\ZZ)_k^r\to G_0
+\]
+such that $\uCentr_G(u_0)=T_0$. Now the $S$-functor
+\[
+P=\uHom_{S\text{-gr.}}((\ZZ/n\ZZ)_S^r,G)
+\]
+is representable by an $S$-scheme of finite type (as a closed subscheme of $r$ copies of ${}_nG=\uHom_{S\text{-gr.}}((\ZZ/n\ZZ)_S,G)=\Ker(G\xrightarrow{n}G)$). But $P$ is smooth over $S$ (Exp.~IX 3.6), hence $u_0\in P(k)$ lifts to a section $u\in P(S)$ (Hensel's lemma, Exp.~XI 1.11):
+\[
+u:(\ZZ/n\ZZ)_S^r\to G.
+\]
+Consider $H=\uCentr_G(u)$; it is a closed subgroup scheme of $G$, by Exp.~VIII 6.5 e), and one has $H_0=T_0$ by hypothesis.{\renewcommand{\thefootnote}{(45)}\nde{The reference VIII 6.5 e) has been added above, and the following sentence has been expanded.}} Moreover, $H$ is smooth over $S$: indeed, let $S'=\Spec(A)$ be an affine scheme over $S$, $u':({}_n\mathbf{G}_{\mathrm m,S'})^r\to G_{S'}$ the morphism deduced from $u$ by base change, $S'_J=\Spec(A/J)$, where $J$ is a square-zero ideal, and let $x\in H(S'_J)$; since $G$ is smooth, $x$ lifts to an element $g$ of $G(S')$; then $v=\operatorname{int}(g)(u')$ satisfies $v_J=u'_J$, and hence, by IX 3.2, there exists an element $g'$ of $G(S')$ such that $g'_J=e$ and $\operatorname{int}(g')(v)=u'$; then $h=g'g$ belongs to $H(S')$ and satisfies $h_J=x$.
+
+Let then $H^0$ be the identity component of $H$; it is a subgroup scheme of $G$, smooth with connected fibers, whose special fiber is a torus. By Exp.~X 8.1, it is a torus, necessarily split (Exp.~X 4.6). Put $H^0=T$, and let $C=\uCentr_G(T)$, which is a closed subgroup of $G$ (Exp.~VIII 6.5 e)), smooth (Exp.~XI 2.4). Consider $C^0$ (in fact one has $C^0=C$, but we do not need to know this); then $C^0\supset T$, and these are two smooth groups with connected fibers. They coincide at $s_0$, hence in a neighborhood. Restricting $S$ if necessary, one may therefore suppose $C^0=T$, hence a fortiori $T$ maximal.
+
+\begin{remark}{6.2}\label{XIX.6.2}
+The proof shows in particular that the reductive rank of $G_{\overline{s}}$ is constant in a neighborhood of $s=s_0$.
+\end{remark}
+
+\begin{proposition}{6.3}\label{XIX.6.3}
+Let $S$ be a scheme, $G$ a group $S$-scheme smooth and of finite presentation over $S$, $Q$ a subtorus of $G$.
+\begin{enumeratei}
+\item $\uCentr_G(Q)$ and $\uNorm_G(Q)$ are representable by closed subgroup schemes, smooth (and hence of finite presentation) over $S$.
+\item $\uCentr_G(Q)$ is an open and closed subscheme of $\uNorm_G(Q)$. The quotient $W_G(Q)=\uNorm_G(Q)/\uCentr_G(Q)$ is representable by an open subgroup scheme of $\underline{\Aut}_{S\text{-gr.}}(Q)$, and is therefore a group $S$-scheme quasi-finite, \'etale and separated over $S$.
+\item For every $s\in S$, put
+\[
+w(s)=\left|\uNorm_{G(\overline{s})}(Q(\overline{s}))/\uCentr_{G(\overline{s})}(Q(\overline{s}))\right|.
+\]
+Then $s\mto w(s)$ is lower semicontinuous, and is constant in a neighborhood of $s$ if and only if $W_G(Q)$ is finite over $S$ in a neighborhood of $s$.
+\end{enumeratei}
+\end{proposition}
+By Exp.~XI 6.11, $\uCentr_G(Q)$ and $\uNorm_G(Q)$ are representable by closed subschemes of finite presentation of $G$. These are smooth by Exp.~XI 2.4 and 2.4 bis, which proves (i). Assertions (ii) and (iii) are then proved as in Exp.~XI 5.9 and 5.10, whose proof in fact uses only (i), and not the delicate theorems Exp.~XI 4.1 and 4.2.
+
+\begin{thebibliography}{Bible}
+\bibitem[Bible]{XIX.Bible} C.~Chevalley (with the collaboration of P.~Cartier, A.~Grothendieck, M.~Lazard), \textit{Classification des groupes de Lie alg\'ebriques}, 1956--58.
+\bibitem[Ch05]{XIX.Ch05} C.~Chevalley, \textit{Classification des groupes alg\'ebriques semi-simples} (with the collaboration of P.~Cartier, A.~Grothendieck, M.~Lazard), Collected Works, vol.~3, Springer, 2005.
+\bibitem[T\^o55]{XIX.To55} C.~Chevalley, \textit{Sur certains groupes simples}, T\^ohoku Math.~J. (2) \textbf{7} (1955), 14--66.
+\bibitem[TO70]{XIX.TO70} J.~Tate \& F.~Oort, \textit{Group schemes of prime order}, Ann.~scient.~\'Ec.~Norm.~Sup. (4), vol.~\textbf{3} (1970), 1--21.
+\end{thebibliography}

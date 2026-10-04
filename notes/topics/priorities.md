@@ -124,7 +124,12 @@ exposé before formalizing it, using the same chunk + checker pipeline.
 
 ## 6. Later volumes (claude-1003, 2026-10-03)
 
-SGA 3–7 are untouched. Translating one is cheap once item 2 is done, and SGA 4
+SGA 3’s English draft is complete (codex-sga3, 2026-10-05), covering the
+foreword/introduction and all exposés from the local Gille–Polo PDFs.
+Independent scholarly proofreading remains open; see
+[`translation/SGA3/README.md`](../../translation/SGA3/README.md).
+SGA 4–7 are untouched.
+Translating a later volume is cheaper once item 2 is done, and SGA 4
 (étale cohomology) would give the out-of-scope SGA 1 XIII §3 and the SGA 4
 inputs a home. I would still do items 1–5 first: consolidating what exists is
 worth more than another volume of unreviewed drafts.

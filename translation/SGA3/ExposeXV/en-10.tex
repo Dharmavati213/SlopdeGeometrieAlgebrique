@@ -1,0 +1,144 @@
+% Source PDF pp. 56--60; the end of proof 7.3 belongs to en-09.
+\sgasection{8}{Representability criterion for the subtori functor of a smooth group}
+\numpara{8.0}\label{XV.8.0}
+In this paragraph, if $S$ is a prescheme and $G$ a group $S$-prescheme, $\mathscr T_G$ (or simply $\mathscr T$ if there is no ambiguity) denotes the $S$-functor $(\Sch/S)^\circ\to\Ens$ such that, for every $S$-prescheme $S'$, one has
+\[
+\mathscr T(S')=\text{set of subtori of }G_{S'}.
+\]
+One similarly defines $\mathscr{TC}$ as the functor of central subtori of $G$.
+\begin{proposition}{8.1}\label{XV.8.1}
+Let $S$ be a locally noetherian prescheme and $G$ a group $S$-prescheme of finite type. Then the following conditions are equivalent:
+
+\noindent i) The functor $\mathscr T_G$ ``commutes with adic limits of artinian local rings'', i.e. for every $S$-prescheme of the form $\Spec(A)=S'$, where $A$ is a noetherian local ring complete for the topology defined by its maximal ideal $\mathfrak m$, the canonical map
+\[
+\mathscr T(S')\longrightarrow\varprojlim_n\mathscr T(S'_n)\qquad(\text{where }S'_n=\Spec(A/\mathfrak m^n))
+\]
+is bijective.
+
+\noindent ii) As in i), but one restricts to the case where $A$ is a complete discrete valuation ring with algebraically closed residue field.
+
+\noindent iii) As in ii), but one restricts to the subfunctor $\mathscr T^{(1)}$ of $\mathscr T$ corresponding to the subtori of $G$ of relative dimension $1$.
+
+\noindent i bis) For every $S$-prescheme $S'$ as in i) and every $S'$-torus $T$, the canonical map
+\[
+\Hom_{S'\text{-gr}}(T,G_{S'})\longrightarrow\varprojlim_n\Hom_{S'_n\text{-gr}}(T_{S'_n},G_{S'_n})
+\]
+is bijective.
+
+\noindent ii bis) As in i bis), but one restricts to the case where $A$ is a complete discrete valuation ring with algebraically closed residue field.
+
+\noindent iii bis) As in ii bis), but one restricts to the case where $T$ is the multiplicative group $\Gm$.
+\end{proposition}
+\begin{remark}{8.2}\label{XV.8.2}
+One has an analogous proposition on restricting to the central subtori of $G$ and to central homomorphisms from a torus to $G$.
+\end{remark}
+\par\noindent\emph{Proof.}
+We shall use the following lemma:
+\begin{lemma}{8.3}\label{XV.8.3}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme, $T$ an $S$-torus, $u:T\to G$ a group $S$-morphism. Suppose moreover that $G$ is of finite presentation over $S$, or that $S$ is locally noetherian and $G$ locally of finite type. Then:
+
+\noindent a) $\Ker u$ is a subgroup of multiplicative type of $T$.
+
+\noindent b) The quotient $T'=T/\Ker u$ is a torus.
+
+\noindent c) The canonical monomorphism $T'\to G$, deduced from $u$ by passage to the quotient, is an immersion.
+\end{lemma}
+% Source PDF p. 57.
+This lemma is a consequence of Exp. IX 6.8 when $G$ is separated over $S$. In the general case, one reduces as usual to the case where $S$ is noetherian. Let us first show that $K=\Ker u$ is flat. We may suppose that $S$ is the spectrum of an artinian local ring (EGA $0_{\mathrm{III}}$ 10.2.6), in which case $G$ is separated (Exp. VIB 5.2), so $K$ is of multiplicative type (Exp. IX 6.8), and a fortiori flat over $S$. Let us now prove that $\Ker u$ is closed in $T$, which reduces us to the case where $S$ is the spectrum of a discrete valuation ring (EGA II 7.2.1). Since $T$ is flat, with connected fibers, $u$ factors through the identity component of the schematic closure in $G$ of the generic fiber of $G$. We may therefore suppose $G$ flat with connected fibers, but then $G$ is separated (Exp. VIB 5.2), so $K$ is closed. This being so, it follows from Exp. X 4.8 b) that $K$ is a subgroup of multiplicative type of $T$. The quotient $T'=T/K$ is then representable, and $T'$ is a group of multiplicative type (Exp. IX 2.7) whose fibers are tori, hence is a torus. The fact that the monomorphism $T'\to G$ is an immersion then follows from Exp. VIII 7.9.
+
+\par\noindent\emph{Proof of 8.1.}
+$\text{i)}\Rightarrow\text{i bis)}$. Put $T_n=T_{S'_n}$, $G_n=G_{S'_n}$, and let $(u_n)_{n\in\mathbf N'}$ be an element of $\varprojlim_n\Hom_{S'_n\text{-gr}}(T_n,G_n)$. For every integer $n$, $u_n(T_n)$ is therefore a subtorus $T'_n$ of $G_n$ (Lemma 8.3). By hypothesis, there exists a unique subtorus $T'$ of $G$ lifting $T'_n$ for every $n$. Since $T'$ has affine fibers, one concludes by 4.4.
+
+$\text{i bis)}\Rightarrow\text{i)}$. Let $(T_n)_{n\in\mathbf N}$ be an element of $\varprojlim_n\mathscr T(S_n)$. By Exp. X 4.6, there exists an $S'$-torus $T'$ and an $S'_0$-isomorphism
+\[
+u_0:T'_0\isomto T_0.
+\]
+Since $T_n$ is smooth over $S'_n$, $u_0$ lifts to an $S'_n$-morphism
+\[
+u_n:T'_n\longrightarrow T_n\qquad\text{(Exp. IX 3.6)},
+\]
+and one may suppose the family $(u_n)_{n\in\mathbf N}$ coherent, hence coming from a morphism $u:T'\to G$. The image of $T'$ under $u$ is then a subtorus of $G$ (Lemma 8.3) lifting $T_n$ for every $n$.
+% typo?: S_n in the first limit and S'_0-isomorphism are the printed notation; kept.
+
+The implications $\text{i)}\Rightarrow\text{ii)}\Rightarrow\text{iii)}$, on the one hand, and $\text{i bis)}\Rightarrow\text{ii bis)}\Rightarrow\text{iii bis)}$, on the other, are evident. The implication $\text{iii)}\Rightarrow\text{iii bis)}$ is proved as $\text{i)}\Rightarrow\text{i bis)}$. It therefore suffices for us to prove $\text{iii bis)}\Rightarrow\text{ii bis)}\Rightarrow\text{i bis)}$.
+
+$\text{ii bis)}\Rightarrow\text{i bis)}$. With the terminology introduced in 4.3, assertion i bis) is true if and only if every element $(u_n)_{n\in\mathbf N}$ of $\varprojlim_n\Hom_{S_n\text{-gr}}(T_n,G_n)$ is ``admissible''. For every point $t$ of $S'$ distinct from the closed point $s$ of $S'$, there exists an $S$-scheme $S''$, the spectrum of a complete discrete valuation ring with algebraically closed residue field, whose generic point maps to $t$ and whose closed point maps to $s$ (EGA II 7.1.9). One immediately deduces a valuative criterion for a family of morphisms to be admissible. This says that $\text{ii bis)}\Rightarrow\text{i bis)}$.
+
+$\text{iii bis)}\Rightarrow\text{ii bis)}$. Let $T$ be an $S$-torus, where $S$ is the spectrum of a complete discrete valuation ring with algebraically closed residue field. The torus $T$ is then split (Exp. X 4.6), i.e. isomorphic to $({\Gm}_S)^r$ for a suitable integer $r$. Let $(u_n)_{n\in\mathbf N}$ be an element of $\varprojlim_n\Hom_{S_n\text{-gr}}((\Gm)^r_{S_n},G_n)$. By hypothesis, the restrictions of the $u_n$ to each factor of $(\Gm)^r_S$ come from a group morphism
+\[
+{\Gm}_S\longrightarrow G.
+\]
+% Source PDF p. 58.
+Whence a product morphism $(\Gm)^r_S\to G^r$ which, composed with the morphism $G^r\to G$ defined by the composition law in $G$, provides a morphism
+\[
+v:(\Gm)^r_S\longrightarrow G.
+\]
+In view of the existence of the group morphism $u_n$, it is clear that $u_n=v_n$. It remains to see that $v$ is a group morphism, which means that two evident morphisms $f,g:X=(\Gm)^r_S\times_S(\Gm)^r_S\to G$ coincide. Let $Z$ be the coincidence subscheme of $f$ and $g$. Since $(\Gm)^r_S$ has connected fibers and $v(\Gm)^r_S$ contains the unit section, one sees as in 8.3 that $v$ factors through the identity component of $G$, which allows us to suppose $G$ separated (Exp. VIB 5.2), hence $Z$ closed. Moreover, since $v_n$ is a group morphism, one has $f_n=g_n$ for every $n$, so $Z$ contains a neighborhood of the closed fiber of $X$ (EGA I 10.9.4), hence is schematically dense in $X$, $X$ having smooth irreducible fibers (Exp. IX 4.6), and consequently $Z=X$, so $f=g$.
+
+\begin{definition}{8.4}\label{XV.8.4}
+Let $S$ be a locally noetherian prescheme, $G$ a group $S$-prescheme of finite type, and $\mathscr S$ the set of $S$-schemes $S'$, spectra of complete discrete valuation rings with algebraically closed residue field, with closed point $s$, generic point $t$, such that $(G_t)^0_{\mathrm{red}}$ is smooth and has a Chevalley decomposition, i.e. is an extension of an abelian variety by a smooth connected linear algebraic subgroup $L_t$ (this decomposition is then unique). If $S'\in\mathscr S$, denote by $G'$ (resp. $L'$) the schematic closure in $G_{S'}$ of $G_t$ (resp. $L_t$).
+
+Under these conditions, we shall say that
+\begin{quote}
+``the abelian part of $G$ does not degenerate into a toric part'', or more briefly that $G$ satisfies property AT,
+\end{quote}
+if for every $S'\in\mathscr S$, $L_s$ has the same reductive rank as $G'_s$. (Intuitively, suppose that the quotient $A=G'/L$ is representable, in which case $A$ is a flat group prescheme such that $(A_t)^0_{\mathrm{red}}$ is an abelian variety. Condition ``AT'' then means that $A_s$ has reductive rank zero, hence that $(A_s)^0_{\mathrm{red}}$ is an extension of an abelian variety by a unipotent group.)
+
+Similarly, supposing moreover that $G$ has connected fibers, we shall say that
+\[
+\text{$G$ satisfies property ATC}
+\]
+if for every $S'\in\mathscr S$, the schematic closure $Z$ of the center $Z_t$ of $G_t$ satisfies AT.
+% typo?: L' is defined but the subsequent notation is L; kept as printed.
+\end{definition}
+These technical definitions are justified by the following proposition:
+\begin{proposition}{8.5}\label{XV.8.5}
+Let $S$ be a locally noetherian prescheme, $G$ a group $S$-prescheme of finite type. Then:
+
+\noindent a) For the functor $\mathscr T$ of subtori of $G$ to ``commute with adic limits of artinian local rings'' (cf. 8.1), it is necessary and sufficient that $G$ satisfy property AT (8.4).
+
+% Source PDF p. 59.
+\noindent b) If $G$ has connected fibers, for the functor $\mathscr{TC}$ of central subtori of $G$ to commute with adic limits of artinian local rings, it is necessary and sufficient that $G$ satisfy property ATC (8.4).
+\end{proposition}
+We shall need the following technical lemma:
+\begin{lemma}{8.6}\label{XV.8.6}
+Let $S$ be the spectrum of a discrete valuation ring, $s$ the closed point of $S$, $G$ a group $S$-prescheme flat and of finite type, $T_s$ a subtorus of $G_s$. Then there exists an $S$-scheme $S'$, the spectrum of a discrete valuation ring, faithfully flat over $S$, with closed point $s'$, and a group subscheme $C$ of $G_{S'}$, flat over $S'$, commutative, with connected fibers, such that $C_{s'}$ contains $T_s\times_s s'$.
+\end{lemma}
+Replacing $S$ by $S'$, the spectrum of a discrete valuation ring faithfully flat over $S$, one may suppose that $T_s$ is equal to $(\Gm)^r_s$ and that the transcendence degree of $\kappa(s)$ over the prime field is $\geq r$ (EGA $0_{\mathrm{III}}$ 10.3.1 and EGA II 7.1.9). There then exists an element $x$ of $T_s(s)$ such that every algebraic subgroup of $G_s$ which ``contains'' $x$ contains $T_s$ (cf. Exp. XIII proof of 2.1 (ii) $\Rightarrow$ (vii)). Since $G$ is flat over $S$, a quasi-section passes through $x$ (EGA IV 14.5.8), and consequently, replacing $S$ by the spectrum of a discrete valuation ring faithfully flat over $S$, one may suppose that there exists a section $x$ of $G$ over $S$ lifting $x$. Let $C_t$ be the commutative algebraic subgroup of $G_t$ generated by $x_t$ (Exp. VIB 7), and let $C$ be the schematic closure of $C_t$ in $G$. It is clear that $C_s$ contains $x$, hence contains $T_s$, and consequently the ``identity component'' of $C$ will be a flat commutative group scheme answering the question.
+
+\par\noindent\emph{Proof of 8.5 a).}
+Suppose that the functor $\mathscr T$ commutes with adic limits of artinian rings, and let us show that $G$ satisfies property AT. Let therefore $S'\in\mathscr S$, and let $T_s$ be a maximal torus of $G'_s$. We must prove that $T_s$ is contained in $L_s$. The formation of $L$ and of $G'$ plainly commutes with faithfully flat extensions $S''\to S'$ of discrete valuation rings. After changing $S'$, we may therefore, by Lemma 8.6, suppose that there exists a flat commutative group subscheme $C$ of $G'_{S'}$ such that $C_s$ contains $T_s$. But then $T_s$ is a central subtorus of $C_s$, and consequently lifts infinitesimally to a central subtorus (Cor. 2.3). In view of the hypothesis on $G$, $T_s$ lifts to a subtorus $T$ of $G$. Plainly $T_t$ is contained in the linear component $L_t$ of $G_t$, so $T$ is contained in $L$.
+
+Suppose now that $G$ satisfies property AT, and let us show that condition 8.1 iii) bis is verified. Let therefore $S$ be the spectrum of a discrete valuation ring $A$, complete, with algebraically closed residue field, $\mathfrak m$ the maximal ideal of $A$, $S_n=\Spec(A/\mathfrak m^n)$, $u_n$, $n\in\mathbf N$, a coherent system of group morphisms $u_n:({\Gm}_S)_n\to G_n=G\times_S S_n$. Let $q$ be a prime number invertible on $S$. With the integer $\ell$ ranging over the powers of $q$, there exists a unique group $S$-morphism
+\[
+{}_\ell u:{}_\ell{\Gm}_S\longrightarrow G
+\]
+lifting $u_n|_{{}_\ell({\Gm}_S)_n}$ for every $n$ (Prop. 1.6 a)). Consequently, if there exists a group $S$-morphism $u:{\Gm}_S\to T$ lifting $u_n$ for every $n$, its restriction to ${}_\ell{\Gm}_S$ is uniquely determined. Taking account of the density theorem (Exp. IX 4.8 (a)), this proves uniqueness of $u$ and the fact that, to prove existence of $u$, we may allow ourselves a faithfully flat extension of the base.
+% typo?: the source has target T, rather than G, in this sentence; kept as printed.
+
+% Source PDF p. 60.
+Now $(G_{\bar t})^0_{\mathrm{red}}$ has a Chevalley decomposition, and this is already defined over a finite extension $L$ of the field of fractions $K$ of $A$. Replacing $S$ by the normalization of $S$ in $L$, we may therefore suppose that $S\in\mathscr S$. The morphism ${}_\ell u_t$ factors through $(G_t)_{\mathrm{red}}$, so ${}_\ell u$ factors through the schematic closure $G''$ of $(G_t)_{\mathrm{red}}$ in $G'$. Again by the density theorem, one deduces that $u_n$ factors through $G''_n$ for every $n$. Since $G$ has property AT, every subtorus of $G'_s$, and a fortiori of $G''_s$, is contained in $L_s$, so $u_s$ factors through $L_s$. I say that for every $n$, $u_n$ factors through $L_n$. Indeed, since $L_t$ is invariant in $(G'')_t$, $L$ is invariant in $G''$; moreover, $L$ is flat over $S$, so for every integer $n$, the quotient $H_n=G''_n/L_n$ is representable (Exp. VIA \S\ 4). The image of $({\Gm}_S)_n$ in $H_n$ is a subtorus of $H_n$ (Exp. IX 6.8), whose closed fiber is zero, so this image is zero, and consequently $u_n$ factors through $L_n$. But since $L_t$ is affine, one deduces that the family $u_n$ is admissible (Prop. 4.3), which completes the proof.
+
+The proof of 8.5 b) is entirely analogous to that of 8.5 a), taking account of 8.2 and Exp. IX 5.6 a).
+\begin{proposition}{8.7}\label{XV.8.7}
+Let $S$ be a locally noetherian prescheme, $G$ a group $S$-prescheme of finite type. Then:
+
+\noindent i) If $G$ has connected fibers and satisfies AT, it satisfies ATC.
+
+\noindent ii) If $G$ satisfies AT, every group subprescheme of $G$ satisfies AT.
+
+\noindent iii) If $G$ is flat over $S$ and the abelian rank of the fibers of $G$ is a locally constant function on $S$, then $G$ satisfies AT.
+\end{proposition}
+i) follows immediately from 8.5 and Exp. IX 5.6 a).
+
+ii) Let $H$ be a group subprescheme of $G$. To prove that $H$ satisfies property AT, we may suppose that $S$ is the spectrum of a complete discrete valuation ring, and we must show that every coherent family of group $S_n$-morphisms
+\[
+u_n:({\Gm}_S)_n\longrightarrow H_n
+\]
+is admissible (8.5 and 8.1 iii bis)). Now by hypothesis, $G$ satisfies property AT, so there exists a group $S$-morphism
+\[
+u:(\Gm)_S\longrightarrow G
+\]
+lifting $u_n$ for every $n$. Proceeding as in the proof of 8.5, one sees that $u|_{{}_\ell{\Gm}_S}$ (where $\ell$ ranges over the powers of a prime number $q$ invertible on $S$) factors through $H$. By density, one deduces that on the generic fiber, $u_t$ factors through $H_t$. Since $(\Gm)_S$ is reduced, it indeed follows that $u$ factors through $H$.
+
+iii) Let $S'\in\mathscr S$ (notation of 8.4). The group $L$ is flat over $S$, and its generic fiber $L_t$ is affine; under these conditions, one can show that $L_s$ is necessarily affine (XVII App. III, 2).

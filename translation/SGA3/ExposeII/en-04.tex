@@ -1,0 +1,495 @@
+\begin{corollary}{3.11.3}\label{II.3.11.3}
+Let \(u\colon X\to Y\) be an \(S\)-morphism. One has an isomorphism
+functorial in~\(\mathcal{M}\) (where, in the right-hand term, \(X\) lies over
+\(Y\) via~\(u\)):
+\[
+L^{u}_{\Hom_{S}(X,Y)/S}(\mathcal{M})
+  \isomto
+\Hom_{Y/S}\bigl(X,\,T_{Y/S}(\mathcal{M})\bigr).
+\]
+{\renewcommand{\thefootnote}{(38)}\nde{The following sentence has been added.}}
+It is an isomorphism of \(\mathbf{O}_{S}\)-modules if \(Y/S\) satisfies~(E).
+\end{corollary}
+
+In particular, for \(Y=X\), \(\End_{S}(X)\) is an \(S\)-functor in monoids, hence
+\emph{a~fortiori} an \(S\)-H-functor; recalling that
+\(\Lie(\End_{S}(X)/S,\mathcal{M})\) denotes
+\(L^{e}_{\End_{S}(X)/S}(\mathcal{M})\), where \(e\) is the unit section
+(\cf 3.9.0.1), one obtains:
+
+\begin{corollary}{3.11.4}\label{II.3.11.4}
+One has an isomorphism functorial in~\(\mathcal{M}\)
+\[
+\Lie(\End_{S}(X)/S,\mathcal{M})
+  \isomto
+\prod_{X/S}T_{X/S}(\mathcal{M})\,;
+\]
+{\renewcommand{\thefootnote}{(38)}\footnotemark[38]}
+it is an isomorphism of \(\mathbf{O}_{S}\)-modules if \(Y/S\) satisfies~(E).
+\end{corollary}
+
+\begin{remark}{3.11.5}\label{II.3.11.5}
+{\renewcommand{\thefootnote}{(39)}\nde{This remark has been added.}}
+Suppose that \(X/S\) satisfies~(E). Then
+\[
+\prod_{X/S}T_{X/S}(\mathcal{M})
+  =\Hom_{X/S}\bigl(X,\,T_{X/S}(\mathcal{M})\bigr)
+\]
+is endowed with a structure of
+\(\bigl(\prod_{X/S}\mathbf{O}_{X}\bigr)\)-module, \ie for every \(S'\to S\),
+\begin{equation*}
+\begin{aligned}
+&\Hom_{X/S}\bigl(X,\,T_{X/S}(\mathcal{M})\bigr)(S') \\
+&\qquad
+=\bigl\{\psi\in\Hom_{X}\bigl(I_{S'}(\mathcal{M})\times_{S}X,\,X\bigr)
+  \bigm|
+  \psi\circ(\varepsilon_{\mathcal{M}}\times\mathrm{id}_{X})
+  =\mathrm{pr}_{X}\bigr\}
+\end{aligned}
+\end{equation*}
+is endowed with a structure of \(\mathbf{O}(X\times_{S}S')\)-module, functorial
+in~\(S'\). This follows, at one's choice, from~3.6 and from the properties of
+the functor \(\prod_{X/S}\) (\cf 1.2), or else from the proof of~3.11.1.
+\end{remark}
+
+We shall now interpret geometrically the definition of the tangent bundle.
+{\renewcommand{\thefootnote}{(40)}\nde{The original has been simplified in what follows.}}
+Let \(U\) be an \(S\)-functor; by~I 1.7.2, one has isomorphisms functorial
+in~\(\mathcal{M}\)
+\begin{align*}
+T_{X/S}(\mathcal{M})(U)
+  &=\Hom_{S}\bigl(U,\,\Hom_{S}(I_{S}(\mathcal{M}),X)\bigr) \\
+  &\simeq\Hom_{S}\bigl(I_{S}(\mathcal{M}),\,\Hom_{S}(U,X)\bigr) \\
+  &\simeq\Hom_{I_{S}(\mathcal{M})}
+      \bigl(U_{I_{S}(\mathcal{M})},\,X_{I_{S}(\mathcal{M})}\bigr).
+\end{align*}
+In particular, the morphism \(\mathcal{M}\to 0\) gives a commutative diagram:
+\[
+\xymatrix{
+\Hom_{S}\bigl(U,\,T_{X/S}(\mathcal{M})\bigr)
+  \ar[r]^{\sim}
+  \ar[d]_{\pi_{\mathcal{M}}}
+&
+\Hom_{I_{S}(\mathcal{M})}
+  \bigl(U_{I_{S}(\mathcal{M})},\,X_{I_{S}(\mathcal{M})}\bigr)
+  \ar[d]
+\\
+\Hom_{S}(U,X)
+  \ar[r]^{\textup{identity}}
+&
+\Hom_{S}(U,X)\,,
+}
+\]
+where the second vertical arrow is obtained by the base change
+\(\varepsilon_{\mathcal{M}}\colon S\to I_{S}(\mathcal{M})\).
+{\renewcommand{\thefootnote}{(41)}\nde{Via the isomorphism
+\(\Hom_{I_{S}(\mathcal{M})}
+  \bigl(U_{I_{S}(\mathcal{M})},\,X_{I_{S}(\mathcal{M})}\bigr)
+  \simeq
+  \Hom_{S}\bigl(U\times_{S}I_{S}(\mathcal{M}),\,X\bigr)\),
+this is equivalent to Remark~3.1.1.
+Likewise, 3.12 is equivalent to the first part of Remark~3.4.2.}}
+
+Consequently:
+
+\begin{proposition}{3.12}\label{II.3.12}
+Let \(h_{0}\colon U\to X\) be an \(S\)-morphism. Then
+\(\Hom_{X}\bigl(U,\,T_{X/S}(\mathcal{M})\bigr)\) is identified with the set of
+\(I_{S}(\mathcal{M})\)-morphisms from \(U_{I_{S}(\mathcal{M})}\) into
+\(X_{I_{S}(\mathcal{M})}\) which restrict to~\(h_{0}\) on~\(U\) (viewed as a
+subobject of \(U\times_{S}I_{S}(\mathcal{M})\) via
+\(\mathrm{id}_{U}\times_{S}\varepsilon_{\mathcal{M}}\)).
+\end{proposition}
+
+{\renewcommand{\thefootnote}{(42)}\nde{The original has been spelled out in what follows.}}
+In particular, for \(U=X\) and \(h_{0}=\mathrm{id}_{X}\), one obtains:
+
+\begin{corollary}{3.12.1}\label{II.3.12.1}
+The set \(\Gamma\bigl(T_{X/S}(\mathcal{M})/X\bigr)\) is identified with the set
+of \(I_{S}(\mathcal{M})\)-endomorphisms \(\varphi\) of \(X_{I_{S}(\mathcal{M})}\)
+which induce the identity on~\(X\), \ie such that the diagram below is
+commutative:%
+{\renewcommand{\thefootnote}{(43)}\nde{When \(\mathcal{M}=\OX\), these are
+called ``infinitesimal endomorphisms'' of~\(X\); see~6.2 at the end of this
+expos\'e.}}
+\[
+\xymatrix{
+I_{X}(\mathcal{M}) \ar[r]^{\varphi}
+  & I_{X}(\mathcal{M}) \\
+X \ar[u]^{\varepsilon_{\mathcal{M}}} \ar[r]^{\mathrm{id}}
+  & X \ar[u]^{\varepsilon_{\mathcal{M}}}
+}
+\]
+\end{corollary}
+
+{\renewcommand{\thefootnote}{(44)}\nde{The original has been spelled out in what follows.}}
+On the other hand, by~3.11.2,%
+% typo?: kept as printed: ``3.11.2'' (the isomorphism is the content of 3.11.4)
+\(\Gamma\bigl(T_{X/S}(\mathcal{M})/X\bigr)
+  \simeq
+  \Lie(\End_{S}(X)/S,\mathcal{M})(S)\);
+if moreover \(X/S\) satisfies~(E), then \(\End_{S}(X)/S\) satisfies~(E), so
+\(\Lie(\End_{S}(X)/S,\mathcal{M})\) is an \(\mathbf{O}_{S}\)-module, by~3.6
+(and in fact a \(\bigl(\prod_{X/S}\mathbf{O}_{X}\bigr)\)-module, by~3.11.5).
+Applying~3.9, one deduces from this:
+
+\begin{proposition}{3.13}\label{II.3.13}
+If \(X/S\) satisfies~(E), the abelian group
+\(\Gamma\bigl(T_{X/S}(\mathcal{M})/X\bigr)\) is identified with the set of
+\(I_{S}(\mathcal{M})\)-endomorphisms of \(X_{I_{S}(\mathcal{M})}\) which induce
+the identity on~\(X\). Consequently, every \(I_{S}(\mathcal{M})\)-endomorphism
+of \(X_{I_{S}(\mathcal{M})}\) which induces the identity on~\(X\) is an
+automorphism.
+\end{proposition}
+
+\begin{corollary}{3.13.1}\label{II.3.13.1}
+Let \(u\colon X\to Y\) be an \(S\)-isomorphism, with \(Y/S\) satisfying~(E).
+Every \(I_{S}(\mathcal{M})\)-morphism from \(X_{I_{S}(\mathcal{M})}\) into
+\(Y_{I_{S}(\mathcal{M})}\) which extends~\(u\) is an isomorphism.
+\end{corollary}
+
+\begin{corollary}{3.13.2}\label{II.3.13.2}
+If \(Y/S\) satisfies~(E), then the monomorphism
+\[
+\Isom_{S}(X,Y)\to\Hom_{S}(X,Y)
+\]
+induces, for every
+\(u\in\Isom_{S}(X,Y)\), an isomorphism
+\[
+L^{u}_{\Isom_{S}(X,Y)/S}(\mathcal{M})
+  \isomto
+L^{u}_{\Hom_{S}(X,Y)/S}(\mathcal{M}).
+\]
+\end{corollary}
+
+\begin{proof}
+{\renewcommand{\thefootnote}{(45)}\nde{The following proof has been added.}}
+One must see that
+\(L^{u}_{\Isom_{S}(X,Y)/S}(\mathcal{M})(S')
+  \to
+  L^{u}_{\Hom_{S}(X,Y)/S}(\mathcal{M})(S')\)
+is a bijection, for every \(S'\to S\). By base change (\cf 3.4), it suffices
+to do this for \(S'=S\). In this case,
+\(L^{u}_{\Hom_{S}(X,Y)/S}(\mathcal{M})(S)\)
+(\resp \(L^{u}_{\Isom_{S}(X,Y)/S}(\mathcal{M})(S)\))
+is the set of \(I_{S}(\mathcal{M})\)-morphisms
+(\resp automorphisms)
+\(X_{I_{S}(\mathcal{M})}\to Y_{I_{S}(\mathcal{M})}\)
+which extend~\(u\), and one applies the preceding corollary.
+\end{proof}
+
+\begin{corollary}{3.13.3}\label{II.3.13.3}
+If \(X/S\) satisfies~(E), the monomorphism
+\(\Aut_{S}(X)\to\End_{S}(X)\)
+induces, for every \(u\in\Aut_{S}(X)\), an isomorphism
+\(L^{u}_{\Aut_{S}(X)/S}(\mathcal{M})
+  \isomto
+  L^{u}_{\End_{S}(X)/S}(\mathcal{M})\).
+In particular, one has
+\[
+\Lie(\Aut_{S}(X)/S,\mathcal{M})
+  \isomto
+\Lie(\End_{S}(X)/S,\mathcal{M})
+  \isomto
+\prod_{X/S}T_{X/S}(\mathcal{M})\,,
+\]
+{\renewcommand{\thefootnote}{(46)}\nde{The following has been added.}}
+so that \(\Lie(\Aut_{S}(X)/S,\mathcal{M})\) is endowed with a structure of
+\(\bigl(\prod_{X/S}\mathbf{O}_{X}\bigr)\)-module.
+\end{corollary}
+
+\numpara{3.14}\label{II.3.14}
+Suppose, to conclude, that \(X\) is representable.%
+{\renewcommand{\thefootnote}{(47)}\nde{The reminder of~2.2.2 has been added, and the sequel has been spelled out.}}
+In this case, one has seen in~2.2.2 that the \(X\)-functor \(T_{X/S}\) is
+representable by \(\mathbf{V}(\Omega^{1}_{X/S})\), whence the bijections:
+\[
+\Gamma(T_{X/S}/X)
+  \simeq
+\Hom_{X}(\Omega^{1}_{X/S},\,\OX)
+  \simeq
+\mathrm{D\acute{e}r}_{\OS}(\OX).
+\]
+
+This can also be deduced from what precedes, as follows. By~3.13,
+\(\Gamma(T_{X/S}/X)\) is identified with the set of infinitesimal
+endomorphisms of~\(X\) (\ie the \(I_{S}\)-endomorphisms of \(X_{I_{S}}\)
+inducing the identity on~\(X\)). Now \(X\) and \(X_{I_{S}}\) have the same
+underlying topological space, the corresponding sheaves of rings being
+\(\OX\) and \(\mathcal{D}\OX=\OX\oplus\mathcal{M}\), where
+\(\mathcal{M}=\OX\) is regarded as a square-zero ideal. Denoting by
+\(\pi\colon\mathcal{D}\OX\to\OX\) the morphism of \(\OX\)-algebras which
+vanishes on~\(\mathcal{M}\), one deduces from this that giving an
+infinitesimal endomorphism of~\(X\) is equivalent to giving a morphism of
+\(\OS\)-algebras \(\varphi\colon\OX\to\mathcal{D}\OX\) such that
+\(\pi\circ\varphi=\mathrm{id}_{\OX}\), which is equivalent to giving an
+\(\OS\)-derivation of the sheaf of rings~\(\OX\).
+
+Moreover, one easily sees that if
+\(D,D'\in\mathrm{D\acute{e}r}_{\OS}(\OX)\) and if one denotes
+by~\(\varphi_{D}\) the infinitesimal endomorphism corresponding to~\(D\), then
+\[
+\varphi_{D+D'}=\varphi_{D}\circ\varphi_{D'}\,.
+\]
+This shows that the identification
+\[
+\{\text{infinitesimal endomorphisms of }X\}
+  \simeq
+\mathrm{D\acute{e}r}_{\OS}(\OX)
+\]
+is an isomorphism of abelian groups. Taking~3.13 (and~3.11.5) into account,
+one has therefore constructed an isomorphism of abelian groups (and even of
+\(\mathbf{O}(X)\)-modules)
+\[
+\Gamma(T_{X/S}/X)
+  \isomto
+\mathrm{D\acute{e}r}_{\OS}(\OX)
+\]
+which recovers the classical interpretation of tangent vector fields in terms
+of derivations of the structure sheaf.%
+{\renewcommand{\thefootnote}{(48)}\nde{Moreover, this isomorphism is functorial
+in~\(S\): if \(S'\to S\), setting \(X'=X_{S'}\), one has
+\(\Lie(\Aut_{S}(X)/S)(S')
+  \simeq
+  \Gamma(T_{X'/S'}/X')
+  \simeq
+  \mathrm{D\acute{e}r}_{\mathcal{O}_{S'}}(\mathcal{O}_{X'})\).}}
+Let us moreover observe that \(\Gamma(T_{X/S}/X)\) is equal to
+\(H^{0}(X,\mathfrak{g}_{X/S})\), where \(\mathfrak{g}_{X/S}\) is the dual
+of~\(\Omega^{1}_{X/S}\).
+
+\sgasection{4}{Tangent space to a group -- Lie algebras}
+\label{II.sec.4}
+
+\numpara{4.1}\label{II.4.1}
+Let \(G\) be a group functor over~\(S\). By~3.9.0.2,
+\(T_{G/S}(\mathcal{M})\) and \(\Lie(G/S,\mathcal{M})\) are endowed with
+structures of groups over~\(S\), and one has group morphisms
+\[
+\xymatrix{
+\Lie(G/S,\mathcal{M}) \ar[r]^{i}
+  & T_{G/S}(\mathcal{M}) \ar[r]^{p}
+  & G \ar@/_/[l]_{s}
+}\,;
+\]
+by definition \(i\) is an isomorphism of \(\Lie(G/S)(\mathcal{M})\) onto the
+kernel of~\(p\), and \(s\) is a section of~\(p\). It then follows from~I 2.3.7
+that this sequence of morphisms allows one to identify
+\(T_{G/S}(\mathcal{M})\) with the semidirect product of~\(G\) by
+\(\Lie(G/S,\mathcal{M})\).
+
+\begin{definition}{4.1.A}\label{II.4.1.A}
+{\renewcommand{\thefootnote}{(49)}\nde{The numbering 4.1.A and 4.1.B has been
+added in order to set off these definitions.}}
+The corresponding operation of~\(G\) on \(\Lie(G/S,\mathcal{M})\) is denoted
+\[
+\Ad\colon G\longrightarrow
+  \Aut_{S\text{-gr.}}\bigl(\Lie(G/S,\mathcal{M})\bigr)
+\]
+and called the \emph{adjoint representation} (relative to~\(\mathcal{M}\))
+of~\(G\); one therefore has by definition, for \(x\in G(S')\) and
+\(X\in\Lie(G/S,\mathcal{M})(S')\):
+\[
+\Ad(x)X=i^{-1}\bigl(s(x)\,i(X)\,s(x)^{-1}\bigr).
+\]
+If \(G\) is commutative, then so is \(T_{G/S}(\mathcal{M})\), and
+\(\Ad(x)X=X\).
+\end{definition}
+
+\begin{definition}{4.1.B}\label{II.4.1.B}
+{\renewcommand{\thefootnote}{(49)}\footnotemark[49]}
+If \(G\) and \(H\) are two group functors over~\(S\) and if
+\(f\colon G\to H\) is a group morphism, one deduces from it by functoriality
+a morphism of exact sequences compatible with the canonical sections:
+\[
+\xymatrix{
+1 \ar[r]
+  & \Lie(G/S,\mathcal{M}) \ar[r] \ar[d]_{L(f)}
+  & T_{G/S}(\mathcal{M}) \ar[r] \ar[d]_{T(f)}
+  & G \ar[r] \ar[d]_{f}
+  & 1
+\\
+1 \ar[r]
+  & \Lie(H/S,\mathcal{M}) \ar[r]
+  & T_{H/S}(\mathcal{M}) \ar[r]
+  & H \ar[r]
+  & 1
+}\,;
+\]
+\(L(f)\), which one will also denote \(\Lie(f)\), is the \emph{derived
+morphism} of~\(f\).%
+{\renewcommand{\thefootnote}{(50)}\nde{If \(f\) is a monomorphism, then so are
+\(L(f)\) and \(T(f)\), \cf 3.7.}}
+\end{definition}
+
+\begin{remark}{4.1.C}\label{II.4.1.C}
+{\renewcommand{\thefootnote}{(51)}\nde{This remark has been added.}}
+If \(G/S\) and \(H/S\) satisfy~(E), then \(L(f)\) respects the structures of
+\(\mathbf{O}_{S}\)-modules deduced from the ``functoriality in~\(\mathcal{M}\)''
+(\cf 3.6).
+\end{remark}
+
+\begin{proposition}{4.1.1}\label{II.4.1.1}
+Let \(g\in G(S)\). Then
+\(\Ad(g)\colon\Lie(G/S,\mathcal{M})\to\Lie(G/S,\mathcal{M})\)
+is the derived morphism of \(\Int(g)\colon G\to G\).
+\end{proposition}
+
+Indeed \(\Ad(g)X=i^{-1}\bigl(\Int(g)\,i(X)\bigr)\), which is none other than
+\(L(\Int(g))(X)\) by the very definition of the derived morphism.
+
+Suppose that \(G/S\) satisfies~(E). Then, by proposition~3.9, the group
+structure of \(\Lie(G/S,\mathcal{M})\) defined as above is none other than
+the structure induced by its structure of \(\mathbf{O}_{S}\)-module (defined
+by means of~(E)). One then deduces from the preceding proposition and from
+the functoriality of the operation of~\(\mathbf{O}_{S}\) (\cf 3.6) the
+corollary:
+
+\begin{corollary}{4.1.1.1}\label{II.4.1.1.1}
+Suppose that \(G/S\) satisfies~(E). Then \(\Ad\) sends \(G\) into the subgroup
+\[
+\Aut_{\mathbf{O}_{S}\text{-mod.}}\bigl(\Lie(G/S,\mathcal{M})\bigr)
+\]
+of \(\Aut_{S\text{-gr.}}\bigl(\Lie(G/S,\mathcal{M})\bigr)\), \ie for every
+\(g\in G(S')\), \(\Ad(g)\) respects the structure of
+\(\mathbf{O}_{S'}\)-module of \(\Lie(G'/S',\mathcal{M})\) (where
+\(G'=G\times_{S}S'\)). In other words, \(\Ad\) is a linear representation
+(\cf I,~3.2) of~\(G\) in the \(\mathbf{O}_{S}\)-module
+\(\Lie(G/S,\mathcal{M})\).
+\end{corollary}
+
+\begin{remarks}{4.1.1.2}\label{II.4.1.1.2}
+a)~In order that \(G/S\) satisfy~(E), it is necessary and sufficient that,
+for every pair \((\mathcal{M},\mathcal{N})\) of free \(\OS\)-modules of finite
+type, the diagram
+\[
+\xymatrix{
+& \Lie(G/S,\,\mathcal{M}\oplus\mathcal{N}) \ar[dl] \ar[dr] & \\
+\Lie(G/S,\mathcal{M}) \ar[dr]
+  && \Lie(G/S,\mathcal{N}) \ar[dl] \\
+& \Lie(G/S,0)=S &,
+}
+\]
+obtained by applying the functor \(\Lie(G/S,\,)\) to the diagram \((*)\)
+of~2.1, be cartesian.
+
+b)~Suppose that \(G/S\) satisfies~(E). Then the derived morphism of the group
+law \(\pi\colon G\times_{S}G\to G\) is none other than the addition law
+in~\(\Lie(G/S,\mathcal{M})\). (N.B.\ \(\pi\) is not a group morphism, but
+\(\pi(e,e)=e\), so the derived morphism \(L(\pi)\) sends
+\(T^{(e,e)}_{(G\times_{S}G)/S}(\mathcal{M})
+  =\Lie(G/S,\mathcal{M})\times_{S}\Lie(G/S,\mathcal{M})\)
+into \(\Lie(G/S,\mathcal{M})\), \cf 3.7 and~3.8.)
+For every \(n\in\ZZ\), one shows likewise that if one denotes by
+\(n_{G}\colon G\to G\) the morphism of \(S\)-functors defined by
+\(g\mapsto g^{n}\), then the derived morphism \(L(n_{G})\) is multiplication
+by~\(n\) on \(\Lie(G/S)\), \cf 3.9.4.
+\end{remarks}
+
+\numpara{4.1.2.0}\label{II.4.1.2.0}
+{\renewcommand{\thefootnote}{(52)}\nde{The original has been spelled out in
+what follows, in order to exhibit the action of~\(G\) on the functors
+\(\Hom_{G/S}\bigl(G,\,T_{G/S}(\mathcal{M})\bigr)\) and
+\(\Hom_{S}\bigl(G,\,\Lie(G/S,\mathcal{M})\bigr)\).}}
+Let us now consider the \(S\)-functor
+\(\Hom_{G/S}\bigl(G,\,T_{G/S}(\mathcal{M})\bigr)\); for every \(S'\to S\),
+one has
+\(T_{G/S}(\mathcal{M})_{S'}\simeq T_{G_{S'}/S'}(\mathcal{M})\) (\cf 3.4) and
+therefore:
+\[
+\Hom_{G/S}\bigl(G,\,T_{G/S}(\mathcal{M})\bigr)(S')
+  \simeq
+\Hom_{G_{S'}}\bigl(G_{S'},\,T_{G_{S'}/S'}(\mathcal{M})\bigr)
+  =\Gamma\bigl(T_{G_{S'}/S'}(\mathcal{M})/G_{S'}\bigr).
+\]
+Let us first note that one has an isomorphism, functorial in~\(S'\),
+\begin{equation*}
+(*)\qquad
+\Hom_{S'}\bigl(G_{S'},\,\Lie(G_{S'}/S',\mathcal{M})\bigr)
+  \isomto
+\Gamma\bigl(T_{G_{S'}/S'}(\mathcal{M})/G_{S'}\bigr)
+\end{equation*}
+which associates to every
+\(f\colon G_{S'}\to\Lie(G_{S'}/S',\mathcal{M})\) the section
+\(s_{f}\colon G_{S'}\to T_{G_{S'}/S'}(\mathcal{M})\) such that, for every
+\(S''\to S'\) and \(g\in G(S'')\):
+\[
+s_{f}(g)=i\bigl(f(g)\bigr)\,s(g).
+\]
+
+Let \(h\) be an automorphism of the functor \(G_{S'}\) over~\(S'\), not
+necessarily respecting the group structure. To every section~\(\tau\) of
+\(T_{G_{S'}/S'}(\mathcal{M})\), one may associate \(h(\tau)\) defined by
+transport of structure: it is for instance the only section of
+\(T_{G_{S'}/S'}(\mathcal{M})\) making the diagram
+\[
+\xymatrix{
+G_{S'} \ar[r]^{\tau} \ar[d]^{h}
+  & T_{G_{S'}/S'}(\mathcal{M}) \ar[d]^{T(h)} \\
+G_{S'} \ar[r]^{h(\tau)}
+  & T_{G_{S'}/S'}(\mathcal{M})
+}
+\]
+commutative.
+
+In particular, let us take for~\(h\) the right translation \(t_{x}\) by an
+element \(x\) of \(G(S')\), \ie \(h(g)=t_{x}(g)=g\cdot x\), for every
+\(g\in G(S'')\), \(S''\to S'\). Then one immediately has
+\[
+t_{x}(s_{f})=s_{t_{x}(f)}
+\]
+where \(t_{x}(f)\) denotes the morphism from \(G_{S'}\) into
+\(\Lie(G_{S'}/S',\mathcal{M})\) defined by
+\[
+t_{x}(f)(g)=f(g\cdot x^{-1})
+\]
+% typo?: kept as printed: S'\to S' (the parallel quantifier below is S''\to S')
+for every \(g\in G(S'')\), \(S'\to S'\).
+
+It follows that if one lets \(G\) operate by right translations on
+\[
+\Hom_{G/S}\bigl(G,\,T_{G/S}(\mathcal{M})\bigr)
+  \qquad\text{and}\qquad
+\Hom_{S}\bigl(G,\,\Lie(G/S,\mathcal{M})\bigr)
+\]
+in the following way: for every \(S'\to S\), \(x\in G(S')\),
+\(\sigma\in\Gamma\bigl(T_{G_{S'}/S'}(\mathcal{M})/G_{S'}\bigr)\) and
+\(f\in\Hom_{S'}\bigl(G_{S'},\,\Lie(G_{S'}/S',\mathcal{M})\bigr)\),
+\[
+(\sigma\cdot x)(g)=\sigma(g\cdot x^{-1})\cdot s(x)
+  \qquad\text{and}\qquad
+(f\cdot x)(g)=f(g\cdot x^{-1}),
+\]
+for every \(g\in G(S'')\), \(S''\to S'\), then the isomorphism \((*)\) above
+respects the operations of~\(G\).
+
+In particular, via this isomorphism, the elements of
+\(\Hom_{G/S}\bigl(G,\,T_{G/S}(\mathcal{M})\bigr)^{G}(S')\)
+correspond to the \emph{constant} morphisms from \(G_{S'}\) into
+\(\Lie(G_{S'}/S',\mathcal{M})\) (\ie factoring through the projection
+\(G_{S'}\to S'\)) or else to the elements of
+\(\Lie(G_{S'}/S',\mathcal{M})(S')=\Lie(G/S,\mathcal{M})(S')\).
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{Terminology.}\ ---
+The elements of
+\(\Hom_{G/S}\bigl(G,\,T_{G/S}(\mathcal{M})\bigr)^{G}(S')\)
+will be called ``sections of \(T_{G_{S'}/S'}(\mathcal{M})\)
+\emph{invariant under right translation}''.
+
+One then obtains:
+
+\begin{proposition}{4.1.2}\label{II.4.1.2}
+{\renewcommand{\thefootnote}{*}\footnote{The statements 4.1.2, 4.1.3
+and~4.1.4 are obtained more simply by observing that the automorphisms
+of~\(G\) invariant under right translations are the left
+translations.\textsuperscript{(53)}}}%
+The map
+\(\Lie(G/S,\mathcal{M})(S)\to\Gamma\bigl(T_{G/S}(\mathcal{M})/G\bigr)\)
+which associates to \(X\in\Lie(G/S,\mathcal{M})(S)\) the section
+\(x\mapsto X\cdot x\) is a bijection of \(\Lie(G/S,\mathcal{M})(S)\) onto
+the part of \(\Gamma\bigl(T_{G/S}(\mathcal{M})/G\bigr)\) consisting of the
+sections invariant under right translation.
+\end{proposition}
+{\renewcommand{\thefootnote}{(53)}\ndetext{See for instance the proof of
+propositions~4.6 and~2.5 of \cite{DG70}, \S II.4.}}

@@ -1,0 +1,433 @@
+% Continue source note numbering after the starred and version notes.
+\setcounter{footnote}{20}
+\renewcommand{\thefootnote}{(\arabic{footnote})}
+Let us observe that giving a structure of \(\widehat{\mathscr{C}}\)-group on
+\(\mathbf{G}\) amounts to giving a law of composition on \(\mathbf{G}\), that
+is, a \(\widehat{\mathscr{C}}\)-morphism
+\[
+\pi_{\mathbf{G}}\colon\mathbf{G}\times\mathbf{G}\to\mathbf{G}
+\]
+such that for every \(S\in\Ob(\mathscr{C})\), \(\pi_{\mathbf{G}}(S)\) equips
+\(\mathbf{G}(S)\) with a group structure.
+
+In the same way, \(f\colon\mathbf{G}\to\mathbf{H}\) is a morphism of
+\(\widehat{\mathscr{C}}\)-groups if and only if the following diagram is
+commutative:
+\[
+\xymatrix@C=16mm@R=8mm{
+\mathbf{G}\times\mathbf{G} \ar[r]^{\pi_{\mathbf{G}}} \ar[d]_{(f,f)}
+  & \mathbf{G} \ar[d]^{f} \\
+\mathbf{H}\times\mathbf{H} \ar[r]^{\pi_{\mathbf{H}}}
+  & \mathbf{H}.
+}
+\]
+
+A subobject \(\mathbf{H}\) of \(\mathbf{G}\) such that, for every
+\(S\in\Ob(\mathscr{C})\), \(\mathbf{H}(S)\) is a subgroup of \(\mathbf{G}(S)\)
+evidently possesses a structure of \(\widehat{\mathscr{C}}\)-group induced by
+that of \(\mathbf{G}\): it is the only one for which the monomorphism
+\(\mathbf{H}\to\mathbf{G}\) is a morphism of \(\widehat{\mathscr{C}}\)-groups.
+The \(\widehat{\mathscr{C}}\)-group \(\mathbf{H}\) equipped with this structure
+is called a sub-\(\widehat{\mathscr{C}}\)-group of \(\mathbf{G}\).
+
+If \(\mathbf{G}\) and \(\mathbf{H}\) are two \(\widehat{\mathscr{C}}\)-groups,
+the product \(\mathbf{G}\times\mathbf{H}\) is equipped with an evident
+structure of \(\widehat{\mathscr{C}}\)-group: for every \(S\in\Ob(\mathscr{C})\),
+one equips \(\mathbf{G}(S)\times\mathbf{H}(S)\) with the product group
+structure of the group structures given on \(\mathbf{G}(S)\) and
+\(\mathbf{H}(S)\). The \(\widehat{\mathscr{C}}\)-group
+\(\mathbf{G}\times\mathbf{H}\) equipped with this structure will be called the
+product \(\widehat{\mathscr{C}}\)-group of \(\mathbf{G}\) and of \(\mathbf{H}\)
+(it is, moreover, the product in the category of
+\(\widehat{\mathscr{C}}\)-groups).
+
+If \(\mathbf{G}\) is a \(\widehat{\mathscr{C}}\)-group, then for every
+\(S\in\Ob(\mathscr{C})\), \(\mathbf{G}_{S}\) is a
+\(\widehat{\mathscr{C}}_{/S}\)-group. If \(\mathbf{G}\) and \(\mathbf{H}\) are
+two \(\widehat{\mathscr{C}}\)-groups, one will define the object
+\(\Hom_{\widehat{\mathscr{C}}\text{-Gr.}}(\mathbf{G},\mathbf{H})\) of
+\(\widehat{\mathscr{C}}\) by:
+\[
+\Hom_{\widehat{\mathscr{C}}\text{-Gr.}}(\mathbf{G},\mathbf{H})(S)
+=\Hom_{\widehat{\mathscr{C}}_{/S}\text{-Gr.}}(\mathbf{G}_{S},\mathbf{H}_{S}).
+\]
+(Note: \(\Hom_{\widehat{\mathscr{C}}\text{-Gr.}}\) is not in general a
+\(\widehat{\mathscr{C}}\)-group, nor a fortiori the object \(\Hom\) in
+the category \((\widehat{\mathscr{C}}\text{-Gr.})\).)
+
+One defines in the same way the objects
+\[
+\Isom_{\widehat{\mathscr{C}}\text{-Gr.}}(\mathbf{G},\mathbf{H}),
+\qquad
+\End_{\widehat{\mathscr{C}}\text{-Gr.}}(\mathbf{G}),
+\qquad
+\Aut_{\widehat{\mathscr{C}}\text{-Gr.}}(\mathbf{G}).
+\]
+
+\begin{definition}{2.1.2}\label{I.2.1.2}
+Let \(G\in\Ob(\mathscr{C})\). One calls a structure of
+\(\widehat{\mathscr{C}}\)-group on
+\(\mathbf{h}_{G}\in\Ob(\widehat{\mathscr{C}})\) a structure of
+\(\mathscr{C}\)-group on \(G\). One calls an element
+\(u\in\Hom(G,H)\simeq\Hom(\mathbf{h}_{G},\mathbf{h}_{H})\)
+which defines a morphism of \(\widehat{\mathscr{C}}\)-group from
+\(\mathbf{h}_{G}\) to \(\mathbf{h}_{H}\) a morphism from the
+\(\mathscr{C}\)-group \(G\) to the \(\mathscr{C}\)-group \(H\).
+\end{definition}
+
+One denotes by \((\mathscr{C}\text{-Gr.})\) the category of
+\(\mathscr{C}\)-groups. Let us note that there exists in \(\textup{(Cat)}\) a
+cartesian square
+\[
+\xymatrix@C=18mm@R=10mm{
+(\mathscr{C}\text{-Gr.}) \ar[r] \ar[d]
+  & (\widehat{\mathscr{C}}\text{-Gr.}) \ar[d] \\
+\mathscr{C} \ar[r]^{\mathbf{h}}
+  & \widehat{\mathscr{C}}.
+}
+\]
+
+All the preceding definitions and constructions are therefore transported at
+once to \((\mathscr{C}\text{-Gr.})\) whenever the functors which they involve
+(products, \(\Hom\) objects, etc.)\ are representable. They also apply to the
+categories \(\mathscr{C}_{/S}\). In this case, we shall write
+\(\Hom_{S\text{-Gr.}}\) for
+\(\Hom_{\widehat{\mathscr{C}}_{/S}\text{-Gr.}}\), etc.
+
+\numpara{2.2}\label{I.2.2}
+More generally, if \((T)\) is a species of structure on \(n\) base sets defined
+by finite projective limits (for example, by commutativities of diagrams
+constructed with cartesian products: structures of monoid, of group, of set
+with operators, of module over a ring, of Lie algebra over a ring, etc.), the
+preceding construction makes it possible to define the notion of ``structure
+of species \((T)\) on \(n\) objects
+\(\mathbf{F}_{1},\ldots,\mathbf{F}_{n}\) of \(\widehat{\mathscr{C}}\)'': such
+a structure will be the giving, for each \(S\) of \(\mathscr{C}\), of a
+structure of species \((T)\) on the sets
+\(\mathbf{F}_{1}(S),\ldots,\mathbf{F}_{n}(S)\) in such a way that for every
+arrow \(S'\to S''\) of \(\mathscr{C}\), the family of maps
+\((\mathbf{F}_{i}(S''))\to(\mathbf{F}_{i}(S'))\) is a poly-homomorphism for the
+species of structure \((T)\). One defines in a similar manner the morphisms
+of the species of structure \((T)\), whence a category
+\((\widehat{\mathscr{C}}\times\widehat{\mathscr{C}}\cdots\times\widehat{\mathscr{C}})^{(T)}\).
+% typo?: no \times before \cdots in the product of copies of \widehat{\mathscr{C}}, kept as printed
+The fully faithful functor
+\((\mathbf{h}\times\mathbf{h}\times\cdots\times\mathbf{h})\) then makes it
+possible to define by inverse image the category
+\((\mathscr{C}\times\mathscr{C}\times\cdots\times\mathscr{C})^{(T)}\), then,
+as it commutes with projective limits, to transport thereto all the
+functorial properties, notions and notations introduced in
+\(\widehat{\mathscr{C}}\). Suppose now that fibered products exist in
+\(\mathscr{C}\), and let \((T)\) be a species of algebraic structure defined
+by the \emph{giving} of certain morphisms between cartesian products
+satisfying \emph{axioms} consisting of certain commutativities of diagrams
+constructed by means of the preceding arrows. A structure of species \((T)\)
+on a family of objects of \(\mathscr{C}\) will therefore be defined by
+certain morphisms between cartesian products satisfying certain commutation
+conditions. It follows that if \(\mathscr{C}\) and \(\mathscr{C}'\) are two
+categories possessing products and
+\(f\colon\mathscr{C}\to\mathscr{C}'\) is a functor \emph{commuting with
+products}, then for every family of objects \((F_{i})\) of \(\mathscr{C}\)
+equipped with a structure of species \((T)\), the family \((f(F_{i}))\) of
+objects of \(\mathscr{C}'\) will thereby be equipped also with a structure of
+species \((T)\). Every \(\mathscr{C}\)-group will be transformed into a
+\(\mathscr{C}'\)-group, every pair (\(\mathscr{C}\)-ring, \(\mathscr{C}\)-module
+over this \(\mathscr{C}\)-ring) into an analogous pair in \(\mathscr{C}'\),
+etc.
+
+Let in particular \(\mathscr{C}\) be a category satisfying the conditions
+of~1.8\nde{Including the condition \((*)\).}; the functor \(E\mapsto E_{S}\)
+defined in \loccit commutes with finite projective limits; it therefore
+transforms group into \(S\)-group (\ie \(\mathscr{C}_{/S}\)-group), ring into
+\(S\)-ring, etc.
+
+\begin{remark*}
+It is well to remark that the preceding construction procedure, applied to
+the category \(\widehat{\mathscr{C}}\), does indeed give back the notions
+which one has already defined there; in other words, it amounts to the same
+to give, on an object of \(\widehat{\mathscr{C}}\), a structure of species
+\((T)\) when one considers this object as a functor on \(\mathscr{C}\), or to
+give a structure of species \((T)\) on the representable functor on
+\(\widehat{\mathscr{C}}\) defined by this object.%
+% typo: "pour pour" -> "pour"
+\nde{For example, for the group structures: let
+\(\mathbf{G}\in\Ob(\widehat{\mathscr{C}})\); if the functor
+\(\widehat{\mathscr{C}}\to\Ens\),
+\(\mathbf{F}\mapsto\Hom_{\widehat{\mathscr{C}}}(\mathbf{F},\mathbf{G})\) is
+equipped with a group structure, the same is true of its restriction to
+\(\mathscr{C}\), \(X\mapsto\mathbf{G}(X)\). Conversely, if \(\mathbf{G}\) is a
+\(\widehat{\mathscr{C}}\)-group, then the ``multiplication'' morphism
+\(\pi_{\mathbf{G}}\colon\mathbf{G}\times\mathbf{G}\to\mathbf{G}\) induces,
+for every \(\mathbf{F}\in\Ob(\widehat{\mathscr{C}})\), a group structure on
+\(\Hom_{\widehat{\mathscr{C}}}(\mathbf{F},\mathbf{G})\), functorial in
+\(\mathbf{F}\).}
+\end{remark*}
+
+We shall now treat two further particular cases of the preceding
+construction, the case of structures with groups of operators and the case
+of modules.
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{2.3. Structures with groups of operators.}\label{I.2.3}\ ---
+
+\begin{definition}{2.3.1}\label{I.2.3.1}
+Let \(\mathbf{E}\in\Ob(\widehat{\mathscr{C}})\) and
+\(\mathbf{G}\in\Ob(\widehat{\mathscr{C}}\text{-Gr.})\). A structure of object
+with \(\widehat{\mathscr{C}}\)-group of operators \(\mathbf{G}\) (or of
+\(\mathbf{G}\)-object) on \(\mathbf{E}\) is the giving, on \(\mathbf{E}(S)\),
+for every \(S\in\Ob(\mathscr{C})\), of a structure of set with group of
+operators \(\mathbf{G}(S)\) in such a way that, for every arrow
+\(S'\to S''\) of \(\mathscr{C}\), the map of sets
+\(\mathbf{E}(S'')\to\mathbf{E}(S')\) is compatible with the homomorphism of
+operators \(\mathbf{G}(S'')\to\mathbf{G}(S')\).
+\end{definition}
+
+As usual, it amounts to the same to give a morphism
+\[
+\mu\colon\mathbf{G}\times\mathbf{E}\to\mathbf{E}
+\]
+which for every \(S\) equips \(\mathbf{E}(S)\) with a structure of set with
+operators \(\mathbf{G}(S)\). But
+\(\Hom(\mathbf{G}\times\mathbf{E},\mathbf{E})\simeq\Hom(\mathbf{G},\End(\mathbf{E}))\),
+hence \(\mu\) defines a morphism \(\mathbf{G}\to\End(\mathbf{E})\) and it is
+immediate that the latter maps \(\mathbf{G}\) into \(\Aut(\mathbf{E})\) and
+that it is a morphism of \(\widehat{\mathscr{C}}\)-groups. Consequently:
+\emph{to give on \(\mathbf{E}\) a structure of object with
+\(\widehat{\mathscr{C}}\)-group of operators \(\mathbf{G}\) is equivalent to
+giving a morphism of \(\widehat{\mathscr{C}}\)-groups}
+\[
+\rho\colon\mathbf{G}\to\Aut(\mathbf{E}).
+\]
+In particular, every element \(g\in\mathbf{G}(S)\) defines an automorphism
+\(\rho(g)\) of the functor \(\mathbf{E}_{S}\), that is, an automorphism of
+\(\mathbf{E}\times\mathbf{h}_{S}\) commuting with the projection
+\(\mathbf{E}\times\mathbf{h}_{S}\to\mathbf{h}_{S}\), and in particular an
+automorphism of the set \(\mathbf{E}(S')\) for every \(S'\to S\).
+
+\begin{definition}{2.3.2}\label{I.2.3.2}
+One denotes by \(\mathbf{E}^{\mathbf{G}}\) the subobject of \(\mathbf{E}\)
+defined as follows:
+\[
+\mathbf{E}^{\mathbf{G}}(S)
+=\{x\in\mathbf{E}(S)\mid
+x_{S'}\text{ invariant under }\mathbf{G}(S')
+\text{ for every }S'\to S\},
+\]
+where \(x_{S'}\) denotes the image of \(x\) by
+\(\mathbf{E}(S)\to\mathbf{E}(S')\).
+\end{definition}
+
+Then \(\mathbf{E}^{\mathbf{G}}\) (``subobject of the invariants of
+\(\mathbf{G}\)'') is the largest subobject of \(\mathbf{E}\) on which
+\(\mathbf{G}\) operates trivially.
+
+\begin{definition}{2.3.3}\label{I.2.3.3}
+Let \(\mathbf{F}\) be a subobject of \(\mathbf{E}\). One denotes by
+\(\Norm_{\mathbf{G}}\mathbf{F}\) and \(\Centr_{\mathbf{G}}\mathbf{F}\) the
+sub-\(\widehat{\mathscr{C}}\)-groups of \(\mathbf{G}\) defined by
+\[
+\begin{aligned}
+(\Norm_{\mathbf{G}}\mathbf{F})(S)
+  &=\{g\in\mathbf{G}(S)\mid \rho(g)\mathbf{F}_{S}=\mathbf{F}_{S}\}\\
+  &=\{g\in\mathbf{G}(S)\mid
+    \rho(g)\mathbf{F}(S')=\mathbf{F}(S'),
+    \ \text{for every }S'\to S\},\\[0.6em]
+(\Centr_{\mathbf{G}}\mathbf{F})(S)
+  &=\{g\in\mathbf{G}(S)\mid
+    \rho(g)|_{\mathbf{F}_{S}}=\textup{identity}\}\\
+  &=\{g\in\mathbf{G}(S)\mid
+    \rho(g)|_{\mathbf{F}(S')}=\textup{identity},
+    \ \text{for every }S'\to S\},
+\end{aligned}
+\]
+where the vertical bar after \(\rho(g)\) denotes restriction.\nde{One has corrected the original, replacing the inclusion \(\rho(g)\mathbf{F}_{S}\subset\mathbf{F}_{S}\) by an equality, in order to ensure that \(\Norm_{\mathbf{G}}(\mathbf{F})\) is indeed a group (see \(\mathrm{VI}_{\mathrm{B}}\)~6.4 for conditions under which the ``transporter'' coincides with the ``strict transporter'').}
+\end{definition}
+
+\begin{scholium}{2.3.3.1}\label{I.2.3.3.1}
+\nde{One has added scholium~2.3.3.1 and remark~2.3.3.2.}
+In particular, let \(x\in\Gamma(\mathbf{E})\), \ie (\cf 1.2) a collection of
+elements \(x_{S}\in\mathbf{E}(S)\), \(S\in\Ob(\mathscr{C})\), such that for
+every arrow \(f\colon S'\to S\) one has
+\(\mathbf{E}(f)(x_{S})=x_{S'}\) (if \(\mathscr{C}\) possesses a final object
+\(S_{0}\) one has \(\Gamma(\mathbf{E})=\mathbf{E}(S_{0})\)). Then \(x\)
+defines a subfunctor of \(\mathbf{E}\), which one will denote by \(x\), and
+one has \(\Norm_{\mathbf{G}}x=\Centr_{\mathbf{G}}x\). One will denote by
+\(\operatorname{Stab}_{\mathbf{G}}(x)\), and one will call stabilizer of
+\(x\), this functor; for every \(S\in\Ob(\mathscr{C})\) one therefore has:
+\[
+\operatorname{Stab}_{\mathbf{G}}(x)(S)
+=\{g\in\mathbf{G}(S)\mid \rho(g)x_{S}=x_{S}\}.
+\]
+Suppose that fibered products exist in \(\mathscr{C}\); if
+\(\mathbf{G}=\mathbf{h}_{G}\) (\resp
+\(\mathbf{E}=\mathbf{h}_{E}\)), where \(G\) is a
+\(\mathscr{C}\)-group (\resp \(E\in\Ob(\mathscr{C})\)), and if
+\(\mathscr{C}\) possesses a final object \(S_{0}\), so that \(x\) is a
+morphism \(S_{0}\to E\), then
+\(\operatorname{Stab}_{\mathbf{G}}(x)\) is representable by the fibered
+product \(G\times_{E}S_{0}\), where
+\(G\to E\) is the composite of
+\(\mathrm{id}_{G}\times x\colon
+G=G\times S_{0}\to G\times E\) and of
+\(\mu\colon G\times E\to E\).
+\end{scholium}
+
+\begin{remark}{2.3.3.2}\label{I.2.3.3.2}
+\footnotemark[24]
+The formation of \(\mathbf{E}^{\mathbf{G}}\), \(\Norm_{\mathbf{G}}\mathbf{F}\)
+and \(\Centr_{\mathbf{G}}\mathbf{F}\) \emph{commutes with base change}, \ie
+for every \(S\in\Ob(\mathscr{C})\) one has
+\[
+(\mathbf{E}^{\mathbf{G}})_{S}=(\mathbf{E}_{S})^{\mathbf{G}_{S}},
+\qquad
+(\Norm_{\mathbf{G}}\mathbf{F})_{S}\simeq\Norm_{\mathbf{G}_{S}}\mathbf{F}_{S},
+\qquad
+(\Centr_{\mathbf{G}}\mathbf{F})_{S}\simeq\Centr_{\mathbf{G}_{S}}\mathbf{F}_{S}.
+\]
+\end{remark}
+
+\begin{definition}{2.3.4}\label{I.2.3.4}
+If \(G\) is a \(\mathscr{C}\)-group and \(\mathbf{E}\) an object of
+\(\widehat{\mathscr{C}}\) (\resp \(E\) an object of
+\(\mathscr{C}\)), a structure of \(G\)-object on \(\mathbf{E}\)
+(\resp on \(E\)) is a structure of
+\(\mathbf{h}_{G}\)-object on \(\mathbf{E}\)
+(\resp \(\mathbf{h}_{E}\)).
+\end{definition}
+
+In view of this definition, all the notions and notations defined above carry
+over to \(\mathscr{C}\), when they involve only representable functors: for
+example if \(\Norm_{\mathbf{h}_{G}}(\mathbf{h}_{F})\) is
+representable, then there exists one and only one subobject of
+\(G\) which represents it and which is then a
+sub-\(\mathscr{C}\)-group of \(G\); one denotes it by
+\(\Norm_{G}(F)\), etc.
+
+\begin{definition}{2.3.5}\label{I.2.3.5}
+a) One says that the \(\widehat{\mathscr{C}}\)-group \(\mathbf{G}\)
+\emph{operates} on the \(\widehat{\mathscr{C}}\)-group \(\mathbf{H}\) if
+\(\mathbf{H}\) is equipped with a structure of \(\mathbf{G}\)-object such
+that, for every \(g\in\mathbf{G}(S)\), the automorphism of \(\mathbf{H}(S)\)
+defined by \(g\) is a group automorphism.
+
+It amounts to the same to say that for every \(g\in\mathbf{G}(S)\), the
+automorphism \(\rho(g)\) of \(\mathbf{H}_{S}\) is an automorphism of
+\(\widehat{\mathscr{C}}_{/S}\)-groups, or again that the morphism of
+\(\widehat{\mathscr{C}}\)-groups
+\(\mathbf{G}\to\Aut(\mathbf{H})\) maps \(\mathbf{G}\) into
+\(\Aut_{\widehat{\mathscr{C}}\text{-Gr.}}(\mathbf{H})\).
+
+b) In the above situation, there exists on the product
+\(\mathbf{H}\times\mathbf{G}\) a unique structure of
+\(\widehat{\mathscr{C}}\)-group such that, for every \(S\),
+\((\mathbf{H}\times\mathbf{G})(S)\) is the semi-direct product of the groups
+\(\mathbf{H}(S)\) and \(\mathbf{G}(S)\) relative to the given operation of
+\(\mathbf{G}(S)\) on \(\mathbf{H}(S)\). One will denote this
+\(\widehat{\mathscr{C}}\)-group by \(\mathbf{H}\cdot\mathbf{G}\) and call it
+the \emph{semi-direct product of \(\mathbf{H}\) by \(\mathbf{G}\)}. One
+therefore has by definition
+\[
+(\mathbf{H}\cdot\mathbf{G})(S)=\mathbf{H}(S)\cdot\mathbf{G}(S).
+\]
+\end{definition}
+
+Let \(\mathbf{G}\) be a \(\widehat{\mathscr{C}}\)-group. For every arrow
+\(S'\to S\) of \(\mathscr{C}\) and every \(g\in\mathbf{G}(S)\), let
+\(\Int(g)\) be the automorphism of \(\mathbf{G}(S')\) defined by
+\(\Int(g)h=ghg^{-1}\). This definition extends to that of a morphism of
+\(\widehat{\mathscr{C}}\)-groups
+\[
+\Int\colon\mathbf{G}\to
+\Aut_{\widehat{\mathscr{C}}\text{-Gr.}}(\mathbf{G})
+\subset\Aut(\mathbf{G}).
+\]
+
+Definition~2.3.3 therefore applies, and one has sub-\(\widehat{\mathscr{C}}\)-groups
+of \(\mathbf{G}\)
+\[
+\Norm_{\mathbf{G}}(\mathbf{E})
+\quad\text{and}\quad
+\Centr_{\mathbf{G}}(\mathbf{E})
+\]
+for every subobject \(\mathbf{E}\) of \(\mathbf{G}\).
+
+\begin{definition}{2.3.6}\label{I.2.3.6}
+One calls \emph{center} of \(\mathbf{G}\), and one denotes by
+\(\Centr(\mathbf{G})\), the sub-\(\widehat{\mathscr{C}}\)-group
+\(\Centr_{\mathbf{G}}(\mathbf{G})\) of \(\mathbf{G}\). One says that
+\(\mathbf{G}\) is commutative if \(\Centr(\mathbf{G})=\mathbf{G}\) or, what
+amounts to the same, if \(\mathbf{G}(S)\) is commutative for every \(S\).
+
+One says that the sub-\(\widehat{\mathscr{C}}\)-group \(\mathbf{H}\) of
+\(\mathbf{G}\) is \emph{invariant} in \(\mathbf{G}\) if
+\(\Norm_{\mathbf{G}}(\mathbf{H})=\mathbf{G}\), or, what amounts to the same,
+if \(\mathbf{H}(S)\) is invariant in \(\mathbf{G}(S)\) for every \(S\).\nde{Moreover, one says that \(\mathbf{H}\) is \emph{central} in \(\mathbf{G}\) if \(\Centr_{\mathbf{G}}(\mathbf{H})=\mathbf{G}\), or, what amounts to the same, if \(\mathbf{H}(S)\) is central in \(\mathbf{G}(S)\) for every \(S\).}
+\end{definition}
+
+\begin{definition}{2.3.6.1}\label{I.2.3.6.1}
+\nde{One has added definitions~2.3.6.1 and~2.3.6.2.}
+Let \(f\colon\mathbf{G}\to\mathbf{G}'\) be a morphism of
+\(\widehat{\mathscr{C}}\)-groups. One calls \emph{kernel} of \(f\), and one
+denotes by \(\Ker f\), the sub-\(\widehat{\mathscr{C}}\)-group of
+\(\mathbf{G}\) defined by
+\[
+(\Ker f)(S)
+=\{x\in\mathbf{G}(S)\mid f(S)(x)=1\}
+=\Ker f(S)
+\]
+for every \(S\in\Ob(\mathscr{C})\); it is an \emph{invariant}
+sub-\(\widehat{\mathscr{C}}\)-group.
+
+Let us note that if \(\mathbf{G}=\mathbf{h}_{G}\) and
+\(\mathbf{G}'=\mathbf{h}_{G'}\), if \(\mathscr{C}\) possesses a final
+object \(S_{0}\) and if fibered products exist in \(\mathscr{C}\), then
+\(\Ker(f)\) is \emph{representable} by
+\(S_{0}\times_{G'}G\).
+\end{definition}
+
+\begin{definition}{2.3.6.2}\label{I.2.3.6.2}
+\footnotemark[26]
+Let \(\mathbf{E}\in\widehat{\mathscr{C}}\) and let \(\mathbf{G}\) be a
+\(\widehat{\mathscr{C}}\)-group operating on \(\mathbf{E}\). One says that
+the operation of \(\mathbf{G}\) on \(\mathbf{E}\) is \emph{faithful} if the
+kernel of the morphism \(\mathbf{G}\to\Aut(\mathbf{E})\) is trivial, \ie if
+for every \(S\in\Ob(\mathscr{C})\) and \(g\in\mathbf{G}(S)\), the condition
+\(g_{S'}\cdot x=x\) for every \(S'\to S\) and \(x\in\mathbf{E}(S')\), implies
+\(g=1\).
+\end{definition}
+
+Many definitions and propositions of the elementary theory of groups
+transpose easily. Let us simply point out the following one, which will be
+useful to us:
+
+\begin{proposition}{2.3.7}\label{I.2.3.7}
+Let \(f\colon\mathbf{W}\to\mathbf{G}\) be a morphism of
+\(\widehat{\mathscr{C}}\)-groups. Set \(\mathbf{H}(S)=\Ker f(S)\). Let
+\(u\colon\mathbf{G}\to\mathbf{W}\) be a morphism of
+\(\widehat{\mathscr{C}}\)-groups which is a section of \(f\) (and which is
+then necessarily a monomorphism). Then \(\mathbf{W}\) is identified with the
+semi-direct product of \(\mathbf{H}\) by \(\mathbf{G}\) for the operation of
+\(\mathbf{G}\) on \(\mathbf{H}\) defined by
+\((g,h)\mapsto\Int(u(g))h\) for \(g\in\mathbf{G}(S)\),
+\(h\in\mathbf{H}(S)\), \(S\in\Ob(\mathscr{C})\).
+\end{proposition}
+
+The set of these definitions and propositions carries over as usual to
+\(\mathscr{C}\). One defines in particular the semi-direct product of two
+\(\mathscr{C}\)-groups \(H\) and \(G\) (\(G\)
+operating on \(H\)) when the cartesian product
+\(H\times G\) exists, and one has the analogue of
+proposition~2.3.7 in the following form:
+
+\begin{proposition}{2.3.8}\label{I.2.3.8}
+Let \(H\xrightarrow{i}W\xrightarrow{f}G\) be a
+sequence of morphisms of \(\mathscr{C}\)-groups such that for every
+\(S\in\Ob(\mathscr{C})\), \((H(S),i(S))\) is a kernel of
+\(f(S)\colon W(S)\to G(S)\). Let
+\(u\colon G\to W\) be a morphism of \(\mathscr{C}\)-groups
+which is a section of \(f\). Then \(W\) is identified with the
+semi-direct product of \(H\) by \(G\) for the operation of
+\(G\) on \(H\) such that if \(S\in\Ob(\mathscr{C})\), if
+\(g\in G(S)\) and \(h\in H(S)\), one has
+\(\Int(u(g))\,i(h)=i({}^{g}h)\).
+\end{proposition}

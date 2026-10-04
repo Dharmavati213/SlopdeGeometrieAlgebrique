@@ -1,0 +1,115 @@
+Given a subset $A$ of an $S$-group $G$, we shall say that $A$ is stable under the group law of $G$ if one has $c(A)\subset A$ and $\mu(A\times_SA)\subset A$.
+\begin{definition}{3.1}\label{VIB.3.1}
+Let $G$ be an $S$-group functor satisfying the following condition:
+\[
+\tag{+}
+\text{for every }s\in S,\text{ the functor }G_s=G\otimes_S\kappa(s)\text{ is representable.}
+\]
+One then denotes by $\underline{G_s^0}$ the connected component of the identity element of the $\kappa(s)$-group $G_s$.\nde{This is a slightly abusive notation, but is compatible with the notation of VIA, 2.3 when this connected component is the underlying topological space of an open subgroup scheme $G^0$ of $G$, cf. VIA, 2.2.bis.} One defines a subgroup $S$-functor of $G$, called the \emph{identity component of $G$}, denoted by $G^0$, by putting, for every morphism $T\to S$,
+\[
+G^0(T)=\{u\in G(T)\mid\forall s\in S,\quad u_s(T_s)\subset\underline{G_s^0}\}.
+\]
+One has thus defined the functor $G\mto G^0$ from $(\widehat{\mathbf{Sch}}_{/S})\text{-gr.}$ to $(\widehat{\mathbf{Sch}}_{/S})\text{-gr.}$
+\end{definition}
+\begin{remark}{3.2}\label{VIB.3.2}
+(i) Let $G$ be an $S$-group functor satisfying condition (+); then $\uLie(G^0/S)=\uLie(G/S)$, by Exposé II.\nde{What follows has been added.} Indeed, for every $S$-scheme $T$, denote by $I_T$ the $T$-scheme of dual numbers over $T$ and by $\tau:T\to I_T$ the zero section (cf. II, 2.1). By definition, one has
+\[
+\uLie(G/S)(T)=\{u\in G(I_T)\mid u\circ\tau=e\},
+\]
+where $e:T\to G$ denotes the composite of $T\to S$ and the unit section $S\to G$, and similarly
+\[
+\begin{aligned}
+\uLie(G^0/S)(T)&=\{u\in G^0(I_T)\mid u\circ\tau=e\}\\
+&=\{u\in G(I_T)\mid u\circ\tau=e\text{ and }u_s((I_T)_s)\subset\underline{G_s^0},\quad\forall s\in S\}.
+\end{aligned}
+\]
+Now, for every $s\in S$, $T_s$ and $(I_T)_s=I_{T_s}$ have the same underlying set, so if $u\in\uLie(G/S)(T)$, one has $u_s(I_{T_s})=e_s$, where $e_s$ denotes the identity point of $G_s$, whence $u\in\uLie(G^0/S)(T)$. Thus the inclusion $\uLie(G^0/S)(T)\subset\uLie(G/S)(T)$ is an equality for every $T$, whence $\uLie(G^0/S)=\uLie(G/S)$.
+
+(ii) Let $G$ and $G'$ be two $S$-group functors satisfying (+); then:
+\begin{enumeratea}
+\item if $G\subset G'$, then $G^0\subset G'^0$,
+\item if $G\subset G'$ and $G'^0\subset G$, then $G^0=G'^0$,
+\item if, for every $s\in S$, $G_s$ is locally of finite type over $\kappa(s)$, then $G^0$ satisfies property (+), by VIA.2.3, and one has $(G^0)^0=G^0$.
+\end{enumeratea}
+\end{remark}
+\begin{proposition}{3.3}\label{VIB.3.3}
+Let $G$ be an $S$-group functor satisfying condition (+) and let $S'$ be an $S$-scheme. Then $(G\times_SS')^0=G^0\times_SS'$; in other words, the functor $G\mto G^0$ commutes with base changes, i.e. the following diagram is commutative:
+\[
+\xymatrix@C=4em{(\widehat{\mathbf{Sch}}_{/S})\text{-gr.}\ar[r]^{G\mto G^0}\ar[d]&(\widehat{\mathbf{Sch}}_{/S})\text{-gr.}\ar[d]\\(\widehat{\mathbf{Sch}}_{/S'})\text{-gr.}\ar[r]&(\widehat{\mathbf{Sch}}_{/S'})\text{-gr.}}
+\]
+\end{proposition}
+Indeed, it suffices to check that, for every $s'\in S'$, whose image in $S$ is denoted by $s$, $((G\times_SS')\otimes_{S'}\kappa(s'))^0=(G_s\otimes_{\kappa(s)}\kappa(s'))^0$ equals $G_s^0\otimes_{\kappa(s)}\kappa(s')$; this follows from VIA, 2.1.2. Note, for later use in 4.2, that the group structure of $G_s$ has not been used, but only the fact that $G_s^0$ has a rational point, namely $\varepsilon(s)$, hence is geometrically connected (see also EGA IV$_2$, 4.5.14).
+\begin{enoncerm}{Special case}{3.4}\label{VIB.3.4}
+Let $G$ be an $S$-group scheme; denote by $\underline{G^0}$ the subset of $G$ which is the union of the $\underline{G_s^0}$ as $s$ ranges over $S$. Then $\underline{G^0}$ is a subset of $G$ stable under the group law of $G$ (cf. 3.0), and, for every morphism $S'\to S$, one has:
+\[
+G^0(S')=\{u\in G(S')\mid u(\underline{S'})\subset\underline{G^0}\}.
+\]
+When $\underline{G^0}$ is an open subset of $G$, it is clear that $G^0$ is representable by the subscheme of $G$ induced on the open subset $\underline{G^0}$.
+\end{enoncerm}
+\begin{proposition}{3.5}\label{VIB.3.5}
+Let $S$ be a quasi-compact quasi-separated scheme, and $G$ an $S$-group with fibers locally of finite type. There is then a quasi-compact open subset $U$ of $G$ containing $\underline{G^0}$.
+\end{proposition}
+Since the unit section $\varepsilon$ is an immersion, $\varepsilon(S)$ is a quasi-compact subspace of $G$, so there is a quasi-compact open subset $V$ of $G$ containing $\varepsilon(S)$. Since $S$ is quasi-separated and $V$ is quasi-compact, $V$ is quasi-compact over $S$ (EGA IV$_1$, 1.2.4), hence $V\times_SV$ is quasi-compact over $S$, hence quasi-compact. Thus $V\cdot V=\mu(V\times_SV)$ is quasi-compact. Put $V_s=V\cap G_s$ and $V_s^0=V\cap G_s^0$. Then $V_s^0$ is an open subset of $G_s^0$, dense in $G_s^0$ since $G_s^0$ is irreducible (VIA 2.4), so $V_s^0\cdot V_s^0=G_s^0$ (VIA 0.5), which shows that $V_s\cdot V_s\supset G_s^0$, hence that $V\cdot V\supset\underline{G^0}$. Finally, since $V\cdot V$ is quasi-compact, there is a quasi-compact open subset $U$ of $G$ containing $V\cdot V$ and a fortiori $\underline{G^0}$.
+\begin{corollary}{3.6}\label{VIB.3.6}
+Let $G$ be an $S$-group with fibers locally of finite type and connected. Then $G$ is quasi-compact over $S$.
+\end{corollary}
+Our assertion being local on $S$ (EGA I, 6.6.1), one is reduced to the case where $S$ is affine. By 3.5, there is then a quasi-compact open subset $U$ of $G$ containing $\underline{G^0}=G$, so $G$ is quasi-compact, hence quasi-compact over the affine scheme $S$ (EGA I, 6.6.4 (v)).
+\begin{proposition}{3.7}\label{VIB.3.7}\nde{Recall the following definitions and results (cf. EGA 0$_{\mathrm{III}}$, §9.1 and EGA IV$_1$, §§1.8 and 1.9). Let $X$ be a topological space.
+(i) An open subset $U$ of $X$ is said to be retrocompact if the inclusion $U\hookrightarrow X$ is quasi-compact, i.e. if $U\cap V$ is quasi-compact for every quasi-compact open subset $V\subset X$.
+(ii) A subset $C$ of $X$ is said to be constructible if it is a finite union of subsets of the form $U-V$, where $U$ and $V$ are retrocompact open subsets of $X$.
+(iii) A subset $L$ of $X$ is said to be locally constructible if, for every $x\in X$, there is an open neighborhood $U$ of $x$ in $X$ such that $L\cap U$ is constructible in $U$. (N.B. If $X$ is quasi-compact and quasi-separated, $L$ is then constructible.)
+(iv) A subset $I$ of $X$ is said to be ind-constructible if, for every $x\in X$, there is an open neighborhood $U$ of $x$ in $X$ such that $I\cap U$ is a union of locally constructible subsets in $U$.
+Now let $f:X\to Y$ be a morphism of schemes. By Chevalley's constructibility theorem (cf. EGA IV$_1$, 1.8.4 and 1.9.5 (viii)), if $f$ is of finite presentation (resp. locally of finite presentation), then the image under $f$ of every locally constructible subset is locally constructible (resp. ind-constructible).}
+Let $G$ be an $S$-group locally of finite presentation; then:
+\begin{enumeratei}
+\item $\underline{G^0}$ is ind-constructible in $G$.
+\item If moreover $G$ is quasi-separated over $S$, and $S$ quasi-compact and quasi-separated, then $\underline{G^0}$ is constructible.
+\item Consequently, if $G$ is quasi-separated over $S$, $\underline{G^0}$ is locally constructible.
+\end{enumeratei}
+\end{proposition}
+Let us first prove the first assertion. Since $\pi:G\to S$ is locally of finite presentation, given $s\in S$, there is an open subset $U$ of $G$ containing $\varepsilon(s)$ and an open subset $V$ of $S$ containing $s$ such that $\pi(U)\subset V$ and the morphism $\pi':U\to V$ obtained from $\pi$ is of finite presentation. Then $T=\varepsilon^{-1}(U)$ is an open subset of $S$ and, writing $W=\pi'^{-1}(T)$ and $\pi''=\pi'|_W$, $\pi'':W\to T$ is of finite presentation, and admits as section the morphism $\varepsilon'':T\to W$ obtained from $\varepsilon$.
+
+For every $t\in T$, since $G_t^0$ is irreducible (VIA 2.4), $W\cap G_t^0$ is dense in $G_t^0$, hence irreducible, hence connected: it is therefore the connected component of $\pi''^{-1}(t)$ containing $\varepsilon''(t)$. It then follows from EGA IV$_3$, 9.7.12 that the union $W^0$ of the $W\cap G_t^0$, for $t\in T$, is locally constructible in $W$. On the other hand, it follows from VIA 0.5 that $\underline{G^0}\cap\pi^{-1}(T)=W^0\cdot W^0$, i.e. $\underline{G^0}\cap\pi^{-1}(T)$ is the image of $W^0\times_TW^0$ under the morphism $\mu'':W\times_TW\to\pi^{-1}(T)$ obtained from $\mu$.\nde{The original has been expanded in what follows.} Since $W\times_TW$ (resp. $\pi^{-1}(T)$) is of finite presentation (resp. locally of finite presentation) over $T$, $\mu''$ is locally of finite presentation and quasi-separated, by EGA IV$_1$, 1.4.3 and 1.2.2; if moreover $\pi^{-1}(T)$ is quasi-separated over $T$, $\mu''$ is quasi-compact (loc. cit. 1.2.4), hence of finite presentation. Since $W^0\times_TW^0$ is locally constructible in $W\times_TW$ (since $W^0$ is so in $W$), it follows from Chevalley's constructibility theorem (loc. cit., 1.8.4 and 1.9.5 (viii)) that $\underline{G^0}\cap\pi^{-1}(T)$ is ind-constructible in $\pi^{-1}(T)$, and is locally constructible in $\pi^{-1}(T)$ if $G$ (and hence $\pi^{-1}(T)$) is quasi-separated over $T$. This proves assertions (i) and (iii).
+
+Now suppose $G$ quasi-separated over $S$, and $S$ quasi-compact and quasi-separated. Then, by 3.5, there is a quasi-compact open subset $U$ of $G$ containing $\underline{G^0}$. Since $G$ is quasi-separated over $S$, $G$ is quasi-separated, hence the open subset $U$ is retrocompact (EGA IV$_1$, 1.2.7), and it suffices to show that $\underline{G^0}$ is constructible in $U$ (EGA 0$_{\mathrm{III}}$, 9.1.8). Moreover, since $U$ is quasi-compact, hence quasi-compact over $S$ (EGA IV$_1$, 1.2.4), and quasi-separated over $S$, the restriction of $\pi$ to $U$ is of finite presentation, so, by EGA IV$_3$, 9.7.12, $\underline{G^0}$ is locally constructible in $U$, hence constructible in $U$, since $U$ is quasi-compact and quasi-separated (EGA IV$_1$, 1.8.1). This proves (ii), and it follows that, for every quasi-compact quasi-separated open subset $T$ of $S$ (for example, for every affine open subset of $S$), $\underline{G^0}\cap\pi^{-1}(T)$ is constructible.
+\begin{corollary}{3.8}\label{VIB.3.8}
+Let $S_0$ be a quasi-compact quasi-separated scheme, $I$ an increasingly filtering preordered set, $(\mathcal A_i)_{i\in I}$ an inductive system of commutative quasi-coherent $\OO_{S_0}$-algebras, $\mathcal A=\varinjlim\mathcal A_i$, $S_i=\Spec\mathcal A_i$ for $i\in I$, and $S=\Spec\mathcal A$ (cf. EGA II, 1.3.1).
+
+Let $G$ be an $S_0$-group scheme locally of finite presentation. Then the canonical map $\varinjlim G^0(S_i)\to G^0(S)$ is bijective.
+\end{corollary}
+Since $G$ is locally of finite presentation over $S$, the canonical map $\varinjlim G(S_i)\to G(S)$ is bijective, by EGA IV$_2$, 8.14.2 c). It follows immediately that the canonical map $\varinjlim G^0(S_i)\to G^0(S)$ is injective. Let us show that it is surjective. Let $g\in G^0(S)\subset G(S)$. There is $i\in I$ such that $g$ factors by means of $g_i\in G(S_i)$ through $S\to S_i$; by hypothesis, $g^{-1}(\underline{G^0})=S$. But, by 3.7, $\underline{G^0}$ is ind-constructible in $G$, so $g_i^{-1}(\underline{G^0})$ is so in $S_i$. It then follows from EGA IV$_2$, 8.3.4 that there is an index $j\ge i$ such that $g_j^{-1}(\underline{G^0})=S_j$, where $g_j$ is the map obtained from $g_i$ by the base change $S_j\to S_i$. This shows that $g_j\in G^0(S_j)$, hence that $g$ comes from an element of $\varinjlim G^0(S_i)$.
+% typo?: kept as printed: over S and EGA IV_2 in the opening sentence of the proof.
+\begin{proposition}{3.9}\label{VIB.3.9}
+Let $G$ be an $S$-group locally of finite presentation. Suppose $G^0$ representable; then the canonical morphism $i:G^0\to G$ is an open immersion; moreover, $G^0$ is quasi-compact over $S$.
+\end{proposition}
+Since $G^0$ is a subfunctor of the functor $G$, the morphism $i$ is a monomorphism, hence is radicial. By the definition of the functor $G^0$, one checks immediately from the definition (EGA IV$_4$, 17.1.1) that $i$ is a formally étale morphism (observing that $\underline{G^0}$ is the image of $i$ in $G$). Finally, it follows from the characterization (EGA IV$_3$, 8.14.2 c)) of $S$-schemes locally of finite presentation by means of the functor they represent, and from 3.8, that, since $G$ is locally of finite presentation over $S$, so is $G^0$. Thus $i$ is locally of finite presentation (cf. EGA IV$_1$, 1.4.3); it is therefore a radicial étale morphism, hence an open immersion (EGA IV$_4$, 17.9.1).
+
+Finally, the last assertion follows from 3.6.
+\begin{theorem}{3.10}\label{VIB.3.10}
+Let $G$ be an $S$-group. The following conditions are equivalent:
+\begin{enumeratei}
+\item $G$ is smooth over $S$ at the points of the unit section.
+\item $G$ is flat and locally of finite presentation over $S$ at the points of the unit section, and, for every $s\in S$, $G_s$ is smooth over $\kappa(s)$.
+\item There is an open subgroup scheme $G'$ of $G$, smooth over $S$.
+\item $G^0$ is representable by an open subscheme of $G$, smooth over $S$.
+\end{enumeratei}
+\end{theorem}
+It is clear that (iv) $\Rightarrow$ (iii) $\Rightarrow$ (i) and, by 1.3.1 and 2.4, (i) implies (ii) and (iii). Moreover, (ii) $\Rightarrow$ (i) by EGA IV$_4$, 17.5.1.
+
+Finally let us show that (iii) implies (iv). Lemma 3.10.1 below shows that $G'$ contains $\underline{G^0}$, and that $\underline{G'^0}=\underline{G^0}$. It therefore suffices to show that $\underline{G^0}$ is open in $G$, for we have already seen (3.4) that $G^0$ will then be representable by the smooth subgroup scheme induced by $G'$ on the open subset $\underline{G'^0}=\underline{G^0}$. One may therefore suppose that $G'=G$.
+
+To show that $\underline{G^0}$ is open, it suffices to show that every $s\in S$ has a neighborhood $T$ in $S$ such that $\underline{G^0}\cap\pi^{-1}(T)$ is open in $\pi^{-1}(T)$. Let $s\in S$. Since $G=G'$, $\pi$ is locally of finite presentation, so one may construct, as in the proof of 3.7, an open subset $T$ of $S$ containing $s$, and an open subset $W$ of $G$ containing $\varepsilon(s)$, such that the morphism $\pi'':W\to T$ obtained from $\pi$ is of finite presentation and admits as section the morphism $\varepsilon'':T\to W$ obtained from $\varepsilon$. For every $t\in T$, $W\cap G_t^0$ is then the connected component of $\pi''^{-1}(t)$ containing $\varepsilon''(t)$. Since $\pi$ is smooth, so is $\pi''$, which is therefore smooth and of finite presentation. Then, by EGA IV$_3$, 15.6.5, the union $W^0$ of the $W\cap G_t^0$ for $t\in T$ is open in $W$.
+
+On the other hand, by VIA 0.5, one has $W^0\cdot W^0=\underline{G^0}\cap\pi^{-1}(T)$, and one must show that this is open in $\pi^{-1}(T)$. We may therefore now suppose that $T=S$; it remains to show that $W^0\cdot W^0$ is open in $G$. Since $\pi$ is universally open, so is $\mu$ (VIA 0.1). Thus, since $W^0$ is open in $G$, so is $W^0\cdot W^0=\mu(W^0\times_SW^0)$.
+
+This result will be improved in 4.4.
+\begin{lemma}{3.10.1}\label{VIB.3.10.1}
+Let $G$ be an $S$-group with fibers locally of finite type. Then every open subgroup scheme $H$ of $G$ contains $\underline{G^0}$, and satisfies $\underline{G^0}=\underline{H^0}$.
+\end{lemma}
+Let $s\in S$; put $G'_s=H_s\cap G_s^0$; then $G'_s$ is an open subset of $G_s^0$, dense in $G_s^0$ since $G_s^0$ is irreducible (VIA 2.4), so $G'_s\cdot G'_s=G_s^0$ (VIA 0.5), which shows that $G_s^0=G'_s\cdot G'_s\subset H_s\cdot H_s=H_s$. Thus one has $G_s^0=H_s^0$ for every $s$, whence $\underline{G^0}\subset H$ and $\underline{G^0}=\underline{H^0}$.
+\begin{proposition}{3.11}\label{VIB.3.11}
+Let $u:G\to H$ be a morphism between $S$-groups locally of finite presentation. If $u$ is flat, the map $u^0:\underline{G^0}\to\underline{H^0}$ obtained from $u$ is surjective; the converse holds if $G$ is flat over $S$ and $H$ has reduced fibers.\nde{Compare with VIA, 5.6.}
+\end{proposition}
+Suppose $u$ flat; then, for every $s\in S$, $u_s$ is flat and locally of finite presentation, hence open (EGA IV$_2$, 2.4.6), so the morphism $u_s^0:G_s^0\to H_s^0$ is surjective, by 1.3.2.\nde{The original has been shortened by referring here to 1.3.2. On the other hand, the original has been simplified below by removing a reference to the generic flatness theorem (EGA IV$_2$, 6.9.1), which is not necessary here.} Thus the map $u^0:\underline{G^0}\to\underline{H^0}$ is surjective.
+
+Conversely, suppose the map $u^0:\underline{G^0}\to\underline{H^0}$ surjective, $G$ flat over $S$ and $H$ with reduced fibers. Then, for every $s\in S$, the morphism $u_s^0:G_s^0\to H_s^0$ is surjective, hence flat at every point above the generic point $\eta$ of $H_s^0$ (since $\OO_{H_s^0,\eta}$ is a field), so $u_s$ is flat by 1.3.

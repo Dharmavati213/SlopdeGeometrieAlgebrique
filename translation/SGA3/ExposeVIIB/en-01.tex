@@ -1,0 +1,200 @@
+\exposetitle{VIIB}{Infinitesimal study of group schemes}
+\label{VIIB}
+\begin{center}by P. Gabriel\end{center}
+\begin{center}\textbf{B) Formal groups}\end{center}
+\setcounter{footnote}{-1}
+\nde{Version of 13/10/2024.}The study of formal groups is usually extremely simple. If this does not appear clearly in the pages which follow, the responsibility lies with an arithmetician who claims to know formal groups over ``something other than fields''.\nde{The interest of formal groups over a complete noetherian local ring appears, for example, in the work of Lubin and Tate (cf. \cite{LT65}). The study of formal groups over an arbitrary base, and of questions of lifting and deformation, in particular for Barsotti--Tate groups (``$p$-divisible groups''), has given rise to an abundant literature; cf. for example \cite{LT66,Ta67,Gr74,Me72,La75,Fo77,Il85,Br00}; in particular, the results of the present exposé are largely taken up in Chapter I of \cite{Fo77}.} We have therefore developed, for formal groups ``locally free over projective limits of artinian rings'', the generalities usually stated for formal groups defined over a field. For a more detailed study of the latter, we refer to the 1964/65 Heidelberg--Strasbourg seminar in algebraic geometry.\nde{The editors found only such a seminar dated 1965/66 and entitled ``Groupes algébriques linéaires'', in which the notion of a formal group does not appear; see, however, \cite{De72}.}
+
+\sgasection{0}{Recollections on pseudocompact rings and modules}
+This section contains some technical preliminaries; in it we recall and supplement some results of \cite{CA} (\textit{Des catégories abéliennes}, Bull. Soc. Math. France \textbf{90}, 1962).
+
+\numpara{0.1}A \emph{left pseudocompact ring} is a separated and complete topological ring with identity which has a base of neighborhoods of $0$ consisting of left ideals $\mathfrak l$ of finite colength (\ie $\operatorname{length}_A(A/\mathfrak l)<+\infty$). Here we shall suppose that $A$ is commutative, so that there is no need to distinguish ``between left and right''.
+In particular, the quotients $A/\mathfrak l$ are artinian rings and $A$ is identified with the topological projective limit of these rings equipped with the discrete topology.
+A complete noetherian local ring $(A,\mathfrak m)$ is evidently pseudocompact.\nde{(when it is equipped with the $\mathfrak m$-adic topology)}
+
+\numpara{0.1.1}Every closed ideal $I$ of $A$ is the intersection of the open ideals containing it.\nde{Indeed, if $x\notin I$, there exists an open ideal $\mathfrak l$ such that $(x+\mathfrak l)\cap I=\varnothing$; then $I+\mathfrak l$ is an open ideal not containing $x$. Moreover, in what follows we have made explicit the fact that every ``maximal closed'' ideal is maximal and open.} Every maximal closed ideal is therefore open. Moreover, if $\mathfrak l$ is an open ideal of $A$, the maximal ideals of $A/\mathfrak l$ correspond bijectively to the maximal ideals $\mathfrak m$ containing $\mathfrak l$; the latter are therefore open and closed. Consequently, every maximal closed ideal is an open maximal ideal (and hence closed); the converse is evident. The set of these ideals will be denoted by $\Upsilon(A)$.
+If $\mathfrak l$ is an open ideal of $A$ and $\mathfrak m\in\Upsilon(A)$, the localization $(A/\mathfrak l)_{\mathfrak m}$ is thus a local ring if $\mathfrak m$ contains $\mathfrak l$, and is zero otherwise. Since $A/\mathfrak l$ is artinian, it is the direct product of finitely many local rings, which one can write
+\[
+A/\mathfrak l\simeq\prod_{\mathfrak m\in\Upsilon(A)}(A/\mathfrak l)_{\mathfrak m}.
+\]
+From this one obtains ``canonical'' isomorphisms
+\[
+\begin{aligned}
+A&\simeq\varprojlim_{\mathfrak l}(A/\mathfrak l)
+\simeq\varprojlim_{\mathfrak l}\prod_{\mathfrak m}(A/\mathfrak l)_{\mathfrak m}\\
+&\simeq\prod_{\mathfrak m}\varprojlim_{\mathfrak l}(A/\mathfrak l)_{\mathfrak m}
+\simeq\prod_{\mathfrak m}A_{\mathfrak m},
+\end{aligned}
+\]
+where one has put
+\[
+A_{\mathfrak m}=\varprojlim_{\mathfrak l}(A/\mathfrak l)_{\mathfrak m}.
+\]
+This \emph{local component} $A_{\mathfrak m}$ is a filtered projective limit of artinian local rings equipped with the discrete topology; it is therefore a local ring which is pseudocompact for the projective limit topology.\nde{Observe that $A_{\mathfrak m}$ is the localization of $A$ at the maximal ideal $\mathfrak m$. Indeed, the identity element $e_{\mathfrak m}$ of $A_{\mathfrak m}$ is an idempotent of $A$ not belonging to $\mathfrak m$, and since $A=A_{\mathfrak m}\times B$, where $B=A(1-e_{\mathfrak m})$, $A_{\mathfrak m}$ is identified with the localization $A_{e_{\mathfrak m}}$, and hence also with the localization $S^{-1}A$, where $S=A-\mathfrak m$. Moreover, since $e_{\mathfrak m}(1-e_{\mathfrak m})=0$, $\mathfrak m$ contains $1-e_{\mathfrak m}$, hence also $B$, and thus $\mathfrak m$ is identified with $\mathfrak m A_{\mathfrak m}\times B$.}
+
+\numpara{0.1.2}Let $\mathfrak r(A)$ be the intersection of the open maximal ideals of $A$, that is, the cartesian product of the ideals $\mathfrak m A_{\mathfrak m}$ when $A$ is identified with $\prod_{\mathfrak m}A_{\mathfrak m}$. For every open ideal $\mathfrak l$ of $A$, the image of $\mathfrak r(A)$ in $A/\mathfrak l$ is contained in the radical of $A/\mathfrak l$. Some power of this image is therefore zero, so that $\mathfrak r(A)^n$ is contained in $\mathfrak l$ when $n$ is sufficiently large. The sequence of the $\mathfrak r(A)^n$ therefore tends to $0$.
+The same holds for the sequence of the $x^n$ when $x$ belongs to $\mathfrak r(A)$. In other words, every element of $\mathfrak r(A)$ is topologically nilpotent, and the converse is clear. It follows that the sequence with general term $1+x+\cdots+x^n$ converges, and converges to $1/(1-x)$ when $x\in\mathfrak r(A)$. This shows that $\mathfrak r(A)$ is the Jacobson radical of $A$, \ie the intersection of \emph{all} the maximal ideals of $A$ (cf. Bourbaki, \textit{Algèbre}, Chap. 8, § 6, Th. 1).\nde{Indeed, let $x\in\mathfrak r(A)$; if $\mathfrak m$ is a maximal ideal not containing $x$, there exists $y\in A$ such that $1-xy\in\mathfrak m$, whereas $xy\in\mathfrak r(A)$ and hence $1-xy$ is invertible, a contradiction. Note the following consequence: if $\Upsilon(A)$ is a finite set $\{\mathfrak m_1,\ldots,\mathfrak m_r\}$, the $\mathfrak m_i$ are all the maximal ideals of $A$.}
+
+\begin{remarks}{}\nde{We have added these remarks in order to compare the definition of the formal spectrum $\Spf(A)$ given in 1.1 with those of EGA I, 10.1.2 and 10.4.2.}
+\begin{enumeratea}
+\item If $\mathfrak p$ is an \emph{open} prime ideal of $A$, then, since $A/\mathfrak p$ is artinian, $\mathfrak p$ is a maximal ideal. Consequently, $\Upsilon(A)$ is the set of open prime ideals of $A$.
+\item Each $\mathfrak m A_{\mathfrak m}$ is an \emph{ideal of definition} of $A_{\mathfrak m}$, \ie an \emph{open} ideal $I$ such that the sequence of the $I^n$ tends to $0$ (cf. EGA $0_{\mathrm I}$, 7.1.2). Consequently, $\Spec(A_{\mathfrak m}/\mathfrak m A_{\mathfrak m})$, equipped with the topological ring $A_{\mathfrak m}$, is an \emph{affine formal scheme} in the sense of EGA I, 10.1.2.
+\item The topological ring $A$ is \emph{admissible} in the sense of EGA $0_{\mathrm I}$, 7.1.2 if and only if $\mathfrak r(A)$ is open (hence an ideal of definition), and this holds if and only if $\Upsilon(A)$ is \emph{finite}. In this case the affine formal scheme $\Spf(A)=\Spec(A/\mathfrak r(A))$ (cf. EGA I, 10.1.2) has $\Upsilon(A)$, equipped with the discrete topology, as its underlying space, and the ring of sections of the structure sheaf over a subset $E$ of $\Upsilon(A)$ is the product $\prod_{\mathfrak m\in E}A_{\mathfrak m}$.
+\item Let $A$ be an arbitrary pseudocompact ring. In 1.1 below, the space $\Upsilon(A)$ is equipped with the discrete topology and with the sheaf of rings whose ring of sections over any subset $E$ is $\prod_{\mathfrak m\in E}A_{\mathfrak m}$. By b), every point then has an open neighborhood which is an affine formal scheme, so this defines a \emph{formal scheme} (EGA I, 10.4.2), which will be denoted by $\Spf(A)$. (For this formal scheme to be affine, it must be quasi-compact, hence $\Upsilon(A)$ must be finite, and in this case $\Spf(A)$ coincides with the definition of EGA I, 10.1.2.)
+\end{enumeratea}
+\end{remarks}
+
+\numpara{0.1.3}If $A$ and $B$ are two pseudocompact rings, a homomorphism from $A$ to $B$ is, by definition, a \emph{continuous} map compatible with addition, multiplication, and the identity elements. Such a homomorphism sends a topologically nilpotent element of $A$ to a topologically nilpotent element of $B$; it therefore maps the radical $\mathfrak r(A)$ of $A$ into the radical $\mathfrak r(B)$ of $B$.
+
+\numpara{0.2}Let $A$ be a (commutative) pseudocompact ring. A \emph{pseudocompact $A$-module} $M$ is a separated and complete topological $A$-module which has a base of neighborhoods of $0$ consisting of submodules $M'$ such that $M/M'$ has finite length over $A$.
+If $M$ and $N$ are two pseudocompact $A$-modules, a morphism from $M$ to $N$ is by definition a continuous $A$-linear map. The group of these morphisms will be denoted by $\Hom_c(M,N)$.
+
+\begin{proposition}{0.2.B}\label{VIIB.0.2.B}\nde{We have brought out the results of this paragraph in the following proposition, and have then indicated the steps of the proof; cf. \cite{CA}, § IV.3 or \cite{DG70}, § V.2.}
+\begin{enumeratei}
+\item Pseudocompact $A$-modules form an abelian category, which will be denoted by $\mathbf{PC}(A)$. (In particular, for every morphism $f:M\to N$, $\Im(f)$ is a complete submodule, hence closed in $N$.)
+\item Pseudocompact $A$-modules of finite length (whose topology is therefore discrete) form a system of cogenerators of $\mathbf{PC}(A)$.
+\item Infinite products and filtered projective limits are exact, \ie $\mathbf{PC}(A)$ satisfies axiom $(\mathrm{AB}5^*)$.\nde{Cf. \cite{Gr57}, I § 1.5 and Prop. 1.8; one may also consult, for example, \cite{Po73}, § 2.8 or \cite{We95}, Append. A.4.}
+\end{enumeratei}
+\end{proposition}
+For the reader's convenience, let us briefly indicate the steps of the proof. First, one has the following lemma (\cite{CA} § IV.3, Lemma 1; for the proof, see \cite{BEns}, III, § 7.4, Th. 1 and Example 2):
+
+\begin{lemma}{0.2.C}\label{VIIB.0.2.C}
+Let $B$ be a ring, $I$ a filtered ordered set, and $(M_i)$ and $(N_i)$ two projective systems of left $B$-modules indexed by $I$. Let $(s_i)$ be a morphism of projective systems $(M_i)\to(N_i)$ such that $s_i$ is surjective and has artinian kernel for every $i$. Then the map
+\[
+\varprojlim s_i:\varprojlim M_i\to\varprojlim N_i
+\]
+is surjective.
+\end{lemma}
+
+\begin{corollary}{0.2.D}\label{VIIB.0.2.D}(\cite{CA} § IV.3, Prop. 10 \& 11). Let $M$ be a pseudocompact $A$-module.
+\begin{enumeratei}
+\item Let $K$ be a closed submodule of $M$. Then $M/K$, equipped with the quotient topology, is a pseudocompact $A$-module.
+\item Let $(M_i)$ be a decreasing filtered family of closed submodules of $M$.
+\begin{enumeratea}
+\item The canonical map $M\to\varprojlim M/M_i$ is surjective and has kernel $\bigcap_i M_i$.
+\item For every closed submodule $N$ of $M$, one has $N+\bigcap_i M_i=\bigcap_i(N+M_i)$.
+\end{enumeratea}
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+Let $(L_j)$ be the decreasing filtered family of open submodules of $M$. Equip $M/K$ with the quotient topology, \ie a base of neighborhoods of $0$ consists of the open submodules $(K+L_j)/K$. Since $K$ is closed, it equals the intersection of the $K+L_j$, so the map
+\[
+\tau:M/K\to\varprojlim_j M/(K+L_j)
+\]
+is injective. It is also open, the right-hand term being the projective limit of the discrete modules $M/(K+L_j)$. Moreover, for each $j$, the map $t_j:M/L_j\to M/(K+L_j)$ is surjective, with artinian kernel, so by the preceding lemma the map $t$ in the commutative diagram below is surjective:
+\[
+\xymatrix{M\ar[r]^p_\sim\ar[d]&\varprojlim_j M/L_j\ar[d]^t\\
+M/K\ar[r]^\tau&\varprojlim_j M/(K+L_j).}
+\]
+Since $p$ is an isomorphism because $M$ is complete, it follows that $\tau$ is surjective, hence an isomorphism. This proves (i).
+Let us prove (ii)(a). By the foregoing, for every $i$ one has an isomorphism $M/M_i\isomto\varprojlim_j M/(M_i+L_j)$, and thus both horizontal arrows in the commutative diagram below are isomorphisms:
+\[
+\xymatrix{M\ar[r]^p_\sim\ar[d]^g&\varprojlim_j M/L_j\ar[d]^s\\
+\varprojlim_i M/M_i\ar[r]_\sim&\varprojlim_{i,j}M/(M_i+L_j).}
+\]
+Moreover, for each $j$, the family of submodules $(M_i+L_j)/L_j$ has a least element, since $M/L_j$ is artinian; hence the morphism $s_j:M/L_j\to\varprojlim_i M/(L_j+M_i)$ is surjective; therefore, by the preceding lemma, $s$ is surjective. It follows that $g$ is surjective. Finally, the kernel of $g$ is the projective limit of the $M_i$, \ie their intersection. This proves (a).
+Let us deduce (b). Since $N$ is a closed submodule (hence separated and complete), it is a pseudocompact module for the topology induced by that of $M$. Hence, by (a), the morphisms $f$ and $g$ in the commutative exact diagram below are surjective:
+\[
+\xymatrix@C=12pt{
+0\ar[r]&N\ar[r]\ar[d]^f&M\ar[r]\ar[d]^g&M/N\ar[r]\ar[d]^h&0\\
+0\ar[r]&\varprojlim_i N/(N\cap M_i)\ar[r]&\varprojlim_i M/M_i\ar[r]&\varprojlim_i M/(N+M_i)&.}
+\]
+Then, by the ``snake lemma'', the sequence $0\to\Ker f\to\Ker g\to\Ker h\to0$ is exact, and the equality $N+\bigcap_i M_i=\bigcap_i(N+M_i)$ follows.
+\end{proof}
+One can now prove Proposition 0.2.B. Let $f:M\to N$ be a morphism of pseudocompact $A$-modules. Then $K=\Ker(f)$ is a closed submodule of $M$, hence separated and complete, so $K$ is a pseudocompact module for the topology induced by that of $M$. By 0.2.D(i), $M/K$ equipped with the quotient topology is pseudocompact.
+Let us show that the continuous bijective morphism $M/K\to\Im(f)$ is bicontinuous. Identifying $M/K$ with $\Im(f)$, one has to show that the quotient topology $\mathcal Q$ is finer than the topology $\mathcal T$ induced by that of $N$.
+% typo?: source says "finer"; retained as printed, although the subsequent argument proves the other comparison.
+Denote by $(L_j)$ (resp. $(N_i)$) the decreasing filtered set of open submodules of $M$ (resp. $N$), and put $N'_i=N_i\cap\Im(f)$. Let $P=(K+L_j)/K$ be a submodule of $M/K$ open for $\mathcal Q$. Since $M/(K+L_j)$ is artinian, the family $N'_i+P$ has a least element $N'_{i_0}+P$. Since the $N'_i$ are open, hence closed, for $\mathcal T$ and thus also for $\mathcal Q$, it follows from 0.2.D(ii)(b) that
+\[
+N'_{i_0}+P=\bigcap_i(N'_i+P)=P+\bigcap_i N'_i=P,
+\]
+hence $N'_{i_0}\subset P$. This shows that $P$ is open for $\mathcal T$, and $M/K\to\Im(f)$ is therefore an isomorphism of pseudocompact modules.
+In particular, $\Im(f)$ is complete for $\mathcal T$, hence closed in $N$. Then, by 0.2.D(i) again, $\Coker(f)$ equipped with the quotient topology is pseudocompact. This proves that $\mathbf{PC}(A)$ is an abelian category.
+Moreover, arbitrary projective limits exist in $\mathbf{PC}(A)$: if $(M_i)$ is a projective system of pseudocompact modules, the projective limit of the $M_i$ has as its underlying module the projective limit of the underlying modules, and as its topology the projective limit topology. Furthermore, if one has a family of exact sequences in $\mathbf{PC}(A)$:
+\[
+0\to K_i\to M_i\to Q_i\to0,
+\]
+then the sequence $0\to\prod_i K_i\to\prod_i M_i\to\prod_i Q_i\to0$ is exact. Part (iii) of 0.2.B follows, since in any abelian category in which arbitrary products exist, conditions (a) and (b) of 0.2.D are equivalent and equivalent to exactness of filtered projective limits (cf. \cite{Mi65}, III 1.2--1.9 or \cite{Po73}, Chap. 2, Th. 8.6).
+Finally, every pseudocompact module $M$ is a submodule of the product $\prod_L M/L$, where $L$ runs through the open submodules of $M$, so the objects of finite length form a system of cogenerators of $\mathbf{PC}(A)$. (Moreover, every object of length $n$ is isomorphic to a quotient $A^n/L$, where $L$ is an open submodule of $A^n$ of colength $n$; these quotients therefore form a \emph{set} of cogenerators.) This completes the proof of 0.2.B.
+\nde{We have inserted in this paragraph Proposition 0.2.E and Corollary 0.2.F, which will be useful in 0.2.2. (In the original, these results appeared in 0.3.)}Let $\Abcat$ be the category of abelian groups and $\mathbf{LF}(A)$ the full subcategory of $\mathbf{PC}(A)$ consisting of objects of \emph{finite length}. For every object $M$ of $\mathbf{PC}(A)$, denote by $h_c^M$ the functor
+\[
+\mathbf{LF}(A)\to\Abcat,\qquad N\mto\Hom_c(M,N).
+\]
+By \cite{CA}, § II.4, Th. 1, Lemma 4 and Cor. 1, one has the following results.\nde{Indeed, $\mathbf{PC}(A)$ has a set of artinian cogenerators, filtered projective limits are exact in it, and $\mathbf{LF}(A)$ is the subcategory of artinian objects. The dual category $\mathbf{PC}(A)^0$ therefore has a set of noetherian generators, and filtered inductive limits are exact in it. By the proof of \cite{CA} § II.4, Th. 1, the functor $M\mto\Hom_c(M,-)$ is an anti-equivalence from $\mathbf{PC}(A)$ to $\mathbf{Lex}(\mathbf{LF}(A),\Abcat)$. Similarly, Lemma 4 and Cor. 1 of \loccit state results ``dual'' to those of Corollary 0.2.F. For a ``direct'' proof, see \cite{DG70}, § V.2, Th. 3.1, Lemma 3.5, Cor. 3.3 \& 3.4.}
+
+\begin{proposition}{0.2.E}\label{VIIB.0.2.E}
+The functor $M\mto h_c^M$ is an anti-equivalence from $\mathbf{PC}(A)$ to the category $\mathbf{Lex}(\mathbf{LF}(A),\Abcat)$ of left exact functors $\mathbf{LF}(A)\to\Abcat$.
+\end{proposition}
+\begin{corollary}{0.2.F}\label{VIIB.0.2.F}
+\begin{enumeratei}
+\item An object $P$ of $\mathbf{PC}(A)$ is projective if and only if the functor $h_c^P$ is exact (\ie if and only if the functor $\Hom_c(P,-)$ is exact on $\mathbf{LF}(A)$).
+\item Let $(M_i)$ be a \emph{filtered}\nde{Since every infinite product is a filtered projective limit of finite products, every additive functor which commutes with filtered projective limits also commutes with infinite products.} projective system of objects of $\mathbf{PC}(A)$. For every object $N$ of $\mathbf{LF}(A)$, one has an isomorphism functorial in $N$:
+\[
+\Hom_c(\varprojlim M_i,N)\simeq\varinjlim\Hom_c(M_i,N).
+\]
+\item Every filtered projective limit and every product\footnotemark[12] of projective objects of $\mathbf{PC}(A)$ is a projective object of $\mathbf{PC}(A)$.
+\end{enumeratei}
+\end{corollary}
+Finally, one deduces from 0.2.F the following
+\begin{corollary}{0.2.G}\label{VIIB.0.2.G}
+Let $(M_i)_{i\in I}$ be a family of objects of $\mathbf{PC}(A)$. Then $\prod_{i\in I}M_i$ is projective if and only if every $M_i$ is projective.
+\end{corollary}
+Indeed, for every $N\in\Ob\mathbf{LF}(A)$, one has $\Hom_c(\prod_i M_i,N)\simeq\bigoplus_i\Hom_c(M_i,N)$.
+
+\numpara{0.2.1}Each local component $A_{\mathfrak m}$ of $A$ is a direct factor of $A$, hence a projective object of $\mathbf{PC}(A)$ ($A$ is manifestly projective). Moreover, $A_{\mathfrak m}$ has $S_{\mathfrak m}=A_{\mathfrak m}/\mathfrak m A_{\mathfrak m}$ as its unique simple quotient, hence is indecomposable. On the other hand, every simple object of $\mathbf{PC}(A)$ is isomorphic to a unique $S_{\mathfrak m}$. By \cite{CA}, IV § 3, Cor. 1 of Th. 3,\nde{This refers to the ``dual'' statements established in \loccit, § 2, Th. 2 and § 1, Prop. 2; for a ``direct'' proof, see \cite{DG70}, V, § 2, Th. 4.5 and Example 4.6 b).} one therefore has:
+\begin{proposition}{}
+\begin{enumeratei}
+\item Every projective object of $\mathbf{PC}(A)$ is a direct product of indecomposable projective objects, uniquely determined (up to isomorphism).
+\item Every indecomposable projective object is isomorphic to a unique $A_{\mathfrak m}$ ($\mathfrak m\in\Upsilon(A)$).
+\end{enumeratei}
+\end{proposition}
+\begin{definition}{}
+A pseudocompact $A$-module $M$ is said to be \emph{topologically free} if it is isomorphic to the product of a family $(A_i)$ of copies of $A$.
+In this case, a family $(m_i)$ of elements of $M$ is called a \emph{pseudobasis} of $M$ if the $A$-linear maps from $A_i$ to $M$ which send the identity element of $A_i$ to $m_i$ extend to an isomorphism from $\prod_i A_i$ to $M$.
+\end{definition}
+
+\numpara{0.2.2}\nde{We have detailed the results of this paragraph, which play an important role in what follows (cf. 1.2.3, 1.3.5, 2.2.1, etc.).}If $M$ is a pseudocompact $A$-module, the $A$-module (without topology)
+\[
+\Hom_c(M,A)
+\]
+will be denoted by $M^\dagger$.
+Conversely, if $N$ is an $A$-module, denote by $N^*=\Hom_A(N,A)$ its dual, equipped with the topology of pointwise convergence, \ie a base of neighborhoods of $0$ in $N^*$ consists of the following submodules, where $x\in N$ and $\mathfrak l$ is an open ideal of $A$:
+\[
+\mathcal V(x,\mathfrak l)=\{f\in N^*\mid f(x)\in\mathfrak l\}.
+\]
+This makes $N^*$ a pseudocompact $A$-module. Indeed, one first sees that if $N=A$, then $N^*=A$, equipped with its pseudocompact ring topology, and if $N$ is a free module $A^{(I)}$, then $N^*$ is the product $A^I$, equipped with the product topology. On the other hand, for every morphism $\phi:N_1\to N_2$, the transpose morphism ${}^t\phi:N_2^*\to N_1^*$ is continuous, since the inverse image under ${}^t\phi$ of a submodule $\mathcal V(x_1,\mathfrak l)$ of $N_1^*$ is precisely the submodule $\mathcal V(\phi(x_1),\mathfrak l)$ of $N_2^*$. Then, for arbitrary $N$, taking a presentation
+\[
+A^{(J)}\xrightarrow{\phi}A^{(I)}\xrightarrow{\pi}N\to0,
+\]
+one sees that $N^*$ is the kernel of the continuous morphism ${}^t\phi:A^I\to A^J$, so $N^*$ is pseudocompact.
+When $A$ is artinian (in which case one can take $\mathfrak l=0$ above), one deduces from 0.2.F:
+\begin{proposition}{}
+When $A$ is artinian, the functors
+\[
+P\mto P^\dagger\qquad\text{and}\qquad Q\mto Q^*,
+\]
+where $P$ (resp. $Q$) is a projective object of $\mathbf{PC}(A)$ (resp. a projective $A$-module), establish an anti-equivalence between the category of projective pseudocompact $A$-modules and that of projective $A$-modules.\nde{Recall also that, over an \emph{artinian} ring, a module is projective if and only if it is flat; see, for example, VI B, N.D.E. (54) or 0.3.7 below.}
+\end{proposition}
+In particular, when $A$ is a \emph{field} $k$, $P\mto P^\dagger$ is an anti-equivalence from the category of all pseudocompact $k$-modules (also called \emph{linearly compact $k$-vector spaces}) to that of $k$-vector spaces.\nde{Note that the \emph{direct sum in $\mathbf{PC}(k)$} of a family $(V_i)_{i\in I}$ of linearly compact $k$-vector spaces is $(\prod_{i\in I}V_i^\dagger)^*$.}
+
+\numpara{0.3}\nde{We have modified this paragraph, taking into account the additions made in 0.2.}Let $L$ and $M$ be two pseudocompact $A$-modules. The functor
+\[
+\mathbf{LF}(A)\to\Abcat,\qquad N\mto\operatorname{Bil}_c(L\times M,N),
+\]
+where $\operatorname{Bil}_c(L\times M,N)$ denotes the abelian group of continuous $A$-bilinear maps from $L\times M$ to $N$, is left exact.
+By 0.2.E, there therefore exists a pseudocompact $A$-module $L\widehat\otimes_A M$, unique up to unique isomorphism, which represents this functor, \ie such that one has a functorial isomorphism, for every object $N$ of $\mathbf{LF}(A)$:
+\[
+\Hom_c(L\widehat\otimes_A M,N)\simeq\operatorname{Bil}_c(L\times M,N).
+\]
+Moreover, $L\widehat\otimes_A M$ is identified with the projective limit $P=\widehat{L\otimes_A M}$ of the (discrete) $A$-modules $(L/L')\otimes_A(M/M')$, where $L'$ and $M'$ run respectively through the open submodules of $L$ and $M$.
+Indeed, let $\varphi:L\times M\to N$ be a continuous bilinear map from $L\times M$ to a (discrete) $A$-module $N$ of finite length. By Lemma 0.3.1 below, there exist open submodules $L'$ and $M'$ of $L$ and $M$ such that $\varphi(L'\times M)=\varphi(L\times M')=\{0\}$. This means that the map $\overline\varphi:L\otimes_A M\to N$ induced by $\varphi$ has the form $\varphi'\circ p$, where $p$ is the canonical projection from $L\otimes_A M$ to $(L/L')\otimes_A(M/M')$. If one denotes by $\widehat\varphi$ the composite
+\[
+P\to(L/L')\otimes_A(M/M')\xrightarrow{\varphi'}N,
+\]
+one sees that the map $\varphi\mto\widehat\varphi$ is a functorial bijection from $\operatorname{Bil}_c(L\times M,N)$ to $\Hom_c(P,N)$, whence $P\simeq L\widehat\otimes_A M$.
+The pseudocompact module $L\widehat\otimes_A M$ is therefore the separated completion of $L\otimes_A M$, for the linear topology defined by the kernels of the canonical projections from $L\otimes_A M$ to $(L/L')\otimes_A(M/M')$, and will be called the \emph{completed tensor product} of $L$ and $M$.
+If $x$ and $y$ belong to $L$ and $M$, the image of $x\otimes_A y$ in $L\widehat\otimes_A M$ will be denoted by $x\widehat\otimes_A y$.
+
+\begin{lemma}{0.3.1}\label{VIIB.0.3.1}
+Let $L$, $M$, and $N$ be pseudocompact $A$-modules, $N$ being of finite length. If $\varphi:L\times M\to N$ is a continuous $A$-bilinear map, there exist open submodules $L'$ and $M'$ of $L$ and $M$ such that $\varphi(L'\times M)=\varphi(L\times M')=\{0\}$.
+\end{lemma}

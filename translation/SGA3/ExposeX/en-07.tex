@@ -1,0 +1,123 @@
+% PDF pp. 35--40; continuation of proof of 8.1.
+Proceeding as in 3.1 and using the fact that $T_n$ is finite over $S$,\nde{Expand this point\dots} one sees that the preceding isomorphism comes from a homomorphism $u_n:T_n\to H$, moreover uniquely determined. (Pass to the limit over the artinian quotients of $A$.)
+
+Moreover, by the uniqueness properties, $u_n:T_n\to H$ is deduced from $u_m:T_m\to H$ by restriction to ${}_n(T_m)\simeq T_n$ when $m$ is a multiple of $n$. It follows from IX, 6.6 that the $u_n$ are monomorphisms, so the $T_n$ are subgroups of $H$, and for $m$ a multiple of $n$ one has $T_n={}_n(T_m)$.
+
+Thus for every $t\in S$, the $(T_n)_t$ are subgroups of $H_t$ of type $(\ZZ/n\ZZ)^r$ (where $r=\dim H_s=\dim H_t$), such that for $m$ a multiple of $n$ one has $(T_n)_t={}_n(T_m)_t$. The fact that $H_t$ is a torus now follows from the
+\begin{lemma}{8.6}\label{X.8.6}
+Let $H$ be a smooth affine algebraic group over an algebraically closed field $k$, $(T_n)_{n>0}$ a family of subgroups of multiplicative type of $H$ such that for every integer $n>0$, $T_n$ is of type $(\ZZ/n\ZZ)^r$, and for every multiple $m$ of $n$ one has $T_n={}_n(T_m)$.
+
+Under these conditions, $H$ contains a torus of dimension $\geq r$ containing the $T_n$, so if $H$ is connected of dimension $\leq r$, $H$ is a torus of dimension $r$.
+\end{lemma}
+This is an exercise on affine algebraic groups which we shall treat by references to \emph{Bible}. We restrict to considering the $T_n$ for $n$ prime to the characteristic. Let $K$ be the closure of the union of the $T_n$ in $H$, endowed with the induced reduced structure; then standard arguments show that $K$ is a commutative algebraic subgroup of $H$. By \emph{Bible}, \S4.5, th. 4, $K$ is therefore isomorphic to a product $K_u\times K_s$, with $K_u$ ``unipotent'' and $K_s$ diagonalizable. Every diagonalizable subgroup of $K$ is contained in $K_s$, so the $T_n$ are subgroups of $K_s$, hence $K=K_s$. Write $K=D(M)$ with $M$ an ordinary commutative group of finite type over $\ZZ$; then $T_n\subseteq K$ means that $M$ admits a quotient group isomorphic to $(\ZZ/n\ZZ)^r$. This being true for every integer $n$ prime to the characteristic of $k$ (it would suffice for powers of a fixed prime), it follows that $M$ has rank $\geq r$, so $K$ contains a torus of dimension $r$, say $T$. When $H$ is connected of dimension $r$, it follows that $T=H$, which completes the proof of 8.6. Thus 8.1 is proved.
+\end{proof}
+\begin{remarks}{8.7}\label{X.8.7}
+Using 8.1, it should not be difficult to give analogous generalizations of 4.7 and 4.8. A more interesting study would be that of situation 8.1 where one drops the hypothesis that the fibers of $H$ are affine. One can show that there then exists an open neighborhood $U$ of $s$ such that $H|U$ is commutative and for every $t\in U$ the geometric fiber $H_{\overline t}$ is an extension of an abelian variety by a torus.\nde{Give a reference here?} Of course, in questions of this kind one may restrict to the case where $S$ is the spectrum of a discrete valuation ring, $s$ its closed point, $t$ its generic point.
+
+One may generalize this result as follows. For every smooth connected algebraic group $G$ over an algebraically closed field $k$, a well-known theorem of Chevalley tells us that $G$ is (uniquely) an extension of an abelian variety $A$ by a smooth connected affine group $V$. Denote by the \emph{abelian rank} (resp. \emph{reductive rank}, resp. \emph{nilpotent rank}, resp. \emph{semisimple dimension}) of $G$, and write $\rho_{\mathrm{ab}}(G)$ (resp. $\rho_r(G)$, resp. $\rho_n(G)$, resp. $d_s(G)$), the dimension of $A$, resp. the dimension of the maximal tori of $G$, resp. the dimension of the Cartan subgroups\nde{Recall the definition of ``Cartan subgroup''\dots} of $G$, resp. the dimension of the quotient of $G$ (or again of $V$) by its radical (cf. \emph{Bible} for all these notions). Introduce also the unipotent rank $\rho_u(G)=\rho_u(V)=\rho_n(G)-\rho_r(G)-\rho_{\mathrm{ab}}(G)$. When $G$ is not algebraically closed, we still use the same names and the same notation for the corresponding invariants of $G_{\overline k}$, where $\overline k$ is the algebraic closure of $k$.
+% typo?: G rather than k in "not algebraically closed" retained as printed.
+This being so, let $G$ be a smooth group scheme over the spectrum $S$ of a discrete valuation ring; let $\rho_{\mathrm{ab}}$, etc. (resp. $\rho'_{\mathrm{ab}}$, etc.) be the invariants associated with the special fiber (resp. generic fiber). Then one has the inequalities:
+\[
+\begin{cases}\rho_{\mathrm{ab}}\leq\rho'_{\mathrm{ab}}\\\rho_r+\rho_{\mathrm{ab}}\leq\rho'_r+\rho'_{\mathrm{ab}}\\d_s\leq d'_s\end{cases}
+\qquad
+\begin{cases}\rho_n\geq\rho'_n\\\rho_u\geq\rho'_u.\end{cases}
+\]
+It amounts to the same thing to say that if $G$ is smooth of finite type over an arbitrary base $S$, the functions $s\mto\rho_{\mathrm{ab}}(s)$, $\rho_{\mathrm{ab}}(s)+\rho_r(s)$, $d_s(s)$ are lower semicontinuous, and the functions $s\mto\rho_n(s)$, $\rho_u(s)$ are upper semicontinuous.\nde{Give a reference for these results?}
+% typo: "dire qui si" -> "say that if".
+The same results probably still hold without supposing $G$ smooth over $S$, but merely flat of finite presentation over $S$, agreeing to denote, for an algebraic group $G$ over an algebraically closed field $k$, by $\rho_{\mathrm{ab}}(G)$, etc., the corresponding invariants of $G^0_{\mathrm{red}}$.
+
+In this Seminar we present some results of this type for $G$ affine over $S$, or more generally with affine fibers: in this case we shall verify the semicontinuity properties for $\rho_r,\rho_n$, hence for $\rho_u=\rho_n-\rho_r$, and continuity of $\rho_s$ in a neighborhood of a point $s$ whose fiber is a reductive group.\footnotemark[\value{footnote}]
+% typo?: rho_s retained as printed.
+\end{remarks}
+One may generalize 8.2 when one already supposes $G$ commutative, as follows:
+\begin{theorem}{8.8}\label{X.8.8}
+\nde{G. Prasad and J.-K. Yu have generalized this result (under some additional hypotheses), without supposing $G$ commutative and replacing ``torus'' by ``reductive group'' in hypothesis a) and the conclusion, cf. [PY06], Th. 6.2.} Let $G$ be a commutative $S$-group prescheme flat and of finite presentation over $S$, with affine connected fibers. Let $s\in S$, and suppose:
+
+a) If $\overline k$ denotes an algebraic closure of $\kappa(s)$, $(G_{\overline k})_{\mathrm{red}}$ is a torus.
+
+b) There exists a generization $t$ of $s$ such that $G_t$ is smooth over $\kappa(t)$.
+
+Under these conditions there exists an open neighborhood $U$ of $s$ such that $G|U$ is a torus.
+\end{theorem}
+(Note moreover that if one merely supposes that for every generization $t$ of $s$, $G_t$ is affine resp. connected, one easily deduces that the same conclusion holds for $t$ in an open neighborhood of $s$.)
+\begin{proof}[Proof of 8.8]
+It suffices to prove that $G_s$ is smooth over $\kappa(s)$. Indeed, as $G$ is flat of finite presentation over $S$, it then follows that $G$ is smooth over $S$ above a neighborhood of $s$ (cf. 3.5), but then one is under the conditions of 8.1.
+
+To prove that $G_s$ is smooth over $\kappa(s)$, the usual procedure reduces us to the case where $S$ is affine noetherian. Choosing a homomorphism $S'\to S$ from the spectrum $S'$ of a discrete valuation ring into $S$, sending its closed point to $s$ and its generic point $\eta$ to $t$, one is reduced to the case where $S$ is itself the spectrum of a discrete valuation ring, which one may in addition suppose complete with algebraically closed residue field, and where $s$ and $t=\eta$ are respectively the closed point and generic point of $S$.
+
+Thus $G$ is flat, separated, of finite type over $S$, the generic fiber $G_\eta$ is smooth and connected, and the special fiber $G_0$ is such that $T_0=(G_0)_{\mathrm{red}}$ is a torus. Let $m$ be an integer $>0$ prime to the residue characteristic at $s$, hence also to that at $\eta$; one then knows that $m\cdot\mathrm{id}_G$ is an étale morphism fiber by fiber (VII$_{\mathrm A}$ 8.4), hence an étale morphism since $G$ is flat over $S$ (SGA 1 I 5.9); hence its kernel ${}_mG$ is étale over $S$, and since $G$ is separated\footnote{By Raynaud's theorem VI$_{\mathrm B}$ 5.3.}\nde{Cf. N.D.E. (62) in 8.5.} of finite type over $S$, so is ${}_mG$. Since $({}_mG)_0={}_m(T_0)$, its degree is $m^r$, where $r=\dim T_0=\dim G_0=\dim G$. It follows that the rank of $({}_mG)_\eta={}_m(G_\eta)$ is $\geq m^r$, which already proves (using 8.6) that $G_\eta$ is a torus of dimension $r$, since the two fibers of ${}_mG$ have the same rank, and hence as in 8.5 that ${}_mG$ is finite over $S$.\nde{Review the preceding sentence\dots}
+
+Note that since $S$ is complete with algebraically closed residue field, the finite étale covering ${}_mG$ splits completely, so through every point of ${}_mG_0$ passes a section of $G$ over $S$; in particular the set of points of $G_0$ through which passes a section of $G$ over $S$ is everywhere dense. Now one has the following:
+\begin{lemma}{8.9}\label{X.8.9}
+Let $S$ be a locally noetherian regular prescheme of dimension 1, $G$ an $S$-group prescheme flat and locally of finite type such that $G_\eta$ is smooth over $\kappa(\eta)$ for every maximal point $\eta$ of $S$ (which implies that $G$ is reduced). Suppose that the normalization scheme $X$ of $G$ is finite over $G$ (this is the case by Nagata if $S$ is the spectrum of a complete discrete valuation ring, cf. EGA IV$_2$, 7.7.4), and let $G'$ be the open subset of $X$ consisting of the points at which $X$ is smooth over $S$. With this notation:
+
+a) If the projection $G'\to S$ is surjective, there exists on $G'$ a unique $S$-group prescheme structure such that the canonical morphism $G'\to G$ is a group homomorphism.
+
+b) Suppose that for every closed point $s$ of $S$, the set of points of $G_s^0$ through which passes an étale quasi-section is dense in $G_s^0$ for the Zariski topology. Then $X$ is regular, one is under the conditions of a), and the map $\Gamma(G'/S)\to\Gamma(G/S)$ is bijective.
+\end{lemma}
+In the case of interest to us this lemma applies and gives a group homomorphism $u:G'\to G$, where $G'$ is smooth over $S$ and $u_\eta$ is an isomorphism $G'_\eta\isomto G_\eta$. Replacing $G'$ by an open subgroup if necessary, one may suppose $G'_0$ connected, and since $u_0:G'_0\to G_0$ induces a surjective morphism $G'_0\to T_0$, where $T_0$ is a torus of the same dimension as $G'_0$, one easily concludes that $G'_0$ is a torus (for example using 8.6, or referring to \emph{Bible}, \S7.3, th. 3 a)). Consequently by 8.2 $G'$ is a torus, but then by IX 6.8, $\Ker u$ is a subgroup of multiplicative type of $G'$, and since its generic fiber is reduced to the unit group, it is the unit group, hence $u$ is a monomorphism. Using now VIII 7.9 it follows that $u$ is an immersion. Being surjective, and $G$ being reduced, it follows that $u$ is an isomorphism, which finishes proving 8.8.
+\end{proof}
+It remains to prove 8.9. To prove a), note that uniqueness of the group law on $G'$ making $u:G'\to G$ a group homomorphism is clear, since the group law of $G'$ is known on the generic fiber (supposing $S$ irreducible, which is permitted). For existence, one easily reduces to the case where $S$ is local, the spectrum of a discrete valuation ring $A$, and thanks to uniqueness and to the fact that the operation of integral closure commutes with an étale extension of the base, one may make étale extensions of the base on $S$, which reduces us to the case where $A$ is ``strictly local'', i.e. henselian with separably closed residue field. The same reduction applies for b), but in the hypothesis made in b) one may now replace ``étale quasi-section'' by ``section''.
+
+Note that $G'$ being smooth over $S$ and $X$ normal, $G'\times_S X$ is normal (being smooth over normal $X$), so the composite morphism $G'\times_S X\to G\times_S G\to G$ factors as
+\[
+p:G'\times_S X\to X.
+\]
+Let us prove that this latter morphism induces on the open subset $G'\times_S G'$ of $G'\times_S X$ a morphism
+\[
+G'\times_S G'\to G'.
+\]
+One must therefore show that $G'_0\times_k G'_0$ is mapped into the open subset $G'_0$ of $X_0$; it suffices to see that for every point $g'_0$ of $G'_0$ with values in $k$, the morphism
+\begin{equation}\tag{x}
+h'_0\mto p_0(g'_0,h'_0)
+\end{equation}
+from $G'_0$ to $X_0$ takes its values in $G'_0$. Now since $G'$ is smooth over $S$ and $S$ henselian, every $g'_0$ as above is induced by a section $g'$ of $G'$ over $S$, and one verifies immediately that morphism (x) above is then induced by the morphism $h'\mto p(g',h')$ from $G'$ to $X$, itself deduced by transport of structure from the automorphism $h\mto g\cdot h$ of $G$, left translation by the section $g$ of $G$ which is the image of $g'$. Thus $h'\mto p(g',h')$ is itself an automorphism of $X$, hence maps $G'$ to $G'$, which proves our assertion.
+
+It remains to prove that the composition law so obtained on $G'$ is a group law. Associativity follows immediately from associativity of the generic fiber (isomorphic to that of $G$). On the other hand, the symmetry automorphism of the $S$-prescheme $G$ induces an automorphism of $X$, leaving $G'$ stable and inducing an automorphism $\sigma$ of $G'$. One then verifies that the latter has the properties of an inverse for the composition law on $G'$, for this again amounts to checking commutativity of certain diagrams involving fibered powers of $G'$ over $S$, and these being smooth over $S$, it suffices to check their commutativity on the generic fiber, which is clear. This proves part a) of 8.9.
+
+Let us prove b). Let $Z'$ be the set of $x\in X$ such that $\OO_{X,x}$ is not regular; it is a closed subset by a theorem of Nagata (EGA IV$_2$, 6.12.6), evidently contained in $X_0$; let $Z$ be its image in $G$, hence a closed subset of $G_0$. Then $Z$ is a nowhere dense subset of $G_0$, i.e. contains no maximal point $y$ of $G_0$. Indeed, since $G_0$ is defined in $G$ by an equation $t=0$ (where $t$ is a uniformizer of the discrete valuation ring $A$), $\OO_{G,y}$ is of dimension 1 by the Hauptidealsatz, so for every $x$ of $X$ over $y$, $\OO_{X,x}$ is of dimension 1, hence a discrete valuation ring since $X$ is normal and thus regular in codimension 1. On the other hand, it is evident that for every section $g$ of $G$ over $S$, $Z'$ is stable under the automorphism of $X$ defined by transport of structure from left translation by $g$ in $G$, so $Z$ is stable under left translation in $G_0$ defined by $g_0$. Now by hypothesis the set of these $g_0$ is dense in $G_0^0$. Since $Z$ is stable under translation by these $g_0$ and is closed and nowhere dense, it follows immediately that $Z=\varnothing$, whence $Z'=\varnothing$, so $X$ is regular. Consequently, $X$ is smooth over $S$ at every point through which passes a section. Now every section of $G$ over $S$ lifts uniquely to a section of $X$ over $S$, and hence of $G'$ over $S$. This is so in particular for the unit section, which proves that the image of $G'$ in $S$ is $S$, i.e. one is under the conditions of (a). This completes the proof of 8.9, and hence of 8.8.
+
+\sgasection{9}{Addenda}
+\nde{This additional section was written by Fabrice Orgogozo (following indications of Ofer Gabber).}
+\numpara{9.1}\textbf{Simplicial sets, topoi, groupoids and topological spaces.} ---
+\begin{enoncerm}{Notations}{9.1.1}\label{X.9.1.1}
+(1) Let $E$ be a simplicial set. One may associate with it the following objects:
+
+(2) A topos $T=E^\sim$, obtained from the topoi naturally associated with the sets $E_i$, according to the procedure described in [Del74], 6.3.1 (see also [Ill72], VI.5.2 and SGA 4 VI.7);
+
+(3) A groupoid $G=\Pi(E)$ whose objects are the elements of $E_0$ (the ``vertices'') and whose arrows are defined in [GZ67], II.7;
+
+(4) A topological space $X=|E|$ (a cell complex), called the ``geometric'' (or ``topological'') ``realization'' (cf. loc. cit., III.1).
+\end{enoncerm}
+Let us note that a sheaf on $T$ is nothing other than a simplicial set over $E$.
+
+\numpara{9.2}\textbf{Locally constant sheaves; descent data.} ---
+\begin{enoncerm}{Definitions}{9.2.1}\label{X.9.2.1}
+One calls a \emph{locally constant sheaf} on:
+
+(1) A simplicial set $E$, every morphism of simplicial sets $E'\to E$ such that for every $i\in\NN$ and every $e\in E_i$ the face operators $d$ induce isomorphisms $E'_e\isomto E'_{d(e)}$ between the fibers (cf. [AM69], \S10);
+
+(2) A topos $T$, every object $F$ of $T$ such that there exists an epimorphism $U\to1$ and an isomorphism $F\times U\simeq f^*I\times U$, where $I$ is a set and $f:T\to\Ens$ is the final morphism (cf. SGA 4, IX.2);
+
+(3) A groupoid $G$, every presheaf on $G$, i.e. every contravariant functor from $G$ to the category of sets (cf. [GZ67], append. I.1.2);
+
+(4) A topological space $X$, every sheaf of sets on $X$ locally constant in the usual sense.
+
+Finally:
+
+(5) One calls a \emph{descent datum on a simplicial set $E$} the data of a sheaf $F$ on $E_0^\sim$ (i.e. a set-theoretic function on $E_0$) and an isomorphism $\alpha:p_1^*F\isomto p_2^*F$, where $p_1,p_2:E_1^\sim\to E_0^\sim$ are the morphisms (deduced from the) faces, satisfying the usual cocycle relation (cf. Exp. IV, 2.1\footnote{PP: I have replaced ``FGA, Technique de descente I, 1.6'' by ``Exp. IV, 2.1''.} and below).
+\end{enoncerm}
+The morphisms between these five types of objects, as well as the associated inverse image functors, are defined in the evident way.
+
+\numpara{9.3}\textbf{Some equivalences of categories.} --- Let $E$ be a simplicial set, and respectively $T,G,X$ the associated topos, groupoid and topological space.
+\begin{proposition}{9.3.1}\label{X.9.3.1}
+The categories of locally constant sheaves on $E,T,G,X$, as well as the category of descent data on $E$, are equivalent.
+\end{proposition}
+\begin{proof}[Sketch of proof]
+Denote by (1) to (5) the categories of objects defined in the preceding paragraph.
+\begin{itemize}
+\item (1)$\Leftrightarrow$(5). This is a particular case of [AM69], 10.6 (see also [GZ67], append. I.2.3, [Fri82], ?.5.6 or [Ill72], VI.8.1.6). An equivalence of categories is given by the functor associating with the object $(E'\to E)$ the pair $(E'_0,\alpha)$, where $E'_0$ is regarded as a sheaf on $E_0$, and where $\alpha$ is the unique isomorphism $p_1^*E'_0\isomto p_2^*E'_0$ whose fiber at each $y\in E_1$ --- with images denoted by $x_1,x_2$ under the two projections --- is given by the isomorphisms $(E'_0)_{x_1}\isomfrom(E'_1)_y\isomto(E'_0)_{x_2}$.
+\item (5)$\Leftrightarrow$(3). Evident: one of the two relations defining the morphisms in the groupoid $G$ associated with $E$ is a cocycle relation.
+\item (1)$\Leftrightarrow$(4). Cf. [GZ67], append. I.3.2.1.
+\item (1)$\Leftrightarrow$(2). One must show that an object over $E$ is a locally constant sheaf in the simplicial sense if and only if it is so as a sheaf on $T=E^\sim$. This follows from the fact that locally constant sheaves $F_\bullet$ on $T$ are precisely cartesian sheaves, i.e. those for which the arrows $([n]\to[m])^*F_m\to F_n$ are isomorphisms. This last point is a particular case of a general fact about simplicial topoi, together with the fact that every sheaf on $E_0^\sim$ is locally constant.
+% Last sentence begun on PDF p. 40 completed on p. 41; proof continues in en-08.tex.

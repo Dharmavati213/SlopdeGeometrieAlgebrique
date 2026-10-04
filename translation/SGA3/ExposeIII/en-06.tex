@@ -1,0 +1,511 @@
+% Corollary 2.5 begins on the previous page; (i) is not repeated here.
+{\itshape
+(ii) Suppose that one has one of the following two properties:
+\begin{enumeratea}
+\item \(X\) is an \(S\)-group smooth over \(S\);
+\item \(X=\Aut_{S}(E)\) where \(E\) is smooth and affine over \(S\).
+\end{enumeratea}
+\noindent Then \(f_{0}\) extends to a morphism of \(S\)-groups \(Y\to X\); two such
+extensions are conjugate by an inner automorphism of \(X\) defined by a section
+of \(X\) over \(S\) inducing the unit section of \(X_{0}\) over \(S_{0}\).
+\par}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+Let us introduce the \(S_{n}\) as above.%
+{\renewcommand{\thefootnote}{(59)}\nde{In what follows, one has slightly
+modified the original and set it out in detail.}}
+For~(ii), let us first note that a scheme smooth over \(S\) is necessarily
+locally of finite presentation over \(S\); hence, in case~(b), \(E\), being
+smooth and affine over \(S\), is necessarily of finite presentation over \(S\),
+\ie one is indeed under hypothesis~(b) of~2.0.
+
+Then, under the hypotheses of~(ii), condition~\((i_{1})\) of~2.1 is
+automatically satisfied by~0.16 and~0.17; moreover every section of
+\(X_{S_{n}}\) over \(S_{n}\) lifts to a section of \(X_{S_{n+1}}\) over
+\(S_{n+1}\), by the definition of ``smooth over \(S\)'' in case~(a), and
+by~0.17 in case~(b). Consequently, if \(f\) and \(f'\) are two liftings of
+\(f_{0}\), one may suppose step by step that \(f_{n}=f'_{n}\), by lifting the
+inner automorphism whose existence is asserted by part~(ii) of the theorem,
+which completes the proof.
+\end{proof}
+
+Arguing in the same way, one obtains, taking Remark~2.3 into account:
+
+\begin{corollary}{2.6}\label{III.2.6}
+Let \(S\) be a scheme, \(\mathcal{I}\) a nilpotent ideal defining the closed
+subscheme \(S_{0}\), \(Y\) an \(S\)-group flat over \(S\) and affine, \(X\) an
+\(S\)-group smooth over \(S\).
+\begin{enumeratei}
+\item If, for every \(n\geqslant 0\), one has
+\(H^{2}\bigl(Y_{0},\Lie(X_{0}/S_{0})\otimes_{\mathcal{O}_{S_{0}}}
+\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\bigr)=0\), every morphism of \(S_{0}\)-groups
+\(f_{0}\colon Y_{0}\to X_{0}\) lifts to a morphism of \(S\)-groups
+\(f\colon Y\to X\).
+\item If, for every \(n\geqslant 0\), one has
+\(H^{1}\bigl(Y_{0},\Lie(X_{0}/S_{0})\otimes_{\mathcal{O}_{S_{0}}}
+\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\bigr)=0\), two such liftings are conjugate
+by an inner automorphism of \(X\) defined by a section of \(X\) over \(S\)
+inducing the unit section of \(X_{0}\) over \(S_{0}\).
+\end{enumeratei}
+\end{corollary}
+
+Now one has the following lemma:
+
+\begin{lemma}{2.7}\label{III.2.7}
+Let \(S\) be an affine scheme, \(G\) an affine \(S\)-group, \(\mathcal{F}\) a
+quasi-coherent \(\mathcal{O}_{S}\)-module, \(\mathcal{L}\) a locally free
+\(\mathcal{O}_{S}\)-module. Suppose that one has an operation of \(G\) on
+\(\mathcal{F}\) in the sense of Exposé~I, which defines an operation of \(G\)
+on \(\mathcal{F}\otimes_{\mathcal{O}_{S}}\mathcal{L}\)%
+{\renewcommand{\thefootnote}{(60)}\nde{Where \(\mathcal{L}\) is equipped with
+the trivial action of \(G\).}}.
+Denote by \(\Lambda\) the ring of \(S\), and by \(L\) the \(\Lambda\)-module
+defining \(\mathcal{L}\) (which is therefore a projective module). One has a
+canonical isomorphism
+\[
+H^{*}(G,\mathcal{F}\otimes_{\mathcal{O}_{S}}\mathcal{L})
+  \simeq
+  H^{*}(G,\mathcal{F})\otimes_{\Lambda}L.
+\]
+\end{lemma}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+{\renewcommand{\thefootnote}{(61)}\nde{One has set out in detail (and
+simplified) the proof of the original (the latter moreover invoked the
+isomorphisms
+\(\mathcal{H}^{n}(\mathcal{C}\otimes_{\mathcal{O}_{S}}\mathcal{L})
+\simeq\mathcal{H}^{n}(\mathcal{C})\otimes_{\mathcal{O}_{S}}\mathcal{L}\)
+and \(H^{n}(\Gamma(-))\simeq\Gamma(\mathcal{H}^{n}(-))\), where the
+\(\mathcal{H}^{n}(\mathcal{C})\) denote the cohomology sheaves of the complex
+\(\mathcal{C}\)).}}
+Indeed, denote by \(\mathcal{A}\) the \(\mathcal{O}_{S}\)-algebra
+\(\mathcal{A}(G)\) and consider the complex \(\mathcal{C}\) of quasi-coherent
+\(\mathcal{O}_{S}\)-modules:
+\[
+0\longrightarrow\mathcal{F}
+  \longrightarrow\mathcal{F}\otimes_{\mathcal{O}_{S}}\mathcal{A}
+  \longrightarrow\mathcal{F}\otimes_{\mathcal{O}_{S}}\mathcal{A}
+    \otimes_{\mathcal{O}_{S}}\mathcal{A}
+  \longrightarrow\cdots
+\]
+By~I, 5.3, \(H^{*}(G,\mathcal{F})\)
+(\resp \(H^{*}(G,\mathcal{F}\otimes_{\mathcal{O}_{S}}\mathcal{L})\))
+is the cohomology of the complex \(\Gamma(S,\mathcal{C})\)
+(\resp \(\Gamma(S,\mathcal{C}\otimes_{\mathcal{O}_{S}}\mathcal{L})\)).
+Now, as \(S\) is affine, one has (\cf EGA~I, 1.3.12)
+\[
+\Gamma(S,\mathcal{C}\otimes_{\mathcal{O}_{S}}\mathcal{L})
+  \simeq
+  \Gamma(S,\mathcal{C})\otimes_{\Lambda}L.
+\]
+As \(L\) is a projective \(\Lambda\)-module (hence flat), one also has
+\(H^{*}\bigl(\Gamma(S,\mathcal{C})\otimes_{\Lambda}L\bigr)
+\simeq H^{*}\bigl(\Gamma(S,\mathcal{C})\bigr)\otimes_{\Lambda}L\),
+whence the announced result.
+\end{proof}
+
+Using the lemma, one transforms~2.6 into:
+
+\begin{corollary}{2.8}\label{III.2.8}
+Let \(S\) be an affine scheme, \(\mathcal{I}\) a nilpotent ideal on \(S\)
+defining the closed subscheme \(S_{0}\). Suppose that the
+\(\mathcal{I}^{n+1}/\mathcal{I}^{n+2}\) are locally free over \(S_{0}\). Let \(Y\)
+be an \(S\)-group flat over \(S\) and affine, \(X\) an \(S\)-group smooth over
+\(S\), and \(f_{0}\colon Y_{0}\to X_{0}\) a morphism of \(S\)-groups.
+\begin{enumeratei}
+\item If \(H^{2}\bigl(Y_{0},\Lie(X_{0}/S_{0})\bigr)=0\), \(f_{0}\) lifts to a
+morphism of \(S\)-groups \(Y\to X\).
+\item If \(H^{1}\bigl(Y_{0},\Lie(X_{0}/S_{0})\bigr)=0\), two such liftings are
+conjugate by an inner automorphism of \(X\) defined by a section of \(X\) over
+\(S\) inducing the unit section of \(X_{0}\) over \(S_{0}\).
+\end{enumeratei}
+\end{corollary}
+
+In particular, setting \(Y=X\):
+
+\begin{corollary}{2.9}\label{III.2.9}
+Let \(S\) and \(S_{0}\) be as above. Let \(X\) be an \(S\)-group smooth over
+\(S\) and affine.
+\begin{enumeratei}
+\item If \(H^{1}\bigl(X_{0},\Lie(X_{0}/S_{0})\bigr)=0\), every endomorphism of
+\(X\) over \(S\) inducing the identity on \(X_{0}\) is the inner automorphism
+defined by a section of \(X\) over \(S\) inducing the unit section of \(X_{0}\)
+over \(S_{0}\).
+\item If
+\[
+H^{2}\bigl(X_{0},\Lie(X_{0}/S_{0})\bigr)=0,
+\]
+every
+\(S_{0}\)-automorphism of \(X_{0}\) extends to an \(S\)-automorphism of
+\(X\).%
+{\renewcommand{\thefootnote}{(62)}\nde{Indeed, let \(f_{0}\) be an
+\(S_{0}\)-automorphism of \(X_{0}\) and let \(g_{0}\) be its inverse. By~2.8
+(i), \(f_{0}\) (\resp \(g_{0}\)) lifts to an \(S\)-endomorphism
+\(f\) (\resp \(g\)) of \(X\). Then \(g\circ f\) and \(f\circ g\)
+are endomorphisms of \(X\) inducing the identity on \(X_{0}\); they are
+therefore, by~0.7, \(S\)-automorphisms of \(X\), and the same is therefore true
+of \(f\) and \(g\).}}
+\end{enumeratei}
+\end{corollary}
+
+\begin{remark}{2.10}\label{III.2.10}
+The assertions concerning the \(H^{1}\) have converses by the theorem. Let us
+point out the following as an example: if \(S=\mathrm{I}_{S_{0}}\) is the
+scheme of dual numbers over \(S_{0}\) (II, 2.1) and if \(X\) is a flat
+\(S\)-group such that every automorphism of \(X\) over \(S\) inducing the
+identity on \(S_{0}\) is the inner automorphism defined by a section of \(X\)
+over \(S\) inducing the unit section of \(X_{0}\) over \(S_{0}\), then
+\(H^{1}\bigl(X_{0},\Lie(X_{0}/S_{0})\bigr)=0\).%
+% typo?: printed ``identité sur \(S_0\)''; kept as printed
+{\renewcommand{\thefootnote}{(63)}\nde{This is used in XXIV, 1.13.}}
+\end{remark}
+
+\begin{corollary}{2.11}\label{III.2.11}
+Let \(S\), \(\mathcal{I}\) and \(\mathcal{J}\) be as in~2.1. Let \(Y\) be an
+\(S\)-group scheme flat over \(S\), \(X\) an \(S\)-group scheme,
+\(f\colon Y\to X\) a morphism of \(S\)-groups. The set of morphisms from \(Y\)
+to \(X\) deduced from \(f\) by conjugation by elements \(x\in X(S)\) inducing
+the unit of \(X(S_{\mathcal{J}})\) is isomorphic to the quotient
+\[
+E=\Hom_{\mathcal{O}_{S_{0}}}\bigl(\omega^{1}_{X_{0}/S_{0}},\mathcal{J}\bigr)
+  \big/
+  {\Hom_{\mathcal{O}_{S_{0}}}\bigl(\omega^{1}_{X_{0}/S_{0}},\mathcal{J}\bigr)}
+    ^{\mathrm{ad}(Y_{0})},
+\]
+where the second group is formed of the \(\mathcal{O}_{S_{0}}\)-morphisms
+\(\omega^{1}_{X_{0}/S_{0}}\to\mathcal{J}\) which, by every base change
+\(S'\to S_{0}\), give morphisms
+\(\omega^{1}_{X_{0}/S_{0}}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{S'}
+\to\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{S'}\)
+invariant under the action of \(Y_{0}(S')\) on the first factor.
+\end{corollary}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+By~2.1 (iii), one knows that the set sought is isomorphic to
+\(\Gamma(L_{0})/H^{0}(Y_{0},L_{0})\). Now
+\(\Gamma(L_{0})=\Hom_{\mathcal{O}_{S_{0}}}\bigl(\omega^{1}_{X_{0}/S_{0}},
+\mathcal{J}\bigr)\) and \(H^{0}(Y_{0},L_{0})\) is evidently none other than
+\(\Gamma(L_{0})^{\mathrm{ad}(Y_{0})}\) in the sense of the preceding statement.
+\end{proof}
+
+\begin{corollary}{2.12}\label{III.2.12}
+Under the conditions of~2.11, suppose moreover \(\omega^{1}_{X_{0}/S_{0}}\)
+locally free of finite rank. Then
+\[
+E\simeq\Gamma\bigl(S_{0},\Lie(X_{0}/S_{0})\otimes_{\mathcal{O}_{S_{0}}}
+\mathcal{J}\bigr)
+  \big/
+  H^{0}\bigl(Y_{0},\Lie(X_{0}/S_{0})\otimes_{\mathcal{O}_{S_{0}}}\mathcal{J}\bigr).
+\]
+\end{corollary}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+{\renewcommand{\thefootnote}{(64)}\nde{One has added the sentence which
+follows.}}
+Indeed, if \(\omega^{1}_{X_{0}/S_{0}}\) is locally free of finite rank, one has
+\(\mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}\bigl(\omega^{1}_{X_{0}/S_{0}},
+\mathcal{J}\bigr)
+\simeq\Lie(X_{0}/S_{0})\otimes_{\mathcal{O}_{S_{0}}}\mathcal{J}\).
+\end{proof}
+
+\begin{corollary}{2.13}\label{III.2.13}
+Suppose moreover \(Y_{0}\) diagonalizable. Then
+\[
+E\simeq\Gamma\bigl(S_{0},\Lie(X_{0}/S_{0})\otimes_{\mathcal{O}_{S_{0}}}
+\mathcal{J}\bigr)
+  \big/
+  \Gamma\bigl(S_{0},\Lie(X_{0}/S_{0})^{\mathrm{ad}(Y_{0})}
+    \otimes_{\mathcal{O}_{S_{0}}}\mathcal{J}\bigr)
+\]
+where \(\Lie(X_{0}/S_{0})^{\mathrm{ad}(Y_{0})}\) may be constructed as the
+factor of the decomposition of~I, 4.7.3, corresponding to the zero character
+of \(Y_{0}\).
+\end{corollary}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+Indeed, if \(Y_{0}\simeq\mathrm{D}_{S_{0}}(M)\), one has by \loccit a
+decomposition into a direct sum:
+\[
+\Lie(X_{0}/S_{0})
+  =\Lie(X_{0}/S_{0})_{0}
+  \oplus
+  \bigoplus_{\substack{m\in M\\ m\neq 0}}\Lie(X_{0}/S_{0})_{m}.
+\]
+On tensoring by \(\mathcal{J}\), one finds an analogous decomposition for
+\(\Lie(X_{0}/S_{0})\otimes_{\mathcal{O}_{S_{0}}}\mathcal{J}\), whence the
+relation
+\[
+H^{0}\bigl(Y_{0},\Lie(X_{0}/S_{0})\otimes\mathcal{J}\bigr)
+  \simeq
+  \Gamma\bigl(S_{0},\Lie(X_{0}/S_{0})_{0}\otimes_{\mathcal{O}_{S_{0}}}
+    \mathcal{J}\bigr).
+\]
+\end{proof}
+
+\begin{corollary}{2.14}\label{III.2.14}
+Suppose moreover \(S_{0}\) affine. Then
+\[
+E\simeq\Gamma\Bigl(S_{0},
+  \bigl[\Lie(X_{0}/S_{0})\big/\Lie(X_{0}/S_{0})^{\mathrm{ad}(Y_{0})}\bigr]
+  \otimes_{\mathcal{O}_{S_{0}}}\mathcal{J}\Bigr).
+\]
+\end{corollary}
+
+\sgasection{3}{Infinitesimal extensions of a group scheme}
+\label{III.sec.3}
+
+Still in the notations of \No 0 (\(S\), \(\mathcal{I}\), \(\mathcal{J}\),
+etc.), let us give ourselves an \(S\)-scheme \(X\) and suppose \(X_{\mathcal{J}}\)
+endowed with a group structure. We propose to find the \(S\)-group structures
+on \(X\) inducing on \(X_{\mathcal{J}}\) the given structure.
+
+From now on, we suppose \(X\) flat over \(S\). Let \(\mathcal{C}\) be the
+category of \(S\)-schemes flat over \(S\). One therefore has
+\(X\in\Ob\mathcal{C}\). We shall denote by \(Y\), \resp \(M\), the functor on
+\(\mathcal{C}\) defined by \(X^{+}\), \resp \(L'_{X}\). The canonical morphism
+\(p_{X}\colon X\to X^{+}\) defines a morphism of \(\widehat{\mathcal{C}}\)
+\[
+p\colon X\longrightarrow Y
+\]
+and the operation of \(L'_{X}\) on \(X\) in \(\widehat{\Sch}_{/S}\) defines an
+operation of \(M\) on \(X\) in \(\widehat{\mathcal{C}}\). One checks at once
+that \(X\) does indeed thus become formally principal homogeneous under
+\(M_{Y}\) over \(Y\) (\cf 0.2 (i) and~0.4).
+
+The operation of \(X^{+}\) on \(L'_{X}\) defined in~0.8 (denoted \(\Ad\) in
+\loccit) defines an operation, denoted \(f\), of \(Y\) on \(M\). One knows, on
+the other hand (0.5), that
+\[
+\Hom_{\widehat{\mathcal{C}}}(Z,M)\simeq\Hom_{S_{0}}(Z_{0},L_{0}),
+  \qquad Z\in\Ob\mathcal{C},
+\]
+where \(L_{0}\) is the functor defined in~0.5.
+
+\begin{lemma}{3.1}\label{III.3.1}
+\begin{enumeratei}
+\item The condition \((+)_{n}\) of~1.3 is satisfied for every positive integer
+\(n\).
+\item If one lets the \(S_{0}\)-group \(X_{0}\) act on the \(S_{0}\)-functor
+\(L_{0}\) via its adjoint representation, one has a canonical isomorphism
+\[
+H^{*}(X_{0},L_{0})\simeq H^{*}(Y,M),
+\]
+(the first cohomology is computed in \(\Sch_{/S_{0}}\), the second in
+\(\mathcal{C}\)).
+\end{enumeratei}
+\end{lemma}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+The two parts of the lemma result from the relation:
+\begin{align*}
+\Hom_{\widehat{\mathcal{C}}}(Y,M)
+  &\simeq\Hom_{\widehat{\Sch}_{/S_{0}}}\bigl(X^{+}\times_{S}S_{0},L_{0}\bigr) \\
+  &\simeq\Hom_{S_{0}}(X_{0},L_{0}) \\
+  &\simeq\Hom_{\widehat{\mathcal{C}}}(X,M),
+\end{align*}
+which comes at once from the definition of \(M\) as a
+\(\prod_{S_{0}/S}\). This relation being more generally satisfied on replacing
+\(X\), \(Y\) by \(X^{n}\), \(Y^{n}\), one deduces from it that every morphism
+\(X^{n}\to M\) factors uniquely through \(Y^{n}\), which entails \((+)_{n}\).
+One also deduces from it the relation \(C^{*}(Y,M)=C^{*}(X_{0},L_{0})\), which
+entails~(ii).
+\end{proof}
+
+We may therefore apply the constructions of~1.3. In particular:
+
+\begin{lemma}{3.2}\label{III.3.2}
+Let \(P\colon X\times_{S}X\to X\) be a morphism. For \(P\) to induce the group
+law of \(X_{\mathcal{J}}\), it is necessary and sufficient that \(P\) be an
+admissible composition law (\cf 1.3.2) on \(X\).
+\end{lemma}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+Indeed, for \(P\) to induce the group law of \(X_{\mathcal{J}}\), it is
+necessary and sufficient that \(P\) lift the group law of \(X^{+}\), or again
+that of \(Y\). One therefore only has to show that every morphism \(P\) lifting
+the group law of \(X_{\mathcal{J}}\) satisfies the identity \((++)\) of~1.3.2
+(ii), which is exactly what one saw in~0.8.
+\end{proof}
+
+\begin{proposition}{3.3}\label{III.3.3}
+Let \(S\) be a scheme and \(S_{0}\) a closed subscheme defined by a nilpotent
+ideal. Let \(X\) be an \(S\)-scheme flat, and quasi-compact or locally of finite
+presentation over \(S\). Let \(P\colon X\times_{S}X\to X\) be a composition law
+on \(X\). For \(P\) to be a group law, it is necessary and sufficient that the
+following two conditions be satisfied:
+\begin{enumeratei}
+\item \(P\) is associative.
+% typo?: printed \(X_0=X\times_X S_0\); kept as printed
+\item \(P\) induces on \(X_{0}=X\times_{X}S_{0}\) a group law.
+\end{enumeratei}
+\end{proposition}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+These conditions are evidently necessary. Let us show that they are sufficient.
+Suppose first that \(X\to S\) has a section. As \(X(S')\) is then nonempty
+for each \(S'\to S\), it suffices%
+{\renewcommand{\thefootnote}{(65)}\nde{One has corrected the original, by
+removing the inadequate reference to an exercise of Bourbaki on semigroups
+(\cf [BAlg], \S~I.2, Exercises~9 to~13) and by indicating the role of the
+translations on the left and on the right; see the following N.D.E.}}
+to show that, for every \(x\in X(S')\), the translations \emph{on the left and
+on the right} by \(x\) are isomorphisms of \(X_{S'}\).%
+{\renewcommand{\thefootnote}{(66)}\nde{Let \(E\) be a nonempty set equipped
+with an associative composition law, such that every left translation
+\(\ell_{x}\) is bijective; let us fix \(x_{0}\in E\). There exists a unique
+\(e\in E\) such that \(x_{0}\cdot e=x_{0}\); then
+\(x_{0}\cdot e\cdot x=x_{0}\cdot x\) entails \(e\cdot x=x\), for every
+\(x\in E\). On the other hand, for every \(x\) there exists a unique \(x'\)
+such that \(x\cdot x'=e\). Suppose moreover that there exists \(b\in E\) such
+that the right translation \(r_{b}\) is injective. Then, for every \(x\), the
+equality \(x\cdot e\cdot b=x\cdot b\) gives \(x\cdot e=x\) (\ie \(e\) is a
+neutral element), and \(x\cdot x'\cdot x=x=x\cdot e\) entails \(x'\cdot x=e\),
+\ie \(x'\) is the inverse of \(x\) on the left and on the right, hence \(E\) is
+a group.\endgraf
+Note that the hypothesis ``\(r_{b}\) injective'' is necessary: on every set
+\(E\) one may define a composition law by \(x\cdot y=y\), for all
+\(x,y\in E\); then every left translation is the identity (whence the
+associativity of the law), but for every \(y\) one has \(r_{y}(E)=\{y\}\),
+hence \(E\) is not a group if \(|E|>1\).}}
+
+One may evidently suppose \(S'=S\); the translation \(t\) in question induces
+on \(X_{0}\) a translation \(t_{0}\) of \(X_{0}\), which is therefore an
+automorphism since \(X_{0}\) is a group. One concludes by flatness
+(SGA~1 III~4.2).%
+{\renewcommand{\thefootnote}{(67)}\nde{Since \(X\) and \(X_{0}\) have the same
+underlying topological space and \(t_{0}\) is an automorphism, \(t\) is a
+homeomorphism, hence an \emph{affine} morphism, \cf Exp.~VI\(_{\mathrm{B}}\),
+2.9.1 or EGA~IV\(_{4}\), 18.12.7.1. It therefore suffices to see that if \(J\)
+is a nilpotent ideal of a ring \(\Lambda\), and \(\phi\colon A\to B\) a morphism
+of \(\Lambda\)-algebras, with \(B\) \emph{flat} over \(\Lambda\), such that
+\(\phi\otimes_{\Lambda}(\Lambda/J)\) is bijective, then \(\phi\) is bijective.
+By the ``nilpotent Nakayama lemma'', \(\phi\) is surjective; moreover, \(B\)
+being flat over \(\Lambda\), one also has
+\(\Ker(\phi)\otimes_{\Lambda}(\Lambda/J)=0\), whence \(\Ker(\phi)=0\), hence
+\(\phi\) is bijective.}}
+
+No longer assuming now that \(X\) has a section over \(S\), suppose that there
+exists an \(S'\to S\) such that \(X_{S'}\) has a section over \(S'\). Then
+\(X_{S'}\) is an \(S'\)-group by what one has just seen; let us consider its
+unit section \(e'\). The inverse image of \(e'\) under
+\(\mathrm{pr}_{i}\colon S'\times_{S}S'\to S'\) (\(i=1,2\)) is the unit section
+of \(X_{S''}\) for the group law inverse image of \(P_{S'}\) under
+\(\mathrm{pr}_{i}\). But as \(P\) is ``defined over \(S\)'', these two group
+laws coincide, hence also their unit section. One therefore has
+\(\mathrm{pr}_{1}^{*}(e')=\mathrm{pr}_{2}^{*}(e')\).
+
+If \(S'\to S\) is a descent morphism (\cf Exp.~IV \No 2), there will exist a
+section of \(X\) giving \(e'\) by extension of the base, and one will be done.
+As \(X_{X}\) has a section over \(X\) (the diagonal section), one sees that it
+now suffices to prove that \(X\to S\) is a descent morphism. Now it is flat and
+surjective, and quasi-compact or locally of finite presentation, hence covering
+for (\fpqc), hence a descent morphism (Exp.~IV, \No 6).
+\end{proof}
+
+\begin{remark*}
+In fact the hypothesis that \(X\to S\) be quasi-compact or locally of finite
+presentation is superfluous, by virtue of the following result, which the
+reader will prove as an exercise on Exposé~IV:
+
+Under the conditions of the text on \(S\) and \(S_{0}\), if \(X\to S\) is a
+flat morphism and \(X_{0}\to S_{0}\) a morphism covering for (\fpqc), then
+\(X\to S\) is a descent morphism.
+\end{remark*}
+
+\begin{lemma}{3.4}\label{III.3.4}
+For two admissible composition laws on \(X\) to be equivalent (\cf 1.3.5), it
+is necessary and sufficient that they be deduced from one another by an
+automorphism of \(X\) over \(S\) inducing the identity on \(X_{\mathcal{J}}\).
+\end{lemma}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+Indeed, the morphisms constructed in~1.3.1 are exactly those of the preceding
+statement (by~0.7).%
+{\renewcommand{\thefootnote}{(68)}\nde{Indeed, by the proof of~0.7, the
+\(S\)-endomorphisms of \(X\) inducing the identity on \(X_{\mathcal{J}}\) are
+the automorphisms \(m\cdot\mathrm{id}_{X}\), for \(m\) running through
+\(M(X)=\Hom_{S}(X,M)\) (for every \(S'\to S\) and \(x\in X(S')\), one has
+\((m\cdot\mathrm{id}_{X})(x)=m(x)\cdot x\)). Now, by the proof of~3.1, each
+\(m\colon X\to M\) factors uniquely as a morphism \(h\) from \(Y=X^{+}\) to
+\(M\), and therefore \(m\cdot\mathrm{id}_{X}\) is the automorphism \(u_{h}\)
+introduced in~1.3.1. The lemma then follows from the definition of the
+equivalence, \cf 1.3.4 and~1.3.5.}}
+\end{proof}
+
+Taking all the preceding results into account, Proposition~1.3.6 gives:
+
+\begin{theorem}{3.5}\label{III.3.5}
+Let \(S\) be a scheme, \(\mathcal{I}\) and \(\mathcal{J}\) two ideals on \(S\)
+such that \(\mathcal{I}\supset\mathcal{J}\),
+\(\mathcal{I}\cdot\mathcal{J}=0\), and \(S_{0}\) and \(S_{\mathcal{J}}\) the
+closed subschemes of \(S\) which they define. Let \(X\) be an \(S\)-scheme flat
+over \(S\) (and locally of finite presentation or quasi-compact over \(S\)),
+and \(X_{0}\) and \(X_{\mathcal{J}}\) the schemes obtained by base change.
+Suppose \(X_{\mathcal{J}}\) endowed with a structure of
+\(S_{\mathcal{J}}\)-group, and denote by \(L_{0}\) the \(S_{0}\)-functor in
+abelian groups defined by the formula
+\[
+\Hom_{S_{0}}(T,L_{0})
+  =\Hom_{\mathcal{O}_{T}}\bigl(
+    \omega^{1}_{X_{0}/S_{0}}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T},\,
+    \mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T}\bigr)
+\]
+on which \(X_{0}\) acts via its adjoint representation.
+\begin{enumeratei}
+\item For there to exist an \(S\)-group structure on \(X\) inducing the given
+structure on \(X_{\mathcal{J}}\), it is necessary and sufficient that the
+following conditions be satisfied:
+\begin{enumerate}[label={($i_{\arabic*}$)}]
+\item There exists a morphism of \(S\)-schemes \(X\times_{S}X\to X\) inducing
+the group law of \(X_{\mathcal{J}}\).
+\item A certain obstruction class belonging to \(H^{3}(X_{0},L_{0})\) (defined
+canonically by the datum of \(X\) and of the group law of \(X_{\mathcal{J}}\))
+is zero.
+\end{enumerate}
+\item If the conditions of~(i) are satisfied, the set \(E\) of group laws on
+\(X\) inducing the given law of \(X_{\mathcal{J}}\) is a principal homogeneous
+set under \(Z^{2}(X_{0},L_{0})\), and \(E\) modulo the \(S\)-automorphisms of
+\(X\) inducing the identity on \(X_{\mathcal{J}}\), is a principal homogeneous
+set under \(H^{2}(X_{0},L_{0})\).
+\end{enumeratei}
+\end{theorem}
+
+\begin{proof}
+\renewcommand{\qedsymbol}{}
+{\renewcommand{\thefootnote}{(69)}\nde{One has added what follows.}}
+Indeed, every morphism of \(S\)-schemes \(f\colon X\times_{S}X\to X\) inducing
+the group law of \(X_{\mathcal{J}}\) is, by~3.2, an \emph{admissible}
+composition law on \(X\); then, by~1.3.6 (i), the existence of an
+\emph{associative} admissible composition law \(P\colon X\times_{S}X\to X\) is
+equivalent to the vanishing of a certain class \(c(f)\in H^{3}(X_{0},L_{0})\),
+and in this case, by~3.3, \(P\) is a group law. This proves~(i), and~(ii) then
+follows from~3.3 and~1.3.6 (ii).
+\end{proof}
+
+\begin{remark}{3.5.1}\label{III.3.5.1}
+{\renewcommand{\thefootnote}{(70)}\nde{One has added this remark, analogous
+to~4.5.1, in order to introduce the notation \(\delta(\mu,\mu')\) (or
+\(\delta(X,X')\)), used in~4.38; consequently, one has also added in~3.5 (ii)
+above the part concerning \(E\) itself.}}
+If \(\mu\), \(\mu'\) are group laws on \(X\) inducing the given law of
+\(X_{\mathcal{J}}\), one therefore obtains a cocycle
+\(\delta(\mu,\mu')\in Z^{2}(X_{0},L_{0})\), the sign convention chosen being
+that \(\mu'=\delta(\mu,\mu')\cdot\mu\), \ie for every \(S'\to S\) and
+\(x,y\in X(S')\),
+\begin{equation*}
+\mu'(x,y)=\delta(\mu,\mu')(x_{0},y_{0})\cdot\mu(x,y).
+\end{equation*}%
+{\renewcommand{\thefootnote}{(71)}\nde{One has conformed to the sign
+conventions of the original, so as to have in~4.38 (5) the equality
+\(\partial^{1}d(X,X')=\delta(X,X')\) (see also N.D.E.~(54)).}}
+\end{remark}
+% Remark 3.5.1 continues on the next page.

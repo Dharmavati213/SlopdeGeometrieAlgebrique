@@ -1,0 +1,452 @@
+% French PDF pp. 49--54; proof of 4.6.1 continues from en-08.
+Taking \(Y\) representable first, one deduces an isomorphism
+\(Q\simeq F\). Taking arbitrary \(Y\) next, one deduces the
+announced form of \(\Hom(Y,F)\). Finally considering the
+canonical morphism \(X\to Q\), one sees at once that it
+corresponds to the sub-\(X\)-sheaf \(R\) of \(X\times X\),
+which completes the proof.
+\end{proof}
+
+\begin{corollary}{4.6.2}\label{IV.4.6.2}
+Let \(G\) be any subfunctor of \(F\) such that
+\(\Hom(X,G)\subset\Hom(X,F)\) contains \(R\).
+Then the canonical morphism \(p:X\to F\) factors through \(G\).
+Since \(p\) is covering (4.4.9 and 4.4.3), it follows that
+\(G\) is a refinement of \(F\).
+In particular, every subsheaf \(G\) of \(F\) satisfying the
+preceding condition is equal to \(F\) (4.3.12).
+\end{corollary}
+
+\numpara{4.6.3}\label{IV.4.6.3}
+We shall now concern ourselves with the case where \(X,R\)
+are representable. Let us first introduce some terminology.
+Besides conditions (a) to (d) introduced in 3.4.1, we shall use
+other conditions on a family (M) of morphisms of \(\mathcal C\),
+which we state below, recalling conditions (a) to (c) already
+given, for completeness.
+
+(a) (M) is stable under base extension.
+
+(b) The composite of two elements of (M) is in (M).
+
+(c) Every isomorphism is an element of (M).
+
+\((\mathrm d_{\mathcal T})\) Every element of (M) is covering.
+\nde{Recall that \(\mathcal T\) denotes the given topology on
+\(\mathcal C\), less fine than the canonical topology.}
+
+\((\mathrm e_{\mathcal T})\) Let \(f:X\to Y\) be a morphism of
+\(\mathcal C\). If there exists a refinement \(R\) of \(Y\)
+such that for every \(Y'\to R\), \(X\times_Y Y'\to Y'\)
+is an element of (M), then \(f\) is an element of (M).
+
+Recall that (a) and (b) imply
+
+(a') The cartesian product of two elements of (M) is an element of (M).
+
+On the other hand, (a) and \((\mathrm d_{\mathcal T})\)
+imply, by 4.3.9:
+
+(d') Every element of (M) is a universal effective epimorphism.
+
+\numpara{4.6.4}\label{IV.4.6.4}
+The preceding conditions are satisfied by the family of covering
+morphisms, denoted \((\mathrm M_{\mathcal T})\), when
+\(\mathcal C\) possesses fibered products.
+Indeed (cf. 4.2.3), (a) follows from (C 1), (b) from (C 2),
+(c) from (C 4), \((\mathrm d_{\mathcal T})\) from the definition,
+and \((\mathrm e_{\mathcal T})\) from (C 5).
+The results that we shall establish for a family satisfying
+these conditions will apply in particular to the family
+\((\mathrm M_{\mathcal T})\). In particular, one may take
+for \(\mathcal T\) the canonical topology, and for (M)
+the family of universal effective epimorphisms.
+
+\begin{lemma}{4.6.5}\label{IV.4.6.5}
+Let (M) be a family of morphisms satisfying the preceding
+properties (a) to \((\mathrm e_{\mathcal T})\).
+Let \(R\) be a \(\mathcal C\)-equivalence relation in
+\(X\in\Ob\mathcal C\), of type (M).
+Let \(\widetilde X\) be the sheaf defined by \(X\),
+\(\widetilde R\) the \(\widetilde{\mathcal C}\)-equivalence
+relation in \(\widetilde X\) defined by \(R\), and
+\(\widetilde X/\widetilde R\) the quotient sheaf.
+For \(R\) to be (M)-effective, it is necessary and sufficient
+that \(\widetilde X/\widetilde R\) be representable.
+If this is so, \(\widetilde X/\widetilde R\) is represented
+by the quotient \(X/R\).
+\end{lemma}
+\begin{proof}
+First suppose that \(R\) is (M)-effective and write \(Y=X/R\).
+The canonical morphism \(p:X\to Y\) is an element of (M),
+hence covering by \((\mathrm d_{\mathcal T})\).
+The corresponding morphism
+\[
+\widetilde p:\widetilde X\longrightarrow
+\widetilde X/\widetilde R
+\]
+is therefore a universal effective epimorphism of
+\(\widetilde{\mathcal C}\) (4.4.3), hence identifies
+\(\widetilde X/\widetilde R\) with the quotient of
+\(\widetilde X\) by the equivalence relation \(R'\)
+defined in \(\widetilde X\) by \(\widetilde p\).
+Since the canonical functor \(\mathcal C\to
+\widetilde{\mathcal C}\) commutes with fibered products,
+\(R'\) is precisely \(\widetilde R\), since \(R\) is the
+equivalence relation defined by \(p\).
+
+Conversely, suppose that \(\widetilde X/\widetilde R\)
+is represented by an object \(Y\) of \(\mathcal C\).
+Let \(p:X\to Y\) be the morphism deduced from the canonical
+morphism \(\widetilde X\to\widetilde X/\widetilde R\);
+it is a covering morphism by 4.4.3.
+It is clear, as before, that \(R\) is the equivalence relation
+defined by \(p\). It remains only to show that \(p\in(\mathrm M)\).
+Now the cartesian square
+\[
+\xymatrix{
+R\ar[r]^{\sim}\ar[dr]_{p_2}
+ & X\times_Y X\ar[r]\ar[d]_{\mathrm{pr}_2} & X\ar[d]^p\\
+ & X\ar[r]_p & Y }
+\]
+shows that \(p\) becomes \(p_2\), which is an element of (M),
+after base change by the covering morphism \(p\).
+One concludes by \((\mathrm e_{\mathcal T})\).
+\end{proof}
+
+\begin{corollary}{4.6.5.1}\label{IV.4.6.5.1}
+\nde{This corollary has been added.}
+Let (M) satisfy the preceding properties (a) to
+\((\mathrm e_{\mathcal T})\), and let \(f:G\to G'\) be a
+morphism of \(\mathcal C\)-groups such that \(f\in(\mathrm M)\).
+Suppose that \(\Ker(f)\) is representable (which is the
+case if \(\mathcal C\) possesses a final object \(e\)).
+Then the equivalence relation in \(G\) defined by \(H=\Ker(f)\)
+is (M)-effective, and \(G'\) represents the quotient sheaf
+\(\widetilde G/\widetilde H\) for the topology \(\mathcal T\).
+\end{corollary}
+\begin{proof}
+This follows from 4.6.5 and 3.4.7.1.
+\end{proof}
+We are now in a position to state the principal result of this number.
+
+\begin{theorem}{4.6.6}\label{IV.4.6.6}
+Let (M) be a family of morphisms satisfying axioms (a) to
+\((\mathrm e_{\mathcal T})\) of 4.6.3.
+Let \(R\) be a \(\mathcal C\)-equivalence relation of type
+(M) (cf. 3.4.3) in the object \(X\) of \(\mathcal C\).
+Consider the functor \(F\in\Ob\widehat{\mathcal C}\)
+defined as follows:
+\[
+F(S)=\left\{\begin{array}{l}
+\text{sub-}S\text{-sheaves }Z\text{ of }X_S\text{ stable under }R\times S\\
+\text{whose quotient by }R_Z\text{ is }S
+\end{array}\right\}.
+\]
+Let \(F_0\) be the subfunctor of \(F\) defined as follows:
+\(F_0(S)\) consists of the representable \(Z\in F(S)\), that is:
+\[
+F_0(S)=\left\{\begin{array}{l}
+\text{sub-}\mathcal C_{/S}\text{-objects }Z\text{ of }X_S
+\text{ stable under }R\times S,\\
+\text{such that }R_Z\text{ is (M)-effective with quotient }S\\
+\text{(i.e. such that }Z\to S\text{ belongs to (M) and }R_Z\simeq Z\times_S Z)
+\end{array}\right\}.
+\]
+Then:
+
+(i) The morphism \(p\in\Hom(X,F)=F(X)\) defined by the
+subobject \(R\) of \(X\times X\) identifies \(F\) with the
+quotient sheaf of \(X\) by \(R\).
+
+(ii) The following conditions are equivalent:
+
+a) \(F\) is representable.
+
+b) \(F_0\) is representable.
+
+c) \(R\) is (M)-effective.
+
+Under these conditions, \(F=F_0=X/R\).
+
+(iii) Let (N) be a family of morphisms stable under base
+change, such that for every covering family \(\{S_i\to S\}\)
+and every family \(\{T_i\to S_i\}\) of morphisms of (N),
+every descent datum on the \(T_i\) relative to \(\{S_i\to S\}\)
+is effective. Suppose that \(X\) is base-changeable (cf. 1.6.0)
+and that the morphism \(R\to X\times X\) is an element of (N).
+Then \(F_0=F\).
+\end{theorem}
+\begin{proof}
+(i) has already been proved (4.6.1).
+
+(ii) One has seen the equivalence of a) and c), as well as the
+equality \(F=X/R\). It remains to prove that b) or c) implies
+\(F_0=F\). First remark, as indeed asserted in the statement,
+that \(F_0\) is a subfunctor of \(F\); indeed, for every
+\(S\in\Ob\mathcal C\) and every \(Z\in F_0(S)\), the
+morphism \(Z\to S\) is base-changeable, hence
+\(Z\times_S S'\) is an element of \(F_0(S')\) for every
+\(S'\to S\). Since \(R\in F(X)\) belongs to \(F_0(X)\),
+4.6.2 shows that b) implies \(F_0=F\).
+
+Now suppose that c) holds and let \(Q\) be an object of
+\(\mathcal C\) representing \(X/R\).
+Then the morphism \(X\to Q\) is an element of (M), and for
+every \(S\in\Ob\mathcal C\) and every \(Z\in F(S)\),
+diagram (*) of 4.6.1 shows that
+\(Z=S\times_{(Q\times S)}(X\times S)\) is representable,
+and \(Z\to S\) belongs to (M), hence \(Z\in F_0(S)\).
+
+(iii) Let \(f\in\Hom(S,F)\) correspond to \(Z\in F(S)\).
+One must show that \(f\) factors through \(F_0\), that is,
+that \(Z\) is representable. This is first clear if \(f\)
+factors through \(X\), by virtue of:
+
+\begin{lemma}{4.6.7}\label{IV.4.6.7}
+Let \(x_0\in X(S)\). The image of \(x_0\) in \(F(S)\)
+corresponds to the subsheaf \(Z\) of \(X_S\) defined by
+the two cartesian squares
+\[
+\xymatrix{
+X_S\ar[r]^{\mathrm{id}_{X_S}\times x_0}
+ & X_S\times_S X_S\ar[r] & X\times X\\
+Z\ar[u]\ar[r] & R_S\ar[u]\ar[r] & R\ar[u] }.
+\]
+\end{lemma}
+\begin{proof}
+This lemma follows at once from the description of the
+morphism \(X\to F\).
+\end{proof}
+Let us return to the proof of the theorem.
+If \(f\) factors through \(X\), then \(Z\) is representable,
+and, since \(R\to X\times X\) is an element of (N),
+so is \(Z\to X_S\).
+In general \(f\) does not necessarily factor through \(X\);
+but, since \(X\to F\) is covering (4.4.3), there exists by
+4.4.8 (vii) a covering family \(\{S_i\to S\}\), and for
+each \(i\) a morphism \(S_i\to X\) making the diagram
+\[
+\xymatrix{X\ar[r] & F\\ S_i\ar[u]\ar[r] & S\ar[u]_f }
+\]
+commutative.
+By the preceding argument, the morphism \(f_i:S_i\to F\)
+defined by the preceding diagram belongs to \(\Hom(S_i,F_0)\)
+and corresponds to the subsheaf \(Z\times_S S_i\) of \(X_{S_i}\).
+The morphism \(Z\times_S S_i\to X_{S_i}\) is an element of (N),
+and the family \(X_{S_i}\to X_S\) is covering.
+It therefore remains only to establish:
+
+\begin{proposition}{4.6.8}\label{IV.4.6.8}
+Let \(\{S_i\to S\}\) be a covering family, and \(Z\) a sheaf
+over \(S\). Suppose that for each \(i\), the \(S_i\)-functor
+\(Z\times_S S_i\) is represented by an object \(T_i\).
+Then the family of the \(T_i\) is endowed with a canonical
+descent datum relative to \(S_i\to S\).
+For \(Z\) to be representable, it is necessary and sufficient
+that this datum be effective; if it is so, the
+\og descended\fg{} object represents \(Z\).
+\end{proposition}
+\begin{proof}
+First remark that by 4.4.3, \(S_i\to S\) is a universal
+effective epimorphic family in \(\widetilde{\mathcal C}\),
+hence a descent family in \(\widetilde{\mathcal C}\) (2.3).
+If \(Z\) is represented by the object \(T\), then \(T\times_S S_i\)
+(considered as a sheaf) is isomorphic to \(Z\times_S S_i\),
+hence the descent datum on the \(T_i\) is effective, and
+the descended object (unique) is isomorphic to \(Z\).
+Conversely, suppose that the canonical descent datum on the
+\(T_i\) is effective, and let \(T\) be the descended object.
+Since the family \(\{S_i\to S\}\) is a descent family in
+\(\widetilde{\mathcal C}\), there exists an \(S\)-morphism
+\(T\to Z\) which by base extension to each \(S_i\) gives
+back the canonical morphism \(T_i\to Z\times_S S_i\).
+This morphism is locally an isomorphism; since \(T,Z\)
+are sheaves, it follows from 4.5.8 that it is an isomorphism.
+\end{proof}
+
+\end{proof}
+\begin{corollary}{4.6.9}\label{IV.4.6.9}
+Let \(R\) be an (M)-effective equivalence relation in \(X\).
+For every sheaf \(F\), the map
+\[
+\Hom(X/R,F)\longrightarrow\Hom(X,F)
+\]
+identifies the first set with the subset of the second consisting
+of morphisms compatible with \(R\).
+\end{corollary}
+\begin{corollary}{4.6.10}\label{IV.4.6.10}
+Let \(\mathcal T'\) be a topology less fine than \(\mathcal T\),
+for which the morphisms of (M) are covering.
+Under the conditions of 4.6.6 (iii), \(X/R\) is also the
+quotient sheaf of \(X\) by \(R\) in every topology intermediate
+between \(\mathcal T'\) and the canonical topology.
+\end{corollary}
+\begin{remark}{4.6.11}\label{IV.4.6.11}
+If, in the statement of 4.6.6 (iii), one assumes moreover
+that, under the hypotheses of the text, if one denotes by
+\(T\) the descended object, the morphism \(T\to S\) is an
+element of (N), then the inclusion morphisms \(Z\hookrightarrow X_S\)
+are also elements of (N), as follows at once from the
+construction of \(Z\) by descent.
+\end{remark}
+\begin{remark}{4.6.12}\label{IV.4.6.12}
+The implications c) \(\Rightarrow\) b) \(\Rightarrow\) a)
+and c) \(\Rightarrow[F_0=F=X/R]\) have been established
+without recourse to the \og sufficient\fg{} part of Lemma 4.6.5,
+which is the only place where condition \((\mathrm e_{\mathcal T})\)
+is used. They therefore remain valid if (M) satisfies only
+conditions (a) to \((\mathrm d_{\mathcal T})\).
+An example of such a family (M) is that of base-changeable
+covering morphisms (compare with 4.6.4).
+In the case of the canonical topology, these are precisely
+the universal effective epimorphisms. One therefore has:
+\end{remark}
+
+\begin{corollary}{4.6.13}\label{IV.4.6.13}
+Let \(R\) be a universal effective equivalence relation in \(X\).
+Then the object \(X/R\) of \(\mathcal C\) is the quotient sheaf
+of \(X\) by \(R\) for the canonical topology.
+It represents the following functor:
+\((X/R)(S)\) is the set of sub-\(\mathcal C_{/S}\)-objects
+\(Z\) of \(X_S\) stable under \(R\times S\) and such that
+the induced equivalence relation is universal effective
+with quotient \(S\).
+\end{corollary}
+Similarly, for an arbitrary topology:
+\begin{corollary}{4.6.14}\label{IV.4.6.14}
+Let (M) be the family of base-changeable covering morphisms.
+If \(R\) is an (M)-effective equivalence relation in \(X\),
+then the object \(X/R\) of \(\mathcal C\) is the quotient
+sheaf of \(X\) by \(R\), and represents the functor \(F_0\)
+of 4.6.6.
+\end{corollary}
+
+\begin{scholium}{4.6.15}\label{IV.4.6.15}
+We may now add the following precisions to 4.5.5.
+Whereas in questions involving exclusively projective limits
+(fibered products, algebraic structures, etc.), one may,
+by the results of Exposé I and 4.5.5, identify \(\mathcal C\)
+indifferently with a full subcategory of
+\(\widetilde{\mathcal C}\) or \(\widehat{\mathcal C}\),
+the same is not true in questions mixing projective and
+inductive limits. In all questions involving both projective
+limits and inductive limits, in particular passages to
+the quotient (example: group structure on the quotient of
+a group by an invariant subgroup), we shall consider the
+given category as embedded in the category of sheaves;
+thus if \(R\) is a \(\mathcal C\)-equivalence relation in
+the object \(X\) of \(\mathcal C\), \(X/R\) will denote
+the quotient sheaf of \(X\) by \(R\) (previously denoted
+by \(j(X)/j(R)\)), hence, in the case where this sheaf is
+representable, the object which it represents.
+The preceding results show that in the most important cases
+a quotient in \(\mathcal C\) will also be a quotient in the
+category of sheaves; in any event we forbid ourselves the
+use of the notation \(X/R\) for a quotient in \(\mathcal C\)
+which does not coincide with the quotient in
+\(\widetilde{\mathcal C}\) (for example, one which is not
+universal), thus modifying the definitions of no.\ 3.
+
+To study a problem of the above type, one therefore first
+works in the category of sheaves, where all the customary
+results are valid (cf. no.\ 4.4), then specializes the
+results obtained to the initial category, using the results
+of this number and, when available, criteria for effectiveness
+of descent. We shall see examples of this method in the
+following numbers.
+\end{scholium}
+
+\sgasection{4.7}{Use of effectiveness criteria: isomorphism theorem}
+In this number we give an example of the use of effectiveness
+criteria. The initial data are a topology \(\mathcal T\)
+on \(\mathcal C\) (still less fine than the canonical topology),
+a family (M) of morphisms of \(\mathcal C\) satisfying axioms
+(a) to \((\mathrm e_{\mathcal T})\) of 4.6.3, and a family
+(N) of morphisms of \(\mathcal C\) which may satisfy the following axioms:
+
+(a) (N) is stable under base extension.
+
+\((\mathrm f_{\mathcal T})\) \og Morphisms of (N) descend
+under the given topology\fg; that is: for every
+\(S\in\Ob\mathcal C\), every covering family \(\{S_i\to S\}\)
+and every family \(\{T_i\to S_i\}\) of morphisms of (N),
+every descent datum on the \(T_i\) relative to \(\{S_i\to S\}\)
+is effective, and if one denotes by \(T\) the descended object,
+the morphism \(T\to S\) is an element of (N).
+
+Since every element of (M) is covering (condition
+4.6.3 \((\mathrm d_{\mathcal T})\)),
+\((\mathrm f_{\mathcal T})\) implies the following axiom:
+\nde{Axiom \((\mathrm f_{\mathrm M})\) (which appeared before
+Proposition 4.7.2) has been placed here.}
+
+\((\mathrm f_{\mathrm M})\) If \(Y\to X\) is an element
+of (N) and \(X\to X_1\) an element of (M), every descent
+datum on \(Y\) relative to \(X\to X_1\) is effective;
+if one denotes by \(Y_1\) the descended object, \(Y_1\to X_1\)
+is an element of (N).
+
+Let us immediately point out an example of this situation,
+which will be treated later: \(\mathcal C\) is the category
+of schemes, \(\mathcal T\) the faithfully flat quasi-compact
+topology; (M) the family of faithfully flat quasi-compact
+morphisms, (N) the family of closed immersions or that
+of quasi-compact immersions.
+\nde{Cf. \(\S\) 6.4, see also VIA, 5.3.1.}
+
+Recall the principal result of 4.6.6 (taking account of 4.6.11):
+\begin{proposition}{4.7.1}\label{IV.4.7.1}
+If \(X\) is a base-changeable object of \(\mathcal C\),
+\(R\) an equivalence relation of type (M) in \(X\)
+such that \(R\to X\times X\) is an element of (N),
+with (N) satisfying (a) and \((\mathrm f_{\mathcal T})\),
+then the quotient sheaf \(X/R\) is defined by
+\[
+(X/R)(S)=\left\{\begin{array}{l}
+\text{sub-}S\text{-objects }Z\text{ of }X_S\text{ stable under }R\times S,\\
+\text{such that }Z\to X_S\text{ belongs to (N), }Z\to S\text{ is covering}\\
+\text{(or an element of (M)), and }R_Z\simeq Z\times_S Z
+\end{array}\right\}.
+\]
+\end{proposition}
+Moreover, one has:
+\begin{proposition}{4.7.2}\label{IV.4.7.2}
+Let \(X\in\Ob\mathcal C\), and \(R\) an (M)-effective
+equivalence relation in \(X\). Let (N) be a family of
+morphisms satisfying (a) and \((\mathrm f_{\mathrm M})\).
+
+For every subobject \(Y\) of \(X\) stable under \(R\)
+and such that \(Y\to X\) belongs to (N), the equivalence
+relation induced in \(Y\) by \(R\) is (M)-effective, and
+the quotient \(Y/R_Y=Y'\) is a subobject of \(X'=X/R\)
+such that \(Y'\to X'\) belongs to (N).
+
+The map \(Y\mapsto Y'\) is a bijection between the set
+of subobjects \(Y\) of \(X\) stable under \(R\), such
+that \(Y\to X\) belongs to (N), and the set of subobjects
+\(Y'\) of \(X'\) such that \(Y'\to X'\) belongs to (N).
+The inverse map is \(Y'\mapsto Y'\times_{X'}X\).
+\end{proposition}
+\begin{proof}
+Since \(R\) is (M)-effective, the morphism \(X\to X'\)
+belongs to (M). Let \(Y'\) be a subobject of \(X'\)
+such that the canonical morphism \(Y'\to X'\) belongs
+to (N). Then the subobject \(Y=Y'\times_{X'}X\) of
+\(X\) is stable under \(R\), and the morphism \(Y\to X\)
+(resp. \(Y\to Y'\)) belongs to (N) (resp. (M)), since
+(N) and (M) are stable under base change.
+Denote by \(R_Y\) the equivalence relation induced in
+\(Y\) by \(R\). By 4.4.11, the quotient sheaf \(Y/R_Y\)
+is represented by \(Y'\), and hence, by 4.6.5,
+\(R_Y\) is (M)-effective.
+
+Conversely, let us show that every subobject \(Y\) of
+\(X\) stable under \(R\), such that the structural
+morphism \(Y\to X\) belongs to (N), is obtained in this way.
+Indeed, if \(Y\) is stable under \(R\), its two images
+in \(R=X\times_{X'}X\) are identical, and \(Y\) is
+endowed with a descent datum relative to \(X\to X'\);
+the desired result follows, since the family (N)
+satisfies axiom \((\mathrm f_{\mathrm M})\).
+\end{proof}

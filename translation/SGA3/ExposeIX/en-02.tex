@@ -1,0 +1,147 @@
+% PDF pp. 7--12.
+Whence the desired conclusion.
+\begin{proposition}{2.11}\label{IX.2.11}
+Let $S$ be a prescheme, $G$ an $S$-group of multiplicative type and of finite type over $S$, $H$ a subgroup of multiplicative type of $G$, and $K=G/H$ (which is a quotient group of multiplicative type of $G$).
+
+(i) Suppose $G$ trivial, i.e. diagonalizable. Then there exists a partition of $S$ into open and closed subsets $S_i$ such that for every $i$, $H_{S_i}$ and $K_{S_i}$ are diagonalizable. In particular, if $S$ is connected, $H$ and $K$ are diagonalizable.
+
+(ii) Same statement as in (i), replacing ``diagonalizable'' by ``isotrivial'', provided $S$ is connected, or locally connected, or quasi-compact.
+
+(iii) Suppose $G$ locally trivial (resp. locally isotrivial, resp. quasi-isotrivial); then the same is true of $K$ and $H$.
+\end{proposition}
+\begin{proof}
+(i) By hypothesis one has $G=D_S(M)$, where $M$ is a commutative group of finite type. For every quotient group $M_i$ of $M$, let $H_i=D_S(M_i)$ be the corresponding diagonalizable subgroup of $G$ (VIII 3.1). Let $S_i$ be the set of $s\in S$ such that $H_s=(H_i)_s$; by 2.10, $S_i$ is open and closed, and one has $H_{S_i}=(H_i)_{S_i}$, so $H_{S_i}$ is diagonalizable, and hence so is $K_{S_i}$ (VIII 3.1). Evidently the $S_i$ are pairwise disjoint; I say that they cover $S$. This follows from the fact that for every $s$, $H_s$ is diagonalizable, as a subgroup of the diagonalizable group $G_s$ (cf. 8.1 below\nde{The erroneous reference to IV 4.7.5 has been corrected. Note that \No8 of the present expos\'e is independent of nos. 3 to 7.}), and hence $H_s$ is of the form $D_{\kappa(s)}(M_i)$ by VIII, 1.5 and 3.2 b). Restricting to the family of nonempty $S_i$, conclusion (i) appears.
+
+(ii) By hypothesis, there exists $S'\to S$ étale finite surjective such that $G_{S'}$ is diagonalizable. Thus every point of $S'$ has a neighborhood $U'$, both open and closed, such that $H_{U'}$ and $K_{U'}$ are diagonalizable. Then the image $U$ of $U'$ in $S$ is both open and closed, and $S'\to S$ still induces a finite surjective étale morphism $U'\to U$; one therefore sees that every point $s$ of $S$ has an open and closed neighborhood $U$ such that $H_U$ and $K_U$ are isotrivial. Conclusion (ii) follows immediately.
+
+(iii) Follows immediately from (i) and (ii) and the definitions. Note also that the ``quasi-isotrivial'' case will also follow from the more general fact ``finite type $\Rightarrow$ quasi-isotrivial'', announced in 1.2 (cf. X 4.5).
+\end{proof}
+
+\sgasection{3}{Infinitesimal properties: Lifting and conjugacy theorems}
+The fundamental infinitesimal properties of groups of multiplicative type follow from the following theorem:
+\begin{theorem}{3.1}\label{IX.3.1}
+Let $S$ be an affine scheme, $H$ an $S$-group of multiplicative type, $\cal F$ a quasi-coherent sheaf over $S$ on which $H$ acts (I 4.7). Then one has
+\[
+H^i(H,\cal F)=0\qquad\text{for }i>0,
+\]
+where $H^i$ is the Hochschild cohomology studied in Exp. I, \S5.
+\end{theorem}
+Indeed, by loc. cit., 5.3, Hochschild cohomology is made explicit, in terms of the affine rings $A$ of $S$ and $B$ of $G$, and of the module $M$ over $A$ defining $\cal F$, as the cohomology of a complex of $A$-modules $C^\bullet(H,M)$, whose formation commutes with every base change $A\to A'$. Consequently, for a base change $A\to A'$ with $A'$ flat over $A$, one shall have
+\[
+H^i(H',\cal F')=H^i(H,\cal F)\otimes_A A',
+\]
+and therefore, if one even supposes $A'$ faithfully flat over $A$, to prove that $H^i(H,\cal F)$ is zero it suffices to prove that $H^i(H',\cal F')$ is so. This remark reduces us to checking 3.1 in the case where $G$ is diagonalizable; in this case it was proved in I 5.3.3.
+% typo?: G rather than H retained as printed.
+Using the results of Expos\'e III, we shall draw from 3.1 various consequences of a geometric nature:
+\begin{theorem}{3.2}\label{IX.3.2}
+Let $S$ be an affine scheme, $S_0$ an affine subscheme defined by an ideal $\cal J$, $H$ a group of multiplicative type over $S$, $G$ any group prescheme over $S$, $u,v:H\to G$ two group homomorphisms, $u_0,v_0:H_0\to G_0$ the homomorphisms deduced from $u,v$ by the base change $S_0\to S$. If $\cal J^2=0$ and $u_0=v_0$, then there exists a $g\in G(S)$ such that $v=\operatorname{int}(g)\circ u$ and $g_0=e$.
+\end{theorem}
+This follows from III 2.1 (ii) and from 3.1 (vanishing of $H^1$).
+\begin{corollary}{3.3}\label{IX.3.3}
+Under the preliminary conditions of 3.2, suppose in addition $G$ smooth over $S$, but, on the other hand, suppose only $\cal J$ nilpotent (not necessarily of square zero). If there exists $g_0\in G_0(S_0)$ such that $v_0=\operatorname{int}(g_0)\circ u_0$, then $g_0$ lifts to a $g\in G(S)$ such that $v=\operatorname{int}(g)\circ u$.
+\end{corollary}
+By induction on the integer $n$ such that $\cal J^n=0$, one is reduced to the case where $\cal J$ has square zero. Moreover, $G$ being smooth over $S$, one can lift $g_0$ to an element $g'$ of $G(S)$. Replacing $v$ by $v'=\operatorname{int}(g')\circ u$ if necessary, one is then reduced to situation 3.2.
+% typo?: the replacement formula for v retained as printed.
+\begin{corollary}{3.4}\label{IX.3.4}
+Under the preliminary conditions of 3.2, with $\cal J$ nilpotent, suppose in addition $u$ central (for example $G$ commutative). Then $u_0=v_0$ implies $u=v$.
+\end{corollary}
+Indeed, reduction to the case of $\cal J$ of square zero is again immediate, and then it suffices to apply 3.2. In particular:
+\begin{corollary}{3.5}\label{IX.3.5}
+Let $S,S_0,H,G$ be as in 3.2, with $\cal J$ nilpotent. Let $u:H\to G$ be a homomorphism of $S$-groups such that $u_0:H_0\to G_0$ is the unit homomorphism; then $u$ is the unit homomorphism.
+\end{corollary}
+\begin{theorem}{3.6}\label{IX.3.6}
+Let $S$ be an affine scheme, $S_0$ a subscheme defined by a nilpotent ideal $\cal J$, $H$ a group of multiplicative type over $S$, $G$ a group prescheme smooth over $S$, $u_0:H_0\to G_0$ a homomorphism of the $S_0$-groups deduced by the base change $S_0\to S$.
+
+Then there exists a homomorphism $u:H\to G$ of $S$-groups lifting $u_0$ (and by 3.3 two such liftings $u,u'$ are conjugate by an element of $G(S)$ reducing to the unit element of $G(S_0)$).
+\end{theorem}
+This follows from III 2.1 and 2.3, and from 3.1 (vanishing of $H^2$ for the existence of the lifting of $u_0$, vanishing of $H^1$ for uniqueness up to conjugacy).
+
+One can similarly prove the following variants of 3.2 to 3.6 (which in fact imply the preceding statements, by applying them to the graph subgroups of the homomorphisms considered in 3.2 to 3.6):
+\begin{theorem}{3.2 bis}\label{IX.3.2bis}
+Let $S$ be an affine scheme, $S_0$ a subscheme defined by an ideal $\cal J$, $G$ an $S$-group prescheme, $H,H'$ subgroup preschemes of multiplicative type, $G_0,H_0,H'_0$ the groups over $S_0$ deduced by the base change $S_0\to S$. If $\cal J^2=0$ and $H_0=H'_0$, then there exists $g\in G(S)$ such that $H'=\operatorname{int}(g)(H)$ and $g_0=e$.
+\end{theorem}
+\begin{corollary}{3.3 bis}\label{IX.3.3bis}
+Under the preliminary conditions of 3.2 bis, suppose in addition $G$ smooth over $S$, and $\cal J$ nilpotent (not necessarily of square zero). Let $g_0\in G_0(S_0)$ be such that $H'_0=\operatorname{int}(g_0)(H_0)$; then $g_0$ lifts to $g\in G(S)$ such that $H'=\operatorname{int}(g)(H)$.
+\end{corollary}
+\begin{corollary}{3.4 bis}\label{IX.3.4bis}
+Under the preliminary conditions of 3.2 bis, suppose $\cal J$ nilpotent, $H$ central (for example $G$ commutative). Then $H_0=H'_0$ implies $H=H'$.
+\end{corollary}
+\begin{theorem}{3.6 bis}\label{IX.3.6bis}
+Let $S$ be an affine scheme, $S_0$ a subscheme defined by a nilpotent ideal $\cal J$, $G$ a smooth $S$-group prescheme, $H_0$ a subgroup prescheme of $G_0=G\times_S S_0$, of multiplicative type. Then:
+
+(a) There exists a subgroup prescheme $H$ of $G$, flat over $S$, such that $H\times_S S_0=H_0$.
+
+(b) Such an $H$ is necessarily of multiplicative type.
+
+(c) Finally, by 3.2 bis, two such liftings $H,H'$ of $H_0$ are conjugate by an element $g\in G(S)$ reducing to the unit element of $G(S_0)$.
+\end{theorem}
+Let us show how one can prove 3.2 bis (of which 3.3 bis and 3.4 bis are an immediate consequence) and assertion (a) of 3.6 bis. The latter follows from 3.1 (vanishing of $H^2$) and III 4.37 (ii). Similarly, 3.2 bis follows from 3.1 (vanishing of $H^1$) and III 4.37 (i), at least when $G$ and $H$ are smooth over $S$.
+
+But using the results of the next expos\'e, one can very simply deduce 3.2 bis and 3.6 bis, in the general form stated here, from 3.2 resp. 3.6. For 3.2 bis, it indeed suffices to note that by X 2.1, $H$ and $H'$ are isomorphic, which reduces us to 3.2.
+
+For 3.6 bis, one notes that $H_0$ is necessarily of finite type over $S_0$:\nde{The original indicated: ``by 2.1 b), since its fibers are so''. The editors did not understand this argument and have substituted the following one for it.} indeed, as a subprescheme of $G_0$, which is smooth over $S_0$, $H_0$ is locally of finite type over $S_0$; now by 2.1 a), $H_0$ is affine over $S_0$, and hence of finite type over $S_0$. Then, by X 4.5, $H_0$ is quasi-isotrivial and therefore comes, by X 2.1, from a group of multiplicative type $H$ over $S$.\nde{The following sentence has been expanded.} Then, by 3.6, there exists a homomorphism of $S$-groups $u:H\to G$ lifting the immersion $H_0\hookrightarrow G_0$; since $H$ and $H_0$ (resp. $G$ and $G_0$) have the same underlying topological space, and since for every $h\in H$ the morphism $\OO_{G,u(h)}\to\OO_{H,h}$ is surjective (for it is so after reduction modulo $\cal J$, which is nilpotent), $u$ is also an immersion (cf. EGA I, 4.2.2).
+
+Finally, for every lifting $H$ of $H_0$ to a flat subgroup of $G$, $H$ is necessarily of multiplicative type by X 2.3,\nde{One will note that X 2.3 depends essentially on theorem 3.6 of the present expos\'e.} which also proves assertion (b) of 3.6 bis. (The reader will check that results 3.2 bis to 3.6 bis are not used in Expos\'e X, so there is no vicious circle!)
+\begin{proposition}{3.8}\label{IX.3.8}
+\nde{The original numbering has been preserved: there is no \No3.7.} Let $S$ be a prescheme, $S_0$ a closed subprescheme defined by a locally nilpotent ideal $\cal J$, $G$ an $S$-group of multiplicative type, $X$ an $S$-prescheme locally of finite presentation. Suppose that $G$ acts on $X$ in such a way that $G_0=G\times_S S_0$ acts trivially on $X_0=X\times_S S_0$. Under these conditions, $G$ acts trivially on $X$.
+\end{proposition}
+The proof is that of III 2.4 b); one can also reduce to loc. cit. by noting that 3.8 reduces immediately to the case where $G$ is diagonalizable, which is the case considered in loc. cit.
+\begin{corollary}{3.9}\label{IX.3.9}
+Let $S,S_0$ be as above, and $u:G\to H$ a homomorphism of $S$-groups, with $G$ of multiplicative type and $H$ locally of finite presentation over $S$. Suppose that the homomorphism $u_0:G_0\to H_0$ deduced by base change $S_0\to S$ is central. Then $u$ is central.
+\end{corollary}
+Indeed, it suffices to apply 3.8 by putting $X=H$ and making $G$ act on $H$ by $(g,h)\mto\operatorname{int}(u(g))\cdot h=u(g)h u(g)^{-1}$.
+
+\sgasection{4}{The density theorem}
+This theorem (cf. 4.7 below),\footnote{All results from 4.1 to 4.6 are contained in EGA IV$_3$, 11.10, to which we refer the reader for a formal exposition of the notion of schematic density.} together with the theorem\nde{The ``algebraicity'' theorem 7.1.} of \No7, will be the essential tool in the present expos\'e and the following two for passing from the infinitesimal properties of groups of multiplicative type which we have just developed to the ``finite'' properties.
+\begin{definition}{4.1}\label{IX.4.1}
+Let $X$ be a prescheme. One says that a family $(Z^i)_{i\in I}$ of subpreschemes of $X$ is \emph{schematically dense} if for every open subset $U$ of $X$ and every closed subprescheme $U'$ of $U$ containing the $Z^i\cap U$, one has $U'=U$.
+
+One says that a subprescheme $Z$ of $X$ is schematically dense in $X$ if the family consisting of $Z$ is so.
+\end{definition}
+One sees immediately (cf. EGA IV$_3$, 11.10.1) that the definition is equivalent to saying that for every open subset $U$ of $X$, every section $f$ of $\OO_U$ which is zero on the $Z^i\cap U$ is zero, which also means that the intersection of the kernels of the canonical homomorphisms
+\[
+u_i:\OX\to(v_i)_*(\OO_{Z^i})
+\]
+is zero, where $v_i:Z^i\to X$ is the canonical immersion.\nde{All the schematic density results stated in EGA IV$_3$, \S11.10 follow from the results on ``separating families of homomorphisms'' proved in loc. cit., \S11.9, to which we shall refer in some of the following N.D.E.} When $X$ is over a prescheme $S$, this is also equivalent to saying that for every open subset $U$ of $X$ and every pair $(u,v)$ of morphisms from $U$ to an $S$-prescheme $Y$ separated over $S$, coinciding on the $Z^i\cap U$, one has $u=v$. (Indeed, the relation $u=v$ is equivalent to the relation $U'=U$, where $U'$ is the inverse image of the diagonal of $Y\times_S Y$ by the $S$-morphism $X\to Y\times_S Y$ defined by $(u,v)$; this diagonal is a closed subprescheme of $Y\times_S Y$, so $U'$ is a closed subprescheme of $U$ containing the $Z^i\cap U$ by the hypothesis on $(u,v)$, so if the family $(Z^i)$ is schematically dense, one shall have $U'=U$, whence $u=v$; one sees the converse implication by simply taking $Y=\Spec\OS[T]$.)
+
+With the terminology introduced in EGA I, end of \No9.5, saying that the subprescheme $Z$ of $X$ is schematically dense also means that $X$ is identical to the closure subprescheme of $Z$ in $X$.
+\begin{lemma}{4.2}\label{IX.4.2}
+Let $X$ be a flat $S$-prescheme, $(Z^i)_{i\in I}$ a family of subpreschemes of $X$, flat over $S$. Let $S_0$ be a subprescheme of $S$, defined by a nilpotent ideal $\cal J$; suppose the modules $\cal J^n/\cal J^{n+1}$ locally free over $S_0$.
+
+Let $X_0,Z^i_0$ be deduced from $X,Z^i$ by the base change $S_0\to S$. Then if the family $(Z^i_0)_{i\in I}$ is schematically dense in $X_0$, the family $(Z^i)_{i\in I}$ is so in $X$.
+\end{lemma}
+Suppose $\cal J^{n+1}=0$ (where $n\geq0$), and argue by induction on $n$, the assertion being trivial for $n=0$. Defining $S_m,X_m,Z^i_m$ by reduction modulo $\cal J^{m+1}$ as usual, the induction hypothesis already implies that $(Z^i_{n-1})_{i\in I}$ is schematically dense in $X_{n-1}$. Replacing $X$ by an induced open subset if necessary, we are reduced to proving that every section $f$ of $\OX$ vanishing on the $Z^i$ is zero.
+
+Now the section $f_{n-1}$ of $\OO_{X_{n-1}}=\OX/\cal J^n\OX$ defined by $f$ vanishes on the $Z^i_{n-1}$, and is therefore zero, so $f$ is a section of $\cal J^n\OX$. Since $X$ is flat over $S$, one has
+\[
+\cal J^n\OX\isomfrom\cal E\otimes_{\OO_{S_0}}\OO_{X_0},\qquad\text{where }\cal E=\cal J^n=\cal J^n/\cal J^{n+1}.
+\]
+Similarly, since each $Z^i$ is flat over $S$, the restriction $f_i$ of $f$ to $Z^i$ may be regarded as a section of:
+\[
+\cal J^n\OO_{Z^i}\isomfrom\cal E\otimes_{\OO_{S_0}}\OO_{Z^i_0}.
+\]
+By hypothesis the $f_i$ are zero. Now $\cal E$ is locally free by hypothesis, and hence so is $\cal F=\cal E\otimes_{\OO_{S_0}}\OO_{X_0}$. Thus $f$ is a section of the locally free module $\cal F$ over $X_0$, such that for every $i$ its restriction to $Z^i_0$ is zero. Since $(Z^i_0)_{i\in I}$ is schematically dense in $X_0$, it follows immediately that $f$ is zero. \hfill Q.E.D.
+\begin{corollary}{4.3}\label{IX.4.3}
+Let $X$ be a locally noetherian $S$-prescheme flat over $S$, $(Z^i)_{i\in I}$ a family of subpreschemes of $X$ flat over $S$. Suppose that for every $s\in S$, the family $(Z^i_s)_{i\in I}$ of fibers at $s$ is schematically dense in $X_s$. Then the family $(Z^i)_{i\in I}$ is schematically dense in $X$.
+\end{corollary}
+Replacing $X$ by an induced open subset if necessary, one is reduced to proving that every section $f$ of $\OX$ whose restriction to the $Z^i$ is zero is zero.\nde{The original has been expanded in what follows.} For this it suffices to prove that for every $x\in X$ the image of $f$ in $\OO_{X,x}$ is zero. Denote by $\goth m_x$ the maximal ideal of $\OO_{X,x}$, and by $\goth m_s$ that of $\OO_{S,s}$, where $s$ is the image of $x$ in $S$. As $\OO_{X,x}$ is noetherian, one has $\bigcap_{n\in\NN}\goth m_x^n=0$, whence, a fortiori, $\bigcap_{n\in\NN}\OO_{X,x}\goth m_s^n=0$.
+
+Thus it suffices to show that for every integer $n$ the section induced by $f$ on $X\times_S\Spec(\OO_{S,s}/\goth m_s^{n+1})$ is zero. By hypothesis the family of fibers $Z^i_s=Z^i\otimes_{\OO_{S,s}}\kappa(s)$ is schematically dense in the fiber $X_s=X\otimes_{\OO_{S,s}}\kappa(s)$. This therefore reduces us to the case where $S$ is the spectrum of a local ring whose maximal ideal $J$ is nilpotent, $S_0=\Spec\kappa(s)$, and the hypotheses of 4.2 are satisfied, whence the conclusion.
+\begin{lemma}{4.4}\label{IX.4.4}
+Let $S$ be a locally noetherian prescheme, $X$ a locally noetherian $S$-prescheme flat over $S$, $(Z^i)_{i\in I}$ a family of subpreschemes of $X$ flat over $S$. Suppose that for every $s\in S$, the family $(Z^i_s)_{i\in I}$ of fibers at $s$ is schematically dense in $X_s$.
+
+Then for every base change $S'\to S$ ($S'$ not necessarily locally noetherian), the family $(Z_n^{i'})_{i\in I}$ is schematically dense in $X'$ (i.e. the family $(Z^i)_{i\in I}$ is universally schematically dense in $X$ relative to $S$, cf. EGA IV$_3$, Def. 11.10.8).
+\end{lemma}
+% typo?: the unexplained subscript n in this statement and following proof is retained as printed.
+\begin{proof}
+\nde{For another proof, using a reduction to the case where $S'$ is locally noetherian (and 4.3 and 4.5 as here), see EGA IV$_3$, 11.9.16 and 11.9.12 (N.B. in the last line of the proof of 11.9.16, replace 11.9.5 by 11.9.12).} Let $f'$ be a section of $\OO_{X'}$ over an open subset $U'$ of $X'$ which vanishes on the $Z_n^{i'}$; one must show that $f'$ is zero. Let $s'\in S'$; it suffices to prove that $f'$ is zero at all points of $U'$ over $s'$. Let $s$ be the image of $s'$ in $S$; replacing $S,S'$ by the spectra of the local rings at $s,s'$ if necessary, one may suppose $S,S'$ local and $s,s'$ their closed points. One may further suppose $X$ affine, hence
+\[
+S=\Spec(A),\quad S'=\Spec(A'),\quad X=\Spec(B),\quad X'=\Spec(B'),\quad B'=B\otimes_A A'
+\]
+where $A,A'$ are local, $A\to A'$ is a local homomorphism, and $A,B$ are noetherian. One may also suppose $U'$ affine, of the form $X'_{g'}$, with $g'\in B'$.
+
+For every $A$-subalgebra $A''$ of $A'$, one considers $S''=\Spec(A'')$ and $X'',Z_n^{i''}$ deduced from $X,Z^i$ by the base change $S''\to S$, whence the diagram:
+\[
+\xymatrix{Z^i\ar[d]&Z_n^{i''}\ar[l]\ar[d]&Z_n^{i'}\ar[l]\ar[d]\\X\ar[d]&X''\ar[l]\ar[d]&X'\ar[l]\ar[d]\\S&S''\ar[l]&S'\ar[l].}
+\]
+% Proof continues in en-03.tex; diagram completes the sentence begun on PDF p. 12.

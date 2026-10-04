@@ -1,0 +1,317 @@
+It is representable by an affine scheme denoted~\(\mathbb{G}_{\mathrm{m}}\)
+\[
+\mathbb{G}_{\mathrm{m}} = \Spec \mathbb{Z}[T, T^{-1}] = \Spec \mathbb{Z}[\mathbb{Z}],
+\]
+where \(\mathbb{Z}[\mathbb{Z}]\) denotes the algebra of the group~\(\mathbb{Z}\) over the ring~\(\mathbb{Z}\). Indeed
+\[
+\mathbb{G}_{\mathrm{m}}(S) = \Hom_{\mathrm{Alg.}}(\mathbb{Z}[T, T^{-1}], \Gamma(S, \OS)) \simeq \Gamma(S, \OS)^{\times}.
+\]
+
+For every scheme~\(S\), one therefore has an \(S\)-group affine over~\(S\), denoted~\(\mathbb{G}_{\mathrm{m},S}\), which corresponds to the \(\OS\)-algebra \(\OS[\mathbb{Z}]\), with the diagonal map and the augmentation defined by:
+\[
+\Delta(x) = x \otimes x \quad\text{and}\quad \varepsilon(x) = 1, \qquad\text{for}\quad x \in \mathbb{Z}.
+\]
+
+\numpara{4.3.3}
+Let \(\mathbf{O}\) be the functor~\(\Ga\) endowed with its structure of \((\widehat{\mathbf{Sch}})\)-ring. It is represented by the scheme \(\Spec \mathbb{Z}[T]\), which one will denote by~\(\mathbb{O}\) when one considers it as endowed with its structure of \emph{ring scheme}.
+
+For every scheme~\(S\), \(\mathbb{O}_S = S \times_{\Spec \mathbb{Z}} \Spec \mathbb{Z}[T] = \Spec(\OS[T])\) is therefore a ring \(S\)-scheme, affine over~\(S\). (\emph{Nota}: in EGA~II 1.7.13, \(\mathbb{O}_S\) is denoted by \(S[T]\)).
+
+\numpara{4.3.3.1}
+{\renewcommand{\thefootnote}{(30)}\nde{This paragraph has been added; it will be useful later (\cf II~1.3).}}
+For every object~\(\mathbf{X}\) of \((\widehat{\mathbf{Sch}})\), \(\mathbf{O}(\mathbf{X}) = \Hom(\mathbf{X}, \mathbf{O})\) is endowed with a ring structure, functorial in~\(\mathbf{X}\). In particular, if \(X'\) is a scheme and if one is given morphisms \(x \colon X' \to \mathbf{X}\) and \(f \colon \mathbf{X} \to \mathbf{O}\) (i.e., \(f \in \mathbf{O}(\mathbf{X})\)), then \(f(x) = f \circ x\) is an element of \(\mathbf{O}(X') = \Gamma(X', \mathcal{O}_{X'})\).
+
+\par\addvspace{0.7\baselineskip}
+\noindent\textbf{Definition.}\ ---
+Let \(\pi \colon \mathbf{M} \to \mathbf{X}\) be a morphism of \((\widehat{\mathbf{Sch}})\), and let \(\mathbf{O}_{\mathbf{X}} = \mathbf{O} \times \mathbf{X}\). One says that \(\mathbf{M}\) is an \(\mathbf{O}_{\mathbf{X}}\)-\emph{module} if one is given, for every \(\mathbf{X}\)-scheme~\(X'\), a structure of \(\mathbf{O}(X')\)-module on \(\Hom_{\mathbf{X}}(X', \mathbf{M})\), functorial in~\(X'\).
+
+This amounts to giving a law of abelian \(\mathbf{X}\)-group \(\mu \colon \mathbf{M} \times_{\mathbf{X}} \mathbf{M} \to \mathbf{M}\) and an \og external law\fg{}
+\[
+\mathbf{O} \times \mathbf{M} = \mathbf{O}_{\mathbf{X}} \times_{\mathbf{X}} \mathbf{M} \longrightarrow \mathbf{M}, \qquad (f, m) \mapsto f \cdot m
+\]
+which is an \(\mathbf{X}\)-morphism (i.e.\ \(\pi(f \cdot m) = \pi(m)\)) and which, for every \(x \in \mathbf{X}(S)\), endows \(\mathbf{M}(x) = \{m \in \mathbf{M}(S) \mid \pi(m) = x\}\) with a structure of \(\mathbf{O}(S)\)-module.
+
+In this case, for every \(\mathbf{Y} \in {\Ob(\widehat{\mathbf{Sch}})}_{/\mathbf{X}}\) (not necessarily representable), \(\Hom_{\mathbf{X}}(\mathbf{Y}, \mathbf{M}) = \Gamma(\mathbf{M}_{\mathbf{Y}}/\mathbf{Y})\) is an \(\mathbf{O}(\mathbf{Y})\)-module, functorially in~\(\mathbf{Y}\).
+\par\addvspace{0.4\baselineskip}
+
+\sgasection{4.4}{Diagonalizable groups}
+\label{I.sec.4.4}
+
+\numpara{4.4.1}
+The construction of~\(\mathbb{G}_{\mathrm{m}}\) generalizes as follows: let \(M\) be a commutative group and \(M_{\mathbb{Z}}\) the group scheme associated with it by the procedure of~4.1. Consider the functor defined by
+\[
+\mathbf{D}(M)(S) = \Hom_{\mathrm{groups}}(M, \mathbb{G}_{\mathrm{m}}(S)) \simeq \Hom_{S\text{-Gr.}}(M_S, \mathbb{G}_{\mathrm{m},S}).
+\]
+It is a commutative \((\widehat{\mathbf{Sch}})\)-group which is representable by a \emph{group scheme} which one will denote by~\(\mathbf{D}(M)\); one will therefore have by definition:
+\[
+\mathbf{D}(M) \simeq \Hom_{(\mathrm{Sch})\text{-Gr.}}(M_{\mathbb{Z}}, \mathbb{G}_{\mathrm{m}}).
+\]
+Indeed, set
+\[
+\mathbf{D}(M) = \Spec \mathbb{Z}[M],
+\]
+where \(\mathbb{Z}[M]\) is the algebra of the group~\(M\) over the ring~\(\mathbb{Z}\); one has
+\[
+\mathbf{D}(M)(S) = \Hom_{\mathrm{Alg.}}(\mathbb{Z}[M], \Gamma(S, \OS)) \simeq \Hom_{\mathrm{groups}}(M, \Gamma(S, \OS)^{\times})
+\]
+by the very definition of the algebra \(\mathbb{Z}[M]\).
+
+\numpara{4.4.2}
+For every scheme~\(S\) one therefore has an \(S\)-group scheme affine over~\(S\)
+\[
+\mathbf{D}_S(M) = \mathbf{D}(M)_S = \Hom_{(\mathrm{Sch})\text{-Gr.}}(M_{\mathbb{Z}}, \mathbb{G}_{\mathrm{m}})_S = \Hom_{S\text{-Gr.}}(M_S, \mathbb{G}_{\mathrm{m},S}).
+\]
+It is associated with the \(\OS\)-bialgebra \(\OS[M]\), equipped with the diagonal map and the augmentation defined by
+\[
+\Delta(x) = x \otimes x \quad\text{and}\quad \varepsilon(x) = 1, \qquad\text{for}\quad x \in M.
+\]
+
+\numpara{4.4.3}
+If \(f \colon M \to N\) is a homomorphism of commutative groups, one defines in an evident way a morphism of \(S\)-groups
+\[
+\mathbf{D}_S(f) \colon \mathbf{D}_S(N) \longrightarrow \mathbf{D}_S(M),
+\]
+whence a \emph{functor}
+\[
+\mathbf{D}_S \colon M \mapsto \mathbf{D}_S(M)
+\]
+from the category of abelian groups to the category of affine \(S\)-groups over~\(S\), which one can also define as the composite of the functor \(M \mapsto M_S\) and of the functor \(M_S \mapsto \Hom_{S\text{-Gr.}}(M_S, \mathbb{G}_{\mathrm{m},S})\). This functor \emph{commutes with extensions of the base}.
+
+An \(S\)-group isomorphic to a group of the form \(\mathbf{D}_S(M)\) is said to be \emph{diagonalizable}. Let us note that the elements of~\(M\) are interpreted as certain characters of \(\mathbf{D}_S(M)\), that is, certain elements of \(\Hom_{S\text{-Gr.}}(\mathbf{D}_S(M), \mathbb{G}_{\mathrm{m},S})\). (\emph{Confer}~VIII~1).
+
+\numpara{4.4.4}
+Let us give some examples of diagonalizable groups. First, one has
+\[
+\mathbf{D}(\mathbb{Z}) = \mathbb{G}_{\mathrm{m}} \quad\text{and}\quad \mathbf{D}(\mathbb{Z}^{r}) = (\mathbb{G}_{\mathrm{m}})^{r}.
+\]
+One sets
+\[
+\bmu_n = \mathbf{D}(\mathbb{Z}/n\mathbb{Z}),
+\]
+and one calls it the group of \(n\)-th roots of unity. Indeed, one has
+\[
+\bmu_n(S) = \Hom_{\mathrm{groups}}(\mathbb{Z}/n\mathbb{Z}, \Gamma(S, \OS)^{\times}) = \{f \in \Gamma(S, \OS) \mid f^{n} = 1\}.
+\]
+
+The \(S\)-group \(\bmu_{n,S}\) corresponds to the \(\OS\)-algebra \(\OS[T]/(T^{n} - 1)\). Suppose in particular that \(S\) is the spectrum of a field~\(k\) of characteristic \(p = n\). Setting \(T - 1 = s\), one finds
+\[
+k[T]/(T^{p} - 1) = k[s]/(s^{p}),
+\]
+which shows that the underlying topological space of \(\bmu_{p,k}\) is reduced to a point, the local ring of this point being the artinian \(k\)-algebra \(k[s]/(s^{p})\). (In the same vein, let us point out that the \(S\)-schemes \(\mathbb{G}_{a,S}\), \(\mathbb{G}_{\mathrm{m},S}\), \(\mathbb{O}_S\) are \emph{smooth} over~\(S\), that \(\mathbf{D}_S(M)\) is flat over~\(S\) and that it is formally smooth (\resp \emph{smooth}) over~\(S\) if and only if no residual characteristic of~\(S\) divides the torsion of~\(M\) (\resp and if moreover \(M\) is of finite type), \cf Exp.~VIII, 2.1).
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{4.5. Other examples of groups.}\label{I.sec.4.5}\ ---
+The preceding procedure applies to the \og classical groups\fg{} (linear groups \(\mathbf{GL}_n\), symplectic groups \(\mathbf{Sp}_n\), orthogonal groups \(\mathbf{O}_n\), etc.). One will define for example \(\mathbf{GL}_n\) as representing the functor \(\mathbf{GL}_n\) such that:
+\[
+\mathbf{GL}_n(S) = \mathbf{GL}(n, \Gamma(S, \OS)) = \Aut_{\OS}(\OS^{n}).
+\]
+One can construct it for example as the open subscheme of \(\Spec \mathbb{Z}[T_{ij}]\) (\(1 \leqslant i, j \leqslant n\)) defined by the function \(f = \det((T_{ij})_{i,j=1}^{n})\), that is, \(\Spec \mathbb{Z}[T_{ij}, f^{-1}]\).
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{4.6. Module-functors in the category of schemes.}\label{I.sec.4.6}\ ---
+We propose to associate with every \(\OS\)-module on the scheme~\(S\), an \(\mathbf{O}_S\)-module (where \(\mathbf{O}_S\) denotes the ring-functor introduced in~4.3.3). This can be done in two different ways. To be precise:
+
+\begin{definition}{4.6.1}\label{I.4.6.1}
+--- Let \(S\) be a scheme. For every \(\OS\)-module~\(\mathcal{F}\) one denotes by \(\mathbf{V}(\mathcal{F})\) and \(\mathbf{W}(\mathcal{F})\) the contravariant functors on \(\Sch_{/S}\) defined by:
+\begin{align*}
+\mathbf{V}(\mathcal{F})(S') &= \Hom_{\mathcal{O}_{S'}}(\mathcal{F} \otimes_{\OS} \mathcal{O}_{S'}, \mathcal{O}_{S'}), \\
+\mathbf{W}(\mathcal{F})(S') &= \Gamma(S', \mathcal{F} \otimes_{\OS} \mathcal{O}_{S'})
+\end{align*}
+(where \(\mathcal{F} \otimes_{\OS} \mathcal{O}_{S'}\) denotes the inverse image over~\(S'\) of the \(\OS\)-module~\(\mathcal{F}\)).
+
+Then \(\mathbf{V}(\mathcal{F})\) and \(\mathbf{W}(\mathcal{F})\) are endowed in an evident way with a structure of \(\mathbf{O}_S\)-\emph{modules} (one recalls that \(\mathbf{O}_S(S') = \Gamma(S', \mathcal{O}_{S'}) = \mathbf{W}(\OS)(S')\)), in such a way that one has in fact defined two functors \(\mathbf{V}\) and \(\mathbf{W}\) from the category of \(\OS\)-modules to the category of \(\mathbf{O}_S\)-modules, \(\mathbf{V}\) being contravariant and \(\mathbf{W}\) covariant.
+\end{definition}
+
+We restrict ourselves in the rest of this paragraph to the case in which the \(\OS\)-modules in question are quasi-coherent, that is, we consider \(\mathbf{V}\) and \(\mathbf{W}\) as functors from the category \((\OS\text{-Mod.q.c.})\) of quasi-coherent \(\OS\)-modules to the category of \(\mathbf{O}_S\)-modules
+\begin{align*}
+\mathbf{V} &\colon (\OS\text{-Mod.q.c.})^{\circ} \longrightarrow (\mathbf{O}_S\text{-Mod.}), \\
+\mathbf{W} &\colon (\OS\text{-Mod.q.c.}) \longrightarrow (\mathbf{O}_S\text{-Mod.}).
+\end{align*}
+
+\begin{remark}{4.6.1.1}\label{I.4.6.1.1}
+--- {\renewcommand{\thefootnote}{(31)}\nde{The numbering 4.6.1.1 has been added, for later references.}}
+The reader will notice that, in the sequel, all the propositions which involve only the functor~\(\mathbf{W}\) are valid for arbitrary \(\OS\)-modules, not necessarily quasi-coherent.
+\end{remark}
+
+\begin{proposition}{4.6.2}\label{I.4.6.2}
+---
+\begin{enumeratei}
+\item The functors \(\mathbf{V}\) and \(\mathbf{W}\) commute with extension of the base: if \(S'\) is over~\(S\) and if \(\mathcal{F}\) is a quasi-coherent \(\OS\)-module, one has
+\[
+\mathbf{V}(\mathcal{F} \otimes \mathcal{O}_{S'}) \simeq \mathbf{V}(\mathcal{F})_{S'}
+\quad\text{and}\quad
+\mathbf{W}(\mathcal{F} \otimes \mathcal{O}_{S'}) \simeq \mathbf{W}(\mathcal{F})_{S'}.
+\]
+% typo: les application canoniques -> les applications canoniques
+\item The functors \(\mathbf{V}\) and \(\mathbf{W}\) are fully faithful: the canonical maps
+\begin{align*}
+\Hom_{\OS}(\mathcal{F}, \mathcal{F}') &\longrightarrow \Hom_{\mathbf{O}_S}(\mathbf{V}(\mathcal{F}'), \mathbf{V}(\mathcal{F})) \\
+\Hom_{\OS}(\mathcal{F}, \mathcal{F}') &\longrightarrow \Hom_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F}), \mathbf{W}(\mathcal{F}'))
+\end{align*}
+are bijective.
+\item The functors \(\mathbf{V}\) and \(\mathbf{W}\) are additive:
+\[
+\mathbf{V}(\mathcal{F} \oplus \mathcal{F}') \simeq \mathbf{V}(\mathcal{F}) \times_{S} \mathbf{V}(\mathcal{F}')
+\quad\text{and}\quad
+\mathbf{W}(\mathcal{F} \oplus \mathcal{F}') \simeq \mathbf{W}(\mathcal{F}) \times_{S} \mathbf{W}(\mathcal{F}').
+\]
+\end{enumeratei}
+\end{proposition}
+
+% typo: sur les définition -> sur les définitions
+Parts~(i) and~(iii) are evident from the definitions. For~(ii), one takes for~\(S'\) opens of~\(S\). We leave the proof to the reader (for~\(\mathbf{V}\), use EGA~II, 1.7.14).
+
+Let us recall (\cf 3.1.4) that if \(\mathcal{F}\), \(\mathcal{F}'\) are \(\OS\)-modules, \(\Hom_{\OS}(\mathcal{F}, \mathcal{F}')\) denotes the \(S\)-functor (in abelian groups) which to every \(S' \to S\) associates \(\Hom_{\mathcal{O}_{S'}}(\mathcal{F}_{S'}, \mathcal{F}'_{S'})\).
+
+\begin{proposition}{4.6.3}\label{I.4.6.3}
+--- {\renewcommand{\thefootnote}{(32)}\nde{The isomorphism \(\Hom_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F}), \mathbf{W}(\mathcal{F}')) \simeq \Hom_{\mathbf{O}_S}(\mathbf{V}(\mathcal{F}'), \mathbf{V}(\mathcal{F}))\) has been added.}}
+One has canonical morphisms in \((\mathbf{O}_S\text{-Mod.})\):
+\[
+\xymatrix{
+\Hom_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F}), \mathbf{W}(\mathcal{F}'))
+  & &
+\Hom_{\mathbf{O}_S}(\mathbf{V}(\mathcal{F}'), \mathbf{V}(\mathcal{F}))
+\\
+& \mathbf{W}(\mathcal{H}\mathit{om}_{\OS}(\mathcal{F}, \mathcal{F}'))
+  \ar[ul] \ar[ur]
+&
+}.
+\]
+\end{proposition}
+
+This follows immediately from 4.6.2~(i) and~(ii).
+
+\begin{notation}{4.6.3.1}\label{I.4.6.3.1}
+--- Let \(\mathcal{F}\) be a quasi-coherent \(\OS\)-module. One knows (EGA~II, 1.7.8) that the \(S\)-functor \(\mathbf{V}(\mathcal{F})\) is representable by an \(S\)-scheme affine over~\(S\), which one denotes by \(\mathbf{V}(\mathcal{F})\) and which one calls the vector fibration%
+{\renewcommand{\thefootnote}{(33)}\nde{\og vector bundle\fg\ has been replaced by \og vector fibration\fg; current usage being to call \og vector bundle of rank~\(r\)\fg\ a vector fibration which is locally trivial of rank~\(r\), i.e., whose sheaf of sections is locally isomorphic to \(\OS^{\oplus r}\).}}
+defined by~\(\mathcal{F}\):
+\[
+\mathbf{V}(\mathcal{F}) = \Spec(\mathcal{S}(\mathcal{F})),
+\]
+where \(\mathcal{S}(\mathcal{F})\) denotes the symmetric algebra of the \(\OS\)-module~\(\mathcal{F}\).%
+{\renewcommand{\thefootnote}{(34)}\nde{Let us point out here the articles [Ni04] (\resp [Ni02]) which show that if \(S\) is noetherian and \(\mathcal{F}\) is a coherent \(\OS\)-module, then \(\mathbf{W}(\mathcal{F})\) (\resp the \(S\)-group which to every \(T \to S\) associates \(\Aut_{\mathcal{O}_T}(\mathcal{F} \otimes \mathcal{O}_T)\)) is representable if and only if \(\mathcal{F}\) is locally free.}}
+\end{notation}
+
+\begin{proposition}{4.6.4}\label{I.4.6.4}
+--- Let \(\mathcal{F}\) and \(\mathcal{F}'\) be two quasi-coherent \(\OS\)-modules, and \(\mathcal{A}\) a quasi-coherent \(\OS\)-algebra. One has a functorial isomorphism:
+\[
+\Hom_S(\Spec(\mathcal{A}), \Hom_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F}'), \mathbf{W}(\mathcal{F}))) \isomto \Hom_{\OS}(\mathcal{F}', \mathcal{F} \otimes_{\OS} \mathcal{A}).
+\]
+\end{proposition}
+
+Indeed, if one denotes \(X = \Spec(\mathcal{A})\), the first member is canonically isomorphic to \(\Hom_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F}'), \mathbf{W}(\mathcal{F}))(X)\), that is, by definition, to
+\[
+\Hom_{\mathcal{O}_X}(\mathbf{W}(\mathcal{F}')_X, \mathbf{W}(\mathcal{F})_X) \simeq \Hom_{\mathcal{O}_X}(\mathbf{W}(\mathcal{F}' \otimes \mathcal{O}_X), \mathbf{W}(\mathcal{F} \otimes \mathcal{O}_X))
+\]
+(\cf 4.6.2~(i)), which by 4.6.2~(ii) may also be written
+\[
+\Hom_{\mathcal{O}_X}(\mathcal{F}' \otimes \mathcal{O}_X, \mathcal{F} \otimes \mathcal{O}_X) = \Hom_{\OS}(\mathcal{F}', \pi_*(\pi^*(\mathcal{F}))),
+\]
+where one denotes by \(\pi \colon X \to S\) the structural morphism. But, by EGA~II, 1.4.7, one has \(\pi_*(\pi^*(\mathcal{F})) \simeq \mathcal{F} \otimes \mathcal{A}\), which completes the proof.
+
+\begin{corollary}{4.6.4.1}\label{I.4.6.4.1}
+--- One has a canonical isomorphism
+\[
+\mathbf{W}(\mathcal{F} \otimes \mathcal{A}) \simeq \Hom_S(\Spec(\mathcal{A}), \mathbf{W}(\mathcal{F})).
+\]
+\end{corollary}
+
+Indeed,%
+{\renewcommand{\thefootnote}{(35)}\nde{The original has been spelled out in what follows.}}
+let \(f \colon S' \to S\) be an \(S\)-scheme and \(X' = X \times_S S'\); one has a cartesian square
+\[
+\xymatrix{
+X' \ar[r]^{f'} \ar[d]_{\pi'} & X \ar[d]^{\pi} \\
+S' \ar[r]_{f} & S
+}
+\]
+and by EGA~II, 1.5.2, \(X'\) is affine over~\(S'\) and \(\pi'_*(\mathcal{O}_{X'}) = f^*(\mathcal{A})\). One therefore has
+\[
+\Hom_S(\Spec(\mathcal{A}), \mathbf{W}(\mathcal{F}))(S') = \Hom_{S'}(\Spec(f^*(\mathcal{A})), \mathbf{W}(f^*(\mathcal{F})))
+\]
+and by 4.6.4 applied to \(f^*(\mathcal{F})\), \(\mathcal{F}' = \mathcal{O}_{S'}\) and \(f^*(\mathcal{A})\), this equals
+\[
+\Gamma(S', f^*(\mathcal{F}) \otimes f^*(\mathcal{A})) = \Gamma(S', f^*(\mathcal{F} \otimes \mathcal{A})) = \mathbf{W}(\mathcal{F} \otimes \mathcal{A})(S').
+\]
+
+\begin{proposition}{4.6.5}\label{I.4.6.5}
+--- If \(\mathcal{F}\) and \(\mathcal{F}'\) are two locally free \(\OS\)-modules of finite type, the morphisms of~4.6.3 are isomorphisms.
+\end{proposition}
+
+Indeed, for every \(S' \to S\), one has
+\[
+\begin{aligned}
+\mathbf{W}(\mathcal{H}\mathit{om}_{\OS}(\mathcal{F}, \mathcal{F}'))(S')
+ &= \Gamma(S', \mathcal{H}\mathit{om}_{\OS}(\mathcal{F}, \mathcal{F}') \otimes \mathcal{O}_{S'})\\
+ &= \Hom_{\mathcal{O}_{S'}}(\mathcal{F} \otimes \mathcal{O}_{S'}, \mathcal{F}' \otimes \mathcal{O}_{S'}).
+\end{aligned}
+\]
+But the second member is indeed isomorphic to
+\[
+\Hom_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F}), \mathbf{W}(\mathcal{F}'))(S')
+\]
+and to
+\[
+\Hom_{\mathbf{O}_S}(\mathbf{V}(\mathcal{F}'), \mathbf{V}(\mathcal{F}))(S'),
+\]
+by 4.6.2~(i) and~(ii).
+
+\begin{corollary}{4.6.5.1}\label{I.4.6.5.1}
+--- Let \(\mathcal{F}\) be a locally free \(\OS\)-module of finite type. Set
+\[
+\mathcal{F}^{\vee} = \mathcal{H}\mathit{om}_{\OS}(\mathcal{F}, \OS).
+\]
+One has canonical isomorphisms:
+\begin{align*}
+\mathbf{W}(\mathcal{F}^{\vee}) &\simeq \Hom_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F}), \mathbf{O}_S) \simeq \mathbf{V}(\mathcal{F}), \\
+\mathbf{V}(\mathcal{F}^{\vee}) &\simeq \Hom_{\mathbf{O}_S}(\mathbf{V}(\mathcal{F}), \mathbf{O}_S) \simeq \mathbf{W}(\mathcal{F}).
+\end{align*}
+\end{corollary}
+
+Finally, one has the following proposition:
+
+\begin{proposition}{4.6.6}\label{I.4.6.6}
+--- Let \(f \colon \mathcal{F} \to \mathcal{F}'\) be a morphism of locally free \(\OS\)-modules of finite rank. In order that \(\mathbf{W}(f) \colon \mathbf{W}(\mathcal{F}) \to \mathbf{W}(\mathcal{F}')\) be a monomorphism, it is necessary and sufficient that \(f\) identify \(\mathcal{F}\) locally with a direct factor of~\(\mathcal{F}'\).
+\end{proposition}
+
+The direct statement is essentially contained in EGA~\(0_{\mathrm{I}}\), 5.5.5.%
+{\renewcommand{\thefootnote}{(36)}\nde{The following sentence has been spelled out.}}
+Conversely, if \(\mathcal{F}\) is locally a direct factor of~\(\mathcal{F}'\) then, for every \(\pi \colon S' \to S\), \(\pi^*\mathcal{F}\) is a submodule of \(\pi^*\mathcal{F}'\) (since it is locally a direct factor), hence \(\mathbf{W}(\mathcal{F})(S') = \Gamma(S', \pi^*\mathcal{F})\) is a submodule of \(\mathbf{W}(\mathcal{F}')(S') = \Gamma(S', \pi^*\mathcal{F}')\).
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{4.7. The category of \(G\)-\(\OS\)-modules.}\label{I.sec.4.7}\ ---
+Let \(G\) be an \(S\)-group and \(\mathcal{F}\) an \(\OS\)-module; \(\mathbf{W}(\mathcal{F})\) is endowed with a structure of \(\mathbf{O}_S\)-module.
+
+\begin{definition}{4.7.1}\label{I.4.7.1}
+--- One calls a structure of \(G\)-\(\OS\)-module on~\(\mathcal{F}\) a structure of \(h_G\)-\(\mathbf{O}_S\)-module on \(\mathbf{W}(\mathcal{F})\) (\cf 3.2). A morphism of \(G\)-\(\OS\)-modules is by definition a morphism of the associated \(h_G\)-\(\mathbf{O}_S\)-modules. One thus obtains the category \((G\text{-}\OS\text{-Mod.})\), and one denotes by \((G\text{-}\OS\text{-Mod.q.c.})\) the full subcategory formed by the \(G\)-\(\OS\)-modules which are quasi-coherent as \(\OS\)-modules.
+\end{definition}
+
+To give a structure of \(G\)-\(\OS\)-module on~\(\mathcal{F}\) is therefore, by~3.2, to give a morphism of \((\widehat{\mathbf{Sch}})_{/S}\)-groups
+\[
+\rho \colon h_G \longrightarrow \Aut_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F})).
+\]
+
+\begin{remark}{4.7.1.0}\label{I.4.7.1.0}
+--- {\renewcommand{\thefootnote}{(37)}\nde{This remark has been added, taken from [DG], II, \S 2, 1.1.}}
+Since one has, by~4.6.2, an \emph{anti-isomorphism} of \(S\)-group functors
+\[
+(\dagger) \qquad \Aut_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F})) \simeq \Aut_{\mathbf{O}_S}(\mathbf{V}(\mathcal{F})),
+\]
+one sees that it is equivalent to give a structure of \(h_G\)-\(\mathbf{O}_S\)-module on \(\mathbf{W}(\mathcal{F})\) or on \(\mathbf{V}(\mathcal{F})\). Indeed, let \(\rho \colon h_G \to \Aut_{\mathbf{O}_S}(\mathbf{W}(\mathcal{F}))\) be as above. For every \(T \to S\) and \(g \in G(T)\), denote by \(\rho^*(g)\) the image of \(\rho(g)\) under the anti-isomorphism~\((\dagger)\); one therefore has \(\rho^*(gh) = \rho^*(h) \circ \rho^*(g)\), \ie \(\rho^*\) defines a structure of \(h_G\)-\(\mathbf{O}_S\)-module \og on the right\fg{} on \(\mathbf{V}(\mathcal{F})\). Setting \(\rho^{\vee}(g) = \rho^*(g^{-1})\), one indeed obtains a structure of \(h_G\)-\(\mathbf{O}_S\)-module on \(\mathbf{V}(\mathcal{F})\), the datum of which is equivalent to that of~\(\rho\).
+\end{remark}
+
+\begin{remark}{4.7.1.1}\label{I.4.7.1.1}
+--- One may say that the categories which one has just defined have been constructed by the cartesian squares:
+\[
+\xymatrix@C=1.4em@R=1.8em{
+(G\text{-}\OS\text{-Mod.q.c.}) \ar@{^{(}->}[r] \ar[d]
+  & (G\text{-}\OS\text{-Mod.}) \ar@{^{(}->}[r] \ar[d]
+  & (h_G\text{-}\mathbf{O}_S\text{-Mod.}) \ar[d]^{\textup{forgetful}} \\
+(\OS\text{-Mod.q.c.}) \ar@{^{(}->}[r]
+  & (\OS\text{-Mod.}) \ar[r]^{\mathbf{W}}
+  & (\mathbf{O}_S\text{-Mod.})
+}
+\]
+{\renewcommand{\thefootnote}{(38)}\nde{The original has been corrected by removing the assertion that the category \((G\text{-}\OS\text{-Mod.})\) is abelian; see 4.7.2.1 below.}}
+The categories \((\OS\text{-Mod.})\) and \((\mathbf{O}_S\text{-Mod.})\) are abelian, but one must take care that in general the functor~\(\mathbf{W}\) is not exact, neither on the left nor on the right.
+\end{remark}

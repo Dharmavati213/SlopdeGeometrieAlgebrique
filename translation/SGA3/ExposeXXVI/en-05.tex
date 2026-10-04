@@ -1,0 +1,185 @@
+% Source PDF p. 27; continuation of the list and proof of 4.3.2.
+\item Condition (iv) implies $\operatorname{Card}(R_1)=\operatorname{Card}(R_2)$ and $R_1^{\mathrm a}\cap R_2=\varnothing$; the second condition is equivalent to $R_2\subset-R_1$; the first then gives $R_2=-R_1$.
+\item Condition (v) implies $R_1^{\mathrm a}\cap R_2=R_2^{\mathrm a}\cap R_1=\varnothing$, hence $R_2\subset-R_1$ and $R_1\subset-R_2$, which again gives $R_2=-R_1$.
+\item Condition (vi) implies $\Lie(\operatorname{rad}^{\mathrm u}(P))\oplus\Lie(Q)=\Lie(G)$, which implies that $R$ is the disjoint union of $R_2$ and $R_1^{\mathrm a}$, hence that $R_2=-R_1$.
+\end{itemize}
+This completes the proof of the second part of the theorem. Let us prove the first; first note that, by (vii) $\Rightarrow$ (ii), one has already proved the existence, locally for the \'etale topology, of the group $P'$ sought; it therefore remains to prove its uniqueness, and this can likewise be done locally for the \'etale topology. One can therefore suppose $G$ split relative to a maximal torus $T$ of $L$, and $P$ (resp.~$P'$) defined by a subset $R_1$ (resp.~$R'_1$) of the root system $R$.
+
+By hypothesis $R_1\cap R'_1$ is symmetric; reasoning as above, one obtains $R'_1=-R_1$, which proves that $P'$ is determined by $P$ and $L$, and completes the proof.
+\end{proof}
+\begin{definition}{4.3.3}\label{XXVI.4.3.3}
+Two parabolic subgroups of $G$ satisfying the equivalent conditions (i) to (vii) of 4.3.2 are called \emph{opposite}. If $P$ is a parabolic subgroup of $G$, and if $L$ is a Levi subgroup of $P$ (resp.~and if $T$ is a maximal torus of $P$), one calls the unique parabolic subgroup $Q$ of $G$ such that $P\cap Q=L$ (resp.~such that $P\cap Q$ is the unique Levi subgroup of $P$ containing $T$, cf.~1.6, or again such that $P\cap Q$ contains $T$ and $P$ and $Q$ are opposite) the \emph{parabolic subgroup opposite to $P$ relative to $L$} (resp.~$T$).
+\end{definition}
+By 4.3.2~(iii), one immediately deduces from 4.2.4 and 4.2.5 parallel results; let us give a sample of them.
+\begin{corollary}{4.3.4}\label{XXVI.4.3.4}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $P$ and $Q$ two parabolic subgroups of $G$.
+\begin{enumeratei}
+\item In order that $P$ and $Q$ be opposite, it is necessary and sufficient that, for every point $s\in S$, $P_{\overline s}$ and $Q_{\overline s}$ be opposite. If $S'\to S$ is a surjective morphism, and if $P_{S'}$ and $Q_{S'}$ are opposite, then $P$ and $Q$ are opposite.
+\item The functor $\underline{\operatorname{Opp}}(G)$, such that for $S'\to S$, $\underline{\operatorname{Opp}}(G)(S')$ is the set of pairs of opposite parabolic subgroups of $G_{S'}$, is representable by an open subscheme of $\underline{\operatorname{Par}}(G)^2$. The functor $\underline{\operatorname{Opp}}(/P)$, such that for $S'\to S$, $\underline{\operatorname{Opp}}(/P)(S')$ is the set of parabolic subgroups of $G_{S'}$ opposite to $P_{S'}$, is representable by an open subscheme universally schematically dense over $S$\nde{``Relatively dense'' has been replaced by ``universally schematically dense over $S$'', cf.~EGA~IV$_3$, Def.~11.10.8.} of $\underline{\operatorname{Par}}_{s(t(P))}(G)$.
+\item Suppose $P$ and $Q$ opposite; let $P'$ and $Q'$ be two parabolic subgroups of $G$, $P'$ having the same type as $P$. In order that $P'$ and $Q'$ be opposite, it is necessary and sufficient that, locally for the \'etale topology, the pair $(P',Q')$ be conjugate to the pair $(P,Q)$. (N.B.~We shall see in \S~5 that one can replace the \'etale topology by the Zariski topology.)
+\end{enumeratei}
+\end{corollary}
+
+% Source PDF p. 28.
+\begin{corollary}{4.3.5}\label{XXVI.4.3.5}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $P$ a parabolic subgroup of $G$.
+\begin{enumeratei}
+\item The morphism $\underline{\operatorname{Opp}}(/P)\to\underline{\operatorname{Lev}}(P)$ (cf.~1.9), defined set-theoretically by $Q\mto P\cap Q$, is an isomorphism; $\underline{\operatorname{Opp}}(/P)$ is a principal homogeneous bundle under $\operatorname{rad}^{\mathrm u}(P)$ ($\operatorname{rad}^{\mathrm u}(P)$ acting by inner automorphisms). If $S$ is affine, there exists a parabolic subgroup of $G$ opposite to $P$.
+\item Suppose $S$ semilocal; let $\{s_i\}$ be the set of its closed points; for each $i$, let $Q_i$ be a parabolic subgroup of $G_{s_i}$ opposite to $P_{s_i}$. There exists a parabolic subgroup $Q$ of $G$ opposite to $P$ and such that $Q_{s_i}=Q_i$ for each $i$.
+\item The morphism $\underline{\operatorname{Opp}}(G)\to\underline{\mathrm{PL}}$ (cf.~3.15), defined set-theoretically by $(P,Q)\mto(P,P\cap Q)$, is an isomorphism.
+\end{enumeratei}
+\end{corollary}
+All this follows from the first part of the theorem and from 1.9, 2.3 and 2.8.
+\begin{remark}{4.3.6}\label{XXVI.4.3.6}
+Let $P$ and $Q$ be two opposite parabolic subgroups of $G$, and let $P\cdot Q$ be the open subscheme of $G$, the sheaf-theoretic image of $P\times_S Q$, introduced in 4.2.6. The ``product morphism'' $G\times_S G\to G$ induces isomorphisms:
+\[
+\operatorname{rad}^{\mathrm u}(P)\times_S Q\isomto P\cdot Q\isomfrom P\times_S\operatorname{rad}^{\mathrm u}(Q).
+\]
+Indeed, this follows from 4.3.2 (or from 4.2.5~(ii)) and from the fact that $P\cap Q$ is a Levi subgroup of $P$ and of $Q$, hence that $P=\operatorname{rad}^{\mathrm u}(P)\cdot(P\cap Q)$ and $Q=\operatorname{rad}^{\mathrm u}(Q)\cdot(P\cap Q)$.
+
+One similarly has a commutative diagram
+\[
+\xymatrix@C=40pt@R=24pt{
+\operatorname{rad}^{\mathrm u}(P)\ar@{^{(}->}[r]\ar[d]_\sim&G/Q\ar[d]^\sim\\
+\underline{\operatorname{Opp}}(/P)\ar@{^{(}->}[r]&\underline{\operatorname{Par}}_{t(Q)}(G),
+}
+\]
+where the vertical arrows are induced by $g\mto\operatorname{int}(g)Q$.
+\end{remark}
+
+\sgasection{4.4}{Osculatory position}
+\begin{proposition}{4.4.1}\label{XXVI.4.4.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $P$ and $Q$ two parabolic subgroups of $G$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $P\cap Q$ is a parabolic subgroup of $G$.
+\item $P\cap Q$ locally contains a Borel subgroup of $G$ for the \'etale topology.
+\item $P\cap Q$ locally contains a maximal torus of $G$ for the \'etale topology, and, for every $S'\to S$ and every maximal torus $T$ of $G_{S'}$ contained in $P_{S'}$ and $Q_{S'}$, the opposite of $P_{S'}$ relative to $T$ is in transversal position relative to $Q_{S'}$.
+\item There exist a covering family for the \'etale topology $\{S_i\to S\}$, and for each $i$ a maximal torus $T_i$ of $G_{S_i}$ contained in $P_{S_i}$ and $Q_{S_i}$, and such that the opposite of $P_{S_i}$ relative to $T_i$ is in transversal position relative to $Q_{S_i}$.
+% Source PDF p. 29.
+\item There exist a covering family for the \'etale topology $\{S_i\to S\}$, and for each $i$ a splitting $(T_i,M_i,R_i)$ of $G_{S_i}$ such that $P_{S_i}$ (resp.~$Q_{S_i}$) is the subgroup of type (R) of $G_{S_i}$ containing $T_i$ and defined by a set of roots $R_i^{(1)}$ (resp.~$R_i^{(2)}$), $R_i^{(1)}\cap R_i^{(2)}$ containing a system of positive roots of $R$.
+% typo?: the unindexed R is kept as printed.
+\end{enumeratei}
+Moreover, if these conditions hold, one has $t(P\cap Q)=t(P)\cap t(Q)$ (with the notations of 3.2).
+\end{proposition}
+One has (v) $\Rightarrow$ (ii) and (iii) $\Rightarrow$ (iv) trivially. Moreover, (ii) $\Rightarrow$ (i) by 1.18. One has (iv) $\Rightarrow$ (v): indeed, one can suppose $G$ split, $P$ (resp.~$Q$) defined by the set of roots $R_1$ (resp.~$R_2$); the opposite of $P$ is then defined by $-R_1$, and one is reduced to lemma 4.2.2. One proves (i) $\Rightarrow$ (iii) by splitting, in the same way. Finally, the last assertion of the theorem can be proved locally for the \'etale topology; one can suppose that $P\cap Q$ contains a Borel subgroup $B$ of $G$, and one is reduced to 3.7.
+\begin{definition}{4.4.2}\label{XXVI.4.4.2}
+Two parabolic subgroups of $G$ satisfying conditions (i) to (v) of 4.4.1 are said to be \emph{in osculatory position}.
+\end{definition}
+\begin{corollary}{4.4.3}\label{XXVI.4.4.3}
+Let $P$ and $Q$ be two parabolic subgroups in osculatory position, and let $P'$ and $Q'$ be two parabolic subgroups of $G$ of the same types as $P$ and $Q$ respectively; in order that $P'$ and $Q'$ be in osculatory position, it is necessary and sufficient that the pair $(P',Q')$ be conjugate to the pair $(P,Q)$, locally for the \'etale topology.
+\end{corollary}
+It suffices to prove that, if $P$ and $P'$ are in osculatory position relative to $Q$, they are conjugate, locally for (\'et), by a section of $Q$. Now $P\cap Q$ and $P'\cap Q$ are two parabolic subgroups of the same type contained in $Q$, and so are conjugate, locally for (\'et), by a section of $Q$, by part (ii) of the lemma below. One can therefore suppose $P\cap Q=P'\cap Q$; one then has $P=P'$, by part (i) of the same lemma:
+\begin{lemma}{4.4.4}\label{XXVI.4.4.4}
+Let $P,P'$ and $Q$ be three parabolic subgroups of the reductive $S$-group $G$.
+\begin{enumeratei}
+\item In order that $P=P'$, it is necessary and sufficient that $P$ and $P'$ be in osculatory position and of the same type.
+\item If $P\subset Q$, $P'\subset Q$, and if $g\in G(S)$ is such that $\operatorname{int}(g)P$ and $P'$ are in osculatory position, then $g\in Q(S)$.
+\end{enumeratei}
+\end{lemma}
+Part (i) follows trivially from the last assertion of 4.4.1. Let us prove (ii): $Q$ and $\operatorname{int}(g)Q$ contain $P'\cap\operatorname{int}(g)P$, and so are in osculatory position; they coincide by (i), hence $g\in\uNorm_G(Q)(S)=Q(S)$.
+
+Note that assertions (iii) and (iv) of the theorem immediately give:
+\begin{corollary}{4.4.5}\label{XXVI.4.4.5}
+Let $P,P'$ and $Q$ be three parabolic subgroups of the reductive $S$-group $G$ containing the same maximal torus $T$ of $G$. Suppose $P$ and $P'$ opposite relative to $T$. In order that $Q$ be in osculatory position relative to $P$, it is necessary and sufficient that it be in transversal position relative to $P'$. Under these conditions, $P\cap Q$ is also in transversal position relative to $P'$.
+\end{corollary}
+
+% Source PDF p. 30.
+\begin{corollary}{4.4.6}\label{XXVI.4.4.6}
+Let $P$ and $Q$ be two parabolic subgroups of $G$ containing the same maximal torus $T$. In order that $P$ and $Q$ be in transversal position, it is necessary and sufficient that there exist two parabolic subgroups $P'\subset P$ and $Q'\subset Q$ of $G$ opposite relative to $T$; one can even choose $t(P')=t(P)\cap s(t(Q))$.\nde{Recall that the involution $s$ was defined in 4.3.1.}
+\end{corollary}
+The condition is evidently sufficient (4.2.1~(i) and 4.3.2~(iii)). Let us show that it is necessary; let $P^-$ (resp.~$Q^-$) be the opposite of $P$ (resp.~$Q$) relative to $T$. By 4.4.5, $P^-\cap Q$ is in transversal position relative to $P$ and $Q^-$, hence also relative to $P\cap Q^-$ by a new application of 4.4.5; moreover
+\[
+\begin{aligned}
+t(P^-\cap Q)&=t(P^-)\cap t(Q)=s(t(P))\cap s(t(Q^-))\\
+&=s(t(P)\cap t(Q^-))=s(t(P\cap Q^-)),
+\end{aligned}
+\]
+hence $P^-\cap Q=P'$ and $P\cap Q^-=Q'$ are opposite (4.3.2~(iii)); but $P'\cap Q'\supset T$, so they are indeed opposite relative to $T$.
+% typo?: the assignment P'=P^- cap Q and Q'=P cap Q^- is kept as printed.
+
+\sgasection{4.5}{Standard position}
+In this section, we briefly indicate how some of the preceding results generalize.
+\begin{proposition}{4.5.1}\label{XXVI.4.5.1}
+If $P_1$ and $P_2$ are two parabolic subgroups of the reductive $S$-group $G$, the following conditions are equivalent:\nde{The proof of the equivalence of these conditions has been added (as has condition (v), used implicitly in 6.17 of the original); consequently no.~4.5.1 has been changed into proposition 4.5.1 plus definition 4.5.1.1.}
+\begin{enumeratei}
+\item $P_1\cap P_2$ is smooth.
+\item $P_1\cap P_2$ is a subgroup of type (R) (or of type (RC)) of $G$.
+\item $P_1\cap P_2$ locally contains a maximal torus of $G$ for the (fpqc) topology.
+\item $P_1\cap P_2$ locally contains a maximal torus of $G$ for the Zariski topology.
+\end{enumeratei}
+When $S$ is semilocal, these conditions are moreover equivalent to:
+\begin{enumerate}[label=\textup{(\roman*)},start=5]
+\item $P_1\cap P_2$ contains a maximal torus of $G$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}\footnotemark[23]
+Evidently, (iv) $\Rightarrow$ (iii) (and (v) $\Rightarrow$ (iv) when $S$ is semilocal), and (ii) $\Rightarrow$ (i) by Exp.~XXII, Def.~5.2.1. We shall show (i) $\Rightarrow$ (ii) $\Rightarrow$ (iii), then that (iii) implies (i) and (iv) (and also (v) when $S$ is semilocal). Put $K=P_1\cap P_2$. By 4.1.1 and \cite{BT65}, 4.5, each geometric fiber $K_{\overline s}$ contains a maximal torus $T_{\overline s}$ of $G_{\overline s}$ and is connected, and the set of roots of $K_{\overline s}$ relative to $T_{\overline s}$ is a closed subset of the set of roots of $G_{\overline s}$ relative to $T_{\overline s}$. Thus, if $K$ is smooth over $S$, it is a subgroup of type (RC) (hence a fortiori of type (R)), cf.~Exp.~XXII 5.2.1 and 5.11.1. One therefore has (i) $\Leftrightarrow$ (ii).
+
+If $K$ is a subgroup of type (R), it locally contains a maximal torus of $G$ for the \'etale topology, by Exp.~XXII 2.2 and Exp.~XIX 6.1. Thus (ii) $\Rightarrow$ (iii).
+
+Suppose (iii) satisfied, and let us show that $K$ is smooth. By (fpqc) descent, one can suppose that $G=(G,T,M,R)$ is split, where $T$ is a maximal torus contained in $P\cap Q$, and that there exist two closed subsets $R_1$ and $R_2$ of $R$ such that $P=H_{R_1}$ and $Q=H_{R_2}$.
+% typo?: the change from P_1,P_2 to P,Q is kept as printed.
+
+% Source PDF p. 31.
+Since $K$ has connected fibers, it follows from Exp.~XXII 5.4.5 that $K$ equals $H_{R_1\cap R_2}$, and so is smooth over $S$ and of type (RC).
+
+Let $R_1^{\mathrm s}$ be the symmetric part of $R_1$, and $R_1^{\mathrm a}=R_1-R_1^{\mathrm s}$; then $\operatorname{rad}^{\mathrm u}(P_1)=H_{R_1^{\mathrm a}}$. As noted in the proof of \cite{BT65}, 4.4, $R'=(R_1^{\mathrm s}\cap R_2)\cup R_1^{\mathrm a}$ is a closed subset of $R$ such that $R'\cup(-R')=R$; thus, by Exp.~XXI 3.3.6, $R'$ contains a system of positive roots of $R$. Moreover, the symmetric part of $R'$ is $R_1^{\mathrm s}\cap R_2^{\mathrm s}$, which is contained in $R_1\cap R_2$.
+
+One deduces from the foregoing that $P'=K\cdot\operatorname{rad}^{\mathrm u}(P)$ is a parabolic subgroup of $G$, and that $K$ is a subgroup of type (RC) of $P'$ such that $\operatorname{rad}^{\mathrm u}(K)=K\cap\operatorname{rad}^{\mathrm u}(P')$. Thus, by 2.11, $K$ possesses a Levi subgroup $L$. It then follows from Exp.~XIV 3.20 and 3.21 that $K$ satisfies assertion (iv), as well as assertion (v) when $S$ is semilocal. This proves 4.5.1.
+% typo: "l'assertions (iv)" -> "assertion (iv)".
+\end{proof}
+\begin{definition}{4.5.1.1}\label{XXVI.4.5.1.1}
+\nde{See N.D.E.~(23). Moreover, for an example of parabolic subgroups $P,Q$ which are not in standard position, see 7.11 below.} When the preceding conditions hold, one says that $P$ and $Q$ are in \emph{mutual standard position}; this is the case, for example, if $P$ and $Q$ are in transversal position, or in osculatory position, or if the base is the spectrum of a field. This notion is stable under extension of the base and local for the (fpqc) topology.
+\end{definition}
+
+\numpara{4.5.2}\label{XXVI.4.5.2}
+Let $(P,Q)$ and $(P',Q')$ be two pairs of parabolic subgroups of $G$ in standard position, and let $\underline H$ be the subfunctor of $G$ defined as follows: $\underline H(S')$ is the set of $g\in G(S')$ such that $\operatorname{int}(g)P=P'$ and $\operatorname{int}(g)Q=Q'$. This is a closed subscheme of $G$, smooth over $S$, and formally principal homogeneous under $P\cap Q$. One deduces that the following conditions are equivalent:
+\begin{enumeratei}
+\item $(P,Q)$ and $(P',Q')$ are locally conjugate for the (fpqc) topology,
+\item $(P,Q)$ and $(P',Q')$ are locally conjugate for the \'etale topology.
+\item $(P,Q)$ and $(P',Q')$ are conjugate on every geometric fiber.
+% typo: (P'Q') -> (P',Q').
+\end{enumeratei}
+One then says that the pairs $(P,Q)$ and $(P',Q')$ have the \emph{same type of mutual position}. This notion is stable under base change and local for the (fpqc) topology.
+
+\numpara{4.5.3}\label{XXVI.4.5.3}
+Let $\underline{\operatorname{Stand}}(G)$ be the subfunctor of $\underline{\operatorname{Par}}(G)\times_S\underline{\operatorname{Par}}(G)$ ``consisting of pairs in mutual standard position''. Then $\underline{\operatorname{Stand}}(G)$ is representable; there exist a finite \'etale $S$-scheme $\underline{\operatorname{TypeStand}}$ (``scheme of types of mutual standard position'') and a smooth morphism of finite presentation, with irreducible geometric fibers (and hence in particular faithfully flat),
+\[
+t_2:\underline{\operatorname{Stand}}(G)\to\underline{\operatorname{TypeStand}},
+\]
+which is a quotient of $\underline{\operatorname{Stand}}(G)$ by the action of $G$: two sections of $\underline{\operatorname{Stand}}(G)$ (over any $S'\to S$) have the same type of mutual position if and only if they have the same image under $t_2$.
+
+% Source PDF p. 32: preceding sentence begins on p. 31.
+One has a commutative diagram
+% typo?: the printed hook on the q arrow is retained.
+\[
+\xymatrix@C=28pt@R=25pt{
+\underline{\operatorname{Stand}}(G)\ar[r]^{t_2}\ar@{^{(}->}[d]&\underline{\operatorname{TypeStand}}\ar@{^{(}->}[d]^q\\
+\underline{\operatorname{Par}}(G)\times_S\underline{\operatorname{Par}}(G)\ar[r]_{t\times t}&{\begin{gathered}\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))\\{}\times_S\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))\end{gathered}},
+}
+\]
+where the morphism $q$ can be described by descent as follows: if $(P,Q)$ is a pair of parabolic subgroups of $G$ in standard relative position, and if $T$ is a maximal torus of $P\cap Q$, then the morphism $\uNorm_G(T)\to\underline{\operatorname{Stand}}(G)$ defined set-theoretically by $n\mto(P,\operatorname{int}(n)Q)$ induces an isomorphism
+\[
+W_P(T)\backslash W_G(T)/W_Q(T)\simeq q^{-1}(t(P),t(Q)).
+\]
+(The first side denotes the sheaf of double cosets\ldots.) These assertions are proved without difficulty (note in particular that $t_2^{-1}(t_2(P,Q))\simeq G/(P\cap Q)$).
+
+\numpara{4.5.4}\label{XXVI.4.5.4}
+Now let $P$ be a fixed parabolic subgroup of $G$, and let $\underline{\operatorname{Par}}(G;P)$ be the functor of parabolic subgroups of $G$ in standard position relative to $P$. For each $t\in\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))(S)$, similarly put $\underline{\operatorname{Par}}_t(G;P)=\underline{\operatorname{Par}}(G;P)\cap\underline{\operatorname{Par}}_t(G)$. One sees immediately that the preceding two functors are obtained from $\underline{\operatorname{Stand}}(G)$ by fibered products, and so are representable by $S$-schemes smooth and of finite presentation over $S$, with nonempty fibers. One has a canonical morphism $t_P$ induced by $t_2$ (i.e.~$t_P(Q)=t_2(P,Q)$)
+\[
+t_P:\underline{\operatorname{Par}}_t(G;P)\to q^{-1}(t(P),t)
+\]
+which is smooth and of finite presentation, with irreducible geometric fibers. The canonical morphism $\underline{\operatorname{Par}}_t(G;P)\to\underline{\operatorname{Par}}_t(G)$ is a surjective monomorphism, and can therefore be considered as a \emph{cellular decomposition} of $\underline{\operatorname{Par}}_t(G)$ (indexed by the set of connected components of $q^{-1}(t(P),t)$).
+
+\numpara{4.5.5}\label{XXVI.4.5.5}
+Now suppose that the type $t$ is of the form $t(Q)$, where $Q$ is a parabolic subgroup of $G$ in standard position relative to $P$, and that $P\cap Q$ contains a maximal torus $T$.
+
+Then $\underline{\operatorname{Par}}_t(G)\simeq G/Q$ and $q^{-1}(t(P),t)\simeq W_P(T)\backslash W_G(T)/W_Q(T)$, which gives a diagram
+\[
+\xymatrix@C=35pt@R=25pt{
+\underline{\operatorname{Par}}_{t(Q)}(G;P)\ar[r]^f\ar@{^{(}->}[d]_i&W_P(T)\backslash W_G(T)/W_Q(T)\\
+\underline{\operatorname{Par}}_{t(Q)}(G)\ar[r]^\sim&G/Q
+}
+\]
+where $i$ is a surjective monomorphism, and where $f$ is smooth and of finite presentation, with irreducible geometric fibers. Moreover, if $Q_1$ and $Q_2$ are two sections of $\underline{\operatorname{Par}}_{t(Q)}(G;P)$ (over an $S'\to S$), that is, two parabolic subgroups of $G_{S'}$ conjugate (locally for (fpqc)) to $Q$ and in standard position relative to $P_{S'}$, then $Q_1$ and $Q_2$ are conjugate by a section of $P$ (locally for (fpqc)) if and only if $f(Q_1)=f(Q_2)$.
+% Last sentence completed on source PDF p. 33; no open environment.

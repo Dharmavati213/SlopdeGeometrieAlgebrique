@@ -1,0 +1,214 @@
+It is an open subset of $\mathrm W(\mathcal L)$ containing the zero section and stable under multiplication by every $\alpha_0(q)$, $q\in Q(S')$, $S'\to S$. Since $\alpha_0$ is nontrivial on each fiber, it follows immediately that $V=\mathrm W(\mathcal L)$, hence that $p$ factors through $\Omega_{R_+}$. Choose any order on $R_+$ and $R_-$; all products will be assumed taken in this order. One therefore has unique morphisms
+\[
+a_\alpha:\mathrm W(\mathcal L)\to U_\alpha,\quad\alpha\in R,\qquad
+b:\mathrm W(\mathcal L)\to T
+\]
+such that
+\[
+p(x)=\prod_{\alpha\in R_-}a_\alpha(x)\cdot b(x)\cdot\prod_{\alpha\in R_+}a_\alpha(x).
+\]
+Writing the covariance condition under $Q$, one obtains at once
+\[
+\begin{aligned}
+a_\alpha(\alpha_0(q)x)&=\alpha(f(q))a_\alpha(x),\qquad\alpha\in R,\\
+b(\alpha_0(q)x)&=b(x)
+\end{aligned}
+\]
+for all $x\in\mathrm W(\mathcal L)(S')$, $q\in Q(S')$, $S'\to S$. The second condition gives at once $b=e$.
+
+Let now $\alpha\in R$ be such that $(a_\alpha)_{\overline s}\ne e$ (we know that such an $\alpha$ exists, since $p_{\overline s}$ is assumed $\ne e$). Applying Exp.~XIX 4.12 (a), one deduces that there exists an integer $n>0$ such that $(\alpha\circ f)_{\overline s}=(n\alpha_0)_{\overline s}$. Restricting $S$, one may assume $\alpha\circ f=n\alpha_0$ (Exp.~IX 5.3). But then, for every $\alpha'\in R$, $\alpha'\ne\alpha$, one has $(\alpha'\circ f)_{\overline s}\ne m\alpha_0$ for every integer $m>0$ by the hypothesis on $f$ (and the fact that the only roots proportional to $\alpha$ are $\alpha$ and $-\alpha$). Applying Exp.~XIX 4.12 (a) again, this time to $a_{\alpha'}$, one deduces that $a_{\alpha'}$ is zero in a neighborhood of $S$; since $R$ is finite, one may, restricting $S$ further, assume the $a_{\alpha'}$ zero for $\alpha'\in R$, $\alpha'\ne\alpha$. One then has $p=a_\alpha$, and one may apply to it Exp.~XIX 4.12 (b), then (c), which gives the stated result (the uniqueness assertions are obvious).
+% typo?: kept as printed: "au voisinage de S".
+\begin{remark}{4.1.10}\label{XXII.4.1.10}
+The condition imposed on $f$ in 4.1.9 holds in particular if $f$ is surjective (= faithfully flat).
+\end{remark}
+\begin{proposition}{4.1.11}\label{XXII.4.1.11}
+Let $(G,T,M,R)$ be a split $S$-group, $R_+$ a system of positive roots of $R$, $\Omega_{R_+}$ the corresponding ``big cell''.
+\begin{enumeratei}
+\item Let $H$ be an $S$-group functor, separated{\renewcommand{\thefootnote}{(17)}\nde{Recall (\cf Exp.~IV, 4.3.5) that an $S$-presheaf $H$ is separated for a topology $\mathcal T$ if for every $S'\to S$ and every family of $S$-morphisms $(S'_i\to S')_{i\in I}$ covering for $\mathcal T$, the map $H(S')\to\prod_i H(S'_i)$ is injective.}} for (fppf). If $f,g:G\rightrightarrows H$ are two morphisms of groups which coincide on $\Omega_{R_+}$, then $f=g$.
+\item Let $H$ be an $S$-sheaf of groups for (fppf) and $f:\Omega_{R_+}\to H$ an $S$-morphism satisfying the following condition: for every $S'\to S$ and all $x,y\in\Omega_{R_+}(S')$ such that $xy\in\Omega_{R_+}(S')$, one has $f(xy)=f(x)f(y)$. There then exists a (unique, by (i)) morphism of groups $\overline f:G\to H$ extending $f$.
+\end{enumeratei}
+\end{proposition}
+Indeed, by 4.1.5, (i) (resp. (ii)) follows at once from Exp.~XVIII 2.2 (resp. 2.3 and 2.4).
+\begin{remark}{4.1.12}\label{XXII.4.1.12}
+If $\alpha\in R_+$, one has
+\begin{equation}\tag{$\dagger$}\label{XXII.eq.dagger}
+\Omega_{R_+}\cap Z_\alpha=U_{-\alpha}\cdot T\cdot U_\alpha.
+\end{equation}
+{\renewcommand{\thefootnote}{(18)}\nde{The original has been expanded in what follows.}}%
+Indeed, for every $S'\to S$, if $g=\prod_{\beta\in R_-}p_\beta(x_\beta)\cdot t\cdot\prod_{\beta\in R_+}p_\beta(x_\beta)$ is an element of $\Omega_{R_+}(S')$ and if $t'\in T_\alpha(S'')$, then
+\[
+t'gt'^{-1}=\prod_{\beta\in R_-}p_\beta(\beta(t')x_\beta)\cdot t\cdot\prod_{\beta\in R_+}p_\beta(\beta(t')x_\beta)
+\]
+and since $\alpha$ and $-\alpha$ are the only two elements of $R$ which take the value $1$ on $T_\alpha$, one obtains that $g$ belongs to $Z_\alpha=\uCentr(T_\alpha)$ if and only if $x_\beta=0$ for $\beta\ne\pm\alpha$.
+
+% typo?: kept as printed: X in Gamma(X,g^alpha).
+By ($\dagger$), one deduces from XX 2.1 that if $X\in\Gamma(X,\mathfrak g^\alpha)$ and $Y\in\Gamma(S,\mathfrak g^{-\alpha})$, one has:
+\[
+\exp_\alpha(X)\exp_{-\alpha}(Y)\in\Omega_{R_+}(S)\quad\Longleftrightarrow\quad 1+XY\text{ invertible}.
+\]
+\end{remark}
+
+\sgasection{4.2}{Morphisms of split groups}
+\begin{definition}{4.2.1}\label{XXII.4.2.1}
+Let $S$ be a (nonempty) scheme, $(G,T,M,R)$ and $(G',T',M',R')$ two split $S$-groups. One says that the morphism of $S$-groups $f:G\to G'$ is \emph{compatible with the splittings}, or defines a \emph{morphism of split groups}, if the restriction of $f$ to $T$ factors as a morphism $f_T:T\to T'$ of the form $f_T=\mathrm D_S(h)$, where $h:M'\to M$ is a morphism of groups satisfying the following condition:
+\begin{quote}
+there exists a bijection $d:R\isomto R'${\renewcommand{\thefootnote}{(19)}\nde{The notation $u:R\to R'$ has been replaced by $d:R\to R'$.}} and for each $\alpha\in R$ an integer $q(\alpha)>0$ such that $x\mto x^{q(\alpha)}$ is an endomorphism of $\mathbf G_{a,S}$ and such that
+\[
+h(d(\alpha))=q(\alpha)\alpha,\qquad{}^t h(\alpha^*)=q(\alpha)d(\alpha)^*.
+\]
+\end{quote}
+\end{definition}
+\begin{remark}{4.2.2}\label{XXII.4.2.2}
+It is immediate that $h$, $d$, $q(\alpha)$ for $\alpha\in R$ are uniquely determined by $f$. One writes $h=\mathscr R(f)$. The $q(\alpha)$ are the \emph{radicial exponents} of $f$ (or of $h$).
+
+Let $p$ be the prime number (if it exists) which is zero on $S$; put $p=1$ if no prime number is zero on $S$. Then $\mathscr R(f)$ is a $p$-morphism of reduced root data in the sense of Exp.~XXI 6.8. One has therefore defined a functor $\mathscr R$ from the category of split $S$-groups to that of reduced root data (endowed with the $p$-morphisms).
+\end{remark}
+\begin{proposition}{4.2.3}\label{XXII.4.2.3}
+Under the conditions of 4.2.1, one has the following properties:
+\begin{enumeratei}
+\item For every $\alpha\in R$, there exists a unique isomorphism of $\OS$-modules
+\[
+f_\alpha:(\mathfrak g^\alpha)^{\otimes q(\alpha)}\isomto\mathfrak g'^{d(\alpha)}
+\]
+such that
+\[
+f(\exp_\alpha(X))=\exp_{d(\alpha)}(f_\alpha(X^{q(\alpha)}))
+\]
+for every $X\in\mathrm W(\mathfrak g^\alpha)(S')$, $S'\to S$.
+\item For every $\alpha\in R$, one has $q(-\alpha)=q(\alpha)$ and $f_\alpha$ and $f_{-\alpha}$ are contragredient to one another.
+\item For every $\alpha\in R$, every $Z\in\mathrm W(\mathfrak g^\alpha)^*(S')$, $S'\to S$, one has
+\[
+f(w_\alpha(Z))=w_{d(\alpha)}(Z^{q(\alpha)}).
+\]
+\end{enumeratei}
+\end{proposition}
+By hypothesis the diagram
+\[
+\xymatrix{\mathbf G_{m,S}\ar[r]^{\alpha^*}\ar[d]_{q(\alpha)}&T\ar[r]^\alpha\ar[d]^{f_T}&\mathbf G_{m,S}\ar[d]^{q(\alpha)}\\
+\mathbf G_{m,S}\ar[r]_{d(\alpha)^*}&T'\ar[r]_{d(\alpha)}&\mathbf G_{m,S}}
+\]
+is commutative. It follows that $f$ maps $\Ker(\alpha)$ into $\Ker(d(\alpha))$, hence $T_\alpha$ into $T'_{d(\alpha)}$, hence $Z_\alpha$ into $Z'_{d(\alpha)}$. One then has only to apply Exp.~XX 3.10 and 3.11 to the groups $Z_\alpha$ and $Z'_{d(\alpha)}$.
+\begin{proposition}{4.2.4}\label{XXII.4.2.4}
+The morphism $f$ induces a morphism $f_N$ from $\uNorm(T)$ to $\uNorm_{G'}(T')$, hence a morphism $f_W$ from $W_G(T)$ to $W_{G'}(T')$; the latter is an isomorphism. More precisely, if one denotes by $\overline d:W(\mathscr R(G))=W\to W'=W(\mathscr R(G'))$ the isomorphism extending $s_\alpha\mto s_{d(\alpha)}$ (Exp.~XXI 6.8.4), one has a commutative diagram of isomorphisms:
+\[
+\xymatrix{W_G(T)\ar[r]^{f_W}_\sim&W_G(T')\\
+W_S\ar[u]^\sim\ar[r]_{\overline d_S}^\sim&W'_S\ar[u]_\sim.}
+\]
+% typo?: kept as printed: upper-right W_G(T'), rather than W_{G'}(T').
+\end{proposition}
+This follows at once from 3.4, Exp.~XXI 6.8.4, and (iii) above.
+\begin{remark}{4.2.5}\label{XXII.4.2.5}
+With the notations of 4.2.3, the restriction of $f$ to $\Omega_{R_+}$ (for a system of positive roots $R_+$) is written explicitly: it maps $\Omega_{R_+}$ into $\Omega'_{d(R_+)}$ ($d(R_+)$ is a system of positive roots of $R'$ by Exp.~XXI 6.8.7) and is given by the set-theoretic formula:
+\[
+\begin{gathered}
+f\left(\prod_{\alpha\in R_-}\exp_\alpha(X_\alpha)\cdot t\cdot\prod_{\alpha\in R_+}\exp_\alpha(X_\alpha)\right)\\
+=\prod_{\alpha\in R_-}\exp_{d(\alpha)}\bigl(f_\alpha(X_\alpha^{q(\alpha)})\bigr)\cdot f_T(t)\cdot
+\prod_{\alpha\in R_+}\exp_{d(\alpha)}\bigl(f_\alpha(X_\alpha^{q(\alpha)})\bigr).
+\end{gathered}
+\]
+\end{remark}
+\begin{proposition}{4.2.6}\label{XXII.4.2.6}
+\begin{enumeratei}
+\item $f$ is surjective (= faithfully flat in the present case, \cf VIB 3.11) if and only if $f_T$ is.
+\item One has $\Ker(f)\subset\Omega_{R_+}$.
+\end{enumeratei}
+\end{proposition}
+Let us prove (i): if $f$ is surjective, then $f_T(T)=f(T)$ is a maximal torus of $G'$ (indeed $f(T)$ is a subtorus of a maximal torus $T'$ (Exp.~IX 6.8); to verify that $f(T)=T'$, one is reduced to the case of an algebraically closed field, where this is \textit{Bible}, \S~7.3, th.~3 (a)).
+
+If $f_T$ is surjective, then the preceding formula shows that $f$ induces a surjection from $\Omega=\Omega_{R_+}$ onto $\Omega'=\Omega'_{d(R_+)}$.{\renewcommand{\thefootnote}{(20)}\nde{The reference to Exp.~VI has been expanded in what follows.}} Since the fibers of $G'$ are connected, it follows (\cf Exp.~VIA, 0.5) that $f$ is surjective.
+
+Let us prove (ii), and for this admit a result which will be proved below (5.7.4): choose for each $w\in W$ an $n_w\in\uNorm_G(T)(S)$ representing it; then the open subsets $n_w\Omega$ ($w\in W$) form a covering of $G$. It then suffices to prove that $\Ker(f)\cap n_w\Omega\ne\varnothing$ implies $w=1$. If $x\in\Omega(S')$, $S'\to S$ and $f(n_wx)=1$, one has $f(x)=f(n_w)^{-1}$; now $f(x)\in\Omega'(S')$ and $f(n_w)^{-1}\in\uNorm_{G'}(T')(S')$. By 4.2.4, one is reduced to proving:
+\begin{lemma}{4.2.7}\label{XXII.4.2.7}
+Under the conditions of 4.1.2, one has $\Omega\cap\uNorm_G(T)=T$.
+\end{lemma}
+Let
+\[
+x=\prod_{\alpha\in R_-}p_\alpha(x_\alpha)\cdot t\cdot\prod_{\alpha\in R_+}p_\alpha(x_\alpha)=vtu\in\Omega(S').
+\]
+If $x$ normalizes $T_{S'}$, one has for every $t'\in T(S')$,
+\[
+xt'x^{-1}=t''\in T(S'),
+\]
+that is, $xt'=t''x$, which is written
+\[
+v(tt')(t'^{-1}ut')=(t''vt''^{-1})(t''t)u,
+\]
+which gives $t'^{-1}ut'=u$, hence $u\in\uCentr_G(T)(S')=T(S')$, that is $u=1$. Likewise $v=1$.
+\begin{corollary}{4.2.8}\label{XXII.4.2.8}
+One has
+\[
+\Ker(f)=\prod_{\alpha\in R_-}K_\alpha\cdot\Ker(f_T)\cdot\prod_{\alpha\in R_+}K_\alpha,
+\]
+where for each $\alpha\in R$, $K_\alpha$ denotes the finite $S$-group
+\[
+K_\alpha=\Ker(U_\alpha\to U_\alpha^{\otimes q(\alpha)})\simeq\boldsymbol\alpha_{q(\alpha),S}.
+\]
+\end{corollary}
+To apply this corollary, put:
+\begin{definition}{4.2.9}\label{XXII.4.2.9}
+Let $S$ be a scheme, $G$ and $G'$ two reductive $S$-groups. A faithfully flat finite morphism of $S$-groups $f:G\to G'$ (i.e. surjective and with kernel finite over $S$) is called an \emph{isogeny}. If moreover $\Ker(f)$ is a central subgroup of $G$, one says that $f$ is a \emph{central isogeny}.
+\end{definition}
+\begin{proposition}{4.2.10}\label{XXII.4.2.10}
+Let $f:G\to G'$ be a morphism of split groups. For $f$ to be an isogeny (resp. a central isogeny), it is necessary and sufficient that $f_T$ be an isogeny, i.e. that $\mathscr R(f)$ be injective with finite cokernel (resp. and that for every $\alpha\in R$, one have $q(\alpha)=1$).
+\end{proposition}
+Indeed, by 4.2.8, $\Ker(f)$ is finite over $S$ if and only if $\Ker(f_T)$ is finite over $S$, and $\Ker(f)\subset T$ if and only if each $q(\alpha)$ is $1$ ($\Ker(f)$ is then central since it is of multiplicative type and invariant, \cf Exp.~IX 5.5).
+\begin{remark}{4.2.11}\label{XXII.4.2.11}
+a) One therefore sees that $f:G\to G'$ is a central isogeny if and only if $\mathscr R(f):\mathscr R(G')\to\mathscr R(G)$ is an isogeny in the sense of Exp.~XXI 6.2; moreover one has in this case (with the notations of \loccit):
+\[
+\Ker(f)=\mathrm D_S\bigl(K(\mathscr R(f))\bigr),\qquad K(\mathscr R(f))=\Coker(\mathscr R(f)).
+\]
+b) If $G$ and $G'$ are semisimple, every morphism of split groups $f:G\to G'$ is an isogeny{\renewcommand{\thefootnote}{(21)}\nde{Indeed, since $G$ and $G'$ are semisimple, $f_T$ is surjective with finite kernel, hence $f$ is faithfully flat with finite kernel by 4.2.6 (i) and 4.2.8.}}.
+
+c) If $f:G\to G'$ is faithfully flat and finite and if $G$ is reductive (resp. semisimple), then $G'$ is also. It is indeed of finite presentation over $S$ (Exp.~V 9.1), affine over $S$ (EGA II 6.7.1), smooth over $S$ (Exp.~VI 9.2), with connected reductive (resp. semisimple) geometric fibers by Exp.~XIX 1.7.
+\end{remark}
+Definition 4.2.1 may seem arbitrary. It is justified by the following proposition (which we will state, for simplicity, for semisimple groups).
+
+Let us say that a morphism $f:G\to G'$ of reductive $S$-groups is \emph{splittable} if there exist splittings of $G$ and $G'$ with which $f$ is compatible. One then has the
+\begin{proposition}{4.2.12}\label{XXII.4.2.12}
+Let $S$ be a scheme, $G$ and $G'$ two semisimple $S$-groups, $f:G\to G'$ a morphism of groups. Let $s\in S$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $\Ker f_{\overline s}$ is finite ($\Leftrightarrow e$ is isolated in $\Ker f(\overline s)$) and $f_{\overline s}$ is surjective, i.e. $f_{\overline s}$ is an isogeny.
+\item $f_{\overline s}$ is splittable.
+\item There exists an \'etale morphism $S'\to S$ covering $s$ such that $f_{S'}:G_{S'}\to G'_{S'}$ is splittable.
+\end{enumeratei}
+\end{proposition}
+One clearly has (iii) $\Leftrightarrow$ (ii); (ii) $\Rightarrow$ (i) follows from 4.2.11 (b) (it is here that the hypothesis that $G$ and $G'$ are semisimple enters---the other implications hold for reductive groups).
+
+Let us now prove (i) $\Rightarrow$ (iii). One may assume $G$ and $G'$ split in such a way that $f$ induces a morphism $f_T:T\to T'$ (2.3 and Exp.~XIX 2.8); restricting $S$, one may assume that $f_T=\mathrm D_S(h)$, where $h$ is a morphism of groups $M'\to M$. Let $\alpha\in R$, consider the composite morphism
+\[
+p:\mathrm W(\mathfrak g^\alpha)\xrightarrow{\exp_\alpha}G\xrightarrow f G'.
+\]
+Since $\Ker(p_{\overline s})$ is finite, $p_{\overline s}\ne e$. On the other hand $f_{T\overline s}$ is surjective; one may therefore apply 4.1.9 and there exist an open subset $V_\alpha$ of $S$ containing $s$, a root $\alpha'\in R'$, an integer $q(\alpha)$ such that $x\mto x^{q(\alpha)}$ is an endomorphism of $\mathbf G_{a,V_\alpha}$, and an isomorphism of $\OO_{V_\alpha}$-modules
+\[
+f_\alpha:(\mathfrak g^\alpha)^{\otimes q(\alpha)}|_{V_\alpha}\to\mathfrak g'^{\alpha'}|_{V_\alpha}
+\]
+such that $f(\exp_\alpha(X_\alpha))=\exp_{d(\alpha)}\bigl(f_\alpha(X_\alpha^{q(\alpha)})\bigr)$ and $\alpha'\circ f_T=h(\alpha')=q(\alpha)\alpha$. One may replace $S$ by the intersection of the $V_\alpha$, for $\alpha\in R$. Put $\alpha'=d(\alpha)$. It is clear that $d:R\to R'$ is a bijection, for the kernel of $h$ is finite ($f_{T\overline s}$ being surjective). It only remains to prove that $f_T\circ\alpha^*=q(\alpha)\alpha'^*$, which is done by a trivial modification of the argument used in Exp.~XX 3.11.
+
+In any case, as was seen in the course of the proof, one has (i) $\Rightarrow$ (iii). One therefore has:
+\begin{corollary}{4.2.13}\label{XXII.4.2.13}
+Let $S$ be a scheme, $f:G\to G'$ an isogeny of reductive groups. Then $f$ is locally splittable for the \'etale topology.
+\end{corollary}
+
+\sgasection{4.3}{Central quotients of reductive groups}
+Consider first a particular case.
+\begin{proposition}{4.3.1}\label{XXII.4.3.1}
+Let $S$ be a scheme, $(G,T,M,R)$ a split $S$-group, $N$ a subgroup of $M$ containing $R$, $Q=\mathrm D_S(M/N)\subset\uCentr(G)$. Then:
+\begin{enumeratei}
+\item $G'=G/Q$ is a reductive $S$-group, $T'=T/Q$ is a maximal torus of it;
+\item if one identifies $T'$ with $\mathrm D_S(N)$, then $R\subset N$ is a system of roots of $G'$ with respect to $T'$, $(G',T',N,R)$ is a splitting of $G$, and $\mathscr R(G')$ is canonically identified with the induced root datum (Exp.~XXI 6.5) $\mathscr R(G)_N$;
+% typo?: kept as printed: "un deploiement de G".
+\item the canonical morphism $G\to G'$ is compatible with the splittings, with radicial exponents $1$, and gives by functoriality the canonical morphism (\loccit) $\mathscr R(G)_N\to\mathscr R(G)$.
+\end{enumeratei}
+\end{proposition}
+One knows that $G'=G/Q$ is representable by a group scheme affine over $S$ (Exp.~VIII 5.7), smooth over $S$ (Exp.~VIB 9.2), with connected reductive geometric fibers (as quotients of reductive groups, \cf Exp.~XIX 1.7); $G'$ is therefore a reductive $S$-group.
+
+It is clear that $T'=T/Q\simeq\mathrm D_S(N)$ is a maximal torus of it. Note next that on choosing a system of positive roots $R_+$ of $R$, the open subset $\Omega_{R_+}$ of 4.2 is stable under $Q$ and that one has a canonical isomorphism
+\[
+\Omega_{R_+}/Q\simeq\prod_{\alpha\in R_-}U_\alpha\underset S\times(T/Q)\underset S\times\prod_{\alpha\in R_+}U_\alpha,
+\]
+and that $\Omega_{R_+}/Q$ is an open subset of $G'$, containing the identity section (\cf Exp.~IV, 4.7.2 and 6.4.1).
+
+It follows that if one denotes by $\mathfrak g'$ the Lie algebra of $G'$ and by $\alpha$ the character of $T/Q$ induced by $\alpha$ (or, equivalently, defined by $\alpha\in N$ in the identification $T/Q=\mathrm D_S(N)$), the canonical morphism $\mathfrak g\to\mathfrak g'$ induces for each $\alpha\in R$ an isomorphism
+\[
+\mathfrak g^\alpha\isomto\mathfrak g'^\alpha.
+\]

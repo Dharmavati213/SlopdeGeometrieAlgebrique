@@ -1,0 +1,171 @@
+\sgasection{3}{Some sorites on $\mathcal C$-groupoids}
+Here, in no particular order, are some remarks used below:
+
+\textbf{a)} Let
+\[
+\xymatrix{X_2\ar@<1ex>[r]^{d'_0,d'_1,d'_2}\ar[r]\ar@<-1ex>[r]&X_1\ar@<.5ex>[r]^{d_0,d_1}\ar@<-.5ex>[r]&X_0}
+\]
+be a $\mathcal C$-groupoid and $f_0:Y_0\to X_0$ an arrow of $\mathcal C$. We shall define a $\mathcal C$-groupoid with base $Y_0$
+\[
+\xymatrix{Y_2\ar@<1ex>[r]^{e'_0,e'_1,e'_2}\ar[r]\ar@<-1ex>[r]&Y_1\ar@<.5ex>[r]^{e_0,e_1}\ar@<-.5ex>[r]&Y_0}
+\]
+which will be said to be induced by $X_*$ and $f_0$. One will also say that $Y_*$ is the inverse image of $X_*$ by the base change $f_0$.
+
+For $Y_1$ we choose the fibered product of the diagram
+\[
+\xymatrix{Y_1\ar@{-->}[r]^{f_1}\ar@{-->}[d]&X_1\ar[d]^{d_0\boxtimes d_1}\\Y_0\times Y_0\ar[r]_{f_0\times f_0}&X_0\times X_0,}
+\]
+and for $e_0$ and $e_1$ the arrows obtained by composing the canonical arrow $Y_1\to Y_0\times Y_0$ with the first and second projections of $Y_0\times Y_0$. The morphism $Y_1\to Y_0\times Y_0$ is then $e_0\boxtimes e_1$, and one has $f_0\circ e_i=d_i\circ f_1$ for $i=0,1$, where $f_1$ denotes the projection of $Y_1$ onto $X_1$.
+
+One puts $Y_2=Y_1\times_{e_0,e_1}Y_1$, cf. 1.c). One can say that the pair $(e_0,e_1)$ is defined so that, for every $T\in\mathcal C$, and for every pair $(y,x)$ of elements of $Y_0(T)$, there is a certain one-to-one correspondence $\psi\mto{}_y\psi_x$ between the arrows $\psi$ of $X_*(T)$ with source $f_0(x)$ and target $f_0(y)$, and the arrows ${}_y\psi_x$ of $Y_*(T)$ with source $x$ and target $y$. One therefore determines $e'_1:Y_2\to Y_1$ by defining, for every $T\in\mathcal C$, the composition of arrows of $Y_*(T)$ by the formula
+\[
+{}_z\psi_y\circ{}_y\varphi_x={}_z(\psi\circ\varphi)_x.
+\]
+It is clear that this definition makes each $Y_*(T)$ a groupoid.
+
+\textbf{b)} Knowing the $\mathcal C$-groupoid $X_*$ and the base change $f_0:Y_0\to X_0$, one can reconstruct the pair $(e_0,e_1):Y_1\rightrightarrows Y_0$ in another way:\nde{This second viewpoint will be used in 3.f) and in the proof of 6.1.} construct $Y_0\times_{X_0}X_1$, $\mathrm{pr}_1$ and $\mathrm{pr}_2$ so that the square
+\[
+\xymatrix{Y_0\times_{X_0}X_1\ar[r]^{\mathrm{pr}_2}\ar[d]_{\mathrm{pr}_1}&X_1\ar[d]^{d_0}\\Y_0\ar[r]_{f_0}&X_0}
+\]
+is cartesian. One then verifies without difficulty, by reduction to the set-theoretic case, that one has the cartesian square:
+\[
+\xymatrix{Y_1\ar[r]^{e_0\boxtimes f_1}\ar[d]_{e_1}&Y_0\times_{X_0}X_1\ar[d]^{d_1\circ\mathrm{pr}_2}\\Y_0\ar[r]_{f_0}&X_0,}
+\]
+where $f_1$ denotes the canonical projection of $Y_1=(Y_0\times Y_0)\times_{(X_0\times X_0)}X_1$ onto $X_1$.
+
+\textbf{c)} We shall give two examples of inverse images of a $\mathcal C$-groupoid. Take $Y_0=X_1$, $f_0=d_0$. For every object $T$ of $\mathcal C$, $Y_1(T)$ is then identified with the set of diagrams of the form
+\[
+\xymatrix{b\ar[r]^\varphi&d\\a\ar[u]^f&c\ar[u]_g}
+\]
+of $X_*(T)$. The source of such a diagram is the arrow $f$, the target is the arrow $g$. These diagrams compose in the obvious way.
+
+Now put $Y'_0=X_1$, $f'_0=d_1$ (we add primes\nde{``Accents'' in the original.} to avoid any confusion with the preceding example). In this case, for every $T\in\mathcal C$, $Y'_1(T)$ is identified with the set of diagrams of the form
+\[
+\xymatrix{b&d\\a\ar[u]^f\ar[r]_\psi&c\ar[u]_g}
+\]
+of the groupoid $X_*(T)$. The source of such a diagram is $f$, the target is $g$; the composition of these diagrams is obvious.
+
+This being said, it is clear that the identity map of $Y_0(T)$ and the map
+\[
+\xymatrix{b\ar[r]^\varphi&d\\a\ar[u]^f&c\ar[u]_g}
+\quad\longmapsto\quad
+\xymatrix{b&d\\a\ar[u]^f\ar[r]_{g^{-1}\varphi f}&c\ar[u]_g}
+\]
+from $Y_1(T)$ onto $Y'_1(T)$ define an isomorphism of the groupoid $Y_*(T)$ onto $Y'_*(T)$. Moreover, this isomorphism depends functorially on $T$, so that the $\mathcal C$-groupoids $Y_*$ and $Y'_*$ are isomorphic.\nde{This will play a crucial role in the proof of Lemma 6.1.}
+
+\textbf{d)}
+\begin{proposition}{3.1}\label{V.3.1}
+We retain the notation of a), and suppose that $f_0$ is an effective and universal epimorphism. Then $\Coker(d_0,d_1)$ exists if and only if $\Coker(e_0,e_1)$ exists.\nde{The original has been modified to bring out the isomorphism below.} Moreover, in this case $f_0$ induces an isomorphism
+\[
+\Coker(d_0,d_1)\isomto\Coker(e_0,e_1).
+\]
+\end{proposition}
+Let us first recall that an epimorphism $f_0:Y_0\to X_0$ is said to be universal if, for every cartesian square
+\[
+\xymatrix{Y'\ar[r]\ar[d]_{f'}&Y_0\ar[d]^{f_0}\\X'\ar[r]&X_0,}
+\]
+$f'$ is an epimorphism. This being said, denote by $C(d_0,d_1)$ the covariant functor from $\mathcal C$ to sets which assigns to every $T\in\mathcal C$ the kernel of the pair $T(d_0),T(d_1):T(X_0)\rightrightarrows T(X_1)$. Define $C(e_0,e_1)$ similarly. For every $T\in\mathcal C$, one therefore has a commutative diagram
+\[
+\xymatrix{C(d_0,d_1)(T)\ar[r]\ar[d]_{T(f)}&T(X_0)\ar@<.5ex>[r]^{T(d_1)}\ar@<-.5ex>[r]_{T(d_0)}\ar[d]_{T(f_0)}&T(X_1)\ar[d]^{T(f_1)}\\C(e_0,e_1)(T)\ar[r]&T(Y_0)\ar@<.5ex>[r]^{T(e_1)}\ar@<-.5ex>[r]_{T(e_0)}&T(Y_1),}
+\]
+where $T(f)$ is the injection induced by the injection $T(f_0)$. If we show that $T(f)$ is a surjection for every $T$, we shall have a functorial isomorphism $f:C(d_0,d_1)\isomto C(e_0,e_1)$, so that the representability of one of these functors is equivalent to that of the other; this will prove our proposition.
+
+To prove surjectivity of $T(f)$, consider the diagram
+\[
+\xymatrix{&Y_1\ar[r]^{f_1}\ar@<.5ex>[d]^{e_0}\ar@<-.5ex>[d]_{e_1}&X_1\ar@<.5ex>[d]^{d_0}\ar@<-.5ex>[d]_{d_1}\\Y_0\times_{X_0}Y_0\ar[ur]^\Delta\ar@<.5ex>[r]^{\mathrm{pr}_2}\ar@<-.5ex>[r]_{\mathrm{pr}_1}&Y_0\ar[r]_{f_0}&X_0,}
+\]
+where $\Delta$ is the section of $Y_1\to Y_0\times Y_0$ defined by the morphism $s\circ f_0\circ\mathrm{pr}_1:Y_0\times Y_0\to X_1$, the arrow $s:X_0\to X_1$ satisfying equalities (3) and (3 bis) of paragraph 1.
+% typo?: kept as printed: the prose writes Y_0 times Y_0 here.
+
+If the arrow $g:Y_0\to T$ satisfies $g\circ e_0=g\circ e_1$, one has $g\circ e_0\circ\Delta=g\circ e_1\circ\Delta$, hence $g\circ\mathrm{pr}_1=g\circ\mathrm{pr}_2$. Since $f_0$ is an effective epimorphism, $g$ is the composite of $f_0$ with an arrow $h:X_0\to T$, that is, one has $g=T(f_0)(h)$. It remains to show that $h$ belongs to $C(d_0,d_1)(T)$, that is, satisfies $hd_0=hd_1$; now one has
+\[
+hd_0f_1=hf_0e_0=ge_0=ge_1=hf_0e_1=hd_1f_1,
+\]
+whence the desired equality, since $f_1$ is an epimorphism (for $f_0$ is a universal epimorphism).
+
+\textbf{e)} Now consider a scheme $S$ and choose $\mathcal C=(\mathrm{Sch}/S)$. Giving a $\mathcal C$-groupoid
+\[
+\xymatrix{X_2\ar@<1ex>[r]^{d'_2}\ar[r]^{d'_1}\ar@<-1ex>[r]_{d'_0}&X_1\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X_0}
+\]
+allows one to define an equivalence relation on the underlying set $\underline X_0$ of the scheme $X_0$: if $x,y\in\underline X_0$, one writes $x\sim y$ when there exists $z\in\underline X_1$ such that $x=d_1z$ and $y=d_0z$. Reflexivity and symmetry of this relation are obvious;\nde{Reflexivity follows from the existence of $s:X_0\to X_1$, which is a section of $d_0$ and $d_1$; symmetry follows from the existence of the involution $\sigma$ of $X_1$ which ``interchanges $d_0$ and $d_1$'', that is, satisfies $d_0\sigma=d_1$ and $d_1\sigma=d_0$, cf. §1, (3), (3 bis) and $(\dagger)$.} let us prove transitivity: if $x\sim y$ and $y\sim z$, there exist $u,v\in\underline X_1$ such that $x=d_1u$, $y=d_0u$, $y=d_1v$, $z=d_0v$. It follows that $(v,u)$ belongs to the set-theoretic fibered product $\underline X_1\times_{d_1,d_0}\underline X_1$. Since the canonical map
+\[
+\underline{X_1\times_{d_1,d_0}X_1}\to\underline X_1\times_{d_1,d_0}\underline X_1
+\]
+from the underlying set of the fibered product to the fibered product of the underlying sets is surjective, $(v,u)$ is the image of some $w\in\underline X_2$. One then has $x=d_1d'_1w$ and $z=d_0d'_1w$, whence $x\sim z$.
+
+\textbf{f)} Retain the notation of a) and b), $\mathcal C$ still being $(\mathrm{Sch}/S)$. If $x,y$ are points of $Y_0$, we shall see that $x\sim y$ if and only if $f_0(x)\sim f_0(y)$ (the inverse image of the equivalence relation defined by a groupoid is the equivalence relation defined by the inverse image of the groupoid).
+
+Indeed, suppose $x\sim y$. There thus exists $z\in\underline Y_1$ such that $x=e_1(z)$ and $y=e_0(z)$. Since $f_0\circ e_i=d_i\circ f_1$ for $i=0,1$, one then has $f_0(x)=d_1f_1(z)$ and $f_0(y)=d_0f_1(z)$, whence $f_0(x)\sim f_0(y)$.
+
+Conversely, suppose $f_0(x)\sim f_0(y)$, and let $z\in\underline X_1$ satisfy $f_0(y)=d_1(z)$ and $f_0(x)=d_0(z)$. Using the construction and notation of b), there is then a point $t$ of $Y_0\times_{X_0}X_1$ such that $\mathrm{pr}_1(t)=x$ and $\mathrm{pr}_2(t)=z$. Similarly, since $f_0(y)=d_1\mathrm{pr}_2(t)$, there is an $s\in\underline Y_1$ such that $y=e_1(s)$ and $(e_0\boxtimes f_1)(s)=t$. One then has $e_0(s)=\mathrm{pr}_1(e_0\boxtimes f_1)(s)=\mathrm{pr}_1(t)=x$. Whence $x\sim y$.
+
+\sgasection{4}{Passage to the quotient by a finite flat groupoid (proof of a special case)}
+\begin{theorem}{4.1}\label{V.4.1}
+Consider a $(\mathrm{Sch}/S)$-groupoid:
+\[
+\xymatrix{X_2\ar@<1ex>[r]^{d'_2}\ar[r]^{d'_1}\ar@<-1ex>[r]_{d'_0}&X_1\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X_0}
+\]
+Suppose the following conditions hold:\nde{Since $d_0=d_1\sigma$, where $\sigma$ is an involutive automorphism of $X_1$, these two conditions are symmetric in $d_1$ and $d_0$; moreover one has $d_0d_1^{-1}(x)=d_1d_0^{-1}(x)$.}
+
+\textup{a)} $d_1$ is finite locally free,
+
+\textup{b)} for every $x\in X_0$, the set $d_0d_1^{-1}(x)$ is contained in an affine open subset of $X_0$.\nde{Hypothesis b) cannot be omitted. Indeed, H. Hironaka gave an example of an action of the finite group $G=\ZZ/2\ZZ$ on a proper $\CC$-variety $X_0$, such that the quotient $X_0/G$ is an algebraic space which is not a scheme ([Hi62], see also [Mum65], Chap. 4, §3).}
+
+Then:
+\begin{enumeratei}
+\item There exists a cokernel $(Y,p)$ of $(d_0,d_1)$ in $(\mathrm{Sch}/S)$; moreover, such a $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of all ringed spaces.
+\item $p$ is integral and open, and $Y$ is affine if $X_0$ is affine.\nde{The assertion that $p$ is open has been added, using the analogous proof given in 6.1.}
+\item The morphism $X_1\to X_0\times_YX_0$ with components $d_0$ and $d_1$ is surjective.
+\item If $(d_0,d_1)$ is an equivalence pair, $X_1\to X_0\times_YX_0$ is an isomorphism\nde{Note that, in this case, $X_1\to X_0\times_SX_0$ is therefore an immersion (EGA I, 5.3.10); see also VIB, 9.2.1. On the other hand, for the existence of the quotient (in the category of schemes or that of algebraic spaces) under the weaker hypothesis that $d_0$ and $d_1$ are finite (but not necessarily flat), see [An73], §1.1, [Fe03], [Ko08]\dots} and $p:X_0\to Y$ is finite locally free.\nde{The following consequences have been made explicit; see [Ray67a], th. 1 (iii) and the proof given below, at the end of section 5.} Moreover, $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of sheaves for the \fppf topology and, for every base change $Y'\to Y$, $Y'$ is the cokernel of the groupoid $X_*\times_YY'$ obtained from $X_*$ by the base change $X_0\times_YY'\to X_0$.
+\end{enumeratei}
+In particular, for every base change $S'\to S$, $Y'=Y\times_SS'$ is the cokernel of the $S'$-groupoid $X'_*=X_*\times_SS'$. Thus, in this case, ``formation of the quotient commutes with base change''.
+\end{theorem}
+It follows obviously from (i) that the underlying topological space of $Y$ is the quotient of the underlying topological space of $X_0$ by the equivalence relation defined by the $(\mathrm{Sch}/S)$-groupoid $X_*$.
+
+We shall first prove this theorem when $X_0$ is affine and $d_1$ is locally free of constant rank $n$. We shall then see how one can reduce to this special case.
+
+In the case in which we have placed ourselves, $X_0,X_1$ and $X_2$ are affine. We can therefore suppose that one has
+\[
+X_i=\Spec A_i,\qquad d_j=\Spec\delta_j\quad\text{and}\quad d'_k=\Spec\delta'_k,
+\]
+the $A_i$ being commutative rings and the $\delta_j,\delta'_k$ ring homomorphisms. One can then replace diagram (0,1,2) by the following
+\[
+\xymatrix{A_2&A_1\ar@<.5ex>[l]^{\delta'_1}\ar@<-.5ex>[l]_{\delta'_0}&A_0\ar[l]_{\delta_0}\\A_1\ar[u]^{\delta'_2}&A_0\ar@<.5ex>[l]^{\delta_1}\ar@<-.5ex>[l]_{\delta_0}\ar[u]_{\delta_1}&}\tag{$(0,1,2)^*$}
+\]
+where the two squares on the left are cocartesian.
+
+Denote by $B$ the subring of $A_0$ consisting of the $a\in A_0$ such that $\delta_0(a)=\delta_1(a)$.
+
+\textbf{a)} Let us show that $A_0$ is integral over $B$. If $a$ belongs to $A_0$, let
+\[
+P_{\delta_1}(T,\delta_0(a))=T^n-\sigma_1T^{n-1}+\cdots+(-1)^n\sigma_n
+\]
+be the characteristic polynomial of $\delta_0(a)$ when one regards $A_1$ as an algebra over $A_0$ by means of the homomorphism $\delta_1$ (cf. Bourbaki, Alg. VIII, §12 and Alg. comm. II, §5, exercise 9). Since the squares on the left of $(0,1,2)^*$ are cocartesian, one has
+\[
+\delta_0(P_{\delta_1}(T,\delta_0(a)))=P_{\delta'_2}(T,\delta'_0\delta_0(a))
+\]
+and
+\[
+\delta_1(P_{\delta_1}(T,\delta_0(a)))=P_{\delta'_2}(T,\delta'_1\delta_0(a)).
+\]
+Since $\delta'_0\delta_0=\delta'_1\delta_0$, one has
+\[
+\delta_0(P_{\delta_1}(T,\delta_0(a)))=\delta_1(P_{\delta_1}(T,\delta_0(a))),
+\]
+that is, $\delta_0(\sigma_i)=\delta_1(\sigma_i)$ for every $i$. On the other hand, Hamilton--Cayley tells us that one has
+\[
+\delta_0(a)^n-\delta_1(\sigma_1)\delta_0(a)^{n-1}+\cdots+(-1)^n\delta_1(\sigma_n)=0.
+\]
+Since $\delta_1(\sigma_i)=\delta_0(\sigma_i)$, one also has
+\[
+\delta_0(a)^n-\delta_0(\sigma_1)\delta_0(a)^{n-1}+\cdots+(-1)^n\delta_0(\sigma_n)=0,
+\]
+whence
+\[
+a^n-\sigma_1a^{n-1}+\cdots+(-1)^n\sigma_n=0,
+\]
+for there exists a homomorphism $\tau:A_1\to A_0$ such that $\tau\delta_0=\mathrm{id}_{A_0}$, so $\delta_0$ is injective. It follows that $A_0$ is integral over $B$.
+
+\textbf{b)} Now consider two prime ideals $x$ and $y$ of $A_0$. We shall show that the equality $x\cap B=y\cap B$ implies the existence of a prime ideal $z$ of $A_1$ such that $x=d_0(z)$ and $y=d_1(z)$.
+
+Indeed, if the assertion were not true, $x$ would be distinct from $\delta_0^{-1}(t)$ for every prime ideal $t$ of $A_1$ such that $\delta_1^{-1}(t)=y$. For such a $t$ one would have $\delta_0^{-1}(t)\cap B=\delta_1^{-1}(t)\cap B=y\cap B=x\cap B$, whence, by Cohen--Seidenberg (cf. Bourbaki, Alg. comm. V, §2, cor. 1 of prop. 1), it would follow that $x$ would not be contained in any $\delta_0^{-1}(t)$.\nde{The original has been expanded in what follows; in particular, Lemma 4.1.1, taken from [DG70], III, §2.4, Lemma 4.3, has been added.}

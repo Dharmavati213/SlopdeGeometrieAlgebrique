@@ -1,0 +1,110 @@
+% Source PDF pp. 51--55; the first continued sentence belongs to en-08.
+By uniqueness, one easily sees that $u_\ell$ is a central morphism of $S$-groups (Exp. IX 5.6 a)). Proceeding as in 6.6 and 6.7, one shows that $u_\ell$ is an immersion and that, if $M_\ell$ is the image group $u_\ell({}_\ell T)$, then $\uCentr_G(M_\ell)$ is equal to $H$ for sufficiently large $\ell$ (this is where the hypothesis that $S$ is noetherian is used).
+
+\par\noindent\emph{Proof of i).}
+The group $G$ is smooth over $S$, with connected fibers, so if $H\in\mathscr{CT}(S)$, $H$ has connected fibers (Exp. XII 6.6 b)) and is equal to its connected normalizer (6.5), so that the functor $\mathscr{CT}$ defined in 7.1 i) coincides with the functor also denoted by $\mathscr{CT}$ which was defined in 6.4.0. Thus, by Theorem 6.4, $\mathscr{CT}$ is representable by an $S$-prescheme of finite presentation and quasi-projective over $S$. It remains to show that this prescheme is smooth over $S$. One first reduces, by EGA IV 8, to the case where $S$ is affine noetherian. By Exp. XI 1.5, it then suffices to prove that if $S$ is the spectrum of an artinian local ring, $S_0$ a subscheme defined by a nilpotent ideal, $H_0$ an element of $\mathscr{CT}(S_0)$, then $H_0$ lifts to a group subprescheme $H$ of $G$, smooth over $S$. Now by ii), $H_0=\uCentr_{G_0}T_0$, where $T_0$ is a subtorus of $G_0$. Since $G$ is smooth, $T_0$ lifts to a subtorus $T$ of $G$ (Exp. IX 3.6 bis), and it suffices to take $H=\uCentr_G(T)$, which is indeed smooth over $S$ (Exp. XI 2.4 and Lemma 2.5).
+
+\par\noindent\emph{Proof of iii).}
+Since $H$ is smooth, with connected fibers, by Exp. XI 6.11, $\uTransp_G(H,L)$ is representable by a closed subprescheme of $G$, of finite presentation over $S$. To show that this transporter is smooth, one reduces, as above, to proving that if $S$ is local artinian, $S_0$ a closed subprescheme of $S$, $g_0\in G(S_0)$ such that $\operatorname{int}(g_0)H_0\subset L_0$, then $g_0$ lifts to $g\in G(S)$ such that $\operatorname{int}(g)H\subset L$. Since the group $G$ is smooth over $S$, there exists a section $g_1$ of $G$ lifting $g_0$; let $H'=\operatorname{int}(g_1)H$. It is therefore an element of $\mathscr{CT}(S)$ such that $H'_0\subset L_0$. By ii), $H'$ is the centralizer in $G$ of a torus $T'$ of $G$. Since $L$ is smooth, the torus $T'_0$ of $L_0$ lifts to a torus $T''$ of $L$ (Exp. XI 3.6 bis). The group $\uCentr_L T''$ is contained in $\uCentr_G T''$, has the same fiber as the latter (namely $H'_0$), and is smooth, hence is equal to $\uCentr_G T''=H''$. The subtori $T'$ and $T''$ of $G$ are two liftings of $T'_0$, hence are conjugate by an element $h$ of $G(S)$ reducing to the unit section of $G_0$ (Exp. IX 3.3 bis); the same therefore holds for their centralizers $H'$ and $H''$ in $G$. The section $g=hg_1$ lifts $g_0$, and one indeed has $\operatorname{int}(g)H\subset L$.
+% typo?: Exp. XI 3.6 bis is the printed reference; kept as printed.
+
+If now $g\in\uTransp_G(H,L)(S)$, for $\operatorname{int}(g)H=L$, it is necessary and sufficient that for every $s\in S$, $\dim H_s=\dim L_s$. It follows that if $U$ denotes the subprescheme of $S$, both open and closed, over which the fibers of $H$ have the same dimension as those of $L$, the strict transporter of $H$ into $L$, $\uTransp_G^{\mathrm{str}}(H,L)$, is representable by the $S$-prescheme
+\[
+U\times_S\uTransp_G(H,L).
+\]
+
+\par\noindent\emph{Proof of iv).}
+To see that if $H\in\mathscr{CT}(S)$, $H$ is closed in $G$, one may suppose $S$ affine noetherian, then $S$ the spectrum of a complete local ring (EGA IV 8), but then $H$ is the centralizer in $G$ of a subgroup of multiplicative type (by ii)), hence is closed since $G$ is separated over $S$ (Exp. VIB 5.2).
+
+% Source PDF p. 52.
+By iii), $N=\uNorm_G(H)=\uTransp_G^{\mathrm{str}}(H,H)$ is representable by a group subprescheme smooth over $S$ and closed in $G$. Consider the $S$-morphism
+\[
+G\longrightarrow\mathscr{CT},\qquad g\longmapsto\operatorname{int}(g)H.
+\]
+It follows from iii) that this morphism is smooth, so its image is an open subset $U$ of $\mathscr{CT}$. One then proves, as in Exp. XI 5.3, that $G/N$ is representable by $U$, hence in particular is quasi-projective.
+
+Let us now study the quotient $N/H$. By EGA IV 8, to prove that $N/H$ is representable, one may suppose $S$ affine noetherian, then $S$ the spectrum of a local ring $A$, hence of finite dimension\nde{(Krull dimension)}. We shall proceed by increasing induction on the dimension of $S$. If $\dim S=0$, the property follows from Exp. VIA \S\ 4. Note now that if $N/H$ is representable, it is separated over $S$ (since $H$ is closed in $N$ by iv)), of finite type and étale over $S$ (since $N$ is smooth over $S$, of finite type, and $H$ is open in $N$), so $N/H$ is necessarily quasi-affine over $S$ (SGA1 VIII.6.2). By effective descent of quasi-affine schemes (loc. cit. 7.9), one may replace $A$ by its completion, hence suppose $S$ the spectrum of a complete noetherian local ring. Let $s$ be its closed point and $U=S\setminus s$. By the induction hypothesis, $(N|_U)/(H|_U)$ is representable by a $U$-group $K$. Let then $T_s$ be the maximal central torus of $H_s$, $q$ an integer invertible on $S$, $\ell$ a power of $q$, $M_\ell$ the unique central subgroup of multiplicative type of $H$ lifting ${}_\ell T_s$ (cf. ii)). Choose $\ell$ sufficiently large that $\uCentr_G(M_\ell)=H$, and let $N'=\uNorm_G(M_\ell)$. Since $\uCentr_G(M_\ell)=H$, one has $N'\subset\uNorm_G(H)$. Moreover, one immediately checks that $T_s$ (hence also $(M_\ell)_s$) is a characteristic subgroup of $H_s$ (i.e. stable under $\Aut_{\mathrm{gr}}(H_s)$), so $N_s$ normalizes $(M_\ell)_s$, and consequently $N_s=N'_s$. The proof of Exp. XI 5.9 then proves that the quotient $N'/H=\uNorm_G(M_\ell)/\uCentr_G(M_\ell)$ is representable by an $S$-group $K'$. Since $N'$ is smooth over $S$ and $N'_s=N_s$, $N'$ is an open subgroup of $N$ (Exp. VIB 2.5) containing $H$, so the image of $N'|_U$ in $K$ is an open subgroup, isomorphic to $K'|_U$. Let $L$ be the $S$-prescheme obtained by gluing $K$ and $K'$ by means of the preceding isomorphism, and let $p$ be the $S$-morphism $N\to L$ obtained by gluing the canonical projections $N|_U\to K$ and $N'\to K'$. It is clear that $(L,p)$ represents the quotient $N/H$.
+
+\par\noindent\emph{Proof of v).}
+Suppose first that $S$ is the spectrum of a field $k$. The image $H'$ of $H$ is then a smooth subgroup of $G'$. We must show that $H'\in\mathscr{CT}_{G'}(S)$, which will follow from the following more precise lemma:
+\begin{lemma}{7.2}\label{XV.7.2}
+Let $u:G\to G'$ be an epimorphism of smooth connected algebraic $k$-groups, $T$ a torus of $G$, $T'$ its image in $G'$; then
+\[
+u(\Centr_G T)=\Centr_{G'}T'.
+\]
+\end{lemma}
+Write $H=\Centr_G T$, $H'=\Centr_{G'}T'$, $H''=u(H)$. One has $H''\subset H'$. To prove that $H'=H''$, one may suppose the base field algebraically closed, and it suffices to prove that every Cartan subgroup of $H'$ is contained in $H''$. Indeed, $H''$ will then contain the open subset of regular points of $H'$, hence $H''$ will be an open subgroup of $H'$ and consequently will be equal to $H'$, since the latter has connected fibers. Let therefore $C'$ be a Cartan subgroup of $H'$; $C'$ is also a Cartan subgroup of $G'$, since $H'$ is the centralizer of a torus $T'$, hence has the same reductive rank and the same nilpotent rank as $G'$. Put $K=(u^{-1}(C'))^0_{\mathrm{red}}$. Since $T'$ is in the center of $H'$, $C'$ contains $T'$, so $K$ contains $T$. Let then $C$ be a Cartan subgroup of $K$ containing $T$. The torus $T$ is contained in the unique maximal torus of $C$, which is central in $C$ (Exp. XII 6.6 c)), so $C$ is contained in $H=\Centr_G T$. Using now the fact that two Cartan subgroups of $G$ are conjugate and that the image of a Cartan subgroup of $G$ is a Cartan subgroup of $G'$ (Exp. XII 6.6), one deduces that $C$ is also a Cartan subgroup of $G$, so its image is a Cartan subgroup of $G'$; since it is contained in $C'$, one has $u(C)=C'$, so $C'$ is indeed contained in $H''$.
+
+% Source PDF p. 53.
+We have therefore established v) when $S$ is the spectrum of a field $k$. Let us now study the general case. Since $G$, $H$ and $G'$ are of finite presentation over $S$, to prove that $u(H)$ is representable and is an element of $\mathscr{CT}_{G'}(S)$, one reduces by the usual technique to the case where $S$ is affine noetherian, then to the case where $S$ is the spectrum of a local ring. By fpqc descent of subpreschemes of $G'$, one may even suppose that $S$ is the spectrum of a complete noetherian local ring $A$.
+
+Let us return to the notation of ii), i.e.: let $T_s$ be the maximal central torus of $H_s$ ($s$ is the closed point of $S$), $M_\ell$ a subgroup of multiplicative type of $H$ lifting ${}_\ell T_s$ and such that $H=\uCentr_G M_\ell$. Let $T'_s$ be the image of $T_s$ in $G'_s$. Since $G'$ is separated over $S$ (Exp. VIB 5.2), the image of $M_\ell$ under $u$ is a subgroup of multiplicative type $M'_\ell$ of $G'$ (Exp. IX 6.8). Put then $H'=\uCentr_{G'}M'_\ell$, which is a smooth group subprescheme of $G'$. For every integer $\ell'$ equal to a power of $q$, there exists $\ell$ such that $(M'_\ell)_s$ contains ${}_{\ell'}T'_s$, so one may suppose $\ell$ chosen sufficiently large that $H'_s=\Centr_{G'_s}T'_s=u_s(H_s)$, where the last equality follows from 7.2. The restriction of $u$ to $H$, say $v$, plainly factors through $H'$. Let us prove that $v:H\to H'$ is a flat morphism. Since $H$ and $H'$ are flat over $S$ and $H_s\to H'_s$ is flat, $v$ is flat on a neighborhood of $H_s$ (EGA IV 11.3.10 and 11.3.1). The morphism $v$ is therefore flat on an open subgroup of $H$ (Exp. VIB 2.2), hence $v$ is flat, $H$ having connected fibers. The set-theoretic image of $H$ is thus an open subset of $H'$ (necessarily equal to $(H')^0$) which, equipped with its induced structure, represents the image sheaf $u(H)$ (for the fpqc topology). The fact that $u(H)$ is an element of $\mathscr{CT}_{G'}(S)$ then follows from 7.2.
+
+Suppose now that $H$ is the centralizer in $G$ of a torus $T$, and let $T'$ be the image of $T$ under $u$, which is a subtorus of $G'$ (Exp. IX 6.8). The image of $H$ under $u$ is contained in $\Centr_{G'}(T')$, coincides fiber by fiber with the latter (7.2), and is smooth over $S$, so $u(H)=\Centr_{G'}(T')$.
+
+\par\noindent\emph{Proof of vi).}
+To show that $\widetilde u$ is a faithfully flat $S$-morphism, knowing that $\mathscr{CT}_G$ and $\mathscr{CT}_{G'}$ are smooth over $S$ (by i)), it suffices to check this on the geometric fibers. We are therefore reduced to the case where $S$ is the spectrum of an algebraically closed field $k$. Let $H'\in\mathscr{CT}_{G'}(k)$, $T'$ its maximal central torus, $T$ a subtorus of $G$ whose image is $T'$, $H=\Centr_G(T)$, so that $H'=u(H)$ (7.2), $N=\uNorm_G(H)$, $N'=\uNorm_{G'}(H')$. We have shown in iv) that $G/N$ (resp. $G'/N'$) is canonically identified with an open neighborhood of $H$ in $\mathscr{CT}_G$ (resp. of $H'$ in $\mathscr{CT}_{G'}$). Under these identifications, the restriction of $\widetilde u$ to $G/N$ coincides with the natural morphism
+\[
+w:G/N\longrightarrow G'/N'
+\]
+deduced from $u$ by passage to the quotient. Now $w$ is an epimorphism of homogeneous spaces under $G$, hence is faithfully flat. This proves that $\widetilde u$ is a flat morphism such that $u(\mathscr{CT}_G)$, which is therefore an open subset of $\mathscr{CT}_{G'}$, contains every point of $\mathscr{CT}_{G'}(k)$. Since $\mathscr{CT}_{G'}$ is of finite type over $k$, one deduces that $\widetilde u$ is surjective, hence is faithfully flat.
+% typo?: the source writes u(CT_G), rather than tilde-u(CT_G); kept as printed.
+
+% Source PDF p. 54.
+The additional assertions in vi) in the case where $\Ker u$ is central follow from Exp. XII 7.12.
+
+The following theorem generalizes Theorem 7.1 of Exp. XII:
+\begin{theorem}{7.3}\label{XV.7.3}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation over $S$, smooth, with connected fibers, and consider the $S$-functor $\mathscr C:(\Sch/S)^\circ\to\Ens$ such that
+\[
+\mathscr C(S')=\text{set of Cartan subgroups of }G_{S'}.
+\]
+\noindent i) The following conditions are equivalent:
+
+\noindent\hspace*{1em}a) The functor $\mathscr C$ is representable.
+
+\noindent\hspace*{1em}b) The functor $\mathscr C$ is representable by a smooth quasi-projective $S$-prescheme of finite presentation over $S$, with affine fibers.
+
+\noindent\hspace*{1em}c) The group $G$ has, locally for the étale topology, a Cartan subgroup.
+
+\noindent\hspace*{1em}d) The group $G$ has, locally for the faithfully flat topology, a Cartan subgroup.
+
+\noindent\hspace*{1em}e) The nilpotent rank of the fibers of $G$ is a locally constant function on $S$.
+
+\noindent ii) If the preceding conditions hold, two Cartan subgroups of $G$ are locally conjugate for the étale topology. The set of regular points of the fibers of $G$ (Exp. XIII 2.7) is an open subset $G_{\mathrm{reg}}$, of finite presentation over $S$, and every section of $G_{\mathrm{reg}}$ over $S$ is contained in one and only one Cartan subgroup of $G$.
+
+\noindent iii) Let $G'$ be a group $S$-prescheme of finite presentation over $S$, and $u:G\to G'$ a faithfully flat group $S$-morphism, so that $G'$ is smooth over $S$, with connected fibers. Then if $C$ is a Cartan subgroup of $G$, $u(C)=C'$ is representable by a Cartan subgroup of $G'$, and $C\to C'$ is faithfully flat.
+
+\noindent iv) Under the conditions of i) and iii), the morphism
+\[
+\widetilde u:\mathscr C_G\longrightarrow\mathscr C_{G'},\qquad C\longmapsto u(C)=C'
+\]
+is faithfully flat. If moreover $\Ker(u)$ is central, $\widetilde u$ is an isomorphism.
+
+\noindent v) For further information concerning transporters and relations with maximal tori, one may consult 7.1 and Exp. XII 7.1.
+\end{theorem}
+\begin{proof}
+% Source PDF p. 55.
+i) We shall show that $\text{b)}\Rightarrow\text{c)}\Rightarrow\text{d)}\Rightarrow\text{e)}\Rightarrow\text{b)}\Rightarrow\text{a)}\Rightarrow\text{d)}$.
+
+$\text{b)}\Rightarrow\text{c)}$. Let $s$ be a point of $S$. Since $\mathscr C_s$ is smooth over $\kappa(s)$, there exist points of $\mathscr C_s$ whose residue field is a finite separable extension of $\kappa(s)$. Applying Exp. XI 1.10, one sees that there exists an open neighborhood $U$ of $s$ and a surjective étale morphism $U'\to U$ such that $G_{U'}$ has a Cartan subgroup.
+
+$\text{c)}\Rightarrow\text{d)}$ is quite clear.
+
+$\text{d)}\Rightarrow\text{e)}$. Let $s\in S$. By hypothesis, there exists an $S$-prescheme $S'$, flat over $S$, whose image contains $s$, such that $G_{S'}$ has a Cartan subgroup. Let $s'$ be a point of $S'$ above $s$. The nilpotent rank of the fibers of $G_{S'}$ is therefore constant on $\Spec\OO_{S',s'}$, and consequently the nilpotent rank of the fibers of $G$ is constant on $\Spec\OO_{S,s}$, which is the image of $\Spec\OO_{S',s'}$ (EGA IV 2.3.4 ii)). Let $r$ be its value. It follows from 6.3 bis that the set $E_r$ formed by the points $x$ of $S$ such that the nilpotent rank of $G_x$ is equal to $r$ is an ind-constructible subset of $S$, hence contains a neighborhood of $s$ (EGA IV 1.10.1).
+
+$\text{e)}\Rightarrow\text{b)}$. The assertion is local on $S$, so one may suppose that the nilpotent rank of the fibers of $G$ is constant and equal to $r$. For every $S$-prescheme $S'$, the Cartan subgroups of $G_{S'}$ are then precisely the group subpreschemes of $G_{S'}$, smooth over $S'$, of relative dimension $r$, whose geometric fibers are the centralizers of a torus. Since $\mathscr{CT}$ is representable by 7.1, $\mathscr C$ is representable by the subprescheme, both open and closed, of $\mathscr{CT}$ representing the subfunctor of $\mathscr{CT}$ formed by the groups of relative dimension $r$. The other assertions in b) are contained in 7.1 i), except the fact that the fibers of $\mathscr C$ are affine, which follows from Exp. XII 7.1 d).
+
+It is clear that $\text{b)}\Rightarrow\text{a)}$. Let us show that $\text{a)}\Rightarrow\text{d)}$. It follows from 6.2 iii) that the functor $\mathscr C$ commutes with filtered inductive limits of rings, so if $\mathscr C$ is representable, it is necessarily representable by an $S$-prescheme locally of finite presentation (EGA IV 8.14.2). To prove that $\mathscr C$ is smooth over $S$, one reduces to showing that if $S$ is affine and $S_0$ is the closed subscheme defined by a nilpotent ideal $J$, then every Cartan subgroup $C_0$ of $G_0=G\times_S S_0$ lifts to a Cartan subgroup $C$ of $G$. But the existence of $C_0$ implies that condition e) is satisfied for $S_0$, hence for $S$, which has the same underlying space, and one concludes from the fact that $\text{d)}\Rightarrow\text{b)}$. Since $\mathscr C$ is smooth over $S$ and $\mathscr C\to S$ is surjective, one sees that $\text{a)}\Rightarrow\text{d)}$.
+% typo?: d) => b) is the printed implication; kept as printed.
+
+ii) Let $C$ and $C'$ be two Cartan subgroups of $G$. Then $\uTransp_G(C,C')$ is representable by a prescheme smooth over $S$ (7.1 iii)), with nonempty fibers (cf. Exp. XII 6.6 a) and c)). The fact that $C$ and $C'$ are locally conjugate for the étale topology is then a consequence of Hensel's lemma (Exp. XI 1.10).
+
+The other assertions of ii) are consequences of XIII 3.1 and XIII 3.2, taking account of i).
+
+iii) Let $C$ be a Cartan subgroup of $G$. One knows (7.1 v)) that $u(C)$ is representable by a smooth subgroup $C'$ of $G'$. Since the fibers of $C'$ are Cartan subgroups of the fibers of $G'$ (Exp. XII 6.6 d)), $C'$ is a Cartan subgroup of $G'$.
+
+iv) To prove that the morphism $\widetilde u$ is faithfully flat, one proceeds as in 7.1 vi).
+
+If now $\Ker u$ is central and $C'$ is a Cartan subgroup of $G'$, $u^{-1}(C')=C$ is smooth, with connected fibers (7.1 vi)), and its fibers are Cartan subgroups (Exp. XII 6.6 f)), so $C$ is a Cartan subgroup of $G$, which completes the proof of iv), taking account of 7.1 vi).
+\end{proof}

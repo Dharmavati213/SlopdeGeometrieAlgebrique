@@ -1,0 +1,127 @@
+% PDF pp. 25--30.
+Let us first note that, since $G$ and $H$ are flat over $S$, the dimension of their fibers remains constant (VI$_{\mathrm B}$ 4.3). As $G$ and $H$ have the same generic fiber, it follows that this dimension is the same for $G$ and $H$, so $u_s:G_s\to H_s$ is a monomorphism of algebraic groups of the same dimension. One easily concludes that $G_s$ is open in $H_s$, and in fact is set-theoretically a union of connected components of $H_s$ (one is reduced to the case where the base field is algebraically closed and $G$ and $H$ reduced, hence smooth over $k$, where this is immediate\dots). Thus $H_s-G_s$ is closed in $H_s$, hence in $H$, so its complement $H'$ in $H$ is open, and is evidently an open subset stable under the group law of $H$. Thus, replacing $H$ by $H'$ if necessary, to prove that $u$ is an immersion one may reduce (with the usual proviso) to the case where, in addition to the preceding hypotheses, one supposes $u$ bijective, i.e. $u_s:G_s\to H_s$ bijective. One is therefore in any case reduced to proving that $u$, or again $u_s$, is an isomorphism, with the bijectivity hypothesis when appropriate.
+
+Let us therefore first suppose that $u$ is bijective. If $H_s$ is reduced, one may evidently conclude that $u_s$ is an isomorphism, for $G_s$ is identified with a closed subscheme of $H_s$ with the same underlying set. In particular, if $k=\kappa(s)$ is of characteristic zero, every algebraic group over $k$ is reduced by Cartier (cf. VI$_{\mathrm B}$, 1.6.1, or VII$_{\mathrm B}$, 3.3.1, or EGA IV$_4$, 16.12.2 and 17.12.5), and one has thus obtained:
+\begin{proposition}{7.2}\label{VIII.7.2}
+Let $u:G\to H$ be a homomorphism of group preschemes of finite presentation over $S$. Suppose that $u$ is a monomorphism, $G$ flat over $S$, and the residue fields of $S$ of characteristic zero. Then $u$ is an immersion.
+\end{proposition}
+When $\kappa(s)$ is of characteristic $p>0$, we shall restrict to the case where $G$ is commutative. Then (with the reductions made) $H$ is also commutative, since it is the schematic closure of $H_{s'}$, which is isomorphic to $G_{s'}$ and hence commutative. For every integer $n\geq0$, we put $S_n=\Spec(V/\goth m^{n+1})$ (where $V$ is the valuation ring defining $S$ and $\goth m$ its maximal ideal), $G_n=G\times_S S_n$, $H_n=H\times_S S_n$. For every integer $m>0$, we also introduce the subgroups ${}_mG$ and ${}_mH$ of $G$ and $H$, kernels of the $m$-th power. One defines similarly ${}_m(G_n)=({}_mG)_n$, which one will denote simply by ${}_mG_n$, and similarly for $H$.
+
+By VI$_{\mathrm A}$ 3.2, one may form the quotients $Q_n=H_n/G_n$; then $Q_n$ is a commutative group scheme over $S_n$, flat over $S_n$, and $H_n\to Q_n$ is a faithfully flat morphism with kernel $G_n$. As formation of quotients commutes with extension of the base,\nde{Bring this out in Exp. V and VI$_{\mathrm A}$\dots} one has
+\[
+Q_n\simeq Q_m\times_{S_m}S_n\qquad\text{for }m\geq n,
+\]
+in particular the fiber $Q_n\times_{S_n}S_0$ is precisely $Q_0=H_0/G_0$. As $G_0$ has the same underlying set as $H_0$, $Q_0$ is set-theoretically reduced to a single point: it is a purely infinitesimal group. Consequently, each $Q_n$ is finite and flat over $S_n$. Thus $Q_n$ is defined by an algebra $C_n$ over $V_n=V/\goth m^{n+1}$ which is a free module of finite type over this ring, and, for $m\geq n$, one has $C_n=C_m\otimes_{V_m}V_n$, an isomorphism also respecting the diagonal map. One therefore obtains a free module of finite type $C=\varprojlim C_n$ over $V=\varprojlim V_n$, and the diagonal maps of the $C_n$ define a diagonal map of $C$, so that $Q=\Spec(C)$ becomes a finite and flat group scheme over $S$ such that
+\[
+Q\times_S S_n=Q_n
+\]
+for every $n$.
+\begin{lemma}{7.3}\label{VIII.7.3}
+\nde{The hypothesis that $Q$ is commutative has been deleted here, and 7.3.1 has been modified accordingly. Note that if $Q$ is not commutative, the $n$-th power morphism is not in general a group homomorphism.} Let $K$ be a field, $Q$ a finite group scheme over $K$, of degree $n$. Then the $n$-th power morphism in $Q$ is zero.
+\end{lemma}
+Cf. VII$_{\mathrm A}$ 8.5.
+\begin{remark}{7.3.1}\label{VIII.7.3.1}
+Statement 7.3 still makes sense for a group scheme $Q/S$ finite and locally free over $S$, $S$ being any base prescheme. It would be interesting to find a proof in this general case.
+
+One will note that 7.3 (i.e. VII$_{\mathrm A}$, 8.5) proves in any case that the contemplated statement is true if $S$ is reduced, as one sees by applying 7.3 to the fibers of $Q$ at the maximal points (i.e. generic points of the irreducible components) of $S$.\nde{Add this in VII$_{\mathrm A}$ --- On the other hand, the statement is true for every $S$ if $Q$ is commutative, cf. Deligne's theorem in [TO70], p.~4.}
+
+In particular, under the conditions of the preceding proof, where $S$ is the spectrum of a discrete valuation ring and $Q$ is commutative, one finds that $n\cdot\mathrm{id}_Q=0$. Moreover, here $n$ is a power $p^{\nu_0}$ of the residue characteristic, and one finds the
+\end{remark}
+\begin{corollary}{7.4}\label{VIII.7.4}
+$Q$ and the $Q_n$ being as above, and their common degree being $p^{\nu_0}$, one shall have $p^{\nu_0}\cdot\mathrm{id}_Q=0$ and consequently $p^{\nu_0}\cdot\mathrm{id}_{Q_n}=0$ for every $n$.
+\end{corollary}
+\begin{corollary}{7.5}\label{VIII.7.5}
+Suppose in addition $G_0$ smooth over $k$, and the homomorphism $p\cdot\mathrm{id}_{G_0}$ flat (which amounts to saying, by the structure of algebraic groups over an algebraically closed field $\overline k$, that $G_{\overline k}$ contains no subgroup isomorphic to the additive group). Then for every $\nu\geq\nu_0$ and $n>0$, the group ${}_{p^\nu}H_n$ is flat over $S_n$.
+\end{corollary}
+Indeed, it follows from $p^{\nu_0}\cdot\mathrm{id}_{Q_n}=0$ that $p^\nu\cdot\mathrm{id}_{H_n}$ factors through $G_n$, so one shall have a commutative diagram:
+\[
+\xymatrix{H_n\ar[r]^{p^\nu\cdot\mathrm{id}_{H_n}}\ar[dr]^{v_n}&H_n\\G_n\ar[u]^{u_n}\ar[r]_{p^\nu\cdot\mathrm{id}_{G_n}}&G_n\ar[u]_{u_n}.}
+\]
+I say that $v_n$ is flat. Indeed, since $H_n$ and $G_n$ are flat over $S_n$, one is reduced to checking that $v_0$ is flat (SGA 1, IV 5.9), so one may suppose $n=0$, whence $S_n=\Spec(k)$. As $p\cdot\mathrm{id}_{G_0}$, and hence $p^\nu\cdot\mathrm{id}_{G_0}$, is flat, its image is an induced open subgroup $G'_0$ of $G_0$, and as $u_0:G_0\to H_0$ is surjective, it follows that $v_0$ takes its values in $G'_0$, and hence may be regarded as a homomorphism into $G'_0$. As its composite with $u_0$ is an epimorphism, it is an epimorphism, hence a flat homomorphism into $G'_0$, and hence a flat homomorphism into $G_0$. Thus $v_n$ is flat, so $\Ker v_n={}_{p^\nu}H$ is flat over $S$. \hfill Q.E.D.
+% typo?: missing n subscripts in the last sentence retained as printed.
+\begin{remark*}
+We have not explicitly used the fact that $G_0$ is smooth over $k$; but it is easy to see that this is a consequence of the fact that $p\cdot\mathrm{id}_G$ is flat, which is why we made this condition explicit in the hypothesis of corollary 7.5.
+\end{remark*}
+\begin{lemma}{7.6}\label{VIII.7.6}
+Let $u:G\to H$ be a surjective monomorphism of commutative algebraic groups over a field $k$ of characteristic $p>0$; consider the (purely infinitesimal) group $Q=H/G$. Then there exists an integer $\nu_1$ such that for $\nu\geq\nu_1$ the sequence
+\[
+0\to{}_{p^\nu}G\to{}_{p^\nu}H\to Q\to0
+\]
+is exact.
+\end{lemma}
+It suffices to ensure exactness at $Q$, and for this to ensure that the homomorphism
+\begin{equation}\tag{x}
+\OO_{Q,e}\to\OO_{{}_{p^\nu}H,e}
+\end{equation}
+of local rings at the neutral elements is injective (N.B. recall that $Q$ is set-theoretically reduced to the element $e$). Now one has a natural homomorphism
+\begin{equation}\tag{xx}
+\OO_{{}_{p^\nu}H,e}\to\OO_{H,e}/\goth m^{p^\nu},
+\end{equation}
+where $\goth m$ is the augmentation ideal (i.e. the maximal ideal) of $\OO_{H,e}$, as one sees by noting that $p^\nu\cdot\mathrm{id}_H$ vanishes on the kernel of the ``iterated Frobenius homomorphism'' $F^\nu$; the composite of homomorphisms (x) and (xx) also equals the natural composite
+\begin{equation}\tag{xxx}
+\OO_{Q,e}\to\OO_{H,e}\to\OO_{H,e}/\goth m^{p^\nu}.
+\end{equation}
+Now $\OO_{Q,e}\to\OO_{H,e}$ is injective, since $H\to Q$ is an epimorphism and hence flat; on the other hand $\OO_{Q,e}$ is artinian; finally, the intersection in $\OO_{H,e}$ of the $\goth m^{p^\nu}$ is reduced to 0, and hence so is the intersection of their traces on $\OO_{Q,e}$. Consequently, one of these traces is reduced to 0, which proves that (xxx) is injective, and a fortiori (x) is injective.
+\begin{lemma}{7.7}\label{VIII.7.7}
+Under the conditions of 7.5 there exists a $\nu_1$ such that, for $\nu\geq\nu_1$ and every $n$, the sequence of $S_n$-groups
+\[
+0\to{}_{p^\nu}G_n\to{}_{p^\nu}H_n\xrightarrow{w_n}Q_n\to0
+\]
+is exact (more precisely, $w_n$ is faithfully flat and its kernel is ${}_{p^\nu}G_n$).
+\end{lemma}
+One takes $\nu_1$ as in 7.6 applied to $u_0:G_0\to H_0$, and $\nu_1\geq\nu_0$ (where $p^{\nu_0}=\operatorname{rank}Q_0$). One need only check that $w_n$ is faithfully flat. Now by 7.5, ${}_{p^\nu}H$ is flat over $S_n$, and since $Q_n$ is also so, one is reduced to checking that $w_0:{}_{p^\nu}H_0\to Q_0$ is faithfully flat, i.e. is an epimorphism, which is true by the choice of $\nu_1$.
+% typo?: H without subscript n retained as printed.
+\begin{corollary}{7.8}\label{VIII.7.8}
+Suppose in addition $H$ separated over $S$, more generally that ${}_{p^\nu}H$ is separated over $S$ for every $\nu$, and that ${}_{p^\nu}G$ is finite over $S$ for every $\nu$. Then the group schemes ${}_{p^\nu}G$ and ${}_{p^\nu}H$ are finite and flat over $S$ for $\nu\geq\nu_1$, and one has an exact sequence
+\[
+0\to{}_{p^\nu}G\to{}_{p^\nu}H\xrightarrow{w}Q\to0.
+\]
+\end{corollary}
+As $u:G\to H$ is surjective, so is the induced morphism ${}_{p^\nu}G\to{}_{p^\nu}H$, and as the first member is finite over $S$ and the second separated over $S$, it follows that the second member is finite over $S$. To check then that ${}_{p^\nu}G$ and ${}_{p^\nu}H$ are also flat over $S$, it suffices to check that this is so for ${}_{p^\nu}G_n$ and ${}_{p^\nu}H_n$ for every $n$, which is contained in 7.5. Finally, the exact sequence of 7.8 comes from the exact sequences 7.7 for variable $n$.
+
+Taking the generic fibers in exact sequence 7.8 and recalling that $u_{s'}:G_{s'}\to H_{s'}$ is an isomorphism, one finds $Q_{s'}=$ the unit group, whence (since $Q$ is flat over $S$) $Q=$ the unit group, whence $Q_s=$ the unit group, so $u_s:G_s\to H_s$ is an isomorphism. Thus:
+\begin{proposition}{7.9}\label{VIII.7.9}
+Let $u:G\to H$ be a homomorphism of group preschemes of finite presentation over the prescheme $S$. Suppose:
+
+a) $u$ is a monomorphism.
+
+b) $G$ is flat over $S$.
+
+c) For every $s\in S$ such that $\kappa(s)$ is of residue characteristic $p>0$, one requires that the following conditions be satisfied for the homomorphism $u':G'\to H'$ of group preschemes over $S'=\Spec(\OO_{S,s})$ deduced from $u:G\to H$ by the base change $S'\to S$:
+\begin{itemize}
+\item $G'$ is commutative,
+\item the special fiber $G'_0=G_s$ is smooth over $\kappa(s)$,
+\item for every integer $\nu>0$, ${}_{p^\nu}G'$ is finite over $S'$ and ${}_{p^\nu}H'$ is separated over $S'$.
+\end{itemize}
+Under these conditions, $u$ is an immersion.
+\end{proposition}
+It suffices to note that in c), the condition that ${}_pG'$ be finite over $S'$ implies that ${}_pG'_0$ is finite over $\kappa(s)$, which already implies that $G'_0\otimes_{\kappa(s)}\overline{\kappa(s)}$ has no subgroup isomorphic to the additive group, so one is under the hypotheses of 7.5.
+\begin{remark}{7.10}\label{VIII.7.10}
+Examples of M. Raynaud (XVI 1.1 a) and b)) show that in c) one can drop neither the hypothesis that the ${}_{p^\nu}G'$ are finite over $S'$ nor that the ${}_{p^\nu}H'$ are separated over $S'$.
+\end{remark}
+We now want conditions ensuring that $u$ is a closed immersion. We therefore retain the hypotheses preceding 7.9, but no longer suppose $u$ surjective (only that $u$ is an isomorphism on the generic fibers). We already know that $u:G\to H$ is an open immersion; the same is therefore true of $u_0:G_0\to H_0$, whose image thus contains the connected component of the neutral element $(H_0)^0$. Note that since $G_0$ is smooth over $k$ and ``without additive component'' over the algebraic closure of $k$, the same is true of $H_0$. Now one has the
+\begin{lemma}{7.11}\label{VIII.7.11}
+Let $H$ be a commutative algebraic group over a field $k$, such that $H\otimes_k\overline k$ contains no subgroup isomorphic to $\Ga$. Let $n=$ degree of $H/H^0$; then the homomorphism
+\[
+{}_nH\to H/H^0
+\]
+is surjective.
+\end{lemma}
+Indeed, one may suppose $k$ algebraically closed, and then this follows from the well-known fact that $H^0(k)$ is a divisible group.
+
+Suppose now (returning to our situation $u:G\to H$) that the ${}_nG$ ($n>0$) are proper over $S$, and the ${}_nH$ are separated over $S$. Let us note, on the other hand, that the ${}_nH$ are flat over $S$. Indeed, it suffices to see this at the points over $s$; one is then reduced to proving that $n\cdot\mathrm{id}_H$ is flat at the points over $s$, and for this one is reduced to checking that $n\cdot\mathrm{id}_{H_0}$ is flat, which is equivalent (as we have already noted) to the fact that $(H_0)^0$ is smooth\nde{The terminology has been updated, replacing ``simple'' by ``smooth'' (see, for example, note (1) of A. Grothendieck in SGA 1, Exp. II).} over $k$ and has no $\Ga$ component over the algebraic closure of $k$. As $(H_0)^0=(G_0)^0$, this follows from the analogous hypothesis made on $G_0$. On the other hand the ${}_nH$ are separated over $S$ since $H$ is so, hence the morphism ${}_nG\to{}_nH$ is proper, hence its image is closed. As this image contains the generic fiber of ${}_nH$ (since $u_{s'}:G_{s'}\to H_{s'}$ is an isomorphism) and ${}_nH$ is flat over $S$, hence identical to the closure of its generic fiber, it follows that ${}_nG\to{}_nH$ is surjective, hence ${}_nG_0\to{}_nH_0$ is surjective. Recalling that $G_0\supseteq(H_0)^0$ and applying 7.11, one finds that $G_0\to H_0$ is surjective, hence $u$ is surjective. One thus obtains:
+\begin{proposition}{7.12}\label{VIII.7.12}
+With the notation of 7.9, suppose that conditions a) and b) are satisfied, as well as condition c') (stronger than c)), obtained by requiring that for every integer $n>0$ (not only of the form $p^\nu$), ${}_nG'$ be finite over $S'$ and ${}_nH'$ separated over $S'$. Under these conditions, $u$ is a closed immersion.
+\end{proposition}
+\begin{remark}{7.13}\label{VIII.7.13}
+a) One easily checks that the separation hypothesis made on the ${}_nH$ in fact implies that $H$ is separated over $S$. This is moreover formally contained in 7.12 by taking for $G$ the unit $S$-group. Let us also note that when $S$ is locally noetherian, one may in 7.9 restrict to supposing $H$ locally of finite type over $S$ (instead of: of finite type over $S$), the proof given applying as it stands; for 7.12 one shall suppose in addition that the fibers of $H$ are of finite type.
+
+b) Using 7.12, it is not difficult to prove that if $u:G\to H$ is a monomorphism of $S$-group preschemes of finite presentation, with $G$ diagonalizable (or more generally ``of multiplicative type'') and $H$ separated over $S$, then $u$ is a closed immersion, --- which constitutes a satisfactory generalization of the first conclusion stated in 5.7. When $G$ is smooth over $S$, it suffices to apply 7.12, and the general case reduces easily to that one. When one no longer supposes $H$ separated over $S$, one can still show that $u$ is an immersion; in the case where $G$ is a torus, this fact follows, moreover, also from what follows.
+
+c) When in 7.9 one supposes $G$ to have connected fibers, one may in condition 7.9 c) drop the hypothesis that the ${}_{p^\nu}H'$ are separated over $S'$. Indeed, with the reductions made in the proof, one may suppose $H$ flat over $S$ and $u$ bijective, hence $H$ with connected fibers, hence $H$ separated over $S$ by Raynaud's theorem (VI$_{\mathrm B}$ 5.5).\nde{Specify this attribution in VI$_{\mathrm B}$ \S5, which appeared in SGAD 1965, indicating the modifications between SGAD and Lect. Notes 151.}
+\end{remark}
+\begin{thebibliography}{RG71}
+\item[]\nde{Additional references cited in this Expos\'e.}
+\bibitem[RG71]{VIII.RG71} M. Raynaud, L. Gruson, \emph{Critères de platitude et de projectivité}, Invent. math. \textbf{13} (1971), 1--89.
+\bibitem[TO70]{VIII.TO70} J. Tate, F. Oort, \emph{Group schemes of prime order}, Ann. scient. Éc. Norm. Sup. (4) \textbf{3} (1970), 1--21.
+\end{thebibliography}

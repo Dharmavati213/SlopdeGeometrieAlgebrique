@@ -1,0 +1,138 @@
+% PDF pp. 7--11.
+Indeed, let $H$ be as in (i). Then $H_0$ is of multiplicative type and locally of finite type, hence of finite type, hence isotrivial by 1.4. Thus, by 2.3 and 2.2, $H$ is of multiplicative type (hence of finite type) and isotrivial. Assertion (ii) then follows from 2.1.
+\begin{corollary}{2.5}\label{X.2.5}
+Let $S'\to S$ be a faithfully flat and radicial morphism.
+
+(i) The functor $H\mto H'=H\times_S S'$ from the category of groups of multiplicative type over $S$ to the analogous category over $S'$ is fully faithful.
+
+Moreover, it induces an equivalence between the subcategories consisting of quasi-isotrivial groups of multiplicative type.
+
+(ii) If $H$ is of multiplicative type, for it to be quasi-isotrivial (resp. locally isotrivial, resp. isotrivial, resp. locally trivial, resp. trivial), it is necessary and sufficient that $H'$ be so.
+\end{corollary}
+Indeed, let $S''=S'\times_S S'$ and $S'''=S'\times_S S'\times_S S'$; then the hypothesis that $S'\to S$ is radicial implies that the diagonal immersions $S'\to S''$ and $S'\to S'''$ are surjective, so base change by either of these immersions is covered by 2.1 and 2.2. In view of the fact that $S'\to S$ is a morphism of effective descent for the fibered category of groups of multiplicative type over preschemes (since it is faithfully flat and quasi-compact\nde{Specify this point\dots}), our assertion follows formally from 2.1 and 2.2 (cf. for a formal argument the already cited article of Giraud).
+
+\sgasection{3}{Finite variations of structure: Complete base ring}
+\begin{lemma}{3.1}\label{X.3.1}
+Let $A$ be a noetherian ring endowed with an ideal $I$ such that $A$ is separated and complete for the $I$-adic topology, $S=\Spec(A)$, $S_0=\Spec(A/I)$, $G,H$ two $S$-group schemes, with $G$ of multiplicative type and isotrivial, $H$ affine over $S$, flat over $S$ at the points of $H_0=H\times_S S_0$, $H_0$ of quasi-isotrivial multiplicative type. Then the natural map
+\[
+\Hom_{S\text{-}\mathrm{gr.}}(G,H)\to\Hom_{S_0\text{-}\mathrm{gr.}}(G_0,H_0)
+\]
+is bijective.
+\end{lemma}
+For every integer $n\geq0$, let $S_n=\Spec(A/I^{n+1})$, and let $G_n,H_n$ be the groups deduced from $G,H$ by the base change $S_n\to S$. Since $G/S$ is of isotrivial multiplicative type and $H$ affine over $S$, by IX 7.1 the natural homomorphism
+\[
+\Hom_{S\text{-}\mathrm{gr.}}(G,H)\to\varprojlim_n\Hom_{S_n\text{-}\mathrm{gr.}}(G_n,H_n)
+\]
+is bijective. On the other hand, by 2.3 the $H_n$ are of quasi-isotrivial multiplicative type, and by 2.1 the transition homomorphisms in the projective system $(\Hom_{S_n\text{-}\mathrm{gr.}}(G_n,H_n))_n$ are isomorphisms, whence immediately 3.1.
+\begin{theorem}{3.2}\label{X.3.2}
+Let $A$ be a noetherian ring endowed with an ideal $I$ such that $A$ is separated and complete for the $I$-adic topology, $S=\Spec(A)$, $S_0=\Spec(A/I)$. Then:
+
+(i) The functor
+\[
+H\mto H_0=H\times_S S_0
+\]
+is an equivalence between the category of isotrivial groups of multiplicative type over $S$ and the analogous category over $S_0$.
+
+(ii) Let $H$ be an $S$-group of multiplicative type and of finite type; for $H$ to be isotrivial, it is necessary and sufficient that $H_0$ be so.
+\end{theorem}
+\begin{proof}
+For (i), one may either repeat the proof of 2.1 or use 1.2, using in either case the fact that the functor
+\[
+S'\mto S'_0=S'\times_S S_0
+\]
+from the category of finite étale schemes over $S$ to the category of finite étale schemes over $S_0$ is an equivalence (SGA 1, I 8.4), which one may also state (reducing to the case of $S$ connected, i.e. $S_0$ connected), choosing a geometric point $\xi$ of $S_0$, by saying that the canonical homomorphism
+\[
+\pi_1(S_0,\xi)\to\pi_1(S,\xi)
+\]
+is an isomorphism.
+
+Let us prove (ii), i.e. that if $H_0$ is isotrivial, $H$ is so. By (i), there exists an isotrivial group of multiplicative type $G$ over $S$ and an $S_0$-isomorphism
+\[
+u_0:G_0\isomto H_0.
+\]
+\nde{The original has been expanded in what follows.} Since $H$ is of finite type, so are $H_0$ and $G_0$; thus by IX 2.1 b), the type of $G$ at each point of $S$ is an abelian group of finite type, and hence $G$ is of finite type over $S$. On the other hand, by 3.1, $u_0$ comes from a homomorphism of $S$-groups
+\[
+u:G\to H.
+\]
+Finally, since $G,H$ are of multiplicative type and of finite type over $S$, and since $u_0$ is an isomorphism, by IX 2.9, $u$ is an isomorphism (taking account of the fact that every neighborhood of $S_0$ in $S$ equals $S$).
+\end{proof}
+\begin{corollary}{3.3}\label{X.3.3}
+Let $A$ be a complete noetherian local ring with residue field $k$.
+
+(i) Every group of multiplicative type and of finite type over $A$ is isotrivial.
+
+(ii) The functor $H\mto H\otimes_A k=H_0$ is an equivalence between the categories of groups of multiplicative type and of finite type over $A$ and over $k$.
+\end{corollary}
+\footnotemark[\value{footnote}] First, (i) follows from 3.2 (ii) and 1.4; then (ii) follows from 3.2 (i), in view of the fact that $H$ is of finite type if and only if $H_0$ is so (cf. the proof of 3.2 (ii)).
+% typo: "les catégorie" -> "the categories".
+\begin{remark}{3.3.1}\label{X.3.3.1}
+One will note that 3.3 gives, by 1.4, a complete classification of groups of multiplicative type and of finite type over $A$ in terms of the topological Galois group of an algebraic closure $\Omega$ of $k$.
+\end{remark}
+\begin{remarks}{3.4}\label{X.3.4}
+Under the hypotheses of 3.2 (i.e. $A$ noetherian, separated and complete for the $I$-adic topology, but without any other hypothesis on $A/I$), it will follow from \No5 that the functor $H\mto H_0$ from the category of groups of multiplicative type and of finite type over $S$ to the analogous category over $S_0$ is still fully faithful (without isotriviality hypotheses).\nde{Specify this reference, possibly adding a corollary in \No5\dots}
+
+However, it is not in general essentially surjective; in fact there may exist an $S_0$-group $H_0$ of multiplicative type and of finite type, locally trivial if one wishes (but not isotrivial), which does not come by reduction from a group of multiplicative type $H$ over $S$.
+
+To see this, let us return to either of examples 1.6 of a nonisotrivial group of multiplicative type over a nonnormal curve. One may evidently take this curve affine, say $S_0$, and suppose it embedded in affine space of dimension 2, hence defined by an ideal $J$ in $k[X,Y]$. We shall take for $A$ the completion of this ring for the $J$-preadic topology, so that $A$ is a regular ring of dimension 2, a fortiori normal. We shall see in 5.16 that it follows that every group of multiplicative type and of finite type over $S=\Spec(A)$ is isotrivial; hence $H_0$, which is of finite type and nonisotrivial, does not come from a group of multiplicative type $H$ over $S$ (for $H$ would necessarily be of finite type, and hence isotrivial).
+\end{remarks}
+\begin{lemma}{3.5}\label{X.3.5}
+\footnote{Cf. also VI$_{\mathrm B}$ 2.5 for more systematic developments of this nature.} Let $S$ be a prescheme, $u:G\to H$ a homomorphism of $S$-group preschemes locally of finite presentation and flat over $S$, $U$ the set of $s\in S$ such that the homomorphism induced on the fibers $u_s:G_s\to H_s$ is flat (resp. smooth, resp. unramified, resp. étale, resp. quasi-finite).
+
+Then $U$ is open, and the restriction $u|U:G|U\to H|U$ is a flat morphism (resp. smooth, resp. unramified, resp. étale, resp. quasi-finite).
+\end{lemma}
+Indeed, let $V$ be the set of points at which $u$ is flat (resp.\dots). One knows that $V$ is open (cf. SGA 1, I to IV in the locally noetherian case, EGA IV in general\nde{Specify these references: Since $G,H$ are locally of finite presentation, $u$ is locally of finite presentation (IV$_1$, 1.4.3 (v)); then one applies IV$_3$, 11.3.10 and 13.1.4 for flat and quasi-finite, IV$_4$, 17.4.1, 17.5.1 and 17.6.1 for unramified, smooth and étale; compare with VI$_{\mathrm B}$ 2.5.}), and that for $x\in G$ over $s\in S$ one has $x\in V$ if and only if $u_s:G_s\to H_s$ is flat (resp.\dots) at $x$ (same reference; in the flat, smooth, étale cases one uses here the flatness of $G$ and $H$ over $S$). Since $u_s$ is a homomorphism of locally algebraic groups, this also means that $u_s$ is flat (resp.\dots) everywhere (Exp. VI$_{\mathrm B}$, 1.3), i.e. $s\in U$. Thus $U$ is the inverse image of the open subset $V$ by the unit section of $G$, hence open, and $V=G|U$, so $G|U\to H|U$ is flat (resp.\dots), which completes the proof. (N.B. In the ``unramified'' or ``quasi-finite'' case, the flatness hypothesis on $G,H$ is unnecessary.)
+\begin{lemma}{3.6}\label{X.3.6}
+Let $H$ be a commutative algebraic group over a field $k$ admitting an open subgroup $G$ of multiplicative type. Then the family of subschemes ${}_nH$ ($n>0$) of $H$ is schematically dense; in particular, if one has ${}_nH={}_nG$ for every $n>0$, then $H=G$.
+\end{lemma}
+Here ${}_nH$ denotes the kernel of $n\cdot\mathrm{id}_H$.\nde{The following sentence has been added.} Let $\overline k$ be an algebraic closure of $k$; it suffices to show that the family $({}_nH_{\overline k})_{n>0}$ is schematically dense in $H_{\overline k}$, for then the family $({}_nH)_{n>0}$ will be so in $H$ (cf. IX 4.5). Thus one may suppose $k$ algebraically closed, and hence $G$ of the form $D_k(M)$, $M$ an ordinary commutative group of finite type. Let $M_0=M/\operatorname{Torsion}(M)$; then $T=D_k(M_0)$ is the largest torus contained in $G$, and $H/T$ is finite, so $H(k)/T(k)$ is annihilated by an integer $\nu>0$. One may find finitely many elements $g_i\in H(k)$ such that
+\[
+H=\coprod_i g_i\cdot G,
+\]
+and one shall have $g_i^\nu\in T(k)$. Since $k$ is algebraically closed, $\nu\cdot\mathrm{id}_T$ is surjective in $T(k)\simeq k^{*d}$; thus, replacing the $g_i$ by $g_it_i^{-1}$, where $t_i\in T(k)$ is such that $t_i^\nu=g_i^\nu$, one may suppose that $g_i^\nu=1$. If then $n$ is a multiple of $\nu$, one shall have
+\[
+{}_nH\supseteq g_i\cdot{}_nG,
+\]
+and as (for variable $n>0$) the family of the ${}_nG$ is schematically dense in $G$ by IX 4.7, conclusion 3.6 appears.
+\begin{theorem}{3.7}\label{X.3.7}
+Let $A$ be a noetherian ring endowed with an ideal $I$ such that $A$ is separated and complete for the $I$-adic topology, $S=\Spec(A)$, $S_0=\Spec(A/I)$, and let $H$ be an affine $S$-group scheme of finite type, flat over $S$ at the points of $H_0$, such that $H_0=H\times_S S_0$ is of multiplicative type and isotrivial.
+
+Then there exists an open and closed subgroup $G$ of $H$, of isotrivial multiplicative type (and of finite type), such that $G_0=H_0$.
+\end{theorem}
+By 3.2 (i), there exists an isotrivial group of multiplicative type $G$ over $S$ and an isomorphism
+\[
+u_0:G_0\isomto H_0.
+\]
+By 3.1, $u_0$ comes from a unique homomorphism of $S$-groups
+\[
+u:G\to H.
+\]
+Using IX 6.6 one sees that $u$ is a monomorphism (for if $U$ is the set of $s\in S$ such that $u_s:G_s\to H_s$ is a monomorphism, $U$ is an open neighborhood of $S_0$, hence identical to $S$, and $G|U\to H|U$ is a monomorphism). By IX 2.5, $u$ is even a closed immersion.
+
+\nde{The following sentence has been added.} Thus $G$ is of finite type, hence of finite presentation over $S$. Then, by lemma 3.5 in the ``étale'' case, one sees that there exists an open subset $U$ which is a neighborhood of $S_0$, hence identical to $S$, such that $G|U\to H|U$ is étale; hence $u$ is étale, hence an open immersion (since it is an étale monomorphism\nde{Cf. EGA IV$_4$, 17.9.1.}), which completes the proof.
+\begin{corollary}{3.8}\label{X.3.8}
+Let $A$ be a noetherian ring endowed with an ideal $I$ such that $A$ is separated and complete for the $I$-adic topology, $S=\Spec(A)$, $S_0=\Spec(A/I)$, and let $H$ be an $S$-group prescheme of finite type, affine and flat over $S$.
+
+For $H$ to be of multiplicative type and isotrivial, it is necessary and sufficient that $H_0$ be so, and that $H$ satisfy one of the following conditions a), b) (which are therefore equivalent under the preceding conditions):
+
+a) The fibers of $H$ are of multiplicative type and of constant type on each connected component of $S$.
+
+b) $H$ is commutative and the ${}_nH$ ($n>0$) are finite over $S$.
+
+These latter conditions are also implied by the following:
+
+c) The fibers of $H$ are connected.
+\end{corollary}
+Of course, if $H$ is of multiplicative type (and isotrivial), conditions a), b) are satisfied by IX 1.4.1 a) and 2.1 c), so only the ``sufficient'' part requires a proof. We shall use the subgroup $G$ indicated in 3.7. When condition c) is satisfied, one evidently has $G=H$ and is finished.
+
+In case b), one notes that the immersion $u:G\to H$ induces an open immersion
+\[
+{}_nu:{}_nG\to{}_nH
+\]
+which induces an isomorphism $({}_nG)_0\isomto({}_nH)_0$; as ${}_nH$ is finite over $S$, this implies immediately that ${}_nu$ is an isomorphism (the complement of its image is finite over $S$ and reduces to $\varnothing$). By 3.6 it follows that the morphisms induced on the fibers $u_s:G_s\to H_s$ are isomorphisms, hence $u$ is surjective, hence an isomorphism.
+
+Finally, in case a) one may suppose $S$ connected,\nde{The original indicated: ``i.e. $S_0$ connected''. Note that, as $A$ is separated for the $I$-adic topology, $S_0$ meets every connected component of $S$ (and as $A$ is complete, the connected components of $S_0$ and of $S$ are in bijection).} and it follows that for every $s\in S$, $u_s:G_s\to H_s$ is a monomorphism of algebraic groups of multiplicative type and of the same type over $\kappa(s)$.\nde{Since $G_s$ and $H_s$ are of the same type for every $s\in S_0$, and hence for every $s$.} I say that such a homomorphism is necessarily an isomorphism (which will again complete the proof\nde{For $u$ will again be a surjective open immersion.}). Indeed, one may suppose, extending the base field if necessary, that the two groups over $\kappa(s)$ are diagonalizable, and then this follows from VIII 3.2 b) and from the fact that a surjective homomorphism of isomorphic $\ZZ$-modules of finite type $M\to N$ is necessarily bijective.
+\begin{corollary}{3.9}\label{X.3.9}
+Let $A$ be a noetherian ring endowed with an ideal $I$ such that $A$ is separated and complete for the $I$-adic topology, and let $H$ be an $S$-group prescheme of finite type, affine and flat over $S$, with connected fibers.
+
+For $H$ to be an isotrivial torus, it is necessary and sufficient that $H_0$ be so.
+\end{corollary}

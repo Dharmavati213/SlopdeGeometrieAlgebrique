@@ -1,0 +1,157 @@
+\sgasection{7}{Quotient by a proper flat groupoid}
+\begin{theorem}{7.1}\label{V.7.1}\nde{Let us mention here the article of S. Keel and S. Mori ([KM97]), in which the following theorem is established. Let $X$ be an algebraic space of finite type over a locally noetherian base $S$ and $j:R\to X\times_SX$ a flat groupoid whose stabilizer $j^{-1}(\Delta_X)$ is finite over $X$; there then exists an algebraic space which is a geometric quotient of $X$ by $R$ and a uniform categorical quotient; moreover, if $j$ is separated, this quotient is separated. In particular, if a flat $S$-group scheme $G$ acts properly on $X$, with finite stabilizer (i.e. the morphism $G\times_SX\to X\times_SX$, $(g,x)\mto(x,g\cdot x)$ is proper and the stabilizer of the diagonal is finite over $X$), then there exists a geometric quotient $X\to X/G$. In the case of a reductive $S$-group scheme $G$, this is a result of J. Kollár ([Ko97]).}
+Let $S$ be a locally noetherian scheme and
+\[
+\xymatrix{X_2\ar@<1ex>[r]^{d'_2}\ar[r]^{d'_1}\ar@<-1ex>[r]_{d'_0}&X_1\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X_0}
+\]
+a $(\mathrm{Sch}/S)$-groupoid such that $d_1$ is proper and flat, $X_0$ is quasi-projective over $S$,\nde{This hypothesis on $X_0$ is necessary, cf. N.D.E. (17) in Th. 4.1.} and the morphism $d:X_1\to X_0\times_SX_0$ with components $d_0$ and $d_1$ is quasi-finite. Then:
+\begin{enumeratei}
+\item There exists a cokernel $(Y,p)$ of $(d_0,d_1)$ in $(\mathrm{Sch}/S)$; moreover, such a $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of all ringed spaces.
+\item $p$ is surjective, open, proper, of finite presentation, and $Y\to S$ is of finite presentation and separated.\nde{In TDTE III, Th. 6.1, it is stated that $Y\to S$ is quasi-projective if $S$ is noetherian. The editors have not seen how to deduce this from the local existence of quasi-sections.}
+\item The morphism $X_1\to X_0\times_YX_0$ with components $d_0$ and $d_1$ is surjective.
+\item If $(d_0,d_1)$ is an equivalence pair, $X_1\to X_0\times_YX_0$ is an isomorphism and $p$ is faithfully flat.\nde{The following consequences have been made explicit; see [Ray67a], th. 1 (iii) and the end of the proof of the theorem. Let us also mention that another proof of th. 7.1 in the case of an equivalence relation, based on the existence of Hilbert schemes, is given in [AK80], Th. 2.9; see also [BLR90], §8.2, Th. 12; it is moreover shown there, in this case, that $Y\to S$ is quasi-projective.} Moreover, $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of sheaves for the \fppf topology and, for every base change $Y'\to Y$, $Y'$ is the cokernel of the groupoid $X_*\times_YY'$ obtained from $X_*$ by the base change $X_0\times_YY'\to X_0$.
+\end{enumeratei}
+In particular, for every base change $S'\to S$, $Y'=Y\times_SS'$ is the cokernel of the $S'$-groupoid $X'_*=X_*\times_SS'$. Thus, in this case, ``formation of the quotient commutes with base change''.
+\end{theorem}
+Let $(Y,p)$ be the cokernel of $(d_0,d_1)$ in the category of all ringed spaces. Lemma 1.2 shows that, to prove (i), it suffices to show that every point $z$ of $X_0$ has a saturated open neighborhood $U_z$ such that, denoting by $\widetilde d_0$ and $\widetilde d_1$ the restrictions of $d_0$ and $d_1$ to $d_0^{-1}(U_z)=d_1^{-1}(U_z)$, and by $(Q,q)$ the cokernel of $(\widetilde d_0,\widetilde d_1)$ in $(\mathrm{Esp.An})$, $Q$ is a scheme and $q$ a morphism of schemes.
+
+By Lemma 6.1 (i), it therefore suffices to show that every point $z$ of $X_0$ has a saturated open neighborhood $U_z$ such that the groupoid induced on $U_z$ by $X_*$ has a quasi-section. One can even suppose that $z$ is closed in the fiber of $z$ over $S$ (we shall say that $z$ is closed relative to $S$).\nde{Indeed, if one has constructed such an open neighborhood $U_z$ for every point $z$ closed relative to $S$, the union of these $U_z$ covers $X_0$, since each fiber over $S$ of the closed complement is a noetherian scheme without closed points, hence empty.} The existence of $U_z$ then follows from the lemmas below:
+\begin{lemma}{7.2}\label{V.7.2}
+Let $T$ be an affine noetherian scheme, $X,Y$ and $Z$ be $T$-schemes of finite type, $X$ being quasi-projective over $T$, and
+\[
+\xymatrix{Y\ar[r]^u\ar[d]_v&X\ar@{-->}[d]\\Z\ar@{-->}[r]&T}
+\]
+a diagram of $(\mathrm{Sch}/T)$. Let, on the other hand, $z$ be a point of $v(Y)$ closed relative to $T$ and such that $v$ is flat at the points of $v^{-1}(z)$. Then there exists a closed subscheme $F$ of $X$ such that $u(u^{-1}(F)\cap v^{-1}(z))$ is finite nonempty and the restriction of $v$ to $u^{-1}(F)$ is flat at the points of $v^{-1}(z)$.
+\end{lemma}
+Let $T=\Spec A$. One may suppose $X$ of the form $\Proj\mathcal S$, where $\mathcal S$ is the symmetric algebra of a finitely generated $A$-module $E$.
+
+If $u(v^{-1}(z))$ is finite, one can choose $F=X$. Otherwise, denote by $y_1,\ldots,y_n$ the points of the fiber $v^{-1}(z)$ associated to its structure sheaf $\OO_{v^{-1}(z)}$ (the $y_i$ are thus such that, if $\OO_i$ denotes the local ring of $v^{-1}(z)$ at $y_i$, the maximal ideal of $\OO_i$ consists of zero divisors). If $t$ is the image of $z$ in $T$, $u(v^{-1}(z))$ is an infinite constructible subset of the fiber of $t$ in $X$. There therefore exists a point $x$ closed in this fiber, belonging to $u(v^{-1}z)$ and distinct from $u(y_1),\ldots,u(y_n)$. Then $X-\{x\}$ is an open neighborhood of $u(y_1),\ldots,u(y_n)$, and therefore contains an open neighborhood of the form $D_+(f)$, where $f$ is a homogeneous element of degree $d$ of $\mathcal S$ (the notation is that of EGA II, §2.3).
+
+Consequently, the closed subscheme $X_1=V_+(f)$ defined by $f$ contains $x$ and avoids the points $u(y_1),\ldots,u(y_n)$. It follows obviously that the inverse image $Y_1=u^{-1}(V_+(f))$ of this subscheme is distinct from $Y$ and meets $v^{-1}(z)$. We shall even show that the restriction $v_1$ of $v$ to $Y_1$ is flat at the points of $v^{-1}(z)$; if $u(v_1^{-1}(z))$ is finite, one will therefore only have to choose $F=X_1$; otherwise, one repeats the argument just developed, replacing $Y$ by $Y_1$, $v$ by $v_1$ and $u$ by the morphism $u_1$ induced on $Y_1$ by $u$; in this way one obtains a decreasing sequence $X,X_1,\ldots$ of closed subschemes of $X$; since such a sequence terminates, $u(u^{-1}(X_n)\cap v^{-1}(z))$ will be finite nonempty for some $n$, and one chooses $F=X_n$.
+
+It therefore remains to show that $v_1$ is flat at the points of $v^{-1}(z)$; let, then, $y$ be a point of $Y_1$ above $z$, $\OO_y$ the local ring of $y$ in $Y$, $\overline\OO_y$ the local ring of $y$ in $v^{-1}(z)$, and $\OO_{v(y)}$ the local ring of $v(y)$ in $Z$. If $g\in\mathcal S_1$ is such that $D_+(g)$ is a neighborhood of $u(y)$ in $X$, let $\varphi$ be the image of $f/g^d$ in $\OO_y$, and $\overline\varphi$ its image in $\overline\OO_y$. It follows from the construction of $f$ that $\overline\varphi$ is not a zero divisor in $\overline\OO_y$; since $\OO_y$ is flat over $\OO_z$, $\varphi$ is not a zero divisor in $\OO_y$ and $\OO_y/\OO_y\varphi$ is flat over $\OO_z$ (SGA 1, IV 5.7). Now $\OO_y/\OO_y\varphi$ is none other than the local ring of $y$ in $Y_1$.
+\begin{lemma}{7.3}\label{V.7.3}
+Retain the notation and hypotheses of 7.1. Every point $z$ of $X_0$ closed relative to $S$ then has a saturated open neighborhood $U_z$ such that the groupoid induced by $X_*$ on $U_z$ has a quasi-section.
+\end{lemma}
+The statement being local on $S$, one can suppose $S$ affine noetherian and apply the preceding lemma to the diagram
+\[
+\xymatrix{X_1\ar[r]^{d_0}\ar[d]_{d_1}&X_0\ar@{-->}[d]\\X_0\ar@{-->}[r]&S}
+\]
+of $(\mathrm{Sch}/S)$. Let, then, $F$ be a closed subscheme of $X_0$ such that $d_0(d_0^{-1}(F)\cap d_1^{-1}(z))$ is finite nonempty and the restriction of $d_1$ to $d_0^{-1}(F)$ is flat at the points of $d_1^{-1}(z)$. Denote by $F_1$ and $F_2$ the inverse images of $F$ under $d_0$ and $d_0d'_0=d_0d'_1$, and by $\widetilde d_0$, $\widetilde d_1$, etc., the morphisms induced by $d_0,d_1$, etc. One therefore has a commutative diagram
+\[
+\xymatrix{F_2\ar@<.5ex>[r]^{\widetilde d'_1}\ar@<-.5ex>[r]_{\widetilde d'_0}\ar[d]_{\widetilde d'_2}&F_1\ar[r]^{\widetilde d_0}\ar[d]^{\widetilde d_1}&F\ar@{-->}[dr]^{\widetilde q}&\\X_1\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X_0\ar@{-->}[rr]_q&&S,}
+\]
+where the two squares on the left are cartesian and the first row exact (cf. (0,1,2), §1), and where $q$ and $\widetilde q$ denote the structure morphisms.
+
+Let us first show that there are only finitely many points of $F_1$ above $z$.\nde{Details have been added and the role of the properness hypothesis on $d_0$ and $d_1$ in Theorem 7.1 has been brought out. (One may compare with the statement and proof of Theorem 8.1, where this properness hypothesis is omitted.)} Indeed, let $s$ be the image of $z$ in $S$; since $F$ is of finite type over $S$, the fiber $\widetilde q^{-1}(s)$ is a noetherian scheme. On the other hand, since $\widetilde d_0$ is proper, $\widetilde d_0(\widetilde d_1^{-1}(z))$ is a closed subscheme of $\widetilde q^{-1}(s)$ consisting of finitely many points. Consequently (cf. EGA I, 6.2.2), the points of this set are closed in $\widetilde q^{-1}(s)$ and also (since $F$ is closed in $X_0$) in the fiber $q^{-1}(s)$ of $s$ in $X_0$. Let $y$ be one of these points; since the fiber $q^{-1}(s)$ is of finite type over $\kappa(s)$, it contains affine open neighborhoods $\Spec B$ and $\Spec C$ of $y$ and $z$ respectively, where $B$ and $C$ are finitely generated $\kappa(s)$-algebras. Then $y$ and $z$ correspond to maximal ideals $\mathfrak p\subset B$ and $\mathfrak q\subset C$, the fields $B/\mathfrak p$ and $C/\mathfrak q$ have finite degree over $\kappa(s)$, and hence $(B/\mathfrak p)\otimes_{\kappa(s)}(C/\mathfrak q)$ is a finite-dimensional $\kappa(s)$-algebra whose maximal ideals correspond exactly to the points of $X_0\times_SX_0$ whose second (resp. first) projection is $z$ (resp. $y$). There are therefore only finitely many points $u$ of $X_0\times_SX_0$ whose second projection is $z$ and whose first projection belongs to $\widetilde d_0(\widetilde d_1^{-1}(z))$. Finally, since $X_1\to X_0\times_SX_0$ has finite fibers, such a point $u$ comes from finitely many points of $X_1$, whence the desired assertion.
+
+The morphism $\widetilde d_1$ is therefore quasi-finite and flat at the points of $F_1$ above $z$. Since $\widetilde d_1$ is of finite type, by SGA 1, IV 6.10 and EGA III, 4.4.10,\nde{If $f:X\to Y$ is a morphism locally of finite type, the set of $x\in X$ isolated in their fiber $f^{-1}(f(x))$ is open in $X$: in EGA III, 4.4.10, this is deduced, for $Y$ locally noetherian, from Zariski's ``Main Theorem''; on the other hand, for arbitrary $Y$, it follows from Chevalley's semicontinuity theorem (EGA IV$_3$, 13.1.3 and 13.1.4). Consequently, $f$ is quasi-finite at $x$ if and only if $f$ is of finite type at $x$ and $x$ is isolated in $f^{-1}(f(x))$; this will be used below, cf. N.D.E. (42).} the set $\Phi$ of points of $F_1$ where $\widetilde d_1$ is not both flat and quasi-finite is closed in $F_1$, hence in $X_1$ (since $F_1$ is closed in $X_1$). Since $d_1$ is proper, $\widetilde d_1(\Phi)$ is closed, and it does not contain $z$ by what precedes. Put $W=\widetilde d_1(F_1)-\widetilde d_1(\Phi)$. Then the restriction of $\widetilde d_1$ to $\widetilde d_1^{-1}(W)$ is\nde{The original has been expanded in what follows.} of finite presentation (in view of the noetherian hypotheses), flat, proper and quasi-finite, hence finite, locally free and open, by EGA III, 4.4.2 and EGA IV$_2$, 2.1.12 and 2.4.6. Consequently, $\widetilde d_1(F_1)$ is a neighborhood of $z$, and $W$ is the largest open subset of $X_0$ contained in $\widetilde d_1(F_1)$ above which $\widetilde d_1$ is both flat and quasi-finite.
+
+We shall see in Lemma 7.4 that the inverse images of $\Phi$ under $\widetilde d'_1$ and $\widetilde d'_0$ are both identified with the set of points of $F_2$ where $\widetilde d'_2$ is not both flat and quasi-finite. It follows that $d_0^{-1}(W)=\widetilde d'_2(F_2)-\widetilde d'_2(\widetilde d_0'{}^{-1}\Phi)$ coincides with $d_1^{-1}(W)=\widetilde d'_2(F_2)-\widetilde d'_2(\widetilde d_1'{}^{-1}\Phi)$, that is, $W$ is saturated. Consequently, if one puts $W_1=\widetilde d_1^{-1}(W)$, the equality $d_0^{-1}(W)=d_1^{-1}(W)$ implies $\widetilde d_2'{}^{-1}d_0^{-1}(W)=\widetilde d_2'{}^{-1}d_1^{-1}(W)$, that is, $\widetilde d_0'{}^{-1}(W_1)=\widetilde d_1'{}^{-1}(W_1)$. Since $\widetilde d_0$ is faithfully flat and quasi-compact (for $d_0$ is, like $d_1$, surjective, proper and flat), and the square
+\[
+\xymatrix{F_2\ar[r]^{\widetilde d'_1}\ar[d]_{\widetilde d'_0}&F_1\ar[d]^{\widetilde d_0}\\F_1\ar[r]_{\widetilde d_0}&F}
+\]
+is cartesian, it follows that $W_1$ has the form $\widetilde d_0^{-1}(U)$, where $U$ is an open subset of $F$ (SGA 1, VIII 4.4). This open subset $U$ of $F$ is a quasi-section for the groupoid with base $W$ induced by $X_*$. One can therefore choose $U_z=W$.
+
+It remains to state Lemma 7.4, whose proof is classical:
+\begin{lemma}{7.4}\label{V.7.4}
+Consider a cartesian square of schemes
+\[
+\xymatrix{F_2\ar[r]^v\ar[d]_{d'}&F_1\ar[d]^d\\X_1\ar[r]_u&X_0}
+\]
+and let $x$ be a point of $F_2$.
+\begin{enumeratei}
+\item If $u$ is flat, $d'$ is flat at $x$ if and only if $d$ is flat at $v(x)$.
+\item If $d$ is locally of finite type, $d'$ is quasi-finite at $x$ if and only if $d$ is quasi-finite at $v(x)$.\nde{The conditions are sufficient, by base change (cf. EGA II, 6.2.4 (iii) and EGA IV$_2$, 2.1.4). Conversely, put $y=d'(x)$ and $z=u(y)=d(v(x))$, and suppose $d'$ flat at $x$ and $u$ (hence also $v$) flat. Then $\OO_{v(x)}\to\OO_x$ is faithfully flat, as is $\OO_z\to\OO_y\to\OO_x$. Consequently $\OO_z\to\OO_{v(x)}$ is faithfully flat (cf. EGA IV$_2$, 2.2.11 (iv)). Finally, suppose $d$ locally of finite type and $d'$ quasi-finite at $x$. Then $v(x)$ is isolated in its fiber $d^{-1}(z)$, since $x$ is isolated in its fiber $d'{}^{-1}(y)=d^{-1}(z)\otimes_{\kappa(z)}\kappa(y)$. Thus, by Chevalley's semicontinuity theorem, there exists an open neighborhood of $v(x)$ every point of which is isolated in its fiber (EGA IV$_3$, 13.1.3 and 13.1.4), so $d$ is quasi-finite at $v(x)$.}
+\end{enumeratei}
+\end{lemma}
+We have therefore proved that there exists a covering of $X_0$ by saturated open subsets $W$ such that the groupoid $W_*$ induced by $X_*$ on $W$ has a quasi-section.\nde{What follows has been modified, taking advantage of the additions made to Lemma 6.1.}
+
+By Lemma 6.1 and the reductions stated after Theorem 7.1, this implies assertions (i) and (iii) of Theorem 7.1, and the facts that $p$ is surjective and open, and that $p$ and $Y\to S$ are locally of finite presentation. Moreover, since $X_0\to S$ is quasi-projective, hence separated and of finite type, $p$ is separated, and the proof of point (ii) of Lemma 6.1 shows that $p$ and $Y\to S$ are of finite presentation.
+
+To show that $p$ is proper, it therefore remains to show that it is universally closed. Since the assertion is local on $Y$, one can work on a saturated open subset $W$ such that the groupoid $W_*$ induced by $X_*$ on $W$ has a quasi-section $U$ (since $X_0$ is covered by such open subsets). Returning to the notation of 6.a), one has a commutative diagram
+\[
+\xymatrix{W\ar[dr]_p&V\ar[l]_v\ar[r]^u\ar[d]^r&U\ar[dl]^q\\&Z,&}
+\]
+where $Z$ is an open subset of $Y$, all arrows are surjective, and $q$ is integral. Moreover, by hypothesis, $d_0:X_1\to X_0$ is proper, so $u$, obtained from it by base change, is also so. Consequently, $r$ is universally closed, and hence so is $p$, since $v$ is surjective.
+
+Finally, $p$ being surjective and universally closed, and $X_0$ quasi-projective, hence separated, the diagonal $\Delta_{Y/S}(Y)$ is closed in $Y\times_SY$, being the image under $p\times p$ of the diagonal $\Delta_{X_0/S}(X_0)$. Thus $Y$ is separated over $S$. This completes the proof of 7.1 (ii).
+
+The assertions to be proved in 7.1 (iv) are local on $Y$; since $X_0$ is covered by the saturated open subsets $U_z$, it suffices to verify these assertions by replacing $X$ and $Y$ by $U_z$ and $V=p(U_z)$. As already seen at the beginning of the proof of 7.1, it follows from Lemmas 1.1, 1.2 and 6.1 (i) that $(V_z,p|_{U_z})$ is the cokernel in $\Sch$ and in $(\mathrm{Esp.An})$ of the groupoid induced by $X_*$ on $U_z$. Now the hypothesis that $d=(d_0,d_1)$ is a monomorphism is preserved by the base change $U_z\to X_0$. Consequently, the first two assertions of 7.1 (iv) follow from 6.1 (iv).
+
+Finally, let us show the consequences noted at the end of point (iv) (cf. [Ray67a], th. 1 (iii)). By hypothesis, the groupoid $X_*$ comes from an equivalence relation $R\to X_0\times X_0$, and one has established that $R$ is effective (cf. Exp. IV, 3.3.2) and that $p:X_0\to Y=X_0/R$ is faithfully flat and of finite presentation. Consequently, denoting by $(M)$ the family of faithfully flat morphisms locally of finite presentation, $R$ is $(M)$-effective. Thus, by Exp. IV, 6.3.3, $(Y,p)$ represents the quotient sheaf of $X_0$ by $R$ for the \fppf topology, and the assertions concerning base change follow from IV, 3.4.3.1.
+
+\sgasection{8}{Passage to the quotient by a flat groupoid that is not necessarily proper}
+\begin{theorem}{8.1}\label{V.8.1}\nde{There exists a largest open subset $W$ of $X_0$ satisfying the conclusions of the theorem. Indeed, let $W$ be an open subset as in the theorem and $W^\sharp$ a dense saturated open subset contained in $W$. Since $p$ is open, $V^\sharp=p(W^\sharp)$ is an open subset of $V$, and $W^\sharp=p^{-1}(V^\sharp)$, since $W^\sharp$ is saturated. By Lemma 1.1, $V^\sharp$ is a cokernel for the groupoid induced on $W^\sharp$. Thus one can glue along their intersection $W^\sharp$ two open subsets $W$ and $W'$ satisfying the conclusions of the theorem, and conditions (i), (ii), (iii), (iv), as well as the fact that $p$ and $V\to S$ are locally of finite presentation, are preserved. Conclusion (ii') follows, as in the proof of 6.1 (ii), from the hypothesis that $X_0$ is of finite type over noetherian $S$.
+
+Furthermore, Lemmas 1.1 and 1.2 also show that the union of all saturated open subsets $U$ of $X_0$ such that the open subset $p(U)$ of $Y$ is a scheme and $p|_U:U\to p(U)$ is a morphism of schemes is the largest saturated open subset $\Omega$ of $X_0$ satisfying condition (i) of 8.1. Theorem 8.1 shows that $\Omega$ contains a dense open subset $W$, but it is not immediate that $\Omega$ satisfies properties (ii) to (iv).
+
+On this subject, the reader may consult [Ray67a], [Ray67b] and appendix I of [An73], which give more precise results and study the question of representability of the quotient \fppf $S$-sheaf $\widetilde{X/R}$ (where $R$ denotes the groupoid $X_*$ with base $X=X_0$), all this under weaker hypotheses ($S$ an arbitrary scheme, $X$ a scheme locally of finite type over $S$, and $R$ an $S$-groupoid with base $X$ such that $d_0$ (and hence $d_1$) is flat and of finite presentation). Let us mention in particular the following results. If $\widetilde{X/R}$ is represented by an $S$-scheme $Y$, then $Y$ is also the cokernel in the category $(\mathrm{Esp.An})$. The converse is false in general (cf. example 0.4 of [Mum65], Chap. 0, §3, cited in [Ray67a], Rem. 1), but is true if $d=(d_0,d_1)$ is an immersion. Under this hypothesis, the morphism $p:\Omega\to Z:=\Omega/R_\Omega$ is faithfully flat and of finite presentation; if moreover $S$ is locally noetherian, a point $x$ of codimension 1 in $X$ belongs to $\Omega$ if and only if the graph of the groupoid induced on $\Spec(\OO_{X,x})$ is closed. For all this, see [Ray67a], Prop. 1, [Ray67b], Prop. 1 and Theorems 2, 1 and 4, and [An73], Theorems 5 and 6 on pages 66--67 and Prop. 3.3.1 on page 49. (See also, in the case of an action of an algebraic group over an algebraically closed field $k$, the article [DR81].)}
+Let $S$ be a noetherian scheme and
+\[
+\xymatrix{X_2\ar@<1ex>[r]^{d'_2}\ar[r]^{d'_1}\ar@<-1ex>[r]_{d'_0}&X_1\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X_0}
+\]
+a $(\mathrm{Sch}/S)$-groupoid such that $d_1$ is flat and of finite type, $X_0$ is of finite type over $S$, and the morphism $X_1\to X_0\times_SX_0$ with components $d_0$ and $d_1$ is quasi-finite.
+
+There then exists a dense saturated open subset $W$ of $X_0$ satisfying the following properties:
+\begin{enumeratei}
+\item If $W_2\xrightarrow{w'_i}W_1\xrightarrow{w_j}W$ is the groupoid induced by $X_*$ on $W$, $(w_0,w_1)$ has a cokernel $(V,p)$ in $(\mathrm{Sch}/S)$; moreover $(V,p)$ is a cokernel of $(w_0,w_1)$ in the category of all ringed spaces.
+\item $p$ is surjective and open.
+\item[(ii')] $p$ and $V\to S$ are of finite presentation.
+\item The morphism $W_1\to W\times_VW$ with components $w_0$ and $w_1$ is surjective.
+\item If $(d_0,d_1)$ is an equivalence pair, $W_1\to W\times_VW$ is an isomorphism and $p$ is faithfully flat.
+\end{enumeratei}
+\end{theorem}
+We shall show that one can choose $W$ so that the $(\mathrm{Sch}/S)$-groupoid $W_*$ induced by $X_*$ has a quasi-section (cf. §7). Theorem 8.1 will then follow from Lemma 6.1.
+
+Let us provisionally admit that, for every point $z\in X_0$ closed relative to $S$ (cf. §7), there exists a saturated open subset $W_z$ which has a quasi-section and meets all irreducible components of $X_0$ passing through $z$. Then the exterior $X_0-\overline W_z$ of $W_z$ in $X_0$ is saturated (for the saturation $d_1(d_0^{-1}(X_0-\overline W_z))$ of this exterior is open and does not meet $W_z$). If this exterior is nonempty, one can choose in it a point $z'$ closed relative to $S$ and associate to $z'$ an open subset $W_{z'}$ as above; one can moreover suppose $W_{z'}$ contained in $X_0-\overline W_z$; then $W_z$ and $W_{z'}$ are disjoint and the groupoid induced by $X_*$ on $W_z\cup W_{z'}$ has a quasi-section. The process must terminate because $X_0$ has only finitely many irreducible components. It therefore remains to construct $W_z$.
+
+For this one may suppose $S$ affine; in this case, let $y$ be a point of $X_1$ such that $d_1(y)=z$, $X$ an affine open subset of $X_0$ containing $d_0(y)$, $Y$ the inverse image of $X$ in $X_1$ under $d_0$, and finally $u:Y\to X$ and $v:Y\to X_0$ the morphisms induced by $d_0$ and $d_1$. Since $X$ is affine, hence quasi-projective, one can apply Lemma 7.2: there is therefore a subscheme $F$ of $X_0$ such that $d_0^{-1}(F)\cap d_1^{-1}(z)$ is nonempty, $d_0(d_0^{-1}(F)\cap d_1^{-1}(z))$ is finite, and the restriction of $d_1$ to $d_0^{-1}(F)$ is flat at the points of $v^{-1}(z)$. This allows us to return to the notation of Lemma 7.3, denoting by $F_1$ and $F_2$ the inverse images of $F$ in $X_1$ and $X_2$, etc.
+\[
+\xymatrix{F_2\ar@<.5ex>[r]^{\widetilde d'_1}\ar@<-.5ex>[r]_{\widetilde d'_0}\ar[d]_{\widetilde d'_2}&F_1\ar[r]^{\widetilde d_0}\ar[d]^{\widetilde d_1}&F\\X_1\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X_0&.}
+\]
+One then shows, as in 7.3, that $\widetilde d_1$ is quasi-finite at the points of $\widetilde d_1^{-1}(z)$, so it is natural to consider the open subset $F'_1$ of $F_1$ consisting of the points where $\widetilde d_1$ is both flat and quasi-finite. By 7.4, the two inverse images of $F'_1$ under $\widetilde d'_1$ and $\widetilde d'_0$ consist of the points of $F_2$ where $\widetilde d'_2$ is flat and quasi-finite, so these two inverse images coincide and $F'_1$ has the form $\widetilde d_0^{-1}(F')$, where $F'$ is an open subset of $F$ (SGA 1, VIII 4.4). By replacing $F$ by $F'$ if necessary, one can therefore suppose $\widetilde d_1$ quasi-finite and flat. In this case, denote by $W_z$ the largest open subset of $\widetilde d_1(F_1)$ above which $\widetilde d_1$ is finite and flat.
+
+This open subset $W_z$ does not necessarily contain $z$, but it contains the generic points of the irreducible components of $X_0$ passing through $z$.\nde{Indeed, let $\eta$ be such a generic point. The hypotheses imply that $\OO_{X_0,\eta}$ is an artinian local ring, and $\OO_{F_1,\eta}$ a finitely generated $\OO_{X_0,\eta}$-module. Thus, by SGA 1, VIII 6.5, there exists an open neighborhood of $\eta$ above which $\widetilde d_1$ is finite.} Since $d_0$ (resp. $d_1$) is faithfully flat and of finite presentation (hence open), it follows from SGA 1, VIII 5.7 that $d_0^{-1}(W_z)$ and $d_1^{-1}(W_z)$ both coincide with the largest open subset of $\widetilde d'_2(F_2)$ above which $\widetilde d'_2$ is finite and flat. Consequently, one sees, as in 7.3, that the two inverse images of $\widetilde d_1^{-1}(W_z)$ under $\widetilde d'_0$ and $\widetilde d'_1$ coincide, hence that $\widetilde d_1^{-1}(W_z)$ has the form $\widetilde d_0^{-1}(U)$, where $U$ is an open subset of $F$ which is a quasi-section for the groupoid induced by $X_*$ on $W_z$.
+
+\sgasection{9}{Elimination of the noetherian hypotheses in Theorem 7.1}
+\textbf{a)} Return to the notation and hypotheses of Lemma 6.1, and let $\pi:S'\to S$ be an arbitrary base change. Denote by $f':X'\to Y'$ the morphism of $S'$-schemes obtained by the extension $\pi$ of the base from a morphism of $S$-schemes $f:X\to Y$. With this convention, $p':X'_0\to Y'$ is surjective, as is the morphism $X'_1\to X'_0\times_{Y'}X'_0$ with components $d'_0$ and $d'_1$. The underlying set of $Y'$ is therefore identified with the quotient of the underlying set of $X'_0$ by the equivalence relation defined on $X'_0$ by the $S'$-groupoid $X'_*$. Moreover, $q':U'\to Y'$ is integral surjective, so the topology of $Y'$ is the quotient topology of that of $U'$, and thus also of that of $X'_0$ (cf. the proof in §6.c).
+
+On the other hand, it is clear that $U'$ is a quasi-section of the $S'$-groupoid $X'_*$, to which one can therefore apply Lemma 6.1. In particular, $X'_*$ has a cokernel $(Y_1,p_1)$, and the underlying topological space of $Y_1$ is obtained from the underlying topological space of $X'_0$ by identifying the points equivalent for the relation defined by $X'_*$. It follows that the canonical morphism $Y_1\to Y'$ is a homeomorphism; I even say that $Y_1\to Y'$ is a universal homeomorphism: indeed, if $S''$ is over $S'$, let $Y_2$ be the cokernel of $(d_0\times_SS'',d_1\times_SS'')$. By what precedes, applied to the base changes $S''\to S'$ and $S''\to S$,
+\[
+Y_2\to Y_1\times_{S'}S''\quad\text{and}\quad Y_2\to Y\times_SS''\simeq Y'\times_{S'}S''
+\]
+are homeomorphisms, so the same holds for $Y_1\times_{S'}S''\to Y'\times_{S'}S''$.
+
+\textbf{b)} Analogous remarks obviously apply to the case where the groupoid $X_*$ ``locally'' has quasi-sections (cf. the proof of Theorem 7.1).
+
+\nde{What follows has been expanded to bring out Theorem 9.0 below.}For example, one has the following theorem:
+\begin{theorem}{9.0}\label{V.9.0}
+Let $S$ be an arbitrary scheme and $X_2\xrightarrow{d'_j}X_1\xrightarrow{d_i}X_0$ a $(\mathrm{Sch}/S)$-groupoid such that: $X_0$ is of finite presentation and quasi-projective over $S$, $d_1$ is of finite presentation, proper and flat, and the morphism $d_0\boxtimes d_1:X_1\to X_0\times_SX_0$ is quasi-finite. Then:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item Every point $x$ of $X_0$ has an open neighborhood $W$ which is saturated and such that the groupoid induced by $X_*$ on $W$ has a quasi-section.
+\item Let $(Y,p)$ be the cokernel of $(d_0,d_1)$ in the category of all ringed spaces. Then $Y$ is a scheme, $p$ a morphism of schemes, and $(Y,p)$ is a cokernel of $(d_0,d_1)$ in $(\mathrm{Sch}/S)$.
+\item $p$ is surjective, open and universally closed.
+\item The morphism $d:X_1\to X_0\times_YX_0$ with components $d_0$ and $d_1$ is surjective.
+\item If $(d_0,d_1)$ is an equivalence pair, then:
+\begin{enumeratea}
+\item $d:X_1\to X_0\times_YX_0$ is an isomorphism and $p$ is faithfully flat.
+\item $p$ and $Y\to S$ are of finite presentation, and $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of sheaves for the \fppf topology.
+\end{enumeratea}
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+For (1), the question is local on $S$, so one can suppose $S=\Spec B$ affine. There then exist a ring $A$ finitely generated over $\ZZ$, a morphism $S\to T=\Spec A$ and a $(\mathrm{Sch}/T)$-groupoid $Z_*$ such that $X_*$ is identified with $Z_*\times_TS$ (cf. EGA IV$_3$, 8.8.3, applied to $S_0=\Spec\ZZ$ and $S_i=\Spec A_i$, the $A_i$ ranging over the finitely generated $\ZZ$-subalgebras of $B$). Moreover, one can suppose that $Z_*$ satisfies the conditions of Theorem 7.1 (cf. EGA IV$_3$, 8.10.5). Consequently, $Z_*$ ``locally'' has quasi-sections.
+
+The same therefore holds for $X_*$ by a), and assertions (2), (3), (4) and (5) (a) follow from 6.1, as in the proof of 7.1.
+
+\textbf{c)} Let us show that $Y\to S$ is of finite presentation.\nde{The original states that this follows from Proposition 9.1 below. We have been unable to reconstruct this argument. The proof that follows was indicated to us by O. Gabber.} By hypothesis, $(d_0^{X_*},d_1^{X_*})$ is an equivalence pair, that is, $d^{X_*}:X_1\to X_0\times_SX_0$ is a monomorphism. By EGA IV$_3$, 8.10.5, one can suppose, enlarging $A$ if necessary, that $d^{Z_*}:Z_1\to Z_0\times_TZ_0$ is a monomorphism. Since $T=\Spec A$, with $A$ noetherian, it then follows from Theorem 7.1 that the groupoid $Z_*$ has a cokernel $(Q,q)$ in $(\mathrm{Sch}/T)$, that $q$ and $Q\to T$ are of finite presentation, and moreover that $q:Z_0\to Q$ is faithfully flat and $d^{Z_*}$ induces an isomorphism $Z_1\isomto Z_0\times_QZ_0$. Put $Q_S=Q\times_TS$.
+
+Since $X_i\simeq Z_i\times_TS$, one therefore obtains an isomorphism:
+\[
+d^{Z_*}\times_TS:X_1\isomto X_0\times_{Q_S}X_0.
+\]
+Denote its inverse by $\varphi$, and let $\pi$ be the canonical morphism
+\[
+X_0\times_YX_0\to X_0\times_{Q_S}X_0.
+\]

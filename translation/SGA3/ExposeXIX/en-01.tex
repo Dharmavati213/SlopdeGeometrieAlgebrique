@@ -1,0 +1,185 @@
+\exposetitle{XIX}{Reductive groups---generalities}
+\label{XIX}
+\begin{center}\textit{by M.~Demazure}\end{center}
+
+{\renewcommand{\thefootnote}{(0)}\nde{Version of 13/10/2024}}%
+The remainder of this Seminar is devoted to the study of reductive groups. Its principal aim is the generalization of the classical results of Chevalley (\textit{Bible} and \textit{T\^ohoku}){\renewcommand{\thefootnote}{(1)}\nde{See the bibliographical references at the end of this Expos\'e. In particular, a new edition of the Chevalley Seminar 1956--58, cited [Bible], revised by P.~Cartier, was published in 2005, cf. [Ch05].}} to arbitrary base schemes, the two central results being the \emph{uniqueness theorem} (Exp.~XXIII, th.~4.1 and cor.~5.1 to 5.10) and the \emph{existence theorem} (Exp.~XXV, th.~1.1) for ``pinned'' reductive group schemes corresponding to prescribed ``root data''. The proofs used are inspired by those of Chevalley, the technique of schemes allowing them to be made more effective.
+
+The results of the first volume of the \textit{Bible} (Exp.~1 to 13) will be used systematically. On the other hand, we shall prove directly over an arbitrary scheme the results of the second volume (in particular, the isomorphism theorem); knowledge of the proofs over an algebraically closed field is therefore not absolutely indispensable.
+
+In the proof of these two fundamental results, we shall use only the most elementary results of the theory of groups of multiplicative type, contained for the most part in Exp.~VIII and IX; on the other hand, we shall make essential use of the results of Expos\'e~XVIII.{\renewcommand{\thefootnote}{(2)}\nde{More precisely, proposition XVIII 2.3 (extension of a ``generic homomorphism'' between groups) is used in XXII 4.1.11 and then in Exp.~XXIII (proof of the uniqueness theorem), and also in Exp.~XXIV; theorem XVIII 3.7 (construction of a group from a group germ) is used only in Exp.~XXV.}} The reader especially interested in the existence and uniqueness theorems may, on a first reading, skip Expos\'es~X to XVII.
+
+\sgasection{1}{Reminders on groups over an algebraically closed field}
+\label{XIX.sec.1}
+\numpara{1.1} \emph{In this section, $k$ will always denote an algebraically closed field.} As announced above, the only results of \textit{Bible} used in what follows are in volume~1 (Expos\'es~1 to 13). All the results of \textit{Bible} (loc.~cit.) concerning \emph{semisimple groups} are valid more generally for \emph{reductive groups} (definition below), and their proof is identical, with the following harmless modifications:
+\begin{itemize}
+\item Exp.~9, \S~4, definition~3: see 1.6.1 below.
+\item Exp.~12, \S~4, theorem~2, e): delete ``finite''.
+\item Exp.~13, \S~3, theorem~2: replace ``rank'' by ``semisimple rank''.
+\item Exp.~13, \S~4, corollary~2 to theorem~3: replace ``rank'' by ``reductive rank''.
+\end{itemize}
+
+\numpara{1.2} Let $G$ be a smooth affine connected $k$-group. The \emph{radical} of $G$ (\textit{Bible}, \S~9.4, prop.~2){\renewcommand{\thefootnote}{(3)}\nde{The reference 9-06 (= Exp.~9, p.~6) has been replaced by \S~9.4 (= Exp.~9, \S~4), which applies equally to [Bible] and [Ch05]. When the numbering of [Ch05] differs from [Bible], as is the case in Exp.~6, both references will be indicated explicitly.}} is the reduced subgroup associated with the identity component of the intersection of the Borel subgroups of $G$; it is also the largest smooth connected solvable invariant subgroup of $G$; we shall denote it by $\operatorname{rad}(G)$.
+
+The \emph{unipotent radical} of $G$ is the unipotent part of the radical of $G$; it is also the largest smooth connected unipotent invariant subgroup of $G$; we shall denote it by $\operatorname{rad}^{u}(G)$.
+
+\numpara{1.3} Let $G$ be a smooth affine connected $k$-group, and $Q$ a torus of $G$. Then the centralizer $\uCentr_G(Q)$ of $Q$ in $G$ is a closed subgroup of $G$ (Exp.~VIII, 6.7), smooth (Exp.~XI, 2.4) and connected (cf. \textit{Bible}, \S~6.6, th.~6 a) or [Ch05], \S~6.7, th.~7 a)).
+
+One has the fundamental relation:
+\begin{equation}\tag{1.3.1}\label{XIX.eq.1.3.1}
+\operatorname{rad}^{u}(\uCentr_G(Q))=\operatorname{rad}^{u}(G)\cap\uCentr_G(Q).
+\end{equation}
+{\renewcommand{\thefootnote}{(4)}\nde{The following has been expanded.}}%
+First, $U=\operatorname{rad}^{u}(G)\cap\uCentr_G(Q)$ is a unipotent invariant subgroup of $\uCentr_G(Q)$; let us show that it is smooth and connected. If one makes $Q$ act on $\operatorname{rad}^{u}(G)$ by inner automorphisms, $U$ is precisely the scheme of invariants of this action. Now this is smooth and connected, by lemma~1.4 below.
+
+Consequently, $U$ is a closed subgroup of $\operatorname{rad}^{u}(\uCentr_G(Q))$. On the other hand, by \textit{Bible}, Exp.~12, \S~3, cor.~to th.~1, one has $\operatorname{rad}^{u}(\uCentr_G(Q))(k)\subset\operatorname{rad}^{u}(G)(k)$. Equality (1.3.1) follows.
+
+Let us point out a particular case of the preceding result: if $G$ is a smooth affine connected $k$-group and $T$ is a maximal torus of $G$,
+\begin{equation}\tag{1.3.2}\label{XIX.eq.1.3.2}
+\uCentr_G(T)=T\cdot(\uCentr_G(T)\cap\operatorname{rad}^{u}(G)).
+\end{equation}
+Indeed (cf. \textit{Bible}, \S~6.6, th.~6 c) or [Ch05], \S~6.7, th.~7 c)), $\uCentr_G(T)$ is a solvable group, hence the semidirect product of its maximal torus $T$ and its unipotent radical.
+
+By the density theorem (cf. \textit{Bible}, \S~6.5, th.~5 a) or [Ch05], \S~6.6, th.~6 a)), the union of the $\uCentr_G(T)$, as $T$ runs through the set of maximal tori of $G$, contains a dense open subset of $G$; it therefore follows from (1.3.2):
+\begin{corollary}{1.3.3}\label{XIX.1.3.3}
+If $G$ is a smooth affine connected $k$-group, the union of the $T\cdot\operatorname{rad}^{u}(G)$, where $T$ runs through the set of maximal tori of $G$, contains a dense open subset of $G$.
+\end{corollary}
+
+\begin{notation}{1.4.0}\label{XIX.1.4.0}
+{\renewcommand{\thefootnote}{(5)}\nde{These notations, which appeared in 2.3 of the original, have been inserted here; on the other hand, the statement and proof of 1.4 have been expanded.}}%
+We shall systematically use the following notation: if $S$ is a scheme and $s$ a point of $S$, $\overline{s}$ will denote the spectrum of an algebraic closure $\overline{\kappa(s)}$ of $\kappa(s)$.
+\end{notation}
+
+\begin{lemma}{1.4}\label{XIX.1.4}
+{\renewcommand{\thefootnote}{(5)}\footnotemark}%
+Let $S$ be a scheme, $Q$ an $S$-torus acting on a group $S$-scheme $H$, separated and smooth over $S$.
+\begin{enumeratei}
+\item The functor of invariants $H^Q$ is representable by a closed subscheme of $H$, smooth over $S$.
+\item If in addition $H$ is affine over $S$, and has connected fibers, then so does $H^Q$.
+\end{enumeratei}
+\end{lemma}
+First, by VIII 6.5 (d),{\renewcommand{\thefootnote}{(6)}\nde{See also the additions made in VI$_{\mathrm B}$, 6.2.4 (d) and 6.5.5 (a).}} since $H$ is separated over $S$ and $Q$ essentially free over $S$, $H^Q$ is representable by a closed subscheme of $H$. In particular, if $H$ is affine over $S$, then so is $H^Q$.
+
+Consider now the semidirect product $G=H\cdot Q$; it is smooth and separated over $S$. Then the centralizer $\uCentr_G(Q)$ is representable by a closed subscheme of $G$, of finite presentation over $G$, by Exp.~XI 6.11 (a),{\renewcommand{\thefootnote}{(6)}\footnotemark} and it is smooth over $S$ by Exp.~XI 2.4.
+
+Since $\uCentr_G(Q)=H^Q\cdot Q$, it follows that $H^Q$ is smooth over $S$. (Indeed, using the section $\sigma:H^Q\to\uCentr_G(Q)$ deduced from the unit section $\varepsilon_Q$ of $Q$, one sees at once that $H^Q$ is formally smooth over $S$; since moreover $\varepsilon_Q$ is of finite presentation, $H^Q$ is locally of finite presentation over $S$.) This proves (i).
+
+Finally, suppose that $H$ is affine over $S$ and has connected fibers. Then each geometric fiber $G_{\overline{s}}$ of $G$ is a smooth affine connected $\overline{\kappa(s)}$-group, hence, by the first assertion of 1.3, the same is true of
+\[
+\uCentr_{G_{\overline{s}}}(Q_{\overline{s}})=(\uCentr_G(Q))_{\overline{s}}=(H^Q)_{\overline{s}}\cdot Q_{\overline{s}},
+\]
+and this implies that $(H^Q)_{\overline{s}}$ is connected.
+
+\numpara{1.5} Recall that the \emph{reductive rank} of the smooth affine $k$-group $G$ is the common dimension of the maximal tori of $G$. We shall denote it by $\operatorname{rgred}(G/k)$ or $\operatorname{rgred}(G)$. For $\operatorname{rgred}(G/k)=0$, it is necessary and sufficient that $G$ be unipotent (i.e. that $G=\operatorname{rad}^{u}(G)$), by \textit{Bible}, \S~6.4, cor.~1 to th.~4 or [Ch05], \S~6.5, cor.~1 to th.~5.
+
+If $H$ is an invariant subgroup of the smooth affine $k$-group $G$, the quotient $G/H$ is affine and smooth (Exp.~VI$_{\mathrm B}$, 11.17 and VI$_{\mathrm A}$, 3.3.2 (iii)). Moreover (\textit{Bible}, \S~7.3, th.~3, a) and c)), one has
+\[
+\operatorname{rgred}(G)=\operatorname{rgred}(G/H)+\operatorname{rgred}(H).
+\]
+
+\begin{definition}{1.6.1}\label{XIX.1.6.1}
+{\renewcommand{\thefootnote}{(7)}\nde{Paragraph 1.6 has been changed into paragraphs 1.6.1 to 1.6.3. Note that in this Seminar every reductive (resp. semisimple, cf. 1.8) $k$-group is, by definition, connected.}}%
+One says that the $k$-group $G$ is \emph{reductive} if it is smooth, affine and connected, and if $\operatorname{rad}(G)$ is a torus, that is, if $\operatorname{rad}^{u}(G)=\{e\}$.
+\end{definition}
+\begin{lemma}{1.6.2}\label{XIX.1.6.2}
+Let $G$ be a reductive $k$-group.
+\begin{enumeratei}
+\item If $Q$ is a torus of $G$, then $\uCentr_G(Q)$ is reductive.
+\item In particular, if $T$ is a maximal torus of $G$, then $\uCentr_G(T)=T$.
+\item The center of $G$ is contained in every maximal torus, hence is diagonalizable.
+\item The radical of $G$ is the (unique) maximal torus of $\uCentr(G)$.
+\end{enumeratei}
+\end{lemma}
+Indeed, (i) follows from (1.3.1), (ii) from (1.3.2), and (iii) follows from (ii). Finally, the maximal torus of $\uCentr(G)$ (i.e. the identity component $\uCentr(G)^0$) is a smooth solvable connected subgroup, invariant in $G$, hence contained in $\operatorname{rad}(G)$; conversely, $\operatorname{rad}(G)$ is a torus invariant in $G$, hence central (\textit{Bible}, \S~4.3, cor.~to prop.~2), whence (iv).
+
+\begin{remark}{1.6.3}\label{XIX.1.6.3}
+If $G$ is reductive and $\dim(G)\ne\operatorname{rgred}(G)$, then $\dim(G)-\operatorname{rgred}(G)\geq2$. Indeed, this difference is always even (cf. 1.10 below).
+\end{remark}
+
+\numpara{1.7} Let $G$ be a smooth affine connected $k$-group and $H$ a smooth connected invariant subgroup. Then
+\begin{equation}\tag{1.7.1}\label{XIX.eq.1.7.1}
+\operatorname{rad}(H)=(\operatorname{rad}(G)\cap H)^0_{\mathrm{red}}
+\quad\text{and}\quad
+\operatorname{rad}^{u}(H)=(\operatorname{rad}^{u}(G)\cap H)^0_{\mathrm{red}},
+\end{equation}
+as one sees at once. In particular, if $G$ is reductive, so is $H$.
+
+Let $f:G\to G'$ be a surjective morphism of smooth affine connected $k$-groups. Then
+\begin{equation}\tag{1.7.2}\label{XIX.eq.1.7.2}
+f(\operatorname{rad}^{u}(G))=\operatorname{rad}^{u}(G').
+\end{equation}
+In particular, if $G$ is reductive, so is $G'$.
+
+Let us prove (1.7.2). First, $f$ sends $\operatorname{rad}^{u}(G)$ into $\operatorname{rad}^{u}(G')$. Introducing
+\[H=(f^{-1}(\operatorname{rad}^{u}(G')))^0_{\mathrm{red}},\]
+which contains $\operatorname{rad}^{u}(G)$, one has $\operatorname{rad}^{u}(H)=\operatorname{rad}^{u}(G)$ and one is reduced to the case where $G=H$, i.e. where $G'$ is unipotent. Since the union of the $T\cdot\operatorname{rad}^{u}(G)$ ($T$ running through the set of maximal tori of $G$) is dense in $G$, the union of the $f(T)f(\operatorname{rad}^{u}(G))$ is dense in $G'$; but $f(T)$ consists of semisimple elements, hence $f(T)=\{e\}$, since $G'$ is unipotent; this shows that $f(\operatorname{rad}^{u}(G))$ is dense in $G'$. Therefore, by \textit{Bible}, \S~5.4, lemma~4 or [Ch05], \S~6.1, lemma~1,{\renewcommand{\thefootnote}{(8)}\nde{The following has been expanded.}} $f(\operatorname{rad}^{u}(G))$ is an open subgroup of $G'$; since the latter is connected, it follows that $f(\operatorname{rad}^{u}(G))=G'$.
+
+(N.~B.: under the same hypotheses one can prove that $f(\operatorname{rad}(G))=\operatorname{rad}(G')$.)
+
+\numpara{1.8} One says that the $k$-group $G$ is \emph{semisimple} if it is smooth, affine and connected and if $\operatorname{rad}(G)=\{e\}$, that is, if $G$ is reductive and $\uCentr(G)$ finite. If $G$ is any smooth affine connected $k$-group, then $G/\operatorname{rad}(G)$ is semisimple (\textit{Bible}, \S~9.4, prop.~2), and $G/\operatorname{rad}^{u}(G)$ is reductive. One calls \emph{semisimple rank} of $G$, and denotes by $\operatorname{rgss}(G/k)$ or $\operatorname{rgss}(G)$, the reductive rank of $G/\operatorname{rad}(G)$.
+
+If $G$ is reductive, one therefore has
+\[
+\operatorname{rgred}(G)=\operatorname{rgss}(G)+\dim(\operatorname{rad}(G)).
+\]
+If $G$ is a smooth affine connected $k$-group and $Q$ is a central subtorus of $G$, then $G/Q$ is semisimple if and only if $G$ is reductive and $Q=\operatorname{rad}(G)$. Indeed, if $G/Q$ is semisimple, $Q\supset\operatorname{rad}(G)$, hence $\operatorname{rad}(G)$ is a torus, hence $G$ is reductive, hence $\operatorname{rad}(G)$ is the maximal torus of $\uCentr(G)$, hence $\operatorname{rad}(G)=Q$. If $G$ is reductive and $Q$ is a central subgroup, then ($G/Q$ is reductive and) $\operatorname{rgss}(G)=\operatorname{rgss}(G/Q)$.
+
+\numpara{1.9} If $K$ is an algebraically closed extension of $k$ and $G$ is a smooth affine connected $k$-group, $G$ is reductive (resp. semisimple) if and only if $G_K$ is, and one has
+\[
+\operatorname{rgred}(G/k)=\operatorname{rgred}(G_K/K),\qquad
+\operatorname{rgss}(G/k)=\operatorname{rgss}(G_K/K).
+\]
+
+\numpara{1.10} Let $G$ be a smooth connected $k$-group and $T$ a torus of $G$.{\renewcommand{\thefootnote}{(9)}\nde{The following sentence has been added.}} One denotes by $\mathfrak g$ the Lie $k$-algebra of $G$, i.e. $\mathfrak g=\Lie(G)=\Lie(G/k)(k)$; similarly, one puts $\mathfrak t=\Lie(T)$. Then $\mathfrak g$ decomposes under the action of $T$ (by $T\to G$ and the adjoint action of $G$) into
+\begin{equation}\tag{1.10.1}\label{XIX.eq.1.10.1}
+\mathfrak g=\mathfrak g^0\oplus\coprod_{\alpha\in R}\mathfrak g^\alpha,
+\end{equation}
+where the $\alpha\in R$ are nontrivial characters of $T$ and the $\mathfrak g^\alpha$ are $\ne0$. The characters $\alpha\in R$ are called the \emph{roots} of $G$ with respect to $T$. By Exp.~II, 5.2.3, (i), one has
+\begin{equation}\tag{1.10.2}\label{XIX.eq.1.10.2}
+\mathfrak g^0=\Lie(\uCentr_G(T)).
+\end{equation}
+In particular,{\renewcommand{\thefootnote}{(10)}\nde{The following has been expanded.}} since $\uCentr_G(T)$ is connected (1.3 when $G$ is affine, and Exp.~XII 6.6 b) in the general case), $T$ is its own centralizer if and only if $\mathfrak g^0=\Lie(T)$.
+
+This condition implies that $T$ is maximal and that $\uCentr(G)\subset T$, hence by Exp.~XII 8.8 d) one has:
+\begin{equation}\tag{1.10.3}\label{XIX.eq.1.10.3}
+\uCentr(G)=\Ker(T\to\GL(\mathfrak g))=\bigcap_{\alpha\in R}\Ker(\alpha);
+\end{equation}
+moreover, $\uCentr(G)$ is then affine, hence $G\to G/\uCentr(G)$ affine; since the latter group is affine (Exp.~XII 6.1),{\renewcommand{\thefootnote}{(11)}\nde{See also the addition VI$_{\mathrm B}$, 6.2.6.}} so is $G$.
+
+When $G$ is reductive and $T$ maximal, the roots in the preceding sense coincide with the roots in the sense of \textit{Bible}, \S~12.2, def.~1; the latter are indeed roots in the sense of this paragraph (\textit{Bible}, \S~13.2, th.~1, c)) and there are $\dim(G)-\dim(T)$ of them (\textit{Bible}, \S~13.4, cor.~2 to th.~3). Moreover, if $\alpha$ is a root, so is $-\alpha$ (\textit{Bible}, \S~12.2, cor.~to prop.~1). (As usual, one writes the group structure of $\Hom_{k\text{-gr.}}(T,\mathbf{G}_{\mathrm m,k})$ indifferently additively or multiplicatively.) It follows that, for $G$ reductive,
+\begin{equation}\tag{1.10.4}\label{XIX.eq.1.10.4}
+\dim(G)-\operatorname{rgred}(G)=\operatorname{Card}(R)
+\end{equation}
+is always even.
+
+The semisimple rank of the reductive group $G$ is the rank of the subset $R$ of the $\QQ$-vector space $\Hom_{k\text{-gr.}}(T,\mathbf{G}_{\mathrm m,k})\otimes\QQ$ (\textit{Bible}, \S~13.3, th.~2).
+
+\begin{lemma}{1.11}\label{XIX.1.11}
+Let $k$ be an algebraically closed field, $G$ a smooth affine connected $k$-group, $T$ a torus of $G$, $W(T)=\uNorm_G(T)/\uCentr_G(T)$ the Weyl group of $G$ with respect to $T$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $G$ is reductive, $T$ is maximal, $\operatorname{rgss}(G)=1$.
+\item $G$ is reductive, $T$ is maximal, $G\ne T$; there exists a subtorus $Q$ of $T$, of codimension~1 in $T$, central in $G$.
+\item $G$ is not solvable and $\dim(G)-\dim(T)\leq2$.
+\item $W(T)\ne\{e\}$ and $\dim(G)-\dim(T)\leq2$.
+\item $W(T)=(\ZZ/2\ZZ)_k$ and $\dim(G)-\dim(T)=2$.
+\end{enumeratei}
+Moreover, under these conditions, there are exactly two roots of $G$ with respect to $T$; they are opposite. Under the conditions of (ii), $Q=\operatorname{rad}(G)$.
+\end{lemma}
+One clearly has (v) $\Rightarrow$ (iv). One has (iv) $\Rightarrow$ (iii) by \textit{Bible}, \S~6.1, cor.~3 to th.~1 or [Ch05], \S~6.2, cor.~3 to th.~2. Let us prove (iii) $\Rightarrow$ (ii): let $U$ be the unipotent radical of $G$; one knows that $G/U$ is reductive and is not a torus (otherwise $G$ would be solvable); hence, by (1.10.4), one has
+\[
+\dim(G/U)-\operatorname{rgred}(G/U)=\operatorname{Card}(R)\geq2;
+\]
+but
+\[
+\operatorname{rgred}(G)=\operatorname{rgred}(G/U)+\operatorname{rgred}(U)=\operatorname{rgred}(G/U),
+\]
+whence
+\[
+\begin{split}
+\dim(G)-\dim(U)-\operatorname{rgred}(G)&=\dim(G/U)-\operatorname{rgred}(G/U)\\
+&\geq2\geq\dim(G)-\dim(T)\geq\dim(G)-\operatorname{rgred}(G).
+\end{split}
+\]
+This gives $\dim(U)=0$, hence $G$ is reductive, $\operatorname{rgred}(G)=\dim(T)$, hence $T$ is maximal, $\dim(G)-\dim(T)=2$. By \textit{Bible}, \S~10.4, prop.~8, there exists a singular torus $Q$ of codimension~1 in $T$; then $\uCentr_G(Q)$ is reductive (1.6.2 (i)), not solvable (definition of a singular torus), hence $\dim(\uCentr_G(Q))-\operatorname{rgred}(G)\geq2$, which proves that $G=\uCentr_G(Q)$ and $Q$ is central in $G$.
+
+Let us prove (ii) $\Rightarrow$ (i). One knows that $G/Q$ is reductive (1.7) and that $\operatorname{rgred}(G/Q)=1$, hence $\operatorname{rgss}(G/Q)=0$ or $1$. The first case is impossible, for it would imply $\operatorname{rgss}(G)=0$, hence $G=T$; one therefore has $\operatorname{rgred}(G/Q)=\operatorname{rgss}(G/Q)=1$, which proves that $G/Q$ is semisimple; hence $Q$ is the radical of $G$ and $\operatorname{rgss}(G)=1$.

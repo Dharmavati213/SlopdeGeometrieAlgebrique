@@ -1,0 +1,176 @@
+\exposetitle{XV}{Complements on the subtori of a group prescheme. Application to smooth groups}
+\label{XV}
+\begin{center}by M. Raynaud{\renewcommand{\thefootnote}{*}\footnotemark}\end{center}
+{\renewcommand{\thefootnote}{*}\footnotetext{This expos\'e and the next two (Exp. XVI and XVII) do not correspond to oral lectures in the seminar. With a few complements, they develop the substance of (succinct) handwritten notes by A. Grothendieck, written in 1964 on the occasion of the present seminar.}}
+{\renewcommand{\thefootnote}{0}\footnotetext{xy version of 1/12/08}}
+\setcounter{footnote}{0}
+
+% original p. 349
+\sgasection{0}{Introduction}
+This expos\'e complements and partly takes up again expos\'es XI and XII; knowledge of expos\'es XIII and XIV is not indispensable. Continuing the effort begun in XII, we shall work with group $S$-preschemes which are not necessarily affine and not necessarily separated over $S$.
+
+Sections 1, 2, 3, 4 are devoted to the study of subtori of a group prescheme. One obtains infinitesimal (\S~2) and global (\S~4) lifting theorems, in which points of finite order play an essential role (\S~1).
+
+Sections 5, 6 and 7 are independent of the preceding sections. The consideration of infinitesimal neighborhoods leads to the representability of the functor of smooth subgroups equal to their connected normalizer (\S~5). In \S\S~6 and 7, one is interested more particularly in Cartan subgroups.
+
+Finally, in \S~8 one gives a necessary and sufficient condition for the functor of subtori of a smooth group, or that of maximal tori, to be representable.
+
+% original p. 350
+\sgasection{1}{Lifting finite subgroups}
+\par\medskip\noindent\textit{1. Finite, smooth and central subgroups of multiplicative type}\par
+\begin{proposition}{1.1}\label{XV.1.1}
+Let $S$ be an affine scheme, $S_0$ a closed subscheme of $S$ defined by an ideal of square zero, $G$ a group $S$-prescheme, $H_0$ a group subscheme of $G_0=G\times_S S_0$, smooth over $S_0$, of finite type, and of multiplicative type. Then, for there to exist a group subscheme of $G$, of multiplicative type, lifting $H_0$, it is necessary and sufficient that there exist a subscheme $H'$ of $G$, flat over $S$, lifting $H_0$.
+\end{proposition}
+\begin{proof}
+The necessity of the condition is quite clear; let us prove its sufficiency. The group $H_0$ of multiplicative type is quasi-isotrivial (X 4.5); by Exp. X 2.1, there exist an $S$-group $H$ of multiplicative type and an $S_0$-isomorphism of groups:
+\[
+u_0:H\times_S S_0\isomto H_0.
+\]
+Since $H'$ is flat over $S$ and $H'\times_S S_0$ is of finite presentation over $S_0$ (Exp. IX 2.1 b)), $H'$ is of finite presentation over $S$; moreover, its fibers are smooth, so $H'$ is smooth over $S$ (EGA IV 17.5.1). Since the scheme $S$ is affine, $u_0$ therefore lifts to an $S$-morphism of preschemes:
+\[
+u:H\to H'.
+\]
+It then follows from Exp. III 2.1 and Exp. IX 3.1 that the composite morphism $v_0:H\times_{S_0}S\isomto H_0\to G_0$ also lifts to an $S$-morphism of groups:
+% typo?: H times_{S_0} S is printed, kept as printed.
+\[
+v:H\to G.
+\]
+Since $v_0$ is an immersion, the same is true of $v$. The image of $H$ under $v$ is therefore a group subscheme of $G$, of multiplicative type, lifting $H_0$.
+\end{proof}
+
+\begin{proposition}{1.2}\label{XV.1.2}
+Let $S$ be a prescheme, $S_0$ a subprescheme of $S$ defined by a locally nilpotent sheaf of ideals, $G$ a group $S$-prescheme, flat and of finite presentation over $S$, and $H_0$ a group subscheme of $G_0=G\times_S S_0$ which is smooth, finite over $S_0$, of multiplicative type and central. Then there exists a unique group subscheme $H$ of $G$, of multiplicative type, lifting $H_0$. Moreover, $H$ is central. (See XVII App. III, 1.)
+\end{proposition}
+
+\begin{proposition}{1.2 bis}\label{XV.1.2bis}
+Let $S,G,S_0,G_0$ be as above, $H$ a group $S$-scheme, of multiplicative type, smooth and finite over $S$, and $u_0:H_0=H\times_S S_0\to G_0$ a central homomorphism. Then $u$ lifts uniquely to a homomorphism $u:H\to G$. Moreover, $u$ is central.
+% typo?: source says u rather than u_0 in the lifting assertion, kept as printed.
+\end{proposition}
+
+The existence of the lifting $u$ in 1.2 bis follows easily from 1.2 by considering the graph of $u_0$. The lifting $u$ is unique and central by Exp. IX 3.4 and Exp. IX 5.1.
+
+\begin{proof}[Proof of 1.2]
+The uniqueness of $H$ and the fact that $H$ is central follow from Exp. IX 5.6 b) and Exp. IX 3.4 bis. Taking uniqueness into account, to prove the existence of $H$ one may suppose $S$ affine and $S_0$ defined by an ideal of square zero, and it suffices (1.1) to find a subscheme of $G$, flat over $S$, lifting $H_0$.
+
+Since $H_0$ is smooth and finite over $S_0$, one may suppose, after restricting $S$, that there exists an integer $n>0$, invertible on $S$, such that $H_0={}_nH_0$. Consider the morphism of raising to the $n$th power in $G$:
+\[
+u:G\to G,\qquad x\mto x^n.
+\]
+Again denote by ${}_nG$ the ``kernel of $u$'', i.e. the inverse image under $u$ of the unit section of $G$ (N.B. $u$ is not in general a group morphism). Let us grant for a moment the following lemma:
+\begin{lemma}{1.3}\label{XV.1.3}
+Let $k$ be a field, $G$ a group scheme locally of finite type over $k$, $n$ an integer prime to the characteristic of $k$, $u$ the morphism of raising to the $n$th power in $G$. Then $u$ is \'etale at every point $x$ of $G$ which belongs to the center of $G$.
+\end{lemma}
+Since $G$ is flat and of finite presentation over $S$, it follows from the preceding lemma and EGA IV 17.8.2 that if $x$ is a point of $G$ projecting to $s$ in $S$ and belonging to the center of $G_s$, the morphism $u$ is \'etale at $x$. If in addition $x$ is a point of ${}_nG$, then ${}_nG$ is \'etale over $S$ at $x$. By hypothesis, the group $H_0$ is central and contained in ${}_nG_0$, so it is in fact contained in the largest open subset $V$ of ${}_nG$ which is \'etale over $S$. Since $H_0$ and $V\times_S S_0=V_0$ are \'etale over $S_0$, $H_0$ is an open subset of $V_0$ (EGA IV 17.8.7 and 17.9.1). But then, the open subprescheme of $V$ having the same underlying space as $H_0$ is a subscheme of $G$, flat over $S$, lifting $H_0$.
+
+It remains to prove Lemma 1.3. For this, note that the largest open subset of $G$ on which $u$ is \'etale is invariant under extension of the base field (EGA IV 17.8.2); this allows one to reduce to the case where $x$ is rational over $k$. Denote by $t_x$ translation by $x$, which is a $k$-automorphism of the scheme $G$. Since $x$ is in the center of $G$, one has the commutative diagram:
+\[
+\xymatrix{G\ar[r]^u\ar[d]_{t_x}&G\ar[d]^{t_x^n}\\G\ar[r]^u&G.}
+\]
+It therefore suffices to show that $u$ is \'etale at the origin, but this was seen in VIIA 8.4.
+\end{proof}
+
+\par\medskip\noindent\textit{2. Global lifting of finite groups}\par
+\begin{lemma}{1.4}\label{XV.1.4}
+Let $A$ be a local ring, separated and complete for the topology defined by its maximal ideal $\mathfrak m$, $S=\Spec(A)$, $S_n=\Spec(A/\mathfrak m^n)$. Then for every prescheme $X$ (resp. for every $S$-prescheme $X$), the canonical map:
+\begin{equation}\tag{x}
+\Hom(S,X)\to\varprojlim_n\Hom(S_n,X)
+\end{equation}
+(resp.:
+\begin{equation}\tag{xx}
+\Gamma(X/S)\to\varprojlim_n\Gamma(X_n/S_n),\quad\text{where }X_n=X\times_S S_n)
+\end{equation}
+is bijective.
+\end{lemma}
+\begin{proof}
+(xx) is an easy consequence of (x). Let us prove (x).
+
+Let $u_n:S_n\to X$ ($n\in\NN$) be a coherent system of morphisms. The image $y$ of the closed point of $S_n$ is thus independent of $n$, and $u_n$ factors through $\Spec\OO_y$. By passage to the projective limit, the morphisms $u_n$ define a ring morphism:
+\[
+\widetilde u:\OO_y\to\varprojlim_n(A/\mathfrak m^n)=A.
+\]
+This shows that (x) is surjective; it is injective as soon as $A$ is separated for the $\mathfrak m$-adic topology.
+\end{proof}
+
+\begin{corollary}{1.5}\label{XV.1.5}
+Let $A$ be a complete noetherian local ring, $\mathfrak m$ its maximal ideal, $S=\Spec(A)$, $S_n=\Spec(A/\mathfrak m^n)$, $X$ a scheme finite over $S$ and $Y$ an $S$-prescheme. Then the canonical map:
+\[
+\Hom_S(X,Y)\to\varprojlim_n\Hom_{S_n}(X_n,Y_n)
+\]
+(where $X_n=X\times_S S_n$ and likewise $Y_n=\cdots$) is bijective.
+\end{corollary}
+\begin{proof}
+Indeed, it follows from EGA II 6.2.5 that $X$ is a finite sum of local $S$-schemes finite over $S$. This reduces one to the case where $X$ itself is the spectrum of a complete noetherian local ring. But $\Hom_S(X,Y)=\Gamma(Z/X)$ where $Z$ is the $X$-prescheme $Y\times_S X$, and one applies the preceding proposition.
+\end{proof}
+
+\begin{proposition}{1.6}\label{XV.1.6}
+Let $A,S,S_n$ be as above and let $G$ and $M$ be two group $S$-preschemes, with $M$ finite over $S$. Then:
+\begin{enumerate}[label=\textup{\alph*)}]
+\item The canonical map:
+\[
+\Hom_{S\text{-gr}}(M,G)\to\varprojlim_n\Hom_{S_n\text{-gr}}(M_n,G_n)
+\]
+is bijective.
+\item If $M$ is of multiplicative type and $G$ is smooth over $S$, the canonical map:
+\[
+\varphi:\Hom_{S\text{-gr}}(M,G)\to\Hom_{S_0\text{-gr}}(M_0,G_0)
+\]
+is surjective. Moreover, if $\varphi(u)=\varphi(u')=u_0$, then $u$ and $u'$ are conjugate by an element of $G(S)$ reducing to the unit element of $G(S_0)$.
+\item If $M$ is of multiplicative type and smooth over $S$, if $G$ is flat of finite type over $S$, and if $u_0:M_0\to G_0$ is a central homomorphism, $u_0$ lifts uniquely to a homomorphism
+\[
+u:M\to G.
+\]
+Moreover, $u$ is central if $G$ has connected fibers.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+a) Follows from 1.5, from the fact that $M\times_S M$ is finite over $S$, and from the characterization of group morphisms as those making the well-known diagram commute:
+\[
+\xymatrix{M\times_S M\ar[r]^{u\times u}\ar[d]&G\times_S G\ar[d]\\M\ar[r]^u&G.}
+\]
+b) By Exp. IX 3.6, one can construct a coherent system of homomorphisms $u_n:M_n\to G_n$ lifting a homomorphism $u_0:M_0\to G_0$. Hence the first assertion of b), taking a) into account.
+
+If now $u$ and $u'$ are two liftings of $u_0$, then $u_n$ and $u'_n$ are conjugate by an element $g_n$ of $G(S_n)$ lifting the unit element of $G(S_0)$ (Exp. IX 3.6); \loccit also implies that one can choose the $g_n$ coherently, hence (1.4) arising from a section $g$ of $G(S)$. The morphisms $u$ and $\mathrm{int}(g)u'$ then agree modulo $\mathfrak m^n$ for every $n$, and therefore agree (1.5).
+
+c) The existence and uniqueness of $u$ follow from a) and 1.2 bis. If $G$ has connected fibers, $u$ is central by Exp. IX 5.6 a).
+\end{proof}
+
+% original p. 357
+\sgasection{2}{Infinitesimal lifting of subtori}
+\par\medskip\noindent\textit{1. Statement of the theorem}\par
+We shall give an infinitesimal lifting theorem for subtori of a group prescheme which does not call upon smoothness hypotheses (unlike Exp. IX 3.6 bis) and which moreover answers a very natural question\nde{The idea of approximating a torus by its finite subgroups appears in Grothendieck's proof of the connectedness of centralizers of tori, see \S~4.6 of BIBLE.}: is it enough to be able to lift ``sufficiently many'' points of finite order of a subtorus $T_0$, to be assured of being able to lift $T_0$ (infinitesimally, of course)?
+
+\begin{theorem}{2.1}\label{XV.2.1}
+Let $S$ be a noetherian affine scheme, $S_0$ a closed subscheme of $S$ defined by an ideal $J$ of square zero, $G$ a group $S$-prescheme of finite type, $G_0=G\times_S S_0$, $T_0$ a subtorus of $G_0$, $q$ an integer $>0$ invertible on $S$. Suppose that for every integer $n$ equal to a power of $q$, there exists a subscheme $M_n$ of $G$, flat over $S$, such that $M_n\times_S S_0={}_nT_0$. Then there exists a subtorus $T$ of $G$ such that $T\times_S S_0=T_0$.
+\end{theorem}
+
+Theorem 2.1 will be useful to us through the following two corollaries:
+\begin{corollary}{2.2}\label{XV.2.2}
+Let $S$ be a locally noetherian prescheme, $S_0$ a closed subprescheme of $S$ defined by a locally nilpotent sheaf of ideals, $G$ a group $S$-prescheme of finite type, $T_0$ a subtorus of $G_0=G\times_S S_0$, $q$ an integer $>0$ invertible on $S$; finally, with the integer $n$ ranging over the powers of $q$, let $(M_n)$ be a coherent system of group $S$-subschemes of $G$, of multiplicative type, lifting the ${}_nT_0$ (N.B. The system of subgroups of multiplicative type $(M_n)$ is said to be coherent if $M_m={}_m(M_n)$ when the integer $m$ divides $n$.) Then there exists one and only one subtorus $T$ of $G$ such that $T\times_S S_0=T_0$ and ${}_nT=M_n$ for every $n$.
+\end{corollary}
+
+\begin{corollary}{2.3}\label{XV.2.3}
+Let $G$ be a group $S$-prescheme, flat and of finite presentation over $S$, $S_0$ a closed subprescheme of $S$ defined by a sheaf of ideals of finite type and locally nilpotent, $T_0$ a central torus of $G_0=G\times_S S_0$. Then there exists one and only one subtorus $T$ of $G$ lifting $T_0$. Moreover, $T$ is central.
+\end{corollary}
+
+\begin{remark}{2.4}\label{XV.2.4}
+We leave to the reader the task of formulating the analogues of statements 2.1, 2.2, 2.3, where instead of lifting a subtorus of $G_0$, one is given a torus $T$ over $S$ and proposes to lift a morphism
+\[
+u_0:T_0\to G_0
+\]
+(one reduces to the preceding cases by considering the graph of $u_0$).
+\end{remark}
+
+Let us show how one deduces Corollaries 2.2 and 2.3 from 2.1.
+\par\noindent\emph{Proof of Corollary 2.2.}
+The uniqueness of $T$ follows from Exp. IX 4.8 b) and Exp. IX 4.10. To prove the existence of $T$, one may therefore reduce to the case where $S$ is affine, hence noetherian, and to the case where $S_0$ is defined by an ideal of square zero.
+
+\begin{lemma}{2.5}\label{XV.2.5}
+Let $G$ be a group $S$-prescheme, of finite presentation, and $H$ a group subscheme of $G$, of multiplicative type, smooth over $S$. Then $\uCentr_G(H)$ is representable by a group subprescheme of $G$, of finite presentation.
+\end{lemma}
+The lemma follows from Exp. VIII 6.5 e), without a smoothness hypothesis on $H$, when $G$ is separated over $S$. In the present case, one notes that the assertion to be proved is local for the fpqc topology, which allows one to suppose $H$ diagonalizable, hence of the form $D_S(M)$. One may also suppose $S$ affine, then $S$ noetherian thanks to EGA IV 8. Since $H$ is smooth over $S$ and of finite type, the order $q$ of the torsion subgroup of $M$ is invertible on $S$ (Exp. VIII 2.1 e)). It is then immediate (cf. Exp. IX 4.10) that the subgroups ${}_nH$, with $n$ ranging over the powers of $q$, are schematically dense in $H$ (Exp. IX 4.1). But ${}_nH$ is a completely split covering of $S$ (that is, is isomorphic to a finite direct sum of copies of $S$), so $\uCentr_G({}_nH)=Z_n$ is representable by the intersection of the centralizers in $G$ of the sections of ${}_nH$ over $S$. It then suffices to apply the lemma:
+% typo?: the printed assertion that _n H is completely split is retained.
+
+\begin{lemma}{2.5 bis}\label{XV.2.5bis}
+Let $S$ be a noetherian prescheme, $G$ a group $S$-prescheme of finite type, $H$ a subgroup of multiplicative type of $G$, $H_i$ an increasing filtered family of subgroups of multiplicative type of $G$, and suppose that $Z_i=\uCentr_G(H_i)$ is representable by a group subprescheme of $G$. Then the family of the $Z_i$ is stationary. If in addition the $H_i$ are schematically dense in $H$, one has $Z_i=\uCentr_G(H)$ for $i$ sufficiently large.
+\end{lemma}
+To see that the family of the $Z_i$ is stationary, it suffices to show that the family of the underlying sets $\mathrm{ens}(Z_i)$ is stationary. Indeed, the stationary value will be a closed subset of an open subset $U$ of $G$, and after replacing $G$ by $U$, one is reduced to studying a decreasing filtered family of closed subpreschemes of a noetherian prescheme. An easy constructibility argument reduces one to the case where $S$ is integral. One must then show that the family of the $\mathrm{ens}(Z_i)$ is stationary over a nonempty open subset of $S$. Now the generic fiber of $G$ is separated (Exp. VIA 0.3), so, after restricting $S$, one may suppose $G$ separated over $S$ (EGA IV 8). But then $Z_i$ is closed in $G$ (Exp. VIII 6.5 e)).

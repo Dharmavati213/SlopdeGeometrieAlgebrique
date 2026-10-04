@@ -1,0 +1,190 @@
+% Source PDF pp. 25--30. The opening continued sentence belongs to en-04.
+There is therefore an extension $K$ of $k$ and a point $u\in R(K)$. The image $u_n$ of $u$ in $R_n(K)$ corresponds to a lifting $H'_n$ of $({}_nH)_K$ into $(E_n)_K$. By construction, $H'_n={}_n(H'_m)$ if $n$ divides $m$. Put $U_n=(U_K)^{H'_n}$. The choice of $H'_n$ allows one to identify $(R_n)_K$ with $U_K/U_n$. But the family of the $H'_n$ is increasing and filtered, hence the family of the $U_n$ is decreasing and filtered and consequently is stationary for sufficiently large $n$ ($U_K$ is noetherian). It follows that the family of the $(R_n)_K$ is stationary, and consequently the same is true of the family of the $R_n$. In brief, one has $R_n=R$ for sufficiently large $n$.
+
+Under the hypotheses made, it follows from 5.2.3 i) that $R_n(k)$ is nonempty. One can therefore find a coherent system of liftings $H'_n$ of ${}_nH$ for $n\in\NN'$. Denote by $H'$ the smallest closed subscheme of $E$ containing $H'_n$ for every $n$ (Exp. VIB \S7). The argument made in Exp. XV 4.6 shows that $H'$ is a smooth commutative algebraic group whose formation commutes with extension of the base field. To show that $H'$ is a lifting of $H$ into $E$, we can therefore assume that $k$ is algebraically closed. By BIBLE 4 th. 4, $H'$ is then the direct product of a (smooth) group of multiplicative type $M$ and a unipotent group $V$. The groups $H'_n$ are then necessarily contained in $M$ (2.4), and in view of the definition of $H'$ this implies $H'=M$. Thus $H'$ is of multiplicative type and consequently $H'\cap U=0$. The morphism $H'\to H$ is therefore a monomorphism; moreover, it follows from the density theorem (Exp. IX 4.10) that it is an epimorphism, so it is indeed an isomorphism.
+
+Let now $H'$ and $H''$ be two liftings of $H$ into $E$. For every $n\in\NN'$, denote by $T_n=\uTransp({}_nH',{}_nH'')$ the transporter of ${}_nH'$ into ${}_nH''$, which is representable by a closed subscheme of $U$ (Exp. VIII 6.5 e)). The $T_n$ form a decreasing filtered family of closed subschemes of $U$, nonempty by 5.2.3 i a). Let $T$ be the stationary value. Under the hypotheses of 5.2.3 i), $T_n(k)$ is nonempty. There is therefore an element $u$ of $U(k)$ such that ${}_nH''=\operatorname{int}(u){}_nH'$ for every $n\in\NN'$. But then $H''=\operatorname{int}(u)H'$ (Exp. IX 4.8 b).
+
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\noindent\textbf{5.4. Study of the case where $U$ is radicial.}\ ---\par\label{XVII.5.4}
+\begin{proposition}{5.4.1}\label{XVII.5.4.1}
+If $k$ is a perfect field of characteristic $p>0$, and if $U$ is radicial, the extension $E$ of 5.1.1 is trivial.
+\end{proposition}
+\end{minipage}\par
+Using a characteristic composition series of $U$, we can restrict ourselves to the case where $U$ is equal to $(\balpha_p)^r$ (3.9).
+
+It follows from App. II 2.2 and 2.1 that one has isomorphisms of $k$-functors:
+\[
+ \underline{\Aut}_{k\text{-gr}}(\balpha_p)^r\isomto
+ \underline{\Aut}_{p\text{-Lie}}(\Lie(\balpha_p)^r)\isomto
+ \GL(\Lie(\balpha_p)^r).
+\]
+Consider then a $k$-vector space $V$ of rank $r$, the vector group $k$-scheme $W(V)$ (Exp. I 4.6), and identify $(\balpha_p)^r$ with ${}_FV$. The preceding remarks then show that the action of $H$ on ${}_FV$, defined by the extension $E$, comes from a linear representation $v$ of $H$ in $V$. Consider then the exact sequence:
+\[
+ 0\to {}_FV\to V\xrightarrow{F}V^{(p)}\to0.\tag{*}
+\]
+% Source PDF p. 26.
+where $F$ is the Frobenius morphism. Then (*) is an exact sequence of $H$-groups, provided that $H$ acts on the factor $V^{(p)}$ through the linear representation $H\xrightarrow{v}\GL(V)\xrightarrow{F}\GL(V^{(p)})$.
+
+Since the field $k$ is perfect, the morphism $F:V\to V^{(p)}$ induces a surjective map $V(k)\to V^{(p)}(k)$. It then follows from App. I 2.1 that the exact sequence (*) defines an exact sequence:
+\[
+ H^1(H,V^{(p)})\to\Ext_{\mathrm{alg}}(H,{}_FV)\to\Ext_{\mathrm{alg}}(H,V).\tag{**}
+\]
+Let us show that $\Ext_{\mathrm{alg}}(H,V)=0$. Let therefore $E'$ be an algebraic group that is an extension of $H$ by $V$:
+\[
+ 1\to V\to E'\xrightarrow{h}H\to1.
+\]
+The scheme $E'$ is a torsor with base $H$ and group $\Ga^r$, hence defines an element of $H^1(H,\OO_H^r)$ (in the sense of coherent sheaf cohomology). Since $H$ is affine, one has $H^1(H,\OO_H^r)=0$ (EGA III \S1). This says that $E'\to H$ has a section. Consequently, the group $\Ext_{\mathrm{alg}}(H,V)$ is isomorphic to $H^2(H,V)$ (App. I 3.1). Now $H^i(H,V)=H^i(H,W(V))=0$ for $i>0$ (Exp. IX 3.1). One then concludes, by the exact sequence (**), that $\Ext_{\mathrm{alg}}(H,{}_FV)=0$, hence that $E$ is a trivial extension.
+% typo: "de base H est de groupe" -> "with base H and group".
+
+\par\medskip\noindent\textbf{5.5. Proof of 5.1.1 i).}\ ---\par\label{XVII.5.5}
+If $k$ has characteristic $0$, $U$ is $k$-solvable (4.1.3) and $H$ is smooth; the fact that $E$ is a trivial extension therefore follows from 5.3.1 and 5.2.3 d). One proves in the same way that two liftings of $H$ into $E$ are conjugate by an element of $U(k)$.
+
+Henceforth, we therefore assume that $k$ is a field of characteristic $p>0$.
+
+\noindent\emph{Proof of i) b): Case where $k$ is perfect, $U$ connected.}
+
+We shall reduce to the case where $U$ is radicial. For this, note that since $k$ is perfect, $H_{\mathrm{red}}$ is smooth; let $E'$ be its inverse image in $E$. It then follows from 5.3.1 and 5.2.3 i) c) that the extension:
+\[
+ 1\to U\to E'\to H_{\mathrm{red}}\to1
+\]
+is trivial. Let $H_1$ be a lifting of $H_{\mathrm{red}}$ into $E$. By App. II 3.1, there is an integer $n>0$ such that $E^{(n)}=E/{}_{F^n}(E)$ is smooth; let $E''$ be the algebraic subgroup of $E$ generated by $H_1$ and ${}_{F^n}(E)$ (i.e. the inverse image in $E$ of the image of $H_1$ in $E^{(n)}$). Denote by $H''$ the image of $E''$ in $H$. Then I say that $H''=H$. Indeed, denote by $R$ the image of ${}_{F^n}(E)$ in $H$, so that $H''$ is generated by $R$ and $H_{\mathrm{red}}$. The group $H/R$ is a quotient of $E^{(n)}$, hence is smooth; consequently the canonical morphism
+\[
+ H_{\mathrm{red}}\to H/R
+\]
+is an epimorphism, hence $H$ is generated by $R$ and $H_{\mathrm{red}}$, hence is equal to $H''$. One thus obtains an exact sequence:
+\[
+ 1\to U''=U\cap E''\to E''\to H\to1.\tag{$\dagger$}
+\]
+But $E''$ has the same underlying space as $H_1$, hence $U''$ is radicial. Moreover, it is clear that it suffices to prove that the extension ($\dagger$) is trivial, which follows from 5.4.1.
+
+\noindent\emph{Proof of i) b): Case where $k$ is perfect, $H$ connected.}
+
+% Source PDF p. 27.
+The group $U$ is an extension of an étale group by its neutral component $U^0$. The case where $U$ is connected having just been treated, it suffices to examine the case where $U$ is étale. One then has the more precise lemma:
+\begin{lemma}{5.5.1}\label{XVII.5.5.1}
+With the notation of 5.1.1, suppose moreover that $U$ is étale. Then:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item If $H$ is connected, there is a unique lifting of $H$ into $E$, namely the neutral component $E^0$ of $E$.
+\item If $k$ is algebraically closed, $E$ is trivial, and two liftings of $H$ into $E$ are conjugate by an element of $U(k)$.
+\end{enumerate}
+\end{lemma}
+i) Since formation of the neutral component commutes with extension of the base field, we can restrict ourselves to the case where $k$ is algebraically closed. If $H$ is a torus, $E$ is trivial (5.3.1 and 5.2.3 i b)), and it is clear that $E^0$ is the unique lifting of $H$. This already proves that in the general case, $E^0\cap U$ is radicial; since it is moreover étale ($U$ being étale), it is zero. The morphism $E^0\to H$ is therefore a monomorphism, flat (since $E^0$ is open in $E$) and surjective ($H$ is connected), hence is an isomorphism. If now $H'$ is another lifting of $H$, $H'$ is connected, hence contained in $E^0$ and consequently is equal to $E^0$.
+
+ii) Let $H^0$ be the neutral component of $H$. By i), $E^0$ is the unique lifting of $H^0$ into $E$. Put $E'=E/E^0$, $H'=H/H^0$, so that one has the extension:
+\[
+ 1\to U\to E'\to H'\to1.
+\]
+Since $H'$ is étale, this extension is trivial (5.2.3 i b)). If $H'_1$ is a lifting of $H'$ into $E'$, and $H_1$ its inverse image in $E$, it is clear that $H_1$ lifts $H$ into $E$. If $H_2$ is a second lifting of $H$ into $E$, it contains $E^0$; by 5.2.3 i b), the image of $H_2$ in $E'$ is conjugate to $H'_1$ by an element $u$ of $U(k)$, whence immediately $H_2=\operatorname{int}(u)H_1$.
+
+\begin{remark}{5.5.2}\label{XVII.5.5.2}
+Under the hypotheses of 5.5.1 i), it is easy to see that $E^0$ centralizes $U$.
+\end{remark}
+\noindent\emph{Proof of 5.1.1 i) a).} Using the composition series
+\[
+ 1\to U^0\to U\to U/U^0\to1,
+\]
+i) a) follows from the conjunction of i) b) and 5.5.1 ii).
+
+Before proving 5.1.1 c) and d), we shall first establish 5.1.1 ii).
+
+\noindent\emph{Proof of 5.5.1 ii) a).} For lack of a satisfactory general statement, we shall describe a certain number of cases where, when $H$ is smooth, two liftings of $H$ into $E$ are conjugate:
+% typo?: the source heading says 5.5.1 ii) a); kept as printed.
+\begin{proposition}{5.6.1}\label{XVII.5.6.1}
+With the notation of 5.1.1, suppose moreover that $H$ is smooth, and let $H'$ and $H''$ be two liftings of $H$ into $E$. Then $H'$ and $H''$ are conjugate by an element of $U(k)$ in each of the following cases:
+\begin{enumerate}[label=\textup{\alph*)}]
+\item $k$ is algebraically closed.
+\item $U$ is commutative.
+\item $k$ is perfect and $U$ is connected.
+% Source PDF p. 28.
+\item $U$ is $k$-solvable.
+\item The centralizer of $H'$ in $U$ is $k$-solvable.
+\item The group of multiplicative type $H$ is split by a finite Galois extension $K$ of $k$ of degree prime to $p$.
+\end{enumerate}
+\end{proposition}
+\noindent\emph{Proof.} a), b), c), d) follow from 5.3.1.
+
+e) Let $Z$ be the centralizer of $H'$ in $U$, and $T$ the transporter of $H'$ into $H''$. By a), $T$ is nonempty, hence $T$ is a principal homogeneous space under $Z$, and the hypothesis made on $Z$ implies that it is trivial.
+
+f) Proceeding as in 5.3.1, one sees that it suffices to consider the case where $H$ is étale. Suppose first that $H$ is diagonalizable, defined by the ordinary group $M$, of order $m$ prime to $p$. The datum of the two liftings $H'$ and $H''$ defines a $1$-cocycle of $M$ with values in $U(k)$, that is, a map $h$ from $M$ into $U(k)$ such that $h(mn)=h(m)\,{}^mh(n)$ for every pair $m,n$ of elements of $M$. The groups $H'$ and $H''$ are conjugate by an element of $U(k)$ if and only if there exists $a\in U(k)$ such that
+\[
+ h(m)=a^{-1}({}^ma).
+\]
+Now the abstract group $U(k)$ has a composition series with successive quotients commutative and annihilated by a power of $p$ (one may assume $p>0$ in view of 5.6.1 c)). One immediately deduces in this case that $h$ is a coboundary.
+
+Let us now examine the general case. Denote again by $Z$ the centralizer of $H'$ in $U$, and by $T$ the transporter of $H'$ into $H''$, which is a torsor under $Z$. By hypothesis, there is a finite Galois extension $K$ of $k$, with Galois group $G$, of order prime to $p$, which splits $H$. By the study made above, $H'_K$ and $H''_K$ are conjugate by an element of $U(K)$, hence $T_K$ is trivial. Consequently $T$ is defined by an element of $H^1(G,Z)$. For the same reasons as above, the hypothesis made on $G$ implies that $H^1(G,Z)=e$, hence $T$ is trivial.
+
+\par\medskip\noindent\textbf{5.7. Proof of 5.1.1 ii) b).}\ ---\par\label{XVII.5.7}
+\begin{lemma}{5.7.1}\label{XVII.5.7.1}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme, separated and smooth over $S$, and $H$ an $S$-group of multiplicative type acting on $G$. Then the $S$-functor $Z=G^H$ of invariants of $G$ under $H$ is representable by a subgroup $S$-prescheme of $G$, closed and smooth over $S$.
+\end{lemma}
+The fact that $G^H$ is representable by a closed subgroup prescheme of $G$ follows from Exp. VIII 6.5 d). Consider then the semidirect product $K=G\times_S H$. The centralizer of $H$ in $K$ is then equal to $Z\times_S H$. To prove that $Z$ is smooth, we must check that if $S$ is affine, if $S_0$ is a closed subscheme of $S$ defined by an ideal of square zero, and if $u_0$ is an element of $Z(S_0)$, then there is an element $u$ of $Z(S)$ lifting $u_0$. Now since $G$ is smooth over $S$, there is an element $u$ of $G(S)$ lifting $u_0$. Let $i$ be the canonical immersion of $H$ into $K$, and consider the two group $S$-morphisms
+\[
+ H\rightrightarrows K,\qquad i\text{ and }\operatorname{int}(u)i=j.
+\]
+Since $u_0$ belongs to $Z(S_0)$, one has $i_{S_0}=j_{S_0}$. By Exp. IX 3.2, there exists $v\in K(S)$ lifting the identity section of $K(S_0)$ and such that
+% Source PDF p. 29.
+\[
+ i=\operatorname{int}(v)j=\operatorname{int}(vu)i.
+\]
+Thus $vu=(u',v')$ belongs to $(Z\times_S H)(S)$. Thus $u'$ belongs to $Z(S)$ and lifts $u_0$.
+
+\begin{lemma}{5.7.2}\label{XVII.5.7.2}
+Let $k$ be a field, $H$ an algebraic $k$-group, and let $P(H)$ be the following property:
+\begin{quote}
+``for every smooth unipotent $k$-group $U$, and for every extension $E$ of $H$ by $U$, two liftings of $H$ into $E$ are conjugate by an element of $U(k)$''.
+\end{quote}
+Then if $H$ is an algebraic group that is an extension of a group of multiplicative type $H''$ by a group of multiplicative type $H'$, and if $P(H')$ and $P(H'')$ are true, $P(H)$ is true.
+\end{lemma}
+Indeed, let $U$ be a smooth unipotent $k$-group, $E$ an extension of $H$ by $U$, $H_1$ and $H_2$ two liftings of $H$ into $E$, and $H'_1$ and $H'_2$ the corresponding liftings of $H'$. Since $P(H')$ is true, there exists $u\in U(k)$ such that $H'_2=\operatorname{int}(u)H'_1$. Replacing $H_1$ by $\operatorname{int}(u)H_1$, we can assume $H'_1=H'_2$, which we allow ourselves to denote simply by $H'$. Let $E'=\uCentr_E H'$, which is equal to
+\[
+ U^{H'}\cdot H_1=U^{H'}\cdot H_2.
+\]
+By 5.6.1, $U^{H'}=U'$ is smooth. Consider then the extension
+\[
+ 1\to U'\to E'\to H\to1.
+\]
+% typo?: the source cites 5.6.1 for smoothness of U^{H'}; kept as printed.
+By construction $H'$ is central in $E'$, hence invariant. Passing to the quotient, one obtains the exact sequence:
+\[
+ 1\to U'\to E''\to H''\to1.
+\]
+Since $U'$ is smooth, and since $P(H'')$ is true, the two images of $H_1$ and $H_2$ in $E''$ are conjugate by an element $u$ of $U'(k)$, but then $H_1=\operatorname{int}(u)H_2$.
+
+To prove 5.1.1 ii) b), note then that, since $k$ is algebraically closed, $H$ has a composition series whose successive quotients are smooth or isomorphic to $\bmu_p$ when $p>0$. By repeated use of 5.7.2, we are reduced to the case where $H$ is smooth or equal to $\bmu_p$. In the first case, it suffices to apply 5.1.1 ii) a). There remains the case $H=\bmu_p$. Since $U$ is smooth, $U$ has a characteristic composition series with successive quotients étale or isomorphic to $(\Ga)^r$ (3.9). If $U$ is étale, one applies 5.5.1. There remains finally the case $H=\bmu_p$, $U=\Ga^r$.
+
+We must show that $H^1(\bmu_p,U)=0$. The method used in 5.4.1 no longer applies here, for $\bmu_p$ does not in general act linearly on $(\Ga)^r$. Let us fix the notation: $H'$ denotes a lifting of $H$ into $E$, $\mathfrak e=\Lie E$, $\mathfrak u=\Lie U$, $\mathfrak h=\Lie H$, $\mathfrak h'=\Lie H'$. Let $X$ be a nonzero element of $\mathfrak h$ such that $X^{(p)}=X$ (App. II 3.1), and let $X'$ be its lifting in $\mathfrak h'$.
+
+Since $\bmu_p$ is a radicial group of height $1$, there is a one-to-one correspondence between the set of liftings of $H$ into $E$ and the set $A$ of $Y\in\mathfrak e$ such that $Y^{(p)}=Y$ and which project onto $X$ (App. II 2.2). Likewise, if $Y\in A$ corresponds to the lifting $H''$ of $H$ into $E$, and if $u\in U(k)$, then $\operatorname{int}(u)H'=H''$ if and only if $\Ad(u)X=Y$. Let therefore $B$ be the subset of $Y\in\mathfrak e$ of the form $\Ad(u)X$, where $u\in U(k)$. One obviously has $B\subset A$, and everything reduces to showing that $A=B$ if $k$ is algebraically closed.
+% typo?: the source uses Ad(u)X here, although it introduced the lifting X'; kept as printed.
+
+% Source PDF p. 30.
+\noindent a) Study of $A$. Since $\mathfrak u$ is commutative and normalized by $\mathfrak h$, the Jacobson formula (Exp. VIIA 5.2) gives simply here, for $u\in\mathfrak u$:
+\[
+ (X'+u)^{(p)}=X'^{(p)}+u^{(p)}+(\ad X')^{p-1}(u)
+ =X'+(\ad X')^{p-1}(u),
+\]
+so that $X'+u\in A\Leftrightarrow u=(\ad X')^{p-1}(u)$.
+
+Now let $\mathfrak u=\coprod_{n\in\ZZ/p\ZZ}\mathfrak u_n$ be the canonical decomposition of $\mathfrak u$ under the action of $H'$, which one can also write:
+\[
+ \mathfrak u=\mathfrak u_0\oplus
+ \coprod_{n\in(\ZZ/p\ZZ)^\times}\mathfrak u_n.
+\]
+If $u\in\mathfrak u_0$, one has $\ad X'(u)=0$. If $u\in\mathfrak u_n$ ($n\in(\ZZ/p\ZZ)^\times$), one has $(\ad X')^{p-1}(u)=u$. Finally, $Y=X'+u$ is an element of $A$ if and only if $u\in\coprod_{n\in(\ZZ/p\ZZ)^\times}\mathfrak u_n$. Let us retain that $A$ is the set of rational points over $k$ of an irreducible subscheme of $W(\mathfrak e)$ of dimension equal to $\rk\mathfrak u-\rk\mathfrak u_0=\rk\mathfrak u-\rk\Centr_{\mathfrak u}(X')$.
+
+\noindent b) Study of $B$. We shall need the following lemma:
+\begin{lemma}{5.7.3}\label{XVII.5.7.3}
+(Rosenlicht). Let $U$ be a unipotent algebraic group over a field $k$ acting on a quasi-affine $k$-scheme $X$. Then the orbit of every point $x\in X(k)$ is closed in $X$ (by orbit of $x$ we mean the subset of $\operatorname{ens}(X)$ that is the image of $G$ under the morphism $g\mto g\cdot x$).
+\end{lemma}
+By functoriality, $G$ acts on the affine envelope of $X$ (that is, $\Spec\Gamma(X,\OX)$), which allows us to assume that $X$ is affine. One can then assume that $k$ is algebraically closed, $X$ reduced and $U$ smooth (note that $U_{\mathrm{red}}$ acts on $X_{\mathrm{red}}$ if $k$ is perfect). Let $Y$ be the schematic image of $G$ (EGA I 9.5.1) under the morphism $g\mto g\cdot x$, which is a closed reduced subscheme of $X$ on which $G$ acts. It follows easily from EGA IV 1.8.6 that the orbit of $x$ is an open subset $Z$ of $Y$, dense in $Y$. We must show that $Z=\operatorname{ens}(Y)$. Let $F$ be the reduced closed subscheme of $Y$ having $Y\setminus Z$ as underlying space. One therefore has $F=V(J)$, where $J$ is a nonzero ideal of $\Gamma(Y,\OY)$. Since $G$ is smooth, $G$ acts on $F$, hence on $J$ and consequently (3.2) $J^G\ne0$. If $a$ is a nonzero element of $J^G$, $a$ is necessarily constant on the orbit $Z$, hence is constant on $Y$, since $Z$ is dense in $Y$. But then the ideal $J$ contains $k$ and $F=\varnothing$.
+% typo?: the statement introduces U but repeatedly writes G in the statement and proof; kept as printed.
+
+This being so, let us apply the preceding lemma to the group $U$ acting on the affine space $W(\mathfrak e)$ through the adjoint representation. One obtains that the orbit of $X'$ is the underlying set of a closed subprescheme of $W(\mathfrak e)$. Moreover, the stabilizer $Z$ of $X'$ is the centralizer of $X'$ in $U$, and one has a closed immersion:
+\[
+ U/Z\to W(\mathfrak e).
+\]
+Let us retain that the orbit of $X'$ is the underlying space of a closed subscheme of $W(\mathfrak e)$ of dimension equal to $\dim U-\dim Z$.
+
+\noindent c) End of the proof of 5.1.1 ii) b). When $k$ is algebraically closed, the canonical map $U(k)\to(U/Z)(k)$ is surjective, so that, by point b) above, $B$ is the set of rational points of a closed subscheme of $W(\mathfrak e)$ of dimension $\dim U-\dim Z$.
+% The last sentence begins on p. 30 and finishes on p. 31; en-06 starts "In view of point a)".

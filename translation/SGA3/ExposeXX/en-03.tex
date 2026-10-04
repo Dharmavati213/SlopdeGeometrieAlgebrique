@@ -1,0 +1,296 @@
+\textbf{F)} {\renewcommand{\thefootnote}{(22)}\nde{The following has been slightly modified, since an open subset $V$ has already been introduced in A).}}%
+Collecting results (+) and ($\diamondsuit_1$--$\diamondsuit_4$), one sees that there exist $a\in\Gm(S)$ and $\alpha^*\in\Hom_{S\text{-gr.}}(\mathbf G_{\mathrm m,S},T)$ such that $\alpha\circ\alpha^*=2$, and such that, if $(u,v)\in V(S')$ and $uv\in W(S')$, then $1+auv$ is invertible and
+\[
+p_\alpha(u)p_{-\alpha}(v)=p_{-\alpha}\left(\frac{v}{1+auv}\right)\alpha^*(1+auv)p_\alpha\left(\frac{u}{1+auv}\right).
+\]
+Consider the open subset $V'$ of $\mathbf G_{\mathrm a,S}^2$ defined by ``$1+auv$ invertible'', i.e. $V'=(\mathbf G_{\mathrm a,S}^2)_f$, where $f(u,v)=1+auv$. Both sides of the preceding formula define morphisms from $V'$ to $G$ which coincide in a neighborhood of the zero section, hence coincide in $V'$. The preceding formula is therefore valid for every section $(u,v)$ of $V'$. In particular, it follows that $V'\subset U$, where $U$ is the open subset introduced at the beginning of A).
+
+Let us prove that $U=V'$. Returning to the notations of A), one has a morphism
+\[
+A:U\to\mathbf G_{\mathrm a,S}
+\]
+which, on $V'$, is defined by $A(u,v)=v(1+auv)^{-1}$. To show that $U=V'$, which is a set-theoretic question, one reduces to the case where $S$ is the spectrum of a field $k$, hence to the following obvious assertion: the domain of definition of the rational map $\mathbf G_{\mathrm a,k}^2\to\mathbf G_{\mathrm a,k}$ defined by the rational fraction $Y/(1+aXY)$ is the open subset defined by the function $1+aXY$.
+
+\textbf{G)} One has therefore proved the existence of $a$ and $\alpha^*$, as well as the two supplementary properties announced. It remains to prove uniqueness. Let therefore $a'$ and $\alpha^{*'}$ also satisfy the required conditions. If $u,v\in\Ga(S')^2$, one has at once:
+\[
+1+auv\text{ invertible}\ \Rightarrow\ 1+a'uv\text{ invertible and }\frac{v}{1+auv}=\frac{v}{1+a'uv};
+\]
+one therefore has for every section $u$ of $\Ga(S')$
+\[
+1+au\text{ invertible}\ \Longrightarrow\ 1+au=1+a'u,
+\]
+which proves at once that $a=a'$.
+
+With the same notations, one then has
+\[
+1+au\text{ invertible}\ \Longrightarrow\ \alpha^*(1+au)=\alpha^{*'}(1+au),
+\]
+hence also $\alpha^*=\alpha^{*'}$.
+
+\begin{corollary}{2.4}\label{XX.2.4}
+Let $\exp(Y)t\exp(X)$ and $\exp(Y')t'\exp(X')$ be two elements of $\Omega(S')$. Then their product is in $\Omega(S')$ if and only if $u=1+\langle X,Y'\rangle$ is invertible, and one then has
+\begin{equation}\tag{$F'$}\label{XX.eq.Fprime}
+\begin{split}
+\exp(Y)t\exp(X)\cdot\exp(Y')t'\exp(X')={}&\exp(Y+u^{-1}\alpha(t)^{-1}Y')\\
+&\cdot tt'\alpha^*(u)\cdot\exp(u^{-1}\alpha(t')^{-1}X+X').
+\end{split}
+\end{equation}
+\end{corollary}
+
+\begin{remark}{2.5}\label{XX.2.5}
+One can also write formula (F) of theorem~2.1 without using the morphisms $\exp$. Indeed, transporting by these morphisms the duality $\mathfrak g^\alpha\otimes\mathfrak g^{-\alpha}\to\OS$, one obtains a canonical pairing of vector bundles:
+\[
+U_\alpha\times_SU_{-\alpha}\to\mathbf G_{\mathrm a,S},
+\]
+which we shall again denote by $(x,y)\mto\langle x,y\rangle$. One therefore has
+\[
+\langle\exp X,\exp Y\rangle=\langle X,Y\rangle.
+\]
+If $x\in U_\alpha(S')$, $y\in U_{-\alpha}(S')$ and $1+\langle x,y\rangle\in\Gm(S')$, one has
+\begin{equation}\tag{F}\label{XX.eq.Fvector}
+x\cdot y=y^{(1+\langle x,y\rangle)^{-1}}\cdot\alpha^*(1+\langle x,y\rangle)\cdot x^{(1+\langle x,y\rangle)^{-1}}.
+\end{equation}
+\end{remark}
+
+\begin{corollary}{2.6}\label{XX.2.6}
+The pairing
+\[
+\mathrm W(\mathfrak g^\alpha)\times_S\mathrm W(\mathfrak g^{-\alpha})\to\mathbf G_{\mathrm a,S}
+\]
+defines a pairing of principal bundles under $\mathbf G_{\mathrm m,S}$
+\[
+\mathrm W(\mathfrak g^\alpha)^\times\times_S\mathrm W(\mathfrak g^{-\alpha})^\times\to\mathbf G_{\mathrm m,S}.
+\]
+This pairing will be denoted $(X,Y)\mto\langle X,Y\rangle$, or more simply $(X,Y)\mto XY$.
+
+For every section $X\in\Gamma(S,\mathfrak g^\alpha)^\times$, there therefore exists a unique section $X^{-1}$ of $\Gamma(S,\mathfrak g^{-\alpha})^\times$ such that $XX^{-1}=1$. One has $(zX)^{-1}=z^{-1}X^{-1}$. The morphism
+\[
+s:\mathrm W(\mathfrak g^\alpha)^\times\to\mathrm W(\mathfrak g^{-\alpha})^\times
+\]
+thus defined is therefore an isomorphism of schemes, compatible with the isomorphism $s:z\mto z^{-1}$ on the operator groups.
+\end{corollary}
+\begin{definition}{2.6.1}\label{XX.2.6.1}
+One will say that $X$ and $s(X)=X^{-1}$ are \emph{paired}.
+\end{definition}
+Apply corollary~2.4 to $Y=0=X'$ and $Y'=aX^{-1}$, $a\in\OS(S)$. Then $u=1+a$ and $u^{-1}Y'=u^{-1}(u-1)X^{-1}=(1-u^{-1})X^{-1}$, whence:
+\begin{corollary}{2.7}\label{XX.2.7}
+Let $X\in\Gamma(S,\mathfrak g^\alpha)^\times$ and $u\in\Gamma(S,\OS)^\times$. One has
+\[
+\alpha^*(u)=\exp((u^{-1}-1)X^{-1})\exp(X)\exp((u-1)X^{-1})\exp(-u^{-1}X).
+\]
+\end{corollary}
+\begin{definition}{2.8}\label{XX.2.8}
+The morphism $\alpha^*$ is called the \emph{coroot} associated with the root $\alpha$.
+\end{definition}
+\begin{remark}{2.9}\label{XX.2.9}
+If $(G,T,\alpha)$ is an elementary $S$-system, $(G,T,-\alpha)$ is also one. One therefore has by theorem~2.1 a duality between $\mathfrak g^{-\alpha}$ and $\mathfrak g^\alpha$, and a coroot $(-\alpha)^*$. Taking the inverse of formula (F), one proves at once
+\[
+\langle X,Y\rangle=\langle Y,X\rangle,\qquad(-\alpha)^*=-\alpha^*.
+\]
+\end{remark}
+Let us now pass to the Lie algebra of $G$. The root $\alpha$ and the coroot $\alpha^*$ define the linear forms
+\[
+\xymatrix{\OS\ar[r]^{\overline{\alpha}^*}&\mathfrak t\ar[r]^{\overline\alpha}&\OS.}
+\]
+One puts $H_\alpha=\overline\alpha^*(1)$. One calls $\overline\alpha$ the \emph{infinitesimal root} associated with $\alpha$, and $H_\alpha$ the corresponding \emph{infinitesimal coroot}.
+
+\begin{lemma}{2.10}\label{XX.2.10}
+Let $S'\to S$, and $X,X'\in\mathrm W(\mathfrak g^\alpha)(S')$, $H\in\mathrm W(\mathfrak t)(S')$, $Y,Y'\in\mathrm W(\mathfrak g^{-\alpha})(S')$, $t\in T(S')$. One has
+\[
+(1)\quad\Ad(t)H=H,\quad\Ad(t)X=\alpha(t)X,\quad\Ad(t)Y=\alpha(t)^{-1}Y.
+\]
+\[
+(2)\quad\begin{cases}
+\Ad(\exp(X))H=H-\overline\alpha(H)X,\quad\Ad(\exp(X))X'=X',\\
+\Ad(\exp(X))Y=Y+\langle X,Y\rangle H_\alpha-\langle X,Y\rangle X.
+\end{cases}
+\]
+\[
+(2')\quad\begin{cases}
+\Ad(\exp(Y))H=H+\overline\alpha(H)Y,\quad\Ad(\exp(Y))Y'=Y',\\
+\Ad(\exp(Y))X=X+\langle X,Y\rangle H_{-\alpha}-\langle X,Y\rangle Y.
+\end{cases}
+\]
+\[
+(3)\quad[H,X]=\overline\alpha(H)X,\quad[H,Y]=-\overline\alpha(H)Y,\quad[X,Y]=\langle X,Y\rangle H_\alpha.
+\]
+\[
+(4)\quad H_{-\alpha}=-H_\alpha.
+\]
+\[
+(5)\quad\overline\alpha(H_\alpha)=2.
+\]
+\end{lemma}
+The proof of these various formulas is either trivial or an immediate consequence of formula (F) of 2.1.
+
+\begin{corollary}{2.11}\label{XX.2.11}
+Suppose that $H_\alpha$ is nonzero on every fiber (which is in particular the case if $2$ is invertible on $S$, by (5)). Then $X_\alpha\in\Gamma(S,\mathfrak g^\alpha)^\times$ and $X_{-\alpha}\in\Gamma(S,\mathfrak g^{-\alpha})^\times$ are paired if and only if $[X_\alpha,X_{-\alpha}]=H_\alpha$.
+\end{corollary}
+
+\numpara{2.12} Let $(G,T,\alpha)$ be an elementary $S$-system. We know (1.19) that the center of $G$ is $\uCentr(G)=\Ker(\alpha)$, a group of multiplicative type and of finite type. If $Q$ is a subgroup of multiplicative type of $\uCentr(G)$, the quotient $G/Q$ is affine over $S$ (Exp.~IX 2.5), smooth over $S$ (Exp.~VI$_{\mathrm B}$ 9.2), with connected reductive fibers of semisimple rank~1 (Exp.~XIX 1.8).
+
+Put $G'=G/Q$; it is a reductive $S$-group of semisimple rank~1; $T'=T/Q$ is a maximal torus of it. The open subset $U_{-\alpha}\cdot T\cdot U_\alpha$ of $G$ is stable under $Q$, and one sees at once that the quotient is isomorphic to $U_{-\alpha}\times_S(T/Q)\times_SU_\alpha$. If $\alpha'$ denotes the character of $T'$ induced by $\alpha$, it follows that the derived morphism of the canonical morphism $G\to G'$ induces isomorphisms
+\[
+\mathfrak g^\alpha\isomto\mathfrak g'^{\alpha'}\quad\text{and}\quad
+\mathfrak g^{-\alpha}\isomto\mathfrak g'^{-\alpha'}.
+\]
+In particular, $\alpha'$ is a root of $G'$ with respect to $T'$. Thus, denoting by $\alpha/Q$ the character $T/Q\to\mathbf G_{\mathrm m,S}$ induced by $\alpha$, one has:
+\begin{lemma}{2.13}\label{XX.2.13}
+If $Q$ is a subgroup of multiplicative type of $\Ker(\alpha)$, then
+\[
+(G/Q,T/Q,\alpha/Q)
+\]
+is an elementary system.
+\end{lemma}
+
+\begin{lemma}{2.14}\label{XX.2.14}
+Under the preceding conditions, the following diagrams commute:
+\[
+\xymatrix{
+\mathrm W(\mathfrak g^\alpha)\ar[r]^{\exp}\ar[d]_{\mathrm{can}}^{\simeq}&G\ar[d]^{\mathrm{can}}&\mathrm W(\mathfrak g^{-\alpha})\ar[l]_{\exp}\ar[d]^{\mathrm{can}}_{\simeq}\\
+\mathrm W(\mathfrak g'^{\alpha'})\ar[r]_{\exp}&G'&\mathrm W(\mathfrak g'^{-\alpha'})\ar[l]^{\exp}
+}
+\]
+\[
+\xymatrix{
+\mathfrak g^\alpha\otimes\mathfrak g^{-\alpha}\ar[r]^{\sim}\ar[d]_{\mathrm{can}}^{\simeq}&\OS\ar[d]^{\mathrm{id}}\\
+\mathfrak g'^{\alpha'}\otimes\mathfrak g'^{-\alpha'}\ar[r]^{\sim}&\OS
+}
+\]
+\[
+\xymatrix@C=2em@R=2em{
+&T\ar[dr]^\alpha\ar[dd]^{\mathrm{can}}&\\
+\mathbf G_{\mathrm m,S}\ar[ur]^{\alpha^*}\ar[dr]_{\alpha'^*}&&\mathbf G_{\mathrm m,S}\\
+&T'\ar[ur]_{\alpha'}&
+}.
+\]
+\end{lemma}
+
+\sgasection{3}{The Weyl group}
+\label{XX.sec.3}
+\begin{notation}{3.0}\label{XX.3.0}
+{\renewcommand{\thefootnote}{(23)}\nde{The numbering 3.0 has been added for subsequent references.}}%
+If $(G,T,\alpha)$ is an elementary $S$-system, one puts
+\[
+N=\uNorm_G(T),\qquad W=\uNorm_G(T)/T
+\]
+(cf. Exp.~XIX 6.3); $N$ is a closed subgroup of $G$, smooth over $S$. One denotes by $N^\times=N-T$ the open subscheme of $N$ induced on the complement of $T$.{\renewcommand{\thefootnote}{(24)}\nde{$Q$ has been replaced by the more suggestive notation $N^\times$.}} Let $R$ be the (unique) maximal torus of $\Ker(\alpha)$, and $T'$ the image of $\alpha^*:\mathbf G_{\mathrm m,S}\to T$, which is a one-dimensional subtorus of $T$.
+
+The morphism
+\[
+T'\times_SR\to T
+\]
+induced by the product in $T$ is surjective (hence faithfully flat); indeed, one reduces to checking this on geometric fibers, and it follows at once from the formula $\alpha\circ\alpha^*=2$.
+\end{notation}
+
+\begin{theorem}{3.1}\label{XX.3.1}
+With the preceding notations:
+\begin{enumeratei}
+\item $W$ is isomorphic to the constant group $(\ZZ/2\ZZ)_S$.
+\item $N^\times$ is a locally trivial principal homogeneous bundle under $T$, on the left by the law $(t,q)\mto tq$ (resp. on the right by the law $(q,t)\mto qt$).
+\item One has the formula
+\[
+\operatorname{int}(w)t=t\cdot\alpha^*(\alpha(t)^{-1})
+\]
+for $w\in N^\times(S')$, $t\in T(S')$, $S'\to S$. In the decomposition $T_{S'}=T'_{S'}\cdot R_{S'}$, $\operatorname{int}(w)$ induces the identity on $R_{S'}$ and reflection on $T'_{S'}$. One has the relations
+\[
+\alpha\circ\operatorname{int}(w)=\alpha^{-1},\qquad\operatorname{int}(w)\circ\alpha^*=(\alpha^*)^{-1}.
+\]
+\item For $X\in\mathrm W(\mathfrak g^\alpha)^\times(S')$, $S'\to S$, put
+\[
+w_\alpha(X)=\exp(X)\exp(-X^{-1})\exp(X).
+\]
+Then $w_\alpha(X)\in N^\times(S')$, and the morphism $w_\alpha:\mathrm W(\mathfrak g^\alpha)^\times\to N^\times$ thus defined satisfies
+\[
+w_\alpha(zX)=\alpha^*(z)w_\alpha(X)=w_\alpha(X)\alpha^*(z)^{-1},
+\]
+for $z\in\Gm(S')$, $X\in\mathrm W(\mathfrak g^\alpha)^\times(S')$, $S'\to S$.
+\item {\renewcommand{\thefootnote}{(25)}\nde{The first formula of the original has been corrected.}}%
+For $X,Y\in\mathrm W(\mathfrak g^\alpha)^\times(S')$, $S'\to S$, with the notations of 2.6, one has
+\[
+w_\alpha(X)w_\alpha(Y)=\alpha^\vee(-XY^{-1}).
+\]
+% typo?: alpha vee rather than alpha star kept as printed.
+In particular,
+\[
+w_\alpha(X)^2=\alpha^*(-1)\in{}_2T(S)\cap\uCentr(G)(S),
+\]
+\[
+w_\alpha(X)^{-1}=w_\alpha(-X)=\alpha^*(-1)w_\alpha(X).
+\]
+\item If one similarly defines, for $Y\in\mathrm W(\mathfrak g^{-\alpha})^\times(S')$,
+\[
+w_{-\alpha}(Y)=\exp(Y)\exp(-Y^{-1})\exp(Y),
+\]
+one has (in addition to formulas analogous to the preceding ones)
+\[
+w_{-\alpha}(X^{-1})=w_\alpha(X)^{-1}=w_\alpha(-X),
+\]
+\[
+w_\alpha(X)w_{-\alpha}(Y)=\alpha^*(XY).
+\]
+\end{enumeratei}
+\end{theorem}
+\emph{Proof.} (i) was already seen in Exp.~XIX 2.4; it follows at once that $N^\times$ is indeed a principal homogeneous bundle under $T$ for the laws defined in (ii); its local triviality (for the Zariski topology) follows, in particular, from (iv).
+
+Let us prove (iii); if $w\in N^\times(S)$, clearly $\alpha\circ\operatorname{int}(w)$ is a root of $G$ with respect to $T$, hence is locally equal to $\alpha$ or $-\alpha$; since on each fiber it is $-\alpha$ (\textit{Bible}, 12-05, proof of the cor.~to prop.~1), one has $\alpha\circ\operatorname{int}(w)=-\alpha$. By transport of structure, one deduces
+\[
+-\alpha^*=\operatorname{int}(w)^{-1}\circ\alpha^*=\operatorname{int}(w)\circ\alpha^*,
+\]
+since $\operatorname{int}(w)^2=\operatorname{int}(w^2)$ and $w^2$ is a section of $T$. Thus $\operatorname{int}(w)$ induces reflection on $T'$; since $R$ is central, $\operatorname{int}(w)$ induces the identity on $R$. The formula of (iii) defines a morphism $T\to T$ with the same properties, hence coincides with $\operatorname{int}(w)$.
+
+Let us prove (iv). One has successively
+\[
+\begin{split}
+w_\alpha(X)tw_\alpha(X)^{-1}={}&\exp(X)\exp(-X^{-1})\exp(X)t\exp(-X)\exp(X^{-1})\exp(-X)\\
+={}&\exp(X)\exp(-X^{-1})\exp(X-\alpha(t)X)\exp(\alpha(t)^{-1}X^{-1})\exp(-\alpha(t)X)t.
+\end{split}
+\]
+Applying formula (F), one has
+\[
+\begin{split}
+\exp(-X^{-1})\exp((1-\alpha(t))X)={}&\exp((\alpha(t)^{-1}-1)X)\alpha^*(\alpha(t)^{-1})\\
+&\cdot\exp(-\alpha(t)^{-1}X^{-1}).
+\end{split}
+\]
+Substituting in the preceding relation, one finds
+\[
+\begin{aligned}
+\operatorname{int}(w_\alpha(X))t&=\exp(\alpha(t)^{-1}X)\alpha^*(\alpha(t)^{-1})\exp(-\alpha(t)X)t\\
+&=\exp(aX)\alpha^*(\alpha(t)^{-1})t,
+\end{aligned}
+\]
+where
+\[
+a=\alpha(t)^{-1}-(\alpha\circ\alpha^*)(\alpha(t)^{-1})\alpha(t),
+\]
+but $\alpha\circ\alpha^*=2$, which gives at once $a=0$ and $w_\alpha(X)\in N^\times(S')$.
+
+Let us now prove the second assertion of (iv). One has{\renewcommand{\thefootnote}{(26)}\nde{The first equality follows from 1.5 (i), which, combined with $\alpha\circ\alpha^*=2$, gives the formulas
+\begin{equation}\tag{$\dagger$}\label{XX.note26.eq.dagger}
+\begin{gathered}
+\alpha^*(z)\exp(X)\alpha^*(z)^{-1}=\exp(z^2X),\\
+\alpha^*(z)\exp(X^{-1})\alpha^*(z)^{-1}=\exp(z^{-2}X),
+\end{gathered}
+\end{equation}
+the third equality follows from formula (F), and the fourth from ($\dagger$), again. Finally, a similar calculation shows that $w_\alpha(X)\alpha^*(z^{-1})=w_\alpha(zX)$.}}
+% typo?: note (26) prints X rather than X inverse in the second right-hand side.
+\[
+\begin{aligned}
+\alpha^*(z)w_\alpha(X)&=\exp(z^2X)\exp(-z^{-2}X^{-1})\exp(z^2X)\alpha^*(z)\\
+&=\exp(zX)\exp((z^2-z)X)\exp(-z^{-2}X^{-1})\exp(z^2X)\alpha^*(z)\\
+&=\exp(zX)\exp(-z^{-1}X^{-1})\alpha^*(z)^{-1}\exp((z^3-z^2)X)\exp(z^2X)\alpha^*(z)\\
+&=\exp(zX)\exp(-z^{-1}X^{-1})\exp(zX)=w_\alpha(zX).
+\end{aligned}
+\]
+Let us prove (v). By the preceding result, the first formula of (v) follows at once from the second; let us prove the latter:
+\[
+\begin{aligned}
+w_\alpha(X)^2&=\exp(X)\exp(-X^{-1})\exp(2X)\exp(-X^{-1})\exp(X)\\
+&=\exp(X)\exp(-X^{-1})\exp(X^{-1})\alpha^*(-1)\exp(-2X)\exp(X)\\
+&=\exp(X)\alpha^*(-1)\exp(-X)=\alpha^*(-1),
+\end{aligned}
+\]
+since $\alpha(\alpha^*(-1))=(-1)^2=1$, which proves that $\alpha^*(-1)\in\uCentr(G)(S)$.
+
+Finally, let us prove (vi). The first assertion is a particular case of the second; let us prove the latter. Both sides of this formula define morphisms from $\mathrm W(\mathfrak g^\alpha)^\times\times_S\mathrm W(\mathfrak g^{-\alpha})^\times$ to $G$. To prove that they coincide, it suffices to do so on an open subset nonempty on each fiber (Exp.~XVIII 1.4); it therefore suffices to check the relation when $1+XY$ is invertible.

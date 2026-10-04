@@ -1,0 +1,93 @@
+% Source PDF pp. 47--50. Page 50 is blank.
+\numpara{C.2}\label{XVII.C.2}\textbf{Complement to XV 4.8.}
+The following proposition, as well as Theorems C.3.1 and C.4.1 below, will appear in an article in preparation by M. Raynaud on group schemes over a discrete valuation ring.\nde{Comments to be added here, including references to VIB\ldots}
+\begin{proposition}{C.2.1}\label{XVII.C.2.1}
+Let $S$ be the spectrum of a discrete valuation ring, $t$ its generic point, $G$ a group $S$-prescheme of finite type and flat, $\widetilde G=\Spec\Gamma(G,\OO_G)$, $u:G\to\widetilde G$ the canonical morphism. Then:
+
+\noindent (1) $\widetilde G$ is naturally a group $S$-scheme, and $u$ is a homomorphism.
+
+\noindent (2) $\Ker(u)$ is flat over $S$, and $(\widetilde G,u)$ is an fpqc quotient of $G$ by $\Ker(u)$, so that $\widetilde G$ is the largest affine quotient of $G$.
+
+\noindent (3) If $G_t$ is affine, $\Ker(u)$ is an étale group over $S$, equal to the unit group if and only if $G$ is separated over $S$. In particular, a group $S$-scheme $G$, flat, of finite type, separated, with affine generic fiber, is affine.
+\end{proposition}
+
+\numpara{C.3}\label{XVII.C.3}
+In the statement of XV 6.6, the hypothesis that $H$ is equal to its connected normalizer is unnecessary for the set of points $s$ of $S$ such that $H_s$ is a parabolic subgroup of $G_s$ to be an open set. Indeed, let us return to the proof given in paragraph c) preceding Lemma 6.9, and denote by $\overline N$ the schematic closure of $N_t$ in $G$. Thus $\overline N$ is a closed group subscheme of $G$, flat over $S$, containing $H$ and contained in $N$. It then follows from the theorem below that $G/\overline N$ is representable. Since $G_s/\overline N_s$ is proper and connected, one finishes as in loc. cit.
+\begin{theorem}{C.3.1}\label{XVII.C.3.1}
+\nde{See Theorem 4C in: S. Anantharaman, \emph{Schémas en groupes, espaces homogènes et espaces algébriques sur une base de dimension 1}, Bull. Soc. Math. France, Mém. 33 (1976), 5--79.}
+Let $S$ be the spectrum of a henselian discrete valuation ring, $G$ a group $S$-prescheme locally of finite type, $H$ a closed group subprescheme of $G$, flat over $S$; then $G/H$ is representable.
+\end{theorem}
+
+\numpara{C.4}\label{XVII.C.4}\textbf{Complement to (XVI 1.1).}
+The following theorem makes (VIII 7.9) more precise.
+\begin{theorem}{C.4.1}\label{XVII.C.4.1}
+Let $S$ be the spectrum of a discrete valuation ring of residue characteristic $p>0$, and let $G$ be a group $S$-scheme, commutative, smooth, of finite type and separated over $S$. Then the following conditions are equivalent:
+
+\noindent (i) ${}_pG$ is finite over $S$.
+
+\noindent (ii) For every $S$-prescheme $S'$ and every group $S'$-prescheme $H'$ of finite presentation over $S'$, separated over $S'$, every $S'$-monomorphism $u:G_{S'}\to H'$ is an immersion.
+\end{theorem}
+
+% Source PDF p. 48.
+\numpara{C.5}\label{XVII.C.5}
+Example (XVII 6.4 a)) provides an example of a smooth group over a field $k$ whose unipotent radical is not defined over $k$. The following proposition gives a general method for obtaining such groups:
+\begin{proposition}{C.5.1}\label{XVII.C.5.1}
+Let $k$ be a field, $K$ a finite radicial extension of $k$ of degree $>1$, $H$ a connected smooth algebraic $K$-group of dimension $r$, $G=\prod_{K/k}H/K$, which is a smooth connected algebraic $k$-group of dimension $r[K:k]$. Let $u:G_K\to H$ be the canonical homomorphism, and $R=\Ker(u)$. Then:
+
+\noindent i) The morphism $u$ is an epimorphism, and $R$ is a smooth unipotent connected algebraic group.
+
+\noindent ii) If $U$ is a smooth algebraic subgroup of $G$ such that $U_K$ contains $R$, then $U=G$.
+\end{proposition}
+\begin{corollary}{}
+Keep the notation of the preceding proposition.
+
+\noindent a) If $H$ is not unipotent, the unipotent radical of $G_{\bar k}$ is not defined over $k$.
+
+\noindent b) If $H$ is a nonzero abelian variety, $G$ is not an extension of an abelian variety by a smooth linear group.
+
+\noindent c) If $H$ is not solvable, the solvable radical of $G_{\bar k}$ is not defined over $k$, and $G$ has no Borel subgroup defined over $k$.
+\end{corollary}
+Let us first show how the corollary follows from the proposition.
+
+\noindent a) Let $U$ be a unipotent radical of $G$. Then $U_K$ is the unipotent radical of $G_K$, hence contains $R$, since $R$ is smooth unipotent connected by i), so $U=G$ by ii). Now $G_K$ admits $H$ as a quotient, and $H$ is not unipotent by hypothesis, so $G$ is not unipotent, whence a contradiction.
+
+\noindent b) If $G$ is an extension of an abelian variety by a linear group $L$, smooth over $k$, $L_K$ necessarily contains $R$, so $L=G$. But $G$ cannot be a linear group, since $G_K$ has a quotient which is a nonzero abelian variety.
+
+\noindent c) Let $S$ (resp. $B$) be a solvable radical of $G$ (resp. a Borel subgroup of $G$); then $S_K$ (resp. $B_K$) contains $R$, so $S=G$ (resp. $B=G$). But then $G$ is solvable, which contradicts the fact that $G_K$ has a quotient which is not solvable.
+
+\par\noindent\emph{Proof of Proposition 5.1:}
+% typo?: the printed heading is Proposition 5.1, without C; kept.
+i) Let us begin by describing the morphism $u$. The datum of a $K$-scheme
+\[
+f:S\longrightarrow\Spec(K)
+\]
+allows one to construct the diagram
+\[
+\xymatrix@C=4em@R=3em{\Spec(K)\ar[d]_j&T\ar[l]_h\ar[d]_{j_T}\\\Spec(k)&S\ar[l]^g\ar[ul]^f\ar@/_1pc/[u]_s}
+\]
+where $g=j\circ f$, $T=\Spec(K)\times_{\Spec(k)}S$, $h$ and $j_T$ are the two projections, and $s$ is the section of $T$ over $S$ such that $h\circ s=f$. The map
+\[
+u(S):G_K(S)\longrightarrow H(S)
+\]
+is simply the composite map
+\[
+G_K(S)\isomto H(T)\longrightarrow H(S),
+\]
+where the last arrow is defined by the section $s$.
+
+% Source PDF p. 49.
+Take in particular for $S$ the spectrum of an algebraic closure $\bar k$ of $k$, and for $f$ the unique $k$-morphism $K\to\bar k$, so that $T$ is a local artinian scheme. To prove i), it suffices to do so after the base field extension $K\to\bar k$. Now it is clear that $G_S=\prod_{T/S}H_T/T$ represents the Greenberg functor of $H_T$ relative to $S$ (M. J. Greenberg, \emph{Schemata over local rings}, Ann. of Maths. 73, 1961, pp. 624--648). The description above then shows that, under this last identification, $u_S$ is the canonical transition morphism
+\[
+\operatorname{Green}(H_T)\longrightarrow H_S=H_T\times_T S.
+\]
+Assertion i) then follows from the fact that $H$ is smooth over $K$ and from (M. J. Greenberg, \emph{Schemata over local rings II}, Ann. of Maths. 78, 1963, pp. 256--266).
+
+ii) To establish ii), we may suppose $k$ separably closed. Let therefore $U$ be a smooth algebraic subgroup of $G$ such that $U_K\supset R$, and let us show that $U=G$. Since $G$ is connected, one may suppose $U$ connected. Let $V$ be the smooth connected algebraic subgroup $u(U_K)$ of $H$, and $V'=\prod_{K/k}V/K$, which is a smooth connected algebraic subgroup of $G$. The group $V'_K$ is an algebraic subgroup of $G_K$, and the canonical morphism $V'_K\to V$ is simply the restriction of $u$ to $V'_K$. By hypothesis, $U_K$ contains $R$; a fortiori, $U_K$ contains $\Ker(V'_K\to V)$; on the other hand, by construction, the image of $U_K$ in $H$ is equal to $V$. One deduces that $U_K$ contains $V'_K$, hence that $U$ contains $V'$. On the other hand, the canonical isomorphism
+\[
+G(k)\hookrightarrow G(K)\xrightarrow{u(K)}H(K)
+\]
+plainly sends $U(k)$ into $V(K)=V'(k)$; this says that $U(k)$ is contained in $V'(k)$. Since $U$ is smooth and $k$ separably closed, this implies $U\subset V'$, whence $U=V'$. One then has the equalities
+\[
+([K:k]-1)\dim V=\dim\Ker(V'_K\to V)=\dim R=([K:k]-1)\dim H.
+\]
+Since $K\ne k$, one concludes that $\dim V=\dim H$, whence $V=H$ and finally $U=V'=G$.

@@ -1,0 +1,160 @@
+\exposetitle{VIB}{Generalities on group schemes}
+\label{VIB}
+\begin{center}by J.-E. Bertin\end{center}
+\setcounter{footnote}{-1}
+\nde{Version of 13 October 2024.}This exposé, which does not correspond to any oral lecture of the seminar, is intended to bring together a number of commonly used technical results concerning group schemes.\begingroup\renewcommand{\thefootnote}{*}\footnote{This exposé has been fairly substantially revised since its mimeographed edition; in particular, §§10 and 11 have been entirely rewritten.\textsuperscript{(1)}}\endgroup
+\ndetext{And also §5, cf. N.D.E. (34) and (46).}
+
+\sgasection{1}{Morphisms of groups locally of finite type over a field}
+\numpara{1.1}Let $A$ be an artinian local ring, $G$ and $H$ two $A$-groups\nde{Recall the convention adopted at the beginning of VIA: an $A$-group is an $A$-group scheme (and such a scheme is separated, cf. VIA, 0.3).} and $u:G\to H$ a morphism of $A$-groups. Then $u$ induces a morphism of groups $u(A):G(A)\to H(A)$.\nde{``Homomorphism'' has been replaced by ``morphism''.} Since $H(A)$ acts on $H$ by right translation, $u(A)$ defines by restriction an action of $G(A)$ on $H$. This action is compatible with the morphism $u$ and the action of $G(A)$ on $G$ defined by right translation. Since $G(A)$ acts transitively on the strictly rational points of $G$ (see VIA 0.4 for the definition), one sees that these points ``all behave in the same way with respect to $u$''; from this spring the following properties:
+\begin{proposition}{1.2}\label{VIB.1.2}
+Let $u:G\to H$ be a quasi-compact morphism between $A$-groups locally of finite type over $A$. Then the set $u(G)$ is closed in $H$ and one has $\dim G=\dim u(G)+\dim\Ker u$.\nde{This statement also appears in VIA, 2.5.2.}
+\end{proposition}
+Since $u$ commutes with the inversion morphisms of $G$ and $H$, the image $u(G)$ is invariant under the inversion morphism of $H$; the same therefore holds for $\overline{u(G)}$, its closure in $H$. On the other hand, let $L$ be the set of points of $H\times_AH$ whose two projections belong to $u(G)$; it is clear that $L$ is the image of the morphism $u\times_Au:G\times_AG\to H\times_AH$; thus the multiplication morphism of $H$ sends $L$ into $u(G)$, in other words $u(G)\cdot u(G)=u(G)$. On the other hand, Lemma 1.2.1 below shows that $\overline L$, the closure of $L$ in $H\times_AH$, is the set of points of $H\times_AH$ whose two projections belong to $\overline{u(G)}$; thus $\overline{u(G)}\cdot\overline{u(G)}=\overline{u(G)}$, so that the reduced subscheme of $H$ whose underlying space is $\overline{u(G)}$ is naturally endowed with a group structure in the category $(\mathrm{Sch}/k)_{\mathrm{red}}$, where $k$ is the residue field of $A$ (cf. VIA 0.2).
+
+Let us prove the first assertion of 1.2: replacing $A$ by the algebraic closure of its residue field $k$ if necessary, we may suppose that $A$ is an algebraically closed field $k$ (cf. EGA IV$_2$, 2.3.12). Replacing $u$ by $u_{\mathrm{red}}:G_{\mathrm{red}}\to H_{\mathrm{red}}$ if necessary, one may suppose $G$ and $H$ reduced; in this case, as we have just seen, $\overline{u(G)}$ is the underlying space of a reduced subgroup scheme of $G$; we may therefore suppose $u$ dominant. Then $G(k)$ acts transitively on the set of connected components of $H$ and it suffices to show that $u(G)\cap H^0$ is closed: one is reduced to the case where $H$ is connected, hence irreducible and of finite type (VIA 2.4). Then $u$ is of finite type since it is quasi-compact and locally of finite type; since $H$ is noetherian, $u(G)$ is constructible (EGA IV$_1$, 1.8.5), hence contains an open subset $V$ of $H$ (EGA 0$_{\mathrm{III}}$, 9.2.2), and then, by VIA 0.5, one has $H=V\cdot V\subset u(G)\cdot u(G)=u(G)$.
+% typo?: kept as printed: the reduced subgroup scheme is said to be of G.
+
+Let us prove the second assertion. First recall that the functor $\Ker u$ (cf. I, 2.3.6.1) is representable by $u^{-1}(e)$, where $e$ denotes the identity element of $H$. When $u$ is locally of finite type, $\Ker u$ is therefore locally of finite type over $A$. As before, this time by EGA IV$_2$, 4.1.4, one reduces to the case where $A$ is an algebraically closed field $k$. One may moreover suppose $G$ and $H$ irreducible and of finite type and $u$ dominant: indeed, since $k$ is algebraically closed, it is clear that the connected components of $G$, on whose set $G(k)$ acts transitively, all have the same dimension, and that, if $u^0$ is the restriction of $u$ to $G^0$, then $(\Ker u)^0\subset\Ker u^0$, and $\dim\Ker u^0=\dim\Ker u$. One sees similarly that $u$ is then of finite type over $k$. If $\eta$ denotes the generic point of $H$, one has $\dim u^{-1}(\eta)=\dim G-\dim H$ (EGA IV$_3$, 10.6.1 (ii)). By EGA IV$_3$, 9.2.3 and 9.2.6, the set of $y\in H$ such that $\dim u^{-1}(y)=\dim u^{-1}(\eta)$ contains a nonempty open subset $V$. Since $u$ is dominant, $U=u^{-1}(V)$ is then a nonempty open subset of $G$, and contains a closed point $x$ of $G$, since $G$ is a Jacobson scheme (EGA IV$_3$, 10.4.7). Then right translation $r_x$ is an isomorphism of $\Ker u$ onto $u^{-1}(u(x))$, so that:
+\[
+\dim\Ker u=\dim u^{-1}(u(x))=\dim u^{-1}(\eta)=\dim G-\dim H.
+\]
+\begin{lemma}{1.2.1}\label{VIB.1.2.1}
+Let $f:X'\to X$ and $g:Y'\to Y$ be two quasi-compact dominant morphisms of schemes over an artinian local ring $A$; then $f\times_Ag:X'\times_AY'\to X\times_AY$ is dominant (and quasi-compact).
+\end{lemma}
+Indeed, one has $f\times_Ag=(\mathrm{id}_X\times_Ag)\circ(f\times_A\mathrm{id}_{Y'})$. It therefore suffices to show that $f\times_A\mathrm{id}_{Y'}$ and $\mathrm{id}_X\times_Ag$ are dominant. For this one may replace $A$ by its residue field $k$. In this case, $X$ and $Y'$ are flat over $A=k$, and since $f\times_A\mathrm{id}_{Y'}$ (resp. $\mathrm{id}_X\times_Ag$) is obtained from $f$ (resp. $g$) by the flat base change $Y'\to A$ (resp. $X\to A$), it is dominant (and quasi-compact), by EGA IV$_2$, 2.3.7.
+\begin{enoncerm}{Counterexample}{1.2.2}\label{VIB.1.2.2}
+Let $k$ be a field of characteristic $0$, $G$ the constant $k$-group $\ZZ$ and $H$ the additive $k$-group $\mathbf G_{\mathrm a,k}$. Let $u:G\to H$ be a morphism of $k$-groups. If $u\ne0$, $u(G)$ is not closed in $H$.
+\end{enoncerm}
+\begin{proposition}{1.3}\label{VIB.1.3}\nde{In the original, 1.3, 1.3.1 and 1.3.1.1 are stated for $A$ a field. For completeness, the case of an artinian local ring has been treated and, to do so, Lemma 1.3.0 has been added.}
+Let $A$ be an artinian local ring, $k$ its residue field, $G$ an $A$-group locally of finite type and flat, and $u:G\to H$ a morphism of $A$-groups. The following assertions are equivalent:
+\begin{enumeratei}
+\item $u$ is flat (resp. quasi-finite, resp. unramified, resp. smooth, resp. étale) at a point of $G$.\nde{Recall that a morphism of schemes $f:X\to Y$ is said to be of finite type (resp. of finite presentation, resp. quasi-finite) at $x$ if there are affine open subsets $V$ containing $f(x)$ and $U$ containing $x$ such that $f(U)\subset V$ and $\OX(U)$ is an $\OY(V)$-algebra of finite type (resp. of finite presentation, resp. and if moreover the fiber $f^{-1}(f(x'))$ is finite for every $x'\in U$ (see also N.D.E. (40) of Exp. V)). One says that $f$ is locally quasi-finite (resp. of finite type, of finite presentation) if it is so at every point $x$. On the other hand, one says that $f$ is smooth (resp. unramified, resp. étale) at $x$ if there is an open neighborhood $U$ of $x$ such that the morphism $f|_U:U\to Y$ is smooth (resp. unramified, resp. étale). In view of these definitions, it is clear that the set of points where $f$ is of finite presentation, resp. of finite type, quasi-finite, smooth, unramified, étale, is an open subset of $X$. Moreover, since the flatness locus of a morphism locally of finite presentation is open (EGA IV$_3$, 11.3.1), the set of points of $X$ where $f$ is of finite presentation and flat is also open in $X$. All this will be used on numerous occasions below.}
+\item $u$ is flat (resp. quasi-finite, resp. unramified, resp. smooth, étale).
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+It suffices to show that (i) implies (ii). First one has the following lemma:
+\begin{lemma}{1.3.0}\label{VIB.1.3.0}
+Let $A\to B\to C$ be morphisms of commutative rings and $\mathfrak n$ a nilpotent ideal of $A$. Suppose that $C/\mathfrak nC$ is a $(B/\mathfrak nB)$-algebra of finite type.
+\begin{enumeratei}
+\item Then $C$ is a $B$-algebra of finite type.
+\item Moreover, if $C$ is flat over $A$ and $C/\mathfrak nC$ is a $(B/\mathfrak nB)$-algebra of finite presentation, then $C$ is a $B$-algebra of finite presentation.
+\end{enumeratei}
+\end{lemma}
+Indeed, let $x_1,\ldots,x_n$ be elements of $C$ whose images generate $C/\mathfrak nC$ as a $(B/\mathfrak n)$-algebra. By the nilpotent Nakayama lemma, the $x_i$ generate $C$ as a $B$-algebra. This proves (i). Let $\phi$ be the surjective morphism $B[X_1,\ldots,X_n]\to C$ thus obtained, and let $I=\Ker(\phi)$.
+% typo?: kept as printed: B/n in the first sentence of this proof.
+
+Now suppose that $C$ is flat over $A$ and $C/\mathfrak nC$ is of finite presentation over $B/\mathfrak nB$. Then, on the one hand, $I/\mathfrak nI$ is identified with the kernel of $\overline\phi=\phi\otimes_A(A/\mathfrak n)$. On the other hand, by EGA IV$_1$, 1.4.4, the kernel of $\overline\phi$ is a finitely generated ideal. Then let $P_1,\ldots,P_s$ be elements of $I$ whose images generate $I/\mathfrak nI$ as an ideal; by the nilpotent Nakayama lemma, they generate $I$. This proves (ii).
+
+Let us return to the proof of 1.3. Let $x$ be an arbitrary point of $G$. Since $G$ is flat over $A$, by the fiberwise flatness criterion, in the form of EGA IV$_3$, 11.3.10.2, $u$ will be flat at $x$ if $u\otimes_Ak$ is. Similarly, by the preceding lemma, one sees that $u$ will be of finite type (resp. of finite presentation) at $x$ if $u\otimes_Ak$ is. Since the other properties can then be checked on the fibers (cf. EGA IV$_4$ 17.4.1, 17.5.1 and 17.6.1 for unramified, smooth and étale), one is reduced to the case where $A=k$.
+
+Now let $x$ be a point of $G$ where one of the conditions of 1.3 (i) holds. Since the properties under consideration are preserved by (fpqc) descent (cf. EGA IV, 2.5.1, 2.7.1 and 17.7.1), replacing $k$ by an algebraic closure of $\kappa(x)$ reduces one to the case where $k$ is algebraically closed and $x\in G(k)$.
+
+Since $G$ is a Jacobson scheme (cf. EGA IV$_3$, 10.4.7) and since the set $W$ of points of $G$ where $u$ is flat (resp. quasi-finite, unramified, smooth, or étale) is stable under generization\nde{The original indicated that $W_{\mathrm{flat}}$ is open, which does not seem evident a priori\dots} (resp. open), it suffices to show that every point $y$ of $G(k)$ belongs to $W$. But, for such a point $y$, the translation $r_y\circ r_{x^{-1}}$ sends $x$ to $y$, so $u$ has the desired property at $y$, i.e. $y\in W$.
+\end{proof}
+\begin{corollary}{1.3.1}\label{VIB.1.3.1}
+Let $A$ be an artinian local ring, $k$ its residue field, $G$ a flat $A$-group. The following assertions are equivalent:\nde{Note that it is not sufficient to suppose that $G$ is flat over $A$ at a point: for example, supposing $A\ne k$, let $H$ be the constant $A$-group $(\ZZ/2\ZZ)_A$ and $G$ the closed $A$-subgroup of $H$ whose nonidentity component is reduced; then the structure morphism $G\to\Spec A$ is a local isomorphism at the identity point $e$, but is not flat at the point $g\ne e$.}
+\begin{enumeratei}
+\item $G$ is locally quasi-finite (resp. unramified, resp. smooth, resp. étale) over $A$ at a point.
+\item $G$ is locally quasi-finite (resp. unramified, resp. smooth, resp. étale) over $A$.
+\end{enumeratei}
+\end{corollary}
+\nde{The following sentence has been added, and the proof of Lemma 1.3.1.1 simplified by invoking EGA IV, 2.7.1 instead of loc. cit., 17.7.5.}Indeed, if $G$ satisfies one of the conditions of (i) at a point $x$, there is an open neighborhood $U$ of $x$ which is of finite type over $A$. Consequently, it suffices to apply 1.3 to the case where $H$ is the unit $A$-group, taking account of the following lemma:
+\begin{lemma}{1.3.1.1}\label{VIB.1.3.1.1}
+Let $A$ be an artinian local ring and $G$ an $A$-group. If there is a nonempty open subset of $G$ of finite type over $A$, then $G$ is locally of finite type over $A$.
+\end{lemma}
+By Lemma 1.3.0, one may suppose $A$ equal to its residue field $k$. Moreover, by (fpqc) descent, one may suppose $k$ algebraically closed (cf. EGA IV$_2$, 2.7.1). Let $V$ be the open subset of $G$ formed by the points where $G$ is of finite type over $k$; by hypothesis, $V\ne\varnothing$. Since $G$ is a Jacobson scheme, $V$ contains a closed point $x$ and, to show that $V=G$, it suffices to show that every closed point $y$ of $G$ belongs to $V$. But, for such a point $y$, the translation $r_y\circ r_{x^{-1}}$ sends $x$ to $y$, whence $y\in V$.
+\begin{corollary}{1.3.2}\label{VIB.1.3.2}
+Let $A$ be an artinian local ring, $u:G\to H$ a morphism between $A$-groups locally of finite type. The following assertions are equivalent:
+\begin{enumeratei}
+\item $u$ is universally open,
+\item $u$ is open,
+\item $u$ is open at a point of $G$,
+\item the morphism $u^0:G^0\to H^0$ obtained from $u$ is dominant,
+\item[(iv$'$)] $u^0$ is surjective,
+\item[(v)] there is a connected component $C$ of $G$ such that, if $D$ denotes the connected component of $H$ containing $u(C)$, the morphism $u':C\to D$ obtained from $u$ is dominant.
+\end{enumeratei}
+\end{corollary}
+The implications (i) $\Rightarrow$ (ii) $\Rightarrow$ (iii) and (iv$'$) $\Rightarrow$ (iv) $\Rightarrow$ (v) are clear. Since $G^0$ is of finite type over $A$ (VIA 2.4), hence noetherian, $u^0$ is quasi-compact, so $u^0(G^0)$ is closed in $H^0$, by 1.2, hence (iv) $\Rightarrow$ (iv$'$). On the other hand, since $G^0$ (resp. $C$) is open in $G$ (VIA 2.3) and $H^0$ (resp. $D$) is irreducible (VIA 2.4.1), one sees that (ii) implies (iv) (resp. that (iii) implies (v)). It therefore remains to show that (v) implies (i).
+
+The open subset $C$ (resp. $D$) of $G$ (resp. $H$) will be endowed with its induced scheme structure, and $u'$ will denote the morphism $C\to D$ obtained from $u$. Let $k$ be the residue field of $A$.\nde{The original has been expanded in what follows.} Since the base change $\Spec k\to\Spec A$ is a universal homeomorphism, one may suppose $A=k$. By hypothesis, $u'$ is dominant and, since $C$ is of finite type over $k$ (VIA 2.4.1), hence noetherian, $u'$ is quasi-compact. By EGA IV$_2$, 2.3.7, $u'\otimes_k\overline k$ is still quasi-compact and dominant, where $\overline k$ denotes an algebraic closure of $k$. Then, since $C\otimes_k\overline k$ is a union of connected components of $G\otimes_k\overline k$, the morphism $u\otimes_k\overline k:G\otimes_k\overline k\to H\otimes_k\overline k$ satisfies assertion (v). We are thus reduced to the case where $A=k$ is an algebraically closed field, taking account of EGA IV$_2$, 2.6.4.
+
+In this case, we may moreover replace $u$ by $u_{\mathrm{red}}$, and we are reduced to the case where $H$ is reduced. Then let $\xi$ (resp. $\eta$) be the generic point of $C$ (resp. $D$). Since $u'$ is quasi-compact and dominant, $u'(\xi)=\eta$ (cf. EGA IV$_1$, 1.1.5). On the other hand, since $H$ is reduced, the local ring $\OO_{H,\eta}$ is a field, and hence $u'$ is flat at the point $\xi$.\nde{The original invoked the generic flatness theorem (EGA IV$_2$, 6.9.1), which is not needed here.} Thus, by 1.3, $u$ is flat; moreover, since $u$ is locally of finite type and $H$ is locally noetherian, $u$ is locally of finite presentation. Hence, by EGA IV$_2$, 2.4.6, $u$ is universally open.
+\begin{proposition}{1.4}\label{VIB.1.4}
+Let $A$ be an artinian local ring, and $u:G\to H$ a quasi-compact morphism between $A$-groups locally of finite type. The following assertions are equivalent:
+\begin{enumeratei}
+\item $u$ is proper,
+\item there is $h\in H$ such that the fiber $u^{-1}(h)$ is nonempty and proper over $\kappa(h)$,
+\item $\Ker u$ is proper over $A$.
+\end{enumeratei}
+\end{proposition}
+It is clear that (i) implies (iii), and that (iii) implies (ii). On the other hand, it follows from the hypotheses that $u$ is of finite type and, since $G$ is separated (VIA 0.3), so is $u$ (EGA I, 5.5.1). It therefore remains to show that assertion (ii) implies that $u$ is universally closed, so we may suppose $A$ equal to its residue field $k$.\nde{The following sentence has been added.} Let $k'$ be an algebraic closure of $\kappa(h)$, $u':G'\to H'$ the morphism obtained from $u$ by base change, $h'$ a point of $H'$ above $h$; then the fiber $u'^{-1}(h')=u^{-1}(h)\times_{\kappa(h)}k'$ is nonempty and proper, and it suffices to show that $u'$ is proper (EGA IV$_2$, 2.6.4). One may therefore suppose that $k$ is algebraically closed and $h\in H(k)$.
+
+We have seen (1.2) that $u(G)$ is then the underlying set of a closed reduced subgroup scheme of $H$; since every closed immersion is proper (EGA II, 5.4.2), we may suppose $u$ surjective, and $H$ reduced. Since $u$ is surjective, the group $G(k)$ acts transitively on the set of closed points of $H$; thus, for every closed point $y$ of $H$, $u^{-1}(y)$ is proper over $\kappa(y)$. By EGA IV$_3$, 9.6.1, the set of $y\in H$ such that $u^{-1}(y)$ is not proper over $\kappa(y)$ is locally constructible; since it contains no closed point, it is empty (cf. EGA IV$_3$, 10.3.1 and 10.4.7).
+
+\nde{The original has been expanded in what follows.}Then consider the generic point $\eta$ of $H^0$; by the preceding argument, the fiber $u^{-1}(\eta)=G\times_H\Spec\kappa(\eta)$ is proper over $\kappa(\eta)$. On the other hand, since $H$ is reduced, $\kappa(\eta)$ equals $\OO_{H,\eta}$. Since $\OO_{H,\eta}$ is the inductive limit of the rings $\OO_H(V)$, as $V$ ranges over the nonempty open subsets of $H^0$, it follows from EGA IV$_3$, 8.1.2 a) and 8.10.5 (xii), that there is a nonempty open subset $V$ of $H^0$ such that the restriction of $u$ above the open subset $V$ is proper. It is then clear that the $g\cdot V$, for $g\in G(k)$, form an open covering of $H$ such that, for every $g\in G(k)$, the restriction of $u$ above the open subset $g\cdot V$ is proper; one deduces that $u$ is proper (cf. EGA II, 5.4.1).
+% typo: limitive -> limit.
+\begin{corollary}{1.4.1}\label{VIB.1.4.1}
+Let $A$ be an artinian local ring, and $u:G\to H$ a morphism between $A$-groups locally of finite type. The following assertions are equivalent:
+\begin{enumeratei}
+\item $u$ is locally quasi-finite,
+\item $u$ is quasi-finite at a point,
+\item $\Ker u$ is discrete,
+\item the restriction of $u$ to every connected component of $G$ is finite.
+\end{enumeratei}
+Finally, if $u$ is quasi-compact, these assertions are equivalent to the following:
+\begin{enumeratei}
+\setcounter{enumi}{4}
+\item $u$ is finite.
+\end{enumeratei}
+\end{corollary}
+It is clear that (iv) implies (iii), that (iii) implies (ii) (EGA I, 6.4.4), and that, when $u$ is quasi-compact, assertions (iv) and (v) are equivalent. We have already seen in 1.3 that assertions (i) and (ii) are equivalent.
+
+Finally let us show that (i) implies (iv). Let $C$ be a connected component of $G$; since $C$ is of finite type over $A$ (VIA 2.4.1) and $G$ and $H$ are separated (VIA 0.2), by EGA I, 5.5.1 and 6.3.4, the restriction $u'$ of $u$ to $C$ is separated and of finite type.\nde{The original has been expanded in what follows.} Since the fibers of $u'$ are discrete, it follows that $u'$ is quasi-finite (cf. EGA II, 6.2.2). Since every quasi-finite proper morphism is finite (cf. EGA III$_1$, 4.4.2), it therefore suffices to show that $u'$ is universally closed.
+
+For this we may suppose that $A$ equals its residue field $k$. Then, by (fpqc) descent (cf. EGA IV$_2$, 2.6.4), it suffices to show that $u'\otimes_k\overline k$ is universally closed, where $\overline k$ denotes an algebraic closure of $k$. Moreover, since $C$ is of finite type over $k$, $C\otimes_k\overline k$ is the sum of a finite number of connected components $C'_1,\ldots,C'_n$ of $G\otimes_k\overline k$, and it suffices to show the assertion for each $C'_i$. One is thus reduced to the case where $k$ is algebraically closed.
+
+Then let $g$ be a closed point of $C$; if $u^0:G^0\to H$ is the restriction of $u$ to $G^0$, one has $u'=r_{u(g)}\circ u^0\circ r_{g^{-1}}$, where $r_g$ denotes right translation by $g$, and hence, to show that $u'$ is proper, it suffices to show that $u^0$ is. By hypothesis, $u$ is locally quasi-finite, so the fiber $\Ker u$ is discrete (and nonempty); we have seen that $u^0$ is of finite type, so the fiber $\Ker u^0$ is finite (cf. EGA II, 6.2.2), hence proper, and nonempty; thus $u^0$ is proper by 1.4.
+\begin{corollary}{1.4.2}\label{VIB.1.4.2}
+Let $A$ be an artinian local ring, and $u:G\to H$ a quasi-compact morphism between $A$-groups locally of finite type. The following assertions are equivalent:\nde{The hypothesis that $G$ and $H$ be locally of finite type can be removed, for, by [Per76, 4.2.4], every quasi-compact monomorphism $u:G\to H$ between group schemes over a field $k$ is a closed immersion; see also [DG70, III.3.7.2 b)] for the case where $G$ and $H$ are affine (in which case every morphism $G\to H$ is affine (EGA II, 1.6.2 (v)), hence quasi-compact).}
+\begin{enumeratei}
+\item $u$ is a closed immersion,
+\item $u$ is a monomorphism,
+\item $\Ker u$ is trivial, i.e. isomorphic to the unit $k$-group.
+\end{enumeratei}
+In particular, every subgroup scheme\nde{In this particular case, see also VIA, 0.5.2, valid without finiteness hypotheses.} of $H$ is closed.
+\end{corollary}
+It is clear that (i) implies (ii), and, considering the functors represented by $G$ and $H$ respectively, it is immediate that conditions (ii) and (iii) are equivalent. Finally, if $\Ker u$ is the unit $k$-group, $\Ker u$ is a nonempty proper fiber, so $u$ is a proper monomorphism, by 1.4, and is of finite presentation since $H$ is locally noetherian (EGA IV$_1$, 1.6.1), hence is a closed immersion (EGA IV$_3$, 8.11.5).
+% typo?: kept as printed: unit k-group, although A is an artinian local ring.
+
+The last assertion follows from the fact that, since $H$ is locally noetherian, every immersion $G\to H$ is quasi-compact (EGA I, 6.6.4).
+\begin{enoncerm}{Counterexample}{1.4.3}\label{VIB.1.4.3}
+Let $k$ be a field of characteristic $0$, $G$ the constant $k$-group $\ZZ$ and $H$ the $k$-group $\mathbf G_{\mathrm a,k}$. Let $u:G\to H$ be a morphism of $k$-groups. If $u\ne0$, $\Ker u=0$, but $u$ is not a closed immersion (cf. 1.2.2).
+\end{enoncerm}
+We shall use later the following two results which should have appeared in Exposé VIA:
+\begin{lemma}{1.5}\label{VIB.1.5}
+Let $k$ be a field and $G$ a $k$-group locally of finite type. Then:
+\begin{enumeratei}
+\item All the irreducible components of $G$ have the same dimension.
+\item For every $g\in G$, one has $\dim_gG=\dim G$.
+\end{enumeratei}
+\end{lemma}
+\nde{The implication (ii) $\Rightarrow$ (i) is a general fact (cf. EGA 0$_{\mathrm{IV}}$, 14.1.6), and (i) $\Rightarrow$ (ii) follows from the fact that, if $X$ is an irreducible scheme of finite type over a field, one has $\dim X=\dim U$ for every nonempty open subset $U$ of $X$; the essential point here is therefore to establish assertion (i), which has already been done in an addition to VIA, 2.4.1. The statement and proof of the lemma have been modified accordingly.}Assertion (i) has already been proved in VIA, 2.4.1, and assertion (ii) follows from it. Indeed, let $g$ be a point of $G$ and $C$ the connected component of $G$ containing $g$. By definition (EGA 0$_{\mathrm{IV}}$, 14.1.2), $\dim_gG$ is the infimum of the integers $\dim U$, as $U$ ranges over the open neighborhoods of $g$; one therefore has $\dim_gG=\dim U_0$ for some $U_0$, which one may suppose contained in $C$ (since $\dim V\le\dim U$ if $V\subset U$). Then, since $C$ is irreducible and of finite type over $k$ (VIA, 2.4.1), one has $\dim U_0=\dim C=\trdeg_k\kappa(\xi)$, where $\xi$ is the generic point of $C$, by EGA IV$_2$, 5.2.1. Thus $\dim_gG=\dim C=\dim G$.
+\begin{proposition}{1.6}\label{VIB.1.6}\nde{In the statement, ``along the unit section'' has been replaced by ``at every point of the unit section''; on the other hand, at the end of the proof, the results of EGA IV$_4$ cited as references have been made explicit.}
+Let $S$ be a scheme of characteristic zero and $G$ an $S$-group scheme, locally of finite presentation over $S$ at every point of the unit section $\varepsilon(S)$. For $G$ to be smooth over $S$ at every point of the unit section, it is necessary and sufficient that the $\OS$-module $\omega_{G/S}=\varepsilon^*(\Omega^1_{G/S})$ (called the conormal module of the unit section of $G$) be locally free.
+\end{proposition}
+Recall that a scheme $S$ is said to be of characteristic zero if, for every closed point $x$ of $S$, the field $\kappa(x)$ is of characteristic zero.
+
+Also recall (II 4.11) that, if $\pi$ denotes the structure morphism $G\to S$, one has $\Omega^1_{G/S}=\pi^*(\omega_{G/S})$, so that it is equivalent to say that the $\OS$-module $\omega_{G/S}$ is locally free or that the $\OO_G$-module $\Omega^1_{G/S}$ is locally free.
+
+If there is an open neighborhood $U$ of $\varepsilon(S)$ smooth over $S$, then, by EGA IV$_4$, 17.2.3, $\Omega^1_{U/S}$ is locally free of finite type, as is $\omega_{G/S}=\varepsilon^*(\Omega^1_{U/S})$.
+
+Conversely, if $\omega_{G/S}$ is locally free, so is $\Omega^1_{G/S}=\pi^*(\omega_{G/S})$. Since $S$ is of characteristic $0$, the Jacobian criterion (EGA IV$_4$, 16.12.2) therefore implies that $G$ is differentially smooth over $S$. Then it follows from EGA IV$_4$, 17.12.5, that $G$ is smooth over $S$ at every point of the unit section.
+\begin{corollary}{1.6.1 (Cartier)}\label{VIB.1.6.1}
+Given a field $k$ of characteristic zero, every $k$-group locally of finite type over $k$ is smooth over $k$.
+\end{corollary}
+Indeed, it is then clear that the $k$-module $\omega_{G/k}$ is locally free, so, by 1.6, $G$ is smooth over $k$ at the identity point $e$, hence smooth over $k$, by 1.3.1.
+
+\sgasection{2}{``Open properties'' of groups and morphisms of groups locally of finite presentation}
+\numpara{2.0}Throughout what follows, $S$ will denote any scheme; an $S$-group scheme will be called an $S$-group. Given an $S$-group $G$, we shall denote by $\varepsilon$ the unit section, by $c:G\to G$ the inversion morphism and by $\mu$ the multiplication morphism $G\times_SG\to G$.

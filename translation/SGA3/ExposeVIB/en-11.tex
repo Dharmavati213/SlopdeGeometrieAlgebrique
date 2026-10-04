@@ -1,0 +1,155 @@
+It is clear that (viii) follows from (vii), for $\pi=\pi''\circ p$, where $\pi'':G''\to S$ denotes the structural morphism.
+
+Let us show (ix). By (i), $p$ is an epimorphism; since $G$ is reduced, $p$ factors through the immersion $G''_{\mathrm{red}}\to G''$, which is therefore also an epimorphism, hence an isomorphism (IV 4.4.4).
+
+Let us show (x). If $G''$ is separated over $S$, then $\varepsilon''$ is a closed immersion, by EGA I, 5.4.6. On the other hand, we saw in (ii) that $\varepsilon''$ is a closed immersion if and only if $u$ is one. Finally, if $u$ is a closed immersion, then so is $\delta\circ(\mathrm{id}_G\times u):G\times_S G'\to G\times_S G$; thus, by Lemma 9.2.1 below, $G''$ is separated over $S$.
+
+Assertion (xi) follows from (vii) and EGA IV$_2$, 2.2.13.
+
+Assertion (xii) follows from (vii), EGA IV$_4$, 17.7.5 and 17.7.7, and the fact that, since $p$ is universally open, for every $s\in S$, if the underlying space of $G_s$ is discrete, the same holds for the underlying space of $G''_s$.
+
+Finally, assertion (xiii) follows from (vii), (viii), and EGA IV$_4$, 17.7.5.
+
+\begin{lemma}{9.2.1}\label{VIB.9.2.1}
+Let $X$ be an $S$-scheme and $R$ an equivalence relation defined on $X$ by the monomorphism $v:R\to X\times_S X$. Suppose $R$ effective. Then:
+
+(i) $v$ is an immersion, and it is a closed immersion if $Y=X/R$ is separated.
+
+(ii) Suppose moreover that $Y$ represents the (fpqc) sheaf quotient of $X$ by $R$\nde{As pointed out by O. Gabber, this is used in the proof and must be inserted among the hypotheses.} and that $v$ is a closed immersion. Then $Y=X/R$ is separated over $S$.
+\end{lemma}
+Recall (IV Def. 3.3.2) that the hypothesis ``$R$ effective'' means that there is a morphism of $S$-schemes $p:X\to Y$ such that the natural morphism $R\to X\times_Y X$ is an isomorphism. One deduces (EGA I, 5.3.5) the following cartesian diagram:
+\[
+\xymatrix{R\ar[r]^v\ar[d]&X\times_S X\ar[d]^{p\times p}\\Y\ar[r]_{\Delta_{Y/S}}&Y\times_S Y.}
+\]
+Then, since $\Delta_{Y/S}$ is an immersion (EGA I, 5.3.9), the same holds for $v$. Similarly, if $Y$ is separated over $S$, $\Delta_{Y/S}$ is a closed immersion, so the same holds for $v$.
+
+Conversely, suppose $v$ a closed immersion and $Y$ represents the (fpqc) sheaf quotient of $X$ by $R$. Then $p$ is covering for the (fpqc) topology (IV 4.4.3), and therefore $p\times p$ is too (by base change, $p\times\mathrm{id}_X$ and $\mathrm{id}_Y\times p$ are covering, and thus also their composite $p\times p$). Hence, by (fpqc) descent (cf. EGA IV$_2$, 2.7.1), $\Delta_{Y/S}$ is a closed immersion, i.e.\ $Y$ is separated over $S$.
+
+\begin{remark}{9.2.2}\label{VIB.9.2.2}
+Under the general hypotheses of 9.2, if one supposes $G'$ flat and locally of finite presentation over $S$, then $p$ is covering for the (fppf) topology,\nde{(fpqc) has been corrected to (fppf).} by 9.2 (vii), so assertions (vii) and (viii) of 9.2 can be extended to properties $\mathscr P$ local for the (fppf) topology.
+\end{remark}
+
+\begin{remark}{9.3}\label{VIB.9.3}
+a) The question whether a quotient $G/G'$ is representable or not is often delicate; in this seminar we prove representability of certain particular quotients.
+
+In general, to be able to assert that the quotient $G/G'$ is representable, it does not suffice to suppose $G$ and $G'$ of finite presentation over $S$ and $G'$ flat over $S$. Indeed, suppose moreover $G$ smooth with connected fibers. In this case, if $G/G'$ is a scheme, it is separated, by Corollary 5.4, and therefore $G'\hookrightarrow G$ is a closed immersion, by 9.2 (x); consequently, if $G'$ is not closed in $G$, then $G/G'$ is not representable.
+
+To obtain such a counterexample, one may take for $S$ the spectrum of a discrete valuation ring, and put $G=\Gm{}_{,S}$. Consider moreover an integer $n>1$, invertible on $S$; then $\bmu_n=\Ker(G\xrightarrow{n}G)$ is a closed subgroup of $G$ étale over $S$ (cf. VIIA\nde{See VIIA, 8.4 or VIII, 2.1.}). Let $G'$ be the open subgroup of $\bmu_n$ obtained by removing from $\bmu_n$ the closed part of the closed fiber of $\bmu_n$ complementary to the origin. Then $G'$ is not closed in $G$, so $G/G'$ is not representable. (One can also construct such examples where $G'$ is smooth with connected fibers.)
+
+b) On the other hand, it is not excluded that $G/G'$ is representable when $G$ and $G'$ are of finite presentation over $S$, and $G'$ is flat over $S$ and closed in $G$.\begingroup\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{This is too optimistic, as M. Raynaud shows in his thesis (loc.\ cit.\ X 14).}\endgroup\nde{Remark (*) refers to counterexample X.14 in [Ray70a]. The base there is regular local of dimension 2.} Under these hypotheses, one knows that $G/G'$ is representable in the following special cases:
+
+$1^\circ$ -- $S$ is the spectrum of an artinian ring (cf. VIA 3.2 and 3.3.2).
+
+$2^\circ$ -- $G'$ is proper over $S$ and $G$ quasi-projective over $S$ (cf. V 7.1).
+
+$3^\circ$ -- $S$ is locally noetherian of dimension $1$ (cf. [An73], Th. 4.C).
+\end{remark}
+
+\sgasection{10}{Passage to the projective limit in group schemes and schemes with a group of operators}
+\numpara{10.0}\label{VIB.10.0}
+Recall the essential result of EGA IV$_3$, \S\,8.8. Suppose the following situation given: $S_0$ a quasi-compact and quasi-separated scheme, $I$ an increasing filtered preordered set, $(\mathscr A_i)_{i\in I}$ an inductive system of quasi-coherent commutative $\OO_{S_0}$-algebras, $\mathscr A=\varinjlim\mathscr A_i$, $S_i=\Spec\mathscr A_i$ for $i\in I$, and $S=\Spec\mathscr A$;\nde{Note that $S$, being affine over $S_0$, is therefore quasi-compact and quasi-separated, cf. N.D.E. (92) below.} then the category of $S$-schemes of finite presentation is determined up to equivalence by the categories of $S_i$-schemes of finite presentation, the functors between these categories $\rho_{ji}:X_i\mto X_i\times_{S_i}S_j$ for $i\leq j$, and the transitivity isomorphisms $\rho_{kj}\circ\rho_{ji}\isomto\rho_{ki}$.
+
+Let us be more precise. Given $j\in I$, and an $S_j$-scheme of finite presentation $X_j$, we shall put, for every $i\in I$ such that $i\geq j$, $X_i=X_j\times_{S_j}S_i$, and $X=X_j\times_{S_j}S$. Then (EGA IV$_3$, 8.8.2):
+
+(i) Given $j\in I$, and two $S_j$-schemes of finite presentation $X_j$ and $Y_j$, the canonical map from $\varinjlim_{i\geq j}\Hom_{S_i}(X_i,Y_i)$ to $\Hom_S(X,Y)$ is bijective.
+
+(ii) For every $S$-scheme of finite presentation $X$, there is an index $j\in I$, an $S_j$-scheme of finite presentation $X_j$ and an $S$-isomorphism $X\isomto X_j\times_{S_j}S$.
+
+One concludes (EGA IV$_3$, 8.8.3) that, whenever one has a diagram $D$ involving finitely many objects and arrows of the category of $S$-schemes of finite presentation, one can find an index $i\in I$ and a diagram $D_i$ in the category of $S_i$-schemes of finite presentation, such that the diagram $D$ comes, up to isomorphism, from the diagram $D_i$ by base change $S\to S_i$. One can even find $i$ and $D_i$ such that every cartesian square of $D$ comes from a cartesian square of $D_i$.
+
+\numpara{10.1}\label{VIB.10.1}
+Moreover, many common properties of a morphism, stable under base change, possess the following property:
+\begin{quote}
+Let $u:X\to Y$ be an $S$-morphism between $S$-schemes of finite presentation; by 10.0 it comes by base change from an $S_j$-morphism $u_j:X_j\to Y_j$ between $S_j$-schemes of finite presentation; then, for $u$ to have property $\mathscr P$, it is necessary and sufficient that there be $i\geq j$ such that $u_i=u_j\times_{S_j}S_i$ has property $\mathscr P$.
+\end{quote}
+This is the case when $\mathscr P$ is one of the following properties of a morphism: being separated, surjective, radicial, affine, quasi-affine, finite, quasi-finite, proper, projective, quasi-projective, an isomorphism, a monomorphism, an immersion, an open immersion, a closed immersion (EGA IV$_3$, 8.10.5), flat (EGA IV$_3$, 11.2.6), smooth, unramified or étale (EGA IV$_4$, 17.7.8).\nde{The word ``flat'' has been added, and 17.7.6 corrected to 17.7.8.}
+
+Note that this still holds when $\mathscr P$ is the property of being covering for the (fppf) topology; indeed, given two $S$-schemes of finite presentation $X$ and $Y$, and an $S$-morphism $u:X\to Y$, it follows from IV, 6.3.1 (i)\nde{And from the fact that $Y$, being of finite presentation over $S$, is quasi-compact.} that, for $u$ to be covering for the (fppf) topology, it is necessary and sufficient that there be an $S$-scheme $Z$ and an $S$-morphism $v:Z\to Y$ faithfully flat and of finite presentation which factors through $u$.
+
+The aim of this section 10 is to give variants of results of this kind for the category of $S$-groups of finite presentation, that of $S$-schemes with a group of operators, and for certain properties of group monomorphisms (being invariant, central with representable quotient sheaf, etc.).
+
+The first two results of this type are the following. (In nos.\ 10.2 to 10.9 below, we retain the notation introduced in 10.0.)
+
+\begin{lemma}{10.2}\label{VIB.10.2}
+Let $G_j$ and $H_j$ be two $S_j$-groups of finite presentation; put, for every $i\geq j$, $G_i=G_j\times_{S_j}S_i$, $G=G_j\times_{S_j}S$, and define $H_i$ and $H$ similarly. Then the canonical map below is bijective:
+\[
+\varinjlim_{i\geq j}\Hom_{S_i\text{-gr.}}(G_i,H_i)\to\Hom_{S\text{-gr.}}(G,H).
+\]
+\end{lemma}
+\begin{lemma}{10.3}\label{VIB.10.3}
+Let $G$ be an $S$-group of finite presentation; then there is $j\in I$, an $S_j$-group of finite presentation $G_j$, and an isomorphism of $S$-groups $G\cong G_j\times_{S_j}S$.
+\end{lemma}
+Assertions 10.2 and 10.3 are easy consequences of 10.0 and 10.1, taking account of the interpretation\nde{In terms of commutative diagrams of $S$-morphisms.} of the $S$-group structure given in EGA 0$_{\mathrm{III}}$, 8.2.5 and 8.2.6.
+
+\begin{lemma}{10.4}\label{VIB.10.4}
+Let $u:G\to H$ be a morphism of $S$-groups between $S$-groups of finite presentation. By 10.3 and 10.2, $u$ comes by base change from a morphism $u_j:G_j\to H_j$ between $S_j$-groups of finite presentation. Then, for $u$ to be a central monomorphism (resp. an invariant monomorphism), it is necessary and sufficient that there be $i\geq j$ such that $u_i=u_j\times_{S_j}S_i$ has the same property.
+\end{lemma}
+This is an immediate consequence of 10.0 and 10.1, taking account of the characterization given in 6.7 of central or invariant group monomorphisms.
+
+\begin{corollary}{10.5}\label{VIB.10.5}
+Let $G_j$ be an $S_j$-group of finite presentation. For $G_j\times_{S_j}S$ to be commutative, it is necessary and sufficient that there be $i\geq j$ such that $G_j\times_{S_j}S_i$ is so.
+\end{corollary}
+Indeed, it amounts to the same thing to say that an $S$-group is commutative, or that, considered as a subgroup scheme of itself, it is central.
+
+\begin{proposition}{10.6}\label{VIB.10.6}
+Let $G_j$ be an $S_j$-group of finite presentation, $G'_j$ a subgroup scheme of $G_j$ flat and of finite presentation over $S_j$. For $(G_j\times_{S_j}S)/(G'_j\times_{S_j}S)$ to be representable for the (fpqc) topology, it is necessary and sufficient that there be $i\geq j$ such that $(G_j\times_{S_j}S_i)/(G'_j\times_{S_j}S_i)$ is so.
+\end{proposition}
+This is a consequence of the following more general lemma:
+
+\begin{lemma}{10.7}\label{VIB.10.7}
+Let $X_j$ be an $S_j$-scheme of finite presentation, and $R_j$ an equivalence relation on $X_j$ flat and of finite presentation.\nde{I.e., such that the composite $R_j\hookrightarrow X_j\times_{S_j}X_j\xrightarrow{\mathrm{pr}_1}X_j$ is flat and of finite presentation.} For the quotient sheaf $(X_j\times_{S_j}S)/(R_j\times_{S_j}S)$ for the topology $T=\text{(fppf)}$ or $\text{(fpqc)}$ to be representable, it is necessary and sufficient that there be $i\geq j$ such that the quotient sheaf $(X_j\times_{S_j}S_i)/(R_j\times_{S_j}S_i)$ for the topology $T$ is so.
+\end{lemma}
+Taking account of the statements of EGA IV$_2$, 8.8.2, 8.8.3, 8.10.5 and 11.2.6 recalled in 10.0, this lemma is a consequence of the following result:
+% typo?: kept as printed: EGA IV_2, rather than IV_3, in this reference.
+
+\begin{lemma}{10.8}\label{VIB.10.8}
+Let $T$ be the (fppf) or (fpqc) topology; let $X$ be an $S$-scheme of finite presentation (resp. locally of finite presentation), $R$ an equivalence relation on $X$ defined by a monomorphism $v:R\to X\times_S X$ such that $\mathrm{pr}_1\circ v$ is flat and of finite presentation (resp. flat and locally of finite presentation). Then the following conditions are equivalent:
+
+(i) The quotient sheaf $X/R$ for the topology $T$ is representable.
+
+(ii) There is an $S$-scheme of finite presentation (resp. locally of finite presentation) $Y$ and a faithfully flat morphism $p:X\to Y$ such that the diagram
+\begin{equation*}\tag{D}
+\xymatrix{R\ar[r]^{\mathrm{pr}_1\circ v}\ar[d]_{\mathrm{pr}_2\circ v}&X\ar[d]^p\\X\ar[r]_p&Y}
+\end{equation*}
+is cartesian.
+\end{lemma}
+Note first that by IV, 3.3.2 and 4.4.3, for the sheaf $X/R$ for the topology $T$ to be representable by $Y$, it is necessary and sufficient that the diagram (D) be cartesian and $p$ covering for the topology $T$.
+
+Let us show that (i) implies (ii). Hypothesis (i) implies that the diagram (D) is cartesian, hence that $\mathrm{pr}_1\circ v$ is obtained from $p$ by base change by $p$, and that $p$ is covering for the (fpqc) topology. Thus, by (fpqc) descent (EGA IV$_2$, 2.7.1), since $\mathrm{pr}_1\circ v$ is faithfully flat and (locally) of finite presentation, the same holds for $p$. Then, by EGA IV$_4$, 17.7.5, since $X$ is (locally) of finite presentation over $S$, the same holds for $Y$.
+
+Let us show that (ii) implies (i). It suffices to show that $p$ is covering for the (fppf) topology; now $p$ is faithfully flat by hypothesis, and is locally of finite presentation because $X$ and $Y$ are locally of finite presentation over $S$ (EGA IV$_1$, 1.4.3 (v)).
+
+\begin{lemma}{10.9}\label{VIB.10.9}
+Let $G_j$ be an $S_j$-group of finite presentation, and $G=G_j\times_{S_j}S$. For $G^0$ to be representable, it is necessary and sufficient that there be $i\geq j$ such that $(G_i)^0=(G_j\times_{S_j}S_i)^0$ is so.
+\end{lemma}
+The condition is sufficient, since the functor $G\mto G^0$ commutes with base change, by 3.3.
+
+Conversely, suppose $G^0$ representable. Then, by 3.9, $G^0$ is open in $G$ and quasi-compact over $S$, hence of finite presentation over $S$, since $G$ is. Then, by 10.3 and 10.1, there is $i\geq j$ and an open subgroup scheme $H_i$ of $G_i$ such that $H_i\times_{S_i}S=G^0$. The structural morphism $G^0\to S$ is connected, i.e.\ has geometrically connected fibers (VIA 2.1.1), so, by EGA IV$_3$, 9.3.3 and 9.7.7, increasing $i$ if necessary, one may suppose that the structural morphism $H_i\to S$ is connected. Then, by 3.10.1, the underlying space of $H_i$ is precisely $\underline{(G_i)^0}$, and thus $H_i$ represents $(G_i)^0$.
+% typo?: kept as printed: H_i -> S, rather than H_i -> S_i.
+
+\numpara{10.10}\label{VIB.10.10}
+Recall two very useful special cases of the situation stated in 10.0 (cf. EGA IV$_3$, 8.1.2 a) and c)):
+
+a) Given a point $x$ of a scheme $X$, one puts $S_0=\Spec\ZZ$ and considers the decreasing filtered projective system $(S_i)_{i\in I}$ of affine open neighborhoods of $x$; then $S=\Spec\OO_{X,x}$. In particular, if $x$ is the generic point of an integral scheme $X$, one finds $S=\Spec\kappa(x)$.
+
+b) One puts $S_0=\Spec\ZZ$, and considers the family $(\mathscr A_i)_{i\in I}$, preordered by inclusion, of sub-$\ZZ$-algebras of finite type of the ring of an affine scheme $S$. Since the $\mathscr A_i$ are noetherian rings, this allows one in many cases to pass from the noetherian case to the general case.
+
+We shall now give two results concerning the special case considered in a).\nde{Note that the proof also uses case b).}
+
+\begin{proposition}{10.11}\label{VIB.10.11}
+\nde{The statement has been simplified, and the case of subgroups treated separately in Corollary 10.11.1.}
+Let $S$ be an integral scheme with generic point $\eta$, $G$ (resp. $Y$, $Z$) an $S$-group (resp. $S$-schemes) of finite presentation, $u,v,i:Y\to G$ and $j:Z\to G$ morphisms of $S$-schemes. Suppose that $i_\eta:Y_\eta\to G_\eta$ and $j_\eta:Z_\eta\to G_\eta$ are closed immersions.
+
+Then there is a nonempty open subset $S'$ of $S$ such that the morphisms $i':Y'\to G'$ and $j':Z'\to G'$ obtained by base change are closed immersions, and the functors:
+\[
+\uTransp(u',v'),\quad\uTransp_{G'}(i'(Y'),j'(Z'))\quad\text{and}\quad\uTransp^{\mathrm{str}}_{G'}(i'(Y'),j'(Z'))
+\]
+resp.
+\[
+\uCentr(u')\quad\text{and}\quad\uNorm_{G'}i'(Y')
+\]
+are representable by closed sub-$S'$-schemes (resp. sub-$S'$-groups) of $G'$, of finite presentation over $S'$.
+\end{proposition}
+We shall apply the results of 10.1, first in the situation of 10.10 a), then in that of 10.10 b). Since $G_\eta$, $Y_\eta$, $Z_\eta$ are flat over the field $\kappa(\eta)$, $G_\eta$ is separated over $\kappa(\eta)$ (VIA 0.3), and $i_\eta$, $j_\eta$ are closed immersions, then, by 10.1, there is an affine open subset $S'=\Spec(A')$ of $S$, a noetherian subring $A$ of $A'$, $A$-schemes $G_A$, $Y_A$, $Z_A$ flat and of finite presentation over $A$, and morphisms $u_A,v_A,i_A:Y_A\to G_A$ and $j_A:Z_A\to G_A$, such that $G_A$ is an $A$-group, separated over $A$, $i_A$ and $j_A$ are closed immersions, and $G\times_S S'=G_A\otimes A'$, etc. Since the functors considered for $S'$ are obtained by base change from the analogous functors for $\Spec(A)$, it suffices to establish the result for the latter.
+
+By EGA IV$_2$, 6.9.2, replacing $A$ by a localization $A_f$ if necessary (and hence $S'$ by the affine open subset $S'_f$), one may suppose that $G_A$, $Y_A$, $Z_A$ are essentially free over $A$ (in the sense of 6.2.1).\nde{Indeed, since $G_A$ is flat and of finite presentation over $A$, it is covered by affine open subsets $G_1,\ldots,G_n$ such that each $\OO(G_i)$ is a flat $A$-algebra of finite presentation; then, by EGA IV$_2$, 6.9.2, there is $f_i\in A$ such that $\OO(G_i)_{f_i}$ is a free module over $A_{f_i}$; one can then replace $\Spec(A)$ by the affine open subset $D(f)$, where $f=f_1\cdots f_n$, and one does the same for $Y_A$ and $Z_A$.} It then follows from 6.2.4 b) and e) that, under the hypotheses of the statement, the functors considered are representable by closed sub-$A$-schemes of $G_A$ (hence of finite presentation over $A$, since $A$ is noetherian and $G_A$ of finite presentation over $A$), and they are sub-$A$-groups of $G_A$ in the case of $\uCentr(u_A)$ and $\uNorm_{G_A}i_A(Y_A)$.

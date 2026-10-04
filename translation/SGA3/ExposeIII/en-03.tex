@@ -1,0 +1,553 @@
+% Continues remark~0.6.
+Suppose now that \(\omega^{1}_{X_{0}/S_{0}}\) admits a finite presentation
+(\cf\ EGA~\(0_{\mathrm{I}}\), 5.2.5), which will in particular be the case if
+\(X_{0}\) is \emph{locally of finite presentation} over \(S_{0}\)
+(\cf\ EGA~IV\(_4\), 16.4.22). Then, if \(T\) is \emph{flat} over \(S_{0}\), it
+follows from EGA~\(0_{\mathrm{I}}\), 6.7.6 that
+\[
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{T}}
+  \bigl(\omega^{1}_{X_{0}/S_{0}}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T},\,
+  \mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T}\bigr)
+\simeq
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}
+  (\omega^{1}_{X_{0}/S_{0}},\mathcal{J})
+  \otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T},
+\]
+whence
+\[
+\Hom_{S_{0}}(T,L_{0X})
+=
+\Gamma\bigl(T,\,
+  \mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}
+    (\omega^{1}_{X_{0}/S_{0}},\mathcal{J})
+    \otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T}\bigr).
+\]
+Introducing the notation \(\mathbf{W}(\ )\) of~I, 4.6.1, one has therefore proved
+that for every \(S_{0}\)-scheme \(T\) \emph{flat} over \(S_{0}\), one has
+\[
+\Hom_{S_{0}}(T,L_{0X})
+=
+\Hom_{S_{0}}\bigl(T,\,
+  \mathbf{W}\bigl(\mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}
+    (\omega^{1}_{X_{0}/S_{0}},\mathcal{J})\bigr)\bigr).
+\]
+In summary, if \(\omega^{1}_{X_{0}/S_{0}}\) \emph{admits a finite presentation},
+and if one restricts oneself to the category of \(S\)-schemes \emph{flat}
+over~\(S\), one has
+\begin{equation*}
+(0.6.1)\qquad
+L'_{X}
+=
+\prod_{S_{0}/S}
+  \mathbf{W}\bigl(\mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}
+    (\omega^{1}_{X_{0}/S_{0}},\mathcal{J})\bigr),
+\end{equation*}
+and \(\mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}
+(\omega^{1}_{X_{0}/S_{0}},\mathcal{J})\) is a \emph{quasi-coherent}
+\(\mathcal{O}_{S_{0}}\)-module, by EGA~I, 9.1.1.
+
+Let us remark finally that if \(\omega^{1}_{X_{0}/S_{0}}\) is moreover locally
+free (of finite rank), for example if \(X_{0}\) is \emph{smooth} over \(S_{0}\)
+(in which case it is automatically locally of finite presentation over
+\(S_{0}\)), one has
+\begin{equation*}
+(0.6.2)\qquad
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}
+  (\omega^{1}_{X_{0}/S_{0}},\mathcal{J})
+\simeq
+\uLie(X_{0}/S_{0})\otimes_{\mathcal{O}_{S_{0}}}\mathcal{J},
+\end{equation*}
+where one denotes by abuse of language (\(X_{0}\) not necessarily being an
+\(S_{0}\)-group) \(\uLie(X_{0}/S_{0})\) the dual of the
+\(\mathcal{O}_{S_{0}}\)-module \(\omega^{1}_{X_{0}/S_{0}}\).%
+{\renewcommand{\thefootnote}{(23)}\nde{This is justified by~II, 3.3 and~4.11.
+Indeed, the functor \(L^{\varepsilon_{0}}_{X_{0}/S_{0}}\), ``tangent space to
+\(X_{0}\) over \(S_{0}\) at the point \(\varepsilon_{0}\)'', is represented by
+the vector fibration
+\(\mathbf{V}(\varepsilon_{0}^{*}(\Omega^{1}_{X_{0}/S_{0}}))
+=\mathbf{V}(\omega^{1}_{X_{0}/S_{0}})\) over \(S_{0}\), whose sheaf of sections
+is the dual module
+\(\mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}
+(\omega^{1}_{X_{0}/S_{0}},\mathcal{O}_{S_{0}})\);
+the latter is \(\uLie(X_{0}/S_{0})\) when \(X_{0}\) is an \(S_{0}\)-group and
+\(\varepsilon_{0}\) the unit section.}}
+
+Proposition~0.2 (and its proof) has two important corollaries.%
+{\renewcommand{\thefootnote}{(24)}\nde{One has added to~0.7 the
+corollary~0.7.bis, which was used implicitly in the proof of~0.8. Let us
+point out here that the numbers~0.8 to~0.12, as well as~0.17, which play an
+important technical role in the sequel of this expos\'e, are consequences
+of~0.7 and~0.7.bis.}}
+
+\begin{corollary}{0.7}
+\label{III.0.7}
+Let \(X\) be an \(S\)-scheme.
+
+a)~Every \(S\)-endomorphism of \(X\) inducing the identity on \(X_{\mathcal{J}}\)
+is an automorphism.
+
+b)~One has an exact sequence of groups:
+\[
+0 \to
+\Hom_{\mathcal{O}_{X_{0}}}(\Omega^{1}_{X_{0}/S_{0}},\mathcal{J}\mathcal{O}_{X})
+\xrightarrow{i}
+\Aut_{S}(X)
+\to
+\Aut_{S_{\mathcal{J}}}(X_{\mathcal{J}}).
+\]
+
+c)~Moreover, if one lets \(\Aut_{S}(X)\) operate on the first group by
+transport of structure, one has, for all \(u\in\Aut_{S}(X)\) and
+\(m\in\Hom_{\mathcal{O}_{X_{0}}}(\Omega^{1}_{X_{0}/S_{0}},
+\mathcal{J}\mathcal{O}_{X})\):
+\[
+i(um)=u\,i(m)\,u^{-1}.
+\]
+\end{corollary}
+
+\begin{proof}
+By~0.2~(i), \(\Hom_{X^{+}}(X,X)\) is a principal homogeneous set under
+\(\Hom_{X^{+}}(X,L_{X})\), for it is certainly non-empty; indeed, it contains
+a marked point: the identity automorphism of~\(X\).%
+{\renewcommand{\thefootnote}{(25)}\nde{One has set out what follows in
+detail.}}
+Consequently, the map \(m\mapsto m\cdot\mathrm{id}_{X}\) induces a
+\emph{bijection}
+\[
+\Hom_{\mathcal{O}_{X_{0}}}(\Omega^{1}_{X_{0}/S_{0}},\mathcal{J}\mathcal{O}_{X})
+=
+L_{X}(X)
+\isomto
+\Hom_{X^{+}}(X,X).
+\]
+Let \(m\in L_{X}(X)\) and let \(f=m'\cdot\mathrm{id}_{X}\) be an element of
+\(\Hom_{X^{+}}(X,X)\). Applying~0.2~(ii) to~\(f\), one obtains that:
+\[
+f\circ(m\cdot\mathrm{id}_{X})
+=
+L_{f}(X)(m)\cdot f
+=
+L_{f}(X)(m)\cdot(m'\cdot\mathrm{id}_{X}).
+\]
+On the other hand, as \(f\) is an \(X^{+}\)-endomorphism of~\(X\), one has
+\(f_{\mathcal{J}}=\mathrm{id}_{X_{\mathcal{J}}}\) and hence
+\(f_{0}=\mathrm{id}_{X_{0}}\); as \(L_{f}\) depends only on~\(f_{0}\)
+(\cf\ N.D.E.~(17) in~0.1.10), one therefore has \(L_{f}(X)(m)=m\).
+Consequently, the equality above is rewritten:
+\[
+(m'\cdot\mathrm{id}_{X})\circ(m\cdot\mathrm{id}_{X})
+=
+m\cdot(m'\cdot\mathrm{id}_{X})
+=
+(m+m')\cdot\mathrm{id}_{X}.
+\]
+This shows that the bijection \(m\mapsto m\cdot\mathrm{id}_{X}\) transforms
+the group law of \(\Hom_{X^{+}}(X,L_{X})\) into the composition law of the
+\(X^{+}\)-endomorphisms of~\(X\).
+
+It follows first that every element of \(\Hom_{X^{+}}(X,X)\) is invertible,
+which is the first assertion of the statement, and then that one has an exact
+sequence
+\[
+0 \to
+\Hom_{X^{+}}(X,L_{X})
+\xrightarrow{i}
+\Aut_{S}(X)
+\to
+\Aut_{S_{\mathcal{J}}}(X_{\mathcal{J}}),
+\]
+which is the second.
+
+Let us remark now that the morphism~\(i\) defined above is functorial in~\(X\)
+for isomorphisms, for it is defined in structural terms from the operation
+of \(L_{X}\) on~\(X\) over~\(X^{+}\), itself functorial in~\(X\) by
+assertion~(ii) of proposition~0.2.%
+{\renewcommand{\thefootnote}{(26)}\nde{One has set out what follows in
+detail.}}
+Therefore every automorphism~\(u\) of~\(X\) over~\(S\) induces by transport of
+structure isomorphisms
+\[
+h\colon\Hom_{X^{+}}(X,L_{X})\isomto\Hom_{X^{+}}(X,L_{X})
+\]
+and \(f\colon\Aut_{S}(X)\isomto\Aut_{S}(X)\) such that the following diagram is
+commutative:
+\[
+\xymatrix{
+\Hom_{X^{+}}(X,L_{X}) \ar[r]^{i} \ar[d]_{h}
+  & \Aut_{S}(X) \ar[d]_{f} \\
+\Hom_{X^{+}}(X,L_{X}) \ar[r]^{i}
+  & \Aut_{S}(X)
+}
+\]
+\ie such that \(f\circ i=i\circ h\). On the other hand, \(f\) is given by the
+commutative diagram:
+\[
+\xymatrix{
+X \ar[r]^{a} \ar[d]_{u} & X \ar[d]^{u} \\
+X \ar[r]_{f(a)} & X\,,
+}
+\]
+that is, \(f(a)=u\circ a\circ u^{-1}\), for every \(a\in\Aut_{S}(X)\).
+Writing \(i(h(m))=f(i(m))\), one finds the desired formula.
+\end{proof}
+
+\begin{corollary}{0.7.bis}
+\label{III.0.7.bis}
+Let \(X\) be an \(S\)-scheme such that \(X_{\mathcal{J}}\) is an
+\(S_{\mathcal{J}}\)-monoid. Then \(L_{X}\) is equipped with a structure of
+\(S\)-monoid, one has a split exact sequence of \(S\)-monoids:
+\[
+\xymatrix{
+1 \ar[r]
+  & L'_{X} \ar[r]^{i}
+  & L_{X} \ar@<0.5ex>[r]^{p}
+  & X^{+} \ar@<0.5ex>[l]^{s} \ar[r]
+  & 1
+}
+\]
+and the monoid law induced on \(L'_{X}\) coincides with its structure of
+abelian group.
+In particular, if \(X_{\mathcal{J}}\) is an \(S_{\mathcal{J}}\)-group, then
+\(L_{X}\) is an \(S\)-group and is the semidirect product of \(X^{+}\) and
+of~\(L'_{X}\).
+\end{corollary}
+
+\begin{proof}
+Indeed, as \(X_{\mathcal{J}}\) is an \(S_{\mathcal{J}}\)-monoid, then
+\(X^{+}=\prod_{S_{\mathcal{J}}/S}X_{\mathcal{J}}\) is an \(S\)-monoid (indeed,
+one has \(X^{+}(Y)=X_{\mathcal{J}}(Y_{\mathcal{J}})\) for every \(Y\to S\)).
+For every \(S\)-scheme~\(Y\), let us denote by \(\widetilde{Y}_{\mathcal{J}}\)
+the affine \(Y_{\mathcal{J}}\)-scheme corresponding to the quasi-coherent
+\(\mathcal{O}_{Y_{\mathcal{J}}}\)-algebra
+\(\mathcal{O}_{Y_{\mathcal{J}}}\oplus\mathcal{J}\mathcal{O}_{Y}\)
+(\ie the graded algebra associated with the filtration
+\(\mathcal{O}_{Y}\supset\mathcal{J}\mathcal{O}_{Y}\)). Then \(L_{X}(Y)\) is
+identified with \(X_{\mathcal{J}}(\widetilde{Y}_{\mathcal{J}})\) and
+\(L'_{X}(Y)\) with the kernel of the morphism
+\(p\colon X_{\mathcal{J}}(\widetilde{Y}_{\mathcal{J}})
+\to X_{\mathcal{J}}(Y_{\mathcal{J}})\) induced by the ``zero section''
+\(Y_{\mathcal{J}}\to\widetilde{Y}_{\mathcal{J}}\)
+(\ie by the morphism of \(\mathcal{O}_{Y_{\mathcal{J}}}\)-algebras
+\(\mathcal{O}_{\widetilde{Y}_{\mathcal{J}}}\to\mathcal{O}_{Y_{\mathcal{J}}}\)
+vanishing on the ideal \(\mathcal{J}\mathcal{O}_{Y}\)). One therefore has,
+for every \(Y\to S\), a split exact sequence of monoids, functorial in~\(Y\):
+\[
+\xymatrix{
+1 \ar[r]
+  & L'_{X}(Y) \ar[r]^{i}
+  & L_{X}(Y) \ar@<0.5ex>[r]^{p}
+  & X^{+}(Y) \ar@<0.5ex>[l]^{s} \ar[r]
+  & 1\,.
+}
+\]
+
+% typo: que loi -> que la loi
+It remains to see that the monoid law induced on \(L'_{X}\) coincides with
+its structure of abelian group. Let us denote by~\(\mu\) the monoid law
+of~\(L_{X}\) and by~\(e\) its unit section; one must show that for all
+\(m,m'\in L'_{X}(Y)\), one has
+\[
+\mu(m\cdot e,\,m'\cdot e)=(m+m')\cdot e.
+\]
+This can be seen in one or the other of the following ways. On the one hand,
+one can take up again the proof of the equality~(0.1.10~\((\ast)\)) upon
+replacing the morphism \(f\colon X\to W\) which figures there by the morphism
+\(\mu\colon L_{X}\times_{S}L_{X}\to L_{X}\). Identifying
+\(X^{+}(Y)=X_{\mathcal{J}}(Y_{\mathcal{J}})\) with its image by~\(s\) in
+\(L_{X}(Y)=X_{\mathcal{J}}(\widetilde{Y}_{\mathcal{J}})\) one obtains that,
+for all \(g,g'\in X_{\mathcal{J}}(Y_{\mathcal{J}})\) and
+\(m,m'\in L'_{X}(Y)\), one has
+\begin{equation*}
+(\star)\qquad
+\mu(m\cdot g,\,m'\cdot g')
+=
+L_{\mu}^{(g,g')}(m,m')\cdot\mu(g,g'),
+\end{equation*}
+where \(L_{\mu}^{(g,g')}\) denotes the derived morphism of~\(\mu\) at the
+point~\((g,g')\) (\ie \(\widetilde{Y}_{\mathcal{J}}\) lies over
+\(L_{X}\times_{S}L_{X}\) via~\((g,g')\)). In particular, one has
+\(\mu(m\cdot e,\,m'\cdot e)=L_{\mu}^{(e,e)}(m,m')\cdot e\); but
+\(L_{\mu}^{(e,e)}(m,m')=L_{\ell_{e}}(m')+L_{r_{e}}(m)\), where \(\ell_{e}\)
+(\resp \(r_{e}\)) denotes the left translation (\resp the right translation)
+by~\(e\), which is the identity map of~\(X_{\mathcal{J}}\), whence
+\(L_{\mu}^{(e,e)}(m,m')=m+m'\).
+
+Or else, one can proceed as follows (\cf\ the proof of \textbf{[DG70]},
+\S~II.4, Th.~3.5). By lemma~0.1.11, the formation of \(X^{+}\) and of
+\(L_{X}\) ``commutes with the product''
+% typo: il en donc -> il en est donc
+and the same therefore holds for~\(L'_{X}\); it follows that the morphism
+\(\mu'\colon L'_{X}\times L'_{X}\to L'_{X}\), induced by~\(\mu\), is a
+homomorphism for the structure of abelian groups. One then deduces from
+lemma~3.10 of Exp.~II that \(\mu'\) coincides with the abelian group law.
+\end{proof}
+
+\numpara{0.8}%
+{\renewcommand{\thefootnote}{(27)}\nde{One has added here the number~0.8 in
+order to mark the return to the original.}}
+Suppose now that \(X\) is an \(S\)-scheme such that \(X_{\mathcal{J}}\) is an
+\(S_{\mathcal{J}}\)-group. Suppose that there exists an \(S\)-morphism
+\[
+P\colon X\times_{S}X \to X
+\]
+such that the morphism obtained by base change
+\[
+P_{\mathcal{J}}\colon
+  X_{\mathcal{J}}\times_{S_{\mathcal{J}}}X_{\mathcal{J}}
+  \to X_{\mathcal{J}}
+\]
+is the group law of~\(X_{\mathcal{J}}\). (An important particular case of the
+preceding situation will be the case where \(X\) is an \(S\)-group and where
+one takes for~\(P\) its group law.) One deduces from this a morphism
+\[
+L_{P}\colon
+  L_{X}\times_{S}L_{X}
+  \simeq
+  L_{X\times_{S}X}
+  \to
+  L_{X}
+\]
+which, in fact, does not depend on~\(P\), for it is computed by means of the
+group law \(P_{\mathcal{J}}\) of~\(X_{\mathcal{J}}\) as we are going to see
+now.%
+{\renewcommand{\thefootnote}{(28)}\nde{One has set out the original in detail
+in what follows.}}
+Indeed, by~(ii) and~(iii) of~0.2, for every \(Y\to S\) and
+\(x,x'\in X(Y)\), \(m,m'\in L'_{X}(Y)\), one has
+\[
+P(m\cdot x,\,m'\cdot x')
+=
+P\bigl((m,m')\cdot(x,x')\bigr)
+=
+L_{P}^{(x,x')}(m,m')\cdot\mu(g,g')
+\]
+where \(g\) (\resp \(g'\)) is the image of~\(x\) (\resp \(x'\)) in
+\(X^{+}(Y)\). Moreover (\cf\ the proof of~0.10), \(L_{P}^{(x,x')}\) equals
+\(L_{\mu}^{(g,g')}\) and, by~0.7.bis~\((\star)\), the latter is the element
+of \(L'_{X}(Y)\) defined by the following equality in \(L_{X}(Y)\):
+\[
+L_{\mu}^{(g,g')}(m,m')\cdot\mu(g,g')
+=
+\mu(m\cdot g,\,m'\cdot g'),
+\]
+that is, if one denotes by~\(\times\) (instead of~\(\mu\)) the group law
+of~\(L_{X}\) and by~\(\Ad\) ``the adjoint operation'' of~\(X^{+}\) on
+\(L'_{X}\) (which factors through~\(X_{0}\) and which is induced by the
+adjoint operation of~\(X_{0}\) on \(\omega^{1}_{X_{0}/S_{0}}\)), one obtains
+that
+\[
+L_{\mu}^{(g,g')}(m,m')\times g\times g'
+=
+m\times g\times m'\times g'
+=
+\bigl(m\times\Ad(g)(m')\bigr)\times g\times g'
+\]
+whence finally \(L_{P}^{(x,x')}(m,m')=m\times\Ad(g)(m')\). One therefore
+obtains the following:
+
+\begin{proposition}{0.8}
+\label{III.0.8}
+Let \(P\colon X\times_{S}X\to X\) be an \(S\)-morphism such that
+\(P_{\mathcal{J}}\) equips \(X_{\mathcal{J}}\) with a structure of
+\(S_{\mathcal{J}}\)-group. Let us denote by~\(\times\) the group law of
+\(L'_{X}\) and by \((m,x)\mapsto m\cdot x\) the morphism
+\(L'_{X}\times_{S}X\to X\) defining the action of \(L'_{X}\) on~\(X\), and let
+\(\Ad\colon X^{+}\to\Aut_{S\text{-gr.}}(L'_{X})\) be ``the adjoint operation''
+of~\(X^{+}\) on \(L'_{X}\) (which is induced by the adjoint operation of
+\(X_{0}\) on \(\omega^{1}_{X_{0}/S_{0}}\)). Then, for every \(S'\to S\) and
+\(x,x'\in X(S')\), \(m,m'\in L'_{X}(S')\), one has:
+\begin{equation*}
+(0.8.1)\qquad
+P(m\cdot x,\,m'\cdot x')
+=
+\bigl(m\times\Ad\,p_{X}(x)(m')\bigr)\cdot P(x,x').
+\end{equation*}
+\end{proposition}
+
+If \(X\) is an \(S\)-group, one will denote by~\(*\) its law, by~\(e\) its unit
+section, and by~\(i\) the \(S\)-morphism defined by:
+\[
+i(m)=m\cdot e,
+\]
+for every \(S'\to S\) and \(m\in L'_{X}(S')\).
+
+\begin{corollary}{0.9}
+\label{III.0.9}
+Let \(X\) be an \(S\)-group. Then \(X^{+}\) is equipped naturally with a
+structure of \(S\)-group, and \(p_{X}\) is a morphism of \(S\)-groups.
+Moreover, the \(S\)-morphism
+\[
+i\colon L'_{X}\to X,\qquad m\mapsto m\cdot e
+\]
+is an isomorphism of \(S\)-groups of \(L'_{X}\) onto \(\Ker(p_{X})\), and one
+has, for all \(S'\to S\), \(x'\in X(S')\), \(m\in L'_{X}(S')\):
+\begin{equation*}
+(0.9.1)\qquad
+m\cdot x'=(m\cdot e)*x'=i(m)*x'.
+\end{equation*}
+\end{corollary}
+
+The first two assertions have already been proved in~0.1.2. As \(X\) is
+formally principal homogeneous over~\(X^{+}\) under
+\(L_{X}=L'_{X}\times_{S}X^{+}\), the morphism~\(i\) is indeed an isomorphism
+of \(S\)-functors of \(L'_{X}\) onto the kernel of~\(p_{X}\). The fact that
+\(i\) is a morphism of groups and the formula~(0.9.1) result from the
+formula~(0.8.1) applied respectively to \(x=x'=e\), and to \(x=e\), \(m'=1\).
+
+\begin{corollary}{0.10}
+\label{III.0.10}
+Let \(X\) be an \(S\)-group. With the preceding notations, for every \(S'\to S\)
+and all \(x\in X(S')\) and \(m'\in L'_{X}(S')\), one has
+\begin{equation*}
+(0.10.1)\qquad
+x*i(m')*x^{-1}
+=
+i\bigl(\Ad\,p_{X}(x)(m')\bigr).
+\end{equation*}
+\end{corollary}
+
+This results from the equality \(i(m')*x^{-1}=m'\cdot x^{-1}\) and
+from~(0.8.1) applied to \(m=1\) and \(x'=x^{-1}\).
+
+When \(X\) is an \(S\)-group, we have therefore determined explicitly the
+kernel of \(X\to X^{+}\) and the operation of the inner automorphisms of~\(X\)
+on this kernel. We are now going to see that one can do likewise for certain
+\(S\)-functors in groups, not necessarily representable. One case will be
+useful to us, that of the functors \(\Aut\) (I~1.7).
+Let us state at once:
+
+\begin{proposition}{0.11}
+\label{III.0.11}
+Let \(E\) be an \(S\)-scheme. Set \(X=\Aut_{S}(E)\). The kernel of
+the morphism of \(S\)-functors in groups
+\[
+p_{X}\colon X\to X^{+}
+\]
+is identified canonically with the commutative \(S\)-functor in groups
+\(L'_{X}\) defined by
+\[
+\Hom_{S}(Y,L'_{X})
+=
+\Hom_{\mathcal{O}_{E_{0}\times_{S_{0}}Y_{0}}}
+  \bigl(\Omega^{1}_{E_{0}/S_{0}}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}},\,
+  \mathcal{J}\mathcal{O}_{E\times_{S}Y}\bigr),
+\]
+where \(Y\) denotes a variable \(S\)-scheme.
+\end{proposition}
+
+Indeed, if \(Y\) is a variable \(S\)-scheme, one has
+\(\Hom_{S}(Y,X)=\Aut_{Y}(E\times_{S}Y)\), and
+\[
+\Hom_{S}(Y,X^{+})
+=
+\Hom_{S}(Y_{\mathcal{J}},X)
+=
+\Aut_{Y_{\mathcal{J}}}(E\times_{S}Y_{\mathcal{J}})
+=
+\Aut_{Y_{\mathcal{J}}}\bigl((E\times_{S}Y)\times_{Y}Y_{\mathcal{J}}\bigr).
+\]
+By applying~0.7~b) to the \(Y\)-scheme \(E\times_{S}Y\), one obtains an
+isomorphism of groups:
+\[
+\Hom_{S}(Y,L'_{X})
+\simeq
+\Ker\bigl(\Hom_{S}(Y,X)\to\Hom_{S}(Y,X^{+})\bigr),
+\]
+an isomorphism which one easily verifies to be functorial in the \(S\)-scheme
+\(Y\). One therefore obtains an isomorphism of \(S\)-groups
+\[
+L'_{X}\simeq\Ker(X\to X^{+}),
+\]
+which completes the proof of proposition~0.11.
+
+\begin{corollary}{0.12}
+\label{III.0.12}
+{\renewcommand{\thefootnote}{(29)}\nde{\normalfont One has changed ``Remark''
+into ``Corollary''.}}
+One keeps the notations of~0.11: \(E\) is an \(S\)-scheme and
+\(X=\Aut_{S}(E)\). One has a natural operation~\(f\) of~\(X\) on \(L'_{X}\)
+defined in the following manner. For every \(S\)-scheme~\(Y\), one has
+\[
+\Hom_{S}(Y,X)=\Aut_{Y}(E\times_{S}Y)
+\]
+and
+\[
+\Hom_{S}(Y,L'_{X})
+=
+\Hom_{\mathcal{O}_{E_{0}\times_{S_{0}}Y_{0}}}
+  \bigl(\Omega^{1}_{E_{0}\times_{S_{0}}Y_{0}/Y_{0}},\,
+  \mathcal{J}\mathcal{O}_{E\times_{S}Y}\bigr)
+\]
+(N.B.\ \(\Omega^{1}_{E_{0}/S_{0}}\otimes_{S_{0}}\mathcal{O}_{Y_{0}}
+\simeq\Omega^{1}_{E_{0}\times_{S_{0}}Y_{0}/Y_{0}}\),
+\cf\ EGA~IV\(_4\), 16.4.5); the first group operates on the second by
+transport of structure and this operation is indeed functorial in~\(Y\).
+One then has the formula:
+\begin{equation*}
+(0.12.1)\qquad
+x\,i(m)\,x^{-1}=i\bigl(f(x)m\bigr),
+\end{equation*}
+for every \(Y\to S\) and all \(x\in\Hom_{S}(Y,X)\),
+\(m\in\Hom_{S}(Y,L'_{X})\).
+\end{corollary}
+
+Indeed, this results from~0.7~c) applied to the \(Y\)-scheme
+\(E\times_{S}Y\).
+
+\begin{enoncerm}{Recall}{0.13}
+\label{III.0.13}
+The direct image of a quasi-coherent module by a morphism of finite
+presentation is quasi-coherent. Under the same conditions, the formation of
+the direct image commutes with \emph{flat} base change: in the situation
+\[
+\xymatrix@C=3.2em@R=1.6em{
+T \ar[d]_{f}
+  & T'=T\times_{S}S' \ar[l]_{g'} \ar[d]^{f'} \\
+S
+  & S' \ar[l]_{g}\,,
+}
+\]
+if one supposes \(f\) (and hence \(f'\)) of finite presentation and \(g\) (and
+hence \(g'\)) \emph{flat}, one has for every quasi-coherent
+\(\mathcal{O}_{T}\)-module~\(\mathcal{F}\)
+\[
+f_{*}(\mathcal{F})\otimes_{\mathcal{O}_{S}}\mathcal{O}_{S'}
+=
+f'_{*}(\mathcal{F}\otimes_{\mathcal{O}_{S}}\mathcal{O}_{S'}),
+\]
+or, in a more aesthetic manner
+\[
+g^{*}(f_{*}(\mathcal{F}))=f'_{*}(g'^{*}(\mathcal{F})).
+\]
+These two facts are more generally valid for a morphism~\(f\) quasi-compact
+and quasi-separated, \cf\ EGA~I, 9.2.1 and EGA~III\(_1\), 1.4.15 in the
+quasi-compact separated case (taking into account EGA~III\(_2\),
+Err\(_{\mathrm{III}}\)~25) and EGA~IV\(_1\), 1.7.4 and~1.7.21.
+\end{enoncerm}
+
+\begin{remark}{0.14}
+\label{III.0.14}
+{\renewcommand{\thefootnote}{(30)}\nde{One has set out the first part of this
+remark in detail, and one has added a second part.}}
+Let us take up again the notations of~0.11: let \(E\) be an \(S\)-scheme,
+\(X=\Aut_{S}(E)\) and \(L'_{X}\) the commutative \(S\)-functor in groups defined
+by:
+\begin{align*}
+L'_{X}(Y)
+&=
+\Hom_{\mathcal{O}_{E_{0}\times_{S_{0}}Y_{0}}}
+  \bigl(\Omega^{1}_{E_{0}/S_{0}}
+    \otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}},\,
+  \mathcal{J}\mathcal{O}_{E\times_{S}Y}\bigr) \\
+&=
+\Hom_{\mathcal{O}_{E\times_{S}Y}}
+  \bigl(\Omega^{1}_{E/S}\otimes_{\mathcal{O}_{S}}\mathcal{O}_{Y},\,
+  \mathcal{J}\mathcal{O}_{E\times_{S}Y}\bigr) \\
+&=
+\Gamma\bigl(E\times_{S}Y,\,
+  \mathcal{H}\mathrm{om}_{\mathcal{O}_{E\times_{S}Y}}
+    \bigl(\Omega^{1}_{E/S}\otimes_{\mathcal{O}_{S}}\mathcal{O}_{Y},\,
+    \mathcal{J}\mathcal{O}_{E\times_{S}Y}\bigr)\bigr).
+\end{align*}
+\end{remark}
+% Remark~0.14 continues on the next page.

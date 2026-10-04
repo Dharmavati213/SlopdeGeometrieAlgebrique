@@ -1,0 +1,121 @@
+% PDF pp. 13--18; continuation of proof of 4.4.
+We shall henceforth restrict to those $A''$ which are localizations of $A$-subalgebras of finite type $A''_1$ of $A'$ at $\goth m'\cap A''_1$ (where $\goth m'$ is the maximal ideal of $A'$), so that the homomorphisms $A\to A''\to A'$ are local. Note that these $A''$ form an increasing filtering family of subalgebras whose union is $A'$, so their inductive limit is also $A'$. One therefore has similarly $B'=\varinjlim_{A''}B\otimes_A A''$. Thus there exists an $A''$ and an element $g''\in B''=B\otimes_A A''$ whose image in $B'$ is $g'$.
+
+\nde{The following sentence has been added, and the original expanded in what follows.} By lemma 4.5 below, the property that the family of fibers $(Z^i_s)_{i\in I}$ is schematically dense in $X_s$ is preserved by every base change $S''\to S$; consequently, since each $S''$ is locally noetherian, if one replaces $S$ by a suitable $S''$ and $X,Z^i$ by $X'',Z^{i''}$, the hypotheses of 4.4 will be preserved.
+
+Thus, replacing $S$ by $S''$ (and $X,Z^i$ by $X'',Z^{i''}$) if necessary, one may suppose that $g'$ comes from $g\in B$. Replacing $X$ by the open subset $X_g=U$ if necessary, one may therefore suppose that $U'=X'$. One sees similarly that one may suppose that $f'$ comes from a section $f$ of $\OX$ over $X$.
+
+Let $Y=\mathcal V(f)$ be the subscheme of $X$ defined by $f$, and $Y^i=Z^i\times_X Y$ its intersection with $Z^i$, which is a closed subscheme of $Z^i$, equal to $\mathcal V(f^i)$, where $f^i$ is the section of $\OO_{Z^i}$ induced by $f$. Denoting by $Y',Y^{i'}$ the $S'$-schemes deduced from the preceding ones by base change, one shall still have
+\[
+Y'=\mathcal V(f'),\qquad Y^{i'}=Z^{i'}\times_{X'}Y'=\mathcal V(f^{i'}),
+\]
+and one has the analogous relations for $Y'',Y^{i''}$. The hypothesis that $f'$ vanishes on the $Z^{i'}$ is expressed by the relations $Y^{i'}=Z^{i'}$ for every $i$.\nde{The original added: ``at least at every point $x'$ of $X'$ over $s'$'', but this restriction seems unnecessary.}
+
+Let $\goth m$ be the maximal ideal of $A$. For every integer $n\geq0$, introduce the subscheme $S_n=\Spec(A/\goth m^{n+1})$ of $S$ and the schemes $X_n,Y_n,Z^i_n,Y^i_n$ deduced from $X,Y,Z^i,Y^i$ by the base change $S_n\to S$. In general, for every $S$-prescheme $P$, one shall put $P_n=P\times_S S_n$.
+
+For every $n$ and $i\in I$, consider the functor
+\[
+F^i_n=\prod_{Z^i_n/S_n}Y^i_n/Z^i_n:\Sch_{/S_n}^{\circ}\to\Ens
+\]
+defined by (cf. VIII, 6.4): for every $P$ over $S_n$,
+\[
+F^i_n(P)=\Gamma((Y^i_n)_P/(Z^i_n)_P)=
+\begin{cases}\varnothing&\text{if }(Y^i_n)_P\ne(Z^i_n)_P;\\\{\mathrm{id}\}&\text{if }(Y^i_n)_P=(Z^i_n)_P.\end{cases}
+\]
+Since $S_n$ is local artinian and $Z^i_n$ flat, hence essentially free over $S_n$, by VIII, 6.4, each $F^i_n$ is representable by a closed subprescheme $T^i_n$ of $S_n$.
+
+\nde{The original has been expanded and corrected to show that the projective limit of the rings $\OO(T^i_n)$ defines a closed formal subscheme of the formal scheme $\Spf(\widehat A)$.} The completion $\widehat A$ of the local ring $A$ is noetherian since $A$ is so, and it is the projective limit of the $A_n$. Denote by $K^i_n$ the ideal of $A_n=A/\goth m^{n+1}$ defining $T^i_n$, and by $K^i$ the projective limit of the $K^i_n$; it is an ideal of $\widehat A$.
+
+For fixed $i$, $m\geq n$, and every $S_n$-prescheme $P$, one has
+\[
+(Y^i_n)_P=Y^i\times_S S_n\times_{S_n}P=Y^i\times_S P=(Y^i_m)_P,
+\]
+and similarly $(Z^i_n)_P=(Z^i_m)_P$; it follows that $F^i_n$ is the restriction $F^i_m\times_{S_m}S_n$ of $F^i_m$ to $\Sch_{/S_n}$, whence $T^i_n=T^i_m\times_{S_m}S_n$. One therefore has a commutative diagram with exact rows:
+\[
+\xymatrix{0\ar[r]&K^i_m\ar[r]\ar@{->>}[d]&A_m\ar[r]\ar@{->>}[d]&\OO(T^i_m)\ar[r]\ar@{->>}[d]&0\\0\ar[r]&K^i_n\ar[r]&A_n\ar[r]&\OO(T^i_n)\ar[r]&0}
+\]
+where all the vertical arrows are surjective. This has the following consequences: on the one hand, the projective system $(K^i_n)_{n\in\NN}$ satisfies the Mittag-Leffler condition, and hence the projective limit of the $\OO(T^i_n)$ is identified with the topological quotient ring $\widehat A/K^i$ (cf. EGA $0_{\mathrm{III}}$, \S13.2). On the other hand, the map $K^i\to K^i_n$ is surjective (cf. [BEns], III, \S7.4, Prop. 5), whence it follows that $K^i_n\simeq(K^i+\goth m^{n+1}\widehat A)/\goth m^{n+1}\widehat A$ and $\OO(T^i_n)\simeq(\widehat A/K)\otimes_A(A/\goth m^{n+1})$.
+% typo?: K without superscript i in the last equality retained as printed.
+In other words, $(T^i_n)_n$ is an inductive system of artinian affine schemes, and the inductive limit $T^i=\varinjlim_n T^i_n$ is a closed formal subscheme of the formal scheme $\widehat S=\Spf(\widehat A)$ (cf. EGA I, \S10), whose reduction modulo $\goth m^{n+1}$ is $T^i_n$.
+
+Let $T$ be the closed formal subscheme of $\widehat S$ which is the intersection of the $T^i$, i.e. defined by $K=\sum_i K^i$. Since $\widehat A$ is noetherian, there exists a finite subset $J$ of $I$ such that one has $K=\sum_{i\in J}K^i$ (i.e. $T=\bigcap_{i\in J}T^i$). Let us then note that for every $n$ one has $K_n=\sum_{i\in J}K^i_n$, where $K_n$ denotes the image of $K$ in $A_n$.
+
+Recall that $f^i$ denotes the image of $f\in B=\OO(X)$ in $\OO(Z^i)$, and $f^{i'}$ its image in $\OO(Z_n^{i'})=\OO(Z^i)\otimes_A A'$; the hypothesis $Y^{i'}=Z^{i'}$ is equivalent to the vanishing of $f^{i'}$. As $\OO(Z^i)\otimes_A A'$ is the inductive limit of the subalgebras $\OO(Z^i)\otimes_A A''$ (where $A''$ satisfies the conditions made explicit above), there therefore exists an $A''$ such that $Y^{i''}=Z^{i''}$. A priori, $A''$ depends on $i$, but one can find an $A''$ which works for all $i\in J$, since $J$ is finite. Put $S''=\Spec(A'')$ and $S''_{(n)}=S''\times_S S_n$.\nde{The original has been expanded and corrected, distinguishing $S''_{(n)}$ from the subscheme $S''_n=S''_n(s'')$ introduced below.}
+
+Since $Y^{i''}\times_{S''}S''_{(n)}=(Y^i_n)_{S''_{(n)}}$ equals $Z^{i''}\times_{S''}S''_{(n)}=(Z^i_n)_{S''_{(n)}}$ for every $i\in J$, it follows from the definition of the $T^i_n$ that $S''_{(n)}\to S_n$ factors through $T^i_n$ for every $i\in J$, and hence also through $T_n=\bigcap_{i\in J}T^i_n$, and hence also through $T^i_n$ for every $i\in I$. Denoting by $f''$ the image of $f$ in $B''=B\otimes_A A''$, and by $f''_{(n)}$ its image in $B''_{(n)}=B''/\goth m^{n+1}B''$, this means that for every $n$, $f''_{(n)}$ vanishes on the $Z^i\times_S S''_{(n)}$.
+
+Since the morphisms $A\to A''\to A'$ are local, the image $s''$ of $s'$ in $S''$ is the closed point of $S''$, corresponding to the maximal ideal $\goth m''$ of $B''$, and the image of $s''$ in $S$ is $s$. Fix $n$ and now denote by $S''_n$ the $n$-th infinitesimal neighborhood of $s''$ in $S''$, i.e. $\Spec(A''/\goth m''^{n+1})$. Put $B''_n=B''/\goth m''^{n+1}B''$ and $Z_n^{i''}=Z^i\times_S S''_n=\Spec(B''_n)$. Then the image $f''_n$ of $f''_{(n)}$ in $B''_n$ vanishes on $Z_n^{i''}$ for every $i$. Now, by lemma 4.5 below, the family of fibers
+\[
+Z^{i''}_0=Z_n^{i''}\times_{S''_n}\kappa(s'')=Z^i_s\times_{\kappa(s)}\kappa(s'')
+\]
+is schematically dense in the fiber $X''_0=X''_n\times_{S''_n}\kappa(s'')=X_s\times_{\kappa(s)}\kappa(s'')$. Thus $S''_n,X''_n,(Z_n^{i''})_{i\in I}$, and $S''_0=\Spec\kappa(s'')$ satisfy the hypotheses of lemma 4.2; it therefore follows that $f''_n=0$, i.e. $f''\in\goth m''^{n+1}B''$, for every $n$.
+% typo?: maximal ideal of B'' and equality Z_n^{i''}=Spec(B''_n) retained as printed.
+Since $B$ is noetherian and $B''=B\otimes_A A''$ is a localization of a $B$-algebra of finite type, $B''$ is noetherian, and hence its local rings are separated for their usual topology. It follows that $f''$ is zero at the points $x''$ of $X''$ such that $\goth m''B''$ is contained in the maximal ideal of $\OO_{X'',x''}$, i.e. at the points of $X''$ over $s''$. A fortiori, $f'$ is zero at the points $x'$ of $X'$ over $s'$.
+\end{proof}
+\begin{lemma}{4.5.0}\label{IX.4.5.0}
+\nde{This lemma has been inserted here; it is used in the proof of 4.5 and 4.7.} Let $X$ be an $S$-prescheme, $(Z^i)_{i\in I}$ a family of subpreschemes of $X$, and $S'\to S$ a faithfully flat morphism. If the family $(Z^{i'})_{i\in I}$ is schematically dense in $X'$, then $(Z^i)_{i\in I}$ is schematically dense in $X$.
+\end{lemma}
+This follows from EGA IV$_3$, 11.10.5 (i) and 11.9.10 (i). It remains to set out the proof of the
+\begin{lemma}{4.5}\label{IX.4.5}
+Let $X$ be a locally noetherian\nde{This hypothesis is in fact superfluous, cf. EGA IV$_3$, 11.10.6 and 11.9.13.} prescheme over a field $k$, $(Z^i)_{i\in I}$ a family of subpreschemes of $X$, $k'$ an extension of $k$, $X'$ and $Z^{i'}$ the preschemes deduced from $X$ and $Z^i$ by the base change $k'/k$. For $(Z^i)_{i\in I}$ to be schematically dense in $X$, it is necessary and sufficient that $(Z^{i'})_{i\in I}$ be so in $X'$.
+\end{lemma}
+The ``sufficient'' part follows from 4.5.0; let us prove the ``necessary'' part.\nde{The original has been expanded in what follows.} First one may suppose $X=\Spec(B)$ affine. For every $i$, let $(Z^{ij})_{j\in J_i}$ be a covering of $Z^i$ by affine open subsets; replacing $(Z^i)_{i\in I}$ by the family $(Z^{ij})_{(i,j)\in J}$, where $J=\coprod_{i\in I}J_i$, one may also suppose the $Z^i$ affine.
+
+Let $g\in B'=B\otimes_k k'$ and $t'\in B'_g$ be a section of $\OO_{X'}$ on the affine open subset $U'=X'_g$, zero on the $Z^{i'}\cap U'$, i.e. whose image in each $(\OO(Z^i)\otimes_k k')_g$ is zero. There exists a $k$-subalgebra of finite type $A$ of $k'$ such that $g\in B_A=B\otimes_k A$ and $t'\in(B_A)_g$. Since the map $\OO(Z^i)\otimes_k A\to\OO(Z^i)\otimes_k k'$ is injective, the same is true of the map
+\[
+(\OO(Z^i)\otimes_k A)_g\to(\OO(Z^i)\otimes_k k')_g;
+\]
+in view of the hypothesis, this implies that the image of $t'$ in each $(\OO(Z^i)\otimes_k A)_g$ is zero. This reduces us to showing that the family $(Z^i_A)_{i\in I}$ is schematically dense in $X_A$,\nde{The original continued: ``Using 4.3 for the $X_{A'}$, where $A'$ is a quotient of $A$ by a power of a maximal ideal, and Hilbert's Nullstellensatz, one is reduced to the case where $k'$ is a finite extension of $k$''. One could expand this reduction and proceed along these lines, since the case of a finite extension $k'/k$ is somewhat simpler than the more general case treated in EGA IV$_3$, 11.9.10 b).} which follows from EGA IV$_3$, 11.9.10 b).
+
+Let us note in passing the following result, which will serve in a later expos\'e:\nde{Specify this\dots}
+\begin{corollary}{4.6}\label{IX.4.6}
+Let $X$ be a flat $S$-prescheme, $U$ an open subset of $X$. Suppose that for every $s\in S$, $U_s$ is schematically dense in $X_s$, and that $X$ is locally noetherian, or locally of finite presentation over $S$. Then $U$ is schematically dense in $X$.
+\end{corollary}
+Suppose for simplicity $U$ retrocompact in $X$ (cf. EGA IV$_3$, 11.10.10 and 11.9.17 for the general case). The case of $X$ locally noetherian is mentioned only for the record; it is contained in 4.3.
+
+In the second case considered, one may evidently suppose $S$ and $X$ affine, so $X$ and $U$ are of finite presentation over $S=\Spec(A)$. The ring $A$ is the inductive limit of its $\ZZ$-subalgebras $A_i$ of finite type. The ``patented procedure'' already used (cf. EGA IV$_3$, 8.8.2 and 8.10.5 (iii)) shows that there exists an $i$, an affine scheme $X_i$ over $S_i=\Spec(A_i)$, and an open subset $U_i$ in $X_i$, from which $X,U$ are deduced by base change $S\to S_i$. Let $E_i$ be the subset of $S_i$ consisting of the $s\in S_i$ such that $(U_i)_s$ is schematically dense in $(X_i)_s$.
+
+\nde{The original has been expanded in what follows.} By EGA IV$_2$, 5.9.9 and 5.10.2, $E_i$ is the set of $s\in S_i$ such that $(U_i)_s$ contains the set $\Ass\OO_{(X_i)_s}$ of points ``associated'' with the structure sheaf of $(X_i)_s$, and by EGA IV$_3$, 11.9.17.1 this condition is of constructible nature, i.e. $E_i$ is a constructible subset of $S_i$.
+
+\footnotemark[\value{footnote}] By 4.5, the inverse image of $E_i$ by $S_j\to S_i$ (resp. by $S\to S_i$) is $E_j$ (resp. the set $E$ of $s\in S$ such that $U_s$ is schematically dense in $X_s$). Moreover, by hypothesis $E=S$, which is also the inverse image by each $S\to S_i$ of $S_i$. By EGA IV$_3$, 8.3.11, this implies that there exists a $j\geq i$ such that $E_j=S_j$, i.e. such that for every $s\in S_j$, $(U_j)_s$ is schematically dense in $(X_j)_s$.
+
+Then, by 4.4 applied to $(S_j,X_j,U_j)$ and to the base change $S\to S_j$, it follows that $U$ is schematically dense in $X$. One will note moreover that here one uses 4.4 only in the case of a family whose index set is finite (in fact reduced to one element), in which case the proof of 4.4 simplifies considerably, as the reader will verify for himself.
+\begin{theorem}{4.7}\label{IX.4.7}
+Let $S$ be a prescheme, $G$ a group of multiplicative type and of finite type over $S$. For every integer $n>0$, let ${}_nG$ be the kernel of $n\cdot\mathrm{id}_G$. Then the family of subpreschemes $({}_nG)_{n>0}$ of $G$ is schematically dense (def. 4.1).
+\end{theorem}
+We distinguish two cases.
+
+a) Case of $S$ locally noetherian. Then by 4.3 one is reduced to the case where $S$ is the spectrum of a field $k$. By 4.5.0, one may suppose $k$ algebraically closed and $G$ diagonalizable, i.e. of the form $D_k(M)$, where $M$ is a commutative group of finite type. Then $M$ is of the form $\Gamma\times\ZZ^r$, with $\Gamma$ finite, so $G$ is of the form $G_1\times G_2$, with $G_1=D(\Gamma)$ and $G_2=\Gm^r$, and for $n$ multiplicatively large (namely $n$ a multiple of the order of $\Gamma$) one shall have ${}_nG=G_1\times{}_nG_2$ since one shall have ${}_nG_1=G_1$.
+% typo: "aucas" -> "to the case".
+Applying 4.3 again to the projection $G\to G_1$, one is reduced to the case of $G_2$, i.e. to the case where $G=\Gm^r$. As $G$ is then reduced, it amounts to the same thing to say that $({}_nG)_{n>0}$ is schematically dense in $G$ or that the union of the ${}_nG$ is dense in $G$ for the usual topology. Since ${}_nG=({}_n\Gm)^r$, one is reduced to the case of $G=\Gm$, hence $G$ irreducible of dimension 1. Then this follows from the fact that the union of the ${}_nG$ (equal to the set of roots of unity in $k$) is infinite.
+
+b) General case. For every point $s$ of $S$, there exists an open neighborhood $U$ of $s$ and a faithfully flat quasi-compact morphism $S'\to U$ such that $G'=G_{S'}$ is diagonalizable, i.e. of the form $D_{S'}(M)$. By 4.5.0 again, one may reduce to the case of $G'$, so one may suppose $G$ diagonalizable, hence it comes from the absolute group $H=D_{\ZZ}(M)$ over $\Spec(\ZZ)$ by base change $S\to\Spec(\ZZ)$. By the proof of a), for every $s\in\Spec(\ZZ)$ the family $({}_nH_s)_{n>0}$ is schematically dense in $H$; it now suffices to apply 4.4.\nde{This result will be needed in X 4.3 for $S$ not locally noetherian (namely $S=\Spec(\widehat A\otimes_A\widehat A)$, where $\widehat A$ is the completion of the noetherian local ring $A$).}
+% typo?: H rather than H_s retained as printed.
+\begin{corollary}{4.8}\label{IX.4.8}
+a) Let $u,v:H\to G$ be two homomorphisms of $S$-group preschemes, with $H$ of multiplicative type\nde{``Diagonalizable'' has been replaced by ``of multiplicative type''.} and of finite type, and suppose that for every integer $n>0$ the restrictions of $u$ and $v$ to ${}_nH$ are identical. Then $u=v$.
+
+b) Let $H_1,H_2$ be two subgroups of multiplicative type and of finite type of a group prescheme $G$, and suppose that for every integer $n>0$ one has ${}_nH_1={}_nH_2$; then $H_1=H_2$.
+\end{corollary}
+The first assertion follows from the second by considering the subgroups $H_1$ and $H_2$ of $H\times G$, graphs of $u$ and $v$. To prove b), let $H=H_1\cap H_2$; it is a subgroup prescheme of $H_i$ ($i=1,2$), and one must show that it is identical to $H_i$; now the hypothesis means that it contains the ${}_nH_i$. One is therefore reduced to proving the
+\begin{corollary}{4.9}\label{IX.4.9}
+Let $G$ be an $S$-group of multiplicative type and of finite type, and $H$ a subgroup prescheme containing the ${}_nG$, $n>0$. Then $H=G$.
+\end{corollary}
+By 4.7 one is reduced to proving that the subprescheme $H$ is closed, or again that it equals $G$ set-theoretically. This reduces us to the case where $S$ is the spectrum of a field, but then every subgroup prescheme of $G$ is closed (VI$_{\mathrm B}$ 1.4.2), whence the conclusion.
+\begin{remark}{4.10}\label{IX.4.10}
+Under the conditions of 4.7, let $m$ be an integer $>0$ with the following properties: for every $s\in S$, $m$ is not a power of the characteristic of $\kappa(s)$, and if $G_s$ is of type $M$, the prime divisors of the torsion of $M$ divide $m$. (N.B. this second condition is always satisfied if $G$ is a torus.) Then the proof given shows that in the statement of 4.7 and corollaries 4.8 and 4.9 one may restrict to considering the subgroups of the form ${}_{(m^r)}G$, with $r>0$.
+
+Moreover, one sees immediately that when $G$ is smooth over $S$, for every point $s\in S$ there exists an open neighborhood $U$ of $s$ and an integer $m>0$ prime to all the residue characteristics of $U$, and satisfying the preceding conditions for $G_U$. (Take, for example, for $m$ the order of the torsion of the type of $G$ at $s$, cf. 1.4.1 a) and 2.1 e).) Under these conditions one finds ${}_{(m^r)}G$ which are finite and étale over $S$, and whose family is schematically dense, provided one restricts over $U$. This remark allows one in certain cases (in particular those involving theorems 3.2 and 3.2 bis, cf. XI 6, but not those involving theorems 3.6 and 3.6 bis) to dispense with theorem 3.1, which involves Hochschild cohomology.
+\end{remark}
+
+\sgasection{5}{Central homomorphisms of groups of multiplicative type}
+\begin{lemma}{5.0}\label{IX.5.0}
+\nde{This lemma has been made explicit; it is used several times in what follows (implicitly in the original).} Let $(A,\goth m)$ be a noetherian local ring, $S=\Spec(A)$, and $H$ a finite scheme over $S$, hence $H=\Spec(B)$, where $B$ is finite over $A$. Let $K$ be a subscheme of $H$ such that by reduction modulo $\goth m^{n+1}$ one has $K_n=H_n$ for every $n$. Then $K=H$.
+\end{lemma}
+Let $s$ be the closed point of $S$. Let us first note that $K$ is a closed subscheme of $H$. Indeed, it is a priori a closed subscheme of an open subset $U$ of $H$. But $K$, and hence $U$, contains the fiber $K_s=H_s$; since the morphism $H\to S$ is finite, hence closed, it follows that the complement of $U$ is empty, i.e. $U=H$. Thus $K$ is defined by an ideal $I$ of $B$. The hypothesis implies that $I$ is contained in $\goth m^nB$ for every $n$; since $B$ is a finite $A$-module, it is separated for the $\goth m$-adic topology, whence $I=0$.
+\begin{theorem}{5.1}\label{IX.5.1}
+Let $u,v:H\to G$ be two homomorphisms of $S$-group preschemes, with $H$ of multiplicative type and of finite type, and $S$ locally noetherian or $G$ of finite presentation over $S$. Let $s\in S$ be such that $u_s=v_s$, and suppose $u_s$ central. Then there exists an open neighborhood $U$ of $s$ such that $u_U=v_U$.
+\end{theorem}
+Let us distinguish the two cases:
+
+a) $S$ locally noetherian.\nde{The original has been expanded in what follows.} Let $K=\Ker(u,v)$ be the inverse image of the diagonal of $G\times_S G$ by the morphism $(u,v)$; it is a subgroup prescheme of $H$. We want to find $U$ such that $K_U=H_U$. Note that, as $S$ is locally noetherian and $H$ of finite type over $S$, $H$ is locally noetherian, so the immersion $K\hookrightarrow H$ is of finite type (cf. EGA I, 6.3.5).
+% Last sentence begun on PDF p. 18 completed on p. 19; proof continues in en-04.tex.

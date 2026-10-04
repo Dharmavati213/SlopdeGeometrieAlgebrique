@@ -1,0 +1,238 @@
+\sgasection{5}{Examples of elementary systems, applications}
+\label{XX.sec.5}
+\numpara{5.1} Let $S$ be a scheme, $\mathcal L$ an invertible $\OS$-module. Consider the group $G_{\mathcal L}$ over $S$ defined by
+\[
+G_{\mathcal L}(S')=\left\{\begin{pmatrix}a&b\\c&d\end{pmatrix}\ \middle|\
+\begin{gathered}a,d\in\Ga(S'),\quad b\in\mathrm W(\mathcal L)(S'),\\
+c\in\mathrm W(\mathcal L^{-1})(S'),\quad ad-bc\in\Gm(S')\end{gathered}\right\},
+\]
+equipped with the usual matrix multiplication law. It is locally isomorphic to $\GL_{2,S}$. It is therefore a group $S$-scheme, affine and smooth over $S$, with connected fibers.
+
+\begin{remark*}
+Let $\mathcal L'$ and $\mathcal L''$ be two invertible sheaves on $S$ such that $\mathcal L=\mathcal L'\otimes\mathcal L''^{-1}$.{\renewcommand{\thefootnote}{(31)}\nde{$\mathcal L''\otimes\mathcal L'^{-1}$ has been corrected to $\mathcal L'\otimes\mathcal L''^{-1}$, and the following sentence has been expanded.}} Then one has an isomorphism of $S$-groups:
+\[
+G_{\mathcal L}\isomto\GL(\mathcal L'\oplus\mathcal L'')
+\]
+defined as follows: if $x$ (resp. $y$) is a section of $\mathcal L'$ (resp. $\mathcal L''$) over an open subset $V$ of $S$, one has
+\[
+\begin{pmatrix}a&b\\c&d\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}ax+by\\cx+dy\end{pmatrix}.
+\]
+\end{remark*}
+
+\numpara{5.2} One denotes by $S_{\mathcal L}$ the closed subgroup of $G_{\mathcal L}$ defined by $ad-bc=1$. It is also a group $S$-scheme, affine and smooth over $S$, with connected fibers (isomorphic to $\SL(\mathcal L'\oplus\mathcal L'')$ by the preceding isomorphism).
+
+Similarly, consider the morphism $\mathbf G_{\mathrm m,S}\to G_{\mathcal L}$ defined by $z\mto\left(\begin{smallmatrix}z&0\\0&z\end{smallmatrix}\right)$. It is a central monomorphism; passing to the quotient, one deduces a group $P_{\mathcal L}$, smooth and affine over $S$, with connected fibers (cf. Exp.~VIII 5.7).
+
+One can see that, passing to the quotient from the isomorphism of the preceding remark, $P_{\mathcal L}$ is identified with the group of automorphisms of the projective bundle $\mathbf P(\mathcal L'\oplus\mathcal L'')$ (cf. EGA, II 4.2.7). One denotes by $i$ and $p$ the canonical morphisms
+\[
+\xymatrix{S_{\mathcal L}\ar[r]^i&G_{\mathcal L}\ar[r]^p&P_{\mathcal L};}
+\]
+$i$ is a closed immersion, $p$ is faithfully flat and affine.
+
+\numpara{5.3} Consider the morphisms of groups
+\[
+\begin{aligned}
+t_G:\mathbf G_{\mathrm m,S}^2\to G_{\mathcal L},&\qquad t_G(z,z')=\begin{pmatrix}z&0\\0&z'\end{pmatrix};\\
+t_S:\mathbf G_{\mathrm m,S}\to S_{\mathcal L},&\qquad t_S(z)=\begin{pmatrix}z&0\\0&z^{-1}\end{pmatrix};\\
+t_P:\mathbf G_{\mathrm m,S}\to P_{\mathcal L},&\qquad t_P(z)=p(t_G(z,1)).
+\end{aligned}
+\]
+These are monomorphisms of groups defining in each group a (split) torus of relative codimension~2. For every $s\in S$, let
+\[
+X\in\Gamma(\overline{s},\mathcal L\otimes\overline{s})^\times;
+\]
+then the section $\left(\begin{smallmatrix}0&X\\X^{-1}&0\end{smallmatrix}\right)$ of $G_{\mathcal L,\overline{s}}$ normalizes $t_G(\mathbf G_{\mathrm m,\overline{s}}^2)$ and does not centralize it; one then concludes from Exp.~XIX 1.6 that $G_{\mathcal L}$ is \emph{reductive}, of \emph{semisimple rank}~1, with \emph{maximal torus} $t_G(\mathbf G_{\mathrm m,S}^2)$.
+
+One reasons similarly for $S_{\mathcal L}$ and $P_{\mathcal L}$, and sees that $S_{\mathcal L}$ (resp. $P_{\mathcal L}$) is reductive, of semisimple rank~1, with maximal torus $t_S(\mathbf G_{\mathrm m,S})$ (resp. $t_P(\mathbf G_{\mathrm m,S})$).
+
+\numpara{5.4} Reasoning as usual, one immediately determines the Lie algebra of these various groups and the adjoint action of the chosen maximal torus. Let us do so for $G_{\mathcal L}$; this is immediate by Exp.~II 4.8: $\mathcal{L}\!ie(G_{\mathcal L}/S)$ is the Lie algebra of the matrices below:
+\[
+\mathcal{L}\!ie(G_{\mathcal L}/S)=\left\{\begin{pmatrix}a&b\\c&d\end{pmatrix}\ \middle|\
+\begin{gathered}a\text{ and }d\text{ sections of }\OS,\ b\text{ a section of }\mathcal L,\\c\text{ a section of }\mathcal L^{-1}\end{gathered}\right\}
+\]
+with the usual bracket; one has
+\[
+\Ad(t_G(z,z'))\begin{pmatrix}a&b\\c&d\end{pmatrix}=\begin{pmatrix}a&zz'^{-1}b\\z'z^{-1}c&d\end{pmatrix}.
+\]
+Put $\mathcal{L}\!ie(G_{\mathcal L}/S)=\mathfrak g$. Let $\alpha_G:t_G(\mathbf G_{\mathrm m,S}^2)\to\mathbf G_{\mathrm m,S}$ be the character defined by
+\[
+\alpha_G(t_G(z,z'))=zz'^{-1}.
+\]
+One sees at once from the preceding relation that $\alpha_G$ is a root of $G_{\mathcal L}$ with respect to $t_G(\mathbf G_{\mathrm m,S}^2)$, and that the morphism
+\[
+u:\mathcal L\to\mathfrak g\qquad\text{(resp. }u_-:\mathcal L^{-1}\to\mathfrak g\text{)}
+\]
+defined by $u(X)=\left(\begin{smallmatrix}0&X\\0&0\end{smallmatrix}\right)$ (resp. $u_-(X)=\left(\begin{smallmatrix}0&0\\X&0\end{smallmatrix}\right)$) is an isomorphism from $\mathcal L$ onto $\mathfrak g^{\alpha_G}$ (resp. from $\mathcal L^{-1}$ onto $\mathfrak g^{-\alpha_G}$).
+
+One has therefore proved that $(G,t_G(\mathbf G_{\mathrm m,S}^2),\alpha_G)$ is an elementary $S$-system.
+% typo?: G without subscript L in this triple kept as printed.
+
+Putting similarly
+\[
+\alpha_S(t_S(z))=z^2,\qquad\alpha_P(t_P(z))=z,
+\]
+one proves that $(S_{\mathcal L},t_S(\mathbf G_{\mathrm m,S}),\alpha_S)$ and $(P_{\mathcal L},t_P(\mathbf G_{\mathrm m,S}),\alpha_P)$ are elementary systems, and defines isomorphisms of $\mathcal L$ (resp. $\mathcal L^{-1}$) with the corresponding direct summands of the Lie algebras of $S_{\mathcal L}$ and $P_{\mathcal L}$.
+
+\numpara{5.5} Put $\exp\left(\begin{smallmatrix}0&X\\0&0\end{smallmatrix}\right)=\left(\begin{smallmatrix}1&X\\0&1\end{smallmatrix}\right)$. One has thus defined a morphism
+\[
+\mathrm W(\mathfrak g^{\alpha_G})\to G_{\mathcal L}
+\]
+which induces on Lie algebras the canonical morphism, hence is the unique morphism of this type (1.5). Similarly, put $\exp\left(\begin{smallmatrix}0&0\\Y&0\end{smallmatrix}\right)=\left(\begin{smallmatrix}1&0\\Y&1\end{smallmatrix}\right)$. Calculating formula (F) explicitly, one finds
+\[
+\left\langle\begin{pmatrix}0&X\\0&0\end{pmatrix},\begin{pmatrix}0&0\\Y&0\end{pmatrix}\right\rangle=XY,\qquad
+\alpha_G^*(z)=\begin{pmatrix}z&0\\0&1/z\end{pmatrix}=t_G(z,z^{-1}).
+\]
+{\renewcommand{\thefootnote}{(32)}\nde{The following has been expanded.}}%
+The open subset $N^\times=N_G^\times$ (defined before 3.1) is:
+\[
+N_G^\times(S')=\left\{\begin{pmatrix}0&P\\Q&0\end{pmatrix}\ \middle|\ P\in\mathrm W(\mathfrak g^\alpha)^\times(S'),\ Q\in\mathrm W(\mathfrak g^{-\alpha})^\times(S')\right\},
+\]
+the morphism $w_{\alpha_G}$ (cf. 3.1 (iv)) is given, for every $X\in\mathrm W(\mathfrak g^\alpha)^\times(S')$, by
+\[
+w_{\alpha_G}(X)=\begin{pmatrix}0&X\\-X^{-1}&0\end{pmatrix};
+\]
+the morphism $a_{\alpha_G}$ (cf. 3.5) is given by:
+\[
+\text{if }w=\begin{pmatrix}0&P\\Q&0\end{pmatrix}\in N_G^\times(S'),\quad
+\text{then }a_{\alpha_G}(w)=PQ^{-1}\in\mathrm W((\mathfrak g^\alpha)^{\otimes2})^\times(S'),
+\]
+i.e. for every $Y\in\mathrm W(\mathfrak g^{-\alpha})^\times(S')$, one has $a_{\alpha_G}(w)(Y)=PQ^{-1}Y\in\mathrm W(\mathfrak g^\alpha)^\times(S')$.
+
+\numpara{5.6} We leave it to the reader to perform the same calculations in $S_{\mathcal L}$ and $P_{\mathcal L}$. One finds the same duality formula and the coroots
+\[
+\alpha_S^*(z)=t_S(z),\qquad\alpha_P^*(z)=t_P(z^2).
+\]
+Let $p_T$ be the morphism induced by $p:G_{\mathcal L}\to P_{\mathcal L}$ on $t_S(\mathbf G_{\mathrm m,S})$, i.e.
+\[
+p_T(t_S(z))=t_P(z^2).
+\]
+One therefore has the commutative diagram:{\renewcommand{\thefootnote}{(33)}\nde{Where $t_S$ and $t_P$ are isomorphisms.}}
+\[
+\xymatrix@C=0.8em@R=2.5em{
+&&\mathbf G_{\mathrm m,S}\ar[dll]_{\mathrm{id}}\ar[dl]_{\alpha_S^*}\ar[dr]^{\alpha_P^*}\ar[drr]^2&&\\
+\mathbf G_{\mathrm m,S}\ar[r]^{t_S}\ar[drr]_2&t_S(\mathbf G_{\mathrm m,S})\ar[rr]^{p_T}\ar[dr]_{\alpha_S}&&t_P(\mathbf G_{\mathrm m,S})\ar[dl]^{\alpha_P}&\mathbf G_{\mathrm m,S}\ar[l]_{t_P}\ar[dll]^{\mathrm{id}}\\
+&&\mathbf G_{\mathrm m,S}&&
+}
+\]
+One recognizes in the central part the commutative diagram of 4.1{\renewcommand{\thefootnote}{(34)}\nde{With $q=1$.}} relative to the canonical morphism $p\circ i:S_{\mathcal L}\to P_{\mathcal L}$, which induces a morphism of the preceding elementary $S$-systems.
+
+\numpara{5.7} Let now $(G,T,\alpha)$ be any elementary $S$-system. Consider the commutative diagram:
+\[
+\xymatrix@C=2em@R=2em{
+&\mathbf G_{\mathrm m,S}\ar[dl]_{\mathrm{id}}\ar[d]^{\alpha^*}\ar[dr]^2&\\
+\mathbf G_{\mathrm m,S}\ar[r]^{\alpha^*}\ar[dr]_2&T\ar[r]^\alpha\ar[d]^\alpha&\mathbf G_{\mathrm m,S}\ar[dl]^{\mathrm{id}}\\
+&\mathbf G_{\mathrm m,S}&
+}.
+\]
+Combining the preceding two diagrams, one obtains a commutative diagram:
+\[
+\xymatrix@C=2em@R=2em{
+&\mathbf G_{\mathrm m,S}\ar[dl]_{\alpha_S^*}\ar[d]^{\alpha^*}\ar[dr]^{\alpha_P^*}&\\
+t_S(\mathbf G_{\mathrm m,S})\ar[r]^{\alpha^*\circ t_S^{-1}}\ar[dr]_{\alpha_S}&T\ar[r]^{t_P\circ\alpha}\ar[d]^\alpha&t_P(\mathbf G_{\mathrm m,S})\ar[dl]^{\alpha_P}\\
+&\mathbf G_{\mathrm m,S}&
+}.
+\]
+Using 4.1, one therefore has:
+
+\begin{proposition}{5.8}\label{XX.5.8}
+Let $S$ be a scheme, $(G,T,\alpha)$ an elementary $S$-system. Put $\mathcal L=\mathfrak g^\alpha$ (and hence $\mathcal L^{-1}=\mathfrak g^{-\alpha}$).
+\begin{enumeratei}
+\item There exists a unique morphism of groups $f:S_{\mathcal L}\to G$ satisfying the following equivalent conditions:
+\[
+\begin{aligned}
+(a)\quad f\begin{pmatrix}z&0\\0&z^{-1}\end{pmatrix}&=\alpha^*(z),& f\begin{pmatrix}1&X\\0&1\end{pmatrix}&=\exp(X);\\
+(b)\quad f\begin{pmatrix}1&X\\0&1\end{pmatrix}&=\exp(X),& f\begin{pmatrix}1&0\\Y&1\end{pmatrix}&=\exp(Y);\\
+(c)\quad f\begin{pmatrix}1&X\\0&1\end{pmatrix}&=\exp(X),& f\begin{pmatrix}0&X\\-X^{-1}&0\end{pmatrix}&=w_\alpha(X).
+\end{aligned}
+\]
+\item There exists a unique morphism of groups $g:G\to P_{\mathcal L}$ satisfying
+\[
+g(t)=\begin{pmatrix}\alpha(t)&0\\0&1\end{pmatrix},\qquad g(\exp(X))=p\begin{pmatrix}1&X\\0&1\end{pmatrix}.
+\]
+Moreover, one has
+\[
+g(\exp(Y))=p\begin{pmatrix}1&0\\Y&1\end{pmatrix},\qquad
+ g(w_\alpha(X))=p\begin{pmatrix}0&X\\-X^{-1}&0\end{pmatrix}.
+\]
+The morphism $g$ is faithfully flat quasi-compact with kernel $\Ker(\alpha)=\uCentr(G)$, and $g\circ f$ is the canonical morphism $S_{\mathcal L}\to P_{\mathcal L}$.
+\end{enumeratei}
+\end{proposition}
+Note that conditions (b) of (i) give an explicit description of the duality between $\mathfrak g^\alpha$ and $\mathfrak g^{-\alpha}$.
+
+\begin{corollary}{5.9}\label{XX.5.9}
+Let $(G,T,\alpha)$ be an elementary $S$-system. The subgroups $T\cdot U_\alpha$, $T\cdot U_{-\alpha}$, $U_\alpha$ and $U_{-\alpha}$ are closed.
+\end{corollary}
+Since $U_\alpha$ is a closed subgroup scheme of $T\cdot U_\alpha$, it suffices to check this for the latter. By Noether's theorem (Exp.~IV 5.3.1 and 6.4.1), it suffices to prove that $(T\cdot U_\alpha)/\Ker(\alpha)$ is a closed subgroup of $G/\Ker(\alpha)$. By 5.8, one is therefore reduced to proving that the subgroup of $P_{\mathcal L}$ (or of $G_{\mathcal L}$, which amounts to the same thing by another application of Noether's theorem) defined by $c=0$ is closed, which is trivial.
+
+Consequently, the morphisms $\exp$ of theorem~1.5 (i) are closed immersions.
+
+N.~B. The corollary also follows from the fact that $T\cdot U_\alpha$ and $T\cdot U_{-\alpha}$ are ``Borel subgroups'' of $G$ (cf. Exp.~XII 7.10).
+
+\numpara{5.10} Let $\mathcal L$ be an invertible $\OS$-module and
+\[
+\xymatrix{\mathbf G_{\mathrm m,S}\ar[r]^{\alpha^*}&T\ar[r]^\alpha&\mathbf G_{\mathrm m,S}}
+\]
+a diagram of groups{\renewcommand{\thefootnote}{(35)}\nde{$T$ being a torus.}} such that $\alpha\circ\alpha^*=2$. Let $R$ be the maximal torus of $\Ker(\alpha)$ and $K=\alpha^{*-1}(R)$. Then $K$ is a subgroup of multiplicative type of $\mathbf G_{\mathrm m,S}$; by $\alpha\circ\alpha^*=2$, it is even a subgroup of $\bmu_{2,S}$. In particular, the morphism
+\[
+K\to S_{\mathcal L},\qquad z\mto\begin{pmatrix}z&0\\0&z^{-1}\end{pmatrix}
+\]
+is central. One therefore has a central monomorphism of groups:
+\[
+K\to R\times S_{\mathcal L},\qquad z\mto\left(\alpha^*(z),\begin{pmatrix}z&0\\0&z^{-1}\end{pmatrix}\right).
+\]
+Consider the group $G=(R\times S_{\mathcal L})/K$ obtained by passing to the quotient. It is a group affine and smooth over $S$, with connected fibers. It is immediate that the sequence
+\[
+\xymatrix@C=1.5em{1\ar[r]&K\ar[r]&R\times t_S(\mathbf G_{\mathrm m,S})\ar[r]^u&T\ar[r]&1}
+\]
+where $u(x,t_S(z))=x\alpha^*(z)$ is exact. The image of $R\times t_S(\mathbf G_{\mathrm m,S})$ in $G$ is therefore a torus $T'$ isomorphic to $T$. One now shows without difficulty that if $\alpha'$ is the character of $T'$ deduced from $\alpha$ by the preceding isomorphism, $(G,T',\alpha')$ is an elementary $S$-system, that $\mathfrak g^{\alpha'}$ is isomorphic to $\mathcal L$, and that $\alpha'^*$ is obtained from $\alpha^*$ by the isomorphism $T\isomto T'$. One has therefore constructed an elementary $S$-system $(G,T',\alpha')$ such that the corresponding object $(\mathbf G_{\mathrm m,S}\xrightarrow{\alpha'^*}T'\xrightarrow{\alpha'}\mathbf G_{\mathrm m,S},\mathfrak g^{\alpha'})$ of the category $\mathcal D$ defined in 4.2 is isomorphic to $(\mathbf G_{\mathrm m,S}\xrightarrow{\alpha^*}T\xrightarrow\alpha\mathbf G_{\mathrm m,S},\mathcal L)$. One has therefore proved:
+
+\begin{theorem}{5.11}\label{XX.5.11}
+With the notations of 4.2, the functor
+\[
+(G,T,\alpha)\mto\left(\mathbf G_{\mathrm m,S}\xrightarrow{\alpha^*}T\xrightarrow\alpha\mathbf G_{\mathrm m,S},\mathfrak g^\alpha\right)
+\]
+is an equivalence of categories between $\mathcal E$ and $\mathcal D$.
+\end{theorem}
+
+\sgasection{6}{Generators and relations for an elementary system}
+\label{XX.sec.6}
+\numpara{6.1} Let $S$ be a scheme, $(G,T,\alpha)$ an elementary $S$-system. Let $X\in\mathrm W(\mathfrak g^\alpha)^\times(S)$ and $u=\exp(X)$; we saw in 3.8 that the element $w=w_\alpha(X)$ satisfies, in particular, the relation
+\[
+(wu)^3=e.
+\]
+{\renewcommand{\thefootnote}{(36)}\nde{The following sentence has been added.}}%
+Let $s_\alpha$ denote the automorphism of $T$ induced by $\operatorname{int}(w)$; by theorem~3.1 (iii), for every $S'\to S$ and $t\in T(S')$, one has
+% typo: missing S after S' arrow -> S.
+\[
+s_\alpha(t)=\operatorname{int}(w)(t)=t\cdot\alpha^*(\alpha(t)^{-1}).
+\]
+
+\begin{theorem}{6.2}\label{XX.6.2}
+Let $H$ be a sheaf of $S$-groups for (fppf). Let
+\[
+f_T:T\to H,\qquad f_\alpha:U_\alpha\to H
+\]
+be morphisms of groups and $h\in H(S)$ a section of $H$. For there to exist a morphism of groups (necessarily unique)
+\[
+f:G\to H
+\]
+extending $f_T$ and $f_\alpha$ and satisfying $f(w)=h$, it is necessary and sufficient that the following conditions hold:
+\begin{enumeratei}
+\item For every $S'\to S$, every $t\in T(S')$ and every $x\in U_\alpha(S')$, one has
+\begin{equation}\tag{1}\label{XX.6.eq.1}
+f_T(t)f_\alpha(x)f_T(t)^{-1}=f_\alpha(txt^{-1})=f_\alpha(x^{\alpha(t)}).
+\end{equation}
+(in other words, $f_T$ and $f_\alpha$ extend to a morphism of groups from the semidirect product $T\cdot U_\alpha$ to $H$).
+\item For every $S'\to S$ and every $t\in T(S')$, one has
+\begin{equation}\tag{2}\label{XX.6.eq.2}
+hf_T(t)h^{-1}=f_T(s_\alpha(t))=f_T(t\cdot\alpha^*(\alpha(t)^{-1})).
+\end{equation}
+\item One has the two relations in $H(S)$:
+\begin{equation}\tag{3}\label{XX.6.eq.3}
+h^2=f_T(\alpha^*(-1)),
+\end{equation}
+\begin{equation}\tag{4}\label{XX.6.eq.4}
+(hf_\alpha(u))^3=e.
+\end{equation}
+\end{enumeratei}
+\end{theorem}

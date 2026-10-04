@@ -1,0 +1,259 @@
+% Source PDF p. 13; continuation of the proof of Theorem 3.3.
+Now (\loccit) $\mathscr H_c$ is representable, and the morphism $c\ell$ is smooth, quasi-projective, of finite presentation, with integral geometric fibers, so the same holds for $t$.
+
+It remains to prove that $t$ is proper; but this is now an assertion local for the (fpqc) topology, and one can reduce to the pinned case $G=(G,T,M,R,\Delta,\ldots)$. One then has $\underline{\operatorname{Dyn}}(G)\simeq\Delta_S$, and it suffices to prove that, for every subset $\Delta_1$ of $\Delta$, the $S$-scheme $t^{-1}((\Delta_1)_S)$ is proper over $S$. Now, if $P_1$ is the parabolic subgroup of $G$ containing $T$ such that $\Delta(P_1)=\Delta_1$, it follows from (i) that the morphism $G\to\underline{\operatorname{Par}}(G)$ defined set-theoretically by $g\mto\operatorname{int}(g)P_1$ induces an isomorphism from $G/\uNorm_G(P_1)$ onto $t^{-1}((\Delta_1)_S)$. Now, by 1.2, $G/\uNorm_G(P_1)=G/P_1$ is projective over $S$.
+\begin{definition}{3.4}\label{XXVI.3.4}
+$\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))$ is called the \emph{scheme of parabolic types} of $G$; $t(P)$ is called the \emph{type} of $P$.
+\end{definition}
+\begin{corollary}{3.5}\label{XXVI.3.5}
+The $S$-functor $\underline{\operatorname{Par}}(G)$ is representable by an $S$-scheme smooth and projective over $S$. The decomposition
+\[
+\underline{\operatorname{Par}}(G)\to\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))\to S
+\]
+is the Stein factorization (EGA~III, 4.3.3) of the structural morphism $\underline{\operatorname{Par}}(G)\to S$.
+\end{corollary}
+\begin{corollary}{3.6}\label{XXVI.3.6}
+For each $t\in\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))(S)$, the $S$-scheme
+\[
+\underline{\operatorname{Par}}_t(G)=t^{-1}(t)
+\]
+of parabolic subgroups of $G$ of type $t$ is smooth and projective over $S$, homogeneous under $G$. If $P$ is a parabolic subgroup of $G$, one has a canonical isomorphism $G/P\isomto\underline{\operatorname{Par}}_{t(P)}(G)$. One has $\underline{\operatorname{Par}}_\varnothing(G)=\underline{\operatorname{Bor}}(G)$, $\underline{\operatorname{Par}}_{\underline{\operatorname{Dyn}}(G)}(G)\isomto S$.
+\end{corollary}
+\begin{remark}{3.7}\label{XXVI.3.7}
+The $S$-scheme $\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))$ is equipped with a natural order structure (domination relation, here set-theoretic inclusion, between subschemes). This order structure is a lattice; in particular the infimum of two open and closed subschemes of $\underline{\operatorname{Dyn}}(G)_{S'}$ is evidently their intersection. Note moreover that, if $B$ is a Borel subgroup of $G$, one can define the functor $X$ of parabolic subgroups of $G$ containing $B$. The morphism $X\to\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))$ induced by $t$ is an isomorphism (for the ``ordered scheme'' structure), by the assertion $P\subset Q\Rightarrow t(P)\subset t(Q)$ and by:
+\end{remark}
+\begin{lemma}{3.8}\label{XXVI.3.8}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $P$ a parabolic subgroup of $G$, and $t'$ a section of $\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))$ over $S$ such that $t(P)\subset t'$. There exists a unique parabolic subgroup $P'$ of $G$ containing $P$ and such that $t(P')=t'$.
+\end{lemma}
+Extending the base, one can suppose that $P$ contains a Borel subgroup $B$ of $G$. The uniqueness of $P'$ then follows from 1.17. To prove existence, one can place oneself in the split case, in which case the assertion is evident, cf.~no.~1.
+\begin{remarks}{3.8.1}\label{XXVI.3.8.1}
+\begin{enumeratei}
+\item The assertion analogous to 3.8 obtained by reversing the inclusions is evidently false. It would imply, for example, that every group of type $A_1$ possesses a Borel subgroup, which is not so, cf.~Exp.~XX, no.~5.
+\item It follows immediately from the foregoing that $t(P)\subset t(Q)$ means that, locally for (fpqc) or (\'et), $P$ is conjugate to a subgroup of $Q$ (it moreover suffices to verify the assertion on the geometric fibers). Furthermore, we shall see in no.~5 that one can replace the \'etale topology by the Zariski topology.
+\end{enumeratei}
+\end{remarks}
+
+% Source PDF p. 14; preceding sentence begins on p. 13.
+\numpara{3.9}\label{XXVI.3.9}
+The preceding discussions can be repeated in the case of critical subgroups. Recall (Exp.~XXII, 5.10.4 and 5.10.5) that a reductive subgroup $H$ of the reductive group $G$ is \emph{critical} if $H=\uCentr_G(\operatorname{rad}(H))$, that a subtorus $Q$ of $G$ is a \emph{$C$-critical torus} if $Q=\operatorname{rad}(\uCentr_G(Q))$, and that critical subgroups and $C$-critical tori\nde{Here ``critical torus'' has been replaced by ``$C$-critical torus'', cf.~\loccit. In the sequel, one will simply write ``critical torus'' instead of ``$C$-critical torus''.} are in one-to-one correspondence (by $H\mto\operatorname{rad}(H)$ and $Q\mto\uCentr_G(Q)$).
+
+If $(G,T,M,R)$ is a split $S$-group, the subgroup of $G$ containing $T$ corresponding to the subset $R'$ of $R$ (Exp.~XXII, 5.4.2) is critical if and only if $R'$ is ``vectorial'' (that is, the intersection of $R$ with a vector subspace of $M\otimes\QQ$), cf.~Exp.~XXII, 5.10.6.
+
+If $G$ is any reductive $S$-group, one will define, as in Exp.~XXII, 5.11.5, a finite \'etale $S$-scheme $C\ell_{\mathrm{crit}}$, which in the split case will be the constant scheme associated with the set of vectorial subsets of $R$ modulo the action of the Weyl group. If $\underline{\operatorname{Crit}}(G)$ denotes the ``functor of critical subgroups'' of $G$, one will have a canonical morphism $\underline{\operatorname{Crit}}(G)\xrightarrow{c\ell}C\ell_{\mathrm{crit}}$, which will fit into a cartesian diagram\nde{Cf.~3.3, N.D.E.~(10), for the notations $\mathscr H_c$ and $C\ell_c$.}
+\[
+\xymatrix@C=42pt@R=22pt{
+\underline{\operatorname{Crit}}(G)\ar[r]^{c\ell}\ar@{^{(}->}[d]&C\ell_{\mathrm{crit}}\ar@{^{(}->}[d]\\
+\mathscr H_c\ar[r]_{c\ell}&C\ell_c.
+}
+\]
+\begin{proposition}{3.10}\label{XXVI.3.10}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $\underline{\operatorname{Crit}}(G)$ the functor of its critical subgroups, and $C\ell_{\mathrm{crit}}$ and $c\ell:\underline{\operatorname{Crit}}(G)\to C\ell_{\mathrm{crit}}$ the finite \'etale $S$-scheme and the morphism defined above.
+\begin{enumeratei}
+\item In order that the critical subgroups $H$ and $H'$ of $G$ be conjugate (locally for the (fpqc) topology), it is necessary and sufficient that $c\ell(H)=c\ell(H')$.
+% typo: missing closing parenthesis after "topologie (fpqc)" -> closing parenthesis supplied.
+\item $\underline{\operatorname{Crit}}(G)$ is representable, and the morphism $c\ell$ is smooth, affine, with integral geometric fibers.
+\end{enumeratei}
+\end{proposition}
+This is proved as in 3.3, except for the assertion ``$c\ell$ is affine''. It suffices to prove that $\underline{\operatorname{Crit}}(G)$ is affine over $S$. Now $\underline{\operatorname{Crit}}(G)$ is naturally identified with the $S$-functor of critical tori of $G$, and one therefore has a canonical monomorphism
+\[
+\underline{\operatorname{Crit}}(G)\to\mathrm M,
+\]
+where $\mathrm M$ is the scheme of subgroups of multiplicative type of $G$ (Exp.~XI, 4.1). To prove that $\underline{\operatorname{Crit}}(G)$ is affine over $S$, it suffices, by Exp.~XII 5.3, to show that this morphism is an open and closed immersion, or again, making the base change $\mathrm M\to S$, to prove the following assertion: if $Q$ is a subgroup of multiplicative type of the reductive group $G$, the $S'\to S$ such that $Q_{S'}$ is a critical torus of $G_{S'}$ are those which factor through a certain open and closed subscheme of $S$.
+
+% Source PDF p. 15: preceding sentence begins on p. 14.
+Now saying that $Q$ is a critical torus means:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item that $Q$ is a torus,
+\item $Q$ being a torus, that $\operatorname{rad}(\uCentr_G(Q))$, which is also a torus, has the same relative dimension as $Q$.
+\end{enumerate}
+Now these two conditions are indeed of the type considered.
+\begin{corollary}{3.11}\label{XXVI.3.11}
+The $S$-functor $\underline{\operatorname{Crit}}(G)$ is representable by an $S$-scheme smooth and affine over $S$.
+\end{corollary}
+\begin{corollary}{3.12}\label{XXVI.3.12}
+Let $H$ be a critical subgroup of the reductive $S$-group $G$. Then $G/\uNorm_G(H)$ and $G/H$ are representable by $S$-schemes affine and smooth over $S$.
+\end{corollary}
+The first assertion follows from 3.11, the second from the first and from Exp.~XXII, 5.10.2.
+\begin{corollary}{3.13}\label{XXVI.3.13}
+Let $Q$ be a subtorus of the reductive $S$-group $G$. Then $G/\uCentr_G(Q)$ is representable by an $S$-scheme smooth and affine over $S$. The same holds for $G/\uNorm_G(Q)$ if $Q$ is a critical subtorus of $G$.
+\end{corollary}
+Indeed, $H=\uCentr_G(Q)$ is critical (Exp.~XXII, 5.10.5), and one has $\uNorm_G(H)=\uNorm_G(Q)$ if $Q$ is critical (\loccit, 5.10.8).
+
+\numpara{3.14}\label{XXVI.3.14}
+By conjugacy of the Levi subgroups of the parabolic subgroups of $G$, there exists a unique morphism
+\[
+u:\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))\to C\ell_{\mathrm{crit}}
+\]
+such that, for every parabolic subgroup $P$ of $G$ and every Levi subgroup $L$ of $P$, one has $c\ell(L)=u(t(P))$, and such that this holds after every base change.
+
+\numpara{3.15}\label{XXVI.3.15}
+Let $S$ be a scheme and $G$ a reductive $S$-group. Consider the $S$-functors:\nde{$\underline{\mathrm{LT}}$ has been changed to $\underline{\mathrm{CT}}$.}
+\[
+\begin{aligned}
+\underline{\mathrm{PL}}(S')=\{&\text{pairs }P\supset L,\ P\text{ parabolic in }G_{S'},\\
+&L\text{ a Levi subgroup of }P\};\\
+\underline{\mathrm{PT}}(S')=\{&\text{pairs }P\supset T,\ P\text{ parabolic in }G_{S'},\\
+&T\text{ a maximal torus of }P\};\\
+\underline{\mathrm{CT}}(S')=\{&\text{pairs }C\supset T,\ C\text{ a critical subgroup of }G_{S'},\\
+&T\text{ a maximal torus of }C\};\\
+\underline{\mathrm{PLT}}(S')=\{&\text{triples }P\supset L\supset T,\ (P,T)\in\underline{\mathrm{PT}}(S'),\\
+&L\text{ a Levi subgroup of }P\}.
+\end{aligned}
+\]
+One has evident morphisms between these functors and the functors $\underline{\operatorname{Par}}(G)$, $\underline{\operatorname{Crit}}(G)$, $\underline{\operatorname{Tor}}(G)$ already introduced, and one has a commutative diagram in the shape of a truncated cube (see the following figure):
+
+% Source PDF p. 16: preceding sentence begins on p. 15.
+\[
+\xymatrix@C=9pt@R=26pt{
+&&\underline{\mathrm{CT}}\ar[dll]_{a\ (\mathrm{aff.})}\ar[dd]^(.25){k\ (\mathrm{\acute et.})}&&\underline{\mathrm{PLT}}\ar[ll]_{g\ (\mathrm{\acute et.})}\ar[dl]_{b\ (\mathrm{aff.})}\ar[dd]^{e\ (\mathrm{isom.})}\\
+\underline{\operatorname{Crit}}(G)\ar[d]_{c\ell\ (\mathrm{aff.})}&&&\underline{\mathrm{PL}}\ar[lll]^{f\ (\mathrm{\acute et.})}\ar[ddd]^{d\ (\mathrm{aff.})}&\\
+C\ell_{\mathrm{crit}}\ar[dr]^{q\ (\mathrm{\acute et.})}&&\underline{\operatorname{Tor}}(G)\ar[dl]^{r\ (\mathrm{aff.})}&&\underline{\mathrm{PT}}\ar[ll]_{h\ (\mathrm{\acute et.})}\ar[ddl]^{c\ (\mathrm{aff.})}\\
+&S&&&\\
+&\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))\ar[u]_{p\ (\mathrm{\acute et.})}\ar[uul]^{u\ (\mathrm{\acute et.})}&&\underline{\operatorname{Par}}(G)\ar[ll]_{t\ (\mathrm{proj.})}&
+}
+\]
+\begin{center}Figure 3.15.1\end{center}
+\begin{theorem}{3.16}\label{XXVI.3.16}
+(Cf.~figure 3.15.1.)
+\begin{enumeratei}
+\item All the morphisms of the diagram are smooth, surjective, and of finite presentation.
+\item All the morphisms of the diagram, except $t$, are affine; the morphism $t$ is projective.
+\item All the morphisms of the diagram are either finite \'etale or have integral geometric fibers: the morphisms $f$, $g$, $h$, $k$, $p$, $q$ and $u$ are finite \'etale, the morphisms $a$, $b$, $c$, $d$, $r$ and $c\ell$ have integral geometric fibers, and the morphism $e$ is an isomorphism.
+\item The square $(a,b,f,g)$ is cartesian.
+\end{enumeratei}
+\end{theorem}
+\begin{proof}
+First it is clear that $e$ is an isomorphism, by 1.6~(ii). Moreover, (iv) is evident.
+
+The morphism $a$ is smooth, affine, with integral geometric fibers: indeed, by the base change $\underline{\operatorname{Crit}}(G)\to S$, it suffices to verify that the morphism $\underline{\operatorname{Tor}}(L_0)\to S$, where $L_0$ is the universal critical subgroup, possesses these properties; now $L_0$ is reductive (by definition), and one is reduced to Exp.~XXII, 5.8.3. The morphism $b$ therefore possesses the same properties, by (iv).
+
+% Source PDF p. 17.
+The morphism $d$ is also smooth, affine, with integral geometric fibers, by 1.9; the same therefore holds for $c=dbe^{-1}$. The morphism $r$ possesses these same properties (Exp.~XXII, 5.8.3), as does the morphism $c\ell$ (3.10).
+
+Moreover, we have already proved that the morphisms $p$ and $q$ are finite \'etale surjective (3.1 and 3.9). If we prove that $f$ and $k$ are finite \'etale surjective, the same properties will hold for $g$ (by (iv)) and for $h$ (since $h=kge^{-1}$); since the stated properties of $t$ were proved in 3.3~(ii), it therefore remains only to prove that $f$ (resp.~$k$) is finite \'etale surjective; let us give the proof for $k$, the one for $f$ being analogous.
+
+It suffices for us to prove that, if $T$ is a maximal torus of $G$, the functor $\underline C$ of critical subgroups of $G$ containing $T$ is representable by a finite \'etale $S$-scheme with nonempty fibers; one can suppose $G$ split relative to $T$; let then $E$ be the set of vectorial subsets of $R$ (the root system of the splitting); $\underline C$ is representable by $E_S$ (3.9), which completes the proof.
+\end{proof}
+\begin{corollary}{3.17}\label{XXVI.3.17}
+All the functors of the preceding diagram are representable by $S$-schemes smooth over $S$, and they are all affine over $S$, except for $\underline{\operatorname{Par}}(G)$.
+\end{corollary}
+\begin{remark}{3.18}\label{XXVI.3.18}
+\begin{enumeratei}
+\item The fact that the morphism $f:\underline{\mathrm{PL}}\to\underline{\operatorname{Crit}}(G)$ is \'etale surjective implies that a subgroup of $G$ is critical if and only if it is, locally for the \'etale topology, a Levi subgroup of a parabolic subgroup of $G$.
+
+On the other hand, one should not believe that in general the map $f(S):\underline{\mathrm{PL}}(S)\to\underline{\operatorname{Crit}}(G)(S)$ is surjective: it may very well happen that a critical subgroup $C$ of $G$ does not come over $S$ from a parabolic subgroup of $G$; for example, a maximal torus is not always contained in a Borel subgroup (example: a nonsplit form of $\SL_2$, cf.~Exp.~XX, no.~5).
+\item Similarly, it may happen that the morphism $u:\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))\to C\ell_{\mathrm{crit}}$ is not an isomorphism: two parabolic subgroups of distinct types may have Levi subgroups of the same type; example: in a group of type $A_2$, there are two types of parabolic subgroups whose Levi subgroups have semisimple rank $1$ (corresponding to the two vertices of the diagram), whereas there is only one type of critical subgroups of rank $1$.
+
+The analogous example with a group of type $A_3$ shows that, even over an algebraically closed field, nonisomorphic parabolic subgroups may have Levi subgroups of the same type.\nde{I.e.~the parabolic subgroups
+\[
+\begin{gathered}
+P=\left\{\begin{pmatrix} *&*&*&*\\ *&*&*&*\\ 0&0&*&*\\ 0&0&0&*\end{pmatrix}\right\},\qquad
+P'=\left\{\begin{pmatrix} *&*&*&*\\ 0&*&*&*\\ 0&*&*&*\\ 0&0&0&*\end{pmatrix}\right\}
+\end{gathered}
+\]
+of $\GL_4$ are not isomorphic (since $\operatorname{rad}^{\mathrm u}(P)\not\simeq\operatorname{rad}^{\mathrm u}(P')$), but their Levi subgroups
+\[
+L=\left\{\begin{pmatrix} *&*&0&0\\ *&*&0&0\\ 0&0&*&0\\ 0&0&0&*\end{pmatrix}\right\},\qquad
+L'=\left\{\begin{pmatrix} *&0&0&0\\ 0&*&*&0\\ 0&*&*&0\\ 0&0&0&*\end{pmatrix}\right\}
+\]
+are conjugate by the element $\begin{pmatrix}0&0&1&0\\1&0&0&0\\0&1&0&0\\0&0&0&1\end{pmatrix}$.}
+\end{enumeratei}
+\end{remark}
+Let us end this section with an application to the theory of principal bundles.
+\begin{lemma}{3.20}\label{XXVI.3.20}
+\nde{The numbering of the original has been retained: there is no no.~3.19.}Let $S$ be a scheme, $G$ a reductive $S$-group, $F$ a principal homogeneous bundle under $G$, and $G^F$ the corresponding twisted form of $G$. Identify $\underline{\operatorname{Dyn}}(G)$ and $\underline{\operatorname{Dyn}}(G^F)$ (Exp.~XXIV, 3.5). Let $P$ be a parabolic subgroup of $G$. One has a canonical isomorphism
+\[
+F/P\isomto\underline{\operatorname{Par}}_{t(P)}(G^F).
+\]
+In particular, in order that the structural group of $F$ can be reduced to $P$, it is necessary and sufficient that $G^F$ possess a parabolic subgroup of type $t(P)$.
+\end{lemma}
+
+% Source PDF p. 18: the first sentence of 3.20 begins on p. 17.
+The proof proceeds exactly as in Exp.~XXIV, 4.2.1.
+% typo: "Le d\'emonstration" -> "The proof".
+
+\numpara{3.21}\label{XXVI.3.21}
+If $S$ is a scheme, $G$ a reductive $S$-group, and if $t\in\underline{\operatorname{Of}}(\underline{\operatorname{Dyn}}(G))(S)$, one denotes by $\mathrm H^1_t(S,G)$ the subset of $\mathrm H^1(S,G)$ consisting of the classes of principal bundles $F$ under $G$ such that the associated group $G^F$ possesses a parabolic subgroup of type $t$. If $G$ itself possesses a parabolic subgroup $P$ of type $t$, $\mathrm H^1_t(S,G)$ is precisely the image of $\mathrm H^1(S,P)$ in $\mathrm H^1(S,G)$, an image which therefore does not depend on the chosen $P$.
+
+\sgasection{4}{Relative position of two parabolic subgroups}
+\sgasection{4.1}{A preliminary result}
+\begin{lemma}{4.1.1}\label{XXVI.4.1.1}
+Let $k$ be a field, $G$ a reductive $k$-group, and $P$ and $P'$ two parabolic subgroups of $G$.
+\begin{enumeratei}
+\item Then $P\cap P'$ is smooth, has the same reductive rank as $G$, and contains a maximal torus $T$ of $G$.
+\item The set $R'$ of roots of $P\cap P'$ relative to $T$ is a closed subset of the set $R$ of roots of $G$ relative to $T$.\nde{Part (ii), which will be useful in 4.5.1, has been added.}
+\end{enumeratei}
+\end{lemma}
+First suppose $k$ algebraically closed. Let $B$ (resp.~$B'$) be a Borel subgroup of $P$ (resp.~$P'$). One knows that there exists $g\in G(k)$ such that $\operatorname{int}(g)B=B'$. Moreover, if $T_0$ is a maximal torus of $B$, and if one puts $N=\uNorm_G(T_0)$, one knows (Bruhat's theorem, Bible, \S~13.4, cor.~1 to th.~3) that $G(k)=B(k)N(k)B(k)$. One therefore sees that there exist $b,b_1\in B(k)$ and $n\in N(k)$ such that $g=bnb_1$, hence $\operatorname{int}(b)\operatorname{int}(n)B=B'$. One then has
+% typo?: B' inside int(n) is kept as printed.
+\[
+P\cap P'\supset B\cap B'=\operatorname{int}(b)(B\cap\operatorname{int}(n)B')\supset\operatorname{int}(b)T_0.
+\]
+Now suppose $k$ arbitrary. Applying the preceding result, one sees that $P_{\overline k}\cap P'_{\overline k}$ contains a maximal torus of $G_{\overline k}$; by Exp.~XXII, 5.4.5, one deduces that $(P\cap P')_{\overline k}$ is smooth ``along the identity section'', hence smooth since one is over a field (Exp.~VIA 1.3.1), hence that $P\cap P'$ is smooth. By Exp.~VIA 2.3.1, the identity component $(P\cap P')^0$ of $P\cap P'$ is therefore an open subgroup of $P\cap P'$, smooth over $S$. One can then apply Exp.~XIV, 1.1 to it, whence (i).
+% typo?: S (rather than k) is kept as printed.
+
+Finally, the set $R_P$ (resp.~$R_{P'}$) of roots of $P$ (resp.~$P'$) relative to $T$ is closed, and one has $R'=R_P\cap R_{P'}$, whence (ii).
+
+% Source PDF p. 19.
+\begin{remark}{4.1.2}\label{XXVI.4.1.2}
+One can prove (\cite{BT65}, 4.5) that $P\cap P'$ is connected;\nde{In view of the details added in 4.5.1, the original (which said ``we shall not use this fact'') has been modified here.} this will be used in 4.5.1.
+\end{remark}
+\begin{remark}{4.1.3}\label{XXVI.4.1.3}
+The preceding lemma does not hold over an arbitrary scheme. Indeed, let for example $G$ be a reductive group over an algebraically closed field $k$, and let $B$ be a Borel group of $G$. Take $G=X$ as base, and consider the Borel subgroups $B_1$ and $B_2$ of $G_X$, where $B_1=B_X$ and $B_2=\operatorname{int}(g_0)B_1$, $g_0$ being the canonical (diagonal) section of $G_X$. For each $g\in X(k)$, the fiber of $B_1\cap B_2$ at $g$ is precisely $B\cap\operatorname{int}(g)B$. If one supposes $B\ne G$, the dimension of this fiber varies with $g$, so $B_1\cap B_2$ cannot be smooth over $X$.
+\end{remark}
+
+\sgasection{4.2}{Transversal position}
+\begin{theorem}{4.2.1}\label{XXVI.4.2.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $P$ and $Q$ two parabolic subgroups of $G$. The following conditions on the pair $(P,Q)$ are equivalent:
+\begin{enumerate}[label={},leftmargin=2.8em]
+\item[(i)] $\Lie(P/S)+\Lie(Q/S)=\Lie(G/S)$.
+\item[(ii)] The canonical morphism $P\times_S Q\to G$ is smooth.
+\item[(ii$'$)] The canonical morphism $P\to G/Q$ is smooth.
+\item[(iii)] The canonical morphism $P\times_S Q\to G$ is open.
+\item[(iii$'$)] The canonical morphism $P\to G/Q$ is open.
+\item[(iv)] The canonical morphism $P\times_S Q\to G$ is dominant fiber by fiber.
+\item[(iv$'$)] The canonical morphism $P\to G/Q$ is dominant fiber by fiber.
+\item[(v)] For every $s\in S$, ``$P_{\overline s}\cap Q_{\overline s}$ has minimum dimension'', i.e.~one has
+\[
+\dim(P_{\overline s}\cap Q_{\overline s})=\dim P_{\overline s}+\dim Q_{\overline s}-\dim G_{\overline s}.
+\]
+\item[(vi)] There exist a covering family for the \'etale topology $\{S_i\to S\}$, and for each $i$ a Borel subgroup $B_i$ of $P_{S_i}$ and a Borel subgroup $B'_i$ of $Q_{S_i}$ such that $B_i\cap B'_i$ is a maximal torus of $G_{S_i}$.
+\item[(vii)] There exist a covering family for the \'etale topology $\{S_i\to S\}$, and for each $i$ a splitting $(T_i,\ldots,R_i)$ of $G_{S_i}$ and a system of positive roots $R_i^+$ of $R_i$ such that $P_{S_i}$ (resp.~$Q_{S_i}$) is the subgroup of type (R) of $G_{S_i}$ containing $T_i$ and defined by a subset $R_i^{(1)}$ (resp.~$R_i^{(2)}$) of $R$ containing $R_i^+$ (resp.~$-R_i^+$) (see Exp.~XXII, 5.4.2 and 5.2.1 for the definitions).
+% typo?: the unindexed R in "subset of R" is kept as printed.
+\end{enumerate}
+\end{theorem}
+
+% Source PDF p. 20.
+\begin{proof}
+We shall prove the theorem according to the logical diagram
+\[
+\xymatrix@C=24pt@R=25pt{
+\text{(i)}\ar@{=>}[d]&\text{(vii)}\ar@{=>}[l]&\text{(vi)}\ar@{=>}[l]&&\\
+\text{(ii$'$)}\ar@{=>}[r]\ar@{=>}[d]&\text{(iii$'$)}\ar@{=>}[r]&\text{(iv$'$)}\ar@{=>}[r]&\text{(v)}\ar@{=>}[ul]\\
+\text{(ii)}\ar@{=>}[r]&\text{(iii)}\ar@{=>}[r]&\text{(iv)}\ar@{=>}[ur]&&.
+}
+\]
+One trivially has (ii) $\Rightarrow$ (iii) and (ii$'$) $\Rightarrow$ (iii$'$). If (iii) holds, the set-theoretic image of the morphism $P\times_S Q\Rightarrow G$ is an open subset of $G$ which contains the identity section; since the fibers of $G$ are connected, this image is dense on each fiber, which proves (iv). Similarly, one has (iii$'$) $\Rightarrow$ (iv$'$).
+% typo?: the double arrow in P times Q => G is kept as printed.
+
+One has (ii$'$) $\Rightarrow$ (ii), by the cartesian diagram
+\[
+\xymatrix@C=35pt@R=22pt{
+P\times_S Q\ar[r]\ar[d]_{\mathrm{pr}_1}&G\ar[d]\\
+P\ar[r]&G/Q.
+}
+\]
+Moreover, (iv) or (iv$'$) implies (v), by dimension theory (cf.~EGA~IV$_2$, 5.6.6). One notes that one can indeed suppose $S=\Spec(k)$, $k$ an algebraically closed field, and that every nonempty fiber of the morphism (iv), resp.~(iv$'$), at a point of $G(k)$, resp.~of $(G/Q)(k)$, is isomorphic to $P\cap Q$ (as an immediate computation shows).
+
+One has (vi) $\Rightarrow$ (vii), by Exp.~XXII, 5.5.1~(iv) and 5.9.2.
+
+One has (vii) $\Rightarrow$ (i), since, to verify that $\Lie(P)+\Lie(Q)=\Lie(G)$, one can reason locally for (fpqc); hence, if (vii) holds, one can suppose $G$ split, $P\supset B_{R_+}$ and $Q\supset B_{-R_+}$ (usual notations), in which case one already has
+\[
+\Lie(B_{R_+})+\Lie(B_{-R_+})=\Lie(G).
+\]
+Let us prove that (i) implies (ii$'$).
+
+Let $u:P\to G/Q$ be the canonical morphism; to prove that $u$ is smooth, one can content oneself with doing so for the geometric fibers of $u$, since $P$ and $G/Q$ are smooth over $S$, and one can therefore suppose that $S$ is the spectrum of an algebraically closed field. Since the morphism $u$ is compatible with the evident action of $P$ (one has $u(pp')=pu(p')$), it suffices, by a translation argument (cf.~the proof of VIB 1.3), to verify that $u$ is smooth at $e\in P(k)$, i.e.~(SGA~1, II 4.7) that the tangent map to $u$ at $e$ is surjective; but this is naturally identified with the canonical map $\Lie(P)\to\Lie(G)/\Lie(Q)$, which is surjective if (i) holds.
+
+It therefore remains only to verify the last assertion, that is, (v) $\Rightarrow$ (vi). First suppose that $S$ is the spectrum of an algebraically closed field. By 4.1.1, there exists a maximal torus $T$ contained in $P$ and $Q$; let $R$ (resp.~$R_1$, resp.~$R_2$) be the set of roots of $G$ (resp.~$P$, resp.~$Q$) relative to $T$.
+% Last sentence completed on source PDF p. 21. Proof continues in en-04.tex.

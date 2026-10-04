@@ -1,0 +1,201 @@
+% Source PDF pp. 19--24; continuation of Remark 3.2.2.2.
+In particular, the diagonal morphism $\delta:\mathscr L\to\mathscr L\times\mathscr L$ induces an algebra homomorphism $\Delta:\mathscr U(\mathscr L)\to\mathscr U(\mathscr L\times\mathscr L)\simeq\mathscr U(\mathscr L)\otimes\mathscr U(\mathscr L)$. The zero morphism $\mathscr L\to0$ induces an algebra homomorphism $\varepsilon:\mathscr U(\mathscr L)\to\mathscr U(0)\simeq\OS$. The isomorphism $x\mapsto-x$ from $\mathscr L$ onto the opposite Lie algebra $\mathscr L^\circ$ induces an anti-isomorphism $c$ of the algebra $\mathscr U(\mathscr L)$. One then verifies easily that the multiplication $m$ of the algebra $\mathscr U(\mathscr L)$ makes $(\mathscr U(\mathscr L),\Delta)$ a $\OS$-coalgebra in groups having $\varepsilon$ as augmentation and $c$ as antipode.\nde{The $S$-group functor $\Spec^*\mathscr U(\mathscr L)$ is not representable in general, but we shall see below (5.5) that if $S$ is a scheme of characteristic $p$, if $\mathscr L$ is finite locally free over $\OS$, and if $\mathscr U_p(\mathscr L)$ is its \emph{restricted enveloping algebra} (cf.\ 5.3), then $\Spec^*\mathscr U_p(\mathscr L)$ is represented by a finite and locally free $S$-group.}
+
+\numpara{3.2.3}
+\nde{This paragraph has been expanded.}
+Let $\mathscr U$ be a $\OS$-coalgebra in groups. We shall see that the $S$-group functor $G=\Spec^*\mathscr U$ is \emph{very good}, in the sense of II, 4.6 and 4.10.
+
+Let $\mathscr M$ be a free $\OS$-module of rank $r$, and let $T\to S$ be an $S$-scheme. Since $I_T(\mathscr M)=\Spec(\OO_T\oplus\mathscr M_T)$, so that $\pi:I_T(\mathscr M)\to T$ is affine, one has
+\[
+\pi_*(\mathscr U_{I_T(\mathscr M)})=\mathscr U_T\otimes_{\OO_T}\pi_*(\OO_{I_T(\mathscr M)})=\mathscr U_T\otimes_{\OO_T}(\OO_T\oplus\mathscr M_T),
+\]
+and therefore
+\begin{equation}\tag{1}
+\Gamma(I_T(\mathscr M),\mathscr U_{I_T(\mathscr M)})\simeq\Gamma(T,\mathscr U_T)\otimes_{\OO(T)}\bigl(\OO(T)\oplus\Gamma(T,\mathscr M_T)\bigr).
+\end{equation}
+Let $(d_1,\ldots,d_r)$ be a basis of $\mathscr M$. Then an element $u_0+\sum_i u_id_i$ of $\Gamma(I_T(\mathscr M),\mathscr U_{I_T(\mathscr M)})$ belongs to $G(I_T(\mathscr M))$ if and only if one has:
+\[
+1=\varepsilon\Bigl(u_0+\sum_i u_id_i\Bigr)=\varepsilon(u_0)+\sum_i\varepsilon(u_i)d_i,
+\]
+and
+\[
+\begin{aligned}
+\Bigl(u_0+\sum_i u_id_i\Bigr)\otimes\Bigl(u_0+\sum_i u_id_i\Bigr)
+&=\Delta\Bigl(u_0+\sum_i u_id_i\Bigr)\\
+&=\Delta(u_0)+\sum_i\Delta(u_i)d_i,
+\end{aligned}
+\]
+that is:
+\begin{equation}\tag{2}
+\begin{cases}
+\varepsilon(u_0)=1,\quad\Delta u_0=u_0\otimes u_0,&\text{\ie $u_0\in G(T)$},\\
+\varepsilon(u_i)=0,\quad\Delta(u_i)=u_i\otimes u_0+u_0\otimes u_i,&i=1,\ldots,r.
+\end{cases}
+\end{equation}
+Moreover, the morphism $G(I_T(\mathscr M))\to G(T)$ corresponding to the zero section of $I_T(\mathscr M)\to T$ is given by: $u_0+\sum_i u_id_i\mapsto u_0$. From this, combined with (1) and (2), one deduces that if $\mathscr N$ is a second free $\OS$-module of finite rank, the diagram of sets
+\[
+\xymatrix@C=4em{G(I_T(\mathscr M\oplus\mathscr N))\ar[r]\ar[d]&G(I_T(\mathscr N))\ar[d]\\
+G(I_T(\mathscr M))\ar[r]&G(T)}
+\]
+is cartesian, \ie $G$ satisfies condition (E) of II, 3.5.
+
+Denote by $\operatorname{Prim}\Gamma(T,\mathscr U_T)$ the sub-$\OO(T)$-module of $\Gamma(T,\mathscr U_T)$ consisting of \emph{primitive elements}, \ie elements $u$ satisfying (with the abuse of notation pointed out in 3.1.2):
+\[
+\Delta u=u\otimes1+1\otimes u,\qquad\varepsilon(u)=0.
+\]
+\nde{Note that the second condition is a consequence of the first, for the latter implies that $u=(\mathrm{id}\otimes\varepsilon)\Delta(u)=u+\varepsilon(u)$, whence $\varepsilon(u)=0$.}
+Since $(\uLie G)(T)$ is the set of elements $u_0+ud\in G(I_T)$ over the unit element $u_0=1$ of $G(T)$, one obtains an isomorphism of $\OO(T)$-modules, functorial in $T$:\nde{The $\mathbf O_S$-module structure on $\uLie G$ is defined in II, Prop.\ 3.6.}
+% typo: source "elements de u_0+ud" has a redundant de; omitted.
+\[
+(\uLie G)(T)\simeq\operatorname{Prim}\Gamma(T,\mathscr U_T).
+\]
+On the other hand, one deduces from (1) that
+\[
+\operatorname{Prim}\Gamma(I_T(\mathscr M),\mathscr U_{I_T(\mathscr M)})\simeq\operatorname{Prim}\Gamma(T,\mathscr U_T)\otimes_{\OO(T)}\OO(I_T(\mathscr M)),
+\]
+and it follows that the natural morphism of $\OO(I_T(\mathscr M))$-modules:
+\[
+(\uLie G)(T)\otimes_{\OO(T)}\OO(I_T(\mathscr M))\longrightarrow(\uLie G)(I_T(\mathscr M))
+\]
+is an isomorphism, \ie $\uLie G$ is a good $\mathbf O_S$-module (cf.\ II, Def.\ 4.4).
+
+Thus $G$ is a good $S$-group functor (cf.\ II, Def.\ 4.6), and according to II, 4.7.2, $\uLie G$ is equipped with a $\mathbf O_S$-bilinear ``Lie bracket'' satisfying the Jacobi identity. It remains to show that $G$ is very good, \ie that the ``bracket'' on $(\uLie G)(T)$ does indeed satisfy $[u,u]=0$ for every $u\in(\uLie G)(T)$ (cf.\ II, 4.10).
+
+Let $u,v$ be two elements of $(\uLie G)(T)$, \ie two primitive elements of $\Gamma(T,\mathscr U_T)$. Put $I=\Spec\OS[d]/(d^2)$ and $I'=\Spec\OS[d']/(d'^2)$. Since the composition law of $G(I\times I')$ is induced by the multiplication of the algebra $\mathscr U_{I\times I'}$, one has in $G(I\times I')$ the equality:
+\[
+\begin{aligned}
+&(1+ud)(1+vd')(1+ud)^{-1}(1+vd')^{-1}\\
+&\qquad=(1+ud)(1+vd')(1-ud)(1-vd)\\
+&\qquad=1+(uv-vu)dd'.
+\end{aligned}
+\]
+% typo?: the source has (1-vd), without a prime, on the right; retained.
+According to the description of the bracket $[u,v]$ given before Prop.\ 4.8 of Exp.\ II, one obtains that
+\[
+[u,v]=uv-vu,
+\]
+where the right-hand term is the commutator of $u$ and $v$ in the algebra $\Gamma(T,\mathscr U_T)$, whence $[u,u]=0$. One has therefore obtained the following proposition:\nde{This proposition, which summarizes the preceding discussion, has been added.}
+
+\begin{enonce}{Proposition}{}
+Let $\mathscr U$ be a $\OS$-coalgebra in groups. The $S$-group functor $G=\Spec^*\mathscr U$ is very good, and there is an isomorphism $\uLie G\simeq\operatorname{Prim}\mathbf W(\mathscr U)$ of $\mathbf O_S$-Lie algebras, where $\operatorname{Prim}\mathbf W(\mathscr U)$ denotes the functor which associates to every $T\to S$ the $\OO(T)$-Lie algebra consisting of the primitive elements of $\mathbf W(\mathscr U)(T)=\Gamma(T,\mathscr U_T)$.
+\end{enonce}
+
+\numpara{3.3}
+Finally, suppose that $\mathscr U$ is a \emph{$\OS$-coalgebra in commutative groups}, that is, that the triangle
+\begin{equation}\tag{$\mathrm{i}^*$}
+\xymatrix{\mathscr U\otimes\mathscr U\ar[rr]^\sigma\ar[dr]_{m_{\mathscr U}}&&\mathscr U\otimes\mathscr U\ar[dl]^{m_{\mathscr U}}\\&\mathscr U&}
+\end{equation}
+is commutative, or again that $m_{\mathscr U}$ makes $\mathscr U$ a commutative $\OS$-algebra. Conditions (i), (ii), (iii), (iv), (v), (vi), $(\mathrm{i})^*$, $(\mathrm{ii})^*$, $(\mathrm{iii})^*$, and $(\mathrm{v})^*$ then also mean that $\mathscr U$ is a cogroup in the category of commutative $\OS$-algebras. Thus, if in addition $\mathscr U$ is a quasi-coherent $\OS$-module, the affine $S$-scheme $\Spec\mathscr U$ is a commutative $S$-group scheme.
+
+In this case, since the diagonal morphism $\Delta'$ of $\OS[T,T^{-1}]$ sends $T$ to $T\otimes T$, the morphisms of $S$-groups from $\Spec\mathscr U$ to $\mathbf G_{\mathrm m,S}$ (I 4.3.2) correspond bijectively to the morphisms of unital $\OS$-algebras
+\[
+\varphi:\OS[T,T^{-1}]\longrightarrow\mathscr U
+\]
+such that $(\varphi\otimes\varphi)\circ\Delta'=\Delta_{\mathscr U}\circ\varphi$ (in this case, $\varepsilon_{\mathscr U}\circ\varphi$ is the neutral element of $\mathbf G_{\mathrm m,S}(S)$, \ie the augmentation $\varepsilon'$). Such a morphism $\varphi$ is determined by the image $\varphi(T)$, which must be an invertible element $x$ of $\mathscr U$ satisfying $\Delta_{\mathscr U}x=x\otimes x$ and $\varepsilon_{\mathscr U}(x)=\varepsilon'(T)=1$. One therefore has:
+\[
+\Hom_{S\text{-gr.}}(\Spec\mathscr U,\mathbf G_{\mathrm m,S})\simeq(\Spec^*\mathscr U)(S)
+\]
+and since this formula remains valid after every base change, this gives:
+\[
+\Spec^*\mathscr U\simeq\uHom_{S\text{-gr.}}(\Spec\mathscr U,\mathbf G_{\mathrm m,S}).
+\]
+One has therefore obtained the
+\begin{proposition}{3.3.0}\label{VIIA.3.3.0}
+If $\mathscr U$ is a $\OS$-coalgebra in commutative groups, quasi-coherent as an $\OS$-module, then the affine $S$-scheme $G=\Spec\mathscr U$ is a commutative $S$-group scheme, and there is an isomorphism of $S$-group functors $\Spec^*\mathscr U\simeq\uHom_{S\text{-gr.}}(G,\mathbf G_{\mathrm m,S})$.
+\end{proposition}
+If one assumes, in addition, that $\mathscr U$ is a locally free $\OS$-module of finite type, then, according to 3.1.2.1, the $S$-group functor $\Spec^*\mathscr U$ is represented by $\Spec\mathscr U^*$. One therefore obtains the
+\begin{proposition}{3.3.1}\label{VIIA.3.3.1}
+\textup{(Cartier duality).} The functor
+\[
+\mathscr A(G)\mapsto\mathscr A(G)^*=\mathscr H\!om_{\OS\text{-Mod.}}(\mathscr A(G),\OS)
+\]
+induces a duality{\renewcommand{\thefootnote}{*}\footnote{A duality of a category $\mathscr C$ is a pair $(D,\varphi)$ consisting of a contravariant functor $D$ from $\mathscr C$ to $\mathscr C$ and a functorial isomorphism $\varphi:\mathrm{Id}_{\mathscr C}\to DD$ such that the isomorphisms $\varphi D:D\to DDD$ and $D\varphi^{-1}:DDD\to D$ are inverse to one another.\footnotemark[38]}} of the category of commutative, finite and locally free $S$-group schemes; it associates to $G$ the $S$-group $\uHom_{S\text{-gr.}}(G,\mathbf G_{\mathrm m,S})$.
+\end{proposition}
+\setcounter{footnote}{38}\ndetext{$D\varphi$ has been corrected to $D\varphi^{-1}$.}
+
+\sgasection{4}{``Frobeniuseries''}
+Let $p$ be a fixed prime number and $(\mathbf{Sch}/\FF_p)$ the category of schemes of characteristic $p$, that is, schemes over the prime field $\FF_p$. Following the general conventions of this seminar, we identify $(\mathbf{Sch}/\FF_p)$ with a subcategory of $\widehat{(\mathbf{Sch}/\FF_p)}$ by means of the functor $h$ of I 1.1. We likewise use the isomorphism from $\Hom(h_X,\mathbf F)$ onto $\mathbf F(X)$ defined in I 1.1 to identify these two sets whenever $X$ is an $\FF_p$-scheme and $\mathbf F$ an object of $\widehat{(\mathbf{Sch}/\FF_p)}$.
+
+\begin{notation}{4.0}\label{VIIA.4.0}
+\nde{The numbering 4.0 has been added for later references.}
+If $T$ is an $\FF_p$-scheme, a $T$-functor is a morphism $q:\mathbf F\to T$ of $\widehat{(\mathbf{Sch}/\FF_p)}$ with target $T$; for every $T$-scheme $r:X\to T$, the set of $T$-morphisms $X\to\mathbf F$, \ie $\FF_p$-morphisms $s:X\to\mathbf F$ such that $q\circ s=r$, will then be denoted by $q(r)$, $q(X/T)$, $\mathbf F(r)$, or $\mathbf F(X/T)$ (or even $\mathbf F(X)$ when no confusion will be possible with $\Hom(h_X,\mathbf F)$).
+\end{notation}
+
+\numpara{4.1}
+For every scheme $S$ of characteristic $p$, we denote by $\mathrm{fr}(S)$, or simply $\mathrm{fr}$, the endomorphism of $S$ inducing the identity on the topological space underlying $S$ and associating $x^p$ to a section $x$ of $\OS$ over an open subset $U$.
+
+Then the map $\mathrm{fr}:S\mapsto\mathrm{fr}(S)$ is an \emph{endomorphism of the identity functor} of $(\mathbf{Sch}/\FF_p)$,\nde{\ie for every morphism of $\FF_p$-schemes $f:Y\to X$, the diagram below is commutative:
+\[
+\xymatrix{Y\ar[r]^f\ar[d]_{\mathrm{fr}(Y)}&X\ar[d]^{\mathrm{fr}(X)}\\Y\ar[r]_f&X.}
+\]} which implies the following results. Let $\mathbf E$ be an $\FF_p$-functor, that is, an object of $\widehat{(\mathbf{Sch}/\FF_p)}$; the map associating to every $\FF_p$-scheme $S$ the endomorphism $\mathbf E(\mathrm{fr}(S))$ of $\mathbf E(S)$ is a functorial endomorphism of $\mathbf E$ which we shall denote by $\mathrm{fr}(\mathbf E)$ or $\mathrm{fr}$; this notation is compatible with the identification of $(\mathbf{Sch}/\FF_p)$ with a subcategory of $\widehat{(\mathbf{Sch}/\FF_p)}$. Moreover, the map $\mathbf E\mapsto\mathrm{fr}(\mathbf E)$ is an \emph{endomorphism of the identity functor} of $\widehat{(\mathbf{Sch}/\FF_p)}$ (which we shall again denote by $\mathrm{fr}$).\nde{One says that $\mathrm{fr}(X)$ is the ``absolute'' Frobenius morphism of $X$, to distinguish it from the ``relative'' Frobenius morphism $\mathrm{Fr}(X/S)$ introduced below.}
+
+For every $\FF_p$-scheme $S$ and every $S$-functor $q:X\to S$, we denote by $X^{(p/S)}$ or $X^{(p)}$ the inverse image of $X$ by the base change $\mathrm{fr}(S)$:
+\[
+\xymatrix@C=4em{X^{(p/S)}\ar[r]^{\mathrm{pr}_X}\ar[d]&X\ar[d]^q\\S\ar[r]_{\mathrm{fr}(S)}&S.}
+\]
+The commutative square
+\[
+\xymatrix@C=4em{X\ar[r]^{\mathrm{fr}(X)}\ar[d]_q&X\ar[d]^q\\S\ar[r]_{\mathrm{fr}(S)}&S}
+\]
+then induces an $S$-morphism denoted by $\mathrm{Fr}(X/S)$ (or simply $\mathrm{Fr}$) from $X$ to $X^{(p/S)}$ such that $\mathrm{fr}(X)=\mathrm{pr}_X\circ\mathrm{Fr}(X/S)$:
+\[
+\xymatrix@C=3em@R=3em{X\ar[dr]^{\mathrm{Fr}(X/S)}\ar@/^2pc/[drr]^{\mathrm{fr}(X)}\ar[ddr]_q&&\\
+&X^{(p/S)}\ar[r]^{\mathrm{pr}_X}\ar[d]&X\ar[d]^q\\
+&S\ar[r]_{\mathrm{fr}(S)}&S.}
+\]
+We shall say that $\mathrm{Fr}(X/S)$ is the \emph{Frobenius morphism of $X$ relative to $S$}; it is clear that the map $\mathrm{Fr}:X\mapsto\mathrm{Fr}(X/S)$ is a functorial homomorphism.
+
+\nde{The original has been expanded in what follows.}
+Let $r:T\to S$ be an $S$-scheme. For every $\phi\in X(r)=\Hom_S(T,X)$ (cf.\ 4.0), there is a commutative diagram:
+\[
+\xymatrix@C=4em@R=3em{X\ar[r]^{\mathrm{Fr}(X/S)}\ar[dr]^q&X^{(p/S)}\ar[r]^{\mathrm{pr}_X}\ar[d]^{q^{(p/S)}}&X\ar[d]^q\\
+T\ar[u]^\phi\ar[r]_r&S\ar[r]_{\mathrm{fr}(S)}&S.}
+\]
+According to the definition of $X^{(p/S)}$ as a fibered product, $\mathrm{pr}_X$ induces a bijection:
+\[
+X^{(p/S)}(r)=\Hom_S(T,X^{(p/S)})\isomto\Hom_S(T,X)=X(\mathrm{fr}(S)\circ r).
+\]
+% typo?: the source prints Hom_S(T,X) on the right; retained.
+On the other hand, $r\circ\mathrm{fr}(T)=\mathrm{fr}(S)\circ r$, since $\mathrm{fr}$ is an endomorphism of the identity functor. It follows that the map $\mathrm{Fr}(X/S)(r):X(r)\to X^{(p/S)}(r)$ may be characterized by the commutativity of the following square:
+\begin{equation}\tag{$\dagger$}
+\xymatrix@C=4em@R=3em{X(r)\ar[r]^{\mathrm{Fr}(X/S)(r)}\ar[d]_{X(\mathrm{fr}(T))}&X^{(p/S)}(r)\ar[d]^\wr\\
+X(r\circ\mathrm{fr}(T))\ar@{=}[r]&X(\mathrm{fr}(S)\circ r).}
+\end{equation}
+
+For example, if $X$ is the subscheme of $S$ defined by a quasi-coherent ideal $\mathscr I$, then $X^{(p)}$ is the subscheme of $S$ defined by the ideal $\mathscr I^{\{p\}}$ generated by the $p$-th powers of sections of $\mathscr I$; furthermore, $\mathrm{Fr}(X/S)$ is then the canonical immersion from $\Spec(\OX/\mathscr I)$ into $\Spec(\OO/\mathscr I^{\{p\}})$.
+% typo?: source Spec(O_X/I), retained.
+
+\numpara{4.1.1}
+\nde{The original has been expanded in what follows.}
+Let $t:T\to S$ be a base change and $X_T=X\times_{q,t}T$. Consider the inverse image of $X_T$ under $\mathrm{fr}(T)$:
+\[
+\xymatrix@C=3em{(X_T)^{(p/T)}\ar[r]\ar[d]&X_T\ar[r]\ar[d]&X\ar[d]^q\\
+T\ar[r]_{\mathrm{fr}(T)}&T\ar[r]_t&S.}
+\]
+Since $t\circ\mathrm{fr}(T)=\mathrm{fr}(S)\circ t$, $(X_T)^{(p/T)}$ identifies with the inverse image of $X^{(p/S)}$ under $t$; in other words, there is a canonical isomorphism:
+\[
+X_T^{(p/T)}\isomto(X^{(p/S)})_T.
+\]
+It is clear that, under this identification, $\mathrm{Fr}(X_T/T)$ identifies with the inverse image $\mathrm{Fr}(X/S)_T$ of $\mathrm{Fr}(X/S)$.
+
+\numpara{4.1.1.1}
+In particular, if $S$ is the spectrum of the prime field $\FF_p$, $X^{(p/S)}$ is equal to $X$ and $\mathrm{Fr}(X/S)$ to $\mathrm{fr}(X)$. Consequently, $X_T^{(p/T)}$ identifies with $X_T$ and $\mathrm{Fr}(X_T/T)$ with $\mathrm{fr}(X)_T$.
+
+For example, if $E$ is a set and $E_T$ the constant $T$-scheme of type $E$, one has $E_T^{(p/T)}\simeq E_T$ and $\mathrm{Fr}(E_T/T)\simeq\mathrm{id}_{E_T}$.
+
+\numpara{4.1.2}
+The functor $X\mapsto X^{(p/S)}$ clearly commutes with products; it therefore transforms an $S$-group $G$ into an $S$-group $G^{(p/S)}$; moreover, since $\mathrm{Fr}$ is a functorial homomorphism,
+\[
+\mathrm{Fr}(G/S):G\longrightarrow G^{(p/S)}
+\]
+is a homomorphism of $S$-groups. We shall denote its kernel by ${}_{\mathrm{Fr}}G$.
+
+If $r:T\to S$ is a scheme over $S$, it follows from diagram $(\dagger)$ of 4.1 that the value of ${}_{\mathrm{Fr}}G$ at $r$ is the kernel of the homomorphism
+\[
+G(\mathrm{fr}(T)):G(r)\longrightarrow G(r\circ\mathrm{fr}(T)).
+\]
+Now, when $T$ is the scheme $I_R$ of dual numbers over an $S$-scheme $R$, $\mathrm{fr}(I_R)$ factors as follows:
+\[
+I_R\xrightarrow{\mathrm{can.}}R\xrightarrow{\mathrm{fr}(R)}R\xrightarrow{s}I_R,
+\]
+where $s$ is the zero section. It follows that $({}_{\mathrm{Fr}}G)(I_R)$ contains the kernel $\uLie(G/S)(R)$ of the morphism $G(s):G(I_R)\to G(R)$, and that one therefore has: $\uLie(G/S)=\uLie({}_{\mathrm{Fr}}G/S)$.

@@ -1,0 +1,534 @@
+\begin{remark}{4.7.1.2}\label{I.4.7.1.2}
+--- {\renewcommand{\thefootnote}{(39)}\nde{This remark has been added.}}
+Let \(\mathcal{F}\) be a \(G\)-\(\OS\)-module. The subsheaf of invariants
+\(\mathcal{F}^{G}\) is defined as follows: for every open \(U\) of \(S\),
+\[
+\mathcal{F}^{G}(U) = \mathbf{W}(\mathcal{F})^{G}(U)
+= \bigl\{ x \in \mathcal{F}(U) \bigm|
+g \cdot x_{S'} = x_{S'}
+\text{ for every } S' \xrightarrow{f} U,\ g \in G(S') \bigr\},
+\]
+where \(x_{S'}\) denotes the image of \(x\) in
+\(\Gamma(S', f^{*}(\mathcal{F})) = \Gamma(U, f_{*}f^{*}(\mathcal{F}))\).
+
+One must take care that the natural morphism
+\(\mathbf{W}(\mathcal{F}^{G}) \to \mathbf{W}(\mathcal{F})^{G}\) is not an isomorphism
+in general. For example, if \(S = \Spec(\mathbb{Z})\) and \(G\) is the constant group
+\(\mathbb{Z}/2\mathbb{Z} = \{1, \tau\}\) acting on \(\mathcal{F} = \OS\) by
+\(\tau \cdot 1 = -1\), one has \(\mathcal{F}^{G} = 0\) but, if \(R\) is an
+\(\mathbb{F}_{2}\)-algebra,
+\(\mathbf{W}(\mathcal{F})^{G}(\Spec(R)) = R\).
+\end{remark}
+
+\numpara{4.7.2}
+One assumes henceforth, until the end of \No4.7, that \(G\) is \emph{affine}
+over~\(S\).%
+{\renewcommand{\thefootnote}{(40)}\nde{Cf.\ \(\mathrm{VI}_{\mathrm{B}}\), §§~11.1--11.6 for the
+extension of the results of 4.7.2 to the case where \(G\) is not necessarily
+affine, but where \(G\) and \(\mathcal{F}\) are assumed \emph{flat} over~\(S\).}}
+Then, by virtue of 4.6.4, the datum of a morphism of \(S\)-functors
+\[
+\rho \colon h_{G} \longrightarrow
+\underline{\End}_{\mathbf{O}_{S}}\bigl(\mathbf{W}(\mathcal{F})\bigr)
+\]
+is equivalent to that of a morphism of \(\OS\)-modules
+\[
+\mu \colon \mathcal{F} \longrightarrow
+\mathcal{F} \otimes_{\OS} \mathcal{A}(G).
+\]
+
+To say that \(\rho\) is a morphism of
+\((\widehat{\mathbf{Sch}})_{/S}\)-groups is then equivalent to saying that
+\(\mu\) satisfies the following axioms:
+
+\medskip
+\noindent
+(CM~1) \emph{the following diagram is commutative}
+\[
+\xymatrix{
+\mathcal{F} \ar[rr]^{\mu} \ar[d]_{\mu}
+  && \mathcal{F} \otimes_{\OS} \mathcal{A}(G)
+     \ar[d]^{\mathrm{id}\otimes\Delta} \\
+\mathcal{F} \otimes_{\OS} \mathcal{A}(G) \ar[rr]^{\mu\otimes\mathrm{id}}
+  && \mathcal{F} \otimes_{\OS} \mathcal{A}(G)
+     \otimes_{\OS} \mathcal{A}(G)\,.
+}
+\]
+
+\noindent
+(CM~2) \emph{the composite below is the identity}
+\[
+\mathcal{F} \xrightarrow{\mu}
+\mathcal{F} \otimes_{\OS} \mathcal{A}(G)
+\xrightarrow{\mathrm{id}\otimes\varepsilon}
+\mathcal{F} \otimes_{\OS} \OS
+\xrightarrow{\sim}
+\mathcal{F}.
+\]
+
+These axioms (CM~1) and (CM~2) are those of the structure of a (right)
+comodule%
+{\renewcommand{\thefootnote}{(41)}\nde{Left \(G\)-\(\OS\)-modules correspond naturally to right
+\(\mathcal{A}(G)\)-comodules.}}
+over the bialgebra \(\mathcal{A}(G)\).
+
+Set \(\mathcal{A} = \mathcal{A}(G)\). If \(\mathcal{F}\) and \(\mathcal{F}'\)
+are \(\mathcal{A}\)-comodules, a morphism of comodules
+\(f \colon \mathcal{F} \to \mathcal{F}'\) is a morphism of \(\OS\)-modules such
+that the following diagram is commutative:
+\[
+\xymatrix{
+\mathcal{F} \ar[r]^{f} \ar[d]_{\mu_{\mathcal{F}}}
+  & \mathcal{F}' \ar[d]^{\mu_{\mathcal{F}'}} \\
+\mathcal{F} \otimes \mathcal{A} \ar[r]^{f\otimes\mathrm{id}}
+  & \mathcal{F}' \otimes \mathcal{A}\,.
+}
+\]
+One thus obtains the category \((\mathcal{A}\text{-}\mathrm{Comod.})\), and
+one will denote by \((\mathcal{A}\text{-}\mathrm{Comod.q.c.})\) the full
+subcategory consisting of the \(\mathcal{A}\)-comodules which are
+quasi-coherent as \(\OS\)-modules.
+One has thus obtained:
+
+\begin{proposition}{4.7.2}\label{I.4.7.2}
+--- Let \(G\) be an \(S\)-group affine over~\(S\). One has equivalences of
+categories:
+\begin{align*}
+(G\text{-}\OS\text{-Mod.})
+  &\simeq \bigl(\mathcal{A}(G)\text{-}\mathrm{Comod.}\bigr) \\
+(G\text{-}\OS\text{-Mod.q.c.})
+  &\simeq \bigl(\mathcal{A}(G)\text{-}\mathrm{Comod.q.c.}\bigr).
+\end{align*}
+{\renewcommand{\thefootnote}{(42)}\nde{The following sentence has been added.}}
+If moreover \(S = \Spec(\Lambda)\) is affine and if one denotes
+\(\Lambda[G] = \Gamma(S, \mathcal{A}(G))\), one has an equivalence of
+categories
+\[
+\bigl(\mathcal{A}(G)\text{-}\mathrm{Comod.q.c.}\bigr)
+\simeq \bigl(\Lambda[G]\text{-}\mathrm{Comod.}\bigr).
+\]
+\end{proposition}
+
+{\renewcommand{\thefootnote}{(43)}\nde{The following paragraph has been added, taken from
+\textup{[Se68, \S~1.3]}.}}
+Suppose moreover that \(\mathcal{A} = \mathcal{A}(G)\) is a \emph{flat}
+\(\OS\)-module. Let \(\mathcal{E}\) be an \(\mathcal{A}\)-comodule and
+\(\mathcal{F}\) a sub-\(\OS\)-module of \(\mathcal{E}\). Since \(\mathcal{A}\)
+is flat over \(\OS\), one can identify \(\mathcal{F} \otimes \mathcal{A}\)
+(resp.\ \(\mathcal{F} \otimes \mathcal{A} \otimes \mathcal{A}\)) with a
+sub-\(\OS\)-module of \(\mathcal{E} \otimes \mathcal{A}\)
+(resp.\ \(\mathcal{E} \otimes \mathcal{A} \otimes \mathcal{A}\)).
+Suppose that \(\mu_{\mathcal{E}}\) maps \(\mathcal{F}\) into
+\(\mathcal{F} \otimes \mathcal{A}\); then its restriction
+\(\mu_{\mathcal{F}} \colon \mathcal{F} \to \mathcal{F} \otimes \mathcal{A}\)
+equips \(\mathcal{F}\) with a structure of \(\mathcal{A}\)-comodule; one says
+that \(\mathcal{F}\) is a \emph{subcomodule} of \(\mathcal{E}\).
+By passage to the quotient, \(\mu_{\mathcal{E}}\) defines a morphism of
+\(\OS\)-modules
+\(\mathcal{E}/\mathcal{F} \to \mathcal{E}/\mathcal{F} \otimes \mathcal{A}\),
+which equips \(\mathcal{E}/\mathcal{F}\) with a structure of
+\(\mathcal{A}\)-comodule. If \(f \colon \mathcal{E} \to \mathcal{E}'\) is a
+morphism of \(\mathcal{A}\)-comodules, \(\Ker f\) (resp.\ \(\Im f\)) is a
+sub-\(\mathcal{A}\)-comodule of \(\mathcal{E}\) (resp.\ \(\mathcal{E}'\)), and
+\(f\) induces an isomorphism of \(\mathcal{A}\)-comodules:
+\(\mathcal{E}/\Ker f \isomto \Im f\). Moreover, if \(\mathcal{E}\) and
+\(\mathcal{E}'\) are quasi-coherent \(\OS\)-modules, the same is true of
+\(\Ker f\) and \(\Im f\). Consequently, \((\mathcal{A}\text{-}\mathrm{Comod.})\)
+and \((\mathcal{A}\text{-}\mathrm{Comod.q.c.})\) are \emph{abelian}
+categories.
+
+\begin{corollary}{4.7.2.1}\label{I.4.7.2.1}
+--- One assumes that \(G\) is affine and flat over~\(S\). Then the category
+\((G\text{-}\OS\text{-Mod.q.c.})\)
+(resp.\ \((G\text{-}\OS\text{-Mod.})\)), equivalent to the
+category of quasi-coherent \(\mathcal{A}(G)\)-comodules over \(\OS\)
+(resp.\ of \(\mathcal{A}(G)\)-comodules), is abelian.
+\end{corollary}
+
+\numpara{4.7.3}
+Suppose now that \(G\) is a \emph{diagonalizable} group, that is, that
+\(\mathcal{A}(G)\) is the algebra of a commutative group \(M\) over the sheaf
+of rings \(\OS\). If \(\mathcal{F}\) is an \(\OS\)-module, one has
+\[
+\mathcal{F} \otimes \mathcal{A}(G)
+= \coprod_{m \in M} \mathcal{F} \otimes m\OS.
+\]
+
+To give a morphism of \(\OS\)-modules
+\[
+\mu \colon \mathcal{F} \longrightarrow \mathcal{F} \otimes \mathcal{A}(G)
+\]
+is therefore equivalent to giving \(\OS\)-endomorphisms
+\((\mu_{m})_{m \in M}\) of \(\mathcal{F}\), such that for every section \(x\)
+of \(\mathcal{F}\) over an open of \(S\), \((\mu_{m}(x))\) is a section of the
+direct sum \(\coprod_{m \in M} \mathcal{F}\) (this means that over every
+sufficiently small open, only finitely many of the restrictions of the
+\(\mu_{m}(x)\) are nonzero).
+
+In order that \(\mu\), defined by
+\[
+\mu(x) = \sum_{m \in M} \mu_{m}(x) \otimes m,
+\]
+satisfy (CM~1) (resp.\ (CM~2)), it is necessary and sufficient that one have
+\[
+\mu_{m} \circ \mu_{m'} = \delta_{mm'}\,\mu_{m},
+\qquad
+\Bigl(\text{resp.}\ \sum_{m \in M} \mu_{m} = \mathrm{Id}_{\mathcal{F}}\Bigr),
+\]
+which means that the \(\mu_{m}\) are pairwise orthogonal projectors summing to
+the identity. One has thus proved:
+
+\begin{proposition}{4.7.3}\label{I.4.7.3}
+--- If \(G = \mathbf{D}_{S}(M)\) is a diagonalizable \(S\)-group, the category of
+quasi-coherent \(G\)-\(\OS\)-modules
+(resp.\ of \(G\)-\(\OS\)-modules) is equivalent to the category of
+quasi-coherent \(\OS\)-modules (resp.\ of \(\OS\)-modules) graded of type~\(M\).
+\end{proposition}
+
+\begin{remark*}
+--- If \(\mathcal{F}\) is endowed with a structure of \(\OS\)-algebra preserved by
+the operations of \(G\), then the grading of \(\mathcal{F}\) is an algebra
+grading. More precisely:
+\end{remark*}
+
+\begin{corollary}{4.7.3.1}\label{I.4.7.3.1}
+--- The functor \(\mathcal{A} \mapsto \Spec \mathcal{A}\) induces an equivalence
+between the category of quasi-coherent \(\OS\)-algebras graded of type~\(M\)
+and the opposite category to that of the \(S\)-schemes affine over~\(S\) with
+\(S\)-group of operators \(G = \mathbf{D}_{S}(M)\).
+\end{corollary}
+
+\begin{proposition}{4.7.4}\label{I.4.7.4}
+--- Let \(G\) be a diagonalizable \(S\)-group. If
+\(0 \to \mathcal{F}_{1} \to \mathcal{F}_{2} \to \mathcal{F}_{3} \to 0\)
+is an exact sequence of quasi-coherent \(G\)-\(\OS\)-modules which
+splits as a sequence of \(\OS\)-modules, then it likewise splits as a sequence
+of \(G\)-\(\OS\)-modules.
+\end{proposition}
+
+Indeed, if \(G = \mathbf{D}_{S}(M)\), each of the \(\mathcal{F}_{i}\) is graded by the
+\((\mathcal{F}_{i})_{m}\) and for each \(m \in M\) the sequence
+\[
+0 \longrightarrow (\mathcal{F}_{1})_{m} \longrightarrow
+(\mathcal{F}_{2})_{m} \longrightarrow (\mathcal{F}_{3})_{m} \longrightarrow 0
+\]
+of \(\OS\)-modules is split. The preceding proposition then yields the result.
+
+\sgasection{5}{Cohomology of groups}
+\label{I.sec.5}
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{5.1. The standard complex.}\ ---\ \label{I.5.1}%
+{\renewcommand{\thefootnote}{(44)}\nde{This complex is often called the ``Hochschild complex''; see for example
+\S~II.3 of \textup{[DG70]}.}}%
+Let \(\mathcal{C}\) be a category, \(\mathbf{G}\) a
+\(\widehat{\mathcal{C}}\)-group, \(\mathbf{O}\) a
+\(\widehat{\mathcal{C}}\)-ring and \(\mathbf{F}\) a
+\(\mathbf{G}\)-\(\mathbf{O}\)-module. One sets, for \(n \geqslant 0\),
+\[
+\underline{C}^{n}(\mathbf{G}, \mathbf{F})
+= \uHom(\mathbf{G}^{n}, \mathbf{F})
+\quad\text{and}\quad
+C^{n}(\mathbf{G}, \mathbf{F})
+= \Hom(\mathbf{G}^{n}, \mathbf{F}),
+\]
+where \(\mathbf{G}^{0}\) is the final object~\(e\). Then
+\(\underline{C}^{n}(\mathbf{G}, \mathbf{F})\)
+(resp.\ \(C^{n}(\mathbf{G}, \mathbf{F})\)) is endowed in an evident way with a
+structure of \(\mathbf{O}\)-module
+(resp.\ of \(\Gamma(\mathbf{O})\)-module), and one has
+\[
+C^{n}(\mathbf{G}, \mathbf{F})
+\simeq \Gamma\bigl(\underline{C}^{n}(\mathbf{G}, \mathbf{F})\bigr)
+\quad\text{and}\quad
+\underline{C}^{n}(\mathbf{G}, \mathbf{F})(S)
+= C^{n}(\mathbf{G}_{S}, \mathbf{F}_{S}).
+\]
+
+To give an element of \(C^{n}(\mathbf{G}, \mathbf{F})\) is to give, for each
+\(S \in \Ob(\mathcal{C})\), an \(n\)-cochain of \(\mathbf{G}(S)\) in
+\(\mathbf{F}(S)\), functorially in~\(S\). The boundary operator
+\[
+\partial \colon C^{n}\bigl(\mathbf{G}(S), \mathbf{F}(S)\bigr)
+\longrightarrow C^{n+1}\bigl(\mathbf{G}(S), \mathbf{F}(S)\bigr),
+\]
+which, let us recall, is given by the formula
+\begin{align*}
+\partial f(g_{1}, \ldots, g_{n+1})
+&= g_{1} f(g_{2}, \ldots, g_{n+1})
++ \sum_{i=1}^{n} (-1)^{i}
+f(g_{1}, \ldots, g_{i}g_{i+1}, \ldots, g_{n+1}) \\
+&\qquad + (-1)^{n+1} f(g_{1}, \ldots, g_{n}),
+\end{align*}
+is functorial in \(S\) and therefore defines a homomorphism
+\[
+\partial \colon C^{n}(\mathbf{G}, \mathbf{F})
+\longrightarrow C^{n+1}(\mathbf{G}, \mathbf{F})
+\]
+such that \(\partial \circ \partial = 0\). One has thus defined a complex of
+abelian groups (and even of \(\Gamma(\mathbf{O})\)-modules), denoted
+\(C^{*}(\mathbf{G}, \mathbf{F})\). One defines in the same way the complex of
+\(\mathbf{O}\)-modules \(\underline{C}^{*}(\mathbf{G}, \mathbf{F})\), and one
+has
+\[
+C^{*}(\mathbf{G}, \mathbf{F})
+= \Gamma\bigl(\underline{C}^{*}(\mathbf{G}, \mathbf{F})\bigr).
+\]
+One denotes by \(H^{n}(\mathbf{G}, \mathbf{F})\)
+(resp.\ \(\underline{H}^{n}(\mathbf{G}, \mathbf{F})\)) the homology groups
+(resp.\ the homology \(\widehat{\mathcal{C}}\)-groups) of the complex
+\(C^{*}(\mathbf{G}, \mathbf{F})\)
+(resp.\ \(\underline{C}^{*}(\mathbf{G}, \mathbf{F})\)).
+
+One has in particular
+\[
+\underline{H}^{0}(\mathbf{G}, \mathbf{F}) = \mathbf{F}^{\mathbf{G}}
+\quad\text{and}\quad
+H^{0}(\mathbf{G}, \mathbf{F}) = \Gamma(\mathbf{F}^{\mathbf{G}}).
+\]
+
+\begin{remark}{5.1.1}\label{I.5.1.1}
+--- {\renewcommand{\thefootnote}{(45)}\nde{This remark has been added.}}
+The ``set-theoretic'' description of \(\partial\) given above is convenient
+for checking that \(\partial \circ \partial = 0\). One can also define
+\(\partial\) in terms of the multiplication
+\(m \colon \mathbf{G} \times \mathbf{G} \to \mathbf{G}\) and of the action
+\(\mu \colon \mathbf{G} \times \mathbf{F} \to \mathbf{F}\) as follows: for every
+\(f \in C^{n}(\mathbf{G}, \mathbf{F})\),
+\[
+\partial f = \mu \circ (\mathrm{id}_{\mathbf{G}} \times f)
++ \sum_{i=1}^{n} (-1)^{i}
+f \circ \bigl(\mathrm{id}_{\mathbf{G}^{i-1}} \times m
+\times \mathrm{id}_{\mathbf{G}^{n-i}}\bigr)
++ (-1)^{n+1} f \circ \mathrm{pr}_{[1,n]},
+\]
+where \(\mathrm{pr}_{[1,n]}\) denotes the projection of
+\(\mathbf{G}^{n+1} = \mathbf{G}^{n} \times \mathbf{G}\) onto
+\(\mathbf{G}^{n}\). Likewise, for every \(S \in \Ob(\mathcal{C})\) and
+\(f \in \underline{C}^{n}(\mathbf{G}, \mathbf{F})(S)
+= C^{n}(\mathbf{G}_{S}, \mathbf{F}_{S})\), one has
+\[
+\partial f = \mu_{S} \circ (\mathrm{id}_{\mathbf{G}_{S}} \times f)
++ \sum_{i=1}^{n} (-1)^{i}
+f \circ \bigl(\mathrm{id}_{\mathbf{G}_{S}^{i-1}} \times m_{S}
+\times \mathrm{id}_{\mathbf{G}_{S}^{n-i}}\bigr)
++ (-1)^{n+1} f \circ \mathrm{pr}_{[1,n]},
+\]
+where \(m_{S}\) and \(\mu_{S}\) are deduced from \(m\) and \(\mu\) by base
+change.
+\end{remark}
+
+\numpara{5.2}\label{I.5.2}
+{\renewcommand{\thefootnote}{(46)}\nde{The following reminder has been added.}}
+One recalls (\cf \S~3) that \((\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.})\)
+is endowed with the structure of an abelian category, defined ``argument by
+argument''; thus,
+\[
+0 \longrightarrow \mathbf{F}' \longrightarrow \mathbf{F}
+\longrightarrow \mathbf{F}'' \longrightarrow 0
+\]
+is an exact sequence of \(\mathbf{G}\)-\(\mathbf{O}\)-modules if, and only if,
+the sequence of abelian groups
+\[
+0 \longrightarrow \mathbf{F}'(S) \longrightarrow \mathbf{F}(S)
+\longrightarrow \mathbf{F}''(S) \longrightarrow 0
+\]
+is exact, for every \(S \in \Ob(\mathcal{C})\).
+
+{\renewcommand{\thefootnote}{(47)}\nde{The following sentence has been added.}}
+Suppose \(\mathcal{C}\) is small; then, by 3.2.1,
+\((\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.})\) has enough injective
+objects, so that the derived functors of the left exact functors \(H^{0}\) and
+\(\underline{H}^{0}\) are defined. We now propose to show that the functors
+\(H^{n}\) (resp.\ \(\underline{H}^{n}\)) are indeed the derived functors of
+\(H^{0}\) (resp.\ \(\underline{H}^{0}\)).
+
+\begin{definition}{5.2.0}\label{I.5.2.0}
+--- {\renewcommand{\thefootnote}{(48)}\nde{The original has been modified, in order to introduce 5.2.0.1 and
+5.2.0.2, which will be useful in the proof of Theorem~5.3.1.}}%
+For every \(\mathbf{O}\)-module \(\mathbf{P}\), one denotes by \(E(\mathbf{P})\)
+the object \(\uHom(\mathbf{G}, \mathbf{P})\) of \(\widehat{\mathcal{C}}\)
+endowed with the structure of \(\mathbf{G}\)-\(\mathbf{O}\)-module defined as
+follows: for every \(S \in \Ob(\mathcal{C})\) one has
+\(\uHom(\mathbf{G}, \mathbf{P})(S)
+= \Hom_{S}(\mathbf{G}_{S}, \mathbf{P}_{S})\), and one lets
+\(g \in \mathbf{G}(S)\) and \(a \in \mathbf{O}(S)\) operate on
+\(\phi \in \Hom_{S}(\mathbf{G}_{S}, \mathbf{P}_{S})\) by the formulas
+\[
+(g \cdot \phi)(h) = \phi(hg)
+\quad\text{and}\quad
+(a \cdot \phi)(h) = a\phi(h),
+\]
+for every \(h \in \mathbf{G}(S')\), \(S' \to S\). Moreover, for every
+\(\phi \in \Hom_{S}(\mathbf{G}_{S}, \mathbf{P}_{S})\) one sets
+\[
+\varepsilon(\phi) = \phi(1) \in \mathbf{P}(S)
+\]
+(where \(1\) denotes the unit element of \(\mathbf{G}(S)\)).
+
+This defines a functor
+\(E \colon (\mathbf{O}\text{-}\mathrm{Mod.}) \to
+(\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.})\)
+and a natural transformation \(\varepsilon \colon E \to \mathrm{Id}\), where
+\(\mathrm{Id}\) denotes the identity functor of
+\((\mathbf{O}\text{-}\mathrm{Mod.})\).
+\end{definition}
+
+\begin{remark}{5.2.0.1}\label{I.5.2.0.1}
+--- {\renewcommand{\thefootnote}{(48)}\footnotemark[\value{footnote}]}
+In what follows, let us denote by \(\mathbf{G}_{1}\) and \(\mathbf{G}_{2}\)
+two copies of \(\mathbf{G}\). Then the morphism
+\[
+\mathbf{G}_{1} \times E(\mathbf{P}) \longrightarrow E(\mathbf{P}),
+\qquad
+(g_{1}, \phi) \longmapsto \bigl(g_{2} \mapsto \phi(g_{2}g_{1})\bigr)
+\]
+corresponds, via the isomorphisms
+\begin{align*}
+\Hom\bigl(\mathbf{G}_{1} \times E(\mathbf{P}), E(\mathbf{P})\bigr)
+&\simeq \Hom\bigl(E(\mathbf{P}),
+\uHom\bigl(\mathbf{G}_{1}, \uHom(\mathbf{G}_{2}, \mathbf{P})\bigr)\bigr) \\
+&\simeq \Hom\bigl(E(\mathbf{P}),
+\uHom(\mathbf{G}_{2} \times \mathbf{G}_{1}, \mathbf{P})\bigr)
+\end{align*}
+to the morphism
+\(\phi \mapsto \bigl((g_{2}, g_{1}) \mapsto \phi(g_{2}g_{1})\bigr)\),
+\ie to the morphism
+\[
+\uHom(\mathbf{G}, \mathbf{P}) \longrightarrow
+\uHom(\mathbf{G}_{2} \times \mathbf{G}_{1}, \mathbf{P})
+\]
+induced by the multiplication
+\(\mu_{\mathbf{G}} \colon \mathbf{G} \times \mathbf{G} \to \mathbf{G}\),
+\((g_{2}, g_{1}) \mapsto g_{2}g_{1}\).
+\end{remark}
+
+\begin{lemma}{5.2.0.2}\label{I.5.2.0.2}
+--- {\renewcommand{\thefootnote}{(48)}\footnotemark[\value{footnote}]}
+\par
+\begin{enumeratei}
+\item The functor \(E\) is right adjoint to the forgetful functor
+\((\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.}) \to
+(\mathbf{O}\text{-}\mathrm{Mod.})\); more precisely,
+\(\varepsilon \colon E \to \mathrm{Id}\) induces, for every
+\[
+\mathbf{M} \in (\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.})
+\quad\text{and}\quad
+\mathbf{P} \in \Ob(\mathbf{O}\text{-}\mathrm{Mod.}),
+\]
+a bijection
+\[
+\Hom_{\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.}}
+\bigl(\mathbf{M}, E(\mathbf{P})\bigr)
+\xrightarrow{\sim}
+\Hom_{\mathbf{O}\text{-}\mathrm{Mod.}}\bigl(\mathbf{M}, \mathbf{P}\bigr)
+\]
+functorial in \(\mathbf{M}\) and \(\mathbf{P}\).
+\item Consequently, if \(\mathbf{I}\) is an injective object of
+\((\mathbf{O}\text{-}\mathrm{Mod.})\) then \(E(\mathbf{I})\) is an injective
+object of \((\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.})\).
+\end{enumeratei}
+\end{lemma}
+
+\begin{proof}
+To every \(\mathbf{O}\)-morphism \(f \colon \mathbf{M} \to \mathbf{P}\), one
+associates the element \(\phi_{f}\) of
+\[
+\Hom_{\mathbf{O}}\bigl(\mathbf{M}, E(\mathbf{P})\bigr)
+\]
+defined as follows.
+For every \(S \in \Ob(\mathcal{C})\) and \(m \in \mathbf{M}(S)\),
+\(\phi_{f}(m)\) is the element of
+\(\Hom_{S}(\mathbf{G}_{S}, \mathbf{P}_{S})\) defined by: for every
+\(g \in \mathbf{G}(S')\), \(S' \to S\),
+\[
+\phi_{f}(m)(g) = f(gm) \in \mathbf{P}(S').
+\]
+Then, for every \(h \in \mathbf{G}(S)\), one has
+% typo?: kept as printed; expected h\cdot\varphi_f(m)
+\(\phi_{f}(hm) = h \cdot f(m)\),
+\ie \(\phi_{f}\) is an element of
+\[
+\Hom_{\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.}}
+\bigl(\mathbf{M}, E(\mathbf{P})\bigr).
+\]
+If
+\[
+\phi \in \Hom_{\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.}}
+\bigl(\mathbf{M}, E(\mathbf{P})\bigr)
+\]
+and if one denotes, for every
+\(m \in \mathbf{M}(S)\), \(f(m) = \phi(m)(1)\), then
+\[
+\phi_{f}(m)(g) = f(gm) = \phi(gm)(1)
+= \bigl(g \cdot \phi(m)\bigr)(1) = \phi(m)(g),
+\]
+\ie \(\phi_{f} = \phi\). Conversely, it is clear that
+\(\phi_{f}(m)(1) = f(m)\). This proves~(i), and~(ii) follows from it at once.
+\end{proof}
+
+\begin{definition}{5.2.0.3}\label{I.5.2.0.3}
+--- Let \(\mathbf{M}\) be a \(\mathbf{G}\)-\(\mathbf{O}\)-module; the identity map
+of \(\mathbf{M}\) (considered as an \(\mathbf{O}\)-module) corresponds by
+adjunction to the morphism of \(\mathbf{G}\)-\(\mathbf{O}\)-modules
+\[
+\mu_{\mathbf{M}} \colon \mathbf{M} \longrightarrow E(\mathbf{M})
+\]
+such that for every \(S \in \Ob(\mathcal{C})\) and \(m \in \mathbf{M}(S)\),
+\(\mu_{\mathbf{M}}(m)\) is the morphism
+\(\mathbf{G}_{S} \to \mathbf{M}_{S}\) defined by: for every \(S' \to S\) and
+\(g \in \mathbf{G}(S')\),
+\(\mu_{\mathbf{M}}(m)(g) = g \cdot m_{S'} \in \mathbf{M}(S')\).
+
+Note that \(\mu_{\mathbf{M}}\) is a \emph{monomorphism}. Indeed,
+\(\varepsilon_{\mathbf{M}} \colon E(\mathbf{M}) \to \mathbf{M}\) is a morphism
+of \(\mathbf{O}\)-modules such that
+\(\varepsilon_{\mathbf{M}} \circ \mu_{\mathbf{M}} = \mathrm{id}_{\mathbf{M}}\);
+consequently \(\mathbf{M}\) is a direct factor, as an \(\mathbf{O}\)-module,
+of \(E(\mathbf{M})\).
+\end{definition}
+
+\begin{proposition}{5.2.1}\label{I.5.2.1}
+--- One assumes that \(\mathcal{C}\) is small, that finite products exist in it,
+and that \(\mathbf{G}\) is representable. Then the functors
+\(H^{n}(\mathbf{G},\,)\) (resp.\ \(\underline{H}^{n}(\mathbf{G},\,)\)) are the
+derived functors of the left exact functor \(H^{0}(\mathbf{G},\,)\)
+(resp.\ \(\underline{H}^{0}(\mathbf{G},\,)\)) on the category of
+\(\mathbf{G}\)-\(\mathbf{O}\)-modules.
+\end{proposition}
+
+By virtue of the well-known general results%
+{\renewcommand{\thefootnote}{(49)}\nde{Cf.\ \textup{[Gr57]}, 2.2.1
+and 2.3. Moreover, the original has been spelled out in what follows.}},
+it suffices to check that the \(H^{n}(\mathbf{G},\,)\)
+(resp.\ \(\underline{H}^{n}(\mathbf{G},\,)\)) form an effaceable cohomological
+functor in degrees \(> 0\).
+
+Let
+\[
+0 \longrightarrow \mathbf{F}' \longrightarrow \mathbf{F}
+\longrightarrow \mathbf{F}'' \longrightarrow 0
+\]
+be an exact sequence of \(\mathbf{G}\)-\(\mathbf{O}\)-modules, and let
+\(S \in \Ob(\mathcal{C})\). By hypothesis, \(\mathbf{G}\) is representable by
+an object \(G \in \Ob(\mathcal{C})\), and finite products exist in
+\(\mathcal{C}\); in particular \(\mathcal{C}\) has a final element~\(e\).
+Thus each \(G^{n} \times \mathbf{h}_{S}\) is representable by \(G^{n} \times S\)
+(with \(G^{0} = e\)), and the sequence
+\[
+0 \longrightarrow \mathbf{F}'(G^{n} \times S) \longrightarrow
+\mathbf{F}(G^{n} \times S) \longrightarrow
+\mathbf{F}''(G^{n} \times S) \longrightarrow 0
+\]
+is exact. This shows that the sequence of \(\mathbf{O}\)-modules
+\[
+0 \longrightarrow \underline{C}^{n}(\mathbf{h}_{G}, \mathbf{F}')
+\longrightarrow \underline{C}^{n}(\mathbf{h}_{G}, \mathbf{F})
+\longrightarrow \underline{C}^{n}(\mathbf{h}_{G}, \mathbf{F}'')
+\longrightarrow 0
+\]
+is exact. It follows that \(\underline{C}^{*}(\mathbf{G},\,)\), considered as
+a functor on \((\mathbf{G}\text{-}\mathbf{O}\text{-}\mathrm{Mod.})\) with
+values in the category of complexes of
+\((\mathbf{O}\text{-}\mathrm{Mod.})\), is exact. This shows that the
+\(\underline{H}^{n}(\mathbf{G},\,)\) do indeed form a cohomological functor.

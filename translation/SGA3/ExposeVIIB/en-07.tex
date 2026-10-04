@@ -1,0 +1,131 @@
+Now let $X$ be a formal $k$-variety and $A$ its affine algebra. If $x$ is a point of $X$ (\ie an open maximal ideal $\mathfrak m$ of $A$) with image $s$ in $\Spf(k)$, the local component of $k$ corresponding to $s$ will be denoted by $k_{\mathfrak m}$ or $k_s$.
+\begin{definition}{1.6.B}\label{VIIB.1.6.B}
+The following conditions are equivalent:
+\begin{enumeratea}
+\item $A$ is \emph{formally étale over $k$}.
+\item For every $\mathfrak m\in\Upsilon(A)$, $A_{\mathfrak m}$ is formally étale over $k$ (or over $k_{\mathfrak m}$).
+\item For every open ideal $\mathfrak l$ of $k$, $A\widehat\otimes_k(k/\mathfrak l)=A/\overline{A\mathfrak l}$ is formally étale over $k/\mathfrak l$.
+\item For every $\mathfrak m\in\Upsilon(A)$ and every open ideal $\mathfrak l$ of $k_{\mathfrak m}$, $A_{\mathfrak m}/\overline{A_{\mathfrak m}\mathfrak l}$ is formally étale over $k_{\mathfrak m}/\mathfrak l$.
+\end{enumeratea}
+One says that $X$ is \emph{étale over $k$} if it satisfies these conditions, and denotes by $\mathbf{Vaf}_{/k}^{\text{ét}}$ the full subcategory of $\mathbf{Vaf}/k$ consisting of formal varieties étale over $k$.\nde{Note that $\mathbf{Vaf}_{/k}^{\text{ét}}$ is stable under finite projective limits.}
+\end{definition}
+Observe that if $\phi:A\to C/J$ is a continuous morphism of $k$-algebras, where $C$ is a discrete $k$-algebra and $J$ a square-zero ideal, then $I=\Ker(\phi)$ is an open ideal of $A$, hence $A/I$ is artinian, so $I$ is contained in only finitely many open maximal ideals $\mathfrak m_1,\ldots,\mathfrak m_r$, and therefore contains the product of the components $A_{\mathfrak m}$ for $\mathfrak m\ne\mathfrak m_i$, which equals $A(1-e)$, where $e$ denotes the idempotent of $A$ such that $Ae=\prod_{i=1}^r A_{\mathfrak m_i}$. Thus $\phi(e)=1_{C/J}$, and giving a continuous lifting of $\phi$ is equivalent to giving one of the morphism from $Ae\simeq A/A(1-e)$ to $C/J$ induced by $\phi$.
+Moreover, one knows (cf. N.D.E. (24)) that $A\simeq\varprojlim_{\mathfrak l}A/\overline{A\mathfrak l}$. In view of these remarks and the preceding recollections, one easily obtains the equivalence of the indicated conditions.
+
+\begin{enoncerm}{Definitions}{1.6.C}\label{VIIB.1.6.C}
+Write $\kappa(k)=\prod_{s\in\Spf(k)}\kappa(s)$, equipped with the product topology, \ie the formal variety $\Spf(\kappa(k))$ is the direct sum of the $\Spec\kappa(s)$, for $s\in\Spf(k)$. Moreover, denote by $S_{\kappa(k)}$ the scheme which is the direct sum of the $\Spec\kappa(s)$, for $s\in\Spf(k)$.
+For every formal variety $X$ over $k$, denote by $X_\kappa=X\widehat\otimes_k\kappa(k)$ the formal variety over $\kappa(k)$ obtained by base change, \ie $X_\kappa$ has the same points as $X$ and for every $x\in X$ projecting to $s$ on $\Spf(k)$, one has $\OO_{X_\kappa,x}=\OO_{X,x}\otimes_k\kappa(s)$. This base-change functor $\mathbf{Vaf}/k\to\mathbf{Vaf}/\kappa(k)$ sends $\mathbf{Vaf}_{/k}^{\text{ét}}$ into $\mathbf{Vaf}_{/\kappa(k)}^{\text{ét}}$ (cf. 1.6.A(i)).
+\end{enoncerm}
+One then has (cf. SGA 1, I 6.2):
+\begin{lemma}{1.6.D}\label{VIIB.1.6.D}
+For every $Y\in\Ob\mathbf{Vaf}_{/k}^{\text{ét}}$ and $X\in\Ob\mathbf{Vaf}/k$, the canonical map
+\[
+\Hom_{\mathbf{Vaf}/k}(X,Y)\to\Hom_{\mathbf{Vaf}/\kappa(k)}(X_\kappa,Y_\kappa)
+\]
+is bijective. In particular, the functor $\mathbf{Vaf}_{/k}^{\text{ét}}\to\mathbf{Vaf}_{/\kappa(k)}^{\text{ét}}$ is fully faithful (and we shall see below that it is an equivalence).
+\end{lemma}
+Indeed, denote by $A$ (resp. $B$) the affine algebra of $X$ (resp. $Y$), and by $\mathfrak r$ the radical of $k$, and suppose that a morphism $B\widehat\otimes_k\kappa(k)\to A\widehat\otimes_k\kappa(k)$ is given, or, equivalently, a morphism $\phi:B\to A/\overline{\mathfrak rA}$.
+For every open ideal $\mathfrak l$ of $k$, there exists $n\in\NN^*$ such that $\mathfrak r^n\subset\mathfrak l$, whence $(\mathfrak rA)^n\subset\mathfrak lA\subset\overline{\mathfrak lA}$, and since the multiplication map $m_{n-1}:A^n\to A$ is continuous, one therefore also has $(\overline{\mathfrak rA})^n\subset\overline{\mathfrak lA}$, \ie $\overline{\mathfrak rA}/\overline{\mathfrak lA}$ is a nilpotent ideal of $A/\overline{\mathfrak lA}$. Consequently, $\phi$ lifts uniquely to a morphism $\phi_{\mathfrak l}:B\to A/\overline{\mathfrak lA}$. By uniqueness, these morphisms form a projective system, hence give a continuous morphism $\Phi:B\to\varprojlim_{\mathfrak l}A/\overline{\mathfrak lA}=A$. Moreover, $\Phi$ is unique, since if $\Phi'$ is a second lifting of $\phi$, $\Phi'$ and $\Phi$ agree modulo $\overline{\mathfrak lA}$ for every $\mathfrak l$, hence are equal.
+
+\begin{proposition}{1.6.E}\label{VIIB.1.6.E}
+(a) Let $X$ be a formal variety over $k$ and $A$ its affine algebra. The following conditions are equivalent:
+\begin{enumeratei}
+\item $X$ is étale over $k$.
+\item $X$ is topologically flat over $k$ and the diagonal morphism $\Delta:X\to X\times X$ is a local isomorphism, \ie $\Delta_X$ induces an isomorphism $\OO_{X\times X,\Delta(x)}\isomto\OO_{X,x}$ for every point $x$ of $X$.
+\item For every $x\in X$ projecting to $s$ on $\Spf(k)$, $\OO_{X,x}$ is isomorphic to $k_s[T]/(F)$, where $F\in k_s[T]$ is a monic separable polynomial (cf. 1.6.A(ii)).
+\item $X$ is topologically flat over $k$, and for every point $x\in X$ projecting to $s$ on $\Spf(k)$, $\OO_{X,x}\widehat\otimes_k\kappa(s)$ is a finite separable extension of $\kappa(s)$.
+\item For every open ideal $\mathfrak l$ of $k$, each local component of $A\widehat\otimes_k(k/\mathfrak l)$ is a finite étale algebra over the artinian ring $k/\mathfrak l$.
+\end{enumeratei}
+(b) $\mathbf{Vaf}_{/\kappa(k)}^{\text{ét}}$ is identified with the category of étale schemes over $S_{\kappa(k)}$ (cf. 1.6.C), and the functor $X\mto X_\kappa$ induces an equivalence of categories $\mathbf{Vaf}_{/k}^{\text{ét}}\isomto\mathbf{Vaf}_{/\kappa(k)}^{\text{ét}}$ (cf. SGA 1, I 6.1).
+\end{proposition}
+\begin{proof}
+(a) Denote by $I$ the kernel of the multiplication morphism $m:A\widehat\otimes_k A\to A$. Suppose that $X$ is étale over $k$, \ie $A$ is formally étale over $k$. Then, by EGA $0_{\mathrm{IV}}$, 20.7.4, the separated completion of $I/I^2$ for the quotient topology of that of $I$ is zero, \ie one has $I=\overline{I^2}$. Now, for every $x\in X$, $I$ is contained in the maximal ideal $\mathfrak m_{\Delta(x)}$ of $A\widehat\otimes_k A$, so the localization $I_{\mathfrak m_{\Delta(x)}}$ is contained in the maximal ideal of $\OO_{X\times X,\Delta(x)}$, and hence, by Nakayama's lemma 0.3, one has $I_{\mathfrak m_{\Delta(x)}}=0$, and thus $\Delta:X\to X\times X$ is a local isomorphism.
+Now suppose that $\Delta$ is a local isomorphism and that $k$ is a field $\kappa$, and let us show that each $\OO_{X,x}$ is a finite-dimensional étale $\kappa$-algebra. Replacing $X$ by $\Spf(\OO_{X,x})$, one can suppose that $A=\OO_{X,x}$ is local. One then proceeds as in the proof of EGA IV$_4$, 17.4.1, (b) $\Rightarrow$ (d$''$). Let $K$ be a finite normal extension of $\kappa$ containing the residue field $\kappa(x)$, and let $B=A\otimes_\kappa K=A\widehat\otimes_\kappa K$ (since $[K:\kappa]<\infty$, $-\widehat\otimes_\kappa K$ and $-\otimes_\kappa K$ coincide) and $X_K=\Spf(B)=X\widehat\otimes_\kappa K$. Then $\Delta_K:X_K\to X_K\widehat\otimes_K X_K$ is still a local isomorphism, so for every $y\in X_K$, multiplication $B_y\widehat\otimes_K B_y\to B_y$ induces an isomorphism $(B_y\widehat\otimes_K B_y)_{\mathfrak m_{\Delta_K(y)}}\isomto B_y$. Now, since the residue field of $B_y$ is $K$ (cf. for example VI A, 1.1.1, N.D.E. (11)), $C=B_y\widehat\otimes_K B_y$ is already a local ring (indeed, $\mathfrak n=\mathfrak m_y\widehat\otimes_K B_y+B_y\widehat\otimes_K\mathfrak m_y$ consists of topologically nilpotent elements, hence is contained in the radical of $C$, and $C/\mathfrak n=K\widehat\otimes_K K=K$ is a field), so one obtains that the multiplication morphism $B_y\widehat\otimes_K B_y\to B_y$ is an isomorphism. Taking a pseudobasis of $B_y$ over $K$ containing the identity element $1$, one deduces that $B_y=K$. Since, moreover, $B$ is finite over $A$, $X_K$ is a finite set, so $B=A\otimes_\kappa K$ is the product of finitely many copies of $K$, and this implies that $A$ is a finite étale $\kappa$-algebra.
+One thus obtains that, if $\kappa$ is a field, every profinite $\kappa$-algebra $A$ étale over $\kappa$ is the product of finite separable extensions $K_i$ of $\kappa$, equipped with the product topology, so the formal variety $\Spf(A)$ is the direct sum of the $\Spf(K_i)=\Spec(K_i)$, and one deduces that $\mathbf{Vaf}_{/\kappa}^{\text{ét}}$ is identified with the category of étale $\kappa$-schemes.
+The foregoing shows implication (ii) $\Rightarrow$ (iv) (since $\OO_{X,x}\widehat\otimes_k\kappa(s)$ is formally étale over $\kappa(s)$), and implies part (b) of 1.6.E. Indeed, let $k$ again be an arbitrary pseudocompact ring. By the foregoing, $\mathbf{Vaf}_{/\kappa(k)}^{\text{ét}}$ is identified with the category of étale schemes over $S_{\kappa(k)}$. Let us show that $X\mto X_\kappa$ induces an equivalence $\mathbf{Vaf}_{/k}^{\text{ét}}\isomto\mathbf{Vaf}_{/\kappa(k)}^{\text{ét}}$. In view of 1.6.D, it suffices to show that, for every $s\in\Spf(k)$ and every finite separable extension $K$ of $\kappa(s)$, there exists an étale $k_s$-algebra $A$ such that $A\widehat\otimes_k\kappa(s)\simeq K$. Let $\xi$ be a primitive element of the extension $K/\kappa(s)$, $n$ its degree, and $F\in k_s[T]$ a monic polynomial of degree $n$ whose image $\overline F$ in $\kappa(s)[T]$ is the minimal polynomial of $\xi$. Since $\overline F'$ is invertible in $\kappa(s)[T]/(\overline F)$, it follows from Nakayama's lemma that $F'$ is invertible in $k_s[T]/(F)$, so $F$ is a separable polynomial, and hence, by 1.6.A(ii), $A=k_s[T]/(F)$ is an étale $k_s$-algebra such that $A\widehat\otimes_k\kappa(s)\simeq K$. One thus obtains that every local étale profinite $k_s$-algebra is free of finite rank over $k_s$ (hence a fortiori topologically free over $k$), and therefore every étale profinite $k$-algebra is topologically free over $k$.
+% typo?: "topologically free over k" is printed here, although components are generally only projective over k; retained.
+Moreover, condition (v) implies condition (d) of 1.6.B, hence implies (i). One has therefore obtained that (i), (iii), and (v) are equivalent, and imply (ii), which implies (iv). Finally, let $A$ be a profinite $k$-algebra satisfying (iv); let us show that $A$ is formally étale over $k$. For this one can suppose that $A$ and $k$ are local; denote by $\kappa$ the residue field of $k$; by hypothesis, $K=A\widehat\otimes_k\kappa$ is a finite separable extension of $\kappa$, say of degree $n$. By what has been seen above (and taking Lemma 1.6.D into account), there then exist a $k$-algebra $B$, free of rank $n$, formally étale over $k$, and a continuous morphism $\phi:B\to A$ such that $\phi\widehat\otimes_k\kappa$ is an isomorphism. Since $A$ is topologically flat over $k$, this implies $\Coker(\phi)\widehat\otimes_k\kappa=0$ and also $\Ker(\phi)\widehat\otimes_k\kappa=0$; by Nakayama's lemma 0.3, one therefore has $\Coker(\phi)=0=\Ker(\phi)$, so $\phi$ is an isomorphism (cf. the proof of 0.2.B). This completes the proof of 1.6.E.
+\end{proof}
+\nde{In what follows, we have used the preceding additions to detail the construction of the functor $X\mto X_e$ and show that it commutes with finite products (this is used in 2.5.1).}Let $X$ be a formal variety over $k$. For every $x\in X$ projecting to $s$ on $\Spf(k)$, the residue field $\kappa(x)$ is a finite extension of $\kappa(s)$, and one denotes by $\kappa_e(x)$ the separable closure of $\kappa(s)$ in $\kappa(x)$.
+% typo: "contruction" -> "construction" in editorial note 73.
+\begin{proposition}{1.6.F}\label{VIIB.1.6.F}
+\begin{enumeratei}
+\item The inclusion of $\mathbf{Vaf}_{/k}^{\text{ét}}$ in $\mathbf{Vaf}/k$ has a left adjoint $X\mto X_e$: the variety $X_e$ has the same points as $X$; for every $x\in X$ projecting to $s$ on $\Spf(k)$, let $\xi$ be a primitive element of $\kappa_e(x)$, $n$ its degree, $u$ an arbitrary lifting of $\xi$ in $\OO_{X,x}$, and $F\in k[T]$ monic of degree $n$ annihilating $u$; put $\OO_{X_e,x}=k[T]/(F)$. Then for every $Y\in\Ob\mathbf{Vaf}_{/k}^{\text{ét}}$, the canonical maps below are bijective:
+\[
+\xymatrix@C=30pt{
+\Hom_{\mathbf{Vaf}/k}(X,Y)\ar[r]^\sim&\Hom_{\mathbf{Vaf}/\kappa(k)}(X_\kappa,Y_\kappa)\ar[d]_\sim\\
+\Hom_{\mathbf{Vaf}/k}(X_e,Y)\ar[r]^\sim&\Hom_{\mathbf{Vaf}/\kappa(k)}((X_e)_\kappa,Y_\kappa),}
+\]
+the vertical arrow being induced by the inclusions $\kappa_e(x)\hookrightarrow\kappa(x)$ for every $x\in X$. This defines, in particular, a morphism $p:X\to X_e$, and every morphism of formal $k$-varieties $\phi:X\to Y$, with $Y$ étale over $k$, factors uniquely through $p$.
+% typo?: arbitrary lifting u, degree-n annihilating polynomial, and k in place of k_s retained as printed.
+\item The functor $X\mto X_e$ commutes with finite products.
+\end{enumeratei}
+\end{proposition}
+Indeed, (i) follows from 1.6.E(b) and 1.6.D. Let us prove (ii). In view of the equivalence of categories 1.6.E(b), one can suppose that $k$ is a field. In this case, one easily sees that if $X$ is a semilocal formal $k$-variety, \ie whose affine algebra $A$ is semilocal, the affine algebra of $X_e$ is the largest subalgebra of $A$ which is étale over $k$; denote it by $A_e$. One is thus reduced to seeing that if $K,L$ are two extensions of $k$ of finite degree, the inclusion $K_e\otimes L_e\subset(K\otimes L)_e$ is an equality. Let $p$ be the characteristic exponent of $k$ (\ie $p=1$ if $\operatorname{char}(k)=0$ and $p=\operatorname{char}(k)$ otherwise); then for every $x\in K\otimes L$, there exists $n\in\NN^*$ such that $x^{p^n}\in K_e\otimes L_e$, so every subalgebra $B$ of $K\otimes L$ is radicial over $K_e\otimes L_e$, and it follows that $K_e\otimes L_e=(K\otimes L)_e$.
+Observe, retaining the preceding notation, that $\OO_{X_e,x}$ is not necessarily a subalgebra of $\OO_{X,x}$, but this is the case when $X$ is topologically flat over $k$, by the following proposition.
+
+\numpara{1.6.1}Let $Y$ be an étale formal $k$-variety and $f:X\to Y$ a morphism in $\mathbf{Vaf}/k$. One then has the cartesian square below, where $\Gamma_f$ is the graph morphism $X\to X\times Y$ with components $\mathrm{id}_X$ and $f$:
+\[
+\xymatrix{X\ar[r]^{\Gamma_f}\ar[d]_f&X\times Y\ar[d]^{f\boxtimes\mathrm{id}_Y}\\
+Y\ar[r]_{\Delta_Y}&Y\times Y.}
+\]
+It follows that $\Gamma_f$ is a local isomorphism, hence that $f=\mathrm{pr}_Y\circ\Gamma_f$ is topologically flat if $\mathrm{pr}_Y$ is, for example if $X$ is topologically flat over $k$.
+Conversely, since $Y\to k$ is topologically flat, $X\to k$ will also be so if $f$ is (cf. 1.3.3). Taking, in particular, for $f$ the canonical morphism $p:X\to X_e$ of 1.6, one obtains:
+\begin{proposition}{}
+Let $X$ be a formal variety over $k$. The morphism $X\to X_e$ is topologically flat if and only if $X$ is topologically flat over $k$.
+\end{proposition}
+\begin{remark}{1.6.2}\label{VIIB.1.6.2}\nde{We have inserted this remark here; in the original it appeared in 2.5.2.}
+When $k$ is a \emph{perfect field}, the functor $X\mto X_e$ is also right adjoint to the inclusion $\mathbf{Vaf}_{/k}^{\text{ét}}\hookrightarrow\mathbf{Vaf}/k$. Indeed, in this case one has $\OO_{X_e,x}=\kappa(x)$ for every $x\in X$, and the canonical projections $\OO_{X,x}\to\kappa(x)$ define a morphism $s:X_e\to X$ which is a section of $p:X\to X_e$. For every morphism $f:X\to Y$, the diagrams below commute:
+\[
+\xymatrix{\OO_{Y,f(x)}\ar[r]\ar[d]&\OO_{X,x}\ar[d]\\\kappa(f(x))\ar[r]&\kappa(x)}
+\qquad
+\xymatrix{X\ar[r]^f&Y\\X_e\ar[u]^{s_X}\ar[r]_{f_e}&Y_e\ar[u]_{s_Y}}
+\]
+so $s$ is functorial in $X$, and it follows that $X\mto X_e$ is right adjoint to the inclusion $\mathbf{Vaf}_{/k}^{\text{ét}}\hookrightarrow\mathbf{Vaf}/k$. Thus, being a right adjoint, $X\mto X_e$ commutes with projective limits when they exist in $\mathbf{Vaf}_{/k}^{\text{ét}}$,\nde{This is the case for finite projective limits.} hence in particular with finite products. (This can also be verified directly: for every formal $k$-variety $X$ with affine algebra $A$, the affine algebra of $X_e$ is the quotient of $A$ by its radical $\mathfrak r(A)$, and since $k$ is perfect, the quotient of $\OO_{X,x}\widehat\otimes\OO_{Y,y}$ by its radical is the algebra $\kappa(x)\otimes_k\kappa(y)$, since the latter is semisimple.)
+\end{remark}
+
+\sgasection{2}{Generalities on formal groups}
+\numpara{2.1}Let $k$ be a pseudocompact ring and $G$ a formal $k$-group, that is, a group in the category $\mathbf{Vaf}/k$ of formal varieties over $k$. Let $A$ be the affine algebra of $G$. The composition law of $G$ evidently defines a \emph{diagonal morphism}, \ie a homomorphism of profinite $k$-algebras $\Delta_A:A\to A\widehat\otimes_k A$; this homomorphism satisfies the following conditions:
+\begin{enumeratei}
+\item The diagram
+\[
+\xymatrix{
+A\ar[r]^{\Delta_A}\ar[d]_{\Delta_A}&A\widehat\otimes_k A\ar[d]^{\Delta_A\widehat\otimes\mathrm{id}_A}\\
+A\widehat\otimes_k A\ar[r]_{\mathrm{id}_A\widehat\otimes\Delta_A}&A\widehat\otimes_k A\widehat\otimes_k A}
+\]
+commutes.
+\item There exists a (necessarily unique) \emph{augmentation}, that is, a homomorphism of profinite $k$-algebras $\varepsilon_A:A\to k$ such that the composite maps
+\[
+\begin{aligned}
+&A\xrightarrow{\Delta_A}A\widehat\otimes_k A\xrightarrow{\varepsilon_A\widehat\otimes\mathrm{id}_A}k\widehat\otimes_k A\simeq A\\
+\text{and}\quad&A\xrightarrow{\Delta_A}A\widehat\otimes_k A\xrightarrow{\mathrm{id}_A\widehat\otimes\varepsilon_A}A\widehat\otimes_k k\simeq A
+\end{aligned}
+\]
+are the identity maps of $A$.
+\item There exists a (necessarily unique) \emph{antipode}, that is, a homomorphism of profinite $k$-algebras $c_A:A\to A$ such that the composite map
+\[
+A\xrightarrow{\Delta_A}A\widehat\otimes_k A\xrightarrow{c_A\widehat\otimes\mathrm{id}_A}A\widehat\otimes_k A\xrightarrow{m_A}A
+\]
+equals $\eta_A\circ\varepsilon_A$, if $m_A$ denotes the linear map which sends $a\widehat\otimes b$ to $ab$, and $\eta_A$ the map $\lambda\mto\lambda1_A$ from $k$ to $A$.
+\end{enumeratei}
+Conversely, the data $(\Delta_A,\varepsilon_A,c_A)$ satisfying (i)--(iii) equip $G$ with a formal $k$-group structure.\nde{One also says that $A$ is a cogroup in the category of profinite $k$-algebras. Moreover, we have detailed what follows; in particular, we have made explicit what a morphism of formal groups $K\to G$ is; cf. Proposition 2.3.1.} Explicitly, for every profinite $k$-algebra $B$, the set $\Hom_c(A,B)$ of continuous morphisms of $k$-modules $\phi:A\to B$ is equipped with a group structure, functorial in $B$, defined by
+\[
+\phi\cdot\phi'=m_B\circ(\phi\widehat\otimes\phi')\circ\Delta_A,
+\]
+the identity element being $\eta_B\circ\varepsilon_A$ (where $m_B$ is multiplication on $B$ and $\eta_B$ the map $\lambda\mto\lambda1_B$ from $k$ to $B$), and $\phi\circ c_A$ being the inverse of $\phi$; and the set $\Hom_{\mathbf{Alp}/k}(A,B)$ of continuous morphisms of $k$-algebras $A\to B$ is a subgroup of it (since the algebra $B$ is commutative).
+% typo?: source asserts a group structure and inverse on all continuous linear maps, without restricting to convolution units; retained.
+\begin{definition}{}
+A morphism of formal $k$-groups $\theta:K\to G$ is, by definition, a morphism of formal $k$-varieties which respects the group structures. If $B$ (resp. $A$) is the affine algebra of $K$ (resp. $G$), and $f:A\to B$ is the morphism corresponding to $\theta$, this is equivalent to saying that $f$ is compatible with comultiplications, \ie
+\[
+(f\widehat\otimes f)\circ\Delta_A=\Delta_B\circ f
+\]
+(the conditions $\varepsilon_B\circ f=\varepsilon_A$ and $c_B\circ f=f\circ c_A$ then being automatically satisfied). Denote by $\mathbf{Grf}/k$ the category of formal $k$-groups.
+\end{definition}
+\begin{enoncerm}{Notation}{}
+In what follows, we shall call the ideal $I_A=\Ker(\varepsilon_A)$ the \emph{augmentation ideal} of $A$, and denote by $\omega_{G/k}$ the pseudocompact $k$-module $I_A/\overline{I_A^2}$, that is, the quotient of $I_A$ by the closed ideal generated by the products $xy$, for $x,y\in I_A$.
+\end{enoncerm}
+
+\numpara{2.2}Let $\mathbf H$ be a group in the category of coalgebras over $\mathbf O_k$, \ie for every object $C$ of $\mathbf{Alf}/k$, $\mathbf H(C)$ is equipped with a group-coalgebra structure over $C$ (cf. VII A 3.2; following Manin, we shall say \emph{bialgebra}\nde{One also says ``bigèbre'' (cf. \cite{BAlg}, III § 11.4); recall (cf. VII A, 3.1, N.D.E. (26)) that all the ``bialgebras'' considered here are assumed cocommutative and equipped with an antipode, \ie they are in fact cocommutative Hopf algebras.} instead of group-coalgebra); moreover, if $\varphi:C\to D$ is a morphism of $\mathbf{Alf}/k$, the map $D\otimes_C\mathbf H(C)\to\mathbf H(D)$ is a homomorphism of $D$-bialgebras.
+\begin{definition}{}
+We shall summarize the above properties by saying that $\mathbf H$ is a \emph{bialgebra over $\mathbf O_k$}.
+\end{definition}

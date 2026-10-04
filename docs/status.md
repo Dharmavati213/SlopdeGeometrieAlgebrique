@@ -10,7 +10,7 @@ with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
 
 ## Order of work
 
-1. Keep the landed SGA 1 and SGA 2 translations compiling (`make tex`).
+1. Keep the SGA 1, SGA 2 and SGA 3 translations compiling (`make tex`).
 2. SGA 1 is translated in full (front matter and Exposés I–VI, VIII–XIII) and formalized
    exposé by exposé; the open items are listed in [`formalization.md`](formalization.md) and the
    out-of-scope ones in [`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations/README.md).
@@ -1147,7 +1147,7 @@ in [`formalization.md`](formalization.md).
 
 ## Later volumes
 
-- [ ] SGA 3 — Group schemes (three tomes)
+- [x] SGA 3 English — Group schemes (three tomes). The foreword/introduction and all exposés I–XXVI, including the A and B parts, have complete compiled drafts from the Gille–Polo recomposition (local French PDFs only). All 222 fragments pass source-heading and structural checks; individual PDFs and the combined volume build with `make tex`. Indexes are outside this scope. Independent scholarly proofreading remains outstanding; see [coverage and review notes](../translation/SGA3/README.md).
 - [ ] SGA 4 — Topos theory and étale cohomology of schemes
 - [ ] SGA 4½ — Étale cohomology (Deligne)
 - [ ] SGA 5 — ℓ-adic cohomology and L-functions

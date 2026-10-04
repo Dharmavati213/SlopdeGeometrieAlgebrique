@@ -1,0 +1,247 @@
+% original PDF p. 9; continuation of Corollary 1.17
+\item If $S'\to S$ is a covering morphism, forms of $G$ trivialized by $S'$ and bundles trivialized by $S'$ correspond to one another.
+\item Every principal homogeneous sheaf under $\underline{\Aut}_{S\text{-gr.}}(G)$ is representable and quasi-isotrivial (i.e. locally trivial for the étale topology).
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+The first assertion is formal in the category of sheaves (for (fpqc), for example). Moreover, every sheaf locally isomorphic to $G$ (for (fpqc)) is representable (since $G$ is affine over $S$) and locally isomorphic to $G$ for the étale topology. Finally, for every form $G'$ of $G$, the $S$-sheaf $\underline{\Isom}_{S\text{-gr.}}(G,G')$ is representable, by 1.8. The corollary follows at once.
+\end{proof}
+\begin{corollary}{1.18}\label{XXIV.1.18}
+The set of isomorphism classes of forms of the reductive group $G$ over $S$ is isomorphic to
+\[
+\mathrm H^1(S,\underline{\Aut}_{S\text{-gr.}}(G))=
+\mathrm H^1_{\mathrm{\acute et}}(S,\underline{\Aut}_{S\text{-gr.}}(G))=
+\operatorname{Fib}(S,\underline{\Aut}_{S\text{-gr.}}(G)).
+\]
+If $S'\to S$ is a covering morphism, the subset consisting of forms trivialized by $S'$ is isomorphic to $\mathrm H^1(S'/S,\underline{\Aut}_{S\text{-gr.}}(G))$.
+\end{corollary}
+\begin{corollary}{1.19}\label{XXIV.1.19}
+Let $S$ be a scheme and $\mathscr R$ a reduced pinned root datum such that $\operatorname{\acute Ep}_S(\mathscr R)$\nde{Cf. XXIII, Definition 5.11.} exists (a condition automatically satisfied, cf. Exp.~XXV). Put
+\[
+\begin{aligned}
+A_S(\mathscr R)&=\underline{\Aut}_{S\text{-gr.}}(\operatorname{\acute Ep}_S(\mathscr R))\\
+&=\ad(\operatorname{\acute Ep}_S(\mathscr R))\cdot E(\mathscr R)_S.
+\end{aligned}
+\]
+\begin{enumeratei}
+\item The set of isomorphism classes of reductive $S$-groups of type $\mathscr R$ (Exp.~XXII, 2.7) is isomorphic (by Exp.~XXIII, 5.12) to
+\[
+\mathrm H^1(S,A_S(\mathscr R))=\mathrm H^1_{\mathrm{\acute et}}(S,A_S(\mathscr R))=\operatorname{Fib}(S,A_S(\mathscr R)).
+\]
+\item If $S'\to S$ is a covering morphism, the subset consisting of classes of groups splittable over $S'$ is isomorphic to $\mathrm H^1(S'/S,A_S(\mathscr R))$.
+\end{enumeratei}
+\end{corollary}
+\begin{remark}{1.20}\label{XXIV.1.20}
+With the preceding notation, to every reductive $S$-group of type $\mathscr R$ there is canonically associated a right principal homogeneous bundle under $A_S(\mathscr R)$:
+\[
+\underline{\Isom}_{S\text{-gr.}}(\operatorname{\acute Ep}_S(\mathscr R),G)=P.
+\]
+Observe that $P$ can be interpreted as the ``scheme of pinnings of $G$ of type $\mathscr R$'' (cf. 1.0). Moreover $P$ is also a principal homogeneous bundle (on the left) under $\underline{\Aut}_{S\text{-gr.}}(G)$, a structure which appears immediately in the above description.
+\end{remark}
+\begin{proposition}{1.21}\label{XXIV.1.21}
+Let $S$ be a henselian local scheme and $s$ its closed point. The functor
+\[
+G\mto G_s
+\]
+induces a bijection from the set of isomorphism classes of reductive $S$-groups onto the set of isomorphism classes of reductive $\kappa(s)$-groups.
+
+In particular, for every reductive $S$-group $G$, there exists a finite surjective étale morphism $S'\to S$ such that $G_{S'}$ is splittable.
+\end{proposition}
+% original PDF p. 10
+\begin{proof}
+Using the existence of the $\operatorname{\acute Ep}_S(\mathscr R)$ (Exp.~XXV), one is reduced to proving that, if one puts $H=A_S(\mathscr R)$, the canonical map
+\[
+\operatorname{Fib}(S,H)\to\operatorname{Fib}(\kappa(s),H_s)
+\]
+is bijective (and that every element of $\operatorname{Fib}(S,H)$ has the property indicated above). Now every finite subset of $H$ is contained in an affine open subset (this is indeed trivial for a constant group, and $H$ is affine over a constant group); one can therefore use the result proved in the appendix (8.1).
+\end{proof}
+
+\sgasection{2}{Automorphisms and subgroups}
+Let us introduce some notation: if $H=\underline{\Aut}_{S\text{-gr.}}(G)$, and if $X$ is a subfunctor of $G$, one puts
+\[
+\begin{aligned}
+\underline{\Aut}_{S\text{-gr.}}(G,X)&=\uNorm_H(X),\\
+\underline{\Aut}_{S\text{-gr.}}(G,\mathrm{id}_X)&=\uCentr_H(X).
+\end{aligned}
+\]
+If $Y$ is a second subfunctor of $G$, one likewise defines $\underline{\Aut}_{S\text{-gr.}}(G,X,Y)=\underline{\Aut}_{S\text{-gr.}}(G,X)\cap\underline{\Aut}_{S\text{-gr.}}(G,Y)$, and if $G'$ is a second $S$-group and $X'$ a subfunctor of $G$, one denotes by $\underline{\Isom}_{S\text{-gr.}}(G,X;G',X')$ the subfunctor of $\underline{\Isom}_{S\text{-gr.}}(G,G')$ defined by: for every $S'\to S$,
+% typo?: the source calls X' a subfunctor of G, not G'; kept as printed.
+\[
+\begin{aligned}
+&\underline{\Isom}_{S\text{-gr.}}(G,X;G',X')(S')\\
+&\qquad=\{u\in\underline{\Isom}_{S\text{-gr.}}(G,G')(S')\mid u(X_{S'})=X'_{S'}\}
+\end{aligned}
+\]
+and one similarly defines $\underline{\Isom}_{S\text{-gr.}}(G,X,Y;G',X',Y')$, etc.\nde{We have made the preceding definitions explicit (the original indicated ``One similarly defines $\underline{\Aut}_{S\text{-gr.}}(G,X,Y)$, \ldots, $\underline{\Isom}_{S\text{-gr.}}(G,X;G',X')$, \ldots'').}
+\begin{proposition}{2.1}\label{XXIV.2.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $T$ a maximal torus of $G$ (resp. $B$ a Borel subgroup of $G$, resp. $B\supset T$ a Killing pair of $G$). Denote by $T^{\mathrm{ad}}$ (resp. $B^{\mathrm{ad}}$) the maximal torus (resp. Borel subgroup) of $\ad(G)$ corresponding to $T$ (resp. $B$):
+\[
+\begin{aligned}
+B^{\mathrm{ad}}&\simeq B/\uCentr(G)=B/\uCentr(B),\\
+T^{\mathrm{ad}}&\simeq T/\uCentr(G).
+\end{aligned}
+\]
+Then $\underline{\Aut}_{S\text{-gr.}}(G,T)$ (resp. $\underline{\Aut}_{S\text{-gr.}}(G,B)$, resp. $\underline{\Aut}_{S\text{-gr.}}(G,B,T)$) is representable by a closed subscheme of $\underline{\Aut}_{S\text{-gr.}}(G)$, smooth over $S$, and the exact sequence of Theorem 1.3 induces exact sequences:
+\[
+\begin{aligned}
+1&\to\uNorm_{\ad(G)}(T^{\mathrm{ad}})\to\underline{\Aut}_{S\text{-gr.}}(G,T)\to\underline{\operatorname{Autext}}(G)\to1;\\
+1&\to B^{\mathrm{ad}}\to\underline{\Aut}_{S\text{-gr.}}(G,B)\to\underline{\operatorname{Autext}}(G)\to1;\\
+1&\to T^{\mathrm{ad}}\to\underline{\Aut}_{S\text{-gr.}}(G,B,T)\to\underline{\operatorname{Autext}}(G)\to1.
+\end{aligned}
+\]
+\end{proposition}
+\begin{proof}
+By descent of closed subschemes,\nde{Cf. SGA~1, VIII 1.9.} one is immediately reduced to the case where $G$ is pinned and $B\supset T$ is its canonical Killing pair (cf. Exp.~XXII, 5.5.5 (iv)). Since the group $E$ of 1.2 normalizes $B$ and $T$, the result follows at once from the normalizer theorems in $\ad(G)$ (Exp.~XXII, 5.3.12 and 5.6.1).
+\end{proof}
+% original PDF p. 11
+Using now the conjugacy theorems (cf. Exp.~XXIII, 5.12), and reasoning as in no. 1, one deduces:
+\begin{corollary}{2.2}\label{XXIV.2.2}
+Let $S$ be a scheme and $G$, $G'$ two reductive $S$-groups of the same type at every point. Let $B\supset T$ (resp. $B'\supset T'$) be a Killing pair of $G$ (resp. $G'$).
+\begin{enumeratei}
+\item The $S$-functor $\underline{\Isom}_{S\text{-gr.}}(G,T;G',T')$ is representable by a smooth closed subscheme of $\underline{\Isom}_{S\text{-gr.}}(G,G')$ which is principal homogeneous under $\underline{\Aut}_{S\text{-gr.}}(G,T)$.
+
+Moreover, $\uNorm_{\ad(G)}(T^{\mathrm{ad}})$ acts freely on this scheme, and one has a canonical isomorphism
+\[
+\underline{\Isom}_{S\text{-gr.}}(G,T;G',T')/\uNorm_{\ad(G)}(T^{\mathrm{ad}})\simeq\underline{\operatorname{Isomext}}(G,G').
+\]
+\item The $S$-functor $\underline{\Isom}_{S\text{-gr.}}(G,B;G',B')$ is representable by a smooth closed subscheme of $\underline{\Isom}_{S\text{-gr.}}(G,G')$ which is principal homogeneous under $\underline{\Aut}_{S\text{-gr.}}(G,B)$.
+
+Moreover, $B^{\mathrm{ad}}$ acts freely on this scheme and one has a canonical isomorphism
+\[
+\underline{\Isom}_{S\text{-gr.}}(G,B;G',B')/B^{\mathrm{ad}}\simeq\underline{\operatorname{Isomext}}(G,G').
+\]
+\item The $S$-functor $\underline{\Isom}_{S\text{-gr.}}(G,B,T;G',B',T')$ is representable by a smooth closed subscheme of $\underline{\Isom}_{S\text{-gr.}}(G,G')$, principal homogeneous under $\underline{\Aut}_{S\text{-gr.}}(G,B,T)$.
+
+Moreover, $T^{\mathrm{ad}}$ acts freely on this scheme and one has a canonical isomorphism
+\[
+\underline{\Isom}_{S\text{-gr.}}(G,B,T;G',B',T')/T^{\mathrm{ad}}\simeq\underline{\operatorname{Isomext}}(G,G').
+\]
+\end{enumeratei}
+\end{corollary}
+Reasoning again as in no. 1, one deduces:
+\begin{corollary}{2.3}\label{XXIV.2.3}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $B\supset T$ a Killing pair of $G$. The functor
+\[
+(G',T')\mto\underline{\Isom}_{S\text{-gr.}}(G,T;G',T'),
+\]
+resp.
+\[
+(G',B')\mto\underline{\Isom}_{S\text{-gr.}}(G,B;B',B'),
+\]
+% typo?: B',B' in this source formula; kept as printed.
+resp.
+\[
+(G',B',T')\mto\underline{\Isom}_{S\text{-gr.}}(G,B,T;G',B',T'),
+\]
+is an equivalence between the category of pairs $(G',T')$ (resp. of pairs $(G',B')$, resp. of triples $(G',B',T')$), where $G'$ is a form of $G$ and $T'$ a maximal torus of $G'$ (resp. $B'$ a Borel subgroup of $G'$, resp. $B'\supset T'$ a Killing pair of $G'$), and the category of principal homogeneous bundles under the $S$-group $H$, where $H=\underline{\Aut}_{S\text{-gr.}}(G,T)$ (resp. $H=\underline{\Aut}_{S\text{-gr.}}(G,B)$, resp. $H=\underline{\Aut}_{S\text{-gr.}}(G,B,T)$).
+
+Moreover, every principal homogeneous sheaf under $H$ is representable and quasi-isotrivial, so that one has
+\[
+\mathrm H^1(S,H)=\mathrm H^1_{\mathrm{\acute et}}(S,H)=\operatorname{Fib}(S,H).
+\]
+\end{corollary}
+% original PDF p. 12
+\begin{remark}{2.4}\label{XXIV.2.4}
+Under the conditions of 2.2, the morphism denoted set-theoretically by $u\mto u(T)$ (resp. $u\mto u(B)$, resp. $u\mto(u(B),u(T))$) induces an isomorphism
+\[
+\begin{aligned}
+\underline{\Isom}_{S\text{-gr.}}(G,G')/\underline{\Aut}_{S\text{-gr.}}(G,T)&\simeq\underline{\operatorname{Tor}}(G'),\\
+\text{resp.}\quad \underline{\Isom}_{S\text{-gr.}}(G,G')/\underline{\Aut}_{S\text{-gr.}}(G,B)&\simeq\underline{\operatorname{Bor}}(G'),\\
+\text{resp.}\quad \underline{\Isom}_{S\text{-gr.}}(G,G')/\underline{\Aut}_{S\text{-gr.}}(G,B,T)&\simeq\underline{\operatorname{Kil}}(G').
+\end{aligned}
+\]
+The proof is immediate: it suffices to give it locally for (fpqc), so one may suppose $G\simeq G'$, and one is reduced to Exp.~XXII, 5.8.3 (iii).
+\end{remark}
+\begin{remark}{2.5}\label{XXIV.2.5}
+The preceding results can immediately be interpreted in terms of restriction of the structure group: if $G'$ is a form of $G$, corresponding to the principal bundle $\underline{\Isom}_{S\text{-gr.}}(G,G')$, giving a restriction of the structure group of this bundle to $\underline{\Aut}_{S\text{-gr.}}(G,T)$ amounts to giving a maximal torus $T'$ of $G'$, the bijections suggested above being that of 2.4 on the one hand, and the map $T'\mto\underline{\Isom}_{S\text{-gr.}}(G,T;G',T')$ on the other hand. Likewise for Borel subgroups and Killing pairs.
+\end{remark}
+\begin{proposition}{2.6}\label{XXIV.2.6}
+Let $S$ be a scheme and $G$, $G'$ two reductive $S$-groups of the same type at every point, and $T$ (resp. $T'$) a maximal torus of $G$ (resp. $G'$). Then $T^{\mathrm{ad}}$ acts freely on $\underline{\Isom}_{S\text{-gr.}}(G,T;G',T')$, and the quotient
+\[
+P=\underline{\Isom}_{S\text{-gr.}}(G,T;G',T')/T^{\mathrm{ad}}
+\]
+is representable; it is a principal homogeneous bundle under
+\[
+A=\underline{\Aut}_{S\text{-gr.}}(G,T)/T^{\mathrm{ad}},
+\]
+where $A$ is representable by a twisted constant $S$-scheme, an extension of $\underline{\operatorname{Autext}}(G)$ by $\mathrm W_{\ad(G)}(T^{\mathrm{ad}})=\uNorm_{\ad(G)}(T^{\mathrm{ad}})/T^{\mathrm{ad}}$. Moreover, if one lets $A$ act on $T$ in the evident way, the bundle associated to $P$ is nothing other than $T'$.\nde{Thus, if $P$ has a section, then $T$ and $T'$ are isomorphic; in particular $T'_P$ and $T_P$ are isomorphic. See the addition 4.5.1 where this observation is developed in the case where $G'=\operatorname{\acute Ep}_S(\mathscr R)$.}
+\end{proposition}
+\begin{proof}
+The first part of the proposition follows at once from the preceding results. To prove the second, one observes that there is an evident morphism $P\times_S T\to T'$ (defined by $(u,t)\mto u(t)$); to prove that after passage to the quotient by $A$ it induces an isomorphism, one may once more suppose $(G,T)\simeq(G',T')$, in which case it is immediate.
+\end{proof}
+In an entirely similar way, one has:
+\begin{proposition}{2.7}\label{XXIV.2.7}
+Let $S$ be a scheme and $G$, $G'$ two reductive $S$-groups of the same type at every point, and $B\supset T$ (resp. $B'\supset T'$) a Killing pair of $G$ (resp. $G'$). If one lets $\underline{\Aut}_{S\text{-gr.}}(G,B,T)/T^{\mathrm{ad}}\simeq\underline{\operatorname{Autext}}(G)$ act on $T$ in the evident way, the bundle associated to $\underline{\operatorname{Isomext}}(G,G')$ is nothing other than $T'$.
+\end{proposition}
+\begin{corollary}{2.8}\label{XXIV.2.8}
+Let $G$ and $G'$ be two reductive $S$-groups which are inner twisted forms of one another; let $B\supset T$ (resp. $B'\supset T'$) be a Killing pair of $G$ (resp. $G'$). Then $T$ and $T'$ are isomorphic.\nde{By 2.7, since $\underline{\operatorname{Isomext}}(G,G')$ has a section (cf. the preceding N.D.E.).}
+\end{corollary}
+% original PDF p. 13
+\begin{remark}{2.9}\label{XXIV.2.9}
+It is not true in general that $B$ and $B'$ are isomorphic; they are, however, inner twisted forms of one another (cf. no. 5).
+\end{remark}
+One can develop ``$\underline{\operatorname{Isomint}}$''\nde{Recall that $\underline{\operatorname{Isomint}}_u(G,G')$ is defined in 1.11.} variants of the preceding results. Let us mention one:
+\begin{proposition}{2.10}\label{XXIV.2.10}
+Let $S$ be a scheme and $G$, $G'$ two reductive $S$-groups of the same type at every point, and $B\supset T$ (resp. $B'\supset T'$) a Killing pair of $G$ (resp. $G'$). Let $u\in\underline{\operatorname{Isomext}}(G,G')(S)$; consider
+\[
+\begin{aligned}
+&\underline{\operatorname{Isomint}}_u(G,B,T;G',B',T')\\
+&\qquad=\underline{\Isom}_{S\text{-gr.}}(G,B,T;G',B',T')\cap\underline{\operatorname{Isomint}}_u(G,G').
+\end{aligned}
+\]
+It is a smooth affine $S$-scheme which is a principal homogeneous bundle under $T^{\mathrm{ad}}$. In particular, $\underline{\operatorname{Isomint}}_u(G,B,T;G',B',T')(S)\ne\varnothing$ if and only if the corresponding element of $\mathrm H^1(S,T^{\mathrm{ad}})$ is zero.
+\end{proposition}
+To finish this section, let us prove two results which will be useful to us in what follows:
+\begin{proposition}{2.11}\label{XXIV.2.11}
+Let $S$ be a scheme, $G$ a reductive $S$-group, and $T$ a maximal torus of $G$. The evident morphism
+\[
+T^{\mathrm{ad}}\isomto\underline{\Aut}_{S\text{-gr.}}(G,\mathrm{id}_T)
+\]
+is an isomorphism.
+\end{proposition}
+This follows from the preceding statements; moreover, a direct proof has been given in the course of the proof of 1.5.2.
+\begin{corollary}{2.12}\label{XXIV.2.12}
+Under the preceding conditions, there exists an equivalence between the category of pairs $(G',f)$, where $G'$ is a form of $G$ and $f$ an isomorphism of $T$ onto a maximal torus of $G'$, and the category of principal homogeneous bundles under $T^{\mathrm{ad}}$.
+\end{corollary}
+\begin{corollary}{2.13}\label{XXIV.2.13}
+If $\mathrm H^1(S,T^{\mathrm{ad}})=0$, and if $G'$ is a form of $G$ possessing a maximal torus isomorphic to $T$, then $G'$ is isomorphic to $G$.
+\end{corollary}
+\begin{corollary}{2.14}\label{XXIV.2.14}
+Let $S$ be a scheme such that $\Pic(S)=0$, and $G$ a reductive $S$-group of constant type. For $G$ to be splittable, it is necessary and sufficient that $G$ possess a split maximal torus.
+\end{corollary}
+Let $G$ be a reductive group and $\operatorname{rad}(G)$ its radical (Exp.~XXII, 4.3.9); since $\operatorname{rad}(G)$ is central and characteristic in $G$, one has a canonical morphism
+\[
+q:\underline{\operatorname{Autext}}(G)\to\underline{\Aut}_{S\text{-gr.}}(\operatorname{rad}(G)).
+\]
+% original PDF p. 14
+\begin{proposition}{2.15}\label{XXIV.2.15}
+Let $G$ be a reductive $S$-group. The following sequence is exact:
+\[
+\xymatrix@C=1.2em{1\ar[r]&\ad(G)\ar[r]&\underline{\Aut}_{S\text{-gr.}}(G,\mathrm{id}_{\operatorname{rad}(G)})\ar[r]^p&\underline{\operatorname{Autext}}(G)\ar[r]^q&\underline{\Aut}_{S\text{-gr.}}(\operatorname{rad}(G))}
+\]
+and $\Ker(q)=\Im(p)$ is an open and closed subscheme of $\underline{\operatorname{Autext}}(G)$, finite over $S$.
+\end{proposition}
+\begin{proof}
+One may suppose $G$ split. The first assertion is immediate; the second follows from Exp.~XXI, 6.7.5 and 6.7.7.
+\end{proof}
+Putting $H=\underline{\Aut}_{S\text{-gr.}}(G,\mathrm{id}_{\operatorname{rad}(G)})$, one deduces:
+\begin{corollary}{2.16}\label{XXIV.2.16}
+There exists an equivalence between the category of pairs $(G',f)$, where $G'$ is a form of $G$ and $f$ an isomorphism of $\operatorname{rad}(G)$ onto the radical of $G'$, and the category of principal bundles under a certain $S$-group scheme $H$, where $H$ is such that there exists an exact sequence
+\[
+1\to\ad(G)\to H\to F\to1,
+\]
+where the $S$-group $F$ is étale and finite over $S$.
+\end{corollary}
+
+\sgasection{3}{Dynkin scheme of a reductive group. Quasi-split groups}
+\numpara{3.1}\label{XXIV.3.1}
+Recall (Exp.~XXI, 7.4.1) that a \emph{Dynkin diagram} is a finite set equipped with the structure defined by a set of pairs of distinct elements (bonds) and a map into $\{1,2,3\}$ (lengths). To each reduced pinned root datum $\mathscr R$ is associated a Dynkin diagram $\Delta(\mathscr R)$, whose underlying set is the set of simple roots.
+\numpara{3.2}\label{XXIV.3.2}
+Let $S$ be a scheme. A \emph{Dynkin $S$-scheme} is a finite twisted constant $S$-scheme $\Delta$, equipped with the structure defined by a subscheme $L$ of $\Delta\times_S\Delta$ having empty intersection with the diagonal, and a morphism $\Delta\to\{1,2,3\}_S$. If $S'$ is a connected\nde{We have added the hypothesis that $S'$ be connected.} $S$-scheme, $\Delta(S')$ is naturally equipped with the structure of a Dynkin diagram.
+
+One immediately defines the following notions: isomorphism of two Dynkin schemes, extension of the base of a Dynkin scheme, constant Dynkin scheme associated to a Dynkin diagram.
+
+Every descent datum on a Dynkin scheme for the étale topology is effective.
+\numpara{3.3}\label{XXIV.3.3}
+One proposes to associate to every reductive $S$-group $G$ a Dynkin $S$-scheme. Suppose first that $G$ is \emph{splittable} over $S$; for every pinning $\mathscr E$ of $G$, denote by $\Delta(\mathscr E)$ the constant Dynkin scheme associated to the pinned root datum defined by $\mathscr E$; if $\mathscr E$ and $\mathscr E'$ are two pinnings of $G$, there exists by 1.5 a \emph{unique inner automorphism} of $G$ over $S$ taking $\mathscr E$ to $\mathscr E'$; this automorphism of $G$ defines an isomorphism $a_{\mathscr E\mathscr E'}:\Delta(\mathscr E)\isomto\Delta(\mathscr E')$; the $a_{\mathscr E\mathscr E'}$ clearly form a transitive system, so that one can identify the $\Delta(\mathscr E)$ (i.e. take the inductive limit); the result is a constant Dynkin scheme denoted by $\underline{\operatorname{Dyn}}(G)$. If now $G$ is an \emph{arbitrary} reductive $S$-group, there exists a covering family for the étale topology $\{S_i\to S\}$ such that $G_{S_i}$ is splittable.
+% Last sentence begins on p. 14 and ends on p. 15. Next sentence goes to en-03.tex.

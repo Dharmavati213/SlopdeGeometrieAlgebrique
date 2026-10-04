@@ -1,0 +1,720 @@
+% Continuation of Corollary 3.4.
+\noindent a) For every quasi-regular section $a$ of $\mathfrak g$, there
+exists, locally for the \'etale topology, a conjugate of $a$ which is a
+section of $\mathfrak h$.
+
+\noindent b) For every Cartan subalgebra $\mathfrak d$ of $\mathfrak g$,
+$\mathfrak d$ is, locally for the \'etale topology, conjugate to a
+subalgebra of $\mathfrak h$.
+\end{corollary}
+In particular, when $\mathfrak h$ is itself a Cartan subalgebra of
+$\mathfrak g$, one finds:
+
+\begin{corollary}{3.5}\label{XIV.3.5}
+Let $G$ be a smooth $S$-group prescheme of finite type, $\mathfrak g$
+its Lie algebra, and $\mathfrak d,\mathfrak d'$ two Cartan subalgebras
+of $G$. Then $\uTransp_G(\mathfrak d,\mathfrak d')$ is identical to
+the strict transporter of $\mathfrak d$ into $\mathfrak d'$, and is
+a closed subprescheme of $G$ smooth over $S$, with surjective structural
+morphism. Locally for the \'etale topology, $\mathfrak d$ and
+$\mathfrak d'$ are conjugate.
+% typo?: kept as printed: Cartan subalgebras of G.
+\end{corollary}
+The fact that the transporter is here identical to the strict
+transporter follows trivially from the fact that $\mathfrak d$ and
+$\mathfrak d'$ are locally direct summands in $\mathfrak g$ and have
+the same rank at each point. Thus 3.5 is a particular case of 3.4.
+In particular, if $\mathfrak d=\mathfrak d'$:
+
+\begin{corollary}{3.6}\label{XIV.3.6}
+Let $G$ be as in 3.5, and let $\mathfrak d$ be a Cartan subalgebra
+of $\mathfrak g$. Then $\Norm_G(\mathfrak d)$ is a closed group
+subprescheme of $G$ smooth over $S$, whose Lie algebra is identical
+to $\mathfrak d$.
+\end{corollary}
+Indeed, this last assertion amounts to saying that $\mathfrak d$
+is its own normalizer in $\mathfrak d$, which follows at once from
+the fact that this is true fiber by fiber.
+% typo?: kept as printed: normalizer in d rather than g.
+
+\begin{corollary}{3.7}\label{XIV.3.7}
+Let $G,\mathfrak g$ be as in 3.5. Then conditions
+$(\mathrm C_2),(\mathrm C'_1),(\mathrm C_1)$ of 2.9 are equivalent;
+in other words, if $\mathfrak g$ admits a Cartan subalgebra locally
+for the fpqc topology, then every quasi-regular section of
+$\mathfrak g$ is regular.
+\end{corollary}
+Indeed, let $a$ be a quasi-regular section; let us prove that it is
+regular. The question being local for the fpqc topology, one may
+suppose that $\mathfrak g$ admits a Cartan subalgebra $\mathfrak d$.
+By 3.4 a), $a$ is then, locally for the \'etale topology, conjugate
+to a section of $\mathfrak d$, which reduces one to the case where
+$a$ is a section of $\mathfrak d$, where the conclusion is trivial
+from the definition.
+
+\begin{definition}{3.8}\label{XIV.3.8}
+Let $G$ be a smooth group prescheme over a prescheme $S$. One calls
+a subgroup of type (C) of $G$ a group subprescheme $D$ of $G$, smooth
+over $S$, with connected fibers, such that $\mathfrak d=\Lie(D)$ is
+a Cartan subalgebra (2.4) of $\mathfrak g=\Lie(G)$, i.e. such that
+for every $s\in S$, $D_s$ is a subgroup of type (C) of the algebraic
+group $G_s$ (XIII 6.2).
+\end{definition}
+
+\begin{theorem}{3.9}\label{XIV.3.9}
+Let $G$ be a smooth $S$-group prescheme of finite presentation,
+and $\mathfrak g$ its Lie algebra. Then:
+
+\noindent a) The map
+\[
+ D\mto\mathfrak d=\Lie(D)
+\]
+establishes a one-to-one correspondence between subgroups of type
+(C) of $G$ and Cartan subalgebras of $\mathfrak g$.
+
+\noindent b) If $D$ and $\mathfrak d$ correspond, one has
+\[
+ \Norm_G(D)=\Norm_G(\mathfrak d),
+\]
+which is a closed subprescheme of $G$ smooth over $S$, and one has
+\[
+ D=\Norm_G(D)^0=\Norm_G(\mathfrak d)^0.
+\]
+\noindent c) Two subgroups of type (C), $D$ and $D'$, of $G$ are
+conjugate locally for the \'etale topology.
+\end{theorem}
+\begin{proof}
+Let $D$ be a subgroup of type (C) of $G$, and $\mathfrak d$ its
+Lie algebra; then $D\subset\Norm_G(\mathfrak d)$, and by definition
+3.8 and 3.6 this is an inclusion of group preschemes smooth over
+$S$, inducing an isomorphism on the Lie algebras. Since $D$ has
+connected fibers, one therefore has $D=\Norm_G(\mathfrak d)^0$.
+Thus the map considered in a) is injective; let us prove it is
+surjective. Let then $\mathfrak d$ be a Cartan subalgebra of
+$\mathfrak g$; then by 3.6, $\Norm_G(\mathfrak d)=N$ is a closed
+group subprescheme of $G$ smooth over $S$, admitting $\mathfrak d$
+as Lie algebra. Since $G$ is of finite presentation over $S$,
+the same holds for $N$, so (as was noted in XII after 7.3) the
+union of the connected components of the fibers of $N$ is the
+underlying set of an open group subprescheme $N^\circ$ of $N$,
+which is clearly a subgroup of type (C) of $G$ with Lie algebra
+$\mathfrak d$. This proves a); the first assertion b) follows
+at once, and the formula $D=\Norm_G(\mathfrak d)^0$ has already
+been proved. Finally, c) follows from a) and 3.5.
+% typo?: kept as printed: union of connected components, with no identity qualifier.
+\end{proof}
+
+\begin{corollary}{3.10}\label{XIV.3.10}
+Suppose that $\mathfrak g$ admits a Cartan subalgebra locally
+for the fpqc topology (or, what amounts to the same thing by
+3.9 a), that $G$ admits a subgroup of type (C) locally for the
+fpqc topology). Consider the functor
+$\mathscr D:(\Sch)^\circ_{/S}\to\Ens$ defined by
+$\mathscr D(S')=$ the set of subgroups of type (C) of $G_{S'}$.
+Then this functor is representable by a quasi-projective prescheme
+smooth over $S$, with connected geometric fibers. When $S$ is
+the spectrum of a field $k$, hence $G$ a smooth algebraic group
+over $k$, and $\mathfrak g$ admits a regular point (a condition
+automatically verified if $k$ is infinite), then $\mathscr D$ is
+a rational variety over $k$.
+\end{corollary}
+Indeed, by 3.9 a), the functor $\mathscr D$ is canonically
+isomorphic to the functor considered in 2.16; on the other hand,
+by 3.7, condition $(\mathrm C_2)$ holds. Thus 3.10 follows from
+2.16 and 2.17.
+
+\begin{corollary}{3.11}\label{XIV.3.11}
+Let $D$ be a subgroup of type (C) of $G$, and $N$ its normalizer
+in $G$. Then the quotient sheaf $G/N$ is canonically isomorphic
+to the functor $\mathscr D$ of 3.10, hence representable by a
+quasi-projective prescheme smooth over $S$, with connected
+geometric fibers.
+\end{corollary}
+
+\begin{proposition}{3.12}\label{XIV.3.12}
+Let $G$ be an $S$-group prescheme smooth and of finite
+presentation over $S$, $H,K$ two group subpreschemes smooth
+and of finite presentation over $S$, $K$ having connected
+fibers, and $\mathfrak g,\mathfrak k,\mathfrak h$ the corresponding
+Lie algebras. One assumes that one of the following two
+conditions holds for the geometric fibers of the latter:
+
+\noindent a) For every $s\in S$, $\mathfrak k_{\bar s}$ contains
+a regular element of $\mathfrak g_g$, and $\mathfrak h_{\bar s}$
+contains a Cartan subalgebra of $\mathfrak g_{\bar s}$.
+% typo?: kept as printed: g_g in a).
+
+\noindent b) For every $s\in S$, $\mathfrak k_{\bar s}$ contains
+a Cartan subalgebra of $\mathfrak g_{\bar s}$. Under these
+conditions, for $H\supset K$ to hold, it is necessary and
+sufficient that one have $\mathfrak h\supset\mathfrak k$.
+\end{proposition}
+Of course, one need only prove that if
+$\mathfrak h\supset\mathfrak k$, then $H\supset K$.
+In case b), the inclusion $\mathfrak h\supset\mathfrak k$
+shows that one is in fact under the conditions of a),
+so it suffices to prove a). Proceeding as in 3.2 a)
+by reduction to the case of $S$ artinian local, one
+is reduced to the case where there exists a section
+$a$ of $\mathfrak k$ which is quasi-regular in
+$\mathfrak g$. In this case, proceeding as in XIII
+5.5, one is reduced to the following statement:
+
+\begin{corollary}{3.13}\label{XIV.3.13}
+Let $G$ be an $S$-group prescheme smooth and of finite
+presentation over $S$, $H$ a group subprescheme of
+$G$ smooth and of finite presentation over $S$,
+$\mathfrak g$ and $\mathfrak h$ the Lie algebras,
+and $a$ a section of $\mathfrak h$ which is
+quasi-regular in $\mathfrak g$. One assumes that
+for every $s\in S$, the geometric fiber
+$\mathfrak h_{\bar s}$ contains a Cartan subalgebra
+of $\mathfrak g_{\bar s}$. Let
+\[
+ M_a=\Transp_G(a,\mathfrak h),
+\]
+which is a closed subprescheme of $G$ smooth over
+$S$ (cf. 3.1), so that $M_a^0$ (the union of the
+connected components of the identity element in
+the fibers of $M_a$) is an open part of $M_a$,
+which we shall equip with the structure induced
+by $M_a$. One then has $H^0=M_a^0$.
+\end{corollary}
+Clearly, one has $H\subset M_a$, whence
+$H^0\subset M_a^0$. Since this is an inclusion
+of preschemes smooth over $S$, to prove that
+it is an equality, one is reduced to verifying
+it on the fibers, which reduces one to the
+case where $S$ is the spectrum of an
+algebraically closed field, a case seen in
+XIII 5.4.
+
+\begin{corollary}{3.14}\label{XIV.3.14}
+Let $G$ be a smooth $S$-group prescheme of
+finite presentation, $D$ a subgroup of type
+(C) of $G$, and $H$ a group subprescheme of
+$G$ smooth over $S$ and of finite presentation
+over $S$, and $\mathfrak d$ and $\mathfrak h$
+their Lie algebras. Then one has
+\[
+ \uTransp_G(D,H)=\uTransp_G(\mathfrak d,\mathfrak h),
+\]
+and this functor is representable by a
+closed subprescheme of $G$ smooth over $S$.
+\end{corollary}
+Indeed, the identity between the two
+transporters follows from 3.12 b), which
+allows one to apply 3.2.
+
+\begin{corollary}{3.15}\label{XIV.3.15}
+Let $G,H$ be as in 3.14, and suppose that
+for every $s\in S$, the geometric fiber
+$\mathfrak h_{\bar s}$ contains a Cartan
+subalgebra of $\mathfrak g_{\bar s}$. Suppose
+moreover that $\mathfrak g$ admits a Cartan
+subalgebra locally for the fpqc topology.
+Then locally for the \'etale topology,
+$H$ contains a subgroup of type (C) of $G$.
+\end{corollary}
+By 3.7 and 3.9 a), $G$ admits a subgroup
+of type (C) locally for the \'etale topology,
+so one may suppose that $G$ admits such
+a subgroup, say $D$. Then the hypothesis
+on $\mathfrak h$ also means that the
+structural morphism of the transporter
+considered in 3.14 is surjective (taking
+into account the conjugacy theorem XIII
+6.1 a)). One then concludes by Hensel's
+lemma XI 1.10.
+
+\begin{corollary}{3.16}\label{XIV.3.16}
+Let $G,H,K$ be as in 3.12 a); suppose
+moreover that for every $s\in S$, the
+geometric fiber $\mathfrak k_{\bar s}$
+is nilpotent (i.e. $\mathfrak k$ is
+locally nilpotent). Then one has
+\[
+ \uTransp_G(K,H)=\uTransp_G(\mathfrak k,\mathfrak h),
+\]
+and this functor is representable by
+a closed subprescheme of $G$ smooth
+over $S$, with surjective structural
+morphism to $S$. Locally for the
+\'etale topology, $H$ contains a
+subgroup conjugate to $K$.
+\end{corollary}
+The identity of the two transporters
+is again contained in 3.12 a); the
+assertion about its structure is
+then precisely 3.2 a), and the last
+assertion of 3.16 is then a consequence
+of Hensel's lemma.
+
+\begin{remarks}{3.17}\label{XIV.3.17}
+\noindent a) In 3.12 and 3.16, one
+may replace the hypothesis that
+$K$ is smooth over $S$ by the
+following weaker hypothesis:
+the sheaf $e_K^*(\Omega^1_{K/S})=\omega_K^1$
+of relative $1$-differentials along
+the unit section is locally free.
+In this way, 3.12 contains XIII 5.5.
+
+\noindent b) Let $G,\mathfrak g,\mathfrak h$
+be as in 3.1, with $G$ of finite
+presentation over $S$. Then
+$N=\Norm_G(\mathfrak h)$ is not
+necessarily smooth over $S$ along
+the unit section, or, what amounts
+to the same thing, there does not
+necessarily exist a group
+subprescheme $H$ of $S$ smooth
+over $S$ whose Lie algebra is
+$\mathfrak h$, even if $S$ is
+the spectrum of a field. When
+such an $H$ exists, so that one
+then has (taking $H$ with
+connected fibers) $N=\Norm_G(H)$,
+I do not know whether $N$ is
+smooth over $S$. In this question,
+one may clearly reduce to the
+case where $S$ is artinian local.
+% typo: il n'existe par -> il n'existe pas.
+% typo?: kept as printed: a group subprescheme H of S.
+\end{remarks}
+Finally, to end this section,
+let us examine the case where
+$G$ is ``semisimple'' over $S$:
+
+\begin{theorem}{3.18}\label{XIV.3.18}
+Let $S$ be a prescheme, $G$ an
+$S$-group prescheme smooth over
+$S$, whose geometric fibers
+are ``adjoint'' semisimple
+groups, i.e. semisimple with
+reductive center (XII 4.1 and
+4.4) reduced to the unit group.
+Then the subgroups of type (C)
+of $G$ are identical to its
+maximal tori, hence also to
+its Cartan subgroups (XII 3.1).
+\end{theorem}
+Taking the definitions into
+account, one is reduced to the
+case where $S$ is the spectrum
+of an algebraically closed
+field, and to proving then
+that for a maximal torus $T$
+of $G$, the Lie algebra
+$\mathfrak t$ of $T$ is a
+Cartan subalgebra of
+$\mathfrak g$, that is
+(taking into account the
+inequality: nilpotent rank
+of $\mathfrak g\geq$ nilpotent
+rank of $G=\dim T=
+\operatorname{rank}\mathfrak t=r$)
+that there exists
+$x\in\mathfrak t$ with
+$\dim\operatorname{Nil}(x,\mathfrak g)=r$.
+Since $\mathfrak t$ is
+abelian and a fortiori
+nilpotent, it amounts to
+the same thing to say that
+there exists an
+$a\in\mathfrak t$ such
+that $\ad(a)_{\mathfrak g/\mathfrak t}$
+is injective (XIII 5.7 a)).
+Now consider the characters
+$\alpha$ of $T$ which occur
+in the representation induced
+on $T$ by the adjoint
+representation of $G$.
+The structure theory of the
+semisimple group $G$ (BIBLE,
+13 th. 1 a) and th. 3,
+cor. 2), more precisely of
+the ``big cell'' of $G$,
+a semidirect product of
+$T$ and subgroups $P_\alpha$
+isomorphic to the additive
+group $\Ga$, invariant
+under $T$ and corresponding
+to the ``root'' characters
+of $G$ for the torus $T$,
+shows that the eigenspace
+of $\mathfrak g$ for the
+unit character is precisely
+$\mathfrak t$, and the
+other eigenspaces have
+dimension $1$, the associated
+characters $\alpha$ being
+precisely the roots of $G$
+for $T$. By the calculation
+of the reductive center
+of $G$ as the intersection
+of the kernels of the
+characters of $T$ which
+occur in the adjoint
+representation of $G$
+(XII 4.8), one sees that
+$G$ being adjoint is
+interpreted by the fact
+that the roots generate
+the lattice
+$M=\Hom(T,\mathbf G)$.
+Now a well-known lemma
+of root theory tells
+us that every root
+belongs to a system
+of simple roots, hence
+to a basis of the
+group generated by the
+roots, and consequently
+to a basis of the
+dual $M$ of $T$\nde{$\widehat T$
+has been replaced by $T$.}.
+One concludes:
+% typo?: kept as printed: Hom(T,G) with no m subscript.
+
+\begin{corollary}{3.19}\label{XIV.3.19}
+If $G$ is an adjoint
+semisimple algebraic group
+over an algebraically
+closed field $k$, and
+$T$ a maximal torus
+of $G$, then for every
+root $\alpha$ of $G$
+with respect to $T$,
+$\alpha:T\to\Gm$, the
+corresponding homomorphism
+$\alpha':\mathfrak t\to k$
+is nonzero.
+\end{corollary}
+This result is essentially
+equivalent to theorem
+3.18, for, for a
+$t\in\mathfrak t$,
+$\ad(t)$ is semisimple,
+and its eigenvalues
+on $\mathfrak g/\mathfrak t$
+are precisely the
+$\alpha'(t)$; hence
+$\ad(t)_{\mathfrak g/\mathfrak t}$
+is injective if and
+only if the $\alpha'(t)$
+are $\ne0$, and there
+exists a $t\in\mathfrak t$
+with this property if
+and only if all the
+$\alpha'$ are $\ne0$.
+
+\begin{corollary}{3.20}\label{XIV.3.20}
+Let $S$ be a prescheme,
+$G$ an $S$-group prescheme,
+smooth and of finite
+presentation over $S$,
+with geometric fibers
+connected reductive
+algebraic groups (i.e.
+extensions of a
+semisimple group by
+a torus). Then for
+every $s\in S$ there
+exists an open
+neighborhood $U$ of
+$s$ such that $G|_U$
+admits a maximal torus.%
+{\renewcommand{\thefootnote}{*}\footnote{This
+result, as well as
+2.11 on which it
+rests, generalizes
+immediately to the
+case where $s$ is
+replaced by a finite
+part of $S$ contained
+in an affine open
+subset.}\addtocounter{footnote}{-1}}
+\end{corollary}
+Indeed, we shall see
+in XVI that the
+hypothesis just made
+on $G$ implies that
+$G$ is affine over
+$S$ and has locally
+constant reductive
+rank; hence (XII
+4.7 c)) $G$ admits
+a reductive center
+$Z$, $G'=G/Z$ is
+a smooth affine
+group over $S$ whose
+reductive center is
+reduced to the unit
+group, and finally
+the maximal tori
+of $G$ and of $G'$
+are in one-to-one
+correspondence. Moreover,
+one sees at once
+that the geometric
+fibers of $G'$ are
+connected semisimple
+groups, and moreover
+adjoint by definition
+(their reductive center
+being trivial). Thus
+it suffices to confine
+oneself to the case
+where $G$ is semisimple
+and adjoint, and by
+3.18 one is reduced
+to finding an open
+neighborhood $U$ of
+$s$ and a subgroup
+of type (C) of $G|_U$,
+or, what amounts to
+the same thing
+(3.9 a)), a Cartan
+subalgebra of
+$\mathfrak g|_U$.
+Now this is possible
+if $k(s)$ is infinite,
+for by 3.7,
+$\mathfrak g$ satisfies
+condition $(\mathrm C_2)$
+of 2.9, hence one
+may apply 2.11 b).
+In fact, statement
+3.20 remains valid
+without supposing
+$k(s)$ infinite.
+Indeed, by the
+preceding proof,
+it suffices to know
+that for every
+adjoint semisimple
+group $G$ over a
+finite field $k$,
+the Lie algebra
+$\mathfrak g$ of
+$G$ contains a
+regular element.
+Now this statement
+has been proved by
+Chevalley (using the
+properties of the
+Coxeter element
+of the Weyl group\ldots);
+cf. the Appendix
+below by J.-P. Serre.
+
+\begin{remarks}{3.21}\label{XIV.3.21}
+\noindent a) Statement
+3.20 remains valid,
+with essentially the
+same proof, replacing
+$G$ by a closed group
+subprescheme $H$,
+smooth over $S$,
+having everywhere
+the same rank as $G$
+(for example, a
+``parabolic subgroup''
+of $G$), provided
+$k(s)$ is infinite.
+I do not know whether
+here again the
+hypothesis that
+$k(s)$ be infinite
+is superfluous.
+One can show that
+it is so at least
+if $H$ is parabolic,
+thanks to the
+construction of the
+radical $U$ of $H$
+and of the quotient
+$H/U$, which reduces
+one to the semisimple
+case. Unfortunately,
+the method of regular
+elements seems powerless
+here, for one easily
+constructs examples
+(for example, with
+the projective group
+and its ``standard''
+Borel subgroup) where
+the Lie algebra
+$\mathfrak h$ of $H$
+contains no regular
+element.
+
+\noindent b) The
+proof of 3.20 in
+fact shows a more
+precise result
+(invoking 3.9 b))
+in the case where
+$k(s)$ is infinite,
+namely that every
+maximal torus $T_0$
+of $G_s$ comes from
+a maximal torus $T$
+over an open
+neighborhood of $s$.
+I do not know whether
+this statement remains
+valid when $k(s)$
+is no longer supposed
+infinite, the difficulty
+clearly coming from
+the fact that the
+Lie algebra
+$\mathfrak t_0$ of
+$T_0$ generally
+contains no regular
+element of the
+Lie algebra
+$\mathfrak g_0$ of
+the fiber $G_s$.
+An affirmative answer
+to this problem would
+imply the following
+statement (which is
+proved only in the
+case of an infinite
+residue field or when
+$A$ is separated and
+complete): Let $A$
+be a local ring
+with residue field
+$k$, $M$ an ``Azumaya
+algebra'' over $A$,
+i.e. an algebra
+such that $M$ is
+a free module of
+finite type over $A$
+and $M_0=M\otimes_A k$
+a central simple
+algebra over $k$,
+and $D_0$ a
+commutative subalgebra
+of $M_0$ separable
+over $k$, such that
+$[M_0:k]=([D_0:k])^2$;
+then there exists
+a commutative
+subalgebra $D$ of
+$M$ which is a
+module direct summand
+in $M$ and such
+that $D\otimes_A k=D_0$
+(?). (Note that
+giving $M$ is
+equivalent to giving
+a principal homogeneous
+bundle under the
+projective group
+$\PGL(n)_A$, whence
+an ``inner'' twisted
+form $G$ of $\PGL(n)$,
+and the maximal tori
+of $G$ correspond
+one-to-one to the
+commutative subalgebras
+$D$ of $M$, \'etale
+over $A$, of rank
+$n$ over $A$.)
+
+\noindent c) Applying
+3.20 to the
+centralizer of a
+subtorus $Q$ of $G$
+($G$ a reductive
+$S$-group prescheme),
+one deduces that
+every such $Q$ is
+contained, locally
+for the Zariski
+topology, in a
+maximal torus of $G$.
+\end{remarks}
+
+\sgasection{4}{A digression on Borel subgroups}
+\begin{definition}{4.1}\label{XIV.4.1}
+Let $G$ be a smooth
+algebraic group over
+an algebraically
+closed field. One
+calls a Borel subgroup
+of $G$ a smooth
+solvable connected
+algebraic subgroup
+which is maximal
+for these properties.
+\end{definition}
+When $G$ is affine,
+one thus recovers
+the terminology of
+BIBLE 6 def. 1.
+Note immediately
+that if $Z$ is a
+smooth connected
+subgroup of $G$
+contained in the
+center (or, more
+generally, solvable
+and invariant), then
+for every Borel
+subgroup $B$ of $G$,
+the image $BZ$ of
+$B\times Z$ under
+the morphism
+$(b,z)\mto bz$
+from $B\times Z$
+to $G$ is a
+smooth solvable
+connected subgroup
+of $G$ containing
+$B$, hence identical
+to $B$, so $B$
+contains $Z$, hence
+$B$ is the inverse
+image of an
+algebraic subgroup
+$B'$ of $G'=G/Z$,
+and it is immediate
+that $B'$ is a
+Borel subgroup of
+$G'$. Taking
+$Z=\Centr(G^0)^0_{\mathrm{red}}$,
+$G'=G/Z$ is affine
+(XII 6.1), so the
+Borel subgroups of
+$G'$ are conjugate,
+and for such a
+$B'$, $G'/B'$
+is a projective
+variety (BIBLE 6
+th. 4). Consequently:
+
+\begin{proposition}{4.2}\label{XIV.4.2}
+Let $G$ be as in
+4.1. Then the Borel
+subgroups of $G$
+are conjugate.
+If $B$ is a Borel
+subgroup, then
+$G/B$ is a
+projective variety.
+The maximal tori
+of $B$ (resp. the
+Cartan subgroups of
+$B$, $G$ being
+connected) are
+maximal tori of
+$G$ (resp. Cartan
+subgroups of $G$).
+\end{proposition}

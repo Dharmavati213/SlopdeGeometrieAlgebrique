@@ -1,0 +1,488 @@
+Suppose \(Y\) is flat over \(S\); then one has isomorphisms:
+\[
+J\mathcal{O}_{E\times_{S}Y}
+  \isomfrom
+  (J\mathcal{O}_{E})\otimes_{\mathcal{O}_{S}}\mathcal{O}_{Y}
+  \isomto
+  (J\mathcal{O}_{E})\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}}.
+\]
+Suppose moreover that \(E\) is of finite presentation over \(S\); then
+\(\Omega^{1}_{E/S}\) is an \(\mathcal{O}_{E}\)-module of finite presentation
+(\cf EGA~\(\mathrm{IV}_{4}\), 16.4.22) and hence, by EGA~\(0_{\mathrm{I}}\),
+6.7.6, one has:
+\[
+\mathcal{H}\mathit{om}_{\mathcal{O}_{E\times_{S}Y}}
+  \bigl(
+    \Omega^{1}_{E/S}\otimes_{\mathcal{O}_{S}}\mathcal{O}_{Y},\,
+    (J\mathcal{O}_{E})\otimes_{\mathcal{O}_{S}}\mathcal{O}_{Y}
+  \bigr)
+\simeq
+\mathcal{H}\mathit{om}_{\mathcal{O}_{E}}
+  \bigl(\Omega^{1}_{E/S},\, J\mathcal{O}_{E}\bigr)
+  \otimes_{\mathcal{O}_{S}}\mathcal{O}_{Y}.
+\]
+Let us denote by \(\pi\colon E\to S\) and \(g\colon Y\to S\) the structural
+morphisms; applying 0.13 to the diagram
+\[
+\xymatrix@C=4em@R=2.4em{
+E \ar[d]_{\pi}
+  & E\times_{S}Y \ar[l]_{g'} \ar[d]_{\pi'}
+  \\
+S
+  & Y \ar[l]_{g}
+\,,}
+\]
+and to the \(\mathcal{O}_{E}\)-module
+\(\mathcal{F}
+  =\mathcal{H}\mathit{om}_{\mathcal{O}_{E}}(\Omega^{1}_{E/S}, J\mathcal{O}_{E})\),
+one obtains
+\[
+\Gamma(E\times_{S}Y,\, g'^{*}\mathcal{F})
+  =\Gamma(Y,\, \pi'_{*}g'^{*}\mathcal{F})
+  =\Gamma(Y,\, g^{*}\pi_{*}\mathcal{F})
+  =W(\pi_{*}\mathcal{F})(Y).
+\]
+One has therefore shown that, if \(E\) is of finite presentation over \(S\),
+one has
+\begin{equation}
+L'_{X}
+  =W\bigl(
+    \pi_{*}\mathcal{H}\mathit{om}_{\mathcal{O}_{E}}
+      (\Omega^{1}_{E/S}, J\mathcal{O}_{E})
+  \bigr)
+\tag{0.14.1}
+\end{equation}
+on the category of \(S\)-schemes \emph{flat} over \(S\). Let us note moreover
+that the module of which one takes the \(W\) is \emph{quasi-coherent}, by
+EGA~I, 9.1.1 and 9.2.1.
+
+{\renewcommand{\thefootnote}{(31)}\nde{One has added what follows.}}%
+Let us denote by \(L_{0}\) the \(S_{0}\)-functor
+\[
+W\bigl(
+  \pi_{0*}\mathcal{H}\mathit{om}_{\mathcal{O}_{E_{0}}}
+    (\Omega^{1}_{E_{0}/S_{0}}, J\mathcal{O}_{E_{0}})
+\bigr).
+\]
+Then, returning to the definition of \(L'_{X}(Y)\) and taking into account
+the isomorphism
+\[
+J\mathcal{O}_{E\times_{S}Y}
+  \simeq
+  (J\mathcal{O}_{E})\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}},
+\]
+one obtains, by reasoning as above, that
+\[
+L'_{X}(Y)
+  =L_{0}(Y_{0})
+  =L_{0}(Y\times_{S}S_{0})
+  =\Bigl(\prod_{S_{0}/S}L_{0}\Bigr)(Y).
+\]
+Thus, on the category of \(S\)-schemes \emph{flat} over \(S\), one has:
+\[
+L'_{X}
+  =\prod_{S_{0}/S}
+  W\bigl(
+    \pi_{0*}\mathcal{H}\mathit{om}_{\mathcal{O}_{E_{0}}}
+      (\Omega^{1}_{E_{0}/S_{0}}, J\mathcal{O}_{E_{0}})
+  \bigr).
+\]
+It is not evident that the action of \(X\) on \(L'_{X}\) defined in 0.12
+comes from an action of \(X_{0}=\Aut_{S_{0}}(E_{0})\) on \(L_{0}\); this is
+however the case when, moreover, \(E\) is \emph{flat} over \(S\).
+
+Indeed, one has in this case canonical isomorphisms:
+\begin{align*}
+J\mathcal{O}_{E}
+  &\simeq J\otimes_{\mathcal{O}_{S}}\mathcal{O}_{E}
+  \simeq J\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{E_{0}}.\\
+L_{0}
+  &\simeq W\bigl(
+    \pi_{0*}\mathcal{H}\mathit{om}_{\mathcal{O}_{E_{0}}}
+      (\Omega^{1}_{E_{0}/S_{0}},
+        J\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{E_{0}})
+  \bigr),
+\end{align*}
+\begin{equation}
+L'_{X}
+  =\prod_{S_{0}/S}
+  W\bigl(
+    \pi_{0*}\mathcal{H}\mathit{om}_{\mathcal{O}_{E_{0}}}
+      (\Omega^{1}_{E_{0}/S_{0}},
+        J\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{E_{0}})
+  \bigr).
+\tag{0.14.2}
+\end{equation}
+Then, for every \(S_{0}\)-scheme \(T\), one has
+\[
+L_{0}(T)
+  \simeq
+  \Hom_{\mathcal{O}_{E_{0}\times_{S_{0}}T}}
+    \bigl(
+      \Omega^{1}_{E_{0}\times_{S_{0}}T/T},\,
+      J\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{E_{0}\times_{S_{0}}T}
+    \bigr)
+\]
+and \(\Hom_{S_{0}}(T, X_{0})=\Aut_{T}(E_{0}\times_{S_{0}}T)\) acts by
+transport of structure on \(L_{0}(T)\), in a manner functorial in \(T\);
+finally, for every \(S\)-scheme \(Y\) flat over \(S\), the action by transport
+of structure of \(\Hom_{S}(Y, X)=\Aut_{Y}(E\times_{S}Y)\) on
+\(L'_{X}(Y)=L_{0}(Y_{0})\) factors through
+\(\Aut_{Y_{0}}(E_{0}\times_{S_{0}}Y_{0})\).
+
+Let us finally extract from SGA~1 III the following two propositions.
+
+\begin{proposition}{0.15}\label{III.0.15}
+(SGA~1 III, 6.8)%
+{\renewcommand{\thefootnote}{(32)}\nde{This \og global\fg\ lifting result
+uses the \og local\fg\ lifting result of \loccit, 4.1, which is stated for
+\(S\) locally noetherian; see EGA~\(\mathrm{IV}_{4}\) 18.1.1 for the general
+case.}}
+For every \(S_{J}\)-scheme \(Y\) smooth over \(S_{J}\) and affine, there
+exists an \(S\)-scheme \(X\) smooth over \(S\) such that
+\(X\times_{S}S_{J}\simeq Y\), and such an \(X\) is unique up to
+(non-unique) isomorphism.
+\end{proposition}
+
+\begin{proposition}{0.16}\label{III.0.16}
+(SGA~1 III, 5.5)%
+{\renewcommand{\thefootnote}{(33)}\nde{This is an immediate consequence of
+the definition of (formally) \og smooth\fg\ adopted in
+EGA~\(\mathrm{IV}_{4}\), 17.3.1 (and 17.1.1).}}
+Let \(X\) be an \(S\)-scheme smooth over \(S\). For every affine \(S\)-scheme
+\(Y\), the canonical map
+\[
+p_{X}(Y)\colon
+  \Hom_{S}(Y, X)
+  \longrightarrow
+  \Hom_{S}(Y, X^{+})
+  =\Hom_{S_{J}}(Y_{J}, X_{J})
+\]
+is surjective.
+\end{proposition}
+
+\begin{corollary}{0.17}\label{III.0.17}
+Let \(E\) be an \(S\)-scheme smooth over \(S\) and affine; let us write
+\(X=\Aut_{S}(E)\). For every affine \(S\)-scheme \(Y\), the canonical map
+\[
+\Aut_{Y}(E\times_{S}Y)
+  =\Hom_{S}(Y, X)
+  \longrightarrow
+  \Hom_{S}(Y, X^{+})
+  =\Aut_{Y_{J}}(E_{J}\times_{S_{J}}Y_{J})
+\]
+is surjective.
+\end{corollary}
+
+\begin{proof}
+Indeed, \(Y\times_{S}E\) is affine over \(Y\), itself affine, hence affine.
+Applying 0.16, one deduces from this that every \(S_{J}\)-morphism
+\(Y_{J}\times_{S_{J}}E_{J}\to E_{J}\) extends to an \(S\)-morphism
+\(Y\times_{S}E\to E\).
+{\renewcommand{\thefootnote}{(34)}\nde{One has slightly modified the
+original, so as to be exactly under the hypotheses of 0.7.}}
+In other terms, every \(Y_{J}\)-endomorphism of
+\(Y_{J}\times_{S_{J}}E_{J}\) lifts to a \(Y\)-endomorphism of
+\(Y\times_{S}E\). Then, 0.7~a) shows that every
+\emph{\(Y_{J}\)-automorphism} of \(Y_{J}\times_{S_{J}}E_{J}\) lifts to a
+\emph{\(Y\)-automorphism} of \(Y\times_{S}E\), which is the announced
+property.
+\end{proof}
+
+\sgasection{1}{Extensions and cohomology}
+\label{III.sec.1}
+
+\numpara{1.1}
+Let \(\mathcal{C}\) be a category stable under fiber
+products.%
+{\renewcommand{\thefootnote}{(35)}\nde{One has added the hypothesis that
+\(\mathcal{C}\) be stable under fiber products (which is the case in the
+applications where \(\mathcal{C}\) is the category of schemes \Sch\ or that
+of the functors \(\Sch^{\circ}\to\Ens\)). If one omits this hypothesis, one
+must suppose in the sequel that the fiber products
+\(G\times_{S}\cdots\times_{S}G\) are representable.}}
+Let \(S\) be an object of \(\mathcal{C}\), \(G\) an \(S\)-group
+(\emph{representable}) and \(F\) a commutative group \(S\)-functor on which
+\(G\) operates. One has defined in~I, 5.1 the cohomology groups
+\(H^{n}(G, F)\). One recalls that these are the homology groups of a complex
+denoted \(C^{*}(G, F)\) where, writing
+\((G/S)^{n}=G\times_{S}\cdots\times_{S}G\) (\(n\) factors),
+\[
+C^{n}(G, F)=\Hom_{S}((G/S)^{n}, F).
+\]
+As \(G\) and hence\textsuperscript{(35)} the \((G/S)^{n}\) are representable,
+one also has
+\[
+C^{n}(G, F)=F((G/S)^{n})\,;
+\]
+from this, and from the definition of the boundary operator, one sees that
+the complex \(C^{*}(G, F)\) depends only on the restriction of \(F\) to the
+full subcategory of \(\mathcal{C}_{/S}\) whose objects are the cartesian
+powers of \(G\) over \(S\). Consequently, one has the
+
+\begin{lemma}{1.1.1}\label{III.1.1.1}
+Let \(\mathcal{C}\) be a category stable under fiber
+products\textsuperscript{(35)}, \(S\) an object of \(\mathcal{C}\), \(G\) a
+representable \(S\)-group. Let us denote by \(\mathcal{C}(G)\) the full
+subcategory of \(\mathcal{C}_{/S}\) whose objects are the cartesian powers
+of \(G\) over \(S\). Let \(F\) and \(F'\) be two commutative group
+\(S\)-functors on which \(G\) operates. If \(F\) and \(F'\) have the same
+restriction to \(\mathcal{C}(G)\), one has a canonical isomorphism
+\[
+H^{*}(G, F)\isomto H^{*}(G, F').
+\]
+\end{lemma}
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{1.1.2. Cohomology and restriction of scalars.}\ ---%
+\label{III.ssec.1.1.2}
+{\renewcommand{\thefootnote}{(36)}\nde{One has added the title of this
+paragraph.}}
+Let us state another comparison result. Let now \(T\to S\) be a morphism of
+\(\mathcal{C}\). If \(F\) is a commutative group \(T\)-functor, then the
+functor obtained by \og restriction of scalars\fg\ (\cf Exp.~II, 1)
+\[
+F_{1}=\prod_{T/S}F
+\]
+is a commutative group \(S\)-functor and one has a morphism of group
+\(S\)-functors
+\[
+u\colon
+  \prod_{T/S}\Aut_{\mathrm{T}\text{-gr.}}(F)
+  \longrightarrow
+  \Aut_{\mathrm{S}\text{-gr.}}(F_{1}).
+\]%
+{\renewcommand{\thefootnote}{(37)}\nde{Indeed, let \(S'\to S\) and
+\(\alpha\in\Aut_{(T\times_{S}S')\text{-gr.}}(F_{T\times_{S}S'})\); for every
+\(U\to T\times_{S}S'\), let us denote by
+\(\alpha_{U}\in\Aut_{\mathrm{gr.}}(F_{T\times_{S}S'}(U))\) the element
+defined by \(\alpha\); then \(u(S')(\alpha)\) is the element \(\beta\) of
+\(\Aut_{\mathrm{S}\text{-gr.}}(F_{1})(S')
+  =\Aut_{\mathrm{S}'\text{-gr.}}
+    \bigl(\prod_{T\times_{S}S'/S'}F_{T\times_{S}S'}\bigr)\)
+such that \(\beta_{S''}=\alpha_{T\times_{S}S''}\) for every
+\(S''\to S'\).}}
+Let now \(G\) be a group \(S\)-functor and let
+\[
+G_{T}\longrightarrow\Aut_{\mathrm{T}\text{-gr.}}(F)
+\]
+be an operation of \(G_{T}\) on \(F\). By definition of the functor
+\(\prod_{T/S}\), one deduces from this a morphism of group \(S\)-functors
+\[
+G\longrightarrow\prod_{T/S}\Aut_{\mathrm{T}\text{-gr.}}(F),
+\]
+whence, by composition with \(u\), an operation of \(G\) on
+\(F_{1}=\prod_{T/S}F\).%
+{\renewcommand{\thefootnote}{(38)}\nde{Explicitly, for every \(S'\to S\),
+the operation of \(G(S')\) on \(F_{1}(S')=F(T\times_{S}S')\) is given by the
+operation of \(G_{T}(T\times_{S}S')=G(T\times_{S}S')\) on
+\(F(T\times_{S}S')\) and the morphism of groups
+\(G(S')\to G(T\times_{S}S')\) corresponding to the projection
+\(T\times_{S}S'\to S'\). One may also say that the operation of \(G_{T}\) on
+\(F\) is given by a morphism \(G_{T}\times_{T}F\to F\); applying the functor
+\(\prod_{T/S}\) and denoting by \(G_{1}\) the \(S\)-group
+\(\prod_{T/S}G_{T}\), one obtains, taking into account II~1.2, a morphism
+\(G_{1}\times_{S}F_{1}\to F_{1}\) which defines an operation of \(G_{1}\) on
+\(F\). The operation of \(G\) is then obtained via the natural morphism
+\(G\to G_{1}\), which corresponds by adjunction to \(\mathrm{id}_{G}\).}}
+
+\begin{lemma}{1.1.2}\label{III.1.1.2}
+Under the preceding conditions, one has a canonical isomorphism
+\[
+H^{*}\Bigl(G, \prod_{T/S}F\Bigr)\simeq H^{*}(G_{T}, F).
+\]
+\end{lemma}
+
+\begin{proof}
+Indeed, by the definition of the cohomology, the standard complexes are
+canonically isomorphic.
+\end{proof}
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{1.2. Lifting of morphisms of groups.}\ ---%
+\label{III.ssec.1.2}
+{\renewcommand{\thefootnote}{(39)}\nde{One has added this title.}}
+Following the general principles, one sets down the following definition:
+
+\begin{definition}{1.2.1}\label{III.1.2.1}
+Let \(1\longrightarrow M\xrightarrow{u}E\xrightarrow{v}G\) be a sequence of
+morphisms of \(\widehat{\mathcal{C}}\)-groups. One says that it is
+\emph{exact} if the following equivalent conditions are verified:
+\begin{enumeratei}
+\item for every \(S\in\Ob\mathcal{C}\), the sequence of ordinary groups
+below is exact:
+\[
+1\longrightarrow M(S)\xrightarrow{u(S)}E(S)\xrightarrow{v(S)}G(S)
+\]
+\item for every object \(H\) of \(\widehat{\mathcal{C}}\), the sequence of
+ordinary groups below is exact:
+\[
+1\longrightarrow
+  \Hom(H, M)\xrightarrow{u(H)}\Hom(H, E)\xrightarrow{v(H)}\Hom(H, G)
+\]
+\end{enumeratei}
+\end{definition}
+
+Taking in particular \(H=G\) in~(ii), one sees that the set of sections of
+\(v\) (not respecting \emph{a priori} the group structures) is empty or
+principal homogeneous under \(\Hom(G, M)\). Let us suppose it non-empty; let
+therefore
+\[
+s\colon G\longrightarrow E
+\]
+be a section of \(v\). Then for every \(S\in\Ob\mathcal{C}\) and every
+\(x\in G(S)\), the element \(s(x)\) of \(E(S)\) defines an inner automorphism
+of \(E_{S}\) which normalizes \(M_{S}\) (more correctly the image of
+\(M_{S}\) under \(u_{S}\)), hence an automorphism of \(M_{S}\).
+
+\begin{scholium}{1.2.1.1}\label{III.1.2.1.1}
+{\renewcommand{\thefootnote}{(40)}\nde{One has added the numbering 1.2.1.1
+and 1.2.1.2 in order to bring out the notions which are introduced
+there.}}%
+If \(M\) is commutative, one sees \og set-theoretically\fg\ that this
+automorphism does not depend on the chosen section, but only on \(x\), and
+that it depends multiplicatively on it. In summary, to every exact sequence
+\[
+(E)\qquad
+1\longrightarrow M\xrightarrow{u}E\xrightarrow{v}G
+\]
+such that \(M\) is commutative and that \(v\) possesses a section, there is
+associated a morphism of \(\widehat{\mathcal{C}}\)-groups
+\[
+G\longrightarrow\Aut_{\widehat{\mathcal{C}}\text{-gr.}}(M)
+\]
+which one calls the operation of \(G\) on \(M\) defined by the extension
+\((E)\).
+\end{scholium}
+
+\begin{definition}{1.2.1.2}\label{III.1.2.1.2}
+One has seen in~I, 2.3.7 that \(v\) possesses a section which is a morphism
+of \(\widehat{\mathcal{C}}\)-groups if and only if the extension \((E)\) is
+isomorphic (\og as an extension\fg) to the semidirect product of \(M\) by
+\(G\) relative to the preceding operation. Such a section of \(v\) will be
+called a \emph{section of the extension \((E)\)}, or simply a
+\emph{section of \((E)\)}.
+
+If \(s\) is a section of \((E)\) and if
+\(m\in\Gamma(M)\simeq\Ker(\Gamma(E)\to\Gamma(G))\) (for the definition of
+\(\Gamma\), see~I, 1.2), then the morphism \(G\to E\) defined
+by%
+{\renewcommand{\thefootnote}{(41)}\nde{In the right-hand term, one has
+corrected \(x\) to \(s(x)\).}}
+\[
+x\mapsto u(m)\,s(x)\,u(m)^{-1}
+\]
+is likewise a section of \((E)\), said to be \emph{deduced from \(s\) by the
+inner automorphism defined by \(m\) (or by \(u(m)\))}.
+\end{definition}
+
+\begin{lemma}{1.2.2}\label{III.1.2.2}
+Let \((E)\colon 1\longrightarrow M\xrightarrow{u}E\xrightarrow{v}G\) be an
+exact sequence of \(\widehat{\mathcal{C}}\)-groups such that \(M\) is
+commutative and that \(v\) possesses a section. Let us make \(G\) operate on
+\(M\) in the manner defined by \((E)\).
+\begin{enumeratei}
+\item The extension \((E)\) canonically defines a class
+\(c(E)\in H^{2}(G, M)\) whose vanishing is necessary and sufficient for the
+existence of a section of \((E)\).
+\item If \(c(E)=0\), the set of sections of \((E)\) is principal homogeneous
+under the group \(Z^{1}(G, M)\), and the set of sections of \((E)\) modulo
+the action of the inner automorphisms defined by the elements of
+\(\Gamma(M)\) is principal homogeneous under the group \(H^{1}(G, M)\).
+\item {\renewcommand{\thefootnote}{(42)}\nde{One has added this point, the
+counterpart of 1.2.4~(iii). Let us note on the other hand that the
+assertion is valid for \emph{every section} of \(v\), \cf the proof.}}%
+Let \(s\) be a section of \((E)\); the set of the conjugates of \(s\) by the
+inner automorphisms defined by \(\Gamma(M)\) is in bijection with
+\(\Gamma(M)/H^{0}(G, M)\).
+\end{enumeratei}
+\end{lemma}
+
+\begin{proof}
+The proof is carried out exactly as in the case of ordinary groups, the
+fact that one starts from a section of \(v\) ensuring the functoriality of
+the set-theoretic computations. Let us briefly indicate the principal steps
+of the proof.
+
+\textbf{a)} To every section \(s\) of \(v\) one associates the morphism
+\[
+Ds\colon G\times G\longrightarrow M,
+\]
+defined set-theoretically by
+\[
+u\bigl(Ds(x, y)\bigr)=s(xy)\,s(y)^{-1}\,s(x)^{-1}.
+\]
+One shows that \(Ds\) is a \(2\)-cocycle by the following
+computation.%
+{\renewcommand{\thefootnote}{(43)}\nde{One has corrected the original, so
+as to make it compatible with I, 5.1.}}
+By the definition of the differential of the standard complex (I, 5.1), one
+has:
+\[
+(\partial^{2}Ds)(x, y, z)
+  =\bigl(s(x)\,Ds(y, z)\,s(x)^{-1}\bigr)
+  \cdot Ds(x, y)^{-1}
+  \cdot Ds(xy, z)^{-1}
+  \cdot Ds(x, yz);
+\]
+it suffices to substitute the definition of \(Ds\) into this formula in
+order to find (without using any commutativity) \(Ds\in Z^{2}(G, M)\).
+
+\textbf{b)} If \(s\) and \(s'\) are two sections of \(v\), there exists
+\(f\colon G\to M\) such that \(s(x)=f(x)s'(x)\). One then has
+\begin{align*}
+Ds'(x, y)
+  &=f^{-1}(xy)\,Ds(x, y)\,s(x)\,f(y)\,s(x)^{-1}\,f(x),\\
+  &=Ds(x, y)\cdot f^{-1}(xy)
+    \cdot\bigl(s(x)\,f(y)\,s(x)^{-1}\bigr)\cdot f(x),
+\end{align*}
+that is,
+\[
+Ds'=Ds\cdot\partial^{1}f.
+\]
+{\renewcommand{\thefootnote}{(44)}\nde{One has added the sentence which
+follows.}}
+This shows that the class of \(Ds\) in \(H^{2}(G, M)\) does not depend on the
+chosen section \(s\) of \(v\); it is the class \(c(E)\) of the extension
+\((E)\).
+
+\textbf{c)} Let \(s\) and \(s'\) be two sections of \(v\) and let
+\(m\in\Gamma(M)\). Then, the equality \(s(x)=m^{-1}s'(x)m\) (for every
+\(x\in G(S)\), \(S\in\Ob\mathcal{C}\)) is equivalent to
+\[
+s(x)=m^{-1}s'(x)\,m\,s'(x)^{-1}s'(x),
+\qquad\ie\qquad
+s=\partial^{0}m\cdot s'.
+\]
+In particular, the stabilizer of \(s\) in \(\Gamma(M)\) is the subgroup of
+those \(m\in\Gamma(M)\) such that \(\partial^{0}m=e_{M}\), \ie the subgroup
+\(H^{0}(G, M)\). This already proves~(iii).
+
+\textbf{d)} The reasoning is now the usual one:%
+{\renewcommand{\thefootnote}{(45)}\nde{One has set out in detail what
+follows.}}
+Let \(s_{0}\) be an arbitrary section of \(v\); there exists a section
+\(s\), necessarily of the form \(s=f\cdot s_{0}\), which is a morphism of
+groups, \ie which satisfies \(Ds=0\), if and only if
+\((Ds_{0})^{-1}=\partial^{1}f\), \ie, if and only if the class \(c(E)\) is
+zero. This proves~(i).
+
+In this case, the set of sections of \((E)\) is formed of the sections
+\(s'=h\cdot s\), where \(h\colon G\to M\) satisfies \(\partial^{1}h=0\),
+\ie \(h\in Z^{1}(G, M)\). Moreover, by point~c), two such sections
+\(h_{1}\cdot s\) and \(h_{2}\cdot s\) are conjugate under \(\Gamma(M)\) if
+and only if \(h_{1}\) and \(h_{2}\) have the same image in
+\(H^{1}(G, M)\). This proves~(ii).
+\end{proof}
+
+Let still
+\[
+(E)\qquad
+1\longrightarrow M\xrightarrow{u}E\xrightarrow{v}G
+\]
+be an exact sequence of \(\widehat{\mathcal{C}}\)-groups with \(M\)
+\emph{commutative}. Let
+\[
+f\colon H\longrightarrow G
+\]
+be a morphism of \(\widehat{\mathcal{C}}\)-groups.

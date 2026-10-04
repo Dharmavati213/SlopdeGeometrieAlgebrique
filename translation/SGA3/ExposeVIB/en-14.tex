@@ -1,0 +1,187 @@
+On the one hand, the preceding construction, applied to $C_B$ and the morphism $B\to B'$, gives:
+\[
+c(M_B\otimes_B B')=t(M_B)\otimes_B B'=t(M_B)\otimes A'.
+\]
+On the other hand, since the formation of $c(M')$ commutes with base change, $c(M'_{B'})$ is the image in $V'\otimes_{A'}B'=V\otimes B\otimes A'$ of
+\[
+c(M')\otimes_{A'}B'=t(M)\otimes B\otimes A'.
+\]
+It follows that $t(M_B)$ is the image in $V_B$ of $t(M)\otimes B$.
+\end{proof}
+
+\begin{proposition}{11.8.2}\label{VIB.11.8.2}\textup{(Gruson--Raynaud).}
+Let $f:A\to A'$ be a faithfully flat morphism; then $f$ ``descends projectivity'', i.e.\ if $M$ is an $A$-module and $M\otimes_A A'$ is a projective $A'$-module, then $M$ is a projective $A$-module.
+\end{proposition}
+Indeed, by [RG71] II 2.5.1, $f$ ``descends the Mittag-Leffler condition'', so, by loc.\ cit.\ II 3.1.3, $f$ descends projectivity.\nde{Let us point out in passing that assertion II 2.5.2 of loc.\ cit., more general than II 2.5.1, is corrected in the article [Gr73] (this does not affect the case of faithfully flat morphisms).}
+
+\begin{proposition}{11.9}\label{VIB.11.9}
+\nde{As mentioned in N.D.E. (112), the statement has been rewritten for an $\OS$-coalgebra $\mathscr C$ (rather than for an $S$-group $G$ satisfying the hypotheses indicated in Corollary 11.10). Moreover, the proof has been expanded (the original stated: ``$(\cdots)$ the proposition is a consequence of Lemma 11.8.'').}
+Let $\mathscr C$ be an $\OS$-coalgebra, $\mathscr E$ a $\mathscr C$-comodule, $\mathscr F$ a sub-$\OS$-module of $\mathscr E$, all quasi-coherent. Suppose given a covering of $S$ by affine open subsets $U_\alpha=\Spec A_\alpha$, and for each $\alpha$ a faithfully flat ring morphism $A_\alpha\to A'_\alpha$ such that $\Gamma(U_\alpha,\mathscr C)\otimes_{A_\alpha}A'_\alpha$ is a projective $A'_\alpha$-module.\begingroup\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{This is the case, for example, when $\mathscr C=\mathscr A(G)$, where $G$ is a reductive $S$-group, as we shall see in Exp. XXII 5.7.8.}\endgroup
+
+There is then a smallest quasi-coherent subcomodule $t(\mathscr F)$ of $\mathscr E$ containing $\mathscr F$, and $t(\mathscr F)$ is an $\OS$-module of finite type if $\mathscr F$ is. Moreover, for every base change $S'\to S$, if $\mathscr F'$ denotes the image of $\mathscr F\otimes\OO_{S'}$ in $\mathscr E'=\mathscr E\otimes\OO_{S'}$, then $t(\mathscr F')$ is the image of $t(\mathscr F)\otimes\OO_{S'}$ in $\mathscr E'$, i.e.\ ``the formation of $t(\mathscr F)$ commutes with base change''.
+\end{proposition}
+\begin{proof}\footnotemark[117]
+For each $\alpha$, the $\OO_{U_\alpha}$-module $\mathscr T_\alpha$ associated to the $A_\alpha$-module
+\[
+T_\alpha=t(\Gamma(U_\alpha,\mathscr F))
+\]
+is, by 11.8.1 (i), the smallest quasi-coherent subcomodule of $\mathscr E|_{U_\alpha}$ containing $\mathscr F|_{U_\alpha}$, and is an $\OO_{U_\alpha}$-module of finite type if $\mathscr F|_{U_\alpha}$ is.
+
+For every $\alpha$, $\beta$, put $U_{\alpha\beta}=U_\alpha\cap U_\beta$. Since the construction of $t(M)$ commutes with base change, one has, for every $\alpha$, $\beta$, canonical isomorphisms of $\OO_{U_{\alpha\beta}}$-modules
+\[
+\phi_{\alpha\beta}:T_\beta\otimes_{A_\beta}\OO_{U_{\alpha\beta}}\isomto T_\alpha\otimes_{A_\alpha}\OO_{U_{\alpha\beta}}
+\]
+which satisfy the cocycle condition $\phi'_{\alpha\gamma}=\phi'_{\alpha\beta}\circ\phi'_{\beta\gamma}$, where $\phi'_{\alpha\gamma}$ (resp. $\cdots$) denotes the restriction of $\phi_{\alpha\gamma}$ (resp. $\cdots$) to $U_\alpha\cap U_\beta\cap U_\gamma$.
+
+Consequently, the $\mathscr T_\alpha$ glue to a quasi-coherent subcomodule $t(\mathscr F)$ of $\mathscr E$ containing $\mathscr F$. We leave to the reader the verification that $t(\mathscr F)$ is the smallest quasi-coherent subcomodule of $\mathscr E$ containing $\mathscr F$, and that its formation commutes with base change.
+\end{proof}
+
+\begin{definition}{11.9.1}\label{VIB.11.9.1}
+\nde{This definition, taken from [RG71], bottom of p. 82, has been added. Thus, in Proposition 11.9, the hypothesis is that the coalgebra $\mathscr C$ be a locally projective $\OS$-module, and this terminology has been used in Corollary 11.10.}
+Let $S$ be a scheme and $\mathscr P$ a quasi-coherent $\OS$-module. The following conditions are equivalent:
+
+(i) For every affine open subset $U$ of $S$, $\Gamma(U,\mathscr P)$ is a projective $\OS(U)$-module.
+
+(ii) There is a covering $(U_\alpha)$ of $S$ by affine open subsets such that each $\Gamma(U_\alpha,\mathscr P)$ is a projective $\OS(U_\alpha)$-module.
+
+(iii) There is a covering $(U_\alpha)$ of $S$ by affine open subsets, and faithfully flat ring morphisms $A_\alpha=\OS(U_\alpha)\to A'_\alpha$, such that, for each $\alpha$, $\Gamma(U_\alpha,\mathscr P)\otimes_{A_\alpha}A'_\alpha$ is a projective $A'_\alpha$-module.
+% typo: des morphisme -> des morphismes.
+
+Indeed, it is clear that (i) $\Rightarrow$ (ii) $\Rightarrow$ (iii). Conversely, if (iii) holds, 11.8.2 implies that each $\Gamma(U_\alpha,\mathscr P)$ is a projective $\OS(U_\alpha)$-module, whence (ii). Finally, suppose (ii) holds and let $V=\Spec A$ be an arbitrary affine open subset; it is covered by finitely many affine open subsets $V_1,\ldots,V_n$, where each $V_i=\Spec A_i$ is contained in at least one $V\cap U_\alpha$, so that $\Gamma(V_i,\mathscr P)$ is a projective $A_i$-module. Let $A'=A_1\times\cdots\times A_n$; then $A\to A'$ is faithfully flat and $\Gamma(V,\mathscr P)\otimes_A A'$ is a projective $A'$-module. Thus, by 11.8.2, $\Gamma(V,\mathscr P)$ is a projective $A$-module.
+
+When these equivalent conditions hold, one says that $\mathscr P$ is a \emph{locally projective $\OS$-module}.
+\end{definition}
+
+\begin{corollary}{11.10}\label{VIB.11.10}
+Let $S$ be a quasi-compact and quasi-separated scheme, $G$ an $S$-group, and $\rho$ a linear operation of $G$ on a quasi-coherent $\OS$-module $\mathscr E$. Suppose that:
+
+(i) $G$ satisfies one of the following conditions:
+
+a) $G$ is affine and flat over $S$,
+
+b) $G$ is flat, quasi-compact and quasi-separated over $S$, and $\mathscr E$ is flat;
+
+(ii) $\mathscr A(G)$ is a locally projective $\OS$-module.
+
+Then $\mathscr E$ is the inductive limit of an increasing filtered family of quasi-coherent sub-$\OS$-modules of finite type of $\mathscr E$, stable under $G$.
+\end{corollary}
+By hypothesis (i) and 11.6.1, $\mathscr E$ is endowed with an $\mathscr A(G)$-comodule structure. On the other hand, since $S$ is quasi-compact and quasi-separated, $\mathscr E$ is the inductive limit of its quasi-coherent submodules of finite type (EGA I, 9.4.9 and EGA IV$_1$, 1.7.7). Consequently, the corollary follows from Proposition 11.9, applied to the coalgebra $\mathscr A(G)$.
+
+Furthermore, one has the following proposition:
+\begin{proposition}{11.10.bis}\label{VIB.11.10.bis}
+\nde{This proposition has been added; it is a special case of [Th87], 1.4–1.5. There the author refers to an argument of Deligne (cf. [Kn71], III Th. 1.1); one may also note the similarity with Serre's argument ([Se68], Prop. 2) recalled in 11.8.bis.}
+Let $S$ be a noetherian scheme, $G$ an $S$-group flat, quasi-compact and quasi-separated over $S$, $\mathscr E$ a quasi-coherent $G$-$\OS$-module, $\mathscr M$ a coherent sub-$\OS$-module of $\mathscr E$. Then $\mathscr M$ is contained in a coherent sub-$\OS$-module stable under $G$.
+\end{proposition}
+\begin{proof}
+Denote by $f$ the morphism $G\to S$ and by $\tau$ the adjunction morphism $\mathscr E\to f_*f^*(\mathscr E)$. By 11.6, the $G$-$\OS$-module structure on $\mathscr E$ is given by an automorphism $\theta$ of the $\OO_G$-module $f^*(\mathscr E)$ such that the morphism $\delta=\theta\circ\tau$ satisfies conditions (1) and (2) of 11.6. (The situation considered in [Th87] is more general, in that the author considers a $G$-scheme $X$ and a $G$-equivariant $\OX$-module $\mathscr E$ (cf. Exp. I, Section 6); here $X=S$ endowed with the trivial action of $G$.)
+% typo?: kept as printed: delta=theta circ tau with theta on f^*(E).
+
+Since $S$ is noetherian, $\mathscr E$ is the filtered inductive limit of its coherent submodules $\mathscr F_\alpha$ (cf. EGA I, 9.4.9). Then $f^*(\mathscr E)$ is the filtered inductive limit of the $f^*(\mathscr F_\alpha)$, which are submodules of $f^*(\mathscr E)$ since $f$ is flat. Since moreover $f$ is quasi-compact and quasi-separated, then, by 11.0, the $\OS$-module $f_*f^*(\mathscr E)$ is quasi-coherent and is the filtered inductive limit of the quasi-coherent submodules $f_*f^*(\mathscr F_\alpha)$. Consequently, $\mathscr E$ is the filtered inductive limit of the quasi-coherent sub-$\OS$-modules $\mathscr E_\alpha$, where $\mathscr E_\alpha$ denotes the inverse image under $\delta$ of $f_*f^*(\mathscr F_\alpha)$, i.e.\ the kernel of the composite morphism
+\[
+\overline\delta_\alpha:\quad\mathscr E\xrightarrow{\delta}f_*f^*(\mathscr E)\to f_*f^*(\mathscr E/\mathscr F_\alpha).
+\]
+Since $\mathscr M$ is coherent and $S$ noetherian, every increasing sequence of submodules of $\mathscr M$ is stationary, so $\mathscr M$ is contained in some $\mathscr E_\alpha$. Let us show that each $\mathscr E_\alpha$ is coherent and $G$-stable.
+
+Let $u$ be the morphism $f^*(\mathscr E)\to\varepsilon_*(\mathscr E)$ corresponding by adjunction to the identity morphism from $\mathscr E$ to $f_*\varepsilon_*(\mathscr E)=\mathscr E$; then the composite morphism
+\[
+\mathscr E\xrightarrow{\tau}f_*f^*(\mathscr E)\xrightarrow{f_*(u)}f_*\varepsilon_*(\mathscr E)=\mathscr E
+\]
+is the identity (cf. 11.6 (2)). Since one has a commutative diagram:
+\[
+\xymatrix{\mathscr E_\alpha\ar[r]^\delta\ar[d]_{i_\alpha}&f_*f^*(\mathscr F_\alpha)\ar[r]^{f_*(u)}\ar[d]&\mathscr F_\alpha\ar[d]^{j_\alpha}\\\mathscr E\ar[r]_\tau&f_*f^*(\mathscr E)\ar[r]_{f_*(u)}&\mathscr E,}
+\]
+where $i_\alpha$ (resp. $j_\alpha$) denotes the inclusion of $\mathscr E_\alpha$ (resp. $\mathscr F_\alpha$) into $\mathscr E$, one deduces that $i_\alpha$ factors through $j_\alpha$, i.e.\ $\mathscr E_\alpha$ is a submodule of $\mathscr F_\alpha$, hence coherent.
+% typo?: kept as printed: tau on the lower horizontal arrow.
+
+Finally let us show that $\mathscr E_\alpha$ is $G$-stable (cf. 11.7.bis). Denote by $h:G\to S$ a second copy of $f:G\to S$ and consider the following commutative diagram:
+\[
+\xymatrix{G\times_S G\ar[r]^q\ar[d]_p\ar[dr]^\phi&G\ar[d]^h\\G\ar[r]_f&S.}
+\]
+Then the exact sequence
+\[
+0\to\mathscr E_\alpha\to\mathscr E\xrightarrow{\overline\delta_\alpha}h_*h^*(\mathscr E/\mathscr F_\alpha)
+\]
+gives, since $f$ is flat, the exact sequence
+\begin{equation*}\tag{$\dagger$}
+0\to f_*f^*(\mathscr E_\alpha)\to f_*f^*(\mathscr E)\xrightarrow{f_*f^*(\overline\delta_\alpha)}f_*f^*h_*h^*(\mathscr E/\mathscr F_\alpha).
+\end{equation*}
+Moreover, since $h$ is quasi-compact and quasi-separated, and $f$ flat, the canonical morphism
+\[
+f^*h_*h^*(\mathscr E/\mathscr F_\alpha)\to p_*q^*h^*(\mathscr E/\mathscr F_\alpha)=p_*\phi^*(\mathscr E/\mathscr F_\alpha)
+\]
+is an isomorphism, so that the right-hand term in ($\dagger$) is $\phi_*\phi^*(\mathscr E/\mathscr F_\alpha)$. Returning to the notation of 11.6 and denoting by $\pi_\alpha$ the projection $\mathscr E\to\mathscr E/\mathscr F_\alpha$, one therefore obtains the commutative diagram below, whose bottom row is exact:
+\[
+\xymatrix@C=18pt{&\mathscr E_\alpha\ar[r]^\delta\ar[d]_\delta&f_*f^*(\mathscr E)\ar[d]^{f_*(f^*(\pi)\boxtimes\delta_G)}\\f_*f^*(\mathscr E_\alpha)\ar[r]&f_*f^*(\mathscr E)\ar[r]_{f_*f^*(\overline\delta_\alpha)}&\phi_*\phi^*(\mathscr E/\mathscr F_\alpha)}
+\]
+and since $f_*(f^*(\pi)\boxtimes\delta_G)\circ\delta$ vanishes on $\mathscr E_\alpha$, it follows that $\delta$ sends $\mathscr E_\alpha$ into $f_*f^*(\mathscr E_\alpha)$, i.e.\ $\mathscr E_\alpha$ is $G$-stable. The proposition is proved.
+% typo?: kept as printed: pi, rather than pi_alpha, in the diagram and following composite.
+\end{proof}
+
+\begin{remark}{11.10.1}\label{VIB.11.10.1}
+\nde{The first part of the original Remark 11.10.1 has been incorporated into 11.8 and 11.9 (replacing ``free'' by ``projective''); the counterexamples below correct the second part.}
+In 11.8, it is not sufficient to suppose that $C$ is a flat $A$-module, even if $A$ is a principal ideal ring. Indeed, one has the following counterexamples, which were pointed out to us (independently) by O. Gabber and J.-P. Serre.
+
+(a) Let $(A,\mathfrak m)$ be a discrete valuation ring, $K$ its fraction field, and $G$ the $A$-group ``extension by zero'' of the $K$-group $(\ZZ/2\ZZ)_K$. Then the constant group $(\ZZ/2\ZZ)_A$, and hence also its subgroup $G$, acts on the free $A$-module $V$ with basis $v_1,v_2$ by interchanging $v_1$ and $v_2$. Then $Av_1$ is not a sub-$G$-module of $V$, but it is the intersection of the sub-$G$-modules $Av_1+\mathfrak m^n v_2$, for $n\in\NN^*$. Thus there is no smallest sub-$G$-module of $V$ containing $v_1$.
+
+(b) Let $A$ be an integral ring distinct from its fraction field $K$, and let $G$ be the affine flat $A$-group corresponding to the Hopf algebra
+\[
+\mathscr A(G)=\{P\in K[T]\mid P(0)\in A\},
+\]
+with comultiplication, resp. counit and antipode, defined by $\Delta(T)=T\otimes1+1\otimes T$, resp. $\varepsilon(T)=0$ and $\tau(T)=-T$. (N.B. One therefore has $G\otimes_A K=\Ga{}_{,K}$.)
+% typo: corrupted printed coÃ¼nité -> counit.
+
+Let $V$ be the free $A$-module $Av_1\oplus Av_2$ and $u$ the endomorphism of $V$ defined by $u(v_1)=v_2$, $u(v_2)=0$, so that $u^2=0$. Then $V$ is endowed with an $\mathscr A(G)$-comodule structure, defined by
+\[
+\mu(m)=1\otimes m+T\otimes u(m).
+\]
+The sub-$G$-modules of $V$ containing $v_1$ are precisely the sub-$A$-modules of the form $Av_1\oplus Iv_2$, for $I$ a nonzero ideal of $A$; their intersection is $Av_1$, which is not a sub-$G$-module. Thus there is no smallest sub-$G$-module of $V$ containing $v_1$. (Note moreover that $C=A\oplus K\cdot T$ is a subcoalgebra of $\mathscr A(G)$, flat over $A$, and that the coaction $\mu:V\to V\otimes\mathscr A(G)$ factors through $V\otimes C$, so one also obtains a counterexample for the ``very simple'' coalgebra $C$.)
+
+Finally, note that the two preceding examples are special cases of the following construction. Let $A$ be an integral ring distinct from its fraction field $K$, let $B$ be a Hopf $A$-algebra free over $A$. Denote by $\varepsilon:B\to A$ the augmentation of $B$ and by $I=\Ker(\varepsilon)$ the augmentation ideal. Since $B=A\cdot1\oplus I$, one easily sees that $B'=\{b\in B\otimes_A K\mid\varepsilon(b)\in A\}$ is a Hopf subalgebra of $B_K$. If $V$ is a $B$-comodule, free with basis $(v_1,\ldots,v_n)$ as an $A$-module, and if $\mu_V(v_1)\ne v_1\otimes1$, then $Av_1$ is not a subcomodule of $V$, but it is the intersection of the subcomodules $Av_1+I\cdot V$, for $I$ ranging over the nonzero ideals of $A$. Thus there is no smallest subcomodule of $V$ containing $v_1$.
+\end{remark}
+
+\begin{proposition}{11.11}\label{VIB.11.11}
+Let $G$ be an algebraic group over the field $k$. The following conditions are equivalent:
+
+(i) $G$ is affine.
+
+(ii) $G$ is quasi-affine.
+
+(iii) $G$ acts faithfully on a quasi-affine $k$-scheme $X$.
+
+(iv) $G$ acts linearly and faithfully on a $k$-vector space (not necessarily finite-dimensional).
+
+(v) $G$ is isomorphic to a closed subgroup of a group $\GL(n)_k$.
+\end{proposition}
+\begin{proof}
+One has (i) $\Rightarrow$ (ii) trivially, and (ii) $\Rightarrow$ (iii), for $G$ acts faithfully on itself by translations.
+
+Suppose that $G$ acts faithfully on the right on a quasi-affine $k$-scheme $X$.\nde{The original has been expanded in what follows; moreover, $G$ has been chosen to act on the right on $X$, in order to obtain a linear operation of $G$ on the left on $\OO(X)$.} Since $X$ is quasi-affine, it is separated and quasi-compact.\nde{Recall that a $k$-scheme $X$ is said to be quasi-affine if it is isomorphic to a quasi-compact open subset of an affine $k$-scheme (EGA II, 5.1.1).} Similarly, $G$ is separated (VIA 0.3) and quasi-compact (for it is of finite type over $k$). Thus, by 11.1 (c), one has canonical isomorphisms:
+\[
+\OO(X\times G)=\OO(X)\otimes\OO(G)\qquad\text{and}\qquad\OO(X\times G\times G)=\OO(X)\otimes\OO(G)\otimes\OO(G).
+\]
+One deduces that the morphism $\mu:\OO(X)\to\OO(X)\otimes\OO(G)$ induced by the morphism $X\times G\to X$ endows $\OO(X)$ with a right $\OO(G)$-comodule structure, i.e.\ $G$ acts linearly on the left on the $k$-algebra $\OO(X)$. Consequently, $G$ also acts on the right on the affine envelope $X_{\mathrm{af}}=\Spec\OO(X)$ of $X$, and the canonical morphism $X\to X_{\mathrm{af}}$ is $G$-equivariant.
+
+Moreover, since $X$ is quasi-affine, $X\to X_{\mathrm{af}}$ is an open immersion (EGA II, 5.1.2), so a fortiori $G$ acts faithfully on $X_{\mathrm{af}}$. One therefore obtains that the linear operation (on the left) of $G$ on the $k$-algebra $\OO(X)=\OO(X_{\mathrm{af}})$ is faithful. This proves the implication (iii) $\Rightarrow$ (iv).
+
+Suppose now that $G$ acts faithfully on a $k$-vector space $V$. Then, by 11.10, $V$ is the inductive limit of finite-dimensional vector subspaces $V_i$ stable under the action of $G$. If $K_i$ is the kernel of the induced action of $G$ on $V_i$, i.e.\ of the morphism $G\to\underline{\Aut}(V_i)$, then $K_i$ is a closed subscheme of $G$, and the hypothesis that $G$ acts faithfully is expressed by the fact that the intersection of the $K_i$ is the identity subgroup of $G$. Since $G$ is noetherian, it follows that one of the $K_i$ is already reduced to the identity group, hence that $G\to\underline{\Aut}(V_i)$ is a monomorphism. It is therefore a closed immersion by 1.4.2, which proves that (iv) $\Rightarrow$ (v). Since (v) $\Rightarrow$ (i) trivially, this proves 11.11.
+\end{proof}
+
+\begin{remark}{11.11.1}\label{VIB.11.11.1}
+One can generalize 11.11 as follows. Let $S$ be a locally noetherian regular scheme of dimension $\leq1$, and $G$ a group scheme flat, quasi-compact and quasi-separated over $S$. (In this case, $\mathscr A(G)$ is a torsion-free $\OS$-module, hence flat.)
+
+(a) One then has the equivalence of the following conditions:\nde{The equivalence of these conditions is proved in the additional section 12.}
+
+(i) $G$ is affine over $S$.
+
+(ii) $G$ is quasi-affine over $S$.
+
+(iii) $G$ acts faithfully on a quasi-affine flat $S$-scheme.
+
+(iv) $G$ acts linearly and faithfully on a quasi-coherent flat $\OS$-module.
+
+(b) If moreover $G$ is of finite type over $S$ and $S$ noetherian, these conditions imply that $G$ is isomorphic to a closed subgroup of some $\underline{\Aut}(\mathscr E)$, where $\mathscr E$ is a locally free $\OS$-module of finite type.\nde{This is proved, with various generalizations, in the additional section 13.}
+\end{remark}
+
+\begin{lemma}{11.12}\label{VIB.11.12}
+Let $k$ be a field, $G$ an affine $k$-group. Put $A=\mathscr A(G)$. Given $x\in A$, there is a sub-$k$-algebra of finite type $B$ of $A$ such that $x\in B$, $\Delta(B)\subset B\otimes_k B$ and $u(B)\subset B$, where $u$ denotes the involution of $A$ corresponding to the inversion morphism of $G$.\nde{On the one hand, this is generalized in section 13 to the case where $G$ is affine and flat over a regular base of dimension $\leq2$. On the other hand, in what follows the original has been expanded and corrected.}
+\end{lemma}

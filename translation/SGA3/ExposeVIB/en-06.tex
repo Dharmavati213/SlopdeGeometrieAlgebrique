@@ -1,0 +1,154 @@
+Then there is a morphism $f:S''\to S$, the composite of a finite surjective morphism $S''\to S'$ and an étale morphism $S'\to S$, and a morphism $h:S''\to G$, such that the inverse image $A''$ of $A$ in $X\times_SS''$ (i.e. in $X_s\times_{\Spec\kappa(s)}S''_s$) is contained in $\ell_h^{-1}(U_{S''})$, where $\ell_h$ denotes the translation of $X_{S''}=X\times_SS''$ defined by the element $h\in G(S'')$.
+\end{corollary}
+\begin{proof}
+Since $X_s$ is locally of finite type over $\kappa(s)$, the connected components of $X_s$ are open, and irreducible (cf. VIA, 2.5.4), so $U_s$ is dense in every irreducible component of $X_s$.
+
+Thus, by Lemma 5.6.2.0, there is a closed point $g\in G_s^0$ such that $g\cdot a'\in U_s\otimes_{\kappa(s)}\kappa(g)$ for every $a'\in X_{\kappa(g)}$ above a point of $A$.
+
+By Lemma 5.6.1, there is a morphism $f:S''\to S$, the composite of a finite surjective morphism $S''\to S'$ and an étale morphism $S'\to S$, and a morphism $h:S''\to G$, such that $f^{-1}(s)$ consists of a single point $s_0$, and $h(s_0)=g$ and $\kappa(s_0)=\kappa(g)$. Then, denoting by $A''$ the inverse image of $A$ in $X_s\times_{\Spec\kappa(s)}S''_s=X_s\otimes_{\kappa(s)}\kappa(s_0)=X_s\otimes_{\kappa(s)}\kappa(g)$, the translation $\ell_h$ of $X_{S''}$ sends $A''$ into $U_s\otimes_{\kappa(s)}\kappa(s_0)$.
+\end{proof}
+\begin{lemma}{5.6.3}\label{VIB.5.6.3}
+Let $X$ be an $S$-scheme. The following conditions are equivalent:
+\begin{enumeratei}
+\item $X$ is separated over $S$.
+\item For every $S$-scheme $T$, every section $\sigma:T\to X_T$ is a closed immersion.
+\item For every reduced $S$-scheme $T$, two $S$-morphisms $f_1$ and $f_2:T\to X$ coinciding on a dense open subset $U$ of $T$ are equal.
+\item For every $s\in S$ and every pair of points $x_1,x_2$ of $X_s$, there is a morphism $\phi:S''\to S'\to S$ and an open subscheme $V$ of $X_{S''}$, separated over $S''$, such that:
+\begin{enumeratea}
+\item $S'\to S$ is open, $S''\to S'$ closed and surjective, and $\phi^{-1}(s)\ne\varnothing$.
+\item The inverse image of $\{x_1,x_2\}$ in $X_{S''}$ is contained in $V$.
+\end{enumeratea}
+\item[(iv$'$)] For every $s\in S$, every pair of points $x_1,x_2\in X_s$ is contained in an open subset $V$ of $X$, separated over $S$.\nde{The formulation of condition (iv) has been simplified and condition (iv$'$) added. On the other hand, the proof of the implication (i) $\Rightarrow$ (iii), used in the proof of (iv) $\Rightarrow$ (iii), has been added. Observe moreover that if $T=\Spec k[\varepsilon,x]/(\varepsilon^2,\varepsilon x)$ ($k$ a field), $X=T_{\mathrm{red}}=\Spec k[x]$, the morphisms $\phi_\lambda:T\to X$ defined by $x\mto x+\lambda\varepsilon$ ($\lambda\in k$) coincide on the dense open subset $\Spec B_x$ but are not equal.}
+\end{enumeratei}
+\end{lemma}
+% typo?: kept as printed: B_x is not defined in N.D.E. (44).
+The implication (ii) $\Rightarrow$ (i) is clear (take $T=X$ and $\sigma={}$the diagonal section), as is (i) $\Rightarrow$ (iv$'$) $\Rightarrow$ (iv). On the other hand, one has (i) $\Rightarrow$ (ii) by EGA I, 5.4.6.
+
+(iii) $\Rightarrow$ (ii). Let $\sigma:T\to X_T$ be a section of $p:X_T\to T$. By EGA I, 5.3.13, $\sigma$ is an immersion, i.e. an isomorphism of $T$ onto a locally closed subscheme $E$ of $X_T$. To show that $E$ is closed, one may suppose $T$ and $E$ reduced. Let $\overline E$ be the reduced closed subscheme of $X_T$ with the closure of $E$ as underlying space, so that $E$ is a dense open subscheme of $\overline E$. Then the immersion $i:\overline E\hookrightarrow X_T$ and $\sigma\circ p\circ i$ coincide on $E$, hence on $\overline E$ by hypothesis (iii). Thus every point of $\overline E$ belongs to $\sigma(T)=E$, whence $\overline E=E$.
+
+(i) $\Rightarrow$ (iii). Suppose $X$ separated over $S$, and let $T$ be a reduced $S$-scheme, $f_1,f_2$ two $S$-morphisms $T\to X$ coinciding on a dense open subset $U$ of $T$, and $g$ the morphism $T\to X\times_SX$ with components $f_1$ and $f_2$. Since $D=\Delta_{X/S}(X)$ is closed, its inverse image under $g$ is a closed subset of $T$ containing $U$, hence equal to $T$, and, since $T$ is reduced, $g$ factors through $D$ (cf. EGA I, 5.2.2); consequently $f_1=p_1\circ g$ equals $p_2\circ g=f_2$.
+
+(iv) $\Rightarrow$ (iii). Let $T$ be a reduced $S$-scheme and $f_1,f_2$ two $S$-morphisms $T\to X$ coinciding on a dense open subset $U$. Since $T$ is reduced, to see that $f_1=f_2$, it suffices to see that $f_1=f_2$ as maps of sets. Indeed, suppose this established, and let $t\in T$, $V$ an affine open subset of $X$ containing $f_1(t)=f_2(t)$, and $W$ the open neighborhood of $t$ equal to the inverse image of $V$ under the continuous map underlying $f_1$ and $f_2$; then the morphisms $f_i|_W:W\to V$ coincide on the dense open subset $U\cap W$ of $W$. Since $V$ is separated and $W$ reduced, this implies that $f_1|_W=f_2|_W$, whence $f_1=f_2$.
+
+Then let $t\in T$ and $s$ be its image in $S$; let us show that the points $x_1=f_1(t)$ and $x_2=f_2(t)$ of $X_s$ are equal. Let $\phi:S''\to S'\to S$ and $V$ be an open subset of $X\times_SS''$ as in (iv); put $T'=T\times_SS'$ and $T''=T\times_SS''$ and denote by $g:T''\to T$ and $f_i'':T''\to X_{S''}$ ($i=1,2$) the morphisms obtained by base change.
+
+Since $U$ is dense in $T$ and $T'\to T$ is open, the inverse image $U'$ of $U$ in $T'$ is dense in $T'$. Let $U''$ be the inverse image of $U'$ in $T''$ and let $F$ be the reduced subscheme of $T''$ with $\overline{U''}$ as underlying space. Since $T''\to T'$ is surjective and closed, the image of $F$ contains $U'$ and is closed, hence equals $T'$. Consequently, $F\cap g^{-1}(t)$ contains a point $u$.
+
+For $i=1,2$, denote by $h_i$ the restriction of $f_i''$ to $F$. Then $h_i(u)$ is a point of $X_{S''}$ above $f_i(t)=x_i$, hence belongs to $V$, since $V$ contains the inverse image of $\{x_1,x_2\}$ in $X_{S''}$.
+
+Then $W=h_1^{-1}(V)\cap h_2^{-1}(V)$ is an open subset of $F$ containing $u$, and the $S''$-morphisms $h_i|_W:W\to V$ coincide on the dense open subset $U''\cap W$ of $W$. Since $V$ is separated over $S''$, one has $h_1|_W=h_2|_W$, whence $h_1(u)=h_2(u)$, hence $f_1(t)=f_2(t)$. This proves (iv) $\Rightarrow$ (iii).
+
+Theorem 5.3 then follows from 5.6.2 and the implication (iv) $\Rightarrow$ (i) of 5.6.3.
+\begin{enoncerm}{Counterexample}{5.6.4}\label{VIB.5.6.4}
+Not every $S$-group $G$ is separated. Let $S$ be a scheme having a nonisolated closed point $s$; let $G$ be the scheme obtained by gluing two copies of $S$ along the open subset $S-\{s\}$; one easily sees that $G$ is not separated over $S$, and is endowed with a natural $S$-group structure, all of whose fibers are trivial except the fiber $G_s$, which is isomorphic to the two-element group $\ZZ/2\ZZ$.\nde{This example has been reproduced in VIA 0.3, N.D.E. (5).}
+\end{enoncerm}
+\begin{theorem}{5.7}\label{VIB.5.7}\nde{On the one hand, Corollary 5.6.5, which repeated 5.5, has been removed. On the other hand, the original stated Corollary 5.7.1 below as Remark 5.7, referring for the proof to 4.7, a number which does not exist in Lect. Notes 151 (but which appeared in the 1965 edition of SGAD, whose nos. 4.5 and 4.6 have become 5.6.1 and 5.6.2); Theorem 5.7, communicated by O. Gabber, has been added; it makes the aforementioned SGAD statement more precise.}
+Let $S$ be a scheme, $G$ an $S$-group locally of finite presentation over $S$ such that the function $s\mto\dim G_s$ is locally constant on $S$, $X$ an $S$-scheme on which $G$ acts, and $U$ an open subset of $X$, separated over $S$. Then $\underline{G^0}\cdot U$ is an open subset of $X$, separated over $S$.
+\end{theorem}
+\begin{proof}
+Denote by $\mu:G\times_SX\to X$ the action of $G$ on $X$; it is the composite of the automorphism $(g,x)\mto(g,gx)$ of $G\times_SX$ and the projection onto $X$. Since $G\times_SU$ is an open subset of $G\times_SX$, it follows from 4.2 (iii) that $V=\underline{G^0}\cdot U$ is open in $X$.
+
+Then, proceeding as in the proof of 5.6.2, one deduces from the implication (iv) $\Rightarrow$ (i) of 5.6.3 that $V$ is separated over $S$.
+\end{proof}
+\begin{corollary}{5.7.1}\label{VIB.5.7.1}
+Let $S$ and $G$ be as in 5.7 and let $\sigma,\tau$ be two $S$-sections of $G^0$ (i.e. $\sigma,\tau\in G^0(S)$). Then the coincidence subscheme $S(\sigma,\tau)\subset S$ of $\sigma$ and $\tau$ (i.e. the inverse image of the diagonal of $G\times_SG$ under the morphism $(\sigma,\tau)$) is closed.
+\end{corollary}
+Indeed, for every $s\in S$, let $U$ be an affine open subset of $G$ containing $\varepsilon(s)$; then $V=\varepsilon^{-1}(U)$ is an open neighborhood of $s$ in $S$, and, since $G^0U$ is separated, $S(\sigma,\tau)\cap V$ is closed in $V$.
+\begin{remark}{5.7.2}\label{VIB.5.7.2}
+Gabber points out to us that one can show that if $S$ is henselian local with closed point $s$, the intersection of the open subsets $G^0U$, as $U$ ranges over the affine open neighborhoods of $\varepsilon(s)$, is an open subgroup scheme of $G$, separated over $S$.
+\end{remark}
+\numpara{5.8}\textbf{Complements.}\nde{This paragraph of complements and counterexamples, all communicated by O. Gabber, has been added.} Let us begin by recalling Proposition VIA 2.6.6:
+\begin{proposition}{5.8.1}\label{VIB.5.8.1}
+Let $k$ be a field, $G$ a $k$-group locally of finite type acting on a $k$-scheme $X$ so that the morphism $G\times X\to X\times X$, $(g,x)\mto(gx,x)$ is surjective. Suppose $X$ quasi-separated. Then the connected components of $X$ are irreducible.
+\end{proposition}
+\begin{corollary}{5.8.2}\label{VIB.5.8.2}
+Let $S,G,X$ be as in the preliminary hypotheses of 5.3. Suppose moreover that every fiber $X_s$ is quasi-separated and connected. Then $X$ is separated and quasi-compact over $S$.
+\end{corollary}
+Indeed, by the preceding proposition, every fiber $X_s$ is irreducible, and the rest of the proof is identical to that of 5.4.
+\begin{example}{5.8.3}\label{VIB.5.8.3}
+Fix an algebraically closed field $k$. First recall that every ``locally Boolean'' topological space $X$ (i.e. having a basis of compact open subsets), endowed with the sheaf of locally constant functions with values in $k$, is a $k$-scheme (cf. [DG70], I §1, 2.12). One then says that $X$ is a locally Boolean $k$-scheme.
+
+Observe on the other hand that every topological space $E$ admitting a basis of separated open subsets (and similarly every scheme $X$) admits a dense separated open subset. Indeed, since every increasing union of separated open subsets is a separated open subset (for a scheme $X$ this follows from 5.6.3), there is such an open subset $U$ which is maximal. But then $U$ is dense, for if there were a nonempty open subset $V$ such that $U\cap V=\varnothing$, $V$ would contain a separated open subset $W\ne\varnothing$, and $U\cup W$ would still be separated, contradicting the maximality of $U$.
+
+Now let $C$ be the Cantor space, which one may regard as the space underlying the group $(\ZZ/2\ZZ)^{\NN}$ endowed with the product topology. For every point $p$ of $C$, let $C(p)$ be another copy of $C$, and let $X$ be the space obtained by gluing each $C(p)$ to $C$ along $C-\{p\}$; then $X$ is a nonseparated locally Boolean $k$-scheme, and $C$ is a dense open subset of $X$.
+
+Let $G$ be the group of automorphisms of the $k$-scheme $X$ (i.e. of homeomorphisms of $X$). Then $G$ acts transitively on $X$. Indeed, $X$ is the union of $C$ and, for each point $p\in C$, of a second point $p'$, which can be characterized as the unique point $x$ of $X-\{p\}$ such that $(C-\{p\})\cup\{x\}$ is separated. It follows that every automorphism $\phi$ of $C$ extends to an automorphism $\phi_X$ of $X$ such that $\phi_X(p')=\phi_X(p)'$ for every $p$. On the other hand, the map $\theta_p:X\to X$ which exchanges $p$ and $p'$ and fixes the other points is an automorphism of $X$. Finally, the group of automorphisms of $C$ acts transitively on $C$: for example, using the group structure of $C$, it suffices to consider translations.
+
+Thus the discrete $k$-group $G$ (hence locally of finite type) acts on the $k$-scheme $X$ so that the morphism $G\times X\to X\times X$, $(g,x)\mto(gx,x)$ is surjective, but $X$ is not separated (although $C$ is a dense separated open subset).
+\end{example}
+\begin{example}{5.8.4}\label{VIB.5.8.4}
+Retain the notation of the preceding example. Using the description of $C$ as the set of sequences $(u_n)_{n\in\NN}$ of elements of $\ZZ/2\ZZ$, one sees that $C$ with one point $p$ removed is homeomorphic to a countable disjoint union of copies of $C$. Indeed, using for example the group structure of $C$, one reduces by translation to the case where $p$ is the element $0$, i.e. the zero sequence; then $C-\{0\}$ is the disjoint union of the subspaces $C_i=\{(u_n)_{n\in\NN}\mid u_i=1\text{ and }u_j=0\text{ for }j<i\}$, for $i\in\NN$, each homeomorphic to $C$. For every nonempty finite subset $F$ of $C$, proceeding by induction on $|F|$ one deduces that $C-F$ is homeomorphic to a countable disjoint union of copies of $C$, hence to $C$ with one point removed.
+
+For each $F$ of cardinality $2$, let $C(F)$ be another copy of $C$, denote by $q_F$ the point $0$ of $C(F)$ and choose a homeomorphism $\phi_F:C(F)-\{q_F\}\isomto C-F$; then let $X'$ be the space obtained by gluing each $C(F)$ to $C$ by means of $\phi_F$. Then $X'$ is a nonseparated locally Boolean $k$-scheme. Moreover, it follows from the construction that every locally constant function $f:X'\to k$ is constant. Indeed, if $x,y\in C$ and $F=\{x,y\}$, every neighborhood of $q_F$ meets every neighborhood of $x$ or $y$, so if $f:X\to k$ is locally constant, one has $f(x)=f(q_F)=f(y)$, and if $F'=\{z,t\}$, with $z,t\in C$, one similarly has $f(q_{F'})=f(z)=f(q_{\{z,x\}})=f(x)$. Consequently, $X'$ is connected.
+% typo?: kept as printed: f:X to k rather than f:X' to k.
+
+Moreover, every point $x\in X'$ has a pointed neighborhood homeomorphic to $(C,0)$. More precisely, fix for each $F$ a homeomorphism of pointed topological spaces $h_F:(C,0)\isomto(C(F),q_F)$ and denote by $T$ the group of translations of $C$. Then, if $x=q_F$, one has the homeomorphism $q_F$, and if $x\in C$, the translation $t_x\in T$ is a homeomorphism $(C,0)\isomto(C,x)$ (and it is the unique element of $T$ with this property).
+% typo?: kept as printed: the homeomorphism is named q_F rather than h_F.
+
+Denote by $L$ the free group generated by the $h_F$ and let $G=T*L$ be the ``free product'' (= coproduct) of $T$ and $L$. For every $h\in\{h_F\}_{|F|=2}\cup T$, let $\sigma(h)$ be the generator of $G$ corresponding to $h$ and let $S(h)$ (resp. $B(h)$) be the source (resp. target) of $h$. It is convenient also to put $\sigma(h_F^{-1})=\sigma(h_F)^{-1}$ and $S(h_F^{-1})=B(h_F)$ (resp. $B(h_F^{-1})=S(h_F)$), and to denote by $E$ the set consisting of $T$, and the $h_F$ and $h_F^{-1}$.
+
+On the product space $P=G\times X'$ (where $G$ is endowed with the discrete topology), consider the equivalence relation generated by the relations:
+\[
+(g\sigma(h),x)\sim(g,h(x))\qquad\text{when }x\in S(h)
+\]
+for every $h\in E$, and let $Z$ be the quotient space. Then $Z$ is obtained from the disjoint union $\coprod_{g\in G}\{g\}\times X'$ by gluing open subsets, and hence, for every open subset $\Omega$ of $P$, its saturation $\widetilde\Omega$ is open (cf. [BTop], I §5.1, Example 2). Explicitly, since every open subset of $P$ is the union of its intersections with the ``slices'' $\{g\}\times X'$, it suffices to consider an open subset of the form $\{1\}\times W$, where $W$ is an open subset of $X'$. In this case, the saturation is the union of $\{1\}\times W$ and of
+\[
+\begin{gathered}
+\{\sigma(h_1)\}\times h_1^{-1}(W\cap B(h_1)),\\
+\{\sigma(h_1)\sigma(h_2)\}\times h_2^{-1}\bigl(h_1^{-1}(W\cap B(h_1))\cap B(h_2)\bigr),
+\end{gathered}
+\]
+etc., for all finite sequences $h_1,\ldots,h_n$ of elements of $E$, hence is open. Thus the projection $\pi:P\to Z$ is open.
+% typo: (g sigma(h),x)) -> (g sigma(h),x).
+% typo: omitted period after ouverte -> period.
+
+Note moreover that the word $\sigma(h_1)\cdots\sigma(h_n)$ is a reduced word of $G$, unless one of the $h_i$ is the identity element of $T$, or two consecutive $h_i$ belong to $T$, or $(h_i,h_{i+1})$ equals $(h_F,h_F^{-1})$ or $(h_F^{-1},h_F)$. Thus, if $x\in X'$ and an element $\beta=(\sigma(h_1)\cdots\sigma(h_n),h_n^{-1}\cdots h_1^{-1}(x))$ belongs to $\{1\}\times X'$, one may suppose that every $h_i$ is a translation $t_i$, and in this case the equality $\sigma(t_1\cdots t_n)=1$ implies that $t_1\cdots t_n=1$, hence $\beta=(1,x)$. Since the equivalence relation is compatible with the action of $G$ (acting on $P=G\times X'$ by left translations on the first factor), one deduces that, for every $g\in G$, the restriction of $\pi$ to $\{g\}\times X'$ is injective.
+
+Then let $z\in Z$ be arbitrary and let $(g,x)\in P$ be a representative of $z$. By the preceding argument, $U=\pi(\{g\}\times X')$ is an open neighborhood of $z$, and the continuous map $\{g\}\times X'\to U$ induced by $\pi$ is open and bijective, hence a homeomorphism. This shows that $Z$ is locally isomorphic to $X'$ (hence also to $C$), so is again a locally Boolean $k$-scheme.
+
+Finally, $G$ acts transitively on $Z$. Indeed, since every $z\in Z$ is $G$-conjugate to an element of the form $\pi((1,x))$, it suffices to see that every element $(1,x)\in P$ is equivalent to an element $(\sigma(h),0)$; if $x\in C$, one may take for $h$ the translation $t_x$, and if $x=q_F$, one may take $h=h_F$. Thus $Z$ is a locally Boolean $k$-scheme endowed with a transitive action of the discrete group $G$, but $Z$ is not separated.
+\end{example}
+
+\sgasection{6}{Subfunctors and subgroup schemes}\begingroup\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{On this same subject, see also the results of XI 6, whose natural place would be in the present Exposé VIB. In particular one will find there representability criteria for certain subgroup functors of a given group scheme.\textsuperscript{(48)}}\endgroup
+\stepcounter{footnote}\ndetext{These results have been inserted in what follows (nos. 6.5.2 to 6.5.5).}
+\begin{definition}{6.1}\label{VIB.6.1}
+(i) Let $X$ be an $S$-functor (that is, a functor from $(\mathbf{Sch}_{/S})^\circ$ to $\Ens$), $G$ an $S$-group functor, $u$ and $v$ two $S$-morphisms from $X$ to $G$. One calls the \emph{transporter of $u$ into $v$}, and denotes by $\uTransp(u,v)$, the sub-$S$-functor of $G$ defined as follows:
+\[
+\begin{aligned}
+\uTransp(u,v)(S')&=\{g\in G(S')\mid(\mathrm{int}\,g)\circ u_{S'}=v_{S'}\}\\
+&=\{g\in G(S')\mid g_{S''}u_{S''}(x)g_{S''}^{-1}=v_{S''}(x),\quad\forall x\in X(S''),\ S''\to S'\}.
+\end{aligned}
+\]
+In particular, $\uTransp(u,u)$ is a subgroup $S$-functor of $G$; one calls it the \emph{centralizer of $u$} and denotes it by $\uCentr(u)$.
+
+(ii) Let $G$ be an $S$-group functor, $X$ and $Y$ two sub-$S$-functors of $G$; one calls the \emph{transporter of $X$ into $Y$} (resp. \emph{strict transporter of $X$ into $Y$}), and denotes by $\uTransp_G(X,Y)$ (resp. $\uTransp_G^{\mathrm{str}}(X,Y)$), the sub-$S$-functors of $G$ defined as follows:
+\[
+\begin{aligned}
+\uTransp_G(X,Y)(S')&=\{g\in G(S')\mid(\mathrm{int}\,g)(X_{S'})\subset Y_{S'}\}\\
+&=\{g\in G(S')\mid g_{S''}X(S'')g_{S''}^{-1}\subset Y(S''),\quad\forall S''\to S'\},
+\end{aligned}
+\]
+\[
+\begin{aligned}
+\text{resp. }\uTransp_G^{\mathrm{str}}(X,Y)(S')&=\{g\in G(S')\mid(\mathrm{int}\,g)(X_{S'})=Y_{S'}\}\\
+&=\{g\in G(S')\mid g_{S''}X(S'')g_{S''}^{-1}=Y(S''),\quad\forall S''\to S'\}.
+\end{aligned}
+\]
+Note that one has
+\[
+\uTransp_G^{\mathrm{str}}(X,Y)=\uTransp_G(X,Y)\cap c(\uTransp_G(Y,X)),
+\]
+where $c$ denotes the inversion morphism of $G$.\nde{If $u:X\to G$ and $v:Y\to G$ are two arbitrary morphisms of $S$-functors, let $u(X)$ be the image functor of $u$, defined by $u(X)(S')=u(S')(X(S'))\subset G(S')$; it is a subfunctor of $G$, as is the image functor $v(Y)$; one may then consider the transporter of the image of $u$ into the image of $v$, $\uTransp_G(u(X),v(Y))$. One thus sees that, in definition (ii), it is not necessary to restrict oneself to subfunctors, i.e. to the case where $u$ and $v$ are monomorphisms. This restriction sometimes imposed repetitions in the hypotheses in the original, such as: ``Let $u,v:X\to G$ be morphisms of $S$-functors, $w:H\to G$ and $w':K\to G$ monomorphisms; then $\uTransp(u,v)$, $\uCentr_G(w)=\uCentr_GH$ and $\uTransp_G(H,K)$ satisfy\dots'', which can be avoided by considering $\uTransp_G(u(X),v(Y))$. Such modifications have been made in 6.2 and, later, in 10.11.}
+
+(iii) Let $G$ be an $S$-group functor, $H$ a sub-$S$-functor of $G$, $i$ the canonical $S$-morphism $H\to G$; one calls the \emph{centralizer} and \emph{normalizer of $H$ in $G$} the following subgroup $S$-functors of $G$:
+\[
+\uCentr_GH=\uCentr(i)=\uTransp(i,i),\qquad\uNorm_GH=\uTransp_G^{\mathrm{str}}(H,H).
+\]
+Finally, one calls the \emph{center of $G$} the $S$-group functor $\uCentr(\mathrm{id}_G)=\uCentr_GG$; it will be denoted by $\uCentr G$.
+\end{definition}
+\begin{remark}{6.1.1}\label{VIB.6.1.1}\nde{This remark, implicitly used in Proposition 6.2, has been added.}
+It follows from the definitions that the functors $\uTransp(u,v)$ and $\uTransp_G(X,Y)$ (and hence also $\uTransp_G^{\mathrm{str}}(X,Y)$) commute with base change: for every $S'\to S$, if $G',X',Y',u',v'$ are obtained from $G,X,Y,u,v$ by base change, one has:
+\[
+\uTransp(u,v)_{S'}=\uTransp(u',v')\quad\text{and}\quad\uTransp(X,Y)_{S'}=\uTransp(X',Y').
+\]
+\end{remark}

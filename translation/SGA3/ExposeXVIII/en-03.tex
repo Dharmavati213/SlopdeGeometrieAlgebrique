@@ -1,0 +1,618 @@
+% French PDF pp. 13--18; last two pages are blank.
+Now saying that \((xa)b\) and \((xc)d\) are
+defined means that, over \(S''\), \(x\) is in
+a certain relatively schematically dense open
+subset, which is checked on the closed fiber
+of \(X_{S''}\). Thus it works.
+\end{proof}
+
+Now let \(G\) be the quotient of \(X^2\) by
+\(R\) as a sheaf for the fppf topology.
+We shall define a composition law on \(G\)
+as follows: let \((g,g')\in G(S')\) be
+represented by a section
+\(((a,b),(c,d))\) of \(X^2\times X^2(S'')\),
+with \(S''\to S'\) fppf-covering.
+Suppose moreover that \(X\) admits a section
+\(x\) over \(S''\) such that \(a(b(cx))\)
+and \(x^{-1}d\) are defined, which is
+permitted by Rule 1 and (1.7), and call
+\(gg'\) the class in \(G(S')\) represented
+by the section \((a(b(cx)),x^{-1}d)\)
+of \(X^2(S'')\).
+
+Let us verify that \(gg'\) does not depend
+on the choice of the section \(x\) and
+the representative \(((a,b),(c,d))\):
+indeed, let \((a',b')\sim(a,b)\),
+\((c',d')\sim(c,d)\), and \(x\) be such
+that \(a'(b'(c'x'))\) and \(x'^{-1}d'\)
+are defined.
+We may suppose that all are sections over \(S''\).
+One must prove that
+\[
+(a(b(cx)),x^{-1}d)\sim(a'(b'(c'x')),x'^{-1}d'),
+\]
+that is, for a suitable section
+\(z\in X(S''')\), with \(S'''\to S''\)
+suitably fppf-covering, one has
+\[
+(z(a(b(cx))))(x^{-1}d)
+=(z(a'(b'(c'x'))))(x'^{-1}d').
+\]
+Whenever all the products are defined, one has
+\[
+\begin{aligned}
+(z(a(b(cx))))(x^{-1}d)
+ &=((za)(b(cx)))(x^{-1}d)\\
+ &=(((za)b)(cx))(x^{-1}d)\\
+ &=((((za)b)c)x)(x^{-1}d)\\
+ &=(((za)b)c)(x(x^{-1}d))=(((za)b)c)d,
+\end{aligned}
+\]
+and the same identities hold with the primes.
+Now, by Rule 1 and (1.7), such a \(z\) exists.
+One must therefore prove that
+\[
+(((za)b)c)d=(((za')b')c')d'.
+\]
+But \((za)b=(za')b'\), since
+\((a,b)\sim(a',b')\) (3.3), and one
+therefore has the desired equality,
+since \((c,d)\sim(c',d')\).
+% typo?: the source introduces x, then uses x'; kept as printed.
+
+Consider the natural morphism \(i:X\to G\)
+defined as follows: for \(a\in X(S')\),
+choose \(S''\to S'\) fppf-covering
+and a section \(b\in X(S'')\)
+such that \(ab^{-1}\) is defined, and set
+\[
+i(a)=\text{class in }G\text{ of }(ab^{-1},b).
+\]
+One easily verifies that this class,
+which is a priori in \(G(S'')\),
+does not depend on the choice of \(b\),
+and thus gives a well-defined element
+of \(G(S')\).
+The reader will take pleasure in verifying the
+\begin{proposition}{3.6}\label{XVIII.3.6}
+The morphism \(i\) commutes with the
+composition laws of \(X\) and \(G\),
+that is, if \(a,b\in X(S')\)
+are sections such that \(ab\) is
+defined, one has \(i(a)i(b)=i(ab)\).
+\end{proposition}
+The aim of this number is the following theorem:
+\begin{theorem}{3.7}\label{XVIII.3.7}
+\nde{If \(X\) is smooth, separated
+over \(S\), faithfully flat of finite
+presentation over \(S\), then \(G/S\)
+is represented by a smooth \(S\)-group
+scheme of finite type over \(S\).
+This is Theorem 6.6.1 of the book
+\emph{Néron models} by Bosch--Lütkebohmert--Raynaud,
+Springer (1990).}
+Let \((X,W)\) be a group germ
+over \(S\), with \(X/S\) faithfully
+flat, of finite presentation, and
+with separated fibers without
+embedded components.
+Then, with the notation above, one has
+\begin{enumeratei}
+\item \(G\) is a sheaf of groups.
+\item \(i:X\to G\) is represented by an open immersion.
+\item \(G\) is representable locally
+on \(S\) for the fppf topology.
+\item If \(G/S\) is representable,
+then it is a flat group of finite
+presentation, and \(i:X\to G\)
+is schematically dense relative to \(S\).
+\end{enumeratei}
+\end{theorem}
+Note that \(G\) is evidently
+characterized by properties (i),
+\ldots, (iv); one may therefore
+forget the explicit construction of \(G\).
+The proof proceeds in several steps:
+\begin{lemma}{3.8}\label{XVIII.3.8}
+(i) Let \(c\) be a section of
+\(X(S)\); then the morphism
+from the prescheme \(c\times X\)
+(which is \(S\)-isomorphic to
+\(X\)) to \(G\), given by
+\(c\times X\hookrightarrow X\times X\to G\),
+is a monomorphism.
+
+(ii) Let \(\{c_i\}\), \(i\in I\),
+be sections of \(X(S)\),
+let \(Z=\coprod_i c_i\times X\),
+and call \(R'\rightrightarrows Z\)
+the equivalence relation induced
+on \(Z\) by the evident morphism
+\(Z\to X^2\).
+Then \(R'\) is a \og gluing\fg{}
+of the \(c_i\times X\simeq X\).
+\end{lemma}
+\begin{proof}
+(i) For two sections
+\((c,a),(c,a')\) of \((c\times X)(S')\)
+to have the same image in \(G\),
+one must have \((c,a)\sim(c,a')\),
+that is, \((xc)a\sim(xc)a'\)
+for a suitable \(x\in X(S'')\),
+with \(S''\to S'\) fppf-covering,
+whence \(a=a'\) by Rule 3.
+% typo?: sim rather than equality retained as printed.
+
+(ii) Let \(c_i,c_j\) be two
+sections, and consider the
+birational map \(\psi_{ji}\)
+from \(X\) to itself over \(S\),
+given by the formula
+\(x\mapsto c_j^{-1}(c_i x)\).
+This is the same map as that
+given by \(x\mapsto(yc_j)^{-1}((yc_i)x)\),
+if \(y\in X(S)\), as one
+easily sees.
+Moreover, one verifies that
+\(\varphi_{ji}\) is defined
+for a \(b\in X(S')\) if
+and only if there exists
+\(b'\) such that
+\((c_i,b)\sim(c_j,b')\),
+and then \(b'=\varphi_{ji}(b)\).
+Let \(U_{ji}\) be the
+domain of definition over
+\(S\) of \(\varphi_{ji}\).
+It remains to prove that
+this domain of definition
+is universal, that is,
+if \(b\in X(S'')\),
+with \(S''\to S\) arbitrary,
+and \(\varphi_{ji}\) is
+defined at \(b\), then
+\(b\in U_{ji}(S'')\).
+It amounts to the same
+to prove that if \(b,b'\in X(S'')\)
+are such that
+\((c_i,b)\simeq(c_j,b')\),
+then \(b\in U_{ji}(S'')\).
+We leave the verification
+of this fact, analogous
+to that of (3.5), to the reader.
+% typo?: psi_ji is subsequently called varphi_ji in the source.
+\end{proof}
+\begin{lemma}{3.9}\label{XVIII.3.9}
+Suppose that \(\{c_i\}\),
+\(i\in I\), are sections
+of \(X(S)\) such that
+\(\coprod_i c_i\times X\to G\)
+is surjective as a morphism
+of sheaves.
+Then \(G\) is representable
+and flat, of finite presentation
+over \(S\), and the structural
+morphism \(X^2\to G\)
+is flat and of finite presentation.
+\end{lemma}
+\begin{proof}
+The fact that \(G\) is
+representable is an immediate
+consequence of (3.8), and
+it follows that
+\(\coprod_i c_i\times X\to G\)
+is an open covering.
+To prove that \(X^2\to G\)
+is flat, it suffices to
+do so locally, hence to
+prove that the rational
+map \(X^2\to c_i\times X\)
+induces a flat morphism
+on its domain of definition.
+Now this rational map
+is given by
+\((a,b)\mapsto(c_i,((xc_i)^{-1}(xa))b)\),
+with \(x\) an arbitrary
+section, and, if it is
+defined at \((a,b)\in X^2(S')\),
+one can find \(S''\to S'\)
+fppf-covering and a section
+\(x\in X(S'')\) such that
+\(((xc_i)^{-1}(xa))b\)
+is defined.
+One easily sees that
+it is therefore a flat
+morphism.
+It follows similarly
+that it is locally of
+finite presentation, hence
+fppf-covering.
+Now, by construction, the
+relation \(R\) is effective.
+Thus, by (3.5), the morphism
+\(X^2\to G\) becomes of
+finite presentation after
+the base change \(G\leftarrow X^2\),
+which is fppf-covering;
+hence \(X^2\to G\)
+is of finite presentation.
+Let us show that \(G\to S\)
+is flat and of finite
+presentation.
+It is flat and locally
+of finite presentation,
+since \(G\) is covered
+by the \(c_i\times X\simeq X\).
+Now \(X^2/S\) is quasi-compact,
+and \(X^2\to G\) is surjective.
+This proves that \(G/S\)
+is quasi-compact.
+To prove that \(G\to S\)
+is quasi-separated, note
+that one has the following
+cartesian diagram:
+\[
+\xymatrix{
+R\ar[r]^\alpha\ar[d]_\gamma & X^2\times_S X^2\ar[d]^\beta\\
+G\ar[r]_\Delta & G\times_S G }.
+\]
+One has \(\gamma\) surjective
+and \(\alpha,\beta\) quasi-compact,
+hence \(\beta\alpha\) is
+quasi-compact, hence \(\Delta\)
+is quasi-compact.
+\nde{Another way to conclude
+here is by faithfully flat
+descent (EGA IV$_2$, 2.7.1),
+since \(\beta\) is covering
+for fppf.}
+% typo: "G -> S et quasi-séparé" -> "G -> S est quasi-séparé".
+\end{proof}
+\begin{lemma}{3.10}\label{XVIII.3.10}
+Let \(\{c_i\}\), \(i\in I\),
+be sections of \(X(S)\).
+For \(\coprod_i c_i\times X\to G\)
+to be surjective as a
+morphism of fppf-sheaves,
+it suffices that the
+following condition hold:
+
+For every \(S'\to S\)
+and \((a,b)\in X^2(S')\),
+there exists an open covering
+\(\{S'_\nu\}\), \(\nu\in N\),
+of \(S'\), and a function
+\(N\to I\), \(\nu\mapsto i(\nu)\),
+such that \((c_{i(\nu)}^{-1}a)b\)
+is defined over \(S'_\nu\).
+\end{lemma}
+\begin{proof}
+Let \(S''\to S\) be arbitrary,
+and \(g\in G(S'')\).
+Choose \(S'\to S''\)
+fppf-covering, and a
+section \((a,b)\in X^2(S')\)
+representing \(g\).
+Take the open covering
+\(\{S'_\nu\}\) of \(S'\)
+which exists by the
+hypothesis of the lemma.
+Then, over each \(S'_\nu\),
+one has
+\((a,b)\sim(c_{i(\nu)},(c_{i(\nu)}^{-1}a)b)\);
+hence \(g\) is represented
+by a section of
+\([c_{i(\nu)}\times X](S')\)
+over \(S'_\nu\), which
+proves surjectivity, since
+the family of morphisms
+\(\{S'_\nu\to S''\}\)
+is fppf-covering.
+\end{proof}
+\begin{lemma}{3.11}\label{XVIII.3.11}
+Let \(Y/S\) be a prescheme
+of finite presentation,
+and let \(\{a_i\}\), \(i\in I\),
+be sections of \(Y(S)\).
+Let \(s_0,s_1\) be points
+of \(S\) such that \(s_0\)
+is a specialization of
+\(s_1\), and \(Y_j\) the
+fiber of \(Y/S\) at \(s_j\).
+Let \(C_j\) be the
+closure in \(Y_j\)
+of the set of points
+\(\{a_i(s)\cap Y_j\}\).
+Then one has \(\dim C_1\geq\dim C_0\).
+\end{lemma}
+\begin{proof}
+It suffices to make the
+verification after a
+base change \(S'\to S\)
+with chosen points
+\(s'_0,s'_1\) such that
+\(s'_j\mapsto s_j\)
+and \(s'_0\) is a
+specialization of \(s'_1\).
+One is therefore (EGA II 7.1.4)
+reduced to the case
+where \(S\) is the
+spectrum of a valuation
+ring \(A\), \(s_0\)
+the closed point of \(S\),
+and \(s_1\) the generic
+point of \(S\).
+Now let \(V\) be the
+closure of \(C_1\) in
+\(Y\).
+It is clear that
+\(C_0\subseteq V\),
+and thus the lemma
+is a consequence of
+the \og well-known\fg{}
+fact that an irreducible
+closed subprescheme \(V\)
+of a prescheme \(Y/S\)
+of finite presentation
+satisfies
+\(\dim(V\times s_1)\geq\dim(V\times s_0)\)
+if \(S\) is the
+spectrum of a valuation
+ring and \(V\times s_1\ne\varnothing\)
+(EGA IV 13.1.6).
+\end{proof}
+\begin{lemma}{3.12}\label{XVIII.3.12}
+Suppose that \(S\) is
+the spectrum of a
+local ring, with closed
+point \(s_0\), and
+let \(\{c_i\}\), \(i\in I\),
+be sections such that
+the closure \(C_0\)
+of the set
+\(\{c_i(s)\cap X_0\}\)
+in the closed fiber
+\(X_0\) has dimension
+equal to \(\dim X_0=n\).
+Then the condition of
+Lemma 3.9 is satisfied.
+\end{lemma}
+\begin{proof}
+First note that the
+fibers of \(X/S\)
+all have the same
+dimension \(u\), which
+follows from EGA IV
+12.1.1 (i), and the
+fact that \(X\) has
+a rational composition
+law.
+Lemma (3.11) therefore
+implies that, for every
+morphism \(S_1\to S\)
+with \(S_1\) the
+spectrum of a field,
+the dimension of the
+closure of the set
+\(\{c_i\times_S S_1\}\)
+in \(X_{S_1}\)
+is equal to \(n\).
+Let us verify the
+condition of (3.10):
+let \((a,b)\in X^2(S')\).
+For \((c_i^{-1}a)b\)
+to be defined, it is
+necessary and sufficient
+that \(c_i\) be
+contained in a certain
+open subset \(U\subseteq X_{S'}\)
+schematically dense
+relative to \(S'\)
+(Rule 1).
+One must prove that
+this is true for a
+suitable \(i\), locally
+on \(S'\).
+It therefore suffices
+to treat the case
+where \(S'\) is the
+spectrum of a local
+ring; then the fact
+that \(c_i\in U(S')\)
+is checked on the
+closed fiber.
+One is therefore
+reduced to the case
+\(S'=\Spec k\),
+with \(k\) a field.
+Now, with the above
+notation, take \(S'=S_1\).
+One has \(\dim C_1=\dim X_{S_1}\),
+and \(U\) is relatively
+schematically dense
+in \(X_{S_1}\).
+Thus \(U\cap C_1\ne\varnothing\),
+whence \(U\cap\{c_p\times_S S_1\}\ne\varnothing\),
+and one has won.
+% typo?: dimension u, then n, and c_p are retained as printed.
+\end{proof}
+
+The proof of the
+theorem is now easy.
+First note the
+following consequence
+of the finiteness
+assertion of Lemma (3.9):
+if \(\{A_i\}\) is an
+inductive system of
+rings over \(S\),
+if \(\underrightarrow A=\varinjlim A_i\),
+and if the hypotheses
+of (3.9) hold for
+\(S=\Spec\underrightarrow A\),
+then one can descend
+the object representing
+the quotient \(G\)
+of \(R\rightrightarrows X^2\)
+to one of the
+\(S_i=\Spec A_i\),
+with the finiteness
+and flatness properties
+stated in (3.9).
+This is the customary
+passage to the limit
+(EGA IV 8 and 11).
+It follows that, for
+the proof of (iii)
+and (iv) of (3.7),
+one may restrict
+oneself to the case
+\(S=\Spec A\), with
+\(A\) a strictly
+local ring.
+Then let \(x_0\)
+be a closed point
+of the closed fiber
+\(X_0\) of \(X/S\).
+There exists
+{\renewcommand{\thefootnote}{(*)}\addtocounter{footnote}{-1}%
+\footnote{Cf. the note at the bottom
+of page 15, Exp. VII.}}
+an extension \(A'\)
+of \(A\), local,
+free and finite,
+and a section of
+\(X'=X\times_S S'\)
+passing through the
+unique point \(x'_0\)
+of \(X'_0\) over \(x_0\).
+Note that \(X'_0\to X_0\)
+is radicial, since
+\(S\) is strictly
+local, hence the
+residue field of
+\(A\) is separably
+closed.
+It follows that
+there exists an
+inductive system
+\(\{A_i\}\) of
+local rings, flat
+and finite over \(S\),
+such that, setting
+\[
+\underrightarrow A=\varinjlim A_i,\qquad
+\underleftarrow X=X\times_S\Spec\underrightarrow A,
+\]
+\(\underleftarrow X\)
+has a set of
+sections inducing a
+dense set on the
+closed fiber
+\(\underleftarrow X_0\).
+For every closed
+point \(x_0\) of
+\(X_0\), take an
+extension \(A(x_0)\)
+such that the
+corresponding base
+extension of \(X\)
+admits a section
+\og passing through \(x_0\)\fg,
+and take as inductive
+system the system
+of finite tensor
+products of the
+\(A(x_0)\).
+Note that
+\(\underrightarrow A\)
+is local, being a
+limit of local rings.
+Thus, by (3.12)
+and (3.10), one
+has the quotient
+\(G\) over
+\(\Spec\underrightarrow A\),
+hence over one of
+the \(\Spec A_i\)
+by the remarks above,
+hence locally for
+the fppf topology.
+% typo: d'anneaux printed as d^prime anneaux is rendered as of rings.
+
+In fact, it follows
+from the constructions
+that locally for the
+fppf topology one
+can find a finite
+set of sections
+\(\{c_i\}\), \(i=1,\ldots,r\),
+such that \(G\) is
+covered by the
+\(c_i\times X\).
+(ii) and (iv)
+follow easily from
+this fact, and we
+leave the verification
+of (i) to the reader.
+\begin{corollary}{3.13}\label{XVIII.3.13}
+The sheaf of
+groups \(G\)
+determined by a
+group germ \((X,W)\)
+over \(S\) is
+representable in each
+of the following situations:
+\begin{enumeratei}
+\item \(S\) is artinian.
+\item For every local
+scheme \(S'\to S\)
+of a closed point
+\(s\) of \(S\),
+\(X_{S'}\) has a
+set of sections
+inducing on the
+closed fiber a set
+whose closure has
+dimension \(\dim X_s\).
+\item \(S\) is strictly
+local, and \(X/S\)
+is smooth.
+\item There exists
+\(S'\to S\)
+fppf-covering such
+that \(G_{S'}\)
+is representable
+and affine over \(S\).
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+Indeed, (ii) is
+a consequence of
+(3.10) and (3.12);
+(iii) follows
+directly from (ii)
+and \og Hensel's lemma\fg;
+(iv) from descent
+of affine schemes;
+and (i) from
+descent of group
+schemes, which is
+possible here since
+one knows that every
+finite subset of a
+group over a field
+is contained in an
+affine open subset
+(Exp. VI).
+\end{proof}
+
+\begin{thebibliography}{2}
+\bibitem[1]{Weil}
+A. Weil, \emph{Variétés abéliennes et courbes algébriques}.
+Hermann, Paris, 1948.
+\bibitem[2]{Yanagihara}
+H. Yanagihara, \emph{Reduction of group varieties and transformation spaces}.
+Journ. Sci. Hiroshima Univ., Ser. A-I, vol. 27, no. 1, June 1963.
+\end{thebibliography}

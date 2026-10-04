@@ -1,0 +1,448 @@
+\begin{proposition}{4.2}\label{XIII.4.2}
+Let $r$ be the nilpotent rank of $\mathfrak g$, and let
+$a\in\mathfrak g$. Then one has
+\[
+ \operatorname{rank}_k\operatorname{Nil}(a,\mathfrak g)\geq r,
+\]
+and one has equality if and only if one has
+\[
+ c_{n-r}(a)\ne0.
+\]
+In this case, $\operatorname{Nil}(a,\mathfrak g)$ is a nilpotent Lie
+algebra (and we shall see in 5.7 b) the converse, when $\mathfrak g$
+is the Lie algebra of a smooth algebraic group $G$ over $k$).
+\end{proposition}
+The first assertion is trivial, for by definition one has
+$\operatorname{rank}_k\operatorname{Nil}(a,\mathfrak g)=$ the multiplicity
+of the zero root in $P_{\mathfrak g}(a,t)$. Let us prove that if
+$c_{n-r}(a)\ne0$, then $\operatorname{Nil}(a)$ is nilpotent, which also
+means that for every $x\in\operatorname{Nil}(a)$,
+$\ad_{\operatorname{Nil}(a)}(x)$ is a nilpotent endomorphism. One may
+suppose $k$ algebraically closed; then, since
+$\ad(a)_{\mathfrak g/\operatorname{Nil}(a)}$ is injective, there exists
+a nonempty open subset $U$ of $\mathrm W(\operatorname{Nil}(a))$ such
+that for every $x\in U(k)$, $\ad(x)_{\mathfrak g/\operatorname{Nil}(a)}$
+is injective, hence $\operatorname{Nil}(x)\subset\operatorname{Nil}(a)$;
+one may moreover suppose $U$ contained in the open subset of points
+where $c_{n-r}$ does not vanish (since this open subset is nonempty by
+$c_{n-r}(a)\ne0$), and then $\operatorname{Nil}(x)$ having the same
+dimension as $\operatorname{Nil}(a)$, one will have
+$\operatorname{Nil}(x)=\operatorname{Nil}(a)$. Consequently, for every
+$x\in U(k)$, $\ad(x)_{\operatorname{Nil}(a)}$ is nilpotent, and by the
+principle of extension of algebraic identities, this will remain true
+for every $x\in\operatorname{Nil}(a)$, so $\operatorname{Nil}(a)$ is nilpotent.
+
+One says that the element $a$ of $\mathfrak g$ is \emph{regular} if
+$c_{n-r}(a)\ne0$, i.e. if $\operatorname{rank}_k\operatorname{Nil}(a,\mathfrak g)=r$.
+When $k$ is infinite, this therefore also means that
+$\operatorname{rank}_k\operatorname{Nil}(a,\mathfrak g)$ is as small
+as possible (for $a$ varying in $\mathfrak g$). In all cases, the notion
+of regular element of $\mathfrak g$ is invariant under extension of
+the base field, and the set of points of $\mathrm W(\mathfrak g)$ which
+are regular (i.e. which come from regular points of
+$\mathrm W(\mathfrak g)$ with values in a suitable extension of $k$)
+is open, for it is identical to $\mathrm W(\mathfrak g)_{c_{n-r}}$ (the
+set of points where $c_{n-r}$ is invertible).
+% typo: unmatched opening parenthesis after rank_k removed.
+
+\begin{corollary}{4.3}\label{XIII.4.3}
+Let $a$ be a regular element of $\mathfrak g$, and $\mathfrak h$ a Lie
+subalgebra of $\mathfrak g$ containing $a$. Then $\mathfrak h$ is
+nilpotent if and only if $\mathfrak h\subset\operatorname{Nil}(a,\mathfrak g)$;
+in particular, $\operatorname{Nil}(a,\mathfrak g)$ is a maximal
+nilpotent subalgebra of $\mathfrak g$.
+\end{corollary}
+Since $\operatorname{Nil}(a)$ is nilpotent, the relation
+$\mathfrak h\subset\operatorname{Nil}(a)$ indeed implies that
+$\mathfrak h$ is nilpotent, and conversely, if $\mathfrak h$ is
+nilpotent, it is contained in the nilspace of its element $a$, i.e.
+$\mathfrak h\subset\operatorname{Nil}(a)$.
+
+\begin{proposition}{4.4}\label{XIII.4.4}
+Suppose $k$ infinite. Let $\mathfrak d$ be a Lie subalgebra of
+$\mathfrak g$. Consider the following conditions:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\mathfrak d$ is maximal nilpotent and contains a regular element
+of $\mathfrak g$.
+\item[\textup{(i bis)}] $\mathfrak d$ is of the form
+$\operatorname{Nil}(a,\mathfrak g)$, where $a$ is a regular element of
+$\mathfrak g$.
+\item $\mathfrak d$ is nilpotent and of the form
+$\operatorname{Nil}(a,\mathfrak g)$, where $a\in\mathfrak g$.
+\item[\textup{(ii bis)}] $\mathfrak d$ is nilpotent, and there exists
+$a\in\mathfrak d$ such that $\ad(a)_{\mathfrak g/\mathfrak d}$ is injective.
+\item $\mathfrak d$ is nilpotent and identical to its own normalizer.
+\end{enumerate}
+One has the implications:
+\[
+ \textup{(i)}\Leftrightarrow\textup{(i bis)}\Rightarrow\textup{(ii)}
+ \Leftrightarrow\textup{(ii bis)}\Leftrightarrow\textup{(iii)}
+\]
+(and we shall see in 5.7 a) that if $\mathfrak g$ is the Lie algebra
+of a smooth algebraic group, then all the preceding conditions are
+equivalent).
+\end{proposition}
+The equivalence of (i) and (i bis) is trivial by 4.3, and these
+conditions trivially imply (ii). The equivalence of (ii) and (ii bis)
+is also trivial, as is (ii bis) $\Rightarrow$ (iii) (cf. 4.1). It remains
+to prove implication (iii) $\Rightarrow$ (ii bis), the only one,
+moreover, which uses the fact that $k$ is infinite, and which follows
+at once from the
+
+\begin{lemma}{4.5}\label{XIII.4.5}
+Let $\mathfrak d$ be a nilpotent Lie algebra over an infinite field
+$k$, acting on a finite-dimensional vector space $V$. Suppose that
+for every $x\in\mathfrak d$, the endomorphism $u(x)$ is not injective.
+Then there exists a nonzero element $v$ of $V$ annihilated by
+$\mathfrak d$.
+\end{lemma}
+One may suppose $k$ algebraically closed and $\mathfrak d$
+finite-dimensional. One then knows that $V$ is a direct sum of finitely
+many nonzero stable vector subspaces $V_i$ ($1\leq i\leq n$), such
+that for every $i$, and every $x\in\mathfrak d$, $u(x)|_{V_i}$ has a
+single eigenvalue $\lambda_i(x)$ (cf. Bourbaki, \emph{Groupes et
+Alg\`ebres de Lie}, Chap. I, \S 4, Exercise 22). Let $c_i(x)$ be the
+constant term of the characteristic polynomial of $u(x)|_{V_i}$, so
+that $\lambda_i(x)=0$ if and only if $c_i(x)=0$. Then $c_i$ is a
+polynomial function on $\mathfrak d$, and the hypothesis means that
+$\mathfrak d$ is the union of the zero sets of the $c_i$. Thus one
+of the $c_i$ is zero, which reduces one (replacing $V$ by $V_i$) to
+the case where $V$ is such that the $u(x)$ ($x\in\mathfrak d$) are
+nilpotent. But then Engel's theorem (Bourbaki \loccit th. 1) implies
+that there exists a nonzero $v$ in $V$ annihilated by $\mathfrak d$.
+\hfill Q.E.D.
+
+One easily sees that ($k$ still being an infinite field) conditions
+(i), (i bis) of 4.4 are invariant under every extension of the base
+field. If they hold, one will say that $\mathfrak d$ is a \emph{Cartan
+subalgebra} of $\mathfrak g$; in the general case ($k$ not necessarily
+infinite) one will say that $\mathfrak d$ is a Cartan subalgebra of
+$\mathfrak g$ if it becomes a Cartan subalgebra for one (and consequently
+every) extension of the base field $k\to k'$, with $k'$ infinite.
+This therefore implies that $\mathfrak d$ is nilpotent and equal
+to its own normalizer.
+
+\begin{proposition}{4.6}\label{XIII.4.6}
+\noindent a) Let $a$ be an element of $\mathfrak g$. If $a$ is regular,
+it is contained in one and only one Cartan subalgebra of $\mathfrak g$
+(and we shall see in 6.1 d) the converse when $k$ is algebraically
+closed and $\mathfrak g$ the Lie algebra of a smooth algebraic group).
+
+\noindent b) Let $\mathfrak d$ be a Cartan subalgebra of $\mathfrak g$,
+and $a$ an element of $\mathfrak d$; then $a$ is regular in
+$\mathfrak g$ if and only if $\ad(a)_{\mathfrak g/\mathfrak d}$ is injective.
+\end{proposition}
+Indeed, for a) one notes that if $a$ is regular, then
+$\operatorname{Nil}(a,\mathfrak g)$ is a Cartan subalgebra of
+$\mathfrak g$ (for this is true over an infinite extension $k'$ of
+$k$), and it then follows at once from 4.3 that every Cartan subalgebra
+of $\mathfrak g$ containing $a$ is identical to the preceding one.
+For b) one notes that the nullity\nde{That is, the dimension of the
+nilspace.} of $\ad(a)_{\mathfrak g}$ is equal to the sum of the
+nullities of $\ad(a)_{\mathfrak d}$ and of
+$\ad(a)_{\mathfrak g/\mathfrak d}$, and since the first is $r$, the
+sum is equal to $r$ if and only if $\ad(a)_{\mathfrak g/\mathfrak d}$
+is injective. \hfill Q.E.D.
+
+\begin{corollary}{4.7}\label{XIII.4.7}
+Let $a$ be a regular element of $\mathfrak g$, $\mathfrak d$ a Cartan
+subalgebra of $\mathfrak g$ containing $a$, $A$ an algebra over $k$,
+$\mathfrak g_A$ and $\mathfrak d_A\subset\mathfrak g_A$ the $A$-Lie
+algebras obtained from $\mathfrak g,\mathfrak d$ by base change,
+and $a_A$ the image of $a$ in $\mathfrak g_A$. Let $u$ be an automorphism
+of $\mathfrak g_A$. For $u(\mathfrak d_A)=\mathfrak d_A$ to hold,
+it is necessary and sufficient that one have $u(a_A)\in\mathfrak d_A$.
+\end{corollary}
+The condition is trivially necessary; let us prove that it is also
+sufficient. If it holds, then $\mathfrak d'=u(\mathfrak d_A)$ is a
+Lie subalgebra containing $a_A$, and every element $b$ of it is such
+that $\ad(b)_{\mathfrak d}$ is nilpotent (for $\mathfrak d'$ is
+isomorphic to $\mathfrak d_A$, which has this property, as follows
+at once from the definition of ``nilpotent'' in Bourbaki, \emph{Groupes
+et Alg\`ebres de Lie}, Chap. I, \S 4, def. 1). Taking $b=a_A$, one
+sees that the nilspace $\operatorname{Nil}(b,\mathfrak g_A)$ contains
+$\mathfrak d'$; on the other hand, it is equal to $\mathfrak d_A$,
+and since $\mathfrak d'$ is locally a direct summand in the module
+$\mathfrak g_A$ ($\mathfrak d$ being so), hence in $\mathfrak d_A$,
+and it is a projective module of the same rank $r$ as the latter,
+one concludes that it is equal to it. \hfill Q.E.D.
+% typo?: kept as printed: d'=u(d_A) contains a_A, and ad(b)_d.
+
+\begin{proposition}{4.8}\label{XIII.4.8}
+Let $\mathfrak h$ be a Lie subalgebra of $\mathfrak g$.
+
+\noindent a) The following conditions are equivalent if $k$ is infinite:
+\begin{enumeratei}
+\item $\mathfrak h$ contains a Cartan subalgebra $\mathfrak d$ of
+$\mathfrak g$.
+\item $\mathfrak h$ contains a regular element $a$ of $\mathfrak g$,
+and an element $b$ such that $\ad(b)_{\mathfrak g/\mathfrak h}$ is injective.
+\item $\mathfrak h$ has the same nilpotent rank as $\mathfrak g$,
+and contains a regular element of $\mathfrak g$.
+\end{enumeratei}
+These conditions are invariant under extension of the base field $k$.
+
+\noindent b) Suppose that these conditions hold over a suitable infinite
+extension $k'$ of $k$. Let $a\in\mathfrak h$; then $a$ is regular in
+$\mathfrak g$ if and only if it is regular in $\mathfrak h$ and
+$\ad(a)_{\mathfrak g/\mathfrak h}$ is injective, i.e. if and only if
+$\operatorname{Nil}(a,\mathfrak h)=\operatorname{Nil}(a,\mathfrak g)$
+and this is a Cartan subalgebra of $\mathfrak h$.
+
+\noindent c) Under the conditions of b), let $\mathfrak d$ be a Lie
+subalgebra of $\mathfrak h$; for it to be a Cartan subalgebra of
+$\mathfrak h$, it suffices that it be a Cartan subalgebra of
+$\mathfrak g$ (and we shall see in 5.8 that the condition is also
+necessary if $\mathfrak g$ is the Lie algebra of a smooth algebraic
+group $G$, and $\mathfrak h$ the Lie algebra of a smooth algebraic
+subgroup $H$ of $G$).
+\end{proposition}
+One sees immediately that conditions (ii) and (iii) of a) are
+invariant under extension of the base field $k$ (supposed infinite),
+and that in statements b) and c), one may suppose $k$ infinite,
+which we shall do. If $\mathfrak h$ contains the Cartan subalgebra
+$\mathfrak d=\operatorname{Nil}(a,\mathfrak g)$, then $a$ is a regular
+element of $\mathfrak g$ such that $\ad(a)_{\mathfrak g/\mathfrak h}$
+is injective, hence (i) $\Rightarrow$ (ii). Conversely, if (ii) holds,
+then for a ``sufficiently general'' element $a$ of $\mathfrak h$,
+$a$ simultaneously satisfies the two conditions considered in (ii),
+hence $\operatorname{Nil}(a,\mathfrak g)$ is a Cartan subalgebra of
+$\mathfrak g$ and is contained in $\mathfrak h$, so one has (i).
+Thus (i) and (ii) are equivalent. Suppose they hold, and let $a$ be
+a variable element of $\mathfrak h$; then
+\[
+\begin{aligned}
+ \operatorname{rank}_k\operatorname{Nil}(a,\mathfrak g)
+ &=\operatorname{rank}_k\operatorname{Nil}(a,\mathfrak h)\\
+ &\quad+\operatorname{rank}_k\operatorname{Nil}(\ad(a)_{\mathfrak g/\mathfrak h}),
+\end{aligned}\tag{x}
+\]
+on the other hand, the two terms on the right-hand side are respectively
+$\geq r'=$ the nilpotent rank of $\mathfrak h$, and $\geq0$, the
+equalities moreover being attained\nde{``The equality'' has been
+replaced by ``the equalities''.} for a ``sufficiently general''
+element of $\mathfrak h$. Moreover, one also has
+$\operatorname{rank}_k\operatorname{Nil}(a,\mathfrak g)\geq r=$ the
+nilpotent rank of $\mathfrak g$, equality being attained for a
+``sufficiently general'' element of $\mathfrak h$, and being attained
+if and only if $a$ is regular in $\mathfrak g$. One concludes from
+this that one has $r=r'$, and that $a$ is regular if and only if
+the two terms on the right-hand side of (x) are equal respectively
+to $r'$ and to $0$, i.e. if and only if $a$ is regular in
+$\mathfrak h$ and $\ad(a)_{\mathfrak g/\mathfrak h}$ is injective,
+which proves b); and c) follows trivially by taking an element $a$
+in $\mathfrak d$ regular in $\mathfrak g$, so that
+$\operatorname{Nil}(a,\mathfrak g)=\mathfrak d$. Moreover, the preceding
+result shows that (i) $\Rightarrow$ (iii); finally (iii)
+$\Rightarrow$ (i), for under (iii), a sufficiently general element
+$a$ of $\mathfrak h$ is regular in $\mathfrak h$ and in
+$\mathfrak g$, so $\operatorname{Nil}(a,\mathfrak h)\subset
+\operatorname{Nil}(a,\mathfrak g)$ are respectively Cartan subalgebras
+of $\mathfrak h$ and of $\mathfrak g$, and since they have the same
+rank over $k$, they are identical, which proves (i). This completes
+the proof of 4.8.
+
+\sgasection{5}{Case of the Lie algebra of a smooth algebraic group: density theorem}
+Let $G$ be a smooth algebraic group over the field $k$, and
+$\mathfrak g$ its Lie algebra. Let $\mathfrak h$ be a Lie subalgebra
+of $\mathfrak g$. Let $G$ act on $\mathrm W(\mathfrak g)$ by the
+adjoint representation, and consider the subscheme
+$\mathrm W(\mathfrak h)$. The construction of \No 1 leads us to introduce
+\[
+ N=\Norm_G(\mathfrak h)=\Norm_G(\mathrm W(\mathfrak h)),
+\]
+which is an algebraic subgroup of $G$ (not necessarily smooth),
+\[
+ \mathfrak n=\Lie(N),
+\]
+and the scheme
+\[
+ X=G\times^N\mathrm W(\mathfrak h)
+\]
+the quotient of $X=G\times\mathrm W(\mathfrak h)$ by $N$ acting on
+the right by $(g,x)\cdot n=(gn,\Ad(n^{-1})x)$.
+% typo?: kept as printed: X is used again for G times W(h).
+We consider the canonical morphisms
+\[
+\xymatrix{
+ G\times\mathrm W(\mathfrak h)\ar[d]_q\ar[dr]^\varphi&\\
+ X\ar[r]_\psi&\mathrm W(\mathfrak g).
+}
+\]
+
+\begin{theorem}{5.1}\label{XIII.5.1}
+With the preceding notation, suppose $k$ infinite. Consider the
+following conditions:
+\begin{enumeratei}
+\item $\mathfrak h$ contains a Cartan subalgebra $\mathfrak d$ of
+$\mathfrak g$.
+\item There exists $a\in\mathfrak h$ such that
+$\ad(a)_{\mathfrak g/\mathfrak h}$ is injective.
+\item $\varphi:G\times\mathrm W(\mathfrak h)\to\mathrm W(\mathfrak g)$
+is generically smooth.
+\item The preceding morphism $\varphi$ (or again
+$\psi:X\to\mathrm W(\mathfrak g)$) is dominant, and $\mathfrak h$
+has the same nilpotent rank as $\mathfrak g$.
+\item $\psi:X\to\mathrm W(\mathfrak g)$ is generically smooth and
+$\mathfrak h=\mathfrak n$.
+\item $\psi:X\to\mathrm W(\mathfrak g)$ is dominant, and
+$\mathfrak h=\mathfrak n$.
+\item $\psi:X\to\mathrm W(\mathfrak g)$ is dominant.
+\item $\psi:X\to\mathrm W(\mathfrak g)$ is dominant, and $N$ is smooth.
+\item $\psi:X\to\mathrm W(\mathfrak g)$ is dominant, and
+$\mathfrak h=\mathfrak n$, and $\mathfrak h$ is the Lie algebra of
+a smooth algebraic subgroup $H$ of $G$.
+\item $\psi:X\to\mathrm W(\mathfrak g)$ is generically quasi-finite,
+and $\mathfrak n=\mathfrak h$.
+\item $\psi:X\to\mathrm W(\mathfrak g)$ is generically \'etale,
+and $\mathfrak n=\mathfrak h$.
+\item There exists a smooth algebraic subgroup $H$ of $G$ with
+Lie algebra $\mathfrak h$, and $\mathfrak h$ contains a Cartan
+subalgebra $\mathfrak d$ of $\mathfrak g$.
+\item There exists $a\in\mathfrak h$ such that $N$ and the transporter
+$M_a$ of $a$ into $\mathfrak h$ (cf. \No 1) coincide in a neighborhood
+of $e$, and $\mathfrak n=\mathfrak h$.
+\end{enumeratei}
+One then has the following diagram of implications:
+\[
+\xymatrix@C=1em@R=2.8em{
+ (\mathrm{xi})\ar@{<=>}[rr]&&
+ (\mathrm{xii})\ar@{<=>}[r]\ar@{=>}[d]&
+ (\mathrm{xiii})\ar@{=>}[r]&
+ (\mathrm{viii})\ar@{<=>}[r]&
+ (\mathrm{ix})\ar@{<=>}[r]\ar@{=>}[d]&(\mathrm{x})\\
+ (\mathrm{i})\ar@{<=>}[r]&
+ (\mathrm{ii})\ar@{<=>}[r]&
+ (\mathrm{iii})\ar@{<=>}[r]&
+ (\mathrm{iv})\ar@{=>}[r]&
+ (\mathrm{v})\ar@{=>}[r]&
+ (\mathrm{vi})\ar@{=>}[r]&(\mathrm{vii}).
+}
+\]
+When $k$ has characteristic zero, all the conditions considered are
+equivalent. Finally, one has
+\[
+ (\mathrm{xi})\Leftrightarrow[(\mathrm{i})\text{ and }(\mathrm{viii})]
+ \Leftrightarrow[(\mathrm{v})\text{ and }(\mathrm{viii})].
+\]
+\end{theorem}
+\begin{proof}
+Note first the trivial implications:
+\[
+ (\mathrm{v})\Rightarrow(\mathrm{vi})\Rightarrow(\mathrm{vii}),\qquad
+ (\mathrm{ix})\Rightarrow(\mathrm{vi}),\qquad
+ (\mathrm{xi})\Leftrightarrow[(\mathrm{x})\text{ and }(\mathrm{v})].
+\]
+Let us prove the equivalence of conditions (i) to (iv) and the fact
+that they imply (v). Implication (i) $\Rightarrow$ (ii) is trivial.
+On the other hand, (iii) means, when $k$ is algebraically closed,
+that there exists a point of $G\times\mathrm W(\mathfrak h)$ rational
+over $k$ at which the tangent map to $\varphi$ is surjective, and one
+sees at once that one can take this point of the form $(e,a)$,
+where $a\in\mathfrak h$ (transforming it, if necessary, by an
+operation of $G(k)$). One concludes that if $k$ is infinite (not
+necessarily algebraically closed) this condition (clearly sufficient)
+of generic smoothness is still necessary. Now the tangent map is
+easily calculated: identifying the tangent space to
+$\mathrm W(\mathfrak h)$ at $a$ with $\mathfrak h$, it is the map
+\[
+ (\xi,x)\mto[\xi,a]+x
+\]
+from $\mathfrak g\times\mathfrak h$ to $\mathfrak g$. Saying that it
+is surjective also means that $\ad(a)_{\mathfrak g/\mathfrak h}$ is
+surjective, or, what amounts to the same thing, injective. This
+proves the equivalence of conditions (ii) and (iii). Moreover,
+(ii) clearly implies $\mathfrak h=\mathfrak n$, and (iii) implies
+that $\psi$ is generically smooth, for if $\varphi$ is smooth at a
+point $u$, it follows ($q$ being flat) that $\psi$ is smooth at
+$q(u)$. Thus (ii), (iii) imply (v). Let us prove that they imply
+(i). For this, note that since $\psi$ is dominant, and the set of
+regular points of $\mathfrak g$ is dense open, it follows that
+$\mathfrak h$ contains regular elements of $\mathfrak g$, so that
+a ``sufficiently general'' element $b$ of $\mathfrak h$ is regular
+in $\mathfrak g$ and satisfies $\ad(b)_{\mathfrak g/\mathfrak h}$
+injective, hence $\operatorname{Nil}(b,\mathfrak g)\subset\mathfrak h$,
+so $\mathfrak h$ contains the Cartan subalgebra
+$\mathfrak d=\operatorname{Nil}(b,\mathfrak g)$. Thus (i), (ii), (iii)
+are equivalent; finally (i) $\Leftrightarrow$ (iv), for one has
+already noted that if $\mathfrak h$ contains a Cartan subalgebra,
+it has the same rank as $\mathfrak g$ (4.6), hence (i)
+$\Rightarrow$ (iv); conversely, if (iv) holds, then $\mathfrak h$
+contains a regular element of $\mathfrak g$, and since it has the
+same rank as $\mathfrak g$, it contains a Cartan subalgebra by 4.6.
+
+Let us prove the equivalence of conditions (viii) to (x). Note
+first the following facts:
+\begin{lemma}{5.2}\label{XIII.5.2}
+\noindent a) If $N$ is smooth, then
+\[
+ \dim X\leq\dim G,
+\]
+equality holding if and only if $\mathfrak h=\mathfrak n$.
+
+\noindent b) If $\mathfrak h=\mathfrak n$, then
+\[
+ \dim X\geq\dim G,
+\]
+equality holding if and only if $N$ is smooth.
+\end{lemma}
+These assertions follow at once from the formula
+\[
+ \dim X=\dim G-\dim N+\dim_k\mathfrak h,
+\]
+and from the fact that $\dim N=\dim_k\mathfrak n$ is equivalent to
+$N$ smooth.
+
+This being established, (viii) $\Rightarrow$ (x), for (viii) implies
+$\dim X\geq\dim G$, hence, by 5.2 a), equality of these dimensions
+and $\mathfrak h=\mathfrak n$, hence (x), and one similarly sees
+(x) $\Rightarrow$ (viii) by applying 5.2 b). On the other hand,
+(viii) implies (ix), for it implies $\mathfrak h=\mathfrak n$,
+so $\mathfrak h$ is the Lie algebra of the smooth algebraic subgroup
+$N$ of $G$, and conversely (ix) $\Rightarrow$ (viii), for since $H$
+normalizes its Lie algebra $\mathfrak h$, and it is contained in $N$,
+and since $H$ is smooth and has the same Lie algebra as $N$, it
+follows that $N$ is smooth.
+
+Finally, let us prove the equivalence of conditions (xi), (xii),
+(xiii) and the fact that they imply (iii) (which will finish
+establishing our diagram of implications). One has (xi)
+$\Leftrightarrow$ (xiii), for if $\mathfrak n=\mathfrak h$, then
+by 5.2 b) one has $\dim X\geq\dim G$, hence (xi) is then equivalent
+(taking into account that $\mathrm W(\mathfrak g)$ is normal) to
+the fact that $\psi$ is generically unramified, which is also
+equivalent to (xiii) by (1.1 (ii) $\Leftrightarrow$ (iii)), proceeding
+as above for the proof of (ii) $\Leftrightarrow$ (iii). Since
+(xi) $\Rightarrow$ (x) $\Rightarrow$ (viii) by what we have already
+seen, one sees that (xi) implies that $N$ is smooth, i.e.
+$q:G\times\mathrm W(\mathfrak h)\to X$ is smooth, so the composite
+$\varphi=\psi\circ q$ is generically smooth, i.e. one has (iii).
+Since (iii) $\Rightarrow$ (i), it also follows that (xi)
+$\Rightarrow$ (xii)\nde{For $H=N$ will do.}. Finally (xii)
+$\Rightarrow$ (xi), for one clearly has (xii) $\Rightarrow$ (i),
+so, since one has seen (i) $\Rightarrow$ (iii) $\Rightarrow$ (v),
+one has (xii) $\Rightarrow$ (v); it follows that one also has
+(xii) $\Rightarrow$ (ix), and since one has seen (ix)
+$\Rightarrow$ (x), it follows that (xii) $\Rightarrow$ ((v) and (x)),
+hence (xii) $\Rightarrow$ (xi), since generically \'etale $=$
+generically smooth $+$ generically quasi-finite.
+
+Finally, when $k$ has characteristic $0$, then (vii) $\Rightarrow$
+(viii), for by a theorem of Cartier, $N$ is automatically smooth
+(VI\textsubscript{B} 1.6.1.), and [(viii) and (x)] $\Rightarrow$ (xi),
+since in characteristic zero, for a morphism of integral preschemes,
+generically \'etale $=$ dominant and generically quasi-finite.
+This shows that in this case, all conditions (i) to (xiii) are
+equivalent.
+\end{proof}
+
+% original p. 288
+\begin{corollary}{5.3}\label{XIII.5.3}
+Under the equivalent conditions (viii) to (x), there exists a unique
+smooth connected algebraic subgroup $H$ of $G$ whose Lie algebra is
+$\mathfrak h$, and one has
+\[
+ \Norm_G(H)=\Norm_G(\mathfrak h)=N,\qquad H=N^0.
+\]
+\end{corollary}
+% The proof of Corollary 5.3 starts in en-05.tex.

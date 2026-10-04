@@ -1,0 +1,219 @@
+% Source PDF pp. 31--36. The first sentence of p. 31 is in en-05.
+Similarly, $j(\mathscr A)$ is the morphism of $\OS$-modules $a\otimes_\pi1\mapsto q(a\otimes\cdots\otimes a)$. One therefore obtains the commutative diagram:
+\begin{equation}\tag{$\mathscr A$}
+\xymatrix@C=2em@R=2.5em{\mathscr A\ar[rr]^{\Delta^p(\mathscr A)}\ar[dr]_{a(\mathscr A)}&&\bigotimes_{\OS}^p\mathscr A\ar[rr]^{m^p(\mathscr A)}\ar[dr]^{q(\mathscr A)}&&\mathscr A\\
+&\Sigma^p\mathscr A\ar[ur]^{i(\mathscr A)}\ar[dr]_{r(\mathscr A)}&&S^p(\mathscr A)\ar[ur]_{b(\mathscr A)}&\\
+&&\mathscr A\otimes_\pi\OS\ar[ur]_{j(\mathscr A)}&&.}
+\end{equation}
+The composite $r(\mathscr A)\circ a(\mathscr A)$ is associated to the Verschiebung morphism $\mathrm{Ver}(G/S)$, while $b(\mathscr A)\circ j(\mathscr A)$ is associated to the Frobenius morphism $\mathrm{Fr}(G/S)$.
+
+The commutative diagram $(\mathscr A)$ above is self-dual; let, indeed, $D$ be the functor associating to every $\OS$-module $\mathscr M$ the dual $\OS$-module $\mathscr H\!om_{\OS}(\mathscr M,\OS)$; it is clear that the image of diagram $(\mathscr A)$ under the functor $D$ is none other than diagram $(D\mathscr A)$, the morphisms $Dr(\mathscr A)$, $Da(\mathscr A)$, $Dj(\mathscr A)$, and $Db(\mathscr A)$ identifying respectively with $j(D\mathscr A)$, $b(D\mathscr A)$, $r(D\mathscr A)$, and $a(D\mathscr A)$. According to 3.3.1, one therefore sees that:
+\begin{quote}\emph{In the category of commutative, finite and locally free $S$-groups, Cartier duality interchanges the Frobenius morphism and Verschiebung.}\nde{See also [DG70], \S~IV.3, 4.9.}\end{quote}
+
+\sgasection{5}{Lie $p$-algebras}
+Let us first recall a few results from the S\'eminaire Sophus Lie.\nde{Cf.\ P. Cartier, \textit{Exemples d'hyperalg\`ebres}, S\'em.\ Sophus Lie 1955/56, Exp.\ 3 (accessible on the Numdam site: \url{http://www.numdam.org}).}
+
+\numpara{5.1}
+Let $p$ be a prime number, $R$ a commutative ring of characteristic $p$, and $A$ an associative, but not necessarily commutative, $R$-algebra. If $a$ and $b$ are two elements of $A$, we put $[a,b]=ab-ba$ and $ab=L_a(b)=R_b(a)$. One then has:
+\[
+\begin{aligned}
+(\ad x^p)(y)&=[x^p,y]=(L_x^p-R_x^p)(y)\\
+&=(L_x-R_x)^p(y)=(\ad x)^p(y)
+\end{aligned}
+\]
+whence the \emph{first Jacobson formula}:
+\begin{equation}\tag{i}\ad(x^p)=(\ad x)^p.\end{equation}
+If $a_1,\ldots,a_p$ are $p$ arbitrary elements of $A$, then, denoting by $N$ the symmetrization operator (cf.\ 4.2), one has the equalities:
+\begin{equation}\tag{$*$}
+\begin{aligned}
+N(a_1\otimes\cdots\otimes a_p)&=\sum_\sigma a_{\sigma(1)}\cdots a_{\sigma(p)}\\
+&=\sum_\tau[a_{\tau(1)}[a_{\tau(2)}[\cdots[a_{\tau(p-1)},a_p]\cdots]]]
+\end{aligned}
+\end{equation}
+where $\sigma$ ranges over the permutations of $p$ letters and $\tau$ over those of $(p-1)$ letters. Indeed, the last term is equal to
+\[
+\sum_\tau\sum_{r=0}^{p-1}\sum_{i_1<\cdots<i_r}(-1)^s a_{\tau(i_1)}a_{\tau(i_2)}\cdots a_{\tau(i_r)}a_pa_{\tau(j_s)}\cdots a_{\tau(j_1)}
+\]
+where $\tau$ ranges over the permutations of $p-1$ letters, $i_1,\ldots,i_r$ over the strictly increasing sequences of integers in the interval $[1,p-1]$, and where $j_1,\ldots,j_s$ denotes the strictly increasing sequence whose values are the integers of $[1,p-1]$ different from $i_1,\ldots,i_r$. For a fixed value of $r$, the sum of the terms $(-1)^sa_{\tau(i_1)}\cdots a_{\tau(i_r)}a_pa_{\tau(j_s)}\cdots a_{\tau(j_1)}$ is clearly equal to
+\[
+(-1)^s\binom{p-1}{s}\sum_\rho a_{\rho(1)}\cdots a_{\rho(r)}a_pa_{\rho(r+1)}\cdots a_{\rho(p-1)}
+\]
+where $\rho$ ranges over the permutations of $p-1$ letters. Now $(-1)^s\binom{p-1}{s}=1$ in $\FF_p$, since in $\FF_p[x]$ ($x$ an indeterminate) one has: $(x-1)^p=x^p-1=(x-1)(x^{p-1}+\cdots+1)$, and hence $(x-1)^{p-1}=x^{p-1}+\cdots+1$. This proves $(*)$.
+
+On the other hand, if $x_0$ and $x_1$ are two elements of $A$, one has
+\[
+(x_0+x_1)^p=x_0^p+x_1^p+\sum x_{z(1)}x_{z(2)}\cdots x_{z(p)},
+\]
+where $z$ ranges over the nonconstant maps from $[1,p]$ to $\{0,1\}$. From this one obtains
+\[
+(x_0+x_1)^p=x_0^p+x_1^p+\sum_{0<r<p}\frac1{r!(p-r)!}N(\underbrace{x_0,\ldots,x_0}_r,\underbrace{x_1,\ldots,x_1}_{p-r}).
+\]
+\nde{The following explanation, taken from [DG70], \S~II.7, 3.2, has been inserted.}
+Now, according to $(*)$, one has:
+\[
+\begin{aligned}
+&N(\underbrace{x_0,\ldots,x_0}_r,\underbrace{x_1,\ldots,x_1}_{p-r})\\
+&\qquad=r!(p-1-r)!\sum_t[x_{t(1)}[x_{t(2)}[\cdots[x_{t(p-1)},x_1]\cdots]]]
+\end{aligned}
+\]
+where $t$ ranges over the maps $[1,p-1]\to\{0,1\}$ taking the value $0$ $r$ times. One deduces from this the \emph{second Jacobson formula}:
+\begin{equation}\tag{ii}
+(x_0+x_1)^p=x_0^p+x_1^p-\sum_{0<r<p}\sum_t\frac1r[x_{t(1)}[x_{t(2)}[\cdots[x_{t(p-1)},x_1]\cdots]]]
+\end{equation}
+where $t$ ranges over the maps $[1,p-1]\to\{0,1\}$ taking the value $0$ $r$ times.
+
+\numpara{5.2}
+Now let $\mathfrak g$ be an $R$-Lie algebra. One says that a map $x\mapsto x^{(p)}$ from $\mathfrak g$ to $\mathfrak g$ makes $\mathfrak g$ a \emph{Lie $p$-algebra over $R$} if the following conditions hold:
+\begin{enumerate}[label=\textup{(\arabic*)},start=0]
+\item $(\lambda x)^{(p)}=\lambda^p\cdot x^{(p)}$, for $\lambda\in R$, $x\in\mathfrak g$.
+\end{enumerate}
+\begin{enumeratei}
+\item $\ad x^{(p)}=(\ad x)^p$, for $x\in\mathfrak g$.
+\item
+\[
+(x_0+x_1)^{(p)}=x_0^{(p)}+x_1^{(p)}-\sum_{0<r<p}\sum_t\frac1r[x_{t(1)}[x_{t(2)}[\cdots[x_{t(p-1)},x_1]\cdots]]]
+\]
+where $t$ ranges over the maps $[1,p-1]\to\{0,1\}$ taking the value $0$ $r$ times ($x_0,x_1\in\mathfrak g$).
+\end{enumeratei}
+The map $x\mapsto x^{(p)}$ will then be called the ``symbolic $p$-th power''.
+
+For example, if $A$ is an associative $R$-algebra, we saw in 5.1 that one obtains a Lie $p$-algebra, which will be denoted by $A_{\mathrm{Lie}}$, by taking the $R$-module underlying $A$ and putting, for $x,y\in A$,
+\[
+[x,y]=xy-yx\qquad\text{and}\qquad x^{(p)}=x^p.
+\]
+We shall say that $A_{\mathrm{Lie}}$ is the \emph{Lie $p$-algebra underlying $A$}.
+
+In what follows we shall chiefly consider Lie $p$-subalgebras of $p$-algebras of the form $A_{\mathrm{Lie}}$; here is an example: let $S$ be a scheme of characteristic $p>0$, and $X$ an $S$-scheme. Recall that a derivation of $X$ over $S$ is an endomorphism $D$ of the sheaf of abelian groups $\OX$ such that
+\[
+D(\lambda\cdot s)=\lambda\cdot D(s)\qquad\text{and}\qquad D(st)=(Ds)t+s(Dt)
+\]
+as $\lambda$ and $s,t$ range over sections of $\OS$ and $\OX$ over open subsets such that the formulas make sense. The Leibniz formula
+\[
+D^n(st)=\sum_{i=0}^n\binom ni(D^is)(D^{n-i}t)
+\]
+shows that $D^p$ is again a derivation of $X$ over $S$, taking account of the equality $\binom pi\equiv0\pmod p$ for $i\ne0,p$. It follows that:
+\begin{quote}\emph{The algebra $\operatorname{D\acute er}_{X/S}$ of derivations of $X$ over $S$ is a Lie $p$-subalgebra of the $\Gamma(S,\OS)$-algebra of differential operators of $X$ over $S$.}\end{quote}
+
+\numpara{5.2.1}
+If $\mathfrak g$ and $\mathfrak h$ are two Lie $p$-algebras, a \emph{homomorphism} $h:\mathfrak g\to\mathfrak h$ is an $R$-linear map from $\mathfrak g$ to $\mathfrak h$ such that $h([x,y])=[h(x),h(y)]$ and $h(x^{(p)})=h(x)^{(p)}$ if $x,y\in\mathfrak g$. The composite map of two homomorphisms is again a homomorphism, so that we shall be able to speak of the \emph{category of Lie $p$-algebras over $R$}.
+
+If $(X,\mathscr R)$ is a ringed space, we shall say that an $\mathscr R$-module $\mathfrak g$ is equipped with a \emph{Lie $p$-algebra structure over $\mathscr R$} if, for every open subset $U$, $\Gamma(U,\mathfrak g)$ is equipped with a Lie $p$-algebra structure over $\Gamma(U,\mathscr R)$ and the restrictions are homomorphisms.
+
+\numpara{5.3}
+We are now interested in the functor left adjoint to the functor $A\mapsto A_{\mathrm{Lie}}$ of 5.2. Let $\mathfrak g$ be a Lie $p$-algebra over the ring $R$ of characteristic $p$, $U(\mathfrak g)$ the enveloping algebra of the Lie algebra underlying $\mathfrak g$ (cf.\ [BLie], I \S~2.1), and $i_{\mathfrak g}$ (or simply $i$) the canonical map $\mathfrak g\to U(\mathfrak g)$.
+
+Let $A$ be an associative unital $R$-algebra. One knows that, for every homomorphism of Lie algebras $\phi:\mathfrak g\to A_{\mathrm{Lie}}$, there exists a unique homomorphism of unital $R$-algebras $\psi:U(\mathfrak g)\to A$ such that $\psi\circ i=\phi$. Furthermore, $\phi$ is a homomorphism of Lie $p$-algebras if and only if $\psi$ vanishes on the elements $i(x)^p-i(x^{(p)})$, as $x$ ranges over $\mathfrak g$.
+
+\begin{enoncerm}{Definition}{}
+One denotes by $U_p^R(\mathfrak g)$, or simply $U_p(\mathfrak g)$, the quotient of $U(\mathfrak g)$ by the two-sided ideal generated by the elements $i(x)^p-i(x^{(p)})$, and by $j_{\mathfrak g}$ (or simply $j$) the map $\mathfrak g\to U_p(\mathfrak g)$ which is the composite of $i:\mathfrak g\to U(\mathfrak g)$ and the canonical map $U(\mathfrak g)\to U_p(\mathfrak g)$. One says that $U_p(\mathfrak g)$ is the \emph{restricted enveloping algebra of $\mathfrak g$}.
+\end{enoncerm}
+According to what precedes, one has the
+\begin{enonce}{Proposition}{}
+For every associative unital $R$-algebra and every morphism of Lie $p$-algebras $\phi:\mathfrak g\to A_{\mathrm{Lie}}$, there exists a unique homomorphism of unital algebras $\psi:U_p(\mathfrak g)\to A$ such that $\psi\circ j=\phi$. In other words, the functor $\mathfrak g\mapsto U_p(\mathfrak g)$ is left adjoint to the forgetful functor $A\mapsto A_{\mathrm{Lie}}$.
+\end{enonce}
+% typo?: source does not name A after "R-algebra" in this proposition; retained.
+
+\numpara{5.3.1}
+With the notation of 5.3, now put $\beta(x)=i(x)^p-i(x^{(p)})$. For every element $y$ of $\mathfrak g$, one has, according to 5.1 (i) and 5.2 (i):
+\[
+\begin{aligned}
+\beta(x)i(y)&=i(y)\beta(x)+[\beta(x),i(y)]\\
+&=i(y)\beta(x)+(\ad i(x))^pi(y)-i((\ad x)^py)\\
+&=i(y)\beta(x),
+\end{aligned}
+\]
+so that $\beta(x)$ belongs to the center of $U(\mathfrak g)$; in particular, the left ideal generated by the elements $\beta(x)$ is already two-sided.
+
+On the other hand, it is clear that $\beta(\lambda x)=\lambda^p\beta(x)$, for $\lambda\in R$, and it follows from 5.1 (ii) and 5.2 (ii) that, for $x,y\in\mathfrak g$,
+\[
+\beta(x+y)=\beta(x)+\beta(y).
+\]
+In particular, if $(x_\alpha)$ is a family of generators of the $R$-module $\mathfrak g$, the left ideal generated by the elements $\beta(x)$ is already generated by the $\beta(x_\alpha)$.
+
+\begin{proposition}{5.3.2}\label{VIIA.5.3.2}
+\nde{In this paragraph the order has been modified, stating the result first and then expanding the proof.}
+Let $\mathfrak g$ be an $R$-Lie algebra whose underlying $R$-module is free with basis $(x_\alpha)$. Then the Lie $p$-algebra structures on $\mathfrak g$ correspond bijectively to the families $(y_\alpha)$ of $\mathfrak g$ such that $\ad y_\alpha=(\ad x_\alpha)^p$.
+\end{proposition}
+Indeed, if $\mathfrak g$ is equipped with a Lie $p$-algebra structure $x\mapsto x^{(p)}$, then according to 5.2 (i) and (0), (ii), the $y_\alpha=x_\alpha^{(p)}$ satisfy $\ad y_\alpha=(\ad x_\alpha)^p$ and determine the Lie $p$-algebra structure.
+
+Let us prove the converse. Since $\mathfrak g$ is a free $R$-module, the canonical map $i:\mathfrak g\to U(\mathfrak g)$ is injective, according to the Poincar\'e--Birkhoff--Witt theorem (cf.\ [BLie], I \S~2.7), so one may identify $\mathfrak g$ with a sub-$R$-module of $U(\mathfrak g)$. Suppose that $(y_\alpha)$ is a family of elements of $\mathfrak g$ such that $\ad y_\alpha=(\ad x_\alpha)^p$. Let $\pi$ be the map $r\mapsto r^p$ from $R$ to $R$, and let $\mathfrak g\otimes_\pi R$ be the $R$-Lie algebra obtained by the extension of scalars $\pi:R\to R$.\nde{\ie $xr\otimes_\pi1=x\otimes_\pi r^p$ and $r\cdot(x\otimes_\pi1)=x\otimes_\pi r$, for $x\in\mathfrak g$, $r\in R$.}
+
+There then exists an $R$-linear map $\gamma$ from $\mathfrak g\otimes_\pi R$ to $U(\mathfrak g)$ sending $x_\alpha\otimes_\pi1$ to $x_\alpha^p-y_\alpha$; moreover, since one has, for every $x\in\mathfrak g$,
+\[
+(\ad x_\alpha^p)(x)=(\ad x_\alpha)^p(x)=(\ad y_\alpha)(x),
+\]
+$\gamma$ maps $\mathfrak g\otimes_\pi R$ into the center of $U(\mathfrak g)$. Put, for every $x\in\mathfrak g$:
+\[
+x^{(p)}=x^p-\gamma(x\otimes_\pi1).
+\]
+Then, for every $\alpha$, one has $x_\alpha^{(p)}=y_\alpha$. If $x=\sum\lambda_\alpha x_\alpha$, one deduces from 5.1 (ii) (by induction on the number of indices $\alpha$ such that $\lambda_\alpha\ne0$) that
+\[
+x^p-\sum_\alpha\lambda_\alpha^p x_\alpha^p\in\mathfrak g;
+\]
+denoting this element by $z$, one then has $x^{(p)}=\sum\lambda_\alpha^py_\alpha+z$ and hence $x^{(p)}\in\mathfrak g$.
+
+It is clear that the map $x\mapsto x^{(p)}$ satisfies $(\lambda x)^{(p)}=\lambda^px^{(p)}$. Moreover, since $\gamma(x\otimes_\pi1)$ is central, $\ad x^{(p)}=\ad x^p$ and hence, according to the first Jacobson formula (5.1 (i)), one has
+\[
+\ad x^{(p)}=(\ad x)^p.
+\]
+Finally, according to the second Jacobson formula (5.1 (ii)), the map $x\mapsto x^{(p)}$ satisfies condition (ii) of 5.2. It therefore makes $\mathfrak g$ a Lie $p$-algebra. This proves the proposition.
+
+\begin{proposition}{5.3.3}\label{VIIA.5.3.3}
+Let $\mathfrak g$ be a Lie $p$-algebra over $R$ whose underlying module is free with basis $(x_\alpha)$. Then the map $j:\mathfrak g\to U_p(\mathfrak g)$ is injective and, if one puts $z_\alpha=j(x_\alpha)$, $U_p(\mathfrak g)$ has as basis the monomials
+\[
+\prod_\alpha z^{n_\alpha}\qquad\text{where }0\leq n_\alpha<p,
+\]
+(the $n_\alpha$ are assumed to be zero except for finitely many of them; the basis is assumed totally ordered and the products taken in increasing order).
+\end{proposition}
+% typo?: source z^{n_alpha} has no alpha subscript on z; retained.
+Indeed, let us identify $\mathfrak g$ with a submodule of the enveloping algebra $U(\mathfrak g)$ by means of the canonical map $i$. For every family $n=(n_\alpha)$ of natural integers, zero except for finitely many of them, put
+\[
+|n|=\sum_\alpha n_\alpha\qquad\text{and}\qquad x^n=\prod_\alpha x_\alpha^{n_\alpha}.
+\]
+Writing $n_\alpha=m_\alpha+p\ell_\alpha$, with $0\leq m_\alpha<p$, also put
+\[
+T_n=\prod_\alpha x^{m_\alpha}\beta(x_\alpha)^{\ell_\alpha}
+\]
+where $\beta(x)=x^p-x^{(p)}$ is the map $\mathfrak g\to U(\mathfrak g)$ defined in 5.3.1.
+% typo?: source omits the alpha subscript on x in T_n and the following difference; retained.
+For every $r\in\NN$, denote by $U^r$ the sub-$R$-module of $U(\mathfrak g)$ generated by the $x^n$ such that $|n|\leq r$. Since the graded ring $\bigoplus_r U^r/U^{r-1}$ is commutative (cf.\ [BLie], I \S~2.6), one sees that, for every $n$:
+\[
+T_n-\prod_\alpha x^{n_\alpha}\in U^{|n|-1}.
+\]
+For every $s\in\NN$, the $x^n$ such that $|n|=s$ form, according to the Poincar\'e--Birkhoff--Witt theorem (loc.\ cit., \S~2.7), a basis of $U^s/U^{s-1}$, and therefore the same is true of the $T_n$ such that $|n|=s$.
+
+Thus, as $s=|n|$ varies, the $T_n$ form a basis of $U(\mathfrak g)$. Now the kernel $J$ of the canonical map $U(\mathfrak g)\to U_p(\mathfrak g)$ is the left ideal of $U(\mathfrak g)$ generated by the central elements $\beta(x_\alpha)$ (5.3.1). Consequently, the $T_n$ such that $\ell=(\ell_\alpha)\ne0$ form a basis of $J$, and the $T_n$ such that $n_\alpha<p$ for every $\alpha$ form a basis of $U_p(\mathfrak g)=U(\mathfrak g)/J$.
+
+\numpara{5.3.3 bis}
+Let $\mathfrak g$ be a Lie $p$-algebra over $R$ and $f:R\to R'$ an extension of the base ring. I say that \emph{there exists one and only one Lie $p$-algebra structure on the $R'$-module $R'\otimes_R\mathfrak g$ such that}
+\begin{equation}\tag{$*$}
+[\lambda\otimes x,\mu\otimes y]=\lambda\mu\otimes[x,y]\qquad\text{and}\qquad(\lambda\otimes x)^{(p)}=\lambda^p\otimes x^{(p)}.
+\end{equation}
+It will follow, in particular, that the functor $\mathfrak g\mapsto R'\otimes_R\mathfrak g$ is left adjoint to the functor ``restriction of scalars from $R'$ to $R$''.
+
+The uniqueness of the Lie $p$-algebra structure defined by $(*)$ being clear, let us prove existence. When $\mathfrak g$ is free with basis $(x_\alpha)$, there exists, according to 5.3.2, one and only one Lie $p$-algebra structure on the Lie algebra $R'\otimes_R\mathfrak g$ such that
+\[
+(1\otimes x_\alpha)^{(p)}=1\otimes x_\alpha^{(p)};
+\]
+this structure is the one we seek.
+
+When $\mathfrak g$ is an arbitrary Lie $p$-algebra, there exists a Lie $p$-algebra $L_0$, free (as an $R$-module), and a surjective homomorphism $q_0:L_0\to\mathfrak g$; it suffices, for example, to take for $L_0$ the Lie $p$-algebra $R\otimes_{\FF_p}\mathfrak g$, where $\FF_p$ denotes the prime field of characteristic $p$, and for $q_0$ the homomorphism $\lambda\otimes x\mapsto\lambda x$ ($\mathfrak g$ is free over $\FF_p$!). The kernel of $q_0$ is then a $p$-ideal of $L_0$, that is, an ideal of the Lie algebra $L_0$ stable under the endomorphism $x\mapsto x^{(p)}$; there is therefore also a Lie $p$-algebra $L_1$, free (as an $R$-module), and a homomorphism $q_1:L_1\to L_0$ whose image is $\Ker q_0$, whence the exact sequence:
+\[
+L_1\xrightarrow{q_1}L_0\xrightarrow{q_0}\mathfrak g\longrightarrow0.
+\]
+One deduces from this an exact sequence of $R'$-Lie algebras
+\[
+R'\otimes_R L_1\xrightarrow{R'\otimes_R q_1}R'\otimes_R L_0\xrightarrow{R'\otimes_R q_0}R'\otimes_R\mathfrak g\longrightarrow0.
+\]
+Since $R'\otimes_R q_1$ is manifestly a homomorphism of Lie $p$-algebras, the kernel of $R'\otimes_R q_0$ is a $p$-ideal, so that the symbolic $p$-th power operation of $R'\otimes_R L_0$ induces, by passage to the quotient, a map from $R'\otimes_R\mathfrak g$ to $R'\otimes_R\mathfrak g$ (use formula (ii) of 5.2.); the latter equips $R'\otimes_R\mathfrak g$ with the desired Lie $p$-algebra structure.
+
+\numpara{5.3.4}
+The canonical map $j_{\mathfrak g}:\mathfrak g\to U_p(\mathfrak g)$ induces, for every extension $R\to R'$ of the base ring, a homomorphism
+\[
+R'\otimes_R j_{\mathfrak g}:R'\otimes_R\mathfrak g\longrightarrow R'\otimes_R U_p(\mathfrak g),
+\]
+whence a homomorphism
+\[
+h:U_p(R'\otimes_R\mathfrak g)\longrightarrow R'\otimes_R U_p(\mathfrak g)
+\]
+such that $h\circ j_{R'\otimes\mathfrak g}=R'\otimes_Rj_{\mathfrak g}$. It clearly follows from the universal properties of $R'\otimes_R\mathfrak g$ and of the restricted enveloping algebra that \emph{$h$ is an isomorphism}, which will allow us to identify $U_p(R'\otimes_R\mathfrak g)$ with $R'\otimes_R U_p(\mathfrak g)$.

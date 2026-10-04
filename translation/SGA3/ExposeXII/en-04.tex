@@ -1,0 +1,127 @@
+\begin{proof}
+One trivially has $Z\subset Z'\subset Z''$; it remains to prove that $Z''\subset Z$, which amounts to proving (the hypotheses being stable under base change) that every section $g$ of $G$ over $S$ that acts trivially on $\mathscr T$ is a section of $Z$. Introducing $G'=G/Z$ and using 4.7 b) and c), which imply in particular that the prescheme $\mathscr T'$ of maximal tori of $G'$ is canonically isomorphic to $\mathscr T$, one is reduced to the case where $G=G'$, \ie to the case where the reductive center $Z$ of $G$ is zero. (N.B. Note that by 4.7 c), the unipotent rank of $G'$ is equal to that of $G$, hence is zero since that of $G$ is). Thus in this case one must prove that $g$ is the \emph{identity section} of $G$. The usual reduction procedure reduces us to the case where $S$ is noetherian, and even to the case where $S$ is \emph{artinian local} (since to verify that $g$ is the identity section, it suffices to verify, when $S$ is locally noetherian, that this is so after every base change $S'\to S$, with $S'$ artinian local). Now in this case the kernel $Z''$ of $u$ is representable (VIII~6.2 a) and 6.5 c)) (Note that $Z''$ is representable by XI~6.8). To prove that $Z''$ is reduced to the identity subgroup, it suffices by Nakayama to prove that this is so for its fiber $Z''_0$. This therefore reduces us to the case where $S$ is the spectrum of a field $k$, which one can obviously suppose algebraically closed. Now $Z''$ is contained in the stabilizer of every point of $\mathscr T(k)$, \ie in the normalizer $N(T)$ of every maximal torus $T$ of $G$. Since the reductive rank of $G$ is zero, it follows by XI~5.9 that $T$ is an open subgroup of $N(T)$, hence that the Lie algebra of $N(T)$ is identical to that of $T$. Thus the Lie algebra of $Z''$ is contained in that of $T$. On the other hand, it follows from 4.10 that the intersection of the Lie algebras of the maximal tori $T$ of $G$ is nothing other than the Lie algebra of the reductive center $Z$, hence here zero, since we supposed $Z=0$. Consequently the Lie algebra of $Z''$ is zero, \ie $Z''$ is étale over $k$. Moreover, $Z''$ is obviously invariant in $G$, and since $G$ is connected, it follows easily that $Z''$ is in the center of $G$. It is therefore in $T=\Centr_G(T)$ for every maximal torus $T$, hence in the intersection of the maximal tori, \ie in $Z=0$ by 4.10, which completes the proof.
+% typo?: reductive rank zero, rather than unipotent rank zero, kept as printed.
+\end{proof}
+
+\par\addvspace{1.1\baselineskip}
+\noindent{\large\bfseries 5.\ Application to the scheme of subgroups of multiplicative type{\renewcommand{\thefootnote}{*}\footnote{For a generalization of the results of the present \No to the case where $G$ is not supposed affine over $S$, \cf M.~Raynaud: \textit{Faisceaux amples sur les schémas en groupes et les espaces homogènes}, Chap.~IX.}\addtocounter{footnote}{-1}}}\par
+\addvspace{0.45\baselineskip}
+\addcontentsline{toc}{section}{5. Application to the scheme of subgroups of multiplicative type}
+\begin{theorem}{5.1}\label{XII.5.1}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme smooth and affine over $S$, $M$ the ``scheme of subgroups of multiplicative type of $G$'', representing the functor described explicitly in XI~4.1. For every integer $n>0$, let $T_n$ be the subfunctor of $M$ such that $T_n(S')=$ set of group sub-preschemes $H$ of multiplicative type of $G_{S'}$ such that $n\mathrm{id}_H=0$, so $T_n$ is representable and is affine over $S$ (XI~3.12 a)). Let $u_n:M\to T_n$ be the morphism defined by $u_n(H)={}_nH$ (where ${}_nH=\Ker(n\mathrm{id}_H)$). With this notation, one has the following:
+\begin{enumerate}[label=\alph*)]
+\item Every sub-prescheme $U$ of $M$ of finite type over $S$ is contained in a closed sub-prescheme of finite type over $S$, and every closed sub-prescheme $X$ of $M$ of finite type over $S$ is affine over $S$.
+\item Suppose $S$ quasi-compact, and let $X$ be a closed sub-prescheme of $M$ of finite type over $S$. Then there exists an integer $n>0$ such that for every multiple $m$ of $n$, the induced morphism
+\[
+u_m|_X:X\to T_m
+\]
+is a closed immersion.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+a) To prove the first assertion of a), one will take for $X$ the schematic closure of $U$ (EGA~I~9.5.1 and 9.5.3), which is defined since the immersion $i:U\to M$ is quasi-compact (for $U$ is of finite type over $S$ and $M$ separated over $S$ (4.1)). Thus one must prove that such an $X$ is affine over $S$, which will prove at the same time the second assertion of a). In the preceding form, one sees that the question is local on $S$, which one can therefore suppose affine. Then, since $U$ is of finite type over $S$, it is contained in a quasi-compact open subset of $M$, and this reduces us to the case where $U$ is itself an open subset of finite type over $S$, \ie quasi-compact. (N.B. A closed subscheme of a scheme affine over $S$ is affine over $S$).
+
+It suffices to prove that such a $U$ is contained in a closed sub-prescheme of $M$ that is affine. In this form, the usual reduction procedure reduces us at once to the case where $S$ is noetherian. One proceeds likewise for b), which reduces to the case where $S$ is affine noetherian.
+
+Take up again the projective limit $T$ of the $T_n$ used in the proof of XI~4.1, which is an affine prescheme (but not of finite type) over $S$, and whose local rings are noetherian rings, as was seen at the beginning of the proof of IX~3.7. (N.B. For $t\in T$, $t=(t_n)$, since the transition morphisms $T_m\to T_n$ are smooth and the dimension of the $T_m$ is bounded above, there exists an $n_0$ such that the $T_n\to T_{n_0}$ are étale at $t_n$ for every $n$ a multiple of $n_0$). The proof in \loccit, or XI~3.11, shows that the canonical morphism
+\[
+u:M\to T
+\]
+is an \emph{immersion}, and induces isomorphisms on the local rings (but one should take care that $u$ is not in general an open immersion or a quasi-compact morphism). Let $U$ be a quasi-compact open subset of $M$; we shall prove that its closure in $T$ is contained in $M$, which proves (if $X$ denotes the schematic closure of $U$ in $M$) that $u|_X:X\to T$ is a closed immersion, hence that $X$ is affine, and this will prove a).
+% typo?: reference IX 3.7 kept as printed.
+
+Since $U$ is noetherian, it has only finitely many irreducible components, and every element $t\in T$ in the closure of $U$ is a specialization of an element $x$ of $U$. Since the local ring of $t$ in $T$ is noetherian, so is the local ring $A$ of $t$ in $\overline x$ endowed with the induced reduced structure.
+
+The canonical morphism from the integral noetherian local scheme $S'=\Spec(A)$ to $T$ then sends the closed point of $S'$ to $t$, the generic point to $x\in M$, and under these conditions one must show that $t\in M$. On replacing $A$ by the quotient of a suitable complete local $A$-algebra flat over $A$ (EGA~$0_{\mathrm{III}}$~10.3.1) by a minimal prime ideal, one can suppose that $A$ is complete with algebraically closed residue field (and one could even reduce to the case where it is in addition a discrete valuation ring, thanks to EGA~II~7.1.7). One is thus reduced (making the change of notation: $S'$ denoted by $S$) to the
+\begin{lemma}{5.2}\label{XII.5.2}
+Let $S$ be the spectrum of a complete integral noetherian local ring with algebraically closed residue field, $G$ an $S$-group prescheme smooth and affine over $S$, $(H(n))_{n>0}$ a system of subgroups of multiplicative type of $G$, indexed by the integers $n>0$, $\eta$ the generic point of $S$. Suppose:
+\begin{enumerate}[label=\alph*)]
+\item If $m$ is a multiple of $n$, one has $H(n)={}_nH(m)$.
+\item There exists a subgroup $H_\eta$ of multiplicative type of $G_\eta$ such that one has $H(n)_\eta={}_n(H_\eta)$ for every $n>0$.
+\end{enumerate}
+Under these conditions, there exists a subgroup $H$ of multiplicative type of $G$ such that, for every $n>0$, one has $H(n)={}_nH$.
+% typo: "te que" -> "tel que".
+\end{lemma}
+For every $n$, let $C_n=\Centr_G(H(n))$, which is a closed group sub-prescheme of $G$, smooth over $S$ (XI~5.3). The set of integers $n>0$ being ordered by divisibility, the $C_n$ form a decreasing family of closed sub-preschemes of $G$, and since $G$ is noetherian, this family is stationary. Let $C$ be the common value of the $C_n$ for large $n$. Then $C$ satisfies the same conditions as $G$; in addition the $H(n)$ are in fact subgroups of $C$. Thus, on replacing $G$ by $C$, one can suppose that the $H(n)$ are \emph{central} subgroups of $G$.
+
+Let then $s$ be the closed point of $S$, and $Z_s$ the reductive center of $G_s$ (defined thanks to 4.4). By the definition (4.1), $Z_s$ contains the $H(n)_s$. Since $A$ is complete, $Z_s$ comes from a group sub-prescheme $Z$ of multiplicative type of $G$ (XI~5.8). I say that $Z$ contains the $H(n)$. Indeed, since $H(n)$ is central, hence commutes with $Z$ in $G$, one deduces a group homomorphism $Z\times H(n)\to G$, which, by IX~6.8, admits an image group that is a subgroup $K$ of multiplicative type of $G$ containing $Z$, and everything amounts to proving that $K=Z$, which follows from $K_s=Z_s$ and IX~5.1 bis.
+
+One is thus reduced to proving the analogue of 5.2, but with $G$ replaced by a group $Z$ of multiplicative type and of finite type over $S$ (not necessarily smooth over $S$). Since $A$ is complete with algebraically closed residue field, $Z$ is diagonalizable (X~3.3 and 1.4), hence of the form $D_S(M)$, $M$ a commutative group of finite type. Consequently every subgroup $H$ of multiplicative type of $Z$ is diagonalizable (IX~2.11 (i)), hence of the form $D_S(N)$, where $N$ is a quotient group of $M$ (VIII~3.2). Thus the $H(n)$ correspond to quotient groups $M(n)$ of $M$, and the existence of a subgroup $H$ of multiplicative type of $Z$ such that $H(n)={}_nH$ for every $n$ amounts to that of a quotient group $N$ of $M$ such that $M(n)=N/nN$ for every $n$.
+
+Now this follows at once from the fact that there exists a subgroup $H_\eta$ of $G_\eta$ such that $H(n)_\eta={}_n(H_\eta)$ for every $n$. This completes the proof of 5.2, hence of a).
+
+b) We already know that $u|_X:X\to T$ is a closed immersion. It follows easily that for large $m$, the composite $u_m|_X:X\to T_m$ is also a closed immersion. Since we shall not need this fact later, we dispense with detailing its proof here.
+\end{proof}
+\begin{corollary}{5.3}\label{XII.5.3}
+With the notation of 5.1, let $U$ be a subset both open and closed of $M$, of finite type over $S$. Then $U$ is affine over $S$ for the structure induced by $M$, and if $S$ is quasi-compact, there exists an integer $n>0$ such that for every multiple $m$ of $n$, the induced morphism $u_m|_U:U\to T_m$ is an open and closed immersion (\ie an isomorphism onto an open and closed subset of $T_m$, endowed with the induced structure).
+\end{corollary}
+The first assertion follows from 5.1 a), the second from 5.1 b), taking into account that $u_m:M\to T_m$ is smooth (XI~2.2 bis) and that a smooth, \ie étale, immersion is an open immersion.
+\begin{corollary}{5.4}\label{XII.5.4}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme smooth and affine over $S$, of locally constant reductive rank (1.7 b)), $\mathscr T$ the ``prescheme of maximal tori of $G$'' (1.10). Then $\mathscr T$ is smooth and affine over $S$. If $T$ is a maximal torus of $G$, $N(T)$ its normalizer, then $G/N(T)$ (XI~5.3 bis) is affine over $S$. The same holds for $G/C(T)$ (where $C(T)$ is the centralizer of $T$), provided $W(T)=N(T)/C(T)$ is finite over $S$ (\cf 2.1 b)).
+\end{corollary}
+The second assertion is contained in the first, since by the conjugacy theorem, $G/N(T)$ is isomorphic to $\mathscr T$ (XI~5.5 bis). For the first assertion, one notes that by construction $\mathscr T$ is isomorphic to an open and closed sub-prescheme of $M$ (for one can suppose the reductive rank of $G$ constant and equal to $r$, and then $\mathscr T$ is the sub-prescheme of $M$ corresponding to subtori of relative dimension $r$, \ie the largest sub-prescheme of $M$ over which the ``universal subgroup of multiplicative type'' $H\subset G_M$ is a torus of relative dimension $r$). One can therefore apply 5.3. Finally, for the last assertion, one notes that $G/C(T)$ is finite over $G/N(T)\simeq(G/C(T))/W(T)$, hence is affine since $G/N(T)$ is.
+\begin{corollary}{5.5}\label{XII.5.5}
+Let $G$ be a smooth affine algebraic group over a field $k$. Then the scheme $M$ of subgroups of multiplicative type of $G$ is a direct sum of affine schemes over $S$. For every subgroup $H$ of multiplicative type of $G$, if $C$ and $N$ denote respectively its centralizer and its normalizer, the quotients $G/C$ and $G/N$ are affine.
+% typo?: base S in a statement over k kept as printed.
+\end{corollary}
+Using XI~5.1 bis, one sees that the saturation under $G$ acting on $M$ of every finite closed subset of $M$ is open: indeed, one is reduced to the case where $k$ is algebraically closed, hence to the case of the orbit of a point $x$ rational over $k$, but then by \loccit the morphism $g\mto g\cdot x$ from $G$ to $M$ is smooth, hence open, so its image is open.
+
+Let $U$ be the union of the classes of closed points of $M$ for the equivalence relation defined by the action of $G$. Then $U$ is open and contains every closed point of $M$, hence by the Nullstellensatz is identical to $M$. Thus $M$ is a disjoint union of open subsets, which are therefore necessarily closed, so $M$ is the sum prescheme of preschemes $M_i$, each of which is an orbit under $G$ of a closed point, hence is quasi-compact, hence of finite type. By 5.3 the $M_i$ are therefore affine. If $H$ is a subgroup of multiplicative type of $G$, it corresponds to a point $x$ of $M$ rational over $k$, and $G/N$ is identified with the orbit of $x$ under $G$ (XI~5.5 bis). It is therefore affine by the preceding. Since $C$ is an open subgroup of $N$ (XI~5.9), $G/C$ is therefore finite over $G/N$ (for the latter is isomorphic to $(G/C)/(N/C)$), hence affine since $G/C$ is. This proof shows at the same time:
+% typo?: final G/C instead of G/N kept as printed.
+\begin{corollary}{5.6}\label{XII.5.6}
+Under the conditions of 5.5 for $G$ and $H$, the subscheme $U$ of $M$ ``of subgroups of multiplicative type of $G$ that are locally conjugate to $H$'' is an open and closed sub-prescheme of $G$.
+% typo?: sub-prescheme of G instead of M kept as printed.
+\end{corollary}
+In pictorial terms, every subgroup $H'$ of multiplicative type of $G$ that is a limit of subgroups of $G$ conjugate to $H$ is itself conjugate to $H$.
+\begin{remarks}{5.7}\label{XII.5.7}
+Let $S$ be a prescheme, $G$ an $S$-prescheme smooth and affine over $S$, $H$ an $S$-prescheme of multiplicative type and of finite type; put $M=\uHom_{S\text{-gr}}(H,G)$, which by XI~4.2 is representable and is smooth over $S$ and separated over $S$. One can then prove for $M$ a result entirely analogous to 5.1, either by reducing to 5.1 by a proof analogous to that of XI~4.2, or by proceeding directly by a proof modeled on that of 5.1. One deduces corresponding variants for 5.3, 5.5, 5.6, which the reader will formulate.
+\end{remarks}
+
+\sgasection{6}{Maximal tori and Cartan subgroups of algebraic groups not necessarily affine (algebraically closed base field)}
+\begin{lemma}{6.1}\label{XII.6.1}
+Let $G$ be a connected algebraic group over a field $k$, $Z$ an algebraic subgroup of finite index of its center; then $G/Z$ is affine.
+\end{lemma}
+One can suppose that $Z$ is the center of $G$, for a scheme finite over an affine scheme is affine. Consider the vector spaces
+\[
+P^n=P^n(G)=\OO_{G,e}/\mathfrak m_{G,e}^{n+1}\qquad(n\text{ an integer }\ge0),
+\]
+where $\mathfrak m_{G,e}$ is the maximal ideal; then $G$ acts on the $P^n(G)$ by the adjoint representation, and if $Z_n$ is the kernel of the corresponding homomorphism
+\[
+\operatorname{ad}_n:G\to\GL(P^n),
+\]
+one verifies easily (using the fact that $G$ is connected) that $Z$ is the intersection of the $Z_n$, hence (since $G$ is noetherian) equal to one of the $Z_n$. But $\operatorname{ad}_n$ defines, by passage to the quotient, a monomorphism $G/Z_n\to\GL(P^n)$, which is therefore a closed immersion, hence $G/Z_n$ is affine, and consequently so is $G/Z$.
+\begin{lemma}{6.2}\label{XII.6.2}
+Let $G$ be a smooth algebraic group over the field $k$, $Z$ a central algebraic subgroup, $G'=G/Z$, $u:G\to G'$ the canonical homomorphism, $T$ a subgroup of multiplicative type in $G$, $T'=u(T)$ the image group, $C$ the centralizer of $T$ in $G$, $C'$ that of $T'$ in $G'$. Then one has
+\[
+C'{}^0\subset u(C).
+\]
+\end{lemma}
+One can suppose $k$ algebraically closed. Let
+\[
+C_1=(u^{-1}(C')^0)_{\mathrm{red}};
+\]
+it suffices to prove that one has $C_1\subset C$, for $u(C_1)$ is connected of finite index in $C'$, hence equal set-theoretically to $C'{}^0$, hence equal to $C'{}^0$ since $C'$ and consequently $C'{}^0$ are smooth. Consider the morphism
+\[
+(g,t)\mto gtg^{-1}t^{-1}
+\]
+from $G\times G$ to $G$; it induces a morphism
+\[
+\varphi:C_1\times T\to Z_1,\quad\text{where }Z_1=Z_{\mathrm{red}},
+\]
+for, since the first member is reduced, it suffices to see that for $g\in C_1(k)$, $t\in T(k)$, one has $gtg^{-1}t^{-1}\in Z(k)$, which comes from the fact that $g$ centralizes $T$ modulo $Z$. One sees easily (by calculating on points rational over $k$) that $\varphi(g,t)$ is additive in $g$, and additive in $t$, hence is ``bilinear''; I say that (since $Z_1$ is smooth and $C_1$ connected) this homomorphism is identically zero, which will indeed prove that $C_1\subset C$. Using the density theorem for $T$, one is reduced to the case where $T$ is finite, \ie where there exists an integer $n>0$ such that $n\mathrm{id}_T=0$. Note that $\varphi$ is defined by a group homomorphism
+\[
+C_1\to\uHom_{S\text{-gr}}(T,Z_1),
+\]
+but, since $Z_1$ is commutative and smooth, the second member is representable by an étale algebraic group over $k$, and since $C_1$ is connected, every group homomorphism from $C_1$ to the latter is zero. \hfill Q.E.D.
+% typo?: base S in Hom kept as printed.
+\begin{corollary}{6.3}\label{XII.6.3}
+Under the preceding conditions, suppose $C'$ connected; then one has
+\[
+C'=u(C),\qquad C=u^{-1}(C').
+\]
+\end{corollary}
+Indeed, then $C'=C'{}^0$; on the other hand $C$ obviously contains $Z$, hence is equal to $u^{-1}(u(C))$.
+\begin{lemma}{6.4}\label{XII.6.4}
+Let $G$ be an algebraic group over the field $k$, $Z$ a central algebraic subgroup such that $G/Z=G'$ is a torus. Then $G$ is commutative, and if $k$ is algebraically closed, there exists a torus $T$ in $G$ such that $u(T)=G'$, where $u$ is the canonical homomorphism $G\to G/Z=G'$.
+\end{lemma}
+One can suppose $k$ algebraically closed. Consider again the morphism $G\times G\to G$ defined by $(g,h)\mto ghg^{-1}h^{-1}$; then (since $Z$ is central) this morphism factors through a morphism $G'\times G'\to G$, and, since $G'$ is commutative, the latter takes its values in $Z$, and even in $Z_1=Z_{\mathrm{red}}$, since $G'\times G'$ is reduced. One sees as above that the morphism $\varphi:G'\times G'\to Z_{\mathrm{red}}$ thus obtained is bilinear, hence zero, which proves that $G$ is commutative. To find a torus $T$ of $G$ such that $u(T)=G'$, one can (on replacing $G$ by $G_{\mathrm{red}}^0$) suppose $G$ smooth and connected, and in addition (on replacing $Z$ by $Z_{\mathrm{red}}^0$) that $Z$ is smooth and connected.

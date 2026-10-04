@@ -1,0 +1,136 @@
+Uniqueness follows obviously from this last assertion, which characterizes the maximal torus as the largest subtorus of $G$. From uniqueness it follows that the existence question is local for the faithfully flat quasi-compact topology, which allows us to suppose $G$ diagonalizable, \ie of the form $D_S(M)$, $M$ a commutative group of finite type. Let $M_0$ be the quotient of $M$ by its torsion subgroup; I say that the torus $T=D_S(M_0)$ in $G$ is a maximal torus and a largest subtorus. Indeed, a subtorus $T'$ of $G$ is locally diagonalizable for the fpqc topology, so to prove $T'\subset T$, one can suppose $T'$ diagonalizable, hence of the form $D_S(N)$, where $N$ is a free quotient of $M$ (VIII~1.4 and 3.2 b)), hence $N$ is a quotient of $M_0$, so $T'\subset T$. Since the construction of $T$ as $D_S(M_0)$ is compatible with every extension of the base, this shows at the same time that $T$ is a maximal torus of $G$, and completes the proof. In the case where $G$ is smooth over $S$, one can generalize 1.12:
+\begin{proposition}{1.13}\label{XII.1.13}
+Let $G$ be an $S$-group prescheme of finite presentation over $S$. Suppose that $G$ admits locally for the faithfully flat quasi-compact topology a central maximal torus. Then $G$ admits (globally) a unique maximal torus\nde{Which is central!}, and it is the largest subtorus of $G$.
+\end{proposition}
+Here again, uniqueness is trivial from the last assertion, and makes existence a local question for fpqc, which allows us to suppose that $G$ admits a central maximal torus $T$. Let us show that every torus $R$ of $G$ is contained in $T$.
+
+This follows from the
+\begin{lemma}{1.14}\label{XII.1.14}
+Let $G$ be an $S$-group prescheme of finite presentation over $S$, $T$ a maximal torus of $G$, $R$ a subtorus of $G$, and suppose that $T$ and $R$ commute. Then $R\subset T$.
+\end{lemma}
+Indeed, since $R$ and $T$ commute, the morphism $R\times_S T\to G$ defined by $(r,t)\mto r\cdot t$ is a group homomorphism, so by IX~6.8 it admits an image subgroup $T'$ in $G$, which is a group of multiplicative type quotient of $R\times_S T$, hence a torus, obviously containing $T$. Since $T$ is a maximal torus, one has $T'=T$ (1.4), so $R\subset T$, which proves 1.14, hence 1.13. In particular, using 1.7 b):
+\begin{corollary}{1.15}\label{XII.1.15}
+Let $G$ be a commutative $S$-group prescheme, smooth and affine over $S$, with locally constant reductive rank. Then $G$ admits a unique maximal torus, and the latter contains every subtorus of $G$.
+\end{corollary}
+\begin{corollary}{1.16}\label{XII.1.16}
+Let $G$ be an $S$-group prescheme smooth and affine over $S$. Suppose that for every $s\in S$, denoting by $\overline s$ the spectrum of an algebraic closure $k$ of $\kappa(s)$, the geometric fiber $G_{\overline s}$ is a connected and nilpotent algebraic group (in the sense of BIBLE, \ie the group $G(k)$ of its points with values in $k$ is nilpotent). Suppose in addition the reductive rank of $G$ locally constant. Then $G$ admits a unique maximal torus $T$; in addition $T$ is central and is the largest subtorus of $G$.
+\end{corollary}
+By 1.7 b), $G$ admits locally for fpqc a maximal torus, and by 1.13 one is reduced to proving that a maximal torus of $G$ is central. By IX~5.6 b), one is reduced to the case where $S$ is the spectrum of a field, which one can suppose algebraically closed. Then $T(k)$ is in the center of $G(k)$ by BIBLE~6 th.~2, which implies that $T$ is in the center of $G$, for $\Centr_G(T)$ is a closed subscheme of $G$ (VIII~6.6), containing the points of $G(k)$, hence is identical to $G$ by the Nullstellensatz ($G$ being reduced).
+
+Finally, for later reference, let us point out the following trivial proposition (which we have already used implicitly):
+\begin{proposition}{1.17}\label{XII.1.17}
+Let $G\supset H\supset T$ be group preschemes of finite type over $S$. Equivalent conditions:
+\begin{enumeratei}
+\item $T$ is a maximal torus of $G$.
+\item $T$ is a maximal torus of $H$, and for every $s\in S$, one has equality of the reductive ranks $\rho_r(G_s)=\rho_r(H_s)$.
+\end{enumeratei}
+\end{proposition}
+
+\sgasection{2}{The Weyl group}
+First let $k$ be an algebraically closed field, and let $G$ be an algebraic group over $k$, smooth and affine over $k$. If $T$ is a maximal torus, $C$ its centralizer and $N$ its normalizer, then by XI~5.9 these are smooth closed subgroups of $G$, and $C$ is an open subgroup of $N$, so $W=N/C$ is a finite étale group over $k$, hence determined by the group $W(k)$ of its points with values in $k$, as $W=W(k)_k$ (the constant group defined by the ordinary finite group $W(k)$). The finite group $W(k)$ will be called the \emph{geometric Weyl group} (or simply Weyl group if no confusion is to be feared) \emph{of $G$ relative to $T$}. By Borel's conjugacy theorem, the Weyl groups relative to the various maximal tori are isomorphic to each other, which is why one sometimes speaks of ``the'' Weyl group of $G$, without specifying a maximal torus. Since the formation of $C,N$, and $N/C$ commutes with every extension of the base, one sees that if $k'$ is an algebraically closed extension of $k$, the geometric Weyl group of $G_{k'}$ relative to $T_{k'}$ is canonically isomorphic to that of $G$ relative to $T$; consequently ``the'' geometric Weyl group of $G$ (which is properly speaking an isomorphism class of ordinary finite groups) coincides with that of $G'$.
+
+This allows one, when $G$ is a smooth affine algebraic group over an arbitrary field $k$, to speak of the \emph{geometric Weyl group} of $G$ as the isomorphism class of the geometric Weyl group of $G_{k'}$, where $k'$ is any algebraically closed extension of $k$. When $G$ admits the maximal torus $T$, one can obviously form as above $C=\Centr_G(T)$, $N=\Norm_G(T)$, $W=N/C$, which is a finite étale group over $k$, called the \emph{Weyl group of $G$ relative to $T$}; the geometric Weyl group is then nothing other than the class of the group of points of $W$ with values in any algebraically closed extension $k'$ of $k$. Here, knowledge of the geometric Weyl group $W(k')$ obviously no longer suffices in general to reconstruct the algebraic group $W$: one must know in addition the action on $W(k')$ of the Galois group of the separable algebraic closure of $k$ in $k'$.
+
+When finally $G$ is a group prescheme over an arbitrary base $S$, $G$ smooth and affine over $S$, and if $T$ is a maximal torus of $G$, then XI~5.9 again allows us to form the group
+\[
+W(T)=N(T)/C(T),
+\]
+which is an $S$-group prescheme étale, separated and quasi-finite over $S$. Its geometric fibers (relative to the algebraic closures of the residue fields $\kappa(s)$, $s\in S$) are the geometric Weyl groups of the fibers $G_s$. Consequently XI~5.10 gives us information on the variation of these groups with $s\in S$. We can make this information more precise and generalize it in the following way:
+\begin{theorem}{2.1}\label{XII.2.1}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme smooth and affine over $S$. For every $s\in S$, let $w(s)$ be the geometric Weyl group of $G_s$, which is thus an isomorphism class of finite groups. In the set $E$ of such classes, introduce the following preorder relation: $w\le w'$ if and only if $w$ and $w'$ are represented by finite groups $W$ and $W'$ such that $W$ is isomorphic to a quotient of a subgroup of $W'$. With this convention:
+\begin{enumerate}[label=\alph*)]
+\item The function $s\mto w(s)$ from $S$ to $E$ is lower semicontinuous.
+\item Suppose that the reductive rank of $G$ is locally constant. Then the following conditions are equivalent:
+\begin{enumeratei}
+\item The function $s\mto w(s)$ is locally constant.
+\item[(i bis)] The function $s\mto\operatorname{card}w(s)$ is locally constant.
+\item There exists, locally for the étale topology (or merely for the fpqc topology), a maximal torus $T$ such that $W(T)$ is finite over its base.
+\item[(ii bis)] For every $S'$ over $S$, and every maximal torus $T$ of $G_{S'}$, the associated Weyl group $W(T)$ is finite over $S'$.
+\end{enumeratei}
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+a) Proceeding as in 1.7 a), to prove that for every $s\in S$ there exists an open neighborhood $U$ of $s$ such that $t\in U$ implies $w(t)\ge w(s)$, one is reduced to the case where there exists a torus $R$ in $G$ such that $R_s$ is a maximal torus in $G_s$. Let
+\[
+W(R)=\uNorm_G(R)/\uCentr_G(R)
+\]
+as in XI~5.9; it is a group prescheme étale, separated, quasi-finite over $S$. For every $t\in S$, let $w'(t)\in E$ be its geometric fiber at $t$. Since $R_s$ is a maximal torus in $G_s$, and the formation of $\Norm$, $\Centr$, $\Norm/\Centr$ is compatible with every extension of the base, in particular passage to fibers, one sees that one has
+\[
+w(s)=w'(s);
+\]
+I say in addition that, for $t$ near $s$, one will have the inequalities
+\[
+w(t)\ge w'(t)\quad\text{and}\quad w'(t)\ge w'(s),
+\]
+which will suffice to establish a). These two inequalities are contained in the following two lemmas:
+\begin{lemma}{2.2}\label{XII.2.2}
+Let $S$ be a prescheme, $W$ an $S$-group prescheme that is étale, separated and quasi-finite over $S$. For every $s\in S$, let $f(s)$ be the class of the geometric fiber of $W$ at $s$, which is an element of the ordered set $E$ of isomorphism classes of finite groups introduced in 2.1. Then the function $f:S\to E$ is lower semicontinuous. For it to be constant near $s\in S$, it is necessary and sufficient that the same hold for the function $s\mto\operatorname{card}f(s)$, and for this it is necessary and sufficient that $W$ be finite over $S$ above an open neighborhood $U$ of $s$.
+\end{lemma}
+This result is a refinement, in terms of groups, of that invoked in the proof of XI~5.10; we restrict ourselves to a sketch of the proof (which is of the most standard type). One is reduced as usual to the case of affine noetherian $S$. One sees immediately that the function $f$ is constructible (EGA~$0_{\mathrm{III}}$~9.3.1 and 9.3.2, and the sorites of EGA~IV~9), and by EGA~$0_{\mathrm{III}}$~9.3.4, for semicontinuity one is reduced to proving that if $t$ is a generalization of $s$, one has $f(t)\ge f(s)$. This reduces us, thanks to EGA~II~7.1.7, to the case where $S$ is the spectrum of a discrete valuation ring, which one can suppose complete with algebraically closed residue field. But then, $s$ denoting the closed point of $S$, since $G$ is étale and separated over $S$, it contains a subscheme $G'$ both open and closed, finite over $S$, such that $G'_s=G_s$ (EGA~II~6.2.6), and one sees immediately that $G'$ is here a subgroup of $G$. Moreover, since $G'$ is finite étale over $S=\Spec(V)$, $V$ complete with algebraically closed residue field, it is a constant group, hence of the form $A_S$, where $A=G'(\kappa(s))=G(\kappa(s))$ has class $f(s)$. If $B$ is the geometric fiber of $G$ at the generic point $t$ of $S$, one therefore has a canonical monomorphism $A\to B$, which proves $f(s)\le f(t)$. (N.B. This proof in fact proves semicontinuity for an order relation on $E$ finer than that indicated in 2.1). The fact that $f$ is continuous at $s$ if and only if $s\mto\operatorname{card}f(s)$ is follows from the fact that for $w,w'\in E$, the relations $w\le w'$ and $\operatorname{card}w=\operatorname{card}w'$ imply $w=w'$. The fact that this condition is equivalent to the finiteness of $W$ over a neighborhood of $s$ is then independent of the group structure on $W$, and was pointed out after XI~5.10; moreover its proof is easily given by the preceding arguments, using the valuative criterion of properness EGA~II~7.3.8.
+% typo?: G used instead of W throughout this proof; retained.
+\begin{lemma}{2.3}\label{XII.2.3}
+Let $G$ be a smooth affine algebraic group over an algebraically closed field $k$, $R\subset T$ two subtori, $W(R)$ and $W(T)$ the two finite groups associated as in XI~5.9, quotients of the normalizer by the centralizer. Then $W(R)$ is isomorphic to a quotient of a subgroup of $W(T)$.
+% typo?: T not specified to be maximal in the statement, though used in proof; kept.
+\end{lemma}
+Indeed, consider the diagram
+\[
+\xymatrix{T\ar@{^{(}->}[r]&C(T)\ar@{^{(}->}[r]\ar@{^{(}->}[d]&C(R)\ar@{^{(}->}[d]\\
+&N(T)\cap N(R)\ar@{^{(}->}[r]\ar@{^{(}->}[d]&N(R)\\
+&N(T)&}
+\]
+then $(N(T)\cap N(R))/C(T)$ is a subgroup of $W(T)=N(T)/C(T)$, and one has an obvious homomorphism:
+\[
+(N(T)\cap N(R))/C(T)\to W(R)=N(R)/C(R),
+\]
+and everything amounts to proving that the latter is surjective, hence that for every point $g$ of $N(R)$ with values in $k$, there exists a point $c$ of $C(R)$ with values in $k$ such that $cg$ normalizes $T$, \ie such that
+\[
+\operatorname{int}(c)(\operatorname{int}(g)T)=T.
+\]
+Now for this, it suffices to note that $\operatorname{int}(g)T$ is a torus of $N(R)$, hence of $C(R)$ (which is an open subgroup of it). Then $T$ and $\operatorname{int}(g)T$ are maximal tori of $C(R)$, since they are maximal in $G$, and one concludes by Borel's conjugacy theorem.
+
+This proves 2.3 and thereby 2.1 a).
+
+b) We have already pointed out that (i) and (i bis) are trivially equivalent; they imply (ii bis) by the converse of 2.2 or XI~5.10, as one chooses; (ii bis) $\Rightarrow$ (ii) thanks to 1.7 b), and finally (ii) $\Rightarrow$ (i bis), for one sees as in 1.7 a) that condition (i) is local for fpqc, which allows us to suppose that $G$ admits a maximal torus $T$ such that $W(T)$ is finite over $S$, and one again concludes by XI~5.10. This completes the proof of 2.1.
+\end{proof}
+
+\sgasection{3}{Cartan subgroups}
+\begin{definition}{3.1}\label{XII.3.1}
+Let $G$ be a smooth group prescheme of finite type over the prescheme $S$. One calls a \emph{Cartan subgroup} of $G$ a group sub-prescheme $C$ of $G$, smooth over $S$, such that for every $s\in S$, denoting by $\overline s$ the spectrum of an algebraic closure of $\kappa(s)$, $C_{\overline s}$ is a Cartan subgroup (\cf \No1) of $G_{\overline s}$.
+\end{definition}
+It is immediate that if $C$ is a Cartan subgroup of $G$, then for every $S'$ over $S$, $C_{S'}$ is a Cartan subgroup of $G_{S'}$. If $S$ is the spectrum of an algebraically closed field, one recovers the notion recalled in \No1. Finally, one verifies at once that the fact that a group sub-prescheme $C$ of $G$ is a Cartan subgroup is \emph{of a local nature} for the faithfully flat quasi-compact topology.
+\begin{theorem}{3.2}\label{XII.3.2}
+Let $G$ over $S$ be as in 3.1, and suppose that $G$ is affine over $S$ and of locally constant reductive rank. Then the map
+\[
+T\mto\Centr_G(T)
+\]
+induces a bijection from the set of maximal tori of $G$ to the set of Cartan subgroups{\renewcommand{\thefootnote}{*}\footnote{The proof given here in fact proves 3.2 only for closed Cartan subgroups of $G$. However, 7.1 a) establishes 3.2 in the form stated, and implies that the Cartan subgroups of $G$ are closed.}\addtocounter{footnote}{-1}} of $G$. If $C$ corresponds to $T$, then $T$ is the unique maximal torus of $C$.
+\end{theorem}
+If $T$ is a maximal torus of $G$, the functor $\uCentr_G(T)$ is representable, by XI~5.3 or 6.2, by a closed smooth sub-prescheme of $G$, $C=\Centr_G(T)$, and it follows from the definitions that $C$ is a Cartan subgroup of $G$. In addition, $T$ is obviously a maximal torus of $C$, and being central, is the unique maximal torus of $C$ (1.13). Thus the map $T\mto\Centr_G(T)$ from the set of maximal tori to the set of Cartan subgroups is injective; it remains to prove that it is surjective. Thus let $C$ be a Cartan subgroup of $G$; let us prove that it is of the form $\Centr_G(T)$, for $T$ a maximal torus of $G$. For this it suffices to find a maximal torus $T$ of $C$, for then $T$ will be a maximal torus of $G$ (for, for every $s\in S$, $G_s$ and $C_s$ have the same reductive rank). By IX~5.6 b), $T$ is in the center of $C$, so $C\subset C'=\Centr_G(T)$, and then $C$ is a smooth subgroup of the smooth group $C'$ over $S'$, coinciding with $C'$ fiber by fiber, whence $C=C'$. Now, since $G$ is of locally constant reductive rank, so is $C$, hence $C$ admits a maximal torus \emph{locally} for the étale topology by 1.7 b), and since this torus is central by the preceding argument, it follows by 1.13 that $C$ does indeed admit a maximal torus, which completes the proof.
+% typo?: base S' in the middle of the proof kept as printed.
+\begin{corollary}{3.3}\label{XII.3.3}
+Let $G$ be a group prescheme smooth and affine over $S$ of locally constant reductive rank, let $\mathscr C:\Sch^\circ_{/S}\to\Ens$ be the functor defined by
+\[
+\mathscr C(S')=\text{set of Cartan subgroups of }G_{S'}.
+\]
+Then the functor $\mathscr C$ is isomorphic to the functor $\mathscr T$ of 1.10, hence is representable by the same prescheme smooth, separated and of finite type over $S$.
+\end{corollary}
+\begin{corollary}{3.4}\label{XII.3.4}
+Under the conditions of 3.2, if $C=\Centr_G(T)$, one has
+\[
+\uNorm_G(C)=\uNorm_G(T).
+\]
+\end{corollary}
+\begin{remark}{3.5}\label{XII.3.5}
+When $G$ is not of locally constant reductive rank, it is nevertheless possible that $G$ admits Cartan subgroups (for example if $G$ has connected nilpotent fibers, $G$ is a Cartan subgroup of itself, but is not necessarily of locally constant reductive rank, \cf 1.6). In XV, we develop the theory of Cartan subgroups without supposing $G$ affine over $S$ or of locally constant reductive rank, using the theory of regular elements of the next exposé. See also Nos.~6 and 7 for the elimination of the affine hypothesis.
+\end{remark}
+
+\sgasection{4}{The reductive center}
+\begin{definition}{4.1}\label{XII.4.1}
+Let $S$ be a prescheme, $G$ an $S$-group of finite presentation over $S$ with affine fibers, $Z$ a group sub-prescheme of $G$. One says that $Z$ is a \emph{reductive center} of $G$ if
+\begin{enumeratei}
+\item $Z$ is central, and of multiplicative type, and
+\item for every base change $S'\to S$, and every central homomorphism $u:H\to G_{S'}$, where $H$ is a group of multiplicative type and of finite type over $S$, $u$ factors through $Z_{S'}$.
+\end{enumeratei}
+(For a variant of this notion when the fibers of $G$ are not supposed affine, \cf 8.6).
+% typo?: H over S rather than S' kept as printed.
+\end{definition}

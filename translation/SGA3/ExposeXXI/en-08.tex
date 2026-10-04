@@ -1,0 +1,116 @@
+It remains to prove that ${}^tu(R'^*)\subset R^*$, which follows from the fact that the elements of $M^*$ (resp. $M'^*$) are determined by duality with $R$ or $\Delta$ (resp. $R'$ or $\Delta'$), by 1.2.5.
+\begin{corollary}{7.3.3}\label{XXI.7.3.3}
+A reduced simply connected or adjoint root datum is determined up to isomorphism by its Cartan matrix.
+\end{corollary}
+\begin{corollary}{7.3.4}\label{XXI.7.3.4}
+Let $\mathcal R$ be a reduced simply connected (resp. adjoint) root datum, and $\Delta$ a system of simple roots. The group $E_\Delta(\mathcal R)$ is identified with the group of automorphisms of the set $\Delta$ which leave the Cartan matrix invariant.
+\end{corollary}
+\begin{remark}{7.3.5}\label{XXI.7.3.5}
+The question of the existence of a root datum corresponding to a given Cartan matrix satisfying (i), (ii) and (iv) (for example) is not easily solved directly, without using the classification.
+\end{remark}
+
+\sgasection{7.4}{Dynkin diagrams}
+\begin{definition}{7.4.1}\label{XXI.7.4.1}
+A \emph{Dynkin diagram structure} (the word ``scheme'' has been banished for obvious reasons) on a finite set $\Delta$ is the datum of a set of pairs of distinct elements of $\Delta$, called \emph{linked pairs}, and of a map from $\Delta$ to the set $\{1,2,3\}$. The notion of isomorphism of such structures is obvious.
+\end{definition}
+\begin{definition}{7.4.2}\label{XXI.7.4.2}
+Let $\mathcal R$ be a root datum and $\Delta$ a system of simple roots. One calls the \emph{Dynkin diagram} of $\mathcal R$ relative to $\Delta$ the set $\Delta$, two simple roots being linked if and only if they are not orthogonal, each root being assigned its length.
+\end{definition}
+\begin{proposition}{7.4.3}\label{XXI.7.4.3}
+Dynkin diagram and Cartan matrix determine one another bijectively.
+\end{proposition}
+Indeed, the equivalence
+\[
+\alpha\text{ and }\beta\text{ are not linked}\Longleftrightarrow a_{\alpha,\beta}=0,
+\]
+and the relation
+\[
+\operatorname{long}(\alpha)a_{\alpha,\beta}=\operatorname{long}(\beta)a_{\beta,\alpha}
+\]
+(with $\inf\operatorname{long}(\alpha)=1$ in each connected component of the diagram) determine the $a_{\alpha,\beta}$ in terms of the links and lengths, and conversely (the details of the verification are left to the reader).
+\begin{corollary}{7.4.4}\label{XXI.7.4.4}
+A reduced simply connected or adjoint root datum is determined by its Dynkin diagram.
+\end{corollary}
+\begin{corollary}{7.4.5}\label{XXI.7.4.5}
+Let $\mathcal R$ be a reduced simply connected or adjoint root datum and $\Delta$ a system of simple roots. The group $E_\Delta(\mathcal R)$ is identified with the automorphism group of the Dynkin diagram of $\mathcal R$ relative to $\Delta$, that is, with the group of permutations of $\Delta$ preserving lengths and links.
+\end{corollary}
+\begin{remark}{7.4.6}\label{XXI.7.4.6}
+By the usual method,{\renewcommand{\thefootnote}{($*$)}\footnote{Cf. Bourbaki, \textit{Groupes et alg\`ebres de Lie}, chap.~VI \No~4.2, or S\'eminaire Sophus Lie.}}{\renewcommand{\thefootnote}{(30)}\nde{For a slightly different proof, see also [De80].}} one classifies the various connected Dynkin diagrams and shows that each actually corresponds to a reduced simply connected irreducible root datum. One finds the well-known types:
+\begin{center}
+\begin{tabular}{ll}
+$\xymatrix@C=0.55em{\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}&\cdots&\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}}$&$A_n,\quad n\geq1.$\\[1em]
+$\xymatrix@C=0.55em{\overset{2}{\bullet}\ar@{-}[r]&\overset{2}{\bullet}\ar@{-}[r]&\overset{2}{\bullet}&\cdots&\overset{2}{\bullet}\ar@{-}[r]&\overset{2}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}}$&$B_n,\quad n\geq2.$\\[1em]
+$\xymatrix@C=0.55em{\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}&\cdots&\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}\ar@{-}[r]&\overset{2}{\bullet}}$&$C_n,\quad n\geq3.$\\[1em]
+$\xymatrix@C=0.55em@R=0.4em{&&&&&\overset{1}{\bullet}\\
+\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}&\cdots&\overset{1}{\bullet}\ar@{-}[ur]\ar@{-}[dr]&\\
+&&&&&\overset{1}{\bullet}}$&$D_n,\quad n\geq4.$\\[1em]
+$\xymatrix@C=0.55em@R=0.7em{\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}&\cdots&\overset{1}{\bullet}\ar@{-}[r]\ar@{-}[d]&\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}\\
+&&&\overset{1}{\bullet}&&}$&$E_n,\quad n=6,7,8.$\\[1em]
+$\xymatrix@C=0.55em{\overset{1}{\bullet}\ar@{-}[r]&\overset{1}{\bullet}\ar@{-}[r]&\overset{2}{\bullet}\ar@{-}[r]&\overset{2}{\bullet}}$&$F_4.$\\[1em]
+$\xymatrix@C=0.55em{\overset{1}{\bullet}\ar@{-}[r]&\overset{3}{\bullet}}$&$G_2.$
+\end{tabular}
+\end{center}
+By 7.4.5, one immediately finds the corresponding group $E_\Delta(\mathcal R)$; one has:
+\[
+\begin{aligned}
+E_\Delta(\mathcal R)&=\{e\}&&\text{for }A_1,B_n,C_n,E_7,E_8,F_4,G_2.\\
+E_\Delta(\mathcal R)&=\ZZ/2\ZZ&&\text{for }A_n\ (n\geq2),D_n\ (n\geq5),E_6.\\
+E_\Delta(\mathcal R)&=\mathfrak S_3&&\text{for }D_4.
+\end{aligned}
+\]
+\end{remark}
+
+\sgasection{7.5}{Supplements on $p$-morphisms}
+Let $f:\mathcal R\to\mathcal R'$ be a $p$-morphism (cf. 6.8). It is clear from the definitions that the associated bijection $u:R\isomto R'$ makes the systems of simple roots, systems of positive roots, irreducible components (etc.) of $R$ and $R'$ correspond. Suppose therefore, for simplicity, that $R$ and $R'$ are \emph{irreducible}.
+\begin{lemma}{7.5.1}\label{XXI.7.5.1}
+If $R$ and $R'$ are irreducible, there exists $k\in\QQ$ such that for every $\alpha\in R$
+\[
+k\operatorname{long}(u(\alpha))=q(\alpha)^2\operatorname{long}(\alpha).
+\]
+\end{lemma}
+Indeed, one has $\operatorname{long}(\alpha)(\alpha^*,\beta)=\operatorname{long}(\beta)(\beta^*,\alpha)$ and, similarly,
+\[
+\operatorname{long}(u(\alpha))(u(\alpha)^*,u(\beta))
+=\operatorname{long}(u(\beta))(u(\beta)^*,u(\alpha)).
+\]
+One deduces at once that for nonorthogonal $\alpha$ and $\beta$, one has
+\[
+\frac{q(\alpha)^2\operatorname{long}(\alpha)}{\operatorname{long}(u(\alpha))}
+=\frac{q(\beta)^2\operatorname{long}(\beta)}{\operatorname{long}(u(\beta))},
+\]
+and one then concludes by 7.1.3 (iv).
+\begin{remark}{7.5.2}\label{XXI.7.5.2}
+It follows from 7.2.2 and 6.8.4 that $q(\alpha)$ depends only on $\operatorname{long}(\alpha)$. One then easily sees that if $q(\alpha)$ is not constant, $q(\alpha)\operatorname{long}(\alpha)$ is constant, which shows that then $p=2$ or $3$. A glance at the diagrams of the preceding section shows that there are four possible cases (the same letter denotes a Dynkin diagram and the corresponding reduced simply connected root datum):
+\[
+\begin{array}{lll}
+p=2,&B_n\xrightarrow{f_1}C_n,\quad C_n\xrightarrow{f_2}B_n&\text{(with }C_2=B_2\text{).}\\
+p=2,&F_4\xrightarrow{g}F_4.\\
+p=3,&G_2\xrightarrow{h}G_2.
+\end{array}
+\]
+The reader will note that $f_1\circ f_2$, $f_2\circ f_1$, $g\circ g$ and $h\circ h$ are $p$-morphisms of the form described in 6.8.6.
+\end{remark}
+
+\numpara{7.5.3} One sees at once from the preceding description that if $\mathcal R$ and $\mathcal R'$ are two reduced root data of semisimple rank $\leq2$, and one has a $p$-morphism from $\mathcal R'$ to $\mathcal R$, then $\mathcal R$ and $\mathcal R'$ are of the same type. More precisely, one has the following table.
+
+\emph{Notations:} Let $f:\mathcal R'\to\mathcal R$ be a $p$-morphism. Denote by $q$ (resp. $q_1$) any positive power of $p$. For systems of rank~2, use the notations of section~4 (denote the simple roots by $\alpha,\beta$, with $\ell(\alpha)\leq\ell(\beta)$).
+\[
+\begin{array}{|c|c|c|c|}\hline
+\textbf{Type}&p&\text{values of }f&\text{values of }{}^tf\\\hline
+\text{Trivial}&\text{arbitrary}&-&-\\\hline
+A_1&\text{arbitrary}&f(\alpha')=q\alpha&{}^tf(\alpha^*)=q\alpha'^*\\\hline
+A_1\times A_1&\text{arbitrary}&f(\alpha')=q\alpha&{}^tf(\alpha^*)=q\alpha'^*\\
+&&f(\beta')=q_1\beta&{}^tf(\beta^*)=q_1\beta'^*\\\hline
+A_2,B_2,G_2&\text{arbitrary}&f(\alpha')=q\alpha&{}^tf(\alpha^*)=q\alpha'^*\\
+&&f(\beta')=q\beta&{}^tf(\beta^*)=q\beta'^*\\\hline
+B_2&p=2&f(\alpha')=q\beta&{}^tf(\alpha^*)=2q\beta'^*\\
+&&f(\beta')=2q\alpha&{}^tf(\beta^*)=q\alpha'^*\\\hline
+G_2&p=3&f(\alpha')=q\beta&{}^tf(\alpha^*)=3q\beta'^*\\
+&&f(\beta')=3q\alpha&{}^tf(\beta^*)=q\alpha'^*\\\hline
+\end{array}
+\]
+
+\begin{thebibliography}{BLie}
+\bibitem[BLie]{XXI.BLie} N.~Bourbaki, \textit{Groupes et alg\`ebres de Lie}, Ch.~IV--VI, Hermann, 1968.
+\bibitem[De80]{XXI.De80} M.~Demazure, \textit{A,B,C,D,E,F, etc.}, pp.~221--227 in: S\'eminaire sur les singularit\'es des surfaces (Palaiseau, 1976--1977), eds.~M.~Demazure, H.~C.~Pinkham, B.~Teissier, Lect.~Notes Math.~\textbf{777}, Springer-Verlag, 1980.
+\end{thebibliography}

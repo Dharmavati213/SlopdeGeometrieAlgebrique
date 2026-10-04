@@ -1,0 +1,159 @@
+% Source PDF pp. 6–10; the preceding sentence belongs to en-01.
+In particular, one obtains:
+\begin{enumeratei}
+\item $D(\boldsymbol\mu_n)\simeq\ZZ/n\ZZ$, and consequently $D(\ZZ/n\ZZ)\simeq\boldsymbol\mu_n$.
+\item If $S$ is of characteristic $p>0$, $D(\boldsymbol\alpha_p)\simeq\boldsymbol\alpha_p$.
+\end{enumeratei}
+
+\sgasection{3}{Unipotent groups acting on a vector space}
+Recall (Exp. I, 4.6.1) that if $S$ is a prescheme and $M$ a sheaf of $\OS$-modules, one denotes by $W(M)$ the $S$-functor $(\Sch/S)^\circ\to\Ens$ defined by the condition $W(M)(S')=\Gamma(S',M\otimes\mathcal O_{S'})$ for every $S$-prescheme $S'$.
+
+Moreover, recall that if an $S$-group acts on an $S$-functor $\mathbf V$, one defines the $S$-functor $\mathbf V^G$ of invariants of $\mathbf V$ under $G$ to be the subfunctor of $\mathbf V$ whose set of points with values in an $S'$ over $S$ is the set of $x\in\mathbf V(S')$ such that $x_{S''}$ is fixed under $G(S'')$ for every $S''$ over $S'$.
+
+This being so, one has the following lemma:
+\begin{lemma}{3.1}\label{XVII.3.1}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme, affine over $S$, defined by the quasi-coherent $\OS$-algebra $A$. Suppose that $G$ acts on a quasi-coherent sheaf of $\OS$-modules $M$, and let $\mu:M\to A\otimes_{\OS}M$ be the comorphism defining the action of $G$ on $M$ (Exp. I 4.7.2), and $\nu:M\to A\otimes_{\OS}M$ the morphism $x\mto\mu(x)-1\otimes x$. Then:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $\underline M^G(S)=\Gamma\Ker(\nu)$.
+\item If $S$ is the spectrum of a field $k$, $\underline M^G$ is of the form $W(N)$, where $N$ is a vector subspace of $M$.
+\item If $S$ is the spectrum of a field $k$, every element $x$ of $M$ is contained in a vector subspace of $M$, finite-dimensional over $k$, stable under the action of $G$.
+\end{enumerate}
+\end{lemma}
+\noindent\emph{Proof.} iii) is included as a reminder and has already been proved in Exp. VIB 11.2.
+
+\noindent i) It is clear that $\underline M^G(S)$ contains $\Gamma\Ker(\nu)$. To establish the converse, one can assume that $S$ is affine with ring $B$. Let $m\in\underline M^G(S)$. Then, for every $B$-algebra $B'$ and every element $u$ of $\Hom_{B\text{-alg}}(A,B')$ ($u$ corresponds to an element of $G(\Spec B')$), one has:
+\[
+ (u\otimes1_M)\nu(m)=0\quad\text{in }B'\otimes_B M.
+\]
+Take, in particular, $B'=A$ and $u$ the identity of $A$; one does indeed find $\nu(m)=0$.
+
+\noindent ii) Let $N$ be the kernel of $\nu$, equal to $\underline M^G(k)$ by i). Every $k$-prescheme $S$ is flat over $k$, hence one has:
+\[
+ \underline M^G(S)=\Gamma\Ker(\nu\otimes_k S)=\Gamma(N\otimes_k S).
+\]
+Thus $\underline M^G$ is isomorphic to the functor $W(N)$.
+
+\begin{proposition}{3.2}\label{XVII.3.2}
+Let $G$ be a unipotent algebraic group defined over a field $k$, acting on a $k$-vector space $V$. Then, if $V\neq0$, one has $V^G\neq0$.
+\end{proposition}
+% Source PDF p. 7.
+In view of 3.1 ii) and iii), one can assume that $k$ is algebraically closed and $V$ is finite-dimensional over $k$.
+
+Let $0\to G'\to G\to G''\to0$ be an exact sequence of algebraic groups, and suppose that $G$ acts on a sheaf $\mathbf V$ (for the fpqc topology). One has, of course, $\mathbf V^G\subset\mathbf V^{G'}$, and the quotient presheaf $G/G'$ acts naturally on $\mathbf V^{G'}$. But $\mathbf V^{G'}$ is a sheaf (as the kernel of the well-known pair of morphisms $\mathbf V\rightrightarrows\uHom(G',\mathbf V)$); consequently, the sheaf associated with $G/G'$, that is, $G''$, acts on $\mathbf V^{G'}$, and it is immediate to check that $(\mathbf V^{G'})^{G''}=\mathbf V^G=(\mathbf V^{G'})^{G/G'}$.
+
+This remark allows us, in order to prove 3.2, to reduce to the case where $G$ is an elementary unipotent group (1.7).
+
+\noindent a) $G=\Ga$, $p=0$. It follows from (BIBLE 4 prop. 4) that a morphism from $\Ga$ to the linear group $\GL(V)$ is given by an exponential map:
+\[
+ T\mto\sum_{q=0}^\infty T^q\frac{n^q}{q!},
+\]
+where $n$ is a nilpotent endomorphism of $V$. But then $V\neq0\Rightarrow\Ker n\neq0$, and it is clear that every vector of $V$ annihilated by $n$ is left fixed by $G$.
+
+Suppose now that $p>0$.
+
+\noindent b) $G=\boldsymbol\alpha_p$. Since the group $\boldsymbol\alpha_p$ is a radicial group of height 1 (Exp. VIIA \S~7), giving a representation of $\boldsymbol\alpha_p$ in $V$ amounts to giving a representation of the Lie $p$-algebra $\boldsymbol\alpha_p$ in $\mathfrak{gl}(V)$ (App. II 2.2), that is, here, to giving an element $X$ of $\End(V)$ such that $X^p=0$ (App. II 2.1). But then $V\neq0\Rightarrow W=\Ker(X)\neq0$, and, again by (App. II 2.2), one has $W=V^{\boldsymbol\alpha_p}$.
+
+\noindent c) $G=\ZZ/p\ZZ$. A representation of $G$ in $V$ is equivalent to giving an element $x$ of $\Aut(V)$ such that $x^p=1$, \ie $(1-x)^p=0$, hence $x$ is of the form $1+n$, with $n$ nilpotent, and $W=\Ker n$ is left fixed by $x$.
+
+\noindent d) $G=\Ga$. Let $G_i$, $i\in I$, be the increasing filtered family of étale algebraic subgroups of $\Ga$, hence isomorphic to $(\ZZ/p\ZZ)^{r_i}$ (Prop. 1.5), and let $V_i=V^{G_i}$. Since $V$ is finite-dimensional and nonzero, and $V_i$ is nonzero by c), the decreasing filtered family of the $V_i$ is stationary, and $W=\bigcap_{i\in I}V_i\neq0$. Now one has the lemma:
+\begin{lemma}{3.3}\label{XVII.3.3}
+The family of étale subgroups of $(\Ga)_S$ ($S$ a prescheme of characteristic $p>0$) is schematically dense in $G$ (Exp. IX 4.1).
+\end{lemma}
+% typo?: G in the density assertion is kept as printed.
+By Exp. IX 4.4, it suffices to prove the lemma when $S$ is the spectrum of the prime field $\FF_p$. In this case, it suffices to consider the family of étale subgroups $G_n$ ($n\geq1$) with equation $X^{p^n}-X=0$, which is schematically dense in $(\Ga)_{\FF_p}$, since it contains every closed point.
+
+This being so, let us return to the proof of 3.2 d). If $w\in W$, its stabilizer in $G$ is an algebraic subgroup of $\Ga$ containing $G_i$ for every $i\in I$, hence is equal to $\Ga$ (3.3), and consequently $W=V^G$.
+
+One immediately deduces from 3.2 the
+% Source PDF p. 8; the corollary itself starts here.
+\begin{corollary}{3.4}\label{XVII.3.4}
+Let $k$ be a field, $G$ a unipotent algebraic $k$-group acting on a finite-dimensional $k$-vector space $V$. Then $V$ has a sequence of vector subspaces $V_i$, defined over $k$, stable under $G$,
+\[
+ 0=V_0\subset V_1\subset\cdots\subset V_n=V,
+\]
+such that $G$ acts trivially on $V_{i+1}/V_i$. One can moreover assume that $V_{i+1}/V_i$ is of dimension 1.
+\end{corollary}
+We shall now summarize and complete the already proved properties of unipotent groups in the following theorem:
+\begin{theorem}{3.5}\label{XVII.3.5}
+Let $G$ be an algebraic group defined over a field $k$. The following properties are equivalent:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $G$ is unipotent.
+\item $G$ has a composition series, defined over $k$, whose successive quotients are isomorphic to $\Ga$ if $p=0$ (resp. to $\boldsymbol\alpha_p$, $\Ga$, or a twisted $(\ZZ/p\ZZ)^r$ (1.4) if $p>0$).
+\item As in ii), but one moreover assumes that the composition series is central.
+\item $G$ has a characteristic composition series (Exp. VIB) defined over $k$, whose successive quotients are isomorphic to $(\Ga)^r$ if $p=0$ (resp. to $(\boldsymbol\alpha_p)^r$, a twisted $(\Ga)^s$ or a twisted $(\ZZ/p\ZZ)^t$, taken in this order, if $p>0$).
+\item $G$ is isomorphic to an algebraic subgroup of the group $\operatorname{Trigstr}(n)_k$ of strict upper triangular matrices of the linear group $\GL(n)_k$, for a suitable integer $n\geq0$.
+\item $G$ is affine, and for every linear representation of $G$ in a nonzero finite-dimensional $k$-vector space $V$, one has $V^G\neq0$.
+\end{enumerate}
+\end{theorem}
+\noindent\emph{Proof.}
+
+\noindent i) $\Rightarrow$ vi) by 2.1 and 3.2.
+
+\noindent vi) $\Rightarrow$ v). Since the algebraic group $G$ is affine, $G$ is an algebraic subgroup of a suitable linear group $\GL(V)$ (Exp. VIB 11.3). Apply 3.4 to the representation of $G$ in $V$ defined by this embedding; one finds v).
+
+\noindent v) $\Rightarrow$ iii). One knows that the algebraic group $\operatorname{Trigstr}(n)$ has a central composition series with successive quotients isomorphic to $\Ga$. The composition series induced on $G$ gives property iii), in view of 1.5.
+
+\noindent iii) $\Rightarrow$ ii) $\Rightarrow$ i), and iv) $\Rightarrow$ i), are clear.
+
+We shall prove i) $\Rightarrow$ iv) in a moment, but let us already note a few consequences of what has been proved.
+
+\begin{definition}{3.6}\label{XVII.3.6}
+We shall say that a Lie $p$-algebra $\mathfrak g$ ($p>0$) (\cf Exp. VIIA \S~5) is \emph{unipotent} if the map $x\mto x^{(p)}$ is nilpotent, that is, if for every $x\in\mathfrak g$ there is an integer $n>0$ such that $x^{(p^n)}=0$.
+\end{definition}
+
+\begin{corollary}{3.7}\label{XVII.3.7}
+A unipotent algebraic group $G$ is nilpotent (Exp. VIB \S~8); its Lie algebra $\mathfrak g$ is nilpotent (Bourbaki, \emph{Groupes et algèbres de Lie}, Chap. 1 \S~4) and is isomorphic to a Lie algebra of nilpotent endomorphisms of a finite-dimensional vector space. In characteristic $p>0$, $\mathfrak g$ is a unipotent Lie $p$-algebra (3.6).
+\end{corollary}
+% Source PDF p. 9.
+Since i) $\Rightarrow$ v), it suffices to prove 3.7 when $G=\operatorname{Trigstr}(n)$. We have already used the fact that $\operatorname{Trigstr}(n)$ is a nilpotent algebraic group. Moreover, the Lie algebra $\mathfrak h$ of $\operatorname{Trigstr}(n)$ consists of the upper triangular endomorphisms of $V$ that have zeros on the main diagonal. They are therefore nilpotent, and consequently $\mathfrak h$ is nilpotent (Bourbaki, \loccit, Chap. 1 \S~4, cor. 3). If $p>0$, since the $p$th power in the Lie $p$-algebra $\mathfrak{gl}(V)=\End(V)$ coincides with the $p$th power of endomorphisms of $V$ (Exp. VIIA 6.4.4), one sees that $\mathfrak h$ is unipotent.
+
+\begin{corollary}{3.8}\label{XVII.3.8}
+Let $k$ be an algebraically closed field, and let $G$ be an algebraic group smooth and affine over $k$. Then the following properties are equivalent:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $G$ is unipotent.
+\item $G(k)$ consists of unipotent elements (BIBLE 4 prop. 4 cor. 1), that is, $G$ is unipotent in the sense of BIBLE.
+\end{enumerate}
+\end{corollary}
+\noindent i) $\Rightarrow$ ii), since $G$ is isomorphic to an algebraic subgroup of a group $\operatorname{Trigstr}(n)$ by 3.2 i) $\Rightarrow$ v).
+% typo?: the source cites 3.2 i) => v); kept as printed.
+
+\noindent ii) $\Rightarrow$ i). Let therefore $G$ be a unipotent algebraic group in the sense of BIBLE, and denote its neutral component by $G^0$. Since the maximal tori of $G^0$ consist of unipotent elements, they are trivial, hence $G^0$ is equal to its Cartan subgroups. Consequently, $G^0$ is solvable (BIBLE 6 Th. 6), hence triangularizable (BIBLE 6, Th. 1). Thus $G^0$ is an algebraic subgroup of a group $\operatorname{Trigstr}(n)$, and is therefore unipotent in the sense of this exposé.
+
+The group $(G/G^0)(k)$ is a finite group consisting of unipotent elements; it is therefore zero if $p=0$ and equal to a finite $p$-group if $p>0$ (BIBLE 4 prop. 4). But then $G/G^0$ is unipotent in the sense of this exposé, as a multiple extension of groups isomorphic to $\ZZ/p\ZZ$. This proves that $G$ is unipotent.
+
+\noindent\emph{End of the proof of 3.5.} Let us prove i) $\Rightarrow$ iv).
+
+\noindent a) $p>0$. Consider the increasing sequence of algebraic subgroups of $G$:
+\[
+ \{e\}\subset{}_F(G)\subset{}_{F^2}(G)\subset\cdots
+ \subset{}_{F^n}(G)\subset G^0\subset G.
+\]
+One thus obtains a characteristic composition series of $G$ (App. II 1), and, for $n$ sufficiently large, $G/{}_{F^n}(G)$ is smooth (App. II 3.1), so that the successive quotients are, in order:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item radicial groups of height 1,
+\item a smooth connected group,
+\item an étale group.
+\end{enumerate}
+To prove i) $\Rightarrow$ iv), it therefore suffices for us to prove:
+\begin{lemma}{3.9}\label{XVII.3.9}
+Let $G$ be a unipotent algebraic group defined over a field $k$ of characteristic $p>0$. Then $G$ has a characteristic composition series, defined over $k$, whose successive quotients are isomorphic to:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $(\boldsymbol\alpha_p)^r$ if $G$ is radicial.
+\item a twisted $(\Ga)^r$ if $G$ is smooth and connected.
+% Source PDF p. 10.
+\item a twisted $(\ZZ/p\ZZ)^r$ if $G$ is étale.
+\end{enumerate}
+\end{lemma}
+\noindent\emph{Proof.} i) The group $G$ is radicial. Filtering $G$ by the ${}_{F^n}(G)$, one reduces to the case where $G$ is radicial of height 1. Since $G$ is nilpotent (3.5 i) $\Rightarrow$ iii)), and since the center of an algebraic group is representable (Exp. VIII 6.5 e)), one can consider the ascending central series of $G$, which is obviously characteristic in $G$, reducing us to the case where $G$ is moreover commutative.
+
+Let $\mathfrak g=\Lie(G)$. The $p$th-power morphism $\pi$ is therefore additive in $\mathfrak g$ (Exp. VIIA); we shall reduce to the case where it is zero. For every prescheme $S$ over $k$, put $\mathfrak g_S=\mathfrak g\otimes_k\OS$, and let $\mathfrak h_S$ be the subsheaf of abelian groups of $\mathfrak g_S$ that is the image of $\mathfrak g_S$ under $\pi_S$. Finally, let $\overline{\mathfrak h}_S$ be the subsheaf of $\OS$-modules of $\mathfrak g_S$ generated by $\mathfrak h_S$. It is clear that $\overline{\mathfrak h}_S=\overline{\mathfrak h}_k\otimes_k\OS$, and that $\overline{\mathfrak h}_S$\nde{One has changed $\mathfrak h$ to $\overline{\mathfrak h}$.} is a characteristic Lie $p$-subalgebra of $\mathfrak g_S$ (that is, it is stable under the $S$-functor $\underline{\Aut}_{p\text{-Lie}}(\mathfrak g)$). It then follows from App. II 2.2 that $\overline{\mathfrak h}_k$ is the Lie algebra of an algebraic subgroup $H$ of $G$ characteristic in $G$.
+
+Moreover, in view of 3.7 and Lemma 3.9 bis below, if $G\neq\{e\}$, $H$ is distinct from $G$, since $\overline{\mathfrak h}_k$ is distinct from $\mathfrak g$. Furthermore, if $G/H=G''$, one has $\Lie G''=\mathfrak g/\overline{\mathfrak h}_k$ (App. II 2.2), and consequently the $p$th power is zero in $\Lie G''$. Proceeding by induction on $\dim\Lie G$, one is therefore reduced to the case where $\Lie G$ is a Lie $p$-algebra in which the $p$th power is zero. But then $\Lie G''$ is isomorphic to $\Lie(\boldsymbol\alpha_p)^r$ for a suitable integer $r\geq0$ (App. II 2.1), and consequently (App. II 2.2) $G''$ is isomorphic to $(\boldsymbol\alpha_p)^r$. It remains to prove
+% typo?: the source switches back to G'' in the last two claims; kept as printed.
+\begin{lemma}{3.9 bis}\label{XVII.3.9bis}
+Let $k$ be a field of characteristic $p>0$, $\mathfrak g$ a commutative unipotent Lie $p$-algebra (3.6), finite-dimensional over $k$, and $\mathfrak h$ the Lie $p$-subalgebra of $\mathfrak g$ generated by the image of the $p$th power in $\mathfrak g$. Then, if $\mathfrak g\neq0$, one has $\mathfrak h\neq\mathfrak g$.
+\end{lemma}
+Indeed, since $\mathfrak g$ is commutative, $\mathfrak h$ is simply the $k$-vector subspace of $\mathfrak g$ generated by the $X^{(p)}$ ($X\in\mathfrak g$). If $\mathfrak g\neq0$ and is unipotent, there is $X\in\mathfrak g$, $X\neq0$, such that $X^{(p)}=0$. Let $X_1,\ldots,X_n$ be a basis of a complement in $\mathfrak g$ to the line $kX$. The Lie algebra $\mathfrak h$ is then the $k$-vector subspace of $\mathfrak g$ generated by $X_1^{(p)},\ldots,X_n^{(p)}$, hence is of dimension at most $n=\dim\mathfrak g-1$.
+
+\noindent\emph{Proof of 3.9 ii).} $G$ is smooth and connected. In this case, the descending central series of $G$ is representable by smooth connected characteristic algebraic subgroups $G_i$ (Exp. VIB 8.3 and 7.4), and $G_i=0$ for $i$ sufficiently large, since $G$ is nilpotent (3.5 i) $\Rightarrow$ iii)). It suffices to prove 3.9 for the groups $G_i/G_{i+1}$, reducing us to the case where $G$ is moreover commutative. For every integer $n>0$, let $G_n$ be the algebraic subgroup of $G$ that is the image of $G$ under the morphism of raising to the $p^n$th power. The group $G_n$ is therefore smooth, connected and characteristic, and it follows from Definition 1.1 of unipotent groups that $G_n=0$ for $n$ sufficiently large. Replacing $G$ by $G_n/G_{n+1}$, one can moreover assume that $G$ is annihilated by raising to the $p$th power. But then, by (J.-P. Serre, \emph{Groupes algébriques et corps de classes}, chap. VII, prop. 11), $G$ is a form of $(\Ga)^r$, for a suitable integer $r$.
+% typo: "corps de classeq" -> "corps de classes".

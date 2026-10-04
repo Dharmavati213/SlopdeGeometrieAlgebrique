@@ -1,0 +1,127 @@
+\exposetitle{XII}{Maximal tori, the Weyl group, Cartan subgroups, the reductive center of smooth affine group schemes}
+\label{XII}
+\begin{center}by A.~Grothendieck\end{center}
+{\renewcommand{\thefootnote}{0}\footnotetext{xy version of 2/12/08.}}
+\setcounter{footnote}{0}
+
+Starting with the present exposé, unlike the preceding exposés, we shall use the known results on the structure of smooth algebraic groups over an algebraically closed field $k$, and above all Borel's theory of affine algebraic groups, presented in the Chevalley Seminar 56/57: ``Classification des groupes de Lie algébriques''\nde{This seminar has now been published, in a form revised by P.~Cartier, as volume~3 of the \textit{Oeuvres de Chevalley} (Springer, 2005).}. Following the usage in the theory of algebraic groups, we refer to this Seminar by the abbreviation BIBLE. For the coming exposés, we shall need in particular the results of BIBLE~4, 5, 6, 7 (the numeral after BIBLE refers to the number of the exposé). It seems moreover that scheme theory brings no notable simplification to Borel's theory as presented in BIBLE. This is why it did not seem useful to reproduce it in the present Seminar, our aim here being to deduce, from known results over algebraically closed fields, analogous results valid over any base prescheme. (This will no longer be so for Chevalley's structure theory of semisimple groups, which, it seems, is treated advantageously ab ovo over an arbitrary base prescheme).
+
+In the oral exposés (which we have followed in Nos.~1 to 4), we had restricted ourselves to group preschemes affine over $S$, relying essentially on the representability theorems of Exp.~XI \No4. In the present notes (\cf Nos.~6 to 8), we show briefly how the affine hypotheses can be eliminated by a simpler method not using the most delicate results of Exposé~XI. For other generalizations of the results contained in the present exposé, see also exposés XV and XVI. (It is obvious that the contents of exposés XI, XII, XV, XVI ought to be completely recast).
+
+\sgasection{1}{Maximal tori}
+\numpara{1.0}
+First let $G$ be an algebraic group over an \emph{algebraically closed} field $k$. One calls a \emph{maximal torus} of $G$ an algebraic subgroup $T$ of $G$ that is a torus (which means here, since $k$ is algebraically closed, that it is isomorphic to a group of the form $\Gm^r$), and that is maximal for this property. Note that, since $k$ is perfect, $G_{\mathrm{red}}$ is a subgroup of $G$, smooth over $k$, hence is essentially an algebraic group in the sense of BIBLE. Moreover, every reduced subgroup of $G$ (such as a torus) is automatically a subgroup of $G_{\mathrm{red}}$, so the maximal tori of $G$ coincide with the maximal tori of $G_{\mathrm{red}}$. When $G$ is affine, hence $G_{\mathrm{red}}$ affine, a fundamental theorem of Borel tells us that two maximal tori of $G$ are conjugate by an element of $G(k)=G_{\mathrm{red}}(k)$ (BIBLE~6, th.~4 c)), in particular they have the same dimension. We shall call the common dimension of the maximal tori of $G$ the \emph{reductive rank} of $G$. Note moreover that the restriction $G$ affine is unnecessary, as follows from a known theorem of Chevalley asserting that every smooth connected algebraic group over $k$ is an extension of an abelian variety by an affine group; \cf \No6. In Nos.~1 to 4, we shall most often restrict ourselves to group preschemes affine over the base.
+
+Let $G$ be a smooth algebraic group over $k$, and $T$ a maximal torus of $G$; the centralizer $C(T)$ of $T$ in $G$ will be called the \emph{Cartan subgroup} of $G$ associated to $T$. For us this is a group sub-prescheme defined thanks to VIII~6.7, but one will note that since $G$ is smooth over $k$, so is the Cartan subgroup $C$, by XI~5.3, so in this case $C$ is the unique group sub-prescheme of $G$ smooth over $k$ (\ie an algebraic subgroup of $G$ in the sense of BIBLE) such that $C(k)$ is the subgroup of $G(k)$ centralizing $T(k)$, \ie it is essentially the centralizer in the sense of BIBLE. By the conjugacy theorem already cited, the Cartan subgroups associated to the various maximal tori are conjugate to each other, hence have the same dimension. We shall call their common dimension the \emph{nilpotent rank} of $G$; it is equal to that of $G_{\mathrm{red}}$. Let $\rho_r(G)$ and $\rho_n(G)$ be the reductive and nilpotent ranks of $G$; then one has
+\[
+\rho_r(G)\le\rho_n(G),
+\]
+and the difference
+\[
+\rho_u(G)=\rho_n(G)-\rho_r(G)=\dim C/T
+\]
+could be called, when $G$ is affine, the \emph{unipotent rank} of $G$. When $G$ is smooth, affine and connected, then $C$ is a \emph{nilpotent and connected} algebraic group (BIBLE~6, th.~6 a) and c)), hence (BIBLE~6, th.~2) isomorphic to the product $C_s\times C_u$, where $C_s=T$ is the original maximal torus (which is a fortiori a maximal torus in $C$), and where $C_u$ is a smooth unipotent subgroup, \ie a successive extension of groups isomorphic to $\Ga$ (BIBLE~6, th.~1 cor.~1 and 7, th.~4). One therefore also has, in this case:
+\[
+\rho_u(G)=\dim C_u.
+\]
+\begin{remark}{1.1}\label{XII.1.1}
+In addition to the three notions of rank that we have just specified for an affine algebraic group, there are two others that are useful, namely the \emph{semisimple rank} $\rho_s(G)$, which is by definition the reductive rank of the quotient $G/R$, where $R$ is the radical of $G$, and finally the \emph{infinitesimal rank} $\rho_i(G)$, which is by definition the nilpotent rank of the Lie algebra of $G$ (which will be defined and studied in the following exposé). We shall not use them in the present exposé. Let us only point out the inequalities:
+\[
+\rho_s\le\rho_r\le\rho_n\le\rho_i.
+\]
+\end{remark}
+\begin{lemma}{1.2}\label{XII.1.2}
+Let $G$ be an algebraic group over the algebraically closed field $k$, $T$ an algebraic subgroup of $G$, $k'$ an algebraically closed extension of $k$, $G'$ and $T'$ the groups deduced from $G,T$ by extension of the base. For $T$ to be a maximal torus of $G$, it is necessary and sufficient that $T'$ be a maximal torus of $G'$.
+\end{lemma}
+This is an immediate consequence of the ``finite extension principle'' EGA~IV~9.1.1.
+\begin{definition}{1.3}\label{XII.1.3}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme of finite type, $T$ a group sub-prescheme of $G$. One says that $T$ is a \emph{maximal torus} of $G$ if
+\begin{enumerate}[label=\alph*)]
+\item $T$ is a torus (IX~1.3) and
+\item for every $s\in S$, denoting by $\overline s$ the spectrum of an algebraic closure of $\kappa(s)$, $T_{\overline S}$ is a maximal torus in $G_{\overline s}$.
+\end{enumerate}
+% typo?: capital S in T_{bar S} kept as printed.
+\end{definition}
+\begin{remarks}{1.4}\label{XII.1.4}
+It follows from 1.2 that when $S$ is the spectrum of an algebraically closed field one recovers the usual definition, and that property 1.3 is stable under every base change. Note that by X~8.8, in definition 1.3 one can replace condition a) by the condition:
+
+ a') $T$ is of finite presentation and flat over $S$.
+
+One should take care that a maximal torus in the sense of definition 1.3 is indeed maximal in the set of subtori of $G$ (as follows at once from IX~2.9), but that the converse can be exact, the base $S$ being, say, connected, only if $G$ actually admits a maximal torus in the sense of 1.3, which is not the case in general (even if $S=\Spec(\ZZ)$ and if $G$ is ``semisimple''; see also 1.6). We shall see, however, in XIV that the converse is true when $S$ is artinian, or when $S$ is a local scheme and $G$ is ``reductive'': in this case, every torus of $G$ is contained in a maximal torus.
+\end{remarks}
+\begin{definition}{1.5}\label{XII.1.5}
+Let $G$ be an algebraic group over a field $k$. One calls the \emph{reductive rank} (resp. \emph{nilpotent rank}, resp. \emph{unipotent rank}, etc.) of $G$ the reductive rank (resp.\ $\ldots$) of $G_{\overline k}$, where $\overline k$ is an algebraic closure of $k$.
+\end{definition}
+One will note that, by 1.2 and the commutation of the formation of $\uCentr_G(T)$ with extension of the base, the notions of rank introduced in 1.5 are \emph{invariant under extension of the base field}; on the other hand, for algebraically closed $k$, they coincide with those introduced at the beginning of the present number.
+\begin{remark}{1.6}\label{XII.1.6}
+It is not difficult to construct an affine smooth group scheme $G$ over the spectrum $S$ of a discrete valuation ring, whose generic fiber is isomorphic to $\Gm$, and whose special fiber is isomorphic to $\Ga$. Such a $G$ contains no torus except the trivial torus $T$ (reduced to the identity subgroup), which is obviously not a maximal torus. More precisely, in the special fiber $G_0=\mathbf G_{\mathrm a,k}$, $T_0$ is indeed a maximal torus, but in the generic fiber $G_1=\mathbf G_{\mathrm m,K}$, $T_1$ is no longer a maximal torus ($k$ is the residue field, $K$ the fraction field of the valuation ring considered). One also sees from this example that the reductive rank of $G_s$ ($s\in S$) is not a continuous function of $s$. One nevertheless has the following results:
+\end{remark}
+\begin{theorem}{1.7}\label{XII.1.7}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme affine and smooth over $S$. For every $s\in S$, consider $\rho_r(s)=\rho_r(G_s)$ and $\rho_n(s)=\rho_n(G_s)$, the reductive and nilpotent ranks of $G_s$ (1.5). With this notation, one has the following:
+\begin{enumerate}[label=\alph*)]
+\item The function $\rho_r$ on $S$ is lower semicontinuous, the function $\rho_n$ on $S$ is upper semicontinuous, hence the function $\rho_u=\rho_n-\rho_r$ is upper semicontinuous.
+\item The following conditions (stable under arbitrary base change) are equivalent:
+\begin{enumeratei}
+\item The function $\rho_r$ on $S$ is locally constant.
+\item There exists locally, in the sense of the étale topology, a maximal torus in $G$.
+\item[(ii bis)] There exists locally, in the sense of the faithfully flat quasi-compact topology, a maximal torus in $G$.
+\end{enumeratei}
+\item Let $T_1,T_2$ be two maximal tori in $G$ (which implies that one is under the conditions considered in b)). Then $T_1,T_2$ are locally conjugate in the sense of the étale topology, \ie there exists an étale surjective morphism $S'\to S$ such that the subgroups $(T_1)_{S'}$ and $(T_2)_{S'}$ of $G_{S'}$ are conjugate by a section of $G_{S'}$ over $S'$.
+\item Under the conditions of b), \ie when $\rho_r$ is locally constant, so is $\rho_n$ (hence also $\rho_u=\rho_n-\rho_r$).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+a) Note that for every morphism $S'\to S$, if $G'=G\times_S S'$, the functions $\rho'_r$, etc., on $S'$, defined in terms of $G'$ as $\rho_r$, etc., in terms of $G$, are obtained simply by composing the latter with $S'\to S$. When $S'\to S$ is faithfully flat quasi-compact, it follows that $\rho'$ is continuous, resp. upper semicontinuous, resp. lower semicontinuous, if and only if $\rho$ is, the Zariski topology of $S$ being indeed the quotient of that of $S'$ (SGA~1 VIII~4.3). Consequently, the assertions of a) are local for the faithfully flat quasi-compact topology. Let then $s\in S$; one wants to show that the set $U$ of $t\in S$ such that $\rho_r(t)\ge\rho_r(s)$ (resp. $\rho_n(t)\le\rho_n(s)$) is a neighborhood of $s$. By the finite extension principle, there exists a finite extension $k$ of $\kappa(s)$ such that $G_k$ admits a maximal torus. There then exists an open neighborhood $U$ of $s$, and a finite surjective locally free morphism $S'\to U$, such that the fiber $S'_s$ is $\kappa(s)$-isomorphic to $\Spec(k)$ (\cf EGA~III~10.3.2, where the noetherian hypothesis is manifestly unnecessary). Since $S'\to S$ is an open morphism (SGA~1 IV~6.6), one is reduced to the case where $S'=S$, \ie to the case where there exists a maximal torus $T_s$ in $G_s$. In addition, thanks to XI~5.8 a), on replacing $S$ further by an $S'$ étale over $S$ and endowed with a point $s'$ above $s$, one can suppose that $T_s$ is the fiber at $s$ of a subtorus $T$ of $G$. Then for every $t\in S$, $\rho_r(t)=\rho_r(G_t)\ge\dim T_t=\dim T_s=\rho_r(G_s)=\rho_r(s)$, which proves that $\rho_r$ is lower semicontinuous. On the other hand, by XI~5.3, the functor
+\[
+C=\uCentr_G(T)
+\]
+is representable by $C=\Centr_G(T)$\nde{Modification made to introduce the prescheme $C=\Centr_G(T)$ representing the functor $\uCentr_G(T)$.}, a closed group sub-prescheme of $G$ smooth over $S$. Thus there exists a neighborhood $U$ of $s$ such that $t\in U$ implies $\dim C_t=\dim C_s=\rho_n(s)$. The upper semicontinuity of $\rho_n$ is then a consequence of the relation
+\[
+\rho_n(t)\le\dim C_t\quad\text{for every }t\in S,
+\]
+which is itself contained in the following purely geometric lemma:
+\begin{lemma}{1.8}\label{XII.1.8}
+Let $k$ be a field, $G$ a smooth affine algebraic group over $k$, $T$ a torus in $G$, $C$ its centralizer; then one has
+\[
+\rho_n(G)\le\dim C.
+\]
+\end{lemma}
+Indeed, one can suppose $k$ algebraically closed, so that $T$ is contained in a maximal torus $T'$. Let $C'$ be the centralizer of the latter; then one has $C'\subset C$, hence $\dim C'\le\dim C$. \hfill Q.E.D.
+
+b) If $\rho_r$ is locally constant, then for every torus $T$ in $G$, and every $s\in S$, if $T_s$ is a maximal torus in $G_s$, then there exists an open neighborhood $U$ of $s$ such that $T|_U$ is a maximal torus in $G|_U$. Using now the argument of a), one sees that (i) $\Rightarrow$ (ii bis). On the other hand (ii bis) $\Rightarrow$ (i), for when $G$ admits a maximal torus $T$, then it is obvious that $\rho_r(s)=\dim T_s$ is a locally constant function of $s$, but we pointed out at the beginning of the proof of a) that the question of the continuity of $\rho_r$ was local for the faithfully flat topology. Thus (i) $\Leftrightarrow$ (ii bis), and obviously (ii) $\Rightarrow$ (ii bis); it remains to prove the converse implication (i) $\Rightarrow$ (ii). For this, introduce the functor $F$ of XI~4.1\nde{This is the functor of subgroups of multiplicative type of $G$.}, which is thus a smooth separated prescheme over $S$, and consider the subfunctor $\mathscr T$ of $F$, whose value at an $S'$ over $S$ is the set of maximal tori in $G_{S'}$. Using the preceding remark that, assuming (i), a torus in $G_{S'}$ that is maximal in the fiber of a point $s\in S'$ is maximal over an open neighborhood of $s$, one sees that $\mathscr T$ is representable by an open sub-prescheme of $F$, and consequently is smooth and separated over $S$. Since the structural morphism $\mathscr T\to S$ is obviously surjective, it therefore admits a section locally in the sense of the étale topology by XI~1.10, which proves (i) $\Rightarrow$ (ii).
+
+c) This is an immediate consequence of XI~5.4 bis, taking account of Borel's conjugacy theorem recalled at the beginning of the number.
+
+d) Assuming the remark at the beginning of the proof in a), and taking account of b), one can suppose that there exists a maximal torus $T$ in $G$. If $C$ is its centralizer, then $C$ is representable and is smooth over $S$ by XI~5.3, so the function $s\mto\rho_n(s)=\dim C_s$ is indeed locally constant.
+
+The proof of 1.7 is complete. We shall refer to the conditions considered in 1.7 b) by saying that, in this case, $G$ has \emph{locally constant reductive rank}. Note:
+\end{proof}
+\begin{corollary}{1.9}\label{XII.1.9}
+Let $G$ be as in 1.7, and let $s\in S$ be such that $\rho_u(s)=0$, \ie $\rho_r(s)=\rho_n(s)$ (\ie the Cartan subgroups of $G_{\overline k}$ are tori, where $k$ is an algebraic closure of $\kappa(s)$). Then there exists an open neighborhood $U$ of $s$ on which $\rho_r$ and $\rho_n$ are constant; in particular, for every $t\in U$, the unipotent rank $\rho_u(t)$ of $G_t$ is zero.
+% typo?: G_{bar k}, although k already denotes an algebraic closure, kept as printed.
+\end{corollary}
+Indeed, this follows immediately from 1.7 a) and the inequality $\rho_r(t)\le\rho_n(t)$ for every $t\in S$.
+
+Note also that we proved, at the same time as b), the
+\begin{corollary}{1.10}\label{XII.1.10}
+Let $G$ be as in 1.7, and suppose $G$ of locally constant reductive rank. Consider the functor
+\[
+\mathscr T:\Sch^\circ\to\Ens,
+\]
+such that for every $S'$ over $S$, one has
+\[
+\mathscr T(S')=\text{set of maximal tori of }G_{S'}.
+\]
+Then $\mathscr T$ is representable by a prescheme smooth, separated and of finite type over $S$.
+\end{corollary}
+It remains to verify that $\mathscr T$ is of finite type over $S$. Since the question is local for the faithfully flat quasi-compact topology, one can suppose that $G$ admits a maximal torus $T$. By XI~5.3 bis and the bis version of 5.5, $\uNorm_G(T)$ and $G/\uNorm_G(T)$ are representable by preschemes $\Norm_G(T)$ and $G/\Norm_G(T)$, and $\mathscr T$ is isomorphic to $G/\Norm_G(T)$\nde{Modification made to introduce the preschemes $\Norm_G(T)$ and $G/\Norm_G(T)$.}. Since the morphism $G\to\mathscr T$ defined by $g\mto\operatorname{int}(g)(T)$ is surjective, and $G$ quasi-compact over $S$, so is $\mathscr T$, which completes the proof.
+\begin{remarks}{1.11}\label{XII.1.11}
+a) The prescheme $\mathscr T$ of 1.10 will be called, as is natural, the \emph{prescheme of maximal tori} of $G$. One will see in \No5 that it is in fact \emph{affine} over $S$. One can verify this directly when $G$ is isomorphic to a closed group sub-prescheme of a prescheme of the form $\GL(n)$, using XI~4.6 and observing that, by the argument of the proof of 1.7 b), $\mathscr T$ is identified with a sub-prescheme, both \emph{open and closed}, of the prescheme $F$ representing the subgroups of multiplicative type of $G$.
+
+b) It is possible to give a proof of 1.7, hence of 1.9, not using the delicate results of XI, but only the easy results XI~3.12 and 6.2, working solely with groups of multiplicative type finite over the base (morally, the groups ${}_nT$ where $T$ is a maximal torus), compare \No7. The same remark holds for the proof of 1.10.
+\end{remarks}
+
+We finish this number by giving examples where there exists a unique maximal torus.
+\begin{proposition}{1.12}\label{XII.1.12}
+Let $G$ be an $S$-group prescheme of multiplicative type and of finite type. Then $G$ admits a unique maximal torus, and every torus in $G$ is contained in this maximal torus.
+\end{proposition}

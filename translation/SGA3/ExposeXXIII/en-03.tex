@@ -1,0 +1,424 @@
+% Source PDF pp. 15--20; original pp. 286--296.
+% Continuation of lemma 3.1.1 and enumeratei from en-02.tex.
+\item Let $X_\alpha\in\mathbf W(\goth g^\alpha)^\times(S')$, $X_\beta\in\mathbf W(\goth g^\beta)^\times(S')$, and $w\in\uNorm_G(T)(S')$ be such that $\bar w(\alpha)=\beta$; define $z\in\Gm(S')$ by
+\[
+\Ad(w)X_\alpha=zX_\beta.
+\]
+Then
+\[
+\begin{aligned}
+\operatorname{int}(w)\exp(xX_\alpha)&=\exp(xzX_\beta),\\
+\operatorname{int}(w)\exp(yX_\alpha^{-1})&=\exp(yz^{-1}X_\beta^{-1}),\\
+\operatorname{int}(w)w_\alpha(X_\alpha)&=\beta^*(z)w_\beta(X_\beta).
+\end{aligned}
+\]
+In particular, if $z=\pm1$, one has
+\[
+\operatorname{int}(w)w_\alpha(X_\alpha)=w_\beta(X_\beta)^z.
+\]
+\item If one puts $t_\alpha=\alpha^*(-1)$, $t_\beta=\beta^*(-1)$, one has
+\[
+s_\alpha(t_\beta)=t_\beta t_\alpha^{(\beta^*,\alpha)},\qquad\beta(t_\alpha)=(-1)^{(\alpha^*,\beta)}.
+\]
+\end{enumeratei}
+\end{lemma}
+\begin{proof}
+(i) follows immediately from Exp. XXII, 5.5.2, (ii) from Exp. XX, 3.1 and from (i) applied to $(\beta,\alpha)$, $(\beta,-\alpha)$, $(-\beta,\alpha)$, $(-\beta,-\alpha)$; (iii) is evident from the definitions; for the last assertion of (iii), observe that $\beta^*(-1)=w_\beta(X_\beta)^{-2}$. Finally, (iv) is trivial.
+\end{proof}
+\begin{proposition}{3.1.2}\label{XXIII.3.1.2}\textup{(Groups of type $A_1\times A_1$).}
+Let S be a scheme, G a pinned S-group of type $A_1\times A_1$; write $\Delta=R_+=\{\alpha,\beta\}$.
+\begin{enumeratei}
+\item One has
+\[
+t_{\alpha\beta}=(w_\alpha w_\beta)^2=t_\alpha t_\beta=(w_\beta w_\alpha)^2=t_{\beta\alpha}.
+\]
+\item One has
+\[
+\Ad(w_\alpha)X_\beta=X_\beta,\qquad\Ad(w_\beta)X_\alpha=X_\alpha.
+\]
+\item $U_\alpha$ and $U_\beta$ commute (i.e., U is commutative).
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+Indeed, by assertion (ii) of the lemma, one has
+\[
+w_\alpha w_\beta=w_\beta w_\alpha,
+\]
+whence $(w_\alpha w_\beta)^2=w_\alpha^2w_\beta^2=t_\alpha t_\beta$, which is (i). By assertion (ii) of the lemma, one also has (ii); finally, (iii) is assertion (i) of the lemma.
+\end{proof}
+\numpara{3.1.3}
+Let us make condition (v) of 2.3 explicit here. Using the method explained in 2.6, one obtains the following two groups of conditions, putting $v_\alpha=f_\alpha(u_\alpha)$, for $\alpha\in\Delta$:
+\[
+\text{(A)}\quad\begin{cases}
+h_\alpha v_\beta h_\alpha^{-1}=v_\beta,\\
+h_\beta v_\alpha h_\beta^{-1}=v_\alpha,
+\end{cases}
+\qquad\text{(B)}\quad v_\alpha v_\beta=v_\beta v_\alpha.
+\]
+
+\numpara{3.2}\textbf{Groups of type $A_2$}
+\begin{proposition}{3.2.1}\label{XXIII.3.2.1}
+Let S be a scheme, G a pinned S-group of type $A_2$; write $\Delta=\{\alpha,\beta\}$, $R_+=\{\alpha,\beta,\alpha+\beta\}$.
+\begin{enumeratei}
+\item One has
+\[
+t_{\alpha\beta}=(w_\alpha w_\beta)^3=e=(w_\beta w_\alpha)^3=t_{\beta\alpha}.
+\]
+\item Put $\Ad(w_\beta)X_\alpha=X_{\alpha+\beta}$. Then
+\[
+\begin{gathered}
+\Ad(w_\alpha)X_\beta=-X_{\alpha+\beta},\qquad\Ad(w_\alpha)X_{\alpha+\beta}=X_\beta,\\
+\Ad(w_\beta)X_{\alpha+\beta}=-X_\alpha.
+\end{gathered}
+\]
+\item Put $p_{\alpha+\beta}(x)=\exp(xX_{\alpha+\beta})=\operatorname{int}(w_\beta)p_\alpha(x)$. One has:
+\[
+p_\beta(y)p_\alpha(x)=p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(xy).
+\]
+\end{enumeratei}
+\end{proposition}
+\numpara{3.2.2}
+The proof occupies nos. 3.2.2 to 3.2.7. First, one has $(\beta^*,\alpha)=(\alpha^*,\beta)=-1$, whence $\alpha(t_\beta)=\beta(t_\alpha)=-1$.
+
+Put $\Ad(w_\beta)X_\alpha=X_{\alpha+\beta}$; one immediately has
+\[
+\Ad(w_\beta)X_{\alpha+\beta}=\alpha(t_\beta)X_\alpha=-X_\alpha.
+\]
+Put
+\[
+\Ad(w_\alpha)X_\beta=zX_{\alpha+\beta},\qquad z\in\Gm(S),
+\]
+whence
+\[
+\Ad(w_\alpha)X_{\alpha+\beta}=\beta(t_\alpha)z^{-1}X_\beta=-z^{-1}X_\beta.
+\]
+We know (Exp. XXII, 5.5.2) that there exists a unique section $A\in\Ga(S)$ such that
+\begin{equation}\tag{+}
+p_\beta(y)p_\alpha(x)=p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(Axy).
+\end{equation}
+Thus, to prove (ii) and (iii), the task is to show that $A=-z=1$.
+\numpara{3.2.3}
+Let $\operatorname{int}(w_\beta)$ act on the preceding formula (+); one obtains:
+\begin{equation}\tag{++}
+p_{-\beta}(-y)p_{\alpha+\beta}(x)=p_{\alpha+\beta}(x)p_{-\beta}(-y)p_\alpha(-Axy).
+\end{equation}
+\numpara{3.2.4}
+By definition of $p_{\alpha+\beta}$, one has
+\[
+w_\beta p_\alpha(x)w_\beta^{-1}=p_{\alpha+\beta}(x),
+\]
+which can be written
+\[
+\begin{split}
+p_\beta(1)p_{-\beta}(-1)p_\beta(1)p_\alpha(x)&p_\beta(-1)p_{-\beta}(1)p_\beta(-1)\\
+&=p_{\alpha+\beta}(x).
+\end{split}
+\]
+Since $p_\beta$ and $p_{\alpha+\beta}$ commute, $\alpha+2\beta$ not being a root, this can also be written
+\[
+p_\beta(1)p_\alpha(x)p_\beta(-1)=p_{-\beta}(1)p_{\alpha+\beta}(x)p_{-\beta}(-1).
+\]
+Now using (+) on the left and (++) on the right, one obtains:
+\[
+\begin{split}
+p_\alpha(x)p_\beta(1)p_{\alpha+\beta}(Ax)p_\beta(-1)&\\
+{}=p_{\alpha+\beta}(x)&p_{-\beta}(1)p_\alpha(Ax)p_{-\beta}(-1).
+\end{split}
+\]
+Since $\alpha+2\beta$ (resp. $\alpha-\beta$) is not a root, the left (resp. right) side can be written
+\[
+p_\alpha(x)p_{\alpha+\beta}(Ax)\qquad\text{resp. }p_{\alpha+\beta}(x)p_\alpha(Ax)
+\]
+and the term on the right equals $p_\alpha(Ax)p_{\alpha+\beta}(x)$, since $2\alpha+\beta$ is not a root. Thus
+\[
+p_\alpha(x)p_{\alpha+\beta}(Ax)=p_\alpha(Ax)p_{\alpha+\beta}(x)
+\]
+which gives (by XXII 4.1.3) $A=1$.
+\numpara{3.2.5}
+Now let $\operatorname{int}(w_\alpha)$ act on formula (+); one finds, using the fact that $A=1$,
+\begin{equation}\tag{+++}
+p_{\alpha+\beta}(zy)p_{-\alpha}(-x)=p_{-\alpha}(-x)p_{\alpha+\beta}(zy)p_\beta(-z^{-1}xy).
+\end{equation}
+\numpara{3.2.6}
+Let us now write, as before,
+\[
+w_\alpha p_\beta(y)w_\alpha^{-1}=p_{\alpha+\beta}(zy),
+\]
+whence, since $p_\alpha$ and $p_{\alpha+\beta}$ commute,
+\[
+p_\alpha(1)p_\beta(y)p_\alpha(-1)=p_{-\alpha}(1)p_{\alpha+\beta}(zy)p_{-\alpha}(-1).
+\]
+Now using (+) and (+++), this can also be written
+\[
+p_\beta(y)p_{\alpha+\beta}(-y)=p_{\alpha+\beta}(zy)p_\beta(-z^{-1}y),
+\]
+and since $p_\beta$ and $p_{\alpha+\beta}$ commute, this gives $z=-1$.
+\numpara{3.2.7}
+We have thus proved (ii) and (iii); let us prove (i). One has
+\[
+w_\alpha w_\beta w_\alpha=w_\alpha w_\beta w_\alpha^{-1}w_\alpha^2=w_{\alpha+\beta}^{-1}t_\alpha,
+\]
+whence
+\[
+\begin{aligned}
+w_\beta w_\alpha w_\beta w_\alpha w_\beta
+&=w_\beta w_{\alpha+\beta}^{-1}t_\alpha w_\beta\\
+&=w_\beta w_{\alpha+\beta}^{-1}w_\beta^{-1}\cdot s_\beta(t_\alpha)\cdot t_\beta\\
+&=w_\alpha\cdot t_\alpha t_\beta\cdot t_\beta=w_\alpha t_\alpha=w_\alpha^{-1},
+\end{aligned}
+\]
+which gives
+\[
+(w_\alpha w_\beta)^3=(w_\beta w_\alpha)^3=e,
+\]
+which completes the proof.
+\begin{remark}{3.2.8}\label{XXIII.3.2.8}
+Condition (v) of 2.3 is expressed here as follows (writing $v_\alpha=f_\alpha(u_\alpha)$):
+\[
+\text{(A)}\quad h_\alpha v_\beta^{-1}h_\alpha^{-1}=h_\beta v_\alpha h_\beta^{-1},
+\]
+\[
+\text{(B)}\quad\begin{cases}
+v_\beta v_\alpha=v_\alpha v_\beta\cdot h_\beta v_\alpha h_\beta^{-1},\\
+v_\beta\cdot h_\beta v_\alpha h_\beta^{-1}=h_\beta v_\alpha h_\beta^{-1}\cdot v_\beta,\\
+v_\alpha\cdot h_\beta v_\alpha h_\beta^{-1}=h_\beta v_\alpha h_\beta^{-1}\cdot v_\alpha.
+\end{cases}
+\]
+Putting $v_{\alpha+\beta}=\operatorname{int}(h_\beta)v_\alpha$, the last three conditions can also be written
+\[
+\text{(B)}\quad\begin{cases}
+v_\beta v_\alpha=v_\alpha v_\beta v_{\alpha+\beta},\\
+v_\alpha v_{\alpha+\beta}=v_{\alpha+\beta}v_\alpha,\\
+v_\beta v_{\alpha+\beta}=v_{\alpha+\beta}v_\beta.
+\end{cases}
+\]
+\end{remark}
+
+\numpara{3.3}\textbf{Groups of type $B_2$}
+\begin{proposition}{3.3.1}\label{XXIII.3.3.1}
+Let S be a scheme, G a pinned S-group of type $B_2$; write $\Delta=\{\alpha,\beta\}$, $R_+=\{\alpha,\beta,\alpha+\beta,2\alpha+\beta\}$.
+\begin{enumeratei}
+\item One has
+\[
+t_{\alpha\beta}=(w_\alpha w_\beta)^4=t_\alpha=(w_\beta w_\alpha)^4=t_{\beta\alpha}.
+\]
+\item If one puts
+\[
+\Ad(w_\beta)X_\alpha=X_{\alpha+\beta},\qquad\Ad(w_\alpha)X_\beta=X_{2\alpha+\beta},
+\]
+one has:
+\[
+\begin{aligned}
+\Ad(w_\alpha)X_{\alpha+\beta}&=-X_{\alpha+\beta},\\
+\Ad(w_\alpha)X_{2\alpha+\beta}&=X_\beta,\\
+\Ad(w_\beta)X_{\alpha+\beta}&=-X_\alpha,\\
+\Ad(w_\beta)X_{2\alpha+\beta}&=X_{2\alpha+\beta}.
+\end{aligned}
+\]
+\item Put
+\[
+\begin{aligned}
+p_{\alpha+\beta}(x)&=\exp(xX_{\alpha+\beta})=\operatorname{int}(w_\beta)p_\alpha(x),\\
+p_{2\alpha+\beta}(x)&=\exp(xX_{2\alpha+\beta})=\operatorname{int}(w_\alpha)p_\beta(x).
+\end{aligned}
+\]
+Then:
+\[
+\begin{aligned}
+p_\beta(y)p_\alpha(x)&=p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(xy)p_{2\alpha+\beta}(x^2y),\\
+p_{\alpha+\beta}(y)p_\alpha(x)&=p_\alpha(x)p_{\alpha+\beta}(y)p_{2\alpha+\beta}(2xy).
+\end{aligned}
+\]
+\end{enumeratei}
+\end{proposition}
+\numpara{3.3.2}
+The proof occupies nos. 3.3.2 to 3.3.6. One has $(\beta^*,\alpha)=-1$, $(\alpha^*,\beta)=-2$, whence $\alpha(t_\beta)=-1$, $\beta(t_\alpha)=1$. Observe in passing that $\beta(t_\alpha)=\alpha(t_\alpha)=1$, which shows that $t_\alpha$ is a section of $\Centr(G)$. Put
+\[
+\Ad(w_\beta)X_\alpha=X_{\alpha+\beta},\qquad\Ad(w_\alpha)X_\beta=X_{2\alpha+\beta}.
+\]
+One immediately has
+\[
+\begin{aligned}
+\Ad(w_\beta)X_{\alpha+\beta}&=\alpha(t_\beta)X_\alpha=-X_\alpha,\\
+\Ad(w_\alpha)X_{2\alpha+\beta}&=\beta(t_\alpha)X_\beta=X_\beta.
+\end{aligned}
+\]
+Since $(2\alpha+\beta)+\beta$ and $(2\alpha+\beta)-\beta$ are not roots, one has
+\[
+\Ad(w_\beta)X_{2\alpha+\beta}=X_{2\alpha+\beta}.
+\]
+There exists a scalar $k\in\Gm(S)$ such that
+\[
+\Ad(w_\alpha)X_{\alpha+\beta}=kX_{\alpha+\beta}.
+\]
+On the other hand, by Exp. XXII, 5.5.2, there exist sections $A,B,C\in\Ga(S)$ such that
+\begin{equation}\tag{1}
+p_\beta(y)p_\alpha(x)=p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(Axy)p_{2\alpha+\beta}(Bx^2y),
+\end{equation}
+\begin{equation}\tag{2}
+p_{\alpha+\beta}(y)p_\alpha(x)=p_\alpha(x)p_{\alpha+\beta}(y)p_{2\alpha+\beta}(Cxy).
+\end{equation}
+Thus, in (ii) and (iii), the task is to prove $A=B=1$, $C=2$, $k=-1$.
+\numpara{3.3.3}
+Let $\operatorname{int}(w_\alpha)$ act on formula (2). One finds
+% typo?: first transformation is attributed to (2), kept as printed.
+\begin{equation}\tag{3}
+p_{2\alpha+\beta}(y)p_{-\alpha}(-x)=p_{-\alpha}(-x)p_{2\alpha+\beta}(y)p_{\alpha+\beta}(Akxy)p_\beta(Bx^2y).
+\end{equation}
+Transforming (2) in the same way, one obtains
+\begin{equation}\tag{4}
+p_{\alpha+\beta}(ky)p_{-\alpha}(-x)=p_{-\alpha}(-x)p_{\alpha+\beta}(ky)p_\beta(Cxy).
+\end{equation}
+Transforming (1) by $\operatorname{int}(w_\beta)$, one has
+\begin{equation}\tag{5}
+p_{-\beta}(-y)p_{\alpha+\beta}(x)=p_{\alpha+\beta}(x)p_{-\beta}(-y)p_\alpha(-Axy)p_{2\alpha+\beta}(Bx^2y).
+\end{equation}
+\numpara{3.3.4}
+Let us write
+% typo?: capital X on the left and x on the right, kept as printed.
+\[
+w_\beta p_\alpha(X)w_\beta^{-1}=p_{\alpha+\beta}(x).
+\]
+Since $\alpha+2\beta$ is not a root, this gives
+\[
+p_\beta(1)p_\alpha(x)p_\beta(-1)=p_{-\beta}(1)p_{\alpha+\beta}(x)p_{-\beta}(-1).
+\]
+Using (1) on the left and (5) on the right, one obtains
+\[
+\begin{aligned}
+&p_\alpha(x)p_\beta(1)p_{\alpha+\beta}(Ax)p_{2\alpha+\beta}(Bx^2)p_\beta(-1)\\
+&\qquad=p_{\alpha+\beta}(x)p_{-\beta}(1)p_\alpha(Ax)p_{2\alpha+\beta}(-Bx^2)p_{-\beta}(-1).
+\end{aligned}
+\]
+Since $p_\beta$ commutes with $p_{\alpha+\beta}$ and $p_{2\alpha+\beta}$ on the one hand, and $p_{-\beta}$ commutes with $p_\alpha$ and $p_{2\alpha+\beta}$ on the other hand, this can be written
+\[
+p_\alpha(x)p_{\alpha+\beta}(Ax)p_{2\alpha+\beta}(Bx^2)=p_{\alpha+\beta}(x)p_\alpha(Ax)p_{2\alpha+\beta}(-Bx^2).
+\]
+Transforming the right side by (2), one obtains
+\[
+\begin{aligned}
+&p_\alpha(x)p_{\alpha+\beta}(Ax)p_{2\alpha+\beta}(Bx^2)\\
+&\qquad=p_\alpha(Ax)p_{\alpha+\beta}(x)p_{2\alpha+\beta}((AC-B)x^2),
+\end{aligned}
+\]
+which gives
+\[
+A=1,\qquad C=2B.
+\]
+\numpara{3.3.5}
+Let us now write
+\[
+w_\alpha p_\beta(y)w_\alpha^{-1}=p_{2\alpha+\beta}(y).
+\]
+Since $3\alpha+\beta$ is not a root, this gives
+\[
+p_\alpha(1)p_\beta(y)p_\alpha(-1)=p_{-\alpha}(1)p_{2\alpha+\beta}(y)p_{-\alpha}(-1).
+\]
+Using (1) on the left and (3) on the right, one obtains
+\[
+p_\beta(y)p_{\alpha+\beta}(-Ay)p_{2\alpha+\beta}(By)=p_{2\alpha+\beta}(y)p_{\alpha+\beta}(Aky)p_\beta(By).
+\]
+Since $p_{\alpha+\beta}$, $p_{2\alpha+\beta}$ and $p_\beta$ commute, this immediately gives
+\[
+B=1,\qquad -A=Ak,
+\]
+whence finally
+\[
+A=1,\qquad B=1,\qquad C=2,\qquad k=-1.
+\]
+\numpara{3.3.6}
+We have thus proved (ii) and (iii). Let us prove (i). Taking into account the equality $s_\beta(t_\alpha)=t_\alpha t_\beta^{(\alpha^*,\beta)}=t_\alpha$ (since $(\alpha^*,\beta)=2$), one successively has:
+% typo?: pairing printed 2 here, whereas 3.3.2 prints -2; retained.
+\[
+w_\alpha w_\beta w_\alpha=w_\alpha w_\beta w_\alpha^{-1}t_\alpha=w_{2\alpha+\beta}t_\alpha,
+\]
+\[
+w_\beta w_\alpha w_\beta w_\alpha w_\beta
+=w_\beta w_{2\alpha+\beta}w_\beta^{-1}\cdot s_\beta(t_\alpha)\cdot t_\beta
+=w_{2\alpha+\beta}t_\alpha t_\beta,
+\]
+\[
+\begin{aligned}
+w_\alpha w_\beta w_\alpha w_\beta w_\alpha w_\beta w_\alpha
+&=w_\alpha w_{2\alpha+\beta}w_\alpha^{-1}\cdot s_\alpha(t_\alpha t_\beta)\cdot t_\alpha\\
+&=w_\beta\cdot t_\alpha\cdot t_\beta t_\alpha\cdot t_\alpha=w_\beta^{-1}t_\alpha,
+\end{aligned}
+\]
+whence
+\[
+(w_\beta w_\alpha)^4=t_\alpha,
+\]
+and
+\[
+(w_\alpha w_\beta)^4=s_\beta(t_\alpha)=t_\alpha,
+\]
+which completes the proof.
+\begin{remark}{3.3.7}\label{XXIII.3.3.7}
+Condition (v) of 2.3 is expressed here in the following way, putting $v_{\alpha+\beta}=\operatorname{int}(h_\beta)v_\alpha$ and $v_{2\alpha+\beta}=\operatorname{int}(h_\alpha)v_\beta$:
+\[
+\text{(A)}\quad\begin{cases}
+\operatorname{int}(h_\alpha h_\beta h_\alpha)v_\beta=v_\beta,\\
+\operatorname{int}(h_\beta h_\alpha h_\beta)v_\alpha=v_\alpha,
+\end{cases}
+\]
+\[
+\text{(B)}\quad\begin{cases}
+v_\beta v_\alpha=v_\alpha v_\beta v_{\alpha+\beta}v_{2\alpha+\beta},\\
+v_{\alpha+\beta}v_\alpha=v_\alpha v_{\alpha+\beta}v_{2\alpha+\beta}^2,\\
+v_{\alpha+\beta}v_\beta=v_\beta v_{\alpha+\beta},\\
+v_{2\alpha+\beta}v_\alpha=v_\alpha v_{2\alpha+\beta},\\
+v_{2\alpha+\beta}v_\beta=v_\beta v_{2\alpha+\beta},\\
+v_{2\alpha+\beta}v_{\alpha+\beta}=v_{\alpha+\beta}v_{2\alpha+\beta}.
+\end{cases}
+\]
+\end{remark}
+
+\numpara{3.4}\textbf{Groups of type $G_2$}
+\begin{proposition}{3.4.1}\label{XXIII.3.4.1}
+Let S be a scheme, G a pinned S-group of type $G_2$; write $\Delta=\{\alpha,\beta\}$, $R_+=\{\alpha,\beta,\alpha+\beta,2\alpha+\beta,3\alpha+\beta,3\alpha+2\beta\}$.
+\begin{enumeratei}
+\item One has
+\[
+t_{\alpha\beta}=(w_\alpha w_\beta)^6=e=(w_\beta w_\alpha)^6=t_{\beta\alpha}.
+\]
+\item If one puts
+\[
+\begin{aligned}
+\Ad(w_\beta)X_\alpha&=X_{\alpha+\beta},&\Ad(w_\alpha)X_{\alpha+\beta}&=X_{2\alpha+\beta},\\
+\Ad(w_\alpha)X_\beta&=-X_{3\alpha+\beta},&\Ad(w_\beta)X_{3\alpha+\beta}&=X_{3\alpha+2\beta},
+\end{aligned}
+\]
+one has:
+\[
+\begin{aligned}
+\Ad(w_\alpha)X_{2\alpha+\beta}&=-X_{\alpha+\beta},&\Ad(w_\alpha)X_{3\alpha+\beta}&=X_\beta,\\
+\Ad(w_\alpha)X_{3\alpha+2\beta}&=X_{3\alpha+2\beta},&\Ad(w_\beta)X_{\alpha+\beta}&=-X_\alpha,\\
+\Ad(w_\beta)X_{2\alpha+\beta}&=X_{2\alpha+\beta},&\Ad(w_\beta)X_{3\alpha+2\beta}&=-X_{3\alpha+\beta}.
+\end{aligned}
+\]
+\item If one puts
+\[
+\begin{aligned}
+p_{\alpha+\beta}(x)&=\exp(xX_{\alpha+\beta})=\operatorname{int}(w_\beta)p_\alpha(x),\\
+p_{2\alpha+\beta}(x)&=\exp(xX_{2\alpha+\beta})=\operatorname{int}(w_\alpha w_\beta)p_\alpha(x),\\
+p_{3\alpha+\beta}(x)&=\exp(xX_{3\alpha+\beta})=\operatorname{int}(w_\alpha)p_\beta(-x),\\
+p_{3\alpha+2\beta}(x)&=\exp(xX_{3\alpha+2\beta})=\operatorname{int}(w_\beta w_\alpha)p_\beta(-x),
+\end{aligned}
+\]
+one has:
+\[
+\begin{aligned}
+p_\beta(y)p_\alpha(x)&=p_\alpha(x)p_\beta(y)p_{\alpha+\beta}(xy)p_{2\alpha+\beta}(x^2y)\\
+&\qquad\cdot p_{3\alpha+\beta}(x^3y)p_{3\alpha+2\beta}(x^3y^2),\\
+p_{\alpha+\beta}(y)p_\alpha(x)&=p_\alpha(x)p_{\alpha+\beta}(y)p_{2\alpha+\beta}(2xy)\\
+&\qquad\cdot p_{3\alpha+\beta}(3x^2y)p_{3\alpha+2\beta}(3xy^2),\\
+p_{2\alpha+\beta}(y)p_\alpha(x)&=p_\alpha(x)p_{2\alpha+\beta}(y)p_{3\alpha+\beta}(3xy),\\
+p_{3\alpha+\beta}(y)p_\beta(x)&=p_\beta(x)p_{3\alpha+\beta}(y)p_{3\alpha+2\beta}(-xy),\\
+p_{2\alpha+\beta}(y)p_{\alpha+\beta}(x)&=p_{\alpha+\beta}(x)p_{2\alpha+\beta}(y)p_{3\alpha+2\beta}(3xy).
+\end{aligned}
+\]
+\end{enumeratei}
+\end{proposition}
+\numpara{3.4.2}
+The proof occupies nos. 3.4.2 to 3.4.9. One has $(\beta^*,\alpha)=-1$, $(\alpha^*,\beta)=-3$, whence $\beta(t_\alpha)=\alpha(t_\beta)=-1$. Define $X_{\alpha+\beta}$, $X_{2\alpha+\beta}$, $X_{3\alpha+\beta}$ and $X_{3\alpha+2\beta}$ as in (ii).
+% The sentence ending "as in (ii)" continues onto PDF p. 21 and belongs here.

@@ -1,0 +1,313 @@
+Let us denote by \(\mathbf{L}\) the functor
+\[
+\varinjlim_{(V,\rho)\in\widehat{\mathcal{C}}_{\mathbf{E}}}\mathbf{h}_V,
+\]
+\ie for every \(S\in\Ob(\mathcal{C})\), \(\mathbf{L}(S)=\varinjlim_{(V,\rho)}\mathbf{h}_V(S)\) is the set of equivalence classes of triples \((V,\rho,v)\), where \(v\colon S\to V\) is a \(\mathcal{C}\)-morphism, and where one identifies \((V,\rho,v)\) with \((V',\rho',f\circ v)\) for every \(\mathcal{C}\)-morphism \(f\colon V\to V'\) such that \(\rho'\circ f=\rho\).
+
+Then the map \(\varphi_{\mathbf{E}}(S)\) which, to the class of \((V,\rho,v)\), associates the element \(\rho\circ v\) of \(\mathbf{E}(S)\) is well-defined, and defines a morphism of functors
+\[
+\varphi_{\mathbf{E}}\colon
+\varinjlim_{(V,\rho)\in\widehat{\mathcal{C}}_{\mathbf{E}}}\mathbf{h}_V
+\longrightarrow\mathbf{E}.
+\]
+
+\begin{lemma}{\unskip}
+\(\varphi_{\mathbf{E}}\) is an isomorphism.
+\end{lemma}
+
+Indeed, let \(S\in\Ob(\mathcal{C})\). Every \(x\in\mathbf{E}(S)\) is the image under \(\varphi_{\mathbf{E}}(S)\) of the triple \((S,x,\mathrm{id}_S)\); this shows that \(\varphi_{\mathbf{E}}(S)\) is surjective. On the other hand, let \(\ell_1=(V_1,\rho_1,v_1)\) and \(\ell_2=(V_2,\rho_2,v_2)\) be two elements of \(\mathbf{L}(S)\) having the same image in \(\mathbf{E}(S)\); set \(\gamma=\rho_1\circ v_1=\rho_2\circ v_2\). Then \(\ell_1\) and \(\ell_2\) are both equal, in \(\mathbf{L}(S)\), to the class of the triple \((S,\gamma,\mathrm{id}_S)\). This shows that \(\varphi_{\mathbf{E}}(S)\) is injective.
+
+\begin{corollary}{\unskip}
+For every object \(\mathbf{F}\) of \(\widehat{\mathcal{C}}\), one has
+\[
+\Hom(\mathbf{E},\mathbf{F})
+=\varprojlim_{(V,\rho)\in\widehat{\mathcal{C}}_{\mathbf{E}}}\mathbf{F}(V).
+\]
+\end{corollary}
+
+\numpara{1.7}
+\textbf{Hom, Isom, etc., objects.}
+Let \(\mathbf{F}\) and \(\mathbf{G}\) be two objects of \(\widehat{\mathcal{C}}\). We are going to define another object of \(\widehat{\mathcal{C}}\) in the following way:
+\[
+\begin{aligned}
+\uHom(\mathbf{F},\mathbf{G})(S)
+&=\Hom_{\widehat{\mathcal{C}}/S}(\mathbf{F}_S,\mathbf{G}_S)\\
+&\simeq\Hom_{\widehat{\mathcal{C}}/\mathbf{h}_S}(\mathbf{F}\times\mathbf{h}_S,\mathbf{G}\times\mathbf{h}_S)
+\simeq\Hom_{\widehat{\mathcal{C}}}(\mathbf{F}\times\mathbf{h}_S,\mathbf{G}).
+\end{aligned}
+\]
+The object \(\uHom(\mathbf{F},\mathbf{G})\) defined above possesses the following properties:
+\begin{enumeratei}
+\item \(\uHom(e,\mathbf{G})\simeq\mathbf{G}\).\nde{And, if \(\mathbf{E}\) is a third object of \(\widehat{\mathcal{C}}\), one has \(\Hom(\mathbf{E},\mathbf{F}\times\mathbf{G})\simeq\Hom(\mathbf{E},\mathbf{F})\times\Hom(\mathbf{E},\mathbf{G})\).}
+\item \emph{The formation of \(\uHom\) commutes with extension of the base}:
+\[
+\uHom(\mathbf{F}_S,\mathbf{G}_S)\simeq\uHom(\mathbf{F},\mathbf{G})_S.
+\]
+\item \emph{\((\mathbf{F},\mathbf{G})\mapsto\uHom(\mathbf{F},\mathbf{G})\) is a bifunctor, contravariant in \(\mathbf{F}\) and covariant in \(\mathbf{G}\).}
+\end{enumeratei}
+These three properties are obvious from the definitions.
+
+We are going to show that, for every object \(\mathbf{E}\) of \(\widehat{\mathcal{C}}\), one has
+\[
+\uHom(\mathbf{E},\uHom(\mathbf{F},\mathbf{G}))\simeq\uHom(\mathbf{E}\times\mathbf{F},\mathbf{G}).
+\]
+
+Let \(\varphi\colon\mathbf{E}\times\mathbf{F}\to\mathbf{G}\); we must associate with it a morphism from \(\mathbf{E}\) to \(\uHom(\mathbf{F},\mathbf{G})\). Let therefore \(S'\to S\) be an arrow of \(\mathcal{C}\). One has maps
+\[
+\mathbf{E}(S)\times\mathbf{F}(S')\longrightarrow\mathbf{E}(S')\times\mathbf{F}(S')
+\xrightarrow{\varphi(S')}\mathbf{G}(S').
+\]
+Every element \(e\) of \(\mathbf{E}(S)\) therefore defines, for every \(S'\to S\), a map \(\mathbf{F}(S')\to\mathbf{G}(S')\) functorial in \(S'\), \ie an element \(\theta_{\varphi}(e)\) of \(\uHom(\mathbf{F},\mathbf{G})(S)\). One has therefore obtained a map
+\[
+\varphi\mapsto\theta_{\varphi},\qquad
+\Hom(\mathbf{E}\times\mathbf{F},\mathbf{G})\longrightarrow\Hom(\mathbf{E},\uHom(\mathbf{F},\mathbf{G})),
+\]
+which is \og functorial in \(\mathbf{E}\)\fg.
+
+\begin{proposition}{1.7.1}
+\label{I.1.7.1}
+\ndemark
+Let \(\mathbf{E},\mathbf{F},\mathbf{G}\in\Ob(\widehat{\mathcal{C}})\).
+\begin{enumeratea}
+\item The map \(\varphi\mapsto\theta_{\varphi}\) is a bijection:
+\[
+\Hom(\mathbf{E}\times\mathbf{F},\mathbf{G})\isomto\Hom(\mathbf{E},\uHom(\mathbf{F},\mathbf{G})).
+\]
+\item Moreover, one has an isomorphism of functors:
+\[
+\uHom(\mathbf{E},\uHom(\mathbf{F},\mathbf{G}))\simeq\uHom(\mathbf{E}\times\mathbf{F},\mathbf{G}).
+\]
+\end{enumeratea}
+\end{proposition}
+\ndetext{One has added point~(b), which will be useful in~II.1 and~II.3.11. On the other hand, one has sketched a second, more direct, proof of point~(a).}
+
+(a)~Let us consider the two sides as functors in \(\mathbf{E}\). The stated result is true if \(\mathbf{E}=\mathbf{h}_X\); indeed, in this case it is nothing other than the definition of the functor \(\uHom(\mathbf{F},\mathbf{G})\). On the other hand, the two sides, as functors in \(\mathbf{E}\), transform inductive limits into projective limits. Finally, by lemma~1.7.0, every object \(\mathbf{E}\) of \(\widehat{\mathcal{C}}\) is isomorphic to the inductive limit of the \(\mathbf{h}_X\), where \(X\) runs through the category \(\mathcal{C}/_{\mathbf{E}}\). This proves~(a).
+
+Let us sketch a direct proof of~(a). To every \(\theta\in\Hom(\mathbf{E},\uHom(\mathbf{F},\mathbf{G}))\), one associates the element \(\varphi_{\theta}\) of \(\Hom(\mathbf{E}\times\mathbf{F},\mathbf{G})\) defined as follows. For every \(S\in\Ob(\mathcal{C})\), one has a map
+\[
+\theta(S)\colon\mathbf{E}(S)\longrightarrow\Hom(\mathbf{F}\times S,\mathbf{G}),
+\]
+functorial in \(S\). If \((e,f)\in\mathbf{E}(S)\times\mathbf{F}(S)\), then \(f\) is a morphism \(S\to\mathbf{F}\), hence \(f\times\mathrm{id}_S\) is a morphism \(S\to\mathbf{F}\times S\); on the other hand, \(\theta(S)(e)\) is a morphism \(\mathbf{F}\times S\to\mathbf{G}\), hence by composition one obtains a morphism
+\[
+\theta(S)(e)\circ(f\times\mathrm{id}_S)\colon S\longrightarrow\mathbf{G},
+\]
+\ie an element \(\varphi_{\theta}(S)(e,f)\) of \(\mathbf{G}(S)\). One checks easily that the correspondence \(S\mapsto\varphi_{\theta}(S)\) is functorial in \(S\), hence defines a morphism \(\varphi_{\theta}\) from \(\mathbf{E}\times\mathbf{F}\) to \(\mathbf{G}\). One leaves it to the reader to check that the maps \(\theta\mapsto\varphi_{\theta}\) and \(\varphi\mapsto\theta_{\varphi}\) are bijections inverse to one another.
+
+Let us prove~(b). If \(S\in\Ob(\mathcal{C})\), one has, by~1.7\,(ii) and~(a) applied to \(\mathcal{C}/S\):
+\[
+\begin{aligned}
+\uHom(\mathbf{E},\uHom(\mathbf{F},\mathbf{G}))(S)
+&\simeq\Hom_S(\mathbf{E}_S,\uHom_S(\mathbf{F}_S,\mathbf{G}_S))\\
+&\simeq\Hom_S(\mathbf{E}_S\times_S\mathbf{F}_S,\mathbf{G}_S)\\
+&\simeq\Hom(\mathbf{E}\times\mathbf{F}\times S,\mathbf{G})\\
+&\simeq\uHom(\mathbf{E}\times\mathbf{F},\mathbf{G})(S)
+\end{aligned}
+\]
+and these isomorphisms are functorial in \(S\).
+
+\begin{corollary}{1.7.2}
+\label{I.1.7.2}
+One has:
+\begin{align*}
+\uHom(\mathbf{E},\uHom(\mathbf{F},\mathbf{G}))
+&\simeq\uHom(\mathbf{F},\uHom(\mathbf{E},\mathbf{G})),\\
+% typo?: Corollaire 1.7.2 prints the same isomorphism on two lines; kept as printed.
+\uHom(\mathbf{E},\uHom(\mathbf{F},\mathbf{G}))
+&\simeq\uHom(\mathbf{F},\uHom(\mathbf{E},\mathbf{G})).
+\end{align*}
+\end{corollary}
+
+In particular, setting \(\mathbf{E}=e\), and taking into account \(\uHom(e,\mathbf{G})\simeq\mathbf{G}\), one has
+\[
+\Gamma(\uHom(\mathbf{F},\mathbf{G}))\simeq\Hom(\mathbf{F},\mathbf{G}).
+\]
+Let us note that the composition of the \(\uHom\) furnishes functorial morphisms
+\[
+\uHom(\mathbf{F},\mathbf{G})\times\uHom(\mathbf{G},\mathbf{H})\longrightarrow\uHom(\mathbf{F},\mathbf{H}).
+\]
+If \(\mathbf{F}\) and \(\mathbf{G}\) are two objects of \(\widehat{\mathcal{C}}\), one denotes by \(\Isom(\mathbf{F},\mathbf{G})\) the subset of \(\Hom(\mathbf{F},\mathbf{G})\) consisting of the isomorphisms from \(\mathbf{F}\) onto \(\mathbf{G}\). One then defines a subobject \(\underline{\Isom}(\mathbf{F},\mathbf{G})\) of \(\uHom(\mathbf{F},\mathbf{G})\) by:
+\[
+\underline{\Isom}(\mathbf{F},\mathbf{G})(S)=\Isom(\mathbf{F}_S,\mathbf{G}_S).
+\]
+One then has isomorphisms
+\[
+\begin{aligned}
+\Gamma(\underline{\Isom}(\mathbf{F},\mathbf{G}))&\simeq\Isom(\mathbf{F},\mathbf{G}),\\
+\underline{\Isom}(\mathbf{F},\mathbf{G})&\simeq\underline{\Isom}(\mathbf{G},\mathbf{F}).
+\end{aligned}
+\]
+In the particular case where \(\mathbf{F}=\mathbf{G}\), one sets
+\[
+\begin{aligned}
+\underline{\End}(\mathbf{F})&=\uHom(\mathbf{F},\mathbf{F}),&
+\End(\mathbf{F})&=\Hom(\mathbf{F},\mathbf{F})\simeq\Gamma(\underline{\End}(\mathbf{F})),\\
+\underline{\Aut}(\mathbf{F})&=\underline{\Isom}(\mathbf{F},\mathbf{F}),&
+\Aut(\mathbf{F})&=\Isom(\mathbf{F},\mathbf{F})\simeq\Gamma(\underline{\Aut}(\mathbf{F})).
+\end{aligned}
+\]
+The formation of the objects \(\uHom\), \(\underline{\Isom}\), \(\underline{\Aut}\), \(\underline{\End}\) commutes with base changes.
+
+\begin{remark}{1.7.3}
+\label{I.1.7.3}
+\nde{One has added the numbering~1.7.3, for later references.}
+Let us observe that one can construct an object isomorphic to \(\underline{\Isom}(\mathbf{F},\mathbf{G})\) in the following way: one has a morphism
+\[
+\uHom(\mathbf{F},\mathbf{G})\times\uHom(\mathbf{G},\mathbf{F})\longrightarrow\underline{\End}(\mathbf{F});
+\]
+interchanging \(\mathbf{F}\) and \(\mathbf{G}\), one deduces from it a morphism
+\[
+\uHom(\mathbf{F},\mathbf{G})\times\uHom(\mathbf{G},\mathbf{F})
+\longrightarrow\underline{\End}(\mathbf{F})\times\underline{\End}(\mathbf{G}).
+\]
+On the other hand, the identity morphism of \(\mathbf{F}\) is an element of \(\underline{\End}(\mathbf{F})\) and therefore defines a morphism \(e\to\underline{\End}(\mathbf{F})\). Doing the same with \(\mathbf{G}\) and taking the product, one finds a morphism
+\[
+e\longrightarrow\underline{\End}(\mathbf{F})\times\underline{\End}(\mathbf{G}).
+\]
+It is then immediate that the fiber product of \(e\) and of \(\uHom(\mathbf{F},\mathbf{G})\times\uHom(\mathbf{G},\mathbf{F})\) over \(\underline{\End}(\mathbf{F})\times\underline{\End}(\mathbf{G})\) is isomorphic to \(\underline{\Isom}(\mathbf{F},\mathbf{G})\).
+\end{remark}
+
+All these definitions apply in particular to the case where \(\mathbf{F}=\mathbf{h}_X\), \(\mathbf{G}=\mathbf{h}_Y\). In the case where \(\uHom(\mathbf{h}_X,\mathbf{h}_Y)\) is representable by an object of \(\mathcal{C}\), one denotes this object by \(\Hom(X,Y)\). It possesses the following property: if \(Z\times X\) exists, then
+\[
+\Hom(Z,\Hom(X,Y))\simeq\Hom(Z\times X,Y).
+\]
+This property characterizes it when products exist in \(\mathcal{C}\).
+
+One likewise defines (whenever they are willing to exist) objects
+\[
+\Isom(X,Y),\qquad\End(X),\qquad\Aut(X);
+\]
+let us simply observe that, by the construction given above, \(\Isom(X,Y)\) exists whenever fiber products exist in \(\mathcal{C}\) and \(\Hom(X,Y)\), \(\Hom(Y,X)\), \(\End(X)\) and \(\End(Y)\) exist.
+% typo: les produit fibrés -> les produits fibrés
+
+Everything that precedes applies equally to categories of the form \(\mathcal{C}/S\). The corresponding objects will be denoted as explicitly as possible by appropriate symbols: for example, if \(T\) and \(T'\) are two objects of \(\mathcal{C}\) over \(S\), one will denote by \(\Hom_S(T,T')\) the object \(\Hom_{\mathcal{C}/S}(T/S,T'/S)\).
+
+\numpara{1.8}
+\textbf{Constant objects.}
+Let \(\mathcal{C}\) be a category in which direct sums and fiber products exist and in which direct sums commute with base changes (for example the category of schemes\nde{One has replaced the old terminology \og preschemes/schemes\fg\ by the current terminology \og schemes/separated schemes\fg.}). For every set \(E\) and for every object \(S\) of \(\mathcal{C}\), let us set
+\[
+(1.8.1)\qquad
+E_S=
+\begin{cases}
+\text{the direct sum of a family \((S_i)_{i\in E}\)}\\
+\text{of objects of \(\mathcal{C}\) all isomorphic to \(S\).}
+\end{cases}
+\]
+This object is characterized by the formula:
+\[
+(1.8.2)\qquad
+\Hom_{\mathcal{C}}(E_S,T)=\Hom(E,\Hom_{\mathcal{C}}(S,T)),
+\]
+for every \(T\in\Ob(\mathcal{C})\), where the second \(\Hom\) is taken in the category of sets.
+
+The object \(E_S\) is equipped with a canonical projection onto \(S\), in such a way that \(E\mapsto E_S\) is in fact a functor from \(\Ens\) to \(\mathcal{C}/S\).
+
+\nde{In the three paragraphs which follow, one has modified the order of the sentences and added a few clarifications concerning the role of hypothesis \((\ast)\) below.}
+If \(S'\to S\) is an arrow of \(\mathcal{C}\), one has, since direct sums commute with base changes,
+\[
+E_{S'}=(E_S)_{S'}.
+\]
+In particular, if \(\mathcal{C}\) possesses a final object \(e\), one has
+\[
+E_S=(E_e)_S.
+\]
+
+\emph{The functor \(E\mapsto E_S/S\), from \(\Ens\) to \(\mathcal{C}/S\), commutes with finite products.} It suffices, for this, to see that
+\[
+(\times)\qquad E_S\times_S F_S=(E\times F)_S.
+\]
+Now, by the results of~1.7 applied to \(\mathcal{C}/S\), one has, for every \(T\in\Ob(\mathcal{C}/S)\), natural isomorphisms (all unspecified \(\Hom\) being taken in \(\mathcal{C}/S\)):
+\[
+\begin{aligned}
+\Hom((E\times F)_S,T)
+&\simeq\Hom_{\Ens}(E\times F,\Hom(S,T))\\
+&\simeq\Hom_{\Ens}\bigl(E,\Hom_{\Ens}(F,\Hom(S,T))\bigr)
+\simeq\Hom_{\Ens}(E,\Hom(F_S,T))
+\end{aligned}
+\]
+and
+\[
+\begin{aligned}
+\Hom(E_S\times_S F_S,T)
+&\simeq\Hom(E_S,\Hom(F_S,T))\\
+&\simeq\Hom_{\Ens}\bigl(E,\Hom(S,\Hom(F_S,T))\bigr).
+\end{aligned}
+\]
+Now, \(\Hom(S,\Hom(F_S,T))=\Hom(F_S,T)\), whence \((\times)\).
+
+Suppose that, \(\emptyset\) denoting an initial object of \(\mathcal{C}\), the diagram
+\[
+(\ast)\qquad
+\xymatrix@C=4em@R=2.6em{
+\emptyset \ar[r] \ar[d] & S \ar[d] \\
+S \ar[r] & S\coprod S
+}
+\]
+is cartesian.
+(This is the case for the category of schemes.)\nde{\((\ast)\) is \emph{not} satisfied if \(\mathcal{C}\) is the category whose arrows are \(A\to B\) and \(\mathrm{id}_A\), \(\mathrm{id}_B\); in this case \(B\coprod B=B\) and \(B\times_B B=B\not\simeq A\).}
+\emph{Then the functor \(E\mapsto E_S\) commutes with finite projective limits.}
+
+Indeed, taking \((\times)\) into account, it suffices to see that \(E\mapsto E_S\) commutes with fiber products. Let \(u\colon E\to G\) and \(v\colon F\to G\) be two maps of sets. Since in \(\mathcal{C}\) direct sums commute with base changes, one has
+\[
+(1)\qquad
+F_S\times_{G_S} E_S
+\simeq\coprod_{f\in F} S_f\times_{G_S} E_S
+\simeq\coprod_{\substack{f\in F\\ x\in E}} S_f\times_{G_S} S_x.
+\]
+If \(v(f)\neq u(x)\), there exists in \(\mathcal{C}/S\) a morphism
+\[
+S_f\times_{G_S} S_x\longrightarrow
+S_f\times_{S_{v(f)}\coprod S_{u(x)}} S_x;
+\]
+now, by hypothesis \((\ast)\), the right-hand term is \(\emptyset\). Consequently,
+\[
+(2)\qquad
+S_f\times_{G_S} S_x\simeq\emptyset
+\quad\text{if }v(f)\neq u(x).
+\]
+On the other hand, if \(v(f)=u(x)\), there exists in \(\mathcal{C}/S\) a morphism
+\[
+S\longrightarrow S_f\times_{G_S} S_x;
+\]
+since \(S\xrightarrow{\mathrm{id}}S\) is a final object of \(\mathcal{C}/S\), it follows that
+\[
+(3)\qquad
+S_f\times_{G_S} S_x\simeq S
+\quad\text{if }v(f)=u(x).
+\]
+
+Combining~(1), (2) and~(3), one obtains an isomorphism functorial in \(S\)
+\[
+F_S\times_{G_S} E_S
+\simeq\coprod_{F\times_G E} S
+=(F\times_G E)_S.
+\]
+
+An object of the form \(E_S\) will be called a \emph{constant object}. Let us observe that one has a morphism functorial in \(E\):
+\[
+E\longrightarrow\Gamma(E_S/S)
+\]
+which associates with each \(i\in E\) the section of \(E_S\) over \(S\) defined by the isomorphism of \(S\) onto \(S_i\). Suppose condition \((\ast)\) satisfied for every object \(S\) of \(\mathcal{C}\); then the morphism \(E\to\Gamma(E_S/S)\) is a monomorphism for every \(S\not\simeq\emptyset\).
+
+If \(\mathcal{C}\) is the category of schemes, then \(\Gamma(E_S/S)\) is identified with the locally constant maps from the topological space \(S\) to the set \(E\), the preceding map associating with each element of \(E\) the corresponding constant map. Let us observe that it follows from what one has just said that \(E_S\) may also be defined as representing the functor which, to every \(S'\) over \(S\), associates the set of locally constant functions from the topological space \(S'\) to the set \(E\).\nde{Let us also note that the diagonal morphism \(E_S\to E_S\times_S E_S=(E\times E)_S\) is a closed immersion, \ie \(E_S\) is separated over \(S\).}
+
+\sgasection{2}{Algebraic structures}
+\label{I.sec.2}
+
+Given a species of algebraic structure in the category of sets, we propose to extend it to the category \(\mathcal{C}\). Let us first treat an example: the case of groups.
+
+\numpara{2.1}
+\textbf{Group structures.}
+We keep the notations of the preceding paragraph.
+
+\begin{definition}{2.1.1}
+\label{I.2.1.1}
+Let \(\mathbf{G}\in\Ob(\widehat{\mathcal{C}})\). One calls structure of \(\widehat{\mathcal{C}}\)-group on \(\mathbf{G}\) the datum, for every \(S\in\Ob(\mathcal{C})\), of a group structure on the set \(\mathbf{G}(S)\), in such a way that for every arrow \(f\colon S'\to S''\) of \(\mathcal{C}\), the map \(\mathbf{G}(f)\colon\mathbf{G}(S'')\to\mathbf{G}(S')\) is a group homomorphism. If \(\mathbf{G}\) and \(\mathbf{H}\) are two \(\widehat{\mathcal{C}}\)-groups, one calls morphism of \(\widehat{\mathcal{C}}\)-groups from \(\mathbf{G}\) to \(\mathbf{H}\) every morphism \(u\in\Hom(\mathbf{G},\mathbf{H})\) such that for every \(S\in\Ob(\mathcal{C})\) the map of sets \(u(S)\colon\mathbf{G}(S)\to\mathbf{H}(S)\) is a group homomorphism.
+
+One denotes by \(\Hom_{\widehat{\mathcal{C}}\textup{-Gr.}}(\mathbf{G},\mathbf{H})\) the set of morphisms of \(\widehat{\mathcal{C}}\)-groups from \(\mathbf{G}\) to \(\mathbf{H}\) and by \((\widehat{\mathcal{C}}\textup{-Gr.})\) the category of \(\widehat{\mathcal{C}}\)-groups.
+\end{definition}
+
+\begin{examples}{\unskip}
+Let \(\mathbf{E}\in\Ob(\widehat{\mathcal{C}})\); the object \(\underline{\Aut}(\mathbf{E})\) is equipped in an evident way with a structure of \(\widehat{\mathcal{C}}\)-group. The final object \(e\) possesses a unique structure of \(\widehat{\mathcal{C}}\)-group which makes it a final object of \((\widehat{\mathcal{C}}\textup{-Gr.})\).
+\end{examples}
+
+For every \(S\in\Ob(\mathcal{C})\), let \(e_{\mathbf{G}}(S)\) be the unit element of \(\mathbf{G}(S)\). The family of the \(e_{\mathbf{G}}(S)\) defines an element \(e_{\mathbf{G}}\in\Gamma(\mathbf{G})=\Hom(e,\mathbf{G})\) which is a morphism of \(\widehat{\mathcal{C}}\)-groups \(e\to\mathbf{G}\) and which one calls the \emph{unit section} of \(\mathbf{G}\).

@@ -1,0 +1,200 @@
+%% Shared macros for the unofficial English drafts of SGA 3.
+%% Statement numbers are copied from the Gille--Polo PDF, not generated,
+%% because the source numbering is not a single LaTeX counter
+%% (for instance 2.3.6.1, 5.2.0, 4.7.1.0).
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sga3-en}[2026/10/04 English SGA 3 macros]
+
+\RequirePackage{amsmath,amssymb,amsthm,mathtools}
+\RequirePackage{mathrsfs}
+\RequirePackage[all,cmtip]{xy}
+\RequirePackage{xspace}
+\RequirePackage{enumitem}
+\RequirePackage{url}
+\RequirePackage{graphicx}
+
+% Original and editorial notes reuse markers; retain their printed numbering.
+% Section and citation links remain active; repeated footnote links are disabled.
+\PassOptionsToPackage{hyperfootnotes=false}{hyperref}
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\setcounter{secnumdepth}{0}
+
+% Explicit exposé title. #1 = I, VIA, VIIB, ...  #2 = English title.
+\newcommand{\exposetitle}[2]{%
+  \chapter*{Expos\'e #1.\ #2}%
+  \markboth{Expos\'e #1}{#2}%
+}
+\newcommand{\fronttitle}[1]{%
+  \chapter*{#1}%
+  \markboth{#1}{#1}%
+}
+
+% Explicit section heading. #1 = source number (0, 1, 2, ...), #2 = title.
+\newcommand{\sgasection}[2]{%
+  \par\addvspace{1.1\baselineskip}%
+  \ifdefined\phantomsection\phantomsection\fi
+  \noindent{\large\bfseries #1.\ #2}\par
+  \addvspace{0.45\baselineskip}%
+  \addcontentsline{toc}{section}{#1.\ #2}%
+  \ignorespaces
+}
+
+% Numbered paragraph as printed: "1.1. ---"
+\newcommand{\numpara}[1]{%
+  \par\addvspace{0.55\baselineskip}%
+  \noindent\textbf{#1.}\ ---\ \ignorespaces
+}
+
+% Italic statement (proposition, theorem, lemma, corollary, scholium).
+\newenvironment{enonce}[2]{%
+  \par\addvspace{0.7\baselineskip}%
+  \noindent\textbf{#1\if\relax\detokenize{#2}\relax\else\ #2\fi.}\ \itshape\ignorespaces
+}{\par\addvspace{0.4\baselineskip}}
+
+% Upright statement (definition, remark, example, notation, convention).
+\newenvironment{enoncerm}[2]{%
+  \par\addvspace{0.7\baselineskip}%
+  \noindent\textbf{#1\if\relax\detokenize{#2}\relax\else\ #2\fi.}\ \ignorespaces
+}{\par\addvspace{0.4\baselineskip}}
+
+\newenvironment{theorem}[1]{\begin{enonce}{Theorem}{#1}}{\end{enonce}}
+\newenvironment{proposition}[1]{\begin{enonce}{Proposition}{#1}}{\end{enonce}}
+\newenvironment{lemma}[1]{\begin{enonce}{Lemma}{#1}}{\end{enonce}}
+\newenvironment{corollary}[1]{\begin{enonce}{Corollary}{#1}}{\end{enonce}}
+\newenvironment{corollaries}[1]{\begin{enonce}{Corollaries}{#1}}{\end{enonce}}
+\newenvironment{scholium}[1]{\begin{enonce}{Scholium}{#1}}{\end{enonce}}
+\newenvironment{variant}[1]{\begin{enonce}{Variant}{#1}}{\end{enonce}}
+
+\newenvironment{definition}[1]{\begin{enoncerm}{Definition}{#1}}{\end{enoncerm}}
+\newenvironment{definitions}[1]{\begin{enoncerm}{Definitions}{#1}}{\end{enoncerm}}
+\newenvironment{remark}[1]{\begin{enoncerm}{Remark}{#1}}{\end{enoncerm}}
+\newenvironment{remarks}[1]{\begin{enoncerm}{Remarks}{#1}}{\end{enoncerm}}
+\newenvironment{example}[1]{\begin{enoncerm}{Example}{#1}}{\end{enoncerm}}
+\newenvironment{examples}[1]{\begin{enoncerm}{Examples}{#1}}{\end{enoncerm}}
+\newenvironment{notation}[1]{\begin{enoncerm}{Notation}{#1}}{\end{enoncerm}}
+\newenvironment{convention}[1]{\begin{enoncerm}{Convention}{#1}}{\end{enoncerm}}
+
+\newenvironment{remark*}{%
+  \par\addvspace{0.7\baselineskip}%
+  \noindent\textbf{Remark.}\ \ignorespaces
+}{\par\addvspace{0.4\baselineskip}}
+
+% Editor notes and ordinary footnotes.
+\renewcommand{\thefootnote}{(\arabic{footnote})}
+\newcommand{\nde}[1]{\footnote{\textbf{N.D.E.} #1}}
+\newcommand{\ndetext}[1]{\footnotetext{\textbf{N.D.E.} #1}}
+\newcommand{\ndemark}{\footnotemark}
+
+% --- categories and usual operators ---
+\newcommand{\Ens}{\textup{(Ens)}}
+\newcommand{\Sch}{\textup{(Sch)}}
+\newcommand{\Abcat}{\textup{(Ab)}}
+\newcommand{\Grcat}{\textup{(Gr)}}
+\newcommand{\Modcat}{\textup{(Mod)}}
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\Centr}{Centr}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Imm}{Im}\let\Im\Imm
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Norm}{Norm}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Supp}{Supp}\let\supp\Supp
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Transp}{Transp}
+\DeclareMathOperator{\trdeg}{tr.deg}
+
+\newcommand{\uLie}{\underline{\Lie}}
+\newcommand{\uHom}{\underline{\Hom}}
+\newcommand{\uExt}{\underline{\Ext}}
+\newcommand{\uCentr}{\underline{\mathrm{Centr}}}
+\newcommand{\uNorm}{\underline{\mathrm{Norm}}}
+\newcommand{\uTransp}{\underline{\Transp}}
+\newcommand{\Gm}{\mathbf{G}_{\mathrm{m}}}
+\newcommand{\Ga}{\mathbf{G}_{\mathrm{a}}}
+\newcommand{\bmu}{\boldsymbol{\mu}}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+
+\newcommand{\fpqc}{\textup{fpqc}\xspace}
+\newcommand{\fppf}{\textup{fppf}\xspace}
+
+\let\cal\mathcal
+\let\goth\mathfrak
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\OX}{\mathcal{O}_X}
+\newcommand{\OY}{\mathcal{O}_Y}
+\newcommand{\OS}{\mathcal{O}_S}
+
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\FF}{\mathbf{F}}
+
+\def\to{\longrightarrow}
+\def\from{\longleftarrow}
+\def\mto{\longmapsto}
+\def\To{\Longrightarrow}
+\def\From{\Longleftarrow}
+\newcommand{\isomto}{\xrightarrow{\sim}}
+\newcommand{\isomfrom}{\xleftarrow{\sim}}
+\newcommand{\id}{\mathrm{id}}
+\let\leq\leqslant
+\let\geq\geqslant
+\let\le\leqslant
+\let\ge\geqslant
+
+\newcommand{\cf}{cf.\kern.3em}
+\newcommand{\Cf}{Cf.\kern.3em}
+\newcommand{\ie}{i.e.\kern.3em}
+\newcommand{\resp}{resp.\xspace}
+\newcommand{\loccit}{\textit{loc.\kern2pt cit.}\xspace}
+\newcommand{\No}{no.~}
+\let\oldS\S
+\def\S{\oldS\kern.15em}
+
+\newenvironment{enumeratei}
+  {\begin{enumerate}[label=\textup{(\roman*)}]}
+  {\end{enumerate}}
+\newenvironment{enumeratea}
+  {\begin{enumerate}[label=\textup{(\alph*)}]}
+  {\end{enumerate}}
+
+\newcommand{\og}{``}
+\newcommand{\fg}{''}
+
+\makeatletter
+\AddToHook{begindocument/end}{%
+  % Explicit source tags can repeat the ordinary equation counter.
+  \@ifpackageloaded{hyperref}{\hypersetup{hypertexnames=false}}{}%
+  \let\sga@oldref\ref
+  \renewcommand{\ref}[1]{\textup{\@ifundefined{r@#1}{\detokenize{#1}}{\sga@oldref{#1}}}}%
+}
+\makeatother
+
+\endinput

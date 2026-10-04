@@ -1,0 +1,195 @@
+% Source PDF pp. 1--6. The following unnumbered lemma begins on p. 7.
+\exposetitle{VIIA}{Infinitesimal study of group schemes}
+\label{VIIA}
+\begin{center}by P. Gabriel\end{center}
+
+In Expos\'e II we had confined ourselves to the study of differential invariants of the first order, and we had not approached certain phenomena peculiar to characteristic $p>0$ or to characteristic $0$. Our purpose in part A of this expos\'e is to fill this gap.
+
+Moreover, the infinitesimal study of arbitrary order of a group scheme is related to that of the associated formal group; the purpose of the second part of this expos\'e is to present the first definitions and properties concerning formal groups.
+
+\begin{center}\textbf{A) Differential operators and Lie $p$-algebras}{\renewcommand{\thefootnote}{*}\footnote{Part A of the present expos\'e had not been treated seriously in the oral lectures.}}\end{center}
+\setcounter{footnote}{0}
+
+\sgasection{1}{Differential operators}
+In this section, as well as in sections 2 and 3, $S$ denotes a fixed scheme and the products considered are cartesian products in the category of $S$-schemes.\nde{In particular, if $X$ and $Y$ are two $S$-schemes, $X\times_S Y$ is denoted simply by $X\times Y$. On the other hand, let us point out that for the contents of sections 1 and 2 one may refer to [DG70], \S~II.4, nos.~5--6; see also [Ja03], \S~I.7.} If $X$ is an $S$-scheme, we denote by $p_{X/S}$, $p_X$, or simply $p$ the structural morphism from $X$ to $S$.
+
+\numpara{1.1}
+Let $u:Y\to X$ be a morphism of $S$-schemes, and equip the direct image $u_*(\OY)$ of the structure sheaf of $Y$ with the $\OX$-module structure induced by $u$. The sheaf $\mathscr H=\mathscr{H}\!om_{p_X^{-1}(\OS)}(\OX,u_*(\OY))$ of homomorphisms of $p_X^{-1}(\OS)$-modules from $\OX$ to $u_*(\OY)$ is thus naturally equipped with an $\OX$-bimodule structure: if $U$ is an open subset of $X$, and $f$ and $d$ are sections of $\OX$ and $\mathscr H$ over $U$, then $fd$ and $df$ are respectively the morphisms $g\mapsto fd(g)$ and $g\mapsto d(fg)$ from $\OX$ to $u_*(\OY)$. From now on we shall write $(\ad f)(d)$ instead of $fd-df$.
+
+\begin{definition}{1.1.1}\label{VIIA.1.1.1}
+An \emph{$S$-deviation of order $\leq n$} is by definition a pair $D=(u,d)$ consisting of a morphism of $S$-schemes $u:Y\to X$ and a morphism of $p_X^{-1}(\OS)$-modules $d:\OX\to u_*(\OY)$ such that, for every open subset $U$ of $X$ and every sequence of $n+1$ sections $f_0,\ldots,f_n\in\OX(U)$, the following equality holds in $\Hom_{p_U^{-1}(\OS)}(\OO_U,u_*(\OY)|_U)$:
+\begin{equation}\tag{$*_n$}
+(\ad f_0)(\ad f_1)\cdots(\ad f_n)(d)=0.
+\end{equation}
+\nde{One sees easily that this is equivalent to saying that, for every $x\in X$ and $f_0,\ldots,f_n,g\in\OO_{X,x}$, one has $(\ad f_0)(\ad f_1)\cdots(\ad f_n)(d_x)(g)=0$. On the other hand, recall that the adjunction isomorphism
+\[
+\theta:\Hom_{p_X^{-1}(\OS)}(\OX,u_*(\OY))\isomto\Hom_{p_Y^{-1}(\OS)}(u^{-1}(\OX),\OY)
+\]
+associates to every morphism of $p_X^{-1}(\OS)$-modules $d:\OX\to u_*(\OY)$ the morphism $d'=\varepsilon\circ u^{-1}(d)$, where $\varepsilon$ is the canonical morphism $u^{-1}u_*(\OY)\to\OY$. Conversely, for every $p_Y^{-1}(\OS)$-morphism $d':u^{-1}(\OX)\to\OY$, one has $\theta^{-1}(d')=u_*(d')\circ\eta$, where $\eta$ is the canonical morphism $\OX\to u_*u^{-1}(\OX)$. It follows that $d$ satisfies $(*_n)$ if and only if $d'$ satisfies:
+\begin{equation}\tag{$*'_n$}(\ad f_0)\cdots(\ad f_n)(d')(g)=0\end{equation}
+for every open subset $V$ of $Y$ and $f_0,\ldots,f_n,g\in u^{-1}(\OX)(V)$.}
+In this case we shall also say that $d$ is an $S$-deviation of $u$ of order $\leq n$. In particular, an $S$-deviation of $u$ of order $\leq0$ is a morphism of $\OX$-modules from $\OX$ to $u_*(\OY)$, \ie an element of $\Gamma(Y,\OY)$.
+\end{definition}
+
+\begin{definition}{1.1.2}\label{VIIA.1.1.2}
+A morphism of $p^{-1}(\OS)$-modules $d:\OX\to u_*(\OY)$ is an \emph{$S$-deviation of $u$} if, for every point $y$ of $Y$, there exist an open neighborhood $U$ of $u(y)$ in $X$ and an open neighborhood $V$ of $y$ in $Y$ satisfying the following conditions:
+\begin{enumerate}[label=\alph*)]
+\item $u(V)\subset U$;
+\item if $v:V\to U$ is the morphism induced by $u$, there is an integer $n$ such that the morphism $\OO_U\to v_*(\OO_V)$ induced by $d$ is an $S$-deviation of $v$ of order $\leq n$.\nde{If $X$ and $u$ are quasi-compact, every $S$-deviation of $u$ is therefore of order $\leq n$, for some integer $n$.}
+\end{enumerate}
+\end{definition}
+If $d$ is an $S$-deviation of $u$, we also say that the pair $D=(u,d)$ is an $S$-deviation, and we shall sometimes write $Y\xrightarrow{D}X$ or $Y\mathrel{\mathop{\longrightarrow}\limits^{d}_{u}}X$.
+
+When $d$ is the algebra homomorphism $u^\natural:\OX\to u_*(\OY)$ corresponding to the morphism $u:Y\to X$, we shall also write $u$ instead of $D$.
+
+\begin{remarks}{1.1.3}\label{VIIA.1.1.3}
+\nde{These remarks have been added; they will be useful in 1.3, 1.4 and 2.1.}
+Let $\operatorname{D\acute ev}(u)$ (resp.\ $\operatorname{D\acute ev}^{\leq n}(u)$) be the set of $S$-deviations of $u$ (resp.\ $S$-deviations of $u$ of order $\leq n$). It is equipped with a natural $\OY(Y)$-module structure: if $\lambda\in\OY(Y)$, then $\lambda d$ is the deviation sending $f$ to $\lambda d(f)$, for every section $f$ of $\OX$ over an open subset $U$.
+
+For every open subset $V$ of $Y$, put $\mathscr{D}\!\operatorname{\acute ev}(u)(V)=\operatorname{D\acute ev}(u|_V)$, \ie $\mathscr{D}\!\operatorname{\acute ev}(u)(V)$ is the set of
+\[
+\begin{aligned}
+d_V\in\Hom_{p^{-1}(\OS)}(\OX,(u|_V)_*(\OO_V))
+&\simeq\Hom_{p^{-1}(\OS)}((u|_V)^{-1}\OX,\OO_V)\\
+&\simeq\mathscr{H}\!om_{p^{-1}(\OS)}(u^{-1}\OX,\OY)(V)
+\end{aligned}
+\]
+such that, for every open subset $U$ of $X$, the map $d_V(U):\OX(U)\to\OY(u^{-1}(U)\cap V)$ satisfies $(*_n)$. This defines a presheaf of $\OY$-modules on $Y$, and one sees easily that it is a sheaf (more precisely, a subsheaf of $\mathscr{H}\!om_{p^{-1}(\OS)}(u^{-1}\OX,\OY)$).
+\end{remarks}
+
+\numpara{1.2}
+Now consider two $S$-deviations $D=(u,d)$ and $E=(v,e)$:
+\[
+\xymatrix{Z\ar[r]^{v}_{e}&Y\ar[r]^{u}_{d}&X.}
+\]
+As $U$ ranges over the open subsets of $X$, the composite maps
+\[
+\Gamma(U,\OX)\xrightarrow{d(U)}\Gamma(u^{-1}U,\OY)\xrightarrow{e(u^{-1}U)}\Gamma(v^{-1}u^{-1}U,\OO_Z)
+\]
+define an $S$-deviation of $uv$ which we shall denote by $de$; when $d$ is of order $\leq m$ and $e$ of order $\leq n$, $de$ is of order $\leq m+n$. We shall also write
+\begin{equation}\tag{$\dagger$}D\circ E=(uv,de)\end{equation}
+\nde{Care must be taken that, with this notation, $de$ denotes the composite ``$d$ followed by $e$''.}
+and we shall say that $D\circ E$ or $DE$ is the \emph{composite $S$-deviation}. When $d=u^\natural$ (\ie $D=u$ with the convention of 1.1), $DE$ is also called the \emph{image of $E$ under $u$}.
+
+The map $(D,E)\mapsto D\circ E$ which we have just defined will henceforth allow us to speak of the \emph{category of $S$-deviations}, whose objects are the $S$-schemes and whose morphisms are the $S$-deviations.\nde{Often one considers only the $S$-deviations of the morphism $\mathrm{id}_X$, which form the algebra of $S$-differential operators of $X$, cf.\ 1.4 below. However, the more general setting of $S$-deviations provides a convenient ``functorial'' language for proving statements such as: ``if $G$ is an $S$-group, the algebra of left-invariant $S$-differential operators on $G$ is isomorphic to the algebra of $S$-deviations of the unit section $\varepsilon:S\to G$, cf.\ 2.1 and 2.4 below.}
+
+\begin{definition}{1.2.0}\label{VIIA.1.2.0}
+\nde{This paragraph has been expanded, assigning to this definition (resp.\ to the following lemma) the number 1.2.0 (resp.\ 1.2.1).}
+Let $w:Z\to X$ be an $S$-morphism. An \emph{$S$-derivation of $w$}, or $S$-derivation from $\OX$ to $w_*(\OO_Z)$, is a morphism of $p^{-1}(\OS)$-modules $d:\OX\to w_*(\OO_Z)$ such that, for every open subset $U$ of $X$ and $f,g\in\OX(U)$,
+\[
+d(fg)=w^\natural(f)d(g)+w^\natural(g)d(f).
+\]
+Then $d$ is a deviation of $w$ of order $\leq1$, which vanishes on the unit section of $\OX$. The set of $S$-derivations of $w$ will be denoted by $\operatorname{D\acute er}_S(w)$; it is an $\OO(Z)$-module.
+\end{definition}
+With the notation of 1.2, take $Y$ equal to $I_Z=\Spec\OO_Z[t]$, where $t^2=0$, and $v$ equal to the zero section $\tau:Z\to I_Z$, defined by the morphism of $\OO_Z$-algebras $\OO_Z[t]\to\OO_Z$ sending $t$ to $0$, and take $e$ equal to the morphism of $\OO_Z$-modules $\sigma:\OO_Z[t]$ defined by $\sigma(1)=0$ and $\sigma(t)=1$,\nde{What follows has been added, \ie the notation $\partial_t$ has been introduced.} which it is convenient to denote by $\partial_t$.
+% typo?: the printed morphism sigma: O_Z[t] has no target; retained.
+
+If $u:I_Z\to X$ is a morphism satisfying $w=u\circ s$, then $\sigma\circ u^\natural$ is an $S$-derivation from $\OX$ to $w_*(\OO_Z)$. Conversely, to every $S$-derivation $d$ one associates the morphism $u:I_Z\to X$ such that $u=w$ on the underlying spaces, and
+\[
+u^\natural(f)=w^\natural(f)+d(f)t,
+\]
+for every section $f$ of $\OX$ over an open subset $U$. One thus obtains:
+% typo?: the source writes s instead of the previously defined tau, here and in 1.2.1; retained.
+
+\begin{lemma}{1.2.1}\label{VIIA.1.2.1}
+Let $E=(\tau,\partial_t)$ be the deviation of $\tau:Z\to I_Z$ defined above. For every $S$-morphism $w:Z\to X$, the map $u\mapsto u\circ E$ is a bijection between the $S$-morphisms $u:I_Z\to X$ such that $u\circ s=w$, and the $S$-derivations of $w$.
+\end{lemma}
+
+\numpara{1.2.2}
+Let $d$ be an $S$-deviation of $u:Y\to X$. On the one hand, $d$ is clearly an $S'$-deviation of $u$ for every morphism $s:S\to S'$.
+
+On the other hand, let $t:T\to S$ be a morphism with target $S$, and let $u_T:Y_T\to X_T$ be the morphism deduced from $u$ by base change, and $t_Y:Y_T\to Y$ and $t_X:X_T\to X$ the canonical projections. There then exists one and only one $T$-deviation of $u_T$, which we shall denote by $d_T$ or $d\times T$, satisfying the equality $t_Xd_T=dt_Y$, in the sense of $(\dagger)$ above, \ie for every open subset $U$ of $X$ there is a commutative diagram:\nde{Explicitly, if $V$ is an affine open subset of $S$ and $U$ (resp.\ $U'$) an affine open subset of $X$ (resp.\ $T$) over $V$, so that $\OO_{X\times T}(U\times U')=\OX(U)\otimes_{\OS(V)}\OO_T(U')$, then $d_T(U\times U')$ is the composite:
+\[
+\begin{aligned}
+\OX(U)\otimes_{\OS(V)}\OO_T(U')
+&\xrightarrow{d(U)\otimes\mathrm{id}}\OY(u^{-1}U)\otimes_{\OS(V)}\OO_T(U')\\
+&\longrightarrow\OO_{Y\times T}(u^{-1}U\times U').
+\end{aligned}
+\]
+The author has left to the reader the verification that $d_T$ is well defined, and the editors do likewise.}
+\[
+\xymatrix@C=4em{\OO(U)\ar[r]^{t_X^\natural}\ar[d]_{d(U)}&\OO(U\times T)\ar[d]^{d_T(U\times T)}\\
+\OO(u^{-1}U)\ar[r]_{t_Y^\natural}&\OO(u^{-1}U\times T).}
+\]
+If one puts $D=(u,d)$, one also writes $D_T=(u_T,d_T)$, and we shall say that $d_T$ and $D_T$ \emph{are deduced from $d$ and $D$ by base change}.
+
+\numpara{1.2.3}
+Let, for example, $u:Y\to X$ and $v:Z\to T$ be two $S$-morphisms, and $d$ and $e$ $S$-deviations of $u$ and $v$. There is a commutative diagram
+\[
+\xymatrix@C=4em{X\times T&Y\times T\ar[l]_{u_T}\\
+X\times Z\ar[u]^{v_X}&Y\times Z\ar[l]^{u_Z}\ar[u]_{v_Y}\ar[ul]^{u\times v}}
+\]
+and we shall denote by $d\times e$ (\emph{product of $d$ and $e$}) the $S$-deviation of $u\times v$ equal to $d_Te_Y=e_Xd_Z$ (with the convention $(\dagger)$ above), \ie for every open subset $U$ of $X\times T$, denoting by $W$ the open subset $v_Y^{-1}u_T^{-1}U=u_Z^{-1}v_X^{-1}U$, there is a commutative diagram:
+\[
+\xymatrix@C=4em@R=3em{\OO(U)\ar[r]^{d_T(U)}\ar[d]_{e_X(U)}\ar@{-->}[dr]^{(d\times e)(U)}&\OO(u_T^{-1}U)\ar[d]^{e_Y(u_T^{-1}U)}\\
+\OO(v_X^{-1}U)\ar[r]_{d_Z(v_X^{-1}U)}&\OO(W).}
+\]
+If one puts $D=(u,d)$ and $E=(v,d)$, one also writes $D\times E=(u\times v,d\times e)$.
+% typo?: source E=(v,d), rather than (v,e), retained.
+
+\numpara{1.3}
+\nde{The original has been expanded in this paragraph; see also N.D.E.\ (2) in 1.1.1.}
+Let $u:Y\to X$ be a morphism of $S$-schemes. Recall that the adjunction isomorphism:
+\[
+\Hom_{p_X^{-1}(\OS)}(\OX,u_*(\OY))\isomto\Hom_{p_Y^{-1}(\OS)}(u^{-1}(\OX),\OY)
+\]
+associates to every morphism of $p^{-1}(\OS)$-modules $d:\OX\to u_*(\OY)$ the morphism $d'=\varepsilon\circ u^{-1}(d)$, where $\varepsilon$ is the canonical morphism $u^{-1}u_*(\OY)\to\OY$.
+
+Denote by $\mathscr J_u$ (resp.\ $\mathscr I_u$) the kernel of the algebra homomorphism $u^\natural:\OX\to u_*(\OY)$ (resp.\ $u^{\natural\prime}:u^{-1}(\OX)\to\OY$), and let $d:\OX\to u_*(\OY)$ be a morphism of $p^{-1}(\OS)$-modules. If $U$ is an open subset of $X$ and $f_0,\ldots,f_n,g\in\OX(U)$, one sees easily by induction on $n$ that condition $(*_n)$ is equivalent to the following equality (cf.\ EGA~IV$_4$, 16.8.8.2):
+\begin{equation}\tag{$**_n$}
+0=\sum_{I\subset[[0,n]]}(-1)^{|I|}u^\natural(f_{[[0,n]]-I})d(f_Ig),
+\end{equation}
+where $f_I$ denotes the product of the $f_i$, for $i\in I$. It follows that if $d$ satisfies $(*_n)$, then $d$ vanishes on the ideal $\mathscr J_u^{n+1}$.
+
+Now suppose that $Y$ is equal to $S$; then $u:S\to X$ is a section of $p:X\to S$, hence is an immersion (cf.\ EGA~I, 5.3.13). Then, on the one hand, $\varepsilon:u^{-1}u_*\OS\to\OS$ is an isomorphism, so that $u^{-1}(\mathscr J_u)=\mathscr I_u$. On the other hand, there is an isomorphism:
+\begin{equation}\tag{$\star$}u^{-1}(\OX)\simeq\OS\oplus\mathscr I_u.\end{equation}
+Suppose that $d$ vanishes on $\mathscr J_u^{n+1}$. Then $d'=\varepsilon\circ u^{-1}(d)$ vanishes on $\mathscr I_u^{n+1}$, and therefore $d'$ satisfies the analogues $(**'_n)$ and $(*'_n)$ of $(**_n)$ and $(*_n)$, when $f_0,\ldots,f_n\in\mathscr I_u(u^{-1}(U))$. Moreover, since $(\ad a)(\phi)=0$ for every $a\in\OS(u^{-1}(U))$ and every morphism of $\OO_{u^{-1}(U)}$-modules $\phi:u^{-1}(\OO_U)\to\OO_{u^{-1}(U)}$, one deduces from $(\star)$ that $d'$ satisfies the analogue $(*'_n)$ of $(*_n)$. It follows that $d$ satisfies $(*_n)$. Consequently, one has obtained:
+
+\begin{enonce}{Lemma}{}
+If $u:S\to X$ is a section of $p:X\to S$, then $d$ is an $S$-deviation of $u$ of order $\leq n$ if and only if $d'$ vanishes on $\mathscr I_u^{n+1}$.
+\end{enonce}
+
+This interpretation may be generalized as follows. Let $u:Y\to X$ be an arbitrary $S$-morphism, and $\Gamma u$ the graph of $u$, that is, the morphism $Y\to Y\times X$ with components $\mathrm{id}_Y$ and $u$. For every $S$-deviation $d$ of $u$ of order $\leq n$, one obtains by composition:
+\[
+\xymatrix{Y\ar[r]^{\mathrm{diag.}}&Y\times Y\ar[r]^{d_Y}_{u_Y}&Y\times X}
+\]
+a $Y$-deviation of $\Gamma u$ of order $\leq n$, which we shall denote by $\Gamma d$ (the \emph{graph of $d$}).
+
+Conversely, to every $Y$-deviation $e$ of $\Gamma u$ one associates the composite $S$-deviation $e_X=\mathrm{pr}_2\circ e$:
+\[
+\xymatrix{Y\ar[r]^{e}_{\Gamma u}&Y\times X\ar[r]^{\mathrm{pr}_2}&X.}
+\]
+One sees immediately that $(\Gamma d)_X=d$, and the equality $\Gamma e_X=e$ follows from the fact that $e$ is $\OY$-linear.\nde{If $\lambda,f$ are local sections of $\OY$ and $\OX$, one has $(\Gamma e_X)(\lambda\otimes f)=\lambda\cdot e(1\otimes g)$, and this equals $e(\lambda\otimes g)$ since $e$ is $\OY$-linear.}
+% typo?: note 11 changes f to g; retained.
+\emph{One thus obtains an isomorphism of $\OY(Y)$-modules:}
+\[
+\begin{array}{ccc}
+\{\text{$S$-deviations of $u$ of order $\leq n$}\}&\xrightarrow{\sim}&\{\text{$Y$-deviations of $\Gamma u$ of order $\leq n$}\}\\
+d&\longmapsto&\Gamma d.
+\end{array}
+\]
+Moreover, one sees easily that $d$ is an $S$-derivation of $u$ if and only if $\Gamma d$ is a $Y$-derivation of $\Gamma u$.
+
+Call $\mathscr I_{\Gamma u}$ the kernel of the algebra homomorphism $(\Gamma u)^{-1}(\OO_{Y\times X})\to\OY$ corresponding to $\Gamma u$. Taking account of the preceding lemma, one has obtained:
+
+\begin{enonce}{Proposition}{}
+Let $u:Y\to X$ be an $S$-morphism and $\Gamma u:Y\to Y\times X$ its graph. The $S$-deviations of $u$ of order $\leq n$ identify with the $Y$-deviations of $\Gamma u$ of order $\leq n$, which are in bijection with
+\[
+\Hom_{\OY}((\Gamma u)^{-1}(\OO_{Y\times X})/\mathscr I_{\Gamma u}^{n+1},\OY).
+\]
+\end{enonce}
+
+\numpara{1.3.1}
+\nde{This paragraph has been added.}
+Return to the case where $u:S\to X$ is a section of $p:X\to S$. Then the homomorphism $\phi:u^{-1}(\OX)\to\OS$ admits a section, which we shall denote simply by $g\mapsto g\cdot1$, so that, with the notation of 1.3, there is an isomorphism of $\OS$-modules:
+\begin{equation}\tag{$\star$}u^{-1}(\OX)\simeq\OS\oplus\mathscr I_u,\end{equation}
+and for every section $f$ of $u^{-1}(\OX)$, $f-\phi(f)\cdot1$ is a section of $\mathscr I_u$.
+
+Let $d$ be an $S$-deviation of $u$ of order $\leq1$, and $d'$ the $\OS$-morphism $u^{-1}(\OX)\to\OS$ corresponding to $d$. If $a,b$ are sections of $u^{-1}(\OX)$, one has:
+\[
+\begin{aligned}
+0&=d'\bigl((a-\phi(a)\cdot1)(b-\phi(b)\cdot1)\bigr)\\
+&=d'(ab)-\phi(a)d'(b)-\phi(b)d'(a)+\phi(ab)d'(1).
+\end{aligned}
+\]
+Consequently, one sees that $d$ is an $S$-derivation of $u$ (cf.\ 1.2.1 and N.D.E.\ (2)) if and only if $d'(1)=0$. One therefore obtains:

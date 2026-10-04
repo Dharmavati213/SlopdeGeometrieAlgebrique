@@ -1,0 +1,397 @@
+% Continuation of the proof of Theorem 2.1.
+One easily concludes that $(\mathfrak g/\mathfrak h)^T=
+(\mathfrak g/\mathfrak h)^{\ad(a)}$, and since by hypothesis the left-hand
+side is zero, one concludes (vii).
+
+Let us prove (vii) $\Rightarrow$ (vi). This implication is contained in
+the following result, which makes 2.1 more precise:
+\begin{corollary}{2.2}\label{XIII.2.2}
+Let $G$ be a smooth algebraic group over a field $k$, $H$ a smooth
+algebraic subgroup, $N$ its normalizer in $G$, $\varphi:G\times H\to G$
+the morphism defined by $\varphi(g,h)=\ad(g)h=ghg^{-1}$,
+$\psi:X=G\times^N H\to G$ the morphism deduced from $\varphi$ by passage
+to the quotient (cf. \No 1), and $a\in H(k)$. The following conditions
+are equivalent:
+\begin{enumeratei}
+\item $\varphi$ is smooth at $(e,a)$.
+\item $\psi$ is \'etale at $(\bar e,a)$, and $N$ is smooth over $k$.
+\item $(\mathfrak g/\mathfrak h)^{\ad(a)}=0$ (where $\mathfrak g,\mathfrak h$
+are the Lie algebras of $G,H$).
+\end{enumeratei}
+These conditions imply $H^0=N^0$.
+\end{corollary}
+One knows that the smoothness of $\varphi$ (which is a morphism of smooth
+$k$-preschemes) at a point rational over $k$ is equivalent to the
+surjectivity of the tangent map at that point. Now an immediate
+calculation shows that this tangent map is written (by means of the
+usual identifications of the tangent spaces at points of $G$ and $H$
+with the Lie algebra of $G$ and $H$)
+\[
+ d\varphi(\xi,\eta)=(\mathrm{id}-\ad(a))\cdot\xi+\eta,
+\]
+considered as a map from $\mathfrak g\times\mathfrak h$ to $\mathfrak g$.
+Surjectivity is therefore equivalent to the surjectivity of
+$(\mathrm{id}-\ad(a))$ on $\mathfrak g/\mathfrak h$, i.e. to (iii).
+Now (iii) implies a fortiori $(\mathfrak g/\mathfrak h)^H=0$, i.e.
+(cf. 2.0, where the connectedness hypothesis at the beginning of the
+section is unnecessary) $H^0=N^0$. One deduces that $N$ is smooth, and
+$\dim H=\dim N$, whence $\dim X=\dim G$. Now, since $q:G\times H\to X$
+is flat and $\psi=\varphi\circ q$ smooth at $(e,a)$, it follows that
+$\psi$ is smooth at $q(e,a)=(\bar e,a)$, hence \'etale at this point
+for reasons of dimension. Thus one has proved (i) $\Leftrightarrow$
+(iii) $\Rightarrow$ (ii); on the other hand (ii) $\Rightarrow$ (i),
+since the smoothness of $N$ implies that of $q$. \hfill Q.E.D.
+% typo?: kept as printed: psi=varphi circ q in this proof.
+
+Finally, let us prove (vi) $\Rightarrow$ (i), which, together with the
+implications already established, will prove the theorem. Suppose first
+that $G$ is affine. Let $U$ be a nonempty open subset of $G$ such that
+$x\in U(k)$ implies that $x$ is contained in a conjugate of $H$. Let $C$
+be a Cartan subgroup of $G$. Using the implication (i) $\Rightarrow$ (iv)
+for $C$ in place of $H$ (this is Borel's ``density theorem''), it follows
+that one can find a conjugate of $C$ which meets $U$; hence one may
+suppose that $U\cap C\ne\varnothing$, i.e. that there exists a nonempty
+open subset $V$ of $C$ such that for every $x\in V(k)$, $x$ is contained
+in a conjugate of $H$. Write $C$ as a product
+\[
+ C=T\cdot C_u
+\]
+where $T$ is the maximal torus of $C$ (which is a maximal torus of $G$)
+and $C_u$ the unipotent part of $C$, $T$ being in the center of $C$
+(BIBLE 6 th. 2). One may again suppose that $k$ has infinite transcendence
+degree over its prime subfield, which allows one to find an element $t$
+of $T(k)$ belonging to the projection of $V$ onto $T$ (which is a nonempty
+open subset of $T$), i.e. $t\cdot C_u\cap V\ne\varnothing$, and such
+that $t$ ``generates'' $T$. Since every algebraic subgroup of $G$ which
+contains a product $t\cdot u$ ($t\in T(k)$, $u\in C_u(k)$) contains both
+factors (BIBLE 4 th. 3), it follows, with the preceding choice of $t$,
+and taking $t\cdot u\in V(k)$, that there exists a conjugate of $H$ which
+contains $t$, hence $T$. Thus one may already suppose that one has
+\[
+ T\subset H.
+\]
+% original p. 260
+If $W$ is the open subset of $C_u$ which is the inverse image of $V$
+under $u\mto t\cdot u$, one therefore sees that for every element $x$
+of $(T\cdot W)(k)$, there exists a conjugate of $H$ which contains $T$
+and $x$. As one has already noted, such a conjugate is of the form
+$\operatorname{int}(g)\cdot H$, where $g\in N(T)(k)$. Consider then the
+morphism
+\[
+ f:N(T)\times H\to G
+\]
+defined by $f(g,h)=\operatorname{int}(g)\cdot h=ghg^{-1}$; then the image
+of $f$ contains $T\cdot W$, so, since $N(T)$ is a finite union of
+translates $C\cdot g_i$ (where $g_i\in N(T)(k)$), as $C$ has finite
+index in $N(T)$, it follows that there exists a dense open subset $V'$
+of $C=T\cdot C_u$ which is contained in the image of $(C\cdot g_i)\times H$
+under $f$. Replacing $H$ by $\operatorname{int}(g_i)\cdot H$, one may
+suppose $g_i=e$, i.e. $f(C\times H)\supset V'$. Thus for every
+$u\in V'(k)$, there exist $v\in C(k)$ and $h\in H(k)$ such that
+\[
+ v^{-1}hv=u\qquad\text{whence }vuv^{-1}\in H(k),
+\]
+whence, setting
+\[
+ C'=C\cap H=\Centr_H(T),
+\]
+$vuv^{-1}\in C'$, whence $\operatorname{int}(v)\cdot C'\to u$.
+This proves that the union of the conjugates of $C'$ in $C$ (by elements
+of $C(k)$) is dense, which implies (as one has seen for the pair $(G,H)$
+in place of $(C,C')$) that $C'$ has finite index in its normalizer in $C$.
+By BIBLE 7, the lemma of \No 1, it follows that $C'=C$, hence $C=H$, which
+proves (vi) $\Rightarrow$ (i) when $G$ is affine.
+% typo?: kept as printed: int(v) C' -> u, and C=H.
+
+In the general case, we proceed by induction on $n=\dim G$, the assertion
+being trivial if $n=0$. Let $Z$ be the center of $G$, and distinguish
+two cases:
+
+\noindent $1^\circ)$ $\dim Z\cap H>0$; then, setting $G'=G/Z\cap H$, one
+has $\dim G'<n$; on the other hand, hypothesis (vi) on $H$ implies the
+same condition for the image $H'$ of $H$ in $G'$, so $H'$ contains a
+Cartan subgroup $C'$ of $G'$, hence $H$ contains the inverse image $C$
+of $C'$, which is a Cartan subgroup by XII 6.6 e).
+
+\noindent $2^\circ)$ $\dim Z\cap H=0$, so the canonical morphism $H\to G/Z$
+is a finite morphism, and since $G/Z$ is affine by XII 6.1, it follows
+that $H$ is affine, hence every homomorphism from $H$ to an abelian
+variety is zero (and even every morphism of preschemes from $H$ to an
+abelian variety is zero): this follows from the fact that a smooth
+connected affine algebraic group over an algebraically closed field
+is a rational variety, or merely that it is the union of its Borel
+subgroups (BIBLE 6 th. 5 b)); now it follows very easily from the
+structure theorems, BIBLE 6.2 and 6.3, that a smooth connected solvable
+affine group is a rational variety. Let us now use Chevalley's structure
+theorem for $G$, according to which $G$ is an extension of an abelian
+variety $A$ by a smooth affine group. Then the image of $H$ in $A$ is
+zero, $H$ being affine; on the other hand it is identical to $A$, since
+the union of its conjugates in $A$ must be dense. Thus $A=0$, so $G$ is
+affine, and one is reduced to the case already treated. This completes
+the proof of 2.1.
+\end{proof}
+
+\begin{corollary}{2.3}\label{XIII.2.3}
+Suppose that the equivalent conditions of 2.1 hold.
+
+\noindent a) Let $k(X)$ (resp. $k(G)$) be the field of rational functions
+of $X$ (resp. $G$); then $k(X)$ is a finite separable extension of $k(G)$.
+Denote its degree by $d$.
+
+\noindent b) Let $T$ be a maximal torus of $G$ contained in $H$ (which
+exists by form 2.1 (ii)), and let $C$ be the corresponding Cartan subgroup
+of $G$. Then $C\subset H$. On the other hand, $\Norm_G(T)$ is a smooth
+subgroup of $G$ and
+$\Norm_G(T)\cap\Norm_G(H)=\Norm_{\Norm_G(H)}(T)$ is a smooth subgroup of
+it of finite index equal to $d$ (defined in a)). The number of conjugates
+of $H$ containing a given maximal torus or a given Cartan subgroup is
+equal to $d$.
+
+\noindent c) Let $U$ be the largest open subset of $G$ such that
+$\psi:X\to G$ induces a morphism $\psi^{-1}(U)\to U$ which is finite and
+\'etale. Then $U$ is a dense open subset, and for $g\in G(k)$, one has
+$g\in U(k)$ if and only if there exist exactly $d$ conjugates of $H$
+containing $g$, or again if and only if there exist at least $d$ distinct
+conjugates $H_i$ of $H$ containing $g$ such that for every $i$,
+$(\mathfrak g/\mathfrak h_i)^{\ad(g)}=0$ (where $\mathfrak h_i=\Lie(H_i)$).
+\end{corollary}
+Assertion a) follows from the fact that $\psi$ is generically \'etale
+(which was stated at the end of 2.1); this also implies that the open
+subset $U$ introduced in c) is nonempty, i.e. dense, and the two stated
+characterizations of the elements of $U(k)$ (taking into account that
+$\psi$ is separated, $X$ integral and $G$ integral and normal, SGA1 I
+10.11, and the fact that $(\mathfrak g/\mathfrak h_i)^{\ad(g)}=0$ means
+that $\psi$ is \'etale at the point $x_i$ of $\psi^{-1}(g)$ corresponding
+to $H_i$). If $H$ contains the maximal torus $T$ of $G$, then the
+centralizers of $T$ in $H$ and $G$ have the same dimension and are smooth
+and connected (XII 6.6 b)), hence are equal, which proves that $C\subset G$.
+% typo?: kept as printed: C subset G in the proof of b).
+Moreover, one knows that the normalizer of $T$ in a smooth group which
+contains it is smooth (XI, 2.4 bis), so $\Norm_G(T)$ and
+$\Norm_{\Norm_G(H)}(T)$ are smooth (N.B. it was noted that $N=\Norm_G(H)$
+is smooth, at the end of statement 2.1); moreover, $\Norm_N(T)$ contains
+$C$, which has finite index in $N(T)$, hence it has finite index in
+$N(T)$. Using the conjugacy theorem for maximal tori of $H$, one sees
+that the index in question is equal to the number of conjugates of $H$
+which contain $T$, or, what amounts to the same thing, which contain $C$.
+Now, since the union of the conjugates of $C$ in $G$ is dense (by
+2.1 (i) $\Rightarrow$ (vi) applied to $C$ in place of $H$), and the open
+subset $U$ defined in c) is clearly stable under inner automorphisms,
+one sees that $C\cap U\ne\varnothing$. Proceeding as in the proof of
+implication (vi) $\Rightarrow$ (ii) of 2.1, one concludes that (making,
+if necessary, a harmless change of base field) there exists a
+$g\in(C\cap U)(k)$ such that every conjugate of $H$ which contains $g$
+contains $T$, and consequently also $C$. Thus the conjugates of $H$
+containing $C$ are those containing $g$, and since $g\in U(k)$, their
+number is equal to $d$, which finishes establishing b). One will note
+that we have in fact established that the set of conjugates of $H$
+containing $T$ is a homogeneous set under the group of rational points of
+\[
+ W_G(T)=\Norm_G(T)/\Centr_G(T),
+\]
+which proves in particular that
+\[
+ d\leq\text{order of the Weyl group of }G.
+\]
+
+\begin{corollary}{2.4}\label{XIII.2.4}
+With the notation of 2.1, the following conditions are equivalent:
+\begin{enumeratei}
+\item $\psi:X\to G$ is a birational morphism.
+\item There is one and only one conjugate of $H$ containing a given
+Cartan subgroup of $G$.
+\item $H$ contains a Cartan subgroup $C$ of $G$, and
+$\Norm_G(H)\supset\Norm_G(C)$.
+\item There exists a nonempty open subset $V$ of $G$ such that
+$g\in V(k)$ implies that $g$ is contained in exactly one conjugate of $H$.
+\end{enumeratei}
+\end{corollary}
+This is clear by 2.1 and 2.3.
+
+\begin{corollary}{2.5}\label{XIII.2.5}
+Suppose that the conditions of 2.4 hold, and let $g\in G(k)$.
+The following conditions are equivalent:
+\begin{enumeratei}
+\item $g\in U(k)$, where $U$ is defined in 2.3 c), i.e. $g$ is contained
+in one and only one conjugate of $H$.
+\item The set of conjugates of $H$ containing $g$ is finite and nonempty.
+\item The scheme $\psi^{-1}(g)$ ``of conjugates of $H$ containing $g$''
+contains an isolated point.
+\item There exists a conjugate $H'$ of $H$ containing $g$, and one has
+$(\mathfrak g/\mathfrak h')^{\ad(g)}=0$, where $\mathfrak h'=\Lie(H')$.
+\end{enumeratei}
+Finally, $U$ is also the largest open subset of $G$ such that $\psi$
+induces an isomorphism $\psi^{-1}(U)\isomto U$.
+\end{corollary}
+The equivalence of (i), (ii), (iii), as well as the last assertion,
+follows from the ``Main Theorem''\nde{Of Zariski!} applied to the
+birational morphism $\psi:X\to G$, taking into account that $G$ is normal.
+The equivalence of these conditions with (iv) follows at once from the
+last assertion of 2.1 characterizing the set of elements of $X$ at which
+$\psi$ is \'etale.
+
+\begin{theorem}{2.6}\label{XIII.2.6}
+Let $G$ be a smooth connected algebraic group over an algebraically closed
+field $k$, $C$ a Cartan subgroup, associated to a maximal torus $T$,
+$N=\Norm_G(C)=\Norm_G(T)$ (cf. XII 8.4), and let $X=G\times^N C$, where
+$N$ acts on the left factor $G$ by right translations, and on the right
+factor $C$ by inner automorphisms; let $\psi:X\to G$ be the canonical
+morphism.
+
+\noindent a) The morphism $\psi$ is birational.
+
+\noindent b) Let $U$ be the largest open subset of $G$ such that $\psi$
+induces an isomorphism $\psi^{-1}(U)\isomto U$ (cf. 2.5). Let
+\[
+ \rho=\rho_\nu(G)=\dim C
+\]
+be the nilpotent rank of $G$. Then for every $g\in G(k)$, the multiplicity
+of the eigenvalue $1$ in $\ad(g)$ acting on $\mathfrak g$ is at least
+$\rho$, and for it to equal $\rho$, it is necessary and sufficient that
+one have $g\in U(k)$.
+\end{theorem}
+\begin{proof}
+Since condition 2.1 (i) is verified, one may apply 2.4 (iii)
+$\Rightarrow$ (i), which establishes (a). In BIBLE 7 (in the case where
+$G$ is affine) the points of $U(k)$ are called the \emph{regular points}
+of $G(k)$, and we shall follow this terminology by calling $U$ the open
+subset of regular points of $G$. (N.B. The proof given in BIBLE of the
+fact that the set in question is itself open is incorrect, but we have
+obtained it in the present expos\'e under more general conditions.)
+% typo: ou peut -> on peut; expoee -> expose.
+
+Let us prove b), and for this purpose introduce for every $g\in G(k)$
+the characteristic polynomial
+\[
+ P(\ad(g),t)=t^n+c_1(g)t^{n-1}+\cdots+c_n(g);
+\]
+one sees at once (replacing $k$ by an arbitrary algebra over $k$) that
+the $c_i(g)$ come from well-determined sections
+\[
+ c_i\in\Gamma(G,\OO_G).
+\]
+When $g\in G(k)$ is an element contained in a Cartan subgroup (for
+example, a regular element), which we may suppose to be $C$, then by
+2.5 (iv) one sees that one has $(\mathfrak g/\mathfrak c)^{\ad(g)}=0$
+if and only if $g$ is regular (where $\mathfrak c$ denotes the Lie
+algebra of $C$); on the other hand, since $C$ is nilpotent one sees
+immediately that $\ad_{\mathfrak c}(g)$ has only the eigenvalue $1$,
+which proves that the multiplicity of the eigenvalue $1$ in
+$\ad_{\mathfrak g}(g)$ is $\geq\rho$, and equal to exactly $\dim C=\rho$
+if and only if $g$ is regular. In particular, the above polynomial
+is divisible by $(t-1)^\rho$. Since the divisibility relation by
+$(t-1)^\rho$ is expressed by linear relations (with integer coefficients)
+between the coefficients of the polynomial, and these relations hold
+for $g\in U(k)$, $U$ being a dense open subset, it follows ($G$ being
+reduced) that they hold for every $g$; in fact one has a relation
+\[
+ t^n+c_1t^{n-1}+c_0=(t-1)^\rho
+ (t^{n-\rho}+b_1t^{n-\rho-1}+\cdots+b_{n-\rho})\tag{$\dagger$}
+\]
+% typo?: kept as printed: c_0 and missing intermediate terms on the left.
+in the polynomial ring over $\Gamma(G,\OO_G)$; in particular for every
+$g\in G(K)$, $\ad(g)$ has the eigenvalue $1$ with multiplicity at least
+$\rho$. Moreover, one has seen that one has equality if $g$ is regular;
+let us prove the converse. For this, suppose first that $G$ is affine,
+and write $g$ as the product
+\[
+ g=g_sg_u
+\]
+of its semisimple part and its unipotent part (BIBLE 4 \No 4); then
+\[
+ \ad(g)=\ad(g_s)\ad(g_u)
+\]
+is the analogous decomposition of $\ad(g)$ (\loccit cor. to th. 3), and
+consequently $\ad(g)$ and $\ad(g_s)$ have the same eigenvalues (counted
+with their multiplicities); in particular the eigenvalue $1$ occurs
+with the same multiplicity in $\ad(g)$ and in $\ad(g_s)$.
+
+On the other hand, by BIBLE 7 th. 2 cor. 1, $g$ is regular if and only
+if $g_s$ is. Thus, to prove b), one may suppose $g=g_s$, i.e. $g$
+semisimple, hence contained in a maximal torus by BIBLE 6 th. 5 c),
+and a fortiori in a Cartan subgroup, a case which has already been
+treated. This proves b) in the case where $G$ is affine. In the general
+case, let $Z=\Centr(G)_{\mathrm{red}}$; then by XII 6.6 e) the Cartan
+subgroups of $G$ are the inverse images of those of $G'=G/Z$, so $g$
+is regular in $G$ if and only if its image $g'$ in $G'$ is regular in
+$G'$. On the other hand, since $Z$ is smooth, the Lie algebra
+$\mathfrak g'$ of $G'$ is precisely $\mathfrak g/\mathfrak z$, where
+$\mathfrak z=\Lie(Z)$, and $\ad(g')$ is precisely
+$\ad(g)_{\mathfrak g/\mathfrak z}$, so the multiplicity of the eigenvalue
+$1$ in $\ad(g)$ is equal to $d=\dim Z$ plus the multiplicity of the
+eigenvalue $1$ in $\ad(g')$, whence it follows at once that the first
+is equal to the nilpotent rank of $G$ if and only if the second is
+equal to the nilpotent rank of $G'$. Thus one is reduced to the case
+of $G'$; now, $G'$ being affine by XII 6.1, this case has already been
+treated. This completes the proof of 2.6.
+% typo: on vu -> on a vu.
+\end{proof}
+
+\begin{corollary}{2.7}\label{XIII.2.7}
+With the notation of the preceding proof\nde{Cf. ($\dagger$) above.}, let
+\[
+ b=1+b_1+\cdots+b_{n-\rho}\in\Gamma(G,\OO_G).
+\]
+Then the open subset of regular points of $G$ is given by
+\[
+ U=G_b
+\]
+(the set of points of $G$ at which $b$ is invertible); in particular $U$
+is an affine open subset if $G$ is affine.
+\end{corollary}
+
+% original p. 267
+\begin{corollary}{2.8}\label{XIII.2.8}
+Let $H$ be a smooth connected algebraic subgroup of $G$ containing a
+Cartan subgroup of $G$.
+
+\noindent a) Let $C$ be an algebraic subgroup of $H$. For $C$ to be a
+Cartan subgroup of $H$, it is necessary and sufficient that it be a
+Cartan subgroup of $G$.
+
+\noindent b) Let $g\in G(k)$, and let $d$ be the integer introduced
+in 2.3. For $g$ to be a regular point of $G$, it is necessary and
+sufficient that there exist exactly $d$ conjugates $H_i$ of $H$ containing
+$g$, and that for each $i$, $g$ be a regular element of $H_i$, or again
+that there be at most $d$ conjugates of $H$ containing $g$, and that
+$g$ be regular in one of them. If this is so, and if $C$ is the unique
+Cartan subgroup of $G$ containing $g$, then the conjugates of $H$
+containing $g$ are the conjugates of $H$ containing $C$.
+
+\noindent c) Let $g\in H(k)$; for $g$ to be regular in $G$, it is
+necessary and sufficient that it be regular in $H$, and that one have
+\[
+ (\mathfrak g/\mathfrak h)^{\ad(g)}=0.
+\]
+\end{corollary}
+\begin{proof}
+Let us prove a). Under either hypothesis on $C$, the unique maximal
+torus $T$ of $C$ is a maximal torus of $H$ and of $G$ ($H$ having the
+same reductive rank as $G$), so, since
+$\Centr_H(T)\subset\Centr_G(T)$ are smooth connected groups of the
+same dimension, they are equal; hence it amounts to the same thing to
+say that $C$ is equal to one or the other of these two groups, which
+proves a).
+
+Let us prove b). Suppose first that $g$ is regular for $G$, and let
+$C$ be the unique Cartan subgroup of $G$ containing $g$; then by 2.3 b)
+there exist exactly $d$ conjugates $H_i$ of $H$ containing $C$. Since
+$(\mathfrak g/\mathfrak c)^{\ad(g)}=0$, i.e. $\ad(g)$ does not have
+the eigenvalue $+1$ on $\mathfrak g/\mathfrak c$, one has a fortiori
+$(\mathfrak g/\mathfrak h_i)^{\ad(g)}=0$, so by 2.3 c) there are exactly
+$d$ conjugates of $H$ containing $g$, namely the $H_i$. For such an
+$H_i$, a Cartan subgroup of $H_i$ containing $g$ is a Cartan subgroup
+of $G$ containing $g$, by a), and is therefore equal to $C$, which
+proves that $g$ is regular in $H_i$. Conversely, suppose that there
+exist at most $d$ conjugates $H_i$ of $H$ containing $g$, and that $g$
+is regular in one of them, which may be supposed equal to $H$.
+Let us prove that $g$ is regular in $G$. Since $g$ is regular in $H$,
+it is contained in a unique Cartan subgroup $C$ of $H$; by a), this
+is a Cartan subgroup of $G$. Let $C'$ be a Cartan subgroup of $G$
+containing $g$; let us prove $C'=C$ (which will prove that $g$ is
+regular in $C$).
+% typo?: kept as printed: regular in C rather than G.
+Indeed, by 2.3 b), there exist exactly $d$ conjugates of $H$ containing
+$C'$, and since these contain $g$, they are necessarily the $H_i$,
+so the $H_i$, and in particular $H$, contain $C'$.
+% The proof of Corollary 2.8 continues in en-03.tex.

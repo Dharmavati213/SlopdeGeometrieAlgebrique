@@ -1,0 +1,126 @@
+% PDF pp. 12--16.
+\sgasection{4}{Case of an arbitrary base. Quasi-isotriviality theorem}
+Let $A$ be a local ring. Recall that one says with Nagata that $A$ is \emph{henselian} if every algebra $B$ finite over $A$ is a product of local algebras $B_i$ finite over $A$.
+\begin{enonce}{Recollection}{4.0}\label{X.4.0}
+\nde{This recollection has been expanded, and remark 4.0.1 added.} Let $A$ be a henselian local ring, $k$ its residue field, $S=\Spec(A)$, $S_0=\Spec(k)$, and $\xi$ a geometric point of $S_0$. Then the functor
+\[
+X\mto X_0=X\times_S S_0
+\]
+is an equivalence between the category of étale coverings over $S$ and the analogous category over $S_0$ (cf. EGA IV$_4$, \S18.5). Consequently (cf. SGA 1, V), one has $\pi_1(S_0,\xi)=\pi_1(S,\xi)$.
+
+Suppose in addition $A$ noetherian and denote by $A'$ its completion, $S'=\Spec(A')$. Then $A'$ is a complete noetherian local ring, hence henselian (loc. cit., 18.5.14), and the functor
+\[
+X\mto X'=X\times_S S'
+\]
+from the category of étale coverings over $S$ to the analogous category over $S'$ fits into a commutative diagram
+\[
+\xymatrix{\operatorname{Cov.\acute et.}(S)\ar[rr]\ar[dr]_\simeq&&\operatorname{Cov.\acute et.}(S')\ar[dl]^\simeq\\&\operatorname{Cov.\acute et.}(S_0)&}
+\]
+and is therefore also an equivalence of categories, whence $\pi_1(S_0,\xi)=\pi_1(S',\xi)$.
+\end{enonce}
+\begin{remark}{4.0.1}\label{X.4.0.1}
+Since $S$ is connected ($A$ being local), it follows from 1.2 that the category of isotrivial groups of multiplicative type over $S$ is equivalent to the analogous category over $S_0$ (and also over $S'$ if $A$ is in addition noetherian).
+\end{remark}
+\begin{lemma}{4.1}\label{X.4.1}
+Let $A$ be a henselian local ring with residue field $k$, $S=\Spec(A)$, $S_0=\Spec(k)$.
+
+(i) The functor
+\[
+H\mto H_0=H\times_S S_0
+\]
+is an equivalence between the category of finite groups of multiplicative type over $S$ and the analogous category over $S_0$.
+
+(ii) If, in addition, $A$ is noetherian, denoting by $A'$ its completion and by $S'=\Spec(A')$, the functor
+\[
+H\mto H'=H\times_S S'
+\]
+is an equivalence between the category of finite groups of multiplicative type over $S$ and the analogous category over $S'$.
+\end{lemma}
+As in 4.0, the second assertion is a consequence of the first; let us prove the latter. One already knows that the functor considered is essentially surjective, since every group of multiplicative type $H_0$ over $S_0=\Spec(k)$, finite and hence of finite type over $k$, is isotrivial by 1.4, and hence comes from an isotrivial group of multiplicative type over $S$ by 4.0.1.
+
+It remains to prove full faithfulness, i.e. that for two finite groups of multiplicative type $G,H$ over $S$ the map below is bijective:
+\[
+\Hom_{S\text{-}\mathrm{gr.}}(G,H)\to\Hom_{S_0\text{-}\mathrm{gr.}}(G_0,H_0),
+\]
+\nde{The following has been added.} i.e. denoting by $F$ the $S$-functor $\uHom_{S\text{-}\mathrm{gr.}}(G,H)$, that the natural map
+\[
+\Hom_S(S,F)\to\Hom_{S_0}(S_0,F_0)
+\]
+induced by the base change $S_0\to S$ is bijective. For this, in view of recollection 4.0, it suffices to prove the
+\begin{lemma}{4.2}\label{X.4.2}
+Let $G,H$ be two finite groups of multiplicative type over a prescheme $S$. Then $F=\uHom_{S\text{-}\mathrm{gr.}}(G,H)$ is representable by a finite étale scheme over $S$.
+\end{lemma}
+\nde{The original has been expanded in what follows.} Let $f:S'\to S$ be a faithfully flat and quasi-compact morphism such that $G',H'$ are diagonalizable. It suffices to show that $F_{S'}$ is representable by a prescheme $X'$ étale and finite (hence affine) over $S'$, for the descent datum on $X'$ relative to $f$ (cf. VIII 1.7.2) will then be effective (by SGA 1 VIII, 2.1), whence the existence of an $S$-prescheme $X$ such that $X\times_S S'=X'$, representing $F$ and étale and finite over $S$ (cf. SGA 1, V 5.7 and EGA IV$_4$, 17.7.3 (ii)).
+
+One may therefore suppose $G=D_S(M)$ and $H=D_S(N)$, where $M,N$ are finite commutative groups (cf. VIII 2.1 c)). Then $K=\Hom_{\mathrm{gr.}}(N,M)$ is a finite abelian group, and by VIII 1.5 one has an isomorphism
+\[
+\uHom_{S\text{-}\mathrm{gr.}}(G,H)\simeq K_S,
+\]
+which completes the proof of 4.2 and hence of 4.1.
+\begin{proposition}{4.3.0}\label{X.4.3.0}
+\nde{This recollection has been added; it is used in the proof of 4.3 (the reference to EGA IV$_4$, 18.5.11 not being entirely satisfactory).} Let $S$ be a henselian local scheme, $s$ its closed point, $g:X\to S$ a morphism locally of finite type, $x$ an isolated point of the fiber $X_s$.
+
+(i) Then $\OO_{X,x}$ is finite over $\OO_{S,s}$. (In particular, if the residue extension $\kappa(x)/\kappa(s)$ is trivial, $\OO_{S,s}\to\OO_{X,x}$ is surjective, by Nakayama's lemma.)
+
+(ii) If in addition $g$ is separated, $X'=\Spec(\OO_{X,x})$ is an open and closed subscheme of $X$, i.e. one has a decomposition as a disjoint sum $X=X'\coprod X''$.
+\end{proposition}
+\begin{proof}
+By the local form of Zariski's main theorem found in [Pes66] or [Ray70, Ch. IV, Th. 1], $x$ has an affine open neighborhood $U=\Spec(B)$ of finite type and quasi-finite over $A=\OO_{S,s}$, and there exists an open immersion $U\hookrightarrow Y=\Spec(C)$, where $C$ is an algebra finite over $A$. (N.B. To reach this conclusion one may also use Chevalley's semicontinuity theorem (EGA IV$_3$, 13.1.4), then the form of Zariski's main theorem given in loc. cit., 8.12.8.)
+
+Since $A$ is henselian, $Y$ is the disjoint sum of local schemes $Y_1,\dots,Y_n$, each finite over $S$, and the points of $Y$ over $s$ are the closed points $y_1,\dots,y_n$. Thus $x=y_i$ for some $i$, and $\OO_{X,x}=\OO_{U,x}=C_i$ is finite over $A$. Moreover, $X'=C_i$ is an open subscheme of $U$, hence of $X$.
+% typo?: X'=C_i rather than Spec(C_i) retained as printed.
+Suppose in addition $g$ separated. Then, since the morphism $X'\to S$ is finite ($C_i$ being finite over $A$), the same is true of the immersion $X'\to X$ (cf. EGA II, 6.1.5 (v)), so $X'$ is also closed in $X$.
+\end{proof}
+\begin{lemma}{4.3}\label{X.4.3}
+Let $A$ be a noetherian henselian local ring, $A'$ its completion, $S=\Spec(A)$, $S'=\Spec(A')$, $s$ the closed point of $S$, $G,H$ two $S$-group preschemes, with $G$ of multiplicative type and of finite type over $S$, $H$ locally of finite type and separated over $S$, $H_s$ of multiplicative type, and $H$ flat over $S$ at the points of $H_s$.
+
+Let $G',H'$ be deduced from $G,H$ by the base change $S'\to S$. Then the natural map below is bijective:
+\[
+\Hom_{S\text{-}\mathrm{gr.}}(G,H)\isomto\Hom_{S'\text{-}\mathrm{gr.}}(G',H').
+\]
+\end{lemma}
+Since $S'$ is faithfully flat and quasi-compact over $S$, one knows by SGA 1, VIII 5.2 that this map is a bijection of the left-hand side onto the subset of the right-hand side consisting of the $u':G'\to H'$ such that the two inverse images $u''_1,u''_2:G''\to H''$ of $u'$ over $S''=S'\times_S S'$ (by the projections $\operatorname{pr}_1,\operatorname{pr}_2$ of $S''$ onto $S'$) are equal.
+
+Thus everything amounts to proving that for every homomorphism of $S'$-groups $u':G'\to H'$ one has $u''_1=u''_2$. By density theorem IX 4.8 it suffices to prove that $u''_1,u''_2$ coincide on ${}_nG''$ for every integer $n>0$. (N.B. The density theorem is needed here essentially in a case where the base prescheme, here $S''$, is not locally noetherian.)
+
+This reduces us, replacing $G$ by ${}_nG$, to the case where there exists an integer $n>0$ such that $n\cdot\mathrm{id}_G=0$, hence where $G$ is finite over $S$. Similarly, let ${}_nH$ be the kernel of the $n$-th power morphism $\phi_n$ in $H$. (N.B. We have not supposed $H$ commutative, so $\phi_n$ (resp. ${}_nH$) is not necessarily a group homomorphism (resp. a subgroup of $H$).) Since ${}_nH$ is defined as the fibered product of $\phi_n:H\to H$ and the unit section $\varepsilon:S\to H$, its formation commutes with every base change $T\to S$, i.e. one has $({}_nH)_T={}_n(H_T)$.
+
+\nde{The original has been expanded in what follows, on the basis of indications of M. Raynaud.} Denote by a subscript $m$ on the right the reductions modulo $\goth m^{m+1}$, where $\goth m$ is the maximal ideal of $A$. Then $H_m$ is flat over $S_m$ (since $H$ is so over $S$ at the points of $H_0$); thus by 2.4, since $H_0$ is of multiplicative type and of finite type, the same is true of $H_m$. Hence each $({}_nH)_m={}_n(H_m)$ is a subgroup of $H_m$, of multiplicative type, finite and flat over $S_m$.
+
+In particular, $({}_nH)_0={}_n(H_0)$ is finite over $S_0$; since $S$ is local henselian and ${}_nH$ is (like $H$) locally of finite type and separated over $S$, by 4.3.0 the local rings of ${}_nH$ at the points of $({}_nH)_0$ are finite over $S$, and one has a decomposition as a disjoint sum of open subsets
+\begin{equation}\tag{*}
+{}_nH={}_nH^+\coprod{}_nH^-,
+\end{equation}
+where $Z={}_nH^+$ is finite over $S$, and ${}_nH^-$ lies over $S-\{s\}$.
+
+Note that for every finite $S$-scheme $Y$ (such as $G$), every $S$-morphism $Y\to{}_nH$ factors through $Z$, and that formation of decomposition (*) commutes with the base change $S'\to S$ (where $S'=\Spec(A')$, $A'$ the completion of $A$).
+
+Then $Z'=Z\times_S S'$ is a finite scheme over $S'$, as is $P'=Z'\times_{S'}Z'$. Denote by $\nu$ the restriction to $P'$ of multiplication in $H'$, and by $\sigma$ the automorphism of $P'$ interchanging the two factors. Since $P'$ is finite over $S'$ and $H'$ separated and locally of finite type over $S'$, by EGA II 5.4.3 and IV$_1$ 1.1.3, $Y=\nu(P')$ is a closed subscheme of $H'$, universally closed and quasi-compact, hence of finite type, hence proper over $S'$. Moreover $Y\to S'$ has finite fibers (since $P'\to S'$ does). Thus, since $S'$ is noetherian, the morphism $Y\to S'$ is finite (cf. EGA III, 4.4.2). Since $Z'\subseteq Y$ and $Z'_m=Y'_m$ for every $m$, one has $Z'=Y$ by lemma IX 5.0, hence $Z'$ is a subgroup of $H'$. Similarly, the kernel $K=\Ker(\nu,\nu\circ\sigma)$ is a closed subscheme of $P'$ such that $K_m=P'_m$ for every $m$ (since $Z'_m={}_nH_m$ is commutative), so $K=P'$, i.e. $Z'$ is a commutative subgroup of $H'$.
+% typo?: Y'_m rather than Y_m retained as printed.
+On the other hand, since each reduction $Z'_m={}_nH_m$ is flat over $S_m$, by the ``local criterion of flatness'' (cf. EGA $0_{\mathrm{III}}$, 10.2.2 or [BAC], III \S5, Example 1 and Th. 1), $Z'$ is flat over $S'$. Since, in addition, $Z'_0={}_nH_0$ is a finite group of multiplicative type over $S_0$, hence isotrivial by 1.4, $Z'$ is of multiplicative type (and isotrivial) over $S'$ by 3.8 b). Since $S'\to S$ is faithfully flat and quasi-compact, one deduces that multiplication $Z\times_S Z\to H$ factors through $Z$ and makes $Z$ a subgroup of $H$, finite over $S$ and of multiplicative type (since $Z'$ is so).
+
+Finally, by the remarks made above concerning decomposition (*), $Z'$ is the ``finite part'' of ${}_nH'$, and therefore the morphism $u':G'\to{}_nH'$ takes its values in $Z'$. Since $Z$ is of multiplicative type and finite over $S$, as is $G={}_nG$, by 4.1 $u'$ comes from a $u:G\to Z$, and hence $u''_1=u''_2$. This completes the proof of 4.3.
+\begin{lemma}{4.4.0}\label{X.4.4.0}
+\nde{This lemma has been added; it is used several times in what follows.} Let $A$ be a ring, $S=\Spec(A)$, $H$ an $S$-group scheme of multiplicative type and of finite type, quasi-isotrivial (resp. isotrivial), $(A_i)$ a filtering family of subrings of $A$ whose inductive limit is $A$, $S_i=\Spec(A_i)$.
+
+Then there exists an index $i$ and an $S_i$-group scheme $H_i$ of multiplicative type and of finite type, quasi-isotrivial (resp. isotrivial), such that $H=H_i\times_{S_i}S$.
+\end{lemma}
+\begin{theorem}{4.4}\label{X.4.4}
+Let $S$ be a prescheme, $H$ an $S$-group prescheme affine and of finite presentation over $S$, and $s\in S$. Suppose:
+
+$\alpha$) $H$ is flat over $S$ at the points of $H_s$.
+
+$\beta$) $H_s$ is of multiplicative type.
+
+Then there exists an étale morphism $S'\to S$, a point $s'$ of $S'$ over $s$ such that the extension $\kappa(s')/\kappa(s)$ is trivial, and an open and closed subgroup $G'$ of $H'=H\times_S S'$, of multiplicative type and of finite type, isotrivial, such that $G'_{s'}=H'_{s'}$.
+\end{theorem}
+\nde{The following reductions have been expanded (the original indicated: ``One reduces immediately to the case where $S$ is the spectrum of a noetherian local ring $A$, and $s$ is the closed point of $S$.'').} a) Denote temporarily by $T=\Spec(\OO_{S,s})$ and let us show that by ``descent of conclusions'' one may reduce to the case where $S=T$. Indeed, suppose one has found an étale morphism $g:T'\to T$, a point $s'\in T'$ and a subgroup $G'$ of $H'=H_{T'}$ satisfying the conditions of the statement; replacing $T'$ by an affine open neighborhood of $s'$, one may suppose $T'$ of finite presentation over $T$.
+
+Since $G'$ is isotrivial, there exists a finite surjective étale morphism $f:\widetilde T\to T'$ such that $\widetilde G=G'\times_{T'}\widetilde T$ is isomorphic to $D_{\widetilde T}(M)$, where $M$ is an abelian group of finite type. Since $T',H$, and $\widetilde T,G'$ are of finite presentation over $T=\Spec(\OO_{S,s})$, and $\OO_{S,s}$ is the inductive limit of its subalgebras $A_i=\OS(S_i)$, where $S_i$ ranges over the affine open neighborhoods of $s$ in $S$, by EGA IV$_3$, 8.8.2 (and Exp. VI$_{\mathrm B}$, 10.2 and 10.3) there exists an index $i$, $S_i$-preschemes (resp. an $S_i$-group prescheme) of finite presentation $S'_i,\widetilde S_i$ (resp. $G'_i$), and morphisms $g_i:S'_i\to S_i$, $f_i:\widetilde S_i\to S'_i$ (resp. a morphism of $S'_i$-group preschemes $u_i:G'_i\to H\times_S S'_i$), from which $f,g$ (resp. $u:G'\to H'$) come by base change $T'\to S_i$. Moreover, taking $i$ sufficiently large, $g_i$ will be étale, $f_i$ finite surjective étale, and $u_i$ an open and closed immersion (cf. EGA IV, 8.10.5 and 17.7.8).
+
+Then $\widetilde G$ comes from the groups $\widetilde G_i=G_i\times_{S_i}\widetilde S_i$ and $D_{\widetilde S_i}(M)$; thus by EGA IV$_3$, 8.8.2 (i) (and VI$_{\mathrm B}$, 10.2), there exists an index $j\geq i$ such that $\widetilde G_j\simeq D_{\widetilde S_j}(M)$, so $G_j$ is of isotrivial multiplicative type. Denote by $s'_j$ the image of $s'$ in $S'_j$. Then the étale morphism $S'_j\to S_j\hookrightarrow S$, the point $s'_j$ and the open and closed subgroup $G'_j$ of $H\times_S S'_j$ satisfy the conditions of the statement. This shows that one may suppose $S=\Spec(A)$ local with closed point $s$.
+% typo?: G_i and S_i without primes in the formula for tilde G_i retained as printed.
+b) Then $A$ is the inductive limit of local rings $A_i$ which are localizations of $\ZZ$-algebras of finite type; put $S_i=\Spec(A_i)$. Let us show that hypotheses $\alpha$), $\beta$) ``descend'' to some $A_i$. Since $H\to S$ is of finite presentation, the set of $x\in H$ such that $H$ is flat over $S$ at $x$ is an open subset $W$, containing $H_s$ by hypothesis, and hence containing a quasi-compact open subset $V$ containing $H_s$ (for $H_s$ being affine, one may cover it by finitely many affine open subsets contained in $W$). Then the open immersion $\tau:V\hookrightarrow H$ is of finite presentation, so $V\to S$ is also so.
+
+Thus by EGA IV$_3$, 8.8.2 (and Exp. VI$_{\mathrm B}$, 10.2 and 10.3) there exists an index $i$, an $S_i$-prescheme $V_i$ (resp. an $S_i$-group prescheme $H_i$) of finite presentation over $S_i$, and an $S_i$-morphism $\tau_i:V_i\to H_i$ from which $V,H,\tau$ come by base change $S\to S_i$; moreover, taking $i$ sufficiently large, $\tau_i$ will be an open immersion and $V_i$ flat over $S_i$, by EGA IV$_3$, 8.10.5 and 11.2.6. Denote by $s_i$ the image of $s$ in $s_i$; since the open immersion $(V_i)_{s_i}\hookrightarrow(H_i)_{s_i}$ gives, by the base change $\kappa(s_i)\to\kappa(s)$, the equality $V_s=H_s$, one already has $(V_i)_{s_i}=(H_i)_{s_i}$, i.e. $(H_i)_{s_i}\subseteq V_i$, so $H_i$ is flat over $S_i$ at the points of $(H_i)_{s_i}$. Finally, $(H_i)_{s_i}$ is of multiplicative type, since $H_s=(H_i)_{s_i}\otimes_{\kappa(s_i)}\kappa(s)$ is so. Thus the triple $(S_i,H_i,s_i)$ satisfies the hypotheses of 4.4, and if the desired assertion is satisfied for this triple, it will also be so, by base change, for $(S,H,s)$.
+% typo?: "image of s in s_i" retained as printed. Last sentence completes on PDF p. 17.

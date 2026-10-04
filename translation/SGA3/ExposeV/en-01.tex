@@ -1,0 +1,126 @@
+\exposetitle{V}{Construction of quotient schemes}
+\label{V}
+\begin{center}by P. Gabriel\end{center}
+
+The object of this exposé is to prove the theorems stated in TDTE III.\nde{Namely, Theorems 5.1, 5.3, 6.1, 6.2 and 7.2 of TDTE III. The first two (resp. the next two) correspond to Theorem 4.1 (resp. Theorems 7.1 and 8.1) of this exposé. Theorem 7.2 of TDTE III is proved in Exp. VIA, 3.2 and 3.3.} If $X$ and $T$ are two objects of a category $\mathcal C$, we write $X(T)$ instead of $\Hom_{\mathcal C}(T,X)$. Similarly, if $\varphi:Y\to X$ (resp. $T$) is an arrow (resp. an object) of $\mathcal C$, $\varphi(T)$ denotes the map $g\mto\varphi\circ g$ from $Y(T)$ to $X(T)$:
+\[
+\xymatrix{&T\ar[dl]_g\ar[dr]^{\varphi\circ g}&\\Y\ar[rr]_\varphi&&X,}
+\]
+and $T(\varphi)$ denotes the map $g\mto g\circ\varphi$ from $T(X)$ to $T(Y)$:
+\[
+\xymatrix{Y\ar[rr]^\varphi\ar[dr]_{g\circ\varphi}&&X\ar[dl]^g\\&T.&}
+\]
+Finally, if $P$ is a scheme, one denotes by $\underline P$ the underlying set of $P$.
+
+Exceptionally, in the present exposé we do not follow the convention stated in IV 4.6.15 concerning the notation for quotients (loc. cit., top of page 227 of the original), for we wish to give here a construction of quotients that also applies to ``pre-equivalence relations''\nde{That is, to groupoids with base $X$, cf. the terminology at the end of section 1. When $\mathcal C$ is the category of schemes, the quotient $p:X\to Y$ of a groupoid $X_*$ with base $X$ exists under certain hypotheses (cf. 4.1, 6.1, 7.1); if, moreover, $X_*$ is an equivalence relation, $p$ is, under the same hypotheses, faithfully flat and quasi-compact, hence a universal epimorphism, cf. loc. cit.} that are not equivalence relations.
+
+\sgasection{1}{$\mathcal C$-groupoids}
+\textbf{a)} $\mathcal C$ is a category in which products and fibered products exist. Let us first recall that a diagram
+\[
+\xymatrix{X_1\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X_0\ar[r]^p&Y}
+\]
+of $\mathcal C$ is said to be exact if $pd_0=pd_1$ and if, for every $T\in\mathcal C$, $T(p)$ is a bijection from $T(Y)$ onto the subset of $T(X_0)$ consisting of the arrows $f:X_0\to T$ such that $fd_0=fd_1$. One also says that $(Y,p)$ is the cokernel of $(d_0,d_1)$, and one writes
+\[
+(Y,p)=\Coker(d_0,d_1).
+\]
+\textbf{b)} Let, for example, $\mathcal C$ be the category $(\mathrm{Esp.An})$ of ringed spaces. In this case there is always a cokernel $(Y,p)$, of which one can give the following description: the underlying topological space of $Y$ is obtained from $X_0$ by identifying the points $d_0(x)$ and $d_1(x)$ and giving $Y$ the quotient topology. The canonical map $\pi:X_0\to Y$ and $d_0,d_1$ then induce a pair of arrows of sheaves of rings on $Y$:
+\[
+\xymatrix{\pi_*(\OO_0)\ar@<.5ex>[r]^{\delta_0}\ar@<-.5ex>[r]_{\delta_1}&\pi_*(d_{0*}\OO_1)=\pi_*(d_{1*}\OO_1),}
+\]
+where $\OO_i$ is the structure sheaf of $X_i$. For the sheaf of rings on $Y$ one chooses the subsheaf of $\pi_*(\OO_0)$ whose sections $s$ satisfy $\delta_0(s)=\delta_1(s)$. The arrow $p$ is defined in the obvious way.
+
+\nde{Lemmas 1.1 and 1.2, used several times in sections 5 to 9, have been added.}Let $X_1\rightrightarrows X_0$, with arrows $d_1,d_0$, be a diagram in $(\mathrm{Esp.An})$, and let $(Y,p)$ be its cokernel. An open subset $U$ of $X_0$ is said to be saturated if $d_0^{-1}(U)=d_1^{-1}(U)$, which is equivalent to saying that $U=p^{-1}(p(U))$. In this case, since $Y$ has the quotient topology, $p(U)$ is an open subset of $Y$.
+\begin{lemma}{1.1}\label{V.1.1}
+Let $U$ be a saturated open subset of $X$ and $V=p(U)$. If one denotes by $U_1$ the open subset $d_0^{-1}(U)=d_1^{-1}(U)$ of $X_1$, and by $\widetilde d_0$, $\widetilde d_1$ and $\widetilde p$ the restrictions of $d_0,d_1$ to $U_1$, and of $p$ to $U$, then $(V,\widetilde p)$ is a cokernel in $(\mathrm{Esp.An})$ of:\nde{This is not the case in the category of schemes. Let, for example, $S=\Spec(\CC)$, $X_0=\mathbb A_S^2=\Spec(\CC[x_1,x_2])$, $d_1:\mathbf G_{\mathrm m,S}\times_S\mathbb A_S^2\to\mathbb A_S^2$ the action of $\mathbf G_{\mathrm m,S}$ by homotheties on $\mathbb A_S^2$, $d_0$ the projection onto the second factor, and $U=\mathbb A_S^2-\{m\}$, where $m$ is the point $(0,0)$. Then the projective space $\mathbb P_S^1$ is the cokernel of $(\widetilde d_0,\widetilde d_1)$ in $(\mathrm{Esp.An})$ and in $\Sch$, and the cokernel $Y$ of $(d_0,d_1)$ in $(\mathrm{Esp.An})$ is the union of $\mathbb P_S^1$ and the point $y_0=\{p(m)\}$; the only open subset containing $y_0$ is $Y$, and one has $\Gamma(Y,\OO_Y)=\CC$. If $f:\mathbb A_S^2\to T$ is a morphism of $S$-schemes such that $fd_0=fd_1$, and if $V=\Spec(A)$ is an affine open subset of $T$ containing the point $t_0=f(y_0)$, then $f^{-1}(V)=\mathbb A^2$ and the ring homomorphism $A\to\CC[x_1,x_2]$ factors through $\CC$; this shows that $S=\Spec(\CC)$ is the cokernel of $(d_0,d_1)$ in the category $(\mathrm{Sch}/S)$.}
+\[
+\xymatrix{U_1\ar@<.5ex>[r]^{\widetilde d_1}\ar@<-.5ex>[r]_{\widetilde d_0}&U\ar[r]^{\widetilde p}&V.}
+\]
+\end{lemma}
+The verification is easy.
+\begin{lemma}{1.2}\label{V.1.2}
+Let $X_1\rightrightarrows X_0$, with arrows $d_1,d_0$, be a diagram in $\Sch$ and let $(Y,p)$ be its cokernel in $(\mathrm{Esp.An})$.
+\begin{enumeratei}
+\item If $Y$ is a scheme and $p$ a morphism of schemes, then $(Y,p)$ is a cokernel of $(d_0,d_1)$ in $\Sch$.
+\item Suppose every point of $X_0$ has a saturated open neighborhood $U$ such that, denoting by $\widetilde d_0$ and $\widetilde d_1$ the restrictions of $d_0$ and $d_1$ to $d_0^{-1}(U)=d_1^{-1}(U)$, and by $(Q,q)$ the cokernel of $(\widetilde d_0,\widetilde d_1)$ in $(\mathrm{Esp.An})$, $Q$ is a scheme and $q$ a morphism of schemes. Then $(Y,p)$ is a cokernel of $(d_0,d_1)$ in $\Sch$.
+\end{enumeratei}
+\end{lemma}
+(i) is proved in §4.c; since the proof is short, let us repeat it here. Let $f:X_0\to Z$ be a morphism of schemes such that $fd_0=fd_1$. By hypothesis there is one and only one morphism of ringed spaces $r:Y\to Z$ such that $f=rp$. One must show that, for every $y\in Y$, the homomorphism $\OO_{r(y)}\to\OO_y$ induced by $r$ is local. This follows from the fact that $p$ is surjective, hence $y$ has the form $p(x)$, and that the homomorphism $\OO_{f(x)}\to\OO_x$ induced by $f$ is local.
+
+(ii) follows from (i) and the preceding lemma.
+
+\textbf{c)} In this exposé we study the existence of $\Coker(d_0,d_1)$ when the pair of arrows $(d_0,d_1)$ is placed in a richer context; precisely, denote by $X_2=X_1\times_{d_1,d_0}X_1$ the fibered product of the diagram
+\[
+\xymatrix{&X_1\ar[d]^{d_1}\\X_1\ar[r]_{d_0}&X_0,}\tag{$*$}
+\]
+and by $d'_0$ and $d'_2$ the two canonical projections of $X_2$ onto $X_1$; one therefore has, by definition, a cartesian square
+\[
+\xymatrix{X_2\ar[r]^{d'_0}\ar[d]_{d'_2}&X_1\ar[d]^{d_1}\\X_1\ar[r]_{d_0}&X_0.}\tag{0}
+\]
+Moreover, give oneself a third arrow $d'_1:X_2\to X_1$; we say that $(d_0,d_1:X_1\rightrightarrows X_0,d'_1)$ is a $\mathcal C$-groupoid if for every object $T$ of $\mathcal C$, $X_1(T)$ is the set of arrows of a groupoid $X_*(T)$ whose set of objects is $X_0(T)$, whose source map is $d_1(T)$, whose target map is $d_0(T)$, and whose composition map is $d'_1(T)$ (as usual, one identifies $(X_1\times_{d_1,d_0}X_1)(T)$ with $X_1(T)\times_{d_1(T),d_0(T)}X_1(T)$; one also recalls that a groupoid is a category all of whose arrows are invertible).\nde{Thus, in this case, $X_2(T)$ is the set of pairs $(f_2,f_1)$ of composable arrows, that is, such that $d_0(f_1)=d_1(f_2)$, and $d'_0,d'_1,d'_2$ send $(f_2,f_1)$ to $f_2,f_2\circ f_1,f_1$ respectively.}
+
+If $\varphi$ is an arrow of the groupoid $X_*(T)$, the map $f\mto\varphi\circ f$ is a bijection from the set of arrows $f$ whose target coincides with the source of $\varphi$ onto the set of arrows having the same target as $\varphi$. One easily sees that this fact can be expressed by saying that the square
+\[
+\xymatrix{X_2\ar[r]^{d'_1}\ar[d]_{d'_0}&X_1\ar[d]^{d_0}\\X_1\ar[r]_{d_0}&X_0}\tag{1}
+\]
+is cartesian.
+
+Similarly, the map $g\mto g\circ\varphi$ is a bijection from the set of arrows $g$ of $X_*(T)$ whose source is the target of $\varphi$ onto the set of arrows having the same source as $\varphi$. One can again express this fact by saying that the square
+\[
+\xymatrix{X_2\ar[r]^{d'_1}\ar[d]_{d'_2}&X_1\ar[d]^{d_1}\\X_1\ar[r]_{d_1}&X_0}\tag{2}
+\]
+is cartesian.
+
+On the other hand, let $s:X_0\to X_1$ be the unique arrow of $\mathcal C$ such that, for every $T$, $s(T):X_0(T)\to X_1(T)$ assigns to every object of $X_*(T)$ its identity arrow.\nde{$T\mto s(T)$ defines an element of $\Hom(h_{X_0},h_{X_1})$, and the latter equals $\Hom(X_0,X_1)$ by Yoneda's lemma.} The arrow $s$ satisfies the equalities
+\[
+d_1s=\mathrm{id}_{X_0},\tag{3}
+\]
+and
+\[
+d_0s=\mathrm{id}_{X_0}.\tag{3 bis}
+\]
+Finally, associativity of the composition maps $d'_1(T)$ is expressed by commutativity of the diagram
+\[
+\xymatrix{X_1\times_{d_1,d_0}X_1\times_{d_1,d_0}X_1\ar[r]^{d'_1\times X_1}\ar[d]_{X_1\times d'_1}&X_1\times_{d_1,d_0}X_1\ar[d]^{d'_1}\\X_1\times_{d_1,d_0}X_1\ar[r]_{d'_1}&X_1.}\tag{4}
+\]
+Conversely, conditions (1), (2) and (4) and the existence of an arrow $s$ satisfying (3) imply that $(X_1\rightrightarrows X_0,d'_1)$, with arrows $d_1,d_0$, is a $\mathcal C$-groupoid. Condition (3) is harmless; it simply ensures that the map $d_1(T):X_1(T)\to X_0(T)$ is surjective for every $T\in\mathcal C$. In the remainder of this exposé we chiefly use the cartesian squares (0), (1) and (2), which we summarize in the diagram
+\[
+\xymatrix{X_2\ar@<.5ex>[r]^{d'_1}\ar@<-.5ex>[r]_{d'_0}\ar[d]_{d'_2}&X_1\ar[r]^{d_0}\ar[d]^{d_1}&X_0\\X_1\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X_0&.}\tag{0,1,2}
+\]
+In this diagram the two squares on the left (that is, squares (0) and (2)) are cartesian; the first row is exact and $X_2$ is identified with the fibered product $X_1\times_{d_0,d_0}X_1$.
+
+We use associativity only indirectly, for example to ensure the existence of an arrow $s$ satisfying (3) and (3 bis), or to ensure the existence of an arrow
+\[
+\sigma:X_1\to X_1\quad\text{such that}\quad d_0\sigma=d_1\text{ and }d_1\sigma=d_0\tag{$\dagger$}
+\]
+(one chooses $\sigma$ so that $\sigma(T):X_1(T)\to X_1(T)$ sends each arrow of $X_*(T)$ to its inverse arrow).\nde{It follows from Yoneda's lemma that $\sigma$ is an involutive automorphism of $X_1$; this will be used, for example, in 3.e) and in Theorem 4.1.}
+
+By abuse of language, we shall sometimes call a diagram
+\[
+\xymatrix{X_2\ar@<1ex>[r]^{d'_0,d'_1,d'_2}\ar[r]\ar@<-1ex>[r]&X_1\ar@<.5ex>[r]^{d_0,d_1}\ar@<-.5ex>[r]&X_0}
+\]
+a $\mathcal C$-groupoid if (0), (1) and (2) are cartesian, (4) is commutative and there exists $s$ satisfying (3). The object $X_2$ may thus be ``a'' fibered product of $(*)$ without being ``the'' fibered product of $(*)$.\nde{See example 2.a) below.}
+
+\emph{Terminology.} Instead of the $\mathcal C$-groupoid $X_*$, we shall also speak of the groupoid $X_*$ with base $X_0$, or of the pre-equivalence relation $X_*$ in $X_0$.
+
+\sgasection{2}{Examples of $\mathcal C$-groupoids}
+\textbf{a)} Let $X$ be an object of $\mathcal C$ and $G$ a $\mathcal C$-group acting on $X$ on the left. We denote by $d_0:G\times X\to X$ the arrow defining the action of $G$ on $X$, by $d_1:G\times X\to X$ the projection of the product onto the second factor, by $\mu:G\times G\to G$ the arrow defining the $\mathcal C$-group structure of $G$, and finally by $\mathrm{pr}_{2,3}$ the projection of $G\times G\times X=G\times(G\times X)$ onto the second factor. Then
+\[
+\xymatrix@C=4em{G\times G\times X\ar@<1.5ex>[r]^{\mathrm{pr}_{2,3}}\ar[r]|{\mu\times X}\ar@<-1.5ex>[r]_{G\times d_0}&G\times X\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X}
+\]
+is a $\mathcal C$-groupoid.
+
+\textbf{b)} Let $d_0,d_1:X_1\to X_0$ be an equivalence pair, that is, if $d_0\boxtimes d_1:X_1\to X_0\times X_0$ is the arrow with components $d_0$ and $d_1$, we suppose that $(d_0\boxtimes d_1)(T)$ is, for every object $T$ of $\mathcal C$, a bijection from $X_1(T)$ onto the graph of an equivalence relation on $X_0(T)$. The set $X_1(T)$ is consequently identified with the set of pairs $(x,y)$ of elements of $X_0(T)$ such that $x\sim y$; similarly, the set $X_2(T)=(X_1\times_{d_1,d_0}X_1)(T)$ is identified with the set of triples $(x,y,z)$ of elements of $X_0(T)$ such that $x\sim y$ and $y\sim z$. There is therefore one and only one arrow $d'_1:X_2\to X_1$ making squares (1) and (2) commutative: $d'_1(T)$ must send $(x,y,z)\in X_2(T)$ to $(x,z)\in X_1(T)$. For this choice of $d'_1$, $(d_0,d_1:X_1\rightrightarrows X_0,d'_1)$ is a $\mathcal C$-groupoid.
+
+Conversely, consider a $\mathcal C$-groupoid $X_*$ such that $d_0\boxtimes d_1:X_1\to X_0\times X_0$ is a monomorphism. Then $(d_0,d_1)$ is an equivalence pair, and $X_*$ can be reconstructed from $(d_0,d_1)$ as explained a few lines above.\nde{In particular, if $G$ is a $\mathcal C$-group acting on the left on an object $X$ of $\mathcal C$ and if $X_*$ is the $\mathcal C$-groupoid defined in a), then $(d_0,d_1)$ is an equivalence pair if and only if $G$ acts freely on $X$, cf. Exp. III, 3.2.1.}
+
+\textbf{c)} If $p:X\to Y$ is any arrow of $\mathcal C$, and if $\mathrm{pr}_1$ and $\mathrm{pr}_2$ are the two projections of $X\times_{p,p}X$ onto $X$, then $(\mathrm{pr}_1,\mathrm{pr}_2):X\times_{p,p}X\rightrightarrows X$ is an equivalence pair. One says that $p$ is an effective epimorphism if the diagram
+\[
+\xymatrix{X\times_{p,p}X\ar@<.5ex>[r]^{\mathrm{pr}_1}\ar@<-.5ex>[r]_{\mathrm{pr}_2}&X\ar[r]^p&Y}
+\]
+is exact, that is, if $(Y,p)=\Coker(\mathrm{pr}_1,\mathrm{pr}_2)$.
+
+Let, for example, $S$ be a noetherian scheme and $\mathcal C$ the category of schemes finite over $S$. Let us show that an epimorphism of $\mathcal C$ is not necessarily effective: one chooses $S=\Spec k[T^3,T^5]$, where $k$ is a commutative field, $Y=S$ and $X=\Spec k[T]$. If $i$ is the inclusion of $B=k[T^3,T^5]$ into $A=k[T]$, $p$ is chosen to be $\Spec i$. In this case $X\times_{p,p}X$ is identified with $\Spec(A\otimes_B A)$ and $\Coker(\mathrm{pr}_1,\mathrm{pr}_2)$ with $\Spec B'$, where $B'$ is the subring of $A$ consisting of the $a$ such that $a\otimes_B1=1\otimes_Ba$. Now
+\[
+T^7\otimes_B1=(T^2T^5)\otimes_B1=T^2\otimes_BT^5=T^2\otimes_B(T^3T^2)=T^5\otimes_BT^2=1\otimes_BT^7.
+\]
+Thus $T^7$ belongs to $B'$, does not belong to $B$, and $\Spec B'$ is distinct from $\Spec B$, whence the counterexample.\nde{The same argument applies to $B=k[T^3,T^4]$ and $T^5\otimes_B1$; more generally, to $B=k[T^n,T^{n+r}]$ and the element $T^{n+2r}\otimes_B1$, provided $n$ does not divide $2r$.}

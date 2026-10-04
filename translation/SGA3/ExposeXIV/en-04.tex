@@ -1,0 +1,975 @@
+% Proof of Proposition 4.2.
+It remains to prove the last assertion, and one may clearly suppose
+$G=G^0$. For Cartan subgroups, it follows from the analogous assertion
+in $G'$ (BIBLE 6 th. 4 cor. 4) and from XII 6.6 e). For maximal tori,
+it follows from the preceding assertion, since by XII 6.6 c) the
+maximal tori of a smooth algebraic group are the maximal tori of
+its Cartan subgroups.
+
+\begin{corollary}{4.3}\label{XIV.4.3}
+Suppose $G$ connected. Then every element of $G$ is contained in a
+Borel subgroup of $G$.
+\end{corollary}
+One is reduced to the same statement in $G'$, which is well known
+(BIBLE 6 th. 5 d)).
+
+\begin{corollary}{4.4}\label{XIV.4.4}
+Let $B$ be a Borel subgroup of $G$, $C$ a Cartan subgroup of $B$,
+and $N$ its normalizer in $G$; then $N\cap B=C$.
+\end{corollary}
+Indeed, $N\cap B=\Norm_B(C)$, so one is reduced to showing that
+when $G$ is connected and solvable, a Cartan subgroup $C$ is its
+own connected normalizer. Now, with the preceding notation,
+$C$ is the inverse image of a Cartan subgroup $C'$ of $G'$, so
+one is reduced to the case where $G$ is affine. Since one knows
+that the normalizer of a Cartan subgroup is smooth ($C$ being
+its own connected normalizer; cf., for example, XII 6.6 c)),
+it suffices to see that $C$ and $N$ have the same points with
+values in $k$, which is precisely BIBLE th. 6 d).
+% typo?: kept as printed: connected normalizer in the reduction.
+
+\begin{definition}{4.5}\label{XIV.4.5}
+Let $G$ be a smooth group prescheme of finite presentation over
+a prescheme $S$. One calls a Borel subgroup of $G$ any smooth
+group subprescheme $B$ of finite presentation of $G$ such that
+for every $s\in S$, the geometric fiber $B_{\bar s}$ is a Borel
+subgroup of $G_{\bar s}$.
+\end{definition}
+Thus this is, as one verifies at once, a notion stable under
+base change and local for the fpqc topology (for if $k'$ is
+an algebraically closed extension of an algebraically closed
+field $k$, then an algebraic subgroup $B$ of the smooth
+algebraic group $G$ over $k$ is a Borel subgroup of $G$ if
+and only if $B_{k'}$ is one of $G_{k'}$). It follows from this
+definition that if $G$ is a smooth algebraic group over an
+arbitrary field $k$, and $B$ a Borel subgroup of $G$, then
+$G/B$ is a projective variety, every maximal torus $T$ of
+$B$ is a maximal torus of $G$, its normalizer in $B$ is
+identical to its centralizer $C$, and is a Cartan subgroup
+of $G$ when $G$ is connected.
+
+\begin{remarks}{4.6}\label{XIV.4.6}
+Unfortunately, it is no longer true in general (even if $G$
+is affine over $S$ and $S$ is the spectrum of the algebra
+of dual numbers over an algebraically closed field $k$)
+that two Borel subgroups of $G$ are conjugate locally for
+the fpqc topology. As a consequence of this regrettable
+fact, let us point out that if $G$ is a smooth affine
+connected algebraic group over an imperfect field $k$,
+it is not in general possible to define naturally a
+homogeneous space $D$ under $G$, playing the role of a
+flag variety, i.e. of the variety of Borel subgroups of
+$G$ (which over the algebraic closure $\bar k$ of $k$
+would therefore be isomorphic to $G_{\bar k}/\bar B$,
+where $\bar B$ is a Borel subgroup of $G_{\bar k}$).
+Indeed, when the quotient of $G_{\bar k}$ by its radical
+$\bar R$ is an adjoint semisimple group, then the kernel
+of $G_{\bar k}\to\underline{\Aut}_{\bar k}(\bar D)$
+is the radical of $G_{\bar k}$; hence if $\bar D$ comes
+from a homogeneous space $D$ under $G$, the radical
+$\bar R$ comes from a subgroup $R$ of $G$. Now one
+easily constructs examples where $G_{\bar k}/\bar R$
+is adjoint but $\bar R$ is not ``defined over $k$''.
+It is easy to see that under these conditions, the
+functor $\mathscr B:(\Sch)^\circ_{/S}\to\Ens$ such
+that $\mathscr B(S')=$ the set of Borel subgroups of
+$G_{S'}$ is not representable by a smooth
+$S$-prescheme. From the infinitesimal point of view
+(III \S 3), the failure of the conjugacy theorem is
+expressed by the fact that if $B$ is a Borel subgroup
+of the smooth algebraic group $G$, the cohomology group
+$\mathrm H^1(B,\mathfrak g/\mathfrak b)$\nde{Where
+$\mathfrak b$ is the Lie algebra of $B$.} may be nonzero.
+
+On the other hand, we shall see in a later expos\'e
+that when $G$ is semisimple, or more generally reductive,
+such unpleasant phenomena do not occur. It is doubtless
+these phenomena, as well as the absence of good existence
+theorems, which explain why Borel subgroups play only
+a relatively unobtrusive role in the study of general
+group schemes from the scheme-theoretic point of view,
+whereas they will dominate the theory of semisimple
+group schemes in later expos\'es.
+\end{remarks}
+
+\begin{proposition}{4.8}\label{XIV.4.8}
+\nde{There is no number 4.7.} Let $G$ be a smooth
+$S$-group prescheme of finite presentation with
+connected fibers, and $B$ a Borel subgroup of
+$G$; then $B$ is identical to its own normalizer,
+and it is a closed subprescheme of $G$.
+\end{proposition}
+Indeed, by XII 7.10, one is reduced to proving
+that over an algebraically closed field $k$,
+every element of $G(k)$ which normalizes $B$
+is in $B(k)$, which for affine $G$ is a
+fundamental result of Chevalley (BIBLE 9 th. 1);
+the general case reduces to it at once by
+the reduction already used in 4.2.
+
+\begin{remarks}{4.8.1}\label{XIV.4.8.1}
+One may generalize definition 4.5 by introducing
+also the notion of parabolic subgroup of $G$:
+one thus calls a group subprescheme $P$ of
+$G$, smooth and of finite presentation over
+$S$, such that for every $s\in S$, the
+geometric fiber $P_{\bar s}$ is a parabolic
+subgroup of $G_{\bar s}$, i.e. contains a
+Borel subgroup of $G_{\bar s}$. Proposition
+4.8 extends (with the same proof of reduction
+to the ``set-theoretic'' statement, which is
+known) to the case of a parabolic subgroup
+$P$ of $G$. Note the following consequence
+of this result (cf. XVI). If $P$ is a
+parabolic subgroup of $G$, then $G/P$ is
+representable by a quasi-projective prescheme
+of finite presentation over $S$ (N.B. one
+assumes $G$ has connected fibers). Moreover,
+$G/P$ is clearly smooth over $S$, and
+moreover has connected proper geometric
+fibers, whence one may easily conclude,
+using EGA III 5.5.1, that $D=G/P$ is in
+fact proper, hence projective, over $S$.
+Moreover, if its relative dimension is
+$n$, it is known that the invertible
+sheaf $\Omega^n_{D/S}$ is such that its
+inverse induces ample sheaves on the
+geometric fibers of $D/S$, hence
+(EGA III 4.7.1) $(\Omega^n_{D/S})^{-1}$
+is ample on $D$ relative to $S$.
+\end{remarks}
+
+One easily sees, by reduction to the
+affine case and to the case of an
+algebraically closed base field, that
+if $u:G\to G'$ is an epimorphism of
+smooth algebraic groups, then for
+every Borel subgroup $B$ of $G$,
+$u(B)=B'$ is a Borel subgroup of $G'$.
+We are interested in the case where
+one thus obtains a bijective
+correspondence between Borel subgroups
+of $G$ and of $G'$:
+
+\begin{proposition}{4.9}\label{XIV.4.9}
+Let $G,G'$ be two smooth $S$-group
+preschemes of finite presentation
+with connected fibers, and
+$u:G\to G'$ a faithfully flat
+homomorphism of groups, i.e.
+surjective\nde{Add a reference here?}.
+One assumes that one is in one
+of the following two cases
+(where one has set $N=\Ker u$):
+
+\noindent a) $N$ is central in $G$.
+
+\noindent b) $S$ is the spectrum
+of a field $k$, and if $\bar k$
+denotes an algebraic closure of
+it, $N_{\bar k}=\Ker u_{\bar k}$
+is contained in the radical of
+$G_{\bar k}$, i.e. in the
+largest smooth connected solvable
+invariant subgroup of $G_{\bar k}$.
+
+Then the map $B'\mto u^{-1}(B')$
+induces a bijection from the set
+of Borel subgroups of $G'$ onto
+the analogous set for $G$.
+\end{proposition}
+Case b) follows at once from the
+correspondence between algebraic
+subgroups of $G'$ and algebraic
+subgroups of $G$ containing $N$,
+and the fact that when $k$ is
+algebraically closed, the Borel
+subgroups of $G$ contain the
+radical of $G$ (which is immediate
+by the argument preceding 4.2).
+
+Let us prove case a). By XII
+7.12, the map $H'\mto H=u^{-1}(H')$
+establishes a one-to-one
+correspondence between group
+subpreschemes $H'$ of $G'$
+which are smooth and of finite
+presentation over $S$, with
+connected fibers, and which
+have at every $s\in S$ the
+same reductive rank and the
+same nilpotent rank as $G'$,
+and group subpreschemes $H$
+of $G$ having the analogous
+properties. Now the Borel
+subgroups (of $G'$, or of
+$G$) have the properties in
+question. It remains to
+prove that if $H',H$
+correspond, then $H'$ is
+a Borel subgroup of $G'$
+if and only if $H$ is
+one in $G$. By definition,
+this question reduces to
+the case where $S$ is the
+spectrum of an algebraically
+closed field. Now, since
+$N$ is central in $G$,
+hence in $H$, it follows
+that $H$ is solvable if
+and only if $H'$ is.
+Finally, taking into account
+the correspondence between
+algebraic subgroups of $G'$
+and algebraic subgroups of
+$G$ containing $N$, one sees
+at once that $H'$ possesses
+the maximality property of
+definition 4.1 if and only
+if $H$ possesses it, which
+completes the proof.
+
+\begin{corollary}{4.10}\label{XIV.4.10}
+With the notation of 4.7,
+if $B'$ and $B$ are Borel
+subgroups of $G'$ and $G$
+which correspond, one has
+\[
+ \mathfrak b=\Lie(u)^{-1}(\mathfrak b')
+\]
+where $\mathfrak g,\mathfrak g',\mathfrak b,\mathfrak b'$
+are the Lie algebras of
+$G,G',B,B'$, and where
+$\Lie(u):\mathfrak g\to\mathfrak g'$
+is the homomorphism deduced
+from $u$.
+% typo?: kept as printed: reference 4.7, which does not exist.
+\end{corollary}
+This statement follows
+trivially from the definitions
+and the relation $u^{-1}(B')=B$.
+
+We can now prove the main
+result of the present section:
+\begin{theorem}{4.11}\label{XIV.4.11}
+Let $G$ be a smooth
+algebraic group over an
+algebraically closed field
+$k$, and $\mathfrak g$
+its Lie algebra. Then
+$\mathfrak g$ is equal
+to the union of the
+Lie algebras $\mathfrak b$
+of the Borel subgroups
+$B$ of $G$.
+\end{theorem}
+One may clearly suppose
+$G$ connected. Let $R$
+be the radical of $G$,
+and let $G'=G/R$.
+Then 4.9 b) and 4.10
+reduce one to proving
+theorem 4.11 for $G'$
+in place of $G$, i.e.
+one may suppose $G$
+semisimple. Let then
+$Z$ be the center of
+$G$, identical to the
+reductive center, and
+let $G'=G/Z$.
+The same argument
+(now using 4.9 a))
+reduces one to proving
+the theorem for $G'$,
+i.e. one may suppose
+$G$ adjoint semisimple.
+Let $B$ be a Borel
+of $G$, $T$ a maximal
+torus of $B$, hence
+of $G$, and
+$\mathfrak b,\mathfrak t$
+the Lie algebras.
+By 3.18, $T$ is a
+subgroup of type (C)
+of $G$, i.e.
+$\mathfrak t$ is a
+Cartan subalgebra of
+$\mathfrak g$, so
+the union of the
+conjugates of
+$\mathfrak t$ is
+dense in $\mathfrak g$
+(XIII 5.1 (i)
+$\Rightarrow$ (vii)).
+A fortiori the union
+of the conjugates of
+$\mathfrak b$ is
+dense in $\mathfrak g$.
+Now let $X$ be the
+closed subscheme of
+$G/B\times\mathrm W(\mathfrak g)$
+whose points with
+values in $k$ are
+the $(g',x)$ such
+that $x\in\Ad(g)\cdot\mathfrak b$
+(cf. XIII 1).
+Then the morphism
+$\psi:X\to\mathrm W(\mathfrak g)$
+induced by the
+second projection
+is proper since
+$G/B$ is proper
+over $k$; on the
+other hand one has
+just seen that it
+is dominant, so
+it is surjective,
+which proves 4.11.
+
+The only result
+of the present
+section that we
+shall use in the
+rest of this
+expos\'e is the
+following corollary:
+\begin{corollary}{4.12}\label{XIV.4.12}
+Let $k$ be an
+infinite field,
+$G$ a smooth
+algebraic group
+over $k$, $T$
+a maximal torus
+of $G$,
+$\mathfrak g$ and
+$\mathfrak t$ the
+Lie algebras,
+and $u:G\to\GL(V)$
+a linear representation
+($V$ a finite-dimensional
+vector space over
+$k$), whence a
+representation of
+Lie algebras
+$u':\mathfrak g\to\mathfrak{gl}(V)$
+making $V$ a
+$\mathfrak g$-module.
+Then the minimum
+of the nullity
+of $u'(x)$
+($x\in\mathfrak g$)
+is attained for
+an element
+$x\in\mathfrak t$.
+\end{corollary}
+One is reduced
+at once to the
+case where $k$
+is algebraically
+closed. One may
+clearly suppose
+$G$ connected,
+and, dividing
+$G$ by
+$(\Ker u)_{\mathrm{red}}$,
+one may suppose
+$G$ affine.
+Using 4.11 and
+the conjugacy
+theorem for
+maximal tori of
+$G$, one is
+reduced to the
+case where $G$
+is moreover
+solvable. Then
+$G$ is a
+semidirect product
+$T\cdot V$,
+where $V$ is
+the ``unipotent
+part'' of $G$,
+which is a
+smooth connected
+unipotent group
+(BIBLE 6 th. 3).
+Thus $\mathfrak g$
+is a direct sum
+(as a vector
+space) of the
+Lie subalgebras
+$\mathfrak t$ and
+$\mathfrak v=\Lie(V)$.
+By the Lie--Kolchin
+theorem (BIBLE 6
+th. 1),
+$\mathfrak v$ admits
+a composition
+series by stable
+subspaces
+$\mathfrak v_i$
+such that
+$\mathfrak v_i/\mathfrak v_{i+1}=\mathfrak w_i$
+has dimension $1$.
+Then for each
+$i$, one has
+an induced
+representation
+$u_i:G\to\GL(\mathfrak w_i)=\Gm$
+and the
+corresponding
+homomorphism of
+Lie algebras
+$u'_i:\mathfrak g\to k$,
+so that for
+every
+$x\in\mathfrak g$,
+the nullity of
+$u'(x)$ is
+equal to the
+number of $i$
+such that
+$u'_i(x)=0$.
+Since $V$ is
+unipotent, the
+$u_i$ are
+trivial on $V$,
+hence the
+$u'_i$ are
+trivial on
+$\mathfrak v$,
+which proves
+that if $x=t+v$
+($t\in\mathfrak t$,
+$v\in\mathfrak v$),
+then $u'_i(x)=u'_i(t)$
+for every $i$,
+hence the
+nullity of
+$u'(x)$ is
+equal to that
+of $u'(t)$.
+Assertion 4.12
+follows at once.
+% typo?: kept as printed: V names the unipotent group, and v is the representation space here.
+
+\sgasection{5}{Relations between Cartan subgroups and Cartan subalgebras}
+Applying 4.12
+to the adjoint
+representation of
+$G$, one finds:
+\begin{theorem}{5.1}\label{XIV.5.1}
+Let $G$ be a
+smooth algebraic
+group over an
+infinite field,
+$T$ a maximal
+torus of $G$,
+and
+$\mathfrak g\supset\mathfrak t$
+the Lie
+algebras; then
+$\mathfrak t$
+contains a
+regular element
+of $\mathfrak g$.
+\end{theorem}
+
+\begin{corollary}{5.2}\label{XIV.5.2}
+Let $G$ be a
+smooth $S$-group
+prescheme of
+finite presentation,
+and $\mathfrak g$
+its Lie algebra.
+
+\noindent a) Conditions
+$(\mathrm C_0)$ to
+$(\mathrm C_2)$ of
+2.9 on
+$\mathfrak g$ are
+equivalent; in
+particular, if
+the infinitesimal
+rank of the
+fibers of
+$\mathfrak g$ at
+the points of
+$S$ is locally
+constant, then
+$\mathfrak g$
+admits a Cartan
+subalgebra locally
+for the \'etale
+topology, hence
+(by 3.9 a))
+$G$ admits a
+subgroup of type
+(C) locally for
+the \'etale
+topology.
+
+\noindent b) Let
+$H$ be a group
+subprescheme of
+$G$ smooth and
+of finite
+presentation over
+$S$, with
+connected fibers
+having the same
+reductive rank
+as $G$ at each
+$s\in S$ (for
+example, $H$ is
+a maximal torus
+or a Cartan
+subgroup of $G$),
+and $D$ a
+subgroup of type
+(C) of $G$;
+then one has
+$H\subset D$
+if and only if
+one has
+$\mathfrak h\subset\mathfrak d$.
+
+\noindent c) Suppose
+condition
+$(\mathrm C_0)$
+holds, i.e. the
+infinitesimal rank
+of $G$ is locally
+constant. Let $H$
+be a group
+subprescheme of
+$G$ smooth and
+of finite
+presentation over
+$S$, with
+nilpotent connected
+fibers, having
+at every point
+the same reductive
+rank as $G$
+(for example,
+$H$ is a maximal
+torus or a Cartan
+subgroup of $G$).
+Then $H$ is
+contained in one
+and only one
+subgroup $D$ of
+type (C) of $G$.
+
+\noindent d) Suppose
+that $G$ admits
+a Cartan subgroup
+locally for fpqc;
+then so does
+every subgroup
+$D$ of type
+(C) of $G$.
+\end{corollary}
+\begin{proof}
+a) Suppose condition
+$(\mathrm C_0)$
+holds, and let
+us prove that
+the same holds
+for $(\mathrm C_2)$,
+i.e. that every
+quasi-regular
+section $a$ of
+$\mathfrak g$ is
+regular. One
+reduces as usual
+to the case
+of $S$ affine
+noetherian, then,
+the question being
+``infinitesimal''
+(2.15 b)), to
+the case where
+$S$ is artinian
+local (then
+$(\mathrm C_0)$
+is moreover
+trivially satisfied).
+One may suppose
+in addition that
+the residue field
+$k$ of $S$ is
+infinite. Note
+that by 3.7
+it suffices to
+establish that
+$\mathfrak g$
+admits a Cartan
+subalgebra. Let
+$T$ be a maximal
+torus of $G$;
+by 5.1 there
+exists a
+quasi-regular
+element $t$
+contained in the
+Lie algebra
+$\mathfrak t$ of
+$T$; let us
+prove that it
+is regular,
+which will finish
+the proof.
+Consider the
+linear representation
+of $T$ in
+$\mathfrak g$
+induced by the
+adjoint representation
+of $G$; there
+thus exists a
+finite set
+$(u_i)_{i\in I}$
+of characters of
+$T$ such that
+$\mathfrak g$
+decomposes as a
+direct sum of
+submodules
+$\mathfrak g_i$
+stable under $T$,
+$T$ acting on
+$\mathfrak g_i$
+by $u_i$ (cf.
+I \S 4.7.3).
+Let
+$u'_i:\mathfrak t\to A$
+be the homomorphism
+of Lie algebras
+deduced from
+$u_i:T\to\Gm$
+(N.B. $A$
+denotes the ring
+of $S$).
+Consider the
+homomorphisms
+$u_{i0}$ and
+$u'_{i0}$ deduced
+from the preceding
+ones by passage
+to the fibers,
+i.e. by the
+base change
+$A\to k$.
+Let $I'$ be
+the set of
+$i\in I$ such
+that $u'_{i0}\ne0$,
+and let
+$I''=I-I'$.
+The fact that
+$t$ is regular
+is expressed by
+the condition
+$u'_{i0}(t_0)\ne0$
+for every
+$i\in I'$,
+hence $u'_i(t)$
+invertible for
+$i\in I'$.
+The Cartan
+subalgebra of
+$\mathfrak g_0$
+defined by $t$,
+i.e. the kernel
+subspace of the
+semisimple endomorphism
+$\ad(t_0)$ of
+$\mathfrak g_0$,
+is
+$\sum_{i\in I''}(\mathfrak g_i)_0$.
+Consider
+\[
+ \mathfrak d=\sum_{i\in I''}\mathfrak g_i,
+\]
+then $\ad(t)$
+is nilpotent on
+$\mathfrak d$;
+on the other
+hand, it is
+an automorphism
+of
+$\mathfrak g/\mathfrak d\simeq\sum_{i\in I'}\mathfrak g_i$.
+By 2.6, $t$
+is therefore regular.
+
+\noindent b) Follows
+from 3.12 a),
+$H$ satisfying
+the hypothesis
+that every
+geometric fiber
+of $\mathfrak h$
+contains a regular
+element of that
+of $\mathfrak g$,
+by 5.1.
+
+\noindent c) By b),
+one is reduced
+to proving that
+$\mathfrak h$ is
+contained in one
+and only one
+Cartan subalgebra
+of $\mathfrak d$.
+By a), one
+knows moreover
+that $\mathfrak g$
+satisfies
+$(\mathrm C_2)$.
+One is therefore
+reduced to the
+% typo?: kept as printed: a Cartan subalgebra of d.
+
+\begin{lemma}{5.3}\label{XIV.5.3}
+Let $\mathfrak g$
+be a Lie algebra
+over $S$ which
+is a locally
+free module of
+finite type and
+satisfies condition
+$(\mathrm C_2)$
+of 2.9. Let
+$\mathfrak h$ be
+a Lie subalgebra
+of $\mathfrak g$
+satisfying the
+following conditions:
+it is a module
+locally a direct
+summand, it is
+locally nilpotent,
+and for every
+$s\in S$ the
+geometric fiber
+$\mathfrak h_{\bar s}$
+contains a regular
+element of
+$\mathfrak g_{\bar s}$.
+Then $\mathfrak h$
+is contained in
+one and only one
+Cartan subalgebra
+of $\mathfrak g$.
+\end{lemma}
+(N.B. in the
+case of interest
+to us,
+$\mathfrak h$
+satisfies the
+stated conditions:
+it is locally
+nilpotent for
+$H$ has nilpotent
+fibers, and the
+condition on regular
+elements follows
+from 5.1.) Since
+5.3 is local
+for the fpqc
+topology, it
+suffices to
+prove that at
+a point
+$s\in S$ such
+that $\kappa(s)$
+is infinite,
+there exists an
+open neighborhood
+$U$ of $s$
+such that
+existence and
+uniqueness hold
+for every base
+change $S'\to S$
+factoring through
+$U$. Take a
+regular element
+of
+$\mathfrak g\otimes\kappa(s)$
+contained in
+$\mathfrak h\otimes\kappa(s)$;
+extend it to
+a section $a$
+of $\mathfrak h$
+over an open
+neighborhood $U$
+of $s$; by
+$(\mathrm C_2)$
+one may suppose
+that this section
+is regular (2.10).
+One may suppose
+$U=S$. A Cartan
+subalgebra of
+$\mathfrak g$
+containing
+$\mathfrak h$
+contains $a$,
+hence is identical
+to
+$\mathfrak d=\operatorname{Nil}(a,\mathfrak g)$
+(2.6), whence
+uniqueness.
+Moreover, since
+$\mathfrak h$ is
+locally nilpotent,
+one indeed has
+$\mathfrak h\subset\mathfrak d$,
+which proves
+existence.
+
+\noindent d) This
+is a particular
+case of XII
+7.9 d).
+\end{proof}
+
+\begin{corollary}{5.4}\label{XIV.5.4}
+Let $G$ be a
+smooth connected
+algebraic group
+over an
+algebraically
+closed field $k$,
+$H$ a connected
+algebraic subgroup
+such that
+$\mathfrak h$
+contains a Cartan
+subalgebra of
+$\mathfrak g$,
+i.e. such that
+$H$ contains a
+subgroup of type
+(C) of $G$.
+Then the number
+of conjugates
+of $H$ containing
+a regular element
+of $G(k)$ is
+equal to the
+number of conjugates
+of $\mathfrak h$
+containing a regular
+element of
+$\mathfrak g$.
+% typo?: kept as printed: H is not assumed smooth.
+\end{corollary}
+Indeed, let $g$
+be a regular
+element of $G(k)$,
+and $C$ the
+unique Cartan
+subgroup of $G$
+containing $g$
+(XIII 2); then
+the conjugates
+of $H$ containing
+$g$ are those
+containing $C$
+(XIII 2.8 b)).
+Likewise, let
+$x$ be a regular
+element of
+$\mathfrak g$;
+then if a
+conjugate
+$\mathfrak h'$
+of $\mathfrak h$
+contains $x$,
+then
+$\ad(x)_{\mathfrak g/\mathfrak h'}$
+is injective
+(XIII 5.4), so
+$\mathfrak h'$
+contains
+$\operatorname{Nil}(x,\mathfrak g)=\mathfrak d$;
+hence the number
+of conjugates
+of $\mathfrak h$
+containing $x$
+is equal to the
+number of conjugates
+containing the
+Cartan subalgebra
+$\mathfrak d$.
+Moreover,
+$\mathfrak d$ is
+the Lie algebra
+of a subgroup
+$D$ of type (C)
+of $G$.
+One may clearly
+suppose $C\subset D$,
+and assertion
+5.4 will follow
+from this:
+for $H$ to
+contain $C$,
+it is necessary
+and sufficient
+that $\mathfrak h$
+contain
+$\mathfrak d$.
+Indeed, by XIII
+5.5 the relation
+$\mathfrak h\supset\mathfrak d$
+implies
+$H\supset D$,
+and a fortiori
+$H\supset C$.
+Conversely, by
+5.1,
+$\mathfrak t$
+contains a regular
+element $x$ of
+$\mathfrak g$;
+then $H\supset C$
+implies
+$\mathfrak h\ni x$,
+hence, as already
+noted, this implies
+$\mathfrak h\supset\mathfrak d$.
+This completes
+the proof.
+
+Let $G$ be
+as in 5.2,
+and suppose
+that the
+infinitesimal
+rank of the
+fibers of $G$
+remains locally
+constant
+(condition
+$(\mathrm C_0)$).
+Then by 5.2 c),
+one finds a
+homomorphism of
+functors on
+$(\Sch)^\circ_{/S}$:
+\[
+ \mathscr C\longrightarrow\mathscr D
+\]
+where
+\[
+\begin{aligned}
+ \mathscr C(S')&=\text{set of Cartan subgroups of }G_{S'},\\
+ \mathscr D(S')&=\text{set of subgroups of type (C) of }G_{S'}.
+\end{aligned}
+\]

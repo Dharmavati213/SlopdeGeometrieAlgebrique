@@ -1,0 +1,322 @@
+Let $H^0$ be the neutral component of $H$, $m$ the number of geometric points of $H/H^0$, $q^s$ the exponent of $q$ in the prime factorization of $m$. For every integer $n$ equal to a power of $q$, $q^sM(n)$ is then contained in $H^0$. But the family $M(n)$ is coherent and $M(n)$ is of type $(\ZZ/n\ZZ)^r$, so $q^sM(nq^s)=M(n)$. Thus $H^0$ contains $M(n)$ for every $n$, and consequently is equal to $H$.
+
+This being so, we shall make condition c) of 4.1 more precise. Indeed, by what precedes, we may consider the smallest closed subscheme $H_t$ of $G_t$ containing $M(n)_t$ for every $n$. Since the formation of $H_t$ commutes with extension of the base field (4.6), $H_{\bar t}=H_t\times_t\bar t$ is contained in the affine closed subscheme $F_{\bar t}$, hence is affine. In brief, $H_t$ is affine. On the other hand, we know (4.6) that $H_t$ is a smooth, connected, commutative algebraic group. It then follows from the structure of smooth commutative connected affine algebraic groups over an algebraically closed field (BIBLE 4 Th. 4) that $H_{\bar t}$ is the direct product of a torus $T_{\bar t}$ and a unipotent group $U_{\bar t}$. But then $M(n)_{\bar t}$ is necessarily contained in $T_{\bar t}$, so $H_{\bar t}=T_{\bar t}$, and consequently $H_t$ is a torus.
+
+We may now begin the proof of 4.1.
+
+\noindent a) Uniqueness of the solution: it suffices to apply Exp. IX 4.8 b).
+
+\noindent b) Case where $S$ is the spectrum of a complete discrete valuation ring $A$ with algebraically closed residue field $k$. Denote by $K$ the fraction field of $A$, $s$ the closed point of $S$, $t$ the generic point, $J$ the maximal ideal of $A$, $S_m=\Spec(A/J^m)$, $X_m=X\times_S S_m$.
+
+Let us distinguish two cases:
+
+\noindent\emph{First case:} The point $s$ of 4.1 b) is the generic point $t$ of $S$. Let then $T'$ be the schematic closure in $G$ of the torus $T_t$. The closed fiber $T'_s$ is therefore an algebraic subgroup of $G_s$, of dimension $r$, containing $M(n)_s$ for every $n$, so $T'_s$ contains $H_s$. But $H_s$ is a torus containing $M(n)_s$, so $H_s$ has rank at least $r$. Consequently $H_s$ has the same underlying space as the neutral component of $T'_s$. The ``neutral component'' $(T')^0$ of $T'$ is then a group subprescheme of $G$, flat, separated (VIB 5.2), whose generic fiber $T_t$ is a torus and whose reduced closed fiber $H_s$ is a torus. But then $(T')^0$ is a torus (Exp. X 8.8), which we denote by $T$. The groups ${}_nT$ and $M_n$ are smooth over $S$, hence reduced, and since they have the same underlying space, they agree. Thus the torus $T$ is the solution of the problem.
+% typo?: source switches M(n) to M_n, kept as printed.
+
+\noindent\emph{Second case:} The point $s$ of 4.1 b) is the closed point $s$ of $S$. After replacing $G$ by the schematic closure in $G$ of the smallest algebraic subgroup $H_t$ containing the family $M(n)_t$ (4.6), we may suppose $G_t$ affine.
+
+For every integer $m\geq0$, it follows from 2.2 that there exists a unique subtorus $T_m$ of $G_m$ lifting $T_s$ and such that for every integer $n$ equal to a power of $q$, one has ${}_nT_m=M(n)_m$. Moreover, let $T'=\mathbf G_{\mathrm m,S}^r$. Since $k$ is algebraically closed, $T_s$ is trivial, and there exists a $k$-isomorphism $u_s:T'_s\isomto T_s$. The morphism $u_s$ lifts uniquely to an $S_m$-isomorphism $u_m:T'_m\to T_m$ (Exp. IX 3.3). The family of morphisms $u_m$, $m\in\NN$, defines in the limit a morphism $\widehat u$ of the formal completions $\widehat{T'}$ and $\widehat G$ of $T'$ and $G$ along their closed fiber:
+\[
+\xymatrix{\widehat{T'}\ar[r]^{\widehat u}\ar[d]_i&\widehat G\ar[d]^j\\T'&G,}
+\]
+where $i$ and $j$ denote the canonical morphisms.
+
+We shall show that the morphism $\widehat u$ is algebraizable. For this, we shall reduce to the case where the group $G$ is affine.
+\begin{lemma}{4.7}\label{XV.4.7}
+Let $S$ be the spectrum of a discrete valuation ring $A$, $X$ and $Y$ two $S$-preschemes, quasi-compact, quasi-separated and flat over $S$. Then the canonical map:
+\[
+\Gamma(X,\OO_X)\otimes_A\Gamma(Y,\OO_Y)\to\Gamma(X\times_S Y,\OO_{X\times_S Y})
+\]
+is an isomorphism.
+\end{lemma}
+\begin{proof}
+Let $f:X\to S$ (resp. $g:Y\to S$) be the structural morphism. Since $X$ (resp. $Y$) is quasi-compact and quasi-separated, it follows from EGA I 9.2.2 and EGA IV 1.7.4 that $f_*(\OO_X)$ (resp. $g_*(\OO_Y)$) is a quasi-coherent $\OO_S$-algebra, hence corresponds to an affine $S$-scheme $\widetilde X$ (resp. $\widetilde Y$). By hypothesis $Y$ is flat over $S$; it then follows from EGA III 1.4.15, taking EGA IV 1.7.21 into account, that the canonical map (deduced from the canonical morphism $X\to\widetilde X$):
+\[
+\Gamma(\widetilde X\times_S Y,\OO_{\widetilde X\times_S Y})\to\Gamma(X\times_S Y,\OO_{X\times_S Y})
+\]
+is an isomorphism. But since $X$ is flat over $S$, $\widetilde X$ is flat over $S$ (for flat over $A$ is equivalent to torsion-free). Applying EGA III 1.4.15 once more, interchanging the roles of $X$ and $Y$, one obtains an isomorphism:
+\[
+\begin{aligned}
+\Gamma(\widetilde X,\OO_{\widetilde X})\otimes_A\Gamma(\widetilde Y,\OO_{\widetilde Y})
+&\simeq\Gamma(\widetilde X\times_S\widetilde Y,\OO_{\widetilde X\times_S\widetilde Y})\\
+&\isomto\Gamma(\widetilde X\times_S Y,\OO_{\widetilde X\times_S Y}),
+\end{aligned}
+\]
+whence the lemma.
+\end{proof}
+
+In the present case, the $S$-group $G$ is flat over $S$ and of finite type, hence quasi-compact and quasi-separated. One may therefore apply the lemma to $G\times_S G$:
+\[
+\Gamma(G,\OO_G)\otimes_A\Gamma(G,\OO_G)\isomto\Gamma(G\times_S G,\OO_{G\times_S G}).
+\]
+To the morphism $m_g:G\times_S G\to G$ defining multiplication in $G$, there therefore corresponds a morphism:
+\[
+\begin{aligned}
+\Gamma(G,\OO_G)&\to\Gamma(G\times_S G,\OO_{G\times_S G})\\
+&\isomto\Gamma(G,\OO_G)\otimes_A\Gamma(G,\OO_G),
+\end{aligned}
+\]
+hence an $S$-morphism:
+\[
+m_{\widetilde G}:\widetilde G\times_S\widetilde G\to\widetilde G,
+\]
+where $\widetilde G$ denotes the affine $S$-scheme with $A$-algebra $\Gamma(G,\OO_G)$. From there, it is formal to verify that $m_{\widetilde G}$ gives $\widetilde G$ a structure of group $S$-scheme such that the canonical morphism $v:G\to\widetilde G$ is a morphism of $S$-groups.
+\begin{remark}{4.8}\label{XV.4.8}
+$\widetilde G$ plays the role of a largest ``affine quotient'' of $G$; moreover, one can show that $\widetilde G$ is indeed a quotient of $G$ for fpqc, hence is of finite type over $S$ (XVII App. III, 2).
+\end{remark}
+
+In the case under consideration, the generic fiber $G_t$ of $G$ is affine, so it follows from EGA I 9.3.3 that $v_t$ is an isomorphism. Since $\widetilde G$ is affine, the coherent family of morphisms:
+\[
+w_m=v_mu_m:T'_m\to\widetilde G_m\qquad(m\in\NN)
+\]
+comes from a unique morphism of $S$-groups (Exp. IX 7.1):
+\[
+w:T'\to\widetilde G.
+\]
+Let then $T_t$ be the subtorus of $G_t$ equal to $v_t^{-1}w_t(T'_t)$. The torus $T_t$ therefore has rank at most $r$ (as the image of a torus of rank $r$). Let us show that $T_t$ contains $M(n)_t$ for every $n$. Indeed, let $u(n)_m$ be the $S_m$-isomorphism $({}_nT')_m\isomto M(n)_m$ obtained by restricting $u_m$ to $({}_nT')_m$. The coherent family of morphisms $u(n)_m$ comes from a unique $S$-isomorphism $u(n):{}_nT'\isomto M(n)$ (for $M(n)$ is finite over $S$). For every integer $m\geq0$, one then has the equalities:
+\[
+w_m|_{({}_nT')_m}=(v_mu_m)|_{({}_nT')_m}=(v\circ u(n))_m.
+\]
+Consequently $w|_{{}_nT'}=v\circ u(n)$ (1.6 a)). In particular, one has:
+\[
+w_t|_{({}_nT')_t}=v_t\circ u(n)_t,
+\]
+hence $v_t^{-1}w_t({}_nT')_t=u(n)_t({}_nT')_t=M(n)_t$.
+
+This indeed proves that $T_t$ contains $M(n)_t$, and implies that $T_t$ has rank $r$. One concludes as in the first case already studied, by considering the schematic closure in $G$ of $T_t$, say $T''$. Since $T_t$ contains $M(n)_t$, $T''_s$ contains $M(n)_s$, hence contains $T_s$ (density theorem). On the other hand, since $T''$ is flat over $S$ and $T_t$ has dimension $r$, $T''_s$ has dimension $r$ (Exp. VIB 4). In brief, $T_s$ has the same underlying space as the neutral component of $T''_s$, and one concludes as in the first case that the neutral component of $T''$ is a subtorus of $G$ answering the question.
+
+\noindent c) End of the proof of 4.1.
+
+To prove the existence of the subtorus $T$, one may suppose $S$ reduced (2.2). Taking 3.1 (ii) $\implies$ (i) into account, it then suffices to prove that the set $U$ of points $x$ of $S$ such that there exists a subtorus $T_x$ of $G_x$ with ${}_nT_x=M(n)_x$ for every $n$ equal to a power of $q$ is equal to $\mathrm{ens}(S)$. The torus $T_x$ in question is necessarily unique, and by fpqc descent it suffices to prove its existence after extension of the residue field of $x$ (Exp. IX 4.8 b)).
+
+This being so, since $S$ is locally noetherian and connected, and $U$ is nonempty (it contains the point $s$ of 4.1 b)), one is reduced, by an immediate argument, to proving that if $x$ and $x'$ are two points of $S$, with $x$ a specialization of $x'$, and if one of the two points belongs to $U$, then both points are in $U$. By the usual technique (EGA II 7.1.9), one reduces to the case where $S$ is the spectrum of a complete discrete valuation ring with algebraically closed residue field, a case treated in b).
+
+This completes the proof of Theorem 4.1.
+
+% original p. 409
+\sgasection{5}{Representability of the functor: smooth subgroups identical to their connected normalizer}
+\begin{proposition}{5.1}\label{XV.5.1}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation, $H$ a group subprescheme of $G$, smooth with connected fibers. Then:
+
+\noindent a) The normalizer $N$ of $H$ in $G$ is representable by a closed subprescheme of $G$, of finite presentation over $S$.
+
+\noindent b) The following conditions are equivalent:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item The canonical immersion $H\to N$ is an open immersion.
+\item The group $N$ is smooth along the unit section, and its neutral component, which is then representable (Exp. VIB 3.10), is equal to $H$.
+\item For every point $s$ of $S$, one has $H_s=(N_s)^0$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+The group prescheme $H$ is locally of finite presentation over $S$ ($H$ is smooth over $S$) and has connected fibers, hence is of finite presentation over $S$ (Exp. VIB 5.3.3). Assertion a) is then a consequence of Exp. XI 6.11. The equivalence of the conditions appearing in b) is recorded here for reference, and was proved in VIB 6.5.1.
+\end{proof}
+This being so, we may state the main theorem of this section:
+\begin{theorem}{5.2}\label{XV.5.2}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation over $S$, $\mathscr L_G$ (or simply $\mathscr L$ if there is no ambiguity) the $S$-functor such that for every $S$-prescheme $S'$ one has:
+\[
+\begin{aligned}
+\mathscr L_G(S')={}&\text{set of group subpreschemes of }G_{S'},\text{ smooth over }S',\\
+&\text{with connected fibers, identical to their connected normalizer.}
+\end{aligned}
+\]
+Then the functor $\mathscr L$ is representable by an $S$-prescheme, the union of an increasing family $(U_i)_{i\in\NN}$ of open subpreschemes, quasi-projective and of finite presentation over $S$, hence a fortiori separated over $S$.
+\end{theorem}
+
+\par\noindent\emph{First reductions.}
+For every integer $r\geq0$, let $\mathscr L_r$ be the subfunctor of $\mathscr L$ such that for every $S$-prescheme $S'$ one has:
+\[
+\begin{aligned}
+\mathscr L_r(S')={}&\text{set of group subpreschemes of }G_{S'},\text{ smooth,}\\
+&\text{with connected fibers, identical to their connected normalizer}\\
+&\text{and of relative dimension }r.
+\end{aligned}
+\]
+Since the dimension of the fibers of a smooth group is a locally constant function, the canonical monomorphism $\mathscr L_r\to\mathscr L$ is representable by an immersion both open and closed. It therefore suffices to show that for every $r$, $\mathscr L_r$ is representable by an $S$-prescheme having the properties above, for $\mathscr L$ will then be representable by the sum $S$-prescheme $\coprod_{r\in\NN}\mathscr L_r$.
+
+For every integer $n\geq0$, every $S$-prescheme $S'$ and every group subprescheme $H$ of $G_{S'}$, we shall denote by $H^{(n)}$ the $n$th normal invariant of the unit section $S'\to H$ of $H$ (EGA IV 16.1.2), so that $H^{(n)}$ is a sheaf of $\OO_{S'}$-modules, of finite type, corresponding to the $n$th infinitesimal neighborhood of the unit section of $H$. If $H$ is smooth over $S'$ of relative dimension $r$, $H^{(n)}$ is a locally free $\OO_S$-module whose rank $\varphi(n,r)$ depends only on $n$ and $r$. Moreover, since $H$ is a subprescheme of $G_{S'}$, one has a canonical epimorphism, compatible with extension of the base:
+% typo?: source writes O_S here rather than O_{S'}, kept as printed.
+\[
+G^{(n)}\otimes_{\OO_S}\OO_{S'}\simeq G_{S'}^{(n)}\to H^{(n)}.
+\]
+Introduce then the projective $S$-scheme:
+\[
+P_{\varphi(n,r)}=\mathrm{Grass}_{\varphi(n,r)}\bigl((G)^{(n)}\bigr)
+\]
+(EGA I 2nd ed. 9.7; cf. also S\'eminaire Cartan, 1960/61, Exp. No. 14 by A. Grothendieck). It then follows from the preceding remarks that the map:
+\[
+H\mto H^{(n)}
+\]
+defines a canonical morphism:
+\[
+u_{n,r}:\mathscr L_r\to P_{\varphi(n,r)}.
+\]
+The group $G$ acts naturally on $G^{(n)}$, hence on $P_{\varphi(n,r)}$, by means of the representation:
+\[
+\mathrm{int}:G\to\underline{\Aut}_{S\text{-gr}}(G),\qquad g\mto\mathrm{int}(g).
+\]
+Moreover, if $S'$ is a quasi-compact $S$-prescheme and $H$ an element of $\mathscr L_r(S')$, one knows (Exp. XI 6.11) that for $n$ sufficiently large, one has:
+\[
+N=\uNorm_{G_{S'}}(H)=\uNorm_{G_{S'}}(H^{(n)}).
+\]
+For each integer $n\geq0$, introduce the subfunctor $\mathscr L_r^n$ of $\mathscr L_r$ such that for every $S$-prescheme $S'$ one has:
+\[
+\begin{aligned}
+\mathscr L_r^n(S')={}&\text{set of subgroups }H\text{ of }G_{S'}\text{ belonging to }\mathscr L_r(S')\\
+&\text{and such that }\uNorm_{G_{S'}}(H)=\uNorm_{G_{S'}}(H^{(n)}).
+\end{aligned}
+\]
+\par\noindent\emph{Representability of $\mathscr L_r^n$.}
+Since the integer $r$ is fixed until the end of the proof of 5.2, we shall omit it from the notation. Thus we shall write $\mathscr L,\mathscr L^n,P_n,u_n$ instead of $\mathscr L_r,\mathscr L_r^n,P_{\varphi(n,r)},u_{n,r}$.
+
+Let $v_n$ be the restriction of $u_n$ to the subfunctor $\mathscr L^n$ of $\mathscr L$. It follows from the definition of $\mathscr L^n$ and 5.1 b) ii) that $v_n$ is a monomorphism. In fact one has the following lemma:
+\begin{lemma}{5.3}\label{XV.5.3}
+The morphism $v_n$ is an immersion of finite presentation. A fortiori, $\mathscr L^n$ is representable by an $S$-prescheme, quasi-projective and of finite presentation over $S$.
+\end{lemma}
+After replacing $S$ by $P_n$, one is reduced by the usual technique to proving the following assertion: let $Q\in P_n(S)$, and consider the subfunctor $\mathscr F$ of the functor $h_S$ represented by the final object $S$ of $\Sch/S$, such that for every $S$-prescheme $S'$ one has:
+\[
+\begin{aligned}
+\mathscr F(S')={}&h_S(S')\text{ (a set with one element) if there exists }H\in\mathscr L^n(S')\\
+&\text{such that }H^{(n)}=Q_{S'},\\
+\mathscr F(S')={}&\varnothing\text{ otherwise.}
+\end{aligned}
+\]
+Then the canonical monomorphism $\mathscr F\to S$ is an immersion of finite presentation.
+
+Let us begin by transforming the definition of the functor $\mathscr F$. For this, note that the normalizer of $Q$ in $G$ is representable by a group subprescheme $N$ of finite presentation over $S$ (namely the inverse image of the point $Q$ of $P_n(S)$ under the morphism:
+\[
+G\to P_n,\qquad g\mto g\cdot Q.
+\]
+% typo: the parenthesis opened in the source before “namely” is closed here.
+)
+I say that the functor $\mathscr F$ agrees with the following subfunctor of $h_S$:
+\[
+\left\{\begin{aligned}
+\mathscr F(S')&=h_S(S')\text{ if one has:}\\
+\text{(a)}\quad &N_{S'}\text{ is smooth along the unit section and of relative dimension }r.\\
+\text{(b)}\quad &(N_{S'})^{(n)}\text{ (then canonically an element of }P_n(S')\text{) equals }Q_{S'}.\\
+\mathscr F(S')&=\varnothing\text{ otherwise.}
+\end{aligned}\right.
+\]
+Indeed, let us temporarily denote by $\mathscr F_1$ the functor $\mathscr F$ in its first form, and by $\mathscr F_2$ the functor $\mathscr F$ in its second form. Then:
+\[
+\text{i)}\qquad\mathscr F_1(S')=h_S(S')\implies\mathscr F_2(S')=h_S(S').
+\]
+Indeed, let $H\in\mathscr F^n(S')$ be the subgroup of $G_{S'}$ such that $H^{(n)}=Q_{S'}$. One therefore has:
+% typo?: source prints F^n rather than L^n in this membership, kept as printed.
+\[
+\uNorm_{G_{S'}}(H)=\uNorm_{G_{S'}}(H^{(n)})=\uNorm_{G_{S'}}(Q_{S'})=N_{S'}.
+\]
+Thus by 5.1 b) ii), $N_{S'}$ is smooth along the unit section and its neutral component is $H$. Consequently $N_{S'}$ has relative dimension $r$, and since $H$ is open in $N_{S'}$ (by 5.1 b) i)), one has $(N_{S'})^{(n)}=H^{(n)}=Q_{S'}$. In brief, $\mathscr F_2(S')=h_S(S')$.
+\[
+\text{ii)}\qquad\mathscr F_2(S')=h_S(S')\implies\mathscr F_1(S')=h_S(S').
+\]
+By hypothesis, $N_{S'}$ is smooth along the unit section, of relative dimension $r$; its neutral component is therefore representable (Exp. VIB 3.10) by a group subprescheme $H$, smooth over $S'$, with connected fibers of dimension $r$. Since $H$ is invariant in $N_{S'}$ and open in $N_{S'}$, one has the following inclusions:
+\[
+\begin{aligned}
+N_{S'}\subset\uNorm_{G_{S'}}(H)&\subset\uNorm_{G_{S'}}(H^{(n)})\\
+&=\uNorm_{G_{S'}}(N_{S'}^{(n)})=\uNorm_{G_{S'}}(Q_{S'})=N_{S'}.
+\end{aligned}
+\]
+The inclusions above are therefore equalities. The first inclusion then shows that $H$ is equal to its connected normalizer, and the second shows that $H$ is an element of $\mathscr L^n(S')$. This says that $\mathscr F_1(S')=h_S(S')$.
+
+Implications i) and ii) give $\mathscr F_1=\mathscr F_2$. We retain the second definition of the functor $\mathscr F$, and shall first ``represent condition a)'' by an immersion of finite presentation. For this, it suffices to apply:
+\begin{lemma}{5.4}\label{XV.5.4}
+Let $S$ be a prescheme, $X$ an $S$-prescheme locally of finite presentation over $S$, $\sigma:S\to X$ a section of $X$, $r$ an integer $\geq0$, and $L:(\Sch/S)^\circ\to\Ens$ the subfunctor of $S$ defined as follows:
+\[
+\left\{\begin{aligned}
+L(S')&=h_S(S')\text{ if }X_{S'}\text{ is smooth along the section }\sigma_{S'}\\
+&\qquad\text{and of relative dimension }r\text{ at the points of }\sigma_{S'}(S').\\
+L(S')&=\varnothing\text{ otherwise.}
+\end{aligned}\right.
+\]
+Then:
+
+\noindent a) The monomorphism $L\to S$ is an immersion of finite presentation.
+
+\noindent b) Let $J$ be the conormal sheaf relative to the immersion $S\to X$ (EGA IV 16.1.2); suppose that for every point $s$ of $S$, $J\otimes_{\OO_{S,s}}\kappa(s)$ has rank at most $r$; then the immersion $L\to S$ is a closed immersion.
+\end{lemma}
+\begin{proof}
+The functor $L$ is local in nature on $S$, which reduces one to the case where $S$ is affine. After replacing $X$ by a neighborhood of $\sigma(S)$, one may suppose $X$ of finite presentation over $S$, then (EGA IV 8.9) $S$ noetherian (note, in case b), that formation of the conormal sheaf commutes with extension of the base (EGA IV 16.6.4), and that the rank of the fibers of $J$ is a constructible function on $S$). This being so, for every $S$-prescheme $S'$, denote by $J'=J_{S'}$ the conormal sheaf relative to the section $\sigma_{S'}$; let $S^\bullet(J')$, canonically isomorphic to $S^\bullet(J)_{S'}$, be the symmetric algebra of $J'$ over $\OO_{S'}$, $\mathrm{Gr}_\bullet(\sigma_{S'})$ the sheaf of graded $\OO_{S'}$-algebras associated with $\sigma_{S'}$ (EGA IV 16), and for every integer $n\geq0$ let $\sigma_{n,S'}:S^n(J')\to\mathrm{Gr}_n(\sigma_{S'})$ be the canonical epimorphism.
+
+It follows from EGA IV 17.12.3 and EGA $0_{\mathrm{IV}}$ 19.5.4 that, for $X_{S'}$ to be smooth along the section $\sigma_{S'}$ and of relative dimension $r$ at the points of $\sigma_{S'}(S')$, it is necessary and sufficient that:
+
+\noindent i) $J'$ be a locally free $\OO_{S'}$-sheaf of rank $r$.
+
+\noindent ii) For every integer $n\geq1$, $\sigma_{n,S'}$ be an isomorphism.
+
+Now it follows from TDTE IV, Lemma 3.6, that ``the functor making $J$ locally free of rank $r$'' is representable by a subprescheme $S_1$, closed in $S$ in case b). Replacing $S$ by $S_1$, one is reduced to the case where $J$ is locally free of rank $r$. Let us then proceed by induction on the integer $n$. Suppose one has represented by a closed subprescheme $S_{n-1}$ of $S$ the ``functor making the morphisms $\sigma_{q,S'}$ injective for every integer $q\leq n-1$'', and let us show that the ``subfunctor\nde{``Functor'' has been replaced by ``subfunctor''. Should one write ``making $\sigma_{q,S'}$ injective for $q\leq n$''?} making $\sigma_{n,S'}$ injective'' is representable by a closed subprescheme $S_n$ of $S_{n-1}$. Replacing $S$ by $S_{n-1}$, we may suppose that $\sigma_{q,S}$ is bijective for $q\leq n-1$. But then, the $(n-1)$st normal invariant $X^{(n-1)}$ relative to the section $\sigma_s$ admits a composition series $X^{(0)},\ldots,X^{(n-1)}$ whose successive quotients $\mathrm{Gr}_0(\sigma_s),\ldots,\mathrm{Gr}_{n-1}(\sigma_s)$ are locally free over $\OO_{S'}$, hence flat, so $X^{(n-1)}$ is flat over $\OO_S$. Since formation of $X^{(i)}$ commutes with extension of the base (EGA IV 16), one has for every $S$-prescheme $S'$:
+% typo?: source's sigma_s and O_{S'} in this sentence are retained.
+\[
+\begin{gathered}
+\mathrm{Gr}_n(\sigma_{S'})=\Ker[X_{S'}^{(n)}\to X_{S'}^{(n-1)}]=(\mathrm{Gr}_n(\sigma))_{S'},\\
+\text{and}\qquad\sigma_{n,S'}=(\sigma_{n,S})_{S'}.
+\end{gathered}
+\]
+Thus the functor of interest is ``the one making the morphism $\sigma_{n,S}$ injective''. This functor is local in nature on $S$, which allows one to suppose $S$ affine and $S^n(J)$ free over $\OO_S$. But it is then clear that the functor in question is representable by the closed subscheme of $S$ defined by the ideal generated by the coordinates of $\Ker\sigma_{n,S}$ relative to a basis of $S^n(J)$.
+
+Since $S$ is noetherian, the decreasing sequence $\{S_n\}$ of closed subpreschemes of $S_1$ is stationary, and the stationary value represents the functor $L$, which completes the proof of 5.4.
+\end{proof}
+
+Let us return to the question of the representability of $\mathscr L^n$. Replacing $S$ by a suitable subprescheme $S_1$, one may therefore suppose $N$ smooth along the unit section and of relative dimension $r$. The functor $\mathscr L^n$ is then the ``coincidence functor'' of two sections of $P_n$ over $S$, $h$ and $g$, corresponding to the sheaves $Q$ and $N^{(n)}$ (condition b) occurring in the definition of the functor $\mathscr F_2$ above). It is therefore representable by the closed subprescheme of $S$, the inverse image of the diagonal of $P_n\times_S P_n$ under the morphism $h\times_S g$ of finite presentation. This completes the proof of 5.3.
+
+\par\noindent\emph{Study of the transition morphisms $\mathscr L^n\to\mathscr L^m$.}
+If a subgroup $H$ of $G_{S'}$ belongs to $\mathscr L^n(S')$, it belongs a fortiori to $\mathscr L^m(S')$ for every $m\geq n$, whence natural monomorphisms:
+\[
+u_n^m:\mathscr L^n\to\mathscr L^m\qquad\text{for }m\geq n.
+\]
+\begin{lemma}{5.5}\label{XV.5.5}
+The morphism $u_n^m$ is an open immersion.
+\end{lemma}
+\begin{proof}
+After changing $S$, one is reduced to the following problem: let $H\in\mathscr L^m(S)$,
+\[
+N=\uNorm_G(H)=\uNorm_G(H^{(m)}),\qquad N'=\uNorm_G(H^{(n)}),
+\]
+and let $\mathscr D:(\Sch/S)^\circ\to\Ens$ be the coincidence functor of $N$ and $N'$, defined by $\mathscr D(S')=h_S(S')$ if $N_{S'}=N'_{S'}$, and $\mathscr D(S')=\varnothing$ otherwise. One must show that $\mathscr D\to S$ is an open immersion. Now I say that $\mathscr D$ is also the subfunctor of $S$ which ``makes the immersion $H\to N'$ open''. Indeed, if $N_{S'}=N'_{S'}$, then $H_{S'}\to N'_{S'}$ is indeed an open immersion, since this is so for $H_{S'}\to N_{S'}$ (Prop. 5.1). Conversely, if $H_{S'}\to N'_{S'}$ is an open immersion, since $H$ has connected fibers, $H_{S'}$ is the neutral component of $N'_{S'}$ (Exp. VIB 3.10), and consequently is invariant in $N'_{S'}$, hence $N'_{S'}\subset N_{S'}$. Since in any case $N'$ contains $N$, one indeed has $N_{S'}=N'_{S'}$. The group preschemes $H$ and $N'$ are of finite presentation over $S$, and $H$ is flat over $S$; the fact that $\mathscr D\to S$ is an open immersion then follows from Exp. VIB 2.6.
+\end{proof}
+
+\par\noindent\emph{End of the proof of 5.2.}
+Since the functors $\mathscr L^n$ are representable, and the transition morphisms $u_n^m$ are compatible with each other and representable by open immersions, there exists an $S$-prescheme $X$, the union of an increasing sequence of open subsets $(X_i)_{i\in\NN}$, such that $X_i$ represents the functor $\mathscr L^i$, and such that if one identifies $\mathscr L^i$ with $X_i$, the inclusion $X_i\to X_j$ ($j\geq i$) is identified with $u_i^j$. To conclude that $X$ represents the functor $\mathscr L$, it then suffices to note that, in the category of sheaves on $\Sch/S$ endowed with the Zariski topology (Exp. IV 6.1), one has:
+\[
+X=\varprojlim X_i\qquad\text{and}\qquad\mathscr L=\varprojlim\mathscr L^i.
+\]
+% typo?: source prints projective limits for these increasing unions, kept as printed.
+
+\begin{remark}{5.6}\label{XV.5.6}
+With the preceding notation, suppose in addition that $S$ has all its residual characteristics zero. Then for every integer $r\geq0$, the functor $\mathscr L_r$ is equal to $\mathscr L_r^1$, hence is representable by an $S$-prescheme of finite presentation and quasi-projective over $S$. Indeed, it suffices to show that if $H\in\mathscr L_r(S')$, the canonical immersion:
+\[
+H\to N=\uNorm_{G_{S'}}(H^{(1)})
+\]
+is an open immersion (for this implies $N=\uNorm_{G_{S'}}(H)$, hence $H\in\mathscr L_r^1(S')$). Since $H$ is flat over $S$, and $H$ and $N$ are of finite presentation over $S$, it suffices (Exp. VIB 2.6) to show that for every point $s$ of $S$, $H_s\to N_s$ is an open immersion. Now it follows easily\nde{One can apply, for example, Proposition II.6.1 of the book by M. Demazure and P. Gabriel, \textit{Groupes alg\'ebriques I}, Masson \& North Holland (1970).} from Cartier's theorem (Exp. VIB 1.6) that if $G$ is an algebraic group over a field of characteristic $0$, and $H$ is a connected algebraic subgroup, one has:
+\[
+\uNorm_G(H)=\uNorm_G(\Lie H)=\uNorm_G(H^{(1)}).
+\]
+On the other hand, if $S$ has nonzero residual characteristics, the subfunctors $\mathscr L_r^n$ of $\mathscr L_r$ may form a strictly increasing sequence (even when $S$ is quasi-compact), and in this case $\mathscr L_r$ is not representable by an $S$-prescheme quasi-compact over $S$. Take, for example, the algebraic group $G$, defined over a field $k$ of characteristic $p>0$, equal to the semidirect product of the torus $T=\Gm\times\Gm$ by the unipotent group $U=\Ga\times\Ga$, with the action of $T$ on $U$ defined by $(t,t',u,u')\to(tu,t'u')$. For every integer $n>0$, consider then the smooth connected subgroup $U_n$ of $U$ with equation $u'=u^{p^n}$, and the subtorus $T_n$ of $T$ with equation $t'=t^{p^n}$. It is immediate to verify that $T_n$ acts on $U_n$, and that the subgroup $G_n$ of $G$ equal to $T_n\cdot U_n$ is smooth, connected and identical to its normalizer in $G$. Now all the groups $G_n$, for $n\geq m$, are distinct and have the same infinitesimal neighborhood of order $p^m$.
+\end{remark}
+
+\begin{remark}{5.7}\label{XV.5.7}
+There exists on $\mathscr L$ a canonical invertible sheaf $L$ whose restriction to every open subset $U$ of $\mathscr L$, quasi-compact over $S$, is $S$-ample. Indeed, consider the group subprescheme $H$ of $G_{\mathscr L}$, smooth over $\mathscr L$, with connected fibers, equal to its connected normalizer, and universal for these properties. I say that one may take for $L$ the sheaf $(\det(\Lie H))^{-1}$ (recall that if $F$ is a sheaf of $\OO_S$-modules on a prescheme $S$, locally free of finite rank, $\det(F)$ denotes the invertible $\OO_S$-module whose restriction to the open and closed subprescheme $S_r$ of $S$ ($r\geq0$) where $F$ has rank $r$ is equal to $\bigwedge^r(F)$). We retain the notation of the proof of 5.2. To prove the assertion made about $L$, we may restrict to the functor $\mathscr L_r^n$ and prove that $L|_{\mathscr L_r^n}$ is $S$-ample. Consider the canonical immersion $v_n:\mathscr L_r^n\to P_n$, and let $Q$ be the locally free sheaf on $P_n$, universal for the Grassmannian $P_n$. By construction, one has $v_n^*(Q)=H^{(n)}$ (where $H$ now denotes the group subprescheme of $G_{\mathscr L_r^n}$ universal for the functor $\mathscr L_r^n$). Now $\det(Q)$ is the canonical ample sheaf on $P_n$ (EGA I 2nd ed., 9.7), so $\det H^{(n)}$ is ample relative to $\mathscr L_r^n$ (EGA II 4.6.13 i) bis). Again denote by $J$ the conormal sheaf, equal to $H^{(1)}$, and by $S^q(J)$ the homogeneous part of degree $q$ of the symmetric algebra of $J$ over $\OO_{\mathscr L_r^n}$. Since $H$ is smooth over $\mathscr L_r^n$, it is immediate that one has a canonical isomorphism:
+\[
+\det H^{(n)}\simeq\prod_{1\leq q\leq n}\det S^q(J).
+\]
+On the other hand, one proves that for every locally free sheaf $J$ of rank $r$ and every integer $q>0$, there exists a canonical isomorphism:
+\[
+\det S^q(J)\simeq(\det J)^{\otimes s},
+\]
+where $s>0$ is an integer depending only on $r$ and $q$. Finally, one obtains $\det H^{(n)}\simeq(\det J)^{\otimes s}$ for a suitable integer $s>0$, so (EGA II 4.5.6) $\det J=(\det\Lie H)^{-1}$ is indeed $S$-ample.
+\end{remark}
+
+\begin{remark}{5.8}\label{XV.5.8}
+Let $S$ be a prescheme, $G$ and $H$ two group $S$-preschemes of finite presentation over $S$, $i:H\to G$ a group $S$-homomorphism which is a monomorphism. If $H$ is smooth over $S$, with connected fibers, one knows (Exp. XI 6.11) that $N=\uNorm_G(H)$ is representable by a closed group subprescheme of $G$, of finite presentation over $S$. Suppose in addition that $N$ is smooth along the unit section and has the same relative dimension over $S$ as $H$. The neutral component $N^0$ of $N$ is then representable by an open group subprescheme of $N$, smooth over $S$ (Exp. VIB 3.10). The monomorphism $i$ obviously factors through $N^0$. In fact one has $H=N^0$. Indeed, for every point $s$ of $S$, one has $H_s=(N^0)_s$, these two algebraic groups being connected, smooth and of the same dimension. Since $H$ is flat over $S$, one deduces that $H\to N^0$ is an isomorphism (EGA IV 17.9.5). Finally, $H$ is a group subprescheme of $G$. One has therefore shown that the functor $\mathscr L$ introduced in this section is identical to the functor of subgroups $H$ of $G$, smooth over $S$, with connected fibers, and equal to their connected normalizer.
+\end{remark}
+
+% original p. 422
+\sgasection{6}{Functor of Cartan subgroups and functor of parabolic subgroups}
+When $G$ is a smooth connected algebraic group defined over an algebraically closed field $k$, one has defined the subtori of $G$, maximal subtori, Cartan subgroups (Exp. XII 1), Borel subgroups (Exp. XIV 4.1), and parabolic subgroups (Exp. XIV 4.8 bis). We extend these notions to the case of a group prescheme over an arbitrary base as follows:
+\begin{definition}{6.1}\label{XV.6.1}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation over $S$, $H$ a group $S$-prescheme, $i:H\to G$ an $S$-monomorphism making $H$ a subgroup of $G$. We shall say that $H$ is a subtorus of $G$ (resp. a maximal subtorus of $G$, a Cartan subgroup, a Borel subgroup, a parabolic subgroup) if:
+
+\noindent i) $H$ is smooth over $S$.
+
+\noindent ii) For every geometric point $\bar s$ over $S$, $H_{\bar s}$ is a subtorus of $(G_{\bar s})^0_{\mathrm{red}}$ (resp. a maximal subtorus, a Cartan subgroup, a Borel subgroup, a parabolic subgroup).
+\end{definition}

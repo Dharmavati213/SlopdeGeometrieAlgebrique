@@ -1,0 +1,399 @@
+\exposetitle{XIV}{Regular elements, continued. Application to algebraic groups}
+\label{XIV}
+\begin{center}by A. Grothendieck\\with an Appendix by J.-P. Serre\end{center}
+{\renewcommand{\thefootnote}{0}\footnotetext{xy version of 1/12/08}}
+\setcounter{footnote}{0}
+
+% original p. 296
+\sgasection{1}{Construction of Cartan subgroups and maximal tori for a smooth algebraic group}
+\begin{theorem}{1.1}\label{XIV.1.1}
+Let $G$ be a smooth algebraic group over a field $k$. Then $G$ admits a
+maximal torus $T$, hence a Cartan subgroup $C=\Centr_G(T)$.
+\end{theorem}
+\begin{proof}
+By XII 3.2, it amounts to the same thing to find a maximal torus $T$ of
+$G$, or a Cartan subgroup $C$ of $G$. Moreover, since the maximal tori
+of $G$ are those of $G^0$, one may suppose $G$ connected. We distinguish
+two cases:
+
+\noindent $1^\circ)$ The field $k$ is finite. Let $\mathcal T$ be the
+scheme of maximal tori of $G$ (Exp XII 1.10.), which is a smooth scheme
+over $k$. Note that $G$ acts on $\mathcal T$ by inner automorphisms,
+and by the conjugacy theorem (XII 6.6 a)), two points of
+$\mathcal T_{\bar k}$ rational over $\bar k$ are congruent under
+$G_{\bar k}(\bar k)$. Taking into account that $\mathcal T$ is smooth
+over $k$, hence $\mathcal T_{\bar k}$ smooth over $\bar k$, it follows
+that $\mathcal T_{\bar k}$ is isomorphic to $G_{\bar k}/\bar N$, where
+$\bar N$ is the stabilizer of an element of $\mathcal T_{\bar k}(\bar k)$,
+i.e. the normalizer of a maximal torus $\bar T$ of $G_{\bar k}$.
+Consequently, $\mathcal T$ is a ``homogeneous space'' under the action
+of the group $G$. A well-known theorem of Lang (Amer. J. Math. 78,
+1956, pp. 555--563) tells us that every homogeneous space under a
+smooth connected algebraic group over a finite field $k$ admits a
+rational point. In particular, $\mathcal T$ admits a rational point,
+i.e. $G$ admits a maximal torus $T$. \hfill Q.E.D.
+
+\noindent $2^\circ)$ The field $k$ is infinite. We shall use the
+\begin{lemma}{1.2}\label{XIV.1.2}
+Let $G$ be a smooth algebraic group over a field $k$. Then $G$ admits
+a subgroup of type (C) (XIII 6.2).
+\end{lemma}
+By XIII 6.3 it amounts to the same thing to say that $\mathfrak g$
+contains a Cartan subalgebra $\mathfrak d$. This is trivial if $k$ is
+infinite, for then $\mathfrak g$ contains a regular element $a$, and
+one will take $\mathfrak d=\operatorname{Nil}(a,\mathfrak g)$. The
+case of finite $k$ is treated exactly as in proof $1^\circ)$ above,
+but requires the preliminary construction of the scheme $\mathfrak d$
+of Cartan subalgebras of $\mathfrak g$ and the fact that the latter
+is smooth over $k$, which will be seen below (2.16). To establish
+1.1 in case $2^\circ)$ in which we have placed ourselves, it will in
+any event suffice to know 1.2 for infinite $k$. Let us also record:
+
+\begin{lemma}{1.3}\label{XIV.1.3}
+Let $G$ be a smooth connected affine algebraic group whose reductive
+center (XII 4.1 and 4.4) is reduced to the unit group. Then $G$ is
+nilpotent if (and only if) its Lie algebra $\mathfrak g$ is nilpotent.
+\end{lemma}
+This is contained in XII 4.9.
+
+We can now give a method of constructing Cartan subgroups of $G$
+(also valid when $k$ is finite, admitting 1.2 in this case). Suppose
+first $G$ affine. We proceed by induction on $n=\dim G$, the assertion
+being trivial if $n=0$. Thus suppose $n>0$ and the assertion proved
+for dimensions $n'<n$. Let $Z$ be the reductive center of $G$, and let
+\[
+ u:G\longrightarrow G'=G/Z
+\]
+be the canonical homomorphism. By XII 4.7 c), one has a one-to-one
+correspondence $C'\mto C=u^{-1}(C)$ between Cartan subgroups of $G'$
+and Cartan subgroups of $G$. Thus, replacing $G$ by $G'$, one may
+suppose that the reductive center $Z$ of $G$ is reduced to the identity
+element (for this holds for that of $G'$ by XII 4.7 b)). By 1.3,
+$G$ admits a subgroup $D$ of type (C). We know that over the algebraic
+closure $\bar k$ of $k$, $D_{\bar k}$ contains a Cartan subgroup of
+$G_{\bar k}$ (XIII 6.6 b)), so every Cartan subgroup of $D$ is a
+Cartan subgroup of $G$ (XIII, 2.8 a)). Thus one is reduced to finding
+a Cartan subgroup of $D$. If $\dim D=\dim G$, i.e. $D=G$, then the
+Lie algebra of $G$ is a Cartan subalgebra of itself, hence is nilpotent,
+so by 1.3 $G$ is nilpotent, hence is a Cartan subgroup of itself.
+If $\dim D<\dim G$, then by the induction hypothesis there exists
+a Cartan subgroup of $D$, which is therefore a Cartan subgroup of
+$G$, which completes the proof in the case where $G$ is affine.
+In the general case, let $Z$ be the center of $G$; then $G/Z=G'$
+is affine (XII 6.1), and for every Cartan subgroup $C'$ of $G'$, its
+inverse image $C$ in $G$ is a Cartan subgroup of $G$ (XII 6.6 e)).
+One is reduced to finding a Cartan subgroup of the smooth affine
+algebraic group $G'$, a case which has already been treated.
+% typo?: kept as printed: u^{-1}(C), and reference 1.3 for existence of D.
+\end{proof}
+
+\begin{corollary}{1.4}\label{XIV.1.4}
+Let $G$ be a smooth group scheme of finite type over an artinian scheme
+$S$. Then $G$ admits a maximal torus $T$, hence a Cartan subgroup
+$C=\Centr_G(T)$. Every torus $S$ in $G$ is contained in a maximal torus.
+\end{corollary}
+One may indeed suppose $S$ local with residue field $k$; then by 1.1,
+$G_0=G\times_S\Spec(k)$ admits a maximal torus $T_0$; by IX 3.6 bis
+and X 2.3, $T_0$ comes from a torus $T$ of $G$, which is clearly a
+maximal torus. The last statement follows by applying the preceding
+result to the centralizer of $S$, which is indeed smooth over $k$
+(XI 2.4).
+% typo?: kept as printed: S also names the torus, and smooth over k.
+
+\begin{remarks}{1.5}\label{XIV.1.5}
+\noindent a) We shall give below (3.20, 3.21 and XV) variants of 1.4
+in the case where $S$ is not assumed artinian.
+
+\noindent b) I do not know whether every algebraic group $G$
+(not necessarily smooth) over a field $k$ admits a maximal torus.
+The question only arises in characteristic $p>0$, and using 1.1 for
+a smooth quotient group of the form $G'=G/I$, where $I$ is a suitable
+radicial subgroup of $G$ (for example, the kernel of a sufficiently
+high power of the Frobenius homomorphism), by taking the inverse image
+in $G$ of a maximal torus of $G'$, one is reduced to the case where
+$(G_{\bar k})_{\mathrm{red}}$ is a torus ($\bar k$ still denoting the
+algebraic closure of $k$). It is easy to see that the answer is
+affirmative when $G$ is commutative (or more generally nilpotent):
+then $G$ admits a unique maximal torus, which one may construct,
+for example, by descent from the maximal torus of $G_{\bar k}$%
+{\renewcommand{\thefootnote}{*}\footnote{M. Raynaud has given a negative
+answer to the question raised here; cf. XVII Example 5.9.c).}\addtocounter{footnote}{-1}}.
+
+\noindent c) In the case where $G$ is affine, and $k$ perfect or $G$
+solvable, 1.1 is known and due to Rosenlicht; his proof is very different
+from that given here.
+
+\noindent d) When $k$ is infinite, 1.1 is a consequence of the much
+more precise result that the scheme $\mathcal T$ of maximal tori of
+$G$ is a rational variety, proved below (6.1). The method is essentially
+a combination of the proof of 1.1 and the explicit description of the
+structure of the scheme $\mathfrak d$ of Cartan subalgebras of
+$\mathfrak g$. To arrive at the desired result, we must first generalize
+to the case of an arbitrary base prescheme certain results of XIII 4
+to 6 (this is the purpose of the next two sections), and make the
+preceding construction proving 1.1 more precise, using the fact that
+every Cartan subgroup of $G$ is contained in one and only one subgroup
+of type (C) of $G$ (Nos. 4, 5).
+% typo: un en un seul -> un et un seul.
+\end{remarks}
+
+\sgasection{2}{Lie algebras over an arbitrary prescheme: regular sections and Cartan subalgebras}
+\begin{lemma}{2.1}\label{XIV.2.1}
+Let $A$ be a ring, $\mathfrak d$ a Lie algebra over $A$, and for every
+$s\in\Spec(A)$, let $\mathfrak d(s)=\mathfrak d\otimes_A k(s)$ be the
+corresponding Lie algebra over the residue field $k(s)$. One assumes
+the $A$-module $\mathfrak d$ finitely presented. The following
+conditions are equivalent:
+\begin{enumeratei}
+\item For every $s\in\Spec(A)$, $\mathfrak d(s)$ is nilpotent.
+\item For every $x\in\mathfrak d$, $\ad(x)$ is nilpotent.
+\item There exists an integer $N\geq0$ such that for every sequence
+$x_1,\ldots,x_N$ of elements of $\mathfrak d$, one has
+\[
+ \ad(x_1)\ad(x_2)\ldots\ad(x_N)=0.
+\]
+\end{enumeratei}
+\end{lemma}
+When $A$ is a field, the equivalence of (i) and (iii) is the definition
+of ``nilpotent'', and that of (ii) and (iii) is a well-known consequence
+of Engel's theorem (Bourbaki, \emph{Groupes et alg\`ebres de Lie},
+Chap. I, \S 4, \No 2). In the general case, one trivially has
+(iii) $\Rightarrow$ (ii), and (ii) $\Rightarrow$ (i) by the preceding
+result and the fact that (ii) is stable under passage to a quotient
+and localization. It remains to prove (i) $\Rightarrow$ (iii).
+When $A$ is artinian local with maximal ideal $\mathfrak m$, let
+$n>0$ be an integer such that $\mathfrak m^n=0$, and $N$ an integer
+such that condition (iii) holds for $\mathfrak d(s)=
+\mathfrak d\otimes_A A/\mathfrak m$; take $N'=nN$; one sees at once
+that this integer satisfies (iii). When $A$ is noetherian, there
+then exist finitely many elements $s_i\in\Spec(A)$ and ideals of
+definition $\mathfrak q_i\subset A_{s_i}$ such that the natural map
+\[
+ \mathfrak d\longrightarrow\prod_i\mathfrak d\otimes_A A_i,
+ \qquad\text{where }A_i=A_{s_i}/\mathfrak q_i,
+\]
+is injective; then by what precedes there exists for every $i$ an
+integer $N_i$ satisfying (iii) for the Lie algebra
+$\mathfrak d\otimes_A A_i$, and taking for $N$ the largest of the
+$N_i$, one satisfies (iii) for $\mathfrak d$. Finally, the general
+case reduces to the noetherian case by the usual procedure
+explained in EGA IV 8.
+% typo: corps. l'equivalence -> corps, l'equivalence.
+
+\begin{definition}{2.2}\label{XIV.2.2}
+Let $S$ be a prescheme, $\mathfrak d$ a quasi-coherent Lie algebra
+over $S$ which is a finitely presented module. One says that
+$\mathfrak d$ is locally nilpotent if for every $s\in S$, the
+Lie algebra $\mathfrak d(s)$ over $k(s)$ is nilpotent. One says
+that $\mathfrak d$ is strictly locally nilpotent if it is locally
+free, and if on every open subset $U$ of $S$ on which it has
+constant rank $r$, its Killing polynomial reduces to
+$P_{\mathfrak d}(t)=t^r$.
+\end{definition}
+Of course, if $\mathfrak d$ is a locally free Lie algebra (as a
+module) over $S$, one defines its Killing polynomial as a polynomial
+\[
+ P_{\mathfrak d}\in A[t],\qquad
+ A=\Gamma(\underline{\operatorname{Sym}}_{\OO_S}(\mathfrak d))
+ \simeq\Gamma(\mathrm W(\mathfrak d))
+\]
+where $A$ is the ring of sections of the structure sheaf of the
+vector bundle $\mathrm W(\mathfrak d)$ defined by $\mathfrak d$.
+% typo?: kept as printed: Sym(d), without the dual.
+It is clear that the two notions just introduced in 2.2 are stable
+under base change and local for the fpqc topology. Note:
+
+\begin{proposition}{2.3}\label{XIV.2.3}
+If $\mathfrak d$ is strictly locally nilpotent, it is locally
+nilpotent. The converse is true when $\mathfrak d$ is locally
+free and $S$ reduced.
+\end{proposition}
+The proof is immediate.
+
+\begin{definition}{2.4}\label{XIV.2.4}
+Let $S$ be a prescheme, $\mathfrak g$ a Lie algebra over $S$
+which is a locally free module of finite type. Let $\mathfrak d$
+be a Lie subalgebra of $\mathfrak g$; one says that it is a
+Cartan subalgebra if it satisfies the following conditions:
+\begin{enumeratei}
+\item $\mathfrak d$ is a submodule locally a direct summand
+(hence also locally free of finite type).
+\item For every $s\in S$, $\mathfrak d(s)$ is a Cartan subalgebra
+of $\mathfrak g(s)$.
+\end{enumeratei}
+\end{definition}
+
+\begin{definition}{2.5}\label{XIV.2.5}
+Let $S,\mathfrak g$ be as in 2.4. A section $a$ of
+$\mathfrak g$ is said to be quasi-regular if for every $s\in S$,
+$a(s)\in\mathfrak g(s)$ is a regular element of the Lie algebra
+$\mathfrak g(s)$ over $k(s)$. One says that $a$ is a regular
+section if it is quasi-regular and contained in a Cartan
+subalgebra of $\mathfrak g$.
+\end{definition}
+Notions 2.4 and 2.5 are again stable under base change and local
+for the fpqc topology. Only the last assertion, and for the
+case of the notion ``regular section'', requires a proof,
+and follows from the fact that the Cartan subalgebra containing
+a given regular section is uniquely determined. More precisely:
+
+\begin{proposition}{2.6}\label{XIV.2.6}
+Let $S,\mathfrak g$ be as in 2.4, and let $a$ be a quasi-regular
+section of $\mathfrak g$. Then there exists at most one Cartan
+subalgebra of $\mathfrak g$ containing $a$. For one to exist,
+i.e. for $a$ to be a regular section, it is necessary and
+sufficient that $a$ satisfy the following condition:
+$\mathfrak d=\operatorname{Nil}(a,\mathfrak g)$ is a submodule
+locally a direct summand of $\mathfrak g$, and $\ad(a)$ induces
+an automorphism of $\mathfrak g/\mathfrak d$. In this case,
+$\mathfrak d$ is the unique Cartan subalgebra of $\mathfrak g$
+containing $a$.
+\end{proposition}
+Indeed, suppose that $a$ is contained in the Cartan subalgebra
+$\mathfrak d$ of $\mathfrak g$. Then
+$\ad(a)_{\mathfrak g/\mathfrak d}$ is bijective on every fiber,
+hence (since $\mathfrak g/\mathfrak d$ is locally free of finite
+type) it is an automorphism of $\mathfrak g/\mathfrak d$; on
+the other hand, by 2.1, $\ad(a)_{\mathfrak d}$ is locally
+nilpotent, hence $\mathfrak d=\operatorname{Nil}(a,\mathfrak g)$,
+which proves the uniqueness of $\mathfrak d$ and the necessity
+of the announced regularity criterion. For sufficiency, note
+that the hypothesis made on $a$ implies that the formation
+of $\operatorname{Nil}(a,\mathfrak g)$ commutes with extension
+of the base and in particular with passage to the fibers,
+which shows in particular that the fibers $\mathfrak d(s)$
+of $\mathfrak d=\operatorname{Nil}(a,\mathfrak g)$ are Cartan
+subalgebras of the $\mathfrak g(s)$; moreover $\mathfrak d$
+is a Lie subalgebra of $\mathfrak g$ by XIII 4.1, hence it
+is a Cartan subalgebra.
+
+\begin{corollary}{2.7}\label{XIV.2.7}
+Under the conditions of 2.4, let $\mathfrak d$ be a Cartan
+subalgebra of $\mathfrak g$, $a$ a section of $\mathfrak d$
+which is regular in $\mathfrak g$, and $u$ an automorphism
+of $\mathfrak g$. For $u$ to leave $\mathfrak d$ invariant,
+it is necessary and sufficient that $u(a)$ be a section
+of $\mathfrak d$.
+\end{corollary}
+Indeed, then by transport of structure $u(a)$ is a regular
+section of $\mathfrak g$, contained in both Cartan subalgebras
+$\mathfrak d$ and $u(\mathfrak d)$, which are therefore identical.
+
+\begin{corollary}{2.8}\label{XIV.2.8}
+Under the conditions of 2.4, let $\mathfrak d$ be a Cartan
+subalgebra of $\mathfrak g$. Then for every $s\in S$ such
+that $k(s)$ is infinite, there exists an open neighborhood
+$V$ of $s$ and a regular section $a$ of $\mathfrak g$ over
+$V$ such that $\mathfrak d=\operatorname{Nil}(a,\mathfrak g|_V)$
+(i.e. such that $a$ is a section of $\mathfrak d|_V$).
+\end{corollary}
+Indeed, the fact that $k(s)$ is infinite ensures the existence
+of a regular element $a_0$ of $\mathfrak g(s)$ contained
+in $\mathfrak d(s)$; one may extend it to a section $a$ of
+$\mathfrak d$ over an open neighborhood $U$ of $s$, and
+since $\ad(a)_{\mathfrak g/\mathfrak d}$ induces an
+automorphism of $\mathfrak g(s)/\mathfrak d(s)$, it follows
+that, provided one restricts $V$, $\ad(a)_{\mathfrak g/\mathfrak d}$
+is an automorphism, which implies that $a$ is a quasi-regular
+section of $\mathfrak g|_V$ satisfying the desired condition.
+
+Let $\mathfrak g$ be as in 2.4; then examination of its
+Killing polynomial implies at once that the function
+\[
+ s\mto\text{nilpotent rank of }\mathfrak g(s)
+\]
+on $S$ is upper semicontinuous. We are mainly interested
+in the case where this function is in fact continuous,
+i.e. locally constant. Here are some variants of this property:
+
+\begin{proposition}{2.9}\label{XIV.2.9}
+Let $S,\mathfrak g$ be as in 2.4. Consider the following conditions:
+\begin{description}
+\item[$(\mathrm C_0)$] The nilpotent rank of the $\mathfrak g(s)$
+($s\in S$) is a locally constant function of $s$.
+\item[$(\mathrm C_1)$] There exists a Cartan subalgebra of
+$\mathfrak g$ locally for the fpqc topology.
+\item[$(\mathrm C'_1)$] As $(\mathrm C_1)$, replacing ``fpqc
+topology'' by ``\'etale topology''.
+\item[$(\mathrm C_2)$] Condition $(\mathrm C_0)$ holds, and
+for every $S'$ over $S$, every quasi-regular section of
+$\mathfrak g_{S'}=\mathfrak g\otimes_S S'$ is regular.
+\item[$(\mathrm C_3)$] Every $s\in S$ has an open neighborhood
+$V$ on which the Killing polynomial of $\mathfrak g$ is of
+the form
+\[
+ t^r(t^{n-r}+c_1t^{n-r-1}+\cdots+c_{n-r})
+\]
+where for every $s\in V$, $c_{n-r}(s)\in
+\operatorname{Sym}(\mathfrak g(s)^\vee)$ is nonzero.
+\end{description}
+With this notation, one has the implications
+\[
+ (\mathrm C_3)\Rightarrow(\mathrm C_2)\Rightarrow(\mathrm C'_1)
+ \Rightarrow(\mathrm C_1)\Rightarrow(\mathrm C_0),
+\]
+and when $S$ is reduced, the five conditions considered are equivalent.
+\end{proposition}
+\begin{proof}
+Note also that the conditions considered are manifestly stable
+under base change and local for the fpqc topology.
+
+The implications $(\mathrm C'_1)\Rightarrow(\mathrm C_1)
+\Rightarrow(\mathrm C_0)$ are trivial, and implication
+$(\mathrm C_0)\Rightarrow(\mathrm C_3)$ when $S$ is reduced
+is immediate. Note moreover:
+\begin{corollary}{2.10}\label{XIV.2.10}
+Suppose condition $(\mathrm C_0)$ holds. Let $U$ be the set
+of elements of $\mathrm W(\mathfrak g)$ which are regular
+in their fiber. Then $U$ is open; in particular, for every
+section $a$ of $\mathfrak g$ over $S$, the set $V$ of
+$s\in S$ such that $a(s)\in\mathfrak g(s)$ is regular is open.
+\end{corollary}
+Indeed, the first assertion follows from the second (applied
+to $\mathfrak g_{S'}$ for every base change $S'$ over $S$).
+For the latter, since one may here suppose $S$ reduced,
+hence $(\mathrm C_3)$ verified, it suffices to examine the
+Killing polynomial of $a$ in $\mathfrak g$.
+
+Implication $(\mathrm C_2)\Rightarrow(\mathrm C'_1)$ now
+follows easily from b) in the following more precise statement:
+\begin{corollary}{2.11}\label{XIV.2.11}
+Suppose condition $(\mathrm C_2)$ holds. Then:
+
+\noindent a) For every $s\in S$ and every Cartan subalgebra
+$\mathfrak d_0$ of $\mathfrak g(s)$ such that $\mathfrak d_0$
+contains a regular element of $\mathfrak g(s)$ (a condition
+automatically verified if $k(s)$ is infinite), there exists
+an open neighborhood $V$ of $s$ and a subalgebra
+$\mathfrak d$ of $\mathfrak g|_V$ whose fiber at $s$ is
+$\mathfrak d_0$. If $S_1$ is a subprescheme of $S$ containing
+$s$, and if one has already extended $\mathfrak d_0$ to
+a Cartan subalgebra $\mathfrak d_1$ of
+$\mathfrak g\otimes_S S_1$, then one may find an open
+neighborhood $V$ of $s$ in $S$ and a Cartan subalgebra
+$\mathfrak d$ of $\mathfrak g|_V$ such that
+$\mathfrak d\otimes_V(S_1\cap V)$ is equal to
+$\mathfrak d_1|_{(S_1\cap V)}$.
+% typo: une sous-algebre de d -> une sous-algebre d.
+
+\noindent b) For every $s\in S$ such that $\mathfrak g(s)$
+contains a regular element (a condition automatically
+satisfied if $k(s)$ is infinite), there exists an open
+neighborhood $V$ of $s$ and a Cartan subalgebra
+$\mathfrak d$ of $\mathfrak g|_V$.
+\end{corollary}
+Statement b) follows from a) by taking
+$\mathfrak d_0=\operatorname{Nil}(a_0,\mathfrak g(s))$,
+$a_0$ being a regular element of $\mathfrak g(s)$.
+To prove a), say the second formulation, one considers
+a regular element $a_0$ of $\mathfrak g(s)$ contained
+in $\mathfrak d_0$, extends it in a neighborhood of
+$s$ in $S_1$ to a section of $\mathfrak d_1$, and
+extends the latter to a section of $\mathfrak g$ in
+a neighborhood of $s$. By 2.10, this section is
+quasi-regular in an open neighborhood $V$ of $s$,
+hence regular by $(\mathrm C_2)$, so by 2.6,
+$\mathfrak d=\operatorname{Nil}(a,\mathfrak g|_V)$
+satisfies the desired conditions.
+% typo: section et quasi-reguliere -> section est quasi-reguliere.
+% Proof of Proposition 2.9 continues in en-02.tex.

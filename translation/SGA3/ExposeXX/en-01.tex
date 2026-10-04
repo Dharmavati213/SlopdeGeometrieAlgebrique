@@ -1,0 +1,332 @@
+\exposetitle{XX}{Reductive groups of semisimple rank 1}
+\label{XX}
+\begin{center}\textit{by M.~Demazure}\end{center}
+\sgasection{1}{Elementary systems. The groups $U_\alpha$ and $U_{-\alpha}$}
+\label{XX.sec.1}
+{\renewcommand{\thefootnote}{(0)}\nde{Version of 13/10/2024}}%
+\begin{enoncerm}{Reminder}{1.1}\label{XX.1.1}
+Let $S=\Spec(k)$, where $k$ is an algebraically closed field, and let $G$ be a reductive $S$-group of semisimple rank~1, $T$ a maximal torus (necessarily split) of $G$. One then has
+\[
+\mathfrak g=\mathfrak t\oplus\mathfrak g^\alpha\oplus\mathfrak g^{-\alpha},
+\]
+where $\alpha$ and $-\alpha$ are the roots of $G$ with respect to $T$. Moreover, there exist two monomorphisms of groups
+\[
+p_\alpha:\mathbf G_{\mathrm a,S}\to G\quad\text{and}\quad p_{-\alpha}:\mathbf G_{\mathrm a,S}\to G
+\]
+such that
+\[
+tp_\alpha(x)t^{-1}=p(\alpha(t)x)\quad\text{and}\quad tp_{-\alpha}(x)t^{-1}=p_{-\alpha}(\alpha(t)^{-1}x),
+\]
+% typo?: p without alpha in the first formula kept as printed.
+for every $S'\to S$ and all $t\in T(S')$, $x\in\Ga(S')$, and such that the morphism
+\[
+\mathbf G_{\mathrm a,S}\mathbin{\times_S}T\mathbin{\times_S}\mathbf G_{\mathrm a,S}\to G,
+\]
+defined by $(y,t,x)\mto p_{-\alpha}(y)tp_\alpha(x)$, is radicial and dominant (\textit{Bible}, \S~13.4, cor.~2 to th.~3).
+
+Since the tangent map at the identity element is bijective, this morphism is also separable, hence birational; by Zariski's ``Main Theorem'' (EGA III$_1$, 4.4.9), it is therefore an open immersion.
+\end{enoncerm}
+
+\begin{lemma}{1.2}\label{XX.1.2}
+Let $S$ be a scheme, $G$ a group $S$-scheme, $T$ a torus of $G$, $Q$ a subtorus of $T$, $\alpha$ a character of $T$ inducing on $Q$ a character nontrivial on each fiber. Let $p_\alpha:\mathbf G_{\mathrm a,S}\to G$ (resp. $p_{-\alpha}:\mathbf G_{\mathrm a,S}\to G$) be a morphism of groups normalized by $T$ with multiplier $\alpha$ (resp. $-\alpha$). Suppose that the morphism
+\[
+u:\mathbf G_{\mathrm a,S}\mathbin{\times_S}T\mathbin{\times_S}\mathbf G_{\mathrm a,S}\to G
+\]
+defined set-theoretically by $u(y,t,x)=p_{-\alpha}(y)tp_\alpha(x)$ is an open immersion. Finally, let $q$ be an integer $\geq0$ and
+\[
+p:\mathbf G_{\mathrm a,S}\to G
+\]
+a morphism of groups such that for every $S'\to S$ and all $t\in Q(S')$, $x\in\Ga(S')$, one has
+\[
+\operatorname{int}(t)^q(p(x))=p(\alpha(t)x).
+\]
+There then exists a unique $\nu\in\Ga(S)$ such that $p(x)=p_\alpha(\nu x^q)$.
+\end{lemma}
+Indeed, let $\Omega$ be the image of $u$ and $U=p^{-1}(\Omega)$. This is an open subset of $\mathbf G_{\mathrm a,S}$ containing the zero section. For every section $t$ of $Q$, the automorphism of $\mathbf G_{\mathrm a,S}$ defined by multiplication by $\alpha(t)$ preserves $U$ globally. One has $U=\mathbf G_{\mathrm a,S}$; indeed, it suffices to check this when $S$ is the spectrum of an algebraically closed field $k$; then $\alpha:Q(k)\to k^*$ is surjective, which proves at once that $U(k)\supset k^*$, hence $U=\mathbf G_{\mathrm a,k}$. There therefore exist three morphisms
+\[
+a:\mathbf G_{\mathrm a,S}\to\mathbf G_{\mathrm a,S},\quad
+b:\mathbf G_{\mathrm a,S}\to T,\quad
+c:\mathbf G_{\mathrm a,S}\to\mathbf G_{\mathrm a,S},
+\]
+such that
+\[
+p(x)=p_{-\alpha}(a(x))b(x)p_\alpha(c(x)).
+\]
+The condition on $p$ becomes
+\[
+\begin{aligned}
+a(\alpha(t)x)&=\alpha(t)^{-q}a(x),\\
+b(\alpha(t)x)&=b(x),\\
+c(\alpha(t)x)&=\alpha(t)^qc(x).
+\end{aligned}
+\]
+For the same reason as above, for every $S'\to S$ and every $z\in\Gm(S')$, one therefore has
+\[
+a(zx)=z^{-q}a(x),\quad b(zx)=b(x),\quad c(zx)=z^qc(x),
+\]
+hence
+\[
+z^qa(z)=a(1),\quad b(z)=b(1),\quad c(z)=z^qc(1).
+\]
+Since $\mathbf G_{\mathrm m,S}$ is schematically dense in $\mathbf G_{\mathrm a,S}$, one has at once, for every $x\in\Ga(S')$, $S'\to S$:
+\[
+\begin{aligned}
+x^qa(x)&=a(1)=a(0)=0,&\text{whence }a&=0,\\
+c(x)&=x^qc(1)=\nu x^q,&\text{for some }\nu&\in\Ga(S),\\
+b(x)&=b(1)=b(0)=e,&\text{whence }b&=e,
+\end{aligned}
+\]
+which completes the proof.
+
+\begin{definition}{1.3}\label{XX.1.3}
+Let $S$ be a scheme. An \emph{elementary $S$-system} is a triple $(G,T,\alpha)$ where
+\begin{enumeratei}
+\item $G$ is a reductive $S$-group of semisimple rank~1 (Exp.~XIX 2.7),
+\item $T$ is a maximal torus of $G$,
+\item $\alpha$ is a root of $G$ with respect to $T$ (Exp.~XIX 3.2).
+\end{enumeratei}
+\end{definition}
+One therefore has a direct sum decomposition (Exp.~XIX 3.5){\renewcommand{\thefootnote}{(1)}\nde{Of $\OS$-modules.}}
+\[
+\mathfrak g=\mathfrak t\oplus\mathfrak g^\alpha\oplus\mathfrak g^{-\alpha},
+\]
+$\mathfrak g^\alpha$ and $\mathfrak g^{-\alpha}$ being locally free of rank one.
+
+\numpara{1.4} If $(G,T,\alpha)$ is an elementary $S$-system, then $(G_{S'},T_{S'},\alpha_{S'})$ is an elementary $S'$-system for every $S'\to S$. If $(G,T,\alpha)$ is an elementary $S$-system, then $(G,T,-\alpha)$ is also one.
+
+If $S$ is a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $\alpha$ a root of $G$ with respect to $T$, then (Exp.~XIX 3.9) $(Z_\alpha,T,\alpha)$ is an elementary $S$-system.
+
+Let $(G,T,\alpha)$ be an elementary $S$-system. The invertible module $\mathfrak g^\alpha$ is canonically equipped with a $T$-module structure. One therefore also has a $T$-module structure on the vector bundle $\mathrm W(\mathfrak g^\alpha)$. On the other hand, the inner automorphisms of $T$ define on $G$ a structure of group with operator group $T$.
+
+\begin{theorem}{1.5}\label{XX.1.5}
+Let $(G,T,\alpha)$ be an elementary $S$-system.
+\begin{enumeratei}
+\item There exists a unique morphism of groups with operator group $T$
+\[
+\exp:\mathrm W(\mathfrak g^\alpha)\to G
+\]
+which induces on Lie algebras the canonical morphism $\mathfrak g^\alpha\to\mathfrak g$.{\renewcommand{\thefootnote}{(2)}\nde{We shall see later (Cor.~5.9) that $\exp$ is an isomorphism from $\mathrm W(\mathfrak g^\alpha)$ onto a closed subgroup of $G$.}}
+
+In other words, $\exp$ is the unique morphism satisfying the following conditions: for every $S'\to S$ and all $t\in T(S')$, $X,X'\in\mathrm W(\mathfrak g^\alpha)(S')$, one has
+\[
+\begin{aligned}
+\exp(X+X')&=\exp(X)\exp(X'),\\
+\operatorname{int}(t)(\exp(X))&=\exp(\alpha(t)X),\\
+\uLie(\exp)(X)&=X.
+\end{aligned}
+\]
+\item If one defines similarly (in the elementary $S$-system $(G,T,-\alpha)$)
+\[
+\exp:\mathrm W(\mathfrak g^{-\alpha})\to G,
+\]
+then the morphism
+\[
+\mathrm W(\mathfrak g^{-\alpha})\mathbin{\times_S}T\mathbin{\times_S}\mathrm W(\mathfrak g^\alpha)\to G
+\]
+defined set-theoretically by $(Y,t,X)\mto\exp(Y)\cdot t\cdot\exp(X)$ is an open immersion.
+\end{enumeratei}
+\end{theorem}
+Suppose we have proved the existence of the required morphisms $\exp$, and let us prove the other assertions of the theorem. Let us first prove (ii). Since both sides are of finite presentation and flat over $S$, it suffices to do so when $S$ is the spectrum of an algebraically closed field (SGA~1, I 5.7 and VIII 5.5). Let then $S=\Spec k$. Let $X\in\Gamma(S,\mathfrak g^\alpha)^\times$, $Y\in\Gamma(S,\mathfrak g^{-\alpha})^\times$. It suffices to prove that the morphism
+\[
+\mathbf G_{\mathrm a,k}\mathbin{\times_k}T\mathbin{\times_k}\mathbf G_{\mathrm a,k}\to G,\qquad
+(y,t,x)\mto\exp(yY)t\exp(xX)
+\]
+is an open immersion. Now, by 1.1 and 1.2, there exist $a,b\in k$ such that
+\[
+\exp(yY)=p_{-\alpha}(ay)\quad\text{and}\quad\exp(xX)=p_\alpha(bx).
+\]
+Since $\exp:\mathrm W(\mathfrak g^{-\alpha})\to G$ induces a monomorphism on Lie algebras, one has $a\ne0$; similarly $b\ne0$, and one is reduced to 1.1.
+
+The uniqueness of the morphism $\exp$ can be proved locally on $S$; one then reduces to the case where $\mathfrak g^\alpha$ and $\mathfrak g^{-\alpha}$ are free, and one need only apply 1.2 (with $Q=T$ and $q=1$).
+
+It therefore remains to prove the existence of the required morphism $\exp$. Note first that, by the theory of faithfully flat descent and the preceding uniqueness assertion, it suffices to prove this existence locally on $S$ for the (fpqc) topology. By the usual arguments using finite presentation, one reduces to the case where $S$ is noetherian, then to the case where it is local noetherian. By the preceding remark, one may therefore content oneself with proving the existence of the desired morphism $\exp$ when $S=\Spec(A)$, $A$ local noetherian complete with algebraically closed residue field $k$. Let then $p_0:\mathbf G_{\mathrm a,k}\to G_k$ be a monomorphism of $k$-groups normalized by $T_k$ with multiplier $\alpha_0=\alpha\otimes_Ak$ (one exists by 1.1). One knows (1.1 and 1.2) that the corresponding morphism $T_k\cdot_{\alpha_0}\mathbf G_{\mathrm a,k}\to G_k$ is an immersion, hence in particular a monomorphism. Let us provisionally admit the following two lemmas:
+
+\begin{lemma}{1.6}\label{XX.1.6}
+Let $S$ be a scheme, $G$ an $S$-group of finite presentation, $T$ an $S$-torus, $\alpha$ a character nontrivial on each fiber of $T$, $s_0$ a point of $S$. Let
+\[
+f:T\cdot_\alpha\mathbf G_{\mathrm a,S}\to G
+\]
+be a morphism of $S$-groups such that $f_{s_0}$ is a monomorphism and the restriction of $f$ to $T$ is a monomorphism. There exists an open neighborhood $U$ of $s_0$ such that $f|_U$ is a monomorphism.
+\end{lemma}
+
+\begin{lemma}{1.7}\label{XX.1.7}
+Let $A$ be a complete local noetherian ring with algebraically closed residue field $k$, $(G,T,\alpha)$ an elementary $A$-system, $p_0:\mathbf G_{\mathrm a,k}\to G_k$ a morphism of $k$-groups normalized by $T_k$ with multiplier $\alpha\otimes_Ak$. There exists a morphism of groups $p:\mathbf G_{\mathrm a,A}\to G$ normalized by $T$ with multiplier $\alpha$.
+\end{lemma}
+Let $p$ be the morphism whose existence is asserted by 1.7. Let $f:T\cdot_\alpha\mathbf G_{\mathrm a,S}\to G$ be the corresponding morphism. It satisfies the hypotheses of 1.6, hence is a monomorphism; in particular $p$ is a monomorphism. One then concludes by Exp.~XIX 4.9.
+
+\emph{Proof of 1.6.} Let $\varepsilon:S\to T\cdot_\alpha\mathbf G_{\mathrm a,S}$ denote the unit section. Since $f$ is unramified at $\varepsilon(s_0)$, it is so at $\varepsilon(s)$ for all $s$ in an open neighborhood $U$ of $s_0$; $f|_U$ is therefore unramified (Exp.~X 3.5),{\renewcommand{\thefootnote}{(3)}\nde{See also VI$_{\mathrm B}$, 2.5.}} hence its kernel $\Ker(f)_U$ is unramified over $U$. To prove that $f|_U$ is a monomorphism, it therefore suffices{\renewcommand{\thefootnote}{(4)}\nde{By EGA IV$_4$, 17.9.1.}} to prove that $\Ker(f)_U$ is radicial over $U$, which is a set-theoretic question. One is therefore reduced to proving:
+
+\begin{lemma}{1.8}\label{XX.1.8}
+Let $k$ be an algebraically closed field; let $N$ be an invariant subgroup of $T\cdot_\alpha\mathbf G_{\mathrm a,k}$ ($\alpha$ a nontrivial character of the torus $T$), \'etale over $k$ and such that $N\cap T=\{e\}$. Then $N=\{e\}$.
+\end{lemma}
+One has $\operatorname{int}(t')(t,x)=(t,\alpha(t')x)$. If $(t,x)$ is a point of $N$, with $x\ne0$, then $(t,zx)$ is also a point of $N$ for $z\in k^*$, and $(t,x)$ is not isolated, hence $N$ is not quasi-finite. One therefore has set-theoretically $N\subset T$, and the proof is finished.
+
+\emph{Proof of 1.7.} Let $\mathfrak m$ be the radical of $A$ and $S_n=\Spec(A/\mathfrak m^{n+1})$, $n\geq0$. Let us first show, by induction on $n$, that $p_0$ can be extended for each $n$ to a morphism of $S_n$-groups
+\[
+p_n:\mathbf G_{\mathrm a,S_n}\to G_{S_n}
+\]
+normalized by $T_{S_n}$ with multiplier $\alpha_{S_n}$, the $p_n$ satisfying in addition $p_{n+1}\times_{S_{n+1}}S_n=p_n$.
+
+Let $H=T\cdot_\alpha\mathbf G_{\mathrm a,S}$. The morphism $H_{S_n}\to G_{S_n}$ defined by $p_n$ is denoted $f_n$. Let us admit the following lemma:
+
+\begin{lemma}{1.9}\label{XX.1.9}
+If $(G,T,\alpha)$ is an elementary $k$-system, $k$ algebraically closed, and $p:\mathbf G_{\mathrm a,k}\to G$ is a monomorphism normalized by $T$ with multiplier $\alpha$, one has
+\[
+\mathrm H^2(T\cdot_\alpha\mathbf G_{\mathrm a,k},\mathfrak g)=0.
+\]
+(One makes $T\cdot_\alpha\mathbf G_{\mathrm a,k}$ act on $\mathfrak g$ through the morphism $T\cdot_\alpha\mathbf G_{\mathrm a,k}\to G$ defined by $p$, and the adjoint representation of $G$.)
+\end{lemma}
+Then, by Exp.~III 2.8, $f_n$ will extend to a morphism of $S_{n+1}$-groups
+\[
+f'_{n+1}:H_{S_{n+1}}\to G_{S_{n+1}}.
+\]
+Now $f'_{n+1}$ and the canonical immersion of $T_{S_{n+1}}$ into $G_{S_{n+1}}$ have the same restriction to $T_{S_n}$. By Exp.~III 2.5, there exists an element $g\in G(S_{n+1})$ such that $g\times_{S_{n+1}}S_n=e$ and such that $f_{n+1}=\operatorname{int}(g)\circ f'_{n+1}$ restricts to $T_{n+1}$ by the canonical immersion of $T_{n+1}$. Let $p_{n+1}$ be the restriction of $f_{n+1}$ to $\mathbf G_{\mathrm a,S_{n+1}}$. It is a morphism normalized by $T_{S_{n+1}}$ with multiplier $\alpha_{S_{n+1}}$, extending $p_n$.
+
+One has therefore constructed a coherent system $(f_n)$, and one must now algebraize it. Now one has:
+\begin{lemma}{1.10}\label{XX.1.10}
+Let $A$ be a complete local noetherian ring, $\mathfrak m$ its maximal ideal, $S=\Spec(A)$, $S_n=\Spec(A/\mathfrak m^{n+1})$, $T$ an $S$-torus, $\alpha$ a nonzero character of $T$, $X$ an affine $S$-scheme on which $T$ acts. Let $T$ act on $\mathbf G_{\mathrm a,S}$ through $\alpha$. Let $q$ be an integer $\geq0$, and let $(f_n)_{n\geq0}$ be a coherent system of morphisms
+\[
+f_n:\mathbf G_{\mathrm a,S_n}^q\to X_{S_n}
+\]
+of objects with operators $T_{S_n}$. There exists a unique morphism of objects with operators $T$
+\[
+f:\mathbf G_{\mathrm a,S}^q\to X
+\]
+inducing the $f_n$ (compare with Exp.~IX 7.1).
+\end{lemma}
+
+\begin{corollary}{1.11}\label{XX.1.11}
+If $X$ is a group with operator group $T$ and the $f_n$ are morphisms of groups, $f$ is also one.
+\end{corollary}
+It suffices to apply the uniqueness assertion of the lemma to the two morphisms $\mathbf G_{\mathrm a,S}^{2q}\to X$ deduced from $f$ in the usual way.
+
+\emph{Proof of 1.10.} Suppose $T$ split, which is moreover the case in the application of 1.10 to the proof of 1.5. One knows (Exp.~I 4.7.3.1) that $X\mto\mathcal A(X)$ gives an equivalence between the category of affine $S$-schemes equipped with an action of $T$ and the opposite of the category of $S$-algebras graded of type $M=\Hom_{S\text{-gr.}}(T,\mathbf G_{\mathrm m,S})$.
+
+One therefore has gradings
+\[
+B=\mathcal A(X)=\coprod_{m\in M}B_m\quad\text{and}\quad
+C=\mathcal A(\mathbf G_{\mathrm a,S}^q)=\coprod_{m\in M}C_m.
+\]
+One sees at once that each $C_m$ is \emph{free of finite type} over $A$. (Indeed, $C_m=0$ if $m$ is not a multiple of $\alpha$, and if $m=d\alpha$, $C_m$ is isomorphic to the $A$-module of homogeneous polynomials of degree $d$ in $q$ variables.) Put
+\[
+\begin{gathered}
+\widehat B_m=\varprojlim_n B_m\otimes_A(A/\mathfrak m^{n+1}),\\
+\widehat C_m=\varprojlim_n C_m\otimes_A(A/\mathfrak m^{n+1}),\\
+\widehat B=\coprod_{m\in M}\widehat B_m,\qquad
+\widehat C=\coprod_{m\in M}\widehat C_m.
+\end{gathered}
+\]
+One then has canonical morphisms of algebras graded of type $M$
+\[
+g_B:B\to\widehat B\quad\text{and}\quad g_C:C\to\widehat C.
+\]
+It follows from the remark above that $g_C$ is an isomorphism. Giving a coherent system $(f_n)$ as in the statement is equivalent to giving a morphism of graded $A$-algebras
+\[
+\widehat F:\widehat B\to\widehat C.
+\]
+Finding a morphism $f$ as in the statement is equivalent to finding a morphism of graded $A$-algebras $F:B\to C$ making the diagram commute:
+\[
+\xymatrix{B\ar[r]^F\ar[d]_{g_B}&C\ar[d]^{g_C}\\
+\widehat B\ar[r]^{\widehat F}&\widehat C.}
+\]
+Since $g_C$ is an isomorphism, the existence and uniqueness of $F$ are immediate. This proves 1.10.
+
+To finish the proof of 1.5, it therefore remains only to prove 1.9.
+
+\numpara{1.12} \emph{Proof of 1.9.} One has $\mathfrak g=\mathfrak t\oplus\mathfrak g^\alpha\oplus\mathfrak g^{-\alpha}$. As explained in 1.9, consider $\mathfrak g$ as a $(T\cdot_\alpha\mathbf G_{\mathrm a,k})$-module. Clearly $\mathfrak t\oplus\mathfrak g^\alpha$ is a submodule of $\mathfrak g$, the quotient being isomorphic to $\mathfrak g^{-\alpha}$ as a $k$-vector space and even as a $T$-module. Clearly $\mathbf G_{\mathrm a,k}$ acts trivially on this one-dimensional quotient (since every group morphism from $\mathbf G_{\mathrm a,k}$ to $\mathbf G_{\mathrm m,k}$ is trivial). Similarly, $\mathfrak g^\alpha$ is a submodule of $\mathfrak t\oplus\mathfrak g^\alpha$, the quotient being isomorphic to $\mathfrak t$ as a $T$-module, $\mathbf G_{\mathrm a,k}$ acting trivially on it. To summarize:
+\begin{lemma}{1.13}\label{XX.1.13}
+Under the conditions of 1.9, $\mathfrak g$ has a composition series as a $(T\cdot_\alpha\mathbf G_{\mathrm a,k})$-module whose successive quotients are
+\[
+\mathfrak g^{-\alpha},\quad\mathfrak t,\quad\mathfrak g^\alpha,
+\]
+considered as $(T\cdot_\alpha\mathbf G_{\mathrm a,k})$-modules by the projection $T\cdot_\alpha\mathbf G_{\mathrm a,k}\to T$.
+\end{lemma}
+One is therefore reduced to calculating the cohomology of $T\cdot_\alpha\mathbf G_{\mathrm a,k}$ acting through the projection $T\cdot_\alpha\mathbf G_{\mathrm a,k}\to T$ and the character $\beta$ of $T$ (here $\beta=0$, $\alpha$ or $-\alpha$) on $\mathrm W(k)$.{\renewcommand{\thefootnote}{(5)}\nde{The following sentence has been added.}} Denote by $k[x_1,\ldots,x_n]$ the polynomial algebra over $k$ in $n$ variables, and by $k_q[x_1,\ldots,x_n]$ the subspace of homogeneous polynomials of degree $q$.
+
+\begin{lemma}{1.14}\label{XX.1.14}
+With the preceding notations, one has $\mathrm H^n(T\cdot_\alpha\mathbf G_{\mathrm a,k},k)=\mathrm H^n(C^*_{\alpha,\beta})$, where the complex $C^*_{\alpha,\beta}$ is defined by
+\[
+C^n_{\alpha,\beta}=\begin{cases}
+k_q[x_1,\ldots,x_n]&\text{if }\beta=q\alpha,\text{ with }q\in\NN^*;\\
+0&\text{otherwise,}
+\end{cases}
+\]
+and
+\[
+\begin{split}
+\delta f(x_1,x_2,\ldots,x_{n+1})={}&f(x_2,\ldots,x_{n+1})\\
+&+\sum_{i=1}^n(-1)^if(x_1,\ldots,x_ix_{i+1},\ldots,x_{n+1})\\
+&+(-1)^{n+1}f(x_1,\ldots,x_n).
+\end{split}
+\]
+% typo?: x_i x_{i+1} in the differential kept as printed.
+\end{lemma}
+Indeed, the functor $M\mto\mathrm H^0(T,M)$ is exact on the category of $T$-modules (and the $\mathrm H^q(T,-)$ vanish), by Exp.~I 5.3.2. It follows, as in the usual case of group cohomology, that $\mathrm H^n(T\cdot_\alpha\mathbf G_{\mathrm a,k},k)$ can be calculated as the $n$th cohomology group of the complex of cochains from $\mathbf G_{\mathrm a,k}$ to $k$, invariant under $T$, i.e. satisfying
+\[
+f(\alpha(t)x_1,\ldots,\alpha(t)x_n)=\beta(t)f(x_1,\ldots,x_n).
+\]
+This indeed gives the announced complex.
+
+To prove 1.9, it therefore suffices to prove that $\mathrm H^2(C^*_{\alpha,\beta})=0$ for $\beta=0$, $\alpha$, $-\alpha$, which is immediate.
+
+\begin{remark}{1.15}\label{XX.1.15}
+One can explicitly calculate the groups $\mathrm H^n(C^*_{\alpha,\beta})$ for $\beta=q\alpha$ (see M.~Lazard, \textit{Lois de groupes et analyseurs}, Annales E.N.S., 1955). In particular, one finds $\mathrm H^n(C^*_{\alpha,q\alpha})=0$ for $n>q$.
+\end{remark}
+
+\begin{notation}{1.16}\label{XX.1.16}
+The image of the canonical immersion
+\[
+\mathrm W(\mathfrak g^{-\alpha})\mathbin{\times_S}T\mathbin{\times_S}\mathrm W(\mathfrak g^\alpha)\to G
+\]
+will be denoted $\Omega$. It is an open subset of $G$ containing the unit section. The image of
+\[
+\mathrm W(\mathfrak g^{-\alpha}),\quad\text{resp. }\mathrm W(\mathfrak g^\alpha),\quad
+\text{resp. }\mathrm W(\mathfrak g^{-\alpha})\mathbin{\times_S}T,\quad
+\text{resp. }T\mathbin{\times_S}\mathrm W(\mathfrak g^\alpha)
+\]
+will be denoted{\renewcommand{\thefootnote}{(6)}\nde{$P_{-\alpha}$ and $P_\alpha$ have been replaced by $U_{-\alpha}$ and $U_\alpha$.}}
+\[
+U_{-\alpha},\quad\text{resp. }U_\alpha,\quad\text{resp. }U_{-\alpha}\cdot T,\quad\text{resp. }T\cdot U_\alpha.
+\]
+Then $U_\alpha$ (resp. $U_{-\alpha}$) is a subgroup of $G$ canonically equipped with a vector bundle structure, and one has
+\[
+\operatorname{int}(t)(x)=x^{\alpha(t)}\quad\text{(resp. }x^{-\alpha(t)}\text{),}
+\]
+for all $S'\to S$, $t\in T(S')$, $x\in U_\alpha(S')$ (resp. $x\in U_{-\alpha}(S')$).
+
+One has canonical isomorphisms
+\[
+T\cdot U_\alpha\simeq T\cdot_\alpha U_\alpha\quad\text{and}\quad
+T\cdot U_{-\alpha}\simeq T\cdot_{-\alpha}U_{-\alpha}.
+\]
+The open subset $\Omega$ is stable under $\operatorname{int}(T)$: one has
+\[
+\operatorname{int}(t')(y\cdot t\cdot x)=y^{-\alpha(t')}\cdot t\cdot x^{\alpha(t')}.
+\]
+\end{notation}
+
+\begin{corollary}{1.17}\label{XX.1.17}
+One has $\mathcal{L}\!ie(U_\alpha/S)=\mathfrak g^\alpha$ and $\mathcal{L}\!ie(U_{-\alpha}/S)=\mathfrak g^{-\alpha}$. The isomorphisms
+\[
+\mathrm W(\mathfrak g^\alpha)\xrightarrow[\sim]{\exp}U_\alpha\quad\text{and}\quad
+\mathrm W(\mathfrak g^{-\alpha})\xrightarrow[\sim]{\exp}U_{-\alpha}
+\]
+are those of Exp.~XIX 4.2.
+\end{corollary}
+\begin{corollary}{1.18}\label{XX.1.18}
+The open subset $\Omega$ is relatively schematically dense in $G$ (cf. XVIII, \S~1).
+\end{corollary}
+Clear by Exp.~XVIII, 1.3.{\renewcommand{\thefootnote}{(7)}\nde{See also EGA IV$_3$, 11.10.10.}}
+
+\begin{corollary}{1.19}\label{XX.1.19}
+The center of $G$ is $\uCentr(G)=\Ker(\alpha)$. It is therefore a closed subgroup of $G$, of multiplicative type and of finite type.
+\end{corollary}
+The second assertion follows from the first by Exp.~IX 2.7. Let us therefore prove the latter. The inner automorphism defined by a section of $\Ker(\alpha)$ acts trivially on $\Omega$ (last formula of 1.16), hence on $G$ by 1.18. Conversely, if $g\in G(S)$ centralizes $G$, it centralizes $T$ and $U_\alpha$, hence is a section of $T$ (Exp.~XIX 2.8) annihilating $\alpha$; since this also holds after every base change, one indeed has $\uCentr(G)=\Ker(\alpha)$.
+
+\begin{corollary}{1.20}\label{XX.1.20}
+For there to exist a monomorphism $p_\alpha:\mathbf G_{\mathrm a,S}\to G$ normalized by $T$ with multiplier $\alpha$, it is necessary and sufficient that the $\OS$-module $\mathfrak g^\alpha$ be free. More precisely, one has a bijection given by
+\[
+X_\alpha\mto(x\mto\exp(xX_\alpha))\quad\text{and}\quad p_\alpha\mto\mathcal{L}\!ie(p_\alpha)
+\]
+between $\Gamma(S,\mathfrak g^\alpha)^\times$ and the set of monomorphisms $p_\alpha$ as above (which is also the set of isomorphisms of vector group schemes $\mathbf G_{\mathrm a,S}\isomto U_\alpha$).{\renewcommand{\thefootnote}{(8)}\nde{Indeed, on the one hand, $\mathcal{L}\!ie(\mathbf G_{\mathrm a,S})=\OS$, and $\mathcal{L}\!ie(p_\alpha)$ is an element of $\Hom_{\OS}(\OS,\mathfrak g^\alpha)=\Gamma(S,\mathfrak g^\alpha)$.}}
+\end{corollary}

@@ -1,0 +1,221 @@
+% Source PDF pp. 33–38; the preceding sentence belongs to en-05.
+If $S$ is the spectrum of an algebraically closed field $k$, one thus finds the relation
+\[
+ P(k)\backslash G(k)/Q(k)\simeq W_P(T)(k)\backslash W_G(T)(k)/W_Q(T)(k).
+\]
+In general, if one assumes that the scheme $W_P(T)\backslash W_G(T)/W_Q(T)$ is constant and of the form $E_S$ (which is the case, for example, when $G$ is split relative to $T$ and $S$ is connected), the $f^{-1}(e)$, $e\in E$, form a decomposition of $\underline{\mathrm{Par}}_{t(Q)}(G;P)$ into open and closed subschemes, which are homogeneous spaces under $P$, smooth and of finite presentation over $S$, with irreducible geometric fibers.
+
+\numpara{4.5.6}\label{XXVI.4.5.6}
+Let us return to the general situation of 4.5.4. The scheme $q^{-1}(t(P),t)$\nde{One has corrected $t^{-1}(t(P),t)$ to $q^{-1}(t(P),t)$ and, below, $\underline{\mathrm{Par}}_t(G)$ to $\underline{\mathrm{Par}}_t(G;P)$ (twice).} always has two particular sections, corresponding respectively to the types ``transversal position'' and ``osculatory position''. The inverse image of the first section is a relatively dense open subscheme of $\underline{\mathrm{Par}}_t(G;P)$, as one has seen above; it is the cell of maximum relative dimension of the decomposition.
+
+The inverse image of the second section is presumably a closed subscheme of $\underline{\mathrm{Par}}_t(G;P)$; it is the cell of minimum relative dimension of the decomposition.
+
+\sgasection{5}{Conjugacy theorem}
+\begin{theorem}{5.1}\label{XXVI.5.1}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group, $P$ and $P'$ two opposite parabolic subgroups (4.3.3) of $G$. Then
+\[
+ \operatorname{rad}^{\mathrm u}(P)(S)\,P'\cdot P=G,
+\]
+\ie the union of the open subschemes $uP'\cdot P$ (4.3.6), as $u$ ranges over $\operatorname{rad}^{\mathrm u}(P)(S)$, is the whole of $G$.
+\end{theorem}
+The proof proceeds in several steps:
+
+\numpara{5.1.1}\label{XXVI.5.1.1}
+It suffices to give the proof in the case where $S$ is the spectrum of a field $k$; this follows at once from 2.6.
+
+\numpara{5.1.2}\label{XXVI.5.1.2}
+Let $L=P\cap P'$. \emph{Suppose} that $L$ has a Borel subgroup $B_L$; let $T$ be a maximal torus of $B_L$ (Exp. XXII, 5.9.7); one checks at once that $B=B_L\cdot\operatorname{rad}^{\mathrm u}(P)$ is a Borel subgroup of $P$; let $B'$ be the Borel subgroup of $G$ opposite to $B$ relative to $T$ (\ie such that $B\cap B'=T$). One has $B'\subset P'$, as one checks at once by splitting $G$ relative to $T$. Let us prove that
+\begin{equation}\tag{x}
+ B^{\mathrm u}(S)\,B'\cdot B\subset\operatorname{rad}^{\mathrm u}(P)(S)\,P'\cdot P.
+\end{equation}
+Since one has
+\[
+ B^{\mathrm u}(S)\subset P(S)=\operatorname{rad}^{\mathrm u}(P)(S)\cdot L(S)
+ \subset\operatorname{rad}^{\mathrm u}(P)(S)P'(S),
+\]
+it suffices to prove that $B'\cdot B\subset P'\cdot P$, which is obvious. It follows from (x) that it suffices to prove 5.1 for the pair $(B,B')$.
+
+% Source PDF p. 34.
+\numpara{5.1.3}\label{XXVI.5.1.3}
+The theorem is true if $k$ is algebraically closed; indeed, the condition of 5.1.2 is satisfied, and one concludes by Exp. XXII, 5.7.10.
+
+\numpara{5.1.4}\label{XXVI.5.1.4}
+The theorem is true when $k$ is an infinite field. Indeed, $\operatorname{rad}^{\mathrm u}(P)(k)$ is dense in $\operatorname{rad}^{\mathrm u}(P)(\overline{k})$ by 2.7, and the theorem is true for $\overline{k}$.
+
+\numpara{5.1.5}\label{XXVI.5.1.5}
+One is therefore reduced to the case where $k$ is a finite field. Now $\underline{\mathrm{Bor}}(L)$ is a \emph{smooth} homogeneous space of $L$; it therefore follows from Lang's theorem (Am. J. of Maths., 78, 1956\nde{See also \cite{DG70}, \S~III.5, 7.4.}) that $L$ has a Borel subgroup $B_L$. By 5.1.2, one can therefore assume that $P=B$ and $P'=B'$ are Borel subgroups. One writes $T=B\cap B'$.
+
+\numpara{5.1.6}\label{XXVI.5.1.6}
+Let $K$ be the algebraic closure of $k$; choose a pinning of the triple $(G_K,B_K,T_K)$; let $R_+$ (resp. $\Delta$) be the set of positive (resp. simple) roots. By Exp. XXII, 5.7.2, it suffices to prove that for every $\alpha\in\Delta$, one has
+\begin{equation}\tag{1}
+ u_\alpha B'^{\mathrm u}(K)\subset B^{\mathrm u}(k)\,B'^{\mathrm u}(K)\,B(K).
+\end{equation}
+Let $\alpha_i$ be the different roots conjugate to $\alpha$ over $k$ (they are elements of $\Delta$, since $B$ is ``defined over $k$''), and let $R'$ be the set of roots that are linear combinations of the $\alpha_i$. Write $R'_-=R_-\cap R'$. Since ``$R'$ is defined over $k$'', there is a subtorus $Q$ of $T$ such that $Q_K$ is the maximal torus of the common kernel of the $\alpha_i$.
+
+Write $Z=\uCentr_G(Q)$, $B_Z=B\cap Z$, $B'_Z=B'\cap Z$ (\cf Exp. XXII, 5.10.2). Let us show that it suffices to verify the desired assertion in $Z$, that is,
+\begin{equation}\tag{2}
+ u_\alpha\cdot B'^{\mathrm u}_Z(K)\subset B^{\mathrm u}_Z(k)\,B'^{\mathrm u}_Z(K)\,B_Z(K).
+\end{equation}
+One has $(B'^{\mathrm u}_Z)_K=\prod_{\alpha\in R'_-}U_\alpha$; let $R''$ be the complement of $R'$ in $R$, and put
+\[
+ V=\prod_{\alpha\in R''\cap R_-}U_\alpha.
+\]
+One has at once $(B'^{\mathrm u})_K=(B'^{\mathrm u}_Z)_K\cdot V$, and $(B_Z)_K$ normalizes $V$ (Exp. XXII, 5.6.7). One therefore deduces successively from (2)
+\[
+\begin{aligned}
+ u_\alpha\cdot B'^{\mathrm u}(K)
+ &=u_\alpha\cdot B'^{\mathrm u}_Z(K)V(K)\\
+ &\subset B^{\mathrm u}_Z(k)\,B'^{\mathrm u}_Z(K)\,B_Z(K)\,V(K)\\
+ &\subset B^{\mathrm u}_Z(k)\,B'^{\mathrm u}_Z(K)\,V(K)\,B_Z(K),
+\end{aligned}
+\]
+which implies (1) at once.
+
+We are therefore reduced to the case where $G=Z$, that is, where the Galois group of $K$ over $k$ acts transitively on the simple roots.
+
+\numpara{5.1.7}\label{XXVI.5.1.7}
+The assertion to be proved is equivalent to the fact that $G/B$ is the union of the translates by $B^{\mathrm u}(k)$ of the open image of $B'^{\mathrm u}$, an assertion that does not change if one replaces $G$ by its adjoint group (or, for that matter, by any group giving the same adjoint group). One can therefore assume that $G$ is adjoint.
+
+% Source PDF p. 35.
+\numpara{5.1.8}\label{XXVI.5.1.8}
+Consider then the Dynkin diagram of $G_K$. The Galois group acts \emph{transitively} on this Dynkin diagram. But this Galois group has only cyclic quotients, and the Dynkin diagram has no cycles. It follows at once that this diagram is of type $nA_1$, $n\geq0$, or $mA_2$, $m\geq0$. Using the canonical decomposition of Exp. XXIV, 5.9, one can write
+\[
+ G=\prod_{D/K}G_0,
+\]
+where $D$ is a \emph{finite} $K$-scheme and $G_0$ is either a torus, or of type $A_1$, or of type $A_2$.
+
+By Exp. XXIV, 5.12, $B$ comes from a Borel subgroup $B_0$ of $G_0$, $T$ from a maximal torus $T_0$ of $G_0$; $B'$ comes from the Borel subgroup $B'_0$ of $G_0$ opposite to $B_0$ relative to $T_0$. One has
+% typo?: the source prints B'^{u}(k)=B_0^{u}(D) and uses D/k below; kept as printed.
+\[
+ B'^{\mathrm u}(k)=B^{\mathrm u}_0(D),\qquad
+ B'^{\mathrm u}\cdot T\cdot B^{\mathrm u}
+ =\prod_{D/k}B'^{\mathrm u}_0\cdot T_0\cdot B^{\mathrm u}_0,
+\]
+and it suffices for us to prove the desired assertion for the triple $(G_0,B_0,T_0)$.
+
+\numpara{5.1.9}\label{XXVI.5.1.9}
+One can therefore assume that $G$ is of type $\varnothing$, $A_1$ or $A_2$. Since $G$ has a Borel subgroup $B$, $G$ is quasi-splittable relative to $B$ (Exp. XXIV, 3.9.1), hence splittable if it is of type $\varnothing$ or $A_1$. Since the theorem has already been proved in the split case (Exp. XXII 5.7.10), only the case $A_2$ remains to be treated. By Exp. XXIV, 3.11 there is a morphism $E\to\Spec(k)$, a Galois principal bundle under the group $\ZZ/2\ZZ$ of automorphisms of the Dynkin diagram of type $A_2$, such that $G=\text{Q-Pin}_{E/\Spec(k)}(A_2)$. If $E$ has a section, $G$ is splittable and the theorem is proved. Otherwise, one necessarily has $E=\Spec(k')$, where $k'$ is a quadratic extension of $k$. Finally, as one has seen in 5.1.7, one can assume that $G$ is simply connected (\ie that $G$ is a form of $\SL_{3,k}$).
+
+\numpara{5.1.10}\label{XXVI.5.1.10}
+One is therefore in the following situation: one has a finite field $k$, a quadratic extension $k'$ of $k$. The group $\SL_{3,k'}$ of $3\times3$ matrices of determinant 1 is pinned as follows: the maximal torus is the group of diagonal matrices, the Borel subgroup is the group of upper triangular matrices, the ``pins'' are the elements:
+\[
+ u_\alpha=\begin{pmatrix}1&1&0\\0&1&0\\0&0&1\end{pmatrix}
+ \quad\text{and}\quad
+ u_\beta=\begin{pmatrix}1&0&0\\0&1&1\\0&0&1\end{pmatrix}.
+\]
+One sees at once that the big cell $\Omega$ is defined by
+\[
+ \begin{pmatrix}a&b&c\\d&e&f\\g&h&i\end{pmatrix}\in\Omega(S)
+ \iff a\text{ and }ae-bd\text{ are invertible},
+\]
+and that
+% This sentence starts on p. 35 and finishes on p. 36.
+\[
+ B^{\mathrm u}(k)=\left\{\left.\begin{pmatrix}1&\overline{x}&z\\0&1&x\\0&0&1\end{pmatrix}\right|
+ x,z\in k',\quad z+\overline z=x\overline x\right\}.
+\]
+% Source PDF p. 36.
+We must prove inclusion (1) of 5.1.6, that is, show that for all $a,b,c\in K$ (algebraic closure of $k$), there exist $x,z\in k'$ such that $z+\overline z=x\overline x$ and
+% typo?: the printed relation is inclusion rather than membership; kept as printed.
+\begin{equation}\tag{1}
+ \begin{pmatrix}1&\overline{x}&z\\0&1&x\\0&0&1\end{pmatrix}
+ \begin{pmatrix}1&1&0\\0&1&0\\0&0&1\end{pmatrix}
+ \begin{pmatrix}1&0&0\\a&1&0\\b&c&1\end{pmatrix}\subset\Omega(K).
+\end{equation}
+\begin{itemize}
+\item If $a\neq-1$, one takes $x=z=0$.
+\item If $a=-1$, the conditions to be satisfied read
+\[
+ \begin{cases}
+ z+\overline z=x\overline x,\\
+ bz-\overline x\neq0,\\
+ (b+c)\overline z+bx-1\neq0.
+ \end{cases}
+\]
+\end{itemize}
+Let $q$ be the number of elements of $k$ ($q\geq2$). One knows that for every $m\in k$, the equation $z+\overline z=m$, with $z\in k'$, has $q$ solutions.
+\begin{itemize}
+\item If $b=0$, take $x=1$; one must solve $z+\overline z=1$, $c\overline z\neq1$, which is always possible by the preceding remark.
+\item If $b\neq0$, take $x=0$; one must solve
+\[
+ z+\overline z=0,\quad z\neq0,\quad (b+c)z\neq1.
+\]
+\end{itemize}
+This is always possible if $q\geq3$. If $k=\FF_2$, it is possible if $b+c\neq1$; one can take $z=1$.
+\begin{itemize}
+\item Only the case $k=\FF_2$, $b+c=1$, $b\neq0$ therefore remains to be treated. The system then reads
+\[
+ z+\overline z=x\overline x,\quad bz\neq\overline x,\quad\overline z+bx\neq1.
+\]
+\end{itemize}
+If $b=1$ (resp. $b\notin k'$), put $x=1$; then the last two conditions read $z\neq b^{-1},1-b$, and they follow from $z+\overline z=1$, which has solutions. Finally, if $b\in k'-k$, one can take $x=\overline b$, $z=b$.\hfill Q.E.D.
+
+\begin{corollary}{5.2}\label{XXVI.5.2}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group, $P$ and $P'$ two opposite parabolic subgroups of $G$. The canonical map
+\[
+ \operatorname{rad}^{\mathrm u}(P)(S)\cdot\operatorname{rad}^{\mathrm u}(P')(S)\to(G/P)(S)
+\]
+is surjective (in particular, one has $(G/P)(S)=G(S)/P(S)$). Every parabolic subgroup $Q$ of $G$ of the same type as $P$ is of the form $\operatorname{int}(uu')P$, with $u\in\operatorname{rad}^{\mathrm u}(P)(S)$ and $u'\in\operatorname{rad}^{\mathrm u}(P')(S)$.
+\end{corollary}
+The second assertion is obviously equivalent to the first; let us prove the latter. Let $s_i$ be the closed points of $S$, let $V$ be the open subscheme of $G/P$ that is the image of $P'$ (and is isomorphic to $\operatorname{rad}^{\mathrm u}(P')$, \cf 4.3.6), and let $x\in G/P(S)$. By 5.1, for each $i$ there is a section $u_i\in\operatorname{rad}^{\mathrm u}(P)(\kappa(s_i))$ such that $u_ix_{s_i}$ is a section of $V_{s_i}$. If $u\in\operatorname{rad}^{\mathrm u}(P)(S)$ lifts the $u_i$ (2.6), $ux$ is a section of $V$, since such an assertion is checked on the closed fibers. But $\operatorname{rad}^{\mathrm u}(P')(S)\isomto V(S)$ is bijective, and one concludes at once.
+
+% Source PDF p. 37.
+\begin{corollary}{5.3}\label{XXVI.5.3}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group, $P$, $P'$ and $Q$ three parabolic subgroups of $G$. There is $g\in G(S)$ such that $\operatorname{int}(g)Q$ is in transversal position relative to $P$ and $P'$.
+\end{corollary}
+With the notation of 4.2.4(ii), one must verify that the open subscheme of $G$ that is universally schematically dense over $S$\nde{One has replaced ``relatively dense'' by ``universally schematically dense over $S$'', \cf EGA IV$_3$, Def. 11.10.8.}, $\underline{\mathrm{Gen}}(Q/P)\cap\underline{\mathrm{Gen}}(Q/P')$, has a section over $S$. In fact, choose a parabolic subgroup of $G$ opposite to $Q$ (4.3.5(i)), say $Q_1$, and put $U=\operatorname{rad}^{\mathrm u}(Q)$, $U'=\operatorname{rad}^{\mathrm u}(Q_1)$. We shall show that there is $g\in U(S)U'(S)$ answering the question; in this form it follows from 4.2.4(i) and 2.6 that it suffices to verify the assertion on the fibers at the closed points of $S$, and one can therefore assume that $S$ is the spectrum of a field $k$.
+
+If $k$ is algebraically closed, there is $g\in G(k)$ answering the question; now $g$ is written $uu'q$, with $u\in U(k)$, $u'\in U'(k)$, $q\in Q(k)$ (5.2), and one has $\operatorname{int}(uu')Q=\operatorname{int}(g)Q$.
+
+If $k$ is infinite, consider the open subscheme $V$ of $U\times_k U'$ defined by the cartesian diagram
+\[
+\xymatrix{
+ U\times_k U'\ar[r]&G\\
+ V\ar@{^{(}->}[u]\ar[r]&\underline{\mathrm{Gen}}(Q/P)\cap\underline{\mathrm{Gen}}(Q/P')\ar@{^{(}->}[u];
+}
+\]
+since $V(\overline k)\neq\varnothing$ by what one has just seen, $V$ is dense in $U\times_k U'$, hence has a section by 2.7.
+
+If $k$ is finite, $P$ (resp. $P'$) has a Borel subgroup $B$ (resp. $B'$), by Lang's theorem (\cf 5.1.5), the schemes $\underline{\mathrm{Bor}}(P)\simeq\underline{\mathrm{Bor}}(P/\operatorname{rad}^{\mathrm u}(P))$ and $\underline{\mathrm{Bor}}(Q)\simeq\underline{\mathrm{Bor}}(Q/\operatorname{rad}^{\mathrm u}(Q))$ being smooth. If $B_1$ is a Borel subgroup opposite to $B$ (4.3.5(i)), there are $a\in B^{\mathrm u}(k)$ and $a_1\in B^{\mathrm u}_1(k)$ such that $\operatorname{int}(aa_1)B=B'$ (5.2); then $B_0=\operatorname{int}(aa_1)B_1=\operatorname{int}(a)B_1$ is opposite to $B'$ and to $B$; if $Q_0$ is the unique parabolic subgroup of $G$ containing $B_0$ and of the same type as $Q$ (3.8), $Q_0$ is in transversal position relative to $P$ and $P'$ (4.2.1(vi)). Moreover, by 5.2, $Q_0$ is written $\operatorname{int}(uu')Q$, with $u'\in U'(k)$, $u\in U(k)$, which was to be proved.
+
+\begin{corollary}{5.4}\label{XXVI.5.4}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group, $P$ and $Q$ two parabolic subgroups of $G$. There is $g\in G(S)$ such that $\operatorname{int}(g)P$ is in osculatory position relative to $Q$, \ie (4.4.2) such that $\operatorname{int}(g)P\cap Q$ is a parabolic subgroup of $G$.
+\end{corollary}
+Indeed, by 4.3.5(i), there is a parabolic subgroup $P'$ of $G$ opposite to $P$. By 5.3, there is a parabolic subgroup $P'_1$ of $G$ of the same type as $P'$, in transversal position relative to $P$ and $Q$. If $T$ is a maximal torus of $P'_1\cap Q$ (4.2.7(ii)), and if $P_1$ is the opposite of $P'_1$ relative to $T$, then $P_1$ and $Q$ are in osculatory position, by 4.4.5. Moreover, since $P$ and $P_1$ are opposite to $P'_1$, there is $g\in\operatorname{rad}^{\mathrm u}(P'_1)(S)$ such that $\operatorname{int}(g)P=P_1$ (4.3.5(i)).\hfill Q.E.D.
+
+Observe, moreover, that for the same reason, there is $u\in\operatorname{rad}^{\mathrm u}(P)(S)$ such that $\operatorname{int}(u)P'=P'_1$, hence $g$ is written $\operatorname{int}(u)u'$, with $u'\in\operatorname{rad}^{\mathrm u}(P')(S)$, which gives $P_1=\operatorname{int}(uu'u^{-1})P=\operatorname{int}(uu')P$ and, in passing, proves 5.2 again.
+
+% Source PDF p. 38.
+Statements 5.3 and 5.4 are the essential results of this paragraph. Let us first state a few consequences of 5.4.
+
+\begin{corollary}{5.5}\label{XXVI.5.5}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group.
+\begin{enumeratei}
+\item If $P$ and $Q$ are two parabolic subgroups of $G$ and if $t(P)\subset t(Q)$ (\cf 3.3), there is $g\in G(S)$ such that $\operatorname{int}(g)P\subset Q$.
+\item Let
+\[
+ P_1\supset P_2\supset\cdots\supset P_n
+ \quad\text{and}\quad P'_1\supset P'_2\supset\cdots\supset P'_n
+\]
+be two chains of parabolic subgroups of $G$ such that $t(P_i)=t(P'_i)$. There is $g\in G(S)$ such that $\operatorname{int}(g)P_i=P'_i$ for every $i$.
+\item Let $P,Q,P',Q'$ be four parabolic subgroups of $G$ such that $t(P)=t(P')$ and $t(Q)=t(Q')$. If the pairs $(P,P')$ and $(Q,Q')$ are in transversal (resp. osculatory) position, there is $g\in G(S)$ such that $\operatorname{int}(g)P=P'$ and $\operatorname{int}(g)Q=Q'$.
+% typo?: the source pairs (P,P') and (Q,Q') in the hypothesis; kept as printed.
+\item Let $P$ and $P'$ be two parabolic subgroups of the same type, $L$ (resp. $L'$) a Levi subgroup of $P$ (resp. $P'$). There is $g\in G(S)$ such that $\operatorname{int}(g)P=P'$ and $\operatorname{int}(g)L=L'$.
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+(i) follows at once from 5.4; (ii) is proved by induction on $n$, the case $n=0$ being trivial; one can therefore assume that $P_i=P'_i$ for $i=1,\ldots,n-1$; by 5.2 there is $g\in G(S)$ such that $\operatorname{int}(g)P_n=P'_n$; but then $P_n$ and $\operatorname{int}(g)P_n$ are contained in $P_{n-1}=P'_{n-1}$, hence $g\in P_{n-1}(S)$ (4.4.4(ii)) and $\operatorname{int}(g)P_i=P'_i$ for $i=1,\ldots,n$.
+
+Moreover, (iv) follows at once from 5.2 and 1.8. Let us prove (iii) in the case ``transversal position''; the assertion follows from (iv) when the types of $P$ and $Q$ are opposite (4.3.3(iii)); in the general case, by 4.2.7(iii) and 4.4.6 one can find parabolic subgroups $P_1,P'_1,Q_1,Q'_1$ of $P,P',Q,Q'$ respectively, such that $P_1$ and $P'_1$ are opposite, as are $Q_1$ and $Q'_1$, and such that $t(P_1)=t(P'_1)$; there is therefore $g\in G(S)$ such that $\operatorname{int}(g)P_1=P'_1$, $\operatorname{int}(g)Q_1=Q'_1$, and one can assume that $P_1=P'_1$ and $Q_1=Q'_1$; but then $P$ and $P'$ are in osculatory position and of the same type, hence $P=P'$ (4.4.4(i)); for the same reason $Q=Q'$.
+
+It remains for us to prove assertion (iii) in the case ``osculatory position''. By the conjugacy theorem (5.2), one can assume that $P=P'$; by the same theorem, one can find $g\in G(S)$ such that $\operatorname{int}(g)Q=Q'$; but then $g\in P(S)$ by 4.4.4(ii), and one has $\operatorname{int}(g)P=P=P'$.
+\end{proof}
+
+\begin{definition}{5.6}\label{XXVI.5.6}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $P$ a parabolic subgroup of $G$. One says that $P$ is \emph{minimal} if whenever $Q$ is a parabolic subgroup of $G$ contained in $P$, one has $Q=P$.
+\end{definition}
+One will note that this notion is not, in general, stable under passage to fibers.
+
+\begin{corollary}{5.7}\label{XXVI.5.7}
+Let $S$ be a semi-local scheme, $G$ a reductive $S$-group.
+% The numbered assertions begin on p. 39 and belong to en-07.

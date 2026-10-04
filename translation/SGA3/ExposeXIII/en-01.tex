@@ -1,0 +1,344 @@
+\exposetitle{XIII}{Regular elements of algebraic groups and of Lie algebras}
+\label{XIII}
+\begin{center}by A. Grothendieck\end{center}
+{\renewcommand{\thefootnote}{0}\footnotetext{xy version of 1/12/08}}
+\setcounter{footnote}{0}
+
+% original p. 249
+\sgasection{1}{An auxiliary lemma on varieties with operators}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme acting on the left on an
+$S$-prescheme $V$, $W$ a closed sub-$S$-prescheme of $V$, and $N$ its stabilizer
+in $G$, the subgroup of $G$ whose points with values in an $S'$ over $S$ are the
+$g\in G(S')$ such that $g\cdot W_{S'}=W_{S'}$. One equips $(\Sch/S)$ with the
+faithfully flat quasi-compact topology, and identifies $G,V,M$ with the
+corresponding sheaves (cf. IV).
+% typo?: kept as printed: M, not introduced here, occurs in the source.
+One shall therefore reason in the category of sheaves on $(\Sch)_{/S}$, and in
+this section the expression ``locally'' refers to the topology just specified on
+$(\Sch)_{/S}$. Note that $N$ is a sheaf; consider the quotient sheaf $G/N$.
+One sees immediately that it is isomorphic to the following functor: to each
+$S'$ over $S$, one associates the set of subsheaves $W'$ of $V_{S'}$ which are
+locally conjugate to $W_{S'}$ under the group $G$. Let $X$ be the subsheaf of
+$G/N\times_S V$ whose value, for every $S'$ over $S$, is the set of $(W',v)$,
+where $W'$ is as above and $v$ is a section of $W'$ over $S'$ (thus a section of
+$V_{S'}$ over $S'$). Let $Z$ be the inverse image of $X$ in $G\times_S V$, so
+that one has the cartesian diagram
+\[
+\xymatrix{
+ Z\ar[r]\ar@{^{(}->}[d]&X\ar@{^{(}->}[d]^i\\
+ G\times_S V\ar[r]&G/N\times_S V,
+}\tag{x}
+\]
+% original p. 250
+where $i$ is the canonical immersion, and the second horizontal arrow comes
+from the canonical morphism $G\to G/N$. Since this associates to the point
+$g\in G(S')$ the subsheaf $g\cdot W_{S'}$ of $V_{S'}$, one sees that $Z(S')$ is
+the set of pairs $(g,v)\in G(S')\times V(S')$ such that
+$v\in g\cdot W_{S'}(S')$. Consequently, $Z$ is isomorphic to the sheaf
+$G\times_S W$, by means of the isomorphism
+\[
+ G\underset{S}{\times}W\isomto Z
+\]
+defined by $(g,w)\mto(g,g\cdot w)$. Thus the preceding cartesian diagram gives
+the cartesian diagram
+\[
+\xymatrix{
+ G\times_S W\ar[r]^q\ar[d]_\lambda&X\ar[d]^i\\
+ G\times_S V\ar[r]&G/N\times_S V
+}\tag{xx}
+\]
+where $\lambda(g,w)=(g,g\cdot w)$, hence $q(g,w)=(\bar g,g\cdot w)$, where
+$\bar g$ denotes the image of $g$ under the canonical map
+$G(S')\to(G/N)(S')$. Finally, one sees from diagram (x) that $Z\to X$ makes
+$Z$ a principal bundle with base $X$ and group $N$ acting on the right by
+$(g,v)\cdot n=(gn,v)$, so that in (xx), $q:G\times_S W\to X$ makes
+$G\times_S W$ a principal bundle with base $X$ and group $N$ acting on the
+right by
+\[
+ (g,w)\cdot n=(gn,n^{-1}\cdot w).
+\]
+One summarizes the main preceding morphisms in the following diagram:
+\[
+\xymatrix@C=2.4em@R=2.2em{
+ &G\times_S W\ar[d]^q\ar[drr]^\varphi&&\\
+ G/N&X\ar[l]_p\ar[rr]^\psi\ar@{^{(}->}[d]_i&&V\\
+ &G/N\times_S V\ar@{-->}[ul]^{\mathrm{pr}_1}\ar@{-->}[urr]_{\mathrm{pr}_2}&&
+}\tag{D}
+\]
+where $\psi=\mathrm{pr}_2\circ i$ and $\varphi=\psi\circ q$, i.e.
+$\varphi(g,w)=g\cdot w$. If $v$ is a section of $V$ over $S$, the subsheaf
+$X_v$ of $X$ which is the inverse image of this section under $\psi$ is given
+by $X_v(S')=$ the set of subsheaves $W'$ of $V_{S'}$ which are locally
+conjugate to $W_{S'}$ under $G$, and which contain the section $v_{S'}$ of
+$V_{S'}$, while the subsheaf of $G\times_S W$ which is the inverse image of
+$v$ under $\varphi$ is isomorphic to the subsheaf $M_v$ of $G$ given by
+$M_v(S')=$ the set of $g\in G(S')$ such that $v_{S'}\in g\cdot W(S')$, i.e.
+such that $g^{-1}v_{S'}\in W(S')$. If $v$ is a section of $W$ and not merely
+of $V$, then $M_v$ clearly contains $N$.
+
+In these descriptions, one has not used the fact that $G,V,W$ were
+representable (nor that the site on which one works is defined in terms of
+preschemes!). But suppose now that $N$ is representable and faithfully flat
+and quasi-compact over $S$, and that $G/N$ is representable. When $S$ is the
+spectrum of a field, and $G$ is of finite type over $k$, one knows that this
+hypothesis is necessarily satisfied (VIII 6 and VI\textsubscript{B}.11.18).
+One then sees from the cartesian diagram (xx), using faithfully flat
+quasi-compact descent theory and the fact that $Z\to G\times_S V$ is a closed
+immersion, that $X$ is representable (it is obtained by descent of the closed
+subprescheme $Z$ of $G\times_S V$ along the faithfully flat and quasi-compact
+morphism $G\times_S V\to G/N\times_S V$). Thus diagram (D) is a diagram of
+morphisms of preschemes over $S$.
+
+From now on one assumes that $S$ is the spectrum of a field $k$, and that
+$G,V,W$ are of finite type over $k$. Let $\mathfrak n$ be the Lie algebra of
+$N$, so that $\dim N\leq\operatorname{rank}\mathfrak n$, equality holding if
+and only if $N$ is smooth over $k$ (Exp VI\nde{Having been unable to identify
+this reference, we refer to Theorem II.5.2.1 of the book:
+M. Demazure \& P. Gabriel, \emph{Groupes alg\'ebriques I}, Masson (1970).}).
+Let $a\in W(k)$, and consider the subscheme $M_a$ of $G$ defined above,
+containing $N$, and isomorphic to $\varphi^{-1}(a)$; one shall denote by
+$\mathfrak m_a$ its Zariski tangent space at the identity element $e$ of $N$,
+so that one has
+\[
+ \mathfrak n\subset\mathfrak m_a,\qquad
+ \dim N\leq\operatorname{rank}\mathfrak n\leq\mathfrak m_a.\tag{1}
+\]
+% typo?: kept as printed: the last term of (1) has no rank operator.
+
+% original p. 252
+\begin{lemma}{1.1}\label{XIII.1.1}
+With the preceding notation:
+
+\noindent a) Consider the following conditions:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\mathfrak n=\mathfrak m_a$ and $N$ is smooth over $k$.
+\item[\textup{(i bis)}] $\dim N=\operatorname{rank}_k\mathfrak m_a$.
+\item $\psi:X\to V$ is unramified at $(\bar e,a)$.
+\item $M_a$ and $N$ coincide in a neighborhood of $e$.
+\end{enumerate}
+Then one has the implications
+$\textup{(i)}\Leftrightarrow\textup{(i bis)}\Rightarrow\textup{(ii)}
+\Leftrightarrow\textup{(iii)}$.
+
+\noindent b) Suppose that $\varphi:G\times_S W\to V$ is smooth at $(e,a)$.
+Then $M_a$ is smooth over $k$ at $e$, and $\psi$ is smooth at $(\bar e,a)$.
+\end{lemma}
+\begin{proof}
+a) The equivalence of (i) and (i bis) follows at once from relations (1) and
+from the fact noted above that $N$ is smooth over $k$ if and only if
+$\dim N=\operatorname{rank}_k\mathfrak n$. On the other hand, consider the
+inclusion morphism $N\to M_a$; it is well known\nde{See, for example,
+EGA IV\textsubscript{4}, Th. 17.11.1 d).} that if $N$ is smooth over $k$ at
+$e$ and the tangent map at $e$ is surjective, then $N\to M_a$ is smooth at
+$e$, and hence (being an immersion) is an isomorphism at $e$, which shows
+that (i) implies (iii). To prove the equivalence of (ii) and (iii), consider,
+as above, $X_a=\psi^{-1}(a)$ and use the isomorphism
+$M_a\simeq\varphi^{-1}(a)\simeq q^{-1}(X_a)$ to obtain a morphism
+$p_a:M_a\to X_a$ which makes $M_a$ a principal homogeneous bundle with group
+$N_{X_a}$. Consider the following diagram
+\[
+\xymatrix{
+ M_a\ar[d]_{p_a}&N\ar[l]_{j_a}\ar[d]\\
+ X_a\ar[r]^{j'_a}&S=\Spec(k),
+}
+\]
+where $\Spec(k)\to X_n$ is defined by the point $(\bar e,a)$ of $X$, and
+$j_a:N\to M_a$ is the canonical immersion. Saying that $\psi$ is unramified
+at $(\bar e,a)$ means that $j'_a$ is an open immersion, or again that it
+induces an isomorphism $S\isomto\Spec(\OO_{X_a,a})$. Since $p_a$ is flat,
+it is equivalent to say that the morphism obtained from the preceding one
+by the base change $\Spec(\OO_{M_a,e})\to\Spec(\OO_{X_a,b})$ is an
+isomorphism; now this resulting morphism is precisely the morphism
+$\Spec(\OO_{N,e})\to\Spec(\OO_{M_a,e})$, which proves the equivalence of
+(ii) and (iii).
+% typo?: kept as printed: X_n, the direction of j'_a, and the subscripts a/b.
+
+One will moreover note that the proof shows that conditions (ii), (iii)
+imply the following condition, apparently stronger than (iii):
+
+\noindent (iii bis) $N$ is an open and closed subscheme of $M$.
+% typo?: kept as printed: M rather than M_a.
+
+\noindent b) The first assertion follows from the fact that $M_a$ is
+isomorphic to $\varphi^{-1}(a)$, the second from the fact that $q$ is flat
+and $q(e,a)=(\bar e,a)$.
+\end{proof}
+
+\sgasection{2}{Density theorem and theory of regular points of $G$}
+One shall apply the constructions and notation of the preceding section
+in the case where $G$ is a smooth connected algebraic group over $k$,
+where $V=G$ on which $G$ acts by inner automorphisms, and where $W$ is a
+smooth connected algebraic subgroup $H$ of $G$. One shall denote by
+$\mathfrak g$ the Lie algebra of $G$, by $\mathfrak h$ that of $H$, by $N$
+the normalizer of $H$ in $G$, and by $\mathfrak n$ the Lie algebra of $N$.
+If $a\in G(k)$, one shall again denote, as in \No 1, by $M_a$ the inverse
+of its transporter into $H$, so that if $a\in H(k)$, one has $N\subset M_a$;
+in this case, one denotes by $\mathfrak m_a$ the Zariski tangent space of
+$M_a$ at the identity element $e$ of $G$. Note that
+\[
+ \mathfrak h\subset\mathfrak n\subset\mathfrak m_a\subset\mathfrak g
+ \qquad\text{for }a\in H(k).
+\]
+One shall need the
+
+% original p. 254
+\begin{lemma}{2.0}\label{XIII.2.0}
+For $H=N^0$ to hold, it is necessary and sufficient that
+$(\mathfrak g/\mathfrak h)^H=0$ (where the left-hand side denotes the
+subspace of invariants under the action of $H$ deduced from the adjoint
+representation). When this condition is satisfied, $N$ is smooth and one
+has $\dim X=\dim G$. In all cases, $\dim X\leq\dim G$, and this inequality
+is an equality if and only if $H$ has finite index in $N$.
+\end{lemma}
+Indeed, one has seen (II 5.2.3 (i)) that $\mathfrak n$ is equal to the
+inverse image of $(\mathfrak g/\mathfrak h)^H$ under the morphism
+$\mathfrak g\to\mathfrak g/\mathfrak h$, hence
+$(\mathfrak g/\mathfrak h)^H=0$ is equivalent to
+$\mathfrak h=\mathfrak n$, which is also equivalent ($H$ being a smooth
+connected algebraic subgroup of the algebraic group $N$) to $H=N^0$
+(cf. VI.2). This clearly implies that $N$ is smooth. On the other hand,
+one has
+\[
+ \dim X=(\dim G-\dim N)+\dim H=\dim G-(\dim N-\dim H),
+\]
+so that one has
+\[
+ \dim X\leq\dim G,
+\]
+equality being attained if and only if $\dim H=\dim N$, i.e. if and only
+if $H$ has finite index in $N$. This is the case in particular if $H=N^0$,
+which completes the proof of 2.0.
+
+\begin{theorem}{2.1}\label{XIII.2.1}
+Let $G$ be a smooth connected algebraic group over the algebraically closed
+field $k$, $H$ a smooth connected algebraic subgroup, $N$ its normalizer,
+$\mathfrak g,\mathfrak h,\mathfrak n$ the Lie algebras,
+$X=G\times^N H$ the scheme (fibered over $G/N$ with typical fiber $H$)
+introduced in \No 1, and $\psi:X\to G$ the canonical morphism (whose image
+is also the image of $\varphi:G\times H\to G$ defined by
+$\varphi(g,h)=\operatorname{int}(g)h=ghg^{-1}$). The following conditions
+are all equivalent:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $H$ contains a Cartan subgroup (XII 1) $C$ of $G$.
+\item[\textup{(i bis)}] $H$ has the same reductive rank and the same nilpotent
+rank (XII 1) as $G$.
+\item $H$ contains a maximal torus $T$ of $G$, and
+$(\mathfrak g/\mathfrak h)^T=0$.
+% original p. 255
+\item The set of conjugates of $H$ containing a given maximal torus is
+finite and nonempty, and $H$ has finite index in its normalizer.
+\item There exists $a\in H(k)$ which is contained in only finitely many
+conjugates of $H$ (or merely such that $\psi^{-1}(a)$ has an isolated point),
+and $H$ has finite index in its normalizer.
+\item[\textup{(iv bis)}] The morphism $\psi:X\to G$ is generically
+quasi-finite (i.e. there exists a dense open subset of $X$ on which $\psi$
+is quasi-finite), and $H$ has finite index in its normalizer.
+\item There exists a dense open subset $U$ of $G$ such that for every
+$x\in U(k)$, the set of conjugates of $H$ containing $x$ is finite and
+nonempty, i.e. $\psi:X\to G$ is dominant and generically quasi-finite.
+\item There exists a dense open subset $U$ of $G$ such that every
+$x\in U(k)$ is contained in a conjugate of $H$, i.e. $\psi:X\to G$ is dominant.
+\item There exists $a\in H(k)$ such that the subspace of $\mathfrak g/\mathfrak h$
+of fixed points of $\ad_{\mathfrak g/\mathfrak h}(a)$ is zero.
+\end{enumerate}
+Moreover, these conditions imply that $H$ is its own connected normalizer,
+i.e. $N$ is smooth and $\dim H=\dim N$, and that $\psi:X\to G$ is
+generically \emph{\'etale}.
+\end{theorem}
+\begin{proof}
+By 2.0, one has $\dim X\leq\dim G$, with equality if and only if
+$\dim H=\dim N$, i.e. $H$ has finite index in $N$. From the inequality
+$\dim X\leq\dim G$ it follows that $\psi$ is dominant if and only if it
+is dominant and generically quasi-finite, or again if and only if $\psi$
+is generically quasi-finite and $\dim X=\dim G$. Since this last equality
+also means, by 2.0, that $H$ has finite index in $N$, one has proved the
+equivalence of (vi), (v), (iv bis). The equivalence of (iv) and (iv bis)
+is immediate.
+
+The equivalence of (i) and (i bis) is immediate from the definitions, and
+is left to the reader. On the other hand, if $H$ contains a Cartan subgroup
+$C$ of $G$, it contains the maximal torus $T$ of $C$, which is a maximal
+torus of $G$. Since $C$ is the centralizer of $T$, its Lie algebra
+$\mathfrak c$ is given by
+\[
+ \mathfrak c=\mathfrak g^T
+\]
+(II, 5.2.3 (ii)). Thus, since $H\supset C$, whence
+$\mathfrak h\supset\mathfrak n$, it follows that
+$\mathfrak h\subset\mathfrak g^T$, which is equivalent, by I, 4.7.3,
+to the relation
+\[
+ (\mathfrak g/\mathfrak h)^T=0.\tag{x}
+\]
+% typo?: kept as printed: h superset n, and h subset g^T.
+Conversely, suppose that $H$ contains the maximal torus $T$ and that the
+preceding relation holds, i.e. that one has $\mathfrak h\supset\mathfrak n$;
+I say that $H$ contains the centralizer $C$ of $T$ (which will establish
+(i) $\Leftrightarrow$ (ii)). This follows from the
+
+\begin{lemma}{2.1.1}\label{XIII.2.1.1}
+Let $G$ be a smooth algebraic group over the field $k$, $T$ a subgroup
+of multiplicative type of $G$, $C$ its connected centralizer (equal to
+the centralizer of $T$ if $G$ is connected and $T$ a torus, (XII 6.6 b)),
+and $H$ a smooth subgroup of $G$ containing $T$. For $H$ to contain $C$,
+it is necessary and sufficient that its Lie algebra $\mathfrak h$ contain
+that $\mathfrak c$ of $C$.
+\end{lemma}
+Indeed, one knows (XI 2.4) that $\Centr_G(T)$ is smooth over $k$, hence
+$C$ is smooth over $k$; likewise $\Centr_H(T)$ is smooth over $k$; now
+$\Centr_H(T)=\Centr_G(T)\cap H$ has $\mathfrak h\cap\mathfrak c$ as Lie
+algebra, so the hypothesis implies that the smooth subgroup $\Centr_H(T)$
+of the smooth group $\Centr_G(T)$ has the same Lie algebra, hence it
+contains the connected component $C$ of the latter, so $H$ contains $C$.
+\hfill Q.E.D.
+
+Let us prove the equivalence of (i) and (iii), which amounts to proving
+that if $H$ contains the maximal torus $T$ of $G$, then the condition
+$H\supset C$ (which is also equivalent to (x) above, as one has just seen)
+is equivalent to the fact that $H$ has finite index in its normalizer and
+that the set of conjugates of $H$ containing $T$ is finite. If $H$ contains
+$C$, hence if one has (x), then a fortiori
+\[
+ (\mathfrak g/\mathfrak h)^H=0,\tag{xx}
+\]
+now one knows that $\mathfrak n$ is the inverse image of the left-hand
+side of the preceding relation under the canonical homomorphism
+$\mathfrak g\to\mathfrak g/\mathfrak h$ (II 5.2.3 (i)), so the preceding
+relation also means, by 2.0, that $H=N^0$; a fortiori $H$ has finite index
+in its normalizer. Consider now the diagram of subgroups
+\[
+\xymatrix{
+ T\ar[r]&N(T)\cap H\ar[r]\ar[d]&H\ar[d]\\
+ &N(T)\cap N(H)\ar[r]\ar[d]&N(H)\\
+ &N(T).
+}
+\]
+Using the conjugacy theorem for maximal tori in $H$ (XII 6.6 a)), one
+sees that every conjugate of $H$ containing $T$ is conjugate to $H$ by
+an element of $N(T)(k)$, hence that the set of conjugates of $H$ containing
+$T$ is in one-to-one correspondence with the set of points of
+$N(T)/N(T)\cap N(H)$ with coefficients in $k$; now, since $H\supset C$,
+one has $N(T)\cap H\supset C$, so the preceding set is a quotient of
+$(N(T)/C)(k)$, which is a finite set, and is therefore finite. This proves
+that (i) $\Rightarrow$ (iii). Conversely, suppose (iii), i.e.
+$N(T)/N(T)\cap N(H)$ is finite and $N(H)/H$ is finite. Using the conjugacy
+theorem in $H$ again, one again sees that the homomorphism
+\[
+ N(T)\cap N(H)/N(T)\cap H\longrightarrow N(H)/H
+\]
+induced by the preceding diagram is bijective on the points with values
+in $k$ (in fact, it is an isomorphism), so, since the second is finite,
+so is the first; hence $N(T)\cap H$ has finite index in $N(T)$, and thus
+contains $C=N(T)^0$, so $H\supset C$. Thus (i), (i bis), (ii), (iii)
+are equivalent conditions.
+
+% original p. 258
+Let us prove that (ii) $\Rightarrow$ (vii). One sees at once that conditions
+(ii) and (vii) are each invariant under an extension $k\to k'$ of the
+base field, with $k'$ algebraically closed, which allows one to suppose
+that $k$ has infinite transcendence degree over its prime subfield.
+Then it is well known (and one verifies immediately) that there exists
+an element $a$ of $T(K)$ such that the subgroup of $T(K)$ which it
+generates is dense in $T$ for the Zariski topology.
+% typo?: kept as printed: T(K), although the base field is k.
+% The proof of Theorem 2.1 continues in en-02.tex.

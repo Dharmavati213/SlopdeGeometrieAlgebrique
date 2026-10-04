@@ -1,0 +1,646 @@
+Consider \(E_{f}=H\times_{G}E\); it is a \(\widehat{\mathcal{C}}\)-group and the
+projection \(v_{f}\colon E_{f}\to H\) is a morphism of
+\(\widehat{\mathcal{C}}\)-groups. Likewise for \(e_{f}\colon E_{f}\to E\).
+On the other hand, if one sends \(M\) into \(E\) by \(u\) and into \(H\) by the
+unit morphism, one defines a morphism of \(\widehat{\mathcal{C}}\)-groups
+\(u_{f}\colon M\to E_{f}\). One has therefore constructed a commutative
+diagram of \(\widehat{\mathcal{C}}\)-groups:
+\[
+\xymatrix@C=1.7em@R=1.5em{
+(E) & 1 \ar[r] & M \ar[r]^{u} & E \ar[r]^{v} & G \\
+(E_{f}) & 1 \ar[r]
+  & M \ar[u]_{\mathrm{id}} \ar[r]^{u_{f}}
+  & E_{f} \ar[u]_{e_{f}} \ar[r]^{v_{f}}
+  & H \ar[u]_{f}.
+}
+\]
+One has immediately:
+
+\begin{lemma}{1.2.3}
+\label{III.1.2.3}
+\begin{enumeratei}
+\item The sequence \((E_{f})\) is exact.
+\item The map \(s\mapsto e_{f}\circ s=f'\) realizes a bijective
+correspondence between the morphisms
+\[
+s\colon H\longrightarrow E_{f}
+\]
+such that \(v_{f}\circ s=\mathrm{id}\) (that is, the sections of \(v_{f}\))
+and the morphisms
+\[
+f'\colon H\longrightarrow E
+\]
+such that \(v\circ f'=f\) (that is, the morphisms \(f'\) ``lifting''~\(f\)).
+\item In the preceding correspondence, sections of \((E_{f})\) and morphisms
+of groups \(f'\) lifting \(f\) correspond.
+\end{enumeratei}
+\end{lemma}
+
+Applying lemma~1.2.2 to the extension \((E_{f})\) and taking~1.2.3 into
+account, one obtains the following proposition (which formally
+contains~1.2.2):
+
+\begin{proposition}{1.2.4}
+\label{III.1.2.4}
+Let \((E)\colon 1\to M\to E\xrightarrow{v}G\) be an exact sequence of
+\(\widehat{\mathcal{C}}\)-groups with \(M\) commutative. Let
+\[
+f\colon H\longrightarrow G
+\]
+be a morphism of \(\widehat{\mathcal{C}}\)-groups; suppose that it lifts to a
+morphism (not necessarily of groups) \(f'\colon H\to E\). Let us make \(H\)
+operate on \(M\) by the composite morphism (multiplicative and independent of
+the choice of \(f'\)),
+\[
+H\xrightarrow{f'}E\xrightarrow{\mathrm{int}}
+  \Aut_{\widehat{\mathcal{C}}\textup{-gr.}}(M).
+\]
+\begin{enumeratei}
+\item The morphism \(f\) defines canonically a class
+\(c(f)\in\mathrm{H}^{2}(H,M)\) whose vanishing is necessary and sufficient
+for the existence of a morphism of \(\widehat{\mathcal{C}}\)-groups
+\[
+f'\colon H\longrightarrow E
+\]
+lifting \(f\).
+\item If \(c(f)=0\), the set of morphisms of \(\widehat{\mathcal{C}}\)-groups
+\(f'\) lifting \(f\), modulo the action of the inner automorphisms defined by
+the elements of \(\Gamma(M)\) (\ie by the elements \(m\) of \(\Gamma(E)\) such
+that \(v(m)=e\)) is a principal homogeneous space under
+\(\mathrm{H}^{1}(H,M)\).
+\item If \(f'\colon H\to E\) is a morphism of groups lifting \(f\), the set of
+the transforms of \(f'\) by the inner automorphisms defined by the elements
+of \(\Gamma(M)\) is isomorphic to
+\(\Gamma(M)/\Gamma(M^{H})=\Gamma(M)/\mathrm{H}^{0}(H,M)\).
+\end{enumeratei}
+\end{proposition}
+
+\par\addvspace{0.55\baselineskip}%
+\noindent\textbf{1.3. Extensions of group laws.}\ ---
+\label{III.1.3}
+Consider the following situation: one has a morphism of
+\(\widehat{\mathcal{C}}\)
+\[
+(\dagger)\qquad p\colon X\longrightarrow Y
+\]
+and a commutative \(\widehat{\mathcal{C}}\)-group \(M\) operating on \(X\), such
+that \(X\) is formally principal homogeneous over \(Y\) under \(M_{Y}\).
+
+If \(g\colon Y\to Z\) is an arbitrary morphism of \(\widehat{\mathcal{C}}\),
+then \(g\circ p\colon X\to Z\) is invariant under \(M\): for each
+\(S\in\Ob(\mathcal{C})\), \((g\circ p)(S)\) is invariant under the action of
+\(M(S)\) operating on \(X(S)\). Conversely, we shall suppose the following
+condition verified for \(n=1,2,3,4\).
+
+\((+)_n\): \emph{Every morphism from \(X^{n}\) into \(M\), invariant under
+the action of \(M^{n}\) operating on \(X^{n}\), factors uniquely through
+\(p^{n}\colon X^{n}\to Y^{n}\) (where the powers \(n\) denote cartesian
+powers).}
+
+\begin{lemma}{1.3.1}
+\label{III.1.3.1}
+\begin{enumeratei}
+\item If \(h\) is a morphism from \(Y\) into \(M\), the automorphism \(u_{h}\)
+of \(X\) defined set-theoretically by \(x\mapsto h(p(x))\cdot x\) preserves
+the fibers of \(p\) and commutes with the operations of \(M\) on
+\(X\),{\renewcommand{\thefootnote}{(46)}\nde{Here and in the sequel, one
+has replaced ``commutes with \(p\) and with the operations of \(M\)'' by
+``preserves the fibers of \(p\) and commutes with the operations of \(M\)''.
+On the other hand, one has added the equalities which follow.}}
+\ie for all \(S\in\Ob(\mathcal{C})\) and \(x\in X(S)\), \(m\in M(S)\), one has
+\[
+p\bigl(h(p(x))\cdot x\bigr)=p(x),
+\qquad
+m\cdot h(p(x))\cdot x=h\bigl(p(m\cdot x)\bigr)\cdot m\cdot x.
+\]
+\item This construction realizes a bijective correspondence between
+morphisms from \(Y\) into \(M\) and automorphisms of \(X\) preserving the
+fibers of \(p\) and commuting with the operations of \(M\).
+\end{enumeratei}
+\end{lemma}
+
+The first part is clear, since \(p(m\cdot x)=p(x)\) and since \(M\) is
+commutative.
+Conversely, an automorphism \(u\) of \(X\) preserving the fibers of \(p\) is
+written set-theoretically \(x\mapsto g(x)x\), where \(g\) is some morphism
+from \(X\) into \(M\). If \(u\) commutes with the operations of \(M\), the
+morphism \(g\) is invariant under
+\(M\){\renewcommand{\thefootnote}{(47)}\nde{Indeed, the equality
+\(mg(x)x=mu(x)=u(mx)=g(mx)mx\) implies \(g(mx)=g(x)\).}}
+and one concludes by condition \((+)_1\).
+
+We now suppose that there are given in addition a group law on \(Y\) and an
+operation of \(Y\) on \(M\), that is, a morphism of
+\(\widehat{\mathcal{C}}\)-groups:
+\[
+(\ddagger)\qquad
+f\colon Y\longrightarrow\Aut_{\widehat{\mathcal{C}}\textup{-gr.}}(M).
+\]
+
+\begin{definition}{1.3.2}
+\label{III.1.3.2}
+A composition law on \(X\)
+\[
+P\colon X\times X\longrightarrow X
+\]
+is said to be \emph{admissible} if it satisfies the following two
+conditions:
+\begin{enumeratei}
+\item \(P\) lifts the group law of \(Y\), \ie the diagram
+\[
+\xymatrix{
+X\times X \ar[r]^{P} \ar[d]_{(p,p)} & X \ar[d]^{p} \\
+Y\times Y \ar[r] & Y
+}
+\]
+is commutative.
+\item For every \(S\in\Ob(\mathcal{C})\) and all \(x,y\in X(S)\),
+\(m,n\in M(S)\), one has the following relation
+\[
+(++)\qquad
+P(m\cdot x,\, n\cdot y)=m\cdot f(p(x))(n)\cdot P(x,y).
+\]
+\end{enumeratei}
+\end{definition}
+
+\begin{proposition}{1.3.3}
+\label{III.1.3.3}
+In order that a group law \(*\) on \(X\) be admissible, it is necessary and
+sufficient that the following four conditions be satisfied:
+\begin{enumeratei}
+\item \(p\colon X\to Y\) is a morphism of groups.
+\item The morphism \(i\colon M\to X\) defined by \(i(m)=m\cdot e_{X}\) is an
+isomorphism of groups from \(M\) onto \(\Ker(p)\), that is: one has
+set-theoretically \((m\cdot e_{X})*(n\cdot e_{X})=(mn)\cdot e_{X}\).
+\item One has \(m\cdot x=(m\cdot e_{X})*x=i(m)*x\) for each
+\(m\in M(S)\), \(x\in X(S)\).
+\item The inner automorphisms of \(X\) operate on \(\Ker(p)\) according to
+the set-theoretic formula:
+\[
+x*i(m)*x^{-1}=i\bigl(f(p(x))m\bigr).
+\]
+\end{enumeratei}
+\end{proposition}
+
+The proof is immediate.
+
+\begin{lemma}{1.3.4}
+\label{III.1.3.4}
+{\renewcommand{\thefootnote}{(48)}\nde{One has set out the statement as
+well as its proof in detail, with a view to point~(e) of the proof
+of~1.3.6.}}
+Let \(h\) be a morphism \(Y\to M\) and \(u_{h}\) the automorphism
+\(x\mapsto h(p(x))\cdot x\) of \(X\) (\cf~1.3.1). Let \(P\) be an admissible
+composition law (\resp a group law) on \(X\) and let \(P'\) be the
+composition law on \(X\) deduced from \(P\) by means of \(u_{h}\), \ie,
+\(P'(x,y)=u_{h}^{-1}\bigl(P(u_{h}(x),u_{h}(y))\bigr)\). Then:
+\begin{enumeratei}
+\item \(P'\) is an admissible composition law (\resp group law).
+\item For all \(x,y\in X(S)\) (\(S\in\Ob(\mathcal{C})\)), set \(v=p(x)\) and
+\(w=p(y)\); then
+\[
+P'(x,y)
+=h(vw)^{-1}\cdot h(v)\cdot f(v)\bigl(h(w)\bigr)\cdot P(x,y)
+=(\partial^{1}h)\bigl(p(x),p(y)\bigr)\cdot P(x,y).
+\]
+\end{enumeratei}
+\end{lemma}
+
+\begin{proof}
+One has \(u_{h}^{-1}=u_{h^{\vee}}\), where \(h^{\vee}\colon Y\to M\) is
+defined by \(h^{\vee}(y)=h(y)^{-1}\).
+By~1.3.2~(i) and~(ii), one has
+\(P\bigl(h(v)\cdot x,\, h(w)\cdot y\bigr)
+=h(v)\cdot f(v)\bigl(h(w)\bigr)\cdot P(x,y)\)
+and \(p\bigl(P(x,y)\bigr)=vw\), whence
+\[
+P'(x,y)
+=h(vw)^{-1}\cdot h(v)\cdot f(v)\bigl(h(w)\bigr)\cdot P(x,y)
+=(\partial^{1}h)\bigl(p(x),p(y)\bigr)\cdot P(x,y).
+\]
+It is then immediate that \(P'\) satisfies conditions~(i) and~(ii)
+of~1.3.2.
+\end{proof}
+
+\begin{definition}{1.3.5}
+\label{III.1.3.5}
+Two admissible composition laws deduced from one another by the procedure
+of~1.3.4 are said to be
+\emph{equivalent}.{\renewcommand{\thefootnote}{(49)}\nde{This is indeed an
+equivalence relation, since \(u_{h}^{-1}=u_{h^{\vee}}\).}}
+\end{definition}
+
+\begin{proposition}{1.3.6}
+\label{III.1.3.6}
+Suppose that there exists an admissible composition law on \(X\).
+Then:
+\begin{enumeratei}
+\item There exists a class \(c\in\mathrm{H}^{3}(Y,M)\) (\emph{determined
+canonically}), whose vanishing is necessary and sufficient for the
+existence of an associative admissible composition law on \(X\).
+% typo?: kept as printed (G, not Y)
+\item If \(c=0\), the set of associative admissible composition laws
+(\resp of equivalence classes of associative admissible composition laws)
+on \(X\) is a principal homogeneous space under \(\mathrm{Z}^{2}(G,M)\)
+(\resp \(\mathrm{H}^{2}(G,M)\)).
+\end{enumeratei}
+\end{proposition}
+
+The proof is carried out in several steps.
+
+\textbf{a)} Let \(P\) be an admissible composition law on \(X\). As \(P\)
+lifts the composition law of \(Y\), which is associative, there exists a
+unique morphism \(a\colon X^{3}\to M\) such that
+\[
+(*)\qquad
+P\bigl(x,P(y,z)\bigr)=a(x,y,z)\,P\bigl(P(x,y),z\bigr).
+\]
+By applying conditions~1.3.2~(i) and~(ii), one sees at once that \(a\) is
+invariant under the action of \(M^{3}\) on
+\(X^{3}\),{\renewcommand{\thefootnote}{(50)}\nde{For \(x,y,z\in X(S)\),
+set \(u=p(x)\), \(v=p(y)\) and \(w=p(z)\). Then
+\(P(mx,P(m'y,m''z))=P(mx,\, m'f(v)(m'')\,P(y,z))
+=mf(u)(m')\,f(uv)(m'')\,P(x,P(y,z))\).
+On the other hand, as \(p(P(x,y))=uv\), one also has
+\(P(P(mx,m'y),m''z)=P(mf(u)(m')\,P(x,y),\, m''z)
+=mf(u)(m')\,f(uv)(m'')\,P(P(x,y),z)\),
+and the comparison of these equalities with \((*)\) gives
+\(a(mx,m'y,m''z)=a(x,y,z)\).}}
+whence, by applying hypothesis \((+)_3\), the following result:
+
+\emph{(1) There exists a unique morphism \(DP\colon Y^{3}\to M\) such that}
+\[
+P\bigl(x,P(y,z)\bigr)
+=DP\bigl(p(x),p(y),p(z)\bigr)\,P\bigl(P(x,y),z\bigr),
+\]
+\emph{and \(P\) is associative if and only if \(DP=0\).}
+
+\textbf{b)} Let us compute step by step \(P\bigl(P(P(x,y),z),t\bigr)\) by
+means of the preceding formula. Setting \(p(x)=u\), \(p(y)=v\),
+\(p(z)=w\), \(p(t)=h\), one
+obtains{\renewcommand{\thefootnote}{(51)}\nde{One has added the diagram
+which follows.}}
+the following pentagonal diagram, where an arrow
+\(a\xrightarrow{m}b\) means that \(b=m\cdot a\):
+\[
+\xymatrix@C=1.4em@R=2.1em{
+& P\bigl(x,P(y,P(z,t))\bigr)
+  \ar[dl]_{DP(u,v,wh)}
+  \ar[dr]^{f(u)(DP(v,w,h))}
+& \\
+P\bigl(P(x,y),P(z,t)\bigr) \ar[d]_{DP(uv,w,h)}
+& &
+P\bigl(x,P(P(y,z),t)\bigr) \ar[d]^{DP(u,vw,h)}
+\\
+P\bigl(P(P(x,y),z),t\bigr)
+& &
+P\bigl(P(x,P(y,z)),t\bigr) \ar[ll]^{DP(u,v,w)}
+}
+\]
+hence one finds
+\[
+\begin{aligned}
+&DP(u,v,w)\cdot DP(u,vw,h)\cdot f(u)DP(v,w,h)\\
+&\qquad\cdot DP(u,v,wh)^{-1}\cdot DP(uv,w,h)^{-1}=e_{M},
+\end{aligned}
+\]
+\ie, \(\partial^{3}DP(u,v,w,h)=e_{M}\). As on the other hand the left-hand
+side of the preceding formula can be written, with the aid of \(P\) and of
+\(a\), as the expression in \((x,y,z,t)\) of some morphism
+\(X^{4}\to M\), it follows from the uniqueness hypothesis in \((+)_4\) that
+\(\partial^{3}DP\) and \(e_{M}\), which factor the same morphism, are equal,
+hence
+
+\emph{(2) \(DP\) is a cocycle, \ie one has
+\(DP\in\mathrm{Z}^{3}(Y,M)\).}
+
+\textbf{c)} If \(P\) and \(P'\) are two admissible composition laws on \(X\),
+there exists a unique morphism
+\[
+b\colon X^{2}\longrightarrow M
+\]
+such that \(P'(x,y)=b(x,y)P(x,y)\). Applying~1.3.2~(ii) to \(P\) and to
+\(P'\), one sees that \(b\) is invariant under \(M^{2}\), whence, by
+\((+)_2\):
+
+% typo: lois de compositions -> lois de composition
+\emph{(3) For every pair of admissible composition laws \((P,P')\), there
+exists a unique}
+\[
+d(P,P')\colon Y^{2}\to M
+\]
+\emph{such that}
+\[
+P'(x,y)=d(P,P')\bigl(p(x),p(y)\bigr)\,P(x,y),
+\]
+\emph{and the set of admissible composition laws thus becomes a principal
+homogeneous space under \(\Hom(Y^{2},M)=\mathrm{C}^{2}(Y,M)\).}
+
+\textbf{d)} Under the preceding conditions, one has the formula:
+\[
+(4)\qquad DP'-DP=\partial^{2}d(P,P').
+\]
+
+\textbf{e)} \(P\) and \(P'\) are equivalent if and only if there exists a
+morphism \(h\in\mathrm{C}^{1}(Y,M)=\Hom(Y,M)\) such that
+\(d(P,P')=\partial^{1}h\); this follows from the definition of equivalence
+and from~1.3.4~(ii).
+
+\textbf{f)} It remains only to conclude: one seeks a \(P'\) which is
+associative, \ie such that \(DP'=e_{M}\). Now \(DP\) is a cocycle whose
+class in \(\mathrm{H}^{3}(Y,M)\) does not depend on the admissible
+composition law \(P\) chosen (by~(3) and~(4)). This class is the obstruction
+\(c\) sought. One will be able to choose a \(P'\) satisfying the conditions
+if and only if \(c=0\); indeed, choosing an arbitrary \(P\), one will have
+to solve, by~(1):
+\[
+0=DP'=DP+\partial^{2}d(P,P'),
+\]
+which is possible by~(3) and~(4) if and only if \(c=0\). The set of
+associative \(P'\) is a principal homogeneous space under
+\(\mathrm{Z}^{2}(Y,M)\), again by~(3) and~(4). The set of associative
+\(P'\) up to equivalence is a principal homogeneous space under
+\(\mathrm{H}^{2}(Y,M)\) by~(e).
+
+\sgasection{2}{Infinitesimal extensions of a morphism of group schemes}
+\label{III.sec.2}
+
+Let us resume the notations of n\textsuperscript{o}~0. Let \(Y\) and \(X\) be
+two group \(S\)-functors. Let \(M\) be the kernel of the morphism of groups
+\(p_{X}\colon X\to X^{+}\). One therefore has an exact sequence of group
+\(S\)-functors
+\[
+1\longrightarrow M\longrightarrow X\xrightarrow{p_{X}}X^{+}.
+\]
+By the definition of \(X^{+}\), one has isomorphisms
+\begin{align*}
+\Hom_{S}(Y,X^{+})
+  &\xrightarrow{\sim}\Hom_{S_{J}}(Y_{J},X_{J})\\
+\Hom_{S\textup{-gr.}}(Y,X^{+})
+  &\xrightarrow{\sim}\Hom_{S_{J}\textup{-gr.}}(Y_{J},X_{J}),
+\end{align*}
+and the morphism
+\[
+\Hom_{S}(Y,p_{X})\colon
+\Hom_{S}(Y,X)\longrightarrow\Hom_{S}(Y,X^{+})
+\]
+associates with an \(S\)-morphism \(f\colon Y\to X\), the \(S\)-morphism
+\(f^{+}\colon Y\to X^{+}\) corresponding, via the preceding isomorphisms, to
+the \(S_{J}\)-morphism \(f_{J}\colon Y_{J}\to X_{J}\) obtained by base change
+from \(f\). If \(M\) is \emph{commutative}, one can apply proposition~1.2.4
+to this situation.
+
+\numpara{2.0}
+\label{III.2.0}
+{\renewcommand{\thefootnote}{(52)}\nde{One has added the numbering~2.0,
+for later references.}}
+In the sequel, we shall be interested in the following case: \(Y\) is
+\emph{flat} over \(S\), and \(X\) is a group \(S\)-functor of one of the
+following two kinds:
+\begin{enumeratea}
+\item \(X\) is an \(S\)-group scheme,
+\item \(X=\Aut_{S}(E)\) where \(E\) is an \(S\)-scheme, \emph{of finite
+presentation over \(S\)}.
+\end{enumeratea}
+Let us denote by \((\mathbf{Plats})_{/S}\) the category of \(S\)-schemes
+\emph{flat} over \(S\). In case~(a) (\resp~(b)), the group \(S\)-functor
+\(M=\Ker(X\to X^{+})\), its restriction \(L\) to \((\mathbf{Plats})_{/S}\),
+and the operations of the inner automorphisms of \(X\) on \(M\), have been
+computed in~0.9, 0.5, and~0.10 (\resp~0.11, 0.14, and~0.12). That is, in
+case~(a), let \(L_{0}\) be the commutative group \(S_{0}\)-functor defined
+by: for every \(S_{0}\)-scheme \(T_{0}\),
+\[
+\Hom_{S_{0}}(T_{0},L_{0})
+=\Hom_{\mathcal{O}_{T_{0}}}\bigl(
+  \omega^{1}_{X_{0}/S_{0}}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T_{0}},\,
+  J\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{T_{0}}\bigr),
+\]
+on which \(X_{0}\) operates via its adjoint representation in
+\(\omega^{1}_{X_{0}/S_{0}}\); then \(L=\prod_{S_{0}/S}L_{0}\), \ie for every
+\(S\)-scheme \(T\), one has \(L(T)=L_{0}(T\times_{S}S_{0})\).
+
+In case~(b), let us denote by \(\pi\) the structural morphism \(E\to S\);
+then \(L\) is the abelian group functor on \((\mathbf{Plats})_{/S}\)
+defined by
+\[
+\Hom_{S}(T,L)
+=\Gamma\bigl(T,\,
+  \pi_{*}\bigl(\mathcal{H}\mathrm{om}_{\mathcal{O}_{E}}
+    (\Omega^{1}_{E/S},\, J\,\mathcal{O}_{E})\bigr)
+  \otimes_{\OS}\mathcal{O}_{T}\bigr),
+\]
+on which \(X\), considered as a functor on \((\mathbf{Plats})_{/S}\),
+operates as one has seen in~0.12.
+
+% typo: une suites exacte -> une suite exacte
+Then, one has an exact sequence of group functors on
+\((\mathbf{Plats})_{/S}\):
+\[
+(E)\qquad 1\longrightarrow L\longrightarrow X\longrightarrow X^{+}.
+\]
+On the other hand, \(Y\) being supposed \emph{flat} over \(S\), the groups
+\(\mathrm{H}^{i}(Y,M)\) depend, by~1.1.1, only on the restriction \(L\) of
+\(M\) to \((\mathbf{Plats})_{/S}\). As \(L=\prod_{S_{0}/S}L_{0}\) in
+case~(a), then by~1.1.2, one has in this case isomorphisms
+\(\mathrm{H}^{i}(Y,L)\simeq\mathrm{H}^{i}(Y_{0},L_{0})\).
+
+Then, taking account of what precedes, one deduces from
+proposition~1.2.4 the{\renewcommand{\thefootnote}{(53)}\nde{One has placed
+higher up the definitions which in the original figured in the statement of
+theorem~2.1 and formed the essential part of page~113 of the original.}}
+
+\begin{theorem}{2.1}
+\label{III.2.1}
+Let \(S\) be a scheme, \(I\) and \(J\) two quasi-coherent ideals such that
+\(I\supset J\) and \(I\cdot J=0\), defining the closed subschemes \(S_{0}\)
+and \(S_{J}\), and let:
+\begin{itemize}
+\item[\textemdash] \(X\) a group \(S\)-functor of type~(a) or~(b), and
+\(L_{0}\), \(L\) as above;
+\item[\textemdash] \(Y\) an \(S\)-group scheme flat over \(S\) and
+\(f_{J}\colon Y_{J}\to X_{J}\) a morphism of \(S_{J}\)-groups.
+\end{itemize}
+Then:
+\begin{enumeratei}
+\item In order that \(f_{J}\) lift to a morphism of \(S\)-groups
+\(Y\to X\), it is necessary and sufficient that the following two conditions
+be satisfied:
+\begin{enumeratei}
+\item[\textup{($i_{1}$)}] \(f_{J}\) lifts to a morphism of \(S\)-functors
+\(Y\to X\) (by~1.2.4, this defines an operation of \(Y\) on \(L\), which does
+not depend on the chosen lifting; moreover, in case~(a), the operation of
+\(Y_{0}\) on \(L_{0}\) thus obtained comes from the morphism
+\(f_{0}\colon Y_{0}\to X_{0}\) and from the ``adjoint action'' of \(X_{0}\)
+on \(L_{0}\));
+\item[\textup{($i_{2}$)}] A certain obstruction \(c(f_{J})\), defined
+canonically by \(f_{J}\), is zero, where \(c(f_{J})\) is a class in
+\(\mathrm{H}^{2}(Y,L)\)
+(\(\simeq\mathrm{H}^{2}(Y_{0},L_{0})\) in case~(a)).
+\end{enumeratei}
+\item If the conditions of~(i) are satisfied, the set \(E\) of morphisms of
+group \(S\)-functors \(Y\to X\) extending \(f_{J}\) is a principal homogeneous
+space under \(\mathrm{Z}^{1}(Y,L)\)
+(\(\simeq\mathrm{Z}^{1}(Y_{0},L_{0})\) in case~(a)), and \(E\) modulo the
+action of the inner automorphisms of \(X\) defined by the sections of \(X\)
+over \(S\) inducing the unit section of \(X_{J}\) over \(S_{J}\), is a
+principal homogeneous space under \(\mathrm{H}^{1}(Y,L)\)
+(\(\simeq\mathrm{H}^{1}(Y_{0},L_{0})\) in case~(a)).
+\item If \(f\colon Y\to X\) is a morphism of group \(S\)-functors extending
+\(f_{J}\), the set of the morphisms \(Y\to X\) transforms of \(f\) by the
+inner automorphisms defined by the sections of \(X\) over \(S\) inducing the
+unit section of \(X_{J}\) over \(S_{J}\), is isomorphic to
+\(\Gamma(L)/\mathrm{H}^{0}(Y,L)\)
+(\(\simeq\Gamma(L_{0})/\mathrm{H}^{0}(Y_{0},L_{0})\) in case~(a)).
+\end{enumeratei}
+\end{theorem}
+
+\begin{remark}{2.1.1}
+\label{III.2.1.1}
+{\renewcommand{\thefootnote}{(54)}\nde{One has added this remark, analogous
+to~4.5.1, in order to introduce the notations \(d(f,f')\) and
+\(d(f,f')\), used in~4.38; consequently, one has also added in~2.1~(ii)
+above, the part concerning \(E\) itself.}}
+If \(f,f'\colon Y\to X\) are morphisms of group \(S\)-functors extending
+\(f_{J}\), one therefore obtains a cocycle
+\(d(f,f')\in\mathrm{Z}^{1}(Y,L)\)
+(\(\simeq\mathrm{Z}^{1}(Y_{0},L_{0})\) in case~(a)), such that
+\[
+(*)\qquad f'=d(f,f')\cdot f\,.
+\]%
+{\renewcommand{\thefootnote}{(55)}\nde{One has conformed to the sign
+conventions of the original. One could have chosen to write
+\(f'=d(f',f)\cdot f\), but then, in order to have in~4.27 the equality
+\(d^{1}\bigl(d(i,i')\bigr)=d\bigl(Y,i'(Y)\bigr)\) when \(i\), \(i'\) are two
+immersions \(Y\hookrightarrow X\), one would have had to change the sign of
+the class \(d(Y,Y')\) introduced in~4.5.1, and that would have led to
+changes of sign in the formulas of~4.8, 4.14, 4.17. One has preferred to
+keep the signs given in the original (all correct!).}}
+% typo?: kept as printed (the cocycle and its class in H^1 are both denoted d(f,f'))
+One will denote by \(d(f,f')\) the image of \(d(f,f')\) in
+\(\mathrm{H}^{1}(Y,L)\)
+(\(\simeq\mathrm{H}^{1}(Y_{0},L_{0})\) in case~(a)).
+\end{remark}
+
+\begin{remark}{2.2}
+\label{III.2.2}
+One keeps the preceding notations; in particular, \(Y\) is flat over \(S\).
+In case~(b), \(L\) is, by~(0.14.1), the restriction to
+\((\mathbf{Plats})_{/S}\) of the functor
+\[
+\mathbf{W}\bigl(
+  \pi_{*}\bigl(\mathcal{H}\mathrm{om}_{\mathcal{O}_{E}}
+    (\Omega^{1}_{E/S},\, J\,\mathcal{O}_{E})\bigr)
+\bigr),
+\]
+where \(\pi\colon E\to S\) is the structural morphism. In case~(a), suppose
+moreover that \(X\) is locally of finite presentation over \(S\); then
+by~(0.6.1), \(L\) is the restriction to \((\mathbf{Plats})_{/S}\) of the
+functor
+\[
+\prod_{S_{0}/S}
+\mathbf{W}\bigl(
+  \mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}
+    (\omega^{1}_{X_{0}/S_{0}},\, J)
+\bigr).
+\]
+In both cases, the module of which one takes the \(\mathbf{W}\) is
+quasi-coherent, by EGA~I, 9.1.1. Suppose moreover that \(Y\) is affine over
+\(S\){\renewcommand{\thefootnote}{(56)}\nde{One has added this hypothesis,
+as well as the reference to~I,~5.3.}}.
+Then, by~I,~5.3, one obtains:
+\begin{enumeratea}
+\item \(\mathrm{H}^{i}(Y,L)=\mathrm{H}^{i}(Y_{0},L_{0})
+=\mathrm{H}^{i}\bigl(Y_{0},\,
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{S_{0}}}
+(\omega^{1}_{X_{0}/S_{0}},\, J)\bigr)\),
+\item \(\mathrm{H}^{i}(Y,L)
+=\mathrm{H}^{i}\bigl(Y,\,
+\pi_{*}\bigl(\mathcal{H}\mathrm{om}_{\mathcal{O}_{E}}
+(\Omega^{1}_{E/S},\, J\,\mathcal{O}_{E})\bigr)\bigr)\).
+\end{enumeratea}
+\end{remark}
+
+\begin{remark}{2.3}
+\label{III.2.3}
+1)~By~0.16 and~0.17, condition~($i_{1}$) is automatically satisfied when
+\(Y\) is an affine scheme and
+\[
+(*)\qquad
+\left\{
+\begin{aligned}
+&\text{in case~(a), \(X\) is smooth over \(S\);}\\
+&\text{in case~(b), \(E\) is smooth and affine over \(S\).}
+\end{aligned}
+\right.
+\]
+2)~Moreover, under these conditions (\(Y\) being still supposed flat over
+\(S\), \cf~2.0), one can write in case~(a), by~2.2~a) and~(0.6.2),
+\[
+\mathrm{H}^{i}(Y,L)=\mathrm{H}^{i}(Y_{0},L_{0})
+=\mathrm{H}^{i}\bigl(Y_{0},\,
+\Lie(X_{0}/S_{0})\otimes_{\mathcal{O}_{S_{0}}}J\bigr),
+\]
+{\renewcommand{\thefootnote}{(57)}\nde{One has added what follows,
+\cf\ the N.D.E.~(31) in~0.14.}}
+and in case~(b), by~(0.14.2), 1.1.2 and~I,~5.3,
+\[
+\mathrm{H}^{i}(Y,L)
+=\mathrm{H}^{i}\bigl(Y_{0},\,
+\pi_{0*}\,\mathcal{H}\mathrm{om}_{\mathcal{O}_{E_{0}}}
+  (\Omega^{1}_{E_{0}/S_{0}},\,
+   J\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{E_{0}})\bigr).
+\]
+\end{remark}
+
+Let us now state a certain number of corollaries concerning the case where
+\(Y\) is a diagonalizable \(S\)-group (I,~4.4); one then knows
+(\loccit~5.3.3) that if \(S\) is affine,
+\(\mathrm{H}^{n}(Y,\mathcal{F})=0\) for \(n>0\) and every quasi-coherent
+\(\OS\)-module \(\mathcal{F}\). First a particular case:
+
+\begin{corollary}{2.4}
+\label{III.2.4}
+Let \(S\) be a scheme and \(S_{0}\) a closed subscheme defined by a nilpotent
+ideal. Let \(Y\) be a diagonalizable \(S\)-group and let:
+\begin{enumeratea}
+\item \(X\) an \(S\)-group locally of finite presentation over \(S\),
+\item \(X=\Aut_{S}(E)\) where \(E\) is an \(S\)-scheme locally of finite
+presentation.
+\end{enumeratea}
+Let \(f\colon Y\to X\) be a morphism of \(S\)-groups such that the morphism
+\(f_{0}\colon Y_{0}\to X_{0}\) obtained by base change is the unit morphism.
+Then \(f\) is the unit morphism.
+\end{corollary}
+
+Indeed, the question is local on \(S\) and (in~(b)) on \(E\). One may
+therefore suppose \(S\) affine and (in~(b)) \(E\) of finite presentation over
+\(S\). Introducing now the closed subschemes \(S_{n}\) of \(S\) defined by
+the powers of the ideal defining \(S_{0}\), one is reduced to the case where
+\(S_{0}\) is defined by an ideal of square zero, and in this case the stated
+assertion follows from the theorem, via~2.2.
+
+In the case where one does not necessarily suppose that \(f_{0}\) is the
+unit morphism, one has:
+
+\begin{corollary}{2.5}
+\label{III.2.5}
+Let \(S\) and \(S_{0}\) be as in~2.4. Suppose moreover \(S\) affine. Let \(Y\)
+be a diagonalizable \(S\)-group, \(X\) a group \(S\)-functor and
+\(f_{0}\colon Y_{0}\to X_{0}\) a morphism of group \(S_{0}\)-functors.
+\begin{enumeratei}
+\item%
+{\renewcommand{\thefootnote}{(58)}\nde{The original stated: ``Suppose that
+one has one of the following two properties: (a)~$X$ is an $S$-group
+locally of finite presentation; (b)~$X=\Aut_{S}(E)$ where $E$ is of finite
+presentation over $S$. Then $f_{0}$ extends to a morphism of $S$-groups
+$Y\to X$ if and only if it extends to a morphism of $S$-functors
+$Y\to X$.'' and indicated: ``(i)~follows step by step from part~(ii) of the
+theorem.''. This proof does not seem sufficient: if for example
+$I^{3}=0$ and $J=I^{2}$, and if
+$f\colon Y\to X$ is a morphism of $S$-functors lifting $f_{0}$, then
+$f_{0}$ lifts to a morphism of $S_{J}$-groups
+$g_{J}\colon Y_{J}\to X_{J}$; next, does $g_{J}$ lift to a morphism of
+$S$-functors $g\colon Y\to X$? In any event, this assertion~(i) is not used
+in the sequel, where $X$ is everywhere supposed smooth over $S$.}}
+\end{enumeratei}
+\end{corollary}

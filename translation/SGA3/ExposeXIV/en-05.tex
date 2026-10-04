@@ -1,0 +1,668 @@
+By 3.10 and 5.2 a), $\mathscr D$ is representable by a smooth
+quasi-projective prescheme over $S$. Consider the subgroup $D$ of type
+(C) of $G_{\mathscr D}$ playing the universal role relative to $G/S$;
+one may then consider the functor
+$\mathscr C_D:(\Sch)^\circ_{/\mathscr D}\to\Ens$ defined in terms of
+the $\mathscr D$-group $D$ as $\mathscr C$ in terms of the $S$-group
+$G$. One then has the following result:
+
+\begin{proposition}{5.5}\label{XIV.5.5}
+Under the preceding conditions, consider $\mathscr C$ as a functor
+over the prescheme $\mathscr D$; then $\mathscr C$ is
+$\mathscr D$-isomorphic to the functor $\mathscr C_D$ ``of Cartan
+subgroups of $D$''.
+\end{proposition}
+This follows at once from the
+
+\begin{corollary}{5.6}\label{XIV.5.6}
+Let $G$ be a smooth $S$-group prescheme of finite presentation,
+and $D$ a subgroup of type (C) of $G$. Then there is a one-to-one
+correspondence between the Cartan subgroups of $G$ contained in
+$D$ and the Cartan subgroups of $D$ (more precisely, for a
+subgroup $H$ of $G$, $H$ is a Cartan subgroup of $G$ if and only
+if it is a Cartan subgroup of $D$).
+% typo?: kept as printed: the parenthesis does not repeat H subset D.
+\end{corollary}
+Indeed, this is a particular case of XII 7.9 c), taking into
+account that over an algebraically closed field a subgroup
+of type (C) of $G$ contains a Cartan subgroup of $G$.
+
+For the next section, the main result obtained here is 5.2 c)
+for $H$ a Cartan subgroup of $G$, which allows one to state
+5.5 and thus provides a useful ``d\'evissage'' of $\mathscr C$.
+
+\sgasection{6}{Applications to the structure of algebraic groups}
+\begin{theorem}{6.1}\label{XIV.6.1}
+Let $G$ be a smooth algebraic group over a field $k$. Consider
+the scheme $\mathscr T$ of maximal tori of $G$, isomorphic to
+the scheme $\mathscr C$ of Cartan subgroups of $G$, which is
+a homogeneous space under $G^0$, and a smooth connected affine
+algebraic scheme (XII 7.1 d)). Then $\mathscr C$ is a rational
+variety, i.e. the field of rational functions on $\mathscr C$
+is a pure extension of $k$.
+\end{theorem}
+\begin{proof}
+We shall first give the proof in the case where $k$ is
+infinite. One may clearly suppose $G$ connected, for
+$\mathscr T$, hence $\mathscr C$, does not change when
+$G$ is replaced by $G^0$. Moreover, by XII 7.6,
+$\mathscr C$ does not change when $G$ is divided by
+a central subgroup. This allows us, first dividing
+by the center of $G$, to suppose $G$ affine (XII
+6.1), then, dividing by its reductive center (XII
+4.1 and 4.4), to suppose that the reductive center
+of $G$ is trivial (XII 4.7 b)). Furthermore, we
+proceed by induction on $n=\dim G$, supposing the
+theorem proved for dimensions $n'<n$. If $G$ is
+nilpotent, then $\mathscr C$ is reduced to a point
+rational over $k$, and 6.1 is trivial. Otherwise,
+the Lie algebra of $G$ is not nilpotent (1.3),
+hence the Cartan subalgebras of $\mathfrak g$
+have dimension $n'<n$, hence the subgroups of
+type (C) of $G$ have dimension $n'<n$. Consider
+then the morphism
+\[
+ \mathscr C\longrightarrow\mathscr D
+\]
+considered in 5.5. One knows by 3.10 ($k$ being
+an infinite field, hence $\mathfrak g$ containing
+a regular element) that $\mathscr D$ is a
+rational variety, i.e. the field $K$ of rational
+functions on $\mathscr D$ is a pure extension
+of $k$. Consider the fiber of $\mathscr C$ at
+the generic point $x$ of $\mathscr D$; by 5.5
+it is the scheme of Cartan subgroups of a
+certain smooth connected algebraic group $D_x$
+over $K=\kappa(x)$ (namely $D_x=$ ``the generic
+subgroup of type (C) of $G$''). The field $L$
+of rational functions on $\mathscr C$ is
+therefore isomorphic to the field of rational
+functions on $\mathscr C_{D_x}$, which by the
+induction hypothesis (since $\dim D_x=n'<n$)
+is a pure extension of $K$. Thus by transitivity
+$L$ is a pure extension of $k$.
+
+When $k$ is finite, a different proof is needed.
+One may again suppose that $G$ is affine and
+connected. Note that $k$ is perfect; it follows
+at once that the radical $\bar R$ of $G_{\bar k}$
+is ``defined over $k$'', i.e. comes from a
+subgroup $R$ of $G$. Suppose first that
+$R\ne G$, i.e. $G$ is not solvable, and let
+\[
+ u:G\longrightarrow G'=G/R
+\]
+be the canonical morphism. Consider the
+corresponding morphism $C\mto u(C)$
+\[
+ v:\mathscr C_G\longrightarrow\mathscr C_{G'}
+\]
+(whose definition is immediate by XII 7.1 e)).
+Let $x$ be the generic point of
+$\mathscr C_{G'}$; then the fiber $v^{-1}(x)$
+is identified with the scheme of Cartan
+subgroups of $G_K$ (where $K=\kappa(x)$)
+whose image in $G'_K$ is a certain Cartan
+subgroup $C'_x$ (namely, ``the generic Cartan
+subgroup of $G'$''). It is therefore also
+the scheme of Cartan subgroups of
+$H=u_K^{-1}(C')$ (XII 7.9 c)), and since
+$K$ is here an infinite extension of $k$,
+it follows from the part of 7.1 already
+proved that the field $L$ of rational
+functions on $\mathscr C_G$, equal to
+that of $\mathscr C_H$, is a purely
+transcendental extension of $K$. To prove
+that it is a purely transcendental extension
+of $k$, it therefore suffices to prove
+that this is so for $K$, i.e. one is
+reduced to the case where $G$ is
+semisimple. One may moreover suppose
+that $G$ is adjoint (dividing $G$ by
+its reductive center). But then by
+3.18 one has $\mathscr C_G\simeq\mathscr D_G$,
+and by 3.10 it suffices to prove that
+$\mathfrak g$ admits a regular point,
+which (as was noted in 3.20) is an
+unpublished result of Chevalley\nde{Cf.
+the Appendix, by J.-P. Serre.}.
+% typo?: kept as printed: C' with no x, and reference to 7.1 rather than 6.1.
+% typo: extension transcendante pur -> extension transcendante pure.
+
+It therefore only remains to treat the
+case where $k$ is finite and $G$
+connected affine solvable. One in
+fact has a more general result:
+\begin{corollary}{6.2}\label{XIV.6.2}
+Let $G$ be a smooth solvable
+algebraic group over a field $k$;
+then the variety $\mathscr C$ of
+Cartan subgroups of $G$ is
+isomorphic to an affine space
+$\Spec k[t_1,\ldots,t_N]$.
+\end{corollary}
+One may again suppose $G$ connected
+and affine. Let $G_\infty$ be the
+smallest of the groups occurring
+in the descending central series
+of $G$ (by $G_i$ such that
+$G_{i+1}=[G,G_i]$); it is thus
+the smallest invariant algebraic
+subgroup of $G$ such that
+$G/G_\infty$ is nilpotent.
+Let $C$ be a Cartan subgroup of
+$G$ (one exists by 1.1); then
+the image of $C$ in $G/G_\infty$
+is a Cartan subgroup of it,
+and is therefore equal to
+$G/G_\infty$; consequently the
+morphism $g\mto\Ad(g)\cdot C$
+from $G_\infty$ to $\mathscr C$
+is an epimorphism, and identifies
+$\mathscr C$ with the homogeneous
+space $G_\infty/N\cap G_\infty$,
+where $N$ is the normalizer
+of $C$ in $G$ (moreover equal
+to $C$, as recalled in 4.4,
+but that does not matter here).
+Note that $U=G_\infty$ is
+clearly a smooth connected
+``unipotent'' algebraic group
+(for over the algebraic closure
+of $k$, it is contained in
+the unipotent part of $G$,
+by the known structure of
+smooth solvable affine groups,
+BIBLE 6 th. 3). When $k$ is
+perfect (the only case needed
+to establish 6.1), it follows
+very easily that $U$ is even
+$k$-unipotent, i.e. admits a
+composition series by algebraic
+subgroups $U_i$ such that
+$U_i/U_{i+1}$ is isomorphic
+to $\Ga$. In fact, Rosenlicht
+has proved that this result
+remains valid for a group
+of the form $G_\infty$ as
+above, without restriction
+on $k$ (M. Rosenlicht,
+\emph{Questions of rationality
+for solvable algebraic groups
+over non perfect fields},
+Annali di Matematica 1963,
+pp. 97--120, theorem 4 cor. 2),
+a considerably more delicate
+result which we shall admit
+here. It now suffices to
+apply the following lemma,
+doubtless well known to
+specialists:
+
+\begin{lemma}{6.3}\label{XIV.6.3}
+Let $U$ be a smooth connected
+algebraic group over a field
+$k$, $X=U/V$ a homogeneous
+space under $U$ having a
+point rational over $k$.
+Suppose $U$ $k$-unipotent.
+Then as a $k$-scheme, $X$
+is isomorphic to an affine
+space $\Spec k[t_1,\ldots,t_N]$.
+\end{lemma}
+Indeed, let $(U_i)_{0\leq1\leq n}$
+be a composition series of
+$U$ by smooth connected
+subgroups, with $U_n=(e)$,
+$U_0=U$, $U_i/U_{i+1}\simeq\Ga$,
+the $U_i$ invariant in $U$.
+Then the $K_i=U_iV$ are
+algebraic subgroups of $U$
+(not necessarily smooth
+or connected if $V$ is
+not, but that matters
+little to us), and
+$K_{i+1}$ is invariant
+in $K_i$. One has a
+canonical morphism
+$U_i/U_{i+1}\to K_i/K_{i+1}$
+which is an epimorphism,
+which proves that
+$K_i/K_{i+1}$ is either
+reduced to the unit group
+or isomorphic to
+$\Ga/H_i$, where $H_i$
+is a finite subgroup of
+$\Ga$, which by Rosenlicht
+(\loccit th. 2) implies
+that $K_i/K_{i+1}\simeq\Ga$
+(a result moreover immediate
+if $k$ is perfect).
+Set now $X_i=U/K_i$;
+let us prove by induction
+on $i$ that $X_i$ is
+isomorphic to an affine
+space. Indeed, if this
+holds for $X_i$, let
+us prove that the same
+holds for $X_{i+1}$.
+If $K_i/K_{i+1}=e$,
+one has $X_i=X_{i+1}$,
+and this is trivial.
+Otherwise, $X_{i+1}$ is
+a principal bundle with
+base $X_i$ and structural
+group
+$\Ga\simeq K_i/K_{i+1}$.
+Thus $X_i$ being affine,
+$X_{i+1}$ is a trivial
+bundle, hence isomorphic
+to $X_i\times\Ga$,
+which again proves that
+$X_{i+1}$ is isomorphic
+to a standard affine
+space. This proves 6.2
+and consequently finishes
+proving 6.1.
+% typo?: kept as printed: 0 <= 1 <= n in the subscript.
+\end{proof}
+
+\begin{corollary}{6.4}\label{XIV.6.4}
+Let $G$ be a smooth
+algebraic group over
+an infinite field $k$.
+Then the set of points
+of $\mathscr C$ (notation
+of 6.1) rational over
+$k$ is dense for the
+Zariski topology.
+The union of the
+Cartan subgroups of
+$G$ is dense in $G$.
+\end{corollary}
+The first assertion
+holds for every
+unirational variety
+over an infinite
+field, and is moreover
+here for us the most
+important ``arithmetic''
+consequence of the
+unirationality results.
+The second assertion
+follows from the
+first and from the
+density theorem XIII 2.1.
+
+\begin{corollary}{6.5}\label{XIV.6.5}
+Let $G$ be a smooth
+connected algebraic
+group over $k$.
+Then the variety $Z$
+of regular semisimple
+points of $G$ (XIII
+3.5) is a unirational
+variety. In particular,
+if $k$ is infinite,
+the set of points
+of $Z$ rational over
+$k$ is dense in $Z$.
+\end{corollary}
+Indeed, $Z$ is an
+open subset of a
+torus over
+$\mathscr C$, hence
+its function field
+$L$ is the function
+field of a torus
+defined over the
+function field $K$
+of $\mathscr C$
+(namely the ``generic
+maximal torus'' of
+$G$); it is therefore
+a unirational extension
+of $K$ (XIII 3.4),
+and since $K$ is a
+pure extension of
+$k$ by 6.1, $L$
+is a unirational
+extension of $k$.
+
+\begin{corollary}{6.6}\label{XIV.6.6}
+Let $G$ be a smooth
+connected algebraic
+group over $k$,
+and let $H$ be
+the subgroup of
+$G$ generated by
+the subvariety $Z$
+of regular semisimple
+points, i.e. (XII
+8.2) the smallest
+invariant algebraic
+subgroup of $G$
+such that $G/H$
+has reductive rank
+zero (i.e. over
+the algebraic closure
+of $k$ is an
+extension of an
+abelian variety by
+a smooth connected
+unipotent group).
+Then $H$ is a
+unirational variety.
+In particular, if
+$G=H$, i.e. (XII
+8.4) if $G$ is
+affine and if over
+the algebraic closure
+$\bar k$ there
+exists no nontrivial
+homomorphism from
+$G_{\bar k}$ to
+$\Ga$, then $G$
+is a unirational
+variety, hence if
+$k$ is infinite,
+the set of its
+points rational over
+$k$ is dense.
+\end{corollary}
+This follows at
+once from 6.5,
+for it is immediate
+that if one has
+smooth connected
+$k$-preschemes $Z_i$
+which are unirational
+varieties and
+morphisms
+$u_i:Z_i\to G$,
+then the algebraic
+subgroup of $G$
+generated by the
+$u_i$ (VI\textsubscript{B}
+7.1) is a
+unirational variety.
+
+As an interesting
+particular case of
+6.5 or 6.6 (as
+one prefers), note:
+\begin{corollary}{6.7}\label{XIV.6.7}
+Let $G$ be a smooth
+connected affine
+algebraic group of
+unipotent rank zero;
+then $G$ is a
+unirational variety.
+\end{corollary}
+One may make 6.4
+more precise as
+follows:
+\begin{corollary}{6.8}\label{XIV.6.8}
+Let $G$ be a smooth
+connected algebraic
+group over the
+infinite field $k$,
+and $C$ a Cartan
+subgroup of $G$.
+Then the union of
+the conjugates of
+$C$ by regular
+semisimple elements
+of $G(k)$ is dense
+in $G$.
+\end{corollary}
+This follows at
+once from 6.4
+and XIII 3.6,
+which says that
+the morphism
+$\varphi:Z\times C\to G$
+defined by
+$\varphi(t,c)=\ad(t)c$
+is dominant.
+This result also
+implies (without
+supposing $k$
+infinite):
+\begin{corollary}{6.9}\label{XIV.6.9}
+Let $G$ be a smooth
+connected algebraic
+group over $k$,
+$H$ a smooth
+connected algebraic
+subgroup of $G$
+such that $H$ has
+the same reductive
+rank and the same
+nilpotent rank as
+$G$ (i.e. over
+the algebraic closure
+$\bar k$ of $k$,
+$H_{\bar k}$ contains
+a Cartan subgroup
+of $G_{\bar k}$).
+If $H$ is a
+unirational variety,
+so is $G$.
+If $H(k)$ is
+dense in $H$,
+$G(k)$ is dense
+in $G$.
+\end{corollary}
+Indeed, the morphism
+$\varphi:Z\times H\to G$
+defined by
+$\varphi(t,h)=\ad(t)h$
+is dominant; now
+by 6.5, $Z$ is
+a unirational variety,
+and by hypothesis
+so is $H$, hence
+$Z\times H$, whence
+the first result.
+The second is
+proved similarly.
+
+We now recover
+the following
+well-known result
+(due to Chevalley
+in characteristic
+$0$, to Rosenlicht
+in characteristic
+$p>0$):
+\begin{corollary}{6.10}\label{XIV.6.10}
+Let $G$ be a smooth
+connected affine
+algebraic group over
+a perfect field $k$.
+Then $G$ is a
+unirational variety,
+hence if $k$ is
+moreover infinite,
+$G(k)$ is dense
+in $G$.
+\end{corollary}
+Indeed, by 1.1,
+$G$ admits a Cartan
+subgroup $C$. By
+6.9 it suffices
+to prove that the
+latter is a
+unirational variety.
+Now $k$ being
+perfect, one sees
+at once by Galois
+descent from the
+case of algebraically
+closed $k$ (BIBLE
+6 th. 2) that
+one has $C=T\times C_u$,
+where $T$ is the
+maximal torus of
+$C$ and $C_u$
+a smooth connected
+unipotent group.
+One already knows
+that $T$ is a
+unirational variety
+(XIII 3.4); it
+remains to see
+that the same
+holds for $C_u$.
+Now $k$ being
+perfect, $C_u$ is
+even $k$-unipotent,
+and one may
+apply 6.3.
+
+\begin{remarks}{6.11}\label{XIV.6.11}
+\noindent a) There
+are known examples
+(Rosenlicht) of
+twisted forms of
+$\Ga$ over an
+imperfect field
+which have only
+finitely many
+rational points,
+hence a fortiori
+are not unirational
+varieties. On the
+other hand, Chevalley
+has given an
+example of a torus
+over a field of
+characteristic zero
+which is not a
+rational variety.
+On the other hand,
+it follows from
+Chevalley's theory
+of semisimple groups
+that over an
+algebraically closed
+field, every smooth
+connected affine
+algebraic group is
+a rational variety.
+Note moreover that
+the question of
+unirationality arises
+in any event only
+for affine algebraic
+groups, a unirational
+algebraic group being
+necessarily affine
+by Chevalley's
+structure theorem.
+
+\noindent b) With
+the notation of
+6.6, it is tempting
+to try to give
+a condition of
+unirationality of
+$G$ in terms of
+the group $G/H$
+(which is unipotent
+if $G$ is assumed
+affine). The latter
+must clearly be
+unirational; is
+this condition also
+sufficient? Note
+that an example
+of Rosenlicht
+(\loccit) shows
+that a smooth
+connected unipotent
+algebraic group $U$
+can be a rational
+variety without
+being $k$-unipotent.
+
+\noindent c) It
+would be interesting
+to study, over a
+finite field $k$,
+questions of the
+``density'' type,
+such as the
+following (raised
+by Rosenlicht):
+Let $G$ be a
+smooth connected
+algebraic group
+over $k$; is $G$
+then generated by
+its Cartan subgroups%
+{\renewcommand{\thefootnote}{*}\footnote{This
+question has since
+been answered
+in the affirmative
+by Steinberg.}\addtocounter{footnote}{-1}}%
+\nde{Having been unable to identify this result in the
+\emph{Collected Papers} of R. Steinberg, let us give a proof based
+on the Bruhat decomposition. Let $G/k$ be a semisimple group
+defined over the finite field $k$. One must show that $G$ is
+generated by its $k$-Cartan subgroups. This question is stable
+under central isogeny and restriction of scalars; one is
+therefore reduced to the case where $G$ is geometrically
+simple (in the same way as in lemma 1 of the appendix below).
+Denote by $G^\sharp$ the subgroup of $G$ generated by its
+$k$-subtori. The group $G$ is quasi-split (Lang) and therefore
+admits a Killing pair $(T,B)$. By definition, one has
+$T\subset G^\sharp$; in particular $T$ normalizes $G^\sharp$.
+The big cell $R_u(B^-)\,T\,R_u(B)$ of $G$ indicates that it
+suffices to verify that $R_u(B)\subset G^\sharp$. Let $S$ be
+the maximal split $k$-torus of $T$. One considers the relative
+root system $\Phi(G,S)$ and a base $\Delta_k$. Given
+$\alpha\in\Phi(G,S)$, one denotes by $U_{(\alpha)}$ the unipotent
+subgroup associated to $\alpha$ (cf. A. Borel, \emph{Linear
+Algebraic Groups}, second edition (1991), Springer, Prop.
+21.9). Since the $k$-group $R_u(B)$ is generated by the
+unipotent $k$-groups $U_{(\alpha)}$ ($\alpha\in\Delta_k$), one
+is reduced to verifying that $U_{(\alpha)}\subset G^\sharp$.
+A glance at the classification shows that there exists a
+semisimple group $G_\alpha$ of quasi-split type $A_1$, ${}^2A_1$,
+${}^3A_1$ or ${}^2A_2$ such that $U_{(\alpha)}\subset G_\alpha\subset G$.
+It is therefore permissible to suppose that $G=\PGL_2$ or
+$G=\operatorname{SU}_3(K)$, where $K$ denotes the unique quadratic
+field extension of $k$. The group $\PGL_2^\sharp$ containing the
+standard split torus $T$, the possibilities up to conjugacy
+under $G(k)$ are the following: $\PGL_2^\sharp=T$,
+$\PGL_2^\sharp=B$, or $\PGL_2^\sharp=\PGL_2$. The case
+$\PGL_2^\sharp=T$ is excluded since $\PGL_2^\sharp$ contains
+the $k$-torus $R_{K/k}(\Gm)/\Gm$. The preceding discussion
+indicates that if $\PGL_2^\sharp=B$, then $\PGL_2^\sharp=\PGL_2$.
+One therefore has $\PGL_2^\sharp=\PGL_2$. If
+$G=\operatorname{SU}_3(K)$, $\Delta_k=\{\alpha\}$ and the
+possibilities for $G^\sharp$ (up to conjugacy) are the
+following: $G^\sharp=T$, $G^\sharp=B$,
+$G^\sharp=U_{(2\alpha)}\rtimes T$,
+$G^\sharp=\langle U_{(2\alpha)},U_{(-2\alpha)},T\rangle=\SL_2\cdot T$,
+or $G^\sharp=G$. The case $G^\sharp=B$ is excluded as for
+$\PGL_2$. The case $\SL_2\cdot T$ is excluded because
+$G^\sharp$ contains the $k$-torus
+$R^1_{K/k}\bigl(R^1_{K_3/K}(\Gm)\bigr)$, $K_3/K$ denoting the
+extension of degree $3$ of $K$, and the isogeny class of
+this torus is irreducible. Moreover, this torus also
+excludes the cases $G^\sharp=T$ and
+$G^\sharp=U_{(2\alpha)}\rtimes T$. One concludes that $G^\sharp=G$.}?
+
+In this question, one can reduce to the case of affine $G$,
+by dividing by the center. The answer would be affirmative
+in the semisimple case if one could make the result of
+Chevalley on existence of regular points mentioned in 3.20
+more precise, so as to obtain a regular element of
+$\mathfrak g$ which does not belong to $\mathfrak h=\Lie(H)$,
+where $H$ is a smooth algebraic subgroup of $G$ with
+$H\ne G$ given in advance ($G$ an adjoint semisimple group
+over the finite field $k$).
+\end{remarks}

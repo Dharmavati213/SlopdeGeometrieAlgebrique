@@ -1,0 +1,162 @@
+To construct $S'$, one simply takes a system $g_1,\ldots,g_n$ of sections of $\OX$ on a neighborhood of $x$ that induce at $x$ a regular system of parameters of the local ring of the fiber $X_s$ at $x$; the subscheme $S'$ defined by the $g_i$ is then étale over $S$ at $x$, and, provided one shrinks $S'$, it will therefore be étale over $S$.
+
+We shall use 1.10 when $\kappa(x)=\kappa(s)$, \ie $x$ is rational over $\kappa(s)$, \ie $x$ can be considered as a section of $X_s$ over $\Spec(\kappa(s))$. Then 1.10 has the nature of a theorem on extending sections (after an étale extension of the base). It takes a particularly simple form in the following special case:
+\begin{corollary}{1.11}\label{XI.1.11}
+Under the conditions of 1.10, suppose that $S$ is the spectrum of a henselian local ring, and that $\kappa(x)=\kappa(s)$. Then there exists a section of $X$ over $S$ passing through $x$ (uniquely determined if $X$ is even étale over $S$ at $x$).
+\end{corollary}
+Indeed, since $S$ is henselian, it follows under the conditions of 1.10 that $S'$ contains an open subscheme that is finite over $S$ and whose fiber at $s$ is reduced to $x$. Since it is étale over $S$, it follows that it is isomorphic to $S$, whence the conclusion.---One will note that when $S$ is the spectrum of a complete local ring, 1.10 or 1.11 is more or less equivalent to the classical ``Hensel's lemma'', and it sometimes happens that it is referred to by this name.
+
+\sgasection{2}{Examples of formally smooth functors drawn from the theory of groups of multiplicative type}
+We shall interpret, in the language introduced in the preceding \No, the results stated in IX~3 concerning infinitesimal extensions of a homomorphism from a group of multiplicative type (consequences of the vanishing of the Hochschild cohomology of such a group, established in Exposé~I).
+\begin{proposition}{2.1}\label{XI.2.1}
+Let $S$ be a prescheme, $H$ a group of multiplicative type over $S$, $G$ an $S$-group prescheme smooth over $S$; consider the functor over $S$
+\[
+M_H=\uHom_{S\text{-gr}}(H,G)
+\]
+(whose value at $S'$ over $S$ is the set of homomorphisms of $S'$-groups from $H_{S'}$ to $G_{S'}$). This functor is formally smooth over $S$.
+\end{proposition}
+\Cf IX~3.6. More generally:
+\begin{corollary}{2.2}\label{XI.2.2}
+Let $S,G$ be as above, consider a homomorphism $u:H_1\to H_2$ of group schemes of multiplicative type over $S$, whence, with the preceding notation, a morphism of functors over $S$:
+\[
+M_{H_2}\to M_{H_1}\qquad(M_{H_i}=\uHom_{S\text{-gr}}(H_i,G)),
+\]
+given by $w\mto w\circ u$. This homomorphism is formally smooth.
+\end{corollary}
+Indeed, by definitions 1.6, this is equivalent to the following statement: when $S$ is affine, $S_0$ a subscheme defined by a nilpotent ideal, let
+\[
+v:H_1\to G
+\]
+be a homomorphism of $S$-groups, and
+\[
+w_0:(H_2)_{S_0}\to G_{S_0}
+\]
+a homomorphism of $S_0$-groups such that $w_0u_{S_0}=v_{S_0}$; there then exists a homomorphism of $S$-groups
+\[
+w:H_2\to G
+\]
+extending $w_0$, and such that $wu=v$. To see this, one first extends $w_0$ to a homomorphism of $S$-groups $w':H_2\to G$, which is possible by 2.1; consider then $v'=w'u:H_1\to G$, which satisfies $v'_{S_0}=v_{S_0}$ by the hypothesis on $w_0$; thus, by VIII~3.6, there exists an element $g$ of $G(S)$, whose image in $G(S_0)$ is the identity element, and such that $v=\operatorname{int}(g)v'$, whence $v=(\operatorname{int}(g)w')u$, and it will therefore suffice to take $w=\operatorname{int}(g)w'$.
+% typo?: reference VIII 3.6 kept as printed.
+
+\begin{corollary}{2.3}\label{XI.2.3}
+With the notation of 2.1, consider $M_H=M$ as a functor with group of operators $G$ ($G$ acting by $(v,g)\mto\operatorname{int}(g)\circ v$). Then the corresponding morphism
+\[
+R:G\times_S M\to M\times_S M
+\]
+defined by $(g,v)\mto(\operatorname{int}(g)\circ v,v)$ is a formally smooth morphism.
+\end{corollary}
+By means of a base change $S'\to S$, this is equivalent to the following statement:
+\begin{corollary}{2.4}\label{XI.2.4}
+With the notation of 2.1, let $v_1,v_2:H\to G$ be two morphisms of $S$-groups, let $\uTransp(v_1,v_2)$ be the subfunctor of $G$ formed by the $g$ such that $\operatorname{int}(g)\circ v_1=v_2$. Then this functor is formally smooth over $S$. In particular (if $v_1=v_2=v$) the functor $\uCentr(v)$, a subgroup of $G$ formed by the $h$ such that $\operatorname{int}(h)v=v$, is formally smooth over $S$.
+\end{corollary}
+(N.B. The pair $(v_1,v_2)$ can be considered as a section over $S$ of the second member in the morphism $R$ of 2.3, and $\uTransp(v_1,v_2)$ as the inverse image functor of the said section under $R$). Statement 2.4 itself is equivalent to the following: when $S$ is affine and $S_0$ is a subscheme of $S$ defined by a nilpotent ideal, for every $g_0\in G(S_0)$ such that $\operatorname{int}(g_0)(v_1)_{S_0}=(v_2)_{S_0}$, $g_0$ extends to a $g\in G(S)$ such that $\operatorname{int}(g)v_1=v_2$. To prove it, one first extends $g_0$ to a section $g'$ of $G$ over $S$, which is possible since $G$ is smooth over $S$; one puts $v'_2=\operatorname{int}(g')v_1$, notes that $v_2$ and $v'_2$ have the same restriction over $S_0$, so by the result IX~3.6 already invoked there exists a $g''\in G(S)$ inducing the identity section on $S_0$ and such that $v_2=\operatorname{int}(g'')v'_2$, whence $v_2=\operatorname{int}(g'')\operatorname{int}(g')v_1=\operatorname{int}(g''g')v_1$, so it suffices to take $g=g''g'$.
+
+\begin{proposition}{2.1 bis}\label{XI.2.1bis}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme smooth over $S$; consider the functor $M:\Sch^\circ_{/S}\to\Ens$:
+\[
+M(S')=\text{set of subgroups of multiplicative type of }G_{S'}.
+\]
+Then $M$ is formally smooth over $S$.
+\end{proposition}
+\Cf IX~3.6 bis.
+\begin{corollary}{2.2 bis}\label{XI.2.2bis}
+Let $n$ be an integer, and consider the morphism of functors
+\[
+\varphi_n:M\to M
+\]
+defined by
+\[
+\varphi_n(H)={}_nH=\Ker(n\cdot\mathrm{id}_H).
+\]
+Then $\varphi_n$ is a formally smooth morphism. If for every integer $p>0$, $M_p$ denotes the subfunctor of $M$ such that $M_p(S')$ is the set of subgroups $H$ of multiplicative type of $G_{S'}$ such that ${}_pH=H$, then the morphism induced by $\varphi_n$:
+\[
+M_{np}\to M_n
+\]
+is formally smooth.
+\end{corollary}
+The second assertion is trivially contained in the first and is included only for the convenience of a later reference. The proof of the first is analogous to that of 2.2, invoking this time IX~3.6 bis.
+\begin{corollary}{2.3 bis}\label{XI.2.3bis}
+With the notation of 2.1 bis, consider $M$ as a functor with group of operators $G$ ($G$ acting by $(g,H)\mto\operatorname{int}(g)(H)$). Then the corresponding morphism
+\[
+R:G\times_S M\to M\times_S M
+\]
+defined by $(g,v)\mto(\operatorname{int}(g)v,v)$ is formally smooth.
+\end{corollary}
+This is equivalent to the following statement:
+\begin{corollary}{2.4 bis}\label{XI.2.4bis}
+With the notation of 2.1 bis, let $H_1,H_2$ be two subgroups of multiplicative type of $G$, and let $\uTransp_G(H_1,H_2)$ be the subfunctor of $G$ formed by the $g$ such that $\operatorname{int}(g)H_1=H_2$. Then this functor is formally smooth over $S$. In particular, if $H_1=H_2=H$, the subfunctor $\uNorm_G(H)$ of $G$, the normalizer of $H$, is formally smooth over $S$.
+\end{corollary}
+The proof is analogous to that of 2.4, again invoking IX~3.6 bis.
+\begin{proposition}{2.5}\label{XI.2.5}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme smooth over $S$, $K$ a sub-$S$-group prescheme, smooth over $S$ or of multiplicative type, $H$ an $S$-group prescheme of multiplicative type, $u:H\to G$ a homomorphism of $S$-groups, and denote by $\uTransp_G(u,K)$ the subfunctor of $G$ whose value, at an $S'$ over $S$, is formed by the $g\in G(S')$ such that $\operatorname{int}(g)u_{S'}:H_{S'}\to G_{S'}$ factors through $K_{S'}$. Then this functor is formally smooth over $S$.
+\end{proposition}
+The proof is analogous to that of 2.2, invoking IX~3.6 and X~2.1 (the latter in the case where $K$ is of multiplicative type).
+
+\sgasection{3}{Auxiliary representability results}
+\begin{proposition}{3.1}\label{XI.3.1}
+Let $F\to S$ be a functor over the prescheme $S$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $F$ is representable, and $F\to S$ is an open immersion (one also says simply that $F\to S$ is an open immersion).
+\item $F$ is a sheaf for the faithfully flat quasi-compact topology, ``commutes with inductive limits of rings'', $F\to S$ is a monomorphism, and finally the following condition holds: for every local prescheme $S'$ over $S$, with residue field $k$, and every $S$-morphism $\Spec(k)=S'_0\to F$, there exists an $S$-morphism $S'\to S$ extending it.
+% typo?: S' to S kept as printed.
+\item (When $S$ is locally noetherian). $F$ is a sheaf for the faithfully flat quasi-compact topology, ``commutes with inductive limits of rings'', ``commutes with adic projective limits of artinian local rings'', $F\to S$ is a monomorphism, and is infinitesimally étale (\cf 1.8).
+\end{enumeratei}
+\end{proposition}
+Let us first clarify two points of terminology.
+\begin{remark}{3.2}\label{XI.3.2}
+One says that a functor\nde{Contravariant.} $F$ over $S$ ``commutes with inductive limits (understood: filtered) of rings'' if for every filtered projective system $(S'_i)_{i\in I}$ of affine $S$-schemes over an affine open subset of $S$, with rings $A'_i$, the natural homomorphism
+\begin{equation}\tag{*}
+\varinjlim_i F(S'_i)\to F(S')\quad
+\bigl(\text{where }S'=\Spec A',\ A'=\varinjlim_i A'_i\bigr)
+\end{equation}
+is bijective. One will note that $S'$ is nothing other than the projective limit of $(S'_i)$ in the category of preschemes (and even of all ringed spaces), so the condition considered has the nature of a right exactness condition (commutation with certain inductive limits in $\Sch^\circ_{/S}$), just like the condition of being a sheaf for some topology. One should take care that the condition considered is essentially \emph{relative}, \ie involves the morphism $F\to S$ and not only the functor $F:\Sch^\circ\to\Ens$; precisely, in (*) $F(S'_i)$ and $F(S')$ denote $\Hom_S(S'_i,F)$, $\Hom_S(S',F)$. Thus, when $F$ is representable, the condition considered means that $F$ is locally of finite presentation over $S$. (And we have used several times, in the last two exposés, the fact that a functor represented by an $S$-prescheme locally of finite presentation commutes with inductive limits of rings).
+\end{remark}
+\begin{remark}{3.3}\label{XI.3.3}
+One says that a functor\footnotemark[2] $F$ over $S$ \emph{commutes with adic projective limits of artinian local rings} if for every $S'$ over $S$ that is the spectrum of a complete noetherian local ring $A'$, putting $S'_n=\Spec(A'/\operatorname{rad}(A')^{n+1})$, the natural map
+\begin{equation}\tag{xx}
+F(S')\to\varprojlim_n F(S'_n)
+\end{equation}
+is bijective. One will note that this condition, which has the nature of a left exactness condition, is \emph{satisfied whenever $F$ is representable}. One sees easily that, unlike the condition of commutation with inductive limits of rings, it is intrinsic to $F$ as an element of $\Ob(\widehat{\Sch})$, \ie does not involve the morphism $F\to S$.
+\end{remark}
+\begin{remark}{3.4}\label{XI.3.4}
+Let $F$ be a functor over $S$ that is a sheaf for the Zariski topology, or, as one also says, that is ``of a local nature''. (For this it suffices that $F$ be a sheaf for a finer topology, such as the faithfully flat quasi-compact topology). Let $(S_i)$ be a covering of $S$ by open subsets; then one verifies easily (by a method of gluing pieces) that $F$ is representable if and only if the $F_i=F\times_S S_i$ are, which allows one, for example, to reduce to the case where $S$ is affine. Suppose that the functor $F$ of a local nature commutes with inductive limits of rings. Then, for $F$ to be representable, it is necessary and sufficient that its restriction to the category of preschemes locally of finite presentation over $S$ be representable. The ``necessary'' was pointed out in 3.2, the ``sufficient'' amounts to this: if $X$ is a prescheme locally of finite presentation over $S$ and $X\to F$ a morphism such that, for every $S'$ locally of finite presentation over $S$, the induced morphism
+\[
+\Hom_S(S',X)\to\Hom_S(S',F)
+\]
+is bijective, then $X\to F$ is an isomorphism. Now this follows easily from the fact that $X$ and $F$ are two functors of a local nature that commute with inductive limits of rings.
+\end{remark}
+
+Let us now prove 3.1. The implications (i) $\Rightarrow$ (ii) and (i) $\Rightarrow$ (iii) are obvious; let us prove the converse implications.
+
+One has (ii) $\Rightarrow$ (i). Indeed, let $U$ be the set of $s\in S$ such that the canonical monomorphism $\Spec(\kappa(s))\to S$ factors through $F$. By the last condition (ii), for every $s\in U$, the canonical monomorphism $\Spec(\OO_{S,s})\to U$ factors through $F$. Noting that $\OO_{S,s}$ is the inductive limit of the rings of the affine neighborhoods of $s$, it follows from the fact that $F$ commutes with inductive limits of rings that for every $s\in S$, there exists an open neighborhood $U^s$ such that the canonical immersion $U^s\to S$ factors through $F$. This implies $U^s\subset U$, so $U$ is open. Since $F\to S$ is a monomorphism, and $F$ is of a local nature, the $S$-morphisms $U^s\to F$ glue in the $U^s\cap U^{s'}$ ($s,s'\in U$), hence come from an $S$-morphism $U\to F$. It remains to prove that this is an isomorphism, hence that every $S$-morphism $S'\to F$ factors uniquely through $U$ (where $S'$ is an $S$-prescheme). Since $F\to S$ and $U\to S$ is a monomorphism, it amounts to the same thing to say that the structural morphism $S'\to S$ factors through $U$, which reduces us to the case where $S'$ is the spectrum of a field, hence reduced to a single point $s'$. Let $s$ be the point of $S$ below $s'$; I say that the $S$-morphism $S'\to F$ factors through $\Spec(\kappa(s))=S_0\to F$ (which implies $s\in U$ and will prove what we want).
+% typo?: "for every s in S" and Spec(O_{S,s}) to U kept as printed.
+
+It amounts to the same thing, since $S'\to S_0$ is covering for fpqc and $F$ is a sheaf for this topology, that the two composites
+\[
+S''=S'\times_{S_0}S'\rightrightarrows S'\to F
+\]
+are the same, which follows from the fact that $F\to S$ is a monomorphism.
+
+One has (iii) $\Rightarrow$ (ii) (when $S$ is locally noetherian). It suffices to prove the last condition of (ii), and moreover (by the preceding proof) it suffices to do so when $S'$ is of the form $\Spec(\OO_{S,s})$, with $s\in S$. Let $A=\OO_{S,s}$, $A_n=A/\mathfrak m^{n+1}$, $S_n=\Spec(A_n)$; it then follows from the hypothesis that $F\to S$ is infinitesimally smooth that the given morphism $S_0\to F$ extends to morphisms $S_n\to F$. Since $F\to S$ is a monomorphism, one thus obtains an element of $\varprojlim_n F(S_n)$, and since $F$ commutes with adic projective limits of artinian local rings, the $S_n\to F$ come from a morphism $\Spec(\widehat A)=\widehat S'\to F$. Since $F\to S$ is a monomorphism, $F$ a sheaf for fpqc, and $\widehat S'\to S'$ covering for the said topology, this morphism $\widehat S'\to F$ factors through $S'\to F$, which completes the proof.
+
+\begin{proposition}{3.5}\label{XI.3.5}
+Let $S$ be a locally noetherian prescheme, $F\to S$ a functor over $S$, $(X_i,u_i)_{i\in I}$ a family of $S$-morphisms $u_i:X_i\to F$, where the $X_i$ are preschemes locally of finite type over $S$. Suppose the following conditions hold:
+\begin{enumerate}[label=\alph*)]
+\item $F$ is a sheaf for the faithfully flat quasi-compact topology, commutes with inductive limits of rings, commutes with adic projective limits of artinian local rings.
+\item The $u_i:X_i\to F$ are monomorphisms, and are infinitesimally étale (\cf 1.8).
+\item The family of $u_i$ is ``set-theoretically surjective''.
+\end{enumerate}
+Under these conditions, $F$ is representable by a prescheme locally of finite type over $S$ (and the $u_i$ are open immersions, which make the family of $X_i$ an open covering of $F$).
+\end{proposition}
+\begin{remark}{3.6}\label{XI.3.6}
+Proceeding as at the end of remark 1.7, one defines, for every functor $F:\Sch^\circ\to\Ens$, an ``underlying set'' $\operatorname{ens}(F)$ as a quotient set of the set of points of $F$ with values in fields (for the equivalence relation specified in 1.7). When $F$ is representable by $X$, one indeed recovers the underlying set of $X$. Obviously $\operatorname{ens}(F)$ depends functorially on $F$, so if $G\to F$ is a morphism of functors, one can say that this morphism is set-theoretically surjective if the induced map $\operatorname{ens}(G)\to\operatorname{ens}(F)$ is surjective. This therefore also means that every point of $F$ with values in a field $k$ ``comes from'' a point of $G$ with values in a suitable extension of $k$. This definition extends at once to the case of a family of morphisms $G_i\to F$, which specifies the meaning of c).
+\end{remark}
+
+Let us prove 3.5. For this, introduce, for $(i,j)\in I\times I$,
+\[
+X_{i,j}=X_i\times_F X_j,
+\]
+and consider the projections
+\[
+v_{i,j}:X_{i,j}\to X_i\quad\text{and}\quad w_{i,j}:X_{i,j}\to X_j.
+\]

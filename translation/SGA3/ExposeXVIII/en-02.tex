@@ -1,0 +1,735 @@
+% French PDF pp. 7--12; final sentence completed on p. 13.
+Thus it suffices to prove that
+\(\mathrm{pr}_2((a\times U')\cap V)\)
+is dense in \(G\), that is, nonempty,
+which is clear since \(a\in U'=\mathrm{pr}_1 V\).
+\end{proof}
+
+\sgasection{3}{Construction of a group from a rational law}
+\numpara{3.0}\label{XVIII.3.0}
+Suppose that a prescheme \(X/S\) and a rational map
+\(X\times_S X\to X\) over \(S\) are given,
+and seek a group \(G/S\) and a map birational relative
+to \(S\)\nde{Make explicit the notion of birational
+map (relative to \(S\)), perhaps in an addition 1.5.2?}
+\[
+X\dashrightarrow G
+\]
+which commutes with the composition laws.
+We treat only the case where \(X/S\) satisfies
+the following hypothesis:
+\[
+\begin{gathered}
+X/S\text{ is faithfully flat, of finite presentation,}\\
+\text{and has separated fibers \og without embedded components\fg.}
+\end{gathered}\tag{$\diamond$}
+\]
+(Note that the last two hypotheses are properties
+true for a group prescheme.\nde{Cf. VIA,
+to be specified\ldots})
+
+We shall often suppress the symbol \(S\)
+in fibered products.
+Let \(X/S\) be a prescheme having properties
+(\(\diamond\)) above, and let \(W\) be a
+subprescheme of finite presentation of
+\(X\times X\times X\) having the following property:
+\[
+\begin{gathered}
+\text{The three morphisms }W\to X\times X
+\text{ given by the projections of }X^3\text{ onto }X^2\\
+\text{are open immersions schematically dense relative to }S.
+\end{gathered}\tag{*}
+\]
+\begin{enoncerm}{Notations}{}
+We shall use the following terminology:
+given sections \(a,b,c\in X(S')\), with
+\(S'\to S\) arbitrary, such that
+\((a,b,c)\in W(S')\), we write:
+\[
+c=ab,\qquad b=a^{-1}c,\qquad a=cb^{-1}.
+\]
+\end{enoncerm}
+\begin{definition}{3.0.1}\label{XVIII.3.0.1}
+\nde{The numbering 3.0.1 and 3.0.2 has been introduced.}
+We say, given a section \((a,b)\in X^2(S')\),
+that \(ab\) is defined if and only if
+there exists a section \(c\in X(S')\)
+such that \((a,b,c)\in W(S')\),
+i.e. if and only if \((a,b)\) is in
+\(\mathrm{pr}_{12}W(S')\).
+Similarly, saying that \(a^{-1}b\) or
+\(ab^{-1}\) is defined has the analogous
+meaning, and one also extends this
+terminology to products of several factors.
+% typo: "a la significations" -> "a la signification".
+\end{definition}
+\begin{remark}{3.0.2}\label{XVIII.3.0.2}
+Let us immediately note the following fact:
+by (i), \(W\) defines a rational map
+\(X^2\to X\) over \(S\) (that given by
+\((a,b)\mapsto ab\)).
+It may well happen that this rational
+map has a domain of definition larger
+than \(\mathrm{pr}_{12}W\).
+Nevertheless, we say that \(ab\) is
+defined only if \((a,b)\in\mathrm{pr}_{12}W(S')\).
+% typo?: reference (i) retained as printed.
+\end{remark}
+\begin{definition}{3.1}\label{XVIII.3.1}
+A \emph{group germ} is a prescheme \(X/S\)
+having properties (\(\diamond\)) above,
+and a subprescheme \(W\) of \(X\times X\times X\)
+of finite presentation having the following properties:
+
+(i) \(W\) satisfies property (*) above.
+
+(ii) For every section \(a\in X(S)\), the sets
+\[
+\begin{aligned}
+\mathrm{pr}_i((a\times X\times X)\cap W),&\qquad i=2,3,\\
+\mathrm{pr}_i((X\times a\times X)\cap W),&\qquad i=3,1,\\
+\mathrm{pr}_i((X\times X\times a)\cap W),&\qquad i=1,2,
+\end{aligned}
+\]
+are schematically dense in \(X\)
+relative to \(S\), and this statement
+remains true after every base change
+\(S'\to S\).
+(Hypothesis (i) implies that these
+sets are open subsets of \(X\).)
+Intuitively, this means that
+\og \(ax\) is defined for sufficiently
+general \(x\)\fg, etc.
+
+(iii) The law is \emph{associative},
+that is, if \((a,b,c)\in X^3(S')\),
+with \(S'\to S\) arbitrary, is such
+that \((ab)c\) and \(a(bc)\) are
+defined, one has \((ab)c=a(bc)\).
+\end{definition}
+\begin{remarks}{}
+(a) In (i), one may replace the
+condition that \(W\) be schematically
+dense in \(X^2\) relative to \(S\)
+by the condition that, for every
+\(s\in S\), the fiber \(W_s\) be
+dense in \(X_s^2\) in the topological
+sense, thanks to the hypotheses on \(X\) and to 1.2.
+
+(b) Condition (iii) is equivalent
+to the following:
+let \(V_1\) (resp. \(V_2\)) be the
+open subset of \(X^3\) where the
+rational map \((a,b,c)\mapsto a(bc)\)
+(resp. \((a,b,c)\mapsto(ab)c\))
+is defined.
+{\renewcommand{\thefootnote}{(*)}\addtocounter{footnote}{-1}%
+\footnote{In the sense explained in 3.0.1;
+one could also replace these open subsets
+by the domains of definition (cf. 1.5)
+of the rational maps under consideration.}}
+Then there exists an open subset
+\(V\subseteq V_1\cap V_2\) schematically
+dense in \(X^3\) relative to \(S\)
+such that the two preceding maps
+agree on \(V\).
+This is a consequence of 1.4,
+since, of course, \(V_1,V_2\)
+are schematically dense in \(X^3\)
+relative to \(S\).
+
+(c) Hypothesis (ii) will serve
+below to ensure that \(X\) will
+be a subobject of the group
+prescheme which it defines.
+In many cases, one can deduce
+(ii) from (i), provided that
+one replaces \(X\) by a relatively
+schematically dense open subset
+\(X'\), and \(W\) by a relatively
+schematically dense open subset
+of \(W\cap X'^3\).
+In fact, one has:
+\end{remarks}
+\begin{proposition}{3.2}\label{XVIII.3.2}
+Suppose that each geometric fiber
+of \(X/S\) is irreducible, and
+let \(W\) be a subprescheme of
+\(X^3\) satisfying condition
+(i) of 3.1.
+Then there exists a relatively
+schematically dense open subset
+\(X'\) of \(X\), and a relatively
+schematically dense open subset
+\(W'\) of \(W\cap(X'\times X')\),
+such that the pair \((X',W')\)
+satisfies conditions (i) and (ii).
+If (iii) holds for \((X,W)\),
+it holds for \((X',W')\).
+% typo?: W intersect (X' times X') retained as printed.
+\end{proposition}
+\begin{proof}
+Set \(X'=\bigcap_{i=1}^3\mathrm{pr}_i W\).
+Each \(\mathrm{pr}_i W\) is open
+in \(X\), since \(W\to X^2\)
+is an open immersion, and the
+projections \(X^2\to X\) are
+flat and of finite presentation.
+Moreover, \(\mathrm{pr}_i W\)
+is relatively schematically
+dense in \(X\), since \(W\)
+is so in \(X^2\), and the
+projections \(X^2\to X\) are
+surjective (it suffices to
+verify density in the topological
+sense). Take \(W'=W\cap X'^3\).
+
+To verify that (i) is true, note that
+\[
+\begin{aligned}
+W'&=(W\cap(X'\times X'\times X))
+\cap(W\cap(X\times X'\times X'))\\
+&\quad\cap(W\cap(X'\times X\times X')).
+\end{aligned}
+\]
+Now \(W\cap(X'\times X'\times X)
+\simeq\mathrm{pr}_{12}W\cap(X'\times X')\),
+hence is relatively schematically
+dense in \(W\).
+Similarly, the other terms of
+the right-hand member are
+relatively schematically dense
+in \(W\), and consequently
+\(W'\) is relatively schematically
+dense in \(W\).
+Thus \(\mathrm{pr}_{ij}W'\)
+is relatively schematically
+dense in \(\mathrm{pr}_{ij}W\),
+hence in \(X\times X\), hence
+in \(X'\times X'\).
+
+To verify condition (ii), let
+\(a\in X'(S')\), and write \(S'=S\).
+We must prove that, for example,
+\(\mathrm{pr}_2((a\times X'\times X')\cap W')\)
+is schematically dense in
+\(X'\) relative to \(S\).
+By 1.3, it suffices to verify
+this fiber by fiber, that is,
+it suffices to treat the case
+where \(S\) is the spectrum
+of a field, and in this case
+it suffices to verify that
+the open subset is nonempty,
+since the fibers of \(X/S\)
+are irreducible and \og without
+embedded components\fg.
+Since \(\mathrm{pr}_2((a\times X\times X)\cap W)\)
+is nonempty, \(a\) being a
+section of \(X'\), this open
+subset is dense in \(X\).
+One has
+\[
+\mathrm{pr}_2((a\times X\times X)\cap W)
+=\mathrm{pr}_2((a\times X)\cap\mathrm{pr}_{12}W).
+\]
+Thus
+\[
+\begin{aligned}
+\mathrm{pr}_2((a\times X)\cap\mathrm{pr}_{12}W)\cap X'
+ &=\mathrm{pr}_2((a\times X')\cap\mathrm{pr}_{12}W)\\
+ &=\mathrm{pr}_2((a\times X'\times X)\cap W)
+\end{aligned}
+\]
+is dense in \(X\), hence in \(X'\).
+Similarly, \(\mathrm{pr}_3(a\times X\times X'\cap W)\)
+is dense in \(X\), hence in
+\(\mathrm{pr}_3(a\times X\times X\cap W)\);
+that is, \((a\times X\times X'\cap W)\)
+is dense in \((a\times X\times X\cap W)\);
+that is, \(\mathrm{pr}_2(a\times X\times X'\cap W)\)
+is dense in \(\mathrm{pr}_2(a\times X\times X\cap W)\),
+hence dense in \(X\), hence dense in \(X'\).
+Now, since
+\[
+\begin{aligned}
+\mathrm{pr}_2(a\times X'\times X'\cap W')
+ &=\mathrm{pr}_2(a\times X'\times X'\cap W)\\
+ &=\mathrm{pr}_2(a\times X'\times X\cap W)
+\cap\mathrm{pr}_2(a\times X\times X'\cap W),
+\end{aligned}
+\]
+it is indeed dense in \(X'\),
+which is what had to be proved.
+The other assertions of (ii)
+follow by symmetry, and the
+fact that condition (iii) is
+preserved is trivial.
+\nde{The following sentence has been added.}
+Proposition 3.2 is proved.
+\end{proof}
+
+\nde{The numbering 3.2.1, as well as 3.2.2, has been added.}
+\numpara{3.2.1}\label{XVIII.3.2.1}
+Now fix a group germ \((X,W)\)
+over \(S\).
+We must make some preliminary
+remarks on the situation, which
+we have gathered below.
+We shall often use these rules
+without explicit mention in what follows.
+
+Let \(a\in X(S')\), and write \(S'=S\).
+Then one obtains a (bi)rational
+map \(\varphi\) over \(S\) from
+\(X\) to itself by associating
+to a section \(x\) the section
+\(ax\), if it is defined.
+By 3.1 (ii), the domain of
+definition of \(\varphi\)
+contains the relatively
+schematically dense open subset
+\(\mathrm{pr}_2((a\times X\times X)\cap W)\),
+and \(\varphi\) defines an
+isomorphism from this open
+subset onto the open subset
+(where \(a^{-1}x\) is defined)
+\(\mathrm{pr}_3((a\times X\times X)\cap W)\).
+This remark is generalized
+in an evident manner in Rule 1.
+
+\begin{enoncerm}{Rule}{1}\label{XVIII.rule.1}
+Let \(P=P(x,t_1,\ldots,t_n)\)
+be a \og product\fg{} of the
+symbols \(x,t_1,\ldots,t_n\),
+obtained recursively as follows:
+\(P_0=x\); \(P_{i+1}\) is one
+of the following expressions:
+\[
+P_it,\quad tP_i,\quad P_i^{-1}t,\quad
+tP_i^{-1},\quad P_it^{-1},\quad t^{-1}P_i,
+\]
+where \(t\) is one of the \(t_j\);
+\(P_r=P\).
+Let \(a_1,\ldots,a_n\in X(S')\).
+Then there exists a relatively
+schematically dense open subset
+\(U\) of \(X_{S'}\) such that
+the product \(P(x,a_1,\ldots,a_n)\)
+is defined (in the sense of
+Remark 3.0.2) for a section
+\(x\in X(S'')\) if and only
+if \(x\in U(S'')\), and the
+map \(x\mapsto P(x,(a))\)
+gives an isomorphism from
+\(U\) onto another relatively
+schematically dense open subset
+of \(X_{S'}\), denoted \(P(U,(a))\).
+\end{enoncerm}
+\begin{enoncerm}{Rule}{2}\label{XVIII.rule.2}
+Let \(a,b\in X(S')\). Then:
+
+If \(ab\) is defined, so is
+\(a^{-1}(ab)\), and \(a^{-1}(ab)=b\).
+
+If \(a^{-1}b\) is defined,
+so is \(a(a^{-1}b)\), and \(a(a^{-1}b)=b\).
+
+If \(ba^{-1}\) is defined,
+so is \((ba^{-1})a\), and \((ba^{-1})a=b\).
+\end{enoncerm}
+\begin{enoncerm}{Rule}{3}\label{XVIII.rule.3}
+Let \(a,b,b'\in X(S')\).
+If \(ab=ab'\), if \(ba=b'a\),
+if \(a^{-1}b=a^{-1}b'\), or
+if \(ba^{-1}=b'a^{-1}\), then \(b=b'\).
+Here it is understood that
+the equality relation implies
+that both sides are defined.
+\end{enoncerm}
+\begin{enoncerm}{Rule}{4}\label{XVIII.rule.4}
+Let \(a,b,c\in X(S')\).
+Then, whenever both sides are
+defined, one has
+\[
+a((ba)^{-1}c)=b^{-1}c.
+\]
+Similarly:
+\[
+\begin{gathered}
+(c(ab)^{-1})a=cb^{-1},\qquad
+a^{-1}((ab^{-1})c)=b^{-1}c,\\
+(c(b^{-1}a))a^{-1}=cb^{-1}.
+\end{gathered}
+\]
+\end{enoncerm}
+\begin{enoncerm}{Rule}{5}\label{XVIII.rule.5}
+All the following associativity
+laws are true whenever both
+sides are defined:
+\[
+\begin{gathered}
+(a^{-1}b)c=a^{-1}(bc),\qquad
+(ab^{-1})c=a(b^{-1}c),\qquad
+(ab)c^{-1}=a(bc^{-1}),\\
+(ab)^{-1}c=b^{-1}(a^{-1}c),\qquad
+(a^{-1}b)c^{-1}=a^{-1}(bc^{-1}),\\
+(ab^{-1})c^{-1}=a(cb)^{-1}.
+\end{gathered}
+\]
+\end{enoncerm}
+\numpara{3.2.2}\label{XVIII.3.2.2}
+\textbf{Verification of the rules.}
+(1) is proved by evident induction
+on the length \(r\) of \(P\),
+the case \(r=1\) being a direct
+consequence of (3.1) (ii).
+
+(2) This is trivial by definition.
+
+(3) Indeed, by Rule 2, for
+example in the first case,
+one has
+\[
+b=a^{-1}(ab)=a^{-1}(ab')=b'.
+\]
+% typo: "ona" -> "on a".
+
+(4) Let us verify, for example,
+the first relation:
+on the right-hand side,
+left multiplication by \(b\)
+is defined and gives \(c\),
+by Rule 2.
+Suppose that it is also
+defined on the left-hand side.
+Then one will have
+\[
+b(a((ba)^{-1}c))=(ba)((ba)^{-1}c)=c.
+\]
+Indeed, \((ba)\) is defined
+by hypothesis, since it occurs
+in the expression.
+Thus the middle member is
+defined and equal to \(c\)
+by Rule 2, and equal to
+the left-hand member by
+associativity (cf. 3.1 (iii)).
+Thus Rule 3 implies that
+the desired equality is true
+if this multiplication by
+\(b\) is defined.
+Now fix \(a,b\).
+Then Rule 1 implies that
+\(b(a((ba)^{-1}c))\) is indeed
+defined for \(c\) \og in\fg{}
+an open subset \(U\) of \(X\)
+relatively schematically dense;
+hence, in this relatively
+schematically dense open subset,
+the two rational maps
+\(c\mapsto b^{-1}c\) and
+\(c\mapsto a((ba)^{-1}c)\)
+are equal.
+By 1.4, they are equal on
+every common domain of
+definition, whence the desired result.
+
+(5) This is the same kind
+of argument as the preceding one.
+For example, one verifies
+\((ab^{-1})c^{-1}=a(cb)^{-1}\)
+as follows:
+if right multiplication by
+\(c\) is defined on the
+right-hand side, one has
+equality by Rule 4.
+Since it suffices to verify
+such a formula on a relatively
+schematically dense open subset,
+one is reduced to the case
+where this multiplication is
+indeed defined.
+
+\numpara{3.2.3}\label{XVIII.3.2.3}
+Now consider the relation
+\(R\) on \(X\times X\)
+obtained by setting, for
+\(a,b,a',b'\in X(S')\),
+\((a,b)\sim(a',b')\) modulo
+\(R(S')\) if and only if
+there exists an \(S'\to S\)
+covering for fppf, and a
+section \(x\in X(S')\) such
+that \((xa)b,(xa')b'\) are
+defined and equal.
+Then \(R\) is an equivalence relation.
+
+Indeed, this relation is
+evidently symmetric.
+By Rule 1, the product
+\((xa)b\) is defined if
+\(x\) is \og in\fg{} a
+suitable relatively schematically
+dense open subset.
+Thus 1.7 asserts that
+there exists an \(S'\to S\)
+covering for fppf, and
+an \(x\in X(S')\), such
+that \((xa)b\) is defined.
+The relation is therefore
+reflexive, and transitivity
+is a consequence of the
+following lemma:
+\begin{lemma}{3.3}\label{XVIII.3.3}
+Let \(x,y,a,b,a',b'\) be
+sections of \(X(S')\) such
+that \((xa)b,(xa')b',(ya)b,(ya')b'\)
+are defined.
+If \((xa)b=(xa')b'\),
+then \((ya)b=(ya')b'\).
+\end{lemma}
+Indeed, the lemma says
+that one can test
+\((a,b)\sim(a',b')\) with
+an arbitrary \(x\in X(S')\),
+\(S'\to S\) fppf-covering,
+such that both products
+are defined.
+Given \(a,b,a',b',a'',b''\in X(S)\),
+one may, by Rule 1, 1.1,
+and 1.7, find an fppf-covering
+extension \(S'\to S\) and
+a section \(x\in X(S')\)
+such that the three products
+in question are defined,
+whence transitivity.
+\begin{proof}[Proof of the lemma]
+To begin with, write formally:
+\[
+\begin{aligned}
+(za)b
+ &=(((zx^{-1})x)a)b\\
+ &=((zx^{-1})(xa))b=(zx^{-1})((xa)b),\\
+(za')b'
+ &=(((zx^{-1})x)a')b'\\
+ &=((zx^{-1})(xa'))b'=(zx^{-1})((xa')b').
+\end{aligned}
+\]
+One verifies that these
+equalities are indeed true
+if the members are defined,
+by the appropriate rules.
+\nde{To be specified\ldots}
+It follows that
+\((za)b=(za')b'\) if
+all these expressions are
+defined.
+Moreover, by Rule 1 and
+the hypotheses already made,
+these expressions are indeed
+defined if \(z\in X(S'')\)
+is in \(V(S'')\), where
+\(V\) is a certain relatively
+schematically dense open
+subset of \(X\) (we have
+taken \(S'=S\)).
+Thus the two rational
+maps from \(X\) to itself
+given by \(z\mapsto(za)b\)
+and \(z\mapsto(za')b'\)
+are equal, whence
+\((ya)b=(ya')b'\).
+\end{proof}
+\begin{lemma}{3.4}\label{XVIII.3.4}
+Consider the rational map
+\(\varphi:X^3\to X\)
+over \(S\), defined by
+\((a,b,c)\mapsto c^{-1}(ab)\).
+Let \(U\) be the domain
+of definition of \(\varphi\),
+and consider the graph
+\(\Gamma\) of the morphism
+\(f:U\to X\) induced by
+\(\varphi\), which is a
+subscheme of \(X^4\).
+Then a section
+\((a,b,c,d)\in X^4(S)\)
+is in \(\Gamma(S)\)
+if and only if \((a,b)\sim(c,d)\).
+\end{lemma}
+\begin{proof}
+First note that the
+rational map \(\varphi\)
+is the same as that given
+by the formula
+\((a,b,c)\mapsto(xc)^{-1}((xa)b)\)
+for an arbitrary section
+\(x\in X(S)\).
+It amounts to the same
+to say that
+\(c^{-1}(ab)=(xc)^{-1}((xa)b)\)
+whenever both sides are defined.
+We leave the verification
+to the reader.
+
+Let us then show that
+the map \(\varphi\) is
+defined for a section
+\((a,b,c)\in X^3(S)\)
+if and only if there
+exists \(d\) with
+\((a,b)\simeq(c,d)\),
+and that then
+\(d=\varphi(a,b,c)\).
+Indeed, suppose that
+one has \((a,b)\sim(c,d)\).
+To verify that the map
+\(\varphi\) is defined,
+one may make an fppf-covering
+base extension (Proposition 1.6),
+and may therefore suppose
+that there exists a
+section \(x\in X(S')\)
+such that \((xa)b,(xc)d\)
+are defined and equal.
+It follows (Rule 2) that
+\((xc)^{-1}((xa)b)\)
+is defined and equal to \(d\).
+
+Conversely, suppose that
+the map \(\varphi\) is
+defined at the section
+\((a,b,c)\), and let
+\(d=\varphi(a,b,c)\).
+Choose \(S'\to S\)
+fppf-covering and a
+section \(x\in X(S')\)
+such that \((xa)b,(xc)d\)
+are defined.
+We wish to show that
+they are equal.
+For this, it suffices
+to prove that the
+two rational maps over
+\(S\) from \(X\) to
+itself, given by
+\(b\mapsto(xa)b\)
+and \(b\mapsto(xc)\varphi(a,b,c)\),
+are the same, which
+follows from the remark
+in the first paragraph.
+% typo: "définieen" -> "définie en".
+\end{proof}
+\begin{proposition}{3.5}\label{XVIII.3.5}
+The equivalence relation
+\(R\rightrightarrows X^2\)
+is representable, and
+is a flat relation of
+finite presentation, that
+is, the projections
+of \(R\) onto \(X^2\)
+are flat morphisms of
+finite presentation.
+\end{proposition}
+\begin{proof}
+One may suppose \(S\) affine.
+Since \((X,W)\) is of
+finite presentation over
+\(S\), one can descend
+the entire situation to
+an \(S\) of finite type
+over \(\Spec\ZZ\),
+hence noetherian.
+We may therefore suppose
+that \(S\) is noetherian.
+Then it is trivial that
+the graph \(\Gamma\)
+of (3.4) is of finite
+presentation over \(X^2\).
+The projection
+\(\mathrm{pr}_{12}|_\Gamma\)
+is flat, since
+\(\Gamma\isomto\mathrm{pr}_{123}\Gamma\),
+which is an open subset
+of \(X^3\), and the
+projection
+\(\mathrm{pr}_{12}:X^3\to X^2\)
+is flat because \(X\)
+is flat over \(S\).
+
+I say that \(\Gamma\)
+represents \(R\).
+Note that there is
+something to prove,
+since the domain of
+definition of a rational
+map does not in general
+commute with base extensions.
+Let \(S''\to S\).
+What is clear, by
+(3.4) applied to \(S''\),
+is that
+\(R(S'')\supset\Gamma(S'')\),
+since \(\varphi\times_S S''\)
+is certainly defined on
+\(U\times_S S''\).
+Thus let
+\((a,b,c,d)\in R(S'')\).
+One must prove that
+\((a,b,c,d)\in\Gamma(S'')\).
+The verification is
+made locally for, say,
+the étale topology.
+One may therefore suppose
+that \(S''\) is strictly
+local, i.e. the spectrum
+of a henselian ring
+with separably closed
+residue field.
+Moreover, applying (1.6)
+and the customary sorites
+of passage to the limit,
+one is reduced to the
+case where \(S\) is
+strictly local and
+\(S''\to S\) is local.
+Suppose that one has
+a section \(x\in X(S)\)
+such that over \(S''\)
+the products \((xa)b,(xc)d\)
+are defined.
+This will imply that
+\((xc)^{-1}((xa)b)\)
+is defined and equal to \(d\).
+Now there exists a
+relatively schematically
+dense open subset \(V\)
+of \(X^3\) such that
+\((xc)^{-1}((xa)b)\)
+is defined if and
+only if
+\((a,b,c)\in V(S'')\),
+and one has \(V\subseteq U\).
+Thus
+\((a,b,c,d)\in\Gamma(S'')\)
+if such an \(x\) exists.
+By (1.6), one may
+make an fppf-covering
+base extension \(S'\to S\)
+to find such an \(x\).
+Since \(S\) is strictly
+local, one can
+{\renewcommand{\thefootnote}{(*)}\addtocounter{footnote}{-1}%
+\footnote{Combining Exp. VIA, 1.1.1
+and EGA IV$_4$, 17.16.2.}}
+find \(S'\to S\)
+faithfully flat, local,
+and finite, and a
+section \(x\in X(S')\)
+which \og passes through\fg{}
+an arbitrary closed
+point of the closed
+fiber of \(X/S\).
+% Proof continues in en-03.tex.

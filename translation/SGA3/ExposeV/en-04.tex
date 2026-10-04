@@ -1,0 +1,137 @@
+Consequently, denoting by $(M)$ the family of faithfully flat morphisms locally of finite presentation, $R$ is $(M)$-effective. Thus, by Exp. IV, 6.3.3, $(Y,p)$ represents the quotient sheaf of $X_0$ by $R$ for the \fppf topology, and the assertions concerning base change follow from IV, 3.4.3.1.
+\begin{remark}{5.1}\label{V.5.1}\nde{This paragraph has been added.}
+Retain the hypotheses and notation of 4.1, and further suppose $S$ locally noetherian and $\pi_0:X_0\to S$ quasi-projective. Let us then show that $\pi:Y\to S$ is quasi-projective.
+
+The hypotheses above imply that $Y\to S$ is of finite type; see the proof of 6.1 (ii). Let $\mathcal A$ be an invertible $\OO_{X_0}$-module ample for $\pi_0$. By EGA II, 6.1.12, $p_*(\mathcal A)$ is an invertible $p_*(\OO_{X_0})$-module. There therefore exists a covering $(V_i)_{i\in I}$ of $Y$ by affine open subsets such that $\mathcal A$ is trivial above each of the saturated affine open subsets $U_i=p^{-1}(V_i)$.
+% typo: printed mojibake in ``entraînent'' -> imply.
+
+For each index $i$, denote by $A_{i,0}=\OO_{X_0}(U_i)$, by $A_{i,1}$ the ring of the affine open subset $d_0^{-1}(U_i)=d_1^{-1}(U_i)$ of $X_1$, by $\delta_{i,0}$ (resp. $\delta_{i,1}$) the morphism $A_{i,0}\to A_{i,1}$ induced by $d_0$ (resp. $d_1$), and by $B_i=\OO_Y(V_i)=\{b\in A_{i,0}\mid\delta_{i,0}(b)=\delta_{i,1}(b)\}$.
+
+Following EGA II, §6.5, consider the invertible $\OO_{X_0}$-module $N_{d_1}(d_0^*(\mathcal A))$, the norm, relative to the finite locally free morphism $d_1:X_1\to X_0$, of the invertible $\OO_{X_1}$-module $d_0^*(\mathcal A)$. If $\mathcal A$ is given, relative to the covering $(U_i)_{i\in I}$, by transition functions $c_{ij}\in\OO_{X_0}(U_i\cap U_j)^\times$, then $N_{\delta_1}(d_0^*(\mathcal A))$ is given by the transition functions $N_{d_1}(\delta_0(c_{ij}))\in\OO_{X_0}(U_i\cap U_j)^\times$; since, by paragraph 4.a), these elements belong to $\OO_Y(V_i\cap V_j)^\times$, they define an invertible $\OO_Y$-module $\mathcal L$ such that $p^*(\mathcal L)=N_{d_1}(d_0^*(\mathcal A))$. Note further that, for every $n\in\NN^*$, one has $p^*(\mathcal L^n)=N_{d_1}(d_0^*(\mathcal A^n))$, cf. loc. cit., (6.5.2.1).
+
+Let us show that $\mathcal L$ is ample for the morphism $\pi:Y\to S$. To this end, replacing $S$ by an affine open subset, one can suppose $S$ affine. Let, then, $y\in Y$, $x\in X_0$ such that $p(x)=y$, $V$ an affine open subset of $Y$ containing $y$, and $U=p^{-1}(V)$. Since $\mathcal A$ is $\pi_0$-ample, there exist $n\in\NN^*$ and a section $s\in\Gamma(X_0,\mathcal A^n)$ such that the open subset $(X_0)_s$ satisfies $x\in(X_0)_s\subset U$. With the preceding notation, $s$ is given by sections $a_i\in A_{i,0}=\OO_{X_0}(U_i)$ such that $a_i=c_{ij}a_j$ on $U_i\cap U_j$, and $(X_0)_s$ is the union of the open subsets $U'_i=\{\mathfrak p\in\Spec(A_{i,0})\mid a_i\notin\mathfrak p\}$.
+% typo: printed mojibake in ``remplaçant'' -> replacing.
+
+For each index $i$, put $N(a_i)=N_{\delta_1}(\delta_0(a_i))\in B_i$. By 4.1 (i) and Lemma 4.1.1, one has:
+\[
+p(U'_i)=pd_1d_0^{-1}(U'_i)=pd_1\bigl(\{\mathfrak q\in\Spec(A_{i,1})\mid\delta_{i,0}(a_i)\notin\mathfrak q\}\bigr)
+\]
+and $d_1(\{\mathfrak q\in\Spec(A_{i,1})\mid\delta_{i,0}(a_i)\notin\mathfrak q\})=\{\mathfrak p\in\Spec(A_{i,0})\mid N_{\delta_1}(\delta_{i,0}(a_i))\notin\mathfrak p\}$, whence
+\[
+p(U'_i)=\{\mathfrak p\in\Spec(B_i)\mid N(a_i)\notin\mathfrak p\}.
+\]
+It follows that $p((X_0)_s)$ equals $Y_{N(s)}$, where $N(s)$ denotes the section of $\mathcal L^n$ on $Y$ defined by the sections $N(a_i)\in\OO_Y(V_i)$. One therefore has
+\[
+y\in p((X_0)_s)=Y_{N(s)}\subset p(U)=V.\tag{$*$}
+\]
+This shows that $\mathcal L$ is ample for $\pi:Y\to S$, which completes the proof that $\pi:Y\to S$ is quasi-projective.
+\end{remark}
+
+\sgasection{6}{Passage to the quotient when a quasi-section exists}
+We shall now prove a technical lemma which will serve us in the proof of the two theorems we have in view. Let $S$ be a scheme and
+\[
+\xymatrix{X_2\ar@<1ex>[r]^{d'_0,d'_1,d'_2}\ar[r]\ar@<-1ex>[r]&X_1\ar@<.5ex>[r]^{d_0,d_1}\ar@<-.5ex>[r]&X_0}
+\]
+a $(\mathrm{Sch}/S)$-groupoid. We shall call a quasi-section of the groupoid $X_*$ any subscheme $U$ of $X_0$ such that (1) and (2) hold:
+
+(1) The restriction $v$ of $d_1$ to $d_0^{-1}(U)$ is a finite, locally free and surjective morphism from $d_0^{-1}(U)$ onto $X_0$.
+
+(2) Every subset $E$ of $U$ consisting of points pairwise equivalent for the equivalence relation defined by $X_*$ (§3.e)) is contained in an affine open subset of $U$.\nde{If $x,y\in E$, there exists $z\in X_1$ such that $d_1(x)=x$ and $d_0(z)=y$, that is, $z$ belongs to the set $v^{-1}(x)$, which is finite by (1). Thus $E$ is contained in the finite set $d_0(v^{-1}(x))=d_0d_1^{-1}(x)\cap U$.}
+% typo?: kept as printed: the editor note writes d_1(x)=x.
+
+If $U$ is a quasi-section of $X_*$, the $(\mathrm{Sch}/S)$-groupoid
+\[
+\xymatrix{U_2\ar@<1ex>[r]^{u'_0,u'_1,u'_2}\ar[r]\ar@<-1ex>[r]&U_1\ar@<.5ex>[r]^{u_0,u_1}\ar@<-.5ex>[r]&U}
+\]
+induced by $X_*$ and the inclusion of $U$ into $X_0$ (cf. §3.a)) satisfies the hypotheses of Theorem 4.1. Indeed, put $V=d_0^{-1}(U)$ and let $u$ and $v$ be the morphisms with source $V$ induced respectively by $d_0$ and $d_1$:
+\[
+\xymatrix{X_0&V\ar[l]_v\ar[r]^u&U.}
+\]
+By paragraph 3.b), one has a cartesian square
+\[
+\xymatrix{U_1\ar[r]\ar[d]_{u_1}&V\ar[d]^v\\U\ar[r]_{\text{inclusion}}&X_0,}
+\]
+so $u_1$ is surjective and finite locally free by (1). Together with (2), condition (1) therefore ensures that the groupoid $U_*$ satisfies the hypotheses of Theorem 4.1. In particular, $\Coker(u_0,u_1)$ exists in $(\mathrm{Sch}/S)$. Moreover, $d_0$ has a section, so $u$ is an effective universal epimorphism (cf. III 1.12); it follows, by Proposition 3.1, that $\Coker(u_0,u_1)$ coincides with the cokernel $\Coker(v_0,v_1)$ of the groupoid $V_*$:
+\[
+\xymatrix{V_2\ar@<1ex>[r]^{v'_2}\ar[r]^{v'_1}\ar@<-1ex>[r]_{v'_0}&V_1\ar@<.5ex>[r]^{v_1}\ar@<-.5ex>[r]_{v_0}&V,}
+\]
+the inverse image of $U_*$ by the base change $u:V\to U$, that is, also the inverse image of $X_*$ by the base change:
+\[
+\xymatrix{V\ar[r]^{\text{inclusion}}&X_1\ar[r]^{d_0}&X_0.}
+\]
+\nde{What follows has been slightly modified; in particular, in Lemma 6.1, the additional hypothesis that $d_0$ is flat has been moved to (iv), (ii) has been split into (i') and (ii), and the second assertion of (i') has been added.}By paragraph 3.c), $V_*$ is isomorphic to the groupoid $V'_*$, the inverse image of $X_*$ by the base change:
+\[
+\xymatrix{v:\ V\ar[r]^{\text{inclusion}}&X_1\ar[r]^{d_1}&X_0,}
+\]
+and hence $V'_*$ has a cokernel in $(\mathrm{Sch}/S)$. Now, being flat, surjective and finite, $v:V\to X_0$ is faithfully flat and quasi-compact, hence an effective universal epimorphism by III 6.3.2. Consequently, by Proposition 3.1, the groupoid $X_*$ has a cokernel $\Coker(d_0,d_1)$ in $(\mathrm{Sch}/S)$. We have therefore proved the first assertion of point (i) of the following lemma:
+\begin{lemma}{6.1}\label{V.6.1}
+Suppose the $(\mathrm{Sch}/S)$-groupoid $X_*$ has a quasi-section. Then:
+\begin{enumeratei}
+\item There exists a cokernel $(Y,p)$ of $(d_0,d_1)$ in $(\mathrm{Sch}/S)$; moreover, such a $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of all ringed spaces.
+\item[(i')] $p$ is surjective, and is open (resp. universally closed) if $d_0$ is.
+\item Suppose $S$ locally noetherian and $X_0$ locally of finite type (resp. of finite type) over $S$. Then $p$ and $Y\to S$ are locally of finite presentation (resp. of finite presentation).
+\item The morphism $X_1\to X_0\times_YX_0$ with components $d_0$ and $d_1$ is surjective.
+\item If $(d_0,d_1)$ is an equivalence pair, $X_1\to X_0\times_YX_0$ is an isomorphism. Moreover, if $d_0:X_1\to X_0$ is flat, $p$ is faithfully flat.
+\end{enumeratei}
+\end{lemma}
+Before proving the second assertion of (i), we shall prove (i'), (ii) and (iii).
+
+\textbf{a)} Proof of (i') and (ii):
+
+We have just seen that $(Y,p)$ is identified with $\Coker(v_0,v_1)$ and $\Coker(u_0,u_1)$. Let, then, $q$ and $r$ be the canonical epimorphisms from $U$ and $V$ to $Y$:
+\[
+\xymatrix{X_0\ar[dr]_p&V\ar[l]_v\ar[r]^u\ar[d]^r&U\ar[dl]^q\\&Y.&}
+\]
+By hypothesis, $v$ is surjective and finite locally free, hence open. On the other hand, if $d_0:X_1\to X_0$ is open (resp. universally closed), then $u$, obtained from it by base change, is also so. Since, by Theorem 4.1, $q$ is surjective, integral and open, $r$ is surjective, and is open (resp. universally closed) if $d_0$ is. The same therefore holds for $p$, since $v$ is surjective. This proves (i').
+
+Now suppose $S$ locally noetherian and $X_0$ locally of finite type over $S$, so that $X_0$ is locally noetherian.
+
+Let us show that $Y$ is locally of finite presentation over $S$. Let $S'=\Spec R$ be an affine open subset of $S$, $Y'=\Spec B$ an affine open subset of $Y$ projecting into $S'$, and $U'=\Spec A$ the inverse image of $Y'$ in $U$. Since $R$ is noetherian, it suffices to show that $B$ is a finitely generated $R$-algebra; now, by paragraphs 4 and 5, $B$ is contained in $A$, which is a finitely generated $R$-algebra; the assertion therefore follows from the facts that $R$ is noetherian and $A$ integral over $B$.
+
+Finally, since $X_0\to S$ is locally of finite type, $p$ is also so (EGA I, 6.6.6), hence $p$ is locally of finite presentation since $Y$ is locally noetherian.
+
+It remains to show the last assertion of (ii). Further suppose $X_0$ of finite type over $S$. Then, since $p$ is surjective, $Y$ is moreover quasi-compact over $S$, hence of finite type over $S$. Since $S$ is locally noetherian, $X_0\to S$ and $Y\to S$ are of finite presentation, and hence $p:X_0\to Y$ is also so (EGA IV$_1$, 1.6.2 (v)).
+
+\textbf{b)} Proof of (iii):
+
+Since the groupoid $V_*$ with base $V$ is isomorphic both to the inverse image of $U_*$ by the base change $u$ and to the inverse image of $X_*$ by the base change $v$, one has a double cartesian square
+\[
+\xymatrix{X_1\ar[d]_{d_0\boxtimes d_1}&V_1\ar[l]\ar[r]\ar[d]_{v_0\boxtimes v_1}&U_1\ar[d]^{u_0\boxtimes u_1}\\X_0\times_YX_0&V\times_YV\ar[l]^{v\times v}\ar[r]_{u\times u}&U\times_YU.}
+\]
+Since $u_0\boxtimes u_1$ is surjective, so is $v_0\boxtimes v_1$. Since $v\times v$ is surjective, so is the composite morphism $V_1\to X_0\times_YX_0$, and therefore $d_0\boxtimes d_1$.
+
+\textbf{c)} Proof of (i):
+
+It remains to prove that $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of all ringed spaces. We first show that $Y$ is obtained from $X_0$ by identifying points $x$ and $y$ such that there exists $z\in X_1$ with $d_0(z)=x$ and $d_1(z)=y$. Indeed, $p$ is surjective and one has $pd_0=pd_1$; moreover, if $p(x)=p(y)$, there is a point $z'$ of $X_0\times_YX_0$ whose first projection is $x$ and second projection $y$. If $z$ is a point of $X_1$ such that $(d_0\boxtimes d_1)(z)=z'$, one indeed has $d_0(z)=x$ and $d_1(z)=y$.
+
+On the other hand, if $W$ is a saturated open subset of $X_0$, $W\cap U$ is a saturated open subset of $U$; by 4.1, $q(W\cap U)$ is an open subset of $Y$. Since $q(W\cap U)$ is none other than $p(W)$, one sees that $Y$ has the quotient topology of that of $X_0$.
+
+It remains to show that the canonical sequence of sheaves of rings
+\[
+\OO_Y\to p_*(\OO_{X_0})\rightrightarrows p_*d_{0*}(\OO_{X_1})=p_*d_{1*}(\OO_{X_1})
+\]
+is exact.
+
+Let, then, $Y'$ be an open subset of $Y$, and put $U'=q^{-1}(Y')$, $X'_0=p^{-1}(Y')$, etc.\nde{What follows has been expanded, in particular the fact that $U'$ is a quasi-section of the groupoid induced on $X'_0$.} Then $U'$ is an open subset of $U$, saturated for the equivalence relation defined by the groupoid $U_*$, and it follows from Lemmas 1.1 and 1.2 that $Y'$ is the cokernel, in $(\mathrm{Sch}/S)$ and in $(\mathrm{Esp.An})$, of the groupoid induced by $U_*$ on $U'$. Similarly, $X'_0$ is an open subset of $X_0$, saturated for the equivalence relation defined by $X_*$, and one has the following commutative diagram, whose two squares are cartesian:
+\[
+\xymatrix{X'_0\ar[d]&V'=d_0^{-1}(U')\ar[l]_{\widetilde d_1}\ar[r]^{\widetilde d_0}\ar[d]&U'\ar[d]\\X_0&V=d_0^{-1}(U)\ar[l]^{d_1}\ar[r]_{d_0}&U'.}
+\]
+% typo: ``on le diagramme'' -> ``one has the diagram''.
+% typo?: kept as printed: the bottom right corner is U'.
+Then $\widetilde d_1$ is surjective and finite locally free. On the other hand, let $x\in U'$. Since $U$ is a quasi-section, the set $E:=d_0d_1^{-1}(x)\cap U$ is finite and contained in an affine open subset $W$ of $U$. Then $E'=E\cap U'$ is a finite set contained in the quasi-affine open subset $W\cap U'$. Consequently, there exists an affine open subset $W'$ of $W\cap U'$ containing $E'$. This shows that $U'$ is a quasi-section of the groupoid $X'_*$ induced by $X_*$ on $X'_0$. The first assertion of (i), applied to $X'_*$ and $U'$, then shows that $Y'$ is the cokernel in $(\mathrm{Sch}/S)$ of $X'_*$.
+
+In particular, for every $S$-scheme $T$, one has the exact sequence
+\[
+\xymatrix{T(Y')\ar[r]^{T(p|_{X'_0})}&T(X'_0)\ar@<.5ex>[r]^{T(d_1|_{X'_1})}\ar@<-.5ex>[r]_{T(d_0|_{X'_1})}&T(X'_1).}
+\]
+Now, if $T$ is the ``affine line'' $\mathbf G_{\mathrm a,S}$ (I 4.3), this sequence is identified with the sequence:
+\[
+\xymatrix@C=.8em{\Gamma(Y',\OO_Y)\ar[r]&\Gamma(p^{-1}(Y'),\OO_{X_0})\ar@<.5ex>[r]^{\delta_1}\ar@<-.5ex>[r]_{\delta_0}&\Gamma(d_0^{-1}p^{-1}(Y'),\OO_{X_1})=\Gamma(d_1^{-1}p^{-1}(Y'),\OO_{X_1}),}
+\]
+which is therefore exact for every open subset $Y'$. This completes the proof of 6.1 (i).
+
+\textbf{d)} Proof of (iv):
+
+If $(d_0,d_1)$ is an equivalence pair, so is $(u_0,u_1)$. It follows that $u_0\boxtimes u_1:U_1\to U\times_YU$ is an isomorphism (Theorem 4.1), and therefore also $v_0\boxtimes v_1$ (cf. the cartesian squares of b)); since $v\times v$ is faithfully flat and quasi-compact, $d_0\boxtimes d_1$ is an isomorphism (SGA 1, VIII 5.4).
+
+Moreover, if $d_0$ is flat, so is $u$. Now $q$ is flat by Theorem 4.1, hence so is $r$. Since $v$ is faithfully flat, $p$ is flat, and therefore faithfully flat since it is surjective.

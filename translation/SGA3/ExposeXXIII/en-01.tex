@@ -1,0 +1,367 @@
+\exposetitle{XXIII}{Reductive groups: uniqueness of pinned groups}
+\label{XXIII}
+% Source PDF pp. 1--8; original pp. 263--275.
+\setcounter{footnote}{-1}
+\nde{Version of 13/10/2024.}The aim of this exposé is to prove the uniqueness theorem (Theorem 4.1). This was proved by Chevalley in the case of an algebraically closed field; the method of reduction to rank two used here is also due to Chevalley (see \textit{Bible}, exp. 23 and 24). Along the way, we obtain an explicit description of reductive groups by generators and relations (3.5).
+
+\sgasection{1}{Pinnings}
+\begin{definition}{1.1}\label{XXIII.1.1}
+Let S be a scheme, and $(G,T,M,R)$ a split S-group (XXII, 1.13). A \emph{pinning}\nde{Demazure tells us that behind this terminology lies the image of a butterfly (which Grothendieck supplied to him): the body is a maximal torus T, the wings are two opposite Borel subgroups with respect to T; one splits the butterfly by spreading its wings, then fixes elements in the additive groups (pins) to rigidify the situation (i.e., to eliminate automorphisms).} of this split group is the datum of a system $\Delta$ of \emph{simple roots} of R and, for each $\alpha\in\Delta$, a section $X_\alpha\in\Gamma(S,\goth g^\alpha)^\times$.
+
+In other words, a pinning of the reductive group G over the nonempty scheme S is the datum:
+\begin{enumeratei}
+\item of a maximal torus T,
+\item of an abelian group M and an isomorphism $T\simeq D_S(M)$,
+\item of a root system R of G with respect to T,
+\item of a system of simple roots $\Delta$ of R,
+\item of an $X_\alpha\in\Gamma(S,\goth g^\alpha)^\times$ for every $\alpha\in\Delta$, that is, of a
+\[
+u_\alpha=\exp_\alpha(X_\alpha)\in U_\alpha^\times(S)\qquad\text{for every }\alpha\in\Delta,
+\]
+\end{enumeratei}
+satisfying condition (D 1) of Exp. XXII, 1.13 (indeed, condition (D 2) of \loccit is automatically satisfied\nde{It is implied by condition (v), i.e., the existence of a section $X_\alpha\in\Gamma(S,\goth g^\alpha)^\times$.}).
+\end{definition}
+
+Every split group has a pinning; in particular, every reductive group is locally pinnable for the étale topology.
+
+\numpara{1.2}
+If G is a \emph{pinned} S-group, that is, a split S-group equipped with a pinning, it is canonically equipped with the system of positive roots $R_+$ defined by $\Delta$, the corresponding Borel subgroup $B=B_{R_+}$, the opposite Borel subgroup $B^-=B_{R_-}$, the unipotent groups $U=B^u$, $U^-=(B^-)^u$, the open subset $U^-\cdot T\cdot U$, etc. Likewise, for each $\alpha\in\Delta$, one has a canonical isomorphism of vector groups
+\[
+p_\alpha:\mathbf G_{\mathrm a,S}\isomto U_\alpha,\qquad x\mto\exp_\alpha(xX_\alpha)=u_\alpha^x,
+\]
+normalized by T with multiplier $\alpha$, and whose datum is equivalent to that of $X_\alpha$ (Exp. XXII, 1.1).
+
+By duality, one deduces from it an $X_{-\alpha}\in\Gamma(S,\goth g^{-\alpha})^\times$ and an isomorphism
+\[
+p_{-\alpha}:\mathbf G_{\mathrm a,S}\isomto U_{-\alpha}
+\]
+which is the contragredient of the preceding one (Exp. XXII, 1.3). We shall put (Exp. XX, 3.1)
+\[
+\begin{split}
+w_\alpha=w_\alpha(X_\alpha)&=p_\alpha(1)p_{-\alpha}(-1)p_\alpha(1)\\
+&=p_{-\alpha}(-1)p_\alpha(1)p_{-\alpha}(-1).
+\end{split}
+\]
+One then has (\loccit 3.1, 3.7)
+\[
+w_\alpha^2=\alpha^*(-1),\qquad \operatorname{int}(w_\alpha)t=s_\alpha(t)=t\cdot\alpha^*(\alpha(t)^{-1}),
+\]
+\[
+\begin{cases}
+\operatorname{int}(w_\alpha)p_\alpha(x)=p_{-\alpha}(-x)=p_{-\alpha}(x)^{-1},\\
+\Ad(w_\alpha)X_\alpha=-X_{-\alpha},
+\end{cases}
+\]
+\[
+\begin{cases}
+\operatorname{int}(w_\alpha)p_{-\alpha}(x)=p_\alpha(-x)=p_\alpha(x)^{-1},\\
+\Ad(w_\alpha)X_{-\alpha}=-X_\alpha.
+\end{cases}
+\]
+We shall systematically use the preceding notation in what follows.
+
+\begin{definition}{1.3}\label{XXIII.1.3}
+Let S be a scheme, and $(G,T,M,R,\Delta,(X_\alpha))$ and $(G',T',M',\ldots)$ two pinned S-groups. One says that the morphism of split groups (Exp. XXII, 4.2.1)
+\[
+f:G\to G'
+\]
+is compatible with the pinnings, or defines a \emph{morphism of pinned groups}, if the bijection $d:R\to R'$ associated with it (\cf \loccit) satisfies $d(\Delta)=\Delta'$ and if, for every $\alpha\in\Delta$, one has
+\[
+f(\exp_\alpha(X_\alpha))=\exp_{d(\alpha)}(X'_{d(\alpha)}),\qquad\text{i.e.}\quad f(u_\alpha)=u'_{d(\alpha)}.
+\]\nde{We have denoted the bijection $R\isomto R'$ by d (instead of u), to avoid the notation $u'_{u(\alpha)}$.}
+\end{definition}
+
+\numpara{1.4}
+If one denotes by $q(\alpha)$ the integer of \loccit, one therefore has
+\[
+f(p_\alpha(x))=p'_{d(\alpha)}(x^{q(\alpha)})\qquad\text{for }\alpha\in\Delta,
+\]
+and hence also
+\[
+f(p_{-\alpha}(x))=p'_{-d(\alpha)}(x^{q(\alpha)}),\qquad f(w_\alpha)=w'_{d(\alpha)}.
+\]
+Recall (Exp. XXII, 4.2) that for every $\alpha\in R$, and all $z\in\Gm(S')$, $t\in T(S')$, one has:
+\[
+\begin{gathered}
+f(\alpha^*(z))=\bigl(d(\alpha)^*(z)\bigr)^{q(\alpha)}=d(\alpha)^*(z^{q(\alpha)}),\\
+d(\alpha)(f(t))=\alpha(t)^{q(\alpha)}.
+\end{gathered}
+\]
+
+\numpara{1.5}
+Let us call a \emph{pinned root datum} a root datum equipped with a system of simple roots, and a \emph{p-morphism of pinned root data} a p-morphism of root data (Exp. XXI, 6.8) taking simple roots to simple roots.
+
+If G is a pinned S-group, one denotes by $\mathscr R(G)$ the corresponding pinned root datum (it is the root datum of Exp. XXII, 1.14 equipped with $\Delta$). Let p be the integer defined in Exp. XXII, 4.2.2. One then has
+\begin{scholium}{1.6}\label{XXIII.1.6}
+The correspondence $G\mto\mathscr R(G)$ defines a functor from the category of pinned reductive S-groups to that of pinned root data (with p-morphisms as morphisms).
+\end{scholium}
+
+\numpara{1.7}\textbf{The pinned groups $Z_{\Delta_1}$}
+
+Let $\Delta_1$ be a subset of the system of simple roots $\Delta$ of the pinned group G. Let $T_{\Delta_1}$ be the maximal torus of $\bigcap_{\alpha\in\Delta_1}\Ker(\alpha)$; put
+\[
+Z_{\Delta_1}=\uCentr_G(T_{\Delta_1}).
+\]
+Write $R'=\ZZ\cdot\Delta_1\cap R$; one knows (Exp. XXII, 5.10.7) that $Z_{\Delta_1}$ is a reductive S-group with radical $T_{\Delta_1}$, that $(T,M,R')$ is a splitting of it and $\Delta_1$ a system of simple roots. It follows that $(Z_{\Delta_1},T,M,R',\Delta_1,(X_\alpha)_{\alpha\in\Delta_1})$ is a pinned S-group. We shall always equip $Z_{\Delta_1}$ with this pinning. In particular, one will consider the groups
+\[
+Z_\alpha=Z_{\{\alpha\}},\qquad Z_{\alpha\beta}=Z_{\{\alpha,\beta\}}.
+\]
+One writes $B_{\Delta_1}=B\cap Z_{\Delta_1}$; one knows (\loccit) that this is the canonical Borel subgroup\nde{I.e., the Borel subgroup of $Z_{\Delta_1}$ corresponding to $R'_+=R'\cap R_+$.} of $Z_{\Delta_1}$, and that its unipotent part is $U_{\Delta_1}=U\cap Z_{\Delta_1}$. In particular, one has
+\[
+B_\alpha=T\cdot U_\alpha.
+\]
+We shall write
+\[
+U_{\alpha\beta}=U_{\{\alpha,\beta\}}=U\cap Z_{\alpha\beta}=\prod_{\gamma\in R^+_{\alpha\beta}}U_\gamma,
+\]
+where $R^+_{\alpha\beta}$ denotes the set of positive roots that are linear combinations of $\alpha$ and $\beta$.
+
+Now let $f:G\to G'$ be a morphism of pinned S-groups. If $d:R\to R'$ is the corresponding bijection and $\Delta_1$ is a subset of $\Delta$, then $d(\Delta_1)=\Delta'_1$ is a subset of $\Delta'$, and it is clear that f sends $T_{\Delta_1}$ into $T'_{\Delta'_1}$, hence $Z_{\Delta_1}$ into $Z'_{\Delta'_1}$. The corresponding S-morphism:
+% typo?: target printed Z'_{d(Delta'_1)}, kept as printed.
+\[
+f_{\Delta_1}:Z_{\Delta_1}\to Z'_{d(\Delta'_1)}
+\]
+is compatible with the canonical pinnings; it defines a morphism of pinned root data
+\[
+\mathscr R(f_{\Delta_1}):\mathscr R(Z_{\Delta_1},T,M,\ldots)\to\mathscr R(Z_{\Delta'_1},T',M',\ldots)
+\]
+and the morphisms $M'\to M$ underlying $\mathscr R(f)$ and $\mathscr R(f_{\Delta_1})$ coincide.
+
+\numpara{1.8}\textbf{Study of the group $\uNorm_G(T)$}
+
+For each pair $(\alpha,\beta)$ of simple roots, denote by $n_{\alpha\beta}$ the order of the element $s_\alpha s_\beta$ of the Weyl group W. In particular, one has $n_{\alpha\alpha}=1$. Thus one has $(w_\alpha w_\beta)^{n_{\alpha\beta}}\in T(S)$.
+\begin{definition}{1.8.1}\label{XXIII.1.8.1}
+For every $(\alpha,\beta)\in\Delta\times\Delta$, put
+\[
+t_{\alpha\beta}=(w_\alpha w_\beta)^{n_{\alpha\beta}}\in T(S).
+\]
+Moreover, put (Exp. XX, 3.1)
+\[
+t_\alpha=t_{\alpha\alpha}=w_\alpha^2=\alpha^*(-1)\in T(S).
+\]
+\end{definition}
+\begin{proposition}{1.8.2}\label{XXIII.1.8.2}
+Let H be an S-group functor taking direct sums of schemes to products (for example a sheaf for the Zariski topology). Let
+\[
+f_T:T\to H
+\]
+be a group morphism and $h_\alpha$ $(\alpha\in\Delta)$ elements of $H(S)$. For there to exist a group morphism (necessarily unique)
+\[
+f_N:\uNorm_G(T)\to H
+\]
+which induces $f_T$ on T and such that $f(w_\alpha)=h_\alpha$ for $\alpha\in\Delta$, it is necessary and sufficient that the following two conditions hold:
+% typo?: f(w_alpha) printed instead of f_N(w_alpha), kept as printed.
+\begin{enumeratei}
+\item For every $\alpha\in\Delta$, one has
+\[
+f_T(s_\alpha(t))=h_\alpha f_T(t)h_\alpha^{-1}
+\]
+for every $t\in T(S')$, $S'\to S$ (i.e., $f_T\circ s_\alpha=\operatorname{int}(h_\alpha)\circ f_T$).
+\item For every $(\alpha,\beta)\in\Delta\times\Delta$, one has
+\[
+f_T(t_{\alpha\beta})=(h_\alpha h_\beta)^{n_{\alpha\beta}}.
+\]
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+Indeed, equip $\Sch$ with the topology $\mathcal T$ generated by the pretopology whose covering families are the direct sums; the hypothesis of the statement says that H is a $\mathcal T$-sheaf. Let L be the free group with generators $(m_\alpha)_{\alpha\in R}$ and $L_1$ the invariant subgroup generated by the elements $(m_\alpha m_\beta)^{n_{\alpha\beta}}$, $(\alpha,\beta)\in\Delta\times\Delta$.
+% typo?: generators indexed by R in the source, kept as printed.
+Let $g:L\to W$ be the morphism defined by $g(m_\alpha)=s_\alpha$; one knows (Exp. XXI, 5.1) that g induces an isomorphism $\bar g$ from $L/L_1$ to W. Let L act on T through g (or, equivalently, by $m_\alpha\cdot t=s_\alpha(t)$). Let $L_S$ be the constant group defined by L; consider the semidirect product $T\cdot L_S=N$ for the preceding action. One has a morphism of S-groups
+\[
+h:T\cdot L_S=N\to\uNorm_G(T)
+\]
+unique such that $h(m_\alpha)=w_\alpha$, $h(t)=t$ for every $t\in T(S')$, $S'\to S$. Let $N_1$ be the invariant group subsheaf of N generated by the
+\[
+t_{\alpha\beta}^{-1}\cdot(m_\alpha m_\beta)^{n_{\alpha\beta}},\qquad(\alpha,\beta)\in\Delta\times\Delta.
+\]
+One obviously has $N_1\subset\Ker h$; consider the induced morphism
+\[
+h_1:N/N_1\to\uNorm_G(T).
+\]
+Let us prove that $h_1$ is an \emph{isomorphism}. Since h induces on T the canonical immersion, which is a monomorphism, the canonical morphism
+\[
+T\to N/N_1
+\]
+is also a monomorphism, hence induces an isomorphism from T to $TN_1/N_1$. For the same reason $h_1$ induces an isomorphism from $TN_1/N_1$ to T; to prove that $h_1$ is an isomorphism, it therefore suffices to check that the corresponding morphism
+\[
+h_2:N/TN_1\to\uNorm_G(T)/T
+\]
+is an isomorphism. Now $TN_1$ is the invariant group $\mathcal T$-subsheaf of N generated by T and the $(m_\alpha m_\beta)^{n_{\alpha\beta}}$, that is, the $\mathcal T$-subsheaf generated by T and $L_1$, that is, $T\cdot(L_1)_S$. The morphism $h_2$ thus identifies with the morphism
+\[
+\bar g:L_S/(L_1)_S\to W_S
+\]
+which is an isomorphism by construction.
+
+The proof of 1.8.2 is now easy; the conditions are obviously necessary; let us prove that they are sufficient. Condition (i) shows that there exists a morphism
+\[
+u:N\to H
+\]
+such that $u(m_\alpha)=h_\alpha$ for $\alpha\in\Delta$, and $u|_T=f_T$. Condition (ii) says that u vanishes on $N_1$, which immediately gives the result.
+\end{proof}
+
+\numpara{1.9}\textbf{Faithfulness of the functor $\mathscr R$}
+\begin{proposition}{1.9.1}\label{XXIII.1.9.1}
+The functor $\mathscr R$ of 1.6 is faithful: if
+\[
+f,g:G\rightrightarrows G'
+\]
+are two morphisms of pinned groups such that $\mathscr R(f)=\mathscr R(g)$, then $f=g$.
+\end{proposition}
+Indeed, f and g coincide on T, $U_\alpha$ $(\alpha\in\Delta)$ and $U_{-\alpha}$ $(\alpha\in\Delta)$; it therefore suffices to apply:
+\begin{lemma}{1.9.2}\label{XXIII.1.9.2}
+Let S be a scheme, G a pinned reductive S-group, and H an S-group presheaf, separated for \fppf. Let
+\[
+f,g:G\rightrightarrows H
+\]
+be two morphisms of S-groups. The following conditions are equivalent:
+\begin{enumeratei}
+\item $f=g$.
+\item f and g coincide on T, on each $U_\alpha$ $(\alpha\in\Delta)$, on each $U_{-\alpha}$ $(\alpha\in\Delta)$.
+\item f and g coincide on T, on each $U_\alpha$ $(\alpha\in\Delta)$ and $f(w_\alpha)=g(w_\alpha)$ for each $\alpha\in\Delta$.
+\end{enumeratei}
+\end{lemma}
+\begin{proof}
+Indeed, (i) $\Rightarrow$ (ii) is trivial, and (ii) $\Rightarrow$ (iii) follows immediately from the definition of $w_\alpha$ (1.2). It remains to prove (iii) $\Rightarrow$ (i). If $\alpha\in R$, there exists a sequence $\{\alpha_i\}\subset\Delta$ with $\alpha=s_{\alpha_1}s_{\alpha_2}\cdots s_{\alpha_n}(\alpha_{n+1})$, hence
+\[
+U_\alpha=\operatorname{int}(w_{\alpha_1}\cdots w_{\alpha_n})U_{\alpha_{n+1}},
+\]
+which proves that f and g coincide on each $U_\alpha$. It follows that f and g coincide on $\Omega$, hence coincide (Exp. XXII, 4.1.11).
+\end{proof}
+\begin{remark}{1.9.3}\label{XXIII.1.9.3}
+If G is semisimple, one may, in (ii) and (iii), omit the hypothesis that f and g coincide on T. Indeed, G is generated as an \fppf sheaf by the $U_\alpha$, $\alpha\in R$ (Exp. XXII, 6.2.2 (a)).
+\end{remark}
+
+\sgasection{2}{Generators and relations for a pinned group}
+In this section, we fix a pinned S-group G. If $\alpha,\beta\in\Delta$, we shall use the notation $Z_\alpha$, $Z_{\alpha\beta}$, $U_{\alpha\beta}$, $R^+_{\alpha\beta}$ of 1.7.
+\begin{theorem}{2.1}\label{XXIII.2.1}
+Let S be a scheme, G a pinned S-group, and H an S-group sheaf for \fppf. Let
+\[
+f_N:\uNorm_G(T)\to H,\qquad f_\alpha:U_\alpha\to H,\quad\alpha\in R,
+\]
+be group morphisms. For there to exist a group morphism (necessarily unique)
+\[
+\bar f:G\to H
+\]
+extending $f_N$ and the $f_\alpha$ $(\alpha\in R)$, it is necessary and sufficient that the following conditions hold:
+\begin{enumeratei}
+\item For every $\alpha\in\Delta$ and every $\beta\in R$, one has
+\[
+\operatorname{int}(f_N(w_\alpha))\circ f_\beta=f_{s_\alpha(\beta)}\circ\operatorname{int}(w_\alpha).
+\]
+\item For every $\alpha\in\Delta$, there exists a group morphism
+\[
+F_\alpha:Z_\alpha\to H
+\]
+extending $f_\alpha$, $f_{-\alpha}$ and $f_N|_{\uNorm_{Z_\alpha}(T)}$.
+\item For every pair $(\alpha,\beta)\in\Delta\times\Delta$, there exists a group morphism $U_{\alpha\beta}\to H$ inducing $f_\gamma$ on $U_\gamma$ for every $\gamma\in R^+_{\alpha\beta}$ (i.e., $U_\gamma\subset U_{\alpha\beta}$).
+\end{enumeratei}
+\end{theorem}
+\numpara{2.1.1}\emph{Proof.}
+The conditions of the statement are obviously necessary. On the other hand, choose a totally ordered group structure on $\Gamma_0(R)$ so that the roots $>0$ are the elements of $R_+$ (Exp. XXI, 3.5.6); every product indexed by a subset of R will be taken relative to this order. Denote by $f_T$ the restriction of $f_N$ to T and consider the morphism
+\[
+f:\Omega\to H
+\]
+defined set-theoretically by
+\[
+f\left(\prod_{\alpha\in R_-}y_\alpha\cdot t\cdot\prod_{\alpha\in R_+}x_\alpha\right)
+=\prod f_\alpha(y_\alpha)\cdot f_T(t)\cdot\prod f_\alpha(x_\alpha).
+\]
+Every morphism satisfying the conditions of the statement must extend f; on the other hand, every group morphism $\bar f:G\to H$ extending f also extends $f_N$: indeed, extending $f_\alpha$ and $f_{-\alpha}$, it satisfies $\bar f(w_\alpha)=F_\alpha(w_\alpha)=f_N(w_\alpha)$ and it extends $f_T$ by hypothesis. By Exp. XXII, 4.1.11 (ii), one is therefore reduced to proving:
+\begin{proposition}{2.1.2}\label{XXIII.2.1.2}
+The morphism $f:\Omega\to H$ defined above is ``generically multiplicative''; more precisely, for every $S'\to S$ and all $x,y\in\Omega(S')$ such that $xy\in\Omega(S')$, one has $f(xy)=f(x)f(y)$.
+\end{proposition}
+\begin{lemma}{2.1.3}\label{XXIII.2.1.3}
+Let $n\in\uNorm_G(T)(S')$, $S'\to S$, and let $\alpha,\beta\in R$ be such that $\operatorname{int}(n)U_\alpha=U_\beta$ (i.e., $\bar n(\alpha)=\beta$); then one has
+\[
+\operatorname{int}(f_N(n))\circ f_\alpha=f_\beta\circ\operatorname{int}(n).
+\]
+\end{lemma}
+\begin{proof}
+Indeed, it suffices to check the formula for a system of generators of the sheaf $\uNorm_G(T)$; it holds for each $w_\alpha$, $\alpha\in\Delta$ (by 2.1 (i)), so it suffices to do so for $n\in T(S')$. This is trivial by 2.1 (ii) if $\alpha$ is simple; otherwise, one takes a $w\in W$ such that $w^{-1}(\alpha)\in\Delta$; writing w as a product of simple reflections,\nde{We have replaced ``fundamental symmetries'' by ``simple reflections''.} one is reduced to proving that if the formula holds for $\alpha$ and for every n, it also holds for $w_{\alpha_0}(\alpha)$ and $t\in T(S')$, where $\alpha_0\in\Delta$. Now, by 2.1 (i), one has:
+\[
+\begin{aligned}
+\operatorname{int}(f_N(t))\circ f_{w_{\alpha_0}(\alpha)}
+&=\operatorname{int}\bigl(f_N(tw_{\alpha_0})\bigr)\circ f_\alpha\circ\operatorname{int}(w_{\alpha_0}^{-1})\\
+&=f_{w_{\alpha_0}(\alpha)}\circ\operatorname{int}(tw_{\alpha_0})\circ\operatorname{int}(w_{\alpha_0}^{-1}).
+\end{aligned}
+\]
+\end{proof}
+\begin{lemma}{2.1.4}\label{XXIII.2.1.4}
+The restriction of f to U (resp. $U^-$) is a group morphism. In particular, this restriction is independent of the order chosen on the roots.
+\end{lemma}
+\begin{proof}
+It suffices to give the proof for U. By Exp. XXII, 5.5.8, it suffices to check that for every pair $\alpha<\beta$ of positive roots, one has, for all $x_\alpha\in U_\alpha(S')$, $x_\beta\in U_\beta(S')$, $S'\to S$,
+\[
+f_\beta(x_\beta)f_\alpha(x_\alpha)f_\beta(x_\beta^{-1})=f(x_\beta x_\alpha x_\beta^{-1}).
+\]
+According to Exp. XXII, 5.5.2, there exist $x_\gamma\in U_\gamma(S')$ ($\gamma=i\alpha+j\beta\in R$, $i>0$, $j\geq0$\nde{We have corrected $i,j>0$ to $i>0$, $j\geq0$ (since $x_\alpha$ occurs in the product on the right).}) such that
+\[
+x_\beta x_\alpha x_\beta^{-1}=\prod_\gamma x_\gamma,
+\]
+and one must therefore check the relation
+\[
+f_\beta(x_\beta)f_\alpha(x_\alpha)f_\beta(x_\beta^{-1})
+=\prod_{\substack{\gamma=i\alpha+j\beta\\i>0,j\geq0}}f_\gamma(x_\gamma).
+\]
+By Exp. XXI, 3.5.4, there exists a $w\in W$ such that $w(\alpha)=\alpha_0\in\Delta$, $w(\beta)\in A_{\alpha_0\beta_0}$ (notation of 1.7), where $\beta_0\in\Delta$.
+% typo?: A_{alpha_0 beta_0} and reference to notation of 1.7 kept as printed.
+Lifting w to an $n\in\uNorm_G(T)(S)$ (by Exp. XXII, 3.8), it suffices to check the preceding relation after conjugation by $f_N(n)$. By 2.1.3, one is therefore reduced to the case where $\alpha,\beta\in R^+_{\alpha_0\beta_0}$, a case where one concludes by condition 2.1 (iii).
+\end{proof}
+\begin{lemma}{2.1.5}\label{XXIII.2.1.5}
+Let $n\in\uNorm_G(T)(S)$ be such that $\operatorname{int}(n)U=U^-$ (i.e., $\bar n$ is the symmetry of the Weyl group\nde{With respect to $\Delta$.} (Exp. XXI, 3.6.14)). For every $u\in U(S')$, $S'\to S$ (resp. $u\in U^-(S')$, $S'\to S$), one has
+\[
+f(nun^{-1})=f_N(n)f(u)f_N(n^{-1}).
+\]
+\end{lemma}
+\begin{proof}
+Immediate by 2.1.3 and 2.1.4.
+\end{proof}
+\begin{lemma}{2.1.6}\label{XXIII.2.1.6}
+Let $u\in B(S')$, $v\in B^-(S')$, $g\in\Omega(S')$, $S'\to S$. Then
+\[
+f(vgu)=f(v)f(g)f(u).
+\]
+\end{lemma}
+\begin{proof}
+Indeed, put $v=v_1t_1$, $g=v_2t_2u_2$, $u=t_3u_3$, with $v_i\in U^-(S')$, $t_i\in T(S')$, $u_i\in U(S')$. One has
+\[
+f(v)f(g)f(u)=f(v_1)f_T(t_1)f(v_2)f_T(t_2)f(u_2)f_T(t_3)f(u_3),
+\]
+on the one hand, and
+\[
+\begin{aligned}
+f(vgu)&=f(v_1t_1v_2t_1^{-1}t_1t_2t_3t_3^{-1}u_2t_3u_3)\\
+&=f(v_1\cdot t_1v_2t_1^{-1})f_T(t_1t_2t_3)f(t_3^{-1}u_2t_3\cdot u_3).
+\end{aligned}
+\]
+Using 2.1.4 to decompose the two outer terms of this last expression, one obtains
+\[
+f(vgu)=f(v_1)f(t_1v_2t_1^{-1})f_T(t_1t_2t_3)f(t_3^{-1}u_2t_3)f(u_3).
+\]
+One is then reduced to the obvious formulas
+\[
+\begin{gathered}
+f(t_1v_2t_1^{-1})=f_T(t_1)f(v_2)f_T(t_1)^{-1},\\
+f(t_3^{-1}u_2t_3)=f_T(t_3)^{-1}f(u_2)f_T(t_3),
+\end{gathered}
+\]
+which follow from the definition of f and from 2.1.3.
+\end{proof}
+\begin{lemma}{2.1.7}\label{XXIII.2.1.7}
+Let $\alpha\in\Delta$ and $g\in\Omega(S')\cap\operatorname{int}(w_\alpha)^{-1}\Omega(S')$, $S'\to S$. Then
+\[
+f(w_\alpha gw_\alpha^{-1})=f_N(w_\alpha)f(g)f_N(w_\alpha)^{-1}.
+\]
+\end{lemma}
+\begin{proof}
+Indeed, let $g\in\Omega(S')$, $S'\to S$. Write, by Exp. XXII, 5.6.8,
+\[
+g=a\,x_{-\alpha}\,t\,x_\alpha\,b,
+\]
+with $a\in U_{-\widehat\alpha}(S')$, $x_{-\alpha}\in U_{-\alpha}(S')$, $t\in T(S')$, $x_\alpha\in U_\alpha(S')$, $b\in U_{\widehat\alpha}(S')$. By 2.1.3, 2.1.4 and the fact that $s_\alpha$ permutes the positive roots $\ne\alpha$ (\cf Exp. XXI, 3.3.2), one has
+\[
+\operatorname{int}(w_\alpha)a\in U_{-\widehat\alpha}(S'),\qquad
+\operatorname{int}(w_\alpha)b\in U_{\widehat\alpha}(S')
+\]
+and the formula to be proved holds for $g=a$ or $g=b$. By 2.1.6, one is therefore reduced to proving the desired assertion when $g=x_{-\alpha}t x_\alpha\in Z_\alpha(S')$. But then ``everything takes place in $Z_\alpha$'' and one concludes by condition (ii) of 2.1.
+\end{proof}

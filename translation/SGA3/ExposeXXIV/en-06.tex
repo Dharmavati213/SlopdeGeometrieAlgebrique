@@ -1,0 +1,222 @@
+% original PDF p. 33; continuation of Proposition 5.5
+Moreover, the preceding decomposition induces isomorphisms
+\[
+\underline{\operatorname{Dyn}}_t(G)\simeq\underline{\operatorname{Dyn}}(G_t),\qquad
+\underline{\Aut}_{S\text{-gr.}}(G)\simeq\prod_{t\in\mathbf T}\underline{\Aut}_{S\text{-gr.}}(G_t).
+\]
+\end{proposition}
+\begin{proof}
+This has indeed been proved above when $G$ is split. In the general case, one may suppose $G$ of constant type $\mathscr R$. Using the preceding decomposition of $A_S(\mathscr R)$ and 1.17, one deduces the desired decomposition of $G$. The other results are then proved by descent.
+\end{proof}
+\begin{remark}{5.6}\label{XXIV.5.6}
+More generally, if $G$ and $H$ are two adjoint semisimple groups, one has canonical isomorphisms as follows (the diagram is commutative):
+\[
+\xymatrix@C=1.2em{
+\underline{\Isom}_{S\text{-gr.}}(G,H)\ar[r]^{\sim}\ar[d]&\prod_{t\in\mathbf T}\underline{\Isom}_{S\text{-gr.}}(G_t,H_t)\ar[d]\\
+\underline{\operatorname{Isomext}}(G,H)\ar[r]^{\sim}\ar[d]_{\wr}&\prod_{t\in\mathbf T}\underline{\operatorname{Isomext}}(G_t,H_t)\ar[d]^{\wr}\\
+\underline{\Isom}_{\mathrm{Dyn}}(\underline{\operatorname{Dyn}}(G),\underline{\operatorname{Dyn}}(H))\ar[r]^{\sim}&\prod_{t\in\mathbf T}\underline{\Isom}_{\mathrm{Dyn}}(\underline{\operatorname{Dyn}}(G_t),\underline{\operatorname{Dyn}}(H_t)).}
+\]
+\end{remark}
+\begin{remark}{5.7}\label{XXIV.5.7}
+One can give an intrinsic characterization of $G_t$, which we state below without proof: it is the largest normal (and indeed characteristic) reductive subgroup of $G$ isotypic of type $t$.
+\end{remark}
+The preceding proposition allows one to reduce the study of adjoint semisimple groups to that of isotypic adjoint semisimple groups. It is this study that we shall carry out below.
+\numpara{5.8}\label{XXIV.5.8}
+Let $\mathscr R$ be a \emph{simple} reduced pinned adjoint root datum of type $t$, $I$ a nonempty finite set, and $\mathscr R^I$ the product root datum of copies $\mathscr R_i$ of $\mathscr R$, for $i\in I$. Denote by $E$ the group of automorphisms of $\mathscr R$, which identifies with the group of automorphisms of the Dynkin diagram $D$ of $\mathscr R$. The Dynkin diagram of $\mathscr R^I$ identifies with $D^I$, which shows that one has an exact sequence:
+\[
+1\to\Aut(D)^I\to\Aut(D^I)\to\Aut(I)\to1,
+\]
+where $\Aut(I)$ denotes the group of permutations of $I$. It follows that the canonical isomorphism
+\[
+\operatorname{\acute Ep}_S(\mathscr R)^I\simeq\operatorname{\acute Ep}_S(\mathscr R^I)
+\]
+induces an exact sequence
+\[
+1\to A_S(\mathscr R)^I\to A_S(\mathscr R^I)\to\underline{\Aut}(I_S)\to1,
+\]
+the last group being the constant $S$-group associated to $\Aut(I)$. Observe moreover that $I$ identifies canonically with the set of connected components of $D^I$.
+% original PDF p. 34
+If $G$ is a semisimple $S$-group of type $\mathscr R^I$, defining (cf. 1.17) a principal homogeneous bundle $P$ under $A_S(\mathscr R^I)$, the definition of $\underline{\operatorname{Dyn}}(G)$ by descent (3.7), and that of $\underline{\operatorname{Dyn}}_0(G)$ (5.2), show that the bundle associated to $P$ by the morphism $A_S(\mathscr R^I)\to\underline{\Aut}(I_S)$ is nothing other than $\underline{\Isom}_S(I_S,\underline{\operatorname{Dyn}}_0(G))$, corresponding to the form $\underline{\operatorname{Dyn}}_0(G)$ of $I_S$. Using again the equivalence of categories 1.17 and the preceding exact sequence, one deduces by a formal argument that there exist a reductive $\underline{\operatorname{Dyn}}_0(G)$-group of type $\mathscr R$, say $G_0$, and an $S$-isomorphism $G\simeq\prod_{\underline{\operatorname{Dyn}}_0(G)/S}G_0$.
+\begin{proposition}{5.9}\label{XXIV.5.9}
+Let $S$ be a scheme and $G$ an isotypic adjoint semisimple $S$-group of type $t$. There exist a simple adjoint semisimple $\underline{\operatorname{Dyn}}_0(G)$-group $G_0$ of type $t$, and an $S$-isomorphism (unique)
+\[
+G\simeq\prod_{\underline{\operatorname{Dyn}}_0(G)/S}G_0.
+\]
+Moreover, this isomorphism induces an exact sequence
+\[
+1\to\prod_{\underline{\operatorname{Dyn}}_0(G)/S}\underline{\Aut}_{S\text{-gr.}}(G_0)
+\to\underline{\Aut}_{S\text{-gr.}}(G)\to\underline{\Aut}_S(\underline{\operatorname{Dyn}}_0(G))\to1.
+\]
+% typo?: source subscript S-gr. on Aut(G_0), though G_0 is over Dyn_0(G); kept as printed.
+\end{proposition}
+\begin{proof}
+One may evidently suppose $G$ of constant type $nt$. The first assertion has already been proved (the uniqueness assertion is evident). The second then follows from the split case by descent.
+\end{proof}
+One can combine 5.5 and 5.9:
+\begin{proposition}{5.10}\label{XXIV.5.10}
+Let $S$ be a scheme, $G$ an adjoint semisimple $S$-group, and $\mathscr D=\underline{\operatorname{Dyn}}(G)$ its Dynkin scheme.
+\begin{enumeratei}
+\item There exists a canonical decomposition
+\[
+G\simeq\prod_{t\in\mathbf T}\prod_{\mathscr D_{0,t}/S}G_{0,t}\simeq\prod_{\underline{\operatorname{Dyn}}_0(G)/S}G_0,
+\]
+where each $G_{0,t}$ is a simple adjoint $\underline{\operatorname{Dyn}}_{0,t}(G)$-group of type $t$ (resp. where $G_0$ is an adjoint semisimple $\underline{\operatorname{Dyn}}_0(G)$-group whose type at $x\in\underline{\operatorname{Dyn}}_0(G)$ is $a(x)\in\mathbf T$ (the morphism $a:\underline{\operatorname{Dyn}}_0(G)\to\mathbf T_S$ was defined in 5.2)).
+\item The preceding decompositions induce isomorphic exact sequences (written vertically), where $\underline{\Aut}_{S,a}(\mathscr D_0)$ denotes the scheme of automorphisms of $\underline{\operatorname{Dyn}}_0(G)$ which commute with the morphism $a:\underline{\operatorname{Dyn}}_0(G)\to\mathbf T_S$:
+% original PDF p. 35
+\[
+\xymatrix@C=1.8em{
+1\ar[d]&1\ar[d]\\
+\prod_{t\in\mathbf T}\prod_{\mathscr D_{0,t}/S}\underline{\Aut}_{\mathrm{gr.}}(G_{0,t})\ar[r]^{\sim}\ar[d]&\prod_{\underline{\operatorname{Dyn}}_0(G)/S}\underline{\Aut}_{\mathrm{gr.}}(G_0)\ar[d]\\
+\underline{\Aut}_{S\text{-gr.}}(G)\ar[r]\ar[d]&\underline{\Aut}_{S\text{-gr.}}(G)\ar[d]\\
+\prod_{t\in\mathbf T}\underline{\Aut}_S(\underline{\operatorname{Dyn}}_{0,t}(G))\ar[r]^{\sim}\ar[d]&\underline{\Aut}_{S,a}(\underline{\operatorname{Dyn}}_0(G))\ar[d]\\
+1&1}
+\]
+\end{enumeratei}
+\end{proposition}
+\begin{corollary}{5.11}\label{XXIV.5.11}
+Under the preceding conditions, the following three categories are equivalent:
+\begin{enumeratei}
+\item the category of principal homogeneous bundles under $G$.
+\item the category of principal homogeneous bundles under $G_0$.
+\item the product category, for $t\in\mathbf T$, of the categories of principal homogeneous bundles under the $G_{0,t}$.
+\end{enumeratei}
+\end{corollary}
+This follows formally from the preceding decompositions and from 8.4.
+\begin{corollary}{5.12}\label{XXIV.5.12}
+One has canonical isomorphisms
+\[
+\underline{\operatorname{Tor}}(G)\simeq\prod_{t\in\mathbf T}\prod_{\mathscr D_{0,t}/S}\underline{\operatorname{Tor}}(G_{0,t})\simeq\prod_{\underline{\operatorname{Dyn}}_0(G)/S}\underline{\operatorname{Tor}}(G_0),
+\]
+and likewise on replacing $\underline{\operatorname{Tor}}$ by $\underline{\operatorname{Bor}}$ (resp. $\underline{\operatorname{Kil}}$).
+\end{corollary}
+Trivial from the split case.
+\begin{remark}{5.13}\label{XXIV.5.13}
+The canonical morphism
+\[
+\underline{\operatorname{Dyn}}(G)\to\underline{\operatorname{Dyn}}_0(G)
+\]
+allows one to consider $\underline{\operatorname{Dyn}}(G)$ as a Dynkin $\underline{\operatorname{Dyn}}_0(G)$-scheme; in fact it is the Dynkin scheme $\underline{\operatorname{Dyn}}(G_0)$ of $G_0$.
+
+Likewise, if $T\subset B$ is a Killing pair of $G$, canonically corresponding to the Killing pair $T_0\subset B_0$ of $G_0$, one verifies that the obstructions to quasi-splitting $G$ and $G_0$, which lie (3.9) in $\Pic(\underline{\operatorname{Dyn}}(G))=\Pic(\underline{\operatorname{Dyn}}(G_0))$, coincide. One deduces:
+\end{remark}
+\begin{corollary}{5.14}\label{XXIV.5.14}
+The following conditions are equivalent:
+\begin{enumeratei}
+\item $G$ is quasi-splittable,
+% original PDF p. 36
+\item $G_0$ is quasi-splittable,
+\item each $G_{0,t}$, $t\in\mathbf T$, is quasi-splittable.
+\end{enumeratei}
+\end{corollary}
+
+\sgasection{6}{Automorphisms of Borel subgroups of reductive groups}
+\begin{lemma}{6.1}\label{XXIV.6.1}
+Let $S$ be a scheme, $(G,T,M,R)$ a split $S$-group, $\Delta$ a system of simple roots of $R$, and $B$ the corresponding Borel subgroup. Then $B^{\mathrm u}$ is generated as an (fppf) sheaf of groups by the $U_\alpha$, $\alpha\in\Delta$.
+\end{lemma}
+Let $H$ be the subsheaf of groups of $B^{\mathrm u}$ generated by the $U_\alpha$, $\alpha\in\Delta$. Let us prove $H\supset U_\beta$ ($\beta\in R_+$) by induction on the integer $\operatorname{ord}(\beta)=\operatorname{ord}_\Delta(\beta)>0$ (cf. Exp.~XXI, 3.2.15). The assertion holds by hypothesis for $\operatorname{ord}(\beta)=1$. Suppose therefore $\operatorname{ord}(\beta)>1$ and $U_\gamma\subset H$ whenever $\operatorname{ord}(\gamma)<\operatorname{ord}(\beta)$. There exists $\alpha\in\Delta$ such that $\beta-\alpha\in R_+$ (Exp.~XXI, 3.1.1). Let $p$ be the largest integer such that $\beta-p\alpha=\beta'\in R_+$. One has $U_\alpha,U_{\beta'}\subset H$, $\beta'-\alpha\notin R$. One is therefore reduced to proving:
+\begin{lemma}{6.2}\label{XXIV.6.2}
+Take up the notation of Exp.~XXIII, 6.4. Suppose $p=1$, i.e. $\beta-\alpha$ is not a root. If $H$ is a subsheaf of groups of $B^{\mathrm u}$ such that $U_\alpha,U_\beta\subset H$, then $U_{i\alpha+j\beta}\subset H$ whenever $i\alpha+j\beta\in R$, $i>0$, $j>0$.
+\end{lemma}
+\begin{proof}
+Let us distinguish four cases according to the value of $q=0,1,2,3$. In what follows $x$ and $y$ denote two arbitrary sections of $\mathbf G_{\mathrm a,S'}$, $S'\to S$.
+
+If $q=0$, there is nothing to prove.
+
+If $q=1$, one has $p_{\alpha+\beta}(\pm x)=p_\beta(-y)p_\alpha(-x)p_\beta(y)p_\alpha(x)\in H(S')$, hence $U_{\alpha+\beta}\subset H$.
+% typo?: the source prints +/- x, not +/- xy, for arbitrary x,y; kept as printed.
+
+If $q=2$, one similarly has
+\[
+p_{\alpha+\beta}(\pm xy)p_{2\alpha+\beta}(\pm x^2y)=p_\beta(-y)p_\alpha(-x)p_\beta(y)p_\alpha(x)\in H(S'),
+\]
+whence, after changing certain signs,
+\[
+F(x,y)=p_{\alpha+\beta}(xy)p_{2\alpha+\beta}(x^2y)\in H(S').
+\]
+Since $p_{\alpha+\beta}$ and $p_{2\alpha+\beta}$ commute, one then has $F(x,1)F(1,-x)=p_{2\alpha+\beta}(x^2-x)$.\nde{We have corrected $F(-1,x)$ to $F(1,-x)$.}If $a\in\Ga(S)$, the equation $X^2-X=a$ defines a free surjective extension of $S$ (it is $\Spec\OS[X]/(X^2-X-a)$); one therefore has $p_{2\alpha+\beta}(a)\in H(S')$, hence $U_{2\alpha+\beta}\subset H$, hence also $U_{\alpha+\beta}\subset H$ (since $F(1,a)\in H(S')$).
+
+If $q=3$, one similarly has
+\[
+F(x,y)=p_{\alpha+\beta}(xy)p_{2\alpha+\beta}(x^2y)p_{3\alpha+\beta}(x^3y)p_{3\alpha+2\beta}(x^3y^2)\in H(S');
+\]
+and since
+\[
+p_{3\alpha+2\beta}(\pm x)=F(1,1)^{-1}p_\beta(-x)F(1,1)p_\beta(x)\in H(S'),
+\]
+one obtains that $U_{3\alpha+2\beta}\subset H$ and therefore
+\[
+K(x,y)=p_{\alpha+\beta}(xy)p_{2\alpha+\beta}(x^2y)p_{3\alpha+\beta}(x^3y)\in H(S').
+\]
+Then computing
+\[
+K(x+y,1)K(-x,1)K(1,y)^{-1}
+\]
+modulo $U_{3\alpha+2\beta}$, one finds
+% original PDF p. 37
+\[
+p_{2\alpha+\beta}(2x^2+y^2+2xy-y)p_{3\alpha+\beta}(y^3+3xy^2+3x^2y-y)\in H(S').
+\]
+If $a\in\Ga(S)$, the ``equations''
+\[
+\begin{aligned}
+x^2&=-xy-y+1-a\\
+y^2&=3y-2+3a
+\end{aligned}
+\]
+define a free surjective extension of $S$; one then has $y^3+3xy^2+3x^2y-y=0$ and the preceding expression gives $p_{2\alpha+\beta}(a)\in H(S')$.\nde{We have corrected $p_{3\alpha+\beta}(a)$ to $p_{2\alpha+\beta}(a)$, and given the end of the argument in detail.}One has therefore proved that $H$ contains $U_{2\alpha+\beta}$ and $U_{3\alpha+2\beta}$ and that
+\[
+E(x,y)=p_{\alpha+\beta}(xy)p_{3\alpha+\beta}(x^3y)\in H(S').
+\]
+Since $p_{\alpha+\beta}(xy)$ and $p_{3\alpha+\beta}$ commute, one is reduced to the preceding computation, i.e. $E(1,x)E(1,-x)=p_{3\alpha+\beta}(x^3-x)$, whence $U_{3\alpha+\beta}\subset H$, then $U_{\alpha+\beta}\subset H$.
+% typo?: E(1,x)E(1,-x) in the source; kept as printed.
+\end{proof}
+\begin{remark}{6.2.1}\label{XXIV.6.2.1}
+The preceding proof shows that one could have replaced the hypothesis ``$H$ contains $U_\alpha$ and $U_\beta$'' by ``$H$ contains $U_\alpha$ or $U_\beta$, and $H$ is invariant under $\mathrm{int}(U_\alpha)$ and $\mathrm{int}(U_\beta)$''.
+\end{remark}
+\begin{theorem}{6.3}\label{XXIV.6.3}
+Let $S$ be a scheme, $G$ and $G'$ two semisimple $S$-groups, and $B$ (resp. $B'$) a Borel subgroup of $G$ (resp. $G'$). Every isomorphism $B\isomto B'$ is induced by a unique isomorphism $G\isomto G'$.
+\end{theorem}
+\begin{proof}
+The assertion is local for the étale topology and one may suppose $G$ split: $G=(G,T,M,R)$, $B$ being defined by the system $R_+$ of positive roots of $R$. The given isomorphism $u:B\isomto B'$ induces an isomorphism of $T$ onto a maximal torus $T'$ of $B'$, hence of $G'$. The given isomorphism $T\simeq\mathrm D_S(M)$ gives an isomorphism $T'\simeq\mathrm D_S(M)$ in which the elements of $R_+$ become the constant roots of $B'$ relative to $T'$, hence the elements of $R$ the constant roots of $G'$ relative to $T'$. Since $G$ and $G'$ are semisimple, the coroots are determined by duality (Exp.~XXI, 1.2.5), which proves that $(T',M,R)$ is a splitting of $G'$ such that $\mathscr R(G)=\mathscr R(G')$.
+
+Applying Exp.~XXIII, 5.1 (Uniqueness theorem), one deduces that there exists a unique isomorphism $G\isomto G'$ agreeing with $u$ on $T$ and the $U_\alpha$, $\alpha\in\Delta$. By 5.1, the restriction of this isomorphism to $B$ is $u$.
+% typo?: source reference 5.1 here; kept as printed.
+\end{proof}
+\begin{remark}{6.3.1}\label{XXIV.6.3.1}
+(i) Using Exp.~XXII, 4.1.9 and reasoning as in loc. cit. 4.2.12, one can replace ``isomorphism'' in the statement of the theorem by ``isogeny'' (resp. ``central isogeny'').
+
+(ii) The theorem is false for reductive groups. Take for example $G=G'=\SL_2\times\Gm$, identified with the group of the following matrices:
+\[
+\left\{\begin{pmatrix}a&b&0\\c&d&0\\0&0&h\end{pmatrix}\ \middle|\ ad-bc=1,\ h\text{ invertible}\right\};
+\]
+take for $B=B'$ the Borel subgroup defined by $c=0$ and for $u$ the following automorphism of $B$: $u(a,b,d,h)=(a,b,d,ah)$.
+\end{remark}
+% original PDF p. 38; preceding sentence finishes here
+\begin{corollary}{6.4}\label{XXIV.6.4}
+The functor $(G,B)\mto B$ from the category consisting of pairs $(G,B)$, where $G$ is a semisimple $S$-group and $B$ a Borel subgroup of $G$, to the category of $S$-group schemes (the morphisms are the isomorphisms) is fully faithful.
+\end{corollary}
+\begin{corollary}{6.5}\label{XXIV.6.5}
+Let $S$ be a scheme, $G$ a semisimple $S$-group, $B$ a Borel subgroup of $G$, and $B'$ an $S$-group locally isomorphic to $B$ for (fpqc). Then $B'$ is locally isomorphic to $B$ for the local finite étale topology\nde{Denoted by (étf) in Exp.~IV 6.3. In other words, for every $s\in S$ there exist an open neighborhood $U$ of $s$ and a finite surjective étale morphism $V\to U$ such that $B'\times_S V\simeq B\times_S V$.} and there exists a semisimple $S$-group $G'$ of which $B'$ is a Borel subgroup; $G'$ is unique up to a unique isomorphism inducing the identity on $B'$.
+\end{corollary}
+\begin{corollary}{6.6}\label{XXIV.6.6}
+Let $S$ be a scheme, $G$ a semisimple $S$-group, and $B$ a Borel subgroup of $G$. Then $\underline{\Aut}_{S\text{-gr.}}(B)$ is representable by a smooth affine $S$-scheme, $\underline{\operatorname{Autext}}(B)$ is representable by a finite étale $S$-scheme, and the evident morphisms induce an isomorphism of exact sequences
+\[
+\xymatrix@C=1.8em{
+1\ar[r]&B^{\mathrm{ad}}\ar[r]\ar[d]_{\wr}&\underline{\Aut}_{S\text{-gr.}}(G,B)\ar[r]\ar[d]_{\wr}&\underline{\operatorname{Autext}}(G)\ar[r]\ar[d]_{\wr}&1\\
+1\ar[r]&B^{\mathrm{ad}}\ar[r]&\underline{\Aut}_{S\text{-gr.}}(G)\ar[r]&\underline{\operatorname{Autext}}(B)\ar[r]&1.}
+\]
+% typo?: bottom row has Aut(G) in the source, not Aut(B); kept as printed.
+\end{corollary}
+This follows at once from 2.1 and the preceding results. We leave to the reader the task of developing the analogues of the results of nos. 1, 2, 3, 4 in the above setting.
+\begin{remark}{6.7}\label{XXIV.6.7}
+If $S$ is a scheme and $B$ an $S$-group, $B$ can therefore be a Borel subgroup of only one semisimple group, completely determined by $B$. It therefore remains to characterize the $S$-groups $B$ which are indeed Borel subgroups of semisimple groups.\nde{One may ask whether every smooth affine $S$-group, each of whose geometric fibers is a Borel subgroup of a semisimple group, is a Borel subgroup of a semisimple $S$-group. (We have removed the ``counterexample'' given in the original, for $S=$ the scheme of dual numbers over a field $k$, which was erroneous, as M.~Demazure pointed out to us.)}
+\end{remark}
+
+\sgasection{7}{Representability of the functors $\underline{\Hom}_{S\text{-gr.}}(G,H)$, for reductive $G$}
+\numpara{7.1}\label{XXIV.7.1}\textbf{The split case}
+\numpara{7.1.1}\label{XXIV.7.1.1}
+Let $S$ be a scheme, $G$ a pinned $S$-group, $T$ its maximal torus, $\Delta$ the set of simple roots, and, for $\alpha\in\Delta$,
+\[
+u_\alpha\in U_\alpha^\times(S),\qquad w_\alpha\in\uNorm_G(T)(S),
+\]
+the elements defined by the pinning.

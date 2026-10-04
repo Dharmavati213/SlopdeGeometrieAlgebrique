@@ -1,0 +1,141 @@
+\begin{definition}{0.4.2}\label{VIIB.0.4.2}
+A profinite $k$-algebra $C$ will be said to have \emph{finite length} if the underlying $k$-module has finite length (hence is discrete); we shall denote by $\mathbf{Alf}/k$ the full subcategory of $\mathbf{Alp}/k$ consisting of $k$-algebras of finite length.\nde{Beware: $k$ is an object of $\mathbf{Alf}/k$ only if $k$ is artinian; cf. 1.2.2 below.}
+\end{definition}
+For every profinite $k$-algebra $A$, denote by $h^A$ the functor
+\[
+\mathbf{Alf}/k\to\Ens,\qquad C\mto\Hom_{\mathbf{Alp}/k}(A,C).
+\]
+It is clear that $h^A$ is a left exact functor.\nde{\ie one which commutes with finite projective limits.} Moreover, the canonical projections $A\to A/\mathfrak l$ (where $\mathfrak l$ runs through the open ideals of $A$) induce, for every object $C$ of $\mathbf{Alf}/k$, a canonical isomorphism
+\[
+\varinjlim_{\mathfrak l}\Hom_{\mathbf{Alf}/k}(A/\mathfrak l,C)\isomto\Hom_{\mathbf{Alp}/k}(A,C),
+\]
+functorial in $C$. This means that $h^A$ is the inductive limit of the representable functors $h^{A/\mathfrak l}$, \ie
+\begin{equation}\tag{*}
+h^A\simeq\varinjlim_{\mathfrak l}h^{A/\mathfrak l}.
+\end{equation}
+If $B$ is another profinite $k$-algebra, the general properties of the bifunctor $\Hom$ and the isomorphism $\Hom(h^C,h^B)=h^B(C)$ for $C$ of finite length give isomorphisms
+\[
+\begin{aligned}
+\Hom_{\mathbf{Alp}/k}(B,A)&\simeq\varprojlim\Hom_{\mathbf{Alp}/k}(B,A/\mathfrak l)\\
+&\simeq\varprojlim\Hom(h^{A/\mathfrak l},h^B)\\
+&\simeq\Hom(\varinjlim_{\mathfrak l}h^{A/\mathfrak l},h^B);
+\end{aligned}
+\]
+combined with (*), this shows that the contravariant functor $A\mto h^A$ is \emph{fully faithful}. In fact:
+\begin{proposition}{}
+The functor $A\mto h^A$ is an anti-equivalence from $\mathbf{Alp}/k$ to the category of left exact functors from $\mathbf{Alf}/k$ to $\Ens$.
+\end{proposition}
+Indeed, by the foregoing it suffices to show that every left exact functor $\mathbf F:\mathbf{Alf}/k\to\Ens$ is isomorphic to a functor of the form $h^A$; for this, one can construct $A$ as follows (cf. TDTE II, § 3).
+Since $\mathbf F$ is left exact, for every $k$-algebra $C$ of finite length and every element $\xi$ of $\mathbf F(C)$, there is a least subalgebra $C'$ of $C$ such that $\xi$ belongs to the image of $\mathbf F(C')$ in $\mathbf F(C)$. If $C'=C$, one says that the pair $(C,\xi)$ is \emph{minimal}.
+The minimal pairs form a category if one takes as morphisms from $(C,\xi)$ to $(D,\eta)$ the homomorphisms $\varphi$ from $C$ to $D$ such that $(\mathbf F\varphi)(\xi)=\eta$; it is clear that such a $\varphi$ is a surjection and that the category of minimal pairs is ``left filtered''. Moreover, one can restrict to pairs $(C,\xi)$ such that $C$ belongs to a set containing $k$-algebras of finite length of each isomorphism type.\nde{Indeed, every discrete $k$-module of length $n$ is isomorphic to $k^n/L$, where $L$ is an open submodule of $k^n$ of colength $n$. One can then consider the \emph{set} of (isomorphism classes of) profinite $k$-algebra structures on each such module.} Thus the functor $(C,\xi)\mto C$, whose source category is that of minimal pairs and whose target category is that of profinite $k$-algebras, has a projective limit; one takes this projective limit for $A$.
+\begin{corollary}{}
+The category $\mathbf{Alp}/k$ has infinite inductive limits.
+\end{corollary}
+Indeed, the category of left exact functors from $\mathbf{Alf}/k$ to $\Ens$ has projective limits, defined ``argument by argument'', \ie if $(\mathbf F_i)$ is a projective system of such functors, one has, for every object $C$ of $\mathbf{Alf}/k$:
+\[
+(\varprojlim\mathbf F_i)(C)=\varprojlim\mathbf F_i(C).
+\]\nde{If $(A_i)_{i\in I}$ is an inductive system in $\mathbf{Alp}/k$, its inductive limit in $\mathbf{Alp}/k$ is the separated completion of the $k$-algebra $B$, the inductive limit of the underlying $k$-algebras, for the topology defined by the ideals $I$ such that $I\cap A_i$ is an open ideal of $A_i$ for every $i$, and $\operatorname{length}_k(B/I)<\infty$. Note that if, for example, $K/k$ is an algebraic field extension of infinite degree, and $(k_i)$ denotes the filtered inductive system of subextensions of finite degree, then the inductive limit of the system $(k_i)$ \emph{in $\mathbf{Alp}/k$} is the zero ring!}
+
+\numpara{0.5}\nde{We have detailed this paragraph.}Let $\varphi:k\to\ell$ be a homomorphism of pseudocompact rings (cf. 0.1.3). One can generalize the construction of 0.3 as follows.
+\begin{definition}{0.5.A}\label{VIIB.0.5.A}
+For every object $M$ of $\mathbf{PC}(k)$ (resp. $N$ of $\mathbf{PC}(\ell)$), we shall denote by $M\widehat\otimes_k N$ the separated completion of $M\otimes_k N$ for the linear topology defined by the kernels of the projections
+\[
+M\otimes_k\ell\to(M/M')\otimes_k(N/N'),
+\]
+% typo?: source prints M tensor ell rather than M tensor N in this projection; retained.
+where $M'$ (resp. $N'$) is an open submodule of $M$ (resp. $N$). Then $M\widehat\otimes_k N$ is a \emph{pseudocompact $\ell$-module}. If $m\in M$ and $x\in N$, we shall denote by $m\widehat\otimes_k x$ the canonical image of $m\otimes_k x$ in $M\widehat\otimes_k N$.
+This applies in particular when $N=\ell$; in this case one says that $M\widehat\otimes_k\ell$ is the pseudocompact $\ell$-module \emph{deduced from $M$ by the base change} $k\to\ell$.
+\end{definition}
+\begin{remarks}{0.5.B}\label{VIIB.0.5.B}
+\begin{enumeratei}
+\item When considering such a base change, $\ell$ will not in general be a profinite $k$-algebra: a typical example is the case where $k$ is a field and $\ell$ is an arbitrary extension $K$ of $k$.
+\item However, if the $k$-module underlying $N$ is pseudocompact (for example if $\ell$ is a profinite $k$-algebra), then, by 0.4, every open $k$-submodule of $N$ contains an open $\ell$-submodule of $N$; consequently, $M\widehat\otimes_k N$ in this case coincides with the completed tensor product (cf. 0.3) of the pseudocompact $k$-modules $M$ and $N$, and the notation therefore entails no ambiguity.
+\end{enumeratei}
+\end{remarks}
+The $k$-module $N|_k$ obtained by restriction of scalars is in any case a topological $k$-module, \ie the map $k\times N\to N$, $(t,n)\mto\varphi(t)n$ is continuous. Denote by $\Hom_c(M,N|_k)$ the abelian group of continuous homomorphisms of $k$-modules from $M$ to $N|_k$.
+\begin{proposition}{0.5.C}\label{VIIB.0.5.C}
+For every $M\in\Ob\mathbf{PC}(k)$ and $N\in\Ob\mathbf{PC}(\ell)$, one has a functorial isomorphism
+\[
+\Hom_{\mathbf{PC}(\ell)}(M\widehat\otimes_k\ell,N)\simeq\Hom_c(M,N|_k).
+\]\nde{Consequently, if $\ell$ is a \emph{profinite $k$-algebra}, the functor $M\mto M\widehat\otimes_k\ell$ is left adjoint to the restriction-of-scalars functor $\mathbf{PC}(\ell)\to\mathbf{PC}(k)$ (cf. Lemma 0.4).}
+\end{proposition}
+Indeed, let $\phi$ be a continuous homomorphism $M\to N|_k$; then the map $\phi':M\times\ell\to N$, $(m,\lambda)\mto\lambda\phi(m)$ is continuous and ``bilinear'' (\ie $k$-linear in the first factor and $\ell$-linear in the second). If $N'$ is an open $\ell$-submodule of $N$, one shows as in Lemma 0.3.1 that there exist an open submodule $M'$ of $M$ and an open ideal $\ell'$ of $\ell$ such that $\phi'(M'\times\ell)$ and $\phi'(M\times\ell')$ are contained in $N'$. It follows that $\phi$ induces a continuous homomorphism of $\ell$-modules $\Phi:M\widehat\otimes_k\ell\to N$ such that $\Phi(m\widehat\otimes\lambda)=\lambda\phi(m)$ for every $m\in M$ and $\lambda\in\ell$.
+Conversely, to every morphism $f:M\widehat\otimes_k\ell\to N$ one associates the morphism $f':m\mto f(m\widehat\otimes_k1)$ from $M$ to $N|_k$.
+One then obtains, as in 0.3.2, 0.3.5, and 0.3.1.2, the following:
+\begin{corollary}{0.5.D}\label{VIIB.0.5.D}
+The functor $\mathbf{PC}(k)\to\mathbf{PC}(\ell)$, $M\mto M\widehat\otimes_k\ell$, is right exact and commutes with filtered projective limits, \ie if $(M_i)$ is a filtered projective system of objects of $\mathbf{PC}(k)$, one has a canonical isomorphism
+\[
+(\varprojlim M_i)\widehat\otimes_k\ell\simeq\varprojlim(M_i\widehat\otimes_k\ell).
+\]
+Moreover, if $M,N$ are pseudocompact $k$-modules, one has a canonical isomorphism
+\[
+(M\widehat\otimes_k N)\widehat\otimes_k\ell\simeq(M\widehat\otimes_k\ell)\widehat\otimes_\ell(N\widehat\otimes_k\ell).
+\]
+\end{corollary}
+\begin{definition}{0.5.E}\label{VIIB.0.5.E}
+Finally, if $A$ is a profinite $k$-algebra, there is one and only one profinite $\ell$-algebra structure on $A\widehat\otimes_k\ell$ such that, if $a,b\in A$ and $\lambda,\mu\in\ell$,
+\[
+(a\widehat\otimes_k\lambda)(b\widehat\otimes_k\mu)=(ab)\widehat\otimes_k(\lambda\mu).
+\]
+One says that $A\widehat\otimes_k\ell$ is the profinite $\ell$-algebra deduced from $A$ by the \emph{extension of scalars} (or ``base change'') $k\to\ell$.
+\end{definition}
+
+\sgasection{1}{Formal varieties over a pseudocompact ring}
+\numpara{1.1}To every pseudocompact ring $A$ one can associate a formal scheme (EGA I, 10.4.2) as follows: the underlying topological space is the set $\Upsilon(A)$ of open prime (hence maximal) ideals of $A$, equipped with the discrete topology; the structure sheaf has the cartesian product $\prod_{\mathfrak m\in E}A_{\mathfrak m}$ as its space of sections over a subset $E$ of $\Upsilon(A)$. The formal scheme thus obtained is denoted by $\Spf(A)$ (the \emph{formal spectrum} of $A$).\nde{Cf. Remarks 0.1.2.}
+If $A$ and $B$ are two pseudocompact rings, a \emph{morphism} from $\Spf(B)$ to $\Spf(A)$ consists of a map $f$ from $\Upsilon(B)$ to $\Upsilon(A)$ and a family of continuous homomorphisms $f_y^\natural:A_{f(y)}\to B_y$, for $y\in\Upsilon(B)$. Such a morphism induces a continuous homomorphism $f^\natural$ from $A=\prod_{x\in\Upsilon(A)}A_x$ to $B=\prod_{y\in\Upsilon(B)}B_y$. The converse is true:
+\begin{proposition}{}
+The contravariant functor $A\mto\Spf(A)$ is fully faithful.
+\end{proposition}
+Indeed, if $\varphi:A\to B$ is a continuous homomorphism of algebras, the inverse image $\varphi^{-1}(\mathfrak n)$ of an open maximal ideal of $B$ is an open prime ideal of $A$, hence maximal in $A$. One therefore obtains a map $\mathfrak n\mto\varphi^{-1}(\mathfrak n)$ from $\Upsilon(B)$ to $\Upsilon(A)$, and $\varphi$ induces a continuous homomorphism $A_{\varphi^{-1}(\mathfrak n)}\to B_{\mathfrak n}$. Thus $\varphi$ induces a morphism of formal schemes $\Spf(\varphi):\Spf(B)\to\Spf(A)$. One easily verifies that $\Spf(\varphi)^\natural=\varphi$, and that $\Spf(f^\natural)=f$ for every morphism $f:\Spf(B)\to\Spf(A)$, whence the proposition.
+Although here we speak only of formal schemes of the form $\Spf(A)$, we shall use the language of formal schemes rather than that of pseudocompact rings in order to support our assertions by geometric intuition.
+
+\numpara{1.2}Let $k$ be a pseudocompact ring.
+\begin{definition}{1.2.A}\label{VIIB.1.2.A}\nde{We have added the numbering 1.2.A to 1.2.E for later references.}
+We shall call a \emph{formal variety over $k$} any formal scheme $X$ over $\Spf(k)$ which is isomorphic to a formal $k$-scheme $\Spf(A)$ for some profinite $k$-algebra $A$. The algebra $A$ is then isomorphic to the \emph{affine algebra of $X$}, that is, the algebra of sections of the structure sheaf $\OX$ of $X$.
+Denote by $\mathbf{Vaf}/k$ the full subcategory of the category of formal schemes over $\Spf(k)$ whose objects are formal $k$-varieties.\nde{Note that, by the definition of morphisms (1.1), every $X\in\Ob\mathbf{Vaf}/k$ is the direct sum in $\mathbf{Vaf}/k$ of the one-point formal varieties $\Spf(\OO_{X,x})$, for $x\in X$.}
+\end{definition}
+By 1.1, the functor $A\mto\Spf(A)$ is an anti-equivalence from $\mathbf{Alp}/k$ (0.4.1) to $\mathbf{Vaf}/k$. Thus, by Corollary 0.4.2:
+\begin{proposition}{1.2.B}\label{VIIB.1.2.B}
+The category $\mathbf{Vaf}/k$ has projective and inductive limits.\nde{In particular, cokernels exist in $\mathbf{Vaf}/k$; see below. Observe, moreover, that a filtered projective limit in $\mathbf{Vaf}/k$ whose transition morphisms are all surjective may be empty; cf. N.D.E. (34).}
+\end{proposition}
+For example, let $X\in\Ob\mathbf{Vaf}/k$ and let $f:Y\to X$ and $g:Z\to X$ be two formal $k$-varieties over $X$, and let $A,B,C$ be the affine algebras of $X,Y,Z$; by 0.4.1, the affine algebra of the fibered product $Y\times_X Z$ is identified with $B\widehat\otimes_A C$,\nde{Note that $Y\times_X Z$ is the direct sum, for $x\in X$, of the formal varieties $B_x\widehat\otimes_{\OO_{X,x}}C_x$, where $B_x$ is the product of the $\OO_{Y,y}$ for the $y\in Y$ such that $f(y)=x$, and $C_x$ is defined analogously. This will be used in 2.5.1.} so that the inclusion of $\mathbf{Vaf}/k$ in the category of all formal $k$-schemes commutes with finite projective limits (cf. EGA I, 10.7).
+Inductive limits of formal $k$-varieties correspond to projective limits of their affine algebras.
+
+\begin{example}{1.2.C}\label{VIIB.1.2.C}(Cokernels).
+Let, for example, $d,e:X\rightrightarrows Y$ be a double arrow in $\mathbf{Vaf}/k$; the affine algebra of $\Coker(d,e)$ is isomorphic to the kernel of the homomorphisms induced on the affine algebras of $X$ and $Y$, but one can also give the following construction of $\Coker(d,e)$: the topological space underlying $\Coker(d,e)$ is the cokernel of the underlying spaces;\nde{\ie the quotient set of $Y$ by the identifications $d(x)=e(x)$, for every $x\in X$, equipped with the quotient topology, which here is the discrete topology.} if $p$ is the canonical projection from the set underlying $Y$ to the cokernel, and $z$ belongs to the cokernel, the local algebra of $\Coker(d,e)$ at $z$ is the kernel of the double arrow
+\[
+d^\natural,e^\natural:\prod_{p(y)=z}\OO_{Y,y}\rightrightarrows\prod_{q(x)=z}\OO_{X,x},
+\]
+where one has put $q=p\circ d=p\circ e$ and where $d^\natural$ and $e^\natural$ are induced by the homomorphisms $d_x^\natural$ and $e_x^\natural$ (notation of 1.1).
+\end{example}
+\begin{definition}{1.2.D}\label{VIIB.1.2.D}
+If $\varphi:k\to\ell$ is a homomorphism of pseudocompact rings and $X$ a formal $k$-variety with affine algebra $A$, the formal scheme $X\times_{\Spf(k)}\Spf(\ell)$ obtained by base change is a formal $\ell$-variety, which we shall also denote by $X\widehat\otimes_k\ell$, and whose affine algebra is the completed tensor product $A\widehat\otimes_k\ell$ (cf. 0.5 and EGA I, § 10).
+\end{definition}
+\begin{remark}{1.2.E}\label{VIIB.1.2.E}
+Since every formal variety over $k$ decomposes into formal varieties over the local components of $k$, \emph{in certain proofs we shall suppose that $k$ is a local pseudocompact ring}.
+\end{remark}
+Let us now give some examples while fixing our terminology.
+
+\numpara{1.2.1}A \emph{$k$-functor} will, by definition, be a \emph{covariant} functor from $\mathbf{Alf}/k$ to $\Ens$. By 1.1 and 0.4.2, one can identify $\mathbf{Vaf}/k\simeq(\mathbf{Alp}/k)^0$ with a full subcategory of the category of $k$-functors, by associating to every formal $k$-variety $X$ the functor
+\[
+\mathbf{Alf}/k\to\Ens,\qquad C\mto X(C)=\Hom_{\mathbf{Vaf}/k}(\Spf(C),X).
+\]
+Later we shall encounter $k$-functors $\mathbf F$ which associate to every object $C$ of $\mathbf{Alf}/k$ a module $\mathbf F(C)$ over $C$, and to every morphism $\varphi:C\to D$ of $\mathbf{Alf}/k$ a $k$-linear map $\mathbf F(\varphi):\mathbf F(C)\to\mathbf F(D)$ such that, if $x\in\mathbf F(C)$ and $\lambda\in C$,
+\[
+\mathbf F(\varphi)(\lambda x)=\varphi(\lambda)\mathbf F(\varphi)(x).
+\]
+By Exp. I, 3.1, such an $\mathbf F$ is equipped with an $\mathbf O_k$-module structure, if one denotes by $\mathbf O_k$ the ring-valued $k$-functor which associates to every object $C$ of $\mathbf{Alf}/k$ the ring underlying $C$.
+\begin{enoncerm}{Definitions}{}
+\begin{enumeratei}
+\item An $\mathbf O_k$-module $\mathbf F$ will be said to be \emph{admissible} if every morphism $\varphi:C\to D$ of $\mathbf{Alf}/k$ induces a bijection from $D\otimes_C\mathbf F(C)$ to $\mathbf F(D)$.\nde{We have introduced this terminology; cf. N.D.E. (47) in 1.2.3.}
+\item One says that $\mathbf F$ is \emph{flat} if it is admissible and if, for every object $C$ of $\mathbf{Alf}/k$, $\mathbf F(C)$ is a flat $C$-module.\nde{and hence projective, since $C$ is artinian.}
+\end{enumeratei}
+\end{enoncerm}
+For example, if $M$ is a $k$-module (\emph{not necessarily pseudocompact}), we shall denote (as in Exp. I, 4.6.1) by $\mathbf W(M)$ the $\mathbf O_k$-module $C\mto C\otimes_k M$; then $\mathbf W(M)$ is flat when $M$ is flat over $k$.
+Moreover, the functor $M\mto\mathbf W(M)$ has as its right adjoint the functor which associates to every $\mathbf O_k$-module $\mathbf F$ the $k$-module $\varprojlim_{\mathfrak l}\mathbf F(k/\mathfrak l)$, where $\mathfrak l$ runs through the open ideals of $k$.
+
+\numpara{1.2.2}In what follows, an $\mathbf O_k$-module will always be denoted by a boldface letter such as $\mathbf F$; when $k$ is artinian, we shall then write simply $F$ instead of $\mathbf F(k)$. In this case, it goes without saying that the functor $\mathbf F\mto F$ induces an equivalence from the category of flat $\mathbf O_k$-modules to that of flat $k$-modules! Thus the terminology we have adopted has only the purpose of allowing us to reason ``as if $k$ were always artinian''.
+In accordance with Exposé I § 3.1, we shall use analogous conventions for other algebraic structures: thus an $\mathbf O_k$-algebra (resp. an $\mathbf O_k$-coalgebra, resp. an $\mathbf O_k$-Lie algebra, resp. an $\mathbf O_k$-Lie $p$-algebra) will consist of an $\mathbf O_k$-module $\mathbf M$ and, for every object $C$ of $\mathbf{Alf}/k$, a $C$-algebra structure (resp. a $C$-coalgebra, resp. a $C$-Lie algebra, resp. a $C$-Lie $p$-algebra structure) on $\mathbf M(C)$; one supposes further that, for every morphism $\varphi:C\to D$ of $\mathbf{Alf}/k$, the map from $D\otimes_C\mathbf M(C)$ to $\mathbf M(D)$ induced by $\mathbf M(\varphi)$ is a homomorphism of $D$-algebras (resp. of $D$-coalgebras, etc.).
+Finally, note that if $\mathbf F$ and $\mathbf G$ are two $\mathbf O_k$-modules, $\mathbf F\otimes_k\mathbf G$ will denote the $\mathbf O_k$-module $C\mto\mathbf F(C)\otimes_C\mathbf G(C)$.
+
+\numpara{1.2.3}\nde{We have added the following lemma and introduced the numbering 1.2.3.A to 1.2.3.F for later references.}Let us begin with the following lemma.

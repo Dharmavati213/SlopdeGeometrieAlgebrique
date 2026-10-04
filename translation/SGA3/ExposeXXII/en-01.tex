@@ -1,0 +1,254 @@
+\exposetitle{XXII}{Reductive groups: splittings, subgroups, quotient groups}
+\label{XXII}
+\begin{center}\textit{by M.~Demazure}\end{center}
+{\renewcommand{\thefootnote}{(0)}\nde{Version of 13/10/2024}}%
+This expos\'e comprises two parts. The first (1 to 5.5) collects the technical results necessary for the proof of the uniqueness and existence theorems. The second (5.6 to the end) will not be used in this proof; the end of \No~5 will be used in particular in expos\'e XXVI devoted to parabolic subgroups; \No~6 establishes in the framework of schemes the classical results on the derived group of a reductive group.
+
+\sgasection{1}{Roots and coroots. Split groups and root data}\label{XXII.sec.1}
+\begin{theorem}{1.1}\label{XXII.1.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $\alpha$ a root of $G$ with respect to $T$.
+\begin{enumeratei}
+\item There exists a unique morphism of groups with operator group $T$
+\[
+\exp_\alpha:\mathrm W(\mathfrak g^\alpha)\to G
+\]
+which induces on the Lie algebras the canonical morphism $\mathfrak g^\alpha\to\mathfrak g$. This morphism is a closed immersion. The corresponding morphism
+\[
+T\mathbin{\cdot_\alpha}\mathrm W(\mathfrak g^\alpha)\to G
+\]
+is also a closed immersion.
+
+If $p_\alpha:\mathbf G_{a,S}\to G$ is a monomorphism normalized by $T$ with multiplier $\alpha$, there exists a unique $X_\alpha\in\Gamma(S,\mathfrak g^\alpha)^\times${\renewcommand{\thefootnote}{(1)}\nde{The set $\Gamma(S,\mathfrak g^\alpha)^\times$ is defined in XIX 4.4.1.}} such that $p_\alpha(x)=\exp_\alpha(xX_\alpha)$; one has $\uLie(p_\alpha)(1)=X_\alpha$ and the two preceding formulas establish a bijective correspondence between $\Gamma(S,\mathfrak g^\alpha)^\times$ and the set of monomorphisms $\mathbf G_{a,S}\to G$ normalized by $T$ with multiplier $\alpha$.
+\item There exists a unique duality (denoted $(X,Y)\mto XY$)
+\[
+\mathfrak g^\alpha\otimes_{\OS}\mathfrak g^{-\alpha}\isomto\OS,
+\]
+and a unique morphism of groups
+\[
+\alpha^*:\mathbf G_{m,S}\to T,
+\]
+such that one has formula (F) of Exp.~XX 2.1. One has
+\[
+\alpha\circ\alpha^*=2,\qquad(-\alpha)^*=-\alpha^*,
+\]
+and $\alpha^*$ is given by the formula of Exp.~XX 2.7.
+\end{enumeratei}
+\end{theorem}
+Indeed, a morphism normalized by $T$ with multiplier $\alpha$ necessarily factors through the closed subgroup $Z_\alpha=\uCentr_G(T_\alpha)$ of $G$ (\cf Exp.~XIX 3.9). Now $(Z_\alpha,T,\alpha)$ is an elementary $S$-system (Exp.~XX 1.4), and one is reduced to the results of expos\'e XX (1.5, 2.1 and 5.9).
+
+\begin{remark}{1.2}\label{XXII.1.2}
+Part (i) of theorem 1.1 remains valid if one assumes only that $\alpha$ is a character of $T$, nontrivial on each fiber. Indeed, one then has a decomposition $S=S'\amalg S''$, such that $\alpha|_{S'}$ is a root of $G_{S'}$ with respect to $T_{S'}$ and $\mathfrak g^\alpha|_{S''}=0$. If $S=S'$, one is reduced to 1.1; if $S=S''$ the result is trivial; the general case follows at once.
+\end{remark}
+\begin{enoncerm}{Notations}{1.3}\label{XXII.1.3}
+As in expos\'e XX, one denotes by $U_\alpha$ the image of $\mathrm W(\mathfrak g^\alpha)$; it is a closed subgroup of $G$, canonically endowed with a vector structure. One will say that it is the \emph{vector group associated with the root $\alpha$}. One says that $\alpha^*$ is the \emph{coroot associated with $\alpha$}. Sections $X_\alpha\in\Gamma(S,\mathfrak g^\alpha)$ and $X_{-\alpha}\in\Gamma(S,\mathfrak g^{-\alpha})$ are said to be \emph{paired} if $X_\alpha X_{-\alpha}=1$. Then $X_\alpha\in\Gamma(S,\mathfrak g^\alpha)^\times$ and likewise for $X_{-\alpha}$. The corresponding morphisms $p_\alpha$ and $p_{-\alpha}$ are contragredient to one another in the sense of XX, 1.5{\renewcommand{\thefootnote}{(2)}\nde{That is, if one denotes by $\langle\ ,\ \rangle$ the duality between $\mathfrak g^\alpha$ and $\mathfrak g^{-\alpha}$ and identifies $\mathfrak g^\alpha$ with $U_\alpha$ via $p_\alpha(x)=\exp(xX_\alpha)$, and likewise for $-\alpha$, then $\langle p_\alpha(x),p_{-\alpha}(y)\rangle=xy$.}} and one has
+\[
+p_\alpha(x)\,p_{-\alpha}(y)=p_{-\alpha}\left(\frac y{1+xy}\right)\alpha^*(1+xy)\,p_\alpha\left(\frac x{1+xy}\right).
+\]
+\end{enoncerm}
+\begin{proposition}{1.4}\label{XXII.1.4}
+Under the conditions of 1.1, let $w\in\uNorm_G(T)(S)$. Then $\beta=\alpha\circ\operatorname{int}(w)^{-1}:T\to\mathbf G_{m,S}$ is a root of $G$ with respect to $T$, $\beta^*=\operatorname{int}(w)\circ\alpha^*$ is the corresponding coroot, and the following diagram is commutative:
+\[
+\xymatrix{\mathrm W(\mathfrak g^\alpha)\ar[r]^{\exp_\alpha}\ar[d]_{\Ad(w)}&G\ar[d]^{\operatorname{int}(w)}\\
+\mathrm W(\mathfrak g^\beta)\ar[r]_{\exp_\beta}&G.}
+\]
+\end{proposition}
+Trivial: transport of structure.
+
+\begin{enoncerm}{Definitions}{1.5}\label{XXII.1.5}
+(a) Under the conditions of 1.1, one denotes by $s_\alpha$ the automorphism of $T$ defined by
+\[
+s_\alpha(t)=t\cdot\alpha^*(\alpha(t))^{-1}.
+\]
+One denotes by $(\ ,\ )$ the canonical pairing:
+\[
+\begin{split}
+\uHom_{S\text{-gr.}}(\mathbf G_{m,S},T)\times\uHom_{S\text{-gr.}}(T,\mathbf G_{m,S})\\
+\to\uHom_{S\text{-gr.}}(\mathbf G_{m,S},\mathbf G_{m,S})=\ZZ_S.
+\end{split}
+\]
+Then $s_\alpha$ acts on $\uHom_{S\text{-gr.}}(T,\mathbf G_{m,S})$, resp. $\uHom_{S\text{-gr.}}(\mathbf G_{m,S},T)$, by the following formulas, where $\chi$ (resp. $u$) denotes an arbitrary section of $\uHom_{S\text{-gr.}}(T,\mathbf G_{m,S})$ (resp. of $\uHom_{S\text{-gr.}}(\mathbf G_{m,S},T)$):
+\[
+s_\alpha(\chi)=\chi-(\alpha^*,\chi)\alpha,\qquad
+s_\alpha(u)=u-(u,\alpha)\alpha^*.
+\]
+One has $s_\alpha\circ s_\alpha=\mathrm{id}$ and $s_{-\alpha}=s_\alpha$.
+
+(b) If $X\in\Gamma(S,\mathfrak g^\alpha)^\times$, then the inner automorphism $w_\alpha(X)$ of $T$ defined by
+\[
+w_\alpha(X)=\exp_\alpha(X)\exp_{-\alpha}(-X^{-1})\exp_\alpha(X)
+\]
+(\cf Exp.~XX 3.1) coincides with $s_\alpha$ (\loccit). One then concludes from 1.4:
+\end{enoncerm}
+\begin{corollary}{1.6}\label{XXII.1.6}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $\alpha$ and $\beta$ two roots of $G$ with respect to $T$. Then
+\[
+s_\alpha(\beta)=\beta-(\alpha^*,\beta)\alpha
+\]
+is a root of $G$ with respect to $T$, the corresponding coroot being
+\[
+s_\alpha(\beta)^*=s_\alpha(\beta^*)=\beta^*-(\beta^*,\alpha)\alpha^*.
+\]
+\end{corollary}
+\begin{corollary}{1.7}\label{XXII.1.7}
+Under the preceding conditions, $\alpha^*=\beta^*$ implies $\alpha=\beta$.
+\end{corollary}
+Indeed, if $\alpha^*=\beta^*$, one has \cf XXI.1.4
+\[
+s_\beta(\alpha)=\alpha-2\beta,\qquad s_\alpha(\beta)=\beta-2\alpha,
+\]
+and one deduces at once
+\[
+(s_\beta s_\alpha)^n(\alpha)=\alpha+2n(\beta-\alpha).
+\]
+If $\beta\ne\alpha$, there exists an $s\in S$ such that $\alpha_s\ne\beta_s$. But then the preceding formula shows that there exist infinitely many distinct roots of $G_s$ with respect to $T_s$, which is impossible.
+
+\begin{enoncerm}{Definitions}{1.8.0}\label{XXII.1.8.0}
+{\renewcommand{\thefootnote}{(3)}\nde{The numbering 1.8.0 has been added to bring out these definitions.}}%
+If $u:\mathbf G_{m,S}\to T$ is a morphism of groups, one will say that $u$ is a \emph{coroot} of $G$ with respect to $T$ if there exists a root $\alpha$ of $G$ with respect to $T$ such that $\alpha^*=u$. Consider the functor $\mathcal R^*$ of coroots of $G$ with respect to $T$ defined as follows:
+\[
+\mathcal R^*(S')=\text{set of coroots of $G_{S'}$ with respect to $T_{S'}$}.
+\]
+If $\mathcal R$ is the functor of roots of $G$ with respect to $T$ (Exp.~XIX 3.8.), one has a canonical morphism $\mathcal R\to\mathcal R^*$. By 1.7 and Exp.~XIX 3.8, one has:
+\end{enoncerm}
+\begin{corollary}{1.8}\label{XXII.1.8}
+The canonical morphism $\mathcal R\to\mathcal R^*$ is an isomorphism. In particular, $\mathcal R^*$ is representable by a twisted constant finite $S$-scheme which is an open and closed subscheme of $\uHom_{S\text{-gr.}}(\mathbf G_{m,S},T)$.
+\end{corollary}
+This leads one to give the following definition:
+\begin{definition}{1.9}\label{XXII.1.9}
+Let $S$ be a scheme, $T$ an $S$-torus. One calls a \emph{twisted root datum} in $T$ the datum:
+\begin{enumeratei}
+\item of a finite subscheme $\mathcal R$ of $\uHom_{S\text{-gr.}}(T,\mathbf G_{m,S})$,
+\item of a finite subscheme $\mathcal R^*$ of $\uHom_{S\text{-gr.}}(\mathbf G_{m,S},T)$,
+\item of an isomorphism $\mathcal R\isomto\mathcal R^*$ denoted $\alpha\mto\alpha^*$,
+\end{enumeratei}
+satisfying the following conditions:
+
+(DR 1) For every $S'\to S$ and every $\alpha\in\mathcal R(S')$, one has $\alpha\circ\alpha^*=2$.
+
+(DR 2) For every $S'\to S$ and all $\alpha,\beta\in\mathcal R(S')$, one has
+\[
+\alpha-(\beta^*,\alpha)\beta\in\mathcal R(S'),\qquad
+\alpha^*-(\alpha^*,\beta)\beta^*\in\mathcal R^*(S').
+\]
+Moreover, if $\alpha\in\mathcal R(S')$ ($S'\ne\varnothing$) implies $2\alpha\notin\mathcal R(S')$, one says that the root datum is \emph{reduced}.
+\end{definition}
+\begin{proposition}{1.10}\label{XXII.1.10}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $\mathcal R$ (resp. $\mathcal R^*$) the scheme of roots (resp. of coroots) of $G$ with respect to $T$. Then $(\mathcal R,\mathcal R^*)$ is a reduced twisted root datum in $T$.
+\end{proposition}
+The only fact which remains to be verified is that this twisted root datum is reduced. This is what was done in Exp.~XIX 3.10.
+
+\numpara{1.11}\label{XXII.1.11}
+Let $T=\mathrm D_S(M)$ be a trivialized torus. If one denotes by $M^*$ the dual abelian group of $M$, one has canonical isomorphisms (\cf Exp.~VIII 1.5):
+\[
+\begin{aligned}
+\uHom_{S\text{-gr.}}(T,\mathbf G_{m,S})&\isomto M_S,\\
+\uHom_{S\text{-gr.}}(\mathbf G_{m,S},T)&\isomto M_S^*,
+\end{aligned}
+\]
+hence isomorphisms of groups:
+\[
+\begin{aligned}
+\Hom_{S\text{-gr.}}(T,\mathbf G_{m,S})&\to\Hom_{\mathrm{loc.const.}}(S,M),\\
+\Hom_{S\text{-gr.}}(\mathbf G_{m,S},T)&\to\Hom_{\mathrm{loc.const.}}(S,M^*).
+\end{aligned}
+\]
+A character of $T$ (resp. a morphism of groups $\mathbf G_{m,S}\to T$) will be called \emph{constant} (relative to the given trivialization) if the preceding isomorphism transforms it into a constant map from $S$ to $M$ (resp. $M^*$).
+
+\numpara{1.12}\label{XXII.1.12}
+With the same notations, let $(M,M^*,R,R^*)$ be a root datum (Exp.~XXI). Then $(R_S,R_S^*)$ is a twisted root datum in $T$. Conversely, if $(\mathcal R,\mathcal R^*)$ is a twisted root datum in a torus $T$, one will call a \emph{splitting} of this root datum the datum of an ordinary root datum $(M,M^*,R,R^*)$ and of an isomorphism $T\simeq\mathrm D_S(M)$ which transforms $(\mathcal R,\mathcal R^*)$ into $(R_S,R_S^*)$.
+\begin{definition}{1.13}\label{XXII.1.13}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$. One calls a \emph{splitting of $G$ relative to $T$} the datum
+\begin{enumeratei}
+\item of an abelian group $M$ and an isomorphism $T\simeq\mathrm D_S(M)$,
+\item of a system of roots $R$ of $G$ with respect to $T$ (Exp.~XIX 3.6),
+\end{enumeratei}
+satisfying the following two conditions:
+
+(D$_1$) $S$ is nonempty and the roots $\alpha\in R$ (resp. the corresponding coroots) are identified with constant functions from $S$ to $M$ (resp. $M^*$).
+
+(D$_2$) The $\mathfrak g^\alpha$ ($\alpha\in R$) are free $\OS$-modules.
+
+One says that $G$ is \emph{splittable relative to $T$} if there exists a splitting of $G$ relative to $T$. One calls a \emph{splitting of $G$} the datum of a maximal torus $T$ of $G$ and of a splitting of $G$ with respect to $T$. One says that $G$ is \emph{splittable} if there exists a splitting of $G$. One calls a \emph{split $S$-group} a reductive $S$-group endowed with a splitting; one will denote it by a symbol of the form $(G,T,M,R)$, or simply $G$ if no confusion is possible.
+
+Condition (D 1) implies that $R$ (resp. $R^*$) is canonically identified with a subset of $M$ (resp. $M^*$).
+\end{definition}
+\begin{proposition}{1.14}\label{XXII.1.14}
+Let $S$ be a (nonempty) scheme, $(G,T,M,R)$ a split $S$-group; then
+\[
+\mathscr R(G,T,M,R)=(M,M^*,R,R^*)
+\]
+is a reduced root datum (Exp.~XXI 1.1 and 2.1.3); it is a splitting of the twisted root datum of 1.10.
+\end{proposition}
+This is a trivial consequence of 1.10 and of Exp.~XIX 3.7.
+
+One will sometimes write for simplicity $\mathscr R(G,T,M,R)=\mathscr R(G)$. One will systematically use the notations $V$, $\mathcal V(R)$, $W$, $\ldots$ of Exp.~XXI.
+\begin{remark}{1.15}\label{XXII.1.15}
+a) If $S$ is connected and nonempty (resp. if $\Pic(S)=0$), condition (D 1) (resp. (D 2)) is automatically satisfied.
+
+b) If $(G,T,M,R)$ is a split $S$-group, then for every $S'\to S$, $S'\ne\varnothing$, $(G_{S'},T_{S'},M,R)$ is a split $S'$-group and $\mathscr R(G,T,M,R)=\mathscr R(G_{S'},T_{S'},M,R)$.
+\end{remark}
+\numpara{1.16}\label{XXII.1.16}
+Let $T=\mathrm D_S(M)$ be a trivialized torus. The Lie algebra $\mathfrak t$ of $T$ is canonically identified (Exp.~II 5.1.1) with
+\[
+\mathfrak t\simeq M^*\otimes\OS.
+\]
+For every morphism of groups $u:T\to\mathbf G_{m,S}$, $\uLie(u)$ is a linear form
+\[
+\uLie(u):\mathfrak t\to\OS=\uLie(\mathbf G_{m,S}/S).
+\]
+In particular, if $u$ is defined by an element $\alpha\in M$, then $\uLie(u)$ is the linear form $\overline\alpha$ on $M^*\otimes\OS$ defined by $\alpha$:
+\[
+\overline\alpha(m\otimes x)=(m,\alpha)x.
+\]
+Symmetrically, for every morphism of groups $h:\mathbf G_{m,S}\to T$, $\uLie(h)$ is an $\OS$-morphism $\OS=\uLie(\mathbf G_{m,S}/S)\to\mathfrak t$, canonically defined by the section
+\[
+H=\uLie(h)(1)\in\Gamma(S,\mathfrak t).
+\]
+In particular, if $h$ is defined by an element $m\in M^*$, one has
+\[
+H=\uLie(h)(1)=m\otimes1.
+\]
+Comparing the two definitions, one finds in particular
+\[
+\overline\alpha(H)=(h,\alpha)\cdot1\in\Gamma(S,\OS).
+\]
+
+\numpara{1.17}\label{XXII.1.17}
+These definitions apply in particular to the case where $T$ is the maximal torus of a split group. Every root $\alpha\in R$ defines an \emph{infinitesimal root} $\overline\alpha\in\Hom_{\OS}(\mathfrak t,\OS)$ with
+\[
+\overline\alpha(m\otimes x)=(m,\alpha)x.
+\]
+% typo?: kept as printed: "Chaque coracine alpha in R".
+Each coroot $\alpha\in R$ defines an \emph{infinitesimal coroot}
+\[
+H_\alpha\in\Gamma(S,\mathfrak t),\qquad H_\alpha=\alpha^*\otimes1.
+\]
+For $\alpha,\beta\in R$, one has the relation
+\[
+\overline\alpha(H_\beta)=(\beta^*,\alpha)\cdot1,
+\]
+and in particular
+\[
+\overline\alpha(H_\alpha)=2.
+\]
+In particular, if $2$ is invertible on $S$, then $\overline\alpha$ and $H_\alpha$ are nonzero on each fiber.
+
+\sgasection{2}{Existence of a splitting. Type of a reductive group}\label{XXII.sec.2}
+\begin{proposition}{2.1}\label{XXII.2.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$. Assume $T$ split. Then $G$ is \emph{locally splittable with respect to $T$}: for every $s_0\in S$, there exists an open neighborhood $U$ of $s_0$ such that the $U$-group $G_U$ is splittable relative to $T_U$.
+\end{proposition}
+Indeed, write $T\simeq\mathrm D_S(M)$ and
+\[
+\mathfrak g=\coprod_{m\in M}\mathfrak g^m.
+\]
+Let $R=\{m\in M\mid m\ne0,\ \mathfrak g^m(s_0)\ne0\}$. Restricting $S$ and replacing it by an open neighborhood of $s_0$, one may assume the $\mathfrak g^\alpha$, $\alpha\in R$, free, and the $\mathfrak g^m$, $m\ne0$, $m\notin R$, zero. One then has
+\[
+\mathfrak g=\mathfrak t\oplus\coprod_{\alpha\in R}\mathfrak g^\alpha,
+\]
+the $\mathfrak g^\alpha$ being free of rank $1$. It follows that $R$ is a system of roots of $G$ with respect to $T$ (Exp.~XIX 3.6). The coroots $\alpha^*$ corresponding to the $\alpha\in R$ are then identified with locally constant functions on $S$ with values in $M^*$. Restricting $S$ further, one may assume them constant and one is done.
+
+Note that the proof gives at once:
+\begin{proposition}{2.2}\label{XXII.2.2}
+Let $S$ be a nonempty connected scheme such that $\Pic(S)=0$, for example $\Spec(\ZZ)$ or a local scheme (in particular the spectrum of a field). If $G$ is a reductive $S$-group possessing a split maximal torus $T$, then $G$ is splittable relative to $T$.
+\end{proposition}
+One deduces at once from 2.1 and the fact that a reductive group possesses maximal tori locally for the \emph{\'etale topology} (Exp.~XIX 2.5):

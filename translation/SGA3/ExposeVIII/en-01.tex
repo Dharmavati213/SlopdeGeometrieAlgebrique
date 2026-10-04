@@ -1,0 +1,194 @@
+\exposetitle{VIII}{Diagonalizable groups}
+\label{VIII}
+\begin{center}by A. Grothendieck\end{center}
+\footnotetext{Version 1.1 of November 8, 2009: additions in 1.2, 1.4, 1.7, 3.1, 3.4, 4.5.1, 6.4, 6.8 --- 1.5.1 and section 7 to be reviewed.}
+
+\sgasection{1}{Biduality}
+Let $\cal C$ be a category, which we identify as usual with a full subcategory of $\widehat{\cal C}=\Hom(\cal C,\Ens)$ (cf. Exp.~I). Let $I$ be a commutative group functor, i.e. an object of $\widehat{\cal C}$ endowed with a commutative group structure (cf. I, 2.1).\nde{The original has been expanded in what follows.} For every $X\in\Ob(\widehat{\cal C})$, the object $\uHom(X,I)$ is endowed with a commutative group structure, induced by that of $I$. For every group $G$ in $\widehat{\cal C}$, let
+\[
+D(G)=\uHom_{\mathrm{gr.}}(G,I)
+\]
+be the subobject of $\uHom(G,I)$ defined, for every $S\in\Ob(\cal C)$, by:
+\begin{equation}\tag{x}
+D(G)(S)=\Hom_{S\text{-}\mathrm{gr.}}(G_S,I_S),
+\end{equation}
+where $G_S=G\times S$ and $I_S=I\times S$ are regarded as $S$-groups, i.e. groups in $\widehat{\cal C}_{/S}$. Then $D(G)$ is a sub-$\widehat{\cal C}$-group of $\uHom(G,I)$. In this way one obtains a contravariant functor $D$ from the category of $\widehat{\cal C}$-groups to the category of commutative $\widehat{\cal C}$-groups.
+
+The right-hand side of (x) may also be interpreted as the subset of $\Hom(G\times S,I)$ consisting of the morphisms $G\times S\to I$ that are ``multiplicative with respect to the first argument $G$''. Moreover, the preceding formulas hold more generally when $S$ is any object of $\widehat{\cal C}$, not necessarily coming from $\cal C$.
+
+If one now takes for $S$ a group in $\widehat{\cal C}$, which we shall denote by $G'$, then in the left-hand side $\Hom(G',D(G))$ of (x) one may distinguish the subset $\Hom_{\mathrm{gr.}}(G',D(G))$ consisting of morphisms that respect the group structures of $G'$ and $D(G)$. It then corresponds to the subset of $\Hom(G\times G',I)$ consisting of morphisms that are multiplicative with respect to the first and with respect to the second argument, --- which one may call bilinear morphisms from $G\times G'$ to $I$, or pairings of $G$ and $G'$ with values in $I$. One thus finds
+\begin{equation}\tag{xx}
+\Hom_{\mathrm{gr.}}(G',D(G))\isomto\Hom_{\mathrm{bil.}}(G\times G',I),
+\end{equation}
+which is an isomorphism functorial in the pair $(G,G')$. As the right-hand side is symmetric in $G$ and $G'$, one deduces a functorial bijection:
+\begin{equation}\tag{xxx}
+\Hom_{\mathrm{gr.}}(G',D(G))\isomto\Hom_{\mathrm{gr.}}(G,D(G')).
+\end{equation}
+In other words, ``it amounts to the same thing'' to give a group homomorphism $G'\to D(G)$, or a group homomorphism $G\to D(G')$, both indeed amounting to giving a pairing $G\times G'\to I$.
+
+Applying this to the case where $G'=D(G)$ and to the identity homomorphism $G'\to D(G)$, one then finds a \emph{canonical homomorphism}
+\begin{equation}\tag{xxxx}
+G\to D(D(G)).
+\end{equation}
+\begin{definition}{1.0}\label{VIII.1.0}
+\nde{The numbering 1.0, 1.0.1, \dots\ has been added in order to bring out the definitions and statements found there.}
+One shall say that $G$ is \emph{reflexive} (with respect to $I$) if the preceding homomorphism is an isomorphism. One will note that this implies that $G$ is commutative.
+\end{definition}
+One thus sees that:
+\begin{proposition}{1.0.1}\label{VIII.1.0.1}
+The functor $D$ induces an anti-equivalence of the category of reflexive $\widehat{\cal C}$-groups with itself.
+\end{proposition}
+In particular, if $G,H$ are two reflexive groups, $D$ induces an isomorphism:
+\[
+\Hom_{\mathrm{gr.}}(G,H)\isomto\Hom_{\mathrm{gr.}}(D(H),D(G))
+\]
+(it even suffices for $H$ to be reflexive, as one sees from formula (xxx)).
+\begin{definition}{1.0.2}\label{VIII.1.0.2}
+As usual, we shall then say that a $\cal C$-group $G$ is reflexive if it is reflexive as a $\widehat{\cal C}$-group (without concerning ourselves with whether $D(G)$ is representable or not).
+\end{definition}
+One thus obtains, by $D$, an anti-equivalence of the category of reflexive $\cal C$-groups $G$ such that $D(G)$ is representable, with itself.
+\begin{remark}{1.0.3}\label{VIII.1.0.3}
+Let us point out, to conclude these generalities, that the formation of the duals $D(G)$ commutes with extension of the base, which therefore transforms reflexive groups into reflexive groups.
+\end{remark}
+
+We shall henceforth be interested in the case where $\cal C=\Sch_{/S}$, the category of preschemes over $S$, and $I=\mathbf{G}_{\mathrm{m},S}$, the ``multiplicative group over $S$'', cf. expos\'e I. For every ordinary group $M$, we consider the $S$-group $M_S$. One sees immediately that for every group prescheme $J$ over $S$, one has a canonical isomorphism (functorial in $M$ and $J$, and compatible with extension of the base):
+\[
+\Hom_{S\text{-}\mathrm{gr.}}(M_S,J)=\Hom_{\mathrm{gr.}}(M,J(S)).
+\]
+Applying this to $J=I=\mathbf{G}_{\mathrm{m},S}$ and to a variable $S'$ over $S$, one finds a functorial isomorphism:
+\begin{equation}\tag{1.0.4}
+D(M_S)(S')\isomto\Hom_{\mathrm{gr.}}(M,\Gm(S')).
+\end{equation}
+One thus recovers the functor already considered in I, 4.4, also denoted by $D_S(M)$, which is representable for commutative $M$, since
+\[
+D_S(M)=D(M_S)=\Spec\OS(M),
+\]
+where $\OS(M)$ denotes the group algebra of $M$ with coefficients in $\OS$. (Let us also note, in the general case, that $D(M)$ does not change if one replaces $M$ by its abelianization, so that nothing is lost by supposing $M$ commutative.)
+\begin{definition}{1.1}\label{VIII.1.1}
+A group prescheme $G$ over $S$ is said to be \emph{diagonalizable} if it is isomorphic to a scheme of the form $D_S(M)=D(M_S)=\uHom_{S\text{-}\mathrm{gr.}}(M_S,\Gm)$ for a suitable commutative group $M$.
+
+One says that $G$ is \emph{locally diagonalizable} if every point of $S$ admits an open neighborhood $U$ such that $G|U$ is diagonalizable.
+\end{definition}
+\begin{theorem}{1.2}\label{VIII.1.2}
+Let $\Gamma$ be a constant commutative group scheme over $S$, i.e. isomorphic to a group scheme of the form $M_S$, where $M$ is an ordinary commutative group. Then $\Gamma$ is reflexive, i.e. the canonical homomorphism
+\[
+\Gamma\to D(D(\Gamma))
+\]
+is an isomorphism.\nde{The following sentence has been added.} The diagonalizable group $D(M_S)$ is therefore also reflexive.
+\end{theorem}
+In view of the definitions, this follows from the following statement (which one shall apply to a prescheme $S'$ over $S$):
+\begin{corollary}{1.3}\label{VIII.1.3}
+Let $G=D(M_S)$. Then every homomorphism of $S$-groups
+\[
+u:G\to\mathbf{G}_{\mathrm{m},S}
+\]
+is defined by a uniquely determined section of $M_S$ over $S$, i.e. by a uniquely determined locally constant map from $S$ to $M$.
+\end{corollary}
+\begin{proof}
+Since by definition one has
+\[
+\mathbf{G}_{\mathrm{m},S}=\GL(1)_S=\underline{\Aut}_{\OS\text{-}\mathrm{mod.}}(\OS),
+\]
+one sees that giving a group homomorphism $G\to\mathbf{G}_{\mathrm{m},S}$ is equivalent to giving on $\OS$ a $G$-$\OS$-module structure compatible with the natural $\OS$-module structure on $\OS$ (cf. I, 4.7). By I, 4.7.3, this also amounts to giving a grading of type $M$ on $\OS$, i.e. a decomposition of $\OS$ as a direct sum of modules $\cal L_m$ ($m\in M$). Now it is well known that a direct summand of a locally free module of finite type is locally free of finite type, so each $\cal L_m$ is, in a neighborhood of each point of $S$, either zero or free of rank 1, and in the latter case identical to $\OS$ in this neighborhood. Let $S_m$ be the open subset of $S$ consisting of the points where this second alternative occurs. Expressing the fact that $\OS$ is the direct sum of the $\cal L_m$, one sees that the union of the $S_m$ is $S$ and that the $S_m$ are pairwise disjoint. Thus giving a group homomorphism $G\to\mathbf{G}_{\mathrm{m},S}$ is equivalent to giving a decomposition of $S$ as a union of pairwise disjoint open subsets $S_m$ ($m\in M$), i.e. to giving a locally constant map from $S$ to $M$. This establishes 1.3 and hence 1.2.
+\end{proof}
+\begin{corollary}{1.4}\label{VIII.1.4}
+A diagonalizable group is reflexive; the same is therefore true of a locally diagonalizable group. If $M,N$ are two ordinary commutative groups, the natural homomorphism
+\[
+\Hom_{S\text{-}\mathrm{gr.}}(M_S,N_S)\to\Hom_{S\text{-}\mathrm{gr.}}(D(N_S),D(M_S))
+\]
+is bijective.
+\end{corollary}
+\nde{What follows has been expanded.} As the preceding isomorphism is compatible with extension of the base, one deduces an isomorphism of $S$-group functors:
+\begin{equation}\tag{1}
+\uHom_{S\text{-}\mathrm{gr.}}(M_S,N_S)\isomto\uHom_{S\text{-}\mathrm{gr.}}(D(N_S),D(M_S)).
+\end{equation}
+For every $S$-prescheme $T$, one has
+\[
+\uHom_{S\text{-}\mathrm{gr.}}(M_S,N_S)(T)=\Hom_{\mathrm{gr.}}(M,\Gamma(N_T/T)),
+\]
+and, by I 1.8, $\Gamma(N_T/T)$ is the abelian group of locally constant maps $T\to N$. On the other hand, let $\Hom_{\mathrm{gr.}}(M,N)_S$ be the constant $S$-group associated with the ordinary abelian group $\Hom_{\mathrm{gr.}}(M,N)$. One has an evident homomorphism of commutative $S$-group functors:
+\begin{equation}\tag{2}
+\Hom_{\mathrm{gr.}}(M,N)_S\xrightarrow{\theta}\uHom_{S\text{-}\mathrm{gr.}}(M_S,N_S),
+\end{equation}
+which is always a monomorphism. Moreover, it is an \emph{isomorphism} if $M$ is \emph{of finite type}.\nde{Indeed, denoting by $F(M)$ (resp. $G(M)$) the left-hand (resp. right-hand) side of (2), if $M=M_1\oplus M_2$, one has a canonical isomorphism $F(M)=F(M_1)\oplus F(M_2)$, and similarly for $G$. This reduces us to checking that $\theta$ is an isomorphism when $M=\ZZ/r\ZZ$, for an integer $r\geq0$. In this case, $F(M)=({}_rN)_S$, where ${}_rN$ is the kernel of $r\cdot\mathrm{id}_N$, and, for every $T\to S$, the homomorphism
+\[
+F(M)(T)=\Gamma({}_rN_T/T)\to G(M)(T)={}_r\Gamma(N_T/T)
+\]
+is bijective, whence the desired result.}
+
+Part (a) of the following corollary follows from the above; part (b) follows from it by the descent results ``recalled'' in 1.7.\nde{After 1.5, the original stated: ``One concludes more generally that if $G,H$ are locally diagonalizable, $H$ being of finite type, then $\uHom_{S\text{-}\mathrm{gr.}}(G,H)$ is representable''. This assertion has been included in the statement of 1.5, and its proof has been made explicit in 1.7.}
+\begin{corollary}{1.5}\label{VIII.1.5}
+a) Let $M,N$ be two ordinary commutative groups, $M$ of finite type; then one has an isomorphism
+\[
+\Hom_{\mathrm{gr.}}(M,N)_S\isomto\uHom_{S\text{-}\mathrm{gr.}}(D(N_S),D(M_S));
+\]
+consequently $\uHom_{S\text{-}\mathrm{gr.}}(D(N_S),D(M_S))$ is representable.
+
+\begingroup\emergencystretch=2em
+b) More generally, if $G,H$ are locally diagonalizable, $H$ being of finite type, then $\uHom_{S\text{-}\mathrm{gr.}}(G,H)$ is representable.\par
+\endgroup
+\end{corollary}
+\nde{A statement 1.5.1 dealing with the functor $\underline{\Isom}_{S\text{-}\mathrm{gr.}}(G,H)$, considered in X 5.10 and 5.11, ought to be added\dots} One concludes from 1.5:
+\begin{corollary}{1.6}\label{VIII.1.6}
+Under the conditions of 1.5, if $S$ is connected, one has
+\[
+\Hom_{S\text{-}\mathrm{gr.}}(D_S(N),D_S(M))\isomto\Hom_{\mathrm{gr.}}(M,N)
+\]
+and
+\[
+\Isom_{S\text{-}\mathrm{gr.}}(D_S(N),D_S(M))\isomto\Isom_{\mathrm{gr.}}(M,N).
+\]
+\end{corollary}
+\numpara{1.7}\textbf{Descent of representability.} --- \nde{This paragraph has been added to make explicit the ``local on $S$'' character of the representability of certain sheaves over $S$, used many times in what follows (and implicitly in the original).} In this paragraph one ``recalls'' some descent results which will frequently be used in what follows.
+\begin{scholium}{1.7.1}\label{VIII.1.7.1}
+Let $S$ be a prescheme and $X,Y,T$ be $S$-preschemes. If $(T_i)$ is an open covering of $T$, and if one puts $T_{ij}=T_i\cap T_j=T_i\times_T T_j$, then, since giving a morphism of $T$-preschemes $X_T\to Y_T$ is local on $T$, one has an exact sequence of sets:
+\begin{equation}\tag{1}
+\xymatrix@C=14pt{\Hom_T(X_T,Y_T)\ar[r]&\prod_i\Hom_{T_i}(X_{T_i},Y_{T_i})\ar@<.5ex>[r]\ar@<-.5ex>[r]&\prod_{i,j}\Hom_{T_{ij}}(X_{T_{ij}},Y_{T_{ij}})}
+\end{equation}
+i.e. $\uHom_S(X,Y)$ is a local $S$-functor, that is, a sheaf on $\Sch_{/S}$ endowed with the Zariski topology.
+
+More generally, by IV 4.5.13, $\uHom_S(X,Y)$ is a sheaf on $\Sch_{/S}$ for every topology coarser than the canonical topology, for example for the (fpqc) topology.
+
+If $G,H$ are $S$-group preschemes, one deduces that the subfunctor $\uHom_{S\text{-}\mathrm{gr.}}(X,Y)$ is a sheaf for the (fpqc) topology (and hence a fortiori a local functor).
+% typo?: X,Y in the last Hom retained as printed.
+\end{scholium}
+\begin{lemma}{1.7.2}\label{VIII.1.7.2}
+\nde{See also remark XI 3.4.} Let $F$ be a local $S$-functor.
+
+(i) Suppose that there exists an open covering $(S_i)$ of $S$ such that the restriction $F_i=F\times_S S_i$ of $F$ to each $S_i$ is representable by an $S_i$-prescheme $X_i$. Then $F$ is representable by an $S$-prescheme $X$.
+
+(ii) Suppose that $F$ is an (fpqc) sheaf and that there exists a faithfully flat and quasi-compact morphism $S'\to S$ such that the restriction $F'=F\times_S S'$ of $F$ is representable by an $S'$-prescheme $X'$. Then $X'$ is endowed with a descent datum (cf. IV 2.1) with respect to $S'\to S$.
+
+If, in addition, this descent datum is effective (which is the case if $X'$ is affine over $S'$), then $F$ is representable by an $S$-prescheme $X$.
+\end{lemma}
+\begin{proof}
+(i) It follows from the hypothesis that $X_i\times_S S_j$ and $X_j\times_S S_i$ both represent the restriction of $F$ to $S_{ij}=S_i\times_S S_j$, so, by Yoneda's lemma, there exists a unique isomorphism of $S_{ij}$-preschemes
+\[
+c_{ji}:X_i\times_S S_j\isomto X_j\times_S S_i;
+\]
+one then has isomorphisms of preschemes over $S_{ijk}=S_i\times_S S_j\times S_k$:
+\[
+\xymatrix@C=12pt{
+X_i\times_S S_j\times S_k\ar[r]^{c_{ji}\times\mathrm{id}_{S_k}}\ar@{=}[d]&X_j\times_S S_i\times_S S_k\ar@{=}[r]&X_j\times_S S_k\times_S S_i\ar[d]^{c_{kj}\times\mathrm{id}_{S_i}}\\
+X_i\times_S S_k\times_S S_j\ar[r]_{c_{ki}\times\mathrm{id}_{S_j}}&X_k\times_S S_i\times_S S_j\ar@{=}[r]&X_k\times_S S_j\times_S S_i}
+\]
+and as all these objects represent the restriction of $F$ to $S_{ijk}$, this diagram is commutative, i.e. the $c_{ji}$ satisfy the usual cocycle relation $c_{kj}\circ c_{ji}=c_{ki}$.
+
+It follows that the $X_i$ glue into an $S$-prescheme $X$ such that $X\times_S S_i=X_i$ for every $i$. Thus, for every $Y$ over $S_i$, one has
+\begin{equation}\tag{*}
+F(Y)=F_i(Y)=\Hom_{S_i}(Y,X\times_S S_i)=\Hom_S(Y,X)=h_X(Y).
+\end{equation}
+Then, for arbitrary $Y\to S$, the $Y_i=Y\times_S S_i$ form an open covering of $Y$; put $Y_{ij}=Y_i\times_Y Y_j=Y\times_S S_{ij}$. Since $F$ (resp. $h_X$) is a local functor by hypothesis (resp. since the Zariski topology is coarser than the canonical topology), $F(Y)$ and $h_X(Y)$ are both identified, in view of (*), with the kernel of the double arrow:
+\[
+\xymatrix{
+\prod_i F(Y_i)\ar@<.5ex>[r]\ar@<-.5ex>[r]\ar@{=}[d]&\prod_{i,j}F(Y_{ij})\ar@{=}[d]\\
+\prod_i h_X(Y_i)\ar@<.5ex>[r]\ar@<-.5ex>[r]&\prod_{i,j}h_X(Y_{ij}).}
+\]
+This proves (i).
+
+(ii) It follows from the hypothesis that $F''_1=F'\times_{S'}S''_1$ (where $S''_1=S''=S'\times_S S'$ regarded as an $S'$-prescheme via the first projection) is represented by $X''_1=X'\times_{S'}S''_1$; similarly, $F''_2=F'\times_{S'}S''_2$ is represented by $X''_2=X'\times_{S'}S''_2$. Now $F''_1=F\times_S S''=F''_2$, so there exists a (unique) $S''$-isomorphism $c:X''_1\isomto X''_2$; then, denoting by $q_i$ (resp. $p_{ji}$) the projection of $S'''=S'\times_S S'\times_S S'$ onto the $i$-th factor (resp. onto the factors $i$ and $j$), by $X'''_i=X'\times_{S'}S'''_i$ (where $S'''_i=S'''$ regarded as an $S'$-prescheme via $q_i$), and by $p_{ji}^*(c):X'''_i\isomto X'''_j$ the isomorphism of $S'''$-preschemes deduced from $c$ by base change, one obtains a diagram of isomorphisms of $S'''$-preschemes:
+\[
+\xymatrix{X'''_1\ar[r]^{p^*_{21}(c)}\ar[dr]_{p^*_{31}(c)}&X'''_2\ar[d]^{p^*_{32}(c)}\\&X'''_3}
+\]
+and as all these objects represent the restriction of $F$ to $S'''$, this diagram is commutative, i.e. one has the usual cocycle relation $p^*_{32}(c)\circ p^*_{21}(c)=p^*_{31}(c)$, i.e. $c$ is a descent datum on $X'$ with respect to $S'\to S$ (cf. IV 2.1).
+% The proof continues in en-02.tex; the sentence begun on PDF p. 6 is completed above.

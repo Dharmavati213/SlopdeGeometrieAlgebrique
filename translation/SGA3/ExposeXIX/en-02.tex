@@ -1,0 +1,269 @@
+Let us finally prove (i) $\Rightarrow$ (v). If $Q$ is the radical of $G$, one has $\dim(T)-\dim(Q)=1$ and $Q$ is central in $G$, hence $G=\uCentr_G(Q)$, which proves that $Q$ is a singular torus; by \textit{Bible}, \S~11.3, th.~2, one has $W_G(T)=(\ZZ/2\ZZ)_k$; by \textit{Bible}, \S~12.1, lemma~1, one has $\dim(G)-\dim(T)=2$. There are therefore at most two roots of $G$ with respect to $T$, whereas there are at least two, opposite (1.10).
+
+\begin{proposition}{1.12}\label{XIX.1.12}
+Let $k$ be an algebraically closed field, $G$ a smooth connected $k$-group, $T$ a torus of $G$, $R$ the set of roots of $G$ with respect to $T$, and
+\[
+\mathfrak g=\mathfrak g^0\oplus\coprod_{\alpha\in R}\mathfrak g^\alpha,
+\qquad\text{with }\mathfrak g^\alpha\ne0,
+\]
+the decomposition of $\mathfrak g$ under $\Ad(T)$. For each $\alpha\in R$, let $T_\alpha$ be the maximal torus of $\Ker(\alpha)$,{\renewcommand{\thefootnote}{(12)}\nde{I.e. the connected component of $\Ker(\alpha)$.}} and $Z_\alpha=\uCentr_G(T_\alpha)$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $G$ is affine, reductive; $T$ is maximal.
+\item $\mathfrak g^0=\mathfrak t$, each $Z_\alpha$ ($\alpha\in R$) is reductive.
+\item $\mathfrak g^0=\mathfrak t$, each $\mathfrak g^\alpha$ ($\alpha\in R$) has dimension~1; and if $\alpha,\beta\in R$ and $q\in\QQ$ are such that $\beta=q\alpha$, then $q=\pm1$; for each $\alpha\in R$, there exists a $w_\alpha\in G(k)$ which normalizes $T$, centralizes $T_\alpha$, but does not centralize $T$.
+\end{enumeratei}
+Moreover, under these conditions, each $Z_\alpha$ has semisimple rank~1 and one has $\Lie(Z_\alpha)=\mathfrak t\oplus\mathfrak g^\alpha\oplus\mathfrak g^{-\alpha}$.
+\end{proposition}
+If $G$ is affine and reductive and $T$ is maximal, each $Z_\alpha$ is affine and reductive (1.6.2 (i)), with maximal torus $T$; moreover, $T$ is its own centralizer (1.6.2 (ii)), hence $\mathfrak g^0=\mathfrak t$, which proves (i) $\Rightarrow$ (ii).
+
+On the other hand, $\mathfrak g^0=\mathfrak t$ implies that $T$ is maximal and $G$ affine (cf. 1.10), hence each $Z_\alpha$ is affine, smooth and connected, by 1.3. In any case, by Exp.~II, 5.2.2, one has
+\[
+\Lie(Z_\alpha)=\mathfrak g^{T_\alpha}=\mathfrak g^0\oplus\coprod_{\beta\in R\cap\QQ\alpha}\mathfrak g^\beta.
+\]
+One therefore has
+\[
+\Lie(Z_\alpha)\supset\mathfrak t\oplus\mathfrak g^\alpha\oplus\mathfrak g^{-\alpha},
+\]
+which implies $Z_\alpha\ne T$. Since $T_\alpha$ is a subtorus of codimension~1 in $T$, central in $Z_\alpha$, one obtains by 1.11, applied to $Z_\alpha$, the equivalence (ii) $\Leftrightarrow$ (iii) and the supplementary assertions.
+
+It remains to prove (ii) $\Rightarrow$ (i); one already knows that (ii) implies that $T$ is maximal and $G$ affine. Let $U$ be its unipotent radical; it is invariant in $G$, its Lie algebra is invariant under $\Ad(T)$. One therefore has
+\[
+\Lie(U)=(\Lie(U)\cap\mathfrak g^0)+\coprod_{\alpha\in R}(\Lie(U)\cap\mathfrak g^\alpha).
+\]
+By (1.3.1), one has
+\[
+\begin{aligned}
+U\cap T&=U\cap\uCentr_G(T)=\operatorname{rad}^{u}(\uCentr_G(T))=\operatorname{rad}^{u}(T)=\{e\},\\
+U\cap Z_\alpha&=U\cap\uCentr_G(T_\alpha)=\operatorname{rad}^{u}(\uCentr_G(T_\alpha))=\operatorname{rad}^{u}(Z_\alpha)=\{e\}.
+\end{aligned}
+\]
+One therefore has{\renewcommand{\thefootnote}{(13)}\nde{Note that if $U,L$ are two subgroup schemes of $G$, one has $\Lie(U)\cap\Lie(L)=\Lie(U\cap L)$.}}
+\[
+\begin{aligned}
+\Lie(U)\cap\mathfrak g^0&=\Lie(U)\cap\mathfrak t=\Lie(U\cap T)=0,\\
+\Lie(U)\cap\mathfrak g^\alpha&\subset\Lie(U)\cap\Lie(Z_\alpha)=\Lie(U\cap Z_\alpha)=0;
+\end{aligned}
+\]
+whence $\Lie(U)=0$ and $U=\{e\}$, i.e. $G$ is reductive.
+
+\begin{corollary}{1.13}\label{XIX.1.13}
+Let $k$ be an algebraically closed field, $G$ a smooth connected $k$-group, $T$ a torus of $G$, $R$ the set of roots of $G$ with respect to $T$, and
+\[
+\mathfrak g=\mathfrak g^0\oplus\coprod_{\alpha\in R}\mathfrak g^\alpha
+\]
+as above. For each $\alpha\in R$, let $T_\alpha$ be the maximal torus of $\Ker(\alpha)$ and $Z_\alpha=\uCentr_G(T_\alpha)$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $G$ is affine, semisimple; $T$ is maximal.
+\item $\mathfrak g^0=\mathfrak t$, each $Z_\alpha$ is reductive and $\bigcap_{\alpha\in R}\Ker(\alpha)$ is finite.
+\end{enumeratei}
+\end{corollary}
+{\renewcommand{\thefootnote}{(14)}\nde{The following sentence has been added.}}%
+This follows from the equalities $\operatorname{rad}(G)=\uCentr(G)^0$ and $\uCentr(G)=\bigcap_{\alpha\in R}\Ker(\alpha)$, established in 1.6.2 (iv) and (1.10.3).
+
+\sgasection{2}{Reductive group schemes. Definitions and first properties}
+\label{XIX.sec.2}
+\begin{scholium}{2.1}\label{XIX.2.1}
+If $G$ is a group scheme over $S$, the following properties are equivalent:
+\begin{enumeratei}
+\item $G$ is affine and smooth over $S$, and has connected fibers.
+\item $G$ is affine and flat over $S$, of finite presentation over $S$, and has geometrically integral fibers.
+\end{enumeratei}
+These properties are stable under base change and local for (fpqc).
+\end{scholium}
+{\renewcommand{\thefootnote}{(15)}\nde{The following has been added.}}%
+Indeed, suppose (i) holds. Since $G$ is affine and smooth over $S$, it is of finite presentation over $S$; and since its fibers are smooth and connected, they are geometrically integral, by VI$_{\mathrm A}$, 2.4.
+
+Conversely, if (ii) holds, the fibers of $G$ are connected and geometrically reduced, hence smooth (VI$_{\mathrm A}$, 1.3.1); then $G$ is smooth over $S$, by EGA IV$_4$, 17.5.2.
+
+Of course, these properties are stable under base change: cf. EGA II, 1.5.1 for ``affine'', IV$_1$, 1.6.2 (iii) for ``of finite presentation'', IV$_2$, 2.1.4 for ``flat'', and IV$_2$, 4.6.5 (i) for ``with geometrically integral fibers''.
+
+On the other hand, these properties are clearly local for the Zariski topology, so it suffices to check that if $S'\to S$ is a faithfully flat quasi-compact morphism and $G_{S'}\to S'$ has the indicated properties, the same is true of $G\to S$. This follows from EGA IV$_2$, 2.5.1 for ``flat'', 2.7.1 (vi) and (xiii) for ``of finite presentation'' and ``affine'', and 4.6.5 (i) for ``with geometrically integral fibers'' (and also EGA IV$_4$, 17.7.3 (ii) for ``smooth'').
+
+\numpara{2.2} Let $G$ be a group $S$-scheme satisfying the preceding conditions, and $Q$ a torus (cf. IX, Def.~1.3) of $G$.{\renewcommand{\thefootnote}{(16)}\nde{The following has been expanded.}} Then, by XI, 6.11 a) and XI, 2.4, $\uCentr_G(Q)$ is representable by a closed subgroup scheme of $G$ (hence affine over $S$), of finite presentation and smooth over $S$; moreover, since each geometric fiber $G_{\overline{s}}$ of $G$ is a smooth affine connected $\overline{\kappa(s)}$-group, by the first assertion of 1.3 the same is true of
+\[
+\uCentr_{G_{\overline{s}}}(Q_{\overline{s}})=(\uCentr_G(Q))_{\overline{s}}.
+\]
+
+\begin{lemma}{2.3}\label{XIX.2.3}
+Let $S$ be a scheme, $G$ a group $S$-scheme smooth and affine over $S$, with connected fibers, and $T$ a torus of $G$. The set of $s\in S$ such that $G_{\overline{s}}$ is a reductive $\overline{s}$-group, of semisimple rank~1 and with maximal torus $T_{\overline{s}}$, is an open subset $U$ of $S$.
+\end{lemma}
+Since $G$ and $T$ are flat over $S$, the function
+\[
+s\mto\dim(G_{\overline{s}}/\overline{s})-\dim(T_{\overline{s}}/\overline{s})
+\]
+is locally constant; let $U_1$ be the open subset of points of $S$ where its value is~2.
+
+{\renewcommand{\thefootnote}{(17)}\nde{The following has been expanded. Note, on the other hand, that section~6 is independent of the rest of this Expos\'e.}}%
+By 6.3, the Weyl group
+\[
+W_G(T)=\uNorm_G(T)/\uCentr_G(T)
+\]
+is representable by a group $S$-scheme \emph{\'etale and separated} over $S$, and the function
+\[
+s\mto\text{number of points of }W_G(T)_{\overline{s}}
+\]
+is lower semicontinuous. Let $U_2$ be the set of points of $S$ where this function is $>1$; it is open. By 1.11, the set of $s$ such that $G_{\overline{s}}$ is reductive, of semisimple rank~1, with maximal torus $T_{\overline{s}}$, is $U=U_1\cap U_2$; moreover, for every $s\in U$, $W_G(T)_{\overline{s}}$ has exactly two points.
+
+Consequently (cf. SGA~1, I 10.9 and EGA IV$_3$, 15.5.1 and IV$_4$, 18.12.4), $W_G(T)_U$ is \emph{\'etale and finite} over $U$.
+
+\begin{remark}{2.4}\label{XIX.2.4}
+The group $W_G(T)_U$ is \emph{isomorphic} to $(\ZZ/2\ZZ)_U$. Indeed, by what precedes, it is \'etale and finite over $U$; since the functor of automorphisms of $(\ZZ/2\ZZ)_U$ is the unit group, it suffices to check the assertion locally, and it is immediate if the algebra $\mathcal A$ defining $W_G(T)_U$ is a free $\OO_U$-module.{\renewcommand{\thefootnote}{(18)}\nde{The hypothesis implies that $\mathcal A$ is locally free of rank~2, and since the augmentation ideal $\mathcal I$ is a direct summand of $\mathcal A$, replacing $U$ by a sufficiently small affine open subset $\Spec(R)$, one may suppose that $I=\Gamma(U,\mathcal I)$ is a free $R$-module of rank~1. If $x$ is a generator of $I$, one then has $x^2=ax$ for some $a\in R$, and the hypothesis that $A=\Gamma(U,\mathcal A)$ is \'etale implies that $a$ is invertible in $R$, and one then easily sees that $A$ is the affine algebra of the constant $R$-group $\ZZ/2\ZZ$ (compare with the first lines of [TO70]).}}
+\end{remark}
+
+\begin{enoncerm}{Notations and reminders}{2.5.0}\label{XIX.2.5.0}
+{\renewcommand{\thefootnote}{(19)}\nde{This paragraph of notations and reminders has been added.}}%
+Let $S$ be a scheme, $G$ a group $S$-scheme, $\varepsilon:S\to G$ the unit section of $G$. We saw in II, \S~4.11 that the functor $\uLie(G/S)$ is representable by the vector bundle $\mathrm V(\omega^1_{G/S})$ (where $\omega^1_{G/S}=\varepsilon^*(\Omega^1_{G/S})$), and one denotes by
+\[
+\mathfrak g=\mathcal{L}\!ie(G/S)=(\omega^1_{G/S})^\vee
+\]
+the sheaf of sections of this vector bundle. Suppose in addition that $G$ is \emph{smooth} over $S$; then $\omega^1_{G/S}$ and hence $\mathcal{L}\!ie(G/S)$ are locally free $\OS$-modules of finite type, and one has (cf. I 4.6.5.1):
+\[
+\uLie(G/S)=\mathrm W(\mathcal{L}\!ie(G/S)),
+\]
+i.e. for every $S$-scheme $S'$,
+\[
+\uLie(G/S)(S')=\Gamma(S',\mathcal{L}\!ie(G/S)\otimes\OO_{S'}).
+\]
+By II 4.1.1.1, the adjoint action of $G$ equips $\uLie(G/S)=\mathrm W(\mathcal{L}\!ie(G/S))$ with a structure of $G$-$\OS$-module, hence $\mathcal{L}\!ie(G/S)$ is a $G$-$\OS$-module (cf. I 4.7.1). If in addition $G$ is \emph{affine} over $S$, this amounts to saying, by I 4.7.2, that $\mathcal{L}\!ie(G/S)$ is an $\mathcal A(G)$-comodule.
+
+If $T$ is a torus over $S$ (IX Def.~1.3), one will say that $T$ is \emph{split} (``trivial'' in the original) if it is isomorphic to $\mathbf{G}_{\mathrm m,S}^r$ for some integer $r\geq0$, and one will say that $T$ is \emph{trivialized} if one has fixed such an isomorphism or, more generally, an isomorphism $T\simeq\mathrm D_S(M)$, where $M$ is a free abelian group of rank $r$.
+
+Finally, recall (XII Def.~1.3) that a torus $T$ of $G$ is said to be \emph{maximal} if, for every $s\in S$, $T_{\overline{s}}$ is a maximal torus of $G_{\overline{s}}$.
+\end{enoncerm}
+
+\begin{theorem}{2.5}\label{XIX.2.5}
+Let $S$ be a scheme, $G$ a group $S$-scheme affine and of finite presentation over $S$, with connected fibers, and $s_0$ a point of $S$. Suppose that $G$ is flat over $S$ at $\varepsilon(s_0)$ and that the geometric fiber $G_{\overline{s}_0}$ is (reduced and) reductive (resp. semisimple). Then there exist an open subset $U$ of $S$ containing $s_0$, and a surjective \'etale morphism $S'\to U$, such that:
+\begin{enumeratei}
+\item $G_U$ is smooth over $S$, with reductive (resp. semisimple) geometric fibers, of constant reductive rank and semisimple rank.
+\item $G_{S'}$ has a split maximal torus{\renewcommand{\thefootnote}{(20)}\nde{``Split'' has been added.}} $T$, and the Weyl group (cf. 6.3)
+\[
+W_{G_{S'}}(T)=\uNorm_{G_{S'}}(T)/\uCentr_{G_{S'}}(T)=\uNorm_{G_{S'}}(T)/T
+\]
+is finite over $S'$.
+\end{enumeratei}
+\end{theorem}
+{\renewcommand{\thefootnote}{(21)}\nde{The proof has been expanded.}}%
+Let $\pi:G\to S$ be the structural morphism and $\varepsilon:S\to G$ the unit section. Since $G$ is flat over $S$ at $\varepsilon(s_0)$ and $G_{\overline{s}_0}$ reduced (hence smooth over $\overline{s}_0$, cf. VI$_{\mathrm A}$ 1.3.1), $G$ is smooth over $S$ at the point $\varepsilon(s_0)$ (EGA IV$_4$, 17.5.1), i.e. there exists an open neighborhood $V$ of $\varepsilon(s_0)$ such that $\pi|_V$ is smooth. Then $S'=\varepsilon^{-1}(V)$ is an open subset of $S$, and $G_{S'}$ is smooth over $S'$ at the points of $\varepsilon(S')$. Since $G$ has connected fibers, $G_{S'}$ is smooth over $S'$, by VI$_{\mathrm B}$, 3.10. Thus, replacing $S$ by $S'$, one may suppose that $G$ is smooth over $S$.
+
+By Exp.~XI, th.~4.1, the functor of subgroups of multiplicative type of $G$ is representable by an $S$-scheme $\mathcal M$, smooth and separated over $S$. Let $r_0$ be the rank of $G_{\overline{s}_0}$ and consider the open subscheme $\mathcal M_{r_0}$ of $\mathcal M$ which represents the functor of subtori of rank $r_0$ of $G$ (IX 1.4). Smoothness implies that $\mathcal M_{r_0}$ has a rational point over a finite separable extension of $\kappa(s_0)$ (cf. EGA IV$_4$, 17.15.10 (iii)). Thus there exists an \'etale $S'\to S$ equipped with a point $s'_0$ mapping to $s_0$ such that $G_{s'_0}$ has a torus of rank $r_0$. Therefore, replacing $S$ by $S'$, one may suppose that $G_{s_0}$ has a torus of rank $r_0$.
+
+By ``Hensel's lemma'' (cf. XI, 1.10), the smoothness of $\mathcal M_{r_0}$ allows one to lift this torus to an $S'$-torus $T$ of $G$, where $S'\to S$ is \'etale and equipped with a point $s'_0$ mapping to $s_0$. By Exp.~X, 4.5 (see also 6.1,{\renewcommand{\thefootnote}{(22)}\nde{Which is independent of the rest of this expos\'e.}}), there exists an \'etale morphism $f:S''\to S'$ splitting $T$ and such that $f^{-1}(s'_0)\ne\varnothing$. Since an \'etale morphism is open and the assertions of (i) are local for the \'etale topology, one may therefore suppose that $G$ has a split torus $T$,{\renewcommand{\thefootnote}{(23)}\nde{Throughout this volume, ``trivial torus'' has been replaced by ``split torus''.}} maximal at $s_0$. Let us therefore write $T=\mathrm D_S(M)$ and let
+\[
+\mathfrak g=\coprod_{m\in M}\mathfrak g^m
+\]
+be the decomposition of $\mathfrak g=\mathcal{L}\!ie(G/S)$ under $\Ad(T)$ (Exp.~I, 4.7.3).
+
+One puts $\mathfrak t=\mathcal{L}\!ie(T)$ and, for every $m\in M$, denotes by $\mathfrak g^m(s_0)=\mathfrak g^m\otimes_{\OS}\kappa(s_0)$.{\renewcommand{\thefootnote}{(24)}\nde{The preceding sentence has been added.}} Let $R$ be the set of $m\in M$, $m\ne0$, such that $\mathfrak g^m(s_0)\ne0$.{\renewcommand{\thefootnote}{(25)}\nde{Note that, since $\mathfrak g$ is a finite locally free $\OS$-module, $R$ is a finite set.}} Since $G_{\overline{s}_0}$ is reductive, one has $\mathfrak g^0(s_0)=\mathfrak t(s_0)$, hence
+\[
+\mathfrak g(s_0)=\mathfrak t(s_0)\oplus\coprod_{\alpha\in R}\mathfrak g^\alpha(s_0).
+\]
+Since the modules in question are locally free, one may, restricting $S$ if necessary, suppose that the $\mathfrak g^\alpha$ are free and
+\[
+\mathfrak g=\mathfrak t\oplus\coprod_{\alpha\in R}\mathfrak g^\alpha.
+\]
+Recall, cf. Exp.~XII, 1.12, that a group of multiplicative type has a unique maximal torus (this is, moreover, almost trivial by descent, the diagonalizable case being obvious). Let then $T_\alpha$ be the maximal torus of the kernel of $\alpha$ and $Z_\alpha=\uCentr_G(T_\alpha)$.{\renewcommand{\thefootnote}{(26)}\nde{The following sentence has been expanded.}} By 2.2, $Z_\alpha$ is affine and smooth over $S$, with connected fibers, and by 1.12 its fiber $(Z_\alpha)_{\overline{s}_0}$ is reductive, of semisimple rank~1, with maximal torus $T_{\overline{s}_0}$. By 2.3, there therefore exists an open subset $U_\alpha$ of $S$ containing $s_0$, such that $Z_\alpha|_{U_\alpha}$ has reductive fibers.
+
+Put $U=\bigcap_{\alpha\in R}U_\alpha$. By 1.12, for every $s\in U$, $G_{\overline{s}}$ is reductive, with maximal torus $T_{\overline{s}}$, and the set of roots of $G_{\overline{s}}$ with respect to $T_{\overline{s}}$ is identified with $R$, so that
+\[
+\operatorname{rgred}(G_{\overline{s}})=\dim(T)=\operatorname{rg}(M),\qquad
+\operatorname{rgss}(G_{\overline{s}})=\operatorname{rg}(R)\quad\text{(cf. 1.10).}
+\]
+One has therefore proved (i) and the first assertion of (ii); it remains to prove that the Weyl group $W_{G_U}(T_U)$ is \emph{finite} over $U$, i.e. ``that it has the same number of points in each geometric fiber'' (cf. SGA~1, I 10.9 and EGA IV$_3$, 15.5.1 and IV$_4$, 8.12.4).
+% typo?: IV4, 8.12.4 kept as printed.
+
+For this, it suffices to note that the geometric fiber of this group at $s\in U$ is determined by the situation $R\subset M$, as the constant group associated with the ``abstract Weyl group of this root system'', and in particular is independent of the point $s$, cf. \textit{Bible}, \S~11.3, th.~2 (see also Exp.~XXII, \No~3).
+
+\begin{corollary}{2.6}\label{XIX.2.6}
+Let $G$ be an $S$-group affine and smooth over $S$, with connected fibers. The set of points $s\in G$ such that $G_{\overline{s}}$ is reductive (resp. semisimple) is an open subset $U$ of $S$, and the functions
+% typo?: s in G kept as printed.
+\[
+s\mto\operatorname{rgred}(G_{\overline{s}}/\overline{s}),\qquad
+s\mto\operatorname{rgss}(G_{\overline{s}}/\overline{s})
+\]
+are locally constant on $U$.
+\end{corollary}
+
+\begin{definition}{2.7}\label{XIX.2.7}
+An $S$-group (= group $S$-scheme) $G$ is said to be \emph{reductive} (resp. \emph{semisimple}) if it is affine and smooth over $S$, with connected, reductive (resp. semisimple) geometric fibers.
+\end{definition}
+The property of being reductive (resp. semisimple) for an $S$-group $G$ is stable under base change and local for the (fpqc) topology.
+
+\numpara{2.8} Let $G$ be a reductive $S$-group. For every torus (resp. maximal torus) $Q$ of $G$, $Z(Q)=\uCentr_G(Q)$ is reductive (resp. is $Q$). This follows at once from 2.2 and 1.6. Applying 2.5 to $\uCentr_G(Q)$, one deduces that $Q$ is contained (locally for the \'etale topology) in a maximal torus.
+
+\begin{remark}{2.9}\label{XIX.2.9}
+Using, as usual, the technique of EGA IV$_3$, \S~8, the hypotheses of finite presentation, and theorem~2.5, one sees that if $G$ is a reductive group over $S$, there exists an open covering $\{U_i\}$ of $S$ such that each $G_{U_i}$ comes by base change from a reductive group over a noetherian ring (in fact, an algebra of finite type over $\ZZ$). Similarly, if $G$ has a split maximal torus $T$, one may in addition suppose that $T_{U_i}$ comes from a split maximal torus of the preceding group, \ldots.
+\end{remark}
+
+\sgasection{3}{Roots and root systems of reductive group schemes}
+\label{XIX.sec.3}
+\numpara{3.1} Let $S$ be a scheme, $T$ an $S$-torus acting linearly on a locally free $\OS$-module $\mathcal F$ of finite type (cf. I, \S~4.7). For every character $\alpha$ of $T$ (i.e. $\alpha\in\Hom_{S\text{-gr.}}(T,\mathbf{G}_{\mathrm m,S})$), one defines a subfunctor of $\mathrm W(\mathcal F)$ by
+\[
+\mathrm W(\mathcal F)^\alpha(S')=
+\{x\in\mathrm W(\mathcal F)(S')\mid tx=\alpha(t)x\text{ for every }t\in T(S''),\ S''\to S'\}.
+\]
+
+\begin{lemma}{}\label{XIX.3.1.lemma}
+{\renewcommand{\thefootnote}{(27)}\nde{This statement has been made into a lemma, to emphasize it.}}%
+Then $\mathrm W(\mathcal F)^\alpha=\mathrm W(\mathcal F^\alpha)$, where $\mathcal F^\alpha$ is a submodule of $\mathcal F$, locally a direct summand of $\mathcal F$, hence also locally free.
+\end{lemma}
+Indeed, the assertion is local for the (fpqc) topology, and one may suppose $T=\mathrm D_S(M)$, where $M$ is a finitely generated (free) abelian group. Then $\alpha$ is identified with a locally constant function from $S$ to $M$ (Exp.~VIII 1.3), and, restricting $S$ if necessary, one may suppose that this function is constant. One is then reduced to Exp.~I, 4.7.3.
+
+\begin{definition}{3.2}\label{XIX.3.2}
+Let $S$ be a scheme, $G$ a group $S$-scheme smooth with connected fibers,{\renewcommand{\thefootnote}{(28)}\nde{The original added the hypothesis that $G$ be of finite presentation over $S$, which does not seem to be used in what follows. In any case, since $G$ is smooth over $S$ and has connected fibers, it is quasi-compact and separated over $S$ (VI$_{\mathrm B}$, 5.5), hence of finite presentation over $S$.}} and $T$ a torus of $G$. One puts $\mathfrak g=\mathcal{L}\!ie(G/S)$ and makes $T$ act on $\mathfrak g$ through the adjoint representation of $G$.
+
+One says that the character $\alpha$ of $T$ is a \emph{root} of $G$ with respect to $T$ if the following equivalent conditions are satisfied:
+\begin{enumeratei}
+\item For each $s\in S$, $\alpha_{\overline{s}}$ is a root of $G_{\overline{s}}$ with respect to $T_{\overline{s}}$ (1.10).
+\item $\alpha$ is nontrivial on each fiber and $\mathfrak g^\alpha(s)\ne0$ for each $s\in S$.
+\end{enumeratei}
+\end{definition}
+
+\begin{lemma}{3.3}\label{XIX.3.3}
+Let $S$ be a scheme, $T$ an $S$-torus, $\alpha$ a character of $T$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $\alpha$ is nontrivial on each fiber, that is: for every $s\in S$, $\alpha_{\overline{s}}$ is distinct from the unit character of $T_{\overline{s}}$.
+\item For every $S'\to S$, $S'\ne\varnothing$, $\alpha_{S'}$ is distinct from the unit character of $T_{S'}$.
+\item The morphism $\alpha$ is faithfully flat.
+\end{enumeratei}
+\end{lemma}
+{\renewcommand{\thefootnote}{(29)}\nde{The original, which invoked Exp.~IX, 5.2, has been simplified. Note, however, that loc.~cit., 5.3 shows that if $S$ is connected, the conditions of the lemma hold as soon as (i) holds at one point $s$ of $S$.}}%
+It is clear that (ii) $\Rightarrow$ (i), and one easily sees that (iii) $\Rightarrow$ (i). One has (i) $\Rightarrow$ (ii), for if $s'\in S'$ lies above $s$ and $\alpha_{s'}$ is the unit character, then so is $\alpha_s$. Finally, to prove (i) $\Rightarrow$ (iii), one reduces to the case where $T$ is diagonalizable and concludes by Exp.~VIII 3.2 a).
+
+\numpara{3.4} {\renewcommand{\thefootnote}{(30)}\nde{The following has been modified, to recall the hypotheses of 3.2 and add that $T$ is a maximal torus.}}%
+Let $G$ be a \emph{reductive} group $S$-scheme, $T$ a maximal torus of $G$. Let $\alpha$ be a root of $G$ with respect to $T$. Then, by 2.5.0 and 1.12, $\mathfrak g^\alpha$ is a locally free $\OS$-module of rank one. Moreover, by 1.10, $-\alpha$ is also a root of $G$ with respect to $T$. In particular, if $G$ has semisimple rank~1, by 1.11 and 1.12 one has:
+
+\begin{lemma}{3.5}\label{XIX.3.5}
+Let $S$ be a scheme, $G$ a reductive $S$-group of semisimple rank~1, $T$ a maximal torus of $G$. If $\alpha$ is a root of $G$ with respect to $T$, then $-\alpha$ is also one and one has
+\[
+\mathfrak g=\mathfrak t\oplus\mathfrak g^\alpha\oplus\mathfrak g^{-\alpha},
+\]
+where $\mathfrak g^\alpha$ and $\mathfrak g^{-\alpha}$ are locally free of rank~1.
+\end{lemma}
+
+\begin{definition}{3.6}\label{XIX.3.6}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $R$ a set of roots of $G$ with respect to $T$. One says that $R$ is a \emph{root system} of $G$ with respect to $T$ if the following equivalent conditions are satisfied:
+\begin{enumeratei}
+\item For each $s\in S$, $\alpha\mto\alpha_{\overline{s}}$ is a bijection from $R$ onto the set of roots of $G_{\overline{s}}$ with respect to $T_{\overline{s}}$.
+\item The elements of $R$ are distinct on each fiber (i.e. if $\alpha,\alpha'\in R$, $\alpha\ne\alpha'$, then $\alpha-\alpha'$ ($=\alpha\alpha'^{-1}$) is nontrivial on each fiber) and, for each $s\in S$, one has
+\[
+\dim(G_s/\kappa(s))-\dim(T_s/\kappa(s))=\operatorname{Card}(R).
+\]
+\item One has $\mathfrak g=\mathfrak t\oplus\coprod_{\alpha\in R}\mathfrak g^\alpha$.
+\end{enumeratei}
+\end{definition}
+The equivalence of these various conditions is trivial.
+
+\begin{lemma}{3.7}\label{XIX.3.7}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $R$ a root system of $G$ with respect to $T$. Every root of $G$ with respect to $T$ is locally on $S$ equal to an element of $R$.
+\end{lemma}
+This is apparent from condition (iii).
+
+Put $\mathcal M=\uHom_{S\text{-gr.}}(T,\mathbf{G}_{\mathrm m,S})$; this is a twisted constant group $S$-scheme (Exp.~X 5.6). If $G$ has a root system $R$ with respect to $T$, the inclusion $R\hookrightarrow\mathcal M(S)$ defines a morphism $R_S\to\mathcal M$, where $R_S$ is the constant $S$-scheme defined by $R$; thanks to condition (ii), one easily sees that this morphism is an open and closed immersion whose image is precisely $\bigcup_{\alpha\in R}\alpha(S)$ (each $\alpha\in R$ being considered as a section $S\to\mathcal M$).
+
+Let $\mathcal R$ be the \emph{functor of roots} of $G$ with respect to $T$: by definition, $\mathcal R(S')$ is the set of roots of $G_{S'}$ with respect to $T_{S'}$ for every $S'\to S$; if $S'=\varnothing$, one puts $\mathcal R(\varnothing)=\{e\}$, and if $S'\ne\varnothing$, the inclusion $R\hookrightarrow\mathcal M(S')$ identifies $R$ with a root system of $G_{S'}$ with respect to $T_{S'}$, and hence, by 3.7, one has
+\[
+\mathcal R(S')=\Hom_{\mathrm{loc.\ const.}}(S',R),
+\]
+which shows that $\mathcal R$ is representable by $R_S$.
+
+If now one no longer necessarily supposes that $G$ has a root system relative to $T$, $\mathcal R$ is in any case a subsheaf of $\mathcal M$ for (fpqc). Locally for this topology, $G$ has a root system with respect to $T$ (take, for example, $T$ split and use the proof of Th.~2.5). By Exp.~IV 4.6.8 and the theory of descent of open (resp. closed) subschemes,{\renewcommand{\thefootnote}{(31)}\nde{See SGA~1, VIII 4.4 or EGA IV$_2$, 2.7.1.}} one obtains:

@@ -1,0 +1,425 @@
+\exposetitle{II}{Tangent bundles. Lie algebras}
+\label{II}
+
+\begin{center}
+\textit{by M.~Demazure}
+\end{center}
+
+{\renewcommand{\thefootnote}{(0)}\nde{Version of 14/10/2024}}%
+We propose in this expos\'e to construct the analogue, in the theory of
+schemes, of the \emph{tangent bundles} and \emph{Lie algebras} of the
+classical theory. It will however be useful not to restrict oneself to
+schemes properly so called, but also to take an interest in certain functors
+on the category of schemes which are not necessarily \emph{representable}
+(for example functors \(\Hom\), \(\Norm\), etc.). As was announced in the
+previous expos\'e (\cf I~1.1), we shall identify a scheme with the functor
+associated with it.
+
+On the other hand, the constructions set out below go beyond the framework
+of the theory of schemes. They are equally valid, for example, in the theory
+of \emph{analytic spaces} with nilpotent elements, modulo a few modifications
+of detail.
+
+Before beginning this construction, we must set down a few general
+definitions which complete those of~I~1.7.
+
+\sgasection{1}{The functors \(\Hom_{Z/S}(X,Y)\)}
+\label{II.sec.1}
+
+Let us take up again the notations of~I~1.1. One identifies the category
+\(\mathcal{C}\) with a full subcategory of
+\(\widehat{\mathcal{C}}=\Hom(\mathcal{C}^{\circ},\Ens)\) (in particular one
+omits the underlinings%
+{\renewcommand{\thefootnote}{(1)}\nde{Rendered in this edition by bold
+characters \(\mathbf{F}\), \(\mathbf{G}\), \(\mathbf{V}\), \(\mathbf{W}\),
+\cf Expos\'e~I. However, for functors such as \(\uNorm\) and \(\uCentr\)
+(\cf~5.2) the underlinings have been kept as in the original, and one has
+added them for the functor \(\Lie\), in order to distinguish the functor
+\(\uLie(G/S)\) from the \(\Gamma(S,\OO_S)\)-Lie algebra
+\(\Lie(G/S)=\uLie(G/S)(S)\), used for example in
+Expos\'e~$\mathrm{VII}_{\mathrm{A}}$.}}
+which allowed us to distinguish graphically an object of
+\(\widehat{\mathcal{C}}\) from an object of \(\mathcal{C}\)).
+
+Let us consider the following situation: four objects of
+\(\widehat{\mathcal{C}}\), denoted \(S\), \(X\), \(Y\), \(Z\), the first
+being in fact an object of \(\mathcal{C}\), \(X\) and \(Y\) over \(Z\), \(Z\)
+over \(S\):
+\[
+\xymatrix@C=2.2em@R=1.4em{
+X \ar[dr]_{p_X} & & Y \ar[dl]^{p_Y} \\
+& Z \ar[d] & \\
+& S\,. &
+}
+\]
+
+\begin{definition}{1.1}
+\label{II.1.1}
+One defines an object of \(\widehat{\mathcal{C}}_{/S}\), denoted
+\(\Hom_{Z/S}(X,Y)\), by:
+\begin{equation}
+\Hom_{Z/S}(X,Y)(S')
+=\Hom_{Z_{S'}}(X_{S'},Y_{S'})
+=\Hom_Z(X\times_S S',Y),
+\tag{1}
+\end{equation}
+for every object \(S'\) of \(\mathcal{C}_{/S}\). One sees at once that
+\(\Hom_{Z/S}(X,Y)\) is nothing other than the subobject of
+\(\Hom_S(X,Y)\) formed of the morphisms compatible with \(p_X\) and \(p_Y\),
+that is, the kernel of the pair of morphisms
+\[
+\xymatrix{
+\Hom_S(X,Y) \ar@<0.5ex>[r] \ar@<-0.5ex>[r] & \Hom_S(X,Z)
+}
+\]
+defined, the first by composition with \(p_Y\), the second as being the
+constant morphism whose ``image'' is \(p_X\).
+
+{\renewcommand{\thefootnote}{(2)}\nde{Points (2), (3), (4) have been spelled
+out; in particular, (4) will be used in~3.11.}}%
+On the other hand, one sees as in~I~1.7 that, for every object \(T\) of
+\(\widehat{\mathcal{C}}\) over \(S\), one has a natural bijection:
+\begin{equation}
+\Hom_S\bigl(T,\Hom_{Z/S}(X,Y)\bigr)
+\simeq
+\Hom_Z(X\times_S T,Y).
+\tag{2}
+\end{equation}
+Moreover, by~I~1.7.1, if \(E\), \(F\) are objects of \(\widehat{\mathcal{C}}\)
+over \(Z\), one has:
+\[
+\Hom_Z\bigl(E,\Hom_Z(F,Y)\bigr)
+\simeq
+\Hom_Z(E\times_Z F,Y)
+\simeq
+\Hom_Z\bigl(F,\Hom_Z(E,Y)\bigr).
+\]
+Applying this to \(E=X\) and \(F=Z\times_S T\), one obtains natural
+bijections, for every object \(T\) of \(\widehat{\mathcal{C}}_{/S}\):
+\begin{equation}
+\Hom_S\bigl(T,\Hom_{Z/S}(X,Y)\bigr)
+\simeq
+\Hom_Z(X\times_S T,Y)
+\simeq
+\begin{cases}
+\Hom_Z\bigl(Z\times_S T,\Hom_Z(X,Y)\bigr)\\
+\Hom_Z\bigl(X,\Hom_Z(Z\times_S T,Y)\bigr).
+\end{cases}
+\tag{3}
+\end{equation}
+Moreover, these bijections are functorial in \(T\), so one obtains
+isomorphisms of \(S\)-functors:
+\begin{equation}
+\vcenter{\xymatrix@C=1.4em@R=1.6em{
+\Hom_S\bigl(T,\Hom_{Z/S}(X,Y)\bigr)
+  \ar[rr]^{\sim} \ar[dr]_{\simeq}
+&&
+\Hom_{Z/S}\bigl(X,\Hom_Z(Z\times_S T,Y)\bigr)
+  \ar[dl]^{\simeq}
+\\
+& \Hom_{Z/S}(X\times_S T,Y) &
+}}
+\tag{4}
+\end{equation}
+
+Let us point out two particular cases of the definition. If \(Z=S\), one
+has:
+\[
+\Hom_{S/S}(X,Y)=\Hom_S(X,Y).
+\]
+On the other hand, when \(X=Z\), one sets
+\begin{equation}
+\prod_{Z/S}Y=\Hom_{Z/S}(Z,Y),
+\tag{5}
+\end{equation}
+one therefore has by definition
+\[
+\Bigl(\prod_{Z/S}Y\Bigr)(S')
+=\Hom_Z(Z\times_S S',Y)
+\simeq\Gamma(Y_{S'}/Z_{S'}).
+\]
+The functor
+\(\prod_{Z/S}\colon\widehat{\mathcal{C}}_{/Z}\to\widehat{\mathcal{C}}_{/S}\)
+is right adjoint to the functor of base change from \(S\) to \(Z\): for every
+\(S\)-functor \(U\) one has
+\[
+\Hom_S\Bigl(U,\prod_{Z/S}Y\Bigr)
+=\Hom_Z(U\times_S Z,Y).
+\]
+(If \(\mathcal{C}=\Sch\) and if \(Z\) is an \(S\)-scheme, the functor
+\(\prod_{Z/S}\) is called ``\emph{Weil restriction of scalars}''.)%
+{\renewcommand{\thefootnote}{(3)}\nde{The two preceding sentences have been
+added.}}
+Let us also note that one has an isomorphism:
+\begin{equation}
+\Hom_{Z/S}(X,Y)
+\simeq
+\Hom_{X/S}(X,Y\times_Z X)
+=\prod_{X/S}(Y\times_Z X),
+\tag{6}
+\end{equation}
+which gives in particular, for \(Z=S\), an isomorphism:
+\begin{equation}
+\Hom_S(X,Y)\simeq\prod_{X/S}Y_X.
+\tag{7}
+\end{equation}
+\end{definition}
+
+\begin{remark}{1.2}
+\label{II.1.2}
+The functor \(Y\mapsto\Hom_{Z/S}(X,Y)\) commutes with the product in the
+following sense: one has a functorial isomorphism
+\begin{equation}
+\Hom_{Z/S}(X,Y\times_Z Y')
+\simeq
+\Hom_{Z/S}(X,Y)\times_S\Hom_{Z/S}(X,Y').
+\tag{*}
+\end{equation}
+It follows that if \(Y\) is a \(Z\)-group, \resp a \(Z\)-ring, etc., then
+\(\Hom_{Z/S}(X,Y)\) is an \(S\)-group, \resp an \(S\)-ring, etc.
+\end{remark}
+
+\begin{remark}{1.3}
+\label{II.1.3}
+{\renewcommand{\thefootnote}{(4)}\nde{This remark has been added; it is
+useful for Corollary~3.11.1.}}%
+Moreover, let \(\pi\colon M\to Y\) be a \(Y\)-functor in
+\(\mathbf{O}_Y\)-modules (\cf I,~4.3.3.1). Set
+\(H=\Hom_{Z/S}(X,Y)\). Then \(\Hom_{Z/S}(X,M)\) is endowed with a natural
+structure of \(\mathbf{O}_H\)-module; more precisely, for every \(H'\) over
+\(H\), \(\Hom_H(H',\Hom_{Z/S}(X,M))\) is endowed with a natural structure of
+\(\mathbf{O}(H'\times_S X)\)-module.
+
+Indeed, let us denote by \(m\colon M\times_Y M\to M\) and
+\(\lambda\colon\mathbf{O}_Y\times_Y M\to M\) the morphisms defining the
+structures of \(Y\)-group (abelian) and of \(\mathbf{O}_Y\)-module. Let
+\(H'\) be an \(S\)-scheme over \(H=\Hom_{Z/S}(X,Y)\), that is, one is given a
+\(Z\)-morphism \(f\colon X\times_S H'\to Y\), which therefore makes
+\(X\times_S H'\) a \(Y\)-object. Then
+\[
+\Hom_H\bigl(H',\Hom_{Z/S}(X,M)\bigr)
+\]
+is the set of \(Z\)-morphisms \(\phi\colon X\times_S H'\to M\) such that
+\(\pi\circ\phi=f\), that is, of \(Y\)-morphisms \(X\times_S H'\to M\).
+
+If \(\phi\), \(\psi\) are two such morphisms, one defines \(\phi+\psi\) as the
+composite \(Y\)-morphism
+\[
+\xymatrix{
+X\times_S H' \ar[r]^{\phi\times\psi} & M\times_Y M \ar[r]^{m} & M
+}
+\]
+and one checks that this endows \(\Hom_{Z/S}(X,M)\) with the structure of an
+abelian group over \(H=\Hom_{Z/S}(X,Y)\).%
+{\renewcommand{\thefootnote}{(5)}\nde{Of course, if \(M\) is a \(Y\)-group
+(not necessarily abelian) and if one sets \(\phi\cdot\psi=m\circ(\phi\times\psi)\),
+this makes \(\Hom_{Z/S}(X,M)\) a group over \(\Hom_{Z/S}(X,Y)\).}}
+
+Likewise, if \(a\) is an element of \(\mathbf{O}(X\times_S H')\), \ie an
+\(S\)-morphism \(a\colon X\times_S H'\to\mathbf{O}_S\), one defines \(a\phi\)
+as the composite \(\lambda\circ(a\times\phi)\), where \(a\times\phi\) denotes
+the \(Y\)-morphism from \(X\times_S H'\) to
+\(\mathbf{O}_Y\times_Y M\simeq\mathbf{O}_S\times_S M\) with components \(a\)
+and \(\phi\); one checks that this endows
+\(\Hom_H(H',\Hom_{Z/S}(X,M))\) with the structure of an
+\(\mathbf{O}(X\times_S H')\)-module, functorial in the \(H\)-object \(H'\).
+\end{remark}
+
+\sgasection{2}{The schemes \(\mathrm{I}_S(\mathcal{M})\)}
+\label{II.sec.2}
+
+\begin{definition}{2.1}
+\label{II.2.1}
+Let \(S\) be a scheme and \(\mathcal{M}\) a quasi-coherent
+\(\OO_S\)-module. One denotes by \(\mathcal{D}_{\OO_S}(\mathcal{M})\) the
+quasi-coherent \(\OO_S\)-algebra \(\OO_S\oplus\mathcal{M}\)
+(\emph{where \(\mathcal{M}\) is regarded as a square-zero ideal}). One
+denotes by \(\mathrm{I}_S(\mathcal{M})\) the \(S\)-scheme
+\(\Spec\mathcal{D}_{\OO_S}(\mathcal{M})\).%
+{\renewcommand{\thefootnote}{(6)}\nde{Note that \(\mathrm{I}_S(\mathcal{M})\)
+has the same underlying space as \(S\).}}
+In particular one denotes
+\(\mathcal{D}_{\OO_S}=\mathcal{D}_{\OO_S}(\OO_S)\),
+\(\mathrm{I}_S=\mathrm{I}_S(\OO_S)\) and one calls them respectively the
+\emph{algebra of dual numbers over \(S\)} and the \emph{scheme of dual
+numbers over \(S\)}.
+
+Then \(\mathcal{M}\mapsto\mathrm{I}_S(\mathcal{M})\) is a contravariant
+functor from the category of quasi-coherent \(\OO_S\)-modules to that of
+\(S\)-schemes. In particular the morphisms \(0\to\mathcal{M}\) and
+\(\mathcal{M}\to 0\) define respectively the structural morphism
+\(\rho\colon\mathrm{I}_S(\mathcal{M})\to\mathrm{I}_S(0)=S\) and a section
+\(\varepsilon_{\mathcal{M}}\) of the latter, which one calls the
+\emph{zero section}.%
+{\renewcommand{\thefootnote}{(7)}\nde{Compare with~3.1.1.}}
+\end{definition}
+
+\numpara{2.1.1}\label{II.2.1.1}
+{\renewcommand{\thefootnote}{(8)}\nde{The original has been set out in detail
+in what follows, and the numbering 2.1.1 to 2.1.3 has been added.}}%
+As \(\mathcal{M}\to\mathrm{I}_S(\mathcal{M})\) is a contravariant functor,
+% typo?: printed \to, not \mapsto; kept as printed
+every \(a\in\End_{\OO_S}(\mathcal{M})\) defines an \(S\)-endomorphism \(a^*\)
+of \(\mathrm{I}_S(\mathcal{M})\), and one has \(1^*=\mathrm{id}\),
+\((ab)^*=b^*\circ a^*\), \(0^*=\varepsilon_{\mathcal{M}}\circ\rho\) and
+\(a^*\circ\varepsilon_{\mathcal{M}}=\varepsilon_{\mathcal{M}}\).
+Consequently, the \(S\)-scheme \(\mathrm{I}_S(\mathcal{M})\) is endowed with a
+right action of the multiplicative monoid of \(\End_{\OO_S}(\mathcal{M})\),
+which commutes with the \(S\)-morphisms
+\(\mathrm{I}_S(\mathcal{M})\to\mathrm{I}_S(\mathcal{M}')\) coming from
+morphisms \(\mathcal{M}'\to\mathcal{M}\); in particular, the operators
+\(a^*\) preserve the zero section of \(\mathrm{I}_S(\mathcal{M})\).
+
+For every \(a\in\End_{\OO_S}(\mathcal{M})\) and \(f\colon S'\to S\) and
+\(m\in\mathrm{I}_S(\mathcal{M})(S')\), one will denote
+\(m\cdot a=a^*(m)\); then \(m\cdot 1=m\),
+\((m\cdot a)\cdot b=m\cdot(ab)\),
+\(m\cdot 0=\varepsilon_{\mathcal{M}}(\rho(m))\) and, if
+\(m=\varepsilon_{\mathcal{M}}(f)\), then \(m\cdot a=m\).%
+{\renewcommand{\thefootnote}{(9)}\nde{In the sequel, one will be concerned
+mainly with the case where \(a\in\mathbf{O}(S)\), acting by homotheties by
+\(\mathcal{M}\). For example, if \(\mathcal{M}\) is a free \(\OO_S\)-module
+of rank \(r\), then, for every \(S'\to S\),
+\(\Hom_S(S',\mathrm{I}_S(\mathcal{M}))\) is identified with the set of
+\(r\)-tuples \((\varepsilon_1,\ldots,\varepsilon_r)\in\mathbf{O}(S')\) such
+that \(\varepsilon_i\varepsilon_j=0\) for all \(i\), \(j\), and one has
+\((\varepsilon_1,\ldots,\varepsilon_r)\cdot a
+=(a\varepsilon_1,\ldots,a\varepsilon_r)\) for every
+\(a\in\mathbf{O}(S)\).}}
+
+\begin{remark}{2.1.2}
+\label{II.2.1.2}
+The formation of the \(\mathrm{I}_S(\mathcal{M})\) \emph{commutes with
+extension of the base}: one has canonical isomorphisms
+\[
+\mathrm{I}_S(\mathcal{M})_{S'}
+\simeq
+\mathrm{I}_{S'}(\mathcal{M}\otimes_{\OO_S}\OO_{S'}).
+\]
+For simplicity, one will denote
+\(\mathrm{I}_{S'}(\mathcal{M})=\mathrm{I}_S(\mathcal{M})_{S'}\); more
+generally, if \(X\) is an \(S\)-functor (not necessarily representable), one
+will denote \(\mathrm{I}_X(\mathcal{M})=\mathrm{I}_S(\mathcal{M})\times_S X\).
+\end{remark}
+
+\numpara{2.1.3}\label{II.2.1.3}
+{\renewcommand{\thefootnote}{(10)}\nde{This paragraph has been added; it will
+be useful in~3.4.2 and in~4.6.2.}}%
+By what precedes, the multiplicative monoid of \(\mathbf{O}(S')\) operates on
+the \(S'\)-scheme \(\mathrm{I}_{S'}(\mathcal{M})\), functorially in
+\(\mathcal{M}\), \ie the \(S\)-scheme \(\mathrm{I}_S(\mathcal{M})\) is endowed
+with the structure of an object with monoid of operators \(\mathbf{O}_S\),
+this structure being functorial in \(\mathcal{M}\).
+
+One therefore has a morphism of \(S\)-schemes
+\[
+\lambda\colon\mathrm{I}_S(\mathcal{M})\times_S\mathbf{O}_S
+\longrightarrow\mathrm{I}_S(\mathcal{M}),
+\]
+satisfying obvious conditions. For every \(S\)-functor \(X\), one obtains by
+base change a morphism of \(X\)-functors:
+\[
+\lambda_X\colon\mathrm{I}_X(\mathcal{M})\times_S\mathbf{O}_S
+\longrightarrow\mathrm{I}_X(\mathcal{M})
+\]
+which makes the \(S\)-functor \(\mathrm{I}_X(\mathcal{M})\) an object with
+monoid of operators \(\mathbf{O}(X)\): every element \(a\) of
+\(\mathbf{O}(X)=\Hom_S(X,\mathbf{O}_S)\) defines an \(X\)-endomorphism
+\[
+a^*=\lambda_X\circ\bigl(\mathrm{id}_{\mathrm{I}_X(\mathcal{M})}
+\times(a\circ\mathrm{pr}_X)\bigr)
+\]
+of \(\mathrm{I}_X(\mathcal{M})\); explicitly, if \(x\in X(S')\) and
+\(m\in\mathrm{I}_S(\mathcal{M})(S')=\mathrm{I}_{S'}(\mathcal{M})(S')\), then
+\(a(x)=a\circ x\) belongs to \(\mathbf{O}(S')\) and one has:
+\[
+(m,x)\cdot a=(m\cdot a(x),x).
+\]
+This operation is functorial in \(\mathcal{M}\) and preserves the zero
+section \(\varepsilon_{\mathcal{M}}\colon X\to\mathrm{I}_X(\mathcal{M})\),
+\ie \(a^*\circ\varepsilon_{\mathcal{M}}=\varepsilon_{\mathcal{M}}\) for every
+\(a\in\mathbf{O}(X)\).
+
+Moreover, this operation is ``\emph{functorial in \(X\)}'' in the following
+sense: if \(\pi\colon Y\to X\) is a morphism of \(S\)-functors and
+\(u\colon\mathbf{O}(X)\to\mathbf{O}(Y)\) the corresponding morphism of rings
+(\ie \(u(a)=a\circ\pi\in\mathbf{O}(Y)\) for every
+\(a\in\mathbf{O}(X)=\Hom_S(X,\mathbf{O}_S)\)), then the following diagram is
+commutative:
+\[
+\xymatrix{
+\mathrm{I}_X(\mathcal{M}) \ar[r]^{a^*} \ar[d]_{\pi}
+  & \mathrm{I}_X(\mathcal{M}) \ar[d]^{\pi} \\
+\mathrm{I}_Y(\mathcal{M}) \ar[r]^{u(a)^*}
+  & \mathrm{I}_Y(\mathcal{M})\,.
+}
+\]
+
+\numpara{2.2}
+Let now \(\mathcal{M}\) and \(\mathcal{N}\) be two quasi-coherent
+\(\OO_S\)-modules. The commutative diagram
+\[
+\xymatrix@C=1.8em@R=1.4em{
+& \mathcal{M}\oplus\mathcal{N} \ar[dl] \ar[dr] & \\
+\mathcal{M} \ar[dr] & & \mathcal{N} \ar[dl] \\
+& 0 &
+}
+\]
+defines a commutative diagram of \(S\)-schemes
+\begin{equation}
+\vcenter{\xymatrix@C=1.6em@R=1.6em{
+& \mathrm{I}_S(\mathcal{M}\oplus\mathcal{N}) & \\
+\mathrm{I}_S(\mathcal{M}) \ar[ur]
+  & &
+\mathrm{I}_S(\mathcal{N}) \ar[ul] \\
+& S
+  \ar[ul]^{\varepsilon_{\mathcal{M}}}
+  \ar[uu]|{\varepsilon_{\mathcal{M}\oplus\mathcal{N}}}
+  \ar[ur]_{\varepsilon_{\mathcal{N}}}\,. &
+}}
+\tag{*}
+\end{equation}
+
+\begin{proposition}{2.2}
+\label{II.2.2}
+For every \(S\)-scheme \(X\), the diagram of functors over \(S\) obtained by
+applying the functor \(\Hom_S(-,X)\) to the diagram~\((*)\) is cartesian:
+\[
+\xymatrix@C=1em@R=1.7em{
+& \Hom_S\bigl(\mathrm{I}_S(\mathcal{M}\oplus\mathcal{N}),X\bigr)
+  \ar[dl] \ar[dr] & \\
+\Hom_S\bigl(\mathrm{I}_S(\mathcal{M}),X\bigr) \ar[dr]
+  & &
+\Hom_S\bigl(\mathrm{I}_S(\mathcal{N}),X\bigr) \ar[dl] \\
+& \Hom_S(S,X)=X\,. &
+}
+\]
+\end{proposition}
+
+One must check that for every \(S'\to S\), the diagram of sets obtained by
+taking the value of the functors on \(S'\) is cartesian. As the formation of
+\(\mathrm{I}_S(\mathcal{P})\) commutes with extension of the base in the sense
+made explicit above, it suffices to do this for \(S'=S\), hence to check that
+the following diagram of sets is cartesian:
+\[
+\xymatrix@C=1.2em@R=1.7em{
+& X\bigl(\mathrm{I}_S(\mathcal{M}\oplus\mathcal{N})\bigr)
+  \ar[dl] \ar[dd]|{X(\varepsilon_{\mathcal{M}\oplus\mathcal{N}})} \ar[dr] & \\
+X\bigl(\mathrm{I}_S(\mathcal{M})\bigr) \ar[dr]_{X(\varepsilon_{\mathcal{M}})}
+  & &
+X\bigl(\mathrm{I}_S(\mathcal{N})\bigr) \ar[dl]^{X(\varepsilon_{\mathcal{N}})} \\
+& X(S)\,. &
+}
+\]
+Now, if \(x\in X(S)\), it follows from SGA~1, III~5.1%
+{\renewcommand{\thefootnote}{(11)}\nde{See also the addition~0.1.8 in
+Exp.~III.}},
+that \(X(\varepsilon_{\mathcal{M}})^{-1}(x)\) is isomorphic, functorially in
+\(\mathcal{M}\), to
+\[
+\Hom_{\OO_S}\bigl(x^*(\Omega^1_{X/S}),\mathcal{M}\bigr),
+\]
+where \(\Omega^1_{X/S}\) denotes the sheaf of relative differentials of \(X\)
+with respect to \(S\). Now this latter functor (in \(\mathcal{M}\)) evidently
+transforms a direct sum of \(\OO_S\)-modules into the product of the
+corresponding sets, whence the result.

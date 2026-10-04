@@ -1,0 +1,440 @@
+% Continues Complément 4.4.1 (the heading and the first sentences are in the previous chunk).
+For our fixed \(Y\) and variable \(Y'\), let us consider the morphism
+\[
+\mathcal{I}_{Y'}\longrightarrow\mathcal{O}_{X}\longrightarrow\mathcal{O}_{Y}=\mathcal{O}_{X}/\mathcal{I}_{Y}\,;
+\]
+since the composite with \(\mathcal{O}_{Y}\to\mathcal{O}_{Y_{\mathcal{J}}}\) is zero, one knows that it takes values in \(\mathcal{J}\mathcal{O}_{Y}=\mathcal{J}\otimes_{\mathcal{O}_{S_{\mathcal{J}}}}\mathcal{O}_{Y_{\mathcal{J}}}\). More precisely, if \(V\) is an open of \(X\), \(x'\) a section of \(\mathcal{I}_{Y'}\) over \(V\) and \(x_{\mathcal{J}}\) its image in \(\Gamma(V,\mathcal{I}_{Y_{\mathcal{J}}})\), then
+\[
+x'=f'(x_{\mathcal{J}})=f(x_{\mathcal{J}})+(f'-f)(x_{\mathcal{J}})=f(x_{\mathcal{J}})+d(Y',Y)(x_{\mathcal{J}}).
+\]
+\emph{Consequently: the morphism \(\mathcal{I}_{Y'}\to\mathcal{J}\mathcal{O}_{Y}\) is given by \(d(Y',Y)\).}
+
+\numpara{4.5.0}
+\label{III.4.5.0}%
+{\renewcommand{\thefootnote}{(81)}\nde{One has added the numbering 4.5.0 in order to mark the return to the original.}}
+Let us keep the notations of 4.3.1 and 4.4 and carry out a certain number of transformations: \(\mathcal{I}_{Y_{\mathcal{J}}}/\mathcal{I}_{Y_{\mathcal{J}}}^{2}\) is a quasi-coherent \(\mathcal{O}_{X_{\mathcal{J}}}\)-module annihilated by \(\mathcal{I}_{Y_{\mathcal{J}}}\), hence is the direct image of a quasi-coherent \(\mathcal{O}_{Y_{\mathcal{J}}}\)-module denoted \(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}\), and called the \emph{conormal sheaf} to \(Y_{\mathcal{J}}\) in \(X_{\mathcal{J}}\).
+{\renewcommand{\thefootnote}{(82)}\nde{One has corrected the following sentence.}}
+As \(\mathcal{J}\otimes_{\mathcal{O}_{S_{\mathcal{J}}}}\mathcal{O}_{Y_{\mathcal{J}}}\) is annihilated by \(\mathcal{I}_{Y_{\mathcal{J}}}\), the sheaf of commutative groups \(\mathcal{A}_{\mathcal{J}}\) of 4.3.1 is identified with
+\[
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{Y_{\mathcal{J}}}}\bigl(\mathcal{I}_{Y_{\mathcal{J}}}/\mathcal{I}_{Y_{\mathcal{J}}}^{2},\,\mathcal{J}\otimes_{\mathcal{O}_{S_{\mathcal{J}}}}\mathcal{O}_{Y_{\mathcal{J}}}\bigr)
+=
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{Y_{\mathcal{J}}}}\bigl(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}},\,\mathcal{J}\otimes_{\mathcal{O}_{S_{\mathcal{J}}}}\mathcal{O}_{Y_{\mathcal{J}}}\bigr),
+\]
+whence, for every \(i\geqslant 0\),
+\[
+\mathrm{H}^{i}(X_{\mathcal{J}},\mathcal{A}_{\mathcal{J}})
+=
+\mathrm{H}^{i}\bigl(Y_{\mathcal{J}},\mathcal{H}\mathrm{om}_{\mathcal{O}_{Y_{\mathcal{J}}}}\bigl(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}},\,\mathcal{J}\otimes_{\mathcal{O}_{S_{\mathcal{J}}}}\mathcal{O}_{Y_{\mathcal{J}}}\bigr)\bigr).
+\]
+{\renewcommand{\thefootnote}{(83)}\nde{One has set out what follows in more detail.}}
+One may then drop the hypothesis ``\(Y\) closed'', as follows. Let us first note that every open \(U_{\mathcal{J}}\) of \(X_{\mathcal{J}}\) arises by base change from the open subscheme \(U\) of \(X\) having the same underlying topological space as \(U_{\mathcal{J}}\). Let now \(Y_{\mathcal{J}}\) be a closed subscheme of \(U_{\mathcal{J}}\), flat over \(S_{\mathcal{J}}\), and \(\mathcal{I}_{Y_{\mathcal{J}}}\) the quasi-coherent ideal of \(\mathcal{O}_{U_{\mathcal{J}}}\) defining \(Y_{\mathcal{J}}\). If \(Y_{\mathcal{J}}\) lifts to a subscheme \(Y\) of \(X\), then \(Y\), having the same underlying topological space as \(Y_{\mathcal{J}}\), is a closed subscheme of \(U\); consequently, the obstruction to lifting \(Y_{\mathcal{J}}\) to a subscheme, flat over \(S\), of \(X\) or of \(U\) is ``the same'', and it lies in
+\[
+\mathrm{H}^{1}\bigl(Y_{\mathcal{J}},\mathcal{H}\mathrm{om}_{\mathcal{O}_{Y_{\mathcal{J}}}}\bigl(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}},\,\mathcal{J}\otimes_{\mathcal{O}_{S_{\mathcal{J}}}}\mathcal{O}_{Y_{\mathcal{J}}}\bigr)\bigr).
+\]
+
+Finally, let us return to the notations of \No 0: let \(\mathcal{I}\) be a quasi-coherent ideal of \(\mathcal{O}_{S}\) such that \(\mathcal{J}\subset\mathcal{I}\) and \(\mathcal{I}\mathcal{J}=0\), and let \(S_{0}\) be the closed subscheme of \(S_{\mathcal{J}}\) defined by \(\mathcal{I}\). For every \(S\)-scheme \(Z\), one denotes \(Z_{\mathcal{J}}=Z\times_{S}S_{\mathcal{J}}\) and \(Z_{0}=Z\times_{S}S_{0}\). Then, as \(\mathcal{J}\) is annihilated by \(\mathcal{I}\), one has, with the notations of 4.4,
+\begin{align*}
+\mathcal{J}\otimes_{\mathcal{O}_{S_{\mathcal{J}}}}\mathcal{O}_{Y_{\mathcal{J}}}
+&=
+\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}}\\
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{Y_{\mathcal{J}}}}\bigl(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}},\,\mathcal{J}\otimes_{\mathcal{O}_{S_{\mathcal{J}}}}\mathcal{O}_{Y_{\mathcal{J}}}\bigr)
+&=
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{Y_{0}}}\bigl(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}\otimes_{\mathcal{O}_{Y_{\mathcal{J}}}}\mathcal{O}_{Y_{0}},\,\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}}\bigr),
+\end{align*}
+etc. One therefore obtains:
+
+\begin{proposition}{4.5}
+\label{III.4.5}
+Let \(S\) be a scheme, \(S_{0}\) and \(S_{\mathcal{J}}\) the closed subschemes defined by the quasi-coherent ideals \(\mathcal{I}\) and \(\mathcal{J}\), such that \(\mathcal{I}\supset\mathcal{J}\) and \(\mathcal{I}\cdot\mathcal{J}=0\). Let \(X\) be an \(S\)-scheme and \(Y_{\mathcal{J}}\) a subscheme of \(X_{\mathcal{J}}\), flat over \(S_{\mathcal{J}}\). Let \(\mathcal{A}_{0}\) be the \(\mathcal{O}_{Y_{0}}\)-module defined by
+\[
+\mathcal{A}_{0}
+=
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{Y_{0}}}\bigl(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}\otimes_{\mathcal{O}_{Y_{\mathcal{J}}}}\mathcal{O}_{Y_{0}},\,\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}}\bigr).
+\]
+\begin{enumeratei}
+\item In order that there exist a subscheme \(Y\) of \(X\), reducing to \(Y_{\mathcal{J}}\), flat over \(S\), it is necessary and sufficient that the following conditions be satisfied:
+\begin{enumeratea}
+\item Such a \(Y\) exists locally on \(X\).
+\item A certain obstruction in \(\mathrm{R}^{1}\Gamma(Y_{0},\mathcal{A}_{0})\) is zero.%
+{\renewcommand{\thefootnote}{(84)}\nde{\normalfont Here, one has denoted by \(\mathrm{R}^{1}\Gamma(Y_{0},\mathcal{A}_{0})\) the ``coherent'' cohomology group \(\mathrm{H}^{1}(Y_{0},\mathcal{A}_{0})\) of the \(\mathcal{O}_{Y_{0}}\)-module \(\mathcal{A}_{0}\), in order to distinguish it from the ``Hochschild'' cohomology groups \(\mathrm{H}^{i}(Y_{0},\mathcal{M}_{0})\) (\(Y_{0}\) an \(S_{0}\)-group, \(\mathcal{M}_{0}\) an \(\mathcal{O}_{S_{0}}\)-module) which will be considered starting from~4.16.}}
+\end{enumeratea}
+\item Under these conditions, the set of the \(Y\) satisfying the required conditions is a principal homogeneous space under the commutative group \(\Gamma(Y_{0},\mathcal{A}_{0})\).
+\end{enumeratei}
+\end{proposition}
+
+\begin{remark}{4.5.1}
+\label{III.4.5.1}
+{\renewcommand{\thefootnote}{(85)}\nde{One has placed this remark here; it replaces Remark~4.7 of the original.}}
+It follows from 4.5\,(ii) that there is given, for every pair \((Y,Y')\) of subschemes%
+{\renewcommand{\thefootnote}{(86)}\nde{One has corrected ``closed subschemes'' to ``subschemes''.}}
+of \(X\), flat over \(S\) and reducing to \(Y_{\mathcal{J}}\), a ``deviation''
+\[
+d(Y',Y)\in\Gamma(Y_{0},\mathcal{A}_{0})
+=
+\Hom_{\mathcal{O}_{Y_{0}}}\bigl(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}\otimes_{\mathcal{O}_{Y_{\mathcal{J}}}}\mathcal{O}_{Y_{0}},\,\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}}\bigr)\,;
+\]
+the sign convention adopted in 4.4.1 being that \(d(Y',Y)\) corresponds to the morphism of \(\mathcal{O}_{X}\)-modules
+\[
+\mathcal{I}_{Y'}\hookrightarrow\mathcal{O}_{X}\longrightarrow\mathcal{O}_{Y}
+\]
+(which takes values in \(\mathcal{J}\mathcal{O}_{Y}\simeq\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}}\) and factors through \(\mathcal{I}_{Y'_{\mathcal{J}}}=\mathcal{I}_{Y_{\mathcal{J}}}\) and then through \(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}\)).
+\end{remark}
+
+\begin{remark}{4.6}
+\label{III.4.6}
+{\renewcommand{\thefootnote}{(87)}\nde{One has kept, for the record, Remark~4.6 of the original, in which the definition of ``locally a complete intersection'' does not appear. One has added afterwards the ``right'' definition, taken from SGA~6, VII~1.4 (which \emph{replaces} that of EGA~IV\(_4\), 16.9.2), and the proof of the three results stated in the remark.}}
+If \(X\) is flat over \(S\) and if \(Y_{\mathcal{J}}\) is \emph{locally a complete intersection} in \(X_{\mathcal{J}}\), then condition~(a) is always satisfied, and every \(Y\) flat over \(S\) lifting \(Y_{\mathcal{J}}\) is then locally a complete intersection in \(X\). If moreover \(Y_{0}\) is \emph{affine}, condition~(b) is likewise satisfied.
+\end{remark}
+
+\begin{definition}{4.6.1}
+\label{III.4.6.1}
+(\cf\ SGA~6, VII~1.1)
+Let \(B\) be a commutative ring, \(f\colon E\to B\) a \(B\)-linear morphism, where \(E\) is a free \(B\)-module of finite rank \(d\), and \(I\) the ideal \(f(E)\) (if one chooses a basis of \(E\), \(f\) is given by a \(d\)-tuple \((f_{1},\ldots,f_{d})\) of elements of \(B\), and \(I\) is the ideal generated by the \(f_{i}\)). The \emph{Koszul complex} \(K_{\bullet}(f)\) is the graded \(B\)-module \(\bigwedge^{\bullet}_{B}E\), equipped with the differential (of degree \(-1\))
+\[
+x_{1}\wedge\cdots\wedge x_{i}
+\longmapsto
+\sum_{j=1}^{i}(-1)^{j-1}f(x_{j})\,x_{1}\wedge\cdots\wedge\widehat{x_{j}}\wedge\cdots\wedge x_{i}.
+\]
+One therefore has an augmented chain complex (\(B/I\) being in degree \(-1\)):
+\[
+\cdots\longrightarrow\bigwedge^{2}E\longrightarrow E\xrightarrow{f}B\longrightarrow B/I\longrightarrow 0
+\]
+which by definition is exact in degree \(0\), since \(I=f(E)\). One says that \(f\) is \emph{regular} if \(K_{\bullet}(f)\) is acyclic in degrees \(>0\), \ie if the augmented complex above is a \emph{resolution} of \(C=B/I\).
+
+In this case, the proof of SGA~6, VII~1.2\,b) shows that the \(C\)-modules \(I^{n}/I^{n+1}\) (\(n\in\NN\)) are free, \(I/I^{2}\) being of rank \(d\).
+\end{definition}
+
+\begin{definition}{4.6.2}
+\label{III.4.6.2}
+(\cf\ SGA~6, VII~1.4)
+Let \(X\) be a scheme, \(Y\) a subscheme, \(U\) an open of \(X\) such that \(Y\) is a closed subscheme of \(U\), defined by the quasi-coherent ideal \(\mathcal{I}_{Y}\).
+
+One says that \(Y\) is \emph{locally a complete intersection} in \(X\) if \(Y\hookrightarrow X\) is a \emph{regular immersion} in the sense of SGA~6, VII~1.4, \ie if for every \(y\in Y\) there exist an affine open neighbourhood \(V\) of \(y\) in \(U\), a finite free \(\mathcal{O}_{V}\)-module \(\mathcal{E}\), and a regular morphism \(f\colon\mathcal{E}\to\mathcal{O}_{V}\) with image \(\mathcal{I}_{Y}|_{V}\), \ie such that \(K_{\bullet}(f)\) is a resolution of \(\mathcal{O}_{Y\cap V}\).
+
+This implies that the immersion \(Y\hookrightarrow X\) is \emph{locally of finite presentation}, and, by 4.6.1, that the conormal sheaf \(\mathcal{N}_{Y/X}=\mathcal{I}_{Y}/\mathcal{I}_{Y}^{2}\) is a \emph{finite locally free} \(\mathcal{O}_{Y}\)-module.
+\end{definition}
+
+\begin{lemma}{4.6.3}
+\label{III.4.6.3}
+{\renewcommand{\thefootnote}{(88)}\nde{\normalfont In order to prove the results stated in Remark~4.6, one has added Lemmas~4.6.3, 4.6.4 and Proposition~4.6.5, as well as Remark~4.6.6.}}
+Let \(A\) be a ring, \(J\) an ideal of \(A\) of square zero, \(\overline{A}=A/J\), \(B\) a flat \(A\)-algebra, \(E\) a free \(B\)-module of finite rank, \(f\colon E\to B\) a morphism of \(B\)-modules. One assumes that the morphism \(g\colon\overline{E}=E\otimes_{A}\overline{A}\to\overline{B}=B\otimes_{A}\overline{A}\) induced by \(f\) is regular and that \(\overline{B}/g(\overline{E})\) is flat over \(\overline{A}\).
+
+Then \(f\) is regular and \(B/f(E)\) is flat over \(A\).
+\end{lemma}
+
+\begin{proof}
+Set \(C=B/f(E)\) and \(\overline{C}=C\otimes_{A}\overline{A}=\overline{B}/g(\overline{E})\). First, the \(\bigwedge^{i}_{B}(E)\) are free \(B\)-modules, hence flat \(A\)-modules, since \(B\) is flat over \(A\). As \(\bigwedge^{\bullet}_{B}E\otimes_{A}\overline{A}\simeq\bigwedge^{\bullet}_{\overline{A}}\overline{E}\), one therefore obtains an exact sequence of complexes
+\[
+0\longrightarrow J\otimes_{A}\bigwedge^{\bullet}_{B}E\longrightarrow\bigwedge^{\bullet}_{B}E\longrightarrow\bigwedge^{\bullet}_{\overline{A}}\overline{E}\longrightarrow 0.
+\]
+Moreover, as \(J^{2}=0\), one has \(J\otimes_{A}M=J\otimes_{\overline{A}}\overline{A}\otimes_{A}M\) for every \(A\)-module \(M\). Denoting by \(\dashrightarrow\) the augmentation arrows, and by \(d\) the rank of \(E\), one therefore obtains the following double complex, in which the rows are exact:
+\[
+\xymatrix@C=1.5em@R=1.15em{
+& 0 \ar[d] & 0 \ar[d] & 0 \ar[d] & \\
+0 \ar[r]
+& J\otimes_{A}\bigwedge^{d}_{B}E \ar[r] \ar[d]
+& \bigwedge^{d}_{B}E \ar[r] \ar[d]
+& \bigwedge^{d}_{\overline{B}}\overline{E} \ar[r] \ar[d]
+& 0
+\\
+& \vdots \ar[d] & \vdots \ar[d] & \vdots \ar[d] & \\
+0 \ar[r]
+& J\otimes_{A}E \ar[r] \ar[d]^{\mathrm{id}\otimes g}
+& E \ar[r] \ar[d]^{f}
+& \overline{E} \ar[r] \ar[d]^{g}
+& 0
+\\
+0 \ar[r]
+& J\otimes_{A}B \ar[r] \ar@{-->}[d]
+& B \ar[r] \ar@{-->}[d]
+& \overline{B} \ar[r] \ar@{-->}[d]
+& 0
+\\
+& J\otimes_{A}\overline{C} \ar[r] \ar[d]
+& C \ar[r] \ar[d]
+& \overline{C} \ar[r] \ar[d]
+& 0
+\\
+& 0 & 0 & 0 & .
+}
+\]
+Moreover, the right-hand and left-hand columns are exact, since \(K_{\bullet}(g)\) is a resolution of \(\overline{C}\) and since the latter is flat over \(\overline{A}\). Thus, considering the long exact sequence in homology associated with the exact sequence of non-augmented complexes, one obtains that \(K_{\bullet}(f)\) is acyclic in degrees \(>0\), and that in degree \(0\) one has an exact sequence
+\[
+0\longrightarrow J\otimes_{A}\overline{C}\longrightarrow C\longrightarrow\overline{C}\longrightarrow 0.
+\]
+Hence \(C\) is flat over \(A\), by the ``fundamental criterion of flatness'' (\cf~\textbf{[BAC]}, \S III.5, th.~1).
+\end{proof}
+
+\begin{lemma}{4.6.4}
+\label{III.4.6.4}
+\textsuperscript{(88)}
+Let \(A\) be a commutative ring, \(J\) a nilpotent ideal, \(N\subset M\) \(A\)-modules such that \(M/N\) is flat over \(A\). If \(x_{1},\ldots,x_{n}\) are elements of \(N\) whose images generate the image \(\overline{N}\) of \(N\) in \(M/JM\), then they generate \(N\).
+\end{lemma}
+
+Indeed, denote by \(N'\) the submodule of \(N\) generated by the \(x_{i}\), and \(Q=N/N'\). Then the morphism \(N'\otimes(A/J)\to\overline{N}\) is surjective. On the other hand, as \(M/N\) is flat over \(A\), the morphism \(N\otimes(A/J)\to\overline{N}\) is bijective. One therefore obtains that \(Q\otimes(A/J)=0\), whence \(Q=0\) by the ``nilpotent Nakayama lemma'' (one has \(Q=JQ=J^{2}Q=\cdots=0\)).
+
+One may now prove the following:
+
+\begin{proposition}{4.6.5}
+\label{III.4.6.5}
+\textsuperscript{(88)}
+Let \(S\), \(\mathcal{I}\), \(\mathcal{J}\) and \(X\), \(Y_{\mathcal{J}}\) be as in 4.5. Assume moreover \(X\) flat over \(S\) and \(Y_{\mathcal{J}}\) locally a complete intersection in \(X_{\mathcal{J}}\).
+
+a) Then, condition~(a) of 4.5\,(i) is satisfied; moreover, every \(Y\) flat over \(S\) lifting \(Y_{\mathcal{J}}\) is locally a complete intersection in \(X\).
+
+b) If moreover \(Y_{0}\) is affine, condition~(b) of \loccit\ is likewise satisfied.
+\end{proposition}
+
+\begin{proof}
+The first assertion of~(a) follows from Lemma~4.6.3; the second then results from Lemma~4.6.4. On the other hand, the hypothesis implies (\cf~4.6.2) that \(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}\) is a finite locally free \(\mathcal{O}_{Y_{\mathcal{J}}}\)-module, hence the \(\mathcal{O}_{Y_{0}}\)-module
+\[
+\mathcal{A}_{0}
+=
+\mathcal{H}\mathrm{om}_{\mathcal{O}_{Y_{0}}}\bigl(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}\otimes_{\mathcal{O}_{Y_{\mathcal{J}}}}\mathcal{O}_{Y_{0}},\,\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}}\bigr)
+\]
+is quasi-coherent (\cf\ EGA~I, 1.3.12), whence \(\mathrm{R}^{1}\Gamma(Y_{0},\mathcal{A}_{0})=0\) if \(Y_{0}\) is affine.
+\end{proof}
+
+\begin{remark}{4.6.6}
+\label{III.4.6.6}
+\textsuperscript{(88)}
+Let us end this paragraph with the following example, which shows that, under the hypotheses of Lemma~4.6.3, if \((g_{1},g_{2})\) is a regular sequence generating the ideal \(I=g(E)\), it does not necessarily lift to a regular sequence in \(B\).
+
+Let \(k\) be a field, \(A=k[X,Y]\), denote by \(k\varepsilon\) the \(A\)-module \(A/(X,Y)\) (\ie \(P\cdot\varepsilon=P(0,0)\,\varepsilon\) for every \(P\in A\)), and let \(A=\overline{A}\oplus k\varepsilon\), where \(J=k\varepsilon\) is an ideal of square zero. One has \(A/J=\overline{A}\).
+
+The algebra \(B=A\otimes_{k}k[Z,T]\) is free over \(A\), hence flat; one has \(\overline{B}=k[X,Y,Z,T]\). Set \(g_{1}=XZ-YT\) and \(g_{2}=XZ-1\). As the polynomial \(g_{1}\) is irreducible, \(\overline{B}/(g_{1})\) is an integral domain, and hence \((g_{1},g_{2})\) is a regular sequence in \(\overline{B}\), generating the ideal \(I=(XZ-1,YT-1)\). Thus
+\[
+\overline{C}=\overline{B}/I=k[X,Y,X^{-1},Y^{-1}]=\overline{A}[X^{-1},Y^{-1}]
+\]
+is a flat \(\overline{A}\)-algebra (and also a flat \(A\)-algebra). But every lifting in \(B\) of \(g_{1}\) is of the form \(XY-ZT+\lambda\varepsilon\), where \(\lambda\in k[Z,T]\), hence annihilates \(\varepsilon\).
+% typo?: kept as printed: the lift is written XY - ZT + lambda epsilon, whereas g_1 = XZ - YT.
+\end{remark}
+
+\numpara{4.7}
+\label{III.4.7}
+One has deleted here Remark~4.7, placed in 4.5.1.
+
+\begin{remark}{4.8.0}
+\label{III.4.8.0}
+{\renewcommand{\thefootnote}{(89)}\nde{One has inserted this remark here, used in the proposition which follows; it appeared in 4.10 of the original.}}
+Let \(S\) be a scheme, \(S'\) a closed subscheme, \(X\) an \(S\)-scheme, \(Y\) a sub-\(S\)-scheme of \(X\), and \(X'=X\times_{S}S'\), \(Y'=Y\times_{S}S'\). Then one has a \emph{surjective} morphism of \(\mathcal{O}_{Y'}\)-modules
+\[
+\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y'}
+\xrightarrow{\mathrm{surj.}}
+\mathcal{N}_{Y'/X'}\,.
+\]
+Indeed, after replacing \(X\) by a suitable open, one may assume that \(Y\) is closed, defined by an ideal \(\mathcal{I}_{Y}\) of \(\mathcal{O}_{X}\); then the image of \(\mathcal{I}_{Y}\) in \(\mathcal{O}_{X'}\) is the ideal \(\mathcal{I}_{Y'}\) defining \(Y'\), and one has a surjective morphism of \(\mathcal{O}_{Y'}\)-modules
+\[
+\pi\colon
+\bigl(\mathcal{I}_{Y}/\mathcal{I}_{Y}^{2}\bigr)\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y'}
+\xrightarrow{\mathrm{surj.}}
+\mathcal{I}_{Y'}/\mathcal{I}_{Y'}^{2}\,.
+\]
+Assume moreover that \(\mathcal{O}_{Y}=\mathcal{O}_{X}/\mathcal{I}_{Y}\) is \emph{flat} over \(\mathcal{O}_{S}\); then the natural morphism
+\[
+\mathcal{I}_{Y}\otimes_{\mathcal{O}_{X}}\mathcal{O}_{X'}\longrightarrow\mathcal{I}_{Y'}
+\]
+is bijective (\cf\ EGA~IV\(_{2}\), 2.1.8). One then has the following commutative diagram with exact rows:
+\[
+\xymatrix@C=1.3em@R=2.4em{
+& \mathcal{I}_{Y}^{2}\otimes_{\mathcal{O}_{X}}\mathcal{O}_{X'} \ar[r] \ar[d]^{\mathrm{surj.}}
+& \mathcal{I}_{Y}\otimes_{\mathcal{O}_{X}}\mathcal{O}_{X'} \ar[r] \ar[d]^{\wr}
+& \bigl(\mathcal{I}_{Y}/\mathcal{I}_{Y}^{2}\bigr)\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y'} \ar[r] \ar[d]^{\pi\ \mathrm{surj.}}
+& 0
+\\
+0 \ar[r]
+& \mathcal{I}_{Y'}^{2} \ar[r]
+& \mathcal{I}_{Y'} \ar[r]
+& \mathcal{I}_{Y'}/\mathcal{I}_{Y'}^{2} \ar[r]
+& 0
+}
+\]
+whence one deduces, by the snake lemma:%
+{\renewcommand{\thefootnote}{(90)}\nde{In the original, this was indicated in Remark~4.10, under the additional hypothesis that \(Y'\) be locally a complete intersection in \(X'\). This hypothesis also appeared, consequently, in the statements 4.12--4.14; it seems in fact superfluous, and one has removed it from the aforementioned statements.}}
+\[
+(4.8.0)\qquad
+\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y'}
+\isomto
+\mathcal{N}_{Y'/X'}
+\qquad\text{if \(Y\) is \emph{flat} over \(S\).}
+\]
+\end{remark}
+
+\begin{proposition}{4.8}
+\label{III.4.8}
+Let \(S\), \(S_{0}\), \(S_{\mathcal{J}}\) and \(\mathcal{I}\), \(\mathcal{J}\) be as in 4.5.%
+{\renewcommand{\thefootnote}{(91)}\nde{\normalfont One has removed the hypothesis that \(\mathcal{I}\) be nilpotent, which appears superfluous (\cf\ the proof).}}
+Let \(X\) be an \(S\)-scheme, \(Y\) a subscheme of \(X\), and \(i\) the immersion \(Y\hookrightarrow X\).
+\begin{enumeratei}
+\item For every \(S\)-morphism \(f\colon T\to X\) such that \(f_{\mathcal{J}}\colon T_{\mathcal{J}}\to X_{\mathcal{J}}\) factors through \(Y_{\mathcal{J}}\), one may define an obstruction
+\[
+(*)\qquad
+c(X,Y,f)
+\in
+\Hom_{\mathcal{O}_{T_{0}}}\bigl(f_{0}^{*}(\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y_{0}}),\,\mathcal{J}\mathcal{O}_{T}\bigr)
+\]
+whose vanishing is equivalent to the existence of a factorization of \(f\) through \(Y\).
+\item Let \(Y'\) be a second subscheme of \(X\). Assume that \(Y'_{\mathcal{J}}=Y_{\mathcal{J}}\) and that \(Y\), \(Y'\) are flat over \(S\). One then has isomorphisms (\cf~4.8.0)
+\[
+\mathcal{J}\mathcal{O}_{Y}
+\simeq
+\mathcal{J}\otimes_{\mathcal{O}_{S_{0}}}\mathcal{O}_{Y_{0}}
+\simeq
+\mathcal{J}\mathcal{O}_{Y'}
+\qquad\text{and}\qquad
+\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y_{\mathcal{J}}}
+\isomto
+\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}
+\]
+whence an isomorphism
+\[
+u\colon
+\Hom_{\mathcal{O}_{Y_{0}}}\bigl(\mathcal{N}_{Y_{\mathcal{J}}/X_{\mathcal{J}}}\otimes_{\mathcal{O}_{Y_{\mathcal{J}}}}\mathcal{O}_{Y_{0}},\,\mathcal{J}\mathcal{O}_{Y}\bigr)
+\isomto
+\Hom_{\mathcal{O}_{Y_{0}}}\bigl(\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y_{0}},\,\mathcal{J}\mathcal{O}_{Y'}\bigr).
+\]
+Denoting by \(i'\colon Y'\to X\) the canonical immersion and by \(d(Y,Y')\) the deviation of 4.5.1, one has:%
+{\renewcommand{\thefootnote}{(92)}\nde{\normalfont See also 4.27 further on.}}
+\[
+(**)\qquad
+c(X,Y,i')=u\bigl(d(Y,Y')\bigr).
+\]
+\item The canonical morphism \(\mathcal{N}_{Y/X}\xrightarrow{D}i^{*}(\Omega^{1}_{X/S})\) (\cf\ SGA~1~II, formula~4.3)%
+{\renewcommand{\thefootnote}{(93)}\nde{\normalfont See also EGA~IV\(_4\), 16.4.21. Recall that if \(U\) is an affine open of \(X\) such that \(Y\cap U\) is defined by the ideal \(I\) of \(A=\mathcal{O}_{X}(U)\), if one denotes by \(d\) the differential \(A\to\Gamma(U,\Omega^{1}_{X/S})\), and if \(x\in I\), then \(D(x+I^{2})\) is the element \(d(x)\otimes 1\) of \(\Gamma(U,\Omega^{1}_{X/S})\otimes_{A}(A/I)\).}}
+induces a morphism
+\[
+D_{0}\colon
+\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y_{0}}
+\longrightarrow
+\Omega^{1}_{X_{0}/S_{0}}\otimes_{\mathcal{O}_{X_{0}}}\mathcal{O}_{Y_{0}}
+\]
+and thus, for every \(S\)-morphism \(f\colon T\to X\) as in~(i), a morphism
+\begin{align*}
+v_{f_{0}}\colon
+\Hom_{\mathcal{O}_{T_{0}}}\bigl(f_{0}^{*}(\Omega^{1}_{X_{0}/S_{0}}),\,\mathcal{J}\mathcal{O}_{T}\bigr)
+&\longrightarrow
+\Hom_{\mathcal{O}_{T_{0}}}\bigl(f_{0}^{*}(\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y_{0}}),\,\mathcal{J}\mathcal{O}_{T}\bigr),
+\\
+a&\longmapsto a\circ f_{0}^{*}(D_{0})
+\end{align*}
+where above the first group is \(\Hom_{X^{+}}(T,L_{X})\), \cf~0.1.5. For \(a\in\Hom_{X^{+}}(T,L_{X})\), one has
+\[
+(***)\qquad
+c(X,Y,a\cdot f)-c(X,Y,f)=v_{f_{0}}(a),
+\]
+where one has denoted by \(a\cdot f\) the composite morphism \(T\xrightarrow{a\times f}L_{X}\times_{X^{+}}X\to X\).
+\end{enumeratei}
+\end{proposition}
+
+We shall prove part~(i) of the proposition, leaving to the reader the task of (not) verifying the assertions~(ii) and~(iii); this verification is carried out by reduction to the affine case, then by comparison of the explicit definitions.%
+{\renewcommand{\thefootnote}{(94)}\nde{One has carried out these verifications further down.}}
+
+Let us therefore prove~(i). The morphism \(f\colon T\to X\) defines a morphism of sheaves of rings \(\varphi\colon\mathcal{O}_{X}\to f_{*}(\mathcal{O}_{T})\).%
+{\renewcommand{\thefootnote}{(95)}\nde{On the one hand, one has removed the hypothesis that \(\mathcal{I}\) be nilpotent, \ie that \(X_{0}\) have the same underlying topological space as \(X\); on the other hand, one has set out the following sentence in more detail.}}
+% typo: faiceaux -> faisceaux (twice on the printed page)
+Let \(U\) be an open subscheme of \(X\) in which \(Y\) is closed; as \(T\) (\resp\ \(Y_{\mathcal{J}}\)) has the same underlying space as \(T_{\mathcal{J}}\) (\resp\ \(Y\)), the underlying continuous map of \(f\) sends \(T\) into \(U\), and as \(U\) is an open of \(X\), \(\varphi\) induces a morphism of sheaves of rings \(\mathcal{O}_{U}=\mathcal{O}_{X}|_{U}\to f_{*}(\mathcal{O}_{T})\), \ie \(f\) factors through \(U\).
+
+Thus, one may restrict oneself to the case where \(Y\) is closed, hence defined by a sheaf of ideals \(\mathcal{I}_{Y}\). In order that \(f\) factor through \(Y\), it is necessary and sufficient that the composite map \(\mathcal{I}_{Y}\to\mathcal{O}_{X}\to f_{*}(\mathcal{O}_{T})\) be zero. As \(f_{\mathcal{J}}\) factors through \(Y_{\mathcal{J}}\), the composite map \(\mathcal{I}_{Y_{\mathcal{J}}}\to\mathcal{O}_{X_{\mathcal{J}}}\to f_{*}(\mathcal{O}_{T_{\mathcal{J}}})\) is zero. Considering the commutative diagram in which the first row is exact
+\[
+\xymatrix@C=2.4em@R=1.6em{
+0 \ar[r]
+& f_{*}(\mathcal{J}\mathcal{O}_{T}) \ar[r]
+& f_{*}(\mathcal{O}_{T}) \ar[r]
+& f_{*}(\mathcal{O}_{T_{\mathcal{J}}})
+\\
+&
+& \mathcal{O}_{X} \ar[u]_{\varphi} \ar[r]
+& \mathcal{O}_{X_{\mathcal{J}}} \ar[u]_{\varphi_{\mathcal{J}}}
+\\
+&
+& \mathcal{I}_{Y} \ar[u] \ar[r] \ar@{-->}[uul]_{\varphi}
+& \mathcal{I}_{Y_{\mathcal{J}}} \ar[u]
+}
+\]
+one deduces from this that \(\varphi\) sends \(\mathcal{I}_{Y}\) into \(f_{*}(\mathcal{J}\mathcal{O}_{T})\).%
+{\renewcommand{\thefootnote}{(96)}\nde{One has set out what follows in more detail.}}
+Since \(\mathcal{J}^{2}=0\), it follows that \(f_{*}(\mathcal{J}\mathcal{O}_{T})\), viewed as an \(\mathcal{O}_{X}\)-module via \(\varphi\), is annihilated by \(\mathcal{I}_{Y}\); consequently, \(\varphi\) induces a morphism of \(\mathcal{O}_{X}\)-modules
+\[
+h\colon
+i_{*}(\mathcal{N}_{Y/X})=\mathcal{I}_{Y}/\mathcal{I}_{Y}^{2}
+\longrightarrow
+f_{*}(\mathcal{J}\mathcal{O}_{T}).
+\]
+
+On the other hand, one has cartesian squares
+\[
+\xymatrix@C=2.6em@R=1.8em{
+T_{0} \ar[r]^{f_{0}} \ar[d]_{\tau_{T_{0}}}
+& X_{0} \ar[d]_{\tau_{X_{0}}}
+& Y_{0} \ar[l]_{i_{0}} \ar[d]^{\tau_{Y_{0}}}
+\\
+T \ar[r]^{f}
+& X
+& Y \ar[l]_{i}
+}
+\]
+where \(i_{T_{0}}\) etc.\ are the closed immersions deduced by base change from \(S_{0}\hookrightarrow S\). As \(\mathcal{J}\mathcal{O}_{T}\) is a quasi-coherent \(\mathcal{O}_{T}\)-module annihilated by \(\mathcal{I}\), one has an isomorphism
+\[
+\mathcal{J}\mathcal{O}_{T}
+\simeq
+(\tau_{T_{0}})_{*}\,\tau_{T_{0}}^{*}(\mathcal{J}\mathcal{O}_{T}),
+\]
+whence \(f_{*}(\mathcal{J}\mathcal{O}_{T})\simeq(\tau_{X_{0}})_{*}(f_{0})_{*}\,\tau_{T_{0}}^{*}(\mathcal{J}\mathcal{O}_{T})\). Thus \(h\) corresponds, by adjunction, to a morphism of \(\mathcal{O}_{T_{0}}\)-modules
+\[
+h_{0}\colon
+f_{0}^{*}\,\tau_{X_{0}}^{*}\,i_{*}(\mathcal{N}_{Y/X})
+\longrightarrow
+i_{T_{0}}^{*}(\mathcal{J}\mathcal{O}_{T}).
+\]
+Now, \(\tau_{X_{0}}^{*}\,i_{*}(\mathcal{N}_{Y/X})\simeq(i_{0})_{*}\,\tau_{Y_{0}}^{*}(\mathcal{N}_{Y/X})=\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y_{0}}\). Thus, reverting to the abuse of notation \(i_{T_{0}}^{*}(\mathcal{J}\mathcal{O}_{T})=\mathcal{J}\mathcal{O}_{T}\) constantly used, \(h_{0}\) is identified with a morphism of \(\mathcal{O}_{T_{0}}\)-modules
+\[
+h_{0}\colon
+f_{0}^{*}(\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y_{0}})
+\longrightarrow
+\mathcal{J}\mathcal{O}_{T}
+\]
+which is the desired obstruction \(c(X,Y,f)\). This proves~(i).
+
+When \(f\) is the immersion \(i'\colon Y\hookrightarrow X\), one sees that \(c(X,Y,i')\) arises from the morphism \(\mathcal{I}_{Y}\hookrightarrow\mathcal{O}_{X}\to\mathcal{O}_{Y'}\), hence corresponds, by 4.4.1 and 4.5.1, to the class \(d(Y,Y')\). This proves~(ii).
+% typo?: kept as printed: ``i' : Y hookrightarrow X'' (the immersion i' is that of Y').
+
+Let us prove~(iii). First, \(D\colon\mathcal{N}_{Y/X}\to i^{*}(\Omega^{1}_{X/S})\) induces a morphism
+\[
+D_{0}\colon
+\tau_{Y_{0}}^{*}(\mathcal{N}_{Y/X})
+\longrightarrow
+\tau_{Y_{0}}^{*}\,i^{*}(\Omega^{1}_{X/S})
+=
+i_{0}^{*}\,\tau_{X_{0}}^{*}(\Omega^{1}_{X/S})
+\]
+and, as \(X_{0}=X\times_{S}S_{0}\), one has \(\tau_{X_{0}}^{*}(\Omega^{1}_{X/S})\simeq\Omega^{1}_{X_{0}/S_{0}}\) (\cf\ EGA~IV\(_{4}\), 16.4.5). One therefore obtains the announced morphism
+\[
+D_{0}\colon
+\mathcal{N}_{Y/X}\otimes_{\mathcal{O}_{Y}}\mathcal{O}_{Y_{0}}
+\longrightarrow
+\Omega^{1}_{X_{0}/S_{0}}\otimes_{\mathcal{O}_{X_{0}}}\mathcal{O}_{Y_{0}}\,.
+\]
+Finally, one will verify the equality \((***)\) after the remark below.
+
+\begin{remark}{4.9}
+\label{III.4.9}
+The obstruction \(c(X,Y,f)\) is computed locally on \(T\). Let \(U=\Spec(C)\) be an affine open of \(T\) lying over an affine open \(\Spec(A)\) of \(X\), itself lying over an affine open \(\Spec(\Lambda)\) of \(S\), let \(\mathcal{J}\subset\mathcal{I}\subset\Lambda\) (\resp\ \(\mathcal{I}_{Y}\subset A\)) be the ideals corresponding to \(\mathcal{J}\subset\mathcal{I}\) (\resp\ to \(\mathcal{I}_{Y}\)), let \(B=A/\mathcal{I}_{Y}\) and let \(\varphi\colon A\to C\) be the morphism of \(\Lambda\)-algebras corresponding to \(f\colon T\to X\); as \(f(T_{\mathcal{J}})\subset Y_{\mathcal{J}}\) one has \(\varphi(\mathcal{I}_{Y})\subset\mathcal{J}C\) and hence \(\varphi\) induces a morphism of \(\Lambda\)-algebras \(B\to C/\mathcal{J}C\to C_{0}=C/\mathcal{I}C\). Then the obstruction \(c=c(X,Y,f)\) is computed by the following commutative diagram
+\[
+\xymatrix@C=2.8em@R=2.2em{
+\mathcal{I}_{Y} \ar[r] \ar[d]
+& A \ar[r]^{\varphi}
+& C
+\\
+\mathcal{I}_{Y}/\mathcal{I}_{Y}^{2} \ar[r]
+& \mathcal{I}_{Y}/\mathcal{I}_{Y}^{2}\otimes_{B}C_{0} \ar[r]^{c}
+& \mathcal{J}C \ar[u]
+}
+\]
+\ie it is defined, above the open \(U\), as the unique element of
+\[
+\Hom_{C_{0}}\bigl(\mathcal{I}_{Y}/\mathcal{I}_{Y}^{2}\otimes_{B}C_{0},\,\mathcal{J}C\bigr)
+=
+\Hom_{B_{0}}\bigl(\mathcal{I}_{Y}/\mathcal{I}_{Y}^{2}\otimes_{B}B_{0},\,\mathcal{J}C\bigr)
+\]
+such that, with the obvious notations, one has \(c(x\otimes_{B}1)=\varphi(x)\), for every \(x\in\mathcal{I}_{Y}\).
+\end{remark}

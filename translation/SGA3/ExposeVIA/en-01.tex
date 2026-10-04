@@ -1,0 +1,191 @@
+\exposetitle{VIA}{Generalities on algebraic groups}
+\label{VIA}
+\begin{center}by P. Gabriel\end{center}
+\nde{Version of 13 October 2024.}Throughout this chapter, $A$ will denote an artinian local ring with residue field $k$. A group scheme $G$ over $\Spec A$ will simply be called an $A$-group. This $A$-group is said to be locally of finite type if the underlying scheme is locally of finite type over $A$; it is said to be algebraic if the underlying scheme is of finite type over $A$.
+
+\sgasection{0}{Preliminary remarks}
+\numpara{0.1}First consider a group scheme $G$ over any scheme $S$. We call the structure morphism $\mu:G\times_SG\to G$ multiplication, and the morphism $c:G\to G$ defined by the equalities $c(T)(x)=x^{-1}$ inversion ($T$ being a scheme over $S$ and $x$ an element of $G(T)$). If $U$ and $V$ are subsets of the underlying set of $G$, we denote by $U\cdot V$ the image under the multiplication morphism of the subset of $G\times_SG$ consisting of the points whose first projection belongs to $U$ and second to $V$. Similarly, the notations $U^{-1}$ and $c(U)$ are equivalent.
+
+Let $\mathrm{pr}_1$ be the projection of $G\times_SG$ onto the first factor, and $\sigma:G\times_SG\to G\times_SG$ the morphism with components $\mathrm{pr}_1$ and $\mu$. For every $S$-scheme $T$, $\sigma(T)$ is the map $(x,y)\mto(x,xy)$; it follows that $\sigma$ is an automorphism. The composite of this automorphism with the projection $\mathrm{pr}_2$ of $G\times_SG$ onto the second factor is the multiplication morphism. When $G$ is flat over $S$, $\mathrm{pr}_2$, and hence $\mu$, are flat morphisms; when $G$ is smooth over $S$, $\mathrm{pr}_2$, and hence $\mu$, are smooth morphisms, etc.
+
+\numpara{0.2}From now on we suppose that $S$ is the spectrum of an artinian local ring $A$ with residue field $k$. We denote by $(\mathrm{Sch}/k)_{\mathrm{red}}$ the category of reduced schemes over $k$. For every scheme $X$ over $A$, the reduced scheme $X_{\mathrm{red}}$ is an object of $(\mathrm{Sch}/k)_{\mathrm{red}}$, and the functor $X\mto X_{\mathrm{red}}$ is right adjoint to the inclusion of $(\mathrm{Sch}/k)_{\mathrm{red}}$ into $(\mathrm{Sch}/A)$. It follows that, for every $A$-group $G$, $G_{\mathrm{red}}$ is a group in the category $(\mathrm{Sch}/k)_{\mathrm{red}}$,\nde{The following sentences have been added.} that is, for every reduced $k$-scheme $T$, $G_{\mathrm{red}}(T)$ has a group structure functorial in $T$. One must beware that $G_{\mathrm{red}}$ is not necessarily a $k$-group, for ``multiplication'' is only a morphism from $(G_{\mathrm{red}}\times_kG_{\mathrm{red}})_{\mathrm{red}}$ to $G_{\mathrm{red}}$.\nde{For examples of group schemes $G$ over an imperfect field $k$ such that $G_{\mathrm{red}}$ is not a $k$-group scheme, see 1.3.2 below.}
+
+\nde{What follows in 0.2, as well as 0.3, has been slightly modified.}However, if $k$ is a perfect field, the inclusion of $(\mathrm{Sch}/k)_{\mathrm{red}}$ into $(\mathrm{Sch}/k)$ commutes with products, so that groups in the category $(\mathrm{Sch}/k)_{\mathrm{red}}$ are identified with group schemes over $k$ whose underlying scheme is reduced. In this case, if $G$ is a $k$-group, $G_{\mathrm{red}}$ is a subgroup scheme of $G$; this subgroup is not in general invariant in $G$.
+
+For example, if $k$ is a field of characteristic 3, the constant group $(\ZZ/2\ZZ)_k$ acts nontrivially on the diagonalizable group $D_k(\ZZ/3\ZZ)$ (cf. Exp. I, 4.1 and 4.4); if $G$ denotes the semidirect product of $D_k(\ZZ/3\ZZ)$ by $(\ZZ/2\ZZ)_k$ defined by this action, $G_{\mathrm{red}}$ is identified with $(\ZZ/2\ZZ)_k$ and is not invariant in $G$.\nde{For an analogous example with $G$ connected, one can consider, for $\operatorname{char}(k)=p>0$, the semidirect product of $\alpha_{p,k}$ and $\mathbf G_{\mathrm m,k}$.}
+
+Let $k$ be any field, $k^{p^{-\infty}}$ its perfect closure, and $H$ a group in the category $(\mathrm{Sch}/k)_{\mathrm{red}}$. Then $(H\otimes_kk^{p^{-\infty}})_{\mathrm{red}}$ is a group scheme over the perfect field $k^{p^{-\infty}}$. Since $H\otimes_kk^{p^{-\infty}}$ and $(H\otimes_kk^{p^{-\infty}})_{\mathrm{red}}$ have the same underlying topological space, one sees that groups in $(\mathrm{Sch}/k)_{\mathrm{red}}$ share with $k$-groups certain topological properties invariant under extension of the base field: for example, it will follow from 0.3 and the remarks just made that every group in $(\mathrm{Sch}/k)_{\mathrm{red}}$ is separated.
+
+We shall encounter groups in $(\mathrm{Sch}/k)_{\mathrm{red}}$ below whenever we deal with a nonempty locally closed subset $U$ of an $A$-group $G$ such that $U\cdot U=U$ and $U^{-1}=U$: indeed, the reduced subscheme of $G$ defined by $U$ is a group in $(\mathrm{Sch}/k)_{\mathrm{red}}$.
+
+\numpara{0.3}An $A$-group $G$ is always separated, for the unit section $e:\Spec A\to G$ is a closed immersion. Indeed, let $x$ be the unique point of $\Spec A$ and $\eta$ the structure morphism $G\to\Spec A$. Since $\eta\circ e=\mathrm{id}_{\Spec A}$, for every affine open subset $U=\Spec B$ of $G$ containing $e(x)$ the morphism $B\to A$ has a section, hence is surjective. It follows that $e$ is a closed immersion.\nde{This argument holds for any zero-dimensional local ring $A$, and shows that if $S$ is a discrete scheme, every $S$-group is separated, cf. VIB, 5.2; on the other hand (cf. VIB, 5.6.4), if $S$ contains a nonisolated closed point $s$, the $S$-scheme $G$ obtained by gluing two copies of $S$ along the open subset $S-\{s\}$ is not separated over $S$, but has an $S$-group structure.} Now the diagonal of $G\times_AG$ is identified with the functor from $(\mathrm{Sch}/A)^\circ$ to $\Ens$ assigning to every scheme $S$ over $A$ the inverse image of the neutral element of $G(S)$ under the map $\varphi(S):(x,y)\mto x\cdot y^{-1}$ from $G(S)\times G(S)$ to $G(S)$. One consequently has the cartesian square below, so the diagonal morphism, obtained from a closed immersion by base change, is itself a closed immersion:
+\[
+\xymatrix{G\times_SG\ar[r]^\varphi&G\\G\ar[u]^{\text{diagonal morphism}}\ar[r]&\Spec A\ar[u]_{\text{unit section}}.}
+\]
+% typo?: kept as printed: the diagram uses G times_S G.
+
+\numpara{0.4}\nde{The original has been expanded in what follows; in particular, Remark 0.4.1 has been added.}Let $G$ be an $A$-scheme. We shall say that a point $g$ of $G$ is strictly rational over $A$ if there exists an $A$-morphism $s:\Spec A\to G$ sending the only point of $\Spec A$ to $g$, i.e. if the morphism $A\to\OO_{G,g}$ admits a retraction. Note that one then has $\kappa(g)=k$, and therefore $g$ is a closed point of $G$ (if $B$ is the ring of an affine open neighborhood of $g$ and $\mathfrak p$ the prime ideal of $B$ corresponding to $g$, then $B/\mathfrak p\subset k$ is a finite $A$-algebra, hence an integral artinian ring, hence a field).
+
+Henceforth suppose $G$ an $A$-group; then such an $s:\Spec A\to G$ defines an automorphism $r_s$ of the scheme $G$ over $A$, called right translation by $s$: for every morphism $\pi:S\to\Spec A$, $r_s(\pi)$ is the automorphism of $G(S)$ defined by $x\mto x\cdot G(\pi)(s)$ for every $x\in G(S)$. Similarly, $\ell_s$ denotes left translation by $s$, that is, the automorphism of $G$ defined by $\ell_s(\pi)(x)=G(\pi)(s)\cdot x$ for every $x\in G(S)$.
+
+Since $G\otimes_Ak$ and $G$ have the same underlying topological space $\underline G$, $G\otimes_Ak$ is a $k$-group, and $s\otimes_Ak$ depends only on $g$ and not on $s$, one sees that the automorphisms of $\underline G$ induced by $r_s$ and $\ell_s$ (or by $r_{s\otimes k}$ and $\ell_{s\otimes k}$) depend only on $g$ and not on $s$; when $P$ is a subset of $\underline G$, we can therefore write $r_g(P)$ or $P\cdot g$ (resp. $\ell_g(P)$ or $g\cdot P$) instead of $r_s(P)$ (resp. $\ell_s(P)$), consistently with 0.1.
+\begin{remark}{0.4.1}\label{VIA.0.4.1}
+If $g$ is a strictly rational point of $G$ and $A\to A'$ is a morphism of artinian local rings, then $G'=G\otimes_AA'$ has a unique point $g'$ above $g$, and $g'$ is strictly rational over $A'$; moreover, if $P'$ denotes the inverse image of $P$ in $G'$, then $P'\cdot g'$ is the inverse image of $P\cdot g$ (cf. EGA I, 3.4.8).
+\end{remark}
+\begin{proposition}{0.5}\label{VIA.0.5}\nde{The original stated this result under the hypothesis that $G$ is locally of finite type over $A$. Since it is useful to have it in the general case, and the proof is essentially the same, the result has been stated and proved in the general case. This will be used several times below.}
+Let $G$ be an $A$-group and $U,V$ two dense open subsets of $G$. Then $U\cdot V$ (i.e. the image of $U\times_AV$ under multiplication) equals the whole underlying space of $G$.
+\end{proposition}
+Indeed, since $G$ and $G\otimes_Ak$ have the same underlying space, one can suppose, replacing $A$ by $k$ and $G$ by $G\otimes_Ak$ if necessary, that $A=k$. Let $g\in G$. Put $K=\kappa(g)$; then left translation $\ell_g$ is an automorphism of $G_K$. Since the projection $G_K\to G$ is open, $U_K$ and $V_K$ are dense open subsets of $G_K$, as is the image of $V_K$ under $\lambda_g$. There therefore exists $v\in V_K$ such that $u=\ell_g(v)$ belongs to $U_K$. Let $L$ be an extension of $K$ containing $\kappa(v)$, and hence $\kappa(u)$, and let $g_L$ and $v_L$ be the $L$-points of $G_L$ obtained from $g$ and $v$. Then $g_L\cdot v_L=u'$ is a point of $G_L$ above $u$, and therefore $g_L=u'\cdot v_L^{-1}$ lies above $U\cdot V$, whence $g\in U\cdot V$, which proves the proposition.
+% typo?: kept as printed: lambda_g and the last product U times V.
+\begin{corollary}{0.5.1}\label{VIA.0.5.1}\nde{This corollary has been inserted here, cf. 2.4 and 2.6.2 below.}
+If $G$ is an irreducible $A$-group, $G$ is quasi-compact.
+\end{corollary}
+Indeed, let $U$ be a nonempty affine open subset of $G$; then $U$ is dense in $G$, so, by 0.5, the morphism $\mu:U\times_AU\to G$ is surjective, hence $G$ is quasi-compact since $U\times_AU$ is.
+\begin{corollary}{0.5.2}\label{VIA.0.5.2}\nde{This corollary, used implicitly in VIII, 6.7, has been added; see also VIB, 6.2.5.}
+Let $G$ be an $A$-group scheme and $H$ a subgroup $A$-scheme of $G$. Then $H$ is closed.
+\end{corollary}
+\begin{proof}
+Let $k'$ be the perfect closure of the residue field $k$ of $A$. Since the underlying topological spaces of $G$ and $H$ are unchanged by the base change $A\to k\to k'$, one can suppose $A=k$ a perfect field. One can then suppose $G$ and $H$ reduced, hence geometrically reduced.
+
+Let $\overline H$ be the closure of $H$; then $\mu^{-1}(\overline H)$ is a closed subset of $G\times G$ containing $H\times H$. Since the morphism $H\to\Spec k$ (resp. $\overline H\to\Spec k$) is universally open, and $H$ is dense in $\overline H$, $H\times H$ is dense in $H\times\overline H$, and $H\times\overline H$ is dense in $\overline H\times\overline H$, so $H\times H$ is dense in $\overline H\times\overline H$. Thus $\mu(\overline H\times\overline H)\subset\overline H$, and hence, since $\overline H\times\overline H$ is reduced, $\mu$ induces a morphism $\mu':\overline H\times\overline H\to\overline H$.
+
+Let, then, $g\in\overline H$ and put $K=\kappa(g)$. Since the projection $\overline H_K\to\overline H$ is open, $H_K$ and $\ell_g(H_K)$ are two dense open subsets of $\overline H_K$, so there exist $u,v\in H_K$ such that $\ell(g)(v)=u$. One concludes, as in the proof of 0.5, that $g$ belongs to $H\cdot H=H$, whence $\overline H=H$.
+\end{proof}
+
+\sgasection{1}{Local properties of an $A$-group locally of finite type}
+We shall first see that, if $G$ is locally of finite type and flat over $A$, one can ``make every closed point of $G$ strictly rational'' by a finite flat extension of the base.
+
+\numpara{1.1}Unless expressly stated otherwise, we shall henceforth suppose $G$ an $A$-group locally of finite type. When $A$ is a field $k$, we shall obtain in Exposé VIIB very precise results on the local rings of $G$.\nde{For example, they are always complete intersections, cf. VIIB, 5.5.1. Moreover, if $\operatorname{char}(k)=0$, $G$ is smooth (VIB, 1.6.1; see also VIIB, 3.3.1).} Here we content ourselves with some elementary results:
+\begin{proposition}{1.1.1}\label{VIA.1.1.1}
+Let $x$ be a point of an $A$-group $G$ locally of finite type and flat over $A$. Then the local ring $\OO_{G,x}$ is Cohen--Macaulay, and there exists a system $a_1,\ldots,a_n$ of parameters of $\OO_{G,x}$ such that $\OO_{G,x}/(a_1,\ldots,a_n)$ is a finite flat (hence finite free) $A$-module.
+\end{proposition}
+We first suppose $A$ equal to its residue field $k$; it then suffices to prove that $\OO_{G,x}$ is Cohen--Macaulay, and one can restrict to the case where $x$ is a closed point (cf. EGA $0_{\mathrm{IV}}$, 16.5.13). By Lemma 1.1.2 below, $G$ contains a closed point $y$ such that $\OO_{G,y}$ is Cohen--Macaulay. By SGA 1, I §9, this amounts to saying that, for every finite extension $K$ of the base field $k$ and every point $\overline y$ of $\overline G=G\otimes_kK$ above $y$, $\OO_{\overline G,\overline y}$ is Cohen--Macaulay. If the extension $K$ has been chosen sufficiently large, i.e. if $K$ contains a normal extension of $k$ containing the residue fields $\kappa(y)$ and $\kappa(x)$, then $\overline y$ is (strictly) rational over $K$, as is every point $\overline x$ of $\overline G$ above $x$.\nde{Indeed, the hypothesis on $K$ implies that, for every extension $L$ of $K$, every $k$-morphism $\kappa(x)\to L$ (resp. $\kappa(y)\to L$) factors through $K$; consequently all points of $G\otimes_kK$ above $x$ or $y$ have residue field $K$, i.e. are (strictly) rational over $K$.} Since the automorphism $r_{\overline x}\circ(r_{\overline y})^{-1}$ sends $\overline y$ to $\overline x$, it follows that $\OO_{\overline G,\overline x}$, and hence $\OO_{G,x}$ (SGA 1, I §9), are Cohen--Macaulay.
+
+When $A$ is again arbitrary, the preceding argument applies to $k\otimes_AG$, so $k\otimes_A\OO_{G,x}$ is Cohen--Macaulay. If $a_1,\ldots,a_n$ is a sequence of elements of $\OO_{G,x}$ whose image in $k\otimes_A\OO_{G,x}$ is a system of parameters, it follows from SGA 1, IV 5.7 or EGA $0_{\mathrm{IV}}$, 15.1.16 that $a_1,\ldots,a_n$ is an $\OO_{G,x}$-regular sequence and $\OO_{G,x}/(a_1,\ldots,a_n)$ is finite flat (hence finite free) over $A$.
+\begin{lemma}{1.1.2}\label{VIA.1.1.2}
+Every nonempty scheme $X$ locally of finite type over an artinian ring $A$ contains a closed point $x$ whose local ring is Cohen--Macaulay.
+\end{lemma}
+One can obviously suppose $X$ affine with algebra $B$ and argue by induction on $\dim X$ (the assertion is clear if $X$ is discrete, all local rings then being artinian). Since $B$ is of finite type over $A$, if $\dim B>0$, $B$ contains a noninvertible element $a$ that is not a zero divisor.\nde{Indeed, $B$ is a noetherian Jacobson ring (cf. [BAC], V §3.4). If every noninvertible element is a zero divisor, every prime ideal is an associated prime ideal of $B$, so, in particular, $B$ has only finitely many maximal ideals $\mathfrak m_1,\ldots,\mathfrak m_n$. Since $B$ is a Jacobson ring, the intersection of the $\mathfrak m_i$ is the nilradical of $B$, and it follows that each $\mathfrak m_i$ is a minimal prime ideal of $B$, so $\dim B=0$.} The closed subscheme $X'=\Spec B/(a)$ of $X$ then has dimension strictly smaller than $\dim X$, and contains, by the induction hypothesis, a closed point $x$ such that $\OO_{X',x}$ is Cohen--Macaulay. Since $\OO_{X',x}=\OO_{X,x}/(a)$ and $a$ is noninvertible and not a zero divisor in $\OO_{X,x}$, $\OO_{X,x}$ is Cohen--Macaulay (see also EGA IV$_2$, 6.11.3).
+\begin{proposition}{1.2}\label{VIA.1.2}
+Let $A$ be an artinian local ring, $G$ an $A$-group locally of finite type and flat over $A$, and $x$ a closed point of $G$. There then exists a local $A$-algebra $A'$, finite and free over $A$, such that every point of $G\otimes_AA'$ above $x$ is strictly rational over $A'$.
+\end{proposition}
+\nde{The original has been expanded in what follows.}Indeed, let $k_1$ be a normal extension of finite degree of $k$ containing the residue field $\kappa(x)$ of $x$. By Lemma V 4.1.2, there exists a local $A$-algebra $A_1$, finite and free over $A$, with residue field $k_1$. In this case (cf. N.D.E. (11)), all points $g_1,\ldots,g_n$ of $G\otimes_AA_1$ above $x\in G$ have residue field $k_1$ (i.e. $g_1,\ldots,g_n$ are rational over $A_1$ in the sense of Exp. V, §4.e)).
+
+Let, then, $B_1,\ldots,B_n$ be the local rings of $g_1,\ldots,g_n$. By 1.1.1, $B_1,\ldots,B_n$ have quotients $B'_1,\ldots,B'_n$ which are artinian and finite free over $A_1$. Put $A'=B'_1\otimes_{A_1}\cdots\otimes_{A_1}B'_n$. Then $A'$ is local, finite and free over $A_1$, and, for each $i=1,\ldots,n$, one has surjective homomorphisms
+\[
+B_i\otimes_{A_1}A'\twoheadrightarrow B'_i\otimes_{A_1}A'\twoheadrightarrow A',
+\]
+the second being induced by the multiplication map $B'_i\otimes_{A_1}B'_i\twoheadrightarrow B'_i$. Consequently $A'$ answers the question.
+
+\numpara{1.3}Let $e$ be the neutral element (or origin) of $G$, that is, the image of the only point of $\Spec A$ under the unit section $\Spec A\to G$. By the very definition, $e$ is strictly rational over $A$.
+\begin{proposition}{1.3.1}\label{VIA.1.3.1}\nde{Point (1), useful in the examples 1.3.2 below, has been added.}
+Let $G$ be a group locally of finite type and flat over an artinian ring $A$, and let $K$ (resp. $\overline k$) be the perfect closure (resp. an algebraic closure) of the residue field $k$ of $A$.
+
+(1) For every closed point $x$ of $\overline G=G\otimes_k\overline k$, the local rings $\OO_{\overline G,e}$ and $\OO_{\overline G,x}$ are isomorphic. In particular, the tangent spaces $T_e\overline G$ and $T_x\overline G$ have the same dimension.
+% typo?: kept as printed: G times_k kbar in the statement, despite the artinian base A.
+
+(2) The following assertions are equivalent:
+\begin{enumeratei}
+\item $G\otimes_AK$ is reduced.
+\item[(i bis)] $\OO_{G,e}\otimes_AK$ is reduced.
+\item $G$ is smooth over $A$.
+\item[(ii bis)] $G$ is smooth over $A$ at the origin.
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+(1) Let $x$ be a closed point of $\overline G$; there is exactly one $\overline k$-morphism $s:\Spec\overline k\to\overline G$ whose image is $x$; right translation $r_s$ then induces an isomorphism from $\OO_{\overline G,e}=\OO_{G,e}\otimes_k\overline k$ onto $\OO_{\overline G,x}$, whence assertion (1).
+
+Let us prove assertion (2). By means of SGA 1, II.2.1, one immediately reduces to the case where $A$ is a field ($A=k$). The implications (i) $\Rightarrow$ (i bis), (ii) $\Rightarrow$ (ii bis), (ii) $\Rightarrow$ (i) and (ii bis) $\Rightarrow$ (i bis) are obvious, so it suffices to prove that (i bis) implies (ii).
+
+Now it follows from (i bis) that $\OO_{G,e}\otimes_k\overline k$ is reduced. Thus, by (1), $\OO_{\overline G,x}$ is reduced for every closed point $x$ of $\overline G$, so $\overline G$ is reduced. Hence, since $\overline G$ is locally of finite type over $\overline k$, there exists at least one closed point $y$ such that $\OO_{\overline G,y}$ is regular. Since, by (1), the local rings of the closed points of $\overline G$ are all isomorphic to $\OO_{\overline G,e}$, one sees that all these local rings are regular, so $\overline G$ is smooth over $\overline k$, and therefore $G$ smooth over $k$.
+\end{proof}
+\nde{The following sentence and examples 1.3.2 have been added.}One can now give the examples below, pointed out by M. Raynaud, of group schemes $G$ over an imperfect field $k$ such that $G_{\mathrm{red}}$ is not a $k$-group scheme.
+\begin{examples}{1.3.2}\label{VIA.1.3.2}
+Let $k$ be an imperfect field of characteristic $p>0$, $t\in k-k^p$, $\overline k$ an algebraic closure of $k$, and $\alpha\in\overline k$ such that $\alpha^p=t$.
+
+(1) Consider the additive group $\mathbf G_{\mathrm a,k}=\Spec k[X]$, and let $G$ be the subgroup scheme, finite over $k$, defined by the additive polynomial $X^{p^2}-tX^p$. Then
+\[
+G_{\mathrm{red}}=\Spec k[X]/X(X^{p(p-1)}-t)
+\]
+is étale at the origin. If it were a $k$-group scheme, it would be smooth (by 1.3.1); now $G_{\mathrm{red}}$ is not geometrically reduced, so it is not a $k$-group scheme.
+
+(2) Consider $\mathbf G_{\mathrm a,k}^4=\Spec k[X,Y,U,V]$, and let $G$ be the subgroup scheme defined by the ideal $I$ generated by the additive polynomials $P=X^p-tY^p$ and $Q=U^p-tV^p$. Then $G$ has dimension 2 and is irreducible, for $(G_{\overline k})_{\mathrm{red}}\simeq\Spec\overline k[Y,V]$ is so.
+
+Let $A=k[X,Y,U,V]$ and $\mathfrak m$ its augmentation ideal. Denote by $x,y,u,v$ the images of $dX,dY,dU,dV$ in $\Omega^1_{A/k}\otimes_A(A/\mathfrak m)$, regarded as linear forms on the tangent space $k^4=T_0\mathbf G_{\mathrm a,k}^4$. Let us show that the subspace $E=T_0G_{\mathrm{red}}$ equals $k^4$. Otherwise there would exist a linear form $f=ax+by+a'u+b'v$, with $a,b,a',b'\in k$ not all zero, vanishing on $E$. Recall that formation of $\Omega^1_{A/k}$ (and therefore of tangent spaces) commutes with base change (cf. EGA IV$_4$, 16.4.5), and identify $f$ with its image in $(\overline k^4)^*$. Since $(G_{\overline k})_{\mathrm{red}}\subset(G_{\mathrm{red}})_{\overline k}$, $f$ vanishes on the subspace $T_0(G_{\overline k})_{\mathrm{red}}$ of $\overline k^4$, defined by the equations $g_1=x-\alpha y$ and $g_2=u-\alpha v$, and hence $f=\lambda g_1+\mu g_2$, with $\lambda,\mu\in\overline k$. Now $\lambda g_1+\mu g_2$ belongs to $k^4$ only if $\lambda=\mu=0$! This contradiction shows that $E=k^4$, and therefore $T_0(G_{\mathrm{red}})_{\overline k}=\overline k^4$.
+
+On the other hand, $R=XV-YU$ belongs to $\sqrt I$, for $R^p=(X^p-tY^p)V^p-Y^p(U^p-tV^p)$. Consequently, the tangent space $F$ at the point $(\alpha,1,\alpha,1)$ of $(G_{\mathrm{red}})_{\overline k}$ is contained in the hyperplane $H$ of $\overline k^4$ with equation $\alpha\,dV+dX-dU-\alpha\,dY=0$, hence has dimension $\leq3$.\nde{In fact, one sees without difficulty that $\sqrt I$ is generated by $P,Q,R$ at every point $\ne0$, so $F=H$.} Thus, by point (1) of 1.3.1, $G_{\mathrm{red}}$ is not a $k$-group scheme.
+\end{examples}
+
+\sgasection{2}{Connected components of an $A$-group locally of finite type}
+\numpara{2.1}First consider any $A$-group $G$, and let $G'$ be the connected component of the origin $e$ of $G$. This connected component is obviously closed, so we can identify it with the reduced closed subscheme of $G$ having $G'$ as its underlying space.\nde{One will see below (2.2) that $G'$ is a group in the category $(\mathrm{Sch}/k)_{\mathrm{red}}$.}
+\begin{proposition}{2.1.1}\label{VIA.2.1.1}
+For every extension $K$ of the residue field $k$ of $A$, $G'\otimes_AK$ has as its underlying space the connected component of the origin in the $K$-group $G\otimes_AK$ (i.e. $G'$ is geometrically connected).
+\end{proposition}
+Indeed, let $(G\otimes_AK)'$ be the connected component of the origin in $G\otimes_AK$. Since the image of $(G\otimes_AK)'$ in $G$ is connected and contains the neutral element of $G$, this image is contained in $G'$, so $(G\otimes_AK)'$ is contained in the inverse image $G'\otimes_AK$ of $G'$ in $G\otimes_AK$. The proposition therefore follows from connectedness of $G'\otimes_AK$, proved in Lemma 2.1.2:
+\begin{lemma}{2.1.2}\label{VIA.2.1.2}
+Let $X$ and $Y$ be two connected schemes over a field $k$. If $X$ contains a rational point, $X\times_kY$ is connected.
+\end{lemma}
+We give below a direct proof of this result of EGA IV$_2$ (4.5.8 and 4.5.14).
+
+First suppose $Y$ nonempty, connected and affine with algebra $B$. In this case, $X\times_kY$ is the spectrum of the quasi-coherent $\OO_X$-algebra $\mathcal B=\OO_X\otimes_kB$. We want to show that every open, closed and nonempty subset $U$ of $X\times_kY$ coincides with $X\times_kY$. Now $U$ is affine over $X$ and has as its affine $\OO_X$-algebra a direct factor of $\mathcal B$. It therefore follows from Lemma 2.1.3 below that the image of $U$ in $X$ is open and closed, i.e. coincides with the whole of $X$. This image contains, in particular, a rational point $x$ of $X$, so $U$ meets the inverse image of $x$ in $X\times_kY$. Since the latter is isomorphic to $Y$, hence connected, $U$ contains this inverse image. The same result would hold for the complement of $U$ in $X\times_kY$ if $U$ were distinct from $X\times_kY$, which would be absurd.
+
+If $Y$ is now any $k$-scheme, what precedes shows that the fibers of the canonical projection $X\times_kY\to Y$ are connected. If $x$ is a rational point of $X$, these fibers all meet the subscheme $\{x\}\times_kY$, which is itself connected, whence the proposition.
+\begin{lemma}{2.1.3}\label{VIA.2.1.3}
+Let $X$ be a scheme and $\mathcal A$ a quasi-coherent $\OO_X$-algebra which is locally\nde{The word ``locally'' has been added. Furthermore, the reference to Kaplansky is: \emph{Projective modules}, Ann. of Maths. \textbf{68} (1958), 372--377; see also [BAC], §II.3, Ex. 3.} a direct factor of a free $\OO_X$-module. The image of $\Spec\mathcal A$ in $X$ is then open and closed.
+\end{lemma}
+Let $V$ be this image. It is clear that $V$ is contained in the support of $\mathcal A$. Conversely, if $x$ belongs to the support of $\mathcal A$, $\mathcal A_x$ is nonzero and is a free $\OO_{X,x}$-module, since, by Kaplansky, every projective module over a local ring is free. Consequently, the fiber of $\Spec\mathcal A$ at $x$, affine with algebra $\mathcal A_x\otimes_{\OO_{X,x}}\kappa(x)$, is nonempty. Thus the image of $\Spec\mathcal A$ coincides with the support of $\mathcal A$.
+
+If $s$ is the unit section of $\mathcal A$, the equality $s_x=0$ implies that $s$, and hence $\mathcal A$, are zero in a neighborhood of $x$. Thus the support of $\mathcal A$ is closed. On the other hand, one can suppose $\mathcal A$ a direct factor of the direct sum $L$ of a family $(\OO_X^\alpha)$ of copies of $\OO_X$.\nde{The original has been expanded in what follows.} For every $\beta$, denote by $\varphi^\beta$ the restriction to $\mathcal A$ of the canonical projection of $L=\bigoplus_\alpha\OO_X^\alpha$ onto $\OO_X^\beta$. For $x\in X$, denote by $\mathcal A_x^*$ the dual module $\Hom_{\OO_{X,x}}(\mathcal A_x,\OO_{X,x})$. Since $\mathcal A_x$ is a direct factor of $L_x$, the restriction map
+\[
+\Hom_{\OO_{X,x}}(L_x,\OO_{X,x})\to\Hom_{\OO_{X,x}}(\mathcal A_x,\OO_{X,x})=\mathcal A_x^*
+\]
+is surjective. If $\mathcal A_x\ne0$, since $\mathcal A_x$ is free and nonzero, there exist $a\in\mathcal A_x$ and a linear form $\phi\in\mathcal A_x^*$ such that $\phi(a)=1$. There therefore exists a family $(\xi^\alpha)$ of elements of $\OO_{X,x}$ such that, for every $u\in\mathcal A_{X,x}$, one has $\phi(u)=\sum_\alpha\xi^\alpha\varphi^\alpha(u)$ (this sum being finite, since $\varphi^\alpha(u)=0$ except for finitely many indices). Applying this to $u=a$, one obtains that there exist $\alpha_1,\ldots,\alpha_n$ such that
+\[
+1=\phi(a)=\xi^{\alpha_1}\varphi^{\alpha_1}(a)+\cdots+\xi^{\alpha_n}\varphi^{\alpha_n}(a).
+\]
+There then exists an open neighborhood $U$ of $x$ such that $a$ and the $\xi^{\alpha_i}$ come from sections $\widetilde a\in\mathcal A(U)$ and $\widetilde\xi^{\alpha_i}\in\OO_X(U)$, and the equality $\sum_i\widetilde\xi^{\alpha_i}\varphi^{\alpha}(\widetilde a)=1$ on $U$ shows that $\widetilde a_y\ne0$ for every $y\in U$. (``The support of a projective module is open.'')
+% typo: ``tels'' referring to voisinage -> such.
+% typo?: kept as printed: A_{X,x} and varphi^alpha rather than varphi^{alpha_i}.
+
+\numpara{2.2}The notation still being that of 2.1, it is clear that $G'$ is a reduced $k$-scheme. Lemma 2.1.2 shows that $G'\times_kG'$ is connected, so $(G'\times_kG')_{\mathrm{red}}$ is the reduced subscheme of $G\times_AG$ whose underlying space is the connected component of the origin. In particular, the multiplication morphism $\mu:G\times_AG\to G$ induces a morphism $\mu':(G'\times_kG')_{\mathrm{red}}\to G'$ making $G'$ a group in $(\mathrm{Sch}/k)_{\mathrm{red}}$.
+
+\numpara{2.2.bis}\nde{This paragraph has been added to make the connection with VIB, §3.}Recall (cf. Exp. V) that, if $P$ is a scheme, $\underline P$ denotes its underlying topological space. One then defines an $A$-subfunctor $G^0$ of $G$ by putting, for every $A$-scheme $S$,
+\[
+G^0(S)=\{u\in G(S)\mid\underline u(\underline S)\subset\underline G'\}.
+\]
+Let $c:G\to G$ be the inversion morphism; since $c(G')=G'$, one has $c\circ u\in G^0(S)$ for every $u\in G^0(S)$. On the other hand, if $u,v\in G^0(S)$, $u\boxtimes v$ sends $\underline S$ into the subspace of $G\times_AG$ consisting of the points whose two projections belong to $G'$; this subspace is identified with the underlying space of $G'\times_AG'$, connected by Lemma 2.1.2. Consequently, $\mu\circ(u\boxtimes v)$ sends $\underline S$ into $G'$. This shows that $G^0$ is an $A$-subgroup functor of $G$.
+
+If the connected component of $e$ is an open subset of $G$, the subfunctor $G^0$ is represented by the subscheme induced by $G$ on this open subset, which is therefore a subgroup scheme of $G$; it will also be denoted $G^0$. In this case, with the notation of 2.1, one has $G'=(G^0)_{\mathrm{red}}$, and the topological spaces $G'$ and $G^0$ coincide.\nde{In this exposé, the notation $G^0$ is reserved for the case where the connected component of $e$ is open; in VIB, §3, this connected component will be denoted $G^0$ in every case. This is a slight abuse of notation, but is compatible with what precedes when the connected component is the underlying topological space of an open subgroup scheme $G^0$ of $G$.}
+
+\numpara{2.3}In accordance with our conventions in 1.1, we again suppose from now on that $G$ is locally of finite type over $A$. Then $G$ is locally noetherian, hence locally connected,\nde{Indeed, in a noetherian space, the connected components are finite in number, so each is open; see also EGA I, 6.1.9.} hence: every connected component of $G$ is open.
+
+We shall then denote by $G^0$ the subscheme induced by $G$ on the connected component $G'$ of the neutral element. By 2.2.bis, $G^0$ is a subgroup scheme of $G$ which we shall call the neutral component of $G$; for every $A$-scheme $S$ one therefore has:
+\[
+G^0(S)=\{u\in G(S)\mid\underline u(\underline S)\subset\underline G^0=\underline G'\}.
+\]
+Let $G^\alpha$ be any connected component of $G$, and $\nu^\alpha:G^\alpha\times_AG^0\to G$ the morphism defined by the equalities
+\[
+\nu^\alpha(S)(g,\gamma)=g\gamma g^{-1}
+\]
+for every $S\in(\mathrm{Sch}/A)$, $g\in G^\alpha(S)$, $\gamma\in G^0(S)$.
+
+If $e$ is the origin of $G$, the restriction of $\nu^\alpha$ to $G^\alpha\times_A\{e\}$ is the zero morphism; since $G^\alpha\times_AG^0$ is connected by 2.1.2, one sees that $\nu^\alpha$ factors through $G^0$. Thus, for every $A$-scheme $S$, $G^0(S)$ is an invariant subgroup of $G(S)$. One has therefore obtained the following proposition:\nde{The numbering 2.3.1 has been added to bring out this statement. Note further that $G^0$ is even a characteristic subgroup of $G$, cf. 2.6.5 (ii).}
+\begin{proposition}{2.3.1}\label{VIA.2.3.1}
+Let $G$ be an $A$-group locally of finite type. Then the neutral component $G^0$ is an open invariant subgroup scheme of $G$.
+\end{proposition}
+\begin{proposition}{2.4}\label{VIA.2.4}
+Let $G$ be an $A$-group locally of finite type.
+\begin{enumeratei}
+\item $G^0$ is irreducible and $G^0\otimes_Ak$ is geometrically irreducible over $k$.
+\item $G^0$ is quasi-compact, hence of finite type over $A$.
+\end{enumeratei}
+\end{proposition}
+\nde{In the statement, ``$G^0$ is geometrically irreducible'' has been replaced by ``$G^0\otimes_Ak$ is geometrically irreducible over $k$'', and the proof has been expanded.}\begin{proof}
+(i) Since $G^0$ and $G^0\otimes_Ak$ have the same underlying topological space, it suffices to show the second assertion. Let $\overline k$ be an algebraic closure of $k$. By 2.2, $(G\otimes_A\overline k)_{\mathrm{red}}$ is a reduced $\overline k$-group locally of finite type, hence smooth over $\overline k$ (1.3.1). A fortiori the local rings of $(G\otimes_A\overline k)_{\mathrm{red}}$ are integral domains, so,\nde{The original has been expanded by adding the reference to EGA I, 6.1.10.} since $G\otimes_A\overline k$ is locally noetherian, the connected components of $G\otimes_A\overline k$ are irreducible (cf. EGA I, 6.1.10). In particular, the connected component $G^0\otimes_A\overline k$ (cf. 2.1.1) is irreducible.
+
+(ii) Let us now show that $G^0$ is of finite type over $A$. Since $G^0$ is locally of finite type over $A$, it suffices to prove $G^0$ quasi-compact. Since $G^0$ is irreducible, this follows from 0.5.1.
+\end{proof}
+\begin{corollary}{2.4.1}\label{VIA.2.4.1}
+Every connected component of $G$ is irreducible,\nde{One must beware that a nonneutral connected component is not geometrically connected in general. For example, if $k=\RR$, the group $\mu_{3,\RR}$, represented by $\RR[X]/(X^3-1)$, has two connected components: $\{e\}=\Spec\RR$ and $C=\Spec\RR[X]/(X^2+X+1)$, and $C\otimes_{\RR}\CC$ has two components.} of finite type over $A$,\nde{The following assertion has been added, cf. VIB, 1.5.} and of the same dimension as $G^0$.
+\end{corollary}
+Indeed, one can suppose $A$ equal to its residue field $k$. Let, then, $C$ be a connected component of $G$, $x$ a closed point of $C$, $\kappa(x)$ the residue field of $x$, and $k'$ a normal extension of $k$ containing $\kappa(x)$ and of finite degree over $k$. The canonical projection $\pi:C\otimes_kk'\to C$ is open and closed;\nde{The original has been expanded in what follows.} consequently, if $C'$ is a connected component of $C\otimes_kk'$, the projection $C'\to C$ is surjective, so $C'$ contains a point $y\in\pi^{-1}(x)$, and such a point is rational over $k'$ (cf. the proof of 1.2), so $C'$ is the image of $G^0\otimes_kk'$ under translation $r_y$.

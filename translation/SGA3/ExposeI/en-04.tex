@@ -1,0 +1,384 @@
+\sgasection{3}{\texorpdfstring{The category of $\mathbf{O}$-modules, the category of $\mathbf{G}$-$\mathbf{O}$-modules}{The category of O-modules, the category of G-O-modules}}
+\label{I.sec.3}
+
+\begin{definition}{3.1}\label{I.3.1}
+Let \(\mathbf{O}\) and \(\mathbf{F}\) be two objects of \(\widehat{\mathcal{C}}\).
+One says that \(\mathbf{F}\) is a \(\widehat{\mathcal{C}}\)-module over the
+\(\widehat{\mathcal{C}}\)-ring \(\mathbf{O}\), or for short an \(\mathbf{O}\)-module,
+if, for every \(S\in\Ob(\mathcal{C})\), one has endowed \(\mathbf{O}(S)\) with a
+ring structure and \(\mathbf{F}(S)\) with a module structure over this ring, in
+such a way that for every arrow \(S'\to S''\) of \(\mathcal{C}\),
+\(\mathbf{O}(S'')\to\mathbf{O}(S')\) is a ring homomorphism and
+\(\mathbf{F}(S'')\to\mathbf{F}(S')\) a homomorphism of abelian groups compatible
+with this ring homomorphism.
+
+If \(\mathbf{O}\) is fixed, one defines in the usual way a morphism of the
+\(\mathbf{O}\)-modules \(\mathbf{F}\) and \(\mathbf{F}'\), whence the
+commutative group \(\Hom_{\mathbf{O}}(\mathbf{F},\mathbf{F}')\), and the
+category of \(\mathbf{O}\)-modules, denoted \((\mathbf{O}\text{-Mod.})\).
+\end{definition}
+
+\begin{lemma}{3.1.1}\label{I.3.1.1}\ndemark
+\((\mathbf{O}\text{-Mod.})\) is endowed with the structure of an abelian
+category, defined \og argument by argument\fg. Moreover,
+\((\mathbf{O}\text{-Mod.})\) satisfies axiom~(AB~5) (\cf [Gr57, 1.5]), \ie
+arbitrary direct sums exist and if \(\mathbf{M}\) is an \(\mathbf{O}\)-module,
+\(\mathbf{N}\) a submodule, and \((\mathbf{F}_i)_{i\in I}\) an increasing
+filtered family of submodules of \(\mathbf{M}\), then
+\[
+\bigcup_{i\in I}(\mathbf{F}_i\cap\mathbf{N})
+=\Bigl(\bigcup_{i\in I}\mathbf{F}_i\Bigr)\cap\mathbf{N}.
+\]
+\end{lemma}
+\ndetext{Statements 3.1.1 and 3.1.2 have been added in order to show that
+the category \((\mathbf{O}\text{-Mod.})\) is abelian and satisfies
+axiom~(AB~5), and moreover has enough injective objects if the category
+\(\mathcal{C}\) is small. An error in 3.1.2, pointed out in 2016 by Linyuan
+Liu, is corrected here.}
+
+Indeed, let \(f\colon\mathbf{F}\to\mathbf{F}'\) be a morphism of
+\(\mathbf{O}\)-modules. One defines the \(\mathbf{O}\)-modules \(\Ker f\)
+(\resp\ \(\Im f\) and \(\Coker f\)) by setting, for every
+\(S\in\Ob(\mathcal{C})\), \((\Ker f)(S)=\Ker f(S)\) (\resp\ \(\cdots\)).
+Then \(\Ker f\) (\resp\ \(\Coker f\)) is a kernel (\resp\ a cokernel) of
+\(f\), and one has an isomorphism of \(\mathbf{O}\)-modules
+\(\mathbf{F}/\Ker f\isomto\Im f\). This proves that
+\((\mathbf{O}\text{-Mod.})\) is an abelian category.
+
+Arbitrary direct sums exist and are defined \og argument by argument\fg.
+Finally, if \(\mathbf{M}\) is an \(\mathbf{O}\)-module, \(\mathbf{N}\) a
+submodule, and \((\mathbf{F}_i)_{i\in I}\) an \emph{increasing filtered
+family} of submodules of \(\mathbf{M}\), then the inclusion
+\[
+\bigcup_{i\in I}(\mathbf{F}_i\cap\mathbf{N})
+\subset\Bigl(\bigcup_{i\in I}\mathbf{F}_i\Bigr)\cap\mathbf{N}
+\]
+is an equality: indeed, if \(S\in\Ob(\mathcal{C})\) and
+\(x\in\mathbf{N}(S)\cap\bigcup_i\mathbf{F}_i(S)\), there exists \(i\in I\)
+such that \(x\in\mathbf{N}(S)\cap\mathbf{F}_i(S)\).
+
+\begin{proposition}{3.1.2}\label{I.3.1.2}\footnotemark[\value{footnote}]
+One assumes that the category \(\mathcal{C}\) is small, \ie that
+\(\Ob(\mathcal{C})\) is a set. Then \((\mathbf{O}\text{-Mod.})\) has a
+generator, and hence enough injective objects.
+\end{proposition}
+
+\begin{proof}
+For every object \(S\) of \(\mathcal{C}\), one defines the
+\(\mathbf{O}\)-module \(\mathbf{O}_S\) as follows.
+For every object \(S'\), \(\mathbf{O}_S(S')\) is a direct sum of copies of
+\(\mathbf{O}(S')\) indexed by \(\Hom(S',S)\), \ie
+\[
+\mathbf{O}_S(S')=\bigoplus_{g\colon S'\to S}\mathbf{O}(S')\,g.
+\]
+For every morphism \(f\colon S''\to S'\), denoting by \(f^{*}\) the ring
+homomorphism \(\mathbf{O}(S')\to\mathbf{O}(S'')\), the morphism
+\(\mathbf{O}_S(f)\colon\mathbf{O}_S(S')\to\mathbf{O}_S(S'')\) sends each
+element \(ag\) of \(\mathbf{O}_S(S')\) (where \(a\in\mathbf{O}(S')\) and
+\(g\colon S'\to S\)) to the element \(f^{*}(a)\,g\circ f\) of
+\(\mathbf{O}_S(S'')\). One easily checks that this does indeed define a
+functor in \(\mathbf{O}\)-modules.
+
+Since, by hypothesis, \(\Ob(\mathcal{C})\) is a set, one may consider the
+direct sum \(\mathbf{G}=\bigoplus_{S\in\Ob(\mathcal{C})}\mathbf{O}_S\).
+
+\begin{lemma}{3.1.2.1}\label{I.3.1.2.1}
+Let \(\mathbf{F}\) be an \(\mathbf{O}\)-module. For every
+\(S\in\Ob(\mathcal{C})\), every element \(x\) of \(\mathbf{F}(S)\) defines a
+unique morphism of \(\mathbf{O}\)-modules \(x\colon\mathbf{O}_S\to\mathbf{F}\)
+such that \(x(1\,\mathrm{id}_S)=x\).
+\end{lemma}
+
+\begin{proof}
+Let \(\phi\) be a morphism of \(\mathbf{O}\)-modules
+\(\mathbf{O}_S\to\mathbf{F}\) such that \(\phi(1\,\mathrm{id}_S)=x\).
+Let \(g\colon S'\to S\) and \(a\in\mathbf{O}(S')\).
+The \(\mathbf{O}(S')\)-linearity and the commutativity of the diagram
+\[
+\xymatrix{
+\mathbf{O}_S(S) \ar[r]^{\phi} \ar[d]_{\mathbf{O}_S(g)}
+  & \mathbf{F}(S) \ar[d]^{\mathbf{F}(g)} \\
+\mathbf{O}_S(S') \ar[r]^{\phi}
+  & \mathbf{F}(S')
+}
+\]
+imply that
+\(\phi(ag)=a\phi(1g)=a\mathbf{F}(g)(\phi(1\,\mathrm{id}_S))=a\mathbf{F}(g)(x)\).
+Thus \(\phi\), if it exists, is determined by the preceding equality.
+Conversely, if one defines \(\phi\) in this way, then for every
+\(f\colon S''\to S'\) one has
+\[
+\phi\circ\mathbf{O}_S(f)(ag)
+=\phi(f^{*}(a)\,g\circ f)
+=f^{*}(a)\mathbf{F}(g\circ f)(x)
+=\mathbf{F}(f)(a\mathbf{F}(g)(x))
+=\mathbf{F}(f)\circ\phi(ag),
+\]
+\ie the diagram
+\[
+\xymatrix{
+\mathbf{O}_S(S') \ar[r]^{\phi} \ar[d]_{\mathbf{O}_S(f)}
+  & \mathbf{F}(S') \ar[d]^{\mathbf{F}(f)} \\
+\mathbf{O}_S(S'') \ar[r]^{\phi}
+  & \mathbf{F}(S'')
+}
+\]
+is commutative. This proves the lemma.
+\end{proof}
+
+Now let \(\mathbf{F}\) be an \(\mathbf{O}\)-module. For every
+\(S\in\Ob(\mathcal{C})\), let \(F_0(S)\) be a system of generators of the
+\(\mathbf{O}(S)\)-module \(\mathbf{F}(S)\), and let \(\mathbf{L}_S\) be the
+direct sum, indexed by \(F_0(S)\), of copies of \(\mathbf{O}_S\). By the
+lemma, one obtains a morphism of \(\mathbf{O}\)-modules
+\(\mathbf{L}_S\to\mathbf{F}\) which is such that the morphism
+\(\mathbf{L}_S(S)\to\mathbf{F}(S)\) is surjective, hence an epimorphism of
+the category of \(\mathbf{O}(S)\)-modules.
+
+Set \(I=\bigsqcup_{S\in\Ob(\mathcal{C})}F_0(S)\). Then one obtains a morphism
+of \(\mathbf{O}\)-modules
+\[
+\mathbf{G}^{\oplus I}
+\longrightarrow\bigoplus_{S\in\Ob(\mathcal{C})}\mathbf{L}_S
+\longrightarrow\mathbf{F}
+\]
+which is an epimorphism \og argument by argument\fg, hence an epimorphism
+of \((\mathbf{O}\text{-Mod.})\). This shows that \(\mathbf{G}\) is a
+generator of \((\mathbf{O}\text{-Mod.})\) (\cf [Gr57, 1.9.1]). Since
+\((\mathbf{O}\text{-Mod.})\) satisfies (AB~5), it then follows from
+[Gr57, 1.10.1] that \((\mathbf{O}\text{-Mod.})\) has enough injective
+objects.
+\end{proof}
+
+\begin{remark}{3.1.3}\label{I.3.1.3}
+If \(\mathbf{O}_0\) is the \(\widehat{\mathcal{C}}\)-ring defined by
+\(\mathbf{O}_0(S)=\mathbb{Z}\) (which must not be confused with the functor
+associated with the constant object \(\mathbb{Z}\)), then the category of
+\(\mathbf{O}_0\)-modules is isomorphic to the category of commutative
+\(\widehat{\mathcal{C}}\)-groups.
+\end{remark}
+
+\begin{definition}{3.1.4}\label{I.3.1.4}
+Let us observe that, if \(\mathbf{F}\) is an \(\mathbf{O}\)-module, then for
+every \(S\in\Ob(\mathcal{C})\), \(\mathbf{F}_S\) is an
+\(\mathbf{O}_S\)-module. One may therefore define an abelian
+\(\widehat{\mathcal{C}}\)-group \(\Hom_{\mathbf{O}}(\mathbf{F},\mathbf{F}')\)
+by
+\[
+\Hom_{\mathbf{O}}(\mathbf{F},\mathbf{F}')(S)
+=\Hom_{\mathbf{O}_S}(\mathbf{F}_S,\mathbf{F}'_S).
+\]
+One will likewise define objects
+\[
+\Isom_{\mathbf{O}}(\mathbf{F},\mathbf{F}'),
+\qquad
+\End_{\mathbf{O}}(\mathbf{F})
+\quad\text{and}\quad
+\Aut_{\mathbf{O}}(\mathbf{F}),
+\]
+the last being a \(\widehat{\mathcal{C}}\)-group for the structure induced
+by the composition of automorphisms.
+\end{definition}
+
+\begin{definition}{3.2}\label{I.3.2}
+Let \(\mathbf{O}\) be a \(\widehat{\mathcal{C}}\)-ring, \(\mathbf{F}\) an
+\(\mathbf{O}\)-module, and \(\mathbf{G}\) a \(\widehat{\mathcal{C}}\)-group.
+A structure of \(\mathbf{G}\)-object such that, for every
+\(S\in\Ob(\mathcal{C})\) and every \(g\in\mathbf{G}(S)\), the automorphism of
+\(\mathbf{F}(S)\) defined by \(g\) is an automorphism of its structure of
+\(\mathbf{O}(S)\)-module, is called a \emph{structure of
+\(\mathbf{G}\)-\(\mathbf{O}\)-module on \(\mathbf{F}\)}.
+
+It amounts to the same to say that the morphism of
+\(\widehat{\mathcal{C}}\)-groups
+\[
+\rho\colon\mathbf{G}\longrightarrow\Aut(\mathbf{F})
+\]
+defined in~2.3 sends \(\mathbf{G}\) into the
+\(\widehat{\mathcal{C}}\)-subgroup \(\Aut_{\mathbf{O}}(\mathbf{F})\) of
+\(\Aut(\mathbf{F})\). To give a \emph{structure of
+\(\mathbf{G}\)-\(\mathbf{O}\)-module} on the \(\mathbf{O}\)-module
+\(\mathbf{F}\) is thus to give a \emph{morphism of
+\(\widehat{\mathcal{C}}\)-groups}
+\[
+\rho\colon\mathbf{G}\longrightarrow\Aut_{\mathbf{O}}(\mathbf{F}).
+\]
+
+One defines in a natural way the abelian group
+\(\Hom_{\mathbf{G}\text{-}\mathbf{O}}(\mathbf{F},\mathbf{F}')\), hence the
+additive category of \(\mathbf{G}\)-\(\mathbf{O}\)-modules, denoted
+\((\mathbf{G}\text{-}\mathbf{O}\text{-Mod.})\).
+\end{definition}
+
+\begin{remark}{3.2.1}\label{I.3.2.1}
+The reader will observe that \((\mathbf{G}\text{-}\mathbf{O}\text{-Mod.})\)
+may equally be defined as the category of
+\(\mathbf{O}[\mathbf{G}]\)-modules, where \(\mathbf{O}[\mathbf{G}]\) is the
+algebra of the \(\widehat{\mathcal{C}}\)-group \(\mathbf{G}\) over the
+\(\widehat{\mathcal{C}}\)-ring \(\mathbf{O}\), whose definition is
+clear.\nde{The following sentence has been added; this will be used in
+Section~5.}
+Consequently, by~3.1.1 and~3.1.2,
+\((\mathbf{G}\text{-}\mathbf{O}\text{-Mod.})\) is an abelian category
+satisfying axiom~(AB~5); moreover, if \(\mathcal{C}\) is \emph{small},
+\((\mathbf{G}\text{-}\mathbf{O}\text{-Mod.})\) has enough injective objects.
+\end{remark}
+
+All the constructions of this paragraph specialize at once to the case where
+\(\mathbf{G}\) (or \(\mathbf{O}\), or both) are representable by objects of
+\(\mathcal{C}\) which are thereby endowed with the corresponding algebraic
+structures.
+
+We have treated succinctly the case of the principal algebraic structures
+encountered in the rest of this seminar. For the others (the structure of
+\(\mathbf{O}\)-Lie algebra, for example), we believe that the reader will
+have had enough examples in this paragraph to be able, in each particular
+case, to put into operation for himself the general mechanism sketched
+in~2.2.
+
+We are now going to apply what we have just done to the category of schemes,
+denoted~\(\Sch\), and more generally to the categories \(\Sch_{/S}\) (which
+one will also denote \((\textup{Sch}/S)\)).
+
+\sgasection{4}{Algebraic structures in the category of schemes}
+\label{I.sec.4}
+
+We shall permit ourselves, whenever there is no ambiguity, the following
+abuses of language: one will denote by \(T\) the object
+\(T\xrightarrow{f}S\) of \(\mathcal{C}_{/S}\), the datum of \(f\) (\og
+structural morphism of \(T\)\fg) being understood, and one will identify
+\(\mathcal{C}\) with a subcategory of \(\widehat{\mathcal{C}}\). In view of
+the compatibilities stated in the preceding paragraphs, these
+identifications may be made without danger.
+
+On the other hand, we shall simplify the terminology on the following model:
+a \(\Sch\)-group will also be called a \emph{group scheme}, a
+\(\Sch_{/S}\)-group a \emph{group scheme over \(S\)}, or an \emph{\(S\)-group
+scheme}, or an \emph{\(S\)-group}, or an \emph{\(A\)-group} when \(S\) is the
+spectrum of the ring \(A\).
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{4.1. Constant schemes.}\label{I.4.1}\ ---
+The category of schemes satisfies the conditions required in~1.8. One may
+therefore define constant objects there; for every set \(E\), one has a
+scheme \(E_{\mathbb{Z}}\) and, for every scheme \(S\), an \(S\)-scheme
+\(E_S=(E_{\mathbb{Z}})_S\). Let us recall (\cf\loccit) that for every
+\(S\)-scheme \(T\), \(\Hom_S(T,E_S)\) is the set of locally constant maps from
+the topological space \(T\) to \(E\).
+
+The functor \(E\mapsto E_S\) commutes with finite projective limits. In
+particular, if \(G\) is a group, \(G_S\) is an \emph{\(S\)-group scheme}; if
+\(O\) is a ring, \(O_S\) is an \emph{\(S\)-ring scheme}, etc.
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{4.2. Affine \(S\)-groups.}\label{I.4.2}\ ---
+Let us recall a certain number of things about affine \(S\)-schemes
+(EGA~II, \S~1). One says that the \(S\)-scheme \(T\) is \emph{affine over
+\(S\)} if the inverse image of every affine open of \(S\) is affine. The
+\(\OS\)-algebra \(f_*(\mathcal{O}_T)\), which one denotes by \(\mathcal{A}(T)\),
+is then \emph{quasi-coherent} (\(f\) denotes the structural morphism of
+\(T\)). Conversely, to every quasi-coherent \(\OS\)-algebra \(\mathcal{A}\),
+one may associate an \(S\)-scheme affine over \(S\), denoted
+\(\Spec(\mathcal{A})\). These functors \(T\mapsto\mathcal{A}(T)\) and
+\(\mathcal{A}\mapsto\Spec(\mathcal{A})\) are equivalences quasi-inverse to
+one another between the category of \(S\)-schemes affine over \(S\) and the
+category opposite to that of quasi-coherent \(\OS\)-algebras.
+
+It follows that to give an algebraic structure on an \(S\)-scheme \(T\)
+affine over \(S\) is equivalent to giving the corresponding structure on
+\(\mathcal{A}(T)\) in the category opposite to that of quasi-coherent
+\(\OS\)-algebras. In particular, if \(G\) is an affine \(S\)-group over \(S\),
+\(\mathcal{A}(G)\) is endowed with the structure of an augmented
+\(\OS\)-bialgebra, that is, one has two \emph{morphisms of
+\(\OS\)-algebras}
+\begin{gather*}
+\Delta\colon\mathcal{A}(G)\longrightarrow
+  \mathcal{A}(G)\otimes_{\OS}\mathcal{A}(G)
+\qquad\text{and}\qquad
+\varepsilon\colon\mathcal{A}(G)\longrightarrow\OS
+\end{gather*}
+corresponding to the morphisms of \(S\)-schemes
+\[
+\pi\colon G\times G\longrightarrow G
+\qquad\text{and}\qquad
+e_G\colon S\longrightarrow G.
+\]
+The maps \(\Delta\) and \(\varepsilon\) satisfy the following conditions
+(which express that \(G\) is an \(S\)-monoid):\nde{And, of course, the
+inversion morphism \(G\to G\) induces a morphism of \(\OS\)-algebras
+\(\tau\colon\mathcal{A}(G)\to\mathcal{A}(G)\) which, together with \(\Delta\)
+and \(\varepsilon\), makes \(\mathcal{A}(G)\) into a Hopf \(\OS\)-algebra.}
+
+(HA~1) \(\Delta\) \emph{is coassociative}: the following diagram is commutative
+\[
+\xymatrix@C=3.2em@R=2.6em{
+& \mathcal{A}(G)\otimes_{\OS}\mathcal{A}(G)
+    \ar[dr]^{\mathrm{Id}\otimes\Delta} & \\
+\mathcal{A}(G) \ar[ur]^{\Delta} \ar[dr]_{\Delta}
+&& \mathcal{A}(G)\otimes_{\OS}\mathcal{A}(G)\otimes_{\OS}\mathcal{A}(G) \\
+& \mathcal{A}(G)\otimes_{\OS}\mathcal{A}(G)
+    \ar[ur]_{\Delta\otimes\mathrm{Id}} &
+}\,.
+\]
+
+(HA~2): \(\Delta\) \emph{is compatible with \(\varepsilon\)}: the following
+two composites are the identity
+\begin{gather*}
+\mathcal{A}(G)\xrightarrow{\Delta}
+  \mathcal{A}(G)\otimes_{\OS}\mathcal{A}(G)
+  \xrightarrow{\mathrm{Id}\otimes\varepsilon}
+  \mathcal{A}(G)\otimes_{\OS}\OS
+  \isomto\mathcal{A}(G)\,,\\
+\mathcal{A}(G)\xrightarrow{\Delta}
+  \mathcal{A}(G)\otimes_{\OS}\mathcal{A}(G)
+  \xrightarrow{\varepsilon\otimes\mathrm{Id}}
+  \OS\otimes_{\OS}\mathcal{A}(G)
+  \isomto\mathcal{A}(G)\,.
+\end{gather*}
+
+Let us take the opportunity to remark once again that it follows from the
+definition of an \(S\)-group structure that, in order to give such a
+structure on an \(S\)-scheme \(G\) affine over \(S\), it is not necessary to
+check anything at all on \(\mathcal{A}(G)\), but simply to endow each
+\(G(S')\), for \(S'\) over \(S\), with a group structure functorial in
+\(S'\).
+% typo?: kept as printed "quoi ce soit"
+This remark applies \emph{mutatis mutandis} to morphisms.
+
+\par\addvspace{0.7\baselineskip}
+\noindent\textbf{4.3. The groups \(\mathbb{G}_a\) and \(\mathbb{G}_m\). The ring \(\mathbb{O}\)}\label{I.4.3}
+
+\numpara{4.3.1}\label{I.4.3.1}
+Let \(\Ga\) be the functor from \(\Sch^{\circ}\) to \(\Ens\) defined by
+\[
+\Ga(S)=\Gamma(S,\OS),
+\]
+endowed with the structure of \((\widehat{\textup{Sch}})\)-group defined by
+the additive group structure of the ring \(\Gamma(S,\OS)\). It is
+representable by an affine scheme which one will denote by \(\mathbb{G}_a\),
+and which is therefore a \emph{group scheme}
+\[
+\mathbb{G}_a=\Spec\mathbb{Z}[T].
+\]
+Indeed,
+\(\Ga(S)=\Hom(S,\mathbb{G}_a)
+=\Hom_{\mathrm{Alg.}}(\mathbb{Z}[T],\Gamma(S,\OS))
+\simeq\Gamma(S,\OS)\).
+
+For every scheme \(S\), one therefore has an affine \(S\)-group over \(S\),
+denoted \(\mathbb{G}_{a,S}\), which corresponds to the \(\OS\)-bialgebra
+\(\OS[T]\), with the diagonal map and the augmentation defined by
+\[
+\Delta(T)=T\otimes 1+1\otimes T,
+\qquad
+\varepsilon(T)=0.
+\]
+
+\numpara{4.3.2}\label{I.4.3.2}
+Let \(\Gm\) be the functor from \(\Sch^{\circ}\) to \(\Ens\) defined by
+\[
+\Gm(S)=\Gamma(S,\OS)^{\times},
+\]
+where \(\Gamma(S,\OS)^{\times}\) denotes the multiplicative group of
+invertible elements of the ring \(\Gamma(S,\OS)\), endowed with its natural
+structure of \((\widehat{\textup{Sch}})\)-group.

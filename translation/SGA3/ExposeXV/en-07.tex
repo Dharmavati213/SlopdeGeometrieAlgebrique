@@ -1,0 +1,108 @@
+\begin{remarks}{6.1 bis}\label{XV.6.1bis}
+a) If the $S$-group $H$ is a subtorus of $G$ (resp. $\ldots$), its fibers are connected, and consequently $H$ is of finite presentation over $S$ (Exp. VIB 5.3.3).
+
+b) If $H$ is a subtorus of $G$, then $H$ is a torus in the sense of Exp. IX, as follows immediately from Exp. X 8.1. Moreover, the monomorphism $i:H\to G$ is an immersion (cf. 8.3 below).
+
+c) If $G$ is smooth over $S$, with connected fibers, and $H$ is a Cartan subgroup of $G$ (resp. a Borel subgroup, a parabolic subgroup), the monomorphism $i:H\to G$ is an immersion, so that our definitions agree with those introduced in Exp. XII and Exp. XIV. Indeed, $H$ is then identical to its connected normalizer (by XII 6.6 c), XIV 4.8 and 4.8 bis), and it suffices to apply 5.8.
+\end{remarks}
+\begin{definition}{6.1 ter}\label{XV.6.1ter}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme locally of finite type, $s$ a point of $S$. The dimension of the Cartan subgroups of $(G_{\bar s})^0_{\mathrm{red}}$ is called the nilpotent rank of $G$ at the point $s$, and denoted by $\rho_n(s)$. One defines analogously the reductive rank $\rho_r(s)$, the unipotent rank $\rho_u(s)$, the abelian rank $\rho_{\mathrm{ab}}(s)$ (cf. Exp. X 8.7).
+% typo: un point S -> a point of S.
+\end{definition}
+
+If now $G$ is a smooth connected algebraic group defined over an algebraically closed field $k$, recall that the radical of $G$, denoted by $\mathrm{rad}(G)$, is the largest algebraic subgroup of $G$ which is invariant, smooth, connected and solvable; $G/\mathrm{rad}(G)$ is then semisimple (use Exp. XII 6.1 to reduce to the case of $G$ affine). If $G$ is in addition affine, one defines the unipotent radical $\mathrm{rad}^u(G)$ of $G$ as the largest invariant, smooth, connected and unipotent algebraic subgroup of $G$: $G/\mathrm{rad}^u(G)$ is then reductive.
+\begin{proposition}{6.2}\label{XV.6.2}
+Let $S$ be a prescheme, $G$ and $H$ two group $S$-preschemes of finite presentation over $S$, $i:H\to G$ a group $S$-monomorphism making $H$ a subgroup of $G$, and let $P(s)$ be one of the following properties concerning the point $s$ of $S$:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $(G_{\bar s})^0_{\mathrm{red}}$ is an abelian variety (resp. is affine, is a torus, is unipotent).
+\item $(H_{\bar s})^0_{\mathrm{red}}$ is a maximal torus of $G_{\bar s}$.
+\item $(H_{\bar s})^0_{\mathrm{red}}$ is the centralizer in $(G_{\bar s})^0_{\mathrm{red}}$ of a torus of $G_{\bar s}$ (resp. is a Cartan subgroup of $G_{\bar s}$).
+\item $(H_{\bar s})^0_{\mathrm{red}}$ is a Borel subgroup (resp. a parabolic subgroup) of $G_{\bar s}$.
+\item $(H_{\bar s})^0_{\mathrm{red}}$ is the radical of $G_{\bar s}$ (resp. $(G_{\bar s})^0_{\mathrm{red}}$ is semisimple).
+\item $G_{\bar s}$ is affine, and $(H_{\bar s})^0_{\mathrm{red}}$ is the unipotent radical of $G_{\bar s}$ (resp. $(G_{\bar s})^0_{\mathrm{red}}$ is reductive).
+\end{enumerate}
+Then the set $E$ of points $s$ of $S$ such that $P(s)$ is true is locally constructible (EGA $0_{\mathrm{III}}$ 9.1.11).
+\end{proposition}
+\begin{remark}{6.2.1}\label{XV.6.2.1}
+This proposition complements Exp. VIB \S~10. Moreover, one can make the structure of $E$ more precise using semicontinuity theorems (cf. Exp. X 8.7); we shall see an example a little further on.
+\end{remark}
+\par\noindent\emph{Proof of 6.2.}
+Note that if $S$ is the spectrum of a field, $E$ is invariant under extension of this field. A standard reduction (EGA IV 9) then allows one to reduce to the case where $S$ is noetherian integral with generic point $\eta$. One must show that $E$ or $\mathrm{ens}(S)\setminus E$ contains a neighborhood of $\eta$ (EGA IV 9.2.1). One may suppose $S$ affine with ring $A$ and fraction field $K$. If $L$ is a finite extension of $K$, it is immediate that there exists a sub-$A$-algebra $B$ of $L$, finite over $A$, with fraction field $L$. The canonical morphism $S'\to S$, where $S'=\Spec B$, is dominant, of finite presentation, so the image of a nonempty open subset of $S'$ contains a nonempty open subset of $S$ (EGA IV 1.8.4). From the point of view of interest to us, we may therefore replace $S$ by $S'$, hence replace $K$ by a finite extension $L$. Thus we may choose $L$ so that $(G_L)_{\mathrm{red}}$ and $(H_L)_{\mathrm{red}}$ are smooth over $L$ (EGA IV 4.6.6). After restricting $S'$, we may suppose that $G_{\mathrm{red}}$ and $H_{\mathrm{red}}$ are group preschemes smooth over $S$ (Exp. VIB \S~10 and EGA IV 17). In view of the properties to be proved, we may replace $G$ and $H$ by their reduced neutral components (Exp. VIB 10.9), hence suppose $G$ and $H$ smooth over $S$, with connected fibers. Finally, we may suppose that $H$ is a closed group subprescheme of $G$ (Exp. VIB 10.4).
+
+\par\noindent\emph{Proof of i).} After making a finite extension of $K$, we may suppose that $G_\eta$ possesses a ``Chevalley decomposition'', i.e. is an extension of an abelian variety $D_\eta$ by a smooth connected linear algebraic group $F_\eta$ (S\'eminaire Bourbaki 1956/57 No. 145). By Exp. VIB 10.16, there exists an open neighborhood $U$ of $\eta$ such that this generic extension comes from an extension:
+\[
+1\to F\to G|_U\to D\to1.
+\]
+One may in addition suppose $F$ and $D$ smooth over $U$, with connected fibers, $F$ affine over $U$ and $D$ proper over $U$ (EGA IV 8, 9 and 17). For every point $s$ of $U$, $(D_s,F_s)$ is then the ``Chevalley decomposition'' of $G_s$. Consequently $G_s$ is an abelian variety (resp. is affine) if and only if $F_s$ (resp. $D_s$) is the unit group, which is a constructible property (EGA IV 9.2.6.1).
+% typo: si est seulement si -> if and only if.
+
+To establish the last two assertions of i), in view of what precedes, we may suppose $G$ affine over $S$. Let $q$ be a prime number invertible on $S$, and ${}_qG$ the ``kernel'' of raising to the $q$th power in $G$. It follows easily from the structure of affine algebraic groups that $G_s$ is a torus (resp. is unipotent) if and only if a) ${}_qG_s$ is quasi-finite, which is a constructible property (EGA IV 9.3.2), and b) ${}_qG_s$ has $r^q$ geometric points, where $r$ denotes the relative dimension of $G$ over $S$ (resp. ${}_qG_s$ has a single point). Now the function $s\mto(\text{number of geometric points of }{}_qG_s)$ is constructible (EGA IV 9.7.9). This completes the proof of (i).
+% typo?: source gives r^q for this number of points, kept as printed.
+
+\par\noindent\emph{Proof of iii).} a) Case of a centralizer of a torus. Suppose that $H_\eta=\Centr_{G_\eta}(T_\eta)$, where $T_\eta$ is a torus of $G_\eta$, and let us show that $H_s$ is the centralizer of a subtorus of $G_s$ for $s$ in a neighborhood of $\eta$. By i), after restricting $S$, one may suppose that $T_\eta$ comes from a subtorus $T$ of $G$. But then $Z=\uCentr_G(T)$ is representable (Exp. XI 6.11) by a group subprescheme of $G$. Since $H$ and $Z$ agree generically, they agree over a neighborhood of $\eta$. This proves that the set $E$ of points $s$ of $S$ such that $H_s$ is the centralizer in $G_s$ of a subtorus of $G_s$ is ind-constructible (EGA IV 1), and this result will suffice to establish, in Lemma 6.6 below, that $E$ is an open subset of $S$; a fortiori, $E$ will indeed be a locally constructible subset of $S$.
+
+\noindent iii) b) Case of a Cartan subgroup. Suppose that $H_\eta$ is a Cartan subgroup of $G_\eta$, and let us show that $H_s$ is a Cartan subgroup of $G_s$ at every point $s$ of a neighborhood of $\eta$. The group $H_\eta$ is the centralizer in $G_\eta$ of a torus of $G_\eta$ and is nilpotent (Exp. XII 6.6). By a) and Exp. VIB 8.4, $H_s$ has the same properties at every point $s$ of a neighborhood $U$ of $\eta$. For every point $s$ of $U$, the group $H_s$ therefore has the same reductive rank as $G_s$, and its unique maximal torus is central (Exp. XII 6.7), so it is the centralizer of a maximal torus of $G_s$, i.e. a Cartan group of $G_s$.
+
+Suppose now that $H$ is not a Cartan subgroup of $G$, and let us show that $H_s$ is not a Cartan subgroup of $G_s$ for $s$ in a neighborhood $U$ of $\eta$. Taking into account the assertion provisionally granted in (a) above, we may restrict to the case where $H$ is the centralizer in $G$ of a subtorus $T$. But then $H_\eta$ contains a Cartan subgroup $C_\eta$ of $H_\eta$. We have just seen that, after restricting $S$, $C_\eta$ extends to a Cartan subgroup $C$ of $G$, which one may suppose contained in $H$. By hypothesis $H_\eta$ strictly contains $C_\eta$, so $H_s$ strictly contains $C_s$ for $s$ in a neighborhood $U$ of $\eta$ (EGA IV 9.5.2); a fortiori, $H_s$ is not a Cartan subgroup of $G_s$ for $s$ in $U$.
+% typo?: source's unindexed H and subgroup C_eta of H_eta are retained.
+
+\par\noindent\emph{Proof of ii).} Suppose that $H_\eta$ is a maximal torus of $G_\eta$, and let $C_\eta$ be its centralizer in $G_\eta$. By i) and iii), $H$ is a torus over a neighborhood $U$ of $\eta$, and $C=\uCentr_{G|_U}(H|_U)$ is a Cartan subgroup of $G|_U$. To prove that $H$ is a maximal torus of $G$ over a neighborhood of $\eta$, one may then replace $G$ by $C$, then by the linear component $F$ of a Chevalley decomposition of $C$ (cf. i)). Let $q$ be an integer invertible on $S$, ${}_qF$ the kernel of raising to the $q$th power in $F$. Since $F_{\bar s}$ is affine, nilpotent, smooth and connected, $F_{\bar s}$ is the direct product of its maximal torus $T_{\bar s}$ by a unipotent group (BIBLE 6-04), so ${}_qF_s={}_qT_s$. Since $H$ is a maximal torus, ${}_qH_\eta={}_qF_\eta$, and consequently ${}_qH={}_qF$ over a neighborhood $V$ of $\eta$. For every point $s$ of $V$, ${}_qH_s={}_qT_s$, so $H_s=T_s$ is a maximal torus.
+% typo?: source says H is a maximal torus here, rather than H_eta.
+
+Suppose now that $H_\eta$ is not a maximal torus of $G_\eta$. By i), we may restrict to the case where $H_\eta$ is a torus, then suppose that it is contained in a strictly larger torus $T_\eta$. The latter extends to a torus $T$ strictly containing $H$ over a neighborhood $U$ of $\eta$. A fortiori, $H_s$ is not a maximal torus for $s\in U$.
+
+\par\noindent\emph{Proof of iv).} After restricting $S$, one may suppose that the center $Z$ of $G$ is representable (Exp. VIB 10.11) and flat over $S$, as is the quotient $G/Z$ (\loccit). The property ``$H_s$ contains $Z_s$'' is constructible (EGA IV 9.5.2), and every parabolic subgroup of $G_s$ contains $Z_s$ (Exp. XIV 4.9 a)); this allows one to replace $G$ by $G/Z$, hence suppose $G$ affine over $S$ (Exp. XII 6.1 and i)). One may again suppose that $G/H$ is representable, but then $H_s$ is a parabolic subgroup of $G_s$ if and only if $(G/H)_s$ is proper (BIBLE 6. Th. 4 b)), which is an ind-constructible property (EGA IV 9.3.5). Thus $E$ is ind-constructible, and this will suffice to prove that $E$ is open (Lemma 6.6), hence locally constructible.
+
+Let us now examine the case of Borel subgroups. If $H_\eta$ is a Borel subgroup of $G_\eta$, i.e. a solvable parabolic subgroup of $G_\eta$, what precedes and Exp. VIB 8.4 imply that these properties are still true at every point $s$ of a neighborhood of $\eta$. If now $H_\eta$ is not a Borel subgroup of $G_\eta$, to prove that the same is true at the points $s$ of a neighborhood of $\eta$, we may restrict (in view of what precedes) to the case where $H_\eta$ is a parabolic subgroup, then suppose that $H_\eta$ contains a Borel subgroup $B_\eta$. We have just shown that the latter extends to a Borel subgroup $B$ of $G$ over a neighborhood $U$ of $\eta$. Since $H_\eta$ strictly contains $B_\eta$, $H_s$ strictly contains $B_s$ at every point of an open subset $V$, and $H_s$ is not a Borel subgroup of $G_s$ for $s\in V$.
+
+\par\noindent\emph{Proof of v).} Suppose that $H_\eta$ is the radical of $G_\eta$. The group $H_\eta$ is therefore invariant in $G_\eta$, solvable (smooth and connected); the same therefore holds for $H_s$ for $s$ belonging to a neighborhood $U$ of $\eta$ (Exp. VIB 8 and 10), so for $s\in U$, $H_s$ is contained in the radical of $G_s$. Replacing $G$ by $G/H$ (Exp. VIB 10), one must prove that if $G_\eta$ is semisimple, $G_s$ is semisimple at every point of a neighborhood $V$ of $\eta$. Thanks to i) and ii), one may suppose that $G$ is affine over $S$ and possesses a maximal torus $T$. Let $W$ be the Weyl group of $T$ (Exp. XII 2), which is quasi-finite and \'etale over $S$, hence finite and \'etale over an open subset $V$. It then follows from the elementary properties of roots (Exp. XIX 1.12) that $G$ is semisimple over $V$.
+
+Suppose now that $H_\eta$ is not the radical of $G_\eta$. After replacing $K$ by a finite extension $L$, one may suppose that $G_\eta$ possesses a radical $R_\eta$. By what precedes, $R_\eta$ extends to a group subprescheme $R$ of $G|_U$ such that for every $s\in U$, $R_s$ is the radical of $G_s$. By hypothesis $R_\eta\ne H_\eta$. Thus $R_s\ne H_s$ for $s\in V$. It remains to prove that if $G_\eta$ is not semisimple, the same holds for $G_s$ at neighboring points, but this is a particular case of what precedes (take $H=$ unit group).
+% typo: ne soit le radical -> is not the radical (missing pas).
+
+\par\noindent\emph{Proof of vi).} The proof is entirely analogous to that of v), taking i) into account, and is left to the reader.
+\begin{corollary}{6.3}\label{XV.6.3}
+Let $S_0$ be a quasi-compact prescheme, $S_i$ ($i\in L$) a projective system of $S_0$-preschemes affine over $S_0$, $S=\varprojlim S_i$ (EGA IV 8.2), $G_0$ a group prescheme of finite presentation over $S_0$, $G_i=G_0\times_{S_0}S_i$, $G=G_0\times_{S_0}S$, $H$ a subgroup of $G$. Then if $H$ is a subtorus of $G$ (resp. a maximal subtorus, a Cartan subgroup, a Borel subgroup, a parabolic subgroup), there exist an index $i\in L$ and a subgroup $H_i$ of $G_i$ such that $H=H_i\times_{S_i}S$ and $H_i$ is a subtorus of $G_i$ (resp. $\ldots$).
+\end{corollary}
+Indeed, $H$ is smooth, with connected fibers, hence of finite presentation over $S$ (Exp. VIB 5.3.3). By Exp. VIB \S~10, there exist $i\in L$ and a subgroup $H_i$ of $G_i$, smooth over $S$, such that $H=H_i\times_{S_i}S$. Corollary Exp. 6.3 then follows from Definition 6.1, 6.2 and EGA IV 9.3.3.
+% typo: presentation fine -> finite presentation.
+% typo?: source says H_i smooth over S and “Corollary Exp. 6.3”, retained.
+\begin{corollary}{6.3 bis}\label{XV.6.3bis}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation over $S$. Then the functions $\rho_n,\rho_r,\rho_u,\rho_{\mathrm{ab}}$ (cf. 6.1 ter) are locally constructible functions on $S$.
+\end{corollary}
+It suffices to show (EGA IV 9) that if $S$ is an integral noetherian scheme with generic point $\eta$, the functions in question are constant on a neighborhood of $\eta$. After replacing $S$ by a scheme $S'$, finite over $S$, dominating $S$, we may suppose that $G_\eta$ possesses a Cartan subgroup $C_\eta$ with a Chevalley decomposition $1\to L_\eta\to C_\eta\to A_\eta\to1$. The argument made in 6.2 i) proves that this decomposition extends to a Chevalley decomposition over a neighborhood of $\eta$:
+\[
+1\to L\to C\to A\to1.
+\]
+Moreover, one may suppose that $C$ is a Cartan subgroup of $G$ (6.3), and that the maximal torus $T_\eta$ of $L_\eta$ extends to a maximal torus $T$ of $L$ (6.3). The corollary follows immediately from this and from the definitions.
+
+\numpara{6.4.0}\label{XV.6.4.0}
+Let then $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation over $S$, $\mathscr L$ the functor of subgroups of $G$, smooth, with connected fibers, and equal to their connected normalizer (cf. \S~5); $\mathscr L$ is representable (5.2 and 5.8). The rest of this section is devoted to the study of certain subfunctors of $\mathscr L$. More precisely, introduce the subfunctors of $\mathscr L$ denoted by $\mathscr{LC}$ (resp. $\mathscr{CT}$, resp. $\mathscr P$), defined as follows: for every $S$-prescheme $S'$, $\mathscr{LC}(S')$ (resp. $\mathscr{CT}(S')$, resp. $\mathscr P(S')$) is the set of subgroups $H$ of $G_{S'}$, smooth over $S'$, with connected fibers, equal to their connected normalizer, and such that for every point $s$ of $S'$, $H_s$ contains a Cartan subgroup (6.1) of $G_s$ (resp. is the centralizer in $(G_{\bar s})^0_{\mathrm{red}}$ of a subtorus of $G_{\bar s}$, resp. is a parabolic subgroup (6.1) of $G_s$).
+\begin{theorem}{6.4}\label{XV.6.4}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation over $S$. Then the $S$-functors $\mathscr{LC},\mathscr{CT},\mathscr P$ above (6.4.0) are representable by $S$-preschemes of finite presentation over $S$, quasi-projective over $S$.
+\end{theorem}
+\begin{remark}{6.5}\label{XV.6.5}
+If $G$ has smooth fibers, for example if $G$ is smooth over $S$ or the residual characteristics of $S$ are zero (Exp. VIB 1.6.1), every subgroup $H$ of $G$, smooth over $S$, with connected fibers, such that for every point $s$ of $S$, $H_s$ contains a Cartan subgroup of $(G_s)^0$, is necessarily equal to its connected normalizer (and consequently is an element of $\mathscr{LC}(S)$). Indeed, thanks to 5.1 iii), one may suppose that $S$ is the spectrum of a field, in which case the property was pointed out at the end of the statement of Exp. XIII 2.1.
+\end{remark}
+Note that one has natural monomorphisms:
+\[
+\xymatrix{\mathscr{CT}\ar[dr]&&\\&\mathscr{LC}\ar[r]&\mathscr L.\\\mathscr P\ar[ur]&&}
+\]
+Let us show that these monomorphisms are open immersions of finite presentation (which will already prove, taking 5.2 into account, that $\mathscr{LC},\mathscr{CT},\mathscr P$ are representable by $S$-preschemes, unions of increasing sequences of open subpreschemes, quasi-projective and of finite presentation over $S$). Now this will follow, by the usual technique, from the following lemma:
+\begin{lemma}{6.6}\label{XV.6.6}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation, $H$ a subgroup of $G$, smooth with connected fibers. Then the set of points $s$ of $S$ such that $H_{\bar s}$ contains a Cartan subgroup of $G_{\bar s}$ (resp. is equal to the centralizer in $(G_{\bar s})^0_{\mathrm{red}}$ of a torus of $G_{\bar s}$) is an open subset of $S$. If in addition $H$ is equal to its connected normalizer{\renewcommand{\thefootnote}{*}\footnote{A hypothesis which is in fact superfluous, cf. XVII App. III 3.}}\setcounter{footnote}{6}, the set of points $s$ of $S$ such that $H_s$ is a parabolic subgroup of $G_s$ is also an open subset of $S$.
+\end{lemma}
+The assertion to be proved is local on $S$, which allows one to suppose $S$ affine, then, by EGA IV 8.1 and 6.3, $S$ noetherian. Denote by $E$ the set of points of $S$ having the property in question. It then follows from the assertions actually proved in 6.2 that $E$ is ind-constructible. But $S$ is noetherian, so to prove that $E$ is open, it then suffices to show that $E$ is stable under generalization (EGA IV 1.10.1). Using EGA II 7.1.9, one is finally led to prove that if $S$ is the spectrum of a discrete valuation ring and the closed point $s$ belongs to $E$, then the same holds for the generic point $t$. We shall need the following lemma:
+\begin{lemma}{6.7}\label{XV.6.7}
+Let $A$ be a complete noetherian local ring, $S=\Spec A$, $s$ the closed point of $S$, $H$ a group $S$-prescheme, smooth with connected fibers, $T_s$ a subtorus of $H_s$. Then:
+
+\noindent i) There exists a closed group subprescheme $C$ of $H$, smooth with connected fibers, such that $C_s=\Centr_{H_s}(T_s)$.
+
+\noindent ii) For every point $t$ of $S$, $C_t$ is the centralizer in $H_t$ of a subtorus $T_t$ of $H_t$.
+\end{lemma}
+\par\noindent\emph{Proof of 6.7.}
+Let $T'$ be an $S$-torus such that there exists an isomorphism $u_0:T'_s\isomto T_s$ (Exp. X 4.6). Let $\mathfrak m$ be the maximal ideal of $A$, $A_n=A/\mathfrak m^n$, $S_n=\Spec A_n$, $H_n=H\times_S S_n$, etc. Since $H$ is smooth over $S$, for every integer $n>0$, there exists a group $S_n$-morphism:
+\[
+u_n:T'_n\to H_n
+\]
+lifting $u_0$ (Exp. IX 3.6), and by induction on $n$ one may suppose that $u_n$ lifts $u_{n-1}$. On the other hand, let $q$ be a prime number invertible on $S$; for every integer $\ell$ equal to a power of $q$, denote by ${}_\ell u_n$ the restriction of $u_n$ to the subgroup ${}_\ell T'_n$. For fixed $\ell$ and variable $n$, the morphisms ${}_\ell u_n$ form a projective system, hence come from a unique group $S$-morphism ${}_\ell u:{}_\ell T'\to H$ (1.6 a)). Since $H$ is separated (Exp. VIB 5.2) and $u_0$ is a monomorphism, ${}_\ell u$ is a monomorphism (Exp. IX 6.8), and even a closed immersion, since it is finite, ${}_\ell T'$ being finite over $S$. Denote by $M(\ell)$ the image group. It is clear that the family of subgroups of multiplicative type $M(\ell)$ is coherent in the sense of 4.1. Let $C_\ell=\uCentr_H(M(\ell))$, which is representable by a group subprescheme (2.5), closed ($H$ is separated), smooth over $S$ (Exp. XI 2.4). The $C_\ell$ form a decreasing filtered family of closed subschemes, hence stationary, since $H$ is noetherian.

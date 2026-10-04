@@ -76,3 +76,21 @@ From the repository root, `make tex` builds all translated exposés.
 Needs a reasonably complete TeX Live (`amsart`, `amsbook`, `xy`, `mathtools`, …).
 
 New exposés go in `SGA<n>/Expose<Roman>/` with a `Makefile` like the existing ones.
+
+## SGA 3
+
+Source: the Gille–Polo recomposition of *Schémas en groupes*,
+from the PDFs at <https://webusers.imj-prg.fr/~patrick.polo/SGA3/>.
+Those PDFs stay in local `source/SGA3/` and are not committed.
+Conventions: [`SGA3/CONVENTIONS.md`](SGA3/CONVENTIONS.md).
+Shared macros: [`SGA3/sga3-en.sty`](SGA3/sga3-en.sty).
+The introduction and all exposés I–XXVI, including the A and B parts, have
+complete compiled English drafts. Individual PDFs and a combined volume are
+available; see [SGA 3 coverage and review notes](SGA3/README.md).
+Independent scholarly proofreading remains open. Indexes are not included.
+
+```bash
+make -C SGA3/Introduction
+make -C SGA3/ExposeI
+make -C SGA3 book
+```

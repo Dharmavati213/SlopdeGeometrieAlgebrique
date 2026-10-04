@@ -1,0 +1,142 @@
+\exposetitle{IX}{Groups of multiplicative type: Homomorphisms into a group scheme}
+\label{IX}
+\begin{center}by A. Grothendieck\end{center}
+\footnotetext{Version 1.0 of November 8, 2009: additions in the proof of 3.6 bis, 4.4--7, 5.0--6, 6.1, 7.1, 8.2. Review 8.1 and 4.5.}
+
+\sgasection{1}{Definitions}
+\begin{definition}{1.1}\label{IX.1.1}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme. One says that $G$ is a \emph{group of multiplicative type} if $G$ is locally diagonalizable in the sense of the faithfully flat quasi-compact topology (cf. IV 6.3), i.e. if for every $s\in S$ there exists an open neighborhood $U$ of $s$ and a faithfully flat and quasi-compact morphism $S'\to U$ such that $G'=G\times_S S'$ is a diagonalizable $S'$-group (I 4.4 and VIII 1.1).
+\begin{itemize}
+\item One says that $G$ is of \emph{quasi-isotrivial} multiplicative type if it is even locally diagonalizable in the sense of the étale topology (IV 6.3), i.e. if, in the preceding definition, one may even take $S'\to U$ étale surjective, or again (which amounts to the same thing, as one sees by taking the sum scheme of the $S'$ attached to the various $s\in S$) if there exists $S'\to S$ étale and surjective such that $G'=G\times_S S'$ is a locally diagonalizable $S'$-group.
+\item If one may even choose $S'\to S$ étale surjective and finite, one says that $G$ is of \emph{isotrivial} multiplicative type.
+\item Finally, one says that $G$ is a group of \emph{locally trivial} (resp. \emph{locally isotrivial}) multiplicative type if every $s\in S$ admits an open neighborhood $U$ such that $G\times_S U$ is a diagonalizable $U$-group (resp. a group of isotrivial multiplicative type, i.e. there exists $S'\to U$ a finite surjective étale morphism such that $G\times_S S'$ is a diagonalizable $S'$-group).
+\end{itemize}
+\end{definition}
+\begin{enoncerm}{Comments}{1.2}\label{IX.1.2}
+One will note that the preceding five notions are all deduced from the notion of a diagonalizable group by the process of localization, in the sense of five different ``topologies'' associated with $\Sch$.
+
+One agrees in general that when the word ``locally'' is not made explicit by specifying the topology considered, it refers to the Zariski topology, in conformity with the received terminology. In the terminology introduced here, ``of locally trivial multiplicative type'' is equivalent to ``locally diagonalizable'' of VIII 1.1; similarly, ``trivial'' translates as ``diagonalizable''. Between the five notions introduced, one has the following diagram of implications, which follows from the corresponding relations between the topologies involved:
+\[
+\xymatrix@C=12pt@R=16pt{
+&\text{general multiplicative type}&\\
+&\text{quasi-isotrivial}\ar@{=>}[u]&\\
+&\text{locally isotrivial}\ar@{=>}[u]&\\
+\text{isotrivial}\ar@{=>}[ur]&&\text{locally trivial}\ar@{=>}[ul]\\
+&\text{trivial}\ar@{=>}[ul]\ar@{=>}[ur]&}
+\]
+From the practical point of view, let us point out immediately that all the groups of multiplicative type which we shall encounter will be quasi-isotrivial; thus we shall see in the next expos\'e (X 4.5) that when $G$ is of finite type over $S$, $G$ is automatically quasi-isotrivial, but we shall give examples where it is not locally isotrivial. We shall likewise see there that $G$ may be locally trivial without being isotrivial or a fortiori trivial (which easily implies that the inclusions in the preceding diagram are strict).
+
+On the other hand, we shall also see there (X 5.16) that when $S$ is locally noetherian and normal (more generally geometrically unibranch), every group of multiplicative type of finite type over $S$ is necessarily isotrivial, and moreover trivial as soon as it is locally trivial (or merely trivial over a dense open subset). This explains why most of the groups of multiplicative type which one will encounter in practice will doubtless be isotrivial, all the more so since we shall see later that the maximal tori of semisimple group schemes are automatically isotrivial.
+\end{enoncerm}
+\begin{definition}{1.3}\label{IX.1.3}
+Let $S,G$ be as in 1.1. One says that $G$ is a \emph{torus} if it is locally isomorphic, in the sense of the faithfully flat quasi-compact topology, to a group of the form $\Gm^r$ (where $r$ is an integer $\geq0$).
+\end{definition}
+With the notation of 1.1, this therefore means that one may choose $S'$ such that $G'$ is isomorphic to a group of the form $(\mathbf{G}_{\mathrm{m},S'})^r$. One will note that the integer $r$ depends on $s\in S$; it is the dimension of the fiber $G_s=G\otimes_S\kappa(s)$. It is a locally constant function of $s$, as one verifies immediately. There is occasion to generalize this remark:
+\begin{definition}{1.4}\label{IX.1.4}
+Let $G$ be a diagonalizable group scheme over a field $k$; thus $G$ is isomorphic to a group $D_k(M)$, where $M$ is an ordinary commutative group, defined up to isomorphism by this condition, more precisely $M\simeq\Hom_{k\text{-}\mathrm{gr.}}(G,\mathbf{G}_{\mathrm{m},k})$ (VIII 1.3). The isomorphism class of $M$ is called the \emph{type} of the diagonalizable group $G$; it is evidently invariant under extension of the base field.
+
+If now $G$ is a group scheme of multiplicative type over an arbitrary prescheme $S$, then for every $s\in S$ there exists an extension $k$ of $\kappa(s)$ such that $G\times_S\Spec(k)$ is a diagonalizable $k$-group;\nde{Indeed, by hypothesis there exists an open neighborhood $U$ of $s$ and a faithfully flat and quasi-compact morphism $S'\to U$ such that $G_{S'}$ is diagonalizable; then for every $s'\in S'$ over $s$, $\kappa(s')$ is an extension of $\kappa(s)$ and $G_{s'}=G\times_S\Spec(\kappa(s'))$ is diagonalizable.} its type is then independent of the chosen extension by the preceding remark, and will be called the \emph{type of $G$ at $s$}, or \emph{type of $G_s$}. In particular, if $G$ itself is diagonalizable, hence isomorphic to a group of the form $D_S(M)$, then for every $s\in S$ the type of $G$ at $s$ equals the class of the group $M$.
+
+In general, if $G$ is a group of multiplicative type over $S$, $M$ an ordinary commutative group, one shall say that $G$ is \emph{of type $M$} if it is of type $M$ at every point $s\in S$, in other words if $G$ is locally isomorphic to $D_S(M)$ in the sense of the faithfully flat and quasi-compact topology.
+\end{definition}
+\begin{remark}{1.4.1}\label{IX.1.4.1}
+\nde{The following remarks have been given the number 1.4.1, for later references.} a) One sees immediately that for a given group of multiplicative type $G$ over $S$, the function $s\mto\text{type of }G_s$ is locally constant on $S$: indeed, with the notation of 1.1, if $G'$ is of type $M$, then $G$ is of type $M$ on the neighborhood $U$ of $s$. It follows that one has a canonical partition of $S$ as a sum of preschemes $S_i$, such that for every $i$, $G_{S_i}$ is of type $M_i$, where the $M_i$ are pairwise nonisomorphic commutative groups.
+
+b) In particular, if $S$ is connected, the type of the fibers of $G$ is constant, i.e. there exists a commutative group $M$ such that $G$ is of type $M$. Finally, if $G$ is a torus, the type of $G$ at $s$ is characterized by the integer $\dim G_s$ (indeed, $G_s$ is of type $\ZZ^n$, where $n=\dim G_s$).
+\end{remark}
+\begin{remark}{1.5}\label{IX.1.5}
+a) It is trivial from definitions 1.1 and 1.3 that they are ``compatible with extension of the base''. Thus, if $G$ is a group prescheme over $S$ and $S'\to S$ a base change morphism, then if $G$ is of multiplicative type (resp. of isotrivial multiplicative type, etc.), the same is true of $G'$.
+
+b) When in addition $S'\to S$ is faithfully flat and quasi-compact, then if $G'$ is of multiplicative type, resp. a torus, the same is true of $G$. If in addition $S'\to S$ is étale (resp. finite étale), and $G'$ quasi-isotrivial (resp. isotrivial), the same is true of $G$.
+
+c) Finally, returning to an arbitrary base change morphism $f:S'\to S$, if $s'\in S'$ and $s=f(s')$, then the type of $G'$ at $s'$ equals that of $G$ at $s$, since $G'_{s'}=G_s\otimes_{\kappa(s)}\kappa(s')$.
+\end{remark}
+
+\sgasection{2}{Extension of certain properties of diagonalizable groups to groups of multiplicative type}
+The extensions in question are essentially trivial consequences of the results of the preceding expos\'e, in view of definitions 1.1 and the ``local'' nature (in the sense of the faithfully flat and quasi-compact topology) of the results in question.
+\begin{definition}{2.0}\label{IX.2.0}
+\nde{This definition has been added; it appears in propositions 2.3 and 2.7.} Denote by $\cal M$ the set of faithfully flat and quasi-compact morphisms.
+\end{definition}
+\begin{proposition}{2.1}\label{IX.2.1}
+Let $G$ be a group of multiplicative type over a prescheme $S$. One has the following:
+
+a) $G$ is faithfully flat over $S$, and affine over $S$ (a fortiori quasi-compact over $S$).
+
+b) $G$ of finite type over $S$ $\Longleftrightarrow G$ of finite presentation over $S$ $\Longleftrightarrow$ for every $s\in S$, the type of $G$ at $s$ is given by a commutative group of finite type.
+
+c) $G$ finite over $S$ $\Longleftrightarrow$ for every $s\in S$, the type of $G$ at $s$ is given by a finite commutative group $\Longleftrightarrow$ (if $S$ quasi-compact) $G$ is of finite type over $S$ and is annihilated by an integer $n>0$.
+
+c') $G$ integral over $S$ $\Longleftrightarrow$ for every $s\in S$, the type of $G$ at $s$ is given by a commutative torsion group.
+
+d) $G$ is the unit group $\Longleftrightarrow$ for every $s\in S$, the type of $G$ at $s$ is given by the zero commutative group.
+
+e) $G$ is smooth over $S$ $\Longleftrightarrow$ for every $s\in S$, the type of $G$ at $s$ is given by a commutative group of finite type whose torsion subgroup has order prime to the characteristic of $\kappa(s)$.
+\end{proposition}
+These statements follow from VIII 2.1, in view of the fact that the properties in question descend by faithfully flat and quasi-compact morphisms (cf. SGA 1, VIII or EGA IV$_2$, \S2).
+
+Using VIII 3.5, one likewise obtains:
+\begin{proposition}{2.2}\label{IX.2.2}
+Let $G$ be a group of multiplicative type and of finite type over $S$; then for every integer $n\ne0$, the kernel ${}_nG$ of $n\cdot\mathrm{id}_G$ is a group of multiplicative type finite over $S$.
+\end{proposition}
+\begin{proposition}{2.3}\label{IX.2.3}
+Let $G$ be a group of multiplicative type over the prescheme $S$, acting freely on the right on the $S$-prescheme $X$ affine over $S$. Then:
+
+a) The equivalence relation defined by $G$ in $X$ is $\cal M$-effective (IV 3.4); moreover $Y=X/G$ is affine over $S$.
+
+b) If in addition $X$ is of finite presentation (resp. of finite type) over $S$, the same is true of $Y$.
+\end{proposition}
+The first assertion follows from VIII 5.1, treating the case where $G$ is diagonalizable, and from IV 3.5.2, which allows one to reduce to it, taking account of the fact that faithfully flat and quasi-compact morphisms $S'\to S$ are morphisms of effective descent for the fibered category of schemes affine over others, i.e. for every $Y'$ affine over $S'$, endowed with a descent datum relative to $S'\to S$, this descent datum is effective, i.e. $Y'$ comes from a $Y$ affine over $S$, cf. SGA 1, VIII 2.1.
+
+For the second assertion one is also reduced to the diagonalizable case VIII 5.8, since the finiteness conditions considered descend by faithfully flat and quasi-compact morphisms (SGA 1, VIII 3.3 and 3.6\nde{Cf. also V, 9.1 or EGA IV$_2$, 2.7.1.}). Proceeding as in VIII, corollaries 5.5 to 5.7, one draws from 2.3:
+\begin{corollary}{2.4}\label{IX.2.4}
+Under the conditions of 2.3, the graph morphism
+\[
+X\times_S G\to X\times_S X
+\]
+is a closed immersion. For every section $\sigma$ of $X$ over $S$, the corresponding morphism $G\to X$, $g\mto\sigma\cdot g$, is a closed immersion.
+\end{corollary}
+In particular:
+\begin{corollary}{2.5}\label{IX.2.5}
+Let $u:G\to H$ be a monomorphism of $S$-group preschemes, with $G$ of multiplicative type and $H$ affine over $S$. Then $u$ is a closed immersion, $H/G=Y$ exists and is affine over $S$; finally, $H$ is a principal homogeneous bundle over $Y$ with group $G_Y$.
+\end{corollary}
+\begin{remark}{2.6}\label{IX.2.6}
+Let $u:G\to H$ be a monomorphism of $S$-group preschemes, $G$ being of multiplicative type and of finite type over $S$, $H$ being of finite presentation over $S$ and separated over $S$. Then one can show that $u$ is a closed immersion, using VIII 7.12 (see remark VIII 7.13 b)).
+\end{remark}
+\begin{proposition}{2.7}\label{IX.2.7}
+Let $u:G\to H$ be a homomorphism of $S$-groups of multiplicative type, with $H$ of finite type over $S$. Then:
+
+(i) $G'=\Ker u$ is an $S$-group of multiplicative type; the equivalence relation defined by $G'$ in $G$ is $\cal M$-effective, so (IV 3.4) $u$ factors as
+\[
+G\to G/G'=I\to H,
+\]
+where $I\to H$ is a monomorphism\nde{And even a closed immersion.} of $S$-groups; $I$ is of multiplicative type, the equivalence relation in $H$ defined by $I$ is $\cal M$-effective, so $H'=H/I$ exists, and moreover $H'$ is of multiplicative type.
+
+(ii) $H'$ and $I$ are of finite type, and the same is true of $G'$ if $G$ is so.
+\end{proposition}
+\begin{proof}
+Proceeding as for 2.3, one is reduced to the case where $G$ and $H$ are diagonalizable, and then 2.7 reduces to VIII 3.4.
+\end{proof}
+Let us note the following corollaries:
+\begin{corollary}{2.8}\label{IX.2.8}
+a) Let $S$ be a prescheme. Then the category of $S$-groups of multiplicative type and of finite type is an abelian category.
+
+b) Let $u:G\to H$ be a homomorphism in this category; for it to be a monomorphism (resp. an epimorphism, resp. an isomorphism) in this category, it is necessary and sufficient that $u$ be a monomorphism of preschemes (resp. that $u$ be faithfully flat, resp. that $u$ be an isomorphism of preschemes).
+\end{corollary}
+It suffices to note that the product of two $S$-groups of multiplicative type is again of multiplicative type (which is immediate), evidently of finite type over $S$ if both factors are so. The rest of 2.8 follows immediately from 2.7; the details are left to the reader.
+\begin{corollary}{2.9}\label{IX.2.9}
+Let $u:G\to H$ be a homomorphism of $S$-groups of multiplicative type and of finite type. Let $U$ be the set of points $s\in S$ such that $u_s:G_s\to H_s$ is a monomorphism (resp. faithfully flat, resp. an isomorphism). Then $U$ is both open and closed, and the induced homomorphism $u_U:G_U\to H_U$ is a monomorphism (resp. faithfully flat, resp. an isomorphism).
+\end{corollary}
+Let $P$ (resp. $Q$) be the kernel (resp. cokernel) of $u$. Thanks to 2.7, $Q$ exists and $P$ and $Q$ are of multiplicative type; moreover formation of $P$ and $Q$ commutes with every base change $S'\to S$, in particular with formation of the fibers. On the other hand $u$ is a monomorphism (resp. faithfully flat, resp. an isomorphism) if and only if $P=0$ (resp. $Q=0$, resp. $P=Q=0$). Thanks to these remarks one is therefore reduced to checking this: if $R$ is an $S$-group of multiplicative type, then the set $U$ of $s\in S$ such that $R_s=0$ is open and closed, and $R_U=0$. Now this is contained in remark 1.4.1 a).
+\begin{corollary}{2.10}\label{IX.2.10}
+Let $G$ be an $S$-group of multiplicative type and of finite type, $H$ and $H'$ two subgroups of multiplicative type.
+
+a) $H''=H\cap H'$ is a subgroup of multiplicative type of $G$.
+
+b) Let $U$ be the set of $s\in S$ such that $H_s\subseteq H'_s$ (resp. $H_s=H'_s$). Then $U$ is open and closed, and $H_U\subseteq H'_U$ (resp. $H_U=H'_U$).
+\end{corollary}
+Of course, the intersection sign in $H\cap H'$ denotes intersection in the functorial sense, i.e. $H\times_G H'$, which is evidently a sub-$S$-group of $G$; similarly the inclusion (resp. equality) sign denotes the order relation (resp. equality) between subfunctors of $H$ (and not inclusion (resp. equality) of the underlying sets).
+
+First applying 2.7 to the inclusion morphism $H\to G$, one finds that $H$ is of finite type; similarly $H'$ is of finite type. It then follows from 2.8 that $H\cap H'$ is of multiplicative type and of finite type (one will note that the canonical functor from the category considered in 2.8 to the category $\Sch_{/S}$ commutes with finite projective limits).
+
+Formation of $H\cap H'$ commutes with extension of the base, in particular with formation of the fibers. On the other hand $H\subseteq H'$ (resp. $H=H'$) is equivalent to $H''=H$ (resp. $H''=H$ and $H''=H'$). Consider then the canonical homomorphisms $H''\to H$ and $H''\to H'$; then $U$ is the set of $s\in S$ such that the induced homomorphism $H''_s\to H_s$ is an isomorphism (resp. such that $H''_s\to H_s$ and $H''_s\to H'_s$ are isomorphisms). By 2.9, it follows that $U$ is open and closed, and that $H''_U\to H_U$ (resp. $H''_U\to H_U$ and $H''_U\to H'_U$) are isomorphisms.
+% Last sentence begins on PDF p. 6 and ends on p. 7.

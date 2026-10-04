@@ -1,0 +1,136 @@
+Note that such a $Z$ is necessarily of finite type over $S$ (since its fibers are), hence is uniquely determined as the largest central subgroup of multiplicative type of $G$. It is easy to give examples where $G$ (smooth and affine over $S$) admits a largest central subgroup $Z$ of multiplicative type, but where $Z$ is not a reductive center (\ie $G$ admits no reductive center), \cf for example 1.6; it nevertheless follows easily from IX~6.8 that a subgroup $Z$ of $G$ is a reductive center of $G$ if and only if it is a largest central subgroup of multiplicative type, and retains this property under every base change; see also 4.3 below.
+
+It is obvious from 4.1 that if $Z$ is the reductive center of $G$, then for every base change $S'\to S$, $Z_{S'}$ is the reductive center of $G_{S'}$. From this, and from the uniqueness of the reductive center, there follows, thanks to faithfully flat quasi-compact descent theory (SGA~1 VIII):
+\begin{proposition}{4.2}\label{XII.4.2}
+Let $G$ be an $S$-group prescheme of finite presentation over $S$ with affine fibers. If $G$ admits a reductive center locally for the faithfully flat quasi-compact topology, it admits a reductive center. For $Z$ to be a reductive center of $G$, it is necessary and sufficient that it be so locally for the fpqc topology.
+\end{proposition}
+Note also:
+\begin{proposition}{4.3}\label{XII.4.3}
+Let $G$ be an $S$-group prescheme of finite presentation with affine fibers, $Z$ a group sub-prescheme. For $Z$ to be a reductive center of $G$, it is necessary and sufficient that it be of multiplicative type, and that for every $s\in S$, $Z_s$ be a reductive center of $G_s$.
+\end{proposition}
+Indeed, it follows first from IX~5.6 b) that $Z$ is then central. Since the conditions considered are stable under base change, it remains to prove that every central homomorphism $u:H\to G$, with $H$ of multiplicative type and of finite type, factors through $Z$. Now, since $Z$ is central, $u$ and the canonical immersion $v:Z\to G$ define a group homomorphism
+\[
+w:H\times_S Z\to G.
+\]
+By IX~6.8 the latter admits an image group $K$, which is a subgroup of multiplicative type of $G$, and everything amounts to proving that one has $K=Z$. Now this is true fiber by fiber by the hypothesis on $Z$, and it now suffices to apply IX~5.1 bis, which completes the proof of 4.3.
+
+One will note that in criterion 4.3, the hypothesis that for every $s\in S$, $Z_s$ is the reductive center of $G_s$, is in fact purely geometric, \ie it suffices to verify it over the algebraic closure of $\kappa(s)$, as follows from the second assertion of 4.2.
+\begin{theorem}{4.4}\label{XII.4.4}
+Let $G$ be an affine algebraic group over a field $k$. Then $G$ admits a reductive center.
+\end{theorem}
+Since the center of $G$ is representable by a closed subgroup of $G$ (VIII~6.7), one is at once reduced to the case where $G$ is commutative. In addition, by 4.2 one can suppose $k$ algebraically closed. We shall see in XVII that in this case $G$ is written as a product $Z\times U$, where $Z$ is of multiplicative type and $U$ ``unipotent'', whence it will follow at once that $Z$ is indeed a reductive center of $G$.
+
+We shall give here a proof independent of the structure theorem for commutative algebraic groups in the general form just indicated.
+
+Note that it follows from IX~6.8 that the set of subgroups $H$ of multiplicative type of $G$ is increasingly filtered. Let us show that it admits a largest element.
+
+When $G$ is smooth over $k$, one applies the structure theorem BIBLE~4 th.~4,
+\[
+G=G_s\times G_u,
+\]
+with $G_s$ of multiplicative type and $G_u$ ``unipotent'', which means here that $G_u$ admits a composition series whose factors are subgroups (smooth, if one wishes) of $\Ga$. (Indeed, $G_u/G_u^0$ is a unipotent group by BIBLE~4, cor. to th.~3, hence a $p$-group, where $p=\text{characteristic exponent}$, thanks to BIBLE~4 prop.~4; on the other hand $G_u^0$ admits a composition series with smooth connected quotients of dimension~1 by BIBLE~6 th.~1, cor.~1, and the latter are isomorphic to $\Ga$ by BIBLE~7 th.~4). Now one sees easily (\cf the lemma below) that every homomorphism from a group of multiplicative type to $\Ga$, hence also to $G_u$, is trivial, which does indeed prove that every subgroup of multiplicative type of $G$ is contained in $G_s$.
+
+In the general case, consider the subgroup
+\[
+G_0=G_{\mathrm{red}}
+\]
+of $G$, which is smooth over $k$, hence by the preceding admits a largest subgroup $Z_0$ of multiplicative type. The subgroups of multiplicative type of $G$ containing $Z_0$ correspond to subgroups of multiplicative type of $G'=G/Z_0$. Now one has an exact sequence
+\[
+0\to G_0/Z_0\to G/Z_0\to G/G_0\to0,
+\]
+where, by the preceding, $G_0/Z_0$ has no subgroup of multiplicative type except the identity group. Since a subgroup of a group of multiplicative type is of multiplicative type (IX.8), it follows that for every subgroup $H$ of multiplicative type of $G/Z_0$, one has $H\cap(G_0/Z_0)=0$, hence $H\to G/G_0$ is injective. Since $G/G_0$ is a radicial algebraic group, hence finite over $k$, this implies that $H$ is itself radicial and of rank bounded above by that of $G/G_0$. This implies that the family of subgroups of multiplicative type of $G$ admits a largest element, say $Z$.
+
+I say that $G/Z$ has no subgroup of multiplicative type other than the identity subgroup. This follows from the fact (proved in 7.1.1) that a commutative extension of two algebraic groups of multiplicative type is of multiplicative type: thus, if $Z'$ is the inverse image in $G$ of a subgroup of multiplicative type of $G/Z$, then $Z'$ is of multiplicative type, hence $Z'=Z$ by the maximal character of $Z$, so $Z'/Z=0$.
+
+It now follows easily from the ``finite extension principle'' that for every extension $K$ of $k$, $(G/Z)_K=G_K/Z_K$ has no subgroup of multiplicative type except the identity group either.
+
+We can now prove that $Z$ is a reductive center of $G$. Indeed, let $u:H\to G_S$ be a homomorphism of $S$-groups, where $S$ is a prescheme over $k$ and $H$ a group of multiplicative type and of finite type over $S$; let us prove that $u$ factors through $Z_S$. It amounts to the same thing to say that the composite homomorphism $H\to G_S\to(G/Z)_S=G_S/Z_S$ is zero.
+
+Now I say that, putting $U=G/Z$, every homomorphism $u:H\to U_S$ is zero. Indeed, by IX~5.2 one is reduced to the case where $S$ is the spectrum of a field, and by IX~6.8 this then follows from the fact that $U_K$ has no subgroup of multiplicative type other than $0$. This completes the proof of 4.4. It remains only to set down the proof of the
+\begin{lemma}{4.4.1}\label{XII.4.4.1}
+Let $H$ be an $S$-group prescheme of multiplicative type; then every homomorphism of $S$-groups $u:H\to\Ga$ is trivial.
+\end{lemma}
+Indeed, consider the module $\OS^2=E$ as an extension of $\OS=E'$ by $\OS=E''$; then $\Ga$ is identified with the prescheme of automorphisms of this extension, so a homomorphism $u:H\to\Ga$ is identified with an $H$-module structure on $E$ respecting the extension structure, \ie such that $E'$ is stable under $H$ and that the actions induced by $H$ on $E'$ and $E''$ are trivial. By I~4.7.3 it follows that $H$ acts trivially on $E$, hence $u$ is trivial. \hfill Q.E.D.
+\begin{remark}{4.4.2}\label{XII.4.4.2}
+If $G$ is a nonzero abelian variety over $k$, then $G$ admits no reductive center in the sense of 4.1 with the restriction ``$G$ affine'' omitted, for, for $n$ prime to the characteristic, ${}_nG$ is étale over $k$ of order prime to the characteristic, hence of multiplicative type; but the family of ${}_nG$ is schematically dense in $G$, so if there were a reductive center, it would be identical to $G$, which is absurd, $G$ not being of multiplicative type. This is the reason for imposing in 4.1 the restriction that $G$ have affine fibers.
+\end{remark}
+\begin{lemma}{4.5}\label{XII.4.5}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme smooth over $S$, affine over $S$, with connected fibers, $T$ a maximal torus of $G$, $u:H\to G$ a central homomorphism, with $H$ an $S$-group prescheme of multiplicative type and of finite type. Then $u$ factors through $T$.
+\end{lemma}
+Indeed, let $C$ be the centralizer of $T$, which is a closed group sub-prescheme of $G$ smooth over $S$ (XI~5.3), hence affine over $S$. Since $T$ is in the center of $G$, it is invariant, and one can consider the quotient group $G/T=U$, which is representable (VIII~5.1). Since $u$ is central, it factors through $C$, and everything amounts to proving that the composite homomorphism $H\to C\to U=C/T$ is trivial. By IX~5.2 one is reduced to the case where $S$ is the spectrum of a field, which one can suppose algebraically closed. But then by BIBLE~6, th.~2, $U$ is a connected algebraic group (smooth over $k$) ``unipotent'', which means, as we have already observed, that it admits a composition series with quotients isomorphic to $\Ga$. Thus every homomorphism from a group $H$ of multiplicative type and of finite type to $U$ is trivial. This proves 4.5.
+% typo?: "T is in the center of G" and G/T, later C/T, kept as printed.
+\begin{corollary}{4.6}\label{XII.4.6}
+Let $G$ be as in 4.5. If $G$ admits a reductive center, the latter is contained in every maximal torus of $G$.
+\end{corollary}
+\begin{theorem}{4.7}\label{XII.4.7}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme, smooth over $S$, affine over $S$, and with connected fibers.
+\begin{enumerate}[label=\alph*)]
+\item For every $s\in S$, let $z(s)$ be the type of the reductive center of $G_s$ (which is defined by 4.4). Order the set $E$ of isomorphism classes of $\ZZ$-modules of finite type by declaring that the class of $M$ is greater than that of $M'$ if $M'$ is isomorphic to a quotient of $M$. Then the map $S\to E$, $s\mto z(s)$ is lower semicontinuous.
+\item For $G$ to admit a reductive center $Z$, it is necessary and sufficient that the preceding function $z:S\to E$ be locally constant. If this is so, $G/Z$ is representable (\cf VIII~5.1), and $G/Z$ admits the identity subgroup as reductive center.
+\item Suppose that the reductive rank of $G$ is locally constant (\cf 1.7 b)). Then $G$ admits a reductive center $Z$. If $G/Z$ is representable (for example $G$ affine over $S$), then in addition the maximal tori $T$ of $G$ (resp. the Cartan subgroups $C$ of $G$) and $T'$ (resp. $C'$) of $G'=G/Z$ are in one-to-one correspondence, $T$ (resp. $C$) corresponding to $T'=T/Z$ (resp. $C'=C/Z$), and $T'$ (resp. $C'$) corresponding to $T=\varphi^{-1}(T')$ (resp. $C=\varphi^{-1}(C')$), where $\varphi:G\to G'$ is the canonical homomorphism.
+\item Let $T$ be a maximal torus of $G$, denote by $\mathfrak g$ the Lie algebra of $G$, and consider the homomorphism
+\[
+\theta:T\to\GL(\mathfrak g),
+\]
+induced by the adjoint representation of $G$ (II~4). Then the kernel of $\theta$ is a reductive center of $G$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+a) and b). The proof of a) and of the first assertion in b) is essentially identical to that of 1.7 a) and b), and we dispense with reproducing the argument here. Let us only point out that in a) one must appeal to IX~5.6 (using the fact that $G$ has connected fibers). Let us prove the second assertion of b), \ie that if $Z$ is a reductive center of $G$, then $G'=G/Z$ admits the identity subgroup as reductive center. Note at once that by VIII~5.1 the quotient group $G/Z$ is indeed representable; it is affine over $S$, of finite presentation over $S$ (VIII~5.8) and even smooth over $S$ (for it suffices to see this for the fibers, $G'$ being flat of finite presentation over $S$, but for the fibers it was pointed out in VI$_{\mathrm B}$.9.2.(xii) that a quotient of a smooth algebraic group over a field $k$ is smooth); finally, since $G$ has connected fibers, so does $G'$. Thus $G'$ satisfies the same initial hypotheses as $G$. To see that the identity subgroup of $G'$ is a reductive center, one can restrict oneself if one wishes to the case where $S$ is the spectrum of a field (4.3). Let $Z'$ be a central subgroup of multiplicative type of $G'$; everything amounts to proving that $Z'$ is reduced to the identity group. Let $Z_1$ be the inverse image of $Z'$ in $G$, and consider the action of $Z_1$ on $G$ induced by inner automorphisms of $G$. Since $Z$ is central, $Z$ acts trivially, so $Z_1$ acts through an action of $Z'$ on $G$. Moreover, since $Z$ is in the center of $G$, $Z_1$, hence $Z'$, acts trivially on $Z$; in addition, since $Z'$ is in the center of $G'$, the action of $Z'$ on the quotient $G/Z=G'$ is also trivial. Since $Z$ is central, it follows at once that the action of $Z'$ on $G$ comes from a group homomorphism
+\[
+u:Z'\to\uHom_{S\text{-gr}}(G',Z),
+\]
+by
+\[
+r(z')\cdot g=g\cdot u(z')(\varphi(g)),
+\]
+where $r:Z'\to\underline{\Aut}_{S\text{-gr}}(G)$ is the representation considered of $Z'$ by automorphisms of $G$, $\varphi:G\to G'$ the canonical homomorphism. Now giving a group homomorphism $u$ as above amounts to giving a group homomorphism
+\[
+v:G'\to\uHom_{S\text{-gr}}(Z',Z),
+\]
+and, on the other hand, by X~5.8 the second member is representable and is an étale group over $S$, hence its identity section is an open immersion, so $\Ker v$ is an open subgroup of $G'$. Since $G'$ has connected fibers, it is equal to $G'$, hence $v$ is zero, so $u$ is zero, so $Z'$ acts trivially on $G$, hence so does $Z_1$, which is therefore \emph{central} in $G$. Thus $Z_1$ is a \emph{commutative} extension of a group $Z'$ of multiplicative type by a group $Z$ of multiplicative type, hence (since we are over a field) is a group of multiplicative type (7.1.1). Being central in $G$, it is contained in the reductive center $Z$, \ie $Z_1=Z$, whence $Z'=\text{identity group}$, which completes the proof of b).
+
+d) Let $Z=\Ker\theta$, which is a subgroup of multiplicative type of $T$ (for example by IX~6.8). By 4.5, every central homomorphism $u:H\to G$, with $H$ of multiplicative type and of finite type, factors through $T$, hence through $Z$. Since the formation of $Z$ is compatible with every base change, it remains to prove that $Z$ is central, \ie that the centralizer $C$ of $Z$ is equal to $G$. Now, by XI~5.3, $C$ is a smooth closed subgroup of $G$; on the other hand, since $Z$ acts trivially on $\mathfrak g$, one sees that $\Lie(C)=\mathfrak g$. One concludes easily that $C=G$: indeed, the immersion $C\to G$ is étale, for it is so fiber by fiber (as an unramified homomorphism of smooth algebraic groups of the same dimension, VI$_{\mathrm B}$.1.3), and one can apply X~3.5. Thus $C\to G$ is an étale closed immersion, hence an open immersion (SGA~1 I~5.1), and since it is also a closed immersion and $G$ has connected fibers, it is an isomorphism.
+
+c) By 1.7 b), $G$ admits locally for the fpqc topology a maximal torus, so by 4.2 and d) just proved, $G$ admits a reductive center $Z$. We saw in d) that every maximal torus $T$ of $G$ contains $Z$. One observes at once that $T'=T/Z$ is a torus; to prove that it is a maximal torus in $G'$, one is reduced by definition 1.3 to the case where $S$ is the spectrum of an algebraically closed field, and then the assertion is contained in BIBLE~7 th.~3a). Conversely, let $T'$ be a maximal torus of $G'$, and let $T=\varphi^{-1}(T')$; let us prove that $T$ is a maximal torus of $G$. Since the question is local for the fpqc topology, one can suppose that $G$ already admits a maximal torus, say $T_0$, so that by the preceding, $T'_0=T_0/Z_0$ is a maximal torus of $G'$. By conjugacy theorem 1.7 c), $T'$ and $T'_0$ are locally conjugate for the fpqc topology, hence (since $\varphi:G\to G'$ is covering for this topology, so every section of $G'$ lifts locally to a section of $G$) $T$ and $T_0$ are likewise locally conjugate. Since $T$ is a maximal torus, so is $T$. One proceeds analogously for Cartan subgroups. This completes the proof.
+% typo?: T'_0=T_0/Z_0 and "Since T is a maximal torus, so is T" kept as printed.
+\end{proof}
+
+Let us give a useful translation of d) in the case where $T$ is diagonalizable, hence of the form $D_S(M)$, where $M$ is a free $\ZZ$-module of finite type. Then (I~4.7.3) the $T$-module $\mathfrak g$ decomposes as a direct sum of sub-$T$-modules $\mathfrak g_m$ ($m\in M$):
+\[
+\mathfrak g=\coprod_{m\in M}\mathfrak g_m,
+\]
+which are necessarily locally free.
+
+Suppose that for every $m\in M$, the rank of $\mathfrak g_m$ is constant (which is the case in particular if $S$ is connected). Then the set $R$ of $m\in M$ such that $\mathfrak g_m\ne0$ (``roots'') is finite. This being said:
+\begin{corollary}{4.8}\label{XII.4.8}
+Under the preceding conditions and with the preceding notation, the reductive center of $G$ is the intersection of the kernels of the root characters $m\in R$ on $T$. One therefore has an isomorphism
+\[
+Z\simeq D_S(N),
+\]
+where $N$ is the quotient of $M$ by the subgroup generated by $R$.
+\end{corollary}
+\begin{corollary}{4.9}\label{XII.4.9}
+Let $G$ be an algebraic group over an algebraically closed field $k$. Suppose $G$ smooth over $k$, connected affine, with reductive center reduced to the identity group, and that the Lie algebra $\mathfrak g$ of $G$ is nilpotent. Then $G$ is ``unipotent'', \ie admits a composition series with quotients isomorphic to $\Ga$.
+\end{corollary}
+By BIBLE~6, th.~4, cor.~3, it suffices to prove that a maximal torus $T$ of $G$ is reduced to the identity group, or, what amounts to the same thing, that the Lie algebra $\mathfrak t$ of $T$ is reduced to $0$. Now it follows from the fact that the $T$-module $\mathfrak g$ decomposes according to the characters $\alpha$ of $T$ (I~4.7.3), that for every $t\in\mathfrak t$, the operation $\operatorname{ad}_{\mathfrak g}(t)$ on $\mathfrak g$ is semisimple. Thus if $\mathfrak g$ is nilpotent, $\operatorname{ad}_{\mathfrak g}(t)$ is zero. But by 4.7 d), since the reductive center of $G$ is reduced to the neutral element, the homomorphism $T\to\GL(\mathfrak g)$ is a monomorphism, hence induces an injective map on the Lie algebras, which means (II~4.5.) that for $t\in\mathfrak t$, the relation $\operatorname{ad}_{\mathfrak g}(t)=0$ implies $t=0$. This proves that $\mathfrak t=0$ and completes the proof.
+\begin{proposition}{4.10}\label{XII.4.10}
+Let $G$ be a smooth connected affine algebraic group over an algebraically closed field $k$. Then the reductive center of $G$ is the intersection of the maximal tori of $G$.
+\end{proposition}
+Of course, this is the intersection in the schematic sense (or, what amounts to the same thing, in the sense of subfunctors of $G$), \ie the largest closed sub-prescheme of $G$ contained in the maximal tori of $G$. It follows from the noetherian character of $G$ that it is also the intersection of a suitable \emph{finite} set of maximal tori of $G$.
+
+Let $Z$ be the intersection in question; $Z$ is a closed subgroup of a torus, hence is of multiplicative type, and, on the other hand, by 4.5 it contains the reductive center of $G$. To prove that it is equal to it, it remains to prove that it is central. Since $G$ is connected, it suffices by IX~5.5 to prove that $Z$ is \emph{invariant}. Now by construction $Z$ is invariant under the $\operatorname{int}(g)$, with $g\in G(k)$, so the normalizer $N$ of $Z$ (\cf VIII~6.7) is a closed subgroup of $G$ containing the rational points of $G$. Since $G$ is reduced, one has $N=G$, which completes the proof.
+\begin{proposition}{4.11}\label{XII.4.11}
+Let $S$ be a prescheme, $G$ an $S$-group prescheme smooth over $S$, affine over $S$, with connected fibers, and of zero unipotent rank, which implies (1.9) that $G$ has locally constant reductive rank, hence (1.10) that the ``prescheme of maximal tori of $G$'' is defined, say $\mathscr T$, and is smooth, separated, of finite type over $S$.
+Make $G$ act on $\mathscr T$ via inner automorphisms, whence a homomorphism of group functors
+\[
+u:G\to\underline{\Aut}_S(\mathscr T).
+\]
+Under these conditions, the following three subfunctors of $G$ are identical:
+\begin{enumeratei}
+\item The reductive center $Z$ of $G$.
+\item The center $Z'$ of $G$.
+\item The kernel $Z''=\Ker u$ of the preceding homomorphism.
+\end{enumeratei}
+In particular, the center of $G$ is representable by a subgroup of multiplicative type of $G$.
+\end{proposition}

@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper,oneside]{amsbook}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[american]{babel}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=1.1in}
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\usepackage{sga3-en}
+\usepackage[hidelinks]{hyperref}
+
+\title[SGA~3, Expos\'e XXIV (English draft)]{Automorphisms of reductive groups\\
+{\normalsize SGA~3, Expos\'e XXIV\\English draft}}
+\author{M.\ Demazure}
+\date{}
+\hypersetup{
+  pdftitle={Automorphisms of reductive groups},
+  pdfauthor={M. Demazure},
+  pdfsubject={Unofficial English translation of SGA 3}
+}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\chapter*{About this draft}
+This is an unofficial English translation of Expos\'e~XXIV, ``Automorphisms of reductive groups''
+from \textit{Sch\'emas en groupes} (SGA~3).
+The source is the recomposition edited by P.~Gille and P.~Polo,
+PDF \texttt{Exp24-13oct24.pdf} (54~pages),
+from \url{https://webusers.imj-prg.fr/~patrick.polo/SGA3/}.
+The seminar was directed by M.~Demazure and A.~Grothendieck
+(IH\'ES, 1962--1964).
+
+Statement numbers follow that PDF. A clear typographical slip is
+corrected in the English and marked with a \texttt{\% typo:} comment;
+such slips are listed in the README. A slip that would change the
+mathematics is left as printed and marked \texttt{\% typo?:}.
+Scholarly proofreading remains outstanding.
+
+The translator's contribution is licensed under the MIT License.
+The French original remains copyright of its authors and publishers.
+
+\tableofcontents
+\mainmatter
+\input{en-01.tex}
+\input{en-02.tex}
+\input{en-03.tex}
+\input{en-04.tex}
+\input{en-05.tex}
+\input{en-06.tex}
+\input{en-07.tex}
+\input{en-08.tex}
+\end{document}

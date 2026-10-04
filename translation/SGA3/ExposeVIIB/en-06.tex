@@ -1,0 +1,159 @@
+On the other hand, the hypothesis implies that $I$ is a projective pseudocompact $k$-module (since it is a direct factor of $A=H^*$), whence, by 0.3.6,
+\[
+(\overline{I^r}\widehat\otimes I)^\dagger\simeq(\overline{I^r})^\dagger\otimes I^\dagger=(\overline{I^r})^\dagger\otimes H^+.
+\]
+Then the exact sequence
+\[
+\overline{I^r}\widehat\otimes I\to A\to A/\overline{I^{r+1}}\to0
+\]
+gives by duality the exact sequence
+\begin{equation}\tag{1}
+(\overline{I^r})^\dagger\otimes H^+\xleftarrow{\delta}H\from(A/\overline{I^{r+1}})^\dagger\from0,
+\end{equation}
+where $\delta$ is obtained by composing $\Delta_H$ with the projection
+\begin{equation}\tag{2}
+H\otimes H\to H\otimes H^+\to(H/H_{r-1})\otimes H^+\hookrightarrow(\overline{I^r})^\dagger\otimes H^+.
+\end{equation}
+Now, for every $u\in H$, the projection of $\Delta(u)$ to $H\otimes H^+$ is $\Delta(u)-u\otimes\varphi$. Then (1) and (2) show that, if $u$ belongs to $(A/\overline{I^{r+1}})^\dagger=(\overline{I^{r+1}})^\perp$, $\Delta(u)-u\otimes\varphi$ belongs to the kernel of the map $H\otimes H^+\to(H/H_{r-1})\otimes H^+$, that is, to $H_{r-1}\otimes H^+$, and hence $u\in H_r$. This completes the proof of parts (i) and (ii), and also shows that $H_n=\Ker(\overline\Delta^{\,n})$.
+Let us prove (iii). For every $i\geq0$, put $H_i^+=H_i\cap H^+$. Let $n\geq1$. For every $x\in H_n$, $\overline x=x-\varepsilon(x)\varphi$ belongs to $H_n^+$, and one has
+\[
+\Delta(x)=\varepsilon(x)\varphi\otimes\varphi+\overline x\otimes\varphi+\varphi\otimes\overline x+\overline\Delta(\overline x).
+\]
+Thus it suffices to show that
+\[
+\overline\Delta(H_n^+)\subset\sum_{i=1}^{n-1}H_i^+\otimes H_{n-i}^+.
+\]
+For every $i=0,\ldots,n-1$, $\overline\Delta^{\,n}$ factors as
+\[
+\xymatrix@C=12pt@R=20pt{
+H^+\ar[r]^{\overline\Delta}&H^+\otimes H^+\ar[r]^{\overline\Delta^{\,i}\otimes\overline\Delta^{\,n-i-1}}\ar[d]&(H^+)^{\otimes(i+1)}\otimes(H^+)^{\otimes(n-i)}\\
+&\dfrac{H^+}{H_i^+}\otimes\dfrac{H^+}{H_{n-i-1}^+}\ar[r]^f&\dfrac{H^+}{H_i^+}\otimes(H^+)^{\otimes(n-i)}\ar[u]^g.}
+\]
+Moreover, since $H^+/H_i^+$ and $(H^+)^{\otimes(n-i)}$ are flat, the maps $f$ and $g$ above are injective. It follows that $\overline\Delta(H_n^+)$ is contained in $H_i^+\otimes H^++H^+\otimes H_{n-i-1}^+$ for every $i=0,\ldots,n-1$. Part (iii) then follows from the lemma below applied to $M=H^+$ and $E_i=H_{i-1}^+$.
+\end{proof}
+
+\begin{lemma}{1.3.6.B}\label{VIIB.1.3.6.B}
+Let $k$ be a ring and $0=E_0\subset E_1\subset\cdots E_n\subset M$ be $k$-modules. Suppose that $M/E_i$ is flat for every $i$. Then one has the equality
+\[
+\bigcap_{i=0}^n(E_i\otimes M+M\otimes E_i)=\sum_{i=1}^n E_i\otimes E_{n-i+1}.
+\]
+% typo?: both terms on the left are indexed i in the printed formula; retained.
+\end{lemma}
+Denote by $K$ (resp. $S$) the left-hand (resp. right-hand) term. One easily sees that $S\subset K$; let us prove the converse. For $i=0,\ldots,n$, put $K_i=K\cap(E_i\otimes M)$. For every $i=1,\ldots,n$, since $M/E_{n-i+1}$ and $E_i/E_{i-1}$ are flat, the map $\tau_i$ below is injective, and the composite map
+\[
+\begin{aligned}
+(E_i/E_{i-1})\otimes M&\to(E_i/E_{i-1})\otimes(M/E_{n-i+1})\\
+&\lhook\joinrel\xrightarrow{\tau_i}(M/E_{i-1})\otimes(M/E_{n-i+1})
+\end{aligned}
+\]
+has kernel $(E_i/E_{i-1})\otimes E_{n-i+1}$. Since the image of $K_i$ in $(E_i\otimes M)/(E_{i-1}\otimes M)$ is contained in, and contains, this kernel, one deduces that
+\[
+K_i=K_{i-1}+E_i\otimes E_{n-i+1},
+\]
+whence the lemma.
+\nde{We have added what follows; the original was restricted to the case where $k$ is artinian.}To finish this paragraph, let us return to an arbitrary pseudocompact ring $k$. Let $(\mathbf H,\Delta,\varepsilon)$ be a flat $\mathbf O_k$-coalgebra, $\mathbf H^+=\Ker(\varepsilon)$, $A=\Gamma^*(\mathbf H)$ the dual profinite $k$-algebra, and $X=\Spf(A)$, so that $\mathbf H=\mathbf H(X)$ (cf. 1.3.5). Suppose that a morphism of $\mathbf O_k$-coalgebras $\varphi:\mathbf O_k\to\mathbf H$ is given; it defines a continuous morphism of $k$-algebras $A\to k$, and hence a section $\sigma$ of the structural morphism $X\to\Spf(k)$.
+% typo: "une morphisme" -> "a morphism".
+For every object $B$ of $\mathbf{Alf}/k$, write $\mathbf H_0(B)=\varphi(B)=B\varphi_B$, where $\varphi_B$ is the element $\varphi(1_B)$ of $\mathbf H(B)$, and define $\mathbf O_k$-submodules $\mathbf H_n$ of $\mathbf H$ by putting, for $n\geq1$,
+\[
+\mathbf H_n(B)=\{u\in\mathbf H(B)\mid\Delta(u)-u\otimes\varphi_B\in\mathbf H_{n-1}(B)\otimes\mathbf H^+(B)\}.
+\]
+In this way one obtains a filtration $\mathbf H_0\subset\mathbf H_1\subset\cdots$ of $\mathbf H(X)$. By the foregoing, one has:
+\begin{proposition}{}
+For $\sigma$ to induce an isomorphism on the underlying topological spaces, it is necessary and sufficient that $\mathbf H(X)$ be the union of the $\mathbf H_n$.
+\end{proposition}
+
+\begin{enonce}{1.4. Theorem}{}\label{VIIB.1.4}
+Let $k$ be a pseudocompact ring and $d_0,d_1:X_1\rightrightarrows X$ an equivalence pair in $\mathbf{Vaf}/k$ (cf. Exp. V, § 2.b) such that $d_1$ is topologically flat.
+\begin{enumeratei}
+\item The canonical projection from $X$ to $X/X_1$ ($=\Coker(d_0,d_1)$) is surjective and topologically flat, and the morphism $X_1\to X\times_{X/X_1}X$ with components $d_0$ and $d_1$ is an isomorphism.
+\item If $X$ is topologically flat over $k$, so is $X/X_1$.
+\end{enumeratei}
+\end{enonce}
+First note that (ii) follows from (i), by 1.3.3(ii). The proof of (i) occupies paragraphs 1.4.1, 1.4.2, and 1.4.3.
+\numpara{1.4.1}Let us first show that one can reduce to the case where $X$ has a single point. Since we are dealing with an equivalence pair, one sees as in Exp. V, § 3.e) that one defines an equivalence relation on the set underlying $X$ by declaring two points $x,y$ equivalent if there exists a point $z$ of $X_1$ such that $d_0(z)=y$ and $d_1(z)=x$. One can evidently suppose without loss that $X$ contains a single equivalence class for this relation, in other words that $X/X_1$ has a single point (see the construction of $X/X_1$ given in 1.2).
+In this case, let $x$ be any point of $X$ and $U$ the formal variety which has $x$ as its sole point and has the same local ring as $X$ at $x$. One then sees as in Exp. V, § 6 that the equivalence relation induced by $(d_0,d_1)$ on $U$ still satisfies the hypotheses of the theorem, and that it suffices to prove it for this latter equivalence relation ($U$ is a ``quasi-section'').
+Let us briefly recall the principle of the proof given in Exp. V, § 6. Put $V=d_0^{-1}(U)=U\times_{i,d_0}X_1$, where $i$ is the inclusion of $U$ in $X$; let $u$ and $v$ be the morphisms with source $V$ induced respectively by $d_0$ and $d_1$:
+\[
+X\xleftarrow{v}V\xrightarrow{u}U.
+\]
+It is clear that $u$ and $v$ are topologically flat and $u$ is surjective; since $X$ contains a single equivalence class, $v$ is surjective. If $(v_0,v_1)$ is the inverse image of the equivalence pair $(d_0,d_1)$ under $v$ (cf. V, 3.a)), it follows from V, 3.c) and 3.d) that $X/X_1$ and the quotient of $U$ by the equivalence relation induced by $(d_0,d_1)$ are both identified with $\Coker(v_0,v_1)$. One then sees, as in the proof of V, 6.1, that if the conclusion of Theorem 1.4 holds for $U$, it also holds for $X$.
+
+\numpara{1.4.2}One is thus reduced to the case where $X$ has a single point.\nde{One can therefore suppose that $k$ is local.} Consider then the following commutative diagram (cf. V, § 1, (0,1,2)):
+\[
+\xymatrix{
+X_2\ar@<.5ex>[r]^{d'_1}\ar@<-.5ex>[r]_{d'_0}\ar[d]_{d'_2}&X_1\ar[r]^{d_0}\ar[d]^{d_1}&X\ar[d]\\
+X_1\ar@<.5ex>[r]^{d_1}\ar@<-.5ex>[r]_{d_0}&X\ar[r]&X/X_1}
+\]
+where $X_2$ is the fibered product $X_1\times_{d_1,d_0}X_1$, and $d'_0,d'_1,d'_2$ are respectively the morphisms ``$(x,y,z)\mto(x,y)$'', ``$(x,y,z)\mto(x,z)$'', and ``$(x,y,z)\mto(y,z)$''.\nde{Cf. Exp. V, § 2.b).}
+If $B,A,A_1,A_2$ denote respectively the affine algebras of $X/X_1,X,X_1,X_2$, the preceding diagram induces a commutative diagram
+\[
+\xymatrix{
+A_2&A_1\ar@<-.5ex>[l]_{j_1}\ar@<.5ex>[l]^{j_0}&A\ar[l]_{i_0}\\
+A_1\ar[u]^{j_2}&A\ar[u]^{i_1}\ar@<-.5ex>[l]_{i_1}\ar@<.5ex>[l]^{i_0}&B\ar[u]^i\ar[l]_i}
+\]
+in which both rows are exact and the squares determined by $(i_0,j_0)$ and $(i_1,j_1)$ are cocartesian. Since the morphism $X_1\to X\times X$ with components $d_0,d_1$ is a monomorphism by hypothesis, the morphism $A\widehat\otimes_k A\to A_1$ with components $i_0,i_1$ is surjective, by Proposition 1.3.
+This means that $i_1$ makes $A_1$ a pseudocompact $A$-module (assumed topologically free) generated by $i_0(A)$. Since $A$ is local, Lemma 1.4.3 below implies the existence of a topologically free $k$-module $V$ and a morphism of pseudocompact $k$-modules $f:V\to A$ such that the morphism
+\[
+\alpha_1:A\widehat\otimes_k V\to A_1,\qquad a\widehat\otimes v\mto i_1(a)\cdot i_0(f(v))
+\]
+is invertible. Let $\alpha:B\widehat\otimes_k V\to A$ and $\alpha_2:A_1\widehat\otimes_k V\to A_2$ be the morphisms
+\[
+b\widehat\otimes v\mto i(b)\cdot f(v)\qquad\text{and}\qquad
+a_1\widehat\otimes v\mto j_2(a_1)\cdot j_0i_0(f(v)).
+\]
+In the following commutative diagram, both rows are therefore exact and the two left-hand squares are cocartesian. Since $\alpha_1$ is invertible, so is $\alpha_2$, hence so is $\alpha$.
+\[
+\xymatrix@C=32pt{
+A_2&A_1\ar@<-.5ex>[l]_{j_1}\ar@<.5ex>[l]^{j_0}&A\ar[l]_{i_0}\\
+A_1\widehat\otimes_k V\ar[u]^{\alpha_2}&A\widehat\otimes_k V\ar[u]^{\alpha_1}\ar@<-.5ex>[l]_{i_1\widehat\otimes V}\ar@<.5ex>[l]^{i_0\widehat\otimes V}&B\widehat\otimes_k V\ar[u]^\alpha\ar[l]_{i\widehat\otimes V}.}
+\]
+This shows, on the one hand, that $A$ is topologically free over $B$ with pseudobasis $f(V)$ (cf. 0.2.1), and that one obtains a pseudobasis of $A_1$ over $A$ (where $A_1$ is considered as an $A$-module by means of $i_1$) by taking the image of $f(V)$ under $i_0$; this implies that the morphism $A\widehat\otimes_B A\to A_1$ with components $i_1,i_0$ is invertible:
+\[
+A\widehat\otimes_B A\simeq A\widehat\otimes_B B\widehat\otimes_k V\simeq A\widehat\otimes_k V\simeq A_1.
+\]
+This proves Theorem 1.4, modulo the following Lemma 1.4.3.
+
+\begin{enonce}{1.4.3. Lemma}{}\label{VIIB.1.4.3}
+Let $k$ be a pseudocompact ring, $A$ a local profinite $k$-algebra, $A_1$ a topologically free $A$-module, and $i_0:M\to A_1$ a morphism of pseudocompact $k$-modules. Suppose that the map
+\[
+A\widehat\otimes_k M\to A_1,\qquad a\widehat\otimes m\mto a\cdot i_0(m)
+\]
+is surjective. There then exist a topologically free $k$-module $V$ and a morphism of pseudocompact $k$-modules $f:V\to M$ such that the map
+\[
+A\widehat\otimes_k V\to A_1,\qquad a\widehat\otimes v\mto a\cdot i_0(f(v))
+\]
+is bijective.
+\end{enonce}
+Since every pseudocompact $k$-module is a quotient of a topologically free $k$-module (cf. N.D.E. (27)), one can suppose without loss that $M$ is topologically free; take therefore for $M$ the direct product of a family $(M_i)_{i\in I}$ of copies of $k$. In this case $A\widehat\otimes_k M$ is precisely the product $\prod_{i\in I}A\widehat\otimes_k M_i$. Since the map $a\widehat\otimes m\mto a\cdot i_0(m)$ is surjective and $A_1$ is projective, the kernel of this map is a direct factor of $A\widehat\otimes_k M$; since $A$ is local, it follows from the exchange theorem (0.3.4) that this kernel has as a complement a partial product $\prod_{i\in J}A\widehat\otimes_k M_i$, where $J$ denotes some subset of $I$. One can therefore take $V=\prod_{i\in J}M_i$.
+
+\numpara{1.5}Let $k$ be a pseudocompact ring.
+\begin{definition}{}
+We shall say that a family of morphisms $f_i:X_i\to X$ of $\mathbf{Vaf}/k$ is a \emph{topologically flat surjective family} if the morphism $\coprod_i X_i\to X$ induced by the $f_i$ is surjective and topologically flat; this means that each $f_i$ is topologically flat and every point of $X$ belongs to the image of at least one of the $X_i$.
+\end{definition}
+It follows from 1.3.3 that topologically flat surjective families define a pretopology on $\mathbf{Vaf}/k$ (IV 4.2.5); the corresponding topology will be called the \emph{flat topology} on $\mathbf{Vaf}/k$.
+By IV, 4.3.5, a functor $\mathbf F:(\mathbf{Vaf}/k)^0\to\Ens$ is a sheaf for the flat topology if and only if $\mathbf F$ transforms every direct sum into a direct product and the sequence
+\[
+\xymatrix{\mathbf F(Y)\ar[r]^{\mathbf F(f)}&\mathbf F(X)\ar@<.5ex>[r]^{\mathbf F(\mathrm{pr}_1)}\ar@<-.5ex>[r]_{\mathbf F(\mathrm{pr}_2)}&\mathbf F(X\times_Y X)}
+\]
+is exact for every surjective topologically flat morphism $f:X\to Y$.
+\nde{We have modified the original in what follows. In particular, we have replaced the statement ``if $d_0,d_1:X_1\rightrightarrows X$ is an equivalence relation such that $d_1$ is topologically flat, formation of the quotient commutes with $h$'' by the theorem below.}By IV, 4.5, Proposition 1.3.1 implies that the flat topology is less fine than the canonical topology, \ie for every object $X$ of $\mathbf{Vaf}/k$, the functor $h_X:T\mto\Hom_{\mathbf{Vaf}/k}(T,X)$ is a sheaf for the flat topology. (In what follows, one identifies $X$ with $h_X$ as usual (cf. Exp. I).)
+By IV, 4.6.5, one can reformulate Theorem 1.4 as follows.
+\begin{theorem}{}
+Let $k$ be a pseudocompact ring, $d_0,d_1:X_1\rightrightarrows X$ an equivalence pair in $\mathbf{Vaf}/k$, and $X/X_1$ the quotient formal variety (\ie $\Coker(d_0,d_1)$, cf. 1.2). If $d_1$ is topologically flat, $X/X_1$ represents the quotient sheaf for the flat topology.
+\end{theorem}
+
+\numpara{1.6}To conclude these generalities on formal varieties, it remains to define briefly formal varieties étale over $k$.\nde{The original continued as follows: ``A formal variety $X$ over $k$ is said to be étale if the diagonal morphism $\Delta_X:X\to X\times X$ is a local isomorphism, that is, if $\Delta_X$ induces an isomorphism from $\OO_{X\times X,\Delta_X(x)}$ to $\OO_{X,x}$ for every point $x$ of $X$. One easily sees with the aid of SGA I that this formulation is equivalent to the following two: the formal variety $X$ is topologically flat, and, for every point $x\in X$ projecting to $s\in\Spf(k)$, $\OO_{X,x}\widehat\otimes_k\kappa(s)$ is a finite separable extension of the residue field $\kappa(s)$ of $s$; or again, if $A$ denotes the affine algebra of $X$, the local components (0.1) of $A\widehat\otimes_k(k/\mathfrak l)$ are finite étale algebras over $k/\mathfrak l$, for every open ideal $\mathfrak l$ of $k$.'' In what follows, we have rectified the omission of the flatness hypothesis in the first condition above, and detailed the equivalence of these conditions.}
+
+\begin{enoncerm}{Recollections}{1.6.A}\label{VIIB.1.6.A}
+\begin{enumeratei}
+\item First recall (cf. EGA $0_{\mathrm{IV}}$, 19.10.2) that a topological $k$-algebra $A$ is said to be \emph{formally étale over $k$} (for the given topologies on $k$ and $A$, resp. for the discrete topologies) if, for every discrete topological $k$-algebra $C$ (not necessarily artinian), and every nilpotent ideal $J$ of $C$, every continuous morphism of $k$-algebras $A\to C/J$ lifts uniquely to a continuous morphism $A\to C$ ($A$ being equipped with the given topology, resp. the discrete topology). One sees at once that this property is preserved by base change, \ie for every morphism $k\to k'$ of pseudocompact rings, $A\widehat\otimes_k k'$ is then formally étale over $k'$. Moreover, one easily sees that it suffices to verify the lifting condition for every square-zero ideal $J$; cf. EGA IV$_4$, 17.1.2(ii). One says that $A$ is \emph{étale over $k$} if it is formally étale over $k$ for the discrete topologies and if, in addition, $A$ is a finitely presented $k$-algebra (cf. EGA IV$_4$, 17.3.2(ii)). In what follows, $k$ being a pseudocompact ring and $A$ a profinite $k$-algebra, ``formally étale'' will be used in the sense of the given topologies (unless otherwise specified).
+\item Recall also that if $F\in k[T]$ is a monic polynomial of degree $d\geq1$ which is separable (\ie such that the ideal generated by $F$ and its derivative $F'$ is $k[T]$), then the $k$-algebra $B=k[T]/(F)$ (which is free of rank $d$ over $k$, and equipped with the product topology) is formally étale over $k$.
+% typo: "polynôme polynôme" -> "polynomial".
+Indeed, let $C$ be a discrete $k$-algebra (so that the kernel of $k\to C$ is an open ideal $\mathfrak l$ of $k$), $J$ a square-zero ideal of $C$, and $\phi:B\to C/J$ a continuous morphism of $k$-algebras. Note that, since $B$ is a free $k$-module of finite rank, $\mathfrak lB$ is an open ideal of $B$, so every lifting $\Phi:B\to C$ of $\phi$ is automatically continuous. Let $t$ be the image of $T$ in $B$ and $u_0$ any lifting of $\phi(t)$ in $C$; then $F(u_0)\in J$ (since $\phi(t)$ is a root of $F$); moreover, there exist $G,H\in k[T]$ such that $GF+HF'=1$, whence $H(u_0)F'(u_0)=1-G(u_0)F(u_0)$, and the right-hand term is invertible, since $F(u_0)$ has square zero, so $F'(u_0)$ is invertible. Seek $h\in J$ such that $x=x_0+h$ is a root of $F$; this is equivalent to $0=F(u)=F(u_0)+F'(u_0)h$, and since $F'(u_0)$ is invertible, this has the unique solution $h=-F'(u_0)^{-1}F(u_0)\in J$.
+% typo?: x, x_0, and u are printed although the lifting was called u_0; retained.
+Of course, the same proof (without making continuity assumptions for the morphisms $k\to C$, $\phi$, and $\Phi$) shows that $B$ is also an étale $k$-algebra.
+\item Finally, recall that if $A$ is a finite product $A_1\times\cdots\times A_n$, then $A$ is formally étale over $k$ if and only if the $A_i$ are.\nde{Let us point out in passing that the proof given in EGA $0_{\mathrm{IV}}$, 19.3.5(v) is erroneous.} Indeed, it suffices to see this for $n=2$; in this case let $e=1_{A_1}$ be the idempotent such that $A_1=Ae$ and $A_2=A(1-e)$, and suppose that a continuous morphism $A\to C/J$ is given, where $J$ is a square-zero ideal. Since the polynomial $F=X^2-X$ is separable (one has $F'=2X-1$ and $(F')^2-4F=1$), the idempotent $\phi(e)$ of $C/J$ lifts uniquely to an idempotent $f$ of $C$, whence $C=Cf\oplus C(1-f)$, and then giving a lifting of $\Phi$ is equivalent to giving two morphisms $\Phi_1:A_1\to Cf$ and $\Phi_2:A_2\to C(1-f)$ lifting the restrictions of $\phi$ to $A_1$ and $A_2$.
+% typo?: source says lifting of capital Phi; retained.
+The same argument shows that if $e$ is an idempotent of $k$ such that $A=Ae$, then $A$ is formally étale over $k$ if and only if it is so over the localization $k_e$ (which is identified with $ke$).
+\end{enumeratei}
+\end{enoncerm}

@@ -1,0 +1,214 @@
+\begin{proposition}{5.3.1}\label{XXII.5.3.1}
+Let $S$ be a scheme, $G$ an $S$-group of type (RA) (5.1.6), $H$ a subgroup of type (R) of $G$, $\mathfrak g\supset\mathfrak h$ their Lie algebras.
+
+Then $\uNorm_G(\mathfrak h)$ (which is representable by a closed subscheme of $G$ of finite presentation over $S$ by 5.3.0) is smooth over $S$ at every point of the identity section and one has
+\[
+\uNorm_G(\mathfrak h)^0=H.
+\]
+\end{proposition}
+\begin{proof}
+{\renewcommand{\thefootnote}{(30)}\nde{The original has been expanded in what follows.}}%
+Put $N=\uNorm_G(\mathfrak h)$ and $\mathfrak n=\uLie(N/S)$. One has $H\subset N$ and, by Exp.~II 5.3.1, one has for every $s\in S$
+\[
+\mathfrak h(s)\subset\mathfrak n(s)=\uNorm_{\mathfrak g(s)}(\mathfrak h(s)).
+\]
+Now, by 5.3.2 below, one has $\mathfrak h(s)=\uNorm_{\mathfrak g(s)}(\mathfrak h(s))$, and since $H$ is smooth over $S$, one has $\dim_{\kappa(s)}\mathfrak h(s)=\dim H_s$ (\cf [DG70], \S~II.5, Th.~2.1). One therefore obtains
+\[
+\dim_{\kappa(s)}\mathfrak n(s)=\dim_{\kappa(s)}\mathfrak h(s)=\dim H_s\le\dim N_s
+\]
+whence $N_s^0=H_s^0=H_s$ ($H$ having connected fibers). It follows that the subgroup functor $N^0$ (defined in VIB, 3.1) is represented by the smooth $S$-group $H$. This proves 5.3.1, modulo the following lemma:
+\end{proof}
+\begin{lemma}{5.3.2}\label{XXII.5.3.2}
+Under the conditions of 5.2.7, if $G$ is of type (RA), one has, for every $s\in S$,
+\[
+\uNorm_{\mathfrak g(s)}(\mathfrak h(s))=\mathfrak h(s).
+\]
+\end{lemma}
+Indeed, one is reduced to the case where $S$ is the spectrum of a field, hence where $\mathfrak h=\mathfrak g_{R'}$ for some $R'\subset R$. But one already has
+\[
+\uTransp_{\mathfrak g}(\mathfrak t,\mathfrak h)=\mathfrak h.
+\]
+Indeed, if $H\in\mathfrak t$ and $X\in\mathfrak g^\alpha$, one has $[H,X]=\overline\alpha(H)X$, where $\overline\alpha:\mathfrak t\to\OS$ is the derivative morphism of $\alpha$. Now condition (iv$'$) says precisely that $\overline\alpha\ne0$ for every $\alpha\in R$.
+\begin{corollary}{5.3.3}\label{XXII.5.3.3}
+Let $S$ be a scheme, $G$ an $S$-group of type (RA), $H$ and $H'$ two subgroups of type (R) of $G$, $\mathfrak h$ and $\mathfrak h'$ their Lie algebras. Then
+\[
+H=H'\quad\Longleftrightarrow\quad\mathfrak h=\mathfrak h'.
+\]
+\end{corollary}
+\begin{corollary}{5.3.4}\label{XXII.5.3.4}
+Under the conditions of 5.2.7, with $G$ of type (RA), the maps
+\[
+H\mto\uLie(H/S),\qquad\mathfrak h\mto\uNorm_G(\mathfrak h)^0
+\]
+establish a bijective correspondence between the set of subgroups of type (R) of $G$ containing $T$, and the set of Lie subalgebras of $\mathfrak g$ containing $\mathfrak g^0$, stable under $T$, and whose normalizer in $G$ is smooth over $S$ at every point of the identity section.
+\end{corollary}
+{\renewcommand{\thefootnote}{(31)}\nde{The following proof has been added.}}%
+Indeed, let $\mathfrak h$ be a Lie subalgebra of $\mathfrak g$ satisfying the above properties. By 5.3.0, $H=\uNorm_G(\mathfrak h)^0$ is a smooth $S$-group scheme. Moreover, since $C=\uCentr_G(T)$ stabilizes each $\mathfrak g^\alpha$ and has connected fibers (XII 6.6), one has $C\subset H$. Hence $H$ is a subgroup of $G$ of type (R). By Exp.~II 5.3.1, one has $\uLie(H)=\uNorm_{\mathfrak g}(\mathfrak h)$. Finally, by the proof of 5.3.2, one has $\uNorm_{\mathfrak g}(\mathfrak h)=\mathfrak h$.
+\begin{corollary}{5.3.5}\label{XXII.5.3.5}
+Let $S$ be a scheme, $G$ an $S$-group of type (RR) (5.1.1), $T$ a maximal torus of $G$, $H$ and $H'$ two subgroups of type (R) of $G$, containing $T$. Then
+\[
+H=H'\quad\Longleftrightarrow\quad\mathfrak h=\mathfrak h'.
+\]
+\end{corollary}
+By the finite presentation hypotheses, one reduces as usual (\cf EGA IV$_3$, \S~8 and Exp.~VIB \S~10) to the case where $S$ is noetherian; it then suffices to verify that $\mathfrak h=\mathfrak h'$ implies $H_{S'}=H'_{S'}$ for every $S'$ which is the spectrum of an artinian quotient of a local ring of $S$;{\renewcommand{\thefootnote}{(32)}\nde{Indeed, let $g\in G$, $s$ its image in $S$, $\mathfrak m$ the maximal ideal of $\OO_{G,g}$, $\mathfrak n$ that of $\OO_{S,s}$, and $I$ (resp. $I'$) the kernel of the morphism from $\OO_{G,g}$ to $\OO_{H,g}$ (resp. $\OO_{H',g}$) (the latter being the zero ring if $g\notin H$, resp. $g\notin H'$). Since $\OO_{G,g}$ is noetherian, $I$ and $I'$ are closed for the $\mathfrak m$-adic topology, hence a fortiori for the $\mathfrak n$-adic topology, so it suffices to show that $I+\mathfrak n^n\OO_{G,g}=I'+\mathfrak n^n\OO_{G,g}$ for every $n\in\NN$.}} one is therefore reduced to the case where $S$ is artinian and where one may apply 5.1.8. Let then $u:G\to G'=G/Z$ be the canonical morphism and $T'=T/Z$ the maximal torus of $G'$ corresponding to $T$. By Exp.~XII 7.12, there exist subgroups of type (R) $H_1$ and $H'_1$ of $G'$, containing $T'$, such that $H=u^{-1}(H_1)$ and $H'=u^{-1}(H'_1)$. It suffices to prove that $H_1=H'_1$. But by 5.2.7 and 5.1.5, one has
+\[
+\uLie(H_1)=\uLie(H'_1),
+\]
+and one is reduced to 5.3.3.
+\begin{remark}{5.3.6}\label{XXII.5.3.6}
+The fact that $H$ and $H'$ contain the same maximal torus is essential for the validity of 5.3.5 when $G$ is not of type (RA). Example: maximal tori of $\SL_{2,k}$, for $k$ of characteristic $2$.{\renewcommand{\thefootnote}{(33)}\nde{Indeed, if $k$ is algebraically closed, all maximal tori of $G=\SL_{2,k}$ are conjugate under $G(k)$, and all have as Lie algebra the line $k\,\mathrm{id}\subset M_2(k)$ (which is invariant under the adjoint action).}}
+\end{remark}
+\begin{corollary}{5.3.7}\label{XXII.5.3.7}
+Let $S$ be a scheme, $G$ an $S$-group of type (RR), $T$ a maximal torus of $G$, $H$ and $H'$ two subgroups of type (R) of $G$, containing $T$. The set $U$ of $s\in S$ such that $H_s=H'_s$ is open and closed in $S$ and $H_U=H'_U$.
+\end{corollary}
+Indeed, this follows at once from 5.3.5 and 5.2.7.
+\begin{corollary}{5.3.8}\label{XXII.5.3.8}
+The ``functor of subgroups of type (R) containing $T$'', where $T$ is a given maximal torus in a group $G$ of type (RR), is formally unramified (Exp.~XI 1.1).
+\end{corollary}
+\begin{theorem}{5.3.9}\label{XXII.5.3.9}
+Let $G$ be an $S$-group of type (RR) (5.1.1), $H$ and $H'$ two subgroups of type (R) (5.2.1). Let $\underline{\operatorname{Transt}}_G(H,H')$ be the strict transporter of $H$ into $H'$ defined by
+\[
+\underline{\operatorname{Transt}}_G(H,H')(S')=\{g\in G(S')\mid\operatorname{int}(g)H_{S'}=H'_{S'}\}.
+\]
+Then $\underline{\operatorname{Transt}}_G(H,H')$ is representable by a closed subscheme of $G$, which is smooth and of finite presentation over $S$.
+\end{theorem}
+The fact that $\underline{\operatorname{Transt}}_G(H,H')$ is representable by a closed subscheme of $G$, of finite presentation over $S$, follows from Exp.~XI 6.11 (a). To prove that it is smooth over $S$, one must prove that if $S$ is affine and if $S_0$ is the closed subscheme defined by a nilpotent ideal $J$, and if $g_0\in G(S_0)$ and $\operatorname{int}(g_0)H_0=H'_0$, there exists a $g\in G(S)$ projecting to $g_0$ and such that $\operatorname{int}(g)H=H'$. Since the question of smoothness is local for the \'etale topology, one may assume that $H$ contains a maximal torus $T$ of $G$.
+
+Then $T_0$ is a maximal torus of $H_0$, hence $\operatorname{int}(g_0)T_0$ a maximal torus of $H'_0$. By Exp.~IX 3.6 bis, there exists a torus $T'$ of $H'$ such that $T'_0=\operatorname{int}(g_0)T_0$; by Exp.~IX 3.3 bis, there therefore exists a $g\in G(S)$ projecting to $g_0$ and such that $\operatorname{int}(g)T=T'$. Replacing $H$ by $\operatorname{int}(g)H$, one may therefore assume that $H$ and $H'$ contain the same maximal torus $T$ and that $H_0=H'_0$. But then $H=H'$ by 5.3.7.\hfill Q.E.D.
+\begin{corollary}{5.3.10}\label{XXII.5.3.10}
+Let $G$ be an $S$-group of type (RR), $H$ a subgroup of type (R) of $G$. Then $\uNorm_G(H)$ is representable by a closed group subscheme of $G$, of finite presentation and smooth over $S$.
+\end{corollary}
+Using now the argument which served, in Exp.~XI, to deduce 5.4 bis from 5.2 bis, one obtains:
+\begin{corollary}{5.3.11}\label{XXII.5.3.11}
+Under the hypotheses of 5.3.9, the following conditions are equivalent:
+\begin{enumerate}[label={}]
+\item (i) $H$ and $H'$ are conjugate locally in $G$ for the \'etale topology.
+\item (i bis) idem for the (fpqc) topology.
+\item (ii) For every $s\in S$, $H_{\overline s}$ and $H'_{\overline s}$ are conjugate by an element of $G(\overline s)$.
+\item (ii bis) The structural morphism $\underline{\operatorname{Transt}}_G(H,H')\to S$ is surjective.
+\item (iii) $\underline{\operatorname{Transt}}_G(H,H')$ is a principal homogeneous bundle under the action of the smooth $S$-group scheme of finite presentation $\uNorm_G(H)$.
+\end{enumerate}
+\end{corollary}
+Let us simply note that the nontrivial assertion (iii) $\Rightarrow$ (i) is Hensel's lemma.
+
+Using now \textit{Bible}, \S~6.4, th.~4 (= [Ch05], \S~6.5 th.~5) and \S~9.3, th.~1, one obtains by 5.3.10 and 5.3.11:
+\begin{corollary}{5.3.12}\label{XXII.5.3.12}
+Let $G$ be an $S$-group of type (RR). The Borel subgroups of $G$ are closed in $G$, equal to their normalizer, and conjugate locally for the \'etale topology.
+\end{corollary}
+\begin{definition}{5.3.13}\label{XXII.5.3.13}
+Let $S$ be a scheme, $G$ a smooth $S$-group scheme of finite presentation and with connected fibers.{\renewcommand{\thefootnote}{(34)}\nde{\cf N.D.E.~(25).}} One calls a \emph{Killing pair} of $G$ a pair $T\subset B$, where $T$ is a maximal torus of $G$ and $B$ a Borel subgroup of $G$ containing $T$.
+\end{definition}
+Using now the conjugacy of maximal tori in $B$ (\cf 5.1.2 (a) and 5.2.6, for example), one has:
+\begin{corollary}{5.3.14}\label{XXII.5.3.14}
+Let $G$ be an $S$-group of type (RR). The Killing pairs of $G$ are conjugate locally for the \'etale topology.
+\end{corollary}
+\begin{corollary}{5.3.15}\label{XXII.5.3.15}
+Let $G$ be an $S$-group of type (RR). Let $T$ be a maximal torus of $G$, $W_G(T)=\uNorm_G(T)/\uCentr_G(T)$ the corresponding Weyl group (Exp.~XIX 6.3). The ``functor of Borel subgroups of $G$ containing $T$'' is formally principal homogeneous under $W_G(T)$.
+\end{corollary}
+This follows at once from 5.3.14 and the fact that if $B$ is a Borel subgroup of $G$ containing $T$, one has
+\[
+\uNorm_G(T)\cap B=\uCentr_G(T),
+\]
+\cf Exp.~XIV 4.4.
+\begin{proposition}{5.3.16}\label{XXII.5.3.16}
+Let $G$ be an $S$-group of type (RR), $H$ a subgroup of type (R), $N=\uNorm_G(H)$ its normalizer (5.3.10). Let $T$ be a maximal torus of $H$, $W_H(T)$ and $W_N(T)$ the corresponding Weyl groups (\'etale quasi-finite separated by Exp.~XIX 6.3). One has the following exact sequence of sheaves (for the \'etale topology) (the morphisms are induced by the morphisms $\uNorm_H(T)\to\uNorm_N(T)\to N/H$):
+\[
+1\to W_H(T)\to W_N(T)\to N/H\to1.
+\]
+\end{proposition}
+The only nontrivial point is the fact that the last arrow is an epimorphism. Let therefore $n\in N(S')$, $S'\to S$. The two maximal tori $T$ and $\operatorname{int}(n)T$ of $H$ are conjugate in $H$ locally for the \'etale topology. There therefore exist a covering family $\{S'_i\to S'\}$ and for each $i$ an $h_i\in H(S'_i)$ such that $\operatorname{int}(h_i)T=\operatorname{int}(n)T$. One therefore has $nh_i^{-1}\in\uNorm_N(T)$, which implies the desired result.
+\begin{remark}{5.3.17}\label{XXII.5.3.17}
+One may describe $W_N(T)$ as follows: assume we have reduced to the situation of 5.2.7, with $\mathfrak h=\mathfrak g_{R'}$. Then $W_N(T)$ equals $\uNorm_W(R')$, the sheaf of sections of $W=W_G(T)$ which, acting on $R$, normalize $R'$. Indeed, by 5.3.5, one has
+\[
+\uNorm_N(T)=\uNorm_G(H)\cap\uNorm_G(T)=\uNorm_G(\mathfrak h)\cap\uNorm_G(T).
+\]
+\end{remark}
+\begin{corollary}{5.3.18}\label{XXII.5.3.18}
+Let $G$ be an $S$-group of type (RR), $H$ a subgroup of type (R). Assume ``the Weyl groups of $G$ finite'', i.e. that for every $S'\to S$ and every maximal torus $T$ of $G_{S'}$, the \'etale $S'$-scheme $\uNorm_{G_{S'}}(T)/\uCentr_{G_{S'}}(T)$ is finite (\cf Exp.~XIX 6.3 (iii)). The following conditions are equivalent:
+\begin{enumeratei}
+\item $H$ is closed in $G$.
+\item $\uNorm_G(H)/H$ is representable by a finite \'etale $S$-scheme.
+\item ``the Weyl groups of $H$ are finite''.
+\end{enumeratei}
+\end{corollary}
+Indeed, one may assume that $H$ possesses a maximal torus $T$. By 5.3.10, $N=\uNorm_G(H)$ is closed in $G$, hence $W_N(T)$ is closed in $W_G(T)$ and therefore finite over $S$. One clearly has (i) $\Rightarrow$ (iii), and one has (iii) $\Rightarrow$ (ii) by the exact sequence of 5.3.16. Finally, one has (ii) $\Rightarrow$ (i) for if $N/H$ is finite, it is separated, hence $H$ is closed in $N$, hence in $G$.
+\begin{remark}{5.3.19}\label{XXII.5.3.19}
+When $G$ is reductive, the preceding conditions on $H$ seem always to hold. We prove them below in most cases.
+\end{remark}
+
+\sgasection{5.4}{Subgroups of type (R) of a split reductive group (generalities)}
+\numpara{5.4.1}\label{XXII.5.4.1}
+If $H$ is a subgroup of type (R) of the reductive group $G$, then $H$ contains a maximal torus of $G$ locally for the \'etale topology (5.2.2). By 2.3, one may, locally for the \'etale topology, assume $G$ split with respect to this torus. Let therefore $(G,T,M,R)$ be a split $S$-group, $H$ a subgroup of type (R) of $G$ containing $T$. By 5.3.5 such a subgroup is characterized by its Lie algebra, which (5.2.7) is locally over $S$ of the form $\mathfrak g_{R'}$:
+\[
+\mathfrak g_{R'}=\mathfrak t\oplus\coprod_{\alpha\in R'}\mathfrak g^\alpha.
+\]
+\begin{definition}{5.4.2}\label{XXII.5.4.2}
+Let $(G,T,M,R)$ be a split $S$-group. One will say that the subset $R'$ of $R$ is \emph{of type (R)} if $\mathfrak g_{R'}$ is the Lie algebra of a subgroup of type (R) of $G$ containing $T$. This subgroup, uniquely determined by $R'$, is denoted $H_{R'}$.
+\end{definition}
+\begin{lemma}{5.4.3}\label{XXII.5.4.3}
+Under the preceding conditions, one has the following equivalences:
+\[
+\begin{aligned}
+H\cap Z_\alpha=T&\quad\Longleftrightarrow\quad\alpha\notin R',\quad-\alpha\notin R',\\
+H\supset U_\alpha&\quad\Longleftrightarrow\quad\alpha\in R',\\
+H\cap U_\alpha=e&\quad\Longleftrightarrow\quad\alpha\notin R',\\
+H\supset Z_\alpha&\quad\Longleftrightarrow\quad\alpha\in R',\quad-\alpha\in R'.
+\end{aligned}
+\]
+\end{lemma}
+Indeed, $H\cap Z_\alpha$ is a subgroup of type (R) of $Z_\alpha$, by 5.2.5; but a subgroup of type (R) of $Z_\alpha$, containing $T$, is locally equal to one of the following subgroups: $T$, $T\cdot U_\alpha$, $T\cdot U_{-\alpha}$, $Z_\alpha$, by 5.3.5.
+\begin{lemma}{5.4.4}\label{XXII.5.4.4}
+Under the conditions of 5.4.2, let $R_+$ be a system of positive roots; choose orders on $R'\cap R_+$ and $R'\cap-R_+$. The morphism
+\[
+\Omega_{R_+,R'}=\prod_{\alpha\in R'\cap-R_+}U_\alpha\underset S\times T\underset S\times\prod_{\alpha\in R'\cap R_+}U_\alpha\to G
+\]
+induced by the product in $G$ induces an open immersion
+\[
+\Omega_{R_+,R'}\to H_{R'}.
+\]
+\end{lemma}
+Indeed, by 5.4.3, this morphism factors through $H_{R'}$ and therefore induces an immersion $\Omega_{R_+,R'}\to H_{R'}$. One then argues as in 4.1.1.
+\begin{proposition}{5.4.5}\label{XXII.5.4.5}
+Let $(G,T,M,R)$ be a split $S$-group. Let $R'$ and $R''$ be two subsets of $R$, of type (R).
+\begin{enumeratei}
+\item $H_{R'}\cap H_{R''}$ is smooth at every point of the identity section, $R'\cap R''$ is of type (R), and one has
+\[
+(H_{R'}\cap H_{R''})^0=H_{R'\cap R''}.
+\]
+\item One has the equivalence
+\[
+H_{R'}\subset H_{R''}\quad\Longleftrightarrow\quad R'\subset R''.
+\]
+\end{enumeratei}
+\end{proposition}
+Indeed, (ii) follows at once from (i). To prove (i), it suffices to prove that $H_{R'}\cap H_{R''}$ is smooth at every point of the identity section: its identity component (\cf Exp.~VIB 3.10) will then be a subgroup of type (R) containing $T$, hence equal to $H_{R'\cap R''}$; but $\Omega_{R_+,R'}\cap\Omega_{R_+,R''}=\Omega_{R_+,R'\cap R''}$ is an open subset of $H_{R'}\cap H_{R''}$ containing the identity section and smooth over $S$.
+\begin{corollary}{5.4.6}\label{XXII.5.4.6}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $T$ a maximal torus of $G$, $s$ a point of $S$. If $H$ and $H'$ are two subgroups of type (R) of $G$ containing $T$ such that $H_s\subset H'_s$, there exists an open subset $U$ of $S$ containing $s$ such that $H_U\subset H'_U$.
+\end{corollary}
+One may indeed assume $G$ split with respect to $T$. The assertion then follows at once from 5.4.5 (ii).
+
+One is led to ask which are the subsets $R'$ of type (R) of $R$. One may assume the group adjoint; one must then verify that $\mathfrak g_{R'}$ is a Lie algebra and that its normalizer is smooth at every point of the identity section. The most important case is given by the
+\begin{theorem}{5.4.7}\label{XXII.5.4.7}
+Every closed subset $R'$ of $R$ is of type (R). (Recall, \cf Exp.~XXI 3.1.4, that $R'\subset R$ is said to be closed if $\alpha,\beta\in R'$, $\alpha+\beta\in R$ implies $\alpha+\beta\in R'$).
+\end{theorem}
+\begin{remark}{5.4.8}\label{XXII.5.4.8}
+We will see later (Exp.~XXIII 6.6) that if $6\cdot1_S\ne0${\renewcommand{\thefootnote}{(35)}\nde{In fact, it suffices (\cf \loccit) that $2$ and $3$ be nonzero on $S$.}} (for example, if $S$ possesses a residue characteristic distinct from $2$ and $3$), the fact that $\mathfrak g_{R'}$ is a Lie algebra already implies that $R'$ is closed, hence $R'$ is of type (R) if and only if it is closed. Theorem 5.4.7 therefore gives all subsets of type (R) ``independent of the characteristic''.
+\end{remark}
+Let us first prove:
+\begin{lemma}{5.4.9}\label{XXII.5.4.9}
+Choose for each $\alpha\in R$ an $X_\alpha\in\Gamma(S,\mathfrak g^\alpha)^\times$. Let $\alpha,\beta\in R$, with $\alpha+\beta\ne0$, and let $q$ be the largest integer $i$ such that $\alpha+i\beta\in R$. There exist uniquely determined sections $M_{\alpha,\beta,i}\in\Gamma(S,\OS)$ such that
+\[
+\Ad(\exp_\alpha(xX_\alpha))(X_\beta)=X_\beta+\sum_{i=1}^q M_{\alpha,\beta,i}\,x^i X_{\beta+i\alpha},
+\]
+for every $x\in\mathbf G_a(S')$, $S'\to S$.
+% typo?: kept as printed: q uses alpha+i beta, whereas the formula uses beta+i alpha.
+\end{lemma}
+Indeed, $x\mto\Ad(\exp_\alpha(xX_\alpha))(X_\beta)$ defines a morphism $\mathbf G_{a,S}\to\mathrm W(\mathfrak g)\simeq\mathbf G_{a,S}^m$. There therefore exist uniquely determined sections $Y_n\in\Gamma(S,\mathfrak g)$ such that
+\[
+\Ad(\exp_\alpha(xX_\alpha))(X_\beta)=\sum_{n\ge0}x^nY_n.
+\]
+Applying the inner automorphism defined by a section $t$ of $T$, one finds at once
+\[
+\Ad(t)(Y_n)=\beta(t)\alpha(t)^nY_n,
+\]
+which implies $Y_n\in\Gamma(S,\mathfrak g^{\beta+n\alpha})$. Since $\alpha$ and $\beta$ are not proportional, none of the $\beta+n\alpha$ is zero; one therefore has $Y_n=0$ for $n>q$, $Y_n=M_{\alpha,\beta,n}X_{\beta+n\alpha}$ for $0\le n\le q$, where $M_{\alpha,\beta,n}\in\mathbf G_a(S)$ is uniquely determined.

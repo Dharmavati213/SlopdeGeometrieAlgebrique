@@ -1,0 +1,227 @@
+One sees first that (iii) follows from the conjugacy theorem for maximal tori (resp. Borel subgroups, resp. Killing pairs) and the fact that
+\[
+\uNorm_G(B)=B,\qquad\uNorm_G(B)\cap\uNorm_G(T)=T,
+\]
+all results established previously (5.1.2, 5.3.12, 5.3.14, 5.6.1).
+
+It follows first that the canonical morphisms
+\[
+\underline{\Tor}(G)\to\mathscr H,\qquad\underline{\operatorname{Bor}}(G)\to\mathscr H
+\]
+are representable, locally for the \'etale topology, by open immersions (5.8.2 and 5.1.2 resp. 5.5.5), hence by descent that $\underline{\Tor}(G)$ and $\underline{\operatorname{Bor}}(G)$ are representable by open subsets of $\mathscr H$. Likewise $\underline{\operatorname{Kil}}(G)$ is locally (for the \'etale topology) representable by a scheme affine over the base (Exp.~IX 2.3), hence representable by an affine $S$-scheme, by descent of affine schemes.{\renewcommand{\thefootnote}{(52)}\nde{\cf SGA 1, VIII 2.1.}}
+
+The assertions of (ii) follow at once from 5.5.5 (ii) and 5.6.13. It already follows that $\underline{\Tor}(G)$ is affine over $S$ (EGA II 6.7.1). It therefore only remains to prove the fact that $\underline{\operatorname{Bor}}(G)$ is projective over $S$. One already knows that it is quasi-projective; it remains to prove that it is proper;{\renewcommand{\thefootnote}{(53)}\nde{One may assume $S$ affine and, since $\underline{\operatorname{Bor}}(G)$ is of finite presentation over $S$ by (i), reduce to the case where $S$ is noetherian; one is then under the hypotheses of EGA IV$_3$, 15.7.10.}} now it has connected fibers, hence, by EGA IV$_3$, 15.7.10, one is reduced to proving it on the geometric fibers; if $S$ is the spectrum of an algebraically closed field, one has $\underline{\operatorname{Bor}}(G)=G/B$ by (iii) and one concludes by \textit{Bible}, \S~6.4, th.~4 (or [Ch05], \S~6.5, th.~5).
+\begin{remark}{5.8.4}\label{XXII.5.8.4}
+Under the conditions of 5.8.3, let $Q$ be a central subgroup of multiplicative type of $G$. The obvious morphisms define isomorphisms
+\[
+\begin{gathered}
+\underline{\Tor}(G)\simeq\underline{\Tor}(G/Q),\qquad
+\underline{\operatorname{Bor}}(G)\simeq\underline{\operatorname{Bor}}(G/Q),\\
+\underline{\operatorname{Kil}}(G)\simeq\underline{\operatorname{Kil}}(G/Q).
+\end{gathered}
+\]
+\end{remark}
+\begin{corollary}{5.8.5}\label{XXII.5.8.5}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $P$ a group subscheme of $G$, smooth and of finite presentation over $S$. The following conditions are equivalent:
+\begin{enumeratei}
+\item For each $s\in S$, $P_{\overline s}$ is a parabolic subgroup of $G_{\overline s}$ (i.e. the quotient scheme $G_{\overline s}/P_{\overline s}$ is proper over $\overline s$, or $P_{\overline s}$ contains a Borel subgroup of $G_{\overline s}$, \cf \textit{Bible}, \S~6.4, th.~4 or [Ch05], \S~6.5, th.~5).
+\item The quotient sheaf $G/P$ is representable by a smooth $S$-scheme projective over $S$.
+\end{enumeratei}
+Moreover, under these conditions, $P$ is closed in $G$, has connected fibers and one has $P=\uNorm_G(P)$.
+\end{corollary}
+One clearly has (ii) $\Rightarrow$ (i). If (i) holds, then $P(\overline s)=\Norm_{G(\overline s)}(P_{\overline s})$ and $P_{\overline s}$ is connected (for the first point, \cf \textit{Bible}, \S~12.3, lemma 4;{\renewcommand{\thefootnote}{(54)}\nde{What follows has been expanded.}} the second point follows from it, for $P'=P_{\overline s}^0$ is a parabolic subgroup of $G_{\overline s}$ normalized by $P_{\overline s}$, whence $P'(\overline s)=P(\overline s)$ and hence $P'=P_{\overline s}$); it follows that $P$ is of type (R), and that $P$ equals $\uNorm_G(P)$, hence is closed in $G$. By 5.8.2, $G/P=G/\uNorm_G(P)$ is representable by a quasi-projective $S$-scheme. Its fibers are connected and proper, hence it is projective by the argument of 5.8.3.
+\begin{remark}{5.8.6}\label{XXII.5.8.6}
+Statements 5.8.1, 5.8.2, 5.8.5 hold for an $S$-group of type (RA), or for an $S$-group of type (RR) satisfying 5.1.8.{\renewcommand{\thefootnote}{(55)}\nde{Indeed, the proof of 5.8.1 uses only 5.3.3 (valid for a group of type (RA)) and XIX 6.2 which, by XII 1.7 (b), also holds for groups of type (RR).}}
+\end{remark}
+\begin{remark}{5.8.7}\label{XXII.5.8.7}
+Through the inner automorphisms of $G$, one has canonical actions:
+\[
+\begin{gathered}
+G\to\underline{\Aut}_S(\underline{\Tor}(G)),\qquad
+G\to\underline{\Aut}_S(\underline{\operatorname{Bor}}(G)),\\
+G\to\underline{\Aut}_S(\underline{\operatorname{Kil}}(G)),
+\end{gathered}
+\]
+which, in the situation of 5.8.3 (iii), are identified with the canonical actions
+\[
+\begin{gathered}
+G\to\underline{\Aut}_S(G/\uNorm_G(T)),\qquad G\to\underline{\Aut}_S(G/B),\\
+G\to\underline{\Aut}_S(G/T).
+\end{gathered}
+\]
+One concludes in particular that
+\[
+\begin{aligned}
+\Ker\bigl(G\to\underline{\Aut}_S(\underline{\Tor}(G))\bigr)
+&=\Ker\bigl(G\to\underline{\Aut}_S(\underline{\operatorname{Bor}}(G))\bigr)\\
+&=\Ker\bigl(G\to\underline{\Aut}_S(\underline{\operatorname{Kil}}(G))\bigr)\\
+&=\uCentr(G).
+\end{aligned}
+\]
+\end{remark}
+It is indeed clear that $\uCentr(G)$ acts trivially on each of the three schemes. Conversely, the kernel of $G\to\underline{\Aut}_S(\underline{\operatorname{Kil}}(G))$ is ``the intersection of the maximal tori of $G$'' in the sense of 4.1.7, hence equals $\uCentr(G)$ (\loccit). For $\underline{\operatorname{Bor}}(G)$, one notes that ``the intersection of the Borel subgroups of $G$'' is also ``the intersection of its maximal tori'' (see the next number). For $\underline{\Tor}(G)$, one uses Exp.~XII 4.11.
+
+\sgasection{5.9}{Properties peculiar to Borel subgroups}
+Most of these properties will be generalized in Exp.~XXVI to parabolic subgroups.
+\begin{definition}{5.9.1}\label{XXII.5.9.1}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $B$ and $B'$ two Borel subgroups of $G$. One says that $B$ and $B'$ are \emph{in general position} (or that $B'$ is in general position relative to $B$) if $B\cap B'$ is a torus (necessarily maximal) of $G$.
+
+If $T$ is a maximal torus of $G$ contained in $B$ and $B'$, one says that $B$ and $B'$ are \emph{opposite} (relative to $T$) if $B\cap B'=T$.
+\end{definition}
+\begin{proposition}{5.9.2}\label{XXII.5.9.2}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $B$ a Borel subgroup of $G$, $T$ a maximal torus of $B$. There exists a unique Borel subgroup $B'$ of $G$, opposite to $B$ relative to $T$.
+
+If $(G,T,M,R)$ is a splitting of $G$ with respect to $T$ and if $B=B_{R_+}$ (5.5.1), then $B'=B_{-R_+}$.
+\end{proposition}
+By faithfully flat descent, it suffices to prove the proposition in the split case, when $B=B_{R_+}$ (5.5.5 (iv)). Then $B_{-R_+}$ is indeed opposite to $B$ (4.1.2); let us show that it is the only Borel subgroup of $G$ containing $T$ which is opposite to $B$. If $B'$ is a Borel subgroup of $G$ containing $T$, then $B'$ is locally over $S$ of the form $B_{R'_+}$, where $R'_+$ is a second system of positive roots of $R$ (5.5.5 (iii)). If $R'_+\ne-R_+$, there exists $\alpha\in R'_+\cap R_+$, hence such that $U_\alpha\subset B_{R_+}\cap B_{R'_+}$.
+\begin{proposition}{5.9.3}\label{XXII.5.9.3}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $B$ a Borel subgroup of $G$.
+\begin{enumeratei}
+\item If $B'$ is a Borel subgroup of $G$, the following conditions are equivalent:
+\begin{enumerate}[label={}]
+\item (a) $B'$ is in general position with respect to $B$ (5.9.1).
+\item (b) $B'{}^u\cap B^u=e$.
+\item (b$'$) $B'{}^u\cap B=e$.
+\item (c) The product in $G$ induces an open immersion $B'{}^u\times_S B\to G$.
+\item (c$'$) The canonical morphism $B'{}^u\to G/B$ is an open immersion.
+\end{enumerate}
+\item The functor $\underline{\operatorname{Opp}}(B)$:
+\[
+S'\mto\left\{\begin{array}{l}\text{Borel subgroups of $G_{S'}$ in}\\
+\text{general position with respect to $B_{S'}$}\end{array}\right\}
+\]
+is representable by an open subscheme of $\underline{\operatorname{Bor}}(G)$ (5.8.3). The morphism
+\[
+\underline{\operatorname{Opp}}(B)\to\underline{\Tor}(B)
+\]
+defined by $B'\mto B\cap B'$ is an isomorphism. In particular (5.6.13), the inner automorphisms of $B^u$ endow $\underline{\operatorname{Opp}}(B)$ with a principal homogeneous bundle structure under $B^u$.
+\end{enumeratei}
+\end{proposition}
+Let us first examine (i). One has (a) $\Rightarrow$ (c); indeed, (c) is local for the \'etale topology; by 5.5.5 (iv), one reduces to the case where $G$ is split with respect to $B\cap B'$ and $B$ has the form $B_{R_+}$; by 5.9.2, one then has $B'{}^u=U_{-R_+}$ and one is reduced to 4.1.2.
+
+One has trivially (c$'$) $\Leftrightarrow$ (c) $\Rightarrow$ (b$'$) $\Rightarrow$ (b). It therefore remains to prove (b) $\Rightarrow$ (a). Let us first prove (ii); the second assertion is a formal consequence of 5.9.2, the third follows at once by 5.6.13; let us then prove the first; it is local for the \'etale topology and one may therefore assume that $B$ possesses a maximal torus $T$; let $B'_0$ be the opposite of $B$ relative to $T$ (5.9.2).
+
+% typo: "D'apres qui precede" -> "D'apres ce qui precede".
+By what precedes the morphism $B^u\to\underline{\operatorname{Bor}}(G)$ induced by the canonical morphism $G\to G/B'_0\to\underline{\operatorname{Bor}}(G)$ (5.8.3) induces an isomorphism $B^u\isomto\underline{\operatorname{Opp}}(B)$. One therefore has a commutative diagram
+\[
+\xymatrix{B^u\ar[r]\ar[d]_\sim&G/B'_0\ar[d]^\sim\\
+\underline{\operatorname{Opp}}(B)\ar[r]&\underline{\operatorname{Bor}}(G).}
+\]
+Now the morphism $B^u\to G/B'_0$ is an open immersion (by (i) (a) $\Rightarrow$ (c$'$)), which completes the proof of (ii). Note at once the corollary
+\begin{corollary}{5.9.4}\label{XXII.5.9.4}
+Let $G$ be a reductive $S$-group and $B$ and $B'$ two Borel subgroups of $G$. If $s\in S$ is such that $B_{\overline s}$ and $B'_{\overline s}$ are in general position, there exists an open subset $V$ of $S$ containing $s$ such that $B_V$ and $B'_V$ are in general position.
+\end{corollary}
+It therefore only remains to prove (b) $\Rightarrow$ (a). By the preceding corollary, it suffices to do so when $S$ is the spectrum of an algebraically closed field $k$. One may assume $G$ split with respect to a maximal torus $T$ of $B$. Let $B'_0$ be the Borel subgroup opposite to $B$. Since the Borel subgroups of $G$ are conjugate under $G(k)$, there exists $g\in G(k)$ such that $\operatorname{int}(g)B'_0=B'$. By Bruhat's theorem (5.7.4), one may write $g=bnb'$, with $b\in B(k)$, $b'\in B'_0(k)$, $n\in\uNorm_G(T)(k)$. One therefore has
+\[
+B'=\operatorname{int}(b)\operatorname{int}(n)B'_0
+\]
+and $B'\cap B=\operatorname{int}(b)(\operatorname{int}(n)B'_0\cap B)$. If $n\notin T(k)$, $\operatorname{int}(n)B'_0{}^u\cap B^u\ne e$ (\cf proof of 5.9.2); it follows that (b) implies $B'\cap B=\operatorname{int}(b)(B'_0\cap B)=\operatorname{int}(b)T$.\hfill Q.E.D.
+\begin{proposition}{5.9.5}\label{XXII.5.9.5}
+Let $S$ be a scheme, $G$ a reductive $S$-group, $B$ a Borel subgroup of $G$, $B^u$ its unipotent part. There exists a sequence of subgroups of $B$:
+\[
+U_0=B^u\supset U_1\supset\cdots\supset U_n\supset\cdots
+\]
+having the following properties:
+\begin{enumeratei}
+\item Each $U_i$ is smooth, with connected fibers, characteristic in $B$; the inner automorphisms of $B^u$ act trivially on the (sheaf) quotients $U_i/U_{i+1}$.
+\item For each $i\ge0$, there exists a locally free $\OS$-module $\mathcal E_i$ and an isomorphism of $S$-sheaves of groups
+\[
+U_i/U_{i+1}\isomto\mathrm W(\mathcal E_i).
+\]
+\item For every $s\in S$, $(U_n)_s=e$ for $n\ge\dim(B_s^u)$.
+\end{enumeratei}
+\end{proposition}
+Assume first that there exist a splitting $(G,T,M,R)$ of $G$ and a system of positive roots $R_+$ of $R$ such that $B=B_{R_+}$. One denotes by $\Delta$ the set of simple roots of $R_+$; for each $\alpha\in R_+$, one denotes by $\operatorname{ord}(\alpha)$ the sum of the coefficients of $\alpha$ on the basis $\Delta$ of $\Gamma_0(R)$; this is the \emph{order of $\alpha$ relative to $R_+$}. One has $\operatorname{ord}(\alpha)\le\operatorname{Card}(R_+)$. For every $i>0$, let $R^{(i)}$ be the set of roots of order $>i$; it is a closed set of positive roots, hence one may construct (5.6.5)
+\[
+U_i=U_{R^{(i)}}.
+\]
+If $\alpha\in R_+$ and $\beta\in R^{(i)}$, then $\alpha+\beta\in R^{(i+1)}$. It follows, by 5.5.2, that each $U_i$ is an invariant subgroup of $B$ and that the inner automorphisms of $B^u$ act trivially on $U_i/U_{i+1}$. This group is moreover identified with
+\[
+\prod_{\operatorname{ord}(\alpha)=i+1}U_\alpha
+\]
+and is therefore endowed with a vector structure.
+
+If $B$ has the form $B_{R'}$ for another splitting $(G,T',M',R')$ of $G$, let us show that the groups $U'_i$ constructed as above with the aid of the new splitting coincide with the $U_i$ and that the vector structures on the successive quotients also coincide. By 5.6.13, there exists $b\in B^u(S)$ such that $T'=\operatorname{int}(b)T$; the assertion to be proved is local over $S$ and one may therefore assume that the isomorphism $T\isomto T'$ induced by $\operatorname{int}(b)$ comes by duality from an isomorphism of root data
+\[
+h:(M',M'^*,R',R'^*)\isomto(M,M^*,R,R^*).
+\]
+It is clear that the roots of $R'_+$ are the $\alpha\circ\operatorname{int}(b)=h(\alpha)$, $\alpha\in R_+$, and that the simple roots of $R'_+$ are the $\alpha\circ\operatorname{int}(b)=h(\alpha)$, $\alpha\in\Delta$, hence that $\operatorname{ord}(h(\alpha))=\operatorname{ord}(\alpha)$ for $\alpha\in R_+$. On the other hand, it is clear by transport of structure that the vector groups $U'_{h(\alpha)}$ are none other than the $\operatorname{int}(b)U_\alpha$. One therefore has $\operatorname{int}(b)U_i=U'_i$, but since $U_i$ is invariant, this gives $U_i=U'_i$.
+% typo?: kept as printed: h has domain M', but h(alpha) is used for alpha in R.
+
+Likewise the isomorphism of vector groups
+\[
+\operatorname{int}(b):U_i/U_{i+1}\isomto U'_i/U'_{i+1}
+\]
+is the identity, by what has already been proved.
+
+Let us now treat the general case. There exists a covering family for the \'etale topology $\{S_i\to S\}$ and for each $i$ a splitting $(G_i,T_i,M_i,R_i)$ and a system of positive roots $R_{i+}$ of $R_i$ such that $B\times_S S_i=B_{R_{i+}}$ (5.5.5, (iii)). For each $i$, one therefore has a family
+\[
+B_{S_i}=U_{i,0}\supset U_{i,1}\supset\cdots\supset U_{i,j}\supset\cdots
+\]
+and vector structures on the $U_{i,j}/U_{i,j+1}$. By descent, it suffices to prove that for every pair $(i,i')$ and every $j$, one has
+\[
+U_{i,j}\underset{S_i}\times S_{ii'}=U_{i',j}\underset{S_{i'}}\times S_{ii'}
+\]
+(one writes $S_{ii'}=S_i\times_S S_{i'}$) and that the vector structures on the quotients
+\[
+(U_{i,j}/U_{i,j+1})\underset{S_i}\times S_{ii'}\quad\text{and}\quad
+(U_{i',j}/U_{i',j+1})\underset{S_{i'}}\times S_{ii'}
+\]
+coincide. Now if $S_{ii'}=\varnothing$, this is trivial; if $S_{ii'}\ne\varnothing$, then one is in the situation studied previously: $B\times_S S_{ii'}$ is defined by the system of positive roots $R_{i+}$ (resp. $R_{i'+}$) in the splitting $(G_{S_{ii'}},T_i\times_{S_i}S_{ii'},M_i,R_i)$ (resp. in the splitting $(G_{S_{ii'}},T_{i'}\times_{S_{i'}}S_{ii'},M_{i'},R_{i'})$).
+% typo?: kept as printed: B_{S_i}=U_{i,0}, although U_0 was defined as B^u.
+\begin{corollary}{5.9.6}\label{XXII.5.9.6}
+If $S$ is affine, $\mathrm H^1(S,B^u)=e$, i.e. every principal bundle under $B^u$ possesses a section.
+\end{corollary}
+Indeed, $S$ decomposes as a direct sum of subschemes on each of which $B^u$ has constant relative dimension. One may therefore, by 5.9.5 (iii), assume that there exists an $n$ such that $U_n=e$. Since, by TDTE I, B.1.1,{\renewcommand{\thefootnote}{(56)}\nde{This is the corollary on page 18 of TDTE I.}}
+\[
+\mathrm H^1(S,U_i/U_{i+1})=\mathrm H^1(S,\mathrm W(\mathcal E_i))=0,
+\]
+one has $\mathrm H^1(S,B^u)=0$.
+\begin{corollary}{5.9.7}\label{XXII.5.9.7}
+If $S$ is affine, $B$ possesses maximal tori. If $T$ is a maximal torus of $B$, one has $\mathrm H^1(S,T)=\mathrm H^1(S,B)$.
+\end{corollary}
+The first assertion follows at once from 5.9.6 and 5.6.13; the second is deduced from it in the standard way.{\renewcommand{\thefootnote}{(57)}\nde{Indeed, one has an exact sequence $\mathrm H^1(S,B^u)\to\mathrm H^1(S,B)\xrightarrow\pi\mathrm H^1(S,B/B^u)=\mathrm H^1(S,T)$, see [Se64], I \S~5.5, Prop.~38 or [Gi71], III Prop.~3.3.1. Now $\mathrm H^1(S,T)\to\mathrm H^1(S,B)$ is a section of $\pi$, hence $\pi$ is surjective; on the other hand $\mathrm H^1(S,B^u)=0$ by 5.9.6.}}
+\begin{corollary}{5.9.8}\label{XXII.5.9.8}
+If $G$ is a reductive $S$-group, the canonical morphism (\cf 5.8.3)
+\[
+\underline{\operatorname{Kil}}(G)\to\underline{\operatorname{Bor}}(G)
+\]
+possesses sections over every affine open subset.
+\end{corollary}
+\begin{corollary}{5.9.9}\label{XXII.5.9.9}
+Under the conditions of 5.9.5, assume $S$ affine; then there exists a locally free $\OS$-module $\mathcal E$ such that $B^u$ is, as a scheme, $S$-isomorphic to $\mathrm W(\mathcal E)$.
+\end{corollary}
+Let us show by induction on $i$ that $B^u/U_i$ is $S$-isomorphic to $\mathrm W(\mathcal E_0\oplus\cdots\oplus\mathcal E_{i-1})$. This is clear for $i=0$; assume $i\ge1$. Then $B^u/U_i$ is a principal homogeneous bundle with base $X=B^u/U_{i-1}$ under the group $(U_{i-1}/U_i)_X$. Since $B^u/U_{i-1}$ is affine, by the induction hypothesis, and since $U_{i-1}/U_i=\mathrm W(\mathcal E_{i-1})$, this bundle is trivial. One therefore has (at least) an isomorphism of $S$-schemes
+\[
+B^u/U_i\isomto(B^u/U_{i-1})\underset S\times\mathrm W(\mathcal E_{i-1})=\mathrm W(\mathcal E_0\oplus\cdots\oplus\mathcal E_{i-1}).
+\]
+One concludes at once by condition (iii) of 5.9.5.
+\begin{corollary}{5.9.10}\label{XXII.5.9.10}
+Let $S$ be a semilocal scheme, $\{s_i\}$ its closed points, $B$ a Borel subgroup of the reductive $S$-group $G$. The canonical map
+\[
+B^u(S)\to\prod_i B^u(\Spec\kappa(s_i))
+\]
+is surjective.
+\end{corollary}
+Indeed, if $S=\Spec(A)$, $\kappa(s_i)=A/\mathfrak p_i$ and if $\mathcal E$ is given by the $A$-module $E$, one has
+\[
+B^u(S)=E\otimes A,\qquad B^u(\Spec\kappa(s_i))=E\otimes_A(A/\mathfrak p_i).
+\]
+The assertion then follows at once from the fact that $A\to\prod_i A/\mathfrak p_i$ is surjective.
+
+\sgasection{5.10}{Subgroups of type (R) with reductive fibers}
+\begin{proposition}{5.10.1}\label{XXII.5.10.1}
+Let $(G,T,M,R)$ be a split $S$-group, $R'$ a subset of $R$ of type (R) (5.4.2), $H_{R'}$ the corresponding subgroup of $G$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $H_{R'}$ is reductive (i.e. has reductive geometric fibers).
+\item One has $R'=-R'$, i.e. $R'$ is symmetric.
+\end{enumeratei}
+Moreover, under these conditions, $(H_{R'},T,M,R')$ is a splitting of $H_{R'}$; for every system of positive roots $R_+$ of $R$, $R'_+=R'\cap R_+$ is a system of positive roots of $R'$ and
+\[
+B_{R_+}\cap H_{R'}=H_{R'_+}
+\]
+is a Borel subgroup of $H_{R'}$, whose unipotent part is
+\[
+U_{R_+}\cap H_{R'}=U_{R'_+}.
+\]
+\end{proposition}

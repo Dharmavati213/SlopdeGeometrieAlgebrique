@@ -1,0 +1,506 @@
+\begin{lemma}{6.3.1}\label{I.6.3.1}
+Let \(f\colon\mathbf{Y}\to\mathbf{X}\) be a \(G\)-equivariant morphism and \(\mathbf{M}\) a
+\(G\)-equivariant \(\mathbf{O}_{\mathbf{X}}\)-module. Then the inverse image
+\(f^{*}(\mathbf{M})=\mathbf{Y}\times_{f}\mathbf{M}\) is a \(G\)-equivariant
+\(\mathbf{O}_{\mathbf{Y}}\)-module.
+\end{lemma}
+
+On the other hand, \(\mathbf{G}\) acts on
+\(\Hom_{\widehat{\mathcal{C}}}(\mathbf{Y},\mathbf{X})\). Indeed, let
+\(T\in\Ob(\mathcal{C})\), \(g\in\mathbf{G}(T)\) and \(\varphi\) a \(T\)-morphism
+\(\mathbf{Y}_{T}\to\mathbf{X}_{T}\); then \(g\) defines automorphisms
+\(\lambda_{\mathbf{Y}}(g)\) and \(\lambda_{\mathbf{X}}(g)\) of \(\mathbf{Y}_{T}\) and
+\(\mathbf{X}_{T}\), and one will denote by \(g\cdot\varphi\) (or also
+\(g\varphi g^{-1}\)) the morphism
+\(\lambda_{\mathbf{X}}(g)\circ\varphi\circ\lambda_{\mathbf{Y}}(g^{-1})\).
+This defines an action of \(\mathbf{G}(T)\) on
+\(\Hom_{T}(\mathbf{Y}_{T},\mathbf{X}_{T})\), functorial in \(T\).
+
+\begin{definition}{6.3.2}\label{I.6.3.2}
+If \(\varphi\colon\mathbf{Y}\to\mathbf{X}\) is an arbitrary
+\(\widehat{\mathcal{C}}\)-morphism, one may therefore consider its stabilizer
+\(\operatorname{Stab}_{\mathbf{G}}(\varphi)\) (\cf 2.3.3.1): for every
+\(T\in\Ob(\mathcal{C})\), \(\operatorname{Stab}_{\mathbf{G}}(\varphi)(T)\) is the
+subgroup of \(\mathbf{G}(T)\) formed of the \(g\) such that
+\(g\circ\varphi_{T}=\varphi_{T}\circ g\), \ie such that the diagram
+\[
+\xymatrix{
+\mathbf{Y}_{T} \ar[r]^{\varphi_{T}} \ar[d]_{g}
+  & \mathbf{X}_{T} \ar[d]^{g} \\
+\mathbf{Y}_{T} \ar[r]_{\varphi_{T}}
+  & \mathbf{X}_{T}
+}
+\]
+commutes. Then the morphism \(\varphi\colon\mathbf{Y}\to\mathbf{X}\) is
+equivariant under \(\operatorname{Stab}_{\mathbf{G}}(\varphi)\).
+\end{definition}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{6.4. Global sections.}\ ---\ \label{I.sec.6.4}
+Let \(\mathbf{M}\) be a \(G\)-equivariant \(\mathbf{O}_{\mathbf{X}}\)-module.
+Denote by \(S_{0}\) the final object of \(\mathcal{C}\) and (\cf Exp.~II, 1.1)
+by \(\prod_{\mathbf{X}/S_{0}}\mathbf{M}\) the ``functor of sections of
+\(\mathbf{M}\) over \(\mathbf{X}\)": it is the functor which to every
+\(T\in\Ob(\mathcal{C})\) associates
+\[
+\Hom_{\mathbf{X}}(\mathbf{X}_{T},\mathbf{M})
+  =\Hom_{\mathbf{X}_{T}}(\mathbf{X}_{T},\mathbf{M}_{T})
+  =\Gamma(\mathbf{M}_{T}/\mathbf{X}_{T}).
+\]
+Let us recall on the other hand that every morphism
+\(g\colon\mathbf{Z}\to\mathbf{Y}\) of \(\widehat{\mathcal{C}}\)-objects over
+\(\mathbf{X}\) induces a morphism of abelian groups
+\(\mathbf{M}(g)\colon\mathbf{M}(\mathbf{Y})\to\mathbf{M}(\mathbf{Z})\), which is
+compatible with the ring morphism
+\(g^{*}\colon\mathbf{O}(\mathbf{Y})\to\mathbf{O}(\mathbf{Z})\). In particular,
+when \(\mathbf{Z}=\mathbf{Y}\) (\(g\) then being an
+\(\mathbf{X}\)-endomorphism of \(\mathbf{Y}\)), one obtains a morphism of
+abelian groups
+\[
+\mathbf{M}(g)\colon\mathbf{M}(\mathbf{Y})\longrightarrow\mathbf{M}(\mathbf{Y})
+\]
+which is not in general a morphism of \(\mathbf{O}(\mathbf{Y})\)-modules, but
+which satisfies, for every \(m\in\mathbf{M}(\mathbf{Y})\) and
+\(\alpha\in\mathbf{O}(\mathbf{Y})\):
+\[
+\mathbf{M}(g)(\alpha\cdot m)=g^{*}(\alpha)\cdot\mathbf{M}(g)(m).
+\]
+This being said, one will simply write, in what follows, \(g^{*}\) instead of
+\(\mathbf{M}(g)\).
+
+Let \(T\in\Ob(\mathcal{C})\) and let \(\mathbf{X}_{T}=\mathbf{X}\times T\) and
+\(\mathrm{pr}_{\mathbf{X}}\) be the projection
+\(\mathbf{X}_{T}\to\mathbf{X}\). For every
+\(\alpha\in\mathbf{O}(\mathbf{X}_{T})\) and \(g\in\mathbf{G}(T)\), set
+\(g(\alpha)=(g^{-1})^{*}(\alpha)\): this is the element of
+\(\mathbf{O}(\mathbf{X}_{T})\) defined set-theoretically by: for every
+\(S\in\Ob(\mathcal{C})\) and \(x\in\mathbf{X}(S)\), \(t\in T(S)\),
+\[
+g(\alpha)(x,t)=\alpha(g^{-1}x,t).
+\]
+One thus obtains an action (on the left) of \(\mathbf{G}(T)\) by ring
+automorphisms on \(\mathbf{O}(\mathbf{X}_{T})\), functorial in \(T\), and such
+that \(g(\alpha)=\alpha\) if \(\alpha\) is the image in
+\(\mathbf{O}(\mathbf{X}_{T})\) of an element of \(\mathbf{O}(T)\).
+
+Let us now denote by \(\phi\) the identity morphism of \(\mathbf{X}_{T}\)
+(\cf 6.3 and the generalization below to a morphism
+\(\phi\colon\mathbf{Y}\to\mathbf{X}\)) and denote
+\(\Hom_{\mathbf{X}}(\mathbf{X}_{T},\mathbf{M})\) by
+\(\mathbf{M}(\phi g^{-1})\) \resp \(\mathbf{M}(\phi)\), according as
+\(\mathbf{X}_{T}\) is regarded as an \(\mathbf{X}\)-object via
+\(\mathrm{pr}_{\mathbf{X}}\circ\lambda(g^{-1})_{T}\), \resp
+\(\mathrm{pr}_{\mathbf{X}}\).
+
+Then \(\lambda(g^{-1})_{T}\) is an \(\mathbf{X}\)-morphism between these two
+\(\mathbf{X}\)-objects, hence, by what precedes, one obtains a morphism of
+abelian groups
+\[
+(g^{-1})^{*}\colon\mathbf{M}(\phi)\longrightarrow\mathbf{M}(\phi g^{-1}),
+  \qquad m\mapsto m\circ\lambda(g^{-1})_{T}
+\]
+which satisfies \((g^{-1})^{*}(\alpha\cdot m)=(g\alpha)\cdot(g^{-1})^{*}(m)\)
+for every \(m\in\mathbf{M}(\phi)\) and \(\alpha\in\mathbf{O}(\mathbf{X}_{T})\).
+(If \(m\) is a section of \(\mathbf{M}_{T}\) over \(\mathbf{X}_{T}\), then
+\((g^{-1})^{*}(m)\) is the section defined set-theoretically by
+\((x,t)\mapsto m(g^{-1}x,t)\).) In particular, \((g^{-1})^{*}\) is a morphism
+of \(\mathbf{O}(T)\)-modules.
+
+By the functoriality of the morphisms of \(\mathbf{O}(\mathbf{X}_{T})\)-modules
+\(\Lambda_{x}(g)\), one obtains a commutative diagram:
+\[
+\xymatrix{
+\mathbf{M}(\phi) \ar[r]^{(g^{-1})^{*}} \ar[d]_{\Lambda_{\phi}(g)}
+  & \mathbf{M}(\phi g^{-1}) \ar[d]^{\Lambda_{\phi g^{-1}}(g)} \\
+\mathbf{M}(g\phi) \ar[r]_{(g^{-1})^{*}}
+  & \mathbf{M}(g\phi g^{-1})
+}
+\]
+and \(g\phi g^{-1}=\phi\), since \(\phi\) is the identity map. Writing
+\(A(g)=(g^{-1})^{*}\circ\Lambda_{\phi}(g)\), one therefore obtains a
+morphism of abelian groups
+\[
+A(g)\colon\mathbf{M}(\phi)\longrightarrow\mathbf{M}(\phi)
+\]
+which is ``compatible with the action of \(\mathbf{G}(T)\) on
+\(\mathbf{O}(\mathbf{X}_{T})\)'', \ie which satisfies
+\[
+A(g)(\alpha\cdot m)=(g\alpha)\cdot A(g)(m).
+\]
+Finally, if \(h\) is a second element of \(\mathbf{G}(T)\), it follows from
+the functoriality of \(\mathbf{M}\) and of the morphisms \(\Lambda_{x}(g)\)
+that one has a commutative diagram
+\[
+\xymatrix@C=1.6em@R=1.8em{
+& \mathbf{M}(\phi) \ar[dl]_{\Lambda_{\phi}(g)} \ar[dr]^{\Lambda_{\phi}(hg)} & & \\
+\mathbf{M}(g\phi) \ar[rr]^{\Lambda_{\phi}(h)} \ar[d]_{(g^{-1})^{*}}
+  && \mathbf{M}(hg\phi) \ar[d]^{(g^{-1})^{*}} \ar[dr]^{((hg)^{-1})^{*}} & \\
+\mathbf{M}(\phi) \ar[rr]_{\Lambda_{\phi}(h)}
+  && \mathbf{M}(h\phi) \ar[r]_{(h^{-1})^{*}}
+  & \mathbf{M}(\phi)
+}
+\]
+whence \(A(h)\circ A(g)=A(hg)\). Consequently, one
+has obtained the following proposition.
+
+\begin{proposition}{6.4.1}\label{I.6.4.1}
+For every \(T\), the \(\mathbf{O}(\mathbf{X}_{T})\)-module
+\(\bigl(\prod_{\mathbf{X}/S_{0}}\mathbf{M}\bigr)(T)=\Gamma(\mathbf{M}_{T}/\mathbf{X}_{T})\)
+is endowed, in a manner functorial in \(T\), with an action of
+\(\mathbf{G}(T)\) ``compatible with the action of \(\mathbf{G}(T)\) on
+\(\mathbf{O}(\mathbf{X}_{T})\)'', \ie which satisfies
+\[
+A(g)(\alpha\cdot m)=g(\alpha)\cdot A(g)(m).
+\]
+As \(g(\alpha)=\alpha\) for \(\alpha\in\mathbf{O}(T)\), this shows, in
+particular, that \(\prod_{\mathbf{X}/S_{0}}\mathbf{M}\) is a
+\(\mathbf{G}\text{-}\mathbf{O}_{S_{0}}\)-module.
+\end{proposition}
+
+More generally let, as in 6.3, \(\mathbf{Y}\) be a second \(G\)-equivariant
+\(\widehat{\mathcal{C}}\)-object, \(\phi\colon\mathbf{Y}\to\mathbf{X}\) a
+\(\widehat{\mathcal{C}}\)-morphism and
+\(\mathbf{H}=\operatorname{Stab}_{\mathbf{G}}(\phi)\). Then the fiber product
+\(\mathbf{M}_{\phi}=\mathbf{Y}\times_{\phi}\mathbf{M}\) is an
+\(\mathbf{H}\)-equivariant \(\mathbf{O}_{\mathbf{Y}}\)-module. One therefore
+obtains the:
+
+\begin{corollary}{6.4.2}\label{I.6.4.2}
+The functor \(\prod_{\mathbf{Y}/S_{0}}\mathbf{M}_{\phi}\) is a
+\(\operatorname{Stab}_{\mathbf{G}}(\phi)\text{-}\mathbf{O}_{S_{0}}\)-module.
+\end{corollary}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{6.5. \(G\)-equivariant \(\OX\)-modules.}\ ---\ \label{I.sec.6.5}
+Let us apply what precedes in the following situation. Let \(S\) be a scheme,
+\(G\) an \(S\)-group scheme acting on an \(S\)-scheme \(X\), and \(\mathcal{F}\)
+an \(\OX\)-module (not necessarily quasi-coherent).
+
+\begin{definition}{6.5.1}\label{I.6.5.1}
+One says that \(\mathcal{F}\) is a \(G\)-equivariant \(\OX\)-module if the
+\(\mathbf{O}_{X}\)-module \(\mathbf{M}=\mathbf{W}(\mathcal{F})\) is
+\(G\)-equivariant, \ie if one has given oneself, for every morphism
+\((g,x)\colon U\to G\times_{S}X\), isomorphisms of \(\mathbf{O}_{U}\)-modules
+\[
+\Lambda_{x}(g)\colon\mathbf{W}\bigl(x^{*}(\mathcal{F})\bigr)
+  \isomto\mathbf{W}\bigl((gx)^{*}(\mathcal{F})\bigr),
+\]
+functorial in \(U\) and satisfying
+\(\Lambda_{hx}(g)\circ\Lambda_{x}(h)=\Lambda_{x}(gh)\). As the functor
+\(\mathbf{W}\) is fully faithful (\cf 4.6.1.1 and 4.6.2), one therefore
+obtains isomorphisms of \(\mathcal{O}_{U}\)-modules
+\[
+\Lambda_{x}(g)\colon x^{*}(\mathcal{F})\isomto(gx)^{*}(\mathcal{F}),
+\]
+where one recalls that \(gx\) denotes the morphism
+\(\lambda\circ(g,x)\colon U\to X\). In particular, applying this to the
+identity morphism of \(G\times_{S}X\), one obtains an isomorphism of
+\(\mathcal{O}_{G\times_{S}X}\)-modules
+\begin{equation*}
+(\star)\qquad
+\theta\colon\mathrm{pr}_{X}^{*}(\mathcal{F})\isomto\lambda^{*}(\mathcal{F})
+\end{equation*}
+such that the diagram \((\star\star)\) of morphisms of sheaves on
+\(G\times_{S}G\times_{S}X\) below is commutative:
+\[
+\xymatrix@C=0.7em@R=2.6em{
+*+{\scriptstyle\mathrm{pr}_{2,3}^{*}\circ\mathrm{pr}_{X}^{*}(\mathcal{F})}
+  \ar[r]^{\scriptstyle\mathrm{pr}_{2,3}^{*}(\theta)}_{\sim}
+&
+*+{\scriptstyle\mathrm{pr}_{2,3}^{*}\circ\lambda^{*}(\mathcal{F})}
+&
+*+{\scriptstyle(\mathrm{id}_{G}\times\lambda)^{*}\circ\mathrm{pr}_{X}^{*}(\mathcal{F})}
+  \ar[d]^{\scriptstyle(\mathrm{id}_{G}\times\lambda)^{*}(\theta)}
+\\
+*+{\scriptstyle(\mu\times\mathrm{id}_{X})^{*}\circ\mathrm{pr}_{X}^{*}(\mathcal{F})}
+  \ar[r]^{\scriptstyle(\mu\times\mathrm{id}_{X})^{*}(\theta)}_{\sim}
+&
+*+{\scriptstyle(\mu\times\mathrm{id}_{X})^{*}\circ\lambda^{*}(\mathcal{F})}
+  \ar@{}[u]|{(\star\star)}
+&
+*+{\scriptstyle(\mathrm{id}_{G}\times\lambda)^{*}\circ\lambda^{*}(\mathcal{F})}\,.
+}
+\]
+Moreover, if \(\mathcal{E}\) is a second \(G\)-equivariant \(\OX\)-module, one
+says that a morphism of \(\OX\)-modules
+\(\phi\colon\mathcal{E}\to\mathcal{F}\) is \(G\)-equivariant if the morphism
+\(\mathbf{W}(\phi)\colon\mathbf{W}(\mathcal{E})\to\mathbf{W}(\mathcal{F})\) is.
+With the notations above, this amounts to saying that
+\(\theta_{\mathcal{F}}\circ\mathrm{pr}_{X}^{*}(\phi)
+  =\lambda^{*}(\phi)\circ\theta_{\mathcal{E}}\).
+\end{definition}
+
+\begin{remark}{6.5.2}\label{I.6.5.2}
+If \(f\colon Y\to X\) is a \(G\)-equivariant morphism, it follows from 6.3.1
+that \(f^{*}(\mathcal{F})\) is a \(G\)-equivariant \(\mathcal{O}_{Y}\)-module.
+\end{remark}
+
+\begin{remark}{6.5.3}\label{I.6.5.3}
+Suppose moreover that \(\mathcal{F}\) is \emph{quasi-coherent}. Then it
+follows from what precedes that the datum of a structure of \(G\)-equivariant
+\(\mathbf{O}_{X}\)-module on \(\mathbf{M}=\mathbf{W}(\mathcal{F})\)
+\emph{amounts} to the datum of such a structure on \(\mathbf{V}(\mathcal{F})\),
+which still \emph{amounts} to giving oneself an action of \(G\) on the vector
+fibration \(\mathbf{V}(\mathcal{F})\), compatible with the action on \(X\) and
+``linear'' on the fibers.
+
+Indeed, denote by \(\phi\) the isomorphism
+\(\lambda^{*}(\mathcal{F})\isomto\mathrm{pr}_{X}^{*}(\mathcal{F})\) inverse to
+\(\theta\). For every morphism \((g,x)\colon U\to G\times_{S}X\), one has an
+isomorphism of \(\mathcal{O}_{U}\)-modules
+\(\phi_{x}(g)=\Lambda_{x}(g)^{-1}=\Lambda_{gx}(g^{-1})\) from
+\((gx)^{*}(\mathcal{F})\) to \(x^{*}(\mathcal{F})\); it induces an isomorphism
+of \(\mathbf{O}_{U}\)-modules
+\[
+\mathbf{V}\bigl((gx)^{*}(\mathcal{F})\bigr)
+  \isomto\mathbf{V}\bigl(x^{*}(\mathcal{F})\bigr)
+\]
+which one will denote by \({}^{t}\phi_{x}(g)\). One then has
+\[
+{}^{t}\phi_{gx}(h)\circ{}^{t}\phi_{x}(g)
+  ={}^{t}\bigl(\Lambda_{gx}(h)\circ\phi_{x}(g)\bigr)^{-1}
+  ={}^{t}\Lambda_{x}(hg)^{-1}
+  ={}^{t}\phi_{x}(hg).
+\]
+As, for every \(X\)-scheme \(f\colon Y\to X\), one has
+\(\mathbf{V}(\mathcal{F})\times_{f}Y\simeq\mathbf{V}(f^{*}(\mathcal{F}))\)
+(\cf 4.6.2), one therefore obtains that the isomorphism
+\begin{align*}
+{}^{t}\phi\colon
+  G\times_{S}\mathbf{V}(\mathcal{F})
+  &=(G\times_{S}X)\times_{\mathrm{pr}_{X}}\mathbf{V}(\mathcal{F})
+   =\mathbf{V}\bigl(\mathrm{pr}_{X}^{*}(\mathcal{F})\bigr) \\
+  &\isomto\mathbf{V}\bigl(\lambda^{*}(\mathcal{F})\bigr)
+   =(G\times_{S}X)\times_{\lambda}\mathbf{V}(\mathcal{F})
+\end{align*}
+endows \(\mathbf{V}(\mathcal{F})\) with a structure of \(G\)-equivariant
+\(\mathbf{O}_{X}\)-module. Finally, identifying each functor
+\(\mathbf{V}(-)\) with the vector fibration which represents it, and composing
+\({}^{t}\phi\) with the projection onto \(\mathbf{V}(\mathcal{F})\), one
+obtains an action of \(G\) on the vector fibration \(\mathbf{V}(\mathcal{F})\),
+compatible with the action on \(X\) and ``linear'' on the fibers.
+
+One thus recovers the definition given, for example, in [GIT, Chap.~1,
+\S~3], except that in \loccit Mumford considers an \(\OX\)-module
+\(\mathcal{E}\) locally free of finite rank, and defines an action of \(G\)
+on \(\mathbf{V}(\mathcal{E})=\mathbf{W}(\mathcal{E}^{\vee})\). Indeed, the
+preceding diagram \((\star\star)\), with \(\theta\) replaced by \(\phi\) and
+the direction of the arrows reversed, is exactly the one found in \loccit,
+Def.~1.6, and the isomorphism \({}^{t}\phi\) above coincides with the
+isomorphism \(\Phi\) of \loccit, p.~31.
+\end{remark}
+
+\begin{remark}{6.5.4}\label{I.6.5.4}
+Let us consider in particular the case where \(X=S\), endowed with the
+trivial action of \(G\). In this case, a \(G\)-equivariant \(\OS\)-module
+\(\mathcal{F}\) is the same thing as a \(G\text{-}\mathbf{O}_{S}\)-module
+(\cf 4.7.1). Moreover, if one denotes by \(f\) the morphism \(G\to S\) (here
+equal both to \(\mathrm{pr}_{X}\) and to \(\lambda\)), then the isomorphism
+\begin{equation*}
+(\star)\qquad
+\theta\colon f^{*}(\mathcal{F})\isomto f^{*}(\mathcal{F})
+\end{equation*}
+is an element of
+\begin{align*}
+\Hom_{\mathcal{O}_{G}}\bigl(f^{*}(\mathcal{F}),f^{*}(\mathcal{F})\bigr)
+  &=\Hom_{\mathbf{O}_{G}}\bigl(\mathbf{W}(f^{*}(\mathcal{F})),
+      \mathbf{W}(f^{*}(\mathcal{F}))\bigr) \\
+  &=\End_{\mathbf{O}_{S}}\bigl(\mathbf{W}(\mathcal{F})\bigr)(G)
+\end{align*}
+which is none other than the morphism
+\(\rho\colon G\to\End_{\mathbf{O}_{S}}(\mathbf{W}(\mathcal{F}))\) defining the
+operation of \(G\) on \(\mathbf{W}(\mathcal{F})\). Moreover, \(\theta\)
+corresponds by adjunction to the morphism of \(\OS\)-modules
+\(f_{*}(\theta)\circ\tau\colon\mathcal{F}\to f_{*}f^{*}(\mathcal{F})\), where
+\(\tau\colon\mathcal{F}\to f_{*}f^{*}(\mathcal{F})\) is the ``unit'' morphism
+of the adjunction. (This will be used in
+\(\mathrm{VI}_{\mathrm{B}}\), 11.10.bis.)
+\end{remark}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{6.6. The functors \(\prod_{X/S}\mathbf{W}(\mathcal{F})\) and
+\(\mathbf{W}(p_{*}(\mathcal{F}))\).}\ ---\ \label{I.sec.6.6}
+Let \(S\) be a scheme, \(G\) an \(S\)-group scheme acting on \(S\)-schemes \(X\)
+and \(Y\) via the morphisms \(\lambda\colon G\times_{S}X\to X\) and
+\(\mu\colon G\times_{S}Y\to Y\), and let \(p\colon X\to Y\) be a
+\(G\)-equivariant morphism. Suppose that the morphisms \(p\colon X\to Y\) and
+\(\nu_{Y}\colon Y\to S\) are \emph{quasi-compact} and \emph{quasi-separated},
+and that \(\pi\colon G\to S\) is \emph{flat}.
+
+Then the projection \(\mathrm{pr}_{Y}\colon G\times_{S}Y\to Y\) is flat, as is
+\(\mu\) (since \(\mu\) is the composite of \(\mathrm{pr}_{Y}\) and of the
+automorphism \((g,y)\mapsto(g,gy)\)). Finally, for a variable \(S\)-scheme
+\(f\colon T\to S\), one will denote by \(p^{T}\colon X_{T}\to T\) and
+\(f_{X}\colon X_{T}\to X\) the morphisms deduced from \(p\) and \(f\) by base
+change.
+% typo?: printed ``f : T → variable''; read as f : T → S variable
+
+Let \(\mathcal{F}\) be a \emph{quasi-coherent} and \emph{\(G\)-equivariant}
+\(\OX\)-module,
+and let \(\theta\) be the isomorphism
+\(\mathrm{pr}_{X}^{*}(\mathcal{F})\isomto\lambda^{*}(\mathcal{F})\) of
+6.5.1\((\star)\). As \(p\) is quasi-compact and quasi-separated,
+\(p_{*}(\mathcal{F})\) is quasi-coherent (\cf EGA~I, 9.2.1).
+
+\begin{lemma}{6.6.1}\label{I.6.6.1}
+The quasi-coherent \(\mathcal{O}_{Y}\)-module \(p_{*}(\mathcal{F})\) is
+\(G\)-equivariant.
+\end{lemma}
+
+Indeed, one has the two cartesian squares below:
+\[
+\xymatrix{
+G\times_{S}X \ar[r]^{\mathrm{pr}_{X}} \ar[d]_{q}
+  & X \ar[d]^{p}
+  & G\times_{S}X \ar[l]_{\lambda} \ar[d]^{q} \\
+G\times_{S}Y \ar[r]_{\mathrm{pr}_{Y}}
+  & Y
+  & G\times_{S}Y \ar[l]^{\mu}\,.
+}
+\]
+As \(p\) is quasi-compact and quasi-separated and \(\mathrm{pr}_{Y}\) and
+\(\mu\) are flat, it follows from EGA~III, 1.4.15 (supplemented by
+EGA~IV\(_{1}\), 1.7.21) that one has
+\(q^{*}\mathrm{pr}_{X}^{*}(\mathcal{F})=\mathrm{pr}_{Y}^{*}p_{*}(\mathcal{F})\)
+and \(q^{*}\lambda^{*}(\mathcal{F})=\mu^{*}p_{*}(\mathcal{F})\). Consequently,
+\(\theta\) induces an isomorphism
+\[
+\theta_{Y}\colon\mathrm{pr}_{Y}^{*}p_{*}(\mathcal{F})
+  \isomto\mu^{*}p_{*}(\mathcal{F}),
+\]
+and one likewise obtains that \(\theta_{Y}\) satisfies the ``cocycle
+condition'' 6.5.1\((\star\star)\) (since the morphisms
+\(G\times_{S}G\times_{S}Y\to G\times_{S}Y\) which occur are flat). This proves
+the lemma.
+
+In particular, take \(Y=S\) endowed with the trivial action of \(G\). Taking
+remark 6.5.4 into account, one then obtains that \(p_{*}(\mathcal{F})\) is a
+\(G\text{-}\mathbf{O}_{S}\)-module. If moreover \(G\) is affine over \(S\) and
+if one writes \(\mathcal{A}(G)=\pi_{*}(\mathcal{O}_{G})\), then
+\(p_{*}(\mathcal{F})\) is therefore an \(\mathcal{A}(G)\)-comodule, by 4.7.2.
+
+On the other hand, by 6.4.1, the functor
+\(\prod_{X/S}\mathbf{W}(\mathcal{F})\), which to every \(f\colon T\to S\)
+associates
+\[
+\mathbf{W}\bigl(f_{X}^{*}(\mathcal{F})\bigr)(X_{T})
+  =\Gamma\bigl(X_{T},f_{X}^{*}(\mathcal{F})\bigr)
+  =\Gamma\bigl(T,p^{T}_{*}f_{X}^{*}(\mathcal{F})\bigr)
+\]
+is a \(G\text{-}\mathbf{O}_{S}\)-module. Moreover, one has a canonical
+morphism
+\(\tau\colon\mathbf{W}(p_{*}(\mathcal{F}))\to\prod_{X/S}\mathbf{W}(\mathcal{F})\),
+which is given for every \(f\colon T\to S\) by the canonical morphism
+\[
+\Gamma\bigl(T,f^{*}p_{*}(\mathcal{F})\bigr)
+  \longrightarrow\Gamma\bigl(T,p^{T}_{*}f_{X}^{*}(\mathcal{F})\bigr)
+\]
+and which is an isomorphism when one restricts it to the full subcategory of
+schemes \(T\) flat over \(S\), and one checks without difficulty that \(\tau\)
+is a morphism of \(G\text{-}\mathbf{O}_{S}\)-modules. Consequently, one has
+obtained the following proposition (for point~(ii), compare with [GIT],
+p.~32).
+
+\begin{proposition}{6.6.2}\label{I.6.6.2}
+Let \(S\) be a scheme, \(G\) an \(S\)-group scheme acting on an \(S\)-scheme
+\(X\), and \(\mathcal{F}\) a quasi-coherent and \(G\)-equivariant
+\(\OX\)-module. Suppose that \(\pi\colon G\to S\) is flat and that
+\(p\colon X\to S\) is quasi-compact and quasi-separated.
+\par
+\begin{enumeratei}
+\item Then \(p_{*}(\mathcal{F})\) is a quasi-coherent
+\(G\text{-}\mathbf{O}_{S}\)-module. On the other hand, the canonical morphism
+\(\mathbf{W}(p_{*}(\mathcal{F}))\to\prod_{X/S}\mathbf{W}(\mathcal{F})\) is a
+morphism of \(G\text{-}\mathbf{O}_{S}\)-modules, and these two functors
+coincide on the category of flat \(S\)-schemes.
+\item If moreover \(G\) is affine over \(S\) and if one writes
+\(\mathcal{A}(G)=\pi_{*}(\mathcal{O}_{G})\), then \(p_{*}(\mathcal{F})\) is
+endowed with a structure of \(\mathcal{A}(G)\)-comodule.%
+{\renewcommand{\thefootnote}{(55)}\nde{The same holds if \(G\) is flat,
+quasi-compact and quasi-separated over \(S\) and if \(p_{*}(\mathcal{F})\) is
+a flat \(\OS\)-module, \cf Exp.~\(\mathrm{VI}_{\mathrm{B}}\),
+11.6.1\,(ii).}}
+\end{enumeratei}
+\end{proposition}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{6.7. Stabilizers.}\ ---\ \label{I.sec.6.7}
+Let \(S\) be a scheme, \(G\) an \(S\)-group scheme acting on an \(S\)-scheme
+\(X\), and let \(\mathcal{F}\) be a quasi-coherent \(G\)-equivariant
+\(\OX\)-module. Let \(Y\) be a second \(S\)-scheme endowed with an action of
+\(G\) (possibly trivial), let \(\phi\colon Y\to X\) be an \(S\)-morphism, not
+necessarily \(G\)-equivariant, and let \(\operatorname{Stab}_{G}(\phi)\) be
+the stabilizer in \(G\) of \(\phi\) (\cf 6.3.2).
+
+Let us note at once (see Exp.~\(\mathrm{VI}_{\mathrm{B}}\), \S~6) that
+\(\operatorname{Stab}_{G}(\phi)\) is representable by a closed group
+subscheme \(H\) of \(G\) if \(X\) is \emph{separated} over \(S\) and if \(Y\) is
+\emph{essentially free} over \(S\) (\cf \loccit, Def.~6.2.1). Indeed, consider
+the morphism
+\(r\colon G\times_{S}Y\to X\times_{S}X\) given set-theoretically by
+\(r(g,y)=\bigl(\phi(y),\,g\phi(g^{-1}y)\bigr)\), and let \(P=G\times_{S}Y\) and
+\(P'\) be the inverse image by \(r\) of the diagonal \(\Delta_{X/S}\). Then one
+has (\cf \loccit, 6.2.4\,(a))
+\[
+\operatorname{Stab}_{G}(\phi)=\prod_{P/G}P'
+\]
+and hence, by \loccit, \(\operatorname{Stab}_{G}(\phi)\) is representable by a
+closed group subscheme \(H\) of \(G\) if \(X\) is separated over \(S\) and if
+\(Y\) is essentially free over \(S\); this second condition being
+automatically satisfied if \(S\) is the spectrum of a field, or else if
+\(Y=S\). Under these hypotheses, \(\phi^{*}(\mathcal{F})\) is then a
+quasi-coherent \(H\)-equivariant \(\mathcal{O}_{Y}\)-module (\cf 6.5.2).
+
+Therefore, if moreover \(\pi\colon G\to S\) and \(p\colon Y\to S\) are
+quasi-compact and quasi-separated over \(S\), and \(\pi\) is flat, then
+\(p_{*}\phi^{*}(\mathcal{F})\) is an \(H\text{-}\mathbf{O}_{S}\)-module, by
+6.6.2. In particular, one obtains the:
+
+\begin{corollary}{6.7.1}\label{I.6.7.1}
+Let \(S\) be a scheme, \(G\) an \(S\)-group scheme acting on an \(S\)-scheme
+\(X\), and \(\mathcal{F}\) a quasi-coherent \(G\)-equivariant \(\OX\)-module.
+Suppose that \(\pi\colon G\to S\) is flat and that \(X\to S\) is quasi-compact
+and separated. Let \(\tau\colon S\to X\) be a section of \(X\) over \(S\).
+\par
+\begin{enumeratei}
+\item The stabilizer \(H=\operatorname{Stab}_{G}(\tau)\) is a closed group
+subscheme of \(G\), and \(\tau^{*}(\mathcal{F})\) is a quasi-coherent
+\(H\text{-}\mathbf{O}_{S}\)-module.
+\item If moreover \(H\) is affine over \(S\) (for example, if \(G\) is) and if
+one writes \(\mathcal{A}(H)=\pi_{*}(\mathcal{O}_{H})\), then
+\(\tau^{*}(\mathcal{F})\) is an \(\mathcal{A}(H)\)-comodule.
+\end{enumeratei}
+\end{corollary}
+
+\par\addvspace{0.55\baselineskip}
+\noindent\textbf{6.8. \(G\)-equivariant sheaves on \(G\).}\ ---\ \label{I.sec.6.8}
+To conclude, let us indicate two results (6.8.1 and 6.8.6 below) which will
+be used in exposés~II and~III (\cf in particular III, 4.25).
+
+\begin{proposition}{6.8.1}\label{I.6.8.1}
+Let \(S\) be a scheme, \(\pi\colon G\to S\) an \(S\)-group scheme, and
+\(\varepsilon\colon S\to G\) the unit section. One considers the action by
+left translations of \(G\) on itself. Then the functors
+\(\mathcal{E}\mapsto\pi^{*}(\mathcal{E})\) and
+\(\mathcal{F}\mapsto\varepsilon^{*}(\mathcal{F})\) induce equivalences,
+quasi-inverse to one another, between the category of quasi-coherent
+\(\OS\)-modules and that of quasi-coherent \(G\)-equivariant
+\(\mathcal{O}_{G}\)-modules.
+\end{proposition}
+
+\begin{proof}
+Denote by \(\mu\) the multiplication of \(G\) and by \(\mathrm{pr}_{2}\) the
+second projection \(G\times_{S}G\to G\). As \(\pi\circ\mu=\pi\circ\mathrm{pr}_{2}\),
+for every quasi-coherent \(\OS\)-module \(\mathcal{E}\) one has a canonical
+isomorphism \(\mu^{*}\pi^{*}(\mathcal{E})=\mathrm{pr}_{2}^{*}\pi^{*}(\mathcal{E})\),
+and one easily checks that this isomorphism satisfies the ``cocycle
+condition'' 6.5.1\((\star\star)\), \ie \(\pi^{*}(\mathcal{E})\) is a
+\(G\)-equivariant \(\mathcal{O}_{G}\)-module. As
+\(\varepsilon^{*}\pi^{*}(\mathcal{E})=\mathcal{E}\), the functor
+\(\mathcal{E}\mapsto\pi^{*}(\mathcal{E})\) is fully faithful; it therefore
+remains to see that for every \(G\)-equivariant quasi-coherent
+\(\mathcal{O}_{G}\)-module \(\mathcal{F}\), one has
+\(\mathcal{F}\simeq\pi^{*}\varepsilon^{*}(\mathcal{F})\).
+% proof continues on the next page; tombstone suppressed at the chunk boundary
+\renewcommand{\qedsymbol}{}
+\end{proof}

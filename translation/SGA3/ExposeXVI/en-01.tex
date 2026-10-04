@@ -1,0 +1,161 @@
+\exposetitle{XVI}{Groups of unipotent rank zero}
+\label{XVI}
+\begin{center}by M. Raynaud{\renewcommand{\thefootnote}{*}\footnotemark}\end{center}
+{\renewcommand{\thefootnote}{*}\footnotetext{Cf. the note on page 1 of Exp. XV.}}
+{\renewcommand{\thefootnote}{0}\footnotetext{xy version of 1/12/08}}
+\setcounter{footnote}{0}
+
+\sgasection{1}{An immersion criterion}
+\numpara{1.1}\label{XVI.1.1}\textbf{Examples of monomorphisms of group preschemes which are not immersions.}
+We shall construct a prescheme $S$, two group $S$-preschemes $G$ and $H$, and a group $S$-monomorphism $u:G\to H$ which is not an immersion. The groups $G$ and $H$ will be of finite presentation over $S$, flat over $S$, and $G$ will even be smooth over $S$ (cf. Exp. VIII, the paragraph and note (*) preceding 7.1, see also XVII App. III, 4).
+
+First take for $S$ the spectrum of a discrete valuation ring $A$ of mixed characteristic and with residue characteristic equal to $2$. Let $t$ be the generic point of $S$ and $s$ the closed point.
+
+\noindent a) Take for $G$ the open subgroup of the constant group $G'=(\mathbf Z/2\mathbf Z)_S$ obtained by removing the point of the closed fiber $(\mathbf Z/2\mathbf Z)_s$ distinct from the identity element, and take for $H$ the group of multiplicative type $(\bmu_2)_S$ of second roots of unity (Exp. I 4.4.4). In view of the choice of $S$, $H_t$ is isomorphic to $(\mathbf Z/2\mathbf Z)_t$, whereas $H_s$ is a radicial group. One has an evident morphism $G'\to H$, defined by the section $(-1)$ of $H$, whence a morphism $u:G\to H$, which is a monomorphism but is not an immersion (otherwise it would necessarily be an isomorphism (cf. Exp. VIII 7)). Here Exp. VIII 7.9 does not apply, since ${}_2G=G$ is not finite over $S$.
+% typo: the outer closing parenthesis after the reference to VIII 7 is missing; supplied.
+
+\noindent b) Denote by $K$ the étale nonseparated group $S$-prescheme obtained from the unit group by ``doubling'' the unique point of the closed fiber. Take for $H$ the product group $(\bmu_2)_S\times_S K$. Let $a$ (resp. $b$) be the unique section of $\bmu_2$ (resp. $K$) over $S$ distinct from the unit section, and let $h=(a,b)$ be the corresponding section of $H$. The datum $h$ defines a group $S$-morphism
+\[
+u:G=(\mathbf Z/2\mathbf Z)_S\longrightarrow H.
+\]
+% Source PDF p. 2.
+It is clear that $u$ is a monomorphism, and it is not an immersion. Here Exp. VIII 7.9 does not apply, since ${}_2H=H$ is not separated over $S$.
+
+\noindent c) More interesting is the following example, where $G$ is a smooth group with connected fibers (and even $G=(\Ga)_S$) (cf. Exp. VIII 7.10).
+
+Take for $S$ the spectrum of a discrete valuation ring $A$ of equal characteristic $2$, and let $\pi$ be a uniformizer of $A$, $\mathfrak m$ the maximal ideal of $A$.
+
+Consider the additive group $(\Ga)_S$, the product group $(\Ga\times\Ga)_S$ with ring $A[X,Y]$, and let $G_1$ be the closed subgroup with equation
+\[
+X^2+X-\pi Y=0.\tag{1}
+\]
+The group $G_1$ is smooth over $S$, its generic fiber is isomorphic to $(\Ga)_t$, and its closed fiber is isomorphic to the product of $(\Ga)_s$ with $(\mathbf Z/2\mathbf Z)_s$. One may take as factor $(\mathbf Z/2\mathbf Z)_s$ the subgroup $N_s$ of $(G_1)_s$ with equation
+\[
+Y=X^2+X=0.\tag{2}
+\]
+Let $N'$ and $N''$ be two group subschemes of $G_1$, isomorphic to $(\mathbf Z/2\mathbf Z)_S$, whose closed fibers coincide with $N_s$ and whose generic fibers are distinct. The groups $N'$ and $N''$ are therefore defined by the datum of two sections of $G_1$ over $S$, with coordinates $(a',b')$ (resp. $(a'',b'')$), such that
+\[
+\begin{cases}
+a'^2+a'-\pi b'=a''^2+a''-\pi b''=0,\\
+a'\text{ and }a''\equiv1\pmod{\mathfrak m},\quad a'\ne a'',\\
+b'\text{ and }b''\equiv0\pmod{\mathfrak m}.
+\end{cases}\tag{3}
+\]
+(One may take, for example, $(1,0)$ and $(1+\pi^2,\pi+\pi^3)$.)
+
+The quotient groups $G'=G_1/N'$ and $G''=G_1/N''$ are representable (Exp. V 4.1). Let $u$ be the canonical morphism
+\[
+u:G_1\longrightarrow G'\times_S G'',
+\]
+and let $H$ be the group subscheme of $G'\times_S G''$ equal to the schematic closure in $G'\times_S G''$ of $u_t(G_1)_t$, so that $u$ factors through $H$. The kernel of $u$ is $K=N'\cap N''$, whose generic fiber is the unit group and whose closed fiber is equal to $N_s$; in particular, $K$ is not flat over $S$. On the generic fiber, $u_t$ is therefore an isomorphism of $(G_1)_t$ onto $H_t$. On the other hand, I say that $H_s$ is not smooth. Indeed, if $H_s$ were smooth, since $u_s$ is a morphism with finite kernel and $(G_1)_s$ and $H_s$ have the same dimension (namely $1$), $u_s$ would be a flat morphism; since $G_1$ and $H$ are flat, $u$ would be a flat morphism, and consequently $\Ker u$ would be flat over $S$, which it is not. It is clear that the restriction of $u$ to the identity component $G$ of $G_1$ is a monomorphism (the fibers of $K\cap G$ are unit groups, so $K\cap G$ is the unit group (Exp. VIB 2.9)), but it is not an immersion (otherwise it would be an open immersion, and $H_s$ would be smooth). Here Exp. VIII 7.9 does not apply, since ${}_2G=G$ is not finite over $S$.
+
+For enthusiasts of equations, let us say that in the above example, one may take for $H$ the closed subgroup of $(\Ga\times_S\Ga)_S$ with ring $A[V,W]/(F)$, where
+\[
+F=(a''b'-b''a')(a''^2V-a'^2W)-(a''V-a'W)^2
+\]
+(where $a',a'',b',b''$ satisfy (3)). For $G$, one takes the group $(\Ga)_S$ with ring $A[T]$, and as morphism $u:G\to H$, the $S$-morphism defined by the maps
+\[
+V\longmapsto a'(a'T+\pi T^2),\qquad W\longmapsto a''(a''T+\pi T^2).
+\]
+% Source PDF p. 3.
+\begin{remark}{1.2}\label{XVI.1.2}
+The preceding construction is inspired by the method of Koizumi--Shimura\nde{S. Koizumi \& G. Shimura, \emph{Specialization of abelian varieties}, Sci. Papers Coll. Gen. Ed. Univ. Tokyo 9 (1959), 187--211.}. It does not apply when $S$ is the spectrum of a ring of mixed characteristic, the points of finite order of $G$ then being ``too rigid''.
+\end{remark}
+\numpara{1.3}\textbf{Statement of the immersion criterion.}
+\begin{theorem}{1.3}\label{XVI.1.3}
+Let $S$ be a locally noetherian prescheme, $G$ a group $S$-prescheme smooth over $S$, of finite type, having locally for the fpqc topology Cartan subgroups (Exp. XV 6.1 and 7.3 (i)), $H$ a group $S$-prescheme locally of finite type, $u:G\to H$ a group $S$-monomorphism. Then:
+
+\noindent a) If $G$ has connected fibers, for $u$ to be an immersion, (it is necessary and) it suffices that for every $S$-scheme $S'$ which is the spectrum of a complete discrete valuation ring with algebraically closed residue field, and for every Cartan subgroup $C$ of $G_{S'}$, the restriction of $u_{S'}$ to $C$ be an immersion.
+
+\noindent b) For $u$ to be an immersion (resp. a closed immersion), (it is necessary and) it suffices that for every $S'$ as above and every Cartan subgroup $C$ of the identity component $(G_{S'})^0$ of $G_{S'}$, the restriction of $u_{S'}$ to the normalizer (Exp. XI 6.11) $N$ of $C$ in $G_{S'}$ be an immersion (resp. a closed immersion).
+\end{theorem}
+Before proving 1.3, let us state a few applications:
+\begin{corollary}{1.4}\label{XVI.1.4}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth over $S$, of finite presentation over $S$, of unipotent rank (Exp. XV 6.1 ter) zero, and having, locally for the fpqc topology, maximal tori, $H$ a group $S$-prescheme, $u:G\to H$ a group $S$-monomorphism. Suppose moreover either that $H$ is of finite presentation over $S$, or that $S$ is locally noetherian and $H$ locally of finite type. Then:
+
+\noindent a) If $G$ has connected fibers, $u$ is an immersion.
+
+\noindent b) If $H$ is separated over $S$ and if for every $S'$ over $S$ and every maximal torus $T$ of $G_{S'}$, the Weyl group
+\[
+W=\uNorm_{G_{S'}}(T)/\uCentr_{G^0_{S'}}(T)
+\]
+is representable (a condition always satisfied if $G$ has connected fibers (Exp. XV 7.1 (iv))) and is finite over $S$, then $u$ is a closed immersion.
+% typo: missing outer closing parenthesis after the reference to XV 7.1(iv); supplied.
+\end{corollary}
+\begin{corollary}{1.5}\label{XVI.1.5}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth over $S$, of finite presentation over $S$, with connected fibers, $H$ a group $S$-prescheme, $u:G\to H$ a group $S$-monomorphism. Suppose either that $H$ is of finite presentation over $S$, or that $S$ is locally noetherian and $H$ locally of finite type. Then:
+
+% Source PDF p. 4.
+\noindent a) If $G$ is reductive, i.e. affine over $S$ with reductive fibers (cf. Exp. XIX), $u$ is an immersion, and a closed immersion if $H$ is separated.
+
+\noindent b) If $G$ has affine solvable connected fibers of unipotent rank zero, $u$ is an immersion, and a closed immersion if $H$ is separated.
+\end{corollary}
+\par\noindent\emph{Proof of 1.4 from 1.3.}
+\par\noindent\emph{Reduction to the case where $S$ is noetherian.}
+If $S$ is locally noetherian, the reduction is immediate, the properties to be proved being local on $S$. In the second case, $G$ and $H$ are of finite presentation over $S$. After restricting $S$, we may suppose $S$ affine. By Exp. VIB \S\ 10, there exist a noetherian scheme $S_0$, a group $S_0$-prescheme $G_0$, smooth over $S_0$ (with connected fibers in case a)), of finite type over $S_0$, a group $S_0$-prescheme $H_0$ of finite type (separated in case b)), a group $S_0$-morphism
+\[
+u_0:G_0\longrightarrow H_0,
+\]
+such that $G,H,u$ are obtained from $G_0,H_0,u_0$ by an extension of the base $S\to S_0$. The fact that $u$ is a monomorphism means that $\Ker u=$ unit group; one may therefore suppose that $u_0$ is a monomorphism. Since $G$ has unipotent rank $\rho_u$ zero and has, locally for the fpqc topology, maximal tori, the abelian rank $\rho_{\mathrm{ab}}$ of the fibers of $G$ is locally constant (Exp. XV 8.18). But $\rho_u$ and $\rho_{\mathrm{ab}}$ are locally constructible functions (Exp. XV 6.3 bis). A standard argument (cf. EGA IV 8.3.4) shows that one can choose $S_0$ and $G_0$ so that the unipotent rank (resp. the abelian rank) of the fibers of $G_0$ is zero (resp. locally constant). But then $G_0$ has locally maximal tori for the fpqc topology (Exp. XV 8.18), and the functor $\mathscr{TM}_{G_0}$ of maximal tori of $G_0$ is representable by an $S_0$-scheme $X_0$ of finite type over $S_0$ (Exp. XV 8.15). Let $T_0$ be the ``universal'' maximal torus of $(G_0)_{X_0}$, $X$ the $S$-prescheme $X_0\times_{S_0}S$, $T=T_0\times_{S_0}S$ the universal maximal torus for $G$. By hypothesis, in case b), the Weyl group corresponding to $T$ is representable and finite over $X$. These two properties are compatible with projective limits of preschemes (Exp. VIB 10.1 iii) and EGA IV 8.10.5). One can therefore choose $S_0$ so that the Weyl group of $T_0$ is finite over $X_0$. It is clear under these conditions that, to prove 1.4, one may replace $S,G,u,H$ by $S_0,G_0,u_0,H_0$, hence suppose $S$ noetherian.
+
+Let us use the valuative criterion provided by 1.3. We are reduced to the case where $S$ is the spectrum of a discrete valuation ring and to the case where $G^0$ has a Cartan subgroup $C$.
+
+\par\noindent\emph{Proof of 1.4 a).}
+We must show that the restriction of $u$ to $C$ is an immersion (1.3 a)), which reduces us to the case where $G=C$ has connected nilpotent fibers. Standard reductions (cf. Exp. VIII proof of 7.1) reduce us to the case where $H$ is flat over $S$, $u$ is an isomorphism on the generic fiber, and $u$ is an isomorphism of the underlying spaces on the closed fiber. The group $H$ then has connected fibers, hence is separated over $S$ (Exp. VIB 5.2). Let us admit for a moment the lemma:
+\begin{lemma}{1.6}\label{XVI.1.6}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme smooth over $S$, with connected nilpotent fibers of unipotent rank zero. Then:
+
+\noindent i) $G$ is commutative.
+
+% Source PDF p. 5.
+\noindent ii) For every integer $n>0$, ${}_nG$ is a group prescheme flat and quasi-finite over $S$, finite over $S$ if and only if the abelian rank, or the reductive rank, of $G$ is locally constant on $S$.
+
+\noindent iii) For every integer $q>0$ invertible on $S$, the family of subgroups ${}_{q^n}G$ is universally schematically dense in $G$ relative to $S$ (EGA IV 11.10.8).
+\end{lemma}
+Lemma 1.6 applies to the group $G$, and since $G$ has locally maximal tori, the reductive rank of the fibers of $G$ is locally constant, so (1.6 ii)), for every integer $n>0$, ${}_nG$ is finite over $S$. The fact that $u$ is an immersion then follows from Exp. VIII 7.9.
+
+\par\noindent\emph{Proof of 1.6.}
+Let us first examine the case where $S$ is the spectrum of a field:
+\begin{lemma}{1.7}\label{XVI.1.7}
+Let $k$ be a field of characteristic $p$, $G$ an algebraic $k$-group, smooth, connected, nilpotent, of unipotent rank zero. Then $G$ is a commutative group, an extension of an abelian variety $A$ by a torus $T$. For every integer $n>0$, ${}_nG$ is a finite group, étale if $(n,p)=1$, defined by a $k$-algebra of rank $n^{\rho_r+2\rho_{\mathrm{ab}}}$. If $(q,p)=1$, the family of subgroups ${}_{q^n}G$ ($n\in\mathbf N$) is schematically dense in $G$.
+\end{lemma}
+\par\noindent\emph{Proof of 1.7.}
+Let $Z$ be the center of $G$. The group $G/Z$ is affine (Exp. XII 6.1), of unipotent rank zero, smooth and connected, hence is a torus (BIBLE 4 Th. 4), but then $G$ is commutative (Exp. XII 6.4). If $T$ is the unique maximal torus of $G$ (Exp. XV 3.4), it follows immediately from Chevalley's theorem (Sém. Bourbaki 1956/57, \No 145) that $G$ is an extension of an abelian variety $A$ by $T$. For every integer $n>0$, raising to the $n$th power is an epimorphism in $T$, and one deduces an exact sequence
+\[
+0\longrightarrow{}_nT\longrightarrow{}_nG\longrightarrow{}_nA\longrightarrow0.
+\]
+A classical theorem of Weil (A. Weil: \emph{Variétés abéliennes et courbes algébriques}, \S\ IX Th. 33 Cor. 1) tells us that ${}_nA$ is a finite group defined by a $k$-algebra of rank $n^{2\rho_{\mathrm{ab}}}$. Since ${}_nT$ is a finite group of rank $n^{\rho_r}$, one deduces the asserted structure of ${}_nG$.
+
+Let then $H$ be the smallest closed subscheme of $G$ containing ${}_{q^n}G$ for every $n$. It follows from the foregoing and Exp. XV 4.6 that $H$ is a smooth connected subgroup, hence of the same type as $G$. Raising to the $n$th power in $H$ is an epimorphism (since ${}_qH$ is finite), so that one has the exact sequence
+\[
+0\longrightarrow{}_qH\longrightarrow{}_qG\longrightarrow{}_q(G/H)\longrightarrow0.
+\]
+It follows that ${}_q(G/H)=0$, hence $G/H=0$. This says that the subgroups ${}_{q^n}G$ are schematically dense in $G$.
+% typo?: n-th power is printed before the exact sequence of q-kernels; kept.
+
+\par\noindent\emph{Continuation of the proof of 1.6. i).}
+To show that $G$ is commutative, one reduces by the usual procedure to the case where $S$ is noetherian, then to the case where $S$ is the spectrum of a local ring with closed point $s$. The center of $G$ is representable by a closed group subscheme $Z$ of $G$ (Exp. XI 6.11). To show that $Z=G$, it suffices to show that $Z=G$ after reduction by every power of the maximal ideal of the ring of $S$ (for $Z$ will then be an open subgroup of $G$, hence will be equal to $G$, since $G$ has connected fibers). This reduces us to the case where $S$ is local artinian.
+
+% Source PDF p. 6.
+Let $q$ be an integer invertible on $S$. For every integer $n$, ${}_{q^n}G_s$ is an étale central subgroup of multiplicative type of $G_s$ (1.7). Since $G$ is smooth, ${}_{q^n}(G_s)$ lifts to an étale central group $S$-subscheme $M_n$ of $G$ (Exp. XV 1.2). The family of flat subgroups $M_n$, $n\in\mathbf N$, is then schematically dense in $G$ (1.7 and EGA IV 11.10.9). Since $Z$ is closed in $G$ and contains all the $M_n$, one indeed has $Z=G$.
+
+1.6 ii). To see that ${}_nG$ is flat and quasi-finite over $S$, it suffices to show that raising to the $n$th power in $G$ is a flat quasi-finite morphism. Since $G$ is flat over $S$, one reduces to the case where $S$ is the spectrum of a field (EGA IV 11.3.10), and it was remarked in the proof of 1.7 that raising to the $n$th power was an epimorphism. Moreover, ${}_nG$ is separated over $S$, since $G$ is separated over $S$ (Exp. VIB 5.2). For ${}_nG$ to be finite over $S$, it is then necessary and sufficient that the fibers of ${}_nG$ be spectra of finite algebras of locally constant rank (one sees this immediately by reducing to the case where $S$ is the spectrum of a henselian local ring). But by 1.7, this condition is equivalent to saying that the abelian rank, or the reductive rank, of the fibers of $G$ is locally constant.
+
+1.6 iii). To see that the family of subgroups ${}_{q^n}G$ ($n\in\mathbf N$) is universally schematically dense in $G$, one again reduces to the case where $S$ is noetherian. Taking account of 1.7 and 1.6 b), it then suffices to apply EGA IV 11.10.9.
+% typo?: 1.6 b) is the printed reference; kept.
+
+\par\noindent\emph{Proof of 1.4 b).}
+We have reduced to the case where $S$ was the spectrum of a discrete valuation ring and to the case where $G^0$ had a Cartan subgroup $C$. Let $N=\uNorm_G C=\uNorm_G T$, where $T$ is the unique maximal torus of $C$ (Exp. XII 7.1 a) and b)). Since $H$ is separated over $S$, it follows from 1.6 ii) and Exp. VIII 7.12 that the restriction of $u$ to $C$ is a closed immersion. On the other hand, to prove that $u$ is a closed immersion, it suffices to show that this holds for $u|_N$ (1.3 b)). Since by hypothesis $W=N/C$ is representable by a finite group scheme, this will follow from the following lemma, applied to the exact sequence
+\[
+0\longrightarrow C\longrightarrow N\longrightarrow W\longrightarrow1
+\]
+(note that a proper immersion is a closed immersion).
+\begin{lemma}{1.8}\label{XVI.1.8}
+Let $S$ be a prescheme, $G$ a group $S$-prescheme of finite presentation over $S$, an extension of a group prescheme $G''$, proper and of finite presentation over $S$, by a group prescheme $G'$, of finite presentation and flat over $S$:
+\[
+1\longrightarrow G'\longrightarrow G\longrightarrow G''\longrightarrow1.
+\]
+On the other hand, let $H$ be a group $S$-prescheme of finite presentation over $S$ (or locally of finite presentation if $S$ is locally noetherian) and $u:G\to H$ a group $S$-morphism. Then if the restriction of $u$ to $G'$ is proper, $u$ is proper.
+\end{lemma}
+\par\noindent\emph{Proof of 1.8.}
+We reduce as usual to the case where $S$ is noetherian (Exp. VIB \S\ 10 and Exp. XV 6.2), and we can then apply the valuative criterion of properness (EGA II 7.3.8). We therefore suppose that $S$ is the spectrum of a discrete valuation ring $A$, with closed point $s$ and generic point $t$. Let $\bar x\in G(t)$ and $h\in H(S)$ be such that $u_t(\bar x)=h(t)$. We must show that $\bar x$ comes from a unique element $x$ of $G(S)$. It even suffices to prove existence and uniqueness of $x$ after a faithfully flat extension of the discrete valuation ring $A$. Now let $\bar y$ be the projection of $\bar x$ in $G''(t)$.

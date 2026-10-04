@@ -1,0 +1,258 @@
+% Source PDF pp. 17–24; the preceding sentence belongs to en-03.
+Since $G$ is of height 1, one then deduces from App. II 2.2 that $G$ itself is an algebraic subgroup of $\operatorname{Trigstr}(n)$, hence is unipotent (3.5 v) $\Rightarrow$ i)).
+
+\noindent b) \emph{General case.} Let us proceed by induction on the height $h$ of $G$\begingroup\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{I.e. the least integer such that $F^h=\mathrm{id}_G$, \cf App. II 1.}\endgroup.
+% typo: "le plus entier" -> "the least integer" (the missing adjective is supplied).
+% typo?: F^h=id_G in the source footnote is kept as printed.
+The case $h=1$ has just been treated. Suppose that $h>1$, and put $G'={}_F G$ and $G''=G/G'$. The group $G'$ is of height 1, and $\Lie G'=\Lie G$ is unipotent, hence $G'$ is unipotent by a). To show that $G$ is unipotent, it therefore suffices to prove that $G''$ is unipotent (2.2). But $G''$ is of height $h-1$, hence, by the induction hypothesis, it suffices to show that $\Lie G''$ is unipotent. Since iv) $\Rightarrow$ v), it suffices to show that $G''_{\overline k}$ contains no groups isomorphic to $\boldsymbol\mu_p$. Let therefore a subgroup of $G''_{\overline k}$ isomorphic to $\boldsymbol\mu_p$ be given, and let $H$ be its inverse image in $G_{\overline k}$. Since the group $G'$ is unipotent, we shall prove in \S~5 that the extension:
+\[
+ e\to G'_{\overline k}\to H\to\boldsymbol\mu_p\to e
+\]
+is necessarily trivial (the proof given of this fact is independent of the results of the present paragraph). Thus the group $\boldsymbol\mu_p$ lifts into $H$, but, being of height 1, it is necessarily contained in $G'_{\overline k}={}_F G_{\overline k}$; hence a contradiction, since $G'$ is unipotent.
+
+\par\medskip\noindent\textbf{4.3. Connected affine groups in characteristic $p>0$.}\ ---\par\label{XVII.4.3}
+\begin{proposition}{4.3.1}\label{XVII.4.3.1}
+Let $G$ be a connected affine algebraic group over a field $k$ of characteristic $p>0$. Then the following conditions are equivalent:
+\begin{enumerate}[label={}]
+\item i) $G$ is unipotent.
+\item ii) $G$ has a composition series with successive quotients isomorphic to $\boldsymbol\alpha_p$ and $\Ga$ (taken in this order).
+\item iii) $G$ admits a characteristic composition series with successive quotients isomorphic to $(\boldsymbol\alpha_p)^r$ and $(\Ga)^s$ (taken in this order).
+\item iv) $G_{\overline k}$ contains no subgroup isomorphic to $\boldsymbol\mu_p$.
+\item v) $\mathfrak g=\Lie G$ is unipotent (3.6).
+\item vi) $\mathfrak g$ is nilpotent, and the reductive part of the center of $\mathfrak g$ (4.2.2) is trivial.
+\item vi bis) $\mathfrak g$ is nilpotent, and every subgroup of multiplicative type of the neutral component of the center of $G$ is zero.
+\item vi ter) $G$ is nilpotent, and every subgroup of multiplicative type of the neutral component of the center of $G$ is zero.
+\end{enumerate}
+\end{proposition}
+\noindent\emph{Proof.} It is clear that iii) $\Rightarrow$ ii) $\Rightarrow$ i). To establish i) $\Rightarrow$ iii), we shall need the following lemma:
+% Source PDF p. 18.
+\begin{lemma}{4.3.2}\label{XVII.4.3.2}
+Let $k$ be a field of characteristic $p>0$, $n\in\NN$, $k'$ a radicial extension of $k$ such that $(k')^{p^n}$ is contained in $k$; for every $k$-prescheme $X$ (resp. every $k'$-prescheme $X'$), denote by $X^{(p^n)}$ (resp. $X'_\varphi$) the $k$-prescheme obtained from $X$ (resp. $X'$) by the base change:
+\[
+ F^n:k\to k,\quad x\mto x^{p^n},\qquad
+ (\text{resp. }\varphi:k'\to k,\quad x'\mto x'^{p^n}).
+\]
+Then, for every $k$-prescheme $X$, there is a functorial isomorphism:
+\[
+ (X_{k'})_\varphi\isomto X^{(p^n)}.
+\]
+Consequently, if $X$ and $Y$ are two $k$-preschemes such that there is a $k'$-isomorphism $u':X_{k'}\isomto Y_{k'}$, then there is a $k$-isomorphism $v:X^{(p^n)}\isomto Y^{(p^n)}$. If, moreover, $X$ and $Y$ are endowed with structures of group $k$-preschemes, and if $u'$ is a $k'$-homomorphism, then $v$ is a $k$-homomorphism.
+\end{lemma}
+The lemma simply follows from the transitivity of base changes and the fact that the composite morphism $k\to k'\xrightarrow{\varphi}k$ is equal to $F^n$.
+
+\noindent\emph{Continuation of the proof of 4.3.1.}
+
+\noindent i) $\Rightarrow$ iii). Let us proceed by induction on $\dim G$. If $\dim G=0$, since $G$ is connected, it is radicial, and one applies 3.9 i). If $\dim G>0$, there is an integer $m\geq0$ such that the quotient $G/{}_{F^m}G$ is a smooth group (App. II 3.1), obviously connected and nonzero. Applying 4.1.1 i) $\Rightarrow$ iii) to the latter, one sees that there is an algebraic subgroup $G'$ of $G$ that is characteristic and connected and such that the quotient $G''=G/G'$ is a form of $\Ga^r$ ($r>0$). By 4.1.5, if $K$ is a perfect closure of $k$, one has $G''_K\isomto(\mathbf G_{\mathrm a,K})^r$. Since $G''$ is of finite type over $k$, there is a finite radicial extension $k'$ of $k$ such that $G''_{k'}\isomto(\mathbf G_{\mathrm a,k'})^r$ (Exp. VIB \S~10). Let $n>0$ be such that $(k')^{p^n}\subset k$. Keeping the notation of 4.3.2, one deduces that there is a $k$-isomorphism of algebraic groups:
+\[
+ (\mathbf G_{\mathrm a,k})^r=(\mathbf G_{\mathrm a,k'})^r_\varphi
+ \isomto(G'')^{(p^n)}.
+\]
+Consider then the Frobenius homomorphism relative to $G''$ (Exp. VIIA \S~4)
+\[
+ F^n:G''\to(G'')^{(p^n)}.
+\]
+Since $G''$ (hence also $(G'')^{(p^n)}$) is smooth over $k$, and $F^n$ is radicial, $F^n$ is an epimorphism for the fpqc topology, so that $(G'')^{(p^n)}$ is identified with $G''/{}_{F^n}(G'')$. Finally, we have shown that $G''/{}_{F^n}(G'')$ is isomorphic, as an algebraic group, to $(\Ga)^r$. The inverse image $G'_n$ of ${}_{F^n}(G'')$ in $G$ is a connected characteristic subgroup of $G$ of dimension strictly less than that of $G$, to which we can apply the induction hypothesis.
+
+\noindent i) $\Rightarrow$ iv) by 2.4 i).
+
+\noindent iv) $\Rightarrow$ i). Consider $G$ as an extension of a smooth connected group $G''$ by a radicial group $G'$ (App. II 3.1). The group $G'$ is unipotent (4.2.1 iv) $\Leftrightarrow$ i)). It suffices to see that $G''$ is unipotent, and for this it suffices to show that $G''_{\overline k}$ contains no subgroup isomorphic to $\boldsymbol\mu_p$ (4.1.1 i) $\Leftrightarrow$ iv)). Now, if $G''_{\overline k}$ contained a subgroup $\boldsymbol\mu_p$, the latter would lift into $G_{\overline k}$ by the result (5.1) already used and proved in \S~5; hence a contradiction with iv).
+
+% Source PDF p. 19.
+\noindent i) $\Rightarrow$ v) by 3.7.
+
+\noindent v) $\Rightarrow$ vi). Indeed, since $(\ad X)^{p^r}=\ad(X^{(p^r)})$ (VIIA 5.2), $\ad X$ is nilpotent if $\mathfrak g$ is unipotent, hence $\mathfrak g$ is nilpotent by \emph{Engel's theorem} (Bourbaki, \emph{Groupes et algèbres de Lie}, chap. I \S~4). Moreover, if $\mathfrak g$ is unipotent, the same is obviously true of its center, whose reductive part is then trivial (4.2.2).
+
+\noindent vi) $\Rightarrow$ iv). Indeed, if $G_{\overline k}$ contains a subgroup isomorphic to $\boldsymbol\mu_p$, there is an element $X\neq0$ of its Lie algebra such that $X^{(p)}=X$ (App. II 2.1), hence $X^{(p^r)}=X$ for every $r>0$. Since $\ad X$ is nilpotent because $\mathfrak g$ is nilpotent, and $(\ad X)^{p^r}=\ad X^{(p^r)}$, one necessarily has $\ad X=0$, hence $X$ belongs to the reductive part of the center of $\mathfrak g_{\overline k}$; hence a contradiction with vi).
+
+\noindent i) $\Rightarrow$ vi ter) follows from 2.4 i) and 3.5 i) $\Rightarrow$ iii).
+
+\noindent vi ter) $\Rightarrow$ vi bis). Indeed, if $G$ is nilpotent, so is its subgroup ${}_F G$. Moreover, it follows from App. II 2.2 that ${}_F G$ is nilpotent if and only if $\Lie{}_F G=\Lie G$ (Exp. VIIA) is nilpotent.
+
+\noindent vi bis) $\Rightarrow$ vi). Let $Z$ be the neutral component of the center of $G$, and let $\mathfrak r$ be the reductive component of the center of $\mathfrak g$. We must show that $\mathfrak r=0$. Now it is immediate that $\mathfrak r$ is a characteristic Lie $p$-subalgebra of $\mathfrak g=\Lie{}_F G$ (that is, stable under the functor $\underline{\Aut}_{p\text{-Lie}}(\mathfrak g)$); hence $\mathfrak r$ is the Lie algebra of a characteristic radicial subgroup $R$ of ${}_F G$ (App. II 2.2). Moreover, it follows from the last assertion in 4.2.2 and from App. II 2.1 that $R$ is a form of $(\boldsymbol\mu_p)^r$. Since the group $R$ is characteristic in ${}_F G$, which is itself a characteristic subgroup of $G$ (App. II 1), $R$ is a fortiori invariant in $G$, hence is central, since $G$ is connected (Exp. IX 5.5). Thus, by hypothesis vi bis), $R$ is zero, and therefore so is $\mathfrak r$.
+
+\par\medskip\noindent\textbf{4.4. Étale groups.}\ ---\ \label{XVII.4.4}
+The following proposition is an easy consequence of Sylow's theorems and of the structure of finite $q$-groups (\cf J.-P. Serre, \emph{Corps locaux}, chap. IX \S~1).
+\begin{proposition}{4.4.1}\label{XVII.4.4.1}
+Let $G$ be a finite étale algebraic group defined over an algebraically closed field $k$. Then, for $G$ to be unipotent, it is necessary and sufficient that for every prime number $q$ distinct from the characteristic $p$ of $k$, $G$ contain no subgroup isomorphic to $\boldsymbol\mu_q$.
+\end{proposition}
+
+\par\medskip\noindent\textbf{4.5. Abelian varieties.}\ ---\ \label{XVII.4.5}
+Let $G$ be an abelian variety defined over an algebraically closed field $k$. Then the following conditions are equivalent:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $G$ is unipotent.
+\item $G=0$.
+\item There is an integer $n$, prime to the characteristic $p$ of $k$, such that $G$ contains no subgroup isomorphic to $\boldsymbol\mu_n$.
+\end{enumerate}
+Indeed, if $G$ is an abelian variety of dimension $d$, one knows (\cf S. Lang, \emph{Abelian varieties}, chap. IV \S~3, th. 6) that the group ${}_nG(k)$ ($n$ an integer prime to $p$) is isomorphic to $(\ZZ/n\ZZ)^{2d}$, hence is isomorphic to $(\boldsymbol\mu_n)^{2d}$. Hence iii) $\Rightarrow$ ii), and ii) $\Rightarrow$ i) $\Rightarrow$ iii) are obvious.
+% typo?: no restriction n>1 is printed in iii); the source also identifies a group of points with a group scheme; kept as printed.
+
+% Source PDF p. 20.
+\par\medskip\noindent\textbf{4.6. General case.}\ ---\ \label{XVII.4.6}
+If $G$ and $H$ are two algebraic groups defined over an algebraically closed field $k$, we shall denote by $P(G,H)$ the property: ``there is no algebraic subgroup of $G$ isomorphic to $H$''. One then obtains the following characterizations of unipotent groups:
+\begin{theorem}{4.6.1}\label{XVII.4.6.1}
+Let $G$ be an algebraic group defined over an algebraically closed field $k$ of characteristic $p$. Then:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item If $G$ is smooth, affine and connected:
+\[
+\begin{aligned}
+ G\text{ is unipotent}&\iff\exists n>1\text{ such that }P(G,\boldsymbol\mu_n)\text{ is true}\\
+ &\iff P(G,\Gm)\text{ is true}.
+\end{aligned}
+\]
+\item If $G$ is smooth and connected:
+\[
+ G\text{ is unipotent}\iff\exists n\text{ prime to }p\text{ such that }P(G,\boldsymbol\mu_n)\text{ is true}.
+\]
+\item If $G$ is smooth:
+\[
+ G\text{ is unipotent}\iff\text{for every prime number }n\neq p,\ P(G,\boldsymbol\mu_n)\text{ is true}.
+\]
+\item $G$ is affine and connected, and $p>0$:
+\[
+ G\text{ unipotent}\iff P(G,\boldsymbol\mu_p)\text{ is true}.
+\]
+\item $G$ is connected and $p>0$:
+\[
+\begin{aligned}
+ G\text{ unipotent}\iff&\exists n\text{ prime to }p\text{ such that }P(G,\boldsymbol\mu_n)\text{ is true}\\
+ &\text{and }P(G,\boldsymbol\mu_p)\text{ is true}.
+\end{aligned}
+\]
+\item $G$ any algebraic group:
+\[
+ G\text{ is unipotent}\iff\text{for every prime number }n,\ P(G,\boldsymbol\mu_n)\text{ is true}.
+\]
+\end{enumerate}
+\end{theorem}
+\noindent\emph{Proof.} i) follows from 4.1.1, and iv) from 4.3.1. We shall prove vi); ii), iii), v) are proved similarly and are left to the reader.
+
+Let therefore $G$ be an algebraic group. If $G$ is unipotent, $P(G,\boldsymbol\mu_n)$ is true for every $n>1$ (2.4 i)). Conversely, suppose that $P(G,\boldsymbol\mu_n)$ is true for every prime number $n$, and let us show that $G$ is unipotent. Let $G^0$ be the neutral component of $G$. If $G^0$ is smooth, it follows from a classical theorem of Chevalley\begingroup\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{Sém. Bourbaki \No145, 1956/57.}\endgroup\ that $G^0$ is an extension of an abelian variety $A$ by a smooth connected affine group $L$. If $G$ is not smooth, which supposes $p>0$ (Exp. VIB 1.6.1), there is an integer $n>0$ such that $G''=G^0/{}_{F^n}(G)$ is smooth (App. II 3.1). Thus $G''$ is an extension of an abelian variety $A$ by a smooth connected linear group $L''$. Denote by $L$ the inverse image of $L''$ in $G^0$, which is again affine and connected, since ${}_{F^n}(G)$ is radicial. In all cases, $G$ therefore has a composition series:
+\[
+ 0\subset L\subset G^0\subset G
+\]
+such that $L$ is affine and connected, $G^0/L=A$ is an abelian variety, and $G/G^0$ is an étale group.
+
+If $P(G,\boldsymbol\mu_n)$ is true, a fortiori $P(L,\boldsymbol\mu_n)$ is true, hence $L$ is unipotent (4.1.1 and 4.3.1). If $A$ is nonzero, there are a prime number $n$ and a subgroup of $A$ isomorphic to $\boldsymbol\mu_n$ (4.5); by 5.1 below, this subgroup lifts into $G$, contradicting hypothesis $P(G,\boldsymbol\mu_n)$; hence $A=0$. Finally, if $G/G^0$ is not unipotent, there are an integer $q$ and a subgroup of $G/G^0$ isomorphic to $\boldsymbol\mu_q$ (4.4.1).
+% Source PDF p. 21.
+One deduces, as above, that $P(G,\boldsymbol\mu_q)$ is not true; hence $G/G^0$ is unipotent, and consequently the same is true of $G$.
+
+\sgasection{5}{Extension of a group of multiplicative type by a unipotent group}
+\par\medskip\noindent\textbf{5.1. Statement of the theorem.}\ ---\par\label{XVII.5.1}
+\begin{definition}{5.1.0}\label{XVII.5.1.0}
+Let $k$ be a field, $G$ an algebraic $k$-group. Following the terminology introduced by Rosenlicht (\emph{Questions of rationality for solvable algebraic groups over non perfect fields}, Annali di Math. 61 (1963)), we shall say that $G$ is ``$k$-solvable'' if it satisfies the following equivalent conditions:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item $G$ has a composition series with successive quotients isomorphic to $\Ga$.
+\item $G$ has a characteristic composition series $(G_i)$ such that the successive quotients $G_i/G_{i+1}$ are commutative and have a composition series with successive quotients isomorphic to $\Ga$.
+\end{enumerate}
+\end{definition}
+The fact that i) $\Rightarrow$ ii) is proved in \loccit. In fact, for the composition series $(G_i)$, one can take the composition series introduced in the proof of 3.9 ii).
+
+\begin{theorem}{5.1.1}\label{XVII.5.1.1}
+Let $k$ be a field, $U$ a unipotent algebraic $k$-group, $H$ a $k$-group of multiplicative type, $E$ an algebraic $k$-group that is an extension of $H$ by $U$, so that one has the exact sequence:
+\[
+ 1\to U\to E\to H\to1.
+\]
+Then:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item The extension $E$ is trivial in each of the following cases:
+\begin{enumerate}[label=\textup{\alph*)}]
+\item $k$ is algebraically closed.
+\item $k$ is perfect, and one of the groups $U$ or $H$ is connected.
+\item $U$ is $k$-solvable.
+\item $U$ is smooth and $H$ is connected.
+\end{enumerate}
+\item If $H'$ and $H''$ are two liftings of $H$ into $E$, then $H'$ and $H''$ are conjugate by an element of $U(k)$ in each of the following cases:
+\begin{enumerate}[label=\textup{\alph*)}]
+\item $k$ is algebraically closed and $H$ is smooth.
+\item $k$ is algebraically closed and $U$ is smooth.
+\end{enumerate}
+\end{enumerate}
+\end{theorem}
+(We point out, during the proof, other cases where the conclusion of ii) is true without assuming that $k$ is algebraically closed.)
+
+If $U$ is an algebraic group (resp. a commutative algebraic group) defined over a field $k$, we denote by $H^1(k,U)$ (resp. $H^i(k,U)$, $i\geq0$) the pointed set (resp. the $i$th group) of Galois cohomology of $k$ with values in $U$ (\cf J.-P. Serre, \emph{Cohomologie Galoisienne}, Lecture Notes Maths. \No5, Springer).
+
+% Source PDF p. 22.
+If $S$ is a prescheme, $H$ a commutative group $S$-prescheme, $G$ a group $S$-prescheme acting on $H$, we denote by $H^i(G,H)$\nde{One has replaced $H_0^i$ by $H^i$, to agree with the notation of App. I and Exp. I.} the $i$th Hochschild cohomology group of $G$ with values in $H$ (App. I 1).
+
+To prove 5.1.1, we shall proceed in several steps.
+\par\medskip\noindent\textbf{5.2. Proof of 5.1.1 i) and ii) in the case where $U$ is smooth and $H$ is étale.}\ ---\par\label{XVII.5.2}
+\begin{lemma}{5.2.1}\label{XVII.5.2.1}
+With the notation of 5.1.1, if $H$ is étale, the canonical morphism $E\to H$ has a section $s:H\to E$, defined over $k$, in the following cases:
+\begin{enumerate}[label=\textup{\alph*)}]
+\item $k$ is algebraically closed.
+\item $k$ is perfect, and $U$ is smooth and connected.
+\item $U$ is ``$k$-solvable''.
+\end{enumerate}
+\end{lemma}
+a) simply follows from the fact that $E(k)\to H(k)$ is surjective. One has b) $\Rightarrow$ c) by 4.1.2 b) and 2.3 (bis). It therefore suffices to treat case c). Now let $x$ be a point of $H$; $x$ is therefore a subset of $H$ that is both open and closed, and the induced subscheme is isomorphic to $\Spec K$, where $K$ is a finite separable extension of $k$. Let $X$ be the inverse image in $E$ of the scheme $x$. The $K$-scheme $X$ is a principal homogeneous $K$-space under the group $U_K$. But $U_K$ has a composition series with successive quotients isomorphic to $(\Ga)_K$, hence $H^1(K,U_K)=0$ (J.-P. Serre, \emph{Cohomologie Galoisienne}, chap. III, prop. 6), and consequently $X$ is trivial, hence has a rational point over $K$. One thus obtains a $k$-section of $E\to H$ over $x$, for every point $x$ of $H$, whence the existence of a section $H\to E$.
+
+\begin{lemma}{5.2.3}\label{XVII.5.2.3}
+\nde{There is no no. 5.2.2.}With the notation of 5.1.1, suppose that $H$ is étale. Then:
+\begin{enumerate}[label=\textup{\roman*)}]
+\item The extension $E$ is trivial in each of the following cases:
+\begin{enumerate}[label=\textup{\alph*)}]
+\item $U$ is commutative and $E\to H$ has a section.
+\item $k$ is algebraically closed.
+\item $k$ is perfect and $U$ is connected.
+\item $U$ is ``$k$-solvable''.
+\end{enumerate}
+Moreover, in each of the above cases, two liftings $H'$ and $H''$ of $H$ into $E$ are conjugate by an element of $U(k)$.
+\item Let $R$ be the $k$-functor $(\Sch/k)^\circ\to\Ens$ such that, for every $k$-prescheme $S$, $R(S)$ is the set of liftings of $H_S$ into $E_S$. Then, if $U$ is commutative, $R$ is representable by a nonempty affine $k$-scheme. The group $U$ acts by inner automorphisms on $R$, and this action makes $R$ a homogeneous space under $U$ (for the fpqc topology (\cf Exp. IV)).
+\end{enumerate}
+\end{lemma}
+\noindent\emph{Proof of i).} We shall reduce cases b), c) and d) to case a).
+
+\noindent\emph{Case b).} Since $U$ has a characteristic composition series with commutative successive quotients (3.5 i) $\Leftrightarrow$ iv)), one immediately reduces to the case where $U$ is commutative. Moreover, $E\to H$ has a section by 5.2.1 a), and we are reduced to case a).
+% Source PDF p. 23.
+\noindent\emph{Case d).} One proceeds in the same way, using 5.1.0 ii) and 5.2.1 c).
+
+\noindent\emph{Case c).} Let $E_{\mathrm{red}}$ be the associated reduced subgroup of $E$. Since $H$ is smooth, $E_{\mathrm{red}}$ is an extension of $H$ by $U'=U\cap E_{\mathrm{red}}$, and one can replace $E$ by $E_{\mathrm{red}}$. But $U$, hence also $U'$, is connected, and it is clear that $U'$ is the neutral component of $E_{\mathrm{red}}$, hence is smooth. But then $U'$ is smooth and connected, $k$ is perfect, hence $U'$ is $k$-solvable (4.1.4 b)), and we are reduced to case d).
+
+The preceding reductions show that in cases b), c) and d), one can assume that $U$ has a characteristic composition series $(U_i)$ such that $U_i/U_{i+1}$ is commutative and such that the maps $U_i(k)\to(U_i/U_{i+1})(k)$ are surjective (in cases c) and d), this last point follows from $H^1(k,\Ga)=0$). An immediate dévissage then shows that it suffices to prove the conjugacy of two liftings $H'$ and $H''$ into $E$ when $U$ is commutative. Thus it suffices to prove i) a). In this case, the triviality of the extension $E$ is assured if $H^2(H,U)=0$ (App. I 3.1), and the conjugacy of $H'$ and $H''$ if $H^1(H,U)=0$. Now we have the following lemma:
+\begin{lemma}{5.2.4}\label{XVII.5.2.4}
+Let $S$ be a prescheme, $U$ a commutative group $S$-prescheme, $H$ an étale finite group $S$-prescheme of rank $n$, acting on $U$. Then the groups $H^i(H,U)$ ($i>0$) are annihilated by $n$ in the following two cases:
+\begin{enumerate}[label=\textup{\alph*)}]
+\item $H$ is a constant $S$-group (Exp. I 4.1).
+\item $S$ is the spectrum of a field.
+\end{enumerate}
+\end{lemma}
+\noindent\emph{Proof of a).} By hypothesis, the group $H$ is the constant group associated with an ordinary group $\{H\}$ of order $n$. It is then clear\nde{This is Proposition III.6.4.2 of the book by M. Demazure and P. Gabriel, \emph{Groupes algébriques I}, Masson \& North-Holland (1970).} that $H^i(H,U)$ is isomorphic to the $i$th cohomology group $H^i(\{H\},U(S))$ of the group $\{H\}$, with values in the ordinary group $U(S)$, and it is classical that these groups are annihilated by $n$ (J.-P. Serre, \emph{Corps locaux}, Chap. VIII, prop. 4 cor. 1).
+
+\noindent\emph{Proof of b).} Let $x\in H^i(H,U)$ ($i>0$) be represented by an $i$-cocycle $f:H^{(i)}\to U$ (where $H^{(i)}$ denotes the product, over $k$, of $i$ copies of $H$). If $K$ is a finite Galois extension of $k$ splitting $H$, it follows from a) that $nf_K$ is a coboundary. More precisely, an easy calculation shows that if one defines the $K$-morphism $F_K:H_K^{(i-1)}\to U_K$ by the formula:
+\[
+ F_K(h_1,\ldots,h_{i-1})=\sum_{h\in H(K)}f_K(h_1,\ldots,h_{i-1},h),
+\]
+one has, up to sign:
+\[
+ d(F_K)=nf_K\qquad(d\text{ the coboundary operator}).
+\]
+Now an immediate Galois argument shows that $F_K$ comes from a $k$-morphism $F:H^{(i-1)}\to U$, and consequently one has $d(F)=nf$.
+
+% Source PDF p. 24.
+\begin{corollary}{5.2.4 bis}\label{XVII.5.2.4bis}
+With the notation of 5.2.4, suppose moreover that $U$ is flat and of finite presentation over $S$, with unipotent fibers, and that $n$ is prime to the residue characteristics of $S$. Then, in cases a) and b) above, one has $H^i(H,U)=0$ for $i>0$.
+\end{corollary}
+It suffices to show that raising to the $n$th power in $U$ is an isomorphism, for this will imply that multiplication by $n$ in $H^i(H,U)$ is both an isomorphism and the zero morphism, hence $H^i(H,U)=0$. Now, under the hypotheses made on $U$, it suffices to check that raising to the $n$th power is an isomorphism on the fibers of $U$ (EGA IV 17.9.5), reducing us to the case where $S$ is the spectrum of a field $k$ of characteristic $p$. Since $(n,p)=1$, raising to the $n$th power in $U$ is an étale morphism (Exp. VII), and it is a monomorphism (2.4 i)), hence an open immersion (EGA IV 17.9.1). This already proves that the restriction to the neutral component $U^0$ is an isomorphism; since $U/U^0$ is a finite $p$-group, one has finished.
+
+This completes the proof of 5.2.3 i) a), since $H$, being an étale group of multiplicative type, is of order prime to $p$.
+
+\noindent\emph{Proof of 5.2.3 ii).} It is clear that $R$ is a sheaf for the fpqc topology. Moreover, in view of descent for affine schemes, the assertions of 5.2.3 ii) are local for the fpqc topology. We can therefore assume that $k$ is algebraically closed. The group $H$ is then split and the extension $E$ is trivial (i b)); let $H'$ be a lifting of $H$ into $E$. For every $k$-prescheme $S$ and every lifting $H''$ of $H_S$ into $E_S$, $H'_S$ and $H''$ are conjugate by an element of $U(S)$, since $H^1(H_S,U_S)=0$ (5.2.4 bis). Let then $U^{H'}$ be the sheaf of invariants of $U$ under $H'$, which is representable by an algebraic subgroup of $U$ (Exp. VIII 6.5 d)). It follows from the preceding remarks that the $k$-morphism:
+\[
+ U\to R,\qquad u\mto\operatorname{int}(u)H'\quad(u\in U(S))
+\]
+defines a $k$-isomorphism $U/U^{H'}\isomto R$. This proves the representability of $R$ and the fact that $R$ is affine (2.1).
+
+\begin{remark}{5.2.5}\label{XVII.5.2.5}
+One can show that the assertions of 5.2.3 ii) are still true when $U$ is not commutative, but we shall not need this to prove 5.1.1.
+\end{remark}
+
+\par\medskip\noindent\textbf{5.3. Study of the case where $H$ is smooth.}\ ---\par\label{XVII.5.3}
+\begin{proposition}{5.3.1}\label{XVII.5.3.1}
+The assertions in 5.2.3 i) remain true when one replaces the hypothesis ``$H$ étale'' by ``$H$ smooth''.
+\end{proposition}
+Proceeding as in the proof of 5.2.3 i), one reduces to the case where $U$ is moreover commutative.
+
+Let $\NN'$ be the set of integers $>0$ prime to $p$, ordered by divisibility. For every $n\in\NN'$, ${}_nH^0$ is an étale group, and the family of the ${}_nH^0$ ($n\in\NN'$) is schematically dense in $H$, since $H$ is smooth (Exp. IX 4.10). Denote by $E_n$ the inverse image of ${}_nH$ in $E$, so that $E_n$ is an extension of ${}_nH$ by $U$; finally, let $R_n$ be the $k$-functor of liftings of ${}_nH$ into $E_n$ (\cf 5.2.3 ii)). If $n$ divides $m$, it is clear that one has a natural $k$-morphism $R_m\to R_n$, so that the $R_n$ form a projective system of $k$-functors. Since $R_n$ is representable by a nonempty affine $k$-scheme (5.2.3 ii)), and since a filtered inductive limit of nonzero rings is nonzero, the functor $R=\varprojlim R_n$ is representable by a nonempty affine $k$-scheme (EGA IV 8 and 1.9.1).
+% The last sentence begins on p. 24 and finishes on p. 25; en-05 starts with the extension K of k.
+% typo?: the source says that the torsion subgroups of H^0 are dense in H; kept as printed.

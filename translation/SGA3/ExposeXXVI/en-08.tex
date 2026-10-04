@@ -1,0 +1,211 @@
+% Source PDF pp. 45–50; proof of Corollary 6.17.
+Indeed, $P\cap P'$ contains a maximal torus $T$ of $G$, by 4.5.1(v); let $L$ be the unique Levi subgroup of $P$ containing $T$. One has
+\[
+ \operatorname{rad}(P)\cap T=\operatorname{rad}(P)\cap L=\operatorname{rad}(L)
+\]
+by 1.21, hence $\operatorname{rad}(P)\cap T$ contains $\operatorname{rad}(L)_{\mathrm{spl}}$, which is a maximal split subtorus of $G$, and is therefore necessarily equal to $T_{\mathrm{spl}}$. One therefore has $L=\uCentr_G(T_{\mathrm{spl}})$, and by symmetry $L$ is also a Levi subgroup of $P'$.
+
+\begin{remark}{6.18}\label{XXVI.6.18}
+It follows from 1.21 that the parabolic subgroup $P$ of $G$ is minimal if and only if $\operatorname{rad}(P)$ contains a maximal split subtorus of $G$; then, by the proof of 6.17, if $T$ is a maximal torus of $P$, $T_{\mathrm{spl}}$ is a maximal split torus of $G$ and of $\operatorname{rad}(P)$, and $\uCentr_G(T_{\mathrm{spl}})$ is a Levi subgroup of $P$. Moreover, every Levi subgroup of $P$ is obtained in this way.
+\end{remark}
+
+\sgasection{7}{Relative root datum}
+In this paragraph, $S$ will denote a \emph{nonempty connected semi-local} scheme, $G$ a reductive $S$-group, $Q$ a maximal split subtorus of $G$, and $L$ the centralizer of $Q$ in $G$, \ie $L=\uCentr_G(Q)$.
+
+\numpara{7.1}\label{XXVI.7.1}
+Since $Q$ is the largest split central subtorus of $L$, every section of $G(S)$ that normalizes $L$ also normalizes $Q$. One therefore has (\cf 7.1.1)
+\[
+ \uNorm_G(L)(S)=\uNorm_G(Q)(S).
+\]
+Moreover, one has seen in 6.4 that the map $G(S)\to(G/L)(S)$ is surjective. It follows that one has a canonical identification
+\[
+ W_G(Q)(S)=(\uNorm_G(Q)/\uCentr_G(Q))(S)\simeq\uNorm_G(L)(S)/L(S).
+\]
+One will denote by $M$ the group $\Hom_{S\text{-gr.}}(Q,\mathbf G_{\mathrm m,S})$, so that one has a canonical isomorphism $Q\simeq D_S(M)$. One will write $W$ for the group of automorphisms of $M$ defined by $W_G(Q)(S)$. One therefore has isomorphisms
+\[
+ W\simeq W_G(Q)(S)\simeq\uNorm_G(L)(S)/L(S).
+\]
+
+\numpara{7.1.1}\label{XXVI.7.1.1}
+In general, one does not have $\uNorm_G(L)=\uNorm_G(Q)$. Take, for example, for $S$ the spectrum of a field $k$ having a quadratic extension $k'$, and for $G$ the unitary group $\text{Q-Pin}_{k'/k}(A_2)$ (\cf Exp. XXIV, 3.11.2).
+
+Since the minimal parabolic subgroups of $G$ are its Borel subgroups, their Levi subgroups are maximal tori, and one has $(\uNorm_G(L)/L)(\overline k)=\mathfrak S_3$.
+
+Moreover, since $G$ is not split, the maximal split tori of $G$ are of dimension $\leq1$, hence isomorphic to $\mathbf G_{\mathrm m,k}$. Since $\uNorm_G(Q)/L$ acts faithfully on $Q$, one has $(\uNorm_G(Q)/Q)(\overline k)=\ZZ/2\ZZ$.
+% typo?: the source prints the denominator Q in the last quotient; kept as printed.
+
+% Source PDF p. 46.
+\numpara{7.2}\label{XXVI.7.2}
+If $P$ is a parabolic subgroup of $G$ with Levi group $L$ (such a subgroup exists by 6.2), $P$ is necessarily minimal (\cf 6.18). By the conjugacy of minimal parabolic subgroups of $G$ (5.7), that of Levi subgroups of a parabolic subgroup (1.8), and the equalities $P=\uNorm_G(P)$ and $\uNorm_G(L)\cap P=L$ (1.6), one obtains: \emph{the set of (minimal) parabolic subgroups of $G$ with Levi group $L$ is principal homogeneous under the group $W$}.
+
+\numpara{7.3}\label{XXVI.7.3}
+The Lie algebra of $G$ decomposes under the action of $Q$ as
+\[
+ \Lie(G)=\Lie(L)\oplus\coprod_{\alpha\in R}\Lie(G)^\alpha,
+\]
+where $R$ is the set of nonzero characters of $Q$ such that $\Lie(G)^\alpha\neq0$ (\emph{roots} of $G$ relative to $Q$).
+
+Denote by $M^*$ the group $\Hom_{S\text{-gr.}}(\mathbf G_{\mathrm m,S},Q)$, which is in duality with $M$ and on which $W$ acts naturally by transport of structure.
+
+\begin{theorem}{7.4}\label{XXVI.7.4}
+With the notation of 7.3, there is a unique map $\alpha\mto\alpha^*$ from $R$ to $M^*$ defining in $(M,M^*)$ a root datum (Exp. XXI, 1.1) whose Weyl group is $W$.
+
+Moreover, the parabolic subgroups $P$ of $G$ with Levi group $L$ and the systems of positive roots $R_+$ of $R$ correspond bijectively by the relation
+\[
+ \Lie(P)=\Lie(L)\oplus\coprod_{\alpha\in R_+}\Lie(G)^\alpha.
+\]
+\end{theorem}
+
+\numpara{7.4.1}\label{XXVI.7.4.1}
+Suppose first that the existence of the desired map $\alpha\mto\alpha^*$ has been proved. By Exp. XXI, 3.4.10, $s_\alpha$ is the unique element of $W$ such that for every $m\in M$, $s_\alpha(m)-m$ is a rational multiple of $\alpha$, which shows that $s_\alpha$ is determined by $\alpha$; since one then has\nde{One has corrected $\alpha^*(m)$ to $\alpha^*(m)\,\alpha$.} $\alpha^*(m)\,\alpha=m-s_\alpha(m)$, one sees that $\alpha^*$ is determined by $\alpha$, which proves the uniqueness of the map $\alpha\mto\alpha^*$.
+% typo?: the source does not exclude the identity in its characterization of s_alpha; kept as printed.
+
+\numpara{7.4.2}\label{XXVI.7.4.2}
+Let $\alpha\in R$, and let $L_\alpha$ (resp. $H_\alpha$, resp. $H_{-\alpha}$) be the unique smooth subgroup with connected fibers of $G$ containing $L$ and such that (\cf 6.1(i))
+\[
+ \Lie(L_\alpha)=\Lie(L)\oplus\coprod_{\gamma\in\ZZ\alpha\cap R}\Lie(G)^\gamma,
+\]
+resp.
+\[
+ \Lie(H_\alpha)=\Lie(L)\oplus\coprod_{\gamma\in\NN\alpha\cap R}\Lie(G)^\gamma,
+\]
+resp.
+\[
+ \Lie(H_{-\alpha})=\Lie(L)\oplus\coprod_{\gamma\in-\NN\alpha\cap R}\Lie(G)^\gamma;
+\]
+$L_\alpha$ is a reductive subgroup of $G$, $H_\alpha$ and $H_{-\alpha}$ are parabolic subgroups of it with Levi subgroup $L$, and $H_\alpha$ and $H_{-\alpha}$ are opposite relative to $L$ (\cf 6.1(ii)).
+
+% Source PDF p. 47.
+By 7.2, there is therefore $s_\alpha\in\uNorm_{L_\alpha}(Q)(S)/L(S)\subset W$ such that $s_\alpha(H_\alpha)=H_{-\alpha}$. One has $s_\alpha(\alpha)=-\alpha$ (since $\alpha$ (resp. $-\alpha$) is the common divisor of the elements of $R$ occurring in $H_\alpha$ (resp. $H_{-\alpha}$)), and one has $s_\alpha^2=\mathrm{id}$ (since $s_\alpha^2(H_\alpha)$ and $H_\alpha$ are both opposite to $H_{-\alpha}$ relative to $L$). One has therefore constructed an $s_\alpha\in W$ satisfying the following properties:
+\begin{equation}\tag{x}
+ s_\alpha(\alpha)=-\alpha,\qquad s_\alpha^2=\mathrm{id},
+\end{equation}
+\begin{equation}\tag{xx}
+ s_\alpha\text{ can be represented by an element of }L_\alpha(S).
+\end{equation}
+Observe, moreover, that $s_\alpha$ is constructed canonically from $\alpha$, and in particular that
+\begin{equation}\tag{xxx}
+ \text{for every }w\in W,\text{ one has }ws_\alpha w^{-1}=s_{w(\alpha)}.
+\end{equation}
+
+\numpara{7.4.3}\label{XXVI.7.4.3}
+We now propose to prove the assertion:
+\begin{equation}\tag{xxxx}
+ \text{for every }m\in M,\quad s_\alpha(m)-m\in\ZZ\alpha.
+\end{equation}
+Since $S$ is connected, this assertion is local for the (fpqc) topology. One can therefore assume that $L_\alpha=G_1$ is splittable relative to a maximal torus $T_1$ of $L$. Let therefore $(G_1,T_1,M_1,R_1)$ be such a splitting. The monomorphism $Q\to T_1$ identifies $M$ with a quotient of $M_1$; let $p:M_1\to M$ be the canonical map.
+
+The image of $R_1$ under $p$ consists possibly of zero and of the roots of $G_1$ relative to $Q$ (hence of the elements of $R$ that are integral multiples of $\alpha$); one therefore has $p(R_1)\subset\ZZ\alpha$. By (xx), there is an element of $\uNorm_{G_1}(L)(S)$ that induces $s_\alpha$ on $Q$. By Exp. XXII, 5.10.10, there is therefore a section $w\in(W_1)_S(S)$ that induces $s_\alpha$ on $Q$ (one denotes by $W_1$ the Weyl group of the root datum $(M_1,R_1,\ldots)$). After restricting $S$, one can therefore assume that there is $w\in W_1$ inducing $s_\alpha$ on $Q$, hence satisfying $p(w(m_1))=s_\alpha(p(m_1))$ for every $m_1\in M_1$. But, by definition of $W_1$, $w$ is a product of reflections with respect to elements of $R_1$, hence $w(m_1)-m_1$ is a linear combination with integer coefficients of the elements of $R_1$. It follows that $s_\alpha(p(m_1))-p(m_1)$ is a linear combination with integer coefficients of the elements of $p(R_1)\subset\ZZ\alpha$, hence an integral multiple of $\alpha$, which was to be proved.
+
+\numpara{7.4.4}\label{XXVI.7.4.4}
+One can therefore define an element $\alpha^*\in M^*$ by\nde{One has corrected $\alpha^*(m)$ to $\alpha^*(m)\,\alpha$.}
+\[
+ \alpha^*(m)\,\alpha=m-s_\alpha(m).
+\]
+By (x), one has $(\alpha^*,\alpha)=2$; moreover, it follows from (xxx) that for every pair $(\alpha,\alpha')\in R\times R$, one has $s_\alpha(\alpha')\in R$ and $s_\alpha(\alpha'^*)=s_\alpha(\alpha')^*$, which proves (\cf Exp. XXI, 1.1) that the map $\alpha\mto\alpha^*$ constructed does indeed define a root datum in $(M,M^*)$.
+
+\numpara{7.4.5}\label{XXVI.7.4.5}
+Let $W'$ be the Weyl group of this root datum (the group of transformations of $M$ generated by the $s_\alpha$); one has $W'\subset W$.
+
+Let, moreover, $\geq$ be a total ordering on the free abelian group $M$; put $R_+=\{\alpha\in R\mid\alpha\geq0\}$. One knows that $R_+$ is a system of positive roots of $R$. Let $w\in W$, represented by an $n\in\uNorm_G(L)(S)=\uNorm_G(Q)(S)$. Put $P=H_{R_+}$ (notation of 6.1); by \loccit, $P$ is a parabolic subgroup of $G$, with Levi subgroup $L$.
+% Source PDF p. 48.
+One obviously has $\operatorname{int}(n)P=H_{w(R_+)}$. It then follows from 7.3 that $w(R_+)=R_+$ implies $w=e$. Since the group $W'$ acts transitively on the systems of positive roots of $R$ (Exp. XXI, 3.3.7), and since the stabilizer of $R_+$ in $W$ is the identity, one concludes at once that $W=W'$. One also concludes that $W=W'$ acts simply transitively both on the set of systems of positive roots of $R$ and on the set of parabolic subgroups of $G$ with Levi group $L$, which implies the last assertion of 7.4.\hfill Q.E.D.
+
+\numpara{7.5}\label{XXVI.7.5}
+If $P$ and $P_1$ are two minimal parabolic subgroups of $G$, with Levi subgroups $L$ and $L_1$, and if one denotes by $Q$ and $Q_1$ the maximal split central tori of $L$ and $L_1$, then the pairs $(P,Q)$ and $(P_1,Q_1)$ are conjugate: there is $g\in G(S)$ such that $\operatorname{int}(g)P=P_1$ and $\operatorname{int}(g)Q=Q_1$.
+
+Indeed, $P$ and $P_1$ are conjugate (5.7), and one can therefore assume that $P=P_1$; then $L$ and $L_1$ are conjugate by a section of $P(S)$ (1.8). Moreover, if $g$ and $g'$ are two sections of $G$ conjugating the pairs $(P,Q)$ and $(P_1,Q_1)$, then $g'^{-1}g$ normalizes $P$ and $Q$, hence $P$ and $L$; but
+\[
+ \uNorm_G(P)\cap\uNorm_G(L)=P\cap\uNorm_G(L)=L=\uCentr_G(Q).
+\]
+The isomorphism $Q\isomto Q_1$ induced by $\operatorname{int}(g)$ is therefore independent of $g$.
+
+Let $\mathscr R$ and $\mathscr R_1$ be the root data defined by means of 7.4 in $\Hom_{S\text{-gr.}}(Q,\mathbf G_{\mathrm m,S})$ and $\Hom_{S\text{-gr.}}(Q_1,\mathbf G_{\mathrm m,S})$, and let $R_+$ and $R_{1+}$ be the systems of positive roots corresponding to $P$ and $P_1$. The canonical isomorphism $Q\isomto Q_1$ defined above transforms $(\mathscr R,R_+)$ into $(\mathscr R_1,R_{1+})$. One deduces at once that one can define the \emph{pinned relative root datum}\nde{Recall (Exp. XXIII 1.5) that a pinned root datum is a root datum endowed with a choice of a system of positive roots (or of simple roots).} of $G$ over $S$, by identifying the different $(\mathscr R,R_+)$ by means of the transitive system of isomorphisms described above.
+
+From now on, we shall denote this pinned root datum by
+\[
+ (\underline M,\underline{M^*},\underline R,\underline{R^*},\underline{R_+})=\mathscr R(G/S);
+\]
+for every pair $P\supset Q$ as above, one therefore has a canonical isomorphism
+\[
+ \underline M\isomto\Hom_{S\text{-gr.}}(Q,\mathbf G_{\mathrm m,S})
+\]
+transforming $\underline R$ (resp. $\underline{R_+}$) into the set of roots of $G$ (resp. of $P$) relative to $Q$, and $W(\underline R)$ into $W_G(Q)(S)$.
+
+\numpara{7.6}\label{XXVI.7.6}
+Let $Q$ still be a maximal split torus of $G$, $P$ a (minimal) parabolic subgroup of $G$ with Levi group $\uCentr_G(Q)$, $(M,M^*,R,R^*,R_+)$ the corresponding pinned root datum (7.4), and $\Delta$ the set of simple roots of $R_+$. For every $A\subset\Delta$, let $R_A\subset R$ be the set
+\[
+ R_A=R_+\cup(\ZZ A\cap R_-)
+\]
+consisting of the positive roots and the negative roots that are linear combinations of the elements of $A$. It is a closed set (Exp. XXI, 3.1.4) of roots, and every closed set containing $R_+$ can be written uniquely in this form (Exp. XXI, 3.3.10). By 6.1, there is a unique subgroup $P_A$ of $G$, smooth and with connected fibers, containing $\uCentr_G(Q)$ and such that
+\[
+ \Lie(P_A)=\Lie(G)^0\oplus\coprod_{\alpha\in R_A}\Lie(G)^\alpha.
+\]
+% Source PDF p. 49.
+It then follows at once from 6.1, from the conjugacy of minimal parabolic subgroups, and from the fact that the set of roots of a parabolic subgroup of $G$ containing $Q$ is closed (which follows at once from 1.4 by splitting), that:
+
+\begin{proposition}{7.7}\label{XXVI.7.7}
+\begin{enumeratei}
+\item The map $A\mto P_A$ is a bijection from the set of subsets of $\Delta$ onto the set of parabolic subgroups of $G$ containing $P$. This bijection preserves the natural inclusion order relations.
+\item Every parabolic subgroup of $G$ is conjugate by a section of $G(S)$ to a unique $P_A$.
+\end{enumeratei}
+\end{proposition}
+
+\numpara{7.8}\label{XXVI.7.8}
+Let $P\supset Q$ be as above. Consider the relative root datum (7.5) of $G$ over $S$ and the canonical isomorphism
+\[
+ f:\ (M,M^*,R,R^*,R_+)\isomto
+ (\underline M,\underline{M^*},\underline R,\underline{R^*},\underline{R_+}).
+\]
+The set $\Delta$ of simple roots of $R_+$ is transformed into the set $\underline\Delta$ of simple roots of $\underline{R_+}$, hence every subset $A$ of $\Delta$ into a subset $f(A)\subset\underline\Delta$.
+
+\begin{definition}{7.9.0}\label{XXVI.7.9.0}
+\nde{One has added the numbering 7.9.0 to bring out the definition of ``relative type''.}Let $H$ be any parabolic subgroup of $G$. By 7.7(ii), it is conjugate to a unique $P_A$. Write $t_{\mathrm r}(H)=f(A)\subset\underline\Delta$. One checks at once, by means of the conjugacy theorems, that $t_{\mathrm r}(H)$ is independent of the choice of the pair $P\supset Q$. One says that it is the \emph{relative type} of $H$.
+\end{definition}
+
+\begin{proposition}{7.9}\label{XXVI.7.9}
+\begin{enumeratei}
+\item The map $H\mto t_{\mathrm r}(H)$ induces a bijection between the set of conjugacy classes (by $G(S)$) of parabolic subgroups of $G$ and the set of subsets of $\underline\Delta$.
+\item Let $H$ be a parabolic subgroup of $G$, $P$ a minimal parabolic subgroup contained in $H$, $Q$ the maximal split central torus of a Levi subgroup of $P$, $\Delta$ the set of simple roots of $P$ relative to $Q$, and $f:\Delta\isomto\underline\Delta$ the canonical isomorphism. Then, for every $\alpha\in\Delta$, one has the equivalence:
+\[
+ f(\alpha)\in t_{\mathrm r}(H)\iff\Lie(H)^{-\alpha}\neq0,
+\]
+and one has $H=P_A$, where $A=f^{-1}(t_{\mathrm r}(H))$.
+\item If $H$ and $H'$ are two parabolic subgroups of $G$ containing $P$, then (see 3.8.1(ii) and 5.5(i) for other equivalent conditions):
+\[
+ t_{\mathrm r}(H)\subset t_{\mathrm r}(H')\iff t(H)\subset t(H').
+\]
+\end{enumeratei}
+\end{proposition}
+
+\numpara{7.10}\label{XXVI.7.10}
+One can study the relative positions of two minimal parabolic subgroups; the results are as follows (one refers to 4.5.2 for the notation $t_2(P,P_1)$):
+% Source PDF p. 50; the separately numbered assertions belong to this page.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item If $P,P_1,P',P'_1$ are four minimal parabolic subgroups of $G$, then $t_2(P,P_1)=t_2(P',P'_1)$ (\ie $(P,P_1)$ and $(P',P'_1)$ are conjugate locally for (fpqc)) if and only if there is $g\in G(S)$ such that $\operatorname{int}(g)P=P'$ and $\operatorname{int}(g)P_1=P'_1$.
+\item Fix, in particular, a minimal parabolic subgroup $P$ with Levi subgroup $L$, and let $T$ be a maximal torus of $L$. Consider the scheme $\underline{\mathrm{Par}}_{t_{\min}}(G;P)$ of minimal parabolic subgroups of $G$ in standard position relative to $P$. One has a morphism (\cf 4.5.5)
+\[
+ f:\underline{\mathrm{Par}}_{t_{\min}}(G;P)\to W_P(T)\backslash W_G(T)/W_P(T),
+\]
+whose fibers are ``the orbits of $P$ in $\underline{\mathrm{Par}}_{t_{\min}}(G;P)$''. By (1), $f$ therefore induces a monomorphism
+\[
+ P(S)\backslash\underline{\mathrm{Par}}_{t_{\min}}(G;P)(S)
+ \hookrightarrow\bigl(W_P(T)\backslash W_G(T)/W_P(T)\bigr)(S).
+\]
+The image of this morphism is identified with $W$; this is the \emph{Bruhat theorem}: every orbit of $P(S)$ in $\underline{\mathrm{Par}}_{t_{\min}}(G;P)(S)$ contains one and only one parabolic subgroup of $G$ with Levi group $L$ (that is, of the form $\operatorname{int}(n)P$, where $n\in\uNorm_G(L)$).
+\item In other words, let $E(S)$ be the set of $g\in G(S)$ such that $\operatorname{int}(g)P$ and $P$ are in mutual standard position. Then $E(S)$ has a partition into double cosets modulo $P(S)$ indexed by $W$:
+\[
+ E(S)=P(S)\,W\,P(S)
+\]
+(obvious notation). Putting $U=\operatorname{rad}^{\mathrm u}(P)(S)$, one can also write
+% typo?: the source defines U as a group of sections, then writes U(S); kept as printed.
+\[
+ E(S)=U(S)\cdot\uNorm_G(L)(S)\cdot U(S),
+\]
+thus exhibiting a partition of $E(S)$ into double cosets modulo $U(S)$, indexed by $\uNorm_G(L)(S)$.
+\item If $S$ is the spectrum of a field, then $E(S)=G(S)$, and one recovers \cite{BT65}, 5.15.
+\end{enumerate}
+
+\begin{enoncerm}{Counterexamples}{7.11}\label{XXVI.7.11}
+Let $S=\Spec(\ZZ/4\ZZ)$, $G=\SL_{2,S}$. Let $B$ be the usual Borel subgroup consisting of the matrices $\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)$ with $c=0$. Let $g=\left(\begin{smallmatrix}-1&1\\2&1\end{smallmatrix}\right)\in G(S)$, and put $B'=\operatorname{int}(g)B$. Then $B(S)=B'(S)$, and $B\cap B'$ contains no maximal torus\nde{Indeed, $B'$ is the subgroup of $G$ defined by the equation $c=2(a+b)$; then $B\cap B'$ is not flat over $S$, hence contains no maximal torus, by 4.5.1.}. This shows, on the one hand, that two distinct minimal parabolic subgroups can have the same group of sections; on the other hand, that in general there is no criterion allowing one to recognize whether two minimal parabolic subgroups $P$ and $P'$ are in standard position solely by means of the groups $P(S)$ and $P'(S)$. In particular, the subset $E(S)$ of $G(S)$ does not seem to be definable solely by means of the situation $\{G(S),P(S),\uNorm_G(L)(S)\}$ (in the preceding case, this subset is defined by $c\neq2$\nde{More generally, for every $S$-scheme $S'$, $E(S')$ is defined by the condition: ``$c$ is zero or invertible''.}).
+\end{enoncerm}

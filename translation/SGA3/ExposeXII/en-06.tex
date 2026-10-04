@@ -1,0 +1,126 @@
+This proves c) and d) in the case of artinian $S$ (N.B. We shall prove below that in this case $\mathscr T$ is in fact affine over $S$).
+
+Suppose now $S$ arbitrary. To prove c) and d), which are local assertions on $S$ for the Zariski topology, one can suppose that there exists a prime number $\ell$ prime to the residue characteristics of $S$, that $S$ is affine, and that the reductive rank of the fibers of $G$ (which is obviously locally constant, thanks to the hypothesis of local existence for fpqc of a maximal torus) is constant, say $r$. Let $S'\to S$ be a faithfully flat quasi-compact morphism, $S'$ affine, such that $G_{S'}$ admits a maximal torus $T'$. Let $C'$ be its centralizer; I say that there exists a suitable power $n$ of $\ell$ such that one also has $C=\Centr_G({}_nT)$. Indeed, to see this, one is reduced at once to the case of noetherian $S'$, where this was seen in XI~6.2. Fix $n$ thus; put
+\[
+M=(\ZZ/n\ZZ)^r,\qquad P=\uHom_{S\text{-gr}}(M_S,G),
+\]
+then $P$ is obviously representable as a closed sub-prescheme of finite presentation of $({}_nG)^r$, where
+\[
+{}_nG=\uHom_{S\text{-gr}}((\ZZ/n\ZZ)_S,G),
+\]
+which is also the kernel of the $n$th-power morphism in $G$, hence representable by a closed sub-prescheme of finite presentation of $G$. Moreover $P$ is smooth over $S$ by XI~2.1. Let $s\in S$; by what was seen above, there exists a finite separable extension $k''$ of $\kappa(s)$ such that there exists a maximal torus $T''$ in $G_{k''}$; in addition, since ${}_nT''$ is étale over $k''$ ($n$ being prime to the characteristic of $k''$), one can suppose (on replacing $k''$ by a finite separable extension) that ${}_nT''$ is isomorphic to $M_{k''}$. Let $S''\to S$ be an étale morphism such that there exists an $s''\in S''$ above $s\in S$ giving rise to the residue extension $\kappa(s'')\simeq k''$. One therefore has a section of $P_{S''}\otimes\kappa(s'')$ over $\Spec(\kappa(s''))$, so by Hensel, on replacing $(S'',s'')$ by $(S''',s''')$ étale over it, one can suppose that there exists a section of $P_{S''}$ over $S''$, \ie an element of $P(S'')$, extending the given section. In other words, one has a homomorphism $M_{S''}\to G_{S''}$ inducing an isomorphism $M_{\kappa(s'')}\simeq{}_nT''$. By IX~6.4 (which here reduces to a simple application of Nakayama's lemma), this homomorphism is a closed immersion over an open neighborhood of $s'$, which one can suppose equal to $S''$. Let $H''$ be its image, and consider its centralizer $C''$ in $G_{S''}$, which is a smooth closed sub-prescheme of $G$, by XI~6.2. Note moreover:
+% typo?: unprimed C,T in C=Centr_G(nT), and s' instead of s'', kept as printed.
+\begin{lemma}{7.3}\label{XII.7.3}
+Under the preceding conditions for $\ell,n,r$, for every prescheme $S''$ over $S$ and every maximal torus $T''$ of $G_{S''}$, one has
+\[
+\Centr_{G_{S''}}(T'')=\Centr_{G_{S''}}({}_nT'').
+\]
+\end{lemma}
+Indeed, by faithfully flat descent from $S'\times_S S''$, one is reduced to the case where $G_{S''}$ admits a maximal torus $T''_1$ for which the preceding relation is true. But since $T''$ is locally conjugate to $T''_1$ for the étale topology by b), it follows that the same relation is true for $T''$.
+
+Apply the preceding result with $\Spec(\kappa(s''))$ instead of $S''$; one sees that the fiber $C''_{s''}$ is a Cartan subgroup of $G$. Note now that since $G$ is smooth over $S$, the union of the neutral components of the fibers $G_s$ is an open subset of $G$ (by a general result of EGA~IV on smooth morphisms\nde{Make this reference precise.}), obviously stable under the group law of $G$, hence is a subgroup of $G$ for the prescheme structure induced by $G$.
+
+In addition, $G^0$ satisfies the preliminary hypotheses on $G$, and there is an obvious one-to-one correspondence between the maximal tori of $G$ and those of $G^0$. Thus to prove c) and d), one can suppose $G$ with connected fibers, which we shall do. Then the Cartan subgroups of $G$ have connected fibers (6.6 a)). This being said, I say that $C''{}^0$ is a Cartan subgroup of $G_{S''}$ over an open neighborhood of $s''$ in $S''$ (which will complete the proof of c)). This follows indeed from the
+\begin{lemma}{7.4}\label{XII.7.4}
+Under the conditions of 7.1, suppose $G$ with connected fibers; let $C$ be a closed group sub-prescheme of $G$, smooth over $S$, and $s$ an element of $S$ such that $C_s$ is a Cartan subgroup of $G_s$; then $C^0$ is a Cartan subgroup of $G$ over an open neighborhood of $s$.
+\end{lemma}
+One reduces easily to the case where $S$ is local and $s$ its closed point, and to proving that $C$ is then a Cartan subgroup of $G$, then by flat descent to the case where $G$ admits a maximal torus, say $T$. Then by XI~6.2, $\uTransp_G(T,C)$ is representable by a closed sub-prescheme of $G$ smooth over $S$. In addition, by the hypothesis on $C_s$, the fiber of the transporter at $s$ is nonempty (taking account of conjugacy theorem 6.6 a)). This reduces us by faithfully flat descent to the case where this transporter admits a section over $S$, hence to the case where $C$ contains a maximal torus $T$ of $G$. But then $T$ is central in $C^0$ by IX~5.6 a), hence $C^0\subset\Centr_G(T)$, and since this is an inclusion of group schemes smooth over $S$, having the same relative dimension (namely the dimension of their common fiber at $s$) and connected fibers, it is an equality, which completes the proof.
+% typo?: proving C rather than C^0 at the beginning kept as printed.
+
+d) We retain the preceding notation and hypotheses for $\ell,n,r$, and the connectedness of the fibers of $G$. Let $Q:\Sch^\circ_{/S}\to\Ens$ be the functor defined by
+\[
+\begin{split}
+Q(S')=\text{set of subgroups of multiplicative type of }G_{S'}\\
+\text{of type equal to }(\ZZ/n\ZZ)^r=M\quad\text{(IX 1.4).}
+\end{split}
+\]
+Then
+\[
+T\mto{}_nT
+\]
+is a morphism
+\[
+\varphi:\mathscr T\to Q,
+\]
+which is a monomorphism by 7.3. I say that $Q$ is representable by a separated prescheme of finite presentation over $S$. Indeed, as was pointed out in the proof of XI~3.12 a), one has an isomorphism
+\[
+Q\simeq P'/\Gamma
+\]
+where $P'$ is the open and closed sub-prescheme of the prescheme $P=\uHom_{S\text{-gr}}(M_S,G)$ introduced in c) corresponding to monomorphisms $M_{S'}\to G_{S'}$ (\cf IX~6.8), and where $\Gamma=(\Aut_{\mathrm{gr}}(M))_S$. The hypothesis that every finite subset of a fiber $G_s$ is contained in an affine open subset of $G$, being stable under passage to a closed sub-prescheme and under cartesian products, is obviously inherited by $({}_nG)^r$, hence by $P$, hence by $P'$, so $Q$ is representable by a prescheme of finite presentation over $S$ (\cf V)\nde{Make this reference precise.}.
+
+One sees in the same way that if $G$ is quasi-projective (resp. affine) over $S$, so is $Q$. In any case, $Q$ is separated over $S$. Now one has the
+\begin{lemma}{7.5}\label{XII.7.5}
+The preceding homomorphism $\varphi=\mathscr T\to Q$ is representable by an open immersion.
+% typo?: equals sign rather than colon kept as printed.
+\end{lemma}
+In other words, one must prove that if $H$ is a subgroup of multiplicative type of $G$, of type $M$, then there exists an open subset $U$ of $S$ such that for every $S'$ over $S$, $H_{S'}$ is of the form ${}_nT_{S'}$, for a suitable maximal torus $T_{S'}$ of $G_{S'}$, if and only if $S'\to S$ factors through $U$. One can obviously suppose that the nilpotent rank of the fibers of $G$ is constant (for, thanks to b), it is locally constant), say $r'$. Let $C=\Centr_G(H)$, which is a closed group sub-prescheme of $G$ smooth over $S$ (XI~6.2). Then, on replacing $S$ by the open and closed subset of points at which $C$ is of relative dimension $r'$, one can suppose $C$ of relative dimension $r'$ everywhere. One then sees at once that $H$ is of the form ${}_nT$, for a maximal torus $T$ of $G$, if and only if $C^0$ admits a central maximal torus $T$ of relative dimension $r$ everywhere and $H={}_nT$, which gives another expression for the subfunctor $U$ of $S$ that we want to represent (replacing $S$ in the preceding criterion by an $S'$ over $S$). Moreover, by flat descent one can suppose that $G$ admits a maximal torus $T_1$. Let $R$ be the subfunctor $\uTransp_G(T_1,\Centr_{C^0}(C^0))$ of $\uTransp_G(T_1,C)$; the latter is representable by a smooth prescheme over $S$ by XI~6.2, and the former is representable by an induced open sub-prescheme, as follows at once from IX~5.6 a); in particular it is smooth over $S$. Consequently its structural morphism to $S$ is open, hence its image is open, and on replacing $S$ by the said image (endowed with the induced structure), one can suppose the structural morphism surjective. Then, by 1.13 applied to $C^0$, $C^0$ admits a central maximal torus $T$, since it admits one locally for fpqc, which will obviously be of relative dimension equal to that of $T_1$, \ie $r$. Thus the condition to express for $H$ is the equality $H={}_nT$, which by IX~2.10 amounts again to taking a suitable open (and closed) subset of $S$.
+
+Lemma 7.5 therefore implies that $\mathscr T$ is representable by a separated prescheme locally of finite presentation over $S$, and even of finite presentation over $S$, as one sees by taking up again the proof of 7.5 to ensure that $\varphi$ is in fact a quasi-compact open immersion, or by reducing by faithfully flat quasi-compact descent to the case where $G$ admits a maximal torus, and where $\mathscr T$ is therefore isomorphic to $G/\Norm_G(T)$. This last expression, or alternatively XI~2.1, shows in addition that $\mathscr T$ is smooth over $S$. Finally, if $G$ is quasi-projective over $S$, so is $Q$, hence also $\mathscr T$. If $G$ is affine over $S$, the assertion that $\mathscr T$ is then affine over $S$ is included as a reminder, having been established in 5.4 (N.B. I do not know whether, without an affine hypothesis for $G/S$, it is possible to choose $n$ so that in 7.5 the open immersion is also a closed immersion). For the assertion that $\mathscr T$ is affine over $S$ if $S$ is artinian, one is reduced to the case where $S$ is the spectrum of a field (EGA~I~6.1.7), which one can suppose algebraically closed. Then thanks to f), which will be proved below, it suffices to prove the same assertion for $G/\Centr(G)$; but the latter is affine by 6.1, so one is under the preceding conditions.
+
+This completes the proof of d).
+
+e) By IX~6.8, one knows that there exists a subtorus $T'$ of $G'$ such that $u$ induces a faithfully flat morphism $T\to T'$ (which characterizes $T'$ as the subsheaf $u(T)$ of $G'$). Let $C$ be the centralizer of $T$, $C'$ that of $T'$; let us prove that the morphism $C\to C'$ is flat, and faithfully flat if $G'$ has connected fibers. Since $C,C'$ are flat of finite presentation over $S$, one is reduced to the case of a base field (SGA~1 I~5.9), which one can obviously suppose algebraically closed. In addition one can suppose $G,G'$ connected (on replacing them by $G^0$ and $G'{}^0$, which does not change $C^0$ and $C'{}^0$), and it then suffices to apply 6.6 d), taking account of a).
+
+f) Taking account of a) and e), one can restrict oneself to proving the assertion concerning Cartan subgroups. Now since a Cartan subgroup of $G$ is the centralizer of a maximal torus, it contains the center of $G$ and a fortiori $\Ker u$, so it is of the form $u^{-1}(C')$, where $C'=u(C)$ is the Cartan subgroup of $G'$ considered in e). Thus the map $C\mto u(C)$ is injective; to show that it is bijective, it suffices to see that for every Cartan subgroup $C'$ of $G'$, $u^{-1}(C')$ is a Cartan subgroup of $G$. Since the question is local for fpqc, one can suppose that $G$ admits a Cartan subgroup $C_1$, hence $u(C_1)=C'_1$ is a Cartan subgroup of $G'$, hence locally conjugate to $C'$ for fpqc by b), and since $u^{-1}(C'_1)=C_1$ is a Cartan subgroup of $G$, it follows that $u^{-1}(C')$ is a Cartan subgroup of $G$. \hfill Q.E.D.
+
+One can also, to prove that $u^{-1}(C')$ is a Cartan subgroup, note that it is flat over $S$, for $u$ is (SGA~1 I~5.9), which reduces us by definition to the case of a base field, and one can apply 6.6 e).
+\end{proof}
+\begin{corollary}{7.6}\label{XII.7.6}
+Under the conditions of 7.1 e), $G'$ admits locally for the étale topology a maximal torus, hence satisfies the preliminary conditions for $G$. If in addition $\Ker u$ is central, then the functors $\mathscr T_G,\mathscr C_G$ of maximal tori of $G$ and Cartan subgroups of $G$ are isomorphic to the analogous functors $\mathscr T_{G'},\mathscr C_{G'}$ for $G'$ (hence, in the case where they are representable, they are represented by isomorphic $S$-preschemes).
+\end{corollary}
+\begin{remark}{7.7}\label{XII.7.7}
+a) Unlike what happens in the case where $G$ is affine over $S$ (it suffices, in fact, that $G$ have affine fibers, as one will see in XVI), it is not true that the fact that $G$ has locally constant reductive rank implies that $G$ admits locally for fpqc a maximal torus. Let, for example, $S$ be the spectrum of a discrete valuation ring, $G_1$ and $G_2$ smooth separated group schemes of finite type over $S$, such that the generic fiber of $G_1$ is an elliptic curve, the special fiber a group $\Gm$, and the generic fiber of $G_2$ a group $\Gm$, the special fiber a group $\Ga$, and take $G=G_1\times_S G_2$. Then the two fibers of $G$ have reductive rank~1, but one sees at once that $G$ admits no maximal torus locally for fpqc. On the other hand, it is very plausible that the following condition (for a smooth separated group of finite type over a prescheme $S$) is sufficient for the existence of a maximal torus locally for the étale topology: the reductive rank and the abelian rank of the fibers of $G$ are locally constant functions.
+
+b) In the proof of 7.1 (in particular a)), we invoked XI~6.2 in cases where $S$ is not supposed locally noetherian. However, in the cases considered of application of XI~6.2, reduction to the case of affine noetherian $S$ is immediate.
+\end{remark}
+Here is a variant of 7.1 b):
+\begin{proposition}{7.8}\label{XII.7.8}
+Let $G$ be a smooth $S$-group prescheme of finite presentation with connected fibers, $H$ a group prescheme smooth over $S$, $i:H\to G$ a monomorphism of $S$-groups (making $H$ a sub-$S$-group of $G$). Then for every Cartan subgroup{\renewcommand{\thefootnote}{*}\footnote{The proof shows that it suffices to suppose that $C$ is a smooth subgroup of $G$ each of whose geometric fibers is the connected centralizer of a subgroup of a maximal torus of $G_{\overline S}$.}\addtocounter{footnote}{-1}} $C$ of $G$, $\uTransp_G(C,H)$ is representable by a closed sub-prescheme of $G$ smooth over $S$.
+% typo?: capital S in G_{bar S} in the starred note kept as printed.
+\end{proposition}
+The fact that the transporter is representable by a closed sub-prescheme of $G$ of finite presentation is contained in XI~6.11, taking into account that $C$ has connected fibers since $G$ does (6.6 b)). To show that the transporter is smooth over $S$, one is reduced by the standard procedure to the case where $S$ is affine noetherian, then to the case where $S$ is artinian local, and by descent to the case where the residue field of $S$ is algebraically closed. But then $C$ admits a maximal torus $T$, which is a maximal torus of $G$. One can suppose that the reductive rank and the nilpotent rank of the fiber $H_0$ are equal to those of $G_0$ (otherwise the transporter would be empty), but then one sees at once (using the connectedness of $C$ and the fact that the centralizer in $H$ of a maximal torus of $H$ is smooth) that one has
+\[
+\uTransp_G(C,H)=\uTransp_G(T,H)
+\]
+and since one knows that the second member is smooth (XI~2.5), so is the first. The preceding argument proves more generally part b) of the
+\begin{proposition}{7.9}\label{XII.7.9}
+Let $G$ and $i:H\to G$ be as in 7.8; suppose in addition that for every $s\in S$, $H_s$ is connected, and has the same reductive rank and the same nilpotent rank as $G_s$ (\ie $H_s$ contains a Cartan subgroup of $G_s$). Then one has the following:
+\begin{enumerate}[label=\alph*)]
+\item $\uNorm_G(H)$ is representable by a closed sub-prescheme $\Norm_G(H)$ of $G$ of finite presentation over $S$, and the canonical monomorphism $H\to\Norm_G(H)$ is an open immersion; consequently $i$ is an immersion, and one has
+\[
+H=\Norm_G(H)^0.
+\]
+\item For every Cartan subgroup $C$ of $G$, $\uTransp_G(C,H)$ is a closed sub-prescheme of $G$, smooth over $S$, with surjective structural morphism. If $C$ is the centralizer of a maximal torus $T$ of $G$, one has in addition
+\[
+\uTransp_G(T,H)=\uTransp_G(C,H).
+\]
+\item Let $C$ be a group sub-prescheme of $H$. For it to be a Cartan subgroup of $H$, it is necessary and sufficient that it be a Cartan subgroup of $G$.
+\item Suppose that $G$ admits locally for the étale topology, or for the fpqc topology, a Cartan subgroup (resp. a maximal torus); then the same holds for $H$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+a) The representability of $\uNorm_G(H)$ by a closed sub-prescheme $\Norm_G(H)$ of $G$ of finite presentation over $S$ is contained in XI~6.11. Since $H$ is smooth, hence flat locally of finite presentation over $S$, to verify that $H\to\Norm_G(H)$ is an open immersion, one is reduced to verifying it on the fibers (VI$_{\mathrm B}$.2.6), which reduces us to the case where $S$ is the spectrum of an algebraically closed field $k$. One is then reduced (Exp.~VI\nde{Reference not located in VI$_{\mathrm B}$; see M.~Demazure and P.~Gabriel, \textit{Groupes algébriques}, I, Masson (1970), corollary II.5.6.}) to verifying that the corresponding homomorphism on the Lie algebras is an isomorphism, or, what amounts to the same thing, that $(\mathfrak g/\mathfrak h)^H=0$, where $\mathfrak g$ and $\mathfrak h$ are the Lie algebras of $G$ and $H$, and the exponent $H$ denotes the invariants under $H$ (\cf II~5.2.3 (i)). Now by hypothesis $H$ contains a Cartan subgroup $C$ of $G$, the centralizer of the maximal torus $T$ of $G$, and it therefore suffices to prove that one has
+\[
+(\mathfrak g/\mathfrak h)^T=0,
+\]
+which follows, taking account of the complete reducibility of representations of $T$ (I~4.7.3), from the analogous relation $(\mathfrak g/\mathfrak c)^T$, where $\mathfrak c=\Lie(C)$. As for the latter, equivalent to
+\[
+\mathfrak g^T=\mathfrak c,
+\]
+it means that the centralizer $C$ and the normalizer $N$ of $T$ have the same Lie algebra, which follows from the fact that $C$ is an open subgroup of $N$ (XI~5.9). This completes the proof of a).
+% typo?: the relation (g/c)^T is printed without =0, retained.
+
+b) As was pointed out, the proof was given in 7.8.
+
+c) Taking account of the fact that $H$ is a sub-prescheme of $G$, the assertion reduces trivially to the case where $S$ is the spectrum of an algebraically closed field, in which case it follows at once from the hypothesis made on $H$.
+
+d) One uses b), c) and ``Hensel's lemma'' XI~1.10.
+\end{proof}
+\begin{corollary}{7.10}\label{XII.7.10}
+Let $G$ and $H$ be as in 7.9, and suppose that for every algebraically closed field $k$ over $S$, every element of $G_k(k)$ normalizing $H_k$ is in $H_k(k)$. Then $H$ is a closed sub-prescheme of $G$, and is its own normalizer.
+\end{corollary}
+This follows trivially from 7.9 a). We shall apply 7.10 in particular to the Borel subgroups (more generally, to the parabolic subgroups) of $G$.
+\begin{corollary}{7.11}\label{XII.7.11}
+Let $G,H$ be as in 7.9. Then $H$ contains every group sub-prescheme $Z$ of $G$, central in $G$ and flat and of finite presentation over $S$.
+\end{corollary}
+One can as usual reduce to the case of affine noetherian $S$, then to the case of artinian $S$, which implies that one is under the conditions of 7.1. By 7.9 c), one can suppose that $H$ contains a Cartan subgroup $C$ of $G$, and one is reduced to proving that $C\supset Z$. Now since $S$ is artinian, $G'=G/Z$ is representable by a group prescheme of finite type over $S$, the canonical morphism $u:G\to G'$ being faithfully flat and its kernel being $Z$ (VI$_{\mathrm A}$.3.2). Obviously $G'$ is smooth over $S$, and one can apply 7.1 f), which implies that $C$ is of the form $u^{-1}(C')$, hence contains $Z$.

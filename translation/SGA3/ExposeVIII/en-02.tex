@@ -1,0 +1,194 @@
+% Continuation of the proof of 1.7.2; PDF pp. 7--12.
+Suppose, in addition, that this descent datum is effective, i.e. that there exists an $S$-prescheme $X$ such that $X'\simeq X\times_S S'$ (by SGA 1, VIII 2.1, this is the case if $X'$ is affine over $S'$\nde{For another criterion of effectiveness, see below X 5.4--5.6.}). Then, for every $Y\to S'$, one has
+\begin{equation}\tag{**}
+F(Y)=F'(Y)=\Hom_{S'}(Y,X\times_S S')=\Hom_S(Y,X)=h_X(Y).
+\end{equation}
+Then, for arbitrary $Y\to S$, put $Y'=Y\times_S S'$ and $Y''=Y'\times_Y Y'\simeq Y\times_S S''$. Then $Y'\to Y$ is, like $S'\to S$, faithfully flat and quasi-compact, hence an $\cal M$-effective epimorphism (where $\cal M=$ the family of faithfully flat quasi-compact morphisms), i.e. the equivalence relation
+\[
+\xymatrix{Y'\times_Y Y'\ar@<.5ex>[r]\ar@<-.5ex>[r]&Y'}
+\]
+is $\cal M$-effective and has quotient $Y$. Since $F$ (resp. $h_X$) is an (fpqc) sheaf by hypothesis (resp. since the (fpqc) topology is coarser than the canonical topology), $F(Y)$ and $h_X(Y)$ are both identified, in view of (**), with the kernel of the double arrow:
+\[
+\xymatrix{F(Y')\ar@<.5ex>[r]\ar@<-.5ex>[r]\ar@{=}[d]&F(Y'\times_Y Y')\ar@{=}[d]\\h_X(Y')\ar@<.5ex>[r]\ar@<-.5ex>[r]&h_X(Y'\times_Y Y').}
+\]
+This proves (ii).
+\end{proof}
+\begin{corollary}{1.7.3}\label{VIII.1.7.3}
+Let $F$ be an (fpqc) sheaf on $\Sch_{/S}$. Suppose that there exists an open covering $(S_i)$ of $S$ and, for each $i$, a faithfully flat and quasi-compact morphism $S'_i\to S_i$ such that the restriction $F'_i=F\times_S S'_i$ is representable by an $S'_i$-prescheme $X'_i$ affine over $S'_i$. Then $F$ is representable by an $S$-prescheme $X$ affine over $S$ (such that $X\times_S S'_i=X'_i$ for every $i$).
+
+If, in addition, each $X'_i\to S'_i$ is a closed immersion (resp. a finite étale morphism), the same is true of $X\to S$.
+\end{corollary}
+The first assertion follows from 1.7.2. For the second, it suffices to check that each morphism $X\times_S S_i\to S_i$ is a closed immersion (resp. finite and étale), which follows from EGA IV$_2$, 2.7.1 (resp. and IV$_4$, 17.7.3).
+\begin{remark}{1.7.4}\label{VIII.1.7.4}
+Assertion 1.5 (b) follows, as announced, from 1.7.1 and 1.7.2 (i).
+\end{remark}
+
+\sgasection{2}{Schematic properties of diagonalizable groups}
+They are summarized in the
+\begin{proposition}{2.1}\label{VIII.2.1}
+Let $S$ be a nonempty prescheme, $M$ an ordinary commutative group, $G=D(M_S)$ the diagonalizable $S$-group defined by $M$. One has the following:
+
+a) $G$ is faithfully flat over $S$, and affine over $S$ (a fortiori quasi-compact over $S$).
+
+b) $M$ of finite type $\Longleftrightarrow G$ of finite type over $S$ $\Longleftrightarrow G$ of finite presentation over $S$.
+
+c) $M$ finite $\Longleftrightarrow G$ finite over $S$ $\Longleftrightarrow G$ of finite type over $S$ and annihilated by an integer $n>0$. Then $\deg(G/S)=\operatorname{Card}(M)$.
+
+c') $M$ a torsion group $\Longleftrightarrow G$ integral over $S$.
+
+d) $M=0\Longleftrightarrow G=$ the unit $S$-group.
+
+e) $M$ of finite type, and the order of its torsion subgroup prime to the residue characteristics of $S$ $\Longleftrightarrow G$ smooth over $S$.
+\end{proposition}
+The verification of a) to d) is trivial and left to the reader. Let us prove e). If $G$ is smooth over $S$, it is locally of finite presentation over $S$, hence of finite presentation over $S$ since it is affine over $S$, so $M$ is of finite type. One may therefore already suppose $M$ of finite type, hence $G$ of finite presentation over $S$. Then\nde{(since $G$ is flat over $S$, by a))} $G$ is smooth over $S$ if and only if its geometric fibers are so, which reduces us to the case where $S$ is the spectrum of an algebraically closed field $k$. Writing $M=T\times L$, with $T$ the torsion subgroup and $L$ free, $L\simeq\ZZ^r$, one has $D(M)=D(T)\times D(L)$, where $D(L)\simeq\Gm^r$ is smooth over $k$. Thus $G=D(M)$ is smooth over $k$ if and only if $D(T)$ is so, which means, since $D(T)$ is finite over $k$ of degree equal to the order $n$ of $T$, that $D(T)(k)$ has $n$ elements. Now $T$ is isomorphic to a sum of groups $\ZZ/n_i\ZZ$, $n$ being the product of the $n_i$, so $D(T)$ is a product of the $D(\ZZ/n_i\ZZ)=\bmu_{n_i}$ (group schemes of $n_i$-th roots of unity), hence
+\[
+\operatorname{card}(D(T)(k))=\prod_i\operatorname{card}\bmu_i(k)
+\]
+where $\operatorname{card}\bmu_i(k)=$ (number of $n_i$-th roots of unity in $k$) $\leq n_i$, equality being attained if and only if $n_i$ is prime to the characteristic $p$ of $k$. Thus one has $\operatorname{card}(D(T)(k))=n$ (where $n=\prod_i n_i$) if and only if all the $n_i$ are prime to $p$, i.e. if and only if $n$ is prime to $p$. \hfill Q.E.D.
+% typo?: the source uses mu_i in the cardinality formulas; kept as printed.
+
+\sgasection{3}{Exactness properties of the functor $D_S$}
+\begin{theorem}{3.1}\label{VIII.3.1}
+Let $S$ be a prescheme, and
+\[
+0\to M'\xrightarrow{u}M\xrightarrow{v}M''\to0
+\]
+an exact sequence of ordinary commutative groups. Consider the sequence of transposed homomorphisms:
+\[
+0\to D_S(M'')\xrightarrow{v^t}D_S(M)\xrightarrow{u^t}D_S(M')\to0.
+\]
+(i) $v^t$ induces an isomorphism of $D_S(M'')$ with the kernel of $u^t$, and $u^t$ is faithfully flat and quasi-compact.
+
+(ii)\nde{The following has been added, and the proof has been expanded accordingly.} $D_S(M')$ represents the (fpqc) quotient sheaf $D_S(M)/D_S(M'')$.
+\end{theorem}
+Denote by $\cal M$ the family of faithfully flat quasi-compact morphisms. First, (ii) follows from (i) (cf. IV, 4.6.5.1). Indeed, the equivalence relation in $D_S(M)$ defined by $u^t$ is the same as that defined by the subgroup $\Ker(u^t)=D_S(M'')$; as $u^t\in\cal M$, this equivalence relation is $\cal M$-effective (cf. IV, 3.3.2.1), and therefore $D_S(M')$ represents the quotient sheaf for the (fpqc) topology (cf. IV, 4.6.5).
+
+The first assertion of (i) is a trivial consequence of the definition of the functors $D_S(-)$; more generally, for every exact sequence
+\[
+M'\to M\to M''\to0
+\]
+(without a zero on the left), one shall have an exact transposed sequence:
+\[
+0\to D_S(M'')\to D_S(M)\to D_S(M').
+\]
+(This holds more generally in the context of the beginning of \No1.) On the other hand, as $D_S(M)$ and $D_S(M')$ are affine over $S$, $u^t$ is necessarily an affine morphism, a fortiori quasi-compact (whatever the homomorphism $u:M'\to M$). Thus the second assertion of (i) will follow from part a) in the
+\begin{corollary}{3.2}\label{VIII.3.2}
+Let $S$ be a nonempty prescheme, $u:M'\to M$ a homomorphism of ordinary commutative groups, $u^t:G\to G'$ the transposed homomorphism. Then:
+
+a) For $u$ to be a monomorphism, it is necessary and sufficient that $u^t$ be faithfully flat.
+
+b) For $u$ to be an epimorphism, it is necessary and sufficient that $u^t$ be a monomorphism (and then $u^t$ is even a closed immersion).
+\end{corollary}
+To prove a), one notes that if $u$ is a monomorphism, then $\OS(M)$ is a module over $\OS(M')$ admitting a nonempty basis (namely the system of sections defined by any system of representatives of $M$ modulo $M'$), a fortiori it is faithfully flat. Conversely, if this is so, then $u^t:\OS(M')\to\OS(M)$ is injective, which (for $S\ne\varnothing$) implies that $u:M'\to M$ is injective.
+
+To prove b), one notes that if $u$ is an epimorphism, then $\OS(M')\to\OS(M)$ is surjective, so $u^t$ is a closed immersion and a fortiori a monomorphism. Conversely, if this is so, then $\Ker u^t=$ the unit group; now putting $M''=\Coker u$, one has seen that $\Ker u^t\simeq D_S(M'')$, so by 2.1 d) one has $M''=0$, hence $u$ is an epimorphism.
+
+One concludes from 3.1 in the usual way:
+\begin{corollary}{3.3}\label{VIII.3.3}
+Let $M'\xrightarrow{u}M\xrightarrow{v}M''$ be an exact sequence of ordinary commutative groups; consider the transposed sequence
+\[
+G''\xrightarrow{v^t}G\xrightarrow{u^t}G'.
+\]
+Then $v^t$ induces a faithfully flat and quasi-compact morphism from $G''$ to $\Ker u^t$, and the latter is a diagonalizable group isomorphic to $D_S(v(M))=D_S(\Coker u)$.
+\end{corollary}
+\begin{corollary}{3.4}\label{VIII.3.4}
+Let $S$ be a prescheme, $u:G\to H$ a homomorphism of locally diagonalizable $S$-group preschemes, with $H$ of finite type over $S$. Put $G'=\Ker u$. Then:
+
+a) $G'$ is locally diagonalizable; it is of finite type over $S$ if $G$ is so.
+
+b) The quotient $G/G'$ ``exists''; more precisely, the equivalence relation defined by $G'$ in $G$ is $\cal M$-effective (where $\cal M=$ the set of faithfully flat quasi-compact morphisms, cf. IV, 3.4). Moreover, $G/G'$ is locally diagonalizable, of finite type over $S$.
+
+c) The homomorphism $u:G\to H$ factors uniquely as
+\[
+G\xrightarrow{v}G/G'\xrightarrow{w}H,
+\]
+where $v$ is the canonical homomorphism (so $v$ is faithfully flat and quasi-compact). Moreover, $w$ is a closed immersion, and a fortiori a monomorphism.
+
+Finally, the quotient $H'=H/\Im w=\Coker w=\Coker u$ exists; more precisely, the equivalence relation defined by $G/G'$ in $H$ is $\cal M$-effective, and $H'$ is of finite type over $S$.
+\end{corollary}
+The first assertion of c) is a consequence of b), by definition of the quotient $G/G'$ (cf. IV, 3.2.3).\nde{The original has been expanded in what follows.} Let us show that the (fpqc) quotient sheaf $\widetilde G/\widetilde{G'}$ is representable. This is checked locally on $S$, as are all the other assertions; one may therefore suppose $G$ and $H$ diagonalizable, of the form $D_S(M)$ and $D_S(N)$.
+
+As $H$ is of finite type over $S$, $N$ is of finite type by 2.1 b), so by 1.5, $u$ is defined by a homomorphism $u':N\to M$. Then, by 3.1 and 3.2, $G'$ is isomorphic to $D_S(\Coker u')$ and $\widetilde G/\widetilde{G'}$ is representable by $D_S(\Im u')$; moreover, considering the exact sequence
+\[
+0\to\Ker u'\to N\xrightarrow{w'}\Im u'\to0,
+\]
+one obtains that $w$ is a closed immersion and that the quotient $H'=H/\Im w$ is $D_S(\Ker u')$; this is of finite type over $S$ since $N$, and hence $\Ker u'$, is of finite type.
+
+\begin{remarks}{} The existence result for quotients 3.4 will be substantially generalized in \No5.
+
+On the other hand, one will note that in the present \No\ and the preceding one, the hypothesis $S\ne\varnothing$ entered only to ensure the validity of certain converses, allowing properties of the corresponding ordinary groups to be deduced from certain hypotheses on diagonalizable $S$-groups. The results in the ``direct'' sense hold without restriction on $S$, and the proofs given here apply in the general case.
+\end{remarks}
+\begin{corollary}{3.5}\label{VIII.3.5}
+Let $G$ be a diagonalizable group prescheme over $S$, and let $n$ be an integer $\ne0$. Then the subgroup ${}_nG$ of $G$, kernel of the homomorphism $n\cdot\mathrm{id}_G:G\to G$, is integral over $S$, and finite over $S$ if $G$ is of finite type over $S$.
+\end{corollary}
+Indeed, if $G=D_S(M)$, then ${}_nG=D_S(M/nM)$ by 3.1, and one concludes by 2.1 b), c), c').
+
+\sgasection{4}{Torsors under a diagonalizable group}
+Let $S$ be a prescheme, and $G=D_S(M)$ a diagonalizable group over $S$. We propose to determine the $G$-torsors (or principal homogeneous $G$-bundles) over $S$, in the sense of the ``faithfully flat quasi-compact topology'', cf. Exp. IV, 5.1. Recall that a prescheme $P$ over $S$, with group of operators $G$, is said to be a \emph{torsor} or \emph{principal homogeneous} if every point of $S$ admits an open neighborhood $U$ and a faithfully flat and quasi-compact morphism $S'\to U$ such that $P'=P\times_S S'$ is a bundle with operators isomorphic to $G'=G\times_S S'$ (acting on itself by right translations). Since $G$ is affine over $S$, it follows by SGA 1, VIII 5.6 that $P$ is necessarily affine over $S$. Let us also note that since $G$ is itself faithfully flat and quasi-compact over $S$, $P$ is principal homogeneous under $G$ if and only if it is ``formally principal homogeneous'' and is, in addition, faithfully flat and quasi-compact over $S$ (cf. IV, 5.1.6).
+
+Recall, on the other hand (Exp. I, 4.7.3), that giving an $S$-prescheme $P$ affine over $S$ with group of operators $G=D_S(M)$ amounts to giving a quasi-coherent commutative algebra graded of type $M$ over $S$, i.e. a quasi-coherent algebra $\cal A$ over $S$ endowed with a decomposition as a direct sum (as a module):
+\[
+\cal A=\coprod_{m\in M}\cal A_m,
+\]
+with
+\[
+\cal A_m\cdot\cal A_{m'}\subseteq\cal A_{m+m'}\qquad\text{for }m,m'\in M.
+\]
+This being so, the answer to the problem posed above is given by the
+\begin{proposition}{4.1}\label{VIII.4.1}
+For the prescheme $P$ with group of operators $G=D_S(M)$, defined by the algebra $\cal A$ graded of type $M$, to be a principal homogeneous bundle under $G$, it is necessary and sufficient that $\cal A$ satisfy the following conditions:
+
+a) For every $m\in M$, $\cal A_m$ is an invertible module over $S$.
+
+b) For $m,m'\in M$, the homomorphism
+\[
+\cal A_m\otimes_{\OS}\cal A_{m'}\to\cal A_{m+m'}
+\]
+induced by multiplication in $\cal A$ is an isomorphism.
+\end{proposition}
+The necessity of the conditions is immediate by descent, since they are satisfied in the case where $P$ is the trivial principal homogeneous bundle, i.e. $\cal A=\OS(M)$. For sufficiency, one notes that a) already implies that $P$ is faithfully flat over $S$; it is in any case quasi-compact over $S$ (being affine over $S$), so it remains to check that it is formally principal homogeneous under $G$, i.e. that the well-known homomorphism
+\[
+P\times_S G\to P\times_S P
+\]
+is an isomorphism. Now on the affine algebras this homomorphism is made explicit as the homomorphism
+\[
+\cal A\otimes\cal A\to\cal A(M)=\cal A\otimes\OS(M)
+\]
+which in bidegree $(m,n)$ (where $m,n\in M$) is given by
+\[
+x_m\otimes y_n\mto x_my_n\otimes e_n.
+\]
+From the point of view of degrees, this homomorphism is compatible with the homomorphism $M\times M\to M\times M$ given by
+\[
+(m,n)\mto(m+n,n),
+\]
+which is an isomorphism. This shows that b) expresses precisely (independently of a)) that $P$ is formally principal homogeneous, and establishes 4.1.
+
+Let us also note that one obtains, by faithfully flat descent:
+\begin{corollary}{4.2}\label{VIII.4.2}
+The conditions of 4.1 imply that the homomorphism
+\[
+\OS\to\cal A_0
+\]
+is an isomorphism.
+\end{corollary}
+If, for example, $M=\ZZ$, then under the conditions of 4.1 one sees that $\cal A$ is essentially known when one knows $\cal A_1=\cal L$, namely
+\[
+\cal A\simeq\coprod_{n\in\ZZ}\cal L^{\otimes n}
+\]
+(isomorphism of graded algebras). One thus recovers the well-known result:
+\begin{corollary}{4.3}\label{VIII.4.3}
+There is an equivalence between the category of principal homogeneous bundles $P$ over $S$ with group $\mathbf{G}_{\mathrm{m},S}$ and the category of invertible modules $\cal L$ over $S$ (taking as morphisms to define both categories the isomorphisms for the structures involved). One obtains two functors quasi-inverse to one another by associating with every $P$ the degree 1 component of its $\ZZ$-graded affine algebra, and by associating with every $\cal L$ the spectrum of the $\ZZ$-graded algebra $\coprod_{n\in\ZZ}\cal L^{\otimes n}$.
+\end{corollary}
+In particular:
+\begin{corollary}{4.4}\label{VIII.4.4}
+The group of classes of principal homogeneous bundles over $S$ with group $\mathbf{G}_{\mathrm{m},S}$ is isomorphic to the group $\Pic(S)$ of classes of invertible modules over $S$, i.e. to $H^1(S,\OS^\times)$.
+\end{corollary}
+In view of the fact that $\mathbf{G}_{\mathrm{m},S}$ is the scheme of automorphisms of the module $\OS$, one sees that 4.4 is equivalent to the following statement, which is one of the variants of Hilbert's ``Theorem 90''.
+\begin{corollary}{4.5}\label{VIII.4.5}
+Every principal homogeneous bundle over $S$ with group $\Gm$ is locally trivial (in the sense of the Zariski topology).
+\end{corollary}
+\begin{remark}{4.5.1}\label{VIII.4.5.1}
+One will note that the preceding statement is no longer true in general for a group such as $\bmu_n$, or for a ``twisted form'' of $\Gm$; for example, the unique twisted form of $\Gm$ over the field $\RR$ of real numbers gives a 1-cohomology group equal to $\ZZ/2\ZZ$.
+% The added explanation beginning on PDF p. 13 continues in en-03.tex.
+\end{remark}

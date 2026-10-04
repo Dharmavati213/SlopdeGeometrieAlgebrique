@@ -39,7 +39,9 @@ SGA2_TEX_DIRS := \
 
 tex:
 	@for d in $(SGA1_TEX_DIRS) $(SGA2_TEX_DIRS); do $(MAKE) -C $$d || exit 1; done
+	$(MAKE) -C translation/SGA3 book
 
 clean:
 	cd lean && lake clean
 	@for d in $(SGA1_TEX_DIRS) $(SGA2_TEX_DIRS); do $(MAKE) -C $$d clean; done
+	$(MAKE) -C translation/SGA3 clean

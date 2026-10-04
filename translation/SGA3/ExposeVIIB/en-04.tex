@@ -1,0 +1,167 @@
+\begin{lemma}{1.2.3.A}\label{VIIB.1.2.3.A}
+Let $k\to K$ be a morphism of pseudocompact rings, $B$ a pseudocompact $K$-module, and $M$ a projective $k$-module (without topology). One has a canonical isomorphism of pseudocompact $K$-modules
+\begin{equation}\tag{2}
+\theta:\Hom_k(M,k)\widehat\otimes_k B\isomto\Hom_k(M,B).
+\end{equation}
+\end{lemma}
+Here $M^*=\Hom_k(M,k)$ is equipped with the topology defined in 0.2.2, which makes it a pseudocompact $k$-module, and the topology of $\Hom_k(M,B)$ is defined analogously: a base of neighborhoods of $0$ consists of the following $K$-submodules, where $x\in M$ and $B'$ is an open $K$-submodule of $B$:
+\[
+\mathcal H(x,B')=\{f\in\Hom_k(M,B)\mid f(x)\in B'\}.
+\]
+Finally, $M^*\widehat\otimes_k B$ is the pseudocompact $K$-module deduced from $M^*$ by base change; cf. 0.5.A.
+This being so, $\theta$ is evidently an isomorphism when $M=k$; moreover, both sides of (2), considered as functors in $M$, transform direct sums into products (in particular, commute with finite direct sums). One therefore obtains that (2) is an isomorphism when $M$ is a free $k$-module, and then when $M$ is projective.
+
+\begin{definition}{1.2.3.B}\label{VIIB.1.2.3.B}
+Let $N$ be a \emph{pseudocompact} $k$-module. We denote by $\mathbf V_k^{\mathrm f}(N)$ or $\mathbf N^\dagger$\nde{In fact, we shall not use this second notation; see N.D.E. (47).} the $\mathbf O_k$-module which associates to every $C\in\Ob\mathbf{Alf}/k$ the $C$-module $(C\widehat\otimes_k N)^\dagger$ dual to $C\widehat\otimes_k N$ (0.2.2), \ie the $C$-module
+\[
+\Hom_c(C\widehat\otimes_k N,C)\simeq\Hom_c(N,C|_k),
+\]
+where $C|_k$ denotes the $k$-module $C$ obtained by restriction of scalars. This $\mathbf O_k$-module $\mathbf V_k^{\mathrm f}(N)$ will be called the \emph{dual} of $N$.
+\end{definition}
+If $k_{\mathfrak m}$ is a local component of $k$, then, for every object $C$ of $\mathbf{Alf}/k$,
+\[
+\Hom_c(k_{\mathfrak m},C|_k)=C_{\mathfrak m}=C\otimes_k k_{\mathfrak m}
+\]
+is a projective $C$-module, and moreover one has $D\otimes_C C_{\mathfrak m}=D_{\mathfrak m}$ for every morphism $C\to D$ of $\mathbf{Alf}/k$; thus $\mathbf V_k^{\mathrm f}(k_{\mathfrak m})$ is a flat $\mathbf O_k$-module (cf. 1.2.1). Since every projective pseudocompact $k$-module is a product of modules $k_{\mathfrak m}$ (cf. Prop. 0.2.1), from Corollary 0.2.F one deduces:
+\begin{corollary}{1.2.3.C}\label{VIIB.1.2.3.C}
+$\mathbf V_k^{\mathrm f}(N)$ is a flat $\mathbf O_k$-module when $N$ is a projective pseudocompact $k$-module.
+\end{corollary}
+
+\begin{definition}{1.2.3.D}\label{VIIB.1.2.3.D}
+Conversely, if $\mathbf M$ is an \emph{admissible} $\mathbf O_k$-module (cf. 1.2.1),\nde{The editors do not understand the following definition unless $\mathbf M$ is assumed admissible, hence the addition of this hypothesis. Moreover, we have written $\Gamma^*(\mathbf M)$ instead of $M^*$ in order to avoid confusion between $M^*$, the module dual to the functor $\mathbf M$, and $\mathbf N^\dagger$, the functor dual to the module $N$; cf. N.D.E. (46). Finally, we have detailed the construction of $\Gamma^*(\mathbf M)$.} we call the following pseudocompact $k$-module the \emph{dual of $\mathbf M$} and denote it by $\Gamma^*(\mathbf M)$. For $\mathfrak l$ running through the open ideals of $k$, equip each $k/\mathfrak l$-module
+\[
+\mathbf M(k/\mathfrak l)^*=\Hom_{k/\mathfrak l}(\mathbf M(k/\mathfrak l),k/\mathfrak l)
+\]
+with the topology described in 0.2.2, which makes it a pseudocompact $k$-module. Since $\mathbf M(k/\mathfrak l)\simeq\mathbf M(k/\mathfrak l')\otimes(k/\mathfrak l)$ for $\mathfrak l\supset\mathfrak l'$, one has transition morphisms
+\[
+\begin{aligned}
+\Hom_{k/\mathfrak l'}(\mathbf M(k/\mathfrak l'),k/\mathfrak l')&\to\Hom_{k/\mathfrak l'}(\mathbf M(k/\mathfrak l'),k/\mathfrak l)\\
+&=\Hom_{k/\mathfrak l}(\mathbf M(k/\mathfrak l),k/\mathfrak l),
+\end{aligned}
+\]
+and by definition $\Gamma^*(\mathbf M)$ is the projective limit of this (filtered) projective system of pseudocompact $k$-modules.
+\end{definition}
+From now on, suppose further that $\mathbf M$ is a \emph{flat} $\mathbf O_k$-module (cf. 1.2.1); then each $\mathbf M(k/\mathfrak l')$ is a projective $(k/\mathfrak l')$-module, so the transition morphisms above are surjective, and hence so are the projections $\Gamma^*(\mathbf M)\to\mathbf M(k/\mathfrak l)^*$, since filtered projective limits are exact in $\mathbf{PC}(k)$.
+If $\tau:k\to K$ is a morphism of pseudocompact rings, denote by $\mathbf M\otimes_k K$ or simply $\mathbf M_K$ the $\mathbf O_K$-functor defined as follows. If $C$ is a $K$-algebra of finite length, the kernel of $k\to C$ is an open ideal $\mathfrak l$, and one puts $\mathbf M_K(C)=\mathbf M(k/\mathfrak l)\otimes_k C$; one then has $\mathbf M_K(C)=\mathbf M(k/\mathfrak l')\otimes_k C$ for every open ideal $\mathfrak l'$ contained in $\mathfrak l$. One then defines $\Gamma_K^*(\mathbf M_K)$ as the projective limit, for $I$ running through the open ideals of $K$, of the pseudocompact $K$-modules
+\[
+\Hom_{K/I}(\mathbf M_K(K/I),K/I)=\Hom_{k/\mathfrak l}(\mathbf M(k/\mathfrak l),K/I),
+\]
+where in the right-hand term $\mathfrak l$ is any open ideal of $k$ such that $\tau(\mathfrak l)\subset I$. Moreover, by 1.2.3.A, the right-hand term is identified with $\mathbf M(k/\mathfrak l)^*\widehat\otimes_k(K/I)$. Since the projections $\Gamma^*(\mathbf M)\to\mathbf M(k/\mathfrak l)^*$ are surjective, one sees that the projective limit of the $\mathbf M(k/\mathfrak l)^*\widehat\otimes_k(K/I)$ is precisely the pseudocompact $K$-module $\Gamma^*(\mathbf M)\widehat\otimes_k K$ (cf. 0.5.A). Thus one has obtained that, for every flat $\mathbf O_k$-module $\mathbf M$, formation of $\Gamma^*(\mathbf M)$ \emph{commutes with extension of the base}, \ie one has
+\begin{equation}\tag{$\star$}
+\Gamma_K^*(\mathbf M\otimes_k K)\simeq\Gamma^*(\mathbf M)\widehat\otimes_k K.
+\end{equation}
+\begin{proposition}{1.2.3.E}\label{VIIB.1.2.3.E}
+\begin{enumeratei}
+\item The functors $N\mto\mathbf V_k^{\mathrm f}(N)$ and $\mathbf M\mto\Gamma^*(\mathbf M)$ define an anti-equivalence between the category of projective pseudocompact $k$-modules and that of flat $\mathbf O_k$-modules.\nde{We have added part (ii) below, as well as the following proof. The original indicated: ``If $\mathbf M$ is a flat $\mathbf O_k$-module, it is clear that $\mathbf M$ is precisely the dual of $M^*$, so the functors $N\mto N^*$ and $\mathbf M\mto M^*$ define an anti-equivalence\ldots''}
+\item Moreover, if $k\to K$ is a morphism of pseudocompact rings, the preceding anti-equivalence ``commutes with base change'' in the following sense: if $N\simeq\Gamma^*(\mathbf M)$, then $N\widehat\otimes_k K\simeq\Gamma_K^*(\mathbf M\otimes_k K)$.
+\end{enumeratei}
+\end{proposition}
+\begin{proof}
+On the one hand, one has a natural transformation $\phi_N:N\to\Gamma^*(\mathbf V_k^{\mathrm f}(N))$. Since the functor $\Gamma^*\circ\mathbf V_k^{\mathrm f}$ commutes with products, by 0.3.5 and 0.2.F, it suffices to verify that $\phi_N$ is an isomorphism when $N$ is a local component $k_{\mathfrak m}$ of $k$. In this case, for every open ideal $\mathfrak l$ of $k$ contained in $\mathfrak m$, the natural morphism
+\[
+(k/\mathfrak l)_{\mathfrak m}\to\Hom_{k/\mathfrak l}\bigl(\Hom_c(k_{\mathfrak m}\widehat\otimes k/\mathfrak l,k/\mathfrak l),k/\mathfrak l\bigr)
+\]
+is an isomorphism, whence the result.
+On the other hand, let $\mathbf M$ be a flat $\mathbf O_k$-module. Let us show that $\Gamma^*(\mathbf M)=\varprojlim\mathbf M(k/\mathfrak l)^*$ is a projective object of $\mathbf{PC}(k)$. Let $N\to N'$ be a surjective morphism between objects of $\mathbf{LF}(k)$. By 0.2.F(i) and (ii), it suffices to show that the natural map
+\[
+\varinjlim\Hom_c(\mathbf M(k/\mathfrak l)^*,N)\to\varinjlim\Hom_c(\mathbf M(k/\mathfrak l)^*,N')
+\]
+is surjective. But this is clear, since $N$ and $N'$ are $k/\mathfrak l_0$-modules for some open ideal $\mathfrak l_0$; hence, if $\mathfrak l\subset\mathfrak l_0$, every morphism $\mathbf M(k/\mathfrak l)^*\to N'$ lifts to a morphism $\mathbf M(k/\mathfrak l)^*\to N$, since $\mathbf M(k/\mathfrak l)^*$ is a projective object of $\mathbf{PC}(k/\mathfrak l)$.
+One has a morphism $\psi:\mathbf M\to\mathbf V_k^{\mathrm f}(\Gamma^*(\mathbf M))$ of functors from $\mathbf{Alf}/k$ to $\Ens$. Let $B$ be an object of $\mathbf{Alf}/k$; let us show that
+\begin{equation}\tag{1}
+\begin{aligned}
+\psi(B):\mathbf M(B)&\to\mathbf V_k^{\mathrm f}(\Gamma^*(\mathbf M))(B)\\
+&=\Hom_c\bigl(\varprojlim_{\mathfrak l}(\mathbf M(k/\mathfrak l)^*\widehat\otimes_k B),B\bigr)
+\end{aligned}
+\end{equation}
+is a bijection (in the equality above, we have used the fact that $\widehat\otimes$ commutes with filtered projective limits). Let $\mathfrak l_0$ be an open ideal of $k$ contained in the kernel of $k\to B$. By Lemma 1.2.3.A, for every $\mathfrak l\subset\mathfrak l_0$, one has a canonical isomorphism of pseudocompact $B$-modules
+\[
+\mathbf M(k/\mathfrak l)^*\widehat\otimes_k B\isomto\Hom_{k/\mathfrak l}(\mathbf M(k/\mathfrak l),B),
+\]
+and, since $\mathbf M(B)=\mathbf M(k/\mathfrak l)\otimes_{k/\mathfrak l}B$, the right-hand term equals $\Hom_B(\mathbf M(B),B)$. Thus the projective system in (1) is constant for $\mathfrak l\subset\mathfrak l_0$, and (1) reduces to the canonical morphism
+\[
+\mathbf M(B)\to\Hom_c\bigl(\Hom_B(\mathbf M(B),B),B\bigr),
+\]
+which is an isomorphism by 0.2.2, since $B$ is artinian and $\mathbf M(B)$ is a projective $B$-module. This proves part (i) of the proposition, and part (ii) follows from isomorphism ($\star$) established above.
+\end{proof}
+\begin{remark}{1.2.3.F}\label{VIIB.1.2.3.F}
+Let us return to the statement of the proposition, and suppose further that $N$ is a topologically free pseudocompact $k$-module. In this case one can choose bases for the $C$-modules $\mathbf V_k^{\mathrm f}(N)(C)$ ``in a coherent manner''.
+Indeed, let $(n_i)$ be a pseudobasis of $N$ (0.2.1) and $n_i^C$ the canonical image of $n_i$ in $C\widehat\otimes_k N$, for $C\in\mathbf{Alf}/k$. If one defines the element $\delta_i^C$ of $(C\widehat\otimes_k N)^\dagger$ by the equalities $\delta_i^C(n_i^C)=1$ and $\delta_i^C(n_j^C)=0$ for $i\ne j$, the family $(\delta_i^C)$ is a basis of $\mathbf V_k^{\mathrm f}(N)(C)$; moreover, for every morphism $\varphi:C\to D$ of $\mathbf{Alf}/k$, $\mathbf V_k^{\mathrm f}(N)(\varphi)$ sends $\delta_i^C$ to $\delta_i^D$.
+\end{remark}
+
+\numpara{1.2.4}\nde{In this paragraph we have changed the order, first defining $\widehat S_k(E)$ and then stating that $\mathbb V_k^{\mathrm f}(E)$ represents $\mathbf V_k^{\mathrm f}(E)$.}For every pseudocompact $k$-module $E$, let $\widehat S_k(E)$ be the completed symmetric algebra of $E$, defined in the following manner. Let $T_k(E)$ be the direct sum of the pseudocompact $k$-modules
+\[
+\widehat\bigotimes_k^n E=E\widehat\otimes_k\cdots\widehat\otimes_k E
+\quad(n\geq0;\ \text{if }n=0,\ \widehat\bigotimes_k^0 E=k);
+\]
+one makes $T_k(E)$ a graded $k$-algebra by defining multiplication in the usual manner; let $S_k(E)$ be the quotient of $T_k(E)$ by the homogeneous ideal whose $n$th component is the closed $k$-submodule of $\widehat\bigotimes_k^n E$ generated by the elements
+\[
+\begin{aligned}
+&x_1\widehat\otimes\cdots\widehat\otimes x_i\widehat\otimes x_{i+1}\widehat\otimes\cdots\widehat\otimes x_n\\[-2pt]
+&\qquad{}-x_1\widehat\otimes\cdots\widehat\otimes x_{i+1}\widehat\otimes x_i\widehat\otimes\cdots\widehat\otimes x_n.
+\end{aligned}
+\]
+If one denotes this quotient by $S_k^n(E)$, $S_k(E)$ is evidently a graded $k$-algebra with $n$th component $S_k^n(E)$.
+Equip $S_k(E)$ with the linear topology defined by the set $\Upsilon$ of ideals $\mathfrak l$ such that $S_k(E)/\mathfrak l$ is a $k$-module of finite length and $S_k^n(E)\cap\mathfrak l$ is an open submodule of $S_k^n(E)$ for every $n$. Then the profinite algebra $\widehat S_k(E)$ is the separated completion of $S_k(E)$ for this topology.\nde{For example, let $k$ be a field, $E$ a pseudocompact $k$-vector space, and $V=\Hom_c(E,k)$; one has $E\simeq V^*$ (cf. 0.2.2). For every finite-dimensional subspace $W$ of $V$, let $\mathcal F(W)$ be the set of closed points of the $k$-scheme $\mathbb V(W)=\Spec S_k(W^*)$. Denote by $\mathcal F(V)$ the inductive limit of the $\mathcal F(W)$. Then $\widehat S_k(E)$ is the product, for $x\in\mathcal F(V)$, of the pseudocompact $k$-algebras
+\[
+\widehat S_k(E)_x=\varprojlim_W\widehat\OO_{W,x},
+\]
+where $W$ runs through the finite-dimensional subspaces of $V$ such that $x\in\mathcal F(W)$, and $\widehat\OO_{W,x}$ denotes the separated completion of the local ring $\OO_{\mathbb V(W),x}$ for the topology defined by the ideals of finite codimension (which here coincides with the $\mathfrak m$-adic topology). If $k$ is algebraically closed and $(v_i)_{i\in I}$ is a basis of $V$, so that $E$ has a pseudobasis $(e_i)_{i\in I}$, each local component $\widehat S_k(E)_x$ is isomorphic to the formal power series ring $k[[e_i,i\in I]]$, equipped with the topology defined by the ideals of finite codimension.}
+Denote by $\mathbb V_k^{\mathrm f}(E)$ the formal $k$-variety $\Spf(\widehat S_k(E))$. \emph{It represents the $k$-functor $\mathbf V_k^{\mathrm f}(E)$}, \ie for every object $C$ of $\mathbf{Alf}/k$, one has a canonical isomorphism
+\[
+\begin{aligned}
+\mathbf V_k^{\mathrm f}(E)(C)=\Hom_c(E,C|_k)&\isomto\Hom_{\mathbf{Alp}/k}(\widehat S_k(E),C)\\
+&=\Hom_{\mathbf{Vaf}/k}(\Spf(C),\mathbb V_k^{\mathrm f}(E)).
+\end{aligned}
+\]
+Throughout what follows, we identify $\mathbb V_k^{\mathrm f}(E)$ with the $k$-functor $\mathbf V_k^{\mathrm f}(E)$.
+
+\numpara{1.2.5}By 1.2.4, the zero morphism from $E$ to $k$ is associated to a morphism of profinite algebras $\pi:\widehat S_k(E)\to k$; this morphism $\pi$ induces the zero map on $S_k^n(E)$ for $n\geq1$ and defines a section of the structural morphism $\mathbb V_k^{\mathrm f}(E)\to\Spf(k)$.
+We shall denote by $\mathbb V_k^{\mathrm f,0}(E)$ the formal variety whose points are the images of the points of $\Spf(k)$ under the section $\Spf(\pi)$ and which has the same local algebras as $\mathbb V_k^{\mathrm f}(E)$ at these points.
+\nde{We have detailed the remainder of this paragraph.}Then the affine algebra of $\mathbb V_k^{\mathrm f,0}(E)$ is the separated completion of $S_k(E)$ for the topology defined by the ideals $\mathfrak l\in\Upsilon$ (cf. 1.2.4) \emph{which contain $S_k^n(E)$ for sufficiently large $n$}. One deduces that it is the infinite product
+\[
+k[[E]]=k\times E\times S_k^2(E)\times S_k^3(E)\times\cdots.
+\]
+On the other hand, let $C$ be an object of $\mathbf{Alf}/k$, $u$ an element of $\mathbb V_k^{\mathrm f}(C)=\Hom_c(E,C)$, and $\phi:\widehat S_k(E)\to C$ the morphism of profinite $k$-algebras corresponding to $u$. Then $\Ker(\phi)$ is an open ideal (\ie $\phi$ belongs to $\mathbb V_k^{\mathrm f,0}(C)$) if and only if $\Ker(\phi)$ contains $S_k^n(E)$ for sufficiently large $n$, \ie if and only if $u(E)$ is contained in the radical $\mathfrak r(C)$ of $C$.
+% typo?: source prints V_k^f(C), V_k^{f,0}(C), and "open ideal" here; retained.
+Thus: \emph{for every object $C$ of $\mathbf{Alf}/k$, one has canonical isomorphisms}
+\[
+\mathbb V_k^{\mathrm f,0}(E)(C)\simeq\Hom_{\mathbf{Alp}/k}(k[[E]],C)\simeq\Hom_c(E,\mathfrak r(C)).
+\]
+
+\numpara{1.2.6}A formal $k$-variety $V$ is said to have \emph{finite length} if its affine algebra does. Similarly, if $S$ is a scheme, an $S$-scheme $X$ is said to have \emph{finite length} if $X$ is finite over $S$ and the direct image of $\OX$ on $S$ is an $\OS$-module of finite length.\nde{We have added the following sentence.} Thus giving an $S$-scheme $X$ of finite length ``is the same thing'' as giving a finite set $\{s_1,\ldots,s_n\}$ of closed points of $S$ and an $\OO_{S,s_i}$-algebra of finite length at each of these points.
+One therefore sees that $S$-schemes of finite length are identified with formal varieties of finite length over the following formal scheme $\widehat S$. The topological space underlying $\widehat S$ is the set of closed points of $S$ equipped with the discrete topology; if $s$ is such a closed point, the stalk $\OO_{\widehat S,s}$ of the structure sheaf $\OO_{\widehat S}$ at $s$ is the separated completion $\widehat\OO_{S,s}$ of $\OO_{S,s}$ for the linear topology defined by the ideals of finite colength; one therefore has $\widehat S=\Spf\mathscr A(\widehat S)$, where $\mathscr A(\widehat S)$ is the product of the $\widehat\OO_{S,s}$, for $s$ running through the closed points of $S$, equipped with the product topology.
+\begin{definition}{}
+If $X$ is an $S$-scheme, denote by $\widehat X/\widehat S$ the formal variety over $k=\mathscr A(\widehat S)$ defined as follows. The underlying topological space consists of the points $x\in X$ such that $[\kappa(x):\kappa(s)]<\infty$, where $s$ is the image of $x$ in $S$; the local ring $\OO_{\widehat X/\widehat S,x}$ is the separated completion of $\OO_{X,x}$ for the linear topology defined by the ideals $I$ of $\OO_{X,x}$ such that $\OO_{X,x}/I$ has finite length as an $\OO_{S,s}$-module (N.B. since $[\kappa(x):\kappa(s)]<\infty$, this is equivalent to saying that $\OO_{X,x}/I$ has finite length as an $\OO_{X,x}$-module).
+% typo?: no requirement that s be closed is printed in this definition; retained.
+\end{definition}
+Let $\mathbf{Vaf}_{/\widehat S}^{\ell\mathrm f}$ be the category of formal varieties of finite length over $\widehat S$ (identified with that of $S$-schemes of finite length). By 1.1 and 1.2.1, the category $\mathbf{Vaf}/\widehat S$ of formal varieties over $\widehat S$ is equivalent to that of contravariant left exact functors from $\mathbf{Vaf}_{/\widehat S}^{\ell\mathrm f}$ to $\Ens$. In particular, for every $S$-scheme $X$, the functor $T\mto\Hom_{(\Sch/S)}(T,X)$, from $\mathbf{Vaf}_{/\widehat S}^{\ell\mathrm f}$ to $\Ens$, is such a left exact functor and therefore corresponds to a formal variety over $\widehat S$. This is precisely $\widehat X/\widehat S$:\nde{We have expanded the following proposition by inserting the fact that the functor $X\mto\widehat X/\widehat S$ commutes with finite projective limits (in the original, this appeared in the proof of 1.3.4---the proof given here is more direct than the original). Moreover, this result will be useful in Section 2 and in 3.3.1.}
+\begin{proposition}{}
+For every $S$-scheme $X$, the functors
+\[
+\Hom_{\mathbf{Vaf}/\widehat S}(-,\widehat X/\widehat S)\qquad\text{and}\qquad\Hom_{(\Sch/S)}(-,X)
+\]
+have the same restriction to $\mathbf{Vaf}_{/\widehat S}^{\ell\mathrm f}$. In this way one obtains a functor $X\mto\widehat X/\widehat S$ from $(\Sch/S)$ to $\mathbf{Vaf}/\widehat S$ which commutes with finite projective limits.
+\end{proposition}
+Indeed, one easily sees that the formal variety $\widehat X/\widehat S$ has the required property and that the correspondence $X\mto\widehat X/\widehat S$ is functorial. Let us prove the second assertion.
+Put $\mathscr S=(\Sch/S)$ and $\mathscr V=\mathbf{Vaf}/\widehat S$, and write $\widehat X$ instead of $\widehat X/\widehat S$. One knows (1.2.B) that $\mathscr V$ has arbitrary projective limits. Let $(X_i)_{i\in I}$ be a projective system in $\mathscr S$, and suppose that $X=\varprojlim X_i$ exists in $\mathscr S$ (which is the case if $I$ is finite). Since the functor which associates to every object $Y$ of $\mathscr S$ (resp. $V$ of $\mathscr V$) the functor $h_Y=\Hom_{\mathscr S}(-,Y)$ (resp. $h_V=\Hom_{\mathscr V}(-,V)$) commutes with projective limits, for every $S$-scheme $T$ of finite length one has functorial isomorphisms
+\[
+\begin{aligned}
+\Hom_{\mathscr S}(T,X)&\simeq\varprojlim\Hom_{\mathscr S}(T,X_i)\\
+&\simeq\varprojlim\Hom_{\mathscr V}(T,\widehat X_i)\simeq\Hom_{\mathscr V}(T,\varprojlim\widehat X_i).
+\end{aligned}
+\]
+Consequently, the functor $X\mto\widehat X/\widehat S$ commutes with projective limits when they exist in $(\Sch/S)$; in particular, it commutes with finite projective limits.
+
+\begin{enonce}{1.3. Proposition}{}\label{VIIB.1.3}
+Let $f:X\to Y$ be a morphism of formal varieties over $k$, $A$ and $B$ the affine algebras of $X$ and $Y$, and $g:B\to A$ the morphism induced by $f$. Then $f$ is a monomorphism in $\mathbf{Vaf}/k$ if and only if $g$ is a surjection.
+\end{enonce}
+\nde{We have detailed the beginning of the proof.}By 1.1, $A\mto\Spf(A)$ is an anti-equivalence from $\mathbf{Alp}/k$ to $\mathbf{Vaf}/k$, so $f$ is a monomorphism if and only if $g$ is an epimorphism, and this is indeed the case if $g$ is surjective.
+Conversely, suppose that $g$ is an epimorphism and let us show that it is surjective. For every $\mathfrak n\in\Upsilon(B)$, put $A_{\mathfrak n}=A\widehat\otimes_B B_{\mathfrak n}$; by 0.4, $A$ is a pseudocompact $B$-module, hence is the product of the $A_{\mathfrak n}$ (cf. 0.3.6). Then $g$ is the product of the morphisms $g_{\mathfrak n}:B_{\mathfrak n}\to A_{\mathfrak n}$ deduced from $g$ by base change. These are still epimorphisms, which reduces us to proving the result when $B$ is local, with maximal ideal $\mathfrak n$. Put $K=B/\mathfrak n$.
+By Nakayama's lemma 0.3.3, it suffices to show that the morphism $g\widehat\otimes_B K$ is surjective; it is deduced from $g$ by base change, hence is an epimorphism in $\mathbf{Alp}/K$. One can therefore suppose that $B=K$ is a field. Now $f$ is a monomorphism if and only if the diagonal morphism $X\to X\times_Y X$ is an isomorphism, that is, if the homomorphism $x\widehat\otimes_K x'\mto xx'$ is an isomorphism from $A\widehat\otimes_K A$ to $A$. Since $K$ is a field, this implies $A=K$.
+% typo?: final assertion omits the possible zero algebra; retained.
+\begin{remark}{}\nde{We have added this remark.}
+It follows from the proposition that every monomorphism $f:X\to Y$ of formal varieties is an isomorphism from $X$ to a formal subvariety (necessarily closed!) of $Y$.
+\end{remark}
+
+\numpara{1.3.1}The preceding proposition implies, in particular, that every monomorphism $f:X\to Y$ in $\mathbf{Vaf}/k$ is effective (cf. IV 1.3).\nde{\ie in the opposite category $(\mathbf{Vaf}/k)^0=\mathbf{Alp}/k$, the morphism $g:B\to A$ corresponding to $f$ is an effective epimorphism. This is indeed the case, since $g$ is surjective and hence induces (cf. the proof of 0.2.B) an isomorphism of profinite $k$-algebras $B/I\isomto A$, where $I=\Ker g$. Consequently, every morphism $\phi:B\to C$ of $\mathbf{Alp}/k$ which vanishes on $I$ descends to a morphism $\overline\phi:A\to C$ such that $\phi=\overline\phi\circ g$.} The same does not hold for epimorphisms, as one easily sees by slightly modifying the counterexample of Exp. V, § 2.c);\nde{\ie let $k$ be a field, $X=\Spf(k[[T]])$, and $Y=\Spf(B)$, where $B$ is the $k$-subalgebra of $A=k[[T]]$ topologically generated by $T^3$ and $T^4$ (\ie $B$ consists of the formal power series $\sum a_nT^n$ such that $a_n=0$ for $n=1,2,5$). Then $X\to Y$ is an epimorphism which is not effective; indeed, the cokernel of $X\times_Y X\rightrightarrows X$ is $\Spf(B')$, where $B'$ is the subalgebra of $A$ consisting of the $a$ such that $a\widehat\otimes1=1\widehat\otimes a$, and $B'$ contains $T^5$.} this is why we shall consider a pleasant class of effective epimorphisms.

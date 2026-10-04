@@ -1,0 +1,202 @@
+\begin{proposition}{6.2}\label{VIB.6.2}\nde{The statement has been modified as indicated in N.D.E. (49).}
+Let $G$ be an $S$-group. Consider, for a subfunctor $T$ of the functor $G$, the following property:
+\[
+\tag{$+_{\mathrm f}$}
+\text{for every }s\in S,\ T_s\text{ is representable by a closed subscheme of }G_s.
+\]
+Let $u,w:X\to G$ and $v:Y\to G$ be morphisms of $S$-schemes. Then:
+\begin{enumeratei}
+\item $\uTransp(u,w)$ and $\uCentr(u)=\uTransp(u,u)$ satisfy condition $(+_{\mathrm f})$.
+\item $\uTransp_G(u(X),v(Y))$ and $\uNorm_Gv(Y)$ satisfy condition $(+_{\mathrm f})$ if, for every $s\in S$, $v_s$ is a closed immersion.
+\item $\uTransp_G^{\mathrm{str}}(X,Y)$ satisfies condition $(+_{\mathrm f})$ if, for every $s\in S$, $u_s$ and $v_s$ are closed immersions.
+\end{enumeratei}
+\end{proposition}
+This follows from Remark 6.1.1 and Corollary 6.2.5 below.\nde{The original referred to the results of Exp. VIII, §6. For the reader's convenience, these results (except VIII, 6.3 and 6.8) have been reproduced in nos. 6.2.1 to 6.2.5 below. Moreover, this was suggested by A. Grothendieck in a Note at the beginning of VIII.6: ``The present number is independent of the theory of diagonalizable groups; its natural place would be in VIB.''}
+\begin{definition}{6.2.1}\label{VIB.6.2.1}
+Let $f:X\to S$ be a morphism of schemes. One says that $f$ is \emph{essentially free}, or that $X$ is \emph{essentially free over $S$}, if one can find a covering of $S$ by affine open subsets $S_i$, for every $i$ an $S_i$-scheme $S'_i$ affine and faithfully flat over $S_i$, and a covering $(X'_{ij})_j$ of $X'_i=X\times_SS'_i$ by affine open subsets $X'_{ij}$, such that, for every $(i,j)$, the ring of $X'_{ij}$ is a projective module\nde{On the one hand, the word ``free'' has been replaced by ``projective'', as indicated in VIII, Remark 6.8. On the other hand, the notion of an essentially free $S$-scheme is intimately related to the geometric notion of a flat and pure $S$-scheme, introduced and studied by M. Raynaud and L. Gruson ([RG71]), cf. addition 6.9 below.} over the ring of $S'_i$.
+\end{definition}
+\begin{proposition}{6.2.2}\label{VIB.6.2.2}
+\begin{enumeratea}
+\item If $X$ is essentially free over $S$, it is flat over $S$, the converse holding if $S$ is artinian.
+\item If $S$ is the spectrum of a field, every $S$-scheme is essentially free over $S$.
+\item If $X$ is essentially free over $S$, $X'=X\times_SS'$ is essentially free over $S'$, for every $S'\to S$. The converse holds if $S'\to S$ is faithfully flat and quasi-compact.
+\end{enumeratea}
+\end{proposition}
+The proof is immediate, using for the converse in a) the fact that a flat module over an artinian local ring is free.\nde{Indeed, let $(A,\mathfrak m)$ be an artinian local ring, $k$ its residue field, $M$ an arbitrary $A$-module, $(x_i)_{i\in I}$ elements of $M$ whose images form a basis of $M/\mathfrak mM$ over $k$. Let $F$ be the free $A$-module with basis $(e_i)_{i\in I}$, and $\phi:F\to M$ the $A$-morphism defined by $\phi(e_i)=x_i$. Then $Q=\Coker\phi$ satisfies $Q=\mathfrak mQ$, whence, since $\mathfrak m$ is nilpotent, $Q=0$. Suppose moreover $M$ flat over $A$; then $K=\Ker\phi$ satisfies $K\otimes_Ak=0$, i.e. $K=\mathfrak mK$, whence $K=0$.}
+
+The introduction of Definition 6.2.1 is justified by the following
+\begin{theorem}{6.2.3}\label{VIB.6.2.3}
+Let $S$ be a scheme, $Z$ an essentially free $S$-scheme, $Y$ a closed subscheme of $Z$. Consider the functor $F=\prod_{Z/S}Y/Z:(\mathbf{Sch})^\circ_{/S}\to\Ens$ defined by the following condition: $F(S')=\varnothing$ when $Y_{S'}\ne Z_{S'}$, $F(S')$ consists of one element in the opposite case.\nde{Cf. Exp. II §1, where this functor is denoted by $\prod_{Z/S}Y$; for every $S'\to S$, $F(S')=\Gamma(Y_{S'}/Z_{S'})$, which here equals $\{\mathrm{id}_{Z_{S'}}\}$ if $Y_{S'}=Z_{S'}$, and is empty otherwise. On the other hand, assertion (ii), used in the proof of 6.5.3, has been added.}
+\begin{enumeratei}
+\item This functor is representable by a closed subscheme $T$ of $S$.
+\item If moreover $Y\to Z$ is of finite presentation, so is $T\to S$.
+\end{enumeratei}
+\end{theorem}
+First note that the functor under consideration is a sheaf for the (fpqc) topology: since $F(S')=\varnothing$ or $\{\mathrm{pt}\}$ for every $S'$, this reduces to checking that if $(S_i)$ is an open covering of $S$ (resp. $S'\to S$ a faithfully and quasi-compact morphism), and each $Y_{S_i}\to Z_{S_i}$ (resp. $Y_{S'}\to Z_{S'}$) is an isomorphism, the same holds for $Y\to Z$; this is clear (resp. follows from SGA 1, VIII 5.4 or EGA IV$_2$, 2.7.1).
+% typo?: kept as printed: fidelement et quasi-compact, with plat missing.
+
+Moreover, by SGA 1, VIII 1.9, faithfully flat quasi-compact morphisms are of effective descent for the fibered category of closed-immersion arrows. With the notation of 6.2.1, this allows us to restrict ourselves to the case where $S=S'_i$.
+
+Then let $(Z_j)$ be a covering of $Z$ by affine open subsets such that $\OO(Z_j)$ is a projective module over $A=\OO(S)$, and let $Y_j=Y\cap Z_j$ and $F_j:(\mathbf{Sch})^\circ_{/S}\to\Ens$ be the functor defined in terms of $(Z_j,Y_j)$ as $F$ is in terms of $(Z,Y)$. It is a subfunctor of the final functor, and one evidently has $F=\bigcap_jF_j$, which reduces us to proving that every $F_j$ is representable by a closed subscheme $T_j$ of $S$ (for then $F$ will be representable by the closed subscheme $T$ which is the intersection of the $T_j$). One may therefore suppose $Z$ also affine, $Z=\Spec(B)$, where $B$ is a projective $A$-module. Let $L$ be a free $A$-module with basis $(e_\lambda)_{\lambda\in\Lambda}$, of which $B$ is a direct summand as an $A$-module, and let $\varphi_\lambda:L\to A$ be the ``coordinate'' forms with respect to this basis. Let $E$ be a set of generators of the ideal $J$ of $B$ defining the subscheme $Y$ of $Z$, and let $I$ be the ideal in $A$ generated by the coordinates $\varphi_\lambda(x)$, for $x\in E$. For every $A$-algebra $C$, one then sees that the morphism $B\otimes_AC\to(B/J)\otimes_AC$ is an isomorphism if and only if the image of $x\otimes1$ in $L\otimes_AC$ is zero for every $x\in E$, which is equivalent to saying that the kernel of $A\to C$ contains the ideal $I$. This shows that $T=\mathcal V(I)=\Spec(A/I)$ satisfies the desired condition, which proves (i).
+
+Moreover, if $Y\to Z$ is of finite presentation, one may take $E$ finite, and then $I$ is a finitely generated ideal of $A$, i.e. the closed immersion $T\to S$ is of finite presentation.
+\begin{examples}{6.2.4}\label{VIB.6.2.4}
+Let us give important examples of functors which reduce to functors $\prod_{Z/S}Y/Z$ of the type considered in 6.2.3 and for which it is useful subsequently to have representability criteria. We denote by $S$ a scheme, by $X,Y,Z$, etc. schemes over $S$.
+
+\textbf{a)} Suppose given an $S$-morphism
+\[
+\tag{x}q:X\longrightarrow\uHom_S(Y,Z),
+\]
+(``$X$ acts on $Y$, with values in $Z$''), i.e. a morphism
+\[
+\tag{xx}r:X\times_SY\longrightarrow Z.
+\]
+Consider a subscheme $Z'$ of $Z$, whence a monomorphism
+\[
+\uHom_S(Y,Z')\longrightarrow\uHom_S(Y,Z)
+\]
+which makes the first functor a subfunctor of the second; let $X'$ be the inverse image of this subfunctor under the morphism $q$; it is the subfunctor of $X$ such that $X'(T)$ is the set of $x\in X(T)$ such that $q(x):Y_T\to Z_T$ factors through $Z'_T$. This functor $X'$ can be described as follows: put $P=X\times_SY$, and let $P'$ be the inverse image of $Z'$ under $r:P\to Z$; then one has an evident isomorphism
+\[
+\tag{xxx}X'\simeq\prod_{P/X}P'/P.
+\]
+One therefore obtains: if $Y$ is essentially free over $S$ and $Z'$ closed in $Z$, the subfunctor $X'$ of $X$ is representable by a closed subscheme of $X$.\nde{The following sentence has been added.} If moreover $Z'\to Z$ is of finite presentation, so is $X'\to X$.
+
+\textbf{b)} Suppose given two ways of making $X$ act on $Y$ with values in $Z$, i.e. two morphisms
+\[
+q_1,q_2:X\rightrightarrows\uHom_S(Y,Z),
+\]
+and put $X'=\Ker(q_1,q_2)$: it is the subfunctor of $X$ such that $X'(T)$ is the set of $x\in X(T)$ such that the two morphisms $q_1(x),q_2(x):Y_T\rightrightarrows Z_T$ are equal. Now giving $q_1,q_2$ is equivalent to giving a morphism
+\[
+q:X\longrightarrow\uHom_S(Y,Z\times_SZ),
+\]
+or a morphism $r:X\times_SY\to Z\times_SZ$; then put $U=Z\times_SZ$ and let $U'$ be the diagonal subscheme of $Z\times_SZ$; then $X'$ is none other than the inverse image of the subfunctor $\uHom_S(Y,U')$ of $\uHom_S(Y,U)$ under $q$, hence can be put in the form (xxx), with $P=X\times_SY$, and $P'={}$inverse image of the diagonal under $r$, i.e. kernel of $X\times_SY\mathrel{\substack{\xrightarrow{r_1}\\[-.6ex]\xrightarrow[r_2]{}}}Z$. One is therefore under the conditions of (a).
+
+It follows that: if $Y$ is essentially free over $S$ and $Z$ separated over $S$, the subfunctor $X'$ of $X$ is representable by a closed subscheme of $X$.\footnotemark[56] If moreover $Z\to S$ is locally of finite type, $X'\to X$ is of finite presentation.
+
+\textbf{c)} Suppose given a morphism
+\[
+q:X\longrightarrow\uHom_S(Y,Y),
+\]
+i.e. ``$X$ acts on $Y$''. Let $X'$ be the ``kernel'' of this morphism, i.e. the subfunctor $X'$ of $X$ such that $X'(T)$ is the set of $x\in X(T)$ such that $q(x):Y_T\to Y_T$ is the identity. This functor falls under b), as one sees by introducing a second homomorphism
+\[
+q':X\longrightarrow\uHom_S(Y,Y)
+\]
+``by making $X$ act trivially on $Y$''. Thus: if $Y$ is essentially free and separated over $S$, the subfunctor $X'$ which is the kernel of $q$ is representable by a closed subscheme of $X$.\footnotemark[56] If moreover $Y\to S$ is locally of finite type, $X'\to X$ is of finite presentation.
+
+\textbf{d)} Under the conditions of c), consider the subfunctor $Y'$ of $Y$ ``of invariants under $X$''; thus $Y'(T)$ is the set of $y\in Y(T)$ such that the corresponding morphism $q(y):X_T\to Y_T$ is ``the constant $T$-morphism with value $y$''. Introducing $q'$ as in c), and the homomorphisms corresponding to $q$ and $q'$:
+\[
+q,q':Y\rightrightarrows\uHom_S(X,Y),
+\]
+one sees that $Y'$ is precisely $\Ker(q,q')$, and therefore again falls under b) (with the roles of $X,Y$ reversed and $Z=Y$).
+
+Consequently, if $X$ is essentially free over $S$, $Y$ separated over $S$, the subfunctor $Y'$ of $Y$ of invariants under $X$ is representable by a closed subscheme of $Y$.\footnotemark[56] If moreover $Y\to S$ is locally of finite type, $Y'\to Y$ is of finite presentation.
+
+\textbf{e)} Constructions of the type made explicit in the preceding examples are particularly frequent in group theory. Thus, when $G$ is an $S$-group scheme acting on the $S$-scheme $X$,
+\[
+q:G\longrightarrow\underline{\Aut}_S(X),
+\]
+the kernel of $q$ (``the subgroup of $G$ acting trivially'') is a closed subscheme of $G$ provided $X$ is essentially free and separated over $S$ (example c)), and the subobject $X^G$ of invariants is a closed subscheme of $X$ provided $G$ is essentially free over $S$ and $X$ separated over $S$ (example d)).
+
+Let $Y,Z$ be subschemes of $X$; consider the subfunctor $\uTransp_G(Y,Z)$ of $G$ (``transporter of $Y$ into $Z$''), whose points with values in a $T$ over $S$ are the $g\in G(T)$ such that the corresponding automorphism of $X_T$ satisfies $g(Y_T)\subset Z_T$, i.e. induces a morphism $Y_T\to X_T$ factoring through $Y_T\to Z_T$. Thus: if $Y$ is essentially free over $S$, and $Z$ closed in $X$, $\uTransp_G(Y,Z)$ is a closed subscheme of $G$ (example a)).
+
+One may also consider the strict transporter of $Y$ into $Z$,\nde{Denoted by $\uTransp_G^{\mathrm{str}}(Y,Z)$.} whose points with values in a $T$ over $S$ are the $g\in G(T)$ such that $g(Y_T)=Z_T$, which is none other than $\uTransp_G(Y,Z)\cap\sigma(\uTransp_G(Z,Y))$, where $\sigma$ is the inversion morphism of $G$. Consequently, if $Y$ and $Z$ are essentially free over $S$ and closed in $X$, the strict transporter of $Y$ into $Z$ is a closed subscheme of $G$.
+
+An important case is that where $X=G$, $G$ acting on itself by inner automorphisms. If $H$ is a subscheme of $G$, the strict transporter of $H$ into $H$ is also called the \emph{normalizer of $H$ in $G$}, and denoted by $\uNorm_GH$. Thus: if $H$ is a closed subgroup scheme of $G$, essentially free over $S$, $\uNorm_GH$ is representable by a closed subgroup scheme of $G$.
+
+Finally let $Z$ be a subscheme of $G$; then its centralizer $\uCentr_G(Z)$ in $G$ is the subgroup functor of $G$ defined by the procedure of d), when one considers that ``$Z$ acts on $G$'' by the actions induced by those of $G$; thus, if $Z$ is essentially free over $S$ and $G$ is separated over $S$, $\uCentr_G(Z)$ is a closed subgroup scheme of $G$. In particular, if $G$ is essentially free and separated over $S$, the center $C$ of $G$, which is none other than $\uCentr_G(G)$, is a closed subgroup scheme of $G$.
+
+When $S$ is the spectrum of a field, 6.2.2 b) shows that in examples a) to e) above the conditions ``essentially free'' are automatically satisfied; only separation conditions remain. Recalling that a group scheme over a field is necessarily separated (VIA, 0.3), one finds for example:
+\end{examples}
+\begin{corollary}{6.2.5}\label{VIB.6.2.5}
+Let $G$ be a group scheme over a field $k$ and let $Y,Y'$ be two subschemes of $G$. Then:
+\begin{enumeratei}
+\item The centralizer of $Y$ in $G$ is a closed subgroup scheme of $G$; this is in particular the case for the center $\uCentr_G(G)$ of $G$.
+\item[(i$'$)] More generally, if $u,v:X\to G$ are morphisms of schemes, $\uTransp_G(u,v)$ is representable by a closed subscheme of $G$.
+\item[(ii)] If $Y$ is closed, the transporter $\uTransp_G(Y',Y)$ is a closed subscheme of $G$. If $Y'$ is also closed, one has the same conclusion for $\uTransp_G^{\mathrm{str}}(Y',Y)$.
+\item[(iii)] For every subgroup scheme\nde{Indeed, over a field $k$, every subgroup scheme of $G$ is closed, cf. VIA, 0.5.2. On the other hand, 6.2.5 completes the insertion of the results taken from VIII §6.} $H$ of $G$, $\uNorm_G(H)$ is a closed subgroup scheme of $G$.
+\end{enumeratei}
+\end{corollary}
+\begin{corollary}{6.2.6}\label{VIB.6.2.6}\nde{This corollary (cf. Exp. XII, 6.1), which will be useful later, has been inserted here. Moreover, in 6.3 one returns to the original text of VIB.}
+Let $k$ be a field, $G$ a connected algebraic $k$-group. Then $\uCentr_G(G)$ is representable by a closed subgroup scheme $Z$ of $G$, and $G/Z$ is an affine algebraic $k$-group.
+\end{corollary}
+\begin{proof}
+Of course, the first assertion is contained in 6.2.5 (i), but one will see that it also follows from the proof of the second assertion. Indeed, $G$ acts by the adjoint representation on the finite-dimensional $k$-vector spaces $V_n=\OO_{G,e}/\mathfrak m_e^{n+1}$ (where $\mathfrak m_e$ is the maximal ideal of $\OO_{G,e}$); denote by $K_n$ the kernel of the morphism $\rho_n:G\to\GL(V_n)$. By VIA 5.4.1, $\rho_n$ induces a closed immersion $G/K_n\hookrightarrow\GL(V_n)$, so every $G/K_n$ is affine. Since $G$ is noetherian, the intersection $K$ of the $K_n$ equals one of the $K_n$, hence $G/K$ is affine.
+
+On the other hand, denoting by $Z$ the center of $G$, it is clear that $Z\subset K$. Let us show that $Z=K$. Denote by $\widehat{\OO}_{G,e}$ the completion of $\OO_{G,e}$ for the $\mathfrak m_e$-adic topology and by $\widehat S$ its spectrum (resp. $S=\Spec\OO_{G,e}$). Since $\widehat S\to S$ is faithfully flat and the two morphisms
+\[
+K\times_kS\longrightarrow S,\qquad(g,x)\mto gxg^{-1}\quad\text{resp. }(g,x)\mto x
+\]
+coincide after the base change $\widehat S\to S$, they coincide, i.e. $K$ acts trivially on $\OO_{G,e}$. Now, by 6.2.4 e), the subobject $G^K$ of invariants of $G$ under $K$ (which is none other than $\uCentr_G(K)$) is a closed subscheme of $G$, hence defined by a quasi-coherent ideal $\mathcal I$ of $\OO_G$. Since $G^K$ contains $S=\Spec\OO_{G,e}$ and $\mathcal I$ is of finite type (since $G$ is noetherian), there is an open neighborhood $U$ of $e$ such that $\mathcal I|_U=0$. Then the subgroup $G^K=\uCentr_G(K)$ contains $U$, hence also $U\cdot U$, which equals $G$ since $G$ is irreducible (VIA 0.5). Thus $\uCentr_G(K)=G$, whence $K\subset Z$, hence $Z=K$.
+\end{proof}
+\begin{remark}{6.3}\label{VIB.6.3}
+Let $k$ be an algebraically closed field, $G$ a $k$-group and $H$ a subgroup scheme of $G$; suppose $G$ and $H$ of finite type over $k$ and reduced; then $\uNorm_GH$ (resp. $\uCentr_GH$) is representable by a subgroup scheme of $G$, whose associated reduced subscheme is none other than the normalizer (resp. centralizer) of $H$ in $G$ in the sense of the \emph{Bible}.
+\end{remark}
+\begin{proposition}{6.4}\label{VIB.6.4}
+Let $G$ be an $S$-group and $u:X\to G$ a monomorphism of $S$-schemes. Put $T=\uTransp_G(X,X)$. The following conditions are equivalent:
+\begin{enumeratei}
+\item $T$ is a subgroup functor of $G$.
+\item $T=\uTransp_G^{\mathrm{str}}(X,X)=\uNorm_GX$.
+\end{enumeratei}
+These conditions hold in each of the following two cases:
+\begin{enumeratea}
+\item $X$ is of finite presentation over $S$.
+\item $T$ is representable by a scheme of finite presentation over $S$.
+\end{enumeratea}
+\end{proposition}
+The equivalence of conditions (i) and (ii) follows from the fact that, for every morphism $S'\to S$ and every $t,t'\in T(S')$, one has $tt'\in T(S')$, and from the fact that $\uTransp_G^{\mathrm{str}}(X,X)=T\cap c(T)$ (cf. 6.1 (ii)).
+
+Consider case a). Let $t\in T(S)$; then $\mathrm{int}(t)$ is a monomorphism of $X$ into $X$, hence an $S$-automorphism of $X$ (EGA IV$_4$, 17.9.6), so $t$ belongs to $\uTransp_G^{\mathrm{str}}(X,X)$, whence a).
+
+In case b), it is clear that $\mu(T\times_ST)\subset T$, and the assertion follows from the following lemma:
+\begin{lemma}{6.4.2}\label{VIB.6.4.2}\nde{The numbering of the original has been retained: there is no no. 6.4.1.}
+Let $G$ be an $S$-scheme of finite presentation, endowed with an associative law (in the sense of EGA 0$_{\mathrm{III}}$ 8.2.5). Suppose that, for every $S$-scheme $S'$ and every $g\in G(S')$, right and left translations by $g$ in the set $G(S')$ are injective and $G(S)\ne\varnothing$. Then $G$ is an $S$-group.
+\end{lemma}
+It suffices to show that, for every $S$-scheme $S'$, the set $G(S')$ is a group; now it follows at once from the hypothesis that right and left translations by every element $g\in G(S')$ in $G_{S'}$ are $S$-monomorphisms from $G_{S'}$ to $G_{S'}$. They are therefore $S$-automorphisms, since $G$ is of finite presentation over $S$ (EGA IV$_4$, 17.9.6), so right and left translations by $g$ in the set $G(S')$ are bijective, and one is reduced to the following lemma:
+\begin{lemma}{6.4.3}\label{VIB.6.4.3}
+Let $G$ be a nonempty set endowed with an associative law such that right and left translations are bijective. Then $G$ is a group.
+\end{lemma}
+The proof is left to the reader.
+\begin{definition}{6.5}\label{VIB.6.5}
+Let $G$ be an $S$-group, $H$ an $S$-functor, and $u:H\to G$ a monomorphism.
+\begin{enumeratei}
+\item One calls the \emph{connected centralizer of $H$ in $G$}, and denotes by $\uCentr_G^0H$, the identity component of the functor $\uCentr_GH$ (cf. 3.1 and 6.1 (iii)).
+\item[(i$'$)] For every morphism $u:X\to G$, one similarly defines the functor $\uCentr^0(u)$ (cf. 6.2 (iv)).
+\item[(ii)] When, for every $s\in S$, $u_s$ is a closed immersion, one calls the \emph{connected normalizer of $H$ in $G$}, and denotes by $\uNorm_G^0H$, the identity component of the functor $\uNorm_GH$.
+\end{enumeratei}
+N.B. By 1.4.2, the hypothesis of (ii) holds when $H$ is an $S$-group scheme, $G$ and $H$ are locally of finite type over $S$ and $u$ is a quasi-compact morphism of $S$-groups.
+\end{definition}
+% typo?: kept as printed: the reference 6.2 (iv), although 6.2 has only (i)--(iii).
+% typo: lorsque H un -> lorsque H est un.
+\begin{proposition}{6.5.1}\label{VIB.6.5.1}
+Let $G$ be an $S$-group locally of finite presentation and quasi-separated over $S$, $H$ a smooth $S$-group with connected fibers and $u:H\to G$ a monomorphism. Let $N$ be the normalizer of $H$ in $G$ (cf. 6.1). By 6.5.5 below, $N$ is representable by a closed subgroup scheme of $G$ and of finite presentation over $G$. This being so, the following conditions are equivalent:
+\begin{enumeratei}
+\item The canonical morphism $H\to N$ is an open immersion.
+\item $N^0=H$ (cf. 3.10).
+\item For every $s\in S$, one has $H_s=(N_s)^0$.
+\end{enumeratei}
+\end{proposition}
+Condition (i) implies (ii) by Lemma 3.10.1, since $H^0=H$. On the other hand, it is clear that (ii) implies (iii), for $H_s=(N^0)_s=(N_s)^0$.
+
+Finally let us show that (iii) implies (i). Since $H_s=(N^0)_s$ for every $s\in S$, $H_s\to N_s$ is an open immersion. Moreover, $H$ and $N$ are locally of finite presentation over $S$, and $H$ is flat over $S$, so (EGA IV$_4$, 17.9.5), $H\to N$ is an open immersion.
+
+\nde{Nos. 6.5.2 to 6.5.5, taken from Exp. XI, 6.8 to 6.11, have been inserted here. This was moreover suggested by A. Grothendieck in a Note at the beginning of XI 6: ``The present number does not use the results of nos. 3, 4, 5 (of XI); its natural place would be in VIB.''}For the reader's convenience, the results 6.8 to 6.11 of Exp. XI have been included below.
+\begin{theorem}{6.5.2}\label{VIB.6.5.2}
+Let $X$ be a smooth scheme over $S$, with geometrically irreducible fibers.\nde{On the one hand, the original has been corrected by replacing ``connected'' by ``irreducible'' (cf. the proof). On the other hand, by [RG71] I, 3.3.4 (iii) and 4.1.1, it suffices to suppose that $X$ is flat over $S$, with geometrically irreducible fibers and without embedded components.}
+\begin{enumeratei}
+\item For every closed subscheme $Y$ of $X$, the functor $\prod_{X/S}Y/X$ is representable by a closed subscheme $T$ of $S$.
+\item Moreover, if $Y\to X$ is of finite presentation, so is $T\to S$.
+\end{enumeratei}
+\end{theorem}
+Since $f:X\to S$ is faithfully flat and locally of finite presentation, it is covering for the (fpqc) topology. Since, on the other hand, $T=\prod_{X/S}Y/X$ is evidently a subsheaf of $S$ for the (fpqc) topology, it follows that the question of the representability of $T$ by a closed subscheme of $S$ is local on $S$ for the (fpqc) topology,\nde{See for example addition 1.7 in Exp. VIII.} and the same holds for the question of deciding whether $T$ is of finite presentation over $S$ (cf. EGA IV$_2$, 2.7.1). Making the base change $S'\to S$ with $S'=X$, one is then reduced to the case where $X$ admits a section $\varepsilon$ over $S$. One may moreover suppose $S$ affine and a fortiori quasi-compact. One then has:
+\begin{corollary}{6.5.3}\label{VIB.6.5.3}
+Under the conditions of 6.5.2, suppose that $S$ is quasi-compact, $X\to S$ admits a section $\varepsilon$, and $Y\to X$ is of finite presentation. Then there is an integer $n\ge0$ such that one has
+\[
+\prod_{X/S}Y/X=\prod_{X_n/S}Y_n/X_n,
+\]
+where $X_n$ is the $n$-th infinitesimal neighborhood of the immersion $\varepsilon:S\to X$, and $Y_n=Y\cap X_n$.
+\end{corollary}
+When $Y$ is of finite presentation over $X$, this corollary does imply 6.5.2, for, since $X$ is smooth over $S$, $X_n$ is finite and locally free over $S$, hence a fortiori ``essentially free'' over $S$ (cf. 6.2.1), so $\prod_{X_n/S}Y_n/X_n$ is representable by a closed subscheme $T$ of $S$, of finite presentation over $S$, by 6.2.3.
+
+Let us first prove 6.5.3 (and hence 6.5.2) when $S$ is noetherian. Let $T_n=\prod_{X_n/S}Y_n/X_n$; then the $T_n$ form a decreasing sequence of closed subschemes of $S$, and, since $S$ is noetherian, this sequence is stationary. Let $R=\bigcap_{n\ge0}\prod_{X_n/S}Y_n/X_n$ be their common value for large $n$; one evidently has $T\subset R$, and it suffices to establish that $R\subset T$. Making the base change $R\to S$, one is reduced to the case where $R=S$, i.e. $Y_n=X_n$ for every $n$, i.e. $Y\supset X_n$ for every $n$, and one must then prove that $T=S$, i.e. $Y=X$.
+
+Now $Y\supset X_n$ for every $n$ implies (thanks to the fact that $X$ is locally noetherian) that $Y$ is, in a neighborhood of each point of $\varepsilon(S)$, an induced open subscheme of $X$,\nde{See, for example, the proof of 6.2.6.} so there is an induced open subset $U$ of $X$, containing $\varepsilon(S)$, such that $U\subset Y$. By EGA IV$_3$, 11.10.10, the fibers of $X/S$ being integral, $U$ is schematically dense in $X$, hence ($Y$ being a closed subscheme containing $U$) one has $Y=X$. This proves 6.5.3, hence 6.5.2, when $S$ is noetherian.

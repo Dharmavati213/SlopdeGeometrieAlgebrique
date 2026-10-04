@@ -1,0 +1,460 @@
+\exposetitle{IV}{Topologies and sheaves}
+\label{IV}
+
+\begin{center}
+\textit{by M.~Demazure}%
+{\renewcommand{\thefootnote}{(*)}\footnote{This text develops the substance
+of two oral expos\'es by A.~Grothendieck, completing the latter on several
+important points, which had been passed over in silence or barely touched
+upon.}}
+\end{center}
+
+{\renewcommand{\thefootnote}{(0)}\nde{: Version of 13/10/2024}}%
+This expos\'e is intended to acquaint the reader with the essentials of the
+language of topologies and of sheaves (without cohomology), particularly
+convenient in questions of passage to the quotient (among others).
+
+The first three paragraphs develop the language of passage to the quotient.
+The fourth, which is the central part, is the exposition of the theory of
+sheaves, oriented principally towards the application to questions of
+quotients; the fifth is an application to passage to the quotient in groups
+and to principal homogeneous bundles. The last paragraph concerns more
+specifically the category of schemes, and defines various useful topologies
+on this category.
+
+The reader will find it useful to refer to \textup{[AS]}, \textup{[MA]},
+\textup{[D]}, and SGA~4; to \textup{[D]} especially concerning the
+applications of topologies to descent theory, and to SGA~4 for questions of
+universes (particularly ill-treated in this expos\'e).
+
+\sgasection{1}{Universal effective epimorphisms}
+\label{IV.sec.1}
+
+In the sequel of this expos\'e, one assumes fixed a category~\(\mathcal{C}\).
+
+\begin{definition}{1.1}
+\label{IV.1.1}
+A morphism \(u\colon T\to S\) is called an \emph{epimorphism} if, for every
+object~\(X\), the corresponding map
+\[
+X(S)=\Hom(S,X)\longrightarrow X(T)=\Hom(T,X)
+\]
+is injective%
+{\renewcommand{\thefootnote}{(1)}\nde{: that is, if \(u\) is
+right-cancellable.}}.
+One says that \(u\) is a \emph{universal epimorphism} if for every morphism
+\(S'\to S\), the fiber product \(T'=T\times_{S}S'\) exists, and
+\(u'\colon T'\to S'\) is an epimorphism.
+\end{definition}
+
+\begin{definition}{1.2}
+\label{IV.1.2}
+A diagram
+\[
+\xymatrix@C=3em{
+A \ar[r]^{u}
+  & B \ar@<0.5ex>[r]^{v_{1}} \ar@<-0.5ex>[r]_{v_{2}}
+  & C
+}
+\]
+of maps of sets is said to be \emph{exact} if \(u\) is injective and if its
+image consists of the elements \(b\) of~\(B\) such that
+\(v_{1}(b)=v_{2}(b)\). A diagram of the same type in~\(\mathcal{C}\) is said
+to be \emph{exact} if for every object \(X\) of~\(\mathcal{C}\), the
+corresponding diagram of sets
+\[
+\xymatrix@C=3em{
+A(X) \ar[r]
+  & B(X) \ar@<0.5ex>[r] \ar@<-0.5ex>[r]
+  & C(X)
+}
+\]
+is exact; one then also says that \(u\) makes \(A\) a \emph{kernel} of the
+pair of arrows \((v_{1},v_{2})\). Dually, a diagram
+\[
+\xymatrix@C=3em{
+C \ar@<0.5ex>[r]^{v_{1}} \ar@<-0.5ex>[r]_{v_{2}}
+  & B \ar[r]^{u}
+  & A
+}
+\]
+in~\(\mathcal{C}\) is said to be \emph{exact} if it is exact as a diagram in
+the opposite category \(\mathcal{C}^{\circ}\), \ie if for every object \(X\)
+of~\(\mathcal{C}\), the corresponding diagram of sets
+\[
+\xymatrix@C=3em{
+X(A) \ar[r]
+  & X(B) \ar@<0.5ex>[r] \ar@<-0.5ex>[r]
+  & X(C)
+}
+\]
+is exact.%
+{\renewcommand{\thefootnote}{(2)}\nde{: This implies, in particular, that
+\(u\) is an epimorphism.}}
+One also says that \(u\) makes \(A\) a \emph{cokernel} of the pair of arrows
+\((v_{1},v_{2})\).
+\end{definition}
+
+\begin{definition}{1.3}
+\label{IV.1.3}
+A morphism \(u\colon T\to S\) is called an \emph{effective epimorphism} if
+the fiber square \(T\times_{S}T\) exists, and if the diagram
+\[
+\xymatrix@C=3.2em{
+T\times_{S}T
+  \ar@<0.5ex>[r]^{\mathrm{pr}_{1}}
+  \ar@<-0.5ex>[r]_{\mathrm{pr}_{2}}
+  & T \ar[r]^{u}
+  & S
+}
+\]
+is exact, \ie if \(u\) makes \(S\) a cokernel of
+\((\mathrm{pr}_{1},\mathrm{pr}_{2})\). One says that \(u\) is a
+\emph{universal effective epimorphism} if for every morphism \(S'\to S\),
+the fiber product \(T'=T\times_{S}S'\) exists, and the morphism
+\(u'\colon T'\to S'\) is an effective epimorphism.
+\end{definition}
+
+One evidently has the implications:
+\[
+\xymatrix@C=3.2em@R=2.8em{
+\mbox{\shortstack{universal effective\\epimorphism}} \ar[r] \ar[d]
+  & \mbox{\shortstack{effective\\epimorphism}} \ar[d] \\
+\mbox{\shortstack{universal\\epimorphism}} \ar[r]
+  & \mbox{epimorphism}\,,
+}
+\]
+but in general no other implication is valid.%
+{\renewcommand{\thefootnote}{(3)}\nde{: For example, if
+\(\mathcal{C}=\Sch\) is the category of schemes, one easily sees that every
+universal epimorphism is surjective. Let
+\(T=\coprod_{p\ \mathrm{prime}}\Spec(\FF_{p})\) and \(S=\Spec(\ZZ)\); then
+the morphism \(u\colon T\to S\) is an epimorphism which is \emph{not
+universal}. On the other hand, one sees that \(T\times_{S}T\) is identified
+with~\(T\), so that the two projections \(T\times_{S}T\rightrightarrows T\)
+coincide; as \(\mathrm{id}_{T}\) does not descend to a morphism \(S\to T\),
+this shows that \(u\) is \emph{not} an effective epimorphism.}}
+
+\begin{definition}{1.4.0}
+\label{IV.1.4.0}
+{\renewcommand{\thefootnote}{(4)}\nde{: One has added the numbering~1.4.0,
+for later references.}}%
+One ``recalls'' that a morphism \(u\colon T\to S\) is said to be
+\emph{quarrable} if for every morphism \(S'\to S\), the fiber product
+\(T\times_{S}S'\) exists.
+\end{definition}
+
+\begin{lemma}{1.4}
+\label{IV.1.4}
+Consider morphisms \(U\xrightarrow{v}T\xrightarrow{u}S\). Then
+
+a)~ \(u\), \(v\) epimorphisms \(\Rightarrow\) \(uv\) epimorphism \(\Rightarrow\)
+\(u\) epimorphism,
+
+b)~ \(u\), \(v\) universal epimorphisms \(\Rightarrow\) \(uv\) universal
+epimorphism and \(u\) quarrable \(\Rightarrow\) \(u\) universal epimorphism.
+\end{lemma}
+
+Lemma~1.4 is trivial from the definitions. One concludes from it:
+
+\begin{corollary}{1.5}
+\label{IV.1.5}
+Let \(u\colon X\to Y\) and \(u'\colon X'\to Y'\) be universal epimorphisms,
+such that \(Y\times Y'\) exists, then \(X\times X'\) exists and
+\(u\times u'\colon X\times X'\to Y\times Y'\) is a universal epimorphism.
+\end{corollary}
+
+Let us also note:
+
+\begin{definition}{1.6.0}
+\label{IV.1.6.0}
+{\renewcommand{\thefootnote}{(5)}\nde{: One has added the numbering~1.6.0,
+for later references.}}%
+One says that an object \(S\) of~\(\mathcal{C}\) is \emph{quarrable} if its
+product by every object of~\(\mathcal{C}\) exists. (If \(\mathcal{C}\) has a
+final object~\(e\), this amounts to saying that the morphism \(S\to e\) is
+quarrable, \cf~1.4.0.)
+\end{definition}
+
+\begin{lemma}{1.6}
+\label{IV.1.6}
+Let \(u\colon X\to Y\) be a morphism in \(\mathcal{C}_{/S}\); for it to be
+an epimorphism (\resp a universal epimorphism, \resp an effective
+epimorphism, \resp a universal effective epimorphism), it suffices that the
+corresponding morphism in~\(\mathcal{C}\) be one, and this is also necessary
+if one assumes that \(S\) is a quarrable object of~\(\mathcal{C}\).
+\end{lemma}
+
+\begin{proof}
+Immediate, left to the reader. One uses the hypothesis ``\(S\) quarrable''
+in order to interpret the \(\mathcal{C}\)-morphisms from an object \(Y\)
+of \(\mathcal{C}_{/S}\) into an object \(Z\) of~\(\mathcal{C}\), as being the
+\(\mathcal{C}_{/S}\)-morphisms from \(Y\) into \(Z\times S\).
+\end{proof}
+
+\begin{lemma}{1.7}
+\label{IV.1.7}
+With the notations of~1.4: \(u\), \(v\) effective epimorphisms and \(v\)
+universal epimorphism \(\Rightarrow\) \(uv\) effective epimorphism.
+\end{lemma}
+
+To see this, one considers the diagram
+\[
+\xymatrix@C=3.6em@R=2.6em{
+S
+  & T \ar[l]_{u}
+  & T\times_{S}T \ar@<0.45ex>[l] \ar@<-0.45ex>[l]
+\\
+  & U \ar[u]_{v}
+  & U\times_{S}U \ar[u]_{v\times_{S}v}
+      \ar@<0.45ex>[l] \ar@<-0.45ex>[l]
+\\
+  & U\times_{T}U \ar@<0.45ex>[u] \ar@<-0.45ex>[u] \ar[ur]
+  &
+}
+\,.
+\]
+One notes that by hypothesis, row~1 and column~1 are exact, and that by
+virtue of~1.5 and~1.6, \(v\times_{S}v\) is an epimorphism (\(v\) being a
+\emph{universal} epimorphism). The conclusion follows from this by an
+evident diagram-chasing: if an element of \(X(U)\) has the same images in
+\(X(U\times_{S}U)\), it \emph{a fortiori} has the same images in
+\(X(U\times_{T}U)\), hence comes from an element of \(X(T)\) since column~1
+is exact. As row~1 is exact, it suffices to check that the element under
+consideration has the same images in \(X(T\times_{S}T)\), and as
+\(v\times_{S}v\) is an epimorphism, it suffices to check that the images in
+\(X(U\times_{S}U)\) are the same, which is indeed the case.
+
+\begin{proposition}{1.8}
+\label{IV.1.8}
+Consider morphisms \(U\xrightarrow{v}T\xrightarrow{u}S\). Then \(u\), \(v\)
+universal effective epimorphisms \(\Rightarrow\) \(uv\) universal effective
+epimorphism and \(u\) quarrable \(\Rightarrow\) \(u\) universal effective
+epimorphism.
+\end{proposition}
+
+The first implication follows at once from~1.7. For the second, one looks
+at the diagram (of ``bisimplicial'' type):
+{\footnotesize\[
+\xymatrix@C=0.55em@R=2.2em{
+S
+  & T \ar[l]_{u}
+  & T\times_{S}T \ar@<0.4ex>[l] \ar@<-0.4ex>[l]
+\\
+U \ar[u]_{uv}
+  & U\times_{S}T \ar[l] \ar[u]
+  & U\times_{S}T\times_{S}T
+      \ar@<0.4ex>[l] \ar@<-0.4ex>[l] \ar[u]
+\\
+U\times_{S}U \ar@<0.4ex>[u] \ar@<-0.4ex>[u]
+  & U\times_{S}U\times_{S}T \ar[l]
+      \ar@<0.4ex>[u] \ar@<-0.4ex>[u]
+  & U\times_{S}U\times_{S}T\times_{S}T
+      \ar@<0.4ex>[l] \ar@<-0.4ex>[l]
+      \ar@<0.4ex>[u] \ar@<-0.4ex>[u]
+}
+\,.
+\]}
+Columns~1, 2, 3 are exact by virtue of the hypothesis ``\(uv\) universal
+effective epimorphism'', row~2 is exact, for \(U\times_{S}T\to U\) is an
+effective epimorphism (for it has a section over~\(U\)), and the same holds
+for row~3 (same reason). An evident diagram-chasing then shows that row~1
+is exact, \ie \(u\) is an effective epimorphism. As the hypotheses made are
+invariant under an arbitrary base change \(S'\to S\), it follows that \(u\)
+is even a universal effective epimorphism.
+
+\begin{corollary}{1.9}
+\label{IV.1.9}
+Let \(u\colon X\to Y\) and \(u'\colon X'\to Y'\) be universal effective
+epimorphisms, such that \(Y\times Y'\) exists; then \(X\times X'\) exists
+and \(u\times u'\colon X\times X'\to Y\times Y'\) is a universal effective
+epimorphism.
+\end{corollary}
+
+\begin{proof}
+As for~1.5, by the diagram
+\[
+\xymatrix@C=3.2em@R=2.4em{
+  & Y'
+  & X' \ar[l]_{u'}
+\\
+X \ar[d]_{u}
+  & X\times Y' \ar[l] \ar[u] \ar[d]
+  & X\times X' \ar[l] \ar[u] \ar[dl]^{u\times u'}
+\\
+Y
+  & Y\times Y' \ar[l]
+  &
+}
+\,.
+\]
+\end{proof}
+
+\begin{corollary}{1.10}
+\label{IV.1.10}
+Consider a quarrable morphism \(u\colon T\to S\), and a base change morphism
+\(S'\to S\), which is a universal effective epimorphism. For \(u\) to be a
+universal effective epimorphism, it is necessary and sufficient that
+\(u'\colon T'=T\times_{S}S'\to S'\) be so:
+\[
+\xymatrix@C=3em@R=2.4em{
+T \ar[d]_{u}
+  & T' \ar[l]_{v'} \ar[d]^{u'}
+\\
+S
+  & S' \ar[l]_{v}
+}
+\,.
+\]
+\end{corollary}
+
+Only the ``it suffices'' requires a proof. Now if \(u'\) is a universal
+effective epimorphism, the same holds for \(vu'\) thanks to~1.8, and since
+\(vu'=uv'\), one concludes by~1.8 that \(u\) is a universal effective
+epimorphism.
+
+\begin{remark}{1.11}
+\label{IV.1.11}
+The same reasoning shows that in~1.10 one may replace ``universal effective
+epimorphism'' by ``universal epimorphism'' or ``universal and effective
+epimorphism'', or simply by ``epimorphism'' (and in this last case, the
+hypothesis ``\(u\) quarrable'' is evidently useless).
+\end{remark}
+
+In the proof of~1.8 we have used the following result, which deserves to be
+spelled out:
+
+\begin{proposition}{1.12}
+\label{IV.1.12}
+Let \(u\colon T\to S\) be a morphism which admits a section. Then \(u\) is
+an epimorphism, and if \(T\times_{S}T\) exists, it is an effective
+epimorphism, and a universal effective epimorphism if moreover \(u\) is
+quarrable.
+\end{proposition}
+
+The first assertion is contained in~1.4~a), and the third will follow at
+once from the second, which it will therefore suffice to establish. In fact
+one has a stronger conclusion: for every functor
+\(F\colon\mathcal{C}^{\circ}\to\Ens\) (not necessarily representable), the
+diagram of sets
+\[
+\xymatrix@C=3em{
+F(S) \ar[r]
+  & F(T) \ar@<0.5ex>[r] \ar@<-0.5ex>[r]
+  & F(T\times_{S}T)
+}
+\]
+is exact. This may be considered as a particular case of the formalism of
+\v{C}ech cohomology (in dimension~0!) which we content ourselves with
+recalling here. Let us simply assume that \(T\times_{S}T\) exists; one then
+sets
+\[
+\mathrm{H}^{0}(T/S,F)
+=\Ker\bigl(F(T)\rightrightarrows F(T\times_{S}T)\bigr).
+\]
+One may regard \(\mathrm{H}^{0}(T/S,F)\) in an evident way as a
+contravariant functor in the argument \(T\) varying in \(\mathcal{C}_{/S}\),
+every \(S\)-morphism \(T'\to T\) defining a map
+\begin{equation}
+\mathrm{H}^{0}(T/S,F)\longrightarrow\mathrm{H}^{0}(T'/S,F).
+\tag{+}
+\end{equation}
+Let us fix \(T\) and \(T'\) in \(\mathcal{C}_{/S}\). A well-known computation
+shows that if there exists an \(S\)-morphism from \(T'\) into~\(T\), the
+corresponding map \((+)\) is in fact independent of the choice of this
+morphism%
+{\renewcommand{\thefootnote}{(6)}\nde{: This is the following argument,
+communicated by M.~Demazure. Let \(f,g\colon T'\to T\), and let
+\(\varphi\colon T'\to T\times_{S}T\) be the morphism with components \(f\)
+and~\(g\), whence \(p_{1}\circ\varphi=f\) and \(p_{2}\circ\varphi=g\). Then
+\(F(\varphi)\colon F(T\times_{S}T)\to F(T')\) satisfies
+\(F(\varphi)\circ F(p_{1})=F(f)\) and \(F(\varphi)\circ F(p_{2})=F(g)\). Now,
+for every \(x\in\mathrm{H}^{0}(T/S,F)\), one has
+\(F(p_{1})(x)=F(p_{2})(x)\). Therefore, applying \(F(\varphi)\) to both
+sides, one obtains \(F(f)(x)=F(g)(x)\), which shows that \(f\) and \(g\)
+induce the same morphism.}},
+so that \(\mathrm{H}^{0}(T/S,F)\) may be regarded as a functor on the
+category associated with the set \(\Ob\mathcal{C}_{/S}\) preordered by the
+relation of ``domination'' (\(T'\) dominates \(T\) if there exists an
+\(S\)-morphism from \(T'\) into~\(T\)). In particular, if \(T\) and \(T'\) are
+isomorphic in this latter category, \ie if each dominates the other, then
+\((+)\) is an isomorphism of sets. This applies in particular to the case
+where \(T'\) is the final object of \(\mathcal{C}_{/S}\), \ie essentially
+\(S\) itself; in any case \(T\) dominates \(T'=S\), and the converse is true
+precisely if \(T/S\) has a section. This establishes~1.12 in the strengthened
+form announced.
+
+\begin{remark}{1.13}
+\label{IV.1.13}
+For various applications, the notions introduced in the present expos\'e,
+and the results stated, are to be developed more generally relative to a
+\emph{family} of morphisms \(u_{i}\colon T_{i}\to S\) with the same target
+(instead of a single morphism \(u\colon T\to S\)). Thus, such a family will
+be said to be \emph{epimorphic} if for every object \(X\) of~\(\mathcal{C}\),
+the corresponding map
+\[
+X(S)\longrightarrow\prod_{i}X(T_{i})
+\]
+is injective, and one likewise introduces the notion of effective
+epimorphic family and the ``universal'' variants of these notions. We shall
+admit if need be, in the sequel, that the results of the present expos\'e
+extend to this more general situation.
+\end{remark}
+
+\begin{remark}{1.14}
+\label{IV.1.14}
+Every morphism which is at the same time a monomorphism and an effective
+epimorphism is an isomorphism. Indeed, in the notations of~1.3, the fact
+that \(T\to S\) is a monomorphism implies that the two morphisms
+\[
+\mathrm{pr}_{1},\mathrm{pr}_{2}\colon
+T\times_{S}T\rightrightarrows T
+\]
+are equal (and are isomorphisms). Now a diagram
+\[
+\xymatrix@C=3em{
+C \ar@<0.5ex>[r]^{v} \ar@<-0.5ex>[r]_{v}
+  & B \ar[r]^{u}
+  & A
+}
+\]
+is exact only if \(u\) is an isomorphism, as follows immediately from the
+definition.%
+{\renewcommand{\thefootnote}{(7)}\nde{: One will note that a monomorphism
+which is an epimorphism is not necessarily an isomorphism. For example, in
+\(\mathcal{C}=\Sch\), the morphism
+\(\Spec(\FF_{p})\coprod\Spec(\ZZ[1/p])\to\Spec(\ZZ)\) is a monomorphism and
+a surjective epimorphism, but is not an isomorphism.}}
+\end{remark}
+
+\sgasection{2}{Descent morphisms}
+\label{IV.sec.2}
+
+Let us recall the following definitions:
+
+\begin{definition}{2.1}
+\label{IV.2.1}
+Let \(f\colon S'\to S\) be a morphism such that \(S''=S'\times_{S}S'\)
+exists, and let \(u'\colon X'\to S'\) be an object over~\(S'\). One calls
+\emph{gluing datum} on \(X'/S'\), relative to~\(f\), an
+\(S''\)-isomorphism
+\[
+c\colon X''_{1}\isomto X''_{2}
+\]
+where \(X''_{i}\) (\(i=1,2\)) denotes the inverse image (assumed to exist)
+of \(X'/S'\) by the projection \(\mathrm{pr}_{i}\colon S''\to S'\). One says
+that the gluing datum \(c\) is a \emph{descent datum} if it satisfies the
+``cocycle condition''
+\[
+\mathrm{pr}_{3,1}^{*}(c)
+=\mathrm{pr}_{3,2}^{*}(c)\,\mathrm{pr}_{2,1}^{*}(c)
+\]
+where \(\mathrm{pr}_{i,j}\) (\(1\leqslant j<i\leqslant 3\)) are the
+canonical projections of \(S'''=S'\times_{S}S'\times_{S}S'\) into~\(S''\)
+(N.B.\ one now assumes that \(S'''\) also exists), where
+\(\mathrm{pr}_{i,j}^{*}(c)\) is the inverse image of~\(c\), considered as an
+\(S'''\)-morphism from \(X'''_{j}\) into \(X'''_{i}\), and where for every
+integer \(k\) between \(1\) and~\(3\), \(X'''_{k}\) denotes the inverse image
+(assumed to exist) of \(X'/S'\) by the projection of index~\(k\),
+\(q_{k}\colon S'''\to S'\).
+\end{definition}

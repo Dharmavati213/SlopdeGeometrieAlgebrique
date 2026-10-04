@@ -1,0 +1,186 @@
+One therefore sees that a sufficient condition (but not a necessary one, see below) for obtaining a section $\sigma:\omega\to I$ as desired is that $\theta$ be an isomorphism. By duality (cf. 0.2.2), this is equivalent to saying that the linear map $\omega_\infty^\dagger\to\prod_r S_r^\dagger$ is bijective.
+
+\numpara{5.2.1.B}\label{VIIB.5.2.1.B}Put, as before, $\omega_\infty=\overline{\bigcup_{n\in\NN}\omega_n}$. A second case where a section $\sigma:\omega\to I$ as desired exists is the case where $\omega_\infty$ possesses a pseudobasis $\mathscr B_\infty$ which is a union of pseudobases of the $\omega_n/\omega_{n-1}$, for $n\in\NN^*$ (one can then extend it by a pseudobasis $\mathscr B_\infty'$ of $\omega/\omega_\infty$ to obtain a pseudobasis of $\omega$ compatible with the filtration). Putting $V=\omega_\infty^\dagger$ and denoting by $V_n$ the orthogonal in $V$ of $\omega_n$, this is equivalent to saying that, in the category of ``ordinary'' $k$-vector spaces, the separated decreasing filtration
+\[
+V=V_0\supset V_1\supset V_2\supset\cdots
+\]
+is split, \ie that $V$ is the direct sum, for $n\in\NN$, of subspaces $F_n$ such that $F_n\simeq V_n/V_{n+1}$. This is not necessarily the case: for example, if $V$ is the space $\mathscr S=k^\NN$ of sequences of elements of $k$ and $\mathscr S_n$ the subspace of sequences $(u_i)$ such that $u_i=0$ for $i<n$, so that $\dim\mathscr S_n/\mathscr S_{n+1}=1$, then $\mathscr S$ is not isomorphic to the direct sum of the $\mathscr S_n/\mathscr S_{n+1}$ since $\mathscr S$ does not have countable dimension (on the other hand, $\mathscr S$ here is the \emph{product} of the $\mathscr S_n/\mathscr S_{n+1}$, cf. 5.2.1.A). This is, however, the case if $V$ has countable dimension.\nde{This paragraph is the fruit of discussions with J.-M. Fontaine and E. Bouscaren; in particular, Bouscaren indicated the following proof to us.} Indeed, let $(e_n)_{n\in\NN}$ be a basis of $V$; we shall construct by induction on $n$ an increasing function $g:\NN\to\NN$ and subspaces $F_i$, for $i=0,\ldots,g(n)$, such that $F_i\simeq V_i/V_{i+1}$ and such that $F_{\le g(n)}=\bigoplus_{i=0}^{g(n)}F_i$ is a complement to $V_{g(n)+1}$ containing $e_0,\ldots,e_n$; one will then have $V=\bigoplus_{i\ge0}F_i$. Let $n+1\in\NN$; one can suppose that the assertion is established for $n$ (the assertion being empty for $n=-1$). If $e_{n+1}\in F_{\le g(n)}$, one puts $g(n+1)=g(n)$; otherwise one writes $e_{n+1}=f+x$ with $f\in F_{\le g(n)}$ and $x\in V_{g(n)+1}$ nonzero. Let then $j$ be the smallest integer such that $x\in V_j-V_{j+1}$; for $i=g(n)+1,\ldots,j$, choose a complement $F_i$ to $V_{i+1}$ in $V_i$, so that $e_{n+1}\in F_j$, and put $g(n+1)=j$.
+% typo?: e_{n+1} in F_j, rather than x in F_j, is retained as printed.
+
+\numpara{5.2.1.C}\label{VIIB.5.2.1.C}\nde{We return here to the original, which we have shortened in view of the preceding additions.}In particular, the two preceding conditions (5.2.1.A and B) hold when the filtration of $\omega$ is \emph{stationary}, \ie when there exists an integer $n_0$ such that $\omega_n=\omega_{n_0}$ for $n_0\le n<+\infty$. In this case, one obtains an isomorphism from $k[[\omega]]/((x^{p^r}))_{x\in\omega_r}$ onto the completed tensor product:
+\[
+\frac{k[[\omega_1]]}{((x^p))_{x\in\omega_1}}\widehat\otimes
+\frac{k[[\omega_2']]}{((x^{p^2}))_{x\in\omega_2'}}\widehat\otimes\cdots\widehat\otimes
+\frac{k[[\omega_{n_0}']]}{((x^{p^{n_0}}))_{x\in\omega_{n_0}'}}\widehat\otimes k[[\omega_\infty']],
+\]
+where $\omega_n'$ (resp. $\omega_\infty'$) is a complement to $\omega_{n-1}$ in $\omega_n$ (resp. to $\omega_\infty=\omega_{n_0}$ in $\omega$). The filtration of $\omega$ is clearly stationary in case (i), \ie if $\omega_r=\omega$ for $r$ large enough, and in case (ii), \ie if $\omega$ has finite dimension, and also in case (iii), \ie if $I_r=0$ for every $r$ (and in this case $B$ will be isomorphic to the formal power series algebra $k[[\omega]]$). The above remarks therefore imply our theorem, modulo points 5.2.2--5.2.5 below.
+
+\numpara{5.2.2}\emph{First suppose that $B$ has height $\le1$}, \ie that $x^p=0$ if $x\in I$. By 5.1.4, the graded $\operatorname{Gr}_I(B)$ associated with $B$ for the filtration $I\supset\overline{I^2}\supset\overline{I^3}\supset\cdots$ is equipped with a cogroup structure in the category $\mathbf{Alpg}/k$, \ie the profinite algebra $C=\prod_{n\ge0}\operatorname{Gr}_I(B)_n$ is the affine algebra of a formal $k$-group $N$. It is clear that one has $\omega_{N/k}=I/\overline{I^2}$ and that $N$ is infinitesimal of height $\le1$. By 4.4, the identity map of $\omega_{N/k}$ therefore induces an isomorphism from $B'=k[[\omega_{N/k}]]/((x^p))_{x\in\omega_{N/k}}$ onto $C$. This implies in particular that the map $\phi$ of 5.2.1 induces an isomorphism of the associated gradeds of $B'$ and $B$ when one filters $B'$ and $B$ by the powers of the augmentation ideal. Thus $\phi$ is an isomorphism, by \cite{CA}, § V.7, Lemma 1 (see also 5.1.5).
+
+\numpara{5.2.3}\emph{Suppose now that $B$ has finite height $\le r$}. Let $\pi$ be the isomorphism $x\mapsto x^p$ from $k$ onto $k$. The linear map from $B\widehat\otimes_\pi k$ to $B$ which sends $b\widehat\otimes_\pi x$ to $b^px=(bx^{1/p})^p$ has a closed image which is none other than the closed subalgebra $B^p=\{b^p\mid b\in B\}$ of $B$. Put $J=B^p\cap I=B^p\cap I_A$.
+
+\nde{We have added what follows.}Denote by $G_1$ the kernel of the Frobenius morphism $\Fr:G\to G^{(p)}$ and by $HG_1$ the formal subgroup of $G$ which is the inverse image of the formal subgroup $H^{(p)}$ of $G^{(p)}$. Then $HG_1$ is defined by the closed ideal generated by the $p$th powers of elements of $\overline{AI}$, which equals $\overline{AJ}$. On the other hand, since the formation of $G/H$ commutes with base change (since $G/H$ represents the quotient sheaf for the flat topology, cf. 2.4), $(G/H)^{(p)}=G^{(p)}/H^{(p)}$ and one therefore has commutative diagrams:
+\[
+\xymatrix@C=24pt@R=23pt{
+G\ar[r]^{\Fr}\ar[d]&G^{(p)}\ar[d]\\
+G/H\ar[r]_{\Fr}&G^{(p)}/H^{(p)}}
+\qquad
+\xymatrix@C=34pt@R=23pt{
+A&A\widehat\otimes_\pi k\ar[l]_{a\widehat\otimes1\mapsto a^p}\\
+B\ar[u]&B\widehat\otimes_\pi k\ar[u]\ar[l]_{b\widehat\otimes1\mapsto b^p}}
+\]
+from which one deduces that $B^p$ is the affine algebra of the quotient $G/HG_1$.\nde{As indicated in the original, this also follows from Proposition 5.1, but we have preferred to give the argument above, which does not use the implication (i) $\Rightarrow$ (ii) of loc. cit.} Temporarily denote by $C$ the affine algebra of the quotient $HG_1/H$. Since the formation of $G/H$ commutes with base change, one has a cartesian square:
+\[
+\xymatrix@C=30pt@R=22pt{HG_1\ar[r]\ar[d]&G\ar[d]\\HG_1/H\ar[r]&G/H}
+\]
+whence an isomorphism $A\widehat\otimes_B C\simeq A/\overline{AJ}=A\widehat\otimes_B(B/\overline{BJ})$, and since $A$ is topologically free over $B$ (by 2.4, since $A$ and $B$ are local), it follows that the natural morphism $B/\overline{BJ}\to C$ is an isomorphism, so $B/\overline{BJ}$ is the affine algebra of $HG_1/H$\footnotemark[159] and of course $B/\overline{BJ}=B_1$ has height $\le1$ since $J=((x^p))_{x\in\mathfrak r(B)}$.
+% typo?: J is printed as the closed ideal in B here although J was B^p cap I.
+
+Let $B'=k[[\omega]]/((x^{p^r}))_{x\in\omega_r}$, $\phi:B'\to B$ the morphism introduced in 5.2.1, $B'^p$ the subalgebra $\{x^p\mid x\in B'\}$, and $J'$ the augmentation ideal of $B'^p$. Then one has a commutative diagram:
+\[
+\xymatrix@C=30pt@R=22pt{B'\ar[r]^\phi\ar[d]&B\ar[d]\\B_1'=B'/\overline{B'J'}\ar[r]_{\phi_1}&B_1=B/\overline{BJ}}
+\]
+and, by 5.2.2, $\phi_1$ is an isomorphism.
+
+On the other hand, by 2.4, $A$ is topologically flat over $B=\mathscr A(G/H)$ and over $B^p=\mathscr A(G/HG_1)$, hence, by 1.3.3, $B$ is topologically flat over $B^p$. Moreover, by 5.2.4 below, the morphism $B'^p\to B^p$ induced by $\phi$ is an isomorphism. One can then apply 0.3.4 to the pseudocompact ring $B'^p=B^p$ and the pseudocompact $B^p$-modules $M=B'$, $N=B$: by the preceding, $\phi_1=\phi\widehat\otimes_{B^p}k$ is an isomorphism, and it follows that $\phi$ is an isomorphism. This proves 5.2 when $B$ has finite height, modulo point 5.2.4 below.
+
+\numpara{5.2.4}For every pseudocompact vector space $V$ over $k$, we denote by ${}_\pi V$ the space $V\widehat\otimes_\pi k$ obtained from $V$ by the extension $x\mapsto x^p$ of the scalar field.\nde{Since $k$ is perfect, one can identify ${}_\pi V$ with the abelian group $V$ on which $k$ acts by $\lambda\cdot v=\lambda^{1/p}v$.} One then has a commutative diagram with exact rows
+\[
+\xymatrix@C=24pt@R=25pt{
+0\ar[r]&{}_\pi\overline{I^2}\ar[r]^\alpha\ar[d]_u&{}_\pi I\ar[r]^\beta\ar[d]_v&{}_\pi\omega\ar[r]\ar[d]_w&0\\
+0\ar[r]&\overline{J^2}\ar[r]_\gamma&J\ar[r]_\delta&\overline\omega\ar[r]&0,}
+\]
+where one has put $\overline\omega=J/\overline{J^2}$ and where the maps $u,v,w$ are induced by the linear map $x\widehat\otimes a\mapsto x^pa$ from ${}_\pi B$ to $B^p$. Since $u$ and $v$ are surjections, $w$ is a surjection and has kernel the image ${}_\pi\omega_1$ of ${}_\pi I_1=\Ker(v)$.
+
+Then, putting $J_n=\{x\in J\mid x^{p^n}=0\}$ and $\overline\omega_n=\delta(I_n)$, one has $J_n=v({}_\pi I_{n+1})$ and $\overline\omega_n=w({}_\pi\omega_{n+1})$, for every $n\ge0$. The section ${}_\pi\sigma:{}_\pi\omega\to{}_\pi I$, induced by the section $\sigma$ of 5.2.1, therefore defines, on passing to the quotient, a section $\tau:\overline\omega\to J$ compatible with the filtrations of $J$ and $\overline\omega$. Since $B^p$ has height $\le r-1$, this section induces, by the induction hypothesis, an isomorphism
+\[
+\psi:B''=k[[\overline\omega]]/((x^{p^n}))_{x\in\overline\omega_n}\isomto B^p.
+\]
+Now $B''$ is identified with $B'^p$ and $\psi$ with the morphism $B'^p\to B^p$ induced by $\phi$, and hence \emph{our theorem is proved when $B$ has finite height}.
+% typo?: delta(I_n), rather than delta(J_n), is printed and retained.
+
+\begin{remark}{5.2.4.A}\label{VIIB.5.2.4.A}\nde{We have added this remark, used in 5.2.5.}
+Suppose that $B$ has height $\le r+1$ (with $r\in\NN^*$); then $I_{r+1}=I$ and one has an isomorphism
+\[
+B\simeq\frac{k[[S_1]]}{((x_1^p))_{x_1\in S_1}}\widehat\otimes_k\cdots\widehat\otimes_k
+\frac{k[[S_r]]}{((x_r^{p^r}))_{x_r\in S_r}}\widehat\otimes_k
+\frac{k[[S_{r+1}]]}{((x_{r+1}^{p^{r+1}}))_{x_{r+1}\in S_{r+1}}}\tag{1}
+\]
+where each $S_n$ is a complement to $\overline{I^2}+I_{n-1}$ in $\overline{I^2}+I_n$. Then $\omega=I/\overline{I^2}$ is identified with $\prod_{i=1}^{r+1}S_i$, and one sees easily that, for $n=1,\ldots,r+1$, the image $\omega_n$ of $I_n$ in $\omega$ is identified with $\prod_{i=1}^n S_i$.
+
+This has the following consequence. Let $B_r=B/J_r$, where $J_r=((x^{p^r}))_{x\in\mathfrak r(B)}$, and let $\mathfrak m=I/J_r$ be the augmentation ideal of $B_r$; since $J_r\subset\overline{I^2}$, $\omega(r)=\mathfrak m/\overline{\mathfrak m^2}$ is identified with $\omega$. For $n=1,\ldots,r$, denote by $\omega(r)_n$ the image in $\omega(r)$ of $\mathfrak m_n$; it is also the image in $\omega$ of $\{x\in I\mid x^{p^n}\in J_r\}$, so $\omega(r)_n$ contains $\omega_n$. On the other hand, it follows from isomorphism (1) that one has $J_r=((x_{r+1}^{p^r}))_{x_{r+1}\in S_{r+1}}$, whence
+\[
+B_r\simeq\frac{k[[S_1]]}{((x_1^p))_{x_1\in S_1}}\widehat\otimes_k\cdots\widehat\otimes_k
+\frac{k[[S_r]]}{((x_r^{p^r}))_{x_r\in S_r}}\widehat\otimes_k
+\frac{k[[S_{r+1}]]}{((x_{r+1}^{p^r}))_{x_{r+1}\in S_{r+1}}}\tag{2}
+\]
+and hence, by the preceding, $\omega(r)_n$ is identified with $\prod_{i=1}^n S_i$ for $n=1,\ldots,r-1$. One therefore obtains that the inclusion $\omega_n\subset\omega(r)_n$ is an \emph{equality}, for $n=1,\ldots,r-1$.
+\end{remark}
+
+\numpara{5.2.5}\emph{It remains to consider the case where $B$ has infinite height}, and where the projection $I\to\omega$ possesses a section $\sigma$ compatible with the filtrations of $\omega$ and $I$. Consider the morphism
+\[
+\phi:B'=k[[\omega]]/((x^{p^n}))_{x\in\omega_n}\longrightarrow B
+\]
+induced by $\sigma$; it suffices to show that for every $r\in\NN$, the map $\phi_r:B_r'\to B_r$ induced by $\phi$ is invertible.\nde{Indeed, $B'$ (resp. $B$) is the projective limit of the $B_r'$ (resp. $B_r$). On the other hand, we have modified the original in what follows, taking account of the addition made in 5.2.3.}
+
+For every $r\in\NN^*$, denote by $G_r$ the kernel of the iterated Frobenius morphism $G\to G^{(p^r)}$ and by $HG_r$ the formal subgroup of $G$ which is the inverse image of the formal subgroup $H^{(p^r)}$ of $G^{(p^r)}$, so that $HG_r$ is defined by the closed ideal generated by the $p^r$th powers of elements of $\overline{AI}$, which equals $\overline{AJ_r}$, where $J_r=\{x^{p^r}\mid x\in I\}$. One then obtains, exactly as in 5.2.3, that $B_r=B/\overline{BJ_r}$ is the affine algebra of $HG_r/H$ (and has, of course, height $\le r$).
+
+Denote by $\mathfrak m(r)=I/\overline{BJ_r}$ the augmentation ideal of $B_r$; the canonical projection from $B$ onto $B_r$ clearly induces an isomorphism from $\omega=I/\overline{I^2}$ onto $\omega(r)=\mathfrak m(r)/\overline{\mathfrak m(r)^2}$, which allows us to identify these two spaces. Let $\omega(r)_n$ be the image in $\omega(r)$ of the closed ideal $\mathfrak m(r)_n=\{y\in\mathfrak m(r)\mid y^{p^n}=0\}$; it is also the image in $\omega$ of the closed ideal $I(r)_n=\{x\in I\mid x^{p^n}\in\overline{BJ_r}\}$.\nde{We have detailed the original in what follows.} It is clear that $\omega_n(r)=\omega$ if $n\ge r$; let us show that $\omega_n(r)=\omega_n$ if $n<r$. For every $r,n$, the sequence below is exact:
+\[
+0\longrightarrow I(r)_n\cap\overline{I^2}\longrightarrow I(r)_n\longrightarrow\omega(r)_n\longrightarrow0.
+\]
+Moreover, for fixed $n$, one has $\bigcap_r I(r)_n=I_n$, since $\bigcap_r\overline{BJ_r}=0$. Since in $\mathbf{PC}(k)$ filtered projective limits are exact (cf. 0.2), it follows that, for every $n$, one has
+\[
+\omega_n=\bigcap_r\omega(r)_n.\tag{*}
+\]
+On the other hand, by Remark 5.2.4.A, one has $\omega(r)_n=\omega(r+1)_n$ if $n\le r$. Combined with (*), this implies that $\omega(r)_n=\omega_n$ if $n<r$.
+% typo?: the printed bound n <= r in the preceding sentence is retained.
+
+Consequently, the vector space $\omega$ filtered by the subspaces $(\omega(r)_n)_{n\ge0}$ is none other than ${}_r\omega$ (Notation 5.2). A fortiori, the map $\sigma(r)$ which is the composite of $\sigma:\omega\to I$ and the projection $I\to\mathfrak m(r)$ is compatible with the filtrations $(\omega(r)_n)$ and $(\mathfrak m(r)_n)$ of $\omega$ and $\mathfrak m(r)$. Since $k[[{}_r\omega]]/((x^{p^n}))_{x\in{}_r\omega_n}$ is none other than $B_r'$ and $\phi_r:B_r'\to B_r$ is the morphism induced by $\sigma(r)$, the result already established for algebras of finite height shows that $\phi_r$ is an isomorphism.
+
+\begin{definition}{5.2.6}\label{VIIB.5.2.6}\nde{We have added this number, to define the infinite tensor products used in 5.3 (a).}
+% typo: cet numero -> ce numero, rendered as this number.
+Let $(A_\lambda)_{\lambda\in\Lambda}$ be a family of profinite $k$-algebras, each equipped with an augmentation $\varepsilon_\lambda:A_\lambda\to k$ (this is the case, in particular, if each $A_\lambda$ is local with residue field $k$). One then defines the infinite completed tensor product $\mathscr A=\widehat{\bigotimes}_{\lambda\in\Lambda}A_\lambda$ as the projective limit in $\mathbf{Alp}/k$ of the $A_F=\widehat{\bigotimes}_{\lambda\in F}A_\lambda$, for $F$ ranging over the finite subsets of $\Lambda$, the transition morphisms $A_{F'}\to A_F$, for $F'=F\cup\{\lambda\}$, being $\id\widehat\otimes\varepsilon_\lambda$. In particular, if $\Lambda=\NN^*$ and one denotes by $X_n$ the formal $k$-variety $\Spf(A_n)$, then $\Spf(\mathscr A)$ represents the functor which associates to every $C\in\mathbf{Alf}/k$ the set of ``finite'' sequences of elements of $\prod_{n\ge1}X_n(C)$, \ie sequences
+\[
+(x_1,x_2,\ldots)\in\prod_{n\ge1}X_n(C)
+\]
+such that $x_n=\varepsilon_n$ for $n$ large enough, where $\varepsilon_n$ denotes, by abuse of notation, the composite of $\varepsilon_n:A_n\to k$ and the structure morphism $k\to C$. (If, moreover, each $A_n$ is a quotient of an algebra $k[[\omega_n']]$, one can denote by $0$ the unique morphism $A_n\to C$ which vanishes on $\omega_n'$, and one therefore obtains the set of sequences such that ``$x_n=0$'' for $n$ large enough.)
+\end{definition}
+
+\begin{remarks}{5.3}\label{VIIB.5.3}
+(a) Call \emph{stationary} every profinite $k$-algebra which is the completed tensor product of a family of truncated formal power series algebras.\nde{The author was doubtless thinking of a tensor product $\mathscr A=\widehat{\bigotimes}_{n\in\NN^*}k[[\omega_n']]/((x^{p^n}))_{x\in\omega_n'}$, where the $\omega_n'$ are arbitrary pseudocompact $k$-vector spaces. In this case, one sees without difficulty that $\omega=\omega_{\mathscr A/k}$ is identified with the product of the $\omega_n'$, and the filtration $(\omega_n)_{n\in\NN^*}$ is given by $\omega_n=\prod_{i=1}^n\omega_i'$, \ie one is in case 5.2.1.B. For this reason, it would be preferable to call these algebras \emph{stable} (rather than ``stationary''), cf. \cite{Di73}, II § 2.9, p. 75. If, for example, $\dim\omega_n'=1$ for every $n\in\NN^*$, then $\mathscr A$ represents the functor which associates to every $C\in\mathbf{Alf}/k$ the set of sequences $(x_n)_{n\in\NN^*}$ of elements of $C$ such that $x_n^{p^n}=0$, and $x_n=0$ for $n$ large enough. Note finally that this case (\ie the case where $\omega=\prod_{n\in\NN^*}\omega_n'$) corresponds to the case studied, in the dual situation of connected cocommutative Hopf algebras, by M. E. Sweedler, cf. \cite{Sw67}, Th. 3.}
+
+If $G$ is an infinitesimal formal $k$-group and $B$ the affine algebra of a homogeneous space of $G$, it follows from Theorem 5.2 that the algebra $B/((x^{p^r}))_{x\in\mathfrak r(B)}$ is stationary for every integer $r\in\NN$. This implies in particular that $B$ is a projective limit of stationary algebras.\nde{But such a projective limit is not necessarily a stable profinite $k$-algebra (in the sense of the preceding N.D.E.). For example, let $\mathscr S$ be the ``ordinary'' $k$-vector space of sequences $(u_1,u_2,\ldots)$ of elements of $k$ and let $\omega=\mathscr S^*$; then $\omega$ is the direct sum in $\mathbf{PC}(k)$ of copies $k_n$ of $k$, for $n\in\NN^*$, \ie one is in case 5.2.1.A. If one denotes by $x_n$ the element of $\omega$ defined by $x_n(u)=u_n$, for every sequence $u=(u_i)_{i\in\NN^*}$, then the $k$-algebra $A=k[[\omega]]/((x_n^{p^n}))_{n\in\NN^*}$ is such that $\omega_{A/k}=\omega$ and $\omega_n=\prod_{i=1}^n kx_i$, but is not stable: $\Spf(A)$ represents the functor which associates to every $C\in\mathbf{Alf}/k$ the set of ``infinite'' sequences $(x_n)_{n\in\NN^*}$ of elements of $C$ such that $x_n^{p^n}=0$ for every $n\in\NN^*$.}
+
+(b) I do not know whether, with the notation of 5.2.1, one can choose $A$ and $B$ in such a way that there is no section $\sigma:\omega\to I$ compatible with the filtrations.\nde{The editors do not know either, outside the cases considered in 5.2.1.A and B.} One will note, however, that one can have for $\omega$ any pseudocompact vector space filtered by an increasing sequence of closed subspaces. Indeed, if $\omega_1\subset\omega_2\subset\cdots\subset\omega$ is such a filtered space, one can define in the algebra $B=A=k[[\omega]]/((x^{p^r}))_{x\in\omega_r}$ a diagonal morphism $\Delta_A:A\to A\widehat\otimes_k A$ satisfying conditions (i), (ii), (iii) of 2.1; it suffices to put $\Delta_A(y)=y\widehat\otimes1+1\widehat\otimes y$ when $y$ is the image in $A$ of an element of $\omega$.
+\end{remarks}
+
+\begin{corollary}{5.4}\label{VIIB.5.4}
+Let $G$ be an algebraic group over a perfect field $k$ of characteristic $p>0$, $H$ an algebraic subgroup of $G$, $e$ the image of the identity element of $G$ in $G/H$ and $A$ the local algebra of $G/H$ at $e$. Then $\widehat A$ is isomorphic to an algebra of the form
+\[
+k[[X_1,\ldots,X_r,\ldots,X_s]]/(X_1^{p^{n_1}},\ldots,X_r^{p^{n_r}}).
+\]
+\end{corollary}
+Indeed, consider the infinitesimal formal groups $\widehat G=\Spf(\widehat{\mathcal O}_{G,e})$ and $\widehat H=\Spf(\widehat{\mathcal O}_{H,e})$; by 1.3.4, the completion $\widehat A$ of $A=\mathcal O_{G/H,e}$ is isomorphic to $\mathscr A(\widehat G/\widehat H)$, and the corollary therefore follows from Theorem 5.2 (ii).\nde{See also \cite{DG70}, § III.3, Th. 6.1.}
+
+\numpara{5.5}\textbf{Complements.} --- \nde{We have added this subsection, to give some consequences of 5.4, mentioned in Exposés III and VI A.}Recall the following definitions. On the one hand, one says that a noetherian local ring $A$ is a \emph{complete intersection} if the completion $\widehat A$ is a quotient of a complete regular noetherian local ring $B$ by an ideal $I$ generated by a regular sequence of elements of $B$ (cf. EGA IV$_4$, 19.3.1). On the other hand, let $\tau:Y\hookrightarrow X$ be a closed immersion of schemes. If $y\in Y$, one says that $\tau$ is a \emph{regular immersion at $y$} if the kernel of $\mathcal O_{X,y}\to\mathcal O_{Y,y}$ is generated by a regular sequence; if, moreover, $X$ is locally noetherian and $\tau$ is a regular immersion at every point, one says that $\tau$ is a \emph{regular immersion} (cf. loc. cit., Prop. 16.9.10 and Def. 16.9.2).
+
+\begin{corollary}{5.5.1}\label{VIIB.5.5.1}
+If $G$ is an algebraic group over a field $k$, the local ring $\mathcal O_{G,e}$ is a complete intersection.
+\end{corollary}
+Indeed, by EGA IV$_4$, 19.3.4, one can suppose that $k$ is algebraically closed. If $\operatorname{char}(k)=0$, one already knows that $G$ is smooth (cf. 3.3.1 or VI B, 1.6.1) and hence $\mathcal O_{G,e}$ is a formal power series $k$-algebra, by EGA IV$_4$, 17.5.3 (d$''$). If $\operatorname{char}(k)=p>0$, it follows from 5.4, applied to $H=\{e\}$, that $\mathcal O_{G,e}$ is a complete intersection.
+% typo?: the local ring itself, rather than its completion, is printed as a formal power series algebra.
+
+\begin{remarks}{5.5.2}\label{VIIB.5.5.2}
+Let $k$ be a field, $G$ a smooth algebraic $k$-group, and $H$ a closed subgroup of $G$.
+
+a) We have seen in Exp. III, 4.15, that the immersion $H\hookrightarrow G$ is regular; this can also be deduced from 5.4, as follows. As in loc. cit., one can suppose that $k$ is algebraically closed, and it suffices to show that the kernel $I$ of $\mathcal O_{G,e}\to\mathcal O_{H,e}$ is generated by a regular sequence. Put $A=\mathcal O_{G,e}$, $\widehat G=\Spf(\widehat A)$ and $\widehat H=\Spf(\widehat{\mathcal O}_{H,e})$. Since $A$ is noetherian, one has an exact sequence
+\[
+0\longrightarrow I\otimes_A\widehat A\longrightarrow\widehat A\xrightarrow\pi\mathscr A(H)\longrightarrow0
+\]
+and $\widehat A$ is faithfully flat over $A$. Thus, by EGA IV$_4$, 16.9.10 (ii) and 19.1.5 (ii), it suffices to show that the kernel $\widehat I=I\otimes_A\widehat A$ of $\pi$ is generated by a regular sequence of elements of $\widehat A$.
+% typo?: mathscr A(H), without a hat on H, is retained as printed here and in (b).
+
+Now, since $G$ is smooth, $\widehat A$ is reduced; by 5.4, the subalgebra $B=\mathscr A(\widehat G/\widehat H)$ is therefore isomorphic to a formal power series algebra $k[[x_1,\ldots,x_n]]$, and hence the identity section of $\widehat G/\widehat H$ is defined in $B$ by the regular sequence $(x_1,\ldots,x_n)$. Since $\widehat A$ is noetherian, the ideal $J$ of $\widehat A$ generated by $x_1,\ldots,x_n$ is closed and hence equal to $\widehat I$, by Corollary 1.4. Moreover, since $\widehat A$ is topologically flat, hence flat over $B$ (cf. 0.3.8), $(x_1,\ldots,x_n)$ is a regular sequence in $\widehat A$, by EGA IV$_4$, 19.1.5 (ii).
+% typo?: the printed reference Corollary 1.4 is retained.
+
+b) One can also deduce from 5.2 (ii) the following more precise result. Suppose that $k$ is perfect. By 5.2 (ii) applied to the algebra $C=\mathscr A(H)$, there exist a basis $(y_1,\ldots,y_{r+s})$ of $\omega_H$ and integers $1\le n_1\le\cdots\le n_r$ such that $\mathscr A(H)$ is isomorphic to the quotient of $k[[y_1,\ldots,y_{r+s}]]$ by the ideal generated by the $y_i^{p^{n_i}}$ for $i=1,\ldots,r$. Lift the $y_i$ to elements $x_i$ of $\omega_G$ and extend $(x_1,\ldots,x_{r+s})$ to a basis $(x_1,\ldots,x_n)$ of $\omega_G$. Since $\mathscr A(G)$ is reduced, the morphism $k[[x_1,\ldots,x_n]]\to\mathscr A(G)$ is an isomorphism, by 5.2 (iii). One therefore obtains: \emph{there exists a ``coordinate system'' $(x_1,\ldots,x_n)$ of $G$ (\ie an isomorphism $\mathscr A(G)\simeq k[[x_1,\ldots,x_n]]$) such that $H$ is defined by the equations $x_i^{p^{n_i}}=0$ for $i=1,\ldots,r$ and $x_i=0$ for $i>r+s$} (``Dieudonné's theorem'', compare with \cite{Di55}, § 19, Th. 6, and \cite{Di73}, II § 3.2, Prop. 3, and what precedes it).
+\end{remarks}
+
+\begin{thebibliography}{MM65}
+\bibitem[CA]{CA} P. Gabriel, \textit{Des catégories abéliennes}, Bull. Soc. Math. France \textbf{90} (1962), 323--448.\nde{To this reference, which appeared in the original, we have added the references which follow.}
+\bibitem[Ab80]{Ab80} E. Abe, \textit{Hopf algebras}, Cambridge Univ. Press, 1980.
+\bibitem[Br00]{Br00} C. Breuil, \textit{Groupes $p$-divisibles, groupes finis et modules filtrés}, Ann. of Math. \textbf{152} (2000), no. 2, 489--549.
+\bibitem[BAlg]{BAlg} N. Bourbaki, \textit{Algèbre}, Chap. I--III and IV--VII, Hermann, 1970, and Masson, 1981.
+\bibitem[BAC]{BAC} N. Bourbaki, \textit{Algèbre commutative}, Chap. I--IV, Masson, 1985.
+\bibitem[BEns]{BEns} N. Bourbaki, \textit{Théorie des ensembles}, Chap. I--IV, Hermann, 1970.
+\bibitem[BLie]{BLie} N. Bourbaki, \textit{Groupes et algèbres de Lie}, Chap. II--III, Hermann, 1970.
+\bibitem[Ca62]{Ca62} P. Cartier, \textit{Groupes algébriques et groupes formels}, pp. 87--111 in: Colloque sur la théorie des groupes algébriques (Bruxelles, 1962), Gauthier-Villars, 1962.
+\bibitem[DG70]{DG70} M. Demazure, P. Gabriel, \textit{Groupes algébriques}, Masson \& North-Holland, 1970.
+\bibitem[De72]{De72} M. Demazure, \textit{Lectures on $p$-divisible groups}, Lect. Notes Math. \textbf{302}, Springer-Verlag, 1972.
+\bibitem[Di55]{Di55} J. Dieudonné, \textit{Groupes de Lie et hyperalgèbres de Lie sur un corps de caractéristique $p>0$}, Comm. Math. Helv. \textbf{28} (1955), 87--118.
+\bibitem[Di73]{Di73} J. Dieudonné, \textit{Introduction to the theory of formal groups}, Marcel Dekker, 1973.
+\bibitem[Fo77]{Fo77} J.-M. Fontaine, \textit{Groupes $p$-divisibles sur les corps locaux}, Astérisque \textbf{47--48}, Soc. Math. France, 1977.
+\bibitem[Gr57]{Gr57} A. Grothendieck, \textit{Sur quelques points d'algèbre homologique}, Tôhoku Math. J. \textbf{9} (1957), 119--221.
+\bibitem[Gr74]{Gr74} A. Grothendieck, \textit{Groupes de Barsotti-Tate et cristaux de Dieudonné}, Presses Univ. Montréal, 1974.
+\bibitem[HS69]{HS69} R. G. Heyneman, M. E. Sweedler, \textit{Affine Hopf Algebras I}, J. Algebra \textbf{13} (1969), 194--241.
+\bibitem[Il85]{Il85} L. Illusie, \textit{Déformations de groupes de Barsotti-Tate, d'après A. Grothendieck}, pp. 151--198 in: Séminaire sur les pinceaux arithmétiques: la conjecture de Mordell, Astérisque \textbf{127}, Soc. Math. France, 1985.
+\bibitem[Ja65]{Ja65} I. M. James, review of \cite{MM65} in Math. Reviews, MR0174052.
+\bibitem[La75]{La75} M. Lazard, \textit{Commutative formal groups}, Lect. Notes Math. \textbf{443}, Springer-Verlag, 1975.
+\bibitem[LT65]{LT65} J. Lubin, J. Tate, \textit{Formal complex multiplication in local fields}, Ann. of Math. \textbf{81} (1965), 380--387.
+\bibitem[LT66]{LT66} J. Lubin, J. Tate, \textit{Formal moduli for one-parameter formal Lie groups}, Bull. Soc. Math. France \textbf{94} (1966), 49--60.
+\bibitem[Ma91]{Ma91} A. Masuoka, \textit{On Hopf algebras with cocommutative coradicals}, J. Algebra \textbf{144} (1991), 451--466.
+\bibitem[Me72]{Me72} W. Messing, \textit{The crystals associated with Barsotti-Tate Groups: with applications to abelian schemes}, Lect. Notes Math. \textbf{264}, Springer-Verlag, 1972.
+\bibitem[MM65]{MM65} J. W. Milnor, J. C. Moore, \textit{On the structure of Hopf algebras}, Ann. of Math. \textbf{81} (1965), 211--264.
+% typo: J.. C. Moore -> J. C. Moore.
+\bibitem[Mi65]{Mi65} B. Mitchell, \textit{Theory of categories}, Academic Press, 1965.
+\bibitem[Ne75]{Ne75} K. Newman, \textit{A correspondence between bi-ideals and sub-Hopf algebras in cocommutative Hopf algebras}, J. Algebra \textbf{36} (1975), 1--15.
+\bibitem[Po73]{Po73} N. Popescu, \textit{Abelian categories with applications to rings and modules}, Academic Press, 1973.
+\bibitem[Sch90]{Sch90} H. J. Schneider, \textit{Principal homogeneous spaces for arbitrary Hopf algebras}, Israel J. Math. \textbf{72} (1990), nos. 1--2, 167--195.
+\bibitem[Sw67]{Sw67} M. Sweedler, \textit{Hopf algebras with one grouplike element}, Trans. Amer. Math. Soc. \textbf{127} (1967), no. 3, 515--526.
+\bibitem[Sw69]{Sw69} M. Sweedler, \textit{Hopf algebras}, Benjamin, 1969.
+\bibitem[Tak72]{Tak72} M. Takeuchi, \textit{A correspondence between Hopf ideals and sub-Hopf algebras}, Manuscripta Math. \textbf{7} (1972), 251--270.
+\bibitem[Tak79]{Tak79} M. Takeuchi, \textit{Relative Hopf modules--Equivalence and freeness criteria}, J. Algebra \textbf{60} (1979), 452--471.
+\bibitem[Ta67]{Ta67} J. Tate, \textit{$p$-divisible groups}, pp. 158--183 in: Proc. Conf. Local Fields (Driebergen, 1966) (ed. T. A. Springer), Springer-Verlag, 1967.
+\bibitem[We95]{We95} C. A. Weibel, \textit{An introduction to homological algebra}, Cambridge Univ. Press, 1995.
+\end{thebibliography}

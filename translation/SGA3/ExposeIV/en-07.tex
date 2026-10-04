@@ -1,0 +1,388 @@
+% French PDF pp. 37--42.
+\nde{Point (i) of Lemma 4.4.5 has been corrected, and the proofs of
+the three points have been given in detail.}
+Let \(R_\varnothing\) be the presheaf which associates the empty
+set to every \(S\in\Ob\mathcal C\); it is an initial object of
+\(\widehat{\mathcal C}\).
+
+\begin{lemma}{4.4.5}\label{IV.4.4.5}
+(i) Suppose that \(R_\varnothing\notin J(S)\), for every
+\(S\in\Ob\mathcal C\). If \((X_i)\) is a family of separated
+presheaves, the direct-sum presheaf \(\coprod_i X_i\) is separated.
+\nde{In general, the direct sum of two sheaves \(F,G\) is not a
+sheaf. Indeed, let \(S_1,S_2\in\Ob\mathcal C\); one assumes that
+the direct sum \(S=S_1\amalg S_2\) exists in \(\mathcal C\) and
+that the fibered product \(S_1\times_S S_2\) is an initial object
+\(\varnothing\) of \(\mathcal C\) (cf. I, 1.8).
+Let \(R\) be the sieve of \(S\) with basis \(\{S_1,S_2\}\);
+then \((F\amalg G)(R)\) is the disjoint union of
+\(F(S)\amalg G(S)\) and of \(F(S_i)\times G(S_j)\) for \(i\ne j\),
+hence \(F\amalg G\) is not a sheaf in general.
+On the other hand, if \(\mathcal C\) is the category with a single
+object \(S\) and \(\mathrm{id}_S\) as its only morphism, endowed
+with the topology defined by \(J(S)=\{R_\varnothing,S\}\),
+then the only separated presheaves are \(R_\varnothing\) and
+\(X=h_S\) (which is a sheaf), and \(X\amalg X\) is not separated.}
+
+(ii) Consider an equivalence relation in the category of presheaves:
+\[
+\xymatrix{X\ar@<.5ex>[r]^u\ar@<-.5ex>[r]_v & Y }
+\]
+and let \(w:Y\to Z\) be the quotient.
+If \(X\) is a sheaf and \(Y\) is separated, then \(Z\) is separated.
+
+(iii) Consider an amalgamated sum in the category of presheaves,
+where \(u,u'\) are monomorphisms:
+\[
+\xymatrix{
+ & Y\ar[dr] & \\
+X\ar[ur]^u\ar[dr]_{u'} & & V\\
+ & Y'\ar[ur] & }.
+\]
+If \(Y,Y'\) are separated and \(X\) is a sheaf, then \(V\) is separated.
+\end{lemma}
+\begin{proof}
+(i) Set \(X=\coprod_i X_i\). Let \(S\in\Ob\mathcal C\) and
+\(\tau:R\hookrightarrow S\) be a refinement of \(S\), and let
+\(x_1,x_2\) be two elements of \(X(S)\) such that
+\(x_1\circ\tau=x_2\circ\tau\); there exist indices \(i,j\) such that
+\(x_1\in X_i(S)\), \(x_2\in X_j(S)\).
+Since \(R\ne R_\varnothing\), there exists a morphism
+\(\phi:T\to R\), with \(T\in\Ob\mathcal C\).
+Then \(x_1\circ\tau\circ\phi=x_2\circ\tau\circ\phi\), and since
+\(X(T)\) is the disjoint union of the \(X_k(T)\), this implies \(i=j\).
+Then, since \(X_i\) is separated and is a subobject of \(X\), the
+map \(X_i(S)\to X_i(R)\to X(R)\) is injective, hence \(x_1=x_2\).
+This proves that \(X\) is separated.
+
+Let us prove (iii). Consider the morphisms \(i:Y\to V\) and
+\(j:Y'\to V\), and let \(K\) be the kernel of:
+\[
+\xymatrix{Y\times Y'\ar@<.5ex>[r]^p\ar@<-.5ex>[r]_q & V },
+\]
+where \(p=i\circ\mathrm{pr}_1\), \(q=j\circ\mathrm{pr}_2\).
+Let \(S\in\Ob(\mathcal C)\).
+Since \(u,u'\) are monomorphisms, one may identify \(X(S)\) with
+its image in \(Y(S)\) (resp. \(Y'(S)\)); denote by \(Z(S)\)
+(resp. \(Z'(S)\)) the complement.
+Then \(V(S)\) is identified with the disjoint union of
+\(Z(S),Z'(S),X(S)\), and one easily sees that the maps
+\(i(S):Y(S)\to V(S)\), \(j(S):Y'(S)\to V(S)\) are injective,
+and that the map
+\[
+(u\times u')(S):X(S)\longrightarrow K(S)
+\]
+is bijective. Consequently \(i,j\) are monomorphisms, and
+\(u\times u':X\to K\) is an isomorphism.
+
+Set \(U=Y\amalg Y'\), and let \(\tau:R\hookrightarrow S\) be
+a refinement of \(S\); one has a commutative diagram:
+\[
+\xymatrix{U(S)\ar[r]^{U(\tau)}\ar[d] & U(R)\ar[d]\\
+V(S)\ar[r]_{V(\tau)} & V(R) }.
+\]
+Let \(v_1,v_2\in V(S)\) have the same image in \(V(R)\).
+By definition of \(V\), \(v_1,v_2\) lift to elements \(y_1,y_2\)
+of \(U(S)\); denote by \(z_1,z_2\) their images in \(U(R)\).
+Then \(z_1,z_2\) have the same image in \(V(R)\).
+
+Since \(i:Y\to V\), \(j:Y'\to V\) are monomorphisms, the maps
+\(Y(R)\to V(R)\), \(Y'(R)\to V(R)\) are injective.
+Thus, since \(Y,Y'\) are separated, if \(y_1,y_2\) both belong to
+\(Y(S)\) or to \(Y'(S)\), then \(y_1=y_2\).
+Otherwise one may assume that \(y_1\in Y(S)\), \(y_2\in Y'(S)\),
+hence \(z_1\in Y(R)\), \(z_2\in Y'(R)\).
+But then, since \(i\circ z_1=j\circ z_2\), the morphism
+\(z_1\boxtimes z_2:R\to Y\times Y'\) factors through \(K=X\).
+Since moreover \(X(R)=X(S)\) (because \(X\) is a sheaf), there
+exists \(x\in X(S)\) such that
+\(u(x)\circ\tau=z_1=y_1\circ\tau\) and
+\(u'(x)\circ\tau=z_2=y_2\circ\tau\), whence, since \(Y,Y'\)
+are separated, \(u(x)=y_1\), \(u'(x)=y_2\), and thus \(v_1=v_2\).
+This proves that \(V\) is separated.
+
+Let us prove (ii). First remark that the morphism of presheaves
+\[
+X\xrightarrow{u\boxtimes v}K,
+\]
+where \(K\) denotes the kernel of the pair of morphisms
+\(w\circ\mathrm{pr}_i:Y\times Y\to Z\), is an isomorphism.
+Indeed, for every \(T\in\Ob\mathcal C\), \(X(T)\) is an
+equivalence relation in \(Y(T)\), so that the diagram
+\[
+\xymatrix{
+X(T)\ar[r]^{u\boxtimes v} & Y(T)\times Y(T)
+\ar@<.5ex>[r]^{w\circ\mathrm{pr}_1}
+\ar@<-.5ex>[r]_{w\circ\mathrm{pr}_2} & Z(T) }
+\]
+is exact in the category of sets.
+
+Now let \(S\in\Ob\mathcal C\) and \(g_1,g_2:S\to Z\) be two
+morphisms which agree on a refinement \(\tau:R\hookrightarrow S\)
+of \(S\). Since \(S\in\Ob\mathcal C\), one has
+\(Z(S)=Y(S)/X(S)\), by construction of \(Z\), and hence there
+exist morphisms \(f_1,f_2:S\to Y\) such that \(wf_i=g_i\).
+Then \(wf_1\tau=wf_2\tau\), hence, by the preceding argument,
+there exists a morphism \(\phi:R\to X\) such that
+\(u\phi=f_1\tau\), \(v\phi=f_2\tau\).
+Since \(X\) is a sheaf, there exists \(\psi:S\to X\) such that
+\(\phi=\psi\tau\), and one therefore has in \(Y(R)\) the equalities:
+\[
+u\psi\tau=f_1\tau,\qquad v\psi\tau=f_2\tau.
+\]
+Since \(Y(S)\to Y(R)\) is injective (\(Y\) being separated),
+this implies \(u\psi=f_1\), \(v\psi=f_2\), whence \(g_1=g_2\).
+This proves that \(Z\) is separated.
+\end{proof}
+
+\begin{lemma}{4.4.6}\label{IV.4.4.6}
+\nde{The statement of the lemma and its proof have been given in detail.}
+(i) Let \(\{F_i\xrightarrow{f_i}F\}\) be a family of morphisms
+of presheaves, and let \(G\subset F\) be the image presheaf.
+Then the following diagram in \(\widehat{\mathcal C}\) is exact:
+\[
+\xymatrix{
+(\coprod_i F_i)\times_G(\coprod_j F_j)
+\ar@<.5ex>[r]^{\mathrm{pr}_1}\ar@<-.5ex>[r]_{\mathrm{pr}_2}
+ & \coprod_i F_i\ar[r] & G }
+\]
+that is, for every presheaf \(H\), the following diagram of sets is exact:
+\[
+\xymatrix{
+\Hom(G,H)\ar[r] & \prod_i\Hom(F_i,H)
+\ar@<.5ex>[r]^p\ar@<-.5ex>[r]_q
+ & \prod_{i,j}\Hom(F_i\times_G F_j,H) }.\tag{*}
+\]
+
+(ii) Every covering family of morphisms of sheaves is universal
+effective epimorphic.
+\end{lemma}
+\begin{proof}
+(i) Let \(H\) be a presheaf.
+The map \(f^*\) which associates to a morphism \(\phi:G\to H\)
+the family of morphisms \(\phi\circ f_i:F_i\to H\) is injective,
+for, for every \(S\in\Ob\mathcal C\), \(\phi(S)\) is determined
+by the \((\phi\circ f_i)(S)\), since the family
+\(f_i(S):F_i(S)\to G(S)\) is surjective.
+It is clear that the image of \(f^*\) is contained in \(\Ker(p,q)\).
+Conversely, let \(\phi_i:F_i\to H\) be a family of morphisms
+such that, for every \(i,j\), the diagram below is commutative:
+\[
+\xymatrix{F_i\times_G F_j\ar[r]\ar[d] & F_j\ar[d]^{\phi_j}\\
+F_i\ar[r]_{\phi_i} & H }.
+\]
+Then, for every \(S\), the map \(\coprod_i F_i(S)\to H(S)\)
+factors uniquely through a map \(\phi(S):G(S)\to H(S)\),
+and this defines a morphism \(\phi:G\to H\) such that
+\(f^*(\phi)=(\phi_i)\). This proves the exactness of sequence
+(*), and point (i).
+
+Let us prove (ii). Since the notion of covering family is stable
+under base extension, it suffices to show that every covering
+family is effective epimorphic. Thus let \(\{F_i\to F\}\) be a
+covering family of morphisms of sheaves, and let \(G\) be the
+image presheaf of this family. Since the family is covering,
+the monomorphism \(G\hookrightarrow F\) is too, hence, by
+4.3.12, one has \(a(G)=F\).
+
+On the other hand, since \(G\hookrightarrow F\) is a monomorphism,
+the fibered products \(F_i\times_G F_j\), \(F_i\times_F F_j\)
+are the same. Thus, by (i), the following diagram of sets is exact,
+for every presheaf \(H\):
+\[
+\xymatrix{
+\Hom(G,H)\ar[r] & \prod_i\Hom(F_i,H)
+\ar@<.5ex>[r]^p\ar@<-.5ex>[r]_q
+ & \prod_{i,j}\Hom(F_i\times_F F_j,H) }.\tag{**}
+\]
+If \(H\) is moreover a sheaf, one has
+\[
+\Hom(G,H)=\Hom(a(G),H)=\Hom(F,H),
+\]
+and then (**) shows that \(\{F_i\to F\}\) is indeed an effective
+epimorphic family in the category \(\widetilde{\mathcal C}\)
+of sheaves.
+\end{proof}
+
+\begin{lemma}{4.4.7}\label{IV.4.4.7}
+Every family of morphisms of sheaves \(\{F_i\to F\}\) factors
+into a covering family \(\{F_i\to G\}\) and a monomorphism \(G\to F\).
+\end{lemma}
+\begin{proof}
+Indeed, it suffices to take for \(G\) the image sheaf of the given family.
+\end{proof}
+
+\begin{proof}[Proof of Proposition 4.4.3]
+One has seen in 4.4.6 that (iii) implies (ii), and evidently
+(ii) implies (i). Finally let \(\{F_i\to F\}\) be an epimorphic
+family; by Lemma 4.4.7, it factors into a covering family followed
+by a monomorphism. But the latter, being dominated
+\nde{We recall (cf. N.D.E. (17)) that a morphism \(g:G\to H\)
+is said to be dominated by a family of morphisms \(F_i\to H\)
+if this family factors through \(g\).}
+by an epimorphic family, is an epimorphism, hence an isomorphism by 4.4.4.
+\end{proof}
+
+\begin{remark}{4.4.8}\label{IV.4.4.8}
+\nde{To agree with later references, the numbering of the original,
+which had two nos.\ 4.4.7, has been corrected.}
+Since the image presheaf of the family \(\mathcal F\) is separated,
+the construction of the associated sheaf shows that the conditions
+of Proposition 4.4.3 are also equivalent to the following:
+
+(v) For every \(S\in\Ob\mathcal C\), every \(f\in F(S)\) is
+locally in the image of \(\mathcal F\), that is:
+
+(vi) For every \(S\in\Ob\mathcal C\) and every \(f\in F(S)\),
+the set of \(S'\to S\) such that the image of \(f\) in \(F(S')\)
+is in the image of one of the \(F_i(S')\) is a refinement of \(S\).
+
+(vii) (If the topology is defined by a pretopology \(R\).)
+For every \(S\in\Ob\mathcal C\) and every \(f\in F(S)\), there
+exists a family \(\{S_j\to S\}\in R(S)\) such that for every \(j\)
+the image \(f_j\) of \(f\) in \(F(S_j)\) is in the image of one
+of the \(F_i(S_j)\).
+\end{remark}
+
+\begin{remark}{4.4.8.bis}\label{IV.4.4.8.bis}
+If the sheaf \(F\) is representable, the preceding conditions
+are also equivalent to:
+
+(viii) The set of \(T\to F\) (\(T\in\Ob\mathcal C\)) such that
+there exist an \(i\) and a commutative diagram
+\[
+\xymatrix{F_i\ar[r] & F\\ T\ar[u]\ar[ur] & }
+\]
+is a refinement of \(F\).
+
+Indeed, if (viii) is satisfied, the image presheaf of the \(F_i\)
+is dominated by\nde{\og majorizes\fg{} has been replaced by
+\og is dominated by\fg, cf. N.D.E. (17).} a refinement of \(F\),
+which implies that the family is covering.
+Conversely, one applies (vi) to \(\mathrm{id}_F\in F(F)\).
+
+This condition is expressed in figurative language as follows:
+locally on \(F\), there exists an \(i\) such that \(F_i\to F\)
+possesses a section. In particular a morphism \(G\to F\), where
+\(G\) is a sheaf and \(F\) a representable sheaf, will be covering
+if and only if it possesses a section locally (on \(F\)).
+\end{remark}
+
+\nde{Lemmas 4.4.8.1 and 4.4.8.2 have been added.}
+The following lemmas will be useful in VIB, 8.1 and 8.2.
+
+\begin{lemma}{4.4.8.1}\label{IV.4.4.8.1}
+Let \(Q\subset P\) be presheaves of groups on \(\mathcal C\),
+with \(Q\) normal in \(P\). Suppose that \(P\) is separated
+and that \(Q\) is a sheaf. Then the presheaf of groups \(P/Q\)
+is separated. Consequently one has
+\[
+a(P/Q)=L(P/Q)=\varinjlim_{R\in J(S)}(P/Q)(R).
+\]
+\end{lemma}
+\begin{proof}
+It suffices to show the first assertion, for the second follows
+from it by 4.3.11 (iv) and (ii).
+Let \(S\in\Ob\mathcal C\), let \(R\) be a sieve of \(S\), and
+let \(y\in P(S)/Q(S)\) have the identity as its image in \((P/Q)(R)\).
+One must show that \(y=1\). Now, by hypothesis, the morphism
+\(P(S)\to P(R)\) (resp. \(Q(S)\to Q(R)\)) is injective
+(resp. an isomorphism), and in the commutative diagram below
+the upper row is exact:
+\[
+\xymatrix@C=1.5em{
+1\ar[r] & Q(S)\ar[r]\ar[d]_{\simeq} & P(S)\ar[r]\ar@{^{(}->}[d]
+ & P(S)/Q(S)\ar[r]\ar[d] & 1\\
+1\ar[r] & Q(R)\ar[r] & P(R)\ar[r] & (P/Q)(R) & }.
+\]
+The result will follow if one shows that the lower row is exact.
+Let \(f:R\to P\) have the identity as its image in \((P/Q)(R)\),
+and let \(\phi:T\to R\), with \(T\in\Ob\mathcal C\).
+Then \(f\circ\phi\) is the identity of
+\((P/Q)(T)=P(T)/Q(T)\), i.e. \(f\circ\phi\in Q(T)\).
+Thus \(\phi\mapsto f\circ\phi\) is a functorial map
+\(R(T)\to Q(T)\), hence defines a morphism of functors
+\(\pi:R\to Q\) such that \(\pi(\mathrm{id}_R)=f\), whence \(f\in Q(R)\).
+This proves the exactness of the lower row, and the lemma is proved.
+\end{proof}
+
+\begin{lemma}{4.4.8.2}\label{IV.4.4.8.2}
+Let \(H\subset G\) be presheaves of groups on \(\mathcal C\).
+
+(i) If \(H\) is normal in \(G\), then \(L(H)\) is normal in \(L(G)\).
+
+(ii) If \(H\) is central in \(G\), then \(L(H)\) is central in \(L(G)\).
+\end{lemma}
+\begin{proof}
+Let \(S\in\Ob\mathcal C\); one must show (cf. I 2.3.6) that
+\(L(H)(S)\) is normal (resp. central) in \(L(G)(S)\).
+Let \(h\in L(H)(S)\), \(g\in L(G)(S)\); there exist a sieve \(R\)
+of \(S\) and elements \(h'\in H(R)\), \(g'\in G(R)\) such that
+\(h=z_R(h')\), \(g=z_R(g')\) (notation of 4.3.10).
+Since \(z_R\) is a morphism of groups,
+\(ghg^{-1}h^{-1}=z_R(g'h'g'^{-1}h'^{-1})\).
+In case (i), one has \(g'h'g'^{-1}h'^{-1}\in H(R)\), whence
+\(ghg^{-1}h^{-1}\in LH(S)\); in case (ii),
+\(g'h'g'^{-1}h'^{-1}=1\), hence \(ghg^{-1}h^{-1}=1\).
+\end{proof}
+
+\begin{proposition}{4.4.9}\label{IV.4.4.9}
+Every equivalence relation in \(\widetilde{\mathcal C}\) is universal
+effective (3.3.3): let \(R\) be a \(\widetilde{\mathcal C}\)-equivalence
+relation in the sheaf \(X\); then the sheaf associated to the
+separated presheaf
+\[
+i(X)/i(R):S\longmapsto X(S)/R(S)
+\]
+is a universal effective quotient of \(X\) by \(R\).
+\end{proposition}
+\begin{proof}
+Let \(X/R\) be the quotient sheaf of \(X\) by \(R\), which exists
+by 4.4.1 (ii): \(X/R=a(i(X)/i(R))\).
+We must show that \(X\to X/R\) is a universal effective
+epimorphism, and that the morphism \(f:R\to X\times_{X/R}X\)
+is an isomorphism. The first assertion has already been proved
+(4.4.3). As for \(f\), it comes, by application of the functor \(a\),
+from the morphism \(i(R)\to i(X)\times_{i(X/R)}i(X)\) or,
+since \(i(X)/i(R)\) is separated (4.4.5 (ii)), so that
+\(i(X)/i(R)\to i(X/R)\) is a monomorphism, from the canonical
+morphism \(i(R)\to i(X)\times_{i(X)/i(R)}i(X)\).
+
+One is therefore reduced to proving the same assertion in the
+category of presheaves. But \(i(X)/i(R)\) is the presheaf
+\(S\mapsto X(S)/R(S)\), and one is reduced to proving the
+analogous assertion in the category of sets, where it is immediate.
+\end{proof}
+
+\begin{proposition}{4.4.10}\label{IV.4.4.10}
+Under the conditions of 4.4.9, let \(Y\) be a subsheaf of \(X\).
+Denote by \(R_Y\) the equivalence relation induced in \(Y\) by \(R\).
+Then the canonical morphism (3.1.6)
+\[
+Y/R_Y\longrightarrow X/R
+\]
+is a monomorphism: it identifies \(Y/R_Y\) with a subsheaf of
+\(X/R\), which is the image sheaf of the composite morphism
+\[
+Y\longrightarrow X\longrightarrow X/R.
+\]
+\end{proposition}
+\begin{proof}
+The morphism of presheaves
+\[
+i(Y)/i(R_Y)=i(Y)/i(R)_{i(Y)}\longrightarrow i(X)/i(R)
+\]
+is a monomorphism. Since the functor \(a\) is left exact
+(4.3.16), it transforms monomorphisms into monomorphisms, and thus
+\[
+Y/R_Y\longrightarrow X/R
+\]
+is a monomorphism. The last assertion follows from the commutative diagram
+\[
+\xymatrix{Y\ar[r]\ar[d] & X\ar[d]\\
+Y/R_Y\ar[r] & X/R },
+\]
+and the fact that \(Y\to Y/R_Y\) is covering.
+\end{proof}
+By virtue of this proposition, we shall always identify \(Y/R_Y\)
+with a subsheaf of \(X/R\).

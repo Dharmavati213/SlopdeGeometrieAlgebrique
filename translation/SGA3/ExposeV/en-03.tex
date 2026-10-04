@@ -1,0 +1,112 @@
+Now there are at most $n$ prime ideals $t$ of $A_1$ such that $\delta_1^{-1}(t)=y$ (cf. loc. cit., prop. 3), so, by the ``Prime ideal avoidance lemma'' (loc. cit., II, §1, prop. 3), there would be an $a\in x$ belonging to none of the $\delta_0^{-1}(t)$. Consequently, $\delta_0(a)$ would belong to none of these ideals $t$, and therefore, by the lemma below, the norm $N_{\delta_1}(\delta_0(a))$ would not belong to $y$ (one calculates this norm by regarding $A_1$ as an algebra over $A_0$ by means of the homomorphism $\delta_1$; one has $N_{\delta_1}(\delta_0(a))=\sigma_n$ with the notation of a)). Now, since $(-1)^{n-1}\sigma_n=a^n+\sum_{i=1}^{n-1}(-1)^i\sigma_i a^{n-i}$, this norm belongs to $B\cap x=B\cap y$, whence the contradiction.
+\begin{lemma}{4.1.1}\label{V.4.1.1}
+Let $A\to A'$ be a morphism of commutative rings making $A'$ a projective $A$-module of rank $n$. Let $\mathfrak p\in\Spec(A)$, let $\mathfrak q_1,\ldots,\mathfrak q_r$ be the elements of $\Spec(A')$ above $\mathfrak p$, and let $a\in A'$. Then $a$ belongs to $\mathfrak q_1\cup\cdots\cup\mathfrak q_r$ if and only if its norm $N(a)$ belongs to $\mathfrak p$.
+\end{lemma}
+Indeed, replacing $A$ and $A'$ by the localizations $A_{\mathfrak p}$ and $A'_{\mathfrak p}$, one reduces to the case where $(A,\mathfrak p)$ is local and $A'$ semilocal, with $\Spec(A')=\{\mathfrak q_1,\ldots,\mathfrak q_r\}$.
+% typo: printed mojibake in ``remplaçant'' -> replacing.
+% typo?: kept as printed: Spec(A') is written here, rather than its maximal spectrum.
+In this case, $A'$ is a free $A$-module of rank $n$ (cf. Bourbaki, Alg. comm. II, §3.2, cor. 2 of prop. 5), and $N(a)$ is the determinant of the endomorphism $\ell_a:a'\mto aa'$ of $A'$; one therefore has the following equivalences:
+\[
+N(a)\notin\mathfrak p\iff N(a)\text{ invertible}\iff\ell_a\text{ invertible}\iff a\notin\mathfrak q_1\cup\cdots\cup\mathfrak q_r.
+\]
+\textbf{c)} Proof of (i):
+
+Put $Y=\Spec B$ and $p=\Spec i$, where $i$ is the inclusion of $B$ into $A_0$. By a), the morphism $p:X_0\to Y$ is surjective. We shall first show that $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of all ringed spaces: indeed, it follows from b) that the underlying set of $\Spec B$ is obtained from the underlying set of $X_0$ by identifying the points $x$ and $y$ such that there exists $z\in X_1$ with $d_1z=y$, $d_0z=x$. Moreover, since $i$ is integral, $p=\Spec i$ is closed, so that $Y$ has the quotient topology of that of $X_0$. It follows that $p$ is open. Indeed, let $U'$ be any open subset of $X_0$; since $d_1$ is surjective and finite locally free, hence faithfully flat and of finite presentation, and therefore open, the saturation $U=d_1(d_0^{-1}(U'))$ of $U'$ for the equivalence relation defined by $X_*$ is open. Then $p(U')=p(U)$ is open, since $Y$ has the quotient topology.
+
+Finally, it follows from the choice of $B$ and from the fact that $p,d_0$ and $d_1$ are affine that the canonical sequence of sheaves of rings
+\[
+\xymatrix{\OO_Y\ar[r]&p_*(\OO_{X_0})\ar@<.5ex>[r]^{p_*(\delta_1)}\ar@<-.5ex>[r]_{p_*(\delta_0)}&p_*(d_{0*}(\OO_{X_1}))=p_*(d_{1*}(\OO_{X_1}))}
+\]
+is exact.
+
+It remains to show that $(Y,p)$ is also the cokernel of $(d_0,d_1)$ in the category of schemes (more generally in that of spaces ringed in local rings). Let, then, $q:X_0\to Z$ be a morphism of schemes such that $qd_0=qd_1$. By what precedes, there is one and only one morphism of ringed spaces $r:Y\to Z$ such that $q=rp$. One must show that, for every $y\in Y$, the homomorphism $\OO_{r(y)}\to\OO_y$ induced by $r$ is local. This follows from the fact that $p$ is surjective, hence $y$ has the form $p(x)$, and that the homomorphism $\OO_{q(x)}\to\OO_x$ induced by $q$ is local.
+
+\textbf{d)} Proof of (ii): follows from a) and c).
+
+\textbf{e)} Proof of (iii):
+
+Recall that $\underline P$ denotes the underlying set of a scheme $P$, and $\underline d:\underline P\to\underline Q$ the map induced by a morphism $d:P\to Q$.
+\begin{lemma}{4.1.2}\label{V.4.1.2}\nde{This lemma, used several times in this exposé and in subsequent exposés (VIA, VIB), has been inserted. It appeared as Lemma VIB, 4.5.1 in the original edition of SGAD (1965).}
+Let $(A,\mathfrak m)$ be a local ring, $k$ its residue field, and $K$ an extension of the field $k$. Then there exists a local flat $A$-algebra $B$ such that $B/\mathfrak mB$ is $k$-isomorphic to $K$; moreover, one can choose $B$ finite and free over $A$ if $K$ has finite degree over $k$.
+\end{lemma}
+This is proved in EGA $0_{\mathrm{III}}$, 10.3.1, where it is further shown that one can choose $B$ noetherian if $A$ is. For the reader's convenience, let us indicate the proof.
+
+Put $A'=A[T]$, where $T$ is an indeterminate. If $K=k(T)$, let $\mathfrak p=\mathfrak mA'$ and $B=A'_{\mathfrak p}$. Then $B/\mathfrak mB\simeq k[T]_{(0)}=k(T)$, and $B$ is flat over $A'$, which is a free $A$-module, so $B$ is flat over $A$.
+
+If $K=k(t)=k[t]$, where $t$ is algebraic over $k$, put $B=A'/(F)$, where $F\in A'$ is a monic polynomial whose image in $k[T]$ is the minimal polynomial $f$ of $t$ over $k$. Then $B$ is a free $A$-module of finite rank $\deg(F)=\deg(f)$. In particular, $B$ is integral over $A$, so every maximal ideal of $B$ contains $\mathfrak m$. Since $B/\mathfrak mB\simeq k[T]/(f)\simeq K$, it follows that $B$ is local with maximal ideal $\mathfrak mB$. This already shows that if $[K:k]<\infty$, one can choose $B$ finite and free over $A$.
+
+In the general case, let $(t_i)_{i\in I}$ be a system of generators of $K$ over $k$, and give $I$ a well-order (that is, a total order $\leq$ such that every nonempty subset of $I$ has a least element). For every $i\in I$, denote by $k_i$ (resp. $k_{<i}$) the subfield of $K$ generated by the $t_j$ for $j\leq i$ (resp. $j<i$). By adding an element if necessary, one can suppose that $I$ has a greatest element $\xi$, so that $K=k_\xi$. Consider the subset $J$ of $I$ consisting of those indices $i$ for which there exists an inductive system $(A_j)_{j\leq i}$ of local flat $A$-algebras such that $A_j/\mathfrak mA_j\simeq k_j$ and $A_j$ is flat over $A_\ell$ for every $\ell<j$. Suppose $I-J$ nonempty; let $i$ be its least element and let $A'=\varinjlim_{j<i}A_j$. Since tensor product commutes with inductive limits, $A'$ is flat over $A$ and over each $A_j$ for $j<i$, and one has $A'/\mathfrak mA'\simeq A'\otimes_A(A/\mathfrak m)\simeq k_{<i}$. Moreover, $A'$ is local with maximal ideal $\mathfrak mA'$. Indeed, if $x=f_j(x_j)$ is not invertible, then $x_j$ is not invertible, hence belongs to the maximal ideal $\mathfrak mA_j$ of $A_j$, whence $x\in\mathfrak mA'$. It then follows from the monogenic case treated above that there exists a local flat $A'$-algebra $A_i$ such that $A_i/\mathfrak mA_i\simeq k_{<i}(t_i)=k_i$; then $A_i$ is flat over each $A_j$ for $j<i$, and hence $i\in J$, contrary to the hypothesis. This contradiction shows that $J=I$, and therefore $A_\xi$ answers the question. Lemma 4.1.2 is proved.
+
+Let us now prove 4.1 (iii). Recall that $\underline P$ denotes the underlying set of a scheme $P$, and $\underline d:\underline P\to\underline Q$ the map induced by a morphism $d:P\to Q$. One can then express b) by saying that the map
+\[
+\underline d_0\boxtimes\underline d_1:\underline X_1\to\underline X_0\times_{\underline Y}\underline X_0
+\]
+with components $\underline d_0$ and $\underline d_1$ is surjective; now this map factors as follows
+\[
+\underline X_1\xrightarrow{\underline{d_0\boxtimes d_1}}\underline{X_0\times_YX_0}\xrightarrow{q}\underline X_0\times_{\underline Y}\underline X_0,
+\]
+$q$ being the canonical map; the image of $\underline{d_0\boxtimes d_1}$ therefore contains all points $v$ of $X_0\times_YX_0$ such that $\{v\}=q^{-1}(q(v))$. This last condition\nde{Note the permutation of the pages in Lecture Notes 151: the actual order is 265--266--268--269--267--270--271.} holds, in particular, if $v$ is rational over $Y$, that is, if the residue field $\kappa(v)$ of $v$ is identified with the residue field $\kappa(w)$ of the image $w$ of $v$ in $Y$.
+
+If $v\in X_0\times_YX_0$ is not rational over $Y$, let $w$ again be its image in $Y$. By Lemma 4.1.2, there exists a local ring $C$ with radical $\mathfrak m$ and a local flat homomorphism $f:\OO_w\to C$ such that $C/\mathfrak m$ is isomorphic to $\kappa(v)$ as a $\kappa(w)$-algebra. If one puts $Y'=\Spec C$ and denotes by $\pi:Y'\to Y$ the morphism induced by $f$, it is clear that the canonical projection from $(X_0\times_YX_0)\times_YY'$ to $X_0\times_YX_0$ sends to $v$ a point $v'$ of $(X_0\times_YX_0)\times_YY'$ that is rational over $Y'$. Since
+\[
+(X_0\times_YX_0)\times_YY'\simeq(X_0\times_YY')\times_{Y'}(X_0\times_YY'),
+\]
+and since the hypotheses of Theorem 4.1 and the preceding results, in particular point b), remain valid after the base change $\pi:Y'\to Y$, $v'$ is the image of an element $u'\in X_1\times_YY'$ under the morphism obtained from $d_0\boxtimes d_1$ by base change. If $u$ is the image of $u'$ in $X_1$, one indeed has $v=(d_0\boxtimes d_1)(u)$.
+
+\textbf{f)} Proof of (iv):\nde{The following lemma, taken from [DG70], I, §5, Prop. 1.5 (see also the proof of EGA IV$_3$, 8.11.5), has been added; it is used implicitly in the original and explicitly in [DG70], III, §2, 4.6. It is also useful in th. 7.1 below.}
+\begin{lemma}{4.1.3}\label{V.4.1.3}
+If a monomorphism of schemes $f:T\to Z$ is a finite morphism, it is a closed immersion.
+\end{lemma}
+Indeed, by covering $Z$ with affine open subsets $Z_i$ and replacing $f$ by the induced morphisms $f^{-1}(Z_i)\to Z_i$, one reduces ($f$ being finite, hence affine) to the case $Z=\Spec B$ and $T=\Spec A$.
+% typo: printed mojibake in ``remplaçant'' -> replacing.
+Since $f$ is a monomorphism, the diagonal morphism $T\to T\times_ZT$ is an isomorphism (EGA I, 5.3.8), i.e. $A\otimes_BA\to A$ is an isomorphism. Consequently, for every maximal ideal $\mathfrak m$ of $B$, one has an isomorphism
+\[
+(A/\mathfrak mA)\otimes_k(A/\mathfrak mA)\simeq(A/\mathfrak mA),
+\]
+where one has put $k=B/\mathfrak m$. Since $A$ is finite over $B$, $A/\mathfrak mA$ is a finite-dimensional $k$-vector space of dimension $d$, and the isomorphism above implies that $d=0$ or $1$, so that the morphism $k=B/\mathfrak m\to A/\mathfrak mA$ is surjective.
+% typo: printed mojibake in ``entraîne'' -> implies.
+Thus, by Nakayama's lemma ($A$ being finite over $B$), the morphism $B_{\mathfrak m}\to A_{\mathfrak m}$ is surjective. It follows that the morphism of $B$-modules $B\to A$ is surjective (since its cokernel $C$ satisfies $C_{\mathfrak m}=0$ for every $\mathfrak m$, and is therefore zero). This proves the lemma.
+
+Let us now prove (iv). By hypothesis $X_0=\Spec A_0$, $X_1=\Spec A_1$, and, for $i=0,1$, the morphism $\delta_i:A_0\to A_1$ makes $A_1$ a finitely generated $A_0$-module; thus, a fortiori, the morphism $A_0\otimes_BA_0\to A_1$ is finite.
+
+One further supposes that $d=d_0\boxtimes d_1:X_1\to X_0\times_YX_0$ is a monomorphism; thus, by the preceding lemma, the morphism $A_0\otimes_BA_0\to A_1$ is surjective.
+
+We shall show that it is an isomorphism (in the course of the proof we shall show that $p:X_0\to Y$ is finite locally free). It suffices to show that, for every prime ideal $\mathfrak p$ of $B$, the homomorphism $(A_0)_{\mathfrak p}\otimes_{B_{\mathfrak p}}(A_0)_{\mathfrak p}\to(A_1)_{\mathfrak p}$ with components $\delta_{0\mathfrak p}$ and $\delta_{1\mathfrak p}$ is bijective. In other words, one may suppose $B$ local. It then follows from b) that $(A_0)_{\mathfrak p}$ is semilocal; indeed, if $\mathfrak m$ is a maximal ideal of $(A_0)_{\mathfrak p}$, the other maximal ideals have the form $\delta_0^{-1}(\mathfrak n)$, where $\mathfrak n$ ranges over the prime ideals of $A_1$ such that $\delta_1^{-1}(\mathfrak n)=\mathfrak m$; the assertion therefore follows from the fact that there are at most $n=[A_1:A_0]$ such prime ideals $\mathfrak n$. By making a faithfully flat base change if necessary,\nde{Cf. Lemma 4.1.2.} one can also suppose that the residue field of $B$ is infinite, so that one can use the following lemma:
+\begin{lemma}{4.2}\label{V.4.2}
+Let $B$ be a local ring with infinite residue field, $A$ a semilocal ring, and $i:B\to A$ a homomorphism sending the maximal ideal $\mathfrak n$ of $B$ into the radical $\mathfrak r$ of $A$. Let $M$ be a free $A$-module of rank $n$ and $N$ a $B$-submodule of $M$ generating $M$ as an $A$-module. Then $N$ contains a basis of $M$ over $A$.
+\end{lemma}
+Indeed, recall that a sequence $m_1,\ldots,m_n$ of elements of $M$ is an $A$-basis of $M$ if and only if the canonical images of $m_1,\ldots,m_n$ in $M/\mathfrak rM$ form a basis of $M/\mathfrak rM$ over $A/\mathfrak r$. One can therefore replace $M$ by $M/\mathfrak rM$, $N$ by $N/(N\cap\mathfrak rM)$, $A$ by $A/\mathfrak r$ and $B$ by $B/\mathfrak m$. In this case the lemma is easy (if $A$ is a product of fields $K_1\times\cdots\times K_r$, one can identify $M$ with the module $K_1^n\times\cdots\times K_r^n$; if $x_j$ is an element of $N$ whose $j$th component in $K_1^n\times\cdots\times K_r^n$ is nonzero, show that a certain linear combination $x$ of the $x_j$ with coefficients in $B$ has all its components nonzero; then replace $M$ by $M/Ax$ and proceed by induction on $n$).
+% typo?: kept as printed: B/m, although the maximal ideal was denoted n in the statement.
+
+We apply the preceding lemma in the following situation: $B=B$, $A=A_0$, $i$ is the inclusion of $B$ into $A_0$, $M=A_1$ regarded as an $A_0$-module by means of the homomorphism $\delta_1$, $N=\delta_0(A_0)$. Indeed, since $d_0\boxtimes d_1:X_1\to X_0\times_YX_0$ is a closed immersion, the homomorphism $A_0\otimes_BA_0\to A_1$ with components $\delta_0$ and $\delta_1$ is surjective; this means precisely that $\delta_0(A_0)$ generates the $A_0$-module $A_1$.
+
+Let, then, $a_1,\ldots,a_n$ be elements of $A_0$ such that $\delta_0(a_1),\ldots,\delta_0(a_n)$ form a basis of $A_1$ over $A_0$. If we show that $a_1,\ldots,a_n$ is a basis of $A_0$ over $B$, it will follow that the homomorphism $A_0\otimes_BA_0\to A_1$ sends the basis $(1\otimes a_i)_{1\leq i\leq n}$ to the basis $(\delta_0(a_i))_{1\leq i\leq n}$, and is therefore bijective. Consequently, if $\varepsilon:\ZZ^n\to A_0$ is the homomorphism of abelian groups sending the natural basis of $\ZZ^n$ to $a_1,\ldots,a_n$, it suffices to prove that the map $B\otimes_{\ZZ}\ZZ^n\to A_0$ with components $i$ and $\varepsilon$ is bijective.
+
+Now diagram $(0,1,2)^*$ considered at the beginning of this proof induces the following commutative diagram:
+\[
+\xymatrix{A_2&A_1\ar@<.5ex>[l]^{\delta'_1}\ar@<-.5ex>[l]_{\delta'_0}&A_0\ar[l]_{\delta_0}\\A_1\otimes_{\ZZ}\ZZ^n\ar[u]^{u_2}&A_0\otimes_{\ZZ}\ZZ^n\ar@<.5ex>[l]^{\delta_1\otimes\ZZ^n}\ar@<-.5ex>[l]_{\delta_0\otimes\ZZ^n}\ar[u]_{u_1\simeq}&B\otimes_{\ZZ}\ZZ^n\ar[l]_{i\otimes\ZZ^n}\ar[u]_{u_0},}
+\]
+where $u_0,u_1$ and $u_2$ have components respectively $i$ and $\varepsilon$, $\delta_1$ and $\delta_0\varepsilon$, $\delta'_2$ and $\delta'_0\delta_0\varepsilon$. We know that $u_1$ is an isomorphism. Since the two squares on the left of $(0,1,2)^*$ are cocartesian, $u_2$ is bijective. Now the two horizontal rows of our diagram are exact; thus $u_0$ is bijective.\nde{What follows has been added.} This shows that $A_0$ is a locally free $B$-module of rank $n$, and, by the preceding reductions, this implies that $\delta_0\otimes\delta_1:A_0\otimes_BA_0\to A_1$ is an isomorphism. This completes the proof of Theorem 4.1 in the special case considered ($X_0$ affine and $d_1$ locally free of constant rank $n$).
+
+\sgasection{5}{Passage to the quotient by a finite flat groupoid (general case)}
+\textbf{a)} Let $U^{(n)}$ be the largest open subset of $X_0$ above which $d_1$ is finite locally free of rank $n$. One knows that $X_0$ is the direct sum of the $U^{(n)}$. It follows, on the other hand, from the two cartesian squares
+\[
+\xymatrix{X_2\ar[r]^{d'_0}\ar[d]_{d'_2}&X_1\ar[d]^{d_1}\\X_1\ar[r]_{d_0}&X_0}
+\qquad\text{and}\qquad
+\xymatrix{X_2\ar[r]^{d'_1}\ar[d]_{d'_2}&X_1\ar[d]^{d_1}\\X_1\ar[r]_{d_1}&X_0}
+\]
+that the inverse images of $U^{(n)}$ under $d_0$ and $d_1$ both coincide with the largest open subset of $X_1$ above which $d'_2$ is locally free of rank $n$;\nde{Indeed, since $d_0$ (resp. $d_1$) is surjective, flat and finite, hence faithfully flat and affine, $d'_2$ has rank $n$ above a neighborhood of a point $x$ of $X_1$ if and only if $d_1$ has rank $n$ above a neighborhood of $d_0(x)$ (resp. $d_1(x)$).} one therefore has $d_0^{-1}(U^{(n)})=d_1^{-1}(U^{(n)})$, so that the groupoid $X_*$ is the direct sum of the groupoids $X_*^{(n)}$ induced by $X_*$ on the open and closed subsets $U^{(n)}$. Consequently, as one easily sees, it suffices to prove Theorem 4.1 for each $X_*^{(n)}$: one is reduced to the case where $d_1$ is finite locally free of rank $n$.
+
+\textbf{b)} We are now in a position to prove our theorem in the general case.
+
+By a), one can suppose $d_1$ locally free of rank $n$. Let, then, $(Y,p)$ be a cokernel of $(d_0,d_1)$ in the category of all ringed spaces. The argument at the end of paragraph 4.c) shows that, to prove 4.1 (i), it suffices to prove that $Y$ is a scheme and $p:X_0\to Y$ a morphism of schemes. By Lemma 1.2, the question is local on $Y$: let $y\in Y$ and $x\in X_0$ satisfy $p(x)=y$; if $x$ has an affine saturated open neighborhood $U$, $p(U)$ will be an affine open subset of $Y$ by §4, and $p|_U$ will be a morphism of schemes. It therefore suffices to prove that every $x\in X_0$ has an affine saturated open neighborhood $U$. Here is how one proceeds (the proof is taken from SGA 1, VIII, cor. 7.6).
+\[
+\xymatrix@C=.25em{d_1(d_0^{-1}(x))\subset&U=(V_f)'\ar@{}[r]|{\subset}&V_f\ar@{}[r]|{\subset}&V'\ar@{}[r]|{\subset}&V\ar@{}[r]|{\subset}&X_0\\&\substack{\text{largest saturated}\\\text{open subset of }V_f}\ar[u]&\substack{\text{distinguished affine}\\\text{open subset of }V}\ar[u]&\substack{\text{largest saturated}\\\text{open subset of }V}\ar[u]&\text{affine open subset}\ar[u]&}
+\]
+By condition b) of 4.1, there exists an affine open subset $V$ of $X_0$ containing $d_1(d_0^{-1}(x))$;\nde{One has $d_1(d_0^{-1}(x))=d_0(d_1^{-1}(x))$, cf. N.D.E. (16) in Theorem 4.1.} if $F=X_0-V$, $d_1(d_0^{-1}(F))$ is closed because $d_1$ is integral, and $V'=X_0-d_1(d_0^{-1}(F))$ is the largest saturated open subset contained in $V$. Since $V'$ is a neighborhood of the finite set $d_1(d_0^{-1}(x))$, there exists a section $f$ of the structure sheaf of $V$ which vanishes on $V-V'$ and such that $d_1(d_0^{-1}(x))$ is contained in the open subset $V_f$ of $V$ consisting of the points where $f$ does not vanish. We shall see that the largest saturated open subset $(V_f)'$ of $V_f$ is affine, and thus answers the question.
+
+Indeed, let $Z(f)=V'-V_f$. Then $d_0^{-1}(Z(f))$ is the set of points of $d_0^{-1}(V')=d_1^{-1}(V')$ where the image $d_0^*(f)$ of $f$ under the map induced by $d_0$ vanishes. On the other hand, since $d_1$ induces a locally free morphism of rank $n$ from $d_0^{-1}(V')=d_1^{-1}(V')$ onto $V'$,\nde{The reference to Lemma 4.1.1 has been added, cf. [DG70], III, §5.2, p. 313.} by Lemma 4.1.1, $d_1(d_0^{-1}(Z(f)))$ is the set of points where the norm $N$ of $d_0^*(f)$ for the morphism $d_1$ vanishes. It follows that $(V_f)'=V'-d_1(d_0^{-1}(Z(f)))$ is the set of points of $V_f$ where $N$ does not vanish; consequently $(V_f)'$ is affine.
+
+This proves 4.1 (i); assertions (ii), (iii), and the first part of (iv) are then clear. Finally, let us show the consequences noted at the end of point (iv) (cf. [Ray67a], th. 1 (iii)).
+
+By hypothesis, the groupoid $X_*$ comes from an equivalence relation $i:R\to X_0\times X_0$ ($i$ thus being an immersion, cf. N.D.E. (19)), and one has established that $R$ is effective (cf. Exp. IV, 3.3.2) and that $p:X_0\to Y=X_0/R$ is a surjective finite locally free morphism, hence, in particular, faithfully flat and of finite presentation.

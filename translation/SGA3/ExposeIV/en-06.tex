@@ -1,0 +1,385 @@
+% French PDF pp. 31--36; proof of 4.3.10 continues from en-05.
+Now consider \(f=i_Rg\) and the fibered product \(R'=R\times_S T\):
+\nde{Denote by \(p\) the projection \(R'\to R\). Since \(i_R\) is a
+monomorphism, one has \(p=gi_{R'}\). Let \(g'\) be the section of
+\(i_{R'}\) defined by \(g\); then \(pg'=g\), hence
+\(pg'i_{R'}=gi_{R'}=p\); this implies \(g'i_{R'}=\mathrm{id}_{R'}\),
+and thus \(i_{R'}:R'\to T\) is an isomorphism, with inverse \(g'\).}
+\[
+\xymatrix@R=2.5em{
+P\ar[r]^{\ell_P} & LP\\
+R\ar[u]^u\ar[r]^{i_R} & S\ar[u]_{z_R(u)}\\
+R'\ar[u]^p\ar[r]_{i_{R'}}^{\sim}
+ & T\ar[u]_f\ar[ul]_g }.
+\]
+By definition of \(\ell_P\), \(\ell_Pug=z_R(u)f\) (this is the
+particular case of what one is trying to prove in which \(i_R\) is
+an isomorphism), and \(z_R(u)f=z_R(u)i_Rg\).
+
+(ii) and (iv) merely express the definition of \(\Hom(S,LP)\) as an
+inductive limit.
+
+(iii): If \(K\) denotes the kernel of the pair \((u,v)\), for each
+morphism \(f:S\to Q\), where \(S\) is representable, \(K\times_Q S\)
+is a subfunctor of the kernel of the pair of arrows \(uf,vf:S\to P\).
+By (T' 0), one is therefore reduced to proving the assertion in the
+case where \(Q=S\) is representable. But in this case it follows from
+(ii) and (iv) that \(K\) contains a refinement of \(S\), hence is a
+refinement of \(S\).
+\end{proof}
+
+Finally one verifies that \(P\mapsto LP\) defines a functor
+\[
+L:\widehat{\mathcal C}\longrightarrow\widehat{\mathcal C}
+\]
+and \(P\mapsto\ell_P\) a morphism of functors
+\[
+\ell:\mathrm{Id}_{\widehat{\mathcal C}}\longrightarrow L.
+\]
+Let us now state the essential result:
+
+\begin{proposition}{4.3.11}\label{IV.4.3.11}
+(i) If \(P\) is any presheaf, \(LP\) is separated and
+\(\ell_P:P\to LP\) is covering (4.2.3).
+
+(ii) If \(P\) is a sheaf, \(P\to LP\) is an isomorphism.
+
+(iii) For every presheaf \(P\) and every separated presheaf
+(resp. sheaf) \(F\), the map
+\[
+\Hom(\ell_P,F):\Hom(LP,F)\longrightarrow\Hom(P,F)
+\]
+is injective (resp. bijective).
+
+(iv) If \(P\) is separated, \(\ell_P:P\to LP\) is a covering
+monomorphism (hence \(P\) is a refinement of \(LP\)), and \(LP\)
+is a sheaf.
+\end{proposition}
+\begin{proof}
+(i) First, \(P\to LP\) is covering; indeed, for every morphism
+\(S\xrightarrow{v}LP\), there exists, by 4.3.10 (i) and (ii), a
+refinement \(R\) of \(S\) such that one has a commutative diagram:
+\[
+\xymatrix@R=2.3em{
+ & P\ar[r]^{\ell_P} & LP\\
+ & P\times_{LP}S\ar[u]^{v'}\ar[r] & S\ar[u]_v\\
+R\ar[uur]\ar[ur]\ar[urr]_{i_R} & & },
+\]
+hence \(P\times_{LP}S\to S\) is covering. It follows, by (C 0),
+that \(P\to LP\) is covering.
+
+If, on the other hand, two morphisms \(S\xrightarrow{v_1,v_2}LP\)
+induce the same morphism from a refinement \(R\) of \(S\), let us show
+that they are equal. There exist refinements \(R_i\), \(i=1,2\), and
+morphisms \(u_i:R_i\to P\) such that \(z_{R_i}(u_i)=v_i\).
+Taking \(R\) sufficiently small, one may assume that \(R_1=R_2=R\).
+It then follows from the commutative diagram of 4.3.10 (i) that
+\(\ell_Pu_1=\ell_Pu_2\). By \loccit{} (iii), \(u_1\) and \(u_2\)
+therefore agree on a refinement of \(R\), hence a refinement of \(S\),
+which implies \(z_R(u_1)=z_R(u_2)\), by \loccit{} (iv).
+
+(ii) is clear, for if \(P\) is a sheaf,
+\(\Hom(S,P)\to\Hom(R,P)\) is already an isomorphism for every
+refinement \(R\) of \(S\).
+
+(iii) Let \(u,v\) be two morphisms \(LP\to F\) such that
+\(u\ell_P=v\ell_P\). To show that \(u=v\), it suffices to see that
+\(uf=vf\) for every \(f:S\to LP\), where \(S\) is representable.
+Now there exists a refinement \(R\) of \(S\) and a morphism
+\(g:R\to P\) with \(f=z_R(g)\). Then \(uf\) and \(vf\) agree on \(R\)
+with \(u\ell_Pg=v\ell_Pg\), hence agree on \(R\).
+If \(F\) is separated, one therefore has \(uf=vf\).
+Suppose now that \(F\) is a sheaf; one then has the commutative diagram
+\[
+\xymatrix{
+P\ar[r]^{\ell_p}\ar[d] & LP\ar[d]\ar[dl]\\
+F\ar[r]_{\sim} & LF }
+\]
+which shows that \(\Hom(\ell_P,F)\) is surjective.
+
+(iv) Let us show that if \(P\) is separated, \(P\to LP\) is a
+monomorphism. For this, it suffices to see that for every pair of
+morphisms \(u,v:S\to P\) (where \(S\) is representable) such that
+\(\ell_Pu=\ell_Pv\), one has \(u=v\).
+Now \loccit{} (iii) shows that \(u\) and \(v\) agree on a refinement
+of \(S\), hence agree, since \(P\) is separated.
+This shows that \(P\to LP\) is a monomorphism; since it is covering
+by (i), one obtains that \(P\) is a refinement of \(LP\).
+
+Finally let us show that \(LP\) is a sheaf.
+Since one already knows by (i) that it is a separated presheaf,
+it suffices to see that for every \(S\in\Ob\mathcal C\), every
+refinement \(R\) of \(S\), and every morphism \(h:R\to LP\), there
+exists a morphism \(u:S\to LP\) with \(ui_R=h\).
+Now \(R'=P\times_{LP}R\) is a refinement of \(R\), since \(P\) is
+a refinement of \(LP\), hence \(R'\) is a refinement of \(S\).
+Set \(u=z_{R'}(h')\):
+\[
+\xymatrix{
+P\ar[r]^{\ell_p} & LP\\
+R'\ar[u]^{h'}\ar[r]_j & R\ar[u]^h\ar[r]_{i_R} & S\ar[ul]^u }.
+\]
+One has \(ui_{R'}=\ell_Ph'=hj\), hence \(ui_Rj=hj\).
+Since \(R'\) is a refinement of \(R\) and \(LP\) is separated,
+4.3.2 shows that \(ui_R=h\).
+\end{proof}
+
+\begin{corollary}{4.3.12}\label{IV.4.3.12}
+\nde{The statement of the corollary and its proof have been given in detail.}
+Let \(F\) be a sheaf and \(R\) a sub-\(\widehat{\mathcal C}\)-object
+of \(F\). Then \(R\) is a separated presheaf,
+\(\ell_R:R\to LR\) is a covering monomorphism, and one has a
+commutative diagram
+\[
+\xymatrix{
+R\ar@{^{(}->}[rr]^i\ar@{^{(}->}[dr]_{\ell_R} & & F\\
+ & LR\ar@{^{(}->}[ur]_j & }.
+\]
+Consequently, \(R\) is a refinement of \(F\) if and only if \(j\)
+is an isomorphism.
+\end{corollary}
+\begin{proof}
+One has already noted that \(R\) is separated and that \(j\) is a
+monomorphism, cf. N.D.E. (24) and (26).
+By 4.3.11 (iv), \(\ell_R\) is a covering monomorphism.
+Thus, if \(j\) is an isomorphism, \(R\) is a refinement of \(F\).
+Conversely, if \(i\) is covering, \(j\) is too, hence is an
+isomorphism by 4.3.2.1.
+\end{proof}
+
+\begin{remark}{4.3.13}\label{IV.4.3.13}
+If \(J'(S)\) is a cofinal subset of \(J(S)\), one has
+\[
+\Hom(S,LP)=\varinjlim_{R\in J'(S)}\Hom(R,P).
+\]
+In particular, let \(S\mapsto R(S)\) be a pretopology generating
+the given topology. The functor \(L\) may be described with the aid
+of the covering families that are elements of \(R(S)\).
+By making the formula above explicit, one recovers the construction of [MA].
+\end{remark}
+
+Denote by \(i\) the inclusion functor
+\(\widetilde{\mathcal C}\to\widehat{\mathcal C}\).
+The following theorem follows from Proposition 4.3.11:
+
+\begin{theorem}{4.3.14}\label{IV.4.3.14}
+There exists a unique functor \(a:\widehat{\mathcal C}\to
+\widetilde{\mathcal C}\) such that the following diagram is commutative
+\[
+\xymatrix{
+\widehat{\mathcal C}\ar[r]^L\ar[d]_a & \widehat{\mathcal C}\ar[d]^L\\
+\widetilde{\mathcal C}\ar[r]_i & \widehat{\mathcal C} },
+\]
+i.e. for every presheaf \(P\), \(L(L(P))\) is a sheaf.
+The functors \(i,a\) are adjoint to one another: for every presheaf
+\(P\) and every sheaf \(F\), one has an isomorphism functorial in \(P,F\)
+\[
+\Hom_{\widehat{\mathcal C}}(P,i(F))
+\simeq\Hom_{\widetilde{\mathcal C}}(a(P),F),
+\]
+that is,
+\[
+\Hom(P,F)\simeq\Hom(a(P),F).
+\]
+\end{theorem}
+
+\begin{definition}{4.3.15}\label{IV.4.3.15}
+The sheaf \(a(P)\) is said to be \emph{associated} to the presheaf \(P\).
+\end{definition}
+\begin{remark}{4.3.16}\label{IV.4.3.16}
+Since the functor \(L\) is constructed with the aid of projective
+limits and filtered inductive limits, it commutes with finite
+projective limits.\nde{In particular, if \(K\) is the kernel of a
+pair of morphisms of presheaves \(u,v:Q\rightrightarrows P\),
+then \(LK\) is the kernel of \(Lu,Lv:LQ\rightrightarrows LP\)
+(this will be used in 4.4.5).}
+Moreover, if one identifies \(L(P\times P)\) with \(LP\times LP\),
+the morphism \(\ell_{P\times P}\) is identified with
+\(\ell_P\times\ell_P\). It follows, for example, that if \(P\) is a
+presheaf of groups, \(LP\) is also canonically endowed with the
+structure of a presheaf of groups and the canonical morphism
+\(P\to LP\) is a morphism of groups. The same holds for the functor
+\(a\), which shows that if \(P\) is a presheaf of groups and \(F\)
+a sheaf of groups, one has an isomorphism
+\[
+\Hom_{\widehat{\mathcal C}\text{-gr.}}(P,i(F))
+\simeq\Hom_{\widetilde{\mathcal C}\text{-gr.}}(a(P),F).
+\]
+See [D] for more details.
+\end{remark}
+
+\numpara{4.3.17}\label{IV.4.3.17}
+If \(\mathcal V\) is any category, one calls a \emph{presheaf on
+\(\mathcal C\) with values in \(\mathcal V\)} a contravariant
+functor from \(\mathcal C\) to \(\mathcal V\).
+To define sheaves with values in \(\mathcal V\), we must first
+recall the definition of the \emph{projective limit} of a functor.
+If \(\mathcal R,\mathcal V\) are two categories, and
+\[
+F:\mathcal R^\circ\longrightarrow\mathcal V
+\]
+is a contravariant functor from \(\mathcal R\) to \(\mathcal V\),
+one denotes by \(\varprojlim F\) the object of
+\(\widehat{\mathcal V}\) defined as follows:
+% typo?: kept as printed: Hom_V(F(U),X) in the displayed formula.
+\[
+(\varprojlim F)(X)=\Hom_{\widehat{\mathcal V}}(X,\varprojlim F)
+=\varprojlim_{U\in\Ob\mathcal R}\Hom_{\mathcal V}(F(U),X)
+=\Hom(c_X,F),
+\]
+where \(X\) is a variable object of \(\mathcal V\), where \(c_X\)
+denotes the contravariant functor from \(\mathcal R\) to
+\(\mathcal V\) which sends each object of \(\mathcal R\) to \(X\)
+and each arrow of \(\mathcal R\) to \(\mathrm{id}_X\), and where
+the last \(\Hom\) is taken in the category
+\(\Hom(\mathcal R^\circ,\mathcal V)\).
+If \(\mathcal R\) possesses a final object \(e_{\mathcal R}\),
+one has \(\varprojlim F=F(e_{\mathcal R})\).
+If \(\mathcal V\) is the category of sets, the functor
+\(\varprojlim\) is identified with the functor \(\Gamma\).
+
+If \(S\) is an object of \(\mathcal C\) and \(R\) a sieve of \(S\),
+denote by \(\mathcal R\) the full subcategory of \(\mathcal C_{/S}\)
+whose set of objects is \(E(R)\), and by
+\(i_R:\mathcal R\to\mathcal C_{/S}\) the canonical functor.
+If \(P\) is a presheaf on \(\mathcal C\) with values in
+\(\mathcal V\), it defines by restriction a functor
+\(P_S:(\mathcal C_{/S})^\circ\to\mathcal V\).
+The functor \(i_R\) induces a morphism of \(\widehat{\mathcal V}\):
+\[
+P(S)=P_S(S)=\varprojlim P_S\longrightarrow\varprojlim(P_S\circ i_R).
+\]
+One denotes by \(\varprojlim_R P\) the object
+\(\varprojlim(P_S\circ i_R)\) of \(\widehat{\mathcal V}\).
+By 4.1.6, Definition 4.3.1 generalizes to the
+
+\begin{definition}{4.3.18}\label{IV.4.3.18}
+The presheaf \(P\) on \(\mathcal C\) with values in \(\mathcal V\)
+is said to be \emph{separated} (resp. a \emph{sheaf}) if, for
+every \(S\in\Ob\mathcal C\) and every \(R\in J(S)\), the
+canonical morphism of \(\widehat{\mathcal V}\)
+\[
+P(S)\longrightarrow\varprojlim_R P
+\]
+is a monomorphism (resp. an isomorphism).
+\end{definition}
+
+In the case where \(\mathcal V\) is the category (Gr.) of groups
+(or any other category of sets endowed with algebraic structures
+defined by finite projective limits), one can see (cf. [D]) that
+there is an equivalence between the following notions: a presheaf
+on \(\mathcal C\) with values in (Gr.) whose underlying presheaf
+of sets is a sheaf, and a group in the category of sheaves of sets.
+Taking these identifications into account, we shall always
+consider sheaves with values in a category of sets endowed with
+algebraic structures defined by finite projective limits as
+sheaves of sets endowed, in the category \(\widetilde{\mathcal C}\),
+with the corresponding algebraic structure.
+
+\sgasection{4.4}{Exactness properties of the category of sheaves}
+\begin{theorem}{4.4.1}\label{IV.4.4.1}
+(i) Arbitrary projective limits exist in \(\widetilde{\mathcal C}\);
+\og they are calculated in \(\widehat{\mathcal C}\)\fg, i.e. the
+inclusion functor \(i:\widetilde{\mathcal C}\to\widehat{\mathcal C}\)
+commutes with projective limits: if \((X_\alpha)\) is a projective
+system of sheaves, the presheaf
+\[
+\varprojlim i(X_\alpha):S\longmapsto\varprojlim X_\alpha(S)
+\]
+is a sheaf, and one has
+\(i(\varprojlim X_\alpha)=\varprojlim i(X_\alpha)\).
+
+(ii) Arbitrary inductive limits exist in \(\widetilde{\mathcal C}\):
+if \((X_\alpha)\) is an inductive system of sheaves, one has
+\[
+\varinjlim X_\alpha=a(\varinjlim i(X_\alpha)),
+\]
+where \(\varinjlim i(X_\alpha)\) is the inductive-limit presheaf of
+the \(i(X_\alpha)\):
+\[
+\varinjlim i(X_\alpha):S\longmapsto\varinjlim X_\alpha(S).
+\]
+
+(iii) The functor \(a:\widehat{\mathcal C}\to\widetilde{\mathcal C}\)
+commutes with arbitrary inductive limits and finite projective limits.
+\end{theorem}
+\begin{proof}
+Assertions (i) and (ii) follow formally from the adjunction formula
+(4.3.14), and\nde{The original has been modified here.}
+the first assertion of (iii) follows from (ii).
+Finally, the second assertion of (iii) has already been pointed
+out in 4.3.16.
+\end{proof}
+
+\begin{scholium}{4.4.2}\label{IV.4.4.2}
+This theorem allows one to use the following method to prove in
+\(\widetilde{\mathcal C}\) an assertion concerning simultaneously
+arbitrary inductive limits and finite projective limits (for example:
+\og every epimorphism is universal effective\fg, cf. below).
+One begins by proving the corresponding assertion in the category
+of sets, then extends it \og argument by argument\fg{} to the
+category of presheaves. Next, one uses the preceding theorem to
+pass from the category of presheaves to the category of sheaves.
+One will see many examples of this method in what follows
+(4.4.3, 4.4.6, 4.4.9, etc.).
+\end{scholium}
+
+Finally let us remark that the assertions concerning the category
+of presheaves are formally corollaries of the assertions concerning
+the category of sheaves. Indeed, it suffices to take as topology
+the least fine topology (\og chaotic\fg), that is, the topology
+defined by \(J(S)=\{S\}\) for every \(S\in\Ob\mathcal C\);
+every functor is indeed a sheaf for this topology.
+
+\begin{proposition}{4.4.3}\label{IV.4.4.3}
+Let \(\mathcal F=\{F_i\to F\}\) be a family of morphisms of sheaves.
+The following conditions are equivalent:
+\begin{enumeratei}
+\item \(\mathcal F\) is an epimorphic family.
+\item \(\mathcal F\) is a universal effective epimorphic family (1.13).
+\item \(\mathcal F\) is covering (4.2.3).
+\item The image sheaf of \(\mathcal F\) (that is, the sheaf associated
+to the image presheaf of \(\mathcal F\) (4.1.2)) is \(F\).
+\end{enumeratei}
+\end{proposition}
+The equivalence of (iii) and (iv) follows from 4.3.12.
+The other equivalences will follow from the following lemmas.
+
+\begin{lemma}{4.4.4}\label{IV.4.4.4}
+Let \(f:X\to Y\) be a monomorphism of sheaves which is an
+epimorphism. Then \(f\) is an isomorphism.
+\end{lemma}
+\begin{proof}
+The lemma is first clear in the category of sets.
+Let us next prove it in the category of presheaves.
+Consider the presheaf
+\[
+V:S\longmapsto Y(S)\amalg^{X(S)}Y(S);
+\]
+it is the amalgamated sum of \(Y\) and \(Y\) under \(X\) in the
+category of presheaves.\nde{The rest of the proof has been
+slightly modified.} Denote by \(i_1,i_2\) the two
+\og coordinate\fg{} morphisms \(Y\to V\).
+If \(X\to Y\) is an epimorphism in the category of presheaves,
+then \(i_1=i_2\). In this case, for each \(S\), the map
+\(X(S)\to Y(S)\) is surjective; since it is also injective,
+it is a bijection, and thus \(X\to Y\) is an isomorphism.
+
+Finally let us work in the category \(\widetilde{\mathcal C}\)
+of sheaves. By 4.4.1 (ii), the amalgamated sum in
+\(\widetilde{\mathcal C}\) of the sheaves \(Y,Y\) under \(X\)
+is the sheaf \(Z\) associated to the presheaf \(V\).
+Consider the diagram of morphisms:
+\[
+\xymatrix{
+X\ar[r]^f & Y\ar@<.5ex>[r]^{i_1}\ar@<-.5ex>[r]_{i_2}
+ & V\ar[r]^\tau & Z=a(V). }
+\]
+One has \(i_1f=i_2f\), hence \(\tau i_1f=\tau i_2f\), and thus
+\(\tau i_1=\tau i_2\), since \(f\) is an epimorphism in
+\(\widetilde{\mathcal C}\). By point (iii) of the lemma below,
+the presheaf \(V\) is separated, hence \(\tau\) is a monomorphism
+(4.3.11 (iv)). Thus \(i_1=i_2\), and one has seen above that
+this implies that \(f:X\to Y\) is an isomorphism.
+This proves Lemma 4.4.4, once one has verified that \(V\) is separated.
+\end{proof}

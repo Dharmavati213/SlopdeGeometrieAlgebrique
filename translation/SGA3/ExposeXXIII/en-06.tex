@@ -1,0 +1,236 @@
+% Source PDF pp. 31--37; original pp. 313--322.
+Observe that 5.1 also follows from 3.5.1 (the relations of 3.5.1 can be written using only the datum of $\mathscr R(G)$); observe also that 5.1 follows from the most elementary part of the proof of 4.1 (one need not consider the ``exceptional isogenies'' of 4.1.7 and 4.1.8).
+\begin{corollary}{5.2}\label{XXIII.5.2}\textup{(``Uniqueness theorem'').}
+Let S be a scheme, G and $G'$ two splittable S-groups (Exp. XXII, 1.13). If G and $G'$ have the same type (Exp. XXII, 2.6), they are isomorphic.
+\end{corollary}
+\begin{corollary}{5.3}\label{XXIII.5.3}
+Let S be a scheme, G and $G'$ two splittable S-groups. The following conditions are equivalent:
+\begin{enumeratei}
+\item G and $G'$ are isomorphic.
+\item G and $G'$ are locally isomorphic for the \fpqc topology.
+\item There exists an $s\in S$ such that the s-groups $G_s$ and $G'_s$ have the same type.
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+Indeed, one obviously has (i) $\Rightarrow$ (ii) $\Rightarrow$ (iii). On the other hand, (iii) implies that $\mathscr R(G)=\mathscr R(G_s)=\mathscr R(G'_s)=\mathscr R(G')$, hence that G and $G'$ satisfy the condition of 5.2.
+\end{proof}
+\begin{corollary}{5.4}\label{XXIII.5.4}\textup{(``Uniqueness of Chevalley schemes'').}
+Let G and $G'$ be two reductive groups over $\ZZ$ possessing split maximal tori.\begingroup\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{In fact, one can prove that every $\ZZ$-torus is split.\begingroup\renewcommand{\thefootnote}{13}\ndemark\endgroup}\endgroup\ndetext{This follows from the fact that every $\ZZ$-torus is isotrivial (Exp. X, 5.16) and that every étale covering of $\Spec(\ZZ)$ is trivial.}
+The following conditions are equivalent:
+\begin{enumeratei}
+\item G and $G'$ are isomorphic.
+\item There exists $s\in\Spec(\ZZ)$ such that $G_s$ and $G'_s$ have the same type.
+\item $G_\CC$ and $G'_\CC$ have the same type.
+\end{enumeratei}
+\end{corollary}
+Indeed, G and $G'$ are splittable by Exp. XXII, 2.2.
+\begin{corollary}{5.5}\label{XXIII.5.5}\textup{(``Existence of outer automorphisms'').}
+Let S be a scheme, G a pinned S-group, and h an automorphism of the pinned root datum $\mathscr R(G)$. There exists a unique automorphism u of G respecting its pinning and such that $\mathscr R(u)=h$.
+\end{corollary}
+Let us make the preceding corollary explicit:
+\begin{corollary}{5.5.bis}\label{XXIII.5.5.bis}
+Let S be a scheme, G a split reductive S-group, and $R_+$ a system of positive roots of G. For each simple root $\alpha$, choose an isomorphism of vector groups $p_\alpha:\mathbf G_{\mathrm a,S}\isomto U_\alpha$. Let h be an automorphism of M permuting the positive roots and the corresponding coroots: if $\alpha\in R_+$, $h(\alpha)\in R_+$ and $h^\vee(\alpha^*)=h(\alpha)^*$. There exists a unique automorphism u of G inducing $D_S(h)$ on T and such that $u\circ p_\alpha=p_{h(\alpha)}$ for every simple root $\alpha$.
+\end{corollary}
+\begin{corollary}{5.6}\label{XXIII.5.6}
+Let G and $G'$ be two reductive S-groups. The following conditions are equivalent:
+\begin{enumerate}[label={},leftmargin=3.5em]
+\item[(i)] G and $G'$ are locally isomorphic for the \fpqc topology.
+\item[(i bis)] G and $G'$ are locally isomorphic for the étale topology.
+\item[(ii)] For every $s\in S$, $G_{\bar s}$ and $G'_{\bar s}$ are isomorphic.
+\item[(iii)] The functions $s\mto\text{type of }G_{\bar s}$ and $s\mto\text{type of }G'_{\bar s}$ are equal.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+Indeed, (i bis) $\Rightarrow$ (i) trivially, (i) $\Rightarrow$ (ii) by the principle of finite extension (EGA IV$_3$, 9.1.4), (ii) $\Rightarrow$ (iii) trivially; it remains to prove (iii) $\Rightarrow$ (i bis). Now one may suppose G and $G'$ splittable (Exp. XXII, 2.3), in which case the assertion follows from 5.3.
+\end{proof}
+\begin{corollary}{5.7}\label{XXIII.5.7}
+Let S be a scheme, G a reductive S-group, and $G'$ an affine, smooth S-group with connected fibers. Let $s\in S$ be such that $G_{\bar s}$ and $G'_{\bar s}$ are isomorphic; there then exists an $S'\to S$ which is étale and covers s such that $G_{S'}$ and $G'_{S'}$ are isomorphic.
+\end{corollary}
+Indeed, by Exp. XIX 2.5 and Exp. XXII 2.1, one may suppose G and $G'$ splittable reductive groups, and one is reduced to 5.3.
+
+When S is the spectrum of a field, one deduces from 5.6 and 5.7:
+\begin{corollary}{5.8}\label{XXIII.5.8}
+Let k be a field and G and $G'$ two reductive k-groups. The following conditions are equivalent:\nde{Another proof of this corollary, not using reduction to the case of rank 2 groups, was given by M. Takeuchi ([Ta83], Th. 4.6); see also [Ja87], II 1.14.}
+\begin{enumeratei}
+\item G and $G'$ have the same type.
+\item $G\otimes_k\bar k$ and $G'\otimes_k\bar k$ are isomorphic.
+\item There exists a finite separable extension K of k such that $G\otimes_k K$ and $G'\otimes_k K$ are isomorphic.
+\end{enumeratei}
+\end{corollary}
+\begin{corollary}{5.9}\label{XXIII.5.9}
+Let S be a nonempty scheme and $\mathscr R$ a root datum. The following conditions are equivalent:\nde{This corollary is made unnecessary by Exp. XXV, which shows the existence of a split group of type $\mathscr R$ over $\Spec(\ZZ)$, hence over any base S. (In fact, after XXV 1.3 one finds a reference to the present corollary to ensure that the reductive $\ZZ$-group obtained is split, but this already follows from XXII 2.2; \cf N.D.E. (3) of XXV.)}
+\begin{enumeratei}
+\item There exists a pinned S-group of type $\mathscr R$.
+\item There exists an S-group of type $\mathscr R$.
+\item There exists locally for \fpqc a reductive S-group of type $\mathscr R$.
+\end{enumeratei}
+\end{corollary}
+\begin{proof}
+The task is obviously to prove (iii) $\Rightarrow$ (i). To simplify the proof, suppose there exist a faithfully flat quasi-compact morphism $S'\to S$ and a reductive S$'$-group $G'$ of type $\mathscr R$. One may suppose $G'$ splittable; fix a pinning $E'$ of $G'$; write $\mathscr R=\mathscr R(G',E')$. The two inverse images of $(G',E')$ on $S''=S'\times_S S'$ are pinned groups $(G''_1,E''_1)$, $(G''_2,E''_2)$; one has canonical isomorphisms $p_i:\mathscr R(G''_i,E''_i)\isomto\mathscr R$, whence an isomorphism
+\[
+p=p_2^{-1}\circ p_1:\mathscr R(G''_1,E''_1)\to\mathscr R(G''_2,E''_2).
+\]
+By the uniqueness theorem, there exists a unique isomorphism
+\[
+f:(G''_1,E''_1)\isomto(G''_2,E''_2)
+\]
+such that $\mathscr R(f)=p$. One therefore has a gluing datum on $G'$; this is a descent datum.
+
+Indeed, one must check a compatibility condition between the inverse images of f on $S'''$, but it suffices to make this check on the transforms of these arrows under the functor $\mathscr R$, since the latter is fully faithful. Now p is indeed a descent datum, by construction, which shows that f is also one. Since $G'$ is affine, this descent datum is effective; since the pinning of $G'$ is stable under the descent datum, one easily checks that there exists a pinned S-group $(G,E)$ which gives $(G',E')$ by base extension and which is therefore of type $\mathscr R$.
+
+N.B. Naturally, in the language of fibered categories, the preceding proof becomes simpler (and comprehensible).
+\end{proof}
+\begin{corollary}{5.10}\label{XXIII.5.10}
+Let S be a nonempty scheme. Let $\mathscr R$ be a pinned root datum such that there exists a reductive S-group of type $\mathscr R$. Then there exists a pinned S-group of type $\mathscr R$, unique up to a unique isomorphism.
+\end{corollary}
+\begin{definition}{5.11}\label{XXIII.5.11}
+Under the preceding conditions, one will denote by $\mathrm{\acute Ep}_S(\mathscr R)$ the unique pinned S-group of type $\mathscr R$, by $T_S(\mathscr R)$ its canonical maximal torus, by $B_S(\mathscr R)$ its canonical Borel subgroup, \ldots
+\end{definition}
+If one has a morphism $S'\to S$ (S$'$ nonempty), one may identify $\mathrm{\acute Ep}_{S'}(\mathscr R)$ with $\mathrm{\acute Ep}_S(\mathscr R)\times_S S'$, etc. In particular, if $\mathrm{\acute Ep}_{\Spec(\ZZ)}(\mathscr R)$ exists (we shall see that this is always the case), one denotes it by $\mathrm{\acute Ep}(\mathscr R)$ and one has
+\[
+\mathrm{\acute Ep}_S(\mathscr R)=\mathrm{\acute Ep}(\mathscr R)\underset{\Spec(\ZZ)}{\times}S.
+\]
+One says that $\mathrm{\acute Ep}(\mathscr R)$ is the \emph{Chevalley group scheme of type $\mathscr R$}.
+\numpara{5.12}
+It therefore amounts to the same thing to say that the S-group sheaf G is a reductive S-group of type $\mathscr R$ or to say that it is locally isomorphic (for the étale or \fpqc topology) to $\mathrm{\acute Ep}_S(\mathscr R)$. Likewise, by the conjugacy theorems, it amounts to the same thing to say that $(G,T)$ is a reductive S-group of type $\mathscr R$ equipped with a maximal torus or that it is locally isomorphic to $(\mathrm{\acute Ep}_S(\mathscr R),T_S(\mathscr R))$; likewise with Borel subgroups or Killing pairs.
+
+\sgasection{6}{Chevalley systems}
+The explicit calculations of no. 3 have important numerical consequences. Let us first give the following definition:
+\begin{definition}{6.1}\label{XXIII.6.1}
+Let S be a scheme, and $(G,T,M,R)$ a split S-group. A \emph{Chevalley system} of G is a family $(X_\alpha)_{\alpha\in R}$ of elements
+\[
+X_\alpha\in\Gamma(S,\goth g^\alpha)^\times
+\]
+satisfying the following condition:
+
+(SC) for every pair $\alpha,\beta\in R$, one has
+\[
+\Ad(w_\alpha(X_\alpha))X_\beta=\pm X_{s_\alpha(\beta)}.
+\]
+\end{definition}
+Recall (Exp. XX, 3.1) that
+\[
+w_\alpha(X_\alpha)=\exp(X_\alpha)\exp(-X_\alpha^{-1})\exp(X_\alpha).
+\]
+Observe that (SC) implies in particular $X_{-\alpha}=\pm X_\alpha$ for $\alpha\in R$, by the relation (Exp. XX, 3.7) $\Ad(w_\alpha(X_\alpha))X_\alpha=-X_\alpha^{-1}$.
+% typo?: X_{-alpha}=+-X_alpha without inverse, kept as printed.
+\begin{proposition}{6.2}\label{XXIII.6.2}
+Every split group has a Chevalley system. More precisely, let $(\Delta,(X'_\alpha)_{\alpha\in\Delta})$ be a pinning (1.1) of the split group $(G,T,M,R)$; there then exists a Chevalley system $(X_\alpha)_{\alpha\in R}$ of G such that $X_\alpha=X'_\alpha$ for $\alpha\in\Delta$.
+\end{proposition}
+Let us first show that it suffices to check condition (SC) for $\alpha\in\Delta$; for every $\alpha\in R$, there exists a sequence $\{\alpha_i\}\subset\Delta$ such that $\alpha=s_{\alpha_1}\cdots s_{\alpha_n}(\alpha_{n+1})$, whence, applying condition (SC) for each $\alpha_i$,
+\[
+X_\alpha=\pm\Ad\bigl(w_{\alpha_1}(X_{\alpha_1})\cdots w_{\alpha_n}(X_{\alpha_n})\bigr)X_{\alpha_{n+1}}.
+\]
+By 3.1.1 (iii), one has
+\[
+\begin{split}
+w_{\alpha_1}(X_{\alpha_1})\cdots w_{\alpha_n}(X_{\alpha_n})&w_{\alpha_{n+1}}(X_{\alpha_{n+1}})\\
+{}\cdot w_{\alpha_n}(X_{\alpha_n})^{-1}\cdots w_{\alpha_1}(X_{\alpha_1})^{-1}&=\alpha^*(\pm1)w_\alpha(X_\alpha).
+\end{split}
+\]
+Now it suffices to observe that $w_{\alpha_i}(X_{\alpha_i})^{-1}=\alpha_i^*(-1)w_{\alpha_i}(X_{\alpha_i})$ and that for every pair of roots $(\beta,\gamma)$, one has $\beta(\gamma^*(-1))=(-1)^{(\gamma^*,\beta)}=\pm1$, which implies that if (SC) holds for the pairs $(\alpha_i,\gamma)$ $(\gamma\in R)$, it holds for every pair $(\alpha,\beta)$, $(\beta\in R)$.
+
+Let us now construct a system $(X_\alpha)_{\alpha\in R}$ in the following manner. For every $\alpha\in R$, choose a sequence $\{\alpha_i\}\subset\Delta$ as above and define $X_\alpha$ by
+% typo?: w_{alpha_i}(X_{alpha_1}) in first factor, kept as printed.
+\[
+X_\alpha=\Ad\bigl(w_{\alpha_i}(X_{\alpha_1})\cdots w_{\alpha_n}(X_{\alpha_n})\bigr)X'_{\alpha_{n+1}}.
+\]
+To check (SC), it suffices to prove:
+\begin{lemma}{6.3}\label{XXIII.6.3}
+Let $(G,T,M,R,\Delta,(X_\alpha)_{\alpha\in\Delta})$ be a pinned S-group; let $\alpha_i$ $(0\leq i\leq n+1)$ be a sequence of simple roots such that
+\[
+\operatorname{int}(s_{\alpha_1}\cdots s_{\alpha_n})(\alpha_{n+1})=\alpha_0.
+\]
+Then
+\[
+\Ad(w_{\alpha_1}\cdots w_{\alpha_n})X_{\alpha_{n+1}}=\pm X_{\alpha_0}.
+\]
+\end{lemma}
+\begin{proof}
+Arguing as in 2.3.4 with Tits's lemma (Exp. XXI 5.6), one is reduced to checking Lemma 6.3 in the following two cases:
+
+ a) G has semisimple rank at most 2 or b) $w_{\alpha_1}\cdots w_{\alpha_n}$ is a section of T. In case a), observe that 6.3 is a consequence of 6.2 and that 6.2 was checked in part (i) of 3.1.2 (resp. 3.2.1, resp. 3.3.1, resp. 3.4.1).
+% typo?: part (i), kept as printed.
+
+It therefore remains to prove 6.3 in case b), or, equivalently, that if $\{\alpha_i\}$ is a sequence of simple roots such that $s_{\alpha_1}\cdots s_{\alpha_n}=\mathrm{id}$, then $t=w_{\alpha_1}\cdots w_{\alpha_n}$ satisfies $\alpha(t)=\pm1$ for every root $\alpha\in R$. By the structure of the Weyl group (Exp. XXI, 5.1), the word $s_{\alpha_1}\cdots s_{\alpha_n}$ in the free group generated by the $s_\alpha$, $\alpha\in\Delta$, lies in the invariant subgroup generated by the $(s_\alpha s_\beta)^{n_{\alpha\beta}}$, $(\alpha,\beta)\in\Delta\times\Delta$. One is therefore reduced to the case where $s_{\alpha_1}\cdots s_{\alpha_n}$ has the form
+\[
+s_{\alpha_1}\cdots s_{\alpha_i}(s_{\alpha_{i+1}}s_{\alpha_{i+2}})^{n_{\alpha_{i+1}\alpha_{i+2}}}s_{\alpha_i}\cdots s_{\alpha_1}.
+\]
+Then one has
+\[
+t=s_{\alpha_1}\cdots s_{\alpha_i}(t_{\alpha_{i+1}\alpha_{i+2}}),
+\]
+and one is reduced to checking that for every pair of simple roots $(\alpha_1,\alpha_2)$ and every root $\beta\in R$, one has $\beta(t_{\alpha_1\alpha_2})=\pm1$, which is trivial, in view of the values of $t_{\alpha_1\alpha_2}$ calculated in \No 3 (part (i) of 3.1.2, 3.2.1, 3.3.1, 3.4.1).
+\end{proof}
+\begin{proposition}{6.4}\label{XXIII.6.4}
+Let $(G,T,M,R)$ be a split S-group, and $(X_\alpha)_{\alpha\in R}$ a Chevalley system of G. Let $\alpha$ and $\beta$ be two nonproportional roots; suppose
+\[
+\operatorname{long}(\alpha)\leq\operatorname{long}(\beta),\qquad\text{i.e.}\quad |(\beta^*,\alpha)|\leq |(\alpha^*,\beta)|.
+\]
+Let q and $p-1$ be the integers $\geq0$ such that the set of roots of the form $\beta+k\alpha$, $k\in\ZZ$, is
+\[
+\{\beta-(p-1)\alpha,\ldots,\beta,\ldots,\beta+q\alpha\}.
+\]
+(\Cf Exp. XXI, 2.3.5; by \loccit, one therefore has $-(\alpha^*,\beta)=q-p+1$.) Then the commutation relation between $U_\alpha$ and $U_\beta$ is given by the following table (which exhausts the possible cases, since the length of the preceding root chain is $p+q-1\leq3$), where for each $\gamma\in R$ one writes $p_\gamma(x)=\exp(xX_\gamma)$:
+\[
+\begin{array}{c@{\qquad}l}
+(p,q)&p_\beta(y)p_\alpha(x)p_\beta(-y)p_\alpha(-x)\\[.3em]
+(-,0)&=e\\[.3em]
+(1,1)&=p_{\alpha+\beta}(\pm xy)\\[.3em]
+(1,2)&=p_{\alpha+\beta}(\pm xy)p_{2\alpha+\beta}(\pm x^2y)\\[.3em]
+(1,3)&=p_{\alpha+\beta}(\pm xy)p_{2\alpha+\beta}(\pm x^2y)\\
+&\quad p_{3\alpha+\beta}(\pm x^3y)p_{3\alpha+2\beta}(\pm x^3y^2)\\[.3em]
+(2,1)&=p_{\alpha+\beta}(\pm2xy)\\[.3em]
+(2,2)&=p_{\alpha+\beta}(\pm2xy)p_{2\alpha+\beta}(\pm3x^2y)p_{\alpha+2\beta}(\pm3xy^2)\\[.3em]
+(3,1)&=p_{\alpha+\beta}(\pm3xy).
+\end{array}
+\]
+\end{proposition}
+\begin{proof}
+By Exp. XXI, 3.5.4, there exists a system of simple roots $\Delta$ of R satisfying: $\alpha\in\Delta$ and there exist $\alpha'\in\Delta$ and $a,b\in\QQ_+$ such that $\beta=a\alpha+b\alpha'$. Consider the pinning $(\Delta,(X_\alpha)_{\alpha\in\Delta})$ of G. The commutation relation to be checked is a relation between elements of $U_{\alpha\alpha'}$; one is therefore reduced to the explicit calculations of \No 3, and one concludes immediately by condition (SC).
+\end{proof}
+\begin{corollary}{6.5}\label{XXIII.6.5}\textup{(Chevalley's rule).}
+Let S be a scheme, and $(X_\alpha)_{\alpha\in R}$ a Chevalley system of the split S-group G. If $\alpha,\beta,\alpha+\beta\in R$, then
+\[
+[X_\alpha,X_\beta]=\pm p\,X_{\alpha+\beta},
+\]
+where p is the smallest integer $>0$ such that $\beta-p\alpha$ is not a root.
+\end{corollary}
+Indeed, since the assertion is symmetric in $\alpha$ and $\beta$, one may suppose $\operatorname{long}(\alpha)\leq\operatorname{long}(\beta)$, and one is reduced to 6.4.
+\begin{corollary}{6.6}\label{XXIII.6.6}
+Let S be a scheme such that $6\cdot1_S\ne0$ and $(G,T,M,R)$ a split S-group. If $R'$ is a subset of R such that
+\begin{equation}\tag{*}
+\goth g_{R'}=\goth t\oplus\coprod_{\alpha\in R'}\goth g^\alpha
+\end{equation}
+is a Lie subalgebra of $\goth g$, then $R'$ is a closed subset of R (Exp. XXI, 3.1.4).
+\end{corollary}
+\nde{We have added the following proof. Observe that it suffices that 2 and 3 be nonzero on S; for example the result holds for $S=\Spec(\ZZ/6\ZZ)$.}Indeed, let $(X_\gamma)_{\gamma\in R_+}$ be a Chevalley system of $\goth g$ and let $\alpha,\beta\in R'$ be such that $\alpha+\beta\in R$. By 6.5 and 6.4, one has
+% typo?: system indexed by R_+ and said to be of g, kept as printed.
+\[
+[X_\alpha,X_\beta]=\pm pX_{\alpha+\beta},\qquad\text{with }p\in\{1,2,3\}
+\]
+and since neither 2 nor 3 is zero on S, this implies, by (*), that $\goth g_{R'}$ contains $\goth g^{\alpha+\beta}$, and hence $\alpha+\beta\in R'$.\nde{On the other hand, let us point out that if $2=0$ on S and R is of type $C_n$, then the set $R'$ of short roots (which is a root system of type $D_n$) is not closed in R, but is a symmetric subset of type (R) of R (\cf XXII 5.4.2 and 5.4.10), i.e., there corresponds to it a subgroup $H_{R'}$ of type (R) of G with reductive fibers: this is in particular the case for the natural embedding (in characteristic 2) of $\mathrm{SO}(2n)$ in $\mathrm{Sp}(2n)$. Likewise, if $2=0$ on S and R is of type $F_4$ (resp. if $3=0$ on S and R is of type $G_2$), the set $R'$ of short roots (which is a root system of type $D_4$ (resp. $A_2$)) is not closed in R, but corresponds to a subgroup $H_{R'}$ of type (R) of G with reductive fibers.}
+\numpara{6.7}
+It is possible to specify the exact value of the various $\pm$ of this number, through the study of the group $\uNorm_G(T)$ and, more precisely, of the ``extended Weyl group'':
+\[
+W^*=N(\ZZ),\qquad\text{where }N=\uNorm_{\mathrm{\acute Ep}_{\ZZ}(\mathscr R)}(T_{\ZZ}(\mathscr R))
+\]
+(\cf 5.11), which is an extension of $W(\mathscr R)$ by an abelian group of type $(2,2,\ldots,2)$, which is ``responsible for the signs''\begingroup\renewcommand{\thefootnote}{*}\addtocounter{footnote}{-1}\footnote{\Cf J. Tits: \textit{Sur les constantes de structure et le théorème d'existence des algèbres de Lie semi-simples}, Publ. Math. I.H.É.S. \textbf{31} (1966), 21--58.}\endgroup\nde{See also [Ti66].}.
+\begin{remark}{6.7.1}\label{XXIII.6.7.1}
+\nde{We have added this remark.}Observe that, by point (i) of 3.1.2 and 3.n.1 $(n=2,3,4)$, the elements $w_\alpha$ and $w_\beta$ of $N(\ZZ)$ satisfy the ``braid relations'':
+\[
+w_\alpha w_\beta\cdots=w_\beta w_\alpha\cdots\qquad(n_{\alpha\beta}\text{ factors in each term}).
+\]
+(See also [Ti66], [BLie], \S IX.4, Ex. 12, and [Sp98], 9.3.2.)
+\end{remark}
+
+\begin{thebibliography}{BLie}
+\item[]\nde{Additional references cited in this exposé.}
+\bibitem[BLie]{XXIII.BLie} N. Bourbaki, \textit{Groupes et algèbres de Lie}, Chap. IX, Masson, 1982.
+\bibitem[Ja87]{XXIII.Ja87} J. C. Jantzen, \textit{Representations of algebraic groups}, Academic Press, 1987, 2nd ed., Amer. Math. Soc., 2003.
+\bibitem[Sp98]{XXIII.Sp98} T. A. Springer, \textit{Linear algebraic groups}, 2nd ed., Birkhäuser, 1998.
+\bibitem[St62]{XXIII.St62} R. Steinberg, \textit{Générateurs, relations et revêtements de groupes algébriques}, Colloque sur la théorie des groupes algébriques (Bruxelles 1962), Univ. Louvain \& Gauthier-Villars, 1962 (pp. 133--147 in R. Steinberg Collected Papers, Amer. Math. Soc., 1997).
+\bibitem[St67]{XXIII.St67} R. Steinberg, \textit{Lectures on Chevalley groups}, Yale University (1967).
+\bibitem[Ta83]{XXIII.Ta83} M. Takeuchi, \textit{A hyperalgebraic proof of the isomorphism and isogeny theorems for reductive groups}, J. Algebra \textbf{85} (1983), 179--196.
+\bibitem[Ti66]{XXIII.Ti66} J. Tits, \textit{Normalisateurs de tores I. Groupes de Coxeter étendus}, J. Algebra \textbf{4} (1969), 96--116.
+\end{thebibliography}

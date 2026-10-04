@@ -1,0 +1,178 @@
+\numpara{11.6}\label{VIB.11.6}
+\nde{11.6 has been expanded, and the results obtained brought out in the form of Proposition 11.6.1.}
+Let $G$ be an $S$-group and $\mathscr E$ a quasi-coherent $\OS$-module. Giving $\mathscr E$ a structure of $G$-$\OS$-module (i.e.\ an $\OS$-linear operation of $G$ on $\mathbf W(\mathscr E)$, cf. I 4.7.1) is equivalent to giving a morphism of $S$-functors in monoids $\rho:G\to\underline{\End}_{\OS}(\mathbf W(\mathscr E))$ (indeed, such a $\rho$ necessarily sends $G$ into $\underline{\Aut}_{\OS}(\mathbf W(\mathscr E))$).
+
+Now, by 11.4, giving a morphism of $S$-functors $\rho:G\to\underline{\End}_{\OS}(\mathbf W(\mathscr E))$ is equivalent to giving an element $\theta$ of $\Hom_{\OO_G}(f^*(\mathscr E),f^*(\mathscr E))$, which corresponds by adjunction to an element $\delta$ of $\Hom_{\OS}(\mathscr E,f_*f^*(\mathscr E))$, where $f$ denotes the projection $G\to S$.
+
+Let $m:G\times_S G\to G$ be multiplication, $\delta_G$ the morphism $\OO_G\to m_*(\OO_{G\times_S G})$, and $\phi$ the projection $G\times_S G\to S$ (which equals $f\circ m$). It is convenient to denote by $\boxtimes$ the ``external'' tensor product; one thus obtains a morphism
+\[
+\mathrm{id}_{\mathscr E}\boxtimes\delta_G:\quad f^*(\mathscr E)=\mathscr E\boxtimes_{\OS}\OO_G\to\mathscr E\boxtimes_{\OS}m_*(\OO_{G\times G})
+\]
+and, by abuse of notation, one will again denote by $\mathrm{id}_{\mathscr E}\boxtimes\delta_G$ the composite of the preceding morphism with the canonical morphism $\mathscr E\boxtimes_{\OS}m_*(\OO_{G\times G})\to m_*m^*f^*(\mathscr E)=m_*\phi^*(\mathscr E)$.
+
+On the other hand, denote by $h:G\to S$ a second copy of $f:G\to S$ and consider the following commutative diagram, where $p$, $q$ denote the two projections:
+\[
+\xymatrix{G\times_S G\ar[r]^q\ar[d]_p\ar[dr]^\phi&G\ar[d]^h\\G\ar[r]_f&S.}
+\]
+Again denoting by $\delta$ the morphism $\mathscr E\to h_*h^*(\mathscr E)$, one obtains the morphism
+\[
+\delta\boxtimes\mathrm{id}_{\OO_G}:\quad f^*(\mathscr E)=\mathscr E\boxtimes_{\OS}\OO_G\to h_*h^*(\mathscr E)\boxtimes_{\OS}\OO_G=f^*h_*h^*(\mathscr E)
+\]
+and, by abuse of notation, we shall again denote by $\delta\boxtimes\mathrm{id}_{\OO_G}$ the composite of this morphism with the canonical morphism $f^*h_*h^*(\mathscr E)\to p_*\phi^*(\mathscr E)$.
+
+Then the condition that $\rho$ be compatible with multiplication is equivalent to saying that, for every open subset $U$ of $S$, the diagram below is commutative:
+\begin{equation*}\tag{1}
+\xymatrix@C=13pt{\Gamma(U,\mathscr E)\ar[r]^\delta\ar[d]_\delta&\Gamma(U\times_S G,\mathscr E\boxtimes_{\OS}\OO_G)\ar[d]^{\mathrm{id}_{\mathscr E}\boxtimes\delta_G}\\\Gamma(U\times_S G,\mathscr E\boxtimes_{\OS}\OO_G)\ar[r]_{\delta\boxtimes\mathrm{id}_{\OO_G}}&\Gamma(U\times_S G\times_S G,\mathscr E\boxtimes_{\OS}\OO_G\boxtimes_{\OS}\OO_G).}
+\end{equation*}
+
+Furthermore, the identity section $\varepsilon:S\to G$ induces a morphism $u$ from $\OO_G$ to $\varepsilon_*\varepsilon^*(\OO_G)=\varepsilon_*(\OS)$, and the condition that $\rho$ preserve the identity elements is equivalent to commutativity of the diagram:
+\begin{equation*}\tag{2}
+\xymatrix@C=25pt{\Gamma(U,\mathscr E)\ar[rr]^\delta\ar[dr]_\simeq&&\Gamma(U\times_S G,\mathscr E\boxtimes_{\OS}\OO_G)\ar[dl]^{\mathrm{id}_{\mathscr E}\boxtimes u}\\&\Gamma(U\times_S S,\mathscr E\boxtimes_{\OS}\OS).&}
+\end{equation*}
+One therefore sees that giving $\mathscr E$ a $G$-$\OS$-module structure is equivalent to giving a morphism of $\OS$-modules $\delta:\mathscr E\to f_*f^*(\mathscr E)$ satisfying conditions (1) and (2) above, and in this case the morphism $\theta:f^*(\mathscr E)\to f^*(\mathscr E)$, obtained from $\delta$ by adjunction, is an isomorphism (for it corresponds to the isomorphism $G\times_S\mathbf W(\mathscr E)\isomto G\times_S\mathbf W(\mathscr E)$ defined set theoretically by $(g,x)\mto(g,gx)$, see also I, 6.5.4).
+
+Suppose now that $G$ is flat, quasi-compact and quasi-separated over $S$, and that $\mathscr A(G)$ is a flat $\OS$-module; then, by 11.1 (c), the canonical morphism $\mathscr A(G)\otimes_{\OS}\mathscr A(G)\to\mathscr A(G\times_S G)$ is an isomorphism, and the morphism $\delta_G:\mathscr A(G)\to\mathscr A(G)\otimes_{\OS}\mathscr A(G)$ will be denoted by $\Delta$.
+
+If moreover $\mathscr E\otimes_{\OS}\mathscr A(G)=f_*f^*(\mathscr E)$ (which is the case, by 11.5, if $G\to S$ is affine, or if $\mathscr E$ is flat over $\OS$), one obtains that conditions (1) and (2) are equivalent to the conditions below, which express that $\delta:\mathscr E\to\mathscr E\otimes_{\OS}\mathscr A(G)$ makes $\mathscr E$ a right $\mathscr A(G)$-comodule (cf. I 4.7.2):
+
+(CM 1) Putting $\mathscr A=\mathscr A(G)$, the diagram below is commutative:
+\[
+\xymatrix{\mathscr E\ar[r]^\delta\ar[d]_\delta&\mathscr E\otimes\mathscr A\ar[d]^{\mathrm{id}_{\mathscr E}\otimes\Delta}\\\mathscr E\otimes\mathscr A\ar[r]_{\delta\otimes\mathrm{id}_{\mathscr A}}&\mathscr E\otimes\mathscr A\otimes\mathscr A.}
+\]
+(CM 2) Denoting by $\eta:\mathscr A\to\OS$ the morphism $\mathscr A(\varepsilon)$, the diagram below is commutative:
+\[
+\xymatrix{\mathscr E\ar[rr]^\delta\ar[dr]_\simeq&&\mathscr E\otimes\mathscr A\ar[dl]^{\mathrm{id}_{\mathscr E}\otimes\eta}\\&\mathscr E\otimes\OS.&}
+\]
+
+\begin{remark}{11.6.A}\label{VIB.11.6.A}
+Recall that $V(\mathscr E)$ denotes the vector fibration over $S$ which represents the functor $\mathbf V(\mathscr E)$, i.e.\ for every $S'\to S$, $\mathbf V(\mathscr E)(S')=\Hom_{\OO_{S'}}(\mathscr E_{S'},\OO_{S'})$. Since, by I, 4.6.2, one has an anti-isomorphism of $S$-functors in monoids $\underline{\End}_{\OS}(\mathbf W(\mathscr E))\simeq\underline{\End}_{\OS}(\mathbf V(\mathscr E))$, one sees that, if $\mathscr E$ is a left $G$-$\OS$-module, one has a right action $\mu:V(\mathscr E)\times_S G\to V(\mathscr E)$ of $G$ on $V(\mathscr E)$, defined set theoretically by $(\varphi g)(x)=\varphi(gx)$, for every $g\in G(S')$, $x\in\Gamma(S',\mathscr E_{S'})$ and $\varphi\in\Hom_{\OO_{S'}}(\mathscr E_{S'},\OO_{S'})$. One therefore obtains commutative diagrams:
+\[
+\xymatrix@C=16pt{V(\mathscr E)\times_S G\times_S G\ar[r]^{\mu\times\mathrm{id}_G}\ar[d]_{\mathrm{id}_{V(\mathscr E)}\times m}&V(\mathscr E)\times_S G\ar[d]^\mu\\V(\mathscr E)\times_S G\ar[r]_\mu&V(\mathscr E)}
+\qquad
+\xymatrix@C=16pt{V(\mathscr E)&V(\mathscr E)\times_S G\ar[l]_\mu\\&V(\mathscr E)\times_S S\ar[u]_{\mathrm{id}_{V(\mathscr E)}\times\varepsilon}\ar[ul]^\simeq.}
+\]
+When $G$ is flat, quasi-compact and quasi-separated over $S$, $\mathscr A(G)$ is a flat $\OS$-module, and one of the conditions of 11.5 holds, one similarly recovers conditions (CM 1) and (CM 2).
+\end{remark}
+Consequently, we have obtained:
+
+\begin{proposition}{11.6.1}\label{VIB.11.6.1}
+Let $G$ be an $S$-group flat, quasi-compact and quasi-separated over $S$, such that $\mathscr A(G)$ is a flat $\OS$-module, and let $\mathscr E$ be a quasi-coherent $\OS$-module.
+
+(i) Giving an $\mathscr A(G)$-comodule structure $\delta:\mathscr E\to\mathscr E\otimes_{\OS}\mathscr A(G)$ amounts to the same thing as giving $\mathscr E$ a $G_{\mathrm{af}}$-$\OS$-module structure (i.e.\ an $\OS$-linear operation of $G_{\mathrm{af}}$ on $\mathscr E$). By composition with the morphism of $S$-groups $G\to G_{\mathrm{af}}$, this defines a $G$-$\OS$-module structure on $\mathscr E$.
+
+(ii) If moreover $\mathscr E$ is flat, every $\OS$-linear operation of $G$ on $\mathscr E$ factors through $G_{\mathrm{af}}$ and corresponds to a unique $\mathscr A(G)$-comodule structure on $\mathscr E$.
+\end{proposition}
+
+\begin{lemma}{11.7}\label{VIB.11.7}
+Let $G$ be an $S$-group flat, quasi-compact and quasi-separated over $S$, such that $\mathscr A=\mathscr A(G)$ is a flat $\OS$-module. Let $\mathscr E$ be a quasi-coherent $\OS$-module, $\delta:\mathscr E\to\mathscr E\otimes\mathscr A$ an $\mathscr A$-comodule structure, and $\rho:G\to\underline{\Aut}_{\OS}(\mathbf W(\mathscr E))$ the associated operation of $G$ on $\mathscr E$.
+
+Let $\mathscr E_0$ be a quasi-coherent sub-$\OS$-module of $\mathscr E$ such that the restriction $\delta_0$ of $\mu$ to $\mathscr E_0$ factors through $\mathscr E_0\to\mathscr E_0\otimes\mathscr A$, i.e.\ such that one has a commutative diagram:
+\[
+\xymatrix{\mathscr E_0\ar@{^{(}->}[r]\ar[d]_{\delta_0}&\mathscr E\ar[d]^\delta\\\mathscr E_0\otimes\mathscr A\ar@{^{(}->}[r]&\mathscr E\otimes\mathscr A.}
+\]
+(N.B. The morphism $\mathscr E_0\otimes\mathscr A\to\mathscr E\otimes\mathscr A$ is injective, since $\mathscr A$ is flat over $\OS$.)
+
+Then $\delta_0$ makes $\mathscr E_0$ an $\mathscr A(G)$-comodule, and thus defines an operation $\rho_0$ of $G$ on $\mathscr E_0$ (which will be called the operation induced on $\mathscr E_0$ by $\rho$, and one will say that $\mathscr E_0$ is stable under $\rho$).
+% typo?: kept as printed: mu for the morphism restricted to E_0.
+\end{lemma}
+This follows immediately from the definitions and 11.6. Note, however, that in general the canonical map $\mathbf W(\mathscr E_0)\to\mathbf W(\mathscr E)$ is not a monomorphism.
+
+\begin{remark}{11.7.bis}\label{VIB.11.7.bis}
+\nde{This remark, which generalizes 11.7 and will be useful in 11.10.bis, has been added.}
+Let $G$ be a flat $S$-group and $\mathscr E$ a quasi-coherent $G$-$\OS$-module. Denote by $f$ the morphism $G\to S$ and by $\delta$ the morphism $\mathscr E\to f_*f^*(\mathscr E)$ defined in 11.6. Let $\mathscr E_0$ be a quasi-coherent sub-$\OS$-module of $\mathscr E$; since $f$ is flat, then $f_*f^*(\mathscr E_0)$ is a sub-$\OS$-module of $f_*f^*(\mathscr E)$, and similarly for $\phi=f\times f$. Consequently, if the restriction $\delta_0$ of $\delta$ to $\mathscr E_0$ factors through $f_*f^*(\mathscr E_0)$, then it makes $\mathscr E_0$ a $G$-$\OS$-module. In this case, one will say that $\mathscr E_0$ is a $G$-stable submodule of $\mathscr E$.
+\end{remark}
+
+\begin{definition}{11.8.0}\label{VIB.11.8.0}
+\nde{Since statements 11.8 and 11.9 concern solely the notion of a comodule over a coalgebra, Definition 11.8.0 has been introduced and 11.8 and 11.9 reformulated accordingly.}
+Let $S$ be a scheme. An $\OS$-coalgebra is an $\OS$-module $\mathscr C$ endowed with two morphisms of $\OS$-modules $\Delta:\mathscr C\to\mathscr C\otimes\mathscr C$ and $\varepsilon:\mathscr C\to\OS$, satisfying the following two axioms (cf. I 4.2):
+
+(CO 1) $\Delta$ is coassociative: the following diagram is commutative
+\[
+\xymatrix{&\mathscr C\otimes\mathscr C\ar[dr]^{\mathrm{id}\otimes\Delta}&\\\mathscr C\ar[ur]^\Delta\ar[dr]_\Delta&&\mathscr C\otimes\mathscr C\otimes\mathscr C\\&\mathscr C\otimes\mathscr C\ar[ur]_{\Delta\otimes\mathrm{id}}&}
+\]
+(CO 2): $\varepsilon$ is a counit, i.e.\ the following two composites are the identity
+% typo: corrupted printed coÃ¼nité -> counit.
+\[
+\mathscr C\xrightarrow{\Delta}\mathscr C\otimes\mathscr C\xrightarrow{\mathrm{id}\otimes\varepsilon}\mathscr C\otimes\OS\isomto\mathscr C,
+\]
+\[
+\mathscr C\xrightarrow{\Delta}\mathscr C\otimes\mathscr C\xrightarrow{\varepsilon\otimes\mathrm{id}}\OS\otimes\mathscr C\isomto\mathscr C.
+\]
+A (right) $\mathscr C$-comodule is an $\OS$-module $\mathscr E$ endowed with a morphism of $\OS$-modules $\mu:\mathscr E\to\mathscr E\otimes\mathscr C$ satisfying axioms (CM 1) and (CM 2) of 11.6.
+
+One will say that $\mathscr C$ (resp. $\mathscr E$) is a quasi-coherent coalgebra (resp. a quasi-coherent comodule) if it is a quasi-coherent $\OS$-module.
+\end{definition}
+Let $A$ be a commutative ring and $C$ an $A$-coalgebra; then $C^\vee=\Hom_A(C,A)$ is an $A$-algebra. One shall denote by $\mathrm{ev}$ the natural evaluation map $C\otimes_A C^\vee\to A$.
+
+\begin{lemma}{11.8}\label{VIB.11.8}
+Let $C$ be an $A$-coalgebra, $V$ a $C$-comodule, $M$ a sub-$A$-module of $V$. Suppose that $C$ is a projective $A$-module.\nde{In the original, $C$ is supposed a free $A$-module, the generalization to the case where $C$ is a projective $A$-module, pointed out by J.-P. Serre, being mentioned in Remark 11.10.1. This generalization has been included here and in 11.9, and the proofs expanded accordingly.} Let $c(M)$ be the image of the morphism of $A$-modules
+\[
+\theta:\quad M\otimes_A C^\vee\xrightarrow{\mu\otimes\mathrm{id}}V\otimes_A C\otimes_A C^\vee\xrightarrow{\mathrm{id}\otimes\mathrm{ev}}V.
+\]
+Then $c(M)$ is the smallest subcomodule of $V$ containing $M$, and is an $A$-module of finite type if $M$ is. One will say that $c(M)$ is the subcomodule generated by $M$.
+
+Moreover, for every ring morphism $A\to A'$, if $M'$ denotes the image of $M\otimes_A A'$ in $V'=V\otimes_A A'$, then $c(M')$ is the image of $c(M)\otimes_A A'$ in $V'$, so: ``the formation of $c(M)$ commutes with base change''.
+\end{lemma}
+First, $M\subset c(M)$ by (CM 2), and if $N$ is a subcomodule of $V$ containing $M$, one has $\mu(M)\subset N\otimes C$ and therefore $c(M)\subset N$.
+
+By hypothesis, $C$ is a direct summand of a free $A$-module $L$, with basis $(e_i)_{i\in I}$. Denote by $\varphi_i$ the restriction to $C$ of the linear form $e_i^*$, defined by $e_i^*(e_j)=\delta_{ij}$. Let $x\in M$. One can write:
+\begin{equation*}\tag{1}
+\mu(x)=\sum_{i\in J}x_i\otimes e_i,
+\end{equation*}
+where $x_i\in V$ and $J$ is a finite subset of $I$. Then $x_i=\theta(x\otimes\varphi_i)$ belongs to $c(Ax)$, and one therefore has $c(Ax)=\sum_{i\in J}Ax_i$. Since $C$ is a direct summand of $L$, say $L=C\oplus R$, whence $V\otimes L=(V\otimes C)\oplus(V\otimes R)$, one obtains that
+\[
+(c(Ax)\otimes L)\cap(V\otimes C)=c(Ax)\otimes C.
+\]
+Consequently, $\mu(x)$ can also be written in the form
+\begin{equation*}\tag{2}
+\mu(x)=\sum_{j\in J}x_j\otimes b_j,
+\end{equation*}
+with $b_j\in C$. One can write $\Delta(b_j)=\sum_{i\in I}b_{ij}\otimes e_i$, with $b_{ij}\in C$. Then, applying $\mu\otimes\mathrm{id}$ to (1) (resp. $\mathrm{id}\otimes\Delta$ to (2)) and using axiom (CM 1), one obtains, for every $i\in J$:
+\[
+\mu(x_i)=\sum_{j\in J}x_j\otimes b_{ij}\in c(Ax)\otimes C.
+\]
+This shows that $c(M)$ is a subcomodule of $V$, and thus it is the smallest subcomodule of $V$ containing $M$.
+
+It is clear that $c(M)$ is an $A$-module of finite type if $M$ is: if $M=Ax_1+\cdots+Ax_n$, and $\mu(x_k)=\sum_i x_{ik}\otimes e_i$, then $c(M)$ is generated by the $x_{ik}$, for $k=1,\ldots,n$ and $i$ ranging over a finite subset of $I$.
+
+Finally, let $A\to A'$ be a ring morphism and let $M'$ be the image of $M\otimes A'$ in $V'=V\otimes A'$. Then $c(M')$ (resp. the image of $c(M)\otimes A'$ in $V'$) is the image of the morphism $\theta'$ below (resp. of the composite $\theta'\circ\tau$):
+\[
+M\otimes A'\otimes C^\vee\xrightarrow{\tau}M\otimes\Hom_A(C,A')\xrightarrow{\theta'}V'.
+\]
+Now these two morphisms have the same image. Indeed, let $\psi\in\Hom_A(C,A')$ and $x\in M$. Put $\mu(x)=\sum_{i\in J}x_i\otimes e_i$. Then
+\[
+\theta'(x\otimes\psi)=\sum_{i\in J}\psi(e_i)x_i
+\]
+is the image under $\theta'\circ\tau$ of the element $\sum_{i\in J}x\otimes\psi(e_i)\otimes\varphi_i$ of $M\otimes A'\otimes C^\vee$. This proves the lemma.
+
+Furthermore, one has the following proposition:
+\begin{proposition}{11.8.bis}\label{VIB.11.8.bis}
+\nde{This proposition, taken from [Se68], \S\,1.5, Prop. 2, has been added.}
+Let $A$ be a noetherian ring, $C$ an $A$-coalgebra flat over $A$, $V$ a $C$-comodule, and $M$ a sub-$A$-module of finite type of $V$. Then there is a subcomodule $W$ of $V$, of finite type over $A$, containing $M$.
+\end{proposition}
+Indeed, since $M$ is of finite type, so is $\Delta_V(M)$, so there is a sub-$A$-module of finite type $M'$ of $V$ such that $\Delta_V(M)\subset M'\otimes_A C$. Let $\pi$ be the projection $V\to V/M'$ and $\overline\Delta_V=(\pi\otimes\mathrm{id}_C)\Delta_V$, and let
+\[
+W=\{x\in V\mid\Delta_V(x)\in M'\otimes_A C\}=\Ker\overline\Delta_V;
+\]
+this is a sub-$A$-module of $V$ containing $M$ and contained in $M'$ (since $x=(\mathrm{id}_V\otimes\varepsilon)\Delta_V(x)$), hence of finite type over $A$. Moreover, $(\overline\Delta_V\otimes\mathrm{id}_C)\Delta_V=(\pi\otimes\Delta_C)\Delta_V$ vanishes on $W$, i.e.\ $\Delta_V(W)$ is contained in the kernel $K$ of $(\overline\Delta_V\otimes\mathrm{id}_C)$. But since $C$ is flat over $A$, one has $K=W\otimes C$, so $W$ is a subcomodule of $V$.
+
+\begin{lemma}{11.8.1}\label{VIB.11.8.1}
+\nde{This lemma, used in the proof of 11.9, has been added.}
+Let $C$ be an $A$-coalgebra, $V$ a $C$-comodule, $M$ a sub-$A$-module of $V$, and $f:A\to A'$ a faithfully flat ring morphism. Suppose that $C'=C\otimes A'$ is a projective $A'$-module.
+
+(i) Then there is a smallest subcomodule $t(M)$ of $V$ containing $M$, and $t(M)$ is an $A$-module of finite type if $M$ is. Moreover, ``the formation of $t(M)$ commutes with base change''.
+
+(ii) More precisely, $C$ is a projective $A$-module, and one has $t(M)=c(M)$.
+\end{lemma}
+\begin{proof}
+(ii) By [RG71] (see Proposition 11.8.2 below), $C$ is a projective $A$-module. One can therefore apply Lemma 11.8: $c(M)$ is the smallest subcomodule of $V$ containing $M$, it is an $A$-module of finite type if $M$ is, and its formation commutes with base change.
+
+To avoid an anachronism ([RG71] being later than SGA 3), let us sketch a direct proof of point (i). Since $A\to A'$ is flat, $M'=M\otimes A'$ is a sub-$A'$-module of $V'=V\otimes A'$, and, since $C'$ is a projective $A'$-module, $c(M')$ is the smallest subcomodule of $V'$ containing $M'$. Denote by $V'\otimes A'$ and $A'\otimes V'$ the two $A'\otimes A'$-comodule structures on $V''=V'\otimes_{A'}(A'\otimes A')$ obtained by the two base changes $A'\rightrightarrows A'\otimes A'$, $a'\mto a'\otimes1$ and $a'\mto1\otimes a'$. The $A'$-comodule $V'$ is endowed with an isomorphism of $A'\otimes A'$-comodules $\phi:V'\otimes A'\isomto A'\otimes V'$, $(x\otimes a')\otimes b'\mto b'\otimes(x\otimes a')$, which is a descent datum, i.e.\ which satisfies $\phi_{31}=\phi_{32}\circ\phi_{21}$.
+
+Since $M'=M\otimes A'$, then $\phi$ sends $M'\otimes A'$ onto $A'\otimes M'$, and hence $c(M'\otimes A')$ onto $c(A'\otimes M')$. Since the formation of $c(M')$ commutes with base change, one has $c(M'\otimes A')=c(M')\otimes A'$ and $c(A'\otimes M')=A'\otimes c(M')$. One therefore has
+\[
+\phi(c(M')\otimes A')=A'\otimes c(M')
+\]
+and it follows that $\phi$ endows $c(M')$ with a descent datum. By (fpqc) descent, there is a unique subcomodule $t(M)$ of $V$ such that $c(M')=t(M)\otimes A'$, and $t(M)$ contains $M$ since $t(M)\otimes A'$ contains $M'$. Moreover, if $N$ is a subcomodule of $V$ containing $M$, then $N$ contains $t(M)$, since $N\otimes A'$ contains $c(M')=t(M)\otimes A'$. Thus $t(M)$ is the smallest subcomodule of $V$ containing $M$.
+
+Finally, let $A\to B$ be a ring morphism. Let $B'=B\otimes A'$ and let $M_B$ (resp. $M'_{B'})$ be the image of $M\otimes B$ in $V_B=V\otimes B$ (resp. of $M'\otimes_{A'}B'$ in $V\otimes B'$); then $M_B\otimes_B B'=M'_{B'}$.
