@@ -10,6 +10,7 @@ import SGA.Foundations.Etale.TorsorPullback
 import SGA.Foundations.Etale.TorsorPushforward
 import SGA.Foundations.Etale.TorsorTwist
 import SGA.Foundations.EtaleStalkBaseChange
+import SGA.Foundations.EtaleStalkProper
 import SGA.Foundations.EtaleStalkTorsor
 import SGA.SGA1.ExposeXIII.EtaleRestriction
 
@@ -24,30 +25,35 @@ these definitions with the base change morphism `Scheme.etaleBaseChangeMap` of
 `SGA.Foundations.Etale.BaseChange`, and proves the formal properties of §1 for sheaves of
 sets: independence of the base (`of_comp_base`), locality on `Y` for the étale topology and
 stability under base change (1.5 c)), composition and cancellation (1.6), exact diagrams
-(1.13 1)), and the consequences 1.8 and 1.9 of the proper and integral base change theorems
-(SGA 4 XII 5.1, VIII 5.6), which are recorded as statements. The local triviality of torsors
+(1.13 1)). It proves XIII 1.4 in dimension `≤ -1` (the injectivity half of the proper base
+change theorem) for every universally closed `f`
+(`isCohomologicallyProperLENegOne_of_universallyClosed`, from
+`AlgebraicGeometry.Scheme.mono_etaleBaseChangeMap_of_universallyClosed`), and with it 1.8 and 1.9
+in dimension `≤ -1` unconditionally (`IsCohomologicallyProperLENegOne.comp_of_universallyClosed`,
+`isCohomologicallyProperLENegOne_pushforward_iff_of_isIntegralHom`). In dimension `≤ 0`, 1.8 and
+1.9 are deduced from the proper and integral base change theorems (SGA 4 XII 5.1, VIII 5.6),
+which are recorded as statements (`ProperBaseChangeStatement`, `IntegralBaseChangeStatement`).
+For `f` finite, the base change theorem (SGA 4 VIII 5.6 for finite morphisms) is proved in
+`SGA.Foundations.EtaleStalkBaseChange`, and 1.9 holds unconditionally
+(`isCohomologicallyProperLEZero_pushforward_iff_of_isFinite`). The local triviality of torsors
 along integral morphisms (SGA 4 VIII 5.8) is proved in `SGA.Foundations.EtaleStalkTorsor`
-(`isLocallyTrivialAlong_of_isIntegralHom`); for `f` finite, the base change theorem (SGA 4 VIII
-5.6 for finite morphisms) is proved in `SGA.Foundations.EtaleStalkBaseChange`, and 1.9 holds
-unconditionally (`isCohomologicallyProperLENegOne_pushforward_iff_of_isFinite`,
-`isCohomologicallyProperLEZero_pushforward_iff_of_isFinite`,
-`isCohomologicallyProperLENegOneGroup_pushforward_iff_of_isFinite`).
+(`isLocallyTrivialAlong_of_isIntegralHom`).
 
 SGA defines cohomological properness for stacks (1.1) and for sheaves of groups through their
 stacks of torsors (1.3). Inverse images of stacks (stackification) are not available; for sheaves
 of groups we use the characterization (ii) of XIII 1.3.1 as the definition
 (`IsCohomologicallyProperLENegOneGroup`, `IsCohomologicallyProperLEZeroGroup`: the twisted groups
 `^P F₁` are cohomologically proper as sheaves of sets, and in dimension `≤ 0` the base change
-morphism on `R¹` is injective, in local form, with the inverse images of torsors of
+morphism `a₁` on `R¹` is injective, stated on stalks with the inverse images of torsors of
 `SGA.Foundations.Etale.TorsorPullback`). We prove 1.5 a) (a sheaf of groups which is
-cohomologically proper is so as a sheaf of sets), 1.7 in dimension `≤ -1`
+cohomologically proper is so as a sheaf of sets), 1.4 in dimension `≤ -1` for sheaves of groups
+(`isCohomologicallyProperLENegOneGroup_of_universallyClosed`), 1.7 in dimension `≤ -1`
 (`IsCohomologicallyProperLENegOneGroup.pushforward`, through `^Q(f_* F) ≅ f_*(^P F)` of
 `SGA.Foundations.Etale.TorsorPushforward`) and the groups part of 1.9 in dimension `≤ -1`
-(`isCohomologicallyProperLENegOneGroup_pushforward_iff`, given SGA 4 VIII 5.6 as a statement;
-SGA 4 VIII 5.8 is `isLocallyTrivialAlong_of_isIntegralHom`). Not formalized: 1.7 and 1.9 in
-dimension `≤ 0` (these need the compatibility of `Q ↦ P` with base change), dimension `≤ 1` for
-sheaves of groups, 1.13 2)–3) (quotient sheaves `Q/F`), and 1.10–1.17 about exact diagrams of
-stacks and specialization maps, except 1.13 1).
+(`isCohomologicallyProperLENegOneGroup_pushforward_iff_of_isIntegralHom`, which uses SGA 4 VIII
+5.8). Not formalized: 1.7 and 1.9 in dimension `≤ 0` (these need the compatibility of `Q ↦ P`
+with base change), dimension `≤ 1` for sheaves of groups, 1.13 2)–3) (quotient sheaves `Q/F`),
+and 1.10–1.17 about exact diagrams of stacks and specialization maps, except 1.13 1).
 -/
 
 universe u
@@ -491,50 +497,123 @@ section ProperAndIntegral
 
 /-! ### XIII 1.4, 1.8, 1.9: proper and integral morphisms -/
 
-/-- XIII 1.4 (statement only), case of sheaves of sets: for a proper morphism `f : X ⟶ Y`, every
-sheaf of sets `F` on `X` is cohomologically proper for `f` in dimension `≤ 0` (relative to `Y`).
-This is the proper base change theorem for `f_*` (SGA 4 XII 5.1, Giraud VII 2.2.2), which needs
-étale cohomology beyond mathlib. -/
+/-- XIII 1.4 (statement only for an arbitrary base), case of sheaves of sets: for a proper morphism
+`f : X ⟶ Y`, every sheaf of sets `F` on `X` is cohomologically proper for `f` in dimension `≤ 0`
+(relative to `Y`). This is the proper base change theorem for `f_*` (SGA 4 XII 5.1, Giraud VII
+2.2.2); only sections of étale sheaves are involved, no higher cohomology. Proved cases: the
+injectivity half (dimension `≤ -1`) for every universally closed `f`
+(`isCohomologicallyProperLENegOne_of_universallyClosed`), and the whole statement for every sheaf
+of sets when `Y` is locally noetherian
+(`isCohomologicallyProperLEZero_of_isProper_of_isLocallyNoetherian`, in
+`SGA.SGA1.ExposeXIII.ProperBaseChangeNoetherian`, from Gabber's theorem). Open: an arbitrary `Y`,
+which needs the reduction to a noetherian base (EGA IV 8 and constructible sheaves). -/
 def ProperBaseChangeStatement : Prop :=
   ∀ ⦃X Y : Scheme.{u}⦄ (f : X ⟶ Y) [IsProper f] (F : Sheaf X.smallEtaleTopology (Type u)),
     IsCohomologicallyProperLEZero (𝟙 Y) f F
 
 /-- The base change theorem for integral morphisms (SGA 4 VIII 5.6), used in the proof of
 XIII 1.9 (statement only): for `f` integral, the formation of `f_* F` commutes with every
-change of base. The case of finite morphisms is `isCohomologicallyProperLEZero_of_isFinite`; the
-integral case needs the limit theorems for étale sheaves on inverse limits of schemes
-(SGA 4 VII 5.7), which are not formalized. -/
+change of base. Proved cases: `f` finite (`isCohomologicallyProperLEZero_of_isFinite`), and the
+injectivity half (dimension `≤ -1`) for every integral `f`
+(`isCohomologicallyProperLENegOne_of_universallyClosed`). The limit theorems used by SGA are
+proved in degree `0`, in the generality needed, in `SGA.Foundations.Limits.EtaleSectionsGluing`:
+the sections of the inverse image of a sheaf over a cofiltered limit come from a finite level
+(SGA 4 VII 5.7, surjectivity, `AlgebraicGeometry.Scheme.exists_toLimitSections_eq`), and the
+stalks of direct images are the sections over the strict localizations (SGA 4 VIII 5.2,
+`AlgebraicGeometry.Scheme.pushforwardStalkStrictLocalizationStatement`). With them and the criterion
+`AlgebraicGeometry.Scheme.isIso_etaleBaseChangeMap_of_forall_bijective_of_quasiSeparated`, the
+main missing input is Gabber's theorem for `B` integral over a strictly henselian local ring `A`:
+the restriction of sections from `Spec B` to `Spec (B ⧸ 𝔪_A B)` is bijective (`(B, 𝔪_A B)` is a
+henselian pair). -/
 def IntegralBaseChangeStatement : Prop :=
   ∀ ⦃X Y : Scheme.{u}⦄ (f : X ⟶ Y) [IsIntegralHom f] (F : Sheaf X.smallEtaleTopology (Type u)),
     IsCohomologicallyProperLEZero (𝟙 Y) f F
 
+section UniversallyClosed
+
+variable (f : X ⟶ Y) [UniversallyClosed f] (F : Sheaf X.smallEtaleTopology (Type u))
+
+/-- XIII 1.4 in dimension `≤ -1`, for sheaves of sets: for a universally closed (for instance
+proper) morphism `f : X ⟶ Y`, every sheaf of sets `F` on `X` is cohomologically proper for `f` in
+dimension `≤ -1`, i.e. the base change morphism `g^* f_* F ⟶ f'_* h^* F` is injective for every
+base change `Y' ⟶ Y`. (SGA 1 states 1.4 for `f` proper and in dimension `≤ 0`; this is its
+injectivity half, which holds for every universally closed `f` and every `Y`.) -/
+theorem isCohomologicallyProperLENegOne_of_universallyClosed :
+    IsCohomologicallyProperLENegOne (𝟙 Y) f F :=
+  fun _ _ _ _ _ _ _ _ _ hX ↦ Scheme.mono_etaleBaseChangeMap_of_universallyClosed hX F
+
+/-- XIII 1.4 in dimension `≤ -1`, for sheaves of sets, relative to any base `S`
+(`isCohomologicallyProperLENegOne_of_universallyClosed`). -/
+theorem isCohomologicallyProperLENegOne_of_universallyClosed' (s : Y ⟶ S) :
+    IsCohomologicallyProperLENegOne s f F :=
+  (isCohomologicallyProperLENegOne_of_universallyClosed f F).of_id s
+
+end UniversallyClosed
+
 variable {sZ : Z ⟶ S} {f : X ⟶ Y} {g : Y ⟶ Z} {F : Sheaf X.smallEtaleTopology (Type u)}
 
-/-- XIII 1.8 for sheaves of sets, deduced from 1.6 1) and the proper base change theorem 1.4:
-if `(F, f)` is cohomologically proper relative to `S` in dimension `≤ -1` and `g` is proper,
-then `(F, f ≫ g)` is cohomologically proper relative to `S` in dimension `≤ -1`. (For sheaves of
-sets the hypothesis of SGA that `f` be coherent is not needed.) -/
-theorem IsCohomologicallyProperLENegOne.comp_of_isProper (hPBC : ProperBaseChangeStatement.{u})
+/-- XIII 1.8 for sheaves of sets, dimension `≤ -1`, without assuming the proper base change
+theorem: if `(F, f)` is cohomologically proper relative to `S` in dimension `≤ -1` and `g` is
+proper (more generally, universally closed), then `(F, f ≫ g)` is cohomologically proper relative
+to `S` in dimension `≤ -1`. (SGA 1 states 1.8 for an ind-finite stack `Φ` and a coherent `f`, in
+dimensions `≤ -1`, `≤ 0`, `≤ 1`; this is the case of a sheaf of sets in dimension `≤ -1`, where
+neither the finiteness of `Φ` nor the coherence of `f` is needed.) -/
+theorem IsCohomologicallyProperLENegOne.comp_of_universallyClosed [UniversallyClosed g]
+    (hf : IsCohomologicallyProperLENegOne (g ≫ sZ) f F) :
+    IsCohomologicallyProperLENegOne sZ (f ≫ g) F :=
+  hf.comp (isCohomologicallyProperLENegOne_of_universallyClosed' g _ sZ)
+
+/-- XIII 1.8 for sheaves of sets, dimension `≤ -1`, in the form SGA deduces it from 1.6 1) and
+the proper base change theorem 1.4. The hypothesis `ProperBaseChangeStatement` is not used: this
+is `IsCohomologicallyProperLENegOne.comp_of_universallyClosed`, which supersedes it. -/
+theorem IsCohomologicallyProperLENegOne.comp_of_isProper (_hPBC : ProperBaseChangeStatement.{u})
     [IsProper g] (hf : IsCohomologicallyProperLENegOne (g ≫ sZ) f F) :
     IsCohomologicallyProperLENegOne sZ (f ≫ g) F :=
-  hf.comp ((hPBC g _).of_id sZ).leNegOne
+  hf.comp_of_universallyClosed
 
-/-- XIII 1.8 for sheaves of sets, dimension `≤ 0`. -/
+/-- XIII 1.8 for sheaves of sets, dimension `≤ 0`, deduced from 1.6 1) and the proper base change
+theorem 1.4: if `(F, f)` is cohomologically proper relative to `S` in dimension `≤ 0` and `g` is
+proper, then `(F, f ≫ g)` is cohomologically proper relative to `S` in dimension `≤ 0`.
+(`IsCohomologicallyProperLEZero.comp_of_isProper_of_isLocallyNoetherian` proves it without the
+hypothesis when the target of `g` is locally noetherian.) -/
 theorem IsCohomologicallyProperLEZero.comp_of_isProper (hPBC : ProperBaseChangeStatement.{u})
     [IsProper g] (hf : IsCohomologicallyProperLEZero (g ≫ sZ) f F) :
     IsCohomologicallyProperLEZero sZ (f ≫ g) F :=
   hf.comp ((hPBC g _).of_id sZ)
 
-/-- XIII 1.9 for sheaves of sets, dimension `≤ -1`, deduced from 1.6 and the base change theorem
-for integral morphisms: for `f` integral, `(f_* F, g)` is cohomologically proper relative to `S`
-if and only if `(F, f ≫ g)` is. -/
-theorem isCohomologicallyProperLENegOne_pushforward_iff (hInt : IntegralBaseChangeStatement.{u})
+/-- XIII 1.6 2) for sheaves of sets, dimension `≤ 0`, when `f` is universally closed: if
+`(F, f ≫ g)` is cohomologically proper relative to `S` in dimension `≤ 0`, so is `(f_* F, g)`.
+(The hypothesis of 1.6 2) that `(F, f)` be cohomologically proper in dimension `≤ -1` holds by
+`isCohomologicallyProperLENegOne_of_universallyClosed`.) -/
+theorem IsCohomologicallyProperLEZero.of_comp_of_universallyClosed [UniversallyClosed f]
+    (hfg : IsCohomologicallyProperLEZero sZ (f ≫ g) F) :
+    IsCohomologicallyProperLEZero sZ g ((etalePushforward f).obj F) :=
+  hfg.of_comp (isCohomologicallyProperLENegOne_of_universallyClosed' f F _)
+
+/-- XIII 1.9 for sheaves of sets, dimension `≤ -1`, unconditionally: for `f` integral,
+`(f_* F, g)` is cohomologically proper relative to `S` in dimension `≤ -1` if and only if
+`(F, f ≫ g)` is. (SGA deduces 1.9 from the integral base change theorem SGA 4 VIII 5.6; in
+dimension `≤ -1` only its injectivity half is used, which holds for every universally closed `f`,
+`isCohomologicallyProperLENegOne_of_universallyClosed`.) -/
+theorem isCohomologicallyProperLENegOne_pushforward_iff_of_isIntegralHom [IsIntegralHom f] :
+    IsCohomologicallyProperLENegOne sZ g ((etalePushforward f).obj F) ↔
+      IsCohomologicallyProperLENegOne sZ (f ≫ g) F :=
+  ⟨fun h ↦ (isCohomologicallyProperLENegOne_of_universallyClosed' f F _).comp h,
+    fun h ↦ h.of_comp⟩
+
+/-- XIII 1.9 for sheaves of sets, dimension `≤ -1`, in the form SGA deduces it from 1.6 and the
+base change theorem for integral morphisms. The hypothesis `IntegralBaseChangeStatement` is not
+used: this is `isCohomologicallyProperLENegOne_pushforward_iff_of_isIntegralHom`, which supersedes
+it. -/
+theorem isCohomologicallyProperLENegOne_pushforward_iff (_hInt : IntegralBaseChangeStatement.{u})
     [IsIntegralHom f] :
     IsCohomologicallyProperLENegOne sZ g ((etalePushforward f).obj F) ↔
       IsCohomologicallyProperLENegOne sZ (f ≫ g) F :=
-  ⟨fun h ↦ ((hInt f F).of_id _).leNegOne.comp h, fun h ↦ h.of_comp⟩
+  isCohomologicallyProperLENegOne_pushforward_iff_of_isIntegralHom
 
-/-- XIII 1.9 for sheaves of sets, dimension `≤ 0`. -/
+/-- XIII 1.9 for sheaves of sets, dimension `≤ 0`, deduced from 1.6 and the base change theorem
+for integral morphisms: for `f` integral, `(f_* F, g)` is cohomologically proper relative to `S`
+if and only if `(F, f ≫ g)` is. -/
 theorem isCohomologicallyProperLEZero_pushforward_iff (hInt : IntegralBaseChangeStatement.{u})
     [IsIntegralHom f] :
     IsCohomologicallyProperLEZero sZ g ((etalePushforward f).obj F) ↔
@@ -550,14 +629,13 @@ theorem isCohomologicallyProperLEZero_of_isFinite [IsFinite f] :
   intro _ _ _ _ _ _ _ _ _ hX
   exact Scheme.isIso_etaleBaseChangeMap_of_isFinite hX F
 
-/-- XIII 1.9 for sheaves of sets and `f` finite, dimension `≤ -1`, unconditionally: `(f_* F, g)`
-is cohomologically proper relative to `S` if and only if `(F, f ≫ g)` is. (SGA 1 states this for
-`f` integral; see `isCohomologicallyProperLENegOne_pushforward_iff`.) -/
+/-- XIII 1.9 for sheaves of sets and `f` finite, dimension `≤ -1`: `(f_* F, g)` is
+cohomologically proper relative to `S` if and only if `(F, f ≫ g)` is. This is the finite case of
+`isCohomologicallyProperLENegOne_pushforward_iff_of_isIntegralHom`, which supersedes it. -/
 theorem isCohomologicallyProperLENegOne_pushforward_iff_of_isFinite [IsFinite f] :
     IsCohomologicallyProperLENegOne sZ g ((etalePushforward f).obj F) ↔
       IsCohomologicallyProperLENegOne sZ (f ≫ g) F :=
-  ⟨fun h ↦ ((isCohomologicallyProperLEZero_of_isFinite f F).of_id _).leNegOne.comp h,
-    fun h ↦ h.of_comp⟩
+  isCohomologicallyProperLENegOne_pushforward_iff_of_isIntegralHom
 
 /-- XIII 1.9 for sheaves of sets and `f` finite, dimension `≤ 0`, unconditionally. (SGA 1 states
 this for `f` integral; see `isCohomologicallyProperLEZero_pushforward_iff`.) -/
@@ -662,13 +740,22 @@ lemma isSheaf_restrictGroup (hG : Presieve.IsSheaf X.smallEtaleTopology (G ⋙ f
     Presieve.IsSheaf X₁.smallEtaleTopology (restrictGroup G e ⋙ forget GrpCat) :=
   (Scheme.Etale.map e).op_comp_isSheaf_of_isSheaf_type _ hG
 
-/-- Two torsors on `X₁` are locally isomorphic over `Y₁` (for `π : X₁ ⟶ Y₁`): every point of `Y₁`
-has an étale neighbourhood `V` such that they become isomorphic on `X₁ ×_{Y₁} V`. -/
-def IsLocallyIsoOver {X₁ Y₁ : Scheme.{u}} (π : X₁ ⟶ Y₁) {H : X₁.Etaleᵒᵖ ⥤ GrpCat.{u}}
-    (P Q : Torsor X₁.smallEtaleTopology H) : Prop :=
-  ∀ y : Y₁, ∃ (V : Scheme.{u}) (v : V ⟶ Y₁) (_ : Etale v), y ∈ Set.range v ∧
+/-- Two torsors on `X₁` are locally isomorphic over `Y₁` at a point `y` of `Y₁` (for
+`π : X₁ ⟶ Y₁`): `y` has an étale neighbourhood `V` such that they become isomorphic on
+`X₁ ×_{Y₁} V`. Equivalently, their classes have the same image in the stalk of `R¹π_*` at a
+geometric point over `y`. -/
+def IsLocallyIsoOverAt {X₁ Y₁ : Scheme.{u}} (π : X₁ ⟶ Y₁) {H : X₁.Etaleᵒᵖ ⥤ GrpCat.{u}}
+    (P Q : Torsor X₁.smallEtaleTopology H) (y : Y₁) : Prop :=
+  ∃ (V : Scheme.{u}) (v : V ⟶ Y₁) (_ : Etale v), y ∈ Set.range v ∧
     Nonempty (Scheme.etaleRestrictTorsor (pullback.fst π v) P ≅
       Scheme.etaleRestrictTorsor (pullback.fst π v) Q)
+
+/-- Two torsors on `X₁` are locally isomorphic over `Y₁` (for `π : X₁ ⟶ Y₁`) if they are so at
+every point of `Y₁` (`IsLocallyIsoOverAt`), i.e. their classes have the same image in
+`Γ(Y₁, R¹π_*)`. -/
+def IsLocallyIsoOver {X₁ Y₁ : Scheme.{u}} (π : X₁ ⟶ Y₁) {H : X₁.Etaleᵒᵖ ⥤ GrpCat.{u}}
+    (P Q : Torsor X₁.smallEtaleTopology H) : Prop :=
+  ∀ y : Y₁, IsLocallyIsoOverAt π P Q y
 
 /-- XIII 1.3 for a sheaf of groups `F`, dimension `≤ -1`, in the form (ii) of XIII 1.3.1: for every
 étale `Y₁ ⟶ Y`, with `X₁ = X ×_Y Y₁`, and every torsor `P` on `X₁` under `F₁ = F|X₁`, the
@@ -685,10 +772,20 @@ def IsCohomologicallyProperLENegOneGroup : Prop :=
 /-- XIII 1.3 for a sheaf of groups `F`, dimension `≤ 0`, in the form (ii) of XIII 1.3.1: for every
 étale `Y₁ ⟶ Y`, with `X₁ = X ×_Y Y₁`, and every torsor `P` on `X₁` under `F₁`, `^P F₁` is
 cohomologically proper for `f₁` relative to `S` in dimension `≤ 0` as a sheaf of sets, and the base
-change morphism `a₁ : g^*(R¹f_* F) ⟶ R¹f'_* F'` is injective. The injectivity of `a₁` is stated
-in the local form used in the proof of XIII 1.3.1: for every `S`-scheme `S'` and every `Y₁` étale
-over `Y`, two `F₁`-torsors on `X₁` whose inverse images on `X'₁ = X₁ ×_{Y₁} Y'₁` are locally
-isomorphic over `Y'₁ = Y₁ ×_Y Y'` are locally isomorphic over `Y₁`. -/
+change morphism `a₁ : g^*(R¹f_* F) ⟶ R¹f'_* F'` is injective.
+
+The injectivity of `a₁` is stated on stalks. Let `S'` be an `S`-scheme, `Y' = Y ×_S S'`, `Y₁`
+étale over `Y`, `Y'₁ = Y₁ ×_Y Y'` with projection `g₁ : Y'₁ ⟶ Y₁`, and `X'₁ = X₁ ×_{Y₁} Y'₁`.
+Let `P`, `Q` be `F₁`-torsors on `X₁` and `y'` a point of `Y'₁`. If the inverse images of `P` and
+`Q` on `X'₁` are locally isomorphic over `Y'₁` at `y'`, then `P` and `Q` are locally isomorphic
+over `Y₁` at `g₁ y'` (`IsLocallyIsoOverAt`). At a geometric point of `Y'` over the image of `y'`,
+the stalk of `g^*(R¹f_* F)` is the stalk of `R¹f_* F` at the image point of `Y`, whose elements
+are represented by such torsors `P` for the étale neighbourhoods `Y₁` of that point; so this is
+the injectivity of `a₁` on every stalk. Only the points `g₁ y'` are concerned: `a₁` says nothing
+about the points of `Y₁` outside the image of `Y'₁`. (The proof of XIII 1.3.1 writes "`P` and `Q`
+are locally isomorphic over `Y₁`", which must be read near the image of `Y'₁`: taken over all of
+`Y₁`, the condition would fail for every proper `f` with `R¹f_* F` non-trivial, already for
+`Y' = ∅`.) -/
 def IsCohomologicallyProperLEZeroGroup
     (hG : Presieve.IsSheaf X.smallEtaleTopology (G ⋙ forget GrpCat)) : Prop :=
   (∀ ⦃Y₁ X₁ : Scheme.{u}⦄ (e : Y₁ ⟶ Y) [Etale e] (e' : X₁ ⟶ X) [Etale e'] (f₁ : X₁ ⟶ Y₁),
@@ -699,10 +796,10 @@ def IsCohomologicallyProperLEZeroGroup
       (f₁ : X₁ ⟶ Y₁), IsPullback e' f₁ f e → ∀ (eY' : Y'₁ ⟶ Y') (g₁ : Y'₁ ⟶ Y₁),
       IsPullback g₁ eY' e g → ∀ (h₁ : X'₁ ⟶ X₁) (f'₁ : X'₁ ⟶ Y'₁),
       IsPullback h₁ f'₁ f₁ g₁ →
-      ∀ P Q : Torsor X₁.smallEtaleTopology (restrictGroup G e'),
-        IsLocallyIsoOver f'₁ (Scheme.etalePullbackTorsor h₁ (isSheaf_restrictGroup hG e') P)
-          (Scheme.etalePullbackTorsor h₁ (isSheaf_restrictGroup hG e') Q) →
-        IsLocallyIsoOver f₁ P Q
+      ∀ (P Q : Torsor X₁.smallEtaleTopology (restrictGroup G e')) (y' : Y'₁),
+        IsLocallyIsoOverAt f'₁ (Scheme.etalePullbackTorsor h₁ (isSheaf_restrictGroup hG e') P)
+          (Scheme.etalePullbackTorsor h₁ (isSheaf_restrictGroup hG e') Q) y' →
+        IsLocallyIsoOverAt f₁ P Q (g₁ y')
 
 variable {s f G} (hG : Presieve.IsSheaf X.smallEtaleTopology (G ⋙ forget GrpCat))
 
@@ -791,14 +888,27 @@ theorem IntegralTorsorLocallyTrivialStatement :
       P.IsLocallyTrivialAlong Y.smallEtaleTopology (Scheme.Etale.pullback f) :=
   fun _ _ f _ _ P ↦ isLocallyTrivialAlong_of_isIntegralHom (f := f) P
 
-/-- XIII 1.9 for sheaves of groups, dimension `≤ -1`: for `f` integral, `(f_* F, g)` is
-cohomologically proper relative to `S` if and only if `(F, f ≫ g)` is. The direct implication
-uses the base change theorem for integral morphisms (SGA 4 VIII 5.6, recorded as a statement) and
-the local triviality over `Y` of torsors on `X` (SGA 4 VIII 5.8,
-`isLocallyTrivialAlong_of_isIntegralHom`); the converse is 1.7. -/
-theorem isCohomologicallyProperLENegOneGroup_pushforward_iff {sZ : Z ⟶ S} {g : Y ⟶ Z}
-    (hInt : IntegralBaseChangeStatement.{u})
-    [IsIntegralHom f] (hG : Presieve.IsSheaf X.smallEtaleTopology (G ⋙ forget GrpCat)) :
+/-- XIII 1.4 in dimension `≤ -1`, for sheaves of groups: for a universally closed (for instance
+proper) morphism `f`, every sheaf of groups on `X` is cohomologically proper for `f` relative to
+any `S` in dimension `≤ -1`. (SGA 1 states 1.4 for `f` proper, in dimension `≤ 0` for all sheaves
+of groups; this is the dimension `≤ -1` part. The twisted groups `^P F₁` live on base changes
+`f₁` of `f`, which are again universally closed.) -/
+theorem isCohomologicallyProperLENegOneGroup_of_universallyClosed (s : Y ⟶ S) (f : X ⟶ Y)
+    [UniversallyClosed f] (G : X.Etaleᵒᵖ ⥤ GrpCat.{u}) :
+    IsCohomologicallyProperLENegOneGroup s f G := by
+  intro Y₁ X₁ e _ e' _ f₁ hsq P
+  have : UniversallyClosed f₁ := MorphismProperty.of_isPullback hsq inferInstance
+  exact isCohomologicallyProperLENegOne_of_universallyClosed' f₁ _ (e ≫ s)
+
+/-- XIII 1.9 for sheaves of groups, dimension `≤ -1`, unconditionally: for `f` integral,
+`(f_* F, g)` is cohomologically proper relative to `S` in dimension `≤ -1` if and only if
+`(F, f ≫ g)` is. The direct implication uses the local triviality over `Y` of torsors on `X`
+(SGA 4 VIII 5.8, `isLocallyTrivialAlong_of_isIntegralHom`) and, in place of the integral base
+change theorem SGA 4 VIII 5.6 used by SGA, its injectivity half
+`isCohomologicallyProperLENegOne_of_universallyClosed`; the converse is 1.7. -/
+theorem isCohomologicallyProperLENegOneGroup_pushforward_iff_of_isIntegralHom {sZ : Z ⟶ S}
+    {g : Y ⟶ Z} [IsIntegralHom f]
+    (hG : Presieve.IsSheaf X.smallEtaleTopology (G ⋙ forget GrpCat)) :
     IsCohomologicallyProperLENegOneGroup sZ g (pushforwardGroup f G) ↔
       IsCohomologicallyProperLENegOneGroup sZ (f ≫ g) G := by
   refine ⟨fun h ↦ ?_, IsCohomologicallyProperLENegOneGroup.pushforward hG⟩
@@ -811,7 +921,18 @@ theorem isCohomologicallyProperLENegOneGroup_pushforward_iff {sZ : Z ⟶ S} {g :
   have H := (h e (pullback.fst g e) (pullback.snd g e) hY Q).of_iso
     (Torsor.twistPushforwardIso _ _ P hP).symm
   rw [← hf₁]
-  exact ((hInt f₁ _).of_id _).leNegOne.comp H
+  exact (isCohomologicallyProperLENegOne_of_universallyClosed' f₁ _ _).comp H
+
+/-- XIII 1.9 for sheaves of groups, dimension `≤ -1`, in the form SGA deduces it from the base
+change theorem for integral morphisms (SGA 4 VIII 5.6) and SGA 4 VIII 5.8. The hypothesis
+`IntegralBaseChangeStatement` is not used: this is
+`isCohomologicallyProperLENegOneGroup_pushforward_iff_of_isIntegralHom`, which supersedes it. -/
+theorem isCohomologicallyProperLENegOneGroup_pushforward_iff {sZ : Z ⟶ S} {g : Y ⟶ Z}
+    (_hInt : IntegralBaseChangeStatement.{u})
+    [IsIntegralHom f] (hG : Presieve.IsSheaf X.smallEtaleTopology (G ⋙ forget GrpCat)) :
+    IsCohomologicallyProperLENegOneGroup sZ g (pushforwardGroup f G) ↔
+      IsCohomologicallyProperLENegOneGroup sZ (f ≫ g) G :=
+  isCohomologicallyProperLENegOneGroup_pushforward_iff_of_isIntegralHom hG
 
 /-- SGA 4 VIII 5.8 for finite morphisms: torsors on `X` are locally trivial over `Y` for `f`
 finite (`AlgebraicGeometry.Scheme.isLocallyTrivialAlong_etalePullback_of_isFinite`). -/
@@ -819,24 +940,14 @@ theorem isLocallyTrivialAlong_of_isFinite [IsFinite f] (P : Torsor X.smallEtaleT
     P.IsLocallyTrivialAlong Y.smallEtaleTopology (Scheme.Etale.pullback f) :=
   Scheme.isLocallyTrivialAlong_etalePullback_of_isFinite f P
 
-/-- XIII 1.9 for sheaves of groups and `f` finite, dimension `≤ -1`, unconditionally: `(f_* F, g)`
-is cohomologically proper relative to `S` if and only if `(F, f ≫ g)` is. (SGA 1 states this for
-`f` integral; see `isCohomologicallyProperLENegOneGroup_pushforward_iff`.) -/
+/-- XIII 1.9 for sheaves of groups and `f` finite, dimension `≤ -1`: `(f_* F, g)` is
+cohomologically proper relative to `S` if and only if `(F, f ≫ g)` is. This is the finite case of
+`isCohomologicallyProperLENegOneGroup_pushforward_iff_of_isIntegralHom`, which supersedes it. -/
 theorem isCohomologicallyProperLENegOneGroup_pushforward_iff_of_isFinite {sZ : Z ⟶ S}
     {g : Y ⟶ Z} [IsFinite f] (hG : Presieve.IsSheaf X.smallEtaleTopology (G ⋙ forget GrpCat)) :
     IsCohomologicallyProperLENegOneGroup sZ g (pushforwardGroup f G) ↔
-      IsCohomologicallyProperLENegOneGroup sZ (f ≫ g) G := by
-  refine ⟨fun h ↦ ?_, IsCohomologicallyProperLENegOneGroup.pushforward hG⟩
-  intro Z₁ X₁ e _ eX _ h₁ hX P
-  obtain ⟨f₁, hsq, hf₁⟩ := exists_isPullback_factor hX
-  have hY := IsPullback.of_hasPullback g e
-  have : IsFinite f₁ := MorphismProperty.of_isPullback hsq ‹_›
-  have hP := isLocallyTrivialAlong_of_isFinite (f := f₁) P
-  let Q := P.pushforward (Scheme.Etale.pullback f₁) (Scheme.pushforwardRestrictIso hsq G) hP
-  have H := (h e (pullback.fst g e) (pullback.snd g e) hY Q).of_iso
-    (Torsor.twistPushforwardIso _ _ P hP).symm
-  rw [← hf₁]
-  exact ((isCohomologicallyProperLEZero_of_isFinite f₁ _).of_id _).leNegOne.comp H
+      IsCohomologicallyProperLENegOneGroup sZ (f ≫ g) G :=
+  isCohomologicallyProperLENegOneGroup_pushforward_iff_of_isIntegralHom hG
 
 end Groups
 

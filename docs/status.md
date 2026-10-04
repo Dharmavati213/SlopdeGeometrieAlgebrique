@@ -43,7 +43,7 @@ out-of-scope items in [`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations
 | VIII | Faithfully flat descent | full draft in tree | proved |
 | IX | Descent of étale morphisms; application to the fundamental group | full draft in tree | partial |
 | X | Specialization of the fundamental group | full draft in tree | partial |
-| XI | Examples and complements | full draft in tree | proved (two items out of scope) |
+| XI | Examples and complements | full draft in tree | proved (out of scope: XI.1.4, reduced to Hodge symmetry; XI.2.1 in characteristic p) |
 | XII | Algebraic geometry and analytic geometry | full draft in tree | partial |
 | XIII | Cohomological properness (sets and non-commutative groups) | full draft in tree | partial |
 
@@ -99,16 +99,16 @@ listed in [`formalization.md`](formalization.md).
 - [x] Foundations: prerequisites missing from mathlib (`lean/SGA/Foundations/`)
 - [x] **I** Étale morphisms
 - [x] **II** Smooth morphisms (II.2.5 and the sufficiency half of II.2.6 not stated)
-- [ ] **III** Infinitesimal lifting (III.2–III.4 done; III.5–III.6 in special cases; III.7 open)
+- [ ] **III** Infinitesimal lifting (III.2–III.4 done; III.5–III.6 in special cases; III.7.4 proved, `smoothProperCurveLiftStatement`; III.7.1–III.7.3 not formalized)
 - [x] **IV** Flat morphisms
 - [x] **V** The fundamental group: generalities
 - [x] **VI** Fibered categories and descent
 - [x] **VIII** Faithfully flat descent
-- [ ] **IX** Descent of étale morphisms (IX.1.10 for projective `X`; see `formalization.md`)
-- [ ] **X** Specialization of the fundamental group (X.2.1–X.2.4 for projective `X`; X.3.8 open)
-- [x] **XI** Examples and complements (XI.1.4 and XI.2.1 out of scope)
-- [ ] **XII** Algebraic geometry and analytic geometry (§§1–2 and §3 on the spaces of points `X(ℂ)`; XII.3.1 (i)–(vi), §4 (GAGA) and XII.5.3–XII.5.5 not formalized; XII.5.1 and triangulation out of scope)
-- [ ] **XIII** Cohomological properness (§1, §2, §4 and Appendix I in part; §3 out of scope)
+- [ ] **IX** Descent of étale morphisms (IX.2.6, IX.4.6, IX.4.9, IX.4.12, IX.6.8 and IX.6.11 over an arbitrary base; IX.1.10 for projective and for integral normal `X`; IX.5.2 in abstract form for connected `S'`, `S''`, and for schemes when `S` is noetherian and connected and `g` proper surjective; of IX.5.4 only a consequence, under replacement hypotheses; IX.5.1 for disconnected `S'` or `S''`, IX.5.3, IX.5.5 and IX.5.7 not formalized; see `formalization.md`)
+- [ ] **X** Specialization of the fundamental group (X.2.1–X.2.4 for projective `X`, X.2.1 also for integral normal `X`; X.2.9 and X.2.12 for `k` of characteristic 0 with `#k ≤ 𝔠`, in universe 0, out of scope otherwise; X.3.8 and X.3.9 over a complete DVR with separably closed residue field, X.3.8 open in general)
+- [x] **XI** Examples and complements (out of scope: XI.1.4, reduced to Hodge symmetry `h^{0,q} = h^{q,0}`, which is open; XI.2.1 in characteristic `p`, where it is equivalent to its `p`-primary clause; XI.2.1 holds in characteristic 0 and for the `ℓ`-primary clauses, `ℓ ≠ p`; see the Foundations README)
+- [ ] **XII** Algebraic geometry and analytic geometry (§1 for separated `X`, with the universal property of `X^an` for affine `X` only and XII.1.3.1 not formalized; §2 except XII.2.5; §3 on the spaces of points `X(ℂ)`, and for `f^an` XII.3.1 (i)–(iv), with étale read as flat and unramified and smooth as flat with regular fibres, and XII.3.1 (ix), (xi) and XII.3.2 (i), (ii) for quasi-compact `f`; XII.4.3–XII.4.6 stated, not proved; Oka coherence and Theorem B for `𝒪` on `Δ × ℂᵃ × (ℂ*)ᵇ` proved; XII.5.2 from XII.5.1 alone; XII.5.1 for schemes over `ℂ` of dimension `≤ 1` (`curveRiemannExistence`, `schemeCurveRiemannExistence`), for `ℂ` minus finitely many points, and a few other cases, open in higher dimension; XII.5.3–XII.5.5 not formalized)
+- [ ] **XIII** Cohomological properness (§1–§4 and Appendix I in part; XIII 1.4 for sheaves of sets over a locally noetherian base, and 3.2 1); for the rest of 1.4, 2.12, 2.13, §3, 4.4 and 4.6 see the Foundations README)
 
 ---
 

@@ -25,8 +25,9 @@ a principal object with group `ℤ/p` of the Galois category of finite étale `R
 `π₁ → ℤ/p` attached to them (V.5.11) separate the classes of `R/℘(R)`. For `R = k[T]`, `k` a field
 of characteristic `p`, the classes of the polynomials without monomials of degree divisible by `p`
 are pairwise distinct (`SGA.SGA1.ExposeXIII.injective_mk_primeToPPolys`) and infinite in number;
-hence `π₁(𝔸¹_k)` has infinitely many continuous homomorphisms to `ℤ/p` and is not topologically
-finitely generated (`not_isTopologicallyFG_fundamentalGroup_affineLine`). No hypothesis on `k`
+hence `π₁(𝔸¹_k)` has infinitely many continuous homomorphisms to `ℤ/p`
+(`infinite_continuousMonoidHom_aut_fiberFunctor`) and is not topologically finitely generated
+(`not_isTopologicallyFG_fundamentalGroup_affineLine`). No hypothesis on `k`
 beyond its characteristic is needed.
 
 For `k` algebraically closed, XI.6.9 (`SGA.SGA1.ExposeXI.artinSchreierEquivContinuousMonoidHom`)
@@ -207,17 +208,14 @@ end TopologicallyFG
 
 section AffineLine
 
-/-- XIII.2.13, algebraic form: for a field `k` of characteristic `p` and a geometric point
-`k[T] → Ω`, the automorphism group of the fibre functor of the finite étale `k[T]`-algebras
-(`π₁(𝔸¹_k)`, V.7) is not topologically finitely generated: the Artin–Schreier coverings of the
-polynomials without monomials of degree divisible by `p` give infinitely many continuous
-homomorphisms to `ℤ/p`. -/
-theorem not_isTopologicallyFG_aut_fiberFunctor (p : ℕ) [Fact p.Prime] (k : Type u) [Field k]
-    [CharP k p] (Ω : Type u) [Field Ω] [IsSepClosed Ω] [Algebra k[X] Ω] :
-    ¬ IsTopologicallyFG (Aut (ExposeV.fiberFunctor k[X] Ω)) := by
-  intro hfg
+/-- XIII.2.13, algebraic form: for a field `k` of characteristic `p`, `π₁(𝔸¹_k)` (the
+automorphism group of the fibre functor of finite étale `k[T]`-algebras) has infinitely many
+continuous homomorphisms to `ℤ/p`: the Artin–Schreier coverings of the polynomials without
+monomials of degree divisible by `p` give pairwise distinct ones. -/
+theorem infinite_continuousMonoidHom_aut_fiberFunctor (p : ℕ) [Fact p.Prime] (k : Type u)
+    [Field k] [CharP k p] (Ω : Type u) [Field Ω] [IsSepClosed Ω] [Algebra k[X] Ω] :
+    Infinite (ContinuousMonoidHom (Aut (ExposeV.fiberFunctor k[X] Ω)) (DiscreteZMod.{u} p)) := by
   have : CharP Ω p := charP_of_algebra p k[X] Ω
-  have hfin := finite_continuousMonoidHom_of_isTopologicallyFG hfg (DiscreteZMod.{u} p)
   let P := fun e : primeToPPolys k p ↦ artinSchreierPrincipal (p := p) Ω (e : k[X])
   let ρ : primeToPPolys k p →
       ContinuousMonoidHom (Aut (ExposeV.fiberFunctor k[X] Ω)) (DiscreteZMod.{u} p) :=
@@ -234,8 +232,20 @@ theorem not_isTopologicallyFG_aut_fiberFunctor (p : ℕ) [Fact p.Prime] (k : Typ
     have := eq_zero_of_mem_primeToPPolys_of_mem_range (sub_mem e'.2 e.2) hmem
     exact Subtype.ext (sub_eq_zero.mp this).symm
   have := infinite_primeToPPolys k p
-  have := Finite.of_injective ρ hinj
-  exact _root_.not_finite (primeToPPolys k p)
+  exact Infinite.of_injective ρ hinj
+
+/-- XIII.2.13, algebraic form: for a field `k` of characteristic `p` and a geometric point
+`k[T] → Ω`, the automorphism group of the fibre functor of the finite étale `k[T]`-algebras
+(`π₁(𝔸¹_k)`, V.7) is not topologically finitely generated: it has infinitely many continuous
+homomorphisms to `ℤ/p` (`infinite_continuousMonoidHom_aut_fiberFunctor`). -/
+theorem not_isTopologicallyFG_aut_fiberFunctor (p : ℕ) [Fact p.Prime] (k : Type u) [Field k]
+    [CharP k p] (Ω : Type u) [Field Ω] [IsSepClosed Ω] [Algebra k[X] Ω] :
+    ¬ IsTopologicallyFG (Aut (ExposeV.fiberFunctor k[X] Ω)) := by
+  intro hfg
+  have := finite_continuousMonoidHom_of_isTopologicallyFG hfg (DiscreteZMod.{u} p)
+  have := infinite_continuousMonoidHom_aut_fiberFunctor p k Ω
+  exact _root_.not_finite
+    (ContinuousMonoidHom (Aut (ExposeV.fiberFunctor k[X] Ω)) (DiscreteZMod.{u} p))
 
 /-- XIII.2.13: over a field `k` of characteristic `p > 0` (algebraically closed in SGA), the
 fundamental group `π₁(𝔸¹_k, x)` of the affine line is not topologically finitely generated, for

@@ -39,9 +39,13 @@ The purity theorem of Zariski–Nagata is proved in all dimensions:
 
 The group theory of X.3.6 (Abhyankar's lemma) and of X.3.8 ⇒ X.3.9 is in `Specialization`.
 
+X.3.8 is stated over a locally noetherian base in `TameSpecialization`
+(`TameSpecializationStatement`) and proved over a complete discrete valuation ring with separably
+closed residue field, for the closed and the generic point
+(`exists_tameSpecialization_of_isDiscreteValuationRing`, `TameLiftingSpecialization`).
+
 Not formalized: X.3.5 (remark), X.3.7 (a reformulation, via X.2.1, of the extension problem for
-principal coverings), X.3.8 itself and X.3.10 (they need the specialization homomorphism of
-schemes and, for X.3.10, the transcendental computation X.2.6), X.3.11 (remark).
+principal coverings), X.3.10 (it needs the transcendental computation X.2.6), X.3.11 (remark).
 -/
 
 universe u

@@ -51,7 +51,8 @@ relative to `S` is cohomologically proper over `X` for tamely ramified locally c
   ramified sheaves are those represented by tamely ramified étale coverings
   (`isLocallyConstantConstructible_and_isTamelyRamifiedSheaf_iff`); the reduction of tameness to
   the maximal points of `S` is `TameRamificationAtMaximalPointsStatement` (statement only, it
-  needs the relative Abhyankar lemma XIII.5.5).
+  needs the relative Abhyankar lemma XIII.5.5, stated, not proved, as
+  `RelativeAbhyankarStatement` in `SGA.SGA1.ExposeXIII.RelativeAbhyankar`).
 * 2.4 1) for sheaves of sets: `TameBaseChangeStatement`.
 
 The results of §2 depend on Abhyankar's lemma (Appendix I) and on étale cohomology (the sheaves
@@ -589,7 +590,8 @@ theorem isLocallyConstantConstructible_and_isTamelyRamifiedSheaf_iff
 suffices to check the condition of XIII 2.1.1 at the geometric points of `S` over the maximal
 points of `S`. SGA reduces to strictly normal crossings, represents `F` by an étale covering `V`
 (`IsLocallyConstantConstructible.exists_etaleYoneda_iso`) and applies the relative Abhyankar
-lemma XIII.5.5 (not formalized) to `V` over the strict localizations of `X`. -/
+lemma XIII.5.5 to `V` over the strict localizations of `X`. XIII.5.5 is stated, not proved, as
+`RelativeAbhyankarStatement` (`SGA.SGA1.ExposeXIII.RelativeAbhyankar`). -/
 def TameRamificationAtMaximalPointsStatement : Prop :=
   ∀ ⦃X S : Scheme.{u}⦄ (p : X ⟶ S) (Y : Set X) (U : X.Opens), IsNormalCrossingsSupport p Y →
     (U : Set X) = Yᶜ → ∀ F : Sheaf (U : Scheme.{u}).smallEtaleTopology (Type u),

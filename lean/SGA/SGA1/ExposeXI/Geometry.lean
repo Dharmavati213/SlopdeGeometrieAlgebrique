@@ -238,9 +238,12 @@ def UnirationalFiniteFundamentalGroupStatement : Prop :=
     (letI := (functionFieldMap f).toAlgebra; IsUnirational k X.functionField) →
     HasFiniteFundamentalGroup X
 
-/-- XI.1.4 (statement only, Serre): a smooth unirational variety over an algebraically closed
-field of characteristic zero is simply connected. SGA says "projective"; we state it for proper
-varieties, to which it extends. -/
+/-- XI.1.4 (Serre): a smooth unirational variety over an algebraically closed field of
+characteristic zero is simply connected. SGA says "projective"; we state it for proper varieties,
+to which it extends. Not proved unconditionally:
+`serreUnirationalSimplyConnectedStatement_of_hodgeSymmetryZero` (in `SerreUnirational`) derives it
+from `HodgeSymmetryZeroStatement` (Hodge symmetry `h^{0,q} = h^{q,0}`, transcendental), its only
+open input. -/
 def SerreUnirationalSimplyConnectedStatement : Prop :=
   ∀ (k : Type u) [Field k] [IsAlgClosed k] [CharZero k] (X : Scheme.{u}) [IsIntegral X]
     (f : X ⟶ Spec (.of k)) [IsProper f] [Smooth f],
@@ -293,10 +296,16 @@ theorem isCommMonObj_of_abelianVariety {K : Type u} [Field K] (G : Over (Spec (.
     [IsProper G.hom] [GeometricallyIntegral G.hom] [GrpObj G] : IsCommMonObj G :=
   isCommMonObj_of_isProper_of_geometricallyIntegral G
 
-/-- XI.2.1 (statement only; Serre–Lang): every connected finite étale covering of an abelian
-variety `A` over an algebraically closed field is dominated by multiplication by some `n > 0`.
-This is the key step of SGA's proof that `π₁(A) = lim_n K_n` (the Tate module), where `K_n` is
-the group of `n`-torsion points. -/
+/-- XI.2.1, key step (Serre–Lang): every connected finite étale covering of an abelian variety `A`
+over an algebraically closed field is dominated by multiplication by some `n > 0`. This is the
+key step of SGA's proof that `π₁(A) = lim_n K_n` (the Tate module), where `K_n` is the group of
+`n`-torsion points. Proved as `serreLangStatement` (in `SerreLang`). SGA's XI.2.1 itself is
+`AbelianVarietyFundamentalGroupStatement` (in `TateModule`): proved in characteristic `0`
+(`exists_tateModule_equiv_of_charZero`) and from SGA's cited fact that `n_A` is an isogeny
+(`abelianVarietyFundamentalGroupStatement_of_mulNIsogeny`), with its `ℓ`-primary clause proved for
+every prime `ℓ ≠ char k` (`abelianVarietyPrimaryComponent_of_natCast_ne_zero`). In characteristic
+`p > 0` it is equivalent to its `p`-primary clause
+(`abelianVarietyFundamentalGroupConclusion_iff_primaryComponent_charP`), which is open. -/
 def SerreLangStatement : Prop :=
   ∀ (k : Type u) [Field k] [IsAlgClosed k] (A : Over (Spec (.of k))) [GrpObj A]
     [IsProper A.hom] [Smooth A.hom] [ConnectedSpace A.left] ⦃Y : Scheme.{u}⦄ (f : Y ⟶ A.left)

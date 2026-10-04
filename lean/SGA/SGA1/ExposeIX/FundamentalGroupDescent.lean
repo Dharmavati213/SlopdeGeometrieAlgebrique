@@ -29,10 +29,17 @@ the descent of finiteness along universally closed surjective morphisms
 (`isFinite_of_isFinite_pullback`). They are first proved for any Galois
 structures and fibre functors, then for the fundamental groups of Exposé V at geometric points
 (`surjective_etaleFundamentalGroup_map`, `full_etalePullback`,
-`bijective_etaleFundamentalGroup_map_iff`), where the Galois structures are those of V.7. The
-presentation
-IX.5.1 for disconnected `S'`, `S''` and IX.5.3–IX.5.5, IX.5.7 need profinite presentations and are
-not formalized; for IX.5.8 only the group-theoretic translation (`ker_autMap_eq_iff_of_family`) is.
+`bijective_etaleFundamentalGroup_map_iff`), where the Galois structures are those of V.7.
+
+Proved in other files, without the presentation IX.5.1: IX.5.2 (finite generation) for
+disconnected `S'`, `S''`, when `S` is noetherian and connected and `g` proper and surjective
+(`SGA.SGA1.ExposeIX.isTopologicallyFG_etaleFundamentalGroup_of_isProper_of_surjective`, in
+`SGA.SGA1.ExposeIX.DescentFiniteGeneration`); and the consequence of IX.5.4 (pinching) on finite
+generation, "`π₁(S')` t.f.g. if `π₁(S)` is", under replacement hypotheses
+(`SGA.SGA1.ExposeIX.isTopologicallyFG_etaleFundamentalGroup_of_pinching`, in
+`SGA.SGA1.ExposeIX.Pinching`). The presentation IX.5.1 for disconnected `S'`, `S''`, IX.5.3, the
+rest of IX.5.4, IX.5.5 and IX.5.7 need profinite presentations and are not formalized; for IX.5.8
+only the group-theoretic translation (`ker_autMap_eq_iff_of_family`) is.
 -/
 
 universe v₁ v₂ v₃ v₄ u₁ u₂ u₃ u₄ w u
@@ -316,8 +323,12 @@ noncomputable def quotientRelationsEquiv (hPε : P.IsTrivialOn H ε)
 
 omit [F'''.Faithful] in
 /-- IX.5.2 when `S'` and `S''` are connected: if `g` is a descent morphism and `π₁(S')` is
-topologically finitely generated, so is `π₁(S)`. The general case (finitely many components)
-needs the presentation IX.5.1, which is not formalized. -/
+topologically finitely generated, so is `π₁(S)`. This abstract form does not cover several
+components (that would go through the presentation IX.5.1, not formalized); for schemes, IX.5.2
+with finitely many components is proved for `S` noetherian and connected and `g` proper and
+surjective, by a direct argument:
+`SGA.SGA1.ExposeIX.isTopologicallyFG_etaleFundamentalGroup_of_isProper_of_surjective` (in
+`SGA.SGA1.ExposeIX.DescentFiniteGeneration`). -/
 theorem exists_finite_topologicalClosure_eq_top (hPε : P.IsTrivialOn H ε)
     [(D.comparison H ε hε).Full] {s : Set (Aut F')} (hs : s.Finite)
     (h : (Subgroup.closure s).topologicalClosure = ⊤) :

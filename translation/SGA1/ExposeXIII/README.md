@@ -158,6 +158,14 @@ against silently repairing the source.
 | XIII.4.1; proof of XIII.4.2 | The statement ends without a period; the proof begins in lower case | Typographic slips, retained. |
 | French slips | “une revêtement principal”, “l'une des condition” (§2); “l'mage” (proof of XIII.3.1.1) | These do not affect the English. |
 
+### Found during the Lean formalization (2026-10)
+
+These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean statements use the corrected forms.
+
+| Location | Source wording | Point |
+| --- | --- | --- |
+| Proof of XIII.1.3.1, (ii bis) ⇒ (ii) and (ii) ⇒ (i) | “`P` and `Q` are isomorphic locally for the étale topology of `Y_1`”; “it follows from the injectivity of `a_1` that `P` and `Q` are locally isomorphic over `Y_1`” | The statement (ii) itself, on `a_0` and `a_1`, is not affected. The argument gives local isomorphism only near the image of `Y'_1` in `Y_1`, which is all it uses (compare the source point above on (ii bis) ⇒ (ii)). Read over all of `Y_1`, the phrase is false: for `Y' = ∅` the hypothesis is empty, and two torsors on `X_1` need not be locally isomorphic over `Y_1` (`ℤ/2`-torsors on an elliptic curve over an algebraically closed field of characteristic `≠ 2`). An earlier Lean definition in this repository read the phrase over all of `Y_1` when it encoded the injectivity of `a_1`, so it failed for proper morphisms; that error was this repository's, not SGA's. The current definition, `SGA.SGA1.ExposeXIII.IsCohomologicallyProperLEZeroGroup`, asks for local isomorphism only at the points `g_1(y')`, `y' ∈ Y'_1` (`IsLocallyIsoOverAt`). |
+
 ## Validation
 
 The local checker `source/SGA1/check_chunk.py`, which is not in the

@@ -6,6 +6,7 @@ Authors: SlopdeGeometrieAlgebrique contributors
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import Mathlib.Topology.Connected.LocallyPathConnected
 import Mathlib.Topology.Homotopy.LocallyContractible
+import SGA.Foundations.Topology.PathConnectedHelpersBasic
 
 /-!
 # Semilocally simply connected spaces
@@ -24,8 +25,11 @@ under which covering spaces of `X` are classified by the fundamental groupoid.
 
 * `exists_isRelSimplyConnected_subset`: in a locally path-connected, semilocally simply connected
   space, the open, path-connected, relatively simply connected sets form a basis of the topology.
-* Simply connected spaces and strongly locally contractible spaces are semilocally simply
-  connected.
+* Simply connected spaces are semilocally simply connected, and so are locally contractible
+  spaces in the classical (weak) sense of mathlib's `LocallyContractibleSpace`
+  (`LocallyContractibleSpace.semilocallySimplyConnectedSpace`), in particular strongly locally
+  contractible spaces (the instance
+  `StronglyLocallyContractibleSpace.semilocallySimplyConnectedSpace`).
 
 ## References
 
@@ -107,24 +111,39 @@ instance (priority := 100) SimplyConnectedSpace.semilocallySimplyConnectedSpace
 
 /-- A loop in a simply connected subspace is null-homotopic. -/
 lemma Path.homotopic_refl_of_range_subset {s : Set X} (hs : IsSimplyConnected s) {x : X}
-    (γ : Path x x) (hγ : range γ ⊆ s) : γ.Homotopic (Path.refl x) := by
-  have hx : x ∈ s := hγ ⟨0, γ.source⟩
+    (γ : Path x x) (hγ : range γ ⊆ s) : γ.Homotopic (Path.refl x) :=
   have := hs.simplyConnectedSpace
-  let γ' : Path (⟨x, hx⟩ : s) ⟨x, hx⟩ :=
-    { toFun t := ⟨γ t, hγ ⟨t, rfl⟩⟩
-      continuous_toFun := by fun_prop
-      source' := Subtype.ext γ.source
-      target' := Subtype.ext γ.target }
-  have h := (SimplyConnectedSpace.paths_homotopic γ' (Path.refl _)).map
-    ⟨Subtype.val, continuous_subtype_val⟩
-  have e : γ'.map continuous_subtype_val = γ := by ext; rfl
-  rw [← e]
-  exact h
+  Path.Homotopic.of_codRestrict (h := hγ) (h' := range_subset_iff.mpr fun _ ↦ hγ ⟨0, γ.source⟩)
+    (SimplyConnectedSpace.paths_homotopic _ _)
+
+/-- A locally contractible space (in the classical, weak sense of mathlib's
+`LocallyContractibleSpace`: every neighbourhood `U` of `x` contains a neighbourhood `V` of `x` whose
+inclusion into `U` is null-homotopic) is semilocally simply connected. -/
+theorem LocallyContractibleSpace.semilocallySimplyConnectedSpace (h : LocallyContractibleSpace X) :
+    SemilocallySimplyConnectedSpace X where
+  exists_nhds_homotopic_refl x := by
+    obtain ⟨V, hVu, hV, c, ⟨F⟩⟩ := h x univ univ_mem
+    refine ⟨V, hV, fun γ hγ ↦ ?_⟩
+    let j : C((univ : Set X), X) := ⟨Subtype.val, continuous_subtype_val⟩
+    have key := (Path.Homotopic.map_trans_evalAt F (γ.codRestrict hγ)).map j
+    rw [Path.map_trans, Path.map_trans] at key
+    let δ := (F.evalAt ⟨x, mem_of_mem_nhds hV⟩).map j.continuous
+    have e₁ : ((γ.codRestrict hγ).map (ContinuousMap.inclusion hVu).continuous).map j.continuous =
+        γ := by
+      ext; rfl
+    have e₂ : ((γ.codRestrict hγ).map (ContinuousMap.const V c).continuous).map j.continuous =
+        Path.refl (c : X) := by
+      ext; rfl
+    rw [e₁, e₂] at key
+    rw [← Path.Homotopic.Quotient.eq] at key ⊢
+    have key' : FundamentalGroupoid.fromPath (Path.Homotopic.Quotient.mk γ) ≫
+        FundamentalGroupoid.fromPath (Path.Homotopic.Quotient.mk δ) =
+        𝟙 _ ≫ FundamentalGroupoid.fromPath (Path.Homotopic.Quotient.mk δ) := by
+      rw [Category.id_comp]
+      exact key.trans (Path.Homotopic.Quotient.eq.mpr (Path.Homotopic.trans_refl _))
+    exact (cancel_mono _).mp key'
 
 /-- A strongly locally contractible space is semilocally simply connected. -/
 instance (priority := 100) StronglyLocallyContractibleSpace.semilocallySimplyConnectedSpace
-    [StronglyLocallyContractibleSpace X] : SemilocallySimplyConnectedSpace X where
-  exists_nhds_homotopic_refl x := by
-    obtain ⟨U, ⟨hU, hUc⟩, -⟩ := (contractible_basis x).mem_iff.mp univ_mem
-    have : IsSimplyConnected U := SimplyConnectedSpace.ofContractible U
-    exact ⟨U, hU, fun γ hγ ↦ Path.homotopic_refl_of_range_subset this γ hγ⟩
+    [StronglyLocallyContractibleSpace X] : SemilocallySimplyConnectedSpace X :=
+  StronglyLocallyContractibleSpace.locallyContractible.semilocallySimplyConnectedSpace

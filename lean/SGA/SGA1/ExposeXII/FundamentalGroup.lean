@@ -17,8 +17,9 @@ import Mathlib.AlgebraicGeometry.Morphisms.IsIso
 For a `K`-scheme `X` (`K = ℂ`, or any proper nontrivially normed field) and `x ∈ X(K)`, the
 functor `Ψ : Y ↦ Y(K)` from étale coverings of `X` (the category `FEt X` of V.7) to finite
 coverings of `X(K)` is faithful when `K` is algebraically closed and `X` locally of finite type
-(step 1) of the proof of XII.5.1, `SchemePoints.eq_of_forall_comp_eq`), and it is compatible with
-the fibre functors: the fibre of `Y(K) → X(K)` over `x` is
+(step 1) of the proof of XII.5.1, `SchemePoints.eq_of_forall_comp_eq`; instance below). For
+`K = ℂ` it is also full (instance in `RiemannFull.lean`), so step 1) is proved. It is compatible
+with the fibre functors: the fibre of `Y(K) → X(K)` over `x` is
 the fibre functor of V.7 at the geometric point `x : Spec K ⟶ X`
 (`schemePointsFunctorCompFiberIso`). Hence:
 
@@ -30,9 +31,13 @@ the fibre functor of V.7 at the geometric point `x : Spec K ⟶ X`
 * this applies to `X` smooth over `ℂ` (`X(ℂ)` is then locally homeomorphic to `ℂⁿ`), giving XII.5.2
   for smooth connected `X` from XII.5.1 alone (`schemeFundamentalGroupComparison_of_smooth`,
   using XII.2.4, `SchemePoints.connectedComparison`);
-* for general `X`, SGA uses the triangulability of `X(ℂ)`, recorded as
-  `LocallyContractibleStatement`; with it, XII.5.1 implies XII.5.2
-  (`schemeFundamentalGroupComparison`).
+* for general `X`, SGA uses, without comment, only that every finite étale covering of `X^an` is
+  a quotient of the universal covering by a subgroup of finite index. That holds because `X(ℂ)`
+  is connected, locally path-connected and semilocally simply connected, and all three are
+  proved (XII.2.4, `locallyPathConnectedStatement`, `semilocallySimplyConnectedStatement`), so
+  XII.5.1 alone implies XII.5.2 (`schemeFundamentalGroupComparison_of_riemannExistence`,
+  `LocalTopologySLSC.lean`). That supersedes `schemeFundamentalGroupComparison` here, which
+  assumes the stronger `LocallyContractibleStatement`.
 
 The affine versions (with the fibre functors of finite étale algebras) are
 `fundamentalGroupComparison_of_smooth'`, `fundamentalGroupComparison'` and
@@ -197,10 +202,19 @@ theorem nonempty_etaleFundamentalGroup_continuousMulEquiv_of_smooth
   have := SchemePoints.stronglyLocallyContractibleSpace_of_smooth (𝕜 := ℂ) X
   nonempty_etaleFundamentalGroup_continuousMulEquiv ℂ x
 
-/-- (Statement only) the topological input of the proof of XII.5.2: for `X` locally of finite
-type over `ℂ`, `X(ℂ)` is strongly locally contractible. SGA deduces the needed local connectedness
-and local simple connectedness from the triangulability of `X(ℂ)` (Łojasiewicz); for `X` smooth
-this is `SchemePoints.stronglyLocallyContractibleSpace_of_smooth`. -/
+/-- (Statement only) a strong form of the topological input of the proof of XII.5.2: for `X`
+locally of finite type over `ℂ`, `X(ℂ)` is strongly locally contractible (every point has a basis
+of contractible neighbourhoods). SGA's proof of XII.5.2 uses, without comment, only that every
+finite covering of `X(ℂ)` is a quotient of the universal covering, which holds because `X(ℂ)` is
+connected, locally path-connected and semilocally simply connected. It never cites
+triangulation; IX.5.7 mentions the triangulability of singular varieties only as an assumption
+that its argument avoids. Those weaker properties are proved (`locallyPathConnectedStatement`,
+`semilocallySimplyConnectedStatement`), so this statement is not needed for XII.5.2
+(`schemeFundamentalGroupComparison_of_riemannExistence`). Proved cases: `X` smooth
+(`SchemePoints.stronglyLocallyContractibleSpace_of_smooth`) and `dim X ≤ 1`
+(`SchemePoints.stronglyLocallyContractibleSpace_of_topologicalKrullDim_le_one`). In general it
+follows from the local conic structure of complex algebraic sets, or from their triangulability,
+neither of which is formalized. -/
 def LocallyContractibleStatement : Prop :=
   ∀ (X : Scheme.{0}) [X.Over (Spec (.of ℂ))] [LocallyOfFiniteType (X ↘ Spec (.of ℂ))],
     StronglyLocallyContractibleSpace (SchemePoints ℂ X)
@@ -227,8 +241,10 @@ theorem schemeFundamentalGroupComparison_of_smooth (H : SchemeRiemannExistenceSt
   nonempty_etaleFundamentalGroup_continuousMulEquiv_of_smooth H X x
 
 /-- XII.5.2, proof: the comparison of fundamental groups follows from the Riemann existence
-theorem XII.5.1 and the local contractibility of `X(ℂ)` (with the connectedness comparison
-XII.2.4, `SchemePoints.connectedComparison`). -/
+theorem XII.5.1 and the strong local contractibility of `X(ℂ)` (`LocallyContractibleStatement`;
+with the connectedness comparison XII.2.4, `SchemePoints.connectedComparison`). Superseded by
+`schemeFundamentalGroupComparison_of_riemannExistence` (`LocalTopologySLSC.lean`), which needs
+only XII.5.1. -/
 theorem schemeFundamentalGroupComparison (H : SchemeRiemannExistenceStatement)
     (Ht : LocallyContractibleStatement) : SchemeFundamentalGroupComparisonStatement := by
   intro X _ _ hX x

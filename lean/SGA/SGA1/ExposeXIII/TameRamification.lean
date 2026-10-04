@@ -33,6 +33,9 @@ Classically (Serre, *Local fields*, IV §2) one asks instead that every prime of
 * for a Galois extension, the inertia group has order prime to `p` if and only if the prime is
   tamely ramified in the classical sense (`isTamelyRamifiedAt_iff_card_inertia`), with no
   assumption on the residue fields;
+* a Galois extension of degree prime to `p` is tamely ramified (`isTameExtension_of_isGalois`,
+  over any local ring), and its ramification indices divide the degree
+  (`ramificationIdx_dvd_finrank`);
 * the two notions agree for every finite separable extension
   (`isTameExtension_iff_isTamelyRamifiedOver`): `L` is tamely ramified at all primes if and only
   if its Galois closure is; equivalently, in any finite Galois extension `M ⊇ L`, the wild inertia
@@ -285,6 +288,39 @@ lemma not_ringChar_dvd_iff (n : ℕ) :
     ¬ ringChar (ResidueField R) ∣ n ↔ (n : (maximalIdeal R).ResidueField) ≠ 0 := by
   rw [← CharP.cast_eq_zero_iff (ResidueField R), natCast_residueField_eq_zero_iff]
 
+/-- The Galois closure of a normal extension `L/K` is (the image of) `L`. -/
+lemma galoisClosure_eq_fieldRange (L : Type*) [Field L] [Algebra K L] [Normal K L] :
+    galoisClosure K L = (IsScalarTower.toAlgHom K L (AlgebraicClosure L)).fieldRange := by
+  set ι := IsScalarTower.toAlgHom K L (AlgebraicClosure L)
+  rw [galoisClosure, normalClosure_def]
+  refine le_antisymm (iSup_le fun f ↦ ?_) (le_iSup_of_le ι le_rfl)
+  let e : L ≃ₐ[K] ι.fieldRange := AlgEquiv.ofInjectiveField ι
+  have : Normal K ι.fieldRange := Normal.of_algEquiv e
+  have h := AlgHom.fieldRange_of_normal (f.comp e.symm.toAlgHom)
+  have : f.fieldRange = (f.comp e.symm.toAlgHom).fieldRange := by
+    ext x
+    simp only [AlgHom.mem_fieldRange, AlgHom.coe_comp, Function.comp_apply]
+    exact ⟨fun ⟨y, hy⟩ ↦ ⟨e y, by simpa using hy⟩, fun ⟨y, hy⟩ ↦ ⟨_, hy⟩⟩
+  rw [this, h]
+
+/-- The Galois closure of a finite normal extension `L/K` has degree `[L : K]`. -/
+lemma finrank_galoisClosure (L : Type*) [Field L] [Algebra K L] [Normal K L] :
+    Module.finrank K (galoisClosure K L) = Module.finrank K L := by
+  rw [(IntermediateField.equivOfEq (galoisClosure_eq_fieldRange L)).toLinearEquiv.finrank_eq]
+  exact (AlgEquiv.ofInjectiveField
+    (IsScalarTower.toAlgHom K L (AlgebraicClosure L))).toLinearEquiv.finrank_eq.symm
+
+/-- XIII 2.0: a finite Galois extension `L/K` of degree prime to the residue characteristic of the
+local ring `R` is tamely ramified over `R`: its inertia groups have order dividing `[L : K]`. -/
+theorem isTameExtension_of_isGalois (L : Type*) [Field L] [Algebra K L] [Algebra R L]
+    [IsScalarTower R K L] [FiniteDimensional K L] [IsGalois K L]
+    (h : ¬ ringChar (ResidueField R) ∣ Module.finrank K L) :
+    IsTameExtension R (K := K) L := by
+  intro P _ _ hdvd
+  apply h
+  refine hdvd.trans ((Subgroup.card_subgroup_dvd_card _).trans ?_)
+  rw [IsGalois.card_aut_eq_finrank, finrank_galoisClosure]
+
 end Galois
 
 section DiscreteValuationRing
@@ -439,6 +475,21 @@ theorem isTameExtension_iff_forall_wildInertia_le_of_isGalois (L M : Type*) [Fie
         Ideal.wildInertia Gal(M/K) P ≤ fixingSubgroup Gal(M/K) (Set.range (algebraMap L M)) := by
   rw [isTameExtension_iff_isTamelyRamifiedOver,
     isTamelyRamifiedOver_iff_forall_wildInertia_le R (K := K) L M]
+
+/-- In a Galois extension `L/K`, the ramification indices over the discrete valuation ring `R` of
+the primes of the normalization of `R` in `L` divide `[L : K]`. -/
+theorem ramificationIdx_dvd_finrank (L : Type*) [Field L] [Algebra K L] [Algebra R L]
+    [IsScalarTower R K L] [FiniteDimensional K L] [IsGalois K L] (Q : Ideal (integralClosure R L))
+    [Q.IsPrime] [Q.LiesOver (maximalIdeal R)] : Q.ramificationIdx R ∣ Module.finrank K L := by
+  have := integralClosure.finite R K L
+  have := integralClosure.flat R K L
+  have := integralClosure.isGaloisGroup R K L
+  have h := Ideal.ncard_primesOver_mul_ramificationIdxIn_mul_inertiaDegIn (maximalIdeal R)
+    (integralClosure R L) Gal(L/K)
+  rw [Ideal.ramificationIdxIn_eq_ramificationIdx (maximalIdeal R) Q Gal(L/K),
+    IsGalois.card_aut_eq_finrank] at h
+  rw [← h]
+  exact (Dvd.intro _ rfl).mul_left _
 
 /-- An integer is prime to the residue characteristic of `R` if and only if it is nonzero in
 `B/P`, for `P` over the maximal ideal. -/

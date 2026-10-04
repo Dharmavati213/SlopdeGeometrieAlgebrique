@@ -38,6 +38,15 @@ import SGA.SGA1.ExposeIII.FormalUniqueness
 import SGA.SGA1.ExposeIII.RelativeDerivation
 import SGA.SGA1.ExposeIII.RelativeExtension
 
+import SGA.SGA1.ExposeIII.CurveLiftAssembly
+import SGA.SGA1.ExposeIII.CurveLiftBase
+import SGA.SGA1.ExposeIII.CurveLiftCharts
+import SGA.SGA1.ExposeIII.CurveLiftCurve
+import SGA.SGA1.ExposeIII.CurveLiftFinite
+import SGA.SGA1.ExposeIII.CurveLiftFlat
+import SGA.SGA1.ExposeIII.CurveLiftSmooth
+import SGA.SGA1.ExposeIII.CurveLiftStage
+import SGA.SGA1.ExposeIII.CurveLiftSystem
 /-!
 # SGA 1, Exposé III — Smooth morphisms: extension properties
 
@@ -97,7 +106,8 @@ This module is the barrel for the Lean formalization of the exposé:
   for `H⁰` on affine charts;
 * `RelativeDerivation`: the sheaf `𝒢 = ℋom(g₀^* Ω_{X/S}, 𝒥)` on charts over an affine base `S`,
   for a thickening `T` which need not be affine (III.5.2);
-* `RelativeExtension`: III.5.3–5.4 in Čech form for a non-affine thickening.
+* `RelativeExtension`: III.5.3–5.4 in Čech form for a non-affine thickening;
+* `CurveLift*`: III.7.4 (`smoothProperCurveLiftStatement`), by a finite flat map to `ℙ¹`.
 
 The remaining global statements of §§6–7 need coherent cohomology and formal schemes. See
 `docs/formalization.md`.

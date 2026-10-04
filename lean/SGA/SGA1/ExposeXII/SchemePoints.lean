@@ -771,6 +771,11 @@ def ΓSpecAlgHom : Γ(Spec (.of R), ⊤) →ₐ[K] R :=
       rw [this, Category.assoc, Scheme.ΓSpecIso_naturality, Iso.inv_hom_id_assoc]
       rfl }
 
+/-- `Γ(Spec R, ⊤) ≅ R`, as a `K`-algebra isomorphism. -/
+def ΓSpecAlgEquiv : Γ(Spec (.of R), ⊤) ≃ₐ[K] R :=
+  AlgEquiv.ofBijective (ΓSpecAlgHom R)
+    (ConcreteCategory.bijective_of_isIso (Scheme.ΓSpecIso (.of R)).hom)
+
 lemma specPoint_eq_chart (χ : Points K R) :
     specPoint R χ = chart (isAffineOpen_top _) (Points.map (ΓSpecAlgHom R) χ) := by
   apply Subtype.ext

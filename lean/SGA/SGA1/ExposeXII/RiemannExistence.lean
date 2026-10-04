@@ -30,12 +30,32 @@ Here:
   `A`-algebras to finite coverings of `X(𝕜)`, for any proper nontrivially normed field `𝕜`
   (`Points.isCoveringMap_proj`);
   it is compatible with the fibre functors (`pointsFunctorCompFiberIso`) and faithful for `A` of
-  finite type over an algebraically closed `𝕜` (step 1) of the proof of XII.5.1, in part);
+  finite type over an algebraically closed `𝕜` (instance below);
 * `RiemannExistenceStatement` records XII.5.1 (affine case) and
   `FundamentalGroupComparisonStatement` records XII.5.2; `fundamentalGroupComparison` derives
   the latter from the former, the connectedness comparison XII.2.4 and the topological
   description of finite coverings of `X(ℂ)` (`CoveringFundamentalGroupStatement`), through the
-  formal comparison of automorphism groups of fibre functors `autContinuousMulEquiv`.
+  formal comparison of automorphism groups of fibre functors `autContinuousMulEquiv`. The last
+  two inputs are proved (`Points.connectedComparison`, `coveringFundamentalGroupStatement`), so
+  XII.5.2 follows from XII.5.1 alone (`fundamentalGroupComparison_of_riemannExistence`,
+  `StatementCorollaries.lean`).
+
+What is known about XII.5.1 (proved in later files; XII.5.1 itself is open in general):
+
+* step 1) of SGA's proof: `Ψ` is fully faithful over `ℂ`, for `X : Scheme.{0}` (faithful:
+  instance in `FundamentalGroup.lean`; full: instance in `RiemannFull.lean`) and for `A : Type`
+  (faithful: instance below; full: instance in `RiemannLocalAffine.lean`);
+* the scheme form and the affine form are equivalent
+  (`schemeRiemannExistence_iff : SchemeRiemannExistenceStatement ↔ RiemannExistenceStatement.{0}`,
+  `RiemannLocalChart.lean`), and the affine form does not depend on the universe
+  (`riemannExistence_iff_zero`, `RiemannReductionUniverse.lean`);
+* proved cases: `X(ℂ)` simply connected
+  (`isEquivalence_schemePointsFunctor_of_simplyConnectedSpace`, e.g. `𝔸ⁿ_ℂ`,
+  `riemannExistence_mvPolynomial`; `RiemannSimplyConnected.lean`), `𝔾_{m,ℂ}`
+  (`riemannExistence_laurentPolynomial`, `RiemannKummer.lean`), and `ℂ` minus a finite set
+  (`PuncturedPlane.riemannExistence_coordRing`) together with its finite étale coverings
+  (`PuncturedPlane.riemannExistence_finiteEtale`), both in `GAGAFiberSeparating.lean` (this
+  project's route, not SGA's).
 
 The analytic parts of §5 (XII.5.3, the Grauert–Remmert theorem XII.5.4, XII.5.5) concern normal
 analytic spaces, which mathlib does not have.
@@ -230,8 +250,11 @@ section Statements
 type over `ℂ`, the functor `Y ↦ Y(ℂ)` from finite étale coverings of `X` to finite coverings of
 `X(ℂ)` is an equivalence of categories. (SGA uses finite étale coverings of the analytic space
 `X^an`; these are the finite topological coverings of `X(ℂ)`, the analytic structure lifting
-uniquely along a local homeomorphism.) The functor is faithful (instance in
-`SGA.SGA1.ExposeXII.FundamentalGroup`). -/
+uniquely along a local homeomorphism.) The functor is fully faithful (faithful: instance in
+`SGA.SGA1.ExposeXII.FundamentalGroup`; full: instance in `SGA.SGA1.ExposeXII.RiemannFull`), so
+what is open is essential surjectivity. Equivalent to the affine form in universe `0`,
+`RiemannExistenceStatement.{0}` (`schemeRiemannExistence_iff`,
+`SGA.SGA1.ExposeXII.RiemannLocalChart`). -/
 def SchemeRiemannExistenceStatement : Prop :=
   ∀ (X : AlgebraicGeometry.Scheme.{0}) [X.Over (AlgebraicGeometry.Spec (.of ℂ))]
     [AlgebraicGeometry.LocallyOfFiniteType (X ↘ AlgebraicGeometry.Spec (.of ℂ))],
@@ -241,27 +264,35 @@ def SchemeRiemannExistenceStatement : Prop :=
 over `ℂ`, the functor `Ψ` from finite étale coverings of `X = Spec A` to finite coverings of
 `X(ℂ)` is an equivalence of categories. (SGA states it with finite étale coverings of the analytic
 space `X^an`; these are the same as finite topological coverings of `X(ℂ)`, the analytic
-structure lifting uniquely along a local homeomorphism. SGA's reduction to the affine case uses
-full faithfulness; faithfulness is proved here as `pointsFunctor.Faithful`.) -/
+structure lifting uniquely along a local homeomorphism.) The functor is faithful (instance above)
+and, for `A : Type`, full (instance in `SGA.SGA1.ExposeXII.RiemannLocalAffine`). The statement
+does not depend on the universe `u` (`riemannExistence_iff_zero`,
+`SGA.SGA1.ExposeXII.RiemannReductionUniverse`), and in universe `0` it is equivalent to the scheme
+form `SchemeRiemannExistenceStatement` (`schemeRiemannExistence_iff`,
+`SGA.SGA1.ExposeXII.RiemannLocalChart`). -/
 def RiemannExistenceStatement : Prop :=
   ∀ (A : Type u) [CommRing A] [Algebra ℂ A] [Algebra.FiniteType ℂ A],
     (pointsFunctor ℂ A).IsEquivalence
 
-/-- XII.5.2 (statement only), affine case: for `X = Spec A` connected, `A` of finite type over
+/-- XII.5.2 (statement), affine case: for `X = Spec A` connected, `A` of finite type over
 `ℂ`, and `x ∈ X(ℂ)`, the étale fundamental group of `X` at `x` (the automorphism group of the
 fibre functor at `x`, V.4) is isomorphic, as a profinite group, to the profinite completion of
 the topological fundamental group `π₁(X(ℂ), x)`. SGA's isomorphism is canonical; only its
-existence is stated here. -/
+existence is stated here. Proved from XII.5.1 alone
+(`fundamentalGroupComparison_of_riemannExistence`, `SGA.SGA1.ExposeXII.StatementCorollaries`);
+open without it. -/
 def FundamentalGroupComparisonStatement : Prop :=
   ∀ (A : Type u) [CommRing A] [Algebra ℂ A] [Algebra.FiniteType ℂ A],
     ConnectedSpace (PrimeSpectrum A) → ∀ x : Points ℂ A,
       Nonempty (Aut (etaleFiber ℂ A x) ≃ₜ*
         ProfiniteGrp.ProfiniteCompletion.completion (GrpCat.of (FundamentalGroup (Points ℂ A) x)))
 
-/-- The topological input of the proof of XII.5.2 (statement only): for `X(ℂ)` connected, the
+/-- The topological input of the proof of XII.5.2: for `X(ℂ)` connected, the
 automorphism group of the fibre functor of finite coverings of `X(ℂ)` at `x` is the profinite
 completion of `π₁(X(ℂ), x)`, every finite covering being a quotient of the universal covering by
-a subgroup of finite index. -/
+a subgroup of finite index. Proved in every universe (`coveringFundamentalGroupStatement`,
+`SGA.SGA1.ExposeXII.StatementCorollaries`), since `X(ℂ)` is locally path-connected and
+semilocally simply connected. -/
 def CoveringFundamentalGroupStatement : Prop :=
   ∀ (A : Type u) [CommRing A] [Algebra ℂ A] [Algebra.FiniteType ℂ A],
     ConnectedSpace (Points ℂ A) → ∀ x : Points ℂ A,

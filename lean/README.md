@@ -33,8 +33,8 @@ Prerequisites that mathlib lacks (ampleness and quasi-projective morphisms, hens
 étale stalks, differentials, the cohomology of proper morphisms, formal schemes, torsors and
 étale sheaves, pro-objects, noetherian approximation, complex analytic spaces, …) are in
 [`SGA/Foundations/`](SGA/Foundations/), in mathlib namespaces and style. Its
-[README](SGA/Foundations/README.md) lists the results that are out of scope (Hodge theory, abelian
-varieties, resolution of singularities, GAGA, triangulation, SGA 4 étale cohomology).
+[README](SGA/Foundations/README.md) lists the results that are out of scope (Hodge theory, resolution of
+singularities, GAGA, triangulation, SGA 4 étale cohomology).
 
 `lake env lean CheckSGA1Axioms.lean` checks every declaration of `SGA.SGA1.*` and
 `SGA.Foundations.*` modules. Only `propext`, `Classical.choice`, and `Quot.sound` are allowed.
