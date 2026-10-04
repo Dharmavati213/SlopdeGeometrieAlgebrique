@@ -22,9 +22,12 @@ Hence `X(𝕜)` is strongly locally contractible (`Points.stronglyLocallyContrac
 `SchemePoints.stronglyLocallyContractibleSpace_of_smooth`), so it is locally path-connected and
 semilocally simply connected, and its finite coverings are classified by `π₁` (XII.5.2).
 
-In SGA (XII.2.1, XII.3.1), `X^an` is smooth when `X` is; the topological consequences used in the
-proof of XII.5.2 are that `X^an` is locally connected and locally simply connected, which SGA gets
-from triangulability for arbitrary `X`; here only the smooth case is covered.
+In SGA (XII.2.1, XII.3.1), `X^an` is smooth when `X` is. The proof of XII.5.2 uses, without
+comment and for arbitrary `X`, that every finite covering of `X^an` is a quotient of the universal
+covering, which holds because `X^an` is locally path-connected and semilocally simply connected.
+This file covers the smooth case; the general case is proved without triangulation in
+`LocalTopologyLPC.lean` (`locallyPathConnectedStatement`) and `LocalTopologySLSC.lean`
+(`semilocallySimplyConnectedStatement`).
 -/
 
 noncomputable section

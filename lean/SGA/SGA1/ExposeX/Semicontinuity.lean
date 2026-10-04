@@ -18,10 +18,11 @@ import SGA.SGA1.ExposeIX.GaloisFunctors
 # SGA 1, Exposé X, §2: semicontinuity of the fundamental groups of the fibres
 
 X.2.1 (`π₁(X₀) ≅ π₁(X)` for `X` proper over a complete noetherian local ring) is the
-translation of IX.1.10, which rests on Grothendieck's existence theorem; X.2.9 (the fundamental
-group of a proper connected scheme over an algebraically closed field is topologically finitely
-generated) uses the transcendental theorem X.2.6 for curves. Both are recorded as statements,
-and their formal consequences are proved:
+translation of IX.1.10, which rests on Grothendieck's existence theorem; it is recorded as
+`CompleteLocalBaseStatement`. X.2.9 (the fundamental group of a proper connected scheme over an
+algebraically closed field is topologically finitely generated) is recorded as
+`TopologicallyFiniteStatement`; SGA reduces it to curves, where it is the transcendental theorem
+X.2.6. Neither statement is proved in general; special cases and their formal consequences are:
 
 * X.2.1 for `X` projective over `A` (closed in some `ℙ(τ; Spec A)`), from the existence theorem in
   the foundations: `isEquivalence_pullback_closedFibreInclusion_of_isClosedImmersion`,
@@ -31,6 +32,9 @@ and their formal consequences are proved:
   `surjective_autWhiskerLeft_of_completeLocal`;
 * X.2.1 from IX.1.10: `bijective_autWhiskerLeft_of_completeLocal` (via V.6.10), and
   `bijective_map_of_completeLocal` for the fundamental groups of Exposé V;
+* X.2.1 for `X` integral and normal, by Chow's lemma (in `NormalCompleteLocalBase`):
+  `isEquivalence_pullback_closedFibreInclusion_of_isNormalScheme`,
+  `bijective_map_of_isNormalScheme`;
 * X.2.1 when `X` is finite over `Y`, i.e. `X = Spec B` with `B` a finite `A`-algebra: proved
   (`isEquivalence_pullback_spec_closedFibre`, `bijective_map_spec_closedFibre`), since `B` is
   complete for `𝔪_A B` and étale coverings of `Spf B` are those of `Spec (B ⊗_A k)`; the case
@@ -44,12 +48,28 @@ and their formal consequences are proved:
   X.2.4 (`SpecializationSurjectiveStatement`) is proved in `SpecializationSurjective`, for `X`
   projective over `Y` unconditionally and for `X` proper from IX.1.10
   (`specializationSurjectiveStatement_of_etaleCoveringsOfClosedFibreStatement`);
+* X.2.9 and X.2.12 for every proper connected `X` over an algebraically closed field `k : Type` of
+  characteristic `0` with `#k ≤ 𝔠` (universe `0`), in `TopologicallyFiniteCharZero`:
+  `isTopologicallyFG_etaleFundamentalGroup_of_mk_le_continuum`,
+  `finite_principalH1_of_mk_le_continuum` (over `ℂ`:
+  `isTopologicallyFG_etaleFundamentalGroup_complex`, `finite_principalH1_complex`). The proof
+  compares `π₁(X)` with the topological fundamental group of `X(ℂ)` (the easy half of XII.5.2 and
+  `ExposeXII.semilocallySimplyConnectedStatement`); it uses neither the Riemann existence theorem
+  XII.5.1 nor SGA's reduction to curves;
+* SGA's reduction of X.2.9 to curves, in every characteristic (in `TopologicallyFiniteReduction`):
+  Chow's lemma, normalization and IX.5.2 reduce X.2.9 to the curve case for normal proper curves
+  and the hyperplane step X.2.10
+  (`topologicallyFiniteStatement_of_curve_of_hyperplane_of_isFinite`);
 * X.2.10 from X.2.11 is V.6.9 (`autWhiskerLeft_surjective_iff`);
 * X.2.12 from X.2.9: `finite_setOf_continuous_monoidHom_of_statement`.
 
-Not formalized: X.2.5–X.2.8 (examples; the transcendental computation X.2.6 of `π₁` of a curve,
-which needs the comparison with the topological fundamental group), X.2.10–X.2.11 themselves
-(Bertini's theorem, Zariski's connectedness theorem, projective space), X.2.13, X.2.14.
+Open: X.2.9 in characteristic `p`, for `#k > 𝔠`, and in universes other than `0`; X.2.10–X.2.11
+themselves (Bertini's theorem, Zariski's connectedness theorem). Not formalized: the remarks
+X.2.5, X.2.7, X.2.8, X.2.13, X.2.14, and the theorem X.2.6 (the transcendental computation of
+`π₁` of a smooth proper curve of genus `g`: `2g` topological generators with one relation, free
+on them in characteristic `0`). In characteristic `0`, for `#k ≤ 𝔠` and in universe `0`, the
+weaker fact that this `π₁` is topologically finitely generated is a special case of
+`isTopologicallyFG_etaleFundamentalGroup_of_mk_le_continuum`.
 -/
 
 universe u

@@ -1,5 +1,5 @@
 ---
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 
 # Hard parts
@@ -18,7 +18,8 @@ everything that matters from them is copied here. Paths are repo-relative.
 What is proved and what is open: [`docs/formalization.md`](../../docs/formalization.md) (the
 "Open statements" table lists the 17 in-scope ones) and
 [`lean/SGA/Foundations/README.md`](../../lean/SGA/Foundations/README.md) (out of scope). On
-2026-10-03, every `…Statement` named as open below was checked to still be an unproved `def`.
+2026-10-03, every `…Statement` named as open below was checked to still be an unproved `def`;
+the out-of-scope ones were checked again on 2026-10-04 (sga1-oos-coord).
 Routes that solved problems which had looked hard are in [`strategy.md`](strategy.md), under
 "Cheap and expensive surprises".
 
@@ -256,7 +257,10 @@ F-Limits-2).
 
 `TameRamificationAtMaximalPointsStatement` and `TameBaseChangeStatement`
 (`lean/SGA/SGA1/ExposeXIII/NormalCrossings.lean`) need the relative Abhyankar lemma XIII.5.5,
-which is not formalized. XIII.2.4 1) also needs cohomological properness (TAME-6). Already proved:
+which is stated (existence part, `RelativeAbhyankarStatement`,
+`lean/SGA/SGA1/ExposeXIII/RelativeAbhyankar.lean`, 2026-10-04, xiii43) but not proved; it needs
+étale depth (SGA 2 XIV 1.19/1.20). XIII.2.4 1) also needs cohomological properness (TAME-6).
+Already proved:
 - the characterization `isLocallyConstantConstructible_and_isTamelyRamifiedSheaf_iff`;
 - locally constant constructible sheaves ≌ FEt, as `fetEquivLocallyConstantFiniteSheaf`
   (`lean/SGA/SGA1/ExposeXIII/LocallyConstantSheaves.lean`).
@@ -303,6 +307,43 @@ which is not formalized. XIII.2.4 1) also needs cohomological properness (TAME-6
   is proved for projective `X`.
 - **Left.** Prove the tame lifting statement. SGA reduces to a complete DVR with algebraically
   closed residue field (X.3.7), then applies purity (X.3.1, X.3.4) and Abhyankar (X.3.6).
+- **Update (2026-10-03, xiii43).** The `hlift`/X.2.1 obstacle is gone for normal `X`:
+  `ExposeX.isEquivalence_pullback_closedFibreInclusion_of_isNormalScheme` and
+  `liftsFiniteEtale_fiberι_closedPoint_of_isNormalScheme` (`ExposeX/NormalCompleteLocalBase.lean`,
+  Chow + `formalAlgebraizable_of_stein`). The DVR target is now stated as
+  `ExposeX.TameLiftingDVRStatement` (`ExposeX/TameLifting.lean`, separably closed residue field,
+  specific map). Proved so far: the π₁ glue (`ExposeX/TameLiftingReduction.lean`, reduces to "Galois
+  coverings of `X_η̄` of degree prime to `p` come from `X`"), `FEt(X) ≃ FEt(X_{R'})` for
+  purely inseparable residue extensions and for `R[T]/(Tⁿ - π)` (`TameLiftingBaseChange`,
+  `TameLiftingKummer`), finiteness of integral closures in finite étale algebras
+  (`TameLiftingAlgebra`). Left: the extension over the generic point of the closed fibre and its
+  gluing, the descent from `X_η̄` to `X_{K'}`; plan in `notes/log/2026-10-03-xiii43-round1.md`.
+- **Update (2026-10-04, xiii43).** The geometric core is proved:
+  `ExposeX.exists_iso_pullback_adjoinRoot_of_isGalois` (`TameLiftingExtension.lean`): a Galois
+  covering with `n` automorphisms (`n` prime to `p`) of the generic fibre of `X` proper smooth over a
+  DVR extends to `X ×_V V[T]/(Tⁿ - π)`; over a complete `V` it then comes from `FEt(X)`
+  (`exists_iso_pullback_of_isGalois_of_isAdicComplete`). Galois-ness reaches the function field via
+  the Galois category of `Spec Γ(chart)` (`TameLiftingGalois.lean`), tameness via inertia orders.
+  Left for `TameLiftingDVRStatement`: descend a Galois covering of `X_{Ω₁}` to `X_{K'}` (`K'/K`
+  finite separable; X.1.8 + `Scheme.exists_isPullback_of_isLimit_of_isFinite_of_etale` + IX.4.10),
+  pass to `V'` = normalization of `R` in `K'` (`TameLiftingNormalization.lean`), assemble.
+  Lean lesson (keep canonical pullbacks out of unification problems): see `strategy.md`.
+- **Update (2026-10-04, xiii43, round 3). The core is proved:**
+  `ExposeX.tameLiftingDVRStatement : TameLiftingDVRStatement` (`ExposeX/TameLiftingProof.lean`).
+  - The descent of a Galois covering of `X_Ω` to a Galois covering of `X_{K₀}` is
+    `exists_isGalois_finiteDimensional_of_isGalois` (`TameLiftingFiniteLevel.lean`). The automorphisms
+    descend because every endomorphism descends (`exists_liftsEndos_of_isLimit`,
+    `TameLiftingDescent.lean`).
+  - Consequences, over complete DVRs with separably closed residue field:
+    - the second part of XIII.4.4 (`ExposeXIII.properSmoothHomotopyExactSequence_of_isDiscreteValuationRing`);
+    - X.3.8/X.3.9 for `y₀` closed, `y₁` generic
+      (`ExposeX.exists_tameSpecialization_of_isDiscreteValuationRing`, `TameLiftingSpecialization.lean`).
+  - **Left for `TameSpecializationStatement` (general `Y`).** The WIP above can now take the DVR case
+    as input. What is missing is the passage from a complete local base to a complete DVR with
+    separably closed residue field: a DVR dominating `𝒪_{Y,y₀}/𝔭_{y₁}` (EGA II 7.1.7,
+    Krull–Akizuki; not in mathlib, no owner), its completed strict henselization, and the comparison
+    of the geometric fibres (X.1.8 plus IX.4.10 for the closed fibres; the residue extension can be
+    transcendental).
 
 ## 6. Étale sheaves, torsors, XIII §1
 
@@ -315,13 +356,22 @@ which is not formalized. XIII.2.4 1) also needs cohomological properness (TAME-6
 - **Why.** SGA defines cohomological properness for stacks, and nothing here provides inverse
   images or stackification of stacks on étale sites. So for groups, condition (ii) of XIII 1.3.1
   is used as the definition (`IsCohomologicallyProperLENegOneGroup`, and the `…LEZero…`
-  version). The cases in dimension ≤ 0 need `Q ↦ P` to be compatible with base change, and 1.13
-  2)–3) need quotient sheaves `Q/F` (F-Etale-5). F-Etale-4 estimated about 1000 lines.
+  version). Its `R¹` clause first concluded "locally isomorphic over all of `Y₁`" from a
+  hypothesis over `Y'₁` only, which for `Y' = ∅` forced any two torsors to be locally isomorphic;
+  since 2026-10-04 it concludes only at points `g₁ y'` over `Y'` (`IsLocallyIsoOverAt`; see the
+  docstring of `IsCohomologicallyProperLEZeroGroup`). The cases in dimension ≤ 0 need `Q ↦ P` to
+  be compatible with base change, and 1.13 2)–3) need quotient sheaves `Q/F` (F-Etale-5).
+  F-Etale-4 estimated about 1000 lines.
 - **`IntegralBaseChangeStatement`** (SGA 4 VIII 5.6). The finite case is
   `isIso_etaleBaseChangeMap_of_isFinite` (`lean/SGA/Foundations/EtaleStalkBaseChange.lean`). The
   integral case needs SGA 4 VII 5.7, étale sheaves on a limit of schemes. The algebraic input,
   that étale algebras over an integral algebra come from a finite subalgebra, is already in
-  `lean/SGA/Foundations/Limits/IntegralApproximation.lean` (F-Hens-4).
+  `lean/SGA/Foundations/Limits/IntegralApproximation.lean` (F-Hens-4). Since 2026-10-04 (xiii14,
+  xiii3) VII 5.7 in degree 0 has its surjectivity half (`Scheme.exists_toLimitSections_eq`) and
+  the stalk criterion through strict localizations is proved (registry A2, A31), which reduces the
+  statement to `Γ(Spec B, F) ≅ Γ(Spec B/𝔪B, F)` for `B` integral over a strictly henselian `A`.
+  Plan, and the missing "integral over henselian ⇒ henselian pair", in
+  `../log/2026-10-04-xiii14-round3-gabber-xiii14-noetherian.md`.
 - **Technical blockers.**
   - `H¹` and `R¹f_*` live in `Type (u+1)` (F-Etale).
   - The `R¹` base change map is stuck on a universe and naturality problem (F-Etale-3,
@@ -353,14 +403,56 @@ which is not formalized. XIII.2.4 1) also needs cohomological properness (TAME-6
 
 ## 8. Complex analytic geometry (Exposé XII)
 
-- **Out of scope:** GAGA, Riemann existence (XII.5.1), triangulation (see the README).
+- **Out of scope:** GAGA and Riemann existence (XII.5.1), see "Out of scope" below. XII.5.2 needs
+  no triangulation (2026-10-04, xii52).
 - **In scope but not done**, and not recorded as statements (XII barrel docstring):
-  - the non-affine `X^an`: gluing analytic spaces, estimated at 2000+ lines with `GlueData` for
-    locally ringed spaces (F-Analytic-4);
-  - XII.3.1 (i)–(vi) and XII.5.3–XII.5.5;
+  - RESOLVED for separated `X` (2026-10-03, xii4): the non-affine `X^an`, glued with
+    `LocallyRingedSpace.GlueData` from the charts of all affine opens (about 900 lines,
+    `SGA1/ExposeXII/AnalyticGluing.lean`), and `f^an` (`AnalyticGluingMap.lean`). The cocycle is
+    cheap if you identify the fibre products with the triple-intersection charts
+    (`isIso_tripleToPullback`); `f^an` needs re-gluing along affines mapping into affines
+    (`isIso_gluedToAnalytic`). Non-separated `X` is still open;
+  - RESOLVED (2026-10-03, xii4): XII.3.1 (i)–(iii) for separated `X`
+    (`SGA1/ExposeXII/MorphismComparisonGlobal.lean`); (iv) (2026-10-04,
+    `MorphismComparisonSmooth.lean`); XII.3.2 (i), (ii), (v) (direct, topological) and XII.3.1
+    (vii) (one direction) for `f^an` by transport along `pointsHomeomorph`
+    (`MorphismComparisonPoints.lean`). Round 3 (2026-10-04): XII.3.1 (ix)
+    (`isIso_iff_isIso_analyticMap`, `MorphismComparisonIso.lean`) and (xi)
+    (`isOpenImmersion_iff_isOpenImmersion_analyticMap`, `MorphismComparisonOpenImmersion.lean`),
+    both for quasi-compact `f`; XII.3.2 (vi) direct (`isFiniteMap_analyticMap`). The trick for (ix)
+    and (xi): no inverse function theorem is needed. For the direct direction of (xi), `f` is
+    locally the inclusion of a basic open, so `f^an` is in the charts the analytification of a
+    localization. For the converses, `f` is étale (stalk isos, XII.3.1 (iii)) and injective on
+    `ℂ`-points; corestrict to the open image and use xii51's `SchemePoints.isIso_of_bijective_map`.
+    Still open: (v), (vi) (they need normality descent along faithfully flat maps and the ascent,
+    i.e. excellence), the converse of (vii), (viii) and (x) (fibre products of analytic spaces),
+    XII.3.2 (iii), (iv), converse of (v), (vi), XII.5.3–XII.5.5;
+  - RESOLVED (2026-10-04, xii4): the analytic heart of curve RET, Forster 14.13
+    (`AnalyticGeometry.exists_meromorphic_single_pole`; `compactRiemannSurfaceMeromorphic :
+    CompactRiemannSurfaceMeromorphicStatement`). Forster 14.9 with sup norms instead of `L²`:
+    Dolbeault for compact support via the Cauchy transform (mathlib's convolution API does the
+    smoothness; the generalized Cauchy formula is one polar-coordinates computation), L. Schwartz
+    by the iteration of the open mapping theorem, Montel by Arzelà–Ascoli plus mathlib's Schwarz
+    lemma in charts, mathlib's smooth partitions of unity after showing that a complex manifold is
+    a real one (`isManifold_real_of_complex`). About 2000 lines in `Foundations/Analytic/`;
+  - RESOLVED (2026-10-04, xii4, registry C8a): filling in the punctures of a finite covering of
+    `ℂ ∖ S`, `puncturedPlaneCompactification : PuncturedPlaneCompactificationStatement`
+    (`SGA1/ExposeXII/GAGAFiberSeparating.lean`). With xii51's derivations, XII.5.1 is now
+    unconditional for `ℂ ∖ S` and its finite étale covers (`PuncturedPlane.riemannExistence_coordRing`,
+    `…_finiteEtale`), and so is the genus-0 `π₁` (`…etaleFundamentalGroup_mulEquiv_completion_freeGroup`).
+    About 1000 lines (`Foundations/Analytic/RiemannSurface{Punctures,Compactification}.lean`).
+    How it was kept short: see "Building a manifold by hand" in `strategy.md`; compactness comes
+    from `IsCoveringMap.isProperMap_of_finite` (a covering with finite fibres is proper).
   - the irreducibility half of XII.2.4, which needs analytic irreducible components (XII-4);
   - ascent of reducedness and normality, which needs excellence (XII-3);
-  - Oka coherence, never attempted (F-Analytic-4).
+  - Oka coherence, never attempted (F-Analytic-4); Theorem B on polydiscs (needs ∂̄ in several
+    variables and, for derived-functor `H'`, a Cartan criterion for infinite covers: the repo's
+    `TopCat.Sheaf.H'_subsingleton_of_cech` needs finite refining families, which a non-compact
+    open set never has). Done (2026-10-04, xii4): Cousin I on a disc for arbitrary covers
+    (`AnalyticGeometry.exists_differentiableOn_sub_eq_of_cocycle`, `Foundations/Analytic/Cousin.lean`,
+    about 250 lines: mathlib's `SmoothPartitionOfUnity` on the open submanifold `B`, moved to `ℂ` with
+    `contMDiffAt_subtype_iff`, plus `exists_contDiffOn_dbar_eq_ball`). The factors `ℂ` and `ℂ*` of
+    `PolydiscProductVanishingStatement` also need `∂̄` on the plane and on annuli (Runge).
 - **Exists** (`lean/SGA/Foundations/Analytic/`):
   - convergent power series, and Weierstrass division and preparation;
   - `𝕜{X}` noetherian and henselian;
@@ -378,7 +470,9 @@ None of these is recorded as a statement:
 - V.8.2 is done only for `Spec R` (PI1).
 - V.9 is done only for finitely many connected components (PI1).
 - IX.5.3–IX.5.5 and IX.5.7 need topologically finitely presented profinite groups and free
-  profinite products (IX-b).
+  profinite products (IX-b). IX.5.2 for disconnected `S'`, `S''` (finite-generation form) and the
+  finite-generation consequence of IX.5.4 are proved since 2026-10-04 (x29,
+  `ExposeIX/DescentFiniteGeneration.lean`, `ExposeIX/Pinching.lean`; registry A12).
 - `DecompositionInertiaEtaleStatement` (`lean/SGA/SGA1/ExposeV/DecompositionInertia.lean`) is
   still stated with `Type`, i.e. universe 0. REVIEW-1 asked for `Type u`.
 
@@ -390,27 +484,114 @@ Neither is stated (II-6, REVIEW-1). Necessity in II.2.6 is in
 
 ## Out of scope
 
-The full table, with files, is in [`lean/SGA/Foundations/README.md`](../../lean/SGA/Foundations/README.md).
-The README was written at the user's request on 2026-09-27 (deps.md). Each item stays a
-faithful `…Statement`, and its consequences are proved from it.
+The reference for what is proved and what is missing in each item is the table in
+[`lean/SGA/Foundations/README.md`](../../lean/SGA/Foundations/README.md); owners and shared
+prerequisites are in [`out-of-scope-plan.md`](out-of-scope-plan.md). Each item stays a faithful
+`…Statement`, and its consequences are proved from it. Wave 1 of the campaign (2026-10-03/04,
+13 streams) proved none of these statements in full (checked 2026-10-04, sga1-oos-coord). The
+triage's cheaper routes (`../log/2026-10-03-sga1-oos-out-of-scope-triage.md`) held: X.2.9 in
+characteristic 0 needs no Riemann existence, XII.5.2 no triangulation, XIII.4.6 no resolution.
+Below, for each item: the main results, and what is hard in the rest.
 
-A triage of every item below (2026-10-03, sga1-oos) found cheaper routes for several of them:
-X.2.9 over ℂ needs only the easy half of XII.5.2, XIII.4.6 has a resolution-free route, and
-XII.5.2 needs only local path-connectedness + semilocal simple connectedness. See
-`../log/2026-10-03-sga1-oos-out-of-scope-triage.md`; those claims are not proved yet.
-
-- X.2.9 `TopologicallyFiniteStatement`: uses the transcendental X.2.6 (Riemann existence over ℂ).
-- XI.1.4 `SerreUnirationalSimplyConnectedStatement`: needs Hodge theory in characteristic 0 and Riemann–Roch.
-- XI.2.1 `SerreLangStatement`: RESOLVED (2026-10-03, sga1-xi21) by `serreLangStatement`
-  (`lean/SGA/SGA1/ExposeXI/SerreLang.lean`), with no abelian-variety theory: commutativity of
-  `π₁(A)` plus Künneth X.1.7 plus the lifting criterion. SGA's actual XI.2.1,
-  `π₁(A) ≅ lim_n K_n` (Tate module), is still not stated; it needs the kernels of `n_A`.
-- XII.5.1 `RiemannExistenceStatement`, `SchemeRiemannExistenceStatement`: need GAGA and Grauert–Remmert.
-- XII.5.2 for singular `X`, `LocallyContractibleStatement`: needs triangulation of complex varieties.
-- XIII 1.4 `ProperBaseChangeStatement`: is the proper base change theorem (SGA 4 XII 5.1).
-- XIII.4.3 and the second and third parts of XIII.4.4: need local constancy of `R¹f_*` (XIII.1.16) and XIII.2.9.
-- XIII §3: needs local acyclicity (SGA 4 XV).
-- XIII.4.6 in characteristic 0, `KunnethCharZeroStatement`: needs resolution of singularities.
-- XIII.2.13, `AbhyankarAffineLineStatement`: is Raynaud's theorem.
-- XIII.2.12 for general `g`, `n`: needs lifting to characteristic 0 plus Riemann existence. The
-  case `g = 0`, `n = 1` is proved algebraically.
+- **X.2.9, X.2.12** (`TopologicallyFiniteStatement`). Proved in characteristic 0 for `#k ≤ 𝔠`,
+  universe 0 (`ExposeX.isTopologicallyFG_etaleFundamentalGroup_of_mk_le_continuum`,
+  `finite_principalH1_of_mk_le_continuum`). In every characteristic, X.2.9 follows from the curve
+  case and X.2.10 (`topologicallyFiniteStatement_of_curve_of_hyperplane_of_isFinite`). Hard:
+  X.2.10 (Bertini; no formalizable proof of the Matsusaka–Zariski field lemma found yet); the
+  curve case in characteristic `p`, where SGA lifts the curve by III.7.4 (§1) and this
+  formalization plans a plane model, its lift to `W(k)` and pinching instead (registry A12, A29,
+  A39; missing: the finite birational map onto `planeCurve`, `𝔭 = (F)`, the lift); `#k > 𝔠`;
+  universes above 0. Handoff: `../log/2026-10-04-x29-round3-charzero-pinching-planemodel.md`.
+- **XI.1.4** (`SerreUnirationalSimplyConnectedStatement`). Reduced to `HodgeSymmetryZeroStatement`
+  (`h^{0,q} = h^{q,0}`) by `ExposeXI.serreUnirationalSimplyConnectedStatement_of_hodgeSymmetryZero`;
+  the other steps hold in every characteristic, with no Riemann–Roch (`χ(𝒪)` multiplicative in
+  finite étale coverings: `eulerCharFiniteEtaleStatement`). Hard: Hodge symmetry for `q ≥ 1` is
+  analytic Hodge theory (Lefschetz principle, GAGA, Dolbeault, harmonic forms on compact Kähler
+  manifolds), far beyond the analytic layer of §8. Route: `../log/2026-10-03-xi14-serre-unirational.md`.
+- **XI.2.1** (`AbelianVarietyFundamentalGroupStatement`, `AbelianVarietyPrimaryComponentStatement`).
+  RESOLVED: the key step `SerreLangStatement` (`serreLangStatement`, 2026-10-03, sga1-xi21), with
+  no abelian-variety theory. Proved: characteristic 0 (`exists_tateModule_equiv_of_charZero`), the
+  `ℓ`-primary clause for every prime `ℓ ≠ char k` (`abelianVarietyPrimaryComponent_of_natCast_ne_zero`),
+  and all of XI.2.1 from "`n_A` is an isogeny" (`abelianVarietyFundamentalGroupStatement_of_mulNIsogeny`).
+  Open: the `p`-primary clause in characteristic `p`, to which XI.2.1 is equivalent there
+  (`abelianVarietyFundamentalGroupConclusion_iff_primaryComponent_charP`). It follows from `p_A`
+  finite and surjective, which needs the theorem of the cube and an ample line bundle. No
+  elementary route is known: `𝔾_a` is killed by `p`, so properness must enter, and excluding an
+  abelian subvariety `B` killed by `p` needs `T_ℓ(B) ≠ 0`, i.e. degree theory. XI.2's disconnected
+  principal coverings (`Ext(A, G) ≅ H¹(A, G)`) are not done.
+- **XII.3.1, XII.4 (GAGA).** See §8. Hard: Theorem B on polydiscs and Oka coherence
+  (`PolydiscProductVanishingStatement`, `OkaCoherenceStatement`), Cartan–Serre finiteness, and
+  `Rᵖf_*` on both sides before XII.4.1–4.2 can be stated.
+- **XII.5.1** (`RiemannExistenceStatement`, `SchemeRiemannExistenceStatement`). Proved: `Ψ` fully
+  faithful, `π̂₁(X(ℂ)) ↠ π₁(X)`, scheme form ⇔ affine form (`schemeRiemannExistence_iff`), any
+  universe (`riemannExistence_iff_zero`); RET for `X(ℂ)` simply connected, for `𝔾_m`, and for
+  `ℂ ∖ S` and its finite étale covers (`PuncturedPlane.riemannExistence_coordRing`, from xii4's
+  `puncturedPlaneCompactification`). Hard: all smooth curves (extending a covering across finitely
+  many points, i.e. the normalization of `X` in `Y'` is étale over them, and reducing a smooth
+  affine curve to a finite étale cover of some `ℂ ∖ S`), singular curves (normalization descent),
+  higher dimension (resolution, or a hypersurface-complement analogue of the `ℂ ∖ S` argument plus
+  `ExposeX.purityCoverings`). Handoff: `../log/2026-10-04-xii51-round3-punctured-plane.md`.
+- **XII.5.2 for singular `X`** (`LocallyContractibleStatement`). No triangulation is needed:
+  XII.5.2 holds for every connected `X` given XII.5.1
+  (`ExposeXII.schemeFundamentalGroupComparison_of_riemannExistence`), because SGA uses only that
+  `X(ℂ)` is locally path-connected and semilocally simply connected, both proved by semialgebraic
+  geometry. The literal statement (a basis of contractible neighbourhoods) is open for singular `X`
+  of dimension `≥ 2`, needs the local conic structure (Hardt triviality or triangulation), and is
+  not used; classical local contractibility does not imply it (Borsuk's example).
+- **XIII 1.4** (`ProperBaseChangeStatement`). Proved for every sheaf of sets over a locally
+  noetherian base (`ExposeXIII.isCohomologicallyProperLEZero_of_isProper_of_isLocallyNoetherian`),
+  through Gabber's theorem over a noetherian henselian base (`properHenselianSectionsStatement`).
+  Hard: an arbitrary base (EGA IV 8 spreading out plus constructible sheaves, or Gabber over
+  non-noetherian henselian rings, which needs Stacks 09Z0 and clopen lifting without noetherian
+  hypotheses); essential surjectivity in `HenselianEtaleCoveringsOfClosedFibreStatement` (no route
+  short of Grothendieck existence plus Artin approximation); `IntegralBaseChangeStatement` (§6).
+  Handoff: `../log/2026-10-04-xiii14-round3-gabber-xiii14-noetherian.md`.
+- **XIII.4.3, XIII.4.4** (`ProperSmoothHomotopyExactSequenceStatement`, the two normal-crossings
+  statements). The second part of XIII.4.4 holds over a field, at closed points of complete
+  regular local bases, and, from the X.3.8 core (`ExposeX.tameLiftingDVRStatement`), over a
+  complete DVR with separably closed residue field
+  (`properSmoothHomotopyExactSequence_of_isDiscreteValuationRing`).
+  Hard: a general base (EGA II 7.1.7 for X.3.8, §5; finiteness when the base is not geometrically
+  unibranch); regular bases (`ProperSmoothHomotopyExactSequenceRegularStatement`, estimated
+  5–8.5k lines); the third part, which needs XIII.5.5 (`RelativeAbhyankarStatement`, stated; needs
+  étale depth, SGA 2 XIV 1.19/1.20) and XIII.2.9. Handoff: `../log/2026-10-04-xiii43-round3.md`.
+- **XIII §3** (`ExposeXIII/LocalAcyclicity.lean`). 3.2 1) is proved for every field
+  (`fieldCohomologicalPropernessStatement`); 3.3 and 3.4 for étale `f`, and for smooth `f` given
+  SGA 4 XV 2.1; SGA's desingularization hypotheses in dimension `≤ 1` over perfect fields
+  (`desingularizableUpTo_one`, `stronglyDesingularizableUpTo_one`). Hard: SGA 4 XV 2.1
+  universally (smooth ⇒ universally locally acyclic in degrees 0 and 1; no route short of SGA 4
+  XV's reduction to curves); XV 4.1 in degree 0 (Stacks 0EYS needs 37.38.8 / 37.46.3, openness of
+  the connected component along a section, EGA IV 15.6); degree-1 proper base change for 3.1 2). The
+  converse comparison (base-change form ⇒ Milnor form) is a few hundred lines on top of registry
+  A31. Handoff: `../log/2026-10-04-xiii3-round3.md`.
+- **XIII.4.6 in characteristic 0** (`KunnethCharZeroStatement`). The surjectivity half holds in
+  every characteristic (`surjective_map_prod_of_isAlgClosed`); a resolution-free route reduces
+  normal schemes of finite type to `AffineLineOpenInvarianceStatement` (invariance for opens of
+  `𝔸¹`). Hard: that statement for non-constant `g` (Kummer cover, compactification by
+  normalization, Abhyankar `etale_integralClosure_of_dvd`, purity extension, X.1.8, through
+  `hasAlgClosedBaseChangeInvariance_of_forall_exists_hom`; estimated at 1500 lines or more), descent
+  to non-normal `X`, `Y`, and qcqs `X` with arbitrary `Y`. Blueprint:
+  `../log/2026-10-04-xiii46-kunneth-round3.md` §4. "Smooth over normal is normal" is II.3.1
+  (`ExposeII/PermanenceSmooth.lean`), not new.
+- **XIII.2.12** (`TameCurveFundamentalGroupStatement`, `TameCurvePrimeToPStatement`). Proved on
+  `ℙ¹` for `(g, n) = (0, 0)`, `(0, 1)`, and `(0, 2)` with inertia
+  (`tameCurvePrimeToPConclusion_projectiveLine_two`); `π₁^{p'}(𝔾_m) = Ẑ^{(p')}`; *Galois* coverings
+  of degree prime to `p` are tame (`galoisCoveringsTameStatement`, hence
+  `primeToPCoveringsTameStatement`), so XIII.2.12 implies its "in other words" form. Without
+  "Galois" this is false: in characteristic 2 a degree-3 subcover of an `S₃`-covering of `𝔸¹`
+  (XIII.2.13 for `S₃`) has degree prime to `p` but is not tame, since `π₁^tame(𝔸¹) = 1`. Hard:
+  general `(g, n)`. Characteristic 0 needs Riemann existence for curves, surface topology (genus
+  `≥ 1` needs the classification of surfaces; genus 0 lacks the loop around `∞`) and, for the
+  inertia condition, a comparison of strict localizations with punctured discs that nobody has.
+  Characteristic `p` also needs III.7.4 and tame specialization.
+- **XIII.2.13** (`AbhyankarAffineLineStatement`, Raynaud's theorem). Proved: `p`-groups, `S₃`
+  (`p = 2`), `A₄` (`p = 3`), Serre's `p`-kernel theorem (`SerrePKernel.affineLinePExtension`), and
+  the reduction to Raynaud's two cases (`SerrePKernel.abhyankarAffineLine_of_patching_of_caseB`).
+  Case A (`AffineLinePatchingStatement`) follows from Harbater–Stevenson's Theorem 6 (formal
+  patching) and Abhyankar's lemma; the patching layer, with HS's nodal model, is in
+  `Foundations/Patching/` (registry A32). Missing for case A: HS's node lemma (induction over a
+  central series using `cd_p ≤ 1` of the punctured node), étale lifting over `k((u))⟦t⟧`,
+  branch-locus control, and specialization `k((t)) → k` (EGA IV 8 and EGA IV 9.7.7-type
+  constructibility). Case B (`AffineLineCaseBStatement`) needs Riemann existence for curves and
+  semistable reduction (`SemistableReductionStatement`, statement only). Roadmap:
+  `../log/2026-10-04-xiii213-round3-nodal-patching.md`.

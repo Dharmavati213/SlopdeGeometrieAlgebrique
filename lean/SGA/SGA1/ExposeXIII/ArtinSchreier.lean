@@ -22,8 +22,19 @@ algebraically closed fields the map `k[T]/℘ → k'[T]/℘` is not surjective (
 simple group of order divisible by `p` qualifies.
 
 We prove the Artin–Schreier computations on `k[T]` (for `k` perfect with `℘` surjective on
-`k`, e.g. algebraically closed) and the group theory of `G^{(p')}`. The identification with
-`π₁` (Artin–Schreier theory, XI.6.9) and Abhyankar's conjecture are not formalized.
+`k`, e.g. algebraically closed) and the group theory of `G^{(p')}`. Elsewhere:
+
+* the identification with `π₁` (Artin–Schreier theory, XI.6.9) is
+  `affineLineArtinSchreier` (`SGA.SGA1.ExposeXIII.AffineLineFundamentalGroup`), which also proves
+  that `π₁(𝔸¹_k)` is not topologically finitely generated
+  (`not_isTopologicallyFG_fundamentalGroup_affineLine`);
+* Abhyankar's conjecture (`AbhyankarAffineLineStatement`) is not proved in general. The direction
+  "quotient of `π₁(𝔸¹_k)` ⇒ `G^{(p')} = 1`" is `sylowSup_eq_top_of_affineLine`. The conjecture is
+  proved for `p`-groups (`abhyankarAffineLine_of_isPGroup`); `S₃` (`p = 2`) and `A₄` (`p = 3`)
+  are realized (`exists_surjective_of_mulEquiv_perm_fin_three`,
+  `exists_surjective_of_mulEquiv_alternatingGroup_fin_four`), and so is an extension of a realized
+  group by a normal `p`-subgroup (Serre, `SerrePKernel.affineLinePExtension`). The conjecture is
+  reduced to Raynaud's cases A and B (`SerrePKernel.abhyankarAffineLine_of_patching_of_caseB`).
 -/
 
 namespace SGA.SGA1.ExposeXIII

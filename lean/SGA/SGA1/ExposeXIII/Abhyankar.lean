@@ -34,8 +34,10 @@ tamely ramified along `D` (XIII.2.3 c), `IsTamelyRamifiedAlong`).
 * XIII.5.4 (`RootAdjunctionSmoothStatement`, proved in `rootAdjunctionSmoothStatement`); its étale
   part is `etale_localization_away_kummerAlgebra`.
 
-XIII.5.5–5.7 (the relative Abhyankar lemma, the relative tame fundamental group and tame torsors)
-need tame ramification relative to a base and étale cohomology, and are not formalized.
+XIII.5.5, the relative Abhyankar lemma, is stated, existence part only
+(`RelativeAbhyankarStatement`, `RelativeAbhyankar`); it is not proved. Its uniqueness part (étale
+depth, SGA 2 XIV) and XIII.5.6–5.7 (the pro-Kummer covering, `0`-acyclicity and tame torsors)
+are not formalized.
 
 The proofs are in `AbhyankarBasic` (statements, discrete valuation rings, dimension one),
 `AbhyankarSmooth` (5.4), `AbhyankarPurity` (purity, codimension one, equal characteristic) and

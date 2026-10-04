@@ -3,6 +3,7 @@ Copyright (c) 2026 SlopdeGeometrieAlgebrique contributors. All rights reserved.
 Released under MIT license as described in the file LICENSE.
 Authors: SlopdeGeometrieAlgebrique contributors
 -/
+import SGA.Foundations.Fields.GeometricallyConnected
 import SGA.SGA1.ExposeX.BaseChangeAlgClosed
 import SGA.SGA1.ExposeXI.Geometry
 
@@ -26,14 +27,13 @@ variable {k : Type u} [Field k] [IsAlgClosed k] {X T : Scheme.{u}} (s : X ⟶ Sp
   (sT : T ⟶ Spec (.of k))
 
 /-- The product over an algebraically closed field of a proper, connected and reduced scheme with
-a connected locally noetherian scheme is connected. -/
+a connected locally noetherian scheme is connected. The hypotheses `IsProper`, `IsReduced` and
+`IsLocallyNoetherian` are not needed: this is a special case of
+`AlgebraicGeometry.connectedSpace_pullback_of_isAlgClosed_of_connectedSpace` (registry row A6). -/
 theorem connectedSpace_pullback [IsProper s] [IsReduced X] [ConnectedSpace X] [ConnectedSpace T]
     [IsLocallyNoetherian T] :
-    ConnectedSpace ↥(pullback s sT) := by
-  have : GeometricallyConnected (pullback.snd s sT) :=
-    CohomologyAux.geometricallyConnected_of_isIso_app _ (ExposeX.isIso_app_snd s sT)
-  exact ExposeIX.connectedSpace_of_universally_isQuotientMap (pullback.snd s sT)
-    (ExposeIX.universally_isQuotientMap_of_universallyClosed _)
+    ConnectedSpace ↥(pullback s sT) :=
+  connectedSpace_pullback_of_isAlgClosed_of_connectedSpace s sT
 
 /-- XI.1 (with X.1.7): over an algebraically closed field `k`, the product of a proper, reduced,
 simply connected `k`-scheme `X` with a simply connected quasi-compact `k`-scheme `T` of finite

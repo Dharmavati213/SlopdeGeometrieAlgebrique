@@ -43,8 +43,9 @@ The analytic statements XII.2.2 and XII.2.4 are formulated over `ℂ` as
 `ClosureComparisonStatement` and `ConnectedComparisonStatement`; from the former we derive the
 rest of XII.2.3 and XII.3.2 (ii) (`isClosed_iff_of_closureComparison`,
 `dense_iff_of_closureComparison`, `denseRange_proj_iff_of_closureComparison`). Both are proved
-later: XII.2.2 in `Nullstellensatz.lean` (from Rückert's Nullstellensatz) and XII.2.4 in
-`Connected.lean` (`Points.connectedComparison`).
+later: XII.2.2 for `A : Type` in `StatementCorollaries.lean`
+(`Points.closureComparisonStatement_zero`, from Rückert's Nullstellensatz,
+`Nullstellensatz.lean`) and XII.2.4 in `Connected.lean` (`Points.connectedComparison`).
 -/
 
 noncomputable section
@@ -456,10 +457,13 @@ section Complex
 
 universe u
 
-/-- XII.2.2 (statement only), affine case: for a constructible subset `T` of `X = Spec A`, with
+/-- XII.2.2 (statement), affine case: for a constructible subset `T` of `X = Spec A`, with
 `A` of finite type over `ℂ`, the closure of `T(ℂ)` in `X(ℂ)` is the set of `ℂ`-points of the
 Zariski closure of `T`. SGA deduces it from the analytic Nullstellensatz. (On the noetherian
-space `X`, locally constructible and constructible agree.) -/
+space `X`, locally constructible and constructible agree.) Proved in universe `0`, from Rückert's
+Nullstellensatz (`Points.closureComparisonStatement_zero`,
+`SGA.SGA1.ExposeXII.StatementCorollaries`); other universes are not derived. The scheme form is
+`SchemePoints.closureComparison`. -/
 def ClosureComparisonStatement : Prop :=
   ∀ (A : Type u) [CommRing A] [Algebra ℂ A] [Algebra.FiniteType ℂ A]
     (T : Set (PrimeSpectrum A)), IsConstructible T →

@@ -10,8 +10,11 @@ import SGA.Foundations.Projective.Chow
 /-!
 # Dévissage of coherent modules
 
-The reduction steps of EGA III 3.1.2 and 3.2.1, for the property "all cohomology modules are
-finitely generated over `A`" of coherent modules on a noetherian scheme `X` over `Spec A`.
+The reduction steps of EGA III 3.1.2 and 3.2.1 (Stacks Tag 01YF), for an arbitrary property `P`
+of coherent modules on a noetherian scheme `X` which holds for modules with no nonzero sections and
+is closed under extensions (`CohomologyAux.prop_of_vanishesOff_range`, `prop_of_vanishesOff_union`,
+`prop_of_integral_step`), and their instances for the property "all cohomology modules are
+finitely generated over `A`" (`FiniteCohomology`).
 
 * `CohomologyAux.VanishesOff M T`: the sections of `M` over opens disjoint from `T` vanish.
 * `CohomologyAux.finiteCohomology_of_vanishesOff_range`: for a closed immersion `ι : Z ⟶ X`, a
@@ -25,6 +28,11 @@ finitely generated over `A`" of coherent modules on a noetherian scheme `X` over
 * `CohomologyAux.finiteCohomology_of_integral_step`: noetherian induction on the support reduces
   finiteness of cohomology for all coherent modules to the case of an integral closed subscheme,
   knowing it for modules supported in proper closed subsets.
+* `CohomologyAux.vanishesOff_of_isAffineOpen`: a quasi-coherent module with no nonzero section over
+  an affine open `U` vanishes off `X ∖ U`; in particular the kernel and the cokernel of a morphism
+  of quasi-coherent modules bijective on sections over `U` do
+  (`vanishesOff_kernel_factorThruImage`, `vanishesOff_cokernel`), the comparison step of
+  EGA III 3.2.1.
 -/
 
 universe u
@@ -244,40 +252,6 @@ lemma exists_killedOn [IsLocallyNoetherian X] {n : ℕ} (U : Fin n → X.Opens)
   refine ⟨Finset.univ.sup k, fun a r hr s ↦ ?_⟩
   exact hk a r (Ideal.pow_le_pow_right (Finset.le_sup (Finset.mem_univ a)) hr) s
 
-/-- **Dévissage along a closed subscheme** (EGA III 3.1.2, first step): let `X` be noetherian and
-`ι : Z ⟶ X` a closed immersion such that `ι_* ι^* N` has finite cohomology for every coherent `N`.
-Then every coherent module supported in `ι(Z)` has finite cohomology (by the filtration
-`N ⊇ 𝓘 N ⊇ 𝓘² N ⊇ ⋯`). -/
-theorem finiteCohomology_of_vanishesOff_range [IsLocallyNoetherian X] [CompactSpace X]
-    {R : Type*} [CommRing R] [IsNoetherianRing R] (ρ : R →+* Γ(X, ⊤))
-    (hZ : ∀ N : X.Modules, N.IsCoherent →
-      FiniteCohomology ρ ((Scheme.Modules.pushforward ι).obj ((Scheme.Modules.pullback ι).obj N)))
-    (N : X.Modules) [N.IsCoherent] (hN : VanishesOff N (Set.range ι)) :
-    FiniteCohomology ρ N := by
-  obtain ⟨n, U, hcov, hU⟩ := exists_cechCover' X
-  obtain ⟨k, hk⟩ := exists_killedOn ι U hU N hN
-  clear hN
-  induction k generalizing N with
-  | zero =>
-    have : N.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
-    exact finiteCohomology_of_forall_eq_zero ρ N
-      (forall_eq_zero_of_killedOn_zero ι U hU hcov N hk)
-  | succ k ih =>
-    have : N.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
-    have hS := shortExact_idealMul ι N
-    have : ((Scheme.Modules.pushforward ι).obj
-        ((Scheme.Modules.pullback ι).obj N)).IsQuasicoherent := isQuasicoherent_pushforward ι _
-    have : (ShortComplex.kernelSequence (unitPushPull ι N)).X₂.IsQuasicoherent :=
-      ‹N.IsQuasicoherent›
-    have : (ShortComplex.kernelSequence (unitPushPull ι N)).X₃.IsQuasicoherent :=
-      ‹((Scheme.Modules.pushforward ι).obj ((Scheme.Modules.pullback ι).obj N)).IsQuasicoherent›
-    have : (ShortComplex.kernelSequence (unitPushPull ι N)).X₁.IsQuasicoherent :=
-      isQuasicoherent_X₁_of_shortExact hS
-    have : (ShortComplex.kernelSequence (unitPushPull ι N)).X₂.IsCoherent := ‹N.IsCoherent›
-    have hK : (idealMul ι N).IsCoherent := isCoherent_X₁_of_shortExact hS
-    have h₁ := ih (idealMul ι N) (killedOn_idealMul ι U hU k N hk)
-    exact FiniteCohomology.of_shortExact₂ hS h₁ (hZ N inferInstance)
-
 end Filtration
 
 section Reducible
@@ -321,70 +295,6 @@ lemma isQuasicoherent_pushforward_ι [IsNoetherian X] (O : X.Opens) (M : O.toSch
       ((X.basicOpen_mul _ _).le.trans (inf_le_left.trans (hle k)))
   · rw [← Scheme.Hom.preimage_iSup, hc, Scheme.Hom.preimage_inf, Scheme.Opens.ι_preimage_self,
       inf_top_eq]
-
-/-- **Dévissage for a reducible support** (EGA III 3.1.2): let `X` be noetherian, `T₂ ⊆ X` closed
-and `M` coherent, vanishing off `T₁ ∪ T₂`. Writing `j` for the inclusion of `X ∖ T₂`, the
-kernel of `M → j_* j^* M` vanishes off `T₂` and its image vanishes off `T₁`; hence if all coherent
-modules vanishing off `T₁` or off `T₂` have finite cohomology, so has `M`. -/
-theorem finiteCohomology_of_vanishesOff_union [IsNoetherian X] {R : Type*} [CommRing R]
-    [IsNoetherianRing R] (ρ : R →+* Γ(X, ⊤)) {T₁ T₂ : Set X} (hT₂ : IsClosed T₂)
-    (h₁ : ∀ N : X.Modules, N.IsCoherent → VanishesOff N T₁ → FiniteCohomology ρ N)
-    (h₂ : ∀ N : X.Modules, N.IsCoherent → VanishesOff N T₂ → FiniteCohomology ρ N)
-    (M : X.Modules) [M.IsCoherent] (hM : VanishesOff M (T₁ ∪ T₂)) :
-    FiniteCohomology ρ M := by
-  have : M.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
-  let O : X.Opens := ⟨T₂ᶜ, hT₂.isOpen_compl⟩
-  let η := unitPushPull O.ι M
-  have : ((Scheme.Modules.pushforward O.ι).obj
-      ((Scheme.Modules.pullback O.ι).obj M)).IsQuasicoherent := isQuasicoherent_pushforward_ι O _
-  have hS := shortExact_kernelSequence (Abelian.factorThruImage η)
-  have : (Abelian.image η).IsQuasicoherent := isQuasicoherent_image η
-  have : (ShortComplex.kernelSequence (Abelian.factorThruImage η)).X₂.IsQuasicoherent :=
-    ‹M.IsQuasicoherent›
-  have : (ShortComplex.kernelSequence (Abelian.factorThruImage η)).X₃.IsQuasicoherent :=
-    ‹(Abelian.image η).IsQuasicoherent›
-  have : (ShortComplex.kernelSequence (Abelian.factorThruImage η)).X₁.IsQuasicoherent :=
-    isQuasicoherent_X₁_of_shortExact hS
-  have : (ShortComplex.kernelSequence (Abelian.factorThruImage η)).X₂.IsCoherent :=
-    ‹M.IsCoherent›
-  have hK := isCoherent_X₁_of_shortExact hS
-  have hI := isCoherent_X₃_of_shortExact hS
-  refine FiniteCohomology.of_shortExact₂ hS (h₂ _ hK ?_) (h₁ _ hI ?_)
-  · -- the kernel vanishes off `T₂`
-    intro V hV s
-    apply app_injective_of_shortExact hS V
-    rw [map_zero]
-    apply (Scheme.Modules.pullbackApp_bijective_of_isOpenImmersion O.ι M V (by
-      rw [Scheme.Opens.opensRange_ι]
-      exact fun x hx ↦ Set.disjoint_left.mp hV hx)).1
-    refine Eq.trans ?_ (map_zero _).symm
-    have h0 : kernel.ι (Abelian.factorThruImage η) ≫ η = 0 := by
-      calc kernel.ι (Abelian.factorThruImage η) ≫ η =
-          kernel.ι (Abelian.factorThruImage η) ≫ (Abelian.factorThruImage η ≫
-            Abelian.image.ι η) := by rw [Abelian.image.fac]
-        _ = 0 := by rw [kernel.condition_assoc, zero_comp]
-    change (kernel.ι (Abelian.factorThruImage η) ≫ η).app V s = 0
-    rw [h0]
-    rfl
-  · -- the image vanishes off `T₁`
-    intro V hV s
-    apply app_injective_of_mono (Abelian.image.ι η) V
-    refine Eq.trans ?_ (map_zero _).symm
-    have hW : Function.Surjective (Scheme.Modules.pullbackApp O.ι M (V ⊓ O)) :=
-      (Scheme.Modules.pullbackApp_bijective_of_isOpenImmersion O.ι M (V ⊓ O) (by
-        rw [Scheme.Opens.opensRange_ι]; exact inf_le_right)).2
-    have h0 : ∀ t : Γ((Scheme.Modules.pullback O.ι).obj M, O.ι ⁻¹ᵁ (V ⊓ O)), t = 0 := by
-      intro t
-      obtain ⟨m, rfl⟩ := hW t
-      rw [hM (V ⊓ O) ?_ m, map_zero]
-      rw [Set.disjoint_union_right]
-      exact ⟨hV.mono_left inf_le_left, Set.disjoint_left.mpr fun x hx hx' ↦ hx.2 hx'⟩
-    have he : O.ι ⁻¹ᵁ (V ⊓ O) = O.ι ⁻¹ᵁ V := by
-      rw [Scheme.Hom.preimage_inf, Scheme.Opens.ι_preimage_self, inf_top_eq]
-    apply ((Scheme.Modules.pullback O.ι).obj M).presheaf.map_injective_of_eq
-      (homOfLE he.le) he
-    refine Eq.trans ?_ (map_zero _).symm
-    exact h0 _
 
 end Reducible
 
@@ -443,20 +353,128 @@ lemma exists_integral_closedImmersion [QuasiSeparatedSpace X] (T : Set X) (hT : 
   rw [Scheme.IdealSheafData.range_subschemeι, Scheme.Hom.support_ker,
     Scheme.range_fromSpecResidueField, hirr.closure_genericPoint hT]
 
-/-- **Dévissage** (EGA III 3.1.2, 3.2.1 reduction to the integral case): let `X` be a noetherian
-scheme with affine diagonal over a noetherian ring `A`. Suppose that for every integral closed
-subscheme `ι : Z ⟶ X`, if all coherent `𝒪_Z`-modules supported in a proper closed subset have
-finitely generated cohomology over `A`, then so do all coherent `𝒪_Z`-modules. Then every coherent
-`𝒪_X`-module has finitely generated cohomology over `A`. -/
-theorem finiteCohomology_of_integral_step {A : CommRingCat.{u}} [IsNoetherianRing A]
-    [IsNoetherian X] [IsAffineHom (pullback.diagonal (terminal.from X))] (f : X ⟶ Spec A)
+end Main
+
+section Property
+
+variable (P : X.Modules → Prop)
+  (h0 : ∀ N : X.Modules, N.IsCoherent → (∀ (V : X.Opens) (s : Γ(N, V)), s = 0) → P N)
+  (h₂ : ∀ S : ShortComplex X.Modules, S.ShortExact → S.X₁.IsCoherent → S.X₂.IsCoherent →
+    S.X₃.IsCoherent → P S.X₁ → P S.X₃ → P S.X₂)
+
+include h0 h₂ in
+/-- **Dévissage along a closed subscheme** (EGA III 3.1.2, first step), for a property `P` closed
+under extensions: if `P` holds for every `ι_* ι^* N`, `N` coherent, it holds for every coherent
+module supported in `ι(Z)`. -/
+theorem prop_of_vanishesOff_range [IsLocallyNoetherian X] [CompactSpace X] {Z : Scheme.{u}}
+    (ι : Z ⟶ X) [IsClosedImmersion ι]
+    (hZ : ∀ N : X.Modules, N.IsCoherent →
+      P ((Scheme.Modules.pushforward ι).obj ((Scheme.Modules.pullback ι).obj N)))
+    (N : X.Modules) [N.IsCoherent] (hN : VanishesOff N (Set.range ι)) : P N := by
+  obtain ⟨n, U, hcov, hU⟩ := exists_cechCover' X
+  obtain ⟨k, hk⟩ := exists_killedOn ι U hU N hN
+  clear hN
+  induction k generalizing N with
+  | zero =>
+    have : N.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
+    exact h0 N inferInstance (forall_eq_zero_of_killedOn_zero ι U hU hcov N hk)
+  | succ k ih =>
+    have : N.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
+    have hS := shortExact_idealMul ι N
+    have : ((Scheme.Modules.pushforward ι).obj
+        ((Scheme.Modules.pullback ι).obj N)).IsQuasicoherent := isQuasicoherent_pushforward ι _
+    have : (ShortComplex.kernelSequence (unitPushPull ι N)).X₂.IsQuasicoherent :=
+      ‹N.IsQuasicoherent›
+    have : (ShortComplex.kernelSequence (unitPushPull ι N)).X₃.IsQuasicoherent :=
+      ‹((Scheme.Modules.pushforward ι).obj ((Scheme.Modules.pullback ι).obj N)).IsQuasicoherent›
+    have : (ShortComplex.kernelSequence (unitPushPull ι N)).X₁.IsQuasicoherent :=
+      isQuasicoherent_X₁_of_shortExact hS
+    have : (ShortComplex.kernelSequence (unitPushPull ι N)).X₂.IsCoherent := ‹N.IsCoherent›
+    have hK : (idealMul ι N).IsCoherent := isCoherent_X₁_of_shortExact hS
+    have : N.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
+    have : N.IsFiniteType := Scheme.Modules.IsCoherent.isFiniteType
+    have : ((Scheme.Modules.pullback ι).obj N).IsCoherent := ⟨inferInstance, inferInstance⟩
+    have h3 : ((Scheme.Modules.pushforward ι).obj ((Scheme.Modules.pullback ι).obj N)).IsCoherent :=
+      isCoherent_pushforward_of_isClosedImmersion ι _
+    exact h₂ _ hS hK ‹N.IsCoherent› h3 (ih (idealMul ι N) (killedOn_idealMul ι U hU k N hk))
+      (hZ N inferInstance)
+
+include h₂ in
+/-- **Dévissage for a reducible support** (EGA III 3.1.2), for a property `P` closed under
+extensions: with `T₂` closed and `M` coherent vanishing off `T₁ ∪ T₂`, if `P` holds for coherent
+modules vanishing off `T₁` or off `T₂`, it holds for `M`. -/
+theorem prop_of_vanishesOff_union [IsNoetherian X] {T₁ T₂ : Set X} (hT₂ : IsClosed T₂)
+    (h₁ : ∀ N : X.Modules, N.IsCoherent → VanishesOff N T₁ → P N)
+    (h₂' : ∀ N : X.Modules, N.IsCoherent → VanishesOff N T₂ → P N)
+    (M : X.Modules) [M.IsCoherent] (hM : VanishesOff M (T₁ ∪ T₂)) : P M := by
+  have : M.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
+  let O : X.Opens := ⟨T₂ᶜ, hT₂.isOpen_compl⟩
+  let η := unitPushPull O.ι M
+  have : ((Scheme.Modules.pushforward O.ι).obj
+      ((Scheme.Modules.pullback O.ι).obj M)).IsQuasicoherent := isQuasicoherent_pushforward_ι O _
+  have hS := shortExact_kernelSequence (Abelian.factorThruImage η)
+  have : (Abelian.image η).IsQuasicoherent := isQuasicoherent_image η
+  have : (ShortComplex.kernelSequence (Abelian.factorThruImage η)).X₂.IsQuasicoherent :=
+    ‹M.IsQuasicoherent›
+  have : (ShortComplex.kernelSequence (Abelian.factorThruImage η)).X₃.IsQuasicoherent :=
+    ‹(Abelian.image η).IsQuasicoherent›
+  have : (ShortComplex.kernelSequence (Abelian.factorThruImage η)).X₁.IsQuasicoherent :=
+    isQuasicoherent_X₁_of_shortExact hS
+  have : (ShortComplex.kernelSequence (Abelian.factorThruImage η)).X₂.IsCoherent :=
+    ‹M.IsCoherent›
+  have hK := isCoherent_X₁_of_shortExact hS
+  have hI := isCoherent_X₃_of_shortExact hS
+  refine h₂ _ hS hK ‹M.IsCoherent› hI (h₂' _ hK ?_) (h₁ _ hI ?_)
+  · -- the kernel vanishes off `T₂`
+    intro V hV s
+    apply app_injective_of_shortExact hS V
+    rw [map_zero]
+    apply (Scheme.Modules.pullbackApp_bijective_of_isOpenImmersion O.ι M V (by
+      rw [Scheme.Opens.opensRange_ι]
+      exact fun x hx ↦ Set.disjoint_left.mp hV hx)).1
+    refine Eq.trans ?_ (map_zero _).symm
+    have h0 : kernel.ι (Abelian.factorThruImage η) ≫ η = 0 := by
+      calc kernel.ι (Abelian.factorThruImage η) ≫ η =
+          kernel.ι (Abelian.factorThruImage η) ≫ (Abelian.factorThruImage η ≫
+            Abelian.image.ι η) := by rw [Abelian.image.fac]
+        _ = 0 := by rw [kernel.condition_assoc, zero_comp]
+    change (kernel.ι (Abelian.factorThruImage η) ≫ η).app V s = 0
+    rw [h0]
+    rfl
+  · -- the image vanishes off `T₁`
+    intro V hV s
+    apply app_injective_of_mono (Abelian.image.ι η) V
+    refine Eq.trans ?_ (map_zero _).symm
+    have hW : Function.Surjective (Scheme.Modules.pullbackApp O.ι M (V ⊓ O)) :=
+      (Scheme.Modules.pullbackApp_bijective_of_isOpenImmersion O.ι M (V ⊓ O) (by
+        rw [Scheme.Opens.opensRange_ι]; exact inf_le_right)).2
+    have h0 : ∀ t : Γ((Scheme.Modules.pullback O.ι).obj M, O.ι ⁻¹ᵁ (V ⊓ O)), t = 0 := by
+      intro t
+      obtain ⟨m, rfl⟩ := hW t
+      rw [hM (V ⊓ O) ?_ m, map_zero]
+      rw [Set.disjoint_union_right]
+      exact ⟨hV.mono_left inf_le_left, Set.disjoint_left.mpr fun x hx hx' ↦ hx.2 hx'⟩
+    have he : O.ι ⁻¹ᵁ (V ⊓ O) = O.ι ⁻¹ᵁ V := by
+      rw [Scheme.Hom.preimage_inf, Scheme.Opens.ι_preimage_self, inf_top_eq]
+    apply ((Scheme.Modules.pullback O.ι).obj M).presheaf.map_injective_of_eq
+      (homOfLE he.le) he
+    refine Eq.trans ?_ (map_zero _).symm
+    exact h0 _
+
+include h0 h₂ in
+/-- **Dévissage** (EGA III 3.1.2; Stacks Tag 01YF), for a property `P` of coherent modules on a
+noetherian scheme `X` which holds for modules with no nonzero sections and is closed under
+extensions: if for every integral closed subscheme `ι : Z ⟶ X`, `P (ι_* G)` holds for all coherent
+`G` as soon as it holds for those supported in a proper closed subset of `Z`, then `P` holds for
+every coherent module. -/
+theorem prop_of_integral_step [IsNoetherian X]
     (hint : ∀ (Z : Scheme.{u}) (ι : Z ⟶ X) [IsClosedImmersion ι] [IsIntegral Z],
       (∀ G : Z.Modules, G.IsCoherent → ∀ T' : Set Z, IsClosed T' → T' ≠ Set.univ →
-        VanishesOff G T' → FiniteCohomology (ι ≫ f).specStructureRingHom G) →
-      ∀ G : Z.Modules, G.IsCoherent → FiniteCohomology (ι ≫ f).specStructureRingHom G)
-    (M : X.Modules) [M.IsCoherent] : FiniteCohomology f.specStructureRingHom M := by
+        VanishesOff G T' → P ((Scheme.Modules.pushforward ι).obj G)) →
+      ∀ G : Z.Modules, G.IsCoherent → P ((Scheme.Modules.pushforward ι).obj G))
+    (M : X.Modules) [M.IsCoherent] : P M := by
   suffices H : ∀ T : TopologicalSpace.Closeds X, ∀ N : X.Modules, N.IsCoherent →
-      VanishesOff N T → FiniteCohomology f.specStructureRingHom N from
+      VanishesOff N T → P N from
     H ⊤ M inferInstance (vanishesOff_univ M)
   intro T
   induction T using WellFoundedLT.induction with
@@ -466,16 +484,13 @@ theorem finiteCohomology_of_integral_step {A : CommRingCat.{u}} [IsNoetherianRin
   swap
   · rw [Set.not_nonempty_iff_eq_empty] at hne
     rw [hne] at hNT
-    exact finiteCohomology_of_vanishesOff_empty _ N hNT
+    exact h0 N hN fun V s ↦ hNT V (Set.disjoint_empty _) s
   by_cases hpre : IsPreirreducible (T : Set X)
   · -- the irreducible case
     have hirr : IsIrreducible (T : Set X) := ⟨hne, hpre⟩
     obtain ⟨Z, ι, hι, hZ, hrange⟩ := exists_integral_closedImmersion (T : Set X) T.2 hirr
-    have hZ' : ∀ G : Z.Modules, G.IsCoherent →
-        FiniteCohomology (ι ≫ f).specStructureRingHom G := by
+    have hZ' : ∀ G : Z.Modules, G.IsCoherent → P ((Scheme.Modules.pushforward ι).obj G) := by
       refine hint Z ι fun G hG T' hT' hT'ne hGT' ↦ ?_
-      have : G.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
-      refine (finiteCohomology_iff_pushforward_of_isAffineHom ι G f).mpr ?_
       have hcl : IsClosed (ι '' T') := ι.isClosedEmbedding.isClosedMap _ hT'
       have hlt : (⟨ι '' T', hcl⟩ : TopologicalSpace.Closeds X) < T := by
         refine lt_of_le_of_ne (fun x ⟨z, _, hz⟩ ↦ by
@@ -488,12 +503,10 @@ theorem finiteCohomology_of_integral_step {A : CommRingCat.{u}} [IsNoetherianRin
         rwa [← ι.isClosedEmbedding.injective hzz']
       exact ih _ hlt _ (isCoherent_pushforward_of_isClosedImmersion ι G)
         (VanishesOff.pushforward ι hGT')
-    have : N.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
-    refine finiteCohomology_of_vanishesOff_range ι _ (fun N' hN' ↦ ?_) N (hrange ▸ hNT)
+    refine prop_of_vanishesOff_range P h0 h₂ ι (fun N' hN' ↦ ?_) N (hrange ▸ hNT)
     have : N'.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
     have : N'.IsFiniteType := Scheme.Modules.IsCoherent.isFiniteType
-    have : ((Scheme.Modules.pullback ι).obj N').IsCoherent := ⟨inferInstance, inferInstance⟩
-    exact (finiteCohomology_iff_pushforward_of_isAffineHom ι _ f).mp (hZ' _ inferInstance)
+    exact hZ' _ ⟨inferInstance, inferInstance⟩
   · -- the reducible case
     obtain ⟨u, v, hu, hv, hTu, hTv, huv⟩ : ∃ u v : Set X, IsOpen u ∧ IsOpen v ∧
         ((T : Set X) ∩ u).Nonempty ∧ ((T : Set X) ∩ v).Nonempty ∧
@@ -513,9 +526,145 @@ theorem finiteCohomology_of_integral_step {A : CommRingCat.{u}} [IsNoetherianRin
       by_contra h
       simp only [Set.mem_union, not_or] at h
       exact huv ⟨x, hx, not_not.mp fun h' ↦ h.1 ⟨hx, h'⟩, not_not.mp fun h' ↦ h.2 ⟨hx, h'⟩⟩
-    exact finiteCohomology_of_vanishesOff_union _ T₂.2 (fun N' hN' h' ↦ ih T₁ hlt₁ N' hN' h')
+    exact prop_of_vanishesOff_union P h₂ T₂.2 (fun N' hN' h' ↦ ih T₁ hlt₁ N' hN' h')
       (fun N' hN' h' ↦ ih T₂ hlt₂ N' hN' h') N (hNT.mono hunion)
 
-end Main
+end Property
+
+section Comparison
+
+variable {Z : Scheme.{u}}
+
+/-- A module whose sections over the basic opens `D(c) ⊆ W` of an affine `U ⊇ W` vanish vanishes
+off the complement of `W`. -/
+lemma vanishesOff_of_basicOpen (N : Z.Modules) {U : Z.Opens} (hU : IsAffineOpen U) {W : Z.Opens}
+    (hWU : W ≤ U) (h : ∀ c : Γ(Z, U), Z.basicOpen c ≤ W → ∀ s : Γ(N, Z.basicOpen c), s = 0) :
+    VanishesOff N (W : Set Z)ᶜ := by
+  intro V hV s
+  have hVW : V ≤ W := fun x hx ↦ not_not.mp fun h' ↦ Set.disjoint_left.mp hV hx h'
+  have hx : ∀ x : V, ∃ c : Γ(Z, U), Z.basicOpen c ≤ V ∧ x.1 ∈ Z.basicOpen c :=
+    fun x ↦ hU.exists_basicOpen_le x (hWU (hVW x.2))
+  choose c hcV hxc using hx
+  refine TopCat.Sheaf.eq_of_locally_eq' N.toAbSheaf (fun x ↦ Z.basicOpen (c x)) V
+    (fun x ↦ homOfLE (hcV x)) (fun x hx ↦ Opens.mem_iSup.mpr ⟨⟨x, hx⟩, hxc ⟨x, hx⟩⟩) s 0
+    fun x ↦ ?_
+  rw [map_zero]
+  exact h (c x) ((hcV x).trans hVW) _
+
+/-- A quasi-coherent module with no nonzero section over an affine open `U` vanishes off the
+complement of `U`: its sections over a basic open `D(c) ⊆ U` are fractions of sections over `U`
+(EGA I 1.4.1). -/
+lemma vanishesOff_of_isAffineOpen (N : Z.Modules) [N.IsQuasicoherent] {U : Z.Opens}
+    (hU : IsAffineOpen U) (h : ∀ s : Γ(N, U), s = 0) : VanishesOff N (U : Set Z)ᶜ := by
+  refine vanishesOff_of_basicOpen N hU le_rfl fun c _ t ↦ ?_
+  obtain ⟨m, k, hm⟩ := exists_pow_smul_eq_map N hU c t
+  rw [h m, map_zero] at hm
+  have hu : IsUnit (Z.presheaf.map (homOfLE (Z.basicOpen_le c)).op (c ^ k)) := by
+    rw [map_pow]
+    exact (Z.toRingedSpace.isUnit_res_basicOpen c).pow k
+  calc t = hu.unit⁻¹.1 • Z.presheaf.map (homOfLE (Z.basicOpen_le c)).op (c ^ k) • t := by
+        rw [smul_smul, IsUnit.val_inv_mul, one_smul]
+    _ = 0 := by rw [hm, smul_zero]
+
+/-- The kernel of `G ⟶ im φ` vanishes off the complement of an affine open `U` over which `φ` is
+injective on sections. -/
+lemma vanishesOff_kernel_factorThruImage {G Q : Z.Modules} [G.IsQuasicoherent]
+    [Q.IsQuasicoherent] (φ : G ⟶ Q) {U : Z.Opens} (hU : IsAffineOpen U)
+    (hφ : Function.Injective (φ.app U)) :
+    VanishesOff (kernel (Abelian.factorThruImage φ)) (U : Set Z)ᶜ := by
+  have : (Abelian.image φ).IsQuasicoherent := isQuasicoherent_image φ
+  have : (kernel (Abelian.factorThruImage φ)).IsQuasicoherent := isQuasicoherent_kernel _
+  refine vanishesOff_of_isAffineOpen _ hU fun s ↦ ?_
+  apply app_injective_of_mono (kernel.ι (Abelian.factorThruImage φ)) U
+  refine Eq.trans ?_ (map_zero _).symm
+  apply hφ
+  refine Eq.trans ?_ (map_zero _).symm
+  have h0 : kernel.ι (Abelian.factorThruImage φ) ≫ φ = 0 :=
+    calc kernel.ι (Abelian.factorThruImage φ) ≫ φ =
+        kernel.ι (Abelian.factorThruImage φ) ≫ (Abelian.factorThruImage φ ≫
+          Abelian.image.ι φ) := by rw [Abelian.image.fac]
+      _ = 0 := by rw [kernel.condition_assoc, zero_comp]
+  change (kernel.ι (Abelian.factorThruImage φ) ≫ φ).app _ s = 0
+  rw [h0]
+  rfl
+
+/-- The cokernel of `φ` vanishes off the complement of an affine open `U` over which `φ` is
+surjective on sections (the image of `φ` is quasi-coherent, so has no `H¹` over `U`). -/
+lemma vanishesOff_cokernel {G Q : Z.Modules} [G.IsQuasicoherent] [Q.IsQuasicoherent]
+    (φ : G ⟶ Q) {U : Z.Opens} (hU : IsAffineOpen U) (hφ : Function.Surjective (φ.app U)) :
+    VanishesOff (cokernel φ) (U : Set Z)ᶜ := by
+  have hS := shortExact_kernelSequence (cokernel.π φ)
+  have : (ShortComplex.kernelSequence (cokernel.π φ)).X₁.IsQuasicoherent :=
+    isQuasicoherent_image φ
+  have : (cokernel φ).IsQuasicoherent := isQuasicoherent_cokernel φ
+  refine vanishesOff_of_isAffineOpen _ hU fun t ↦ ?_
+  have hsurj := TopCat.Sheaf.surjective_app_of_subsingleton_H'_one
+    (Scheme.Modules.shortExact_abShortComplex hS) U
+    ((ShortComplex.kernelSequence (cokernel.π φ)).X₁.H'_subsingleton_of_isAffineOpen hU 0)
+  obtain ⟨y, rfl⟩ := hsurj t
+  obtain ⟨x, rfl⟩ := hφ y
+  change (φ ≫ cokernel.π φ).app _ x = 0
+  rw [cokernel.condition]
+  rfl
+
+end Comparison
+
+section FiniteCohomology
+
+/-- **Dévissage along a closed subscheme** (EGA III 3.1.2, first step): let `X` be noetherian and
+`ι : Z ⟶ X` a closed immersion such that `ι_* ι^* N` has finite cohomology for every coherent `N`.
+Then every coherent module supported in `ι(Z)` has finite cohomology (by the filtration
+`N ⊇ 𝓘 N ⊇ 𝓘² N ⊇ ⋯`; the case `P := FiniteCohomology ρ` of `prop_of_vanishesOff_range`). -/
+theorem finiteCohomology_of_vanishesOff_range [IsLocallyNoetherian X] [CompactSpace X]
+    {Z : Scheme.{u}} (ι : Z ⟶ X) [IsClosedImmersion ι]
+    {R : Type*} [CommRing R] [IsNoetherianRing R] (ρ : R →+* Γ(X, ⊤))
+    (hZ : ∀ N : X.Modules, N.IsCoherent →
+      FiniteCohomology ρ ((Scheme.Modules.pushforward ι).obj ((Scheme.Modules.pullback ι).obj N)))
+    (N : X.Modules) [N.IsCoherent] (hN : VanishesOff N (Set.range ι)) :
+    FiniteCohomology ρ N :=
+  prop_of_vanishesOff_range (FiniteCohomology ρ)
+    (fun N _ h ↦ finiteCohomology_of_forall_eq_zero ρ N h)
+    (fun _ hS _ _ _ h₁ h₃ ↦ FiniteCohomology.of_shortExact₂ hS h₁ h₃) ι hZ N hN
+
+/-- **Dévissage for a reducible support** (EGA III 3.1.2): let `X` be noetherian, `T₂ ⊆ X` closed
+and `M` coherent, vanishing off `T₁ ∪ T₂`. If all coherent modules vanishing off `T₁` or off `T₂`
+have finite cohomology, so has `M` (the case `P := FiniteCohomology ρ` of
+`prop_of_vanishesOff_union`). -/
+theorem finiteCohomology_of_vanishesOff_union [IsNoetherian X] {R : Type*} [CommRing R]
+    [IsNoetherianRing R] (ρ : R →+* Γ(X, ⊤)) {T₁ T₂ : Set X} (hT₂ : IsClosed T₂)
+    (h₁ : ∀ N : X.Modules, N.IsCoherent → VanishesOff N T₁ → FiniteCohomology ρ N)
+    (h₂ : ∀ N : X.Modules, N.IsCoherent → VanishesOff N T₂ → FiniteCohomology ρ N)
+    (M : X.Modules) [M.IsCoherent] (hM : VanishesOff M (T₁ ∪ T₂)) :
+    FiniteCohomology ρ M :=
+  prop_of_vanishesOff_union (FiniteCohomology ρ)
+    (fun _ hS _ _ _ h₁ h₃ ↦ FiniteCohomology.of_shortExact₂ hS h₁ h₃) hT₂ h₁ h₂ M hM
+
+/-- **Dévissage** (EGA III 3.1.2, 3.2.1 reduction to the integral case): let `X` be a noetherian
+scheme with affine diagonal over a noetherian ring `A`. Suppose that for every integral closed
+subscheme `ι : Z ⟶ X`, if all coherent `𝒪_Z`-modules supported in a proper closed subset have
+finitely generated cohomology over `A`, then so do all coherent `𝒪_Z`-modules. Then every coherent
+`𝒪_X`-module has finitely generated cohomology over `A`. This is `prop_of_integral_step` for
+`P := FiniteCohomology`, transported along `ι_*`
+(`finiteCohomology_iff_pushforward_of_isAffineHom`). -/
+theorem finiteCohomology_of_integral_step {A : CommRingCat.{u}} [IsNoetherianRing A]
+    [IsNoetherian X] [IsAffineHom (pullback.diagonal (terminal.from X))] (f : X ⟶ Spec A)
+    (hint : ∀ (Z : Scheme.{u}) (ι : Z ⟶ X) [IsClosedImmersion ι] [IsIntegral Z],
+      (∀ G : Z.Modules, G.IsCoherent → ∀ T' : Set Z, IsClosed T' → T' ≠ Set.univ →
+        VanishesOff G T' → FiniteCohomology (ι ≫ f).specStructureRingHom G) →
+      ∀ G : Z.Modules, G.IsCoherent → FiniteCohomology (ι ≫ f).specStructureRingHom G)
+    (M : X.Modules) [M.IsCoherent] : FiniteCohomology f.specStructureRingHom M := by
+  have hpush : ∀ {Z : Scheme.{u}} (ι : Z ⟶ X) [IsClosedImmersion ι] (G : Z.Modules),
+      G.IsCoherent → (FiniteCohomology (ι ≫ f).specStructureRingHom G ↔
+        FiniteCohomology f.specStructureRingHom ((Scheme.Modules.pushforward ι).obj G)) :=
+    fun ι _ G hG ↦
+      have : G.IsQuasicoherent := hG.isQuasicoherent
+      finiteCohomology_iff_pushforward_of_isAffineHom ι G f
+  exact prop_of_integral_step (FiniteCohomology f.specStructureRingHom)
+    (fun N _ h ↦ finiteCohomology_of_forall_eq_zero _ N h)
+    (fun _ hS _ _ _ h₁ h₃ ↦ FiniteCohomology.of_shortExact₂ hS h₁ h₃)
+    (fun Z ι _ _ hZ G hG ↦ (hpush ι G hG).mp (hint Z ι (fun G' hG' T' h₁ h₂ h₃ ↦
+      (hpush ι G' hG').mpr (hZ G' hG' T' h₁ h₂ h₃)) G hG)) M
+
+end FiniteCohomology
 
 end AlgebraicGeometry.CohomologyAux

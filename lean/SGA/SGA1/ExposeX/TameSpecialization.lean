@@ -11,11 +11,26 @@ import SGA.SGA1.ExposeX.Semicontinuity
 X.3.8 (for `f` proper and smooth with geometrically connected fibres, the specialization
 homomorphism `π₁(X̄₁) → π₁(X̄₀)` is surjective and every continuous homomorphism of `π₁(X̄₁)` to a
 finite group of order prime to the characteristic exponent `p` of `κ(y₀)` comes from `π₁(X̄₀)`)
-needs X.2.1 (Grothendieck's existence theorem), the limit argument X.3.7, purity in dimension `2`
-and Abhyankar's lemma X.3.6; it is recorded as `TameSpecializationStatement`. X.3.9 follows by
-group theory (`Specialization`): the specialization homomorphism induces an isomorphism of the
-largest prime-to-`p` quotients (`exists_primeToQuotientEquiv_of_tameSpecialization`), and is an
-isomorphism in characteristic zero (`exists_bijective_of_tameSpecialization`).
+is recorded, for a locally noetherian base `Y`, as `TameSpecializationStatement`. X.3.9 follows
+from it by group theory (`Specialization`): the specialization homomorphism induces an
+isomorphism of the largest prime-to-`p` quotients
+(`exists_primeToQuotientEquiv_of_tameSpecialization`), and is an isomorphism in characteristic
+zero (`exists_bijective_of_tameSpecialization`).
+
+Proved in the files built on this one:
+* the core of X.3.8, the case to which SGA reduces it in X.3.7 (over a complete discrete valuation
+  ring): `TameLiftingDVRStatement` (in `SGA.SGA1.ExposeX.TameLifting`), proved as
+  `SGA.SGA1.ExposeX.tameLiftingDVRStatement` (in `SGA.SGA1.ExposeX.TameLiftingProof`);
+* X.3.8 and X.3.9 for `Y = Spec R` with `R` a complete discrete valuation ring with separably
+  closed residue field, `y₀` the closed and `y₁` the generic point:
+  `SGA.SGA1.ExposeX.exists_tameSpecialization_of_isDiscreteValuationRing`,
+  `SGA.SGA1.ExposeX.exists_primeToQuotientEquiv_of_isDiscreteValuationRing`,
+  `SGA.SGA1.ExposeX.exists_bijective_specialization_of_isDiscreteValuationRing` (in
+  `SGA.SGA1.ExposeX.TameLiftingSpecialization`).
+
+`TameSpecializationStatement` for a general `Y` is open: reducing it to the case above needs a
+discrete valuation ring dominating the local ring of the closure of `y₁` at `y₀` (EGA II 7.1.7,
+not formalized) and its completed strict henselization (`notes/topics/hard-parts.md` §5).
 -/
 
 universe u

@@ -6,25 +6,40 @@ Authors: SlopdeGeometrieAlgebrique contributors
 import SGA.Foundations.Ample
 import SGA.Foundations.Analytic.AnalyticSpace
 import SGA.Foundations.Analytic.Analytification
+import SGA.Foundations.Analytic.CompactPerturbation
 import SGA.Foundations.Analytic.Completion
 import SGA.Foundations.Analytic.ConvergentPowerSeries
+import SGA.Foundations.Analytic.Cousin
+import SGA.Foundations.Analytic.Dolbeault
+import SGA.Foundations.Analytic.DolbeaultDisc
 import SGA.Foundations.Analytic.Flatness
 import SGA.Foundations.Analytic.GermEval
+import SGA.Foundations.Analytic.GluingLocalization
 import SGA.Foundations.Analytic.Hadamard
 import SGA.Foundations.Analytic.Henselian
 import SGA.Foundations.Analytic.JetComparison
 import SGA.Foundations.Analytic.LocalModel
 import SGA.Foundations.Analytic.LocalModelHom
 import SGA.Foundations.Analytic.LyingOver
+import SGA.Foundations.Analytic.Modules
+import SGA.Foundations.Analytic.Montel
+import SGA.Foundations.Analytic.Morphisms
 import SGA.Foundations.Analytic.Noetherian
 import SGA.Foundations.Analytic.Nullstellensatz
 import SGA.Foundations.Analytic.OpenSubspace
 import SGA.Foundations.Analytic.PowerSeriesExpansion
 import SGA.Foundations.Analytic.Presentation
 import SGA.Foundations.Analytic.PrincipalOpen
+import SGA.Foundations.Analytic.RiemannSurfaceCech
+import SGA.Foundations.Analytic.RiemannSurfaceCompactification
+import SGA.Foundations.Analytic.RiemannSurfaceDisc
+import SGA.Foundations.Analytic.RiemannSurfaceMeromorphic
+import SGA.Foundations.Analytic.RiemannSurfacePunctures
+import SGA.Foundations.Analytic.RiemannSurfaceRefinement
 import SGA.Foundations.Analytic.SectionMorphism
 import SGA.Foundations.Analytic.Sheaf
 import SGA.Foundations.Analytic.Stalk
+import SGA.Foundations.Analytic.Statements
 import SGA.Foundations.Analytic.Substitution
 import SGA.Foundations.Analytic.UniversalProperty
 import SGA.Foundations.Analytic.WeierstrassDivision
@@ -54,6 +69,15 @@ import SGA.Foundations.Cohomology.Coherent
 import SGA.Foundations.Cohomology.CohomologicalDimension
 import SGA.Foundations.Cohomology.CohomologyLemmas
 import SGA.Foundations.Cohomology.Devissage
+import SGA.Foundations.Cohomology.EulerCharacteristic
+import SGA.Foundations.Cohomology.EulerCharacteristicBaseChange
+import SGA.Foundations.Cohomology.EulerCharacteristicBasic
+import SGA.Foundations.Cohomology.EulerCharacteristicClopen
+import SGA.Foundations.Cohomology.EulerCharacteristicDevissage
+import SGA.Foundations.Cohomology.EulerCharacteristicFiniteEtale
+import SGA.Foundations.Cohomology.EulerCharacteristicFiniteEtaleProof
+import SGA.Foundations.Cohomology.EulerCharacteristicGeneric
+import SGA.Foundations.Cohomology.EulerCharacteristicPullback
 import SGA.Foundations.Cohomology.ExistenceFullyFaithful
 import SGA.Foundations.Cohomology.ExistenceLocallyFree
 import SGA.Foundations.Cohomology.Extension
@@ -124,6 +148,7 @@ import SGA.Foundations.CommAlg.Depth
 import SGA.Foundations.CommAlg.Discriminant
 import SGA.Foundations.CommAlg.Factorial
 import SGA.Foundations.CommAlg.FlatDepth
+import SGA.Foundations.CommAlg.NoetherFiniteness
 import SGA.Foundations.CommAlg.Normal
 import SGA.Foundations.CommAlg.PairSections
 import SGA.Foundations.CommAlg.PuncturedSpectrum
@@ -139,6 +164,7 @@ import SGA.Foundations.CommAlg.RegularLocalRing
 import SGA.Foundations.CommAlg.RegularPair
 import SGA.Foundations.CompleteLocalQuasiFinite
 import SGA.Foundations.CompletionDimension
+import SGA.Foundations.Desingularization
 import SGA.Foundations.Differentials.Affine
 import SGA.Foundations.Differentials.AffineOpens
 import SGA.Foundations.Differentials.BaseChange
@@ -168,16 +194,30 @@ import SGA.Foundations.Dimension.QuasiFinite
 import SGA.Foundations.Dimension.Scheme
 import SGA.Foundations.Dimension.Semicontinuity
 import SGA.Foundations.Dimension.Smooth
+import SGA.Foundations.Dimension.StalkKrullDim
 import SGA.Foundations.Etale.BaseChange
 import SGA.Foundations.Etale.ChangeOfGroup
 import SGA.Foundations.Etale.ConstantScheme
 import SGA.Foundations.Etale.Functoriality
+import SGA.Foundations.Etale.GabberDescent
+import SGA.Foundations.Etale.GabberFiniteCover
+import SGA.Foundations.Etale.GabberHenselian
+import SGA.Foundations.Etale.GabberProper
+import SGA.Foundations.Etale.GabberZariski
 import SGA.Foundations.Etale.GroupObjectTorsor
 import SGA.Foundations.Etale.HigherDirectImage
+import SGA.Foundations.Etale.LocalAcyclicity
+import SGA.Foundations.Etale.LocalAcyclicityBaseChange
+import SGA.Foundations.Etale.LocalAcyclicityComparison
+import SGA.Foundations.Etale.LocalAcyclicityConstant
+import SGA.Foundations.Etale.LocalAcyclicityHenselian
+import SGA.Foundations.Etale.LocalAcyclicityStrictLocalization
 import SGA.Foundations.Etale.LocallyConstant
 import SGA.Foundations.Etale.NonabelianExact
 import SGA.Foundations.Etale.Picard
 import SGA.Foundations.Etale.Points
+import SGA.Foundations.Etale.ProperBaseChangeClopen
+import SGA.Foundations.Etale.ProperBaseChangeClosure
 import SGA.Foundations.Etale.Representable
 import SGA.Foundations.Etale.RepresentableGluing
 import SGA.Foundations.Etale.Restriction
@@ -195,11 +235,17 @@ import SGA.Foundations.Etale.TorsorTwist
 import SGA.Foundations.EtaleSpreadingOut
 import SGA.Foundations.EtaleStalk
 import SGA.Foundations.EtaleStalkBaseChange
+import SGA.Foundations.EtaleStalkProper
+import SGA.Foundations.EtaleStalkProperLimit
+import SGA.Foundations.EtaleStalkProperRepresentable
 import SGA.Foundations.EtaleStalkPullback
 import SGA.Foundations.EtaleStalkPushforward
 import SGA.Foundations.EtaleStalkStructureSheaf
 import SGA.Foundations.EtaleStalkTorsor
+import SGA.Foundations.Fields.ComplexEmbedding
 import SGA.Foundations.Fields.Differentials
+import SGA.Foundations.Fields.GeometricallyConnected
+import SGA.Foundations.Fields.GeometricallyIntegral
 import SGA.Foundations.Fields.GeometricallyReduced
 import SGA.Foundations.Fields.GeometricallyReducedScheme
 import SGA.Foundations.Fields.MacLane
@@ -225,6 +271,9 @@ import SGA.Foundations.Formal.SpfCompletion
 import SGA.Foundations.Formal.SpfInverseLimit
 import SGA.Foundations.Formal.SpfMorphisms
 import SGA.Foundations.Formal.TowerLimit
+import SGA.Foundations.GroupScheme.LocalEndomorphism
+import SGA.Foundations.GroupScheme.MulNCotangent
+import SGA.Foundations.GroupScheme.Points
 import SGA.Foundations.HenselianDegree
 import SGA.Foundations.HenselianFinite
 import SGA.Foundations.HenselianFiniteEtale
@@ -234,26 +283,43 @@ import SGA.Foundations.HenselianQuasiFinite
 import SGA.Foundations.Henselization
 import SGA.Foundations.HenselizationNoetherian
 import SGA.Foundations.Limits.BaseChange
+import SGA.Foundations.Limits.EtaleSections
+import SGA.Foundations.Limits.EtaleSectionsAlong
+import SGA.Foundations.Limits.EtaleSectionsGluing
 import SGA.Foundations.Limits.FiniteEtale
 import SGA.Foundations.Limits.GeometricFiberCard
+import SGA.Foundations.Limits.GeometricFiberCardIso
 import SGA.Foundations.Limits.IntegralApproximation
 import SGA.Foundations.Limits.SpecFibre
 import SGA.Foundations.NoetherianApproximation
+import SGA.Foundations.NormalizationFinite
+import SGA.Foundations.Patching.Factorization
+import SGA.Foundations.Patching.Fields
+import SGA.Foundations.Patching.Modules
+import SGA.Foundations.Patching.ProjectiveLine
+import SGA.Foundations.Patching.ProjectiveLineIntersection
+import SGA.Foundations.Patching.ProjectiveLineNode
+import SGA.Foundations.Patching.ProjectiveLineNodeField
+import SGA.Foundations.Patching.ProjectiveLineNodeTwist
 import SGA.Foundations.Pro.Basic
 import SGA.Foundations.Pro.ContAction
 import SGA.Foundations.Pro.Equivalence
 import SGA.Foundations.Pro.Representable
+import SGA.Foundations.Pro.TopologicallyFG
 import SGA.Foundations.Projective.AmpleDescent
 import SGA.Foundations.Projective.AmpleFinite
 import SGA.Foundations.Projective.AmpleLocal
 import SGA.Foundations.Projective.AmpleProj
 import SGA.Foundations.Projective.Chow
 import SGA.Foundations.Projective.Dehomogenization
+import SGA.Foundations.Projective.GradedQuotient
 import SGA.Foundations.Projective.LineBundle
 import SGA.Foundations.Projective.LineBundleIso
 import SGA.Foundations.Projective.Morphisms
 import SGA.Foundations.Projective.Norm
 import SGA.Foundations.Projective.NormLineBundle
+import SGA.Foundations.Projective.PlaneModel
+import SGA.Foundations.Projective.PlaneModelField
 import SGA.Foundations.Projective.ProjBaseChange
 import SGA.Foundations.Projective.ProjectiveSpace
 import SGA.Foundations.Projective.ProjectiveSpaceHom
@@ -293,21 +359,60 @@ import SGA.Foundations.Ramification.Pi
 import SGA.Foundations.Ramification.Tame
 import SGA.Foundations.Ramification.TameInertia
 import SGA.Foundations.Ramification.Transport
+import SGA.Foundations.SchemeConnectedSpace
+import SGA.Foundations.Semialgebraic.Basic
+import SGA.Foundations.Semialgebraic.Choice
+import SGA.Foundations.Semialgebraic.Closure
+import SGA.Foundations.Semialgebraic.Definable
+import SGA.Foundations.Semialgebraic.GradientRetraction
+import SGA.Foundations.Semialgebraic.Hormander
+import SGA.Foundations.Semialgebraic.Line
+import SGA.Foundations.Semialgebraic.LocalContractibility
+import SGA.Foundations.Semialgebraic.Lojasiewicz
+import SGA.Foundations.Semialgebraic.Monotonicity
+import SGA.Foundations.Semialgebraic.OneVariable
+import SGA.Foundations.Semialgebraic.OrderIso
+import SGA.Foundations.Semialgebraic.ParametricHormander
+import SGA.Foundations.Semialgebraic.PolynomialCalculus
+import SGA.Foundations.Semialgebraic.PseudoDivision
+import SGA.Foundations.Semialgebraic.SignDiagram
+import SGA.Foundations.Semialgebraic.TarskiSeidenberg
+import SGA.Foundations.Smooth.GenericSmoothness
+import SGA.Foundations.Smooth.GeometricallyReduced
 import SGA.Foundations.SpecStalkLimit
 import SGA.Foundations.StrictHenselization
 import SGA.Foundations.StrictLocalization
+import SGA.Foundations.StrictLocalizationFunctorial
+import SGA.Foundations.StrictLocalizationFunctorialFlat
 import SGA.Foundations.StrictLocalizationLift
 import SGA.Foundations.StrictLocalizationLimit
 import SGA.Foundations.StrictlyHenselianFinite
 import SGA.Foundations.StrictlyHenselianFiniteScheme
 import SGA.Foundations.StrictlyHenselianLift
+import SGA.Foundations.Topology.ContractibleNhds
+import SGA.Foundations.Topology.ContractibleNhdsLocal
 import SGA.Foundations.Topology.CoveringGalois
+import SGA.Foundations.Topology.CoveringMapOn
 import SGA.Foundations.Topology.CoveringOfFunctor
+import SGA.Foundations.Topology.CoveringProd
 import SGA.Foundations.Topology.FiniteCovering
+import SGA.Foundations.Topology.FiniteCoveringMonodromy
+import SGA.Foundations.Topology.FundamentalGroupFG
+import SGA.Foundations.Topology.FundamentalGroupFGConvex
+import SGA.Foundations.Topology.FundamentalGroupProd
 import SGA.Foundations.Topology.GaloisCategoryEquivalence
 import SGA.Foundations.Topology.LocallyContractible
+import SGA.Foundations.Topology.PathConnectedHelpers
+import SGA.Foundations.Topology.PathConnectedHelpersBasic
 import SGA.Foundations.Topology.ProfiniteCompletionGalois
+import SGA.Foundations.Topology.PuncturedDisc
+import SGA.Foundations.Topology.PuncturedDiscConnected
+import SGA.Foundations.Topology.PuncturedDiscProduct
 import SGA.Foundations.Topology.SemilocallySimplyConnected
+import SGA.Foundations.Topology.SurfaceGenusZero
+import SGA.Foundations.Topology.VanKampen
+import SGA.Foundations.Topology.VanKampenPushout
+import SGA.Foundations.Topology.VanKampenTriple
 import SGA.Foundations.WeilRestriction
 
 /-!
@@ -338,7 +443,23 @@ restates a mathlib result.
   and noetherian approximation (EGA IV 8, 17.7);
 * `Ramification`, `CompleteLocalQuasiFinite`: ramification and tame inertia of valuations,
   quasi-finite algebras over complete local rings;
-* `Topology`: topological coverings form a Galois category;
+* `Topology`: topological coverings form a Galois category; finite generation of `π₁` of compact
+  semilocally simply connected spaces, van Kampen, the punctured disc and its products;
+* `Semialgebraic`: semialgebraic sets, Tarski–Seidenberg, monotonicity, the Łojasiewicz
+  inequality and a gradient retraction (local contractibility of real algebraic sets);
 * `Analytic`: convergent power series, the Weierstrass theorems, Rückert's Nullstellensatz,
-  complex analytic spaces and analytification (Grauert–Remmert).
+  complex analytic spaces and analytification (Grauert–Remmert); sheaves of modules on analytic
+  spaces, Cousin I and Dolbeault on discs, Montel, compact Riemann surfaces and their
+  meromorphic functions (Forster);
+* `Cohomology` also: Euler characteristics of coherent sheaves on proper schemes over a field and
+  their multiplicativity in finite étale coverings (Stacks 0BEJ);
+* `Etale` also: Gabber's theorem over a noetherian henselian base and proper base change in
+  degree 0 over a locally noetherian base (Stacks 0A3S, 09Z0); local acyclicity and asphericity
+  (SGA 4 XV); `Limits/EtaleSections`: étale sheaves on cofiltered limits (SGA 4 VII 5.7, VIII 5.2);
+* `GroupScheme`: points and local endomorphisms of group schemes, multiplication by `n` on the
+  cotangent space;
+* `Patching`: Harbater–Hartmann field patching and patching of Galois algebras over `k⟦t⟧`;
+* `Desingularization`, `NormalizationFinite`, `Smooth`, `StrictLocalizationFunctorial`: finiteness
+  of normalization (E. Noether), resolution of curves, smooth morphisms are geometrically reduced,
+  functoriality of strict localizations.
 -/

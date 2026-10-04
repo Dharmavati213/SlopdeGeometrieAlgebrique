@@ -126,7 +126,8 @@ variable {Z : Scheme.{u}}
 /-- **Comparison over a dense open** (EGA III 3.2.1, proof): let `φ : G ⟶ Q` be a morphism of
 coherent modules which is bijective on sections over the opens contained in a non-empty open `W`.
 If `Q` has finitely generated cohomology, and so do all coherent modules supported in a proper
-closed subset, then so does `G` (the kernel and cokernel of `φ` are supported in `Z ∖ W`). -/
+closed subset, then so does `G` (the kernel and cokernel of `φ` are supported in `Z ∖ U` for an
+affine `U ⊆ W`: `vanishesOff_kernel_factorThruImage`, `vanishesOff_cokernel`). -/
 theorem finiteCohomology_of_bijective_on_open [IsLocallyNoetherian Z] {R : Type*} [CommRing R]
     [IsNoetherianRing R] (ρ : R →+* Γ(Z, ⊤))
     (IH : ∀ N : Z.Modules, N.IsCoherent → ∀ T' : Set Z, IsClosed T' → T' ≠ Set.univ →
@@ -136,13 +137,12 @@ theorem finiteCohomology_of_bijective_on_open [IsLocallyNoetherian Z] {R : Type*
     (hQ : FiniteCohomology ρ Q) : FiniteCohomology ρ G := by
   have : G.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
   have : Q.IsQuasicoherent := Scheme.Modules.IsCoherent.isQuasicoherent
-  have hT : IsClosed (W : Set Z)ᶜ := W.2.isClosed_compl
-  have hTne : (W : Set Z)ᶜ ≠ Set.univ := fun h ↦ by
-    obtain ⟨z, hz⟩ := hW
-    have : z ∈ (W : Set Z)ᶜ := h ▸ Set.mem_univ z
-    exact this hz
-  have hle : ∀ V : Z.Opens, Disjoint (V : Set Z) (W : Set Z)ᶜ → V ≤ W := fun V hV x hx ↦
-    not_not.mp fun h ↦ Set.disjoint_left.mp hV hx h
+  -- a nonempty affine open `U ⊆ W`
+  obtain ⟨z, hz⟩ := hW
+  obtain ⟨U, hU, hzU, hUW⟩ :=
+    (TopologicalSpace.Opens.isBasis_iff_nbhd.mp Z.isBasis_affineOpens) hz
+  have hT : IsClosed (U : Set Z)ᶜ := U.2.isClosed_compl
+  have hTne : (U : Set Z)ᶜ ≠ Set.univ := fun h ↦ (h ▸ Set.mem_univ z : z ∈ (U : Set Z)ᶜ) hzU
   -- the two short exact sequences
   have hS₁ := shortExact_kernelSequence (Abelian.factorThruImage φ)
   have hS₂ := shortExact_kernelSequence (cokernel.π φ)
@@ -162,38 +162,10 @@ theorem finiteCohomology_of_bijective_on_open [IsLocallyNoetherian Z] {R : Type*
   have : (ShortComplex.kernelSequence (cokernel.π φ)).X₂.IsCoherent := ‹Q.IsCoherent›
   have hC : (ShortComplex.kernelSequence (cokernel.π φ)).X₃.IsCoherent :=
     isCoherent_X₃_of_shortExact hS₂
-  -- the kernel vanishes off `Z ∖ W`
-  have hKv : VanishesOff (ShortComplex.kernelSequence (Abelian.factorThruImage φ)).X₁
-      (W : Set Z)ᶜ := by
-    intro V hV s
-    apply app_injective_of_shortExact hS₁ V
-    refine Eq.trans ?_ (map_zero _).symm
-    apply (hφ V (hle V hV)).1
-    refine Eq.trans ?_ (map_zero _).symm
-    have h0 : kernel.ι (Abelian.factorThruImage φ) ≫ φ = 0 := by
-      calc kernel.ι (Abelian.factorThruImage φ) ≫ φ =
-          kernel.ι (Abelian.factorThruImage φ) ≫ (Abelian.factorThruImage φ ≫
-            Abelian.image.ι φ) := by rw [Abelian.image.fac]
-        _ = 0 := by rw [kernel.condition_assoc, zero_comp]
-    change (kernel.ι (Abelian.factorThruImage φ) ≫ φ).app V s = 0
-    rw [h0]
-    rfl
-  -- the cokernel vanishes off `Z ∖ W`
-  have hCv : VanishesOff (ShortComplex.kernelSequence (cokernel.π φ)).X₃ (W : Set Z)ᶜ := by
-    intro V hV s
-    refine eq_zero_of_forall_affine_le _ V (fun V' hV' hV'a t ↦ ?_) s
-    have hsurj := TopCat.Sheaf.surjective_app_of_subsingleton_H'_one
-      (Scheme.Modules.shortExact_abShortComplex hS₂) V'
-      ((ShortComplex.kernelSequence (cokernel.π φ)).X₁.H'_subsingleton_of_isAffineOpen hV'a 0)
-    obtain ⟨y, rfl⟩ := hsurj t
-    obtain ⟨x, rfl⟩ := (hφ V' (hV'.trans (hle V hV))).2 y
-    change (φ ≫ cokernel.π φ).app V' x = 0
-    rw [cokernel.condition]
-    rfl
   have hFK : FiniteCohomology ρ (ShortComplex.kernelSequence (Abelian.factorThruImage φ)).X₁ :=
-    IH _ hK _ hT hTne hKv
+    IH _ hK _ hT hTne (vanishesOff_kernel_factorThruImage φ hU (hφ U hUW).1)
   have hFC : FiniteCohomology ρ (ShortComplex.kernelSequence (cokernel.π φ)).X₃ :=
-    IH _ hC _ hT hTne hCv
+    IH _ hC _ hT hTne (vanishesOff_cokernel φ hU (hφ U hUW).2)
   have hFI : FiniteCohomology ρ (ShortComplex.kernelSequence (cokernel.π φ)).X₁ :=
     FiniteCohomology.of_shortExact₁ hS₂ hQ hFC
   exact FiniteCohomology.of_shortExact₂ hS₁ hFK hFI

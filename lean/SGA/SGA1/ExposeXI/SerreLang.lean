@@ -3,6 +3,7 @@ Copyright (c) 2026 SlopdeGeometrieAlgebrique contributors. All rights reserved.
 Released under MIT license as described in the file LICENSE.
 Authors: SlopdeGeometrieAlgebrique contributors
 -/
+import SGA.Foundations.GroupScheme.MulNCotangent
 import SGA.SGA1.ExposeII.Permanence
 import SGA.SGA1.ExposeXI.AbelianFundamentalGroup
 
@@ -12,8 +13,15 @@ import SGA.SGA1.ExposeXI.AbelianFundamentalGroup
 `SerreLangStatement` (in `Geometry`): let `A` be an abelian variety over an algebraically closed
 field `k` and `Y ⟶ A` a connected étale covering. Then there is `n > 0` such that multiplication
 by `n` on `A` factors through `Y`. This is the key step towards SGA's XI.2.1,
-`π₁(A) ≅ lim_n K_n` (the Tate module), which is not formalized: that needs the structure of the
-kernels of `n_A`.
+`π₁(A) ≅ T(A) = lim_n K_n` (the Tate module), which is `AbelianVarietyFundamentalGroupStatement`
+(in `TateModule`). XI.2.1 is proved in characteristic `0` (`exists_tateModule_equiv_of_charZero`,
+in `AbelianVarietyMulN`) and from SGA's cited fact that `n_A` is an isogeny
+(`abelianVarietyFundamentalGroupStatement_of_mulNIsogeny`, in `AbelianVarietyQuotient`); its
+`ℓ`-primary clause is proved for every prime `ℓ ≠ char k`
+(`abelianVarietyPrimaryComponent_of_natCast_ne_zero`, in `TateModulePrimeToP`). In characteristic
+`p > 0`, XI.2.1 for `A` is equivalent to its `p`-primary clause
+(`abelianVarietyFundamentalGroupConclusion_iff_primaryComponent_charP`, in `TateModuleProduct`),
+which is open; it follows from `p_A` being an isogeny (`exists_tateModule_equiv_of_charP`).
 
 SGA derives it from the fact that a pointed connected principal covering of `A` with commutative
 group is an isogeny, and every isogeny is a quotient of some `n_A`. We use instead only the
@@ -27,11 +35,14 @@ commutativity of `π₁(A)` (XI.2, `mul_comm_of_monObj`) and the Künneth formul
 * `pointedMap_lift_comp_mul`: for an H-space `X` with multiplication `m`, the morphism
   `x ↦ m(u x, v x)` induces `σ ↦ u_* σ · v_* σ` on `π₁(X, e)`; hence multiplication by `n`
   induces `σ ↦ σⁿ` (`pointedMap_mulN`).
-* `exists_lift_of_forall_smul_eq`: a pointed morphism `u : T ⟶ S` lifts to an étale covering
-  `Y ⟶ S` as soon as `u_* π₁(T, t)` fixes a point of the fibre of `Y` at `s` (the lifting
-  criterion for coverings).
+* `exists_lift_of_forall_smul_eq_of_apply`: a pointed morphism `u : T ⟶ S` lifts to an étale
+  covering `Y ⟶ S` through a point `y` of the fibre of `Y` at `s` as soon as `u_* π₁(T, t)` fixes
+  `y` (the lifting criterion for coverings). It and the section criterion
+  `exists_section_of_forall_smul_eq_of_apply` are V.6.4
+  (`ExposeX.exists_section_iff_forall_smul_eq`) read on the terminal covering;
+  `exists_lift_of_forall_smul_eq` and `exists_section_of_forall_smul_eq` forget the point.
 * If `π₁` is commutative and acts transitively on a fibre of `d` points, then `σᵈ` acts trivially
-  (`pow_card_smul_eq`); with `n = d` this proves XI.2.1 (`serreLangStatement`).
+  (`pow_card_smul_eq`); with `n = d` this proves `SerreLangStatement` (`serreLangStatement`).
 -/
 
 universe u w
@@ -139,43 +150,49 @@ section Lifting
 
 variable {Ω : Type u} [Field Ω] [IsSepClosed Ω] {S T : Scheme.{u}}
 
+/-- The structure morphism of the terminal étale covering of `T` is an isomorphism. -/
+lemma isIso_terminal_hom (T : Scheme.{u}) :
+    IsIso ((⊤_ ExposeV.FEt T).hom : (⊤_ ExposeV.FEt T).left ⟶ T) := by
+  let T' : ExposeV.FEt T := MorphismProperty.Over.mk ⊤ (𝟙 T) ⟨inferInstance, inferInstance⟩
+  have : IsIso (T'.hom : T'.left ⟶ T) := inferInstanceAs (IsIso (𝟙 T))
+  let e := terminalIsoIsTerminal (ExposeV.FEt.isTerminalOfIsIso T')
+  have h : ((⊤_ ExposeV.FEt T).hom : (⊤_ ExposeV.FEt T).left ⟶ T) = e.hom.left :=
+    (MorphismProperty.Over.w e.hom).symm.trans (Category.comp_id _)
+  rw [h]
+  exact inferInstanceAs
+    (IsIso ((MorphismProperty.Over.forget _ ⊤ T ⋙ CategoryTheory.Over.forget T).map e.hom))
+
+/-- An étale covering `Z` of a connected scheme `T` has a section through a point `z` of its
+fibre at `t̄` as soon as the fundamental group fixes `z`. This is V.6.4
+(`ExposeX.exists_section_iff_forall_smul_eq`) read on the terminal covering. -/
+theorem exists_section_of_forall_smul_eq_of_apply [ConnectedSpace T] (t : Spec (.of Ω) ⟶ T)
+    (Z : ExposeV.FEt T) (z : (ExposeV.FEt.fiber Ω t).obj Z)
+    (hz : ∀ σ : ExposeV.etaleFundamentalGroup Ω t, σ • z = z) :
+    ∃ g : T ⟶ Z.left, g ≫ Z.hom = 𝟙 T ∧ t ≫ g = ExposeV.FEt.fiberPoint Ω z := by
+  obtain ⟨s, p, rfl⟩ := (ExposeX.exists_section_iff_forall_smul_eq _ Z z).mpr hz
+  have := isIso_terminal_hom T
+  refine ⟨inv ((⊤_ ExposeV.FEt T).hom : (⊤_ ExposeV.FEt T).left ⟶ T) ≫ s.left, ?_, ?_⟩
+  · rw [Category.assoc, MorphismProperty.Over.w s, IsIso.inv_hom_id]
+  · rw [ExposeV.FEt.fiberPoint_map, (IsIso.eq_comp_inv _).mpr (ExposeV.FEt.fiberPoint_comp Ω p),
+      Category.assoc]
+
 /-- An étale covering of a connected scheme has a section as soon as the fundamental group fixes
-a point of its fibre (the fibre of the connected component of that point is then a single
-point). -/
+a point of its fibre (`exists_section_of_forall_smul_eq_of_apply`, forgetting the point). -/
 theorem exists_section_of_forall_smul_eq [ConnectedSpace T] (t : Spec (.of Ω) ⟶ T)
     (Z : ExposeV.FEt T) (z : (ExposeV.FEt.fiber Ω t).obj Z)
     (hz : ∀ σ : ExposeV.etaleFundamentalGroup Ω t, σ • z = z) :
-    ∃ g : T ⟶ Z.left, g ≫ Z.hom = 𝟙 T := by
-  let F := ExposeV.FEt.fiber Ω t
-  obtain ⟨W, i, w, hw, hW, hi⟩ := fiber_in_connected_component F Z z
-  have hinj : Function.Injective (F.map i) :=
-    ConcreteCategory.injective_of_mono_of_preservesPullback (F.map i)
-  have hfix (σ : Aut F) : σ • w = w := hinj (by rw [← mulAction_naturality, hw, hz])
-  have hsub : Subsingleton (F.obj W) := ⟨fun a b ↦ by
-    obtain ⟨σ, rfl⟩ := MulAction.exists_smul_eq (Aut F) w a
-    obtain ⟨τ, rfl⟩ := MulAction.exists_smul_eq (Aut F) w b
-    rw [hfix, hfix]⟩
-  let T' : ExposeV.FEt T := MorphismProperty.Over.mk ⊤ (𝟙 T) ⟨inferInstance, inferInstance⟩
-  have : IsIso (T'.hom : T'.left ⟶ T) := inferInstanceAs (IsIso (𝟙 T))
-  let q : W ⟶ T' := MorphismProperty.Over.homMk W.hom (Category.comp_id _)
-  have hT := ExposeV.subsingleton_fiber_of_isTerminal F (ExposeV.FEt.isTerminalOfIsIso T')
-  have : IsIso (F.map q) := (ConcreteCategory.isIso_iff_bijective _).mpr
-    ⟨fun a b _ ↦ Subsingleton.elim a b, fun x ↦ ⟨w, Subsingleton.elim _ _⟩⟩
-  have : IsIso q := isIso_of_reflects_iso q F
-  have : IsIso (W.hom : W.left ⟶ T) := inferInstanceAs
-    (IsIso ((MorphismProperty.Over.forget _ ⊤ T ⋙ CategoryTheory.Over.forget T).map q))
-  refine ⟨inv (W.hom : W.left ⟶ T) ≫ i.left, ?_⟩
-  rw [Category.assoc, MorphismProperty.Over.w i, IsIso.inv_hom_id]
+    ∃ g : T ⟶ Z.left, g ≫ Z.hom = 𝟙 T :=
+  (exists_section_of_forall_smul_eq_of_apply t Z z hz).imp fun _ h ↦ h.1
 
-/-- The lifting criterion for étale coverings: a morphism `u : T ⟶ S` with `T` connected and
-`t̄ ≫ u = s̄` factors through an étale covering `Y ⟶ S` as soon as the image of
-`u_* : π₁(T, t̄) → π₁(S, s̄)` fixes a point of the fibre of `Y` at `s̄`. (Then `u^• Y` has a
-section through the corresponding point.) -/
-theorem exists_lift_of_forall_smul_eq [ConnectedSpace T] (u : T ⟶ S) (t : Spec (.of Ω) ⟶ T)
-    (s : Spec (.of Ω) ⟶ S) (h : t ≫ u = s) (Y : ExposeV.FEt S)
+/-- The pointed lifting criterion for étale coverings: a morphism `u : T ⟶ S` with `T` connected
+and `t̄ ≫ u = s̄` lifts to an étale covering `Y ⟶ S` through a point `y` of the fibre of `Y` at
+`s̄`, as soon as the image of `u_* : π₁(T, t̄) → π₁(S, s̄)` fixes `y`. (Then `u^• Y` has a section
+through the corresponding point, `exists_section_of_forall_smul_eq_of_apply`.) -/
+theorem exists_lift_of_forall_smul_eq_of_apply [ConnectedSpace T] (u : T ⟶ S)
+    (t : Spec (.of Ω) ⟶ T) (s : Spec (.of Ω) ⟶ S) (h : t ≫ u = s) (Y : ExposeV.FEt S)
     (y : (ExposeV.FEt.fiber Ω s).obj Y)
     (hy : ∀ σ : ExposeV.etaleFundamentalGroup Ω t, pointedMap Ω u t s h σ • y = y) :
-    ∃ g : T ⟶ Y.left, g ≫ Y.hom = u := by
+    ∃ g : T ⟶ Y.left, g ≫ Y.hom = u ∧ t ≫ g = ExposeV.FEt.fiberPoint Ω y := by
   let E := ExposeV.FEt.pullbackFiberIso Ω u t ≪≫ ExposeV.FEt.fiberCongr Ω h
   let z := E.inv.app Y y
   have hEz : E.hom.app Y z = y := FintypeCat.inv_hom_id_apply (E.app Y) y
@@ -189,11 +206,28 @@ theorem exists_lift_of_forall_smul_eq [ConnectedSpace T] (u : T ⟶ S) (t : Spec
     change E.hom.app Y (σ.hom.app _ z) = E.hom.app Y z
     rw [← this, hEz]
     exact hy σ
-  obtain ⟨g, hg⟩ := exists_section_of_forall_smul_eq t _ z hz
-  refine ⟨g ≫ ExposeV.FEt.proj u Y, ?_⟩
-  have hY : ExposeV.FEt.proj u Y ≫ Y.hom = ((ExposeV.FEt.pullback u).obj Y).hom ≫ u :=
-    pullback.condition
-  rw [Category.assoc, hY, ← Category.assoc, hg, Category.id_comp]
+  obtain ⟨g, hg, htg⟩ := exists_section_of_forall_smul_eq_of_apply t _ z hz
+  refine ⟨g ≫ ExposeV.FEt.proj u Y, ?_, ?_⟩
+  · have hY : ExposeV.FEt.proj u Y ≫ Y.hom = ((ExposeV.FEt.pullback u).obj Y).hom ≫ u :=
+      pullback.condition
+    rw [Category.assoc, hY, ← Category.assoc, hg, Category.id_comp]
+  · have : ExposeV.FEt.fiberPoint Ω y = ExposeV.FEt.fiberPoint Ω z ≫ ExposeV.FEt.proj u Y := by
+      rw [← hEz]
+      change ExposeV.FEt.fiberPoint Ω ((ExposeV.FEt.fiberCongr Ω h).hom.app Y
+        ((ExposeV.FEt.pullbackFiberIso Ω u t).hom.app Y z)) = _
+      rw [ExposeV.FEt.fiberPoint_fiberCongr, ExposeV.FEt.fiberPoint_pullbackFiberIso]
+    rw [this, ← Category.assoc, htg]
+
+/-- The lifting criterion for étale coverings: a morphism `u : T ⟶ S` with `T` connected and
+`t̄ ≫ u = s̄` factors through an étale covering `Y ⟶ S` as soon as the image of
+`u_* : π₁(T, t̄) → π₁(S, s̄)` fixes a point of the fibre of `Y` at `s̄`
+(`exists_lift_of_forall_smul_eq_of_apply`, forgetting the point). -/
+theorem exists_lift_of_forall_smul_eq [ConnectedSpace T] (u : T ⟶ S) (t : Spec (.of Ω) ⟶ T)
+    (s : Spec (.of Ω) ⟶ S) (h : t ≫ u = s) (Y : ExposeV.FEt S)
+    (y : (ExposeV.FEt.fiber Ω s).obj Y)
+    (hy : ∀ σ : ExposeV.etaleFundamentalGroup Ω t, pointedMap Ω u t s h σ • y = y) :
+    ∃ g : T ⟶ Y.left, g ≫ Y.hom = u :=
+  (exists_lift_of_forall_smul_eq_of_apply u t s h Y y hy).imp fun _ h ↦ h.1
 
 end Lifting
 
@@ -297,12 +331,11 @@ theorem pointedMap_lift_comp_mul {X : Scheme.{u}} (sX : X ⟶ Spec (.of k)) [IsP
 open MonoidalCategory CartesianMonoidalCategory MonObj
 
 omit [IsAlgClosed k] in
-/-- Multiplication by `n` fixes the unit section. -/
+/-- Multiplication by `n` fixes the unit section: the underlying morphisms of schemes in
+`AlgebraicGeometry.GroupScheme.eta_comp_pow`. -/
 lemma unit_comp_mulN_left (A : Over (Spec (.of k))) [MonObj A] (n : ℕ) :
-    (η[A].left : Spec (.of k) ⟶ A.left) ≫ (mulN A n).left = η[A].left := by
-  have h : η[A] ≫ mulN A n = η[A] := by
-    rw [mulN, MonObj.comp_pow, Category.comp_id, MonObj.one_eq_one, one_pow]
-  exact congrArg CommaMorphism.left h
+    (η[A].left : Spec (.of k) ⟶ A.left) ≫ (mulN A n).left = η[A].left :=
+  congrArg CommaMorphism.left (GroupScheme.eta_comp_pow (A := A) (n := n))
 
 /-- XI.2: multiplication by `n` on a monoid scheme `A` (proper, connected and reduced over an
 algebraically closed field) induces `σ ↦ σⁿ` on `π₁(A, e)`. -/
@@ -344,7 +377,8 @@ open MonObj in
 /-- XI.2.1, key step (Serre–Lang): every connected étale covering `f : Y ⟶ A` of an abelian
 variety `A` over an algebraically closed field is dominated by multiplication by some `n > 0`:
 there is `g : A ⟶ Y` with `f ∘ g = n_A`. We may take for `n` the degree of `f`. SGA's XI.2.1
-itself, `π₁(A) ≅ lim_n K_n`, is not formalized. -/
+itself, `π₁(A) ≅ lim_n K_n`, is `AbelianVarietyFundamentalGroupStatement` (in `TateModule`),
+which builds on this. -/
 theorem serreLangStatement : SerreLangStatement.{u} := by
   intro k _ _ A _ _ _ _ Y f _ _ hY
   have : IsReduced A.left := ExposeII.isReduced_of_smooth_of_isReduced A.hom

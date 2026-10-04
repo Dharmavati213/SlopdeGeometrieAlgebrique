@@ -31,7 +31,10 @@ injectivity of `π₁^L(X_s̄) → π'₁(X)`, which is XIII.4.3), and the Künn
 maximal pro-`L` quotients when `X` is proper, from X.1.7. The second part of XIII.4.4 (smooth with
 a section: injectivity, via XIII.4.3) and its third part (complement of a divisor with normal
 crossings, via XIII.2.9) need the local constancy of `R¹f_*` and the cohomological properness of
-tame coverings, and are recorded as statements.
+tame coverings, and are recorded as statements. The second part is proved, without the section,
+over a field, at the closed point of a complete regular local base and over a complete discrete
+valuation ring with separably closed residue field (`SGA.SGA1.ExposeXIII.ProLShortExact`,
+`SGA.SGA1.ExposeXIII.ProperSmoothTame`).
 -/
 
 universe u
@@ -254,12 +257,20 @@ sequence `π₁^L(X_s̄, a) → π'₁(X, a) → π₁(S, a) → 1` of XIII.4.0 
 theorem properHomotopyExactSequence : ProperHomotopyExactSequenceStatement.{u} :=
   properHomotopyExactSequence_of_full properHomotopyExactSequenceFull
 
-/-- XIII.4.4, second part (XIII.4.3 in the smooth case) (statement only): if moreover `f` is
-smooth and has a section, and `L` is the set of primes different from the residue
+/-- XIII.4.4, second part (XIII.4.3 in the smooth case) (statement; open in general): if
+moreover `f` is smooth and has a section, and `L` is the set of primes different from the residue
 characteristics of `S`, then `1 → π₁^L(X_s̄, a) → π'₁(X, a) → π₁(S, a) → 1` is exact. The
 missing part is the injectivity of `π₁^L(X_s̄) → π'₁(X)`, whose proof in XIII.4.3 needs the local
 constancy of `R¹f_*` (XIII.1.16) and cohomological properness. Stated in the setting of
-`ProperHomotopyExactSequenceStatement` (`S` locally noetherian). -/
+`ProperHomotopyExactSequenceStatement` (`S` locally noetherian).
+
+Proved in special cases, without the section (`SGA.SGA1.ExposeXIII.ProLShortExact`,
+`SGA.SGA1.ExposeXIII.ProperSmoothTame`): over a field
+(`properSmoothHomotopyExactSequence_of_field`); at the geometric points over the closed point of
+`Spec R`, `R` a complete regular local ring, for every set of primes `L`
+(`isProLShortExact_of_isRegularLocalRing`, from X.2.1); and for `S` the spectrum of a complete
+discrete valuation ring with separably closed residue field, at every geometric point
+(`properSmoothHomotopyExactSequence_of_isDiscreteValuationRing`, from the core of X.3.8). -/
 def ProperSmoothHomotopyExactSequenceStatement : Prop :=
   ∀ {X S : Scheme.{u}} (f : X ⟶ S) [IsProper f] [Smooth f] [GeometricallyConnected f]
     [IsLocallyNoetherian S] [ConnectedSpace S] (g : S ⟶ X), g ≫ f = 𝟙 S →

@@ -251,6 +251,21 @@ theorem bijective_proLMap_prod {Z X Y : Type*} [Group Z] [Group X] [Group Y]
     simp only [MonoidHom.prod_apply, Prod.mk.injEq] at hz ⊢
     exact ⟨congrArg QuotientGroup.mk hz.1, congrArg QuotientGroup.mk hz.2⟩
 
+variable {L}
+
+/-- The map of maximal pro-`L` quotients induced by a surjective continuous homomorphism is
+surjective. -/
+lemma proLMap_surjective (φ : G →* H) (hφ : Continuous φ) (hs : Function.Surjective φ) :
+    Function.Surjective (proLMap L φ hφ) :=
+  QuotientGroup.map_surjective_of_surjective _ _ φ (QuotientGroup.mk_surjective.comp hs) _
+
+/-- If `φ : G →* H` is a surjective continuous homomorphism and the maximal pro-`L` quotient
+`ProLQuotient L G` is trivial, then so is `ProLQuotient L H`. -/
+lemma subsingleton_proLQuotient_of_surjective (φ : G →* H) (hφ : Continuous φ)
+    (hs : Function.Surjective φ) [Subsingleton (ProLQuotient L G)] :
+    Subsingleton (ProLQuotient L H) :=
+  (proLMap_surjective φ hφ hs).subsingleton
+
 end ProL
 
 section PrimeQuotient

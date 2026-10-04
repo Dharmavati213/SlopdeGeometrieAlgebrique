@@ -3,6 +3,7 @@ Copyright (c) 2026 SlopdeGeometrieAlgebrique contributors. All rights reserved.
 Released under MIT license as described in the file LICENSE.
 Authors: SlopdeGeometrieAlgebrique contributors
 -/
+import SGA.Foundations.StrictLocalizationFunctorial
 import SGA.SGA1.ExposeIII.ArtinianCriterion
 import SGA.SGA1.ExposeIII.GlobalExtension
 import Mathlib.AlgebraicGeometry.Fiber
@@ -62,12 +63,12 @@ def LocalArtinianExtensionProperty : Prop :=
         Spec.map (CommRingCat.ofHom (Ideal.Quotient.mk J)) ≫ g = g₀
 
 /-- Two local homomorphisms `𝒪_{X,x} → R` into a local ring are equal if the induced morphisms
-`Spec R → X` are. -/
+`Spec R → X` are: a special case of
+`AlgebraicGeometry.Scheme.SpecMap_comp_fromSpecStalk_injective`. -/
 lemma SpecMap_fromSpecStalk_injective {X : Scheme.{u}} {R : CommRingCat.{u}} [IsLocalRing R]
     {x : X} {φ ψ : X.presheaf.stalk x ⟶ R} [IsLocalHom φ.hom] [IsLocalHom ψ.hom]
-    (h : Spec.map φ ≫ X.fromSpecStalk x = Spec.map ψ ≫ X.fromSpecStalk x) : φ = ψ := by
-  have := (SpecToEquivOfLocalRing X R).symm.injective (a₁ := ⟨x, φ, ‹_›⟩) (a₂ := ⟨x, ψ, ‹_›⟩) h
-  exact congrArg Subtype.val (eq_of_heq (Sigma.mk.inj_iff.mp this).2)
+    (h : Spec.map φ ≫ X.fromSpecStalk x = Spec.map ψ ≫ X.fromSpecStalk x) : φ = ψ :=
+  Scheme.SpecMap_comp_fromSpecStalk_injective h
 
 set_option backward.isDefEq.respectTransparency false in
 /-- III.3.1, (iii) ⇒ (iii) of III.2.1 at the local rings: "a morphism from `Spec B`, with `B`

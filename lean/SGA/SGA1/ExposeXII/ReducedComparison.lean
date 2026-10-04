@@ -20,8 +20,11 @@ For `A = 𝕜[x]/(g)` and `X = Spec A`, we compare the reduced analytic space `(
 * it is compatible with the canonical morphisms to `X` (`reducedComparison_comp_toSpec`).
 
 For `𝕜 = ℂ`, `(X^an)_red` is the reduction of `X^an`: that the kernel of
-`𝒪_{X^an, x} → 𝒪_{(X^an)_red, x}` is the nilradical is Rückert's Nullstellensatz, which is not
-formalized.
+`𝒪_{X^an, x} → 𝒪_{(X^an)_red, x}` is the nilradical is Rückert's Nullstellensatz, which is
+formalized (`AffineAnalytification.rueckertNullstellensatz`, `ClosureComparison.lean`). The
+identification of `(X^an)_red` with the reduction of `X^an` (stalk maps surjective, with kernel
+the nilradical) is in `AnalyticGluingReduced.lean` (`surjective_stalkMap_reducedComparison`,
+`ker_stalkMap_reducedComparison`).
 -/
 
 noncomputable section
@@ -40,10 +43,10 @@ variable {𝕜 : Type} [NontriviallyNormedField 𝕜] {n k : ℕ}
 
 attribute [local instance] SchemePoints.specOver SchemePoints.sectionsAlgebra
 
-/-- `Γ(Spec A, ⊤) ≅ A`, as a `𝕜`-algebra isomorphism. -/
-def ΓSpecAlgEquiv : Γ(Spec (.of (PresentedAlgebra g)), ⊤) ≃ₐ[𝕜] PresentedAlgebra g :=
-  AlgEquiv.ofBijective (ΓSpecAlgHom _)
-    (ConcreteCategory.bijective_of_isIso (Scheme.ΓSpecIso (.of (PresentedAlgebra g))).hom)
+/-- `Γ(Spec A, ⊤) ≅ A`, as a `𝕜`-algebra isomorphism (the case `R = A` of
+`SchemePoints.ΓSpecAlgEquiv`). -/
+abbrev ΓSpecAlgEquiv : Γ(Spec (.of (PresentedAlgebra g)), ⊤) ≃ₐ[𝕜] PresentedAlgebra g :=
+  SchemePoints.ΓSpecAlgEquiv (PresentedAlgebra g)
 
 /-- The coordinate functions `xᵢ`, as global sections of `𝒪_{Spec A}`. -/
 def coordSection (i : Fin n) : Γ(Spec (.of (PresentedAlgebra g)), ⊤) :=

@@ -3,7 +3,8 @@ Copyright (c) 2026 SlopdeGeometrieAlgebrique contributors. All rights reserved.
 Released under MIT license as described in the file LICENSE.
 Authors: SlopdeGeometrieAlgebrique contributors
 -/
-import SGA.SGA1.ExposeXI.RationalVarieties
+import SGA.Foundations.StrictLocalizationFunctorial
+import SGA.SGA1.ExposeXI.UnirationalCoversParametrization
 
 /-!
 # Unirational varieties have finite fundamental group (XI.1.3)
@@ -12,10 +13,11 @@ XI.1.3: the fundamental group of a proper normal integral scheme `X` over an alg
 field `k` whose function field `K` is unirational (contained in a purely transcendental extension
 `K'` of `k`, finite over `K`) is finite (`hasFiniteFundamentalGroup_of_isUnirational`,
 `unirationalFiniteFundamentalGroupStatement`). SGA's argument, with `K' = K(ℙʳ)`
-(`exists_functionField_iso_proj`):
+(`exists_proj_parametrization`, in `UnirationalCoversParametrization`):
 
 * the dominant rational map `ℙʳ ⇢ X` is defined on an open `U ⊆ ℙʳ` whose complement has
-  codimension `≥ 2`, and `U` is simply connected (purity X.3.3 and XI.1.1);
+  codimension `≥ 2`, and `U` is simply connected (purity X.3.3 and XI.1.1;
+  `exists_isSimplyConnected_extension`, in `UnirationalCoversParametrization`);
 * for a connected étale covering `Z` of `X`, the pullback to `U` is completely decomposed, so each
   geometric point of `Z` over a point of `U` gives a lift `U ⟶ Z`
   (`exists_injective_fiber_lifts`); a lift is determined by a `K`-embedding of `K(Z)` into `K'`,
@@ -158,21 +160,19 @@ lemma eq_of_specializes_of_isDiscrete {T : Type*} [TopologicalSpace T] {s : Set 
 
 variable {Y : Scheme.{u}}
 
-/-- A morphism `Spec R ⟶ Y` (`R` local) through `Y.fromSpecStalk y` determines the ring map. -/
+/-- A morphism `Spec R ⟶ Y` (`R` local) through `Y.fromSpecStalk y` determines the ring map: a
+special case of `AlgebraicGeometry.Scheme.SpecMap_comp_fromSpecStalk_injective`. -/
 lemma SpecMap_fromSpecStalk_injective {R : CommRingCat.{u}} [IsLocalRing R] {y : Y}
     {a b : Y.presheaf.stalk y ⟶ R} [IsLocalHom a.hom] [IsLocalHom b.hom]
-    (h : Spec.map a ≫ Y.fromSpecStalk y = Spec.map b ≫ Y.fromSpecStalk y) : a = b := by
-  have := (SpecToEquivOfLocalRing Y R).symm.injective (a₁ := ⟨y, a, ‹_›⟩) (a₂ := ⟨y, b, ‹_›⟩) h
-  obtain ⟨h₁, e⟩ := SpecToEquivOfLocalRing_eq_iff.mp this
-  simpa using e
+    (h : Spec.map a ≫ Y.fromSpecStalk y = Spec.map b ≫ Y.fromSpecStalk y) : a = b :=
+  Scheme.SpecMap_comp_fromSpecStalk_injective h
 
 /-- A morphism `Spec R ⟶ Y` (`R` local) whose closed point maps to `y` factors through
-`Y.fromSpecStalk y`. -/
+`Y.fromSpecStalk y`: `AlgebraicGeometry.Scheme.exists_SpecMap_fromSpecStalk_eq`. -/
 lemma exists_SpecMap_fromSpecStalk {R : CommRingCat.{u}} [IsLocalRing R] (m : Spec R ⟶ Y) (y : Y)
     (hy : m (IsLocalRing.closedPoint R) = y) :
-    ∃ a : Y.presheaf.stalk y ⟶ R, IsLocalHom a.hom ∧ Spec.map a ≫ Y.fromSpecStalk y = m := by
-  subst hy
-  exact ⟨_, inferInstance, Scheme.Spec_stalkClosedPointTo_fromSpecStalk m⟩
+    ∃ a : Y.presheaf.stalk y ⟶ R, IsLocalHom a.hom ∧ Spec.map a ≫ Y.fromSpecStalk y = m :=
+  Scheme.exists_SpecMap_fromSpecStalk_eq m hy
 
 variable {W Z X : Scheme.{u}} [IsIntegral W] [IsIntegral Z] [IsIntegral X]
 
@@ -293,58 +293,20 @@ theorem hasFiniteFundamentalGroup_of_functionField_finite (hX : ExposeX.IsNormal
     (hτ : Spec.map τ ≫ X.fromSpecStalk (genericPoint X) ≫ sX = P.fromSpecStalk y ≫ sP)
     (hfin : letI := τ.hom.toAlgebra; Module.Finite X.functionField (P.presheaf.stalk y)) :
     HasFiniteFundamentalGroup X := by
+  obtain ⟨U, hηU, g, hU, hw, hgw, hUw⟩ :=
+    exists_isSimplyConnected_extension sX sP hP hPs hy τ hτ
   subst hy
-  let ψ : Spec (P.presheaf.stalk (genericPoint P)) ⟶ X :=
-    Spec.map τ ≫ X.fromSpecStalk (genericPoint X)
-  have hψ : ψ ≫ sX = P.fromSpecStalk (genericPoint P) ≫ sP := by
-    rw [Category.assoc]
-    exact hτ
-  -- Extend `ψ` to an open `U` of `P` with complement of codimension `≥ 2`.
-  let F := Scheme.PartialMap.ofFromSpecStalk sP sX ψ hψ
-  have hFη : genericPoint P ∈ F.domain := Scheme.PartialMap.mem_domain_ofFromSpecStalk sP sX ψ hψ
-  have hFψ : F.domain.fromSpecStalkOfMem _ hFη ≫ F.hom = ψ :=
-    Scheme.PartialMap.fromSpecStalkOfMem_ofFromSpecStalk sP sX ψ hψ
-  have hF : F.hom ≫ sX = F.domain.ι ≫ sP := Scheme.PartialMap.ofFromSpecStalk_comp sP sX ψ hψ
-  obtain ⟨U, hFU, g, hg, hcodim⟩ := ExposeX.exists_extension_of_isRegularScheme sP sX hP F hF
-  have := ExposeX.isEquivalence_pullback_of_isRegularScheme hP U hcodim
-  have hηU : genericPoint P ∈ U := hFU hFη
   have : Nonempty U := ⟨⟨_, hηU⟩⟩
-  have hU : IsSimplyConnected U :=
-    isSimplyConnected_of_equivalence (ExposeV.FEt.pullback U.ι).asEquivalence.symm hPs
   -- The generic point `w` of `U`, and `g` at `w`.
   let w : U.toScheme := ⟨genericPoint P, hηU⟩
-  have hw : w = genericPoint U := by
-    apply U.ι.isOpenEmbedding.injective
-    rw [genericPoint_eq_of_isOpenImmersion U.ι]
-    rfl
   let sm : P.presheaf.stalk (genericPoint P) ⟶ U.toScheme.presheaf.stalk w := U.ι.stalkMap w
   have : IsIso sm := inferInstanceAs (IsIso (U.ι.stalkMap w))
-  have hUw : U.toScheme.fromSpecStalk w ≫ g = Spec.map sm ≫ ψ := by
-    have e0 : Spec.map sm ≫ Spec.map (inv sm) = 𝟙 _ := by
-      rw [← Spec.map_comp, IsIso.inv_hom_id, Spec.map_id]
-    have e1 : U.toScheme.fromSpecStalk w =
-        Spec.map sm ≫ U.fromSpecStalkOfMem (genericPoint P) hηU :=
-      ((Category.id_comp _).symm.trans (congrArg (· ≫ U.toScheme.fromSpecStalk w) e0.symm)).trans
-        (Category.assoc _ _ _)
-    have e2 : U.fromSpecStalkOfMem (genericPoint P) hηU =
-        F.domain.fromSpecStalkOfMem _ hFη ≫ P.homOfLE hFU := by
-      rw [← cancel_mono U.ι, Category.assoc, Scheme.homOfLE_ι, Scheme.Opens.fromSpecStalkOfMem_ι,
-        Scheme.Opens.fromSpecStalkOfMem_ι]
-    rw [e1, e2]
-    exact (Category.assoc _ _ _).trans (congrArg (Spec.map sm ≫ ·)
-      ((Category.assoc _ _ _).trans ((congrArg _ hg).trans hFψ)))
-  have hgw : g (genericPoint U) = genericPoint X := by
-    rw [← hw]
-    have h := congrArg (fun m ↦ m (IsLocalRing.closedPoint _)) hUw
-    have : IsLocalHom sm.hom := isLocalHom_of_isIso _
-    have : IsLocalHom τ.hom := isLocalHom_of_divisionRing _
-    change g (U.toScheme.fromSpecStalk w (IsLocalRing.closedPoint _)) =
-      X.fromSpecStalk _ (Spec.map τ (Spec.map sm (IsLocalRing.closedPoint _))) at h
-    simpa only [Scheme.fromSpecStalk_closedPoint, Spec_closedPoint] using h
+  rw [hw] at hgw
   -- The field `K(U) = K(P)` is finite over `K(X)`.
   let ι : X.functionField ⟶ U.toScheme.presheaf.stalk w := τ ≫ sm
   have hι : Spec.map ι ≫ X.fromSpecStalk (genericPoint X) = U.toScheme.fromSpecStalk w ≫ g := by
     rw [hUw, Spec.map_comp, Category.assoc]
+    rfl
   have hfin' : letI := ι.hom.toAlgebra
       Module.Finite X.functionField (U.toScheme.presheaf.stalk w) := by
     let _ := τ.hom.toAlgebra
@@ -387,33 +349,12 @@ theorem hasFiniteFundamentalGroup_of_isUnirational [IsAlgClosed k] [IsProper sX]
     HasFiniteFundamentalGroup X := by
   let _ := (functionFieldMap sX).toAlgebra
   obtain ⟨L, _, _, _, hL⟩ := h
-  let _ : Algebra k L := ((algebraMap X.functionField L).comp (algebraMap k _)).toAlgebra
-  have : IsScalarTower k X.functionField L := IsScalarTower.of_algebraMap_eq' rfl
-  obtain ⟨s, hs, hadj⟩ := hL
-  have : Algebra.EssFiniteType k X.functionField := essFiniteType_functionFieldMap sX
-  have : Algebra.EssFiniteType k L := Algebra.EssFiniteType.comp k X.functionField L
-  have : Finite s := finite_of_algebraicIndependent hs
-  obtain ⟨y, hy, ρ, hρ, hρs⟩ := exists_functionField_iso_proj L s hs hadj
-  let τ : X.functionField ⟶ (Proj (grading (Option s) k)).presheaf.stalk y :=
-    CommRingCat.ofHom (algebraMap X.functionField L) ≫ inv ρ
-  have hτ : Spec.map τ ≫ X.fromSpecStalk (genericPoint X) ≫ sX =
-      (Proj (grading (Option s) k)).fromSpecStalk y ≫ projToSpec (Option s) k := by
-    rw [fromSpecStalk_comp_eq_SpecMap, ← Spec.map_comp]
-    have e : CommRingCat.ofHom (functionFieldMap sX) ≫ τ =
-        CommRingCat.ofHom (algebraMap k L) ≫ inv ρ := rfl
-    rw [e, Spec.map_comp, ← hρs, ← Category.assoc, ← Spec.map_comp, IsIso.hom_inv_id, Spec.map_id,
-      Category.id_comp]
-  have hfin : letI := τ.hom.toAlgebra
-      Module.Finite X.functionField ((Proj (grading (Option s) k)).presheaf.stalk y) := by
-    let _ := τ.hom.toAlgebra
-    let e : L ≃ₐ[X.functionField] (Proj (grading (Option s) k)).presheaf.stalk y :=
-      AlgEquiv.ofRingEquiv (f := (asIso ρ).symm.commRingCatIsoToRingEquiv) fun _ ↦ rfl
-    exact Module.Finite.equiv e.toLinearEquiv
+  obtain ⟨s, _, y, hy, _, _, hτ, hfin⟩ := exists_proj_parametrization sX L hL
   have : IsLocallyNoetherian X := LocallyOfFiniteType.isLocallyNoetherian sX
   have : X.IsSeparated := ⟨by rw [← terminal.comp_from sX]; infer_instance⟩
   exact hasFiniteFundamentalGroup_of_functionField_finite sX (projToSpec (Option s) k)
     (fun x ↦ ⟨inferInstance, hX x⟩) (ProjectiveSpace.isRegularScheme_proj k _)
-    (isSimplyConnected_proj' _) hy τ hτ hfin
+    (isSimplyConnected_proj' _) hy _ hτ hfin
 
 /-- XI.1.3: `UnirationalFiniteFundamentalGroupStatement` holds. -/
 theorem unirationalFiniteFundamentalGroupStatement :

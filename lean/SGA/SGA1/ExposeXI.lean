@@ -50,6 +50,28 @@ import SGA.SGA1.ExposeXI.TameDiscriminant
 import SGA.SGA1.ExposeXI.TameCovering
 import SGA.SGA1.ExposeXI.TameGaloisCovering
 import SGA.SGA1.ExposeXI.SerreLang
+import SGA.SGA1.ExposeXI.AbelianVariety
+import SGA.SGA1.ExposeXI.AbelianVarietyCovering
+import SGA.SGA1.ExposeXI.AbelianVarietyIsogeny
+import SGA.SGA1.ExposeXI.AbelianVarietyMulN
+import SGA.SGA1.ExposeXI.AbelianVarietyQuotient
+import SGA.SGA1.ExposeXI.MultiplicativeGroupCovering
+import SGA.SGA1.ExposeXI.MultiplicativeGroupCoveringCompositum
+import SGA.SGA1.ExposeXI.MultiplicativeGroupCoveringField
+import SGA.SGA1.ExposeXI.MultiplicativeGroupCoveringKummer
+import SGA.SGA1.ExposeXI.SerreUnirational
+import SGA.SGA1.ExposeXI.TateModule
+import SGA.SGA1.ExposeXI.TateModuleFunctoriality
+import SGA.SGA1.ExposeXI.TateModulePrimary
+import SGA.SGA1.ExposeXI.TateModulePrimeToP
+import SGA.SGA1.ExposeXI.TateModuleProduct
+import SGA.SGA1.ExposeXI.UnirationalCovers
+import SGA.SGA1.ExposeXI.UnirationalCoversGalois
+import SGA.SGA1.ExposeXI.UnirationalCoversParametrization
+import SGA.SGA1.ExposeXI.UnirationalCurves
+import SGA.SGA1.ExposeXI.UnirationalForms
+import SGA.SGA1.ExposeXI.UnirationalFormsAlgebra
+import SGA.SGA1.ExposeXI.UnirationalFormsZero
 
 /-!
 # SGA 1, Exposé XI — Examples and complements
@@ -68,16 +90,58 @@ This module is the barrel for the Lean formalization of the exposé.
   powers `(ℙ¹)ʳ` and products of projective spaces (`SimplyConnectedProduct`,
   `ProjectiveLinePower`). XI.1.2: a proper normal rational variety is simply connected
   (`RationalVarieties`); XI.1.3: a proper normal unirational variety has finite fundamental group
-  (`UnirationalVarieties`); both from purity X.3.3 and XI.1.1. For a given birational map between
-  regular varieties, the same follows from X.3.4 (`BirationalTransfer`, `BirationalInvariance`).
-  For XIII.2.12 (`g = 0`, `n = 1`): the lattice method for coverings of `ℙ¹` étale over `𝔸¹` and
-  tamely ramified at `∞` (`RamifiedLattice`, `TameDiscriminant`, `TameCovering`), and the
-  triviality of Galois coverings of `𝔸¹` of degree prime to `p` (`TameGaloisCovering`).
-  XI.2, the fundamental group of a proper connected reduced monoid scheme (e.g. an abelian
-  variety) over an algebraically closed field is commutative, by X.1.7
+  (`UnirationalVarieties`, with the parametrization `ℙʳ ⇢ X` and its extension in
+  `UnirationalCoversParametrization`); both from purity X.3.3 and XI.1.1. For a given birational
+  map between regular varieties, the same follows from X.3.4 (`BirationalTransfer`,
+  `BirationalInvariance`).
+* XI.1.4 (Serre), conditional: `serreUnirationalSimplyConnectedStatement_of_hodgeSymmetryZero`
+  (`SerreUnirational`) proves it from Hodge symmetry `h^{0,q} = h^{q,0}`
+  (`HodgeSymmetryZeroStatement`, transcendental), its only open input. The other steps of Serre's
+  proof are proved: a proper unirational variety in characteristic `0` has no nonzero regular
+  `q`-forms, `q > 0`, without smoothness (`regularForms_eq_bot_of_isUnirational`,
+  `UnirationalForms`, `UnirationalFormsAlgebra`); an integral finite étale covering of a
+  unirational variety is unirational (`isUnirational_of_isFinite_of_etale`, `UnirationalCovers`);
+  `χ(𝒪)` is multiplicative in finite étale coverings (`eulerCharFiniteEtaleStatement`, in
+  `SGA.Foundations.Cohomology`). In every characteristic: unirational curves are simply connected,
+  by Lüroth (`UnirationalCurves`); `#π₁(X)` divides the separable degree of any unirational
+  parametrization, so `X` is simply connected when the parametrization is purely inseparable
+  (`natCard_etaleFundamentalGroup_dvd_finSepDegree`, `isSimplyConnected_of_isPurelyInseparable`,
+  `UnirationalCoversGalois`). The case `q = 0` of Hodge symmetry holds
+  (`finrankH_unit_zero_eq_finrank_regularForms_zero`, `UnirationalFormsZero`).
+* §2 (abelian varieties): XI.2, the fundamental group of a proper connected reduced monoid scheme
+  (e.g. an abelian variety) over an algebraically closed field is commutative, by X.1.7
   (`AbelianFundamentalGroup`). The key step of XI.2.1 (Serre–Lang): every connected étale
   covering of an abelian variety is dominated by multiplication by some `n > 0`, since `n_A`
-  induces `σ ↦ σⁿ` on the commutative group `π₁(A)` (`SerreLang`).
+  induces `σ ↦ σⁿ` on the commutative group `π₁(A)` (`SerreLang`). XI.2.1 itself,
+  `π₁(A) ≅ T(A) = lim_n K_n`, is `AbelianVarietyFundamentalGroupStatement` (`TateModule`, with
+  `K_n` and `T(A)` in `AbelianVariety`), and its `ℓ`-primary clause is
+  `AbelianVarietyPrimaryComponentStatement` (`TateModulePrimary`). The canonical map
+  `T(A) → π₁(A, 0)` exists in every characteristic (`tateModuleToFundamentalGroup`). XI.2.1 is
+  proved in characteristic `0` (`exists_tateModule_equiv_of_charZero`, `AbelianVarietyMulN`:
+  `n_A` is étale for `n` invertible in `k`) and from SGA's cited fact that every `n_A` is an
+  isogeny (`abelianVarietyFundamentalGroupStatement_of_mulNIsogeny`, `AbelianVarietyIsogeny`,
+  `AbelianVarietyQuotient`: the étale covering `A ⟶ A / K_n`, descended along the radicial
+  `A / K_n ⟶ A` by IX.4.10); its `ℓ`-primary clause is proved for every prime `ℓ ≠ char k`
+  (`abelianVarietyPrimaryComponent_of_natCast_ne_zero`, `TateModulePrimeToP`). SGA's
+  `T(A) = ∏_ℓ T_ℓ(A)` (`tateModuleEquivPi`) and the equivalence of the two parts of XI.2.1 are in
+  `TateModuleProduct`, so in characteristic `p > 0` XI.2.1 for `A` is equivalent to its
+  `p`-primary clause (`abelianVarietyFundamentalGroupConclusion_iff_primaryComponent_charP`). The
+  functoriality in `A` (SGA's remark after XI.2.1) is in `TateModuleFunctoriality`. XI.2 before
+  XI.2.1, connected case: a connected étale covering `A' ⟶ A` pointed over the origin has a unique
+  group law with the marked point as origin making it a homomorphism
+  (`existsUnique_grpObj_coveringOver`, `AbelianVarietyCovering`), and is an isogeny
+  (`isFinite_coveringHom`, `surjective_coveringHom`); SGA's "every isogeny is a quotient of some
+  `n_A`" holds for these coverings when the `n_A` are surjective
+  (`exists_surjective_isMonHom_comp_eq_mulN`), in particular in characteristic `0`
+  (`exists_surjective_isMonHom_comp_eq_mulN_of_charZero`).
+* For XIII.2.12 (`g = 0`, `n = 1`): the lattice method for coverings of `ℙ¹` étale over `𝔸¹` and
+  tamely ramified at `∞` (`RamifiedLattice`, `TameDiscriminant`, `TameCovering`), and the
+  triviality of Galois coverings of `𝔸¹` of degree prime to `p` (`TameGaloisCovering`). For
+  XIII.2.12 (`g = 0`, `n = 2`): a connected Galois covering of `𝔾_m` of degree prime to `p`, over
+  an algebraically closed field, has cyclic group (`isCyclic_algEquiv_of_laurent`,
+  `MultiplicativeGroupCovering`), by Abhyankar's lemma X.3.6 along the Kummer covering `z ↦ zᵈ`
+  and the case `n = 1`, without Riemann existence (`MultiplicativeGroupCoveringKummer`,
+  `MultiplicativeGroupCoveringField`, `MultiplicativeGroupCoveringCompositum`).
 * §4 (principal homogeneous bundles): XI.4.1–XI.4.3 over an arbitrary base (`PrincipalBundle`);
   XI.4.4–XI.4.5 for group schemes and sheaves of groups, with the homomorphism properties of `∂`
   and of `H¹` (`GroupSchemeSequence`, `AbelianH1`); XI.4.7, locally trivial bundles and Zariski
@@ -102,7 +166,13 @@ This module is the barrel for the Lean formalization of the exposé.
   constant group scheme `ℤ/p = Spec Γ(S)[T]/(Tᵖ - T)` and, for `S` connected and affine,
   `Γ(S)/℘Γ(S) ≅ Hom_cont(π₁(S), ℤ/p)` (`ArtinSchreierScheme`).
 
-Not formalized: the identification of `H¹(S_Zar, GL_n(𝒪_S))` with locally free Modules of rank
-`n`; Serre's theorem XI.1.4 (Hodge theory, statement only); in XI.2.1, the identification of
-`π₁(A)` with the Tate module `lim_n K_n`.
+Open (stated; see `lean/SGA/Foundations/README.md`): XI.1.4
+(`SerreUnirationalSimplyConnectedStatement`), which follows from step 2 of Serre's proof
+(`UnirationalStructureSheafVanishingStatement`;
+`serreUnirationalSimplyConnectedStatement_of_vanishing`), itself a consequence of
+`HodgeSymmetryZeroStatement` for `q ≥ 1`; XI.2.1 in characteristic `p > 0`, i.e. its `p`-primary
+clause, which follows from `p_A` being an isogeny (`MulNIsogenyStatement` for `n = p`, theorem of
+the cube; `exists_tateModule_equiv_of_charP`). Not formalized: the identification of
+`H¹(S_Zar, GL_n(𝒪_S))` with locally free Modules of rank `n`; the disconnected principal
+coverings of an abelian variety in XI.2 (`Ext(A, G) ≅ H¹(A, G)`).
 -/

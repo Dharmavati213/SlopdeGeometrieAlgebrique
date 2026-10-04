@@ -41,13 +41,14 @@ open CategoryTheory Topology Set Filter
 
 universe u v w
 
-/-! ### The unit interval is simply connected and locally path-connected -/
+/-! ### The unit interval is contractible and locally path-connected
+
+It is then simply connected by mathlib's instance `SimplyConnectedSpace.ofContractible`. -/
 
 namespace unitInterval
 
-instance : SimplyConnectedSpace I :=
-  have : ContractibleSpace I := (convex_Icc (0 : ℝ) 1).contractibleSpace ⟨0, by simp⟩
-  inferInstance
+instance : ContractibleSpace I :=
+  (convex_Icc (0 : ℝ) 1).contractibleSpace ⟨0, by simp⟩
 
 instance : LocallyPathConnectedSpace I :=
   (Topology.IsQuotientMap.of_inverse continuous_subtype_val continuous_projIcc
@@ -65,22 +66,6 @@ end unitInterval
 namespace FundamentalGroupoid
 
 variable {X : Type u} [TopologicalSpace X]
-
-@[simp]
-lemma fromPath_mk_refl (x : X) :
-    fromPath (.mk (Path.refl x)) = 𝟙 (FundamentalGroupoid.mk x) :=
-  rfl
-
-@[simp]
-lemma fromPath_mk_trans {x y z : X} (γ : Path x y) (δ : Path y z) :
-    fromPath (.mk (γ.trans δ)) = fromPath (.mk γ) ≫ fromPath (.mk δ) :=
-  rfl
-
-@[simp]
-lemma fromPath_mk_symm {x y : X} (γ : Path x y) :
-    fromPath (.mk γ.symm) = inv (fromPath (.mk γ)) := by
-  rw [← Groupoid.inv_eq_inv]
-  rfl
 
 variable (L : FundamentalGroupoid X ⥤ Type v)
 
