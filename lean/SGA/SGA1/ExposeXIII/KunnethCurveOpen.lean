@@ -15,7 +15,8 @@ import SGA.SGA1.ExposeXIII.KunnethInvariance
 
 The curve input of the resolution-free route to XIII.4.6 in characteristic `0` is the invariance
 of `π₁` under algebraically closed base change for the open subsets `𝔸¹ ∖ V(g)` of the affine
-line (`AffineLineOpenInvarianceStatement`, statement only; milestone C1 of the route). Here we
+line (`AffineLineOpenInvarianceStatement`; milestone C1 of the route, proved as
+`affineLineOpenInvarianceStatement` in `SGA.SGA1.ExposeXIII.KunnethCurveInvariance`). Here we
 show that it suffices for the step of the transcendence-degree induction
 (`isEquivalence_pullback_fst_of_trdeg_le_one`): for `X` connected, normal, quasi-compact,
 quasi-separated and locally of finite type over an algebraically closed field `k` of
@@ -43,7 +44,8 @@ open CategoryTheory Limits AlgebraicGeometry Polynomial
 namespace SGA.SGA1.ExposeXIII
 
 /-- XIII.4.6 (`Y = Spec k'`, `X = 𝔸¹ ∖ V(g)` an open subset of the affine line, characteristic
-`0`; statement only): for `k` algebraically closed of characteristic `0` and `g ≠ 0` in `k[X]`,
+`0`; proved as `affineLineOpenInvarianceStatement` in `SGA.SGA1.ExposeXIII.KunnethCurveInvariance`):
+for `k` algebraically closed of characteristic `0` and `g ≠ 0` in `k[X]`,
 `Spec k[X]_g` has the invariance property of `π₁` under algebraically closed base change
 (`HasAlgClosedBaseChangeInvariance`). The case `g` constant is `𝔸¹`
 (`hasAlgClosedBaseChangeInvariance_localization_away_of_isUnit`). It is the special case

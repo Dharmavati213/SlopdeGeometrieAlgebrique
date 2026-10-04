@@ -5,7 +5,7 @@ Authors: SlopdeGeometrieAlgebrique contributors
 -/
 import SGA.Foundations.Analytic.DolbeaultDisc
 import SGA.Foundations.Analytic.RiemannSurfaceRefinement
-import Mathlib.Geometry.Manifold.PartitionOfUnity
+import SGA.Foundations.Analytic.DolbeaultSheaf
 
 /-!
 # The first Cousin problem on a disc
@@ -42,49 +42,14 @@ variable {ι : Type*} {c : ℂ} {R : ℝ}
 
 /-- A smooth partition of unity on the disc `B(c, R)` subordinate to an open cover, as functions
 on `ℂ`: smooth on the disc, vanishing near the points of the disc outside `Uᵢ`, locally finite on
-the disc, and summing to `1` there. -/
+the disc, and summing to `1` there. The case `W = B(c, R)` of `exists_smoothPartitionOfUnity`. -/
 theorem exists_partitionOfUnity_ball (U : ι → Set ℂ) (hU : ∀ i, IsOpen (U i))
     (hcov : ball c R ⊆ ⋃ i, U i) :
     ∃ χ : ι → ℂ → ℝ, (∀ i, ∀ z ∈ ball c R, ContDiffAt ℝ ∞ (χ i) z) ∧
       (∀ i, ∀ z ∈ ball c R, z ∉ U i → χ i =ᶠ[𝓝 z] 0) ∧
       (∀ z ∈ ball c R, ∃ N ∈ 𝓝 z, {i | ∃ y ∈ N, χ i y ≠ 0}.Finite) ∧
-      (∀ z ∈ ball c R, ∑ᶠ i, χ i z = 1) := by
-  classical
-  let B : TopologicalSpace.Opens ℂ := ⟨ball c R, isOpen_ball⟩
-  have hBo : IsOpen (B : Set ℂ) := isOpen_ball
-  have : LocallyCompactSpace B := hBo.locallyCompactSpace
-  obtain ⟨ρ, hρ⟩ := SmoothPartitionOfUnity.exists_isSubordinate (I := 𝓘(ℝ, ℂ)) (M := B)
-    isClosed_univ (fun i => Subtype.val ⁻¹' U i) (fun i => (hU i).preimage continuous_subtype_val)
-    (fun x _ => by simpa using hcov x.2)
-  let χ : ι → ℂ → ℝ := fun i z => if h : z ∈ ball c R then ρ i ⟨z, h⟩ else 0
-  have hχB : ∀ i (x : B), χ i x = ρ i x := fun i x => by
-    have hx : dist (x : ℂ) c < R := x.2
-    simp [χ, hx]
-  -- the partition near a point of the disc, through the open embedding `B → ℂ`
-  have hnhds : ∀ (z : ℂ) (h : z ∈ ball c R) {P : ℂ → Prop},
-      (∀ᶠ x : B in 𝓝 ⟨z, h⟩, P x) → ∀ᶠ y in 𝓝 z, P y := by
-    intro z h P hP
-    have := hBo.isOpenEmbedding_subtypeVal.map_nhds_eq ⟨z, h⟩
-    rw [← show ((⟨z, h⟩ : B) : ℂ) = z from rfl, ← this]
-    exact hP
-  refine ⟨χ, fun i z hz => ?_, fun i z hz hzU => ?_, fun z hz => ?_, fun z hz => ?_⟩
-  · have h1 : ContMDiffAt 𝓘(ℝ, ℂ) 𝓘(ℝ) ∞ (fun x : B => χ i x) ⟨z, hz⟩ := by
-      have := (ρ i).contMDiff.contMDiffAt (x := ⟨z, hz⟩)
-      exact this.congr_of_eventuallyEq (Eventually.of_forall fun x => hχB i x)
-    rw [contMDiffAt_subtype_iff, contMDiffAt_iff_contDiffAt] at h1
-    exact h1
-  · have hnot : (⟨z, hz⟩ : B) ∉ tsupport (ρ i) := fun h => hzU (hρ i h)
-    have h0 : ∀ᶠ x : B in 𝓝 ⟨z, hz⟩, ρ i x = 0 := notMem_tsupport_iff_eventuallyEq.mp hnot
-    have h0' : ∀ᶠ x : B in 𝓝 ⟨z, hz⟩, χ i x = 0 := h0.mono fun x hx => by rw [hχB, hx]
-    exact hnhds z hz h0'
-  · obtain ⟨N, hN, hfin⟩ := ρ.locallyFinite ⟨z, hz⟩
-    refine ⟨Subtype.val '' N, hBo.isOpenEmbedding_subtypeVal.image_mem_nhds.mpr hN,
-      hfin.subset fun i hi => ?_⟩
-    obtain ⟨_, ⟨x, hxN, rfl⟩, hx⟩ := hi
-    exact ⟨x, Function.mem_support.mpr (by rwa [← hχB]), hxN⟩
-  · have := ρ.sum_eq_one (x := ⟨z, hz⟩) (mem_univ _)
-    simp only [show ∀ i, χ i z = ρ i ⟨z, hz⟩ from fun i => hχB i ⟨z, hz⟩]
-    exact this
+      (∀ z ∈ ball c R, ∑ᶠ i, χ i z = 1) :=
+  exists_smoothPartitionOfUnity isOpen_ball U hU hcov
 
 /-- **Cousin I on a disc**: let `(Uᵢ)` be open sets covering the disc `B = B(c, R)` and `fᵢⱼ`
 holomorphic on `Uᵢ ∩ Uⱼ ∩ B` with `fᵢⱼ + fⱼₖ = fᵢₖ` on `Uᵢ ∩ Uⱼ ∩ Uₖ ∩ B`. Then there are `gᵢ`

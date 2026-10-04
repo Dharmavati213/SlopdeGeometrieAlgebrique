@@ -40,6 +40,34 @@ universe u
 open CategoryTheory Limits AlgebraicGeometry IsLocalRing
 open scoped Polynomial LaurentPolynomial
 
+namespace SGA.SGA1.ExposeXIII
+
+section StrictLocalizationDVR
+
+attribute [local instance] Scheme.Hom.residueFieldAlgebra Scheme.Hom.stalkAlgebra
+  Scheme.Hom.isScalarTower_stalkAlgebra isLocalHom_algebraMap_of_isScalarTower
+
+variable {X : Scheme.{u}} {Ω₀ : Type u} [Field Ω₀] (xb : Spec (.of Ω₀) ⟶ X)
+  [IsDomain (X.presheaf.stalk xb.imagePoint)]
+  [IsDiscreteValuationRing (X.presheaf.stalk xb.imagePoint)]
+
+/-- The strict localization at a geometric point whose underlying local ring is a discrete
+valuation ring is a domain. -/
+lemma isDomain_strictLocalization_of_isDiscreteValuationRing : IsDomain xb.strictLocalization :=
+  inferInstanceAs (IsDomain (StrictHenselization (X.presheaf.stalk xb.imagePoint) Ω₀))
+
+/-- The strict localization at a geometric point whose underlying local ring is a discrete
+valuation ring is a discrete valuation ring. -/
+lemma isDiscreteValuationRing_strictLocalization_of_isDiscreteValuationRing :
+    haveI := isDomain_strictLocalization_of_isDiscreteValuationRing xb
+    IsDiscreteValuationRing xb.strictLocalization :=
+  inferInstanceAs (IsDiscreteValuationRing
+    (StrictHenselization (X.presheaf.stalk xb.imagePoint) Ω₀))
+
+end StrictLocalizationDVR
+
+end SGA.SGA1.ExposeXIII
+
 namespace SGA.SGA1.ExposeXIII.AffineLineChart
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} {V : X.Opens}
@@ -199,7 +227,7 @@ include hV hxV hx in
 lemma isDomain_strictLocalization : IsDomain xb.strictLocalization := by
   have := isDomain_stalk (hV := hV) φ hxV
   have := isDiscreteValuationRing_stalk (hV := hV) φ hxV hx
-  exact inferInstanceAs (IsDomain (StrictHenselization (X.presheaf.stalk xb.imagePoint) Ω₀))
+  exact isDomain_strictLocalization_of_isDiscreteValuationRing xb
 
 include hV hxV hx in
 /-- The strict localization of `X` at a geometric point over the origin of `V ≅ 𝔸¹` is a discrete
@@ -209,8 +237,7 @@ lemma isDiscreteValuationRing_strictLocalization :
     IsDiscreteValuationRing xb.strictLocalization := by
   have := isDomain_stalk (hV := hV) φ hxV
   have := isDiscreteValuationRing_stalk (hV := hV) φ hxV hx
-  exact inferInstanceAs (IsDiscreteValuationRing
-    (StrictHenselization (X.presheaf.stalk xb.imagePoint) Ω₀))
+  exact isDiscreteValuationRing_strictLocalization_of_isDiscreteValuationRing xb
 
 include hV hx in
 /-- The image `π` of `t` in the strict localization at a geometric point over the origin is a

@@ -136,9 +136,18 @@ theorem exists_basis_patch (h : A₁.HasGLFactorization A₂ ι) {b₁ b₂ : Mo
   rw [← h₁₂, ← hb₁, ← hb₂]
   rfl
 
-/-- **Patching of Galois algebras**: if `Vᵢ` is a `σ`-stable `Aᵢ`-form of `W` with invariants
+/-- **Patching of `G`-algebras**: if `Vᵢ` is a `σ`-stable `Aᵢ`-form of `W` with invariants
 `Aᵢ`, `A₁, A₂` have the factorization property, `R → W` is injective and `G` acts faithfully on
-`W`, then `G` is a Galois group of the patched algebra over `A₁ ∩ A₂`. -/
+`W`, then `G` is a Galois group of the patched algebra over `A₁ ∩ A₂` in the sense of mathlib's
+`IsGaloisGroup`: `G` acts faithfully, `A₁ ∩ A₂`-linearly, with invariants `A₁ ∩ A₂`.
+
+This is weaker than "Galois algebra" (Chase–Harrison–Rosenberg: for the patched algebra `E` over
+`A₁ ∩ A₂`, `E` étale and `E ⊗ E ≅ ∏_G E`) in general. If `A₁ ∩ A₂` is a field, `W` has rank `|G|`
+over `R` and `W` is étale over `R` (e.g. a Galois `R`-algebra), then `E` has rank `|G|`
+(`exists_basis_patch`), `E ⊗ R ≅ W` is étale so `E` is étale over the field `A₁ ∩ A₂`, and Artin's
+theorem on each factor shows that `E` is `G`-Galois. Without étaleness this fails: for
+`R = A₁ = A₂ = ℚ`, `W = ℚ[x]/(x²)` and `G = ℤ/2` acting by `x ↦ -x`, the action is faithful with
+invariants `ℚ` and `W` has rank `2`, but `W` is not étale. -/
 theorem isGaloisGroup_patch (h : A₁.HasGLFactorization A₂ ι) {b₁ b₂ : Module.Basis ι R W}
     (hb₁ : Subalgebra.toSubmodule V₁ = Submodule.span A₁ (Set.range b₁))
     (hb₂ : Subalgebra.toSubmodule V₂ = Submodule.span A₂ (Set.range b₂))

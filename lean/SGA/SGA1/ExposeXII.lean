@@ -70,6 +70,41 @@ import SGA.SGA1.ExposeXII.RiemannReductionUniverse
 import SGA.SGA1.ExposeXII.RiemannSimplyConnected
 import SGA.SGA1.ExposeXII.StatementCorollaries
 
+import SGA.SGA1.ExposeXII.GAGAModules
+import SGA.SGA1.ExposeXII.GAGAProjective
+import SGA.SGA1.ExposeXII.GAGAProjectiveSpace
+import SGA.SGA1.ExposeXII.RiemannCurvesExistence
+import SGA.SGA1.ExposeXII.RiemannExtension
+import SGA.SGA1.ExposeXII.RiemannExtensionAlgebra
+import SGA.SGA1.ExposeXII.RiemannExtensionClosure
+import SGA.SGA1.ExposeXII.RiemannExtensionCriterion
+import SGA.SGA1.ExposeXII.RiemannExtensionLocal
+import SGA.SGA1.ExposeXII.RiemannExtensionTopology
+import SGA.SGA1.ExposeXII.RiemannHigher
+import SGA.SGA1.ExposeXII.RiemannHigherAssembly
+import SGA.SGA1.ExposeXII.RiemannHigherBase
+import SGA.SGA1.ExposeXII.RiemannHigherDescent
+import SGA.SGA1.ExposeXII.RiemannHigherDescentAffine
+import SGA.SGA1.ExposeXII.RiemannHigherFibrePresentation
+import SGA.SGA1.ExposeXII.RiemannHigherFibrewise
+import SGA.SGA1.ExposeXII.RiemannHigherFrames
+import SGA.SGA1.ExposeXII.RiemannHigherGeneric
+import SGA.SGA1.ExposeXII.RiemannHigherGenericEtale
+import SGA.SGA1.ExposeXII.RiemannHigherIsotopy
+import SGA.SGA1.ExposeXII.RiemannHigherLine
+import SGA.SGA1.ExposeXII.RiemannHigherParameter
+import SGA.SGA1.ExposeXII.RiemannHigherPointedChart
+import SGA.SGA1.ExposeXII.RiemannHigherPolyFamily
+import SGA.SGA1.ExposeXII.RiemannHigherPolyPoints
+import SGA.SGA1.ExposeXII.RiemannHigherPresentation
+import SGA.SGA1.ExposeXII.RiemannHigherProductCovering
+import SGA.SGA1.ExposeXII.RiemannHigherQuasiSection
+import SGA.SGA1.ExposeXII.RiemannHigherRigidity
+import SGA.SGA1.ExposeXII.RiemannHigherRootSpace
+import SGA.SGA1.ExposeXII.RiemannHigherSmooth
+import SGA.SGA1.ExposeXII.RiemannHigherTransport
+import SGA.SGA1.ExposeXII.RiemannReductionNoether
+import SGA.SGA1.ExposeXII.RiemannReductionProduct
 /-!
 # SGA 1, Exposé XII — Algebraic geometry and analytic geometry
 

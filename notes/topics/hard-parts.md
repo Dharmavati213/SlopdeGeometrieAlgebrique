@@ -104,6 +104,21 @@ Routes that solved problems which had looked hard are in [`strategy.md`](strateg
 - III.5.9 needs EGA III 5.4.1 (algebraization of morphisms). III.7.2–III.7.3 need coherent
   existence on `ℙⁿ`, a formal embedding and the lifting of an ample bundle (III-7). None of these
   is stated.
+- **RESOLVED** (2026-10-04, iii74): III.7.4 is proved,
+  `SGA.SGA1.ExposeIII.smoothProperCurveLiftStatement` (`lean/SGA/SGA1/ExposeIII/CurveLiftCurve.lean`).
+  The route avoids coherent existence and ample bundles:
+  1. a smooth proper curve has a finite flat `X₀ ⟶ ℙ¹_k`
+     (`AlgebraicGeometry.smoothProperCurveFiniteFlatStatement`: per connected component, a
+     transcendental rational function, extended by the valuative criterion, finite by Zariski's
+     main theorem, flat over the PID charts; glued over the components);
+  2. lift `X₀` and the two chart coordinates level by level (`CurveLift.Stage.exists_succ`;
+     obstruction `H¹(X₀, g^*𝒪(2))`, killed by replacing `g` with `g` followed by `t ↦ tᵈ`);
+  3. algebraize the finite flat cover of `ℙ¹_A` with the *locally free* existence theorem
+     (`CohomologyAux.exists_finite_flat_of_formalFiniteFlat`);
+  4. the algebraization is flat and proper with smooth closed fibre, hence smooth
+     (`CurveLift.smoothOfRelativeDimension_of_isPullback`, Stacks 00TF).
+  Still not formalized from this item: coherent existence on `ℙⁿ`, EGA III 5.4.5 with an ample
+  bundle, III.5.9, III.7.1–III.7.3.
 
 ### Formal schemes (`lean/SGA/Foundations/Formal/`)
 
@@ -211,20 +226,34 @@ F-Limits-2).
 ## 4. Local algebra from EGA 0_III, EGA II and EGA IV 14
 
 - **IX.4.6 in SGA's form**, `IsEffectiveIffStrictlyLocalStatement`
-  (`lean/SGA/SGA1/ExposeIX/EtaleEffectiveDescent.lean`).
-  - Proved in `StrictlyLocalDescent.lean` with separably closed residue fields
-    (`DescentDatum.isEffective_iff_forall_isSepClosed`; enough for étale descent), and with
-    algebraically closed ones when the residue fields are perfect
-    (`isEffective_iff_forall_isAlgClosed`).
-  - Missing: EGA 0_III 10.3.1, a flat local extension of a complete local ring realizing a
-    purely inseparable residue field extension.
+  (`lean/SGA/SGA1/ExposeIX/EtaleEffectiveDescent.lean`). **Resolved 2026-10-04 (local-alg)**:
+  `isEffectiveIffStrictlyLocal` in `SGA1/ExposeIX/StrictlyLocalDescentGeneral.lean`, from the
+  separably closed version (`DescentDatum.isEffective_iff_forall_isSepClosed`,
+  `StrictlyLocalDescent.lean`) and EGA 0_III 10.3.1 (`IsLocalRing.flatResidueExtensionStatement`,
+  `Foundations/CommAlg/FlatResidueExtensionGeneral.lean`; the case used is
+  `exists_flat_isAlgClosed_residueField`). 10.3.1 is proved without SGA's transfinite induction:
+  a transcendence basis (`A[X]_{𝔪A[X]}`), the strict henselization (separable part), and an
+  `ℕ`-indexed tower of `R[Y]/(Y^p - l)` over relative `p`-bases (purely inseparable part).
 - **IX.4.9 input**, `QuasiSectionStatement` (`lean/SGA/SGA1/ExposeIX/UniversallyOpenDescent.lean`):
-  quasi-sections of universally open morphisms (EGA IV 14.3.13, 14.5.4). The rest of SGA's
-  argument is formalized, and `effectiveDescentOfUniversallyOpen` is proved from it (IX-8).
+  quasi-sections of universally open morphisms (EGA IV 14.3.13, 14.5.4). **Resolved 2026-10-04
+  (local-alg, row A60)**: `quasiSectionStatement` and IX.4.9 itself,
+  `effectiveDescentOfUniversallyOpenStatement`, in `SGA1/ExposeIX/QuasiSection.lean`. No EGA IV 14
+  machinery was needed: openness of `Spec B → Spec A` gives going down, so
+  `ht P = dim A + dim` of the fibre; cutting by a system of parameters of the fibre leaves a
+  component through `P` of dimension `≥ dim A`, and the dimension inequality forces it to
+  dominate (`Foundations/CommAlg/QuasiSection.lean`, all from mathlib's Krull height theorem).
 - **IX.2.6 sufficiency**, `UniversallySubmersiveValuativeCriterionStatement`
-  (`lean/SGA/SGA1/ExposeIX/Submersive.lean`). It needs Krull–Akizuki, DVRs dominating a noetherian
-  local domain (EGA II 7.1.7), and an argument from Rydh (IX-8). Necessity is
-  `not_isOpen_preimage_closedPoint`.
+  (`lean/SGA/SGA1/ExposeIX/Submersive.lean`). **Resolved 2026-10-04 (local-alg)**:
+  `universallySubmersiveValuativeCriterion` in `SGA1/ExposeIX/SubmersiveValuative.lean` (only
+  quasi-compactness of `g` is used). Route: DVR criterion ⇒ "lifts to local domains dominating
+  any given one" by an algebraic descent to a noetherian local subring plus EGA II 7.1.7
+  (`Algebra.exists_hasDominatingPoint_of_forall_isDiscreteValuationRing`,
+  `Foundations/CommAlg/DominatingDVRLift.lean`); then specializations lift in every base change, and
+  a quasi-compact morphism with that property is submersive (Stacks 01K9 for images of closed
+  sets). Krull–Akizuki and 7.1.7 are in
+  `Foundations/CommAlg/{KrullAkizuki,KrullAkizukiFinite,DominatingDVR,DominatingDVRGeneral}.lean`
+  (7.1.7 in full: `IsLocalRing.dominatingDVRStatement`; Krull–Akizuki for finite extensions of the
+  fraction field: `KrullAkizuki.isNoetherianRing_of_finiteDimensional`).
 - EGA II 7.1.7 and EGA 0_III 10.3.1 are also inputs to X.3.8 (XI-12), so building them serves
   more than one item.
 
@@ -338,12 +367,13 @@ Already proved:
     - the second part of XIII.4.4 (`ExposeXIII.properSmoothHomotopyExactSequence_of_isDiscreteValuationRing`);
     - X.3.8/X.3.9 for `y₀` closed, `y₁` generic
       (`ExposeX.exists_tameSpecialization_of_isDiscreteValuationRing`, `TameLiftingSpecialization.lean`).
-  - **Left for `TameSpecializationStatement` (general `Y`).** The WIP above can now take the DVR case
-    as input. What is missing is the passage from a complete local base to a complete DVR with
-    separably closed residue field: a DVR dominating `𝒪_{Y,y₀}/𝔭_{y₁}` (EGA II 7.1.7,
-    Krull–Akizuki; not in mathlib, no owner), its completed strict henselization, and the comparison
-    of the geometric fibres (X.1.8 plus IX.4.10 for the closed fibres; the residue extension can be
-    transcendental).
+  - **Resolved (2026-10-04, xiii43, wave 2): `TameSpecializationStatement` is proved over every
+    locally noetherian `Y`**, `ExposeX.tameSpecializationStatement` (`ExposeX/TameLiftingGeneral.lean`).
+    The passage to a complete DVR uses local-alg's EGA II 7.1.7
+    (`IsLocalRing.exists_isDiscreteValuationRing_dominating`, row A41) and the completed strict
+    henselization (`ExposeX.exists_isAdicComplete_isDiscreteValuationRing`, row A45). Existence form:
+    up to an inner automorphism the map built is SGA's specialization map, which the statement does
+    not record. X.3.9 follows by `exists_primeToQuotientEquiv_of_tameSpecialization`.
 
 ## 6. Étale sheaves, torsors, XIII §1
 
@@ -445,14 +475,26 @@ Already proved:
     from `IsCoveringMap.isProperMap_of_finite` (a covering with finite fibres is proper).
   - the irreducibility half of XII.2.4, which needs analytic irreducible components (XII-4);
   - ascent of reducedness and normality, which needs excellence (XII-3);
-  - Oka coherence, never attempted (F-Analytic-4); Theorem B on polydiscs (needs ∂̄ in several
-    variables and, for derived-functor `H'`, a Cartan criterion for infinite covers: the repo's
-    `TopCat.Sheaf.H'_subsingleton_of_cech` needs finite refining families, which a non-compact
-    open set never has). Done (2026-10-04, xii4): Cousin I on a disc for arbitrary covers
+  - RESOLVED (2026-10-04, an-coh): Oka coherence, `AnalyticGeometry.okaCoherence`
+    (`Foundations/Analytic/Oka.lean`; the Weierstrass half came from the unmerged branch
+    `codex/foundations-missing-inputs`), with Hilbert's syzygy theorem for the stalks and local
+    finite free resolutions (`Syzygy*.lean`). Open (an-coh): Theorems A and B for coherent
+    sheaves, Cartan–Serre (registry row C10). RESOLVED (2026-10-04, an-cohom): Theorem B for `𝒪` on
+    `Δ × ℂᵃ × (ℂ*)ᵇ` (`AnalyticGeometry.polydiscProductVanishing`), on products of discs, planes,
+    punctured planes and open rectangles (`H'_holomorphicAbSheaf_pi_subsingleton`), and near
+    compact boxes (`TheoremB.lean`). Route: Cartan's criterion for covers indexed by arbitrary
+    types (`Cohomology/CartanInfinite.lean`; the repo's `TopCat.Sheaf.H'_subsingleton_of_cech`
+    needs finite refining families, which a non-compact open set never has), the Dolbeault
+    resolution of `𝒪` by fine sheaves of coordinate `(0,q)`-forms, the Dolbeault–Grothendieck
+    lemma near compact products (parametric Cauchy transform), and Hörmander's exhaustion
+    argument; degree `0` needs Runge approximation, by truncated Laurent expansions (annuli) and
+    Cauchy integrals over the sides of rectangles, with holomorphic parameters, one coordinate at
+    a time (`RungeScheme.lean`). Done (2026-10-04, xii4): Cousin I on a disc for arbitrary covers
     (`AnalyticGeometry.exists_differentiableOn_sub_eq_of_cocycle`, `Foundations/Analytic/Cousin.lean`,
     about 250 lines: mathlib's `SmoothPartitionOfUnity` on the open submanifold `B`, moved to `ℂ` with
     `contMDiffAt_subtype_iff`, plus `exists_contDiffOn_dbar_eq_ball`). The factors `ℂ` and `ℂ*` of
-    `PolydiscProductVanishingStatement` also need `∂̄` on the plane and on annuli (Runge).
+    `PolydiscProductVanishingStatement` needed `∂̄` on the plane and on annuli (Runge): done, see
+    above.
 - **Exists** (`lean/SGA/Foundations/Analytic/`):
   - convergent power series, and Weierstrass division and preparation;
   - `𝕜{X}` noetherian and henselian;
@@ -508,6 +550,13 @@ Below, for each item: the main results, and what is hard in the rest.
   finite étale coverings: `eulerCharFiniteEtaleStatement`). Hard: Hodge symmetry for `q ≥ 1` is
   analytic Hodge theory (Lefschetz principle, GAGA, Dolbeault, harmonic forms on compact Kähler
   manifolds), far beyond the analytic layer of §8. Route: `../log/2026-10-03-xi14-serre-unirational.md`.
+  Wave 2 (2026-10-04, stream `hodge`): interfaces `ExposeXI.HodgeSymmetryZeroComplexStatement` (over
+  `ℂ`, projective `X`), `Hodge.CompactKahlerHodgeSymmetryStatement`, `Hodge.DolbeaultIsomorphismStatement`;
+  proved foundations in `Foundations/Hodge` (forms of type `(p,q)`, `∂`, `∂̄`, Dolbeault cohomology,
+  Kähler forms, integration and Stokes on compact complex manifolds). Still open: wedge product and
+  Leibniz, Kähler linear algebra (Hodge–Riemann), elliptic theory (the long pole), Dolbeault
+  isomorphism, `X(ℂ)` as a manifold. Note: `HodgeSymmetryZeroStatement` is stated for proper `X`;
+  Kähler Hodge theory covers projective `X` only (SGA's XI.1.4 is for projective `X`).
 - **XI.2.1** (`AbelianVarietyFundamentalGroupStatement`, `AbelianVarietyPrimaryComponentStatement`).
   RESOLVED: the key step `SerreLangStatement` (`serreLangStatement`, 2026-10-03, sga1-xi21), with
   no abelian-variety theory. Proved: characteristic 0 (`exists_tateModule_equiv_of_charZero`), the
@@ -531,6 +580,34 @@ Below, for each item: the main results, and what is hard in the rest.
   affine curve to a finite étale cover of some `ℂ ∖ S`), singular curves (normalization descent),
   higher dimension (resolution, or a hypersurface-complement analogue of the `ℂ ∖ S` argument plus
   `ExposeX.purityCoverings`). Handoff: `../log/2026-10-04-xii51-round3-punctured-plane.md`.
+  - RESOLVED for curves (2026-10-04, xii51, registry C8/C26): `curveRiemannExistence :
+    CurveRiemannExistenceStatement` (any affine `A` of dimension `≤ 1`, singular, reducible,
+    non-reduced; scheme form `schemeCurveRiemannExistence`; XII.5.2 for curves
+    `curveFundamentalGroupComparison`), `SGA1/ExposeXII/RiemannCurvesExistence.lean`. What made
+    it short (about 2700 lines over two rounds, a third of them general topology): the extension
+    across a puncture needs **no holomorphy and no Puiseux**. A uniformizer is an étale
+    coordinate (algebra), so punctured neighbourhoods are connected; the covering map then
+    extends continuously and injectively to the normalization `C` of `B` in `C'` (general
+    topology); and `C` is étale by **counting
+    points** with mathlib's `∑ e f = rank` (`n` distinct points over `p` force `e = f = 1`). The
+    normalization is finite and Dedekind by mathlib's trace-form theorems once it is presented as
+    `IsIntegralClosure C B (Frac C')`. Singular curves come from descent along
+    `A → ∏_{p minimal} normalization(A/p)` (finite and surjective on spectra, so the nilradical
+    needs no separate topological-invariance step), together with XII.5.1 for finite products.
+    Handoff: `../log/2026-10-04-xii51-wave2-round2-curves-proved.md`.
+  - Higher dimension (2026-10-04, ret-hd, registry C20): Artin's elementary fibrations (SGA 4 XI)
+    need `π₁` of a fibre to inject into `π₁` of the total space *étale*-ly, which is the
+    out-of-scope XIII.4.4 third part (and even middle exactness is); topology alone does not
+    supply the étale side. Route taken instead: hypersurface complements by induction on the
+    dimension through the family of punctured lines over `𝔸^{d-1} ∖ V(disc)`, an algebraic
+    parameter space of fibrewise covers (made algebraic by curve RET on each fibre), Baire + a
+    quasi-section over a dense open of the base, and the covering of fibrewise isomorphisms,
+    made algebraic by RET in dimension `d - 1`; then divisor extension and Noether normalization.
+    Done: descent (C29), the reduction of smooth domains, `d ≤ 1`, and the topology (local
+    triviality of `ℂ` minus moving points, transport of coverings, clopen matching locus). Open:
+    the parameter algebra, the quasi-section, the fibrewise-trivial descent, divisor extension in
+    dim `≥ 2`, normal `X` (needs local irreducibility of normal varieties, C30). Handoff:
+    `../log/2026-10-04-ret-hd-round1.md`.
 - **XII.5.2 for singular `X`** (`LocallyContractibleStatement`). No triangulation is needed:
   XII.5.2 holds for every connected `X` given XII.5.1
   (`ExposeXII.schemeFundamentalGroupComparison_of_riemannExistence`), because SGA uses only that
@@ -551,8 +628,8 @@ Below, for each item: the main results, and what is hard in the rest.
   regular local bases, and, from the X.3.8 core (`ExposeX.tameLiftingDVRStatement`), over a
   complete DVR with separably closed residue field
   (`properSmoothHomotopyExactSequence_of_isDiscreteValuationRing`).
-  Hard: a general base (EGA II 7.1.7 for X.3.8, §5; finiteness when the base is not geometrically
-  unibranch); regular bases (`ProperSmoothHomotopyExactSequenceRegularStatement`, estimated
+  Hard: a general base (finiteness when the base is not geometrically unibranch; X.3.8 itself is
+  proved over every locally noetherian base, `ExposeX.tameSpecializationStatement`, §5); regular bases (`ProperSmoothHomotopyExactSequenceRegularStatement`, estimated
   5–8.5k lines); the third part, which needs XIII.5.5 (`RelativeAbhyankarStatement`, stated; needs
   étale depth, SGA 2 XIV 1.19/1.20) and XIII.2.9. Handoff: `../log/2026-10-04-xiii43-round3.md`.
 - **XIII §3** (`ExposeXIII/LocalAcyclicity.lean`). 3.2 1) is proved for every field
@@ -567,11 +644,12 @@ Below, for each item: the main results, and what is hard in the rest.
 - **XIII.4.6 in characteristic 0** (`KunnethCharZeroStatement`). The surjectivity half holds in
   every characteristic (`surjective_map_prod_of_isAlgClosed`); a resolution-free route reduces
   normal schemes of finite type to `AffineLineOpenInvarianceStatement` (invariance for opens of
-  `𝔸¹`). Hard: that statement for non-constant `g` (Kummer cover, compactification by
-  normalization, Abhyankar `etale_integralClosure_of_dvd`, purity extension, X.1.8, through
-  `hasAlgClosedBaseChangeInvariance_of_forall_exists_hom`; estimated at 1500 lines or more), descent
-  to non-normal `X`, `Y`, and qcqs `X` with arbitrary `Y`. Blueprint:
-  `../log/2026-10-04-xiii46-kunneth-round3.md` §4. "Smooth over normal is normal" is II.3.1
+  `𝔸¹`). That statement is proved (2026-10-04, wave 2 round 2,
+  `affineLineOpenInvarianceStatement` in `SGA1/ExposeXIII/KunnethCurveInvariance.lean`: Kummer
+  cover, compactification by normalization, Abhyankar in dimension 1, purity, X.1.8, about 2500
+  lines over seven files). Still hard: descent to non-normal `X`, `Y`, and qcqs `X` with arbitrary
+  `Y` and base points. Blueprint: `../log/2026-10-04-xiii46-kunneth-round3.md` §5 and
+  `../log/2026-10-04-xiii46-wave2-round2.md`. "Smooth over normal is normal" is II.3.1
   (`ExposeII/PermanenceSmooth.lean`), not new.
 - **XIII.2.12** (`TameCurveFundamentalGroupStatement`, `TameCurvePrimeToPStatement`). Proved on
   `ℙ¹` for `(g, n) = (0, 0)`, `(0, 1)`, and `(0, 2)` with inertia
@@ -589,9 +667,17 @@ Below, for each item: the main results, and what is hard in the rest.
   the reduction to Raynaud's two cases (`SerrePKernel.abhyankarAffineLine_of_patching_of_caseB`).
   Case A (`AffineLinePatchingStatement`) follows from Harbater–Stevenson's Theorem 6 (formal
   patching) and Abhyankar's lemma; the patching layer, with HS's nodal model, is in
-  `Foundations/Patching/` (registry A32). Missing for case A: HS's node lemma (induction over a
-  central series using `cd_p ≤ 1` of the punctured node), étale lifting over `k((u))⟦t⟧`,
-  branch-locus control, and specialization `k((t)) → k` (EGA IV 8 and EGA IV 9.7.7-type
-  constructibility). Case B (`AffineLineCaseBStatement`) needs Riemann existence for curves and
-  semistable reduction (`SemistableReductionStatement`, statement only). Roadmap:
-  `../log/2026-10-04-xiii213-round3-nodal-patching.md`.
+  `Foundations/Patching/` (registry A32). HS's node lemma (`π₁` form) and the étale lifting over
+  `K⟦t⟧` are done (xiii213, 2026-10-04, wave 2). Case A is reduced to four statements
+  (`affineLinePatching_of_statements`, `SGA1/ExposeXIII/AbhyankarAffineLinePatching.lean`):
+  Abhyankar's lemma at `∞`, HS's nodal patching over `k((t))` (still missing: torsors as
+  `σ`-stable forms, geometric connectedness and branch-locus control of the patched algebra),
+  base change to an algebraically closed extension, and specialization `K → k` (Chevalley or
+  EGA IV 9.7.7). Base change is proved (`affineLineBaseChange`, wave 2 round 2). For Abhyankar's
+  lemma, the global half is proved (connected coverings of `𝔸¹` stay connected under `x ↦ xᵐ`,
+  `AffineLinePGroups.isConnected_bcRingHom_expand`); the local half (the tame inertia at `∞` dies
+  in `k((y^{1/m}))`) is planned via XIII.2.0.1, Kummer and Hensel (plan in
+  `../log/2026-10-04-xiii213-w2r2-base-change.md`). Case B (`AffineLineCaseBStatement`) needs
+  Riemann existence for curves (proved by xii51, `curveRiemannExistence`), semistable reduction
+  (`SemistableReductionStatement`, open, stream `semistable`) and Raynaud's tail analysis (not
+  started). Roadmap: `../log/2026-10-04-xiii213-round3-nodal-patching.md`.

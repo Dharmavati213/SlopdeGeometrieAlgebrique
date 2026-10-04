@@ -11,6 +11,7 @@ import Mathlib.CategoryTheory.Sites.Pullback
 import Mathlib.CategoryTheory.Functor.Flat
 import Mathlib.Topology.Sheaves.Abelian
 import Mathlib.Topology.Sheaves.Functors
+import SGA.Foundations.Cohomology.CechPullback
 
 /-!
 # Sheaves of modules on locally ringed spaces
@@ -28,7 +29,9 @@ analytification `F ↦ F^an = φ^* F` along `φ : X^an → X` can be stated (SGA
 * `Modules.toAbSheaf`, `Modules.H M n = Hⁿ(X, M)` (cohomology of the underlying abelian sheaf, as
   in `SGA.Foundations.Cohomology.Basic` for schemes);
 * `Modules.pullbackCohomologyMap f M n : Hⁿ(Y, M) →+ Hⁿ(X, f^* M)`, the canonical map induced by
-  the exact functor `f⁻¹` on abelian sheaves and the morphism `f⁻¹ M → f^* M`.
+  the exact functor `f⁻¹` on abelian sheaves and the morphism `f⁻¹ M → f^* M`
+  (`TopCat.Sheaf.globalCohomologyPullbackMap` of `SGA.Foundations.Cohomology.CechPullback`; the
+  inverse image `f⁻¹`, its exactness and `ℤ_X → f⁻¹ ℤ_Y` are taken from there).
 
 References: EGA 0_I 4.3, 5.3; EGA 0_III 12.1; Stacks Project, Tags 01AE, 01BQ (Section 17.10).
 -/
@@ -97,44 +100,31 @@ section Cohomology
 
 variable (f : X ⟶ Y)
 
-/-- The inverse image `f⁻¹` of abelian sheaves. -/
+/-- The inverse image `f⁻¹` of abelian sheaves: `TopCat.Sheaf.abPullback` for the underlying
+continuous map (its exactness instances apply). -/
 abbrev abPullback :
     Sheaf (Opens.grothendieckTopology Y.carrier) AddCommGrpCat.{u} ⥤
       Sheaf (Opens.grothendieckTopology X.carrier) AddCommGrpCat.{u} :=
-  TopCat.Sheaf.pullback AddCommGrpCat.{u} f.base
+  TopCat.Sheaf.abPullback f.base
 
-/-- The adjunction `f⁻¹ ⊣ f_*` for abelian sheaves. -/
+/-- The adjunction `f⁻¹ ⊣ f_*` for abelian sheaves (`TopCat.Sheaf.abAdjunction`). -/
 abbrev abAdjunction : abPullback f ⊣ TopCat.Sheaf.pushforward AddCommGrpCat.{u} f.base :=
-  TopCat.Sheaf.pullbackPushforwardAdjunction AddCommGrpCat.{u} f.base
+  TopCat.Sheaf.abAdjunction f.base
 
-instance : PreservesFiniteLimits (abPullback f) :=
-  Functor.sheafPullbackConstruction.preservesFiniteLimits _ _ _ _
-
-instance : PreservesFiniteColimits (abPullback f) :=
-  have : PreservesColimitsOfSize.{0, 0} (abPullback f) :=
-    (abAdjunction f).leftAdjoint_preservesColimits
-  PreservesColimitsOfSize.preservesFiniteColimits _
-
-instance : (abPullback f).Additive :=
-  have := preservesBinaryBiproducts_of_preservesBinaryCoproducts (abPullback f)
-  Functor.additive_of_preservesBinaryBiproducts _
-
-/-- The constant sheaf `ℤ` (as `ULift ℤ`) on a locally ringed space. -/
+/-- The constant sheaf `ℤ` (as `ULift ℤ`) on a locally ringed space (`TopCat.Sheaf.constZ`). -/
 abbrev constZ (X : LocallyRingedSpace.{u}) :
     Sheaf (Opens.grothendieckTopology X.carrier) AddCommGrpCat.{u} :=
-  (constantSheaf (Opens.grothendieckTopology X.carrier) AddCommGrpCat.{u}).obj
-    (AddCommGrpCat.of (ULift ℤ))
+  TopCat.Sheaf.constZ X.carrier
 
-/-- The adjunction between the constant sheaf functor and global sections. -/
+/-- The adjunction between the constant sheaf functor and global sections
+(`TopCat.Sheaf.constAdj`). -/
 abbrev constAdj (X : LocallyRingedSpace.{u}) :=
-  constantSheafAdj (Opens.grothendieckTopology X.carrier) AddCommGrpCat.{u}
-    (isTerminalTop (α := Opens X.carrier))
+  TopCat.Sheaf.constAdj X.carrier
 
-/-- The canonical morphism `ℤ_X → f⁻¹ ℤ_Y`: the image of the section `1` of `ℤ_Y`. -/
-def constZToPullback : constZ X ⟶ (abPullback f).obj (constZ Y) :=
-  ((constAdj X).homEquiv _ _).symm
-    ((constAdj Y).unit.app (AddCommGrpCat.of (ULift ℤ)) ≫
-      ((sheafSections _ _).obj (op ⊤)).map ((abAdjunction f).unit.app (constZ Y)))
+/-- The canonical morphism `ℤ_X → f⁻¹ ℤ_Y`: the image of the section `1` of `ℤ_Y`
+(`TopCat.Sheaf.constZToPullback`). -/
+abbrev constZToPullback : constZ X ⟶ (abPullback f).obj (constZ Y) :=
+  TopCat.Sheaf.constZToPullback f.base
 
 /-- The canonical morphism of abelian sheaves `f⁻¹ M → f^* M`, adjoint to the underlying morphism
 of abelian sheaves of the unit `M → f_* f^* M`. -/
@@ -145,11 +135,10 @@ def abPullbackToPullback (M : Y.Modules) :
       ((pullbackPushforwardAdjunction f).unit.app M))
 
 /-- The canonical map `Hⁿ(Y, M) → Hⁿ(X, f^* M)` (EGA 0_III 12.1.3.1): apply the exact functor `f⁻¹`
-to `Ext`, then compose with `ℤ_X → f⁻¹ ℤ_Y` and `f⁻¹ M → f^* M`. -/
+to `Ext`, then compose with `ℤ_X → f⁻¹ ℤ_Y` and `f⁻¹ M → f^* M`; that is,
+`TopCat.Sheaf.globalCohomologyPullbackMap` for `f⁻¹ M → f^* M`. -/
 def pullbackCohomologyMap (M : Y.Modules) (n : ℕ) : M.H n →+ ((pullback f).obj M).H n :=
-  ((Ext.mk₀ (constZToPullback f)).precomp _ (zero_add n)).comp
-    (((Ext.mk₀ (abPullbackToPullback f M)).postcomp _ (add_zero n)).comp
-      ((abPullback f).mapExtAddHom _ _ n))
+  TopCat.Sheaf.globalCohomologyPullbackMap (f := f.base) (abPullbackToPullback f M) n
 
 end Cohomology
 

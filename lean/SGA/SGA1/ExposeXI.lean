@@ -73,6 +73,16 @@ import SGA.SGA1.ExposeXI.UnirationalForms
 import SGA.SGA1.ExposeXI.UnirationalFormsAlgebra
 import SGA.SGA1.ExposeXI.UnirationalFormsZero
 
+import SGA.SGA1.ExposeXI.AbelianVarietyCube
+import SGA.SGA1.ExposeXI.AbelianVarietyCubeOpenness
+import SGA.SGA1.ExposeXI.AbelianVarietyKernel
+import SGA.SGA1.ExposeXI.HodgeLefschetz
+import SGA.SGA1.ExposeXI.HodgeLefschetzAlgebra
+import SGA.SGA1.ExposeXI.HodgeLefschetzDescent
+import SGA.SGA1.ExposeXI.HodgeLefschetzDescentAlgebra
+import SGA.SGA1.ExposeXI.HodgeLefschetzSpread
+import SGA.SGA1.ExposeXI.HodgeSymmetryComplex
+import SGA.SGA1.ExposeXI.SerreUnirationalProjective
 /-!
 # SGA 1, Exposé XI — Examples and complements
 

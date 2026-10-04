@@ -31,7 +31,11 @@ This file states the transcendental input of step 2, `HodgeSymmetryZeroStatement
 vanishing `UnirationalStructureSheafVanishingStatement`, and proves:
 
 * `unirationalStructureSheafVanishing_of_hodgeSymmetryZero`: step 2, from Hodge symmetry and
-  step 1 (`regularForms_eq_bot_of_isUnirational`);
+  step 1 (`regularForms_eq_bot_of_isUnirational`); its form for one `X` and one degree is
+  `subsingleton_H_of_finrankH_eq`;
+* `isSimplyConnected_of_forall_subsingleton_H`: steps 3–4 for a single `X`, in any
+  characteristic: a smooth proper integral `X` over `k = k̄` is simply connected if `X` and all its
+  integral finite étale coverings have `H^q(𝒪) = 0` for `q > 0`;
 * `serreUnirationalSimplyConnectedStatement_of_vanishing`: steps 3–4, XI.1.4 follows from
   `UnirationalStructureSheafVanishingStatement`;
 * `serreUnirationalSimplyConnectedStatement_of_hodgeSymmetryZero`: XI.1.4 follows from
@@ -112,22 +116,22 @@ end EulerCharacteristic
 
 section Serre
 
-/-- XI.1.4, Serre's deduction (steps 3 and 4): if smooth proper unirational varieties in
-characteristic `0` have `H^q(𝒪) = 0` for `q > 0` (`UnirationalStructureSheafVanishingStatement`),
-then they are simply connected. A connected finite étale covering `Y ⟶ X` of degree `d` is again
-smooth, proper and unirational, so `1 = χ(Y, 𝒪_Y) = d χ(X, 𝒪_X) = d`
-(`eulerCharFiniteEtaleStatement`). -/
-theorem serreUnirationalSimplyConnectedStatement_of_vanishing
-    (hV : UnirationalStructureSheafVanishingStatement.{u}) :
-    SerreUnirationalSimplyConnectedStatement.{u} := by
-  intro k _ _ _ X _ f _ _ h
+/-- XI.1.4, Serre's deduction (steps 3 and 4) for a single `X`: let `X` be a smooth proper integral
+scheme over an algebraically closed field `k` (any characteristic). If `H^q(Y, 𝒪_Y) = 0` for
+`q > 0` for `X` and for every integral finite étale covering `Y ⟶ X`, then `X` is simply
+connected: a connected covering `Y ⟶ X` of degree `d` is integral (`X` is normal), and
+`1 = χ(Y, 𝒪_Y) = d χ(X, 𝒪_X) = d` (`eulerCharFiniteEtaleStatement`), so it is an isomorphism. -/
+theorem isSimplyConnected_of_forall_subsingleton_H {k : Type u} [Field k] [IsAlgClosed k]
+    {X : Scheme.{u}} [IsIntegral X] (f : X ⟶ Spec (.of k)) [IsProper f] [Smooth f]
+    (hV : ∀ ⦃Y : Scheme.{u}⦄ (π : Y ⟶ X) [IsFinite π] [Etale π] [IsIntegral Y] (q : ℕ),
+      Subsingleton ((CohomologyAux.unitModule Y).H (q + 1))) :
+    IsSimplyConnected X := by
   refine ⟨inferInstance, fun Y π _ _ hY ↦ ?_⟩
   have hXn : IsNormalScheme X := isNormalScheme_of_smooth f
   have : IsLocallyNoetherian X := LocallyOfFiniteType.isLocallyNoetherian f
   have : IsIntegral Y := isIntegral_of_etale_of_isNormalScheme (fun x ↦ ⟨inferInstance, hXn x⟩) π
-  have hY' := isUnirational_of_isFinite_of_etale f π h
-  have hχX := eulerChar_unit_eq_one f (hV k X f h)
-  have hχY := eulerChar_unit_eq_one (π ≫ f) (hV k Y (π ≫ f) hY')
+  have hχX := eulerChar_unit_eq_one f (hV (𝟙 X))
+  have hχY := eulerChar_unit_eq_one (π ≫ f) (hV π)
   obtain ⟨x₀⟩ : Nonempty X := inferInstance
   have hd : ∀ x : X, π.geometricFiberCard x = π.geometricFiberCard x₀ := fun x ↦
     congrFun (π.isLocallyConstant_geometricFiberCard.eq_const x₀) x
@@ -135,18 +139,43 @@ theorem serreUnirationalSimplyConnectedStatement_of_vanishing
   rw [hχX, hχY, mul_one] at e
   exact π.isIso_of_geometricFiberCard_eq_one_of_connectedSpace x₀ (by exact_mod_cast e.symm)
 
+/-- XI.1.4, Serre's deduction (steps 3 and 4): if smooth proper unirational varieties in
+characteristic `0` have `H^q(𝒪) = 0` for `q > 0` (`UnirationalStructureSheafVanishingStatement`),
+then they are simply connected. A connected finite étale covering `Y ⟶ X` of degree `d` is again
+smooth, proper and unirational, so `1 = χ(Y, 𝒪_Y) = d χ(X, 𝒪_X) = d`
+(`eulerCharFiniteEtaleStatement`, through `isSimplyConnected_of_forall_subsingleton_H`). -/
+theorem serreUnirationalSimplyConnectedStatement_of_vanishing
+    (hV : UnirationalStructureSheafVanishingStatement.{u}) :
+    SerreUnirationalSimplyConnectedStatement.{u} := by
+  intro k _ _ _ X _ f _ _ h
+  exact isSimplyConnected_of_forall_subsingleton_H f fun Y π _ _ _ ↦
+    hV k Y (π ≫ f) (isUnirational_of_isFinite_of_etale f π h)
+
+/-- XI.1.4, step 2 of Serre's proof for a single `X` and a single degree: let `X` be a proper
+integral scheme over a field `k` of characteristic `0` whose function field is unirational. If
+`dim_k H^{q+1}(X, 𝒪_X) = dim_k H⁰(X, Ω^{q+1})` (Hodge symmetry in degree `q + 1`), then
+`H^{q+1}(X, 𝒪_X) = 0`: the right side is `0` (`regularForms_eq_bot_of_isUnirational`) and
+`H^{q+1}(X, 𝒪_X)` is finite-dimensional (`properFinitenessStatement`). -/
+theorem subsingleton_H_of_finrankH_eq {k : Type u} [Field k] [CharZero k] {X : Scheme.{u}}
+    [IsIntegral X] (f : X ⟶ Spec (.of k)) [IsProper f]
+    (h : letI := (functionFieldMap f).toAlgebra; IsUnirational k X.functionField) (q : ℕ)
+    (e : letI := (functionFieldMap f).toAlgebra
+      Scheme.Modules.finrankH f (CohomologyAux.unitModule X) (q + 1) =
+        Module.finrank k (regularForms f (q + 1))) :
+    Subsingleton ((CohomologyAux.unitModule X).H (q + 1)) := by
+  rw [regularForms_eq_bot_of_isUnirational f h (Nat.succ_pos q), finrank_bot] at e
+  let _ := (CohomologyAux.unitModule X).moduleOver f (q + 1) ⊤
+  have : Module.Finite k ((CohomologyAux.unitModule X).H (q + 1)) :=
+    properFinitenessStatement (.of k) X f (CohomologyAux.unitModule X) (q + 1)
+  exact Module.finrank_zero_iff.mp e
+
 /-- XI.1.4, step 2 of Serre's proof: Hodge symmetry `h^{0,q} = h^{q,0}`
 (`HodgeSymmetryZeroStatement`) and the vanishing of regular forms on unirational varieties
 (`regularForms_eq_bot_of_isUnirational`) give `H^q(X, 𝒪_X) = 0` for `q > 0`. -/
 theorem unirationalStructureSheafVanishing_of_hodgeSymmetryZero
     (hH : HodgeSymmetryZeroStatement.{u}) : UnirationalStructureSheafVanishingStatement.{u} := by
   intro k _ _ _ X _ f _ _ h q
-  have e := hH k X f (q + 1)
-  rw [regularForms_eq_bot_of_isUnirational f h (Nat.succ_pos q), finrank_bot] at e
-  let _ := (CohomologyAux.unitModule X).moduleOver f (q + 1) ⊤
-  have : Module.Finite k ((CohomologyAux.unitModule X).H (q + 1)) :=
-    properFinitenessStatement (.of k) X f (CohomologyAux.unitModule X) (q + 1)
-  exact Module.finrank_zero_iff.mp e
+  exact subsingleton_H_of_finrankH_eq f h q (hH k X f (q + 1))
 
 /-- **XI.1.4 (Serre), conditional form**: a smooth proper unirational variety over an
 algebraically closed field of characteristic `0` is simply connected, given Hodge symmetry

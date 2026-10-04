@@ -86,11 +86,10 @@ variable (hS : ∀ φ : A →ₐ[K] Ω, Function.Bijective fun g : S ↦ φ.comp
 include hS in
 /-- If a group `S` of `K`-automorphisms of a finite unramified `K`-algebra `A` acts simply
 transitively on the geometric points `A →ₐ[K] Ω`, the stabilizer of a maximal ideal `m` has
-`[A ⧸ m : K]` elements, and acts faithfully on `A ⧸ m`; so `A ⧸ m` is Galois over `K`, of degree
-dividing `|S|`. -/
-theorem isGalois_quotient_of_bijective :
+`[A ⧸ m : K]` elements: `g ↦ φ₀ ∘ g` identifies it with the geometric points of `A ⧸ m`. -/
+theorem card_stabilizer_eq_finrank :
     letI := Ideal.Quotient.field m
-    IsGalois K (A ⧸ m) ∧ finrank K (A ⧸ m) ∣ Nat.card S := by
+    Nat.card (stabilizer S m) = finrank K (A ⧸ m) := by
   let := Ideal.Quotient.field m
   have : Algebra.FormallyUnramified K (A ⧸ m) :=
     Algebra.FormallyUnramified.of_surjective (Ideal.Quotient.mkₐ K m)
@@ -140,8 +139,20 @@ theorem isGalois_quotient_of_bijective :
       intro z
       obtain ⟨a, rfl⟩ := Ideal.Quotient.mk_surjective z
       exact congrArg (fun f : A →ₐ[K] Ω ↦ f a) hg
-  have hcard : Nat.card (stabilizer S m) = finrank K (A ⧸ m) := by
-    rw [Nat.card_eq_of_bijective Θ hΘbij, Nat.card_eq_fintype_card, AlgHom.card]
+  rw [Nat.card_eq_of_bijective Θ hΘbij, Nat.card_eq_fintype_card, AlgHom.card]
+
+include hS in
+/-- If a group `S` of `K`-automorphisms of a finite unramified `K`-algebra `A` acts simply
+transitively on the geometric points `A →ₐ[K] Ω`, the stabilizer of a maximal ideal `m` has
+`[A ⧸ m : K]` elements, and acts faithfully on `A ⧸ m`; so `A ⧸ m` is Galois over `K`, of degree
+dividing `|S|`. -/
+theorem isGalois_quotient_of_bijective :
+    letI := Ideal.Quotient.field m
+    IsGalois K (A ⧸ m) ∧ finrank K (A ⧸ m) ∣ Nat.card S := by
+  let := Ideal.Quotient.field m
+  have hcard : Nat.card (stabilizer S m) = finrank K (A ⧸ m) := card_stabilizer_eq_finrank hS m
+  let ψ₀ : (A ⧸ m) →ₐ[K] Ω := IsAlgClosed.lift
+  let φ₀ : A →ₐ[K] Ω := ψ₀.comp (Ideal.Quotient.mkₐ K m)
   -- the stabilizer acts faithfully on `A ⧸ m`
   let ρ : stabilizer S m → Gal((A ⧸ m)/K) := fun g ↦
     Ideal.quotientEquivAlg m m (g.1 : A ≃ₐ[K] A) (eq_map_of_mem_stabilizer g.2)

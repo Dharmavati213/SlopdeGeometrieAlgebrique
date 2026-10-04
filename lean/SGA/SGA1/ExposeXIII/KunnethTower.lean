@@ -17,7 +17,9 @@ import SGA.SGA1.ExposeXIII.KunnethNormalProduct
 The resolution-free route to XIII.4.6 in characteristic `0` reduces the invariance of `π₁` under
 algebraically closed base change (`InvarianceCharZeroStatement`) for smooth (and then normal)
 schemes of finite type to the case of the open subsets of the affine line,
-`AffineLineOpenInvarianceStatement` (statement only; milestone C1 of the route), by induction on
+`AffineLineOpenInvarianceStatement` (milestone C1 of the route, proved as
+`affineLineOpenInvarianceStatement` in `SGA.SGA1.ExposeXIII.KunnethCurveInvariance`; the results
+below take it as a hypothesis `hC`), by induction on
 the transcendence degree of `k'` over `k` (`hasAlgClosedBaseChangeInvariance_of_smooth`):
 
 * the step: `isEquivalence_pullback_fst_of_trdeg_le_one` (`KunnethCurveOpen`): for `X` connected,

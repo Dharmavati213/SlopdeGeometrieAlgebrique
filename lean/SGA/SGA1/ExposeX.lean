@@ -47,6 +47,15 @@ import SGA.SGA1.ExposeX.TopologicallyFiniteCharZero
 import SGA.SGA1.ExposeX.TopologicallyFiniteComplex
 import SGA.SGA1.ExposeX.TopologicallyFiniteReduction
 
+import SGA.SGA1.ExposeX.CurveFinitePlaneModel
+import SGA.SGA1.ExposeX.TameLiftingDomination
+import SGA.SGA1.ExposeX.TameLiftingGeneral
+import SGA.SGA1.ExposeX.TameLiftingSplitting
+import SGA.SGA1.ExposeX.TameLiftingUnramified
+import SGA.SGA1.ExposeX.TopologicallyFiniteBertini
+import SGA.SGA1.ExposeX.TopologicallyFiniteCharZeroDescent
+import SGA.SGA1.ExposeX.TopologicallyFiniteHyperplane
+import SGA.SGA1.ExposeX.TopologicallyFiniteHyperplaneCovers
 /-!
 # SGA 1, Exposé X — Theory of specialization of the fundamental group
 

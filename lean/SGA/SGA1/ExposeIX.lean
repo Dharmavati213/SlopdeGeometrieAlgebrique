@@ -40,6 +40,13 @@ import SGA.SGA1.ExposeIX.Pinching
 import SGA.SGA1.ExposeIX.PinchingCurve
 import SGA.SGA1.ExposeIX.PinchingCurveNormalization
 
+import SGA.SGA1.ExposeIX.EffectiveDescentGeneral
+import SGA.SGA1.ExposeIX.ProperDescentGeneral
+import SGA.SGA1.ExposeIX.ProperDescentGeneralAct
+import SGA.SGA1.ExposeIX.ProperDescentGeneralModel
+import SGA.SGA1.ExposeIX.QuasiSection
+import SGA.SGA1.ExposeIX.StrictlyLocalDescentGeneral
+import SGA.SGA1.ExposeIX.SubmersiveValuative
 /-!
 # SGA 1, Exposé IX — Descent of étale morphisms. Application to the fundamental group
 
@@ -52,10 +59,10 @@ This module is the barrel for the Lean formalization of the exposé.
 * §3, descent of morphisms of étale schemes: `EtaleMorphismDescent`;
 * §4, effective descent of étale schemes: `FlatBaseChange`, `EffectiveGluing`,
   `EffectiveNearPoint`, `CompletedLocalRings`, `EtaleEffectiveDescent`, `QuasiAffineDescent`,
-  `FiniteEffectiveDescent`, `QuasiFiniteDescent`, `TopologicalInvariance`; IX.4.6 with separably
-  closed residue fields: `StrictlyLocalDescent`; IX.4.7 over an arbitrary base:
-  `HenselianFiniteDescent`; IX.4.9 from quasi-sections (`QuasiSectionStatement`):
-  `UniversallyOpenDescent`;
+  `FiniteEffectiveDescent`, `QuasiFiniteDescent`, `TopologicalInvariance`; IX.4.6 in SGA's form:
+  `StrictlyLocalDescentGeneral` (`isEffectiveIffStrictlyLocal`); IX.4.7 over an arbitrary base:
+  `HenselianFiniteDescent`; IX.4.9 (`quasiSectionStatement`):
+  `UniversallyOpenDescent`, `QuasiSection`;
 * §5, translation into the language of the fundamental group: `ConnectedFibres`,
   `FiniteEtaleDescentDiagram`, `GaloisFunctors`, `FundamentalGroupDescent` (IX.5.6, which is
   IX.5.1 when `S'` and `S''` are connected, and IX.5.2 in that case in the abstract

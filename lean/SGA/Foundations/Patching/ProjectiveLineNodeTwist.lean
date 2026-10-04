@@ -5,7 +5,7 @@ Authors: SlopdeGeometrieAlgebrique contributors
 -/
 import Mathlib.RingTheory.Henselian
 import Mathlib.RingTheory.Localization.Away.Basic
-import SGA.Foundations.Patching.ProjectiveLineNode
+import SGA.Foundations.Patching.ProjectiveLineNodeField
 
 /-!
 # Artin–Schreier classes on the punctured node
@@ -16,34 +16,45 @@ has two reductions to the branches of the closed fibre, `t ↦ 0` with `u ↦ y,
 (`PatchingProjectiveLine.nodeReduceOne`), resp. `u ↦ 0, v ↦ y`
 (`PatchingProjectiveLine.nodeReduceTwo`). They extend to the punctured node
 `R' = R̂_O[1/(u + v - 2t)]` (`PatchingProjectiveLine.nodePunctured`), with values in `k((y))`.
+The punctured node is a domain (`PatchingProjectiveLine.isDomain_nodePunctured`) of the
+characteristic of `k` (`PatchingProjectiveLine.charP_nodePunctured`). The two reductions are
+packaged as `PatchingProjectiveLine.nodeReduce : Bool → (R' →+* k((y)))`. They lift to the branch
+rings: `R' → k((y))⟦t⟧` (`PatchingProjectiveLine.nodePuncturedMapOne`, `nodePuncturedMapTwo`)
+reduce modulo `t` to them (`PatchingProjectiveLine.constantCoeff_comp_nodePuncturedMapOne`,
+`…Two`).
 
 Main result (`PatchingProjectiveLine.exists_nodePunctured_reduce_eq`, the Artin–Schreier step of
-the lemma on p. 23 of Harbater–Stevenson, *Patching and thickening problems*, J. Algebra 212
-(1999)): in characteristic `p`, if every element of `k` is of the form `d^p - d` (e.g. `k`
-algebraically closed), then for any `r, s ∈ k((y))` there is `e ∈ R'` whose two reductions are
-`r` and `s` modulo `℘(k⟦y⟧) = {a^p - a}`. The element is
+the node lemma in the proof of Theorem 6 of Harbater–Stevenson, *Patching and thickening problems*,
+J. Algebra 212 (1999), 272–304): in characteristic `p`, if every element of `k` is of the form
+`d^p - d` (e.g. `k` algebraically closed), then for any `r, s ∈ k((y))` there is `e ∈ R'` whose
+two reductions are `r` and `s` modulo `℘(k⟦y⟧) = {a^p - a}`. The element is
 `e = (f(u) + g(v)) / (u + v - 2t)ⁿ`, where `f(y)/yⁿ` and `g(y)/yⁿ` are the principal parts of `r`
 and `s`, and the remaining power series parts are Artin–Schreier coboundaries by Hensel's lemma
 (`PatchingProjectiveLine.exists_pow_sub_eq`). In particular `R'/℘(R') → k((y))/℘ × k((y))/℘` is
 onto: Artin–Schreier covers of the two branches of the closed fibre extend to the punctured node,
-the step that Harbater–Stevenson iterate along a central series of a `p`-group.
+the step that Harbater–Stevenson iterate along a central series of a `p`-group. The iteration (the
+node lemma for all `p`-groups, in terms of `π₁`) is
+`SGA.SGA1.ExposeXIII.AffineLinePGroups.exists_continuousMonoidHom_conj_nodePunctured`, in
+`SGA.SGA1.ExposeXIII.AbhyankarAffineLineNode`.
 -/
 
 universe u
 
 open PowerSeries HahnSeries
 
+namespace LaurentSeries
+
+/-- The variable `X` is a unit of the Laurent series field `k((X))`. -/
+lemma isUnit_ofPowerSeries_X (k : Type*) [Field k] :
+    IsUnit (ofPowerSeries ℤ k (PowerSeries.X : PowerSeries k)) := by
+  rw [ofPowerSeries_X]
+  exact isUnit_iff_ne_zero.mpr (single_ne_zero one_ne_zero)
+
+end LaurentSeries
+
 namespace PatchingProjectiveLine
 
 variable (k : Type u) [Field k]
-
-lemma eval₂_nodePoly_hom {S : Type*} [CommRing S] (f : PowerSeries (PowerSeries k) →+* S)
-    (T : S) : (nodePoly k).eval₂ f T =
-      T ^ 2 - f (PowerSeries.C PowerSeries.X) * T + f PowerSeries.X ^ 2 := by
-  rw [nodePoly, Polynomial.eval₂_add, Polynomial.eval₂_X_pow, Polynomial.eval₂_add,
-    Polynomial.eval₂_mul, Polynomial.eval₂_C, Polynomial.eval₂_X, Polynomial.eval₂_C, map_neg,
-    map_pow]
-  ring
 
 /-- The reduction of the node ring to the branch `v = 0` of the closed fibre:
 `t ↦ 0`, `u ↦ y`. -/
@@ -73,24 +84,92 @@ lemma nodeReduceOne_delta : nodeReduceOne k (nodeDelta k) = PowerSeries.X := by
 lemma nodeReduceTwo_delta : nodeReduceTwo k (nodeDelta k) = PowerSeries.X := by
   simp [nodeReduceTwo, nodeDelta]
 
-lemma isUnit_ofPowerSeries_X : IsUnit (ofPowerSeries ℤ k (PowerSeries.X : PowerSeries k)) := by
-  rw [ofPowerSeries_X]
-  exact isUnit_iff_ne_zero.mpr (single_ne_zero one_ne_zero)
-
 /-- The reduction of the punctured node to `k((y))` along the branch `v = 0`. -/
 noncomputable def nodePuncturedReduceOne : nodePunctured k →+* LaurentSeries k :=
   IsLocalization.Away.lift (nodeDelta k) (g := (ofPowerSeries ℤ k).comp (nodeReduceOne k))
-    (by rw [RingHom.comp_apply, nodeReduceOne_delta]; exact isUnit_ofPowerSeries_X k)
+    (by rw [RingHom.comp_apply, nodeReduceOne_delta]; exact LaurentSeries.isUnit_ofPowerSeries_X k)
 
 /-- The reduction of the punctured node to `k((y))` along the branch `u = 0`. -/
 noncomputable def nodePuncturedReduceTwo : nodePunctured k →+* LaurentSeries k :=
   IsLocalization.Away.lift (nodeDelta k) (g := (ofPowerSeries ℤ k).comp (nodeReduceTwo k))
-    (by rw [RingHom.comp_apply, nodeReduceTwo_delta]; exact isUnit_ofPowerSeries_X k)
+    (by rw [RingHom.comp_apply, nodeReduceTwo_delta]; exact LaurentSeries.isUnit_ofPowerSeries_X k)
+
+lemma nodeDelta_ne_zero : nodeDelta k ≠ 0 := fun h ↦ by
+  have := nodeReduceOne_delta k
+  rw [h, map_zero] at this
+  exact PowerSeries.X_ne_zero this.symm
+
+/-- The punctured node `R' = R̂_O[1/(u + v - 2t)]` is a domain (so `Spec R'` is connected). -/
+instance isDomain_nodePunctured : IsDomain (nodePunctured k) :=
+  IsLocalization.isDomain_localization
+    (powers_le_nonZeroDivisors_of_noZeroDivisors (nodeDelta_ne_zero k))
+
+/-- The punctured node has the characteristic of `k`. -/
+lemma charP_nodePunctured (p : ℕ) [CharP k p] : CharP (nodePunctured k) p :=
+  charP_of_injective_ringHom (f := (algebraMap (nodeRing k) (nodePunctured k)).comp
+    (algebraMap k (nodeRing k))) (RingHom.injective _) p
+
+/-- The two reductions `R' → k((y))` of the punctured node to the branches of the closed fibre:
+`true` is the branch `v = 0` (`u ↦ y`), `false` the branch `u = 0` (`v ↦ y`). -/
+noncomputable def nodeReduce : Bool → (nodePunctured k →+* LaurentSeries k) :=
+  fun b ↦ cond b (nodePuncturedReduceOne k) (nodePuncturedReduceTwo k)
+
+lemma isUnit_nodeMap_nodeDelta (T : PowerSeries (LaurentSeries k))
+    (hT : (nodePoly k).eval₂ (mapP k) T = 0) :
+    IsUnit (AdjoinRoot.lift (mapP k) T hT (nodeDelta k)) := by
+  rw [PowerSeries.isUnit_iff_constantCoeff, nodeDelta, AdjoinRoot.lift_of, mapP, map_sub,
+    PowerSeries.map_C, map_mul, PowerSeries.map_X, map_sub, PowerSeries.constantCoeff_C, map_mul,
+    PowerSeries.constantCoeff_X, mul_zero, sub_zero, HahnSeries.ofPowerSeries_X]
+  exact isUnit_iff_ne_zero.mpr (HahnSeries.single_ne_zero one_ne_zero)
+
+/-- The punctured node to the first branch ring, `R' → k((y))⟦t⟧`, `u ↦ T₁`. -/
+noncomputable def nodePuncturedMapOne : nodePunctured k →+* PowerSeries (LaurentSeries k) :=
+  IsLocalization.Away.lift (nodeDelta k) (g := nodeMapOne k)
+    (isUnit_nodeMap_nodeDelta k _ (by rw [eval₂_nodePoly]; exact nodeRootOne'_sq k))
+
+/-- The punctured node to the second branch ring, `R' → k((y))⟦t⟧`, `u ↦ T₂`. -/
+noncomputable def nodePuncturedMapTwo : nodePunctured k →+* PowerSeries (LaurentSeries k) :=
+  IsLocalization.Away.lift (nodeDelta k) (g := nodeMapTwo k)
+    (isUnit_nodeMap_nodeDelta k _ (by rw [eval₂_nodePoly]; exact nodeRootTwo'_sq k))
+
+lemma constantCoeff_mapP (a : PowerSeries (PowerSeries k)) :
+    PowerSeries.constantCoeff (mapP k a) =
+      HahnSeries.ofPowerSeries ℤ k (PowerSeries.constantCoeff a) := by
+  rw [mapP, ← PowerSeries.coeff_zero_eq_constantCoeff_apply, PowerSeries.coeff_map,
+    PowerSeries.coeff_zero_eq_constantCoeff_apply]
+
+/-- Reducing the first branch map modulo `t` gives the reduction `nodePuncturedReduceOne`. -/
+theorem constantCoeff_comp_nodePuncturedMapOne :
+    PowerSeries.constantCoeff.comp (nodePuncturedMapOne k) = nodePuncturedReduceOne k := by
+  refine IsLocalization.ringHom_ext (Submonoid.powers (nodeDelta k))
+    (AdjoinRoot.ringHom_ext (RingHom.ext fun a ↦ ?_) ?_)
+  · simp only [RingHom.comp_apply, nodePuncturedMapOne, nodePuncturedReduceOne,
+      IsLocalization.Away.lift, IsLocalization.lift_eq, nodeMapOne, nodeReduceOne,
+      AdjoinRoot.lift_of, constantCoeff_mapP]
+  · simp only [RingHom.comp_apply, nodePuncturedMapOne, nodePuncturedReduceOne,
+      IsLocalization.Away.lift, IsLocalization.lift_eq, nodeMapOne, nodeReduceOne,
+      AdjoinRoot.lift_root, constantCoeff_nodeRootOne', HahnSeries.ofPowerSeries_X]
+
+/-- Reducing the second branch map modulo `t` gives the reduction `nodePuncturedReduceTwo`. -/
+theorem constantCoeff_comp_nodePuncturedMapTwo :
+    PowerSeries.constantCoeff.comp (nodePuncturedMapTwo k) = nodePuncturedReduceTwo k := by
+  refine IsLocalization.ringHom_ext (Submonoid.powers (nodeDelta k))
+    (AdjoinRoot.ringHom_ext (RingHom.ext fun a ↦ ?_) ?_)
+  · simp only [RingHom.comp_apply, nodePuncturedMapTwo, nodePuncturedReduceTwo,
+      IsLocalization.Away.lift, IsLocalization.lift_eq, nodeMapTwo, nodeReduceTwo,
+      AdjoinRoot.lift_of, constantCoeff_mapP]
+  · simp only [RingHom.comp_apply, nodePuncturedMapTwo, nodePuncturedReduceTwo,
+      IsLocalization.Away.lift, IsLocalization.lift_eq, nodeMapTwo, nodeReduceTwo,
+      AdjoinRoot.lift_root, constantCoeff_nodeRootTwo', map_zero]
 
 variable {k} (p : ℕ) [hp : Fact p.Prime] [CharP k p]
 
 /-- Every power series over `k` is an Artin–Schreier coboundary `a^p - a`, if every element of
-`k` is (Hensel's lemma for `T^p - T - z`, whose derivative is `-1`). -/
+`k` is (Hensel's lemma for `T^p - T - z`, whose derivative is `-1`).
+
+The monicity and the derivative of the Artin–Schreier polynomial are also proved in
+`SGA.SGA1.ExposeX.ArtinSchreier` (`monic_artinSchreier`, `derivative_artinSchreier`); Foundations
+cannot import SGA 1, so they are redone inline here. -/
 theorem exists_pow_sub_eq (hk : ∀ c : k, ∃ d : k, d ^ p - d = c) (z : PowerSeries k) :
     ∃ a : PowerSeries k, a ^ p - a = z := by
   obtain ⟨d, hd⟩ := hk (PowerSeries.constantCoeff z)
@@ -181,7 +260,7 @@ theorem exists_nodePunctured_reduce_principal (P Q : Polynomial k) :
     simp only [nodePuncturedReduceOne, IsLocalization.Away.lift, IsLocalization.lift_eq,
       RingHom.comp_apply, map_add, map_pow, nodeReduceOne_delta, h1f, h1g, m] at hspec
     have hy : ofPowerSeries ℤ k (PowerSeries.X : PowerSeries k) ^ n ≠ 0 :=
-      pow_ne_zero _ (isUnit_ofPowerSeries_X k).ne_zero
+      pow_ne_zero _ (LaurentSeries.isUnit_ofPowerSeries_X k).ne_zero
     refine mul_right_cancel₀ hy ?_
     rw [nodePuncturedReduceOne, IsLocalization.Away.lift] at *
     rw [hspec, map_zero, add_zero, ofPowerSeries_sum_C_mul_X_pow, invX_eq_sum P (n := n) (by omega),
@@ -200,7 +279,7 @@ theorem exists_nodePunctured_reduce_principal (P Q : Polynomial k) :
     simp only [nodePuncturedReduceTwo, IsLocalization.Away.lift, IsLocalization.lift_eq,
       RingHom.comp_apply, map_add, map_pow, nodeReduceTwo_delta, h2f, h2g, m] at hspec
     have hy : ofPowerSeries ℤ k (PowerSeries.X : PowerSeries k) ^ n ≠ 0 :=
-      pow_ne_zero _ (isUnit_ofPowerSeries_X k).ne_zero
+      pow_ne_zero _ (LaurentSeries.isUnit_ofPowerSeries_X k).ne_zero
     refine mul_right_cancel₀ hy ?_
     rw [nodePuncturedReduceTwo, IsLocalization.Away.lift] at *
     rw [hspec, map_zero, zero_add, ofPowerSeries_sum_C_mul_X_pow, invX_eq_sum Q (n := n) (by omega),
@@ -232,5 +311,22 @@ theorem exists_nodePunctured_reduce_eq (hk : ∀ c : k, ∃ d : k, d ^ p - d = c
   refine ⟨e, a, b, ?_, ?_⟩
   · rw [he₁, ← map_pow, ← map_sub, ha, hr]
   · rw [he₂, ← map_pow, ← map_sub, hb, hs]
+
+/-- The Artin–Schreier step of the node lemma, in the form of the congruence condition of
+`exists_continuousMonoidHom_conj_of_ringHom`. -/
+lemma exists_nodeReduce_sub_eq (hk : ∀ c : k, ∃ d : k, d ^ p - d = c)
+    (a : Bool → LaurentSeries k) :
+    ∃ e : nodePunctured k, ∀ i, ∃ b : LaurentSeries k, nodeReduce k i e - a i = b - b ^ p := by
+  obtain ⟨e, A, B, hA, hB⟩ := exists_nodePunctured_reduce_eq p hk (a true) (a false)
+  refine ⟨e, fun i ↦ ?_⟩
+  cases i
+  · exact ⟨HahnSeries.ofPowerSeries ℤ k B, by
+      change nodePuncturedReduceTwo k e - a false = _
+      rw [← hB]
+      ring⟩
+  · exact ⟨HahnSeries.ofPowerSeries ℤ k A, by
+      change nodePuncturedReduceOne k e - a true = _
+      rw [← hA]
+      ring⟩
 
 end PatchingProjectiveLine

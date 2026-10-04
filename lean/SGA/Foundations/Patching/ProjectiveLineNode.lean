@@ -105,6 +105,29 @@ theorem isAdicComplete_span_singleton (hq : q.Monic) [IsAdicComplete (Ideal.span
 
 end AdjoinRoot
 
+namespace IsHausdorff
+
+private lemma smodEq_zero_span_iff {T : Type*} [CommRing T] (c : T) (n : ℕ) (z : T) :
+    z ≡ 0 [SMOD ((Ideal.span {c}) ^ n • ⊤ : Submodule T T)] ↔ ∃ d, z = c ^ n * d := by
+  rw [SModEq.sub_mem, sub_zero, smul_eq_mul, Ideal.mul_top, Ideal.span_singleton_pow,
+    Ideal.mem_span_singleton']
+  exact ⟨fun ⟨d, hd⟩ ↦ ⟨d, by rw [← hd, mul_comm]⟩, fun ⟨d, hd⟩ ↦ ⟨d, by rw [hd, mul_comm]⟩⟩
+
+/-- `R × S` is `(a, b)`-adically Hausdorff if `R` is `a`-adically and `S` is `b`-adically
+Hausdorff. -/
+theorem prod {R S : Type*} [CommRing R] [CommRing S] (a : R) (b : S)
+    [IsHausdorff (Ideal.span {a}) R] [IsHausdorff (Ideal.span {b}) S] :
+    IsHausdorff (Ideal.span {(a, b)}) (R × S) := by
+  refine ⟨fun z hz ↦ Prod.ext ?_ ?_⟩
+  · refine IsHausdorff.haus (I := Ideal.span {a}) inferInstance _ fun n ↦ ?_
+    obtain ⟨d, hd⟩ := (smodEq_zero_span_iff _ n z).mp (hz n)
+    exact (smodEq_zero_span_iff a n _).mpr ⟨d.1, by rw [hd, Prod.fst_mul, Prod.pow_fst]⟩
+  · refine IsHausdorff.haus (I := Ideal.span {b}) inferInstance _ fun n ↦ ?_
+    obtain ⟨d, hd⟩ := (smodEq_zero_span_iff _ n z).mp (hz n)
+    exact (smodEq_zero_span_iff b n _).mpr ⟨d.2, by rw [hd, Prod.snd_mul, Prod.pow_snd]⟩
+
+end IsHausdorff
+
 namespace PatchingProjectiveLine
 
 variable (k : Type u) [Field k]
@@ -291,7 +314,10 @@ noncomputable def nodePairs (F : Subfield (LaurentSeries (LaurentSeries k)))
     · simp only [Prod.snd_mul]
       linear_combination β * β' * nodeRootTwo_sq k
 
-/-- The field of the node, `F_O = F_P[u]/(u² - y u + t²)`, inside `F_℘ × F_℘`. -/
+/-- The field of the node, `F_O = F_P[u]/(u² - y u + t²)`, inside `F_℘ × F_℘`: the image of
+`F_P[T]/(T² - y T + t²)` through the two roots. It is a field
+(`PatchingProjectiveLine.isField_nodeSubring`, in
+`SGA.Foundations.Patching.ProjectiveLineNodeField`). -/
 noncomputable def nodeSubring :
     Subring (LaurentSeries (LaurentSeries k) × LaurentSeries (LaurentSeries k)) :=
   nodePairs k (fieldP k) (yF_mem_fieldP k) (tF_mem_fieldP k)
@@ -386,27 +412,6 @@ lemma nodeSubring_exists_mul_eq_one
     ∃ w ∈ nodeSubring k, z * w = 1 :=
   nodePairs_exists_mul_eq_one k _ _ hz h₁ h₂
 
-omit [Field k] in
-private lemma smodEq_zero_span_iff {T : Type*} [CommRing T] (c : T) (n : ℕ) (z : T) :
-    z ≡ 0 [SMOD ((Ideal.span {c}) ^ n • ⊤ : Submodule T T)] ↔ ∃ d, z = c ^ n * d := by
-  rw [SModEq.sub_mem, sub_zero, smul_eq_mul, Ideal.mul_top, Ideal.span_singleton_pow,
-    Ideal.mem_span_singleton']
-  exact ⟨fun ⟨d, hd⟩ ↦ ⟨d, by rw [← hd, mul_comm]⟩, fun ⟨d, hd⟩ ↦ ⟨d, by rw [hd, mul_comm]⟩⟩
-
-omit [Field k] in
-/-- `R × S` is `(a, b)`-adically Hausdorff if `R` is `a`-adically and `S` is `b`-adically
-Hausdorff. -/
-lemma isHausdorff_prod {R S : Type*} [CommRing R] [CommRing S] (a : R) (b : S)
-    [IsHausdorff (Ideal.span {a}) R] [IsHausdorff (Ideal.span {b}) S] :
-    IsHausdorff (Ideal.span {(a, b)}) (R × S) := by
-  refine ⟨fun z hz ↦ Prod.ext ?_ ?_⟩
-  · refine IsHausdorff.haus (I := Ideal.span {a}) inferInstance _ fun n ↦ ?_
-    obtain ⟨d, hd⟩ := (smodEq_zero_span_iff _ n z).mp (hz n)
-    exact (smodEq_zero_span_iff a n _).mpr ⟨d.1, by rw [hd, Prod.fst_mul, Prod.pow_fst]⟩
-  · refine IsHausdorff.haus (I := Ideal.span {b}) inferInstance _ fun n ↦ ?_
-    obtain ⟨d, hd⟩ := (smodEq_zero_span_iff _ n z).mp (hz n)
-    exact (smodEq_zero_span_iff b n _).mpr ⟨d.2, by rw [hd, Prod.snd_mul, Prod.pow_snd]⟩
-
 /-- The polynomial `T² - y T + t²` over `R̂_P = k⟦y⟧⟦t⟧`. -/
 noncomputable def nodePoly : Polynomial (PowerSeries (PowerSeries k)) :=
   Polynomial.X ^ 2 + (Polynomial.C (-PowerSeries.C PowerSeries.X) * Polynomial.X +
@@ -423,13 +428,18 @@ lemma nodePoly_monic : (nodePoly k).Monic := by
 noncomputable abbrev nodeRing : Type u :=
   AdjoinRoot (nodePoly k)
 
+lemma eval₂_nodePoly_hom {S : Type*} [CommRing S] (f : PowerSeries (PowerSeries k) →+* S)
+    (T : S) : (nodePoly k).eval₂ f T =
+      T ^ 2 - f (PowerSeries.C PowerSeries.X) * T + f PowerSeries.X ^ 2 := by
+  rw [nodePoly, Polynomial.eval₂_add, Polynomial.eval₂_X_pow, Polynomial.eval₂_add,
+    Polynomial.eval₂_mul, Polynomial.eval₂_C, Polynomial.eval₂_X, Polynomial.eval₂_C, map_neg,
+    map_pow]
+  ring
+
 lemma eval₂_nodePoly (T : PowerSeries (LaurentSeries k)) :
     (nodePoly k).eval₂ (mapP k) T =
       T ^ 2 - PowerSeries.C (single (1 : ℤ) (1 : k)) * T + PowerSeries.X ^ 2 := by
-  rw [nodePoly, Polynomial.eval₂_add, Polynomial.eval₂_X_pow, Polynomial.eval₂_add,
-    Polynomial.eval₂_mul, Polynomial.eval₂_C, Polynomial.eval₂_X, Polynomial.eval₂_C, map_neg,
-    map_pow, mapP, PowerSeries.map_C, PowerSeries.map_X, ofPowerSeries_X]
-  ring
+  rw [eval₂_nodePoly_hom, mapP, PowerSeries.map_C, PowerSeries.map_X, ofPowerSeries_X]
 
 /-- The embedding of the node ring into the first branch (`u ↦ T₁ ≡ y`). -/
 noncomputable def nodeMapOne : nodeRing k →+* PowerSeries (LaurentSeries k) :=
@@ -473,7 +483,7 @@ lemma X_sq_dvd_nodeRootTwo' : (PowerSeries.X : PowerSeries (LaurentSeries k)) ^ 
 
 /-- The weight `D = T₂ᴹ / (T₁ᴹ + T₂ᴹ)` is divisible by `t^{2M}`: the node field approximates the
 idempotents `(1, 0)` and `(0, 1)` of `F_℘ × F_℘`. -/
-lemma exists_nodeWeight {M : ℕ} (hM : M ≠ 0) : ∃ s : PowerSeries (LaurentSeries k),
+lemma exists_nodeRootTwo_pow_eq_mul {M : ℕ} (hM : M ≠ 0) : ∃ s : PowerSeries (LaurentSeries k),
     nodeRootTwo k ^ M = tF k ^ (2 * M) * toField k s * (nodeRootOne k ^ M + nodeRootTwo k ^ M) ∧
       nodeRootOne k ^ M + nodeRootTwo k ^ M ≠ 0 := by
   set x' : PowerSeries (LaurentSeries k) := PowerSeries.C (single (-1 : ℤ) (1 : k))
@@ -514,10 +524,10 @@ lemma exists_nodeWeight {M : ℕ} (hM : M ≠ 0) : ∃ s : PowerSeries (LaurentS
     · exact hQ0 (by rw [h', map_zero])
 
 /-- `(1 - D, D)` lies in the node field, for the weight `D = T₂ᴹ / (T₁ᴹ + T₂ᴹ)`. -/
-lemma nodeWeight_mem {M : ℕ} (hM : M ≠ 0) :
+lemma one_sub_nodeRootTwo_pow_div_mem {M : ℕ} (hM : M ≠ 0) :
     (1 - nodeRootTwo k ^ M / (nodeRootOne k ^ M + nodeRootTwo k ^ M),
       nodeRootTwo k ^ M / (nodeRootOne k ^ M + nodeRootTwo k ^ M)) ∈ nodeSubring k := by
-  obtain ⟨_, -, hS⟩ := exists_nodeWeight k hM
+  obtain ⟨_, -, hS⟩ := exists_nodeRootTwo_pow_eq_mul k hM
   set S := nodeRootOne k ^ M + nodeRootTwo k ^ M with hSdef
   have hτ : (nodeRootOne k, nodeRootTwo k) ∈ nodeSubring k :=
     ⟨0, (fieldP k).zero_mem, 1, (fieldP k).one_mem, Prod.ext (by simp) (by simp)⟩
@@ -624,7 +634,7 @@ lemma exists_mem_nodeSubring_sub_eq
   obtain ⟨a₁, ha₁, r₁, h₁⟩ := exists_mem_fieldP_sub_eq k z.1 N
   obtain ⟨a₂, ha₂, r₂, h₂⟩ := exists_mem_fieldP_sub_eq k z.2 N
   obtain ⟨C, r₃, h₃⟩ := exists_mul_pow_eq k (a₁ - a₂)
-  obtain ⟨s, hs, hS⟩ := exists_nodeWeight k (M := N + C + 1) (by omega)
+  obtain ⟨s, hs, hS⟩ := exists_nodeRootTwo_pow_eq_mul k (M := N + C + 1) (by omega)
   set D := nodeRootTwo k ^ (N + C + 1) /
     (nodeRootOne k ^ (N + C + 1) + nodeRootTwo k ^ (N + C + 1)) with hDdef
   have hD : D = toField k PowerSeries.X ^ (2 * (N + C + 1)) * toField k s := by
@@ -638,7 +648,7 @@ lemma exists_mem_nodeSubring_sub_eq
       toField k (PowerSeries.X ^ (N + C + 2) * s * r₃) := by
     rw [hr₃, hD]
     ring
-  have he := nodeWeight_mem k (M := N + C + 1) (by omega)
+  have he := one_sub_nodeRootTwo_pow_div_mem k (M := N + C + 1) (by omega)
   have hdiag : ∀ a ∈ fieldP k, ((a, a) : LaurentSeries (LaurentSeries k) ×
       LaurentSeries (LaurentSeries k)) ∈ nodeSubring k := fun a ha ↦
     ⟨a, ha, 0, (fieldP k).zero_mem, Prod.ext (by simp) (by simp)⟩
@@ -656,7 +666,6 @@ lemma exists_mem_nodeSubring_sub_eq
       RingHom.coe_prodMap, Prod.map_snd, map_sub]
     linear_combination h₂ - key
 
-
 /-- **Factorization on the nodal model**: inside `F_℘ × F_℘`, the fields `F_U × F_U` of the two
 sheets over `U` and the field `F_O` of the node have the factorization property in every size:
 `GLₙ(F_℘ × F_℘) = GLₙ(F_U × F_U) · GLₙ(F_O)`. -/
@@ -667,7 +676,7 @@ theorem nodeHasGLFactorization (ι : Type*) [Fintype ι] [DecidableEq ι] :
   have : IsHausdorff (Ideal.span {((PowerSeries.X, PowerSeries.X) :
       PowerSeries (LaurentSeries k) × PowerSeries (LaurentSeries k))})
       (PowerSeries (LaurentSeries k) × PowerSeries (LaurentSeries k)) :=
-    isHausdorff_prod _ _
+    IsHausdorff.prod _ _
   refine Subring.hasGLFactorization_of_isAdicComplete ((toField k).prodMap (toField k))
     (R₁ := PowerSeries (Polynomial k × Polynomial k)) (f₁ := nodeMapU k)
     (f₂ := (nodeMapOne k).prod (nodeMapTwo k))

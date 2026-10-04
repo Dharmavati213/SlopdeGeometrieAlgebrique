@@ -19,8 +19,10 @@ Let `R` be a commutative ring and `A₁, A₂ ⊆ R` subrings. They have the *fa
 in size `ι` (`Subring.HasGLFactorization`) if every invertible `ι × ι` matrix over `R` is a
 product `B₁ B₂` of an invertible matrix over `A₁` and one over `A₂`. In patching over fields
 (Harbater–Hartmann, *Patching over fields*, Israel J. Math. 176 (2010), §2) `R` is the product
-of the fields `F_℘` of the branches, `A₁` is the field `F_U` and `A₂` is the product of the
-fields `F_P` of the points; with a single branch, all three are fields.
+of the fields `F_℘` of the branches, `A₁` is the product of the fields `F_U` of the components
+of `U` (e.g. `F_U × F_U` for the two sheets of the nodal model of
+`SGA.Foundations.Patching.ProjectiveLineNode`) and `A₂` is the product of the fields `F_P` of the
+points; with a single branch and a connected `U`, all three are fields.
 
 Main result, `Subring.exists_basis_span_eq` (patching of free modules): let `W` be a free
 `R`-module with bases `b₁`, `b₂`, and let `Vᵢ = span_{Aᵢ} bᵢ` be the corresponding `Aᵢ`-forms of
@@ -43,7 +45,11 @@ namespace Module.Basis
 variable {ι R W : Type*} [Fintype ι] [CommRing R] [AddCommGroup W] [Module R W]
 
 omit [Fintype ι] in
-/-- An element lies in the `A`-span of a basis iff its coordinates lie in `A`. -/
+/-- An element lies in the `A`-span of a basis iff its coordinates lie in `A`.
+
+Mathlib's `Module.Basis.mem_span_iff_repr_mem` is the same statement for an `R`-algebra `A`,
+but under `[IsDomain A] [IsTorsionFree A R]`; here `A` is any subring, e.g. `F_U × F_U`,
+which is not a domain. -/
 lemma mem_span_subring_iff [Finite ι] (b : Basis ι R W) (A : Subring R) {v : W} :
     v ∈ Submodule.span A (Set.range b) ↔ ∀ i, b.repr v i ∈ A := by
   classical
@@ -289,8 +295,9 @@ lemma isUnit_of_isUnit_coe (F : Subfield F₀) (a : F.toSubring) (ha : IsUnit (a
 
 /-- A spanning set of a finite-dimensional vector space contains a basis indexed by any type of
 the right cardinality. -/
-lemma exists_basis_mem_of_span_eq_top {K W : Type*} [Field K] [AddCommGroup W] [Module K W]
-    [FiniteDimensional K W] {ι : Type*} [Fintype ι] (hι : Fintype.card ι = Module.finrank K W)
+lemma _root_.Module.exists_basis_mem_of_span_eq_top {K W : Type*} [Field K] [AddCommGroup W]
+    [Module K W] [FiniteDimensional K W] {ι : Type*} [Fintype ι]
+    (hι : Fintype.card ι = Module.finrank K W)
     {S : Set W} (hS : Submodule.span K S = ⊤) : ∃ b : Module.Basis ι K W, ∀ i, b i ∈ S := by
   obtain ⟨s, hsS, hspan, hli⟩ := exists_linearIndependent K S
   let B := Module.Basis.mk hli (by rw [Subtype.range_coe, hspan, hS])
@@ -312,9 +319,9 @@ theorem span_inter_eq_top {W : Type*} [AddCommGroup W] [Module F₀ W] [FiniteDi
     (V₁ : Submodule F₁ W) (V₂ : Submodule F₂ W) (h₁ : Submodule.span F₀ (V₁ : Set W) = ⊤)
     (h₂ : Submodule.span F₀ (V₂ : Set W) = ⊤) :
     Submodule.span F₀ ((V₁ : Set W) ∩ V₂) = ⊤ := by
-  obtain ⟨b₁, hb₁⟩ := exists_basis_mem_of_span_eq_top (ι := Fin (Module.finrank F₀ W))
+  obtain ⟨b₁, hb₁⟩ := Module.exists_basis_mem_of_span_eq_top (ι := Fin (Module.finrank F₀ W))
     (Fintype.card_fin _) h₁
-  obtain ⟨b₂, hb₂⟩ := exists_basis_mem_of_span_eq_top (ι := Fin (Module.finrank F₀ W))
+  obtain ⟨b₂, hb₂⟩ := Module.exists_basis_mem_of_span_eq_top (ι := Fin (Module.finrank F₀ W))
     (Fintype.card_fin _) h₂
   obtain ⟨b, hb⟩ := Subring.exists_basis_forall_repr_mem_iff h b₁ b₂
   -- an element whose coordinates for `bᵢ` lie in `Fᵢ` lies in `Vᵢ`

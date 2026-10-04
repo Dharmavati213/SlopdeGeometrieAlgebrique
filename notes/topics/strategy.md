@@ -585,6 +585,20 @@ Checked against the code on 2026-10-04. Paths under `lean/SGA/`.
   the 2026-10-04 cleanup) is the `IsPullback` form, and `CohomologyAux.isPushout_app_pullback_snd`
   is now its corollary. Avoid `let`s whose bodies mention such schemes in goals you then `rw`:
   `kabstract` unfolds them. Example: `ExposeX.isEtaleAt_chart`.
+- **Opaque pullbacks and big similar terms (2026-10-04, xiii46, `KunnethCurveInvariance.lean`).**
+  - A long scheme-level argument with `let C' := pullback …`, `let π' := pullback.snd …` timed out
+    everywhere (`whnf` at the declaration, `isDefEq` in `rw [Category.assoc]`). Replacing each by
+    `obtain ⟨C', prC, π', hC⟩ : ∃ (C' : Scheme) (prC : C' ⟶ _) (π' : C' ⟶ _), IsPullback prC π' f g
+    := ⟨_, _, _, IsPullback.of_hasPullback _ _⟩` and using `hC.lift`, `hC.lift_fst` made the
+    whole proof elaborate in seconds. Points of the abstract pullback: `hC.isoPullback.inv z`.
+  - `rw [RingHom.comp_apply]` (or `map_one`) in a goal holding two different but similar large
+    terms (`(lineChart₀ hg).res X` and `(lineChart₁ hg hg0).res X`) timed out: `kabstract` tests
+    every subterm with the same head by `isDefEq` and unfolds both charts. Close such goals with
+    term-mode `exact`/`congrArg`/`.trans`, or state the algebra over an abstract ring
+    (`exists_pow_mul_eq_of_isRoot_chartPoly₁`) and instantiate it once.
+  - `CommRingCat.ofHom (algebraMap Γ(ℙ¹, U) A)` (ℙ¹ a `Proj`) failed with "failed to synthesize
+    `CommRing (structureSheafInType …).obj.obj (op U)`": unification unfolded `Γ(ℙ¹, U)` to the raw
+    structure-sheaf ring. Pin the source: `CommRingCat.ofHom (R := Γ(ℙ¹, U)) (algebraMap _ _)`.
 - **`Γ(D(t))` from `Γ(V)` without `Algebra R Γ(Spec R, U)` (2026-10-04, xiii212).** Mathlib's
   instance `Algebra R Γ(Spec R, U)` was not found for `R = .of k[X]`, `U = PrimeSpectrum.basicOpen X`
   (even with `backward.isDefEq.respectTransparency.types false`). For an affine open `V` and
@@ -632,7 +646,182 @@ Checked against the code on 2026-10-04. Paths under `lean/SGA/`.
   `Y`). Full functors (X.1.8, IX.4.10 equivalences) satisfy `LiftsEndos` for free, and the property
   composes and transports along natural isomorphisms (`LiftsEndos.comp`, `.of_natIso`).
 
+- **`𝒪`-modules on locally ringed spaces (2026-10-04, xii4).** `LocallyRingedSpace.Modules X` is a
+  `def` (not an `abbrev`) for `SheafOfModules X.ringCatSheaf`, and `X.ringCatSheaf` is declared as a
+  `TopCat.Sheaf`. Consequences, and the fixes that worked:
+  - mathlib instances and `@[ext]` lemmas stated for `SheafOfModules R` are not found for
+    `X.Modules`: restate them (`Modules.hom_ext`, `HasCoproducts`/`HasProducts` instances via
+    `inferInstanceAs`), and give functors out of `X.Modules` an `abbrev` whose type says
+    `X.Modules ⥤ _` (`toAbFunctor`, `overFunctorModules`); `(F : X.Modules ⥤ _)` ascriptions do
+    **not** change the elaborated type, so instances stated that way are never used.
+  - `rw` with generic lemmas (`Functor.map_comp`, `Adjunction.homEquiv_naturality_left`) often fails
+    ("`Y.ringCatSheaf` has type `TopCat.Sheaf`, expected `Sheaf`"); term-mode
+    `(Functor.map_comp _ _ _).symm.trans …` and `change … ; exact` go through.
+  - For a scheme `X`, `ShortComplex X.Modules` (mathlib's `Scheme.Modules`) can be fed to lemmas about
+    `X.toLocallyRingedSpace.Modules` by `exact`, but not by `rw`.
+  - `Proj (ProjectiveSpace.grading σ ℂ)` and `Proj (MvPolynomial.homogeneousSubmodule σ ℂ)` are
+    defeq but not reducibly: instances for one are not found for the other. Work in the
+    `homogeneousSubmodule` form (the one of `Foundations/Cohomology/ProjectiveSpace*`) and convert
+    once with `inferInstanceAs`/`exact`.
+  - Equation lemmas of structurally recursive defs (`cechHomologyIso.eq_3`) generated in another
+    module may be stated with `Nat.succ` and fail to `rw` against `p + 2`; prove a `rfl` lemma in the
+    `p + 2` form instead.
+  - An instance binder `[F.IsQuasicoherent]` on `Proj …` timed out in typeclass synthesis where
+    `[F.IsCoherent]` (and `hF.isQuasicoherent` passed explicitly) did not.
+
+- **Covering-space bookkeeping (2026-10-04, ret-hd).**
+  - Lemmas whose statement is `p (f x) = …` with `p` implicit (e.g. a covering map that only
+    appears through a hypothesis `hp : IsCoveringMap p`) cannot be used by `rw` ("pattern is a
+    metavariable"); pass the explicit arguments (`rw [p_sliceLift hp h h₀]`).
+  - To rewrite `Θ ⟨p c, proof⟩` when you know `p c = y`, `generalize_proofs h₁`, then
+    `have e : (⟨p c, h₁⟩ : {x // π x ∈ N}) = ⟨y, …⟩ := Subtype.ext …; rw [e]`. A `show` with
+    `_` for the proof does not unify.
+  - `generalize_proofs` also captures `HasPullback` instances; state the needed proofs yourself
+    (`have h₁ : … := by …; change pullback.lift _ _ h₁ ≫ act = …`).
+  - mathlib's `IsQuotientMap.lift` takes `f : C(X, Y)`, not a function: bundle the map first
+    (`let V : C(_, _) := ⟨map v, continuous_map v⟩`).
+  - A homotopy-lifting trivialization of a covering of `B × F` along a contraction of `B` is short
+    with `IsCoveringMap.liftHomotopy` + `IsCoveringMap.eq_of_comp_eq` for the inverse
+    (`RiemannHigher.sliceHomeomorph`, about 100 lines).
+- **Descent data for `Ψ` from topology (2026-10-04, ret-hd).** The IX.4 action
+  `act : X' ×_S S' ⟶ X'` of a covering-level descent datum is obtained from its map on `ℂ`-points
+  by `SchemePoints.exists_hom_map_eq`, and its unit and associativity follow from
+  `SchemePoints.eq_of_forall_comp_eq` (faithfulness for unramified targets, no reducedness needed).
+  Build points of `pullback f g` as `⟨q, proof⟩` with `q : Spec ℂ ⟶ pullback f g`; the over-`ℂ`
+  condition is `(q ≫ pullback.fst f g) ≫ Y ↘ Spec ℂ = 𝟙 _` up to `rfl`
+  (`RiemannHigher.mem_essImage_schemePointsFunctor_of_isFinite`).
+
+- **Points of `Spec (.of E)` written as `PrimeSpectrum E` (2026-10-04, local-alg).** A term
+  like `l (closedPoint E)` with `l : Spec (.of E) ⟶ X` elaborates, but `rw [← Scheme.Hom.comp_apply]`
+  then fails ("motive is not type correct at implicit transparency": `PrimeSpectrum E` is not
+  reducibly `↥(Spec (.of E))`). Fix: `set pc : Spec (.of E) := closedPoint E` first, or state
+  the goal with `change X.fromSpecStalk x (Spec.map _ _) = _`. Similarly `Spec.map (φ ≫ ofHom β)`
+  where `φ : A ⟶ B i` and `ofHom β : of ↑(B i) ⟶ of E` cannot be rewritten by an equation
+  `h : φ ≫ ofHom β = …`: use `exact congrArg Spec.map h` (SGA1/ExposeIX/SubmersiveValuative.lean).
+- **Differential forms and calculus on complex manifolds** (2026-10-04, hodge).
+  - With `open scoped ContDiff` (needed for `ω`, `∞` smoothness), `ω` is a token: never name a
+    variable `ω` (use `η`, `κ`, …). Docstrings are fine.
+  - Kernel slowness from `rfl` and `module` on concrete continuous linear maps: `rfl` closing
+    `alt ∘L P ∘L H = alt ∘L postcomp P H` took 34 s in the kernel; `rw [ContinuousLinearMap.comp_assoc]`
+    is instant. A `module` goal over `E [⋀^Fin n]→L[ℝ] ℂ` was slow; stating the identity as a
+    private lemma over an abstract `[AddCommGroup V] [Module ℂ V]` and `exact`-ing it fixed it
+    (`sym_aux` in `Foundations/Hodge/Dbar.lean`).
+  - mathlib has `DifferentiableAt.continuousAlternatingMapCompContinuousLinearMap` but no `C^n`
+    version; `Hodge.contDiffAt_compContinuousLinearMap` (`Foundations/Hodge/AlternatingSmooth.lean`)
+    proves it through `ContinuousMultilinearMap.alternatization` as a left inverse of the embedding.
+  - `AddCommGroup (Sheaf.H F n)` is not found by instance search for `F` a sheaf on
+    `TopCat.of M` (times out in `HasSheafify` search); give it explicitly,
+    `@Abelian.Ext.instAddCommGroup _ _ _ inferInstance _ _ _`, on a `def` wrapping `Sheaf.H.{0} F n`
+    (`Hodge.holomorphicCohomology`). The type itself and `Ext.comp` elaborate fine.
+  - mathlib's `smoothSheafCommRing IM I M R` needs `M` and `R` in the same universe, so the sheaf
+    of holomorphic `ℂ`-valued functions exists only for `M : Type`.
+  - Integration over a compact manifold: `integral_target_eq_integral_abs_det_fderiv_smul` (change
+    of variables for an `OpenPartialHomeomorph E E`), `integral_mul_fderiv_eq_neg_fderiv_mul_of_integrable`
+    with `f = 1` (∫ of a directional derivative of a compactly supported `C¹` function is `0`),
+    `SmoothPartitionOfUnity.exists_isSubordinate`, `LinearMap.det_restrictScalars` +
+    `Algebra.norm_complex_apply` (holomorphic maps preserve orientation). Pattern in
+    `Foundations/Hodge/Integration.lean`.
+
+- **Schemes over `Spec (CommRingCat.of A)` with `A : Type`** (2026-10-04, iii74):
+  - Pass `(A := CommRingCat.of A)` explicitly to the `CohomologyAux` thickening lemmas
+    (`isPullback_thickening`, …). Unifying `Ideal A` with `Ideal ↑?A` otherwise exhausts the
+    heartbeats in `whnf`.
+  - `MorphismProperty.RespectsIso @IsFinite`, `IsZariskiLocalAtTarget @IsFinite` and similar are
+    only found under `set_option backward.isDefEq.respectTransparency.types false in`.
+  - For the `V ≤ f ⁻¹ᵁ ⊤` argument of `appLE`, write `le_top.trans_eq f.preimage_top.symm`. With
+    `by simp` the proof term has type `V ≤ ⊤`, and later `rw`s fail with "not type-correct at
+    implicit transparency".
+  - In the body of a declaration named `Stage.foo`, the namespace `Stage` is open, so `X i` may
+    resolve to a structure field `Stage.X`. Write `MvPolynomial.X`.
+  - For families of opens indexed by `ULift (Fin 2)` (`![U₀, U₁] i.down`), state each case with
+    explicit opens as its own lemma and close the case split with `exact`, which works up to
+    defeq. `rw` and `simp` fail on the dependent types `Γ(X, cover i ⊓ cover j)`. See
+    `AmpleLift.TwoChartData` in `Foundations/Formal/AmpleLiftProj.lean`.
+  - The index type of `ℙ(σ; S)` and of `Dehomogenization` must live in `Type u`. Use
+    `ULift.{u} (Fin 2)` (`AmpleLift.Two`), not `Fin 2`.
+  - (round 2) `algebraize [φ]` for an endomorphism `φ : R →+* R` clashes with `Algebra.id R`:
+    `algebraMap R R` keeps meaning `id`. Give the source a different type, e.g. prove things for
+    `Polynomial k →+* MvPolynomial σ k` (`[Unique σ]`) and transport with
+    `MvPolynomial.uniqueAlgEquiv` (`CurveLift.powHom`, `SGA1/ExposeIII/CurveLiftBase.lean`).
+  - (round 2) For a structure built by a `def` (`CurveLift.baseOfHom f₀ g : Base I`), `rw` in goals
+    about `(baseOfHom f₀ g).f`, `.U₀`, … fails ("not type-correct at implicit transparency"), and
+    instances on `f₀ : X₀ ⟶ _` are not found for `f₀ : (baseOfHom f₀ g).X ⟶ _`. State the lemmas
+    in terms of the underlying data, `change` the goal into that form, and pass instances with
+    `@thm … ‹_›`.
+  - (round 2) `Proj.fracSection` (`Foundations/Projective/TwistingSheaf.lean`) gives `x₁/x₀ ∈
+    Γ(D₊(x₀))` with `basicOpen_fracSection` and `fracSection_mul_fracSection_swap` for free; the
+    pull-back of these to any `g : X ⟶ ℙ¹` is the cheapest way to get two-chart data
+    (`Foundations/Projective/CurveProjectiveChart.lean`).
+
+- **Germs of analytic functions and sheaves of `𝒪`-modules** (2026-10-04, an-coh):
+  - `exists_simultaneous_weierstrass_preparation` builds its `shearEquiv` with a local
+    `Fintype.ofFinite`, which does not unify with your `[Fintype τ]`: close the goal with
+    `convert … using 4` rather than `exact` (`Foundations/Analytic/OkaInduction.lean`).
+  - Sections and stalks of `analyticPresheaf` are `CommRingCat` objects whose ring structure is
+    not reducibly the subalgebra's, so `Polynomial.map_map`-style rewrites fail; use
+    `set_option backward.isDefEq.respectTransparency false in` (commented in each `Oka*` file).
+  - In `LocallyRingedSpace.Modules`, `M.val.obj U` is a module over `X.ringCatSheaf.obj.obj U`.
+    A `1` or `+` coming from `X.presheaf` (a `CommRingCat`) blocks `one_smul`/`add_smul`:
+    restate the scalar with `show X.ringCatSheaf.obj.obj U from …` first
+    (`Foundations/Analytic/CoherentCohomology.lean`).
+- **Holomorphic functions of several variables, technique** (2026-10-04, an-cohom):
+  - **Differentiating under the integral when the integrand is only measurable in the
+    integration variable** (`DolbeaultOffSupport.lean`).
+    `hasDerivAt_integral_of_dominated_loc_of_deriv_le` needs `AEStronglyMeasurable (F' x₀)`. Get it as an a.e. limit of difference quotients:
+    `aestronglyMeasurable_of_tendsto_ae` with `hasDerivAt_iff_tendsto_slope` along
+    `x₀ + ε/(n+1)`. Bound the derivative by Cauchy's estimate
+    (`Complex.norm_deriv_le_of_forall_mem_sphere_norm_le`, needs `import
+    Mathlib.Analysis.Complex.Liouville`).
+  - **Prove identities of Laurent projectors through uniqueness, not by computing integrals**
+    (`RungeLaurentProjector.lean`). Liouville on each coordinate line gives uniqueness of
+    `f = g + h(·⁻¹)`. Idempotence, linearity, commutation `PᵢPⱼ = PⱼPᵢ` and homogeneity then
+    follow by exhibiting a second splitting. Fubini on tori and rotations of circle integrals
+    are never needed.
+  - **Homogeneous entire functions are polynomials via `iteratedFDeriv`** (`Hartogs.lean`). If
+    `f(tz) = tⁿ f(z)`, then `f(z) = (1/n!) Dⁿf(0)(z,…,z)`, using
+    `ContinuousLinearMap.iteratedFDeriv_comp_right` with `toSpanSingleton ℂ z` and
+    `iteratedDeriv_fun_pow_zero`. Expand with `ContinuousMultilinearMap.map_sum` and
+    `map_smul_univ`. No uniqueness of multivariable power series is needed.
+  - Elaboration traps:
+    - `AnalyticAt.comp` unifies `f x` with `Prod.mk a b` wrongly; pass `(g := …) (f := …)`.
+    - `analyticAt_id.const_smul` gives `c • id`; pass `(c := c)`, then `exact`.
+    - In `refine (lemma ?_ fun ζ hζ ↦ foo ?_)`, the `?_` under the binder can silently vanish.
+      Prove that side fact as a `have` first.
+    - The argument of `analyticAt_id` is named `z`, not `x`.
+
 ## Already in mathlib (don't rebuild)
+- **Local commutative algebra (2026-10-04, local-alg).** Valuation rings dominating a local
+  subring: `IsLocalRing.exists_factor_valuationRing`, `LocalSubring.exists_le_valuationSubring`,
+  localization of a subring as a `LocalSubring`: `LocalSubring.ofPrime` (with its
+  `IsLocalization.AtPrime` instance). Krull's principal ideal theorem:
+  `Ideal.height_le_one_of_isPrincipal_of_mem_minimalPrimes`; `ringKrullDim` of a localization:
+  `IsLocalization.AtPrime.ringKrullDim_eq_height`. Lengths: `Module.length`,
+  `Module.length_eq_add_of_exact`, `Module.length_submodule` (= height in the lattice of
+  submodules), `Ring.ord` and the exact sequence `Ideal.mulQuot`/`Ideal.quotOfMul`
+  (`Mathlib/RingTheory/OrderOfVanishing/Basic.lean`). A `K`-basis of a finite extension `L` of
+  `Frac A` integral over `A`: `FiniteDimensional.exists_is_basis_integral`. In the repo: the local
+  flatness criterion `Module.Flat.of_forall_flat_quotient_pow` and complete rings with noetherian
+  reduction `Ideal.isNoetherianRing_of_isAdicComplete` (Stacks 05GH)
+  (`Foundations/HenselizationNoetherian.lean`, `Foundations/Formal/NoetherianOfComplete.lean`).
+- **Dimension theory of noetherian rings (2026-10-04, local-alg).** Mathlib's
+  `Mathlib/RingTheory/Ideal/KrullsHeightTheorem.lean` has all of Matsumura §13–15 that EGA IV 14
+  style arguments need: Krull's height theorem `Ideal.height_le_card_of_mem_minimalPrimes_span_finset`,
+  its converse `Ideal.exists_finset_card_eq_height_of_isNoetherianRing` (systems of parameters),
+  `Ideal.height_le_height_add_encard_of_subset` (`ht p ≤ ht (p/(s)) + #s`), the dimension
+  inequality `Ideal.height_le_height_add_of_liesOver` and its going-down equality
+  `Ideal.height_eq_height_add_of_liesOver_of_hasGoingDown`; minimal primes over quotients:
+  `Ideal.mem_minimalPrimes_sup`, `Ideal.map_sup_mem_minimalPrimes_of_map_quotientMk_mem_minimalPrimes`.
+  `ringKrullDim_quotient_succ_le_of_nonZeroDivisor` gives `dim A/aA + 1 ≤ dim A`. Going down is
+  `Algebra.HasGoingDown.iff_generalizingMap_primeSpectrumComap`; an open `Spec B → Spec A` with
+  `B` noetherian has it (`IsOpenMap.generalizingMap_of_noetherianSpace`,
+  `Algebra.hasGoingDown_of_isOpenMap`, `Foundations/CommAlg/QuasiSection.lean`). Quasi-finiteness
+  at a prime from topology: `Algebra.QuasiFiniteAt.of_isOpen_singleton_fiber` (needs only
+  `FiniteType`); to `Scheme.Hom.QuasiFiniteAt` of `Spec.map`:
+  `SGA.SGA1.ExposeIX.quasiFiniteAt_Spec_map_algebraMap`. Lengths along short exact sequences after
+  `M ↦ M/aM`: `QuotSMulTop.map_exact`, `QuotSMulTop.map_surjective`,
+  `QuotSMulTop.map_first_exact_on_four_term_exact_of_isSMulRegular_last` (injectivity when `a` is
+  regular on the cokernel); packaged as `KrullAkizuki.length_quotSMulTop_eq_add`.
+
 
 - **Covering spaces and `π₁` (2026-10-03, cx-top).** `π₁` of the base of a quotient covering map
   with simply connected total space: `IsQuotientCoveringMap.fundamentalGroupEquiv`
@@ -649,6 +838,44 @@ Checked against the code on 2026-10-04. Paths under `lean/SGA/`.
   `exists_mul_add_mul_eq_C_resultant` only needs *bounds* `deg f ≤ m`, `deg g ≤ n`, so a unit
   `Res(P, P')` gives `P` separable after any base change (`PuncturedPlane.separable_map_of_isUnit`) without
   computing degrees: the clean way to say "étale over `D(δ)`".
+- **Ramification counts and local étaleness (2026-10-04, xii51).** `∑_{q | p} e(q) f(q) = rank` for any
+  finite flat algebra over a domain: `Ideal.sum_ramification_inertia_eq_finrank`
+  (`Mathlib/RingTheory/RamificationInertia/Basic.lean`, new `ramificationIdx`/`inertiaDeg` defined
+  through lengths); `Ideal.ramificationIdx_eq_one_iff` (= unramified, integral case). So "`n`
+  distinct points over `p`" ⇒ unramified over `p`, no Dedekind theory needed
+  (`RiemannExtension.isUnramifiedAt_of_finrank_le_card`). Local étaleness:
+  `Algebra.isUnramifiedAt_iff_map_eq`, `Algebra.isOpen_unramifiedLocus`,
+  `Algebra.basicOpen_subset_unramifiedLocus_iff`, `Algebra.Etale.of_formallyUnramified_of_flat`,
+  `Algebra.IsEtaleAt.of_isUnramifiedAt_of_flat`, `Algebra.IsEtaleAt.exists_isStandardEtale`
+  (`Mathlib/RingTheory/{Unramified,Etale,Smooth}/{Locus,LocalRing,Fiber}.lean`,
+  `Mathlib/RingTheory/Unramified/LocalStructure.lean` for `exists_isStandardEtale`,
+  `Mathlib/RingTheory/RamificationInertia/Ramification.lean` for `ramificationIdx_eq_one_iff`).
+  Fibre rank of a finite flat module: `Ideal.finrank_fiber_eq_finrank`,
+  `Module.rankAtStalk_baseChange`.
+- **Normalization of a curve in a covering (2026-10-04, xii51).** For `C'` a normal domain finite
+  flat over `B[1/h]`, take `C := integralClosure B C'` (a `Subalgebra`, so `C[1/h] = C'` is the
+  easy direction) and prove `IsIntegralClosure C B (FractionRing C')`: then mathlib's
+  `IsIntegralClosure.finite` and `IsIntegralClosure.isDedekindDomain` (trace form, separable) give
+  finiteness and Dedekind for free. The fraction-field bookkeeping: `K := FractionRing B[1/h]`
+  with `IsFractionRing B K` (`IsFractionRing.of_field`), `Algebra K (FractionRing C')` from
+  `FractionRing.liftAlgebra`, and the mathlib instance
+  `FiniteDimensional (FractionRing R) (FractionRing S)` (`Mathlib/RingTheory/Algebraic/Integral.lean`,
+  needs `IsTorsionFree R S`, `Module.Finite R S`). Flatness over a Dedekind base is the instance
+  from `IsTorsionFree` (`Mathlib/RingTheory/Flat/TorsionFree.lean`).
+- **Products of algebras over products of rings (xii51).** For `B C : ι → Type` with
+  `Algebra (B i) (C i)`, `Algebra (Π B) (Π C)` resolves to the componentwise
+  `Pi.instAlgebraForall`, which mathlib's `Algebra.Etale R (Π i, A i)` (fixed base `R`, `Pi.algebra`)
+  does not see. Declare `let : Algebra (Π B) (Π C) := Pi.algebra ι C` (with
+  `Algebra (Π B) (C i)` through `Pi.evalRingHom`) before asking for `Etale`/`Module.Finite`.
+  Also: `let R := ∀ i, B i` breaks instance search (the instances are found for `R`, the goal
+  mentions the unfolded type); write the Pi type out. `B i` is the localization of `Π B` away
+  from `Pi.single i 1` (`IsLocalization.away_of_isIdempotentElem`, as in mathlib's
+  `Algebra.FinitePresentation.pi`), so the points of a finite product split into open pieces.
+- **Instance equality by `subst` (xii51).** To identify `Points ℂ C` for an `Algebra ℂ C` with
+  `IsScalarTower ℂ B C` and `Ψ(FiniteEtale.of B C)` (whose `ℂ`-structure is
+  `algebraOfFiniteEtale`), `obtain rfl : ‹Algebra ℂ C› = algebraOfFiniteEtale ℂ B (.of B C) :=
+  Algebra.algebra_ext _ _ fun c ↦ IsScalarTower.algebraMap_apply ℂ B C c` at the start of a lemma
+  whose binders hold the instance (`RiemannExtension.mem_essImage_pointsFunctor_of_bijective`).
 - **Galois categories.** Most of V.4–V.5: `PreGaloisCategory`, `GaloisCategory`, `FiberFunctor`
   and the equivalence with continuous actions (V-b1).
 - **Fibered categories (VI):** `Functor.IsFibered`, `IsCartesian`, `∫ᶜ`, and
