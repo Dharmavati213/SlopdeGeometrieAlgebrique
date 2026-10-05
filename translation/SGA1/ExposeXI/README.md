@@ -1,11 +1,12 @@
 # SGA 1, Exposé XI — Examples and complements
 
-Full English draft of the whole exposé: all six sections and the
-bibliography, with proofs, footnotes, and all diagrams. It includes
+Complete English draft of the exposé: all six sections and the
+bibliography, with proofs, footnotes, and all diagrams, including
 M. Raynaud's 2003 addition (MR) in XI.1.4 and the 2003 starred footnote
-in §3. It was translated from the corrected SMF branch in three chunks.
-A second reviewer then checked each chunk against the French
-(2026-09-24). Scholarly proofreading remains outstanding.
+in §3. Translated in three chunks from the corrected SMF branch of
+[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2); a second
+reviewer checked each chunk against the French (2026-09-24). Scholarly
+proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -15,40 +16,29 @@ A second reviewer then checked each chunk against the French
 | [`en-3.tex`](en-3.tex) | §6 Application to principal coverings: Kummer and Artin-Schreier theories (XI.6.1–XI.6.11); bibliography |
 | [`SGA1-XI.pdf`](SGA1-XI.pdf) | Compiled English draft |
 
-Build with `make -C translation/SGA1/ExposeXI` from the repository root,
-or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsbook`, `xy`, `mathrsfs`, `enumitem`, and
-`hyperref`.
+Build: `make -C translation/SGA1/ExposeXI` (TeX Live with `latexmk`,
+`amsbook`, `xy`, `mathrsfs`, `enumitem`, `hyperref`); `make tex` builds
+every exposé.
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, lines 17844–19356, from the chapter
-`Exemples et compl\'ements` and `\label{XI}` up to, but not including,
-the chapter of Exposé XII.
-This covers original page markers 285–310.
-The French TeX and PDF are not included in this repository.
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), lines
+17844–19356: from the chapter `Exemples et compl\'ements` and
+`\label{XI}` up to, but not including, the chapter of Exposé XII;
+original page markers 285–310. The French TeX and PDF are not in this
+repository.
 
-The body fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md),
-section “SGA 1 — front matter and Exposés IV, V, VIII–XIII”, and use the
-shared package [`sga1-en.sty`](../sga1-en.sty). All non-index labels,
-`\Ref`/`\eqref`/`\cite` keys, footnotes, and diagrams are kept. The
-bibliography keeps `\begin{thebibliography}{10}{XI.7}` (numbered section
-7). References to other exposés print the source's numbers:
-`X~\Ref{X.1.7}` prints “X 1.7”, as in the SMF volume. Original page
-numbers remain as `% original p. N` comments. Indexes and SMF
-page-layout commands are omitted.
+The fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md), section
+“SGA 1 — front matter and Exposés IV, V, VIII–XIII” (labels, reference
+and citation keys, page markers, omitted indexes), and use the shared
+package [`sga1-en.sty`](../sga1-en.sty). The bibliography keeps
+`\begin{thebibliography}{10}{XI.7}` (numbered section 7). *n°* /
+*numéro* is rendered “no.” (`\No`), and *changement de base* is rendered
+“change of base”, the Exposé VI term.
 
-House rules applied here as in the other new exposés: *n°* / *numéro*
-is rendered “no.” (`\No`), and *changement de base* is rendered “change
-of base”, the Exposé VI term. This exposé already used “change of
-base”. The harmonization that replaced “base change” after the reviews
-concerned Exposés IV, V, VIII, IX, and X.
-
-The 2003 material has the SMF form. The addition in XI.1.4 stays inline
-between bold brackets, beginning “Added in 2003 (MR)”. The footnote in
-§3 keeps its `*` mark (`\renewcommand{\thefootnote}{*}`).
+The 2003 material keeps its SMF form: the addition in XI.1.4 stays inline
+between bold brackets, beginning “Added in 2003 (MR)”, and the footnote
+in §3 keeps its `*` mark (`\renewcommand{\thefootnote}{*}`).
 
 Exposé XI terminology:
 
@@ -66,9 +56,8 @@ Exposé XI terminology:
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX. They have
-been retained in the translation, in accordance with the convention
-against silently repairing the source.
+Apparent slips in the corrected French TeX, kept as printed per
+[`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -94,24 +83,23 @@ against silently repairing the source.
 
 ## Validation
 
-The local checker `source/SGA1/check_chunk.py`, which is not in the
-repository, finds for each chunk the same non-index labels, reference
-and citation keys, footnotes, diagrams, displayed formulas, list items,
-and statement environments as in the corrected French. For the whole
-exposé these are 40 labels, 67 references, 17 citations, 9 footnotes,
-4 diagrams, and 85 displays. The wrapper compiles to an 18-page PDF with
-no errors or undefined references.
+`source/SGA1/check_chunk.py` (a local script, not in the repository)
+compared each chunk with the corrected French and found the same
+non-index labels, reference and citation keys, footnotes, diagrams,
+displayed formulas, list items, and statement environments. For the
+whole exposé these are 40 labels, 67 references, 17 citations,
+9 footnotes, 4 diagrams, and 85 displays. The wrapper compiles to an
+18-page PDF with no errors or undefined references.
 
-A second reviewer checked all three chunks against the French:
+Fixes by the second reviewer:
 
-- en-1.tex: one fix (“this number” → “this no.”);
-- en-2.tex: two fixes (“present number” → “present no.”, and the plural
+- `en-1.tex`: one fix (“this number” → “this no.”);
+- `en-2.tex`: two fixes (“present number” → “present no.”, and the plural
   “groups of operators”);
-- en-3.tex: no fixes.
+- `en-3.tex`: no fixes.
 
 The reviewer confirmed all the translator's source points and added the
-query on `G`/`𝒢` in XI.5. These checks do not settle the mathematical
-questions above; scholarly proofreading remains outstanding.
+query on `G`/`𝒢` in XI.5.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

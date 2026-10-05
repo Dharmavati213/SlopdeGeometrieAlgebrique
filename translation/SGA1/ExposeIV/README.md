@@ -1,10 +1,11 @@
 # SGA 1, Exposé IV — Flat morphisms
 
-Full English draft of the whole exposé: the introduction and all six
-sections, with proofs, footnotes, and both diagrams. It was translated
-from the corrected SMF branch in two chunks. A second reviewer then
-checked each chunk against the French (2026-09-24). Scholarly
-proofreading remains outstanding.
+Complete English draft of the exposé: the introduction and all six
+sections, with proofs, footnotes, and both diagrams. Translated in two
+chunks from the corrected SMF branch of
+[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2); a second
+reviewer checked each chunk against the French (2026-09-24). Scholarly
+proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -13,35 +14,23 @@ proofreading remains outstanding.
 | [`en-2.tex`](en-2.tex) | §5 Local criteria of flatness; §6 Flat morphisms and open sets (IV.5–IV.6.11) |
 | [`SGA1-IV.pdf`](SGA1-IV.pdf) | Compiled English draft |
 
-Build with `make -C translation/SGA1/ExposeIV` from the repository root,
-or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsbook`, `xy`, `mathrsfs`, `enumitem`, and
-`hyperref`.
+Build: `make -C translation/SGA1/ExposeIV` (TeX Live with `latexmk`,
+`amsbook`, `xy`, `mathrsfs`, `enumitem`, `hyperref`); `make tex` builds
+every exposé.
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, lines 6269–7382, from `\chapter{Morphismes plats}`
-and `\label{IV}` up to, but not including, the chapter of Exposé V.
-This covers original page markers 87–104.
-The French TeX and PDF are not included in this repository.
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), lines
+6269–7382: from `\chapter{Morphismes plats}` and `\label{IV}` up to, but
+not including, the chapter of Exposé V; original page markers 87–104.
+The French TeX and PDF are not in this repository.
 
-The body fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md),
-section “SGA 1 — front matter and Exposés IV, V, VIII–XIII”, and use the
-shared package [`sga1-en.sty`](../sga1-en.sty). All non-index labels,
-`\Ref`/`\eqref` keys, footnotes, and diagrams are kept. Exposé IV has
-only internal references. The shared package would print a key from
-another exposé with the source's number, as the SMF volume does:
-`VIII~\Ref{VIII.6.2}` prints “VIII 6.2”. Original page numbers remain as
-`% original p. N` comments. Indexes and SMF page-layout commands are
-omitted.
-
-House rules applied here as in the other new exposés: *n°* / *numéro*
-is rendered “no.” (`\No`), as in “the present no.”, and *changement de
-base* is rendered “change of base”, the Exposé VI term. After the
-reviews, “base change” was replaced by “change of base” throughout
-Exposés IV, V, VIII, IX, and X.
+The fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md), section
+“SGA 1 — front matter and Exposés IV, V, VIII–XIII” (labels, reference
+keys, page markers, omitted indexes), and use the shared package
+[`sga1-en.sty`](../sga1-en.sty). Exposé IV has only internal references.
+*n°* / *numéro* is rendered “no.” (`\No`), as in “the present no.”, and
+*changement de base* is rendered “change of base”, the Exposé VI term.
 
 Exposé IV terminology:
 
@@ -59,9 +48,8 @@ Exposé IV terminology:
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX. They have
-been retained in the translation, in accordance with the convention
-against silently repairing the source.
+Apparent slips in the corrected French TeX, kept as printed per
+[`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -82,20 +70,18 @@ against silently repairing the source.
 
 ## Validation
 
-The local checker `source/SGA1/check_chunk.py`, which is not in the
-repository, finds for each chunk the same non-index labels, reference
-keys, footnotes, diagrams, displayed formulas, list items, and statement
-environments as in the corrected French. For the whole exposé these are
-45 labels, 59 references, 5 footnotes, 2 diagrams, and 47 displays.
-Statement numbers are 1.1–1.3, 2.1–2.6, 3.1–3.2, 4.1–4.4, 5.1–5.9, and
-6.1–6.11, as in the source. The wrapper compiles to a 15-page PDF with
-no errors or undefined references.
+`source/SGA1/check_chunk.py` (a local script, not in the repository)
+compared each chunk with the corrected French and found the same
+non-index labels, reference keys, footnotes, diagrams, displayed
+formulas, list items, and statement environments. For the whole exposé
+these are 45 labels, 59 references, 5 footnotes, 2 diagrams, and
+47 displays. Statement numbers are 1.1–1.3, 2.1–2.6, 3.1–3.2, 4.1–4.4,
+5.1–5.9, and 6.1–6.11, as in the source. The wrapper compiles to a
+15-page PDF with no errors or undefined references.
 
-A second reviewer checked both chunks against the French. There was one
-fix, in en-2.tex (“present section” → “present no.”). The reviewer
-confirmed all the translator's source points and added the query on the
-proof of IV.2.6. These checks do not settle the mathematical questions
-above; scholarly proofreading remains outstanding.
+The second reviewer made one fix, in `en-2.tex` (“present section” →
+“present no.”), confirmed all the translator's source points, and added
+the query on the proof of IV.2.6.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

@@ -1,12 +1,12 @@
 # SGA 1 — Preface, Introduction, Foreword
 
-Full English draft of the front matter of SGA 1: the abstract, the
+Complete English draft of the front matter of SGA 1: the abstract, the
 preface of the SMF edition, Grothendieck's Introduction (Massy, August
 1970) and the Foreword (*Avertissement*, Bures, June 1963) to the
-mimeographed notes, with all footnotes. It was translated from the
-corrected SMF branch, and the translation was then checked against the
-French by a second reviewer (2026-09-24). Scholarly proofreading remains
-outstanding.
+mimeographed notes, with all footnotes. Translated from the corrected SMF
+branch of [arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2);
+a second reviewer checked it against the French (2026-09-24). Scholarly
+proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -14,18 +14,15 @@ outstanding.
 | [`en-front.tex`](en-front.tex) | Abstract (with subject classification and keywords); Preface; Introduction; Foreword |
 | [`SGA1-Intro.pdf`](SGA1-Intro.pdf) | Compiled English draft |
 
-Build with `make -C translation/SGA1/Introduction` from the repository
-root, or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsbook`, `xy`, `mathrsfs`, `enumitem`, and
-`hyperref`.
+Build: `make -C translation/SGA1/Introduction` (TeX Live with `latexmk`,
+`amsbook`, `xy`, `mathrsfs`, `enumitem`, `hyperref`); `make tex` builds
+every exposé.
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, lines 1–545: from the title page up to, but not
-including, `\chapter{Morphismes \'etales}` (Exposé I).
-The French TeX and PDF are not included in this repository.
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), lines 1–545:
+from the title page up to, but not including, `\chapter{Morphismes \'etales}`
+(Exposé I). The French TeX and PDF are not in this repository.
 
 The fragment follows [`CONVENTIONS.md`](../../CONVENTIONS.md), section
 “SGA 1 — front matter and Exposés IV, V, VIII–XIII”, and uses the shared
@@ -36,10 +33,10 @@ source's numbers (for example “Exp. XII”).
   English. The English here is translated from the French versions, and
   each text appears once, as an unnumbered chapter.
 - The Preface refers to M. Raynaud's 2003 remarks by SMF page numbers
-  (`\pageref`). These page references are replaced by statement numbers
-  (Remarks X 2.14, XI 1.4, XII 5.6, XIII 2.13, and the footnote to
-  III 6.6). A translator's footnote at the end of the Preface says so.
-  This is the only footnote not in the source.
+  (`\pageref`). These are replaced by statement numbers (Remarks X 2.14,
+  XI 1.4, XII 5.6, XIII 2.13, and the footnote to III 6.6), and a
+  translator's footnote at the end of the Preface says so. It is the only
+  footnote not in the source.
 - The French title-page author line (“Un séminaire dirigé par
   A. Grothendieck / Augmenté de deux exposés de Mme M. Raynaud”) is not
   reproduced in the English wrapper.
@@ -59,9 +56,8 @@ Front-matter terminology:
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX. They have
-been retained in the translation, in accordance with the convention
-against silently repairing the source.
+Apparent slips in the corrected French TeX, kept as printed per
+[`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -73,21 +69,19 @@ against silently repairing the source.
 
 ## Validation
 
-The local checker `source/SGA1/check_chunk.py`, which is not in the
-repository, compares the fragment with the corrected French. All five
-labels (including `I.avertissement` and `footnotegiraud`) are present.
-The differences it reports are the deliberate ones described above: the
-page references replaced by statement numbers; the added translator's
-footnote (10 footnotes against 9); and the abstract and preface rendered
+`source/SGA1/check_chunk.py` (a local script, not in the repository)
+compared the fragment with the corrected French. All five labels
+(including `I.avertissement` and `footnotegiraud`) are present. The
+differences it reports are the deliberate ones described above: page
+references replaced by statement numbers; the added translator's
+footnote (10 footnotes against 9); the abstract and preface rendered
 once, as chapters. The wrapper compiles to an 11-page PDF with no errors
 or undefined references.
 
-A second reviewer checked the translation against the French and made
-two fixes. The Foreword now keeps the plural of “Les premiers de ces
-exposés oraux”. The translator's footnote now tells the reader that page
-references were replaced by statement numbers. The reviewer also found
-the French slips listed above. These checks do not replace scholarly
-proofreading.
+The second reviewer made two fixes: the Foreword keeps the plural of
+“Les premiers de ces exposés oraux”, and the translator's footnote says
+that page references were replaced by statement numbers. The reviewer
+also found the French slips listed above.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

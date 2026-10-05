@@ -1,10 +1,11 @@
 # SGA 1, Exposé VIII — Faithfully flat descent
 
-Full English draft of the whole exposé: all seven sections and the
-bibliography, with proofs, footnotes, and all diagrams. It was translated
-from the corrected SMF branch in four chunks. A second reviewer then
-checked each chunk against the French (2026-09-24). Scholarly
-proofreading remains outstanding.
+Complete English draft of the exposé: all seven sections and the
+bibliography, with proofs, footnotes, and all diagrams. Translated in
+four chunks from the corrected SMF branch of
+[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2); a second
+reviewer checked each chunk against the French (2026-09-24). Scholarly
+proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -15,40 +16,26 @@ proofreading remains outstanding.
 | [`en-4.tex`](en-4.tex) | §7 Effectiveness criteria for a descent datum (VIII.7.1–VIII.7.10); bibliography |
 | [`SGA1-VIII.pdf`](SGA1-VIII.pdf) | Compiled English draft |
 
-Build with `make -C translation/SGA1/ExposeVIII` from the repository
-root, or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsbook`, `xy`, `mathrsfs`, `enumitem`, and
-`hyperref`.
+Build: `make -C translation/SGA1/ExposeVIII` (TeX Live with `latexmk`,
+`amsbook`, `xy`, `mathrsfs`, `enumitem`, `hyperref`); `make tex` builds
+every exposé.
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, lines 12789–14730, from
-`\chapter{Descente fid\`element plate}` and `\label{VIII}` up to, but
-not including, the chapter of Exposé IX. (Exposé VII was never written.)
-This covers original page markers 195–227.
-The French TeX and PDF are not included in this repository.
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), lines
+12789–14730: from `\chapter{Descente fid\`element plate}` and
+`\label{VIII}` up to, but not including, the chapter of Exposé IX
+(Exposé VII was never written); original page markers 195–227. The
+French TeX and PDF are not in this repository.
 
-The body fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md),
-section “SGA 1 — front matter and Exposés IV, V, VIII–XIII”, and use the
-shared package [`sga1-en.sty`](../sga1-en.sty). All non-index labels,
-`\Ref`/`\eqref`/`\cite` keys, footnotes, and diagrams are kept. The
-bibliography keeps `\begin{thebibliography}{D}{VIII.8}`, so it is the
-numbered section 8. References to other exposés print the source's
-numbers: `VI~\Ref{VI.11}` prints “VI 11”, as in the SMF volume. Original
-page numbers remain as `% original p. N` comments. Indexes and SMF
-page-layout commands are omitted.
-
-House rules applied here as in the other new exposés: *n°* / *numéro*
-is rendered “no.” (`\No`), and *changement de base* is rendered “change
-of base”, the Exposé VI term. The second review of en-3.tex made this
-change there, and the harmonization of Exposés IV, V, VIII, IX, and X
-then made it in en-2.tex and en-4.tex. *Produit fibré* is “fibered
-product”, as in Exposé VI.
-
-The doubled word in the footnote before VIII.1.2 (“exposée exposée”) is
-kept as “expounded expounded”.
+The fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md), section
+“SGA 1 — front matter and Exposés IV, V, VIII–XIII” (labels, reference
+and citation keys, page markers, omitted indexes), and use the shared
+package [`sga1-en.sty`](../sga1-en.sty). The bibliography keeps
+`\begin{thebibliography}{D}{VIII.8}`, so it is the numbered section 8.
+*n°* / *numéro* is rendered “no.” (`\No`); *changement de base* is
+rendered “change of base” and *produit fibré* “fibered product”, the
+Exposé VI terms.
 
 Exposé VIII terminology:
 
@@ -66,9 +53,8 @@ Exposé VIII terminology:
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX. They have
-been retained in the translation, in accordance with the convention
-against silently repairing the source.
+Apparent slips in the corrected French TeX, kept as printed per
+[`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -93,25 +79,24 @@ against silently repairing the source.
 
 ## Validation
 
-The local checker `source/SGA1/check_chunk.py`, which is not in the
-repository, finds for each chunk the same non-index labels, reference
-and citation keys, footnotes, diagrams, displayed formulas, list items,
-and statement environments as in the corrected French. For the whole
-exposé these are 63 labels, 124 references, 9 citations, 4 footnotes,
-21 diagrams, and 92 displays. The wrapper compiles to a 21-page PDF with
-no errors or undefined references.
+`source/SGA1/check_chunk.py` (a local script, not in the repository)
+compared each chunk with the corrected French and found the same
+non-index labels, reference and citation keys, footnotes, diagrams,
+displayed formulas, list items, and statement environments. For the
+whole exposé these are 63 labels, 124 references, 9 citations,
+4 footnotes, 21 diagrams, and 92 displays. The wrapper compiles to a
+21-page PDF with no errors or undefined references.
 
-A second reviewer checked all four chunks against the French:
+Fixes by the second reviewer:
 
-- en-1.tex: one fix of register (“We shall simply call” → “One will
+- `en-1.tex`: one fix of register (“We shall simply call” → “One will
   simply call”);
-- en-2.tex and en-4.tex: no fixes;
-- en-3.tex: six fixes of terminology (“fibered products”, and “change of
-  base” five times).
+- `en-2.tex` and `en-4.tex`: no fixes;
+- `en-3.tex`: six fixes of terminology (“fibered products”, and “change
+  of base” five times).
 
 The reviewer confirmed the translator's source points and added the
-spelling slip listed last. These checks do not settle the mathematical
-questions above; scholarly proofreading remains outstanding.
+spelling slip listed last.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

@@ -112,8 +112,7 @@ every numbered statement is proved, possibly with the restrictions listed in
   - X.2.1–X.2.4 for projective `X`; X.2.1 also for integral normal `X`
   - X.2.9 and X.2.12 for `k` of characteristic 0 with `#k ≤ 𝔠`, in universe 0; out of scope
     otherwise
-  - X.3.8 and X.3.9 over a complete DVR with separably closed residue field; X.3.8 is open in
-    general
+  - X.3.8 and X.3.9 over every locally noetherian base
 - [x] **XI** Examples and complements. Out of scope (see the Foundations README):
   - XI.1.4, reduced to Hodge symmetry `h^{0,q} = h^{q,0}`, which is open
   - XI.2.1 in characteristic `p`, where it is equivalent to its `p`-primary clause; XI.2.1 is
