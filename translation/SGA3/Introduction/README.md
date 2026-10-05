@@ -1,16 +1,17 @@
-# SGA 3, Intro
+# SGA 3 — Foreword and introduction
 
-Foreword and introduction.
+By A. Grothendieck. English translation of the Gille–Polo recomposition,
+`AaIntro-18fev11.pdf` (6 pages; not in this repository).
+Complete draft; not yet independently reviewed against the French.
 
-Author of the exposé: A. Grothendieck.
-
-French source (local only): `source/SGA3/AaIntro-18fev11.pdf` (6 pages),
-the Gille–Polo recomposition.
-
-| | |
+| File | Source pages |
 | --- | --- |
-| Status | Draft. |
-| Chunks | en-01.tex (pp. 1--6) |
+| [`SGA3-Intro.tex`](SGA3-Intro.tex) | Standalone wrapper |
+| [`en-01.tex`](en-01.tex) | 1–6 |
+| [`SGA3-Intro.pdf`](SGA3-Intro.pdf) | Compiled PDF |
 
-Typographical corrections made in the English are marked in the body
-with `% typo:`. Build: `make -C translation/SGA3/Introduction`.
+Build: `make -C translation/SGA3/Introduction`.
+
+## Source points retained as printed
+
+None marked.

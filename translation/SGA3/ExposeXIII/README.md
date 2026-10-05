@@ -1,53 +1,51 @@
-# SGA 3, XIII
+# SGA 3, Exposé XIII — Regular elements of algebraic groups and of Lie algebras
 
-Regular elements of algebraic groups and of Lie algebras.
+By A. Grothendieck. English translation of the Gille–Polo recomposition,
+`Expo13.pdf` (30 pages; not in this repository).
+Complete draft; not yet independently reviewed against the French.
 
-Author of the exposé: A. Grothendieck.
-
-French source (local only): `source/SGA3/Expo13.pdf` (30 pages),
-the Gille–Polo recomposition.
-
-| | |
+| File | Source pages |
 | --- | --- |
-| Status | Complete draft; all source pages translated and visually checked. Independent sentence review and scholarly proofreading remain. |
-| Chunks | en-01.tex (pp. 1--6), en-02.tex (pp. 7--12), en-03.tex (pp. 13--18), en-04.tex (pp. 19--24), en-05.tex (pp. 25--30) |
+| [`SGA3-XIII.tex`](SGA3-XIII.tex) | Standalone wrapper |
+| [`en-01.tex`](en-01.tex) | 1–6 |
+| [`en-02.tex`](en-02.tex) | 7–12 |
+| [`en-03.tex`](en-03.tex) | 13–18 |
+| [`en-04.tex`](en-04.tex) | 19–24 |
+| [`en-05.tex`](en-05.tex) | 25–30 |
+| [`SGA3-XIII.pdf`](SGA3-XIII.pdf) | Compiled PDF |
 
-Typographical corrections made in the English are marked in the body
-with `% typo:`. Build: `make -C translation/SGA3/ExposeXIII`.
+Build: `make -C translation/SGA3/ExposeXIII`.
 
-All five fragments are populated. The source has 30 PDF pages (the last is
-blank); all were rendered and inspected. The complete English PDF builds to
-26 pages (22 body pages plus front matter); all rendered English pages were
-inspected, with no clipping and no overfull boxes.
+The last page of the source PDF is blank. The exposé has no bibliography.
 
-`python3 translation/SGA3/check_coverage.py --expose XIII --source-dir source/SGA3 --require-pdf`
-passes. All 42 printed statement headings are labelled, all six sections and
-editor notes 1–11 are retained, as is the version note 0. There is no
-bibliography in this exposé. Cross-fragment proofs in en-01/en-02 and
-en-02/en-03 are closed in the assembled text.
+## Typographical corrections
 
-Source slips retained as printed (marked `% typo?:` in the bodies):
+Corrected in the English and marked `% typo:` in the source: ``ou peut'' and
+``expoée'' (proof of 2.6, p. 10); ``on vu'' (proof of 2.6, p. 11); a missing
+closing parenthesis in the SL(2) example (2.10, p. 13); ``on ouvert'' and a
+missing ``on'' (§3, p. 14); an unmatched opening parenthesis after the rank
+operator (after 4.2, p. 19).
 
-| PDF page | Location | Printed text retained |
-| --- | --- | --- |
-| 1 | Initial sheaf identification | Unintroduced `M` in `G,V,M`. |
-| 3 | Formula (1) | Last bound ends in `m_a` without a rank operator. |
-| 3 | Proof of 1.1 | `X_n`, rightward `j'_a` in the diagram, and local-ring subscripts `a`/`b`; (iii bis) uses `M`. |
-| 5 | Proof of 2.1 | `h ⊃ n` and `h ⊂ g^T` after `c=g^T`, and again `h ⊃ n`. |
-| 6 | Proof of 2.1 | `T(K)` although the base field is `k`. |
-| 7 | Proof of 2.2 | `ψ=φ∘q` is written with the reversed composition. |
-| 8 | Proof of 2.1 | `int(v)·C' → u` and the conclusion `C=H`. |
-| 9 | Proof of 2.3 | The proof concludes `C ⊂ G` rather than the statement's `C ⊂ H`. |
-| 11 | Formula (†) | Left-hand side ends in `c_0` and omits intermediate terms; prose uses `G(K)`. |
-| 12 | Proof of 2.8 | “Regular in C” while proving regularity in G. |
-| 15 | Proof of 3.1 | Exponent `n-r-1` uses `r` where surrounding notation uses `ρ`. |
-| 18 | Proof of 4.1 | Capital `Ad(a)` instead of `ad(a)`. |
-| 21 | Proof of 4.7 | `d'=u(d_A)` is said to contain `a_A`; the action is written `ad(b)_d`. |
-| 22 | Section 5 setup | `X` names both the quotient and `G×W(h)`. |
-| 26 | Proof of 5.5 | `H=M_a^0` although H was not assumed connected. |
-| 27 | Proof of 6.1 | `N=M` rather than `N=M_a`. |
+## Source points retained as printed
 
-Obvious typography corrected with `% typo:` comments: missing closing
-parenthesis in the SL(2) example (p. 13), “ou peut”/“expoée” in the proof
-of 2.6 (p. 10), “on vu” (p. 11), “on ouvert”/missing “on” (p. 14), and
-the unmatched opening parenthesis after the rank operator (p. 19).
+Marked `% typo?:` in the source. These may be slips in the French; the translation keeps them.
+
+| Place | As printed |
+| --- | --- |
+| §1, opening (p. 1) | ``identifies G, V, M'' with M not introduced. |
+| §1, formula (1) (p. 3) | The last bound ends in 𝔪_a without a rank operator. |
+| 1.1, proof (p. 3) | X_n, the rightward j′_a in the diagram, and the local-ring subscripts a/b. |
+| 1.1, proof, (iii bis) (p. 3) | M rather than M_a. |
+| 2.1, proof (p. 5) | 𝔥 ⊃ 𝔫 and 𝔥 ⊂ 𝔤^T after 𝔠 = 𝔤^T, and again 𝔥 ⊃ 𝔫. |
+| 2.1, proof (p. 6) | T(K), although the base field is k. |
+| 2.2, proof (p. 7) | ψ = φ ∘ q, with the composition reversed. |
+| 2.1, proof (p. 8) | int(v)·C′ → u, and the conclusion C = H. |
+| 2.3, proof (p. 9) | Concludes C ⊂ G rather than the statement's C ⊂ H. |
+| 2.6, formula (†) (p. 11) | The left-hand side ends in c_0 and omits intermediate terms; the prose uses G(K). |
+| 2.8, proof (p. 12) | ``regular in C'' while proving regularity in G. |
+| 3.1, proof (p. 15) | The exponent n − r − 1, with r where the notation is ρ. |
+| 4.1, proof (p. 18) | Capital Ad(a) instead of ad(a). |
+| 4.7, proof (p. 21) | 𝔡′ = u(𝔡_A) is said to contain a_A; the action is written ad(b)_𝔡. |
+| §5, setup (p. 22) | X names both the quotient and G × W(𝔥). |
+| 5.5, proof (p. 26) | H = M_a^0, although H was not assumed connected. |
+| 6.1, proof (p. 27) | N = M rather than N = M_a. |
