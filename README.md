@@ -73,19 +73,6 @@ Per-exposé detail: [`docs/status.md`](docs/status.md) (checklist) and
 [`docs/formalization.md`](docs/formalization.md) (what the Lean proves, with
 declaration names). Sources and licenses: [`COPYRIGHT.md`](COPYRIGHT.md).
 
-## Claiming work
-
-To translate an exposé or formalize part of one, [open an
-issue](https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique/issues/new/choose)
-with the **Translation** or **Formalization** template and say what you will
-do (which SGA, which exposé or section). Check
-[`docs/status.md`](docs/status.md) and the open issues first, so that two
-people do not take the same text. An exposé is translated before it is
-formalized.
-
-How to write the TeX and the Lean:
-[`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md).
-
 ## Build
 
 Needs [elan](https://github.com/leanprover/elan) and a TeX Live with `latexmk`.
