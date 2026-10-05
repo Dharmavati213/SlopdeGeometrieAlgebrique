@@ -1,10 +1,11 @@
 # SGA 1, Exposé IX — Descent of étale morphisms. Application to the fundamental group
 
-Full English draft of the whole exposé: all six sections and the
-bibliography, with proofs, footnotes, and all diagrams. It was translated
-from the corrected SMF branch in four chunks. A second reviewer then
-checked each chunk against the French (2026-09-24). Scholarly
-proofreading remains outstanding.
+Complete English draft of the exposé: all six sections and the
+bibliography, with proofs, footnotes, and all diagrams. Translated in
+four chunks from the corrected SMF branch of
+[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2); a second
+reviewer checked each chunk against the French (2026-09-24). Scholarly
+proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -15,35 +16,26 @@ proofreading remains outstanding.
 | [`en-4.tex`](en-4.tex) | §6 A fundamental exact sequence. Descent by morphisms with relatively connected fibers (IX.6.1–IX.6.12); bibliography |
 | [`SGA1-IX.pdf`](SGA1-IX.pdf) | Compiled English draft |
 
-Build with `make -C translation/SGA1/ExposeIX` from the repository root,
-or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsbook`, `xy`, `mathrsfs`, `enumitem`, and
-`hyperref`.
+Build: `make -C translation/SGA1/ExposeIX` (TeX Live with `latexmk`,
+`amsbook`, `xy`, `mathrsfs`, `enumitem`, `hyperref`); `make tex` builds
+every exposé.
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, lines 14731–16490, from the chapter
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), lines
+14731–16490: from the chapter
 `Descente des morphismes \'etales. Application au groupe fondamental`
-and `\label{IX}` up to, but not including, the chapter of Exposé X.
-This covers original page markers 228–260.
-The French TeX and PDF are not included in this repository.
+and `\label{IX}` up to, but not including, the chapter of Exposé X;
+original page markers 228–260. The French TeX and PDF are not in this
+repository.
 
-The body fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md),
-section “SGA 1 — front matter and Exposés IV, V, VIII–XIII”, and use the
-shared package [`sga1-en.sty`](../sga1-en.sty). All non-index labels,
-`\Ref`/`\eqref`/`\cite` keys, footnotes, and diagrams are kept. The
-bibliography keeps `\begin{thebibliography}{D}{IX.7}` (numbered section
-7). References to other exposés print the source's numbers:
-`VIII~\Ref{VIII.4.3}` prints “VIII 4.3”, as in the SMF volume. Original
-page numbers remain as `% original p. N` comments. Indexes and SMF
-page-layout commands are omitted.
-
-House rules applied here as in the other new exposés: *n°* / *numéro*
-is rendered “no.” (`\No`), and *changement de base* is rendered “change
-of base”, the Exposé VI term. After the reviews, “base change” was
-replaced by “change of base” throughout Exposés IV, V, VIII, IX, and X.
+The fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md), section
+“SGA 1 — front matter and Exposés IV, V, VIII–XIII” (labels, reference
+and citation keys, page markers, omitted indexes), and use the shared
+package [`sga1-en.sty`](../sga1-en.sty). The bibliography keeps
+`\begin{thebibliography}{D}{IX.7}` (numbered section 7). *n°* /
+*numéro* is rendered “no.” (`\No`), and *changement de base* is rendered
+“change of base”, the Exposé VI term.
 
 In IX.5.8 *courbe simple* is rendered literally as “simple curve”. The
 old sense “non-singular” is probably intended; compare *simple* for
@@ -66,9 +58,8 @@ Exposé IX terminology:
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX. They have
-been retained in the translation, in accordance with the convention
-against silently repairing the source.
+Apparent slips in the corrected French TeX, kept as printed per
+[`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -105,25 +96,24 @@ presentation follows from properness over a locally noetherian `S`.
 
 ## Validation
 
-The local checker `source/SGA1/check_chunk.py`, which is not in the
-repository, finds for each chunk the same non-index labels, reference
-and citation keys, footnotes, diagrams, displayed formulas, list items,
-and statement environments as in the corrected French. For the whole
-exposé these are 67 labels, 139 references, 6 citations, 9 footnotes,
-8 diagrams, and 78 displays. The wrapper compiles to a 21-page PDF with
-no errors or undefined references.
+`source/SGA1/check_chunk.py` (a local script, not in the repository)
+compared each chunk with the corrected French and found the same
+non-index labels, reference and citation keys, footnotes, diagrams,
+displayed formulas, list items, and statement environments. For the
+whole exposé these are 67 labels, 139 references, 6 citations,
+9 footnotes, 8 diagrams, and 78 displays. The wrapper compiles to a
+21-page PDF with no errors or undefined references.
 
-A second reviewer checked all four chunks against the French:
+Fixes by the second reviewer:
 
-- en-1.tex: three fixes (two renderings of *numéro* as “no.”, and a
+- `en-1.tex`: three fixes (two renderings of *numéro* as “no.”, and a
   restored second “if” after IX.3.1);
-- en-3.tex: three fixes to ordinals (“nth”);
-- en-2.tex and en-4.tex: no fixes.
+- `en-3.tex`: three fixes to ordinals (“nth”);
+- `en-2.tex` and `en-4.tex`: no fixes.
 
 The reviewer confirmed the translator's source points, added those on
 the proof of IX.6.1 (`b'`) and IX.6.12 (*et*/*est*), and settled IX.4.12
-as above. These checks do not settle the mathematical questions above;
-scholarly proofreading remains outstanding.
+as above.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

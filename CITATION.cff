@@ -10,7 +10,7 @@ url: "https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique"
 abstract: >
   Unofficial English translations of Grothendieck's Séminaire de
   Géométrie Algébrique du Bois Marie (SGA), together with a Lean 4
-  formalization on mathlib. SGA 1 and SGA 2 are translated in full;
+  formalization on mathlib. SGA 1, SGA 2 and SGA 3 are translated in full;
   SGA 1 is formalized exposé by exposé, and SGA 2 in part (Exposés I–VII).
 keywords:
   - SGA
@@ -18,6 +18,7 @@ keywords:
   - algebraic geometry
   - étale fundamental group
   - local cohomology
+  - group schemes
   - Lean 4
   - mathlib
 license: MIT
@@ -46,3 +47,12 @@ references:
       - type: other
         value: "arXiv:math/0511279"
         description: SMF recomposition
+  - type: book
+    title: "Schémas en groupes (SGA 3)"
+    authors:
+      - family-names: Demazure
+        given-names: Michel
+      - family-names: Grothendieck
+        given-names: Alexander
+    url: "https://webusers.imj-prg.fr/~patrick.polo/SGA3/"
+    notes: "Recomposition edited by P. Gille and P. Polo"

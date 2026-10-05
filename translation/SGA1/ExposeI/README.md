@@ -1,11 +1,12 @@
 # SGA 1, Exposé I — Étale morphisms
 
-Full English draft: the opening convention and **all eleven sections**,
-including proofs, footnotes, and the closing discussion of geometrically
-unibranch schemes. On 2026-09-24 the English was compared with the
-corrected French sentence by sentence (see
+Complete English draft of the exposé: the opening convention and all
+eleven sections, with proofs, footnotes, and the closing discussion of
+geometrically unibranch schemes. Translated from the corrected SMF
+branch of [arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2);
+compared with the French sentence by sentence on 2026-09-24 (see
 [Review against the French](#review-against-the-french-2026-09-24)).
-Deeper scholarly proofreading remains outstanding.
+Deeper scholarly proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -19,25 +20,21 @@ Deeper scholarly proofreading remains outstanding.
 | [`en-11.tex`](en-11.tex) | Examples and geometrically unibranch schemes |
 | [`SGA1-I.pdf`](SGA1-I.pdf) | Compiled English draft |
 
-Build with `make -C translation/SGA1/ExposeI` from the repository root,
-or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsbook`, `xy`, and `hyperref`.
+Build: `make -C translation/SGA1/ExposeI` (TeX Live with `latexmk`,
+`amsbook`, `xy`, `hyperref`); `make tex` builds every exposé.
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, from `\chapter{Morphismes \'etales}` and
-`\label{I}` up to, but not including, the chapter beginning
-`\chapter{Morphismes lisses:...}` and `\label{II}`.
-This covers printed SMF pages 1–23 and original page markers 1–28.
-The French TeX and PDF are not included in this repository.
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), from
+`\chapter{Morphismes \'etales}` and `\label{I}` up to, but not including,
+the chapter beginning `\chapter{Morphismes lisses:...}` and
+`\label{II}`: printed SMF pages 1–23, original page markers 1–28. The
+French TeX and PDF are not in this repository.
 
-The body fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md):
-retain the corrected branch, all non-index labels, proofs, the diagram, and translated
-footnotes; omit indexes and source pagination machinery. Original page
-numbers remain as comments. The standalone wrapper is separate from
-the translation fragments.
+The fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md): the
+corrected branch, all non-index labels, proofs, diagrams, and translated
+footnotes are kept; indexes and source pagination machinery are omitted;
+original page numbers remain as comments.
 
 Exposé I terminology:
 
@@ -58,20 +55,20 @@ Exposé I terminology:
 | clôture normale (of a ring) | integral closure |
 | compactifié de Z | profinite completion of Z |
 
-The historical synonym **net** is retained where the source uses it;
-Definition 3.2 identifies it with **unramified**. The author's word
-*multiplodoque* is retained. Informal asides and requests to supply
-examples are translated as part of the text.
+The historical synonym “net” is kept where the source uses it;
+Definition 3.2 identifies it with “unramified”. The author's word
+*multiplodoque* is kept. Informal asides and requests to supply examples
+are translated as part of the text.
 
-The corrected source assigns **9.2** to both a corollary and the next
-proposition. Both numbers are retained, with the original labels
-`I.9.2` and `prop:I.9.2` and distinct PDF destinations. The equation
-tagged `(*)` retains its label `eq:I.9.5.*`.
+The corrected source assigns 9.2 to both a corollary and the next
+proposition. Both numbers are kept, with the source labels `I.9.2` and
+`prop:I.9.2` and distinct PDF destinations. The equation tagged `(*)`
+keeps its label `eq:I.9.5.*`.
 
-References within this draft use `\ref`. For references beyond its
-scope, `\SourceRef{source-label}{printed-number}` preserves the source
-key and prints the original number without inventing a destination;
-it uses `\ref` if that label later becomes available.
+References within the exposé use `\ref`. A reference beyond it is
+written `\SourceRef{source-label}{printed-number}`, which keeps the
+source key and prints the source's number without inventing a
+destination; it becomes a `\ref` if that label is defined.
 
 ## Review against the French (2026-09-24)
 
@@ -83,15 +80,13 @@ change: an omitted word was restored in `en-10.tex` (“we shall admit
 mistranslations, or formula errors. It confirmed that the statement
 numbering of §9 matches the source (Proposition 9.1, Corollary 9.2,
 Proposition 9.2, …) and that all sixteen labels of `en-09.tex` are
-present. It confirmed all twelve source points below as present in the
-French, and it found the additional points listed after them.
+present. It confirmed all twelve source points of the first table below
+in the French and found the further points of the second.
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX and the
-matching PDF. They have been retained in the translation, in accordance
-with the convention against silently repairing the source. The 2026-09-24
-review confirmed each of the following in the French.
+Apparent slips in the corrected French TeX and the matching PDF, kept as
+printed per [`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -108,8 +103,7 @@ review confirmed each of the following in the French.
 | I.10.7 and I.10.9 | “Upper semicontinuous” | Check the direction of semicontinuity against the source's conventions and the case of an open immersion. |
 | I.11(b) | A power series ring in the first example, a polynomial ring later | The corrected branch changes only the first occurrence; both forms are retained. |
 
-Additional points found by the 2026-09-24 review, also retained as
-printed:
+Further points found by the 2026-09-24 review, also kept as printed:
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -122,33 +116,27 @@ printed:
 | Before I.10.3; I.10.4(ii) | An algebra “unramified over `X`” | Arguably over `Y`. |
 | I.10.9 | “over U” with `U` outside math mode | Typographic slip. |
 
-Validation: `make tex` succeeds. All 82 non-index source labels
-(including the 69 numbered statements), 91 reference targets, ten
-footnotes, and twelve displayed formulas or diagrams were checked
-against the corrected source. The displays include both diagrams
-and the tagged equation. Compiled statement numbers match the original,
-including the repeated 9.2. The PDF build has no TeX warnings,
-unresolved references, or duplicate destinations. Representative pages
-and the diagrams were visually checked.
-
-These checks, and the sentence-by-sentence review, do not settle the
-mathematical questions above; deeper scholarly proofreading remains
-outstanding.
-
 ### Found during the Lean formalization (2026-09)
 
-These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean statements use the corrected forms.
+Found while formalizing the exposé in `lean/SGA/SGA1/ExposeI.lean`
+(modules in `lean/SGA/SGA1/ExposeI/`); the Lean statements use the
+corrected forms.
 
 | Location | Source wording | Point |
 | --- | --- | --- |
 | I.9.8 | The trace formula is stated for `F` monic separable with no restriction on its coefficients. | It needs `F ∈ A[t]`: for `F = t² + t/2` over `ℤ ⊆ ℚ` the conclusion fails. The Lean statement (`SGA.SGA1.ExposeI.forall_trace_mul_root_pow_mem_iff`) adds this hypothesis. |
-| I.10.7 and I.10.9 | “upper semicontinuous” | With `n(y)` the number of geometric points of the fibre, the function is lower semicontinuous: `n(y) ≤ n(y')` for `y'` near `y` (an open immersion gives `n = 1` on the open set and `0` off it). The Lean statements use this direction (`SGA.SGA1.ExposeI.geometricFiberCard_upperSemicontinuous_Statement`). |
+| I.10.7 and I.10.9 | “upper semicontinuous” | With `n(y)` the number of geometric points of the fiber, the function is lower semicontinuous: `n(y) ≤ n(y')` for `y'` near `y` (an open immersion gives `n = 1` on the open set and `0` off it). The Lean statements use this direction (`SGA.SGA1.ExposeI.geometricFiberCard_upperSemicontinuous_Statement`). |
 
-## Continuation
+## Validation
 
-All of SGA 1 is now translated (see
-[`../../README.md`](../../README.md)). Lean for this exposé lives at
-`lean/SGA/SGA1/ExposeI.lean`, with modules in `lean/SGA/SGA1/ExposeI/`.
+`make tex` succeeds. All 82 non-index source labels (including the
+69 numbered statements), 91 reference targets, ten footnotes, and twelve
+displayed formulas or diagrams were checked against the corrected
+source. The displays include both diagrams and the tagged equation.
+Compiled statement numbers match the source, including the repeated 9.2.
+The PDF build has no TeX warnings, unresolved references, or duplicate
+destinations. Representative pages and the diagrams were checked
+visually.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

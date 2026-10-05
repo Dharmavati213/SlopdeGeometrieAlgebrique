@@ -1,21 +1,19 @@
-# SGA 2, Exposé XI
+# SGA 2, Exposé XI — Application to the Picard group
 
-Unofficial English draft of Application to the Picard group.
-Scholarly proofreading remains outstanding.
+English translation of the corrected SMF branch (`orig = false`) of
+[arXiv:math/0511279](https://arxiv.org/abs/math/0511279); the French is not
+in this repository. Draft; not yet compared with the French sentence by
+sentence.
 
-Build: `make -C translation/SGA2/ExposeXI` from the repository root.
+| File | Contents |
+| --- | --- |
+| [`SGA2-XI.tex`](SGA2-XI.tex) | Standalone wrapper (loads [`../sga2-en.sty`](../sga2-en.sty)) and “About this draft” notice |
+| [`en-body.tex`](en-body.tex) | §1 Comparison of $\mathrm{Pic}(\hat X)$ and of $\mathrm{Pic}(Y)$; §2 Comparison of $\mathrm{Pic}(X)$ and of $\mathrm{Pic}(\hat X)$; §3 Comparison of $\mathbf{P}(X)$ and of $\mathbf{P}(U)$ (XI.1.1–XI.3.18) |
+| [`SGA2-XI.pdf`](SGA2-XI.pdf) | Compiled PDF |
 
-Source: corrected SMF branch (`orig = false`) of
-[arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-The French TeX and PDF are not included in this repository.
+Build: `make -C translation/SGA2/ExposeXI`.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+## Source points retained as printed
 
-## Source points for scholarly review
-
-Apparent issues present in the corrected French TeX have been retained
-in the translation, in accordance with the convention against silently
-repairing the source. Typical retained slips include mismatched
-indices, truncated formulae, and grammar in the SMF file.
-Scholarly proofreading remains outstanding.
+None recorded yet. Apparent slips in the French that the translation keeps
+belong here, with their location.

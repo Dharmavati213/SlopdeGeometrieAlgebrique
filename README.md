@@ -29,60 +29,61 @@ Let's build the future of slop, together. 🌟
 
 ---
 
-Unofficial English translations of Grothendieck’s *Séminaire de Géométrie
-Algébrique du Bois Marie* (SGA), together with a Lean 4 formalization
-on [mathlib](https://github.com/leanprover-community/mathlib4).
+Unofficial English translations of Grothendieck's *Séminaire de Géométrie
+Algébrique du Bois Marie* (SGA), with a Lean 4 formalization built on
+[mathlib](https://github.com/leanprover-community/mathlib4).
 
-This is a working tree, not a finished edition. SGA 1 is translated in
-full (front matter and Exposés I–VI, VIII–XIII; VII does not exist), as is
-SGA 2 (Introduction and Exposés I–XIV);
-SGA 1 is formalized in Lean against mathlib exposé by exposé, with the open items listed in
-[`docs/formalization.md`](docs/formalization.md) and the out-of-scope ones in
-[`lean/SGA/Foundations/README.md`](lean/SGA/Foundations/README.md). SGA 2 has partial
-Lean formalizations of Exposés I–VII, with exact coverage and remaining
-gaps recorded in [`docs/formalization.md`](docs/formalization.md).
+This is a working tree, not a finished edition.
+
+- **English.** SGA 1, SGA 2 and SGA 3 are translated in full (SGA 3 without
+  its indexes). Every SGA 1 exposé has been checked against the French by a
+  second reader; SGA 2 and SGA 3 have not yet been checked independently.
+- **Lean.** SGA 1 is formalized exposé by exposé. Its open items are listed in
+  [`docs/formalization.md`](docs/formalization.md), and the results it quotes
+  from other theories (Hodge theory, GAGA, SGA 4, …) in
+  [`lean/SGA/Foundations/README.md`](lean/SGA/Foundations/README.md).
+  SGA 2 Exposés I–VII are partly formalized.
 
 ## Layout
 
 ```
-translation/     English TeX + PDF
+translation/     English TeX and PDFs: SGA1/, SGA2/, SGA3/
 lean/            Lean 4 library (Lake + mathlib)
-docs/            status and formalization notes
-notes/           agents' working notes: who's on what, experience, what's hard
+docs/            status checklist and formalization notes
+notes/           agents' working notes: who is on what, what was hard
 LICENSES/        full texts of licenses other than MIT
 ```
 
 | Work | State |
 | --- | --- |
-| SGA 1, front matter and Exposés I–VI, VIII–XIII — English | full drafts ([`translation/SGA1/`](translation/SGA1/)) |
-| SGA 1, Exposés I, II, IV–VI, VIII, XI — Lean | every numbered statement proved, apart from recorded restrictions and out-of-scope items |
-| SGA 1, Exposés III, IX, X, XIII — Lean | mostly proved; open items in [`docs/formalization.md`](docs/formalization.md) |
-| SGA 1, Exposé XII — Lean | §§1–2, and §3 on the spaces of points `X(ℂ)`; GAGA (§4) and the comparisons that need coherent analytic sheaves are not formalized |
-| SGA 1 prerequisites missing from mathlib | [`lean/SGA/Foundations/`](lean/SGA/Foundations/) |
-| SGA 2, Introduction–XIV — English | drafts in `translation/SGA2/` |
-| SGA 2, Exposés I–III — Lean | partial; locally closed internal Hom/sheaf Ext, arbitrary-coefficient extension sequences, group- and sheaf-valued nested-support sequences, general spectral sequences, noetherian affine comparison, II.8–II.11 algebra, all-degree depth and restriction criteria, Hartogs, connected components, component chains in codimension, and catenary equidimensionality |
-| SGA 2, Exposé IV — Lean | partial; canonical representation, IV.3.1–3.2 duality criteria, nonlocal finite-length duality, supported injective envelopes, finite coinduction, quotient annihilators, locally Artinian completion equivalence and duality transfer, Macaulay quotient-dual colimit, orthogonality, cyclic/socle criterion, and regular-local global dimension with arbitrary-module upper Ext vanishing |
-| SGA 2, Exposé V — Lean | partial; canonical local duality, sharp upper vanishing, top nonvanishing, Artinianity and completed-dual finiteness/dimension bounds over arbitrary noetherian local rings; exact completed top-dual dimension and associated-prime formula; algebraic change of rings, V.3.2's functorial first-quadrant module spectral sequence with natural module-linear E₂ and source-cohomology abutment and a resolution-independent finite filtration, V.3.3's component criterion, V.3.4's affine-complement codimension bound, and V.3.5–V.3.6's full finite-length and punctured-depth criteria over quotients of regular local rings |
-| SGA 2, Exposé VI — Lean | partial; genuine internal Hom and tensor support representations, module-derived supported Ext, actual local Ext and excision, long exact sequences, spectral functors with E₂ and Ext abutment comparisons, and affine degree-zero quotient-Hom colimits |
-| SGA 2, Exposé VII — Lean | partial; actual internal-Hom zero detection from literal stalk support on locally noetherian schemes |
-| SGA 2, Exposés VIII–XIV — Lean | not started |
-| SGA 3–7 | not started |
+| SGA 1, English | front matter and Exposés I–VI, VIII–XIII ([`translation/SGA1/`](translation/SGA1/)); there is no Exposé VII |
+| SGA 1, Lean: I, II, IV–VI, VIII, XI | every numbered statement proved, apart from recorded restrictions and out-of-scope items |
+| SGA 1, Lean: III, IX, X, XIII | mostly proved |
+| SGA 1, Lean: XII | §§1–2, and §3 on the spaces of points `X(ℂ)`; GAGA (§4) and the comparisons that need coherent analytic sheaves are not formalized |
+| SGA 1, prerequisites missing from mathlib | [`lean/SGA/Foundations/`](lean/SGA/Foundations/) |
+| SGA 2, English | Introduction and Exposés I–XIV ([`translation/SGA2/`](translation/SGA2/)) |
+| SGA 2, Lean: V | every numbered statement proved (local duality, structure of `Hⁱ(M)`) |
+| SGA 2, Lean: I–IV, VI | partial: local cohomology with closed and locally closed supports and its spectral sequence (I), affine comparisons and Koszul complexes (II), depth (III), dualizing modules and functors (IV), Ext with supports (VI) |
+| SGA 2, Lean: VII | VII.1.3 on locally noetherian schemes |
+| SGA 2, Lean: VIII–XIV | not started |
+| SGA 3, English | foreword, introduction and Exposés I–XXVI ([`translation/SGA3/`](translation/SGA3/)) |
+| SGA 3 Lean, SGA 4–7 | not started |
 
-Tick-list: [`docs/status.md`](docs/status.md).
-Sources and licenses: [`COPYRIGHT.md`](COPYRIGHT.md).
+Per-exposé detail: [`docs/status.md`](docs/status.md) (checklist) and
+[`docs/formalization.md`](docs/formalization.md) (what the Lean proves, with
+declaration names). Sources and licenses: [`COPYRIGHT.md`](COPYRIGHT.md).
 
 ## Claiming work
 
-To translate an exposé or formalize a stretch of one, [open an
+To translate an exposé or formalize part of one, [open an
 issue](https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique/issues/new/choose)
-and say what you intend to do (which SGA, which exposé or section).
-That is how a claim is made; it keeps two people off the same text.
+with the **Translation** or **Formalization** template and say what you will
+do (which SGA, which exposé or section). Check
+[`docs/status.md`](docs/status.md) and the open issues first, so that two
+people do not take the same text. An exposé is translated before it is
+formalized.
 
-Use the **Translation** or **Formalization** template. Look at
-[`docs/status.md`](docs/status.md) and at open issues first. English of
-an exposé comes before Lean for that exposé.
-
-How to write the TeX or the Lean once you have claimed it:
+How to write the TeX and the Lean:
 [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 ## Build
@@ -90,40 +91,41 @@ How to write the TeX or the Lean once you have claimed it:
 Needs [elan](https://github.com/leanprover/elan) and a TeX Live with `latexmk`.
 
 ```bash
-make            # Lean + PDF
+make            # Lean + PDFs
 make lean       # lake build in lean/
-make tex        # PDFs of all of SGA 1 and SGA 2
+make tex        # every SGA 1 and SGA 2 PDF, and the SGA 3 volume
 ```
 
-First Lean build, from `lean/`:
+For the first Lean build, download mathlib's compiled files before building:
 
 ```bash
 cd lean
-lake exe cache get    # download mathlib oleans; do this first
+lake exe cache get
 lake build
 ```
 
 Open `lean/` in VS Code (Lean 4 extension) or Neovim (`lean.nvim`).
 The root modules are `SGA.SGA1.ExposeI` … `SGA.SGA1.ExposeXIII` (no Exposé VII),
-`SGA.Foundations`, `SGA.SGA2.ExposeI`, `SGA.SGA2.ExposeII`, `SGA.SGA2.ExposeIII`, `SGA.SGA2.ExposeIV`,
-`SGA.SGA2.ExposeV`, `SGA.SGA2.ExposeVI`, and `SGA.SGA2.ExposeVII`.
+`SGA.Foundations`, and `SGA.SGA2.ExposeI` … `SGA.SGA2.ExposeVII`.
 
-To check all imported SGA 1 and foundation declarations (resp. SGA 2 declarations) for
-additional axioms, run `lake env lean CheckSGA1Axioms.lean` (resp. `CheckSGA2Axioms.lean`)
-from `lean/`.
+To check that no declaration depends on an axiom beyond `propext`,
+`Classical.choice` and `Quot.sound`, run `lake env lean CheckSGA1Axioms.lean`
+(SGA 1 and Foundations) or `lake env lean CheckSGA2Axioms.lean` (SGA 2) from
+`lean/`.
 
-There is no CI: the full Lean build outgrows GitHub's hosted runners. Run `make lean`
-(and `make tex` if you touched TeX) locally before opening a pull request.
+There is no CI: the full Lean build is too large for GitHub's hosted runners.
+Run `make lean`, and `make tex` if you changed TeX, before opening a pull
+request.
 
 ## License
 
 [MIT](LICENSE): the Lean code, the English translation, the docs, and the repo tooling.
 Two exceptions keep the license they came with:
 
-- SGA 1, Exposé III, English (`translation/SGA1/ExposeIII/`): contributed under
+- SGA 1, Exposé III, English (`translation/SGA1/ExposeIII/`):
   [CC BY-SA 4.0](translation/SGA1/ExposeIII/LICENSE).
 - `lean/SGA/SGA2/ExposeII/ProjectiveComplexLift.lean`: adapted from mathlib,
   [Apache-2.0](LICENSES/Apache-2.0.txt).
 
-Details: [`COPYRIGHT.md`](COPYRIGHT.md). This is not an official edition of SGA. The
-French original is not in this repository, and no license here covers it.
+Details: [`COPYRIGHT.md`](COPYRIGHT.md). This is not an official edition of SGA.
+The French original is not in this repository, and no license here covers it.

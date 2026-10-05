@@ -1,18 +1,27 @@
 # Translation conventions
 
-## SGA 1, Exposé VI
+Rules for the English TeX, by volume:
+
+- [SGA 1, Exposés I, II, III and VI](#sga-1-exposés-i-ii-iii-and-vi): the
+  exposés with their own wrappers. The rules were written for Exposé VI.
+- [SGA 1, front matter and Exposés IV, V, VIII–XIII](#sga-1--front-matter-and-exposés-iv-v-viiixiii):
+  the exposés that share [`SGA1/sga1-en.sty`](SGA1/sga1-en.sty).
+- [SGA 2](#sga-2).
+- SGA 3: [`SGA3/CONVENTIONS.md`](SGA3/CONVENTIONS.md).
+
+## SGA 1, Exposés I, II, III and VI
 
 Translate the French LaTeX **exactly**, as a mathematical text, into English LaTeX.
 Do **not** modernize, abridge, paraphrase, add commentary, or “fix” Grothendieck’s arguments.
 Take the **corrected** SMF branch: whenever you see `\ifthenelse{\boolean{orig}}{A}{B}`, keep **B** only.
 
-## Output
+### Output
 
 - Write **only** a LaTeX body fragment (no `\documentclass`, no preamble, no `\begin{document}`).
 - Start at the first `\section` or `\chapter` of your chunk (translated).
 - The fragment must cover **every sentence** of the assigned French chunk.
 
-## Drop (do not copy)
+### Drop (do not copy)
 
 - `\oldindexnot{...}` and `\label{indnot:...}`
 - `\index{...}`
@@ -22,7 +31,7 @@ Take the **corrected** SMF branch: whenever you see `\ifthenelse{\boolean{orig}}
 - `\refstepcounter{chapter}` and the “VII n’existe pas” TOC line at the very end of the exposé (only the last chunk: omit those two lines)
 - SMF page-break hacks
 
-## Keep
+### Keep
 
 - Every `\label{...}` that is **not** `indnot:*`
 - Equation tags `(i)`, `(ii)`, `(I)`, `(II)`, … and `\eqref{...}`
@@ -30,7 +39,7 @@ Take the **corrected** SMF branch: whenever you see `\ifthenelse{\boolean{orig}}
 - Footnotes, translated
 - Bibliography items, with English bibliographic punctuation as in the corrected branch
 
-## Environments (English names, same numbering)
+### Environments (English names, same numbering)
 
 | French source | English |
 |---|---|
@@ -43,7 +52,7 @@ Take the **corrected** SMF branch: whenever you see `\ifthenelse{\boolean{orig}}
 
 Keep the original `\label{VI.m.n}` on each statement.
 
-## Terminology (mandatory)
+### Terminology (mandatory)
 
 | French | English |
 |---|---|
@@ -86,13 +95,13 @@ Keep Grothendieck’s own notation: `\cal{E}`, `\cal{F}`, `\cal{G}`, `\SheafHom`
 
 Use `\No` for “n°”. Quotes: use `` ... '' (English). Emphasis: keep `\emph`.
 
-## Macros already defined in the master file
+### Macros already defined in the master file
 
 `\Hom`, `\SheafHom`, `\Ob`, `\Fl`, `\Ens`, `\Cat`, `\id`, `\isomto`, `\cart`, `\Fib`, `\Lim`, `\Isom`, `\Aut`, `\Univ`, `\Sch`, `\cf`, `\Cf`, `\ie`, `\resp`, `\loccit`, `\ptbl`, `\quoi`, `\mto`, `\to` (longrightarrow), `\No`, `\from`.
 
 Do not redefine them.
 
-## Style of English
+### Style of English
 
 Write in the same register as the original: slightly formal mid-century mathematical French rendered into clear mathematical English. Prefer “one” / passive over “we” when the French is impersonal (“on dit que” → “one says that” or “we say that”; either is fine if used consistently). Keep “I say that” where Grothendieck writes “Je dis que”.
 

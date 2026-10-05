@@ -1,21 +1,20 @@
-# SGA 2, Exposé VIII
+# SGA 2, Exposé VIII — The finiteness theorem
 
-Unofficial English draft of The finiteness theorem.
-Scholarly proofreading remains outstanding.
+English translation of the corrected SMF branch (`orig = false`) of
+[arXiv:math/0511279](https://arxiv.org/abs/math/0511279); the French is not
+in this repository. Draft; not yet compared with the French sentence by
+sentence.
 
-Build: `make -C translation/SGA2/ExposeVIII` from the repository root.
+| File | Contents |
+| --- | --- |
+| [`SGA2-VIII.tex`](SGA2-VIII.tex) | Standalone wrapper (loads [`../sga2-en.sty`](../sga2-en.sty)) and “About this draft” notice |
+| [`en-1.tex`](en-1.tex) | §1 A spectral sequence of biduality (VIII.1.1–VIII.1.4) |
+| [`en-2.tex`](en-2.tex) | §2 The finiteness theorem; §3 Applications (VIII.2.1–VIII.3.2); bibliography |
+| [`SGA2-VIII.pdf`](SGA2-VIII.pdf) | Compiled PDF |
 
-Source: corrected SMF branch (`orig = false`) of
-[arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-The French TeX and PDF are not included in this repository.
+Build: `make -C translation/SGA2/ExposeVIII`.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+## Source points retained as printed
 
-## Source points for scholarly review
-
-Apparent issues present in the corrected French TeX have been retained
-in the translation, in accordance with the convention against silently
-repairing the source. Typical retained slips include mismatched
-indices, truncated formulae, and grammar in the SMF file.
-Scholarly proofreading remains outstanding.
+None recorded yet. Apparent slips in the French that the translation keeps
+belong here, with their location.

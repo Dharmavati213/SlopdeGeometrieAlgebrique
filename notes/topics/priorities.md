@@ -81,15 +81,21 @@ it as it is would double the cost. Measured on 2026-10-03:
 - **Coverage can't be audited against the text.** 110 of SGA 2's ~2,960
   theorems/lemmas carry an SGA number in the docstring, against ~2,640 of
   SGA 1's ~4,790. Numbered docstrings come first; renaming comes second.
-- **Prose.** The SGA 2 sections of `docs/formalization.md` use
-  *actual/genuine/original* about 690 times. The conventions ban those
-  words in names; the docs should follow suit.
+- **Prose.** Done for the docs (docs-1005, 2026-10-05): `docs/formalization.md`,
+  `docs/status.md` and `lean/README.md` no longer use *actual/genuine/original*. The SGA 2
+  module docstrings still do (548 files under `lean/SGA/SGA2/`), and several of them overclaim
+  or are stale; see `../log/2026-10-05-docs-1005-docs-rewrite.md`.
 
 Suggested order: move the shared commutative algebra down; decide on one
 cohomology; add SGA numbers to SGA 2 docstrings exposé by exposé; then write
 SGA 2 `CONVENTIONS` (or extend SGA 1's to cover SGA 2).
 
 ## 4. The open SGA 1 statements: a few blockers unlock several rows (claude-1003, 2026-10-03)
+
+(docs-1005, 2026-10-05: this item is out of date. EGA II 7.1.7, EGA 0_III 10.3.1 and
+EGA IV 8.8.2/8.10.5 are proved, and with them IX.2.6, IX.4.6, IX.4.9, IX.4.12, IX.6.8, IX.6.11
+and X.3.8 over every locally noetherian base. The current list is the Open statements table in
+`docs/formalization.md`. The text below is the 2026-10-03 analysis.)
 
 17 in-scope statements are open (table in `docs/formalization.md`). Most
 share a missing prerequisite, so attack the prerequisite, not the row:

@@ -2,12 +2,13 @@
 
 By Mme M. Raynaud, after unpublished notes of A. Grothendieck.
 
-Full English draft of the whole exposé: the introduction, sections 0–4,
+Complete English draft of the exposé: the introduction, sections 0–4,
 the two appendices (§§5–6), and the bibliography, with proofs, the
-footnote, and all diagrams. It includes M. Raynaud's 2003 remark
-XIII 2.13 (MR). It was translated from the corrected SMF branch in eight
-chunks. A second reviewer then checked each chunk against the French
-(2026-09-24). Scholarly proofreading remains outstanding.
+footnote, and all diagrams, including M. Raynaud's 2003 remark
+XIII 2.13 (MR). Translated in eight chunks from the corrected SMF branch
+of [arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2); a second
+reviewer checked each chunk against the French (2026-09-24). Scholarly
+proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -22,47 +23,36 @@ chunks. A second reviewer then checked each chunk against the French
 | [`en-8.tex`](en-8.tex) | §5 Appendix I: Variations on Abhyankar's lemma; §6 Appendix II: finiteness theorem for direct images of stacks; bibliography |
 | [`SGA1-XIII.pdf`](SGA1-XIII.pdf) | Compiled English draft |
 
-Build with `make -C translation/SGA1/ExposeXIII` from the repository
-root, or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsbook`, `xy`, `mathrsfs`, `enumitem`, and
-`hyperref`.
+Build: `make -C translation/SGA1/ExposeXIII` (TeX Live with `latexmk`,
+`amsbook`, `xy`, `mathrsfs`, `enumitem`, `hyperref`); `make tex` builds
+every exposé.
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, lines 20814–25882, from the chapter
-`Propret\'e cohomologique des faisceaux d'ensembles et des faisceaux de
-groupes non commutatifs` and `\label{XIII}` to the end of the exposé
-(its bibliography). The notation and terminology indexes of the volume,
-which follow it, are omitted.
-This covers original page markers 344–439.
-The French TeX and PDF are not included in this repository.
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), lines
+20814–25882: from the chapter `Propret\'e cohomologique des faisceaux
+d'ensembles et des faisceaux de groupes non commutatifs` and
+`\label{XIII}` to the end of the exposé (its bibliography); original page
+markers 344–439. The notation and terminology indexes of the volume,
+which follow it, are omitted. The French TeX and PDF are not in this
+repository.
 
-The body fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md),
-section “SGA 1 — front matter and Exposés IV, V, VIII–XIII”, and use the
-shared package [`sga1-en.sty`](../sga1-en.sty). All non-index labels,
-`\Ref`/`\eqref`/`\cite` keys, the footnote, and all diagrams are kept.
-The bibliography keeps `\begin{thebibliography}{0}{XIII.7}` (numbered
-section 7). References to other exposés print the source's numbers:
-`X~\Ref{X.3.6}` prints “X 3.6”, as in the SMF volume. Original page
-numbers remain as `% original p. N` comments. Indexes and SMF
-page-layout commands are omitted.
-
-House rules applied here as in the other new exposés: *n°* / *numéro*
-is rendered “no.” (`\No`), as in “this no.”, and *changement de base* is
-rendered “change of base”, the Exposé VI term. The harmonization that
-replaced “base change” after the reviews concerned Exposés IV, V, VIII,
-IX, and X; this exposé needed no change.
+The fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md), section
+“SGA 1 — front matter and Exposés IV, V, VIII–XIII” (labels, reference
+and citation keys, page markers, omitted indexes), and use the shared
+package [`sga1-en.sty`](../sga1-en.sty). The bibliography keeps
+`\begin{thebibliography}{0}{XIII.7}` (numbered section 7). *n°* /
+*numéro* is rendered “no.” (`\No`), as in “this no.”, and *changement de
+base* is rendered “change of base”, the Exposé VI term.
 
 Exposé-specific choices:
 
 - **Remark 2.13 (MR).** The SMF prints M. Raynaud's 2003 remark
   (`remarqueMR`) between bold brackets and without a number. Here it is
-  printed as “Remark 2.13 (added in 2003 (MR))”, for three reasons: its
-  label `XIII.2.13` names that number, the remark closes §2, and the
-  translated Preface refers to it as “XIII 2.13”. The comment on
-  `remarkMR` in [`sga1-en.sty`](../sga1-en.sty) explains this.
+  “Remark 2.13 (added in 2003 (MR))”: its label `XIII.2.13` names that
+  number, it closes §2, and the translated Preface cites it as
+  “XIII 2.13” (see the comment on `remarkMR` in
+  [`sga1-en.sty`](../sga1-en.sty)).
 - **Remarks printed 4.9 (key `rem:XIII.4.6`).** The original branch
   resets the counter with `\setcounter{subsection}{5}` before the
   closing Remarks of §4, so the original edition numbers them 4.6. The
@@ -72,8 +62,7 @@ Exposé-specific choices:
 - **`\leavevmode` after `\label{XIII.1.10}`.** Definitions 1.10 open
   directly with `\subsubsection{}` (1.10.1). The English adds
   `\leavevmode` so that a sectioning command can open a theorem-like
-  environment. This is a typesetting device only; it is not in the
-  source.
+  environment. It is a typesetting device, not in the source.
 - **`\tmpRacinet`.** The source's `\newlength{\tmpRacinet}` layout for the
   `\parbox` display defining the presheaf `G` (proof of XIII.4.3.1) is
   kept.
@@ -95,9 +84,8 @@ Exposé XIII terminology:
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX. They have
-been retained in the translation, in accordance with the convention
-against silently repairing the source.
+Apparent slips in the corrected French TeX, kept as printed per
+[`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -160,29 +148,29 @@ against silently repairing the source.
 
 ### Found during the Lean formalization (2026-10)
 
-These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean statements use the corrected forms.
+Found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean
+statements use the corrected forms.
 
 | Location | Source wording | Point |
 | --- | --- | --- |
-| Proof of XIII.1.3.1, (ii bis) ⇒ (ii) and (ii) ⇒ (i) | “`P` and `Q` are isomorphic locally for the étale topology of `Y_1`”; “it follows from the injectivity of `a_1` that `P` and `Q` are locally isomorphic over `Y_1`” | The statement (ii) itself, on `a_0` and `a_1`, is not affected. The argument gives local isomorphism only near the image of `Y'_1` in `Y_1`, which is all it uses (compare the source point above on (ii bis) ⇒ (ii)). Read over all of `Y_1`, the phrase is false: for `Y' = ∅` the hypothesis is empty, and two torsors on `X_1` need not be locally isomorphic over `Y_1` (`ℤ/2`-torsors on an elliptic curve over an algebraically closed field of characteristic `≠ 2`). An earlier Lean definition in this repository read the phrase over all of `Y_1` when it encoded the injectivity of `a_1`, so it failed for proper morphisms; that error was this repository's, not SGA's. The current definition, `SGA.SGA1.ExposeXIII.IsCohomologicallyProperLEZeroGroup`, asks for local isomorphism only at the points `g_1(y')`, `y' ∈ Y'_1` (`IsLocallyIsoOverAt`). |
+| Proof of XIII.1.3.1, (ii bis) ⇒ (ii) and (ii) ⇒ (i) | “`P` and `Q` are isomorphic locally for the étale topology of `Y_1`”; “it follows from the injectivity of `a_1` that `P` and `Q` are locally isomorphic over `Y_1`” | The statement (ii) itself, on `a_0` and `a_1`, is not affected. The argument gives local isomorphism only near the image of `Y'_1` in `Y_1`, which is all it uses (compare the source point above on (ii bis) ⇒ (ii)). Read over all of `Y_1`, the phrase is false: for `Y' = ∅` the hypothesis is empty, and two torsors on `X_1` need not be locally isomorphic over `Y_1` (`ℤ/2`-torsors on an elliptic curve over an algebraically closed field of characteristic `≠ 2`). A Lean definition that encodes the injectivity of `a_1` with the phrase read over all of `Y_1` fails for proper morphisms, so `SGA.SGA1.ExposeXIII.IsCohomologicallyProperLEZeroGroup` asks for local isomorphism only at the points `g_1(y')`, `y' ∈ Y'_1` (`IsLocallyIsoOverAt`). |
 
 ## Validation
 
-The local checker `source/SGA1/check_chunk.py`, which is not in the
-repository, finds for each chunk the same non-index labels, reference
-and citation keys, footnotes, diagrams, displayed formulas, list items,
-statement environments, and counter commands as in the corrected
-French. For the whole exposé these are 128 labels, 251 references,
+`source/SGA1/check_chunk.py` (a local script, not in the repository)
+compared each chunk with the corrected French and found the same
+non-index labels, reference and citation keys, footnotes, diagrams,
+displayed formulas, list items, statement environments, and counter
+commands. For the whole exposé these are 128 labels, 251 references,
 22 citations, 1 footnote, 47 diagrams, and 429 displays. The wrapper
-compiles to a 51-page PDF with no errors or undefined references. The
+compiles to a 51-page PDF with no errors or undefined references; the
 only layout warning is one line about 7 pt too wide.
 
-A second reviewer checked all eight chunks against the French and made
-four fixes:
+The second reviewer made four fixes:
 
-- en-2.tex: register (“consider” → “one considers”);
-- en-3.tex: “this number” → “this no.”;
-- en-6.tex: register (“we” → “one”), twice.
+- `en-2.tex`: register (“consider” → “one considers”);
+- `en-3.tex`: “this number” → “this no.”;
+- `en-6.tex`: register (“we” → “one”), twice.
 
 The reviewer confirmed all the translator's source points and added
 those on:
@@ -195,9 +183,7 @@ those on:
 - the proofs of XIII.6.1.1 and XIII.6.1.2.
 
 The reviewer also confirmed that the keys `XIII.1.10`/`XIII.1.11` in
-2.11–2.12 are the exact-diagram definitions. These checks do not settle
-the mathematical questions above; scholarly proofreading remains
-outstanding.
+2.11–2.12 are the exact-diagram definitions.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

@@ -1,9 +1,10 @@
 # SGA 1, Exposé V — The fundamental group: generalities
 
-Full English draft of the whole exposé: sections 0–9, with proofs,
-footnotes, and all diagrams. It was translated from the corrected SMF
-branch in five chunks. A second reviewer then checked each chunk against
-the French (2026-09-24). Scholarly proofreading remains outstanding.
+Complete English draft of the exposé: sections 0–9, with proofs,
+footnotes, and all diagrams. Translated in five chunks from the corrected
+SMF branch of [arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2);
+a second reviewer checked each chunk against the French (2026-09-24).
+Scholarly proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -15,48 +16,37 @@ the French (2026-09-24). Scholarly proofreading remains outstanding.
 | [`en-5.tex`](en-5.tex) | §6 Exact functors from one Galois category into another; §7 The case of preschemes; §8 The case of a normal base prescheme; §9 The case of non-connected preschemes: multi-Galois categories |
 | [`SGA1-V.pdf`](SGA1-V.pdf) | Compiled English draft |
 
-Build with `make -C translation/SGA1/ExposeV` from the repository root,
-or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsbook`, `xy`, `mathrsfs`, `enumitem`, and
-`hyperref`.
+Build: `make -C translation/SGA1/ExposeV` (TeX Live with `latexmk`,
+`amsbook`, `xy`, `mathrsfs`, `enumitem`, `hyperref`); `make tex` builds
+every exposé.
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, lines 7383–9928, from
-`\chapter{Le groupe fondamental: g\'en\'eralit\'es}` and `\label{V}` up
-to, but not including, the chapter of Exposé VI.
-This covers original page markers 105–144.
-The French TeX and PDF are not included in this repository.
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), lines
+7383–9928: from `\chapter{Le groupe fondamental: g\'en\'eralit\'es}` and
+`\label{V}` up to, but not including, the chapter of Exposé VI; original
+page markers 105–144. The French TeX and PDF are not in this repository.
 
-The body fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md),
-section “SGA 1 — front matter and Exposés IV, V, VIII–XIII”, and use the
-shared package [`sga1-en.sty`](../sga1-en.sty). All non-index labels,
-`\Ref`/`\eqref` keys, footnotes, and diagrams are kept. References to
-other exposés print the source's numbers: `I~\Ref{I.9.7}` prints
-“I 9.7”, as in the SMF volume. Original page numbers remain as
-`% original p. N` comments. Indexes and SMF page-layout commands are
-omitted.
-
-House rules applied here as in the other new exposés: *n°* / *numéro*
-is rendered “no.” (`\No`), and *changement de base* is rendered “change
-of base”, the Exposé VI term. After the reviews, “base change” was
-replaced by “change of base” throughout Exposés IV, V, VIII, IX, and X.
+The fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md), section
+“SGA 1 — front matter and Exposés IV, V, VIII–XIII” (labels, reference
+keys, page markers, omitted indexes), and use the shared package
+[`sga1-en.sty`](../sga1-en.sty). *n°* / *numéro* is rendered “no.”
+(`\No`), and *changement de base* is rendered “change of base”, the
+Exposé VI term.
 
 Exposé-specific choices:
 
 - **Repeated numbers 1.7 and 1.8.** The corrected source has
-  `\setcounter{subsection}{6}` after Proposition 1.8. The two following
-  corollaries are therefore numbered 1.7 and 1.8 again, after
-  Definition 1.7 and Proposition 1.8. The counter command is kept, so the
-  English repeats both numbers as the source does. The labels stay
+  `\setcounter{subsection}{6}` after Proposition 1.8, so the two
+  following corollaries are numbered 1.7 and 1.8 again, after
+  Definition 1.7 and Proposition 1.8. The counter command is kept, and
+  the English repeats both numbers as the source does. The labels stay
   distinct (`V.1.7`/`cor:V.1.7`, `V.1.8`/`cor:V.1.8`). hyperref reports
   duplicate PDF destinations for these two numbers.
 - **“fiber-functor” and “fiber functor”.** The source writes
   *foncteur-fibre* (with a hyphen) once, for the functor `E_X` associated
   with `X`, and *foncteur fibre* elsewhere. The English keeps the
-  distinction: “fiber-functor” and “fiber functor”.
+  distinction.
 - **“Âne qui trotte.”** This phrase follows item m) of the list in §4,
   in place of a proof. The translator reads it as a colloquial sign that
   the verification is routine, and renders it literally: “A trotting
@@ -79,9 +69,8 @@ Exposé V terminology:
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX. They have
-been retained in the translation, in accordance with the convention
-against silently repairing the source.
+Apparent slips in the corrected French TeX, kept as printed per
+[`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -123,7 +112,8 @@ against silently repairing the source.
 
 ### Found during the Lean formalization (2026-09)
 
-These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean statements use the corrected forms.
+Found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean
+statements use the corrected forms.
 
 | Location | Source wording | Point |
 | --- | --- | --- |
@@ -133,17 +123,16 @@ These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the L
 
 ## Validation
 
-The local checker `source/SGA1/check_chunk.py`, which is not in the
-repository, finds for each chunk the same non-index labels, reference
-keys, footnotes, diagrams, displayed formulas, list items, statement
-environments, and counter commands as in the corrected French. For the
-whole exposé these are 66 labels, 104 references, 6 footnotes,
+`source/SGA1/check_chunk.py` (a local script, not in the repository)
+compared each chunk with the corrected French and found the same
+non-index labels, reference keys, footnotes, diagrams, displayed
+formulas, list items, statement environments, and counter commands. For
+the whole exposé these are 66 labels, 104 references, 6 footnotes,
 4 diagrams, and 164 displays. The wrapper compiles to a 28-page PDF with
-no errors or undefined references. The only warnings are the two
+no errors or undefined references; the only warnings are the two
 duplicate destinations noted above.
 
-A second reviewer checked all five chunks against the French and made
-six fixes:
+The second reviewer made six fixes:
 
 - punctuation in the proof of V.1.5;
 - a mistranslated direction of a correspondence (`Q ↦ X`) in the proof
@@ -153,8 +142,7 @@ six fixes:
 
 The reviewer confirmed the translator's source points and added the
 points on V.1.3, V.3.7, the proof of V.5.2 (compactness), and the
-paragraph after V.5.9. These checks do not settle the mathematical
-questions above; scholarly proofreading remains outstanding.
+paragraph after V.5.9.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

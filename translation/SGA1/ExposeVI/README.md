@@ -1,10 +1,12 @@
 # SGA 1, Exposé VI — Fibered categories and descent
 
-Full English draft of the whole exposé: sections 0–12 and the
-bibliography, with proofs, the footnote, and all diagrams. On 2026-09-24
-the English was compared with the corrected French sentence by sentence
-(see [Review against the French](#review-against-the-french-2026-09-24)).
-Deeper scholarly proofreading remains outstanding.
+Complete English draft of the exposé: sections 0–12 and the
+bibliography, with proofs, the footnote, and all diagrams. Translated
+from the corrected SMF branch of
+[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2); compared
+with the French sentence by sentence on 2026-09-24 (see
+[Review against the French](#review-against-the-french-2026-09-24)).
+Deeper scholarly proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -15,41 +17,32 @@ Deeper scholarly proofreading remains outstanding.
 | [`en-04.tex`](en-04.tex) | §10 Cofibered categories, bifibered categories; §11 Various examples; §12 Functors on a cloven category; bibliography |
 | [`SGA1-VI.pdf`](SGA1-VI.pdf) | Compiled English draft |
 
-The body was formerly a single file, `SGA1-VI.tex`. It has been split
-into the four fragments above with no change to the text; the wrapper
-now `\input`s them.
-
-Build with `make -C translation/SGA1/ExposeVI` from the repository root,
-or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsart`, `amsthm`, `mathtools`, `xy`, and
-`enumitem`.
+Build: `make -C translation/SGA1/ExposeVI` (TeX Live with `latexmk`,
+`amsart`, `amsthm`, `mathtools`, `xy`, `enumitem`); `make tex` builds
+every exposé.
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, lines 9929–12788, from
-`\chapter{Cat\'egories fibr\'ees et descente}` and `\label{VI}` up to,
-but not including, the chapter of Exposé VIII. Following the
-conventions, the source's closing `\refstepcounter{chapter}` and its
-table-of-contents line saying that Exposé VII does not exist are
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), lines
+9929–12788: from `\chapter{Cat\'egories fibr\'ees et descente}` and
+`\label{VI}` up to, but not including, the chapter of Exposé VIII. As
+the conventions require, the source's closing `\refstepcounter{chapter}`
+and its table-of-contents line saying that Exposé VII does not exist are
 omitted. The source covers original pages 145–194. Page 145 begins at
 the chapter heading, which the wrapper renders as the title, so the
-`% original p. N` comments run from 146 to 194.
-The French TeX and PDF are not included in this repository.
+`% original p. N` comments run from 146 to 194. The French TeX and PDF
+are not in this repository.
 
-This exposé follows the rules in [`CONVENTIONS.md`](../../CONVENTIONS.md),
-section “SGA 1, Exposé VI”. It does not use the shared package
-`sga1-en.sty` of the later exposés. The wrapper sets
-`\setcounter{section}{-1}`, so the Introduction is §0, and it numbers
-statements on one counter per section, as in the source. The source's
-starred remark environments (`remarquesstar`, `remarquestar`) become
-unnumbered Remarks/Remark. Labels keep the source's keys (`VI.m.n`);
-references use `\ref`.
+This exposé follows [`CONVENTIONS.md`](../../CONVENTIONS.md), section
+“SGA 1, Exposé VI”, and does not use the shared package `sga1-en.sty`.
+The wrapper sets `\setcounter{section}{-1}`, so the Introduction is §0,
+and numbers statements on one counter per section, as in the source. The
+source's starred remark environments (`remarquesstar`, `remarquestar`)
+become unnumbered Remarks/Remark. Labels keep the source's keys
+(`VI.m.n`); references use `\ref`.
 
-Terminology follows the mandatory table in
-[`CONVENTIONS.md`](../../CONVENTIONS.md), section “SGA 1, Exposé VI”.
-In particular:
+Terminology follows the mandatory table in the same section of
+[`CONVENTIONS.md`](../../CONVENTIONS.md); in particular:
 
 | French | English |
 | --- | --- |
@@ -64,8 +57,7 @@ In particular:
 | produit fibré | fibered product |
 | univers | universe |
 
-The later exposés also adopted “change of base” (see the READMEs of
-Exposés IV, V, and VIII–XIII).
+Exposés IV, V, and VIII–XIII use the same rendering “change of base”.
 
 ## Review against the French (2026-09-24)
 
@@ -78,17 +70,13 @@ sentence. Changes made:
 - `en-02.tex`: no changes. All 478 formulas were compared with the French
   and match.
 - `en-03.tex`: one typographic fix (`\ie` before a colon).
-- `en-04.tex`: two fixes. In §11 a), `\mathbf{\Delta}^1` is now
-  `\mathbf{\Delta^1}` (four times). In the bibliography, “décembre” is
-  now “December”.
-
-The review found the source points below, all of them in the French.
+- `en-04.tex`: two fixes: `\mathbf{\Delta}^1` → `\mathbf{\Delta^1}` in
+  §11 a) (four times), and “décembre” → “December” in the bibliography.
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX. They have
-been retained in the translation, in accordance with the convention
-against silently repairing the source.
+Apparent slips in the corrected French TeX, found by the 2026-09-24
+review and kept as printed per [`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -120,21 +108,23 @@ against silently repairing the source.
 
 ### Found during the Lean formalization (2026-09)
 
-These points were found while formalizing the exposé in `lean/SGA/SGA1/`; the Lean statements use the corrected forms.
+Found while formalizing the exposé in `lean/SGA/SGA1/ExposeVI.lean`
+(modules in `lean/SGA/SGA1/ExposeVI/`); the Lean statements use the
+corrected forms.
 
 | Location | Source wording | Point |
 | --- | --- | --- |
-| VI.9, rigid fibres | “the existence of a splitting is unchanged when passing to an `𝓔`-equivalent category” | False for normalized splittings: the fibered category `threeToTwo` (`SGA.SGA1.ExposeVI.not_exists_isSplitting_threeToTwo`) has rigid fibres and no splitting. The version up to `𝓔`-equivalence holds and is formalized (`exists_isSplitting_of_rigid`). |
+| VI.9, rigid fibers | “the existence of a splitting is unchanged when passing to an `𝓔`-equivalent category” | False for normalized splittings: the fibered category `threeToTwo` (`SGA.SGA1.ExposeVI.not_exists_isSplitting_threeToTwo`) has rigid fibers and no splitting. The version up to `𝓔`-equivalence holds and is formalized (`exists_isSplitting_of_rigid`). |
 | Remarks after VI.6.1 | Condition (i): “every arrow of `F` is cartesian” | The equivalence with “`F` is fibered in groupoids” needs `F` to be prefibered; without the lifting condition it fails. The Lean statements (`SGA.SGA1.ExposeVI.allMorphismsCartesian_iff_fiberedInGroupoids`, `allMorphismsCartesian_and_isPreFibered_iff`) assume it. |
 
 ## Validation
 
-The local checker `source/SGA1/check_chunk.py`, which is not in the
-repository, was run on the four fragments against source lines
-9929–12788. It finds the same 53 non-index labels, 37 references,
-4 citations, 1 footnote, 15 diagrams, 311 displays, and 25 list items as
-in the corrected French. The differences it reports are the ones the
-Exposé VI conventions require:
+`source/SGA1/check_chunk.py` (a local script, not in the repository) was
+run on the four fragments against source lines 9929–12788. It finds the
+same 53 non-index labels, 37 references, 4 citations, 1 footnote,
+15 diagrams, 311 displays, and 25 list items as in the corrected French.
+The differences it reports are the ones the Exposé VI conventions
+require:
 
 - the chapter heading is the wrapper's title;
 - the starred remark environments become `remark`/`remarks`;
@@ -142,15 +132,7 @@ Exposé VI conventions require:
 - the closing `\refstepcounter{chapter}` is dropped.
 
 The wrapper compiles to a 25-page PDF with no errors, LaTeX warnings, or
-undefined references. These checks, and the review above, do not settle
-the mathematical questions listed; deeper scholarly proofreading remains
-outstanding.
+undefined references.
 
-## Continuation
-
-All of SGA 1 is now translated (see
-[`../../README.md`](../../README.md)). Lean for this exposé lives at
-`lean/SGA/SGA1/ExposeVI.lean`, with modules in `lean/SGA/SGA1/ExposeVI/`.
-
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

@@ -1,11 +1,12 @@
 # SGA 1, Exposé II — Smooth morphisms: generalities, differential properties
 
-Full English draft: the opening convention, **all five sections**,
-and the closing errata, including proofs, footnotes, and both diagrams.
-On 2026-09-24 the English was compared with the corrected French
-sentence by sentence (see
+Complete English draft of the exposé: the opening convention, all five
+sections, and the closing errata, with proofs, footnotes, and both
+diagrams. Translated from the corrected SMF branch of
+[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2); compared
+with the French sentence by sentence on 2026-09-24 (see
 [Review against the French](#review-against-the-french-2026-09-24)).
-Deeper scholarly proofreading remains outstanding.
+Deeper scholarly proofreading is outstanding.
 
 | File | Contents |
 | --- | --- |
@@ -18,26 +19,25 @@ Deeper scholarly proofreading remains outstanding.
 | [`en-05.tex`](en-05.tex) | The case of a ground field; errata |
 | [`SGA1-II.pdf`](SGA1-II.pdf) | Compiled English draft |
 
-Build with `make -C translation/SGA1/ExposeII` from the repository root,
-or `make tex` to build all translated exposés. The build requires
-TeX Live with `latexmk`, `amsbook`, `xy`, and `hyperref`.
+Build: `make -C translation/SGA1/ExposeII` (TeX Live with `latexmk`,
+`amsbook`, `xy`, `hyperref`); `make tex` builds every exposé.
+Lean: `lean/SGA/SGA1/ExposeII.lean`, with modules in
+`lean/SGA/SGA1/ExposeII/`; coverage in
+[`docs/formalization.md`](../../../docs/formalization.md).
 
 ## Source and translation choices
 
-Source: the corrected SMF branch (`orig = false`) of
-[arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2),
-`smf_doc-math_3_01.tex`, from `\chapter{Morphismes lisses:...}` and
-`\label{II}` up to, but not including, the chapter beginning
+`smf_doc-math_3_01.tex` (corrected branch, `orig = false`), from
+`\chapter{Morphismes lisses:...}` and `\label{II}` up to, but not
+including, the chapter beginning
 `\chapter{Morphismes lisses: propri\'et\'es de prolongement}` and
-`\label{III}`.
-This covers printed SMF pages 25–47 and original page markers 29–57.
-The French TeX and PDF are not included in this repository.
+`\label{III}`: printed SMF pages 25–47, original page markers 29–57. The
+French TeX and PDF are not in this repository.
 
-The body fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md):
-retain the corrected branch, all non-index labels, proofs, both diagrams, and translated
-footnotes; omit indexes and source pagination machinery. Original page
-numbers remain as comments. The standalone wrapper is separate from
-the translation fragments.
+The fragments follow [`CONVENTIONS.md`](../../CONVENTIONS.md): the
+corrected branch, all non-index labels, proofs, both diagrams, and
+translated footnotes are kept; indexes and source pagination machinery
+are omitted; original page numbers remain as comments.
 
 Exposé II terminology:
 
@@ -61,21 +61,23 @@ Exposé II terminology:
 | profondeur / coprofondeur | depth / codepth |
 | base de transcendance séparante | separating transcendence basis |
 
-The historical synonym **simple** is retained where the source uses it
-as the old name for smooth. The author's word *multiplodoque* is
-retained. Informal asides and requests to supply arguments are
-translated as part of the text.
+The historical synonym “simple” is kept where the source uses it as the
+old name for smooth. The author's word *multiplodoque* is kept. Informal
+asides and requests to supply arguments are translated as part of the
+text.
 
-The corrected source assigns **1.1** to both a definition and the next
-proposition, and **4.18** to both a corollary and the next block of
-remarks. Both numbers are retained, with the original labels
-`II.1.1` / `prop:II.1.1` and `II.4.18` / `rem:II.4.18` and distinct
-PDF destinations.
+The corrected source assigns 1.1 to both a definition and the next
+proposition, and 4.18 to both a corollary and the next block of remarks.
+Both numbers are kept, with the source labels `II.1.1` / `prop:II.1.1`
+and `II.4.18` / `rem:II.4.18` and distinct PDF destinations.
 
-References within this draft use `\ref`. For references beyond its
-scope, `\SourceRef{source-label}{printed-number}` preserves the source
-key and prints the original number without inventing a destination;
-it uses `\ref` if that label later becomes available.
+References within the exposé use `\ref`. A reference beyond it is
+written `\SourceRef{source-label}{printed-number}`, which keeps the
+source key and prints the source's number without inventing a
+destination; it becomes a `\ref` if that label is defined. The source's
+own keys for this exposé's 4.8 and 4.9 are `\Ref{I.4.8}` and
+`\Ref{I.4.9}`, which name Exposé I; the English uses `\ref{II.4.8}` and
+`\ref{II.4.9}`, which print the numbers the source means.
 
 ## Review against the French (2026-09-24)
 
@@ -86,27 +88,22 @@ Changes made:
 
 - two mistranslations in `en-01-03.tex`: the word order of “étale
   $k(y)$-morphism” in the proof of 2.1, and *considéraient abusivement*
-  in 2.4, now “abusively regarded”;
+  in 2.4, rendered “abusively regarded”;
 - the comment `% original p. 36` moved to the position of the source's
   page marker;
-- three capitalizations in II.4.14: *Idéal*, a sheaf of ideals, is now
+- three capitalizations in II.4.14: *Idéal*, a sheaf of ideals, rendered
   “Ideal”;
-- in the errata, “the present number” is now “the present no.”.
+- in the errata, “the present number” → “the present no.”.
 
 The review found no omissions or formula errors. It confirmed that the
-statement numbering matches the source, including the repeated 1.1. The
-source's own keys for this exposé's 4.8 and 4.9 are `\Ref{I.4.8}` and
-`\Ref{I.4.9}`, which name Exposé I. The English keeps its internal
-`\ref{II.4.8}` and `\ref{II.4.9}`, which print the numbers the source
-means. The review confirmed all twelve source points below as present in
-the French, and it found the additional points listed after them.
+statement numbering matches the source, including the repeated 1.1. It
+confirmed all twelve source points of the first table below in the
+French and found the further points of the second.
 
 ## Source points for scholarly review
 
-These apparent issues are present in the corrected French TeX and the
-matching PDF. They have been retained in the translation, in accordance
-with the convention against silently repairing the source. The 2026-09-24
-review confirmed each of the following in the French.
+Apparent slips in the corrected French TeX and the matching PDF, kept as
+printed per [`CONVENTIONS.md`](../../CONVENTIONS.md).
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -123,8 +120,7 @@ review confirmed each of the following in the French.
 | II.5.7 | $\Omega^1_{K/k}$ a free $k$-module | The rank is as a $K$-module in 5.6. |
 | II.5.10 | A point $x$ of a prescheme of finite type over $k$ | The prescheme $X$ is not named in the setup. |
 
-Additional points found by the 2026-09-24 review, also retained as
-printed:
+Further points found by the 2026-09-24 review, also kept as printed:
 
 | Location | Source wording or notation retained | Point to review |
 | --- | --- | --- |
@@ -146,26 +142,17 @@ printed:
 | Proof of II.5.8 (`en-05.tex`) | `\eqref{II.4.8}`, `\eqref{II.5.1}` | The keys are statement labels, so the numbers print in parentheses. |
 | French slip | “un voisinages $Y_1$” (proof of II.4.15) | No effect on the English. |
 
-Validation: `make tex` succeeds. All 65 non-index source labels
-(including the numbered statements, the duplicate 1.1 and 4.18, the
-equation tags, and the errata), ten footnotes, and both diagrams were
-checked against the corrected source. Compiled statement numbers match
-the original, including the repeated 1.1 and 4.18. Equation tags match
-the source (`1.1`--`1.3`, `3.1`--`3.2`, `4.1`--`4.6` with bis tags,
-`5.1`). The PDF build has no TeX warnings, unresolved references, or
-duplicate destinations. Representative pages and the diagrams were
-visually checked.
+## Validation
 
-These checks, and the sentence-by-sentence review, do not settle the
-mathematical questions above; deeper scholarly proofreading remains
-outstanding.
+`make tex` succeeds. All 65 non-index source labels (including the
+numbered statements, the duplicate 1.1 and 4.18, the equation tags, and
+the errata), ten footnotes, and both diagrams were checked against the
+corrected source. Compiled statement numbers match the source, including
+the repeated 1.1 and 4.18. Equation tags match the source
+(`1.1`--`1.3`, `3.1`--`3.2`, `4.1`--`4.6` with bis tags, `5.1`). The
+PDF build has no TeX warnings, unresolved references, or duplicate
+destinations. Representative pages and the diagrams were checked
+visually.
 
-## Continuation
-
-All of SGA 1 is now translated (see
-[`../../README.md`](../../README.md)). Lean for this exposé lives at
-`lean/SGA/SGA1/ExposeII.lean`, with modules in `lean/SGA/SGA1/ExposeII/`;
-its coverage is in [`docs/formalization.md`](../../../docs/formalization.md).
-
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+License: [`../../LICENSE`](../../LICENSE) (MIT for the translator's
+contribution).

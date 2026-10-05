@@ -1,51 +1,50 @@
 # English translations
 
-Unofficial English TeX of SGA, following Grothendieck’s numbering.
+Unofficial English TeX of SGA 1, SGA 2 and SGA 3, with Grothendieck's numbering.
 Conventions: [`CONVENTIONS.md`](CONVENTIONS.md).
 License: [`LICENSE`](LICENSE) (MIT; SGA 1 Exposé III is CC BY-SA 4.0).
+The French sources are not in the repository and must not be added; see
+[`../COPYRIGHT.md`](../COPYRIGHT.md).
 
-Do not add the French source to the repository. See [`../COPYRIGHT.md`](../COPYRIGHT.md).
+Every directory below has a `Makefile`; `make -C <dir>` runs `latexmk -pdf`.
+From the repository root, `make tex` builds everything. The build needs a
+fairly complete TeX Live (`amsart`, `amsbook`, `xy`, `mathtools`, …).
 
 ## SGA 1
 
 Source: SMF recomposition, [arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203v2).
 All of SGA 1 is translated. The front matter and Exposés IV, V, VIII–XIII
 share the macros in [`SGA1/sga1-en.sty`](SGA1/sga1-en.sty); I, II, III
-and VI keep their own wrappers.
+and VI have their own wrappers.
 
 | Part | Directory | Coverage | Build |
 | --- | --- | --- | --- |
-| Preface, Introduction, Foreword | [`SGA1/Introduction/`](SGA1/Introduction/) | Full draft | `make -C SGA1/Introduction` |
+| Preface, Introduction, Foreword | [`SGA1/Introduction/`](SGA1/Introduction/) | Full draft, second-reader check | `make -C SGA1/Introduction` |
 | I — Étale morphisms | [`SGA1/ExposeI/`](SGA1/ExposeI/) | Full draft, reviewed | `make -C SGA1/ExposeI` |
 | II — Smooth morphisms: generalities, differential properties | [`SGA1/ExposeII/`](SGA1/ExposeII/) | Full draft, reviewed | `make -C SGA1/ExposeII` |
 | III — Smooth morphisms: extension properties | [`SGA1/ExposeIII/`](SGA1/ExposeIII/) | Full draft, reviewed | `make -C SGA1/ExposeIII` |
-| IV — Flat morphisms | [`SGA1/ExposeIV/`](SGA1/ExposeIV/) | Full draft | `make -C SGA1/ExposeIV` |
-| V — The fundamental group: generalities | [`SGA1/ExposeV/`](SGA1/ExposeV/) | Full draft | `make -C SGA1/ExposeV` |
+| IV — Flat morphisms | [`SGA1/ExposeIV/`](SGA1/ExposeIV/) | Full draft, second-reader check | `make -C SGA1/ExposeIV` |
+| V — The fundamental group: generalities | [`SGA1/ExposeV/`](SGA1/ExposeV/) | Full draft, second-reader check | `make -C SGA1/ExposeV` |
 | VI — Fibered categories and descent | [`SGA1/ExposeVI/`](SGA1/ExposeVI/) | Full draft, reviewed | `make -C SGA1/ExposeVI` |
 | VII | — | Does not exist | |
-| VIII — Faithfully flat descent | [`SGA1/ExposeVIII/`](SGA1/ExposeVIII/) | Full draft | `make -C SGA1/ExposeVIII` |
-| IX — Descent of étale morphisms. Application to the fundamental group | [`SGA1/ExposeIX/`](SGA1/ExposeIX/) | Full draft | `make -C SGA1/ExposeIX` |
-| X — Theory of specialization of the fundamental group | [`SGA1/ExposeX/`](SGA1/ExposeX/) | Full draft | `make -C SGA1/ExposeX` |
-| XI — Examples and complements | [`SGA1/ExposeXI/`](SGA1/ExposeXI/) | Full draft | `make -C SGA1/ExposeXI` |
-| XII — Algebraic geometry and analytic geometry (M. Raynaud) | [`SGA1/ExposeXII/`](SGA1/ExposeXII/) | Full draft | `make -C SGA1/ExposeXII` |
-| XIII — Cohomological properness of sheaves of sets and of sheaves of non-commutative groups (M. Raynaud) | [`SGA1/ExposeXIII/`](SGA1/ExposeXIII/) | Full draft | `make -C SGA1/ExposeXIII` |
+| VIII — Faithfully flat descent | [`SGA1/ExposeVIII/`](SGA1/ExposeVIII/) | Full draft, second-reader check | `make -C SGA1/ExposeVIII` |
+| IX — Descent of étale morphisms. Application to the fundamental group | [`SGA1/ExposeIX/`](SGA1/ExposeIX/) | Full draft, second-reader check | `make -C SGA1/ExposeIX` |
+| X — Theory of specialization of the fundamental group | [`SGA1/ExposeX/`](SGA1/ExposeX/) | Full draft, second-reader check | `make -C SGA1/ExposeX` |
+| XI — Examples and complements | [`SGA1/ExposeXI/`](SGA1/ExposeXI/) | Full draft, second-reader check | `make -C SGA1/ExposeXI` |
+| XII — Algebraic geometry and analytic geometry (M. Raynaud) | [`SGA1/ExposeXII/`](SGA1/ExposeXII/) | Full draft, second-reader check | `make -C SGA1/ExposeXII` |
+| XIII — Cohomological properness of sheaves of sets and of sheaves of non-commutative groups (M. Raynaud) | [`SGA1/ExposeXIII/`](SGA1/ExposeXIII/) | Full draft, second-reader check | `make -C SGA1/ExposeXIII` |
 
-"Reviewed": the earlier English was compared sentence by sentence with
-the corrected French and corrected (2026-09-24). The new exposés were
-translated chunk by chunk, and each chunk was re-checked against the
-French by a second pass. Each exposé's README lists the apparent
-misprints of the French source that the translation retains.
-
-```bash
-make -C SGA1/ExposeIV           # latexmk -pdf → SGA1-IV.pdf
-make -C SGA1/ExposeIII clean
-```
+"Reviewed": an earlier English version was compared sentence by sentence
+with the corrected French and corrected (2026-09-24). The other exposés were
+translated chunk by chunk, and a second reader checked each chunk against
+the French. Each exposé's README lists the apparent misprints of the French
+that the translation keeps.
 
 ## SGA 2
 
 Source: SMF recomposition, [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-Checklist: [`docs/status.md`](../docs/status.md) (the original GitHub checklist, issue #9, is closed).
-Shared macros: [`SGA2/sga2-en.sty`](SGA2/sga2-en.sty).
+Shared macros: [`SGA2/sga2-en.sty`](SGA2/sga2-en.sty). Every exposé is a
+draft: none has yet been checked against the French by a second reader.
 
 | Exposé | Directory | Coverage | Build |
 | --- | --- | --- | --- |
@@ -65,27 +64,11 @@ Shared macros: [`SGA2/sga2-en.sty`](SGA2/sga2-en.sty).
 | XIII — Problems and conjectures | [`SGA2/ExposeXIII/`](SGA2/ExposeXIII/) | Draft | `make -C SGA2/ExposeXIII` |
 | XIV — Depth and Lefschetz theorems in étale cohomology | [`SGA2/ExposeXIV/`](SGA2/ExposeXIV/) | Draft | `make -C SGA2/ExposeXIV` |
 
-```bash
-make -C SGA2/Introduction      # latexmk -pdf → SGA2-Intro.pdf
-make -C SGA2/ExposeI           # latexmk -pdf → SGA2-I.pdf
-# … likewise ExposeII–ExposeXIV
-```
-
-From the repository root, `make tex` builds all translated exposés.
-
-Needs a reasonably complete TeX Live (`amsart`, `amsbook`, `xy`, `mathtools`, …).
-
-New exposés go in `SGA<n>/Expose<Roman>/` with a `Makefile` like the existing ones.
-
 ## SGA 3
 
 Source: the Gille–Polo recomposition of *Schémas en groupes*
-(<https://webusers.imj-prg.fr/~patrick.polo/SGA3/>); the French PDFs are not
-committed. Foreword, introduction and Exposés I–XXVI are translated, with a
-combined volume. See [`SGA3/README.md`](SGA3/README.md) and
+(<https://webusers.imj-prg.fr/~patrick.polo/SGA3/>). The foreword, the
+introduction and Exposés I–XXVI are translated, and `make -C SGA3 book` builds
+them into one volume. Not yet checked against the French by a second reader.
+See [`SGA3/README.md`](SGA3/README.md) and
 [`SGA3/CONVENTIONS.md`](SGA3/CONVENTIONS.md).
-
-```bash
-make -C SGA3/ExposeI
-make -C SGA3 book
-```
