@@ -21,7 +21,7 @@ corrupt text “sisisch. dense rel.schématiquement” (1.5.1), rendered once as
 “schematically”; “Soiten” and “Soenit” → “Soit” (1.6); “a la significations”
 → “a la signification” (3.0.1); “ona” → “on a” (3.2.2, Rule 3); “définieen” →
 “définie en” (proof of 3.4); “G → S et quasi-séparé” → “est” (proof of 3.9);
-“d′anneaux” printed with a prime (proof of 3.7).
+“d′anneaux”, printed with a prime instead of an apostrophe (proof of 3.7).
 
 ## Source points retained as printed
 
