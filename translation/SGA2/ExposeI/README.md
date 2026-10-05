@@ -1,21 +1,20 @@
-# SGA 2, Exposé I
+# SGA 2, Exposé I — Global and local cohomological invariants relative to a closed subspace
 
-Unofficial English draft of Global and local cohomological invariants relative to a closed subspace.
-Scholarly proofreading remains outstanding.
+English translation of the corrected SMF branch (`orig = false`) of
+[arXiv:math/0511279](https://arxiv.org/abs/math/0511279); the French is not
+in this repository. Draft; not yet compared with the French sentence by
+sentence.
 
-Build: `make -C translation/SGA2/ExposeI` from the repository root.
+| File | Contents |
+| --- | --- |
+| [`SGA2-I.tex`](SGA2-I.tex) | Standalone wrapper (loads [`../sga2-en.sty`](../sga2-en.sty)) and “About this draft” notice |
+| [`en-01.tex`](en-01.tex) | §1 The functors $\Gamma_Z$, $\underline{\Gamma}_Z$ (I.1.1–I.1.10) |
+| [`en-02.tex`](en-02.tex) | §2 The functors $H_Z^\ast(X,F)$ and $\underline{H}_Z^\ast(F)$ (I.2.1–I.2.14, with 2.3 bis); bibliography |
+| [`SGA2-I.pdf`](SGA2-I.pdf) | Compiled PDF |
 
-Source: corrected SMF branch (`orig = false`) of
-[arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-The French TeX and PDF are not included in this repository.
+Build: `make -C translation/SGA2/ExposeI`.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+## Source points retained as printed
 
-## Source points for scholarly review
-
-Apparent issues present in the corrected French TeX have been retained
-in the translation, in accordance with the convention against silently
-repairing the source. Typical retained slips include mismatched
-indices, truncated formulae, and grammar in the SMF file.
-Scholarly proofreading remains outstanding.
+None recorded yet. Apparent slips in the French that the translation keeps
+belong here, with their location.

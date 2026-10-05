@@ -1,21 +1,20 @@
-# SGA 2, Exposé III
+# SGA 2, Exposé III — Cohomological invariants and depth
 
-Unofficial English draft of Cohomological invariants and depth.
-Scholarly proofreading remains outstanding.
+English translation of the corrected SMF branch (`orig = false`) of
+[arXiv:math/0511279](https://arxiv.org/abs/math/0511279); the French is not
+in this repository. Draft; not yet compared with the French sentence by
+sentence.
 
-Build: `make -C translation/SGA2/ExposeIII` from the repository root.
+| File | Contents |
+| --- | --- |
+| [`SGA2-III.tex`](SGA2-III.tex) | Standalone wrapper (loads [`../sga2-en.sty`](../sga2-en.sty)) and “About this draft” notice |
+| [`en-1.tex`](en-1.tex) | §1 Recollections; §2 Depth (III.1.1–III.2.11) |
+| [`en-2.tex`](en-2.tex) | §3 Depth and topological properties (III.3.1–III.3.13) |
+| [`SGA2-III.pdf`](SGA2-III.pdf) | Compiled PDF |
 
-Source: corrected SMF branch (`orig = false`) of
-[arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-The French TeX and PDF are not included in this repository.
+Build: `make -C translation/SGA2/ExposeIII`.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+## Source points retained as printed
 
-## Source points for scholarly review
-
-Apparent issues present in the corrected French TeX have been retained
-in the translation, in accordance with the convention against silently
-repairing the source. Typical retained slips include mismatched
-indices, truncated formulae, and grammar in the SMF file.
-Scholarly proofreading remains outstanding.
+None recorded yet. Apparent slips in the French that the translation keeps
+belong here, with their location.

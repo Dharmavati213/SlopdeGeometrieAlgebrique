@@ -1,21 +1,19 @@
-# SGA 2, Exposé II
+# SGA 2, Exposé II — Application to quasi-coherent sheaves on preschemes
 
-Unofficial English draft of Application to quasi-coherent sheaves on preschemes.
-Scholarly proofreading remains outstanding.
+English translation of the corrected SMF branch (`orig = false`) of
+[arXiv:math/0511279](https://arxiv.org/abs/math/0511279); the French is not
+in this repository. Draft; not yet compared with the French sentence by
+sentence.
 
-Build: `make -C translation/SGA2/ExposeII` from the repository root.
+| File | Contents |
+| --- | --- |
+| [`SGA2-II.tex`](SGA2-II.tex) | Standalone wrapper (loads [`../sga2-en.sty`](../sga2-en.sty)) and “About this draft” notice |
+| [`en-body.tex`](en-body.tex) | II.1–II.11 (the exposé has no sections) |
+| [`SGA2-II.pdf`](SGA2-II.pdf) | Compiled PDF |
 
-Source: corrected SMF branch (`orig = false`) of
-[arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-The French TeX and PDF are not included in this repository.
+Build: `make -C translation/SGA2/ExposeII`.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+## Source points retained as printed
 
-## Source points for scholarly review
-
-Apparent issues present in the corrected French TeX have been retained
-in the translation, in accordance with the convention against silently
-repairing the source. Typical retained slips include mismatched
-indices, truncated formulae, and grammar in the SMF file.
-Scholarly proofreading remains outstanding.
+None recorded yet. Apparent slips in the French that the translation keeps
+belong here, with their location.

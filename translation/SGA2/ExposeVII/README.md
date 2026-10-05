@@ -1,21 +1,19 @@
-# SGA 2, Exposé VII
+# SGA 2, Exposé VII — Vanishing criteria, coherence conditions for the sheaves $\underline{\mathrm{Ext}}^i_Y(F,G)$
 
-Unofficial English draft of Vanishing criteria, coherence of $\underline{\mathrm{Ext}}^i_Y(F,G)$.
-Scholarly proofreading remains outstanding.
+English translation of the corrected SMF branch (`orig = false`) of
+[arXiv:math/0511279](https://arxiv.org/abs/math/0511279); the French is not
+in this repository. Draft; not yet compared with the French sentence by
+sentence.
 
-Build: `make -C translation/SGA2/ExposeVII` from the repository root.
+| File | Contents |
+| --- | --- |
+| [`SGA2-VII.tex`](SGA2-VII.tex) | Standalone wrapper (loads [`../sga2-en.sty`](../sga2-en.sty)) and “About this draft” notice |
+| [`en-body.tex`](en-body.tex) | §1 Study for $i<n$; §2 Study for $i>n$ (VII.1.1–VII.2.3) |
+| [`SGA2-VII.pdf`](SGA2-VII.pdf) | Compiled PDF |
 
-Source: corrected SMF branch (`orig = false`) of
-[arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-The French TeX and PDF are not included in this repository.
+Build: `make -C translation/SGA2/ExposeVII`.
 
-License: [`../../LICENSE`](../../LICENSE) (MIT for the
-translator's contribution).
+## Source points retained as printed
 
-## Source points for scholarly review
-
-Apparent issues present in the corrected French TeX have been retained
-in the translation, in accordance with the convention against silently
-repairing the source. Typical retained slips include mismatched
-indices, truncated formulae, and grammar in the SMF file.
-Scholarly proofreading remains outstanding.
+None recorded yet. Apparent slips in the French that the translation keeps
+belong here, with their location.

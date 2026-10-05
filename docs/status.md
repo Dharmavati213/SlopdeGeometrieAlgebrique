@@ -1,23 +1,19 @@
 # Status
 
-Translation of an exposé comes **before** Lean for that exposé.
-Tick a box in the same PR that lands the work.
+What is in the tree, as a checklist: `[x]` done, `[ ]` not done. Tick a box in
+the pull request that lands the work.
 
-Convention: `[x]` is in the tree; `[ ]` is not. A translation counts as
-ticked when TeX + PDF are in `translation/SGA…/` and `make` builds.
-A Lean item counts as ticked when the statement lives under `lean/SGA/`
-with no `sorry`, is imported from `lean/SGA.lean`, and `lake build` passes.
+- A translation is done when its TeX and PDF are in `translation/SGA<n>/` and
+  `make` builds it.
+- A Lean item is done when it is proved under `lean/SGA/` with no `sorry`, is
+  imported from `lean/SGA.lean`, and `lake build` passes.
 
-## Order of work
+An exposé is translated before it is formalized. What the Lean proves, with
+declaration names, is in [`formalization.md`](formalization.md); the SGA 1
+results that rest on theories quoted from elsewhere are in
+[`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations/README.md).
 
-1. Keep the SGA 1, SGA 2 and SGA 3 translations compiling (`make tex`).
-2. SGA 1 is translated in full (front matter and Exposés I–VI, VIII–XIII) and formalized
-   exposé by exposé; the open items are listed in [`formalization.md`](formalization.md) and the
-   out-of-scope ones in [`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations/README.md).
-3. SGA 2 English drafts proceed in parallel; Lean for SGA 2 has partial Exposés I–VII (see
-   below). Formalization follows the English text.
-
-Related public translations (not this project):
+Other English translations of SGA, not part of this project:
 [thosgood/sga](https://github.com/thosgood/sga),
 [ryankeleti/sga](https://github.com/ryankeleti/sga).
 
@@ -26,7 +22,7 @@ Related public translations (not this project):
 ## SGA 1 — *Revêtements étales et groupe fondamental*
 
 Source: SMF recomposition, [arXiv:math/0206203v2](https://arxiv.org/abs/math/0206203).
-Exposé VII does not exist. In the Lean column, "proved" means every numbered statement is
+There is no Exposé VII. In the Lean column, "proved" means that every numbered statement is
 proved, apart from the restrictions in [`formalization.md`](formalization.md) and the
 out-of-scope items in [`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations/README.md).
 
@@ -47,12 +43,11 @@ out-of-scope items in [`lean/SGA/Foundations/README.md`](../lean/SGA/Foundations
 | XII | Algebraic geometry and analytic geometry | full draft in tree | partial |
 | XIII | Cohomological properness (sets and non-commutative groups) | full draft in tree | partial |
 
-"Reviewed" means the pre-existing English was compared sentence by
-sentence with the corrected French (2026-09-24) and corrected. Each new
-exposé was translated chunk by chunk and every chunk was independently
-re-checked against the French. Deeper scholarly proofreading of all
-exposés remains open; apparent misprints of the French source are listed
-in each exposé's README.
+"Reviewed": an earlier English version was compared sentence by sentence
+with the corrected French and corrected (2026-09-24). The other exposés were
+translated chunk by chunk, and a second reader checked each chunk against the
+French. No exposé has had a scholarly proofreading. Apparent misprints in the
+French are listed in each exposé's README.
 
 ### Translation
 
@@ -91,43 +86,73 @@ in each exposé's README.
 
 Barrels `SGA.SGA1.ExposeI` … `SGA.SGA1.ExposeXIII` and `SGA.Foundations`, all imported by
 `lean/SGA.lean`. Conventions: [`lean/SGA/SGA1/CONVENTIONS.md`](../lean/SGA/SGA1/CONVENTIONS.md).
-No `sorry`; `lake env lean CheckSGA1Axioms.lean` (from `lean/`) checks the axioms. A box is
-ticked when every numbered statement of the exposé is proved, possibly with the restrictions
-listed in [`formalization.md`](formalization.md).
+`lake env lean CheckSGA1Axioms.lean` (from `lean/`) checks the axioms. An exposé is ticked when
+every numbered statement is proved, possibly with the restrictions listed in
+[`formalization.md`](formalization.md).
 
 - [x] Lake project + mathlib pin (`lean/lean-toolchain`, `lean/lakefile.toml`)
 - [x] Foundations: prerequisites missing from mathlib (`lean/SGA/Foundations/`)
 - [x] **I** Étale morphisms
 - [x] **II** Smooth morphisms (II.2.5 and the sufficiency half of II.2.6 not stated)
-- [ ] **III** Infinitesimal lifting (III.2–III.4 done; III.5–III.6 in special cases; III.7.4 proved, `smoothProperCurveLiftStatement`; III.7.1–III.7.3 not formalized)
+- [ ] **III** Infinitesimal lifting
+  - proved: III.2–III.4, III.7.4
+  - in special cases: III.5–III.6
+  - not formalized: III.7.1–III.7.3
 - [x] **IV** Flat morphisms
 - [x] **V** The fundamental group: generalities
 - [x] **VI** Fibered categories and descent
 - [x] **VIII** Faithfully flat descent
-- [ ] **IX** Descent of étale morphisms (IX.2.6, IX.4.6, IX.4.9, IX.4.12, IX.6.8 and IX.6.11 over an arbitrary base; IX.1.10 for projective and for integral normal `X`; IX.5.2 in abstract form for connected `S'`, `S''`, and for schemes when `S` is noetherian and connected and `g` proper surjective; of IX.5.4 only a consequence, under replacement hypotheses; IX.5.1 for disconnected `S'` or `S''`, IX.5.3, IX.5.5 and IX.5.7 not formalized; see `formalization.md`)
-- [ ] **X** Specialization of the fundamental group (X.2.1–X.2.4 for projective `X`, X.2.1 also for integral normal `X`; X.2.9 and X.2.12 for `k` of characteristic 0 with `#k ≤ 𝔠`, in universe 0, out of scope otherwise; X.3.8 and X.3.9 over a complete DVR with separably closed residue field, X.3.8 open in general)
-- [x] **XI** Examples and complements (out of scope: XI.1.4, reduced to Hodge symmetry `h^{0,q} = h^{q,0}`, which is open; XI.2.1 in characteristic `p`, where it is equivalent to its `p`-primary clause; XI.2.1 holds in characteristic 0 and for the `ℓ`-primary clauses, `ℓ ≠ p`; see the Foundations README)
-- [ ] **XII** Algebraic geometry and analytic geometry (§1 for separated `X`, with the universal property of `X^an` for affine `X` only and XII.1.3.1 not formalized; §2 except XII.2.5; §3 on the spaces of points `X(ℂ)`, and for `f^an` XII.3.1 (i)–(iv), with étale read as flat and unramified and smooth as flat with regular fibres, and XII.3.1 (ix), (xi) and XII.3.2 (i), (ii) for quasi-compact `f`; XII.4.3–XII.4.6 stated, not proved; Oka coherence and Theorem B for `𝒪` on `Δ × ℂᵃ × (ℂ*)ᵇ` proved; XII.5.2 from XII.5.1 alone; XII.5.1 for schemes over `ℂ` of dimension `≤ 1` (`curveRiemannExistence`, `schemeCurveRiemannExistence`), for `ℂ` minus finitely many points, and a few other cases, open in higher dimension; XII.5.3–XII.5.5 not formalized)
-- [ ] **XIII** Cohomological properness (§1–§4 and Appendix I in part; XIII 1.4 for sheaves of sets over a locally noetherian base, and 3.2 1); for the rest of 1.4, 2.12, 2.13, §3, 4.4 and 4.6 see the Foundations README)
+- [ ] **IX** Descent of étale morphisms
+  - proved over an arbitrary base: IX.2.6, IX.4.6, IX.4.9, IX.4.12, IX.6.8, IX.6.11
+  - partial: IX.1.10 for projective and for integral normal `X`; IX.5.2 in abstract form for
+    connected `S'`, `S''`, and for schemes when `S` is noetherian and connected and `g` proper
+    surjective; of IX.5.4, only a consequence, under replacement hypotheses
+  - not formalized: IX.5.1 for disconnected `S'` or `S''`, IX.5.3, IX.5.5, IX.5.7
+- [ ] **X** Specialization of the fundamental group
+  - X.2.1–X.2.4 for projective `X`; X.2.1 also for integral normal `X`
+  - X.2.9 and X.2.12 for `k` of characteristic 0 with `#k ≤ 𝔠`, in universe 0; out of scope
+    otherwise
+  - X.3.8 and X.3.9 over a complete DVR with separably closed residue field; X.3.8 is open in
+    general
+- [x] **XI** Examples and complements. Out of scope (see the Foundations README):
+  - XI.1.4, reduced to Hodge symmetry `h^{0,q} = h^{q,0}`, which is open
+  - XI.2.1 in characteristic `p`, where it is equivalent to its `p`-primary clause; XI.2.1 is
+    proved in characteristic 0, and its `ℓ`-primary clauses for `ℓ ≠ p`
+- [ ] **XII** Algebraic geometry and analytic geometry
+  - §1 for separated `X`, with the universal property of `X^an` for affine `X` only;
+    XII.1.3.1 not formalized
+  - §2 except XII.2.5
+  - §3 on the spaces of points `X(ℂ)`; for `f^an`, XII.3.1 (i)–(iv), with étale read as flat
+    and unramified and smooth as flat with regular fibres, and XII.3.1 (ix), (xi) and
+    XII.3.2 (i), (ii) for quasi-compact `f`
+  - §4 (GAGA): XII.4.3–XII.4.6 stated, not proved; Oka coherence and Theorem B for `𝒪` on
+    `Δ × ℂᵃ × (ℂ*)ᵇ` proved
+  - §5: XII.5.2 from XII.5.1 alone; XII.5.1 for schemes over `ℂ` of dimension `≤ 1`, for `ℂ`
+    minus finitely many points, and a few other cases, open in higher dimension;
+    XII.5.3–XII.5.5 not formalized
+- [ ] **XIII** Cohomological properness
+  - §1–§4 and Appendix I in part, including XIII 1.4 for sheaves of sets over a locally
+    noetherian base, and 3.2 1)
+  - the rest of 1.4, 2.12, 2.13, §3, 4.4 and 4.6: see the Foundations README
 
 ---
 
 ## SGA 2 — *Cohomologie locale des faisceaux cohérents et théorèmes de Lefschetz locaux et globaux*
 
 Source: SMF recomposition, [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-GitHub checklist: [issue #9](https://github.com/Dharmavati213/SlopdeGeometrieAlgebrique/issues/9) (closed).
-Exposé XIV is by Michèle Raynaud.
+Exposé XIV is by Michèle Raynaud. No SGA 2 exposé has been checked against the French by a
+second reader yet.
 
 | Exposé | Title | Translation | Lean |
 | --- | --- | --- | --- |
 | Intro | Grothendieck’s introduction | full draft in tree | — |
-| I | Global and local cohomological invariants relative to a closed subspace | full draft in tree | partial, compiling |
-| II | Application to quasi-coherent sheaves on preschemes | full draft in tree | partial, compiling |
-| III | Cohomological invariants and depth | full draft in tree | partial, compiling |
-| IV | Dualizing modules and functors | full draft in tree | partial, compiling |
-| V | Local duality and structure of the $H^i(M)$ | full draft in tree | partial, compiling |
-| VI | The functors $\mathrm{Ext}_Z^\bullet(X;F,G)$ and $\underline{\mathrm{Ext}}_Z^\bullet(F,G)$ | full draft in tree | partial, compiling |
-| VII | Vanishing criteria; coherence of $\underline{\mathrm{Ext}}^i_Y(F,G)$ | full draft in tree | — |
+| I | Global and local cohomological invariants relative to a closed subspace | full draft in tree | partial |
+| II | Application to quasi-coherent sheaves on preschemes | full draft in tree | partial |
+| III | Cohomological invariants and depth | full draft in tree | partial |
+| IV | Dualizing modules and functors | full draft in tree | partial |
+| V | Local duality and structure of the $H^i(M)$ | full draft in tree | partial |
+| VI | The functors $\mathrm{Ext}_Z^\bullet(X;F,G)$ and $\underline{\mathrm{Ext}}_Z^\bullet(F,G)$ | full draft in tree | partial |
+| VII | Vanishing criteria; coherence of $\underline{\mathrm{Ext}}^i_Y(F,G)$ | full draft in tree | partial (VII.1.3 only) |
 | VIII | The finiteness theorem | full draft in tree | — |
 | IX | Algebraic geometry and formal geometry | full draft in tree | — |
 | X | Application to the fundamental group | full draft in tree | — |
@@ -138,51 +163,23 @@ Exposé XIV is by Michèle Raynaud.
 
 ### Translation
 
-- [x] **Introduction** — Grothendieck’s introduction
-  - [x] English TeX and PDF in `translation/SGA2/Introduction/`
-  - [ ] Scholarly proofreading; source issues recorded in [`Introduction/README.md`](../translation/SGA2/Introduction/README.md)
-- [x] **I** — Global and local cohomological invariants relative to a closed subspace
-  - [x] English TeX and PDF in `translation/SGA2/ExposeI/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeI/README.md`](../translation/SGA2/ExposeI/README.md)
-- [x] **II** — Application to quasi-coherent sheaves on preschemes
-  - [x] English TeX and PDF in `translation/SGA2/ExposeII/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeII/README.md`](../translation/SGA2/ExposeII/README.md)
-- [x] **III** — Cohomological invariants and depth
-  - [x] English TeX and PDF in `translation/SGA2/ExposeIII/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeIII/README.md`](../translation/SGA2/ExposeIII/README.md)
-- [x] **IV** — Dualizing modules and functors
-  - [x] English TeX and PDF in `translation/SGA2/ExposeIV/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeIV/README.md`](../translation/SGA2/ExposeIV/README.md)
-- [x] **V** — Local duality and structure of the $H^i(M)$
-  - [x] English TeX and PDF in `translation/SGA2/ExposeV/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeV/README.md`](../translation/SGA2/ExposeV/README.md)
-- [x] **VI** — The functors $\mathrm{Ext}_Z^\bullet(X;F,G)$ and $\underline{\mathrm{Ext}}_Z^\bullet(F,G)$
-  - [x] English TeX and PDF in `translation/SGA2/ExposeVI/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeVI/README.md`](../translation/SGA2/ExposeVI/README.md)
-- [x] **VII** — Vanishing criteria; coherence of $\underline{\mathrm{Ext}}^i_Y(F,G)$
-  - [x] English TeX and PDF in `translation/SGA2/ExposeVII/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeVII/README.md`](../translation/SGA2/ExposeVII/README.md)
-- [x] **VIII** — The finiteness theorem
-  - [x] English TeX and PDF in `translation/SGA2/ExposeVIII/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeVIII/README.md`](../translation/SGA2/ExposeVIII/README.md)
-- [x] **IX** — Algebraic geometry and formal geometry
-  - [x] English TeX and PDF in `translation/SGA2/ExposeIX/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeIX/README.md`](../translation/SGA2/ExposeIX/README.md)
-- [x] **X** — Application to the fundamental group
-  - [x] English TeX and PDF in `translation/SGA2/ExposeX/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeX/README.md`](../translation/SGA2/ExposeX/README.md)
-- [x] **XI** — Application to the Picard group
-  - [x] English TeX and PDF in `translation/SGA2/ExposeXI/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeXI/README.md`](../translation/SGA2/ExposeXI/README.md)
-- [x] **XII** — Applications to projective algebraic schemes
-  - [x] English TeX and PDF in `translation/SGA2/ExposeXII/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeXII/README.md`](../translation/SGA2/ExposeXII/README.md)
-- [x] **XIII** — Problems and conjectures
-  - [x] English TeX and PDF in `translation/SGA2/ExposeXIII/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeXIII/README.md`](../translation/SGA2/ExposeXIII/README.md)
-- [x] **XIV** — Depth and Lefschetz theorems in étale cohomology (M. Raynaud)
-  - [x] English TeX and PDF in `translation/SGA2/ExposeXIV/`
-  - [ ] Scholarly proofreading; source issues recorded in [`ExposeXIV/README.md`](../translation/SGA2/ExposeXIV/README.md)
+- [x] **Introduction** — Grothendieck’s introduction (`translation/SGA2/Introduction/`)
+- [x] **I** — Global and local cohomological invariants relative to a closed subspace (`translation/SGA2/ExposeI/`)
+- [x] **II** — Application to quasi-coherent sheaves on preschemes (`translation/SGA2/ExposeII/`)
+- [x] **III** — Cohomological invariants and depth (`translation/SGA2/ExposeIII/`)
+- [x] **IV** — Dualizing modules and functors (`translation/SGA2/ExposeIV/`)
+- [x] **V** — Local duality and structure of the $H^i(M)$ (`translation/SGA2/ExposeV/`)
+- [x] **VI** — The functors $\mathrm{Ext}_Z^\bullet(X;F,G)$ and $\underline{\mathrm{Ext}}_Z^\bullet(F,G)$ (`translation/SGA2/ExposeVI/`)
+- [x] **VII** — Vanishing criteria; coherence of $\underline{\mathrm{Ext}}^i_Y(F,G)$ (`translation/SGA2/ExposeVII/`)
+- [x] **VIII** — The finiteness theorem (`translation/SGA2/ExposeVIII/`)
+- [x] **IX** — Algebraic geometry and formal geometry (`translation/SGA2/ExposeIX/`)
+- [x] **X** — Application to the fundamental group (`translation/SGA2/ExposeX/`)
+- [x] **XI** — Application to the Picard group (`translation/SGA2/ExposeXI/`)
+- [x] **XII** — Applications to projective algebraic schemes (`translation/SGA2/ExposeXII/`)
+- [x] **XIII** — Problems and conjectures (`translation/SGA2/ExposeXIII/`)
+- [x] **XIV** — Depth and Lefschetz theorems in étale cohomology (M. Raynaud) (`translation/SGA2/ExposeXIV/`)
+- [ ] Check of every exposé against the French by a second reader
+- [ ] Scholarly proofreading; source issues to be recorded in each exposé's README
 
 ### Formalization (Lean 4)
 

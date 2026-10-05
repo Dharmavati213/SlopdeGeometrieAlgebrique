@@ -1,8 +1,8 @@
 # Copyright and sources
 
-Everything in this repository that is original to the project — the Lean 4
-formalization, the English translation, documentation, and repository
-tooling — is licensed under the MIT License. See `LICENSE`.
+Everything in this repository that is original to the project (the Lean 4
+formalization, the English translation, the documentation and the repository
+tooling) is licensed under the MIT License. See `LICENSE`.
 
 Two parts keep the license under which they were contributed:
 
@@ -33,7 +33,6 @@ English translations are the slightly corrected SMF recompositions:
   de Lefschetz locaux et globaux* (SGA 2), Séminaire de géométrie
   algébrique du Bois Marie 1962, recomposed edition,
   [arXiv:math/0511279](https://arxiv.org/abs/math/0511279).
-
 - M. Demazure, A. Grothendieck, *Schémas en groupes* (SGA 3),
   Séminaire de géométrie algébrique du Bois Marie 1962–64.
   The English follows the recomposition edited by P. Gille and P. Polo
@@ -41,20 +40,20 @@ English translations are the slightly corrected SMF recompositions:
   corrected PDFs of 2008–2024). The French PDFs are not in this
   repository.
 
-Those French texts are **not** redistributed in this repository. The original
-remains copyright of the authors and of the original publishers
-(IHÉS / Springer / Société Mathématique de France, as applicable).
+The French texts are not redistributed in this repository. They remain the
+copyright of their authors and publishers (IHÉS, Springer, Société
+Mathématique de France, as applicable).
 
 This project is an unofficial scholarly companion. It does not claim
 endorsement by the original authors or publishers.
 
 ## English translation
 
-The English translation in `translation/` is an original derivative work
-of the SMF recompositions, prepared for this project. Numbering of
-statements follows the original exposés. The translator’s contribution
-is offered under the MIT License, except SGA 1, Exposé III (CC BY-SA 4.0,
-see above). See `translation/LICENSE`.
+The English translation in `translation/` is a derivative work of the
+recompositions listed above, prepared for this project. Statement numbering
+follows the French. The translators' contribution is offered under the MIT
+License, except SGA 1, Exposé III (CC BY-SA 4.0, see above). See
+`translation/LICENSE`.
 
 No license in this repository grants any rights in the French original.
 If you are a rights holder and believe this use is not appropriate,
@@ -62,8 +61,8 @@ open a GitHub issue or contact the repository owner.
 
 ## Lean formalization
 
-Lean source in `lean/SGA/` is original work of this project, apart from the
-Apache-2.0 file listed above, building on
+The Lean source in `lean/SGA/` is this project's own work, apart from the
+Apache-2.0 file listed above, and builds on
 [mathlib4](https://github.com/leanprover-community/mathlib4). It covers
 SGA 1 (every exposé, with the open items listed in `docs/formalization.md`)
 and parts of SGA 2, Exposés I–VII. Prerequisites that mathlib lacks are in
