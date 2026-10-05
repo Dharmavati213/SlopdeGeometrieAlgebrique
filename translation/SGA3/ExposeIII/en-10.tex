@@ -101,22 +101,22 @@ Since \(\mathcal{N}_{Y_{0}\times Y_{0}/X_{0}\times X_{0}}
 \simeq\mathrm{pr}_{1}^{*}\mathcal{N}_{Y_{0}/X_{0}}
 \oplus\mathrm{pr}_{2}^{*}\mathcal{N}_{Y_{0}/X_{0}}\)
 (since \(X_{0}\) and \(Y_{0}\) are \emph{flat} over \(S_{0}\)), and
-\(\mathcal{N}_{Y_{0}/X_{0}}\simeq\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{Y_{0}}\),
+\(\mathcal{N}_{Y_{0}/X_{0}}\simeq\mathfrak{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{Y_{0}}\),
 one has:
 \[
 (f_{j}^{Y})_{0}^{*}(\mathcal{N}_{Y_{0}\times Y_{0}/X_{0}\times X_{0}})
 \simeq
-(\mathbf{n}_{Y_{0}/X_{0}}\oplus\mathbf{n}_{Y_{0}/X_{0}})\otimes\OO_{Y_{0}^{3}}
+(\mathfrak{n}_{Y_{0}/X_{0}}\oplus\mathfrak{n}_{Y_{0}/X_{0}})\otimes\OO_{Y_{0}^{3}}
 \]
 and, likewise,
 \[
 (\mu^{2,Y})_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}})
 \simeq
-\mathbf{n}_{Y_{0}/X_{0}}\otimes\OO_{Y_{0}^{3}}
+\mathfrak{n}_{Y_{0}/X_{0}}\otimes\OO_{Y_{0}^{3}}
 \qquad\text{and}\qquad
 (\mu^{Y})_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}})
 \simeq
-\mathbf{n}_{Y_{0}/X_{0}}\otimes\OO_{Y_{0}^{2}}\,.
+\mathfrak{n}_{Y_{0}/X_{0}}\otimes\OO_{Y_{0}^{2}}\,.
 \]
 Moreover, since \(Y_{0}^{2}\) and \(Y_{0}^{3}\) are \emph{flat} over \(S_{0}\),
 \((\dagger)\) is rewritten in the following form:
@@ -167,13 +167,13 @@ We must first compute the map \(a_{j}\). Now it arises, by inverse image
 under \((f_{j}^{Y})_{0}\), from the morphism of \(\OO_{Y_{0}^{2}}\)-modules
 \[
 P\colon
-\mathbf{n}_{Y_{0}/X_{0}}\otimes\OO_{Y_{0}^{2}}
+\mathfrak{n}_{Y_{0}/X_{0}}\otimes\OO_{Y_{0}^{2}}
 \longrightarrow
-(\mathbf{n}_{Y_{0}/X_{0}}\oplus\mathbf{n}_{Y_{0}/X_{0}})\otimes\OO_{Y_{0}^{2}}
+(\mathfrak{n}_{Y_{0}/X_{0}}\oplus\mathfrak{n}_{Y_{0}/X_{0}})\otimes\OO_{Y_{0}^{2}}
 \]
 induced by the product in \(Y_{0}\). Now this morphism is described in the
 following way: let us consider the vector bundle
-\(\mathbf{V}=\mathbf{V}(\mathbf{n}_{Y_{0}/X_{0}})\); \(P\) gives by duality a
+\(\mathbf{V}=\mathbf{V}(\mathfrak{n}_{Y_{0}/X_{0}})\); \(P\) gives by duality a
 morphism
 \[
 \mathbf{V}(P)\colon
@@ -195,7 +195,7 @@ coincides with the group structure underlying its structure of
 \(\OO_{S}\)-module.
 % typo?: printed \(\OO_S\)-module; the surrounding base is \(S_0\). Kept as printed.
 One then sees that
-\(\mathbf{V}(\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{Y_{0}})
+\(\mathbf{V}(\mathfrak{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{Y_{0}})
 =\mathbf{V}(\mathcal{N}_{Y_{0}/X_{0}})\)
 is likewise equipped with a structure of \(S_{0}\)-group which is none other
 than the semidirect product of that of \(\mathbf{V}\) by that of \(Y_{0}\).
@@ -203,22 +203,22 @@ It only remains to identify the operations of \(Y_{0}\) on \(\mathbf{V}\) in
 order to establish the desired formula.
 
 Let us now compute the two remaining terms. Let us first consider
-\(a_{1}((0,DY))\). One computes it by the diagram (where \(\mathbf{n}\) denotes
-\(\mathbf{n}_{Y_{0}/X_{0}}\)):
+\(a_{1}((0,DY))\). One computes it by the diagram (where \(\mathfrak{n}\) denotes
+\(\mathfrak{n}_{Y_{0}/X_{0}}\)):
 \[
 \xymatrix@C=5.5em@R=1.55em{
-\mathbf{n}\otimes\OO_{Y_{0}^{2}}
+\mathfrak{n}\otimes\OO_{Y_{0}^{2}}
   \ar[r]^{P}
   \ar[dd]_{(f_{1}^{Y})_{0}^{*}}
 &
-(\mathbf{n}+\mathbf{n})\otimes\OO_{Y_{0}^{2}}
+(\mathfrak{n}+\mathfrak{n})\otimes\OO_{Y_{0}^{2}}
   \ar[dd]^{(f_{1}^{Y})_{0}^{*}}
 \\
 \\
-\mathbf{n}\otimes\OO_{Y_{0}^{3}}
+\mathfrak{n}\otimes\OO_{Y_{0}^{3}}
   \ar[dr]_{{a_{1}((0,DY))}}
 &
-(\mathbf{n}+\mathbf{n})\otimes\OO_{Y_{0}^{3}}
+(\mathfrak{n}+\mathfrak{n})\otimes\OO_{Y_{0}^{3}}
   \ar[d]^{{(0,DY)}}
 \\
 &
@@ -356,7 +356,7 @@ consider the commutative \(S_{0}\)-group functor \(N_{0}\) defined by
 \[
 \Hom_{S_{0}}(T,N_{0})
 =
-\Hom_{\OO_{T}}(\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{T},\,
+\Hom_{\OO_{T}}(\mathfrak{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{T},\,
 \mathcal{J}\otimes_{\OO_{S_{0}}}\OO_{T})\,,
 \qquad
 T\in\Ob\Sch_{/S_{0}}\,,
@@ -401,28 +401,28 @@ reads \(\partial^{1}d(Y',Y)=0\), which proves~(ii).
 One keeps the notations of~4.21. By~4.15, \(Y_{0}\) is locally a complete
 intersection in \(X_{0}\), so \(\mathcal{N}_{Y_{0}/X_{0}}\) is a finite
 locally free \(\OO_{Y_{0}}\)-module, and consequently
-\(\mathbf{n}_{Y_{0}/X_{0}}=\varepsilon_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}})\)
+\(\mathfrak{n}_{Y_{0}/X_{0}}=\varepsilon_{0}^{*}(\mathcal{N}_{Y_{0}/X_{0}})\)
 is a finite locally free \(\OO_{S_{0}}\)-module. Thus, denoting
-\(\mathbf{n}^{\vee}_{Y_{0}/X_{0}}
-=\mathcal{H}\mathrm{om}_{\OO_{Y_{0}}}(\mathbf{n}_{Y_{0}/X_{0}},\OO_{Y_{0}})\),
+\(\mathfrak{n}^{\vee}_{Y_{0}/X_{0}}
+=\mathcal{H}\mathrm{om}_{\OO_{Y_{0}}}(\mathfrak{n}_{Y_{0}/X_{0}},\OO_{Y_{0}})\),
 % typo?: dual written as \(\mathcal{H}\mathrm{om}\) over \(\OO_{Y_0}\). Kept as printed.
 one has
 \[
 \mathcal{H}\mathrm{om}_{\OO_{T}}
-  (\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{T},\,
+  (\mathfrak{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{T},\,
    \mathcal{J}\otimes_{\OO_{S_{0}}}\OO_{T})
 \simeq
-\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J}
+\mathfrak{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J}
   \otimes_{\OO_{S_{0}}}\OO_{T}
 \]
 for every \(T\to S_{0}\).%
-{\renewcommand{\thefootnote}{(119)}\nde{One has spelled out what precedes; this shows that the isomorphism which follows is valid without a flatness hypothesis. On the other hand, since~4.16, one has restricted oneself to the \(S\)-schemes \(f\colon T\to S\) \emph{flat} over~\(S\), in order to ensure that the group \(\Hom_{\OO_{T_{0}}}(\mathbf{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{T_{0}},\,\mathcal{J}\,\OO_{T})\), in which the obstruction \(c(X,Y,f)\) lies, coincides with \(N_{0}(T_{0})\) (\cf\ the end of~4.16).}}
+{\renewcommand{\thefootnote}{(119)}\nde{One has spelled out what precedes; this shows that the isomorphism which follows is valid without a flatness hypothesis. On the other hand, since~4.16, one has restricted oneself to the \(S\)-schemes \(f\colon T\to S\) \emph{flat} over~\(S\), in order to ensure that the group \(\Hom_{\OO_{T_{0}}}(\mathfrak{n}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\OO_{T_{0}},\,\mathcal{J}\,\OO_{T})\), in which the obstruction \(c(X,Y,f)\) lies, coincides with \(N_{0}(T_{0})\) (\cf\ the end of~4.16).}}
 Consequently, the \(S_{0}\)-functor \(N_{0}\) is isomorphic to the functor
 \[
-\mathbf{W}(\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J})
+\mathbf{W}(\mathfrak{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J})
 \simeq
 \mathbf{W}\bigl(\mathcal{H}\mathrm{om}_{\OO_{S_{0}}}
-  (\mathbf{n}_{Y_{0}/X_{0}},\mathcal{J})\bigr)\,.
+  (\mathfrak{n}_{Y_{0}/X_{0}},\mathcal{J})\bigr)\,.
 \]
 There result the isomorphisms:%
 {\renewcommand{\thefootnote}{(120)}\nde{with the notations of~I 5.3, assuming \(Y_{0}\) affine over \(S_{0}\).}}
@@ -430,16 +430,16 @@ There result the isomorphisms:%
 H^{2}(Y_{0},N_{0})
 &\simeq
 H^{2}\bigl(Y_{0},\,
-  \mathcal{H}\mathrm{om}_{\OO_{S_{0}}}(\mathbf{n}_{Y_{0}/X_{0}},\mathcal{J})\bigr)
+  \mathcal{H}\mathrm{om}_{\OO_{S_{0}}}(\mathfrak{n}_{Y_{0}/X_{0}},\mathcal{J})\bigr)
 \simeq
-H^{2}(Y_{0},\,\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J})\,,
+H^{2}(Y_{0},\,\mathfrak{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J})\,,
 \\
 Z^{1}(Y_{0},N_{0})
 &\simeq
 Z^{1}\bigl(Y_{0},\,
-  \mathcal{H}\mathrm{om}_{\OO_{S_{0}}}(\mathbf{n}_{Y_{0}/X_{0}},\mathcal{J})\bigr)
+  \mathcal{H}\mathrm{om}_{\OO_{S_{0}}}(\mathfrak{n}_{Y_{0}/X_{0}},\mathcal{J})\bigr)
 \simeq
-Z^{1}(Y_{0},\,\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J})\,.
+Z^{1}(Y_{0},\,\mathfrak{n}^{\vee}_{Y_{0}/X_{0}}\otimes_{\OO_{S_{0}}}\mathcal{J})\,.
 \end{align*}
 % typo: an extra closing parenthesis after each of the two displays. Removed.
 \end{remark}
@@ -485,7 +485,7 @@ Now one has:
 There exists a canonical exact sequence of \(Y_{0}\)-\(\OO_{S_{0}}\)-modules
 \[
 (+)\qquad
-\mathbf{n}_{Y_{0}/X_{0}}
+\mathfrak{n}_{Y_{0}/X_{0}}
 \xrightarrow{d}
 \omega^{1}_{X_{0}/S_{0}}
 \longrightarrow
@@ -500,7 +500,7 @@ having the following properties:
 
 (ii)~If \(X_{0}\) and \(Y_{0}\) are smooth over \(S_{0}\), then \(d\) is
 injective. Since the two \(\omega^{1}\) are then locally free of finite type,
-the same holds for \(\mathbf{n}_{Y_{0}/X_{0}}\), and the sequence is locally
+the same holds for \(\mathfrak{n}_{Y_{0}/X_{0}}\), and the sequence is locally
 split.
 \end{lemma}
 
@@ -546,7 +546,7 @@ sequence of \(Y_{0}(T)\)-\(\OO(T)\)-modules
 \Hom_{\OO_{T}}\bigl(f^{*}(\omega^{1}_{X_{0}/S_{0}}),\,f^{*}(\mathcal{J})\bigr)
 \\
 &\longrightarrow
-\Hom_{\OO_{T}}\bigl(f^{*}(\mathbf{n}_{Y_{0}/X_{0}}),\,f^{*}(\mathcal{J})\bigr)\,,
+\Hom_{\OO_{T}}\bigl(f^{*}(\mathfrak{n}_{Y_{0}/X_{0}}),\,f^{*}(\mathcal{J})\bigr)\,,
 \end{aligned}
 \]
 one therefore has an exact sequence of \(Y_{0}\)-\(\OO_{S_{0}}\)-modules:
@@ -595,7 +595,7 @@ of~\(X\)) over \(S\) inducing the unit section of \(X_{\mathcal{J}}\). Let us
 also note that \(d^{1}\) is none other than the morphism \(v_{i_{Y_{0}}}\)
 of~4.8~(iii), where \(i_{Y_{0}}\colon Y_{0}\to X_{0}\) is the canonical
 immersion.%
-{\renewcommand{\thefootnote}{(124)}\nde{This follows from the definition of \(d\colon\mathbf{n}_{Y_{0}/X_{0}}\to\Omega^{1}_{X_{0}/S_{0}}\) (\cf~4.25) and from that of \(v_{i_{Y_{0}}}\) (\cf~4.8).}}
+{\renewcommand{\thefootnote}{(124)}\nde{This follows from the definition of \(d\colon\mathfrak{n}_{Y_{0}/X_{0}}\to\Omega^{1}_{X_{0}/S_{0}}\) (\cf~4.25) and from that of \(v_{i_{Y_{0}}}\) (\cf~4.8).}}
 % typo?: footnote~(124) prints \(\Omega^{1}_{X_0/S_0}\); the map \(d\) of~4.25 lands in \(\omega^{1}_{X_0/S_0}\). Kept as printed.
 
 \begin{lemma}{4.27}\label{III.4.27}
@@ -889,7 +889,7 @@ sequence of \(Y_{0}\)-\(\OO_{S_{0}}\)-modules:
 \longrightarrow
 \mathcal{L}\mathrm{ie}(X_{0}/S_{0})
 \longrightarrow
-\mathbf{n}^{\vee}_{Y_{0}/X_{0}}
+\mathfrak{n}^{\vee}_{Y_{0}/X_{0}}
 \longrightarrow 0
 \]
 and these are finite locally free \(\OO_{S_{0}}\)-modules.
@@ -898,7 +898,7 @@ On the other hand, by SGA~1, II~4.10, every subscheme \(Y\) of \(X\) lifting
 \(Y_{\mathcal{J}}\) and \emph{flat} over \(S\) will be \emph{smooth} over~\(S\).%
 {\renewcommand{\thefootnote}{(132)}\nde{One has added what follows and Proposition~4.35.1, implicit in the original, \cf~4.38~(5).}}
 Suppose moreover that \(S_{0}\) and \(Y_{\mathcal{J}}\) are \emph{affine}.
-Then, since \(\mathbf{n}^{\vee}_{Y_{0}/X_{0}}\) is a locally free
+Then, since \(\mathfrak{n}^{\vee}_{Y_{0}/X_{0}}\) is a locally free
 \(\OO_{S_{0}}\)-module, the sequence \((*)\) remains exact when one applies
 \(\otimes_{\OO_{S_{0}}}\mathcal{J}\) to it, and then takes the inverse image
 on \(Y_{0}^{n}\), and since the \(Y_{0}^{n}\) are affine, one therefore
