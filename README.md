@@ -62,7 +62,8 @@ LICENSES/        full texts of licenses other than MIT
 | SGA 1, Lean: XII | §§1–2, and §3 on the spaces of points `X(ℂ)`; GAGA (§4) and the comparisons that need coherent analytic sheaves are not formalized |
 | SGA 1, prerequisites missing from mathlib | [`lean/SGA/Foundations/`](lean/SGA/Foundations/) |
 | SGA 2, English | Introduction and Exposés I–XIV ([`translation/SGA2/`](translation/SGA2/)) |
-| SGA 2, Lean: I–VI | partial: local cohomology with closed and locally closed supports and its spectral sequence (I), affine comparisons and Koszul complexes (II), depth (III), dualizing functors (IV), local duality (V), Ext with supports (VI) |
+| SGA 2, Lean: V | every numbered statement proved (local duality, structure of `Hⁱ(M)`) |
+| SGA 2, Lean: I–IV, VI | partial: local cohomology with closed and locally closed supports and its spectral sequence (I), affine comparisons and Koszul complexes (II), depth (III), dualizing modules and functors (IV), Ext with supports (VI) |
 | SGA 2, Lean: VII | VII.1.3 on locally noetherian schemes |
 | SGA 2, Lean: VIII–XIV | not started |
 | SGA 3, English | foreword, introduction and Exposés I–XXVI ([`translation/SGA3/`](translation/SGA3/)) |

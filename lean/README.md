@@ -48,17 +48,20 @@ and how far each is formalized.
 Exposés I–VII are partly formalized; VIII–XIV are not started. The SGA 2 files predate the
 SGA 1 conventions and have their own naming and their own sheaf-cohomology infrastructure.
 
-- **I.** Local cohomology `H_Z` of abelian sheaves, for closed and locally closed supports:
-  SGA's derived-functor definition and the Ext definition of I.2.3 bis, compared in every
-  degree; the exact sequences of §§1–2; the local-to-global spectral sequence I.2.6; flasque
-  acyclicity.
-- **II.** The affine comparisons II.(7.3)–(7.5), the Koszul comparison II.8, II.9 and II.11.
-- **III.** Depth and the depth criteria for the vanishing of local cohomology; Hartogs-type
-  extension and connectedness results (III.3.7–III.3.13).
-- **IV.** Dualizing modules and functors, IV.1–IV.5, apart from parts of IV.5.5.
-- **V.** Local duality over regular local rings, and the structure results of V.3.
-- **VI.** Ext with supports: exact sequences, spectral sequences, VI.1.8–VI.1.9; VI.2.1 and
-  VI.2.3 in degree 0 or in the affine case.
+- **I.** Local cohomology of abelian sheaves with closed and locally closed supports: SGA's
+  derived-functor definition and the Ext definition of I.2.3 bis, compared in every degree; the
+  exact sequences of §§1–2; the local-to-global spectral sequence I.2.6; flasque acyclicity and
+  its converse. Missing: I.1.1–I.1.2 as stated, I.1.5 beyond `G = ℤ_Z`, the module case I.1.7.
+- **II.** On noetherian affine schemes: II.4–II.7 for global sections, and the Koszul
+  comparisons II.8–II.11. Quasi-coherence of `ℋ_Z^i` (II.1–II.3) only in degree 0.
+- **III.** Depth (§§1–2) and the criteria of §3 on locally noetherian schemes, including
+  Hartogs and Hartshorne's connectedness theorem; III.3.10, III.3.12 and III.3.13 in part.
+- **IV.** All of IV.1–IV.5 except IV.4.8 (which needs Cohen's structure theorem) and IV.5.5
+  beyond power series rings.
+- **V.** Every numbered statement: local duality over regular local rings (V.2.1) and the
+  structure of `Hⁱ(M)` (V.3).
+- **VI.** VI.1 for locally closed supports; VI.2.1 in degree 0 for closed supports; VI.2.3 in
+  special cases.
 - **VII.** VII.1.3 on locally noetherian schemes.
 
 `lake env lean CheckSGA2Axioms.lean` checks every imported `SGA.SGA2` declaration and its
