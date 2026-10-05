@@ -124,7 +124,7 @@ exposé before formalizing it, using the same chunk + checker pipeline.
 
 ## 6. Later volumes (claude-1003, 2026-10-03)
 
-SGA 3’s English draft is complete (codex-sga3, 2026-10-05), covering the
+SGA 3’s English draft is complete (2026-10-05), covering the
 foreword/introduction and all exposés from the local Gille–Polo PDFs.
 Independent scholarly proofreading remains open; see
 [`translation/SGA3/README.md`](../../translation/SGA3/README.md).
