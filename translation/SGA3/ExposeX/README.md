@@ -46,5 +46,6 @@ Marked `% typo?:` in the source. These may be slips in the French; the translati
 
 Some source note markers are printed twice (in the proof of 3.3, the proof of
 4.4 and 8.7); the translation repeats the marker without repeating the note.
-In the Addenda (section 9), the reference ``[Fri82], ?.5.6'' and the
-cross-reference ``page 90'' are kept as printed.
+In the Addenda (section 9), the reference ``[Fri82], ?.5.6'', the
+cross-reference ``page 90'' and the editorial query ``[Expand?]'' before
+Lemma 9.7.2 are kept as printed.
