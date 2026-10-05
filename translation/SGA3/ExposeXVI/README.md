@@ -1,51 +1,45 @@
-# SGA 3, XVI
+# SGA 3, Exposé XVI — Groups of unipotent rank zero
 
-Groups of unipotent rank zero.
+By M. Raynaud. English translation of the Gille–Polo recomposition,
+`Expo16.pdf` (24 pages; not in this repository).
+Complete draft; not yet independently reviewed against the French.
 
-Author of the exposé: M. Raynaud.
-
-French source (local only): `source/SGA3/Expo16.pdf` (24 pages),
-the Gille–Polo recomposition.
-
-| | |
+| File | Source pages |
 | --- | --- |
-| Status | Complete compiled draft; independent scholarly proofreading remains outstanding. |
-| Chunks | en-01.tex (pp. 1--6), en-02.tex (pp. 7--12), en-03.tex (pp. 13--17), en-04.tex (pp. 18--22), en-05.tex (pp. 23--24) |
+| [`SGA3-XVI.tex`](SGA3-XVI.tex) | Standalone wrapper |
+| [`en-01.tex`](en-01.tex) | 1–6 |
+| [`en-02.tex`](en-02.tex) | 7–12 |
+| [`en-03.tex`](en-03.tex) | 13–17 |
+| [`en-04.tex`](en-04.tex) | 18–24 (p. 23 only finishes the last sentence begun on p. 22; p. 24 is blank) |
+| [`SGA3-XVI.pdf`](SGA3-XVI.pdf) | Compiled PDF |
 
-Typographical corrections made in the English are marked in the body
-with `% typo:`. Build: `make -C translation/SGA3/ExposeXVI`.
+Build: `make -C translation/SGA3/ExposeXVI`.
 
-All 24 source PDF pages were rendered and read. Every sentence, proof,
-formula, diagram and note is translated. The starting-page rule puts the
-final sentence, begun on p. 22 and finished on p. 23, in en-04; p. 24 is
-blank. Consequently en-05 contains only documented `\relax`, with no
-printed text or duplication.
+## Typographical corrections
 
-`make` and `check_coverage.py --expose XVI --source-dir source/SGA3
---require-pdf` pass. The PDF has 21 physical pages (17 body pages), all of
-which were rendered and inspected, and 33 labels. The version note 0,
-original starred author note, and editor note 1 are retained. There are
-no box warnings or clipping. `git diff --check` passes. Structural coverage
-does not certify sentence-level or mathematical fidelity.
+Corrected in the English and marked `% typo:` in the source: the missing outer closing parentheses in 1.1 a)
+and 1.4 b); the extra closing parenthesis in the proof of 1.8; “S-groupes. sorte que” for “S-groupes, de sorte
+que” (2.4); “on pout supposer” (proof of 4.2).
 
-Clear typography corrected, with body comments: missing outer closing
-parentheses in 1.1(a) and 1.4(b), the extra closing parenthesis in the proof
-of 1.8, `S-groupes. sorte que` in 2.4, and `on pout supposer` in 4.2.
+## Source points retained as printed
 
-Mathematical or uncertain source slips retained as printed:
+Marked `% typo?:` in the source. These may be slips in the French; the translation keeps them.
 
-- 1.6(ii) includes every positive n in the finiteness criterion; 1.6(iii)
-  includes every positive invertible q. The proof of 1.7 says n-th power
-  before the q-kernel sequence; the proof of 1.6(iii) cites `1.6 b)`.
-- The proof of 1.9 says `F_t` contains the schematic closure in V;
-  the proof of 1.10 labels its third part c); the proof of 1.3(b) cites
-  `1.2 a)` and `EGA IV 15.5`.
-- The proof of 2.2 prints `G ×_S G` as the first projection's domain;
-  the proof of 2.4 calls a group over T of finite presentation over S.
-- The proof of 3.2 prints `G ×_T H`; the density argument in 3.5 prints
-  `i(S')` and the kernel subscript `n m_0`; the nonflat-center example
-  prints `(t,u),(t,u')` on the left of the composition law.
-- The proof of 4.1(d) cites `3.5 b)`; 4.2 assumes dimension 1;
-  6.3 gives G, rather than H, in its local finite-type alternative;
-  the proof of 6.4 calls V an open subset of T although the map has
-  domain `T^N`.
+| Place | As printed |
+| --- | --- |
+| 1.6 ii) and iii) | ii) includes every positive `n` in the finiteness criterion; iii) every positive invertible `q`. |
+| Proof of 1.7 | “`n`th power” before the exact sequence of `q`-kernels. |
+| Proof of 1.6 iii) | Cites `1.6 b)`. |
+| Proof of 1.9 | `F_t` is said to contain the schematic closure of `V_t` in `V`. |
+| Proof of 1.10 | The third part is labelled c). |
+| Proof of 1.3 a) | `D_s` is called connected by 1.11, which applies to its reduced subgroup. |
+| Proof of 1.3 b) | Cites `1.2 a)` and `EGA IV 15.5`. |
+| Proof of 2.2 | `G ×_S G` as the domain of the first projection. |
+| Proof of 2.4 | A group over `T` is said to be of finite presentation over `S`. |
+| Proof of 3.2 | `G ×_T H`. |
+| Proof of 3.5 | `i(S')` and the kernel subscript `n m_0` in the density argument. |
+| Example of a nonflat center | `(t,u),(t,u')` on the left of the composition law. |
+| Proof of 4.1 d) | Cites `3.5 b)`. |
+| 4.2 | Assumes dimension 1 (4.1 d) says dimension ≤ 1). |
+| 6.3 | `G`, rather than `H`, in the locally-of-finite-type alternative. |
+| Proof of 6.4 | `V` is called an open subset of `T`, although `f^N` has domain `T^N`. |
