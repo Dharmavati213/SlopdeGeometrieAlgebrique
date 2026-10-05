@@ -1,6 +1,5 @@
 \exposetitle{XXIV}{Automorphisms of reductive groups}
 \label{XXIV}
-% original PDF p. 1
 \setcounter{footnote}{-1}
 \nde{Version of 13/10/2024.}The first part of this exposé (nos. 1 to 5) is a direct consequence of the existence, for a reductive group, of ``sufficiently many outer automorphisms'', a result which is a consequence of the weakest form of the isomorphism theorem for pinned groups. The second part (nos. 6 and 7) presents two applications of the more precise results of the preceding exposé; in particular, no. 7 uses the theorem on generators and relations in its explicit form. Finally, in an appendix (no. 8) we have given results on ``Galois'' cohomology used in the text.
 
@@ -13,7 +12,6 @@ If every principal homogeneous sheaf under $G$ is representable (for example if 
 
 If $S'\to S$ is a covering morphism for the (fpqc) topology, we denote by $\mathrm H^1(S'/S,G)$ the kernel of the canonical map $\mathrm H^1(S,G)\to\mathrm H^1(S',G_{S'})$. One knows that $\mathrm H^1(S'/S,G)$ can be computed simplicially (TDTE~I, §~A.4), which implies that when $S'\to S$ is covering for the étale topology, $\mathrm H^1(S'/S,G)$ is also the kernel of $\mathrm H^1_{\mathrm{\acute et}}(S,G)\to\mathrm H^1_{\mathrm{\acute et}}(S',G_{S'})$.
 
-% original PDF p. 2
 Finally, following Exp.~VIII, 4.5, one calls ``theorem 90'' the following assertion: ``every principal homogeneous sheaf under $\mathbf G_{\mathrm m,S}$ is representable and locally trivial'', an assertion equivalent to ``$\mathrm H^1(S,\mathbf G_{\mathrm m,S})=\Pic(S)$'', or again to ``$\mathrm H^1(S,\mathbf G_{\mathrm m,S})=0$ for $S$ local (or, more generally, semi-local)''.
 
 \sgasection{1}{Scheme of automorphisms of a reductive group}
@@ -38,7 +36,6 @@ One has an evident contravariant functor
 \]
 and the principal result of the preceding exposé (Exp.~XXIII, 4.1) shows us that it is a fully faithful functor (we shall moreover see in the following exposé that it is an equivalence of categories). It follows in particular that the group of automorphisms of $(G,\mathscr R,\mathscr E)$ is canonically isomorphic to the group of automorphisms of the pinned root datum $\mathscr R$ (cf. Exp.~XXIII, 5.5).
 
-% original PDF p. 3
 \numpara{1.1}\label{XXIV.1.1}
 Let $S$ be a scheme; equip $\Sch/S$ with the (fpqc) topology and consider the $S$-sheaf of groups $\underline{\Aut}_{S\text{-gr.}}(G)$, where $G$ is an $S$-group scheme. One has an exact sequence of $S$-sheaves of groups
 \[
@@ -74,7 +71,6 @@ For an automorphism $u$ of $G$ to be a section of the image sheaf of $a$, it is 
 \end{enumeratei}
 It follows at once from the definitions that the sections of $a(E_S)$ normalize the subgroups of $G$ defined by the pinning: $T$, $B$, $B^-$, $U$, $U^-$. These definitions being given, one has:
 
-% original PDF p. 4
 \begin{theorem}{1.3}\label{XXIV.1.3}
 Let $S$ be a scheme and $G$ a reductive $S$-group. Consider the canonical exact sequence of $S$-sheaves of groups\nde{Recall that $\ad(G)=G/\uCentr(G)$ denotes the adjoint group of $G$, cf. XXII 4.3.6.}
 \[
@@ -109,7 +105,6 @@ If $(\mathscr R,\mathscr E)$ and $(\mathscr R',\mathscr E')$ are two pinnings of
 \]
 for every $\alpha\in\Delta$. One therefore has $\alpha(g)=1$ for $\alpha\in\Delta$, hence $g\in\bigcap_{\alpha\in\Delta}(\Ker\alpha)(S)=\uCentr(G)(S)$ (Exp.~XXII, 4.1.8). \hfill Q.E.D.
 
-% original PDF p. 5
 \numpara{1.5.2}\label{XXIV.1.5.2}\textit{Existence.} It suffices to prove it locally for the (fpqc) topology. Let
 \[
 (T,M,R,\Delta,(X_\alpha)_{\alpha\in\Delta})\quad\text{and}\quad
@@ -143,7 +138,6 @@ is representable by a smooth separated $S$-scheme (which is affine over $S$ if $
 \end{corollary}
 Indeed, let $U$ be the set of points $s$ of $S$ such that $H_s$ is reductive; it is open (Exp.~XIX, 2.6); if $S'$ is an $S$-scheme, $H_{S'}$ is reductive if and only if $S'\to S$ factors through $U$. It follows that the canonical morphism $\underline{\Isom}_{S\text{-gr.}}(G,H)\to S$ factors through $U$. One may therefore suppose $S=U$ and one is reduced to:
 
-% original PDF p. 6
 \begin{corollary}{1.9}\label{XXIV.1.9}
 Let $S$ be a scheme and $G$, $G'$ two reductive $S$-groups. Then
 \[
@@ -180,7 +174,6 @@ the inverse image, under the canonical morphism $\underline{\Isom}_{S\text{-gr.}
 \end{remark}
 By Hensel's lemma (Exp.~XI, 1.11), 1.8 immediately gives:
 
-% original PDF p. 7
 \begin{corollary}{1.12}\label{XXIV.1.12}
 Let $S$ be a henselian local scheme, $G$ a reductive $S$-group, $G'$ a smooth affine $S$-group with connected fibers, and $s$ the closed point of $S$. If $G_s$ and $G'_s$ are isomorphic algebraic $\kappa(s)$-groups, $G$ and $G'$ are isomorphic. More precisely, every $\kappa(s)$-isomorphism $G_s\simeq G'_s$ comes from an $S$-isomorphism $G\simeq G'$.
 \end{corollary}
@@ -212,7 +205,6 @@ Let $k$ be a field,\nde{We have replaced ``scheme'' by ``field''.} and $G$ a red
 \begin{proof}
 \nde{Because of the correction made in 1.13, we have given another proof in the case of $\mathrm H^1$. Moreover, it follows from a theorem of G.~Kempf that $\mathrm H^i(G,k)=0$ for every $i>0$, cf. [Ja87], II 4.5 and 4.11.}Since $\mathrm H^i(G_{\bar k},\bar k)=\mathrm H^i(G,k)\otimes\bar k$, one may suppose $k$ algebraically closed. An element of $\mathrm H^1(G,k)$ is nothing other than a morphism of $k$-groups $\phi:G\to\mathbf G_{\mathrm a,k}$. Then $\phi(G)=G/\Ker(\phi)$ is a smooth, connected and reductive subgroup (cf. XIX 1.7) of $\mathbf G_{\mathrm a,k}$, hence trivial. Thus $\mathrm H^1(G,k)=0$.
 
-% original PDF p. 8
 Consider now the reductive $k$-group $H=G\times_k\mathbf G_{\mathrm m,k}$. One has $\Lie(H/k)=\Lie(G/k)\oplus k$, a decomposition stable under $H$. For an arbitrary $H$-module $V$, one has
 \[
 \mathrm H^i(H,V)=\mathrm H^i(G,\mathrm H^0(\mathbf G_{\mathrm m,k},V))
@@ -261,4 +253,3 @@ Let $S$ be a scheme and $G$ a reductive $S$-group.
 G'\mto\underline{\Isom}_{S\text{-gr.}}(G,G')
 \]
 is an equivalence between the category of forms of $G$ over $S$ and the category of principal homogeneous bundles under $\underline{\Aut}_{S\text{-gr.}}(G)$.
-% Corollary 1.17 and enumeratei continue in en-02.tex, PDF p. 9.

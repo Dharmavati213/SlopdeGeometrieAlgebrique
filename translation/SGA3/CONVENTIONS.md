@@ -4,11 +4,10 @@ Unofficial English of *Schémas en groupes* (SGA 3), from the recomposition
 edited by Philippe Gille and Patrick Polo. The French PDFs live only in
 `source/SGA3/` (gitignored). Do not copy them into the repository.
 
-The text to translate is the PDF, read as pages. A plain-text extract under
-`source/SGA3/text/` is a crib for the French words. Formulas, diagrams, and
-accents in that extract are not reliable.
+Translate from the PDF itself. A plain-text extract is a crib for the French
+words only: it loses formulas, diagrams, accents and notation.
 
-## What is in this pass
+## Scope
 
 Exposés I–XXVI and the foreword/introduction. Not the indexes, and not the
 tables of contents (LaTeX builds the contents). Tome 1 is exposés I–VIIB
@@ -34,20 +33,15 @@ parenthesis that is visibly a slip). Mark it with a comment
 a hypothesis, or a number because it looks unlikely. If you are unsure,
 leave the text as printed and mark `% typo?: kept as printed`.
 
-## Page ranges
-
-A chunk is a page range of one PDF. Take every sentence that begins on
-those pages. If a sentence runs onto the next page, read that next page
-and finish the sentence. If a sentence begins on the previous page and
-only continues onto your first page, leave it out. Drop running headers
-and printed page numbers.
-
 ## File shape
 
-A body fragment only: no `\documentclass`, no preamble. The first chunk
-of an exposé starts with `\exposetitle{I}{English title}` (or
-`\fronttitle{...}` for the introduction) and `\label{I}`. Later chunks
-do not repeat it. Overwrite the assigned `en-XX.tex` and no other file.
+Each exposé directory has a standalone wrapper `SGA3-<id>.tex` and body
+fragments `en-01.tex`, `en-02.tex`, … covering consecutive page ranges of the
+French PDF (listed in the exposé README). A sentence belongs to the fragment
+of the page where it begins. Fragments have no preamble. The first one starts
+with `\exposetitle{I}{English title}` (or `\fronttitle{...}` for the
+introduction) and `\label{I}`. Running headers and printed page numbers are
+dropped.
 
 ## Numbering
 

@@ -1,42 +1,27 @@
-# SGA 3, XXIII
+# SGA 3, Exposé XXIII — Reductive groups: uniqueness of pinned groups
 
-Reductive groups: uniqueness of pinned groups.
+By M. Demazure. English translation of the Gille–Polo recomposition,
+`Exp23-13oct24.pdf` (37 pages; not in this repository).
+Complete draft; not yet independently reviewed against the French.
 
-Author of the exposé: M. Demazure.
-
-French source (local only): `source/SGA3/Exp23-13oct24.pdf` (37 pages),
-the Gille–Polo recomposition.
-
-| | |
+| File | Source pages |
 | --- | --- |
-| Status | Complete English draft; independent sentence-level review outstanding. |
-| Chunks | en-01.tex (pp. 1--8), en-02.tex (pp. 9--14), en-03.tex (pp. 15--20), en-04.tex (pp. 21--25), en-05.tex (pp. 26--30), en-06.tex (pp. 31--37) |
+| [`SGA3-XXIII.tex`](SGA3-XXIII.tex) | Standalone wrapper |
+| [`en-01.tex`](en-01.tex) | 1–8 |
+| [`en-02.tex`](en-02.tex) | 9–14 |
+| [`en-03.tex`](en-03.tex) | 15–20 |
+| [`en-04.tex`](en-04.tex) | 21–25 |
+| [`en-05.tex`](en-05.tex) | 26–30 |
+| [`en-06.tex`](en-06.tex) | 31–37 |
+| [`SGA3-XXIII.pdf`](SGA3-XXIII.pdf) | Compiled PDF |
 
-All six body fragments translate the complete source, including every proof,
-formula, diagram, table, editorial note 0–20, both starred original footnotes,
-and all seven bibliography entries. Every French source page was rendered and
-read; selected English pages covering long formulas, the rank-one diagram,
-commutator table, footnotes and bibliography were visually checked.
+Build: `make -C translation/SGA3/ExposeXXIII`.
 
-Validation (2026-10-04): `make -C translation/SGA3/ExposeXXIII` succeeds,
-producing 31 main-text pages (35 PDF pages with front matter); no overfull or
-underfull box warnings. The structural check
-`python3 translation/SGA3/check_coverage.py --expose XXIII --source-dir source/SGA3 --require-pdf`
-passes, as does `git diff --check` for this directory. All 56 numbered statement
-labels are present. These checks do not replace independent sentence-level or
-mathematical proofreading.
+## Source points retained as printed
 
-Chunk boundaries follow starting-page sentence ownership. Lemma 3.1.1 and its
-list run from en-02 to en-03; item (ii)'s last sentence on p. 15 belongs to en-02.
-The sentence at the start of 3.4.2 ending “as in (ii)” on p. 21 belongs to en-03.
-The last sentence of 3.5.3 and note 10 finish on p. 26 and belong to en-04.
-Editorial note 13 is marked inside the starred original note at 5.4; its text
-follows that note, and the ordinary counter continues at 14.
+Marked `% typo?:` in the source. These may be slips in the French; the translation keeps them.
 
-Apparent mathematical, indexing and reference slips are retained as printed,
-with `% typo?:` comments. No mathematical correction was applied:
-
-| Source location | Printed text retained |
+| Place | As printed |
 | --- | --- |
 | 1.7 | Target `Z'_{d(Delta'_1)}` in the morphism, and unprimed `Z_{Delta'_1}` in the root-datum display. |
 | 1.8.2 | `f(w_alpha)` rather than `f_N(w_alpha)`; free generators indexed by R. |
@@ -54,4 +39,7 @@ with `% typo?:` comments. No mathematical correction was applied:
 | 6.1–6.3 | `X_{-alpha}=±X_alpha` without the inverse; first factor `w_{alpha_i}(X_{alpha_1})`; reference to part (i) for Chevalley systems. |
 | Proof of 6.6 | System indexed by R+ and said to be a Chevalley system of the Lie algebra. |
 
-The English retains the bibliography's dates and titles exactly as printed.
+Also as printed: editorial note 13 is marked inside the starred original
+footnote at 5.4, its text follows that footnote, and the ordinary note
+counter continues at 14. The bibliography's dates and titles are kept
+exactly as printed.

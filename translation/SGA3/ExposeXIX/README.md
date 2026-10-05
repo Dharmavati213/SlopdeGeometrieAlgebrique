@@ -1,26 +1,29 @@
-# SGA 3, XIX
+# SGA 3, Exposé XIX — Reductive groups: generalities
 
-Reductive groups: generalities.
+By M. Demazure. English translation of the Gille–Polo recomposition,
+`Exp19-13oct24.pdf` (25 pages; not in this repository).
+Complete draft; not yet independently reviewed against the French.
 
-Author of the exposé: M. Demazure.
-
-French source (local only): `source/SGA3/Exp19-13oct24.pdf` (25 pages),
-the Gille–Polo recomposition.
-
-| | |
+| File | Source pages |
 | --- | --- |
-| Status | Complete English draft; source pages and displayed notation checked visually. |
-| Chunks | en-01.tex (pp. 1--6), en-02.tex (pp. 7--14), en-03.tex (pp. 15--19), en-04.tex (pp. 20--25) |
+| [`SGA3-XIX.tex`](SGA3-XIX.tex) | Standalone wrapper |
+| [`en-01.tex`](en-01.tex) | 1–6 |
+| [`en-02.tex`](en-02.tex) | 7–14 |
+| [`en-03.tex`](en-03.tex) | 15–19 |
+| [`en-04.tex`](en-04.tex) | 20–25 |
+| [`SGA3-XIX.pdf`](SGA3-XIX.pdf) | Compiled PDF |
 
-Typographical corrections made in the English are marked in the body
-with `% typo:`. Build: `make -C translation/SGA3/ExposeXIX`.
+Build: `make -C translation/SGA3/ExposeXIX`.
 
-All 25 source PDF pages are translated, including the 46 numbered editor
-notes (0)--(45), all proofs, the diagram in note (32), and bibliography.
-`make` succeeds (24-page PDF); rendered English samples were inspected.
-A second independent fidelity review remains to be done.
+## Source points retained as printed
 
-Potential slips retained as printed: corollary 2.6 says `s ∈ G`; proof 2.5
-cites EGA IV4 8.12.4; 3.9 says “kernel of R”; 4.12(c) ends with `(L′)_U`;
-5.12 refers to 5.9; 5.13 prints `b ≠ 0`. These affect mathematics or
-references, so no conjectural correction was made.
+Marked `% typo?:` in the source. These may be slips in the French; the translation keeps them.
+
+| Place | As printed |
+| --- | --- |
+| Proof of 2.5 | Cites EGA IV$_4$, 8.12.4 |
+| Corollary 2.6 | “$s\in G$” |
+| 3.9 | “the kernel $\mathrm{Ker}(\alpha)$ of $R$” |
+| 4.12 (c) | The composite ends at $(\mathcal L')_U$ rather than $\mathrm W(\mathcal L')_U$ |
+| 5.12 | Refers to 5.9 for the section $w$ (defined in 5.10) |
+| 5.13 | $U\cap G^0$ is defined in $U$ by “$b\ne0$” |

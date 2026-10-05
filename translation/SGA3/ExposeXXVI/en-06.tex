@@ -1,4 +1,3 @@
-% Source PDF pp. 33–38; the preceding sentence belongs to en-05.
 If $S$ is the spectrum of an algebraically closed field $k$, one thus finds the relation
 \[
  P(k)\backslash G(k)/Q(k)\simeq W_P(T)(k)\backslash W_G(T)(k)/W_Q(T)(k).
@@ -35,7 +34,6 @@ Since one has
 \]
 it suffices to prove that $B'\cdot B\subset P'\cdot P$, which is obvious. It follows from (x) that it suffices to prove 5.1 for the pair $(B,B')$.
 
-% Source PDF p. 34.
 \numpara{5.1.3}\label{XXVI.5.1.3}
 The theorem is true if $k$ is algebraically closed; indeed, the condition of 5.1.2 is satisfied, and one concludes by Exp. XXII, 5.7.10.
 
@@ -76,7 +74,6 @@ We are therefore reduced to the case where $G=Z$, that is, where the Galois grou
 \numpara{5.1.7}\label{XXVI.5.1.7}
 The assertion to be proved is equivalent to the fact that $G/B$ is the union of the translates by $B^{\mathrm u}(k)$ of the open image of $B'^{\mathrm u}$, an assertion that does not change if one replaces $G$ by its adjoint group (or, for that matter, by any group giving the same adjoint group). One can therefore assume that $G$ is adjoint.
 
-% Source PDF p. 35.
 \numpara{5.1.8}\label{XXVI.5.1.8}
 Consider then the Dynkin diagram of $G_K$. The Galois group acts \emph{transitively} on this Dynkin diagram. But this Galois group has only cyclic quotients, and the Dynkin diagram has no cycles. It follows at once that this diagram is of type $nA_1$, $n\geq0$, or $mA_2$, $m\geq0$. Using the canonical decomposition of Exp. XXIV, 5.9, one can write
 \[
@@ -94,7 +91,7 @@ By Exp. XXIV, 5.12, $B$ comes from a Borel subgroup $B_0$ of $G_0$, $T$ from a m
 and it suffices for us to prove the desired assertion for the triple $(G_0,B_0,T_0)$.
 
 \numpara{5.1.9}\label{XXVI.5.1.9}
-One can therefore assume that $G$ is of type $\varnothing$, $A_1$ or $A_2$. Since $G$ has a Borel subgroup $B$, $G$ is quasi-splittable relative to $B$ (Exp. XXIV, 3.9.1), hence splittable if it is of type $\varnothing$ or $A_1$. Since the theorem has already been proved in the split case (Exp. XXII 5.7.10), only the case $A_2$ remains to be treated. By Exp. XXIV, 3.11 there is a morphism $E\to\Spec(k)$, a Galois principal bundle under the group $\ZZ/2\ZZ$ of automorphisms of the Dynkin diagram of type $A_2$, such that $G=\text{Q-Pin}_{E/\Spec(k)}(A_2)$. If $E$ has a section, $G$ is splittable and the theorem is proved. Otherwise, one necessarily has $E=\Spec(k')$, where $k'$ is a quadratic extension of $k$. Finally, as one has seen in 5.1.7, one can assume that $G$ is simply connected (\ie that $G$ is a form of $\SL_{3,k}$).
+One can therefore assume that $G$ is of type $\varnothing$, $A_1$ or $A_2$. Since $G$ has a Borel subgroup $B$, $G$ is quasi-splittable relative to $B$ (Exp. XXIV, 3.9.1), hence splittable if it is of type $\varnothing$ or $A_1$. Since the theorem has already been proved in the split case (Exp. XXII 5.7.10), only the case $A_2$ remains to be treated. By Exp. XXIV, 3.11 there is a morphism $E\to\Spec(k)$, a Galois principal bundle under the group $\ZZ/2\ZZ$ of automorphisms of the Dynkin diagram of type $A_2$, such that $G=\operatorname{Q\text{-}\acute Ep}_{E/\Spec(k)}(A_2)$. If $E$ has a section, $G$ is splittable and the theorem is proved. Otherwise, one necessarily has $E=\Spec(k')$, where $k'$ is a quadratic extension of $k$. Finally, as one has seen in 5.1.7, one can assume that $G$ is simply connected (\ie that $G$ is a form of $\SL_{3,k}$).
 
 \numpara{5.1.10}\label{XXVI.5.1.10}
 One is therefore in the following situation: one has a finite field $k$, a quadratic extension $k'$ of $k$. The group $\SL_{3,k'}$ of $3\times3$ matrices of determinant 1 is pinned as follows: the maximal torus is the group of diagonal matrices, the Borel subgroup is the group of upper triangular matrices, the ``pins'' are the elements:
@@ -109,12 +106,10 @@ One sees at once that the big cell $\Omega$ is defined by
  \iff a\text{ and }ae-bd\text{ are invertible},
 \]
 and that
-% This sentence starts on p. 35 and finishes on p. 36.
 \[
  B^{\mathrm u}(k)=\left\{\left.\begin{pmatrix}1&\overline{x}&z\\0&1&x\\0&0&1\end{pmatrix}\right|
  x,z\in k',\quad z+\overline z=x\overline x\right\}.
 \]
-% Source PDF p. 36.
 We must prove inclusion (1) of 5.1.6, that is, show that for all $a,b,c\in K$ (algebraic closure of $k$), there exist $x,z\in k'$ such that $z+\overline z=x\overline x$ and
 % typo?: the printed relation is inclusion rather than membership; kept as printed.
 \begin{equation}\tag{1}
@@ -159,7 +154,6 @@ is surjective (in particular, one has $(G/P)(S)=G(S)/P(S)$). Every parabolic sub
 \end{corollary}
 The second assertion is obviously equivalent to the first; let us prove the latter. Let $s_i$ be the closed points of $S$, let $V$ be the open subscheme of $G/P$ that is the image of $P'$ (and is isomorphic to $\operatorname{rad}^{\mathrm u}(P')$, \cf 4.3.6), and let $x\in G/P(S)$. By 5.1, for each $i$ there is a section $u_i\in\operatorname{rad}^{\mathrm u}(P)(\kappa(s_i))$ such that $u_ix_{s_i}$ is a section of $V_{s_i}$. If $u\in\operatorname{rad}^{\mathrm u}(P)(S)$ lifts the $u_i$ (2.6), $ux$ is a section of $V$, since such an assertion is checked on the closed fibers. But $\operatorname{rad}^{\mathrm u}(P')(S)\isomto V(S)$ is bijective, and one concludes at once.
 
-% Source PDF p. 37.
 \begin{corollary}{5.3}\label{XXVI.5.3}
 Let $S$ be a semi-local scheme, $G$ a reductive $S$-group, $P$, $P'$ and $Q$ three parabolic subgroups of $G$. There is $g\in G(S)$ such that $\operatorname{int}(g)Q$ is in transversal position relative to $P$ and $P'$.
 \end{corollary}
@@ -185,7 +179,6 @@ Indeed, by 4.3.5(i), there is a parabolic subgroup $P'$ of $G$ opposite to $P$. 
 
 Observe, moreover, that for the same reason, there is $u\in\operatorname{rad}^{\mathrm u}(P)(S)$ such that $\operatorname{int}(u)P'=P'_1$, hence $g$ is written $\operatorname{int}(u)u'$, with $u'\in\operatorname{rad}^{\mathrm u}(P')(S)$, which gives $P_1=\operatorname{int}(uu'u^{-1})P=\operatorname{int}(uu')P$ and, in passing, proves 5.2 again.
 
-% Source PDF p. 38.
 Statements 5.3 and 5.4 are the essential results of this paragraph. Let us first state a few consequences of 5.4.
 
 \begin{corollary}{5.5}\label{XXVI.5.5}
@@ -218,4 +211,3 @@ One will note that this notion is not, in general, stable under passage to fiber
 
 \begin{corollary}{5.7}\label{XXVI.5.7}
 Let $S$ be a semi-local scheme, $G$ a reductive $S$-group.
-% The numbered assertions begin on p. 39 and belong to en-07.

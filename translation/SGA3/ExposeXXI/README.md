@@ -1,30 +1,38 @@
-# SGA 3, XXI
+# SGA 3, Exposé XXI — Root data
 
-Root data.
+By M. Demazure. English translation of the Gille–Polo recomposition,
+`Exp21-13oct24.pdf` (46 pages; not in this repository).
+Complete draft; not yet independently reviewed against the French.
 
-Author of the exposé: M. Demazure.
-
-French source (local only): `source/SGA3/Exp21-13oct24.pdf` (46 pages),
-the Gille–Polo recomposition.
-
-| | |
+| File | Source pages |
 | --- | --- |
-| Status | Complete English draft; all source pages and notation checked visually. |
-| Chunks | en-01.tex (pp. 1--6), en-02.tex (pp. 7--12), en-03.tex (pp. 13--18), en-04.tex (pp. 19--24), en-05.tex (pp. 25--30), en-06.tex (pp. 31--36), en-07.tex (pp. 37--42), en-08.tex (pp. 43--46) |
+| [`SGA3-XXI.tex`](SGA3-XXI.tex) | Standalone wrapper |
+| [`en-01.tex`](en-01.tex) | 1–6 |
+| [`en-02.tex`](en-02.tex) | 7–12 |
+| [`en-03.tex`](en-03.tex) | 13–18 |
+| [`en-04.tex`](en-04.tex) | 19–24 |
+| [`en-05.tex`](en-05.tex) | 25–30 |
+| [`en-06.tex`](en-06.tex) | 31–36 |
+| [`en-07.tex`](en-07.tex) | 37–42 |
+| [`en-08.tex`](en-08.tex) | 43–46 |
+| [`SGA3-XXI.pdf`](SGA3-XXI.pdf) | Compiled PDF |
 
-Typographical corrections made in the English are marked in the body
-with `% typo:`. Build: `make -C translation/SGA3/ExposeXXI`.
+Build: `make -C translation/SGA3/ExposeXXI`.
 
-All 46 source PDF pages are translated, including all proofs, editor notes
-(0)--(30), the three starred notes, all root-data tables, and all diagrams.
-The build succeeds (41-page PDF). Source pages were visually read; English
-samples of the root tables, induced/coinduced diagram and Dynkin diagrams
-were inspected. A second independent fidelity review remains outstanding.
+## Source points retained as printed
 
-Potential source slips affecting mathematics or notation remain as printed
-and are commented in the bodies: p(alpha) in the proof of 3.1.10; R-prime-star
-in 3.4.1; S-prime in 3.4.6 and the proof of 3.4.8; adjacency of C-bar and
-unions in the proof of 3.6.9; the numeric 1 in 5.6(v); repeated R in 6.1;
-repeated M_0-star in 6.6.12; the missing prime on the second datum in 6.8.1
-and u(alpha-star) in note (29); beta as the orthogonality target in the
-proof of 7.2.3. No conjectural formula correction was made.
+Marked `% typo?:` in the source. These may be slips in the French; the translation keeps them.
+
+| Place | As printed |
+| --- | --- |
+| Proof of 3.1.10 | p(α) on the left-hand side, where p(β) is expected. |
+| 3.4.1 | The datum is written (M, M*, R, R′*), with R′* in place of R*. |
+| 3.4.6 | R ∩ (ℚ·S′), with S′ in place of Δ′. |
+| Proof of 3.4.8 | (x, S′) = 0, with S′ in place of Δ′. |
+| Proof of 3.6.9 | C̄ written directly against the unions ⋃ α⁻¹(0). |
+| 5.6 (v) | “0 ≤ 1 ≤ m − 1”, with the numeral 1 in place of i. |
+| 6.1 | The first datum is written (M, M*, R, R), with R repeated in place of R*. |
+| 6.6.12 | The trivial datum is written (M₀*, M₀*, ∅, ∅), with M₀* repeated. |
+| 6.8.1 | The second datum is written 𝓡 = (M′, M′*, R′, R′*), without the prime on 𝓡. |
+| N.D.E. (29) to 6.8.1 | u(α*) in place of u(α)*. |
+| Proof of 7.2.3 | w(β) not orthogonal to β, where α is expected. |

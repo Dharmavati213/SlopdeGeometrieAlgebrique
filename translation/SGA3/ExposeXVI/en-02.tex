@@ -1,4 +1,3 @@
-% Source PDF pp. 7--12; the first continued sentence belongs to en-01.
 Since $G''$ is proper over $S$, $\bar y$ comes from a unique element $y$ of $G''(S)$. Let $X$ be the inverse image of $y$ in $G$. The prescheme $X$ is faithfully flat over $S$ (since $G'$ is faithfully flat over $S$, as is the morphism $G\to G''$ (Exp. VIB \S\ 9)). After making a faithfully flat change of discrete valuation ring, one may suppose that $X$ has a section $\ell$ over $S$ (EGA IV 14.5.8). Replacing $\bar x$ by $\bar x\ell_t^{-1}$, one may suppose that $\bar x\in G'(t)$. But then existence and uniqueness of $x$ follow from the fact that $u|_{G'}$ is proper.
 % typo: the source has an extra closing parenthesis after the reference to VIB 9; removed.
 
@@ -19,7 +18,6 @@ Indeed, to say that $u|_U$ is an immersion means that there exist an open subset
 
 It therefore remains for us to show that $u|_U$ is an immersion, and for this let us apply the valuative criterion of local properness. Replacing $S$ by the spectrum of a discrete valuation ring faithfully flat over $S$, we must show that if $h$ is a section of $H$ over $S$ whose image $h(S)$ is contained in $u(U)$, then $h$ is the image of a section $g$ of $U$ over $S$. It suffices to show that $h$ is contained in the image of a Cartan subgroup $C$ of $G$. Indeed, by hypothesis, $u|_C$ is an immersion, so $h$ is the image of a section $g$ of $C$, which is necessarily a section of $U$.
 
-% Source PDF p. 8.
 Let $a\in U(s)$ (resp. $b\in U(t)$) be such that $u_s(a)=h(s)$ (resp. $u_t(b)=h(t)$). Since $u_t$ is an isomorphism, $h(t)$ is a regular point of $H_t$, hence is contained in a unique Cartan subgroup $D_t$ of $H_t$ (Exp. XIII 3.2). Let $D$ be the schematic closure of $D_t$ in $H$.
 \begin{lemma}{1.10}\label{XVI.1.10}
 \noindent i) $D_s$ is a nilpotent algebraic group (Exp. VIB \S\ 8).
@@ -48,7 +46,6 @@ Let us now work with the group $G$. The group $C_t=u_t^{-1}(D_t)$ is the unique 
 By functoriality of schematic closure, $u|_C$ factors through $D$, so $u_s(C_s)\subset D_s$. Since $u_s$ is an isomorphism of $G_s$ onto $(H_s)_{\mathrm{red}}$, $\dim C_s=\dim C_t=\nu=\dim D_s$ (1.10), and $D_s$ is connected (1.11), $u_s$ provides an isomorphism of $(C_s)_{\mathrm{red}}$ onto $(D_s)_{\mathrm{red}}$, so $(C_s)_{\mathrm{red}}$ is a Cartan subgroup of $G_s$. The following lemma shows that in fact $C$ is a Cartan subgroup of $G$.
 % typo?: D_s is called connected by 1.11, applied to its reduced subgroup; kept.
 
-% Source PDF p. 9.
 \begin{lemma}{1.12}\label{XVI.1.12}
 Let $S$ be the spectrum of a discrete valuation ring, $G$ a smooth group $S$-prescheme of finite type, $C$ a group subprescheme of $G$, flat over $S$, such that the generic fiber $C_t$ is a Cartan subgroup of $G_t$ and the reduced geometric closed fiber $(C_{\bar s})_{\mathrm{red}}$ is a Cartan subgroup of $G_{\bar s}$. Then $C$ is a Cartan subgroup of $G$.
 \end{lemma}
@@ -67,7 +64,6 @@ To verify the valuative criterion, we must show that every section $h$ of $H$ ov
 
 Let $C$ be a Cartan subgroup of $G$, $D=u(C)$ the Cartan subgroup of $H'$ which is the image of $C$. The $S$-group $D'=\operatorname{int}(h)D$ has connected fibers, hence has underlying space contained in that of $H'$; moreover, being smooth over $S$, it is reduced, and consequently $D'$ is a smooth group subprescheme of $H'$. The fibers of $D'$ are Cartan subgroups of the fibers of $H'$, so $D'$ is a Cartan subgroup of $H'$, and $C'=u^{-1}(D')$ is a Cartan subgroup of $G$. But $\uTransp_G^{\mathrm{str}}(C,C')$ is smooth and surjective over $S$ (Exp. XII 7.1 b)). Since $S$ is henselian with algebraically closed residue field, there exists $g\in G(S)$ such that $\operatorname{int}(g)C=C'$. Replacing $h$ by $u(g)^{-1}h$, we may suppose that $h(t)$ normalizes $D_t$ (and that $h(s)$ is the image of an element of the normalizer of $C_s$ in $G_s$ in the case of an immersion). Let $N=\uNorm_G(C)$. By hypothesis, $u|_N$ is an immersion (resp. a closed immersion), so $h$ is indeed the image of a section of $N$ over $S$, which completes the proof.
 
-% Source PDF p. 10.
 \sgasection{2}{A theorem on representability of quotients}
 Let us ``recall'' the following result:
 \begin{theorem}{2.1}\label{XVI.2.1}
@@ -107,7 +103,6 @@ p'_1:X\times_{X'}X\xrightarrow{u}X\times_Y X\xrightarrow{p_1}X.
 \]
 The morphism $u$ is an isomorphism, since $f''$ is a monomorphism, and $p'_1$ is flat, since $f'$ is flat, so $p_1$ is flat.
 
-% Source PDF p. 11.
 \noindent b) The assertions of 2.1 are local on $Y$ (hence are local on $S$); they are also local on $X$, as follows easily from the fact that a flat morphism locally of finite presentation is open (EGA IV 11.3.1).
 
 \noindent c) Under the hypotheses of 2.1 a), in view of the foregoing, we are reduced to the case where $X$ and $Y$ are affine and $f$ is of finite presentation. Replacing $S$ by $Y$, one may suppose $X$ and $Y$ of finite presentation over $S$. One then reduces to the case where $S$ is noetherian by EGA IV 11.2.6.
@@ -134,7 +129,6 @@ G\times_S H\longrightarrow G\times_X G,\qquad(g,h)\longmapsto(g,gh)
 is an isomorphism. Since $H$ is flat over $S$, $G\times_S H$ is flat over $G$, so the first projection $p_1:G\times_S G\to G$ is a flat morphism. Moreover, if $X$ is locally of finite type over $S$, $f$ is locally of finite presentation (EGA IV 1.4.3 v)), and otherwise $S$ is supposed locally noetherian. It then suffices to apply 2.1 to the morphism $f$.
 % typo?: the first projection has subscript S, rather than X, as printed.
 
-% Source PDF p. 12.
 It remains to see that $G/H$ is locally of finite presentation over $S$, but this follows immediately from Exp. V 9.1.
 \begin{corollary}{2.3}\label{XVI.2.3}
 Let $S$ be a prescheme, $G$ and $H$ two group $S$-preschemes, $u:G\to H$ an $S$-homomorphism. Suppose $G$ locally of finite presentation over $S$, and either $H$ locally of finite type over $S$, or $S$ locally noetherian. Then, if $K=\Ker(u)$ is flat over $S$, the quotient group $G/K$ is representable by a group $S$-prescheme locally of finite presentation over $S$, and $u$ factors as

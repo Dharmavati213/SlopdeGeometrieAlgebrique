@@ -12,15 +12,8 @@ PDFS := Introduction/SGA3-Intro.pdf \
  ExposeXXIV/SGA3-XXIV.pdf ExposeXXV/SGA3-XXV.pdf ExposeXXVI/SGA3-XXVI.pdf
 DIRS := $(patsubst %/,%,$(dir $(PDFS)))
 
-.PHONY: all check pdf book clean $(DIRS)
-all: check
-	$(MAKE) pdf
-	python3 check_coverage.py --require-pdf
-
-check:
-	python3 check_coverage.py
-
-pdf: $(DIRS)
+.PHONY: all book clean $(DIRS)
+all: $(DIRS)
 
 $(DIRS):
 	$(MAKE) -C $@

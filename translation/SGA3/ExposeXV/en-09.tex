@@ -1,4 +1,3 @@
-% Source PDF pp. 51--55; the first continued sentence belongs to en-08.
 By uniqueness, one easily sees that $u_\ell$ is a central morphism of $S$-groups (Exp. IX 5.6 a)). Proceeding as in 6.6 and 6.7, one shows that $u_\ell$ is an immersion and that, if $M_\ell$ is the image group $u_\ell({}_\ell T)$, then $\uCentr_G(M_\ell)$ is equal to $H$ for sufficiently large $\ell$ (this is where the hypothesis that $S$ is noetherian is used).
 
 \par\noindent\emph{Proof of i).}
@@ -16,7 +15,6 @@ U\times_S\uTransp_G(H,L).
 \par\noindent\emph{Proof of iv).}
 To see that if $H\in\mathscr{CT}(S)$, $H$ is closed in $G$, one may suppose $S$ affine noetherian, then $S$ the spectrum of a complete local ring (EGA IV 8), but then $H$ is the centralizer in $G$ of a subgroup of multiplicative type (by ii)), hence is closed since $G$ is separated over $S$ (Exp. VIB 5.2).
 
-% Source PDF p. 52.
 By iii), $N=\uNorm_G(H)=\uTransp_G^{\mathrm{str}}(H,H)$ is representable by a group subprescheme smooth over $S$ and closed in $G$. Consider the $S$-morphism
 \[
 G\longrightarrow\mathscr{CT},\qquad g\longmapsto\operatorname{int}(g)H.
@@ -35,7 +33,6 @@ u(\Centr_G T)=\Centr_{G'}T'.
 \end{lemma}
 Write $H=\Centr_G T$, $H'=\Centr_{G'}T'$, $H''=u(H)$. One has $H''\subset H'$. To prove that $H'=H''$, one may suppose the base field algebraically closed, and it suffices to prove that every Cartan subgroup of $H'$ is contained in $H''$. Indeed, $H''$ will then contain the open subset of regular points of $H'$, hence $H''$ will be an open subgroup of $H'$ and consequently will be equal to $H'$, since the latter has connected fibers. Let therefore $C'$ be a Cartan subgroup of $H'$; $C'$ is also a Cartan subgroup of $G'$, since $H'$ is the centralizer of a torus $T'$, hence has the same reductive rank and the same nilpotent rank as $G'$. Put $K=(u^{-1}(C'))^0_{\mathrm{red}}$. Since $T'$ is in the center of $H'$, $C'$ contains $T'$, so $K$ contains $T$. Let then $C$ be a Cartan subgroup of $K$ containing $T$. The torus $T$ is contained in the unique maximal torus of $C$, which is central in $C$ (Exp. XII 6.6 c)), so $C$ is contained in $H=\Centr_G T$. Using now the fact that two Cartan subgroups of $G$ are conjugate and that the image of a Cartan subgroup of $G$ is a Cartan subgroup of $G'$ (Exp. XII 6.6), one deduces that $C$ is also a Cartan subgroup of $G$, so its image is a Cartan subgroup of $G'$; since it is contained in $C'$, one has $u(C)=C'$, so $C'$ is indeed contained in $H''$.
 
-% Source PDF p. 53.
 We have therefore established v) when $S$ is the spectrum of a field $k$. Let us now study the general case. Since $G$, $H$ and $G'$ are of finite presentation over $S$, to prove that $u(H)$ is representable and is an element of $\mathscr{CT}_{G'}(S)$, one reduces by the usual technique to the case where $S$ is affine noetherian, then to the case where $S$ is the spectrum of a local ring. By fpqc descent of subpreschemes of $G'$, one may even suppose that $S$ is the spectrum of a complete noetherian local ring $A$.
 
 Let us return to the notation of ii), i.e.: let $T_s$ be the maximal central torus of $H_s$ ($s$ is the closed point of $S$), $M_\ell$ a subgroup of multiplicative type of $H$ lifting ${}_\ell T_s$ and such that $H=\uCentr_G M_\ell$. Let $T'_s$ be the image of $T_s$ in $G'_s$. Since $G'$ is separated over $S$ (Exp. VIB 5.2), the image of $M_\ell$ under $u$ is a subgroup of multiplicative type $M'_\ell$ of $G'$ (Exp. IX 6.8). Put then $H'=\uCentr_{G'}M'_\ell$, which is a smooth group subprescheme of $G'$. For every integer $\ell'$ equal to a power of $q$, there exists $\ell$ such that $(M'_\ell)_s$ contains ${}_{\ell'}T'_s$, so one may suppose $\ell$ chosen sufficiently large that $H'_s=\Centr_{G'_s}T'_s=u_s(H_s)$, where the last equality follows from 7.2. The restriction of $u$ to $H$, say $v$, plainly factors through $H'$. Let us prove that $v:H\to H'$ is a flat morphism. Since $H$ and $H'$ are flat over $S$ and $H_s\to H'_s$ is flat, $v$ is flat on a neighborhood of $H_s$ (EGA IV 11.3.10 and 11.3.1). The morphism $v$ is therefore flat on an open subgroup of $H$ (Exp. VIB 2.2), hence $v$ is flat, $H$ having connected fibers. The set-theoretic image of $H$ is thus an open subset of $H'$ (necessarily equal to $(H')^0$) which, equipped with its induced structure, represents the image sheaf $u(H)$ (for the fpqc topology). The fact that $u(H)$ is an element of $\mathscr{CT}_{G'}(S)$ then follows from 7.2.
@@ -50,7 +47,6 @@ w:G/N\longrightarrow G'/N'
 deduced from $u$ by passage to the quotient. Now $w$ is an epimorphism of homogeneous spaces under $G$, hence is faithfully flat. This proves that $\widetilde u$ is a flat morphism such that $u(\mathscr{CT}_G)$, which is therefore an open subset of $\mathscr{CT}_{G'}$, contains every point of $\mathscr{CT}_{G'}(k)$. Since $\mathscr{CT}_{G'}$ is of finite type over $k$, one deduces that $\widetilde u$ is surjective, hence is faithfully flat.
 % typo?: the source writes u(CT_G), rather than tilde-u(CT_G); kept as printed.
 
-% Source PDF p. 54.
 The additional assertions in vi) in the case where $\Ker u$ is central follow from Exp. XII 7.12.
 
 The following theorem generalizes Theorem 7.1 of Exp. XII:
@@ -84,7 +80,6 @@ is faithfully flat. If moreover $\Ker(u)$ is central, $\widetilde u$ is an isomo
 \noindent v) For further information concerning transporters and relations with maximal tori, one may consult 7.1 and Exp. XII 7.1.
 \end{theorem}
 \begin{proof}
-% Source PDF p. 55.
 i) We shall show that $\text{b)}\Rightarrow\text{c)}\Rightarrow\text{d)}\Rightarrow\text{e)}\Rightarrow\text{b)}\Rightarrow\text{a)}\Rightarrow\text{d)}$.
 
 $\text{b)}\Rightarrow\text{c)}$. Let $s$ be a point of $S$. Since $\mathscr C_s$ is smooth over $\kappa(s)$, there exist points of $\mathscr C_s$ whose residue field is a finite separable extension of $\kappa(s)$. Applying Exp. XI 1.10, one sees that there exists an open neighborhood $U$ of $s$ and a surjective étale morphism $U'\to U$ such that $G_{U'}$ has a Cartan subgroup.

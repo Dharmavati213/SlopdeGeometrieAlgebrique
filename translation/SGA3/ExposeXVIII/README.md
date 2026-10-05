@@ -1,38 +1,41 @@
-# SGA 3, XVIII
+# SGA 3, Exposé XVIII — Weil's theorem on the construction of a group from a rational law
 
-Weil's theorem on the construction of a group from a rational law.
+By Michael Artin. English translation of the Gille–Polo recomposition,
+`Expo18.pdf` (18 pages, pp. 17–18 blank; not in this repository).
+Complete draft; not yet independently reviewed against the French.
 
-Author of the exposé: Michael Artin.
-
-French source (local only): `source/SGA3/Expo18.pdf` (18 pages),
-the Gille–Polo recomposition.
-
-| | |
+| File | Source pages |
 | --- | --- |
-| Status | Complete English draft of the exposé; independent mathematical and linguistic review remains open. |
-| Chunks | en-01.tex (pp. 1--6), en-02.tex (pp. 7--12), en-03.tex (pp. 13--18) |
+| [`SGA3-XVIII.tex`](SGA3-XVIII.tex) | Standalone wrapper |
+| [`en-01.tex`](en-01.tex) | 1–6 |
+| [`en-02.tex`](en-02.tex) | 7–12 |
+| [`en-03.tex`](en-03.tex) | 13–18 |
+| [`SGA3-XVIII.pdf`](SGA3-XVIII.pdf) | Compiled PDF |
 
-Typographical corrections made in the English are marked in the body
-with `% typo:`. Build: `make -C translation/SGA3/ExposeXVIII`.
+Build: `make -C translation/SGA3/ExposeXVIII`.
 
-All three fragments are translated. The translator inspected every nonblank
-source page, checked the numbered statements against the PDF, compiled the
-18-page English PDF, and inspected representative pages containing formulas,
-footnotes, and the final bibliography. The source-heading and structural
-coverage checks pass: 38 unique labels, 15 numbered editor notes, six original
-starred notes, the version note, and both bibliography items are retained.
-Printed pages 17–18 are blank.
+## Typographical corrections
 
-A second agent compared source pages 7–12 sentence by sentence, including
-Rules 1–5, notes 8–13, and both fragment boundaries. This caught and corrected
-one transcription error in Rule 4: the final inverse belongs to a, outside
-the inner product. No other fidelity error was found in that focused range.
-The rest of the exposé has translator checks, not independent review.
+Corrected in the English and marked `% typo:` in the source: the duplicated
+corrupt text “sisisch. dense rel.schématiquement” (1.5.1), rendered once as
+“schematically”; “Soiten” and “Soenit” → “Soit” (1.6); “a la significations”
+→ “a la signification” (3.0.1); “ona” → “on a” (3.2.2, Rule 3); “définieen” →
+“définie en” (proof of 3.4); “G → S et quasi-séparé” → “est” (proof of 3.9);
+“d′anneaux”, printed with a prime instead of an apostrophe (proof of 3.7).
 
-Possible mathematical slips are retained and marked `% typo?:`: the undefined
-g and change of base in 1.6; the (a,d)/(a,b) reference and the printed
-V_ax^{-1} = V_{ax}^{-1} in 2.3; the U/U′ wording and nonemptiness assertion
-in 2.4; the reference to (i) in 3.0.2; X′ × X′ inside X³ in 3.2; ψ/φ and
-the comparison symbol in 3.8; and u/n and c_p in 3.12. Obvious duplicated
-words and spacing or spelling errors are corrected with `% typo:` comments.
-These translator checks are not an independent scholarly review.
+## Source points retained as printed
+
+Marked `% typo?:` in the source. These may be slips in the French; the translation keeps them.
+
+| Place | As printed |
+| --- | --- |
+| Proof of 1.6 | $g$ is not defined; $U''$ is said to be dense in $V''$ relative to $S$ |
+| Proof of 2.3 | $(a,d)$, rather than $(a,b)$ |
+| Proof of 2.3 | The condition $xby^{-1}\in V_{ax}^{-1}$ (and the adjacent $V_x$ condition) |
+| Proof of 2.4 | The $U/U'$ wording and the nonemptiness assertion |
+| 3.0.2 | Refers to “(i)” |
+| 3.2 | $W\cap(X'\times X')$ inside $X^3$ |
+| After 3.5 (composition law on $G$) | Introduces $x$, then uses $x'$ |
+| Proof of 3.8 (i) | $\sim$ rather than equality in $(xc)a\sim(xc)a'$ |
+| Proof of 3.8 (ii) | The map $\psi_{ji}$ is subsequently called $\varphi_{ji}$ |
+| Proof of 3.12 | Fiber dimension $u$, then $n$; $c_p$ |

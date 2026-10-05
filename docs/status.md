@@ -1147,7 +1147,7 @@ in [`formalization.md`](formalization.md).
 
 ## Later volumes
 
-- [x] SGA 3 English — Group schemes (three tomes). The foreword/introduction and all exposés I–XXVI, including the A and B parts, have complete compiled drafts from the Gille–Polo recomposition (local French PDFs only). All 222 fragments pass source-heading and structural checks; individual PDFs and the combined volume build with `make tex`. Indexes are outside this scope. Independent scholarly proofreading remains outstanding; see [coverage and review notes](../translation/SGA3/README.md).
+- [x] SGA 3 English — Group schemes (three tomes): foreword, introduction and Exposés I–XXVI, translated from the Gille–Polo recomposition; individual PDFs and a combined volume build with `make tex`. Indexes not included; not yet independently reviewed. See [`translation/SGA3/README.md`](../translation/SGA3/README.md).
 - [ ] SGA 4 — Topos theory and étale cohomology of schemes
 - [ ] SGA 4½ — Étale cohomology (Deligne)
 - [ ] SGA 5 — ℓ-adic cohomology and L-functions
