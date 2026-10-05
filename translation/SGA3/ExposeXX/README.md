@@ -1,29 +1,42 @@
-# SGA 3, XX
+# SGA 3, Exposé XX — Reductive groups of semisimple rank 1
 
-Reductive groups of semisimple rank 1.
+By M. Demazure. English translation of the Gille–Polo recomposition,
+`Exp20-13oct24.pdf` (35 pages; not in this repository).
+Complete draft; not yet independently reviewed against the French.
 
-Author of the exposé: M. Demazure.
-
-French source (local only): `source/SGA3/Exp20-13oct24.pdf` (35 pages),
-the Gille–Polo recomposition.
-
-| | |
+| File | Source pages |
 | --- | --- |
-| Status | Complete English draft; all source pages and notation checked visually. |
-| Chunks | en-01.tex (pp. 1--8), en-02.tex (pp. 9--14), en-03.tex (pp. 15--20), en-04.tex (pp. 21--26), en-05.tex (pp. 27--32), en-06.tex (pp. 33--35) |
+| [`SGA3-XX.tex`](SGA3-XX.tex) | Standalone wrapper |
+| [`en-01.tex`](en-01.tex) | 1–8 |
+| [`en-02.tex`](en-02.tex) | 9–14 |
+| [`en-03.tex`](en-03.tex) | 15–20 |
+| [`en-04.tex`](en-04.tex) | 21–26 |
+| [`en-05.tex`](en-05.tex) | 27–32 |
+| [`en-06.tex`](en-06.tex) | 33–35 |
+| [`SGA3-XX.pdf`](SGA3-XX.pdf) | Compiled PDF |
 
-Typographical corrections made in the English are marked in the body
-with `% typo:`. Build: `make -C translation/SGA3/ExposeXX`.
+Build: `make -C translation/SGA3/ExposeXX`.
 
-All 35 PDF pages are translated, including every proof, diagram, and editor
-note (0)--(40). The build succeeds (32-page PDF). Independent fidelity
-review remains to be done.
+## Typographical corrections
 
-Potential source slips are retained and commented in the bodies: 1.1
-prints `p` without an alpha subscript; the differential in 1.14 prints
-`x_i x_{i+1}`; 3.1(v) uses alpha-vee; note (26) omits the inverse on X;
-note (28) repeats a_{-alpha}; 3.11 has several missing primes and variable
-mismatches; 4.1 omits a prime on w-alpha; 4.4 prints f_T composed with
-alpha-prime and r/Q; 5.4 prints G without L; the proof of 6.2 prints an
-alpha without star. The missing S after an arrow in 6.1 was restored as
-a typographical correction and marked `% typo:`.
+Corrected in the English and marked `% typo:` in the source: the missing $S$
+after the arrow in “$S'\to S$” (6.1).
+
+## Source points retained as printed
+
+Marked `% typo?:` in the source. These may be slips in the French; the translation keeps them.
+
+| Place | As printed |
+| --- | --- |
+| 1.1 | $p$ without the subscript $\alpha$ in the first formula |
+| 1.14 | $x_ix_{i+1}$ in the differential |
+| 3.1 (v) | $\alpha^\vee$ rather than $\alpha^*$ |
+| Note (26), proof of 3.1 (iv) | $X$ rather than $X^{-1}$ in the second right-hand side |
+| Note (28), 3.6 (iii) | $a_{-\alpha}(w)$ repeated |
+| Proof of 3.11 | $p_-(x)$ defined with $y$, and target $G$ rather than $G'$ |
+| Proof of 3.11 | Missing primes on $\mathfrak g$ in the modules containing $X'$ and $Y'$ |
+| 4.1 | $w_\alpha$ without a prime in the last formula |
+| Proof of 4.4 | $f_T\circ\alpha'$ (order of composition) |
+| Proof of 4.4 | $(G/Q,T/Q,r/Q)$ |
+| 5.4 | $(G,t_G(\mathbf G_{\mathrm m,S}^2),\alpha_G)$, $G$ without the subscript $\mathcal L$ |
+| Proof of 6.2 | $f_T(\alpha(-y^{-1}))$, $\alpha$ without a star |
